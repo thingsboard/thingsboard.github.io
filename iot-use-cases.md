@@ -2,8 +2,11 @@
 layout: use-case
 title: IoT Use Cases
 description: ThingsBoard IoT Platform use cases
+notitle: "true"
 
 ---
+
+# IoT Use Cases
 
 Being robust, scalable and user friendly, ThingsBoard IoT platform supports various IoT use cases by providing flexible and powerful out-of-the-box features to cut down time to market of your connected products and smart solutions. The platform is device-agnostic, so you can feed and analyze telemetry data from any sensor, connected device or application. ThingsBoard comprehensive features and rich platform APIs allow you to save time and resources on routine IoT tasks and concentrate on specific features of your IoT solution.
 
@@ -23,8 +26,25 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="read-more-button" href="/smart-energy/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/smart-energy/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/usecases/smart-energy/se4.png"></a>
-            </div>
+                <a class="img-button" href="/smart-energy/">
+                    <div class="overlay">
+                        <div class="eye">
+                            <img src="/images/eye-icon.svg">See more
+                        </div>
+                    </div>
+                    <div class="dashboard-frame">
+                        <div class="frame-image">
+                            <img src="/images/usecases/smart-energy/video/smart-energy.png">
+                        </div>
+                        <div class="frame-video">
+                            <video autoplay loop preload="auto" muted playsinline>
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-energy.mp4" type="video/mp4">
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-energy.webm" type="video/webm">
+                            </video>
+                        </div>
+                    </div>                
+                </a>
+            </div>   
         </div>
         <div class="dashboard-item">
             <div class="item-description">
@@ -33,8 +53,25 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="read-more-button" href="/smart-farming/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/smart-farming/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/usecases/smart-farming/sf1.png" /></a>
-            </div>
+                <a class="img-button" href="/smart-farming/">
+                    <div class="overlay">
+                        <div class="eye">
+                            <img src="/images/eye-icon.svg">See more
+                        </div>
+                    </div>
+                    <div class="dashboard-frame">
+                        <div class="frame-image">
+                            <img src="/images/usecases/smart-farming/video/smart-farming.png">
+                        </div>
+                        <div class="frame-video">
+                            <video autoplay loop preload="auto" muted playsinline>
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-farming.mp4" type="video/mp4">
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-farming.webm" type="video/webm">
+                            </video>
+                        </div>
+                    </div>                
+                </a>
+            </div>   
         </div>
         <div class="dashboard-item">
             <div class="item-description">
@@ -43,7 +80,24 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="read-more-button" href="/fleet-tracking/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/fleet-tracking/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/usecases/fleet-tracking/ft3.png" /></a>
+                <a class="img-button" href="/fleet-tracking/">
+                    <div class="overlay">
+                        <div class="eye">
+                            <img src="/images/eye-icon.svg">See more
+                        </div>
+                    </div>
+                    <div class="dashboard-frame">
+                        <div class="frame-image">
+                            <img src="/images/usecases/fleet-tracking/video/fleet-tracking.png">
+                        </div>
+                        <div class="frame-video">
+                            <video autoplay loop preload="auto" muted playsinline>
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/fleet-tracking.mp4" type="video/mp4">
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/fleet-tracking.webm" type="video/webm">
+                            </video>
+                        </div>
+                    </div>                
+                </a>
             </div>
         </div>
         <div class="dashboard-item">
@@ -53,7 +107,24 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="read-more-button" href="/smart-metering/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/smart-metering/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/usecases/smart-metering/sm1.png" /></a>
+                <a class="img-button" href="/smart-metering/">
+                    <div class="overlay">
+                        <div class="eye">
+                            <img src="/images/eye-icon.svg">See more
+                        </div>
+                    </div>
+                    <div class="dashboard-frame">
+                        <div class="frame-image">
+                            <img src="/images/usecases/smart-metering/video/smart-metering.png">
+                        </div>
+                        <div class="frame-video">
+                            <video autoplay loop preload="auto" muted playsinline>
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-metering.mp4" type="video/mp4">
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-metering.webm" type="video/webm">
+                            </video>
+                        </div>
+                    </div>                
+                </a>
             </div>
         </div>
         <div class="dashboard-item">
@@ -63,7 +134,24 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="read-more-button" href="/use-cases/environment-monitoring/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/use-cases/environment-monitoring/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/usecases/environment-monitoring/em1.png" /></a>
+                <a class="img-button" href="/use-cases/environment-monitoring/">
+                    <div class="overlay">
+                        <div class="eye">
+                            <img src="/images/eye-icon.svg">See more
+                        </div>
+                    </div>
+                    <div class="dashboard-frame">
+                        <div class="frame-image">
+                            <img src="/images/usecases/environment-monitoring/video/environment-monitoring.png">
+                        </div>
+                        <div class="frame-video">
+                            <video autoplay loop preload="auto" muted playsinline>
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/environment-monitoring.mp4" type="video/mp4">
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/environment-monitoring.webm" type="video/webm">
+                            </video>
+                        </div>
+                    </div>                
+                </a>
             </div>
         </div>
         <div class="dashboard-item">
@@ -73,7 +161,24 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="read-more-button" href="/use-cases/smart-office/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/use-cases/smart-office/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/usecases/smart-office/so1.png" /></a>
+                <a class="img-button" href="/use-cases/smart-office/">
+                    <div class="overlay">
+                        <div class="eye">
+                            <img src="/images/eye-icon.svg">See more
+                        </div>
+                    </div>
+                    <div class="dashboard-frame">
+                        <div class="frame-image">
+                            <img src="/images/usecases/smart-office/video/smart-office.png">
+                        </div>
+                        <div class="frame-video">
+                            <video autoplay loop preload="auto" muted playsinline>
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-office.mp4" type="video/mp4">
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-office.webm" type="video/webm">
+                            </video>
+                        </div>
+                    </div>                
+                </a>
             </div>
         </div>
         <div class="dashboard-item">
@@ -83,7 +188,24 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="read-more-button" href="/use-cases/water-metering/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/use-cases/water-metering/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/usecases/water-metering/wm4.png" /></a>
+                <a class="img-button" href="/use-cases/water-metering/">
+                    <div class="overlay">
+                        <div class="eye">
+                            <img src="/images/eye-icon.svg">See more
+                        </div>
+                    </div>
+                    <div class="dashboard-frame">
+                        <div class="frame-image">
+                            <img src="/images/usecases/water-metering/video/water-metering.png">
+                        </div>
+                        <div class="frame-video">
+                            <video autoplay loop preload="auto" muted playsinline>
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/water-metering.mp4" type="video/mp4">
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/water-metering.webm" type="video/webm">
+                            </video>
+                        </div>
+                    </div>                
+                </a>
             </div>
         </div>
         <div class="dashboard-item">
@@ -93,7 +215,24 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="read-more-button" href="/use-cases/smart-retail/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/use-cases/smart-retail/"><div class="overlay"><div class="eye"><img src="/images/eye-icon.svg">See more</div></div><img class="item-image" src="/images/usecases/smart-retail/sr3.png" /></a>
+                <a class="img-button" href="/use-cases/smart-retail/">
+                    <div class="overlay">
+                        <div class="eye">
+                            <img src="/images/eye-icon.svg">See more
+                        </div>
+                    </div>
+                    <div class="dashboard-frame">
+                        <div class="frame-image">
+                            <img src="/images/usecases/smart-retail/video/smart-retail.png">
+                        </div>
+                        <div class="frame-video">
+                            <video autoplay loop preload="auto" muted playsinline>
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-retail.mp4" type="video/mp4">
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-retail.webm" type="video/webm">
+                            </video>
+                        </div>
+                    </div>                
+                </a>
             </div>
         </div>
     </div>

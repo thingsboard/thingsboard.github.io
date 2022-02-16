@@ -40,72 +40,100 @@
         position: relative
         width: 100%
         order: 2
-    .item-image
-        position: relative
-        width: 100%
-        height: auto
+        overflow: hidden
+        box-shadow: -8px 8px 15px rgba(0, 0, 0, 0.15), -12px 12px 40px rgba(0, 0, 0, 0.15)
         border-radius: 6px
-        display: block
     .item-description
         width: 100%
         margin-bottom: 32px
         order: 1
-
-.read-more-button
-    font-weight: 500
-    font-size: 18px
-    position: relative
-    transition-duration: 0.3s
-    .arrow
-        transform: translate(0px)
-        transition-duration: 0.3s
-        filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
-        box-shadow: none !important
-        width: 12px !important
-        margin-left: 12px
-        position: absolute
-        top: 7px
-        &.first
-            opacity: 0.2
-        &.second
-            opacity: 0.5
-    &:hover
-        transition-duration: 0.3s
-        .first
-            transform: translate(10px)
-        .second
-            transform: translate(20px)
-        .third
-            transform: translate(30px)
-
-.img-button
-    &.rule-button
+    .dashboard-frame
         position: relative
-    .overlay
-        color: white
-        z-index: 1000
-        display: block
-        width: 100%
-        position: absolute
-        font-weight: 400
-        height: 100%
-        opacity: 0
-        background: linear-gradient(0deg, rgba(37,38,40,0.8) 0%, rgba(37,38,40,0.6) 100%)
-        transition-duration: 0.3s
-        border-radius: 6px
-        &:hover
-            opacity: 1
-            .eye
-                bottom: 14%
-        .eye
-            transition-duration: 0.3s
+        overflow: hidden
+        &:before
+            content: ""
+            display: block
+            padding-top: 45%
+        &:after
+            content: ""
+            display: block
+            z-index: 1
+            background-repeat: no-repeat
+            background-size: contain
             position: absolute
+            top: 0
+            left: 0
             bottom: 0
-            left: calc(50% - 60px)
-            display: flex
-            img
-                margin-right: 10px
-                width: unset !important
+            right: 0
+        .frame-video, .frame-image
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+            margin-left: -1px
+        img, video
+            width: 100%
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+        .frame-image
+            z-index: -1
+    .img-button
+        .overlay
+            color: white
+            z-index: 1000
+            display: block
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
+            font-weight: 400
+            opacity: 0
+            background: linear-gradient(0deg, rgba(37,38,40,0.8) 0%, rgba(37,38,40,0.6) 100%)
+            transition-duration: 0.3s
+            &:hover
+                opacity: 1
+                .eye
+                    bottom: 14%
+            .eye
+                transition-duration: 0.3s
+                position: absolute
+                bottom: 0
+                left: calc(50% - 60px)
+                display: flex
+                img
+                    margin-right: 10px
+                    width: unset !important
+    .read-more-button
+        font-weight: 500
+        font-size: 18px
+        position: relative
+        transition-duration: 0.3s
+        .arrow
+            transform: translate(0px)
+            transition-duration: 0.3s
+            filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
+            box-shadow: none !important
+            width: 12px !important
+            margin-left: 12px
+            position: absolute
+            top: 7px
+            &.first
+                opacity: 0.2
+            &.second
+                opacity: 0.5
+        &:hover
+            transition-duration: 0.3s
+            .first
+                transform: translate(10px)
+            .second
+                transform: translate(20px)
+            .third
+                transform: translate(30px)
 
 .owl-carousel.owl-theme.usecase-carousel
     margin: 64px 0 24px
