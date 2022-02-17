@@ -4,5 +4,5 @@ title: ThingsBoard API reference
 description: ThingsBoard API reference and supported IoT Protocols
 
 ---
-{% assign docsPrefix = "edge/" %}
+{% assign docsPrefix = "pe/edge/" %}
 {% include docs/api.md %}

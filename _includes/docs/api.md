@@ -12,7 +12,7 @@ Device API is grouped by supported communication protocols:
 [**Gateway MQTT API**](/docs/{{docsPrefix}}reference/gateway-mqtt-api) allows you to connect **existing** devices to the platform using **[ThingsBoard Gateway](/docs/iot-gateway/what-is-iot-gateway/)**
 or implement your own gateway.
 
-{% if docsPrefix != "edge/" %}
+{% if docsPrefix != "edge/" and docsPrefix != "pe/edge/" %}
 
 Server-side API is available as REST API:
 

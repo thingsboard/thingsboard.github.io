@@ -5,5 +5,5 @@ description: Supported IoT protocols for IoT device connectivity
 
 ---
 
-{% assign docsPrefix = "edge/" %}
+{% assign docsPrefix = "pe/edge/" %}
 {% include docs/reference/protocols.md %}

@@ -4,7 +4,7 @@ assignees:
 - stitenko 
 title: SNMP Device API Reference 
 description: Supported SNMP API Reference for IoT Devices
-redirect_from: "/docs/edge/reference/snmp-api"
+redirect_from: "/docs/pe/edge/reference/snmp-api"
 
 deviceProfileConfiguring1:
     0:
@@ -41,5 +41,5 @@ deviceProfileConfiguring5:
         image: /images/reference/snmp-api/snmp-api-device-profile-configuring-6-pe.png
 ---
 
-{% assign docsPrefix = "edge/" %}
+{% assign docsPrefix = "pe/" %}
 {% include docs/reference/snmp-api.md %}
