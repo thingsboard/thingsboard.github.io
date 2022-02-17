@@ -60,7 +60,7 @@ browse current and historical state of their supermarkets.
     <a target="_blank" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">View live demo</a>
 </div>
 
-The live dashboard is part of the [solution template](https://thingsboard.io/docs/paas/solution-templates/smart-office/) and 
+The live dashboard is part of the [solution template](https://thingsboard.io/docs/paas/solution-templates/overview/) and 
 is designed for supermarket managers to monitor state of the supermarket and react on alarms. It has multiple states:
 
 * **Main** state contains a map of the supermarkets, and a list of alarms.
