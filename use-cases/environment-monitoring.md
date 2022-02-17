@@ -15,7 +15,7 @@ Platform is widely used for:
 
   - air quality monitoring in some bigger cities;
   - weather monitoring on each continent including Antarctica;
-  - relief monitoring and Seismology alerts/prediction;
+  - relief monitoring and seismology alerts/prediction;
   - Water quality of public pumps and other facilities;
   - Noise level;
   

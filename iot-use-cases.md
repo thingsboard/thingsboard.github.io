@@ -49,7 +49,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
         <div class="dashboard-item">
             <div class="item-description">
                 <h2>Smart farming</h2>
-                <p>Collect important indicators for your agricultural production such as weather conditions or facilities state via IoT sensors and visualize them using end-user customizable dashboards provided by ThingsBoard platform.</p>
+                <p>Collect important indicators for your agricultural production such as soil conditions or facilities state via IoT sensors and visualize them using end-user customizable dashboards provided by ThingsBoard platform.</p>
                 <a class="read-more-button" href="/smart-farming/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
@@ -103,7 +103,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
         <div class="dashboard-item">
             <div class="item-description">
                 <h2>Smart metering</h2>
-                <p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
+                <p>Collect, store and aggregate data from smart meters in reliable and fault-tolerant way. Analyze resource consumption and raise alerts on leakage, anomaly or fraud. Present results of the analysis to end users.</p>
                 <a class="read-more-button" href="/smart-metering/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
@@ -130,7 +130,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
         <div class="dashboard-item">
             <div class="item-description">
                 <h2>Environment Monitoring</h2>
-                <p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
+                <p>Monitor and analyze indoor and outdoor environments using a wide range of sensors. ThingsBoard supports data acquisition using modern connectivity technologies and protocols: NB IoT, LoRaWAN, SigFox, MQTT, CoAP, HTTP, LwM2M, and others.</p>
                 <a class="read-more-button" href="/use-cases/environment-monitoring/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
@@ -157,7 +157,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
         <div class="dashboard-item">
             <div class="item-description">
                 <h2>Smart Office</h2>
-                <p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
+                <p>Ensure employee health and safety to boost organization productivity. Optimize resource consumption by monitoring and control of the office indoor climate. ThingsBoard provides rich data visualization, powerful processing engine, remote control and OTA updates capabilities.</p>
                 <a class="read-more-button" href="/use-cases/smart-office/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
@@ -184,7 +184,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
         <div class="dashboard-item">
             <div class="item-description">
                 <h2>Water Metering</h2>
-                <p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
+                <p>Enable water consumption data collection, analysis and fraud detection using ThingsBoard. Use interactive dashboards that allow administrators and end-users to browse the state of the water meters and aggregated water consumption statistics. Enable alarms over SMS and email and integrate with external billing systems.</p>
                 <a class="read-more-button" href="/use-cases/water-metering/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
@@ -211,7 +211,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
         <div class="dashboard-item">
             <div class="item-description">
                 <h2>Smart Retail</h2>
-                <p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
+                <p>Control quality of food storage by monitoring chillers and freezers. Ensure availability of the goods using smart shelves. Ensure safety using motion detection and fire alarms. ThingsBoard provides a solution template to monitor supermarket assets, browse historical data and generate alarms based on user-defined thresholds.</p>
                 <a class="read-more-button" href="/use-cases/smart-retail/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">

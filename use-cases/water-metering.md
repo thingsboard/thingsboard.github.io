@@ -26,9 +26,9 @@ The platform provides production-ready server infrastructure to connect your IoT
 ## Water metering template
 
 Water Metering [solution template](https://thingsboard.io/docs/paas/solution-templates/water-metering/) represent generic water metering solution. 
-With this template you get interactive dashboards that allow administrator and end user 
-browse state of the water meters and aggregated water consumption statistics. 
-Users are able to define thresholds and enable alarms and notifications over SMS or email.  
+With this template, you get interactive dashboards that allow administrators and end-users to browse the state of the water meters and aggregated water consumption statistics. 
+Users are able to define thresholds and enable alarms and notifications over SMS or email. 
+You may easily integrate with external billing systems to produce and distribute invoices based on the aggregated consumption data from ThingsBoard. 
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
