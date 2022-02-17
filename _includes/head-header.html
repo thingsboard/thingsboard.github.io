@@ -397,12 +397,20 @@
             });
             {% endif %}
 
-            // Rogue line numbers fix (don't show line numbers for 1 row)
             $( document ).ready(function() {
+                // Rogue line numbers fix (don't show line numbers for 1 row)
                 $('.rouge-gutter.gl').each(function() {
                     var lineNumbers = $(this).children('.lineno');
                     if (lineNumbers.text() === '1\n') {
                         $(this).css('display', 'none');
+                    }
+                });
+                $('a#use-cases-link').click(function(e) {
+                    let isMobile = $('button.burger').css('display') === 'block';
+                    if (isMobile) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        listburg('nav-cases');
                     }
                 });
             });
@@ -457,15 +465,6 @@
                 }
             }
         }
-
-        function onUseCasesClick() {
-            let isMobile = $('button.burger').css('display') === 'block';
-            if (isMobile) {
-                listburg('nav-cases');
-            } else {
-                window.open("/iot-use-cases/","_self");
-            }
-        }
     </script>
 </head>
 <body>
@@ -513,7 +512,7 @@
             </li>
             {% endunless %}
             <li class="nav-cases" data-submenu-id="nav-cases">
-                <a onclick="onUseCasesClick()" style="cursor: pointer;">Use Cases</a>
+                <a id="use-cases-link" href="/iot-use-cases/" style="cursor: pointer;">Use Cases</a>
             </li>
             <li class="nav-customers" data-submenu-id="nav-customers">
                 <a onclick="listburg('nav-customers')">Customers</a>
