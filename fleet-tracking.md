@@ -146,7 +146,7 @@ You may edit the route area widget and enable configuration of the route area fo
 
 The diagram below identifies data flow and integration points for a typical fleet-tracking solution that uses the ThingsBoard platform to collect and analyze data from vehicle trackers.
 
-![Smart energy solution diagram](/images/iot-use-cases/fleet-tracking.svg)
+<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/fleet-tracking.svg"></object>
 
 You may notice plenty of connectivity options for the vehicle trackers: direct connection to the cloud, through the IoT Gateway or integration with a third-party system.
 Most of vehicle-tracking projects today use direct connection to the cloud using MQTT or CoAP in case of NB IoT. 

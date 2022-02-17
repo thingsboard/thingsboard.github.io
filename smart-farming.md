@@ -139,7 +139,7 @@ You may export the dashboard from our live demo server and import it to your Thi
 
 The diagram below identifies data flow and integration points for a typical smart-farming solution that uses the ThingsBoard platform to collect and analyze data from IoT sensors.
 
-![Smart energy solution diagram](/images/iot-use-cases/smart-farming.svg)
+<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-farming.svg"></object>
 
 You may notice plenty of connectivity options for the IoT sensors: direct connection to the cloud, through the IoT Gateway, integration with a third-party system or ThingsBoard Edge.
 Most of the smart-farming projects today use IoT Gateway deployed at the farm. 

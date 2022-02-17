@@ -186,7 +186,7 @@ that allows you to provision customers, their users, supermarkets and devices. I
 
 The diagram below identifies data flow and integration points for a typical supermarket monitoring solution that uses the ThingsBoard platform to collect and analyze data from multiple sources.
 
-<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
+<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/common-edge.svg"></object>
 
 You may notice plenty of connectivity options for the IoT sensors: direct connection to the cloud, through the IoT Gateway, integration with a third-party system or ThingsBoard Edge. 
 

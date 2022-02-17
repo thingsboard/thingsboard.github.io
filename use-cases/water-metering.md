@@ -174,7 +174,7 @@ Some dashboard features (for example, ability to create devices) were disabled o
 
 The diagram below identifies data flow and integration points for a typical water metering solution that uses the ThingsBoard platform to collect and analyze data from smart water meters.
 
-<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
+<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/common.svg"></object>
 
 You may notice plenty of connectivity options for the IoT sensors: direct connection to the cloud, through the IoT Gateway, integration with a third-party system or ThingsBoard Edge.
 Most of the water metering projects today use LoRaWAN, SigFox or NB IoT to connect the water meters. 
