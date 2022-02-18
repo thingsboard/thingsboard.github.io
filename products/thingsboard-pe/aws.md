@@ -203,7 +203,7 @@ redirect_to: "/pricing/"
     <div class="item" data-tag="h4" data-item-id="how-do-i-install-tb-pe-on-aws" data-title="How to install TB PE on AWS Marketplace?">
         <div class="container">
             <p>
-                See <a href="/docs/user-guide/install/aws-marketplace-pe/">official documentation page</a> for more details.
+                See <a href="/docs/user-guide/install/pe/aws-marketplace/">official documentation page</a> for more details.
             </p>    
         </div>    
     </div>
