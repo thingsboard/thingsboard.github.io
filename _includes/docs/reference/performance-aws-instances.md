@@ -1175,6 +1175,8 @@ docker run -it --rm --network host --name tb-perf-test \
 ```
 {: .copy-code}
 
+</details>
+
 **Additional checks**
 
 Here are some pointers on how to ensure that you have a valid test run with all devices created and connected
