@@ -30,10 +30,10 @@ We expect to deliver the following release, v3.3.4, on April 16th.
 We support the Ukrainian army and volunteer organizations as much as we can. We ask you to do the same. Here are a few steps how you can help:
 
  * Raise awareness and demand your government to provide military aid. We really need help to protect from airstrikes. We can handle the ground fights on our own;
- * Support our army with donations. Here is the official [link](https://bank.gov.ua/ua/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi) 
-to the wire transfer details. The website is in Ukrainian but Google Translate will help you.
+ * Support our army with donations. Here is the official [link](https://bank.gov.ua/en/news/all/natsionalniy-bank-vidkriv-spetsrahunok-dlya-zboru-koshtiv-na-potrebi-armiyi) 
+to the wire transfer details.
 
-## Message to our users and clients from russia
+## Message to our users and clients from Russia
 
 We expect you to protest against the war! 
 You are responsible for this madness because you allowed your leader to do this.
