@@ -36,8 +36,9 @@ to the wire transfer details. The website is in Ukrainian but Google Translate w
 ## Message to our users and clients from russia
 
 We expect you to protest against the war! 
-You are responsible for this madness because you allowed your leader to do this. 
-Meanwhile, we will stop sales of new licenses to russian companies asap.
+You are responsible for this madness because you allowed your leader to do this.
+Unfortunately, we can't block you from using open-source version of our products.
+However, we will stop sales of our licenses to russian companies asap.
 
 {: style="text-align: center;"}
 
