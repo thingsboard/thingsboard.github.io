@@ -1,5 +1,5 @@
 ---
-layout: common
+layout: use-case
 title: Support Ukraine
 notitle: "true"
 description:
@@ -15,6 +15,115 @@ Although we have more than 100 contributors worldwide, the core team of ThingsBo
 We will never forget who started this war.
 Ukrainians are a peaceful nation that never attacked anyone. 
 Don't believe the russian propaganda.
+
+<div class="usecase-carousel owl-carousel owl-theme support-ukraine">
+    <div>
+        <img class="item-image" src="/images/support-ukraine/1.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/2.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/3.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/4.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/5.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/6.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/7.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/8.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/9.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/10.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/11.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/12.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/13.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/14.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/15.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/16.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/17.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/18.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/19.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/20.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/21.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/22.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/23.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/24.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/25.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/26.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/27.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/28.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/29.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/30.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/31.JPG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/32.PNG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/33.PNG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/34.PNG" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/support-ukraine/35.PNG" />
+    </div>
+</div>
+
 
 ## Message to our users and clients from the civilized world
 
