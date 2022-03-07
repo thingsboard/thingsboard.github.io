@@ -251,7 +251,7 @@ In this example, REST connector is installed locally on your server.
 
 Use terminal to simulate sending message from the device to the REST Connector:
 ```bash
-curl -X POST -d '{"sensorName": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "temp": 32, "hum": 67}' 127.0.0.1:5000/my_devices
+curl -X POST -d '{"sensorName": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "certificateNumber": "125sda47gsh", "temp": 32, "hum": 67}' 127.0.0.1:5000/my_devices
 ```
 {: .copy-code}
 
@@ -266,6 +266,10 @@ The device will be created and displayed in ThingsBoard based on the passed para
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/rest-created-device-2.png)
+{: refdef}
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/rest-created-device-3.png)
 {: refdef}
 
 ### Section "attributeUpdates"
@@ -307,9 +311,7 @@ The **attributeUpdates** section will look like:
           "CONTENT-TYPE": "application/json"
         },
         "security": {
-          "type": "basic",
-          "username": "user",
-          "password": "password"
+          "type": "anonymous"
         },
         "timeout": 0.5,
         "tries": 3,
@@ -335,7 +337,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST', 'GET'])
 def query_example():
   print(request.get_data())
-  return "OK"
+  return "Success"
 
 if __name__ == '__main__':
   app.run(port=5001)
@@ -353,25 +355,25 @@ python3 test_flask_server.py
 ![image](/images/gateway/flask-server-1.png)
 {: refdef}
 
-Now, update device attribute value on the ThingsBoard server. Open Devices -> click by your device -> Attributes tab -> Shared attributes scope and click on the "pencil" button next to *"FirmwareVersion"* attribute.
+Now, create a shared attribute on the ThingsBoard server. Open Devices -> click by your device -> Attributes tab -> Shared attributes scope and click on the “plus” button for add the attribute.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/rest-update-attribute-1.png)
 {: refdef}
 
-Change firmware version value from "1.1" to "1.2". Then click "Update" button.
+Enter an attribute name. In our case, this is **"FirmwareVersion"**. Value type: **Double**, value: **1.1**.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/rest-update-attribute-2.png)
 {: refdef}
 
-The firmware version has been updated to "1.2".
+Attribute created.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/rest-update-attribute-3.png)
 {: refdef}
 
-Our test server received new message from the ThingsBoard server about updating attribute "FirmwareVersion" to "1.2".
+Our test server received new message from the ThingsBoard server about creating attribute "FirmwareVersion":"1.1".
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/flask-server-get-1.png)
@@ -445,15 +447,59 @@ Examples for both methods provided below.
     }
   ]
 ```
-
+<br/>
 **Let's look an example.**
 
+In this example, the **serverSideRpc** section would look like this:
+
+```json
+  "serverSideRpc": [
+    {
+      "deviceNameFilter": "SN.*",
+      "methodFilter": "post_attributes",
+      "requestUrlExpression": "http://127.0.0.1:5000/my_devices",
+      "responseTimeout": 1,
+      "HTTPMethod": "POST",
+      "valueExpression": "{\"sensorName\":\"${deviceName}\", \"sensorModel\":\"${params.sensorModel}\", \"certificateNumber\":\"${params.certificateNumber}\", \"temp\":\"${params.temp}\", \"hum\":\"${params.hum}\"}",
+      "timeout": 10.0,
+      "tries": 3,
+      "httpHeaders": {
+        "Content-Type": "application/json"
+      },
+      "security": {
+        "type": "anonymous"
+      }
+    },
+  ]
+
+```
+<br/>
 To send RPC requests to the gateway the one should use **RPC Debug Terminal** from **Control widgets** bundle.
 
 Create a dashboard to use RPC API in ThingsBoard IoT Gateway as described <a href="https://thingsboard.io/docs/iot-gateway/guides/how-to-use-gateway-rpc-methods/">in this guide</a>.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/rest-service-rpc-methods-1.png)
+{: refdef}
+<br/>
+Submit an RPC request to update telemetry and attributes:
+```bash
+post_attributes {"sensorModel": "T3000", "certificateNumber": "11112233445", "hum": 12, "temp": 23, "sensorName": "SN-001"}
+```
+{: .copy-code}
+
+<br/>
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/rest-service-rpc-methods-2.png)
+{: refdef}
+<br/>
+As you can see, the attributes and telemetry have been updated.
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/rest-service-rpc-methods-3.png)
+{: refdef}
+<br/>
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/rest-service-rpc-methods-4.png)
 {: refdef}
 
 

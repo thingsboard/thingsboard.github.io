@@ -40,9 +40,7 @@ Mapping subsection looks like:
       ],
       "security":
       {
-        "type": "basic",
-        "username": "user",
-        "password": "password"
+        "type": "anonymous"
       },
       "converter": {
         "type": "json",
@@ -56,8 +54,8 @@ Mapping subsection looks like:
           },
           {
             "type": "string",
-            "key": "${sensorModel}",
-            "value": "on"
+            "key": "certificateNumber",
+            "value": "${certificateNumber}"
           }
         ],
         "timeseries": [
