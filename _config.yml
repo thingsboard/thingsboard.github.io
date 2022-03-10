@@ -75,11 +75,11 @@ collections:
 
 release:
   branch: release-3.3
-  ver: 3.3.3
-  ce_ver: 3.3.3
-  ce_tag: v3.3.3
-  ce_full_ver: 3.3.3
-  pe_ver: 3.3.3pe
-  pe_full_ver: 3.3.3PE
-  edge_ver: 3.3.3
-  edge_full_ver: 3.3.3EDGE
+  ver: 3.3.4
+  ce_ver: 3.3.4
+  ce_tag: v3.3.4
+  ce_full_ver: 3.3.4
+  pe_ver: 3.3.4pe
+  pe_full_ver: 3.3.4PE
+  edge_ver: 3.3.4
+  edge_full_ver: 3.3.4EDGE
