@@ -37,7 +37,7 @@ Minor release with the following improvements and bug fixes:
 
 * Core & Rule Engine:
   * [#5991](https://github.com/thingsboard/thingsboard/issues/5991) Can delete device profile referenced by OTA update package;
-  * [6122](https://github.com/thingsboard/thingsboard/issues/6122) Support null values in TbMsgMetaData;
+  * [#6122](https://github.com/thingsboard/thingsboard/issues/6122) Support null values in TbMsgMetaData;
   * [#6132](https://github.com/thingsboard/thingsboard/issues/6132) Create Alarm rule node - Propagate To Tenant doesn't work;
   * [#6174](https://github.com/thingsboard/thingsboard/pull/6174) Automatic conversion of rule chain metadata for compatibility with 3.3.2;
   * [#5996](https://github.com/thingsboard/thingsboard/issues/5996)  Problems with LwM2M device profile, created during bulk import;
