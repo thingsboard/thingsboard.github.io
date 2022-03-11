@@ -8,7 +8,7 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
-## v3.3.4 (March 10, 2022)
+## v3.3.4 (March 11, 2022)
 
 Minor release with the following improvements and bug fixes:
 

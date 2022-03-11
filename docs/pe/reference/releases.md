@@ -8,7 +8,7 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
-## v3.3.4 (March 10, 2022)
+## v3.3.4 (March 11, 2022)
 
 Everything from [TB CE v3.3.4](https://github.com/thingsboard/thingsboard/releases/tag/v3.3.4) with the following improvements and bug fixes.
 
