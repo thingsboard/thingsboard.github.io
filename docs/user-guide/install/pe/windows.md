@@ -28,12 +28,13 @@ To run ThingsBoard and Cassandra on a single machine you will need at least 8Gb 
 
 ### Step 2. ThingsBoard service installation
 
-Download and run the installation package.
+Download and extract the package.
 
 ```bash
-https://dist.thingsboard.io/thingsboard-windows-setup-{{ site.release.pe_ver }}.exe
+https://dist.thingsboard.io/thingsboard-windows-{{ site.release.pe_ver }}.zip
 ```
 {: .copy-code}
+
 
 **Note:** We assume you have installed ThingsBoard to default location: *C:\Program Files (x86)\thingsboard*  
 
