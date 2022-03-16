@@ -62,8 +62,8 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
           },
           {
             "type": "string",
-            "key": "${sensorModel}",
-            "value": "on"
+            "key": "certificateNumber",
+            "value": "${certificateNumber}"
           }
         ],
         "timeseries": [
@@ -235,7 +235,7 @@ Let's assume we would like to process following data from Thermometer devices:
     <tr>
       <td>POST</td>
       <td>/my_devices</td>
-      <td>{"sensorName": "Device 1", "sensorType": "Thermometer", "sensorModel": "T1000", "temp":  32, "hum": 67}</td>
+      <td>{"sensorName": "SN-001", "sensorType": "Thermometer", "sensorModel": "T1000", "certificateNumber": "125sda47gsh", "temp":  32, "hum": 67}</td>
       </tr>
   </tbody>
 </table>
@@ -279,7 +279,7 @@ ThingsBoard allows to provision device attributes and fetch some of them from th
 You can treat this as a remote configuration for devices. Your devices are able to request shared attributes from ThingsBoard.
 See [user guide](/docs/user-guide/attributes/) for more details.
 
-The "**attributeRequests**" configuration allows configuring the format of the corresponding attribute request and response messages. 
+The "**attributeUpdates**" configuration allows configuring the format of the corresponding attribute request and response messages. 
 
 | **Parameter**                 | **Default value**                                     | **Description**                                                                                    |
 |:-|:-|-
@@ -392,11 +392,11 @@ Configuration, provided in this section uses for sending RPC requests from Thing
 |:-|:-|-
 | deviceNameFilter              | **.\***                                                           | Regular expression device name filter, uses to determine, which function to execute.  |
 | methodFilter                  | **echo**                                                          | Regular expression method name filter, uses to determine, which function to execute.  |
-| requestUrlExpression          | **http://127.0.0.1:5001/**                                        | JSON-path expression, uses to create url address to send RPC request.                 |
+| requestUrlExpression          | **http://127.0.0.1:5001/${deviceName}**                                        | JSON-path expression, uses to create url address to send RPC request.                 |
 | responseTimeout               | **1**                                                             | Timeout for request.                                                                  |
 | httpMethod                    | **GET**                                                           | HTTP method for request (**GET**, **POST** etc.).                                     |
 | valueExpression               | **${params}**                                                     | JSON-path expression, uses for creating data for sending.                             |
-| timeout                       | **0.5**                                                           | Timeout for request.                                                                  |
+| timeout                       | **10.0**                                                           | Timeout for request.                                                                  |
 | tries                         | **3**                                                             | Count of tries to send data                                                           |
 | httpHeaders:                  |                                                                   |                                                                                       |
 | CONTENT-TYPE                  | **application/json**                                              | Object contains additional HTTP headers for request.                                  |
@@ -419,11 +419,11 @@ Examples for both methods provided below.
     {
       "deviceNameFilter": ".*",
       "methodFilter": "echo",
-      "requestUrlExpression": "http://127.0.0.1:5001/",
+      "requestUrlExpression": "http://127.0.0.1:5001/${deviceName}",
       "responseTimeout": 1,
       "HTTPMethod": "GET",
       "valueExpression": "${params}",
-      "timeout": 0.5,
+      "timeout": 10.0,
       "tries": 3,
       "httpHeaders": {
         "Content-Type": "application/json"
