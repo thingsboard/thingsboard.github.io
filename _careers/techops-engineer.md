@@ -11,7 +11,7 @@ layout: career
 ##### ThingsBoard, Inc. is a US corporation founded in 2016 with RnD center in Kyiv, Ukraine. We are the main contributor and maintainer of ThingsBoard open-source IoT Platform. We deliver and constantly improve scalable, robust and affordable IoT Platform that dramatically reduces time-to-market for life-changing IoT solutions. We also help companies to deliver great IoT products based on ThingsBoard.
 
 ### Requirements:
-Proven technical background and experience of support/configuration of Linux/Unix or Windows servers;
+Proven technical background and experience of support/configuration of Linux/Unix;
 
 Experience with the DBs;
 
@@ -25,7 +25,11 @@ Strong analytical and problem-solving skills, quick learner;
 
 Good communication skills;
 
-Intermediate or higher level of spoken and written English.
+Intermediate or higher level of spoken and written English;
+
+Strong knowledge of at least one Scripting language (BASH or Python);
+
+Docker, Docker-Compose knowledge.
 
 ### Would be a huge plus:
 Experience with the NoSQL DBs;
@@ -34,7 +38,7 @@ Familiarity with SDLC;
 
 Experience with AWS/Azure/GCP;
 
-Docker, Docker-Compose knowledge.
+Kubernetes knowledge.
 
 ### We offer:
 Working on an open-source IoT platform that has thousands of installations all over the world and 10,000+ stars on GitHub;

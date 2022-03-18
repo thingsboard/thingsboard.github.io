@@ -7,8 +7,10 @@ gcloud container clusters create $TB_CLUSTER_NAME \
 --release-channel stable \
 --region $GCP_REGION \
 --network=$GCP_NETWORK \
+--node-locations $GCP_ZONE1,$GCP_ZONE2,$GCP_ZONE3 \
 --enable-ip-alias \
 --num-nodes=1 \
+--node-labels=role=main \
 --machine-type=e2-standard-4
 ```
 {: .copy-code}

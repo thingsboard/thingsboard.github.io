@@ -3,6 +3,7 @@
 * [Fork this repository](https://help.github.com/articles/fork-a-repo/)
 * [Deploy the site locally](#deployment-of-the-site-locally)
 * Add your changes
+* [Generate image preview](#image-preview-generator)
 * [Create Pull Request](https://help.github.com/articles/creating-a-pull-request/)
 
 ## Deployment of the site locally
@@ -44,3 +45,30 @@ or execute the below script from the project root directory:
 
 Your copy of the site will then be viewable at: [http://localhost:4000](http://localhost:4000)
 (or wherever Jekyll tells you).
+
+## Image preview generator
+
+For new *.png images preview is required along with original images.
+
+To create a previews use the script
+````bash
+#run once
+#install mogrify utility to perform resize 
+sudo apt install graphicsmagick-imagemagick-compat
+````
+Usage:
+```bash
+./generate-previews.sh path file_mask*.png
+```
+Example:
+```bash
+./generate-previews.sh images/solution-templates *.png
+```
+
+## Linkchecker
+
+Use the following command to check the broken links.
+
+```bash
+docker run -it --rm --network=host linkchecker/linkchecker --check-extern http://0.0.0.0:4000/
+```

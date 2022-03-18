@@ -305,7 +305,7 @@ Examples for both methods provided below.
       "methodFilter": "no-reply",
       "requestUrlExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
       "httpMethod": "POST",
-      "valueExpression": "${params}",
+      "valueExpression": "${params.hum}",
       "httpHeaders": {
         "Content-Type": "application/json"
       }

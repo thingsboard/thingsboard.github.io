@@ -172,6 +172,10 @@ details[open]
     background-color: unset
     box-shadow: unset
 
+    .support-ukraine
+      p
+        color: #fff
+
     .logo, .burger
       filter: invert(100%) sepia(68%) saturate(0%) hue-rotate(350deg) brightness(113%) contrast(101%)
 
@@ -510,6 +514,16 @@ header
         &:hover
           color: #2A7DEC
 
+  .support-ukraine
+    position: relative
+    display: block
+    height: 80px
+    padding-right: 20px
+    img
+      height: 32px
+    p
+      color: #000
+      font-size: 12px
   .logo
     position: relative
     float: left
@@ -719,6 +733,10 @@ ul
       transition-duration: 0.3s
       background-color: white
       box-shadow: 0 0 20px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .1)
+
+      .support-ukraine
+        p
+          color: #000
 
       .logo, .burger
         filter: unset
@@ -1479,6 +1497,15 @@ section
     content: "\f059"
     position: absolute
     transform: translate(15%, -100%)
+
+td.item.item-pe, p.item.item-pe
+  &::after
+    content: "PE"
+    font-size: 12px
+    font-weight: bold
+    color: $blue
+    transform: translate(5px, -10px)
+    display: inline-block
 
 .pi-accordion
   .container
@@ -2423,6 +2450,10 @@ $header-clearance: 210px
       transition-duration: 0.3s
       background-color: white
       box-shadow: 0 0 20px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .1)
+
+      .support-ukraine
+        p
+          color: #000
 
       .logo, .burger
         filter: unset

@@ -73,9 +73,9 @@ docker stop tb-gateway
 ```
 {: .copy-code}
 
-Open the directory with configuration files: 
+Open the directory with configuration files:
 
-`%HomePath%\tb-gateway\config`
+`%HOMEPATH%\tb-gateway\config`
 
 
 **Configure gateway to work with your instance of ThingsBoard, using [this guide](/docs/iot-gateway/configuration/):**
@@ -96,5 +96,5 @@ In order to update to the latest image, execute the following commands:
 $ docker pull thingsboard/tb-gateway
 $ docker stop tb-gateway
 $ docker rm tb-gateway
-$ docker run -it -v $HOME/tb-gateway/config:/etc/thingsboard-gateway/config -v $HOME/tb-gateway/extensions:/var/lib/thingsboard_gateway/extensions -v $HOME/tb-gateway/logs:/var/log/thingsboard-gateway --name tb-gateway --restart always thingsboard/tb-gateway
+$ docker run -it -v %HOMEPATH%\tb-gateway\config:/thingsboard-gateway/config -v %HOMEPATH%\tb-gateway\extensions:/var/lib/thingsboard_gateway/extensions -v %HOMEPATH%\tb-gateway\logs:/var/log/thingsboard-gateway --name tb-gateway --restart always thingsboard/tb-gateway
 ```

@@ -33,7 +33,7 @@ Please update next lines of docker compose:
 <br>**ports:**
 <br> - "**18080**:8080"
 <br> - "**11883**:1883"
-<br> - "**15683**:5683/udp" 
+<br> - "**15683-15688**:5683-5688/udp" 
 
 Please make sure ports above are not used by any other application.
 

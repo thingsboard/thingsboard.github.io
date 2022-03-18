@@ -10,6 +10,7 @@ gcloud container clusters create $TB_CLUSTER_NAME \
 --network=$GCP_NETWORK \
 --enable-ip-alias \
 --num-nodes=1 \
+--node-labels=role=main \
 --machine-type=e2-standard-4
 ```
 {: .copy-code}

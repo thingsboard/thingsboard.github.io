@@ -37,6 +37,9 @@ toc:
       path: /docs/paas/user-guide/alarms/
     - title: Remote commands to devices
       path: /docs/paas/user-guide/rpc/
+    - title: OTA updates
+      path: /docs/paas/user-guide/ota-updates/
+      new: true
 - title: Dashboards
   section:
     - title: Overview
@@ -71,6 +74,8 @@ toc:
           path: /docs/paas/user-guide/rule-engine-2-0/external-nodes/
         - title: Analytics Nodes
           path: /docs/paas/user-guide/rule-engine-2-0/analytics-nodes/
+        - title: Flow Nodes
+          path: /docs/paas/user-guide/rule-engine-2-0/flow-nodes/
 - title: White-labeling
   section:
     - title: Overview
@@ -105,6 +110,8 @@ toc:
       path: /docs/paas/user-guide/integrations/tti/
     - title: LORIOT
       path: /docs/paas/user-guide/integrations/loriot/
+    - title: ChirpStack
+      path: /docs/paas/user-guide/integrations/chirpstack/
     - title: AWS IoT
       path: /docs/paas/user-guide/integrations/aws-iot/
     - title: AWS Kinesis
@@ -145,6 +152,8 @@ toc:
       path: /docs/paas/user-guide/entity-views/
     - title: API Limits
       path: /docs/paas/user-guide/api-limits/
+    - title: PSM and eDRX Support
+      path: /docs/user-guide/psm/
     - title: Bulk Provisioning
       path: /docs/paas/user-guide/bulk-provisioning/
     - title: Entity Groups

@@ -11,6 +11,28 @@ description: ThingsBoard IoT platform upgrade instructions
 
 <ul id="markdown-toc">
     <li>
+      <a href="#upgrading-to-334" id="markdown-toc-upgrading-to-334">Upgrading to 3.3.4</a>
+      <ul>
+          <li>
+              <a href="#ubuntucentos-334" id="markdown-toc-ubuntucentos-334">Ubuntu/CentOS</a>
+          </li>
+          <li>
+              <a href="#windows-334" id="markdown-toc-windows-334">Windows</a>
+          </li>
+      </ul>
+    </li>
+    <li>
+      <a href="#upgrading-to-333" id="markdown-toc-upgrading-to-333">Upgrading to 3.3.3</a>
+      <ul>
+          <li>
+              <a href="#ubuntucentos-333" id="markdown-toc-ubuntucentos-333">Ubuntu/CentOS</a>
+          </li>
+          <li>
+              <a href="#windows-333" id="markdown-toc-windows-333">Windows</a>
+          </li>
+      </ul>
+    </li>
+    <li>
       <a href="#upgrading-to-332" id="markdown-toc-upgrading-to-332">Upgrading to 3.3.2</a>
       <ul>
           <li>
@@ -246,6 +268,158 @@ description: ThingsBoard IoT platform upgrade instructions
     </li>       
 </ul>
 
+## Upgrading to 3.3.4 {#upgrading-to-334}
+
+### Ubuntu/CentOS {#ubuntucentos-334}
+
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.3. In order to upgrade to 3.3.4 you need to [**upgrade to 3.3.3 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-333).
+
+#### ThingsBoard package download
+
+{% capture tabspec %}thingsboard-download-3-3-4
+thingsboard-download-3-3-4-ubuntu,Ubuntu,shell,resources/3.3.4/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/3.3.4/thingsboard-ubuntu-download.sh
+thingsboard-download-3-3-4-centos,CentOS,shell,resources/3.3.4/thingsboard-centos-download.sh,/docs/user-guide/install/resources/3.3.4/thingsboard-centos-download.sh{% endcapture %}
+{% include tabs.html %}
+
+#### ThingsBoard service upgrade
+
+{% capture tabspec %}thingsboard-installation-3-3-4
+thingsboard-installation-3-3-4-ubuntu,Ubuntu,shell,resources/3.3.4/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/3.3.4/thingsboard-ubuntu-installation.sh
+thingsboard-installation-3-3-4-centos,CentOS,shell,resources/3.3.4/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/3.3.4/thingsboard-centos-installation.sh{% endcapture %}
+{% include tabs.html %}
+
+**NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+
+Execute regular upgrade script:
+
+```bash
+# Execute regular upgrade script
+$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.3
+```
+
+#### Start the service
+
+```bash
+$ sudo service thingsboard start
+```
+
+### Windows {#windows-334}
+
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.3. In order to upgrade to 3.3.4 you need to [**upgrade to 3.3.3 first**](/docs/user-guide/install/upgrade-instructions/#windows-333).
+
+#### ThingsBoard package download
+
+Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.3.4.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.3.4/thingsboard-windows-3.3.4.zip).
+
+#### ThingsBoard service upgrade
+
+* Stop ThingsBoard service if it is running.
+
+```text
+net stop thingsboard
+```
+
+* Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
+
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
+
+* Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
+
+**NOTE** Scripts listed above should be executed using Administrator Role.
+
+Execute regular upgrade script:
+
+```text
+C:\thingsboard>upgrade.bat --fromVersion=3.3.3
+```
+
+#### Start the service
+
+```text
+net start thingsboard
+```
+
+
+## Upgrading to 3.3.3 {#upgrading-to-333}
+
+### Ubuntu/CentOS {#ubuntucentos-333}
+
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.2. In order to upgrade to 3.3.3 you need to [**upgrade to 3.3.2 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-332).
+
+{% include templates/install/tb-333-update.md %}
+
+#### ThingsBoard package download
+
+{% capture tabspec %}thingsboard-download-3-3-3
+thingsboard-download-3-3-3-ubuntu,Ubuntu,shell,resources/3.3.3/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/3.3.3/thingsboard-ubuntu-download.sh
+thingsboard-download-3-3-3-centos,CentOS,shell,resources/3.3.3/thingsboard-centos-download.sh,/docs/user-guide/install/resources/3.3.3/thingsboard-centos-download.sh{% endcapture %}
+{% include tabs.html %}
+
+#### ThingsBoard service upgrade
+
+{% capture tabspec %}thingsboard-installation-3-3-3
+thingsboard-installation-3-3-3-ubuntu,Ubuntu,shell,resources/3.3.3/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/3.3.3/thingsboard-ubuntu-installation.sh
+thingsboard-installation-3-3-3-centos,CentOS,shell,resources/3.3.3/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/3.3.3/thingsboard-centos-installation.sh{% endcapture %}
+{% include tabs.html %}
+
+**NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+
+Execute regular upgrade script:
+
+```bash
+# Execute regular upgrade script
+$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.2
+```
+
+#### Start the service
+
+```bash
+$ sudo service thingsboard start
+```
+
+### Windows {#windows-333}
+
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.2. In order to upgrade to 3.3.3 you need to [**upgrade to 3.3.2 first**](/docs/user-guide/install/upgrade-instructions/#windows-332).
+
+{% include templates/install/tb-333-update.md %}
+
+#### ThingsBoard package download
+
+Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.3.3.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.3.3/thingsboard-windows-3.3.3.zip).
+
+#### ThingsBoard service upgrade
+
+* Stop ThingsBoard service if it is running.
+
+```text
+net stop thingsboard
+```
+
+* Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
+
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
+
+* Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
+
+**NOTE** Scripts listed above should be executed using Administrator Role.
+
+Execute regular upgrade script:
+
+```text
+C:\thingsboard>upgrade.bat --fromVersion=3.3.2
+```
+
+#### Start the service
+
+```text
+net start thingsboard
+```
+
+
 ## Upgrading to 3.3.2 {#upgrading-to-332}
 
 ### Ubuntu/CentOS {#ubuntucentos-332}
@@ -284,6 +458,8 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.1
 ```
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```bash
 $ sudo service thingsboard start
@@ -331,6 +507,8 @@ C:\thingsboard>upgrade.bat --fromVersion=3.3.1
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
@@ -359,24 +537,29 @@ thingsboard-installation-3-3-1-centos,CentOS,shell,resources/3.3.1/thingsboard-c
 Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```
 
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.0
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.0
 ```
+{: .copy-code}
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-331}
 
@@ -393,6 +576,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.3.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 
@@ -402,10 +586,10 @@ net stop thingsboard
 * Please make sure that you set **database.ts.type** parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
@@ -417,12 +601,18 @@ Execute regular upgrade script:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.3.0
 ```
+{: .copy-code}
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.3 {#upgrading-to-33}
 
@@ -448,10 +638,10 @@ thingsboard-installation-3-3-centos,CentOS,shell,resources/3.3/thingsboard-cento
 Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```
 
 **NOTE**: If you were using MQTT over SSL instead of default MQTT, please make sure you have a proper configuration (**thingsboard.conf** and/or **thingsboard.yml**) of ports/addresses:
@@ -466,6 +656,7 @@ export MQTT_SSL_BIND_PORT=8883
 export MQTT_BIND_ADDRESS=0.0.0.0
 export MQTT_BIND_PORT=1883
 ```
+{: .copy-code}
 
 **/etc/thingsboard/conf/thingsboard.yml**
 
@@ -495,16 +686,20 @@ transport:
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.2
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.2
 ```
+{: .copy-code}
 
 #### Start the service
 
-```bash
-$ sudo service thingsboard start
-```
+{% include templates/redis-post-upgrade-notice.md %}
 
+{% include templates/redis-post-upgrade-notice.md %}
+
+```bash
+sudo service thingsboard start
+```
+{: .copy-code}
 ### Windows {#windows-33}
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.2.2. In order to upgrade to 3.3 you need to [**upgrade to 3.2.2 first**](/docs/user-guide/install/upgrade-instructions/#windows-322).
@@ -520,6 +715,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.3.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 
@@ -529,10 +725,10 @@ net stop thingsboard
 * Please make sure that you set **database.ts.type** parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```
 
 * If you were using MQTT over SSL instead of default MQTT, please make sure you have a proper configuration (**thingsboard.yml**) of ports/addresses:
@@ -569,12 +765,18 @@ Execute regular upgrade script:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.2.2
 ```
+{: .copy-code}
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.2.2 {#upgrading-to-322}
 
@@ -625,24 +827,29 @@ thingsboard-installation-3-2-2-centos,CentOS,shell,resources/3.2.2/thingsboard-c
 Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```
 
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.1
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.1
 ```
+{: .copy-code}
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-322}
 
@@ -669,6 +876,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.2.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 
@@ -678,10 +886,10 @@ net stop thingsboard
 * Please make sure that you set **database.ts.type** parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```       
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
@@ -693,8 +901,12 @@ Execute regular upgrade script:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.2.1
 ```
-
+{: .copy-code}
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
@@ -733,15 +945,20 @@ database:
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.0
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.2.0
 ```
+{: .copy-code}
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-321}
 
@@ -758,6 +975,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.2.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 
@@ -767,10 +985,10 @@ net stop thingsboard
 * Please make sure that you set **database.ts.type** parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```       
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
@@ -782,12 +1000,18 @@ Execute regular upgrade script:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.2.0
 ```
+{: .copy-code}
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.2 {#upgrading-to-32} 
 
@@ -813,24 +1037,29 @@ thingsboard-installation-3-2-centos,CentOS,shell,resources/3.2/thingsboard-cento
 Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```
 
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.1.1
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.1.1
 ```
+{: .copy-code}
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-32}
 
@@ -847,6 +1076,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.2.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 
@@ -871,12 +1101,18 @@ Execute regular upgrade script:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.1.1
 ```
+{: .copy-code}
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.1.1 {#upgrading-to-311} 
 
@@ -911,15 +1147,20 @@ database:
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.1.0
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.1.0
 ```
+{: .copy-code}
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-311}
 
@@ -936,6 +1177,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.1.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 
@@ -945,10 +1187,10 @@ net stop thingsboard
 * Please make sure that you set **database.ts.type** parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
   
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```       
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
@@ -960,8 +1202,13 @@ Execute regular upgrade script:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.1.0
 ```
+{: .copy-code}
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
@@ -991,40 +1238,46 @@ thingsboard-installation-3-1-centos,CentOS,shell,resources/3.1/thingsboard-cento
 Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```
 
 **NOTE**: Cassandra database does not support [advanced filters](/docs/user-guide/advanced-filters/). If you were using **Cassandra** database for timeseries data please make sure that **database.ts_latest.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) is "sql":
 
 ```
-database:
-...
-  ts_latest:
-    type: "${DATABASE_TS_LATEST_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  database:
+  ...
+    ts_latest:
+      type: "${DATABASE_TS_LATEST_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```
 
 and execute the following migration script:
 
 ```bash
 # Execute script to migrate latest timeseries data from Cassandra to PostgreSQL
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.0.1-cassandra
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.0.1-cassandra
 ```
+{: .copy-code}
 
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.0.1
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.0.1
 ```
+{: .copy-code}
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-31}
 
@@ -1041,6 +1294,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.1.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 
@@ -1050,10 +1304,10 @@ net stop thingsboard
 * Please make sure that you set **database.ts.type** parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
   
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```       
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
@@ -1065,18 +1319,25 @@ database:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.0.1-cassandra
 ```
+{: .copy-code}
 
 Execute regular upgrade script:
 
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.0.1
 ```
+{: .copy-code}
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.0.1 {#upgrading-to-301} 
 
@@ -1117,31 +1378,35 @@ thingsboard-installation-3-0-1-centos,CentOS,shell,resources/3.0.1/thingsboard-c
 Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```
 
 **NOTE**: If you were using **Cassandra** database for entities data execute the following migration script: 
 
 ```bash
 # Execute migration script from Cassandra to PostgreSQL
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0-cassandra
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0-cassandra
 ```
+{: .copy-code}
 
 Otherwise execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0
 ```
+{: .copy-code}
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-301}
 
@@ -1170,6 +1435,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.0.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 
@@ -1179,10 +1445,10 @@ net stop thingsboard
 * Please make sure that you set **database.ts.type** parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
   
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```       
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
@@ -1194,19 +1460,23 @@ database:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.5.0-cassandra
 ```
+{: .copy-code}
 
 Otherwise execute regular upgrade script:
 
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.5.0
 ```
+{: .copy-code}
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
 ```
-
+{: .copy-code}
 
 ## Upgrading to 3.0 {#upgrading-to-30}
 
@@ -1246,31 +1516,35 @@ thingsboard-installation-3-0-centos,CentOS,shell,resources/3.0.0/thingsboard-cen
 Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```
 
 **NOTE**: If you were using **Cassandra** database for entities data execute the following migration script: 
 
 ```bash
 # Execute migration script from Cassandra to PostgreSQL
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0-cassandra
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0-cassandra
 ```
+{: .copy-code}
 
 Otherwise execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.5.0
 ```
+{: .copy-code}
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-30}
 
@@ -1297,6 +1571,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.0.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 
@@ -1306,10 +1581,10 @@ net stop thingsboard
 * Please make sure that you set **database.ts.type** parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
   
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
 ```       
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
@@ -1321,18 +1596,23 @@ database:
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.5.0-cassandra
 ```
+{: .copy-code}
 
 Otherwise execute regular upgrade script:
 
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.5.0
 ```
+{: .copy-code}
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 2.5.6 {#upgrading-to-256}
 
@@ -1358,9 +1638,12 @@ thingsboard-installation-2-5-6-centos,CentOS,shell,resources/2.5.6/thingsboard-c
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-256}
 
@@ -1377,6 +1660,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.5.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 
@@ -1386,9 +1670,12 @@ net stop thingsboard
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 2.5.5 {#upgrading-to-255}
 
@@ -1414,9 +1701,12 @@ thingsboard-installation-2-5-5-centos,CentOS,shell,resources/2.5.5/thingsboard-c
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-255}
 
@@ -1433,18 +1723,21 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.5.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-
 * Remove ThingsBoard install dir.
 * Unzip installation archive to ThingsBoard install dir.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 2.5.4 {#upgrading-to-254}
 
@@ -1470,9 +1763,12 @@ thingsboard-installation-2-5-4-centos,CentOS,shell,resources/2.5.4/thingsboard-c
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-254}
 
@@ -1489,6 +1785,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.5.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 
@@ -1498,9 +1795,12 @@ net stop thingsboard
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 2.5.3 {#upgrading-to-253}
 
@@ -1526,9 +1826,12 @@ thingsboard-installation-2-5-3-centos,CentOS,shell,resources/2.5.3/thingsboard-c
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-253}
 
@@ -1545,6 +1848,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.5.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 
@@ -1554,9 +1858,12 @@ net stop thingsboard
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 2.5.2 {#upgrading-to-252}
 
@@ -1589,9 +1896,12 @@ Please refer to the guides below that will describe how to upgrade your PostgreS
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-252}
 
@@ -1608,6 +1918,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.5.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 
@@ -1623,12 +1934,16 @@ net stop thingsboard
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.4.3
 ```
+{: .copy-code}
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 2.5.1 {#upgrading-to-251}
 
@@ -1659,17 +1974,20 @@ Please refer to the guides below that will describe how to upgrade your PostgreS
 
 **NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
 
-
+Finally, execute upgrade script and specify your previous ThingsBoard version:
 ```bash
-# Finally, execute upgrade script and specify your previous ThingsBoard version. 
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.3
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.3
 ```
+{: .copy-code}
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-251}
 
@@ -1684,9 +2002,9 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.5.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-
 * Remove ThingsBoard install dir.
 * Unzip installation archive to ThingsBoard install dir.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
@@ -1699,13 +2017,16 @@ net stop thingsboard
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.4.3
 ```
+{: .copy-code}
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
 ```
-
+{: .copy-code}
 
 ## Upgrading to 2.5
 
@@ -1738,48 +2059,52 @@ Please refer to the guides below that will describe how to upgrade your PostgreS
 Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
 
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  entities:
-    type: "${DATABASE_ENTITIES_TYPE:sql}" # cassandra OR sql
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
-
-# note: timescale works only with postgreSQL database for DATABASE_ENTITIES_TYPE.
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    entities:
+      type: "${DATABASE_ENTITIES_TYPE:sql}" # cassandra OR sql
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  
+  # note: timescale works only with postgreSQL database for DATABASE_ENTITIES_TYPE.
 ```
 
 **NOTE:** If you are using **PostgreSql(Sql)** for time-series data storage before executing the upgrade script, go to the PostgreSQL terminal(psql) and follow the instructions below: 
 
 ```bash
-# Connect to thingsboard database:
-\c thingsboard
-
-# Execute the next commands:
-
-# Update ts_kv table constraints:
-ALTER TABLE ts_kv DROP CONSTRAINT IF EXISTS ts_kv_unq_key;
-ALTER TABLE ts_kv DROP CONSTRAINT IF EXISTS ts_kv_pkey;
-ALTER TABLE ts_kv ADD CONSTRAINT ts_kv_pkey PRIMARY KEY (entity_type, entity_id, key, ts);
-
-# Update ts_kv_latest table constraints:
-ALTER TABLE ts_kv_latest DROP CONSTRAINT IF EXISTS ts_kv_latest_unq_key;
-ALTER TABLE ts_kv_latest DROP CONSTRAINT IF EXISTS ts_kv_latest_pkey;
-ALTER TABLE ts_kv_latest ADD CONSTRAINT ts_kv_latest_pkey PRIMARY KEY (entity_type, entity_id, key);
-
-# exit psql terminal 
-\q
+  # Connect to thingsboard database:
+  \c thingsboard
+  
+  # Execute the next commands:
+  
+  # Update ts_kv table constraints:
+  ALTER TABLE ts_kv DROP CONSTRAINT IF EXISTS ts_kv_unq_key;
+  ALTER TABLE ts_kv DROP CONSTRAINT IF EXISTS ts_kv_pkey;
+  ALTER TABLE ts_kv ADD CONSTRAINT ts_kv_pkey PRIMARY KEY (entity_type, entity_id, key, ts);
+  
+  # Update ts_kv_latest table constraints:
+  ALTER TABLE ts_kv_latest DROP CONSTRAINT IF EXISTS ts_kv_latest_unq_key;
+  ALTER TABLE ts_kv_latest DROP CONSTRAINT IF EXISTS ts_kv_latest_pkey;
+  ALTER TABLE ts_kv_latest ADD CONSTRAINT ts_kv_latest_pkey PRIMARY KEY (entity_type, entity_id, key);
+  
+  # exit psql terminal 
+  \q
 ```
 
+Finally, execute upgrade script:
 ```bash
-# Finally, execute upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.3
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.3
 ```
+{: .copy-code}
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-19}
 
@@ -1794,9 +2119,9 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.5.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-
 * Remove ThingsBoard install dir.
 * Unzip installation archive to ThingsBoard install dir.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
@@ -1804,36 +2129,36 @@ net stop thingsboard
 * Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
   
 ```
-database:
-  ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
-  entities:
-    type: "${DATABASE_ENTITIES_TYPE:sql}" # cassandra OR sql
-  ts:
-    type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
-
-# note: timescale works only with postgreSQL database for DATABASE_ENTITIES_TYPE.
+  database:
+    ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
+    entities:
+      type: "${DATABASE_ENTITIES_TYPE:sql}" # cassandra OR sql
+    ts:
+      type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
+  
+  # note: timescale works only with postgreSQL database for DATABASE_ENTITIES_TYPE.
 ```       
 
 **NOTE:** If you are using **PostgreSql(Sql)** for time-series data storage before executing the upgrade script, you need to access the psql terminal. Once you will be logged to the psql terminal, please follow the instructions below:
 
 ```bash
-# Connect to thingsboard database:
-\c thingsboard
-
-# Execute the next commands:
-
-# Update ts_kv table constraints:
-ALTER TABLE ts_kv DROP CONSTRAINT IF EXISTS ts_kv_unq_key;
-ALTER TABLE ts_kv DROP CONSTRAINT IF EXISTS ts_kv_pkey;
-ALTER TABLE ts_kv ADD CONSTRAINT ts_kv_pkey PRIMARY KEY (entity_type, entity_id, key, ts);
-
-# Update ts_kv_latest table constraints:
-ALTER TABLE ts_kv_latest DROP CONSTRAINT IF EXISTS ts_kv_latest_unq_key;
-ALTER TABLE ts_kv_latest DROP CONSTRAINT IF EXISTS ts_kv_latest_pkey;
-ALTER TABLE ts_kv_latest ADD CONSTRAINT ts_kv_latest_pkey PRIMARY KEY (entity_type, entity_id, key);
-
-# exit psql terminal 
-\q
+  # Connect to thingsboard database:
+  \c thingsboard
+  
+  # Execute the next commands:
+  
+  # Update ts_kv table constraints:
+  ALTER TABLE ts_kv DROP CONSTRAINT IF EXISTS ts_kv_unq_key;
+  ALTER TABLE ts_kv DROP CONSTRAINT IF EXISTS ts_kv_pkey;
+  ALTER TABLE ts_kv ADD CONSTRAINT ts_kv_pkey PRIMARY KEY (entity_type, entity_id, key, ts);
+  
+  # Update ts_kv_latest table constraints:
+  ALTER TABLE ts_kv_latest DROP CONSTRAINT IF EXISTS ts_kv_latest_unq_key;
+  ALTER TABLE ts_kv_latest DROP CONSTRAINT IF EXISTS ts_kv_latest_pkey;
+  ALTER TABLE ts_kv_latest ADD CONSTRAINT ts_kv_latest_pkey PRIMARY KEY (entity_type, entity_id, key);
+  
+  # exit psql terminal 
+  \q
 ```
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
@@ -1843,12 +2168,16 @@ ALTER TABLE ts_kv_latest ADD CONSTRAINT ts_kv_latest_pkey PRIMARY KEY (entity_ty
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.4.3
 ```
+{: .copy-code}
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 2.4.3
 
@@ -1881,16 +2210,20 @@ Please make sure that you set **database.entities.type** and **database.ts.type*
         type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```
 
+Execute upgrade script:
 ```bash
-# Execute upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.2
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.2
 ```
+{: .copy-code}
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-18}
 
@@ -1905,6 +2238,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.4.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 
@@ -1913,13 +2247,13 @@ net stop thingsboard
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
   
-  ```
+```
   database:
     entities:
       type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
     ts:
       type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
-  ```       
+```       
 
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -1928,12 +2262,16 @@ net stop thingsboard
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.4.2
 ```
+{: .copy-code}
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 2.4.2.1
 
@@ -1966,16 +2304,20 @@ Please make sure that you set **database.entities.type** and **database.ts.type*
         type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```
 
+Execute upgrade script:
 ```bash
-# Execute upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.1 
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.1 
 ```
+{: .copy-code}
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-17}
 
@@ -1990,21 +2332,21 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.4.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-
 * Remove ThingsBoard install dir.
 * Unzip installation archive to ThingsBoard install dir.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
   
-  ```
+```
   database:
     entities:
       type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
     ts:
       type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
-  ```       
+```       
 
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -2013,13 +2355,16 @@ net stop thingsboard
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.4.1
 ```
+{: .copy-code}
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
 ```
-
+{: .copy-code}
 
 ## Upgrading to 2.4.1
 
@@ -2052,16 +2397,20 @@ Please make sure that you set **database.entities.type** and **database.ts.type*
         type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```
 
+Execute upgrade script:
 ```bash
-# Execute upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.0 
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.0 
 ```
+{: .copy-code}
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-16}
 
@@ -2076,21 +2425,21 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.4.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-
 * Remove ThingsBoard install dir.
 * Unzip installation archive to ThingsBoard install dir.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
   
-  ```
+```
   database:
     entities:
       type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
     ts:
       type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
-  ```       
+```       
 
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -2099,12 +2448,16 @@ net stop thingsboard
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.4.0
 ```
+{: .copy-code}
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 2.4.0 
 
@@ -2137,16 +2490,20 @@ Please make sure that you set **database.entities.type** and **database.ts.type*
         type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```
 
+Execute upgrade script:
 ```bash
-# Execute upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.3.1 
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.3.1 
 ```
+{: .copy-code}
 
 #### Start the service
 
+{% include templates/redis-post-upgrade-notice.md %}
+
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-15}
 
@@ -2161,6 +2518,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.4.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
 
@@ -2169,13 +2527,13 @@ net stop thingsboard
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
   
-  ```
+```
   database:
     entities:
       type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
     ts:
       type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
-  ```       
+```       
 
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -2184,13 +2542,16 @@ net stop thingsboard
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=2.3.1
 ```
+{: .copy-code}
 
 #### Start the service
+
+{% include templates/redis-post-upgrade-notice.md %}
 
 ```text
 net start thingsboard
 ```
-
+{: .copy-code}
 
 
 ## Next steps

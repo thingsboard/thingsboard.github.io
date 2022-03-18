@@ -64,17 +64,33 @@ Now you are able to specify custom MQTT topics filters for time-series data and 
 Custom MQTT topic filters support single '+' and multi-level '#' wildcards and allow you to connect to almost any MQTT based device that sends a payload using JSON or Protobuf.
 For example, using the configuration from the image below will allow you to publish time-series data with the following command:
 
+{% if docsPrefix == null %}
 ```bash
 mosquitto_pub -h 'demo.thingsboard.io' -i 'c1' -u 't1' -P 'secret' -t '/telemetry' -m '{"humidity": 10.3}'
 ```
 {: .copy-code}
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+```bash
+mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t '/telemetry' -m '{"humidity": 10.3}'
+```
+{: .copy-code}
+{% endif %}
 
 and attribute updates with the following command:
 
+{% if docsPrefix == null %}
 ```bash
 mosquitto_pub -h 'demo.thingsboard.io' -i 'c1' -u 't1' -P 'secret' -t '/attributes' -m '{"firmwareVersion": "1.3"}'
 ```
 {: .copy-code}
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+```bash
+mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t '/attributes' -m '{"firmwareVersion": "1.3"}'
+```
+{: .copy-code}
+{% endif %}
 
 assuming you have provisioned basic MQTT credentials for your device with the client id 'c1', username 't1' and password 'secret'.
 
@@ -151,14 +167,29 @@ Alarm Rule consists of the following properties:
  * **Clear condition** - defines criteria when the Alarm will be cleared;
  * **Advanced settings** - defines alarm propagation to related assets, customers, tenant, or other entities.    
 
+{% if docsPrefix == null %}
+{% assign YOUR_HOST = "demo.thingsboard.io" %}
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% assign YOUR_HOST = "thingsboard.cloud" %}
+{% endif %}
+
 Let's learn how to use the Alarm Rules with an example. Let's assume we would like to keep track of the temperature inside of the fridge with valuable goods.  
 We also assume that we have already created a device profile called "Temperature Sensors", and provisioned our device with the temperature sensor and with access token - "ACCESS_TOKEN".
-The command listed below upload the temperature readings to demo.thingsboard.io.  
+The command listed below upload the temperature readings to {{YOUR_HOST}}.  
 
+{% if docsPrefix == null %}
 ```bash
 mosquitto_pub -d -h 'demo.thingsboard.io' -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temperature": 5.3}'
 ```
 {: .copy-code}
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+```bash
+mosquitto_pub -d -h 'mqtt.thingsboard.cloud' -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temperature": 5.3}'
+```
+{: .copy-code}
+{% endif %}
 
 #### Example 1. Simple alarm conditions 
  

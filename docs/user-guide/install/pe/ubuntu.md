@@ -154,12 +154,14 @@ cd ..
 rm -rf ~/noto
 ```
 
+
 Install and start Web Report service:
 
 ```bash
 sudo dpkg -i tb-web-report-{{ site.release.pe_ver }}.deb
 sudo service tb-web-report start
 ```
+{: .copy-code}
 
 ### Post-installation steps
 

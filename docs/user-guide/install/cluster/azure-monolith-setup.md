@@ -2,15 +2,15 @@
 layout: docwithnav
 assignees:
 - amykolaichuk
-title: Microservices setup using AKS infrastructure
-description: ThingsBoard IoT platform microservices setup with Kubernetes in Azure AKS 
+title: Monolith setup using AKS infrastructure
+description: ThingsBoard IoT platform Monolith setup with Kubernetes in Azure AKS 
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to setup ThingsBoard in microservices mode in Azure AKS.
+This guide will help you to setup ThingsBoard in monolith mode in Azure AKS.
 
 ## Prerequisites
 
@@ -31,15 +31,22 @@ cd thingsboard-ce-k8s/azure/monolith
 
 ## Step 3. Configure and create AKS cluster
 
+{% assign nodeCount = "1" %}
 {% include templates/install/azure/aks-create-cluster.md %}
 
-## Step 4 Update the context of kubectl
+## Step 4. Update the context of kubectl
 
 {% include templates/install/azure/aks-kubectl-update-context.md %}
 
-## Step 5. Create Azure Database for PostgreSQL servers
+## Step 5. Provision Databases
+
+### 5.1. Create Azure Database for PostgreSQL servers
 
 {% include templates/install/azure/aks-create-db.md %}
+
+### 5.2. Cassandra
+
+{% include templates/install/azure/configure-cassandra.md %}
 
 ## Step 6. Installation
 
@@ -56,9 +63,9 @@ Execute the following command to deploy ThingsBoard services:
 
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see `tb-node-0` pod in the `READY` state.
 
-## Step 8 Configure Load Balancers
+## Step 8. Configure Load Balancers
 
-### 8.1 Configure HTTP(S) Load Balancer
+### 8.1. Configure HTTP(S) Load Balancer
 {% include templates/install/azure/aks-http-lb.md %}
 
 ### 8.2. Configure MQTT Load Balancer (Optional)

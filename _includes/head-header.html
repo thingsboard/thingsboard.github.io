@@ -397,12 +397,20 @@
             });
             {% endif %}
 
-            // Rogue line numbers fix (don't show line numbers for 1 row)
             $( document ).ready(function() {
+                // Rogue line numbers fix (don't show line numbers for 1 row)
                 $('.rouge-gutter.gl').each(function() {
                     var lineNumbers = $(this).children('.lineno');
                     if (lineNumbers.text() === '1\n') {
                         $(this).css('display', 'none');
+                    }
+                });
+                $('a#use-cases-link').click(function(e) {
+                    let isMobile = $('button.burger').css('display') === 'block';
+                    if (isMobile) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        listburg('nav-cases');
                     }
                 });
             });
@@ -482,7 +490,12 @@
 <header>
     <div class="logo-burger">
         {% unless docsTag %}
-            <a href="/" class="logo"></a>
+        <a href="/support-ukraine" class="support-ukraine">
+            <p><i class="fa fa-ban" aria-hidden="true"></i>&nbsp;Stop the war</p>
+            <img src="/images/animated-ukraine-flag.gif"/>
+            <p>Support Ukraine</p>
+        </a>
+        <a href="/" class="logo"></a>
         {% endunless %}
         <button onclick="Burger()" class="burger"></button>
         <div id="githubButtonContainer">
@@ -504,7 +517,7 @@
             </li>
             {% endunless %}
             <li class="nav-cases" data-submenu-id="nav-cases">
-                <a onclick="listburg('nav-cases')">Use Cases</a>
+                <a id="use-cases-link" href="/iot-use-cases/" style="cursor: pointer;">Use Cases</a>
             </li>
             <li class="nav-customers" data-submenu-id="nav-customers">
                 <a onclick="listburg('nav-customers')">Customers</a>
@@ -657,34 +670,68 @@
             {% endunless %}
             <div id="nav-cases" class="centered-sub">
                 <ul class="sub-menu cases">
-                    <a href="/smart-metering/">
-                        <img src="/images/case-met-icon.svg">
-                        <div class="sub-text">
-                            <h1>Smart Metering</h1>
-                            <p>Collection, analysis and visualization of data from meters</p>
+                    <div class="sub-groups">
+                        <div class="group">
+                            <a href="/smart-energy/">
+                                <img src="/images/case-eng-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Smart Energy</h1>
+                                    <p>Energy monitoring and efficiency analysis</p>
+                                </div>
+                            </a>
+                            <a href="/smart-farming/">
+                                <img src="/images/case-fam-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Smart Farming</h1>
+                                    <p>Remote soil, products and equipment monitoring</p>
+                                </div>
+                            </a>
+                            <a href="/fleet-tracking/">
+                                <img src="/images/case-trk-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Fleet Tracking</h1>
+                                    <p>Fleet tracking and fleet management</p>
+                                </div>
+                            </a>
+                            <a href="/smart-metering/">
+                                <img src="/images/case-met-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Smart Metering</h1>
+                                    <p>Collection, analysis and visualization of data from meters</p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                    <a href="/smart-energy/">
-                        <img src="/images/case-eng-icon.svg">
-                        <div class="sub-text">
-                            <h1>Smart Energy</h1>
-                            <p>Energy monitoring and efficiency analysis</p>
+                        <div class="group">
+                            <a href="/use-cases/environment-monitoring/">
+                                <img src="/images/case-env-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Environment Monitoring</h1>
+                                    <p>Monitor and analyze indoor and outdoor environments</p>
+                                </div>
+                            </a>
+                            <a href="/use-cases/smart-office/">
+                                <img src="/images/case-off-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Smart Office</h1>
+                                    <p>Increase productivity and optimize resource consumption</p>
+                                </div>
+                            </a>
+                            <a href="/use-cases/water-metering/">
+                                <img src="/images/case-wat-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Water Metering</h1>
+                                    <p>Water consumption analysis and fraud detection</p>
+                                </div>
+                            </a>
+                            <a href="/use-cases/smart-retail/">
+                                <img src="/images/case-ret-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Smart Retail</h1>
+                                    <p>Control quality of food storage, indoor environment and safety</p>
+                                </div>
+                            </a>
                         </div>
-                    </a>
-                    <a href="/smart-farming/">
-                        <img src="/images/case-fam-icon.svg">
-                        <div class="sub-text">
-                            <h1>Smart Farming</h1>
-                            <p>Monitoring of indoor conditions and plant growth characteristics</p>
-                        </div>
-                    </a>
-                    <a href="/fleet-tracking/">
-                        <img src="/images/case-trk-icon.svg">
-                        <div class="sub-text">
-                            <h1>Fleet Tracking</h1>
-                            <p>Fleet tracking and fleet management</p>
-                        </div>
-                    </a>
+                    </div>
                 </ul>
             </div>
             <div id="nav-customers" class="centered-sub">

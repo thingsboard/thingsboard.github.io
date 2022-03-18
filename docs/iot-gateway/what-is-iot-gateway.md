@@ -34,7 +34,7 @@ ThingsBoard IoT Gateway provides following features:
 
 #### Architecture
 
-The IoT Gateway is a software component that is designed to run on a Linux based microcomputers that support **Python 3.5+**.
+The IoT Gateway is a software component that is designed to run on a Linux based microcomputers that support **Python 3.7+**.
 Main components of ThingsBoard IoT Gateway are listed below.
 
 **Connector**

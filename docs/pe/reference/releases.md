@@ -8,6 +8,74 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.3.4 (March 11, 2022)
+
+Everything from [TB CE v3.3.4](https://github.com/thingsboard/thingsboard/releases/tag/v3.3.4) with the following improvements and bug fixes.
+
+**Bug Fixes**
+
+* Core & Rule Engine:
+  * Origin Service ID is not present in RPC requests triggered by scheduler events;
+  * Jenkins Repository url fix;
+* UI:
+  * Fixed scheduler dialog;
+  * Fixed switching from local to remote HTTP integration;
+  * Fixed originator select component required for validation and entity group load flow.
+* Integrations:
+  * Remove Redis dependency from remote integration;
+  * Workaround for KAFKA-4090 for PE Kafka Integration;
+  * Hotfix for OPC-UA rescanning and reconnecting;
+* Build Scripts:
+  * Restrict tb-pe docker image to linux/amd64 platform due to tb-web-report package compatibility limits
+  
+## v3.3.3 (January 27, 2022)
+
+Everything from [TB CE v3.3.3](https://github.com/thingsboard/thingsboard/releases/tag/v3.3.3) with the following improvements.
+
+Main features:
+
+
+* Core & Rule Engine:
+  * Added 'Propagation Entity Types' parameter to 'Alarm Count' rule node;
+  * Added 'Queue Name' parameter to aggregation rule nodes;
+  * Added REST_API_RULE_ENGINE_CALL to the audit logs;
+  * Additional alarm read permission checks;
+* UI:
+  * Added entity details page support;
+  * Added persistent page link for scheduler events page;
+  * CSS variables support for the white-labeling feature;
+  * Added ability for tenant administrators to ignore the white-labeling settings configured on a system level;
+  * Validation to maximum length of the group names;
+  * "Delete" button in Self-registration form;
+* Integrations:
+  * Additional automatic tests for remote integrations;
+  * Custom domain support for LORIOT integration;
+  * API Version to TTI integration;
+* Build scripts:
+  * Docker images check for ARM64;
+  * K8S scripts moved to separate repository;
+  * Log4j -> Slf4j annotation due to typo;
+* Edge:
+  * Added missing labels for assigned-to-edge/unassigned-from-edge;
+  * Send notification event in case change owner of edge to edge session;
+  * Improved integration tests;
+
+Bug fixes:
+
+* Core & Rule Engine:
+  * Fix in deprecated alarm count query;
+  * Fix sending RPC response from integration downlink rule node
+  * Use correct service id in rest api call reply method to send messages to correct services;
+* Integrations:
+  * Fix reconnect for OPC UA integration;
+  * Update converter details autocomplete;
+* UI:
+  * Multiple fixes to self-registration form;
+  * Fixed ability to create entity groups with white spaces instead of names;
+  * Fixed show edit button in default dashboard without fullscreen mode;
+  * Fixed close details after create/update/delete permission;
+  * Fixed display of Audit Logs for Device Profile;
+
 ## v3.3.2 (November 11, 2021)
 
 Everything from [TB CE v3.3.2](https://github.com/thingsboard/thingsboard/releases/tag/v3.3.2) with the following improvements.

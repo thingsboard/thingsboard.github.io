@@ -18,6 +18,8 @@ The built-in transport protocol implementations are applicable for devices that 
 - [MQTT API reference](/docs/{{docsPrefix}}reference/mqtt-api)
 - [CoAP API reference](/docs/{{docsPrefix}}reference/coap-api)
 - [HTTP API reference](/docs/{{docsPrefix}}reference/http-api)
+- [LwM2M API reference](/docs/{{docsPrefix}}reference/lwm2m-api)
+- [SNMP API reference](/docs/{{docsPrefix}}reference/snmp-api)
 
 Most of the protocols above support JSON, Protobuf or own data format. This is the best option for new devices when you have control over the firmware.
 

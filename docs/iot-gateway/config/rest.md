@@ -184,7 +184,7 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
 With SSL<small>Recommended</small>%,%accessToken%,%templates/iot-gateway/rest-connector-ssl-security-config.md%br%
 Without SSL<small>No security</small>%,%anonymous%,%templates/iot-gateway/rest-connector-no-ssl-security-config.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="restConnectorCredentialsConfig" toggle-spec=restconnectorsecuritytogglespec %}
+{% include content-toggle.html content-toggle-id="restConnectorCredentialsConfig" toggle-spec=restconnectorsecuritytogglespec %}  
 
 ### Section “mapping”
 
@@ -443,7 +443,7 @@ Examples for both methods provided below.
       "methodFilter": "no-reply",
       "requestUrlExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
       "HTTPMethod": "POST",
-      "valueExpression": "${params}",
+      "valueExpression": "${params.hum}",
       "httpHeaders": {
         "Content-Type": "application/json"
       },

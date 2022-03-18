@@ -56,3 +56,40 @@ Mapping subsection will look like:
       }
     }
 ```
+
+Also, you can combine values from MQTT message in attributes, telemetry and serverSideRpc section, for example:
+```json
+{
+      "url": "getdata",
+      "httpMethod": "GET",
+      "httpHeaders": {
+        "ACCEPT": "application/json"
+      },
+      "allowRedirects": true,
+      "timeout": 0.5,
+      "scanPeriod": 5,
+      "converter": {
+        "type": "json",
+        "deviceNameJsonExpression": "SD8500",
+        "deviceTypeJsonExpression": "SD",
+        "attributes": [],
+        "telemetry": [
+          {
+            "type": "double",
+            "key": "temperature",
+            "value": "${temp}"
+          },
+          {
+            "type": "double",
+            "key": "humidity",
+            "value": "${hum}"
+          },
+          {
+            "type": "string",
+            "key": "combine",
+            "value": "${hum}:${temp}"
+          }
+        ]
+      }
+    }
+```
