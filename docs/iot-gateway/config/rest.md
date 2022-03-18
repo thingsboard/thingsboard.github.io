@@ -38,6 +38,10 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
   "host": "127.0.0.1",
   "port": "5000",
   "SSL": false,
+  "security": {
+    "cert": "~/ssl/cert.pem",
+    "key": "~/ssl/key.pem"
+  },
   "mapping": [
     {
       "endpoint": "/my_devices",
@@ -144,13 +148,13 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
       "responseTimeout": 1,
       "HTTPMethod": "GET",
       "valueExpression": "${params}",
-      "timeout": 0.5,
+      "timeout": 10.0,
       "tries": 3,
       "httpHeaders": {
         "Content-Type": "application/json"
       },
       "security": {
-      "type": "anonymous"
+        "type": "anonymous"
       }
     },
     {
@@ -161,6 +165,9 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
       "valueExpression": "${params}",
       "httpHeaders": {
         "Content-Type": "application/json"
+      },
+      "security": {
+        "type": "anonymous"
       }
     }
   ]
@@ -173,12 +180,11 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
 
 ### General section
 
-| **Parameter** | **Default value**                 | **Description**                                                                               |
-|:-|:-|-
-| host          | **127.0.0.1**                     | Domain address or ip of the server.                                                           |
-| port          | **5000**                          |                                                                                               |
-| SSLVerify     | **false**                         | Verify or no SSL certificate on the server if available. The value can be "true" or "false".  |
-|---
+{% capture restconnectorsecuritytogglespec %}
+With SSL<small>Recommended</small>%,%accessToken%,%templates/iot-gateway/rest-connector-ssl-security-config.md%br%
+Without SSL<small>No security</small>%,%anonymous%,%templates/iot-gateway/rest-connector-no-ssl-security-config.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="restConnectorCredentialsConfig" toggle-spec=restconnectorsecuritytogglespec %}
 
 ### Section “mapping”
 
