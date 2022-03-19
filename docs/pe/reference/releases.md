@@ -8,6 +8,14 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.3.4.1 (March 18, 2022)
+
+**Bug Fixes**
+
+* Core:
+  * Critical alarm security checker fix related to customer users;
+  * Ability to load corrupted scheduler events;
+
 ## v3.3.4 (March 11, 2022)
 
 Everything from [TB CE v3.3.4](https://github.com/thingsboard/thingsboard/releases/tag/v3.3.4) with the following improvements and bug fixes.
