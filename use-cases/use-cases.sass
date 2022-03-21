@@ -1,0 +1,342 @@
+#common.use-cases
+    @media screen and (min-width: 1500px)
+        #encyclopedia
+            #content
+                max-width: 1400px
+
+#common.use-cases
+    #docsContent
+        p, ul, ol
+            color: #75767C
+            font-size: 18px
+            font-weight: normal
+            line-height: 27px
+        p
+            margin: 4px 0 18px
+
+.usecase-title
+    font-size: 36px
+    font-weight: 500
+    line-height: 54px
+    width: 100%
+    margin: 80px 0 56px
+    padding: 0
+
+#usecase-list
+    position: relative
+    .list
+        margin-bottom: 80px
+        width: 100%
+    .dashboard-item
+        margin-top: 80px
+        flex-direction: column
+        justify-content: space-between
+        display: flex !important
+        align-items: center
+        //&:nth-child(2n+0)
+        //    .item-description
+        //        order: 2
+    .item-image-container
+        position: relative
+        width: 100%
+        order: 2
+        overflow: hidden
+        box-shadow: 0 30px 50px -20px rgba(0, 0, 0, 0.15), 0 0 30px 0 rgba(0, 0, 0, 0.05)
+        border-radius: 6px
+    .item-description
+        width: 100%
+        margin-bottom: 32px
+        order: 1
+    .dashboard-frame
+        position: relative
+        overflow: hidden
+        &:before
+            content: ""
+            display: block
+            padding-top: 45%
+        &:after
+            content: ""
+            display: block
+            z-index: 1
+            background-repeat: no-repeat
+            background-size: contain
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+        .frame-video, .frame-image
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+            margin-left: -1px
+        img, video
+            width: 100%
+            position: absolute
+            top: 0
+            left: 0
+            bottom: 0
+            right: 0
+        .frame-image
+            z-index: -1
+    .img-button
+        .overlay
+            color: white
+            z-index: 1000
+            display: block
+            position: absolute
+            top: 0
+            bottom: 0
+            left: 0
+            right: 0
+            font-weight: 400
+            opacity: 0
+            background: linear-gradient(0deg, rgba(37,38,40,0.8) 0%, rgba(37,38,40,0.6) 100%)
+            transition-duration: 0.3s
+            &:hover
+                opacity: 1
+                .eye
+                    bottom: 14%
+            .eye
+                transition-duration: 0.3s
+                position: absolute
+                bottom: 0
+                left: calc(50% - 60px)
+                display: flex
+                img
+                    margin-right: 10px
+                    width: unset !important
+    .read-more-button
+        font-weight: 500
+        font-size: 18px
+        position: relative
+        transition-duration: 0.3s
+        .arrow
+            transform: translate(0px)
+            transition-duration: 0.3s
+            filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
+            box-shadow: none !important
+            width: 12px !important
+            margin-left: 12px
+            position: absolute
+            top: 7px
+            &.first
+                opacity: 0.2
+            &.second
+                opacity: 0.5
+        &:hover
+            transition-duration: 0.3s
+            .first
+                transform: translate(10px)
+            .second
+                transform: translate(20px)
+            .third
+                transform: translate(30px)
+
+.owl-carousel.owl-theme.usecase-carousel
+    margin: 64px 0 24px
+    position: relative
+    visibility: hidden
+    display: block
+    min-height: 500px
+    max-height: 500px
+    &.owl-loaded
+        visibility: visible
+        min-height: unset
+        max-height: unset
+        .owl-stage-outer
+            .owl-stage
+                .owl-item
+                    transition: unset
+    &.support-ukraine
+        img
+            max-height: 600px
+            width: auto
+            margin: auto
+    .owl-stage-outer
+        overflow: visible
+        position: relative
+        .owl-stage
+            .owl-item
+                transition: none
+                filter: blur(8px)
+                transition-duration: 0.5s
+                transform: scale(0.9)
+                .item-image
+                    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 50px 50px -20px rgba(0, 0, 0, 0.15)
+                &.active
+                    filter: blur(0)
+                    transition-duration: 0.5s
+                    transform: scale(1)
+    .owl-nav
+        button.owl-prev, button.owl-next
+            position: absolute
+            filter: invert(100%) sepia(74%) saturate(108%) hue-rotate(175deg) brightness(90%) contrast(96%)
+            outline: none
+            background-image: url(/images/slider-arrow.svg)
+            background-color: transparent
+            width: 17px
+            height: 50px
+            top: calc(50% - 25px)
+            &:hover
+                filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
+            span
+                display: none
+        button.owl-prev
+            left: 0
+            transform: scale(-1, 1)
+        button.owl-next
+            right: 0
+    .owl-nav.disabled+.owl-dots
+        margin-top: 32px
+    .owl-dots
+        margin-top: 32px
+        button.owl-dot
+            outline: none
+            margin: 0 12px
+            &:hover, &.active
+                filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
+            span
+                margin: 8px 0
+                width: 10px
+                height: 10px
+                background: #E0E1E2
+                border-radius: 4px
+
+#common.use-cases
+    #docsContent
+        .usecase-advantages
+            padding: 0 0 80px
+            .cards
+                padding-top: 50px
+                justify-content: center
+                &>div
+                    margin-bottom: 36px
+                    &.col-lg-6
+                        padding: 0 18px
+                        max-width: 100%
+                    .block
+                        padding: 48px
+                        float: left
+                        width: 100%
+                        height: 100%
+                        background: white
+                        border-radius: 6px
+                        box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15)
+                        div
+                            width: 100%
+                            .title
+                                color: #2A7DEC
+                                font-size: 24px
+                                font-weight: 500
+                                margin-bottom: 6px
+                            p
+                                margin: 10px 0 18px
+                        img, object
+                            height: fit-content
+                            margin: 0 0 18px
+
+.usecase-background
+    z-index: -1
+    position: absolute
+    top: 524px
+    left: 50%
+    img
+        position: absolute
+        top: -650px
+        left: 134px
+        box-shadow: none !important
+    div
+        position: absolute
+        -ms-transform: skewY(-6deg)
+        transform: skewY(-6deg)
+        width: 436px
+        height: 90px
+        &.bottom-features1
+            top: -950px
+            width: 2560px
+            height: 3000px
+            left: -1280px
+            background-color: #F7F9FC
+        &.bottom-features2
+            top: -240px
+            width: 2560px
+            height: 525px
+            left: -1280px
+            background-color: #252628
+        &.small11
+            top: -382px
+            left: 757px
+            background-color: #2A7DEC
+        &.small12
+            top: 334px
+            right: 789px
+            border: 4px solid #305680
+        &.usecase-big-bg1
+            top: -890px
+            width: 2560px
+            height: 845px
+            left: -1280px
+            background-color: #F7F9FC
+        &.usecase-big-bg2
+            top: 943px
+            width: 2560px
+            height: 845px
+            left: -1280px
+            background-color: #F7F9FC
+        &.small7
+            top: 964px
+            right: 406px
+            border: 4px solid #2A7DEC
+        &.small8
+            top: 1018px
+            right: 458px
+            background-color: #305680
+        &.small9
+            top: -116px
+            left: 466px
+            border: 4px solid #0D2743
+        &.small10
+            top: -183px
+            left: 658px
+            background-color: #2A7DEC
+
+@media screen and (min-width: 750px)
+    .owl-carousel.owl-theme.usecase-carousel
+        .owl-dots
+            button.owl-dot
+                span
+                    width: 72px
+                    height: 4px
+    #common.use-cases
+        #docsContent
+            .usecase-advantages
+                .cards
+                    div
+                        .block
+                            text-align: left
+                            display: flex
+                            div
+                                width: calc(100% - 122px)
+                            img, object
+                                margin: 0 30px 0 0
+
+@media screen and (min-width: 1025px)
+    #usecase-list
+        .list
+            //width: 90%
+        .item-image-container
+            width: 48%
+            order: 1
+        .item-description
+            width: 48%
+            order: 2
+        .dashboard-item
+            flex-direction: unset
+            &:nth-child(2n+0)
+                .item-image-container
+                    order: 2
+                .item-description
+                    order: 1
