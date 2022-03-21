@@ -18,4 +18,6 @@ edgeInfo:
 
 ## Next steps
 
-{% assign currentGuide = "EdgeStatus" %}{% include templates/edge/guides-banner-edge.md %}
+{% assign currentGuide = "EdgeStatus" %}
+{% assign docsPrefix = "edge/" %}
+{% include templates/edge/guides-banner-edge.md %}

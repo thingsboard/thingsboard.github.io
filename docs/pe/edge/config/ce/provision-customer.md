@@ -29,4 +29,6 @@ Customer user has **read** access to all other entities that are assigned to edg
 
 ### Next Steps
 
-{% assign currentGuide = "ProvisionCustomerFromCloudToEdge" %}{% include templates/edge/guides-banner-edge.md %}
+{% assign currentGuide = "ProvisionCustomerFromCloudToEdge" %}
+{% assign docsPrefix = "pe/edge/" %}
+{% include templates/edge/guides-banner-edge.md %}

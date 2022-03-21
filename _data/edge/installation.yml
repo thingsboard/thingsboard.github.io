@@ -6,9 +6,9 @@ toc:
 - title: Step 1 - Provision Edge on Cloud
   section:
   - title: Community Edition
-    path: /docs/edge/provision-edge-on-server-ce/
+    path: /docs/edge/provision-edge-on-server/
   - title: Professional Edition
-    path: /docs/edge/provision-edge-on-server-pe/
+    path: /docs/pe/edge/provision-edge-on-server/
 - title: Step 2 - Install instructions
   section:
   - title: Ubuntu (DEB)

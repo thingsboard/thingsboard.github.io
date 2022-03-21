@@ -205,4 +205,6 @@ createDashboard:
 
 ## Next Steps
 
-{% assign currentGuide = "ManageAlarmsAndRpcRequestsOnEdgeDevices" %}{% include templates/edge/guides-banner-edge.md %}
+{% assign currentGuide = "ManageAlarmsAndRpcRequestsOnEdgeDevices" %}
+{% assign docsPrefix = "edge/" %}
+{% include templates/edge/guides-banner-edge.md %}

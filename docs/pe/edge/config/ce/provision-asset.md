@@ -21,4 +21,6 @@ User is able to assign to edge any asset that he has access to.
 
 ### Next Steps
 
-{% assign currentGuide = "ProvisionAssetFromCloudToEdge" %}{% include templates/edge/guides-banner-edge.md %}
+{% assign currentGuide = "ProvisionAssetFromCloudToEdge" %}
+{% assign docsPrefix = "pe/edge/" %}
+{% include templates/edge/guides-banner-edge.md %}

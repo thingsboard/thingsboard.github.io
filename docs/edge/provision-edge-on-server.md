@@ -37,4 +37,5 @@ copyEdgeCredentials:
 
 ## Next steps
 
-{% include templates/edge/provision/next-steps.md %}
+{% assign docsPrefix = "edge/" %}
+{% include templates/edge/provision/edge-installation.md %}

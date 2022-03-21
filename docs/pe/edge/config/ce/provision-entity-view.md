@@ -21,4 +21,6 @@ User is able to assign to edge any entity views that he has access to.
 
 ### Next Steps
 
-{% assign currentGuide = "ProvisionEntityViewFromCloudToEdge" %}{% include templates/edge/guides-banner-edge.md %}
+{% assign currentGuide = "ProvisionEntityViewFromCloudToEdge" %}
+{% assign docsPrefix = "pe/edge/" %}
+{% include templates/edge/guides-banner-edge.md %}

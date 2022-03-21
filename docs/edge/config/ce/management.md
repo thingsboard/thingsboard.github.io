@@ -62,4 +62,6 @@ If at the moment edge not connected to the cloud then entity will be created onc
 
 #### Next Steps
 
-{% assign currentGuide = "EdgeManagementOverview" %}{% include templates/edge/guides-banner-edge.md %}
+{% assign currentGuide = "EdgeManagementOverview" %}
+{% assign docsPrefix = "edge/" %}
+{% include templates/edge/guides-banner-edge.md %}

@@ -21,4 +21,6 @@ User is able to assign to edge any dashboards that he has access to.
 
 ### Next Steps
 
-{% assign currentGuide = "ProvisionDashboardFromCloudToEdge" %}{% include templates/edge/guides-banner-edge.md %}
+{% assign currentGuide = "ProvisionDashboardFromCloudToEdge" %}
+{% assign docsPrefix = "edge/" %}
+{% include templates/edge/guides-banner-edge.md %}

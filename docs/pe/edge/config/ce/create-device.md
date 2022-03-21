@@ -28,4 +28,6 @@ If Edge connected to ThingsBoard **PE** a newly created device:
 
 ### Next Steps
 
-{% assign currentGuide = "CreateDeviceOnEdgeAndProvisionToCloud" %}{% include templates/edge/guides-banner-edge.md %}
+{% assign currentGuide = "CreateDeviceOnEdgeAndProvisionToCloud" %}
+{% assign docsPrefix = "pe/edge/" %}
+{% include templates/edge/guides-banner-edge.md %}

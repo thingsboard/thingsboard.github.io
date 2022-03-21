@@ -9,4 +9,6 @@ description: ThingsBoard Edge Rule Engine
 
 ### Next Steps
 
-{% assign currentGuide = "EdgeRuleEngineOverview" %}{% include templates/edge/guides-banner-edge.md %}
+{% assign currentGuide = "EdgeRuleEngineOverview" %}
+{% assign docsPrefix = "edge/" %}
+{% include templates/edge/guides-banner-edge.md %}

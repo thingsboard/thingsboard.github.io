@@ -21,4 +21,6 @@ User is able to assign to edge any device that he has access to.
 
 ### Next Steps
 
-{% assign currentGuide = "ProvisionDeviceFromCloudToEdge" %}{% include templates/edge/guides-banner-edge.md %}
+{% assign currentGuide = "ProvisionDeviceFromCloudToEdge" %}
+{% assign docsPrefix = "pe/edge/" %}
+{% include templates/edge/guides-banner-edge.md %}

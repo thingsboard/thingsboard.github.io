@@ -9,6 +9,6 @@ Professional Edition%,%pe%,%templates/edge/obtain-pe-cloud.md{% endcapture %}
 {% include content-toggle.html content-toggle-id="edgeInstallCloud" toggle-spec=contenttogglespec %} 
  
 ##### Edge provision on cloud
-Additionally, you will need to provision ThingsBoard **Edge** on cloud server. Please visit this guide [Provision edge on CE server](/docs/edge/provision-edge-on-server-ce/) or [Provision edge on PE server](/docs/edge/provision-edge-on-server-pe/) respectively.
+Additionally, you will need to provision ThingsBoard **Edge** on cloud server. Please visit this guide [Provision edge on CE server](/docs/edge/provision-edge-on-server/) or [Provision edge on PE server](/docs/pe/edge/provision-edge-on-server/) respectively.
 
 Once ThingsBoard **Edge** provisioned on cloud server please follow installation steps below.

@@ -8,4 +8,6 @@ description: Rule Chain templates
 
 #### Next Steps
 
-{% assign currentGuide = "RuleChainTemplates" %}{% include templates/edge/guides-banner-edge.md %}
+{% assign currentGuide = "RuleChainTemplates" %}
+{% assign docsPrefix = "pe/edge/" %}
+{% include templates/edge/guides-banner-edge.md %}

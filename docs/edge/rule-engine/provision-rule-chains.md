@@ -9,4 +9,6 @@ description: Provision Rule Chains from cloud to edge
 
 #### Next Steps
 
-{% assign currentGuide = "ProvisionRuleChainFromCloudToEdge" %}{% include templates/edge/guides-banner-edge.md %}
+{% assign currentGuide = "ProvisionRuleChainFromCloudToEdge" %}
+{% assign docsPrefix = "edge/" %}
+{% include templates/edge/guides-banner-edge.md %}

@@ -8,4 +8,6 @@ description: Enable gRPC over SSL/TLS for edge communication
 
 #### Next Steps
 
-{% assign currentGuide = "GrpcOverSsl" %}{% include templates/edge/guides-banner-edge.md %}
+{% assign currentGuide = "GrpcOverSsl" %}
+{% assign docsPrefix = "pe/edge/" %}
+{% include templates/edge/guides-banner-edge.md %}
