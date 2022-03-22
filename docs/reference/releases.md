@@ -8,6 +8,13 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.3.4.1 (March 22, 2022)
+
+**Hot fix** release with the following bug fixes:
+
+* UI:
+  * Fix assets page permissions for customer;
+
 ## v3.3.4 (March 11, 2022)
 
 Minor release with the following improvements and bug fixes:
