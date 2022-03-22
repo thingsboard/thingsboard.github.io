@@ -1,3 +1,9 @@
+{% if docsPrefix == 'pe/edge/' %}
+{% assign appPrefix = "ThingsBoard PE" %}
+{% else %}
+{% assign appPrefix = "ThingsBoard" %}
+{% endif %}
+
 Edit ThingsBoard Edge configuration file 
 ```bash 
 sudo nano /etc/tb-edge/conf/tb-edge.conf
@@ -6,29 +12,32 @@ sudo nano /etc/tb-edge/conf/tb-edge.conf
 
 Update the following lines in the configuration file. Don't forget **to replace**:
  * "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your **real postgres user password**.
- * "PUT_YOUR_CLOUD_IP" with an IP address of the machine where ThingsBoard **Professional Edition/Community Edition** server is running:
+ * "PUT_YOUR_CLOUD_IP" with an IP address of the machine where **{{appPrefix}}** server is running:
+   {% if docsPrefix == 'pe/edge/' %}
     * Use **thingsboard.cloud** in case you are connecting edge to [**ThingsBoard Cloud**](https://thingsboard.cloud/signup).
-    
-    **NOTE**: **thingsboard.cloud** uses SSL protocol for edge communication. 
-    Please uncomment **export CLOUD_RPC_SSL_ENABLED=true** as well. 
- 
+
+    **NOTE**: **thingsboard.cloud** uses SSL protocol for edge communication.
+    Please uncomment **export CLOUD_RPC_SSL_ENABLED=true** as well.
+   {% else %}
+    * Use **demo.thingsboard.io** if you are connecting edge to [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) for evaluation.
+   {% endif %}
     * Use **localhost** in case edge is running on the same machine where cloud instance is running. 
     * Use **X.X.X.X** IP address in case edge is connecting to the cloud instance in the same network or in the docker.
-    * Or use **demo.thingsboard.io** if you are connecting edge to [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) for evaluation. 
+
  * "PUT_YOUR_EDGE_KEY_HERE" and "PUT_YOUR_EDGE_SECRET_HERE" with Edge **key and secret** respectively (edge credentials you can find in cloud instance):
 
 ```bash
 # UNCOMMENT NEXT LINES AND PUT YOUR CLOUD CONNECTION SETTINGS:
 # export CLOUD_ROUTING_KEY=PUT_YOUR_EDGE_KEY_HERE
 # export CLOUD_ROUTING_SECRET=PUT_YOUR_EDGE_SECRET_HERE
-
+{% if docsPrefix == 'pe/edge/' %}
 # UNCOMMENT NEXT LINES IF EDGE CONNECTS TO PE 'THINGSBOARD.CLOUD' SERVER:
 # export CLOUD_RPC_HOST=thingsboard.cloud
 # export CLOUD_RPC_SSL_ENABLED=true
-
+{% else %}
 # UNCOMMENT NEXT LINES IF EDGE CONNECTS TO CE 'DEMO.THINGSBOARD.IO' SERVER:
 # export CLOUD_RPC_HOST=demo.thingsboard.io
-
+{% endif %}
 # UNCOMMENT NEXT LINES IF YOU CHANGED DEFAULT CLOUD RPC HOST/PORT SETTINGS:
 # export CLOUD_RPC_HOST=PUT_YOUR_CLOUD_IP
 # export CLOUD_RPC_PORT=7070
@@ -46,7 +55,7 @@ Update the following lines in the configuration file. Don't forget **to replace*
 {: .copy-code}
 
 {% capture local-deployment %}
-If ThingsBoard Edge is going to be running on the same machine where ThingsBoard **Professional Edition/Community Edition** server is running you'll need to update additional configuration parameters to avoid port collision.
+If ThingsBoard Edge is going to be running on the same machine where **{{appPrefix}}** server is running you'll need to update additional configuration parameters to avoid port collision.
  
 Please uncomment next parameters in ThingsBoard Edge configuration file (**/etc/tb-edge/conf/tb-edge.conf**): 
 <br>**export HTTP_BIND_PORT=18080**

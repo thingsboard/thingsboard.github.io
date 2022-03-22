@@ -1,12 +1,12 @@
 ---
 layout: docwithnav-edge
-title: Manage alarms and RPC requests on edge devices - ThingsBoard Community Edition
+title: Manage alarms and RPC requests on edge devices
 description: ThingsBoard Edge use case #1
 
 configureAlarmRules:
     0:
         image: /images/edge/use-cases/manage-alarms/configure-rules-item-1.png
-        title: 'Login to your ThingsBoard <b>ThingsBoard Community Edition</b> instance and open Device profiles page.'
+        title: 'Login to your ThingsBoard <b>ThingsBoard</b> instance and open Device profiles page.'
     1:
         image: /images/edge/use-cases/manage-alarms/configure-rules-item-2.png
         title: 'Click "+" to add new device profile.'
@@ -52,36 +52,33 @@ configureAlarmRulesEdge:
 provisionDevicesEdge:
     0:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-1.png
-        title: 'Login to your ThingsBoard <b>Edge</b> instance and open Device groups page.'
+        title: 'Login to your ThingsBoard <b>Edge</b> instance and open Devices page.'
     1:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-2.png
-        title: 'Open "All" device group.'
+        title: 'Click on the "Add Device"("+") icon in the top right corner of the table.'
     2:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-3.png
-        title: 'Click on the "Add Device"("+") icon in the top right corner of the table.'
+        title: 'Input device name. For example, "DHT22". Select "edge thermostat" from device profiles list. No other changes required at this time. Click "Add" to add the device.'
     3:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-4.png
-        title: 'Input device name. For example, "DHT22". Select "edge thermostat" from device profiles list. No other changes required at this time. Click "Add" to add the device.'
+        title: 'Now your "DHT22" device should be listed first, since table sort devices using created time by default. Click "Add" to add one more device.'
     4:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-5.png
-        title: 'Now your "DHT22" device should be listed first, since table sort devices using created time by default. Click "Add" to add one more device.'
+        title: 'Input device name. For example, "Air Conditioner". No other changes required at this time. Click "Add" to add the device.'
     5:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-6.png
-        title: 'Input device name. For example, "Air Conditioner". No other changes required at this time. Click "Add" to add the device.'
+        title: 'Now your "Air Conditioner" device should be listed first, since table sort devices using created time by default.'
     6:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-7.png
-        title: 'Now your "Air Conditioner" device should be listed first, since table sort devices using created time by default.'
+        title: 'Click on "DHT22" device row to open device details and navigate to "Relations" tab. Click "+" icon to add new relation.'
     7:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-8.png
-        title: 'Click on "DHT22" device row to open device details and navigate to "Relations" tab. Click "+" icon to add new relation.'
-    8:
-        image: /images/edge/use-cases/manage-alarms/provision-devices-item-9.png
         title: 'Specify relation type "Manages" and select "Air Conditioner" device from the list. Click "Add" to add this relation. Now we verify that devices were provisioned to cloud.'
 
 provisionDevices:    
     0:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-10.png
-        title: 'Login to your ThingsBoard <b>ThingsBoard Community Edition</b> instance and open Devices page.'
+        title: 'Login to your ThingsBoard <b>ThingsBoard</b> instance and open Devices page.'
     1:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-11.png
         title: 'Make sure that "DHT22" and "Air Conditioner" devices are in the devices list.'
@@ -184,7 +181,8 @@ mqttWindows:
 * TOC
 {:toc}
 
-{% assign currentThingsBoardVersion = "ThingsBoard Community Edition" %}
+{% assign docsPrefix = "edge/" %}
+{% assign appPrefix = "ThingsBoard" %}
 
 ## Use case
 
@@ -221,5 +219,4 @@ mqttWindows:
 ## Next Steps
 
 {% assign currentGuide = "ManageAlarmsAndRpcRequestsOnEdgeDevices" %}
-{% assign docsPrefix = "edge/" %}
 {% include templates/edge/guides-banner-edge.md %}

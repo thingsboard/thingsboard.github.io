@@ -4,11 +4,7 @@ toc:
 - title: Installation options
   path: /docs/user-guide/install/edge/installation-options/
 - title: Step 1 - Provision Edge on Cloud
-  section:
-  - title: Community Edition
-    path: /docs/edge/provision-edge-on-server/
-  - title: Professional Edition
-    path: /docs/pe/edge/provision-edge-on-server/
+  path: /docs/edge/provision-edge-on-server/
 - title: Step 2 - Install instructions
   section:
   - title: Ubuntu (DEB)
@@ -21,7 +17,5 @@ toc:
     path: /docs/user-guide/install/edge/docker-windows/
   - title: Docker (Linux or Mac OS)
     path: /docs/user-guide/install/edge/docker/
-- title: Upgrade instructions
-  path: /docs/user-guide/install/edge/upgrade-instructions/
 - title: Configuration
   path: /docs/edge/user-guide/install/config/

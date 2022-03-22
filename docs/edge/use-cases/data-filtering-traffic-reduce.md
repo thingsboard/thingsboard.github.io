@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-edge
-title: Data filtering and traffic reduce - ThingsBoard Community Edition
+title: Data filtering and traffic reduce
 description: ThingsBoard Edge use case #2
 
 provisionDevicesEdge:
@@ -22,10 +22,10 @@ provisionDevicesEdge:
 
 provisionDevices:    
     0:
-        image: /images/edge/use-cases/data-filtering/provision-devices-item-6-ce.png
+        image: /images/edge/use-cases/data-filtering/provision-devices-item-6.png
         title: 'Login to your ThingsBoard <b>ThingsBoard Community Edition</b> instance and open Devices page.'
     1:
-        image: /images/edge/use-cases/data-filtering/provision-devices-item-7-ce.png
+        image: /images/edge/use-cases/data-filtering/provision-devices-item-7.png
         title: 'Make sure that "In-vehicle monitoring system" device is in the devices list.'
         
 rootRuleChainPreview:
@@ -34,34 +34,34 @@ rootRuleChainPreview:
 
 updateRootRuleChain:
     0:
-        image: /images/edge/use-cases/data-filtering/update-root-item-1-ce.png
+        image: /images/edge/use-cases/data-filtering/update-root-item-1.png
         title: 'Login to your ThingsBoard <b>ThingsBoard Community Edition</b> instance and open Rule chain templates page.'
     1:
-        image: /images/edge/use-cases/data-filtering/update-root-item-2-ce.png
+        image: /images/edge/use-cases/data-filtering/update-root-item-2.png
         title: 'Click "Open rule chain" icon to start editing "Edge Root Rule Chain".'
     2:
-        image: /images/edge/use-cases/data-filtering/update-root-item-3-ce.png
+        image: /images/edge/use-cases/data-filtering/update-root-item-3.png
         title: 'Filter node by "script" word and drag script node (Transformation) to rule chain.'
     3:
-        image: /images/edge/use-cases/data-filtering/update-root-item-4-ce.png
+        image: /images/edge/use-cases/data-filtering/update-root-item-4.png
         title: 'Input node name, e.g. "Transform incoming message" and add <b>JavaScript</b> code (you can copy and paste it from the snippet above) to send further only "distance" readings. Click "Add" to proceed.'
     4:
-        image: /images/edge/use-cases/data-filtering/update-root-item-5-ce.png
+        image: /images/edge/use-cases/data-filtering/update-root-item-5.png
         title: 'Remove connection between nodes "Save Timeseries" and newly added script node.'
     5:
-        image: /images/edge/use-cases/data-filtering/update-root-item-6-ce.png
+        image: /images/edge/use-cases/data-filtering/update-root-item-6.png
         title: 'Drag connection from "Save Timeseries" to the transformation script node.'
     6:
-        image: /images/edge/use-cases/data-filtering/update-root-item-7-ce.png
+        image: /images/edge/use-cases/data-filtering/update-root-item-7.png
         title: 'Select "Success" from the list and click "Add" button.'
     7:
-        image: /images/edge/use-cases/data-filtering/update-root-item-8-ce.png
+        image: /images/edge/use-cases/data-filtering/update-root-item-8.png
         title: 'Drag connection from "Transform incoming message" to the "Push to cloud" node  the list and click "Add" button.'
     8:
-        image: /images/edge/use-cases/data-filtering/update-root-item-9-ce.png
+        image: /images/edge/use-cases/data-filtering/update-root-item-9.png
         title: 'Select "Success" from the list and click "Add" button.'
     9:
-        image: /images/edge/use-cases/data-filtering/update-root-item-10-ce.png
+        image: /images/edge/use-cases/data-filtering/update-root-item-10.png
         title: 'Click "Apply changes" to save current progress.'
         
 updateRootRuleChainEdge:
@@ -105,13 +105,13 @@ verifyDeviceTelemetryEdge:
 
 verifyDeviceTelemetry:
     0:
-        image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-5-ce.png
+        image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-5.png
         title: 'Login to your ThingsBoard <b>ThingsBoard Community Edition</b> instance and open Devices page.'
     1:
-        image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-6-ce.png
+        image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-6.png
         title: 'Click on the row <b>In-vehicle monitoring system</b> to open device details.'
     2:
-        image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-7-ce.png
+        image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-7.png
         title: 'Click on the tab <b>Latest telemetry</b> to verify that distance readings are pushed successfully from the edge to the cloud.'
 
 createDashboard:
@@ -177,7 +177,8 @@ createDashboard:
 * TOC
 {:toc}
 
-{% assign currentThingsBoardVersion = "ThingsBoard Community Edition" %}
+{% assign docsPrefix = "edge/" %}
+{% assign appPrefix = "ThingsBoard" %}
 
 ## Use case
 
@@ -206,5 +207,4 @@ createDashboard:
 ## Next Steps
 
 {% assign currentGuide = "ManageAlarmsAndRpcRequestsOnEdgeDevices" %}
-{% assign docsPrefix = "edge/" %}
 {% include templates/edge/guides-banner-edge.md %}

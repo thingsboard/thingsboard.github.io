@@ -7,6 +7,8 @@ description: Installing ThingsBoard Edge using Docker (Windows)
 * TOC
 {:toc}
 
+{% assign docsPrefix = "pe/edge/" %}
+
 This guide will help you to install and start ThingsBoard Edge using Docker on Windows. 
 
 {% include templates/edge/install/prerequisites.md %}
@@ -46,7 +48,7 @@ version: '2.2'
 services:
   mytbedge:
     restart: always
-    image: "thingsboard/tb-edge:{{ site.release.edge_full_ver }}"
+    image: "thingsboard/tb-edge:{{ site.release.pe_edge_full_ver }}"
     ports:
       - "8080:8080"
       - "1883:1883"
@@ -56,7 +58,7 @@ services:
       EDGE_LICENSE_INSTANCE_DATA_FILE: /data/instance-edge-license.data
       CLOUD_ROUTING_KEY: PUT_YOUR_EDGE_KEY_HERE # e.g. 19ea7ee8-5e6d-e642-4f32-05440a529015
       CLOUD_ROUTING_SECRET: PUT_YOUR_EDGE_SECRET_HERE # e.g. bztvkvfqsye7omv9uxlp
-      CLOUD_RPC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.250, demo.thingsboard.io or thingsboard.cloud
+      CLOUD_RPC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.250 or thingsboard.cloud
       CLOUD_RPC_SSL_ENABLED: 'false' # set it to 'true' if you are connecting edge to thingsboard.cloud
     volumes:
       - mytb-edge-data:/data

@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-pe-edge
-title: ThingsBoard Edge Roadmap
+title: ThingsBoard Edge PE Roadmap
 description: Upcoming releases
 
 ---
@@ -8,13 +8,19 @@ description: Upcoming releases
 * TOC
 {:toc}
 
+## ThingsBoard Edge PE
 
-**Upcoming releases**:
+### v3.4
+
+Everything in Edge 3.4, plus:
+
+* Integrations and Converters support
+
+### Upcoming releases
 * Edge Templates
-* Full RBAC support
 * Create assets/entity views/relations directly on the edge
 * Create dashboards/rule chains directly on the edge
+* Full RBAC support
 * Agent for the updates over the air of the edge component
 * Notifications on the cloud if connection to edge lost
-* Integrations and Converters support
 * Auto deployment of custom rule nodes to edge

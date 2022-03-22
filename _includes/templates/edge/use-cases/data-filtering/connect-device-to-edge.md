@@ -33,6 +33,6 @@ Open ThingsBoard **Edge** UI and verify that device successfully receives teleme
 
 {% include images-gallery.html imageCollection="verifyDeviceTelemetryEdge" showListImageTitles="true" %}
 
-Open ThingsBoard **{{currentThingsBoardVersion}}** UI and verify that edge successfully pushes data to the cloud:
+Open **{{appPrefix}}** UI and verify that edge successfully pushes data to the cloud:
 
 {% include images-gallery.html imageCollection="verifyDeviceTelemetry" showListImageTitles="true" %}

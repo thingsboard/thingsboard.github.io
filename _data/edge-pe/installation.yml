@@ -4,11 +4,7 @@ toc:
 - title: Installation options
   path: /docs/user-guide/install/pe/edge/installation-options/
 - title: Step 1 - Provision Edge on Cloud
-  section:
-  - title: Community Edition
-    path: /docs/pe/edge/provision-edge-on-server/
-  - title: Professional Edition
-    path: /docs/pe/edge/provision-edge-on-server/
+  path: /docs/pe/edge/provision-edge-on-server/
 - title: Step 2 - Install instructions
   section:
   - title: Ubuntu (DEB)

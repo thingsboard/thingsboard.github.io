@@ -4,10 +4,10 @@ title: Installing ThingsBoard Edge on Windows
 description: Installing ThingsBoard Edge on Windows
 ---
 
-{% assign docsPrefix = "edge/" %}
-
 * TOC
 {:toc}
+
+{% assign docsPrefix = "pe/edge/" %}
 
 {% include templates/install/windows-warning-note.md %}
 
@@ -31,7 +31,7 @@ Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 Download and extract the package.
 
 ```bash
-https://dist.thingsboard.io/tb-edge-windows-{{ site.release.edge_ver }}.zip
+https://dist.thingsboard.io/tb-edge-windows-{{ site.release.pe_edge_ver }}.zip
 ```
 {: .copy-code}
 

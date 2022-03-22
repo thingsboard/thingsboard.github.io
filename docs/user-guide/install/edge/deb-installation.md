@@ -8,6 +8,8 @@ description: Installing ThingsBoard Edge on Ubuntu Server
 * TOC
 {:toc}
 
+{% assign docsPrefix = "edge/" %}
+
 This guide describes how to install ThingsBoard Edge on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
 
 {% include templates/edge/install/prerequisites.md %}
@@ -27,7 +29,7 @@ This guide describes how to install ThingsBoard Edge on Ubuntu 18.04 LTS / Ubunt
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/tb-edge-{{ site.release.edge_ver }}.deb
+wget https://github.com/thingsboard/thingsboard-edge/releases/download/{{ site.release.edge_tag }}/tb-edge-{{ site.release.edge_ver }}.deb
 ```
 {: .copy-code}
 
