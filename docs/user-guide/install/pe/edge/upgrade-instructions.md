@@ -51,6 +51,11 @@ description: ThingsBoard Edge upgrade instructions
     </li>
 </ul>
 
+{% capture update_server_first %}
+**Please update ThingsBoard server to the latest version before updating Edge services**.
+{% endcapture %}
+{% include templates/warn-banner.md content=update_server_first %}
+
 ## Prepare for upgrading ThingsBoard Edge {#prepare-for-upgrading}
 
 ### Ubuntu/CentOS {#prepare-ubuntucentos}
