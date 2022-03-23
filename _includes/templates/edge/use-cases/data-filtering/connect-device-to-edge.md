@@ -8,7 +8,7 @@ Please open ThingsBoard **Edge** UI using the URL: **http://EDGE_URL**.
 We will use simple commands to generate random telemetry for the device **In-vehicle monitoring system** and publish to the ThingsBoard **Edge** by the MQTT protocol.
 
 Please download following script to your local folder:
-- [**mqtt-generator.py**](/docs/edge/use-cases/resources/data-filtering-traffic-reduce/mqtt_generator.py)
+- [**mqtt-generator.py**](/docs/{{docsPrefix}}use-cases/resources/data-filtering-traffic-reduce/mqtt-generator.py)
 
 Before running the scripts, please modify **mqtt-generator.py** accordingly:
 

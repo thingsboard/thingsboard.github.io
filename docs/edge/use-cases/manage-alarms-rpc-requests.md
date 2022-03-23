@@ -128,7 +128,7 @@ updateRootRuleChainEdge:
         title: 'Login to your ThingsBoard <b>Edge</b> instance and open Rule chains page.'
     1:
         image: /images/edge/use-cases/manage-alarms/update-root-item-12.png
-        title: 'Open "Edge Root Rule Chain".'
+        title: 'Open "Edge root rule chain" to verify changes.'
     2:
         image: /images/edge/use-cases/manage-alarms/update-root-item-13.png
         title: 'Verify that rule chain is the same as you have updated on cloud.'
@@ -136,34 +136,28 @@ updateRootRuleChainEdge:
 copyAccessTokenAirConditioner:
     0:
         image: /images/edge/use-cases/manage-alarms/copy-access-token-item-1.png
-        title: 'Open Device groups page in the ThingsBoard <b>Edge</b> instance.'
+        title: 'Open Devices page in the ThingsBoard <b>Edge</b> instance.'
     1:
         image: /images/edge/use-cases/manage-alarms/copy-access-token-item-2.png
-        title: 'Open "All" device group.'
+        title: 'Click on the <b>Air Conditioner</b> device row in the table to open device details.'
     2:
         image: /images/edge/use-cases/manage-alarms/copy-access-token-item-3.png
-        title: 'Click on the <b>Air Conditioner</b> device row in the table to open device details.'
-    3:
-        image: /images/edge/use-cases/manage-alarms/copy-access-token-item-4.png  
         title: 'Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.'
 
 copyAccessTokenDht22:
     0:
         image: /images/edge/use-cases/manage-alarms/copy-access-token-item-1.png
-        title: 'Open Device groups page in the ThingsBoard <b>Edge</b> instance.'
-    1:
-        image: /images/edge/use-cases/manage-alarms/copy-access-token-item-2.png
-        title: 'Open "All" device group.'
+        title: 'Open Devices page in the ThingsBoard <b>Edge</b> instance.'
     2:
-        image: /images/edge/use-cases/manage-alarms/copy-access-token-item-5.png
+        image: /images/edge/use-cases/manage-alarms/copy-access-token-item-4.png
         title: 'Click on the <b>DHT22</b> device row in the table to open device details.'
     3:
-        image: /images/edge/use-cases/manage-alarms/copy-access-token-item-6.png  
+        image: /images/edge/use-cases/manage-alarms/copy-access-token-item-5.png  
         title: 'Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.'
 
 deviceAlarmTab:
     0:
-        image: /images/edge/use-cases/manage-alarms/copy-access-token-item-3.png
+        image: /images/edge/use-cases/manage-alarms/copy-access-token-item-4.png
         title: 'Click on the <b>DHT22</b> device row in the table to open device details.'
     1:
         image: /images/edge/use-cases/manage-alarms/device-alarm-tab-item-1.png

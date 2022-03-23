@@ -3,7 +3,7 @@ We assume you have completed the following guides and reviewed the articles list
 {% if docsPrefix == 'pe/edge/' %}
 * [Getting Started](/docs/getting-started-guides/helloworld-pe/) guide.{% endif %}
 {% if docsPrefix == 'edge/' %}
-* [Getting Started](docs/getting-started-guides/helloworld/) guide.{% endif %}
+* [Getting Started](/docs/getting-started-guides/helloworld/) guide.{% endif %}
 * [Rule Engine Overview](/docs/{{cloudDocsPrefix}}user-guide/rule-engine-2-0/overview/) article.
 * [ThingsBoard Edge Getting Started](/docs/{{docsPrefix}}getting-started/) article.
 * [Edge Rule Engine Overview](/docs/{{docsPrefix}}rule-engine/general/) guide.
