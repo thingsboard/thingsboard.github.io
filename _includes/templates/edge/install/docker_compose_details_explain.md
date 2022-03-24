@@ -13,7 +13,7 @@ Where:
 - `mytb-edge-logs:/var/log/tb-edge` - mounts the host's dir `mytb-edge-logs` to ThingsBoard Edge logs directory;
 - `mytb-edge-data/db:/var/lib/postgresql/data` - mounts the host's dir `mytb-edge-data/db` to Postgres data directory;
 {% if docsPrefix == 'pe/edge/' %}
-- `thingsboard/tb-edge:{{ site.release.pe_edge_full_ver }}` - docker image;
+- `thingsboard/tb-edge-pe:{{ site.release.pe_edge_full_ver }}` - docker image;
 {% else %}
 - `thingsboard/tb-edge:{{ site.release.edge_full_ver }}` - docker image;
 {% endif %}

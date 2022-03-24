@@ -176,7 +176,7 @@ sudo service tb-edge start
 
 Execute the following command to pull **3.3.4EDGEPE** image:
 ```
-docker pull thingsboard/tb-edge:3.3.4EDGEPE
+docker pull thingsboard/tb-edge-pe:3.3.4EDGEPE
 ```
 {: .copy-code}
 
@@ -201,7 +201,7 @@ version: '2.2'
 services:
   mytbedge:
     restart: on-failure
-    image: "thingsboard/tb-edge:3.3.4EDGEPE"
+    image: "thingsboard/tb-edge-pe:3.3.4EDGEPE"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/tb-edge
     volumes:
@@ -250,11 +250,11 @@ version: '2.2'
 services:
   mytbedge:
     restart: always
-    image: "thingsboard/tb-edge:3.3.4EDGEPE"
+    image: "thingsboard/tb-edge-pe:3.3.4EDGEPE"
 ...
 ```
 
-Make sure your image is the set to **3.3.4EDGEPE**.
+Make sure your image is the set to tb-edge-**pe:3.3.4EDGEPE**.
 
 Execute the following command to up this docker compose directly:
 ```

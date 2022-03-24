@@ -48,7 +48,7 @@ version: '2.2'
 services:
   mytbedge:
     restart: always
-    image: "thingsboard/tb-edge:{{ site.release.pe_edge_full_ver }}"
+    image: "thingsboard/tb-edge-pe:{{ site.release.pe_edge_full_ver }}"
     ports:
       - "8080:8080"
       - "1883:1883"
