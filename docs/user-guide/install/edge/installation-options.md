@@ -68,6 +68,15 @@ notitle: "true"
                                             </span>
                                         </a>
                                     </div>
+                                    <div class="deployment-card-block">
+                                        <a href="/docs/user-guide/install/edge/building-from-source/">
+                                            <span>
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/platform/sources.svg" title="Building from source" alt="Building from source">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
                                </div>                    
                             </div>                        
                         </div>

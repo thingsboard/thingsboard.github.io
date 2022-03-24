@@ -554,6 +554,8 @@ defaultActivateSelectProduct: true
 <div id="thingsboard-edge" class="pricing-content">
  <div class="container">
     <div class="pricing-content-header row">
+        <div id="communityEditionHeader" class="pricing-content-description col-lg-6">
+        </div>
         <div id="payAsYouGoHeader" class="pricing-content-description col-lg-6">
             <h2>Subscription plans</h2>
             <div class="pricing-content-details">
@@ -565,6 +567,9 @@ defaultActivateSelectProduct: true
         </div>
         <div class="col d-flex justify-content-end">
             <div class="solution-selector">
+                <div class="solution community-edition" data-toggle="#community-edition" data-description-toggle="#communityEditionHeader">
+                    <h3>Community Edition</h3>
+                </div>
                 <div class="solution pay-as-you-go active defaultselection" data-toggle="#payAsYouGo" data-description-toggle="#payAsYouGoHeader">
                     <h3 data-faq-id="what-is-pay-as-you-go" data-faq-link-size="70%">Pay-as-you-go</h3>
                 </div>
@@ -575,8 +580,35 @@ defaultActivateSelectProduct: true
         </div>
     </div>
     <div class="pricing-div">
-        <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
+        <div class="pricing-section community-edition" id="community-edition">
            <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                    <div class="pricing-square">
+                        <h2>Community Edition</h2>
+                        <div class="pricing-square-description" style="min-height: 50px;">
+                            <p>100% Open source</p>
+                        </div>
+                        <h4 class="pricing-square-price no-sign mb-0">
+                            YES, IT'S FREE
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a class="btn-blue btn-pricing" href="/docs/user-guide/install/edge/installation-options/">
+                                Install
+                            </a>
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with ThingsBoard CE</b></div>
+                        <div class="pricing-square-item">Unlimited Devices and Assets</div>
+                        <div class="pricing-square-item">Unlimited software updates</div>
+                        <div class="pricing-square-item">Ability to contribute</div>
+                        <div class="pricing-square-item" data-faq-id="community-support">
+                            Community support
+                        </div>
+                    </div>
+                </div>
+           </div>
+        </div>
+        <div class="pricing-section pricing-pay-as-you-go active" id="payAsYouGo">
+           <div class="row justify-content-center">                
                 <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
                     <div class="pricing-square">
                         <h2>Nano</h2>
@@ -597,6 +629,7 @@ defaultActivateSelectProduct: true
                                 Try 30 days for free
                             </button>
                         </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with ThingsBoard PE</b></div>
                         <div class="pricing-square-item">Up to 50 Devices</div>
                         <div class="pricing-square-item">Up to 50 Assets</div>
                         <div class="pricing-square-item" data-faq-id="optional-support">
@@ -627,6 +660,7 @@ defaultActivateSelectProduct: true
                                 Get your license
                             </button>
                         </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with ThingsBoard PE</b></div>
                         <div class="pricing-square-item">Up to 250 Devices</div>
                         <div class="pricing-square-item">Up to 250 Assets</div>
                         <div class="pricing-square-item" data-faq-id="optional-support">
@@ -657,6 +691,7 @@ defaultActivateSelectProduct: true
                                 Get your license
                             </button>
                         </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with ThingsBoard PE</b></div>
                         <div class="pricing-square-item">Up to 1000 Devices</div>
                         <div class="pricing-square-item">Up to 1000 Assets</div>
                         <div class="pricing-square-item" data-faq-id="optional-support">
@@ -685,6 +720,7 @@ defaultActivateSelectProduct: true
                                 Contact Us
                             </a>
                         </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with ThingsBoard PE</b></div>
                         <div class="pricing-square-item">1 year of software updates</div>
                         <div class="pricing-square-item">Up to 1000 Devices</div>
                         <div class="pricing-square-item">Up to 1000 Assets</div>
@@ -761,6 +797,15 @@ defaultActivateSelectProduct: true
             <div class="container">
                 <p>
                     We do understand that you may need multiple edge computing services. Price reduction starts from 10 licenses. Discount tiers are as follows: 10–50 Edges — 10%, 51–100 Edges — 12%, above 100 Edges — 15% off the license cost regardless the plan.
+                </p>    
+            </div>    
+        </div>
+        <div class="item" data-tag="h4" data-item-id="thingsboard-edge-compatibility" data-title="What ThingsBoard Edge compatibility means?">
+            <div class="container">
+                <p>
+                    ThingsBoard Edge Community Edition is able to connect only to ThingsBoard Community Edition server.
+                    ThingsBoard Edge Professional Edition is able to connect only to ThingsBoard Professional Edition server (it can be <a href="https://thingsboard.cloud" target="blank">ThingsBoard Cloud</a> or on-premise instances).
+                    ThingsBoard Edge Community Edition <b>can not</b> be connected to ThingsBoard Professional Edition and vise-verse.
                 </p>    
             </div>    
         </div>

@@ -17,5 +17,7 @@ toc:
     path: /docs/user-guide/install/edge/docker-windows/
   - title: Docker (Linux or Mac OS)
     path: /docs/user-guide/install/edge/docker/
+  - title: Building from sources
+    path: /docs/user-guide/install/edge/building-from-source/
 - title: Configuration
   path: /docs/edge/user-guide/install/config/
