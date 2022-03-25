@@ -23,7 +23,7 @@ provisionDevicesEdge:
 provisionDevices:    
     0:
         image: /images/pe/edge/use-cases/data-filtering/provision-devices-item-6.png
-        title: 'Login to your ThingsBoard <b>ThingsBoard Professional Edition</b> instance. Open the group <b>All</b> of the <b>Device groups</b> page.'
+        title: 'Login to your <b>ThingsBoard PE</b> instance. Open the group <b>All</b> of the <b>Device groups</b> page.'
     1:
         image: /images/pe/edge/use-cases/data-filtering/provision-devices-item-7.png
         title: 'Make sure that "In-vehicle monitoring system" device is in the devices list.'

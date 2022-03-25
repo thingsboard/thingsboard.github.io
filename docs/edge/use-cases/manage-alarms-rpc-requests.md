@@ -6,7 +6,7 @@ description: ThingsBoard Edge use case #1
 configureAlarmRules:
     0:
         image: /images/edge/use-cases/manage-alarms/configure-rules-item-1.png
-        title: 'Login to your ThingsBoard <b>ThingsBoard</b> instance and open Device profiles page.'
+        title: 'Login to your <b>ThingsBoard</b> instance and open Device profiles page.'
     1:
         image: /images/edge/use-cases/manage-alarms/configure-rules-item-2.png
         title: 'Click "+" to add new device profile.'
@@ -78,7 +78,7 @@ provisionDevicesEdge:
 provisionDevices:    
     0:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-10.png
-        title: 'Login to your ThingsBoard <b>ThingsBoard</b> instance and open Devices page.'
+        title: 'Login to your <b>ThingsBoard</b> instance and open Devices page.'
     1:
         image: /images/edge/use-cases/manage-alarms/provision-devices-item-11.png
         title: 'Make sure that "DHT22" and "Air Conditioner" devices are in the devices list.'
@@ -93,7 +93,7 @@ rootRuleChainPreview:
 updateRootRuleChain:
     0:
         image: /images/edge/use-cases/manage-alarms/update-root-item-1.png
-        title: 'Login to your ThingsBoard <b>ThingsBoard Community Edition</b> instance and open Rule chain templates page.'
+        title: 'Login to your <b>ThingsBoard</b> instance and open Rule chain templates page.'
     1:
         image: /images/edge/use-cases/manage-alarms/update-root-item-2.png
         title: 'Open default "Edge Root Rule Chain".'

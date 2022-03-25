@@ -32,7 +32,7 @@ rootRuleChainPreview:
 updateRootRuleChain:
     0:
         image: /images/edge/use-cases/data-filtering/update-root-item-1.png
-        title: 'Login to your ThingsBoard <b>ThingsBoard Community Edition</b> instance and open Rule chain templates page.'
+        title: 'Login to your <b>ThingsBoard</b> instance and open Rule chain templates page.'
     1:
         image: /images/edge/use-cases/data-filtering/update-root-item-2.png
         title: 'Click "Open rule chain" icon to start editing "Edge Root Rule Chain".'
@@ -97,7 +97,7 @@ verifyDeviceTelemetryEdge:
 verifyDeviceTelemetry:
     0:
         image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-4.png
-        title: 'Login to your ThingsBoard <b>ThingsBoard Community Edition</b> instance and open Devices page.'
+        title: 'Login to your <b>ThingsBoard</b> instance and open Devices page.'
     1:
         image: /images/edge/use-cases/data-filtering/verify-device-telemetry-item-5.png
         title: 'Click on the row <b>In-vehicle monitoring system</b> to open device details.'
