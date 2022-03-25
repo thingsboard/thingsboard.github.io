@@ -136,8 +136,8 @@ Open your server and create backup of database **tb_edge** using 'Backup Dialog'
 #### ThingsBoard Edge package download
 
 {% capture tabspec %}tb-edge-pe-download-3-3-4
-tb-edge-pe-download-3-3-4-ubuntu,Ubuntu,shell,resources/3.3.4edge/tb-edge-ubuntu-download.sh,/docs/user-guide/install/pe/edge/resources/3.3.4edge/tb-edge-ubuntu-download.sh
-tb-edge-pe-download-3-3-4-centos,CentOS,shell,resources/3.3.4edge/tb-edge-centos-download.sh,/docs/user-guide/install/pe/edge/resources/3.3.4edge/tb-edge-centos-download.sh{% endcapture %}
+tb-edge-pe-download-3-3-4-ubuntu,Ubuntu,shell,resources/3.3.4/tb-edge-ubuntu-download.sh,/docs/user-guide/install/pe/edge/resources/3.3.4/tb-edge-ubuntu-download.sh
+tb-edge-pe-download-3-3-4-centos,CentOS,shell,resources/3.3.4/tb-edge-centos-download.sh,/docs/user-guide/install/pe/edge/resources/3.3.4/tb-edge-centos-download.sh{% endcapture %}
 {% include tabs.html %}
 
 #### ThingsBoard Edge service upgrade
@@ -150,8 +150,8 @@ sudo service tb-edge stop
 {: .copy-code}
 
 {% capture tabspec %}tb-edge-pe-installation-3-3-4
-tb-edge-pe-installation-3-3-4-ubuntu,Ubuntu,shell,resources/3.3.4edge/tb-edge-ubuntu-installation.sh,/docs/user-guide/install/pe/edge/resources/3.3.4edge/tb-edge-ubuntu-installation.sh
-tb-edge-pe-installation-3-3-4-centos,CentOS,shell,resources/3.3.4edge/tb-edge-centos-installation.sh,/docs/user-guide/install/pe/edge/resources/3.3.4edge/tb-edge-centos-installation.sh{% endcapture %}
+tb-edge-pe-installation-3-3-4-ubuntu,Ubuntu,shell,resources/3.3.4/tb-edge-ubuntu-installation.sh,/docs/user-guide/install/pe/edge/resources/3.3.4/tb-edge-ubuntu-installation.sh
+tb-edge-pe-installation-3-3-4-centos,CentOS,shell,resources/3.3.4/tb-edge-centos-installation.sh,/docs/user-guide/install/pe/edge/resources/3.3.4/tb-edge-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
 **NOTE:** Package installer may ask you to merge your tb-edge configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
@@ -312,8 +312,8 @@ net start tb-edge
 #### ThingsBoard Edge package download
 
 {% capture tabspec %}tb-edge-pe-download-3-3-3
-tb-edge-pe-download-3-3-3-ubuntu,Ubuntu,shell,resources/3.3.3edge/tb-edge-ubuntu-download.sh,/docs/user-guide/install/pe/edge/resources/3.3.3edge/tb-edge-ubuntu-download.sh
-tb-edge-pe-download-3-3-3-centos,CentOS,shell,resources/3.3.3edge/tb-edge-centos-download.sh,/docs/user-guide/install/pe/edge/resources/3.3.3edge/tb-edge-centos-download.sh{% endcapture %}
+tb-edge-pe-download-3-3-3-ubuntu,Ubuntu,shell,resources/3.3.3/tb-edge-ubuntu-download.sh,/docs/user-guide/install/pe/edge/resources/3.3.3/tb-edge-ubuntu-download.sh
+tb-edge-pe-download-3-3-3-centos,CentOS,shell,resources/3.3.3/tb-edge-centos-download.sh,/docs/user-guide/install/pe/edge/resources/3.3.3/tb-edge-centos-download.sh{% endcapture %}
 {% include tabs.html %}
 
 #### ThingsBoard Edge service upgrade
@@ -326,8 +326,8 @@ sudo service tb-edge stop
 {: .copy-code}
 
 {% capture tabspec %}tb-edge-pe-installation-3-3-3
-tb-edge-pe-installation-3-3-3-ubuntu,Ubuntu,shell,resources/3.3.3edge/tb-edge-ubuntu-installation.sh,/docs/user-guide/install/pe/edge/resources/3.3.3edge/tb-edge-ubuntu-installation.sh
-tb-edge-pe-installation-3-3-3-centos,CentOS,shell,resources/3.3.3edge/tb-edge-centos-installation.sh,/docs/user-guide/install/pe/edge/resources/3.3.3edge/tb-edge-centos-installation.sh{% endcapture %}
+tb-edge-pe-installation-3-3-3-ubuntu,Ubuntu,shell,resources/3.3.3/tb-edge-ubuntu-installation.sh,/docs/user-guide/install/pe/edge/resources/3.3.3/tb-edge-ubuntu-installation.sh
+tb-edge-pe-installation-3-3-3-centos,CentOS,shell,resources/3.3.3/tb-edge-centos-installation.sh,/docs/user-guide/install/pe/edge/resources/3.3.3/tb-edge-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
 **NOTE:** Package installer may ask you to merge your tb-edge configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
