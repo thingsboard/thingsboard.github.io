@@ -76,7 +76,7 @@ Make a backup of the database before upgrading.
 Check database size
 
 ```bash
-sudo -u postgres psql -c "SELECT pg_size_pretty( pg_database_size('tb-edge') );"
+sudo -u postgres psql -c "SELECT pg_size_pretty( pg_database_size('tb_edge') );"
 ```
 {: .copy-code}
 
@@ -90,7 +90,7 @@ df -h /
 If there is enough free space - make a backup.
 
 ```bash
-sudo -Hiu postgres pg_dump tb-edge > tb-edge.sql.bak
+sudo -Hiu postgres pg_dump tb_edge > tb_edge.sql.bak
 ```
 {: .copy-code}
 
