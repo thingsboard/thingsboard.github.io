@@ -37,7 +37,7 @@ List of possible cloud actions:
 * Rule Chain Metadata Request
 * Relation Request
 * Credentials Request
-* Group Entities Request
+* Group Entities Request **PE**
 * Permissions Request **PE**
 
 ## Next steps

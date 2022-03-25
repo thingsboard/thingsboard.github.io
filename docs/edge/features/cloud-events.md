@@ -31,14 +31,10 @@ List of possible cloud actions:
 * Relations Deleted
 * Alarm Ack
 * Alarm Clear
-* Added to Entity Group **PE**
-* Removed from Entity Group **PE**
 * Attributes Request
 * Rule Chain Metadata Request
 * Relation Request
 * Credentials Request
-* Group Entities Request
-* Permissions Request **PE**
 
 ## Next steps
 
