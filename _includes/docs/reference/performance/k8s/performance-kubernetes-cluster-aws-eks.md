@@ -40,12 +40,16 @@ No clusters found
 Create cluster with 3 nodes (m6a.2xlarge, 8 vCPU, 32GiB)
 ```bash
 eksctl create cluster \
-  --name perf-cluster \
+  --name performance \
   --region eu-west-1 \
   --nodegroup-name linux-amd64 \
+  --node-ami-family Ubuntu2004 \
+  --node-volume-type gp3 \
   --node-type m6a.2xlarge \
-  --tags environment=performance-test \
-  --nodes 3
+  --nodes 3 \
+  --ssh-access \
+  --ssh-public-key smatvienko \
+  --tags environment=performance-test,owner=smatvienko
 ```
 
 Check the cluster
@@ -60,7 +64,7 @@ kubectl config use-context minikube
 kubectl config use-context aws-cli-user@perf-cluster.eu-west-1.eksctl.io
 ```
 
-Create namespace ThingsBoard and check the 
+Create namespace for ThingsBoard
 ```bash
 kubectl config current-context
 kubectl apply -f https://raw.githubusercontent.com/thingsboard/thingsboard-ce-k8s/master/aws/microservices/tb-namespace.yml
@@ -97,7 +101,10 @@ Setup [Cassandra cluster from Bitnami Helm chart](https://github.com/bitnami/cha
 ```bash
 helm install cassandra bitnami/cassandra --version 9.1.11 \
   --set replicaCount=3 \
-  --set persistence.size=30Gi
+  --set persistence.size=30Gi \
+  --set cluster.name=cassandra \
+  --set cluster.datacenter=datacenter1 \
+  --set cluster.seedCount=3
 ```
 
 Setup [Redis cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/redis-cluster)
@@ -118,3 +125,23 @@ helm install postgresql bitnami/postgresql-ha --version 8.6.4 \
   --set postgresql.database=thingsboard \
   --set fullnameOverride=postgresql
 ```
+
+Setup tb-services (tb-services.yml):
+```yaml
+
+```
+
+```bash
+kubectl apply -f tb-services.yml
+kubectl apply -f tb-db-setup.yml
+kubectl wait --for=condition=Completed pod/tb-db-setup --timeout=120s
+kubectl logs tb-db-setup
+kubectl delete pod tb-db-setup
+kubectl scale --replicas=1 statefulset tb-node
+kubectl wait --for=condition=Ready pod/tb-node-0 --timeout=120s
+kubectl scale --replicas=1 statefulset tb-rule-engine
+kubectl wait --for=condition=Ready pod/tb-rule-engine-0 --timeout=120s
+kubectl scale --replicas=3 statefulset tb-node
+kubectl scale --replicas=3 statefulset tb-rule-engine
+```
+
