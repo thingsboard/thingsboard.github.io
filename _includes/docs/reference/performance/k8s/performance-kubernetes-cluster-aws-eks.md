@@ -40,13 +40,14 @@ No clusters found
 Create cluster with 3 nodes (m6a.2xlarge, 8 vCPU, 32GiB)
 ```bash
 eksctl create cluster \
-  --name performance \
+  --name performance-test \
   --region eu-west-1 \
   --nodegroup-name linux-amd64 \
-  --node-ami-family Ubuntu2004 \
   --node-volume-type gp3 \
   --node-type m6a.2xlarge \
   --nodes 3 \
+  --nodes-min 2 \
+  --nodes-max 4 \
   --ssh-access \
   --ssh-public-key smatvienko \
   --tags environment=performance-test,owner=smatvienko
@@ -60,8 +61,8 @@ kubectl get nodes
 Switch context between clusters (like local minikube and remote AWS ECS)
 ```bash
 kubectl config get-contexts
-kubectl config use-context minikube
-kubectl config use-context aws-cli-user@perf-cluster.eu-west-1.eksctl.io
+# kubectl config use-context minikube
+kubectl config use-context aws-cli-user@performance-test.eu-west-1.eksctl.io
 ```
 
 Create namespace for ThingsBoard
@@ -94,7 +95,7 @@ helm install kafka bitnami/kafka --version 16.1.0 \
   --set replicaCount=3 \
   --set persistence.size=20Gi \
   --set zookeeper.enabled=false \
-  --set externalZookeeper.servers=zookeeper
+  --set externalZookeeper.servers=zookeeper-headless
 ```
 
 Setup [Cassandra cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/cassandra)
@@ -126,6 +127,91 @@ helm install postgresql bitnami/postgresql-ha --version 8.6.4 \
   --set fullnameOverride=postgresql
 ```
 
+Wait while all pods up and running
+```bash
+kubectl get pods
+```
+
+Check that Cassandra cluster is up and running
+```bash
+kubectl exec cassandra-0 -- nodetool status
+```
+All 3 nodes have to be present in the list and have a status UN (Up Normal)
+```bash
+Datacenter: datacenter1
+=======================
+Status=Up/Down
+|/ State=Normal/Leaving/Joining/Moving
+--  Address         Load       Tokens  Owns (effective)  Host ID                               Rack 
+UN  192.168.32.8    98.23 KiB  256     30.9%             dfc50a97-881e-4f19-8a82-904f4457c69b  rack1
+UN  192.168.64.96   98.26 KiB  256     34.0%             150c23b2-52fc-4b0c-936e-78c192ab7628  rack1
+UN  192.168.28.238  98.23 KiB  256     35.2%             8020a3ea-b242-4915-bed9-d4a2e06cd7aa  rack1
+```
+
+Check the Redis cluster is up and running
+```bash
+kubectl exec redis-0 -- redis-cli cluster info
+```
+The output will show cluster state is ok, known nodes is equal 6, cluster size is 3 (master nodes).
+```bash
+cluster_state:ok
+cluster_slots_assigned:16384
+cluster_slots_ok:16384
+cluster_slots_pfail:0
+cluster_slots_fail:0
+cluster_known_nodes:6
+cluster_size:3
+cluster_current_epoch:6
+cluster_my_epoch:1
+cluster_stats_messages_ping_sent:1872
+cluster_stats_messages_pong_sent:1875
+cluster_stats_messages_sent:3747
+cluster_stats_messages_ping_received:1870
+cluster_stats_messages_pong_received:1872
+cluster_stats_messages_meet_received:5
+cluster_stats_messages_received:3747
+```
+
+Check the Postgres status
+```bash
+kubectl exec postgresql-postgresql-0 -- /opt/bitnami/scripts/postgresql-repmgr/entrypoint.sh repmgr -f /opt/bitnami/repmgr/conf/repmgr.conf cluster show
+```
+The output have to have all 3 nodes running, 1 primary and 2 standby.
+```bash
+postgresql-repmgr 08:53:55.54 
+postgresql-repmgr 08:53:55.54 Welcome to the Bitnami postgresql-repmgr container
+postgresql-repmgr 08:53:55.54 Subscribe to project updates by watching https://github.com/bitnami/bitnami-docker-postgresql-repmgr
+postgresql-repmgr 08:53:55.54 Submit issues and feature requests at https://github.com/bitnami/bitnami-docker-postgresql-repmgr/issues
+postgresql-repmgr 08:53:55.54 
+
+ ID   | Name                    | Role    | Status    | Upstream                | Location | Priority | Timeline | Connection string                                                                                                                                                  
+------+-------------------------+---------+-----------+-------------------------+----------+----------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 1000 | postgresql-postgresql-0 | primary | * running |                         | default  | 100      | 1        | user=repmgr password=fdArM4aFOW host=postgresql-postgresql-0.postgresql-postgresql-headless.thingsboard.svc.cluster.local dbname=repmgr port=5432 connect_timeout=5
+ 1001 | postgresql-postgresql-1 | standby |   running | postgresql-postgresql-0 | default  | 100      | 1        | user=repmgr password=fdArM4aFOW host=postgresql-postgresql-1.postgresql-postgresql-headless.thingsboard.svc.cluster.local dbname=repmgr port=5432 connect_timeout=5
+ 1002 | postgresql-postgresql-2 | standby |   running | postgresql-postgresql-0 | default  | 100      | 1        | user=repmgr password=fdArM4aFOW host=postgresql-postgresql-2.postgresql-postgresql-headless.thingsboard.svc.cluster.local dbname=repmgr port=5432 connect_timeout=5
+```
+
+Check the Kafka cluster state and effectively Zookeeper cluster state as Kafka is dependent on Zookeeper.
+```bash
+kubectl exec kafka-0 -- /opt/bitnami/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server kafka-headless:9092 | grep kafka
+```
+You may find a 3 different kafka brokers in the output
+```bash
+kafka-2.kafka-headless.thingsboard.svc.cluster.local:9092 (id: 2 rack: null) -> (
+kafka-0.kafka-headless.thingsboard.svc.cluster.local:9092 (id: 0 rack: null) -> (
+kafka-1.kafka-headless.thingsboard.svc.cluster.local:9092 (id: 1 rack: null) -> (
+```
+
+Kafka cluster state is stored inside Zookeeper. Lest fetch the actual broker list.  
+```bash
+kubectl exec kafka-0 -- /opt/bitnami/kafka/bin/zookeeper-shell.sh zookeeper-headless:2181 ls /brokers/ids | tail -n 1
+```
+Zookeeper will return the list with broker ids.
+```bash
+[0, 1, 2]
+```
+
+
 Setup tb-services (tb-services.yml):
 ```yaml
 
@@ -134,8 +220,7 @@ Setup tb-services (tb-services.yml):
 ```bash
 kubectl apply -f tb-services.yml
 kubectl apply -f tb-db-setup.yml
-kubectl wait --for=condition=Completed pod/tb-db-setup --timeout=120s
-kubectl logs tb-db-setup
+kubectl logs -f tb-db-setup
 kubectl delete pod tb-db-setup
 kubectl scale --replicas=1 statefulset tb-node
 kubectl wait --for=condition=Ready pod/tb-node-0 --timeout=120s
