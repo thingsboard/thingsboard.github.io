@@ -44,6 +44,7 @@ eksctl create cluster \
   --region eu-west-1 \
   --nodegroup-name linux-amd64 \
   --node-volume-type gp3 \
+  --storage-class gp3 \
   --node-type m6a.2xlarge \
   --nodes 3 \
   --nodes-min 2 \
@@ -63,6 +64,52 @@ Switch context between clusters (like local minikube and remote AWS ECS)
 kubectl config get-contexts
 # kubectl config use-context minikube
 kubectl config use-context aws-cli-user@performance-test.eu-west-1.eksctl.io
+```
+
+Install [gp3 storage class on AWS EKS](https://docs.aws.amazon.com/eks/latest/userguide/managing-ebs-csi-self-managed-add-on.html) 
+
+eksctl utils associate-iam-oidc-provider --cluster=performance-test --approve
+
+eksctl create iamserviceaccount \
+--name ebs-csi-controller-sa \
+--namespace kube-system \
+--cluster performance-test \
+--attach-policy-arn arn:aws:iam::378560561651:policy/AmazonEKS_EBS_CSI_Driver_Policy \
+--approve
+
+aws cloudformation describe-stacks \
+--stack-name eksctl-performance-test-addon-iamserviceaccount-kube-system-ebs-csi-controller-sa \
+--query='Stacks[].Outputs[?OutputKey==`Role1`].OutputValue' \
+--output text
+
+
+helm upgrade -install aws-ebs-csi-driver aws-ebs-csi-driver/aws-ebs-csi-driver \
+--namespace kube-system \
+--set image.repository=602401143452.dkr.ecr.eu-west-1.amazonaws.com/eks/aws-ebs-csi-driver \
+--set controller.serviceAccount.create=false \
+--set controller.serviceAccount.name=ebs-csi-controller-sa
+
+
+Create storage class gp3 and make it default
+
+gp3-def-sc.yaml
+```yaml
+kind: StorageClass
+apiVersion: storage.k8s.io/v1
+metadata:
+  name: gp3
+  annotations:
+    storageclass.kubernetes.io/is-default-class: "true"
+allowVolumeExpansion: true
+provisioner: ebs.csi.aws.com
+volumeBindingMode: WaitForFirstConsumer
+parameters:
+  type: gp3
+```
+```bash
+kubectl apply -f gp3-def-sc.yaml
+kubectl delete storageclass gp2
+kubectl get storageclasses
 ```
 
 Create namespace for ThingsBoard
@@ -121,9 +168,11 @@ Setup [Postgres cluster from Bitnami Helm chart](https://github.com/bitnami/char
 ```bash
 helm install postgresql bitnami/postgresql-ha --version 8.6.4 \
   --set postgresql.replicaCount=3 \
-  --set pgpool.replicaCount=1 \
-  --set persistence.size=30Gi \
   --set postgresql.database=thingsboard \
+  --set postgresql.maxConnections=120 \
+  --set pgpool.replicaCount=1 \
+  --set pgpool.numInitChildren=120 \
+  --set persistence.size=30Gi \
   --set fullnameOverride=postgresql
 ```
 
@@ -212,21 +261,36 @@ Zookeeper will return the list with broker ids.
 ```
 
 
-Setup tb-services (tb-services.yml):
+Setup tb-services:
+tb-services.yml
+```yaml
+
+```
+tb-db-setup.yml
 ```yaml
 
 ```
 
+Persist common settings
 ```bash
-kubectl apply -f tb-services.yml
+kubectl apply -f tb-cm.yml
+```
+
+Install once the ThingsBoard schema
+```bash
 kubectl apply -f tb-db-setup.yml
 kubectl logs -f tb-db-setup
 kubectl delete pod tb-db-setup
-kubectl scale --replicas=1 statefulset tb-node
-kubectl wait --for=condition=Ready pod/tb-node-0 --timeout=120s
-kubectl scale --replicas=1 statefulset tb-rule-engine
-kubectl wait --for=condition=Ready pod/tb-rule-engine-0 --timeout=120s
-kubectl scale --replicas=3 statefulset tb-node
-kubectl scale --replicas=3 statefulset tb-rule-engine
+```
+
+Deploy ThingsBoard cluster
+```bash
+kubectl apply -f tb-services.yml
+#kubectl scale --replicas=1 statefulset tb-node
+#kubectl wait --for=condition=Ready pod/tb-node-0 --timeout=120s
+#kubectl scale --replicas=1 statefulset tb-rule-engine
+#kubectl wait --for=condition=Ready pod/tb-rule-engine-0 --timeout=120s
+#kubectl scale --replicas=3 statefulset tb-node
+#kubectl scale --replicas=3 statefulset tb-rule-engine
 ```
 
