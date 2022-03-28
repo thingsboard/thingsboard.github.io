@@ -260,27 +260,552 @@ Zookeeper will return the list with broker ids.
 [0, 1, 2]
 ```
 
-
-Setup tb-services:
-tb-services.yml
-```yaml
-
-```
-tb-db-setup.yml
-```yaml
-
-```
-
 Persist common settings
+
+tb-cm.yml
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tb-cluster-stack-config
+  labels:
+    name: tb-cluster-stack-config
+data:
+  # PostgreSQL
+  SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
+  SPRING_DRIVER_CLASS_NAME: org.postgresql.Driver
+  SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql-pgpool:5432/thingsboard
+  SPRING_DATASOURCE_USERNAME: postgres
+  # Kafka
+  TB_QUEUE_TYPE: "kafka"
+  TB_KAFKA_SERVERS: "kafka-headless:9092"
+  TB_QUEUE_KAFKA_REPLICATION_FACTOR: "2" # really important for fault tolerance for the whole cluster
+  TB_KAFKA_ACKS: "1"
+  TB_KAFKA_BATCH_SIZE: "65536" # default is 16384 - it helps to produce messages much efficiently
+  TB_KAFKA_LINGER_MS: "5" # default is 1
+  TB_QUEUE_KAFKA_MAX_POLL_RECORDS: "2048" # default is 8192
+  TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES: "retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600;partitions:6"
+  TB_QUEUE_CORE_PARTITIONS: "3"
+  TB_QUEUE_RE_MAIN_PARTITIONS: "3"
+  TB_QUEUE_RE_HP_PARTITIONS: "3"
+  TB_QUEUE_RE_SQ_PARTITIONS: "3"
+  # Zookeeper
+  ZOOKEEPER_ENABLED: "true"
+  ZOOKEEPER_URL: "zookeeper-headless:2181"
+  # Cassandra
+  DATABASE_TS_TYPE: "cassandra"
+  PERSIST_STATE_TO_TELEMETRY: "true"
+  CASSANDRA_URL: "cassandra-headless:9042"
+  CASSANDRA_CLUSTER_NAME: "cassandra" # see https://github.com/bitnami/charts/blob/master/bitnami/cassandra/values.yaml
+  CASSANDRA_LOCAL_DATACENTER: "datacenter1" # see https://github.com/bitnami/charts/blob/master/bitnami/cassandra/values.yaml
+  CASSANDRA_USE_CREDENTIALS: "true"
+  CASSANDRA_USERNAME: "cassandra"
+  CASSANDRA_QUERY_BUFFER_SIZE: "200000"
+  CASSANDRA_QUERY_CONCURRENT_LIMIT: "300"
+  CASSANDRA_QUERY_POLL_MS: "5"
+  # Redis
+  CACHE_TYPE: "redis"
+  REDIS_CONNECTION_TYPE: "cluster"
+  REDIS_NODES: "redis-headless:6379"
+  REDIS_USE_DEFAULT_POOL_CONFIG: "false"
+  REDIS_POOL_CONFIG_BLOCK_WHEN_EXHAUSTED: "false"
+  REDIS_POOL_CONFIG_TEST_ON_BORROW: "false"
+  REDIS_POOL_CONFIG_TEST_ON_RETURN: "false"
+  # JS executors
+  JS_EVALUATOR: "remote"
+  # Common settings
+  HTTP_LOG_CONTROLLER_ERROR_STACK_TRACE: "false"
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tb-node-config
+  labels:
+    name: tb-node-config
+data:
+  conf: |
+    export JAVA_OPTS="$JAVA_OPTS -Dplatform=deb -Dinstall.data_dir=/usr/share/thingsboard/data"
+    export JAVA_OPTS="$JAVA_OPTS -Xlog:gc*,heap*,age*,safepoint=debug:file=/var/log/thingsboard/gc.log:time,uptime,level,tags:filecount=10,filesize=10M"
+    export JAVA_OPTS="$JAVA_OPTS -XX:+IgnoreUnrecognizedVMOptions -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/thingsboard/heapdump.bin"
+    export JAVA_OPTS="$JAVA_OPTS -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark"
+    export JAVA_OPTS="$JAVA_OPTS -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10"
+    export JAVA_OPTS="$JAVA_OPTS -XX:+ExitOnOutOfMemoryError"
+    export LOG_FILENAME=thingsboard.out
+    export LOADER_PATH=/usr/share/thingsboard/conf,/usr/share/thingsboard/extensions
+  logback: |
+    <!DOCTYPE configuration>
+    <configuration scan="true" scanPeriod="10 seconds">
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>%d{ISO8601} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            </encoder>
+        </appender>
+        <logger name="org.thingsboard.server" level="INFO" />
+        <logger name="com.google.common.util.concurrent.AggregateFuture" level="OFF" />
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </configuration>
+---
+```
+
+Apply config map
 ```bash
 kubectl apply -f tb-cm.yml
 ```
 
-Install once the ThingsBoard schema
+Prepare database setup yaml
+
+tb-db-setup.yml
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: tb-db-setup
+  namespace: thingsboard
+spec:
+  securityContext:
+    runAsUser: 799
+    runAsNonRoot: true
+    fsGroup: 799
+  volumes:
+    - name: tb-node-config
+      configMap:
+        name: tb-node-config
+        items:
+          - key: conf
+            path: thingsboard.conf
+          - key: logback
+            path: logback.xml
+    - name: tb-node-logs
+      emptyDir: {}
+  containers:
+    - name: tb-db-setup
+      imagePullPolicy: IfNotPresent
+      image: thingsboard/tb-node:3.3.4.1
+      env:
+        - name: TB_SERVICE_ID
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: INSTALL_TB
+          value: "true"
+        - name: LOAD_DEMO
+          value: "true"
+        - name: REDIS_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: redis
+              key: redis-password
+        - name: CASSANDRA_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: cassandra
+              key: cassandra-password
+        - name: CASSANDRA_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: cassandra
+              key: cassandra-password
+        - name: SPRING_DATASOURCE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgresql-postgresql
+              key: postgresql-password
+      envFrom:
+        - configMapRef:
+            name: tb-cluster-stack-config
+      volumeMounts:
+        - mountPath: /config
+          name: tb-node-config
+        - mountPath: /var/log/thingsboard
+          name: tb-node-logs
+  restartPolicy: Never
+---
+```
+
+Install once the ThingsBoard schema, check logs and cleanup.
 ```bash
 kubectl apply -f tb-db-setup.yml
 kubectl logs -f tb-db-setup
 kubectl delete pod tb-db-setup
+```
+
+Prepare ThingsBoard services yaml
+
+tb-services.yml
+```yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: tb-node
+spec:
+  serviceName: tb-node
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tb-node
+  template:
+    metadata:
+      labels:
+        app: tb-node
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: "app"
+                    operator: In
+                    values:
+                      - tb-node
+              topologyKey: "kubernetes.io/hostname"
+      securityContext:
+        runAsUser: 799
+        runAsNonRoot: true
+        fsGroup: 799
+      volumes:
+        - name: tb-node-config
+          configMap:
+            name: tb-node-config
+            items:
+              - key: conf
+                path:  thingsboard.conf
+              - key: logback
+                path:  logback.xml
+        - name: tb-node-logs
+          emptyDir: {}
+      containers:
+        - name: tb-node
+          imagePullPolicy: IfNotPresent
+          image: thingsboard/tb-node:3.3.3
+          ports:
+            - containerPort: 8080
+              name: http
+            - containerPort: 7070
+              name: edge
+          resources:
+            limits:
+              cpu: "6"
+              memory: 6Gi
+            requests:
+              cpu: "1"
+              memory: 2Gi
+          env:
+            - name: TB_SERVICE_TYPE
+              value: "tb-core"
+            - name: TB_SERVICE_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: TB_HOST
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis
+                  key: redis-password
+            - name: CASSANDRA_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: cassandra
+                  key: cassandra-password
+            - name: CASSANDRA_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: cassandra
+                  key: cassandra-password
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-postgresql
+                  key: postgresql-password
+            - name: HTTP_ENABLED
+              value: "false"
+            - name: MQTT_ENABLED
+              value: "false"
+            - name: COAP_ENABLED
+              value: "false"
+            - name: SNMP_ENABLED
+              value: "false"
+            - name: LWM2M_ENABLED
+              value: "false"
+          envFrom:
+            - configMapRef:
+                name: tb-cluster-stack-config
+          volumeMounts:
+            - mountPath: /config
+              name: tb-node-config
+            - mountPath: /var/log/thingsboard
+              name: tb-node-logs
+          readinessProbe:
+            httpGet:
+              path: /login
+              port: http
+          livenessProbe:
+            httpGet:
+              path: /login
+              port: http
+            initialDelaySeconds: 460
+            timeoutSeconds: 10
+      restartPolicy: Always
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: tb-rule-engine
+spec:
+  serviceName: tb-rule-engine
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tb-rule-engine
+  template:
+    metadata:
+      labels:
+        app: tb-rule-engine
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: "app"
+                    operator: In
+                    values:
+                      - tb-rule-engine
+              topologyKey: "kubernetes.io/hostname"
+      securityContext:
+        runAsUser: 799
+        runAsNonRoot: true
+        fsGroup: 799
+      volumes:
+        - name: tb-node-config
+          configMap:
+            name: tb-node-config
+            items:
+              - key: conf
+                path:  thingsboard.conf
+              - key: logback
+                path:  logback.xml
+        - name: tb-node-logs
+          emptyDir: {}
+      containers:
+        - name: tb-rule-engine
+          imagePullPolicy: IfNotPresent
+          image: thingsboard/tb-node:3.3.3
+          ports:
+            - containerPort: 8080
+              name: http
+            - containerPort: 7070
+              name: edge
+          resources:
+            limits:
+              cpu: "6"
+              memory: 6Gi
+            requests:
+              cpu: "1"
+              memory: 2Gi
+          env:
+            - name: TB_SERVICE_TYPE
+              value: "tb-rule-engine"
+            - name: TB_SERVICE_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: TB_HOST
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis
+                  key: redis-password
+            - name: CASSANDRA_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: cassandra
+                  key: cassandra-password
+            - name: CASSANDRA_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: cassandra
+                  key: cassandra-password
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-postgresql
+                  key: postgresql-password
+          envFrom:
+            - configMapRef:
+                name: tb-cluster-stack-config
+          volumeMounts:
+            - mountPath: /config
+              name: tb-node-config
+            - mountPath: /var/log/thingsboard
+              name: tb-node-logs
+          readinessProbe:
+            httpGet:
+              path: /login
+              port: http
+          livenessProbe:
+            httpGet:
+              path: /login
+              port: http
+            initialDelaySeconds: 460
+            timeoutSeconds: 10
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tb-node
+spec:
+  type: ClusterIP
+  selector:
+    app: tb-node
+  ports:
+    - port: 8080
+      name: http
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tb-web-ui
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tb-web-ui
+  template:
+    metadata:
+      labels:
+        app: tb-web-ui
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - tb-web-ui
+                topologyKey: kubernetes.io/hostname
+      containers:
+      - name: server
+        imagePullPolicy: IfNotPresent
+        image: thingsboard/tb-web-ui:3.3.3
+        ports:
+        - containerPort: 8080
+          name: http
+        resources:
+          limits:
+            cpu: "1"
+            memory: 100Mi
+          requests:
+            cpu: "100m"
+            memory: 100Mi
+        env:
+        - name: HTTP_BIND_ADDRESS
+          value: "0.0.0.0"
+        - name: HTTP_BIND_PORT
+          value: "8080"
+        livenessProbe:
+          httpGet:
+            path: /index.html
+            port: http
+          initialDelaySeconds: 120
+          timeoutSeconds: 10
+      restartPolicy: Always
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: tb-web-ui
+spec:
+  type: ClusterIP
+  selector:
+    app: tb-web-ui
+  ports:
+  - port: 8080
+    name: http
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: tb-js-executor
+spec:
+  serviceName: tb-js-executor
+  replicas: 6
+  podManagementPolicy: "Parallel"
+  selector:
+    matchLabels:
+      app: tb-js-executor
+  template:
+    metadata:
+      labels:
+        app: tb-js-executor
+    spec:
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - tb-js-executor
+                topologyKey: kubernetes.io/hostname
+      containers:
+        - name: tb-js-executor
+          imagePullPolicy: IfNotPresent
+          image: thingsboard/tb-js-executor:3.3.3
+          resources:
+            limits:
+              cpu: "1"
+              memory: 400Mi
+            requests:
+              cpu: "100m"
+              memory: 100Mi
+          ports:
+            - containerPort: 8888
+              name: http # /livenessProbe
+          env:
+            - name: KAFKA_CLIENT_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+          envFrom:
+            - configMapRef:
+                name: tb-cluster-stack-config
+          readinessProbe:
+            httpGet:
+              path: /livenessProbe
+              port: http
+            initialDelaySeconds: 10
+            timeoutSeconds: 1
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 7
+          livenessProbe:
+            httpGet:
+              path: /livenessProbe
+              port: http
+            initialDelaySeconds: 15
+            timeoutSeconds: 1
+            periodSeconds: 10
+            successThreshold: 1
+            failureThreshold: 6
+      restartPolicy: Always
+---
 ```
 
 Deploy ThingsBoard cluster
