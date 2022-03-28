@@ -279,12 +279,12 @@ data:
   # Kafka
   TB_QUEUE_TYPE: "kafka"
   TB_KAFKA_SERVERS: "kafka-headless:9092"
-  TB_QUEUE_KAFKA_REPLICATION_FACTOR: "2" # really important for fault tolerance for the whole cluster
+  TB_QUEUE_KAFKA_REPLICATION_FACTOR: "2" # IMPORTANT for CLUSTER
   TB_KAFKA_ACKS: "1"
   TB_KAFKA_BATCH_SIZE: "65536" # default is 16384 - it helps to produce messages much efficiently
   TB_KAFKA_LINGER_MS: "5" # default is 1
   TB_QUEUE_KAFKA_MAX_POLL_RECORDS: "2048" # default is 8192
-  TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES: "retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600;partitions:6"
+  TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES: "retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600;partitions:6" # have to be equal tb-js-executor replicas count
   TB_QUEUE_CORE_PARTITIONS: "3"
   TB_QUEUE_RE_MAIN_PARTITIONS: "3"
   TB_QUEUE_RE_HP_PARTITIONS: "3"
@@ -300,6 +300,8 @@ data:
   CASSANDRA_LOCAL_DATACENTER: "datacenter1" # see https://github.com/bitnami/charts/blob/master/bitnami/cassandra/values.yaml
   CASSANDRA_USE_CREDENTIALS: "true"
   CASSANDRA_USERNAME: "cassandra"
+  CASSANDRA_READ_CONSISTENCY_LEVEL: "QUORUM" # IMPORTANT for the CLUSTER data consistency
+  CASSANDRA_WRITE_CONSISTENCY_LEVEL: "QUORUM" # IMPORTANT for the CLUSTER data consistency
   CASSANDRA_QUERY_BUFFER_SIZE: "200000"
   CASSANDRA_QUERY_CONCURRENT_LIMIT: "300"
   CASSANDRA_QUERY_POLL_MS: "5"
@@ -429,6 +431,36 @@ Install once the ThingsBoard schema, check logs and cleanup.
 kubectl apply -f tb-db-setup.yml
 kubectl logs -f tb-db-setup
 kubectl delete pod tb-db-setup
+```
+
+**IMPORTANT**. Make **Cassandra** fault tolerant by increasing **replication factor up to 3** with **full repair**.
+This will guarantee that we can tolerate 1 Cassandra node outage (restart, out of disk, out of memory, crush, etc.) with no downtime for the ThingsBoard cluster for any read/write operations. 
+There are two keyspace to upgrade:
+* system_auth (authorization and internal authentication data)
+* thingsboard (ThingsBoard's data)
+
+```bash
+$ kubectl exec -it cassandra-0 -- /bin/bash
+I have no name!@cassandra-0:/$ cqlsh -u ${CASSANDRA_USER} -p ${CASSANDRA_PASSWORD} ${POD_IP}
+cassandra@cqlsh> DESC KEYSPACE system_auth;
+cassandra@cqlsh> ALTER KEYSPACE system_auth WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 };
+cassandra@cqlsh> DESC KEYSPACE thingsboard;
+cassandra@cqlsh> ALTER KEYSPACE thingsboard WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 3 };
+cassandra@cqlsh> exit
+I have no name!@cassandra-0:/$ exit
+```
+
+When increasing replication factor you need to run a full (-full) repair to distribute the data.
+Repair needs to be run one by one on each Cassandra node. As we have a new cluster, the repair process takes a few seconds per node.
+```bash
+for i in {0..2}; do kubectl exec -it cassandra-${i} -- nodetool repair --full ; done
+```
+
+**IMPORTANT**. Make sure that your ThingsBoard cluster have a **Cassandra consistency** read/write **level** **QUORUM** (for SimpleStrategy) or **LOCAL_QUORUM** (for NetworkTopologyStrategy)!
+See the example from configmap: 
+```yaml
+  CASSANDRA_READ_CONSISTENCY_LEVEL: "QUORUM" # IMPORTANT for the CLUSTER data consistency
+  CASSANDRA_WRITE_CONSISTENCY_LEVEL: "QUORUM" # IMPORTANT for the CLUSTER data consistency
 ```
 
 Prepare ThingsBoard services yaml
