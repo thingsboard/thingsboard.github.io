@@ -131,7 +131,7 @@ helm list
 
 We are going to use Bitnami docker images and Bitnami helm charts as well.
 
-Setup [Zookeeper cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/zookeeper/#installing-the-chart)
+Setup [Zookeeper cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/zookeeper)
 ```bash
 helm install zookeeper bitnami/zookeeper --version 9.0.0 --set replicaCount=3
 ```
@@ -167,13 +167,20 @@ helm install redis bitnami/redis-cluster --version 7.4.1 \
 Setup [Postgres cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/postgresql-ha)
 ```bash
 helm install postgresql bitnami/postgresql-ha --version 8.6.4 \
+  --set postgresqlImage.tag=12 \
   --set postgresql.replicaCount=3 \
   --set postgresql.database=thingsboard \
   --set postgresql.maxConnections=120 \
   --set pgpool.replicaCount=1 \
   --set pgpool.numInitChildren=120 \
+  --set pgpool.useLoadBalancing=false \
   --set persistence.size=30Gi \
   --set fullnameOverride=postgresql
+  
+#  --set postgresql.extraEnvVars[0].name=PASSWORD_AUTHENTICATION \
+#  --set postgresql.extraEnvVars[0].value=md5 \
+#  --set pgpool.extraEnvVars[0].name=PASSWORD_AUTHENTICATION \
+#  --set pgpool.extraEnvVars[0].value=md5 \
 ```
 
 Wait while all pods up and running
