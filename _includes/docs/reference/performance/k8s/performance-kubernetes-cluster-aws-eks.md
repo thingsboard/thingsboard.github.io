@@ -7,13 +7,13 @@ and [microservices](/docs/{{docsPrefix}}reference/msa/) deployment modes.
 This article describes the performance of ThingsBoard microservices deployment in the most popular usage scenarios.
 It is helpful to understand how ThingsBoard scales horizontally (cluster mode).
 
-## Test methodology
+### ThingsBoard cluster test methodology
 
 For simplicity, we have deployed a ThingsBoard cluster on AWS Kubernetes cluster.
 To simplify the 3rd party deployment (PostgreSQL, Cassandra, Kafka, Zookeeper, Redis) we are going to use the respective helm charts. 
 The test agent provisions and connects a configurable number of device emulators that constantly publish time-series data over MQTT.
 
-## Setting up a Kubernetes cluster on AWS
+### Setting up a Kubernetes cluster on AWS
 
 Here the quick [introduction to Elastic Kubernetes Service (Amazon EKS)](https://www.youtube.com/watch?v=p6xDCz00TxU)  
 
@@ -66,29 +66,41 @@ kubectl config get-contexts
 kubectl config use-context aws-cli-user@performance-test.eu-west-1.eksctl.io
 ```
 
+### GP3 storage on AWS EKS 
+
+General Purpose (GP2) storage with a small volume size is quite slow relatively to the modern GP3. 
+GP3 is provided 3000 IOPS and 125 MB/s throughput for each persistent volume with no additional cost.
+It is enough to gain top performance needed for our services.
+
+**Important**! Please, do not skip this step. Otherwise, you will face the major performance issue in a mean time.
+With GP2 you probably face with extra costs when you order the same IOPS and throughput as GP3 provided as a base level wand only charge you for the disk space claimed.   
+
 Install [gp3 storage class on AWS EKS](https://docs.aws.amazon.com/eks/latest/userguide/managing-ebs-csi-self-managed-add-on.html) 
+
+Here some notes, but we advise you to use the up-to-date AWS user guide and follow each step precise and carefully.  
+
+```bash
 
 eksctl utils associate-iam-oidc-provider --cluster=performance-test --approve
 
 eksctl create iamserviceaccount \
---name ebs-csi-controller-sa \
---namespace kube-system \
---cluster performance-test \
---attach-policy-arn arn:aws:iam::378560561651:policy/AmazonEKS_EBS_CSI_Driver_Policy \
---approve
+  --name ebs-csi-controller-sa \
+  --namespace kube-system \
+  --cluster performance-test \
+  --attach-policy-arn arn:aws:iam::378560561651:policy/AmazonEKS_EBS_CSI_Driver_Policy \
+  --approve
 
 aws cloudformation describe-stacks \
---stack-name eksctl-performance-test-addon-iamserviceaccount-kube-system-ebs-csi-controller-sa \
---query='Stacks[].Outputs[?OutputKey==`Role1`].OutputValue' \
---output text
-
+  --stack-name eksctl-performance-test-addon-iamserviceaccount-kube-system-ebs-csi-controller-sa \
+  --query='Stacks[].Outputs[?OutputKey==`Role1`].OutputValue' \
+  --output text
 
 helm upgrade -install aws-ebs-csi-driver aws-ebs-csi-driver/aws-ebs-csi-driver \
---namespace kube-system \
---set image.repository=602401143452.dkr.ecr.eu-west-1.amazonaws.com/eks/aws-ebs-csi-driver \
---set controller.serviceAccount.create=false \
---set controller.serviceAccount.name=ebs-csi-controller-sa
-
+  --namespace kube-system \
+  --set image.repository=602401143452.dkr.ecr.eu-west-1.amazonaws.com/eks/aws-ebs-csi-driver \
+  --set controller.serviceAccount.create=false \
+  --set controller.serviceAccount.name=ebs-csi-controller-sa
+```
 
 Create storage class gp3 and make it default
 
@@ -106,11 +118,22 @@ volumeBindingMode: WaitForFirstConsumer
 parameters:
   type: gp3
 ```
+
 ```bash
 kubectl apply -f gp3-def-sc.yaml
+```
+
+Delete legacy gp2 storage class
+```bash
 kubectl delete storageclass gp2
+```
+
+Check the storage class available
+```bash
 kubectl get storageclasses
 ```
+
+### Create ThingsBoard's namespace
 
 Create namespace for ThingsBoard
 ```bash
@@ -120,6 +143,8 @@ kubectl get namespaces
 kubectl config set-context --current --namespace=thingsboard
 kubectl get pods -o wide
 ```
+
+### Setup databases with Helm
 
 Setup helm
 ```bash
@@ -185,6 +210,8 @@ Wait while all pods up and running
 ```bash
 kubectl get pods
 ```
+
+### Check the cluster health
 
 Check the Kafka cluster state and effectively Zookeeper cluster state as Kafka is dependent on Zookeeper.
 ```bash
@@ -265,9 +292,14 @@ postgresql-repmgr 08:53:55.54
  1002 | postgresql-postgresql-2 | standby |   running | postgresql-postgresql-0 | default  | 100      | 1        | user=repmgr password=fdArM4aFOW host=postgresql-postgresql-2.postgresql-postgresql-headless.thingsboard.svc.cluster.local dbname=repmgr port=5432 connect_timeout=5
 ```
 
+### Install the ThingsBoard schema
+
 Persist common settings
 
-tb-cm.yml
+```bash
+cat > tb-cm.yml 
+```
+
 ```yaml
 apiVersion: v1
 kind: ConfigMap
@@ -363,7 +395,10 @@ kubectl apply -f tb-cm.yml
 
 Prepare database setup yaml
 
-tb-db-setup.yml
+```bash
+cat > tb-db-setup.yml 
+```
+
 ```yaml
 apiVersion: v1
 kind: Pod
@@ -431,13 +466,15 @@ spec:
 ---
 ```
 
-Install once the ThingsBoard schema, check logs and cleanup.
+Install the ThingsBoard schema, follow logs and cleanup.
+
 ```bash
-kubectl apply -f tb-db-setup.yml && kubectl logs -f tb-db-setup
-kubectl delete pod tb-db-setup
+kubectl apply -f tb-db-setup.yml && kubectl logs -f tb-db-setup && kubectl delete pod tb-db-setup
 ```
 
-**IMPORTANT**. Make **Cassandra** fault tolerant by increasing **replication factor up to 3** with **full repair**.
+### Fault tolerance
+
+**IMPORTANT**. Make **Cassandra** fault tolerance by increasing **replication factor up to 3** with **full repair**.
 This will guarantee that we can tolerate 1 Cassandra node outage (restart, out of disk, out of memory, crush, etc.) with no downtime for the ThingsBoard cluster for any read/write operations. 
 There are two keyspace to upgrade:
 * system_auth (authorization and internal authentication data)
@@ -466,10 +503,15 @@ See the example from configmap:
   CASSANDRA_READ_CONSISTENCY_LEVEL: "QUORUM" # IMPORTANT for the CLUSTER data consistency
   CASSANDRA_WRITE_CONSISTENCY_LEVEL: "QUORUM" # IMPORTANT for the CLUSTER data consistency
 ```
+       
+### Deploy ThingsBoard services
 
 Prepare ThingsBoard services yaml
 
-tb-services.yml
+```bash
+cat > tb-services.yml 
+```
+
 ```yaml
 apiVersion: apps/v1
 kind: StatefulSet
@@ -514,7 +556,7 @@ spec:
       containers:
         - name: tb-node
           imagePullPolicy: IfNotPresent
-          image: thingsboard/tb-node:3.3.3
+          image: thingsboard/tb-node:3.3.4.1
           ports:
             - containerPort: 8080
               name: http
@@ -631,7 +673,7 @@ spec:
       containers:
         - name: tb-rule-engine
           imagePullPolicy: IfNotPresent
-          image: thingsboard/tb-node:3.3.3
+          image: thingsboard/tb-node:3.3.4.1
           ports:
             - containerPort: 8080
               name: http
@@ -736,7 +778,7 @@ spec:
       containers:
       - name: server
         imagePullPolicy: IfNotPresent
-        image: thingsboard/tb-web-ui:3.3.3
+        image: thingsboard/tb-web-ui:3.3.4.1
         ports:
         - containerPort: 8080
           name: http
@@ -803,7 +845,7 @@ spec:
       containers:
         - name: tb-js-executor
           imagePullPolicy: IfNotPresent
-          image: thingsboard/tb-js-executor:3.3.3
+          image: thingsboard/tb-js-executor:3.3.4.1
           resources:
             limits:
               cpu: "1"
@@ -847,11 +889,18 @@ spec:
 Deploy ThingsBoard cluster
 ```bash
 kubectl apply -f tb-services.yml
-#kubectl scale --replicas=1 statefulset tb-node
-#kubectl wait --for=condition=Ready pod/tb-node-0 --timeout=120s
-#kubectl scale --replicas=1 statefulset tb-rule-engine
-#kubectl wait --for=condition=Ready pod/tb-rule-engine-0 --timeout=120s
-#kubectl scale --replicas=3 statefulset tb-node
-#kubectl scale --replicas=3 statefulset tb-rule-engine
 ```
 
+Wait all pods are up and running.
+
+## First login to the ThingsBoard cluster
+
+Let's connect to the ThingsBoard's user interface inside the cluster.
+  
+```bash
+kubectl port-forward pod/tb-node-0 8080:8080
+```
+
+Open the ThingsBoard in your browser using the http://localhost:8080 
+
+Enjoy your first success!
