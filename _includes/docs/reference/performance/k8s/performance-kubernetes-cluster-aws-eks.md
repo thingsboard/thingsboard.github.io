@@ -133,7 +133,8 @@ We are going to use Bitnami docker images and Bitnami helm charts as well.
 
 Setup [Zookeeper cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/zookeeper)
 ```bash
-helm install zookeeper bitnami/zookeeper --version 9.0.0 --set replicaCount=3
+helm install zookeeper bitnami/zookeeper --version 9.0.0 \
+  --set replicaCount=3
 ```
 
 Setup [Kafka cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/kafka)
@@ -166,26 +167,43 @@ helm install redis bitnami/redis-cluster --version 7.4.1 \
 
 Setup [Postgres cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/postgresql-ha)
 ```bash
-helm install postgresql bitnami/postgresql-ha --version 8.6.4 \
-  --set postgresqlImage.tag=12 \
+helm install postgresql bitnami/postgresql-ha --version 8.6.7 \
+  --set postgresqlImage.tag=11.15.0-debian-10-r44 \
   --set postgresql.replicaCount=3 \
   --set postgresql.database=thingsboard \
-  --set postgresql.maxConnections=120 \
+  --set postgresql.maxConnections=150 \
   --set pgpool.replicaCount=1 \
   --set pgpool.numInitChildren=120 \
   --set pgpool.useLoadBalancing=false \
   --set persistence.size=30Gi \
+  --set postgresqlImage.debug=true \
+  --set pgpoolImage.debug=true \
   --set fullnameOverride=postgresql
-  
-#  --set postgresql.extraEnvVars[0].name=PASSWORD_AUTHENTICATION \
-#  --set postgresql.extraEnvVars[0].value=md5 \
-#  --set pgpool.extraEnvVars[0].name=PASSWORD_AUTHENTICATION \
-#  --set pgpool.extraEnvVars[0].value=md5 \
 ```
 
 Wait while all pods up and running
 ```bash
 kubectl get pods
+```
+
+Check the Kafka cluster state and effectively Zookeeper cluster state as Kafka is dependent on Zookeeper.
+```bash
+kubectl exec kafka-0 -- /opt/bitnami/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server kafka-headless:9092 | grep kafka
+```
+You may find a 3 different kafka brokers in the output
+```bash
+kafka-2.kafka-headless.thingsboard.svc.cluster.local:9092 (id: 2 rack: null) -> (
+kafka-0.kafka-headless.thingsboard.svc.cluster.local:9092 (id: 0 rack: null) -> (
+kafka-1.kafka-headless.thingsboard.svc.cluster.local:9092 (id: 1 rack: null) -> (
+```
+
+Kafka cluster state is stored inside Zookeeper. Lest fetch the actual broker list.
+```bash
+kubectl exec kafka-0 -- /opt/bitnami/kafka/bin/zookeeper-shell.sh zookeeper-headless:2181 ls /brokers/ids | tail -n 1
+```
+Zookeeper will return the list with broker ids.
+```bash
+[0, 1, 2]
 ```
 
 Check that Cassandra cluster is up and running
@@ -245,26 +263,6 @@ postgresql-repmgr 08:53:55.54
  1000 | postgresql-postgresql-0 | primary | * running |                         | default  | 100      | 1        | user=repmgr password=fdArM4aFOW host=postgresql-postgresql-0.postgresql-postgresql-headless.thingsboard.svc.cluster.local dbname=repmgr port=5432 connect_timeout=5
  1001 | postgresql-postgresql-1 | standby |   running | postgresql-postgresql-0 | default  | 100      | 1        | user=repmgr password=fdArM4aFOW host=postgresql-postgresql-1.postgresql-postgresql-headless.thingsboard.svc.cluster.local dbname=repmgr port=5432 connect_timeout=5
  1002 | postgresql-postgresql-2 | standby |   running | postgresql-postgresql-0 | default  | 100      | 1        | user=repmgr password=fdArM4aFOW host=postgresql-postgresql-2.postgresql-postgresql-headless.thingsboard.svc.cluster.local dbname=repmgr port=5432 connect_timeout=5
-```
-
-Check the Kafka cluster state and effectively Zookeeper cluster state as Kafka is dependent on Zookeeper.
-```bash
-kubectl exec kafka-0 -- /opt/bitnami/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server kafka-headless:9092 | grep kafka
-```
-You may find a 3 different kafka brokers in the output
-```bash
-kafka-2.kafka-headless.thingsboard.svc.cluster.local:9092 (id: 2 rack: null) -> (
-kafka-0.kafka-headless.thingsboard.svc.cluster.local:9092 (id: 0 rack: null) -> (
-kafka-1.kafka-headless.thingsboard.svc.cluster.local:9092 (id: 1 rack: null) -> (
-```
-
-Kafka cluster state is stored inside Zookeeper. Lest fetch the actual broker list.  
-```bash
-kubectl exec kafka-0 -- /opt/bitnami/kafka/bin/zookeeper-shell.sh zookeeper-headless:2181 ls /brokers/ids | tail -n 1
-```
-Zookeeper will return the list with broker ids.
-```bash
-[0, 1, 2]
 ```
 
 Persist common settings
@@ -435,8 +433,7 @@ spec:
 
 Install once the ThingsBoard schema, check logs and cleanup.
 ```bash
-kubectl apply -f tb-db-setup.yml
-kubectl logs -f tb-db-setup
+kubectl apply -f tb-db-setup.yml && kubectl logs -f tb-db-setup
 kubectl delete pod tb-db-setup
 ```
 
