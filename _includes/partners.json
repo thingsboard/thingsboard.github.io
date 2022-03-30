@@ -50,6 +50,22 @@
     "blurb": "Espressif Systems designs a range of high-performance Wi-Fi+Bluetooth/BLE chipsets and modules."
   },
   {
+    "type": ["main", "bluetooth", "wifi", "lte", "LoRaWAN"],
+    "program": "",
+    "name": "Dusun",
+    "logo": "dusun.png",
+    "links": {
+      "Site": {
+        "href": "https://www.dusuniot.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/dusun/DSGW-210_Edge_computing_gateway"
+      }
+    },
+    "blurb": "Dusun provides various kinds of gateways, hardware products and IOT service"
+  },
+  {
     "type": ["main", "bluetooth", "nbiot", "lte", "sigfox", "wifi"],
     "program": "",
     "name": "Seeed Technology Co.,Ltd.",
