@@ -12,6 +12,8 @@ layout: career
 ### Requirements:
 2+ years experience with UI/UX design, understanding of the methodologies and processes (portfolio proving this experience);
 
+Experience with design of the data visualization tools: charts, maps, infographic;
+
 Understanding of composition, layout, grid, typography, color and how these elements influence a design;
 
 Understanding the phases of human-centered design, user interface design and development, and contemporary user interface design conventions;
