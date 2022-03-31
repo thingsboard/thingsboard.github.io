@@ -1,6 +1,4 @@
 ## Introduction
-
-This block represents your product and possible integration flow for it, and some additional info that could be useful for customers.
 This article contains instructions on how to configure ThingsBoard IoT platform and connect DSGW-210 Gateways. ThingsBoard is an open-source IoT platform for data collection, processing, visualization, and device management. It supports cloud and on-premises deployments, and it combines scalability, fault-tolerance and performances to nullify the chances of getting your IoT data lost.
 
 DSGW-210 is IoT gateway with multiple protocol and edge computing function. It provides reliable connectivity for a wide range of wireless IoT devices. The gateway’s modular architecture provides the ability to customize many gateway features including Cellular, Bluetooth, Wi-Fi, Ethernet, USB, ZigBee, Z-wave and Li battery backup.
@@ -87,6 +85,7 @@ Error indicator
 ## Feedback & Contact Us
 
 - [Gateway Specification](https://www.dusuniot.com/iot-progammable-gateway/iot-edge-computer-gateway)
+
 For other concerns about the integration, please consult sales@dusunremotes.com
 
 
