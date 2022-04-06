@@ -216,18 +216,6 @@
     }
   },
   {
-    "type": ["Asia"],
-    "country": ["Russia"],
-    "name": "Clover Group LLC",
-    "contact": {
-      "href": "v.kuznetsov@ctrl2go.com"
-    },
-    "site": {
-      "href": "ctrl2go.com",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Europe"],
     "country": ["Norway"],
     "name": "Cypod Solutions AS",
@@ -248,18 +236,6 @@
     },
     "site": {
       "href": "dareesoft.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["Russia"],
-    "name": "Datastreams AI",
-    "contact": {
-      "href": "contact@dstreams.ai"
-    },
-    "site": {
-      "href": "",
       "target": "_blank"
     }
   },
@@ -476,18 +452,6 @@
     },
     "site": {
       "href": "ibtsystems.it",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["Russia", "Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan"],
-    "name": "ICBcom",
-    "contact": {
-      "href": "sales@icbcom.ru"
-    },
-    "site": {
-      "href": "icbcom.ru",
       "target": "_blank"
     }
   },
@@ -980,18 +944,6 @@
     },
     "site": {
       "href": "starlinking.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia", "Europe", "Middle East"],
-    "country": ["Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan", "Armenia", "Azerbaijan", "Moldova", "Russia", "Belarus"],
-    "name": "Syssoft LLC",
-    "contact": {
-      "href": "info@syssoft.ru"
-    },
-    "site": {
-      "href": "syssoft.ru",
       "target": "_blank"
     }
   },
