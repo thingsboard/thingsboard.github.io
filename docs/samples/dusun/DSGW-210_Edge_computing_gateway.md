@@ -1,17 +1,25 @@
 ## Introduction
-This article contains instructions on how to configure ThingsBoard IoT platform and connect DSGW-210 Gateways. ThingsBoard is an open-source IoT platform for data collection, processing, visualization, and device management. It supports cloud and on-premises deployments, and it combines scalability, fault-tolerance and performances to nullify the chances of getting your IoT data lost.
+This article contains instructions on how to configure ThingsBoard IoT platform and connect DSGW-210 Gateways. [ThingsBoard](https://thingsboard.io/) is an IoT platform for data collection, processing, visualization, and device management. It supports cloud and on-premises deployments, and it combines scalability, fault-tolerance and performances to nullify the chances of getting your IoT data lost.
 
 DSGW-210 is IoT gateway with multiple protocol and edge computing function. It provides reliable connectivity for a wide range of wireless IoT devices. The gateway’s modular architecture provides the ability to customize many gateway features including Cellular, Bluetooth, Wi-Fi, Ethernet, USB, ZigBee, Z-wave and Li battery backup.
 
 #### Product Summary 
 •	Support 5V USB type-c power supply
+
 •	Support IEEE802.11ac, IEEE802.11a, IEEE802.11n, IEEE802.11g, IEEE 802.11b Protocol
+
 •	Support 4G LTE CAT M1,CAT1
+
 •	Support Bluetooth 5.2
+
 •	Support ZigBee3.0
+
 •	Support Z-WAVE
+
 •	One WAN/LAN variable network port
+
 •	Support USB2.0
+
 •	Backup Li battery
 
 #### Hardware block diagram
@@ -22,9 +30,9 @@ DSGW-210 is IoT gateway with multiple protocol and edge computing function. It p
 ## Integration method
 
 ### Block 1 ThingsBoard configuration 
-Steps of configuration in the thingsboard is shown below, here it takes the sample server in the thingsboard.cloud as an example 
+Steps of configuration in the ThingsBoard is shown below, here it takes the sample server in the ThingsBoard.cloud as an example 
 
-* [Step 1.1] Register and log in https://thingsboard.cloud/signup 
+* [Step 1.1] Register and log in [ThingsBoard PE](https://thingsboard.cloud/signup)
 
  <img src="/images/samples/dusun/2.png">  
 
@@ -40,7 +48,7 @@ Steps of configuration in the thingsboard is shown below, here it takes the samp
 
  <img src="/images/samples/dusun/5.png" width="800">  
 
-* [Step 1.5] Copy the access token, record it for gateway to connect to the thingsboard cloud 
+* [Step 1.5] Copy the access token, record it for gateway to connect to the ThingsBoard cloud 
 
 <img src="/images/samples/dusun/6.png" width="800">  
 
@@ -51,7 +59,8 @@ Steps of configuration in the thingsboard is shown below, here it takes the samp
 * [Step 2.2] Switch to section IOT Services -> Cloud Config
  <img src="/images/samples/dusun/8.png" width="800">  
 
-* [Step 2.3] Fill in the credentials from thingsboard cloud, ThingsBoard Server: demo.thingsboard.io, Server Port: 1883, Access Token is in section 1.5
+* [Step 2.3] Fill in the credentials from ThingsBoard cloud, ThingsBoard Server: thingsboard.cloud, Server Port: 1883, Access Token is in section 1.5
+
  <img src="/images/samples/dusun/9.png" width="800">  
 
 
@@ -82,7 +91,7 @@ Error indicator
 |  Yellow led on | Gateway is in low battery, user need to charge the gateway  |
 
 
-## Feedback & Contact Us
+## Contact Us
 
 - [Gateway Specification](https://www.dusuniot.com/iot-progammable-gateway/iot-edge-computer-gateway)
 
