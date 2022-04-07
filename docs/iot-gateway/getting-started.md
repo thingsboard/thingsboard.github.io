@@ -124,4 +124,5 @@ After successful installation you should configure the connectors to connect to 
  - [**Request** connector](/docs/iot-gateway/config/request/)
  - [**CAN** connector](/docs/iot-gateway/config/can/)
  - [**FTP** connector](/docs/iot-gateway/config/ftp/)
+ - [**Socket** connector](/docs/iot-gateway/config/socket/)
  - [**Custom** connector](/docs/iot-gateway/custom/)

@@ -320,6 +320,12 @@ Mapping process subscribes to the MQTT topics using **topicFilter** parameter of
 Each message that is published to this topic by other devices or applications is analyzed to extract device name, type and data (attributes and/or timeseries values).
 By default, gateway uses Json converter, but it is possible to provide custom converter. See examples in the source code.
 
+{% capture difference %}
+<br>
+**Connector won't pass the None value from the converter**  
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 **Now let’s review an example of sending data from "SN-001" thermometer device.**
 
 Let’s assume MQTT broker is installed locally on your server.

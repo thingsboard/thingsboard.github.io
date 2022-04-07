@@ -135,6 +135,12 @@ This subsection contains configurations for variables of the object, that will b
 | path            | **${ns=2;i=5}**             | Name of the variable in the OPC-UA object, uses for looking the value in some variable. ** \* **               |
 |---
 
+{% capture difference %}
+<br>
+**If you don't specify the "key" parameter, the node name will use instead**  
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 ** \* ** You can put here some expression for search like:
 1. Full path to node - **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Humidity}**
 2. Relative path from device object - **${TemperatureAndHumiditySensor\\.Humidity}** 
