@@ -248,6 +248,27 @@ The **attributeRequests** section will look like:
 ]
 ```
 
+Also, you can request multiple attributes at once. Simply add one more JSON-path to 
+attributeNameExpression parameter. For example, we want to request two shared attributes in one request, our config 
+will look like:
+```json
+"attributeRequests": [
+  {
+    "endpoint": "/sharedAttributes",
+    "type": "shared",
+    "HTTPMethods": [
+      "POST"
+    ],
+    "security": {
+      "type": "anonymous"
+    },
+    "timeout": 10.0,
+    "deviceNameExpression": "${deviceName}",
+    "attributeNameExpression": "${pduAttribute}, ${versionAttribute}"
+  }
+]
+```
+
 ### Attribute update section
 
 Configuration in this section are optional.  

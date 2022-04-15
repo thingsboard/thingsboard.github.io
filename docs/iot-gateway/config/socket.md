@@ -201,6 +201,23 @@ Configuration of this subsection looks like:
 ]
 ```
 
+Also, you can request multiple attributes at once. Simply add one more JSON-path to 
+attributeNameExpression parameter. For example, we want to request two shared attributes in one request, our config 
+will look like:
+
+```json
+"attributeRequests": [
+  {
+    "type": "shared",
+    "requestExpression": "${[0:3]==atr}",
+    "attributeNameExpression": "[4:19][20:]"
+  }
+]
+```
+
+That means that we have to send the next message for requesting two shared attributes:
+`atr sharedAttribute sharedAttribite1`
+
 #### Attribute update subsection
 
 This configuration section is optional. ThingsBoard allows provisioning device attributes and fetch some of them from 
