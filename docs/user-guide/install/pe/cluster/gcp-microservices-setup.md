@@ -16,7 +16,7 @@ This guide will help you to set up ThingsBoard in microservices mode in GKE.
 
 {% include templates/install/gcp/gke-prerequisites.md %}
 
-#### Checkout ThingsBoard PE images from docker store
+### Pull ThingsBoard PE images from docker hub
 
 {% assign checkoutMode = "microservices" %}
 {% include templates/install/dockerhub/checkout.md %}
@@ -54,44 +54,40 @@ cd thingsboard-pe-k8s/gcp/microservices
 
 {% include templates/install/gcp/configure-cassandra.md %}
 
-## Step 6. Upload Docker credentials
-
-{% include templates/install/dockerhub/upload-docker-credentials.md %}
-
-## Step 7. Configure license key
+## Step 6. Configure license key
 
 {% include templates/install/k8s-license-secret.md %}
 
-## Step 8. Installation
+## Step 7. Installation
 
 {% include templates/install/gcp/install.md %}
 
-## Step 9. Starting
+## Step 8. Starting
 
 {% include templates/install/gcp/start-msa.md %}
 
-## Step 10. Configure Load Balancers
+## Step 9. Configure Load Balancers
 
-### 10.1 Configure HTTP(S) Load Balancer
+### 9.1 Configure HTTP(S) Load Balancer
 
 {% include templates/install/gcp/http-lb.md %}
 
-### 10.2. Configure MQTT Load Balancer (Optional)
+### 9.2. Configure MQTT Load Balancer (Optional)
 
 {% assign tbServicesFile = "transport/tb-mqtt-transport.yml" %}
 {% include templates/install/gcp/configure-mqtt.md %}
 
-### 10.3. Configure CoAP Load Balancer (Optional)
+### 9.3. Configure CoAP Load Balancer (Optional)
 
 {% assign tbServicesFile = "transport/tb-coap-transport.yml" %}
 {% include templates/install/gcp/configure-coap.md %}
 
-### 10.4. Configure LwM2M Load Balancer (Optional)
+### 9.4. Configure LwM2M Load Balancer (Optional)
 
 {% assign tbServicesFile = "transport/tb-lwm2m-transport.yml" %}
 {% include templates/install/gcp/configure-lwm2m.md %}
 
-## Step 11. Using
+## Step 10. Using
 
 {% include templates/install/gcp/using.md %}
 

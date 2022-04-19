@@ -44,7 +44,7 @@ Populate basic information about yourself and click "Get Content"
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
 ```bash
-docker pull store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}
+docker pull thingsboard/tb-pe:{{ site.release.pe_full_ver }}
 ```
 
 ## Step 3. Obtain the license key 
@@ -81,7 +81,7 @@ Where:
 - `mytb-logs:/var/log/thingsboard`   - mounts the volume `mytb-logs` to ThingsBoard logs directory
 - `mytbpe`             - friendly local name of this machine
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
-- `image: store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}`          - docker image.
+- `image: thingsboard/tb-pe:{{ site.release.pe_full_ver }}`          - docker image.
 
 ## Step 5. Running
 

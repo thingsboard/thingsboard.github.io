@@ -45,7 +45,7 @@ Populate basic information about yourself and click "Get Content"
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
 ```bash
-docker pull store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}
+docker pull thingsboard/tb-pe:{{ site.release.pe_full_ver }}
 ```
  
 ## Step 3. Obtain the license key 
@@ -187,7 +187,7 @@ sudo mv ~/.mytbpe-data-temp/db ~/.mytbpe-data/db
 Start the new version of TB with following command:
 
 ```
-docker run -it -v ~/.mytbpe-data:/data --rm store/thingsboard/tb-pe:3.0.1PE bash
+docker run -it -v ~/.mytbpe-data:/data --rm thingsboard/tb-pe:3.0.1PE bash
 ```
 {: .copy-code}
 
