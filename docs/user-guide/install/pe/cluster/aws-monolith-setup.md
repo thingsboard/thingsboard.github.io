@@ -42,7 +42,7 @@ This guide will help you to set up ThingsBoard in monolith mode in AWS EKS.
 
 {% include templates/install/aws/eks-prerequisites.md %}
 
-### Checkout ThingsBoard PE images from docker store
+### Pull ThingsBoard PE images from docker hub
 
 {% assign checkoutMode = "monolith" %}
 {% include templates/install/dockerhub/checkout.md %}
@@ -78,22 +78,13 @@ cd thingsboard-pe-k8s/aws/monolith
 
 {% include templates/install/k8s-license-secret.md %}
 
-## Step 6. Upload Docker credentials
-
-{% assign checkoutMode = "monolith" %}
-{% include templates/install/dockerhub/pull.md %}
-
-If the above command fails, repeat the [prerequisites](#checkout-thingsboard-pe-images-from-docker-store) step.
-
-{% include templates/install/dockerhub/upload-docker-credentials.md %}
-
-## Step 7. Installation
+## Step 6. Installation
 
 Edit "tb-node-db-configmap.yml" and replace **YOUR_RDS_ENDPOINT_URL** and **YOUR_RDS_PASSWORD** with the values you have obtained during [step 4](#step-4-amazon-postgresql-db-configuration).
 
 {% include templates/install/aws/eks-installation.md %}
 
-## Step 8. Starting
+## Step 7. Starting
 
 Execute the following command to deploy resources:
 
@@ -105,21 +96,21 @@ Execute the following command to deploy resources:
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to
 see `tb-node-0` pod in the `READY` state.
 
-## Step 9. Configure Load Balancers
+## Step 8. Configure Load Balancers
 
-### 10.1 Configure HTTP(S) Load Balancer
+### 8.1 Configure HTTP(S) Load Balancer
 
 {% include templates/install/aws/http-lb.md %}
 
-### 10.2. Configure MQTT Load Balancer (Optional)
+### 8.2. Configure MQTT Load Balancer (Optional)
 
 {% include templates/install/aws/configure-mqtt.md %}
 
-### 10.3. Configure UDP Load Balancer (Optional)
+### 8.3. Configure UDP Load Balancer (Optional)
 
 {% include templates/install/aws/configure-udp.md %}
 
-## Step 11. Validate the setup
+## Step 9. Validate the setup
 
 {% include templates/install/aws/eks-validate.md %}
 

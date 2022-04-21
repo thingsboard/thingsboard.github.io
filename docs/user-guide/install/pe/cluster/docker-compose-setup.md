@@ -27,15 +27,12 @@ Please note that for the deployment of Rule Engine as a separate service, an add
 {% include templates/info-banner.md content=rule_engine_note %}
 
 {% include templates/install/docker-install-note.md %}
-## Step 1. Checkout all ThingsBoard PE Images
 
-{% include templates/install/dockerhub/checkout.md %}
-
-## Step 2. Pull ThingsBoard PE Images
+## Step 1. Pull ThingsBoard PE Images
 
 {% include templates/install/dockerhub/pull.md %}
 
-## Step 3. Clone ThingsBoard PE Docker Compose scripts
+## Step 2. Clone ThingsBoard PE Docker Compose scripts
 
 ```bash
 git clone -b release-{{ site.release.ce_ver }} https://github.com/thingsboard/thingsboard-pe-docker-compose.git tb-pe-docker-compose
@@ -43,7 +40,7 @@ cd tb-pe-docker-compose
 ```
 {: .copy-code}
 
-## Step 4. Obtain your license key
+## Step 3. Obtain your license key
 
 We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
 If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
@@ -55,7 +52,7 @@ to use the number of ThingsBoard instances that you've purchased.
 We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
 
 
-## Step 5. Configure your license key
+## Step 4. Configure your license key
 
 ```bash
 nano tb-node.env
@@ -70,7 +67,7 @@ and put the license secret parameter instead of "PUT_YOUR_LICENSE_SECRET_HERE":
 TB_LICENSE_SECRET=PUT_YOUR_LICENSE_SECRET_HERE
 ```
 
-## Step 6. Configure deployment type
+## Step 5. Configure deployment type
 
 Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
 See [**microservices**](/docs/reference/msa/) architecture page for more details.
@@ -85,11 +82,11 @@ The docker compose scripts support three deployment modes. In order to set the d
   
 All deployment modes support separate JS executors, Redis, and different [queues](/docs/user-guide/install/pe/cluster/docker-compose-setup/#step-8-choose-thingsboard-queue-service).
 
-## Step 7. Configure ThingsBoard database
+## Step 6. Configure ThingsBoard database
 
 {% include templates/install/configure-db-docker-compose.md %}
 
-## Step 8. Choose ThingsBoard queue service 
+## Step 7. Choose ThingsBoard queue service 
 
 {% include templates/install/install-queue-docker-compose.md %}
 
@@ -103,11 +100,11 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}
 
-## Step 9. Enable monitoring (optional)
+## Step 8. Enable monitoring (optional)
 
 {% include templates/install/configure-monitoring-docker-compose.md %}
 
-## Step 10. Running
+## Step 9. Running
 
 Execute the following command to create log folders for the services and chown of these folders to the docker container users. 
 To be able to change user, **chown** command is used, which requires sudo permissions (script will request password for a sudo access): 
