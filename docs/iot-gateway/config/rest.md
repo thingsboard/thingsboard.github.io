@@ -165,6 +165,12 @@ Types of request converters:
 1. json -- Default converter  
 2. custom -- Custom converter (You can write it by yourself, and it will use to convert incoming data.)  
 
+{% capture difference %}
+<br>
+**Connector won't pass the None value from the converter**  
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 {% capture restconvertertypespec %}
 json<small>Recommended if json will be received in the request</small>%,%json%,%templates/iot-gateway/rest-converter-json-config.md%br%
 custom<small>Recommended if bytes or anything else will be received in the request</small>%,%custom%,%templates/iot-gateway/rest-converter-custom-config.md{% endcapture %}
