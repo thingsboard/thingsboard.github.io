@@ -205,6 +205,30 @@ This part of configuration will look like:
         ],
 ```
 
+Also, every telemetry and attribute parameter has get and set RPC methods out of the box, so you don't need to configure
+it manually.
+For example, if you have some telemetry parameter:
+```json
+"timeseries": [
+  {
+    "key": "temperature",
+    "path": "${ns=3;i=1001}"
+  }
+]
+```
+To get temperature telemetry current value:
+```bash
+get ns=3;i=1001
+```
+Response:
+```json
+{"get": 25.34, "code": 200}
+```
+
+To set temperature telemetry value:
+```bash
+set ns=3;i=1001 23
+```
 
 #### Subsection "attributes_updates"
 This subsection contains configuration for attribute updates request from ThingsBoard platform instance.
