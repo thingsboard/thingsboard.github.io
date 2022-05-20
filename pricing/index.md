@@ -625,7 +625,7 @@ defaultActivateSelectProduct: true
                                 false,
                                 'd3b7d030-fe4c-11ea-951e-b77b877a367b',
                                 '302e3420-fe4e-11ea-951e-b77b877a367b',
-                                'Edge Nano', 'PU5RJSMQW5', false)">
+                                'Edge Nano', 'LKPFMBRZH7', false)">
                                 Try 30 days for free
                             </button>
                         </div>
@@ -636,7 +636,7 @@ defaultActivateSelectProduct: true
                             Optional support
                         </div>
                         <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
-                            Tired discounts
+                            Tiered discounts
                         </div>
                     </div>
                 </div>
@@ -667,7 +667,7 @@ defaultActivateSelectProduct: true
                             Optional support
                         </div>
                         <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
-                            Tired discounts
+                            Tiered discounts
                         </div>
                     </div>
                 </div>
@@ -698,7 +698,7 @@ defaultActivateSelectProduct: true
                             Optional support
                         </div>
                         <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
-                            Tired discounts
+                            Tiered discounts
                         </div>
                     </div>
                 </div>
