@@ -64,7 +64,9 @@ thingsboard:
   port: 1883
   remoteShell: false
   remoteConfiguration: false
-  statsSendPeriodInSeconds: 3600
+  statistics:
+    enable: true
+    statsSendPeriodInSeconds: 3600
   minPackSendDelayMS: 0
   checkConnectorsConfigurationInSeconds: 60
   handleDeviceRenaming: true
@@ -143,6 +145,55 @@ connectors:
 | ***thingsboard***        |                                              | Configuration for connection to server.                        |
 | host                     | **thingsboard.cloud**                        | Hostname or ip address of ThingsBoard server.                  |
 | port                     | **1883**                                     | Port of mqtt service on ThingsBoard server.                    |
+
+###### Subsection "statistics"
+
+This subsection uses to configure collecting statistics data and sending them to ThingsBoard Gateway device attributes.
+
+|**Parameter**|**Default value**|**Description**|
+|:-|:-|-
+| statistics                   |                 | Configuration for enabling statistics collecting                   |
+| ... enable                   | true            | A boolean value that is used to on/off collecting statistics       |
+| ... statsSendPeriodInSeconds | 3600            | An integer value that is used to send data some every period       |
+| ... configuration            | statistics.json | Name of a configuration file for additional user statistics data   |
+|---
+
+You can define additional parameter "configuration" and provide your own command for collecting some additional data.
+This configuration file can look like the example below:
+```json
+[
+  {
+    "timeout": 100,
+    "command": ["/bin/sh", "-c", "ps -A -o cpu,%mem | awk '{cpu += $1}END{print cpu}'"],
+    "attributeOnGateway": "CPU"
+  },
+  {
+    "timeout": 100,
+    "command": ["/bin/sh", "-c", "ps -A -o %cpu,%mem | awk '{mem += $2}END{print mem}'"],
+    "attributeOnGateway": "Memory"
+  },
+  {
+    "timeout": 100,
+    "command": ["/bin/sh", "-c", "ipconfig getifaddr en0"],
+    "attributeOnGateway": "IP address"
+  },
+  {
+    "timeout": 100,
+    "command": ["/bin/sh", "-c", "sw_vers -productName"],
+    "attributeOnGateway": "OS"
+  },
+  {
+    "timeout": 100,
+    "command": ["/bin/sh", "-c", "uptime"],
+    "attributeOnGateway": "Uptime"
+  },
+  {
+    "timeout": 100,
+    "command": ["/bin/sh", "-c", "system_profiler SPUSBDataType"],
+    "attributeOnGateway": "USBs"
+  }
+]
+```
 
 ###### Subsection “checkingDeviceActivity”
 
