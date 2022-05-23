@@ -752,9 +752,14 @@ defaultActivateSelectProduct: true
                             $399
                         </h4>
                         <div class="row justify-content-center">
-                            <a class="btn-blue btn-pricing" href="/docs/contact-us/">
-                                Contact Us
-                            </a>
+                            <button class="btn-blue btn-pricing" 
+                                onClick="getLicense(event,
+                                true,
+                                'fc5e64e0-841f-11ec-b9ac-0736fadd7ddd',
+                                '817e22f0-8420-11ec-b9ac-0736fadd7ddd',
+                                'Perpetual', null, false)">
+                                Get your license
+                            </button>
                         </div>
                         <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with TB PE Server</b></div>
                         <div class="pricing-square-item">1 year of software updates</div>
@@ -763,6 +768,9 @@ defaultActivateSelectProduct: true
                         </div>
                         <div class="pricing-square-item" data-faq-id="subscription-support">
                             Custom <b>SLA</b>
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="subscription-support">
+                            Email support within <b>24 hours</b>
                         </div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
                     </div>
