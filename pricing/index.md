@@ -596,7 +596,7 @@ defaultActivateSelectProduct: true
                                 Install
                             </a>
                         </div>
-                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with ThingsBoard CE</b></div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with TB CE Server</b></div>
                         <div class="pricing-square-item">Unlimited Devices and Assets</div>
                         <div class="pricing-square-item">Unlimited software updates</div>
                         <div class="pricing-square-item">Ability to contribute</div>
@@ -629,7 +629,7 @@ defaultActivateSelectProduct: true
                                 Try 30 days for free
                             </button>
                         </div>
-                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with ThingsBoard PE</b></div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with TB PE Server</b></div>
                         <div class="pricing-square-item">Up to 50 Devices</div>
                         <div class="pricing-square-item">Up to 50 Assets</div>
                         <div class="pricing-square-item" data-faq-id="optional-support">
@@ -638,13 +638,14 @@ defaultActivateSelectProduct: true
                         <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
                             Tiered discounts
                         </div>
+                        <div class="pricing-square-item"><b>White-labeling</b></div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
                     <div class="pricing-square">
                         <h2>Micro</h2>
                         <div class="pricing-square-description">
-                            <p>Up to 250 Devices and Assets</p>
+                            <p>Up to 100 Devices and Assets</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $29
@@ -660,22 +661,23 @@ defaultActivateSelectProduct: true
                                 Get your license
                             </button>
                         </div>
-                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with ThingsBoard PE</b></div>
-                        <div class="pricing-square-item">Up to 250 Devices</div>
-                        <div class="pricing-square-item">Up to 250 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with TB PE Server</b></div>
+                        <div class="pricing-square-item">Up to 100 Devices</div>
+                        <div class="pricing-square-item">Up to 100 Assets</div>
                         <div class="pricing-square-item" data-faq-id="optional-support">
                             Optional support
                         </div>
                         <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
                             Tiered discounts
                         </div>
+                        <div class="pricing-square-item"><b>White-labeling</b></div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
                     <div class="pricing-square">
                         <h2>Macro</h2>
                         <div class="pricing-square-description">
-                            <p>Up to 1000 Devices and Assets</p>
+                            <p>Up to 200 Devices and Assets</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $39
@@ -691,17 +693,51 @@ defaultActivateSelectProduct: true
                                 Get your license
                             </button>
                         </div>
-                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with ThingsBoard PE</b></div>
-                        <div class="pricing-square-item">Up to 1000 Devices</div>
-                        <div class="pricing-square-item">Up to 1000 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with TB PE Server</b></div>
+                        <div class="pricing-square-item">Up to 200 Devices</div>
+                        <div class="pricing-square-item">Up to 200 Assets</div>
                         <div class="pricing-square-item" data-faq-id="optional-support">
                             Optional support
                         </div>
                         <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
                             Tiered discounts
                         </div>
+                        <div class="pricing-square-item"><b>White-labeling</b></div>
                     </div>
                 </div>
+                <div class="col-md-6 col-lg-6 col-xl-4 col-gt-xl mb-4">
+                    <div class="pricing-square">
+                        <h2>Mega</h2>
+                        <div class="pricing-square-description">
+                            <p>Unlimited Devices and Assets</p>
+                        </div>
+                        <h4 class="pricing-square-price mb-0">
+                            $59
+                            <span>/month</span>
+                        </h4>
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing"
+                                onClick="getLicense(event,
+                                false,
+                                'd3b7d030-fe4c-11ea-951e-b77b877a367b',
+                                '639fc7f0-da99-11ec-b9ac-0736fadd7ddd',
+                                'Edge Mega', null, false)">
+                                Get your license
+                            </button>
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with TB PE Server</b></div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-unlim-devices">
+                            Unlimited Devices and Assets
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="optional-support">
+                            Optional support
+                        </div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-discount">
+                            Tiered discounts
+                        </div>
+                        <div class="pricing-square-item"><b>White-labeling</b></div>
+                    </div>
+                </div> 
            </div>
         </div>
         <div class="pricing-section pricing-perpetual" id="perpetual">
@@ -713,20 +749,22 @@ defaultActivateSelectProduct: true
                             <p>Use your ThingsBoard Edge instance forever</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
-                            Custom
+                            $399
                         </h4>
                         <div class="row justify-content-center">
                             <a class="btn-blue btn-pricing" href="/docs/contact-us/">
                                 Contact Us
                             </a>
                         </div>
-                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with ThingsBoard PE</b></div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with TB PE Server</b></div>
                         <div class="pricing-square-item">1 year of software updates</div>
-                        <div class="pricing-square-item">Up to 1000 Devices</div>
-                        <div class="pricing-square-item">Up to 1000 Assets</div>
+                        <div class="pricing-square-item" data-faq-id="thingsboard-edge-unlim-devices">
+                             Unlimited Devices and Assets
+                        </div>
                         <div class="pricing-square-item" data-faq-id="subscription-support">
                             Custom <b>SLA</b>
                         </div>
+                        <div class="pricing-square-item"><b>White-labeling</b></div>
                     </div>
                 </div>
            </div>
@@ -807,7 +845,18 @@ defaultActivateSelectProduct: true
                     ThingsBoard Edge Professional Edition is able to connect only to ThingsBoard Professional Edition server (it can be <a href="https://thingsboard.cloud" target="blank">ThingsBoard Cloud</a> or on-premise instances).
                     ThingsBoard Edge Community Edition <b>can not</b> be connected to ThingsBoard Professional Edition and vise-verse.
                 </p>    
-            </div>    
+            </div>
+        </div>
+        <div class="item" data-tag="h4" data-item-id="thingsboard-edge-unlim-devices" data-title="What ThingsBoard Edge unlimited Devices and Assets means?">
+            <div class="container">
+                <p>
+                    Unlimited number devices and assets - there is no any soft limits on creating devices and assets on the edge side. 
+                    <b>But</b> in real case deployment there are couple additional factors, that must be considered to be able host a lot of devices on edge side - <b>hardware, speed of internet connection and gRPC channel bound limits</b>.
+                    Edge <b>hardware</b> must be powerful enough to process messages from 'unlimited' number of devices and assets. 
+                    Additionally, <b>speed of internet connection</b> between ThingsBoard Edge and ThingsBoard server must be fast to deliver huge amount of data from 'unlimited' number of devices and assets.
+                    And last, but not least -  payload size and messages rate should be taken into consideration as well - <b>gRPC channel bound limits</b> affects messages delivery rate.
+                </p>
+            </div>
         </div>
         <h3 id="section2">Billing</h3>
         <div class="item" data-tag="h4" data-item-id="trial-enable" data-title="How can I enable free trial?">
