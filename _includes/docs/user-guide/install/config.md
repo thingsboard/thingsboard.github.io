@@ -2485,7 +2485,7 @@ The parameters are grouped by system components. The list contains the name (add
     </tbody>
 </table>
 
-#### ThingsBoard management parameters
+#### ThingsBoard metrics parameters
 
 <table>
     <thead>
@@ -2502,6 +2502,10 @@ The parameters are grouped by system components. The list contains the name (add
         </tr>
     </tbody>
 </table>
+
+#### Local Version Control parameters
+
+{% include docs/user-guide/install/version-control.md %}
 
 ### HTTP Transport Parameters
 
@@ -3044,6 +3048,10 @@ The parameters are grouped by system components. The list contains the name (add
 {% include docs/user-guide/install/queue-parameters.md %}
 
 {% include docs/user-guide/install/service-metrics-management-parameters-for-mqtt-http-snmp-lwm2m-coap.md %}
+
+### Version Control Server Parameters
+
+{% include docs/user-guide/install/version-control.md %}
 
 ### logback.xml
 
