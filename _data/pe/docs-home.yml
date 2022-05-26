@@ -150,6 +150,8 @@ toc:
       path: /docs/pe/user-guide/entity-views/
     - title: API Limits
       path: /docs/pe/user-guide/api-limits/
+    - title: Version Control
+      path: /docs/pe/user-guide/version-control/
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning
