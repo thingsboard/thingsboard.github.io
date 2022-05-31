@@ -44,14 +44,14 @@ We will describe connector configuration file below.
         "deviceNamePattern": "Device ${Root\\.Objects\\.Device1\\.serialNumber}",
         "attributes": [
           {
-            "key": "temperature °C",
+            "key": "CertificateNumber",
             "path": "${ns=2;i=5}"
           }
         ],
         "timeseries": [
           {
-            "key": "humidity",
-            "path": "${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Humidity}"
+            "key": "temperature °C",
+            "path": "${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Temperature}"
           },
           {
             "key": "batteryLevel",
@@ -95,6 +95,36 @@ Configuration in this section uses for connecting to OPC-UA server.
 | security                      | **Basic128Rsa15**                    | Security policy (**Basic128Rsa15**, **Basic256**, **Basic256Sha256**)                                                                                                  |
 |---
 
+<br>
+**Let's look an example.**
+<br>
+In this example uses the Prosys OPC UA Simulation Server to demonstrate how the OPC UA connector works. OPC-UA connector is installed locally on the server.
+<br>
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/opc-ua-simulation-server-1.png)
+{: refdef}
+
+In your config file, change the "url" value to the URL of your test server.
+
+The **mapping** section would look like this:
+
+```json
+  "server": {
+    "name": "OPC-UA Default Server",
+    "url": "localhost:53530/OPCUA/SimulationServer",
+    "timeoutInMillis": 5000,
+    "scanPeriodInMillis": 5000,
+    "disableSubscriptions": false,
+    "subCheckPeriodInMillis": 100,
+    "showMap": false,
+    "security": "Basic128Rsa15",
+```
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/opc-ua-configuration-1.png)
+{: refdef}
+
 #### Subsection "identity"
 There are several types available for this subsection:  
 1. anonymous  
@@ -125,20 +155,49 @@ This part of configuration will look like:
 ```
 
 ***Optionally, you can add in this section parameter "converter" for using custom converter.***
+<br>
+<br><br>
+**Let's look an example.**
+
+Specify **deviceNodePattern** as on our test server. In this example it is **"Root\\.Objects\\.Simulation"**.
+
+**deviceNamePattern** set as **"Device OPC-UA"**.
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/opc-ua-simulation-server-2.png)
+{: refdef}
+
+<br>
+In this example, the **mapping** section would look like this:
+
+```json
+        "deviceNodePattern": "Root\\.Objects\\.Simulation",
+        "deviceNamePattern": "Device OPC-UA",
+```
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/opc-ua-configuration-2.png)
+{: refdef}
+
+After running **thingsboard gateway service**, you can see the new device in your ThingsBoard instance.
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-opc-ua-attributes-1.png)
+{: refdef}
 
 #### Subsection "attributes"
 This subsection contains configurations for variables of the object, that will be interpreted as attributes for the device.
 
-| **Parameter**   | **Default value**           | **Description**                                                                   |
+| **Parameter**   | **Default value**           | **Description**                                                                                      |
 |:-|:-|-
-| key             | **temperature °C**          | Tag, that will interpreted as attribute for ThingsBoard platform instance.                                     |
-| path            | **${ns=2;i=5}**             | Name of the variable in the OPC-UA object, uses for looking the value in some variable. ** \* **               |
+| key             | **CertificateNumber**       | Tag, that will interpreted as attribute for ThingsBoard platform instance.                           |
+| path            | **${ns=2;i=5}**             | Name of the variable in the OPC-UA object, uses for looking the value in some variable. ** \* **     |
 |---
 
 ** \* ** You can put here some expression for search like:
-1. Full path to node - **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Humidity}**
-2. Relative path from device object - **${TemperatureAndHumiditySensor\\.Humidity}** 
-3. Some regular expression to search - **${Root\\.Objects\\.Device\\d\*\\.TemperatureAndHumiditySensor\\.Humidity}**
+1. Full path to node - **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.CertificateNumber}**
+2. Relative path from device object - **${TemperatureAndHumiditySensor\\.CertificateNumber}** 
+3. Some regular expression to search - **${Root\\.Objects\\.Device\\d\*\\.TemperatureAndHumiditySensor\\.CertificateNumber}**
 4. Namespace identifier and node identifier - **${ns=2;i=5}**
 
 This part of configuration will look like:  
@@ -146,25 +205,60 @@ This part of configuration will look like:
 ```json
         "attributes": [
           {
-            "key": "temperature °C",
+            "key": "CertificateNumber",
             "path": "${ns=2;i=5}"
           }
         ],
 ```
+
+<br>
+**Let's look an example.**
+<br>
+In the "path" line set the NodeId value taken from our test server.
+<br>
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/opc-ua-simulation-server-3.png)
+{: refdef}
+
+In this example, the **attributes** section would look like this:
+
+```json
+        "attributes": [
+          {
+            "key": "model",
+            "path": "${ns=3;i=1008}"
+          },
+          {
+            "key": "CertificateNumber",
+            "path": "${ns=3;i=1007}"
+          }
+        ],
+```
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/opc-ua-configuration-3.png)
+{: refdef}
+
+In the ThingsBoard instance, in the "Attributes" section, you must see the **attributes** in your device:
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-opc-ua-attributes-2.png)
+{: refdef}
 
 #### Subsection "timeseries"
 This subsection contains configurations for variables of the object, that will be interpreted as telemetry for the device.
 
 | **Parameter**   | **Default value**           | **Description**                                                                   |
 |:-|:-|-
-| key             | **humidity**                    | Tag, that will interpreted as telemetry for ThingsBoard platform instance.        |
-| path            | **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Humidity}**           | Name of the variable in the OPC-UA object, uses for looking the value in some variable. ** \* ** |
+| key             | **temperature °C**                                                             | Tag, that will interpreted as telemetry for ThingsBoard platform instance.        |
+| path            | **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Temperature}**   | Name of the variable in the OPC-UA object, uses for looking the value in some variable. ** \* ** |
 |---
 
 ** \* ** You can put here some expression for search like:
-1. Full path to node - **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Humidity}**
-2. Relative path from device object - **${TemperatureAndHumiditySensor\\.Humidity}** 
-3. Some regular expression to search - **${Root\\.Objects\\.Device\\d\*\\.TemperatureAndHumiditySensor\\.Humidity}**
+1. Full path to node - **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Temperature}**
+2. Relative path from device object - **${TemperatureAndHumiditySensor\\.Temperature}** 
+3. Some regular expression to search - **${Root\\.Objects\\.Device\\d\*\\.TemperatureAndHumiditySensor\\.Temperature}**
 4. Namespace identifier and node identifier - **${ns=2;i=5}**
 
 This part of configuration will look like:  
@@ -172,12 +266,50 @@ This part of configuration will look like:
 ```json
         "timeseries": [
           {
-            "key": "humidity",
-            "path": "${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Humidity}"
+            "key": "temperature °C",
+            "path": "${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.Temperature}"
           }
         ],
 ```
 
+<br>
+**Let's look an example.**
+<br>
+Replace "path" value to the "NodeId" value or Display Name identifier, taken from our test server.
+<br>
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/opc-ua-simulation-server-4.png)
+{: refdef}
+
+In this example, the **timeseries** section would look like this:
+
+```json
+        "timeseries": [
+          {
+            "key": "humidity",
+            "path": "${Counter}"
+          },
+          {
+            "key": "pressure",
+            "path": "Root\\.Objects\\.Simulation\\.Triangle"
+          },
+          {
+            "key": "temperature °C",
+            "path": "${ns=3;i=1002}"
+          }
+        ],
+```
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/opc-ua-configuration-4.png)
+{: refdef}
+
+In the ThingsBoard instance, you must see the **latest telemetry** in your device:
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-opc-ua-attributes-3.png)
+{: refdef}
 
 #### Subsection "rpc_methods"
 This subsection contains configuration for RPC request from ThingsBoard platform instance.
