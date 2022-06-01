@@ -62,13 +62,34 @@ If you like to use only one of them - just remove all other connectors.
 thingsboard:
   host: thingsboard.cloud
   port: 1883
+  remoteShell: false
+  remoteConfiguration: false
+  statistics:
+    enable: true
+    statsSendPeriodInSeconds: 3600
   minPackSendDelayMS: 0
+  checkConnectorsConfigurationInSeconds: 60
+  handleDeviceRenaming: true
+  checkingDeviceActivity:
+    checkDeviceInactivity: false
+    inactivityTimeoutSeconds: 120
+    inactivityCheckPeriodSeconds: 10
   security:
     accessToken: PUT_YOUR_ACCESS_TOKEN_HERE
+  qos: 1
 storage:
   type: memory
   read_records_count: 100
   max_records_count: 100000
+grpc:
+  enabled: false
+  serverPort: 9595
+  keepaliveTimeMs: 10000
+  keepaliveTimeoutMs: 5000
+  keepalivePermitWithoutCalls: true
+  maxPingsWithoutData: 0
+  minTimeBetweenPingsMs: 10000
+  minPingIntervalWithoutDataMs: 5000
 connectors:
   -
     name: MQTT Broker Connector
@@ -125,6 +146,70 @@ connectors:
 | host                     | **thingsboard.cloud**                        | Hostname or ip address of ThingsBoard server.                  |
 | port                     | **1883**                                     | Port of mqtt service on ThingsBoard server.                    |
 
+###### Subsection "statistics"
+
+This subsection uses to configure collecting statistics data and sending them to ThingsBoard Gateway device attributes.
+
+|**Parameter**|**Default value**|**Description**|
+|:-|:-|-
+| statistics                   |                 | Configuration for enabling statistics collecting                   |
+| ... enable                   | true            | A boolean value that is used to on/off collecting statistics       |
+| ... statsSendPeriodInSeconds | 3600            | An integer value that is used to send data some every period       |
+| ... configuration            | statistics.json | Name of a configuration file for additional user statistics data   |
+|---
+
+You can define additional parameter "configuration" and provide your own command for collecting some additional data.
+This configuration file can look like the example below:
+```json
+[
+  {
+    "timeout": 100,
+    "command": ["/bin/sh", "-c", "ps -A -o cpu,%mem | awk '{cpu += $1}END{print cpu}'"],
+    "attributeOnGateway": "CPU"
+  },
+  {
+    "timeout": 100,
+    "command": ["/bin/sh", "-c", "ps -A -o %cpu,%mem | awk '{mem += $2}END{print mem}'"],
+    "attributeOnGateway": "Memory"
+  },
+  {
+    "timeout": 100,
+    "command": ["/bin/sh", "-c", "ipconfig getifaddr en0"],
+    "attributeOnGateway": "IP address"
+  },
+  {
+    "timeout": 100,
+    "command": ["/bin/sh", "-c", "sw_vers -productName"],
+    "attributeOnGateway": "OS"
+  },
+  {
+    "timeout": 100,
+    "command": ["/bin/sh", "-c", "uptime"],
+    "attributeOnGateway": "Uptime"
+  },
+  {
+    "timeout": 100,
+    "command": ["/bin/sh", "-c", "system_profiler SPUSBDataType"],
+    "attributeOnGateway": "USBs"
+  }
+]
+```
+
+###### Subsection “checkingDeviceActivity”
+
+This subsection is optional and used to monitor the activity of each connected device. 
+
+If you define this section, the Gateway will check the activity of each device every n second that means, if the device 
+is inactive for n seconds, it will disconnect it.
+
+|**Parameter**|**Default value**|**Description**|
+|:-|:-|- 
+| checkingDeviceActivity           |              | Configuration for checking devices activity                   |
+| ... checkDeviceInactivity        | **false**    | Boolean value that is used to on/off checking device activity |
+| ... inactivityTimeoutSeconds     | **120**      | Inactivity device time after whose Gateway will disconnect it |
+| ... inactivityCheckPeriodSeconds | **10**       | Periodicity of device activity check                          |
+|---
+
 ###### Subsection "security"
 
 {% capture securitytogglespec %}
@@ -160,9 +245,10 @@ Config for every connector in this section must have parameters as in table belo
  
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|- 
-| name                     | **MQTT Broker Connector**                    | Name of connector to broker.                                                    |
-| type                     | **mqtt**                                     | Type of connector, must be like a name of folder, contained configuration file. |
-| configuration            | **mqtt.json**                                | Name of the file with configuration in config folder.*                          |
+| useGRPC                  | **true**                                     | **OPTIONAL** parameter that is used to on/off GRPC transport for default connector realisation |
+| name                     | **MQTT Broker Connector**                    | Name of connector to broker.                                                                   |
+| type                     | **mqtt**                                     | Type of connector, must be like a name of folder, contained configuration file.                |
+| configuration            | **mqtt.json**                                | Name of the file with configuration in config folder.*                                         |
 |---
 
 \* -- Folder with this configuration file.  

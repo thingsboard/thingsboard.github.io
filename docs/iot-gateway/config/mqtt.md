@@ -320,6 +320,12 @@ Mapping process subscribes to the MQTT topics using **topicFilter** parameter of
 Each message that is published to this topic by other devices or applications is analyzed to extract device name, type and data (attributes and/or timeseries values).
 By default, gateway uses Json converter, but it is possible to provide custom converter. See examples in the source code.
 
+{% capture difference %}
+<br>
+**Connector won't pass the None value from the converter**  
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 **Now let’s review an example of sending data from "SN-001" thermometer device.**
 
 Let’s assume MQTT broker is installed locally on your server.
@@ -477,6 +483,53 @@ Your ThingsBoard instance will get information from the broker about last discon
 ![image](/images/gateway/mqtt-disconnect-device.png)
 {: refdef}
 
+### Section "attributeRequests"
+
+Configuration in this section are optional.
+
+In order to request client-side or shared device attributes to ThingsBoard server node, Gateway allows sending 
+attribute requests.
+
+| **Parameter**                 | **Default value**                                     | **Description**                                                       |
+|:-|:-|-
+| retain                        | **false**                                             | If set to true, the message will be set as the "last known good"/retained message for the topic.    |
+| topicFilter                   | **v1/devices/me/attributes/request**                  | Topic for attribute request |
+| deviceNameJsonExpression      | **${serialNumber}**                                   | JSON-path expression, for looking the device name in topicFilter message |
+| attributeNameJsonExpression   | **${versionAttribute}**                               | JSON-path expression, for looking the attribute name in topicFilter message |
+| topicExpression               | **devices/${deviceName}/attrs**                       | JSON-path expression, for formatting reply topic |
+| valueExpression               | **${attributeKey}: ${attributeValue}**                | Message that will be sent to topic from topicExpression |
+|---
+
+This section in configuration file looks like:
+```json
+"attributeRequests": [
+  {
+    "retain": false,
+    "topicFilter": "v1/devices/me/attributes/request",
+    "deviceNameJsonExpression": "${serialNumber}",
+    "attributeNameJsonExpression": "${versionAttribute}",
+    "topicExpression": "devices/${deviceName}/attrs",
+    "valueExpression": "${attributeKey}: ${attributeValue}"
+  }
+]
+```
+
+Also, you can request multiple attributes at once. Simply add one more JSON-path to 
+attributeNameExpression parameter. For example, we want to request two shared attributes in one request, our config 
+will look like:
+```json
+"attributeRequests": [
+  {
+    "retain": false,
+    "topicFilter": "v1/devices/me/attributes/request",
+    "deviceNameJsonExpression": "${serialNumber}",
+    "attributeNameJsonExpression": "${versionAttribute}, ${pduAttribute}",
+    "topicExpression": "devices/${deviceName}/attrs",
+    "valueExpression": "${attributeKey}: ${attributeValue}"
+  }
+]
+```
+
 ### Section "attributeUpdates"
 
 This configuration section is optional.  
@@ -547,7 +600,7 @@ Broker received new message from the ThingsBoard server about updating attribute
 ![image](/images/gateway/mqtt-mosquitto-sub-get-1.png)
 {: refdef}
 
-#### Server side RPC commands
+### Server side RPC commands
 
 ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to ThingsBoard directly or via Gateway.
  
