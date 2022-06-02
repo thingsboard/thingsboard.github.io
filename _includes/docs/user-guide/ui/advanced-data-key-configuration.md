@@ -9,7 +9,7 @@ Charts widget bundle has its own unique advanced data key configuration. All oth
 
 To enter a data key configuration, you should click the pencil icon on the specific data key that you'd like to adjust.
 
-{% include images-gallery.html imageCollection="enter-configuration" %}
+![image](/images/user-guide/ui/widgets/advanced-datakey/1.png)
 
 ## 1. Entity table and alarms table widgets
 
@@ -103,6 +103,8 @@ This is especially helpful during exporting a widget when you need to exclude a 
 
 {% include images-gallery.html imageCollection="column-to-display" %}
 
+{% if docsPrefix == null %}
+{% else %}
 ##### 1.6. Include column in export
 
 {% assign feature = "Include in column in export" %}{% include templates/pe-feature-banner.md %}
@@ -112,6 +114,7 @@ There are three options: always, only if column visible (you can change the visi
 and never. This feature is only available in the Professional Edition.
 
 {% include images-gallery.html imageCollection="column-export" %}
+{% endif %}
 
 ## 2. Charts
 
