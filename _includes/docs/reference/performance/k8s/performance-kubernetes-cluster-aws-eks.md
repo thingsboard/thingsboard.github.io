@@ -901,4 +901,118 @@ kubectl port-forward pod/tb-node-0 8080:8080
 
 Open the ThingsBoard in your browser using the http://localhost:8080 
 
-Enjoy your first success!
+## MQTT transport deployment
+
+cat > tb-mqtt-transport.yml
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tb-mqtt-transport-config
+  labels:
+    name: tb-mqtt-transport-config
+data:
+  conf: |
+    export JAVA_OPTS="$JAVA_OPTS -Xlog:gc*,heap*,age*,safepoint=debug:file=/var/log/tb-mqtt-transport/${TB_SERVICE_ID}-gc.log:time,uptime,level,tags:filecount=10,filesize=10M"
+    export JAVA_OPTS="$JAVA_OPTS -XX:+IgnoreUnrecognizedVMOptions -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=/var/log/tb-mqtt-transport/${TB_SERVICE_ID}-heapdump.bin"
+    export JAVA_OPTS="$JAVA_OPTS -XX:-UseBiasedLocking -XX:+UseTLAB -XX:+ResizeTLAB -XX:+PerfDisableSharedMem -XX:+UseCondCardMark"
+    export JAVA_OPTS="$JAVA_OPTS -XX:+UseG1GC -XX:MaxGCPauseMillis=500 -XX:+UseStringDeduplication -XX:+ParallelRefProcEnabled -XX:MaxTenuringThreshold=10"
+    export JAVA_OPTS="$JAVA_OPTS -XX:+ExitOnOutOfMemoryError"
+    export LOG_FILENAME=tb-mqtt-transport.out
+    export LOADER_PATH=/usr/share/tb-mqtt-transport/conf
+  logback: |
+    <!DOCTYPE configuration>
+    <configuration scan="true" scanPeriod="10 seconds">
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+            <encoder>
+                <pattern>%d{ISO8601} [%thread] %-5level %logger{36} - %msg%n</pattern>
+            </encoder>
+        </appender>
+        <logger name="org.thingsboard.server" level="INFO" />
+        <root level="INFO">
+            <appender-ref ref="STDOUT"/>
+        </root>
+    </configuration>
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: tb-mqtt-transport
+spec:
+  serviceName: "tb-mqtt-transport"
+  podManagementPolicy: Parallel
+  replicas: 3
+  selector:
+    matchLabels:
+      app: tb-mqtt-transport
+  template:
+    metadata:
+      labels:
+        app: tb-mqtt-transport
+    spec:
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: "app"
+                    operator: In
+                    values:
+                      - tb-mqtt-transport
+              topologyKey: "kubernetes.io/hostname"
+      volumes:
+        - name: tb-mqtt-transport-config
+          configMap:
+            name: tb-mqtt-transport-config
+            items:
+              - key: conf
+                path:  tb-mqtt-transport.conf
+              - key: logback
+                path:  logback.xml
+      containers:
+        - name: server
+          image: thingsboard/tb-mqtt-transport:3.3.4.1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 1883
+              name: mqtt
+            - containerPort: 8883
+              name: mqtts
+          resources:
+            limits:
+              cpu: "2"
+              memory: 2000Mi
+            requests:
+              cpu: "1"
+              memory: 500Mi
+          env:
+            - name: TB_SERVICE_ID
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.name
+            - name: REDIS_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: redis
+                  key: redis-password
+          envFrom:
+            - configMapRef:
+                name: tb-cluster-stack-config
+          volumeMounts:
+            - mountPath: /config
+              name: tb-mqtt-transport-config
+          startupProbe:
+            failureThreshold: 15
+            periodSeconds: 20
+            tcpSocket:
+              port: 1883
+          livenessProbe:
+            periodSeconds: 20
+            tcpSocket:
+              port: 1883
+---
+```
+Apply MQTT transport config
+```bash
+kubectl apply -f tb-mqtt-transport.yml
+```
