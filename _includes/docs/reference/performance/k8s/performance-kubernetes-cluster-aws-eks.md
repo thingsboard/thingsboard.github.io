@@ -44,7 +44,6 @@ eksctl create cluster \
   --region eu-west-1 \
   --nodegroup-name linux-amd64 \
   --node-volume-type gp3 \
-  --storage-class gp3 \
   --node-type m6a.2xlarge \
   --nodes 3 \
   --nodes-min 2 \
@@ -192,7 +191,7 @@ helm install redis bitnami/redis-cluster --version 7.4.1 \
 
 Setup [Postgres cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/postgresql-ha)
 ```bash
-helm install postgresql bitnami/postgresql-ha --version 9.1.2 \
+helm install postgresql  bitnami/postgresql-ha --version 9.1.2 \
   --set postgresql.replicaCount=3 \
   --set postgresql.database=thingsboard \
   --set postgresql.maxConnections=150 \
