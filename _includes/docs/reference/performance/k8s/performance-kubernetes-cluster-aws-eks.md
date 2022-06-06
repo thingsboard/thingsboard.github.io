@@ -37,7 +37,8 @@ $ eksctl get cluster
 No clusters found
 ```
 
-Create cluster with 3 nodes (m6a.2xlarge, 8 vCPU, 32GiB)
+Create cluster with 3 nodes (m6a.2xlarge, 8 vCPU, 32GiB).
+It may take about 20 minutes, so grab a coffee and take your time.
 ```bash
 eksctl create cluster \
   --name performance-test \
@@ -158,7 +159,8 @@ We are going to use Bitnami docker images and Bitnami helm charts as well.
 Setup [Zookeeper cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/zookeeper)
 ```bash
 helm install zookeeper bitnami/zookeeper --version 9.0.0 \
-  --set replicaCount=3
+  --set replicaCount=3 \
+  --set persistence.size=1Gi
 ```
 
 Setup [Kafka cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/kafka)
@@ -467,7 +469,22 @@ spec:
 Install the ThingsBoard schema, follow logs and cleanup.
 
 ```bash
-kubectl apply -f tb-db-setup.yml && kubectl logs -f tb-db-setup && kubectl delete pod tb-db-setup
+kubectl apply -f tb-db-setup.yml && sleep 30 && kubectl logs -f tb-db-setup && kubectl delete pod tb-db-setup
+```
+
+The output end will look like the below:
+```bash
+Starting ThingsBoard Installation...
+Installing DataBase schema for entities...
+Installing SQL DataBase schema part: schema-entities.sql
+Installing SQL DataBase schema indexes part: schema-entities-idx.sql
+Installing SQL DataBase schema PostgreSQL specific indexes part: schema-entities-idx-psql-addon.sql
+Installing DataBase schema for timeseries...
+Installing Cassandra DataBase schema part: schema-ts.cql
+Loading system data...
+Loading demo data...
+Installation finished successfully!
+pod "tb-db-setup" deleted
 ```
 
 ### Fault tolerance
@@ -889,7 +906,10 @@ Deploy ThingsBoard cluster
 kubectl apply -f tb-services.yml
 ```
 
-Wait all pods are up and running.
+Wait until all pods are up and running for a couple of minutes.
+```bash
+kubectl get pods --watch
+```
 
 ## First login to the ThingsBoard cluster
 
