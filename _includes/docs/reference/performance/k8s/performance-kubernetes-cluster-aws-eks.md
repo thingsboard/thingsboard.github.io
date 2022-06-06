@@ -192,8 +192,7 @@ helm install redis bitnami/redis-cluster --version 7.4.1 \
 
 Setup [Postgres cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/postgresql-ha)
 ```bash
-helm install postgresql bitnami/postgresql-ha --version 8.6.7 \
-  --set postgresqlImage.tag=11.15.0-debian-10-r44 \
+helm install postgresql bitnami/postgresql-ha --version 9.1.2 \
   --set postgresql.replicaCount=3 \
   --set postgresql.database=thingsboard \
   --set postgresql.maxConnections=150 \
