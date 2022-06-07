@@ -3,7 +3,6 @@ layout: pricing
 title: Pricing
 description: ThingsBoard Products Pricing
 defaultActivePricingSection: thingsboard-pe-options
-defaultActivateSelectProduct: true
 
 ---
 
@@ -33,10 +32,10 @@ defaultActivateSelectProduct: true
     </div>
     <div id="thingsboard-pe-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
         <div class="product-selector">
-            <div class="solution thingsboard-cloud active defaultselection" onClick="activateProductSection('thingsboard-cloud')">
+            <div class="solution thingsboard-cloud active defaultselection" data-product-id="thingsboard-cloud" onClick="activateProductSection('thingsboard-cloud')">
                 <h3 data-faq-id="what-is-cloud" data-faq-link-size="70%">Cloud</h3>
             </div>
-            <div class="solution thingsboard-pe" onClick="activateProductSection('thingsboard-pe')">
+            <div class="solution thingsboard-pe" data-product-id="thingsboard-pe" onClick="activateProductSection('thingsboard-pe')">
                 <h3 data-faq-id="difference" data-faq-link-size="70%">Self-managed</h3>
             </div>
         </div>
@@ -229,10 +228,11 @@ defaultActivateSelectProduct: true
         </div>
         <div class="col d-flex justify-content-end">
             <div class="solution-selector">
-                <div class="solution pay-as-you-go active defaultselection" data-toggle="#payAsYouGo" data-description-toggle="#payAsYouGoHeader">
+                <div id="pe-pay-as-you-go" class="solution pay-as-you-go active defaultselection" data-toggle="#payAsYouGo"
+                                                                                                  data-description-toggle="#payAsYouGoHeader" onClick="activateSolutionSection('pe-pay-as-you-go')">
                     <h3 data-faq-id="what-is-pay-as-you-go" data-faq-link-size="70%">Pay-as-you-go</h3>
                 </div>
-                <div class="solution perpetual" data-toggle="#perpetual" data-description-toggle="#perpetualHeader">
+                <div id="pe-perpetual" class="solution perpetual" data-toggle="#perpetual" data-description-toggle="#perpetualHeader" onClick="activateSolutionSection('pe-perpetual')">
                     <h3 data-faq-id="what-is-perpetual" data-faq-link-size="70%">Perpetual</h3>
                 </div>
             </div>
@@ -403,10 +403,12 @@ defaultActivateSelectProduct: true
             </div>
             <div class="col d-flex justify-content-end">
                 <div class="solution-selector">
-                    <div class="solution pay-as-you-go active defaultselection" data-toggle="#trendzPayAsYouGo" data-description-toggle="#trendzPayAsYouGoHeader">
+                    <div id="trendz-pay-as-you-go" class="solution pay-as-you-go active defaultselection" data-toggle="#trendzPayAsYouGo"
+                                                   data-description-toggle="#trendzPayAsYouGoHeader" onClick="activateSolutionSection('trendz-pay-as-you-go')">
                         <h3 data-faq-id="what-is-pay-as-you-go" data-faq-link-size="70%">Pay-as-you-go</h3>
                     </div>
-                    <div class="solution perpetual" data-toggle="#trendzPerpetual" data-description-toggle="#trendzPerpetualHeader">
+                    <div id="trendz-perpetual" class="solution perpetual" data-toggle="#trendzPerpetual"
+                                                    data-description-toggle="#trendzPerpetualHeader" onClick="activateSolutionSection('trendz-perpetual')">
                         <h3 data-faq-id="what-is-perpetual" data-faq-link-size="70%">Perpetual</h3>
                     </div>
                 </div>
@@ -567,13 +569,16 @@ defaultActivateSelectProduct: true
         </div>
         <div class="col d-flex justify-content-end">
             <div class="solution-selector">
-                <div class="solution community-edition" data-toggle="#community-edition" data-description-toggle="#communityEditionHeader">
+                <div id="edge-community" class="solution community-edition" data-toggle="#community-edition"
+                                                        data-description-toggle="#communityEditionHeader" onClick="activateSolutionSection('edge-community')">
                     <h3>Community Edition</h3>
                 </div>
-                <div class="solution pay-as-you-go active defaultselection" data-toggle="#payAsYouGo" data-description-toggle="#payAsYouGoHeader">
+                <div id="edge-pay-as-you-go" class="solution pay-as-you-go active defaultselection" data-toggle="#payAsYouGo"
+                                                                            data-description-toggle="#payAsYouGoHeader" onClick="activateSolutionSection('edge-pay-as-you-go')">
                     <h3 data-faq-id="what-is-pay-as-you-go" data-faq-link-size="70%">Pay-as-you-go</h3>
                 </div>
-                <div class="solution perpetual" data-toggle="#perpetual" data-description-toggle="#perpetualHeader">
+                <div id="edge-perpetual" class="solution perpetual" data-toggle="#perpetual"
+                                                data-description-toggle="#perpetualHeader" onClick="activateSolutionSection('edge-perpetual')">
                     <h3 data-faq-id="what-is-perpetual" data-faq-link-size="70%">Perpetual</h3>
                 </div>
             </div>
