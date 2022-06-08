@@ -1124,3 +1124,148 @@ spec:
 ```
 
 kubectl apply -f sysctl-conntrack-daemonset.yml
+
+
+# Provisioning AWS Load Balancer
+
+Here the instruction how to setup [Load Balancer on AWS EKS](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html)
+
+```bash
+curl -o iam_policy.json https://raw.githubusercontent.com/kubernetes-sigs/aws-load-balancer-controller/v2.4.1/docs/install/iam_policy.json
+aws iam create-policy \
+    --policy-name AWSLoadBalancerControllerIAMPolicy \
+    --policy-document file://iam_policy.json
+# AWSLoadBalancerControllerIAMPolicy may already exists
+eksctl create iamserviceaccount \
+  --cluster=performance-test \
+  --namespace=kube-system \
+  --name=aws-load-balancer-controller \
+  --role-name "AmazonEKSLoadBalancerControllerRole" \
+  --attach-policy-arn=arn:aws:iam::378560561651:policy/AWSLoadBalancerControllerIAMPolicy \
+  --approve
+helm repo add eks https://aws.github.io/eks-charts
+helm repo update
+helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
+  -n kube-system \
+  --set clusterName=performance-test \
+  --set serviceAccount.create=false \
+  --set serviceAccount.name=aws-load-balancer-controller \
+  --set image.repository=602401143452.dkr.ecr.eu-west-1.amazonaws.com/amazon/aws-load-balancer-controller
+kubectl get deployment -n kube-system aws-load-balancer-controller
+```
+
+# Deploy HTTP Load Balancer
+
+```bash
+cat > http-load-balancer.yml
+```
+
+```yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: tb-http-loadbalancer
+  namespace: thingsboard
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
+spec:
+  rules:
+    - http:
+        paths:
+          - path: /api/v1/*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: tb-http-transport
+                port:
+                  number: 8080
+          - path: /static/rulenode/*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: tb-node
+                port:
+                  number: 8080
+          - path: /static/*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: tb-web-ui
+                port:
+                  number: 8080
+          - path: /index.html
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: tb-web-ui
+                port:
+                  number: 8080
+          - path: /*
+            pathType: ImplementationSpecific
+            backend:
+              service:
+                name: tb-node
+                port:
+                  number: 8080
+---
+```
+
+```bash
+kubectl apply -f http-load-balancer.yml
+```
+
+# Deploy MQTT Load Balancer
+
+```bash
+cat > mqtt-load-balancer.yml
+```
+
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: tb-mqtt-loadbalancer
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
+    service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
+    service.beta.kubernetes.io/aws-load-balancer-target-group-attributes: "stickiness.enabled=true,stickiness.type=source_ip"
+    service.beta.kubernetes.io/aws-load-balancer-additional-resource-tags: ThingsBoardClusterELB=ThingsBoardMqtt
+spec:
+  type: LoadBalancer
+  externalTrafficPolicy: Local
+  selector:
+    app: tb-mqtt-transport
+  ports:
+    - port: 1883
+      targetPort: 1883
+      name: mqtt
+    # This way NLB acts as transparent load balancer and forwards all traffic to port 8883 without decryption.
+    - port: 8883
+      targetPort: 8883
+      name: mqtts
+---
+```
+
+Apply the balancer config:
+```bash
+kubectl apply -f mqtt-load-balancer.yml
+```
+
+# Small performance test
+
+```bash
+# Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
+export REST_URL=http://k8s-thingsbo-tbhttplo-784e0efb43-1020620715.eu-west-1.elb.amazonaws.com:80
+export MQTT_HOST=a1435f2586389421f82397b52b690867-b454cc0b7f996e3b.elb.eu-west-1.amazonaws.com
+docker run -it --rm --network host --name tb-perf-test \
+  --env REST_URL=http://127.0.0.1:8080 \
+  --env MQTT_HOST=127.0.0.1 \
+  --env DEVICE_END_IDX=1000 \
+  --env MESSAGES_PER_SECOND=1000 \
+  --env ALARMS_PER_SECOND=5 \
+  --env DURATION_IN_SECONDS=86400 \
+  --env DEVICE_CREATE_ON_START=true \
+  thingsboard/tb-ce-performance-test:3.3.3
+```
