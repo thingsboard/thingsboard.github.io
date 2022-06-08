@@ -19,7 +19,7 @@ Add lines to your limits.conf file.
 
 cat | sudo tee -a /etc/security/limits.conf
 
-```
+```bash
 ## /etc/security/limits.conf
 ## "nofile" mean "number of open files"
 #<user>     <type>    <item>     <value>
@@ -33,7 +33,7 @@ Add lines to your sysctl.conf file.
 
 cat | sudo tee -a /etc/sysctl.conf
 
-```
+```bash
 ## /etc/sysctl.conf
 ## Increase outbound connections
 net.ipv4.ip_local_port_range = 1024 65535
@@ -41,6 +41,8 @@ net.ipv4.ip_local_port_range = 1024 65535
 ## Increase inbound connections
 ## 1M+ file descriptors
 fs.file-max = 1048576
+## 1M+ connections
+net.netfilter.nf_conntrack_max = 1048576
 ```
 
 ### m6a.2xlarge (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3) + Cassandra - 500k devices, 5k msg/sec, 15k tps

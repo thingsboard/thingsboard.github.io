@@ -158,14 +158,19 @@ We are going to use Bitnami docker images and Bitnami helm charts as well.
 
 Setup [Zookeeper cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/zookeeper)
 ```bash
-helm install zookeeper bitnami/zookeeper --version 9.0.0 \
+helm upgrade zookeeper bitnami/zookeeper --version 9.0.0 \
   --set replicaCount=3 \
-  --set persistence.size=1Gi
+  --set persistence.size=1Gi \
+  --set heapSize=192 \
+  --set resources.limits.cpu=1 \
+  --set resources.limits.memory=256Mi \
+  --set resources.requests.cpu=100m \
+  --set resources.requests.memory=256Mi
 ```
 
 Setup [Kafka cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/kafka)
 ```bash
-helm install kafka bitnami/kafka --version 16.1.0 \
+helm upgrade kafka bitnami/kafka --version 17.2.3 \
   --set replicaCount=3 \
   --set persistence.size=20Gi \
   --set zookeeper.enabled=false \
@@ -174,26 +179,36 @@ helm install kafka bitnami/kafka --version 16.1.0 \
 
 Setup [Cassandra cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/cassandra)
 ```bash
-helm install cassandra bitnami/cassandra --version 9.1.11 \
+helm upgrade cassandra bitnami/cassandra --version 9.1.11 \
   --set replicaCount=3 \
   --set persistence.size=30Gi \
   --set cluster.name=cassandra \
   --set cluster.datacenter=datacenter1 \
-  --set cluster.seedCount=3
+  --set cluster.seedCount=3 \
+  --set jvm.maxHeapSize=4096M \
+  --set jvm.newHeapSize=800M \
+  --set resources.limits.cpu=8 \
+  --set resources.limits.memory=8Gi \
+  --set resources.requests.cpu=1 \
+  --set resources.requests.memory=8Gi
 ```
 
 Setup [Redis cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/redis-cluster)
 ```bash
-helm install redis bitnami/redis-cluster --version 7.4.1 \
+helm upgrade redis bitnami/redis-cluster --version 7.4.1 \
   --set cluster.nodes=6 \
   --set cluster.replicas=1 \
   --set redis.useAOFPersistence=no \
-  --set fullnameOverride=redis
+  --set fullnameOverride=redis \
+  --set redis.resources.limits.cpu=1 \
+  --set redis.resources.limits.memory=1Gi \
+  --set redis.resources.requests.cpu=100m \
+  --set redis.resources.requests.memory=1Gi
 ```
 
 Setup [Postgres cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/postgresql-ha)
 ```bash
-helm install postgresql  bitnami/postgresql-ha --version 9.1.2 \
+helm upgrade postgresql  bitnami/postgresql-ha --version 9.1.2 \
   --set postgresql.replicaCount=3 \
   --set postgresql.database=thingsboard \
   --set postgresql.maxConnections=150 \
@@ -203,7 +218,15 @@ helm install postgresql  bitnami/postgresql-ha --version 9.1.2 \
   --set persistence.size=30Gi \
   --set postgresqlImage.debug=true \
   --set pgpoolImage.debug=true \
-  --set fullnameOverride=postgresql
+  --set fullnameOverride=postgresql \
+  --set postgresql.resources.limits.cpu=8 \
+  --set postgresql.resources.limits.memory=4Gi \
+  --set postgresql.resources.requests.cpu=1 \
+  --set postgresql.resources.requests.memory=4Gi \
+  --set pgpool.resources.limits.cpu=2 \
+  --set pgpool.resources.limits.memory=2Gi \
+  --set pgpool.resources.requests.cpu=100m \
+  --set pgpool.resources.requests.memory=1Gi
 ```
 
 Wait while all pods up and running
@@ -326,6 +349,12 @@ data:
   TB_QUEUE_RE_MAIN_PARTITIONS: "3"
   TB_QUEUE_RE_HP_PARTITIONS: "3"
   TB_QUEUE_RE_SQ_PARTITIONS: "3"
+  TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
+  TB_QUEUE_CORE_PACK_PROCESSING_TIMEOUT_MS: "20000"
+  TB_QUEUE_RE_MAIN_CONSUMER_PER_PARTITION: "true"
+  TB_QUEUE_RE_HP_CONSUMER_PER_PARTITION: "false"
+  TB_QUEUE_RE_SQ_CONSUMER_PER_PARTITION: "false"
+  ACTORS_SYSTEM_RULE_DISPATCHER_POOL_SIZE: "8"
   # Zookeeper
   ZOOKEEPER_ENABLED: "true"
   ZOOKEEPER_URL: "zookeeper-headless:2181"
@@ -354,6 +383,19 @@ data:
   JS_EVALUATOR: "remote"
   # Common settings
   HTTP_LOG_CONTROLLER_ERROR_STACK_TRACE: "false"
+  # Cache specs
+  #1M devices
+  CACHE_SPECS_DEVICES_MAX_SIZE: "1048000" # default is 10000
+  CACHE_SPECS_DEVICE_CREDENTIALS_MAX_SIZE: "1048000" # default is 10000 
+  CACHE_SPECS_SESSIONS_MAX_SIZE: "1048000" # default is 10000
+  TS_KV_PARTITIONS_MAX_CACHE_SIZE: "4194000" # default is 100000
+  # Device state service
+  DEFAULT_INACTIVITY_TIMEOUT: "1800" # defailt is 600 sec (10min)
+  DEFAULT_STATE_CHECK_INTERVAL: "900" # default is 60 sec(1min)
+  TB_TRANSPORT_SESSIONS_REPORT_TIMEOUT: "60000" # default is 3000 msec
+  TB_TRANSPORT_SESSIONS_INACTIVITY_TIMEOUT: "600000" # default is 300000 msec
+  #Transport API
+  TB_QUEUE_TRANSPORT_MAX_PENDING_REQUESTS: "1000000" # default is 10k
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -439,11 +481,6 @@ spec:
             secretKeyRef:
               name: redis
               key: redis-password
-        - name: CASSANDRA_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: cassandra
-              key: cassandra-password
         - name: CASSANDRA_PASSWORD
           valueFrom:
             secretKeyRef:
@@ -579,12 +616,14 @@ spec:
               name: edge
           resources:
             limits:
-              cpu: "6"
-              memory: 6Gi
+#              cpu: 8
+              memory: 4Gi
             requests:
-              cpu: "1"
-              memory: 2Gi
+              cpu: 1
+              memory: 3Gi
           env:
+            - name: JAVA_OPTS
+              value: "-Xmx3072M -Xms3072M -Xss384k -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
             - name: TB_SERVICE_TYPE
               value: "tb-core"
             - name: TB_SERVICE_ID
@@ -600,11 +639,6 @@ spec:
                 secretKeyRef:
                   name: redis
                   key: redis-password
-            - name: CASSANDRA_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: cassandra
-                  key: cassandra-password
             - name: CASSANDRA_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -696,12 +730,14 @@ spec:
               name: edge
           resources:
             limits:
-              cpu: "6"
+#              cpu: 8
               memory: 6Gi
             requests:
-              cpu: "1"
-              memory: 2Gi
+              cpu: 1
+              memory: 4Gi
           env:
+            - name: JAVA_OPTS
+              value: "-Xmx4096M -Xms4096M -Xss384k -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
             - name: TB_SERVICE_TYPE
               value: "tb-rule-engine"
             - name: TB_SERVICE_ID
@@ -717,11 +753,6 @@ spec:
                 secretKeyRef:
                   name: redis
                   key: redis-password
-            - name: CASSANDRA_PASSWORD
-              valueFrom:
-                secretKeyRef:
-                  name: cassandra
-                  key: cassandra-password
             - name: CASSANDRA_PASSWORD
               valueFrom:
                 secretKeyRef:
@@ -791,7 +822,7 @@ spec:
                         - tb-web-ui
                 topologyKey: kubernetes.io/hostname
       containers:
-      - name: server
+      - name: tb-web-ui
         imagePullPolicy: IfNotPresent
         image: thingsboard/tb-web-ui:3.3.4.1
         ports:
@@ -990,7 +1021,7 @@ spec:
               - key: logback
                 path:  logback.xml
       containers:
-        - name: server
+        - name: tb-mqtt-transport
           image: thingsboard/tb-mqtt-transport:3.3.4.1
           imagePullPolicy: IfNotPresent
           ports:
@@ -1000,12 +1031,14 @@ spec:
               name: mqtts
           resources:
             limits:
-              cpu: "2"
-              memory: 2000Mi
+#              cpu: 8
+              memory: 3Gi
             requests:
-              cpu: "1"
-              memory: 500Mi
+              cpu: 100m
+              memory: 2Gi
           env:
+            - name: JAVA_OPTS
+              value: "-Xmx2048M -Xms2048M -Xss384k -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
             - name: TB_SERVICE_ID
               valueFrom:
                 fieldRef:
@@ -1015,6 +1048,14 @@ spec:
                 secretKeyRef:
                   name: redis
                   key: redis-password
+#            - name: TB_QUEUE_TRANSPORT_MAX_PENDING_REQUESTS
+#              value: "100000"
+#            - name: TB_QUEUE_TRANSPORT_MAX_REQUEST_TIMEOUT
+#              value: "10000"
+#            - name: TB_QUEUE_TRANSPORT_MAX_CALLBACK_THREADS
+#              value: "100"
+#            - name: TB_QUEUE_TRANSPORT_RESPONSE_POLL_INTERVAL_MS
+#              value: "10"
           envFrom:
             - configMapRef:
                 name: tb-cluster-stack-config
@@ -1036,3 +1077,50 @@ Apply MQTT transport config
 ```bash
 kubectl apply -f tb-mqtt-transport.yml
 ```
+
+
+Create Connector Role to observer ESK dashboards
+https://docs.aws.amazon.com/eks/latest/userguide/connector_IAM_role.html#create-connector-role
+
+kubectl apply -f https://s3.us-west-2.amazonaws.com/amazon-eks/docs/eks-console-full-access.yaml
+
+eksctl get iamidentitymapping --cluster performance-test --region=eu-west-1
+
+# Daemon set to tune the network
+
+cat > sysctl-conntrack-daemonset.yml
+
+```yaml
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: sysctl-conntrack
+spec:
+  selector:
+    matchLabels:
+      name: sysctl-conntrack
+  template:
+    metadata:
+      labels:
+        name: sysctl-conntrack
+    spec:
+      hostPID: true
+      containers:
+        - name: sysctl-buddy
+          image: ubuntu:20.04
+          securityContext:
+            privileged: true
+          command:
+            - /bin/sh
+            - -c
+            - |
+              echo "tuning the network parameters"
+              ulimit -n 1048576
+              sysctl -a | grep conntrack_max
+              sysctl -w net.netfilter.nf_conntrack_max=1048576
+              echo "all done"
+              sleep infinity
+---
+```
+
+kubectl apply -f sysctl-conntrack-daemonset.yml
