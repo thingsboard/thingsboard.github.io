@@ -336,6 +336,10 @@ data:
   SPRING_DRIVER_CLASS_NAME: org.postgresql.Driver
   SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql-pgpool:5432/thingsboard
   SPRING_DATASOURCE_USERNAME: postgres
+  SQL_BATCH_SORT: "true"                        # default false
+  SQL_TS_LATEST_BATCH_MAX_DELAY_MS: "20"
+  SQL_TS_BATCH_MAX_DELAY_MS: "20"
+  SQL_ATTRIBUTES_BATCH_MAX_DELAY_MS: "20"
   # Kafka
   TB_QUEUE_TYPE: "kafka"
   TB_KAFKA_SERVERS: "kafka-headless:9092"
@@ -343,7 +347,8 @@ data:
   TB_KAFKA_ACKS: "1"
   TB_KAFKA_BATCH_SIZE: "65536" # default is 16384 - it helps to produce messages much efficiently
   TB_KAFKA_LINGER_MS: "5" # default is 1
-  TB_QUEUE_KAFKA_MAX_POLL_RECORDS: "2048" # default is 8192
+  TB_KAFKA_COMPRESSION_TYPE: "gzip" # none or gzip
+  TB_QUEUE_KAFKA_MAX_POLL_RECORDS: "4096" # default is 8192
   TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES: "retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600;partitions:6" # have to be equal tb-js-executor replicas count
   TB_QUEUE_CORE_PARTITIONS: "3"
   TB_QUEUE_RE_MAIN_PARTITIONS: "3"
@@ -351,7 +356,7 @@ data:
   TB_QUEUE_RE_SQ_PARTITIONS: "3"
   TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
   TB_QUEUE_CORE_PACK_PROCESSING_TIMEOUT_MS: "20000"
-  TB_QUEUE_RE_MAIN_CONSUMER_PER_PARTITION: "true"
+  TB_QUEUE_RE_MAIN_CONSUMER_PER_PARTITION: "false"
   TB_QUEUE_RE_HP_CONSUMER_PER_PARTITION: "false"
   TB_QUEUE_RE_SQ_CONSUMER_PER_PARTITION: "false"
   ACTORS_SYSTEM_RULE_DISPATCHER_POOL_SIZE: "8"
@@ -368,9 +373,9 @@ data:
   CASSANDRA_USERNAME: "cassandra"
   CASSANDRA_READ_CONSISTENCY_LEVEL: "QUORUM" # IMPORTANT for the CLUSTER data consistency
   CASSANDRA_WRITE_CONSISTENCY_LEVEL: "QUORUM" # IMPORTANT for the CLUSTER data consistency
-  CASSANDRA_QUERY_BUFFER_SIZE: "200000"
-  CASSANDRA_QUERY_CONCURRENT_LIMIT: "300"
-  CASSANDRA_QUERY_POLL_MS: "5"
+  CASSANDRA_QUERY_BUFFER_SIZE: "1000000"
+  CASSANDRA_QUERY_CONCURRENT_LIMIT: "1000"
+  CASSANDRA_QUERY_POLL_MS: "3"
   # Redis
   CACHE_TYPE: "redis"
   REDIS_CONNECTION_TYPE: "cluster"
@@ -379,6 +384,7 @@ data:
   REDIS_POOL_CONFIG_BLOCK_WHEN_EXHAUSTED: "false"
   REDIS_POOL_CONFIG_TEST_ON_BORROW: "false"
   REDIS_POOL_CONFIG_TEST_ON_RETURN: "false"
+  CACHE_MAXIMUM_POOL_SIZE: "50"
   # JS executors
   JS_EVALUATOR: "remote"
   # Common settings
@@ -396,6 +402,8 @@ data:
   TB_TRANSPORT_SESSIONS_INACTIVITY_TIMEOUT: "600000" # default is 300000 msec
   #Transport API
   TB_QUEUE_TRANSPORT_MAX_PENDING_REQUESTS: "1000000" # default is 10k
+  # etc
+  JSON_TYPE_CAST_ENABLED: "false"
 ---
 apiVersion: v1
 kind: ConfigMap
@@ -423,6 +431,8 @@ data:
         </appender>
         <logger name="org.thingsboard.server" level="INFO" />
         <logger name="com.google.common.util.concurrent.AggregateFuture" level="OFF" />
+        <!-- Top Rule Nodes by max execution time -->
+        <logger name="org.thingsboard.server.service.queue.TbMsgPackProcessingContext" level="DEBUG" />
         <root level="INFO">
             <appender-ref ref="STDOUT"/>
         </root>
@@ -561,7 +571,7 @@ See the example from configmap:
 Prepare ThingsBoard services yaml
 
 ```bash
-cat > tb-services.yml 
+  cat > tb-services.yml 
 ```
 
 ```yaml
@@ -607,8 +617,8 @@ spec:
           emptyDir: {}
       containers:
         - name: tb-node
-          imagePullPolicy: IfNotPresent
-          image: thingsboard/tb-node:3.3.4.1
+          imagePullPolicy: Always
+          image: sevlamat/tb-node:3.3.4-SNAPSHOT
           ports:
             - containerPort: 8080
               name: http
@@ -721,8 +731,8 @@ spec:
           emptyDir: {}
       containers:
         - name: tb-rule-engine
-          imagePullPolicy: IfNotPresent
-          image: thingsboard/tb-node:3.3.4.1
+          imagePullPolicy: Always
+          image: sevlamat/tb-node:3.3.4-SNAPSHOT
           ports:
             - containerPort: 8080
               name: http
@@ -1269,3 +1279,49 @@ docker run -it --rm --network host --name tb-perf-test \
   --env DEVICE_CREATE_ON_START=true \
   thingsboard/tb-ce-performance-test:3.3.3
 ```
+
+Kafka UI Kowl
+
+cat > tb-kafka-ui-kowl.yml
+```yaml
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: tb-kafka-ui-kowl
+spec:
+  serviceName: tb-kafka-ui-kowl
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tb-kafka-ui-kowl
+  template:
+    metadata:
+      labels:
+        app: tb-kafka-ui-kowl
+    spec:
+      containers:
+        - name: server
+          imagePullPolicy: IfNotPresent
+          image: quay.io/cloudhut/kowl:master
+          resources:
+            requests:
+#              cpu: 200m
+              memory: 200Mi
+            limits:
+              cpu: 1
+              memory: 1Gi
+          ports:
+            - containerPort: 8080
+              name: http8080
+          env:
+            - name: KAFKA_BROKERS
+              value: "kafka-headless:9092" # put your broker here
+      restartPolicy: Always
+---
+```
+
+kubectl apply -f tb-kafka-ui-kowl.yml
+
+If Kafka UI does not need, scale it down:
+
+kubectl scale --replicas=0 statefulset tb-kafka-ui-kowl
