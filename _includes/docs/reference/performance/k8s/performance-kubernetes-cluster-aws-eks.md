@@ -179,9 +179,12 @@ helm upgrade kafka bitnami/kafka --version 17.2.3 \
 
 Setup [Cassandra cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/cassandra)
 ```bash
-helm upgrade cassandra bitnami/cassandra --version 9.1.11 \
+helm install cassandra bitnami/cassandra --version 9.1.11 \
   --set replicaCount=3 \
-  --set persistence.size=30Gi \
+  --set persistence.size=100Gi \
+  --set persistence.commitLogsize=2Gi \
+  --set persistence.commitLogMountPath=/bitnami/cassandra/commitlog \
+  --set persistence.commitStorageClass=gp3 \
   --set cluster.name=cassandra \
   --set cluster.datacenter=datacenter1 \
   --set cluster.seedCount=3 \
@@ -200,8 +203,7 @@ helm upgrade redis bitnami/redis-cluster --version 7.4.1 \
   --set cluster.replicas=1 \
   --set redis.useAOFPersistence=no \
   --set fullnameOverride=redis \
-  --set redis.resources.limits.cpu=1 \
-  --set redis.resources.limits.memory=1Gi \
+  --set redis.resources.limits.memory=2Gi \
   --set redis.resources.requests.cpu=100m \
   --set redis.resources.requests.memory=1Gi
 ```
@@ -211,19 +213,17 @@ Setup [Postgres cluster from Bitnami Helm chart](https://github.com/bitnami/char
 helm upgrade postgresql  bitnami/postgresql-ha --version 9.1.2 \
   --set postgresql.replicaCount=3 \
   --set postgresql.database=thingsboard \
-  --set postgresql.maxConnections=150 \
+  --set postgresql.maxConnections=250 \
   --set pgpool.replicaCount=1 \
-  --set pgpool.numInitChildren=120 \
+  --set pgpool.numInitChildren=240 \
   --set pgpool.useLoadBalancing=false \
   --set persistence.size=30Gi \
   --set postgresqlImage.debug=true \
   --set pgpoolImage.debug=true \
   --set fullnameOverride=postgresql \
-  --set postgresql.resources.limits.cpu=8 \
   --set postgresql.resources.limits.memory=4Gi \
   --set postgresql.resources.requests.cpu=1 \
   --set postgresql.resources.requests.memory=4Gi \
-  --set pgpool.resources.limits.cpu=2 \
   --set pgpool.resources.limits.memory=2Gi \
   --set pgpool.resources.requests.cpu=100m \
   --set pgpool.resources.requests.memory=1Gi
@@ -350,21 +350,22 @@ data:
   TB_KAFKA_COMPRESSION_TYPE: "gzip" # none or gzip
   TB_QUEUE_KAFKA_MAX_POLL_RECORDS: "4096" # default is 8192
   TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES: "retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600;partitions:6" # have to be equal tb-js-executor replicas count
-  TB_QUEUE_CORE_PARTITIONS: "3"
-  TB_QUEUE_RE_MAIN_PARTITIONS: "3"
-  TB_QUEUE_RE_HP_PARTITIONS: "3"
-  TB_QUEUE_RE_SQ_PARTITIONS: "3"
+  TB_QUEUE_CORE_PARTITIONS: "6"
+  TB_QUEUE_RE_MAIN_PARTITIONS: "6"
+  TB_QUEUE_RE_HP_PARTITIONS: "6"
+  TB_QUEUE_RE_SQ_PARTITIONS: "6"
   TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
   TB_QUEUE_CORE_PACK_PROCESSING_TIMEOUT_MS: "20000"
   TB_QUEUE_RE_MAIN_CONSUMER_PER_PARTITION: "false"
   TB_QUEUE_RE_HP_CONSUMER_PER_PARTITION: "false"
   TB_QUEUE_RE_SQ_CONSUMER_PER_PARTITION: "false"
-  ACTORS_SYSTEM_RULE_DISPATCHER_POOL_SIZE: "8"
+  ACTORS_SYSTEM_RULE_DISPATCHER_POOL_SIZE: "16"
   # Zookeeper
   ZOOKEEPER_ENABLED: "true"
   ZOOKEEPER_URL: "zookeeper-headless:2181"
   # Cassandra
   DATABASE_TS_TYPE: "cassandra"
+#  DATABASE_TS_LATEST_TYPE: "cassandra" # this is a key difference
   PERSIST_STATE_TO_TELEMETRY: "true"
   CASSANDRA_URL: "cassandra-headless:9042"
   CASSANDRA_CLUSTER_NAME: "cassandra" # see https://github.com/bitnami/charts/blob/master/bitnami/cassandra/values.yaml
@@ -374,8 +375,8 @@ data:
   CASSANDRA_READ_CONSISTENCY_LEVEL: "QUORUM" # IMPORTANT for the CLUSTER data consistency
   CASSANDRA_WRITE_CONSISTENCY_LEVEL: "QUORUM" # IMPORTANT for the CLUSTER data consistency
   CASSANDRA_QUERY_BUFFER_SIZE: "1000000"
-  CASSANDRA_QUERY_CONCURRENT_LIMIT: "1000"
-  CASSANDRA_QUERY_POLL_MS: "3"
+  CASSANDRA_QUERY_CONCURRENT_LIMIT: "500"
+  CASSANDRA_QUERY_POLL_MS: "5"
   # Redis
   CACHE_TYPE: "redis"
   REDIS_CONNECTION_TYPE: "cluster"
@@ -402,6 +403,8 @@ data:
   TB_TRANSPORT_SESSIONS_INACTIVITY_TIMEOUT: "600000" # default is 300000 msec
   #Transport API
   TB_QUEUE_TRANSPORT_MAX_PENDING_REQUESTS: "1000000" # default is 10k
+  # Edge
+  EDGES_ENABLED: "false"
   # etc
   JSON_TYPE_CAST_ENABLED: "false"
 ---
@@ -431,8 +434,8 @@ data:
         </appender>
         <logger name="org.thingsboard.server" level="INFO" />
         <logger name="com.google.common.util.concurrent.AggregateFuture" level="OFF" />
-        <!-- Top Rule Nodes by max execution time -->
-        <logger name="org.thingsboard.server.service.queue.TbMsgPackProcessingContext" level="DEBUG" />
+        <!-- Top Rule Nodes by max execution time DEBUG-->
+        <logger name="org.thingsboard.server.service.queue.TbMsgPackProcessingContext" level="INFO" />
         <root level="INFO">
             <appender-ref ref="STDOUT"/>
         </root>
@@ -592,14 +595,16 @@ spec:
     spec:
       affinity:
         podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: "app"
-                    operator: In
-                    values:
-                      - tb-node
-              topologyKey: "kubernetes.io/hostname"
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - tb-node
+                topologyKey: kubernetes.io/hostname
       securityContext:
         runAsUser: 799
         runAsNonRoot: true
@@ -706,14 +711,16 @@ spec:
     spec:
       affinity:
         podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: "app"
-                    operator: In
-                    values:
-                      - tb-rule-engine
-              topologyKey: "kubernetes.io/hostname"
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - tb-rule-engine
+                topologyKey: kubernetes.io/hostname
       securityContext:
         runAsUser: 799
         runAsNonRoot: true
@@ -1013,14 +1020,16 @@ spec:
     spec:
       affinity:
         podAntiAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            - labelSelector:
-                matchExpressions:
-                  - key: "app"
-                    operator: In
-                    values:
-                      - tb-mqtt-transport
-              topologyKey: "kubernetes.io/hostname"
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 1
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - tb-mqtt-transport
+                topologyKey: kubernetes.io/hostname
       volumes:
         - name: tb-mqtt-transport-config
           configMap:
