@@ -214,9 +214,14 @@ helm upgrade postgresql  bitnami/postgresql-ha --version 9.1.2 \
   --set postgresql.replicaCount=3 \
   --set postgresql.database=thingsboard \
   --set postgresql.maxConnections=250 \
+  --set postgresql.sharedPreloadLibraries='pgaudit\,repmgr\,pg_stat_statements' \
   --set pgpool.replicaCount=1 \
-  --set pgpool.numInitChildren=240 \
+  --set pgpool.numInitChildren=110 \
   --set pgpool.useLoadBalancing=false \
+  --set pgpool.extraEnvVars[0].name=PGPOOL_AUTO_FAILBACK \
+  --set pgpool.extraEnvVars[0].value=yes \
+  --set pgpool.extraEnvVars[1].name=PGPOOL_BACKEND_APPLICATION_NAMES \
+  --set pgpool.extraEnvVars[1].value='postgresql-postgresql-0\,postgresql-postgresql-1\,postgresql-postgresql-2' \
   --set persistence.size=30Gi \
   --set postgresqlImage.debug=true \
   --set pgpoolImage.debug=true \
@@ -224,9 +229,13 @@ helm upgrade postgresql  bitnami/postgresql-ha --version 9.1.2 \
   --set postgresql.resources.limits.memory=4Gi \
   --set postgresql.resources.requests.cpu=1 \
   --set postgresql.resources.requests.memory=4Gi \
-  --set pgpool.resources.limits.memory=2Gi \
+  --set pgpool.resources.limits.cpu=3 \
+  --set pgpool.resources.limits.memory=3Gi \
   --set pgpool.resources.requests.cpu=100m \
-  --set pgpool.resources.requests.memory=1Gi
+  --set pgpool.resources.requests.memory=1Gi \
+  --set postgresql.readinessProbe.enabled=false \
+  --set postgresql.startupProbe.enabled=true \
+  --set postgresql.startupProbe.failureThreshold=100
 ```
 
 Wait while all pods up and running
@@ -337,6 +346,7 @@ data:
   SPRING_DATASOURCE_URL: jdbc:postgresql://postgresql-pgpool:5432/thingsboard
   SPRING_DATASOURCE_USERNAME: postgres
   SQL_BATCH_SORT: "true"                        # default false
+  SQL_TS_LATEST_BATCH_SIZE: "1000"
   SQL_TS_LATEST_BATCH_MAX_DELAY_MS: "20"
   SQL_TS_BATCH_MAX_DELAY_MS: "20"
   SQL_ATTRIBUTES_BATCH_MAX_DELAY_MS: "20"
@@ -365,6 +375,7 @@ data:
   ZOOKEEPER_URL: "zookeeper-headless:2181"
   # Cassandra
   DATABASE_TS_TYPE: "cassandra"
+  TS_KV_PARTITIONING: "INDEFINITE" # MONTHS
 #  DATABASE_TS_LATEST_TYPE: "cassandra" # this is a key difference
   PERSIST_STATE_TO_TELEMETRY: "true"
   CASSANDRA_URL: "cassandra-headless:9042"
@@ -1054,7 +1065,7 @@ spec:
               memory: 3Gi
             requests:
               cpu: 100m
-              memory: 2Gi
+              memory: 1Gi
           env:
             - name: JAVA_OPTS
               value: "-Xmx2048M -Xms2048M -Xss384k -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
@@ -1334,3 +1345,27 @@ kubectl apply -f tb-kafka-ui-kowl.yml
 If Kafka UI does not need, scale it down:
 
 kubectl scale --replicas=0 statefulset tb-kafka-ui-kowl
+
+oc rsh postgresql-postgresql-0 /opt/bitnami/scripts/postgresql-repmgr/entrypoint.sh repmgr -f /opt/bitnami/repmgr/conf/repmgr.conf cluster show
+oc port-forward postgresql-postgresql-1 54321:5432
+
+export POSTGRES_PASSWORD=$(kubectl get secret --namespace thingsboard postgresql-postgresql -o jsonpath="{.data.postgresql-password}" | base64 -d)
+
+CLUSTER VERBOSE ts_kv_latest USING ts_kv_latest_pkey;
+
+INFO:  clustering "public.ts_kv_latest" using index scan on "ts_kv_latest_pkey"
+INFO:  "ts_kv_latest": found 695932 removable, 6464658 nonremovable row versions in 81269 pages
+DETAIL:  2 dead row versions cannot be removed yet.
+CPU: user: 10.84 s, system: 20.92 s, elapsed: 62.94 s.
+CLUSTER
+
+Query returned successfully in 1 min 11 secs.
+
+SELECT calls, * FROM public.pg_stat_statements
+ORDER BY  calls DESC LIMIT 100;
+
+
+SELECT calls, mean_exec_time, max_exec_time, * FROM public.pg_stat_statements
+ORDER BY  calls DESC LIMIT 100;
+
+--SELECT pg_stat_statements_reset();
