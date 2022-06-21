@@ -1,7 +1,7 @@
 var mqtt = require('mqtt');
 const ACCESS_TOKEN = process.argv[2];
 
-var client  = mqtt.connect('mqtt://demo.thingsboard.io',{
+var client  = mqtt.connect('mqtt://localhost',{
     username: ACCESS_TOKEN
 });
 

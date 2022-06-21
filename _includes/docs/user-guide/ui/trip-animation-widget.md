@@ -37,10 +37,15 @@ Create a new device **Tracker1**.
 {% endif %}
 
 {% if docsPrefix == null %}
-In our example, the device receives its longitude, latitude, speed, status, and coordinates of polygon use an [emulator](/docs/{{docsPrefix}}user-guide/resources/timeseries-map-bus-ce.js) written in javascript.
-{% else %}
-In our example, the device receives its longitude, latitude, speed, status, and coordinates of polygon use an [emulator](/docs/{{docsPrefix}}user-guide/resources/timeseries-map-bus.js) written in javascript.
+{% assign YOUR_HOST = "[emulator](/docs/user-guide/resources/timeseries-map-bus-ce.js)" %}
 {% endif %}
+{% if docsPrefix == "pe/" %}
+{% assign YOUR_HOST = "[emulator](/docs/user-guide/resources/timeseries-map-bus-pe.js)" %}
+{% endif %}
+{% if docsPrefix == "paas/" %}
+{% assign YOUR_HOST = "[emulator](/docs/user-guide/resources/timeseries-map-bus-cloud.js)" %}
+{% endif %}
+In our example, the device receives its longitude, latitude, speed, radius of circle, status, and coordinates of polygon use an {{YOUR_HOST}} written in javascript.
 
 For receive telemetry and further visualize it on the dashboard execute script in a command line:
 
@@ -48,11 +53,19 @@ For receive telemetry and further visualize it on the dashboard execute script i
 node timeseries-map-bus.js $ACCESSTOKEN
 ```
 {: .copy-code}
-Where **$ACCESSTOKEN** is your **Device** **access token**.
+Where **$ACCESSTOKEN** is your device access token.
 
-![image](/images/user-guide/ui/widgets/trip-animation-widget/device-emulator.png)
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/device-emulator-ce.png)
+{% endif %}
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/device-emulator-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/device-emulator-paas.png)
+{% endif %}
 
-**$ACCESSTOKEN** is located in a **Device details**.
+**$ACCESSTOKEN** is located in a device details.
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/access-token-1-ce.png)
@@ -108,13 +121,13 @@ Trip animation widget is located in Maps bundle
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-4-pe.png)
 {% endif %}
 
-In our widget we add **coordinates**, **latitude**, **longitude**, speed and status from our alias **“GeoData1”** as our parameters. 
+In our widget we add **coordinates**, **latitude**, **longitude**, **radius**, **speed** and **status** from our alias **“GeoData1”** as our parameters.
 
-They have the same labels as their keys are. Secondly, we create a widget on which we will visualize our telemetry. 
+They have the same labels as their keys are. Secondly, we create a widget on which we will visualize our telemetry.
 
-We use **Trip Animation Widget** in our guide. It’s located in **Maps Bundle, Time series tab**. 
+We use **Trip Animation** widget in our guide. It’s located in Maps Bundle, Time series tab.
 
-Also, we’ll go for “Use dashboard timewindow” so that we’ll make it easier to synchronise our data. 
+Also, we’ll go for “Use dashboard timewindow” so that we’ll make it easier to synchronise our data.
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-5-ce.png)
@@ -210,16 +223,41 @@ In a settings tab, we can specify unique parametres for Trip animation widget fo
 ##### Latitude & Longitude key names
 You can specify name based on which widget will be updated. It uses data based on the label of the data. So that you may specify label “data-1” for the longitude key value and get longitude from the alias after we edit longitude key name as “data-1”. 
 
-![image](/images/user-guide/ui/widgets/trip-animation-widget/7.gif)
+{% include images-gallery.html imageCollection="advanced-settings-key-name" %}
 
-##### Label function:
-* Widget label, or specify label function (you may change data contained in a widget label based on data, dsData, dsIndex)
+##### Tooltip function
+You can show/hide Tooltip, its color, its font color, the opacity of tooltip and tooltip text or use tooltip function (you may change data contained in a tooltip based on *data, dsData, dsIndex*)
 
-![image](/images/user-guide/ui/widgets/trip-animation-widget/5.gif)
+{% include images-gallery.html imageCollection="advanced-settings-tooltip" %}
+
+Tooltip function:
+```javascript
+var speed = data['speed'];
+var res;
+if (speed > 0) {
+    res = "${entityName}</br><b>Speed:</b> " + String(speed)
+} else {
+    res = "${entityName}</br><b>Status: On The stop</b>"
+}
+return res;
+```
+{: .copy-code}
+
+#### Markers settings
+
+##### Label function
+
+* Set additional rotation angle for marker
+
+{% include images-gallery.html imageCollection="advanced-settings-additional-rotation-angle-for-marker" %}
+
+* Widget label, or specify label function (you may change data contained in a widget label based on *data, dsData, dsIndex*)
+
+{% include images-gallery.html imageCollection="advanced-settings-label" %}
  
 Label function:
 ```javascript
-var speed = dsData['speed'];
+var speed = data['speed'];
 var res;
 if (speed > 55) {
     res = "Too Fast"
@@ -230,50 +268,33 @@ return res;
 ```
 {: .copy-code}
 
-##### Tooltip function:
-* Show/Hide Tooltip, its color, its font color,the opacity of tooltip and tooltip text or use tooltip function (you may change data contained in a tooltip based on data, dsData, dsIndex)
-
-![image](/images/user-guide/ui/widgets/trip-animation-widget/6.gif)
-
-Tooltip function:
-```javascript
-var speed = dsData['speed'];
-var res;
-if (speed > 0) {
-    res = "${entityName} <b>Speed:</b> " + String(speed)
-} else {
-    res = "On The stop"
-}
-return res;
-```
-{: .copy-code}
-
 ##### Marker function:
 
 In addition to all of this, there are some settings for the marker and you can specify next settings for it:
-
-* Color for default marker
 
 * Custom marker image
 
 * Custom marker image size px
 
-* Set additional rotation angle for marker
+{% include images-gallery.html imageCollection="advanced-settings-marker-image" %}
 
-* Marker image function (you may change marker image, marker image color based on data, dsData, dsIndex)
+* Marker image function (you may change marker image, marker image color based on *data, dsData, dsIndex*)
 
 * Specify other possible marker images, which can be used in a marker image function
 
-![image](/images/user-guide/ui/widgets/trip-animation-widget/1.gif)
+{% include images-gallery.html imageCollection="advanced-settings-marker-image-function" %}
 
 Marker image function:
 ```javascript
-var speed = dsData['speed'];
-var res;
-if (speed > 55) {
-    res = images[0];
+var speed = data['speed'];
+var res = {
+    url: images[0],
+    size: 40
+}
+if (speed < 55) {
+    res.url = images[0];
 } else {
-    res = images[1];
+    res.url = images[1];
 }
 return res;
 ```
@@ -281,15 +302,15 @@ return res;
 
 #### Path Settings
 
-* Path color or specify path color function (you may change data contained in a tooltip based on data, dsData, dsIndex) - the color of the marker moves 
+You can specify path color or specify path color function (you may change data based on *data, dsData, dsIndex*) - the color of the marker moves 
 
-![image](/images/user-guide/ui/widgets/trip-animation-widget/26.png)
+{% include images-gallery.html imageCollection="advanced-settings-path-color-function" %}
 
 Path color function:
 ```javascript
-var speed = dsData['speed'];
+var speed = data['speed'];
 var res;
-if (speed > 50) {
+if (speed > 55) {
     res = "red"
 } else {
     res = "green"
@@ -298,13 +319,17 @@ return res;
 ```
 {: .copy-code}
 
-![image](/images/user-guide/ui/widgets/trip-animation-widget/2.gif)
+##### Path decorator
 
 * Path decorator, its size in px, end/beginning offset, decorator repeater, stroke weight and stroke opacity
 
-![image](/images/user-guide/ui/widgets/trip-animation-widget/27.png)
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-path-decorator-1-ce.png)
+{% else %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-path-decorator-1-pe.png)
+{% endif %}
 
-#### Path Points Settings
+#### Points Settings
 
 The next option is a show points option. Points are a telemetry data updates so that you can check each. For the points next options are available.
 
@@ -312,19 +337,60 @@ The next option is a show points option. Points are a telemetry data updates so 
 
 * Point color
 
-* Use color point function
-
 * Point size px
 
-* Use point as an anchor, point as an anchor function (you may change data contained in a polygon tooltip based on data, dsData, dsIndex)
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-points-settings-1-ce.png)
+{% else %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-points-settings-1-pe.png)
+{% endif %}
 
-* Independent point tooltip
+* Use color point function
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-point-color-function-1-ce.png)
+{% else %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-point-color-function-1-pe.png)
+{% endif %}
+
+Points color function:
+```javascript
+var speed = data['speed'];
+var res;
+if (speed > 55) {
+    res = "red"
+} else {
+    res = "green"
+}
+return res;
+```
+{: .copy-code}
+
+* Use point as an anchor (you may change data based on *data, dsData, dsIndex*)
+
+{% include images-gallery.html imageCollection="advanced-settings-anchor-function" %}
+
+Point as anchor function:
+```javascript
+var speed = data['speed'];
+if (speed > 55) {
+    return true;
+} else {
+    return false;
+}
+```
+{: .copy-code}
+
+* **Independent point tooltip**
+
 
 #### Polygon Settings
 
 What’s a polygon? It’s a plane figure that’s described by a finite number of dots. We use polygon which is based on coordinates that are specified within the device we use, but you can use any other entity. 
 
-You may mark your assets and any other entities with a polygon option. For the polygon, we can specify the next settings. Polygon coordinates are being received in a format:
+You may mark your assets and any other entities with a polygon option.
+
+Polygon coordinates are being received in a format:
 
 ```
 [[1CoordinateLatitude,1CoordinateLatitude],[2CoordinateLatitude,2CoordinateLatitude]...[nCoordinateLatitude,nCoordinateLatitude]]
@@ -332,21 +398,119 @@ You may mark your assets and any other entities with a polygon option. For the p
 
 where **n** - number of coordinates which polygon is described by.
 
+<br/>
+For the polygon, we can specify the next settings:
+
 * Show/Hide polygon
 
-* Polygon label text or polygon label function (you may change data contained in a polygon label based on data, dsData, dsIndex)
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-1-ce.png)
+{% else %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-1-pe.png)
+{% endif %}
 
-* Polygon tooltip text or polygon tooltip function (you may change data contained in a polygon tooltip based on data, dsData, dsIndex) 
+* Enable/disable polygon edit
 
-* Polygon color, opacity
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-2-ce.png)
+{% else %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-2-pe.png)
+{% endif %}
 
-* Polygon border color, opacity, weight 
+* Polygon label text or polygon label function (you may change data contained in a polygon label based on *data, dsData, dsIndex*)
 
-* Polygon color function  (you may change polygon color based on data, dsData, dsIndex)
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-3-ce.png)
+{% else %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-3-pe.png)
+{% endif %}
 
-![image](/images/user-guide/ui/widgets/trip-animation-widget/28.png)
+* Polygon tooltip text or polygon tooltip function (you may change data contained in a polygon tooltip based on *data, dsData, dsIndex*) 
 
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-4-ce.png)
+{% else %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-4-pe.png)
+{% endif %}
 
+* Polygon color, polygon opacity, or polygon color function (you may change polygon color based on *data, dsData, dsIndex*)
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-5-ce.png)
+{% else %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-5-pe.png)
+{% endif %}
+
+* Polygon stroke color, polygon opacity, polygon weight or polygon stroke color function (you may change polygon color based on *data, dsData, dsIndex*)
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-6-ce.png)
+{% else %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-6-pe.png)
+{% endif %}
+
+#### Circle settings
+
+Circle is a plane figure, boundary points of which are always the same distance away from a fixed central point. We use circle which is based on coordinates that are specified within the device we use, but you can use any other entity.
+
+You may mark your assets and any other entities with a circle option. 
+
+Circle coordinates are being received in a format:
+
+```
+{"latitude": 37.770460000, "longitude":-122.510870000, "radius":700}
+``` 
+
+<br/>
+For the circle, we can specify the next settings:
+
+* Show/Hide circle
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-1-ce.png)
+{% else %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-1-pe.png)
+{% endif %}
+
+* Enable/disable circle edit
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-2-ce.png)
+{% else %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-2-pe.png)
+{% endif %}
+
+* Circle label text or circle label function (you may change data contained in a circle label based on *data, dsData, dsIndex*)
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-3-ce.png)
+{% else %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-3-pe.png)
+{% endif %}
+
+* Circle tooltip text or circle tooltip function (you may change data contained in a circle tooltip based on *data, dsData, dsIndex*)
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-4-ce.png)
+{% else %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-4-pe.png)
+{% endif %}
+
+* Circle fill color, circle fill color opacity, or circle fill color function (you may change circle color based on *data, dsData, dsIndex*)
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-5-ce.png)
+{% else %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-5-pe.png)
+{% endif %}
+
+* Circle stroke color, stroke opacity, stroke weight or circle stroke color function (you may change circle color based on *data, dsData, dsIndex*)
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-6-ce.png)
+{% else %}
+![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-6-pe.png)
+{% endif %}
 
 
 ## Video tutorial 
