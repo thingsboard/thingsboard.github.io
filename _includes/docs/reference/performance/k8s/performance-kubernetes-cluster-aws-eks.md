@@ -133,6 +133,22 @@ Check the storage class available
 kubectl get storageclasses
 ```
 
+### Minikube (debug only)
+
+```bash
+minikube start --nodes=3 --memory 16384 --cpus 8
+# Ingress
+minikube addons enable ingress
+# LoadBalancer
+minikube tunnel
+```
+
+```bash
+curl https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml | sed 's/\/opt\/local-path-provisioner/\/var\/opt\/local-path-provisioner/ ' | kubectl apply -f -
+kubectl patch storageclass standard -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
+```
+
 ### Create ThingsBoard's namespace
 
 Create namespace for ThingsBoard
@@ -158,11 +174,15 @@ We are going to use Bitnami docker images and Bitnami helm charts as well.
 
 Setup [Zookeeper cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/zookeeper)
 ```bash
-helm upgrade zookeeper bitnami/zookeeper --version 9.0.0 \
+helm install zookeeper bitnami/zookeeper --version 10.0.0 \
   --set replicaCount=3 \
   --set persistence.size=1Gi \
+  --set dataLogDir="/bitnami/zookeeper/log" \
+  --set persistence.dataLogDir.size=1Gi \
   --set heapSize=192 \
-  --set resources.limits.cpu=1 \
+  --set autopurge.purgeInterval=24 \
+  --set jvmFlags="-Dzookeeper.electionPortBindRetry=0" \
+  --set resources.limits.cpu=250m \
   --set resources.limits.memory=256Mi \
   --set resources.requests.cpu=100m \
   --set resources.requests.memory=256Mi
@@ -170,7 +190,7 @@ helm upgrade zookeeper bitnami/zookeeper --version 9.0.0 \
 
 Setup [Kafka cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/kafka)
 ```bash
-helm upgrade kafka bitnami/kafka --version 17.2.3 \
+helm install kafka bitnami/kafka --version 17.2.3 \
   --set replicaCount=3 \
   --set persistence.size=20Gi \
   --set zookeeper.enabled=false \
@@ -179,12 +199,11 @@ helm upgrade kafka bitnami/kafka --version 17.2.3 \
 
 Setup [Cassandra cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/cassandra)
 ```bash
-helm install cassandra bitnami/cassandra --version 9.1.11 \
+helm install cassandra bitnami/cassandra --version 9.2.5 \
   --set replicaCount=3 \
   --set persistence.size=100Gi \
   --set persistence.commitLogsize=2Gi \
   --set persistence.commitLogMountPath=/bitnami/cassandra/commitlog \
-  --set persistence.commitStorageClass=gp3 \
   --set cluster.name=cassandra \
   --set cluster.datacenter=datacenter1 \
   --set cluster.seedCount=3 \
@@ -198,7 +217,7 @@ helm install cassandra bitnami/cassandra --version 9.1.11 \
 
 Setup [Redis cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/redis-cluster)
 ```bash
-helm upgrade redis bitnami/redis-cluster --version 7.4.1 \
+helm install redis bitnami/redis-cluster --version 7.4.1 \
   --set cluster.nodes=6 \
   --set cluster.replicas=1 \
   --set redis.useAOFPersistence=no \
@@ -210,7 +229,7 @@ helm upgrade redis bitnami/redis-cluster --version 7.4.1 \
 
 Setup [Postgres cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/postgresql-ha)
 ```bash
-helm upgrade postgresql  bitnami/postgresql-ha --version 9.1.2 \
+helm install postgresql bitnami/postgresql-ha --version 9.1.2 \
   --set postgresql.replicaCount=3 \
   --set postgresql.database=thingsboard \
   --set postgresql.maxConnections=250 \
@@ -302,12 +321,6 @@ kubectl exec postgresql-postgresql-0 -- /opt/bitnami/scripts/postgresql-repmgr/e
 ```
 The output have to have all 3 nodes running, 1 primary and 2 standby.
 ```bash
-postgresql-repmgr 08:53:55.54 
-postgresql-repmgr 08:53:55.54 Welcome to the Bitnami postgresql-repmgr container
-postgresql-repmgr 08:53:55.54 Subscribe to project updates by watching https://github.com/bitnami/bitnami-docker-postgresql-repmgr
-postgresql-repmgr 08:53:55.54 Submit issues and feature requests at https://github.com/bitnami/bitnami-docker-postgresql-repmgr/issues
-postgresql-repmgr 08:53:55.54 
-
  ID   | Name                    | Role    | Status    | Upstream                | Location | Priority | Timeline | Connection string                                                                                                                                                  
 ------+-------------------------+---------+-----------+-------------------------+----------+----------+----------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------
  1000 | postgresql-postgresql-0 | primary | * running |                         | default  | 100      | 1        | user=repmgr password=fdArM4aFOW host=postgresql-postgresql-0.postgresql-postgresql-headless.thingsboard.svc.cluster.local dbname=repmgr port=5432 connect_timeout=5
@@ -388,6 +401,11 @@ data:
   CACHE_MAXIMUM_POOL_SIZE: "50"
   # JS executors
   JS_EVALUATOR: "remote"
+  REMOTE_JS_MAX_PENDING_REQUESTS: "100000"
+  REMOTE_JS_MAX_EVAL_REQUEST_TIMEOUT: "60000"
+  REMOTE_JS_MAX_REQUEST_TIMEOUT: "60000"
+  REMOTE_JS_SANDBOX_MAX_ERRORS: "100000"
+  REMOTE_JS_SANDBOX_MAX_BLACKLIST_DURATION_SEC: "1"
   # Common settings
   HTTP_LOG_CONTROLLER_ERROR_STACK_TRACE: "false"
   # Cache specs
@@ -459,7 +477,6 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: tb-db-setup
-  namespace: thingsboard
 spec:
   securityContext:
     runAsUser: 799
@@ -478,8 +495,8 @@ spec:
       emptyDir: {}
   containers:
     - name: tb-db-setup
-      imagePullPolicy: IfNotPresent
-      image: thingsboard/tb-node:3.3.4.1
+      imagePullPolicy: Always
+      image: sevlamat/tb-node:3.4.0-SNAPSHOT
       env:
         - name: TB_SERVICE_ID
           valueFrom:
@@ -519,7 +536,7 @@ spec:
 Install the ThingsBoard schema, follow logs and cleanup.
 
 ```bash
-kubectl apply -f tb-db-setup.yml && sleep 30 && kubectl logs -f tb-db-setup && kubectl delete pod tb-db-setup
+kubectl apply -f tb-db-setup.yml && kubectl logs -f tb-db-setup && kubectl delete pod tb-db-setup
 ```
 
 The output end will look like the below:
@@ -584,6 +601,7 @@ metadata:
   name: tb-node
 spec:
   serviceName: tb-node
+  podManagementPolicy: Parallel
   replicas: 3
   selector:
     matchLabels:
@@ -623,7 +641,7 @@ spec:
       containers:
         - name: tb-node
           imagePullPolicy: Always
-          image: sevlamat/tb-node:3.3.4-SNAPSHOT
+          image: sevlamat/tb-node:3.4.0-SNAPSHOT
           ports:
             - containerPort: 8080
               name: http
@@ -638,7 +656,7 @@ spec:
               memory: 3Gi
           env:
             - name: JAVA_OPTS
-              value: "-Xmx3072M -Xms3072M -Xss384k -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+              value: "-Xmx2048M -Xms2048M -Xss384k -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
             - name: TB_SERVICE_TYPE
               value: "tb-core"
             - name: TB_SERVICE_ID
@@ -682,16 +700,24 @@ spec:
               name: tb-node-config
             - mountPath: /var/log/thingsboard
               name: tb-node-logs
-          readinessProbe:
+          startupProbe:
             httpGet:
               path: /login
               port: http
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 10
+            successThreshold: 1
+            failureThreshold: 10
           livenessProbe:
             httpGet:
               path: /login
               port: http
             initialDelaySeconds: 460
+            periodSeconds: 10
             timeoutSeconds: 10
+            successThreshold: 1
+            failureThreshold: 6
       restartPolicy: Always
 ---
 apiVersion: apps/v1
@@ -700,6 +726,7 @@ metadata:
   name: tb-rule-engine
 spec:
   serviceName: tb-rule-engine
+  podManagementPolicy: Parallel
   replicas: 3
   selector:
     matchLabels:
@@ -739,7 +766,7 @@ spec:
       containers:
         - name: tb-rule-engine
           imagePullPolicy: Always
-          image: sevlamat/tb-node:3.3.4-SNAPSHOT
+          image: sevlamat/tb-node:3.4.0-SNAPSHOT
           ports:
             - containerPort: 8080
               name: http
@@ -754,7 +781,7 @@ spec:
               memory: 4Gi
           env:
             - name: JAVA_OPTS
-              value: "-Xmx4096M -Xms4096M -Xss384k -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+              value: "-Xmx2048M -Xms2048M -Xss384k -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
             - name: TB_SERVICE_TYPE
               value: "tb-rule-engine"
             - name: TB_SERVICE_ID
@@ -788,16 +815,24 @@ spec:
               name: tb-node-config
             - mountPath: /var/log/thingsboard
               name: tb-node-logs
-          readinessProbe:
+          startupProbe:
             httpGet:
               path: /login
               port: http
+            initialDelaySeconds: 30
+            periodSeconds: 10
+            timeoutSeconds: 10
+            successThreshold: 1
+            failureThreshold: 10
           livenessProbe:
             httpGet:
               path: /login
               port: http
             initialDelaySeconds: 460
+            periodSeconds: 10
             timeoutSeconds: 10
+            successThreshold: 1
+            failureThreshold: 6
       restartPolicy: Always
 ---
 apiVersion: v1
@@ -840,8 +875,8 @@ spec:
                 topologyKey: kubernetes.io/hostname
       containers:
       - name: tb-web-ui
-        imagePullPolicy: IfNotPresent
-        image: thingsboard/tb-web-ui:3.3.4.1
+        imagePullPolicy: Always
+        image: sevlamat/tb-web-ui:3.4.0-SNAPSHOT
         ports:
         - containerPort: 8080
           name: http
@@ -884,7 +919,7 @@ metadata:
 spec:
   serviceName: tb-js-executor
   replicas: 6
-  podManagementPolicy: "Parallel"
+  podManagementPolicy: Parallel
   selector:
     matchLabels:
       app: tb-js-executor
@@ -907,8 +942,8 @@ spec:
                 topologyKey: kubernetes.io/hostname
       containers:
         - name: tb-js-executor
-          imagePullPolicy: IfNotPresent
-          image: thingsboard/tb-js-executor:3.3.4.1
+          imagePullPolicy: Always
+          image: sevlamat/tb-js-executor:3.4.0-SNAPSHOT
           resources:
             limits:
               cpu: "1"
@@ -923,16 +958,33 @@ spec:
             - name: KAFKA_CLIENT_ID
               valueFrom:
                 fieldRef:
+                  apiVersion: v1
                   fieldPath: metadata.name
+            - name: SLOW_QUERY_LOG_MS
+              value: "100.000"
+            - name: SCRIPT_STAT_PRINT_FREQUENCY
+              value: "10000"
+            - name: SCRIPT_BODY_TRACE_FREQUENCY
+              value: "1000000"
+            - name: SLOW_QUERY_LOG_BODY
+              value: "false"
+            - name: TB_KAFKA_LINGER_MS
+              value: "100"
+            - name: TB_KAFKA_BATCH_SIZE
+              value: "250"
+            - name: TB_KAFKA_COMPRESSION_TYPE
+              value: "gzip"
+            - name: SCRIPT_USE_SANDBOX
+              value: "false"
           envFrom:
             - configMapRef:
                 name: tb-cluster-stack-config
-          readinessProbe:
+          startupProbe:
             httpGet:
               path: /livenessProbe
               port: http
             initialDelaySeconds: 10
-            timeoutSeconds: 1
+            timeoutSeconds: 3
             periodSeconds: 10
             successThreshold: 1
             failureThreshold: 7
@@ -941,7 +993,7 @@ spec:
               path: /livenessProbe
               port: http
             initialDelaySeconds: 15
-            timeoutSeconds: 1
+            timeoutSeconds: 3
             periodSeconds: 10
             successThreshold: 1
             failureThreshold: 6
@@ -1041,8 +1093,8 @@ spec:
                 path:  logback.xml
       containers:
         - name: tb-mqtt-transport
-          image: thingsboard/tb-mqtt-transport:3.3.4.1
-          imagePullPolicy: IfNotPresent
+          image: sevlamat/tb-mqtt-transport:3.4.0-SNAPSHOT
+          imagePullPolicy: Always
           ports:
             - containerPort: 1883
               name: mqtt
@@ -1057,7 +1109,7 @@ spec:
               memory: 2Gi
           env:
             - name: JAVA_OPTS
-              value: "-Xmx2048M -Xms2048M -Xss384k -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+              value: "-Xmx1024M -Xms1024M -Xss384k -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
             - name: TB_SERVICE_ID
               valueFrom:
                 fieldRef:
@@ -1185,10 +1237,10 @@ kind: Ingress
 metadata:
   name: tb-http-loadbalancer
   namespace: thingsboard
-  annotations:
-    kubernetes.io/ingress.class: alb
-    alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
+#  annotations:
+#    kubernetes.io/ingress.class: alb
+#    alb.ingress.kubernetes.io/scheme: internet-facing
+#    alb.ingress.kubernetes.io/target-type: ip
 spec:
   rules:
     - http:
@@ -1280,10 +1332,10 @@ export REST_URL=http://k8s-thingsbo-tbhttplo-784e0efb43-1020620715.eu-west-1.elb
 export MQTT_HOST=a1435f2586389421f82397b52b690867-b454cc0b7f996e3b.elb.eu-west-1.amazonaws.com
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://127.0.0.1:8080 \
-  --env MQTT_HOST=127.0.0.1 \
-  --env DEVICE_END_IDX=1000 \
-  --env MESSAGES_PER_SECOND=1000 \
-  --env ALARMS_PER_SECOND=5 \
+  --env MQTT_HOST=10.102.104.87 \
+  --env DEVICE_END_IDX=15000 \
+  --env MESSAGES_PER_SECOND=15000 \
+  --env ALARMS_PER_SECOND=1 \
   --env DURATION_IN_SECONDS=86400 \
   --env DEVICE_CREATE_ON_START=true \
   thingsboard/tb-ce-performance-test:3.3.3
@@ -1310,7 +1362,7 @@ spec:
     spec:
       containers:
         - name: server
-          imagePullPolicy: IfNotPresent
+          imagePullPolicy: Always
           image: quay.io/cloudhut/kowl:master
           resources:
             requests:
@@ -1329,8 +1381,13 @@ spec:
 ---
 ```
 
+```bash
 kubectl apply -f tb-kafka-ui-kowl.yml
+kubectl port-forward tb-kafka-ui-kowl-0 8080:8080
+```
 
 If Kafka UI does not need, scale it down:
 
+```bash
 kubectl scale --replicas=0 statefulset tb-kafka-ui-kowl
+```
