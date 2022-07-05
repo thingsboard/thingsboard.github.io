@@ -169,6 +169,7 @@ html#pricing
         p
           margin-bottom: 1rem
       .pricing-square-price
+        position: relative
         font-weight: 700
         font-size: 32px
         line-height: 60px
@@ -180,6 +181,28 @@ html#pricing
           font-size: 24px
           line-height: 34px
           font-weight: 400
+        .pricing-discount
+          position: absolute
+          top: 16px
+          left: 80%
+          display: none
+          align-items: start
+          @media (min-width: 1281px)
+            display: flex
+          .pricing-discount-info
+            width: 360px
+            margin-top: 52px
+            margin-left: 12px
+            text-align: start
+            .pricing-discount-description
+              font-size: 28px
+              font-weight: 500
+              line-height: 32px
+              span
+                font-size: 28px
+                font-weight: 700
+            .btn-blue.btn-pricing
+              box-shadow: 0 16px 16px 0 rgba(42,125,236,0.25)
       .pricing-square-item
         font-size: 14px
         line-height: 21px
@@ -382,6 +405,28 @@ html#pricing
           display: none
           &.active
             display: block
+          .pricing-discount-mobile
+            display: flex
+            flex-direction: column
+            text-align: center
+            @media (min-width: 1281px)
+              display: none
+            .btn-blue.btn-pricing
+              width: 90%
+              margin: 18px auto
+              font-size: 20px
+              box-shadow: 0 16px 16px 0 rgba(42,125,236,0.25)
+            img
+              width: 35px
+              align-self: end
+              margin-top: 12px
+              margin-right: 30%
+            .pricing-discount-description
+              font-size: 18px
+              font-weight: 500
+              span
+                font-size: 20px
+                font-weight: 700
         .indicator
           font-size: 28px
           line-height: 25px

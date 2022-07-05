@@ -357,6 +357,20 @@ defaultActivePricingSection: thingsboard-pe-options
         <div class="pricing-section pricing-perpetual" id="perpetual">
            <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                    <div class="pricing-discount-mobile">
+                        <div class="pricing-discount-description">
+                            Price increases to <span>$4999</span> on July 18
+                        </div>
+                        <button class="btn-blue btn-pricing mb-0" 
+                            onClick="getLicense(event,
+                            true,
+                            '90b6c9b0-a198-11e9-8e16-03828ff5271c',
+                            '4c711b60-a199-11e9-8e16-03828ff5271c',
+                            'Perpetual', null, false)">
+                            Get license for $2999
+                        </button>
+                        <img width="35" src="/images/pricing/arrow-price-mobile.svg">
+                    </div>
                     <div class="pricing-square">
                         <h2>Perpetual Fallback License</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
@@ -364,6 +378,22 @@ defaultActivePricingSection: thingsboard-pe-options
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $2999
+                            <div class="pricing-discount">
+                                <img src="/images/pricing/arrow-price.svg">
+                                <div class="pricing-discount-info">
+                                    <div class="pricing-discount-description">
+                                        Price increases to <span>$4999</span> on July 18
+                                    </div>
+                                    <button class="btn-blue btn-pricing" 
+                                        onClick="getLicense(event,
+                                        true,
+                                        '90b6c9b0-a198-11e9-8e16-03828ff5271c',
+                                        '4c711b60-a199-11e9-8e16-03828ff5271c',
+                                        'Perpetual', null, false)">
+                                        Get license for $2999
+                                    </button>
+                                </div>
+                            </div>
                         </h4>                  
                         <div class="row justify-content-center">
                             <button class="btn-blue btn-pricing" 
