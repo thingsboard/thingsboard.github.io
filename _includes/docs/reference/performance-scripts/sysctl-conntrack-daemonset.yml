@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: sysctl-conntrack
+spec:
+  selector:
+    matchLabels:
+      name: sysctl-conntrack
+  template:
+    metadata:
+      labels:
+        name: sysctl-conntrack
+    spec:
+      hostPID: true
+      containers:
+        - name: sysctl-buddy
+          image: ubuntu:20.04
+          securityContext:
+            privileged: true
+          command:
+            - /bin/sh
+            - -c
+            - |
+              echo "tuning the network parameters"
+              ulimit -n 1048576
+              sysctl -a | grep conntrack_max
+              sysctl -w net.netfilter.nf_conntrack_max=1048576
+              echo "all done"
+              sleep infinity
