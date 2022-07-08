@@ -1,0 +1,97 @@
+<style>
+    #cookie-notice {
+        padding: 1.5rem 1.5rem;
+        display: none;
+        text-align: start;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        z-index: 999;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(15, 22, 29, 0.85);
+        color: rgba(255,255,255,1);
+    }
+    #cookie-notice-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 65%;
+    }
+    #cookie-notice-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+    }
+    #cookie-notice-text span {
+        font-size: 14px;
+    }
+    #cookie-notice-text label {
+        font-size: 20px;
+    }
+    #cookie-notice a {
+        cursor: pointer;
+    }
+    #cookie-notice #cookie-notice-accept {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        cursor: pointer;
+        margin-left: 3.5rem;
+        height: 40px;
+        font-size: 18px;
+        width: 140px;
+    }
+</style>
+<div id="cookie-notice">
+    <div id="cookie-notice-text">
+        <label>Cookie consent</label>
+        <span>By visiting this site, you consent to the use of the below cookies. Alternatively, you have options either
+        to manage the cookies from your browser (prevent your computer from accepting cookies) or opt-out of this website.
+        <br>
+        <br>
+        We use Google Analytics to collect information about website users' behaviour and experience in order to improve the
+        Documentation. We set a short-term cookie that keeps your consent with our cookies policy.
+        We do not need your Personal data, the collected information cannot be used to identify the website user.
+        Google does not further process or share our analytics data.</span>
+    </div>
+    <a id="cookie-notice-accept" class="btn btn-primary btn-sm">Accept</a>
+    <a id="cookie-notice-close">
+        <img alt="" src="/images/close-cross.svg"/>
+    </a>
+</div>
+<script>
+    function createCookie(name,value,days) {
+        var expires = "";
+        if (days) {
+            var date = new Date();
+            date.setTime(date.getTime() + (days*24*60*60*1000));
+            expires = "; expires=" + date.toUTCString();
+        }
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+
+    function readCookie(name) {
+        var nameEQ = name + "=";
+        var ca = document.cookie.split(';');
+        for(var i=0;i < ca.length;i++) {
+            var c = ca[i];
+            while (c.charAt(0)==' ') c = c.substring(1,c.length);
+            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+        }
+        return null;
+    }
+
+    function closeAndAccept() {
+        createCookie('cookie-notice-dismissed','true', 1);
+        document.getElementById('cookie-notice').style.display = 'none';
+        location.reload();
+    }
+
+    if (readCookie('cookie-notice-dismissed') !='true') {
+        document.getElementById('cookie-notice').style.display = 'flex';
+    }
+
+    document.getElementById('cookie-notice-accept').addEventListener("click", closeAndAccept);
+    document.getElementById('cookie-notice-close').addEventListener("click", closeAndAccept);
+</script>
