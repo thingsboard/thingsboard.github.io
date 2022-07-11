@@ -24,7 +24,7 @@ Here is the procedure to follow on the three main browsers:
  * Firefox [instructions](https://support.mozilla.org/en-US/kb/clear-cookies-and-site-data-firefox);
  * Safari [instructions](https://support.apple.com/guide/safari/manage-cookies-sfri11471/mac).
 
-Access to our site will not be denied if you disable cookies, but some features may work.
+Access to our site will not be denied if you disable cookies, but some features may not work.
 
 You may find below the additional information and resources regarding the above mentioned services.
 
@@ -38,7 +38,7 @@ See Cloudflare documentation [page](https://developers.cloudflare.com/fundamenta
 
 ### Other Cookies
 
- * **cookie-notice-dismissed** is used to store if the user clicked `Accept` button on the cookies banner. This cookie has a 365 days timeout. 
+ * **cookie-notice-dismissed** is used to store if the user clicked `Accept` button on the cookies banner or dismissed (X) it. This cookie has a 365 days timeout. 
    Please note that by continuing to browse this site with the opened cookies banner, you agree the use of cookies, in accordance with our cookie policy.
 
 
