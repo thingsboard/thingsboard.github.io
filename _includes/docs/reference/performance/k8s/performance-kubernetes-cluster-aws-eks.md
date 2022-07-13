@@ -39,20 +39,91 @@ No clusters found
 
 Create cluster with 3 nodes (m6a.2xlarge, 8 vCPU, 32GiB).
 It may take about 20 minutes, so grab a coffee and take your time.
+
+```bash
+cat > cluster.yml
+```
+
+```yaml
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: performance-test
+  region: eu-west-1
+
+availabilityZones: ['eu-west-1a', 'eu-west-1b', 'eu-west-1c']
+
+#iam:
+#  withOIDC: true
+#  serviceAccounts:
+#    - metadata:
+#        name: tb-cloud-manager
+#        namespace: thingsboard
+#      attachPolicyARNs:
+#        - "arn:aws:iam::378560561651:policy/TbCloudClusterManager"
+
+managedNodeGroups:
+  - name: worker
+    labels: { role: worker }
+    instanceType: m6a.xlarge
+    desiredCapacity: 3
+    volumeType: gp3
+    volumeSize: 32
+    privateNetworking: false
+    ssh:
+      allow: true
+      publicKeyName: 'smatvienko'
+  - name: cassandra
+    labels: { role: cassandra }
+    instanceType: c6i.large
+    desiredCapacity: 3
+    volumeType: gp3
+    volumeSize: 32
+    privateNetworking: false
+    ssh:
+      allow: true
+      publicKeyName: 'smatvienko'
+  - name: kafka
+    labels: { role: kafka }
+    instanceType: c6i.large
+    desiredCapacity: 3
+    volumeType: gp3
+    volumeSize: 32
+    privateNetworking: false
+    ssh:
+      allow: true
+      publicKeyName: 'smatvienko'
+  - name: postgresql
+    labels: { role: postgresql }
+    instanceType: c6i.large
+    desiredCapacity: 3
+    volumeType: gp3
+    volumeSize: 32
+    privateNetworking: false
+    ssh:
+      allow: true
+      publicKeyName: 'smatvienko'
+```
+
+```bash
+eksctl create cluster -f cluster.yml
+```
+
 ```bash
 eksctl create cluster \
   --name performance-test \
   --region eu-west-1 \
   --nodegroup-name linux-amd64 \
   --node-volume-type gp3 \
-  --node-type m6a.2xlarge \
-  --nodes 3 \
-  --nodes-min 2 \
-  --nodes-max 4 \
+  --node-type m6a.xlarge \
+  --nodes 6 \
   --ssh-access \
   --ssh-public-key smatvienko \
   --tags environment=performance-test,owner=smatvienko
 ```
+
+eksctl create nodegroup --config-file=cluster.yml
 
 Check the cluster
 ```bash
@@ -104,7 +175,10 @@ helm upgrade -install aws-ebs-csi-driver aws-ebs-csi-driver/aws-ebs-csi-driver \
 
 Create storage class gp3 and make it default
 
-gp3-def-sc.yaml
+```bash
+cat > gp3-def-sc.yaml
+```
+
 ```yaml
 kind: StorageClass
 apiVersion: storage.k8s.io/v1
@@ -123,14 +197,21 @@ parameters:
 kubectl apply -f gp3-def-sc.yaml
 ```
 
-Delete legacy gp2 storage class
+Make gp2 storage class non-default
+```bash
+kubectl patch storageclass gp2 -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
+```
+Or delete legacy gp2 storage class
 ```bash
 kubectl delete storageclass gp2
 ```
 
 Check the storage class available
 ```bash
-kubectl get storageclasses
+kubectl get sc
+# NAME            PROVISIONER             RECLAIMPOLICY   VOLUMEBINDINGMODE      ALLOWVOLUMEEXPANSION   AGE
+# gp2             kubernetes.io/aws-ebs   Delete          WaitForFirstConsumer   false                  46m
+# gp3 (default)   ebs.csi.aws.com         Delete          WaitForFirstConsumer   true                   14s
 ```
 
 ### Minikube (debug only)
@@ -151,10 +232,24 @@ kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storagec
 
 ### Create ThingsBoard's namespace
 
+```bash
+cat > tb-namespace.yml
+```
+
+```yaml
+apiVersion: v1
+kind: Namespace
+metadata: 
+  name: thingsboard
+  labels:
+    name: thingsboard
+---
+```
+
 Create namespace for ThingsBoard
 ```bash
 kubectl config current-context
-kubectl apply -f https://raw.githubusercontent.com/thingsboard/thingsboard-ce-k8s/master/aws/microservices/tb-namespace.yml
+kubectl apply -f tb-namespace.yml
 kubectl get namespaces
 kubectl config set-context --current --namespace=thingsboard
 kubectl get pods -o wide
@@ -175,6 +270,7 @@ We are going to use Bitnami docker images and Bitnami helm charts as well.
 Setup [Zookeeper cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/zookeeper)
 ```bash
 helm install zookeeper bitnami/zookeeper --version 10.0.0 \
+  --set nodeSelector.role=kafka \
   --set replicaCount=3 \
   --set persistence.size=1Gi \
   --set dataLogDir="/bitnami/zookeeper/log" \
@@ -190,8 +286,12 @@ helm install zookeeper bitnami/zookeeper --version 10.0.0 \
 
 Setup [Kafka cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/kafka)
 ```bash
-helm install kafka bitnami/kafka --version 17.2.3 \
+helm install kafka bitnami/kafka --version 18.0.3 \
+  --set nodeSelector.role=kafka \
   --set replicaCount=3 \
+  --set offsetsTopicReplicationFactor=3 \
+  --set transactionStateLogReplicationFactor=3 \
+  --set defaultReplicationFactor=2 \
   --set persistence.size=20Gi \
   --set zookeeper.enabled=false \
   --set externalZookeeper.servers=zookeeper-headless
@@ -199,59 +299,59 @@ helm install kafka bitnami/kafka --version 17.2.3 \
 
 Setup [Cassandra cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/cassandra)
 ```bash
-helm install cassandra bitnami/cassandra --version 9.2.5 \
+helm install cassandra bitnami/cassandra --version 9.2.7 \
+  --set nodeSelector.role=cassandra \
   --set replicaCount=3 \
-  --set persistence.size=100Gi \
+  --set persistence.size=50Gi \
   --set persistence.commitLogsize=2Gi \
   --set persistence.commitLogMountPath=/bitnami/cassandra/commitlog \
   --set cluster.name=cassandra \
   --set cluster.datacenter=datacenter1 \
   --set cluster.seedCount=3 \
-  --set jvm.maxHeapSize=4096M \
-  --set jvm.newHeapSize=800M \
-  --set resources.limits.cpu=8 \
-  --set resources.limits.memory=8Gi \
+  --set jvm.maxHeapSize=2048M \
+  --set jvm.newHeapSize=400M \
+  --set resources.limits.memory=3Gi \
   --set resources.requests.cpu=1 \
-  --set resources.requests.memory=8Gi
+  --set resources.requests.memory=3Gi
 ```
 
 Setup [Redis cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/redis-cluster)
 ```bash
-helm install redis bitnami/redis-cluster --version 7.4.1 \
+helm install redis bitnami/redis-cluster --version 7.6.4 \
+  --set redis.nodeSelector.role=worker \
   --set cluster.nodes=6 \
   --set cluster.replicas=1 \
   --set redis.useAOFPersistence=no \
   --set fullnameOverride=redis \
-  --set redis.resources.limits.memory=2Gi \
+  --set redis.resources.limits.memory=1Gi \
   --set redis.resources.requests.cpu=100m \
   --set redis.resources.requests.memory=1Gi
 ```
 
 Setup [Postgres cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/postgresql-ha)
 ```bash
-helm install postgresql bitnami/postgresql-ha --version 9.1.2 \
-  --set postgresql.replicaCount=3 \
+helm install postgresql bitnami/postgresql-ha --version 9.2.1 \
+  --set postgresql.nodeSelector.role=postgresql \
+  --set postgresql.replicaCount=2 \
   --set postgresql.database=thingsboard \
   --set postgresql.maxConnections=250 \
   --set postgresql.sharedPreloadLibraries='pgaudit\,repmgr\,pg_stat_statements' \
+  --set pgpool.nodeSelector.role=postgresql \
   --set pgpool.replicaCount=1 \
-  --set pgpool.numInitChildren=110 \
+  --set pgpool.numInitChildren=200 \
   --set pgpool.useLoadBalancing=false \
   --set pgpool.extraEnvVars[0].name=PGPOOL_AUTO_FAILBACK \
   --set pgpool.extraEnvVars[0].value=yes \
   --set pgpool.extraEnvVars[1].name=PGPOOL_BACKEND_APPLICATION_NAMES \
-  --set pgpool.extraEnvVars[1].value='postgresql-postgresql-0\,postgresql-postgresql-1\,postgresql-postgresql-2' \
+  --set pgpool.extraEnvVars[1].value='postgresql-postgresql-0\,postgresql-postgresql-1' \
   --set persistence.size=30Gi \
   --set postgresqlImage.debug=true \
   --set pgpoolImage.debug=true \
   --set fullnameOverride=postgresql \
-  --set postgresql.resources.limits.memory=4Gi \
   --set postgresql.resources.requests.cpu=1 \
-  --set postgresql.resources.requests.memory=4Gi \
-  --set pgpool.resources.limits.cpu=3 \
-  --set pgpool.resources.limits.memory=3Gi \
+  --set postgresql.resources.requests.memory=1Gi \
   --set pgpool.resources.requests.cpu=100m \
-  --set pgpool.resources.requests.memory=1Gi \
+  --set pgpool.resources.requests.memory=500Mi \
   --set postgresql.readinessProbe.enabled=false \
   --set postgresql.startupProbe.enabled=true \
   --set postgresql.startupProbe.failureThreshold=100
@@ -277,7 +377,7 @@ kafka-1.kafka-headless.thingsboard.svc.cluster.local:9092 (id: 1 rack: null) -> 
 
 Kafka cluster state is stored inside Zookeeper. Lest fetch the actual broker list.
 ```bash
-kubectl exec kafka-0 -- /opt/bitnami/kafka/bin/zookeeper-shell.sh zookeeper-headless:2181 ls /brokers/ids | tail -n 1
+kubectl exec kafka-0 -- /bin/bash -c "/opt/bitnami/kafka/bin/zookeeper-shell.sh zookeeper-headless:2181 ls /brokers/ids 2> /dev/null | tail -n 1"
 ```
 Zookeeper will return the list with broker ids.
 ```bash
@@ -288,22 +388,33 @@ Check that Cassandra cluster is up and running
 ```bash
 kubectl exec cassandra-0 -- nodetool status
 ```
-All 3 nodes have to be present in the list and have a status UN (Up Normal)
+All nodes have to be present in the list and have a status UN (Up Normal)
 ```bash
 Datacenter: datacenter1
 =======================
 Status=Up/Down
 |/ State=Normal/Leaving/Joining/Moving
 --  Address         Load       Tokens  Owns (effective)  Host ID                               Rack 
-UN  192.168.32.8    98.23 KiB  256     30.9%             dfc50a97-881e-4f19-8a82-904f4457c69b  rack1
-UN  192.168.64.96   98.26 KiB  256     34.0%             150c23b2-52fc-4b0c-936e-78c192ab7628  rack1
-UN  192.168.28.238  98.23 KiB  256     35.2%             8020a3ea-b242-4915-bed9-d4a2e06cd7aa  rack1
+UN  192.168.79.59   73.49 KiB  256     33.1%             b741387d-1577-41dc-bd54-c4013927cc50  rack1
+UN  192.168.22.113  73.42 KiB  256     33.5%             fe9de861-a1d0-4815-9118-38c896b02acd  rack1
+UN  192.168.62.247  78.26 KiB  256     33.4%             12c94af5-308d-4640-b828-d58f696d581e  rack1
+UN  192.168.35.117  73.48 KiB  256     36.1%             b8d73281-7755-4503-9872-be8aa9994aab  rack1
+UN  192.168.82.241  73.45 KiB  256     31.6%             8e02210f-d265-40e6-9682-ca7c5f16fac5  rack1
+UN  192.168.11.79   73.47 KiB  256     32.2%             d6588e20-942b-4aeb-a88a-b0c06c6e6b8d  rack1
 ```
 
 Check the Redis cluster is up and running
 ```bash
 kubectl exec redis-0 -- redis-cli cluster info
+# cluster_state:ok
+# cluster_known_nodes:6
+# cluster_size:3
+
+for i in {0..5}; do kubectl exec redis-${i} -- redis-cli cluster nodes; done
+# all connected
+# 93a4392688ab0ff17f00c95ab88260ac584a4119 192.168.4.34:6379@16379 master - 0 1657531358000 3 connected 10923-16383
 ```
+
 The output will show cluster state is ok, known nodes is equal 6, cluster size is 3 (master nodes).
 ```bash
 cluster_state:ok
@@ -335,6 +446,38 @@ The output have to have all 3 nodes running, 1 primary and 2 standby.
  1000 | postgresql-postgresql-0 | primary | * running |                         | default  | 100      | 1        | user=repmgr password=fdArM4aFOW host=postgresql-postgresql-0.postgresql-postgresql-headless.thingsboard.svc.cluster.local dbname=repmgr port=5432 connect_timeout=5
  1001 | postgresql-postgresql-1 | standby |   running | postgresql-postgresql-0 | default  | 100      | 1        | user=repmgr password=fdArM4aFOW host=postgresql-postgresql-1.postgresql-postgresql-headless.thingsboard.svc.cluster.local dbname=repmgr port=5432 connect_timeout=5
  1002 | postgresql-postgresql-2 | standby |   running | postgresql-postgresql-0 | default  | 100      | 1        | user=repmgr password=fdArM4aFOW host=postgresql-postgresql-2.postgresql-postgresql-headless.thingsboard.svc.cluster.local dbname=repmgr port=5432 connect_timeout=5
+```
+
+Finally, check that all pods are up and running:
+
+```bash
+kubectl get pods
+```
+
+```bash
+NAME                                 READY   STATUS    RESTARTS   AGE
+cassandra-0                          1/1     Running   0          9m56s
+cassandra-1                          1/1     Running   0          8m31s
+cassandra-2                          1/1     Running   0          7m6s
+cassandra-3                          1/1     Running   0          5m40s
+cassandra-4                          1/1     Running   0          4m5s
+cassandra-5                          1/1     Running   0          2m39s
+kafka-0                              1/1     Running   0          10m
+kafka-1                              1/1     Running   0          10m
+kafka-2                              1/1     Running   0          10m
+postgresql-pgpool-58c6ccd956-6m5gv   1/1     Running   0          8m58s
+postgresql-postgresql-0              1/1     Running   0          8m58s
+postgresql-postgresql-1              1/1     Running   0          8m58s
+postgresql-postgresql-2              1/1     Running   0          8m58s
+redis-0                              1/1     Running   0          9m17s
+redis-1                              1/1     Running   0          9m17s
+redis-2                              1/1     Running   0          9m17s
+redis-3                              1/1     Running   0          9m17s
+redis-4                              1/1     Running   0          9m17s
+redis-5                              1/1     Running   0          9m17s
+zookeeper-0                          1/1     Running   0          10m
+zookeeper-1                          1/1     Running   0          10m
+zookeeper-2                          1/1     Running   0          10m
 ```
 
 ### Install the ThingsBoard schema
@@ -372,9 +515,10 @@ data:
   TB_KAFKA_LINGER_MS: "5" # default is 1
   TB_KAFKA_COMPRESSION_TYPE: "gzip" # none or gzip
   TB_QUEUE_KAFKA_MAX_POLL_RECORDS: "4096" # default is 8192
-  TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES: "retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600;partitions:6" # have to be equal tb-js-executor replicas count
+  TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES: "retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600;partitions:12" # have to be equal tb-js-executor replicas count
+  TB_QUEUE_KAFKA_TA_TOPIC_PROPERTIES: "retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600;partitions:12" # have to be equal tb-core (tb-node) replicas 
   TB_QUEUE_CORE_PARTITIONS: "6"
-  TB_QUEUE_RE_MAIN_PARTITIONS: "6"
+  TB_QUEUE_RE_MAIN_PARTITIONS: "6" # since 3.4 login under sysadmin and change /settings/queues or use API
   TB_QUEUE_RE_HP_PARTITIONS: "6"
   TB_QUEUE_RE_SQ_PARTITIONS: "6"
   TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
@@ -463,6 +607,11 @@ data:
         </appender>
         <logger name="org.thingsboard.server" level="INFO" />
         <logger name="com.google.common.util.concurrent.AggregateFuture" level="OFF" />
+        
+        <logger name="com.microsoft.azure.servicebus.primitives.CoreMessageReceiver" level="OFF" />
+        <logger name="org.apache.kafka.common.utils.AppInfoParser" level="WARN"/>
+        <logger name="org.apache.kafka.clients" level="WARN"/>
+        
         <!-- Top Rule Nodes by max execution time DEBUG-->
         <logger name="org.thingsboard.server.service.queue.TbMsgPackProcessingContext" level="INFO" />
         <root level="INFO">
@@ -489,6 +638,8 @@ kind: Pod
 metadata:
   name: tb-db-setup
 spec:
+  nodeSelector:
+    role: worker
   securityContext:
     runAsUser: 799
     runAsNonRoot: true
@@ -547,7 +698,8 @@ spec:
 Install the ThingsBoard schema, follow logs and cleanup.
 
 ```bash
-kubectl apply -f tb-db-setup.yml && kubectl logs -f tb-db-setup && kubectl delete pod tb-db-setup
+kubectl apply -f tb-db-setup.yml
+kubectl logs -f tb-db-setup && kubectl delete pod tb-db-setup
 ```
 
 The output end will look like the below:
@@ -602,7 +754,7 @@ See the example from configmap:
 Prepare ThingsBoard services yaml
 
 ```bash
-  cat > tb-services.yml 
+cat > tb-services.yml 
 ```
 
 ```yaml
@@ -622,6 +774,8 @@ spec:
       labels:
         app: tb-node
     spec:
+      nodeSelector:
+        role: worker
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -633,6 +787,15 @@ spec:
                       operator: In
                       values:
                         - tb-node
+                topologyKey: kubernetes.io/hostname
+            - weight: 1
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - tb-rule-engine
                 topologyKey: kubernetes.io/hostname
       securityContext:
         runAsUser: 799
@@ -661,9 +824,9 @@ spec:
           resources:
             limits:
 #              cpu: 8
-              memory: 4Gi
+              memory: 3Gi
             requests:
-              cpu: 1
+              cpu: "1"
               memory: 3Gi
           env:
             - name: JAVA_OPTS
@@ -747,6 +910,8 @@ spec:
       labels:
         app: tb-rule-engine
     spec:
+      nodeSelector:
+        role: worker
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -757,7 +922,16 @@ spec:
                     - key: app
                       operator: In
                       values:
-                        - tb-rule-engine
+                        - tb-rule-engine            
+                topologyKey: kubernetes.io/hostname
+            - weight: 1
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - tb-node
                 topologyKey: kubernetes.io/hostname
       securityContext:
         runAsUser: 799
@@ -786,10 +960,10 @@ spec:
           resources:
             limits:
 #              cpu: 8
-              memory: 6Gi
+              memory: 3Gi
             requests:
-              cpu: 1
-              memory: 4Gi
+              cpu: "1"
+              memory: 3Gi
           env:
             - name: JAVA_OPTS
               value: "-Xmx2048M -Xms2048M -Xss384k -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
@@ -872,6 +1046,8 @@ spec:
       labels:
         app: tb-web-ui
     spec:
+      nodeSelector:
+        role: worker
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -939,6 +1115,8 @@ spec:
       labels:
         app: tb-js-executor
     spec:
+      nodeSelector:
+        role: worker
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -980,7 +1158,7 @@ spec:
             - name: SLOW_QUERY_LOG_BODY
               value: "false"
             - name: TB_KAFKA_LINGER_MS
-              value: "100"
+              value: "10"
             - name: TB_KAFKA_BATCH_SIZE
               value: "250"
             - name: TB_KAFKA_COMPRESSION_TYPE
@@ -1034,7 +1212,10 @@ Open the ThingsBoard in your browser using the http://localhost:8080
 
 ## MQTT transport deployment
 
+```bash
 cat > tb-mqtt-transport.yml
+```
+
 ```yaml
 apiVersion: v1
 kind: ConfigMap
@@ -1060,6 +1241,11 @@ data:
             </encoder>
         </appender>
         <logger name="org.thingsboard.server" level="INFO" />
+
+        <logger name="com.microsoft.azure.servicebus.primitives.CoreMessageReceiver" level="OFF" />
+        <logger name="org.apache.kafka.common.utils.AppInfoParser" level="WARN"/>
+        <logger name="org.apache.kafka.clients" level="WARN"/>
+    
         <root level="INFO">
             <appender-ref ref="STDOUT"/>
         </root>
@@ -1081,6 +1267,8 @@ spec:
       labels:
         app: tb-mqtt-transport
     spec:
+      nodeSelector:
+        role: worker
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -1111,13 +1299,13 @@ spec:
               name: mqtt
             - containerPort: 8883
               name: mqtts
-          resources:
-            limits:
-#              cpu: 8
-              memory: 3Gi
-            requests:
-              cpu: 100m
-              memory: 1Gi
+#          resources:
+#            limits:
+##              cpu: 8
+#              memory: 2Gi
+#            requests:
+#              cpu: 100m
+#              memory: 1Gi
           env:
             - name: JAVA_OPTS
               value: "-Xmx1024M -Xms1024M -Xss384k -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
@@ -1155,20 +1343,24 @@ spec:
               port: 1883
 ---
 ```
+
 Apply MQTT transport config
 ```bash
 kubectl apply -f tb-mqtt-transport.yml
 ```
 
 
-Create Connector Role to observer ESK dashboards
+# Create Connector Role to observer ESK dashboards (WIP)
+
 https://docs.aws.amazon.com/eks/latest/userguide/connector_IAM_role.html#create-connector-role
 
 kubectl apply -f https://s3.us-west-2.amazonaws.com/amazon-eks/docs/eks-console-full-access.yaml
 
 eksctl get iamidentitymapping --cluster performance-test --region=eu-west-1
 
-# Daemon set to tune the network
+See: https://docs.aws.amazon.com/eks/latest/userguide/troubleshooting_iam.html#security-iam-troubleshoot-cannot-view-nodes-or-workloads
+
+# Daemon set to tune the network (Optional)
 
 cat > sysctl-conntrack-daemonset.yml
 
@@ -1207,7 +1399,6 @@ spec:
 
 kubectl apply -f sysctl-conntrack-daemonset.yml
 
-
 # Provisioning AWS Load Balancer
 
 Here the instruction how to setup [Load Balancer on AWS EKS](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html)
@@ -1222,9 +1413,10 @@ eksctl create iamserviceaccount \
   --cluster=performance-test \
   --namespace=kube-system \
   --name=aws-load-balancer-controller \
-  --role-name "AmazonEKSLoadBalancerControllerRole" \
+  --role-name "AmazonEKSLoadBalancerControllerRolePT" \
   --attach-policy-arn=arn:aws:iam::378560561651:policy/AWSLoadBalancerControllerIAMPolicy \
   --approve
+# If errors then delete, change and try again: eksctl delete iamserviceaccount   --cluster=performance-test   --namespace=kube-system   --name=aws-load-balancer-controller 
 helm repo add eks https://aws.github.io/eks-charts
 helm repo update
 helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
@@ -1234,6 +1426,7 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
   --set serviceAccount.name=aws-load-balancer-controller \
   --set image.repository=602401143452.dkr.ecr.eu-west-1.amazonaws.com/amazon/aws-load-balancer-controller
 kubectl get deployment -n kube-system aws-load-balancer-controller
+kubectl get events -n kube-system | grep aws-load-balancer-controller
 ```
 
 # Deploy HTTP Load Balancer
@@ -1248,10 +1441,10 @@ kind: Ingress
 metadata:
   name: tb-http-loadbalancer
   namespace: thingsboard
-#  annotations:
-#    kubernetes.io/ingress.class: alb
-#    alb.ingress.kubernetes.io/scheme: internet-facing
-#    alb.ingress.kubernetes.io/target-type: ip
+  annotations:
+    kubernetes.io/ingress.class: alb
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    alb.ingress.kubernetes.io/target-type: ip
 spec:
   rules:
     - http:
@@ -1296,7 +1489,12 @@ spec:
 
 ```bash
 kubectl apply -f http-load-balancer.yml
+kubectl get ingress
+# NAME                   CLASS    HOSTS   ADDRESS                                                                   PORTS   AGE
+# tb-http-loadbalancer   <none>   *       k8s-thingsbo-tbhttplo-784e0efb43-1467549612.eu-west-1.elb.amazonaws.com   80      12m
 ```
+
+Visit the ThingsBoard's web page http://k8s-thingsbo-tbhttplo-784e0efb43-1467549612.eu-west-1.elb.amazonaws.com
 
 # Deploy MQTT Load Balancer
 
@@ -1335,12 +1533,24 @@ Apply the balancer config:
 kubectl apply -f mqtt-load-balancer.yml
 ```
 
+Check the balancer is up and running
+
+```bash
+kubectl get svc | grep -i balancer
+# tb-mqtt-loadbalancer             LoadBalancer   10.100.38.17     aff16c87439c84d4ca7cf942ca5ef84c-4f1e51aef8129250.elb.eu-west-1.amazonaws.com   1883:32385/TCP,8883:30876/TCP         5m32s
+telnet aff16c87439c84d4ca7cf942ca5ef84c-4f1e51aef8129250.elb.eu-west-1.amazonaws.com 1883
+# Trying 52.16.93.146...
+# Connected to aff16c87439c84d4ca7cf942ca5ef84c-4f1e51aef8129250.elb.eu-west-1.amazonaws.com.
+# Escape character is '^]'.
+# ^C
+```
+
 # Small performance test
 
 ```bash
-# Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
-export REST_URL=http://k8s-thingsbo-tbhttplo-784e0efb43-1020620715.eu-west-1.elb.amazonaws.com:80
-export MQTT_HOST=a1435f2586389421f82397b52b690867-b454cc0b7f996e3b.elb.eu-west-1.amazonaws.com
+# Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in the same VPC.
+export REST_URL=http://k8s-thingsbo-tbhttplo-784e0efb43-20626500.eu-west-1.elb.amazonaws.com:80
+export MQTT_HOST=af9ec4fe2ef8345aba197f1cd65a99ed-b046860c9de97400.elb.eu-west-1.amazonaws.com
 docker run -it --rm --network host --name tb-perf-test \
   --env REST_URL=http://127.0.0.1:8080 \
   --env MQTT_HOST=10.102.104.87 \
@@ -1371,6 +1581,8 @@ spec:
       labels:
         app: tb-kafka-ui-kowl
     spec:
+      nodeSelector:
+        role: kafka
       containers:
         - name: server
           imagePullPolicy: Always
@@ -1380,7 +1592,7 @@ spec:
 #              cpu: 200m
               memory: 200Mi
             limits:
-              cpu: 1
+              cpu: "1"
               memory: 1Gi
           ports:
             - containerPort: 8080
@@ -1402,3 +1614,213 @@ If Kafka UI does not need, scale it down:
 ```bash
 kubectl scale --replicas=0 statefulset tb-kafka-ui-kowl
 ```
+
+# Performance tests
+
+## Set up the device payload generator fleet
+
+Let's spin up 32 instances to generate the load via mqtt
+
+I found the cheapest `m3a.small` in Mumbai, so lets try how its work across Pacific.
+
+Let's prepare the instances
+
+```bash
+cat > test-ips.sh
+```
+
+```bash
+#!/bin/bash
+SSH_KEY="~/.ssh/aws/smatvienko-ap-south-1.pem"
+
+IPS="
+13.233.135.93
+13.235.210.232
+13.235.65.194
+15.206.188.214
+3.108.222.97
+
+3.108.6.63
+3.108.9.124
+3.109.138.222
+3.109.138.232
+3.110.113.42
+
+3.110.126.37
+3.110.200.210
+3.110.202.11
+3.110.231.18
+3.110.235.89
+
+3.110.82.190
+3.110.98.113
+3.110.98.9
+3.111.43.201
+3.111.45.74
+
+3.6.43.206
+3.7.59.56
+3.7.62.78
+3.7.74.138
+65.0.120.186
+
+65.0.67.72
+65.1.129.57
+65.1.13.134
+65.1.145.31
+65.1.146.81
+
+65.1.168.122
+65.2.56.171
+"
+
+COUNT=0
+
+for IP in ${IPS}; do
+  let COUNT++
+  echo "LIST id ${COUNT} IP ${IP}"
+done
+```
+
+```bash
+cat > init-tests.sh
+```
+
+```bash
+#!/bin/bash
+. test-ips.sh
+
+COUNTER=0
+
+for IP in ${IPS}; do
+  let COUNTER++
+  echo "INIT ${COUNTER} FOR ${IP}"
+  ssh -i ${SSH_KEY} -o StrictHostKeyChecking=accept-new ubuntu@${IP} <<'ENDSSH'
+set +x
+#optional. replace with your Thingsboard instance ip
+#echo '52.50.5.45 thingsboard' | sudo tee -a /etc/hosts
+#extend the local port range up to 64500
+cat /proc/sys/net/ipv4/ip_local_port_range
+#32768  60999
+echo "net.ipv4.ip_local_port_range = 1024 65535" | sudo tee -a /etc/sysctl.conf
+sudo -s sysctl -p
+cat /proc/sys/net/ipv4/ip_local_port_range
+#1024   65535
+ulimit -n 1048576
+sudo sysctl -w net.netfilter.nf_conntrack_max=1048576
+sudo apt update
+sudo apt install -y git maven docker docker-compose htop iotop mc screen
+# manage Docker as a non-root user
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+# test non-root docker run
+docker run hello-world
+rm -rf ~/performance-tests
+cd ~
+git clone https://github.com/thingsboard/performance-tests.git
+cd performance-tests
+screen -d -m ~/performance-tests/build.sh
+screen -ls
+ENDSSH
+
+done
+```
+
+```bash
+cat > reboot-tests.sh
+```
+
+```bash
+#!/bin/bash
+. test-ips.sh
+
+COUNTER=0
+
+for IP in ${IPS}; do
+  let COUNTER++
+  echo "REBOOT ${COUNTER} FOR ${IP}"
+
+  ssh -i ${SSH_KEY} -o StrictHostKeyChecking=accept-new ubuntu@${IP} <<'ENDSSH'
+echo "going to reboot"
+sudo reboot now
+echo "over"
+ENDSSH
+done
+```
+
+```bash
+cat > run-test.sh
+```
+
+```bash
+#!/bin/bash
+. test-ips.sh
+
+COUNTER=0
+DEVICES_PER_NODE=9375
+MESSAGES_PER_NODE=315
+START_IDX=0
+
+for IP in ${IPS}; do
+  let COUNTER++
+  let DEVICE_START_IDX=START_IDX+COUNTER*DEVICES_PER_NODE-DEVICES_PER_NODE
+  let DEVICE_END_IDX=START_IDX+COUNTER*DEVICES_PER_NODE
+  echo "********** RUN TEST ${COUNTER} FOR ${IP} **********"
+
+SCRIPT="
+ulimit -n 1048576;
+sudo sysctl -w net.netfilter.nf_conntrack_max=1048576;
+cd ~/performance-tests;
+export WARMUP_PACK_SIZE=25;
+export REST_URL=http://k8s-thingsbo-tbhttplo-784e0efb43-1467549612.eu-west-1.elb.amazonaws.com:80;
+export MQTT_HOST=aff16c87439c84d4ca7cf942ca5ef84c-4f1e51aef8129250.elb.eu-west-1.amazonaws.com;
+export DEVICE_START_IDX=${DEVICE_START_IDX};
+export DEVICE_END_IDX=${DEVICE_END_IDX};
+export MESSAGES_PER_SECOND=${MESSAGES_PER_NODE};
+export ALARMS_PER_SECOND=1;
+export DURATION_IN_SECONDS=999000;
+export DEVICE_CREATE_ON_START=true;
+screen -d -m mvn spring-boot:run;
+screen -list;
+"
+
+  ssh -i ${SSH_KEY} -o StrictHostKeyChecking=accept-new ubuntu@${IP} ${SCRIPT}
+done
+```
+
+```bash
+chmod +x run-test.sh test-ips.sh reboot-tests.sh init-tests.sh
+```
+
+First, test IPs need to be pasted to the `test-ips.sh`
+Then path to SSH access key have to be placed to the `test-ips.sh`
+After it done, start the `init-tests.sh` once. It may take a while
+Finally we can start the test using `run-test.sh`
+To stop the test, just reboot every node `reboot-tests.sh`
+
+To login the performance test instance please, use this command:
+```bash
+source test-ips.sh > /dev/null ; ssh -i ${SSH_KEY} -o StrictHostKeyChecking=accept-new ubuntu@$(echo $IP | head -1)
+```
+
+To follow the performance test logs under the screen, use this:
+```bash
+screen -r
+```
+
+To detach screen again press `Ctrl+A`, then press `d`
+
+## Run performance cluster test with 300k devices, 30k data points per second
+
+Devices: 300k
+Messages: 10k 
+Data points: 30k
+
+```bash
+NODES=32
+DEVICES_PER_NODE=9375
+MESSAGES_PER_NODE=315
+```
+
+
