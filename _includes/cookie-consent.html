@@ -10,28 +10,34 @@
         bottom: 0;
         width: 100%;
         background-color: rgba(15, 22, 29, 0.85);
-        color: rgba(255,255,255,1);
+        color: rgba(255, 255, 255, 1);
     }
+
     #cookie-notice-text {
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 65%;
     }
+
     #cookie-notice-close {
         position: absolute;
         top: 1.5rem;
         right: 1.5rem;
     }
+
     #cookie-notice-text span {
         font-size: 14px;
     }
+
     #cookie-notice-text label {
         font-size: 20px;
     }
+
     #cookie-notice a {
         cursor: pointer;
     }
+
     #cookie-notice #cookie-notice-accept {
         display: flex;
         text-align: center;
@@ -42,31 +48,30 @@
         font-size: 18px;
         width: 140px;
     }
+
     @media (max-width: 767px) {
         #cookie-notice {
             flex-direction: column;
+            padding: 1.3rem 1.1rem;
         }
+
         #cookie-notice-text {
-            width: 97%;
+            width: 100%;
         }
+
         #cookie-notice #cookie-notice-accept {
-            margin-top: 1.5rem;
+            margin-top: 1.3rem;
             margin-left: 0;
-            width: 97%;
+            width: 100%;
         }
     }
 </style>
 <div id="cookie-notice">
     <div id="cookie-notice-text">
-        <label>Cookie consent</label>
-        <span>By visiting this site, you consent to the use of the below cookies. Alternatively, you have options either
-        to manage the cookies from your browser (prevent your computer from accepting cookies) or opt-out of this website.
-        <br>
-        <br>
-        We use Google Analytics to collect information about website users' behaviour and experience in order to improve the
-        Documentation. We set a short-term cookie that keeps your consent with our cookies policy.
-        We do not need your Personal data, the collected information cannot be used to identify the website user.
-        Google does not further process or share our analytics data.</span>
+        <label>Cookie policy</label>
+        <span>We use cookies to improve user experience. By continuing to browse this site, you agree the use of cookies, in accordance with our <a
+                href="/cookie-policy" target="_blank">cookie policy.</a><span class=""></span>
+        </span>
     </div>
     <a id="cookie-notice-accept" class="btn btn-primary btn-sm">Accept</a>
     <a id="cookie-notice-close">
@@ -74,34 +79,97 @@
     </a>
 </div>
 <script>
-    function createCookie(name,value,days) {
-        var expires = "";
-        if (days) {
-            var date = new Date();
-            date.setTime(date.getTime() + (days*24*60*60*1000));
-            expires = "; expires=" + date.toUTCString();
+    function setCookie(name, value, attributes) {
+        if (typeof document === 'undefined') {
+            return
         }
-        document.cookie = name + "=" + value + expires + "; path=/";
+
+        attributes = Object.assign({}, {path: '/'}, attributes)
+
+        if (typeof attributes.expires === 'number') {
+            attributes.expires = new Date(Date.now() + attributes.expires * 864e5)
+        }
+        if (attributes.expires) {
+            attributes.expires = attributes.expires.toUTCString()
+        }
+
+        name = encodeURIComponent(name)
+            .replace(/%(2[346B]|5E|60|7C)/g, decodeURIComponent)
+            .replace(/[()]/g, escape)
+
+        var stringifiedAttributes = ''
+        for (var attributeName in attributes) {
+            if (!attributes[attributeName]) {
+                continue
+            }
+
+            stringifiedAttributes += '; ' + attributeName
+
+            if (attributes[attributeName] === true) {
+                continue
+            }
+
+            // Considers RFC 6265 section 5.2:
+            // ...
+            // 3.  If the remaining unparsed-attributes contains a %x3B (";")
+            //     character:
+            // Consume the characters of the unparsed-attributes up to,
+            // not including, the first %x3B (";") character.
+            // ...
+            stringifiedAttributes += '=' + attributes[attributeName].split(';')[0]
+        }
+
+        return (document.cookie =
+            name + '=' + writeCookieValue(value) + stringifiedAttributes)
     }
 
-    function readCookie(name) {
-        var nameEQ = name + "=";
-        var ca = document.cookie.split(';');
-        for(var i=0;i < ca.length;i++) {
-            var c = ca[i];
-            while (c.charAt(0)==' ') c = c.substring(1,c.length);
-            if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    function getCookie(name) {
+        if (typeof document === 'undefined' || (arguments.length && !name)) {
+            return
         }
-        return null;
+
+        // To prevent the for loop in the first place assign an empty array
+        // in case there are no cookies at all.
+        var cookies = document.cookie ? document.cookie.split('; ') : []
+        var jar = {}
+        for (var i = 0; i < cookies.length; i++) {
+            var parts = cookies[i].split('=')
+            var value = parts.slice(1).join('=')
+
+            try {
+                var found = decodeURIComponent(parts[0])
+                jar[found] = readCookieValue(value)
+
+                if (name === found) {
+                    break
+                }
+            } catch (e) {
+            }
+        }
+
+        return name ? jar[name] : jar
+    }
+
+    function readCookieValue(value) {
+        if (value[0] === '"') {
+            value = value.slice(1, -1)
+        }
+        return value.replace(/(%[\dA-F]{2})+/gi, decodeURIComponent)
+    }
+
+    function writeCookieValue(value) {
+        return encodeURIComponent(value).replace(
+            /%(2[346BF]|3[AC-F]|40|5[BDE]|60|7[BCD])/g,
+            decodeURIComponent
+        )
     }
 
     function closeAndAccept() {
-        createCookie('cookie-notice-dismissed','true', 1);
+        setCookie('cookie-notice-dismissed', 'true', {expires: 365, path: '/'});
         document.getElementById('cookie-notice').style.display = 'none';
-        location.reload();
     }
 
-    if (readCookie('cookie-notice-dismissed') !='true') {
+    if (getCookie('cookie-notice-dismissed') !== 'true') {
         document.getElementById('cookie-notice').style.display = 'flex';
     }
 
