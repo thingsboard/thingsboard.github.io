@@ -64,7 +64,7 @@ availabilityZones: ['eu-west-1a', 'eu-west-1b', 'eu-west-1c']
 #        - "arn:aws:iam::378560561651:policy/TbCloudClusterManager"
 
 managedNodeGroups:
-  - name: worker
+  - name: worker-xlarge
     labels: { role: worker }
     instanceType: m6a.xlarge
     desiredCapacity: 3
@@ -74,9 +74,9 @@ managedNodeGroups:
     ssh:
       allow: true
       publicKeyName: 'smatvienko'
-  - name: cassandra
+  - name: cassandra-xlarge
     labels: { role: cassandra }
-    instanceType: c6i.large
+    instanceType: c6i.xlarge
     desiredCapacity: 3
     volumeType: gp3
     volumeSize: 32
@@ -94,9 +94,9 @@ managedNodeGroups:
     ssh:
       allow: true
       publicKeyName: 'smatvienko'
-  - name: postgresql
+  - name: postgresql-xlarge
     labels: { role: postgresql }
-    instanceType: c6i.large
+    instanceType: c6i.xlarge
     desiredCapacity: 3
     volumeType: gp3
     volumeSize: 32
@@ -515,12 +515,12 @@ data:
   TB_KAFKA_LINGER_MS: "5" # default is 1
   TB_KAFKA_COMPRESSION_TYPE: "gzip" # none or gzip
   TB_QUEUE_KAFKA_MAX_POLL_RECORDS: "4096" # default is 8192
-  TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES: "retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600;partitions:12" # have to be equal tb-js-executor replicas count
-  TB_QUEUE_KAFKA_TA_TOPIC_PROPERTIES: "retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600;partitions:12" # have to be equal tb-core (tb-node) replicas 
+  TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES: "partitions:12;retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600" # have to be multiple to tb-js-executor replicas count
+  TB_QUEUE_KAFKA_TA_TOPIC_PROPERTIES: "partitions:12;retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600" # have to be multiple to tb-core (tb-node) replicas count
   TB_QUEUE_CORE_PARTITIONS: "6"
   TB_QUEUE_RE_MAIN_PARTITIONS: "6" # since 3.4 login under sysadmin and change /settings/queues or use API
-  TB_QUEUE_RE_HP_PARTITIONS: "6"
-  TB_QUEUE_RE_SQ_PARTITIONS: "6"
+  TB_QUEUE_RE_HP_PARTITIONS: "6" # since 3.4 you have to login under sysadmin and change /settings/queues or use API
+  TB_QUEUE_RE_SQ_PARTITIONS: "6" # since 3.4 you have to login under sysadmin and change /settings/queues or use API
   TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
   TB_QUEUE_CORE_PACK_PROCESSING_TIMEOUT_MS: "20000"
   TB_QUEUE_RE_MAIN_CONSUMER_PER_PARTITION: "false"
