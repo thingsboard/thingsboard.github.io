@@ -54,15 +54,6 @@ metadata:
 
 availabilityZones: ['eu-west-1a', 'eu-west-1b', 'eu-west-1c']
 
-#iam:
-#  withOIDC: true
-#  serviceAccounts:
-#    - metadata:
-#        name: tb-cloud-manager
-#        namespace: thingsboard
-#      attachPolicyARNs:
-#        - "arn:aws:iam::378560561651:policy/TbCloudClusterManager"
-
 managedNodeGroups:
   - name: worker-xlarge
     labels: { role: worker }
@@ -98,6 +89,16 @@ managedNodeGroups:
     labels: { role: postgresql }
     instanceType: c6i.xlarge
     desiredCapacity: 3
+    volumeType: gp3
+    volumeSize: 32
+    privateNetworking: false
+    ssh:
+      allow: true
+      publicKeyName: 'smatvienko'
+  - name: pgpool-2xlarge
+    labels: { role: pgpool }
+    instanceType: c6a.2xlarge
+    desiredCapacity: 1
     volumeType: gp3
     volumeSize: 32
     privateNetworking: false
@@ -348,9 +349,9 @@ helm install postgresql bitnami/postgresql-ha --version 9.2.1 \
   --set postgresqlImage.debug=true \
   --set pgpoolImage.debug=true \
   --set fullnameOverride=postgresql \
-  --set postgresql.resources.requests.cpu=1 \
+  --set postgresql.resources.requests.cpu=3 \
   --set postgresql.resources.requests.memory=1Gi \
-  --set pgpool.resources.requests.cpu=100m \
+  --set pgpool.resources.requests.cpu=3 \
   --set pgpool.resources.requests.memory=500Mi \
   --set postgresql.readinessProbe.enabled=false \
   --set postgresql.startupProbe.enabled=true \
@@ -518,7 +519,7 @@ data:
   TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES: "partitions:12;retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600" # have to be multiple to tb-js-executor replicas count
   TB_QUEUE_KAFKA_TA_TOPIC_PROPERTIES: "partitions:12;retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600" # have to be multiple to tb-core (tb-node) replicas count
   TB_QUEUE_CORE_PARTITIONS: "6"
-  TB_QUEUE_RE_MAIN_PARTITIONS: "6" # since 3.4 login under sysadmin and change /settings/queues or use API
+  TB_QUEUE_RE_MAIN_PARTITIONS: "6" # since 3.4 you have to login under sysadmin and change /settings/queues or use API
   TB_QUEUE_RE_HP_PARTITIONS: "6" # since 3.4 you have to login under sysadmin and change /settings/queues or use API
   TB_QUEUE_RE_SQ_PARTITIONS: "6" # since 3.4 you have to login under sysadmin and change /settings/queues or use API
   TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
@@ -1615,6 +1616,16 @@ If Kafka UI does not need, scale it down:
 kubectl scale --replicas=0 statefulset tb-kafka-ui-kowl
 ```
 
+To connect to the Postgresql from PgAdmin tool use port forwarding:
+```bash
+# detect primary node
+kubectl exec postgresql-postgresql-0 -- /opt/bitnami/scripts/postgresql-repmgr/entrypoint.sh repmgr -f /opt/bitnami/repmgr/conf/repmgr.conf cluster show
+# fetch postgres password
+kubectl get secret postgresql-postgresql -o jsonpath="{.data.postgresql-password}" | base64 --decode ; echo
+# forward port 5432 from postgresql primary node
+kubectl port-forward postgresql-postgresql-0 5432:5232
+```
+
 # Performance tests
 
 ## Set up the device payload generator fleet
@@ -1811,16 +1822,129 @@ screen -r
 
 To detach screen again press `Ctrl+A`, then press `d`
 
-## Run performance cluster test with 300k devices, 30k data points per second
+## Performance tests
 
-Devices: 300k
-Messages: 10k 
-Data points: 30k
+### 100k devices, 20k data points 
+
+Let's build a ThingsBoard cluster and start from 100k devices and 20k data points per second  
+
+To produce the load, we will spin x10 AWS EC2 t3a.small instances, far away from the cluster.
+
+Data will flow from `performance-test` instances through the AWS load balancer and feed the cluster using the `tb-mqtt-transport` service
+
+Cluster config is there:
+
+| Node group | Instances (vCPU/Gi)   | Micro services                                                                                           |
+|------------|-----------------------|----------------------------------------------------------------------------------------------------------|
+| worker     | 3 * m6a.xlarge (4/16) | 3 * tb-core </br> 3 * tb-rule-engine </br>3 * tb-mqtt-transport </br> 6 * tb-js-executor </br> 6 * redis |
+| cassandra  | 3 * c6i.xlarge (4/8)  | 3 * cassandra                                                                                            |
+| postgresql | 3 * c6i.xlarge (4/8)  | 2 * postgresql </br> 1 * pgpool                                                                          |
+| kafka      | 3 * c6i.large (2/4)   | 3 * zokeeper </br>3 * kafka </br> 3 * tb-web-ui                                                          |
+
+We run the cluster more than 24h and find that the cluster able to handle the load.
+
+{% include images-gallery.html imageCollection="cassandra-100k-6k-20k" %}
+
+<details markdown="1">
+<summary>
+How to reproduce the Kubernetes cluster setup
+</summary>
 
 ```bash
-NODES=32
-DEVICES_PER_NODE=9375
-MESSAGES_PER_NODE=315
+cat > cluster.yml
 ```
 
+```yaml
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+
+metadata:
+  name: performance-test
+  region: eu-west-1
+
+availabilityZones: ['eu-west-1a', 'eu-west-1b', 'eu-west-1c']
+
+managedNodeGroups:
+  - name: worker-xlarge
+    labels: { role: worker }
+    instanceType: m6a.xlarge
+    desiredCapacity: 3
+    volumeType: gp3
+    volumeSize: 32
+    privateNetworking: false
+    ssh:
+      allow: true
+      publicKeyName: 'smatvienko'
+  - name: cassandra-xlarge
+    labels: { role: cassandra }
+    instanceType: c6i.xlarge
+    desiredCapacity: 3
+    volumeType: gp3
+    volumeSize: 32
+    privateNetworking: false
+    ssh:
+      allow: true
+      publicKeyName: 'smatvienko'
+  - name: kafka
+    labels: { role: kafka }
+    instanceType: c6i.large
+    desiredCapacity: 3
+    volumeType: gp3
+    volumeSize: 32
+    privateNetworking: false
+    ssh:
+      allow: true
+      publicKeyName: 'smatvienko'
+  - name: postgresql-xlarge
+    labels: { role: postgresql }
+    instanceType: c6i.xlarge
+    desiredCapacity: 3
+    volumeType: gp3
+    volumeSize: 32
+    privateNetworking: false
+    ssh:
+      allow: true
+      publicKeyName: 'smatvienko'
+```
+{: .copy-code}
+
+```bash
+eksctl create cluster -f cluster.yml
+```
+
+</details>
+
+### 100k devices, 30k data points
+
+Let's try to increase the load up to 30k data point per second. We may see that the system is ok.
+
+For some reason the pgpool has been scheduled at the same node as postgresql and that pushes CPU load to maximum.
+To fix this fast, lets spin a new node group dedicated to pgpool:  
+
+| Node group | Instances (vCPU/Gi)    | Micro services                                                                                           |
+|------------|------------------------|----------------------------------------------------------------------------------------------------------|
+| pgpoool    | 1 * c6a.2xlarge (6/16) | 1 * pgpool                                                                          |
+
+
+{% include images-gallery.html imageCollection="cassandra-100k-10k-30k" %}
+
+### 100k devices, 45k data points
+
+Increasing the load up to 45k data point per second. The system is performing ok, but close to the CPU limits for Postgresql and Cassandra.
+
+Note: for some reason, the pgpool is consuming about 4 CPU cores, even more than Posgresql itself. Probably it related to some bug in the latest update. We will take a look on it later and probably the upgrade/downgrade will be a solution.
+
+Cluster config is there:
+
+| Node group | Instances (vCPU/Gi)    | Micro services                                                                                           |
+|------------|------------------------|----------------------------------------------------------------------------------------------------------|
+| worker     | 3 * m6a.xlarge (4/16)  | 3 * tb-core </br> 3 * tb-rule-engine </br>3 * tb-mqtt-transport </br> 6 * tb-js-executor </br> 6 * redis |
+| cassandra  | 3 * c6i.xlarge (4/8)   | 3 * cassandra                                                                                            |
+| postgresql | 2 * c6i.xlarge (4/8)   | 2 * postgresql                                                                                           |
+| pgpoool    | 1 * c6a.2xlarge (6/16) | 1 * pgpool                                                                                               |
+| kafka      | 3 * c6i.large (2/4)    | 3 * zokeeper </br>3 * kafka </br> 3 * tb-web-ui                                                          |
+
+Here you can see the screenshots of the working cluster with the 100k/15k/30k load.
+
+{% include images-gallery.html imageCollection="cassandra-100k-15k-45k" %}
 
