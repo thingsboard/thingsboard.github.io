@@ -1,5 +1,6 @@
 * TOC
-  {:toc}
+{:toc}
+<!-- This will parse content of HTML tags as markdown when uncomment {::options parse_block_html="true" /} -->
 
 ThingsBoard has been run in production by numerous companies in both [monolithic](/docs/{{docsPrefix}}reference/monolithic/)
 and [microservices](/docs/{{docsPrefix}}reference/msa/) deployment modes.
@@ -1309,7 +1310,7 @@ spec:
 #              memory: 1Gi
           env:
             - name: JAVA_OPTS
-              value: "-Xmx1024M -Xms1024M -Xss384k -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+              value: "-Xmx2048M -Xms2048M -Xss256k -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
             - name: TB_SERVICE_ID
               valueFrom:
                 fieldRef:
@@ -1339,9 +1340,12 @@ spec:
             tcpSocket:
               port: 1883
           livenessProbe:
-            periodSeconds: 20
+            periodSeconds: 30
             tcpSocket:
               port: 1883
+            timeoutSeconds: 10
+            successThreshold: 1
+            failureThreshold: 6
 ---
 ```
 
@@ -1349,7 +1353,6 @@ Apply MQTT transport config
 ```bash
 kubectl apply -f tb-mqtt-transport.yml
 ```
-
 
 # Create Connector Role to observer ESK dashboards (WIP)
 
@@ -1843,7 +1846,7 @@ Cluster config is there:
 
 We run the cluster more than 24h and find that the cluster able to handle the load.
 
-{% include images-gallery.html imageCollection="cassandra-100k-6k-20k" %}
+{% include images-gallery.html imageCollection="cluster-100k-6k-20k" %}
 
 <details markdown="1">
 <summary>
@@ -1918,15 +1921,16 @@ eksctl create cluster -f cluster.yml
 
 Let's try to increase the load up to 30k data point per second. We may see that the system is ok.
 
-For some reason the pgpool has been scheduled at the same node as postgresql and that pushes CPU load to maximum.
+For some reason the pgpool has been scheduled at the same node as postgresql and that pushed CPU load to maximum.
 To fix this fast, lets spin a new node group dedicated to pgpool:  
 
-| Node group | Instances (vCPU/Gi)    | Micro services                                                                                           |
-|------------|------------------------|----------------------------------------------------------------------------------------------------------|
-| pgpoool    | 1 * c6a.2xlarge (6/16) | 1 * pgpool                                                                          |
+| Node group | Instances (vCPU/Gi)    | Micro services                                                               |
+|------------|------------------------|------------------------------------------------------------------------------|
+| pgpoool    | 1 * c6a.2xlarge (8/16) | 1 * pgpool                                                                   |
 
+Here are some screenshots: 
 
-{% include images-gallery.html imageCollection="cassandra-100k-10k-30k" %}
+{% include images-gallery.html imageCollection="cluster-100k-10k-30k" %}
 
 ### 100k devices, 45k data points
 
@@ -1941,10 +1945,10 @@ Cluster config is there:
 | worker     | 3 * m6a.xlarge (4/16)  | 3 * tb-core </br> 3 * tb-rule-engine </br>3 * tb-mqtt-transport </br> 6 * tb-js-executor </br> 6 * redis |
 | cassandra  | 3 * c6i.xlarge (4/8)   | 3 * cassandra                                                                                            |
 | postgresql | 2 * c6i.xlarge (4/8)   | 2 * postgresql                                                                                           |
-| pgpoool    | 1 * c6a.2xlarge (6/16) | 1 * pgpool                                                                                               |
+| pgpoool    | 1 * c6a.2xlarge (8/16) | 1 * pgpool                                                                                               |
 | kafka      | 3 * c6i.large (2/4)    | 3 * zokeeper </br>3 * kafka </br> 3 * tb-web-ui                                                          |
 
 Here you can see the screenshots of the working cluster with the 100k/15k/30k load.
 
-{% include images-gallery.html imageCollection="cassandra-100k-15k-45k" %}
+{% include images-gallery.html imageCollection="cluster-100k-15k-45k" %}
 
