@@ -66,6 +66,16 @@ managedNodeGroups:
     ssh:
       allow: true
       publicKeyName: 'smatvienko'
+  - name: transport-large
+    labels: { role: transport }
+    instanceType: c6a.large
+    desiredCapacity: 6
+    volumeType: gp3
+    volumeSize: 20
+    privateNetworking: false
+    ssh:
+      allow: true
+      publicKeyName: 'smatvienko'
   - name: cassandra-xlarge
     labels: { role: cassandra }
     instanceType: c6i.xlarge
@@ -108,6 +118,78 @@ managedNodeGroups:
       publicKeyName: 'smatvienko'
 ```
 
+Experiment:
+
+```yaml
+  - name: transport-small-netfilter-conntrack-max
+    labels: { role: transport }
+    instanceType: t3a.small
+    desiredCapacity: 1
+    volumeType: gp3
+    volumeSize: 20
+    privateNetworking: false
+    ssh:
+      allow: true
+      publicKeyName: 'smatvienko'
+    preBootstrapCommands:
+      - echo "BEGIN eksctl managedNodeGroups preBootstrapCommands"
+      - echo "net.netfilter.nf_conntrack_max = 1048576" | sudo tee -a /etc/sysctl.conf
+      - echo "net.nf_conntrack_max = 1048576" | sudo tee -a /etc/sysctl.conf
+      - echo "modprobe ip_conntrack"
+      - sudo modprobe ip_conntrack
+      - echo "reload systcl"
+      - sudo -s sysctl -p
+      - echo "END eksctl managedNodeGroups preBootstrapCommands"
+```
+
+Work note: the good source how to set linux networking
+See https://kubedex.com/90-days-of-aws-eks-in-production/
+
+
+```yaml
+- |
+          cat <<EOF > /etc/sysctl.d/99-kubelet-network.conf
+          # Have a larger connection range available
+          net.ipv4.ip_local_port_range=1024 65000
+          #
+          # Reuse closed sockets faster
+          net.ipv4.tcp_tw_reuse=1
+          net.ipv4.tcp_fin_timeout=15
+          #
+          # The maximum number of "backlogged sockets".  Default is 128.
+          net.core.somaxconn=4096
+          net.core.netdev_max_backlog=4096
+          #
+          # 16MB per socket - which sounds like a lot,
+          # but will virtually never consume that much.
+          net.core.rmem_max=16777216
+          net.core.wmem_max=16777216
+        
+          # Various network tunables
+          net.ipv4.tcp_max_syn_backlog=20480
+          net.ipv4.tcp_max_tw_buckets=400000
+          net.ipv4.tcp_no_metrics_save=1
+          net.ipv4.tcp_rmem=4096 87380 16777216
+          net.ipv4.tcp_syn_retries=2
+          net.ipv4.tcp_synack_retries=2
+          net.ipv4.tcp_wmem=4096 65536 16777216
+          #vm.min_free_kbytes=65536
+          #
+          # Connection tracking to prevent dropped connections (usually issue on LBs)
+          net.netfilter.nf_conntrack_max=262144
+          net.ipv4.netfilter.ip_conntrack_generic_timeout=120
+          net.netfilter.nf_conntrack_tcp_timeout_established=86400
+          #
+          # ARP cache settings for a highly loaded docker swarm
+          net.ipv4.neigh.default.gc_thresh1=8096
+          net.ipv4.neigh.default.gc_thresh2=12288
+          net.ipv4.neigh.default.gc_thresh3=16384
+          EOF
+          #
+          # Don't forget to...
+          systemctl restart systemd-sysctl.service
+```
+
 ```bash
 eksctl create cluster -f cluster.yml
 ```
@@ -126,6 +208,8 @@ eksctl create cluster \
 ```
 
 eksctl create nodegroup --config-file=cluster.yml
+
+# eksctl delete nodegroup transport-arm --cluster=performance-test
 
 Check the cluster
 ```bash
@@ -1270,7 +1354,7 @@ spec:
         app: tb-mqtt-transport
     spec:
       nodeSelector:
-        role: worker
+        role: transport
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
@@ -1301,12 +1385,12 @@ spec:
               name: mqtt
             - containerPort: 8883
               name: mqtts
-#          resources:
-#            limits:
-##              cpu: 8
+          resources:
+            limits:
+              cpu: "2"
 #              memory: 2Gi
-#            requests:
-#              cpu: 100m
+            requests:
+              cpu: 100m
 #              memory: 1Gi
           env:
             - name: JAVA_OPTS
@@ -1382,20 +1466,26 @@ spec:
       labels:
         name: sysctl-conntrack
     spec:
-      hostPID: true
+#      securityContext:
+#        sysctls:
+#        - name: net.netfilter.nf_conntrack_max
+#          value: "1048576"
+#      hostPID: true
       containers:
         - name: sysctl-buddy
-          image: ubuntu:20.04
+          image: busybox
           securityContext:
-            privileged: true
+            privileged: true            
           command:
             - /bin/sh
             - -c
             - |
               echo "tuning the network parameters"
               ulimit -n 1048576
+              ulimit -n
               sysctl -a | grep conntrack_max
               sysctl -w net.netfilter.nf_conntrack_max=1048576
+              sysctl -a | grep conntrack_max
               echo "all done"
               sleep infinity
 ---
@@ -1952,3 +2042,277 @@ Here you can see the screenshots of the working cluster with the 100k/15k/30k lo
 
 {% include images-gallery.html imageCollection="cluster-100k-15k-45k" %}
 
+### 300k devices, 15k data points
+
+We will go forward and increase device count even more.
+The main challenge is this approach is manage a lot of TCP connections.
+You have to be able to accept a much more TCP connection than usual.
+
+Verifying through JMX have shown that tb-mqtt-transport is low on heap memory (garbage collection spikes) and it is time to increase the memory from 1Gi up to 2Gi:
+```yaml
+JAVA_OPTS: "-Xmx2048M -Xms2048M -Xss256k" 
+```
+
+Here the screenshots for a short period of time.
+
+{% include images-gallery.html imageCollection="cluster-300k-5k-15k" %}
+
+### 500k devices, 15k data points
+
+Lets create a 500k devices 
+
+#### Experiments 
+
+Connecting the 500k failed using 3 nodes because out of TCP connections tracked.
+You can check the connection status using via SSH on the worker node
+
+```bash
+ulimit -n 1048576
+sudo sysctl -a | grep conntrack_max
+# net.netfilter.nf_conntrack_max = 131072
+# net.nf_conntrack_max = 131072
+
+# errors:
+# sudo yum install -y ethtool 
+ethtool -S eth0 | grep exceeded
+# conntrack_allowance_exceeded: 39878822
+
+# set maximum connection allowed until next restart
+sudo sysctl -w net.netfilter.nf_conntrack_max=1048576
+```
+
+Let's try to spin another 10 nodes dedicated for transport adding the next lined to the `cluster.yml`
+
+```yaml
+  - name: transport
+    labels: { role: transport }
+    instanceType: c6a.large
+    desiredCapacity: 10
+    volumeType: gp3
+    volumeSize: 20
+    privateNetworking: false
+    ssh:
+      allow: true
+      publicKeyName: 'smatvienko'
+```
+
+```bash
+eksctl create nodegroup --config-file=cluster.yml
+```
+
+Let's move tb-mqtt-transport using node selector in `tb-mqtt-transport.yml`
+
+```yaml
+      nodeSelector:
+        role: transport
+```
+
+Scaling nodes
+
+```bash
+eksctl scale nodegroup --cluster=performance-test --nodes=6 --nodes-max=6 transport
+```
+
+```bash
+kubectl scale --replicas=10 sts tb-mqtt-transport
+```
+
+Check the pod distribution across the nodes and roles:
+
+```bash
+kubectl get pods -o=custom-columns=ROLE:spec.nodeSelector.role,NODE:.spec.nodeName,POD:.metadata.name | tail +2 | sort
+```
+
+Check the conntrack available:
+
+```bash
+kubectl exec -it tb-mqtt-transport-0 -- sysctl -a | grep conntrack_max
+```
+
+Restart all pods affected on affected nodes
+```bash
+kubectl rollout restart sts redis
+# wait for restart
+kubectl rollout restart sts tb-node tb-rule-engine tb-js-executor
+```
+
+Finally, let's config the kube-proxy to track one million connections
+```bash
+kubectl edit -n kube-system configmap/kube-proxy-config
+# conntrack:
+#   maxPerCore: 262144
+#   min: 1048576
+kubectl rollout restart -n kube-system daemonset kube-proxy
+```
+
+Wait for a kube proxy restart on all nodes and check the max connections adjusted 
+
+```bash
+kubectl get pods -w -n kube-system
+# Ctrl + C when all in Running state
+kubectl exec -it tb-mqtt-transport-0 -- sysctl -a | grep conntrack_max
+# net.netfilter.nf_conntrack_max = 1048576
+```
+
+Here is the screenshots with tunings
+
+{% include images-gallery.html imageCollection="500k-5k-15k-experiments" %}
+
+Rolling update for ThingsBoars MQTT transport leads to all devices reconnecting. 
+Here the screenshots how the cluster handle a full reconnect issue at this moment.
+For the big scale this is a good point to improve the [source](https://github.com/thingsboard/thingsboard).
+
+{% include images-gallery.html imageCollection="500k-5k-15k-reconnect-all" %}
+
+#### Tuning Postgresql
+
+```bash
+cat > psql-override-conf.yml
+```
+
+```yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: psql-override-conf
+data:
+  override.conf: |+
+    # DISCLAIMER - Software and the resulting config files are provided "AS IS" - IN NO EVENT SHALL
+    # BE THE CREATOR LIABLE TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL
+    # DAMAGES, INCLUDING LOST PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION.
+    
+    # The tool used: http://pgconfigurator.cybertec.at/
+
+    # Connectivity
+    max_connections = 300
+    superuser_reserved_connections = 3
+
+    # Memory Settings
+    shared_buffers = '2048 MB'
+    work_mem = '64 MB'
+    maintenance_work_mem = '320 MB'
+    huge_pages = off
+    effective_cache_size = '6 GB'
+    effective_io_concurrency = 0   # concurrent IO only really activated if OS supports posix_fadvise function
+    random_page_cost = 1.5 # speed of random disk access relative to sequential access (1.0)
+
+    # Monitoring
+    # NOTE: repmgr is required for cluster mode !!!
+    shared_preload_libraries = 'repmgr, pgaudit, pg_stat_statements'    # per statement resource usage stats
+    track_io_timing=on        # measure exact block IO times
+    track_functions=pl        # track execution times of pl-language procedures if any
+
+    # Replication
+    wal_level = replica
+    max_wal_senders = 10
+    synchronous_commit = on
+
+    # Checkpointing: 
+    checkpoint_timeout  = '15 min' 
+    checkpoint_completion_target = 0.9
+    max_wal_size = '1024 MB'
+    min_wal_size = '512 MB'
+
+    # WAL archiving
+    archive_mode = on # having it on enables activating P.I.T.R. at a later time without restart
+    archive_command = '/bin/true'  # not doing anything yet with WAL-s
+
+    # WAL writing
+    wal_compression = on
+    wal_buffers = -1    # auto-tuned by Postgres till maximum of segment size (16MB by default)
+    wal_writer_delay = 200ms
+    wal_writer_flush_after = 1MB
+    wal_keep_size = '3650 MB'
+
+    # Background writer
+    bgwriter_delay = 200ms
+    bgwriter_lru_maxpages = 100
+    bgwriter_lru_multiplier = 2.0
+    bgwriter_flush_after = 0
+
+    # Parallel queries: 
+    max_worker_processes = 4
+    max_parallel_workers_per_gather = 2
+    max_parallel_maintenance_workers = 2
+    max_parallel_workers = 4
+    parallel_leader_participation = on
+
+    # Advanced features 
+
+    enable_partitionwise_join = on
+    enable_partitionwise_aggregate = on
+    jit = on
+
+    # General notes: 
+    # We recommend not to use read-only replicas for scaling
+    # Note that not all settings are automatically tuned. 
+    #   Consider contacting experts at 
+    #   https://www.cybertec-postgresql.com 
+    #   for more professional expertise.    
+---
+```
+
+```bash
+kubectl apply -f psql-override-conf.yml
+```
+
+```bash
+helm update postgresql bitnami/postgresql-ha --version 9.2.1 \
+ ...
+  --set postgresql.extendedConfCM=psql-override-conf \
+ ...
+```
+
+#### Final test
+
+Summary config for 500k devices, 5k messages per second, 15k datapoints.
+
+To gain the 500k connection in AWS EKS with Amazon Load Balancer we allowed to receive about 100k+ connections per `c6a.large` (2 CPU / 4 Gi) instance. Tuning the node itself using kube-proxy or sysctl has no effect because of limits are on the network level (security group tracked connection limit). See the [AWS Security group connection tracking and throttling](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html) for details. 
+
+Total connections per `tb-mqtt-transport` pod (and node as well) is about 500k / (5+1) = 83k. 
+
+Why we are using one more node and leaving the spare connections? It is all about fault tolerance. 
+During a single pod/pod restart, the rest of 5 nodes can handle the load. So +1 nodes means that we tolerate 1 node failure.
+You can add as many nodes as fault tolerance required in your cluster design.
+
+The summary cluster config: 
+
+| Node group | Instances (vCPU/Gi)    | Micro services                                                                |
+|------------|------------------------|-------------------------------------------------------------------------------|
+| transport  | 6 * c6a.large (2/4)    | 6 * tb-mqtt-transport                                                         |
+| worker     | 3 * m6a.xlarge (4/16)  | 3 * tb-core </br> 3 * tb-rule-engine </br> 6 * tb-js-executor </br> 6 * redis |
+| cassandra  | 3 * c6i.xlarge (4/8)   | 3 * cassandra                                                                 |
+| postgresql | 2 * c6i.xlarge (4/8)   | 2 * postgresql                                                                |
+| pgpool     | 1 * c6a.2xlarge (8/16) | 1 * pgpool                                                                    |
+| kafka      | 3 * c6i.large (2/4)    | 3 * kafka </br> 3 * zokeeper </br> 3 * tb-web-ui                              |
+
+The Postgresql has been configured for better performance to utilize all resources available and handling the bigger data set.
+Note: With standard settings the Postgresql performance are low on 500k devices. Without tuning the Postgresql the only way to handle is to make a tradeoff considering disable persisting latest telemetry value to the Postgres in the SaveTelemetry Rule Node in the root Rule Chain.
+
+MQTT load was generated by x20 't3a.small' instances of performance-test application using `run-test.sh` script to automate the process.
+
+```bash
+# 20 instances, 500 000 devices, 5 000 messages, 15 000 data points (SMART_METER)
+DEVICES_PER_NODE=25000
+MESSAGES_PER_NODE=250
+ALARMS_PER_SECOND=1
+```
+
+Here is the screenshots
+
+{% include images-gallery.html imageCollection="500k-5k-15k" %}
+
+#### Cost-cutting
+
+It is cost-effective to pay about 1$/mo per 1000 connections for EC2 instances only? It's all depends on your use case.
+Probably you can **cut the expenses** using the **NodePort** service instead of LoadBalancer. 
+It needs to advertise the **node external IP address** to some **DNS service** using **initContainer** attached to `tb-mqtt-transport` pod. 
+Connecting to nodes directly will consider by AWS as **untracked** traffic and your instance can handle **up to the 1M TCP connections**. 
+On the application level you probably will not put a 1M connections on a single instance, because of **fault tolerance**.
+In case of instance failure it will lead to the 1M reconnect requests.
+In the worst case scenario the MQTT clients will try to reconnect and auth immediately at the same time.
+Sounds like self-made DDoS attack? Exactly!
+That is not a good idea at all. 
+You can try to spin up many small and cheap `ARM` arch instances like `c6g.medium` (1CPU/2Gi) for 26$ (or 13$ reserved for 3 year).
+And put about 130k connections each. This may cut the costs down to 1$ per 10k devices for mqtt connectivity. 
+You can try and share your experience with [ThingsBoard's community](https://github.com/thingsboard/thingsboard/issues).
