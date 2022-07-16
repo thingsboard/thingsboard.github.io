@@ -865,7 +865,7 @@ spec:
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 1
+            - weight: 9
               podAffinityTerm:
                 labelSelector:
                   matchExpressions:
@@ -1001,7 +1001,7 @@ spec:
       affinity:
         podAntiAffinity:
           preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 1
+            - weight: 9
               podAffinityTerm:
                 labelSelector:
                   matchExpressions:
@@ -1357,16 +1357,14 @@ spec:
         role: transport
       affinity:
         podAntiAffinity:
-          preferredDuringSchedulingIgnoredDuringExecution:
-            - weight: 1
-              podAffinityTerm:
-                labelSelector:
-                  matchExpressions:
-                    - key: app
-                      operator: In
-                      values:
-                        - tb-mqtt-transport
-                topologyKey: kubernetes.io/hostname
+          requiredDuringSchedulingIgnoredDuringExecution:
+            - labelSelector:
+                matchExpressions:
+                  - key: app
+                    operator: In
+                    values:
+                      - tb-mqtt-transport
+              topologyKey: kubernetes.io/hostname
       volumes:
         - name: tb-mqtt-transport-config
           configMap:
@@ -1394,7 +1392,7 @@ spec:
 #              memory: 1Gi
           env:
             - name: JAVA_OPTS
-              value: "-Xmx2048M -Xms2048M -Xss256k -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
+              value: "-Xmx1024M -Xms1024M -Xss256k -XX:+AlwaysPreTouch -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=9999 -Dcom.sun.management.jmxremote.rmi.port=9999 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false -Djava.rmi.server.hostname=127.0.0.1"
             - name: TB_SERVICE_ID
               valueFrom:
                 fieldRef:
@@ -2110,11 +2108,11 @@ Let's move tb-mqtt-transport using node selector in `tb-mqtt-transport.yml`
 Scaling nodes
 
 ```bash
-eksctl scale nodegroup --cluster=performance-test --nodes=6 --nodes-max=6 transport
+eksctl scale nodegroup --cluster=performance-test --nodes=6 --nodes-max=6 transport-large
 ```
 
 ```bash
-kubectl scale --replicas=10 sts tb-mqtt-transport
+kubectl scale --replicas=6 sts tb-mqtt-transport
 ```
 
 Check the pod distribution across the nodes and roles:
@@ -2153,6 +2151,8 @@ kubectl get pods -w -n kube-system
 kubectl exec -it tb-mqtt-transport-0 -- sysctl -a | grep conntrack_max
 # net.netfilter.nf_conntrack_max = 1048576
 ```
+
+Note: when the resources not set for the container the Java application will show a single CPU available. It is possible the Kubernetes cluster have a default resources limits, so the best practice is to assign resources limits and requests. Sometime application choose parallelism level depends on CPU available, so take care with this parameter.
 
 Here is the screenshots with tunings
 
@@ -2316,3 +2316,72 @@ That is not a good idea at all.
 You can try to spin up many small and cheap `ARM` arch instances like `c6g.medium` (1CPU/2Gi) for 26$ (or 13$ reserved for 3 year).
 And put about 130k connections each. This may cut the costs down to 1$ per 10k devices for mqtt connectivity. 
 You can try and share your experience with [ThingsBoard's community](https://github.com/thingsboard/thingsboard/issues).
+
+## Million device
+
+Scaling Transport node group up to 12 instances, core and rule engine up to 6.
+
+```bash
+eksctl scale nodegroup --cluster=performance-test --nodes=12 --nodes-max=12 transport-large
+eksctl scale nodegroup --cluster=performance-test --nodes=6 --nodes-max=6 worker-xlarge
+``` 
+
+Applying hard (required) anti affinity and node selector for `tb-mqtt-transport` statefulset.
+
+```yaml
+spec:
+  nodeSelector:
+    role: transport
+  affinity:
+    podAntiAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        - labelSelector:
+            matchExpressions:
+              - key: app
+                operator: In
+                values:
+                  - tb-mqtt-transport
+          topologyKey: kubernetes.io/hostname
+```
+
+Memory setting for tb-mqtt-transport is 1 GiB only:
+```yaml
+JAVA_OPTS: "-Xmx1024M -Xms1024M -Xss256k -XX:+AlwaysPreTouch"
+```
+
+Scaling up ThingsBoard pods.
+
+```bash
+kubectl scale --replicas=12 sts tb-mqtt-transport
+kubectl scale --replicas=6 sts tb-node tb-rule-engine
+```
+
+Check pods layout on nodes by roles:
+
+```bash
+kubectl get pods -o=custom-columns=ROLE:spec.nodeSelector.role,NODE:.spec.nodeName,POD:.metadata.name | tail +2 | sort
+```
+
+The summary cluster config:
+
+| Node group | Instances (vCPU/Gi)    | Micro services         |
+|------------|------------------------|------------------------|
+| transport  | 12 * c6a.large (2/4)   | 12 * tb-mqtt-transport |
+| worker     | 6 * m6a.xlarge (4/16)  | 6 * tb-core            |
+|            |                        | 6 * tb-rule-engine     |
+|            |                        | 6 * tb-js-executor     |
+|            |                        | 6 * redis              |
+| cassandra  | 3 * c6i.xlarge (4/8)   | 3 * cassandra          |
+| postgresql | 2 * c6i.xlarge (4/8)   | 2 * postgresql         |
+| pgpool     | 1 * c6a.2xlarge (8/16) | 1 * pgpool             |
+| kafka      | 3 * c6i.large (2/4)    | 3 * kafka              |
+|            |                        | 3 * zookeeper          |
+|            |                        | 3 * tb-web-ui          |
+
+Here are some fresh screenshots:
+
+{% include images-gallery.html imageCollection="1million-5k-15k" %}
+
+## Conclusion
+
+...to be written soon
