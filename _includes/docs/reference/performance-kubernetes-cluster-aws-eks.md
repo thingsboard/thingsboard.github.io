@@ -2317,7 +2317,9 @@ You can try to spin up many small and cheap `ARM` arch instances like `c6g.mediu
 And put about 130k connections each. This may cut the costs down to 1$ per 10k devices for mqtt connectivity. 
 You can try and share your experience with [ThingsBoard's community](https://github.com/thingsboard/thingsboard/issues).
 
-## Million device
+## Million devices
+
+The goal is 1 million devices, 5k messages per second, 15k data points per second
 
 Scaling Transport node group up to 12 instances, core and rule engine up to 6.
 

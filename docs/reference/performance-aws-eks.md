@@ -138,6 +138,10 @@ one-million-5k-15k:
     5:
         image: /images/reference/performance-kubernetes-cluster-aws-eks/1million-5k-15k/run-performance-test-from-32-instances.png
         title: 'Run performance test from 32 instances'
+    6:
+        image: /images/reference/performance-kubernetes-cluster-aws-eks/1million-5k-15k/cluster-nodes-cpu-usage.png 
+        title: 'Thingsboard cluster Kubernetes nodes CPU usage'
+
 ---
 
 {% include /docs/reference/performance-kubernetes-cluster-aws-eks.md %}
