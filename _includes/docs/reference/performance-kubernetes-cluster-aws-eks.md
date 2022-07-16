@@ -2380,7 +2380,7 @@ The summary cluster config:
 
 Here are some fresh screenshots:
 
-{% include images-gallery.html imageCollection="1million-5k-15k" %}
+{% include images-gallery.html imageCollection="one-million-5k-15k" %}
 
 ## Conclusion
 

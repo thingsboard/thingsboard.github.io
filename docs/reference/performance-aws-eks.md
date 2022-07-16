@@ -77,7 +77,7 @@ cluster-500k-5k-15k-experiments:
         title: 'Postgresql on pgconfigurator.cybertec.at for 4 vCPU and 8GiB memory to utilize 100% compute resources'
     7:
         image: /images/reference/performance-kubernetes-cluster-aws-eks/500k-5k-15k-experiments/skip-latest-persistence-feature.png
-        title: 'Performance tradeoff to skip latest persistence (feature of ThingsBoard's SaveTelemetry rule node). Used to fast investigate Postgresql bottleneck if exist'
+        title: 'Performance tradeoff to skip latest persistence (feature of ThingsBoard SaveTelemetry rule node). Used to fast investigate Postgresql bottleneck if exist'
     8:
         image: /images/reference/performance-kubernetes-cluster-aws-eks/500k-5k-15k-experiments/available-processor-one-jmx-when-no-resources-limit-defined.png
         title: 'JMX shows that only a single processor available on multiprocessor instance when resource limit and request not set'
@@ -119,7 +119,7 @@ cluster-500k-5k-15k:
         image: /images/reference/performance-kubernetes-cluster-aws-eks/500k-5k-15k/performance-test-20-t3a-small-instances.png
         title: 'x20 Performance test instances to generate the load'
 
-1million-5k-15k:
+one-million-5k-15k:
     0:
         image: /images/reference/performance-kubernetes-cluster-aws-eks/1million-5k-15k/queue-stats.png
         title: 'Thingsboard queue stats for cluster with 1 million devices'
