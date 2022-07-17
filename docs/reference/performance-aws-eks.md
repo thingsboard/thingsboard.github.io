@@ -124,21 +124,27 @@ one-million-5k-15k:
         image: /images/reference/performance-kubernetes-cluster-aws-eks/1million-5k-15k/queue-stats.png
         title: 'Thingsboard queue stats for cluster with 1 million devices'
     1:
+        image:/images/reference/performance-kubernetes-cluster-aws-eks/1million-5k-15k/api-usage.png
+        title: 'Thingsboard API usage for cluster with 1 million devices'
+    2:
         image: /images/reference/performance-kubernetes-cluster-aws-eks/1million-5k-15k/million-devices-created.png
         title: 'Million device list'
-    2:
+    3:
         image: /images/reference/performance-kubernetes-cluster-aws-eks/1million-5k-15k/pod-distribution-across-nodes-and-roles.png  
         title: 'Pod distribution across the nodes by roles'
-    3:
+    4:
         image: /images/reference/performance-kubernetes-cluster-aws-eks/1million-5k-15k/tb-mqtt-transport-connected.png
         title: 'Thingsboard MQTT transport 83k devices connected on a single pod'
-    4:
+    5:
         image: /images/reference/performance-kubernetes-cluster-aws-eks/1million-5k-15k/connected-successfully.png
         title: 'Transports connected successfully'
-    5:
+    6:
         image: /images/reference/performance-kubernetes-cluster-aws-eks/1million-5k-15k/run-performance-test-from-32-instances.png
         title: 'Run performance test from 32 instances'
-    6:
+    7:
+        image: /images/reference/performance-kubernetes-cluster-aws-eks/1million-5k-15k/cluster-volumes-write-throughput.png
+        title: 'Thingsboard cluster Kubernetes write throughput (Ops/s)'
+    8:
         image: /images/reference/performance-kubernetes-cluster-aws-eks/1million-5k-15k/cluster-nodes-cpu-usage.png 
         title: 'Thingsboard cluster Kubernetes nodes CPU usage'
 
