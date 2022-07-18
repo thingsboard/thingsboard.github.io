@@ -408,9 +408,12 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				</div>
 				<div class="row container button-container">
 					<a class="btn-blue" href="/docs/user-guide/install/edge/installation-options/">
-						Install
+						Install Edge CE
 					</a>
-					<a class="btn-blue" href="/pricing/">
+					<a class="btn-blue" href="/docs/user-guide/install/pe/edge/installation-options/">
+						Install Edge PE
+					</a>
+					<a class="btn-blue" href="/pricing/?active=thingsboard-edge">
 						Pricing
 					</a>
 				</div>
@@ -520,6 +523,8 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 		$("div.install-content#"+sectionId).css("display", "block");
 	}
 </script>
+
+{% include cookie-consent.html %}
 
 </body>
 </html>

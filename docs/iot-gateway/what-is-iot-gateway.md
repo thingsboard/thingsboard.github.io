@@ -26,6 +26,7 @@ ThingsBoard IoT Gateway provides following features:
  - [**REST** connector](/docs/iot-gateway/config/rest/) to create endpoints and collect data from incoming HTTP requests.
  - [**SNMP** connector](/docs/iot-gateway/config/snmp/) to collect data from SNMP managers.
  - [**FTP** connector](/docs/iot-gateway/config/ftp/) to collect data from FTP server
+ - [**Socket** connector](/docs/iot-gateway/config/socket/) to collect data from IoT device that are connector through TCP/UDP protocol
  - [**Custom** connector](/docs/iot-gateway/custom/) to collect data from IoT devices that are connected by different protocols. (You can create your own connector for the requires protocol).
  - **Persistence** of collected data to guarantee data delivery in case of network or hardware failures.
  - **Automatic reconnect** to ThingsBoard cluster.
