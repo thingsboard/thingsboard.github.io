@@ -58,6 +58,9 @@ toc:
     path: /docs/pe/user-guide/rule-engine-2-0/overview/
   - title: Architecture
     path: /docs/pe/user-guide/rule-engine-2-0/architecture/
+  - title: Queues
+    path: /docs/pe/user-guide/rule-engine-2-5/queues/
+    new: true
   - title: Nodes
     section:
     - title: Filter Nodes

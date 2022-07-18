@@ -92,30 +92,22 @@ You can define multiple intervals with ",". For example, "100:1,1000:60" means "
 
 {% include images-gallery.html imageCollection="rateLimits" %}
 
-## Processing in isolated ThingsBoard Core and Rule Engine containers
+## Processing in isolated ThingsBoard Rule Engine queues
 
-Isolated processing should be disabled by default. These options are only useful in rare cases of a [microservices](/docs/{{docsPrefix}}reference/msa/) deployment.
-Experienced DevOps / System Administrators are required to configure the ThingsBoard cluster to use these settings. 
-Misconfiguration may cause issues with the processing of incoming messages. 
-ThingsBoard team is working to simplify the configuration process and expect to provide improvements in ThingsBoard 3.3 release.  
-
-Starting ThingsBoard 2.5 you may deploy isolated Core and Rule Engine [microservices](/docs/{{docsPrefix}}reference/msa/) for each or specific tenants. 
-ThingsBoard Core is responsible for handling WebSocket subscriptions, tracking device connectivity, and other calculations that are not directly related to message processing.
 ThingsBoard Rule Engine is the main "worker" in the cluster and is responsible for processing incoming messages.
 
-By default, all messages (such as telemetry, connectivity, and lifecycle events) are pushed to the same message queue/topic (powered by Kafka, RabbitMQ, AWS SQS, Azure Service Bus, Goole Pub/Sub).
+By default, all messages (such as telemetry, connectivity, and lifecycle events) are pushed to the same message queue/topic (powered by Kafka, RabbitMQ, AWS SQS, Azure Service Bus, Google Pub/Sub).
 ThingsBoard pushes messages for all Tenants to a common queue when isolated processing is disabled (default). 
-This requires fewer processing resources and allows data from multiple Tenants to be processed under a single Rule Engine.
-This way, you don't need to host a separate container or VM per Tenant.  
 
 ThingsBoard pushes messages to a separate queue when you select processing to be isolated for a particular tenant. 
-This provides a better level of isolation for those tenants. However, this also requires you to launch separate microservices for a particular Tenant. 
-In order to do this, you should specify the TB_SERVICE_TENANT_ID environment variable for that microservice. The value should be set to the isolated Tenant Id.
-This will instruct Rule Engine / Core microservice to subscribe to specific message queue topics that contain data for that particular Tenant.    
+This provides a better level of isolation for those tenants. However, this also requires you to create tenant profile with enabled "isolated ThingsBoard Rule Engine" box and assign for a particular Tenant. 
+This will instruct Rule Engine to subscribe to specific message queue topics that contain data for that particular Tenant.
 
+### Queue configuration for isolated tenants
 
+{% include images-gallery.html imageCollection="isolatedQueueConfiguration" showListImageTitles="true"%}
 
+After assigning tenant profile for a particular tenant configured queues automatically created and started, and ready
+for using in rule chain or device profile.
 
-
- 
-    
+More about queue settings in [guide](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-settings)
