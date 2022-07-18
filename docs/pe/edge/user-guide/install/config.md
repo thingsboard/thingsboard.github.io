@@ -1748,9 +1748,6 @@ We will list only main configuration parameters below to avoid duplication of th
 </table>
 
 
-#### Logging
-
-
 #### tb-edge.conf
 
 The configuration file for the startup script. Contains Java options and classpath related parameters.
