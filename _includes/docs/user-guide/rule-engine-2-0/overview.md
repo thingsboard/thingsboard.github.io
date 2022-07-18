@@ -82,6 +82,22 @@ Similar, if "Save to DB" call will succeed, the message will be successfully pro
 However, if the external system will not reply within 20 seconds, the message processing attempt will be marked as "timed-out".
 Similar, if "Save to DB" call will fail, the message will be marked as failed.
 
+#### Rule Engine Queue
+
+See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)
+
+##### Queue submit strategy
+
+See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy)
+
+##### Queue processing strategy
+
+See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy)
+
+##### Default queues
+
+See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#default-queues)
+
 ## Predefined Message Types
 
 List of the predefined Message Types is presented in the following table:
@@ -332,7 +348,7 @@ Similar, to import the rule chain you should navigate to the **Rules Chains** pa
 
 ## Architecture
 
-To learn more about internals of the rule engine, see [architecture](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/architecture/) page.
+To learn more about internals of the rule engine, see [architecture](/docs/{{docsPrefix}}reference/) page.
 
 ## Custom REST API calls to Rule Engine
 

@@ -28,12 +28,12 @@ This setting is available in the Device Profile wizard and in the Device Profile
 
 ### Queue Name
 
-By default, the [Main](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-queue) queue will be used to store all incoming messages and events from any device.
+By default, the [Main](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/) queue will be used to store all incoming messages and events from any device.
 The transport layer will submit messages to this queue and Rule Engine will poll the queue for new messages.
 However, for multiple use cases, you might want to use different queues for different devices. 
 For example, you might want to isolate data processing for Fire Alarm/Smoke Detector sensors and other devices.
 This way, even if your system has a peak load produced by millions of water meters, whenever the Fire Alarm is reported, it will be processed without delay.
-Separation of the queues also allows you to customize different [submit](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#queue-submit-strategy) and [processing](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#queue-processing-strategy) strategies.
+Separation of the queues also allows you to customize different [submit](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy) and [processing](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy) strategies.
 
 This setting is available in the Device Profile wizard and Device Profile details.{% unless docsPrefix == 'paas/' %}
 **Please note** that if you choose to use a custom queue name, you should configure it in the [thingsboard.yml](/docs/{{docsPrefix}}user-guide/install/config/#thingsboard-core-settings) file before you using it.
