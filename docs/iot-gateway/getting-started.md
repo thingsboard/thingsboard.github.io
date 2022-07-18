@@ -63,19 +63,40 @@ Change **host** and **port** properties in the section *"thingsboard"* to your T
 
 Change **accessToken** property in the section *"security"* to your access token that was copied during step 3.
 
-You gateway configuration should look similar to this file:
+Your gateway configuration should look similar to this file:
 
 ```yaml
 
 thingsboard:
   host: thingsboard.cloud
   port: 1883
+  remoteShell: false
+  remoteConfiguration: false
+  statistics:
+    enable: true
+    statsSendPeriodInSeconds: 3600
+  minPackSendDelayMS: 0
+  checkConnectorsConfigurationInSeconds: 60
+  handleDeviceRenaming: true
+  checkingDeviceActivity:
+    checkDeviceInactivity: false
+    inactivityTimeoutSeconds: 120
+    inactivityCheckPeriodSeconds: 10
   security:
-    accessToken: FUH2Fonov6eajSHi0Zyw
+    accessToken: PUT_YOUR_GW_ACCESS_TOKEN_HERE
 storage:
   type: memory
   read_records_count: 10
   max_records_count: 1000
+grpc:
+  enabled: false
+  serverPort: 9595
+  keepaliveTimeMs: 10000
+  keepaliveTimeoutMs: 5000
+  keepalivePermitWithoutCalls: true
+  maxPingsWithoutData: 0
+  minTimeBetweenPingsMs: 10000
+  minPingIntervalWithoutDataMs: 5000
 connectors:
 
   -
@@ -124,4 +145,5 @@ After successful installation you should configure the connectors to connect to 
  - [**Request** connector](/docs/iot-gateway/config/request/)
  - [**CAN** connector](/docs/iot-gateway/config/can/)
  - [**FTP** connector](/docs/iot-gateway/config/ftp/)
+ - [**Socket** connector](/docs/iot-gateway/config/socket/)
  - [**Custom** connector](/docs/iot-gateway/custom/)
