@@ -15,10 +15,9 @@ Major release with the following features and bug fixes:
 **Major Improvements:**
 
 * Core & Rule Engine:
-  * [#6534](https://github.com/thingsboard/thingsboard/pull/6534) Configuration of Rule Engine queues via Tenant Profiles. See PRs: [#6643](https://github.com/thingsboard/thingsboard/pull/6643);
-  * [#6070](https://github.com/thingsboard/thingsboard/issues/6070) 2FA support. See PRs: [#6646](https://github.com/thingsboard/thingsboard/pull/6646);
-  * [#6759](https://github.com/thingsboard/thingsboard/pull/6759) Version Control (Git integration);
-    [#6654](https://github.com/thingsboard/thingsboard/pull/6654), [#6704](https://github.com/thingsboard/thingsboard/pull/6704);
+  * [#6534](https://github.com/thingsboard/thingsboard/pull/6534) Configuration of Rule Engine queues via Tenant Profiles. See documentation [here](/docs/user-guide/rule-engine-2-5/queues/);
+  * [#6070](https://github.com/thingsboard/thingsboard/issues/6070) 2FA support. See documentation [here](/docs/user-guide/two-factor-authentication/).
+  * [#6759](https://github.com/thingsboard/thingsboard/pull/6759) Version Control (Git integration). See documentation [here](/docs/user-guide/version-control/).
   * [#6893](https://github.com/thingsboard/thingsboard/pull/6893) Refactor JS-Executor microservice to typescript;  
 * UI:
   * [#6334](https://github.com/thingsboard/thingsboard/issues/6334) Support of the latest values support for time-series widgets;

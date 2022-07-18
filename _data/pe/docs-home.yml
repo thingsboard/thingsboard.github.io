@@ -152,6 +152,7 @@ toc:
       path: /docs/pe/user-guide/api-limits/
     - title: Version Control
       path: /docs/pe/user-guide/version-control/
+      new: true
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning
