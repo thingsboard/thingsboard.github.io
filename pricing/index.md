@@ -363,7 +363,7 @@ defaultActivePricingSection: thingsboard-pe-options
                             <p>Use your ThingsBoard instance forever</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
-                            $2999
+                            $4999
                         </h4>                  
                         <div class="row justify-content-center">
                             <button class="btn-blue btn-pricing" 
