@@ -20,7 +20,7 @@ Major release with the following features and bug fixes:
   * [#6759](https://github.com/thingsboard/thingsboard/pull/6759) Version Control (Git integration). See documentation [here](/docs/user-guide/version-control/).
   * [#6893](https://github.com/thingsboard/thingsboard/pull/6893) Refactor JS-Executor microservice to typescript;  
 * UI:
-  * [#6334](https://github.com/thingsboard/thingsboard/issues/6334) Support of the latest values support for time-series widgets;
+  * [#6334](https://github.com/thingsboard/thingsboard/issues/6334) Support of the latest values in the time-series widgets;
   * [#6545](https://github.com/thingsboard/thingsboard/pull/6545) Replace auto-generated advanced widget settings JSON forms with Angular components;
 * Edge:
   * [#6781](https://github.com/thingsboard/thingsboard/pull/6781) Edge OTA support;
