@@ -126,10 +126,10 @@ That is why, you may only [configure](/docs/{{docsPrefix}}user-guide/install/con
 ## Data durability
 
 The device that sends message with time-series data to ThingsBoard will receive confirmation 
-once the message is successfully stored into the Rule Engine [Queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-queue) 
+once the message is successfully stored into the Rule Engine [Queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/) 
 that is configured for particular device [profile](/docs/{{docsPrefix}}user-guide/device-profiles/#queue-name).
 
-As a tenant administrator, you may configure [processing strategy](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#queue-processing-strategy) for the queue.
+As a tenant administrator, you may configure [processing strategy](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy) for the queue.
 You may configure the queue either to reprocess or ignore the failures of the message processing. 
 This allows granular control on the level of durability for the time-series data and all other messages processed by the rule engine. 
 
