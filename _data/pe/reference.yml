@@ -13,5 +13,5 @@ toc:
   path: /docs/pe/reference/performance-aws-instances/
   new: true
 - title: Cluster Performance on AWS EKS
-  path: /docs/reference/performance-aws-eks/
+  path: /docs/pe/reference/performance-aws-eks/
   new: true
