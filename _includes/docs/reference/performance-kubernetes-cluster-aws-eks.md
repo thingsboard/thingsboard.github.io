@@ -290,6 +290,12 @@ It is a good point for the big scale to improve the [source code](https://github
 
 #### Tuning Postgresql
 
+We have to configure Postgresql to utilize all resources available.
+For this purpose let's use a fancy [Postgresql online configurator](http://pgconfigurator.cybertec.at/).
+All we need to do is to supply our parameters and get a resulting configuration.
+
+The only thing we would like to add is a preloaded shared library `pg_stat_statements` for future query stat analysis.
+
 ```bash
 cat > psql-override-conf.yml
 ```
@@ -305,8 +311,6 @@ data:
     # DISCLAIMER - Software and the resulting config files are provided "AS IS" - IN NO EVENT SHALL
     # BE THE CREATOR LIABLE TO ANY PARTY FOR DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL
     # DAMAGES, INCLUDING LOST PROFITS, ARISING OUT OF THE USE OF THIS SOFTWARE AND ITS DOCUMENTATION.
-    
-    # The tool used: http://pgconfigurator.cybertec.at/
 
     # Connectivity
     max_connections = 300
@@ -392,31 +396,41 @@ helm update postgresql bitnami/postgresql-ha --version 9.2.1 \
 
 #### Final test
 
-Summary config for 500k devices, 5k messages per second, 15k datapoints.
+The goal is 500k devices, 5k messages per second, and 15k data points.
 
-To gain the 500k connection in AWS EKS with Amazon Load Balancer we allowed to receive about 100k+ connections per `c6a.large` (2 CPU / 4 Gi) instance. Tuning the node itself using kube-proxy or sysctl has no effect because of limits are on the network level (security group tracked connection limit). See the [AWS Security group connection tracking and throttling](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html) for details. 
+To gain the 500k connection in AWS EKS with Amazon Load Balancer, we can receive about 100k+ connections per `c6a.large` (2 CPU / 4 Gi) instance. 
+Tuning the nodes using `kube-proxy` or `sysctl` has no effect because limits are on the network level (AWS security group tracked connection limit). 
+See the [AWS Security group connection tracking and throttling](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-group-connection-tracking.html) for details.
 
-Total connections per `tb-mqtt-transport` pod (and node as well) is about 500k / (5+1) = 83k. 
+Average connections per `tb-mqtt-transport` pod (and node as well) is about 500k / (5+1) = 83k.
 
-Why we are using one more node and leaving the spare connections? It is all about fault tolerance. 
-During a single pod/pod restart, the rest of 5 nodes can handle the load. So +1 nodes means that we tolerate 1 node failure.
+Why are we using one more node and leaving the spare connections? It is all about fault tolerance.
+During a single pod/pod restart, the rest of the 5 nodes can handle the load. So +1 node means that we tolerate 1 node failure.
 You can add as many nodes as fault tolerance required in your cluster design.
 
-The summary cluster config: 
+The summary cluster config:
 
-| Node group | Instances (vCPU/Gi)    | Micro services                                                                |
-|------------|------------------------|-------------------------------------------------------------------------------|
-| transport  | 6 * c6a.large (2/4)    | 6 * tb-mqtt-transport                                                         |
-| worker     | 3 * m6a.xlarge (4/16)  | 3 * tb-core </br> 3 * tb-rule-engine </br> 6 * tb-js-executor </br> 6 * redis |
-| cassandra  | 3 * c6i.xlarge (4/8)   | 3 * cassandra                                                                 |
-| postgresql | 2 * c6i.xlarge (4/8)   | 2 * postgresql                                                                |
-| pgpool     | 1 * c6a.2xlarge (8/16) | 1 * pgpool                                                                    |
-| kafka      | 3 * c6i.large (2/4)    | 3 * kafka </br> 3 * zokeeper </br> 3 * tb-web-ui                              |
+| Node group | Instances (vCPU/Gi)    | Micro services        |
+|------------|------------------------|-----------------------|
+| transport  | 6 * c6a.large (2/4)    | 6 * tb-mqtt-transport |
+| worker     | 3 * m6a.xlarge (4/16)  | 3 * tb-core           |
+|            |                        | 3 * tb-rule-engine    |
+|            |                        | 6 * tb-js-executor    |
+|            |                        | 6 * redis             |
+| cassandra  | 3 * c6i.xlarge (4/8)   | 3 * cassandra         |
+| postgresql | 2 * c6i.xlarge (4/8)   | 2 * postgresql        |
+| pgpool     | 1 * c6a.2xlarge (8/16) | 1 * pgpool            |
+| kafka      | 3 * c6i.large (2/4)    | 3 * kafka             |
+|            |                        | 3 * zokeeper          |
+|            |                        | 3 * tb-web-ui         |
 
-The Postgresql has been configured for better performance to utilize all resources available and handling the bigger data set.
-Note: With standard settings the Postgresql performance are low on 500k devices. Without tuning the Postgresql the only way to handle is to make a tradeoff considering disable persisting latest telemetry value to the Postgres in the SaveTelemetry Rule Node in the root Rule Chain.
+Postgresql has been configured for better performance to utilize all resources available and handle the extensive data set.
 
-MQTT load was generated by x20 't3a.small' instances of performance-test application using `run-test.sh` script to automate the process.
+Note: The Postgresql performance is low on 500k devices with standard settings. 
+Without tuning the Postgresql, the only way to handle it is to make a tradeoff considering disabling persisting the latest telemetry value to the Postgresql. 
+But this is not the way for this particular performance test.
+
+MQTT load was generated by x20 `t3a.small` instances of `performance-test` application using `run-test.sh` script to automate the process.
 
 ```bash
 # 20 instances, 500 000 devices, 5 000 messages, 15 000 data points (SMART_METER)
@@ -425,30 +439,31 @@ MESSAGES_PER_NODE=250
 ALARMS_PER_SECOND=1
 ```
 
-Here is the screenshots
+Here are the screenshots with the results:
 
 {% include images-gallery.html imageCollection="cluster-500k-5k-15k" %}
 
 #### Cost-cutting
 
-It is cost-effective to pay about 1$/mo per 1000 connections for EC2 instances only? It's all depends on your use case.
-Probably you can **cut the expenses** using the **NodePort** service instead of LoadBalancer. 
-It needs to advertise the **node external IP address** to some **DNS service** using **initContainer** attached to `tb-mqtt-transport` pod. 
-Connecting to nodes directly will consider by AWS as **untracked** traffic and your instance can handle **up to the 1M TCP connections**. 
-On the application level you probably will not put a 1M connections on a single instance, because of **fault tolerance**.
-In case of instance failure it will lead to the 1M reconnect requests.
-In the worst case scenario the MQTT clients will try to reconnect and auth immediately at the same time.
-Sounds like self-made DDoS attack? Exactly!
-That is not a good idea at all. 
-You can try to spin up many small and cheap `ARM` arch instances like `c6g.medium` (1CPU/2Gi) for 26$ (or 13$ reserved for 3 year).
-And put about 130k connections each. This may cut the costs down to 1$ per 10k devices for mqtt connectivity. 
-You can try and share your experience with [ThingsBoard's community](https://github.com/thingsboard/thingsboard/issues).
+Is it cost-effective to pay about 1$/mo per 1000 connections for EC2 instances only? It all depends on your use case.
+Probably you can **cut the expenses** using the **NodePort** service instead of LoadBalancer.
+It needs to advertise the **node external IP address** to some **DNS service** using **initContainer** attached to `tb-mqtt-transport` pod.
+Connecting directly to nodes will consider by AWS as **untracked** traffic, and your instance can handle about **1M TCP connections**.
+On the application level, you probably will not put a 1M connections on a single instance because of **fault tolerance**.
+In case of instance failure, it will lead to the 1M reconnect requests.
+In the worst-case scenario, the MQTT clients will try to reconnect and auth immediately at the same time.
+Does it sound like a self-made DDoS attack? Exactly!
+That is not a good idea at all.
+You can try to spin up many small and cheap `ARM` arch instances like `c7g.medium` (1CPU/2Gi) for 28$ (or 13$ reserved for 3 year).
+And put about 130k connections each. It may cut the costs down to 1$ per 10k devices for MQTT connectivity.
+Please, feel free to try and share your experience with [ThingsBoard's community](https://github.com/thingsboard/thingsboard/issues).
 
 ## Million devices
 
-The goal is 1 million devices, 5k messages per second, 15k data points per second
+The goal is 1 million devices, 5k messages per second, and 15k data points per second.
 
-Scaling Transport node group up to 12 instances, core and rule engine up to 6.
+We are scaling the Transport node group up to 12 instances.
+Scaling up ThingsBoard core and rule engine up to 6.
 
 ```bash
 eksctl scale nodegroup --cluster=performance-test --nodes=12 --nodes-max=12 transport-large
@@ -456,7 +471,7 @@ eksctl scale nodegroup --cluster=performance-test --nodes=6 --nodes-max=6 worker
 ``` 
 {: .copy-code}
 
-Applying hard (required) anti affinity and node selector for `tb-mqtt-transport` statefulset.
+We are applying hard (required) anti-affinity and node selector for the `tb-mqtt-transport` statefulset to have only one transport per node (EC2 instance).
 
 ```yaml
 spec:
@@ -475,7 +490,8 @@ spec:
 ```
 {: .copy-code}
 
-Memory setting for tb-mqtt-transport is 1 GiB only:
+Maintain the memory setting for `tb-mqtt-transport` is 1 GiB only:
+
 ```yaml
 JAVA_OPTS: "-Xmx1024M -Xms1024M -Xss256k -XX:+AlwaysPreTouch"
 ```
@@ -511,10 +527,14 @@ The summary cluster config:
 |            |                        | 3 * zookeeper          |
 |            |                        | 3 * tb-web-ui          |
 
-Here are some fresh screenshots:
+Here are some resulting screenshots for the ThingsBoard 1 million device operation:
 
 {% include images-gallery.html imageCollection="cluster-1-million-5k-15k" %}
 
 ## Conclusion
 
-...to be written soon
+The **ThingsBoard** shows it is **cloud**-friendly and reliable IoT software:
+ - scalable - from ones to millions devices
+ - fault tolerance - payload are evenly distributed across instances
+ - performant - CPU and memory effective
+ - stable - long continuous run 
