@@ -1,11 +1,11 @@
 * TOC
 {:toc}
 
-Two-factor authentication is an extra layer of security designed to ensure that you're the only person who can access your ThingsBoard account, even if someone knows your password.
+Two-factor authentication is a state-of-the-art approach designed to provide an extra security layer. With 2FA, even though someone knows your password your ThingsBoard account is safe against malicious access.
 
-In addition to entering a password, you must also enter a one-time code that comes to your mail or phone. Also, you will receive a notification if someone tries to access your account.
+In addition to entering a password, one must populate a secret code that comes to a pre-configured mailbox or phone. Also, a notification will be sent if someone tries to access one's account.
 
-A one-time code is only valid for a couple of minutes or hours, after which it self-destructs. Thus, thanks to two-factor authentication, your online accounts become invulnerable to cybercriminals.
+The validity period of the secret and the remaining properties available for the system administrator can make online accounts invulnerable to cybercriminals.
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/two-factor-authentication/two-factor-authentication-ce.png)
@@ -14,20 +14,20 @@ A one-time code is only valid for a couple of minutes or hours, after which it s
 ![image](/images/user-guide/two-factor-authentication/two-factor-authentication-pe.png)
 {% endif %}
 
-### Types of two-factor authentication used in ThingsBoard:
+### Two-factor authentication options available in ThingsBoard
 
-- Authenticator app - Users need to install an app on a computer or smartphone to receive a code. The software dynamically generates codes for the user for a short period of time. After successfully logging into the account, the user needs to open the application and enter the code that the application generated. Examples of two-factor authentication software are Google Authenticator, Authy, or Duo;
-- Two-factor authentication via SMS - A secret one-time password is sent to the smartphone user in an SMS message. For correct operation of two-factor authentication via SMS, don't forget to set up an [SMS provider settings](/docs/user-guide/ui/sms-provider-settings/);
-- Two-factor authentication by email. The user receives a secret code by mail after entering their password and username correctly. For correct operation of two-factor authentication by email, don't forget to set up an [outgoing mail server](/docs/user-guide/ui/mail-settings/);
-- The backup code is a secret one-time password that the user generates in ThingsBoard and saves in text format or prints out. Authentication by backup code can be used only in combination with the above types of authentication.
+- **Email**. With this approach, the user receives a secret code by mail after entering their valid username and password. For proper work of 2FA by email, an [outgoing mail server](/docs/user-guide/ui/mail-settings/) should be configured.
+- **SMS**. A secret one-time code is sent to the user's phone in short message. To receive SMS, a system administrator should set up the [SMS provider](/docs/user-guide/ui/sms-provider-settings/) properly.
+- **Authenticator app**. If enabled, users need to install an app on a computer or smartphone to generate a code. The software dynamically renders a short-time secrets that should be used on a second step of authentication process. A user can utilize any popular app, like Google Authenticator, Authy, or Duo.
+- **Backup code**. The backup code is a number of digits that the user generates in ThingsBoard and saves on secure device or prints out. Authentication with backup can be activated only in combination with any of the above types of authentication. The system administrator cannot configure a backup code approach as the only available 2FA option.  
 
-### Activation of two-factor authentication:
+### How to enable two-factor authentication for the platform 
 
-Follow the steps below to enable two-factor authentication for your Thingsboard instance.
+The system administrator user configures the default security policies and options for all remaining users. The former can turn on/off the possibility to use 2FA of any kind while the end user defines whether to use an additional verification or not. Follow the steps below to enable two-factor authentication for your ThingsBoard instance.
 
-1. Log in as a sysadmin to your ThingsBoard instance;
-2. Go to the two-factor-authentication section;
-3. Activate and configure one or more of the available authentication methods. Edit additional settings such as: verification message template, verification code lifetime, total allowed time for verification, etc;
+1. Log in as a sysadmin to your ThingsBoard platform instance.
+2. Go to System Settings &mdash; Two-factor authentication section.
+3. Activate and configure one or more verification methods. Edit settings for all enabled 2FA providers (verification message template, verification code lifetime, total allowed time for verification, etc) if necessary.
 4. Save changes.
 
 {% if docsPrefix == null %}
@@ -37,54 +37,55 @@ Follow the steps below to enable two-factor authentication for your Thingsboard 
 ![image](/images/user-guide/two-factor-authentication/two-factor-authentication-sysadmin-pe.png)
 {% endif %}
 
-### Setting up two-factor authentication for a user:
+### Two-factor authentication for the user login
 
-1. Log in with the account for which you will set up two-factor authentication;
-2. In the upper right corner, click on the three dots button. In the dropdown menu, go to password and authentication;
-3. Activate the authentication method that is convenient for you. You can activate one or more methods;
+If enabled, users on the platform can add an extra verification of their identity to access the data. Although 2FA can be a corporate security standard, the final decision on whether to use it or not is with a particular user. Sysadmin cannot force users to authenticate with 2FA.    
+
+1. Log in with basic credentials.
+2. In the upper right corner, click on the three dots icon. In the dropdown menu, proceed with Password and authentication. 
+3. Activate the convenient verification method. One can activate multiple providers. 
 4. Save changes.
 
 {% include images-gallery.html imageCollection="two-factor-authentication-password-and-authentication" %}
 
-*Important!* You will have access only to the authentication methods that you specified at the stage of activating two-factor authentication.
+*Important!* The list of toggleable 2FA options depends on the system administrator's settings. 
 
-You can authenticate with:
-
-###### Authenticator app:
-
-1. Click the switch to enable App Authentication;
-2. Install and open the authenticator app on your mobile phone. You can install apps like Google Authenticator, Authy, or Duo;
-3. Scan the QR code with your verification app;
-4. Enter the 6-digit code from your verification app;
-5. Success! Authentication by app is enabled. The next time you log in, you will need to provide the code received in the two-factor authentication application;
-6. After you entered login and password for your ThingsBoard account, enter the secret code from your authenticator app.
-
-{% include images-gallery.html imageCollection="two-factor-authentication-app" %}
-
-###### SMS
-
-1. Click the switch to enable authentication by SMS;
-2. Enter a phone number to use as your authenticator;
-3. Enter the 6-digit code that was sent to the previously specified phone number;
-4. Success! Authentication by SMS is enabled. The next time you log in, you will need to provide the code received in the SMS;
-5. After you entered login and password for your ThingsBoard account, enter the secret code from SMS.
-
-{% include images-gallery.html imageCollection="two-factor-authentication-sms" %}
-
-###### Email
-1. Click the switch to enable authentication by email;
-2. Enter an email to use as your authenticator;
-3. Enter the 6-digit code that was just sent to johndoe@thingsboard.io;
-4. Success! Authentication by email is enabled. The next time you log in, you will need to provide the code received in the email;
-5. After you entered login and password for your ThingsBoard account, enter the secret code from the email.
+###### 2FA with email
+1. Enable authentication by email.
+2. Enter an email to receive a secret code.
+3. Enter the 6-digit code from the verification email.
+4. The next time the user logs in, he/she will need to provide the code received by email.
+5. While login, on your first step the user enters the email and password. Afterward, the security code from a mailbox should be populated.
 
 {% include images-gallery.html imageCollection="two-factor-authentication-email" %}
 
-###### Backup code
+###### 2FA with Authenticator app:
 
-1. Click the switch to enable authentication with backup code;
-2. You will see codes for logging into your account. You can download them (txt) or print them. Each backup code can only be used only once;
-3. After you entered login and password for your ThingsBoard account, switch to verify your identity with a backup code;
+1. Enable authentication with the external app.
+2. Install and open the authenticator app on the device. 
+3. Scan a QR code using the application.
+4. Enter the 6-digit code from authenticator.
+5. The next time the user logs in, he/she will need to provide the code rendered by the application.
+6. While login, on the first step the user enters the email and password. Afterward, the security code from the authenticator app should be populated.
+
+{% include images-gallery.html imageCollection="two-factor-authentication-app" %}
+
+###### 2FA with SMS
+
+1. Turn on the authentication by SMS.
+2. Enter the valid phone number and expect to receive a verification short message.
+3. Input the 6-digit code from your verification SMS.
+4. The next time the user logs in, he/she will need to provide the code received in the SMS.
+5. While login, on the first step the user enters the email and password. Afterward, the security code from your SMS should be populated.
+
+{% include images-gallery.html imageCollection="two-factor-authentication-sms" %}
+
+###### 2FA with a Backup code
+
+1. Enable authentication with backup code.
+2. Once turned on, the codes will be available on the screen. The user can download them (txt) or print them. Each backup code can be used once.
+3. While regular login process, after email and password step click "Try another way" button.
+4. Select a way to verify with a backup code;
 4. Enter the 8-digit code from your backup codes list.
 
 {% include images-gallery.html imageCollection="two-factor-authentication-backup-code" %}
