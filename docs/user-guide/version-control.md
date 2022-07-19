@@ -19,8 +19,8 @@ autoCommitConfiguration:
 
 gitRestore:
     0:
-        image: /images/user-guide/version-control/version-control-restore-1-ce.png 
-        title: 'List of commits'
+        image: /images/user-guide/version-control/version-control-5-ce.png
+        title: 'Restore specific version'
 
 singleEntityExport:
     0:
@@ -35,6 +35,13 @@ singleEntityExport:
     3:
         image: /images/user-guide/version-control/version-control-rule-chain-2-ce.png
         title: 'Rule Chain version history'
+    4:
+        image: /images/user-guide/version-control/version-control-dashboard-1-ce.png
+        title: 'Dashboard export'
+    5:
+        image: /images/user-guide/version-control/version-control-dashboard-2-ce.png
+        title: 'Dashboard version history'
+
 
 multipleEntityExport:
     0:
