@@ -119,12 +119,12 @@ cluster-500k-5k-15k:
         image: /images/reference/performance-kubernetes-cluster-aws-eks/500k-5k-15k/performance-test-20-t3a-small-instances.png
         title: 'x20 Performance test instances to generate the load'
 
-one-million-5k-15k:
+cluster-1-million-5k-15k:
     0:
         image: /images/reference/performance-kubernetes-cluster-aws-eks/1million-5k-15k/queue-stats.png
         title: 'Thingsboard queue stats for cluster with 1 million devices'
     1:
-        image:/images/reference/performance-kubernetes-cluster-aws-eks/1million-5k-15k/api-usage.png
+        image: /images/reference/performance-kubernetes-cluster-aws-eks/1million-5k-15k/api-usage.png
         title: 'Thingsboard API usage for cluster with 1 million devices'
     2:
         image: /images/reference/performance-kubernetes-cluster-aws-eks/1million-5k-15k/million-devices-created.png

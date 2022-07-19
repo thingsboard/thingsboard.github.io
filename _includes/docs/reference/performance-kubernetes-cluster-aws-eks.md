@@ -2156,13 +2156,13 @@ Note: when the resources not set for the container the Java application will sho
 
 Here is the screenshots with tunings
 
-{% include images-gallery.html imageCollection="500k-5k-15k-experiments" %}
+{% include images-gallery.html imageCollection="cluster-500k-5k-15k-experiments" %}
 
 Rolling update for ThingsBoars MQTT transport leads to all devices reconnecting. 
 Here the screenshots how the cluster handle a full reconnect issue at this moment.
 For the big scale this is a good point to improve the [source](https://github.com/thingsboard/thingsboard).
 
-{% include images-gallery.html imageCollection="500k-5k-15k-reconnect-all" %}
+{% include images-gallery.html imageCollection="cluster-500k-5k-15k-reconnect-all" %}
 
 #### Tuning Postgresql
 
@@ -2300,7 +2300,7 @@ ALARMS_PER_SECOND=1
 
 Here is the screenshots
 
-{% include images-gallery.html imageCollection="500k-5k-15k" %}
+{% include images-gallery.html imageCollection="cluster-500k-5k-15k" %}
 
 #### Cost-cutting
 
@@ -2382,7 +2382,7 @@ The summary cluster config:
 
 Here are some fresh screenshots:
 
-{% include images-gallery.html imageCollection="one-million-5k-15k" %}
+{% include images-gallery.html imageCollection="cluster-1-million-5k-15k" %}
 
 ## Conclusion
 
