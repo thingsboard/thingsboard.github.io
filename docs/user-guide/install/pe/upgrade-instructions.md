@@ -385,9 +385,9 @@ Do nothing, postgresql is already running.
 
 ## Upgrading to 3.4PE
 
-### Ubuntu/CentOS {#ubuntucentos-334}
+### Ubuntu/CentOS {#ubuntucentos-34}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4PE. In order to upgrade to 3.4PE you need to [**upgrade to 3.3.3PE first**](/docs/user-guide/install/pe/upgrade-instructions/#ubuntucentos-333).
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4PE. In order to upgrade to 3.4PE you need to [**upgrade to 3.3.4PE first**](/docs/user-guide/install/pe/upgrade-instructions/#ubuntucentos-334).
 
 #### ThingsBoard PE package download
 
@@ -418,7 +418,7 @@ Execute regular upgrade script:
 
 ```bash
 # Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.3
+$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.4
 ```
 
 #### Start the service
@@ -429,11 +429,11 @@ $ sudo service thingsboard start
 
 ### Windows {#windows-34}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4PE. In order to upgrade to 3.4PE you need to [**upgrade to 3.3.3PE first**](/docs/user-guide/install/pe/upgrade-instructions/#windows-333).
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4PE. In order to upgrade to 3.4PE you need to [**upgrade to 3.3.4PE first**](/docs/user-guide/install/pe/upgrade-instructions/#windows-334).
 
 #### ThingsBoard PE package download
 
-Download ThingsBoard PE installation package for Windows: [thingsboard-windows-3.4pe.zip](https://dist.thingsboard.io/thingsboard-windows-3.4pe.zip).
+Download ThingsBoard PE installation package for Windows: [thingsboard-windows-setup-3.4pe.exe](https://dist.thingsboard.io/thingsboard-windows-setup-3.4pe.exe).
 
 #### ThingsBoard PE service upgrade
 
@@ -444,7 +444,7 @@ net stop thingsboard
 ```
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-* Unzip installation archive to ThingsBoard install dir.
+* Run installation package **thingsboard-windows-setup-3.4pe.exe**.
 * Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
@@ -454,7 +454,7 @@ net stop thingsboard
 Execute regular upgrade script:
 
 ```text
-C:\thingsboard>upgrade.bat --fromVersion=3.4
+C:\thingsboard>upgrade.bat --fromVersion=3.3.4
 ```
 
 #### Start the service
@@ -674,7 +674,7 @@ net stop thingsboard
 ```
 
 * Make a backup of previous ThingsBoard PE configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-* Run installation package **thingsboard-windows-setup-3.3.1pe.exe**.
+* Run installation package **thingsboard-windows-setup-3.3.3pe.exe**.
 * Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
