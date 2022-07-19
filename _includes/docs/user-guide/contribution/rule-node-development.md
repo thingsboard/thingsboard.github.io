@@ -13,7 +13,6 @@ We assume you have completed the following guides and   reviewed the articles li
 
   * [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide.
   * [Rule Engine Overview](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/) article.
-  * [Rule Engine Architecture](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/architecture/) article.
   
 We also assume you have the following third-party installed:
 

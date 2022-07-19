@@ -17,4 +17,4 @@ However, some providers also have managed services for Kafka. See AWS [MSK](http
  
  * **Confluent Cloud** is a fully managed streaming platform based on Kafka. Useful for a cloud agnostic deployments.
 
-See corresponding architecture [page](/docs/reference/#message-queues-are-awesome) and rule engine [page](/docs/user-guide/rule-engine-2-0/overview/#rule-engine-queue) for more details.
+See corresponding architecture [page](/docs/reference/#message-queues-are-awesome) and rule engine [page](/docs/user-guide/rule-engine-2-5/queues/) for more details.
