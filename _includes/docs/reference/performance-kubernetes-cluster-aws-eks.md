@@ -10,13 +10,13 @@ It is helpful to understand how ThingsBoard scales horizontally (cluster mode).
 
 ### ThingsBoard cluster test methodology
 
-For simplicity, we have deployed a ThingsBoard cluster on AWS Kubernetes cluster.
-To simplify the 3rd party deployment (PostgreSQL, Cassandra, Kafka, Zookeeper, Redis) we are going to use the respective helm charts. 
-The test agent provisions and connects a configurable number of device emulators that constantly publish time-series data over MQTT.
+For simplicity, we have deployed a ThingsBoard cluster on the AWS Kubernetes cluster.
+We will use the respective helm charts to simplify the 3rd party deployment for PostgreSQL, Cassandra, Kafka, Zookeeper, and Redis.
+Many test agents provisions and connects a configurable number of device emulators that constantly publish time-series data over MQTT.
 
 ### Setting up a Kubernetes cluster on AWS
 
-Here the quick [introduction to Elastic Kubernetes Service (Amazon EKS)](https://www.youtube.com/watch?v=p6xDCz00TxU)  
+Here is a quick [introduction to Elastic Kubernetes Service (Amazon EKS)](https://www.youtube.com/watch?v=p6xDCz00TxU)  
 
 [Install eksctl tool](https://eksctl.io/introduction/#installation), configure autocompletion.
 
@@ -28,22 +28,40 @@ Here the quick [introduction to Elastic Kubernetes Service (Amazon EKS)](https:/
 
 Test AWS connection
 ```bash
-$ aws eks list-clusters
-{
-    "clusters": []
-}
-$ eksctl get cluster 
-2022-03-25 09:32:41 [ℹ]  eksctl version 0.88.0
-2022-03-25 09:32:41 [ℹ]  using region eu-west-1
-No clusters found
+aws eks list-clusters
+# {
+#     "clusters": []
+# }
+eksctl get cluster 
+# 2022-03-25 09:32:41 [ℹ]  eksctl version 0.88.0
+# 2022-03-25 09:32:41 [ℹ]  using region eu-west-1
+# No clusters found
 ```
+{: .copy-code}
 
-Create cluster with 3 nodes (m6a.2xlarge, 8 vCPU, 32GiB).
+To create a **simple cluster** with 3 nodes, use a single command:
+
+```bash
+eksctl create cluster \
+  --name performance-test \
+  --region eu-west-1 \
+  --nodegroup-name linux-amd64 \
+  --node-volume-type gp3 \
+  --node-type m6a.xlarge \
+  --nodes 6 \
+  --ssh-access \
+  --ssh-public-key smatvienko \
+  --tags environment=performance-test,owner=smatvienko
+```
+{: .copy-code}
+
+To create an **advanced cluster**, use the approach with cluster config file `cluster.yml`. 
 It may take about 20 minutes, so grab a coffee and take your time.
 
 ```bash
 cat > cluster.yml
 ```
+{: .copy-code}
 
 ```yaml
 apiVersion: eksctl.io/v1alpha5
@@ -69,7 +87,7 @@ managedNodeGroups:
   - name: transport-large
     labels: { role: transport }
     instanceType: c6a.large
-    desiredCapacity: 6
+    desiredCapacity: 3
     volumeType: gp3
     volumeSize: 20
     privateNetworking: false
@@ -99,7 +117,7 @@ managedNodeGroups:
   - name: postgresql-xlarge
     labels: { role: postgresql }
     instanceType: c6i.xlarge
-    desiredCapacity: 3
+    desiredCapacity: 2
     volumeType: gp3
     volumeSize: 32
     privateNetworking: false
@@ -117,104 +135,26 @@ managedNodeGroups:
       allow: true
       publicKeyName: 'smatvienko'
 ```
-
-Experiment:
-
-```yaml
-  - name: transport-small-netfilter-conntrack-max
-    labels: { role: transport }
-    instanceType: t3a.small
-    desiredCapacity: 1
-    volumeType: gp3
-    volumeSize: 20
-    privateNetworking: false
-    ssh:
-      allow: true
-      publicKeyName: 'smatvienko'
-    preBootstrapCommands:
-      - echo "BEGIN eksctl managedNodeGroups preBootstrapCommands"
-      - echo "net.netfilter.nf_conntrack_max = 1048576" | sudo tee -a /etc/sysctl.conf
-      - echo "net.nf_conntrack_max = 1048576" | sudo tee -a /etc/sysctl.conf
-      - echo "modprobe ip_conntrack"
-      - sudo modprobe ip_conntrack
-      - echo "reload systcl"
-      - sudo -s sysctl -p
-      - echo "END eksctl managedNodeGroups preBootstrapCommands"
-```
-
-Work note: the good source how to set linux networking
-See https://kubedex.com/90-days-of-aws-eks-in-production/
-
-
-```yaml
-- |
-          cat <<EOF > /etc/sysctl.d/99-kubelet-network.conf
-          # Have a larger connection range available
-          net.ipv4.ip_local_port_range=1024 65000
-          #
-          # Reuse closed sockets faster
-          net.ipv4.tcp_tw_reuse=1
-          net.ipv4.tcp_fin_timeout=15
-          #
-          # The maximum number of "backlogged sockets".  Default is 128.
-          net.core.somaxconn=4096
-          net.core.netdev_max_backlog=4096
-          #
-          # 16MB per socket - which sounds like a lot,
-          # but will virtually never consume that much.
-          net.core.rmem_max=16777216
-          net.core.wmem_max=16777216
-        
-          # Various network tunables
-          net.ipv4.tcp_max_syn_backlog=20480
-          net.ipv4.tcp_max_tw_buckets=400000
-          net.ipv4.tcp_no_metrics_save=1
-          net.ipv4.tcp_rmem=4096 87380 16777216
-          net.ipv4.tcp_syn_retries=2
-          net.ipv4.tcp_synack_retries=2
-          net.ipv4.tcp_wmem=4096 65536 16777216
-          #vm.min_free_kbytes=65536
-          #
-          # Connection tracking to prevent dropped connections (usually issue on LBs)
-          net.netfilter.nf_conntrack_max=262144
-          net.ipv4.netfilter.ip_conntrack_generic_timeout=120
-          net.netfilter.nf_conntrack_tcp_timeout_established=86400
-          #
-          # ARP cache settings for a highly loaded docker swarm
-          net.ipv4.neigh.default.gc_thresh1=8096
-          net.ipv4.neigh.default.gc_thresh2=12288
-          net.ipv4.neigh.default.gc_thresh3=16384
-          EOF
-          #
-          # Don't forget to...
-          systemctl restart systemd-sysctl.service
-```
+{: .copy-code}
 
 ```bash
 eksctl create cluster -f cluster.yml
 ```
+{: .copy-code}
 
+Additional `eksctl` commands that might be useful
 ```bash
-eksctl create cluster \
-  --name performance-test \
-  --region eu-west-1 \
-  --nodegroup-name linux-amd64 \
-  --node-volume-type gp3 \
-  --node-type m6a.xlarge \
-  --nodes 6 \
-  --ssh-access \
-  --ssh-public-key smatvienko \
-  --tags environment=performance-test,owner=smatvienko
-```
-
 eksctl create nodegroup --config-file=cluster.yml
-
-# eksctl delete nodegroup transport-arm --cluster=performance-test
+eksctl delete nodegroup transport-arm --cluster=performance-test
+eksctl scale nodegroup --cluster=performance-test --nodes=6 --nodes-max=6 worker-xlarge
+```
+{: .copy-code}
 
 Check the cluster
 ```bash
 kubectl get nodes
 ```
+{: .copy-code}
 
 Switch context between clusters (like local minikube and remote AWS ECS)
 ```bash
@@ -222,6 +162,7 @@ kubectl config get-contexts
 # kubectl config use-context minikube
 kubectl config use-context aws-cli-user@performance-test.eu-west-1.eksctl.io
 ```
+{: .copy-code}
 
 ### GP3 storage on AWS EKS 
 
@@ -258,12 +199,14 @@ helm upgrade -install aws-ebs-csi-driver aws-ebs-csi-driver/aws-ebs-csi-driver \
   --set controller.serviceAccount.create=false \
   --set controller.serviceAccount.name=ebs-csi-controller-sa
 ```
+{: .copy-code}
 
 Create storage class gp3 and make it default
 
 ```bash
 cat > gp3-def-sc.yaml
 ```
+{: .copy-code}
 
 ```yaml
 kind: StorageClass
@@ -278,19 +221,24 @@ volumeBindingMode: WaitForFirstConsumer
 parameters:
   type: gp3
 ```
+{: .copy-code}
 
 ```bash
 kubectl apply -f gp3-def-sc.yaml
 ```
+{: .copy-code}
 
 Make gp2 storage class non-default
 ```bash
 kubectl patch storageclass gp2 -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
 ```
+{: .copy-code}
+
 Or delete legacy gp2 storage class
 ```bash
 kubectl delete storageclass gp2
 ```
+{: .copy-code}
 
 Check the storage class available
 ```bash
@@ -299,6 +247,7 @@ kubectl get sc
 # gp2             kubernetes.io/aws-ebs   Delete          WaitForFirstConsumer   false                  46m
 # gp3 (default)   ebs.csi.aws.com         Delete          WaitForFirstConsumer   true                   14s
 ```
+{: .copy-code}
 
 ### Minikube (debug only)
 
@@ -309,18 +258,21 @@ minikube addons enable ingress
 # LoadBalancer
 minikube tunnel
 ```
+{: .copy-code}
 
 ```bash
 curl https://raw.githubusercontent.com/rancher/local-path-provisioner/master/deploy/local-path-storage.yaml | sed 's/\/opt\/local-path-provisioner/\/var\/opt\/local-path-provisioner/ ' | kubectl apply -f -
 kubectl patch storageclass standard -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"false"}}}'
 kubectl patch storageclass local-path -p '{"metadata": {"annotations":{"storageclass.kubernetes.io/is-default-class":"true"}}}'
 ```
+{: .copy-code}
 
 ### Create ThingsBoard's namespace
 
 ```bash
 cat > tb-namespace.yml
 ```
+{: .copy-code}
 
 ```yaml
 apiVersion: v1
@@ -331,6 +283,7 @@ metadata:
     name: thingsboard
 ---
 ```
+{: .copy-code}
 
 Create namespace for ThingsBoard
 ```bash
@@ -340,6 +293,7 @@ kubectl get namespaces
 kubectl config set-context --current --namespace=thingsboard
 kubectl get pods -o wide
 ```
+{: .copy-code}
 
 ### Setup databases with Helm
 
@@ -350,6 +304,7 @@ helm repo add bitnami https://charts.bitnami.com/bitnami
 helm repo update
 helm list
 ```
+{: .copy-code}
 
 We are going to use Bitnami docker images and Bitnami helm charts as well.
 
@@ -369,6 +324,7 @@ helm install zookeeper bitnami/zookeeper --version 10.0.0 \
   --set resources.requests.cpu=100m \
   --set resources.requests.memory=256Mi
 ```
+{: .copy-code}
 
 Setup [Kafka cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/kafka)
 ```bash
@@ -382,6 +338,7 @@ helm install kafka bitnami/kafka --version 18.0.3 \
   --set zookeeper.enabled=false \
   --set externalZookeeper.servers=zookeeper-headless
 ```
+{: .copy-code}
 
 Setup [Cassandra cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/cassandra)
 ```bash
@@ -400,6 +357,7 @@ helm install cassandra bitnami/cassandra --version 9.2.7 \
   --set resources.requests.cpu=1 \
   --set resources.requests.memory=3Gi
 ```
+{: .copy-code}
 
 Setup [Redis cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/redis-cluster)
 ```bash
@@ -413,6 +371,7 @@ helm install redis bitnami/redis-cluster --version 7.6.4 \
   --set redis.resources.requests.cpu=100m \
   --set redis.resources.requests.memory=1Gi
 ```
+{: .copy-code}
 
 Setup [Postgres cluster from Bitnami Helm chart](https://github.com/bitnami/charts/tree/master/bitnami/postgresql-ha)
 ```bash
@@ -442,11 +401,13 @@ helm install postgresql bitnami/postgresql-ha --version 9.2.1 \
   --set postgresql.startupProbe.enabled=true \
   --set postgresql.startupProbe.failureThreshold=100
 ```
+{: .copy-code}
 
 Wait while all pods up and running
 ```bash
 kubectl get pods
 ```
+{: .copy-code}
 
 ### Check the cluster health
 
@@ -454,6 +415,8 @@ Check the Kafka cluster state and effectively Zookeeper cluster state as Kafka i
 ```bash
 kubectl exec kafka-0 -- /opt/bitnami/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server kafka-headless:9092 | grep kafka
 ```
+{: .copy-code}
+
 You may find a 3 different kafka brokers in the output
 ```bash
 kafka-2.kafka-headless.thingsboard.svc.cluster.local:9092 (id: 2 rack: null) -> (
@@ -465,6 +428,8 @@ Kafka cluster state is stored inside Zookeeper. Lest fetch the actual broker lis
 ```bash
 kubectl exec kafka-0 -- /bin/bash -c "/opt/bitnami/kafka/bin/zookeeper-shell.sh zookeeper-headless:2181 ls /brokers/ids 2> /dev/null | tail -n 1"
 ```
+{: .copy-code}
+
 Zookeeper will return the list with broker ids.
 ```bash
 [0, 1, 2]
@@ -474,6 +439,8 @@ Check that Cassandra cluster is up and running
 ```bash
 kubectl exec cassandra-0 -- nodetool status
 ```
+{: .copy-code}
+
 All nodes have to be present in the list and have a status UN (Up Normal)
 ```bash
 Datacenter: datacenter1
@@ -500,6 +467,7 @@ for i in {0..5}; do kubectl exec redis-${i} -- redis-cli cluster nodes; done
 # all connected
 # 93a4392688ab0ff17f00c95ab88260ac584a4119 192.168.4.34:6379@16379 master - 0 1657531358000 3 connected 10923-16383
 ```
+{: .copy-code}
 
 The output will show cluster state is ok, known nodes is equal 6, cluster size is 3 (master nodes).
 ```bash
@@ -525,6 +493,8 @@ Check the Postgres status
 ```bash
 kubectl exec postgresql-postgresql-0 -- /opt/bitnami/scripts/postgresql-repmgr/entrypoint.sh repmgr -f /opt/bitnami/repmgr/conf/repmgr.conf cluster show
 ```
+{: .copy-code}
+
 The output have to have all 3 nodes running, 1 primary and 2 standby.
 ```bash
  ID   | Name                    | Role    | Status    | Upstream                | Location | Priority | Timeline | Connection string                                                                                                                                                  
@@ -539,6 +509,7 @@ Finally, check that all pods are up and running:
 ```bash
 kubectl get pods
 ```
+{: .copy-code}
 
 ```bash
 NAME                                 READY   STATUS    RESTARTS   AGE
@@ -565,6 +536,7 @@ zookeeper-0                          1/1     Running   0          10m
 zookeeper-1                          1/1     Running   0          10m
 zookeeper-2                          1/1     Running   0          10m
 ```
+{: .copy-code}
 
 ### Install the ThingsBoard schema
 
@@ -573,6 +545,7 @@ Persist common settings
 ```bash
 cat > tb-cm.yml 
 ```
+{: .copy-code}
 
 ```yaml
 apiVersion: v1
@@ -706,17 +679,20 @@ data:
     </configuration>
 ---
 ```
+{: .copy-code}
 
 Apply config map
 ```bash
 kubectl apply -f tb-cm.yml
 ```
+{: .copy-code}
 
 Prepare database setup yaml
 
 ```bash
 cat > tb-db-setup.yml 
 ```
+{: .copy-code}
 
 ```yaml
 apiVersion: v1
@@ -780,6 +756,7 @@ spec:
   restartPolicy: Never
 ---
 ```
+{: .copy-code}
 
 Install the ThingsBoard schema, follow logs and cleanup.
 
@@ -787,6 +764,7 @@ Install the ThingsBoard schema, follow logs and cleanup.
 kubectl apply -f tb-db-setup.yml
 kubectl logs -f tb-db-setup && kubectl delete pod tb-db-setup
 ```
+{: .copy-code}
 
 The output end will look like the below:
 ```bash
@@ -802,6 +780,7 @@ Loading demo data...
 Installation finished successfully!
 pod "tb-db-setup" deleted
 ```
+{: .copy-code}
 
 ### Fault tolerance
 
@@ -827,6 +806,7 @@ Repair needs to be run one by one on each Cassandra node. As we have a new clust
 ```bash
 for i in {0..2}; do kubectl exec -it cassandra-${i} -- nodetool repair --full ; done
 ```
+{: .copy-code}
 
 **IMPORTANT**. Make sure that your ThingsBoard cluster have a **Cassandra consistency** read/write **level** **QUORUM** (for SimpleStrategy) or **LOCAL_QUORUM** (for NetworkTopologyStrategy)!
 See the example from configmap: 
@@ -834,6 +814,7 @@ See the example from configmap:
   CASSANDRA_READ_CONSISTENCY_LEVEL: "QUORUM" # IMPORTANT for the CLUSTER data consistency
   CASSANDRA_WRITE_CONSISTENCY_LEVEL: "QUORUM" # IMPORTANT for the CLUSTER data consistency
 ```
+{: .copy-code}
        
 ### Deploy ThingsBoard services
 
@@ -842,6 +823,7 @@ Prepare ThingsBoard services yaml
 ```bash
 cat > tb-services.yml 
 ```
+{: .copy-code}
 
 ```yaml
 apiVersion: apps/v1
@@ -1275,16 +1257,19 @@ spec:
       restartPolicy: Always
 ---
 ```
+{: .copy-code}
 
 Deploy ThingsBoard cluster
 ```bash
 kubectl apply -f tb-services.yml
 ```
+{: .copy-code}
 
 Wait until all pods are up and running for a couple of minutes.
 ```bash
 kubectl get pods --watch
 ```
+{: .copy-code}
 
 ## First login to the ThingsBoard cluster
 
@@ -1293,6 +1278,7 @@ Let's connect to the ThingsBoard's user interface inside the cluster.
 ```bash
 kubectl port-forward pod/tb-node-0 8080:8080
 ```
+{: .copy-code}
 
 Open the ThingsBoard in your browser using the http://localhost:8080 
 
@@ -1301,6 +1287,7 @@ Open the ThingsBoard in your browser using the http://localhost:8080
 ```bash
 cat > tb-mqtt-transport.yml
 ```
+{: .copy-code}
 
 ```yaml
 apiVersion: v1
@@ -1430,11 +1417,13 @@ spec:
             failureThreshold: 6
 ---
 ```
+{: .copy-code}
 
 Apply MQTT transport config
 ```bash
 kubectl apply -f tb-mqtt-transport.yml
 ```
+{: .copy-code}
 
 # Create Connector Role to observer ESK dashboards (WIP)
 
@@ -1448,7 +1437,10 @@ See: https://docs.aws.amazon.com/eks/latest/userguide/troubleshooting_iam.html#s
 
 # Daemon set to tune the network (Optional)
 
+```bash
 cat > sysctl-conntrack-daemonset.yml
+```
+{: .copy-code}
 
 ```yaml
 apiVersion: apps/v1
@@ -1488,8 +1480,12 @@ spec:
               sleep infinity
 ---
 ```
+{: .copy-code}
 
+```bash
 kubectl apply -f sysctl-conntrack-daemonset.yml
+```
+{: .copy-code}
 
 # Provisioning AWS Load Balancer
 
@@ -1526,6 +1522,7 @@ kubectl get events -n kube-system | grep aws-load-balancer-controller
 ```bash
 cat > http-load-balancer.yml
 ```
+{: .copy-code}
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -1578,6 +1575,7 @@ spec:
                   number: 8080
 ---
 ```
+{: .copy-code}
 
 ```bash
 kubectl apply -f http-load-balancer.yml
@@ -1585,6 +1583,7 @@ kubectl get ingress
 # NAME                   CLASS    HOSTS   ADDRESS                                                                   PORTS   AGE
 # tb-http-loadbalancer   <none>   *       k8s-thingsbo-tbhttplo-784e0efb43-1467549612.eu-west-1.elb.amazonaws.com   80      12m
 ```
+{: .copy-code}
 
 Visit the ThingsBoard's web page http://k8s-thingsbo-tbhttplo-784e0efb43-1467549612.eu-west-1.elb.amazonaws.com
 
@@ -1593,6 +1592,7 @@ Visit the ThingsBoard's web page http://k8s-thingsbo-tbhttplo-784e0efb43-1467549
 ```bash
 cat > mqtt-load-balancer.yml
 ```
+{: .copy-code}
 
 ```yaml
 apiVersion: v1
@@ -1619,11 +1619,13 @@ spec:
       name: mqtts
 ---
 ```
+{: .copy-code}
 
 Apply the balancer config:
 ```bash
 kubectl apply -f mqtt-load-balancer.yml
 ```
+{: .copy-code}
 
 Check the balancer is up and running
 
@@ -1644,8 +1646,8 @@ telnet aff16c87439c84d4ca7cf942ca5ef84c-4f1e51aef8129250.elb.eu-west-1.amazonaws
 export REST_URL=http://k8s-thingsbo-tbhttplo-784e0efb43-20626500.eu-west-1.elb.amazonaws.com:80
 export MQTT_HOST=af9ec4fe2ef8345aba197f1cd65a99ed-b046860c9de97400.elb.eu-west-1.amazonaws.com
 docker run -it --rm --network host --name tb-perf-test \
-  --env REST_URL=http://127.0.0.1:8080 \
-  --env MQTT_HOST=10.102.104.87 \
+  --env REST_URL=$REST_URL \
+  --env MQTT_HOST=$MQTT_HOST \
   --env DEVICE_END_IDX=15000 \
   --env MESSAGES_PER_SECOND=15000 \
   --env ALARMS_PER_SECOND=1 \
@@ -1653,10 +1655,15 @@ docker run -it --rm --network host --name tb-perf-test \
   --env DEVICE_CREATE_ON_START=true \
   thingsboard/tb-ce-performance-test:3.3.3
 ```
+{: .copy-code}
 
 Kafka UI Kowl
 
+```bash
 cat > tb-kafka-ui-kowl.yml
+```
+{: .copy-code}
+
 ```yaml
 apiVersion: apps/v1
 kind: StatefulSet
@@ -1695,6 +1702,7 @@ spec:
       restartPolicy: Always
 ---
 ```
+{: .copy-code}
 
 ```bash
 kubectl apply -f tb-kafka-ui-kowl.yml
@@ -1706,6 +1714,7 @@ If Kafka UI does not need, scale it down:
 ```bash
 kubectl scale --replicas=0 statefulset tb-kafka-ui-kowl
 ```
+{: .copy-code}
 
 To connect to the Postgresql from PgAdmin tool use port forwarding:
 ```bash
@@ -1730,6 +1739,7 @@ Let's prepare the instances
 ```bash
 cat > test-ips.sh
 ```
+{: .copy-code}
 
 ```bash
 #!/bin/bash
@@ -1783,10 +1793,12 @@ for IP in ${IPS}; do
   echo "LIST id ${COUNT} IP ${IP}"
 done
 ```
+{: .copy-code}
 
 ```bash
 cat > init-tests.sh
 ```
+{: .copy-code}
 
 ```bash
 #!/bin/bash
@@ -1828,10 +1840,12 @@ ENDSSH
 
 done
 ```
+{: .copy-code}
 
 ```bash
 cat > reboot-tests.sh
 ```
+{: .copy-code}
 
 ```bash
 #!/bin/bash
@@ -1890,10 +1904,12 @@ screen -list;
   ssh -i ${SSH_KEY} -o StrictHostKeyChecking=accept-new ubuntu@${IP} ${SCRIPT}
 done
 ```
+{: .copy-code}
 
 ```bash
 chmod +x run-test.sh test-ips.sh reboot-tests.sh init-tests.sh
 ```
+{: .copy-code}
 
 First, test IPs need to be pasted to the `test-ips.sh`
 Then path to SSH access key have to be placed to the `test-ips.sh`
@@ -1905,11 +1921,13 @@ To login the performance test instance please, use this command:
 ```bash
 source test-ips.sh > /dev/null ; ssh -i ${SSH_KEY} -o StrictHostKeyChecking=accept-new ubuntu@$(echo $IP | head -1)
 ```
+{: .copy-code}
 
 To follow the performance test logs under the screen, use this:
 ```bash
 screen -r
 ```
+{: .copy-code}
 
 To detach screen again press `Ctrl+A`, then press `d`
 
@@ -1944,6 +1962,7 @@ How to reproduce the Kubernetes cluster setup
 ```bash
 cat > cluster.yml
 ```
+{: .copy-code}
 
 ```yaml
 apiVersion: eksctl.io/v1alpha5
@@ -2002,6 +2021,7 @@ managedNodeGroups:
 ```bash
 eksctl create cluster -f cluster.yml
 ```
+{: .copy-code}
 
 </details>
 
@@ -2093,10 +2113,12 @@ Let's try to spin another 10 nodes dedicated for transport adding the next lined
       allow: true
       publicKeyName: 'smatvienko'
 ```
+{: .copy-code}
 
 ```bash
 eksctl create nodegroup --config-file=cluster.yml
 ```
+{: .copy-code}
 
 Let's move tb-mqtt-transport using node selector in `tb-mqtt-transport.yml`
 
@@ -2110,22 +2132,26 @@ Scaling nodes
 ```bash
 eksctl scale nodegroup --cluster=performance-test --nodes=6 --nodes-max=6 transport-large
 ```
+{: .copy-code}
 
 ```bash
 kubectl scale --replicas=6 sts tb-mqtt-transport
 ```
+{: .copy-code}
 
 Check the pod distribution across the nodes and roles:
 
 ```bash
 kubectl get pods -o=custom-columns=ROLE:spec.nodeSelector.role,NODE:.spec.nodeName,POD:.metadata.name | tail +2 | sort
 ```
+{: .copy-code}
 
 Check the conntrack available:
 
 ```bash
 kubectl exec -it tb-mqtt-transport-0 -- sysctl -a | grep conntrack_max
 ```
+{: .copy-code}
 
 Restart all pods affected on affected nodes
 ```bash
@@ -2169,6 +2195,7 @@ For the big scale this is a good point to improve the [source](https://github.co
 ```bash
 cat > psql-override-conf.yml
 ```
+{: .copy-code}
 
 ```yaml
 apiVersion: v1
@@ -2251,10 +2278,12 @@ data:
     #   for more professional expertise.    
 ---
 ```
+{: .copy-code}
 
 ```bash
 kubectl apply -f psql-override-conf.yml
 ```
+{: .copy-code}
 
 ```bash
 helm update postgresql bitnami/postgresql-ha --version 9.2.1 \
@@ -2327,6 +2356,7 @@ Scaling Transport node group up to 12 instances, core and rule engine up to 6.
 eksctl scale nodegroup --cluster=performance-test --nodes=12 --nodes-max=12 transport-large
 eksctl scale nodegroup --cluster=performance-test --nodes=6 --nodes-max=6 worker-xlarge
 ``` 
+{: .copy-code}
 
 Applying hard (required) anti affinity and node selector for `tb-mqtt-transport` statefulset.
 
@@ -2345,6 +2375,7 @@ spec:
                   - tb-mqtt-transport
           topologyKey: kubernetes.io/hostname
 ```
+{: .copy-code}
 
 Memory setting for tb-mqtt-transport is 1 GiB only:
 ```yaml
@@ -2357,12 +2388,14 @@ Scaling up ThingsBoard pods.
 kubectl scale --replicas=12 sts tb-mqtt-transport
 kubectl scale --replicas=6 sts tb-node tb-rule-engine
 ```
+{: .copy-code}
 
 Check pods layout on nodes by roles:
 
 ```bash
 kubectl get pods -o=custom-columns=ROLE:spec.nodeSelector.role,NODE:.spec.nodeName,POD:.metadata.name | tail +2 | sort
 ```
+{: .copy-code}
 
 The summary cluster config:
 
