@@ -21,19 +21,19 @@ integrationTemplateCreation:
 placeholderFeature:
     0:
         image: /images/pe/edge/integrations/placeholder-feature-step-1.png
-        title: 'Add ipAddress attribute to Edge'
+        title: 'Add <b>ipAddress</b> attribute to Edge'
     1:
         image: /images/pe/edge/integrations/placeholder-feature-step-2.png
-        title: 'Add placeholder ${{ipAddress}} to Integration configuration'
+        title: 'Add placeholder <b>${{ipAddress}}</b> to Integration configuration'
     2:
         image: /images/pe/edge/integrations/placeholder-feature-step-3.png
-        title: 'Go to Manage Integration page of Edge entity'
+        title: 'Click <b>Manage Integrations</b> button of Edge entity'
     3:
         image: /images/pe/edge/integrations/placeholder-feature-step-4.png
         title: 'Assign Integration to the Edge'
     4:
         image: /images/pe/edge/integrations/placeholder-feature-step-5.png
-        title: 'Login to the Edge and check Integration - placeholder is going to be replaced by attribute value'
+        title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
 
 missingPlaceholder:
     0:
@@ -70,7 +70,7 @@ Converter templates could be created only by Tenant administrator.
 You can navigate to **Edge management -> Converter templates** page.
 This page allows you to create Converter template. These Converter templates are going to be used in Integration templates configuration.
 
-{% include images-gallery.html imageCollection="converterTemplateCreation" %}
+{% include images-gallery.html imageCollection="converterTemplateCreation" showListImageTitles="true" %}
 
 You do not need to assign Converter templates to the Edge - once Integration template is assigned to specific Edge, related Uplink/Downlink Converters are provisioned to the Edge automatically.
 
@@ -79,7 +79,7 @@ You do not need to assign Converter templates to the Edge - once Integration tem
 Once Converter template was created you can navigate to **Edge management -> Integration templates** page to create integration.
 This page allows you to create Integration template. These Integration templates are going to be assigned to the Edge.
 
-{% include images-gallery.html imageCollection="integrationTemplateCreation" %}
+{% include images-gallery.html imageCollection="integrationTemplateCreation" showListImageTitles="true" %}
 
 #### Integration configuration placeholders
 
@@ -90,9 +90,9 @@ This placeholder is going to be replaced by attribute value during the assignmen
 
 Let's see on example how HTTP Integration could be configured with unique IP Address value per Edge as 'Base URL'.
 
-{% include images-gallery.html imageCollection="placeholderFeature" %}
+{% include images-gallery.html imageCollection="placeholderFeature" showListImageTitles="true" %}
 
-You can assign this Integration template to other Edge entities, and every Integration on the Edge is going to have it's unique 'Baser URL' value, that replaced by attribute value.
+You can assign this Integration template to other Edge entities, and every Integration on the Edge is going to have it's unique **'Base URL'** value, that is replaced by attribute value.
 
 If specific Edge is missing placeholder attribute key, Platform will notify regarding it during the assignment to Edge or Integration configuration update:
 
