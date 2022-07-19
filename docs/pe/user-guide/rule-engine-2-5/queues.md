@@ -2,6 +2,7 @@
 layout: docwithnav-pe
 title: Queues
 description: Rule Engine Queues
+redirect_from: "/docs/pe/user-guide/queue"
 
 commonQueueConfiguration:
     0:
