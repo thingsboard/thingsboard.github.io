@@ -1,20 +1,19 @@
 * TOC 
 {:toc}
 
-This guide will help you to get familiar with ThingsBoard configuration files and parameters. We **recommend** to
-configure ThingsBoard using environment variables. This way you do not need to merge the configuration files when new
-platform release arrives. List of available configuration parameters and corresponding environment variables is
+This guide will help you to get familiar with ThingsBoard Edge configuration files and parameters. We **recommend** to
+configure ThingsBoard Edge using environment variables. This way you do not need to merge the configuration files when new
+edge release arrives. List of available configuration parameters and corresponding environment variables is
 located [here](#configuration-parameters).
 
 ## How to change configuration parameters?
 
-#### Monolithic deployment on Linux
+#### Linux
 
-If ThingsBoard is installed on **Linux** as a **monolithic application**, you may specify the environment variables in
-the thingsboard.conf file:
+If ThingsBoard Edge is installed on **Linux**, you may specify the environment variables in the tb-edge.conf file:
 
 ```bash
-sudo nano /usr/share/thingsboard/conf/thingsboard.conf
+sudo nano /usr/share/tb-edge/conf/tb-edge.conf
 ```
 
 Use simple example below to add new environment variable 'HTTP_BIND_PORT' with value '8081'.
@@ -24,10 +23,10 @@ Use simple example below to add new environment variable 'HTTP_BIND_PORT' with v
 export HTTP_BIND_PORT=8081
 ```
 
-#### Monolithic deployment on Windows
+#### Windows
 
-If ThingsBoard is installed on **Windows** as a **monolithic application**, you may specify the environment variables in
-the thingsboard.yml file located in the following directory:
+If ThingsBoard Edge is installed on **Windows**, you may specify the environment variables in
+the tb-edge.yml file located in the following directory:
 
 ```bash
 YOUR_INSTALL_DIR/conf
@@ -47,24 +46,101 @@ In this case, *'HTTP_BIND_ADDRESS'* is environment variable name and *'0.0.0.0'*
 
 #### Docker based deployment
 
-If ThingsBoard is installed in a docker compose environment, you may edit the scripts and add environment variables for
+If ThingsBoard Edge is installed in a docker compose environment, you may edit the scripts and add environment variables for
 the corresponding containers.
 See [docker documentation](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option) for
 more details.
 
-#### K8S based deployment
-
-If ThingsBoard is installed in a K8S environment, you may edit the scripts and add environment variables for the
-corresponding deployments/stateful sets.
-See [K8S documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/)
-for more details.
-
 ## Configuration parameters
 
-The parameters are grouped by system components. The list contains the name (address in thingsboard.yml file),
+The parameters are grouped by system components. The list contains the name (address in tb-edge.yml file),
 environment variable, default value and description.
 
-### ThingsBoard Core/Rule Engine Parameters
+### ThingsBoard Edge Core/Rule Engine Parameters
+
+#### Cloud parameters
+
+<table>
+  <thead>
+      <tr>
+          <td><b>Property</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>cloud.routingKey</td>
+          <td>CLOUD_ROUTING_KEY</td>
+          <td></td>
+          <td>Your edge key # e.g. <b>19ea7ee8-5e6d-e642-4f32-05440a529015</b></td>
+      </tr>
+      <tr>
+          <td>cloud.secret</td>
+          <td>CLOUD_ROUTING_SECRET</td>
+          <td></td>
+          <td>Your edge secret # e.g. <b>bztvkvfqsye7omv9uxlp</b></td>
+      </tr>
+      <tr>
+          <td>cloud.reconnect_timeout</td>
+          <td>CLOUD_RECONNECT_TIMEOUT</td>
+          <td>3000</td>
+          <td>Time to wait before reconnecting to cloud in case connectivity was lost</td>
+      </tr>
+      <tr>
+          <td>cloud.rpc.host</td>
+          <td>CLOUD_RPC_HOST</td>
+          <td>localhost</td>
+          <td>IP address of the machine with the ThingsBoard platform # e.g. <b>thingsboard.cloud</b>, <b>demo.thingsboard.io</b>, <b>X.X.X.X</b>, <b>localhost</b> </td>
+      </tr>
+      <tr>
+          <td>cloud.rpc.port</td>
+          <td>CLOUD_RPC_PORT</td>
+          <td>7070</td>
+          <td>Edge RPC port according to ThingsBoard server configuration</td>
+      </tr>
+      <tr>
+          <td>cloud.rpc.timeout</td>
+          <td>CLOUD_RPC_TIMEOUT</td>
+          <td>5</td>
+          <td>Timeout in seconds for channel termination</td>
+      </tr>
+      <tr>
+          <td>cloud.rpc.keep_alive_time_sec</td>
+          <td>CLOUD_RPC_KEEP_ALIVE_TIME_SEC</td>
+          <td>360</td>
+          <td>Number of seconds to keep alive connection. If after X seconds keep alive messages will not be colivered consider connection to cloud as lost</td>
+      </tr>
+      <tr>
+          <td>cloud.rpc.ssl.enabled</td>
+          <td>CLOUD_RPC_SSL_ENABLED</td>
+          <td>false</td>
+          <td>Enable TLS communication between cloud and edge</td>
+      </tr>
+      <tr>
+          <td>cloud.rpc.ssl.cert</td>
+          <td>CLOUD_RPC_SSL_CERT</td>
+          <td></td>
+          <td>Cert file to be used during TLS connectivity to cloud</td>
+      </tr>
+      <tr>
+          <td>cloud.rpc.storage.max_read_records_count</td>
+          <td>CLOUD_RPC_STORAGE_MAX_READ_RECORDS_COUNT</td>
+          <td>50</td>
+          <td>Max records of cloud event to read from local DB and sent to cloud</td>
+      </tr>
+      <tr>
+          <td>cloud.rpc.storage.no_read_records_sleep</td>
+          <td>CLOUD_RPC_NO_READ_RECORDS_SLEEP</td>
+          <td>1000</td>
+          <td>Number of milliseconds to wait before next check of cloud events in local DB</td>
+      </tr>
+      <tr>
+          <td>cloud.rpc.storage.sleep_between_batches</td>
+          <td>CLOUD_RPC_SLEEP_BETWEEN_BATCHES</td>
+          <td>1000</td>
+          <td>Number of milliseconds to wait before send failed batch of cloud events to cloud</td>
+      </tr>
+  </tbody>
+</table>
 
 #### HTTP server parameters
 
@@ -496,342 +572,6 @@ assign UI_HELP_BASE_URL_VALUE = "pe-ui" %} {% endif %}
     </tbody>
 </table>
 
-#### Common database parameters
-
-<table>
-    <thead>
-        <tr>
-            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>database.ts_max_intervals</td>
-            <td>DATABASE_TS_MAX_INTERVALS</td>
-            <td>700</td>
-            <td>Max number of DB queries generated by single API call to fetch telemetry records</td>
-        </tr>
-        <tr>
-            <td>database.ts.type</td>
-            <td>DATABASE_TS_TYPE</td>
-            <td>sql</td>
-            <td>Cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)</td>
-        </tr>
-        <tr>
-            <td>database.ts_latest.type</td>
-            <td>DATABASE_TS_LATEST_TYPE</td>
-            <td>sql</td>
-            <td>Cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)</td>
-        </tr>
-    </tbody>
-</table>
-
-#### Cassandra driver configuration parameters
-
-<table>
-    <thead>
-        <tr>
-            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>cassandra.cluster_name</td>
-            <td>CASSANDRA_CLUSTER_NAME</td>
-            <td>Thingsboard Cluster</td>
-            <td>Thingsboard cluster name</td>
-        </tr>
-        <tr>
-            <td>cassandra.keyspace_name</td>
-            <td>CASSANDRA_KEYSPACE_NAME</td>
-            <td>thingsboard</td>
-            <td>Thingsboard keyspace name</td>
-        </tr>
-        <tr>
-            <td>cassandra.url</td>
-            <td>CASSANDRA_URL</td>
-            <td>127.0.0.1:9042</td>
-            <td>Specify node list</td>
-        </tr>
-        <tr>
-            <td>cassandra.local_datacenter</td>
-            <td>CASSANDRA_LOCAL_DATACENTER</td>
-            <td>datacenter1</td>
-            <td>Specify local datacenter name</td>
-        </tr>
-        <tr>
-            <td>cassandra.ssl.enabled</td>
-            <td>CASSANDRA_USE_SSL</td>
-            <td>false</td>
-            <td>Enable/disable secure connection</td>
-        </tr>
-        <tr>
-            <td>cassandra.ssl.hostname_validation</td>
-            <td>CASSANDRA_SSL_HOSTNAME_VALIDATION</td>
-            <td>true</td>
-            <td>Enable/disable validation of Cassandra server hostname. If enabled, hostname of Cassandra server must match CN of server certificate</td>
-        </tr>
-        <tr>
-            <td>cassandra.ssl.trust_store</td>
-            <td>CASSANDRA_SSL_TRUST_STORE</td>
-            <td></td>
-            <td>Set trust store for client authentication of server (optional, uses trust store from default SSLContext if not set)</td>
-        </tr>
-        <tr>
-            <td>cassandra.ssl.trust_store_password</td>
-            <td>CASSANDRA_SSL_TRUST_STORE_PASSWORD</td>
-            <td></td>
-            <td>The password for Cassandra trust store</td>
-        </tr>
-        <tr>
-            <td>cassandra.ssl.key_store</td>
-            <td>CASSANDRA_SSL_KEY_STORE</td>
-            <td></td>
-            <td>Set key store for server authentication of client (optional, uses key store from default SSLContext if not set). A key store is only needed if the Cassandra server requires client authentication</td>
-        </tr>
-        <tr>
-            <td>cassandra.ssl.key_store_password</td>
-            <td>CASSANDRA_SSL_KEY_STORE_PASSWORD</td>
-            <td></td>
-            <td>The password for Cassandra key store</td>
-        </tr>
-        <tr>
-            <td>cassandra.ssl.cipher_suites</td>
-            <td>CASSANDRA_SSL_CIPHER_SUITES</td>
-            <td></td>
-            <td>Comma separated list of cipher suites (optional, uses Java default cipher suites if not set)</td>
-        </tr>
-        <tr>
-            <td>cassandra.jmx</td>
-            <td>CASSANDRA_USE_JMX</td>
-            <td>false</td>
-            <td>Enable/disable JMX</td>
-        </tr>
-        <tr>
-            <td>cassandra.metrics</td>
-            <td>CASSANDRA_USE_METRICS</td>
-            <td>false</td>
-            <td>Enable/disable metrics collection</td>
-        </tr>
-        <tr>
-            <td>cassandra.compression</td>
-            <td>CASSANDRA_COMPRESSION</td>
-            <td>none</td>
-            <td>NONE SNAPPY LZ4</td>
-        </tr>
-        <tr>
-            <td>cassandra.init_timeout_ms</td>
-            <td>CASSANDRA_CLUSTER_INIT_TIMEOUT_MS</td>
-            <td>300000</td>
-            <td>Specify cassandra cluster initialization timeout in milliseconds (if no hosts available during startup)</td>
-        </tr>
-        <tr>
-            <td>cassandra.init_retry_interval_ms</td>
-            <td>CASSANDRA_CLUSTER_INIT_RETRY_INTERVAL_MS</td>
-            <td>3000</td>
-            <td>Specify cassandra claster initialization retry interval (if no hosts available during startup)</td>
-        </tr>
-        <tr>
-            <td>cassandra.max_requests_per_connection_local</td>
-            <td>CASSANDRA_MAX_REQUESTS_PER_CONNECTION_LOCAL</td>
-            <td>32768</td>
-            <td>Cassandra max local requests per connection</td>
-        </tr>
-        <tr>
-            <td>cassandra.max_requests_per_connection_remote</td>
-            <td>CASSANDRA_MAX_REQUESTS_PER_CONNECTION_REMOTE</td>
-            <td>32768</td>
-            <td>Cassandra max remote requests per connection</td>
-        </tr>
-        <tr>
-            <td>cassandra.credentials</td>
-            <td>CASSANDRA_USE_CREDENTIALS</td>
-            <td>false</td>
-            <td>Credential parameters</td>
-        </tr>
-        <tr>
-            <td>cassandra.username</td>
-            <td>CASSANDRA_USERNAME</td>
-            <td></td>
-            <td>Specify your username</td>
-        </tr>
-        <tr>
-            <td>cassandra.password</td>
-            <td>CASSANDRA_PASSWORD</td>
-            <td></td>
-            <td>Specify your password</td>
-        </tr>
-        <tr>
-          <td>cassandra.socket.connect_timeout</td>
-          <td>CASSANDRA_SOCKET_TIMEOUT</td>
-          <td>5000</td>
-          <td>General Cassandra driver parameter</td>
-      </tr>
-      <tr>
-          <td>cassandra.socket.read_timeout</td>
-          <td>CASSANDRA_SOCKET_READ_TIMEOUT</td>
-          <td>20000</td>
-          <td>General Cassandra driver parameter</td>
-      </tr>
-      <tr>
-          <td>cassandra.socket.keep_alive</td>
-          <td>CASSANDRA_SOCKET_KEEP_ALIVE</td>
-          <td>true</td>
-          <td>General Cassandra driver parameter</td>
-      </tr>
-      <tr>
-          <td>cassandra.socket.reuse_address</td>
-          <td>CASSANDRA_SOCKET_REUSE_ADDRESS</td>
-          <td>true</td>
-          <td>General Cassandra driver parameter</td>
-      </tr>
-      <tr>
-          <td>cassandra.socket.so_linger</td>
-          <td>CASSANDRA_SOCKET_SO_LINGER</td>
-          <td></td>
-          <td>General Cassandra driver parameter</td>
-      </tr>
-        <tr>
-            <td>cassandra.socket.tcp_no_delay</td>
-            <td>CASSANDRA_SOCKET_TCP_NO_DELAY</td>
-            <td>false</td>
-            <td>General Cassandra driver parameter</td>
-        </tr>
-        <tr>
-            <td>cassandra.socket.receive_buffer_size</td>
-            <td>CASSANDRA_SOCKET_RECEIVE_BUFFER_SIZE</td>
-            <td></td>
-            <td>General Cassandra driver parameter</td>
-        </tr>
-        <tr>
-            <td>cassandra.socket.send_buffer_size</td>
-            <td>CASSANDRA_SOCKET_SEND_BUFFER_SIZE</td>
-            <td></td>
-            <td>General Cassandra driver parameter</td>
-        </tr>
-        <tr>
-          <td>cassandra.query.read_consistency_level</td>
-          <td>CASSANDRA_READ_CONSISTENCY_LEVEL</td>
-          <td>ONE</td>
-          <td>Cassandra read consistency level</td>
-        </tr>
-        <tr>
-          <td>cassandra.query.write_consistency_level</td>
-          <td>CASSANDRA_WRITE_CONSISTENCY_LEVEL</td>
-          <td>ONE</td>
-          <td>Cassandra write consistency level</td>
-        </tr>
-        <tr>
-          <td>cassandra.query.default_fetch_size</td>
-          <td>CASSANDRA_DEFAULT_FETCH_SIZE</td>
-          <td>2000</td>
-          <td>Cassandra query fetch size</td>
-        </tr>
-        <tr>
-          <td>cassandra.query.ts_key_value_partitioning</td>
-          <td>TS_KV_PARTITIONING</td>
-          <td>MONTHS</td>
-          <td>Specify partitioning size for timestamp key-value storage. Allowed values <b>MINUTES</b>, <b>HOURS</b>, <b>DAYS</b>, <b>MONTHS</b>, <b>INDEFINITE</b></td>
-        </tr>
-        <tr>
-          <td>cassandra.query.ts_key_value_partitions_max_cache_size</td>
-          <td>TS_KV_PARTITIONS_MAX_CACHE_SIZE</td>
-          <td>100000</td>
-          <td>The number of partitions that are cached in memory of each service. Useful to decrease load of re-inserting same partitions again.</td>
-        </tr>
-        <tr>
-          <td>cassandra.query.ts_key_value_ttl</td>
-          <td>TS_KV_TTL</td>
-          <td>0</td>
-          <td>Timeseries Time To Live (in seconds) for Cassandra Record. 0 - record is never expired.</td>
-        </tr>
-      <tr>
-          <td>cassandra.query.events_ttl</td>
-          <td>TS_EVENTS_TTL</td>
-          <td>0</td>
-          <td>Events(LC_EVENT, STATS) Time To Live (in seconds) for Cassandra Record. 0 - record is never expired.</td>
-      </tr>
-      <tr>
-          <td>cassandra.query.debug_events_ttl</td>
-          <td>DEBUG_EVENTS_TTL</td>
-          <td>604800</td>
-          <td>Specify TTL of debug log in seconds. The current value corresponds to one week.</td>
-      </tr>
-      <tr>
-          <td>cassandra.query.buffer_size</td>
-          <td>CASSANDRA_QUERY_BUFFER_SIZE</td>
-          <td>200000</td>
-          <td>Max number of Cassandra queries that are waiting for execution</td>
-      </tr>
-      <tr>
-          <td>cassandra.query.concurrent_limit</td>
-          <td>CASSANDRA_QUERY_CONCURRENT_LIMIT</td>
-          <td>1000</td>
-          <td>MAx number of concurrent Cassandra queries</td>
-      </tr>
-      <tr>
-          <td>cassandra.query.permit_max_wait_time</td>
-          <td>PERMIT_MAX_WAIT_TIME</td>
-          <td>120000</td>
-          <td>Max time in milliseconds query waits for execution</td>
-      </tr>
-      <tr>
-          <td>cassandra.query.dispatcher_threads</td>
-          <td>CASSANDRA_QUERY_DISPATCHER_THREADS</td>
-          <td>2</td>
-          <td>Amount of threads to dispatch cassandra queries</td>
-      </tr>
-      <tr>
-          <td>cassandra.query.callback_threads</td>
-          <td>CASSANDRA_QUERY_CALLBACK_THREADS</td>
-          <td>4</td>
-          <td>Amount of threads used to invoke callbacks for queries results</td>
-      </tr>
-        <tr>
-          <td>cassandra.query.poll_ms</td>
-          <td>CASSANDRA_QUERY_POLL_MS</td>
-          <td>50</td>
-          <td>Cassandra query queue polling interval in milliseconds</td>
-        </tr>
-        <tr>
-          <td>cassandra.query.rate_limit_print_interval_ms</td>
-          <td>CASSANDRA_QUERY_RATE_LIMIT_PRINT_MS</td>
-          <td>10000</td>
-          <td>Interval in milliseconds for printing Cassandra query queue statistic</td>
-        </tr>
-        <tr>
-          <td>cassandra.query.set_null_values_enableds</td>
-          <td>CASSANDRA_QUERY_SET_NULL_VALUES_ENABLED</td>
-          <td>false</td>
-          <td>Set all data types values except target to null for the same ts on save</td>
-        </tr>
-        <tr>
-          <td>cassandra.query.print_queries_freq</td>
-          <td>CASSANDRA_QUERY_PRINT_FREQ</td>
-          <td>0</td>
-          <td>Log one of cassandra queries with specified frequency (0 - logging is disabled)</td>
-        </tr>
-        <tr>
-          <td>cassandra.query.tenant_rate_limits.enabled</td>
-          <td>CASSANDRA_QUERY_TENANT_RATE_LIMITS_ENABLED</td>
-          <td>false</td>
-          <td>Enable/disable cassandra query rate limits per tenant</td>
-        </tr>
-        <tr>
-          <td>cassandra.query.tenant_rate_limits.configuration</td>
-          <td>CASSANDRA_QUERY_TENANT_RATE_LIMITS_CONFIGURATION</td>
-          <td>1000:1,30000:60</td>
-          <td>Limit the maximum Cassandra queries per tenant on each server for specified time intervals in seconds. Comma separated list of limit:seconds pairs.</td>
-        </tr>
-        <tr>
-          <td>cassandra.query.tenant_rate_limits.print_tenant_names</td>
-          <td>CASSANDRA_QUERY_TENANT_RATE_LIMITS_PRINT_TENANT_NAMES</td>
-          <td>false</td>
-          <td>Whether to print rate-limited tenant names when printing Cassandra query queue statistic</td>
-        </tr>
-    </tbody>
-</table>
-
 #### SQL configuration parameters
 
 <table>
@@ -919,6 +659,24 @@ assign UI_HELP_BASE_URL_VALUE = "pe-ui" %} {% endif %}
             <td>true</td>
             <td>Update latest values only if the timestamp of the new record is greater or equals than timestamp of the previously saved latest value. 
         Latest values are stored separately from historical values for fast lookup from DB. Insert of historical value happens in any case.</td>
+        </tr>
+        <tr>
+            <td>sql.cloud_events.batch_size</td>
+            <td>SQL_CLOUD_EVENTS_BATCH_SIZE</td>
+            <td>10000</td>
+            <td>Batch size for persisting cloud events inserts</td>
+        </tr>
+        <tr>
+            <td>sql.cloud_events.batch_max_delay</td>
+            <td>SQL_CLOUD_EVENTS_BATCH_MAX_DELAY_MS</td>
+            <td>100</td>
+            <td>Max timeout for cloud events entries queue polling. Value set in milliseconds</td>
+        </tr>
+        <tr>
+            <td>sql.cloud_events.stats_print_interval_ms</td>
+            <td>SQL_CLOUD_EVENTS_BATCH_STATS_PRINT_MS</td>
+            <td>10000</td>
+            <td>Interval in milliseconds for printing cloud events insert statistic</td>
         </tr>
         <tr>
             <td>sql.batch_sort</td>
@@ -1051,6 +809,24 @@ assign UI_HELP_BASE_URL_VALUE = "pe-ui" %} {% endif %}
             <td>SQL_RELATIONS_MAX_LEVEL</td>
             <td>50</td>
             <td>This value has to be reasonable small to prevent infinite recursion as early as possible</td>
+        </tr>
+        <tr>
+            <td>sql.ttl.cloud_events.enabled</td>
+            <td>SQL_TTL_CLOUD_EVENTS_ENABLED</td>
+            <td>true</td>
+            <td>Parameter to enable or disable TTL(Time To Live) for cloud events.</td>
+        </tr>
+        <tr>
+            <td>sql.ttl.cloud_events.execution_interval_ms</td>
+            <td>SQL_TTL_CLOUD_EVENTS_EXECUTION_INTERVAL</td>
+            <td>86400000</td>
+            <td>Parameter to specify how often TTL(Time To Live) will be checked.</td>
+        </tr>
+        <tr>
+            <td>sql.ttl.cloud_events.cloud_events_ttl</td>
+            <td>SQL_TTL_CLOUD_EVENTS_TTL</td>
+            <td>2628000</td>
+            <td>The parameter to specify TTL(Time To Live) value for cloud event records. Value set in <b>seconds</b>. 0 - records are never expired.</td>
         </tr>
     </tbody>
 </table>
@@ -1721,7 +1497,7 @@ assign UI_HELP_BASE_URL_VALUE = "pe-ui" %} {% endif %}
         <tr>
           <td>spring.datasource.url</td>
           <td>SPRING_DATASOURCE_URL</td>
-          <td>jdbc:postgresql://localhost:5432/thingsboard</td>
+          <td>jdbc:postgresql://localhost:5432/tb_edge</td>
           <td>Database URL</td>
         </tr>
         <tr>
@@ -2172,7 +1948,7 @@ docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-
     <tr>
         <td>transport.lwm2m.enabled</td>
         <td>LWM2M_ENABLED</td>
-        <td>true</td>
+        <td>false</td>
         <td>Enable/disable lvm2m transport protocol</td>
     </tr>
     </tbody>
@@ -2192,7 +1968,7 @@ docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-
     <tr>
         <td>transport.snmp.enabled</td>
         <td>SNMP_ENABLED</td>
-        <td>true</td>
+        <td>false</td>
         <td>Enable/disable SNMP transport protocol</td>
     </tr>
     </tbody>
@@ -2200,121 +1976,32 @@ docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-
 
 {% include docs/user-guide/install/snmp-transport.md %}
 
-#### Edges parameters
+{% if docsPrefix == "pe/" %} 
+#### License parameters
 
 <table>
     <thead>
-        <tr>
-            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-        </tr>
+      <tr>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+      </tr>
     </thead>
     <tbody>
         <tr>
-            <td>edges.enabled</td>
-            <td>EDGES_ENABLED</td>
-            <td>true</td>
-            <td>Enable/disable Edge instance</td>
-        </tr>
-        <tr>
-            <td>edges.rpc.port</td>
-            <td>EDGES_RPC_PORT</td>
-            <td>7070</td>
-            <td>RPC port</td>
-        </tr>
-        <tr>
-            <td>edges.rpc.client_max_keep_alive_time_sec</td>
-            <td>EDGES_RPC_CLIENT_MAX_KEEP_ALIVE_TIME_SEC</td>
-            <td>300</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>edges.rpc.ssl.enabled</td>
-            <td>EDGES_RPC_SSL_ENABLED</td>
-            <td>false</td>
-            <td>Enable/disable SSL support</td>
-        </tr>
-        <tr>
-            <td>edges.rpc.ssl.cert</td>
-            <td>EDGES_RPC_SSL_CERT</td>
-            <td>certChainFile.pem</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>edges.rpc.ssl.private_key</td>
-            <td>EDGES_RPC_SSL_PRIVATE_KEY</td>
-            <td>privateKeyFile.pem</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>edges.rpc.max_inbound_message_size</td>
-            <td>EDGES_RPC_MAX_INBOUND_MESSAGE_SIZE</td>
-            <td>4194304</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>edges.storage.max_read_records_count</td>
-            <td>EDGES_STORAGE_MAX_READ_RECORDS_COUNT</td>
-            <td>50</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>edges.storage.no_read_records_sleep</td>
-            <td>EDGES_NO_READ_RECORDS_SLEEP</td>
-            <td>1000</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>edges.storage.sleep_between_batches</td>
-            <td>EDGES_SLEEP_BETWEEN_BATCHES</td>
-            <td>1000</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>edges.scheduler_pool_size</td>
-            <td>EDGES_SCHEDULER_POOL_SIZE</td>
-            <td>1</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>edges.send_scheduler_pool_size</td>
-            <td>EDGES_SEND_SCHEDULER_POOL_SIZE</td>
-            <td>1</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>edges.grpc_callback_thread_pool_size</td>
-            <td>EDGES_GRPC_CALLBACK_POOL_SIZE</td>
-            <td>1</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>edges.edge_events_ttl</td>
-            <td>EDGES_EDGE_EVENTS_TTL</td>
-            <td>0</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>edges.state.persistToTelemetry</td>
-            <td>EDGES_PERSIST_STATE_TO_TELEMETRY</td>
-            <td>false</td>
-            <td></td>
+            <td>license.instance_data_file</td>
+            <td>TB_LICENSE_INSTANCE_DATA_FILE</td>
+            <td>instance-license.data</td>
+            <td>Instance data is auto-generated and is used to identify particular ThingsBoard Edge Instance.<br>
+                Instance data is periodically updated and stored into the specified file which can be set to absolute or relative path.<br>
+                Please make sure that thingsboard edge process has access to the instance data file, in case you use absolute path.</td>
         </tr>
     </tbody>
 </table>
-
-{% if docsPrefix == "pe/" %}
-#### License parameters
-{% endif %}
-
-{% if docsPrefix == "pe/" %} 
-{% include docs/user-guide/install/license-parameters.md %} 
 {% endif %}
 
 #### Swagger parameters
 
 {% if docsPrefix == null %} {% assign SWAGGER_DESCRIPTION_VALUE = "open-source" %} {% assign SWAGGER_CONTACT_NAME_VALUE
-= "ThingsBoard team" %} {% endif %} {% if docsPrefix == "pe/" %} {% assign SWAGGER_DESCRIPTION_VALUE = "Professional
-Edition" %} {% assign SWAGGER_CONTACT_NAME_VALUE = "ThingsBoard, Inc." %} {% endif %}
+= "ThingsBoard team" %} {% endif %} {% if docsPrefix == "pe/" %} {% assign SWAGGER_DESCRIPTION_VALUE = "Edge PE" %} {% assign SWAGGER_CONTACT_NAME_VALUE = "ThingsBoard, Inc." %} {% endif %}
 <table>
     <thead>
       <tr>
@@ -2494,558 +2181,6 @@ Edition" %} {% assign SWAGGER_CONTACT_NAME_VALUE = "ThingsBoard, Inc." %} {% end
         </tr>
     </tbody>
 </table>
-
-#### Local Version Control parameters
-
-{% include docs/user-guide/install/version-control.md %}
-
-### HTTP Transport Parameters
-
-#### Server Parameters
-
-<table>
-  <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>server.address</td>
-          <td>HTTP_BIND_ADDRESS</td>
-          <td>0.0.0.0</td>
-          <td>HTTP Server bind address</td>
-      </tr>
-      <tr>
-          <td>server.port</td>
-          <td>HTTP_BIND_PORT</td>
-          <td>8081</td>
-          <td>HTTP Server bind port</td>
-      </tr>
-      <tr>
-          <td>server.ssl.enabled</td>
-          <td>SSL_ENABLED</td>
-          <td>false</td>
-          <td>Enable/disable SSL support</td>
-      </tr>
-      <tr>
-          <td>server.ssl.credentials.type</td>
-          <td>SSL_CREDENTIALS_TYPE</td>
-          <td>PEM</td>
-          <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
-      </tr>
-      <tr>
-          <td>server.ssl.credentials.pem.cert_file</td>
-          <td>SSL_PEM_CERT</td>
-          <td>server.pem</td>
-          <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
-      </tr>
-      <tr>
-          <td>server.ssl.credentials.pem.key_file</td>
-          <td>SSL_PEM_KEY</td>
-          <td>server_key.pem</td>
-          <td>Path to the server certificate private key file (optional)</td>
-      </tr>
-      <tr>
-          <td>server.ssl.credentials.pem.key_password</td>
-          <td>SSL_PEM_KEY_PASSWORD</td>
-          <td>server_key_password</td>
-          <td>Server certificate private key password (optional)</td>
-      </tr>
-      <tr>
-          <td>server.ssl.credentials.keystore.type</td>
-          <td>SSL_KEY_STORE_TYPE</td>
-          <td>PKCS12</td>
-          <td>Type of the key store</td>
-      </tr>
-      <tr>
-          <td>server.ssl.credentials.keystore.store_file</td>
-          <td>SSL_KEY_STORE</td>
-          <td>classpath:keystore/keystore.p12</td>
-          <td>Path to the key store that holds the SSL certificate</td>
-      </tr>
-      <tr>
-          <td>server.ssl.credentials.keystore.store_password</td>
-          <td>SSL_KEY_STORE_PASSWORD</td>
-          <td>thingsboard</td>
-          <td>Password used to access the key store</td>
-      </tr>
-      <tr>
-          <td>server.ssl.credentials.keystore.key_alias</td>
-          <td>SSL_KEY_ALIAS</td>
-          <td>tomcat</td>
-          <td>Alias that identifies the key in the key store</td>
-      </tr>
-      <tr>
-          <td>server.ssl.credentials.keystore.key_password</td>
-          <td>SSL_KEY_PASSWORD</td>
-          <td>thingsboard</td>
-          <td>Password used to access the key in the keystore</td>
-      </tr>
-      <tr>
-          <td>server.http2</td>
-          <td>HTTP2_ENABLED</td>
-          <td>true</td>
-          <td>Enable/disable HTTP/2 support (takes effect only if server SSL is enabled)</td>
-      </tr>
-    </tbody>
-</table>
-
-{% include docs/user-guide/install/zookeeper-config.md %}
-
-#### Cache Parameter
-
-<table>
-  <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>cache.type</td>
-          <td>CACHE_TYPE</td>
-          <td>redis</td>
-          <td></td>
-      </tr>
-    </tbody>
-</table>
-
-#### Redis connection parameters
-
-{% include docs/user-guide/install/redis-config.md %}
-
-#### HTTP server parameters
-
-{% include docs/user-guide/install/http-transport.md %}
-
-{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %} {% include
-docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
-
-#### Queue parameters
-
-<table>
-    <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>queue.type</td>
-            <td>TB_QUEUE_TYPE</td>
-            <td>kafka</td>
-            <td>In-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
-        </tr>
-    </tbody>
-</table>
-{% include docs/user-guide/install/queue-parameters.md %}
-
-{% include docs/user-guide/install/service-metrics-management-parameters-for-mqtt-http-snmp-lwm2m-coap.md %}
-
-### MQTT Transport Parameters
-
-<table>
-  <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>spring.main.web-environment</td>
-          <td>WEB_APPLICATION_ENABLE</td>
-          <td>false</td>
-          <td>If you enabled process metrics you should also enable 'web-environment'</td>
-      </tr>
-      <tr>
-          <td>spring.main.web-application-type</td>
-          <td>WEB_APPLICATION_TYPE</td>
-          <td>none</td>
-          <td>If you enabled process metrics you should set 'web-application-type' to 'servlet' value</td>
-      </tr>
-    </tbody>
-</table>
-
-#### Server Parameters
-
-<table>
-  <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>server.address</td>
-          <td>HTTP_BIND_ADDRESS</td>
-          <td>0.0.0.0</td>
-          <td>Server bind address (has no effect if web-environment is disabled)</td>
-      </tr>
-      <tr>
-          <td>server.port</td>
-          <td>HTTP_BIND_PORT</td>
-          <td>8083</td>
-          <td>Server bind port (has no effect if web-environment is disabled)</td>
-      </tr>
-    </tbody>
-</table>
-
-{% include docs/user-guide/install/zookeeper-config.md %}
-
-#### Cache Parameter
-
-<table>
-  <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>cache.type</td>
-          <td>CACHE_TYPE</td>
-          <td>redis</td>
-          <td></td>
-      </tr>
-    </tbody>
-</table>
-
-#### Redis connection parameters
-
-{% include docs/user-guide/install/redis-config.md %}
-
-#### MQTT server parameters
-
-{% include docs/user-guide/install/mqtt-transport.md %}
-
-{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %} {% include
-docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
-
-#### Queue parameters
-
-<table>
-    <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>queue.type</td>
-            <td>TB_QUEUE_TYPE</td>
-            <td>kafka</td>
-            <td>In-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
-        </tr>
-    </tbody>
-</table>
-{% include docs/user-guide/install/queue-parameters.md %}
-
-{% include docs/user-guide/install/service-metrics-management-parameters-for-mqtt-http-snmp-lwm2m-coap.md %}
-
-### CoAP Transport Settings
-
-<table>
-  <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>spring.main.web-environment</td>
-          <td>WEB_APPLICATION_ENABLE</td>
-          <td>false</td>
-          <td>If you enabled process metrics you should also enable 'web-environment'</td>
-      </tr>
-      <tr>
-          <td>spring.main.web-application-type</td>
-          <td>WEB_APPLICATION_TYPE</td>
-          <td>none</td>
-          <td>If you enabled process metrics you should set 'web-application-type' to 'servlet' value</td>
-      </tr>
-    </tbody>
-</table>
-
-#### Server Parameters
-
-<table>
-  <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>server.address</td>
-          <td>HTTP_BIND_ADDRESS</td>
-          <td>0.0.0.0</td>
-          <td>Server bind address (has no effect if web-environment is disabled)</td>
-      </tr>
-      <tr>
-          <td>server.port</td>
-          <td>HTTP_BIND_PORT</td>
-          <td>8083</td>
-          <td>Server bind port (has no effect if web-environment is disabled)</td>
-      </tr>
-    </tbody>
-</table>
-
-{% include docs/user-guide/install/zookeeper-config.md %}
-
-#### Cache Parameter
-
-<table>
-  <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>cache.type</td>
-          <td>CACHE_TYPE</td>
-          <td>redis</td>
-          <td></td>
-      </tr>
-    </tbody>
-</table>
-
-#### Redis connection parameters
-
-{% include docs/user-guide/install/redis-config.md %}
-
-#### COAP server parameters
-
-{% include docs/user-guide/install/coap-transport.md %}
-
-{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %} {% include
-docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
-
-#### Queue parameters
-
-<table>
-    <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>queue.type</td>
-            <td>TB_QUEUE_TYPE</td>
-            <td>kafka</td>
-            <td>In-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
-        </tr>
-    </tbody>
-</table>
-{% include docs/user-guide/install/queue-parameters.md %}
-
-{% include docs/user-guide/install/service-metrics-management-parameters-for-mqtt-http-snmp-lwm2m-coap.md %}
-
-### LWM2M Transport Parameters
-
-<table>
-  <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>spring.main.web-environment</td>
-          <td>WEB_APPLICATION_ENABLE</td>
-          <td>false</td>
-          <td>If you enabled process metrics you should also enable 'web-environment'</td>
-      </tr>
-      <tr>
-          <td>spring.main.web-application-type</td>
-          <td>WEB_APPLICATION_TYPE</td>
-          <td>none</td>
-          <td>If you enabled process metrics you should set 'web-application-type' to 'servlet' value</td>
-      </tr>
-    </tbody>
-</table>
-
-#### Server Parameters
-
-<table>
-  <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>server.address</td>
-          <td>HTTP_BIND_ADDRESS</td>
-          <td>0.0.0.0</td>
-          <td>Server bind address (has no effect if web-environment is disabled)</td>
-      </tr>
-      <tr>
-          <td>server.port</td>
-          <td>HTTP_BIND_PORT</td>
-          <td>8083</td>
-          <td>Server bind port (has no effect if web-environment is disabled)</td>
-      </tr>
-    </tbody>
-</table>
-
-{% include docs/user-guide/install/zookeeper-config.md %}
-
-#### Cache Parameter
-
-<table>
-  <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>cache.type</td>
-          <td>CACHE_TYPE</td>
-          <td>redis</td>
-          <td></td>
-      </tr>
-    </tbody>
-</table>
-
-#### Redis connection parameters
-
-{% include docs/user-guide/install/redis-config.md %}
-
-#### LWM2M server parameters
-
-{% include docs/user-guide/install/lwm2m-transport.md %}
-
-{% assign JSON_TYPE_CAST_ENABLED_VALUE = "false" %} {% include
-docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
-
-#### Queue parameters
-
-<table>
-    <thead>
-        <tr>
-            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>queue.type</td>
-            <td>TB_QUEUE_TYPE</td>
-            <td>kafka</td>
-            <td>In-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
-        </tr>
-    </tbody>
-</table>
-{% include docs/user-guide/install/queue-parameters.md %}
-
-{% include docs/user-guide/install/service-metrics-management-parameters-for-mqtt-http-snmp-lwm2m-coap.md %}
-
-### SNMP Transport Parameters
-
-<table>
-  <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>spring.main.web-environment</td>
-          <td>WEB_APPLICATION_ENABLE</td>
-          <td>false</td>
-          <td>If you enabled process metrics you should also enable 'web-environment'</td>
-      </tr>
-      <tr>
-          <td>spring.main.web-application-type</td>
-          <td>WEB_APPLICATION_TYPE</td>
-          <td>none</td>
-          <td>If you enabled process metrics you should set 'web-application-type' to 'servlet' value</td>
-      </tr>
-    </tbody>
-</table>
-
-#### Server Parameters
-
-<table>
-    <thead>
-        <tr>
-            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>server.address</td>
-            <td>HTTP_BIND_ADDRESS</td>
-            <td>0.0.0.0</td>
-            <td>Server bind address (has no effect if web-environment is disabled)</td>
-        </tr>
-        <tr>
-            <td>server.port</td>
-            <td>HTTP_BIND_PORT</td>
-            <td>8083</td>
-            <td>Server bind port (has no effect if web-environment is disabled)</td>
-        </tr>
-    </tbody>
-</table>
-
-{% include docs/user-guide/install/zookeeper-config.md %}
-
-#### Cache Parameter
-
-<table>
-    <thead>
-        <tr>
-            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>cache.type</td>
-            <td>CACHE_TYPE</td>
-            <td>redis</td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
-
-#### Redis connection parameters
-
-{% include docs/user-guide/install/redis-config.md %}
-
-#### SNMP Server Parameters
-
-{% include docs/user-guide/install/snmp-transport.md %}
-
-{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %} {% include
-docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
-
-#### Queue parameters
-
-<table>
-    <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>queue.type</td>
-            <td>TB_QUEUE_TYPE</td>
-            <td>kafka</td>
-            <td>In-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
-        </tr>
-    </tbody>
-</table>
-{% include docs/user-guide/install/queue-parameters.md %}
-
-{% include docs/user-guide/install/service-metrics-management-parameters-for-mqtt-http-snmp-lwm2m-coap.md %}
-
-### Version Control Server Parameters
-
-{% include docs/user-guide/install/version-control.md %}
 
 ### logback.xml
 

@@ -1,5 +1,3 @@
-#### License parameters
-
 <table>
     <thead>
       <tr>
