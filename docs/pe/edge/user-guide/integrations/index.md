@@ -97,7 +97,13 @@ You can assign this Integration template to other Edge entities, and every Integ
 If specific Edge is missing placeholder attribute key, Platform will notify regarding it during the assignment to Edge or Integration configuration update:
 
 {% include images-gallery.html imageCollection="missingPlaceholder" %}
- 
+
+### Edge limitations
+
+In the current version, Edge is not able to create customers, device profiles and entity groups. 
+This limitation affect Uplink Data converter functionality as well. 
+
+
 ### See Also
 
 Explore guides and video tutorials related to specific integrations:
