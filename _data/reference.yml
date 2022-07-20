@@ -32,6 +32,6 @@ toc:
 #      path: /docs/reference/performance/tools/postgres-pgadmin-monitoring/
 #    - title: Thingsboard performance charts
 #      path: /docs/reference/performance/tools/thingsboard-performance-charts/
-- title: Cluster Performance on AWS EKS
-  path: /docs/reference/performance-aws-eks/
+- title: Performance on AWS EKS cluster
+  path: /docs/reference/performance-aws-eks-cluster/
   new: true

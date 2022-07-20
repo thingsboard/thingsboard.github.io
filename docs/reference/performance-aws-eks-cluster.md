@@ -150,4 +150,4 @@ cluster-1-million-5k-15k:
 
 ---
 
-{% include /docs/reference/performance-kubernetes-cluster-aws-eks.md %}
+{% include /docs/reference/performance-aws-eks-cluster.md %}

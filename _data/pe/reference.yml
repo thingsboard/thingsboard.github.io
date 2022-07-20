@@ -12,6 +12,6 @@ toc:
 - title: Performance on AWS EC2
   path: /docs/pe/reference/performance-aws-instances/
   new: true
-- title: Cluster Performance on AWS EKS
-  path: /docs/pe/reference/performance-aws-eks/
+- title: Performance on AWS EKS cluster
+  path: /docs/pe/reference/performance-aws-eks-cluster/
   new: true

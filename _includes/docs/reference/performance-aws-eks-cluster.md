@@ -5,16 +5,20 @@
 ThingsBoard has been run in production by numerous companies in both [monolithic](/docs/{{docsPrefix}}reference/monolithic/)
 and [microservices](/docs/{{docsPrefix}}reference/msa/) deployment modes.
 
-This article describes the performance of ThingsBoard microservices deployment in the most popular usage scenarios.
-It is helpful to understand how ThingsBoard scales horizontally (cluster mode).
+This article describes the performance of **ThingsBoard microservices** deployment in the most popular usage scenarios.
+It is helpful to understand how ThingsBoard scales horizontally (**cluster** mode).
 
-## ThingsBoard cluster test methodology
+## Test methodology
 
 For simplicity, we have deployed a ThingsBoard cluster on the AWS Kubernetes cluster.
 We will use the respective helm charts to simplify the 3rd party deployment for PostgreSQL, Cassandra, Kafka, Zookeeper, and Redis.
 Many test agents provisions and connects a configurable number of device emulators that constantly publish time-series data over MQTT.
 
+## Setup cluster on AWS EKS
+
 [Setup ThingsBoard on AWS EKS cluster using Helm charts](/docs/{{docsPrefix}}reference/performance/setup-aws-eks-cluster).
+
+## Setup performance test fleet
 
 [Setup Performance test fleet](/docs/{{docsPrefix}}reference/performance/setup-aws-eks-cluster) to generate the load.
 
