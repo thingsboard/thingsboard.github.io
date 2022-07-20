@@ -3,36 +3,31 @@
 <!-- This will parse content of HTML tags as markdown when uncomment {::options parse_block_html="true" /} -->
 
 ThingsBoard is used in production by numerous companies in both [monolithic](/docs/{{docsPrefix}}reference/monolithic/)
-and [microservices](/docs/{{docsPrefix}}reference/msa/) deployment modes.
+and [microservices](/docs/{{docsPrefix}}reference/msa/) (msa) deployment modes. 
 
-This article describes the performance of **ThingsBoard microservices** deployment in the most popular usage scenarios.
-It is helpful to understand how ThingsBoard scales horizontally (**cluster** mode).
+This article describes the performance that the ThingsBoard msa installation has shown in the most popular or extreme usage scenarios. The documentation is helpful to better understand how ThingsBoard scales horizontally (**clustering**), where and how one should tune the platform to cope with large device fleet.
 
 ## Test methodology
 
-For simplicity, we have deployed a ThingsBoard cluster on the AWS Kubernetes cluster.
-We will use the respective helm charts to simplify the 3rd party deployment for PostgreSQL, Cassandra, Kafka, Zookeeper, and Redis.
-Many test agents provisions and connects a configurable number of device emulators that constantly publish time-series data over MQTT.
+The goal is to test the ThingsBoard cluster resilience and performance while many agents provision and connect a configurable number of device emulators that constantly publish time-series data over MQTT. We used the AWS EKS infrastructure for ThingsBoard; the respective helm charts were exercised to simplify the deployment of 3rd parties (PostgreSQL, Cassandra, Kafka, Zookeeper, and Redis).
 
 ## Setup cluster on AWS EKS
 
-[Setup ThingsBoard on AWS EKS cluster using Helm charts](/docs/{{docsPrefix}}reference/performance/setup-aws-eks-cluster).
+We have prepared dedicated documentation on how to set up [ThingsBoard on AWS EKS cluster](/docs/{{docsPrefix}}reference/performance/setup-aws-eks-cluster).
 
 ## Setup performance test fleet
 
-[Setup Performance test fleet](/docs/{{docsPrefix}}reference/performance/performance-test-fleet) to generate the load.
+[Setup Performance test fleet](/docs/{{docsPrefix}}reference/performance/performance-test-fleet/)) to generate the load.
 
 ## Performance tests
 
-### 100k devices, 20k data points 
+### 100k devices, 20k data points per second
 
-Let's build a ThingsBoard cluster, starting from 100k devices and 20k data points per second.
+We spun x10 AWS EC2 `t3a.small` instances far away from the cluster to produce the load.
 
-To produce the load, we will spin x10 AWS EC2 `t3a.small` instances far away from the cluster.
+Dataflow comes from `performance-test` instances through the AWS load balancer and feeds the cluster using the `tb-mqtt-transport` service.
 
-Data will flow from `performance-test` instances through the AWS load balancer and feed the cluster using the `tb-mqtt-transport` service.
-
-Cluster config is there:
+Cluster sizing and configurations for the above load are as follows:
 
 | Node group | Instances (vCPU/Gi)   | Micro services        |
 |------------|-----------------------|-----------------------|
@@ -48,7 +43,7 @@ Cluster config is there:
 |            |                       | 3 * kafka             |
 |            |                       | 3 * tb-web-ui         |
 
-We run the cluster for more than 24h. The ThingsBoard handles the load just fine.
+The test was running for more than 24h. The platform handled the load just fine.
 
 {% include images-gallery.html imageCollection="cluster-100k-6k-20k" %}
 
@@ -123,12 +118,10 @@ eksctl create cluster -f cluster.yml
 
 </details>
 
-### 100k devices, 30k data points
+### 100k devices, 30k data points per second
 
-Let's try increasing the load to 30k data points per second. We may see that the system is ok.
-
-Kubernetes scheduled the PgPool to the same node as the Postgresql master. It pushes CPU load to the maximum.
-To fix this fast, let's spin a new node group dedicated to PgPool:
+In this stage, we increased the received load to 30k data points per second. The system worked as expected. However, we noticed that
+Kubernetes scheduled the PgPool to the same node as the PostgreSQL master. This event typically increases the CPU load to the maximum. To fix this fast, a new node group dedicated to PgPool should be launched:
 
 | Node group | Instances (vCPU/Gi)    | Micro services |
 |------------|------------------------|----------------|
@@ -138,13 +131,11 @@ Here are some screenshots with the results:
 
 {% include images-gallery.html imageCollection="cluster-100k-10k-30k" %}
 
-### 100k devices, 45k data points
+### 100k devices, 45k data points per second
 
-We are increasing the load up to 45k data points per second. The system performs OK but is close to the CPU limits for Postgresql and Cassandra.
-
-Note: at this test, the PgPool consumes about 4 CPU cores, even more than Postgresql. It is probably related to some feature in the latest PgPool update. We will look at it later, and the upgrade/downgrade will probably be a solution.
-
-Cluster config is there:
+Once finished with 30k dp/sec load we'd increased the load by 50% — up to 45k data points per second. With this capacity, the system remained stable. We saw that the CPU limits for PostgreSQL and Cassandra were almost reached.
+Side Note: during the test, the PgPool consumed about 4 CPU cores, even more than PostgreSQL. It is probably related to some feature in the latest PgPool. We are going to investigate it later. The upgrade/downgrade is probably, a solution.
+To recall, the ThingsBoard cluster has the following configurations:
 
 | Node group | Instances (vCPU/Gi)    | Micro services        |
 |------------|------------------------|-----------------------|
@@ -155,29 +146,25 @@ Cluster config is there:
 |            |                        | 6 * redis             |
 | cassandra  | 3 * c6i.xlarge (4/8)   | 3 * cassandra         |
 | postgresql | 2 * c6i.xlarge (4/8)   | 2 * postgresql        |
-| pgpoool    | 1 * c6a.2xlarge (8/16) | 1 * pgpool            |
+| pgpool     | 1 * c6a.2xlarge (8/16) | 1 * pgpool            |
 | kafka      | 3 * c6i.large (2/4)    | 3 * zokeeper          |
 |            |                        | 3 * kafka             |
 |            |                        | 3 * tb-web-ui         |
 
-Here you can see the screenshots of the working cluster with the 100k/15k/30k load.
 
 {% include images-gallery.html imageCollection="cluster-100k-15k-45k" %}
 
-### 300k devices, 15k data points
+### 300k devices, 15k data points per second
 
-We will go forward and increase the device count even more.
-The main challenge in this approach is to manage a lot of TCP connections.
-You have to be able to accept a much more TCP connection than usual.
+Afterward, we tested how the cluster handles the extreme number of TCP connections. By increasing the number of devices, we gained an above-average amount of connection. Initially, the test was running with 100k connections, and in this phase, this parameter raised by 200% — to 300k connections.
 
-Here are the screenshots for a short period. Then we will move to the next milestone.
+Here are screenshots for a short-run period as we moved to the next milestone quickly.
 
 {% include images-gallery.html imageCollection="cluster-300k-5k-15k" %}
 
-### 500k devices, 15k data points
+### 500k devices, 15k data points per second
 
-Let's create half a million devices. 
-Things get more complicated, and the following sections will show you the challenges and solutions to a successful operation.  
+We expected to get valuable insights and tried experimenting with new performance-test app parameters. Starting with half a million devices, things got more complicated, and the following sections will show you the challenges and solutions to a successful operation. 
 
 #### Experiments 
 
