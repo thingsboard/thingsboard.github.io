@@ -1,4 +1,5 @@
-* TOC {:toc}
+* TOC
+{:toc}
 
 This guide will help you to get familiar with ThingsBoard configuration files and parameters. We **recommend** to
 configure ThingsBoard using environment variables. This way you do not need to merge the configuration files when new
