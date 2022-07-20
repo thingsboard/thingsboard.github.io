@@ -20,7 +20,7 @@ Many test agents provisions and connects a configurable number of device emulato
 
 ## Setup performance test fleet
 
-[Setup Performance test fleet](/docs/{{docsPrefix}}reference/performance/setup-aws-eks-cluster) to generate the load.
+[Setup Performance test fleet](/docs/{{docsPrefix}}reference/performance/performance-test-fleet) to generate the load.
 
 ## Performance tests
 
