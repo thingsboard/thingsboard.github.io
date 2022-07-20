@@ -21,11 +21,11 @@ For example, subsequent rule nodes may process messages slowly. Unprocessed mess
 
 ##### Checkpoint Node
 
-Publish a copy of the message to the selected [rule engine queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-queue).
+Publish a copy of the message to the selected [rule engine queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/).
 The original message is marked as successfully processed once the target queue acknowledge publish of the copied message. 
 
 Useful if you want to mark message as high priority or process messages sequentially grouped by originator of the message. 
-See [default queues](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#default-queues) or define your own [queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-queue). 
+See [default queues](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#default-queues) or define your own [queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/). 
 
 ##### Rule Chain Node
 

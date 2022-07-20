@@ -537,9 +537,13 @@ There are 2 variants of Gateway slave section:
 TCP/UDP<small>Connection over TCP/UDP protocol</small>%,%tcpUdp%,%templates/iot-gateway/gateway-as-modbus-slave-tcpudp-connection.md%br%
 Serial<small>Connection over serial port</small>%,%serial%,%templates/iot-gateway/gateway-as-modbus-slave-serial-connection.md{% endcapture %}
 
-There are 2 variants of server section:
-
 {% include content-toggle.html content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType %}
+
+{% capture difference %}
+<br>
+**Don't use "Gateway" as the value of "deviceName" parameter!**  
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 <br>
 **Example:**

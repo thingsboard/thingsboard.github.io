@@ -58,8 +58,6 @@ toc:
       path: /docs/paas/user-guide/rule-engine-2-0/re-getting-started/
     - title: Overview
       path: /docs/paas/user-guide/rule-engine-2-0/overview/
-    - title: Architecture
-      path: /docs/paas/user-guide/rule-engine-2-0/architecture/
     - title: Nodes
       section:
         - title: Filter Nodes
@@ -152,6 +150,9 @@ toc:
       path: /docs/paas/user-guide/entity-views/
     - title: API Limits
       path: /docs/paas/user-guide/api-limits/
+    - title: Version Control
+      path: /docs/paas/user-guide/version-control/
+      new: true
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning

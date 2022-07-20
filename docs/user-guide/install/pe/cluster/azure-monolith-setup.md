@@ -16,7 +16,7 @@ This guide will help you to setup ThingsBoard in monolith mode in Azure AKS.
 
 {% include templates/install/azure/aks-prerequisites.md %}
 
-### Checkout ThingsBoard PE images from docker store
+### Pull ThingsBoard PE images from docker hub
 
 {% assign checkoutMode = "monolith" %}
 {% include templates/install/dockerhub/checkout.md %}
@@ -52,23 +52,15 @@ cd thingsboard-pe-k8s/azure/monolith
 
 {% include templates/install/azure/configure-cassandra.md %}
 
-## Step 6. Upload Docker credentials
-
-{% include templates/install/dockerhub/pull.md %}
-
-If the above command fails, repeat the [prerequisites](#checkout-thingsboard-pe-images-from-docker-store) step.
-
-{% include templates/install/dockerhub/upload-docker-credentials.md %}
-
-## Step 7. Configure license key
+## Step 6. Configure license key
 
 {% include templates/install/k8s-license-secret.md %}
 
-## Step 8. Installation
+## Step 7. Installation
 
 {% include templates/install/azure/aks-installation.md %}
 
-## Step 9. Starting
+## Step 8. Starting
 
 Execute the following command to deploy ThingsBoard services:
 
@@ -79,22 +71,22 @@ Execute the following command to deploy ThingsBoard services:
 
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see `tb-node-0` pod in the `READY` state.
 
-## Step 10. Configure Load Balancers
+## Step 9. Configure Load Balancers
 
-### 10.1. Configure HTTP(S) Load Balancer
+### 9.1. Configure HTTP(S) Load Balancer
 {% include templates/install/azure/aks-http-lb.md %}
 
-### 10.2. Configure MQTT Load Balancer (Optional)
+### 9.2. Configure MQTT Load Balancer (Optional)
 
 {% assign tbServicesFile = "tb-node.yml" %}
 {% include templates/install/azure/configure-mqtt.md %}
 
-### 10.3. Configure UDP Load Balancer (Optional)
+### 9.3. Configure UDP Load Balancer (Optional)
 
 {% assign tbServicesFile = "tb-node.yml" %}
 {% include templates/install/azure/configure-udp.md %}
 
-## Step 11. Using
+## Step 10. Using
 
 {% include templates/install/azure/using.md %}
 

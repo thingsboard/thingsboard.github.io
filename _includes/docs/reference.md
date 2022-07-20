@@ -48,7 +48,7 @@ Rule Engine nodes can join the cluster, where each node is responsible for certa
 
 Rule Engine subscribes to incoming data feed from queue(s) and acknowledge the message only once it is processed. 
 There are multiple strategies available that control the order or message processing and the criteria of message acknowledgement.
-See [submit strategies](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#queue-submit-strategy) and [processing strategies](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#queue-processing-strategy)
+See [submit strategies](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy) and [processing strategies](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy)
 for more details.
 
 ThingsBoard Rule Engine may operate in two modes: shared and isolated. In shared mode, rule engine process messages that belong to multiple tenants.
@@ -80,7 +80,7 @@ ThingsBoard uses following topics:
  * **tb_rule_engine**: to push messages from Transport or ThingsBoard Core to Rule Engine. Messages include incoming telemetry, device states, entity lifecycle events, etc.
  
 **Note:** All topic properties including names and number of partitions are [configurable](/docs/{{docsPrefix}}user-guide/install/config/) via thingsboard.yml or environment variables. 
-We plan to enable configuration via UI in ThingsBoard 2.6 and/or 3.1. 
+Since ThingsBoard 3.4 we can configure Rule Engine queues by the UI, see the [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/).
 
 **Note:** Starting version 2.5 we have switched from using [gRPC](https://grpc.io/) to  [Message Queues](/docs/{{docsPrefix}}reference/#message-queues-are-awesome)
 for all communication between ThingsBoard components. 
