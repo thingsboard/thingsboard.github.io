@@ -4,6 +4,7 @@ assignees:
 - ashvayka
 title: Tenant Profiles
 description: IoT tenant profiles
+redirect_from: "/docs/pe/user-guide/ui/tenant-profiles"
 entityLimits:
     0:
         image: /images/user-guide/tenant-profile/thingsboard-pe-tenant-profiles-entity-limits.png  
