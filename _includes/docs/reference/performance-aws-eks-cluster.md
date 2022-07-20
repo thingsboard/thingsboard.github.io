@@ -2,7 +2,7 @@
 {:toc}
 <!-- This will parse content of HTML tags as markdown when uncomment {::options parse_block_html="true" /} -->
 
-ThingsBoard has been run in production by numerous companies in both [monolithic](/docs/{{docsPrefix}}reference/monolithic/)
+ThingsBoard is used in production by numerous companies in both [monolithic](/docs/{{docsPrefix}}reference/monolithic/)
 and [microservices](/docs/{{docsPrefix}}reference/msa/) deployment modes.
 
 This article describes the performance of **ThingsBoard microservices** deployment in the most popular usage scenarios.
