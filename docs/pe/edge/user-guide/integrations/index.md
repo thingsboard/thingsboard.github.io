@@ -56,8 +56,10 @@ Edge Integrations feature was designed in a similar way as Platform Integrations
 
 To reuse same Integration between multiple Edges, **Integration templates** and **Converter templates** approach was introduced. 
 
-Integration templates are created on the cloud, but these templates are not regular Platform Integrations and *not started* on the cloud. 
+Integration templates are created on the Cloud, but these templates are not regular Platform Integrations and *not started* on the cloud. 
 They are assigned to the Edge and *started* once they are provisioned to the Edge.
+
+At the moment Integrations and Converters can not be modified on the Edge - they are modified on the Cloud and all the modifications automatically propagated to the Edge from the Cloud.
 
 Integration configurations fields (URIs, passwords, etc.) could be replaced by Edge attribute value with a help of placeholders. 
 In this way, single Integration template could be used by multiple Edges, and any specific configuration field of the Integration could be replaced by Edge attribute value.
@@ -67,8 +69,8 @@ In this way, single Integration template could be used by multiple Edges, and an
 #### Converter templates
 
 Converter templates could be created only by Tenant administrator. 
-You can navigate to **Edge management -> Converter templates** page.
-This page allows you to create Converter template. These Converter templates are going to be used in Integration templates configuration.
+Go to Cloud and navigate to **Edge management -> Converter templates** page.
+This page allows you to create Converter template. These Converter templates are going to be used later in Integration templates configuration.
 
 {% include images-gallery.html imageCollection="converterTemplateCreation" showListImageTitles="true" %}
 
@@ -76,7 +78,7 @@ You do not need to assign Converter templates to the Edge - once Integration tem
 
 #### Integration templates
 
-Once Converter template was created you can navigate to **Edge management -> Integration templates** page to create integration.
+Once Converter template was created you can navigate to **Edge management -> Integration templates** page to create Integration.
 This page allows you to create Integration template. These Integration templates are going to be assigned to the Edge.
 
 {% include images-gallery.html imageCollection="integrationTemplateCreation" showListImageTitles="true" %}
@@ -101,8 +103,11 @@ If specific Edge is missing placeholder attribute key, Platform will notify rega
 ### Edge limitations
 
 In the current version, Edge is not able to create customers, device profiles and entity groups. 
-This limitation affect Uplink Data converter functionality as well. 
+These limitations affect Uplink Data converter functionality:
 
+* If non-existent device type used in the Converter, **'default'** device type will be used.
+* Same applies to the customer - if customer is not available on the Edge, device will be assigned to Tenant.
+* If entity group non-exists on the edge - 'All' group is going to be used.
 
 ### See Also
 
@@ -123,7 +128,6 @@ Explore guides and video tutorials related to specific integrations:
  - [TCP](/docs/pe/edge/user-guide/integrations/tcp/)
  - [UDP](/docs/pe/edge/user-guide/integrations/udp/)
  
-
 ## Next steps
 
 {% assign docsPrefix = "pe/edge/" %}
