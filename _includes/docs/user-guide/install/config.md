@@ -1702,16 +1702,10 @@ endif %}
             <td></td>
         </tr>
         <tr>
-            <td>spring.jpa.database-platform</td>
-            <td>SPRING_JPA_DATABASE_PLATFORM</td>
-            <td>org.hibernate.dialect.PostgreSQLDialect</td>
-            <td>Database SQL dialect for Spring JPA - <b>org.hibernate.dialect.PostgreSQLDialect</b> or <b>org.hibernate.dialect.HSQLDialect</b></td>
-        </tr>
-        <tr>
           <td>spring.datasource.driverClassName</td>
           <td>SPRING_DRIVER_CLASS_NAME</td>
           <td>org.postgresql.Driver</td>
-          <td>Database driver for Spring JPA - <b>org.postgresql.Driver</b> or <b>org.hsqldb.jdbc.JDBCDriver</b></td>
+          <td>Database driver for Spring JPA - <b>org.postgresql.Driver</b></td>
         </tr>
         <tr>
           <td>spring.datasource.url</td>

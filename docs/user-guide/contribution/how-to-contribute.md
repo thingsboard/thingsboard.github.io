@@ -53,14 +53,10 @@ See separate instructions for [**IDEA**](https://www.jetbrains.com/help/idea/201
 
 #### Database
 
-By default, ThingsBoard uses embedded HSQLDB instance which is very convenient for evaluation or development purposes. 
-  
-Alternatively, you can configure your platform to use either hybrid mode - PostgreSQL for entities data and scalable Cassandra DB cluster for timeseries data or PostgreSQL for both. 
-If you prefer to use an SQL database, we recommend PostgreSQL.
+By default ThingsBoard uses PostgreSQL database to store entities and timeseries data.
+Alternatively, you can configure your platform to use hybrid mode - PostgreSQL for entities data and scalable Cassandra DB cluster for timeseries data. 
 
-##### [Optional] SQL Database: PostgreSQL
-
-{% include templates/install/optional-db.md %}
+##### SQL Database: PostgreSQL
 
 Please use [this link](https://wiki.postgresql.org/wiki/Detailed_installation_guides) for the PostgreSQL installation instructions.
 
@@ -76,23 +72,11 @@ Please refer to appropriate section where you find instructions on how to instal
  - [Cassandra installation on **Linux**](/docs/user-guide/install/linux/#cassandra)
  - [Cassandra installation on **Windows**](/docs/user-guide/install/windows/#cassandra)
 
-##### [Optional] Configure ThingsBoard to use external database
- 
-{% include templates/install/optional-db.md %} 
- 
 Edit ThingsBoard configuration file: 
 
 ```text
 /application/src/main/resources/thingsboard.yml
 ```
-
-{% include templates/disable-hsqldb.md %} 
-
-For **PostgreSQL**:
-
-{% include templates/enable-postgresql.md %} 
-
-For **Cassandra DB**:
 
 Locate and set database type configuration parameters to 'cassandra'.
  
