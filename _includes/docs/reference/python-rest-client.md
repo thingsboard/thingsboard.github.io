@@ -14,6 +14,7 @@ In order to install the ThingsBoard Python REST client, you should use the follo
 ```bash
 pip3 install tb-rest-client
 ``` 
+{:.copy-code}
 
 ## Python REST Client examples
 
@@ -227,6 +228,154 @@ with RestClientCE(base_url=url) as rest_client:
     except ApiException as e:
         logging.exception(e)
 ```
+
+### Configure version control feature from console
+
+This feature is available in ThingsBoard 3.4+. 
+We have designed script, based on tb-rest-client library to make example how to use ability to configure ThingsBoard from your code.  
+The latest source code of the script is available [here](https://github.com/thingsboard/thingsboard-python-rest-client/blob/master/examples/configure_vcs_access.py).
+In this example we configure [version control feature](/docs/user-guide/version-control) on ThingsBoard.  
+
+There are 2 possible ways to configure version control system (VCS):   
+1. Using access token/password of your VCS account.  
+2. Using private key.  
+
+#### Configuring version control system using access token or password  
+
+To configure this feature we will need the command line arguments and data:  
+
+| Command line argument | Description                                                                       |  
+|-|-|  
+| -H | **ThingsBoard host (Default: localhost)**                                                            |    
+| -p | **ThingsBoard port (Default: 80)**                                                                   |  
+| -U | **ThingsBoard user (email for login)**                                                               |  
+| -P | **ThingsBoard user password**                                                                        |
+| -r | **Repository uri, link to your repository**                                                          |
+| -b | **Default branch (Default: main)**                                                                   |  
+| -gu | **VCS username** (This parameter named GITHUB_USERNAME, but it can work with any VCS)               |  
+| -gp | **VCS access token / password** (This parameter named GITHUB_PASSWORD, but it can work with any VCS)|  
+
+*You always can get the full list of arguments by calling script with no arguments or with* **-h** *argument.*
+
+To configure the version control feature we should have installed [tb-rest-client](#python-rest-client) python package and download the script:
+
+```bash
+wget https://github.com/thingsboard/thingsboard-python-rest-client/blob/master/examples/configure_vcs_access.py
+```
+{:.copy-code}
+
+Now we can run the script and configure version control feature (Do not forget to put your values).  
+
+```bash
+python3 configure_vcs_access.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -r YOUR_REPOSITORY_URL -b DEFAULT_BRANCH -gu YOUR_VCS_USERNAME -gp YOUR_VCS_ACCESSTOKEN_OR_PASSWORD
+```
+{:.copy-code}
+
+#### Configuring version control system using private key  
+
+To configure this feature we will need next command line arguments and data:  
+
+| Command line argument | Description                                                                       |  
+|-|-|  
+| -H | **ThingsBoard host (Default: localhost)**                                                            |    
+| -p | **ThingsBoard port (Default: 80)**                                                                   |  
+| -U | **ThingsBoard user (email for login)**                                                               |  
+| -P | **ThingsBoard user password**                                                                        |
+| -r | **Repository uri, link to your repository**                                                          |  
+| -b | **Default branch (Default: main)**                                                                   |  
+| -gu | **VCS username** (This parameter named GITHUB_USERNAME, but it can work with any VCS)               |  
+| -pk | **Path to private key**                                                                             |  
+| -pkp | **Password for private key (If it was set)**                                                       |  
+
+*You always can get the full list of arguments by calling script with no arguments or with* **-h** *argument.*
+
+To configure the version control feature we should have installed [tb-rest-client](#python-rest-client) python package and download the script:
+
+```bash
+wget https://raw.githubusercontent.com/thingsboard/thingsboard-python-rest-client/master/examples/configure_vcs_access.py
+```
+{:.copy-code}
+
+Now we can run the script and configure version control feature (Do not forget to put your values).  
+
+```bash
+python3 configure_vcs_access.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -r YOUR_REPOSITORY_URL -b DEFAULT_BRACH -gu YOUR_VCS_USERNAME -pk PATH_TO_YOUR_PRIVATE_KEY -pkp YOUR_PRIVATE_KEY_PASSWORD
+```
+{:.copy-code}
+
+### Saving all entities to version control system
+
+You can use the following script, based on [tb-rest-client](#python-rest-client) to save current state of your entities to your repository on version control system.
+
+The latest source code you can find [here](https://github.com/thingsboard/thingsboard-python-rest-client/blob/master/examples/save_all_entities_to_vcs_ce.py).
+
+
+To save entities from command line we will use the following arguments and data:  
+
+| Command line argument | Description                                                                       |  
+|-|-|  
+| -H | **ThingsBoard host (Default: localhost)**                                                            |    
+| -p | **ThingsBoard port (Default: 80)**                                                                   |  
+| -U | **ThingsBoard user (email for login)**                                                               |  
+| -P | **ThingsBoard user password**                                                                        |  
+| -b | **Default branch (Default: main)**                                                                   |  
+| -N | **Version name (If not provided will be generated 5 random letters and numbers and used as a name)** |
+| --save_attributes  | **Optional, do we need to save attributes for target entities (Default: True)**      |
+| --save_credentials | **Optional, do we need to save credentials for target entities (Default: True)**     |
+| --save_relations   | **Optional, do we need to save relations for target entities (Default: True)**       |
+| --sync_strategy    | **Optional, Sync strategy for entities can be OVERWRITE and MERGE (Default: MERGE)** |
+
+*You always can get the full list of arguments by calling script with no arguments or with* **-h** *argument.*
+
+Let's download the script:
+```bash
+wget https://raw.githubusercontent.com/thingsboard/thingsboard-python-rest-client/master/examples/save_all_entities_to_vcs_ce.py
+```
+
+Now we can run our script and save our entities to the repository on version control system, we will publish to default branch with default settings to show minimal required configuration:
+
+```bash
+python3 save_all_entities_to_vcs_ce.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD
+```
+
+In output message you will receive information about how many entities were saved.
+
+### Loading all entities from version control system
+
+You can use the following script, based on [tb-rest-client](#python-rest-client) to save current state of your entities to your repository on version control system.
+
+The latest source code you can find [here](https://github.com/thingsboard/thingsboard-python-rest-client/blob/master/examples/load_all_entities_to_vcs_ce.py).
+
+
+To load entities from command line we will use the following arguments and data:  
+
+| Command line argument | Description                                                                                                                       |  
+|-|-|  
+| -H | **ThingsBoard host (Default: localhost)**                                                                                                            |    
+| -p | **ThingsBoard port (Default: 80)**                                                                                                                   |  
+| -U | **ThingsBoard user (email for login)**                                                                                                               |  
+| -P | **ThingsBoard user password**                                                                                                                        |  
+| -b | **Default branch (Default: main)**                                                                                                                   |  
+| -N | **Version name (You can provide a part of the version name and script will propose you all find versions that include provided name)**               |
+| --load_attributes  | **Optional, do we need to load attributes for target entities (Default: True)**                                                      |
+| --load_credentials | **Optional, do we need to load credentials for target entities (Default: True)**                                                     |
+| --load_relations   | **Optional, do we need to load relations for target entities (Default: True)**                                                       |
+| --sync_strategy    | **Optional, Sync strategy for existing entities can be OVERWRITE and MERGE (Default: MERGE)**                                        |
+
+*You always can get the full list of arguments by calling script with no arguments or with* **-h** *argument.*
+
+Let's download the script:
+```bash
+wget https://raw.githubusercontent.com/thingsboard/thingsboard-python-rest-client/master/examples/load_all_entities_to_vcs_ce.py
+```
+
+Now we can run our script and restore entities version and state from the repository on version control system:
+
+```bash
+python3 load_all_entities_to_vcs_ce.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -N YOUR_VERSION_NAME 
+```
+
+In output you will receive information about how many entities were loaded.
 
 
 **The Professional Edition Python REST Client example you can find [here](/docs/pe/reference/python-rest-client/#professional-edition-python-rest-client-example).**
