@@ -25,10 +25,10 @@ toc:
 #      path: /docs/pe/edge/config/provision-user/
 #    - title: Provision Customer from cloud to edge
 #      path: /docs/pe/edge/config/provision-customer/
-#- title: Edge Rule Engine
-#  section:
-#    - title: General Overview
-#      path: /docs/pe/edge/rule-engine/general/
+- title: Rule Engine
+  section:
+    - title: Queues
+      path: /docs/pe/edge/rule-engine/queues/
 #    - title: Rule Chain Templates
 #      path: /docs/pe/edge/rule-engine/rule-chain-templates/
 #    - title: Provision Rule Chains from cloud to edge
