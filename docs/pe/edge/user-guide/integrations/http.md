@@ -111,7 +111,7 @@ Converter and Integration templates are created on the **Cloud**, so please log 
 
 Before creating the Integration template, you need to create an Uplink and Downlink converter templates in **Converters templates** page. 
 Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard Edge. 
-Click on the “plus” and on “Create new converter”. To view the events, enable Debug. 
+Click on the 'plus' and on 'Create new converter'. To view the events, enable Debug. 
 In the function decoder field, specify a script to parse and transform data.
 
 {% include images-gallery.html imageCollection="addConverter" %}
@@ -154,8 +154,10 @@ return result;
 ```
 {: .copy-code}
 
-You can change the decoder function while creating the converter or after creating it. If the converter has already been created, then click on the “pencil” icon to edit it.
-Copy the configuration example for the converter (or your own configuration) and insert it into the decoder function. Save changes by clicking on the “checkmark” icon.
+You can change the decoder function while creating the converter or after creating it. 
+If the converter has already been created, then click on the 'pencil' icon to edit it.
+Copy the configuration example for the converter (or your own configuration) and insert it into the decoder function. 
+Save changes by clicking on the 'checkmark' icon.
 
 {% include images-gallery.html imageCollection="modifyConverter" %}
 
