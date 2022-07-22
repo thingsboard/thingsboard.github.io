@@ -4,7 +4,7 @@
 #### Overview
 
 Edge Queues are designed in the same way, as [Platform (Cloud) Queues](/docs/{{cloudDocsPrefix}}user-guide/rule-engine-2-5/queues/).
-Please read Platform Queues documentation to get knowledge on Queues functionality.
+Please read Platform Queues documentation to get knowledge on Queues functionality in general.
 
 #### Propagation Queues to Edge
 
@@ -13,7 +13,7 @@ No additional assignment actions required from Tenant administrator or user.
 
 #### Queues Usage in the Rule Engine
 
-Tenant administrator is able to use any Queue in the Edge Rule Chain(s), in the same way as it used for Core Rule Chain(s).
+Tenant administrator is able to use any Queue in the *Edge* Rule Chain(s), in the same way as it used for *Platform* Rule Chain(s).
 No additional actions required. 
  
 ## Next steps
