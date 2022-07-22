@@ -9,6 +9,7 @@ Please read Platform Queues documentation to get knowledge on Queues functionali
 #### Propagation Queues to Edge
 
 Queues are created on the *Platform*. You can not create them on the *Edge*.
+
 All the Queues, that are created on the Platform, are automatically propagated to every Edge instance, that is connected to the Platform. 
 No additional assignment actions required from Tenant administrator or user.
 
