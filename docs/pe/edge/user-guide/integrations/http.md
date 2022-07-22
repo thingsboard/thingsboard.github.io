@@ -23,7 +23,7 @@ addIntegration:
 assignIntegration:
     0:
         image: /images/pe/edge/integrations/http/assign-integration-step-1.png
-        title: 'Add <b>edgeBaseUrl</b> attribute to Edge'
+        title: 'Add <b>edgeBaseUrl</b> attribute to Edge and set value as your Edge <b>IP:port</b>'
     1:
         image: /images/pe/edge/integrations/http/assign-integration-step-2.png
         title: 'Click <b>Manage Integrations</b> button of Edge entity'
@@ -103,9 +103,14 @@ HTTP Integration allows converting existing protocols and payload formats to Thi
  - stream device and/or asset data from your custom application running in the cloud.
  - connect the existing device with custom HTTP based protocol to ThingsBoard Edge.
 
-## Create Uplink Converter template
+## Create Converter templates
 
-Before creating the Integration template, you need to create an Uplink converter template in Converters template. Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard Edge. 
+Converter and Integration templates are created on the **Cloud**, so please log in as Tenant administrator to cloud instance.
+
+### Uplink Converter template
+
+Before creating the Integration template, you need to create an Uplink and Downlink converter templates in **Converters templates** page. 
+Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard Edge. 
 Click on the “plus” and on “Create new converter”. To view the events, enable Debug. 
 In the function decoder field, specify a script to parse and transform data.
 
@@ -156,50 +161,14 @@ Copy the configuration example for the converter (or your own configuration) and
 
 {% include templates/edge/integrations/debug-mode-info.md %}
 
-## Create Integration template 
+### Downlink Converter template
 
-Now that the Uplink converter template has been created, it is possible to create an integration.
-
-{% include images-gallery.html imageCollection="addIntegration" %}
-
-## Assign Integration to Edge
-
-Once converter and integration templates are created, we can assign Integration template to Edge. 
-Because we are using placeholder **$\{\{edgeBaseUrl\}\}** in the integration configuration, we need to add attribute **edgeBaseUrl** to edge first.
-Once attribute added, we are ready to assign integration and verify that it's added.
-
-{% include images-gallery.html imageCollection="assignIntegration" showListImageTitles="true" %}
-
-## Send uplink message
-
-To send an uplink message, you need a HTTP endpoint URL from the integration.  
-Let`s go to the Integrations tab in ThingsBoard Edge. Find your HTTP integration and click on it. There you can find the HTTP endpoint URL. Click on the icon to copy the url.
-
-{% include images-gallery.html imageCollection="sendUplink" %}
-
-Use this command to send the message. Replace $DEVICE_NAME and $YOUR_HTTP_ENDPOINT_URL with corresponding values.
-
-```ruby
-curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json"
-```
-{: .copy-code}
-
-The created device with data can be seen in the section **Device groups -> All** on the Edge:
-
-{% include images-gallery.html imageCollection="device" %}
-
-Received data can be viewed in the Uplink converter. In the **“In”** and **“Out”** blocks of the Events tab:
-
-{% include images-gallery.html imageCollection="converterEvents" %}
-
-## Downlink Converter template
-
-Create Downlink in Converter templates. To see events enable Debug.
+Create Downlink in **Converter templates** page as well. To see events enable Debug.
 
 {% include images-gallery.html imageCollection="addDownlink" %}
 
-You can customize a downlink according to your configuration. 
-Let’s consider an example where we send an attribute update message. 
+You can customize a downlink according to your configuration.
+Let’s consider an example where we send an attribute update message.
 An example of downlink converter:
 
 ```ruby
@@ -227,31 +196,71 @@ return result;
 ```
 {: .copy-code}
 
-Once Downlink template added - update configuration of the Integration template.
+## Create Integration template 
+
+Now that the Uplink and Downlink converter templates have been created, it is possible to create an integration.
+
+{% include images-gallery.html imageCollection="addIntegration" %}
+
+Let's update configuration of the Integration template and set Downlink Converter as well.
 
 {% include images-gallery.html imageCollection="updateDownlinkConfiguration" %}
 
-We go to the Device group section in All group, to see this with an example.
-First, let's add **firmware** shared attribute:
+## Modify Edge Root Rule chain for Downlinks
 
-{% include images-gallery.html imageCollection="addSharedAttribute" %}
-
-We can send a message to the device from Rule chain using the rule node.
-To modify **'Edge Root Rule chain'** please go to the cloud web interface. 
-For example, create an **integration downlink** node and set the “**Attributes updated**” link to it. 
-When changes are made to the attribute, the downlink message will be sent to the integration.
+We can send a downlink message to the device from Rule chain using the rule node.
+To be able to send downlink over integration we need to modify **'Edge Root Rule chain'** on the cloud.
+For example, create an **integration downlink** node and set the **'Attributes updated'** link to it.
+When changes are made to device attribute, the downlink message will be sent to the integration.
 
 {% include images-gallery.html imageCollection="downlinkRule" %}
 
- 
-We have indicated the serial number of the device in the Shared attributes. Now we edit it by clicking on the “pencil” icon.
-Then we make changes to the attribute (change the firmware from 01052020.v1.1 to 01052020.v1.2) and save the data.
+## Assign Integration to Edge
 
-{% include images-gallery.html imageCollection="modifySharedAttribute" %}
+Once converter and integration templates are created, we can assign Integration template to Edge. 
+Because we are using placeholder **$\{\{edgeBaseUrl\}\}** in the integration configuration, we need to add attribute **edgeBaseUrl** to edge first.
+You need to provide **IP address** and **port** of your *Edge* instance as **edgeBaseUrl** attribute.
+Once attribute added, we are ready to assign integration and verify that it's added.
+
+{% include images-gallery.html imageCollection="assignIntegration" showListImageTitles="true" %}
+
+## Send uplink message
+
+To send an uplink message, you need HTTP endpoint URL from the integration.  
+Let's log in to ThingsBoard **Edge** and go to the **Integrations** page. Find your HTTP integration and click on it. There you can find the HTTP endpoint URL. Click on the icon to copy the url.
+
+{% include images-gallery.html imageCollection="sendUplink" %}
+
+Use this command to send the message. Replace $DEVICE_NAME and $YOUR_HTTP_ENDPOINT_URL with corresponding values.
+
+```ruby
+curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json"
+```
+{: .copy-code}
+
+The created device with data can be seen in the section **Device groups -> All** on the Edge:
+
+{% include images-gallery.html imageCollection="device" %}
+
+Received data can be viewed in the Uplink converter. In the **'In'** and **'Out'** blocks of the Events tab:
+
+{% include images-gallery.html imageCollection="converterEvents" %}
+
+Now let's check downlink functionality. Let's add **firmware** shared attribute:
+
+{% include images-gallery.html imageCollection="addSharedAttribute" %}
 
 To make sure that downlink message sent to integration you can check 'Events' tab of integration:
 
 {% include images-gallery.html imageCollection="downlinkMessage" %}
+
+Now we'll need to send again message to HTTP integration and see downlink response.
+Please use the same command that was used before (Replace $DEVICE_NAME and $YOUR_HTTP_ENDPOINT_URL with corresponding values):
+
+```ruby
+curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json"
+```
+{: .copy-code}
 
 An example of sent message and a response from ThingsBoard Edge in the terminal:
 

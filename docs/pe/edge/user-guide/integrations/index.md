@@ -72,7 +72,7 @@ Converter templates could be created only by Tenant administrator.
 Go to Cloud and navigate to **Edge management -> Converter templates** page.
 This page allows you to create Converter template. These Converter templates are going to be used later in Integration templates configuration.
 
-{% include images-gallery.html imageCollection="converterTemplateCreation" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="converterTemplateCreation" %}
 
 You do not need to assign Converter templates to the Edge - once Integration template is assigned to specific Edge, related Uplink/Downlink Converters are provisioned to the Edge automatically.
 
@@ -81,7 +81,7 @@ You do not need to assign Converter templates to the Edge - once Integration tem
 Once Converter template was created you can navigate to **Edge management -> Integration templates** page to create Integration.
 This page allows you to create Integration template. These Integration templates are going to be assigned to the Edge.
 
-{% include images-gallery.html imageCollection="integrationTemplateCreation" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="integrationTemplateCreation" %}
 
 #### Integration configuration placeholders
 
