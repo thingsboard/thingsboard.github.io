@@ -8,6 +8,7 @@ Please read *Platform* OTA Updates documentation to get knowledge on OTA Updates
 
 #### Propagation OTA Packages to Edge
 
+OTA Packages are created on the *Platform*. You can not create them on the *Edge*.
 All the OTA firmware and software packages, that are created on the Platform, are automatically propagated to every Edge instance, that is connected to the Platform. 
 No additional assignment actions required from Tenant administrator or user.
 
