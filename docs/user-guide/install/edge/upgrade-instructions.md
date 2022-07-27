@@ -22,16 +22,16 @@ description: ThingsBoard Edge upgrade instructions
         </ul>
     </li>
     <li>
-        <a href="#upgrading-to-340" id="markdown-toc-upgrading-to-340">Upgrading to 3.4.0EDGE</a>
+        <a href="#upgrading-to-34" id="markdown-toc-upgrading-to-34">Upgrading to 3.4EDGE</a>
         <ul>
             <li>
-                <a href="#ubuntucentos-340" id="markdown-toc-ubuntucentos-340">Ubuntu/CentOS</a>
+                <a href="#ubuntucentos-34" id="markdown-toc-ubuntucentos-34">Ubuntu/CentOS</a>
             </li>
             <li>
-                <a href="#docker-linux-mac-340" id="markdown-toc-docker-linux-mac-340">Docker (Linux or Mac OS)</a>
+                <a href="#docker-linux-mac-34" id="markdown-toc-docker-linux-mac-34">Docker (Linux or Mac OS)</a>
             </li>            
             <li>
-                <a href="#windows-340" id="markdown-toc-windows-340">Windows</a>
+                <a href="#windows-34" id="markdown-toc-windows-34">Windows</a>
             </li> 
         </ul>
     </li>
@@ -127,17 +127,17 @@ net stop tb-edge
 Launch the "pgAdmin" software and login as superuser (postgres). 
 Open your server and create backup of database **tb_edge** using 'Backup Dialog' functionality of "pgAdmin".
 
-## Upgrading to 3.4.0EDGE {#upgrading-to-340}
+## Upgrading to 3.4EDGE {#upgrading-to-34}
 
-### Ubuntu/CentOS {#ubuntucentos-340}
+### Ubuntu/CentOS {#ubuntucentos-34}
 
-**NOTE**: These steps are applicable for ThingsBoard Edge 3.4.0EDGE version.
+**NOTE**: These steps are applicable for ThingsBoard Edge 3.4EDGE version.
 
 #### ThingsBoard Edge package download
 
 {% capture tabspec %}tb-edge-download-3-4-0
-tb-edge-download-3-4-0-ubuntu,Ubuntu,shell,resources/3.4.0/tb-edge-ubuntu-download.sh,/docs/user-guide/install/edge/resources/3.4.0/tb-edge-ubuntu-download.sh
-tb-edge-download-3-4-0-centos,CentOS,shell,resources/3.4.0/tb-edge-centos-download.sh,/docs/user-guide/install/edge/resources/3.4.0/tb-edge-centos-download.sh{% endcapture %}
+tb-edge-download-3-4-0-ubuntu,Ubuntu,shell,resources/3.4/tb-edge-ubuntu-download.sh,/docs/user-guide/install/edge/resources/3.4/tb-edge-ubuntu-download.sh
+tb-edge-download-3-4-0-centos,CentOS,shell,resources/3.4/tb-edge-centos-download.sh,/docs/user-guide/install/edge/resources/3.4/tb-edge-centos-download.sh{% endcapture %}
 {% include tabs.html %}
 
 #### ThingsBoard Edge service upgrade
@@ -150,8 +150,8 @@ sudo service tb-edge stop
 {: .copy-code}
 
 {% capture tabspec %}tb-edge-installation-3-4-0
-tb-edge-installation-3-4-0-ubuntu,Ubuntu,shell,resources/3.4.0/tb-edge-ubuntu-installation.sh,/docs/user-guide/install/edge/resources/3.4.0/tb-edge-ubuntu-installation.sh
-tb-edge-installation-3-4-0-centos,CentOS,shell,resources/3.4.0/tb-edge-centos-installation.sh,/docs/user-guide/install/edge/resources/3.4.0/tb-edge-centos-installation.sh{% endcapture %}
+tb-edge-installation-3-4-0-ubuntu,Ubuntu,shell,resources/3.4/tb-edge-ubuntu-installation.sh,/docs/user-guide/install/edge/resources/3.4/tb-edge-ubuntu-installation.sh
+tb-edge-installation-3-4-0-centos,CentOS,shell,resources/3.4/tb-edge-centos-installation.sh,/docs/user-guide/install/edge/resources/3.4/tb-edge-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
 **NOTE:** Package installer may ask you to merge your tb-edge configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
@@ -170,7 +170,7 @@ sudo service tb-edge start
 ```
 {: .copy-code}
 
-### Docker (Linux or Mac OS) {#docker-linux-mac-340}
+### Docker (Linux or Mac OS) {#docker-linux-mac-34}
 
 **NOTE**: These steps are applicable for ThingsBoard Edge 3.3.4.1EDGE version.
 
@@ -263,13 +263,13 @@ docker-compose up
 {: .copy-code}
 
 
-### Windows {#windows-340}
+### Windows {#windows-34}
 
-**NOTE**: These steps are applicable for ThingsBoard Edge 3.4.0EDGE version.
+**NOTE**: These steps are applicable for ThingsBoard Edge 3.4EDGE version.
 
 #### ThingsBoard Edge package download
 
-Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.4.0.zip](https://github.com/thingsboard/thingsboard-edge/releases/download/v3.4.0/tb-edge-windows-3.4.0.zip).
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.4.zip](https://github.com/thingsboard/thingsboard-edge/releases/download/v3.4/tb-edge-windows-3.4.zip).
 
 #### ThingsBoard Edge service upgrade
 
