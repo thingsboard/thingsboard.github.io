@@ -331,6 +331,32 @@ This part of configuration will look like:
         ],
 ```
 
+Also, every telemetry and attribute parameter has get and set RPC methods out of the box, so you don’t need to configure it manually. For example, if you have some telemetry parameter:
+
+```json
+"timeseries": [
+  {
+    "key": "temperature",
+    "path": "${ns=3;i=1001}"
+  }
+]
+```
+
+To get temperature telemetry current value:
+
+```json
+get ns=3;i=1007
+```
+
+Response:
+
+```json
+{"get": 231cghx45dg688, "code": 200}
+```
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-opc-ua-attributes-4.png)
+{: refdef}
 
 #### Subsection "attributes_updates"
 This subsection contains configuration for attribute updates request from ThingsBoard platform instance.
