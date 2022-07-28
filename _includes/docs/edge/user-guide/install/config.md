@@ -1988,8 +1988,8 @@ docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-
     <tbody>
         <tr>
             <td>license.instance_data_file</td>
-            <td>TB_LICENSE_INSTANCE_DATA_FILE</td>
-            <td>instance-license.data</td>
+            <td>EDGE_LICENSE_INSTANCE_DATA_FILE</td>
+            <td>instance-edge-license.data</td>
             <td>Instance data is auto-generated and is used to identify particular ThingsBoard Edge Instance.<br>
                 Instance data is periodically updated and stored into the specified file which can be set to absolute or relative path.<br>
                 Please make sure that thingsboard edge process has access to the instance data file, in case you use absolute path.</td>
