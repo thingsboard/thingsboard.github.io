@@ -58,10 +58,6 @@ addDownlink:
     1:
         image: /images/pe/edge/integrations/http/add-downlink-step-2.png
 
-updateDownlinkConfiguration:
-    0:
-        image: /images/pe/edge/integrations/http/update-downlink-configuration.png
-
 downlinkRule:
     0:
         image: /images/pe/edge/integrations/http/downlink-rule-step-1.png
@@ -204,9 +200,6 @@ Now that the Uplink and Downlink converter templates have been created, it is po
 
 {% include images-gallery.html imageCollection="addIntegration" %}
 
-Let's update configuration of the Integration template and set Downlink Converter as well.
-
-{% include images-gallery.html imageCollection="updateDownlinkConfiguration" %}
 
 ## Modify Edge Root Rule chain for Downlinks
 

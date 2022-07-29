@@ -16,75 +16,63 @@ modifyConverter:
 
 addIntegration:
     0:
-        image: /images/pe/edge/integrations/http/add-integration-template-step-1.png
+        image: /images/pe/edge/integrations/mqtt/add-integration-template-step-1.png
     1:
-        image: /images/pe/edge/integrations/http/add-integration-template-step-2.png
+        image: /images/pe/edge/integrations/mqtt/add-integration-template-step-2.png
+    2:
+        image: /images/pe/edge/integrations/mqtt/add-integration-template-step-3.png
 
 assignIntegration:
     0:
-        image: /images/pe/edge/integrations/http/assign-integration-step-1.png
-        title: 'Add <b>edgeBaseUrl</b> attribute to Edge and set value as your Edge <b>IP:port</b>'
+        image: /images/pe/edge/integrations/mqtt/assign-integration-step-1.png
+        title: 'Add <b>brokerIp</b> attribute to Edge and set value as your Edge <b>broker.hivemq.com</b>'
     1:
-        image: /images/pe/edge/integrations/http/assign-integration-step-2.png
+        image: /images/pe/edge/integrations/mqtt/assign-integration-step-2.png
         title: 'Click <b>Manage Integrations</b> button of Edge entity'
     2:
-        image: /images/pe/edge/integrations/http/assign-integration-step-3.png
+        image: /images/pe/edge/integrations/mqtt/assign-integration-step-3.png
         title: 'Assign Integration to the Edge'
     3:
-        image: /images/pe/edge/integrations/http/assign-integration-step-4.png
+        image: /images/pe/edge/integrations/mqtt/assign-integration-step-4.png
         title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
-
-sendUplink:
-    0:
-        image: /images/pe/edge/integrations/http/send-uplink-step-1.png
-    1:
-        image: /images/pe/edge/integrations/http/send-uplink-step-2.png
 
 device:
     0:
-        image: /images/pe/edge/integrations/http/device.png
+        image: /images/pe/edge/integrations/mqtt/device.png
 
 converterEvents:
     0:
-        image: /images/pe/edge/integrations/http/converter-events-step-1.png
+        image: /images/pe/edge/integrations/mqtt/converter-events-step-1.png
     1:
-        image: /images/pe/edge/integrations/http/converter-events-step-2.png
+        image: /images/pe/edge/integrations/mqtt/converter-events-step-2.png
     2:
-        image: /images/pe/edge/integrations/http/converter-events-step-3.png
+        image: /images/pe/edge/integrations/mqtt/converter-events-step-3.png
 
 addDownlink:
     0:
-        image: /images/pe/edge/integrations/http/add-converter-step-1.png
+        image: /images/pe/edge/integrations/mqtt/add-downlink-step-1.png
     1:
-        image: /images/pe/edge/integrations/http/add-downlink-step-2.png
-
-updateDownlinkConfiguration:
-    0:
-        image: /images/pe/edge/integrations/http/update-downlink-configuration.png
+        image: /images/pe/edge/integrations/mqtt/add-downlink-step-2.png
 
 downlinkRule:
     0:
-        image: /images/pe/edge/integrations/http/downlink-rule-step-1.png
+        image: /images/pe/edge/integrations/mqtt/downlink-rule-step-1.png
     1:
-        image: /images/pe/edge/integrations/http/downlink-rule-step-2.png
+        image: /images/pe/edge/integrations/mqtt/downlink-rule-step-2.png
+    2:
+        image: /images/pe/edge/integrations/mqtt/downlink-rule-step-3.png
 
 addSharedAttribute:
     0:
-        image: /images/pe/edge/integrations/http/add-shared-attribute.png
-
-modifySharedAttribute:
-    0:
-        image: /images/pe/edge/integrations/http/modify-shared-attribute-step-1.png
-    1:
-        image: /images/pe/edge/integrations/http/modify-shared-attribute-step-2.png
+        image: /images/pe/edge/integrations/mqtt/add-shared-attribute.png
 
 downlinkMessage:
     0:
-        image: /images/pe/edge/integrations/http/downlink-message.png
+        image: /images/pe/edge/integrations/mqtt/downlink-message.png
 
 downlinkTerminal:
     0:
-        image: /images/pe/edge/integrations/http/downlink-terminal.png
+        image: /images/pe/edge/integrations/mqtt/downlink-terminal.png
 ---
 
 * TOC
@@ -148,14 +136,13 @@ var payloadStr = decodeToString(payload);
 var data = JSON.parse(payloadStr);
 var topicPattern = 'tb-edge/mqtt-integration-tutorial/sensors/(.+)/temperature';
 
-var deviceName = metadata.topic.match(topicPattern)[1];
+var deviceName =  metadata.topic.match(topicPattern)[1];
 // decode payload to JSON
-var deviceType = 'default';
 
 // Result object with device attributes/telemetry data
 var result = {
    deviceName: deviceName,
-   deviceType: deviceType,
+   deviceType: 'default',
    attributes: {
        integrationName: metadata['integrationName'],
    },
@@ -209,8 +196,6 @@ An example of downlink converter:
 ```ruby
 /** Encoder **/
 
-var value = parseInt(msg.params.replace(/"/g,""));
-var data = {value: value}
 // Result object with encoded downlink payload
 var result = {
 
@@ -218,11 +203,11 @@ var result = {
     contentType: "JSON",
 
     // downlink data
-    data: JSON.stringify(data),
+    data: JSON.stringify(msg),
 
     // Optional metadata object presented in key/value format
     metadata: {
-        topic: 'tb/mqtt-integration-tutorial/sensors/'+metadata['deviceName']+'/rx'
+        topic: 'tb-edge/mqtt-integration-tutorial/sensors/'+metadata['originatorName']+'/rx'
     }
 
 };
@@ -234,42 +219,44 @@ return result;
 ## Create Integration template
 
 Now that the Uplink and Downlink converter templates have been created, it is possible to create an integration.
+Go to **Integration templates** section and click **Add new integration** button. Name it **Edge MQTT**, select type **MQTT**, turn the Debug mode on and from drop-down menus add recently created Uplink and Downlink converters.
+
+Specify host: **$\{\{brokerIp\}\}**. Port: **1883**. It is better to uncheck the **Clean session** parameter. Many brokers do not support sticky sessions, so will silently close the connection if you try to connect with this option enabled.
+
+Add a Topic Filter **tb-edge/mqtt-integration-tutorial/sensors/+/temperature**. You can also select an MQTT QoS level. We use MQTT QoS level 0 (At most once) by default.
+
+Let's leave the Downlink topic pattern by default, meaning that the Integration will take the metadata.topic and use it as the downlink topic.
+
+Click **Add** to save the Integration.
 
 {% include images-gallery.html imageCollection="addIntegration" %}
-
-Let's update configuration of the Integration template and set Downlink Converter as well.
-
-{% include images-gallery.html imageCollection="updateDownlinkConfiguration" %}
 
 ## Modify Edge Root Rule chain for Downlinks
 
 We can send a downlink message to the device from Rule chain using the rule node.
 To be able to send downlink over integration we need to modify **'Edge Root Rule chain'** on the cloud.
-For example, create an **integration downlink** node and set the **'Attributes updated'** link to it.
-When changes are made to device attribute, the downlink message will be sent to the integration.
+We'll need to add two rule nodes - **originator fields** and **integration downlink** nodes.
+Set **'Attributes updated'** link to **originator fields** and configure to add originator name and type to the message metadata - in the **downlink converter** name of the device will be used to set proper *downlink* MQTT topic.
+And then add **Success** link from **originator fields** node to **integration downlink** node.
+When changes are made to device attribute on the Edge, the downlink message will be sent to the integration template.
 
 {% include images-gallery.html imageCollection="downlinkRule" %}
 
 ## Assign Integration to Edge
 
 Once converter and integration templates are created, we can assign Integration template to Edge.
-Because we are using placeholder **$\{\{edgeBaseUrl\}\}** in the integration configuration, we need to add attribute **edgeBaseUrl** to edge first.
-You need to provide **IP address** and **port** of your *Edge* instance as **edgeBaseUrl** attribute.
+Because we are using placeholder **$\{\{brokerIp\}\}** in the integration configuration, we need to add attribute **brokerIp** to edge first.
+You need to provide **IP address** of the MQTT broker. We are using public URL *broker.hivemq.com* in this tutorial, but this could be any internal IP address as well.
 Once attribute added, we are ready to assign integration and verify that it's added.
 
 {% include images-gallery.html imageCollection="assignIntegration" showListImageTitles="true" %}
 
 ## Send uplink message
 
-To send an uplink message, you need HTTP endpoint URL from the integration.  
-Let's log in to ThingsBoard **Edge** and go to the **Integrations** page. Find your HTTP integration and click on it. There you can find the HTTP endpoint URL. Click on the icon to copy the url.
-
-{% include images-gallery.html imageCollection="sendUplink" %}
-
-Use this command to send the message. Replace $DEVICE_NAME and $YOUR_HTTP_ENDPOINT_URL with corresponding values.
+Now let’s simulate the device sending a temperature reading to the integration:
 
 ```ruby
-curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json"
+mosquitto_pub -h broker.hivemq.com -p 1883 -t "tb-edge/mqtt-integration-tutorial/sensors/SN-001/temperature" -m '{"value":25.2}'
 ```
 {: .copy-code}
 
@@ -281,7 +268,19 @@ Received data can be viewed in the Uplink converter. In the **'In'** and **'Out'
 
 {% include images-gallery.html imageCollection="converterEvents" %}
 
-Now let's check downlink functionality. Let's add **firmware** shared attribute:
+## Send One-Way RPC to Device
+
+Now let's check downlink functionality.
+Open the terminal window and execute the following command:
+
+```ruby
+mosquitto_sub -h broker.hivemq.com -p 1883 -t "tb-edge/mqtt-integration-tutorial/sensors/+/rx"
+```
+{: .copy-code}
+
+Please leave this terminal running in background - in this terminal window you should receive incoming messages sent later by integration.
+
+Let's add **firmware** shared attribute:
 
 {% include images-gallery.html imageCollection="addSharedAttribute" %}
 
@@ -289,15 +288,7 @@ To make sure that downlink message sent to integration you can check 'Events' ta
 
 {% include images-gallery.html imageCollection="downlinkMessage" %}
 
-Now we'll need to send again message to HTTP integration and see downlink response.
-Please use the same command that was used before (Replace $DEVICE_NAME and $YOUR_HTTP_ENDPOINT_URL with corresponding values):
-
-```ruby
-curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json"
-```
-{: .copy-code}
-
-An example of sent message and a response from ThingsBoard Edge in the terminal:
+An example of incoming messages from ThingsBoard Edge in the terminal:
 
 {% include images-gallery.html imageCollection="downlinkTerminal" %}
 
