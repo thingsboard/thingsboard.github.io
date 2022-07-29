@@ -79,7 +79,7 @@ We will describe connector configuration file below.
 
 </details>
 
-### Section "server"
+## Section "server"
 
 Configuration in this section uses for connecting to OPC-UA server.  
 
@@ -98,16 +98,19 @@ Configuration in this section uses for connecting to OPC-UA server.
 <br>
 **Let's look an example.**
 <br>
-In this example uses the Prosys OPC UA Simulation Server to demonstrate how the OPC UA connector works. OPC-UA connector is installed locally on the server.
+In this example uses the Prosys OPC UA Simulation Server to demonstrate how to configure the OPC-UA connector.
 <br>
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/opc-ua-simulation-server-1.png)
 {: refdef}
 
-In your config file, change the "url" value to the URL of your test server.
 
-The **mapping** section would look like this:
+On the main **"Status"** tab, copy connection address (UA TCP).
+
+To connect your OPC UA server to ThingsBoard, in the OPC-UA Connector configuration file (opcua.json), replace the "url" value with the copied connection address.
+
+Our **server** section would look like this:
 
 ```json
   "server": {
@@ -125,7 +128,7 @@ The **mapping** section would look like this:
 ![image](/images/gateway/opc-ua-configuration-1.png)
 {: refdef}
 
-#### Subsection "identity"
+### Subsection "identity"
 There are several types available for this subsection:  
 1. anonymous  
 2. username  
@@ -138,7 +141,7 @@ There are several types available for this subsection:
 
 {% include content-toggle.html content-toggle-id="opcuaIdentityConfig" toggle-spec=identityopcuatogglespec %}
 
-### Section "mapping"
+## Section "mapping"
 This configuration section contains array of nodes that the gateway will subscribe to after connecting to the OPC-UA server and settings about processing data from these nodes.
 
 | **Parameter**                 | **Default value**                    | **Description**                                                                       |
@@ -161,7 +164,7 @@ This part of configuration will look like:
 
 Specify **deviceNodePattern** as on our test server. In this example it is **"Root\\.Objects\\.Simulation"**.
 
-**deviceNamePattern** set as **"Device OPC-UA"**.
+**deviceNamePattern** specify as **"Device OPC-UA"**.
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/opc-ua-simulation-server-2.png)
@@ -179,13 +182,13 @@ In this example, the **mapping** section would look like this:
 ![image](/images/gateway/opc-ua-configuration-2.png)
 {: refdef}
 
-After running **thingsboard gateway service**, you can see the new device in your ThingsBoard instance.
+After running **thingsboard gateway service**, you see the new device **Device OPC-UA** in your ThingsBoard instance.
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/gateway-opc-ua-attributes-1.png)
 {: refdef}
 
-#### Subsection "attributes"
+### Subsection "attributes"
 This subsection contains configurations for variables of the object, that will be interpreted as attributes for the device.
 
 | **Parameter**   | **Default value**           | **Description**                                                                                      |
@@ -246,7 +249,7 @@ In the ThingsBoard instance, in the "Attributes" section, you must see the **att
 ![image](/images/gateway/gateway-opc-ua-attributes-2.png)
 {: refdef}
 
-#### Subsection "timeseries"
+### Subsection "timeseries"
 This subsection contains configurations for variables of the object, that will be interpreted as telemetry for the device.
 
 | **Parameter**   | **Default value**           | **Description**                                                                   |
@@ -274,8 +277,8 @@ This part of configuration will look like:
 
 <br>
 **Let's look an example.**
-<br>
-Replace "path" value to the "NodeId" value or Display Name identifier, taken from our test server.
+
+Replace "path" value to the "NodeId" value, relative path from device object or Display Name identifier, taken from our test server.
 <br>
 
 {:refdef: style="text-align: left;"}
@@ -311,7 +314,7 @@ In the ThingsBoard instance, you must see the **latest telemetry** in your devic
 ![image](/images/gateway/gateway-opc-ua-attributes-3.png)
 {: refdef}
 
-#### Subsection "rpc_methods"
+### Subsection "rpc_methods"
 This subsection contains configuration for RPC request from ThingsBoard platform instance.
 
 | **Parameter**         | **Default value**                 | **Description**                                                                                    |
@@ -328,37 +331,48 @@ This part of configuration will look like:
             "method": "multiply",
             "arguments": [2, 4]
           }
-        ],
+        ]
 ```
 
-Also, every telemetry and attribute parameter has get and set RPC methods out of the box, so you don’t need to configure it manually. For example, if you have some telemetry parameter:
-
+Also, every telemetry and attribute parameter has get and set RPC methods out of the box, so you don't need to configure
+it manually.
+For example, if you have some attribute parameter:
 ```json
-"timeseries": [
+"attributes": [
   {
-    "key": "temperature",
-    "path": "${ns=3;i=1001}"
+    "key": "CertificateNumber",
+    "path": "${ns=3;i=1007}"
   }
 ]
 ```
-
-To get temperature telemetry current value:
-
-```json
+To get the current value of the **"CertificateNumber"** attribute run the query using the **New RPC debug terminal** widget:
+```bash
 get ns=3;i=1007
 ```
-
 Response:
-
 ```json
-{"get": 231cghx45dg688, "code": 200}
+{"get": "231cghx45dg688", "code": 200}
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-attributes-4.png)
+![image](/images/gateway/gateway-opc-ua-rpc-1.png)
+{: refdef}
+<br/>
+To set new value (T3000) for **"model"** attribute, run the query:
+```bash
+set ns=3;i=1008; T3000
+```
+
+Response:
+```json
+{"success":"true","code": 200}
+```
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-opc-ua-rpc-2.png)
 {: refdef}
 
-#### Subsection "attributes_updates"
+### Subsection "attributes_updates"
 This subsection contains configuration for attribute updates request from ThingsBoard platform instance.
 
 | **Parameter**             | **Default value**                                            | **Description**                                                                               |
@@ -377,6 +391,51 @@ This part of configuration will look like:
           }
         ]
 ```
+
+**Let’s look an example.**
+
+Suppose you want to set the value of the **"deviceName"** attribute. Currently, the attribute hasn't any value.
+
+In the OPC-UA Connector configuration file (opcua.json) change **"attributeOnDevice"** value to the full path to the node "deviceName".
+
+In this example it is **"Root\\.Objects\\.Simulation\\.deviceName"**.
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-opc-ua-attributes-updates-2.png)
+{: refdef}
+
+Our **attributes_updates** section would look like this:
+
+```json
+  "attributes_updates": [
+    {
+      "attributeOnThingsBoard": "deviceName",
+      "attributeOnDevice": "Root\\.Objects\\.Simulation\\.deviceName"
+    }
+  ]
+```
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-opc-ua-attributes-updates-1.png)
+{: refdef}
+
+In the ThingsBoard instance, go to **"Shared attributes"** and create a new attribute for your device.
+
+Specify the key name - deviceName, value type - String, string value - Device OPC-UA.
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-opc-ua-attributes-updates-3.png)
+{: refdef}
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-opc-ua-attributes-updates-4.png)
+{: refdef}
+
+Now go to OPC UA server and make sure the value of the deviceName node is updated.
+
+{:refdef: style="text-align: left;"}
+![image](/images/gateway/gateway-opc-ua-attributes-updates-5.png)
+{: refdef}
 
 ## Next steps
 
