@@ -15,6 +15,27 @@ You can find more information on the dedicated page.
 We recommend to [install](/docs/user-guide/install/{{docsPrefix}}installation-options/) ThingsBoard Edge locally on your laptop or PC using Docker
 and follow the [getting started guide](/docs/{{docsPrefix}}getting-started/).
 
+## Does ThingsBoard Edge require connection to the internet?
+
+No, ThingsBoard Edge does not require connection to the internet. 
+You can use it without internet connection.
+The only connection required is the one to the ThingsBoard cloud platform over gRPC.
+
+{% if docsPrefix == 'pe/edge/' %}
+Additionally, ThingsBoard Edge uses HTTP(s) connection to the ThingsBoard cloud platform instance to verify the license.
+ThingsBoard Edge uses URL that is set in **Cloud Endpoint** configuration to do this validation.
+Please, make sure, that HTTP(s) connection to the cloud platform is not blocked by any firewall settings.
+ThingsBoard cloud platform acts as proxy for ThingsBoard Edge to connect to ThingsBoard license server.
+{% endif %}
+
+{% if docsPrefix == 'pe/edge/' %}
+## What happens if the connection to the ThingsBoard cloud platform is temporary unavailable? How the license check will happen in this case?
+
+ThingsBoard Edge is able to work offline, without connection to the ThingsBoard cloud platform, for **7 days**.
+During this time, ThingsBoard Edge should **not be restarted** - restart requires connection to the ThingsBoard cloud platform to do initial license check.
+So please make sure, that ThingsBoard Edge is not restarted during offline period.
+{% endif %}
+
 ## Can multiple tenants or customers access single ThingsBoard Edge on remote location?
 
 {% if docsPrefix == 'pe/edge/' %}
