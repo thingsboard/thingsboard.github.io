@@ -182,7 +182,7 @@ In this example, the **mapping** section would look like this:
 ![image](/images/gateway/opc-ua-configuration-2.png)
 {: refdef}
 
-After running **thingsboard gateway service**, you see the new device **Device OPC-UA** in your ThingsBoard instance.
+After running **ThingsBoard IoT gateway**, you see the new device **Device OPC-UA** in your ThingsBoard instance.
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/gateway-opc-ua-attributes-1.png)
@@ -243,7 +243,7 @@ In this example, the **attributes** section would look like this:
 ![image](/images/gateway/opc-ua-configuration-3.png)
 {: refdef}
 
-In the ThingsBoard instance, in the "Attributes" section, you must see the **attributes** in your device:
+You must see the attributes you sent to ThingsBoard in the **Attributes** section of your device.:
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/gateway-opc-ua-attributes-2.png)
@@ -295,7 +295,7 @@ In this example, the **timeseries** section would look like this:
           },
           {
             "key": "pressure",
-            "path": "Root\\.Objects\\.Simulation\\.Triangle"
+            "path": "${Root\\.Objects\\.Simulation\\.Triangle}"
           },
           {
             "key": "temperature °C",
@@ -308,7 +308,7 @@ In this example, the **timeseries** section would look like this:
 ![image](/images/gateway/opc-ua-configuration-4.png)
 {: refdef}
 
-In the ThingsBoard instance, you must see the **latest telemetry** in your device:
+You must see the telemetry you sent to ThingsBoard in the **Latest telemetry** section of your device:
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/gateway-opc-ua-attributes-3.png)
@@ -334,7 +334,7 @@ This part of configuration will look like:
         ]
 ```
 
-Also, every telemetry and attribute parameter has get and set RPC methods out of the box, so you don't need to configure
+Also, every telemetry and attribute parameter has **GET** and **SET** RPC methods out of the box, so you don't need to configure
 it manually.
 For example, if you have some attribute parameter:
 ```json
@@ -419,7 +419,7 @@ Our **attributes_updates** section would look like this:
 ![image](/images/gateway/gateway-opc-ua-attributes-updates-1.png)
 {: refdef}
 
-In the ThingsBoard instance, go to **"Shared attributes"** and create a new attribute for your device.
+Go to **"Shared attributes"** and create a new one for your device in the ThingsBoard instance.
 
 Specify the key name - deviceName, value type - String, string value - Device OPC-UA.
 
