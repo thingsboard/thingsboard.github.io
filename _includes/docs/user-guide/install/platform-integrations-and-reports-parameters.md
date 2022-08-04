@@ -1,5 +1,3 @@
-#### Platform integrations parameters
-
 <table>
     <thead>
         <tr>

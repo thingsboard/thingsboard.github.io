@@ -1235,8 +1235,13 @@ assign UI_HELP_BASE_URL_VALUE = "pe-ui" %} {% endif %}
     </tbody>
 </table>
 
-{% if docsPrefix == "pe/" %} {% include docs/user-guide/install/platform-integrations-and-reports-parameters.md %} {%
-endif %}
+{% if docsPrefix == "pe/" %}
+#### Platform integrations parameters
+{% endif %}
+
+{% if docsPrefix == "pe/" %} 
+{% include docs/user-guide/install/platform-integrations-and-reports-parameters.md %} 
+{% endif %}
 
 #### Cache parameters
 
@@ -2291,7 +2296,13 @@ docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-
     </tbody>
 </table>
 
-{% if docsPrefix == "pe/" %} {% include docs/user-guide/install/license-parameters.md %} {% endif %}
+{% if docsPrefix == "pe/" %}
+#### License parameters
+{% endif %}
+
+{% if docsPrefix == "pe/" %} 
+{% include docs/user-guide/install/license-parameters.md %} 
+{% endif %}
 
 #### Swagger parameters
 
@@ -2469,18 +2480,6 @@ Edition" %} {% assign SWAGGER_CONTACT_NAME_VALUE = "ThingsBoard, Inc." %} {% end
             <td>0.5</td>
             <td>Metrics percentiles returned by actuator for timer metrics. List of double values (divided by ,)</td>
         </tr>
-    </tbody>
-</table>
-
-#### ThingsBoard metrics parameters
-
-<table>
-    <thead>
-        <tr>
-            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-        </tr>
-    </thead>
-    <tbody>
         <tr>
             <td>management.endpoints.web.exposure.include</td>
             <td>METRICS_ENDPOINTS_EXPOSE</td>
