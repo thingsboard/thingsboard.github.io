@@ -216,18 +216,6 @@
     }
   },
   {
-    "type": ["Asia"],
-    "country": ["Russia"],
-    "name": "Clover Group LLC",
-    "contact": {
-      "href": "v.kuznetsov@ctrl2go.com"
-    },
-    "site": {
-      "href": "ctrl2go.com",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Europe"],
     "country": ["Norway"],
     "name": "Cypod Solutions AS",
@@ -248,18 +236,6 @@
     },
     "site": {
       "href": "dareesoft.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["Russia"],
-    "name": "Datastreams AI",
-    "contact": {
-      "href": "contact@dstreams.ai"
-    },
-    "site": {
-      "href": "",
       "target": "_blank"
     }
   },
@@ -476,18 +452,6 @@
     },
     "site": {
       "href": "ibtsystems.it",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["Russia", "Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan"],
-    "name": "ICBcom",
-    "contact": {
-      "href": "sales@icbcom.ru"
-    },
-    "site": {
-      "href": "icbcom.ru",
       "target": "_blank"
     }
   },
@@ -985,13 +949,13 @@
   },
   {
     "type": ["Asia", "Europe", "Middle East"],
-    "country": ["Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan", "Armenia", "Azerbaijan", "Moldova", "Russia", "Belarus"],
-    "name": "Syssoft LLC",
+    "country": ["Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan", "Armenia", "Azerbaijan", "Moldova", "Belarus"],
+    "name": "Kar-Tel LLP",
     "contact": {
-      "href": "info@syssoft.ru"
+      "href": "SUrazayev@beeline.kz"
     },
     "site": {
-      "href": "syssoft.ru",
+      "href": "beeline.kz",
       "target": "_blank"
     }
   },
@@ -1080,8 +1044,8 @@
     }
   },
   {
-    "type": ["United States of America"],
-    "country": [""],
+    "type": ["North America", "South America"],
+    "country": ["United States of America", "Belize", "Panama", "Peru", "Colombia", "Argentina"],
     "name": "Vypin LLC",
     "contact": {
       "href": "sales@vypin.com"
@@ -1138,5 +1102,101 @@
       "href": "7id.com",
       "target": "_blank"
     }
-  }
+  },
+   {
+    "type": ["North America", "South America"],
+    "country": ["United States of America", "Canada", "Panama", "Peru", "Colombia", "Argentina"],
+    "name": "Ingram Micro Canada",
+    "contact": {
+      "href": "(905) 755-5000"
+    },
+    "site": {
+      "href": "https://ca.ingrammicro.com/",
+      "target": "_blank"
+    }
+   },
+    {
+    "type": ["Asia"],
+    "country": ["Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan", "Armenia", "Azerbaijan", "Moldova", "Belarus"],
+    "name": "Vehi.kz LLP",
+    "contact": {
+      "href": "partner@vehi.kz"
+    },
+    "site": {
+      "href": "vehi.kz",
+      "target": "_blank"
+    }
+   },
+   {
+    "type": ["Europe"],
+    "country": ["Ukraine"],
+    "name": "CodeExit, Inc.",
+    "contact": {
+      "href": "benjamin@codeexit.com"
+    },
+    "site": {
+      "href": "",
+      "target": "_blank"
+    }
+   },  
+   {
+    "type": ["Europe"],
+    "country": ["Ukraine"],
+    "name": "SVIT LLC",
+    "contact": {
+      "href": "svitexcom@gmail.com"
+    },
+    "site": {
+      "href": "",
+      "target": "_blank"
+    }
+   },
+  {
+    "type": ["Asia"],
+    "country": ["Malaysia"],
+    "name": "RODA TECHNOLOGIES SDN BHD",
+    "contact": {
+      "href": "hakim@rodatech.com.my"
+    },
+    "site": {
+      "href": "rodatech.com.my",
+      "target": "_blank"
+    }
+   },
+   {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "Ariprus Digicon Pvt Ltd",
+    "contact": {
+      "href": "praful.satasia@ariprus.com"
+    },
+    "site": {
+      "href": "ariprus.com",
+      "target": "_blank"
+    }
+   },
+    {
+    "type": ["South America"],
+    "country": ["Chile"],
+    "name": "MindLabs, SpA",
+    "contact": {
+      "href": "ricardo.valdes@mindlabs.cl"
+    },
+    "site": {
+      "href": "mindlabs.cl",
+      "target": "_blank"
+    }
+   },
+     {
+    "type": ["Asia"],
+    "country": ["Turkey"],
+    "name": "Dvm Technology Inc.",
+    "contact": {
+      "href": "tunc.sirinyildiz@dvm.com.tr"
+    },
+    "site": {
+      "href": "dvm.com.tr",
+      "target": "_blank"
+    }
+   }
 ]
