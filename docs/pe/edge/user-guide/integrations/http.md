@@ -161,7 +161,7 @@ Save changes by clicking on the 'checkmark' icon.
 
 ### Downlink Converter template
 
-Create Downlink in **Converter templates** page as well. To see events enable Debug.
+Create Downlink in **Converter templates** page as well. To see events select **Debug** checkbox.
 
 {% include images-gallery.html imageCollection="addDownlink" %}
 
