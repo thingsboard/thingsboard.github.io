@@ -2,6 +2,7 @@
 layout: docwithnav-pe-edge
 title: HTTP Integration
 description: HTTP integration guide
+
 addConverter:
     0:
         image: /images/pe/edge/integrations/http/add-converter-step-1.png
@@ -67,12 +68,6 @@ downlinkRule:
 addSharedAttribute:
     0:
         image: /images/pe/edge/integrations/http/add-shared-attribute.png
-
-modifySharedAttribute:
-    0:
-        image: /images/pe/edge/integrations/http/modify-shared-attribute-step-1.png
-    1:
-        image: /images/pe/edge/integrations/http/modify-shared-attribute-step-2.png
 
 downlinkMessage:
     0:
@@ -240,6 +235,8 @@ The created device with data can be seen in the section **Device groups -> All**
 Received data can be viewed in the Uplink converter. In the **'In'** and **'Out'** blocks of the Events tab:
 
 {% include images-gallery.html imageCollection="converterEvents" %}
+
+## Send downlink message
 
 Now let's check downlink functionality. Let's add **firmware** shared attribute:
 
