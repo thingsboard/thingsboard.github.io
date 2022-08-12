@@ -43,6 +43,8 @@ toc:
   section:
   - title: Overview
     path: /docs/pe/edge/user-guide/integrations/
+  - title: Remote Integrations
+    path: /docs/pe/edge/user-guide/integrations/remote-integrations/
   - title: HTTP
     path: /docs/pe/edge/user-guide/integrations/http/
   - title: MQTT
@@ -51,34 +53,10 @@ toc:
     path: /docs/pe/edge/user-guide/integrations/coap/
   - title: OPC-UA
     path: /docs/pe/edge/user-guide/integrations/opc-ua/
-  - title: Actility ThingPark
-    path: /docs/pe/edge/user-guide/integrations/thingpark/
-  - title: TheThingsNetwork
-    path: /docs/pe/edge/user-guide/integrations/ttn/
-  - title: TheThingsIndustries
-    path: /docs/pe/edge/user-guide/integrations/tti/
-  - title: LORIOT
-    path: /docs/pe/edge/user-guide/integrations/loriot/
-  - title: ChirpStack
-    path: /docs/pe/edge/user-guide/integrations/chirpstack/
-  - title: AWS IoT
-    path: /docs/pe/edge/user-guide/integrations/aws-iot/
-  - title: AWS Kinesis
-    path: /docs/pe/edge/user-guide/integrations/aws-kinesis/
-  - title: IBM Watson
-    path: /docs/pe/edge/user-guide/integrations/ibm-watson-iot/
-  - title: Azure Event Hub
-    path: /docs/pe/edge/user-guide/integrations/azure-event-hub/
-  - title: Azure IoT Hub
-    path: /docs/pe/edge/user-guide/integrations/azure-iot-hub/
   - title: TCP
     path: /docs/pe/edge/user-guide/integrations/tcp/
   - title: UDP
     path: /docs/pe/edge/user-guide/integrations/udp/
-  - title: SigFox
-    path: /docs/pe/edge/user-guide/integrations/sigfox/
-  - title: Ocean Connect
-    path: /docs/pe/edge/user-guide/integrations/ocean-connect/
 - title: Security
   section:
     - title: Enable gRPC over SSL/TLS for edge communication

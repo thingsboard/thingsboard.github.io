@@ -126,6 +126,8 @@ In the function decoder field, specify a script to parse and transform data.
 
 {% include images-gallery.html imageCollection="addConverter" %}
 
+{% include templates/edge/integrations/debug-mode-info.md %}
+
 **Example for the Uplink converter:**
 
 ```ruby
@@ -180,8 +182,6 @@ Copy the configuration example for the converter (or your own configuration) and
 Save changes by clicking on the 'checkmark' icon.
 
 {% include images-gallery.html imageCollection="modifyConverter" %}
-
-{% include templates/edge/integrations/debug-mode-info.md %}
 
 ### Downlink Converter template
 
