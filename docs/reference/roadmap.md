@@ -9,11 +9,8 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ## ThingsBoard CE
 
-### v3.4
+### v3.5
 
-* Synchronization with Git version control.
-  Ability to push dashboards, rule chains and other tenant entities into git.
-  Ability to restore a specific version of the entities from git.
 * Diagnostics system.
   Automatically detect issues in the system configuration and notify the tenant administrator.
   For example, wrong script in the rule node or issues with external systems: sending emails, sms, etc.
@@ -22,13 +19,11 @@ The product roadmap listed below covers only main features and does not cover sm
   Ability to acknowledge the notification.
   Simplified delivery of notifications about alarms via email, sms, etc.
   Support of push notifications to mobile apps.
-* Two-factor authentication.
-* Migration to JDK 17. Includes migration of JS executors to gRPC;
-* Rule Engine Queue configuration management using Web UI;
+* Migration to JDK 17.
 * Numerous usability improvements;
 * New widgets and rule nodes;
 
-See active development in progress [here](https://github.com/thingsboard/thingsboard/) for more info.
+See active development in progress [here](https://github.com/thingsboard/thingsboard/tree/{{ site.release.branch_major_next }}) and work on latest release bug fixes [here](https://github.com/thingsboard/thingsboard/tree/{{ site.release.branch_minor_next }}).
 
 ### Upcoming releases
 

@@ -8,6 +8,8 @@ description: Installing ThingsBoard Edge using Docker (Linux or Mac OS)
 * TOC
 {:toc}
 
+{% assign docsPrefix = "edge/" %}
+
 This guide will help you to install and start ThingsBoard Edge using Docker on Linux or Mac OS.
 
 {% include templates/edge/install/prerequisites.md %}
@@ -17,11 +19,7 @@ This guide will help you to install and start ThingsBoard Edge using Docker on L
 - [Install Docker CE](https://docs.docker.com/engine/install/){:target="_blank"}
 - [Install Docker Compose](https://docs.docker.com/compose/install/){:target="_blank"}
 
-### Step 1. Pull ThingsBoard Edge Images
-
-{% include templates/edge/install/pull-images.md %}
-
-### Step 2. Running ThingsBoard Edge
+### Step 1. Running ThingsBoard Edge
 
 {% include templates/edge/install/docker-images-location.md %}
 
@@ -46,11 +44,9 @@ services:
       - "5683-5688:5683-5688/udp"
     environment:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/tb-edge
-      EDGE_LICENSE_INSTANCE_DATA_FILE: /data/edge-license.data
       CLOUD_ROUTING_KEY: PUT_YOUR_EDGE_KEY_HERE # e.g. 19ea7ee8-5e6d-e642-4f32-05440a529015
       CLOUD_ROUTING_SECRET: PUT_YOUR_EDGE_SECRET_HERE # e.g. bztvkvfqsye7omv9uxlp
-      CLOUD_RPC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.250, demo.thingsboard.io or thingsboard.cloud
-      CLOUD_RPC_SSL_ENABLED: 'false' # set it to 'true' if you are connecting edge to thingsboard.cloud 
+      CLOUD_RPC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.250 or demo.thingsboard.io
     volumes:
       - ~/.mytb-edge-data:/data
       - ~/.mytb-edge-logs:/var/log/tb-edge
@@ -86,11 +82,11 @@ docker-compose up
 ```
 {: .copy-code}
 
-### Step 3. Open ThingsBoard Edge UI
+### Step 2. Open ThingsBoard Edge UI
 
 {% include templates/edge/install/open-edge-ui.md %}
 
-### Step 4. Detaching, stop and start commands
+### Step 3. Detaching, stop and start commands
 
 {% include templates/edge/install/docker-control.md %}
 

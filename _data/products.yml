@@ -27,10 +27,16 @@
   docsPrefix: /docs/
 - title: Edge
   fulltitle: ThingsBoard Edge
-  description: ThingsBoard Documentation
+  description: ThingsBoard Edge Documentation
   tag: edge
   icon: /images/thingsboard-e-icon.svg
   path: /docs/edge/
+- title: PE Edge
+  fulltitle: ThingsBoard PE Edge
+  description: ThingsBoard PE Edge Documentation
+  tag: edge-pe
+  icon: /images/thingsboard-e-icon.svg
+  path: /docs/pe/edge/
 - title: IoT Gateway
   fulltitle: ThingsBoard IoT Gateway
   description: ThingsBoard Documentation

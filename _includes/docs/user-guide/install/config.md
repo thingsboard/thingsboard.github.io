@@ -1,22 +1,23 @@
 * TOC
 {:toc}
 
-This guide will help you to get familiar with ThingsBoard configuration files and parameters.
-We **recommend** to configure ThingsBoard using environment variables.
-This way you do not need to merge the configuration files when new platform release arrives.
-List of available configuration parameters and corresponding environment variables is located [here](#configuration-parameters).
+This guide will help you to get familiar with ThingsBoard configuration files and parameters. We **recommend** to
+configure ThingsBoard using environment variables. This way you do not need to merge the configuration files when new
+platform release arrives. List of available configuration parameters and corresponding environment variables is
+located [here](#configuration-parameters).
 
 ## How to change configuration parameters?
 
 #### Monolithic deployment on Linux
 
-If ThingsBoard is installed on **Linux** as a **monolithic application**, you may specify the environment variables in the thingsboard.conf file:
+If ThingsBoard is installed on **Linux** as a **monolithic application**, you may specify the environment variables in
+the thingsboard.conf file:
 
 ```bash
 sudo nano /usr/share/thingsboard/conf/thingsboard.conf
 ```
 
-Use simple example below to add new environment variable 'HTTP_BIND_PORT' with value '8081'.  
+Use simple example below to add new environment variable 'HTTP_BIND_PORT' with value '8081'.
 
 ```bash
 ...
@@ -25,7 +26,8 @@ export HTTP_BIND_PORT=8081
 
 #### Monolithic deployment on Windows
 
-If ThingsBoard is installed on **Windows** as a **monolithic application**, you may specify the environment variables in the thingsboard.yml file located in the following directory:
+If ThingsBoard is installed on **Windows** as a **monolithic application**, you may specify the environment variables in
+the thingsboard.yml file located in the following directory:
 
 ```bash
 YOUR_INSTALL_DIR/conf
@@ -33,8 +35,8 @@ YOUR_INSTALL_DIR/conf
 
 The configuration file is written in YAML.
 
-All configuration parameters have corresponding environment variable name and default value. In order to change configuration parameter you can simply change it's default value.
-For example:
+All configuration parameters have corresponding environment variable name and default value. In order to change
+configuration parameter you can simply change it's default value. For example:
 
 ```bash
 server:
@@ -45,17 +47,22 @@ In this case, *'HTTP_BIND_ADDRESS'* is environment variable name and *'0.0.0.0'*
 
 #### Docker based deployment
 
-If ThingsBoard is installed in a docker compose environment, you may edit the scripts and add environment variables for the corresponding containers.
-See [docker documentation](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option) for more details.
+If ThingsBoard is installed in a docker compose environment, you may edit the scripts and add environment variables for
+the corresponding containers.
+See [docker documentation](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option) for
+more details.
 
 #### K8S based deployment
 
-If ThingsBoard is installed in a K8S environment, you may edit the scripts and add environment variables for the corresponding deployments/stateful sets.
-See [K8S documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/) for more details.
+If ThingsBoard is installed in a K8S environment, you may edit the scripts and add environment variables for the
+corresponding deployments/stateful sets.
+See [K8S documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/)
+for more details.
 
 ## Configuration parameters
 
-The parameters are grouped by system components. The list contains the name (address in thingsboard.yml file), environment variable, default value and description.
+The parameters are grouped by system components. The list contains the name (address in thingsboard.yml file),
+environment variable, default value and description.
 
 ### ThingsBoard Core/Rule Engine Parameters
 
@@ -465,12 +472,8 @@ The parameters are grouped by system components. The list contains the name (add
 
 #### UI parameters
 
-{% if docsPrefix == null %}
-{% assign UI_HELP_BASE_URL_VALUE = "ui" %}
-{% endif %}
-{% if docsPrefix == "pe/" %}
-{% assign UI_HELP_BASE_URL_VALUE = "pe-ui" %}
-{% endif %}
+{% if docsPrefix == null %} {% assign UI_HELP_BASE_URL_VALUE = "ui" %} {% endif %} {% if docsPrefix == "pe/" %} {%
+assign UI_HELP_BASE_URL_VALUE = "pe-ui" %} {% endif %}
 <table>
     <thead>
         <tr>
@@ -1233,7 +1236,11 @@ The parameters are grouped by system components. The list contains the name (add
 </table>
 
 {% if docsPrefix == "pe/" %}
-{% include docs/user-guide/install/platform-integrations-and-reports-parameters.md %}
+#### Platform integrations parameters
+{% endif %}
+
+{% if docsPrefix == "pe/" %} 
+{% include docs/user-guide/install/platform-integrations-and-reports-parameters.md %} 
 {% endif %}
 
 #### Cache parameters
@@ -1700,16 +1707,10 @@ The parameters are grouped by system components. The list contains the name (add
             <td></td>
         </tr>
         <tr>
-            <td>spring.jpa.database-platform</td>
-            <td>SPRING_JPA_DATABASE_PLATFORM</td>
-            <td>org.hibernate.dialect.PostgreSQLDialect</td>
-            <td>Database SQL dialect for Spring JPA - <b>org.hibernate.dialect.PostgreSQLDialect</b> or <b>org.hibernate.dialect.HSQLDialect</b></td>
-        </tr>
-        <tr>
           <td>spring.datasource.driverClassName</td>
           <td>SPRING_DRIVER_CLASS_NAME</td>
           <td>org.postgresql.Driver</td>
-          <td>Database driver for Spring JPA - <b>org.postgresql.Driver</b> or <b>org.hsqldb.jdbc.JDBCDriver</b></td>
+          <td>Database driver for Spring JPA - <b>org.postgresql.Driver</b></td>
         </tr>
         <tr>
           <td>spring.datasource.url</td>
@@ -2090,8 +2091,8 @@ The parameters are grouped by system components. The list contains the name (add
 
 #### Transport parameters
 
-{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %}
-{% include docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
+{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %} {% include
+docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
 
 ##### Local HTTP transport parameters
 
@@ -2296,19 +2297,18 @@ The parameters are grouped by system components. The list contains the name (add
 </table>
 
 {% if docsPrefix == "pe/" %}
-{% include docs/user-guide/install/license-parameters.md %}
+#### License parameters
+{% endif %}
+
+{% if docsPrefix == "pe/" %} 
+{% include docs/user-guide/install/license-parameters.md %} 
 {% endif %}
 
 #### Swagger parameters
 
-{% if docsPrefix == null %}
-{% assign SWAGGER_DESCRIPTION_VALUE = "open-source" %}
-{% assign SWAGGER_CONTACT_NAME_VALUE = "ThingsBoard team" %}
-{% endif %}
-{% if docsPrefix == "pe/" %}
-{% assign SWAGGER_DESCRIPTION_VALUE = "Professional Edition" %}
-{% assign SWAGGER_CONTACT_NAME_VALUE = "ThingsBoard, Inc." %}
-{% endif %}
+{% if docsPrefix == null %} {% assign SWAGGER_DESCRIPTION_VALUE = "open-source" %} {% assign SWAGGER_CONTACT_NAME_VALUE
+= "ThingsBoard team" %} {% endif %} {% if docsPrefix == "pe/" %} {% assign SWAGGER_DESCRIPTION_VALUE = "Professional
+Edition" %} {% assign SWAGGER_CONTACT_NAME_VALUE = "ThingsBoard, Inc." %} {% endif %}
 <table>
     <thead>
       <tr>
@@ -2430,9 +2430,7 @@ The parameters are grouped by system components. The list contains the name (add
 
 #### ThingsBoard service parameters
 
-{% if docsPrefix == "pe/" %}
-{% assign TB_SERVICE_TYPE_VALUE = " or tb-integration" %}
-{% endif %}
+{% if docsPrefix == "pe/" %} {% assign TB_SERVICE_TYPE_VALUE = " or tb-integration" %} {% endif %}
 <table>
     <thead>
         <tr>
@@ -2482,18 +2480,6 @@ The parameters are grouped by system components. The list contains the name (add
             <td>0.5</td>
             <td>Metrics percentiles returned by actuator for timer metrics. List of double values (divided by ,)</td>
         </tr>
-    </tbody>
-</table>
-
-#### ThingsBoard management parameters
-
-<table>
-    <thead>
-        <tr>
-            <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-        </tr>
-    </thead>
-    <tbody>
         <tr>
             <td>management.endpoints.web.exposure.include</td>
             <td>METRICS_ENDPOINTS_EXPOSE</td>
@@ -2503,9 +2489,14 @@ The parameters are grouped by system components. The list contains the name (add
     </tbody>
 </table>
 
+#### Local Version Control parameters
+
+{% include docs/user-guide/install/version-control.md %}
+
 ### HTTP Transport Parameters
 
 #### Server Parameters
+
 <table>
   <thead>
       <tr>
@@ -2622,8 +2613,8 @@ The parameters are grouped by system components. The list contains the name (add
 
 {% include docs/user-guide/install/http-transport.md %}
 
-{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %}
-{% include docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
+{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %} {% include
+docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
 
 #### Queue parameters
 
@@ -2722,8 +2713,8 @@ The parameters are grouped by system components. The list contains the name (add
 
 {% include docs/user-guide/install/mqtt-transport.md %}
 
-{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %}
-{% include docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
+{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %} {% include
+docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
 
 #### Queue parameters
 
@@ -2819,10 +2810,11 @@ The parameters are grouped by system components. The list contains the name (add
 {% include docs/user-guide/install/redis-config.md %}
 
 #### COAP server parameters
+
 {% include docs/user-guide/install/coap-transport.md %}
 
-{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %}
-{% include docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
+{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %} {% include
+docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
 
 #### Queue parameters
 
@@ -2921,8 +2913,8 @@ The parameters are grouped by system components. The list contains the name (add
 
 {% include docs/user-guide/install/lwm2m-transport.md %}
 
-{% assign JSON_TYPE_CAST_ENABLED_VALUE = "false" %}
-{% include docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
+{% assign JSON_TYPE_CAST_ENABLED_VALUE = "false" %} {% include
+docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
 
 #### Queue parameters
 
@@ -3021,8 +3013,8 @@ The parameters are grouped by system components. The list contains the name (add
 
 {% include docs/user-guide/install/snmp-transport.md %}
 
-{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %}
-{% include docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
+{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %} {% include
+docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
 
 #### Queue parameters
 
@@ -3045,6 +3037,11 @@ The parameters are grouped by system components. The list contains the name (add
 
 {% include docs/user-guide/install/service-metrics-management-parameters-for-mqtt-http-snmp-lwm2m-coap.md %}
 
+### Version Control Server Parameters
+
+{% include docs/user-guide/install/version-control.md %}
+
 ### logback.xml
 
-The configuration file for logging. Allows controlling the log level, the size of log files and the total size/volume of logs.
+The configuration file for logging. Allows controlling the log level, the size of log files and the total size/volume of
+logs.

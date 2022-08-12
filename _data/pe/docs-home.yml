@@ -56,8 +56,9 @@ toc:
     path: /docs/pe/user-guide/rule-engine-2-0/re-getting-started/
   - title: Overview
     path: /docs/pe/user-guide/rule-engine-2-0/overview/
-  - title: Architecture
-    path: /docs/pe/user-guide/rule-engine-2-0/architecture/
+  - title: Queues
+    path: /docs/pe/user-guide/rule-engine-2-5/queues/
+    new: true
   - title: Nodes
     section:
     - title: Filter Nodes
@@ -150,6 +151,9 @@ toc:
       path: /docs/pe/user-guide/entity-views/
     - title: API Limits
       path: /docs/pe/user-guide/api-limits/
+    - title: Version Control
+      path: /docs/pe/user-guide/version-control/
+      new: true
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning
@@ -172,6 +176,9 @@ toc:
     path: /docs/pe/user-guide/audit-log/
   - title: Advanced RBAC for IoT
     path: /docs/pe/user-guide/rbac/
+  - title: Two-Factor Authentication
+    path: /docs/pe/user-guide/two-factor-authentication/
+    new: true
   - title: OAuth 2 Support
     path: /docs/pe/user-guide/oauth-2-support/
   - title: HTTP Transport

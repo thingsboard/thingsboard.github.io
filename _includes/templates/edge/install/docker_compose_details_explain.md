@@ -1,3 +1,9 @@
+{% if docsPrefix == 'pe/edge/' %}
+{% assign appPrefix = "ThingsBoard PE" %}
+{% else %}
+{% assign appPrefix = "ThingsBoard" %}
+{% endif %}
+
 Where:    
 - `restart: always` - automatically start ThingsBoard Edge in case of system reboot and restart in case of failure;
 - `8080:8080` - connect local port 8080 to exposed internal HTTP port 8080;
@@ -6,28 +12,36 @@ Where:
 - `mytb-edge-data:/data` - mounts the host's dir `mytb-edge-data` to ThingsBoard Edge DataBase data directory;
 - `mytb-edge-logs:/var/log/tb-edge` - mounts the host's dir `mytb-edge-logs` to ThingsBoard Edge logs directory;
 - `mytb-edge-data/db:/var/lib/postgresql/data` - mounts the host's dir `mytb-edge-data/db` to Postgres data directory;
+{% if docsPrefix == 'pe/edge/' %}
+- `thingsboard/tb-edge-pe:{{ site.release.pe_edge_full_ver }}` - docker image;
+{% else %}
 - `thingsboard/tb-edge:{{ site.release.edge_full_ver }}` - docker image;
+{% endif %}
 - `CLOUD_ROUTING_KEY` - your edge key;
 - `CLOUD_ROUTING_SECRET` - your edge secret;
 - `CLOUD_RPC_HOST` - ip address of the machine with the ThingsBoard platform;
+{% if docsPrefix == 'pe/edge/' %}
 - `CLOUD_RPC_SSL_ENABLED` - enable or disable SSL connection to server from edge.
+{% endif %}
 
 {% capture cloud_rpc_host %}
-Please set **CLOUD_RPC_HOST** with an IP address of the machine where ThingsBoard CE/PE version is running:
+Please set **CLOUD_RPC_HOST** with an IP address of the machine where {{appPrefix}} version is running:
 * DO NOT use **'localhost'** - **'localhost'** is the ip address of the edge service in the docker container.
+{% if docsPrefix == 'pe/edge/' %}
 * Use **thingsboard.cloud** in case you are connecting edge to [**ThingsBoard Cloud**](https://thingsboard.cloud/signup).
 
 **NOTE**: **thingsboard.cloud** uses SSL protocol for edge communication.
 Please change **CLOUD_RPC_SSL_ENABLED** to **true** as well.
-
+{% else %}
+* Use **demo.thingsboard.io** if you are connecting edge to [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) for evaluation.
+{% endif %}
 * Use **X.X.X.X** IP address in case edge is connecting to the cloud instance in the same network or in the docker.
-* Or use **demo.thingsboard.io** if you are connecting edge to [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) for evaluation.
 
 {% endcapture %}
 {% include templates/info-banner.md content=cloud_rpc_host %}
 
 {% capture local-deployment %}
-If ThingsBoard Edge is going to be running on the same machine where ThingsBoard **Professional Edition/Community Edition** server is running you'll need to update docker compose port mapping.
+If ThingsBoard Edge is going to be running on the same machine where **{{appPrefix}}** server is running you'll need to update docker compose port mapping.
  
 Please update next lines of docker compose:
 <br>**ports:**

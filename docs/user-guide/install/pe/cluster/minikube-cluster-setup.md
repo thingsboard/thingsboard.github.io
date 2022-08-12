@@ -30,7 +30,7 @@ minikube addons enable ingress
 ```
 {: .copy-code}
 
-### Checkout ThingsBoard PE images from docker store
+### Pull ThingsBoard PE images from docker hub
 
 {% include templates/install/dockerhub/checkout.md %}
 
@@ -47,11 +47,7 @@ cd thingsboard-pe-k8s/minikube
 ```
 {: .copy-code}
 
-## Step 3. Upload Docker credentials
-
-{% include templates/install/dockerhub/upload-docker-credentials.md %}
-
-## Step 4. Obtain your license key
+## Step 3. Obtain your license key
 
 We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
 If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
@@ -66,7 +62,7 @@ We will reference the license key you have obtained during this step as PUT_YOUR
 {% endcapture %}
 {% include templates/warn-banner.md content=multiple_instances_license %}
 
-## Step 5. Configure your license key
+## Step 4. Configure your license key
 
 ```bash
 nano tb-node.yml
@@ -82,12 +78,12 @@ and put the license secret parameter:
   value: "PUT_YOUR_LICENSE_SECRET_HERE"
 ```
 
-## Step 6. Review the architecture page
+## Step 5. Review the architecture page
 
 Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
 See [**microservices**](/docs/reference/msa/) architecture page for more details.
 
-## Step 7. Configure Minikube
+## Step 6. Configure Minikube
 
 By default ingress addon is disabled in the Minikube, and available only in cluster providers.
 To enable ingress, please execute the following command:
@@ -97,7 +93,7 @@ minikube addons enable ingress
 ```
 {: .copy-code} 
 
-## Step 8. Configure ThingsBoard database
+## Step 7. Configure ThingsBoard database
 
 Before performing initial installation you can configure the type of database to be used with ThingsBoard.
 In order to set database type change the value of `DATABASE` variable in `.env` file to one of the following:
@@ -107,7 +103,7 @@ In order to set database type change the value of `DATABASE` variable in `.env` 
 
 **NOTE**: According to the database type corresponding kubernetes resources will be deployed (see `postgres.yml`, `cassandra.yml` for details).
 
-## Step 9. Running
+## Step 8. Running
 
 Execute the following command to run installation:
 

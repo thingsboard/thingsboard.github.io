@@ -1,14 +1,23 @@
 #### Prerequisites
 ##### ThingsBoard Cloud server 
-To start using ThingsBoard **Edge** you need to have ThingsBoard CE/PE server that supports edge functionality up and running.
 
-{% capture contenttogglespec %}
-Community Edition%,%ce%,%templates/edge/obtain-ce-cloud.md%br%
-Professional Edition%,%pe%,%templates/edge/obtain-pe-cloud.md{% endcapture %}
+{% if docsPrefix == 'pe/edge/' %}
+{% assign appPrefix = "ThingsBoard PE" %}
+{% assign step1Link = "/docs/pe/edge/provision-edge-on-server/" %}
+{% else %}
+{% assign appPrefix = "ThingsBoard" %}
+{% assign step1Link = "/docs/edge/provision-edge-on-server/" %}
+{% endif %}
 
-{% include content-toggle.html content-toggle-id="edgeInstallCloud" toggle-spec=contenttogglespec %} 
+To start using ThingsBoard **Edge** you need to have {{appPrefix}} server that supports edge functionality up and running.
+
+{% if docsPrefix == 'pe/edge/' %}
+{% include templates/edge/obtain-pe-cloud.md %}
+{% else %}
+{% include templates/edge/obtain-ce-cloud.md %}
+{% endif %}
  
 ##### Edge provision on cloud
-Additionally, you will need to provision ThingsBoard **Edge** on cloud server. Please visit this guide [Provision edge on CE server](/docs/edge/provision-edge-on-server-ce/) or [Provision edge on PE server](/docs/edge/provision-edge-on-server-pe/) respectively.
+Additionally, you will need to provision ThingsBoard **Edge** on cloud server. Please follow [Step 1]({{step1Link}}) first if you skipped it.
 
 Once ThingsBoard **Edge** provisioned on cloud server please follow installation steps below.

@@ -227,8 +227,6 @@ services:
       TB_QUEUE_RE_SQ_CONSUMER_PER_PARTITION: "false"
       ACTORS_SYSTEM_RULE_DISPATCHER_POOL_SIZE: "8"
       # Postgres connection
-      SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.PostgreSQLDialect"
-      SPRING_DRIVER_CLASS_NAME: "org.postgresql.Driver"
       SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
       SPRING_DATASOURCE_USERNAME: "postgres"
       SPRING_DATASOURCE_PASSWORD: "postgres"

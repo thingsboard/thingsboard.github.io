@@ -10,6 +10,15 @@ description: OPC-UA protocol support for ThingsBoard IoT Gateway
 * TOC
 {:toc}
 
+{% capture difference %}
+<br>
+**From Gateway version 3.1 we added a new OPC-UA connector based on the AsyncIO library. 
+Note that the connector is in the early beta, so it can have bugs. 
+Also, it is not recommended to use it in production mode for now.
+For enabling it, use the type of connector "opcua_asyncio".**
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 This guide will help you to get familiar with OPC-UA connector configuration for ThingsBoard IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this extension.
 We will describe connector configuration file below.
@@ -197,6 +206,12 @@ This subsection contains configurations for variables of the object, that will b
 | path            | **${ns=2;i=5}**             | Name of the variable in the OPC-UA object, uses for looking the value in some variable. ** \* **     |
 |---
 
+{% capture difference %}
+<br>
+**If you don't specify the "key" parameter, the node name will use instead**  
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 ** \* ** You can put here some expression for search like:
 1. Full path to node - **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.CertificateNumber}**
 2. Relative path from device object - **${TemperatureAndHumiditySensor\\.CertificateNumber}** 
@@ -336,22 +351,27 @@ This part of configuration will look like:
 
 Also, every telemetry and attribute parameter has **GET** and **SET** RPC methods out of the box, so you don't need to configure
 it manually.
-For example, if you have some attribute parameter:
+For example, if you have some telemetry parameter:
 ```json
-"attributes": [
+"timeseries": [
   {
-    "key": "CertificateNumber",
-    "path": "${ns=3;i=1007}"
+    "key": "temperature",
+    "path": "${ns=3;i=1001}"
   }
 ]
 ```
-To get the current value of the **"CertificateNumber"** attribute run the query using the **New RPC debug terminal** widget:
+To get temperature telemetry current value:
 ```bash
-get ns=3;i=1007
+get ns=3;i=1001
 ```
 Response:
 ```json
-{"get": "231cghx45dg688", "code": 200}
+{"get": 25.34, "code": 200}
+```
+
+To set temperature telemetry value:
+```bash
+set ns=3;i=1001 23
 ```
 
 {:refdef: style="text-align: left;"}

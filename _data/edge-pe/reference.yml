@@ -1,0 +1,6 @@
+bigheader: "Architecture"
+abstract: "Design docs, deployment scenarios and performance"
+hidetoc: "true"
+toc:
+- title: PE Edge Architecture Overview
+  path: /docs/pe/edge/edge-architecture/

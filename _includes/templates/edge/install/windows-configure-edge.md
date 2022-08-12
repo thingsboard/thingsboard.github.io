@@ -1,3 +1,9 @@
+{% if docsPrefix == 'pe/edge/' %}
+{% assign appPrefix = "ThingsBoard PE" %}
+{% else %}
+{% assign appPrefix = "ThingsBoard" %}
+{% endif %}
+
 Open the Notepad or other editor as administrator user (right click on the app icon and select "Run as administrator").  
 Open the following file for editing (select "All Files" instead of "Text Documents" in file choosing dialog, the encoding is UTF-8):
 
@@ -22,7 +28,6 @@ spring:
   jpa:
     hibernate:
       ddl-auto: "none"
-    database-platform: "${SPRING_JPA_DATABASE_PLATFORM:org.hibernate.dialect.PostgreSQLDialect}"
   datasource:
     driverClassName: "${SPRING_DRIVER_CLASS_NAME:org.postgresql.Driver}"
     url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/tb_edge}"
@@ -33,15 +38,17 @@ spring:
 
 Locate "# Cloud configuration" block and replace **PUT_YOUR_EDGE_KEY_HERE** and **PUT_YOUR_EDGE_SECRET_HERE** with Edge **key and secret** respectively. 
 
-Please replace **PUT_YOUR_CLOUD_IP** with an IP address of the machine where ThingsBoard CE/PE version is running:
+Please replace **PUT_YOUR_CLOUD_IP** with an IP address of the machine where {{appPrefix}} version is running:
+{% if docsPrefix == 'pe/edge/' %}
 * Use **thingsboard.cloud** in case you are connecting edge to [**ThingsBoard Cloud**](https://thingsboard.cloud/signup).
 
 **NOTE**: **thingsboard.cloud** uses SSL protocol for edge communication. 
-Please change **CLOUD_RPC_SSL_ENABLED** to **true** as well. 
-
+Please change **CLOUD_RPC_SSL_ENABLED** to **true** as well.
+{% else %}
+* Use **demo.thingsboard.io** if you are connecting edge to [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) for evaluation.
+{% endif %}
 * Use **localhost** in case edge is running on the same machine where cloud instance is running. 
 * Use **X.X.X.X** IP address in case edge is connecting to the cloud instance in the same network or in the docker.
-* Or use **demo.thingsboard.io** if you are connecting edge to [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) for evaluation. 
 
 ```yml
 # Cloud configuration
@@ -50,12 +57,14 @@ cloud:
     secret: "${CLOUD_ROUTING_SECRET:PUT_YOUR_EDGE_SECRET_HERE}"
     rpc:
       host: "${CLOUD_RPC_HOST:PUT_YOUR_CLOUD_IP}"
+{% if docsPrefix == 'pe/edge/' %}
       ssl:
-        enabled: "${CLOUD_RPC_SSL_ENABLED:false}"
+        enabled: "${CLOUD_RPC_SSL_ENABLED:true}"
+{% endif %}
 ```
 
 {% capture local-deployment %}
-If ThingsBoard Edge is going to be running on the same machine where ThingsBoard **Professional Edition/Community Edition** server is running you'll need to update additional configuration parameters to avoid port collision.
+If ThingsBoard Edge is going to be running on the same machine where ThingsBoard **{{appPrefix}}** server is running you'll need to update additional configuration parameters to avoid port collision.
  
 Please locate and change next parameters in ThingsBoard Edge configuration file (**C:\Program Files (x86)\tb-edge\conf\tb-edge.yml**):
 <br>

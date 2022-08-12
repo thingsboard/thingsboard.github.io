@@ -630,250 +630,40 @@
             <td>Statistics printing interval for Rule Engine microservices</td>
         </tr>
         <tr>
-            <td>queue.rule-engine.queues.name</td>
-            <td>TB_QUEUE_RE_MAIN_QUEUE_NAME</td>
-            <td>Main</td>
-            <td>Rule Engine Main queue (mustn't be renamed)</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.topic</td>
-            <td>TB_QUEUE_RE_MAIN_TOPIC</td>
-            <td>tb_rule_engine.main</td>
-            <td>Topic for Main queue by Rule Engine microservices</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.poll-interval</td>
-            <td>TB_QUEUE_RE_MAIN_POLL_INTERVAL_MS</td>
-            <td>25</td>
-            <td>Interval in milliseconds to poll messages from Main queue by Rule Engine microservices</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.partitions</td>
-            <td>TB_QUEUE_RE_MAIN_PARTITIONS</td>
-            <td>10</td>
-            <td>Main queue amount of partitions used by Rule Engine microservices</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.consumer-per-partition</td>
-            <td>TB_QUEUE_RE_MAIN_CONSUMER_PER_PARTITION</td>
-            <td>true</td>
-            <td>Run separate Rule Engine consumer per each partition. Helps to isolate processing of partitions.</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.pack-processing-timeout</td>
-            <td>TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS</td>
-            <td>2000</td>
-            <td>Timeout for processing a message pack from Main queue by Rule Engine microservices</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.submit-strategy.type</td>
-            <td>TB_QUEUE_RE_MAIN_SUBMIT_STRATEGY_TYPE</td>
-            <td>BURST</td>
-            <td>BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_BY_TENANT, SEQUENTIAL</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
-            <td>TB_QUEUE_RE_MAIN_SUBMIT_STRATEGY_BATCH_SIZE</td>
-            <td>1000</td>
-            <td>For BATCH only. Maximum number of messages in batch</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.processing-strategy.type</td>
-            <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_TYPE</td>
-            <td>SKIP_ALL_FAILURES</td>
-            <td>SKIP_ALL_FAILURES, SKIP_ALL_FAILURES_AND_TIMED_OUT, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.processing-strategy.retries</td>
-            <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_RETRIES</td>
-            <td>3</td>
-            <td>Number of retries, 0 is unlimited. For RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.processing-strategy.failure-percentage</td>
-            <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_FAILURE_PERCENTAGE</td>
-            <td>0</td>
-            <td>Skip retry if failures or timeouts are less then X percentage of messages</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.processing-strategy.pause-between-retries</td>
-            <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_RETRY_PAUSE</td>
-            <td>3</td>
-            <td>Time in seconds to wait in consumer thread before retries</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
-            <td>TB_QUEUE_RE_MAIN_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
-            <td>3</td>
-            <td>Max allowed time in seconds for pause between retries</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.name</td>
-            <td>TB_QUEUE_RE_HP_QUEUE_NAME</td>
-            <td>HighPriority</td>
-            <td>Rule Engine HighPriority queue</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.topic</td>
-            <td>TB_QUEUE_RE_HP_TOPIC</td>
-            <td>tb_rule_engine.hp</td>
-            <td>Topic for HighPriority queue by Rule Engine microservices</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.poll-interval</td>
-            <td>TB_QUEUE_RE_HP_POLL_INTERVAL_MS</td>
-            <td>25</td>
-            <td>Interval in milliseconds to poll messages from HighPriority queue by Rule Engine microservices</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.partitions</td>
-            <td>TB_QUEUE_RE_HP_PARTITIONS</td>
-            <td>10</td>
-            <td>HighPriority queue amount of partitions used by Rule Engine microservices</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.consumer-per-partition</td>
-            <td>TB_QUEUE_RE_HP_CONSUMER_PER_PARTITION</td>
-            <td>true</td>
-            <td>Run separate Rule Engine consumer per each partition. Helps to isolate processing of partitions.</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.pack-processing-timeout</td>
-            <td>TB_QUEUE_RE_HP_PACK_PROCESSING_TIMEOUT_MS</td>
-            <td>2000</td>
-            <td>Timeout for processing a message pack from HighPriority queue by Rule Engine microservices</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.submit-strategy.type</td>
-            <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_TYPE</td>
-            <td>BURST</td>
-            <td>BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_BY_TENANT, SEQUENTIAL</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
-            <td>TB_QUEUE_RE_HP_SUBMIT_STRATEGY_BATCH_SIZE</td>
-            <td>100</td>
-            <td>Maximum number of messages in batch. For BATCH only</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.processing-strategy.type</td>
-            <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_TYPE</td>
-            <td>RETRY_FAILED_AND_TIMED_OUT</td>
-            <td>SKIP_ALL_FAILURES, SKIP_ALL_FAILURES_AND_TIMED_OUT, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.processing-strategy.retries</td>
-            <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_RETRIES</td>
-            <td>0</td>
-            <td>Number of retries, 0 is unlimited. For RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.processing-strategy.failure-percentage</td>
-            <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_FAILURE_PERCENTAGE</td>
-            <td>0</td>
-            <td>Skip retry if failures or timeouts are less then X percentage of messages</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.processing-strategy.pause-between-retries</td>
-            <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_RETRY_PAUSE</td>
-            <td>5</td>
-            <td>Time in seconds to wait in consumer thread before retries</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
-            <td>TB_QUEUE_RE_HP_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
-            <td>5</td>
-            <td>Max allowed time in seconds for pause between retries</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.name</td>
-            <td>TB_QUEUE_RE_SQ_QUEUE_NAME</td>
-            <td>SequentialByOriginator</td>
-            <td>Rule Engine SequentialByOriginator queue</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.topic</td>
-            <td>TB_QUEUE_RE_SQ_TOPIC</td>
-            <td>tb_rule_engine.sq</td>
-            <td>Topic for SequentialByOriginator queue by Rule Engine microservices</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.poll-interval</td>
-            <td>TB_QUEUE_RE_SQ_POLL_INTERVAL_MS</td>
-            <td>25</td>
-            <td>Interval in milliseconds to poll messages from SequentialByOriginator queue by Rule Engine microservices</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.partitions</td>
-            <td>TB_QUEUE_RE_SQ_PARTITIONS</td>
-            <td>10</td>
-            <td>SequentialByOriginator queue amount of partitions used by Rule Engine microservices</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.consumer-per-partition</td>
-            <td>TB_QUEUE_RE_SQ_CONSUMER_PER_PARTITION</td>
-            <td>true</td>
-            <td>Run separate Rule Engine consumer per each partition. Helps to isolate processing of partitions.</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.pack-processing-timeout</td>
-            <td>TB_QUEUE_RE_SQ_PACK_PROCESSING_TIMEOUT_MS</td>
-            <td>2000</td>
-            <td>Timeout for processing a message pack from SequentialByOriginator queue by Rule Engine microservices</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.submit-strategy.type</td>
-            <td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_TYPE</td>
-            <td>SEQUENTIAL_BY_ORIGINATOR</td>
-            <td>BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_BY_TENANT, SEQUENTIAL</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.submit-strategy.batch-size</td>
-            <td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_BATCH_SIZE</td>
-            <td>100</td>
-            <td>Maximum number of messages in batch. For BATCH only</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.processing-strategy.type</td>
-            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_TYPE</td>
-            <td>RETRY_FAILED_AND_TIMED_OUT</td>
-            <td>SKIP_ALL_FAILURES, SKIP_ALL_FAILURES_AND_TIMED_OUT, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.processing-strategy.retries</td>
-            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRIES</td>
-            <td>3</td>
-            <td>Number of retries, 0 is unlimited. For RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.processing-strategy.failure-percentage</td>
-            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_FAILURE_PERCENTAGE</td>
-            <td>0</td>
-            <td>Skip retry if failures or timeouts are less then X percentage of messages</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.processing-strategy.pause-between-retries</td>
-            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRY_PAUSE</td>
-            <td>5</td>
-            <td>Time in seconds to wait in consumer thread before retries</td>
-        </tr>
-        <tr>
-            <td>queue.rule-engine.queues.processing-strategy.max-pause-between-retries</td>
-            <td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
-            <td>5</td>
-            <td>Max allowed time in seconds for pause between retries</td>
-        </tr>
-        <tr>
             <td>queue.transport.notifications_topic</td>
             <td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_TOPIC</td>
             <td>tb_transport.notifications</td>
-            <td>Transport nottifications topic</td>
+            <td>Transport notifications topic</td>
         </tr>
         <tr>
             <td>queue.transport.poll_interval</td>
             <td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_POLL_INTERVAL_MS</td>
             <td>25</td>
             <td>Interval in milliseconds to poll messages by Core microservices</td>
+        </tr>
+        <tr>
+            <td>queue.vc.topic</td>
+            <td>TB_QUEUE_VC_TOPIC</td>
+            <td>tb_version_control</td>
+            <td>Topic for storing Version Control synchronization tasks</td>
+        </tr>
+        <tr>
+            <td>queue.vc.partitions</td>
+            <td>TB_QUEUE_VC_PARTITIONS</td>
+            <td>10</td>
+            <td>Amount of partitions used by Version Control microservices</td>
+        </tr>
+        <tr>
+            <td>queue.vc.poll-interval</td>
+            <td>TB_QUEUE_VC_INTERVAL_MS</td>
+            <td>10</td>
+            <td>Interval in milliseconds to poll messages by Version Control microservices</td>
+        </tr>
+        <tr>
+            <td>queue.vc.pack-processing-timeout</td>
+            <td>TB_QUEUE_VC_PACK_PROCESSING_TIMEOUT_MS</td>
+            <td>10</td>
+            <td>Timeout for processing a message pack</td>
         </tr>
     </tbody>
 </table>

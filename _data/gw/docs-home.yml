@@ -33,6 +33,8 @@ toc:
       path: /docs/iot-gateway/config/snmp/
     - title: FTP Connector
       path: /docs/iot-gateway/config/ftp/
+    - title: Socket Connector
+      path: /docs/iot-gateway/config/socket/
 - title: IoT Gateway features
   path: /docs/iot-gateway/features/
   section:

@@ -40,9 +40,9 @@ The test scenarios differ in the number of connected devices, messages per secon
 |---------------------------|---------|------------------------|----------------------------------------|------------|------------------------|-----------|------------|
 | [Scenario A](#scenario-a) | 5K      | 1K                     | t3.medium: 2 burstable vCPU, 4GB RAM | in-memory  | PostgreSQL             | 27%       | 800        |
 | [Scenario B](#scenario-b) | 5K      | 15K                    | m6a.large: 2 vCPU, 8GB RAM            | Kafka      | PostgreSQL             | 95%       | 850        |
-| [Scenario C](#scenario-c) | 25K     | 30K                    | m6a.2xlarge: 4 vCPU, 16GB RAM         | Kafka      | PostgreSQL + Cassandra | 75%       | 200        |
-| [Scenario D](#scenario-d) | 100K    | 15K                    | m6a.2xlarge: 4 vCPU, 16GB RAM         | Kafka      | PostgreSQL + Cassandra | 71%       | 700        |
-| [Scenario E](#scenario-e) | 100K    | 30K                    | m6a.2xlarge: 4 vCPU, 16GB RAM         | Kafka      | PostgreSQL + Cassandra | 95%       | 240        |
+| [Scenario C](#scenario-c) | 25K     | 30K                    | m6a.2xlarge: 8 vCPU, 32GB RAM         | Kafka      | PostgreSQL + Cassandra | 75%       | 200        |
+| [Scenario D](#scenario-d) | 100K    | 15K                    | m6a.2xlarge: 8 vCPU, 32GB RAM         | Kafka      | PostgreSQL + Cassandra | 71%       | 700        |
+| [Scenario E](#scenario-e) | 100K    | 30K                    | m6a.2xlarge: 8 vCPU, 32GB RAM         | Kafka      | PostgreSQL + Cassandra | 95%       | 240        |
 
 [comment]: <> ( To format table as markdown, please use the online table generator https://www.tablesgenerator.com/markdown_tables )
 
@@ -131,8 +131,6 @@ services:
       TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
       TB_QUEUE_RE_MAIN_CONSUMER_PER_PARTITION: "false"
       # Postgres connection
-      SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.PostgreSQLDialect"
-      SPRING_DRIVER_CLASS_NAME: "org.postgresql.Driver"
       SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
       SPRING_DATASOURCE_USERNAME: "postgres"
       SPRING_DATASOURCE_PASSWORD: "postgres"
@@ -398,8 +396,6 @@ services:
       HTTP_BIND_PORT: "8080"
       TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
       # Postgres connection
-      SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.PostgreSQLDialect"
-      SPRING_DRIVER_CLASS_NAME: "org.postgresql.Driver"
       SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
       SPRING_DATASOURCE_USERNAME: "postgres"
       SPRING_DATASOURCE_PASSWORD: "postgres"
@@ -683,8 +679,6 @@ services:
       HTTP_BIND_PORT: "8080"
       TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
       # Postgres connection
-      SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.PostgreSQLDialect"
-      SPRING_DRIVER_CLASS_NAME: "org.postgresql.Driver"
       SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
       SPRING_DATASOURCE_USERNAME: "postgres"
       SPRING_DATASOURCE_PASSWORD: "postgres"
@@ -849,8 +843,6 @@ services:
       HTTP_BIND_PORT: "8080"
       TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
       # Postgres connection
-      SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.PostgreSQLDialect"
-      SPRING_DRIVER_CLASS_NAME: "org.postgresql.Driver"
       SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
       SPRING_DATASOURCE_USERNAME: "postgres"
       SPRING_DATASOURCE_PASSWORD: "postgres"
@@ -1081,8 +1073,6 @@ services:
       HTTP_BIND_PORT: "8080"
       TB_QUEUE_RE_MAIN_PACK_PROCESSING_TIMEOUT_MS: "30000"
       # Postgres connection
-      SPRING_JPA_DATABASE_PLATFORM: "org.hibernate.dialect.PostgreSQLDialect"
-      SPRING_DRIVER_CLASS_NAME: "org.postgresql.Driver"
       SPRING_DATASOURCE_URL: "jdbc:postgresql://localhost:5432/thingsboard"
       SPRING_DATASOURCE_USERNAME: "postgres"
       SPRING_DATASOURCE_PASSWORD: "postgres"
