@@ -121,7 +121,7 @@ Before creating the Integration template, you need to create an Uplink and Downl
 **Downlink Converter** parses and transforms the data sent from ThingsBoard to the format that is consumed by existing device(s).
 
 Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard Edge.
-Click on the “plus” and on “Create new converter”. To view the events, enable Debug.
+Click on the "plus" and on "Create new converter". To view the events, enable Debug.
 In the function decoder field, specify a script to parse and transform data.
 
 {% include images-gallery.html imageCollection="addConverter" %}
@@ -170,7 +170,7 @@ return result;
 ```
 {: .copy-code}
 
-The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard can consume.
+The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard Edge can consume.
 **deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional.
 **Attributes** and **telemetry** are flat key-value objects. Nested objects are not supported.
 
@@ -185,7 +185,7 @@ Save changes by clicking on the 'checkmark' icon.
 
 ### Downlink Converter template
 
-Create Downlink in **Converter templates** page as well. To see events enable Debug.
+Create Downlink in **Converter templates** page as well. To see events select **Debug** checkbox.
 
 {% include images-gallery.html imageCollection="addDownlink" %}
 
