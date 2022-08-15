@@ -5,77 +5,76 @@ description: TCP Integration Guide
 
 addConverter:
     0:
-        image: /images/pe/edge/integrations/http/add-converter-step-1.png
+        image: /images/pe/edge/integrations/tcp/add-converter-step-1.png
     1:
-        image: /images/pe/edge/integrations/http/add-converter-step-2.png
+        image: /images/pe/edge/integrations/tcp/add-converter-step-2.png
 
 modifyConverter:
     0:
-        image: /images/pe/edge/integrations/http/modify-converter-step-1.png
+        image: /images/pe/edge/integrations/tcp/modify-converter-step-1.png
     1:
-        image: /images/pe/edge/integrations/http/modify-converter-step-2.png
-
-addIntegration:
-    0:
-        image: /images/pe/edge/integrations/http/add-integration-template-step-1.png
-    1:
-        image: /images/pe/edge/integrations/http/add-integration-template-step-2.png
-
-assignIntegration:
-    0:
-        image: /images/pe/edge/integrations/http/assign-integration-step-1.png
-        title: 'Add <b>edgeBaseUrl</b> attribute to Edge and set value as your Edge <b>IP:port</b>'
-    1:
-        image: /images/pe/edge/integrations/http/assign-integration-step-2.png
-        title: 'Click <b>Manage Integrations</b> button of Edge entity'
-    2:
-        image: /images/pe/edge/integrations/http/assign-integration-step-3.png
-        title: 'Assign Integration to the Edge'
-    3:
-        image: /images/pe/edge/integrations/http/assign-integration-step-4.png
-        title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
-
-sendUplink:
-    0:
-        image: /images/pe/edge/integrations/http/send-uplink-step-1.png
-    1:
-        image: /images/pe/edge/integrations/http/send-uplink-step-2.png
-
-device:
-    0:
-        image: /images/pe/edge/integrations/http/device.png
-
-converterEvents:
-    0:
-        image: /images/pe/edge/integrations/http/converter-events-step-1.png
-    1:
-        image: /images/pe/edge/integrations/http/converter-events-step-2.png
-    2:
-        image: /images/pe/edge/integrations/http/converter-events-step-3.png
+        image: /images/pe/edge/integrations/tcp/modify-converter-step-2.png
 
 addDownlink:
     0:
-        image: /images/pe/edge/integrations/http/add-converter-step-1.png
+        image: /images/pe/edge/integrations/tcp/add-downlink-step-1.png
     1:
-        image: /images/pe/edge/integrations/http/add-downlink-step-2.png
+        image: /images/pe/edge/integrations/tcp/add-downlink-step-2.png
+
+addIntegration:
+    0:
+        image: /images/pe/edge/integrations/tcp/add-integration-template-step-1.png
+    1:
+        image: /images/pe/edge/integrations/tcp/add-integration-template-step-2.png
+    2:
+        image: /images/pe/edge/integrations/tcp/add-integration-template-step-3.png
 
 downlinkRule:
     0:
-        image: /images/pe/edge/integrations/http/downlink-rule-step-1.png
+        image: /images/pe/edge/integrations/tcp/downlink-rule-step-1.png
     1:
-        image: /images/pe/edge/integrations/http/downlink-rule-step-2.png
+        image: /images/pe/edge/integrations/tcp/downlink-rule-step-2.png
+
+assignIntegration:
+    0:
+        image: /images/pe/edge/integrations/tcp/assign-integration-step-1.png
+        title: 'Click <b>Manage Integrations</b> button of Edge entity'
+    1:
+        image: /images/pe/edge/integrations/tcp/assign-integration-step-2.png
+        title: 'Assign Integration to the Edge'
+    2:
+        image: /images/pe/edge/integrations/tcp/assign-integration-step-3.png
+        title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Integrations page'
+
+sendUplink:
+    0:
+        image: /images/pe/edge/integrations/tcp/send-uplink-step-1.png
+    1:
+        image: /images/pe/edge/integrations/tcp/send-uplink-step-2.png
+
+device:
+    0:
+        image: /images/pe/edge/integrations/tcp/device.png
+
+converterEvents:
+    0:
+        image: /images/pe/edge/integrations/tcp/converter-events-step-1.png
+    1:
+        image: /images/pe/edge/integrations/tcp/converter-events-step-2.png
+    2:
+        image: /images/pe/edge/integrations/tcp/converter-events-step-3.png
 
 addSharedAttribute:
     0:
-        image: /images/pe/edge/integrations/http/add-shared-attribute.png
+        image: /images/pe/edge/integrations/tcp/add-shared-attribute.png
 
 downlinkMessage:
     0:
-        image: /images/pe/edge/integrations/http/downlink-message.png
+        image: /images/pe/edge/integrations/tcp/downlink-message.png
 
 downlinkTerminal:
     0:
-        image: /images/pe/edge/integrations/http/downlink-terminal.png
+        image: /images/pe/edge/integrations/tcp/downlink-terminal.png
 
 ---
 
@@ -205,15 +204,14 @@ return result;
 
 ## Create Integration template
 
-Go to **Integrations** section and click **Add new integration** button. Name it **TCP Integration**, select type **TCP**, turn the Debug mode on and from drop-down menus add recently created Uplink converter.
+Now that the Uplink and Downlink converter templates have been created, it is possible to create an integration.
+Go to **Integration templates** section and click **Add new integration** button. Name it **TCP Integration**, select type **TCP**, turn the Debug mode on and from drop-down menus add recently created Uplink and Downlink converters.
 
 As you mentioned **Execute remotely** is checked and can not be modified - TCP Integration can be only **remote** type.
 
 Please note down **Integration key** and **Integration secret** - we will use these values later in the configuration on the remote TCP Integration itself.
 
-![image](/images/user-guide/integrations/tcp/tcp-integration-setup.png)
-
-By default TCP Integration will use **10560** port, but you can change this to any available port in your case.
+By default, TCP Integration will use **10560** port, but you can change this to any available port in your case.
 
 We leave other options by default, but there is brief description of them:
 - **Max number of pending connects on the socket** - The maximum queue length for incoming connection indications (a request to connect) is set to the backlog parameter. If a connection indication arrives when the queue is full, the connection is refused;
@@ -230,30 +228,6 @@ JSON payload<br/>%,%json%,%templates/integration/tcp/tcp-handler-configuration-j
 Binary payload<br/>%,%binary%,%templates/integration/tcp/tcp-handler-configuration-binary.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="tcpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
-
-Click **Add** to save the Integration.
-
-
-Now that the Uplink and Downlink converter templates have been created, it is possible to create an integration.
-Go to **Integration templates** section and click **Add new integration** button. Name it **OPC-UA Airconditioners**, select type **OPC-UA**, turn the Debug mode on and from drop-down menus add recently created Uplink and Downlink converters.
-
-Here are the other integration field values:
-- Application name: \<empty\> (client application name)
-- Application uri: \<empty\> (client application uri)
-- Host: **$\{\{endpointHost\}\}** (we will add Edge attribute **endpointHost** in next steps)
-- Port: **Endpoint Port** (see [Prerequisites](#prerequisites))
-- Scan period in seconds: 10 (how often to rescan OPC UA nodes)
-- Timeout in milliseconds: 5000 (the timeout, in milliseconds, before failing a request to OPC UA server)
-- Security: None (can be *Basic128Rsa15 / Basic256 / Basic256Sha256 / None*)
-- Identity: Anonymous (can be *Anonymous / Username*)
-- Mapping:
-    - Device Node Pattern: `Objects\.BuildingAutomation\.AirConditioner_\d+$` (regular expression used to match scanned OPC UA Node FQNs/IDs to device name.)
-    - MappingType: Fully Qualified Name (can be *Fully Qualified Name* / *ID*)
-    - Subscription tags (list of node tags (**Path**) to subscribe with mappings to keys (**Key**) used in the output message):
-        - state - State
-        - temperature - Temperature
-        - humidity - Humidity
-        - powerConsumption - PowerConsumption
 
 Click **Add** to save the Integration.
 
