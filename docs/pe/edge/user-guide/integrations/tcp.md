@@ -220,7 +220,7 @@ We leave other options by default, but there is brief description of them:
 - **Enable sending of keep-alive messages on connection-oriented sockets** - a flag indicating that probes should be periodically sent across the network to the opposing socket to keep the connection alive;
 - **Forces a socket to send the data without buffering (disable Nagle's buffering algorithm)** - disables Nagle's algorithm on the socket which delays the transmission of data until a certain volume of pending data has accumulated.
 
-Choose device payload type for **Handler Configuration**
+Choose device payload type for **Handler Configuration**:
 
 {% capture handlerconfiguration %}
 Text payload<br/>%,%text%,%templates/integration/tcp/tcp-handler-configuration-text.md%br%

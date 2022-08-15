@@ -4,17 +4,14 @@ title: Remote Integrations
 description: Remote Integrations Documentation
 ---
 
-{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
-
 * TOC
 {:toc}
 
 ## Introduction
 
-It is possible to execute any ThingsBoard Integration remotely from main ThingsBoard instance.
+It is possible to execute any ThingsBoard Integration remotely from main ThingsBoard Edge instance.
 This guide contains step-by-step instructions how to launch ThingsBoard integration remotely.
-For example, we will launch MQTT integration that connects to the local MQTT Broker and pushes data to 
-[thingsboard.cloud](https://thingsboard.cloud/signup).  
+For example, we will launch HTTP integration that pushes data to **TODO**.  
 
 See [deployment options](/docs/{{peDocsPrefix}}user-guide/integrations/#deployment-options) for more general information.
 
@@ -169,29 +166,21 @@ TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-rh
 Remote integration configuration is done via ThingsBoard UI and there is no specific steps.
 Explore guides and video tutorials related to specific integrations:
 
- - [HTTP](/docs/{{peDocsPrefix}}user-guide/integrations/http/)
- - [MQTT](/docs/{{peDocsPrefix}}user-guide/integrations/mqtt/)
- - [AWS IoT](/docs/{{peDocsPrefix}}user-guide/integrations/aws-iot/)
- - [IBM Watson IoT](/docs/{{peDocsPrefix}}user-guide/integrations/ibm-watson-iot/)
- - [Azure Event Hub](/docs/{{peDocsPrefix}}user-guide/integrations/azure-event-hub/)
- - [Actility ThingPark](/docs/{{peDocsPrefix}}user-guide/integrations/thingpark/)
- - [SigFox](/docs/{{peDocsPrefix}}user-guide/integrations/sigfox/)
- - [OceanConnect](/docs/{{peDocsPrefix}}user-guide/integrations/ocean-connect/)
- - [TheThingsNetwork](/docs/{{peDocsPrefix}}user-guide/integrations/ttn/)
- - [OPC-UA](/docs/{{peDocsPrefix}}user-guide/integrations/opc-ua/)
- - [TCP](/docs/{{peDocsPrefix}}user-guide/integrations/tcp/)
- - [UDP](/docs/{{peDocsPrefix}}user-guide/integrations/udp/)
- - [CoAP](/docs/{{peDocsPrefix}}user-guide/integrations/coap/)
- - [Custom](/docs/{{peDocsPrefix}}user-guide/integrations/custom/)
+ - [HTTP](/docs/pe/edge/user-guide/integrations/http/)
+ - [MQTT](/docs/pe/edge/user-guide/integrations/mqtt/)
+ - [OPC-UA](/docs/pe/edge/user-guide/integrations/opc-ua/)
+ - [TCP](/docs/pe/edge/user-guide/integrations/tcp/)
+ - [UDP](/docs/pe/edge/user-guide/integrations/udp/)
+ - [CoAP](/docs/pe/edge/user-guide/integrations/coap/)
 
-  
 ## Remote integration troubleshooting
 
 Please review the log files. Their location is specific to the platform and installation package you have used and is mentioned in the installation steps. 
 
 ## Next steps
 
-{% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}
+{% assign docsPrefix = "pe/edge/" %}
+{% include templates/edge/guides-banner-edge.md %}
 
 
 
