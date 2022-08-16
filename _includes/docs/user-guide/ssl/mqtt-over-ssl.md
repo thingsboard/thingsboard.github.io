@@ -65,7 +65,7 @@ where:
 
 * MQTT_SSL_ENABLED - Enable/disable SSL support;
 * MQTT_SSL_CREDENTIALS_TYPE - Server credentials type. PEM - pem certificate file; KEYSTORE - java keystore;
-* MQTT_SSL_KEY_STORE_TYPE - Type of the key store supported by your Java distribution. PKCS12 is recommended;
+* MQTT_SSL_KEY_STORE_TYPE - Type of the key store supported by your Java distribution. PKCS12 is recommended; JKS is also supported.
 * MQTT_SSL_KEY_STORE - Path to the key store that holds the SSL certificate. Holds server certificate or certificate chain and the private key;
 * MQTT_SSL_KEY_STORE_PASSWORD - Password to access the key store;
 * MQTT_SSL_KEY_ALIAS - Optional alias of the private key; If not set, the platform will load the first private key from the keystore;
