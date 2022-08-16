@@ -284,16 +284,19 @@ Received data can be viewed in the Uplink converter. In the **'In'** and **'Out'
 
 ## Send downlink message
 
-Now let's check downlink functionality. Let's add **firmware** shared attribute:
+Now let's check downlink functionality. 
+
+Now we'll need to send again message to UDP integration to see downlink response.
+Please use the same command that was used before, but replace parameter **q1** to **q120**. With these changes **nc** utility will wait 120 seconds for downlink message.
+Additionally, please remove **w1** parameter.
+
+After you'll send uplink command, you have **120 seconds** to add **firmware** shared attribute:
 
 {% include images-gallery.html imageCollection="addSharedAttribute" %}
 
 To make sure that downlink message sent to integration you can check 'Events' tab of integration:
 
 {% include images-gallery.html imageCollection="downlinkMessage" %}
-
-Now we'll need to send again message to UDP integration and see downlink response.
-Please use the same command that was used before.
 
 An example of sent message and a response from ThingsBoard Edge in the terminal:
 
