@@ -64,9 +64,46 @@ At the moment Integrations and Converters can not be modified on the Edge - they
 Integration configurations fields (URIs, passwords, etc.) could be replaced by Edge attribute value with a help of placeholders. 
 In this way, single Integration template could be used by multiple Edges, and any specific configuration field of the Integration could be replaced by Edge attribute value.
 
-### How it works?
+### Deployment options
 
-#### Converter templates
+ThingsBoard Integration has two deployment options: embedded and remote. See details and architecture diagrams below.
+
+#### Embedded integrations
+
+Embedded integration is running in the main ThingsBoard Edge process. 
+
+Pros:
+* simplifies deployment of new integration (just few clicks on ThingsBoard UI);
+* minimize latency for message delivery;
+
+Cons:
+* consume resources allocated to main ThingsBoard Edge process: network connections, OS threads and CPU cycles;
+* low level of isolation;
+
+<object width="60%" data="/images/user-guide/integrations/embeded-integrations-overview.svg"></object>
+
+#### Remote integrations
+
+One can install remote integration in the local network and stream data to the edge over network.
+
+Let's assume you have local MQTT broker or OPC-UA server deployed on-premises.
+Those brokers and/or servers don't have dedicated external IP address, so ThingsBoard Edge can't connect to them directly.
+However, you can install remote integration close to this edge, in the same local network.
+This integration will connect to the broker/edge, pull the data and store it in the local file system.
+Remote integration will stream the data to the ThingsBoard Edge deployed in the network once the network connection is available.
+
+Pros:
+* enables integration with servers deployed in the local network;
+* isolates the integration process from main ThingsBoard Edgeprocess;
+
+Cons:
+* requires installation of a separate package;
+
+Learn how to configure integration to run remotely using [this guide](/docs/pe/edge/user-guide/integrations/remote-integrations).
+
+<object width="70%" data="/images/user-guide/integrations/remote-integrations-overview.svg"></object>
+
+### Converter templates
 
 Converter templates could be created only by Tenant administrator. 
 Go to Cloud and navigate to **Edge management -> Converter templates** page.
@@ -76,7 +113,7 @@ This page allows you to create Converter template. These Converter templates are
 
 You do not need to assign Converter templates to the Edge - once Integration template is assigned to specific Edge, related Uplink/Downlink Converters are provisioned to the Edge automatically.
 
-#### Integration templates
+### Integration templates
 
 Once Converter template was created you can navigate to **Edge management -> Integration templates** page to create Integration.
 This page allows you to create Integration template. These Integration templates are going to be assigned to the Edge.
