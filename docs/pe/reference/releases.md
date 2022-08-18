@@ -10,7 +10,7 @@ description: ThingsBoard architecture
   
 ## v3.4.1 (August 18, 2022)
 
-Everything from [TB CE v3.4](https://github.com/thingsboard/thingsboard/releases/tag/v3.4) with the following improvements and bug fixes.
+Everything from [TB CE v3.4.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.4.1) with the following improvements and bug fixes.
 
 * Core:
   * Fixed startup issues and connection leaks in OPC-UA integration;
@@ -23,9 +23,6 @@ Everything from [TB CE v3.4](https://github.com/thingsboard/thingsboard/releases
 * Web Report:
   * Added widget cache clearing before starting web-report generation;
   * Fixed report generation issue while widget's state updates.
-
-**Bug Fixes:**
-
   
 ## v3.4 (July 19, 2022)
 
