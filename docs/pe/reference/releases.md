@@ -8,6 +8,22 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
   
+## v3.4.1 (August 18, 2022)
+
+Everything from [TB CE v3.4.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.4.1) with the following improvements and bug fixes.
+
+* Core:
+  * Fixed startup issues and connection leaks in OPC-UA integration;
+  * Fixed Azure IoT Hub integration;
+* UI:
+  * Added support Login WL advanced CSS in 2FA login form;
+  * Fixed filtering by error text in Integrations and Data Converters event tables;
+  * Fixed entity group autocomplete;  
+  * Upgraded ExcelJS and fixed style in empty cell data;
+* Web Report:
+  * Added widget cache clearing before starting web-report generation;
+  * Fixed report generation issue while widget's state updates.
+  
 ## v3.4 (July 19, 2022)
 
 Everything from [TB CE v3.4](https://github.com/thingsboard/thingsboard/releases/tag/v3.4) with the following improvements and bug fixes.
