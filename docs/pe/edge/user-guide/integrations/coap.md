@@ -116,6 +116,8 @@ In the function decoder field, specify a script to parse and transform data.
 
 {% include images-gallery.html imageCollection="addConverter" %}
 
+{% include templates/edge/integrations/debug-mode-info.md %}
+
 Choose device payload type to for decoder configuration:
 
 {% capture uplinkpayload %}
@@ -131,8 +133,6 @@ Copy the configuration example for the converter (or your own configuration) and
 Save changes by clicking on the 'checkmark' icon.
 
 {% include images-gallery.html imageCollection="modifyConverter" %}
-
-{% include templates/edge/integrations/debug-mode-info.md %}
 
 ## Create Integration template
 
@@ -154,8 +154,6 @@ Once attribute added, we are ready to assign integration and verify that it's ad
 Once CoAP Integration has been created, the CoAP server register appropriate resources, and then it waits for data from the devices.
 Let's log in to ThingsBoard **Edge** and go to the **Integrations** page. Find your CoAP integration and click on it. There you can find the CoAP endpoint URL. Click on the icon to copy the url.
 
-{% include images-gallery.html imageCollection="sendUplink" %}
-
 Choose device payload type to send uplink message (Replace **$YOUR_COAP_ENDPOINT_URL** with corresponding value):
 
 {% capture senduplink %}
@@ -164,6 +162,8 @@ JSON payload<br/>%,%json%,%templates/edge/integrations/coap/coap-send-uplink-jso
 Binary payload<br/>%,%binary%,%templates/edge/integrations/coap/coap-send-uplink-binary.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="coapintegrationsenduplink" toggle-spec=senduplink %}
+
+{% include images-gallery.html imageCollection="sendUplink" %}
 
 The created device with data can be seen in the section **Device groups -> All** on the Edge:
 

@@ -30,7 +30,7 @@ Where:
 - `YOUR_SECRET` - placeholder for your integration secret obtained on [Step 3](/docs/user-guide/integrations/remote-integrations/#step-3-save-remote-integration-credentials);
 - `docker run`              - run this container;
 - `-it`                     - attach a terminal session with current ThingsBoard process output;
-- `-p 10560:10560` - connect local port 10560 to exposed internal 10560 port for the integration. If the exposed port is UDP, add `/udp` at the end, e.g. `-p 10560:10560/udp` 
+- `-p 10560:10560` - connect local port 10560 to exposed internal 10560 port for the integration. If the exposed port is UDP, add `/udp` at the end, e.g. `-p 11560:11560/udp` 
 - `-v ~/.tb-pe-tcp-udp-integration-logs:/var/log/tb-tcp-udp-integration`   - mounts the host's dir `~/.tb-pe-tcp-udp-integration-logs` to ThingsBoard logs directory;
 - `--name tb-pe-tcp-udp-integration`             - friendly local name of this machine;
 - `--restart always`        - automatically start ThingsBoard Integration in case of system reboot and restart in case of failure.;

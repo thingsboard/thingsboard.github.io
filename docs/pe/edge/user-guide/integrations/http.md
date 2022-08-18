@@ -107,6 +107,8 @@ In the function decoder field, specify a script to parse and transform data.
 
 {% include images-gallery.html imageCollection="addConverter" %}
 
+{% include templates/edge/integrations/debug-mode-info.md %}
+
 **Example for the Uplink converter:**
 
 ```ruby
@@ -151,8 +153,6 @@ Copy the configuration example for the converter (or your own configuration) and
 Save changes by clicking on the 'checkmark' icon.
 
 {% include images-gallery.html imageCollection="modifyConverter" %}
-
-{% include templates/edge/integrations/debug-mode-info.md %}
 
 ### Downlink Converter template
 
@@ -219,14 +219,14 @@ Once attribute added, we are ready to assign integration and verify that it's ad
 To send an uplink message, you need HTTP endpoint URL from the integration.  
 Let's log in to ThingsBoard **Edge** and go to the **Integrations** page. Find your HTTP integration and click on it. There you can find the HTTP endpoint URL. Click on the icon to copy the url.
 
-{% include images-gallery.html imageCollection="sendUplink" %}
-
 Use this command to send the message. Replace $DEVICE_NAME and $YOUR_HTTP_ENDPOINT_URL with corresponding values.
 
 ```ruby
 curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json"
 ```
 {: .copy-code}
+
+{% include images-gallery.html imageCollection="sendUplink" %}
 
 The created device with data can be seen in the section **Device groups -> All** on the Edge:
 
