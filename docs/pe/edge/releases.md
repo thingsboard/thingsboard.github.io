@@ -8,6 +8,12 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v3.4.1 (August 19, 2022)
+
+**Minor** release with everything from [TB Edge v3.4.1](/docs/edge/releases/#v341-august-19-2022) and [TB PE v3.4.1](/docs/pe/reference/releases/#v341-august-18-2022) with the following improvements and bug fixes:
+
+* Fixed startup issues and connection leaks in OPC-UA integration;
+
 ## v3.4 (July 21, 2022)
 
 Everything from [TB Edge v3.4](/docs/edge/releases/#v34-july-21-2022) and [TB PE v3.4](/docs/pe/reference/releases/#v34-july-19-2022) with the following improvements and bug fixes.
