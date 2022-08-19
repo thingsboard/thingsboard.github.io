@@ -10,11 +10,13 @@ Azure IoT Hub Integration allows to stream data from AWS IoT Backend to ThingsBo
  
   <object width="80%" data="/images/user-guide/integrations/azure/iot-hub-integration.svg"></object>
 
+{% capture difference %}
+<br>
+If you plan to use one device in your Thingsboard instance, use **Azure IoT Hub Integration**. If you have more than one device, use [Azure Event Hub Integration](https://thingsboard.io/docs/user-guide/integrations/azure-event-hub/)
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 ## Create and configure Azure IoT Hub account
-
-- [Create an IoT hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal#create-an-iot-hub).
-
-- [Register a new device in the IoT hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal#register-a-new-device-in-the-iot-hub).
 
 ### Create Azure IoT Hub
 
@@ -99,9 +101,13 @@ return result;
 ```
 {: .copy-code}
 
-![image](/images/user-guide/integrations/azure-iot-hub/create_uplink_converter-1.png)
+![image](/images/user-guide/integrations/azure-iot-hub/converter-iot-uplink.png)
 
-**NOTE** Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when done debugging.
+{% capture difference %}
+<br>
+**NOTE: Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when done debugging.**  
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ### Create Integration
 
@@ -122,7 +128,7 @@ In our example, we will have the following settings:
 
 6) Credentials: **Shared Access Signature**
 
-7) SAS Key: in Azure Portal you have to choose **Devices** in menu and choose your “**TB-D-01**” device. Copy Primary Key (**DEVICE_SAS_KEY**). Insert primary key in SAS Key field.
+7) SAS Key: in Azure Portal you have to choose **Devices** in menu and choose your “**TB-D-01**” device. Copy **Primary Key** (**DEVICE_SAS_KEY**). Insert primary key in SAS Key field.
 
 8) Topic filter: **devices/TB-D-01/messages/devicebound/#**
 
@@ -153,22 +159,110 @@ If **PEM** credentials type is selected, the following configuration should be p
 
 [CACertificates instruction](https://github.com/Azure/azure-iot-sdk-c/tree/master/tools/CACertificates)
 
-## Validate Uplink Messages
+## Validation
+
+### Validate Uplink Messages
 Lets verify our integration. First, lets put message into uplink stream, so Thingsboard will fetch this message. 
 
-Open page with your Device and go to **Message to Device**.
+In Azure open page with your Device and go to **Message to Device**.
 
 Send test message to device.
+
+```javascript
+{
+    "devName": "TB-D-01",
+    "msg": {
+        "temp": 42,
+        "humidity": 77
+    }
+}
+```
+{: .copy-code}
 
 ![image](/images/user-guide/integrations/azure-iot-hub/iot-hub-send-test-msg-1.png)
 
 
-Go to **Device Group** -> **All** -> **TB-D-01** - you can see that 
+Go to **Device Group** -> **All** -> **TB-D-01** - you can see that:
 
-- new device was registered in the thingsboard
+- new device was registered in the **Thingsboard**;
 - In the **Latest Telemetry** section you will see that last submitted temperature = 42 and humidity = 77.
 
 ![image](/images/user-guide/integrations/azure-iot-hub/iot-hub-send-test-msg-2.png)
+
+### Validate Downlink Messages
+
+#### Create Downlink Converter
+
+Downlink uses for send a message to device. For example information that message from device have been received.
+
+You need to do same steps like when was creating Uplink, but choose Downlink and specify another function. To view the events, enable Debug. 
+
+In the function decoder field, specify a script to parse and transform data:
+
+```javascript
+var result = {
+
+    contentType: "JSON",
+
+    data: JSON.stringify(msg),
+
+    metadata: {
+            deviceId: 'TB-D-01'
+    }
+
+};
+
+return result;
+```
+{: .copy-code}
+
+{% capture difference %}
+<br>
+**NOTE** *If you used another name of device (not TB-D-01) you have to specify in the Downlink converter your device name for **deviceId** field*
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+![image](/images/user-guide/integrations/azure-iot-hub/create-iot-downlink-converter-1.png)
+
+When Downlink Converter have done, you should go to integration and specify this **converter**.
+
+![image](/images/user-guide/integrations/azure-iot-hub/create-iot-downlink-converter-2.png)
+
+<br>
+**Ok, downlink converter ready, integration ready, Let's test it:**
+
+1) After test of uplink, integration have created the device inside Thingsboard, and we need to know for which Rule Chain it connected.
+   Go to the **Device groups** in Thingsboard menu choose **All** and find the device with the name that we have used in the uplink. Find out which device profile our device uses.
+
+{% include images-gallery.html imageCollection="device_groups_all" preview="false" %}
+
+2) Go to the **Device profiles** tab. Select the device profile used by the device and see the rule chain used.
+
+{% include images-gallery.html imageCollection="device_profile_all" preview="false" %}
+
+3) Go to **Rule Chains** in the **Thingboard** menu and find the desired rule chain. Open rule chain. In 'Search nodes' field type 'down' and choose in the menu **integration downlink** node, drag it to the Canvas. In pop-up you need to specify the name of rule node and choose our integration.
+
+{% include images-gallery.html imageCollection="downlink_rule_node" preview="false" %}
+
+4) Click on right gray circle of **message type switch** node and drag it to left gray circle of our downlink rule node. Here choose **Attributes update** and click 'Add'. Save rule chain.
+
+{% include images-gallery.html imageCollection="save_downlink_rule_node" preview="false" %}
+
+5) Great. Lets go to **Device groups** -> **All** and choose our device. Switch to **Attributes** in 'Entity attributes scope' list choose **Shared attributes**.
+   Tap on 'plus' to create new. Specify in pop-up the key of attribute, type of value and some value. Tap 'Add'.
+
+{% include images-gallery.html imageCollection="add_shared_attributes" preview="false" %}
+
+6) Go to the Integration to check the result of downlink.
+
+{% include images-gallery.html imageCollection="add_shared_attributes_integration" preview="false" %}
+
+How you can see, we have a message that Downlink successfully received by Integration and sent to Azure Event Hub.
+To check it in Azure IoT Hub we need to go to Azure Portal, choose **IoT devices** menu tab and see **Cloud to Device Message Count** number.
+
+{% include images-gallery.html imageCollection="downlink_result" preview="false" %}
+
+
 
 ## Next steps
 

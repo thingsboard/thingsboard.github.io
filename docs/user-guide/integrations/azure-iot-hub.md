@@ -42,6 +42,12 @@ integration:
     3:
         image: /images/user-guide/integrations/azure-iot-hub/create_iot_hub_integration_tb-4.png
 
+downlink:
+    0:
+        image: /images/user-guide/integrations/azure-iot-hub/create-iot-downlink-converter-1.png
+    1:
+        image: /images/user-guide/integrations/azure-iot-hub/create-iot-downlink-converter-2.png
+
 generator:
     0:
         image: /images/azure-event-hub/rule_chain_generator.png
@@ -76,22 +82,30 @@ downlink_first_part:
 
 device_groups_all:
     0:
-        image: /images/azure-event-hub/device_groups_all_device profile.png
-    1:
-        image: /images/azure-event-hub/device_profiles_rule_chain.png
+        image: /images/user-guide/integrations/azure-iot-hub/device-groups-all-device-profile-1.png
+
+device_profile_all:
+    0:
+        image: /images/user-guide/integrations/azure-iot-hub/device-groups-all-device-profile-2.png
 
 
 downlink_rule_node:
     0:
-        image: /images/azure-event-hub/add_rule_node_integration_downlink.png
-    1:
-        image: /images/azure-event-hub/rule_chain_attributes_updated_and_downlink.png
+        image: /images/user-guide/integrations/azure-iot-hub/add-rule-node-integration-downlink-1.png
 
-device_last_part:
+save_downlink_rule_node:
     0:
-        image: /images/azure-event-hub/add_shared_attributes.png
+        image: /images/user-guide/integrations/azure-iot-hub/add-rule-node-integration-downlink-2.png
+
+add_shared_attributes:
+    0:
+        image: /images/user-guide/integrations/azure-iot-hub/add-shared-attributes-1.png
     1:
-        image: /images/azure-event-hub/integrations_events_downlink.png
+        image: /images/user-guide/integrations/azure-iot-hub/add-shared-attributes-2.png
+
+add_shared_attributes_integration:
+    0:
+        image: /images/user-guide/integrations/azure-iot-hub/add-shared-attributes-3.png
 
 advanced_testing:
     0:
@@ -105,7 +119,7 @@ advanced_testing:
 
 downlink_result:
     0:
-        image: /images/azure-event-hub/azure_cloud_to_device_message_count.png
+        image: /images/user-guide/integrations/azure-iot-hub/azure-cloud-to-device-message-count-1.png
 
 solution_templates:
     0:
