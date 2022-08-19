@@ -279,7 +279,7 @@ docker-compose up
 
 ### Windows {#windows-341}
 
-**NOTE**: These steps are applicable for ThingsBoard Edge 3.3.4.1EDGE version.
+**NOTE**: These steps are applicable for ThingsBoard Edge 3.4.0EDGE version.
 
 #### ThingsBoard Edge package download
 

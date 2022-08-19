@@ -214,7 +214,7 @@ sudo service tb-edge start
 
 ### Docker (Linux or Mac OS) {#docker-linux-mac-341}
 
-**NOTE**: These steps are applicable for ThingsBoard Edge 3.4.0EDGE version.
+**NOTE**: These steps are applicable for ThingsBoard Edge 3.4.0EDGEPE version.
 
 Execute the following command to pull **3.4.1EDGEPE** image:
 ```
@@ -307,7 +307,7 @@ docker-compose up
 
 ### Windows {#windows-341}
 
-**NOTE**: These steps are applicable for ThingsBoard Edge 3.4.0EDGE version.
+**NOTE**: These steps are applicable for ThingsBoard Edge 3.4.0EDGEPE version.
 
 #### ThingsBoard Edge package download
 
@@ -350,7 +350,7 @@ net start tb-edge
 
 ### Ubuntu/CentOS {#ubuntucentos-34}
 
-**NOTE**: These steps are applicable for ThingsBoard Edge 3.3.4.1EDGEPE version.
+**NOTE**: These steps are applicable for ThingsBoard Edge 3.3.4.1EDGE version.
 
 #### ThingsBoard Edge package download
 
