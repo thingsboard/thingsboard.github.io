@@ -1,4 +1,4 @@
-{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
++{% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
 * TOC
 {:toc}
@@ -110,14 +110,14 @@ At this stage, you need to set the parameters to establish a connection between 
 |:-|:-|-
 | **Name**              | The name of your integration.|
 | **Type**              | Choose Kafka type.|
-| **Checkbox Enable**              | Enable / Disable Integration.|
-| **Debug Mode**              | Enable during integration debugging.|
+| **'Enable' Checkbox**              | Enable / Disable Integration.|
+| **'Debug Mode' Checkbox**              | Enable during integration debugging.|
 | **Allow create devices or assets**              | If there was no device in ThingsBoard, the device will be created.|
 | **Uplink data converter**              | Select the previously created converter.|
 | **Downlink data converter**              | This option is not supported through the integration, More details about [Downlink](http://0.0.0.0:4000/docs/user-guide/integrations/kafka/?installationType=common&integrationTypes=common&uplinkTypes=common#advanced-usage-kafka-producer-downlink) below in the guide.|
-| **Tumblr Execute remotely**              | Activate if you want to execute integration remotely from main ThingsBoard instance. For more information on remote integration follow the [link (Remote Integrations)](https://thingsboard.io/docs/user-guide/integrations/remote-integrations/).|
+| **'Execute remotely' Checkbox**              | Activate if you want to execute integration remotely from main ThingsBoard instance. For more information on remote integration follow the [link (Remote Integrations)](https://thingsboard.io/docs/user-guide/integrations/remote-integrations/).|
 | **Group ID**              | Specifies the name of the consumer group to which the Kafka consumer belongs.|
-| **Client ID**              | An optional Kafka consumer identifier (in a consumer group) that is passed to the Kafka broker with every request.|
+| **Client ID**              | An Kafka consumer identifier in a consumer group.|
 | **Topics**              | Topics that ThingsBoard will subscribe to after connecting to the Kafka broker.|
 | **Bootstrap servers**              | Host and port pair that is the address of the Kafka broker to which the Kafka client first connects for bootstrapping.|
 | **Poll interval**              | Duration in milliseconds between polling of the messages if no new messages arrive.|
