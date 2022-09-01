@@ -5,10 +5,14 @@
 
 ## Overview
 
-AWS IoT Integration allows to stream data from AWS IoT Backend to ThingsBoard and converts device payloads 
-to the ThingsBoard format. AWS IoT will be primarily responsible for receiving all messages (as a broker - 
-messaging server), filtering them, deciding who is interested, and then sending the message to all 
-subscribers, in our case of integration.
+AWS IoT Integration acts as a MQTT client and subscribes to the data streams from the AWS IoT Backend. 
+This kind of the integration is the easiest way to consume data from AWS IoT. 
+This kind of integration works well if the volume of the data you are trying to consume is reasonable low (100s of messages per second).
+Once your application scales to 1000s of messages per second, it will become hard to consume them with one MQTT client.
+Use combination of AWS IOT [Kinesis Data Streams](https://docs.aws.amazon.com/iot/latest/developerguide/kinesis-rule-action.html) and 
+ThingsBoard [Kinesis Integration](/docs/user-guide/integrations/aws-kinesis/) as a scalable alternative to AWS IoT integration.
+
+AWS IoT Integration uses Uplink and Downlink data converters to convert original device data to the format that ThingsBoard uses.
 
 <object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/aws-iot-integration.svg"></object>
 
@@ -91,15 +95,15 @@ You will be redirected to the policy creation page, where you must specify the *
 
 {% include images-gallery.html imageCollection="create-policies_1" %}
 
-In the field for the **Policy document**, you need to paste the code below with your unique **profile ID**.
+In the field for the **Policy document**, you need to paste the json document that is listed below.
 
 {% capture update_server_first %}
-Be sure to replace **YOUR_REGION**  and **YOUR_AWS_ID** with your region and account ID accordingly, <br>
-(for example region and id "<strong><h style="color:DarkOrange;">eu-west-1:111197721064</h></strong>").
+Be sure to replace **YOUR_REGION** and **YOUR_AWS_ID** in the policy document with your region and account ID accordingly. <br>
+For example region and id "<strong><h style="color:DarkOrange;">eu-west-1:111123456789</h></strong>".
 {% endcapture %}
-{% include templates/info-banner.md title="Importantly:" content=update_server_first %}
+{% include templates/warn-banner.md title="Important:" content=update_server_first %}
 
-**For example of policy document:**
+**Policy JSON:**
 
 ```json
 {
@@ -138,7 +142,7 @@ Be sure to replace **YOUR_REGION**  and **YOUR_AWS_ID** with your region and acc
 ```
 {: .copy-code}
 
-Your region is listed in the URL when you are signed in to your AWS IoT account. <br> For example: **https://<h style="color:orange;">eu-west-1</h>.console.aws.amazaon.com**
+Click on the profile page in the AWS console to copy the AWS Account ID. <br> For example: **https://<h style="color:orange;">eu-west-1</h>.console.aws.amazaon.com**
 
 {% include images-gallery.html imageCollection="create-policies_2" %}
 
@@ -147,7 +151,9 @@ After that, click the **Create** button. The policy will be added to the list, a
 {% include images-gallery.html imageCollection="create-policies_3" %}
 
 #### Create Things and Certificates
-A Thing is a digital representation of a physical device or logical entity in AWS IoT.
+
+A Thing is a digital representation of a physical device or logical entity in AWS IoT. 
+We will create a separate Thing called "ThingsBoard Integration" to consume data that we are interested in.
 
 You can create a conditional device in several steps, but for it need to go to the appropriate section. 
 On the left, choose the **All devices** category - then **Things** item. This page will display
