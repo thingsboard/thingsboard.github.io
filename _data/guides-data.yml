@@ -173,6 +173,12 @@
       keywords: mqtt connect
       pe: true
       video: true
+    - path: /docs/user-guide/integrations/kafka/
+      title: Connect devices with custom payload using ThingsBoard Kafka Integration.
+      subtitle: Connect to external brokers and consume Kafka data stream
+      keywords: kafka connect
+      pe: true
+      video: true
     - path: /docs/user-guide/integrations/sigfox/
       title: Connect SigFox devices using TB PE Integration
       subtitle: Learn how to route messages from Sigfox backend to ThingsBoard and decode binary device payloads.

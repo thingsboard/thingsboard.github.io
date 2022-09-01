@@ -99,6 +99,8 @@ toc:
     path: /docs/user-guide/integrations/mqtt/
   - title: CoAP
     path: /docs/user-guide/integrations/coap/
+  - title: Kafka
+    path: /docs/user-guide/integrations/kafka/
   - title: OPC-UA
     path: /docs/user-guide/integrations/opc-ua/
   - title: Actility ThingPark
