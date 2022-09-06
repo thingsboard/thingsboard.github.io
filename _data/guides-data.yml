@@ -186,8 +186,8 @@
       pe: true
       video: true
     - path: /docs/user-guide/integrations/ttn/
-      title: Connect LoRaWAN devices using TheThingsNetwork
-      subtitle: Learn how to route messages from TheThingsNetwork backend to ThingsBoard and vise-versa.
+      title: Connect LoRaWAN devices using TheThingsStack
+      subtitle: Learn how to route messages from TheThingsStack backend to ThingsBoard and vise-versa.
       keywords: ttn connect
       pe: true
       video: false
