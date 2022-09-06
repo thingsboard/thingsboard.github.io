@@ -204,8 +204,6 @@ details[open]
                 color: #2A7DEC
 
     .n-button
-      padding: 11px 20px
-
       &.try
         color: #fff
         transition-duration: 0s
@@ -487,6 +485,9 @@ header
       .nav-company
         width: 118px
 
+      .nav-partners
+        width: 104px
+
       li
         cursor: default
         display: flex
@@ -602,19 +603,20 @@ ul
 
   &.try
     border: solid 1px #EBEBEB
-    padding: 10px 19px
+    padding: 10px 11px
     color: #212529
     transition-duration: 0s
     background-color: unset
 
     &:hover
       border: solid 2px #212529
-      padding: 9px 18px
+      padding: 9px 10px
       text-decoration: none
 
   &.price
     background-color: #2A7DEC
     color: white
+    padding: 11px 14px
 
     &:hover
       transition-duration: 0.3s
@@ -759,11 +761,9 @@ ul
                 color: #2A7DEC
 
       .n-button
-        padding: 11px 20px
 
         &.try
           border: solid 1px #EBEBEB
-          padding: 10px 19px
           color: #212529
           background-color: unset
 
@@ -2409,7 +2409,7 @@ $header-clearance: 210px
           padding: 10px 10px 14px
 
           &.nav-products
-            width: 95px
+            width: 94px
 
           &.nav-services
             width: 91px
@@ -2426,6 +2426,9 @@ $header-clearance: 210px
           &.nav-company
             width: 105px
 
+          &.nav-partners
+            width: 90px
+
           a
             font-size: 17px
 
@@ -2435,6 +2438,37 @@ $header-clearance: 210px
     div .n-button
       margin-left: 8px
       font-size: 17px
+
+@media screen and (min-width: 1281px) and (max-width: 1400px)
+  header
+    .head-menu
+      ul
+        li
+          padding: 10px 6px 14px
+
+          &.nav-products
+            width: 78px
+
+          &.nav-services
+            width: 74px
+
+          &.nav-developers
+            width: 97px
+
+          &.nav-cases
+            width: 92px
+
+          &.nav-customers
+            width: 96px
+
+          &.nav-company
+            width: 88px
+
+          &.nav-partners
+            width: 73px
+
+          a
+            font-size: 15px
 
 @media screen and (max-width: 1280px)
   #docs
@@ -2486,12 +2520,10 @@ $header-clearance: 210px
 
 
       .n-button
-        padding: 11px 20px
         display: inline-block
 
         &.try
           border: solid 1px #EBEBEB
-          padding: 10px 19px
           color: #212529
           background-color: unset
 
