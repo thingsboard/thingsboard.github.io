@@ -143,6 +143,14 @@ body {
 	text-align: center;
 }
 
+#users main h3 {
+	font-size: 30px;
+	font-weight: 500;
+	line-height: 54px;
+	margin: 10px 0 32px;
+	text-align: center;
+}
+
 #users main h5 {
 	text-align: center;
 	font-size: 20px;
