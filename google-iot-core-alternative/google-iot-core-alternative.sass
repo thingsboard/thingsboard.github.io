@@ -7,7 +7,7 @@
       section
         padding-left: 0
         padding-right: 0
-      .intro, .matrix, .description
+      .intro, .matrix, .description, .bottom-features
         color: #212924
         text-align: left
         h1
@@ -34,7 +34,7 @@
           font-size: 18px
 
       .matrix
-        margin: 60px -100% 0
+        margin: 60px -100% 148px
         padding: 0 100% 0
         h3
           color: #212529
@@ -54,7 +54,7 @@
             z-index: -1
             top: 0
           .coln
-            height: 980px
+            height: 910px
             border-radius: 6px
           .thingsboard
             right: 0
@@ -203,54 +203,88 @@
             top: -686px
             left: 524px
             background-color: #1F8B4D
-          &.main2
-            top: -500px
+          &.bottom-features1
+            top: -590px
             width: 2560px
-            height: 725px
+            height: 3000px
             left: -1280px
-            background-color: #262C28
-          &.small4
-            top: -660px
-            left: 836px
-            background-color: #27AE60
-          &.small5
-            top: 66px
-            right: 528px
-            border: 4px solid #27AE60
-          &.main3
-            top: -503px
+            -ms-transform: unset
+            transform: unset
+            background-color: #F7F9FC
+          &.bottom-features2
+            top: -220px
             width: 2560px
             height: 525px
             left: -1280px
-            background-color: #F4F4F4
-          &.small6
-            top: -467px
-            right: 804px
-            background-color: #1F8B4D
-          &.small7
-            top: -644px
-            left: 566px
+            background-color: #252628
+          &.small11
+            top: -366px
+            left: 757px
             background-color: #27AE60
-          &.small8
-            top: -114px
-            left: 804px
-            border: 2px solid #234732
-          &.bottom
-            top: -70px
+          &.small12
+            top: 342px
+            right: 589px
+            border: 4px solid #234732
+          &.bottom-features3
+            top: 900px
             width: 2560px
-            height: 130px
+            height: 525px
             left: -1280px
-            background-color: #262C28
-          &.small9
-            top: -10px
-            left: 565px
+            background-color: #252628
+          &.small13
+            top: 963px
+            right: 646px
             background-color: #1F8B4D
+          &.small14
+            top: 900px
+            right: 408px
+            background-color: #27AE60
+          &.small15
+            top: 1264px
+            left: 830px
+            border: 4px solid #27AE60
+
+      .bottom-features
+        padding-bottom: 80px
+        h3
+          &:before
+            content: unset
+        .cards
+          padding-top: 50px
+          justify-content: center
+          &>div
+            margin-bottom: 36px
+            &.col-lg-6
+              padding: 0 18px
+              max-width: 100%
+            .block
+              padding: 48px
+              float: left
+              width: 100%
+              height: 100%
+              background: white
+              border-radius: 6px
+              box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15)
+              display: unset
+              text-align: center
+              div
+                width: 100%
+                .title
+                  color: #27AE60
+                  font-size: 24px
+                  font-weight: 500
+                  margin-bottom: 6px
+                p
+                  margin-top: 10px
 
 @media screen and (min-width: 750px)
   #docsContent
     #content
       #google-iot-core-alternative
         .matrix
+          .backg-matrix
+            .coln
+              height: 980px
           h3
             font-size: 42px
             line-height: 63px
@@ -275,6 +309,12 @@
             .block
               .feature-des, img
                 width: 80%
+        .bottom-features
+          .cards
+            div
+              .block
+                text-align: left
+                display: flex
 
 @media screen and (min-width: 1025px)
   #docsContent

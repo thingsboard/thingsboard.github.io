@@ -124,112 +124,76 @@ notitle: "true"
         <p>Learn more about ThingsBoard features <a href="/docs/pe/getting-started-guides/what-is-thingsboard/">here</a>.</p>
     </section>
 
-    <section class="description">
+    <section class="bottom-features">
         <main>
-            <div class="features-top">
-                <div class="block">
-                    <div>
-                        <h2>Key concepts</h2>
-                        <p>See mapping of the key IoT Core concepts to ThingsBoard features documentation below:</p>
-                    </div>    
-                </div>
-            </div>
-        </main>
-    </section>
-
-    <section class="description">
-        <main>
-            <div class="features-top">
-                <div class="block">
-                    <div>
-                        <h2>Device</h2>
-                        <p>ThingsBoard supports provisioning and management of <a href="/docs/pe/user-guide/ui/devices/">devices</a> similar to Google IoT Core. 
+            <div class="background">
+				<div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div><div class="bottom-features3"></div><div class="small13"></div><div class="small14"></div><div class="small15"></div>
+			</div>
+            <h3>Key concepts</h3>
+            <p>See mapping of the key IoT Core concepts to ThingsBoard features documentation below:</p>
+            <div class="row cards">
+                <div class="col-lg-6">  
+					<div class="block">
+						<div>
+							<a class="title" href="/docs/pe/user-guide/ui/devices/">Device</a>
+							<p>ThingsBoard supports provisioning and management of <a href="/docs/pe/user-guide/ui/devices/">devices</a> similar to Google IoT Core. 
                             However, IoT application is not only about devices. ThingsBoard support other <a href="/docs/pe/user-guide/entities-and-relations/">entities and relations</a> between them.
                             The relations model enables advanced use cases and business logic. For example, you may configure relations between assets, devices, customers, etc.</p>
-                    </div>    
-                </div>
-            </div>
-        </main>
-    </section>
-
-    <section class="description">
-        <main>
-            <div class="features-top">
-                <div class="block">
-                    <div>
-                        <h2>Telemetry</h2>
-                        <p>Telemetry is the event data sent from the device to the cloud. For example, measurements about the environment. 
+						</div>
+					</div>
+				</div>
+                <div class="col-lg-6">  
+					<div class="block">
+						<div>
+							<a class="title" href="/docs/pe/user-guide/telemetry/">Telemetry</a>
+							<p>Telemetry is the event data sent from the device to the cloud. For example, measurements about the environment. 
                             ThingsBoard allows you to collect data from devices similar to IoT Core. ThingsBoard also enables data processing (including validation, alerting, etc.) and storage inside the platform.
                             See <a href="/docs/pe/user-guide/rule-engine-2-0/re-getting-started/">Rule Engine</a> for more details.
-                            You may also forward the data to external systems (e.g. PubSub) and reuse your existing data processing flow.
-                        </p>
-                    </div>    
-                </div>
-            </div>
-        </main>
-    </section>
-
-    <section class="description">
-        <main>
-            <div class="features-top">
-                <div class="block">
-                    <div>
-                        <h2>Device state</h2>
-                        <p>ThingsBoard monitors device <a href="/docs/pe/user-guide/device-connectivity-status/">connectivity status</a>
-                            and allows devices to upload their state via the client <a href="/docs/pe/user-guide/attributes/#client-side-attributes">attributes</a> feature.
-                        </p>
-                    </div>    
-                </div>
-            </div>
-        </main>
-    </section>
-
-    <section class="description">
-        <main>
-            <div class="features-top">
-                <div class="block">
-                    <div>
-                        <h2>Device configuration</h2>
-                        <p>ThingsBoard capabilities of device configuration as similar to Google IoT Core. 
-                           See docs about device <a href=".docs/pe/user-guide/attributes/">attributes</a>.
-                           Experienced users may notice a few important differences: 
+                            You may also forward the data to external systems (e.g. PubSub) and reuse your existing data processing flow.</p>
+						</div>
+					</div>
+				</div>
+                <div class="col-lg-6">  
+					<div class="block">
+						<div>
+							<a class="title" href="/docs/pe/user-guide/device-connectivity-status/">Device state</a>
+							<p>ThingsBoard monitors device <a href="/docs/pe/user-guide/device-connectivity-status/">connectivity status</a>
+                            and allows devices to upload their state via the client <a href="/docs/pe/user-guide/attributes/#client-side-attributes">attributes</a> feature.</p>
+						</div>
+					</div>
+				</div>
+                <div class="col-lg-6">  
+					<div class="block">
+						<div>
+							<a class="title" href="/docs/pe/user-guide/attributes/">Device configuration</a>
+							<p>ThingsBoard capabilities of device configuration as similar to Google IoT Core. 
+                            See docs about device <a href="/docs/pe/user-guide/attributes/">attributes</a>.
+                            Experienced users may notice a few important differences: 
                             ThingsBoard allows to push each attribute(configuration) update separately; 
                             One may change configuration attributes via Dashboard, Admin UI, REST API call, or script; 
-                            Attributes are sent to the device via JSON or protobuf format. 
-                        </p>
-                    </div>    
-                </div>
-            </div>
-        </main>
-    </section>
-
-    <section class="description">
-        <main>
-            <div class="features-top">
-                <div class="block">
-                    <div>
-                        <h2>Device registry and device manager</h2>
-                        <p>ThingsBoard provides flexible interfaces for registering, monitoring, and configuring devices: 
+                            Attributes are sent to the device via JSON or protobuf format.</p>
+						</div>
+					</div>
+				</div>
+                <div class="col-lg-6">  
+					<div class="block">
+						<div>
+							<a class="title" href="/docs/pe/user-guide/device-provisioning/">Device registry and device manager</a>
+							<p>ThingsBoard provides flexible interfaces for registering, monitoring, and configuring devices: 
                             Dashboards, Admin Web UI, REST API, <a href="/docs/pe/user-guide/bulk-provisioning/">CSV upload</a>, and automatic <a href="/docs/pe/user-guide/device-provisioning/">provisioning</a>. 
                             The platform gives you much more flexibility on how to add, group and control devices. 
                             You can register devices under different tenants or assign devices to different customers. 
                             End users are able to <a href="/docs/pe/user-guide/claiming-devices/">claim devices</a> during the 
                             <a href="/docs/pe/user-guide/self-registration/">self-registration</a> process. 
-                            ThingsBoard has all the required built-in instruments to enable complex use cases.
-                        </p>
-                    </div>    
-                </div>
-            </div>
-        </main>
-    </section>
-
-    <section class="description">
-        <main>
-            <div class="features-top">
-                <div class="block">
-                    <div>
-                        <h2>Publishing over MQTT and HTTP</h2>
-                        <p>A central IoT Core point is an MQTT broker that allows data exchange between devices and the cloud. 
+                            ThingsBoard has all the required built-in instruments to enable complex use cases.</p>
+						</div>
+					</div>
+				</div>
+                <div class="col-lg-6">
+					<div class="block">
+						<div>
+							<a class="title" href="/docs/pe/getting-started-guides/connectivity/">Publishing over MQTT and HTTP</a>
+							<p>A central IoT Core point is an MQTT broker that allows data exchange between devices and the cloud. 
                             ThingsBoard also acts like an MQTT broker, but there are a few differences. 
                             With ThingsBoard, you are not limited by static topic name patterns and can define any wildcard topic filters for your needs.
                             The platform accepts JSON or protobuf payloads.
@@ -241,26 +205,20 @@ notitle: "true"
                             You may also use our <a href="/docs/iot-gateway/what-is-iot-gateway/">IoT Gateway</a> to integrate devices connected to legacy and third-party systems via BLE, CAN, Modbus, OPC-UA, BACnet, ODBC, etc.
                             
                             ThingsBoard also has built-in integrations with external systems like SigFox, LoRaWAN, NB IoT, etc. 
-                            You may find a list of all available integrations <a href="/docs/user-guide/integrations/">here</a>.
-                        </p>
-                    </div>    
-                </div>
-            </div>
-        </main>
-    </section>
-
-    <section class="description">
-        <main>
-            <div class="features-top">
-                <div class="block">
-                    <div>
-                        <h2>Send commands to and from devices</h2>
-                        <p>You may send commands to and from devices with the ThingsBoard <a href="/docs/pe/user-guide/rpc/">RPC</a> feature. 
+                            You may find a list of all available integrations <a href="/docs/user-guide/integrations/">here</a>.</p>
+						</div>
+					</div>
+				</div>
+                <div class="col-lg-6">
+					<div class="block">
+						<div>
+							<a class="title" href="/docs/pe/user-guide/rpc/">Send commands to and from devices</a>
+							<p>You may send commands to and from devices with the ThingsBoard <a href="/docs/pe/user-guide/rpc/">RPC</a> feature. 
                             The commands can be persisted or not, one-way or two-way, and you can configure retry and failure policies for different command types.
-                            Commands may be triggered by the user via the dashboard, via REST API, or based on events received by the platform.
-                        </p>
-                    </div>    
-                </div>
+                            Commands may be triggered by the user via the dashboard, via REST API, or based on events received by the platform.</p>
+						</div>
+					</div>
+				</div>
             </div>
         </main>
     </section>
