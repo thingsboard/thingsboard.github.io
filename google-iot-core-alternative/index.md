@@ -17,9 +17,9 @@ notitle: "true"
         <main>
             <div class="features-top">
                 <div class="background" >
-                    <div class="main1" style="height: 400px;"></div><div class="small1"></div><div class="small2"></div><div class="small3"></div>
+                    <div class="small1"></div><div class="small2"></div><div class="small3"></div>
                 </div>
-                <div class="block" style="padding-top: 120px; padding-bottom: 120px;">
+                <div class="block" style="padding-top: 160px; ">
                     <div>
                         <p>Google Cloud will shut down the IoT Core service in August 2023. You might be wondering where and how to migrate. 
                            ThingsBoard is an excellent alternative to Google IoT Cloud. 
@@ -89,32 +89,32 @@ notitle: "true"
                             <td><img src="/images/pe/checked.svg"></td>
                         </tr>
                         <tr>
-                            <th>User management and RBAC</th>
+                            <th><a href="/docs/user-guide/rbac/">User management and RBAC<img src="/images/pe/help-black18.svg"></a></th>
                             <td><img src="/images/pe/unchecked.svg"></td>
                             <td><img src="/images/pe/checked.svg"></td>
                         </tr>
                         <tr>
-                            <th>Real-time, customizable dashboards </th>
+                            <th><a href="/docs/pe/user-guide/dashboards/">Real-time, customizable dashboards<img src="/images/pe/help-black18.svg"></a></th>
                             <td><img src="/images/pe/unchecked.svg"></td>
                             <td><img src="/images/pe/checked.svg"></td>
                         </tr>
                         <tr>
-                            <th>White-labeled branded IoT solutions</th>
+                            <th><a href="/docs/user-guide/white-labeling/">White-labeled branded IoT solutions<img src="/images/pe/help-black18.svg"></a></th>
                             <td><img src="/images/pe/unchecked.svg"></td>
                             <td><img src="/images/pe/checked.svg"></td>
                         </tr>
                         <tr>
-                            <th>FOTA updates support</th>
+                            <th><a href="/docs/pe/user-guide/ota-updates/">OTA updates support<img src="/images/pe/help-black18.svg"></a></th>
                             <td><img src="/images/pe/unchecked.svg"></td>
                             <td><img src="/images/pe/checked.svg"></td>
                         </tr>
                         <tr>
-                            <th>Additional LWM2M and SNMP transports</th>
+                            <th><a href="/docs/pe/getting-started-guides/connectivity/">Additional LWM2M and SNMP transports<img src="/images/pe/help-black18.svg"></a></th>
                             <td><img src="/images/pe/unchecked.svg"></td>
                             <td><img src="/images/pe/checked.svg"></td>
                         </tr>
                         <tr>
-                            <th>NB-IoT, SigFox, LoRaWAN, CoAP and other integrations</th>
+                            <th><a href="/docs/user-guide/integrations/">NB-IoT, SigFox, LoRaWAN and other integrations<img src="/images/pe/help-black18.svg"></a></th>
                             <td><img src="/images/pe/unchecked.svg"></td>
                             <td><img src="/images/pe/checked.svg"></td>
                         </tr>
