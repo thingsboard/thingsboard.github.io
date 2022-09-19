@@ -222,5 +222,10 @@ notitle: "true"
             </div>
         </main>
     </section>
+    <section class="bottom">
+        <main>
+            <a href="/docs/contact-us/" class="try-pe">Contact us</a>
+        </main>
+    </section>
 
 </section>
