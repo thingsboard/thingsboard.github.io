@@ -158,7 +158,10 @@ notitle: "true"
 						<div>
 							<a class="title" href="/docs/pe/user-guide/device-connectivity-status/">Device state</a>
 							<p>ThingsBoard monitors device <a href="/docs/pe/user-guide/device-connectivity-status/">connectivity status</a>
-                            and allows devices to upload their state via the client <a href="/docs/pe/user-guide/attributes/#client-side-attributes">attributes</a> feature.</p>
+                            and allows devices to upload their state via the client <a href="/docs/pe/user-guide/attributes/#client-side-attributes">attributes</a> feature.
+                            You may configure platform to raise alerts when devices are offline or change state. 
+                            ThingsBoard also allows you to distribute over-the-air <a href="/docs/pe/user-guide/ota-updates/">firmware and software updates</a> and monitor the update process. 
+                            </p>
 						</div>
 					</div>
 				</div>
