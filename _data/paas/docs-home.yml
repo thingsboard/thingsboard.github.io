@@ -29,6 +29,9 @@ toc:
     - title: Device Profiles
       path: /docs/paas/user-guide/device-profiles/
       new: true
+    - title: Asset Profiles
+      path: /docs/paas/user-guide/asset-profiles/
+      new: true
     - title: Attributes
       path: /docs/paas/user-guide/attributes/
     - title: Time-series data
