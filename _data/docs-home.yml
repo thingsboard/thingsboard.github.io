@@ -16,6 +16,9 @@ toc:
   - title: Device Profiles
     path: /docs/user-guide/device-profiles/
     new: true
+  - title: Asset Profiles
+    path: /docs/user-guide/asset-profiles/
+    new: true
   - title: Attributes
     path: /docs/user-guide/attributes/
   - title: Time-series data
