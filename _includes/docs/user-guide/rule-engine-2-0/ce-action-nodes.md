@@ -13,7 +13,7 @@ Action Nodes execute various actions based on incoming Message.
    </thead>
 </table> 
 
-The rule node applies math function and save the result into the message and/or database. See table of supported functions below:
+The rule node applies math function and saves the result into the message and/or database. See table of supported functions below:
 
 <style>
 
@@ -53,7 +53,7 @@ The rule node applies math function and save the result into the message and/or 
 | ASIN      | 1 | Returns the arc sine of a value; the returned angle is in the range *-pi/2* through *pi/2*.     | [Math.asin](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#asin(double))|
 | ATAN      | 1 | Returns the arc tangent of a value; the returned angle is in the range -pi/2 through pi/2.     | [Math.atan](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#atan(double))|
 | ATAN2     | 2 | Returns the angle theta from the conversion of rectangular coordinates (x, y) to polar coordinates (r, theta). | [Math.atan2](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#atan2(double,double))|
-| EXP       | 1 | the value *e*<sup>x</sup>, where *e* is the base of the natural logarithms.         |  [Math.exp](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#exp(double))|
+| EXP       | 1 | Returns the value *e*<sup>x</sup>, where *e* is the base of the natural logarithms.         |  [Math.exp](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#exp(double))|
 | EXPM1     | 1 | Returns *e*<sup>x</sup>-1. Note that for values of x near 0, the exact sum of expm1(x) + 1 is much closer to the true result of *e*<sup>x</sup> than exp(x).            |  [Math.expm1](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#expm1(double)) |
 | SQRT      | 1 | Returns the correctly rounded positive square root of a double value. | [Math.sqrt](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#sqrt(double))|
 | CBRT      | 1 | Returns the cube root of a double value. | [Math.cbrt](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#cbrt(double))| 
