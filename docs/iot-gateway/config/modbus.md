@@ -527,6 +527,12 @@ In response, you should receive the previously recorded value - "25".
 ![image](/images/gateway/gateway-modbus-rpc-2.png)
 {: refdef}
 
+{% capture methodFilterOptions %}
+Also, every telemetry and attribute parameter has GET and SET RPC methods out of the box, so you don’t need to configure
+it manually.
+{% endcapture %}
+{% include templates/info-banner.md content=methodFilterOptions %}
+
 ## Section "slave": description and configuration parameters
 Starting with version 3.0, Gateway can run as a Modbus slave. In order to configure Gateway as a Modbus slave,
 specify the "slave" section in the configuration file.

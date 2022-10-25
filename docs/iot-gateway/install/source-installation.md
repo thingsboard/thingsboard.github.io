@@ -14,9 +14,9 @@ sudo apt install python3-dev python3-pip libglib2.0-dev git
 ```
 {: .copy-code}
 
-**2. Download repository from Github:**
+**2. Download repository from GitHub:**
 ```bash
-git clone https://github.com/thingsboard/thingsboard-gateway.git
+git clone --recurse-submodules https://github.com/thingsboard/thingsboard-gateway.git
 ```
 {: .copy-code}
 
@@ -26,9 +26,9 @@ cd thingsboard-gateway
 ```
 {: .copy-code}
 
-**4. Install python module with setup.py script:**  
+**4. Install python requirements:**  
 ```bash
-python3 setup.py install
+pip3 install -r requirements.txt
 ```
 {: .copy-code}
 

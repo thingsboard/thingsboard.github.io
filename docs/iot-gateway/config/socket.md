@@ -271,6 +271,12 @@ This subsection in configuration file looks like:
 ]
 ```
 
+{% capture methodFilterOptions %}
+Also, every telemetry and attribute parameter has SET RPC method out of the box, so you don’t need to configure
+it manually.
+{% endcapture %}
+{% include templates/info-banner.md content=methodFilterOptions %}
+
 ## Next steps
 
 Explore guides related to main ThingsBoard features:

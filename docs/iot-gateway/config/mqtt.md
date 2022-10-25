@@ -115,6 +115,29 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
       }
     },
     {
+      "topicFilter": "/sensor/raw_data",
+      "converter": {
+        "type": "bytes",
+        "deviceNameExpression": "[0:4]",
+        "deviceTypeExpression": "default",
+        "timeout": 60000,
+        "attributes": [
+          {
+            "type": "raw",
+            "key": "rawData",
+            "value": "[:]"
+          }
+        ],
+        "timeseries": [
+          {
+            "type": "raw",
+            "key": "temp",
+            "value": "[4:]"
+          }
+        ]
+      }
+    },
+    {
       "topicFilter": "/custom/sensors/+",
       "converter": {
         "type": "custom",
@@ -182,8 +205,6 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
   ]
 }
 
-
-
 {% endhighlight %}
 
 </details>
@@ -197,6 +218,7 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
 | host          | **localhost**                  | Mqtt broker hostname or ip address.                        |
 | port          | **1883**                       | Mqtt port on the broker.                                   |
 | clientId      | **ThingsBoard_gateway**        | This is the client ID. It must be unique for each session. |
+| version       | **5**                          | MQTT protocol version.                                     |
 |---
 
 #### Subsection "security"
@@ -272,10 +294,12 @@ This subsection contains configuration for processing incoming messages.
 
 Types of mqtt converters:  
 1. json -- Default converter
-2. custom -- Custom converter (You can write it by yourself, and it will use to convert incoming data from the broker.) 
+2. raw -- Raw default converter
+3. custom -- Custom converter (You can write it by yourself, and it will use to convert incoming data from the broker.) 
 
 {% capture mqttconvertertypespec %}
 json<small>Recommended if json will be received in response</small>%,%json%,%templates/iot-gateway/mqtt-converter-json-config.md%br%
+bytes<small>Recommended if bytes will be received in response</small>%,%raw%,%templates/iot-gateway/mqtt-converter-bytes-config.md%br%
 custom<small>Recommended if bytes or anything else will be received in response</small>%,%custom%,%templates/iot-gateway/mqtt-converter-custom-config.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="MqttConverterTypeConfig" toggle-spec=mqttconvertertypespec %}
@@ -659,6 +683,12 @@ Example of RPC request (rpc-request.json) that need to be sent from the server:
   }
 }
 ```
+
+{% capture methodFilterOptions %}
+Also, every telemetry and attribute parameter has GET and SET RPC methods out of the box, so you don’t need to configure
+it manually.
+{% endcapture %}
+{% include templates/info-banner.md content=methodFilterOptions %}
 
 ## Next steps
 

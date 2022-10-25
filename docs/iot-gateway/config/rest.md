@@ -392,7 +392,11 @@ Examples for both methods provided below.
   ]
 ```
 
-
+{% capture methodFilterOptions %}
+Also, every telemetry and attribute parameter has GET and SET RPC methods out of the box, so you don’t need to configure
+it manually.
+{% endcapture %}
+{% include templates/info-banner.md content=methodFilterOptions %}
 
 ## Next steps
 

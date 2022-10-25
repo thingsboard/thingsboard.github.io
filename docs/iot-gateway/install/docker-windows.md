@@ -39,6 +39,28 @@ Where:
 - `thingsboard/tb-gateway`          - docker image
 - `$HOME`   - current user's home dir(`%HomePath%`)
 
+
+## Running (with ENV variables)
+
+**Execute the following command to run docker container with ENV variables:**
+
+```
+docker run -it -e host=thingsboard.cloud -e port=1883 -e accessToken=ACCESS_TOKEN -v %HOMEPATH%/tb-gateway/config:/thingsboard_gateway/config -v %HOMEPATH%/tb-gateway/extensions:/thingsboard_gateway/extensions -v %HOMEPATH%/tb-gateway/logs:/thingsboard_gateway/logs --name tb-gateway --restart always thingsboard/tb-gateway
+```
+{: .copy-code}
+
+Available  ENV variables:
+
+| **ENV**     | **Description**                |
+|:-|-
+| host        | ThingsBoard instance host.     |
+| port        | ThingsBoard instance port.     |
+| accessToken | Gateway access token.          |
+| caCert      | Path to CA file.               |
+| privateKey  | Path to private key file.      |
+| cert        | Path to certificate file.      |
+|--
+
 ## Detaching, stop and start commands
 
 You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
@@ -98,3 +120,23 @@ $ docker stop tb-gateway
 $ docker rm tb-gateway
 $ docker run -it -v %HOMEPATH%\tb-gateway\config:/thingsboard-gateway/config -v %HOMEPATH%\tb-gateway\extensions:/var/lib/thingsboard_gateway/extensions -v %HOMEPATH%\tb-gateway\logs:/var/log/thingsboard-gateway --name tb-gateway --restart always thingsboard/tb-gateway
 ```
+
+## Build local docker image
+
+In order to build local docker image, follow the next steps:
+
+1. Copy **thingsboard_gateway/** folder to **docker/** folder, so the final view of the directory structure will look like:
+    ```text
+    /thingsboard-gateway/docker
+            thingsboard_gateway/
+            docker-compose.yml
+            Dockerfile
+            LICENSE
+            setup.py
+            requirements.txt
+    ```
+2. From project root folder execute the following command:
+    ```bash
+    docker build -t local-gateway docker
+    ```
+    {: .copy-code}
