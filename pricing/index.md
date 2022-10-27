@@ -383,6 +383,9 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item" data-faq-id="subscription-support">
                             Email support within <b>24 hours</b>
                         </div>
+                        <div class="pricing-square-item">
+                            <b>10 hours</b> of consulting or configuration services
+                        </div>
                         <div class="pricing-square-item"><b>White-labeling</b></div>
                     </div>
                 </div>
