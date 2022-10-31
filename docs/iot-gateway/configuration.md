@@ -131,17 +131,6 @@ connectors:
 <b><i>Spaces identity are important.</i></b>  
 </details>
 
-#### Hot Reloader
-
-If you are using Gateway for development, you can enable Hot Reloader to restart Gateway every time when you edit any
-project file.
-
-To run Gateway with Hot Reloader, use the following command:
-```bash
-python3 tb_gateway.py true
-```
-{: .copy-code}
-
 #### Sections in config file
 
 + **thingsboard** -- Configuration for connecting to ThingsBoard platform.

@@ -45,3 +45,14 @@ mkdir logs
 python3 ./thingsboard_gateway/tb_gateway.py
 ```
 {: .copy-code}
+
+### Hot Reloader
+
+If you are using Gateway for development, you can enable Hot Reloader to restart Gateway every time when you edit any
+project file.
+
+To run Gateway with Hot Reloader, use the following command:
+```bash
+python3 ./thingsboard_gateway/tb_gateway.py true
+```
+{: .copy-code}

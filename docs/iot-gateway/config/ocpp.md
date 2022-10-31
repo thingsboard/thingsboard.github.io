@@ -102,9 +102,9 @@ This configuration section using for configure Gateway as a Central System.
 
 | **Parameter**     | **Default value**      | **Description**                                     |
 |:-|:-|-
-| name              | **Central System**     | |
-| host              | **127.0.0.1**          | |
-| port              | **9000**               | |
+| name              | **Central System**     | Central System name. |
+| host              | **127.0.0.1**          | Central System hostname or ip address. |
+| port              | **9000**               | Central System port. |
 |---
 
 #### Connection subsection

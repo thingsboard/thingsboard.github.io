@@ -392,11 +392,10 @@ Examples for both methods provided below.
   ]
 ```
 
-{% capture methodFilterOptions %}
-Also, every telemetry and attribute parameter has GET and SET RPC methods out of the box, so you don’t need to configure
-it manually.
-{% endcapture %}
-{% include templates/info-banner.md content=methodFilterOptions %}
+Also, every telemetry and attribute parameter has built-in GET and SET RPC methods out of the box, so you don’t need to configure
+it manually. To use them, make sure you set all required parameters (in the case of REST Connector, these are the following:
+**requestUrlExpression**, **responseTimeout**, **HTTPMethod**, **valueExpression**). 
+See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
 
 ## Next steps
 
