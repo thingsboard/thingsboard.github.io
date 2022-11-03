@@ -76,7 +76,7 @@
 - title: MQTT Broker
   fulltitle: MQTT Broker
   description: MQTT Broker Documentation
-  tag: mqttbroker
+  tag: mqtt-broker
   icon: /images/gateway-icon.svg
   path: /docs/mqtt-broker/
   getStarted: /docs/mqtt-broker/getting-started/
