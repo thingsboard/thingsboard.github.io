@@ -16,6 +16,8 @@ toc:
     path: /docs/mqtt-broker/mqtt-listeners/
   - title: Administrative
     section:
+      - title: Administration REST API
+        path: /docs/mqtt-broker/rest-api/
       - title: Admin User Management
         path: /docs/mqtt-broker/user-management/
       - title: MQTT Client Management

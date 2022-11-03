@@ -1,3 +1,13 @@
+---
+layout: docwithnav-mqtt-broker
+title: MQTT Client Credentials
+description: Create/Update/Delete MQTT Client Credentials
+
+---
+
+* TOC
+  {:toc}
+
 MQTT Client Credentials allow you to configure security for the connecting clients.
 
 To create a new client credentials in the system first of all you need to authorize as an Admin.

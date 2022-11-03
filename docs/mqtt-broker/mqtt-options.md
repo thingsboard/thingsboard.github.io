@@ -1,3 +1,13 @@
+---
+layout: docwithnav-mqtt-broker
+title: MQTT Options
+description: MQTT Options configuration
+
+---
+
+* TOC
+  {:toc}
+
 ## MQTT Options
 
 **Note:** To change some server parameter you need to update the corresponding environment variable

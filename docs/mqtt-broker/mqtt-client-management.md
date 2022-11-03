@@ -1,3 +1,13 @@
+---
+layout: docwithnav-mqtt-broker
+title: MQTT Client
+description: Create/Update/Delete MQTT Client
+
+---
+
+* TOC
+  {:toc}
+
 In order to maximize performance we created 2 types of MQTT client:
 - **DEVICE** - for regular mostly publishing MQTT clients
 - **APPLICATION** - for MQTT clients that subscribe to multiple topics

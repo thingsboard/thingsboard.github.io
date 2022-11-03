@@ -1,3 +1,13 @@
+---
+layout: docwithnav-mqtt-broker
+title: MQTT Listeners
+description: TCP and SSL MQTT Listeners configuration
+
+---
+
+* TOC
+  {:toc}
+
 ## MQTT Listeners
 
 You can configure the broker to listen on TCP and SSL protocols.

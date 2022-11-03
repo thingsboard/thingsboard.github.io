@@ -1,3 +1,13 @@
+---
+layout: docwithnav-mqtt-broker
+title: User Management
+description: User Management Guide
+
+---
+
+* TOC
+  {:toc}
+
 By default, system is created with one admin user **sysadmin@thingsboard.org** with default password **sysadmin**.
 
 In production, you should create a new admin user and delete the default one or change password for **sysadmin** user.

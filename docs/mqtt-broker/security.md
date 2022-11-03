@@ -1,3 +1,13 @@
+---
+layout: docwithnav-mqtt-broker
+title: Security
+description: Security Configuration
+
+---
+
+* TOC
+  {:toc}
+
 ## Authentication
 
 ### TLS
