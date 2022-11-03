@@ -6,9 +6,6 @@ In this document all examples will use **curl** command to execute REST requests
 
 {% include templates/mqtt-broker/authentication.md %}
 
-After authorization you will see **token** value in the auth response. You should use that token to make all administrative requests to ThingsBoard MQTT Broker.
-You can paste the value corresponding to the **token** field to the <i>ACCESS_TOKEN</i> environment variable or just replace <i>$ACCESS_TOKEN</i> string from the requests in this tutorial.
-
 ##### Get all users
 
 ```bash

@@ -3,8 +3,11 @@ abstract: "ThingsBoard MQTT Broker."
 toc:
   - title: ThingsBoard MQTT Broker
     path: /docs/mqtt-broker/
-  - title: MQTT Options
+  - title: MQTT Options Configuration
     path: /docs/mqtt-broker/mqtt-options/
+    section:
+      - title: Persistence
+        path: /docs/mqtt-broker/persistence/
   - title: Security
     path: /docs/mqtt-broker/security/
   - title: MQTT Listeners
@@ -15,6 +18,8 @@ toc:
         path: /docs/mqtt-broker/user-management/
       - title: MQTT Client Management
         path: /docs/mqtt-broker/mqtt-client-management/
+      - title: MQTT Client Credentials Management
+        path: /docs/mqtt-broker/mqtt-client-credentials-management/
   - title: Logging
     path: /docs/mqtt-broker/logging/
   - title: Monitoring
