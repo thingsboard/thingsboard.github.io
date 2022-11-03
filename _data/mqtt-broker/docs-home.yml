@@ -8,6 +8,8 @@ toc:
     section:
       - title: Persistence
         path: /docs/mqtt-broker/persistence/
+      - title: Message Processing
+        path: /docs/mqtt-broker/message-processing/
   - title: Security
     path: /docs/mqtt-broker/security/
   - title: MQTT Listeners
