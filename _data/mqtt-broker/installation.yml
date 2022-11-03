@@ -1,0 +1,20 @@
+bigheader: "Installation"
+abstract: "Documentation for installation and configuration of ThingsBoard MQTT Broker."
+toc:
+  - title: Installation options
+    path: /docs/mqtt-broker/install/installation-options/
+  - title: Installing MQTT Broker on Ubuntu Server
+    path: /docs/mqtt-broker/install/ubuntu/
+  - title: Installing MQTT Broker using Docker (Linux or Mac OS)
+    path: /docs/mqtt-broker/install/docker/
+  - title: Cluster setup
+    path: /docs/mqtt-broker/install/cluster-setup/
+  - title: Cluster setup with Docker Compose
+    path: /docs/mqtt-broker/install/cluster/docker-compose-setup/
+  - title: Cluster setup with Kubernetes on Minikube
+    path: /docs/mqtt-broker/install/cluster/minikube-cluster-setup/
+  - title: Upgrade instructions
+    path: /docs/mqtt-broker/install/upgrade-instructions/
+  - title: Configuration
+    path: /docs/mqtt-broker/install/config/
+

@@ -1,0 +1,25 @@
+bigheader: "MQTT Broker Documentation"
+abstract: "ThingsBoard MQTT Broker."
+toc:
+  - title: ThingsBoard MQTT Broker
+    path: /docs/mqtt-broker/
+  - title: MQTT Options
+    path: /docs/mqtt-broker/mqtt-options/
+  - title: Security
+    path: /docs/mqtt-broker/security/
+  - title: MQTT Listeners
+    path: /docs/mqtt-broker/mqtt-listeners/
+  - title: Administrative
+    section:
+      - title: Admin User Management
+        path: /docs/mqtt-broker/user-management/
+      - title: MQTT Client Management
+        path: /docs/mqtt-broker/mqtt-client-management/
+  - title: Logging
+    path: /docs/mqtt-broker/logging/
+  - title: Monitoring
+    path: /docs/mqtt-broker/monitoring/
+  - title: Troubleshooting
+    path: /docs/mqtt-broker/troubleshooting/
+  - title: MQTT Broker Release Notes
+    path: /docs/mqtt-broker/releases/
