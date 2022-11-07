@@ -6,7 +6,7 @@ description: Security Configuration
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
 ## Authentication
 

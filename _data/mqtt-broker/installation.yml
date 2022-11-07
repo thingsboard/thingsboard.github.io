@@ -3,8 +3,6 @@ abstract: "Documentation for installation and configuration of ThingsBoard MQTT 
 toc:
   - title: Installation options
     path: /docs/mqtt-broker/install/installation-options/
-  - title: Installing MQTT Broker on Ubuntu Server
-    path: /docs/mqtt-broker/install/ubuntu/
   - title: Installing MQTT Broker using Docker
     path: /docs/mqtt-broker/install/docker/
   - title: Cluster setup with Docker Compose

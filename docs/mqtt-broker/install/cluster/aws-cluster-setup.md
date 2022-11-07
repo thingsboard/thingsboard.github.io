@@ -6,7 +6,7 @@ description: ThingsBoard MQTT Broker microservices setup with Kubernetes in AWS 
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
 This guide will help you to set up ThingsBoard MQTT Broker in AWS EKS.
 

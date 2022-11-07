@@ -6,7 +6,7 @@ description: ThingsBoard MQTT Broker - broker for real Use Cases
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
 ## Introduction
 

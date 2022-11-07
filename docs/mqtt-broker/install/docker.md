@@ -6,7 +6,7 @@ description: Installing ThingsBoard MQTT Broker using Docker (Linux or Mac OS)
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
 This guide will help you to install and start standalone ThingsBoard MQTT Broker using Docker on Linux or Mac OS.
 If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/mqtt-broker/install/cluster/docker-compose-setup/).

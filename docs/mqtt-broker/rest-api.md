@@ -6,7 +6,7 @@ description: Administration REST API
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
 ## Swagger UI
 

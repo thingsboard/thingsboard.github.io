@@ -6,9 +6,9 @@ description: ThingsBoard MQTT Broker cluster setup with Kubernetes and Minikube 
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
-This guide will help you to setup ThingsBoard MQTT Broker in cluster mode using Minikube.
+This guide will help you to set up ThingsBoard MQTT Broker in cluster mode using Minikube.
 
 ## Prerequisites
 

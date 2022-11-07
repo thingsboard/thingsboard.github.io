@@ -6,7 +6,7 @@ description: TCP and SSL MQTT Listeners configuration
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
 ## MQTT Listeners
 

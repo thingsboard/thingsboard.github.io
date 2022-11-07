@@ -19,15 +19,6 @@ notitle: "true"
                            <div class="deployment-cards">
                                 <div class="deployment-cards-container">
                                     <div class="deployment-card-block">
-                                        <a href="/docs/mqtt-broker/install/ubuntu/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/ubuntu.svg" title="Ubuntu" alt="Ubuntu">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="deployment-card-block">
                                         <a href="/docs/mqtt-broker/install/docker/">
                                             <span>
                                                 <div class="deployment-logo">

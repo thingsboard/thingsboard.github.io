@@ -6,7 +6,7 @@ description: Developer Information
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
 
 ## Incoming QoS 1 PUBLISH msg processing

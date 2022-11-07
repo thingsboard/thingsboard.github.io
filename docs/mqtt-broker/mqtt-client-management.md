@@ -6,7 +6,7 @@ description: Create/Update/Delete MQTT Client
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
 In order to maximize performance we created 2 types of MQTT client:
 - **DEVICE** - for regular mostly publishing MQTT clients

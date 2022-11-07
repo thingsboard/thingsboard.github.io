@@ -6,4 +6,4 @@ description: Details about Monitoring
 ---
 
 * TOC
-  {:toc}
+{:toc}

@@ -6,7 +6,7 @@ description: Create/Update/Delete MQTT Client Credentials
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
 MQTT Client Credentials allow you to configure security for the connecting clients.
 

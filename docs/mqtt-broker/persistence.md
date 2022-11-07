@@ -6,7 +6,7 @@ description: Implementation and configuration of Persistence
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
 ## Persistence
 

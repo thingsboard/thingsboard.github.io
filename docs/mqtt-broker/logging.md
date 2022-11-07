@@ -6,4 +6,4 @@ description: Details about Logging
 ---
 
 * TOC
-  {:toc}
+{:toc}

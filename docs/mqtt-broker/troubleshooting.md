@@ -6,4 +6,4 @@ description: Troubleshooting Guide
 ---
 
 * TOC
-  {:toc}
+{:toc}

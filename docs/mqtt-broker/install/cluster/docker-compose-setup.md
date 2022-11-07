@@ -6,7 +6,7 @@ description: Cluster setup using Docker Compose
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
 
 This guide will help you to setup ThingsBoard in cluster mode using Docker Compose.

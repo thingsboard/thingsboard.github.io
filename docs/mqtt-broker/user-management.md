@@ -6,7 +6,7 @@ description: User Management Guide
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
 By default, system is created with one admin user **sysadmin@thingsboard.org** with default password **sysadmin**.
 

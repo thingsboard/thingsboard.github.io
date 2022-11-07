@@ -6,7 +6,7 @@ description: MQTT Options configuration
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
 ## MQTT Options
 

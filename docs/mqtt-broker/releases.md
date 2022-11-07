@@ -6,4 +6,4 @@ description: Releases
 ---
 
 * TOC
-  {:toc}
+{:toc}

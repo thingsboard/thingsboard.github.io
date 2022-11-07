@@ -6,7 +6,7 @@ description: Details message processing
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
 ## Message processing
 

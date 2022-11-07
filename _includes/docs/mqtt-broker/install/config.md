@@ -1,5 +1,5 @@
 * TOC
-  {:toc}
+{:toc}
 
 This guide will help you to get familiar with ThingsBoard MQTT Broker configuration files and parameters.
 
