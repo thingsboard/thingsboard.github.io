@@ -58,7 +58,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/aws-cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/kubeone.png" title="Cluster setup with Kubernetes and KubeOne on AWS" alt="AWS K8S cluster">
+                                                    <img width="" src="/images/install/cloud/eks.svg" title="Cluster setup on EKS" alt="AWS K8S cluster">
                                                  </div>
                                             </span>
                                         </a>

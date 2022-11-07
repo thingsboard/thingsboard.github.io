@@ -19,7 +19,7 @@ If you don't have Minikube installed, please follow [these instructions](https:/
 
 ```bash
 git clone https://github.com/thingsboard/thingsboard-mqtt-broker.git
-cd thingsboard-mqtt-broker/k8s
+cd thingsboard-mqtt-broker/k8s/minikube
 ```
 {: .copy-code}
 
