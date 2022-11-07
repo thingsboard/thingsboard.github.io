@@ -11,7 +11,7 @@ description: MQTT Options configuration
 ## MQTT Options
 
 **Note:** To change some server parameter you need to update the corresponding environment variable
-(for example you can do it in `thingsboard-mqtt-broker.conf` file if you have standalone deployment).
+(you can do it in `thingsboard-mqtt-broker.conf` file if you have standalone deployment or in `environment` section of deployment script if you use docker-compose or k8s).
 
 ## Advanced MQTT Options
 
@@ -61,13 +61,13 @@ description: MQTT Options configuration
       <tr>
           <td>mqtt.client-session-cleanup.zone</td>
           <td>MQTT_CLIENT_SESSION_CLEANUP_ZONE</td>
-          <td>UTC/td>
+          <td>UTC</td>
           <td>Timezone for the client-sessions clearing cron-job.</td>
       </tr>
       <tr>
           <td>mqtt.client-session-cleanup.inactive-session-ttl</td>
           <td>MQTT_CLIENT_SESSION_CLEANUP_INACTIVE_SESSION_TTL</td>
-          <td>604800/td>
+          <td>604800</td>
           <td>TTL of inactive sessions. Defaults to one week.</td>
       </tr>
   </tbody>
@@ -85,25 +85,25 @@ description: MQTT Options configuration
       <tr>
           <td>mqtt.persistent-session.device.persisted-messages.limit</td>
           <td>MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_LIMIT</td>
-          <td>1000/td>
+          <td>1000</td>
           <td>Maximum number of PUBLISH messages stored for each persisted DEVICE client.</td>
       </tr>
       <tr>
           <td>mqtt.persistent-session.device.persisted-messages.ttl</td>
           <td>MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_TTL</td>
-          <td>604800/td>
+          <td>604800</td>
           <td>TTL of persisted DEVICE messages in seconds. The current value corresponds to one week.</td>
       </tr>
       <tr>
-          <td>mqtt.persistent-session.device.persisted-messages.clean-up-cron</td>
+          <td>mqtt.persistent-session.device.persisted-messages.clean-up.cron</td>
           <td>MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_CLEAN_UP_CRON</td>
-          <td>0 0 2 * * */td>
+          <td>0 0 2 * * *</td>
           <td>Cron job to schedule clearing of outdated persisted DEVICE messages. Defaults to 'every day at 2 o'clock'.</td>
       </tr>
       <tr>
-          <td>mqtt.persistent-session.device.persisted-messages.clean-up-zone</td>
+          <td>mqtt.persistent-session.device.persisted-messages.clean-up.zone</td>
           <td>MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_CLEAN_UP_ZONE</td>
-          <td>UTC/td>
+          <td>UTC</td>
           <td>Timezone for the DEVICE messages clearing cron-job.</td>
       </tr>
   </tbody>
@@ -129,7 +129,7 @@ To alter time till expiration and amount of persisted messages you can configure
       <tr>
           <td>queue.kafka.application-persisted-msg.topic-properties</td>
           <td>TB_KAFKA_APP_PERSISTED_MSG_TOPIC_PROPERTIES</td>
-          <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;replication.factor:1/td>
+          <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;replication.factor:1</td>
           <td>Properties of the APPLICATION persistence topic.</td>
       </tr>
   </tbody>
