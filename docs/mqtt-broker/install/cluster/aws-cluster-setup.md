@@ -12,7 +12,7 @@ This guide will help you to set up ThingsBoard MQTT Broker in AWS EKS.
 
 ## Prerequisites
 
-{% include templates/install/aws-eks-prerequisites.md %}
+{% include templates/install/aws/eks-prerequisites.md %}
 
 ## Step 1. Clone ThingsBoard CE K8S scripts repository
 
