@@ -1,7 +1,5 @@
 ---
 layout: docwithnav-mqtt-broker
-assignees:
-- ashvayka
 title: Installing ThingsBoard MQTT Broker using Docker (Linux or Mac OS)
 description: Installing ThingsBoard MQTT Broker using Docker (Linux or Mac OS)
 
@@ -10,85 +8,160 @@ description: Installing ThingsBoard MQTT Broker using Docker (Linux or Mac OS)
 * TOC
   {:toc}
 
-
-This guide will help you to install and start ThingsBoard MQTT Broker using Docker on Linux or Mac OS.
+This guide will help you to install and start standalone ThingsBoard MQTT Broker using Docker on Linux or Mac OS.
+If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/mqtt-broker/install/cluster/docker-compose-setup/).
 
 ## Prerequisites
 
 - [Install Docker CE](https://docs.docker.com/engine/installation/)
+
 - [Install Docker Compose](https://docs.docker.com/compose/install/)
 
-## Step 1. Pull ThingsBoard CE Images
+{% include templates/install/docker-install-note.md %}
 
-Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
+## Configuration
 
-```bash
-docker pull thingsboard/thingsboard-mqtt-broker:1.0.0-SNAPSHOT
-```
-
-## Step 2. Clone ThingsBoard MQTT Broker repository
+Create docker-compose file for ThingsBoard MQTT Broker:
 
 ```bash
-git clone https://github.com/thingsboard/thingsboard-mqtt-broker.git
-cd thingsboard-mqtt-broker/docker
+sudo nano docker-compose.yml
 ```
+{: .copy-code}
 
-## Step 3. Running
+Add the following lines to the yml file.
 
-Execute the following command to create log folders for the services and chown of these folders to the docker container users.
-To be able to change user, **chown** command is used, which requires sudo permissions (script will request password for a sudo access):
-
-`
-$ ./scripts/docker-create-log-folders.sh
-`
-
-Execute the following command to run installation:
-
-`
-$ ./scripts/docker-install-tb-mqtt-broker.sh
-`
-
-Execute the following command to start services:
-
-`
-$ ./scripts/docker-start-services.sh
-`
-
-After a while when all services will be successfully started you can make requests to `http://{your-host-ip}:8083` in you browser (for ex. `http://localhost:8083`)
-and connect using MQTT protocol on 1883 port (for ex. `http://localhost:1883`).
-
-{% include templates/mqtt-broker/authentication.md %}
-
-In case of any issues you can examine service logs for errors.
-For example to see ThingsBoard Mqtt Broker logs execute the following command:
-
-`
-$ docker-compose logs -f tb-mqtt-broker
-`
-
-Or use `docker-compose ps` to see the state of all the containers.
-Use `docker-compose logs --f` to inspect the logs of all running services.
-See [docker-compose logs](https://docs.docker.com/compose/reference/logs/) command reference for details.
-
-Execute the following command to stop services:
-
-`
-$ ./scripts/docker-stop-services.sh
-`
-
-Execute the following command to stop and completely remove deployed docker containers:
-
-`
-$ ./scripts/docker-remove-services.sh
-`
-
-Execute the following command to update particular or all services (pull newer docker image and rebuild container):
-
-`
-$ ./scripts/docker-update-service.sh [SERVICE...]
-`
+```yml
+version: '2.2'
+services:
+  postgres:
+    restart: always
+    image: "postgres:11.6"
+    ports:
+    - "5432"
+    environment:
+      POSTGRES_DB: thingsboard_mqtt_broker
+      POSTGRES_PASSWORD: postgres
+    volumes:
+    - ~/.tb-mqtt-broker-data/postgres:/var/lib/postgresql/data
+  zookeeper:
+    restart: always
+    image: "zookeeper:3.5"
+    ports:
+      - "2181"
+    environment:
+      ZOO_MY_ID: 1
+      ZOO_SERVERS: server.1=zookeeper:2888:3888;zookeeper:2181
+  kafka:
+    restart: always
+    image: "wurstmeister/kafka:2.12-2.3.0"
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092"
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENERS: INSIDE://:9093,OUTSIDE://:9092
+      KAFKA_ADVERTISED_LISTENERS: INSIDE://:9093,OUTSIDE://kafka:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
+      KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'false'
+      KAFKA_LOG_RETENTION_BYTES: 1073741824
+      KAFKA_LOG_SEGMENT_BYTES: 268435456
+      KAFKA_LOG_RETENTION_MS: 300000
+      KAFKA_LOG_CLEANUP_POLICY: delete
+  tb-mqtt-broker:
+    restart: always
+    image: "thingsboard/tb-mqtt-broker:1.0.0-SNAPSHOT"
+    depends_on:
+      - postgres
+      - kafka
+    ports:
+      - "8083:8083"
+      - "1883:1883"
+    environment:
+      SPRING_JPA_DATABASE_PLATFORM: org.hibernate.dialect.PostgreSQLDialect
+      SPRING_DRIVER_CLASS_NAME: org.postgresql.Driver
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/thingsboard_mqtt_broker
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: postgres
+      TB_KAFKA_SERVERS: kafka:9092
+      SECURITY_MQTT_ENABLED: 'false'
+    volumes:
+      - ~/.tb-mqtt-broker-data/conf:/config
+      - ~/.tb-mqtt-broker-data/log:/var/log/thingsboard-mqtt-broker
+```
+{: .copy-code}
 
 Where:
 
-- `[SERVICE...]` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
+- `8083:8083`               - connect local port 8083 to exposed internal HTTP port 8083
+- `1883:1883`               - connect local port 1883 to exposed internal MQTT port 1883
+- `~/.tb-mqtt-broker-data/postgres:/data`   - mounts the host's dir `~/.tb-mqtt-broker-data/postgres` to ThingsBoard MQTT Broker DataBase data directory
+- `~/.tb-mqtt-broker-data/conf:/config`   - mounts the host's dir `~/.tb-mqtt-broker-data/conf` to ThingsBoard MQTT Broker config directory
+- `~/.tb-mqtt-broker-data/log:/var/log/thingsboard`   - mounts the host's dir `~/.tb-mqtt-broker-data/log` to ThingsBoard MQTT Broker logs directory
+- `tb-mqtt-broker`          - friendly local name of this machine
+- `restart: always`         - automatically start ThingsBoard MQTT Broker in case of system reboot and restart in case of failure.
+- `SECURITY_MQTT_ENABLED: false`         - by default security is disabled. **Note**: make sure to configure security in production environment
 
+
+Before starting Docker container run following commands to create a directory for storing data and logs and then change its owner to docker container user,
+to be able to change user, **chown** command is used, which requires sudo permissions (command will request password for a sudo access):
+
+```
+mkdir -p ~/.tb-mqtt-broker-data/log && mkdir -p ~/.tb-mqtt-broker-data/conf && mkdir -p ~/.tb-mqtt-broker-data/postgres && sudo chown -R 799:799 ~/.tb-mqtt-broker-data
+```
+{: .copy-code}
+
+**NOTE**: Replace directory `~/.tb-mqtt-broker-data` with directory you're planning to use in `docker-compose.yml`.
+
+## Installation
+
+Set the terminal in the directory which contains the `docker-compose.yml` file and execute the following command to up install ThingsBoard MQTT Broker:
+
+```
+docker-compose pull
+docker-compose up -d postgres
+docker-compose run --no-deps --rm -e INSTALL_TB=true tb-mqtt-broker
+```
+{: .copy-code}
+
+## Running
+
+To run the broker execute the following command:
+
+```
+docker-compose up -d
+```
+{: .copy-code}
+
+
+After executing this command you can open `http://{your-host-ip}:8083` in your browser (for ex. `http://localhost:8083`).
+You should see ThingsBoard MQTT Broker login page. Use the following default credentials:
+
+- **System Administrator**: sysadmin@thingsboard.org / sysadmin
+
+You can always change password in account profile page.
+
+## Stop and start commands
+
+In case of any issues you can examine service logs for errors.
+For example to see ThingsBoard node logs execute the following command:
+
+```
+docker-compose logs -f tb-mqtt-broker
+```
+{: .copy-code}
+
+To stop the container:
+
+```
+docker-compose stop
+```
+{: .copy-code}
+
+To start the container:
+
+```
+docker-compose start
+```
+{: .copy-code}

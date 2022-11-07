@@ -3,9 +3,10 @@ abstract: "ThingsBoard MQTT Broker."
 toc:
   - title: ThingsBoard MQTT Broker
     path: /docs/mqtt-broker/
-  - title: MQTT Options Configuration
-    path: /docs/mqtt-broker/mqtt-options/
+  - title: Configuration
     section:
+      - title: MQTT Options
+        path: /docs/mqtt-broker/mqtt-options/
       - title: Persistence
         path: /docs/mqtt-broker/persistence/
       - title: Message Processing
