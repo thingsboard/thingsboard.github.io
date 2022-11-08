@@ -8,8 +8,8 @@ description: Implementation and configuration of Persistence
 * TOC
 {:toc}
 
-## Persistence
+![image](/images/coming-soon.jpg)
 
-### Application Persistence
+[//]: # (### Application Persistence)
 
-### Device Persistence
+[//]: # (### Device Persistence)

@@ -18,7 +18,7 @@ description: MQTT Options configuration
 <table>
   <thead>
       <tr>
-          <td><b>Property</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -27,6 +27,12 @@ description: MQTT Options configuration
           <td>MQTT_KEEP_ALIVE_MONITORING_DELAY_MS</td>
           <td>100</td>
           <td>Time between subsequent checks for the non-active clients.</td>
+      </tr>
+      <tr>
+          <td>mqtt.keep-alive.max-keep-alive</td>
+          <td>MQTT_KEEP_ALIVE_MAX_KEEP_ALIVE_SEC</td>
+          <td>600</td>
+          <td>Max value allowed by the server for keep-alive that can be used by clients.</td>
       </tr>
       <tr>
           <td>mqtt.topic.max-segments-count</td>
@@ -38,7 +44,7 @@ description: MQTT Options configuration
           <td>mqtt.subscription-trie.wait-for-clear-lock-ms</td>
           <td>MQTT_SUB_TRIE_WAIT_FOR_CLEAR_LOCK_MS</td>
           <td>100</td>
-          <td>Maximum pause for clearing subscription-storage from empty nodes.</td>
+          <td>Maximum pause for clearing subscription storage from empty nodes.</td>
       </tr>
       <tr>
           <td>mqtt.subscription-trie.clear-nodes-cron</td>
@@ -53,22 +59,40 @@ description: MQTT Options configuration
           <td>Timezone for the subscription clearing cron-job.</td>
       </tr>
       <tr>
-          <td>mqtt.client-session-cleanup.cron</td>
-          <td>MQTT_CLIENT_SESSION_CLEANUP_CRON</td>
-          <td>0 0 1 * * *</td>
-          <td>Cron job to schedule clearing of expired and not active client-sessions. Defaults to 'every day at 1 o'clock'</td>
+          <td>mqtt.retain-msg-trie.wait-for-clear-lock-ms</td>
+          <td>MQTT_RETAIN_MSG_TRIE_WAIT_FOR_CLEAR_LOCK_MS</td>
+          <td>100</td>
+          <td>Maximum pause for clearing retain msg storage from empty nodes.</td>
       </tr>
       <tr>
-          <td>mqtt.client-session-cleanup.zone</td>
-          <td>MQTT_CLIENT_SESSION_CLEANUP_ZONE</td>
+          <td>mqtt.retain-msg-trie.clear-nodes-cron</td>
+          <td>MQTT_RETAIN_MSG_TRIE_CLEAR_NODES_CRON</td>
+          <td>0 0 0 * * *</td>
+          <td>Cron job to schedule clearing of empty retain msg nodes. Defaults to 'every day at midnight'</td>
+      </tr>
+      <tr>
+          <td>mqtt.retain-msg-trie.clear-nodes-zone</td>
+          <td>MQTT_RETAIN_MSG_TRIE_CLEAR_NODES_ZONE</td>
+          <td>UTC</td>
+          <td>Timezone for retain msg clearing cron-job.</td>
+      </tr>
+      <tr>
+          <td>mqtt.client-session-expiry.cron</td>
+          <td>MQTT_CLIENT_SESSION_EXPIRY_CRON</td>
+          <td>0 0 * ? * *</td>
+          <td>Cron job to schedule clearing of expired and not active client-sessions. Defaults to 'every hour', e.g. at 20:00:00 UTC</td>
+      </tr>
+      <tr>
+          <td>mqtt.client-session-expiry.zone</td>
+          <td>MQTT_CLIENT_SESSION_EXPIRY_ZONE</td>
           <td>UTC</td>
           <td>Timezone for the client-sessions clearing cron-job.</td>
       </tr>
       <tr>
-          <td>mqtt.client-session-cleanup.inactive-session-ttl</td>
-          <td>MQTT_CLIENT_SESSION_CLEANUP_INACTIVE_SESSION_TTL</td>
+          <td>mqtt.client-session-expiry.max-expiry-interval</td>
+          <td>MQTT_CLIENT_SESSION_EXPIRY_MAX_EXPIRY_INTERVAL</td>
           <td>604800</td>
-          <td>TTL of inactive sessions. Defaults to one week.</td>
+          <td>Max expiry interval allowed for client-sessions in seconds. Defaults to one week.</td>
       </tr>
   </tbody>
 </table>
@@ -78,7 +102,7 @@ description: MQTT Options configuration
 <table>
   <thead>
       <tr>
-          <td><b>Property</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -122,7 +146,7 @@ To alter time till expiration and amount of persisted messages you can configure
 <table>
   <thead>
       <tr>
-          <td><b>Property</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 25%"><b>Default Value</b></td><td style="width: 20%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>

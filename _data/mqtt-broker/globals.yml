@@ -2,6 +2,8 @@ tocs:
   - docs-home
   - getting-started
   - installation
+  - reference
+  - faq
 docs-header:
   - toc: getting-started
     title: Getting Started
@@ -9,3 +11,7 @@ docs-header:
     title: Documentation
   - toc: installation
     title: Installation
+  - toc: reference
+    title: Architecture
+  - toc: faq
+    title: FAQ

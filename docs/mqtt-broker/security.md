@@ -37,33 +37,39 @@ Possible combinations of MQTT_BASIC credentials:
 After the user is authenticated it's possible to restrict the access to some topics.
 You can do it both for TLS and Basic auth.
 
-For both type of authorization ThingsBoard MQTT Broker uses regular expressions in order to allow users flexible control over auth rules.
+For both types of authorization ThingsBoard MQTT Broker uses regular expressions in order to allow users flexible control over auth rules.
 
 For example to allow clients to publish/subscribe to all topics that start from **city/** you need to create auth rule **city/.***.
 
 ### TLS
 
-For TLS authorization is configured by the value of corresponding MQTT Client Credentials.
+For TLS type, authorization is configured by the **authorizationRulesMapping** value of corresponding MQTT Client Credentials.
 Here's a model of the credentials value:
 
 ```
 {
     "parentCertCommonName": $parentCertCommonName,
-    "patternRegEx":$patternRegEx,
-    "authorizationRulesMapping":$authorizationRulesMapping
-}"
+    "authorizationRulesMapping": $authorizationRulesMapping
+}
 ```
+{: .copy-code}
 
 Where:
 - $parentCertCommonName - the common name that should be in the certificate from the chain
-- $patternRegEx - regular expression to search for keywords,
-  for example <b>.\*(example_string).\*</b> will search for **example_string** substring inside of the certificate common name
 - $authorizationRulesMapping - the mappings to configure what restrictions do different keywords have.
-  For example <b>{"example_1":"example_topic/.*","example_2":".\*"}</b> will allow clients with the certificate that contain **example_topic** can pub/sub only to topics that start with **example_topic/**
+  For example,
+  ```
+  {
+      "example_1": "example_topic/.*",
+      "example_2": ".*"
+  }
+  ```
+  {: .copy-code}
+  will allow clients with the certificate that contain **example_1** pub/sub only to topics that start with **example_topic/** 
   and clients with the certificate that contain **example_2** to pub/sub every topic.
 
 ### Basic
 
-For TLS authorization is configured by the **authorizationRulePattern** of the corresponding MQTT Client Credentials.
-So for each basic MQTT Client credentials you can configure the authorization rule for the topics these clients can access.
-As for TLS authorization, **authorizationRulePattern** is based on regular expression syntax.
+For Basic type, authorization is configured by the **authorizationRulePatterns** of the corresponding MQTT Client Credentials.
+So for each basic MQTT Client credentials you can configure the authorization rules for the topics these clients can access.
+As for TLS authorization, **authorizationRulePatterns** is based on regular expression syntax.
