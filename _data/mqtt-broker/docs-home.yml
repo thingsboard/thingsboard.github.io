@@ -21,8 +21,6 @@ toc:
         path: /docs/mqtt-broker/rest-api/
       - title: Admin User Management
         path: /docs/mqtt-broker/user-management/
-      - title: MQTT Client Management
-        path: /docs/mqtt-broker/mqtt-client-management/
       - title: MQTT Client Credentials Management
         path: /docs/mqtt-broker/mqtt-client-credentials-management/
   - title: Logging

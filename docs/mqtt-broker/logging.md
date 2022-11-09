@@ -7,3 +7,5 @@ description: Details about Logging
 
 * TOC
 {:toc}
+
+![image](/images/coming-soon.jpg)

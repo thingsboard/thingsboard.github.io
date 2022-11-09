@@ -1,18 +1,32 @@
 * TOC
 {:toc}
 
-This guide will help you to get familiar with ThingsBoard MQTT Broker configuration files and parameters.
+This guide will help you to get familiar with ThingsBoard MQTT Broker configuration files and parameters. We **recommend** to
+configure MQTT Broker using environment variables. This way you do not need to merge the configuration files when new
+platform release arrives. List of available configuration parameters and corresponding environment variables is
+located [here](#configuration-parameters).
 
-You can find configuration files in the following directory:
+## How to change configuration parameters?
 
-```bash
-Windows: YOUR_INSTALL_DIR/conf
-Linux: /usr/share/thingsboard-mqtt-broker/conf
-```
+#### Docker based deployment
 
-#### ThingsBoard MQTT Broker Settings
+If ThingsBoard MQTT Broker is installed in a docker compose environment, you may edit the scripts and add environment variables for
+the corresponding containers.
+See [docker documentation](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option) for
+more details.
 
-All configuration parameters have corresponding environment variable name and default value. In order to change configuration parameter you can simply change it's default value.
+#### K8S based deployment
+
+If ThingsBoard MQTT Broker is installed in a K8S environment, you may edit the scripts and add environment variables for the
+corresponding deployments/stateful sets.
+See [K8S documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/)
+for more details.
+
+## Configuration parameters
+
+The configuration file is written in YAML.
+All configuration parameters have corresponding environment variable name and default value. 
+In order to change configuration parameter you can simply change its default value.
 For example:
 
 ```bash
@@ -21,17 +35,21 @@ server:
 ```
 
 In this case, *'HTTP_BIND_ADDRESS'* is environment variable name and *'0.0.0.0'* is a default value.
-Environment variables are useful in case of docker installation.
-See [docker documentation](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option) for more details.
 
-There is **190+** configuration parameters in **thingsboard-mqtt-broker.yml** file. You can review their description in the [**configuration file**](https://raw.githubusercontent.com/thingsboard/thingsboard-mqtt-broker/main/application/src/main/resources/thingsboard-mqtt-broker.yml) itself.
-We will list only main configuration parameters below to avoid duplication of the parameter descriptions and to simplify maintenance of this documentation page.
+Use simple example below to add new environment variable 'HTTP_BIND_PORT' with value '8084'.
 
+```bash
+...
+export HTTP_BIND_PORT=8084
+```
+
+The parameters are grouped by system components. The list contains the name (address in thingsboard-mqtt-broker.yml file), 
+environment variable, default value and description.
 
 <table>
   <thead>
       <tr>
-          <td><b>Property</b></td><td><b>Environment Variable</b></td><td><b>Default Value</b></td><td><b>Description</b></td>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
       </tr>
   </thead>
   <tbody>
@@ -81,6 +99,24 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Max payload size in bytes</td>
       </tr>
       <tr>
+          <td>listener.tcp.netty.so_keep_alive</td>
+          <td>TCP_NETTY_SO_KEEPALIVE</td>
+          <td>true</td>
+          <td>Enable/disable keep-alive mechanism to periodically probe the other end of a connection</td>
+      </tr>
+      <tr>
+          <td>listener.tcp.netty.shutdown_quiet_period</td>
+          <td>TCP_NETTY_SHUTDOWN_QUIET_PERIOD</td>
+          <td>0</td>
+          <td>Period in graceful shutdown during which no new tasks are submitted</td>
+      </tr>
+      <tr>
+          <td>listener.tcp.netty.shutdown_timeout</td>
+          <td>TCP_NETTY_SHUTDOWN_TIMEOUT</td>
+          <td>5</td>
+          <td>The max time to wait until the executor is stopped</td>
+      </tr>
+      <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">SSL MQTT listener parameters</span></td>
       </tr>   
       <tr>
@@ -126,10 +162,28 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Max payload size in bytes</td>
       </tr>
       <tr>
+          <td>listener.ssl.netty.so_keep_alive</td>
+          <td>SSL_NETTY_SO_KEEPALIVE</td>
+          <td>true</td>
+          <td>Enable/disable keep-alive mechanism to periodically probe the other end of a connection</td>
+      </tr>
+      <tr>
+          <td>listener.ssl.netty.shutdown_quiet_period</td>
+          <td>SSL_NETTY_SHUTDOWN_QUIET_PERIOD</td>
+          <td>0</td>
+          <td>Period in graceful shutdown during which no new tasks are submitted</td>
+      </tr>
+      <tr>
+          <td>listener.ssl.netty.shutdown_timeout</td>
+          <td>SSL_NETTY_SHUTDOWN_TIMEOUT</td>
+          <td>5</td>
+          <td>The max time to wait until the executor is stopped</td>
+      </tr>
+      <tr>
           <td>listener.ssl.config.protocol</td>
           <td>LISTENER_SSL_PROTOCOL</td>
           <td>TLSv1.2</td>
-          <td>SSL protocol: See <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#SSLContext">this link</a></td>
+          <td>SSL protocol: see <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#SSLContext">this link</a></td>
       </tr>
       <tr>
           <td>listener.ssl.config.key_store</td>
@@ -140,13 +194,13 @@ We will list only main configuration parameters below to avoid duplication of th
       <tr>
           <td>listener.ssl.config.key_store_password</td>
           <td>LISTENER_SSL_KEY_STORE_PASSWORD</td>
-          <td>server_ks_password</td>
+          <td>keystore_password</td>
           <td>Password used to access the key store</td>
       </tr>
       <tr>
           <td>listener.ssl.config.key_password</td>
           <td>LISTENER_SSL_KEY_PASSWORD</td>
-          <td>server_key_password</td>
+          <td>key_password</td>
           <td>Password used to access the key</td>
       </tr>
       <tr>
@@ -175,7 +229,13 @@ We will list only main configuration parameters below to avoid duplication of th
       </tr> 
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">HTTP server parameters</span></td>
-      </tr>  
+      </tr>
+      <tr>
+          <td>server.shutdown</td>
+          <td>SERVER_SHUTDOWN</td>
+          <td>graceful</td>
+          <td>Shutdown type (graceful or immediate)</td>
+      </tr>
       <tr>
           <td>server.address</td>
           <td>HTTP_BIND_ADDRESS</td>
@@ -221,7 +281,7 @@ We will list only main configuration parameters below to avoid duplication of th
       <tr>
           <td>server.log_controller_error_stack_trace</td>
           <td>HTTP_LOG_CONTROLLER_ERROR_STACK_TRACE</td>
-          <td>true</td>
+          <td>false</td>
           <td>Log errors with stacktrace when REST API throws exception</td>
       </tr>
       <tr>
@@ -230,13 +290,13 @@ We will list only main configuration parameters below to avoid duplication of th
       <tr>
           <td>security.jwt.tokenExpirationTime</td>
           <td>JWT_TOKEN_EXPIRATION_TIME</td>
-          <td>900</td>
+          <td>9000</td>
           <td>User JWT Token expiration time in seconds</td>
       </tr>
       <tr>
           <td>security.jwt.refreshTokenExpTime</td>
           <td>JWT_REFRESH_TOKEN_EXPIRATION_TIME</td>
-          <td>3600</td>
+          <td>604800</td>
           <td>User JWT Refresh Token expiration time in seconds</td>
       </tr>
       <tr>
@@ -250,6 +310,12 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>JWT_TOKEN_SIGNING_KEY</td>
           <td>thingsboardDefaultSigningKey</td>
           <td>User JWT Token sign key</td>
+      </tr>
+      <tr>
+          <td>security.user_login_case_sensitive</td>
+          <td>SECURITY_USER_LOGIN_CASE_SENSITIVE</td>
+          <td>true</td>
+          <td>Enable/disable case-sensitive username login</td>
       </tr>
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">MQTT Security parameters</span></td>
@@ -268,7 +334,37 @@ We will list only main configuration parameters below to avoid duplication of th
       </tr>
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Actor system parameters</span></td>
-      </tr>  
+      </tr>
+      <tr>
+          <td>actors.system.throughput</td>
+          <td>ACTORS_SYSTEM_THROUGHPUT</td>
+          <td>5</td>
+          <td>Number of messages the actor system will process per actor before switching to processing of messages for next actor</td>
+      </tr>
+      <tr>
+          <td>actors.system.scheduler-pool-size</td>
+          <td>ACTORS_SYSTEM_SCHEDULER_POOL_SIZE</td>
+          <td>1</td>
+          <td>Thread pool size for actor system scheduler</td>
+      </tr>
+      <tr>
+          <td>actors.system.max-actor-init-attempts</td>
+          <td>ACTORS_SYSTEM_MAX_ACTOR_INIT_ATTEMPTS</td>
+          <td>10</td>
+          <td>Maximum number of attempts to init the actor before disabling the actor</td>
+      </tr>
+      <tr>
+          <td>actors.system.processing-metrics.enabled</td>
+          <td>ACTORS_SYSTEM_PROCESSING_METRICS_ENABLED</td>
+          <td>false</td>
+          <td>Enable/disable actors processing metrics</td>
+      </tr>
+      <tr>
+          <td>actors.system.disconnect-wait-timeout-ms</td>
+          <td>ACTORS_SYSTEM_DISCONNECT_WAIT_TIMEOUT_MS</td>
+          <td>2000</td>
+          <td>Actors disconnect timeout</td>
+      </tr>
       <tr>
           <td>actors.persisted-device.dispatcher-pool-size</td>
           <td>ACTORS_SYSTEM_PERSISTED_DEVICE_DISPATCHER_POOL_SIZE</td>
@@ -288,6 +384,18 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Number of threads processing the MQTT client actor's messages</td>
       </tr>
       <tr>
+          <td>actors.client.wait-before-generated-actor-stop-seconds</td>
+          <td>ACTORS_SYSTEM_CLIENT_WAIT_BEFORE_GENERATED_ACTOR_STOP_SECONDS</td>
+          <td>10</td>
+          <td>Time to wait until the actor is stopped for clients that did not specify client id</td>
+      </tr>
+      <tr>
+          <td>actors.client.wait-before-named-actor-stop-seconds</td>
+          <td>ACTORS_SYSTEM_CLIENT_WAIT_BEFORE_NAMED_ACTOR_STOP_SECONDS</td>
+          <td>60</td>
+          <td>Time to wait until the actor is stopped for clients that specified client id</td>
+      </tr>
+      <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">MQTT parameters</span></td>
       </tr>  
       <tr>
@@ -300,7 +408,31 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>mqtt.max-in-flight-msgs</td>
           <td>MQTT_MAX_IN_FLIGHT_MSGS</td>
           <td>1000</td>
-          <td>Max number of unresponsed PUBLISH or PUBREL messages</td>
+          <td>Max number of PUBLISH or PUBREL messages not yet responded</td>
+      </tr>
+      <tr>
+          <td>mqtt.retransmission.enabled</td>
+          <td>MQTT_RETRANSMISSION_ENABLED</td>
+          <td>true</td>
+          <td>Enable/disable MQTT msg retransmission</td>
+      </tr>
+      <tr>
+          <td>mqtt.retransmission.scheduler-pool-size</td>
+          <td>MQTT_RETRANSMISSION_SCHEDULER_POOL_SIZE</td>
+          <td>0</td>
+          <td>Retransmission scheduler pool size (0 means the number of processors available to the JVM multiplied by 2 will be used)</td>
+      </tr>
+      <tr>
+          <td>mqtt.retransmission.initial-delay</td>
+          <td>MQTT_RETRANSMISSION_INITIAL_DELAY</td>
+          <td>10</td>
+          <td>Initial delay for the msg retransmission in seconds</td>
+      </tr>
+      <tr>
+          <td>mqtt.retransmission.period</td>
+          <td>MQTT_RETRANSMISSION_PERIOD</td>
+          <td>5</td>
+          <td>Increment period for the subsequent retransmissions of the msg in seconds (retransmission interval is increased by period for each run)</td>
       </tr>
       <tr>
           <td>mqtt.keep-alive.monitoring-delay-ms</td>
@@ -309,16 +441,28 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Time between subsequent checks for the non-active clients</td>
       </tr>
       <tr>
+          <td>mqtt.keep-alive.max-keep-alive</td>
+          <td>MQTT_KEEP_ALIVE_MAX_KEEP_ALIVE_SEC</td>
+          <td>600</td>
+          <td>Max value allowed by the server for keep-alive that can be used by clients</td>
+      </tr>
+      <tr>
           <td>mqtt.topic.max-segments-count</td>
           <td>MQTT_TOPIC_MAX_SEGMENTS_COUNT</td>
           <td>6000</td>
           <td>Maximum number of segments in topics. If it's too large, processing of topics with too much segments can lead to errors</td>
       </tr>
       <tr>
+          <td>mqtt.shared-subscriptions.processing-type</td>
+          <td>MQTT_SHARED_SUBSCRIPTIONS_PROCESSING_TYPE</td>
+          <td>ROUND_ROBIN</td>
+          <td>Processing strategy type - how messages are split between clients in shared subscription</td>
+      </tr>
+      <tr>
           <td>mqtt.subscription-trie.wait-for-clear-lock-ms</td>
           <td>MQTT_SUB_TRIE_WAIT_FOR_CLEAR_LOCK_MS</td>
           <td>100</td>
-          <td>Maximum pause for clearing subscription-storage from empty nodes</td>
+          <td>Maximum pause for clearing subscription storage from empty nodes</td>
       </tr>
       <tr>
           <td>mqtt.subscription-trie.clear-nodes-cron</td>
@@ -333,22 +477,40 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Timezone for the subscription clearing cron-job</td>
       </tr>
       <tr>
-          <td>mqtt.client-session-cleanup.cron</td>
-          <td>MQTT_CLIENT_SESSION_CLEANUP_CRON</td>
-          <td>0 0 1 * * *</td>
-          <td>Cron job to schedule clearing of expired and not active client-sessions. Defaults to 'every day at 1 o'clock'</td>
+          <td>mqtt.retain-msg-trie.wait-for-clear-lock-ms</td>
+          <td>MQTT_RETAIN_MSG_TRIE_WAIT_FOR_CLEAR_LOCK_MS</td>
+          <td>100</td>
+          <td>Maximum pause for clearing retain msg storage from empty nodes</td>
       </tr>
       <tr>
-          <td>mqtt.client-session-cleanup.zone</td>
-          <td>MQTT_CLIENT_SESSION_CLEANUP_ZONE</td>
+          <td>mqtt.retain-msg-trie.clear-nodes-cron</td>
+          <td>MQTT_RETAIN_MSG_TRIE_CLEAR_NODES_CRON</td>
+          <td>0 0 0 * * *</td>
+          <td>Cron job to schedule clearing of empty retain msg nodes. Defaults to 'every day at midnight'</td>
+      </tr>
+      <tr>
+          <td>mqtt.retain-msg-trie.clear-nodes-zone</td>
+          <td>MQTT_RETAIN_MSG_TRIE_CLEAR_NODES_ZONE</td>
+          <td>UTC</td>
+          <td>Timezone for retain msg clearing cron-job</td>
+      </tr>
+      <tr>
+          <td>mqtt.client-session-expiry.cron</td>
+          <td>MQTT_CLIENT_SESSION_EXPIRY_CRON</td>
+          <td>0 0 * ? * *</td>
+          <td>Cron job to schedule clearing of expired and not active client-sessions. Defaults to 'every hour', e.g. at 20:00:00 UTC</td>
+      </tr>
+      <tr>
+          <td>mqtt.client-session-expiry.zone</td>
+          <td>MQTT_CLIENT_SESSION_EXPIRY_ZONE</td>
           <td>UTC</td>
           <td>Timezone for the client-sessions clearing cron-job</td>
       </tr>
       <tr>
-          <td>mqtt.client-session-cleanup.inactive-session-ttl</td>
-          <td>MQTT_CLIENT_SESSION_CLEANUP_INACTIVE_SESSION_TTL</td>
-          <td>UT604800</td>
-          <td>TTL of inactive sessions. Defaults to one week</td>
+          <td>mqtt.client-session-expiry.max-expiry-interval</td>
+          <td>MQTT_CLIENT_SESSION_EXPIRY_MAX_EXPIRY_INTERVAL</td>
+          <td>604800</td>
+          <td>Max expiry interval allowed for client-sessions in seconds. Defaults to one week</td>
       </tr>
       <tr>
           <td>mqtt.version-3-1.max-client-id-length</td>
@@ -426,13 +588,52 @@ We will list only main configuration parameters below to avoid duplication of th
           <td>Max timeout for packet deletes queue polling. Value set in milliseconds</td>
       </tr>
       <tr>
-          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Spring MVC/Resources parameters</span></td>
-      </tr>  
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Rate Limits parameters</span></td>
+      </tr>
       <tr>
-          <td>spring.mvc.cors.mappings.*</td>
+          <td>mqtt.rate-limits.enabled</td>
+          <td>MQTT_RATE_LIMITS_ENABLED</td>
+          <td>false</td>
+          <td>Enable/disable publish rate limits per client</td>
+      </tr>
+      <tr>
+          <td>mqtt.rate-limits.client-config</td>
+          <td>MQTT_RATE_LIMITS_CLIENT_CONFIG</td>
+          <td>10:1,300:60</td>
+          <td>Limit the maximum publish msgs per client on each server for specified time intervals in seconds. Comma separated list of limit:seconds pairs</td>
+      </tr>
+      <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Spring MVC/Resources parameters</span></td>
+      </tr>
+      <tr>
+          <td>spring.mvc.cors.mappings.[/api/**].allowed-origins</td>
           <td></td>
+          <td>*</td>
+          <td>Comma-separated list of origins to allow. '*' allows all origins. When not set,CORS support is disabled</td>
+      </tr>
+      <tr>
+          <td>spring.mvc.cors.mappings.[/api/**].allowed-methods</td>
           <td></td>
-          <td>Spring CORS configuration</td>
+          <td>*</td>
+          <td>Comma-separated list of methods to allow. '*' allows all methods</td>
+      </tr>
+      <tr>
+          <td>spring.mvc.cors.mappings.[/api/**].allowed-headers</td>
+          <td></td>
+          <td>*</td>
+          <td>Comma-separated list of headers to allow in a request. '*' allows all headers</td>
+      </tr>
+      <tr>
+          <td>spring.mvc.cors.mappings.[/api/**].max-age</td>
+          <td></td>
+          <td>1800</td>
+          <td>How long, in seconds, the response from a pre-flight request can be cached by clients</td>
+      </tr>
+      <tr>
+          <td>spring.mvc.cors.mappings.[/api/**].allow-credentials</td>
+          <td></td>
+          <td>true</td>
+          <td>Set whether credentials are supported. When not set, credentials are not supported</td>
       </tr>
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Spring JPA datasource parameters (for SQL database)</span></td>
@@ -1027,14 +1228,6 @@ We will list only main configuration parameters below to avoid duplication of th
   </tbody>
 </table>
 
-#### Logging
-
-
-#### thingsboard-mqtt-broker.conf
-
-The configuration file for the startup script. Contains Java options and classpath related parameters.
-
 #### logback.xml
 
 The configuration file for logging. Allows controlling the log level, the size of log files and the total size/volume of logs.
-
