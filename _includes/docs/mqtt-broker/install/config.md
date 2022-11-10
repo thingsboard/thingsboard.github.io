@@ -642,13 +642,13 @@ environment variable, default value and description.
           <td>spring.jpa.database-platform</td>
           <td>SPRING_JPA_DATABASE_PLATFORM</td>
           <td>org.hibernate.dialect.PostgreSQLDialect</td>
-          <td>Database SQL dialect for Spring JPA - <b>org.hibernate.dialect.PostgreSQLDialect</b> or <b>org.hibernate.dialect.HSQLDialect</b></td>
+          <td>Database SQL dialect for Spring JPA</td>
       </tr>
       <tr>
           <td>spring.datasource.driverClassName</td>
           <td>SPRING_DRIVER_CLASS_NAME</td>
           <td>org.postgresql.Driver</td>
-          <td>Database driver for Spring JPA - <b>org.postgresql.Driver</b> or <b>org.hsqldb.jdbc.JDBCDriver</b></td>
+          <td>Database driver for Spring JPA</td>
       </tr>
       <tr>
           <td>spring.datasource.url</td>
@@ -674,7 +674,13 @@ environment variable, default value and description.
           <td>16</td>
           <td>This property allows the number of connections in the pool to increase as demand increases. 
                           At the same time, the property ensures that the pool doesn't grow to the point of exhausting a system's resources,
-                           which ultimately affects an application's performance and availability.</td>
+                           which ultimately affects an application's performance and availability</td>
+      </tr>
+      <tr>
+          <td>spring.datasource.hikari.maxLifetime</td>
+          <td>SPRING_DATASOURCE_MAX_LIFETIME</td>
+          <td>600000</td>
+          <td>This property controls the max lifetime of a connection. Only when it is closed will it then be removed</td>
       </tr>
       <tr>
            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Default Kafka parameters</span></td>
@@ -809,6 +815,18 @@ environment variable, default value and description.
           <td>Additional Kafka producer configs for "application-persisted-msg" topic</td>
       </tr>
       <tr>
+          <td>queue.kafka.application-persisted-msg.shared-topic.topic-properties</td>
+          <td>TB_KAFKA_APP_PERSISTED_MSG_SHARED_TOPIC_PROPERTIES</td>
+          <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;replication.factor:1</td>
+          <td>Kafka topic properties for application shared subscription topic</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.application-persisted-msg.shared-topic.additional-consumer-config</td>
+          <td>TB_KAFKA_APP_PERSISTED_MSG_SHARED_ADDITIONAL_CONSUMER_CONFIG</td>
+          <td>max.poll.records:512</td>
+          <td>Additional Kafka consumer configs for application shared subscription topic</td>
+      </tr>
+      <tr>
           <td>queue.kafka.device-persisted-msg.topic</td>
           <td>TB_KAFKA_DEVICE_PERSISTED_MSG_TOPIC</td>
           <td>device_persisted_msg</td>
@@ -831,6 +849,30 @@ environment variable, default value and description.
           <td>TB_KAFKA_DEVICE_PERSISTED_MSG_ADDITIONAL_PRODUCER_CONFIG</td>
           <td></td>
           <td>Additional Kafka producer configs for "device-persisted-msg" topic</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.retained-msg.topic</td>
+          <td>TB_KAFKA_RETAINED_MSG_TOPIC</td>
+          <td>retained_msg</td>
+          <td>Topic for retained messages</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.retained-msg.topic-properties</td>
+          <td>TB_KAFKA_RETAINED_MSG_TOPIC_PROPERTIES</td>
+          <td>segment.bytes:26214400;partitions:1;replication.factor:1</td>
+          <td>Kafka topic properties for "retained_msg" topic</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.retained-msg.additional-consumer-config</td>
+          <td>TB_KAFKA_RETAINED_MSG_ADDITIONAL_CONSUMER_CONFIG</td>
+          <td></td>
+          <td>Additional Kafka consumer configs for "retained_msg" topic</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.retained-msg.additional-producer-config</td>
+          <td>TB_KAFKA_RETAINED_MSG_ADDITIONAL_PRODUCER_CONFIG</td>
+          <td>retries:3</td>
+          <td>Additional Kafka producer configs for "retained_msg" topic</td>
       </tr>
       <tr>
           <td>queue.kafka.client-session.topic</td>
@@ -973,7 +1015,7 @@ environment variable, default value and description.
       <tr>
           <td>queue.kafka.basic-downlink-publish-msg.additional-producer-config</td>
           <td>TB_KAFKA_BASIC_DOWNLINK_PUBLISH_MSG_ADDITIONAL_PRODUCER_CONFIG</td>
-          <td></td>
+          <td>batch.size:32768</td>
           <td>Additional Kafka producer configs for "basic-downlink-publish-msg" topics</td>
       </tr>
       <tr>
@@ -983,7 +1025,7 @@ environment variable, default value and description.
           <td>Prefix for topics for persisting persistent Device messages to Broker nodes</td>
       </tr>
       <tr>
-          <td>queue.kafka.persistent-publish-msg.topic-properties</td>
+          <td>queue.kafka.persistent-downlink-publish-msg.topic-properties</td>
           <td>TB_KAFKA_PERSISTENT_DOWNLINK_PUBLISH_MSG_RESPONSE_TOPIC_PROPERTIES</td>
           <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:12;replication.factor:1</td>
           <td>Kafka topic properties for "persistent-downlink-publish-msg" topics</td>
@@ -1106,6 +1148,12 @@ environment variable, default value and description.
           <td>Time in seconds to wait in consumer thread before retries</td>
       </tr>
       <tr>
+          <td>queue.retained-msg.poll-interval</td>
+          <td>TB_RETAINED_MSG_POLL_INTERVAL</td>
+          <td>100</td>
+          <td>Interval in milliseconds to poll messages from 'retained-msg' topic</td>
+      </tr>
+      <tr>
           <td>queue.client-session.poll-interval</td>
           <td>TB_CLIENT_SESSION_POLL_INTERVAL</td>
           <td>100</td>
@@ -1139,7 +1187,7 @@ environment variable, default value and description.
           <td>queue.client-session-event-response.response-sender-threads</td>
           <td>TB_CLIENT_SESSION_EVENT_RESPONSE_SENDER_THREADS</td>
           <td>8</td>
-          <td>Number of threads for sending Evente responses</td>
+          <td>Number of threads for sending Event responses</td>
       </tr>
       <tr>
           <td>queue.client-session-event-response.poll-interval</td>
@@ -1200,6 +1248,39 @@ environment variable, default value and description.
           <td>TB_BASIC_DOWNLINK_PUBLISH_MSG_POLL_INTERVAL</td>
           <td>100</td>
           <td>Interval in milliseconds to poll messages from 'basic-downlink-publish-msg' topics</td>
+      </tr>
+      <tr>
+           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">ThingsBoard MQTT Broker cache parameters</span></td>
+      </tr>
+      <tr>
+          <td>cache.type</td>
+          <td>CACHE_TYPE</td>
+          <td>caffeine</td>
+          <td>Cache type (only caffeine is available)</td>
+      </tr>
+      <tr>
+          <td>cache.stats.enabled</td>
+          <td>CACHE_STATS_ENABLED</td>
+          <td>true</td>
+          <td>Enable/disable cache stats logging</td>
+      </tr>
+      <tr>
+          <td>cache.stats.intervalSec</td>
+          <td>CACHE_STATS_INTERVAL_SEC</td>
+          <td>60</td>
+          <td>Cache stats logging interval</td>
+      </tr>
+      <tr>
+          <td>caffeine.specs.packetIdAndSerialNumber.timeToLiveInMinutes</td>
+          <td>CACHE_SPECS_PACKET_ID_SERIAL_NUMBER_TTL</td>
+          <td>1440</td>
+          <td>packetIdAndSerialNumber cache TTL</td>
+      </tr>
+      <tr>
+          <td>caffeine.specs.packetIdAndSerialNumber.maxSize</td>
+          <td>CACHE_SPECS_PACKET_ID_SERIAL_NUMBER_MAX_SIZE</td>
+          <td>10000</td>
+          <td>packetIdAndSerialNumber cache max size. maxSize: 0 means the cache is disabled</td>
       </tr>
       <tr>
            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">ThingsBoard MQTT Broker service parameters</span></td>
