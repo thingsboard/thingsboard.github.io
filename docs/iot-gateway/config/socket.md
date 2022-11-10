@@ -271,6 +271,11 @@ This subsection in configuration file looks like:
 ]
 ```
 
+Also, every telemetry and attribute parameter has built-in SET RPC method out of the box, so you don’t need to configure
+it manually. To use them, make sure you set all required parameters (in the case of Socket Connector, these are the following:
+**withResponse**, **methodProcessing**, **encoding**). 
+See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
+
 ## Next steps
 
 Explore guides related to main ThingsBoard features:

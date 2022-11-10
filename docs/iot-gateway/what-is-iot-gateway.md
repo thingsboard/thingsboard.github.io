@@ -25,8 +25,10 @@ ThingsBoard IoT Gateway provides following features:
  - [**ODBC** connector](/docs/iot-gateway/config/odbc/) to collect data from ODBC databases.
  - [**REST** connector](/docs/iot-gateway/config/rest/) to create endpoints and collect data from incoming HTTP requests.
  - [**SNMP** connector](/docs/iot-gateway/config/snmp/) to collect data from SNMP managers.
- - [**FTP** connector](/docs/iot-gateway/config/ftp/) to collect data from FTP server
- - [**Socket** connector](/docs/iot-gateway/config/socket/) to collect data from IoT device that are connector through TCP/UDP protocol
+ - [**FTP** connector](/docs/iot-gateway/config/ftp/) to collect data from FTP server.
+ - [**Socket** connector](/docs/iot-gateway/config/socket/) to collect data from IoT devices that are connector through TCP/UDP protocol.
+ - [**XMPP** connector](/docs/iot-gateway/config/xmpp/) to collect data from IoT devices that are connector through XMPP protocol.
+ - [**OCPP** connector](/docs/iot-gateway/config/ocpp/) to communicate between Charge Point and Central System.
  - [**Custom** connector](/docs/iot-gateway/custom/) to collect data from IoT devices that are connected by different protocols. (You can create your own connector for the requires protocol).
  - **Persistence** of collected data to guarantee data delivery in case of network or hardware failures.
  - **Automatic reconnect** to ThingsBoard cluster.
