@@ -210,4 +210,4 @@ eksctl delete cluster -r us-east-1 -n thingsboard-mqtt-broker-cluster -w
 
 ## Next steps
 
-{% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
+{% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

@@ -92,3 +92,7 @@ Execute the following command to delete all resources (including database):
 ./k8s-delete-all.sh
 ```
 {: .copy-code}
+
+## Next steps
+
+{% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

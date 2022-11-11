@@ -165,3 +165,7 @@ To start the container:
 docker-compose start
 ```
 {: .copy-code}
+
+## Next steps
+
+{% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

@@ -27,7 +27,7 @@ It's written using Java and uses Kafka as internal tool for persisting and proce
 - Access control (ACL) based on client ID, username or SSL certificate
 - Clients status and subscriptions REST query support
 - Rate limits of incoming messages per client
-- MQTT 5 ?
+- MQTT 5 [*](https://github.com/thingsboard/thingsboard-mqtt-broker#thingsboard-mqtt-broker)
 
 
 #### Architecture
@@ -39,4 +39,4 @@ ThingsBoard MQTT Broker is designed to be:
 * **robust and efficient**: a single server node can handle tens of thousands of clients and tens of thousands of messages per second, depending on the use-case.
 * **durable**: never lose your data.
 
-See [**ThingsBoard MQTT Broker Architecture**](/docs/{{docsPrefix}}reference) for more details.
+See [**ThingsBoard MQTT Broker Architecture**](/docs/mqtt-broker/architecture) for more details.
