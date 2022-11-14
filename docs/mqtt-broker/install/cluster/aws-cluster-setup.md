@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-mqtt-broker
-title: Setup using AWS infrastructure
+title: Cluster setup using AWS infrastructure
 description: ThingsBoard MQTT Broker microservices setup with Kubernetes in AWS EKS
 
 ---
@@ -14,7 +14,16 @@ This guide will help you to set up ThingsBoard MQTT Broker in AWS EKS.
 
 {% include templates/install/aws/eks-prerequisites.md %}
 
-## Step 1. Clone ThingsBoard CE K8S scripts repository
+### Pull ThingsBoard MQTT Broker image from docker hub
+
+Run the following command to verify that you can pull the image from the Docker hub.
+
+```bash
+docker pull thingsboard/tb-mqtt-broker:{{ site.release.broker_full_ver }}
+```
+{: .copy-code}
+
+## Step 1. Open ThingsBoard MQTT Broker K8S scripts repository
 
 ```bash
 git clone https://github.com/thingsboard/thingsboard-mqtt-broker.git
@@ -51,8 +60,10 @@ eksctl create cluster -f cluster.yml
 
 ## Step 3. Create AWS load-balancer controller
 
-After the cluster is ready you'll need to create AWS load-balancer controller.
+Once the cluster is ready you'll need to create AWS load-balancer controller.
 You can do it by following [this](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) guide.
+
+Provisioning of the AWS load-balancer controller is a **very important step** that is required for those load balancers to work properly.
 
 ## Step 4. Amazon PostgreSQL DB Configuration
 
@@ -70,9 +81,11 @@ Here you should choose security group corresponding to the one on the screen:
 
 ![image](/images/install/cloud/aws-rds-connectivity-security-group.png)
 
-**Note**: in order to make PostgreSQL more secure you may create the separate security group,
-configure access only to the 5432 port and from the ThingsBoard MQTT Broker nodes.
-This can be achieved if you assigned security group to the `main-node-group` node-group in the `cluster.yml` file.
+**Note**, some recommendations:
+
+* Use ‘Production’ template for high availability. It enables a lot of useful settings by default;
+* Consider creation of custom parameters group for your RDS instance. It will make change of DB parameters easier;
+* Consider deployment of the RDS instance into private subnets. This way it will be nearly impossible to accidentally expose it to the internet.
 
 Make sure that `thingsboard_mqtt_broker` database is created along with PostgreSQL instance (or create it afterwards).
 
@@ -102,15 +115,20 @@ Also you should enable `Plaintext` communication between clients and brokers:
 
 ![image](/images/install/cloud/aws-msk-encryption.png)
 
-**Note**: in order to make MSK more secure you may create the separate security group,
-configure access only to the 9092 port and from the ThingsBoard MQTT Broker nodes.
-This can be achieved if you assigned security group to the `main-node-group` node-group in the `cluster.yml` file.
+**Note**, some recommendations:
 
-## Step 6. Configure links to the Kafka (Amazon MSK)/Redis/Postgres
+* Make sure your Apache Kafka version is 2.6.x;
+* Make sure your MSK instance is accessible from the ThingsBoard cluster.
+  The easiest way to achieve this is to deploy the MSK instance in the same VPC.
+  We also recommend to use private subnets. This way it will be nearly impossible to accidentally expose it to the internet;
+* Use m5.large or similar instance types;
+* Use default 'Monitoring' settings or enable 'Enhenced topic level monitoring'.
+
+## Step 6. Configure links to the Kafka (Amazon MSK)/Postgres
 
 ### Amazon RDS PostgreSQL
 
-On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_DATASOURCE_URL` in the `tb-broker-configmap.yml` instead of `your_url`.
+On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_DATASOURCE_URL` in the `tb-broker-configmap.yml`.
 
 ![image](/images/install/cloud/aws-postgres-endpoint.png)
 
@@ -128,6 +146,8 @@ Where **$CLUSTER_ARN** is the Amazon Resource Name (ARN) of the MSK cluster:
 ![image](/images/install/cloud/aws-msk-arn.png)
 
 You'll need to paste data from the `BootstrapBrokerString` to the `TB_KAFKA_SERVERS` environment variable in the `tb-broker.yml` file.
+
+Otherwise, navigate to ‘Details’ and click ‘View client information’. Copy bootstrap server information in plaintext.
 
 ## Step 7. Installation
 
@@ -157,7 +177,7 @@ Execute the following command to run installation:
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see `tb-broker-0` pod.
 Every pod should be in the `READY` state.
 
-## Step 9. Using
+## Step 9. Validate the setup
 
 Now you can open ThingsBoard MQTT Broker web interface in your browser using DNS name of the load balancer.
 
@@ -178,6 +198,10 @@ Use the following default credentials:
 
 - **System Administrator**: sysadmin@thingsboard.org / sysadmin
 
+#### Troubleshooting
+
+In case of any issues you can examine service logs for errors. For example to see ThingsBoard MQTT broker logs execute the following command:
+
 ```
 kubectl logs -f tb-broker-0
 ```
@@ -187,6 +211,8 @@ Or use `kubectl get pods` to see the state of the pods.
 Or use `kubectl get services` to see the state of all the services.
 Or use `kubectl get statefulsets` to see the state of all the deployments.
 See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) command reference for details.
+
+## Cluster deletion
 
 Execute the following command to delete ThingsBoard MQTT Broker nodes:
 

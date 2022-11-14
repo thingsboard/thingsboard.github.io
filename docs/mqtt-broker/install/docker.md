@@ -35,7 +35,7 @@ version: '2.2'
 services:
   postgres:
     restart: always
-    image: "postgres:11.6"
+    image: "postgres:12.8"
     ports:
     - "5432"
     environment:
@@ -53,7 +53,7 @@ services:
       ZOO_SERVERS: server.1=zookeeper:2888:3888;zookeeper:2181
   kafka:
     restart: always
-    image: "wurstmeister/kafka:2.12-2.3.0"
+    image: "wurstmeister/kafka:2.13-2.7.0"
     depends_on:
       - zookeeper
     ports:

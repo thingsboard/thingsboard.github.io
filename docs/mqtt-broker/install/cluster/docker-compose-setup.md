@@ -9,7 +9,7 @@ description: Cluster setup using Docker Compose
 {:toc}
 
 
-This guide will help you to setup ThingsBoard in cluster mode using Docker Compose.
+This guide will help you to set up ThingsBoard MQTT Broker in cluster mode using Docker Compose.
 
 ## Prerequisites
 
