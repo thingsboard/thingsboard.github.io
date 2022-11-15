@@ -11,7 +11,7 @@ description: MQTT Options configuration
 ## MQTT Options
 
 **Note:** To change some server parameter you need to update the corresponding environment variable
-(you can do it in `thingsboard-mqtt-broker.conf` file if you have standalone deployment or in `environment` section of deployment script if you use docker-compose or k8s).
+(you can do it in `environment` section of deployment script if you use docker-compose or k8s).
 
 ## Advanced MQTT Options
 

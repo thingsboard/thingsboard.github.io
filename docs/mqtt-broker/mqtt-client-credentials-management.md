@@ -49,7 +49,7 @@ curl --location --request POST 'http://localhost:8083/api/mqtt/client/credential
 
 Where:
 - **parentCertCommonName** - the common name of the certificate in the certificate chain.
-  **Note:** Certificates that are closer to client's certificate have higher priority than certificates which are closer to the root certificate.
+  **Note**, certificates that are closer to client's certificate have higher priority than certificates which are closer to the root certificate.
 - **authorizationRulesMapping** - mapping rules to map extracted from the common name keyword to the authorization rules (to allow client publish and subscribe only to certain topics)
 
 This configuration will allow to log in clients with the SSL certificate that has _Root Common Name_ as the root certificate and where the certificate common name contains string _test_.
