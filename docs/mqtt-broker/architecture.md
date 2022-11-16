@@ -14,7 +14,7 @@ This article describes ThingsBoard MQTT broker architecture and consists of a de
 ThingsBoard MQTT broker is designed to be:
 
 * **scalable**: horizontally scalable platform, build using leading open-source technologies.
-* **fault-tolerant**: no single-point-of-failure, every node in the cluster is identical.
+* **fault-tolerant**: no single-point-of-failure, every broker (node) in the cluster is identical.
 * **robust and efficient**: single server node can handle tens or even hundreds thousands of clients depending on use case.
   ThingsBoard MQTT broker cluster can handle millions of clients.
 * **durable**: never lose your data. ThingsBoard MQTT broker supports Kafka queue implementation to provide extremely high message durability.
@@ -22,6 +22,10 @@ ThingsBoard MQTT broker is designed to be:
 #### Architecture diagram
 
 TODO: Architecture diagram will be placed here.
+
+The main parts of the broker nodes are: 
+- the heart of the system - MQTT broker.
+- Web UI.
 
 ## Motivation
 
@@ -79,12 +83,12 @@ MQTT clients for which the above non-persistent conditions are not matched are c
 for **MQTT v3.x** clients or if `sessionExpiryInterval` is greater than `0` (regardless of the `clean_start` flag) or if `clean_start` flag is set to `false`
 plus `sessionExpiryInterval` is `0(or empty)` for **MQTT v5 clients**.
 
-For both types of clients we provide [instruments](/docs/mqtt-broker/mqtt-options/) to regulate how many messages can be persisted per client and for what period of time.
+For both types of clients we provide [instruments](/docs/mqtt-broker/mqtt-options/#device-persistence-options) to regulate how many messages can be persisted per client and for what period of time.
 
 #### DEVICE client
 
 For **DEVICE** clients we are using _device_persisted_msg_ Kafka topic, where published messages are pushed from _publish_msg_ topic.
-The separate thread(s) (Kafka consumer) reads those messages and uses PostgreSQL database as persistence storage
+The separate thread(s) (Kafka consumer) reads those messages and pushes them to PostgreSQL database used as persistence storage
 because such clients don't usually need to receive large amounts of messages or even don't care if messages got lost when the client is offline.
 This approach provides a convenient way to restore persisted messages when **DEVICE** is reconnected and at the same time it has a decent performance
 for a small incoming message rate.
@@ -98,6 +102,19 @@ This way we can guarantee that at any point in time none of the messages gets lo
 ### PostgreSQL database
 
 ThingsBoard MQTT Broker uses a database to store entities (users, user credentials, MQTT client credentials, published messages for **DEVICES**, etc.).
+
+It is worth noting, as an SQL database, Postgres has limitations in terms of message persistence speed (i.e. how many writes per second are possible) 
+and surely it can not compete with Kafka in that. Take in mind the 3-5k (depending on the hardware where Postgres is installed) 
+operations per second as limits based on our experience.
+So, we recommend using **APPLICATION** clients for use cases that overcome the mentioned limits.
+
+We plan to extend the list of possible third-parties used as persistence storage for client messages
+in the future releases with more reliable and sophisticated solutions.
+
+### Web UI
+
+ThingsBoard MQTT Broker provides a lightweight easy-to-use GUI. It will help to administrate the broker in an intuitive and useful way.
+One can manage MQTT client credentials, control the state of client sessions and subscriptions, and even more in future releases.
 
 ### Subscriptions Trie
 
