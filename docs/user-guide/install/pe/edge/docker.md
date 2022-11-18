@@ -14,10 +14,14 @@ This guide will help you to install and start ThingsBoard Edge using Docker on L
 
 {% include templates/edge/install/prerequisites.md %}
 
-{% include templates/edge/install/hardware-requirements.md %}
+#### Docker installation
 
 - [Install Docker CE](https://docs.docker.com/engine/install/){:target="_blank"}
 - [Install Docker Compose](https://docs.docker.com/compose/install/){:target="_blank"}
+
+{% include templates/install/docker-install-note.md %}
+
+{% include templates/edge/install/hardware-requirements.md %}
 
 ### Step 1. Pull ThingsBoard Edge Images
 
