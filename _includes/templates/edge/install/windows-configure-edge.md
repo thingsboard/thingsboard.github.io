@@ -73,6 +73,8 @@ Please locate and change next parameters in ThingsBoard Edge configuration file 
 <br>**bind_port: "${MQTT_BIND_PORT:11883}"**
 <br>**...**
 <br>**bind_port: "${COAP_BIND_PORT:15683}"**
+<br>**...**
+<br>**bind_port: "${INTEGRATIONS_RPC_PORT:19090}"**
 
 Please make sure ports above are not used by any other application.
 
