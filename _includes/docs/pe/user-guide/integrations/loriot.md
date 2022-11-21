@@ -28,7 +28,12 @@ Click on the **"plus"** and on **"Create new converter".**
 To view the events, enable **Debug.** In the function decoder field, specify a script to parse
 and transform data. 
 
-**NOTE** Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when done debugging.
+{% capture difference %}
+**NOTE**
+<br>
+Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when done debugging.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 {% include images-gallery.html imageCollection="uplink" %}
 
@@ -131,7 +136,6 @@ Copy the configuration example for the converter (or your own configuration) and
 
 {% include images-gallery.html imageCollection="uplink_edit" %}
 
-
 ## Create Integration
 
 Now that the Uplink converter has been created, it is possible to create an integration.
@@ -165,7 +169,7 @@ Also need to specify this in LORIOT:
 Once the Headers filter has been configured, it will also need to be specified in the uplink message as follows. Replace $VALUE with corresponding value.
 
 ```
--H “Authorization:$VALUE”
+-H "Authorization:$VALUE"
 ```
 
 ## Send test Uplink message
@@ -189,16 +193,16 @@ curl -v -X POST -d "{\"EUI\":\"$YOUR_EUI_DEVICE\",\"deviceType\":\"temperature-s
 ```
 {: .copy-code}
 
-{% include images-gallery.html imageCollection="terminal" %}
+![image](/images/user-guide/integrations/loriot/terminal.png)
 
 With the **enable security** option: replace $YOUR_EUI_DEVICE, $YOUR_HTTP_ENDPOINT_URL and $VALUE with corresponding values. 
 
 ```bash
-curl -v -X POST -d "{\"EUI\":\"$YOUR_EUI_DEVICE\",\"deviceType\":\"temperature-sensor\",\"data\":\"2A3F\",\"port\":1,\"cmd\":\"rx\",\"dr\":\"SF12 BW125 4/5\",\"snr\":1.2,\"ack\":\"false\",\"freq\":868500000,\"fcnt\":1,\"rssi\":-130,\"ts\":1613745998000}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json" -H “Authorization:$VALUE”
+curl -v -X POST -d "{\"EUI\":\"$YOUR_EUI_DEVICE\",\"deviceType\":\"temperature-sensor\",\"data\":\"2A3F\",\"port\":1,\"cmd\":\"rx\",\"dr\":\"SF12 BW125 4/5\",\"snr\":1.2,\"ack\":\"false\",\"freq\":868500000,\"fcnt\":1,\"rssi\":-130,\"ts\":1613745998000}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json" -H "Authorization:$VALUE"
 ```
 {: .copy-code}
 
-{% include images-gallery.html imageCollection="terminal_1" %}
+![image](/images/user-guide/integrations/loriot/terminal.png)
 
 The created device with data can be seen in the section **Device groups -> All**
 
