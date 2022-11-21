@@ -190,11 +190,8 @@ Now you can proceed to the next steps.
 
 **How can I enable free trial?**
 
-Customer may still use <a href="https://thingsboard.cloud" target="blank">ThingsBoard Professional Edition Live Demo</a> for that. 
-30 days of seamless experience and the newest features, except white-labeling, from the latest source code! 
-
-**Note:** Live Demo is a shared environment with hardware and software limitations. 
-It is introduced to host multiple trial tenants on the same server instance(s).
+Customer may still use <a href="https://thingsboard.cloud" target="blank">ThingsBoard Cloud</a> for that. 
+30 days of seamless experience and the newest features, except white-labeling, from the latest source code!
 <br/><br/>
 
 **What is the Total Cost of Ownership (TCO) for my TB PE instance?**
