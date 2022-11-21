@@ -101,7 +101,7 @@ toc:
     path: /docs/user-guide/integrations/opc-ua/
   - title: Actility ThingPark
     path: /docs/user-guide/integrations/thingpark/
-  - title: TheThingsNetwork
+  - title: TheThingsStack
     path: /docs/user-guide/integrations/ttn/
   - title: TheThingsIndustries
     path: /docs/user-guide/integrations/tti/
