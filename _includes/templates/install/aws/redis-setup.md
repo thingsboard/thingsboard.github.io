@@ -8,7 +8,8 @@ Please open AWS console and navigate to ElastiCache->Redis->Create.
 
 {% include images-gallery.html imageCollection="redisSetup"%}
 
-Once the Redis cluster switch to the 'Available' state, navigate to 'Details' and copy 'Primary Endpoint' without ':6379' port sufix.
-We will refer to it later in this guide using **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT**.
+Once the Redis cluster switch to the 'Available' state, navigate to 'Details' and copy 'Primary Endpoint' without ':6379' port sufix, it`s **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT**.
 
 {% include images-gallery.html imageCollection="redisEndpointUrl"%}
+
+Edit “tb-redis-configmap.yml” and replace **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT**.
