@@ -35,7 +35,7 @@ Support the existing functionality and improve it;
 Deep dive into java performance improvements during heavy load testing.
 
 ### We offer:
-Working on an open-source IoT platform that has thousands of installations all over the world and 10,000+ stars on GitHub;
+Working on an open-source IoT platform that has thousands of installations all over the world and 12,000+ stars on GitHub;
 
 Full-time office work with flexible work hours;
 
