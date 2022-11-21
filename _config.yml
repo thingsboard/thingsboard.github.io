@@ -88,3 +88,4 @@ release:
   edge_full_ver: 3.4.1EDGE
   pe_edge_ver: 3.4.1pe
   pe_edge_full_ver: 3.4.1EDGEPE
+  broker_full_ver: 1.0.0

@@ -349,48 +349,11 @@ This part of configuration will look like:
         ]
 ```
 
-Also, every telemetry and attribute parameter has **GET** and **SET** RPC methods out of the box, so you don't need to configure
-it manually.
-For example, if you have some telemetry parameter:
-```json
-"timeseries": [
-  {
-    "key": "temperature",
-    "path": "${ns=3;i=1001}"
-  }
-]
-```
-To get temperature telemetry current value:
-```bash
-get ns=3;i=1001
-```
-Response:
-```json
-{"get": 25.34, "code": 200}
-```
-
-To set temperature telemetry value:
-```bash
-set ns=3;i=1001 23
-```
-
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-rpc-1.png)
-{: refdef}
-<br/>
-To set new value (T3000) for **"model"** attribute, run the query:
-```bash
-set ns=3;i=1008; T3000
-```
-
-Response:
-```json
-{"success":"true","code": 200}
-```
-
-{:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-opc-ua-rpc-2.png)
-{: refdef}
+{% capture methodFilterOptions %}
+Also, every telemetry and attribute parameter has built-in GET and SET RPC methods out of the box, so you don’t need to configure
+it manually. See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
+{% endcapture %}
+{% include templates/info-banner.md content=methodFilterOptions %}
 
 ### Subsection "attributes_updates"
 This subsection contains configuration for attribute updates request from ThingsBoard platform instance.

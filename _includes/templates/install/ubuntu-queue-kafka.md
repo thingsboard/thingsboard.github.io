@@ -57,7 +57,7 @@ sudo nano /etc/systemd/system/kafka.service
 ```
 {: .copy-code}
 
-Add the below content. Make sure **to replace** "PUT_YOUR_JAVA_PATH" with your **real JAVA_HOME path** as per the Java installed on your system, by default like "/usr/lib/jvm/java-11-openjdk-xxx": 
+Add the below content. Make sure **to replace** "PUT_YOUR_JAVA_PATH" with your **real JAVA_HOME path** as per the Java installed on your system, by default like "/usr/lib/jvm/java-11-openjdk-xxx":
 ```bash
 [Unit]
 Description=Apache Kafka Server

@@ -48,7 +48,7 @@ Mapping subsection for Example 1 will look like:
             "type": "string",
             "key": "model",
             "value": "${sensorModel}"
-          }
+          },
           {
             "type": "string",
             "key": "${sensorModel}",
