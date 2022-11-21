@@ -8,12 +8,14 @@
 {% else %}
    {% assign docsTag = "ce" %}
 {% endif %}
+{% assign foundProduct = site.data.products | where: "tag", docsTag %}
+{% assign productInfo = foundProduct[0] %}
 {% for thistoc in siteData.globals.tocs %}{% if foundTOC %}{% break %}{% else %}{% assign tree = siteData[thistoc].toc %}{% include tocsearch.html %}{% endif %}{% endfor %}
 {% for override in siteData.overrides.overrides %}{% if page.path contains override.path %}{% assign notitle = "true" %}{% endif %}{% endfor %}
 {% if siteData[foundTOC].notitle == "true" or page.notitle == "true" %}{% assign notitle = "true" %}{% endif %}
 
 <!Doctype html>
-<html id="docs" class="{{siteData[foundTOC].bigheader}}">
+<html id="docs" class="{{siteData[foundTOC].bigheader}} {{productInfo.tag}}">
 
 {% include head-header.html docsTag=docsTag %}
 
@@ -22,6 +24,19 @@
     <button class="searchButton"></button>
 </div>
 
+<div class="products-selector">
+    <div class="product-info">
+        <div class="product-title">
+            {{productInfo.title}}
+        </div>
+    </div>
+    <div class="products">
+        {% for product in site.data.products %}
+        {% include find-product-url.html %}
+        <a href="{{productUrl}}" class="product{% if product.tag == docsTag %} active{% endif %}">{{product.title}}</a>
+        {% endfor %}
+    </div>
+</div>
 <!--  HERO  -->
 <section id="hero">
   <div id="hero-content">
@@ -166,6 +181,22 @@
 <script>
     jqueryDefer(function () {
         $(document).ready(function () {
+
+            // Products selector
+
+            let productsSelector = $('.products-selector');
+            $(window).click(function(e) {
+                if (productsSelector[0].contains(e.target)) {
+                    if (productsSelector.hasClass('active')) {
+                        productsSelector.removeClass('active');
+                    } else {
+                        productsSelector.addClass('active');
+                    }
+                } else {
+                    productsSelector.removeClass('active');
+                }
+            });
+
             var allCodeBlocksElements = $(".copy-code");
             allCodeBlocksElements.each(function (i) {
                 var codeBlock = $(this);

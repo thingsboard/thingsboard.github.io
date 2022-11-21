@@ -1,21 +1,3 @@
-- title: Cloud
-  fulltitle: ThingsBoard Cloud
-  description: ThingsBoard Documentation
-  tag: paas
-  icon: /images/thingsboard-c-icon.svg
-  path: /docs/paas/
-  guides: /docs/paas/guides/
-  getStarted: /docs/paas/getting-started-guides/helloworld/
-  docsPrefix: /docs/paas/
-- title: Professional Edition
-  fulltitle: ThingsBoard Professional Edition
-  description: ThingsBoard Documentation
-  tag: pe
-  icon: /images/thingsboard-p-icon.svg
-  path: /docs/pe/
-  guides: /docs/pe/guides/
-  getStarted: /docs/pe/getting-started-guides/helloworld/
-  docsPrefix: /docs/pe/
 - title: Community Edition
   fulltitle: ThingsBoard Community Edition
   description: ThingsBoard Documentation
@@ -25,6 +7,24 @@
   guides: /docs/guides/
   getStarted: /docs/getting-started-guides/helloworld/
   docsPrefix: /docs/
+- title: Professional Edition
+  fulltitle: ThingsBoard Professional Edition
+  description: ThingsBoard Documentation
+  tag: pe
+  icon: /images/thingsboard-p-icon.svg
+  path: /docs/pe/
+  guides: /docs/pe/guides/
+  getStarted: /docs/pe/getting-started-guides/helloworld/
+  docsPrefix: /docs/pe/
+- title: Cloud
+  fulltitle: ThingsBoard Cloud
+  description: ThingsBoard Documentation
+  tag: paas
+  icon: /images/thingsboard-c-icon.svg
+  path: /docs/paas/
+  guides: /docs/paas/guides/
+  getStarted: /docs/paas/getting-started-guides/helloworld/
+  docsPrefix: /docs/paas/
 - title: Edge
   fulltitle: ThingsBoard Edge
   description: ThingsBoard Edge Documentation

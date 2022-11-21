@@ -1,7 +1,8 @@
 ---
 layout: docwithnav-pe-edge
-title: ThingsBoard Edge
-description: ThingsBoard Edge to distribute data processing and analysis using edge computing
+title: ThingsBoard PE Edge
+description: ThingsBoard PE Edge to distribute data processing and analysis using edge computing
+
 
 ---
 

@@ -346,7 +346,12 @@
                     let targetSubMenu = $('nav.head-menu > div.sub-menu-container > div#'+subMenuId);
                     targetSubMenu.css('display', 'block');
                     submenuContainer.css('overflow', 'visible');
-                    let left = item.position().left + (item.outerWidth() - targetSubMenu.outerWidth()) / 2;
+                    let offset = (item.outerWidth() - targetSubMenu.outerWidth()) / 2;
+                    let left = item.position().left + offset;
+                    let windowOverflow = window.innerWidth - (item.offset().left + offset + targetSubMenu.outerWidth());
+                    if (windowOverflow < 0) {
+                        left += windowOverflow;
+                    }
                     submenuContainer.css('left', left + 'px');
                     if (!subMenuActive) {
                         submenuContainer.addClass('active');
@@ -379,23 +384,6 @@
                     }
                 }
             });
-
-            // Products selector
-
-            {% if docsTag %}
-            let productsSelector = $('.products-selector');
-            $(window).click(function(e) {
-                if (productsSelector[0].contains(e.target)) {
-                    if (productsSelector.hasClass('active')) {
-                        productsSelector.removeClass('active');
-                    } else {
-                        productsSelector.addClass('active');
-                    }
-                } else {
-                    productsSelector.removeClass('active');
-                }
-            });
-            {% endif %}
 
             $( document ).ready(function() {
                 // Rogue line numbers fix (don't show line numbers for 1 row)
@@ -468,35 +456,14 @@
     </script>
 </head>
 <body>
-{% if productInfo %}
-<div class="products-selector">
-    <img src="{{productInfo.icon}}"/>
-    <div class="product-info">
-        <div class="product-title">
-            {{productInfo.title}}
-        </div>
-        <div class="product-description">
-            {{productInfo.description}}
-        </div>
-    </div>
-    <div class="products">
-        {% for product in site.data.products %}
-        {% include find-product-url.html %}
-        <a href="{{productUrl}}" class="product{% if product.tag == docsTag %} active{% endif %}">{{product.title}}</a>
-        {% endfor %}
-    </div>
-</div>
-{% endif %}
 <header>
     <div class="logo-burger">
-        {% unless docsTag %}
         <a href="/support-ukraine" class="support-ukraine">
             <p><i class="fa fa-ban" aria-hidden="true"></i>&nbsp;Stop the war</p>
             <img src="/images/animated-ukraine-flag.gif"/>
             <p>Support Ukraine</p>
         </a>
         <a href="/" class="logo"></a>
-        {% endunless %}
         <button onclick="Burger()" class="burger"></button>
         <div id="githubButtonContainer">
             <a class="github-button" href="https://github.com/thingsboard/thingsboard" data-show-count="true"
@@ -511,11 +478,6 @@
             <li class="nav-services" data-submenu-id="nav-services">
                 <a onclick="listburg('nav-services')">Services</a>
             </li>
-            {% unless docsTag %}
-            <li class="nav-developers" data-submenu-id="nav-developers">
-                <a onclick="listburg('nav-developers')">Developers</a>
-            </li>
-            {% endunless %}
             <li class="nav-cases" data-submenu-id="nav-cases">
                 <a id="use-cases-link" href="/iot-use-cases/" style="cursor: pointer;">Use Cases</a>
             </li>
@@ -528,6 +490,9 @@
             <li class="nav-partners" data-submenu-id="nav-partners">
                 <a onclick="listburg('nav-partners')">Partners</a>
             </li>
+            <li class="nav-docs" data-submenu-id="nav-docs">
+                <a onclick="listburg('nav-docs')">Docs</a>
+            </li>
             <div class="indicator"><div class="head-arrow"></div><div class="line"></div><div class="sub-background"></div></div>
         </ul>
         <div class="sub-menu-container">
@@ -536,11 +501,11 @@
                     <div class="sub-groups">
                         <div class="group">
                             <p class="group-name">IoT platforms</p>
-                            <a class="cloud-lnk" href="/products/paas/">
-                                <img src="/images/thingsboard-c-icon.svg">
+                            <a class="com-lnk" href="/">
+                                <img src="/images/thingsboard-cm-icon.svg">
                                 <div class="sub-text">
-                                    <h1>Cloud</h1>
-                                    <p>Platform as a service</p>
+                                    <h1>Community Edition</h1>
+                                    <p>Open source platform</p>
                                 </div>
                             </a>
                             <a class="prof-lnk" href="/products/thingsboard-pe/">
@@ -550,11 +515,11 @@
                                     <p>Advanced IoT platform</p>
                                 </div>
                             </a>
-                            <a class="com-lnk" href="/">
-                                <img src="/images/thingsboard-cm-icon.svg">
+                            <a class="cloud-lnk" href="/products/paas/">
+                                <img src="/images/thingsboard-c-icon.svg">
                                 <div class="sub-text">
-                                    <h1>Community Edition</h1>
-                                    <p>Open source platform</p>
+                                    <h1>Cloud</h1>
+                                    <p>Platform as a service</p>
                                 </div>
                             </a>
                         </div>
@@ -644,43 +609,84 @@
                     </a>
                 </ul>
             </div>
-            {% unless docsTag %}
-                {% unless productTag %}
-                    {% assign productTag = "ce" %}
-                {% endunless %}
-                {% assign foundDevProduct = site.data.products | where: "tag", productTag %}
-                {% assign devProductInfo = foundDevProduct[0] %}
-
-                <div id="nav-developers" class="centered-sub">
-                    <ul class="sub-menu developers">
-                        <a href="{{devProductInfo.path}}">
-                            <img src="/images/doc-icon.svg">
-                            <div class="sub-text">
-                                <h1>Documentation</h1>
-                                <p>Detailed information about the ThingsBoard IoT platform</p>
-                            </div>
-                        </a>
-                        {% if devProductInfo.guides %}
-                            <a href="{{devProductInfo.guides}}">
-                                <img src="/images/guides-icon.svg">
+            <div id="nav-docs" class="centered-sub">
+                <ul class="sub-menu products">
+                    <div class="sub-groups">
+                        <div class="group">
+                            <p class="group-name">IoT platforms</p>
+                            <a class="com-lnk" href="/docs/">
+                                <img src="/images/thingsboard-cm-icon.svg">
                                 <div class="sub-text">
-                                    <h1>Guides</h1>
-                                    <p>Step-by-step instructions</p>
+                                    <h1>Community Edition</h1>
+                                    <p>Open source platform</p>
                                 </div>
                             </a>
-                        {% endif %}
-                        {% if devProductInfo.getStarted %}
-                            <a href="{{devProductInfo.getStarted}}">
-                                <img src="/images/start-icon.svg">
+                            <a class="prof-lnk" href="/docs/pe/">
+                                <img src="/images/thingsboard-p-icon.svg">
                                 <div class="sub-text">
-                                    <h1>Get Started</h1>
-                                    <p>Tutorial of the most popular features</p>
+                                    <h1>Professional Edition</h1>
+                                    <p>Advanced IoT platform</p>
                                 </div>
                             </a>
-                        {% endif %}
-                    </ul>
-                </div>
-            {% endunless %}
+                            <a class="cloud-lnk" href="/docs/paas/">
+                                <img src="/images/thingsboard-c-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Cloud</h1>
+                                    <p>Platform as a service</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="group">
+                            <p class="group-name">Product ecosystem</p>
+                            <a class="edge-lnk" href="/docs/edge/">
+                                <img src="/images/thingsboard-e-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Edge</h1>
+                                    <p>Edge computing</p>
+                                </div>
+                            </a>
+                            <a class="gateway-lnk" href="/docs/iot-gateway/">
+                                <img src="/images/gateway-icon.svg">
+                                <div class="sub-text">
+                                    <h1>IoT Gateway</h1>
+                                    <p>Connect legacy protocols</p>
+                                </div>
+                            </a>
+                            <a class="license-lnk" href="/products/license-server/">
+                                <img src="/images/license-icon.svg">
+                                <div class="sub-text">
+                                    <h1>License Server</h1>
+                                    <p>Billing solution</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="group">
+                            <p class="group-name">&nbsp;</p>
+                            <a class="trendz-lnk" href="/docs/trendz/">
+                                <img src="/images/trendz-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Trendz Analytics</h1>
+                                    <p>Data analytics and Prediction</p>
+                                </div>
+                            </a>
+                            <a class="mobile-lnk" href="/docs/mobile/">
+                                <img src="/images/tb-mobile-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Mobile Application</h1>
+                                    <p>IoT mobile product</p>
+                                </div>
+                            </a>
+                            <a class="mobile-pe-lnk" href="/docs/pe/mobile/">
+                                <img src="/images/tb-pe-mobile-icon.svg">
+                                <div class="sub-text">
+                                    <h1>PE Mobile Application</h1>
+                                    <p>Advanced IoT mobile product</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </ul>
+            </div>
             <div id="nav-cases" class="centered-sub">
                 <ul class="sub-menu cases">
                     <div class="sub-groups">
