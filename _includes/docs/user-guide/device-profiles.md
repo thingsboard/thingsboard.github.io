@@ -24,7 +24,12 @@ To avoid this painful and mundane activity, since ThingsBoard 3.2, you can speci
 The new Rule Chain will receive all telemetry, device activity(Active/Inactive), and device lifecycle(Created/Updated/Deleted) events.
 This setting is available in the Device Profile wizard and in the Device Profile details.  
 
-{% include images-gallery.html imageCollection="ruleChainSetting" %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/device-profiles/device-profile-rule-chain-1-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/device-profiles/device-profile-rule-chain-1-pe.png)
+{% endif %}
 
 ### Queue Name
 
@@ -35,15 +40,34 @@ For example, you might want to isolate data processing for Fire Alarm/Smoke Dete
 This way, even if your system has a peak load produced by millions of water meters, whenever the Fire Alarm is reported, it will be processed without delay.
 Separation of the queues also allows you to customize different [submit](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy) and [processing](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy) strategies.
 
-This setting is available in the Device Profile wizard and Device Profile details.{% unless docsPrefix == 'paas/' %}
-**Please note** that if you choose to use a custom queue name, you should configure it in the [thingsboard.yml](/docs/{{docsPrefix}}user-guide/install/config/#thingsboard-core-settings) file before you using it.
+This setting is available in the Device Profile wizard and Device Profile details.
+
+{% unless docsPrefix == 'paas/' %}
+{% capture difference %}
+**Please note:**
+<br>
+that if you choose to use a custom queue name, you should configure it in the [thingsboard.yml](/docs/{{docsPrefix}}user-guide/install/config/#thingsboard-core-settings) file before you using it.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 {% endunless %}
 
-{% include images-gallery.html imageCollection="queueNameSetting" %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/device-profiles/device-profile-queue-1-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/device-profiles/device-profile-queue-1-pe.png)
+{% endif %}
 
 ### Transport configuration
 
-Since ThingsBoard 3.2, the platform supports two transport types: Default and MQTT. 
+The current version of the ThingsBoard platform supports the following transport types: Default, MQTT, CoAP, LWM2M and SNMP
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-1-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-1-pe.png)
+{% endif %}
 
 #### Default transport type
 
@@ -57,12 +81,22 @@ The MQTT transport type enables advanced MQTT transport settings.
 Now you are able to specify custom MQTT topics filters for time-series data and attribute updates that correspond to the
 [telemetry upload API](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) and [attribute update API](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server), respectively.
 
-**The MQTT transport type has the following settings:**
+The MQTT transport type has the following settings:
 
 ##### MQTT device topic filters
 
-Custom MQTT topic filters support single '+' and multi-level '#' wildcards and allow you to connect to almost any MQTT based device that sends a payload using JSON or Protobuf.
-For example, using the configuration from the image below will allow you to publish time-series data with the following command:
+Custom MQTT topic filters support single '**+**' and multi-level '**#**' wildcards and allow you to connect to almost any MQTT based device that sends a payload using JSON or Protobuf.
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-mqtt-1-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-mqtt-1-pe.png)
+{% endif %}
+
+<br/>
+
+Using the configuration from the image below will allow you to publish time-series data with the following command:
 
 {% if docsPrefix == null %}
 ```bash
@@ -92,9 +126,9 @@ mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t '/attri
 {: .copy-code}
 {% endif %}
 
-assuming you have provisioned basic MQTT credentials for your device with the client id 'c1', username 't1' and password 'secret'.
+Let's look at an example:
 
-{% include images-gallery.html imageCollection="mqttTransportSetting" %}
+{% include images-gallery.html imageCollection="mqttTransportSettingExample" showListImageTitles="true" %}
 
 ##### MQTT device payload
 
@@ -102,20 +136,48 @@ By default, the platform expects devices to send data via JSON. However, it is a
 
 Protocol Buffers, or Protobuf, is a language- and a platform-neutral way of serializing structured data. It is convenient to minimize the size of transmitted data.  
 
-At the moment of writing (ThingsBoard 3.2), platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) 
-and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server). 
-We plan to the add ability to define a schema for downlink messages (RPC calls and attribute updates) in future releases.  
+The current version of the ThingsBoard platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server) and implemented the ability to define a schema for downlink messages (RPC calls and attribute updates).
 
-{% include images-gallery.html imageCollection="mqttProtobufSetting" %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-mqtt-protobuf-setting-1-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-mqtt-protobuf-setting-1-pe.png)
+{% endif %}
 
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-mqtt-protobuf-setting-3-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-mqtt-protobuf-setting-3-pe.png)
+{% endif %}
 
 ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
+
+###### Compatibility with other payload formats
+
+When enabled, the platform will use a Protobuf payload format by default. If parsing fails, the platform will attempt to use JSON payload format. Useful for backward compatibility during firmware updates. For example, the initial release of the firmware uses Json, while the new release uses Protobuf. During the process of firmware update for the fleet of devices, it is required to support both Protobuf and JSON simultaneously.
+
+The compatibility mode introduces slight performance degradation, so it is recommended to disable this mode once all devices are updated.
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-mqtt-protobuf-setting-2-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-mqtt-protobuf-setting-2-pe.png)
+{% endif %}
 
 #### CoAP transport type
 
 The CoAP transport type enables advanced CoAP transport settings. With the CoAP transport type, you have the ability to select the CoAP device type.
 
-{% include images-gallery.html imageCollection="coapTransportSetting" %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-coap-1-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-coap-1-pe.png)
+{% endif %}
 
 ##### CoAP device type: Default
 
@@ -124,12 +186,22 @@ However, it is also possible to send data via [Protocol Buffers](https://develop
 
 Protocol Buffers, or Protobuf, is a language- and a platform-neutral way of serializing structured data. It is convenient to minimize the size of transmitted data.  
 
-At the moment of writing (ThingsBoard 3.2.2), platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/coap-api/#telemetry-upload-api) 
-and [attribute upload](/docs/{{docsPrefix}}reference/coap-api/#publish-attribute-update-to-the-server). 
-We plan to the add ability to define a schema for downlink messages (RPC calls and attribute updates) in future releases.  
+The current version of the ThingsBoard platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server) and implemented the ability to define a schema for downlink messages (RPC calls and attribute updates).
 
-{% include images-gallery.html imageCollection="coapProtobufSetting" %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-coap-protobuf-setting-1-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-coap-protobuf-setting-1-pe.png)
+{% endif %}
 
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-coap-protobuf-setting-2-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-coap-protobuf-setting-2-pe.png)
+{% endif %}
 
 ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
 
@@ -146,6 +218,13 @@ At the moment of writing (ThingsBoard 3.2.2), platform supports integration with
  - I/O. 
  
 FW version: 06.02 or newer. 
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-coap-efento-nb-iot-setting-1-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/device-profiles/device-profile-transport-setting-coap-efento-nb-iot-setting-1-pe.png)
+{% endif %}
 
 ### Alarm Rules
 
@@ -209,7 +288,7 @@ Now let’s assume you would like to replace the 1 minute duration with a dynami
 
 For this purpose, you should use the server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes) feature. 
 
-Please create a server-side attribute *“highTemperatureDurationThreshold”* with the integer value *“2”* for your device.
+Please create a server-side attribute *“highTemperatureDurationThreshold”* with the integer value *"1"* for your device.
 
 {% include images-gallery.html imageCollection="alarmСonditionsWithDuration2" showListImageTitles="true" %}
 
@@ -217,7 +296,7 @@ Please create a server-side attribute *“highTemperatureDurationThreshold”* w
 
 Let's assume we would like to modify Example 1 and raise alarms only if the sensor reports a temperature that exceeds the threshold 3 times in a row.
 
-For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "Repeating". We should also specify 3 as 'Count of events'.
+For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "Repeating". We should also specify "3" as 'Count of events'.
 
 {% include images-gallery.html imageCollection="alarmСonditionsWithRepeating" showListImageTitles="true" %}
 
@@ -225,7 +304,7 @@ Now let’s assume you would like to replace the set number of times the alarm c
 
 For this purpose, you should use the server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes) feature. 
 
-Please create a server-side attribute *“highTemperatureRepeatingThreshold”*, with the integer value *“5”* for your device.
+Please create a server-side attribute *"highTemperatureRepeatingThreshold"*, with the integer value *"3"* for your device.
 
 {% include images-gallery.html imageCollection="alarmСonditionsWithRepeating2" showListImageTitles="true" %}
 
@@ -267,6 +346,15 @@ The technique mentioned above may be used to enable or disable rules or combine 
 Device Profile rule node creates and clears alarms based on the alarm rules defined in the device profile. 
 By default, this is the first rule node in the chain of processing. 
 The rule node processes all incoming messages and reacts to the attributes and telemetry values.
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/device-profiles/device-profile-rule-node-1-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/device-profiles/device-profile-rule-node-1-pe.png)
+{% endif %}
+
+<br/>
 There are two important settings in the rule node:
 
 **Persist state of alarm rules** - forces the rule node to store the state of processing. Disabled by default. This setting is useful if you have duration or repeating conditions. 
@@ -282,7 +370,12 @@ It should work in tandem with the 'Persist state of alarm rules' option, but on 
 Assuming you have many devices that send data frequently or constantly, you can avoid loading the state from the DB on initialization. 
 The Rule Node will fetch the state from the database when the first message from a specific device arrives.     
 
-{% include images-gallery.html imageCollection="ruleNode" %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/device-profiles/device-profile-rule-node-2-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/device-profiles/device-profile-rule-node-2-pe.png)
+{% endif %}
 
 #### Notifications about alarms
 
@@ -295,7 +388,12 @@ You may also use existing guides:
 or [Telegram notifications](/docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/).
 There is also an additional 'Alarm Updated' relation type that should be ignored in most cases to avoid duplicate notifications.
 
-{% include images-gallery.html imageCollection="notifications" %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/device-profiles/device-profile-notifications-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/device-profiles/device-profile-notifications-pe.png)
+{% endif %}
 
 ### Device provisioning
 

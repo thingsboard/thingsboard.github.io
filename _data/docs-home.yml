@@ -13,9 +13,14 @@ toc:
     path: /docs/user-guide/entities-and-relations/
   - title: Tenant Profiles
     path: /docs/user-guide/tenant-profiles/
-  - title: Device Profiles
-    path: /docs/user-guide/device-profiles/
+  - title: Profiles
     new: true
+    section:
+    - title: Device Profiles
+      path: /docs/user-guide/device-profiles/
+    - title: Asset Profiles
+      path: /docs/user-guide/asset-profiles/
+      new: true
   - title: Attributes
     path: /docs/user-guide/attributes/
   - title: Time-series data

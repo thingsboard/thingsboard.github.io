@@ -26,9 +26,14 @@ toc:
   section:
     - title: Entities and Relations
       path: /docs/paas/user-guide/entities-and-relations/
-    - title: Device Profiles
-      path: /docs/paas/user-guide/device-profiles/
+    - title: Profiles
       new: true
+      section:
+        - title: Device Profiles
+          path: /docs/paas/user-guide/device-profiles/
+        - title: Asset Profiles
+          path: /docs/paas/user-guide/asset-profiles/
+          new: true
     - title: Attributes
       path: /docs/paas/user-guide/attributes/
     - title: Time-series data

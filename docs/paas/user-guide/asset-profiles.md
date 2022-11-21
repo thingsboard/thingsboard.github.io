@@ -1,0 +1,12 @@
+---
+layout: docwithnav-paas
+assignees:
+- ashvayka
+title: Asset Profiles
+description: IoT device profiles
+redirect_from: "/docs/pe/user-guide/asset-profiles"
+
+---
+
+{% assign docsPrefix = "paas/" %}
+{% include docs/user-guide/asset-profiles.md %}
