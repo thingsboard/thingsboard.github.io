@@ -29,6 +29,9 @@ toc:
     - title: Device Profiles
       path: /docs/paas/user-guide/device-profiles/
       new: true
+    - title: Asset Profiles
+      path: /docs/paas/user-guide/asset-profiles/
+      new: true
     - title: Attributes
       path: /docs/paas/user-guide/attributes/
     - title: Time-series data
@@ -152,6 +155,8 @@ toc:
       path: /docs/paas/user-guide/entity-views/
     - title: API Limits
       path: /docs/paas/user-guide/api-limits/
+    - title: Advanced filters
+      path: /docs/paas/user-guide/advanced-filters/
     - title: Version Control
       path: /docs/paas/user-guide/version-control/
       new: true

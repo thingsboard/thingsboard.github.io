@@ -16,6 +16,9 @@ toc:
   - title: Device Profiles
     path: /docs/user-guide/device-profiles/
     new: true
+  - title: Asset Profiles
+    path: /docs/user-guide/asset-profiles/
+    new: true
   - title: Attributes
     path: /docs/user-guide/attributes/
   - title: Time-series data
@@ -150,6 +153,8 @@ toc:
       path: /docs/user-guide/entity-views/
     - title: API Limits
       path: /docs/user-guide/api-limits/
+    - title: Advanced filters
+      path: /docs/user-guide/advanced-filters/
     - title: Version Control
       path: /docs/user-guide/version-control/
       new: true
@@ -181,6 +186,7 @@ toc:
       path: /docs/user-guide/audit-log/
     - title: Advanced RBAC for IoT
       path: /docs/pe/user-guide/rbac/
+      pe: true
     - title: Two-Factor Authentication
       path: /docs/user-guide/two-factor-authentication/
       new: true

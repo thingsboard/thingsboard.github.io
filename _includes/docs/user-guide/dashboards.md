@@ -344,7 +344,88 @@ Let's look at the basic data key settings an example of the Entities table from 
 
 {% include images-gallery.html imageCollection="basic-data-key-settings-5" %}
 
-- **Use data post-processing function.** The data post-processing function allows changing the output data depending on your wishes. To use data post-processing function, you must check the "Use data post-processing function" checkbox and enter the function in the field below. Then click the "Save" button in the lower-right corner. 
+**Aggregation of key**
+
+Since version [3.4.2](https://thingsboard.io/docs/pe/reference/releases/), additional aggregation functionality has been
+implemented. By default, the Latest values widgets do not have the time window. If you enable aggregation for any data
+key in the '**Latest values**' widgets, the time window control will appear. You can set up aggregation for each telemetry
+key individually, which you want to display and at the same time do not need to store it in the database. The time window
+configuration is limited to the real-time intervals (**Current Hour/Day/Month**) and '**History**' time intervals. The real-time
+intervals like 'last 30 minutes' or 'last 24 hours' are not supported for performance reasons. If you need to store the
+aggregation as telemetry, follow for more details at [the link](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/).
+
+{% include images-gallery.html imageCollection="basic-data-key-settings-7" %}
+
+**Aggregation options:**
+
+- **Min** or **Max**:
+<br>
+  Selects the minimum or maximum value from the given interval. Using to detect peak negative or positive values.
+  For example, power surges in the power cable, air pollution, equipment workload, etc.
+  {% include images-gallery.html imageCollection="basic-data-key-settings-8" %}
+- **Average:**
+<br>
+  Calculates the average from the selected interval (Summarizes, then divides by the count of telemetry from the selected interval).
+  For example, you can use average aggregation for weekly fuel consumption, acoustical noise in dB, rotation fan speed, signal quality, etc.
+  {% include images-gallery.html imageCollection="basic-data-key-settings-9" %}
+- **Sum:**
+<br>
+  Summarizes all telemetry for the specified period.
+  Aggregation, for example, uses for different types of telemetry, mileage (km), water consumption, idle time, etc.
+  {% include images-gallery.html imageCollection="basic-data-key-settings-10" %}
+- **Count:**
+<br>
+  Calculates the total number of transmitted messages for the selected period. It can be useful in setting up and
+  optimizing devices running on battery power or when evaluating sensor activation sensitivity, etc.
+  {% include images-gallery.html imageCollection="basic-data-key-settings-11" %}
+  **Delta function:**
+
+  Allows you to calculate the delta between aggregated values for current and relative time window intervals.
+
+  **Comparison period** - is a parameter that takes the history interval as a basis and converts it according to the selected option. List of options below.
+- **Previous interval** (default) - set as a default option, when calculating, not only time is taken into account, but
+  also the type of interval (**Current day** or **Current day so far**, etc.)
+<br>
+  Example: **History** - **Current month so far** option, suppose is interval 1.09.22 to 25.09.22 then previous interval will be 1.08.22 to 25.08.22
+
+  {% include images-gallery.html imageCollection="basic-data-key-settings-12" %}
+
+  - **Day ago** - from the start and end of the history interval, takes away 24 hours.
+<br>
+    For example, with the amount of water spent **Current day** and **Delta** - **Day ago**:
+    {% include images-gallery.html imageCollection="basic-data-key-settings-13" %}
+
+- **Week ago** - takes interval one week earlier from history interval (168 hours).
+<br>
+  Example with average, history interval - **Current day**, and **Week ago** delta:
+  {% include images-gallery.html imageCollection="basic-data-key-settings-14" %}
+
+- **Month ago** - The same interval (in days) as the history interval and subtracts from the current history interval.
+  Example, if the current month is February (28 days) then **Month ago** would be the previous 28 days, not the entire previous month.
+<br>
+  Example, with sum water, history - **Current day** and **Delta** - **Month ago**:
+
+  {% include images-gallery.html imageCollection="basic-data-key-settings-15" %}
+
+- **Year ago** - Interval that was 365 days ago from the current history interval.
+  <br>If it is necessary to compare, suppose the aggregation for the previous month and the month of the past year.
+  {% include images-gallery.html imageCollection="basic-data-key-settings-16" %}
+
+- **Custom interval** - This option is for setting individual intervals. The maximum allowed value is limited to the **int** type. Example: 43200000 = 12 hours.
+
+  {% include images-gallery.html imageCollection="basic-data-key-settings-17" %}
+
+**Delta calculation result:**
+
+This option allows you to specify how the result should be displayed:
+<br>
+   - **Previous Value** - Displays aggregation value of compare interval (not current history interval).
+
+   - **Delta (absolute)** - Displays the difference between compared intervals, this option is set by default.
+
+   - **Delta (percent)** - Displays the result as a percentage relative to the previous interval <br>formula: **(IntervalValue - prevIntervalValue)/prevIntervalValue*100**
+
+**Use data post-processing function.** The data post-processing function allows changing the output data depending on your wishes. To use data post-processing function, you must check the "Use data post-processing function" checkbox and enter the function in the field below. Then click the "Save" button in the lower-right corner. 
   
 {% include images-gallery.html imageCollection="basic-data-key-settings-6" %}
 
