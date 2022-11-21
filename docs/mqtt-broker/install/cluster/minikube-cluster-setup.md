@@ -48,6 +48,7 @@ You should see the ThingsBoard MQTT Broker login page.
 ```
 minikube ip
 ```
+{: .copy-code}
 
 Use the following default credentials:
 
