@@ -46,7 +46,7 @@ This setting is available in the Device Profile wizard and Device Profile detail
 {% capture difference %}
 **Please note:**
 <br>
-if you choose to use a custom queue name, you should configure it with the **system administrator** before you using it.
+if you choose to use a custom queue, you should configure it with the **system administrator** before you using it.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 {% endunless %}
@@ -248,13 +248,6 @@ Alarm Rule consists of the following properties:
  * **Clear condition** - defines criteria when the Alarm will be cleared;
  * **Advanced settings** - defines alarm propagation to related assets, customers, tenant, or other entities.    
 
-{% if docsPrefix == null %}
-{% assign YOUR_HOST = "demo.thingsboard.io" %}
-{% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-{% assign YOUR_HOST = "thingsboard.cloud" %}
-{% endif %}
-
 Let's learn how to use the Alarm Rules with an example. Let's assume we would like to keep track of the temperature inside of the fridge with valuable goods.  
 We also assume that we have already created a device profile called "Temperature Sensors", and provisioned our device with the temperature sensor and with access token - "ACCESS_TOKEN".
 The command listed below upload the temperature readings to {{YOUR_HOST}}.  
@@ -290,7 +283,7 @@ Now let’s assume you would like to replace the 1 minute duration with a dynami
 
 For this purpose, you should use the server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes) feature. 
 
-Please create a server-side attribute *“highTemperatureDurationThreshold”* with the integer value *“2”* for your device.
+Please create a server-side attribute *“highTemperatureDurationThreshold”* with the integer value *“1”* for your device.
 
 {% include images-gallery.html imageCollection="alarmСonditionsWithDuration2" showListImageTitles="true" %}
 
@@ -298,7 +291,7 @@ Please create a server-side attribute *“highTemperatureDurationThreshold”* w
 
 Let's assume we would like to modify Example 1 and raise alarms only if the sensor reports a temperature that exceeds the threshold 3 times in a row.
 
-For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "Repeating". We should also specify 3 as 'Count of events'.
+For this purpose, we need to edit the alarm condition and modify the condition type from "Simple" to "Repeating". We should also specify "3" as 'Count of events'.
 
 {% include images-gallery.html imageCollection="alarmСonditionsWithRepeating" showListImageTitles="true" %}
 
@@ -306,7 +299,7 @@ Now let’s assume you would like to replace the set number of times the alarm c
 
 For this purpose, you should use the server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes/#server-side-attributes) feature. 
 
-Please create a server-side attribute *“highTemperatureRepeatingThreshold”*, with the integer value *“5”* for your device.
+Please create a server-side attribute *“highTemperatureRepeatingThreshold”*, with the integer value *“3”* for your device.
 
 {% include images-gallery.html imageCollection="alarmСonditionsWithRepeating2" showListImageTitles="true" %}
 

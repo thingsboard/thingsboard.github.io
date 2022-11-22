@@ -28,7 +28,6 @@ toc:
     path: /docs/pe/user-guide/tenant-profiles/
   - title: Device Profiles
     path: /docs/pe/user-guide/device-profiles/
-    new: true
   - title: Asset Profiles
     path: /docs/pe/user-guide/asset-profiles/
     new: true
