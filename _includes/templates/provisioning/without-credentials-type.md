@@ -168,28 +168,61 @@ if __name__ == '__main__':
 
 ### CoAP Example script
 
-To communicate with ThingsBoard we will use CoAPthon3 module, so we should install it: <br><br>
+To communicate with ThingsBoard we will use asyncio and aiocoap modules, so we should install it: <br><br>
 
-<b>pip3 install coapthon3 --user</b>
+<b>pip3 install asyncio aiocoap --user</b>
 
 <br><br>
 
 {% highlight python %}
 
 
-from coapthon.client.helperclient import HelperClient
-from json import dumps
+import logging
+import asyncio
+
+from aiocoap import Context, Message, Code
+from json import loads, dumps
+
+THINGSBOARD_HOST = "127.0.0.1"
+THINGSBOARD_PORT = "5683"
+
+logging.basicConfig(level=logging.INFO)
+
 
 to_publish = {"provisionDeviceKey": "u7piawkboq8v32dmcmpp",
-              "provisionDeviceSecret": "jpmwdn8ptlswmf4m29bw",
-              "deviceName": "DEVICE_NAME"
-              }
+"provisionDeviceSecret": "jpmwdn8ptlswmf4m29bw",
+"deviceName": "DEVICE_NAME"
+}
+
+
+async def process():
+server_address = "coap://" + THINGSBOARD_HOST + ":" + str(THINGSBOARD_PORT)
+
+    client_context = await Context.create_client_context()
+    await asyncio.sleep(2)
+    try:
+        msg = Message(code=Code.POST, payload=str.encode(dumps(to_publish)), uri=server_address+'/api/v1/provision')
+        request = client_context.request(msg)
+        try:
+            response = await asyncio.wait_for(request.response, 60000)
+        except asyncio.TimeoutError:
+            raise Exception("Request timed out!")
+
+        if response is None:
+            raise Exception("Response is empty!")
+
+        decoded_response = loads(response.payload)
+        logging.info("Received response: %s", decoded_response)
+        received_token = decoded_response.get("credentialsValue")
+        logging.info(received_token)
+    except Exception as e:
+        logging.error(e)
+    finally:
+        await client_context.shutdown()
 
 if __name__ == '__main__':
-    client = HelperClient(server=('127.0.0.1', 5683))
-    response = client.post('/api/v1/provision', dumps(to_publish))
-    print(response.payload)
-    client.stop()
+asyncio.run(process())
+
 
 
 

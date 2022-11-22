@@ -89,7 +89,7 @@ downlink_0-1:
     1:
         image: /images/user-guide/integrations/aws-iot/downlink_1.png
     2:
-        image: /images/user-guide/integrations/aws-iot/downlink_1_2.png
+        image: /images/user-guide/integrations/aws-iot/downlink_1(2).png
 
 downlink_2-3:
     0:

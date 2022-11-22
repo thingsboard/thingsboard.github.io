@@ -112,7 +112,7 @@ cd thingsboard-pe-k8s/aws/microservices
 
 {% include templates/install/aws/rds-setup.md %}
 
-### Step 4.2 Cassandra
+### Step 4.2 Cassandra (optional)
 
 {% include templates/install/aws/configure-cassandra.md %}
 

@@ -34,22 +34,24 @@ can significantly increase the disk space used by the database since all the deb
 // decode payload to JSON
 var payloadStr = decodeToString(payload);
 var data = JSON.parse(payloadStr);
-var topicParts = metadata.topic.split("/");
-var deviceType = topicParts[0];
-var deviceName = topicParts[1];
+var topicPattern = 'tb/aws/iot/(.+)/(.+)';
+var deviceName = metadata.topic.match(topicPattern)[2];
+var deviceType = metadata.topic.match(topicPattern)[1];
+
 // Result object with device attributes/telemetry data
 var result = {
    deviceName: deviceName,
    deviceType: deviceType,
    attributes: {
-       state: data.val0,
+        state: data.val0,
    },
    telemetry: {
        temperature: data.val1,
-       fan_ins: data.val2,
-       fan_out: data.val3,
+       fan_ins:     data.val2,
+       fan_out:     data.val3,
    }
 };
+
 /** Helper functions **/
 function decodeToString(payload) {
    return String.fromCharCode.apply(String, payload);
@@ -57,6 +59,7 @@ function decodeToString(payload) {
 function decodeToJson(payload) {
    // convert payload to string.
    var str = decodeToString(payload);
+
    // parse string to JSON
    var data = JSON.parse(str);
    return data;
@@ -67,24 +70,6 @@ return result;
 
 You can change the decoder function while creating the converter or after creating it. If the converter 
 has already been created, then click on the “pencil” icon to edit it. 
-
-**Example of topic:**
-```
-freezers/freezer-432
-```
-{: .copy-code}
-
-**Example of payload:**
-```ruby
-{
-    "val0": "loaded",
-    "val1": -18,
-    "val2": 1785,
-    "val3": 548
-}
-```
-{: .copy-code}
-
 {% include images-gallery.html imageCollection="edit_converter" %}
 
 ## AWS IOT
@@ -110,7 +95,7 @@ In the field for the **Policy document**, you need to paste the code below with 
 
 {% capture update_server_first %}
 Be sure to replace **YOUR_REGION**  and **YOUR_AWS_ID** with your region and account ID accordingly, <br>
-(for example region and id "<strong><h style="color:DarkOrange;">eu-west-1:111197724444</h></strong>").
+(for example region and id "<strong><h style="color:DarkOrange;">eu-west-1:111197721064</h></strong>").
 {% endcapture %}
 {% include templates/info-banner.md title="Importantly:" content=update_server_first %}
 
@@ -157,7 +142,7 @@ Your region is listed in the URL when you are signed in to your AWS IoT account.
 
 {% include images-gallery.html imageCollection="create-policies_2" %}
 
-After that, click the **Create** button. The policy will be added to the list, and you will receive the **Successfully created policy** message.
+After that, click the **Create** button. The policy will be added to the list, and you will receive the **Successfully created policy tb_policy** message.
 
 {% include images-gallery.html imageCollection="create-policies_3" %}
 
@@ -204,13 +189,7 @@ After saving the required, click the **Done**.
 
 {% include images-gallery.html imageCollection="save_certificates" %}
 
-
 ## Create Integration
-
-To create an integration, you also need a Device data endpoint. To find AWS IoT Endpoint go
-to **Settings** - **Device data endpoint** and copy it.
-
-{% include images-gallery.html imageCollection="aws_endpoint" %}
 
 If all of the above is done, then you can proceed to creating the AWS IoT integration. Please follow the screenshots.
 
@@ -222,6 +201,10 @@ with any parameters of the device (or asset), if such a device (asset) does not 
 {% endcapture %}
 {% include templates/info-banner.md content=allowCreateDevice %}
 
+You can find AWS IoT Endpoint if you go to **Settings** - **Device data endpoint**.
+
+{% include images-gallery.html imageCollection="aws_endpoint" %}
+
 ## Send uplink message
 
 To send a test message, use the additional functionality of AWS IoT, the MQTT test client.
@@ -231,7 +214,7 @@ In the main menu, go to **MQTT test client**, then select the **Publish to a top
 
 **Example of topic:**
 ```
-freezers/freezer-432
+tb/aws/iot/sensors/freezer-432
 ```
 {: .copy-code}
 
@@ -260,10 +243,12 @@ Data converter. Then set the converter and topic in the AWS IoT integration.
 An example of downlink converter:
 ```ruby
 // Encode downlink data from incoming Rule Engine message
+
 // msg - JSON message payload downlink message json
 // msgType - type of message, for ex. 'ATTRIBUTES_UPDATED', 'POST_TELEMETRY_REQUEST', etc.
 // metadata - list of key-value pairs with additional data about the message
 // integrationMetadata - list of key-value pairs with additional data defined in Integration executing this converter
+
 /** Encoder **/
 var data = {};
 
