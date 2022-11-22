@@ -5,33 +5,10 @@ assignees:
 title: Device Profiles
 description: IoT device profiles
 redirect_from: "/docs/paas/user-guide/ui/device-profiles"
-ruleChainSetting:
-    0:
-        image: /images/user-guide/device-profile/rule-chain-setting-pe.png
 
-queueNameSetting:
-    0:
-        image: /images/user-guide/device-profile/queue-name-setting-pe.png
-
-mqttTransportSetting:
-    0:
-        image: /images/user-guide/device-profile/transport-setting-pe.png
-        
-coapTransportSetting:    
-    0:
-        image: /images/user-guide/device-profile/coap-transport-setting-pe.png
-
-mqttProtobufSetting:
-    0:
-        image: /images/user-guide/device-profile/mqtt-protobuf-setting-pe.png
-        
-coapProtobufSetting:
-    0:
-        image: /images/user-guide/device-profile/coap-protobuf-setting-pe.png
-    
 alarmСonditions:
     0:
-        image: /images/user-guide/device-profile/alarm-example-1-step-1-pe.png  
+        image: /images/user-guide/device-profile/alarm-example-1-step-1-pe.png
         title: 'Step 1. Open the device profile and toggle edit mode.'
     1:
         image: /images/user-guide/device-profile/alarm-example-1-step-2-pe.png
@@ -146,16 +123,7 @@ alarmСonstantFilters:
     0:
         image: /images/user-guide/device-profile/alarm-example-7-step-1-pe.png  
         title: 'Choose constant type and value and compare it with the value of the tenant or customer attribute.'
-
-ruleNode:
-    0:
-        image: /images/user-guide/device-profile/device-profile-rule-node-pe.png 
-    1:
-        image: /images/user-guide/device-profile/device-profile-rule-node-2-pe.png
-        
-notifications:
-    0:
-        image: /images/user-guide/device-profile/device-profile-notifications-pe.png           
+         
 ---
 
 {% assign docsPrefix = "paas/" %}
