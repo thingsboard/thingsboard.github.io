@@ -248,6 +248,8 @@ toc:
     path: /docs/user-guide/ui/sms-provider-settings/
   - title: Mail Settings
     path: /docs/user-guide/ui/mail-settings/
+  - title: JWT Security Settings
+    path: /docs/user-guide/ui/jwt-security-settings/
 - title: Contribution Guide
   section:
     - title: How to contribute
