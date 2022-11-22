@@ -29,12 +29,12 @@ See video tutorial below for step-by-step instruction how to setup OPC-UA Integr
 ### OPC-UA Integration Tutorial
 
 In this tutorial, we will configure the integration between ThingsBoard and OPC-UA
-to get the Airconditioners data from the [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers/file/download/details/opc-ua-c-demo-server-v161-windows.html)
+to get the Airconditioners data from the [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers/opc-ua-c-demo-server.html)
 and allow the user to switch on/off any Airconditioner using the Integration downlink feature.
 
 #### Prerequisites
 
-- Download and install the [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers/file/download/details/opc-ua-c-demo-server-v161-windows.html).
+- Download and install the [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers/opc-ua-c-demo-server.html).
 - After installation, launch the **UA Admin Dialog**.
 - Verify that the **Endpoint URL** is set correctly and remember the values of **Endpoint Host** and **Endpoint Port**. These values will be needed during the OPC-UA Integration setup.
 

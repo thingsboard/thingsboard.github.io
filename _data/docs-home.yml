@@ -43,8 +43,9 @@ toc:
       path: /docs/user-guide/rule-engine-2-0/re-getting-started/
     - title: Overview
       path: /docs/user-guide/rule-engine-2-0/overview/
-    - title: Architecture
-      path: /docs/user-guide/rule-engine-2-0/architecture/
+    - title: Queues
+      path: /docs/user-guide/rule-engine-2-5/queues/
+      new: true
     - title: Nodes
       section:
         - title: Filter Nodes
@@ -94,11 +95,13 @@ toc:
     path: /docs/user-guide/integrations/mqtt/
   - title: CoAP
     path: /docs/user-guide/integrations/coap/
+  - title: Kafka
+    path: /docs/user-guide/integrations/kafka/
   - title: OPC-UA
     path: /docs/user-guide/integrations/opc-ua/
   - title: Actility ThingPark
     path: /docs/user-guide/integrations/thingpark/
-  - title: TheThingsNetwork
+  - title: TheThingsStack
     path: /docs/user-guide/integrations/ttn/
   - title: TheThingsIndustries
     path: /docs/user-guide/integrations/tti/
@@ -147,6 +150,9 @@ toc:
       path: /docs/user-guide/entity-views/
     - title: API Limits
       path: /docs/user-guide/api-limits/
+    - title: Version Control
+      path: /docs/user-guide/version-control/
+      new: true
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning
@@ -175,6 +181,9 @@ toc:
       path: /docs/user-guide/audit-log/
     - title: Advanced RBAC for IoT
       path: /docs/pe/user-guide/rbac/
+    - title: Two-Factor Authentication
+      path: /docs/user-guide/two-factor-authentication/
+      new: true
     - title: OAuth 2 Support
       path: /docs/user-guide/oauth-2-support/
     - title: HTTP Transport

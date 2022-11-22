@@ -1,12 +1,36 @@
+{% if docsPrefix == 'pe/edge/' %}
+{% assign appPrefix = "ThingsBoard PE" %}
+{% assign cloudDocsPrefix = "pe/" %}
+{% else %}
+{% assign appPrefix = "ThingsBoard CE" %}
+{% endif %}
+
+{% capture tb-open-source %}
+ThingsBoard is an open-source IoT platform for data collection, processing, visualization, and device management.
+See [**What is ThingsBoard?**](/docs/getting-started-guides/what-is-thingsboard/) if you are new platform user, before proceeding with ThingsBoard Edge.  
+{% endcapture %}
+{% include templates/info-banner.md content=tb-open-source %}
+
 The **ThingsBoard Edge** is a ThingsBoard's software product for edge computing.
-It allows bringing data analysis and management to the edge, where the data created. At the same time ThingsBoard Edge seamlessly synchronizing with the ThingsBoard cloud (ThingsBoard Cloud, ThingsBoard Demo, ThingsBoard PE or ThingsBoard CE) according to your business needs.
 
-ThingsBoard Edge is **single** Tenant and **single** Customer entity.
-You cannot share ThingsBoard Edge between multiple tenants or customers or you cannot connect devices from multiple tenants to a single ThingsBoard Edge entity.
-In this case you'll need to provision multiple ThingsBoard Edge instances for every tenant (customer).
-But you can use a single ThingsBoard Edge instance for one tenant and one customer from the same tenant.
+{% if docsPrefix == 'pe/edge/' %}
+It allows bringing data analysis and management to the edge, where the data created.
+At the same time ThingsBoard Edge PE seamlessly synchronizing with the ThingsBoard PE ([cloud](https://thingsboard.cloud) or on premise installations) according to your business needs.
 
-ThingsBoard is an open-source IoT platform for data collection, processing, visualization, and device management. See [**What is ThingsBoard?**](/docs/getting-started-guides/what-is-thingsboard/) if you are new platform user.  
+ThingsBoard Edge PE is **single** tenant and(or) **single** customer (Edge PE is going to support multiple customers starting from [v3.5](/docs/pe/edge/roadmap/#v35) release).
+You cannot share ThingsBoard Edge between multiple tenants.
+And devices from multiple tenants can not be connected to a single ThingsBoard Edge.
+In this case you'll need to provision multiple ThingsBoard Edge instances for every tenant.
+{% else %}
+It allows bringing data analysis and management to the edge, where the data created.
+At the same time ThingsBoard Edge seamlessly synchronizing with the ThingsBoard CE ([demo](https://demo.thingsboard.io/) or on premise installations) according to your business needs.
+
+ThingsBoard Edge CE is **single** tenant and(or) **single** customer.
+You cannot share ThingsBoard Edge between multiple tenants or customers.
+And devices from multiple tenants can not be connected to a single ThingsBoard Edge.
+In this case you'll need to provision multiple ThingsBoard Edge instances for every tenant or customer.
+{% endif %}
+
 <br>
 
 ![image](/images/edge/overview/edge_overview.svg)
@@ -49,29 +73,31 @@ With **ThingsBoard Edge** you get the following benefits:
 ![image](/images/edge/overview/alarm.svg)
 
 - Monitor local events and timeseries data with a **real-time dashboards**.
+- **Local storage** to store data from the edge devices on the edge if there is no active connection to cloud and push to the cloud updates once connection restored.
 - **Batch Update** thousands of edge configurations in a single click.
 
 ![image](/images/edge/overview/update_dashboard.svg)
 
-- **Local storage** to store data from the edge devices on the edge if there is no active connection to cloud and push to the cloud updates once connection restored.
+ThingsBoard Edge inherits features from {{appPrefix}} to provide you the same experience how to connect, manage and process data from your devices.
 
-ThingsBoard Edge inherits features from ThingsBoard CE/PE to provide you the same experience how to connect, manage and process data from your devices.
-
-It supports next **ThingsBoard Community Edition** features:
-* [**Attributes**](/docs/user-guide/attributes/) - assign and manage custom attributes to your entities.
-* [**Telemetry**](/docs/user-guide/telemetry/) - API for collection of time-series data of your devices.
-* [**Entities and relations**](/docs/user-guide/entities-and-relations/) - model physical world objects (e.g. devices and assets) and relations between them.
-* [**Data visualization**](/docs/guides#AnchorIDDataVisualization) - develop custom dashboards and widgets.
-* [**Rule engine**](/docs/pe/user-guide/rule-engine-2-0/re-getting-started/) - manage data processing & actions on incoming telemetry and events.
-* [**RPC**](/docs/user-guide/rpc/) - send remote procedure calls (RPC) **both from edge and cloud sides** to devices and vice versa.
-* [**Audit log**](/docs/user-guide/audit-log/) - track user activity.
-* [**API Limits**](/docs/user-guide/api-limits/) - control and limit number of API requests from a single host.
+It supports next **ThingsBoard** features:
+* [**Attributes**](/docs/{{cloudDocsPrefix}}user-guide/attributes/) - assign and manage custom attributes to your entities.
+* [**Telemetry**](/docs/{{cloudDocsPrefix}}user-guide/telemetry/) - API for collection of time-series data of your devices.
+* [**Entities and relations**](/docs/{{cloudDocsPrefix}}user-guide/entities-and-relations/) - model physical world objects (e.g. devices and assets) and relations between them.
+* [**Data visualization**](/docs/{{cloudDocsPrefix}}guides#AnchorIDDataVisualization) - develop custom dashboards and widgets.
+* [**Rule engine**](/docs/{{cloudDocsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) - manage data processing & actions on incoming telemetry and events.
+* [**RPC**](/docs/{{cloudDocsPrefix}}user-guide/rpc/) - send remote procedure calls (RPC) **both from edge and cloud sides** to devices and vice versa.
+* [**Audit log**](/docs/{{cloudDocsPrefix}}user-guide/audit-log/) - track user activity.
+* [**API Limits**](/docs/{{cloudDocsPrefix}}user-guide/api-limits/) - control and limit number of API requests from a single host.
 
 {% if docsPrefix == 'pe/edge/' %}
-As well ThingsBoard Edge supports major **ThingsBoard PE** features:
-* [**White-labeling**](/docs/user-guide/white-labeling/) - allows you to configure a custom menu, logo, color scheme, email server settings, customer email templates to interact with the users etc.
-* [**Scheduler**](/docs/user-guide/scheduler/) - allows you to schedule various types of events with flexible schedule configuration.
-* [**Entity Groups**](/docs/user-guide/groups/) - allows you to organize entities into groups, assign roles to specific user group, grant specific permissions to specific user groups over specific device groups.
+As well Edge PE supports next **ThingsBoard PE** features:
+* [**Integrations**](/docs/user-guide/integrations/)
+    * Connect existing NB IoT, LoRaWAN, SigFox and other devices with specific payload formats directly to ThingsBoard platform.
+    * Stream data from devices connected to existing IoT Platforms to enable real-time interactive dashboards and efficient data processing.
+* [**White-labeling**](/docs/pe/user-guide/white-labeling/) - allows you to configure a custom menu, logo, color scheme, email server settings, customer email templates to interact with the users etc.
+* [**Scheduler**](/docs/pe/user-guide/scheduler/) - allows you to schedule various types of events with flexible schedule configuration.
+* [**Entity Groups**](/docs/pe/user-guide/groups/) - allows you to organize entities into groups, assign roles to specific user group, grant specific permissions to specific user groups over specific device groups.
 {% endif %}
 
 #### Project Roadmap

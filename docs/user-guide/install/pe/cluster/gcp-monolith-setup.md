@@ -18,7 +18,7 @@ This guide will help you to set up ThingsBoard in monolith mode using [Google Ku
 
 {% include templates/install/gcp/gke-prerequisites.md %}
 
-#### Checkout ThingsBoard PE images from docker store
+### Pull ThingsBoard PE images from docker hub
 
 {% assign checkoutMode = "monolith" %}
 {% include templates/install/dockerhub/checkout.md %}
@@ -56,25 +56,21 @@ cd thingsboard-pe-k8s/gcp/monolith
 
 {% include templates/install/gcp/configure-cassandra.md %}
 
-## Step 6. Upload Docker credentials
-
-{% include templates/install/dockerhub/upload-docker-credentials.md %}
-
-## Step 7. Configure license key
+## Step 6. Configure license key
 
 {% include templates/install/k8s-license-secret.md %}
 
-## Step 8. Installation
+## Step 7. Installation
 
 {% include templates/install/gcp/install.md %}
 
-## Step 9. Starting
+## Step 8. Starting
 
 {% include templates/install/gcp/start-monolith.md %}
 
-## Step 10. Configure Load Balancers
+## Step 9. Configure Load Balancers
 
-### 10.1 Configure HTTP(S) Load Balancer
+### 9.1 Configure HTTP(S) Load Balancer
 
 {% include templates/install/gcp/http-lb.md %}
 
@@ -93,16 +89,16 @@ This version of setup does not support an automatic redirect of http port 80 to 
 {: .copy-code}
 
 
-### 10.2. Configure MQTT Load Balancer (Optional)
+### 9.2. Configure MQTT Load Balancer (Optional)
 
 {% assign tbServicesFile = "tb-node.yml" %}
 {% include templates/install/gcp/configure-mqtt.md %}
 
-### 10.3. Configure UDP Load Balancer (Optional)
+### 9.3. Configure UDP Load Balancer (Optional)
 
 {% include templates/install/gcp/configure-udp.md %}
 
-## Step 11. Using
+## Step 10. Using
 
 {% include templates/install/gcp/using.md %}
 

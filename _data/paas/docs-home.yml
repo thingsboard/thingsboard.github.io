@@ -58,8 +58,6 @@ toc:
       path: /docs/paas/user-guide/rule-engine-2-0/re-getting-started/
     - title: Overview
       path: /docs/paas/user-guide/rule-engine-2-0/overview/
-    - title: Architecture
-      path: /docs/paas/user-guide/rule-engine-2-0/architecture/
     - title: Nodes
       section:
         - title: Filter Nodes
@@ -100,11 +98,13 @@ toc:
       path: /docs/paas/user-guide/integrations/mqtt/
     - title: CoAP
       path: /docs/paas/user-guide/integrations/coap/
+    - title: Kafka
+      path: /docs/paas/user-guide/integrations/kafka/
     - title: OPC-UA
       path: /docs/paas/user-guide/integrations/opc-ua/
     - title: Actility ThingPark
       path: /docs/paas/user-guide/integrations/thingpark/
-    - title: TheThingsNetwork
+    - title: TheThingsStack
       path: /docs/paas/user-guide/integrations/ttn/
     - title: TheThingsIndustries
       path: /docs/paas/user-guide/integrations/tti/
@@ -152,6 +152,9 @@ toc:
       path: /docs/paas/user-guide/entity-views/
     - title: API Limits
       path: /docs/paas/user-guide/api-limits/
+    - title: Version Control
+      path: /docs/paas/user-guide/version-control/
+      new: true
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning

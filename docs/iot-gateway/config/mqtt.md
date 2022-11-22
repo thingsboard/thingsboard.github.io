@@ -115,6 +115,29 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
       }
     },
     {
+      "topicFilter": "/sensor/raw_data",
+      "converter": {
+        "type": "bytes",
+        "deviceNameExpression": "[0:4]",
+        "deviceTypeExpression": "default",
+        "timeout": 60000,
+        "attributes": [
+          {
+            "type": "raw",
+            "key": "rawData",
+            "value": "[:]"
+          }
+        ],
+        "timeseries": [
+          {
+            "type": "raw",
+            "key": "temp",
+            "value": "[4:]"
+          }
+        ]
+      }
+    },
+    {
       "topicFilter": "/custom/sensors/+",
       "converter": {
         "type": "custom",
@@ -182,8 +205,6 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
   ]
 }
 
-
-
 {% endhighlight %}
 
 </details>
@@ -197,6 +218,7 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
 | host          | **localhost**                  | Mqtt broker hostname or ip address.                        |
 | port          | **1883**                       | Mqtt port on the broker.                                   |
 | clientId      | **ThingsBoard_gateway**        | This is the client ID. It must be unique for each session. |
+| version       | **5**                          | MQTT protocol version.                                     |
 |---
 
 #### Subsection "security"
@@ -272,10 +294,12 @@ This subsection contains configuration for processing incoming messages.
 
 Types of mqtt converters:  
 1. json -- Default converter
-2. custom -- Custom converter (You can write it by yourself, and it will use to convert incoming data from the broker.) 
+2. raw -- Raw default converter
+3. custom -- Custom converter (You can write it by yourself, and it will use to convert incoming data from the broker.) 
 
 {% capture mqttconvertertypespec %}
 json<small>Recommended if json will be received in response</small>%,%json%,%templates/iot-gateway/mqtt-converter-json-config.md%br%
+bytes<small>Recommended if bytes will be received in response</small>%,%raw%,%templates/iot-gateway/mqtt-converter-bytes-config.md%br%
 custom<small>Recommended if bytes or anything else will be received in response</small>%,%custom%,%templates/iot-gateway/mqtt-converter-custom-config.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="MqttConverterTypeConfig" toggle-spec=mqttconvertertypespec %}
@@ -319,6 +343,12 @@ Also, you can combine values from MQTT message in attributes, telemetry and serv
 Mapping process subscribes to the MQTT topics using **topicFilter** parameter of the mapping object. 
 Each message that is published to this topic by other devices or applications is analyzed to extract device name, type and data (attributes and/or timeseries values).
 By default, gateway uses Json converter, but it is possible to provide custom converter. See examples in the source code.
+
+{% capture difference %}
+<br>
+**Connector won't pass the None value from the converter**  
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 **Now let’s review an example of sending data from "SN-001" thermometer device.**
 
@@ -477,6 +507,53 @@ Your ThingsBoard instance will get information from the broker about last discon
 ![image](/images/gateway/mqtt-disconnect-device.png)
 {: refdef}
 
+### Section "attributeRequests"
+
+Configuration in this section are optional.
+
+In order to request client-side or shared device attributes to ThingsBoard server node, Gateway allows sending 
+attribute requests.
+
+| **Parameter**                 | **Default value**                                     | **Description**                                                       |
+|:-|:-|-
+| retain                        | **false**                                             | If set to true, the message will be set as the "last known good"/retained message for the topic.    |
+| topicFilter                   | **v1/devices/me/attributes/request**                  | Topic for attribute request |
+| deviceNameJsonExpression      | **${serialNumber}**                                   | JSON-path expression, for looking the device name in topicFilter message |
+| attributeNameJsonExpression   | **${versionAttribute}**                               | JSON-path expression, for looking the attribute name in topicFilter message |
+| topicExpression               | **devices/${deviceName}/attrs**                       | JSON-path expression, for formatting reply topic |
+| valueExpression               | **${attributeKey}: ${attributeValue}**                | Message that will be sent to topic from topicExpression |
+|---
+
+This section in configuration file looks like:
+```json
+"attributeRequests": [
+  {
+    "retain": false,
+    "topicFilter": "v1/devices/me/attributes/request",
+    "deviceNameJsonExpression": "${serialNumber}",
+    "attributeNameJsonExpression": "${versionAttribute}",
+    "topicExpression": "devices/${deviceName}/attrs",
+    "valueExpression": "${attributeKey}: ${attributeValue}"
+  }
+]
+```
+
+Also, you can request multiple attributes at once. Simply add one more JSON-path to 
+attributeNameExpression parameter. For example, we want to request two shared attributes in one request, our config 
+will look like:
+```json
+"attributeRequests": [
+  {
+    "retain": false,
+    "topicFilter": "v1/devices/me/attributes/request",
+    "deviceNameJsonExpression": "${serialNumber}",
+    "attributeNameJsonExpression": "${versionAttribute}, ${pduAttribute}",
+    "topicExpression": "devices/${deviceName}/attrs",
+    "valueExpression": "${attributeKey}: ${attributeValue}"
+  }
+]
+```
+
 ### Section "attributeUpdates"
 
 This configuration section is optional.  
@@ -547,7 +624,7 @@ Broker received new message from the ThingsBoard server about updating attribute
 ![image](/images/gateway/mqtt-mosquitto-sub-get-1.png)
 {: refdef}
 
-#### Server side RPC commands
+### Server side RPC commands
 
 ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to ThingsBoard directly or via Gateway.
  
@@ -606,6 +683,13 @@ Example of RPC request (rpc-request.json) that need to be sent from the server:
   }
 }
 ```
+
+
+Also, every telemetry and attribute parameter has built-in GET and SET RPC methods out of the box, so you don’t need to configure
+it manually. To use them, make sure you set all required parameters (in the case of MQTT Connector, these are the following:
+**requestTopicExpression**, **responseTopicExpression**, **responseTimeout**, **valueExpression**). 
+See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
+
 
 ## Next steps
 

@@ -112,8 +112,8 @@
     <tr>
         <td>transport.mqtt.ssl.credentials.keystore.type</td>
         <td>MQTT_SSL_KEY_STORE_TYPE</td>
-        <td>JKS</td>
-        <td>Type of the key store</td>
+        <td>PKCS12</td>
+        <td>Type of the key store: PKCS12 or JKS</td>
     </tr>
     <tr>
         <td>transport.mqtt.ssl.credentials.keystore.store_file</td>

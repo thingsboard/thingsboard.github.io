@@ -16,7 +16,7 @@ This guide will help you to setup ThingsBoard in microservices mode in Azure AKS
 
 {% include templates/install/azure/aks-prerequisites.md %}
 
-### Checkout ThingsBoard PE images from docker store
+### Pull ThingsBoard PE images from docker hub
 
 {% include templates/install/dockerhub/checkout.md %}
 
@@ -55,23 +55,15 @@ cd thingsboard-pe-k8s/azure/microservices
 
 {% include templates/install/azure/aks-create-redis.md %}
 
-## Step 7. Upload Docker credentials
-
-{% include templates/install/dockerhub/pull.md %}
-
-If the above command fails, repeat the [prerequisites](#checkout-thingsboard-pe-images-from-docker-store) step.
-
-{% include templates/install/dockerhub/upload-docker-credentials.md %}
-
-## Step 8. Configure license key
+## Step 7. Configure license key
 
 {% include templates/install/k8s-license-secret.md %}
 
-## Step 9. Installation
+## Step 8. Installation
 
 {% include templates/install/azure/aks-installation.md %}
 
-## Step 10. Starting
+## Step 9. Starting
 
 Execute the following command to deploy ThingsBoard services:
 
@@ -84,27 +76,27 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
 
 {% include templates/install/azure/aks-starting-transports.md %}
 
-## Step 11. Configure Load Balancers
+## Step 10. Configure Load Balancers
 
-### 11.1. Configure HTTP(S) Load Balancer
+### 10.1. Configure HTTP(S) Load Balancer
 {% include templates/install/azure/aks-http-lb.md %}
 
-### 11.2. Configure MQTT Load Balancer (Optional)
+### 10.2. Configure MQTT Load Balancer (Optional)
 
 {% assign tbServicesFile = "transport/tb-mqtt-transport.yml" %}
 {% include templates/install/azure/configure-mqtt.md %}
 
-### 11.3. Configure CoAP Load Balancer (Optional)
+### 10.3. Configure CoAP Load Balancer (Optional)
 
 {% assign tbServicesFile = "transport/tb-coap-transport.yml" %}
 {% include templates/install/azure/configure-coap.md %}
 
-### 11.4. Configure LwM2M Load Balancer (Optional)
+### 10.4. Configure LwM2M Load Balancer (Optional)
 
 {% assign tbServicesFile = "transport/tb-lwm2m-transport.yml" %}
 {% include templates/install/azure/configure-lwm2m.md %}
 
-## Step 12. Using
+## Step 11. Using
 
 {% include templates/install/azure/using.md %}
 

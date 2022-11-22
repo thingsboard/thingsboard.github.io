@@ -20,34 +20,15 @@ If you are looking for a cluster installation instruction, please visit [cluster
 
 - [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
 
-## Step 1. Checkout all ThingsBoard PE Image
-
-Please checkout ThingsBoard PE Image from Docker Hub.
-You will need to open all [verified images](https://hub.docker.com/search?q=thingsboard&type=image&image_filter=store) and click on "Proceed to checkout" to accept ThingsBoard PE license agreement.
-
-Listing all images **mandatory** for checkout for your convenience below:
-
- - [ThingsBoard PE Standalone](https://hub.docker.com/_/thingsboard-pe)
  
-
-![image](/images/user-guide/install/docker-pe/checkout-pe-node.png)
-
-
-Populate basic information about yourself and click "Get Content"
-
-
-![image](/images/user-guide/install/docker-pe/details.png)
- 
- 
-## Step 2. Pull ThingsBoard PE Image
-
-Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
+## Step 1. Pull ThingsBoard PE Image
 
 ```bash
-docker pull store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}
+docker pull thingsboard/tb-pe:{{ site.release.pe_full_ver }}
 ```
+{: .copy-code}
 
-## Step 3. Obtain the license key 
+## Step 2. Obtain the license key 
 
 We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
 If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
@@ -55,7 +36,7 @@ See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-Q
 
 Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
 
-## Step 4. Choose ThingsBoard queue service
+## Step 3. Choose ThingsBoard queue service
 
 {% include templates/install/install-queue.md %}
 
@@ -81,9 +62,9 @@ Where:
 - `mytb-logs:/var/log/thingsboard`   - mounts the volume `mytb-logs` to ThingsBoard logs directory
 - `mytbpe`             - friendly local name of this machine
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
-- `image: store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}`          - docker image.
+- `image: thingsboard/tb-pe:{{ site.release.pe_full_ver }}`          - docker image.
 
-## Step 5. Running
+## Step 4. Running
 
 Windows users should use docker managed volume for ThingsBoard DataBase. 
 Create docker volume (for ex. `mytbpe-data`) before executing docker run command:

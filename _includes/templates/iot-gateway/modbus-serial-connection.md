@@ -1,4 +1,3 @@
-
 | **Parameter**                 | **Default value**                     | **Description**                                                                                                               |
 |:-|:-|-
 | name                          | **Modbus Default Server**             | Name of connector to server.                                                                                                  |

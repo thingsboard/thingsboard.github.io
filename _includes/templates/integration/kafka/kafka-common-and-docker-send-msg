@@ -1,0 +1,21 @@
+You can simulate a message from a device or server using a terminal. To send an uplink message, you need a Kafka endpoint URL from the integration.
+```shell
+echo "{\"EUI\":\"43T1YH-REE\",\"ts\":1638876127000,\"data\":\"3d1f0059\",\"port\":10,\"freq\":24300,\"rssi\":-130,\"serial\":\"230165HRT\"}" | /usr/local/kafka/bin/kafka-console-producer.sh --broker-list URL_OF_YOUR_BOOTSTRAP_SERVER:9092 --topic my-topic > /dev/null
+```
+{: .copy-code}
+
+Result:
+
+{% include images-gallery.html imageCollection="Kafka_integration_test_send_msg_result" %}
+
+Also, you can check through the terminal what data came to Kafka.
+```yml
+/usr/local/kafka/bin/kafka-console-consumer.sh --bootstrap-server URL_OF_YOUR_BOOTSTRAP_SERVER:9092 --topic my-topic --from-beginning
+```
+{: .copy-code} 
+
+
+
+
+
+

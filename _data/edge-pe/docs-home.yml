@@ -5,6 +5,10 @@ toc:
   path: /docs/pe/edge/
 - title: What is ThingsBoard PE Edge?
   path: /docs/pe/edge/getting-started-guides/what-is-edge/
+- title: Key concepts
+  section:
+    - title: OTA updates
+      path: /docs/pe/edge/user-guide/ota-updates/
 #- title: Configuration guides
 #  section:
 #    - title: Edges
@@ -25,16 +29,34 @@ toc:
 #      path: /docs/pe/edge/config/provision-user/
 #    - title: Provision Customer from cloud to edge
 #      path: /docs/pe/edge/config/provision-customer/
-#- title: Edge Rule Engine
-#  section:
-#    - title: General Overview
-#      path: /docs/pe/edge/rule-engine/general/
+- title: Rule Engine
+  section:
+    - title: Queues
+      path: /docs/pe/edge/rule-engine/queues/
 #    - title: Rule Chain Templates
 #      path: /docs/pe/edge/rule-engine/rule-chain-templates/
 #    - title: Provision Rule Chains from cloud to edge
 #      path: /docs/pe/edge/rule-engine/provision-rule-chains/
 #    - title: Push data from edge to cloud and vice versa
 #      path: /docs/pe/edge/rule-engine/push-data/
+- title: Integrations
+  section:
+  - title: Overview
+    path: /docs/pe/edge/user-guide/integrations/
+  - title: Remote Integrations
+    path: /docs/pe/edge/user-guide/integrations/remote-integrations/
+  - title: HTTP
+    path: /docs/pe/edge/user-guide/integrations/http/
+  - title: MQTT
+    path: /docs/pe/edge/user-guide/integrations/mqtt/
+  - title: CoAP
+    path: /docs/pe/edge/user-guide/integrations/coap/
+  - title: OPC-UA
+    path: /docs/pe/edge/user-guide/integrations/opc-ua/
+  - title: TCP
+    path: /docs/pe/edge/user-guide/integrations/tcp/
+  - title: UDP
+    path: /docs/pe/edge/user-guide/integrations/udp/
 - title: Security
   section:
     - title: Enable gRPC over SSL/TLS for edge communication

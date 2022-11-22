@@ -1,0 +1,61 @@
+
+**Configure kafka integration**
+
+So in ThingsBoard instance open the Integration menu, select Add integration or Edit action - Details tab.
+
+Set Name, Choose type and select your Uplink data converter from dropdown menu. And fill other required fields:  Topics, Bootstrap server, properties.
+
+{% include images-gallery.html imageCollection="Kafka_confluent_create_integration" %}
+
+In Confluent select the created environment, then open Cluster, Cluster settings.
+
+{% include images-gallery.html imageCollection="Kafka_cloud_bootstrap_0" %}
+
+After, find Bootstrap server URL, it looks like **URL_OF_YOUR_BOOTSTRAP_SERVER:9092**
+
+You should copy it to integration:
+
+{% include images-gallery.html imageCollection="Kafka_cloud_bootstrap_1" %}
+
+Also, need will be to add several **other properties**, namely:
+
+<table>
+  <thead>
+    <tr>
+      <td style="width: 50%; color:black"><b>Key</b></td><td style="width: 50%; color:black"><b>Value</b></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><b>ssl.endpoint.identification.algorithm</b></td>
+      <td>https</td>
+    </tr>
+    <tr>
+      <td><b>sasl.mechanism</b></td>
+      <td>PLAIN</td>
+    </tr>
+    <tr>
+      <td><b>sasl.jaas.config</b></td>
+      <td>org.apache.kafka.common.security.plain.PlainLoginModule required username="<span style="color:red">CLUSTER_API_KEY</span>" password="<span style="color:red">CLUSTER_API_SECRET</span>";</td>
+    </tr>
+    <tr>
+      <td><b>security.protocol</b></td>
+      <td>SASL_SSL</td>
+    </tr>
+  </tbody>
+</table>
+
+
+- **`CLUSTER_API_KEY`** - your access key from Cluster settings.
+- **`CLUSTER_API_SECRET`** - your access secret from Cluster settings.
+  <br/>
+
+To generate the required API key and secret for it, in the cluster you must go to the Data Integration menu, select the API Keys submenu, pick Create key and Select the Scope for the API Key. Here you will see the key and secret to it, which should be used in the integration properties.
+
+{% include images-gallery.html imageCollection="kafka_integration_properties_1" %}
+
+It remains to create a topic on Confluent. To do this, select the **"Topics"** menu, select **"Create Topics"**, set the name to **my-topic** (It is important that the topics coincide with the specified in the integration. At the next stage, if necessary, you can change the Storage and Message size parameters, and then confirm the creation by the Create with defaults button.
+
+{% include images-gallery.html imageCollection="kafka_confluent_create_topic" %}
+
+With these settings, the integration will request updates from the Kafka broker every 5 seconds.

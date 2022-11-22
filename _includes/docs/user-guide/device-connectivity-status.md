@@ -27,11 +27,11 @@ Device State service is responsible for maintaining the following [server-side](
 ## Configuration
 
 Device State service uses a global configuration parameter for inactivity timeout. 
-This parameter is defined in **thingsboard.yml** (state.defaultInactivityTimeoutInSec) and by default it is set to 10 seconds.
+This parameter is defined in **thingsboard.yml** (state.defaultInactivityTimeoutInSec) and by default it is set to 600 seconds (10 minutes).
 A user can overwrite this parameter for an individual device by setting the "inactivityTimeout" server-side attribute (value is set in milliseconds).
 
 Device State service uses a global configuration parameter to detect inactivity events.
-This parameter is defined in **thingsboard.yml** (state.defaultStateCheckIntervalInSec) and by default it is set to 10 seconds.
+This parameter is defined in **thingsboard.yml** (state.defaultStateCheckIntervalInSec) and by default it is set to 60 seconds (1 minute).
 
 ## Next steps
 

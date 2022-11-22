@@ -11,7 +11,7 @@
 The below commands set up your environment for running GitHub pages locally. 
 Any edits you make will be viewable on a lightweight webserver that runs on your local machine.
 
-Install Ruby 2.2 or higher. If you're on Ubuntu 20.04.1 LTS, run these commands:
+Install Ruby **2.7.x**. If you're on Ubuntu 20.04.1 LTS, run these commands:
 
 	sudo apt-get install software-properties-common
 	sudo apt-add-repository ppa:brightbox/ruby-ng
@@ -20,7 +20,7 @@ Install Ruby 2.2 or higher. If you're on Ubuntu 20.04.1 LTS, run these commands:
 	sudo gem install github-pages
 	sudo gem install jekyll bundler
 
-* If you're on a Mac, follow [these instructions](https://gorails.com/setup/osx/).
+* If you're on a Mac, follow [these instructions](https://gorails.com/setup/osx/) and choose Ruby 2.7.6.
 * If you're on a Windows machine you can use the [Ruby Installer](http://rubyinstaller.org/downloads/). During the installation make sure to check the option for *Add Ruby executables to your PATH*.
 
 

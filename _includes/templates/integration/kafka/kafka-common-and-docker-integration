@@ -1,0 +1,8 @@
+
+
+
+{% include images-gallery.html imageCollection="Kafka_Integration_add" %}
+
+The screenshot shows the basic configuration for establishing a connection between ThingsBoard and Kafka Broker. With these settings, the integration will request updates from the Kafka broker every 5 seconds. And if set a topic does not exist at the broker, it will be created automatically.
+Note: With debug mode enabled, you can view errors, connection status and other events by opening the Events tab.
+

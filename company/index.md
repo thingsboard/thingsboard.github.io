@@ -41,7 +41,7 @@ description:
 </div>
 <div class="company-contacts">
     <div class="company-contact">
-        <div class="phone">+1 415 766 9144</div>
+        <div class="phone">+1 212 334 4096</div>
     </div>
     <div class="company-contact">
         <div class="address">42 Broadway Suite 12-400, New York, NY, 10004, US</div>

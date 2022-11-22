@@ -33,6 +33,12 @@ toc:
       path: /docs/iot-gateway/config/snmp/
     - title: FTP Connector
       path: /docs/iot-gateway/config/ftp/
+    - title: Socket Connector
+      path: /docs/iot-gateway/config/socket/
+    - title: XMPP Connector
+      path: /docs/iot-gateway/config/xmpp/
+    - title: OCPP Connector
+      path: /docs/iot-gateway/config/ocpp/
 - title: IoT Gateway features
   path: /docs/iot-gateway/features/
   section:
@@ -46,6 +52,8 @@ toc:
       path: /docs/iot-gateway/how-device-removing-renaming-works/
     - title: Gateway Configurator
       path: /docs/iot-gateway/guides/how-to-configure-gateway-using-configurator/
+    - title: GET/SET RPC methods
+      path: /docs/iot-gateway/guides/how-to-use-get-set-rpc-methods/
 - title: IoT Gateway Roadmap
   path: /docs/iot-gateway/roadmap/
 - title: Customization guide

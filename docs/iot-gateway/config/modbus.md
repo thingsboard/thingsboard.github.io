@@ -527,6 +527,12 @@ In response, you should receive the previously recorded value - "25".
 ![image](/images/gateway/gateway-modbus-rpc-2.png)
 {: refdef}
 
+
+Also, every telemetry and attribute parameter has built-in GET and SET RPC methods out of the box, so you don’t need to configure
+it manually. To use them, make sure you set all required parameters (in the case of Modbus Connector, these are the following:
+**type**, **functionCode**, **objectsCount**, **address**). 
+See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
+
 ## Section "slave": description and configuration parameters
 Starting with version 3.0, Gateway can run as a Modbus slave. In order to configure Gateway as a Modbus slave,
 specify the "slave" section in the configuration file.
@@ -537,9 +543,13 @@ There are 2 variants of Gateway slave section:
 TCP/UDP<small>Connection over TCP/UDP protocol</small>%,%tcpUdp%,%templates/iot-gateway/gateway-as-modbus-slave-tcpudp-connection.md%br%
 Serial<small>Connection over serial port</small>%,%serial%,%templates/iot-gateway/gateway-as-modbus-slave-serial-connection.md{% endcapture %}
 
-There are 2 variants of server section:
-
 {% include content-toggle.html content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType %}
+
+{% capture difference %}
+<br>
+**Don't use "Gateway" as the value of "deviceName" parameter!**  
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 <br>
 **Example:**

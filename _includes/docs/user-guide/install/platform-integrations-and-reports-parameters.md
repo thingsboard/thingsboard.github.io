@@ -1,5 +1,3 @@
-#### Platform integrations parameters
-
 <table>
     <thead>
         <tr>
@@ -89,7 +87,25 @@
           <td>reports.server.endpointUrl</td>
           <td>REPORTS_SERVER_ENDPOINT_URL</td>
           <td>http://localhost:8383</td>
-          <td>Enable/disable integrations statistics</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>reports.rate_limits.enabled</td>
+          <td>REPORTS_TENANT_RATE_LIMITS_ENABLED</td>
+          <td>false</td>
+          <td>Enable/disable reports tenant rate limits</td>
+      </tr>
+      <tr>
+          <td>reports.rate_limits.configuration</td>
+          <td>REPORTS_TENANT_RATE_LIMITS_CONFIGURATION</td>
+          <td>5:300</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>reports.scheduler.min_interval</td>
+          <td>REPORTS_SCHEDULER_MIN_INTERVAL_IN_SEC</td>
+          <td>60</td>
+          <td>Minimum interval between subsequent scheduler events. Applicable for timer based events</td>
       </tr>
     </tbody>
 </table>

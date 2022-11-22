@@ -85,7 +85,7 @@ This guide will help you to setup ThingsBoard in microservices mode in AWS EKS.
 
 {% include templates/install/aws/eks-prerequisites.md %}
 
-### Checkout ThingsBoard PE images from docker store
+### Pull ThingsBoard PE images from docker hub
 
 {% include templates/install/dockerhub/checkout.md %}
 
@@ -112,7 +112,7 @@ cd thingsboard-pe-k8s/aws/microservices
 
 {% include templates/install/aws/rds-setup.md %}
 
-### Step 4.2 Cassandra
+### Step 4.2 Cassandra (optional)
 
 {% include templates/install/aws/configure-cassandra.md %}
 
@@ -132,15 +132,7 @@ cd thingsboard-pe-k8s/aws/microservices
 
 {% include templates/install/k8s-license-secret.md %}
 
-## Step 9. Upload Docker credentials
-
-{% include templates/install/dockerhub/pull.md %}
-
-If the above command fails, repeat the [prerequisites](#checkout-thingsboard-pe-images-from-docker-store) step.
-
-{% include templates/install/dockerhub/upload-docker-credentials.md %}
-
-## Step 10. CPU and Memory resources allocation
+## Step 9. CPU and Memory resources allocation
 
 The scripts have preconfigured values of resources for each service. You can change them in `.yml` files under `resources` submenu.
 
@@ -155,11 +147,11 @@ Recommended CPU/memory resources allocation:
 - JS Executor: 0.1 CPU / 0.3Gi memory
 - Zookeeper: 0.3 CPU / 1Gi memory
 
-## Step 11. Installation
+## Step 10. Installation
 
 {% include templates/install/aws/eks-installation.md %}
 
-## Step 12. Starting
+## Step 11. Starting
 
 Execute the following command to deploy ThingsBoard services:
 
@@ -179,22 +171,22 @@ Every pod should be in the `READY` state.
 
 {% include templates/install/aws/start-transports.md %}
 
-## Step 13. Configure Load Balancers
+## Step 12. Configure Load Balancers
 
-### 13.1 Configure HTTP(S) Load Balancer
+### 12.1 Configure HTTP(S) Load Balancer
 
 {% include templates/install/aws/http-lb.md %}
 
-### 13.2. Configure MQTT Load Balancer (Optional)
+### 12.2. Configure MQTT Load Balancer (Optional)
 
 {% assign tbServicesFile = "tb-services.yml" %}
 {% include templates/install/aws/configure-mqtt.md %}
 
-### 13.3. Configure UDP Load Balancer (Optional)
+### 12.3. Configure UDP Load Balancer (Optional)
 
 {% include templates/install/aws/configure-udp.md %}
 
-## Step 14. Validate the setup
+## Step 13. Validate the setup
 
 {% include templates/install/aws/eks-validate.md %}
 

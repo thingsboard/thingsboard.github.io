@@ -5,5 +5,5 @@ description: ThingsBoard Edge FAQ
 
 ---
 
-{% assign docsPrefix = "pe/" %}
+{% assign docsPrefix = "pe/edge/" %}
 {% include docs/edge/faq.md %}

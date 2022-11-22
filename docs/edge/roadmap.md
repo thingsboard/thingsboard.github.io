@@ -10,14 +10,16 @@ description: Upcoming releases
 
 ## ThingsBoard Edge
 
-### v3.4
+### v3.5
 
-Everything in CE 3.4.
+Everything in CE 3.5, plus:
+
+* CRUD operations for rule chains directly on the edge
+* CRUD operations for assets directly on the edge
+* CRUD operations for entity views directly on the edge
+* CRUD operations for dashboards directly on the edge
+
+See active development in progress [here](https://github.com/thingsboard/thingsboard-edge/tree/{{ site.release.branch_major_next }}) and work on latest release bug fixes [here](https://github.com/thingsboard/thingsboard-edge/tree/{{ site.release.branch_minor_next }}).
 
 ### Upcoming releases
 * Edge Templates
-* Create assets/entity views/relations directly on the edge
-* Create dashboards/rule chains directly on the edge
-* Agent for the updates over the air of the edge component
-* Notifications on the cloud if connection to edge lost
-* Auto deployment of custom rule nodes to edge
