@@ -49,10 +49,20 @@ toc:
     path: /docs/pe/user-guide/dashboards/
   - title: Aliases
     path: /docs/pe/user-guide/ui/aliases/
-  - title: Widget Actions
-    path: /docs/pe/user-guide/ui/widget-actions/
-  - title: Widgets Library
-    path: /docs/pe/user-guide/ui/widget-library/
+  - title: Widgets
+    section:
+      - title: Widget Actions
+        path: /docs/pe/user-guide/ui/widget-actions/
+      - title: Widgets Library
+        path: /docs/pe/user-guide/ui/widget-library/
+      - title: Chart Widgets
+        path: /docs/pe/user-guide/ui/chart-widget/
+      - title: Entities Table widget
+        path: /docs/pe/user-guide/ui/entity-table-widget/
+      - title: Trip Animation Widget
+        path: /docs/pe/user-guide/ui/trip-animation-widget/
+      - title: Advanced data key configuration
+        path: /docs/pe/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
   section:
   - title: Getting Started
@@ -238,16 +248,6 @@ toc:
     path: /docs/pe/user-guide/ui/sms-provider-settings/
   - title: Mail Settings
     path: /docs/pe/user-guide/ui/mail-settings/
-  - title: Widgets
-    section:
-      - title: Chart Widgets
-        path: /docs/pe/user-guide/ui/chart-widget/
-      - title: Entity Table Widget
-        path: /docs/pe/user-guide/ui/entity-table-widget/
-      - title: Trip Animation Widget
-        path: /docs/pe/user-guide/ui/trip-animation-widget/
-      - title: Advanced data key configuration
-        path: /docs/pe/user-guide/ui/advanced-data-key-configuration/
 - title: Contribution Guide
   section:
     - title: How to contribute your device integration guide
