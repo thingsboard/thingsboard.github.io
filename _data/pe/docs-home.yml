@@ -175,6 +175,9 @@ toc:
       path: /docs/pe/user-guide/csv-xls-data-export/
     - title: File Storage
       path: /docs/pe/user-guide/file-storage/
+    - title: ThingsBoard Expression Language (TBEL)
+      path: /docs/pe/user-guide/tbel/
+      new: true
 - title: Security
   section:
   - title: Enable HTTPS
