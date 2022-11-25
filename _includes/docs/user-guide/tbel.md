@@ -368,3 +368,414 @@ until (isFalse()) {
    doSomething();
 }
 ```
+
+## Helper functions
+
+#### btoa
+
+Creates a Base64-encoded ASCII string from a binary string (i.e., a string in which each character in the string is treated as a byte of binary data)
+
+**Syntax:**
+
+*String btoa(String input)*
+
+**Parameters:**
+
+<ul>
+  <li><b>input:</b> <code>string</code> - The binary string to encode.</li>
+</ul>
+
+**Return value:**
+
+An ASCII string containing the Base64 representation of the input.
+
+**Examples:**
+
+```java
+var encodedData = btoa("Hello, world"); // encode a string
+var decodedData = atob(encodedData); // decode the string
+```
+
+#### atob
+
+Decodes a string of data which has been encoded using Base64 encoding.
+
+**Syntax:**
+
+*String atob(String input)*
+
+**Parameters:**
+
+<ul>
+  <li><b>input:</b> <code>string</code> - A binary string containing base64-encoded data.</li>
+</ul>
+
+**Return value:**
+
+An ASCII string containing decoded data from encodedData.
+
+**Examples:**
+
+```java
+var encodedData = btoa("Hello, world"); // encode a string
+var decodedData = atob(encodedData); // decode the string
+```
+
+#### bytesToString
+
+Creates a string from the list of bytes
+
+**Syntax:**
+
+*String bytesToString(List<Byte> bytesList[, String charsetName])*
+
+**Parameters:**
+
+<ul>
+  <li><b>bytesList:</b> <code>List of Bytes</code> - A list of bytes.</li>
+  <li><b>charsetName:</b> <code>String</code> - optional Charset name. UTF_8 by default.</li>
+</ul>
+
+**Return value:**
+
+A string constructed from the specified byte list.
+
+**Examples:**
+
+```java
+var bytes = [(byte)0x48,(byte)0x45,(byte)0x4C,(byte)0x4C,(byte)0x4F];
+return bytesToString(bytes); // Returns "HELLO"
+```
+
+#### decodeToString
+
+Alias for the [bytesToString](#bytestostring)
+
+#### decodeToJson
+
+Decodes a list of bytes to the JSON document.
+
+**Syntax:**
+
+*String decodeToJson(List<Byte> bytesList)*
+
+**Parameters:**
+
+<ul>
+  <li><b>bytesList:</b> <code>List of Bytes</code> - A list of bytes.</li>
+</ul>
+
+**Return value:**
+
+A JSON object or primitive.
+
+**Examples:**
+
+```java
+var base64Str = "eyJoZWxsbyI6ICJ3b3JsZCJ9"; // Base 64 representation of the '{"hello": "world"}'
+var bytesStr = atob(base64Str);
+var bytes = stringToBytes(bytesStr);
+return decodeToJson(bytes); // Returns '{"hello": "world"}'
+```
+
+#### stringToBytes
+
+Converts input binary string to the list of bytes.
+
+**Syntax:**
+
+*List<Byte> stringToBytes(String input[, String charsetName])*
+
+**Parameters:**
+
+<ul>
+  <li><b>input:</b> <code>Binary string</code> - string in which each character in the string is treated as a byte of binary data.</li>
+  <li><b>charsetName:</b> <code>String</code> - optional Charset name. UTF_8 by default.</li>
+</ul>
+
+**Return value:**
+
+A list of bytes.
+
+**Examples:**
+
+```java
+var base64Str = "eyJoZWxsbyI6ICJ3b3JsZCJ9"; // Base 64 representation of the '{"hello": "world"}' 
+var bytesStr = atob(base64Str);
+return stringToBytes(bytesStr); // Returns [123, 34, 104, 101, 108, 108, 111, 34, 58, 32, 34, 119, 111, 114, 108, 100, 34, 125]
+```
+
+#### parseInt
+
+Converts input string to integer.
+
+**Syntax:**
+
+*Integer parseInt(String str[, String radix])*
+
+**Parameters:**
+
+<ul>
+  <li><b>str:</b> <code>string</code> - the String containing the integer representation to be parsed.</li>
+  <li><b>radix:</b> <code>String</code> - optional radix to be used while parsing string.</li>
+</ul>
+
+**Return value:**
+
+An integer value.
+
+**Examples:**
+
+```java
+return parseInt("0") // returns 0
+return parseInt("473") // returns 473
+return parseInt("+42") // returns 42
+return parseInt("-0", 10) // returns 0
+return parseInt("-0xFF") // returns -255        
+return parseInt("-FF", 16) // returns -255
+return parseInt("1100110", 2) // returns 102
+return parseInt("2147483647", 10) // returns 2147483647
+return parseInt("-2147483648", 10) // returns -2147483648
+return parseInt("2147483648", 10) throws a NumberFormatException
+return parseInt("99", 8) throws a NumberFormatException
+return parseInt("Kona", 10) throws a NumberFormatException
+return parseInt("Kona", 27) // returns 411787
+```
+
+#### parseFloat
+
+Converts input string to float.
+
+**Syntax:**
+
+*Integer parseFloat(String str)*
+
+**Parameters:**
+
+<ul>
+  <li><b>str:</b> <code>string</code> - the string to be parsed.</li>
+</ul>
+
+**Return value:**
+
+A float value.
+
+**Examples:**
+
+```java
+return parseFloat("4.2"); // returns 4.2
+```
+
+#### parseDouble
+
+Converts input string to double.
+
+**Syntax:**
+
+*Integer parseDouble(String str)*
+
+**Parameters:**
+
+<ul>
+  <li><b>str:</b> <code>string</code> - the string to be parsed.</li>
+</ul>
+
+**Return value:**
+
+A double precision value.
+
+**Examples:**
+
+```java
+return parseDouble("4.2"); // returns 4.2
+```
+
+#### parseHexToInt
+
+Converts the hex string to integer.
+
+**Syntax:**
+
+*int parseHexToInt(String hex[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - the big-endian (BE) byte order if true, little-endian (LE) otherwise.</li>
+</ul>
+
+**Return value:**
+
+Parsed integer value.
+
+**Examples:**
+
+```java
+return parseHexToInt("BBAA"); // returns 48042
+return parseHexToInt("BBAA", true); // returns 48042
+return parseHexToInt("AABB", false); // returns 48042
+return parseHexToInt("BBAA", false); // returns 43707
+```
+
+#### parseLittleEndianHexToInt
+
+Alias for [parseHexToInt(hex, false)](#parsehextoint)
+
+**Syntax:**
+
+*int parseLittleEndianHexToInt(String hex)*
+
+#### parseBigEndianHexToInt
+
+Alias for [parseHexToInt(hex, true)](#parsehextoint)
+
+**Syntax:**
+
+*int parseBigEndianHexToInt(String hex)*
+
+#### toFixed
+
+Rounds the double value towards "nearest neighbor". 
+
+**Syntax:**
+
+*double toFixed(double value, int precision)*
+
+**Parameters:**
+
+<ul>
+  <li><b>value:</b> <code>double</code> - the double value.</li>
+  <li><b>precision:</b> <code>int</code> - the precision.</li>
+</ul>
+
+**Return value:**
+
+Rounded double
+
+**Examples:**
+
+```java
+return toFixed(0.345, 1); // returns 0.3
+return toFixed(0.345, 2); // returns 0.35
+```
+
+#### hexToBytes
+
+Converts the hex string to list of integer values, where each integer represents single byte.
+
+**Syntax:**
+
+*List<Integer> hexToBytes(String hex)*
+
+**Parameters:**
+
+<ul>
+  <li><b>hex:</b> <code>string</code> - the hex string with big-endian byte order.</li>
+</ul>
+
+**Return value:**
+
+Parsed list of integer values.
+
+**Examples:**
+
+```java
+return hexToBytes("BBAA"); // returns [187, 170]
+```
+
+#### bytesToHex
+
+Converts the list of integer values, where each integer represents single byte, to the hex string.
+
+**Syntax:**
+
+*String bytesToHex(List<Integer> bytes)*
+
+**Parameters:**
+
+<ul>
+  <li><b>bytes:</b> <code>List of integer</code> - the list of integer values, where each integer represents single byte.</li>
+</ul>
+
+**Return value:**
+
+Hex string.
+
+**Examples:**
+
+```java
+return bytesToHex([187, 170]); // returns "BBAA"
+```
+
+#### bytesToBase64
+
+Converts the byte array, to Base64 string.
+
+**Syntax:**
+
+*String bytesToBase64(byte[] bytes)*
+
+**Parameters:**
+
+<ul>
+  <li><b>bytes:</b> <code>List of integer</code> - the list of integer values, where each integer represents single byte.</li>
+</ul>
+
+**Return value:**
+
+Base64 string.
+
+**Examples:**
+
+```java
+return bytesToBase64([42, 73]); // returns "Kkk="
+```
+
+#### base64ToHex
+
+Decodes the Base64 string, to hex string.
+
+**Syntax:**
+
+*String base64ToHex(String input)*
+
+**Parameters:**
+
+<ul>
+  <li><b>input:</b> <code>String</code> - the Base64 string.</li>
+</ul>
+
+**Return value:**
+
+Hex string
+
+**Examples:**
+
+```java
+return base64ToHex("Kkk="); // returns "2A49"
+```
+
+#### base64ToBytes
+
+Decodes the Base64 string, to byte array.
+
+**Syntax:**
+
+*byte[] base64ToBytes(String input)*
+
+**Parameters:**
+
+<ul>
+  <li><b>input:</b> <code>String</code> - the Base64 string.</li>
+</ul>
+
+**Return value:**
+
+Byte array.
+
+**Examples:**
+
+```java
+return base64ToBytes("Kkk="); // returns [42, 73]
+```

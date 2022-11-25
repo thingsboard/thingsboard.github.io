@@ -148,7 +148,6 @@ toc:
       path: /docs/user-guide/claiming-devices/
     - title: Device provisioning
       path: /docs/user-guide/device-provisioning/
-      new: true
     - title: Entity Views
       path: /docs/user-guide/entity-views/
     - title: API Limits
@@ -157,11 +156,9 @@ toc:
       path: /docs/user-guide/advanced-filters/
     - title: Version Control
       path: /docs/user-guide/version-control/
-      new: true
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning
-      new: true
       path: /docs/user-guide/bulk-provisioning/
     - title: Entity Groups
       path: /docs/pe/user-guide/groups/
