@@ -1,0 +1,5 @@
+bigheader: "ThingsBoard MQTT Broker API reference"
+abstract: "Clients connectivity and server-side APIs."
+toc:
+- title: ThingsBoard MQTT Broker API reference
+  path: /docs/mqtt-broker/api/
