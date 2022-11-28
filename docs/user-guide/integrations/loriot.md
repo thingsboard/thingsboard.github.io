@@ -34,7 +34,7 @@ access_token:
     0:
         image: /images/user-guide/integrations/loriot/loriot_access_tokens.png
     1:
-        image: /images/user-guide/integrations/loriot/loriut_authentication_tokens.png 
+        image: /images/user-guide/integrations/loriot/loriut_authentication_tokens.png
     2:
         image: /images/user-guide/integrations/loriot/loriot_and_thingsboard_integration_application_access_token.png
 
