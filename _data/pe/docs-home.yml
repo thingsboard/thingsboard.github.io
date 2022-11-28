@@ -240,6 +240,8 @@ toc:
     path: /docs/pe/user-guide/ui/sms-provider-settings/
   - title: Mail Settings
     path: /docs/pe/user-guide/ui/mail-settings/
+  - title: JWT Security Settings
+    path: /docs/pe/user-guide/ui/jwt-security-settings/
   - title: Widgets
     section:
       - title: Chart Widgets
