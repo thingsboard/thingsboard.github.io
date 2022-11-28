@@ -6,13 +6,18 @@
 // Decode an uplink message from a buffer
 // payload - array of bytes
 // metadata - key/value object
+
 /** Decoder **/
+ 
 // decode payload to string
 // var payloadStr = decodeToString(payload);
+
 // decode payload to JSON
 var data = decodeToJson(payload);
+
 var deviceName = data.deviceName;
 var deviceType = data.deviceType;
+
 // Result object with device attributes/telemetry data
 var result = {
    deviceName: deviceName,
@@ -26,15 +31,8 @@ var result = {
    }
 };
 
-/** Helper functions **/
+/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/
 
-function decodeToString(payload) {
-   return bytesToString(payload);
-}
-function decodeToJson(payload) {
-   // covert payload to string and then parse string to JSON
-   return JSON.parse(decodeToString(payload));
-}
 return result;
 ```
 {: .copy-code}
