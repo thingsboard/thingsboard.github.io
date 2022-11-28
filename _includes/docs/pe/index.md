@@ -236,6 +236,11 @@
                     </a>
                 </div>
                 <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/tcp/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/tcp.svg"/><span>TCP</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 mb-4">
                     <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/azure-event-hub/">
                         <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/azure-event-hub.svg"/><span>Azure Event Hub</span></div>
                     </a>
@@ -246,13 +251,33 @@
                     </a>
                 </div>
                 <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/coap/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/coap.svg"/><span>CoAP</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 mb-4">
                     <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/thingpark/">
                         <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/thingpark.svg"/><span>ThingPark</span></div>
                     </a>
                 </div>
                 <div class="col-12 col-sm-6 mb-4">
                     <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/ttn/">
-                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/ttn.svg"/><span>TheThingsNetwork</span></div>
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/ttn.svg"/><span>TheThingsStackCommunity</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/tti/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/things-stack-industries.svg"/><span>TheThingsStackIndustries</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/chirpstack/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/chirpstack.svg"/><span>ChirpStack</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/apache-pulsar.svg"/><span>Apache Pulsar</span></div>
                     </a>
                 </div>
                 <div class="col-12 col-sm-6 mb-4">
@@ -265,9 +290,64 @@
                         <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/aws-kinesis.svg"/><span>AWS Kinesis</span></div>
                     </a>
                 </div>
-                <div class="col-12 col-sm-6">
+                <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/aws-sqs.svg"/><span>AWS SQS</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/custom.svg"/><span>Custom</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 mb-4">
                     <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/ibm-watson-iot/">
                         <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/ibm-watson-iot.svg"/><span>IBM Watson IoT</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/kafka/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/kafka.svg"/><span>Kafka</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/loriot/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/loriot.svg"/><span>Loriot</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/ocean-connect/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/ocean-connect.svg"/><span>Ocean Connect</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/pub-sub.svg"/><span>Pub/Sub</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/rabbitmq.svg"/><span>RabbitMQ</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/thingpark/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/thingpark.svg"/><span>ThingPark</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/thingpark-enterprise.svg"/><span>ThingParkEnterprise</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/udp/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/udp.svg"/><span>UDP</span></div>
+                    </a>
+                </div>
+                <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/iotcreators.com.svg"/><span>iotcreators.com (T-Mobile – IoT CDP)</span></div>
                     </a>
                 </div>
             </div>
