@@ -15,9 +15,17 @@ toc:
   path: /docs/mqtt-broker/security/
 - title: MQTT Listeners
   path: /docs/mqtt-broker/mqtt-listeners/
+- title: Features
+  section:
+    - title: Shared Subscriptions
+      path: /docs/mqtt-broker/user-guide/shared-subscriptions/
 - title: Administration UI
   section:
     - title: MQTT Client Credentials
       path: /docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/
-- title: MQTT Broker Release Notes
+- title: Troubleshooting
+  path: /docs/mqtt-broker/troubleshooting/
+- title: Release Notes
   path: /docs/mqtt-broker/releases/
+- title: Roadmap
+  path: /docs/mqtt-broker/roadmap/
