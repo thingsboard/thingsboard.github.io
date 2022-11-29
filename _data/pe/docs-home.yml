@@ -160,7 +160,6 @@ toc:
       path: /docs/pe/user-guide/advanced-filters/
     - title: Version Control
       path: /docs/pe/user-guide/version-control/
-      new: true
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning
@@ -175,6 +174,9 @@ toc:
       path: /docs/pe/user-guide/csv-xls-data-export/
     - title: File Storage
       path: /docs/pe/user-guide/file-storage/
+    - title: ThingsBoard Expression Language (TBEL)
+      path: /docs/pe/user-guide/tbel/
+      new: true
 - title: Security
   section:
   - title: Enable HTTPS
@@ -238,6 +240,8 @@ toc:
     path: /docs/pe/user-guide/ui/sms-provider-settings/
   - title: Mail Settings
     path: /docs/pe/user-guide/ui/mail-settings/
+  - title: JWT Security Settings
+    path: /docs/pe/user-guide/ui/jwt-security-settings/
   - title: Widgets
     section:
       - title: Chart Widgets

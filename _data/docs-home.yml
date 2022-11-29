@@ -148,7 +148,6 @@ toc:
       path: /docs/user-guide/claiming-devices/
     - title: Device provisioning
       path: /docs/user-guide/device-provisioning/
-      new: true
     - title: Entity Views
       path: /docs/user-guide/entity-views/
     - title: API Limits
@@ -157,11 +156,9 @@ toc:
       path: /docs/user-guide/advanced-filters/
     - title: Version Control
       path: /docs/user-guide/version-control/
-      new: true
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning
-      new: true
       path: /docs/user-guide/bulk-provisioning/
     - title: Entity Groups
       path: /docs/pe/user-guide/groups/
@@ -178,6 +175,9 @@ toc:
     - title: File Storage
       path: /docs/pe/user-guide/file-storage/
       pe: true
+    - title: ThingsBoard Expression Language (TBEL)
+      path: /docs/user-guide/tbel/
+      new: true
 - title: Security
   section:
     - title: Enable HTTPS
@@ -254,6 +254,8 @@ toc:
     path: /docs/user-guide/ui/sms-provider-settings/
   - title: Mail Settings
     path: /docs/user-guide/ui/mail-settings/
+  - title: JWT Security Settings
+    path: /docs/user-guide/ui/jwt-security-settings/
 - title: Contribution Guide
   section:
     - title: How to contribute
