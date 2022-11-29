@@ -14,7 +14,8 @@ Please open AWS console and navigate to MSK, press `Create cluster` button and c
 {% include images-gallery.html imageCollection="mskSetup"%}
 
 Once the MSK cluster switch to the 'Active' state, navigate to 'Details' and click 'View client information'.
-Copy bootstrap server information in plaintext.
-We will refer to it later in this guide using **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT**.
+Copy bootstrap server information in plaintext, it`s **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT**.
 
 {% include images-gallery.html imageCollection="mskConnectionParams"%}
+
+Edit “tb-kafka-configmap.yml” and replace **YOUR_MSK_BOOTSTRAP_SERVERS_PLAINTEXT**.
