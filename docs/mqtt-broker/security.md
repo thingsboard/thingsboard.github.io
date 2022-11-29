@@ -16,7 +16,8 @@ This guide will describe the available options to be able to enable authenticati
 
 To enable basic authentication (based on username, password, and clientId) you need to set `SECURITY_MQTT_BASIC_ENABLED` environment variable to `true` 
 and create MQTT Client Credentials of type `MQTT_BASIC`.
-Please follow [this guide](/docs/mqtt-broker/mqtt-client-credentials-management/) on how to create MQTT_BASIC credentials.
+Please follow [this guide](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) on how to create MQTT_BASIC credentials using Web UI 
+or [this guide](/docs/mqtt-broker/mqtt-client-credentials-management/) using REST API.
 Once the credentials are being created, the `credentialsId` field is auto-generated. See below for more information.
 
 When the client connects, the combination of username, password, and clientId from the _CONNECT_ packet should be matched 
@@ -46,7 +47,8 @@ To enable TLS authentication first of all you need to [enable TLS listener](/doc
 in the authentication process.
 
 Afterward, you need to set `SECURITY_MQTT_SSL_ENABLED` environment variable to `true` and create MQTT Client Credentials of type `SSL`.
-Please follow [this guide](/docs/mqtt-broker/mqtt-client-credentials-management/) on how to create SSL credentials.
+Please follow [this guide](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) on how to create SSL credentials using Web UI
+or [this guide](/docs/mqtt-broker/mqtt-client-credentials-management/) using REST API.
 Once the credentials are being created, the `credentialsId` field is auto-generated. See below for more information.
 
 For each certificate in the chain, the common name (CN) is compared to the common names of the persisted credentials.

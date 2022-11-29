@@ -1,15 +1,23 @@
 bigheader: "MQTT Broker Documentation"
 abstract: "ThingsBoard MQTT Broker."
 toc:
-  - title: ThingsBoard MQTT Broker
-    path: /docs/mqtt-broker/
-  - title: What is ThingsBoard MQTT Broker?
-    path: /docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/
-  - title: Configuration
-    path: /docs/mqtt-broker/install/config/
-  - title: Security
-    path: /docs/mqtt-broker/security/
-  - title: MQTT Listeners
-    path: /docs/mqtt-broker/mqtt-listeners/
-  - title: MQTT Broker Release Notes
-    path: /docs/mqtt-broker/releases/
+- title: ThingsBoard MQTT Broker
+  path: /docs/mqtt-broker/
+- title: What is ThingsBoard MQTT Broker?
+  path: /docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/
+- title: Configuration
+  path: /docs/mqtt-broker/install/config/
+- title: Key concepts
+  section:
+    - title: MQTT client type
+      path: /docs/mqtt-broker/user-guide/mqtt-client/
+- title: Security
+  path: /docs/mqtt-broker/security/
+- title: MQTT Listeners
+  path: /docs/mqtt-broker/mqtt-listeners/
+- title: Administration UI
+  section:
+    - title: MQTT Client Credentials
+      path: /docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/
+- title: MQTT Broker Release Notes
+  path: /docs/mqtt-broker/releases/
