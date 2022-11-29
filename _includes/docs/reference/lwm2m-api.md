@@ -950,7 +950,7 @@ openssl ec -in scertServer.pem -pubout -outform DER -out spubk.der
 {: .copy-code}
 
 Please note that script us using the default password for "lwm2mserver.jks" file. If you are going to use another password,
-please also update it in ["thinsboard.yml"](https://thingsboard.io/docs/user-guide/install/config/) configuration file:
+please also update it in ["thingsboard.yml"](https://thingsboard.io/docs/user-guide/install/config/) configuration file:
 
 ```ruby
 ...
