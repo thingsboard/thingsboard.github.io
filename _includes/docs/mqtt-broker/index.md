@@ -44,11 +44,11 @@ The ThingsBoard MQTT Broker documentation can help you set up ThingsBoard MQTT B
     </div>
     <div class="w-100"></div>
     <div class="col-12 col-sm-6 mb-4">
-        <a class="feature-card" href="/docs/mqtt-broker/use-cases/overview/">
-            <img class="feature-logo" src="/images/feature-logo/tutorials.svg"/>
-            <div class="feature-title">Use cases</div>
+        <a class="feature-card" href="/docs/mqtt-broker/install/config/">
+            <img class="feature-logo" src="/images/feature-logo/configuration.svg"/>
+            <div class="feature-title">Configuration</div>
             <div class="feature-text">
-                Overview use cases that could be achieved with ThingsBoard Mqtt Broker.
+                Configuration of ThingsBoard Mqtt Broker.
             </div>
         </a>
     </div>

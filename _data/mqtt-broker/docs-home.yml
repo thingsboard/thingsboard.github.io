@@ -6,30 +6,10 @@ toc:
   - title: What is ThingsBoard MQTT Broker?
     path: /docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/
   - title: Configuration
-    section:
-      - title: MQTT Options
-        path: /docs/mqtt-broker/mqtt-options/
-      - title: Persistence
-        path: /docs/mqtt-broker/persistence/
-      - title: Message Processing
-        path: /docs/mqtt-broker/message-processing/
+    path: /docs/mqtt-broker/install/config/
   - title: Security
     path: /docs/mqtt-broker/security/
   - title: MQTT Listeners
     path: /docs/mqtt-broker/mqtt-listeners/
-  - title: Administrative
-    section:
-      - title: Administration REST API
-        path: /docs/mqtt-broker/rest-api/
-      - title: Admin User Management
-        path: /docs/mqtt-broker/user-management/
-      - title: MQTT Client Credentials Management
-        path: /docs/mqtt-broker/mqtt-client-credentials-management/
-  - title: Logging
-    path: /docs/mqtt-broker/logging/
-  - title: Monitoring
-    path: /docs/mqtt-broker/monitoring/
-  - title: Troubleshooting
-    path: /docs/mqtt-broker/troubleshooting/
   - title: MQTT Broker Release Notes
     path: /docs/mqtt-broker/releases/
