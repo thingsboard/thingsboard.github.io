@@ -35,10 +35,20 @@ toc:
     path: /docs/user-guide/dashboards/
   - title: Aliases
     path: /docs/user-guide/ui/aliases/
-  - title: Widget Actions
-    path: /docs/user-guide/ui/widget-actions/
-  - title: Widgets Library
-    path: /docs/user-guide/ui/widget-library/
+  - title: Widgets
+    section:
+      - title: Widget Actions
+        path: /docs/user-guide/ui/widget-actions/
+      - title: Widgets Library
+        path: /docs/user-guide/ui/widget-library/
+      - title: Chart widgets
+        path: /docs/user-guide/ui/chart-widget/
+      - title: Entities Table widget
+        path: /docs/user-guide/ui/entity-table-widget/
+      - title: Trip Animation widget
+        path: /docs/user-guide/ui/trip-animation-widget/
+      - title: Advanced data key configuration
+        path: /docs/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
   section:
     - title: Getting Started
@@ -235,18 +245,6 @@ toc:
     path: /docs/user-guide/ui/devices/
   - title: Rule Chains
     path: /docs/user-guide/ui/rule-chains/
-  - title: Widgets
-    section:
-    - title: Chart widgets
-      path: /docs/user-guide/ui/chart-widget/
-      new: true
-    - title: Entity Table widget
-      path: /docs/user-guide/ui/entity-table-widget/
-      new: true
-    - title: Trip Animation widget
-      path: /docs/user-guide/ui/trip-animation-widget/
-    - title: Advanced data key configuration
-      path: /docs/user-guide/ui/advanced-data-key-configuration/
   - title: Dashboards
     path: /docs/user-guide/ui/dashboards/
   - title: SMS Provider Settings
