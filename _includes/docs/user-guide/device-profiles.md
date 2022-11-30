@@ -219,7 +219,7 @@ The current version of the ThingsBoard platform supports integration with next E
  - leakage,
  - I/O. 
  
-FW version: 06.02 or newer. 
+Requires Efento devices with FW version: 06.02+. 
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-efento-nb-iot-setting-1-ce.png)
