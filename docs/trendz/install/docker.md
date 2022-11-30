@@ -53,7 +53,7 @@ version: '2.2'
 services:
   mytrendz:
     restart: always
-    image: "thingsboard/trendz:1.8.2-SNAPSHOT"
+    image: "thingsboard/trendz:1.9.2"
     ports:
       - "8888:8888"
     environment:
@@ -90,7 +90,7 @@ Where:
 - `~/.mytrendz-logs:/var/log/thingsboard`   - mounts the volume `~/.mytrendz-logs` to Trendz logs directory
 - `mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.8.2-SNAPSHOT`          - docker image
+- `thingsboard/trendz:1.9.2`          - docker image
     
 Before starting Docker container run following commands to create a directory for storing data and logs and then change 
 its owner to docker container user, to be able to change user, chown command is used, which requires sudo permissions 
@@ -150,44 +150,33 @@ docker-compose start mytrendz
 
 ## Upgrade Trendz Service
 
-Below is example on how to upgrade from 1.6.0 to 1.7.0
-
-1. Stop mytrendz container
-
-    ```text
-    docker-compose stop mytrendz
-    ```
-    {: .copy-code}
+Below is example on how to upgrade from 1.8.0 to 1.9.2
 
 
-2. Create a dump of your database:
+1. Create a dump of your database:
+   
+```text
+docker-compose exec postgres sh -c "pg_dump -U postgres trendz > /var/lib/postgresql/data/trendz_dump"
+```
+{: .copy-code}
 
-    ```text
-    docker-compose exec postgres sh -c "pg_dump -U postgres trendz > /var/lib/postgresql/data/trendz_dump"
-    ```
-    {: .copy-code}
+2. Set upgradeversion version to your **previous** Trendz version.
+          
+```text
+docker-compose exec mytrendz sh -c "echo '1.8.0' > /data/.upgradeversion" 
+```
+{: .copy-code} 
 
-3. After this you need to update docker-compose.yml as in [Step 3](#step-3-running) but with 1.8.2-SNAPSHOT instead of 1.7.0-SNAPSHOT:
+3. After this you need to update docker-compose.yml as in [Step 3](#step-3-running) but with 1.9.2 instead of 1.8.0-SNAPSHOT:
     
-4. Change upgradeversion version to your **current** ThingsBoard version.
-       
-    ```text
-    sudo sh -c "echo '1.7.0' > ~/.mytrendz-data/.upgradeversion"
-    ```
-    {: .copy-code}
+4. Restart Trend container
+    
+```text
+docker-compose stop mytrendz
+docker-compose up -d
+```
+{: .copy-code}
 
-5. Then execute the following commands:
-    ```text
-    docker-compose run mytrendz upgrade-trendz.sh
-    ```
-    {: .copy-code}
-    
-6. Start Trendz:
-    
-    ```text
-    docker-compose up -d
-    ```
-    {: .copy-code}
 
 To upgrade Trendz to latest version those steps should be done **for each intermediate version**.
 

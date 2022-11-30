@@ -29,7 +29,7 @@ In small and medium installations Trendz can be installed **on the same** server
 Download and extract the package.
 
 ```bash
-https://dist.thingsboard.io/trendz-windows-1.8.2.zip
+https://dist.thingsboard.io/trendz-windows-1.9.2.zip
 ```
 {: .copy-code}
 
@@ -103,25 +103,15 @@ C:\Program Files (x86)\trendz\conf\trendz.yml
 ``` 
 {: .copy-code}
 
-and locate "# SQL DAO Configuration" block. Replace SPRING_DATASOURCE_URL, SPRING_DATASOURCE_USERNAME and SPRING_DATASOURCE_PASSWORD
+and locate "datasource" block. Replace SPRING_DATASOURCE_URL, SPRING_DATASOURCE_USERNAME and SPRING_DATASOURCE_PASSWORD
  properties with valid values. Don't forget to replace "postgres" with your real postgres user password:
 
 ```yml
-# SQL DAO Configuration
-spring:
-  data:
-    jpa:
-      repositories:
-        enabled: "true"
-  jpa:
-    open-in-view: "false"
-    hibernate:
-      ddl-auto: "none"
-  datasource:
+datasource:
     driverClassName: "${SPRING_DRIVER_CLASS_NAME:org.postgresql.Driver}"
     url: "${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/trendz}"
     username: "${SPRING_DATASOURCE_USERNAME:postgres}"
-    password: "${SPRING_DATASOURCE_PASSWORD:YOUR_POSTGRES_PASSWORD_HERE}"
+    password: "${SPRING_DATASOURCE_PASSWORD:postgres}"
     hikari:
       maximumPoolSize: "${SPRING_DATASOURCE_MAXIMUM_POOL_SIZE:5}"
 ``` 
@@ -139,8 +129,8 @@ The output should be similar to this one:
   ```text
 C:\Program Files (x86)\trendz>install.bat
 Detecting Java version installed.
-CurrentVersion 18
-Java 1.8 found!
+CurrentVersion 11
+Java 11 found!
 Installing Trendz Analytics...
 ...
 Trendz Analytics installed successfully!
@@ -173,7 +163,7 @@ net start trendz
 Once started, you will be able to open Web UI using the following link:
 
 ```bash
-http://localhost:8888/
+http://localhost:8888/trendz
 ```
 
 **Note**:  If Trendz installed on a remote server, you have to replace localhost with the public IP address of 

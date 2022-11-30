@@ -24,14 +24,13 @@ If your ThingsBoard installation is hosted on another instance/port - you have t
 Open Trendz configuration file:
 
 ```
-Windows: C:\Program Files (x86)\trendz\conf\trendz.yml
-Linux: /usr/share/trandz/conf/trandz.yml
+sudo nano /usr/share/trandz/conf/trandz.conf
 ```
     
 And update this property to the correct value:
 
 ```yml
-tb.api.url: "${TB_API_URL:http://localhost:9090}"
+export TB_API_URL=http://localhost:9090
 ```    
     
 For docker installations - update environment variable ``TB_API_URL`` with the correct value.   
