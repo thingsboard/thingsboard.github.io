@@ -559,7 +559,7 @@ It is more than x5 times (152 / 29) cheaper than PostgreSQL disk consumption!
 
 {% include images-gallery.html imageCollection="cassandra-25k-10k-30k-disk" %}
 
-Finally, let's check the JVM state on each Thingboard, Zookeeper, Kafka and Cassandra
+Finally, let's check the JVM state on each Thingsboard, Zookeeper, Kafka and Cassandra
 Let's forward JMX port with SSH to connect and monitor all Java applications presented.
 
 ```bash
