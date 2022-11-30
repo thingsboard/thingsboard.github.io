@@ -1,11 +1,8 @@
 ---
 layout: docwithnav-mqtt-broker
 title: Troubleshooting
-description: Troubleshooting Guide
+description: ThingsBoard MQTT Broker troubleshooting guide
 
 ---
 
-* TOC
-{:toc}
-
-![image](/images/coming-soon.jpg)
+{% include docs/mqtt-broker/troubleshooting.md %}
