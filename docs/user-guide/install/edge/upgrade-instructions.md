@@ -211,7 +211,7 @@ nano docker-compose-upgrade.yml
 Add the following lines to the yml file:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: on-failure
@@ -260,7 +260,7 @@ nano docker-compose.yml
 {: .copy-code}
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: always
@@ -387,7 +387,7 @@ nano docker-compose-upgrade.yml
 Add the following lines to the yml file:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: on-failure
@@ -436,7 +436,7 @@ nano docker-compose.yml
 {: .copy-code}
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: always
@@ -563,7 +563,7 @@ nano docker-compose-upgrade.yml
 Add the following lines to the yml file:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: on-failure
@@ -612,7 +612,7 @@ nano docker-compose.yml
 {: .copy-code}
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: always

@@ -11,7 +11,7 @@ nano docker-compose.yml
 Add the following lines to the yml file. Don't forget to replace "YOUR_USERNAME" and "YOUR_PASSWORD" with your **real user credentials**, "localhost" and "5672" with your **real RabbitMQ host and port**:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytb:
     restart: always

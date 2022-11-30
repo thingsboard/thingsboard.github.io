@@ -47,7 +47,7 @@ Add the following line to the yml file. Don't forget to replace “PUT_YOUR_LICE
 
 ```yml
 
-version: '2.2'
+version: '3.0'
 services:
   mytrendz:
     restart: always

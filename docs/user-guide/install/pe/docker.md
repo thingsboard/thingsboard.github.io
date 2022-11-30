@@ -79,24 +79,8 @@ mkdir -p ~/.mytbpe-logs && sudo chown -R 799:799 ~/.mytbpe-logs
 
 **NOTE**: replace directory `~/.mytbpe-data` and `~/.mytbpe-logs` with directories you're planning to used in `docker-compose.yml`. 
 
-Execute the following command to up this docker compose directly:
-
-**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file. 
-
-``` 
-docker-compose up -d
-docker-compose logs -f mytbpe
-```
-{: .copy-code}
-    
-After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
-Use the following default credentials:
-
-- **System Administrator**: sysadmin@thingsboard.org / sysadmin
-- **Tenant Administrator**: tenant@thingsboard.org / tenant
-- **Customer User**: customer@thingsboard.org / customer
-    
-You can always change passwords for each account in account profile page.
+{% assign tbServiceNamePrefix = "pe" %}
+{% include templates/install/docker/docker-compose-up.md %}
 
 ## Detaching, stop and start commands
 
@@ -191,7 +175,7 @@ exit
 After this create your docker-compose.yml and insert (we used in-memory queue as an example):
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbpe:
     restart: always

@@ -10,7 +10,7 @@ nano docker-compose.yml
 Add the following line to the yml file. Don’t forget to replace “YOUR_PROJECT_ID”, "YOUR_SERVICE_ACCOUNT" with your **real Pub/Sub project id, and service account (it is whole data from json file), and "PUT_YOUR_LICENSE_SECRET_HERE" with your **license secret obtained on the first step**:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbpe:
     restart: always

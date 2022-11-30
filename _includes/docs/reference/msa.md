@@ -250,7 +250,7 @@ and corresponding [documentation](https://github.com/thingsboard/thingsboard/blo
 TODO: 2.5  
 
 {% highlight yaml %}
-version: '2.2'
+version: '3.0'
 
 services:
   zookeeper:

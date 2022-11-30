@@ -44,7 +44,7 @@ docker-compose.yml
 {: .copy-code}
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: always
