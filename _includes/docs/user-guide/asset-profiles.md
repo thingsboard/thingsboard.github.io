@@ -5,14 +5,16 @@
 ## Overview
 
 Since ThingsBoard 3.4.2, the Tenant administrator is able to configure common settings for multiple assets using Asset Profiles.
+Each Asset has one and only profile at a single point in time.
+Experienced ThingsBoard users can notice that the asset type has been deprecated in favor of the Asset Profile.
+The update script will automatically create Asset Profiles based on unique Asset Types and assign them to the appropriate assets.
 
-With Asset Profiles, you can set an individual Rule Chain that will be optimal for working with Assets, and set Queue rules to guarantee message processing.
-
+Asset Profile allows you to select the [Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain) and [Queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/) to be used by the [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview) for processing of the asset data.
 Let's take a look at the settings available in the asset profile.
 
 ## Create Asset Profile
 
-To create a custom asset profile, go to the Asset Profiles on the Profiles tab and click on the plus button to add a new asset profile.
+To create an asset profile, go to the Asset Profiles on the Profiles tab and click on the plus button to add a new asset profile.
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/asset-profile/asset-profile-add-1-ce.png)
@@ -25,13 +27,13 @@ To create a custom asset profile, go to the Asset Profiles on the Profiles tab a
 
 ### Rule Chain
 
-By default, the [Root Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain) processes all incoming messages and events for any entity.
-However, the more different entity types you have, the more complex your Root Rule Chain may become.
+By default, the [Root Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain) processes all incoming messages and events for any asset.
+However, the more different asset types you have, the more complex your Root Rule Chain may become.
+Many platform users create their Root Rule Chain for the sole purpose of sending messages to specific rule chains depending on the asset type.
 
-Since ThingsBoard 3.4.2, you can specify a custom root Rule Chain for your assets.
-In the custom root Rule Chain, you may create individual data processing rules for different types of assets to receive attribute updates and asset lifecycle(Created/Updated/Deleted) events.
-
-This setting is available when you create an asset profile and in the asset profile details.
+To avoid this painful and mundane activity, since ThingsBoard 3.4.2, you can specify a custom Rule Chain for your assets.
+The new Rule Chain will receive asset attributes updates, and asset lifecycle(Created/Updated/Deleted) events.
+This setting is available in the Asset Profile details.
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/asset-profile/asset-profile-rule-chain-1-ce.png)

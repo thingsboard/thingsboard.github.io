@@ -20,7 +20,7 @@ By default, the [Root Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0
 However, the more different device types you have, the more complex your Root Rule Chain may become. 
 Many platform users create their Root Rule Chain for the sole purpose of sending messages to specific rule chains depending on the device type. 
 
-To avoid this painful and mundane activity, since ThingsBoard 3.2, you can specify a custom root Rule Chain for your devices.
+To avoid this painful and mundane activity, since ThingsBoard 3.2, you can specify a custom Rule Chain for your devices.
 The new Rule Chain will receive all telemetry, device activity(Active/Inactive), and device lifecycle(Created/Updated/Deleted) events.
 This setting is available in the Device Profile wizard and in the Device Profile details.  
 

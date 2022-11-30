@@ -28,7 +28,6 @@ toc:
       path: /docs/paas/user-guide/entities-and-relations/
     - title: Device Profiles
       path: /docs/paas/user-guide/device-profiles/
-      new: true
     - title: Asset Profiles
       path: /docs/paas/user-guide/asset-profiles/
       new: true
