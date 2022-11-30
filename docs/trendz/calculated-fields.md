@@ -106,7 +106,7 @@ Once raw telemetry array was transformed and returned from the calculation funct
 
 #### Basic syntax
 
-Let's assume that you create following variable:
+Let's assume that you create following variable for telemetry data:
 
 ```javascript
 var temperatureReadings = none(thermostat.temperature);
@@ -129,6 +129,15 @@ In this case `temperatureReadings` variable would be an array of telemetry objec
 		"value": 35
 	}
 ]
+```
+
+In case of attributes you also has an array with 1 object that represent an attribute. Here is an example how to use attributes insude your script:
+
+```javascript
+var unit = uniq(thermostat.measureUnit);
+if(unit.length) {
+    unit = unit[0].value;
+}
 ```
 
 #### Filter raw telemetry 
@@ -156,7 +165,11 @@ Here is an example how to transform raw telemetry array based on attribute value
 
 ```javascript
 var temperatureReadings = none(thermostat.temperature);
+
 var unit = uniq(thermostat.measureUnit);
+if(unit.length) {
+    unit = unit[0].value;
+}
 
 for (var i = 0; i < temperatureReadings.length; i++) {
     var tsValue = temperatureReadings[i];
