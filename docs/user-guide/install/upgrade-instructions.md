@@ -347,6 +347,11 @@ $ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.4.1
 $ sudo service thingsboard start
 ```
 
+{% capture default-jwt %}
+Update the JWT signing key if you use the default one "thingsboardDefaultSigningKey" on production environments. See [JWT security settings](/docs/user-guide/ui/jwt-security-settings/) for details. 
+{% endcapture %}
+{% include templates/info-banner.md content=default-jwt %}
+
 ### Windows {#windows-342}
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4.1. In order to upgrade to 3.4.2 you need to [**upgrade to 3.4.1 first**](/docs/user-guide/install/upgrade-instructions/#windows-341).
@@ -384,6 +389,12 @@ C:\thingsboard>upgrade.bat --fromVersion=3.4.1
 ```text
 net start thingsboard
 ```
+
+{% capture default-jwt %}
+Update the JWT signing key if you use the default one "thingsboardDefaultSigningKey" on production environments. See [JWT security settings](/docs/user-guide/ui/jwt-security-settings/) for details. 
+{% endcapture %}
+{% include templates/info-banner.md content=default-jwt %}
+
 
 ## Upgrading to 3.4.1 {#upgrading-to-341}
 
