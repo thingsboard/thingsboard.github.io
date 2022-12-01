@@ -95,8 +95,6 @@ mkdir -p ~/.mytb-edge-logs && sudo chown -R 799:799 ~/.mytb-edge-logs
 
 ## Troubleshooting
 
-### DNS issues
-
 {% include templates/edge/install/docker-troubleshooting.md %}
 
 ## Next Steps

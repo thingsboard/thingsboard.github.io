@@ -1,4 +1,8 @@
+### DNS issues
+
 {% include templates/troubleshooting/dns-issues.md %}
+
+### Database issues
 
 **NOTE** If you see errors related to edge is not able to connect to database, for example
 
