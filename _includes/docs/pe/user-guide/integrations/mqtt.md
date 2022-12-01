@@ -37,6 +37,11 @@ Before setting up an MQTT integration, you need to create an Uplink and a Downli
 **Downlink Converter** parses and transforms the data sent from ThingsBoard to the format that is consumed by existing device(s).
 
 #### Uplink Converter
+
+The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard can consume.
+**deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional.
+**Attributes** and **telemetry** are flat key-value objects. Nested objects are not supported.
+
 To create an Uplink Converter go to **Data Converters** section and Click **Add new data converter —> Create new converter**.
 Name it **"MQTT Uplink Converter"** and select type **Uplink**. Use debug mode for now.
 
@@ -47,56 +52,13 @@ Although the Debug mode is very useful for development and troubleshooting, leav
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-Now copy & paste the following script to the Decoder function section:
+One can use either JavaScript or TBEL (ThingsBoard expression language) to develop decoder functions. We recommend utilizing TBEL as it shows much better performance compared to JS.
 
-```javascript
-/** Decoder **/
+{% capture mqttuplinkconverterconfig %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-uplink-converter-config-tbel.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-uplink-converter-config-javascript.md{% endcapture %}
 
-// decode payload to string
-var payloadStr = decodeToString(payload);
-var data = JSON.parse(payloadStr);
-var topicPattern = 'tb/mqtt-integration-tutorial/sensors/(.+)/temperature';
-
-var deviceName =  metadata.topic.match(topicPattern)[1];
-// decode payload to JSON
-var deviceType = 'sensor';
-
-// Result object with device attributes/telemetry data
-var result = {
-   deviceName: deviceName,
-   deviceType: deviceType,
-   attributes: {
-       integrationName: metadata['integrationName'],
-   },
-   telemetry: {
-       temperature: data.value,
-   }
-};
-
-/** Helper functions **/
-
-function decodeToString(payload) {
-   return String.fromCharCode.apply(String, payload);
-}
-
-function decodeToJson(payload) {
-   // convert payload to string.
-   var str = decodeToString(payload);
-
-   // parse string to JSON
-   var data = JSON.parse(str);
-   return data;
-}
-
-return result;
-``` 
-{: .copy-code}
-
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-uplink converter-1.png)
-
-The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard can consume. 
-**deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional.
-**Attributes** and **telemetry** are flat key-value objects. Nested objects are not supported.
+{% include content-toggle.html content-toggle-id="mqttuplinkconverterconfig" toggle-spec=mqttuplinkconverterconfig %}
 
 #### Downlink Converter
 
@@ -111,25 +73,40 @@ Even if you won't send downlink RPC, you still need to create a dummy Downlink c
 
 Create another converter with the name **"MQTT Downlink Converter"** and type **Downlink**. Leave the default script and click **Add**.     
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-downlink converter-1.png)
+One can use either JavaScript or TBEL (ThingsBoard expression language) to develop decoder functions. We recommend utilizing TBEL as it shows much better performance compared to JS.
+
+{% capture mqttdownlinkconverterconfig %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-downlink-converter-config-tbel.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-downlink-converter-config-javascript.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="mqttdownlinkconverterconfig" toggle-spec=mqttdownlinkconverterconfig %}
+
 
 #### MQTT Integration Setup
 
-- Go to **Integrations** section and click **Add new integration** button. Name it **"MQTT Integration"**, select type **MQTT**, turn the Debug mode on and from drop-down menus add recently created Uplink and Downlink converters.
+- Go to **Integrations** section and click **Add new integration** button. Name it **"MQTT Integration"**, select type **MQTT**, turn the Debug mode on
 
-- Specify host: **broker.hivemq.com**. Port: **1883**. 
+![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-1-pe.png)
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-1.png)
+- The next steps is to add the recently created **Uplink** and **Downlink** converters.
 
-- It is better to uncheck the **Clean session** parameter. Many brokers do not support sticky sessions, so will silently close the connection if you try to connect with this option enabled. 
+![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-2-pe.png)
+
+![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-3-pe.png)
+
+- Specify host: **broker.hivemq.com** and port: **1883** at the connection step.
 
 - Add a Topic Filter **tb/mqtt-integration-tutorial/sensors/+/temperature**. You can also select an MQTT QoS level. We use MQTT QoS level 0 (At most once) by default.    
 
-- Let's leave the Downlink topic pattern by default, meaning that the Integration will take the metadata.topic and use it as the downlink topic.
+![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-4-pe.png)
+
+- Go to advanced settings. It is better to uncheck the **Clean session** parameter. Many brokers do not support sticky sessions, so will silently close the connection if you try to connect with this option enabled.
+
+- Let's leave the **Downlink topic pattern** by default, meaning that the Integration will take the metadata.topic and use it as the downlink topic.
 
 - Click **Add** to save the Integration.
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-2.png)
+- ![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-5-pe.png)
 
 #### Send Uplink message
 
@@ -201,30 +178,15 @@ Drag a connection from Message Type Switch node to MQTT Integration Downlink nod
 
 Go to **Data Converters** section, open your **MQTT Downlink Converter** and replace the default script with this one:
 
-```js
-/** Encoder **/
+One can use either JavaScript or TBEL (ThingsBoard expression language) to develop decoder functions. We recommend utilizing TBEL as it shows much better performance compared to JS.
 
-var value = parseInt(msg.params.replace(/"/g,""));
-var data = {value: value}
-// Result object with encoded downlink payload
-var result = {
+{% capture mqttdownlinkconverterconfig2 %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-downlink-converter-config-tbel-2.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-downlink-converter-config-javascript-2.md{% endcapture %}
 
-    // downlink data content type: JSON, TEXT or BINARY (base64 format)
-    contentType: "JSON",
+{% include content-toggle.html content-toggle-id="mqttdownlinkconverterconfig2" toggle-spec=mqttdownlinkconverterconfig2 %}
 
-    // downlink data
-    data: JSON.stringify(data),
 
-    // Optional metadata object presented in key/value format
-    metadata: {
-        topic: 'tb/mqtt-integration-tutorial/sensors/'+metadata['deviceName']+'/rx'
-    }
-
-};
-
-return result;
-```
-{: .copy-code}
 
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-edit-downlink converter-1.png)
 
@@ -269,91 +231,30 @@ topic: 'tb/mqtt-integration-tutorial/sensors/'+metadata['deviceName']+'/rx/twowa
 
 Or just paste the following code in the encoder window:
 
-```js
-/** Encoder **/
+One can use either JavaScript or TBEL (ThingsBoard expression language) to develop decoder functions. We recommend utilizing TBEL as it shows much better performance compared to JS.
 
-var value = parseInt(msg.params.replace(/"/g,""));
-var data = {value: value}
-// Result object with encoded downlink payload
-var result = {
+{% capture mqttdownlinkconverterconfig3 %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-downlink-converter-config-tbel-3.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-downlink-converter-config-javascript-3.md{% endcapture %}
 
-    // downlink data content type: JSON, TEXT or BINARY (base64 format)
-    contentType: "JSON",
+{% include content-toggle.html content-toggle-id="mqttdownlinkconverterconfig3" toggle-spec=mqttdownlinkconverterconfig3 %}
 
-    // downlink data
-    data: JSON.stringify(data),
 
-    // Optional metadata object presented in key/value format
-    metadata: {
-        topic: 'tb/mqtt-integration-tutorial/sensors/'+metadata['deviceName']+'/rx/twoway'
-    }
-
-};
-
-return result;
-```
-{: .copy-code}
 
 ![image](/images/user-guide/integrations/mqtt/mqtt-rpc-edit-downlink-3.png)
 
 <br>
 Then prepare the **Uplink Converter** to receive the response messages. 
 
-Go to **"MQTT Uplink"** converter and paste the following code in the decoder window:
+One can use either JavaScript or TBEL (ThingsBoard expression language) to develop decoder functions. We recommend utilizing TBEL as it shows much better performance compared to JS.
 
-```js
-/** Decoder **/
+{% capture mqttuplinkconverterconfig2 %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-uplink-converter-config-tbel-2.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-uplink-converter-config-javascript-2.md{% endcapture %}
 
-// decode payload to string
-var payloadStr = decodeToString(payload);
-var data = JSON.parse(payloadStr);
-var topicPattern = 'tb/mqtt-integration-tutorial/sensors/(.+?)/.*';
+{% include content-toggle.html content-toggle-id="mqttuplinkconverterconfig2" toggle-spec=mqttuplinkconverterconfig2 %}
 
-var deviceName =  metadata.topic.match(topicPattern)[1];
-// decode payload to JSON
-var deviceType = 'sensor';
 
-// Result object with device attributes/telemetry data
-var telemetry;
-if (metadata.topic.endsWith('/temperature')) {
-    // Transform the incoming data as before
-    telemetry = getTemperatureTelemetry(data);
-} else if (metadata.topic.endsWith('/rx/response')) {
-    // Get the input value as is
-    telemetry = data;
-}
-
-var result = {
-   deviceName: deviceName,
-   deviceType: deviceType,
-   attributes: {
-       integrationName: metadata['integrationName'],
-   },
-   telemetry: telemetry
-};
-
-/** Helper functions **/
-
-function getTemperatureTelemetry(data) {
-    return {temperature: data.value}
-}
-
-function decodeToString(payload) {
-   return String.fromCharCode.apply(String, payload);
-}
-
-function decodeToJson(payload) {
-   // covert payload to string.
-   var str = decodeToString(payload);
-
-   // parse string to JSON
-   var data = JSON.parse(str);
-   return data;
-}
-
-return result;
-```
-{: .copy-code}
 
 ![image](/images/user-guide/integrations/mqtt/mqtt-rpc-edit-uplink-3.png)
 
