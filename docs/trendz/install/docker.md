@@ -96,7 +96,7 @@ Before starting Docker container run following commands to create a directory fo
 its owner to docker container user, to be able to change user, chown command is used, which requires sudo permissions 
 (command will request password for a sudo access):
 
-```yml
+```bash
 mkdir -p ~/.mytrendz-data && sudo chown -R 799:799 ~/.mytrendz-data
 mkdir -p ~/.mytrendz-logs && sudo chown -R 799:799 ~/.mytrendz-logs
 ```
@@ -129,44 +129,67 @@ to validate credentials.
 
 Below is example on how to upgrade from 1.6.0 to 1.7.0
 
-1. Stop mytrendz container
+* Stop mytrendz container
 
-    ```text
-    docker-compose stop mytrendz
-    ```
-    {: .copy-code}
+```bash
+docker compose stop mytrendz
+```
+{: .copy-code}
 
+{% capture dockerComposeStandalone %}
+If you still rely on docker compose as standalone execute next command:
+<br>**docker-compose stop mytrendz**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
 
-2. Create a dump of your database:
+* Create a dump of your database:
 
-    ```text
-    docker-compose exec postgres sh -c "pg_dump -U postgres trendz > /var/lib/postgresql/data/trendz_dump"
-    ```
-    {: .copy-code}
+```bash
+docker compose exec postgres sh -c "pg_dump -U postgres trendz > /var/lib/postgresql/data/trendz_dump"
+```
+{: .copy-code}
 
-3. After this you need to update docker-compose.yml as in [Step 3](#step-3-running) but with 1.8.2-SNAPSHOT instead of 1.7.0-SNAPSHOT:
-    
-4. Change upgradeversion version to your **current** ThingsBoard version.
-       
-    ```text
-    sudo sh -c "echo '1.7.0' > ~/.mytrendz-data/.upgradeversion"
-    ```
-    {: .copy-code}
+{% capture dockerComposeStandalone %}
+If you still rely on docker compose as standalone execute next command:
+<br>**docker compose exec postgres sh -c "pg_dump -U postgres trendz > /var/lib/postgresql/data/trendz_dump"**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %} 
 
-5. Then execute the following commands:
-    ```text
-    docker-compose run mytrendz upgrade-trendz.sh
-    ```
-    {: .copy-code}
-    
-6. Start Trendz:
-    
-    ```text
-    docker-compose up -d
-    ```
-    {: .copy-code}
+* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with 1.8.2-SNAPSHOT instead of 1.7.0-SNAPSHOT:
+* Change upgradeversion version to your **current** Trendz version.
 
-To upgrade Trendz to latest version those steps should be done **for each intermediate version**.
+```bash
+sudo sh -c "echo '1.7.0' > ~/.mytrendz-data/.upgradeversion"
+```
+{: .copy-code}
+
+* Then execute the following commands:
+
+```bash
+docker compose run mytrendz upgrade-trendz.sh
+```
+{: .copy-code}
+
+{% capture dockerComposeStandalone %}
+If you still rely on docker compose as standalone execute next command:
+<br>**docker compose run mytrendz upgrade-trendz.sh**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
+
+* Start Trendz:
+
+```bash
+docker compose up -d
+```
+{: .copy-code}
+
+{% capture dockerComposeStandalone %}
+If you still rely on docker compose as standalone execute next command:
+<br>**docker-compose up -d**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
+
+To upgrade Trendz to the latest version those steps should be done **for each intermediate version**.
 
 ## Troubleshooting
 

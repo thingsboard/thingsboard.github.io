@@ -110,7 +110,7 @@ Where:
 {% assign serviceFullName = "ThingsBoard Edge" %}
 {% include templates/install/docker/detaching-stop-start-commands.md %}
 
-### Troubleshootings
+### Troubleshooting
 
 **NOTE** If you observe errors related to DNS issues, for example
 
