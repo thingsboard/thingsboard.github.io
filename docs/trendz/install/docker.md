@@ -53,7 +53,7 @@ version: '3.0'
 services:
   mytrendz:
     restart: always
-    image: "thingsboard/trendz:1.8.2-SNAPSHOT"
+    image: "thingsboard/trendz:1.9.2"
     ports:
       - "8888:8888"
     environment:
@@ -90,7 +90,7 @@ Where:
 - `~/.mytrendz-logs:/var/log/thingsboard`   - mounts the volume `~/.mytrendz-logs` to Trendz logs directory
 - `mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.8.2-SNAPSHOT`          - docker image
+- `thingsboard/trendz:1.9.2`          - docker image
     
 Before starting Docker container run following commands to create a directory for storing data and logs and then change 
 its owner to docker container user, to be able to change user, chown command is used, which requires sudo permissions 
@@ -127,20 +127,8 @@ to validate credentials.
 
 ## Upgrade Trendz Service
 
-Below is example on how to upgrade from 1.6.0 to 1.7.0
+Below is example on how to upgrade from 1.8.0 to 1.9.2
 
-* Stop mytrendz container
-
-```bash
-docker compose stop mytrendz
-```
-{: .copy-code}
-
-{% capture dockerComposeStandalone %}
-If you still rely on docker compose as standalone execute next command:
-<br>**docker-compose stop mytrendz**
-{% endcapture %}
-{% include templates/info-banner.md content=dockerComposeStandalone %}
 
 * Create a dump of your database:
 
@@ -151,40 +139,36 @@ docker compose exec postgres sh -c "pg_dump -U postgres trendz > /var/lib/postgr
 
 {% capture dockerComposeStandalone %}
 If you still rely on docker compose as standalone execute next command:
-<br>**docker compose exec postgres sh -c "pg_dump -U postgres trendz > /var/lib/postgresql/data/trendz_dump"**
+<br>**docker-compose exec postgres sh -c "pg_dump -U postgres trendz > /var/lib/postgresql/data/trendz_dump"**
 {% endcapture %}
-{% include templates/info-banner.md content=dockerComposeStandalone %} 
+{% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with 1.8.2-SNAPSHOT instead of 1.7.0-SNAPSHOT:
-* Change upgradeversion version to your **current** Trendz version.
-
-```bash
-sudo sh -c "echo '1.7.0' > ~/.mytrendz-data/.upgradeversion"
-```
-{: .copy-code}
-
-* Then execute the following commands:
+* Set upgradeversion version to your **previous** Trendz version.
 
 ```bash
-docker compose run mytrendz upgrade-trendz.sh
+docker compose exec mytrendz sh -c "echo '1.8.0' > /data/.upgradeversion" 
 ```
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
 If you still rely on docker compose as standalone execute next command:
-<br>**docker compose run mytrendz upgrade-trendz.sh**
+<br>**docker-compose exec mytrendz sh -c "echo '1.8.0' > /data/.upgradeversion"**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* Start Trendz:
+* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with 1.9.2 instead of 1.8.0-SNAPSHOT:
+
+* Restart Trend container
 
 ```bash
+docker compose stop mytrendz
 docker compose up -d
 ```
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
-If you still rely on docker compose as standalone execute next command:
+If you still rely on docker compose as standalone execute next commands:
+<br>**docker-compose stop mytrendz**
 <br>**docker-compose up -d**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
