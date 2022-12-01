@@ -78,34 +78,13 @@ mkdir -p ~/.mytb-logs && sudo chown -R 799:799 ~/.mytb-logs
 
 **NOTE**: Replace directory `~/.mytb-data` and `~/.mytb-logs` with directories you're planning to use in `docker-compose.yml`.
 
-{% assign tbServiceNamePrefix = "" %}
+{% assign serviceName = "tb" %}
 {% include templates/install/docker/docker-compose-up.md %}
 
 ## Detaching, stop and start commands
 
-You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
-
-In case of any issues you can examine service logs for errors.
-For example to see ThingsBoard node logs execute the following command:
-
-```
-docker-compose logs -f mytb
-```
-{: .copy-code}
-
-To stop the container:
-
-```
-docker-compose stop
-```
-{: .copy-code}
-
-To start the container:
-
-```
-docker-compose start
-```
-{: .copy-code}
+{% assign serviceFullName = "ThingsBoard" %}
+{% include templates/install/docker/detaching-stop-start-commands.md %}
 
 ## Upgrading
 

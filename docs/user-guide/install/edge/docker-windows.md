@@ -106,7 +106,9 @@ Where:
 
 ### Step 3. Detaching, stop and start commands
 
-{% include templates/edge/install/docker-control.md %}
+{% assign serviceName = "tbedge" %}
+{% assign serviceFullName = "ThingsBoard Edge" %}
+{% include templates/install/docker/detaching-stop-start-commands.md %}
 
 ### Troubleshootings
 

@@ -120,29 +120,9 @@ You can always change passwords for each account in account profile page.
 
 ## Detaching, stop and start commands
 
-You can close logs `Ctrl-c` - the container will keep running in the background.
-
-In case of any issues you can examine service logs for errors.
-For example to see ThingsBoard node logs execute the following command:
-
-```
-docker-compose logs -f mytbpe
-```
-{: .copy-code}
-
-To stop the container:
-
-```
-docker-compose stop
-```
-{: .copy-code}
-
-To start the container:
-
-```
-docker-compose start
-```
-{: .copy-code}
+{% assign serviceName = "tbpe" %}
+{% assign serviceFullName = "ThingsBoard PE" %}
+{% include templates/install/docker/detaching-stop-start-commands.md %}
 
 ## Upgrading
 

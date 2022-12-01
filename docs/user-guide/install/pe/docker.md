@@ -79,34 +79,13 @@ mkdir -p ~/.mytbpe-logs && sudo chown -R 799:799 ~/.mytbpe-logs
 
 **NOTE**: replace directory `~/.mytbpe-data` and `~/.mytbpe-logs` with directories you're planning to used in `docker-compose.yml`. 
 
-{% assign tbServiceNamePrefix = "pe" %}
+{% assign serviceName = "tbpe" %}
 {% include templates/install/docker/docker-compose-up.md %}
 
 ## Detaching, stop and start commands
 
-You can close logs `Ctrl-c` - the container will keep running in the background.
-
-In case of any issues you can examine service logs for errors.
-For example to see ThingsBoard node logs execute the following command:
-
-```
-docker-compose logs -f mytbpe
-```
-{: .copy-code}
-
-To stop the container:
-
-```
-docker-compose stop
-```
-{: .copy-code}
-
-To start the container:
-
-```
-docker-compose start
-```
-{: .copy-code}
+{% assign serviceFullName = "ThingsBoard PE" %}
+{% include templates/install/docker/detaching-stop-start-commands.md %}
 
 ## Troubleshooting
 

@@ -128,25 +128,9 @@ to validate credentials.
 
 ## Detaching, stop and start commands
 
-You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
-
-In case of any issues you can examine service logs for errors. For example to see Trendz logs execute the following command:
-
-```
-docker-compose logs -f mytrendz
-```
-
-To stop the container:
-
-```
-docker-compose stop mytrendz
-```
-
-To start the container:
-
-```
-docker-compose start mytrendz
-```
+{% assign serviceName = "trendz" %}
+{% assign serviceFullName = "Trendz" %}
+{% include templates/install/docker/detaching-stop-start-commands.md %}
 
 ## Upgrade Trendz Service
 
