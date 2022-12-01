@@ -75,7 +75,7 @@ collections:
 
 release:
   branch: release-3.4
-  branch_minor_next: develop/3.4.2
+  branch_minor_next: develop/3.4.3
   branch_major_next: develop/3.5
   ver: 3.4.2
   ce_ver: 3.4.2
