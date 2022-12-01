@@ -195,9 +195,9 @@ This snippet contains both providers that are used in our sample:
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/26-both-providers.png&#41;)
 {% include images-gallery.html imageCollection="step26" preview="false" max-width="100%" %}
 
-## Mapping of the external user into ThingBoard internal user structure
+## Mapping of the external user into ThingsBoard internal user structure
 
-Mapping of the external user info object into ThingBoard user can be achieved in two ways - using the **Basic** and **Custom** mappers. 
+Mapping of the external user info object into ThingsBoard user can be achieved in two ways - using the **Basic** and **Custom** mappers. 
 The main functionality of the mapper is to map key-value attributes from the external user info object into the expected structure of the ThingsBoard OAuth 2.0 User:
 
 ```java

@@ -34,31 +34,49 @@ access_token:
     0:
         image: /images/user-guide/integrations/loriot/loriot_access_tokens.png
     1:
-        image: /images/user-guide/integrations/loriot/loriut_authentication_tokens.png 
+        image: /images/user-guide/integrations/loriot/loriut_authentication_tokens.png
     2:
         image: /images/user-guide/integrations/loriot/loriot_and_thingsboard_integration_application_access_token.png
 
-uplink:
+uplink-tbel:
     0:
-        image: /images/user-guide/integrations/loriot/uplink_loriot.png 
+        image: /images/user-guide/integrations/loriot/loriot-uplink-converters-1-tbel-pe.png
 
-uplink_edit:
+uplink-java:
     0:
-        image: /images/user-guide/integrations/loriot/uplink_loriot_edit_mode.png 
+        image: /images/user-guide/integrations/loriot/loriot-uplink-converters-1-java-pe.png
+
+uplink-edit-tbel:
+    0:
+        image: /images/user-guide/integrations/loriot/loriot-uplink-edit-mode-tbel-1-pe.png
     1:
-        image: /images/user-guide/integrations/loriot/uplink_loriot_save_changes.png
+        image: /images/user-guide/integrations/loriot/loriot-uplink-edit-mode-tbel-2-pe.png
     2:
-        image: /images/user-guide/integrations/loriot/uplink_convertor.png
+        image: /images/user-guide/integrations/loriot/loriot-uplink-edit-mode-tbel-3-pe.png
 
-create_downlink:
+uplink-edit-java:
     0:
-        image: /images/user-guide/integrations/loriot/downlink_loriot.png
-
-downlink:
-    0:
-        image: /images/user-guide/integrations/loriot/downlink_loriot_edit_mode.png
+        image: /images/user-guide/integrations/loriot/loriot-uplink-edit-mode-java-1-pe.png 
     1:
-        image: /images/user-guide/integrations/loriot/downlink_loriot_save_changes.png
+        image: /images/user-guide/integrations/loriot/loriot-uplink-edit-mode-java-2-pe.png
+    2:
+        image: /images/user-guide/integrations/loriot/loriot-uplink-edit-mode-java-3-pe.png
+
+create_downlink-tbel:
+    0:
+        image: /images/user-guide/integrations/loriot/loriot-downlink-converters-1-tbel-pe.png
+
+create_downlink-java:
+    0:
+        image: /images/user-guide/integrations/loriot/loriot-downlink-converters-1-java-pe.png
+
+downlink-tbel:
+    0:
+        image: /images/user-guide/integrations/loriot/loriot-downlink-save-changes-tbel-1-pe.png
+
+downlink-java:
+    0:
+        image: /images/user-guide/integrations/loriot/loriot-downlink-save-changes-java-1-pe.png
 
 devices:
     0:
@@ -114,19 +132,25 @@ parameters:
 
 integration:
     0:
-        image: /images/user-guide/integrations/loriot/thingsboard_add_integration_1.png
+        image: /images/user-guide/integrations/loriot/loriot-add-integration-1-pe.png
+    1:
+        image: /images/user-guide/integrations/loriot/loriot-add-integration-2-pe.png
+    2:
+        image: /images/user-guide/integrations/loriot/loriot-add-integration-3-pe.png
+    3:
+        image: /images/user-guide/integrations/loriot/loriot-add-integration-4-pe.png
 
 enable_security:
     0:
-        image: /images/user-guide/integrations/loriot/integration_edit_mode.png
-    1:
-        image: /images/user-guide/integrations/loriot/integration_enable_security.png
-    2:
-        image: /images/user-guide/integrations/loriot/integration_enable_security_headers_filter_value.png
+        image: /images/user-guide/integrations/loriot/loriot-security-1-pe.png
 
 custom_authorization:
     0:
-        image: /images/user-guide/integrations/loriot/custom_authorization.png
+        image: /images/user-guide/integrations/loriot/custom-authorization-pe.png
+
+uplink-message:
+    0:
+        image: /images/user-guide/integrations/loriot/loriot-security-2-pe.png
 
 terminal:
     0:
@@ -148,7 +172,7 @@ uplink_events:
 
 endpoint_url:
     0:
-        image: /images/user-guide/integrations/loriot/endpoint_url.png
+        image: /images/user-guide/integrations/loriot/loriot-send-uplink-message-1-pe.png
 
 solution_templates:
     0:
