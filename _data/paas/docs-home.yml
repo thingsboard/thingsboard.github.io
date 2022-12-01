@@ -28,6 +28,8 @@ toc:
       path: /docs/paas/user-guide/entities-and-relations/
     - title: Device Profiles
       path: /docs/paas/user-guide/device-profiles/
+    - title: Asset Profiles
+      path: /docs/paas/user-guide/asset-profiles/
       new: true
     - title: Attributes
       path: /docs/paas/user-guide/attributes/
@@ -46,12 +48,22 @@ toc:
       path: /docs/paas/user-guide/dashboards/
     - title: Aliases
       path: /docs/paas/user-guide/ui/aliases/
-    - title: Widget Actions
-      path: /docs/paas/user-guide/ui/widget-actions/
-    - title: Widgets Library
-      path: /docs/paas/user-guide/ui/widget-library/
-    - title: Widgets development
-      path: /docs/paas/user-guide/contribution/widgets-development/
+    - title: Widgets
+      section:
+        - title: Widget Actions
+          path: /docs/paas/user-guide/ui/widget-actions/
+        - title: Widgets Library
+          path: /docs/paas/user-guide/ui/widget-library/
+        - title: Widgets development
+          path: /docs/paas/user-guide/contribution/widgets-development/
+        - title: Chart widgets
+          path: /docs/pe/user-guide/ui/chart-widget/
+        - title: Entities Table widget
+          path: /docs/paas/user-guide/ui/entity-table-widget/
+        - title: Trip Animation Widget
+          path: /docs/paas/user-guide/ui/trip-animation-widget/
+        - title: Advanced data key configuration
+          path: /docs/paas/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
   section:
     - title: Getting Started
@@ -152,9 +164,10 @@ toc:
       path: /docs/paas/user-guide/entity-views/
     - title: API Limits
       path: /docs/paas/user-guide/api-limits/
+    - title: Advanced filters
+      path: /docs/paas/user-guide/advanced-filters/
     - title: Version Control
       path: /docs/paas/user-guide/version-control/
-      new: true
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning
@@ -169,6 +182,9 @@ toc:
       path: /docs/paas/user-guide/csv-xls-data-export/
     - title: File Storage
       path: /docs/paas/user-guide/file-storage/
+    - title: ThingsBoard Expression Language (TBEL)
+      path: /docs/paas/user-guide/tbel/
+      new: true
 - title: Security
   section:
     - title: Audit Log
@@ -213,14 +229,6 @@ toc:
       path: /docs/paas/user-guide/ui/rule-chains/
     - title: Dashboards
       path: /docs/paas/user-guide/ui/dashboards/
-    - title: Widgets
-      section:
-        - title: Trip Animation Widget
-          path: /docs/paas/user-guide/ui/trip-animation-widget/
-        - title: Advanced Settings of the Entity Table widget
-          path: /docs/paas/user-guide/ui/entity-table-widget/
-        - title: Advanced data key configuration
-          path: /docs/paas/user-guide/ui/advanced-data-key-configuration/
 - title: Subscriptions
   path: /products/paas/subscription/
 - title: Plan and billing

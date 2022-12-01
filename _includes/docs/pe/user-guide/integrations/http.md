@@ -19,56 +19,20 @@ Before creating the integration, you need to create an Uplink converter in Data 
 Click on the “plus” and on “Create new converter”. To view the events, enable Debug. 
 In the function decoder field, specify a script to parse and transform data.
 
-{% include images-gallery.html imageCollection="data-converters" %}
+{% include templates/tbel-vs-js.md %}
 
-**Example for the Uplink converter:**
+{% capture httpuplinkconverterconfig %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/http/http-uplink-converter-config-tbel.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/http/http-uplink-converter-config-javascript.md{% endcapture %}
 
-```ruby
-// Decode an uplink message from a buffer
-// payload - array of bytes
-// metadata - key/value object
-/** Decoder **/
-// decode payload to string
-// var payloadStr = decodeToString(payload);
-// decode payload to JSON
-var data = decodeToJson(payload);
-var deviceName = data.deviceName;
-var deviceType = data.deviceType;
-// Result object with device attributes/telemetry data
-var result = {
-   deviceName: deviceName,
-   deviceType: deviceType,
-   attributes: {
-       model: data.model,
-       serialNumber: data.param2,
-   },
-   telemetry: {
-       temperature: data.temperature
-   }
-};
-/** Helper functions **/
-function decodeToString(payload) {
-   return String.fromCharCode.apply(String, payload);
-}
-function decodeToJson(payload) {
-   // covert payload to string.
-   var str = decodeToString(payload);
-   // parse string to JSON
-   var data = JSON.parse(str);
-   return data;
-}
-return result;
-```
-{: .copy-code}
+{% include content-toggle.html content-toggle-id="httpuplinkconverterconfig" toggle-spec=httpuplinkconverterconfig %}
 
-You can change the decoder function while creating the converter or after creating it. If the converter has already been created, then click on the “pencil” icon to edit it.
-Copy the configuration example for the converter (or your own configuration) and insert it into the decoder function. Save changes by clicking on the “checkmark” icon.
-
-{% include images-gallery.html imageCollection="converter" %}
-
-**NOTE** While Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode can significantly increase the disk space
-used by the database since all the debug data is stored there. It is highly recommended turning the Debug mode off after debugging is complete. 
-
+{% capture difference %}
+**NOTE**
+<br>
+While Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode can significantly increase the disk space used by the database since all the debug data is stored there. It is highly recommended turning the Debug mode off after debugging is complete.  
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ## Create integration
 
@@ -121,15 +85,17 @@ Received data can be viewed in the Uplink converter. In the **“In”** and **�
 
 {% include images-gallery.html imageCollection="send-uplink-1" %}
 
-Note that if the "Allow create devices or assets" checkbox is unchecked, when sending a message to thingsboard
-with any parameters of the device (or asset), if such a device (asset) does not exist, then device (asset) will not be created.
-
-{% include images-gallery.html imageCollection="creating-devices-is-forbidden" %}
+{% capture difference %}
+**NOTE**
+<br>
+If the "Allow create devices or assets" checkbox is unchecked, when sending a message to thingsboard with any parameters of the device (or asset), if such a device (asset) does not exist, then device (asset) will not be created.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 Use the Dashboards to work with data. Dashboards are a modern format for collecting and visualizing data sets. Visibility of data presentation is achieved through a variety of widgets.  
 ThingsBoard has examples of several types of dashboards that you can use. You can find them in **Solution templates** tab.
 
-{% include images-gallery.html imageCollection="solution_templates" %}
+{% include images-gallery.html imageCollection="solution-templates" %}
 
 How to work with dashboards [read here](/docs/{{docsPrefix}}user-guide/dashboards/).
 
@@ -137,45 +103,13 @@ How to work with dashboards [read here](/docs/{{docsPrefix}}user-guide/dashboard
 
 Create Downlink in Data converters. To see events enable Debug.
 
-{% include images-gallery.html imageCollection="downlink" %}
+{% include templates/tbel-vs-js.md %}
 
-Add a converter to the integration. You can customize a downlink according to your configuration. 
-Let’s consider an example where we send an attribute update message. So we should change code in the downlink encoder function under line **//downlink data** input:
+{% capture httpdownlinkconverterconfig %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/http/http-downlink-converter-config-tbel.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/http/http-downlink-converter-config-javascript.md{% endcapture %}
 
-```ruby
-data: JSON.stringify(msg)
-```
-{: .copy-code}
-where **msg** is the message that we receive and send back to the device.
-
-{% include images-gallery.html imageCollection="downlink-1" %}
-
-An example of downlink converter:
-
-```ruby
-// Encode downlink data from incoming Rule Engine message
-
-// msg - JSON message payload downlink message json
-// msgType - type of message, for ex. 'ATTRIBUTES_UPDATED', 'POST_TELEMETRY_REQUEST', etc.
-// metadata - list of key-value pairs with additional data about the message
-// integrationMetadata - list of key-value pairs with additional data defined in Integration executing this converter
-
-var result = {
-
-    // downlink data content type: JSON, TEXT or BINARY (base64 format)
-    contentType: "JSON",
-
-    // downlink data
-    data: JSON.stringify(msg),
-
-    // Optional metadata object presented in key/value format
-    metadata: {
-    }
-};
-
-return result;
-```
-{: .copy-code}
+{% include content-toggle.html content-toggle-id="httpdownlinkconverterconfig" toggle-spec=httpdownlinkconverterconfig %}
 
 We can send a message to the device from Rule chain using the rule node. 
 For example, create an **integration downlink** node and set the “**Attributes updated**” link to it. 
@@ -183,10 +117,10 @@ When changes are made to the attribute, the downlink message will be sent to the
 
 {% include images-gallery.html imageCollection="downlink-rule" %}
 
-We go to the Device group section in the All folder, to see this with an example. We have indicated the serial number of the device in the Shared attributes. Now we edit it by clicking on the “pencil” icon.
-Then we make changes to the attribute (change the firmware from 01052020.v1.1 to 01052020.v1.2) and save the data.
+To see this with an example, we go to the "Device group" section, the "All" folder. In the "Shared attributes" of our device, create an attribute with the serial number of the device. Click on the "plus" icon.
+Then set the attribute name, its value (for example, the key name is firmware, value: 01052020.v1.1) and save the data.
 
-{% include images-gallery.html imageCollection="downlink-soft" %}
+{% include images-gallery.html imageCollection="downlink-add-attribute" %}
 
 Received data and data that was sent can be viewed in the downlink converter. In the “In” block of the Events tab, we see what data entered and in the “Out” field displays messages to device:
 
