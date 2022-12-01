@@ -19,7 +19,7 @@ Before creating the integration, you need to create an Uplink converter in Data 
 Click on the “plus” and on “Create new converter”. To view the events, enable Debug. 
 In the function decoder field, specify a script to parse and transform data.
 
-One can use either JavaScript or TBEL (ThingsBoard expression language) to develop decoder functions. We recommend utilizing TBEL as it shows much better performance compared to JS.
+{% include templates/tbel-vs-js.md %}
 
 {% capture httpuplinkconverterconfig %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/http/http-uplink-converter-config-tbel.md%br%
@@ -103,7 +103,7 @@ How to work with dashboards [read here](/docs/{{docsPrefix}}user-guide/dashboard
 
 Create Downlink in Data converters. To see events enable Debug.
 
-One can use either JavaScript or TBEL (ThingsBoard expression language) to develop decoder functions. We recommend utilizing TBEL as it shows much better performance compared to JS.
+{% include templates/tbel-vs-js.md %}
 
 {% capture httpdownlinkconverterconfig %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/http/http-downlink-converter-config-tbel.md%br%

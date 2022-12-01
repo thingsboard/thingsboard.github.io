@@ -52,7 +52,7 @@ Although the Debug mode is very useful for development and troubleshooting, leav
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-One can use either JavaScript or TBEL (ThingsBoard expression language) to develop decoder functions. We recommend utilizing TBEL as it shows much better performance compared to JS.
+{% include templates/tbel-vs-js.md %}
 
 {% capture mqttuplinkconverterconfig %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-uplink-converter-config-tbel.md%br%
@@ -73,7 +73,7 @@ Even if you won't send downlink RPC, you still need to create a dummy Downlink c
 
 Create another converter with the name **"MQTT Downlink Converter"** and type **Downlink**. Leave the default script and click **Add**.     
 
-One can use either JavaScript or TBEL (ThingsBoard expression language) to develop decoder functions. We recommend utilizing TBEL as it shows much better performance compared to JS.
+{% include templates/tbel-vs-js.md %}
 
 {% capture mqttdownlinkconverterconfig %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-downlink-converter-config-tbel.md%br%
@@ -178,7 +178,7 @@ Drag a connection from Message Type Switch node to MQTT Integration Downlink nod
 
 Go to **Data Converters** section, open your **MQTT Downlink Converter** and replace the default script with this one:
 
-One can use either JavaScript or TBEL (ThingsBoard expression language) to develop decoder functions. We recommend utilizing TBEL as it shows much better performance compared to JS.
+{% include templates/tbel-vs-js.md %}
 
 {% capture mqttdownlinkconverterconfig2 %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-downlink-converter-config-tbel-2.md%br%
@@ -231,7 +231,7 @@ topic: 'tb/mqtt-integration-tutorial/sensors/'+metadata['deviceName']+'/rx/twowa
 
 Or just paste the following code in the encoder window:
 
-One can use either JavaScript or TBEL (ThingsBoard expression language) to develop decoder functions. We recommend utilizing TBEL as it shows much better performance compared to JS.
+{% include templates/tbel-vs-js.md %}
 
 {% capture mqttdownlinkconverterconfig3 %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-downlink-converter-config-tbel-3.md%br%
@@ -246,7 +246,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-downlink
 <br>
 Then prepare the **Uplink Converter** to receive the response messages. 
 
-One can use either JavaScript or TBEL (ThingsBoard expression language) to develop decoder functions. We recommend utilizing TBEL as it shows much better performance compared to JS.
+{% include templates/tbel-vs-js.md %}
 
 {% capture mqttuplinkconverterconfig2 %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-uplink-converter-config-tbel-2.md%br%

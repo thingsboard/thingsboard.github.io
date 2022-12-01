@@ -70,7 +70,7 @@ temperature: stringToInt(payloadJson.data.substring(0,2)),
 humidity: stringToInt(payloadJson.data.substring(2,4))
 ```
 
-One can use either JavaScript or TBEL (ThingsBoard expression language) to develop decoder functions. We recommend utilizing TBEL as it shows much better performance compared to JS.
+{% include templates/tbel-vs-js.md %}
 
 {% capture loriotuplinkconverterconfig %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/loriot/loriot-uplink-converter-config-tbel.md%br%
@@ -167,7 +167,7 @@ How to work with dashboards [read here](/docs/{{docsPrefix}}user-guide/dashboard
 
 Create Downlink in **Data converters.** To see events - enable **Debug.**
 
-One can use either JavaScript or TBEL (ThingsBoard expression language) to develop decoder functions. We recommend utilizing TBEL as it shows much better performance compared to JS.
+{% include templates/tbel-vs-js.md %}
 
 {% capture loriotdownlinkconverterconfig %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/loriot/loriot-downlink-converter-config-tbel.md%br%
