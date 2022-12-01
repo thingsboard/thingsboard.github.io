@@ -5,7 +5,4 @@ description: ThingsBoard MQTT Broker Shared Subscriptions feature overview
 
 ---
 
-* TOC
-{:toc}
-
-![image](/images/coming-soon.jpg)
+{% include docs/mqtt-broker/user-guide/shared-subscriptions.md %}
