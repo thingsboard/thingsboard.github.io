@@ -79,14 +79,8 @@ volumes:
 
 {% include templates/edge/install/docker_compose_details_explain.md %}
 
-**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file.
-
-Execute the following command to up this docker compose directly:
-```
-docker-compose pull
-docker-compose up
-```
-{: .copy-code}
+{% assign serviceName = "tbedge" %}
+{% include templates/install/docker/docker-compose-up.md %}
 
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
 ``` 

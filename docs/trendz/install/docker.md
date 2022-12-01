@@ -105,16 +105,9 @@ mkdir -p ~/.mytrendz-logs && sudo chown -R 799:799 ~/.mytrendz-logs
 **NOTE**: replace directory ~/.mytrendz-data and ~/.mytrendz-logs with directories you’re planning to used in docker-compose.yml.
 
 ##### Running service
- 
-Execute the following command to up this docker compose directly:
 
-**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file.    
-    
-```yml
-docker-compose up -d
-docker-compose logs -f mytrendz
-```
-{: .copy-code}    
+{% assign serviceName = "trendz" %}
+{% include templates/install/docker/docker-compose-up.md %}
     
 After executing this command you can open `http://{your-host-ip}:8888` in you browser (for ex. `http://localhost:8888`). 
 You should see Trendz login page.

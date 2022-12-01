@@ -78,15 +78,8 @@ docker volume create mytbpe-logs
 {: .copy-code}
 
 
-Execute the following command to up this docker compose directly:
-
-**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file. 
-
-```
-docker-compose up -d
-docker-compose logs -f mytbpe
-```
-{: .copy-code}
+{% assign serviceName = "tbpe" %}
+{% include templates/install/docker/docker-compose-up.md %}
 
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
 

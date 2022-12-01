@@ -79,7 +79,7 @@ mkdir -p ~/.mytb-logs && sudo chown -R 799:799 ~/.mytb-logs
 **NOTE**: Replace directory `~/.mytb-data` and `~/.mytb-logs` with directories you're planning to use in `docker-compose.yml`.
 
 {% assign serviceName = "tb" %}
-{% include templates/install/docker/docker-compose-up.md %}
+{% include templates/install/docker/docker-compose-up-and-ui-credentials.md %}
 
 ## Detaching, stop and start commands
 

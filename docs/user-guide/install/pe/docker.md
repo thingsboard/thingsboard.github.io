@@ -80,7 +80,7 @@ mkdir -p ~/.mytbpe-logs && sudo chown -R 799:799 ~/.mytbpe-logs
 **NOTE**: replace directory `~/.mytbpe-data` and `~/.mytbpe-logs` with directories you're planning to used in `docker-compose.yml`. 
 
 {% assign serviceName = "tbpe" %}
-{% include templates/install/docker/docker-compose-up.md %}
+{% include templates/install/docker/docker-compose-up-and-ui-credentials.md %}
 
 ## Detaching, stop and start commands
 
