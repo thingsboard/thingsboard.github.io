@@ -53,8 +53,9 @@ The TBEL expression can be as simple as a single identifier, or as complicated a
 #### Simple Property Expression
 
 ```java
-  msg.temperature
+msg.temperature
 ```
+{: .copy-code}
 
 In this expression, we simply have a single identifier (msg.temperature), which by itself, is what we refer to in TBEL as a property expression, 
 in that the only purpose of the expression is to extract a property out of a variable or context object.
@@ -63,14 +64,16 @@ TBEL can even be used for evaluating a boolean expression.
 Assuming you are using TBEL in the Rule Engine to define simple script [filter node](https://thingsboard.io/docs/user-guide/rule-engine-2-0/filter-nodes/#script-filter-node):
 
 ```java
-  return msg.temperature > 10;
+return msg.temperature > 10;
 ```
+{: .copy-code}
 
 Like Java, TBEL supports the full gamut of operator precedence rules, including the ability to use bracketing to control execution order.
 
 ```java
-  return (msg.temperature > 10 && msg.temperature < 20) || (msg.humidity > 10 && msg.humidity < 60);
+return (msg.temperature > 10 && msg.temperature < 20) || (msg.humidity > 10 && msg.humidity < 60);
 ```
+{: .copy-code}
 
 #### Multiple statements
 
@@ -78,10 +81,11 @@ You may write scripts with an arbitrary number of statements using the semi-colo
 This is required in all cases except in cases where there is only one statement, or for the last statement in a script.
 
 ```java
-    var a = 2;
-    var b = 2;
-    return a + b
+var a = 2;
+var b = 2;
+return a + b
 ```
+{: .copy-code}
 
 Note the lack of semi-colon after 'a + b'. New lines are not substitutes for the use of the semi-colon in MVEL.
 
@@ -92,8 +96,9 @@ MVEL’s type coercion system is applied in cases where two incomparable types a
 For example:
 
 ```java
-    "123" == 123;
+"123" == 123;
 ```
+{: .copy-code}
 
 This expression is *true* in TBEL because the type coercion system will coerce the untyped number *123* to a String in order to perform the comparison.
 
@@ -129,6 +134,7 @@ map.remove("temperature");
 // get map size
 map.size();
 ```
+{: .copy-code}
 
 #### Lists
 
@@ -164,6 +170,7 @@ for (int i =0; i < list.size; i++) {
     var smth = list[i];
 }
 ```
+{: .copy-code}
 
 #### Arrays
 
@@ -192,6 +199,7 @@ sum(array); // returns 6
 
 array[3] = 4; // Will cause ArrayIndexOutOfBoundsException
 ```
+{: .copy-code}
 
 #### Literals
 
@@ -205,6 +213,7 @@ String literals may be denoted by single or double quotes.
 "This is a string literal"
 'This is also string literal'
 ```
+{: .copy-code}
 
 String escape sequences:
 
@@ -223,18 +232,21 @@ A decimal integer can be expressed as any number that does not start with zero.
 ```java
 125 // decimal
 ```
+{: .copy-code}
 
 An octal representation of an integer is possible by prefixing the number with a zero, followed by digits ranging from 0 to 7.
 
 ```java
 0353 // octal
 ```
+{: .copy-code}
 
 Hexidecimal is represented by prefixing the integer with 0x followed by numbers ranging from 0-9..A-F.
 
 ```java
 0xAFF0 // hex
 ```
+{: .copy-code}
 
 A floating point number consists of a whole number and a factional part denoted by the point/period character, with an optional type suffix.
 
@@ -243,6 +255,7 @@ A floating point number consists of a whole number and a factional part denoted 
 94.92d // a double
 14.5f // a float
 ```
+{: .copy-code}
 
 You can represent `*`BigInteger`*` and `*`BigDecimal`*` literals by using the suffixes `B` and `I` (uppercase is mandatory).
 
@@ -250,6 +263,7 @@ You can represent `*`BigInteger`*` and `*`BigDecimal`*` literals by using the su
 104.39484B // BigDecimal
 8.4I // BigInteger
 ```
+{: .copy-code}
 
 Boolean literals are represented by the reserved keywords `true` and `false`.
 
@@ -262,6 +276,7 @@ The TBEL implementation allows usage of **some** Java classes from the `java.uti
 ```java
 var foo = java.lang.Math.sqrt(4);
 ```
+{: .copy-code}
 
 For the security purpose, usage of those classes is constrained. You are able to call both static and non-static methods, but you are not able to assign the instance of the class to the variable:
 
@@ -270,6 +285,7 @@ var list = ["A", "B", "C"];
 java.util.Collections.reverse(list); // allowed
 list = new java.util.ArrayList(); // Not allowed
 ```
+{: .copy-code}
 
 To simplify migration from the JS, we have added the `JSON` class with static methods: `JSON.stringify` and `JSON.parse` that work similar to JS. For example:
 For the same purpose, we have added `Date` class that you are able to use without the package name.
@@ -289,6 +305,7 @@ if (temperature > 0) {
    return "Something else!";
 }
 ```
+{: .copy-code}
 
 **Ternary statements**
 
@@ -297,6 +314,7 @@ Ternary statements are supported just as in Java:
 ```java
 temperature > 0 ? "Yes" : "No";
 ```
+{: .copy-code}
 
 Nested ternary statements are also supported.
 
@@ -313,6 +331,7 @@ for (n : numbers) {
    sum+=n;
 }
 ```
+{: .copy-code}
 
 Since TBEL treats Strings as iterable objects you can iterate a String (character by character) with a foreach block:
 
@@ -322,14 +341,17 @@ for (c : str) {
    //do something 
 }
 ```
+{: .copy-code}
 
 **For Loop**
 
 ```java
+var sum = 0;
 for (int i =0; i < 100; i++) { 
-   System.out.println(i);
+   sum += i;
 }
 ```
+{: .copy-code}
 
 **Do While, Do Until**
 
@@ -341,6 +363,7 @@ do {
 } 
 while (x != null);
 ```
+{: .copy-code}
 
 ... is semantically equivalent to ...
 
@@ -350,6 +373,7 @@ do {
 }
 until (x == null);
 ```
+{: .copy-code}
 
 **While, Until**
 
@@ -360,6 +384,7 @@ while (isTrue()) {
    doSomething();
 }
 ```
+{: .copy-code}
 
 ... or ...
 
@@ -368,6 +393,7 @@ until (isFalse()) {
    doSomething();
 }
 ```
+{: .copy-code}
 
 ## Helper functions
 
@@ -395,6 +421,7 @@ An ASCII string containing the Base64 representation of the input.
 var encodedData = btoa("Hello, world"); // encode a string
 var decodedData = atob(encodedData); // decode the string
 ```
+{: .copy-code}
 
 #### atob
 
@@ -420,6 +447,7 @@ An ASCII string containing decoded data from encodedData.
 var encodedData = btoa("Hello, world"); // encode a string
 var decodedData = atob(encodedData); // decode the string
 ```
+{: .copy-code}
 
 #### bytesToString
 
@@ -446,6 +474,7 @@ A string constructed from the specified byte list.
 var bytes = [(byte)0x48,(byte)0x45,(byte)0x4C,(byte)0x4C,(byte)0x4F];
 return bytesToString(bytes); // Returns "HELLO"
 ```
+{: .copy-code}
 
 #### decodeToString
 
@@ -477,6 +506,7 @@ var bytesStr = atob(base64Str);
 var bytes = stringToBytes(bytesStr);
 return decodeToJson(bytes); // Returns '{"hello": "world"}'
 ```
+{: .copy-code}
 
 #### stringToBytes
 
@@ -504,6 +534,7 @@ var base64Str = "eyJoZWxsbyI6ICJ3b3JsZCJ9"; // Base 64 representation of the '{"
 var bytesStr = atob(base64Str);
 return stringToBytes(bytesStr); // Returns [123, 34, 104, 101, 108, 108, 111, 34, 58, 32, 34, 119, 111, 114, 108, 100, 34, 125]
 ```
+{: .copy-code}
 
 #### parseInt
 
@@ -541,6 +572,7 @@ return parseInt("99", 8) throws a NumberFormatException
 return parseInt("Kona", 10) throws a NumberFormatException
 return parseInt("Kona", 27) // returns 411787
 ```
+{: .copy-code}
 
 #### parseFloat
 
@@ -565,6 +597,7 @@ A float value.
 ```java
 return parseFloat("4.2"); // returns 4.2
 ```
+{: .copy-code}
 
 #### parseDouble
 
@@ -589,6 +622,7 @@ A double precision value.
 ```java
 return parseDouble("4.2"); // returns 4.2
 ```
+{: .copy-code}
 
 #### parseHexToInt
 
@@ -617,6 +651,7 @@ return parseHexToInt("BBAA", true); // returns 48042
 return parseHexToInt("AABB", false); // returns 48042
 return parseHexToInt("BBAA", false); // returns 43707
 ```
+{: .copy-code}
 
 #### parseLittleEndianHexToInt
 
@@ -659,6 +694,7 @@ Rounded double
 return toFixed(0.345, 1); // returns 0.3
 return toFixed(0.345, 2); // returns 0.35
 ```
+{: .copy-code}
 
 #### hexToBytes
 
@@ -683,6 +719,7 @@ Parsed list of integer values.
 ```java
 return hexToBytes("BBAA"); // returns [187, 170]
 ```
+{: .copy-code}
 
 #### bytesToHex
 
@@ -707,6 +744,7 @@ Hex string.
 ```java
 return bytesToHex([187, 170]); // returns "BBAA"
 ```
+{: .copy-code}
 
 #### bytesToBase64
 
@@ -731,6 +769,7 @@ Base64 string.
 ```java
 return bytesToBase64([42, 73]); // returns "Kkk="
 ```
+{: .copy-code}
 
 #### base64ToHex
 
@@ -755,6 +794,7 @@ Hex string
 ```java
 return base64ToHex("Kkk="); // returns "2A49"
 ```
+{: .copy-code}
 
 #### base64ToBytes
 
@@ -779,3 +819,33 @@ Byte array.
 ```java
 return base64ToBytes("Kkk="); // returns [42, 73]
 ```
+{: .copy-code}
+
+#### parseBytesToInt
+
+Parses int from the byte array given the offset, length and optional endianness.
+
+**Syntax:**
+
+*int parseBytesToInt([byte[] or List<Byte>] data, int offset, int length[, boolean bigEndian])*
+
+**Parameters:**
+
+<ul>
+  <li><b>data:</b> <code>byte[]</code> or <code>List of Byte</code> - the byte array.</li>
+  <li><b>offset:</b> <code>int</code> - the offset in the array.</li>
+  <li><b>length:</b> <code>int</code> - the length in bytes. Less then or equal to 4.</li>
+  <li><b>bigEndian:</b> <code>boolean</code> - optional, LittleEndian if false, BigEndian otherwise.</li>
+</ul>
+
+**Return value:**
+
+integer value.
+
+**Examples:**
+
+```java
+return parseBytesToInt(new byte[]{(byte) 0xAA, (byte) 0xBB, (byte) 0xCC, (byte) 0xDD}, 0, 3, true); // returns 11189196 in Decimal or 0xAABBCC  
+return parseBytesToInt(new byte[]{(byte) 0xAA, (byte) 0xBB, (byte) 0xCC, (byte) 0xDD}, 0, 3, false); // returns 13417386 in Decimal or 0xCCBBAA
+```
+{: .copy-code}
