@@ -5,4 +5,4 @@ description: ThingsBoard MQTT Broker MQTT Client types overview
 
 ---
 
-{% include docs/mqtt-broker/user-guide/mqtt-client.md %}
+{% include docs/mqtt-broker/user-guide/mqtt-client-type.md %}

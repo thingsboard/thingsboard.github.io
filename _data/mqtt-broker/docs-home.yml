@@ -10,7 +10,7 @@ toc:
 - title: Key concepts
   section:
     - title: MQTT client type
-      path: /docs/mqtt-broker/user-guide/mqtt-client/
+      path: /docs/mqtt-broker/user-guide/mqtt-client-type/
 - title: Security
   path: /docs/mqtt-broker/security/
 - title: MQTT Listeners
