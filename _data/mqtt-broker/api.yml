@@ -11,3 +11,5 @@ toc:
       path: /docs/mqtt-broker/user-management/
     - title: MQTT Client Credentials Management
       path: /docs/mqtt-broker/mqtt-client-credentials-management/
+    - title: Application Shared Subscriptions Management
+      path: /docs/mqtt-broker/application-shared-subscription/
