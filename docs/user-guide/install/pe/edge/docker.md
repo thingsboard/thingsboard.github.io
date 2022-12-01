@@ -71,7 +71,8 @@ services:
 
 {% include templates/edge/install/docker_compose_details_explain.md %}
 
-Before starting Docker container run following commands to create a directory for storing data and logs and then change its owner to docker container user, to be able to change user, chown command is used, which requires sudo permissions (command will request password for a sudo access):
+{% include templates/install/docker/docker-create-folders-sudo-explained.md %}
+
 ```
 mkdir -p ~/.mytb-edge-data && sudo chown -R 799:799 ~/.mytb-edge-data
 mkdir -p ~/.mytb-edge-logs && sudo chown -R 799:799 ~/.mytb-edge-logs
@@ -92,7 +93,9 @@ mkdir -p ~/.mytb-edge-logs && sudo chown -R 799:799 ~/.mytb-edge-logs
 {% assign serviceFullName = "ThingsBoard Edge" %}
 {% include templates/install/docker/detaching-stop-start-commands.md %}
 
-### Troubleshooting
+## Troubleshooting
+
+### DNS issues
 
 {% include templates/edge/install/docker-troubleshooting.md %}
 

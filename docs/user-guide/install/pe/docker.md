@@ -68,8 +68,7 @@ Where:
 
 ## Step 4. Running
 
-Before starting Docker container run following commands to create a directory for storing data and logs and then change its owner to docker container user,
-to be able to change user, **chown** command is used, which requires sudo permissions (command will request password for a sudo access):
+{% include templates/install/docker/docker-create-folders-sudo-explained.md %}
 
 ```
 mkdir -p ~/.mytbpe-data && sudo chown -R 799:799 ~/.mytbpe-data
@@ -91,15 +90,7 @@ mkdir -p ~/.mytbpe-logs && sudo chown -R 799:799 ~/.mytbpe-logs
 
 ### DNS issues
 
-**Note** If you observe errors related to DNS issues, for example
-
-```bash
-127.0.1.1:53: cannot unmarshal DNS message
-```
-
-You may configure your system to use Google public DNS servers. 
-See corresponding [Linux](https://developers.google.com/speed/public-dns/docs/using#linux) and [Mac OS](https://developers.google.com/speed/public-dns/docs/using#mac_os) instructions.
-
+{% include templates/troubleshooting/dns-issues.md %}
 
 ### Upgrading from old PostgreSQL 9.6 to PostgreSQL 11 and ThingsBoard 3.0.1PE
 

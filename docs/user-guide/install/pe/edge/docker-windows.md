@@ -110,15 +110,11 @@ Where:
 {% assign serviceFullName = "ThingsBoard Edge" %}
 {% include templates/install/docker/detaching-stop-start-commands.md %}
 
-### Troubleshooting
+## Troubleshooting
 
-**NOTE** If you observe errors related to DNS issues, for example
+### DNS issues
 
-```bash
-127.0.1.1:53: cannot unmarshal DNS message
-```
-
-You may configure your system to use [Google public DNS servers](https://developers.google.com/speed/public-dns/docs/using#windows)
+{% include templates/troubleshooting/dns-issues-windows.md %}
 
 ## Next Steps
 

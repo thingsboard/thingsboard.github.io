@@ -76,7 +76,6 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - ~/.mytrendz-data/db:/var/lib/postgresql/data
-
 ```
 {: .copy-code}
 
@@ -91,10 +90,8 @@ Where:
 - `mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
 - `thingsboard/trendz:1.9.2`          - docker image
-    
-Before starting Docker container run following commands to create a directory for storing data and logs and then change 
-its owner to docker container user, to be able to change user, chown command is used, which requires sudo permissions 
-(command will request password for a sudo access):
+
+{% include templates/install/docker/docker-create-folders-sudo-explained.md %}
 
 ```bash
 mkdir -p ~/.mytrendz-data && sudo chown -R 799:799 ~/.mytrendz-data
@@ -158,7 +155,7 @@ If you still rely on docker compose as standalone execute next command:
 
 * After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with 1.9.2 instead of 1.8.0-SNAPSHOT:
 
-* Restart Trend container
+* Restart Trendz container
 
 ```bash
 docker compose stop mytrendz
@@ -179,15 +176,8 @@ To upgrade Trendz to the latest version those steps should be done **for each in
 
 ### DNS issues
 
-**Note** If you observe errors related to DNS issues, for example
+{% include templates/troubleshooting/dns-issues.md %}
 
-```bash
-127.0.1.1:53: cannot unmarshal DNS message
-```
-
-You may configure your system to use Google public DNS servers. 
-See corresponding [Linux](https://developers.google.com/speed/public-dns/docs/using#linux) and [Mac OS](https://developers.google.com/speed/public-dns/docs/using#mac_os) instructions.
-
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}
