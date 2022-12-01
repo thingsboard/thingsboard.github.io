@@ -123,11 +123,22 @@ In order to update to the latest image, open "Docker Quickstart Terminal" and ex
 
 ```
 $ docker pull thingsboard/tb-postgres
-$ docker-compose stop
+$ docker compose stop
 $ docker run -it -v mytb-data:/data --rm thingsboard/tb-postgres upgrade-tb.sh
-$ docker rm mytb
-$ docker-compose up
+$ docker compose rm mytb
+$ docker compose up
 ```
+
+{% capture dockerComposeStandalone %}
+If you still rely on docker compose as standalone here is the list of the above commands:
+<br>**$ docker pull thingsboard/tb-postgres**
+<br>**$ docker-compose stop**
+<br>**$ docker run -it -v mytb-data:/data --rm thingsboard/tb-postgres upgrade-tb.sh**
+<br>**$ docker-compose rm mytb**
+<br>**$ docker-compose up**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
+
 
 **NOTE**: if you use different database change image name in all commands from `thingsboard/tb-postgres` to `thingsboard/tb-cassandra` or `thingsboard/tb` correspondingly.
  
