@@ -11,3 +11,4 @@ Server-side API is available as REST API:
 * [**Administration REST API**](/docs/mqtt-broker/rest-api) - The server-side core APIs.
 * [**Admin User Management**](/docs/mqtt-broker/user-management/) - The server-side APIs for User management.
 * [**MQTT Client Credentials Management**](/docs/mqtt-broker/mqtt-client-credentials-management/) - The server-side APIs for MQTT client credentials management.
+* [**Application Shared Subscriptions Management**](/docs/mqtt-broker/application-shared-subscription/) - The server-side APIs for Application Shared Subscriptions management.

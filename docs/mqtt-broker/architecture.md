@@ -83,7 +83,9 @@ MQTT clients for which the above non-persistent conditions are not matched are c
 for **MQTT v3.x** clients or if `sessionExpiryInterval` is greater than `0` (regardless of the `clean_start` flag) or if `clean_start` flag is set to `false`
 plus `sessionExpiryInterval` is `0(or empty)` for **MQTT v5 clients**.
 
-For both types of clients we provide [instruments](/docs/mqtt-broker/mqtt-options/#device-persistence-options) to regulate how many messages can be persisted per client and for what period of time.
+For both types of clients we provide [instruments](/docs/mqtt-broker/install/config/) 
+(see `TB_KAFKA_APP_PERSISTED_MSG_TOPIC_PROPERTIES`, `MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_LIMIT` and `MQTT_PERSISTENT_SESSION_DEVICE_PERSISTED_MESSAGES_TTL` environment variables) 
+to regulate how many messages can be persisted per client and for what period of time.
 
 #### DEVICE client
 

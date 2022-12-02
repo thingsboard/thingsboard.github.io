@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: Application Shared Subscriptions Entity
-description: Application Shared Subscriptions Entity Management
+title: Application Shared Subscription Entity
+description: Application shared subscription entities management
 
 ---
 
