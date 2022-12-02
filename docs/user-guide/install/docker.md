@@ -17,9 +17,7 @@ This guide will help you to install and start ThingsBoard using Docker on Linux 
 
 ## Prerequisites
 
-- [Install Docker CE](https://docs.docker.com/engine/installation/)
-
-- [Install Docker Compose](https://docs.docker.com/compose/install/)
+{% include templates/install/docker-install.md %}
 
 {% include templates/install/docker-install-note.md %}
 
