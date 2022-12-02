@@ -8,7 +8,3 @@ ThingsBoard supports Docker Compose V2 (Docker Desktop or Compose plugin) starti
 
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
-
-
-
-
