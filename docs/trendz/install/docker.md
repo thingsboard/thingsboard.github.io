@@ -140,7 +140,7 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* Set upgradeversion version to your **previous** Trendz version.
+* Set upgradeversion variable to your **previous** Trendz version.
 
 ```bash
 docker compose exec mytrendz sh -c "echo '1.8.0' > /data/.upgradeversion" 

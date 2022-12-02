@@ -14,7 +14,6 @@ redirect_from: "/docs/pe/user-guide/install/docker-windows/"
 This guide will help you to install and start ThingsBoard Professional Edition (PE) using Docker on Windows. 
 This guide covers standalone ThingsBoard PE installation.
 If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/user-guide/install/pe/cluster-setup/).  
-``
 
 ## Prerequisites
 
@@ -121,11 +120,19 @@ You can always change passwords for each account in account profile page.
 
 In case when database upgrade is needed, execute the following commands:
 
+```bash
+$ docker compose stop tb-node
+$ docker compose run mytbpe upgrade-tb.sh
+$ docker compose start mytbpe
 ```
-$ docker-compose stop tb-node
-$ docker-compose run mytbpe upgrade-tb.sh
-$ docker-compose start mytbpe
-```
+
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
+<br>**docker-compose stop tb-node**
+<br>**docker-compose run mytbpe upgrade-tb.sh**
+<br>**docker-compose start mytbpe**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
 
 ## Troubleshooting
 
