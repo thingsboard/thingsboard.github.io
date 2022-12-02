@@ -3,7 +3,7 @@
 {:toc}
 
 Application Shared Subscription entity allows you to start using the [Shared Subscriptions](/docs/mqtt-broker/user-guide/shared-subscriptions/) 
-feature for **APPLICATION** clients. Once the entity is created, the respectful Kafka topic is created, where all the messages are pushed that relate to 
+feature for **APPLICATION** clients. Once the entity is created, the corresponding Kafka topic is created, where all the messages are pushed that relate to 
 a shared subscription.
 
 To create a new application shared subscription entity in the system first of all you need to authorize as an Admin.
@@ -38,7 +38,12 @@ where
 * `+` is replaced by `slw` (single-lvl wildcard)
 
 **Note,** once the entity is created, you can not update the _partitions_ or _topic_ fields. So, think carefully about the needed topic
-and the number of partitions before you create the entity. Otherwise, you will be required to delete improper entity and re-create it with the correct values.
+and the number of partitions before you create the entity. It is recommended to create the entity with more partitions than fewer since then you can scale horizontally by 
+adding new clients to the shared subscription.
+Otherwise, you will be required to delete the improper entity and re-create it with the correct values.
+
+For example, if you plan to have a topic to which 5 clients will be subscribed, it is better to configure the number of partitions by the factor of 5 (5, 10, 15).
+This will guarantee the load is distributed evenly by the subscribers.
 
 ##### Get all Application Shared Subscription entities
 
