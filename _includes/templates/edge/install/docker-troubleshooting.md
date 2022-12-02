@@ -46,7 +46,7 @@ docker compose rm
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
-If you still rely on docker compose as standalone here is the list of the above commands:
+If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
 <br>**docker-compose stop**
 <br>**docker-compose rm**
 {% endcapture %}
@@ -68,7 +68,7 @@ docker compose logs -f mytbedge
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
-If you still rely on docker compose as standalone here is the list of the above commands:
+If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
 <br>**docker-compose up -d**
 <br>**docker-compose logs -f mytbedge**
 {% endcapture %}

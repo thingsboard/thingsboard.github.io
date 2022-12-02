@@ -135,7 +135,7 @@ docker compose exec postgres sh -c "pg_dump -U postgres trendz > /var/lib/postgr
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
-If you still rely on docker compose as standalone execute next command:
+If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
 <br>**docker-compose exec postgres sh -c "pg_dump -U postgres trendz > /var/lib/postgresql/data/trendz_dump"**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
@@ -148,7 +148,7 @@ docker compose exec mytrendz sh -c "echo '1.8.0' > /data/.upgradeversion"
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
-If you still rely on docker compose as standalone execute next command:
+If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
 <br>**docker-compose exec mytrendz sh -c "echo '1.8.0' > /data/.upgradeversion"**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
@@ -164,7 +164,7 @@ docker compose up -d
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
-If you still rely on docker compose as standalone execute next commands:
+If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
 <br>**docker-compose stop mytrendz**
 <br>**docker-compose up -d**
 {% endcapture %}

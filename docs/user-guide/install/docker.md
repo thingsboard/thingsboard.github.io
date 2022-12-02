@@ -104,7 +104,7 @@ docker compose up
 **NOTE**: if you have used one database and want to try another one, then remove the current docker container using `docker-compose rm` command and use different directory for `~/.mytb-data` in `docker-compose.yml`.
 
 {% capture dockerComposeStandalone %}
-If you still rely on docker compose as standalone here is the list of the above commands:
+If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
 <br>**docker pull thingsboard/tb-postgres**
 <br>**docker-compose stop**
 <br>**docker run -it -v ~/.mytb-data:/data --rm thingsboard/tb-postgres upgrade-tb.sh**

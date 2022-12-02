@@ -122,7 +122,7 @@ $ docker compose up
 ```
 
 {% capture dockerComposeStandalone %}
-If you still rely on docker compose as standalone here is the list of the above commands:
+If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
 <br>**$ docker pull thingsboard/tb-postgres**
 <br>**$ docker-compose stop**
 <br>**$ docker run -it -v mytb-data:/data --rm thingsboard/tb-postgres upgrade-tb.sh**

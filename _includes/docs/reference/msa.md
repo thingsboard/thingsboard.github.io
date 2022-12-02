@@ -278,7 +278,8 @@ services:
   tb-js-executor:
     restart: always
     image: "${DOCKER_REPO}/${JS_EXECUTOR_DOCKER_NAME}:${TB_VERSION}"
-    scale: 20
+    deploy:
+      replicas: 20
     env_file:
       - tb-js-executor.env
     depends_on:
