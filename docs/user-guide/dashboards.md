@@ -141,6 +141,54 @@ basic-data-key-settings-6:
     1:
         image: /images/user-guide/dashboards/data-key-configuration-settings-post-processing-2-ce.png
 
+basic-data-key-settings-7:
+    0:
+        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-none-0-ce.png
+    1:
+        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-avg-delta-1-ce.png
+
+basic-data-key-settings-8:
+    0:
+        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-0-ce.png
+
+basic-data-key-settings-9:
+    0:
+        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-avg-0-ce.png
+
+basic-data-key-settings-10:
+    0:
+        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-sum-0-ce.png
+
+basic-data-key-settings-11:
+    0:
+        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-count-0-ce.png
+
+basic-data-key-settings-12:
+    0:
+        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-delta-0-ce.png
+    1:
+        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-delta-1-ce.png
+
+basic-data-key-settings-13:
+    0:
+        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-sum-delta-dayago-0-ce.png
+
+basic-data-key-settings-14:
+    0:
+        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-avg-delta-week-0-ce.png
+
+basic-data-key-settings-15:
+    0:
+        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-delta-monthago-0-ce.png
+
+basic-data-key-settings-16:
+    0:
+        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-delta-yearago-0-ce.png
+
+basic-data-key-settings-17:
+    0:
+        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-delta-custom-0-ce.png
+
 time-window1:
     0:
         image: /images/user-guide/dashboards/add-time-window1-src.png

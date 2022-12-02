@@ -35,8 +35,6 @@ Although the Debug mode is very useful for development and troubleshooting, leav
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-{% include images-gallery.html imageCollection="uplink" %}
-
 Let's review sample uplink message from LORIOT:
 
 ```
@@ -72,69 +70,13 @@ temperature: stringToInt(payloadJson.data.substring(0,2)),
 humidity: stringToInt(payloadJson.data.substring(2,4))
 ```
 
+{% include templates/tbel-vs-js.md %}
 
+{% capture loriotuplinkconverterconfig %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/loriot/loriot-uplink-converter-config-tbel.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/loriot/loriot-uplink-converter-config-java.md{% endcapture %}
 
-**Example for the Uplink converter:**
-
-```javascript
-// Decode an uplink message from a buffer
-// payload - array of bytes
-// metadata - key/value object
-/** Decoder **/
-// decode payload to JSON
-var payloadJson = decodeToJson(payload);
-// Use EUI as unique device name.
-var deviceName = payloadJson.EUI;
-// Specify the device type. Use one data converter per device type or application.
-var deviceType = 'temperature-sensor';
-// Optionally, add the customer name and device group to automatically create them in ThingsBoard and assign new device to it.
-// var customerName = 'customer';
-// var groupName = 'thermostat devices';
-// Result object with device/asset attributes/telemetry data
-var result = {
-   deviceName: deviceName,
-   deviceType: deviceType,
-//   customerName: customerName,
-//   groupName: groupName,
-   attributes: {},
-   telemetry: {
-        ts: payloadJson.ts,
-        values: {
-            temperature: stringToInt(payloadJson.data.substring(0,2)),
-            humidity: stringToInt(payloadJson.data.substring(2,4)),
-            fcnt: payloadJson.fcnt,
-            port: payloadJson.port,
-            freq: payloadJson.freq,
-            dr: payloadJson.dr,
-            rssi: payloadJson.rssi,
-            snr: payloadJson.snr,
-            rawData: payloadJson.data
-       }
-   }
-};
-/** Helper functions **/
-function decodeToString(payload) {
-   return String.fromCharCode.apply(String, payload);
-}
-function decodeToJson(payload) {
-   // covert payload to string.
-   var str = decodeToString(payload);
-   // parse string to JSON
-   var data = JSON.parse(str);
-   return data;
-}
-function stringToInt(hex) {
-    return parseInt('0x' + hex.match(/../g).reverse().join(''));
-}
-return result;
-
-``` 
-{: .copy-code}
-
-You can change the decoder function while creating the converter or after creating it. If the converter has already been created, then click on the "pencil" icon to edit it.
-Copy the configuration example for the converter (or your own configuration) and insert it into the decoder function. Save changes by clicking on the "checkmark" icon.
-
-{% include images-gallery.html imageCollection="uplink_edit" %}
+{% include content-toggle.html content-toggle-id="loriotuplinkconverterconfig" toggle-spec=loriotuplinkconverterconfig %}
 
 ## Create Integration
 
@@ -166,11 +108,14 @@ Also need to specify this in LORIOT:
 
 {% include images-gallery.html imageCollection="custom_authorization" %}
 
-Once the Headers filter has been configured, it will also need to be specified in the uplink message as follows. Replace $VALUE with corresponding value.
+Once the Headers filter has been configured, it will also need to be specified in the uplink message as follows. 
 
 ```
--H "Authorization:$VALUE"
+-H "authorization:secret"
 ```
+{: .copy-code}
+
+{% include images-gallery.html imageCollection="uplink-message" %}
 
 ## Send test Uplink message
 
@@ -193,16 +138,12 @@ curl -v -X POST -d "{\"EUI\":\"$YOUR_EUI_DEVICE\",\"deviceType\":\"temperature-s
 ```
 {: .copy-code}
 
-![image](/images/user-guide/integrations/loriot/terminal.png)
-
 With the **enable security** option: replace $YOUR_EUI_DEVICE, $YOUR_HTTP_ENDPOINT_URL and $VALUE with corresponding values. 
 
 ```bash
-curl -v -X POST -d "{\"EUI\":\"$YOUR_EUI_DEVICE\",\"deviceType\":\"temperature-sensor\",\"data\":\"2A3F\",\"port\":1,\"cmd\":\"rx\",\"dr\":\"SF12 BW125 4/5\",\"snr\":1.2,\"ack\":\"false\",\"freq\":868500000,\"fcnt\":1,\"rssi\":-130,\"ts\":1613745998000}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json" -H "Authorization:$VALUE"
+curl -v -X POST -d "{\"EUI\":\"$YOUR_EUI_DEVICE\",\"deviceType\":\"temperature-sensor\",\"data\":\"2A3F\",\"port\":1,\"cmd\":\"rx\",\"dr\":\"SF12 BW125 4/5\",\"snr\":1.2,\"ack\":\"false\",\"freq\":868500000,\"fcnt\":1,\"rssi\":-130,\"ts\":1613745998000}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json" -H "$VALUE"
 ```
 {: .copy-code}
-
-![image](/images/user-guide/integrations/loriot/terminal.png)
 
 The created device with data can be seen in the section **Device groups -> All**
 
@@ -226,53 +167,12 @@ How to work with dashboards [read here](/docs/{{docsPrefix}}user-guide/dashboard
 
 Create Downlink in **Data converters.** To see events - enable **Debug.**
 
-{% include images-gallery.html imageCollection="create_downlink" %}
+{% include templates/tbel-vs-js.md %}
 
-
-You can customize the downlink according to your configuration. Let's consider an example where we send an attribute update message. So we should change code in the downlink encoder function under
-line `//downlink data input`
-
-```
-data: msg.firmware
-```
-
-Also, indicate the required parameters in the metadata:
-
-```
-metadata: {
-  "EUI": "$Device_EUI",
-  "port": 1
-}
-```
-Example for downlink converter:
-
-```javascript
-// Encode downlink data from incoming Rule Engine message
-// msg - JSON message payload downlink message json
-// msgType - type of message, for ex. 'ATTRIBUTES_UPDATED', 'POST_TELEMETRY_REQUEST', etc.
-// metadata - list of key-value pairs with additional data about the message
-// integrationMetadata - list of key-value pairs with additional data defined in Integration executing this converter
-// Result object with encoded downlink payload
-var result = {
-    // downlink data content type: JSON, TEXT or BINARY (base64 format)
-    contentType: "TEXT",
-    // downlink data
-    data: msg.firmware,
-    // Optional metadata object presented in key/value format
-    metadata: {
-            "EUI": "BE7A000000000552",
-            "port": 1
-    }
-};
-return result;
-
-``` 
-{: .copy-code}
-
-where **EUI** is device EUI and is taken from the device in LORIOT. 
-A **port** can be from 1 to 223
-
-{% include images-gallery.html imageCollection="downlink" %}
+{% capture loriotdownlinkconverterconfig %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/loriot/loriot-downlink-converter-config-tbel.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/loriot/loriot-downlink-converter-config-java.md{% endcapture %}
+{% include content-toggle.html content-toggle-id="loriotdownlinkconverterconfig" toggle-spec=loriotdownlinkconverterconfig %}
 
 Get EUI in LORIOT in the Devices section, where the devices have already been created:
 
