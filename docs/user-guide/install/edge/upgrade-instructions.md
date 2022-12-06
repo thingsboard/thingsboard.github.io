@@ -114,10 +114,17 @@ Check backup file created successfully.
 
 Set the terminal in the directory which contains the `docker-compose.yml` file and execute the following command to stop and remove currently running TB Edge container:
 ```
-docker-compose stop
-docker-compose rm mytbedge
+docker compose stop
+docker compose rm mytbedge
 ```
 {: .copy-code}
+
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
+<br>**docker-compose stop**
+<br>**docker-compose rm mytbedge**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
 
 #### Backup Database
 
@@ -211,7 +218,7 @@ nano docker-compose-upgrade.yml
 Add the following lines to the yml file:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: on-failure
@@ -260,7 +267,7 @@ nano docker-compose.yml
 {: .copy-code}
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: always
@@ -387,7 +394,7 @@ nano docker-compose-upgrade.yml
 Add the following lines to the yml file:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: on-failure
@@ -436,7 +443,7 @@ nano docker-compose.yml
 {: .copy-code}
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: always
@@ -563,7 +570,7 @@ nano docker-compose-upgrade.yml
 Add the following lines to the yml file:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: on-failure
@@ -612,7 +619,7 @@ nano docker-compose.yml
 {: .copy-code}
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: always

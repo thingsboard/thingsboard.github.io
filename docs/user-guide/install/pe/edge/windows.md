@@ -53,7 +53,7 @@ https://dist.thingsboard.io/tb-edge-windows-{{ site.release.pe_edge_ver }}.zip
 
 {% include templates/edge/install/open-edge-ui.md %} 
 
-### Troubleshootings
+### Troubleshooting
 
 The log files are located in **logs** folder ("C:\Program Files (x86)\tb-edge\logs" in our case).
 
