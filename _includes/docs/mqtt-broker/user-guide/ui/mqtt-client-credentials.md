@@ -1,5 +1,5 @@
 
-ThingsBoard MQTT Broker support following MQTT client credentials management using Web UI and [REST API](/docs/mqtt-broker/mqtt-client-credentials-management/).
+ThingsBoard MQTT Broker supports following MQTT client credentials management using Web UI and [REST API](/docs/mqtt-broker/mqtt-client-credentials-management/).
 
 See security [guide](/docs/mqtt-broker/security/) for more details.
 

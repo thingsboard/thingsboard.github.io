@@ -21,6 +21,8 @@ toc:
       path: /docs/mqtt-broker/user-guide/shared-subscriptions/
 - title: Administration UI
   section:
+    - title: Admins
+      path: /docs/mqtt-broker/user-guide/ui/admins/
     - title: MQTT Client Credentials
       path: /docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/
 - title: Troubleshooting
