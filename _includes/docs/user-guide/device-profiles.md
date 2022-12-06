@@ -137,7 +137,7 @@ By default, the platform expects devices to send data via JSON. However, it is a
 Protocol Buffers, or Protobuf, is a language- and a platform-neutral way of serializing structured data. It is convenient to minimize the size of transmitted data.  
 
 The current version of the ThingsBoard platform supports customizable proto schemas for [telemetry upload](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) 
-and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server) and implemented the ability to define a schema for downlink messages (RPC calls and attribute updates). 
+and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server) and implemented the ability to define a request/response schemas Server-side RPC. 
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-1-ce.png)
@@ -167,6 +167,42 @@ The compatibility mode introduces slight performance degradation, so it is recom
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-2-pe.png)
+{% endif %}
+
+###### Use Json format for default downlink topics
+
+When enabled, the platform will use Json payload format to push attributes and RPC updates for subscriptions registered using old (v1) topics:
+
+ - v1/devices/me/attributes/response/$request_id
+ - v1/devices/me/attributes
+ - v1/devices/me/rpc/request/$request_id
+ - v1/devices/me/rpc/response/$request_id.
+ 
+This setting does not impact updates for attribute and rpc subscriptions registered using [new (v2) topics](/docs/{{docsPrefix}}reference/mqtt-api/#topics-mapping):
+
+ - v2/a/res/$request_id,
+ - v2/a,
+ - v2/r/req/$request_id,
+ - v2/r/res/$request_id.
+
+Where $request_id is an integer request identifier.
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-4-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-4-pe.png)
+{% endif %}
+
+###### Send PUBACK on PUBLISH message validation failure
+
+By default, the platform will close the MQTT session on message validation failure. When enabled, the platform will send publish acknowledgment instead of closing the session.
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-send-puback-1-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-send-puback-1-pe.png)
 {% endif %}
 
 #### CoAP transport type

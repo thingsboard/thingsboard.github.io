@@ -36,6 +36,9 @@ Please refer to the [MQTT transport type](/docs/{{docsPrefix}}user-guide/device-
 
 Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization) for more details.
 
+Since release 3.2.2, we have introduced new MQTT topics that allow us to reduce MQTT message payload size and use separate topics for JSON and Protobuf payload formats. 
+For backward compatibility, we have added a mapping between old and new topics. Please refer to the [topics mapping](#topics-mapping) section for more details.
+
 ## Telemetry upload API
 
 In order to publish telemetry data to ThingsBoard server node, send PUBLISH message to the following topic:
@@ -347,6 +350,270 @@ v2/fw/response/+/chunk/+
 Where
 
 **+** is the Wildcard character.
+
+## Topics Mapping
+
+In this section you can find the mapping between old topics that starts with <b>v1</b> topic level and new short topics that start with <b>v2</b> topic level.
+For each API, we have defined 3 short topics types: 
+
+ - Short topic: 
+
+   Acts as a default topic that you can use instead of a deprecated topic that starts with <b>v1</b> topic level.
+
+ - Short json topic:
+
+   This topic type might be useful in cases when you have <b>Protobuf</b> payload type selected in the device profile transport configuration, and you 
+   need to publish data or subscribe for receiving updates from server in Json format. 
+
+ - Short protobuf topic:
+
+   This topic type should be used only when [Protobuf payload type](/docs/{{docsPrefix}}user-guide/device-profiles/#mqtt-device-payload) selected in the device profile transport configuration, because we can't parse a protobuf payload without protobuf schema defined.
+
+
+### Telemetry upload
+
+<table>
+    <tr>
+        <td>Old topic</td>
+        <td>v1/devices/me/telemetry</td> 
+    </tr>
+    <tr>
+        <td>Short topic</td>
+        <td>v2/t</td>
+    </tr>
+    <tr>
+        <td>Short json topic</td>
+        <td>v2/t/j</td>
+    </tr>
+    <tr>
+        <td>Short protobuf topic</td>
+        <td>v2/t/p</td>
+    </tr>
+</table>
+
+### Attributes upload
+
+<table>
+    <tr>
+        <td>Old topic</td>
+        <td>v1/devices/me/attributes</td>
+    </tr>
+    <tr>
+        <td>Short topic</td>
+        <td>v2/a</td>
+    </tr>
+    <tr>
+        <td>Short json topic</td>
+        <td>v2/a/j</td>
+    </tr>
+    <tr>
+        <td>Short protobuf topic</td>
+        <td>v2/a/p</td>
+    </tr>
+</table>
+
+### Request Attribute values from the server
+ 
+ - Subscribe topic:
+
+<table>
+    <tr>
+        <td>Old topic</td>
+        <td>v1/devices/me/attributes/response/+</td>
+    </tr>
+    <tr>
+        <td>Short topic</td>
+        <td>v2/a/res/+</td>
+    </tr>
+    <tr>
+        <td>Short json topic</td>
+        <td>v2/a/res/j/+</td>
+    </tr>
+    <tr>
+        <td>Short protobuf topic</td>
+        <td>v2/a/res/p/+</td>
+    </tr>
+</table>
+
+ - Publish topic:
+
+<table>
+    <tr>
+        <td>Old topic</td>
+        <td>v1/devices/me/attributes/request/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short topic</td>
+        <td>v2/a/req/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short json topic</td>
+        <td>v2/a/req/j/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short protobuf topic</td>
+        <td>v2/a/req/p/$request_id</td>
+    </tr>
+</table>
+
+ - Server response topic on subscribe request:
+
+<table>
+    <tr>
+        <td>Old topic</td>
+        <td>v1/devices/me/attributes/response/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short topic</td>
+        <td>v2/a/res/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short json topic</td>
+        <td>v2/a/res/j/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short protobuf topic</td>
+        <td>v2/a/res/p/$request_id</td>
+    </tr>
+</table>
+
+Where $request_id is your integer request identifier.
+
+
+### Subscribe to attribute updates from the server
+
+<table>
+    <tr>
+        <td>Old topic</td>
+        <td>v1/devices/me/attributes</td>
+    </tr>
+    <tr>
+        <td>Short topic</td>
+        <td>v2/a</td>
+    </tr>
+    <tr>
+        <td>Short json topic</td>
+        <td>v2/a/j</td>
+    </tr>
+    <tr>
+        <td>Short protobuf topic</td>
+        <td>v2/a/p</td>
+    </tr>
+</table>
+
+
+### Server-side RPC
+
+ - Subscribe RPC topic:
+
+<table>
+    <tr>
+        <td>Old topic</td>
+        <td>v1/devices/me/rpc/request/+</td>
+    </tr>
+    <tr>
+        <td>Short topic</td>
+        <td>v2/r/req/+</td>
+    </tr>
+    <tr>
+        <td>Short json topic</td>
+        <td>v2/r/req/j/+</td>
+    </tr>
+    <tr>
+        <td>Short protobuf topic</td>
+        <td>v2/r/req/p/+</td>
+    </tr>
+</table>
+
+ - Server RPC response topic on subscribe request:
+
+<table>
+    <tr>
+        <td>Old topic</td>
+        <td>v1/devices/me/rpc/request/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short topic</td>
+        <td>v2/r/req/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short json topic</td>
+        <td>v2/r/req/j/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short protobuf topic</td>
+        <td>v2/r/req/p/$request_id</td>
+    </tr>
+</table>
+
+ - Device RPC Response topic:
+
+<table>
+    <tr>
+        <td>Old topic</td>
+        <td>v1/devices/me/rpc/response/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short topic</td>
+        <td>v2/r/res/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short json topic</td>
+        <td>v2/r/res/j/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short protobuf topic</td>
+        <td>v2/r/res/p/$request_id</td>
+    </tr>
+</table>
+
+where $request_id is an integer request identifier.
+
+### Client-side RPC
+
+ - Device RPC request topic:
+
+<table>
+    <tr>
+        <td>Old topic</td>
+        <td>v1/devices/me/rpc/request/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short topic</td>
+        <td>v2/r/req/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short json topic</td>
+        <td>v2/r/req/j/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short protobuf topic</td>
+        <td>v2/r/req/p/$request_id</td>
+    </tr>
+</table>
+
+ - Server RPC Response topic:
+
+<table>
+    <tr>
+        <td>Old topic</td>
+        <td>v1/devices/me/rpc/response/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short topic</td>
+        <td>v2/r/res/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short json topic</td>
+        <td>v2/r/res/j/$request_id</td>
+    </tr>
+    <tr>
+        <td>Short protobuf topic</td>
+        <td>v2/r/res/p/$request_id</td>
+    </tr>
+</table>
+
+where $request_id is an integer request identifier.
 
 ## Protocol customization
 
