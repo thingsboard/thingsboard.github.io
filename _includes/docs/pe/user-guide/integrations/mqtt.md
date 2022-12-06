@@ -124,16 +124,31 @@ mosquitto_pub -h broker.hivemq.com -p 1883 -t "tb/mqtt-integration-tutorial/sens
 Once you go to **Device Groups -> All** you should find a **SN-001** device provisioned by the Integration.
 Click on the device, go to **Latest Telemetry** tab to see "temperature" key and its value (25.1) there.
 
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/mqtt/mqtt-integration-go-to-devices-2-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-go-to-devices-2.png)
+{% endif %}
 
 Go back to your **Integration** and click on **Events** tab. There you'll see the message consumed by the Integration.
 
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/mqtt/mqtt-integration-events-1-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-events-1.png)
+{% endif %}
 
 On **Events** tab of your **MQTT Uplink** converter there will be **In**, **Out**, and **Metadata** columns. 
 The **In** and **Metadata** are the input for the data converter, and **Out** is the result.
 
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/mqtt/mqtt-integration-converter-events-1-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-converter-events-1.png)
+{% endif %}
 
 <br>
 **Summary:** the Uplink Data Converter defines provisioning of device and interpreting the input data. 
@@ -164,7 +179,13 @@ Now go to **Rule Chains** section and open **Root Rule Chain**. Double-click on 
 <br>
 Now go back to your dashboard and turn knob a couple of times. 
 
+
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/mqtt/mqtt-integration-turn-knob-1-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-turn-knob-1.png)
+{% endif %}
 
 In the **Message Type Switch** node on the **Events** tab you should then see incoming messages with the message type **RPC_CALL_FROM_SERVER_TO_DEVICE** and relation type **RPC Request to Device**. You can check out what data and metadata was sent by the Knob Control to the Rule Engine.
 
@@ -178,17 +199,11 @@ Drag a connection from Message Type Switch node to MQTT Integration Downlink nod
 
 Go to **Data Converters** section, open your **MQTT Downlink Converter** and replace the default script with this one:
 
-{% include templates/tbel-vs-js.md %}
-
 {% capture mqttdownlinkconverterconfig2 %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-downlink-converter-config-tbel-2.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-downlink-converter-config-javascript-2.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="mqttdownlinkconverterconfig2" toggle-spec=mqttdownlinkconverterconfig2 %}
-
-
-
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-edit-downlink converter-1.png)
 
 The script above removes quotes from *msg.params* value, which comes as quoted string, and parses it to integer. Then it builds a result object which is passed to the Integration.
 The result object structure should be followed: the data (the message payload sent to the external MQTT broker as-is) and the metadata (is used by Integrationin). As mentioned: the Integration downlink topic is configured to **${topic}**, which means that the integration will take the metadata.topic and use it as the downlink topic.
@@ -208,9 +223,18 @@ Go to the dashboard and turn the wheel again. In your terminal window you should
 {"value":42}
 ```
 
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/mqtt/mqtt-integration-turn-the-wheel-1-pe.png)
+
+![image](/images/user-guide/integrations/mqtt/mqtt-integration-turn-the-wheel-2-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-turn-the-wheel-1.png)
 
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-turn-the-wheel-2.png)
+{% endif %}
+
+
 
 ### Simulating of Two-Way RPC 
 
@@ -231,22 +255,16 @@ topic: 'tb/mqtt-integration-tutorial/sensors/'+metadata['deviceName']+'/rx/twowa
 
 Or just paste the following code in the encoder window:
 
-{% include templates/tbel-vs-js.md %}
-
 {% capture mqttdownlinkconverterconfig3 %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-downlink-converter-config-tbel-3.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-downlink-converter-config-javascript-3.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="mqttdownlinkconverterconfig3" toggle-spec=mqttdownlinkconverterconfig3 %}
 
-
-
-![image](/images/user-guide/integrations/mqtt/mqtt-rpc-edit-downlink-3.png)
-
 <br>
 Then prepare the **Uplink Converter** to receive the response messages. 
 
-{% include templates/tbel-vs-js.md %}
+Go to **"MQTT Uplink"** converter and paste the following code in the decoder window:
 
 {% capture mqttuplinkconverterconfig2 %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-uplink-converter-config-tbel-2.md%br%
@@ -255,15 +273,19 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-uplink-c
 {% include content-toggle.html content-toggle-id="mqttuplinkconverterconfig2" toggle-spec=mqttuplinkconverterconfig2 %}
 
 
-
-![image](/images/user-guide/integrations/mqtt/mqtt-rpc-edit-uplink-3.png)
-
 The script above is slightly different from what we had initially. It distinguishes between Post Telemetry requests and RPC call Responses, thus publishing different kind of output to Rule Engine.
 
 <br>
 You also must add a topic filter in your **Integration** to receive the RPC response messages: **MQTT Integration** -> **Topic Filters** -> **Add Topic Filter**. Add **tb/mqtt-integration-tutorial/sensors/+/rx/response** topic with the default QoS level and click save.
 
+
+
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/mqtt/mqtt-rpc-edit-integration-1-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
 ![image](/images/user-guide/integrations/mqtt/mqtt-rpc-edit-integration-1.png)
+{% endif %}
 
 <br>
 Now run device emulator. Notice, the mosquitto_pub and mosquitto_sub is not suffice, so please launch an [advanced simulator](/docs/user-guide/integrations/resources/mqtt-client.py):
@@ -285,12 +307,23 @@ This is a Two-way RPC call. Going to reply now!
 Sending a response message: {"rpcReceived":"OK"}
 ```
 
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/mqtt/mqtt-rpc-turn-the-wheel-1-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
 ![image](/images/user-guide/integrations/mqtt/mqtt-rpc-turn-the-wheel-1.png)
+{% endif %}
 
 <br>
 Go to **Device Groups** and find **rpcReceived** telemetry value is **"OK"** in telemetry tab of your SN-001 device.
+Go to **Device Groups**. Find **temperature** value and **rpcReceived** telemetry value is **“OK”** in telemetry tab of your SN-001 device
 
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/mqtt/mqtt-rpc-device-1-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
 ![image](/images/user-guide/integrations/mqtt/mqtt-rpc-device-1.png)
+{% endif %}
 
 ## Video tutorials
 

@@ -22,3 +22,5 @@ var result = {
 return result;
 ```
 {: .copy-code}
+
+![image](/images/user-guide/integrations/mqtt/mqtt-integration-edit-downlink-converter-java-1-pe.png)

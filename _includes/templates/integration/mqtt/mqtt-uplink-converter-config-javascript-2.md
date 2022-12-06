@@ -1,5 +1,3 @@
-Go to **"MQTT Uplink"** converter and paste the following code in the decoder window:
-
 ```js
 /** Decoder **/
 
@@ -51,3 +49,5 @@ function decodeToJson(payload) {
 return result;
 ```
 {: .copy-code}
+
+![image](/images/user-guide/integrations/mqtt/mqtt-rpc-edit-uplink-java-3-pe.png)
