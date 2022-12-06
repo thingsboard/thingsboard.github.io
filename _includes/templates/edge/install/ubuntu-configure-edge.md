@@ -46,8 +46,10 @@ Update the following lines in the configuration file. Don't forget **to replace*
 # export HTTP_BIND_PORT=18080
 # export MQTT_BIND_PORT=11883
 # export COAP_BIND_PORT=15683
+# export LWM2M_ENABLED=false
+{% if docsPrefix == 'pe/edge/' %}
 # export INTEGRATIONS_RPC_PORT=19090
-
+{% endif %}
 # UNCOMMENT NEXT LINES IF YOU HAVE CHANGED DEFAULT POSTGRESQL DATASOURCE SETTINGS:
 # export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/tb_edge
 # export SPRING_DATASOURCE_USERNAME=postgres
@@ -62,8 +64,10 @@ Please uncomment next parameters in ThingsBoard Edge configuration file (**/etc/
 <br>**export HTTP_BIND_PORT=18080**
 <br>**export MQTT_BIND_PORT=11883**
 <br>**export COAP_BIND_PORT=15683**
+<br>**export LWM2M_ENABLED=false**
+{% if docsPrefix == 'pe/edge/' %}
 <br>**export INTEGRATIONS_RPC_PORT=19090**
-
+{% endif %}
 Please make sure ports above are not used by any other application.
 
 {% endcapture %}

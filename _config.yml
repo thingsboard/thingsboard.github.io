@@ -83,6 +83,7 @@ release:
   ce_full_ver: 3.4.2
   pe_ver: 3.4.2pe
   pe_full_ver: 3.4.2PE
+  # DO NOT UPDATE EDGE VERSION WITH CE/PE UPDATE - EDGE RELEASED ONCE THINGSBOARD.CLOUD IS UPDATED
   edge_ver: 3.4.2
   edge_tag: v3.4.2
   edge_full_ver: 3.4.2EDGE

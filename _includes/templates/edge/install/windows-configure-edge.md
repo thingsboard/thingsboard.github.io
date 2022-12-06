@@ -68,14 +68,19 @@ If ThingsBoard Edge is going to be running on the same machine where ThingsBoard
  
 Please locate and change next parameters in ThingsBoard Edge configuration file (**C:\Program Files (x86)\tb-edge\conf\tb-edge.yml**):
 <br>
+<br>**...**
 <br>**port: "${HTTP_BIND_PORT:18080}"**
 <br>**...**
 <br>**bind_port: "${MQTT_BIND_PORT:11883}"**
 <br>**...**
 <br>**bind_port: "${COAP_BIND_PORT:15683}"**
 <br>**...**
+<br>**bind_port: "${LWM2M_ENABLED:false}"**
+<br>**...**
+{% if docsPrefix == 'pe/edge/' %}
 <br>**bind_port: "${INTEGRATIONS_RPC_PORT:19090}"**
-
+<br>**...**
+{% endif %}
 Please make sure ports above are not used by any other application.
 
 {% endcapture %}
