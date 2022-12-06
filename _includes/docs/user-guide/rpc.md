@@ -10,7 +10,7 @@ This guide covers ThingsBoard RPC capabilities. After reading this guide, you wi
 - RPC client-side and server-side APIs;
 - RPC widgets.
 
-ThinsBoard RPC feature may be divided into two types based on the originator of the remote procedure execution:device-originated and server-originated RPC.
+ThingsBoard RPC feature may be divided into two types based on the originator of the remote procedure execution:device-originated and server-originated RPC.
 In order to use more familiar names, we will name device-originated RPC calls as a **client-side** RPC and server-originated RPC as **server-side** RPC.
 
 ## Client-side RPC

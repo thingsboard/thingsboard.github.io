@@ -9,6 +9,32 @@ It allows you to build your own IoT mobile application **with minimum coding eff
 
 This documentation can help you set up and run your first IoT mobile app, learn how to customize the app and publish it to Google Play or App Store.
 
-<a style="margin: 10px 10px 10px 0;" href="/docs/mobile/getting-started/" class="button">Getting started</a>
-<a style="margin: 10px;" href="/docs/mobile/customization/" class="button">Customize your app</a>
-<a style="margin: 10px;" href="/docs/mobile/release/" class="button">Publish your app</a>
+<div class="doc-features row mt-4">
+    <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
+        <a class="feature-card" href="/docs/mobile/getting-started/">
+            <img class="feature-logo" src="/images/feature-logo/getting-started.svg"/>
+            <div class="feature-title">Getting started</div>
+            <div class="feature-text">
+                Learn how to setup and run your first IoT mobile app.
+            </div>
+        </a>
+    </div>
+    <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
+        <a class="feature-card" href="/docs/mobile/customization/">
+            <img class="feature-logo" src="/images/feature-logo/configuration.svg"/>
+            <div class="feature-title">Customize your app</div>
+            <div class="feature-text">
+                Learn how to customize your app without code changes.
+            </div>
+        </a>
+    </div>
+    <div class="col-12 col-lg mb-4">
+        <a class="feature-card" href="/docs/mobile/release/">
+            <img class="feature-logo" src="/images/feature-logo/publish.svg"/>
+            <div class="feature-title">Publish your app</div>
+            <div class="feature-text">
+                Learn how to publish your app to Google Play or App Store.
+            </div>
+        </a>
+    </div>
+</div>

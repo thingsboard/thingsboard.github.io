@@ -8,6 +8,70 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
+## v1.9.2 (November, 2022)
+
+**Improvements:**
+
+ * Add alarm report
+ * Manual color ranges for heat maps
+ * Manual color settings for the calendar
+ * Add anomaly review widget for thingsbard
+ * Add row click event for bar charts and heatmaps
+ * Improve authentication for background tasks
+ * Add scheduled task status in the views table
+ * Add white labeling options for Trendz UI
+ * Improve UI responsiveness for large topologies
+ * Support for native data export in ThingsBoard dashboards
+ 
+
+**Bug fixes:**
+
+ * Resolve formatting issues in CSV data export
+ * Fix sorting issues in the table view
+
+
+## v1.9.1 (July, 2022)
+
+**Improvements:**
+
+ * Preview mode for large reports
+ * Add linear regression for scatter plots
+ * Use user timezone for scheduled tasks
+ * Update native library for ThingsBoard 3.4+
+ 
+
+**Bug fixes:**
+
+ * Fix delta aggregation
+ * Fix individual local dates for fields
+ * Fix the horizontal bar zoom
+ * Avoid report double loading
+ * Fix scroll inside views
+ * Fix date-time label formatting
+
+## v1.9.0 (April, 2022)
+
+**Improvements:**
+
+ * Add configurable fill gaps strategy
+ * Add view templates
+ * Save computed metrics as telemetry in ThingsBoard
+ * Support of Alarm fields for reporting
+ * Support of Anomaly fields for reporting
+ * Combine multiple fields in a pie chart 
+ * Save state and calculated fields for reuse
+ * Implement multi-root related items loading
+ * Switch to the javascript engine for state and calculated fields
+ * Improve time series prediction models
+ * Support interval time window from ThingsBoard
+ * Improve performance for large datasets
+ * Update native library for ThingsBoard 3.3+
+ * Autorefresh filter values inside reports
+ * Update resources path to allow hosting of Trendz & Thingsboard on the same domain
+ * Configurable tooltip type for bar/line charts
+ * Collect measurements during report build
+ * Host ThingsBoard widget library resources inside Trendz service
+
 ## v1.8.2 (December, 2021)
 
 Security update for resolving [CVE-2021-44228](https://nvd.nist.gov/vuln/detail/CVE-2021-44228) vulnerability. 

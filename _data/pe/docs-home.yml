@@ -28,6 +28,8 @@ toc:
     path: /docs/pe/user-guide/tenant-profiles/
   - title: Device Profiles
     path: /docs/pe/user-guide/device-profiles/
+  - title: Asset Profiles
+    path: /docs/pe/user-guide/asset-profiles/
     new: true
   - title: Attributes
     path: /docs/pe/user-guide/attributes/
@@ -46,10 +48,20 @@ toc:
     path: /docs/pe/user-guide/dashboards/
   - title: Aliases
     path: /docs/pe/user-guide/ui/aliases/
-  - title: Widget Actions
-    path: /docs/pe/user-guide/ui/widget-actions/
-  - title: Widgets Library
-    path: /docs/pe/user-guide/ui/widget-library/
+  - title: Widgets
+    section:
+      - title: Widget Actions
+        path: /docs/pe/user-guide/ui/widget-actions/
+      - title: Widgets Library
+        path: /docs/pe/user-guide/ui/widget-library/
+      - title: Chart Widgets
+        path: /docs/pe/user-guide/ui/chart-widget/
+      - title: Entities Table widget
+        path: /docs/pe/user-guide/ui/entity-table-widget/
+      - title: Trip Animation Widget
+        path: /docs/pe/user-guide/ui/trip-animation-widget/
+      - title: Advanced data key configuration
+        path: /docs/pe/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
   section:
   - title: Getting Started
@@ -105,7 +117,7 @@ toc:
     path: /docs/user-guide/integrations/opc-ua/
   - title: Actility ThingPark
     path: /docs/user-guide/integrations/thingpark/
-  - title: TheThingsNetwork
+  - title: TheThingsStack
     path: /docs/user-guide/integrations/ttn/
   - title: TheThingsIndustries
     path: /docs/user-guide/integrations/tti/
@@ -153,9 +165,10 @@ toc:
       path: /docs/pe/user-guide/entity-views/
     - title: API Limits
       path: /docs/pe/user-guide/api-limits/
+    - title: Advanced filters
+      path: /docs/pe/user-guide/advanced-filters/
     - title: Version Control
       path: /docs/pe/user-guide/version-control/
-      new: true
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning
@@ -170,6 +183,9 @@ toc:
       path: /docs/pe/user-guide/csv-xls-data-export/
     - title: File Storage
       path: /docs/pe/user-guide/file-storage/
+    - title: ThingsBoard Expression Language (TBEL)
+      path: /docs/pe/user-guide/tbel/
+      new: true
 - title: Security
   section:
   - title: Enable HTTPS
@@ -233,16 +249,8 @@ toc:
     path: /docs/pe/user-guide/ui/sms-provider-settings/
   - title: Mail Settings
     path: /docs/pe/user-guide/ui/mail-settings/
-  - title: Widgets
-    section:
-      - title: Chart Widgets
-        path: /docs/pe/user-guide/ui/chart-widget/
-      - title: Entity Table Widget
-        path: /docs/pe/user-guide/ui/entity-table-widget/
-      - title: Trip Animation Widget
-        path: /docs/pe/user-guide/ui/trip-animation-widget/
-      - title: Advanced data key configuration
-        path: /docs/pe/user-guide/ui/advanced-data-key-configuration/
+  - title: JWT Security Settings
+    path: /docs/pe/user-guide/ui/jwt-security-settings/
 - title: Contribution Guide
   section:
     - title: How to contribute your device integration guide
