@@ -22,3 +22,5 @@ var result = {
 return result;
 ```
 {: .copy-code}
+
+![image](/images/user-guide/integrations/mqtt/mqtt-rpc-edit-downlink-java-3-pe.png)

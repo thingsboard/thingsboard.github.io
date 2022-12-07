@@ -1,10 +1,7 @@
 ```js
 /** Encoder **/
 
-
 var value = parseInt(msg.params.replaceAll("[\"]",""));
-
-//var value = parseInt(msg.params);
 var data = {value: value}
 // Result object with encoded downlink payload
 var result = {
@@ -25,3 +22,5 @@ var result = {
 return result;
 ```
 {: .copy-code}
+
+![image](/images/user-guide/integrations/mqtt/mqtt-integration-edit-downlink-converter-tbel-1-pe.png)

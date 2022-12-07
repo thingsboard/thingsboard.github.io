@@ -1,12 +1,9 @@
-Go to **"MQTT Uplink"** converter and paste the following code in the decoder window:
-
 ```js
 /** Decoder **/
 
 // decode payload to string
 var payloadStr = decodeToString(payload);
 var data = JSON.parse(payloadStr);
-
 var deviceName =  metadata.topic.split("/")[3];
 // decode payload to JSON
 var deviceType = 'sensor';
@@ -35,3 +32,5 @@ var result = {
 return result;
 ```
 {: .copy-code}
+
+![image](/images/user-guide/integrations/mqtt/mqtt-rpc-edit-uplink-tbel-3-pe.png)
