@@ -194,7 +194,7 @@ Where $request_id is an integer request identifier.
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-4-pe.png)
 {% endif %}
 
-###### Send PUBACK on PUBLISH message validation failure
+##### Send PUBACK on PUBLISH message validation failure
 
 By default, the platform will close the MQTT session on message validation failure. When enabled, the platform will send publish acknowledgment instead of closing the session.
 

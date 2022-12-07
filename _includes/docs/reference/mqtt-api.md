@@ -354,20 +354,20 @@ Where
 ## Topics Mapping
 
 In this section you can find the mapping between old topics that starts with <b>v1</b> topic level and new short topics that start with <b>v2</b> topic level.
-For each API, we have defined 3 short topics types: 
+For APIs that uses on a regular base such as Telemetry upload or RPC requests, we have defined 3 short topics types:
 
  - Short topic: 
 
    Acts as a default topic that you can use instead of a deprecated topic that starts with <b>v1</b> topic level.
 
- - Short json topic:
+ - Short JSON topic:
 
-   This topic type might be useful in cases when you have <b>Protobuf</b> payload type selected in the device profile transport configuration, and you 
-   need to publish data or subscribe for receiving updates from server in Json format. 
+   This topic type might be useful in cases when you have Protobuf payload type selected in the device profile transport configuration, and you 
+   need to publish data or subscribe for receiving updates from server in JSON format. 
 
- - Short protobuf topic:
+ - Short Protobuf topic:
 
-   This topic type should be used only when [Protobuf payload type](/docs/{{docsPrefix}}user-guide/device-profiles/#mqtt-device-payload) selected in the device profile transport configuration, because we can't parse a protobuf payload without protobuf schema defined.
+   This topic type should be used only when Protobuf payload type selected in the device profile transport configuration, because we can't parse a protobuf payload without protobuf schema defined.
 
 
 ### Telemetry upload
@@ -382,11 +382,11 @@ For each API, we have defined 3 short topics types:
         <td>v2/t</td>
     </tr>
     <tr>
-        <td>Short json topic</td>
+        <td>Short JSON topic</td>
         <td>v2/t/j</td>
     </tr>
     <tr>
-        <td>Short protobuf topic</td>
+        <td>Short Protobuf topic</td>
         <td>v2/t/p</td>
     </tr>
 </table>
@@ -403,11 +403,11 @@ For each API, we have defined 3 short topics types:
         <td>v2/a</td>
     </tr>
     <tr>
-        <td>Short json topic</td>
+        <td>Short JSON topic</td>
         <td>v2/a/j</td>
     </tr>
     <tr>
-        <td>Short protobuf topic</td>
+        <td>Short Protobuf topic</td>
         <td>v2/a/p</td>
     </tr>
 </table>
@@ -426,11 +426,11 @@ For each API, we have defined 3 short topics types:
         <td>v2/a/res/+</td>
     </tr>
     <tr>
-        <td>Short json topic</td>
+        <td>Short JSON topic</td>
         <td>v2/a/res/j/+</td>
     </tr>
     <tr>
-        <td>Short protobuf topic</td>
+        <td>Short Protobuf topic</td>
         <td>v2/a/res/p/+</td>
     </tr>
 </table>
@@ -447,11 +447,11 @@ For each API, we have defined 3 short topics types:
         <td>v2/a/req/$request_id</td>
     </tr>
     <tr>
-        <td>Short json topic</td>
+        <td>Short JSON topic</td>
         <td>v2/a/req/j/$request_id</td>
     </tr>
     <tr>
-        <td>Short protobuf topic</td>
+        <td>Short Protobuf topic</td>
         <td>v2/a/req/p/$request_id</td>
     </tr>
 </table>
@@ -468,11 +468,11 @@ For each API, we have defined 3 short topics types:
         <td>v2/a/res/$request_id</td>
     </tr>
     <tr>
-        <td>Short json topic</td>
+        <td>Short JSON topic</td>
         <td>v2/a/res/j/$request_id</td>
     </tr>
     <tr>
-        <td>Short protobuf topic</td>
+        <td>Short Protobuf topic</td>
         <td>v2/a/res/p/$request_id</td>
     </tr>
 </table>
@@ -492,11 +492,11 @@ Where $request_id is your integer request identifier.
         <td>v2/a</td>
     </tr>
     <tr>
-        <td>Short json topic</td>
+        <td>Short JSON topic</td>
         <td>v2/a/j</td>
     </tr>
     <tr>
-        <td>Short protobuf topic</td>
+        <td>Short Protobuf topic</td>
         <td>v2/a/p</td>
     </tr>
 </table>
@@ -516,11 +516,11 @@ Where $request_id is your integer request identifier.
         <td>v2/r/req/+</td>
     </tr>
     <tr>
-        <td>Short json topic</td>
+        <td>Short JSON topic</td>
         <td>v2/r/req/j/+</td>
     </tr>
     <tr>
-        <td>Short protobuf topic</td>
+        <td>Short Protobuf topic</td>
         <td>v2/r/req/p/+</td>
     </tr>
 </table>
@@ -537,11 +537,11 @@ Where $request_id is your integer request identifier.
         <td>v2/r/req/$request_id</td>
     </tr>
     <tr>
-        <td>Short json topic</td>
+        <td>Short JSON topic</td>
         <td>v2/r/req/j/$request_id</td>
     </tr>
     <tr>
-        <td>Short protobuf topic</td>
+        <td>Short Protobuf topic</td>
         <td>v2/r/req/p/$request_id</td>
     </tr>
 </table>
@@ -558,11 +558,11 @@ Where $request_id is your integer request identifier.
         <td>v2/r/res/$request_id</td>
     </tr>
     <tr>
-        <td>Short json topic</td>
+        <td>Short JSON topic</td>
         <td>v2/r/res/j/$request_id</td>
     </tr>
     <tr>
-        <td>Short protobuf topic</td>
+        <td>Short Protobuf topic</td>
         <td>v2/r/res/p/$request_id</td>
     </tr>
 </table>
@@ -583,11 +583,11 @@ where $request_id is an integer request identifier.
         <td>v2/r/req/$request_id</td>
     </tr>
     <tr>
-        <td>Short json topic</td>
+        <td>Short JSON topic</td>
         <td>v2/r/req/j/$request_id</td>
     </tr>
     <tr>
-        <td>Short protobuf topic</td>
+        <td>Short Protobuf topic</td>
         <td>v2/r/req/p/$request_id</td>
     </tr>
 </table>
@@ -604,11 +604,11 @@ where $request_id is an integer request identifier.
         <td>v2/r/res/$request_id</td>
     </tr>
     <tr>
-        <td>Short json topic</td>
+        <td>Short JSON topic</td>
         <td>v2/r/res/j/$request_id</td>
     </tr>
     <tr>
-        <td>Short protobuf topic</td>
+        <td>Short Protobuf topic</td>
         <td>v2/r/res/p/$request_id</td>
     </tr>
 </table>
