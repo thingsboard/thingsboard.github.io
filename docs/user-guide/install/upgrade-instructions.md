@@ -417,6 +417,12 @@ thingsboard-download-3-4-1-centos,CentOS,shell,resources/3.4.1/thingsboard-cento
 
 #### ThingsBoard service upgrade
 
+* Stop ThingsBoard service if it is running.
+
+```bash
+$ sudo service thingsboard stop
+```
+
 {% capture tabspec %}thingsboard-installation-3-4-1
 thingsboard-installation-3-4-1-ubuntu,Ubuntu,shell,resources/3.4.1/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/3.4.1/thingsboard-ubuntu-installation.sh
 thingsboard-installation-3-4-1-centos,CentOS,shell,resources/3.4.1/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/3.4.1/thingsboard-centos-installation.sh{% endcapture %}
@@ -490,6 +496,12 @@ thingsboard-download-3-4-centos,CentOS,shell,resources/3.4/thingsboard-centos-do
 {% include tabs.html %}
 
 #### ThingsBoard service upgrade
+
+* Stop ThingsBoard service if it is running.
+
+```bash
+$ sudo service thingsboard stop
+```
 
 {% capture tabspec %}thingsboard-installation-3-4
 thingsboard-installation-3-4-ubuntu,Ubuntu,shell,resources/3.4/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/3.4/thingsboard-ubuntu-installation.sh
