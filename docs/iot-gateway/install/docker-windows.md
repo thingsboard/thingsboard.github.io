@@ -23,7 +23,7 @@ Make sure your have [logged in](https://docs.docker.com/engine/reference/command
 **Execute the following command to run this docker directly:**
 
 ```
-docker run -it -v %HOMEPATH%/tb-gateway/config:/thingsboard_gateway/config -v %HOMEPATH%/tb-gateway/extensions:/thingsboard_gateway/extensions -v %HOMEPATH%/tb-gateway/logs:/thingsboard_gateway/logs --name tb-gateway --restart always thingsboard/tb-gateway
+docker run -it -v %HOMEPATH%\tb-gateway\config:/thingsboard_gateway/config -v %HOMEPATH%\tb-gateway\extensions:/thingsboard_gateway/extensions -v %HOMEPATH%\tb-gateway\logs:/thingsboard_gateway/logs --name tb-gateway --restart always thingsboard/tb-gateway
 ```
 {: .copy-code}
 
@@ -31,9 +31,9 @@ Where:
     
 - `docker run`              - run this container
 - `-it`                     - attach a terminal session with current Gateway process output
-- `-v %HOMEPATH%/tb-gateway/config:/thingsboard_gateway/config`   - mounts the host's dir `%HOMEPATH%\tb-gateway\config` to Gateway config  directory
-- `-v %HOMEPATH%/tb-gateway/extensions:/thingsboard_gateway/extensions`   - mounts the host's dir `%HOMEPATH%\tb-gateway\extensions` to Gateway extensions  directory
-- `-v %HOMEPATH%/tb-gateway/logs:/thingsboard_gateway/logs`   - mounts the host's dir `%HOMEPATH%\tb-gateway\logs` to Gateway logs  directory
+- `-v %HOMEPATH%\tb-gateway\config:/thingsboard_gateway/config`   - mounts the host's dir `%HOMEPATH%\tb-gateway\config` to Gateway config  directory
+- `-v %HOMEPATH%\tb-gateway\extensions:/thingsboard_gateway/extensions`   - mounts the host's dir `%HOMEPATH%\tb-gateway\extensions` to Gateway extensions  directory
+- `-v %HOMEPATH%\tb-gateway\logs:/thingsboard_gateway/logs`   - mounts the host's dir `%HOMEPATH%\tb-gateway\logs` to Gateway logs  directory
 - `--name tb-gateway`             - friendly local name of this machine
 - `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
 - `thingsboard/tb-gateway`          - docker image
@@ -45,7 +45,7 @@ Where:
 **Execute the following command to run docker container with ENV variables:**
 
 ```
-docker run -it -e host=thingsboard.cloud -e port=1883 -e accessToken=ACCESS_TOKEN -v %HOMEPATH%/tb-gateway/config:/thingsboard_gateway/config -v %HOMEPATH%/tb-gateway/extensions:/thingsboard_gateway/extensions -v %HOMEPATH%/tb-gateway/logs:/thingsboard_gateway/logs --name tb-gateway --restart always thingsboard/tb-gateway
+docker run -it -e host=thingsboard.cloud -e port=1883 -e accessToken=ACCESS_TOKEN -v %HOMEPATH%\tb-gateway\config:/thingsboard_gateway/config -v %HOMEPATH%\tb-gateway\extensions:/thingsboard_gateway/extensions -v %HOMEPATH%\tb-gateway\logs:/thingsboard_gateway/logs --name tb-gateway --restart always thingsboard/tb-gateway
 ```
 {: .copy-code}
 
