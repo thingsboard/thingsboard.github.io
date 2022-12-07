@@ -354,7 +354,7 @@ Where
 ## Topics Mapping
 
 In this section you can find the mapping between old topics that starts with <b>v1</b> topic level and new short topics that start with <b>v2</b> topic level.
-For APIs that uses on a regular base such as Telemetry upload or RPC requests, we have defined 3 short topics types:
+For APIs that uses on a regular base such as Telemetry upload or RPC requests, etc., we have defined 3 short topics types:
 
  - Short topic: 
 
