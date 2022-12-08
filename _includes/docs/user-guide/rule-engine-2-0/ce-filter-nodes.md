@@ -4,7 +4,9 @@ Filter Nodes are used for Message filtering and routing.
 * TOC
 {:toc}
 
-##### Check Relation Filter Node
+<br/>
+
+## Check Relation Filter Node
 
 <table  style="width:250px;">
    <thead>
@@ -28,7 +30,7 @@ If relation exists - Message is sent via **True** chain, otherwise **False** cha
 
 In case that checkbox disabled and any relation exists - Message is sent via **True** chain, otherwise **False** chain is used.
 
-##### Check Existence Fields Node
+## Check Existence Fields Node
 
 <table  style="width:250px;">
    <thead>
@@ -47,7 +49,7 @@ Rule node checks the existence of the selected keys from incoming message data a
 If selected checkbox **Check that all selected keys are present** and all keys in message data and metadata exists - send Message via **True** chain, otherwise, **False** chain is used.<br>
 In case that checkbox is not selected, and at least one of the keys from data or metadata of the message exists - send Message via **True** chain, otherwise, **False**  chain is used.
 
-##### Message Type Filter Node
+## Message Type Filter Node
 
 <table  style="width:250px;">
    <thead>
@@ -67,7 +69,7 @@ An administrator can also define any Custom Message Types in the node configurat
 
 If incoming Message Type is expected - Message is sent via **True** chain, otherwise **False** chain is used.
 
-##### Message Type Switch Node
+## Message Type Switch Node
 
 <table  style="width:250px;">
    <thead>
@@ -85,7 +87,7 @@ otherwise, message is sent to **Other** chain.
 If you use Custom Message Types than you can route those messages via **Other** chain of **Message Type Switch Node** 
 to the **Switch Node** or **Message Type Filter Node** configured with required routing logic.
 
-##### Originator Type Filter Node
+## Originator Type Filter Node
 
 <table  style="width:250px;">
    <thead>
@@ -103,7 +105,7 @@ In the Node configuration, administrator defines set of allowed Originator [Enti
 
 If incoming Originator Type is expected - Message is sent via **True** chain, otherwise **False** chain is used.
 
-##### Originator Type Switch Node
+## Originator Type Switch Node
 
 <table  style="width:250px;">
    <thead>
@@ -117,7 +119,7 @@ If incoming Originator Type is expected - Message is sent via **True** chain, ot
 
 Routes incoming messages by Originator [Entity](/docs/{{docsPrefix}}user-guide/entities-and-relations/) type. 
 
-##### Script Filter Node
+## Script Filter Node
 
 <table  style="width:250px;">
    <thead>
@@ -167,7 +169,7 @@ You can see the real life examples, where this node is used, in the next tutoria
 - [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-filter-script-node)
 
-##### Switch Node
+## Switch Node
 
 <table  style="width:250px;">
    <thead>
@@ -224,9 +226,9 @@ Custom relation names are case-insensitive.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch-custom-relation.png)
 
-##### GPS Geofencing Filter Node
+## GPS Geofencing Filter Node
 
-<table  style="width:15%">
+<table  style="width:250px;">
    <thead>
      <tr>
 	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>

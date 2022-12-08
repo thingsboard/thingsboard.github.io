@@ -5,7 +5,7 @@ Analytics Nodes that are specific to ThingsBoard PE. Used for analysis of stream
 * TOC
 {:toc}
 
-# Aggregate Latest Node
+## Aggregate Latest Node
 
 <table  style="width:250px;">
    <thead>
@@ -75,9 +75,7 @@ with failure reason and parent entity as originator. Failure message is forwarde
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
-<br/>
-
-# Aggregate Stream Node
+## Aggregate Stream Node
 
 <table  style="width:250px;">
    <thead>
@@ -118,7 +116,7 @@ specifying "Buildings" entity group.
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
-# Alarms Count Node
+## Alarms Count Node
 
 <table  style="width:250px;">
    <thead>
@@ -163,9 +161,7 @@ with failure reason and entity as originator. Failure message is forwarded via *
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
-<br/>
-
-# Alarms Count Node (deprecated)
+## Alarms Count Node (deprecated)
 
 <table  style="width:250px;">
    <thead>
@@ -218,5 +214,3 @@ with failure reason and entity as originator. Failure message is forwarded via *
 **Since TB Version 3.3.3** you can select the queue name:
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
-
-<br/>

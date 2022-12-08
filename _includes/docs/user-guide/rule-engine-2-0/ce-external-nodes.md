@@ -3,8 +3,9 @@ External Nodes used are used to interact with external systems.
 * TOC
 {:toc}
 
+<br/>
 
-# AWS SNS Node
+## AWS SNS Node
 
 <table  style="width:250px;">
    <thead>
@@ -48,9 +49,7 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 **Outbound message** from this node will contain response **messageId** and **requestId**
  in Message metadata. Original Message payload, type and originator will not be changed.
 
-<br/>
-
-# AWS SQS Node
+## AWS SQS Node
 
 <table  style="width:250px;">
    <thead>
@@ -103,9 +102,7 @@ If **FIFO** queue is selected, then Message ID will be used as **deduplication I
 **Outbound message** from this node will contain response **messageId**, **requestId**, **messageBodyMd5**, **messageAttributesMd5** 
 and **sequenceNumber** in Message metadata. Original Message payload, type and originator will not be changed. 
 
-<br/>
-
-# Kafka Node
+## Kafka Node
 
 <table  style="width:250px;">
    <thead>
@@ -167,9 +164,7 @@ Original Message payload, type and originator will not be changed.
 - **CLUSTER_API_KEY** - your access key from Cluster settings.
 - **CLUSTER_API_SECRET** - your access secret from Cluster settings.
 
-<br/>
-
-# MQTT Node
+## MQTT Node
 
 <table  style="width:250px;">
    <thead>
@@ -218,9 +213,7 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 In case of successful message publishing, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
-<br/>
-
-# Azure IoT Hub Node
+## Azure IoT Hub Node
 
 <table  style="width:250px;">
    <thead>
@@ -269,9 +262,7 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 In case of successful message publishing, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
-<br/>
-
-# RabbitMQ Node
+## RabbitMQ Node
 
 <table  style="width:250px;">
    <thead>
@@ -308,9 +299,7 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 In case of successful message publishing, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
-<br/>
-
-# REST API Call Node
+## REST API Call Node
 
 <table  style="width:250px;">
    <thead>
@@ -379,9 +368,7 @@ Here an example of message **metadata** to send a single file:
 In case of successful request, outbound message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
-<br/>
-
-# Send Email Node
+## Send Email Node
 
 <table  style="width:250px;">
    <thead>
@@ -437,9 +424,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
 
-<br/>
-
-# Send SMS Node
+## Send SMS Node
 
 <table  style="width:250px;">
    <thead>
@@ -463,7 +448,7 @@ Configuration:
 This Node can work with default SMS provider configured on System level. 
 If SMS message will be sent to all recipients successfully, original Message will be passed to the next nodes via Success chain, otherwise Failure chain is used.
 
-# Twilio SMS Node
+## Twilio SMS Node
 
 <table  style="width:250px;">
    <thead>

@@ -3,8 +3,26 @@ Transformation Nodes are used for changing incoming Message fields like Originat
 * TOC
 {:toc}
 
+<br/>
 
-# Change originator
+## Json Path Node
+
+<table  style="width:250px;">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 3.4.2</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/transformation-json-path.png)
+
+The rule node transforms the incoming message data using the JSON path expression specified in the configuration.
+Please refer to the [README.md](https://github.com/json-path/JsonPath#operators) of the JsonPath library to view the list of available operators, functions, and path examples.
+
+If JSONPath expression evaluation failed, incoming message routes via Failure chain, otherwise Success chain is used.
+
+## Change originator Node
 
 <table  style="width:250px;">
    <thead>
@@ -40,9 +58,7 @@ If multiple Related Entities are found, **_only the first Entity is used_** as n
 
 Outbound Message will have new originator Id.
 
-<br/>
-
-# Script Transformation Node
+## Script Transformation Node
 
 <table  style="width:250px;">
    <thead>
@@ -118,7 +134,7 @@ You can see real life example, how to use this node in those tutorials:
 - [Transform incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/)
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial#add-transform-script-node)
 
-# To Email Node
+## To Email Node
 
 <table  style="width:250px;">
    <thead>

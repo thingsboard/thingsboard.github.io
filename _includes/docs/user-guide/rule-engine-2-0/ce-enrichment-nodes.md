@@ -3,7 +3,9 @@ Enrichment Nodes are used to update meta-data of the incoming Message.
 * TOC
 {:toc}
 
-##### Calculate delta
+<br/>
+
+## Calculate delta
 
 <table  style="width:250px;">
    <thead>
@@ -62,9 +64,7 @@ msg: {"temperature": 22}, metadata: {"ts": "1616510486000"}, relation: Other
 msg: {"pulseCounter": 42}, metadata: {"ts": "1616510487000"}, relation: Failure
 ```
 
-
-
-##### Customer attributes
+## Customer attributes
 
 <table  style="width:250px;">
    <thead>
@@ -108,7 +108,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
 
-##### Device attributes
+## Device attributes
 
 <table  style="width:250px;">
    <thead>
@@ -152,7 +152,7 @@ To access fetched attributes in other nodes you can use this template '<code>met
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-orignator-and-device-attributes-tell-failure.png)
 
-##### Originator attributes
+## Originator attributes
 
 <table  style="width:250px;">
    <thead>
@@ -191,7 +191,7 @@ You can see the real life example, where this node is used, in the following tut
 - [Transform telemetry using previous record](/docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/)
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
 
-##### Originator fields
+## Originator fields
 
 <table  style="width:250px;">
    <thead>
@@ -220,7 +220,7 @@ Outbound Message Metadata will contain configured attributes only if they exist.
 
 To access fetched attributes in other nodes you can use this template '<code>metadata.devType</code>'
 
-##### Related attributes
+## Related attributes
 
 <table  style="width:250px;">
    <thead>
@@ -260,7 +260,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-related-attributes-node)
 
-##### Tenant attributes
+## Tenant attributes
 
 <table  style="width:250px;">
    <thead>
@@ -292,7 +292,7 @@ If unsupported Originator type found, an error is thrown.
 
 An example of this feature you can see in the description for the **Customer attributes node**.
 
-##### Originator telemetry
+## Originator telemetry
 
 <table  style="width:250px;">
    <thead>
@@ -380,7 +380,7 @@ You can see the real-life example, where this node is used, in the following tut
 
 - [Telemetry delta calculation](/docs/user-guide/rule-engine-2-0/tutorials/telemetry-delta-validation/)
 
-##### Tenant details
+## Tenant details
 
 <table  style="width:250px;">
    <thead>
@@ -408,7 +408,7 @@ To access fetched details in other nodes you can use one of the following templa
 
 **Failure** chain is used if Originator does not have assigned Tenant Entity, otherwise - **Success** chain.
 
-##### Customer details
+## Customer details
 
 <table  style="width:250px;">
    <thead>
