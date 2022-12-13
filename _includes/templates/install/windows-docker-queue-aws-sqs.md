@@ -10,7 +10,7 @@ docker-compose.yml
 Add the following line to the yml file. Don’t forget to replace "YOUR_KEY", "YOUR_SECRET" with your **real AWS SQS IAM user credentials** and "YOUR_REGION" with your **real AWS SQS account region:**
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytb:
     restart: always

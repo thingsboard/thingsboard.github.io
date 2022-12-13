@@ -47,7 +47,7 @@ Add the following line to the yml file. Don't forget to replace “PUT_YOUR_LICE
 
 ```yml
 
-version: '2.2'
+version: '3.0'
 services:
   mytrendz:
     restart: always
@@ -111,17 +111,10 @@ docker volume create mytrendz-logs
 **NOTE**: replace directory ~/.mytrendz-data and ~/.mytrendz-logs with directories you’re planning to used in docker-compose.yml.
 
 ##### Running service
- 
-Execute the following command to up this docker compose directly:
 
-**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file.    
-    
-```yml
-docker-compose up -d
-docker-compose logs -f mytrendz
-```
-{: .copy-code}    
-    
+{% assign serviceName = "trendz" %}
+{% include templates/install/docker/docker-compose-up.md %}
+
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
 
 ```yml
@@ -145,38 +138,16 @@ to validate credentials.
 
 ## Detaching, stop and start commands
 
-You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
-
-In case of any issues you can examine service logs for errors. For example to see Trendz node logs execute the following command:
-
-```
-docker-compose logs -f mytrendz
-```
-
-To stop the container:
-
-```
-docker-compose stop
-```
-
-To start the container:
-
-```
-docker-compose start
-```
+{% assign serviceName = "trendz" %}
+{% assign serviceFullName = "Trendz" %}
+{% include templates/install/docker/detaching-stop-start-commands.md %}
 
 ## Troubleshooting
 
 ### DNS issues
 
-**Note** If you observe errors related to DNS issues, for example
+{% include templates/troubleshooting/dns-issues-windows.md %}
 
-```bash
-127.0.1.1:53: cannot unmarshal DNS message
-```
-
-You may configure your system to use [Google public DNS servers](https://developers.google.com/speed/public-dns/docs/using#windows)
-
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

@@ -44,7 +44,7 @@ docker-compose.yml
 {: .copy-code}
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: always
@@ -85,14 +85,8 @@ volumes:
 
 {% include templates/edge/install/docker_compose_details_explain.md %}
 
-**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file.
-
-Execute the following command to up this docker compose directly:
-```
-docker-compose pull
-docker-compose up
-```
-{: .copy-code}
+{% assign serviceName = "tbedge" %}
+{% include templates/install/docker/docker-compose-up.md %}
 
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
 ``` 
@@ -112,17 +106,15 @@ Where:
 
 ### Step 4. Detaching, stop and start commands
 
-{% include templates/edge/install/docker-control.md %}
+{% assign serviceName = "tbedge" %}
+{% assign serviceFullName = "ThingsBoard Edge" %}
+{% include templates/install/docker/detaching-stop-start-commands.md %}
 
-### Troubleshootings
+## Troubleshooting
 
-**NOTE** If you observe errors related to DNS issues, for example
+### DNS issues
 
-```bash
-127.0.1.1:53: cannot unmarshal DNS message
-```
-
-You may configure your system to use [Google public DNS servers](https://developers.google.com/speed/public-dns/docs/using#windows)
+{% include templates/troubleshooting/dns-issues-windows.md %}
 
 ## Next Steps
 

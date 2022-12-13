@@ -66,7 +66,7 @@ sudo service tb-edge restart
 
 {% include templates/edge/install/open-edge-ui.md %} 
 
-### Troubleshootings
+### Troubleshooting
 
 ThingsBoard Edge logs are stored in the following directory:
  
