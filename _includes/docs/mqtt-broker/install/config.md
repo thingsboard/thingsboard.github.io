@@ -186,46 +186,64 @@ environment variable, default value and description.
           <td>SSL protocol: see <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#SSLContext">this link</a></td>
       </tr>
       <tr>
-          <td>listener.ssl.config.key_store</td>
-          <td>LISTENER_SSL_KEY_STORE</td>
-          <td>mqtt_server.jks</td>
-          <td>Path to the key store that holds the SSL certificate</td>
+          <td>listener.ssl.config.credentials.type</td>
+          <td>LISTENER_SSL_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
       </tr>
       <tr>
-          <td>listener.ssl.config.key_store_password</td>
-          <td>LISTENER_SSL_KEY_STORE_PASSWORD</td>
-          <td>keystore_password</td>
-          <td>Password used to access the key store</td>
+          <td>listener.ssl.config.credentials.pem.cert_file</td>
+          <td>LISTENER_SSL_PEM_CERT</td>
+          <td>mqttserver.pem</td>
+          <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
       </tr>
       <tr>
-          <td>listener.ssl.config.key_password</td>
-          <td>LISTENER_SSL_KEY_PASSWORD</td>
-          <td>key_password</td>
-          <td>Password used to access the key</td>
+          <td>listener.ssl.config.credentials.pem.key_file</td>
+          <td>LISTENER_SSL_PEM_KEY</td>
+          <td>mqttserver_key.pem</td>
+          <td>Path to the server certificate private key file (optional)</td>
       </tr>
       <tr>
-          <td>listener.ssl.config.key_store_type</td>
+          <td>listener.ssl.config.credentials.pem.key_password</td>
+          <td>LISTENER_SSL_PEM_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Server certificate private key password (optional)</td>
+      </tr>
+      <tr>
+          <td>listener.ssl.config.credentials.keystore.type</td>
           <td>LISTENER_SSL_KEY_STORE_TYPE</td>
           <td>JKS</td>
           <td>Type of the key store</td>
+      </tr>
+      <tr>
+          <td>listener.ssl.config.credentials.keystore.store_file</td>
+          <td>LISTENER_SSL_KEY_STORE</td>
+          <td>mqttserver.jks</td>
+          <td>Path to the key store that holds the SSL certificate</td>
+      </tr>
+      <tr>
+          <td>listener.ssl.config.credentials.keystore.store_password</td>
+          <td>LISTENER_SSL_KEY_STORE_PASSWORD</td>
+          <td>server_ks_password</td>
+          <td>Password used to access the key store</td>
+      </tr>
+      <tr>
+          <td>listener.ssl.config.credentials.keystore.key_alias</td>
+          <td>LISTENER_SSL_KEY_ALIAS</td>
+          <td></td>
+          <td>Key alias</td>
       </tr> 
       <tr>
-          <td>listener.ssl.config.trust_store</td>
-          <td>LISTENER_SSL_TRUST_STORE</td>
-          <td>root_truststore.jks</td>
-          <td>Path to the trust store that holds the SSL certificate</td>
-      </tr> 
+          <td>listener.ssl.config.credentials.keystore.key_password</td>
+          <td>LISTENER_SSL_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Password used to access the key</td>
+      </tr>
       <tr>
-          <td>listener.ssl.config.trust_store_password</td>
-          <td>LISTENER_SSL_TRUST_STORE_PASSWORD</td>
-          <td>truststore_password</td>
-          <td>Password used to access the trust store</td>
-      </tr> 
-      <tr>
-          <td>listener.ssl.config.trust_store_type</td>
-          <td>SECURITY_MQTT_SSL_TRUST_STORE_TYPE</td>
-          <td>JKS</td>
-          <td>Type of the trust store</td>
+          <td>listener.ssl.config.skip_validity_check_for_client_cert</td>
+          <td>LISTENER_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
+          <td>false</td>
+          <td>Skip check of client certificate validity</td>
       </tr> 
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">HTTP server parameters</span></td>
@@ -255,28 +273,58 @@ environment variable, default value and description.
           <td>Enable/disable SSL support</td>
       </tr>
       <tr>
-          <td>server.ssl.key-store</td>
-          <td>SSL_KEY_STORE</td>
-          <td>classpath:keystore/keystore.p12</td>
-          <td>Path to the key store that holds the SSL certificate</td>
+          <td>server.ssl.credentials.type</td>
+          <td>SSL_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
       </tr>
       <tr>
-          <td>server.ssl.key-store-password</td>
-          <td>SSL_KEY_STORE_PASSWORD</td>
-          <td>thingsboard_mqtt_broker</td>
-          <td>Password used to access the key store</td>
+          <td>server.ssl.credentials.pem.cert_file</td>
+          <td>SSL_PEM_CERT</td>
+          <td>server.pem</td>
+          <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
       </tr>
       <tr>
-          <td>server.ssl.key-store-type</td>
+          <td>server.ssl.credentials.pem.key_file</td>
+          <td>SSL_PEM_KEY</td>
+          <td>server_key.pem</td>
+          <td>Path to the server certificate private key file (optional)</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.pem.key_password</td>
+          <td>SSL_PEM_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Server certificate private key password (optional)</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.type</td>
           <td>SSL_KEY_STORE_TYPE</td>
           <td>PKCS12</td>
           <td>Type of the key store</td>
       </tr>
       <tr>
-          <td>server.ssl.key-alias</td>
+          <td>server.ssl.credentials.keystore.store_file</td>
+          <td>SSL_KEY_STORE</td>
+          <td>classpath:keystore/keystore.p12</td>
+          <td>Path to the key store that holds the SSL certificate</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.store_password</td>
+          <td>SSL_KEY_STORE_PASSWORD</td>
+          <td>thingsboard_mqtt_broker</td>
+          <td>Password used to access the key store</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.key_alias</td>
           <td>SSL_KEY_ALIAS</td>
           <td>tomcat</td>
-          <td>Alias that identifies the key in the key store</td>
+          <td>Key alias</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.key_password</td>
+          <td>SSL_KEY_PASSWORD</td>
+          <td>thingsboard_mqtt_broker</td>
+          <td>Password used to access the key</td>
       </tr>
       <tr>
           <td>server.log_controller_error_stack_trace</td>
