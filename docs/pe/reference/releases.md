@@ -8,6 +8,36 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
   
+## v3.4.3 (December 20, 2022)
+
+Everything from [TB CE v3.4.3](https://github.com/thingsboard/thingsboard/releases/tag/v3.4.3) with the following improvements and bug fixes.
+
+* Core & Rule Engine:
+  * Air Quality Monitoring solution template;
+  
+* UI:
+  * MQTT integration credentials password is optional;
+
+** Bug fixes**
+
+* Core & Rule Engine:
+  
+  * Fixed device bulk import with empty credentials;
+  * Fixed upgrade from CE;
+  * Fixed remote integrations update;
+  * Fixed NPE on WS subscription for sysadmin;
+
+* UI:
+  
+  * Fixed Things Park integration validation;
+  * Fixed validation in bulk import and improvement bulk import for Edge;
+  * Fixed scheduler update configuration;
+  * Fixed Azure IoT Hub integration validation;
+  
+* Edge:
+
+  * Fixed NPE during sync process in case edge owner is customer;
+
 ## v3.4.2 (December 1, 2022)
 
 Everything from [TB CE v3.4.2](https://github.com/thingsboard/thingsboard/releases/tag/v3.4.2) with the following improvements and bug fixes.
