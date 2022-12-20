@@ -11,6 +11,17 @@ description: ThingsBoard IoT platform upgrade instructions
 
 <ul id="markdown-toc">
     <li>
+      <a href="#upgrading-to-343" id="markdown-toc-upgrading-to-343">Upgrading to 3.4.3</a>
+      <ul>
+          <li>
+              <a href="#ubuntucentos-343" id="markdown-toc-ubuntucentos-343">Ubuntu/CentOS</a>
+          </li>
+          <li>
+              <a href="#windows-343" id="markdown-toc-windows-343">Windows</a>
+          </li>
+      </ul>
+    </li>
+    <li>
       <a href="#upgrading-to-342" id="markdown-toc-upgrading-to-342">Upgrading to 3.4.2</a>
       <ul>
           <li>
@@ -311,6 +322,68 @@ description: ThingsBoard IoT platform upgrade instructions
     <a href="/docs/user-guide/install/old-upgrade-instructions/" id="markdown-toc-upgrading-to-240">Older versions</a>
     </li>       
 </ul>
+
+## Upgrading to 3.4.3 {#upgrading-to-343}
+
+### Ubuntu/CentOS {#ubuntucentos-343}
+
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4.2. In order to upgrade to 3.4.3 you need to [**upgrade to 3.4.2 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-342).
+
+#### ThingsBoard package download
+
+{% capture tabspec %}thingsboard-download-3-4-3
+thingsboard-download-3-4-3-ubuntu,Ubuntu,shell,resources/3.4.3/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/3.4.3/thingsboard-ubuntu-download.sh
+thingsboard-download-3-4-3-centos,CentOS,shell,resources/3.4.3/thingsboard-centos-download.sh,/docs/user-guide/install/resources/3.4.3/thingsboard-centos-download.sh{% endcapture %}
+{% include tabs.html %}
+
+#### ThingsBoard service upgrade
+
+* Stop ThingsBoard service if it is running.
+
+```bash
+$ sudo service thingsboard stop
+```
+
+{% capture tabspec %}thingsboard-installation-3-4-3
+thingsboard-installation-3-4-3-ubuntu,Ubuntu,shell,resources/3.4.3/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/3.4.3/thingsboard-ubuntu-installation.sh
+thingsboard-installation-3-4-3-centos,CentOS,shell,resources/3.4.3/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/3.4.3/thingsboard-centos-installation.sh{% endcapture %}
+{% include tabs.html %}
+
+**NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+
+#### Start the service
+
+```bash
+$ sudo service thingsboard start
+```
+
+### Windows {#windows-343}
+
+**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4.2. In order to upgrade to 3.4.3 you need to [**upgrade to 3.4.2 first**](/docs/user-guide/install/upgrade-instructions/#windows-342).
+
+#### ThingsBoard package download
+
+Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.4.3.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.4.3/thingsboard-windows-3.4.3.zip).
+
+#### ThingsBoard service upgrade
+
+* Stop ThingsBoard service if it is running.
+
+```text
+net stop thingsboard
+```
+
+* Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
+
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
+
+#### Start the service
+
+```text
+net start thingsboard
+```
 
 ## Upgrading to 3.4.2 {#upgrading-to-342}
 
