@@ -9,7 +9,7 @@ Charts widget bundle has its own unique advanced data key configuration. All oth
 
 To enter a data key configuration, you should click the pencil icon on the specific data key that you'd like to adjust.
 
-{% include images-gallery.html imageCollection="enter-configuration" %}
+![image](/images/user-guide/ui/widgets/advanced-datakey/enter-data-key-configuration.png)
 
 ## 1. Entity table and alarms table widgets
 
@@ -55,6 +55,7 @@ if(value < 0) {
     return { "background-color" : "red" };
 }
 ```
+{: .copy-code}
 
 ##### 1.3. Cell content function
 
@@ -74,6 +75,7 @@ if (value == "true") {
     return "Inactive";
 }
 ```
+{: .copy-code}
 
 However, there are times when it is not suitable to read the returning text to find out if a device is active or inactive.
 The cell content function allows configuring a more convenient way of displaying it by inputting a custom function to depicture an active/inactive status (see an example of a function below).
@@ -89,6 +91,7 @@ if (value == "true") {
     return '<div style="border-radius:50%;background-color:red;width:18px;height:18px"></div>';
 }
 ```
+{: .copy-code}
 
 ##### 1.4. Default column visibility 
 
@@ -103,6 +106,7 @@ This is especially helpful during exporting a widget when you need to exclude a 
 
 {% include images-gallery.html imageCollection="column-to-display" %}
 
+{% unless docsPrefix == null %}
 ##### 1.6. Include column in export
 
 {% assign feature = "Include in column in export" %}{% include templates/pe-feature-banner.md %}
@@ -112,7 +116,4 @@ There are three options: always, only if column visible (you can change the visi
 and never. This feature is only available in the Professional Edition.
 
 {% include images-gallery.html imageCollection="column-export" %}
-
-## 2. Charts
-
-Coming soon...
+{% endunless %}
