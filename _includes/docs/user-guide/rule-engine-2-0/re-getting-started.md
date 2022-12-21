@@ -24,10 +24,8 @@ in related Asset.
 - Make RPC calls based on defined condition.
 - Integrate with external pipelines like Kafka, Spark, AWS services, etc.
 
-<br/>
-**Let's look at an example.**
-
-Assume your device is using DHT22 sensor to collect and push temperature to the ThingsBoard. 
+## Hello-World Example
+Let’s assume your device is using DHT22 sensor to collect and push temperature to the ThingsBoard.
 DHT22 sensor can measure temperature from -40°C to +80°C.
 
 In this tutorial we will configure ThingsBoard Rule Engine to store all temperature within -40 to 80°C range and log all other readings to the system log.
