@@ -10,7 +10,7 @@ description: ThingsBoard architecture
 
 ## v3.4.3 (December 21, 2022)  
 
-** Improvements
+**Improvements**
 
 * Core & Rule Engine:
   * [#7778](https://github.com/thingsboard/thingsboard/pull/7778) Version control: 'Show merge commits' option, improved entity versions comparing by @ViacheslavKlimov
@@ -19,7 +19,7 @@ description: ThingsBoard architecture
   * [#7785](https://github.com/thingsboard/thingsboard/pull/7785) Danish language by @vvlladd28
   * [#7795](https://github.com/thingsboard/thingsboard/pull/7795) Always visible action button in multiple input widgets by @vvlladd28 
 
-** Bug fixes
+**Bug fixes**
 
 * Core & Rule Engine:
 

@@ -18,7 +18,7 @@ Everything from [TB CE v3.4.3](https://github.com/thingsboard/thingsboard/releas
 * UI:
   * MQTT integration credentials password is optional;
 
-** Bug fixes**
+**Bug fixes**
 
 * Core & Rule Engine:
   
