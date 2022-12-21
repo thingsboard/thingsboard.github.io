@@ -14,7 +14,7 @@ description: ThingsBoard Edge Release Notes
 
 * Customers Hierarchy Support (partial support - only direct parents for the edge owner);
 * Real-time sync WhiteLabeling, LoginWhiteLabeling and CustomTranslation to edge;
-* Fixed NullPointerException during sync process in case edge owner is customer;
+* Fixed NPE during sync process in case edge owner is customer;
 * Integration/Converter/Role constructors - fixed null pointer exception in case additional info is null;
 
 ## v3.4.1 (August 19, 2022)

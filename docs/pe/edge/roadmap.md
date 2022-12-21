@@ -12,9 +12,7 @@ description: Upcoming releases
 
 ### v3.5
 
-Everything in PE 3.5 and Edge 3.5, plus:
-
-* Multiple customers support
+Everything in PE 3.5 and Edge 3.5.
 
 ### Upcoming releases
 * Edge Templates
