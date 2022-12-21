@@ -129,4 +129,4 @@ Where:
   and subscribe to topics that start with **example_sub_topic/**,
   and clients with the certificate that contains **example_2** to publish/subscribe to every topic.
 
-**Note**, in case **pubAuthRulePatterns** or **subAuthRulePatterns** equals to `null` or an empty list (`[]`), this means the client can pub/sub to all topics.
+**Note**, in case **pubAuthRulePatterns** or **subAuthRulePatterns** equals to `null` or an empty list (`[]`), this means the client can not pub/sub to any topics.
