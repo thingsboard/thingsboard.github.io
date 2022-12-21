@@ -13,9 +13,11 @@ This guide will help you to install and start ThingsBoard Edge using Docker on W
 
 {% include templates/edge/install/prerequisites.md %}
 
-{% include templates/edge/install/hardware-requirements.md %}
+#### Docker installation
 
 - [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/){:target="_blank"}
+
+{% include templates/edge/install/hardware-requirements.md %}
 
 ### Step 1. Pull ThingsBoard Edge Images
 
@@ -44,7 +46,7 @@ docker-compose.yml
 {: .copy-code}
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: always
@@ -54,7 +56,7 @@ services:
       - "1883:1883"
       - "5683-5688:5683-5688/udp"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/tb-edge
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/tb_edge
       EDGE_LICENSE_INSTANCE_DATA_FILE: /data/instance-edge-license.data
       CLOUD_ROUTING_KEY: PUT_YOUR_EDGE_KEY_HERE # e.g. 19ea7ee8-5e6d-e642-4f32-05440a529015
       CLOUD_ROUTING_SECRET: PUT_YOUR_EDGE_SECRET_HERE # e.g. bztvkvfqsye7omv9uxlp
@@ -69,7 +71,7 @@ services:
     ports:
       - "5432"
     environment:
-      POSTGRES_DB: tb-edge
+      POSTGRES_DB: tb_edge
       POSTGRES_PASSWORD: postgres
     volumes:
       - mytb-edge-data-db:/var/lib/postgresql/data
@@ -85,14 +87,8 @@ volumes:
 
 {% include templates/edge/install/docker_compose_details_explain.md %}
 
-**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file.
-
-Execute the following command to up this docker compose directly:
-```
-docker-compose pull
-docker-compose up
-```
-{: .copy-code}
+{% assign serviceName = "tbedge" %}
+{% include templates/install/docker/docker-compose-up.md %}
 
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
 ``` 
@@ -112,17 +108,15 @@ Where:
 
 ### Step 4. Detaching, stop and start commands
 
-{% include templates/edge/install/docker-control.md %}
+{% assign serviceName = "tbedge" %}
+{% assign serviceFullName = "ThingsBoard Edge" %}
+{% include templates/install/docker/detaching-stop-start-commands.md %}
 
-### Troubleshootings
+## Troubleshooting
 
-**NOTE** If you observe errors related to DNS issues, for example
+### DNS issues
 
-```bash
-127.0.1.1:53: cannot unmarshal DNS message
-```
-
-You may configure your system to use [Google public DNS servers](https://developers.google.com/speed/public-dns/docs/using#windows)
+{% include templates/troubleshooting/dns-issues-windows.md %}
 
 ## Next Steps
 

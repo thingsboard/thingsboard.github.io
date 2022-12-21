@@ -10,7 +10,7 @@ nano docker-compose.yml
 Add the following line to the yml file. Don’t forget to replace "CLUSTER_API_KEY", "CLUSTER_API_SECRET" and "confluent.cloud:9092" with your real Confluent Cloud bootstrap servers:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbpe:
     restart: always
