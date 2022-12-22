@@ -143,13 +143,15 @@ Let's assume that 1TB of storage per broker is enough for our case.
 
 AWS EKS cluster in us-east-1 region. Approx. price is ~73 USD/month.
 
-AWS Instance Type: 3 x m6a.2xlarge instances (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP2 80GiB default storage size) to host 6 ThingsBoard MQTT brokers. Approx. price is ~780 USD/month.
+AWS Instance Type: 3 x m6a.2xlarge instances (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP2 80GiB) to host 6 ThingsBoard MQTT brokers. Approx. price is ~780 USD/month.
 
 AWS RDS: db.m5.large (2 vCPU, 8 GiB), 100GiB storage. Approx. price is ~142 USD/month.
 
 AWS MSK: 3 brokers (1 broker per AZ), kafka.m5.large (2 vCPU, 8 GiB), 3,000GiB storage. Approx. price is ~760 USD/month.
 
 TCO: ~1,755 USD per month or 0.0018 USD per month per device.
+
+**TODO: continue here...**
 
 ### How to repeat the tests
 
