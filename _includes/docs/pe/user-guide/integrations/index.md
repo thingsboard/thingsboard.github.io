@@ -224,7 +224,7 @@ Converter may also output array of device values and/or contain timestamps in th
 ##### Example
 
 Let's assume a complex example where payload is encoded in hex "value" field and there is a timestamp associated with each record. 
-First two bytes of "value" field contain battery and second two bytes contain temperature. See payload example and metadata on a screen shoot below:
+First two bytes of "value" field contain battery and second two bytes contain temperature. See payload example and metadata on a screen shoot below.
 
 {% include templates/tbel-vs-js.md %}
 

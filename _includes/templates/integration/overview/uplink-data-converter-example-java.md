@@ -5,24 +5,22 @@ The full source code of javascript function used in converter:
 ```shell
 // decode payload to JSON
 var data = decodeToJson(payload);
-
 var result = [];
-
 for (var i in data){
-var report = data[i];
-var deviceName = report.serialNumber;
-var deviceType = metadata.deviceType;
-
+    var report = data[i];
+    var deviceName = report.serialNumber;
+    var deviceType = metadata.deviceType;
     var raw = report.value;
-
     var decoded = hexStringToByte(raw);
     // Result object with device attributes/telemetry data
     result.push({
         deviceName: deviceName,
         deviceType: deviceType,
-        attributes: { model: metadata.model},
+        attributes: { 
+            model: metadata.model
+        },
         telemetry: {
-            ts : report.timestamp,
+            ts: report.timestamp,
             values: {
                 battery: dataConverter(decoded, 0, 2, 100),
                 temperature: dataConverter(decoded, 2, 4, 100),
@@ -36,7 +34,7 @@ var deviceType = metadata.deviceType;
 /** Helper functions **/
 
 function decodeToString(payload) {
-return String.fromCharCode.apply(String, payload);
+    return String.fromCharCode.apply(String, payload);
 }
 
 function decodeToJson(payload) {
