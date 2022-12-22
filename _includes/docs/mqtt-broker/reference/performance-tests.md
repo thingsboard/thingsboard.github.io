@@ -131,8 +131,9 @@ Similar output can be seen for all other performance test nodes.
 * PostgreSQL database to store MQTT client credentials, client session states;
 * Kafka queue to persist messages.
 
-The above message rate and message size, as seen previously, cause 20GB of data per hour in the initial Kafka topic, and 3GB of data per hour per subscriber topic.
-This gives us 80GB of data per hour or ~2TB of data per day. 
+The above message rate and message size, as seen previously, cause **20GB** of data per hour in the initial Kafka topic, and **3GB** of data per hour per subscriber topic.
+This gives us **80GB of data per hour** or **~2TB of data per day**. 
+
 However, the data is not needed to be stored for the long term for visualization, analysis purposes, or others. MQTT broker is required to receive messages, distribute them 
 among the subscribers and optionally store them for a short period of time for offline clients. That's why we recommend configuring a reasonable amount of storage size 
 based on your requirements. **Note**, as a reminder, do not forget to configure the size retention policy and period retention policy for Kafka topics.
@@ -141,9 +142,12 @@ Let's assume that 1TB of storage per broker is enough for our case.
 **Total cost of ownership example:**
 
 AWS EKS cluster in us-east-1 region. Approx. price is ~73 USD/month.
+
 AWS Instance Type: 3 x m6a.2xlarge instances (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP2 80GiB default storage size) to host 6 ThingsBoard MQTT brokers. Approx. price is ~780 USD/month.
+
 AWS RDS: db.m5.large (2 vCPU, 8 GiB), 100GiB storage. Approx. price is ~142 USD/month.
-AWS MSK: 3 brokers (1 broker per AZ), kafka.m5.large (2 vCPU, 8 GiB), 500GiB storage. Approx. price is ~760 USD/month.
+
+AWS MSK: 3 brokers (1 broker per AZ), kafka.m5.large (2 vCPU, 8 GiB), 3,000GiB storage. Approx. price is ~760 USD/month.
 
 TCO: ~1,755 USD per month or 0.0018 USD per month per device.
 
