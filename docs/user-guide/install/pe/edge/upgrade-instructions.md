@@ -245,8 +245,8 @@ docker pull thingsboard/tb-edge-pe:3.4.3EDGEPE
 
 Set the terminal in the directory which contains the `docker-compose.yml` file and execute the following command to stop and remove currently running TB Edge container (if it's still running):
 ```
-docker-compose stop
-docker-compose rm mytbedge
+docker compose stop
+docker compose rm mytbedge
 ```
 {: .copy-code}
 
@@ -286,7 +286,7 @@ services:
 
 Execute the following command to start upgrade process:
 ```
-docker-compose -f docker-compose-upgrade.yml up
+docker compose -f docker-compose-upgrade.yml up
 ```
 {: .copy-code}
 
@@ -297,7 +297,7 @@ Ctrl + C
 
 Execute the following command to stop TB Edge upgrade container:
 ```
-docker-compose -f docker-compose-upgrade.yml stop
+docker compose -f docker-compose-upgrade.yml stop
 ```
 {: .copy-code}
 
@@ -319,9 +319,10 @@ services:
 
 Make sure your image is the set to tb-edge-**pe:3.4.3EDGEPE**.
 
-Execute the following command to up this docker compose directly:
+Execute the following commands to up this docker compose directly:
 ```
-docker-compose up
+docker compose up -d
+docker compose logs -f mytbedge
 ```
 {: .copy-code}
 
