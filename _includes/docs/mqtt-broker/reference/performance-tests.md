@@ -17,7 +17,8 @@ We have deployed the ThingsBoard MQTT broker cluster of 6 nodes in [EKS](https:/
 and [MSK](https://aws.amazon.com/msk/). See the next page for more information about the ThingsBoard MQTT broker [architecture](/docs/mqtt-broker/architecture/).
 
 The [test agent](#how-to-repeat-the-tests) provisions and connects a configurable number of MQTT clients that constantly publish time-series data over MQTT to specific topics.
-Additionally, it provisions a configurable number of MQTT clients that subscribe by topic filters to receive published messages.
+Additionally, it provisions a configurable number of MQTT clients that subscribe by topic filters to receive published messages. The test agent represents the cluster of 
+performance test nodes (runners) and an orchestrator that rules the runners.
 
 Various IoT device profiles differ based on the number of messages they produce and the size of each message.
 We have emulated smart tracker devices that send messages with eight data points. The size of a single "publish" message is approximately 400 bytes.
@@ -75,7 +76,7 @@ are not configured.
 
 This causes 1M write requests per minute, resulting in ~20GB of data per hour to the initial Kafka topic (`publish_msg`). 
 Each APPLICATION subscriber has its special topic in Kafka where all its related (by subscription) messages are stored. 
-APPLICATION subscriber receives data from 50,000 publishers resulting in 3M messages or ~3GB of data per hour.
+APPLICATION subscriber receives data from 50,000 publishers resulting in 3M messages or ~1GB of data per hour.
 
 **Tip**: to plan and manage the Kafka disk space, please, adjust the [size retention policy](https://kafka.apache.org/documentation/#brokerconfigs_log.retention.bytes) 
 and [period retention policy](https://www.baeldung.com/kafka-message-retention). You can find all the needed configurations for every topic in the 
@@ -131,8 +132,11 @@ Similar output can be seen for all other performance test nodes.
 * PostgreSQL database to store MQTT client credentials, client session states;
 * Kafka queue to persist messages.
 
-The above message rate and message size, as seen previously, cause **20GB** of data per hour in the initial Kafka topic, and **3GB** of data per hour per subscriber topic.
-This gives us **80GB of data per hour** or **~2TB of data per day**. 
+The above message rate and message size, as seen previously, cause **20GB** of data per hour in the initial Kafka topic, and **1GB** of data per hour per subscriber topic.
+
+![image](/images/mqtt-broker/reference/app-subs-topic.png)
+
+This gives us **40GB of data per hour** or **~1TB of data daily**. 
 
 However, the data is not needed to be stored for the long term for visualization, analysis purposes, or others. MQTT broker is required to receive messages, distribute them 
 among the subscribers and optionally store them for a short period of time for offline clients. That's why we recommend configuring a reasonable amount of storage size 
@@ -151,7 +155,74 @@ AWS MSK: 3 brokers (1 broker per AZ), kafka.m5.large (2 vCPU, 8 GiB), 3,000GiB s
 
 TCO: ~1,755 USD per month or 0.0018 USD per month per device.
 
-**TODO: continue here...**
+**Test run**
+
+The test is starting with the clients connecting to the cluster, `APPLICATION` clients subscribing to the appropriate topics.
+All the 1M clients are distributed among 40 performance test nodes, connecting those clients to the broker in parallel.
+
+Let's review the logs of one of the performance test (runner) nodes.
+
+```text
+09:11:32.471 [main] INFO  o.t.m.b.s.ClusterProcessServiceImpl - Started processing 25000 with PUBLISHERS_CONNECT task.
+09:11:33.155 [main] INFO  o.t.m.b.s.ClusterProcessServiceImpl - [PUBLISHERS_CONNECT] The result of await processing is: true
+09:11:33.156 [main] DEBUG o.t.m.b.s.ClusterProcessServiceImpl - Processing 250 PUBLISHERS_CONNECT took 684 ms.
+```
+
+Waiting until all the clients are connected.
+
+```text
+09:12:31.192 [main] INFO  o.t.m.b.s.ClusterProcessServiceImpl - Finished processing PUBLISHERS_CONNECT task.
+```
+
+After approximately 1 minute all the clients are connected successfully and each performance test node is notifying the orchestrator about its readiness.
+
+```text
+09:12:31.192 [main] INFO  o.t.m.b.s.o.TestRestServiceImpl - Notifying orchestrator about node readiness
+```
+
+We can see on the ThingsBoard MQTT broker UI the connected sessions.
+
+![image](/images/mqtt-broker/reference/1m-mqtt-clients.png)
+
+Once all the runners are ready, the orchestrator notifies the cluster is ready and the message publishing is started.
+
+```text
+09:12:35.407 [main] INFO  o.t.m.b.s.o.ClusterSynchronizerImpl - Cluster is ready.
+09:12:35.407 [main] INFO  o.t.m.b.tests.MqttPerformanceTest - Start msg publishing.
+```
+
+After some time of processing, we can review the logs of the broker nodes. We can see pretty good results. Published and consumed messages are processed without
+the delay. Application processors are delivering the messages to the subscribers fast enough to not experience the lag. 
+All 1,000,020 clients are stably connected to the broker.
+
+![image](/images/mqtt-broker/reference/broker-logs.png)
+
+AWS instance monitoring shows about 20% average CPU load. AWS RDS resources are almost not used due to the absence of DEVICE persistent clients. 
+AWS MSK monitoring shows Kafka has plenty of resources left to receive even more load.
+
+{% include images-gallery.html imageCollection="broker-tests-aws-monitoring" %}
+
+Finally, let’s check the JVM state on each ThingBoard MQTT broker. For that, we need to forward the JMX port to connect and monitor Java applications.
+
+```bash
+kubectl port-forward tb-broker-0 9999:9999
+```
+{: .copy-code}
+
+Open [VisualVM](https://visualvm.github.io/), add the local applications, open it and let the data be gathered for a few minutes.
+Here is the JMX monitoring for ThingsBoard MQTT brokers. The broker nodes are stable.
+
+{% include images-gallery.html imageCollection="broker-tests-jmx-monitoring" %}
+
+Finally, let's review Kafka processing, stats, and lag with a fancy [Kafka UI](https://github.com/redpanda-data/console).
+
+We can see how data is coming to the `publish_msg` topic and specific APPLICATION client topic 
+`mqtt_broker_application_client_test_sub_client_5_0`. The size of the topic is constantly increasing as well as the topic offset is incrementing. 
+Application consumer groups are processing messages in the real time.
+
+![image](/images/mqtt-broker/reference/broker-kafka-ui.gif)
+
+**Note**, UI differs from the link above due to Redpanda acquiring CloudHut, makers of Kowl in the first half of 2022.
 
 ### How to repeat the tests
 
