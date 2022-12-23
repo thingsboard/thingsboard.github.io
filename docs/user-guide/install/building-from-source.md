@@ -50,9 +50,9 @@ For example, to set *core.autocrlf* globally:
 You can clone source code of the project from the official [github repo](https://github.com/thingsboard/thingsboard).
 
 ```bash
-git clone git@github.com:thingsboard/thingsboard.git
 # checkout latest release branch
-git checkout {{ site.release.branch }}
+git clone -b {{ site.release.branch }} git@github.com:thingsboard/thingsboard.git
+cd thingsboard
 ```
 
 #### Build

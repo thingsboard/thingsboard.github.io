@@ -1,7 +1,7 @@
 {% capture local-deployment %}
-If during installation process you have changed edge **HTTP_BIND_PORT** please use that port instead for **Edge** UI URL:
+Use next **Edge** UI URL if during installation process you set **HTTP_BIND_PORT** to **18080**:
 
-**http://localhost:HTTP_BIND_PORT**
+**http://localhost:18080**
 
 {% endcapture %}
 {% include templates/info-banner.md content=local-deployment %}

@@ -44,10 +44,12 @@ Please change **CLOUD_RPC_SSL_ENABLED** to **true** as well.
 If ThingsBoard Edge is going to be running on the same machine where **{{appPrefix}}** server is running you'll need to update docker compose port mapping.
  
 Please update next lines of docker compose:
+<br>**...**
 <br>**ports:**
 <br> - "**18080**:8080"
 <br> - "**11883**:1883"
-<br> - "**15683-15688**:5683-5688/udp" 
+<br> - "**15683-15688**:5683-5688/udp"
+<br>**...**
 
 Please make sure ports above are not used by any other application.
 

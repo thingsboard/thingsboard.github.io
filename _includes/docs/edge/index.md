@@ -5,7 +5,7 @@
 {% endif %}
 
 {% if docsPrefix != 'pe/' %}
-<h3>In order to see ThingsBoard PE Edge documentation please visit <a style="pointer-events: all;" href="/docs/pe/edge/">these page</a></h3>
+<h3>Click <a style="pointer-events: all;" href="/docs/pe/edge/">here</a> for ThingsBoard PE Edge documentation.</h3>
 <br>
 {% endif %}
 

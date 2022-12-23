@@ -8,6 +8,15 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v3.4.3 (December 22, 2022)
+
+**Minor** release with everything from [TB CE v3.4.3](/docs/reference/releases/#v343-december-21-2022) with the following improvements and bug fixes:
+
+* [#7093](https://github.com/thingsboard/thingsboard/pull/7093) Edge sync functionality - added cluster support;
+* [#7214](https://github.com/thingsboard/thingsboard/pull/7214) Notify devices in case shared attribute updates from edge;
+* [#7651](https://github.com/thingsboard/thingsboard/pull/7651) Updates to stability of synchronization between edge and cloud in case of many events simultaneously;
+* [#7792](https://github.com/thingsboard/thingsboard/pull/7792) Edge root rule chain update fix. USER entity support added. INACTIVITY_TIMEOUT pushed to edge;
+
 ## v3.4.1 (August 19, 2022)
 
 **Minor** release with everything from [TB CE v3.4.1](/docs/reference/releases/#v341-august-18-2022) with the following improvements and bug fixes:
@@ -18,7 +27,7 @@ description: ThingsBoard Edge Release Notes
 
 ## v3.4 (July 21, 2022)
 
-Everything from [TB CE v3.4](/docs/reference/releases/#v34-july-19-2022) with the following improvements and bug fixes.
+Everything from [TB CE v3.4](/docs/reference/releases/#v34-july-19-2022) with the following improvements and bug fixes:
 
 * [#6781](https://github.com/thingsboard/thingsboard/pull/6781) Edge OTA support;
 * [#6852](https://github.com/thingsboard/thingsboard/pull/6852) Queue API support.

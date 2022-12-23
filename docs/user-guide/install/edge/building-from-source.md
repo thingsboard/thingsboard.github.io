@@ -36,10 +36,11 @@ Use java installation [instructions](#java) to fix this.
 You can clone source code of the project from the official [github repo](https://github.com/thingsboard/thingsboard-edge).
 
 ```bash
-git clone git@github.com:thingsboard/thingsboard-edge.git
 # checkout latest release branch
-git checkout {{ site.release.branch }}
+git clone -b {{ site.release.branch }} git@github.com:thingsboard/thingsboard-edge.git
+cd thingsboard-edge
 ```
+{: .copy-code}
 
 #### Build
 
@@ -48,6 +49,7 @@ Run the following command from the thingsboard edge folder to build the project:
 ```bash
 mvn clean install -DskipTests
 ```
+{: .copy-code}
 
 #### Build local docker images
 
@@ -56,6 +58,7 @@ Make sure that [Docker](https://docs.docker.com/engine/install/) is installed.
 ```bash
 mvn clean install -DskipTests -Ddockerfile.skip=false
 ```
+{: .copy-code}
 
 #### Build artifacts
 
@@ -75,15 +78,22 @@ Here are some tips and tricks to boost build experience:
 ```bash
 rm -rf ~/.m2/repository
 ```
+{: .copy-code}
+
 - clean gradle cache
 ```bash
 rm -rf ~/.gradle/caches/
 ```
+{: .copy-code}
+
 - clean node modules
 ```bash
 rm -rf ui-ngx/node_modules
 ```
+{: .copy-code}
+
 - build in parallel, format headers, build docker images
 ```bash
 mvn -T 0.8C license:format clean install -DskipTests -Ddockerfile.skip=false
 ```
+{: .copy-code}

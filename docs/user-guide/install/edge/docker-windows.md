@@ -13,9 +13,11 @@ This guide will help you to install and start ThingsBoard Edge using Docker on W
 
 {% include templates/edge/install/prerequisites.md %}
 
-{% include templates/edge/install/hardware-requirements.md %}
+#### Docker installation
 
 - [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/){:target="_blank"}
+
+{% include templates/edge/install/hardware-requirements.md %}
 
 ### Step 1. Running ThingsBoard Edge
 

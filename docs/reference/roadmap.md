@@ -30,7 +30,7 @@ The product roadmap listed below covers only main features and does not cover sm
   For example, wrong script in the rule node or issues with external systems: sending emails, sms, etc.
 
 
-See active development in progress [here](https://github.com/thingsboard/thingsboard/tree/{{ site.release.branch_major_next }}) and work on latest release bug fixes [here](https://github.com/thingsboard/thingsboard/tree/{{ site.release.branch_minor_next }}).
+See active development in progress [here](https://github.com/thingsboard/thingsboard/tree/{{ site.release.branch_major_next }}) and work on latest release bug fixes [here](https://github.com/thingsboard/thingsboard/tree/master).
 
 ### Upcoming releases
 
