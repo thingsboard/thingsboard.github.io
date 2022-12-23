@@ -370,7 +370,7 @@ defaultActivePricingSection: thingsboard-pe-options
                                 onClick="getLicense(event,
                                 true,
                                 '90b6c9b0-a198-11e9-8e16-03828ff5271c',
-                                '3e826220-81fb-11ed-bcff-df3bbff38879',
+                                '4c711b60-a199-11e9-8e16-03828ff5271c',
                                 'Perpetual', null, false)">
                                 Get your license
                             </button>
@@ -400,7 +400,7 @@ defaultActivePricingSection: thingsboard-pe-options
                                 onClick="getLicense(event,
                                 true,
                                 '90b6c9b0-a198-11e9-8e16-03828ff5271c',
-                                '4c711b60-a199-11e9-8e16-03828ff5271c',
+                                '3e826220-81fb-11ed-bcff-df3bbff38879',
                                 'Perpetual Kit', null, false)">
                                 Get your license
                             </button>
