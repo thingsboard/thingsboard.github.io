@@ -8,6 +8,17 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
+## v1.9.2-HF1 (December, 2022)
+
+**Bug fixes:**
+
+ * Fix anomaly field fetching
+ * Fix Count aggregation in batch calculation fields
+ * Fix direct view sharing on the dashboard
+ * Fix formatting for duration percent fields
+ * Fix cells color for a heatmap when range value is blank
+ * Fix date formatting in CSV export
+
 ## v1.9.2 (November, 2022)
 
 **Improvements:**

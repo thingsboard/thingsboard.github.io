@@ -1,1 +1,1 @@
-sudo rpm -Uvh trendz-1.9.2.rpm
+sudo rpm -Uvh trendz-1.9.2-HF1.rpm
