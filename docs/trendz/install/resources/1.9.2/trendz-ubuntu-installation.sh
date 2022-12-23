@@ -1,1 +1,1 @@
-sudo dpkg -i trendz-1.9.2.deb
+sudo dpkg -i trendz-1.9.2-HF1.deb

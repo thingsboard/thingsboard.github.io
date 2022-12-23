@@ -8,7 +8,7 @@ description: ThingsBoard Trendz Analytics upgrade instructions
 
 <ul id="markdown-toc">
         <li>
-          <a href="#upgrading-to-192" id="markdown-toc-upgrading-to-192">Upgrading to 1.9.2</a>
+          <a href="#upgrading-to-192" id="markdown-toc-upgrading-to-192">Upgrading to 1.9.2-HF1</a>
           <ul>
               <li>
                   <a href="#ubuntucentos-192" id="markdown-toc-ubuntucentos-192">Ubuntu/CentOS</a>        
@@ -117,7 +117,7 @@ description: ThingsBoard Trendz Analytics upgrade instructions
   </li>  
 </ul>
 
-## Upgrading to 1.9.2
+## Upgrading to 1.9.2-HF1
 
 These steps are applicable for 1.8.0, 1.8.1, 1.9.0, 1.9.1, 1.9.2 Trendz Analytics version.
 
