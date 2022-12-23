@@ -8,12 +8,13 @@ In this article, we are going to describe steps that we have made to ensure that
 and around **1M MQTT publish messages per minute**.
 
 Herewith you can find total cost of ownership (TCO) calculations for ThingsBoard MQTT Broker deployed using AWS.
-Important notice: all calculations and pricing below are approximate and are listed as an example. 
+
+**Important notice**: all calculations and pricing below are approximate and are listed as an example. 
 Please consult your cloud provider in order to get your accurate pricing.
 
 ### Test methodology
 
-We have deployed the ThingsBoard MQTT broker cluster of 6 nodes in [EKS](https://aws.amazon.com/eks/) cluster with the connection to [RDS](https://aws.amazon.com/rds/) 
+We have deployed the ThingsBoard MQTT broker cluster of 6 pods in [EKS](https://aws.amazon.com/eks/) cluster with the connection to [RDS](https://aws.amazon.com/rds/) 
 and [MSK](https://aws.amazon.com/msk/). See the next page for more information about the ThingsBoard MQTT broker [architecture](/docs/mqtt-broker/architecture/).
 
 The [test agent](#how-to-repeat-the-tests) provisions and connects a configurable number of MQTT clients that constantly publish time-series data over MQTT to specific topics.
@@ -21,7 +22,7 @@ Additionally, it provisions a configurable number of MQTT clients that subscribe
 performance test nodes (runners) and an orchestrator that rules the runners.
 
 Various IoT device profiles differ based on the number of messages they produce and the size of each message.
-We have emulated smart tracker devices that send messages with eight data points. The size of a single "publish" message is approximately 400 bytes.
+We have emulated smart tracker devices that send messages with eight data points once per minute. The size of a single "publish" message is approximately 400 bytes.
 Below you can see the emulated message structure with some differences from a real test case since the test agent generates the payload values.
 ```json
 { "latitude": 40.761894, "longitude": -73.970455, "speed": 55.5, "acceleration": 3.5, "fuel": 92, "batteryLevel": 81, "location": "451-477 Park Ave, New York, NY 10022, USA", "ts": 1671549126 }
@@ -62,7 +63,7 @@ where
 * _id_ - identifier of the subscriber group;
 * _subscribers_ - number of subscriber clients in the group;
 * _topicFilter_ - respectively topic filter to subscribe to;
-* _expectedPublisherGroups_ - list of ids of publisher groups whose messages current subscribers will receive;
+* _expectedPublisherGroups_ - list of ids of publisher groups whose messages current subscribers will receive (parameter is used for debugging and statistics purposes - e.g. to calculate the total expected received messages);
 * _persistentSessionInfo_ - persistent info object containing [client type](/docs/mqtt-broker/user-guide/mqtt-client-type/);
 * _clientIdPrefix_ - client id prefix of subscribers.
 
@@ -126,9 +127,9 @@ Similar output can be seen for all other performance test nodes.
 
 **Load configuration:**
 
-* 1 000 000 publish MQTT clients (devices);
-* 20 subscribe MQTT clients (devices);
-* 1 000 000 msg/sec over MQTT, each MQTT message contains 8 data points, approx. message size is 400 bytes;
+* 1 000 000 publish MQTT clients (smart tracker devices);
+* 20 subscribe MQTT clients (specific applications that consume the data - e.g. for analysis/graphs);
+* 1 000 000 msg/min over MQTT, each MQTT message contains 8 data points, approx. message size is 400 bytes;
 * PostgreSQL database to store MQTT client credentials, client session states;
 * Kafka queue to persist messages.
 
@@ -147,7 +148,7 @@ Let's assume that 1TB of storage per broker is enough for our case.
 
 AWS EKS cluster in us-east-1 region. Approx. price is ~73 USD/month.
 
-AWS Instance Type: 3 x m6a.2xlarge instances (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP2 80GiB) to host 6 ThingsBoard MQTT brokers. Approx. price is ~780 USD/month.
+AWS Instance Type: 3 x m6a.2xlarge instances (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP2 80GiB) is sufficient to host 6 ThingsBoard MQTT brokers. Approx. price is ~780 USD/month.
 
 AWS RDS: db.m5.large (2 vCPU, 8 GiB), 100GiB storage. Approx. price is ~142 USD/month.
 
