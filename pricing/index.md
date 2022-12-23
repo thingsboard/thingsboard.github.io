@@ -358,9 +358,39 @@ defaultActivePricingSection: thingsboard-pe-options
            <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
                     <div class="pricing-square">
-                        <h2>Perpetual Fallback License</h2>
+                        <h2>Perpetual</h2>
                         <div class="pricing-square-description" style="min-height: 50px;">
                             <p>Use your ThingsBoard instance forever</p>
+                        </div>
+                        <h4 class="pricing-square-price mb-0">
+                            $2999
+                        </h4>                  
+                        <div class="row justify-content-center">
+                            <button class="btn-blue btn-pricing" 
+                                onClick="getLicense(event,
+                                true,
+                                '90b6c9b0-a198-11e9-8e16-03828ff5271c',
+                                '3e826220-81fb-11ed-bcff-df3bbff38879',
+                                'Perpetual', null, false)">
+                                Get your license
+                            </button>
+                        </div>
+                        <div class="pricing-square-item">1 year of software updates</div>
+                        <div class="pricing-square-item">Unlimited Devices and Assets</div>
+                        <div class="pricing-square-item">Integrations feature</div>
+                        <div class="pricing-square-item">Unlimited datapoints and messages</div>
+                        <div class="pricing-square-item">Unlimited API calls</div>
+                        <div class="pricing-square-item"><b>White-labeling</b></div>
+                        <div class="pricing-square-item" data-faq-id="subscription-support">
+                            Email support within <b>24 hours</b>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                    <div class="pricing-square">
+                        <h2>Perpetual Kit</h2>
+                        <div class="pricing-square-description" style="min-height: 50px;">
+                            <p>Everything your product needs to succeed</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
                             $4999
@@ -371,7 +401,7 @@ defaultActivePricingSection: thingsboard-pe-options
                                 true,
                                 '90b6c9b0-a198-11e9-8e16-03828ff5271c',
                                 '4c711b60-a199-11e9-8e16-03828ff5271c',
-                                'Perpetual', null, false)">
+                                'Perpetual Kit', null, false)">
                                 Get your license
                             </button>
                         </div>
@@ -380,13 +410,16 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item">Integrations feature</div>
                         <div class="pricing-square-item">Unlimited datapoints and messages</div>
                         <div class="pricing-square-item">Unlimited API calls</div>
+                        <div class="pricing-square-item"><b>White-labeling</b></div>
                         <div class="pricing-square-item" data-faq-id="subscription-support">
-                            Email support within <b>24 hours</b>
+                            Email support within <b>12 hours</b>
+                        </div>
+                        <div class="pricing-square-item">
+                            <b>Development</b> instance included
                         </div>
                         <div class="pricing-square-item">
                             <b>10 hours</b> of consulting or configuration services
                         </div>
-                        <div class="pricing-square-item"><b>White-labeling</b></div>
                     </div>
                 </div>
            </div>
@@ -798,7 +831,7 @@ defaultActivePricingSection: thingsboard-pe-options
                 <p>
                     Pay-as-you-go license is based on different subscription plans and represents a typical SaaS model. Each plan is usually limited by the number of devices or assets that ThingsBoard instance will manage. The billing is being provided either monthly or yearly.
                     Your credit card will be charged once per billing period, at the beginning of the corresponding period.  
-                </p>    
+                </p>
             </div>    
         </div>
         <div class="item" data-tag="h4" data-item-id="what-is-perpetual" data-title="What is &quot;Perpetual&quot; license?">
@@ -807,7 +840,7 @@ defaultActivePricingSection: thingsboard-pe-options
                     Perpetual fallback license is a license that allows you to use specific version of software, without an active subscription to it. 
                     Whenever you purchase a perpetual fallback license you get one year of software updates included. 
                     You can purchase additional updates if required. 
-                    Typical price for one year update package is within 40% of inital license cost.                    
+                    Typical price for one year update package is 1199 USD.                    
                     <br/><br/><b>Example 1</b>: Let's assume you purchased one license for ThingsBoard v2.4 in June 2019 and received an update to ThingsBoard v3.0 in May 2020.
                     This means you can continue using this ThingsBoard v3.0 instance forever. You can also migrate to different hardware without issues.
                     <br/><br/><b>Example 2</b>: Let's assume you purchased one license for ThingsBoard v2.4 in June 2019 and received an update to ThingsBoard v3.0 in May 2020.
