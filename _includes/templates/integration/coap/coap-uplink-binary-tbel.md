@@ -23,26 +23,15 @@ var result = {
    }
 };
 
-/** Helper functions **/
-
-function decodeToString(payload) {
-   return String.fromCharCode.apply(String, payload);
-}
-
-function decodeToJson(payload) {
-   // covert payload to string.
-   var str = decodeToString(payload);
-
-   // parse string to JSON
-   var data = JSON.parse(str);
-   return data;
-}
+/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/
 
 return result;
 ``` 
 {: .copy-code}
 
-
-The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard can consume. 
-**deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional.
-**attributes** and **telemetry** are flat key-value objects. Nested objects are not supported.
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/coap/coap-uplink-converter-binary-tbel-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/coap/coap-uplink-converter-binary-tbel-paas.png)
+{% endif %}

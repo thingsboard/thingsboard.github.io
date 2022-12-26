@@ -5,7 +5,7 @@ Now copy & paste the following script to the Decoder function section:
 
 // decode payload to string
 var strArray = decodeToString(payload);
-var payloadArray = strArray.replace(/\"/g, "").replace(/\s/g, "").replace(/\\n/g, "").split(',');
+var payloadArray = strArray.replaceAll("\"", "").split(',');
 
 var telemetryPayload = {};
 for (var i = 2; i < payloadArray.length; i = i + 2) {
@@ -22,17 +22,15 @@ var result = {
     attributes: {}
   };
 
-/** Helper functions **/
-
-function decodeToString(payload) {
-   return String.fromCharCode.apply(String, payload);
-}
+/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/
 
 return result;
 ``` 
 {: .copy-code}
 
-
-The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard can consume. 
-**deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional.
-**attributes** and **telemetry** are flat key-value objects. Nested objects are not supported.
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/coap/coap-uplink-converter-text-tbel-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/coap/coap-uplink-converter-text-tbel-paas.png)
+{% endif %}
