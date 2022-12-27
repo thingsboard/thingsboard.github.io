@@ -30,3 +30,7 @@
   title: Smart Retail
   link: /use-cases/smart-retail/
   icon: /images/case-ret-icon.svg
+- id: air-quality-monitoring
+  title: Air Quality Monitoring
+  link: /use-cases/air-quality-monitoring/
+  icon: /images/case-aq-icon.svg

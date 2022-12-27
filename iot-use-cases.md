@@ -235,5 +235,32 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 </a>
             </div>
         </div>
+        <div class="dashboard-item">
+            <div class="item-description">
+                <h2>Air Quality Monitoring</h2>
+                <p>Monitor outdoor air quality using a wide range of sensors. Solution provides general recommendations in a user-friendly manner. Manage air control stations using the Administration Dashboard.</p>
+                <a class="read-more-button" href="/use-cases/air-quality-monitoring/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+            </div>
+            <div class="item-image-container">
+                <a class="img-button" href="/use-cases/air-quality-monitoring/">
+                    <div class="overlay">
+                        <div class="eye">
+                            <img src="/images/eye-icon.svg">See more
+                        </div>
+                    </div>
+                    <div class="dashboard-frame">
+                        <div class="frame-image">
+                            <img src="/images/usecases/air-quality/video/air-quality.png">
+                        </div>
+                        <div class="frame-video">
+                            <video autoplay loop preload="auto" muted playsinline>
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/air-quality.mp4" type="video/mp4">
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/air-quality.webm" type="video/webm">
+                            </video>
+                        </div>
+                    </div>                
+                </a>
+            </div>
+        </div>
     </div>
 </div>
