@@ -20,6 +20,8 @@ toc:
     path: /docs/pe/solution-templates/fleet-tracking/
   - title: Water metering
     path: /docs/pe/solution-templates/water-metering/
+  - title: Air quality monitoring
+    path: /docs/pe/solution-templates/air-quality-monitoring/
 - title: Key concepts
   section:
   - title: Entities and Relations
