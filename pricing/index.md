@@ -21,8 +21,8 @@ defaultActivePricingSection: thingsboard-pe-options
             <li id="menu-item-thingsboard-pe-options" class="menu-item tb-logo">
                 <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe-options', true)">Professional Edition</a>
             </li>
-            <li id="menu-item-trendz" class="menu-item trendz-logo">
-               <a href="javascript:void(0);" onClick="activatePricingSection('trendz')">Trendz Analytics</a>
+            <li id="menu-item-trendz-options" class="menu-item trendz-logo">
+               <a href="javascript:void(0);" onClick="activatePricingSection('trendz-options')">Trendz Analytics</a>
             </li>
             <li id="menu-item-thingsboard-edge" class="menu-item tb-edge-logo">
                <a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-edge')">Edge</a>
@@ -36,6 +36,16 @@ defaultActivePricingSection: thingsboard-pe-options
                 <h3 data-faq-id="what-is-cloud" data-faq-link-size="70%">Cloud</h3>
             </div>
             <div class="solution thingsboard-pe" data-product-id="thingsboard-pe" onClick="activateProductSection('thingsboard-pe')">
+                <h3 data-faq-id="difference" data-faq-link-size="70%">Self-managed</h3>
+            </div>
+        </div>
+    </div>
+    <div id="trendz-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
+        <div class="product-selector">
+            <div class="solution trendz-cloud active defaultselection" data-product-id="trendz-cloud" onClick="activateProductSection('trendz-cloud')">
+                <h3 data-faq-id="what-is-cloud" data-faq-link-size="70%">Cloud</h3>
+            </div>
+            <div class="solution trendz-self-managed" data-product-id="trendz-self-managed" onClick="activateProductSection('trendz-self-managed')">
                 <h3 data-faq-id="difference" data-faq-link-size="70%">Self-managed</h3>
             </div>
         </div>
@@ -428,14 +438,11 @@ defaultActivePricingSection: thingsboard-pe-options
  </div>  
 </div>
 
-<div id="trendz" class="pricing-content">
+<div id="trendz-self-managed" class="pricing-content" style="display: none;">
     <div class="container">
         <div class="pricing-content-header row">
             <div id="trendzPayAsYouGoHeader" class="pricing-content-description col-lg-6">
                 <h2>Subscription plans</h2>
-            </div>
-            <div id="trendzPerpetualHeader" class="pricing-content-description col-lg-6">
-                <h2>License packages</h2>
             </div>
             <div class="col d-flex justify-content-end">
                 <div class="solution-selector">
@@ -564,7 +571,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div style="width: 50%; margin: 30px 10px 0;">
                             <div class="pricing-square-description">
                                 <p>Create interactive visual analytics and discover trends, patterns and
-                                    insight from your data:</p>
+                                    insight from your data:</p><br/>
                             </div>
                             <ul>
                                 <li class="pricing-square-item">Anomalies detection</li>
@@ -583,6 +590,115 @@ defaultActivePricingSection: thingsboard-pe-options
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="trendz-cloud" class="pricing-content" style="display: none;">
+    <div class="container">
+        <div class="pricing-content-header row">
+            <div class="pricing-content-description-cloud pricing-cloud active col-lg">
+                <h2>Bundled subscription plans</h2>
+                <div class="pricing-content-details">
+                    <b>ThingsBoard + Trendz</b> bundled subscription plan includes all features from ThingsBoard and Trendz products.
+                </div>
+            </div>
+        </div>
+        <div class="pricing-div">
+            <div class="pricing-section pricing-cloud active">
+                <div class="row justify-content-center">
+                    <div class="col-md-6 col-lg-4 col-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Prototype</h2>
+                            <div class="pricing-square-description" style="min-height: 50px;">
+                                <p>Up to 100 Devices and Assets</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                $249
+                                <span>/month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/billing">
+                                    Get Started
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">ThingsBoard Prototype subscription</div>
+                            <div class="pricing-square-item">Anomalies detection</div> 
+                            <div class="pricing-square-item">Predictive Analytics</div>
+                            <div class="pricing-square-item">Calculated Fields</div>
+                            <div class="pricing-square-item">Self-service Interface</div>
+                            <div class="pricing-square-item">Advanced Visualizations</div>
+                            <div class="pricing-square-item" data-faq-id="community-support">
+                                Community support
+                            </div>
+                            <br/>
+                            <div>
+                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Startup</h2>                            
+                            <div class="pricing-square-description" style="min-height: 50px;">
+                                <p>Up to 500 Devices and Assets</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                $649
+                                <span>/month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/billing">
+                                    Get Started
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">ThingsBoard Startup subscription</div>
+                            <div class="pricing-square-item">Anomalies detection</div> 
+                            <div class="pricing-square-item">Predictive Analytics</div>
+                            <div class="pricing-square-item">Calculated Fields</div>
+                            <div class="pricing-square-item">Self-service Interface</div>
+                            <div class="pricing-square-item">Advanced Visualizations</div>
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
+                                Email support within <b>36 hours</b>
+                            </div>
+                            <br>
+                            <div>
+                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
+                            </div>   
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4 col-xl mb-4">
+                        <div class="pricing-square">
+                            <h2>Business</h2>
+                            <div class="pricing-square-description" style="min-height: 50px;">
+                                <p>Up to 1000 Devices and Assets</p>
+                            </div>
+                            <h4 class="pricing-square-price mb-0">
+                                $1199
+                                <span>/month</span>
+                            </h4>
+                            <div class="row justify-content-center">
+                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/billing">
+                                    Get Started
+                                </a>
+                            </div>
+                            <div class="pricing-square-item">ThingsBoard Business subscription</div>
+                            <div class="pricing-square-item">Anomalies detection</div> 
+                            <div class="pricing-square-item">Predictive Analytics</div>
+                            <div class="pricing-square-item">Calculated Fields</div>
+                            <div class="pricing-square-item">Self-service Interface</div>
+                            <div class="pricing-square-item">Advanced Visualizations</div>
+                            <div class="pricing-square-item" data-faq-id="subscription-support">
+                                Email support within <b>24 hours</b>
+                            </div>
+                            <br/>
+                            <div>
+                                <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
+                            </div>   
+                        </div>
+                    </div>                    
                 </div>
             </div>
         </div>

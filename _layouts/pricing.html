@@ -94,11 +94,12 @@
     }
 
     function setActivePricingSection(sectionId) {
-        var activateSelectProduct = sectionId === 'thingsboard-pe-options';
+        var activateSelectProduct = sectionId === 'thingsboard-pe-options' || sectionId === 'trendz-options';
         $("li.menu-item").removeClass("active");
         $("li.menu-item#menu-item-"+sectionId).addClass("active");
         $("div.pricing-content").css("display", "none");
         if (activateSelectProduct) {
+            $("div.select-product-content").css("display", "none");
             $("div.select-product-content#" + sectionId).css("display", "flex");
             $('div.pricing-header-divider').addClass("no-margin");
             var productId = $('#' + sectionId + ' .product-selector .solution.defaultselection').attr("data-product-id");
