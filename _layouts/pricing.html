@@ -98,8 +98,8 @@
         $("li.menu-item").removeClass("active");
         $("li.menu-item#menu-item-"+sectionId).addClass("active");
         $("div.pricing-content").css("display", "none");
+        $("div.select-product-content").css("display", "none");
         if (activateSelectProduct) {
-            $("div.select-product-content").css("display", "none");
             $("div.select-product-content#" + sectionId).css("display", "flex");
             $('div.pricing-header-divider').addClass("no-margin");
             var productId = $('#' + sectionId + ' .product-selector .solution.defaultselection').attr("data-product-id");
@@ -107,7 +107,6 @@
                 setActiveProductSection(productId);
             }
         } else {
-            $("div.select-product-content").css("display", "none");
             $('div.pricing-header-divider').removeClass("no-margin");
             $("div.pricing-content#" + sectionId).css("display", "block");
             var solutionId = $('#' + sectionId + ' .solution-selector .solution.defaultselection').attr('id');
