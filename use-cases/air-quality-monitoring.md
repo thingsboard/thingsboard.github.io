@@ -31,18 +31,18 @@ The **Public Dashboard** is designed for end-users. It is configured to be "publ
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/solutions/air_quality_index/air-quality-index-1.png" />
+        <img class="item-image" src="/images/usecases/air-quality/aq1.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/air_quality_index/air-quality-index-2.png" />
+        <img class="item-image" src="/images/usecases/air-quality/aq2.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/air_quality_index/air-quality-index-3.png" />
+        <img class="item-image" src="/images/usecases/air-quality/aq3.png" />
     </div>
 </div>
 
 <div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://demo.thingsboard.io/dashboard/????????????????????????????????????????" class="button">View live demo</a>
+    <a target="_blank" href="https://thingsboard.cloud/dashboard/ec564620-82b2-11ed-a624-8360a2a6cb0e?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">View live demo</a>
 </div>
 
 The **Administration Dashboard** dashboard is designed for tenant administrators to perform basic device management tasks, and has multiple states:
@@ -51,10 +51,10 @@ The **Administration Dashboard** dashboard is designed for tenant administrators
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/solutions/air_quality_index/air-quality-index-4.png" />
+        <img class="item-image" src="/images/usecases/air-quality/aq4.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/air_quality_index/air-quality-index-5.png" />
+        <img class="item-image" src="/images/usecases/air-quality/aq5.png" />
     </div>
 </div>
 
