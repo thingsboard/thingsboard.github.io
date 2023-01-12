@@ -12,66 +12,6 @@ subscribers, in our case of integration.
 
 <object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/aws-iot-integration.svg"></object>
 
-## Create Uplink Converter
-
-Before creating the integration, you need to create an Uplink converter in Data converters. Uplink is 
-necessary in order to convert the incoming data from the device into the required format for displaying 
-them in ThingsBoard. Click on the “plus” and on “Create new converter”. To view the events, enable Debug. 
-In the function decoder field, specify a script, for it copy the example Uplink converter, or 
-use own configuration to parse and transform data.
-
-{% include images-gallery.html imageCollection="data-converters" %}
-
-{% capture noteDebug %}
-While Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode 
-can significantly increase the disk space used by the database since all the debug data is stored there. It is highly recommended turning the Debug mode off after debugging is complete.
-{% endcapture %}
-{% include templates/info-banner.md title="Note:" content=noteDebug %}
-
-**Example for the Uplink converter:**
-
-```ruby
-// decode payload to JSON
-var payloadStr = decodeToString(payload);
-var data = JSON.parse(payloadStr);
-var topicPattern = 'tb/aws/iot/(.+)/(.+)';
-var deviceName = metadata.topic.match(topicPattern)[2];
-var deviceType = metadata.topic.match(topicPattern)[1];
-
-// Result object with device attributes/telemetry data
-var result = {
-   deviceName: deviceName,
-   deviceType: deviceType,
-   attributes: {
-        state: data.val0,
-   },
-   telemetry: {
-       temperature: data.val1,
-       fan_ins:     data.val2,
-       fan_out:     data.val3,
-   }
-};
-
-/** Helper functions **/
-function decodeToString(payload) {
-   return String.fromCharCode.apply(String, payload);
-}
-function decodeToJson(payload) {
-   // convert payload to string.
-   var str = decodeToString(payload);
-
-   // parse string to JSON
-   var data = JSON.parse(str);
-   return data;
-}
-return result;
-```
-{: .copy-code}
-
-You can change the decoder function while creating the converter or after creating it. If the converter 
-has already been created, then click on the “pencil” icon to edit it. 
-{% include images-gallery.html imageCollection="edit_converter" %}
-
 ## AWS IOT
 
 You should already have an [AWS account](https://aws.amazon.com/iot/) prepared, on which 
@@ -189,11 +129,39 @@ After saving the required, click the **Done**.
 
 {% include images-gallery.html imageCollection="save_certificates" %}
 
-## Create Integration
+## ThingsBoard setup
 
-If all of the above is done, then you can proceed to creating the AWS IoT integration. Please follow the screenshots.
+### Create Uplink Converter
 
-{% include images-gallery.html imageCollection="add_integration" %}
+Before creating the integration, you need to create an Uplink converter in Data converters. Uplink is
+necessary in order to convert the incoming data from the device into the required format for displaying
+them in ThingsBoard. Click on the “plus” and on “Create new converter”. To view the events, enable Debug.
+In the function decoder field, specify a script, for it copy the example Uplink converter, or
+use own configuration to parse and transform data.
+
+{% capture noteDebug %}
+While Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode
+can significantly increase the disk space used by the database since all the debug data is stored there. It is highly recommended turning the Debug mode off after debugging is complete.
+{% endcapture %}
+{% include templates/info-banner.md title="Note:" content=noteDebug %}
+
+{% include templates/tbel-vs-js.md %}
+
+{% capture awsiotuplinkconverterconfig %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/aws-iot/aws-iot-uplink-converter-config-tbel.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/aws-iot/aws-iot-uplink-converter-config-javascript.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="awsiotuplinkconverterconfig" toggle-spec=awsiotuplinkconverterconfig %}
+
+You can change the decoder function while creating the converter or after creating it. If the converter
+has already been created, then click on the “pencil” icon to edit it.
+{% include images-gallery.html imageCollection="edit_converter" %}
+
+### Create Integration
+
+- Go to **Integrations** section and click **Add new integration** button. Name it **"AWS IoT Integration"**, select type **AWS IoT**.
+
+![image](/images/user-guide/integrations/aws-iot/aws-iot-add-integration-1-pe.png)
 
 {% capture allowCreateDevice %}
 Note that if the “Allow create devices or assets” checkbox is unchecked, when sending a message to thingsboard
@@ -201,11 +169,29 @@ with any parameters of the device (or asset), if such a device (asset) does not 
 {% endcapture %}
 {% include templates/info-banner.md content=allowCreateDevice %}
 
-You can find AWS IoT Endpoint if you go to **Settings** - **Device data endpoint**.
+- The next steps is to add the recently created **Uplink** converter.
+
+![image](/images/user-guide/integrations/aws-iot/aws-iot-add-integration-2-pe.png)
+
+- For now, leave the "Downlink data converter" field blank.
+
+![image](/images/user-guide/integrations/aws-iot/aws-iot-add-integration-3-pe.png)
+
+- Enter AWS IoT Endpoint. You can find it in your [AWS account](https://aws.amazon.com/iot/) if you go to **Settings** - **Device data endpoint**. 
 
 {% include images-gallery.html imageCollection="aws_endpoint" %}
 
-## Send uplink message
+- Download the previously generated certificates and key.
+
+![image](/images/user-guide/integrations/aws-iot/aws-iot-add-integration-4-pe.png)
+
+- Add a Topic Filter **tb/aws/iot/#**. You can also select QoS level. We use QoS level 0 (At most once) by default.
+
+- Click **Add** to create an integration.
+
+![image](/images/user-guide/integrations/aws-iot/aws-iot-add-integration-5-pe.png)
+
+### Send Uplink message
 
 To send a test message, use the additional functionality of AWS IoT, the MQTT test client.
 In the main menu, go to **MQTT test client**, then select the **Publish to a topic** tab.
@@ -238,39 +224,13 @@ To check if the message has arrived at AWS IoT integration open the events tab o
 Let's look at a simple example to test a connection and send a message. For it need to create a downlink
 Data converter. Then set the converter and topic in the AWS IoT integration.
 
-{% include images-gallery.html imageCollection="downlink_0-1" %}
+{% include templates/tbel-vs-js.md %}
 
-An example of downlink converter:
-```ruby
-// Encode downlink data from incoming Rule Engine message
+{% capture awsiotdownlinkconverterconfig %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/aws-iot/aws-iot-downlink-converter-config-tbel.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/aws-iot/aws-iot-downlink-converter-config-javascript.md{% endcapture %}
 
-// msg - JSON message payload downlink message json
-// msgType - type of message, for ex. 'ATTRIBUTES_UPDATED', 'POST_TELEMETRY_REQUEST', etc.
-// metadata - list of key-value pairs with additional data about the message
-// integrationMetadata - list of key-value pairs with additional data defined in Integration executing this converter
-
-/** Encoder **/
-var data = {};
-
-// Process data from incoming message and metadata
-data.v0 = msg.state;
-data.m0 = "att_upd_success"
-data.devSerialNumber = metadata['ss_serialNumber'];
-
-// Result object with encoded downlink payload
-var result = {
-    // downlink data content type: JSON, TEXT or BINARY (base64 format)
-    contentType: "JSON",
-    // downlink data
-    data: JSON.stringify(data),
-    // Optional metadata object presented in key/value format
-    metadata: {
-            type: "sensors/device/upload"
-    }
-};
-return result;
-```
-{: .copy-code}
+{% include content-toggle.html content-toggle-id="awsiotdownlinkconverterconfig" toggle-spec=awsiotdownlinkconverterconfig %}
 
 Next, configure the conditions under which a message will be sent through the AWS IoT Downlink integration.
 To do this, you need to open the Rule Chain used for the device (in our case, the default Root Rule Chain), then add an [integration downlink node](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/action-nodes/#integration-downlink-node), for link condition set the Attributes Updated.
@@ -290,9 +250,9 @@ The result can be tracked on AWS page where you subscribed to the topic:
 
 {% include images-gallery.html imageCollection="downlink_6" %}
 
-## Video tutorial (Outdated interface)
+## Video tutorial
 
-See video tutorial below for step-by-step instruction how to setup AWS IoT Integration.
+See video tutorial below for step-by-step instruction how to setup AWS IoT Integration (Outdated interface).
 
 <br/>
 <div id="video">  
