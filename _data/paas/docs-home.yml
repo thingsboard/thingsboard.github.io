@@ -23,7 +23,9 @@ toc:
     - title: Water metering
       path: /docs/paas/solution-templates/water-metering/
     - title: Air quality monitoring
-      path: /docs/pe/solution-templates/air-quality-monitoring/
+      path: /docs/paas/solution-templates/air-quality-monitoring/
+    - title: Smart Irrigation
+      path: /docs/paas/solution-templates/smart-irrigation/
 - title: Key concepts
   section:
     - title: Entities and Relations
