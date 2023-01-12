@@ -40,3 +40,10 @@ function decodeToJson(payload) {
 return result;
 ```
 {: .copy-code}
+
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/tcp/tcp-create-uplink-converter-binary-tbel-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/tcp/tcp-create-uplink-converter-binary-tbel-paas.png)
+{% endif %}
