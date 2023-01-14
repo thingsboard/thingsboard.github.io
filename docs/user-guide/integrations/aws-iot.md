@@ -85,7 +85,15 @@ send_uplink_1:
 
 downlink_0-1:
     0:
-        image: /images/user-guide/integrations/aws-iot/downlink_0.png
+        image: /images/user-guide/integrations/aws-iot/create-downlink-converter-tbel-1-pe.png
+    1:
+        image: /images/user-guide/integrations/aws-iot/downlink_1.png
+    2:
+        image: /images/user-guide/integrations/aws-iot/downlink_1(2).png
+
+downlink_0-1-1:
+    0:
+        image: /images/user-guide/integrations/aws-iot/create-downlink-converter-java-1-pe.png
     1:
         image: /images/user-guide/integrations/aws-iot/downlink_1.png
     2:

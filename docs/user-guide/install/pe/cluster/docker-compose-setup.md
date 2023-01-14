@@ -19,7 +19,9 @@ For this purpose, we will use docker container images available on [Docker Hub](
 ## Prerequisites
 
 ThingsBoard Microservices are running in dockerized environment.
-Before starting please make sure [Docker CE](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) are installed in your system. 
+Before starting please make sure Docker Engine and Docker Compose are installed in your system. 
+
+{% include templates/install/docker-install.md %}
 
 {% capture rule_engine_note %}
 Please note that for the deployment of Rule Engine as a separate service, an additional separate License Key is required. 
