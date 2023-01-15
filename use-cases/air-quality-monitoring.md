@@ -29,6 +29,16 @@ The **Public Dashboard** is designed for end-users. It is configured to be "publ
 - **City state** represents the air pollution monitoring of a specific city (in our case Los Angeles) and calculates  value based on the AQI received from city sensors.
 - **Sensor state** represents the selected sensor deployed in a particular city district.
 
+<h2>Air Quality Monitoring Benefits</h2>
+Save up to 90% of development time for your air monitoring solution by utilizing the following platform benefits:
+- reliable and scalable data collection for your smart monitors;
+- powerful rule engine to process collected data and produce alarms and valuable insights;
+- advanced and flexible visualization for real-time and historical data;
+- customizable end-user dashboards to analyze and share the results of air quality monitoring;
+- integration with third-party analytics frameworks and solutions for advanced usage analytics;
+- remote control and OTA updates for your smart sensors and other devices;
+- customizable mobile applications with minimum coding efforts.
+
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
         <img class="item-image" src="/images/usecases/air-quality/aq1.png" />

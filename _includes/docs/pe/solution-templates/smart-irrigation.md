@@ -42,6 +42,7 @@ The device also uploads the "pulseCounter" which is used to calculate water cons
 ```json
 {"battery": 99, "pulseCounter": 123000}
 ```
+{: .copy-code}
 
 #### SI Soil Moisture Sensor
 The profile is configured to raise alarms if the value of "battery" telemetry is below a configurable threshold. Warning alarm is raised when the value is below 30.
@@ -49,17 +50,20 @@ The device also uploads the "moisture" level. Sample device payload:
 ```json
 {"battery": 99, "moisture": 57}
 ```
+{: .copy-code}
 
 #### SI Smart Valve
 The profile is configured to raise alarms if the value of "battery" telemetry is below a configurable threshold. Warning alarm is raised when the value is below 30. Sample device payload:
 ```json
 {"battery": 99}
 ```
+{: .copy-code}
 
 The device also accepts the RPC command to enable or disable the water flow. Sample RPC command:
 ```json
 {"method": "TURN_ON", "params": {}}
 ```
+{: .copy-code}
 
 You may find the exact commands to send data on behalf of created devices in the solution [instructions](/docs/{{docsPrefix}}solution-templates/overview/#install-solution-template).
 See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.

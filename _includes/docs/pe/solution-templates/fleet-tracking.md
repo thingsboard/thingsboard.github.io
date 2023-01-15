@@ -19,8 +19,10 @@ You may use the **Main state** to:
 - control the buses status, speed and fuel level;
 - monitor bus tracking events (alarms).
 
+<br>
 In order to go to **Bus state**, click on the row of the desired sensor in the Buses section.
 
+<br>
 You may use the **Bus state** to:
 - view a specific bus history of the route in the form of a route record with the possibility of playing it;
 - see the current bus route;

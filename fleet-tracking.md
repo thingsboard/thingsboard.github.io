@@ -13,7 +13,7 @@ notitle: "true"
 Manage your company's fleet and assets with ThingsBoard using convenient and efficient IoT solutions. 
 Fleet tracking systems allow businesses to easily control and monitor their assets, routes, fuel consumption, etc. Having the necessary information about the state of assets affairs, responsible persons can make appropriate strategic decisions and improve the work of the links that need it.
 
-Installing a fleet tracking <a href="/docs/paas/solution-templates/smart-irrigation">template</a> allows drivers, managers, and staff to improve communication, increase efficiency, and maintain a high level of safety.
+Installing a fleet tracking <a href="/docs/paas/solution-templates/fleet-tracking/">template</a> allows drivers, managers, and staff to improve communication, increase efficiency, and maintain a high level of safety.
 
 Therefore, use IoT solutions in your enterprise and get the benefits now.
 
@@ -33,7 +33,7 @@ Collected data is processed via the rule engine to raise alarms when:
 - fuel level is low;
 - violation of speed limits.
 
-The following interactive dashboard presents an intelligent visualization of IoT data that you can easily integrate into your IoT solution. See more details <a href="/docs/paas/solution-templates/smart-irrigation">here</a>.
+The following interactive dashboard presents an intelligent visualization of IoT data that you can easily integrate into your IoT solution. See more details <a href="/docs/paas/solution-templates/fleet-tracking/">here</a>.
 
 ## Fleet tracking dashboard
 

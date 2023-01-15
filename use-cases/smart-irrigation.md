@@ -26,35 +26,31 @@ Also, this dashboard has several states: **Main state** and **Field state**:
 
 <h2>Smart Irrigation Benefits</h2>
 Save up to 90% of development time for your smart irrigation solution by utilizing the following platform benefits:
-- Reliable and scalable data collection for your smart sensors and soil moisture monitors;
-- Powerful rule engine to process collected data and produce alarms and valuable insights;
-- Advanced and flexible visualization for real-time and historical data;
-- Customizable end-user dashboards to analyze and share the results of soil moisture monitoring;
-- Integration with third-party analytics frameworks and solutions for advanced usage analytics;
-- Remote control and OTA updates for your smart sensors and other devices;
-- Customizable mobile applications with minimum coding efforts;
+- reliable and scalable data collection for your smart sensors and soil moisture monitors;
+- powerful rule engine to process collected data and produce alarms and valuable insights;
+- advanced and flexible visualization for real-time and historical data;
+- customizable end-user dashboards to analyze and share the results of soil moisture monitoring;
+- integration with third-party analytics frameworks and solutions for advanced usage analytics;
+- remote control and OTA updates for your smart sensors and other devices;
+- customizable mobile applications with minimum coding efforts.
 
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-1" />
+        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-1.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-2" />
+        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-2.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-3" />
+        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-3.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-4" />
+        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-4.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-5" />
+        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-5.png" />
     </div>
-</div>
-
-<div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://demo.thingsboard.io/dashboard/????????????????????????????????????????" class="button">View live demo</a>
 </div>
 
 
@@ -86,7 +82,7 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
             <div class="block">
                 <object data="/images/integration-icon.svg"></object>
                 <div>
-                    <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
+                    <a class="title" href="/integrations">LoRaWAN & SigFox Support</a>
                     <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
                 </div>
             </div>
@@ -122,7 +118,7 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
             <div class="block">
                 <object data="/images/phone-icon.svg"></object>
                 <div>
-                    <a class="title" href="/docs/mobile/">Mobile application</a>
+                    <a class="title" href="/docs/mobile">Mobile application</a>
                     <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
                 </div>
             </div>
