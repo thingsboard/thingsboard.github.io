@@ -19,8 +19,10 @@ You may use the **Main state** to:
 - monitor soil moisture history in real-time using a graph;
 - monitor Alarms that occur when the established conditions are not met;
 
+<br>
 In order to go to **Field state**, click on the row of the desired sensor in the Field section or choose the needed field on the interactive map.
 
+<br>
 You may use the **Field state** to:
 - monitor irrigation status;
 - set and edit the inclusion schedule and conditions under which irrigation will work;

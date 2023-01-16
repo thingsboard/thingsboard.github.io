@@ -10,22 +10,7 @@ notitle: "true"
 
 <h1 class="usecase-title">Smart retail solutions</h1>
 
-ThingsBoard platform dramatically reduces time to market and efforts to create smart retail solutions.
-Save up to 90% of development time for your smart retail solution by utilizing the following platform benefits:
-
-  - Reliable and fault-tolerant data collection from your IoT devices and sensors;
-  - Powerful rule engine to process collected data and produce alarms and valuable insights;
-  - Advanced and flexible visualization for real-time and historical data;
-  - Customizable end-user dashboards to share the monitoring results;
-  - On-premises and cloud deployment options;
-  - Remote control and OTA updates for your IoT devices;    
-  - Customizable mobile applications with minimum coding efforts;
-
-The platform provides production-ready server infrastructure to connect your IoT devices, store, analyze and share collected IoT data;
-
-## Smart retail template
-
-Smart retail [solution template](https://thingsboard.io/docs/paas/solution-templates/overview/) represent generic smart retail solution. 
+Smart retail [solution template](/docs/paas/solution-templates/smart-retail) represent generic smart retail solution. 
 As a solution provider, you may provision multiple Customers 
 and assign pool of IoT devices to each customer.
 
@@ -60,7 +45,7 @@ browse current and historical state of their supermarkets.
     <a target="_blank" href="https://thingsboard.cloud/dashboard/551d4ca0-8b54-11ec-98f9-ff45c37940c6?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">View live demo</a>
 </div>
 
-The live dashboard is part of the [solution template](https://thingsboard.io/docs/paas/solution-templates/overview/) and 
+The live dashboard is part of the [solution template](/docs/paas/solution-templates/smart-retail) and 
 is designed for supermarket managers to monitor state of the supermarket and react on alarms. It has multiple states:
 
 * **Main** state contains a map of the supermarkets, and a list of alarms.
@@ -98,6 +83,20 @@ that allows you to provision customers, their users, supermarkets and devices. I
     Supermarkets are assets that may contain multiple devices and few attributes: floor plan and address.
 * **Supermarket devices** state displays an indoor map with the floor plan of supermarket and device markers.
     You may drag-and-drop the device markers to define precise location of the device in the supermarket.
+
+ThingsBoard platform dramatically reduces time to market and efforts to create smart retail solutions.
+Save up to 90% of development time for your smart retail solution by utilizing the following platform benefits:
+
+- Reliable and fault-tolerant data collection from your IoT devices and sensors;
+- Powerful rule engine to process collected data and produce alarms and valuable insights;
+- Advanced and flexible visualization for real-time and historical data;
+- Customizable end-user dashboards to share the monitoring results;
+- On-premises and cloud deployment options;
+- Remote control and OTA updates for your IoT devices;
+- Customizable mobile applications with minimum coding efforts.
+
+The platform provides production-ready server infrastructure to connect your IoT devices, store, analyze and share collected IoT data.
+
 
 ## ThingsBoard advantages
 <section class="usecase-advantages">
