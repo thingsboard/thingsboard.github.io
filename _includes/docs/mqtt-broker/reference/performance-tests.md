@@ -5,12 +5,23 @@
 One of the key features of the MQTT broker is to receive messages published by clients, 
 filter the messages by topic, and distribute them to subscribers, and this is a crucial process that must work reliably under high load. 
 In this article, we are going to describe steps that we have made to ensure that ThingsBoard MQTT Broker can constantly handle **1M** connected clients 
-and around **1M MQTT publish messages per minute**.
+and around **200k MQTT publish messages per second**.
 
 Herewith you can find total cost of ownership (TCO) calculations for ThingsBoard MQTT Broker deployed using AWS.
 
 **Important notice**: all calculations and pricing below are approximate and are listed as an example. 
 Please consult your cloud provider in order to get your accurate pricing.
+
+
+### Hardware
+
+| Service Name             | **TB MQTT Broker** | **AWS RDS (PostgreSQL)** | **AWS MSK**    |
+|--------------------------|--------------------|--------------------------|----------------|
+| Instance Type            | m6a.2xlarge        | db.m6i.large             | kafka.m5.large |
+| Memory (GiB)             | 32                 | 8                        | 8              |
+| vCPU                     | 8                  | 2                        | 2              |
+| Storage (GiB)            | 80                 | 100                      | 1500           |
+| Network bandwidth (Gbps) | 12.5               | 10                       | 10             |
 
 ### Test methodology
 
@@ -25,7 +36,7 @@ Various IoT device profiles differ based on the number of messages they produce 
 We have emulated smart tracker devices that send messages with eight data points once per minute. The size of a single "publish" message is approximately 400 bytes.
 Below you can see the emulated message structure with some differences from a real test case since the test agent generates the payload values.
 ```json
-{ "latitude": 40.761894, "longitude": -73.970455, "speed": 55.5, "acceleration": 3.5, "fuel": 92, "batteryLevel": 81, "location": "451-477 Park Ave, New York, NY 10022, USA", "ts": 1671549126 }
+{ "lat": 40.761894, "long": -73.970455, "speed": 55.5, "fuel": 92, "batLvl": 81 }
 ```
 
 With the JSON configuration, we are able to specify the publishers and subscribers separately, gathered into groups for more flexible control.
@@ -235,7 +246,7 @@ to simulate the desired load.
 
 ### Conclusion
 
-This performance test demonstrates how a ThingsBoard MQTT Broker cluster can receive, process and distribute approximately 1 million messages per minute from your devices. 
+This performance test demonstrates how a ThingsBoard MQTT Broker cluster can receive, process and distribute approximately 200k messages per second from your devices. 
 We will continue our work on performance improvements and are going to publish updated performance results for the cluster of ThingsBoard MQTT Broker in the near future. 
 We hope this article will be useful for people who are evaluating the platform and want to execute performance tests on their own.
 
