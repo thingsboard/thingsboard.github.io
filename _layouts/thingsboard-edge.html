@@ -12,11 +12,11 @@
         <h1 class="header-animation edge-title">ThingsBoard Edge</h1>
         <h2 class="header-animation edge-description">Distribute data processing and analysis using edge computing</h2>
         <div class="header-animation">
-            <a href="/pricing/?active=thingsboard-edge" class="button try-edge">Try it now</a>
+            <a href="#encyclopedia" class="button try-edge">Learn More</a>
             <a href="/products/thingsboard-edge/request-demo" class="button try-edge">Request a Demo</a>
         </div>
         <div class="paas-arrow">
-            <a href="#intro"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>
+            <a href="#encyclopedia"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>
         </div>
     </div>
 </section>
@@ -36,7 +36,7 @@
                 slideUp();
             }
         });
-        $('#hero-content > .paas-arrow > a').click(function(event) {
+        $('#hero-content > .paas-arrow > a, #hero-content a.try-edge').click(function(event) {
             event.preventDefault();
             var target = $('#encyclopedia');
             $('html, body').animate({

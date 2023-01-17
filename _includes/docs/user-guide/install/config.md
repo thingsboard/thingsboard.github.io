@@ -1047,6 +1047,24 @@ assign UI_HELP_BASE_URL_VALUE = "pe-ui" %} {% endif %}
             <td>Parameter to specify how often TTL(Time To Live) will be checked.Number of milliseconds. The current value corresponds to two hours</td>
         </tr>
         <tr>
+            <td>sql.ttl.audit_log.enabled</td>
+            <td>SQL_TTL_AUDIT_LOG_ENABLED</td>
+            <td>true</td>
+            <td>Enable/disable TTL(Time To Live) for audit log events</td>
+        </tr>
+        <tr>
+            <td>sql.ttl.audit_log.events_ttl</td>
+            <td>SQL_TTL_AUDIT_LOG_EXECUTION_INTERVAL</td>
+            <td>86400000</td>
+            <td>Number of milliseconds. The current value corresponds to one day</td>
+        </tr>
+        <tr>
+            <td>sql.ttl.audit_log.execution_interval_ms</td>
+            <td>SQL_TTL_AUDIT_LOG_EVENTS_TTL</td>
+            <td>2628000</td>
+            <td>Number of seconds. The current value corresponds to one month</td>
+        </tr>
+        <tr>
             <td>sql.relations.max_level</td>
             <td>SQL_RELATIONS_MAX_LEVEL</td>
             <td>50</td>

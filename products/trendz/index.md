@@ -178,5 +178,5 @@ description:
 </div>
 
 <div class="try-button-block">
-    <a href="/pricing/?active=trendz" class="button try-trendz">Try Trendz</a>
+    <a href="/pricing/?section=trendz-options&product=trendz-self-managed" class="button try-trendz">Try Trendz</a>
 </div>

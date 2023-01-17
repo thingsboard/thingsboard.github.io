@@ -65,53 +65,15 @@ However, you can use another mapping in your specific use cases.
 
 Also, we will retrieve the values of the **temperature**, **humidity** and **powerConsumption** fields and use them as device telemetries.
 
-Go to the **Data Converters** and create a new **uplink** Converter using this function:
+Go to the **Data Converters** and create a new **uplink** Converter
 
-```ruby
-var data = decodeToJson(payload);
-var deviceName = metadata['opcUaNode_name'];
-var deviceType = 'airconditioner';
+{% include templates/tbel-vs-js.md %}
 
-var result = {
-   deviceName: deviceName,
-   deviceType: deviceType,
-   telemetry: {
-   },
-   attributes: {
-   }
-};
+{% capture opcuauplinkconverterconfig %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/opc-ua/opc-ua-uplink-converter-config-tbel.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/opc-ua/opc-ua-uplink-converter-config-javascript.md{% endcapture %}
 
-if (data.temperature) {
-    result.telemetry.temperature = Number(Number(data.temperature).toFixed(2));
-}
-
-if (data.humidity) {
-    result.telemetry.humidity = Number(Number(data.humidity).toFixed(2));
-}
-
-if (data.powerConsumption) {
-    result.telemetry.powerConsumption = Number(Number(data.powerConsumption).toFixed(2));
-}
-
-if (data.state !== undefined) {
-    result.attributes.state = data.state === '1' ? true : false;
-}
-
-function decodeToString(payload) {
-   return String.fromCharCode.apply(String, payload);
-}
-
-function decodeToJson(payload) {
-   var str = decodeToString(payload);
-   var data = JSON.parse(str);
-   return data;
-}
-
-return result;
-```
-{: .copy-code}
-
-![image](/images/user-guide/integrations/opc-ua/opc-ua-uplink-converter.png)
+{% include content-toggle.html content-toggle-id="opcuauplinkconverterconfig" toggle-spec=opcuauplinkconverterconfig %}
 
 ### Downlink Data Converter
 
@@ -139,42 +101,20 @@ downlink Converter.
         - **args** - array of method input values
 - **metadata** - not used in case of OPC UA Integration and can be empty.
 
-Go to **Data Converters** and create a new **downlink** Converter using this function:
+Go to **Data Converters** and create a new **downlink** Converter.
 
-```ruby
-var data = {
-    writeValues: [],
-    callMethods: []
-};
+{% include templates/tbel-vs-js.md %}
 
-if (msgType === 'RPC_CALL_FROM_SERVER_TO_DEVICE') {
-    if (msg.method === 'setState') {
-        var targetMethod = msg.params === 'true' ? 'Start' : 'Stop';
-        var callMethod = {
-              objectId: 'ns=3;s=' + metadata['deviceName'],
-              methodId: 'ns=3;s=' +metadata['deviceName']+'.'+targetMethod,
-              args: []
-        };
-        data.callMethods.push(callMethod);
-    }
-}
+{% capture opcuadownlinkconverterconfig %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/opc-ua/opc-ua-downlink-converter-config-tbel.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/opc-ua/opc-ua-downlink-converter-config-javascript.md{% endcapture %}
 
-var result = {
-    contentType: "JSON",
-    data: JSON.stringify(data),
-    metadata: {}
-};
-
-return result;
-```
-{: .copy-code}
+{% include content-toggle.html content-toggle-id="opcuadownlinkconverterconfig" toggle-spec=opcuadownlinkconverterconfig %}
 
 This converter will process the RPC command to the device using the method **setState**
 and a boolean **params** value to call the 'Start' or 'Stop' method of the Airconditioner.
 
 Destination node is detected using the **deviceName** field of the incoming message metadata.
-
-![image](/images/user-guide/integrations/opc-ua/opc-ua-downlink-converter.png)
 
 ### OPC-UA Integration
 
@@ -185,21 +125,23 @@ Specify such parameters:
 
 - Name: OPC-UA Airconditioners
 - Type: OPC-UA
-- Uplink data converter: Airconditioner Uplink
-- Downlink data converter: Airconditioner Downlink
 
 ![image](/images/user-guide/integrations/opc-ua/opc-ua-integration-1.png)
 
-- Application name: \<empty\> (client application name)
-- Application uri: \<empty\> (client application uri)
+- Uplink data converter: Airconditioner Uplink
+
+![image](/images/user-guide/integrations/opc-ua/opc-ua-integration-2.png)
+
+- Downlink data converter: Airconditioner Downlink
+
+![image](/images/user-guide/integrations/opc-ua/opc-ua-integration-3.png)
+
 - Host: **Endpoint Host** (see [Prerequisites](#prerequisites))
 - Port: **Endpoint Port** (see [Prerequisites](#prerequisites))
-- Scan period in seconds: 10 (how often to rescan OPC UA nodes)
-- Timeout in milliseconds: 5000 (the timeout, in milliseconds, before failing a request to OPC UA server)
 - Security: None (can be *Basic128Rsa15 / Basic256 / Basic256Sha256 / None*)
 - Identity: Anonymous (can be *Anonymous / Username*)
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-integration-2.png)
+![image](/images/user-guide/integrations/opc-ua/opc-ua-integration-4.png)
 
 - Mapping:
      - MappingType: Fully Qualified Name (can be *Fully Qualified Name* / *ID*)
@@ -212,7 +154,7 @@ Specify such parameters:
         - humidity - Humidity
         - powerConsumption - PowerConsumption
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-integration-3.png)
+![image](/images/user-guide/integrations/opc-ua/opc-ua-integration-5.png)
 
 ### Airconditioners Rule Chain
 

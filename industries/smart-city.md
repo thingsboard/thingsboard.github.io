@@ -28,6 +28,9 @@ description:
         <li>
             <a href="/industries/industry40/">Industry 4.0</a>
         </li>
+        <li>
+            <a href="/industries/warehouse-monitoring/">Warehouse monitoring</a>
+        </li>
     </ul>
 </nav>
 

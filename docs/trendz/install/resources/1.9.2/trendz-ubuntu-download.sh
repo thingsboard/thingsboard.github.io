@@ -1,1 +1,1 @@
-wget https://dist.thingsboard.io/trendz-1.9.2-HF1.deb
+wget https://dist.thingsboard.io/trendz-1.9.2-HF2.deb

@@ -1,3 +1,3 @@
 Please select **Handler Type** as **HEX**
 
-![image](/images/user-guide/integrations/udp/hex-handler-configuration.png)
+![image](/images/user-guide/integrations/udp/handler-configuration-hex.png)
