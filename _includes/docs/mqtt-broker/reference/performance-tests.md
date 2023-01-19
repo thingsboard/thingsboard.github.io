@@ -70,6 +70,7 @@ Each MQTT client uses a separate connection to the broker.
 1M clients were connected to the cluster within less than 1 minute, resulting in approximately 20k connected clients per second.
 The test was running for 12 hours to ensure there is no resource leakage or performance degradation over time.
 200k messages published per second result in 8,640M messages overall or ~1TB incoming/outgoing throughput.
+MQTT Quality of Service (QoS) level of **1** (`AT_LEAST_ONCE`) was used for publishers and subscribers.
 
 Let's review a simple table with the main points of the test.
 
@@ -94,6 +95,10 @@ ThingsBoard MQTT Broker cluster in the current configuration contains the capaci
 PostgreSQL is almost not loaded in such a case since it processed a few operations per second due to the nature of the test and usage of `APPLICATION` subscribers.
 There is 0 communication between the TB MQTT broker nodes in this test meaning we can scale horizontally more and receive nearly linear growth of performance.
 Thus, we expect 25 TB MQTT Brokers to be enough to process 1M messages per second.
+The QoS level of 0 would give an even higher message rate, however, we wanted to demonstrate the processing capabilities with a more generic setup. 
+The QoS level of 1 is the most popular configuration in general, giving both speed and reliability of message delivery.
+ThingsBoard MQTT Broker is a great choice for both low and high message rates, different processing use cases (e.g. fan-in, fan-out), and either small or big deployments 
+since it can easily be scaled vertically and horizontally.
 
 ### TCO calculations
 
