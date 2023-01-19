@@ -7,6 +7,8 @@ description: Installing ThingsBoard Edge on CentOS/RHEL Server
 * TOC
 {:toc}
 
+{% include templates/edge/install/compatibility-warning-general.md %}
+
 {% assign docsPrefix = "edge/" %}
 
 This guide describes how to install ThingsBoard Edge on RHEL/CentOS 7/8.
