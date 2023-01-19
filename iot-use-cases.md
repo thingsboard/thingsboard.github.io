@@ -277,7 +277,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="/images/usecases/smart-irrigation/video/smart-irrigation.png">
+                            <img src="/images/usecases/smart-irrigation/video/smart-irrigation.gif">
                         </div>
                     </div>                
                 </a>
