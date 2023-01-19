@@ -124,7 +124,7 @@ among the subscribers and optionally store them for a short period of time for o
 based on your requirements. **Note**, as a reminder, do not forget to configure the size retention policy and period retention policy for Kafka topics.
 
 The test agent represents the cluster of performance test nodes (runners) and an orchestrator that rules the runners.
-We have deployed 40 small Kubernetes pods to serve the runners purpose and 1 pod to be the orchestrator.
+We have deployed 40 small Kubernetes pods to serve the runner's purpose and 1 pod to be the orchestrator.
 
 The topic prefix is constructed to simulate smart trackers collecting data in NY city, USA, for all
 5 boroughs (Brooklyn, Manhattan, etc.) divided by 4 areas (west, east, north, south).
@@ -191,7 +191,8 @@ We can see pretty good results. Published and consumed messages are processed wi
 Application processors are delivering the messages to the subscribers fast enough to not experience the lag. 
 All 1,000,020 clients are stably connected to the broker.
 
-AWS instance monitoring shows about 70% average CPU load. AWS RDS resources are almost not used due to the absence of DEVICE persistent clients. 
+AWS instance (where TB MQTT Brokers are deployed) monitoring shows about 70% average CPU load. 
+AWS RDS resources are almost not used due to the absence of DEVICE persistent clients and few requests per second processed to update sessions. 
 AWS MSK monitoring shows Kafka has plenty of resources left to receive even more load.
 
 {% include images-gallery.html imageCollection="broker-tests-aws-monitoring" %}
@@ -212,7 +213,7 @@ Here is the JMX monitoring for ThingsBoard MQTT brokers. The broker nodes are st
 
 Check out the next [installation guide](/docs/mqtt-broker/install/cluster/aws-cluster-setup/) on how to deploy ThingsBoard MQTT Broker on AWS.
 Additionally, check out the [folder](https://github.com/thingsboard/thingsboard-mqtt-broker/tree/perf-tests/k8s/aws) with scripts and parameters of the broker used during the run.
-And finally, the [performance tests tool](https://github.com/thingsboard/tb-mqtt-perf-tests) that generates MQTT clients and produces the load.
+And finally, the [performance tests tool](https://github.com/thingsboard/tb-mqtt-perf-tests) generates MQTT clients and produces the load.
 Performance tests [configuration file](https://github.com/thingsboard/tb-mqtt-perf-tests/blob/master/k8s/mqtt-broker-test-run-config.yml#L59) can be reviewed and adjusted 
 to simulate the desired load.
 
