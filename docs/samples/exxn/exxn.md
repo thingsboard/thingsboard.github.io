@@ -1,7 +1,5 @@
 ---
-layout: docwithnav
-assignees:
-- ddiachenko
+layout: ecasado
 title: EXXN IoT Gateway
 description: EXXN IoT Gateway Integration guide
 hidetoc: "true"
