@@ -5,15 +5,11 @@
 One of the key features of the MQTT broker is to receive messages published by clients, 
 filter the messages by topic, and distribute them to subscribers, and this is a crucial process that must work reliably under high load. 
 In this article, we are going to describe steps that we have made to ensure that ThingsBoard MQTT Broker can constantly handle around **1M** connected clients 
-and around **200k MQTT publish messages per second**.
-
-Herewith you can find total cost of ownership (TCO) calculations for ThingsBoard MQTT Broker deployed using AWS.
-
-**Important notice**: all calculations and pricing below are approximate and are listed as an example. 
-Please consult your cloud provider in order to get your accurate pricing.
+and process **200k MQTT publish messages per second** as inbound and outbound traffic.
 
 ### Test methodology
 
+We have chosen Amazon Web Services (AWS) as the target cloud provider to conduct the performance test.
 We have deployed the ThingsBoard (TB) MQTT broker cluster of 5 nodes in [EKS](https://aws.amazon.com/eks/) 
 cluster (on a single EC2 instance, or node, 1 broker pod is deployed) with the connection to [RDS](https://aws.amazon.com/rds/) and [MSK](https://aws.amazon.com/msk/). 
 See the next page for more information about the ThingsBoard MQTT broker [architecture](/docs/mqtt-broker/architecture/).
@@ -37,7 +33,8 @@ Below you can see the emulated message structure with some differences from a re
 { "lat": 40.761894, "long": -73.970455, "speed": 55.5, "fuel": 92, "batLvl": 81 }
 ```
 
-Publishers are split into 20 groups, each sending data to their own topic pattern (e.g. `usa/ny/manh/west/`). In total, publishers are sending data to 200k different topics.
+Publishers are split into 20 groups, each sending data to their own topic pattern (e.g. `usa/ny/manh/west/${id}`, where id - publisher client identifier). 
+In total, publishers are sending data to 200k different topics.
 Accordingly, 20 subscriber groups are configured with 1 `APPLICATION` subscriber in each. The topic filter corresponds to the topic pattern of the publisher group resulting 
 in 10k topics per subscriber or 10k messages received per second.
 
@@ -101,6 +98,11 @@ ThingsBoard MQTT Broker is a great choice for both low and high message rates, d
 since it can easily be scaled vertically and horizontally.
 
 ### TCO calculations
+
+Herewith you can find total cost of ownership (TCO) calculations for ThingsBoard MQTT Broker deployed using AWS.
+
+**Important notice**: all calculations and pricing below are approximate and are listed as an example.
+Please consult your cloud provider in order to get your accurate pricing.
 
 AWS EKS cluster in us-east-1 region. Approx. price is ~73 USD/month.
 
