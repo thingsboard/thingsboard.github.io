@@ -239,7 +239,7 @@
       keywords: Connect TCP devices
       pe: true
       video: true
-    - path: /docs/user-guide/integrations/tcp/
+    - path: /docs/user-guide/integrations/udp/
       title: Devices uses UDP protocol
       subtitle: How to connect to ThingsBoard UDP-server, transform the incoming messages and generate the downlinks using ThingsBoard.
       keywords: Connect UDP devices
