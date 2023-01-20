@@ -1,0 +1,148 @@
+{
+  "control_config": {
+    "debug_level": 10
+  },
+  "datalogger_config": {
+    "csv_path": "/opt/celling/datalogger/data/",
+    "redis_list_max_len": 16384,
+    "sensor_list": [
+      {
+        "id": "system_monitor",
+        "description": "CPU usage (%), disk free (MB), memory available (MB)",
+        "model": "sys_mon",
+        "storage_device": "/dev/mmcblk0p2",
+        "measures": [
+          "disk_free",
+          "mem_available",
+          "cpu_usage"
+        ],
+        "enabled": true,
+        "period": 60,
+        "csv": true,
+        "mqtt": true
+      },
+      {
+        "id": "temp_sc0",
+        "description": "Temperature of the small cell #0",
+        "model": "ds18b20",
+        "name": "sc0",
+        "address": "28-01212e9c95be",
+        "measures": [
+          "temperature"
+        ],
+        "enabled": true,
+        "period": 15,
+        "csv": true,
+        "mqtt": true
+      },
+      {
+        "id": "temp_sc1",
+        "description": "Temperature of the small cell #1",
+        "model": "ds18b20",
+        "name": "sc1",
+        "address": "28-01212e96afff",
+        "measures": [
+          "temperature"
+        ],
+        "enabled": false,
+        "period": 15,
+        "csv": true,
+        "mqtt": true
+      },
+      {
+        "id": "fan_rpm",
+        "description": "Fan tachometer monitor",
+        "model": "tachometer",
+        "name": "fan",
+        "gpio": 22,
+        "sampling_window": 5000,
+        "measures": [
+          "rpm"
+        ],
+        "enabled": true,
+        "csv": true,
+        "mqtt": true
+      },
+      {
+        "id": "temp_hum",
+        "description": "Temperature (celsius degrees), humidity (%)",
+        "model": "cwt_th01s",
+        "name": "th",
+        "config_params": {
+          "port": "/dev/ttyS1",
+          "baudrate": 9600,
+          "read_timeout": 0.5,
+          "slave_id": 2
+        },
+        "measures": [
+          "temperature",
+          "humidity"
+        ],
+        "enabled": true,
+        "period": 15,
+        "csv": true,
+        "mqtt": true
+      },
+      {
+        "id": "gpio_monitor",
+        "description": "GPIOs configuration and monitoring",
+        "model": "gpio_mon",
+        "name": "gpio",
+        "measures": [
+          "state"
+        ],
+        "mapping": {
+          "LOCK": {
+            "pin": 1,
+            "gpio": 4,
+            "direction": "out",
+            "boot_value": 0
+          },
+          "LED": {
+            "pin": 3,
+            "gpio": 2,
+            "direction": "out",
+            "boot_value": 0
+          },
+          "FAN": {
+            "pin": 5,
+            "gpio": 34,
+            "direction": "out",
+            "boot_value": 0
+          },
+          "BUZZER": {
+            "pin": 1,
+            "gpio": 43,
+            "direction": "out",
+            "boot_value": 0
+          }
+        },
+        "enabled": true,
+        "period": 15,
+        "csv": true,
+        "mqtt": true
+      },
+      {
+        "id": "energy_meter",
+        "description": "Voltage (V), Current (A), Active Power (KWh), Power Factor",
+        "model": "ddm18sd",
+        "config_params": {
+          "port": "/dev/ttyS1",
+          "baudrate": 9600,
+          "read_timeout": 1,
+          "slave_id": 0
+        },
+        "measures": [
+          "voltage",
+          "current",
+          "active_power",
+          "power_factor"
+        ],
+        "enabled": true,
+        "period": 15,
+        "csv": true,
+        "mqtt": true
+      }
+    ]
+  }
+}
