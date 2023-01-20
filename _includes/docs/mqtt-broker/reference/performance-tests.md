@@ -26,9 +26,9 @@ Below you can see the emulated message structure with some differences from a re
 ```
 
 Publishers are split into 20 groups, each sending data to their own topic pattern (e.g. `usa/ny/manh/west/${id}`, where id - publisher client identifier). 
-In total, publishers are sending data to 200k different topics.
+In total, publishers are sending data to 1M different topics.
 Accordingly, 20 subscriber groups are configured with 1 `APPLICATION` subscriber in each. The topic filter corresponds to the topic pattern of the publisher group resulting 
-in 10k topics per subscriber or 10k messages received per second.
+in 10k messages received per second.
 
 In this case, the ThingsBoard MQTT broker cluster constantly maintains 1M connections and processes 200k messages per second or 8,640M messages overall during 12 hours of running the test.
 This causes ~1TB of data to the initial Kafka topic (`publish_msg`).
@@ -94,7 +94,7 @@ There is 0 communication between the TB MQTT broker nodes in this test meaning w
 Thus, we expect 25 TB MQTT Brokers to be enough to process 1M messages per second.
 The QoS level of 0 would give an even higher message rate, however, we wanted to demonstrate the processing capabilities with a more generic setup. 
 The QoS level of 1 is the most popular configuration in general, giving both speed and reliability of message delivery.
-ThingsBoard MQTT Broker is a great choice for both low and high message rates, different processing use cases (e.g. fan-in, fan-out), and either small or big deployments 
+ThingsBoard MQTT Broker is a great choice for both low and high message rates, different processing use cases (e.g. fan-in, fan-out, etc.), and either small or big deployments 
 since it can easily be scaled vertically and horizontally.
 
 ### TCO calculations
@@ -118,7 +118,7 @@ AWS MSK: 3 brokers (1 broker per AZ), kafka.m5.large (2 vCPU, 8 GiB), 1,500GiB s
 
 **Load configuration:**
 
-* ~1M connected MQTT clients (smart tracker devices);
+* 1M connected MQTT clients (smart tracker devices);
 * 20 subscribe MQTT clients (specific applications that consume the data - e.g. for analysis/graphs);
 * 200k msg/sec over MQTT, each MQTT message contains 5 data points, approx. message size is 114 bytes;
 * PostgreSQL database to store MQTT client credentials, client session states;
@@ -143,7 +143,7 @@ Publisher group:
 ```json
 {
     "id":1,
-    "publishers":10000,
+    "publishers":50000,
     "topicPrefix":"usa/ny/brkl/east/",
     "clientIdPrefix":null
 }
