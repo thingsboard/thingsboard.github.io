@@ -270,7 +270,7 @@
     "blurb": "Dusun provides various kinds of gateways, hardware products and IOT service"
   },
   {
-    "type": ["main", "bluetooth", "wifi", "lte", "sigfox", "lora", "gsm", "modbus"],
+    "type": ["main", "bluetooth", "nbiot",  "wifi", "sigfox", "lora", "gsm", "modbus"],
     "program": "",
     "name": "EXXN",
     "logo": "exxn.jpg",
@@ -283,6 +283,6 @@
         "href": "/docs/samples/exxn/exxn"
       }
     },
-    "blurb": "EXXN helps you integrate technology into your business. We provide Multipurpose gateways with ARM processor, adaptable to customer needs and each use case."
+    "blurb": "At EXXN, we specialize in integrating technology into your business to enhance efficiency and productivity. Our multipurpose gateways, equipped with an ARM processor, are customizable to meet the specific needs of each customer and use case."
   }
 ]
