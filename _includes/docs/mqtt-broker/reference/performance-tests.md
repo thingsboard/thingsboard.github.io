@@ -15,14 +15,6 @@ cluster (on a single EC2 instance, or node, 1 broker pod is deployed) with the c
 See the next page for more information about the ThingsBoard MQTT broker [architecture](/docs/mqtt-broker/architecture/).
 RDS has been deployed as a single instance and MSK has been deployed containing 3 brokers, each located in a separate Availability Zone (AZ).
 
-| Service        | Replicas |
-|----------------|----------|
-| TB MQTT Broker | 5        |
-| AWS MSK        | 3        |
-| AWS RDS        | 1        |
-
-[comment]: <> ( To format table as markdown, please use the online table generator https://www.tablesgenerator.com/markdown_tables )
-
 The [test agent](#how-to-repeat-the-tests) provisions and connects a configurable number of MQTT clients that constantly publish time-series data over MQTT to specific topics.
 Additionally, it provisions a configurable number of MQTT clients that subscribe by topic filters to receive published messages.
 
@@ -75,8 +67,6 @@ Let's review a simple table with the main points of the test.
 |---------|----------|------------|---------------|-----------|------------------------------|-----------------|----------------------------|
 | 1M      | 200k     | 74.6%      | 10.3GB        | 27%       | 3.5k                         | 2%              | less than 1/ less than 3   |
 
-[comment]: <> ( To format table as markdown, please use the online table generator https://www.tablesgenerator.com/markdown_tables )
-
 Below you can see the stats from the Kafka topics (i.e. `publish_msg` is the main Kafka topic where all the messages are stored, and several examples of application 
 topics for `APPLICATION` subscribers that receive the data).
 
@@ -85,6 +75,16 @@ topics for `APPLICATION` subscribers that receive the data).
 Note, based on the above info we can see that 100% of messages were processed successfully. 
 `publish_msg` topic has less storage size than mentioned before due to the fact that producers are sending compressed data and Kafka brokers
 retain the original compression codec set by the producers (`compression.type` property). Application topics do not preserve all the messages due to the retention policy configured.
+
+What about the message processing latency? Below you can find the table with the most important stats.
+
+| Msg latency Avg | Msg latency 95th | Pub Ack Avg | Pub Ack 95th |
+|-----------------|------------------|-------------|--------------|
+| 250 ms          | 387 ms           | 92 ms       | 186 ms       |
+
+where "Msg latency Avg" - is the average time passed from the message being sent from the publisher to be received by the subscriber, 
+"Pub Ack Avg" - is the average time elapsed from the message being sent from the publisher to the time `PUBACK` is received by the one, 
+and 95th is the 95th percentile of the respectful latency statistics.
 
 **Lessons learned**
 
