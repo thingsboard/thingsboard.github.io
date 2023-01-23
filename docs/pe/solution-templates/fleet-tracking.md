@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-title: Smart office template
-description: Smart office template overview
+title: Fleet tracking template
+description: Fleet tracking template overview
 solution-highlights:
     0:
         image: /images/solutions/fleet_tracking/fleet-tracking-1.png
