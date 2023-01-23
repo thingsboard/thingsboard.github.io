@@ -29,11 +29,13 @@ The next step is to register an account on [Tuya](https://www.tuya.com/) and cre
 
 #### Enable Tuya message service
 
+Enable the message service to timely receive messages about device registration, data reporting, and status change.
+
 {% include images-gallery.html imageCollection="tuya-message-service-enable" showListImageTitles="true" %}
 
 #### Link Tuya App Account
 
-You can link devices to this project by using accounts of Smart Life App.
+You need to link your devices to this project using your Smart Life app account.
 
 {% include images-gallery.html imageCollection="tuya-add-smart-life-app" showListImageTitles="true" %}
 
@@ -86,7 +88,7 @@ Go to **Integrations** section and click Add new integration button. Name it **T
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-1-pe.png)
 {% endif %}
 
-Add recently created **Tuya Uplink Converter**;
+In this step, you can select the recently created **Tuya Uplink Converter** or create a new uplink data converter;
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-2-pe.png)
@@ -95,7 +97,7 @@ Add recently created **Tuya Uplink Converter**;
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-2-pe.png)
 {% endif %}
 
-Add **Tuya Downlink Converter** to the integration;
+Add **Tuya Downlink Converter** to the integration or create a new downlink data converter;
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-3-pe.png)

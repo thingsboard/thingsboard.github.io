@@ -27,10 +27,10 @@ tuya-create-cloud-project:
         title: 'Go to "Cloud" tab -> "Development". Click "Create Cloud Project" button'
     1:
         image: /images/user-guide/integrations/tuya/tuya-create-cloud-project-2.png
-        title: 'In a popup window fill required fields and click "Create"'
+        title: 'In a pop-up window fill required fields and click "Create"'
     2:
         image: /images/user-guide/integrations/tuya/tuya-create-cloud-project-3.png
-        title: 'In the "Autorize API Services" window, make additional settings and click "Authorize"'
+        title: 'In the "Autorize API Services" window make additional settings and click "Authorize"'
     3:
         image: /images/user-guide/integrations/tuya/tuya-create-cloud-project-4.png
         title: 'In the "Project configuration" window fill required fields. After click "Create"'
