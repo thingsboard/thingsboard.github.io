@@ -24,30 +24,30 @@ tuya-application-add-device:
 tuya-create-cloud-project:
     0:
         image: /images/user-guide/integrations/tuya/tuya-create-cloud-project-1.png
-        title: 'Go to "Cloud" tab -> "Development". Click "Create Cloud Project" button'
+        title: 'Go to the "Cloud" tab -> "Development". Click the "Create Cloud Project" button'
     1:
         image: /images/user-guide/integrations/tuya/tuya-create-cloud-project-2.png
-        title: 'In a pop-up window fill required fields and click "Create"'
+        title: 'In a pop-up window, fill required fields and click "Create"'
     2:
         image: /images/user-guide/integrations/tuya/tuya-create-cloud-project-3.png
-        title: 'In the "Autorize API Services" window make additional settings and click "Authorize"'
+        title: 'Make additional settings in the “Authorize API Services” window and click "Authorize"'
     3:
         image: /images/user-guide/integrations/tuya/tuya-create-cloud-project-4.png
-        title: 'In the "Project configuration" window fill required fields. After click "Create"'
+        title: 'Fill in the required fields in the "Project configuration" window, then click "Create"'
     4:
         image: /images/user-guide/integrations/tuya/tuya-create-cloud-project-5.png
-        title: 'Cloud project is created. In this window we must remember the values of Access ID and Access Secret. These values will be needed during the Tuya Integration setup'
+        title: 'Now your cloud project is created. In this window, remember the Access ID and Access Secret values. These values will be needed during the Tuya Integration setup.'
 
 tuya-message-service-enable:
     0:
         image: /images/user-guide/integrations/tuya/tuya-message-service-enable-1.png
-        title: 'Go to "Cloud" tab -> "Message Service"'
+        title: 'Go to the "Cloud" tab -> "Message Service"'
     1:
         image: /images/user-guide/integrations/tuya/tuya-message-service-enable-2.png
         title: 'Toggle to enable Message Service'
     2:
         image: /images/user-guide/integrations/tuya/tuya-message-service-enable-3.png
-        title: 'In the pop-up window, set up the messaging service. Configure the settings for "message service type" and "alert contact"'
+        title: 'In the pop-up window, set up the messaging service. Configure the settings for "Message Service Type" and "Alert Contact". Click "Ok"'
     3:
         image: /images/user-guide/integrations/tuya/tuya-message-service-enable-4.png
         title: 'Message Service enabled'
@@ -58,19 +58,19 @@ tuya-add-smart-life-app:
         title: 'Go to "Cloud" tab -> "Development". Select your project'
     1:
         image: /images/user-guide/integrations/tuya/tuya-add-smart-life-app-2.png
-        title: 'Navigate to "Devices" tab -> select "Link Tuya App Account" tab. Click "Add App Account"'
+        title: 'Navigate to the "Devices" tab -> select the "Link Tuya App Account" tab. Click "Add App Account"'
     2:
         image: /images/user-guide/integrations/tuya/tuya-add-smart-life-app-3.png
         title: 'Scan the QR code with Smart Life App to authorize'
     3:
         image: /images/user-guide/integrations/tuya/tuya-add-smart-life-app-4.png
-        title: 'In the pop-up window, set up the "device linking method" and select "Device Permission": read, read/write or read/write/manage". Click "Ok"'
+        title: 'In the pop-up window, set up the device linking method and select device permission: read, read/write or read/write/manage". Click "Ok"'
     4:
         image: /images/user-guide/integrations/tuya/tuya-add-smart-life-app-5.png
         title: 'Now your devices under the mobile app account have been added to the project'
     5:
         image: /images/user-guide/integrations/tuya/tuya-add-smart-life-app-6.png
-        title: 'Navigate to "All Devices" tab. You can see your device added to the project'
+        title: 'Navigate to the "All Devices" tab. You can see your device added to the project'
 
 ---
 {% assign docsPrefix = "paas/" %}

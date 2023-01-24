@@ -15,7 +15,7 @@ Also, you can use a [**virtual device**](https://developer.tuya.com/en/docs/iot/
 
 ### Prerequisites
 
-The first step is install the smart device control application (Smart Life, Tuya Smart or other) on your mobile device. And register your Smart Plug device in the application.
+The first step is to install the smart device control application (Smart Life, Tuya Smart, or other) on your mobile device and register your Smart Plug device in the application.
 
 {% include images-gallery.html imageCollection="tuya-application-add-device" %}
 
@@ -43,15 +43,14 @@ You need to link your devices to this project using your Smart Life app account.
 
 ### Uplink Converter
 
-Before setting up an **Tuya integration**, you need to create an **Uplink Converter** that is a script for parsing and transforming the data received by Tuya integration to a format that ThingsBoard can consume.
+Before setting up a **Tuya integration**, you need to create an **Uplink Converter** which is a script for parsing and transforming the data received by Tuya integration to a format that ThingsBoard can consume.
 
-To create an **Uplink Converter** go to **Data Converters** section and Click **Add new data converter —> Create new converter**.
-Name it **"Tuya Uplink Converter"** and select type **Uplink**. Use debug mode for now.
+To create an **Uplink Converter**, go to the **Data Converters** section and click **Add new data converter —> Create new converter**, name it **"Tuya Uplink Converter"** and select type **Uplink**. Use debug mode for now.
 
 {% capture difference %}
 **NOTE**
 <br>
-Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when done debugging.
+Although the Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode may tremendously increase the disk space, used by the database, because all the debugging data is stored there. It is highly recommended to turn the Debug mode off when debugging is done.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -106,9 +105,9 @@ Add **Tuya Downlink Converter** to the integration or create a new downlink data
 ![image](/images/user-guide/integrations/tuya/tuya-create-integration-3-pe.png)
 {% endif %}
 
-At the last step, fill in the following fields:
+In the last step, fill in the following fields:
 
-- **Region** - specify your the region;
+- **Region** - specify your region;
 
 - **Environment:** choose **PROD** or **TEST**. Choose **PROD** for real devices. Select **TEST** if you want to connect a [**virtual device**](https://developer.tuya.com/en/docs/iot/manage-virtual-devices?id=Ka4725tiyfhg0) to Thingsboard and test its operation before you buy it.
 
@@ -125,7 +124,7 @@ Click "Add" to create an integration.
 
 ### Rule Chain configuration
 
-When integration configured and ready to use, we need to go to **Rule Chains**, choose **"Root Rule Chain"** and here create rule node **Integration Downlink**. Input here some name, choose which integration you need to use and tap **Add**.
+When integration configured and ready to use, we need to go to **Rule Chains**, choose **"Root Rule Chain"** and here create rule node **Integration Downlink**. Input some name here, choose earlier created Tuya integration, and tap **Add**.
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-1-pe.png)
@@ -134,7 +133,7 @@ When integration configured and ready to use, we need to go to **Rule Chains**, 
 ![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-1-pe.png)
 {% endif %}
 
-After this steps, we need to tap on a right grey circle of rule node **message type switch** and drag this circle to left side of **Integration Downlink**, here lets choose **RPC Request to Device**, tap "Add" and save Rule node.
+After these steps, we need to tap on a right grey circle of rule node **message type switch** and drag this circle to left side of **Integration Downlink**. In pop-up window add **"RPC Request to Device"** linl, and tap "Add". Save the Root Rule Chain.
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-2-pe.png)
@@ -214,7 +213,7 @@ Smart Plug status light is green. Try to switch off the Smart Plug by clicking o
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-3-pe.png)
 {% endif %}
 
-The Smart Plug status light will turn into grey the power consumption will stop
+The Smart Plug status indicator turns grey. Power consumption stops.
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-4-pe.png)
