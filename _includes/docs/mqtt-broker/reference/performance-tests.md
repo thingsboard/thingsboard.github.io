@@ -7,6 +7,8 @@ filter the messages by topic, and distribute them to subscribers, and this is a 
 In this article, we are going to describe steps that we have made to ensure that ThingsBoard MQTT Broker can constantly handle around **1M** connected clients 
 and process **200k MQTT publish messages per second** as inbound and outbound traffic.
 
+![image](/images/mqtt-broker/reference/perf-tests/mqtt-broker-perf-tests.png)
+
 ### Test methodology
 
 We have chosen Amazon Web Services (AWS) as the target cloud provider to conduct the performance test.
