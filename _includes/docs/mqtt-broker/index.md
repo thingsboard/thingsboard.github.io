@@ -1,4 +1,4 @@
-The **ThingsBoard MQTT Broker** will help you to connect mqtt clients, publish messages to it and distribute them between subscribers.
+The **ThingsBoard MQTT Broker** will help you to connect MQTT clients, publish messages to it and distribute them between subscribers.
 
 The ThingsBoard MQTT Broker documentation can help you set up ThingsBoard MQTT Broker, and learn about its main features and MQTT protocol in particular.
 

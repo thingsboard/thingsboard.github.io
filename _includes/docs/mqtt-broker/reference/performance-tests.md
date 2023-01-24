@@ -21,18 +21,19 @@ The [test agent](#how-to-repeat-the-tests) provisions and connects a configurabl
 Additionally, it provisions a configurable number of MQTT clients that subscribe by topic filters to receive published messages.
 
 Various IoT device profiles differ based on the number of messages they produce and the size of each message.
-We have emulated smart tracker devices that send messages with five data points once per second. The size of a single "publish" message is approximately **114 bytes**.
+We have emulated smart tracker devices that send messages with five data points. The size of a single "publish" message is approximately **114 bytes**.
 Below you can see the emulated message structure with some differences from a real test case since the test agent generates the payload values.
 ```json
 { "lat": 40.761894, "long": -73.970455, "speed": 55.5, "fuel": 92, "batLvl": 81 }
 ```
 
-Publishers are split into 20 groups, each sending data to their own topic pattern (e.g. `usa/ny/manh/west/${id}`, where id - publisher client identifier). 
+Publishers are split into 20 groups (resulting in 50k publishers and 10k msg/s per group), each sending data to their own topic pattern.
+The topic pattern is `CountryCode/City/Region/Part/ClientId` (e.g. `usa/ny/manh/west/${client_id}`). 
 In total, publishers are sending data to 1M different topics.
-Accordingly, 20 subscriber groups are configured with 1 `APPLICATION` subscriber in each. The topic filter corresponds to the topic pattern of the publisher group resulting 
-in 10k messages received per second.
+Accordingly, 20 subscriber groups are configured with 1 `APPLICATION` subscriber in each. The topic filter corresponds to the topic pattern of the publisher group 
+(e.g. `usa/ny/manh/west/+`) resulting in 10k messages received per second per subscriber.
 
-In this case, the ThingsBoard MQTT broker cluster constantly maintains 1M connections and processes 200k messages per second or 8,640M messages overall during 12 hours of running the test.
+In this case, the ThingsBoard MQTT broker cluster constantly maintains 1,000,020 connections and processes 200k messages per second or 8,640M messages overall during 12 hours of running the test.
 This causes ~1TB of data to the initial Kafka topic (`publish_msg`).
 Each subscriber receives 432M messages overall and has its special topic in Kafka where those messages are stored.
 Configuration of 20 APPLICATION subscribers means only Kafka is used to collect data and Postgres is not since 
@@ -58,7 +59,7 @@ Each MQTT client uses a separate connection to the broker.
 
 ### Test summary
 
-1M clients were connected to the cluster within less than 1 minute, resulting in approximately 20k connected clients per second.
+All clients were connected to the cluster within less than 1 minute, resulting in approximately 20k connected clients per second.
 The test was running for 12 hours to ensure there is no resource leakage or performance degradation over time.
 200k messages published per second result in 8,640M messages overall or ~1TB incoming/outgoing throughput.
 MQTT Quality of Service (QoS) level of **1** (`AT_LEAST_ONCE`) was used for publishers and subscribers.
@@ -92,7 +93,7 @@ and 95th is the 95th percentile of the respectful latency statistics.
 
 ThingsBoard MQTT Broker cluster in the current configuration contains the capacity to process an even bigger load. Kafka provides reliable and highly-available processing of messages.
 PostgreSQL is almost not loaded in such a case since it processed a few operations per second due to the nature of the test and usage of `APPLICATION` subscribers.
-There is 0 communication between the TB MQTT broker nodes in this test meaning we can scale horizontally more and receive nearly linear growth of performance.
+There is no communication between the TB MQTT broker nodes in this test meaning we can scale horizontally more and receive nearly linear growth of performance.
 Thus, we expect 25 TB MQTT Brokers to be enough to process 1M messages per second.
 The QoS level of 0 would give an even higher message rate, however, we wanted to demonstrate the processing capabilities with a more generic setup. 
 The QoS level of 1 is the most popular configuration in general, giving both speed and reliability of message delivery.
@@ -180,7 +181,7 @@ where
 **Test run**
 
 The test is starting with the clients connecting to the cluster, `APPLICATION` clients subscribing to the appropriate topics.
-All the 1M clients are distributed among 40 performance test nodes, connecting those clients to the broker in parallel.
+All the 1,000,020 clients are distributed among 40 performance test nodes, connecting those clients to the broker in parallel.
 
 After approximately 1 minute all the clients are connected successfully and each performance test node is notifying the orchestrator about its readiness.
 
@@ -222,13 +223,13 @@ Here is the JMX monitoring for ThingsBoard MQTT brokers. The broker nodes are st
 
 Check out the next [installation guide](/docs/mqtt-broker/install/cluster/aws-cluster-setup/) on how to deploy ThingsBoard MQTT Broker on AWS.
 Additionally, check out the [folder](https://github.com/thingsboard/thingsboard-mqtt-broker/tree/perf-tests/k8s/aws) with scripts and parameters of the broker used during the run.
-And finally, the [performance tests tool](https://github.com/thingsboard/tb-mqtt-perf-tests) generates MQTT clients and produces the load.
+And finally, the [performance tests tool](https://github.com/thingsboard/tb-mqtt-perf-tests) that generates MQTT clients and produces the load.
 Performance tests [configuration file](https://github.com/thingsboard/tb-mqtt-perf-tests/blob/master/k8s/mqtt-broker-test-run-config.yml#L59) can be reviewed and adjusted 
 to simulate the desired load.
 
 ### Conclusion
 
-This performance test demonstrates how a ThingsBoard MQTT Broker cluster can receive, process and distribute approximately 200k messages per second from your devices. 
+This performance test demonstrates how a ThingsBoard MQTT Broker cluster can receive, process and distribute 200k messages per second from your devices. 
 We will continue our work on performance improvements and are going to publish updated performance results for the cluster of ThingsBoard MQTT Broker in the near future. 
 We hope this article will be useful for people who are evaluating the platform and want to execute performance tests on their own.
 
