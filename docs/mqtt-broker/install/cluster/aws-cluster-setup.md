@@ -71,18 +71,20 @@ You'll need to set up PostgreSQL on Amazon RDS.
 One of the ways to do it is by following [this](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SettingUp.html) guide.
 
 **Note**: Make sure your database is accessible from the cluster, one of the way to achieve this is to create
-the database in the same VPC and subnets as ThingsBoard MQTT Broker cluster.
+the database in the same VPC and subnets as ThingsBoard MQTT Broker cluster and use 
+‘eksctl-thingsboard-mqtt-broker-cluster-ClusterSharedNodeSecurityGroup-*’ security group. See screenshots below.
 
 Here you should choose VPC with the name of your cluster:
 
-![image](/images/install/cloud/aws-rds-connectivity-vpc.png)
+![image](/images/mqtt-broker/install/aws-rds-vpc.png)
 
 Here you should choose security group corresponding to the one on the screen:
 
-![image](/images/install/cloud/aws-rds-connectivity-security-group.png)
+![image](/images/mqtt-broker/install/aws-rds-vpc-sg.png)
 
 **Note**, some recommendations:
 
+* Make sure your PostgreSQL version is latest 12.x, not 13.x yet;
 * Use ‘Production’ template for high availability. It enables a lot of useful settings by default;
 * Consider creation of custom parameters group for your RDS instance. It will make change of DB parameters easier;
 * Consider deployment of the RDS instance into private subnets. This way it will be nearly impossible to accidentally expose it to the internet.
@@ -91,7 +93,7 @@ Make sure that `thingsboard_mqtt_broker` database is created along with PostgreS
 
 ![image](/images/mqtt-broker/install/aws-rds-default-database.png)
 
-**Note:** You may also change `username` and `password` fields.
+**Note:** You may also change `username` field and set or auto-generate `password` field (keep your postgresql password in a safe place).
 
 ## Step 5. Amazon MSK Configuration
 
@@ -99,28 +101,27 @@ You'll need to set up Amazon MSK.
 To do so you need to open AWS console, MSK submenu, press `Create cluster` button and choose `Custom create` mode.
 You should see the similar image:
 
-![image](/images/install/cloud/aws-msk-creation.png)
+![image](/images/mqtt-broker/install/aws-msk-creation.png)
+
+**Note**: Make sure your MSK instance is accessible from the ThingsBoard MQTT Broker cluster.
+The easiest way to achieve this is to deploy the MSK instance in the same VPC.
+We also recommend to use private subnets. This way it will be nearly impossible to accidentally expose it to the internet;
 
 Now you should choose the ThingsBoard MQTT Broker cluster's VPC for the Kafka cluster:
 
-![image](/images/install/cloud/aws-msk-vpc.png)
+![image](/images/mqtt-broker/install/aws-msk-vpc.png)
 
-You can choose any zones and subnets.
+After that you need to browse the security groups and choose group corresponding to the one on the screen:
 
-After that you need to select `Custom settings` of security groups and choose groups corresponding to the group on the screen:
+![image](/images/mqtt-broker/install/aws-msk-vpc-sg.png)
 
-![image](/images/install/cloud/aws-msk-security-groups.png)
+Also, you should enable `Plaintext` communication between clients and brokers:
 
-Also you should enable `Plaintext` communication between clients and brokers:
-
-![image](/images/install/cloud/aws-msk-encryption.png)
+![image](/images/mqtt-broker/install/aws-msk-security.png)
 
 **Note**, some recommendations:
 
-* Make sure your Apache Kafka version is 2.6.x;
-* Make sure your MSK instance is accessible from the ThingsBoard cluster.
-  The easiest way to achieve this is to deploy the MSK instance in the same VPC.
-  We also recommend to use private subnets. This way it will be nearly impossible to accidentally expose it to the internet;
+* Make sure your Apache Kafka version is 2.8.x;
 * Use m5.large or similar instance types;
 * Use default 'Monitoring' settings or enable 'Enhenced topic level monitoring'.
 
@@ -128,26 +129,27 @@ Also you should enable `Plaintext` communication between clients and brokers:
 
 ### Amazon RDS PostgreSQL
 
-On AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to `SPRING_DATASOURCE_URL` in the `tb-broker-configmap.yml`.
+Once the database switch to the ‘Available’ state, on AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to 
+`SPRING_DATASOURCE_URL` in the `tb-broker-configmap.yml`.
 
-![image](/images/install/cloud/aws-postgres-endpoint.png)
+![image](/images/mqtt-broker/install/aws-rds-endpoint.png)
 
 Also, you'll need to set `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD` with PostgreSQL `username` and `password` corresponding.
 
 ### Amazon MSK
 
-To get the list of brokers call the command:
+Once the MSK cluster switch to the ‘Active’ state, to get the list of brokers execute the next command:
 ```
 aws kafka get-bootstrap-brokers --region us-east-1 --cluster-arn $CLUSTER_ARN
 ```
 {: .copy-code}
 Where **$CLUSTER_ARN** is the Amazon Resource Name (ARN) of the MSK cluster:
 
-![image](/images/install/cloud/aws-msk-arn.png)
+![image](/images/mqtt-broker/install/aws-msk-arn.png)
 
 You'll need to paste data from the `BootstrapBrokerString` to the `TB_KAFKA_SERVERS` environment variable in the `tb-broker.yml` file.
 
-Otherwise, navigate to ‘Details’ and click ‘View client information’. Copy bootstrap server information in plaintext.
+Otherwise, click ‘View client information’. Copy bootstrap server information in plaintext.
 
 ## Step 7. Installation
 

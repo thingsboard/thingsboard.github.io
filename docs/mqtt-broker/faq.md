@@ -5,4 +5,4 @@ description: ThingsBoard MQTT Broker FAQ
 
 ---
 
-![image](/images/coming-soon.jpg)
+{% include docs/mqtt-broker/faq.md %}

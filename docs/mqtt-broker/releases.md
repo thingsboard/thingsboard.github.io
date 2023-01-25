@@ -1,11 +1,13 @@
 ---
 layout: docwithnav-mqtt-broker
-title: Releases
-description: Releases
+title: ThingsBoard MQTT Broker Release Notes
+description: ThingsBoard MQTT Broker Releases
 
 ---
 
 * TOC
 {:toc}
 
-![image](/images/coming-soon.jpg)
+## v1.0.0 (December ?, 2022)
+
+Initial release. See [GitHub](https://github.com/thingsboard/thingsboard-mqtt-broker#thingsboard-mqtt-broker) for more info.

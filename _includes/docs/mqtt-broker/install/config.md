@@ -108,13 +108,13 @@ environment variable, default value and description.
           <td>listener.tcp.netty.shutdown_quiet_period</td>
           <td>TCP_NETTY_SHUTDOWN_QUIET_PERIOD</td>
           <td>0</td>
-          <td>Period in graceful shutdown during which no new tasks are submitted</td>
+          <td>Period in seconds in graceful shutdown during which no new tasks are submitted</td>
       </tr>
       <tr>
           <td>listener.tcp.netty.shutdown_timeout</td>
           <td>TCP_NETTY_SHUTDOWN_TIMEOUT</td>
           <td>5</td>
-          <td>The max time to wait until the executor is stopped</td>
+          <td>The max time in seconds to wait until the executor is stopped</td>
       </tr>
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">SSL MQTT listener parameters</span></td>
@@ -171,13 +171,13 @@ environment variable, default value and description.
           <td>listener.ssl.netty.shutdown_quiet_period</td>
           <td>SSL_NETTY_SHUTDOWN_QUIET_PERIOD</td>
           <td>0</td>
-          <td>Period in graceful shutdown during which no new tasks are submitted</td>
+          <td>Period in seconds in graceful shutdown during which no new tasks are submitted</td>
       </tr>
       <tr>
           <td>listener.ssl.netty.shutdown_timeout</td>
           <td>SSL_NETTY_SHUTDOWN_TIMEOUT</td>
           <td>5</td>
-          <td>The max time to wait until the executor is stopped</td>
+          <td>The max time in seconds to wait until the executor is stopped</td>
       </tr>
       <tr>
           <td>listener.ssl.config.protocol</td>
@@ -186,46 +186,64 @@ environment variable, default value and description.
           <td>SSL protocol: see <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#SSLContext">this link</a></td>
       </tr>
       <tr>
-          <td>listener.ssl.config.key_store</td>
-          <td>LISTENER_SSL_KEY_STORE</td>
-          <td>mqtt_server.jks</td>
-          <td>Path to the key store that holds the SSL certificate</td>
+          <td>listener.ssl.config.credentials.type</td>
+          <td>LISTENER_SSL_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
       </tr>
       <tr>
-          <td>listener.ssl.config.key_store_password</td>
-          <td>LISTENER_SSL_KEY_STORE_PASSWORD</td>
-          <td>keystore_password</td>
-          <td>Password used to access the key store</td>
+          <td>listener.ssl.config.credentials.pem.cert_file</td>
+          <td>LISTENER_SSL_PEM_CERT</td>
+          <td>mqttserver.pem</td>
+          <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
       </tr>
       <tr>
-          <td>listener.ssl.config.key_password</td>
-          <td>LISTENER_SSL_KEY_PASSWORD</td>
-          <td>key_password</td>
-          <td>Password used to access the key</td>
+          <td>listener.ssl.config.credentials.pem.key_file</td>
+          <td>LISTENER_SSL_PEM_KEY</td>
+          <td>mqttserver_key.pem</td>
+          <td>Path to the server certificate private key file (optional)</td>
       </tr>
       <tr>
-          <td>listener.ssl.config.key_store_type</td>
+          <td>listener.ssl.config.credentials.pem.key_password</td>
+          <td>LISTENER_SSL_PEM_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Server certificate private key password (optional)</td>
+      </tr>
+      <tr>
+          <td>listener.ssl.config.credentials.keystore.type</td>
           <td>LISTENER_SSL_KEY_STORE_TYPE</td>
           <td>JKS</td>
           <td>Type of the key store</td>
+      </tr>
+      <tr>
+          <td>listener.ssl.config.credentials.keystore.store_file</td>
+          <td>LISTENER_SSL_KEY_STORE</td>
+          <td>mqttserver.jks</td>
+          <td>Path to the key store that holds the SSL certificate</td>
+      </tr>
+      <tr>
+          <td>listener.ssl.config.credentials.keystore.store_password</td>
+          <td>LISTENER_SSL_KEY_STORE_PASSWORD</td>
+          <td>server_ks_password</td>
+          <td>Password used to access the key store</td>
+      </tr>
+      <tr>
+          <td>listener.ssl.config.credentials.keystore.key_alias</td>
+          <td>LISTENER_SSL_KEY_ALIAS</td>
+          <td></td>
+          <td>Key alias</td>
       </tr> 
       <tr>
-          <td>listener.ssl.config.trust_store</td>
-          <td>LISTENER_SSL_TRUST_STORE</td>
-          <td>root_truststore.jks</td>
-          <td>Path to the trust store that holds the SSL certificate</td>
-      </tr> 
+          <td>listener.ssl.config.credentials.keystore.key_password</td>
+          <td>LISTENER_SSL_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Password used to access the key</td>
+      </tr>
       <tr>
-          <td>listener.ssl.config.trust_store_password</td>
-          <td>LISTENER_SSL_TRUST_STORE_PASSWORD</td>
-          <td>truststore_password</td>
-          <td>Password used to access the trust store</td>
-      </tr> 
-      <tr>
-          <td>listener.ssl.config.trust_store_type</td>
-          <td>SECURITY_MQTT_SSL_TRUST_STORE_TYPE</td>
-          <td>JKS</td>
-          <td>Type of the trust store</td>
+          <td>listener.ssl.config.skip_validity_check_for_client_cert</td>
+          <td>LISTENER_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
+          <td>false</td>
+          <td>Skip check of client certificate validity</td>
       </tr> 
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">HTTP server parameters</span></td>
@@ -255,28 +273,58 @@ environment variable, default value and description.
           <td>Enable/disable SSL support</td>
       </tr>
       <tr>
-          <td>server.ssl.key-store</td>
-          <td>SSL_KEY_STORE</td>
-          <td>classpath:keystore/keystore.p12</td>
-          <td>Path to the key store that holds the SSL certificate</td>
+          <td>server.ssl.credentials.type</td>
+          <td>SSL_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
       </tr>
       <tr>
-          <td>server.ssl.key-store-password</td>
-          <td>SSL_KEY_STORE_PASSWORD</td>
-          <td>thingsboard_mqtt_broker</td>
-          <td>Password used to access the key store</td>
+          <td>server.ssl.credentials.pem.cert_file</td>
+          <td>SSL_PEM_CERT</td>
+          <td>server.pem</td>
+          <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
       </tr>
       <tr>
-          <td>server.ssl.key-store-type</td>
+          <td>server.ssl.credentials.pem.key_file</td>
+          <td>SSL_PEM_KEY</td>
+          <td>server_key.pem</td>
+          <td>Path to the server certificate private key file (optional)</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.pem.key_password</td>
+          <td>SSL_PEM_KEY_PASSWORD</td>
+          <td>server_key_password</td>
+          <td>Server certificate private key password (optional)</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.type</td>
           <td>SSL_KEY_STORE_TYPE</td>
           <td>PKCS12</td>
           <td>Type of the key store</td>
       </tr>
       <tr>
-          <td>server.ssl.key-alias</td>
+          <td>server.ssl.credentials.keystore.store_file</td>
+          <td>SSL_KEY_STORE</td>
+          <td>classpath:keystore/keystore.p12</td>
+          <td>Path to the key store that holds the SSL certificate</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.store_password</td>
+          <td>SSL_KEY_STORE_PASSWORD</td>
+          <td>thingsboard_mqtt_broker</td>
+          <td>Password used to access the key store</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.key_alias</td>
           <td>SSL_KEY_ALIAS</td>
           <td>tomcat</td>
-          <td>Alias that identifies the key in the key store</td>
+          <td>Key alias</td>
+      </tr>
+      <tr>
+          <td>server.ssl.credentials.keystore.key_password</td>
+          <td>SSL_KEY_PASSWORD</td>
+          <td>thingsboard_mqtt_broker</td>
+          <td>Password used to access the key</td>
       </tr>
       <tr>
           <td>server.log_controller_error_stack_trace</td>
@@ -319,7 +367,14 @@ environment variable, default value and description.
       </tr>
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">MQTT Security parameters</span></td>
-      </tr>  
+      </tr>
+      <tr>
+          <td>security.mqtt.auth_strategy</td>
+          <td>SECURITY_MQTT_AUTH_STRATEGY</td>
+          <td>BOTH</td>
+          <td>BOTH or SINGLE - the former means the first attempt of client authentication will be by 'basic' provider
+          and then by 'ssl' provider if 'basic' is not successful; the latter means only one attempt is done according to the listener communication chosen</td>
+      </tr>
       <tr>
           <td>security.mqtt.basic.enabled</td>
           <td>SECURITY_MQTT_BASIC_ENABLED</td>
@@ -363,7 +418,7 @@ environment variable, default value and description.
           <td>actors.system.disconnect-wait-timeout-ms</td>
           <td>ACTORS_SYSTEM_DISCONNECT_WAIT_TIMEOUT_MS</td>
           <td>2000</td>
-          <td>Actors disconnect timeout</td>
+          <td>Actors disconnect timeout in milliseconds</td>
       </tr>
       <tr>
           <td>actors.persisted-device.dispatcher-pool-size</td>
@@ -387,13 +442,13 @@ environment variable, default value and description.
           <td>actors.client.wait-before-generated-actor-stop-seconds</td>
           <td>ACTORS_SYSTEM_CLIENT_WAIT_BEFORE_GENERATED_ACTOR_STOP_SECONDS</td>
           <td>10</td>
-          <td>Time to wait until the actor is stopped for clients that did not specify client id</td>
+          <td>Time in seconds to wait until the actor is stopped for clients that did not specify client id</td>
       </tr>
       <tr>
           <td>actors.client.wait-before-named-actor-stop-seconds</td>
           <td>ACTORS_SYSTEM_CLIENT_WAIT_BEFORE_NAMED_ACTOR_STOP_SECONDS</td>
           <td>60</td>
-          <td>Time to wait until the actor is stopped for clients that specified client id</td>
+          <td>Time in seconds to wait until the actor is stopped for clients that specified client id</td>
       </tr>
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">MQTT parameters</span></td>
@@ -438,13 +493,13 @@ environment variable, default value and description.
           <td>mqtt.keep-alive.monitoring-delay-ms</td>
           <td>MQTT_KEEP_ALIVE_MONITORING_DELAY_MS</td>
           <td>100</td>
-          <td>Time between subsequent checks for the non-active clients</td>
+          <td>Time in milliseconds between subsequent checks for the non-active clients</td>
       </tr>
       <tr>
           <td>mqtt.keep-alive.max-keep-alive</td>
           <td>MQTT_KEEP_ALIVE_MAX_KEEP_ALIVE_SEC</td>
           <td>600</td>
-          <td>Max value allowed by the server for keep-alive that can be used by clients</td>
+          <td>Max value in seconds allowed by the server for keep-alive that can be used by clients</td>
       </tr>
       <tr>
           <td>mqtt.topic.max-segments-count</td>
@@ -462,7 +517,7 @@ environment variable, default value and description.
           <td>mqtt.subscription-trie.wait-for-clear-lock-ms</td>
           <td>MQTT_SUB_TRIE_WAIT_FOR_CLEAR_LOCK_MS</td>
           <td>100</td>
-          <td>Maximum pause for clearing subscription storage from empty nodes</td>
+          <td>Maximum pause in milliseconds for clearing subscription storage from empty nodes</td>
       </tr>
       <tr>
           <td>mqtt.subscription-trie.clear-nodes-cron</td>
@@ -480,7 +535,7 @@ environment variable, default value and description.
           <td>mqtt.retain-msg-trie.wait-for-clear-lock-ms</td>
           <td>MQTT_RETAIN_MSG_TRIE_WAIT_FOR_CLEAR_LOCK_MS</td>
           <td>100</td>
-          <td>Maximum pause for clearing retain msg storage from empty nodes</td>
+          <td>Maximum pause in milliseconds for clearing retain msg storage from empty nodes</td>
       </tr>
       <tr>
           <td>mqtt.retain-msg-trie.clear-nodes-cron</td>
@@ -680,7 +735,7 @@ environment variable, default value and description.
           <td>spring.datasource.hikari.maxLifetime</td>
           <td>SPRING_DATASOURCE_MAX_LIFETIME</td>
           <td>600000</td>
-          <td>This property controls the max lifetime of a connection. Only when it is closed will it then be removed</td>
+          <td>This property controls the max lifetime in milliseconds of a connection. Only when it is closed will it then be removed</td>
       </tr>
       <tr>
            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Default Kafka parameters</span></td>
@@ -719,7 +774,7 @@ environment variable, default value and description.
           <td>queue.kafka.default.producer.linger-ms</td>
           <td>TB_KAFKA_DEFAULT_PRODUCER_LINGER_MS</td>
           <td>5</td>
-          <td>The producer groups together any records that arrive in between request transmissions into a single batched request</td>
+          <td>The producer groups together any records that arrive in between request transmissions into a single batched request, set in milliseconds</td>
       </tr>
       <tr>
           <td>queue.kafka.default.producer.buffer-memory</td>
@@ -731,13 +786,13 @@ environment variable, default value and description.
           <td>queue.kafka.default.consumer.session-timeout-ms</td>
           <td>TB_KAFKA_DEFAULT_CONSUMER_SESSION_TIMEOUT_MS</td>
           <td>300000</td>
-          <td>The timeout used to detect client failures when using Kafka's group management facility</td>
+          <td>The timeout in milliseconds used to detect client failures when using Kafka's group management facility</td>
       </tr>
       <tr>
           <td>queue.kafka.default.consumer.max-poll-interval-ms</td>
           <td>TB_KAFKA_DEFAULT_CONSUMER_MAX_POLL_INTERVAL_MS</td>
           <td>300000</td>
-          <td>The maximum delay between invocations of poll() when using consumer group management</td>
+          <td>The maximum delay in milliseconds between invocations of poll() when using consumer group management</td>
       </tr>
       <tr>
           <td>queue.kafka.default.consumer.max-poll-records</td>
@@ -749,7 +804,7 @@ environment variable, default value and description.
           <td>queue.kafka.default.consumer.fetch-max-bytes</td>
           <td>TB_KAFKA_DEFAULT_CONSUMER_FETCH_MAX_BYTES</td>
           <td>134217728</td>
-          <td>The maximum amount of data the server should return for a fetch request</td>
+          <td>The maximum amount of data in bytes the server should return for a fetch request</td>
       </tr>  
       <tr>
           <td>queue.kafka.consumer-stats.enabled</td>
@@ -761,13 +816,13 @@ environment variable, default value and description.
           <td>queue.kafka.consumer-stats.print-interval-ms</td>
           <td>TB_KAFKA_CONSUMER_STATS_PRINT_INTERVAL_MS</td>
           <td>60000</td>
-          <td>Statistics printing interval for Kafka's consumer-groups stats</td>
+          <td>Statistics printing interval in milliseconds for Kafka's consumer-groups stats</td>
       </tr>
       <tr>
           <td>queue.kafka.consumer-stats.kafka-response-timeout-ms</td>
           <td>TB_KAFKA_CONSUMER_STATS_RESPONSE_TIMEOUT_MS</td>
           <td>1000</td>
-          <td>Time to wait for the stats-loading requests to Kafka to finish</td>
+          <td>Time to wait in milliseconds for the stats-loading requests to Kafka to finish</td>
       </tr>
       <tr>
            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Custom Kafka parameters</span></td>
@@ -1067,7 +1122,7 @@ environment variable, default value and description.
           <td>queue.publish-msg.pack-processing-timeout</td>
           <td>TB_PUBLISH_MSG_PACK_PROCESSING_TIMEOUT</td>
           <td>10000</td>
-          <td>Timeout for processing a 'publish-msg' pack</td>
+          <td>Timeout in milliseconds for processing a 'publish-msg' pack</td>
       </tr>
       <tr>
           <td>queue.publish-msg.ack-strategy.type</td>
@@ -1097,7 +1152,7 @@ environment variable, default value and description.
           <td>queue.application-persisted-msg.pack-processing-timeout</td>
           <td>TB_APP_PERSISTED_MSG_PACK_PROCESSING_TIMEOUT</td>
           <td>2000</td>
-          <td>Timeout for processing a 'application-persisted-msg' pack</td>
+          <td>Timeout in milliseconds for processing a 'application-persisted-msg' pack</td>
       </tr>
       <tr>
           <td>queue.application-persisted-msg.ack-strategy.type</td>
@@ -1199,13 +1254,13 @@ environment variable, default value and description.
           <td>queue.client-session-event-response.max-request-timeout</td>
           <td>TB_CLIENT_SESSION_EVENT_RESPONSE_MAX_REQUEST_TIMEOUT</td>
           <td>100000</td>
-          <td>Time for Client Session Events to expire</td>
+          <td>Time for Client Session Events to expire in milliseconds</td>
       </tr>
       <tr>
           <td>queue.client-session-event-response.cleanup-interval</td>
           <td>TB_CLIENT_SESSION_EVENT_RESPONSE_CLEANUP_INTERVAL</td>
           <td>100</td>
-          <td>Period to clean-up stale Client Session Events</td>
+          <td>Period in milliseconds to clean-up stale Client Session Events</td>
       </tr>
       <tr>
           <td>queue.disconnect-client-command.poll-interval</td>
@@ -1268,19 +1323,31 @@ environment variable, default value and description.
           <td>cache.stats.intervalSec</td>
           <td>CACHE_STATS_INTERVAL_SEC</td>
           <td>60</td>
-          <td>Cache stats logging interval</td>
+          <td>Cache stats logging interval in seconds</td>
       </tr>
       <tr>
           <td>caffeine.specs.packetIdAndSerialNumber.timeToLiveInMinutes</td>
           <td>CACHE_SPECS_PACKET_ID_SERIAL_NUMBER_TTL</td>
           <td>1440</td>
-          <td>packetIdAndSerialNumber cache TTL</td>
+          <td>packetIdAndSerialNumber cache TTL in minutes</td>
       </tr>
       <tr>
           <td>caffeine.specs.packetIdAndSerialNumber.maxSize</td>
           <td>CACHE_SPECS_PACKET_ID_SERIAL_NUMBER_MAX_SIZE</td>
           <td>10000</td>
           <td>packetIdAndSerialNumber cache max size. maxSize: 0 means the cache is disabled</td>
+      </tr>
+      <tr>
+          <td>caffeine.specs.mqttClientCredentials.timeToLiveInMinutes</td>
+          <td>CACHE_SPECS_MQTT_CLIENT_CREDENTIALS_TTL</td>
+          <td>1440</td>
+          <td>mqttClientCredentials cache TTL in minutes</td>
+      </tr>
+      <tr>
+          <td>caffeine.specs.mqttClientCredentials.maxSize</td>
+          <td>CACHE_SPECS_MQTT_CLIENT_CREDENTIALS_MAX_SIZE</td>
+          <td>10000</td>
+          <td>mqttClientCredentials cache max size. maxSize: 0 means the cache is disabled</td>
       </tr>
       <tr>
            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">ThingsBoard MQTT Broker service parameters</span></td>
