@@ -119,6 +119,7 @@ Below is brief description of widget context properties:
 | widgetTitle                      | String             | If set, will override configured widget title text. **updateWidgetParams()** function must be called after this property change. |
 | detectChanges()                  | Function           | Trigger change detection for current widget. Must be invoked when widget HTML template bindings should be updated due to widget data changes. |
 | updateWidgetParams()             | Function           | Updates widget with runtime set properties such as **widgetTitle**, **hideTitlePanel**, etc. Must be invoked in order these properties changes take effect. |
+| pageLink(pageSize, page, textSearch, sortOrder) | [PageLink](https://github.com/thingsboard/thingsboard/blob/v3.4/ui-ngx/src/app/shared/models/page/page-link.ts#L96) | Using to create sorting configuration for get requests. **pageSize** - specifies how many entities will be in the page, **page** - specifies what page with entities will be get, **textSearch** - specifies what text must be included in entities, **sortOrder** - specifies in which order entities will be get. |
 | defaultSubscription              | [IWidgetSubscription](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L220")             | Default widget subscription object contains all subscription information, including current data, according to the widget type. See [Subscription object](#subscription-object). |
 | timewindowFunctions              | [TimewindowFunctions](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L45)             | Object with timewindow functions used to manage widget data time frame. Can by used by Time-series or Alarm widgets. See [Timewindow functions](#timewindow-functions). |
 | controlApi                       | [RpcApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L58)             | Object that provides API functions for RPC (Control) widgets. See [Control API](#control-api). | 
@@ -253,7 +254,7 @@ For [RPC](/docs/{{docsPrefix}}user-guide/ui/widget-library/#rpc-control-widget) 
 
 #### Timewindow functions
 
-Object with timewindow functions ([TimewindowFunctions](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L45)) used to manage widget data time frame. Can by used by [Time-series](/docs/{{docsPrefix}}user-guide/ui/widget-library/#time-series) or [Alarm](/docs/{{docsPrefix}}user-guide/ui/widget-library/#alarm-widget) widgets.
+Object with timewindow functions ([TimewindowFunctions](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L45)) used to manage widget data time frame. Can by used by [Time-series](/docs/{{docsPrefix}}user-guide/ui/widget-library/#time-series) or [Alarm](/docs/{{docsPrefix}}user-guide/ui/widget-library/#alarm-widget) widgets. Path: **widgetContext.dashboard**.
 
 | **Function**                                        | **Description**                                                                        |
 |-----------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -263,36 +264,89 @@ Object with timewindow functions ([TimewindowFunctions](https://github.com/thing
 
 #### Control API
 
-Object that provides API functions ([RpcApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L58)) for [RPC (Control)](/docs/{{docsPrefix}}user-guide/ui/widget-library/#rpc-control-widget) widgets.
+Object that provides API functions ([RpcApi](https://github.com/thingsboard/thingsboard/blob/v3.4/ui-ngx/src/app/core/api/widget-api.models.ts#L73)) for [RPC (Control)](/docs/{{docsPrefix}}user-guide/ui/widget-library/#rpc-control-widget) widgets. Path: **widgetContext.controlApi**.
 
 | **Function**                                        | **Description**                                                                        |
 |-----------------------------------------------------|----------------------------------------------------------------------------------------|
 | ``` sendOneWayCommand(method, params, timeout) ```  | Sends one way (without response) RPC command to the device. Returns command execution promise. **method** - RPC method name, string, **params** - RPC method params, custom json object, **timeout** - maximum delay in milliseconds to wait until response/acknowledgement is received.  |
 | ``` sendTwoWayCommand(method, params, timeout) ```  | Sends two way (with response) RPC command to the device. Returns command execution promise with response body in success callback. |
-
+| ``` completedCommand() ```                          | Completes RPC command to the device. |
 
 #### Actions API
 
-Set of API functions ([WidgetActionsApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L67)) to work with user defined actions.
+Set of API functions ([WidgetActionsApi](https://github.com/thingsboard/thingsboard/blob/v3.4/ui-ngx/src/app/core/api/widget-api.models.ts#L85)) to work with user defined actions. Path: **widgetContext.actionsApi**.
 
 | **Function**                                                          | **Description**                                                                        |
 |-----------------------------------------------------------------------|----------------------------------------------------------------------------------------|
 | ``` getActionDescriptors(actionSourceId) ```                          | Returns the list of action descriptors for provided **actionSourceId**                 |
 | ``` handleWidgetAction($event, descriptor, entityId, entityName) ```  | Handles action produced by particular action source. **$event** - event object associated with action, **descriptor** - action descriptor, **entityId** and **entityName** - current entity id and name provided by action source if available. |
-
+| ``` getActiveEntityInfo() ```                                         | Returns information about first find entity in widget.                                 |
+| ``` openDashboardStateInSeparateDialog(targetDashboardStateId, params?, dialogTitle?, hideDashboardToolbar?, dialogWidth?, dialogHeight?) ``` | Open dashboard state in the separate dialog by **stateId**. **targetDashboardStateId** - id of state that will be open in separate dialog, **params** - entity from dashboard state params, **dialogTitle** - title for separate dialog, **hideDashboardToolbar** - controls dasboard toolbar, **dialogWidth** - width of separate dialog, **dialogHeight** - height of pseparate dialog. |
+| ``` openDashboardStateInPopover($event, targetDashboardStateId, params?, hideDashboardToolbar?, preferredPlacement?, hideOnClickOutside?, popoverWidth?, popoverHeight?, popoverStyle?) ``` | Opens dashboard state in the popover window by **stateId**. **$event** - event object associated with action, **targetDashboardStateId** - id of state that will be open in popover, **params** - entity from dashboard state params, **hideDashboardToolbar** - controls dasboard toolbar, **preferredPlacement** - selects where popover will be opened, **hideOnClickOutside** - controls closing popup after clicking outside, **popoverWidth** - width of popover window, **popoverHeight** - height of popover window, **popoverStyle** - style of popover window. |
 
 #### State Controller
 
-Reference to Dashboard state controller ([IStateController](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L121)), providing API to manage current dashboard state.
+Reference to Dashboard state controller ([IStateController](https://github.com/thingsboard/thingsboard/blob/v3.4/ui-ngx/src/app/core/api/widget-api.models.ts#L151)), providing API to manage current dashboard state. Path: **widgetContext.dashboard.stateController**.
 
 | **Function**                                        | **Description**                                                                        |
 |-----------------------------------------------------|----------------------------------------------------------------------------------------|
 | ``` openState(id, params, openRightLayout) ```      | Navigates to new dashboard state. **id** - id of the target dashboard state, **params** - object with state parameters to use by the new state, **openRightLayout** - optional boolean argument to force open right dashboard layout if present in mobile view mode. |
 | ``` updateState(id, params, openRightLayout) ```    | Updates current dashboard state. **id** - optional id of the target dashboard state to replace current state id, **params** - object with state parameters to update current state parameters, **openRightLayout** - optional boolean argument to force open right dashboard layout if present in mobile view mode. |
+| ``` resetState() ```                                | Resets current dashboard state. |                                               
 | ``` getStateId() ```                                | Returns current dashboard state id. |
+| ``` getStateIndex() ```                             | Returns the depth of nesting of the state. |
+| ``` getStateIdAtIndex(index) ```                    | Returns **stateId** by index. |
+| ``` getCurrentStateName() ```                       | Returns **name** of current state. |
 | ``` getStateParams() ```                            | Returns current dashboard state parameters. |
+| ``` getEntityId(entityParamName) ```                | Returns **entityId** by state entity parameter name. **entityParamName** - state entity parameter name. |
 | ``` getStateParamsByStateId(id) ```                 | Returns state parameters for particular dashboard state identified by **id**. |
+| ``` openRightLayout() ```                           | Opens right layout of the current state (in mobile mode). |
+| ``` preserveState() ```                             | Saves state params into **preservedState**. |
+| ``` cleanupPreservedStates() ```                    | Cleanes **preservedState**. |
 
+#### Broadcast Service
+
+Broadcast service ([BroadcastService](https://github.com/thingsboard/thingsboard/blob/v3.4/ui-ngx/src/app/core/services/broadcast.service.ts#L25)) using for data exchange between widgets at the UI level.
+
+| **Function**                                        | **Description**                                                                        |
+|-----------------------------------------------------|----------------------------------------------------------------------------------------|
+| ``` broadcast(name, args) ```      | Sends data to subscribers. **name** - unique identifier, **argc** - data that you want to send |
+| ``` on(name, listener) ```    | Subscription to data by unique identifier and its processing. You can add as many subscribers as you want. **name** - unique identifier that using for subscriptions, **listener** - function that will process the received data. |
+
+For example let`s send data from Widget 1 to Widget 2.
+
+![image](/images/user-guide/contribution/widgets/broadcast-service-start.png) 
+
+In Widget 1 you must send data using broadcast(...):
+```  
+self.onInit = function() {
+    ...
+    let $scope = self.ctx.$scope;
+    self.ctx.broadcastService = $scope.$injector.get(self.ctx.servicesMap.get('broadcastService'));
+    $scope.click = function() {
+        self.ctx.broadcastService.broadcast('ID', 'Some data');
+    }
+    ...
+}
+```
+
+In Widget 2 you must subscribe on data using on(...):
+```  
+self.onInit = function() {
+    ...
+    let $scope = self.ctx.$scope;
+    $scope.widgetText = 'Ready to get data';
+    self.ctx.broadcastService = $scope.$injector.get(self.ctx.servicesMap.get('broadcastService'));
+    self.ctx.broadcastService.on('ID', (data) => {
+        $scope.widgetText = data[0];
+        self.ctx.detectChanges();
+    });
+    ...
+}
+```
+
+as a result on Widget 2 you can see your data:
+![image](/images/user-guide/contribution/widgets/broadcast-service-finish.png) 
 
 #### Type parameters object
 
