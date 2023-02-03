@@ -1,18 +1,111 @@
 
-Filter Nodes are used for Message filtering and routing.
+Filter Nodes are used for Message filtering and routing. You may find list of available nodes below.
 
 * TOC
 {:toc}
+  
+### asset profile switch
+
+Route incoming messages based on the name of the asset profile. The asset profile name is case-sensitive. Available since **v3.4.4**.
+
+**Output**
+
+The output relation of the rule node corresponds to the asset profile name. For example: "Freezer room", "Building", etc. 
+
+**Usage example**
+
+Experienced platform users utilize [Asset Profiles](/docs/{{docsPrefix}}user-guide/asset-profiles/) and configure specific rule chains per Asset Profile. 
+This is useful to automatically route messages the platform generates: Asset Created, Deleted, Attribute Updated, etc.
+But most of the messages are derived from the sensor data.
+Let's assume we have temperature sensors in the room assets with profiles: "Freezer Room" and "Boiler Room". We also take that there is a relation between room asset and temperature device of type "Contains". 
+The below rule chain will change the originator of the message from the device to the related asset and route the incoming messages to the "Freezer Room" or "Boiler Room" rule chains.  
+ 
+![image](/images/user-guide/rule-engine-2-0/nodes/asset-profile-switch-chain.png)
+
+You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-asset-profile-switch-example-json) and import the rule chain. 
+Note that the "rule chain" nodes will point to not existing rule chains in your environment.
+
+### device profile switch
+
+Route incoming messages based on the name of the device profile. The device profile name is case-sensitive. Available since **v3.4.4**.
+
+**Output**
+
+The output relation of the rule node corresponds to the device profile name. For example: "Temperature sensor", "Humidity sensor", etc. 
+
+**Usage example**
+
+Experienced platform users utilize [Device Profiles](/docs/{{docsPrefix}}user-guide/device-profiles/) and configure specific Rule Chains per Device Profile.
+This is useful in most of the cases, except when the device data is derived from some other message.
+For example, you may use BLE to MQTT gateway and BLE beacons. The Gateway payload typically contains MAC of the beacon and beacon data:
+
+```java
+{"mac": "7085C2F13DCD", "rssi": -25, "payload": "AABBCC"}
+```
+
+Let's assume you have different beacon profiles - indoor air quality ("IAQ sensor") and leak sensors ("Leak sensor"). 
+The below rule chain will change the originator of the message from gateway to device and forward the message to the corresponding rule chain:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/device-profile-switch-chain.png)
+
+You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-device-profile-switch-example-json) and import the rule chain. 
+Note that the "rule chain" nodes will point to not existing rule chains in your environment.
+
+### check alarm status
+
+Checks the [Alarm](/docs/{{docsPrefix}}user-guide/alarms/) status to match one of the specified statuses.
+
+**Configuration**
+
+ * Alarm status filter - Contains list of alarms statuses. 
+  Available statuses: "Active Acknowledged", "Active Unacknowledged", "Cleared Acknowledged", "Cleared Unacknowledged".
+
+![image](/images/user-guide/rule-engine-2-0/nodes/check-alarm-status-configuration.png)
+
+**Output**
+
+Output relation types: "True" or "False".
+
+**Example**
+
+The rule chain below will check that the acknowledged alarm is still active or already cleared.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/check-alarm-status-chain.png)
+
+You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-check-alarm-status-example-json) and import the rule chain.
+
+
+### check fields presence
+
+Checks the presence of the specified fields in the message and/or metadata. 
+Both message and metadata is typically a JSON object. 
+User specifies message and/or metadata field names in the configuration.
+ 
+
+**Configuration**
+
+ * Message field names - list of field names that should be present in the message;
+ * Metadata field names - list of field names that should be present in the metadata;
+ * 'Check that all specified fields are present' checkbox - check the presence of all (if checked) or of at least one field (if unchecked). 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/check-fields-presence-configuration.png)
+
+**Output**
+
+Output relation types: "True" or "False".
+
+**Example**
+
+See configuration screenshot. 
+
+
+### OTHER
+
 
 ##### Check Relation Filter Node
 
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0.1</em></strong></td>
-     </tr>
-   </thead>
-</table> 
+{% assign sinceVersion = "2.0.1" %}
+{% include templates/since.md %}
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/filter-check-relation.png)
 
