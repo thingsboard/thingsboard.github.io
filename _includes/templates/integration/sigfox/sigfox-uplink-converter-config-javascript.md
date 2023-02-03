@@ -5,8 +5,6 @@ You can use the following code, copy it to the decoder function section:
 
 // decode payload to string
 var json = decodeToJson(payload);
-
-
 var deviceName = 'Sigfox-' + json.device;
 var deviceType = 'Sigfox Airwits CO2';
 var groupName = 'UC-0023 Sigfox Airwits CO2';
@@ -77,4 +75,9 @@ return result;
 ```
 {: .copy-code}
 
+{% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/sigfox/sigfox-uplink-converter-java-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/sigfox/sigfox-uplink-converter-java-paas.png)
+{% endif %}
