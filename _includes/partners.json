@@ -206,6 +206,19 @@
     "blurb": "TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices."
   },
   {
+    "type": ["main", "nbiot", "lte"],
+    "program": "",
+    "name": "AKKR8",
+    "logo": "akkr8.png",
+    "links": {
+      "Site": {
+        "href": "https://www.akkr8.io/",
+        "target": "_blank"
+      }
+    },
+    "blurb": "AKKR8 is developed and produced in Sweden. It is a sensor-to-platform solution with a scalable design to fit different IoT scenarios. AKKR8 can run on battery, solar power, or your mains power. It uses NB-IoT or LTE-M to connect to the outside world and is sold pre-configured for the ThingsBoard platform."
+  },
+  {
     "type": ["main", "modbus"],
     "program": "",
     "name": "Kernel Sistemi",
