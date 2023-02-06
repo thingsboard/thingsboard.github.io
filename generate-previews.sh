@@ -33,7 +33,7 @@ then
             oldFilePath="$(dirname $file)/$(basename $file)"
             previewFilePath="$(dirname $file)/$(basename $file .png)-preview.png"
             # Perform the copying and make the preview file, if copying successful
-            cp $oldFilePath $previewFilePath && mogrify -resize 10% $previewFilePath
+            cp $oldFilePath $previewFilePath && mogrify -resize 'x115' $previewFilePath
             if file $previewFilePath | grep -qE 'PNG'; then
                 echo -e "${GREEN}Preview  image ${BLUE}$previewFilePath${GREEN} created.${NC}"
             else
