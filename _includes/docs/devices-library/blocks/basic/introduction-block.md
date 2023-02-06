@@ -5,5 +5,5 @@ In this guide we will:
 3. [Connect device to ThingsBoard](#connect-device-to-thingsboard).  
 4. [Check data on ThingsBoard](#check-data-on-thingsboard).
 5. [Synchronize device state using client and shared attribute requests](#synchronize-device-state-using-client-and-shared-attribute-requests)  
-6. [Control device using shared attributes](#update-the-interval-of-blinking-led-using-shared-attributes).  
-7. [Control device using RPC](#enabledisable-led-blinking-using-rpc).  
+6. [Control device using shared attributes](#control-device-using-shared-attributes).  
+7. [Control device using RPC](#control-device-using-rpc).  
