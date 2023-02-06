@@ -4,7 +4,7 @@ Filter Nodes are used for Message filtering and routing. You may find list of av
 * TOC
 {:toc}
   
-### asset profile switch
+## asset profile switch
 
 Route incoming messages based on the name of the asset profile. The asset profile name is case-sensitive. Available since **v3.4.4**.
 
@@ -25,7 +25,7 @@ The below rule chain will change the originator of the message from the device t
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-asset-profile-switch-example-json) and import the rule chain. 
 Note that the "rule chain" nodes will point to not existing rule chains in your environment.
 
-### device profile switch
+## device profile switch
 
 Route incoming messages based on the name of the device profile. The device profile name is case-sensitive. Available since **v3.4.4**.
 
@@ -51,7 +51,7 @@ The below rule chain will change the originator of the message from gateway to d
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-device-profile-switch-example-json) and import the rule chain. 
 Note that the "rule chain" nodes will point to not existing rule chains in your environment.
 
-### check alarm status
+## check alarm status
 
 Checks the [Alarm](/docs/{{docsPrefix}}user-guide/alarms/) status to match one of the specified statuses.
 
@@ -75,7 +75,7 @@ The rule chain below will check that the acknowledged alarm is still active or a
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-check-alarm-status-example-json) and import the rule chain.
 
 
-### check fields presence
+## check fields presence
 
 Checks the presence of the specified fields in the message and/or metadata. 
 Both message and metadata is typically a JSON object. 
@@ -97,6 +97,66 @@ Output relation types: "True" or "False".
 **Example**
 
 See configuration screenshot. 
+
+## check relation
+
+Checks the presence of the [Relation](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) between the originator of the message and other entities.
+If 'check relation to specific entity' is selected, one must specify a related entity. Otherwise, the rule node checks the presence of a relation to any entity that matches the direction and relation type criteria.
+
+**Configuration**
+
+ * 'check relation to specific entity' checkbox enables configuration of specific entity used to check the relation.
+ * Direction - configures direction of the relation. It is either 'From' or 'To'. The value corresponds to direction of the relation from the specific/any entity to the originator.
+   See example.
+ * Relation type - arbitrary relation type. Default relation types are 'Contains' and 'Manages', but you may create relation of any type. 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/check-relation-configuration.png)
+
+**Output**
+
+Output relation types: "True" or "False".
+
+**Example**
+
+Let's assume you have temperature sensor inside the office and also inside the warehouses. 
+During the data processing, you may want to know either the sensor is located in the office or in the warehouse.
+To achieve this one should provision the "OfficeToDevice" relation from the Office asset to the sensor device located in the office.  
+See configuration screenshot to learn how to configure the rule node for this specific case. 
+
+## entity type
+
+Filter incoming messages by the type of message originator entity. 
+Checks that the entity type of the incoming message originator matches one of the values specified in the filter.
+
+**Configuration**
+
+ * Originator types filter - list of entity types: Device, Asset, User, etc.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/check-relation-configuration.png)
+
+**Output**
+
+Output relation types: "True" or "False".
+
+**Example**
+
+See configuration screenshot.
+
+## entity type switch
+
+Switch incoming messages by the type of message originator entity.
+
+**Output**
+
+The output relation of the rule node corresponds to the entity type of the message originator. For example: "Device", "Asset", "User", etc.
+
+**Example**
+
+Let's assume you have messages from different entities processed in one rule chain. 
+You may want to split the message flow based on entity type.
+See below:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/entity-type-switch-chain.png)
 
 
 ### OTHER
