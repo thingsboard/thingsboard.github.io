@@ -77,7 +77,7 @@ All fields in resulting object are optional and will be taken from original mess
 
 Outbound Message from this Node will be new Message that was constructed using configured JavaScript function.
 
-JavaScript transform function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-javascript-functions).
+JavaScript transform function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
 <br/>
 **Example**

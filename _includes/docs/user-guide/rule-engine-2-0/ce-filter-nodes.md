@@ -10,7 +10,8 @@ Route incoming messages based on the name of the asset profile. The asset profil
 
 **Output**
 
-The output relation of the rule node corresponds to the asset profile name. For example: "Freezer room", "Building", etc. 
+The output connection of the rule node corresponds to the asset profile name. For example: "Freezer room", "Building", etc. 
+See rule node [connections](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection) for more details.
 
 **Usage example**
 
@@ -31,7 +32,8 @@ Route incoming messages based on the name of the device profile. The device prof
 
 **Output**
 
-The output relation of the rule node corresponds to the device profile name. For example: "Temperature sensor", "Humidity sensor", etc. 
+The output connection of the rule node corresponds to the device profile name. For example: "Temperature sensor", "Humidity sensor", etc. 
+See rule node [connections](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection) for more details.
 
 **Usage example**
 
@@ -39,7 +41,7 @@ Experienced platform users utilize [Device Profiles](/docs/{{docsPrefix}}user-gu
 This is useful in most of the cases, except when the device data is derived from some other message.
 For example, you may use BLE to MQTT gateway and BLE beacons. The Gateway payload typically contains MAC of the beacon and beacon data:
 
-```java
+```json
 {"mac": "7085C2F13DCD", "rssi": -25, "payload": "AABBCC"}
 ```
 
@@ -64,7 +66,7 @@ Checks the [Alarm](/docs/{{docsPrefix}}user-guide/alarms/) status to match one o
 
 **Output**
 
-Output relation types: "True" or "False".
+Output connection types: "True" or "False".
 
 **Example**
 
@@ -92,7 +94,7 @@ User specifies message and/or metadata field names in the configuration.
 
 **Output**
 
-Output relation types: "True" or "False".
+Output connection types: "True" or "False".
 
 **Example**
 
@@ -114,7 +116,7 @@ If 'check relation to specific entity' is selected, one must specify a related e
 
 **Output**
 
-Output relation types: "True" or "False".
+Output connection types: "True" or "False".
 
 **Example**
 
@@ -136,7 +138,7 @@ Checks that the entity type of the incoming message originator matches one of th
 
 **Output**
 
-Output relation types: "True" or "False".
+Output connection types: "True" or "False".
 
 **Example**
 
@@ -148,7 +150,7 @@ Switch incoming messages by the type of message originator entity.
 
 **Output**
 
-The output relation of the rule node corresponds to the entity type of the message originator. For example: "Device", "Asset", "User", etc.
+The output connection of the rule node corresponds to the entity type of the message originator. For example: "Device", "Asset", "User", etc.
 
 **Example**
 
@@ -159,149 +161,75 @@ See below:
 ![image](/images/user-guide/rule-engine-2-0/nodes/entity-type-switch-chain.png)
 
 
-### OTHER
+## message type
 
+Filter incoming messages based on one or more [predefined](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) or custom message types. 
+Checks that the message type of the incoming message matches one of the values specified in the filter.
 
-##### Check Relation Filter Node
+**Configuration**
 
-{% assign sinceVersion = "2.0.1" %}
-{% include templates/since.md %}
+ * Message types filter - list of [predefined](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) message types. 
+   Custom message types are supported as well.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-check-relation.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/message-type-configuration.png)
 
-Checks the relation from the selected entity to originator of the message by type and direction.
+**Output**
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-check-relation-config.png)
+Output connection types: "True" or "False".
 
-If relation exists - Message is sent via **True** chain, otherwise **False** chain is used.
+**Example**
 
-**Note:** Since TB Version 2.3 the rule node has the ability to check the existence of relation to a specific entity or<br> to any entity based on direction and relation type by disabling the following checkbox in the rule node configuration:
+See configuration screenshot.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/check-relation-checkbox.png)
+## message type switch
 
-In case that checkbox disabled and any relation exists - Message is sent via **True** chain, otherwise **False** chain is used.
+Route incoming messages by the message type value. 
+If incoming Message has known [Message Type](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) 
+then it is sent to the corresponding chain, otherwise, message is sent to **Other** chain.
 
-##### Check Existence Fields Node
+If you use custom message types than you can route those messages via **Other** chain of **Message Type Switch Node** 
+to the [**message type**](#message-type) configured with required routing logic.
 
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.3</em></strong></td>
-     </tr>
-   </thead>
-</table> 
+**Output**
 
-![image](/images/user-guide/rule-engine-2-0/nodes/check-existance-fields.png)
+The output connection of the rule node corresponds to the type of the message. For example: "Device", "Asset", "User", etc.
 
-Rule node checks the existence of the selected keys from incoming message data and metadata.
+**Example**
 
-![image](/images/user-guide/rule-engine-2-0/nodes/check-existance-fields-config.png)
+Let's assume you have messages with different types processed in one rule chain. 
+You may want to split the message flow based on message type.
+See below:
 
-If selected checkbox **Check that all selected keys are present** and all keys in message data and metadata exists - send Message via **True** chain, otherwise, **False** chain is used.<br>
-In case that checkbox is not selected, and at least one of the keys from data or metadata of the message exists - send Message via **True** chain, otherwise, **False**  chain is used.
+![image](/images/user-guide/rule-engine-2-0/nodes/message-type-switch-chain.png)
 
-##### Message Type Filter Node
+## script
 
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
-     </tr>
-   </thead>
-</table> 
+Evaluates boolean function using incoming message. The function may be written using [TBEL](/docs/{{docsPrefix}}user-guide/tbel/)(recommended) or plain JavaScript.  
+Script function should return boolean value and accepts three parameters.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-message-type.png)
+**Configuration**
 
-In the Node configuration, administrator defines set of allowed Message Types for incoming Message. 
-There are [predefined Message Types](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) in the system, like **Post attributes**, **Post telemetry**, **RPC Request**, etc.
-An administrator can also define any Custom Message Types in the node configuration.
+TBEL/JavaScript function receive 3 input parameters: 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-message-type-config.png)
+- <code>msg</code> - is a message payload, typically a JSON object or array.
+- <code>metadata</code> - is a message metadata. Represented as a Key-Value map. Both keys and values are strings.
+- <code>msgType</code> - is a message type, string.
 
-If incoming Message Type is expected - Message is sent via **True** chain, otherwise **False** chain is used.
+![image](/images/user-guide/rule-engine-2-0/nodes/script-filter-node-configuration.png)
 
-##### Message Type Switch Node
+**Output**
 
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
-     </tr>
-   </thead>
-</table> 
+Output connection types: "True" or "False".
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-message-type-switch.png)
-
-Route incoming messages by Message Type. If incoming Message has known [Message Type](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) then it is sent to the corresponding chain, 
-otherwise, message is sent to **Other** chain.
-
-If you use Custom Message Types than you can route those messages via **Other** chain of **Message Type Switch Node** 
-to the **Switch Node** or **Message Type Filter Node** configured with required routing logic.
-
-##### Originator Type Filter Node
-
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.1</em></strong></td>
-     </tr>
-   </thead>
-</table> 
-
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-originator-type.png)
-
-In the Node configuration, administrator defines set of allowed Originator [Entity](/docs/{{docsPrefix}}user-guide/entities-and-relations/) types for incoming Message. 
-
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-originator-type-config.png)
-
-If incoming Originator Type is expected - Message is sent via **True** chain, otherwise **False** chain is used.
-
-##### Originator Type Switch Node
-
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
-     </tr>
-   </thead>
-</table> 
-
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-originator-type-switch.png)
-
-Routes incoming messages by Originator [Entity](/docs/{{docsPrefix}}user-guide/entities-and-relations/) type. 
-
-##### Script Filter Node
-
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
-     </tr>
-   </thead>
-</table> 
-
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-script.png)
-
-Evaluates incoming Message with configured JavaScript condition. 
-
-JavaScript function receive 3 input parameters: 
-
-- <code>msg</code> - is a Message payload.
-- <code>metadata</code> - is a Message metadata.
-- <code>msgType</code> - is a Message type.
-
-Script should return Boolean value.
-If **True** - send Message via **True** chain, otherwise **False** chain is used.
-
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-script-config.png)
+**Examples**
  
 Message payload can be accessed via <code>msg</code> variable. For example <code>msg.temperature < 10;</code><br/> 
-Message metadata can be accessed via <code>metadata</code> variable. For example <code>metadata.customerName === 'John';</code><br/> 
+Message metadata can be accessed via <code>metadata</code> variable. For example <code>metadata.deviceType === 'DHT11';</code><br/> 
 Message type can be accessed via <code>msgType</code> variable. For example <code>msgType === 'POST_TELEMETRY_REQUEST'</code><br/> 
 
 Full script example:
 
-{% highlight javascript %}
+```javascript
 if(msgType === 'POST_TELEMETRY_REQUEST') {
     if(metadata.deviceType === 'vehicle') {
         return msg.humidity > 50;
@@ -311,39 +239,40 @@ if(msgType === 'POST_TELEMETRY_REQUEST') {
 }
 
 return false;
-{% endhighlight %}
+```
+{: .copy-code}
 
-JavaScript condition can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-javascript-functions).
+TBEL/JavaScript condition can be verified using [test filter function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
 You can see the real life examples, where this node is used, in the next tutorials:
 
 - [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-filter-script-node)
 
-##### Switch Node
+## switch
 
-<table  style="width:250px;">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.0</em></strong></td>
-     </tr>
-   </thead>
-</table> 
+Routes incoming message to one OR multiple output connections. 
+Node executes configured [TBEL](/docs/{{docsPrefix}}user-guide/tbel/)(recommended) or JavaScript function that returns array of strings (connection names).
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch.png)
+**Configuration**
 
-Routes incoming Message to one OR multiple output chains. Node executes configured JavaScript function.
+TBEL/JavaScript function receive 3 input parameters: 
 
-JavaScript function receive 3 input parameters: 
+- <code>msg</code> - is a message payload, typically a JSON object or array.
+- <code>metadata</code> - is a message metadata. Represented as a Key-Value map. Both keys and values are strings.
+- <code>msgType</code> - is a message type, string.
 
-- <code>msg</code> - is a Message payload.
-- <code>metadata</code> - is a Message metadata.
-- <code>msgType</code> - is a Message type.
- 
 The script should return **_an array of next Relation names_** where Message should be routed.
 If returned array is empty - message will not be routed to any Node and discarded.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch-config.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch-configuration.png)
+
+**Output**
+
+The output connection of the rule node corresponds to the result of the script execution. For example: "Low Temperature Telemetry", "Normal Temperature Telemetry", "Idle State", etc.
+See rule node [connections](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection) for more details.
+
+**Examples**
 
 Message payload can be accessed via <code>msg</code> variable. For example <code>msg.temperature < 10;</code><br/> 
 Message metadata can be accessed via <code>metadata</code> variable. For example <code>metadata.customerName === 'John';</code><br/> 
@@ -351,7 +280,7 @@ Message type can be accessed via <code>msgType</code> variable. For example <cod
 
 Full script example:
 
-{% highlight javascript %}
+```javascript
 if (msgType === 'POST_TELEMETRY_REQUEST') {
     if (msg.temperature < 18) {
         return ['Low Temperature Telemetry'];
@@ -368,71 +297,99 @@ if (msgType === 'POST_TELEMETRY_REQUEST') {
     }
 }
 return [];
-{% endhighlight %}
+```
+{: .copy-code}
 
-JavaScript switch function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-javascript-functions).
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch.png)
 
-In order to specify custom relation name **Custom** type should be selected. This will allow to input custom relation name.
-Custom relation names are case-insensitive.
+TBEL/JavaScript condition can be verified using [test filter function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch-custom-relation.png)
 
-##### GPS Geofencing Filter Node
+## GPS geofencing filter
 
-<table  style="width:15%">
-   <thead>
-     <tr>
-	 <td style="text-align: center"><strong><em>Since TB Version 2.3.1</em></strong></td>
-     </tr>
-   </thead>
-</table> 
+Filter incoming messages by GPS-based geofencing. 
+Extracts latitude and longitude parameters from the incoming message and checks them according to configured perimeter.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing.png)
+**Configuration**
 
-Filters incoming messages by GPS based parameters. Extracts latitude and longitude from data or metadata and checks if they are inside configured perimeter (geo fence).
-
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-default-config.png)
-
-The rule node fetches perimeter information from message metadata by default. If **Fetch perimeter information from message metadata** is unchecked, additional information should be configured.
-
-<br>
-
-###### Fetch perimeter information from message metadata
-
-There are two options of area definition based on the perimeter type:
-
-- Polygon 
-           
-    Metadata of the incoming message must include key with name **perimeter** and following data structure:
-     
-{% highlight java %}[[lat1,lon1],[lat2,lon2], ... ,[latN,lonN]]{% endhighlight %}
- 
-- Circle
-                 
-
-{% highlight java %}"centerLatitude": "value1", "centerLongitude": "value2", "range": "value3"
-
-All values for these keys are in double-precision floating-point data type.
-
-The "rangeUnit" key requires specific value from a list of METER, KILOMETER, FOOT, MILE, NAUTICAL_MILE (capital letters obligatory).
-{% endhighlight %}
-
-###### Fetch perimeter information from node configuration
- 
-There are two options of area definition based on the perimeter type:
- 
-- Polygon 
-             
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-polygon-config.png)           
-
-- Circle
-                  
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-config.png)          
+ * Latitude key name - name of the message field that contains location latitude;
+ * Longitude key name - name of the message field that contains location longitude;
+ * Perimeter type - Polygon or Circle;
+ * Fetch perimeter from message metadata - checkbox to load perimeter from message metadata; 
+   Enable if your perimeter is specific to device/asset and you store it as device/asset attribute;
+ * Perimeter key name - name of the metadata key that stores perimeter information;
+ * For Polygon perimeter type:  
+    * Polygon definition - string that contains array of coordinates in the following format: [[lat1, lon1],[lat2, lon2],[lat3, lon3], ... , [latN, lonN]]
+ * For Circle perimeter type:      
+    * Center latitude - latitude of the circle perimeter center;
+    * Center longitude - longitude of the circle perimeter center;
+    * Range - value of the circle perimeter range, double-precision floating-point value;
+    * Range units - one of: Meter, Kilometer, Foot, Mile, Nautical Mile;
     
-if configured latitude and longitude are inside configured perimeter message sent via **True** chain, otherwise **False** chain is used.
-      
-**Failure** chain will to be used when:
+Rule node will use default metadata key names, if the "Fetch perimeter from message metadata" is enabled and "Perimeter key name" is not configured.
+Default metadata key names for polygon perimeter type is "perimeter". Default metadata key names for circle perimeter are: "centerLatitude", "centerLongitude", "range", "rangeUnit".
 
-   - incoming message has no configured latitude or longitude key in data or metadata. 
-   - missing perimeter definition;     
-        
+Structure of the circle perimeter definition (stored in server-side attribute, for example):
+
+```json
+{"latitude":  48.198618758582384, "longitude": 24.65322245153503, "radius":  100.0, "radiusUnit": "METER" }
+```
+
+Available radius units: METER, KILOMETER, FOOT, MILE, NAUTICAL_MILE;
+    
+**Output**
+
+Output connection types: "True" or "False". 
+The "Failure" connection will to be used when: a) incoming message has no configured latitude or longitude key in data or metadata or b) missing perimeter definition;     
+
+**Examples**
+
+*Static circle perimeter*
+
+Let's assume you would like to check that the location of the device is within 100 meters from the Ukraine's Independence Monument, located in the center of Kyiv.
+The coordinates of the monument are the following: latitude = 50.4515652, longitude = 0.5236963. The configuration of the rule node is quite simple:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-static-configuration.png)
+
+*Static polygon perimeter*
+
+Let's assume a simple livestock location monitoring use case. Let's configure the rule node to monitor that the sheep is within area perimeter:
+
+We will use static polygon coordinates of the farm field: 
+
+```json
+[[48.19736726399899, 24.652353415807884], [48.19800374220741, 24.65060461551745], [48.19918370897885, 24.65317953619048], [48.19849718616351, 24.65420950445969]]
+```  
+
+You may test that rule node returns 'True' if you submit the following coordinates in the message: 
+
+```json
+{ latitude: 48.198618758582384, longitude: 24.65322245153503 }
+```
+
+![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-perimeter-static-configuration.png)
+
+*Dynamic circle/polygon perimeter*
+
+Let's review more complex livestock location monitoring case, where you may have sheeps located in different farms.
+Let's assume we have created two farms: Farm A and Farm B. Each livestock tracker device is related either to Farm A or Farm B asset.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-farm-relation.png)
+
+We will configure server-side attribute called "perimeter" with the JSON value: "[[48.19736726399899, 24.652353415807884], [48.19800374220741, 24.65060461551745], [48.19918370897885, 24.65317953619048], [48.19849718616351, 24.65420950445969]]";
+
+![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-farm-attribute.png)
+
+The below rule chain will fetch the attribute from the related asset (Farm A) and use it in the geofencing node:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-example.png)
+
+Rule node configuration is fairly simple. Please note that perimeter key name is without any prefix:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-configuration.png)
+
+You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-gps-geofencing-filter-example) and import the rule chain. 
+Note that the "rule chain" nodes will point to not existing device in the "Sheep Tracker Generator" node. 
+You will need to provision device and asset to replicate the example.
+
+
