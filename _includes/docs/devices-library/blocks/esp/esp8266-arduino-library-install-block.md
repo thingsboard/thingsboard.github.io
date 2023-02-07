@@ -2,7 +2,7 @@
 {% assign installESP8266='
     ===
         image: /images/devices-library/basic/esp8266-arduino-ide-board-manager.png,
-        title: Put <b>ESP8266<b> into search field and install <b><i>esp8266 by Espressif Community</i></b>.
+        title: Put ESP8266 into search field and install esp8266 by Espressif Community.
 ' %}
 
 Install the board for Arduino IDE:

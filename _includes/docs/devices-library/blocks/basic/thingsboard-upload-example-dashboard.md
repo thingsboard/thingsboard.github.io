@@ -46,3 +46,7 @@ In order to add the dashboard to ThingsBoard we need to import it, to do this we
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importDashboardCE %}
 {% endif %} 
+
+After importing we should choose entity alias for our device.  
+To do this - we need to press pen icon and select entity aliases, select alias "My device" and open it to edit by pressing pen icon.    
+Then choose a device with name My device from dropdown list and save entity alias, now you should be able to see the data from the device.     
