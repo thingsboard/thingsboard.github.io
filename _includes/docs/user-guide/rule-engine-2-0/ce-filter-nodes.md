@@ -26,6 +26,8 @@ The below rule chain will change the originator of the message from the device t
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-asset-profile-switch-example-json) and import the rule chain. 
 Note that the "rule chain" nodes will point to not existing rule chains in your environment.
 
+<br>
+
 ## device profile switch
 
 Route incoming messages based on the name of the device profile. The device profile name is case-sensitive. Available since **v3.4.4**.
@@ -53,6 +55,8 @@ The below rule chain will change the originator of the message from gateway to d
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-device-profile-switch-example-json) and import the rule chain. 
 Note that the "rule chain" nodes will point to not existing rule chains in your environment.
 
+<br>
+
 ## check alarm status
 
 Checks the [Alarm](/docs/{{docsPrefix}}user-guide/alarms/) status to match one of the specified statuses.
@@ -76,8 +80,9 @@ The rule chain below will check that the acknowledged alarm is still active or a
 
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-check-alarm-status-example-json) and import the rule chain.
 
+<br>
 
-## check fields presence
+## check fields presence {#check-existence-fields-node}
 
 Checks the presence of the specified fields in the message and/or metadata. 
 Both message and metadata is typically a JSON object. 
@@ -100,7 +105,9 @@ Output connection types: "True" or "False".
 
 See configuration screenshot. 
 
-## check relation
+<br>
+
+## check relation {#check-relation-filter-node}
 
 Checks the presence of the [Relation](/docs/{{docsPrefix}}user-guide/entities-and-relations/#relations) between the originator of the message and other entities.
 If 'check relation to specific entity' is selected, one must specify a related entity. Otherwise, the rule node checks the presence of a relation to any entity that matches the direction and relation type criteria.
@@ -125,7 +132,9 @@ During the data processing, you may want to know either the sensor is located in
 To achieve this one should provision the "OfficeToDevice" relation from the Office asset to the sensor device located in the office.  
 See configuration screenshot to learn how to configure the rule node for this specific case. 
 
-## entity type
+<br>
+
+## entity type {#originator-type-filter-node}
 
 Filter incoming messages by the type of message originator entity. 
 Checks that the entity type of the incoming message originator matches one of the values specified in the filter.
@@ -144,7 +153,9 @@ Output connection types: "True" or "False".
 
 See configuration screenshot.
 
-## entity type switch
+<br>
+
+## entity type switch {#originator-type-switch-node}
 
 Switch incoming messages by the type of message originator entity.
 
@@ -160,8 +171,9 @@ See below:
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/entity-type-switch-chain.png)
 
+<br>
 
-## message type
+## message type {#message-type-filter-node}
 
 Filter incoming messages based on one or more [predefined](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) or custom message types. 
 Checks that the message type of the incoming message matches one of the values specified in the filter.
@@ -181,7 +193,9 @@ Output connection types: "True" or "False".
 
 See configuration screenshot.
 
-## message type switch
+<br>
+
+## message type switch {#message-type-switch-node}
 
 Route incoming messages by the message type value. 
 If incoming Message has known [Message Type](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) 
@@ -202,7 +216,9 @@ See below:
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/message-type-switch-chain.png)
 
-## script
+<br>
+
+## script {#script-filter-node}
 
 Evaluates boolean function using incoming message. The function may be written using [TBEL](/docs/{{docsPrefix}}user-guide/tbel/)(recommended) or plain JavaScript.  
 Script function should return boolean value and accepts three parameters.
@@ -249,7 +265,9 @@ You can see the real life examples, where this node is used, in the next tutoria
 - [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/#add-filter-script-node)
 
-## switch
+<br>
+
+## switch {#switch-node}
 
 Routes incoming message to one OR multiple output connections. 
 Node executes configured [TBEL](/docs/{{docsPrefix}}user-guide/tbel/)(recommended) or JavaScript function that returns array of strings (connection names).
@@ -304,8 +322,9 @@ return [];
 
 TBEL/JavaScript condition can be verified using [test filter function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
+<br>
 
-## GPS geofencing filter
+## GPS geofencing filter {#gps-geofencing-filter-node}
 
 Filter incoming messages by GPS-based geofencing. 
 Extracts latitude and longitude parameters from the incoming message and checks them according to configured perimeter.
@@ -392,4 +411,4 @@ You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248
 Note that the "rule chain" nodes will point to not existing device in the "Sheep Tracker Generator" node. 
 You will need to provision device and asset to replicate the example.
 
-
+<br>
