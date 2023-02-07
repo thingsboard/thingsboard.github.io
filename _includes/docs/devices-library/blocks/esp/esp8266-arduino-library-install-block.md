@@ -2,7 +2,7 @@
 {% assign installESP8266='
     ===
         image: /images/devices-library/basic/esp8266-arduino-ide-board-manager.png,
-        title: Put **ESP8266** into search field and install **esp8266 by Espressif Community**.
+        title: Put <b>ESP8266<b> into search field and install <b><i>esp8266 by Espressif Community</i></b>.
 ' %}
 
 Install the board for Arduino IDE:
@@ -18,3 +18,5 @@ Next, go to **Tools** > **Board** > **Board Manager** and install the ***ESP8266
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=installESP8266 %}
 
 After the installation is complete, select the board from the **Tools** > **Board menu**.  
+
+{% assign mbedtlsInstallationRequired="true" %}
