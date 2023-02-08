@@ -107,10 +107,8 @@ description: ThingsBoard PE Edge upgrade instructions
     </li>
 </ul>
 
-{% capture update_server_first %}
-**Please update ThingsBoard server to the latest version before updating Edge services**.
-{% endcapture %}
-{% include templates/warn-banner.md content=update_server_first %}
+{% assign docsPrefix = "pe/" %}
+{% include templates/edge/install/compatibility-warning-general.md %}
 
 ## Prepare for upgrading ThingsBoard Edge {#prepare-for-upgrading}
 
@@ -191,6 +189,10 @@ Launch the "pgAdmin" software and login as superuser (postgres).
 Open your server and create backup of database **tb_edge** using 'Backup Dialog' functionality of "pgAdmin".
 
 ## Upgrading to 3.4.3EDGEPE {#upgrading-to-343}
+
+{% assign serverVersion = "3.4.3PE" %}
+{% assign updateServerLink = "#upgrading-to-343pe" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
 
 ### Ubuntu/CentOS {#ubuntucentos-343}
 
@@ -369,6 +371,10 @@ net start tb-edge
 
 ## Upgrading to 3.4.1EDGEPE {#upgrading-to-341}
 
+{% assign serverVersion = "3.4.1PE" %}
+{% assign updateServerLink = "#upgrading-to-341pe" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
+
 ### Ubuntu/CentOS {#ubuntucentos-341}
 
 **NOTE**: These steps are applicable for ThingsBoard Edge 3.4.0EDGEPE version.
@@ -546,6 +552,10 @@ net start tb-edge
 
 ## Upgrading to 3.4EDGEPE {#upgrading-to-34}
 
+{% assign serverVersion = "3.4PE" %}
+{% assign updateServerLink = "#upgrading-to-34pe" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
+
 ### Ubuntu/CentOS {#ubuntucentos-34}
 
 **NOTE**: These steps are applicable for ThingsBoard Edge 3.3.4.1EDGE version.
@@ -721,6 +731,10 @@ net start tb-edge
 {: .copy-code}
 
 ## Upgrading to 3.3.4.1EDGEPE {#upgrading-to-3341}
+
+{% assign serverVersion = "3.3.4.1PE" %}
+{% assign updateServerLink = "#upgrading-to-3341pe" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
 
 ### Ubuntu/CentOS {#ubuntucentos-3341}
 
@@ -898,6 +912,10 @@ net start tb-edge
 
 ## Upgrading to 3.3.4EDGEPE {#upgrading-to-334}
 
+{% assign serverVersion = "3.3.4PE" %}
+{% assign updateServerLink = "#upgrading-to-334pe" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
+
 ### Ubuntu/CentOS {#ubuntucentos-334}
 
 **NOTE**: These steps are applicable for ThingsBoard Edge 3.3.3EDGE version.
@@ -1073,6 +1091,10 @@ net start tb-edge
 {: .copy-code}
 
 ## Upgrading to 3.3.3EDGE {#upgrading-to-333}
+
+{% assign serverVersion = "3.3.3PE" %}
+{% assign updateServerLink = "#upgrading-to-333pe" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
 
 ### Ubuntu/CentOS {#ubuntucentos-333}
 
