@@ -321,10 +321,14 @@
             let subMenuActive = false;
             menuElement.on('mouseleave', function (event) {
                 if (!$(event.relatedTarget).parents('div.sub-menu-container').length) {
-                    subMenuActive = false;
-                    submenuContainer.removeClass('active bounds-transition');
-                    menuItems.removeClass('active');
-                    indicator.removeClass('left-transition');
+                    setTimeout(function() {
+                        if (!submenuContainer.is(':hover')) {
+                            subMenuActive = false;
+                            submenuContainer.removeClass('active bounds-transition');
+                            menuItems.removeClass('active');
+                            indicator.removeClass('left-transition');
+                        }
+                    }, 200)
                 }
             });
             submenuContainer.on('mouseleave', function (event) {
@@ -339,32 +343,36 @@
                 let item = $( this );
                 let subMenuId = item.attr('data-submenu-id');
                 item.on('mouseenter', function () {
-                    let submenus = $('nav.head-menu > div.sub-menu-container > div');
-                    submenus.css('display', 'none');
-                    menuItems.removeClass('active');
-                    item.addClass('active');
-                    let targetSubMenu = $('nav.head-menu > div.sub-menu-container > div#'+subMenuId);
-                    targetSubMenu.css('display', 'block');
-                    submenuContainer.css('overflow', 'visible');
-                    let offset = (item.outerWidth() - targetSubMenu.outerWidth()) / 2;
-                    let left = item.position().left + offset;
-                    let windowOverflow = window.innerWidth - (item.offset().left + offset + targetSubMenu.outerWidth());
-                    if (windowOverflow < 0) {
-                        left += windowOverflow;
-                    }
-                    submenuContainer.css('left', left + 'px');
-                    if (!subMenuActive) {
-                        submenuContainer.addClass('active');
-                        subMenuActive = true;
-                    } else {
-                        submenuContainer.addClass('bounds-transition');
-                        indicator.addClass('left-transition');
-                    }
-                    indicator.css('left', item.position().left);
-                    indicator.css('width', item.outerWidth());
-                    submenuContainer.css('height', targetSubMenu.outerHeight() + 'px');
-                    submenuContainer.css('width', targetSubMenu.outerWidth() + 'px');
-                    submenuContainer.css('overflow', 'hidden');
+                    setTimeout(function() {
+                        if (item.is(':hover')) {
+                            let submenus = $('nav.head-menu > div.sub-menu-container > div');
+                            submenus.css('display', 'none');
+                            menuItems.removeClass('active');
+                            item.addClass('active');
+                            let targetSubMenu = $('nav.head-menu > div.sub-menu-container > div#'+subMenuId);
+                            targetSubMenu.css('display', 'block');
+                            submenuContainer.css('overflow', 'visible');
+                            let offset = (item.outerWidth() - targetSubMenu.outerWidth()) / 2;
+                            let left = item.position().left + offset;
+                            let windowOverflow = window.innerWidth - (item.offset().left + offset + targetSubMenu.outerWidth());
+                            if (windowOverflow < 0) {
+                                left += windowOverflow;
+                            }
+                            submenuContainer.css('left', left + 'px');
+                            if (!subMenuActive) {
+                                submenuContainer.addClass('active');
+                                subMenuActive = true;
+                            } else {
+                                submenuContainer.addClass('bounds-transition');
+                                indicator.addClass('left-transition');
+                            }
+                            indicator.css('left', item.position().left);
+                            indicator.css('width', item.outerWidth());
+                            submenuContainer.css('height', targetSubMenu.outerHeight() + 'px');
+                            submenuContainer.css('width', targetSubMenu.outerWidth() + 'px');
+                            submenuContainer.css('overflow', 'hidden');
+                        }
+                    }, 100)
                 });
             });
 
