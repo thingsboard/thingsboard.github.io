@@ -7,27 +7,21 @@ REST API.
 
 {% assign updatingSharedAttributeCE = '
     ===
-        image: /images/user-guide/attributes/add-shared-ce-src.png,
-        title: test
+        image: /images/user-guide/attributes/add-shared-ce-src.png
     ===
-        image: /images/user-guide/attributes/add-shared-ce2-src.png,
-        title: test
+        image: /images/user-guide/attributes/add-shared-ce2-src.png
     ===
-        image: /images/user-guide/attributes/add-shared-ce3-src.png,
-        title: test
+        image: /images/user-guide/attributes/add-shared-ce3-src.png
     '
 %}
 
 {% assign updatingSharedAttributePE = '
     ===
-        image: /images/user-guide/attributes/add-shared-pe-src.png,
-        title: test
+        image: /images/user-guide/attributes/add-shared-pe-src.png
     ===
-        image: /images/user-guide/attributes/add-shared-pe2-src.png,
-        title: test
+        image: /images/user-guide/attributes/add-shared-pe2-src.png
     ===
-        image: /images/user-guide/attributes/add-shared-pe3-src.png,
-        title: test
+        image: /images/user-guide/attributes/add-shared-pe3-src.png
     '
 %}
 
