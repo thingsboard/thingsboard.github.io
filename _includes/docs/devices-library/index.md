@@ -13,3 +13,7 @@ ThingsBoard Device Library and device connecting guides.
 
 [How to connect NodeMCU V3 to ThingsBoard?](/docs/devices-library/{{docsPrefix}}nodemcuv3/)  
 
+
+#### Minicomputers
+
+[How to connect OrangePI to ThingsBoard?](/docs/devices-library/{{docsPrefix}}orangepi/)
