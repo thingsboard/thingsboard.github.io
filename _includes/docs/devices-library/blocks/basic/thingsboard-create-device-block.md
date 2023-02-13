@@ -8,7 +8,7 @@
         title: Click on the "+" icon in the top right corner of the table and then select "Add new device".
     ===
         image: /images/helloworld/hello-world-step-1-item-3.png 
-        title: Input device name. For example, "My New Device". No other changes required at this time. Click "Add" to add the device.
+        title: Input device name. For example, "My Device". No other changes required at this time. Click "Add" to add the device.
     ===
         image: /images/helloworld/hello-world-step-1-item-4.png 
         title: Now your device should be listed first, since the table sort devices using the time of the creation by default.
@@ -33,7 +33,7 @@
         title: Click on the "+" icon in the top right corner of the table and then select "Add Device".
     ===
         image: /images/helloworld/hello-world-pe-step-1-item-4.png,
-        title: Input device name. For example, "My New Device". No other changes are required at this time. Click "Add" to add the device.
+        title: Input device name. For example, <b>My Device</b>. No other changes are required at this time. Click "Add" to add the device.
     ===
         image: /images/helloworld/hello-world-pe-step-1-item-5.png,
         title: Now your device should be listed first, since the table sorts devices using the time of the creation by default.

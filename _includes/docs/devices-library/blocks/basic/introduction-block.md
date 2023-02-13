@@ -1,9 +1,15 @@
 
-In this guide we will:  
-1. [Create device on ThingsBoard](#create-device-on-thingsboard).  
-2. [Install required libraries and tools](#install-required-libraries-and-tools).  
-3. [Connect device to ThingsBoard](#connect-device-to-thingsboard).  
-4. [Check data on ThingsBoard](#check-data-on-thingsboard).
-5. [Synchronize device state using client and shared attribute requests](#synchronize-device-state-using-client-and-shared-attribute-requests)  
-6. [Control device using shared attributes](#control-device-using-shared-attributes).  
-7. [Control device using RPC](#control-device-using-rpc).  
+In this guide we will learn how to [create device on Thingsboard](#create-device-on-thingsboard), [install required libraries and tools](#install-required-libraries-and-tools).  
+After this we will [modify our code and upload it to the device](#connect-device-to-thingsboard), and [check the results of our coding and check data on ThingsBoard using imported dashboard](#check-data-on-thingsboard).
+Our device will synchronize with ThingsBoard using [client and shared attributes requests functionality](#synchronize-device-state-using-client-and-shared-attribute-requests).      
+Of course we will control our device using provided functionality like [shared attributes](#control-device-using-shared-attributes) or [RPC requests](#control-device-using-rpc).  
+
+### Prerequisites
+
+To continue with this guide we will need the following:  
+{{ prerequisites }}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+- [ThingsBoard account](https://thingsboard.cloud)
+{% else %}
+- [ThingsBoard account](https://demo.thingsboard.io)
+{% endif %}

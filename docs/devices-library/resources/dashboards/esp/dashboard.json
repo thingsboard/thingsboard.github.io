@@ -1,327 +1,11 @@
 {
-  "title": "Check data and control device",
+  "title": "Check and control device data dashboard",
   "image": null,
   "mobileHide": false,
   "mobileOrder": null,
   "configuration": {
     "description": "",
     "widgets": {
-      "236453bb-240b-3bc0-7cbe-6ccf5f73696b": {
-        "isSystemType": true,
-        "bundleAlias": "charts",
-        "typeAlias": "timeseries_bars_flot",
-        "type": "timeseries",
-        "title": "New widget",
-        "image": null,
-        "description": null,
-        "sizeX": 8,
-        "sizeY": 5,
-        "config": {
-          "datasources": [
-            {
-              "type": "entity",
-              "name": null,
-              "entityAliasId": "8c655e75-6c9c-5c47-bf9d-5eab6e9a8888",
-              "filterId": null,
-              "dataKeys": [
-                {
-                  "name": "temperature",
-                  "type": "timeseries",
-                  "label": "temperature",
-                  "color": "#2196f3",
-                  "settings": {},
-                  "_hash": 0.6822789466743265
-                }
-              ],
-              "latestDataKeys": []
-            }
-          ],
-          "timewindow": {
-            "realtime": {
-              "timewindowMs": 60000
-            },
-            "aggregation": {
-              "limit": 200,
-              "type": "AVG"
-            }
-          },
-          "showTitle": true,
-          "backgroundColor": "#fff",
-          "color": "rgba(0, 0, 0, 0.87)",
-          "padding": "8px",
-          "settings": {
-            "shadowSize": 4,
-            "fontColor": "#545454",
-            "fontSize": 10,
-            "xaxis": {
-              "showLabels": true,
-              "color": "#545454"
-            },
-            "yaxis": {
-              "showLabels": true,
-              "color": "#545454"
-            },
-            "grid": {
-              "color": "#545454",
-              "tickColor": "#DDDDDD",
-              "verticalLines": true,
-              "horizontalLines": true,
-              "outlineWidth": 1
-            },
-            "stack": true,
-            "tooltipIndividual": false,
-            "defaultBarWidth": 600
-          },
-          "title": "Temperature",
-          "dropShadow": true,
-          "enableFullscreen": true,
-          "titleStyle": {
-            "fontSize": "16px",
-            "fontWeight": 400
-          },
-          "widgetStyle": {},
-          "useDashboardTimewindow": true,
-          "showLegend": true,
-          "actions": {},
-          "showTitleIcon": false,
-          "titleTooltip": "",
-          "enableDataExport": true,
-          "widgetCss": "",
-          "pageSize": 1024,
-          "noDataDisplayMessage": "",
-          "legendConfig": {
-            "direction": "column",
-            "position": "bottom",
-            "sortDataKeys": false,
-            "showMin": false,
-            "showMax": false,
-            "showAvg": true,
-            "showTotal": false,
-            "showLatest": false
-          }
-        },
-        "row": 0,
-        "col": 0,
-        "id": "236453bb-240b-3bc0-7cbe-6ccf5f73696b"
-      },
-      "bdf3216c-8701-3ec1-0642-77cb69609c3d": {
-        "isSystemType": true,
-        "bundleAlias": "control_widgets",
-        "typeAlias": "switch_control",
-        "type": "rpc",
-        "title": "New widget",
-        "image": null,
-        "description": null,
-        "sizeX": 4,
-        "sizeY": 2.5,
-        "config": {
-          "targetDeviceAliases": [],
-          "showTitle": false,
-          "backgroundColor": "#e6e7e8",
-          "color": "rgba(0, 0, 0, 0.87)",
-          "padding": "0px",
-          "settings": {
-            "title": "LED state",
-            "showOnOffLabels": true,
-            "initialValue": true,
-            "retrieveValueMethod": "attribute",
-            "valueKey": "ledState",
-            "parseValueFunction": "return data ? true : false;",
-            "setValueMethod": "setLedState",
-            "convertValueFunction": "return value;",
-            "requestTimeout": 500,
-            "requestPersistent": false
-          },
-          "title": "Set LED state",
-          "dropShadow": true,
-          "enableFullscreen": false,
-          "widgetStyle": {},
-          "titleStyle": {
-            "fontSize": "16px",
-            "fontWeight": 400
-          },
-          "useDashboardTimewindow": true,
-          "showLegend": false,
-          "actions": {},
-          "decimals": 2,
-          "datasources": [],
-          "targetDeviceAliasIds": [
-            "8c655e75-6c9c-5c47-bf9d-5eab6e9a8888"
-          ],
-          "enableDataExport": true,
-          "widgetCss": "",
-          "pageSize": 1024,
-          "noDataDisplayMessage": ""
-        },
-        "row": 0,
-        "col": 0,
-        "id": "bdf3216c-8701-3ec1-0642-77cb69609c3d"
-      },
-      "e95fb420-e727-1a13-bf39-587e8be285b8": {
-        "isSystemType": true,
-        "bundleAlias": "control_widgets",
-        "typeAlias": "round_switch",
-        "type": "rpc",
-        "title": "New widget",
-        "image": null,
-        "description": null,
-        "sizeX": 2.5,
-        "sizeY": 2,
-        "config": {
-          "targetDeviceAliases": [],
-          "showTitle": false,
-          "backgroundColor": "#e6e7e8",
-          "color": "rgba(0, 0, 0, 0.87)",
-          "padding": "0px",
-          "settings": {
-            "title": "Change working mode of LED",
-            "initialValue": true,
-            "retrieveValueMethod": "attribute",
-            "valueKey": "ledMode",
-            "parseValueFunction": "return data ? true : false;",
-            "setValueMethod": "setLedMode",
-            "convertValueFunction": "return value ? 1 : 0;",
-            "requestTimeout": 500,
-            "requestPersistent": false
-          },
-          "title": "Change working mode of LED",
-          "dropShadow": true,
-          "enableFullscreen": false,
-          "widgetStyle": {},
-          "titleStyle": {
-            "fontSize": "16px",
-            "fontWeight": 400
-          },
-          "useDashboardTimewindow": true,
-          "showLegend": false,
-          "actions": {},
-          "decimals": 2,
-          "datasources": [],
-          "targetDeviceAliasIds": [
-            "8c655e75-6c9c-5c47-bf9d-5eab6e9a8888"
-          ],
-          "enableDataExport": true,
-          "widgetCss": "",
-          "pageSize": 1024,
-          "noDataDisplayMessage": "",
-          "showTitleIcon": false,
-          "titleTooltip": ""
-        },
-        "row": 0,
-        "col": 0,
-        "id": "e95fb420-e727-1a13-bf39-587e8be285b8"
-      },
-      "54107065-481a-a96b-e804-5cbe229266d7": {
-        "isSystemType": true,
-        "bundleAlias": "charts",
-        "typeAlias": "state_chart",
-        "type": "timeseries",
-        "title": "New widget",
-        "image": null,
-        "description": null,
-        "sizeX": 8,
-        "sizeY": 5,
-        "config": {
-          "datasources": [
-            {
-              "type": "entity",
-              "name": null,
-              "entityAliasId": "8c655e75-6c9c-5c47-bf9d-5eab6e9a8888",
-              "filterId": null,
-              "dataKeys": [
-                {
-                  "name": "ledState",
-                  "type": "timeseries",
-                  "label": "ledState",
-                  "color": "#2196f3",
-                  "settings": {},
-                  "_hash": 0.20358502119065147
-                }
-              ],
-              "latestDataKeys": []
-            }
-          ],
-          "timewindow": {
-            "realtime": {
-              "timewindowMs": 60000
-            }
-          },
-          "showTitle": true,
-          "backgroundColor": "#fff",
-          "color": "rgba(0, 0, 0, 0.87)",
-          "padding": "8px",
-          "settings": {
-            "stack": false,
-            "fontSize": 10,
-            "fontColor": "#545454",
-            "showTooltip": true,
-            "tooltipIndividual": false,
-            "tooltipCumulative": false,
-            "hideZeros": false,
-            "tooltipValueFormatter": "if (value) {\n    return 'On';\n} else {\n    return 'Off';\n}",
-            "grid": {
-              "verticalLines": true,
-              "horizontalLines": true,
-              "outlineWidth": 1,
-              "color": "#545454",
-              "backgroundColor": null,
-              "tickColor": "#DDDDDD"
-            },
-            "xaxis": {
-              "title": null,
-              "showLabels": true,
-              "color": "#545454"
-            },
-            "yaxis": {
-              "min": null,
-              "max": null,
-              "title": null,
-              "showLabels": true,
-              "color": "#545454",
-              "tickSize": null,
-              "tickDecimals": 0,
-              "ticksFormatter": "if (value) {\n    return 'On';\n} else {\n    return 'Off';\n}"
-            },
-            "shadowSize": 4,
-            "smoothLines": false,
-            "comparisonEnabled": false,
-            "xaxisSecond": {
-              "axisPosition": "top",
-              "title": null,
-              "showLabels": true
-            },
-            "customLegendEnabled": false
-          },
-          "title": "LED state history",
-          "dropShadow": true,
-          "enableFullscreen": true,
-          "titleStyle": {
-            "fontSize": "16px",
-            "fontWeight": 400
-          },
-          "widgetStyle": {},
-          "useDashboardTimewindow": true,
-          "showLegend": false,
-          "actions": {},
-          "legendConfig": {
-            "direction": "column",
-            ",position": "bottom",
-            "showMin": false,
-            "showMax": false,
-            "showAvg": false,
-            "showTotal": false
-          },
-          "showTitleIcon": false,
-          "titleTooltip": "",
-          "enableDataExport": true,
-          "widgetCss": "",
-          "pageSize": 1024,
-          "noDataDisplayMessage": ""
-        },
-        "row": 0,
-        "col": 0,
-        "id": "54107065-481a-a96b-e804-5cbe229266d7"
-      },
       "c491181b-10b7-eef8-516b-63e55a076b54": {
         "isSystemType": true,
         "bundleAlias": "charts",
@@ -404,8 +88,8 @@
             "customLegendEnabled": false
           },
           "title": "LED Mode history",
-          "dropShadow": true,
-          "enableFullscreen": true,
+          "dropShadow": false,
+          "enableFullscreen": false,
           "titleStyle": {
             "fontSize": "16px",
             "fontWeight": 400
@@ -433,16 +117,16 @@
         "col": 0,
         "id": "c491181b-10b7-eef8-516b-63e55a076b54"
       },
-      "9c38de8d-f044-28c1-2e76-8131470abf60": {
+      "1f7287a2-8b34-6c21-7b0d-2e019fbc8650": {
         "isSystemType": true,
         "bundleAlias": "cards",
-        "typeAlias": "attributes_card",
+        "typeAlias": "markdown_card",
         "type": "latest",
         "title": "New widget",
         "image": null,
         "description": null,
-        "sizeX": 7.5,
-        "sizeY": 3,
+        "sizeX": 5,
+        "sizeY": 3.5,
         "config": {
           "datasources": [
             {
@@ -452,20 +136,26 @@
               "filterId": null,
               "dataKeys": [
                 {
-                  "name": "macAddress",
+                  "name": "active",
                   "type": "attribute",
-                  "label": "macAddress",
+                  "label": "Active",
                   "color": "#2196f3",
                   "settings": {},
-                  "_hash": 0.23689872005207346
+                  "_hash": 0.38379068391291593,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
                 },
                 {
-                  "name": "rssi",
+                  "name": "macAddress",
                   "type": "attribute",
-                  "label": "RSSI",
-                  "color": "#f44336",
+                  "label": "MAC address",
+                  "color": "#ffc107",
                   "settings": {},
-                  "_hash": 0.4350191105245492,
+                  "_hash": 0.6118713898753451,
                   "aggregationType": null,
                   "units": null,
                   "decimals": null,
@@ -479,13 +169,81 @@
                   "label": "BSSID",
                   "color": "#4caf50",
                   "settings": {},
-                  "_hash": 0.8255938382326226,
+                  "_hash": 0.8795593505423704,
                   "aggregationType": null,
                   "units": null,
                   "decimals": null,
                   "funcBody": null,
                   "usePostProcessing": null,
                   "postFuncBody": null
+                },
+                {
+                  "name": "rssi",
+                  "type": "attribute",
+                  "label": "RSSI",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.8983182442376886,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "type",
+                  "type": "entityField",
+                  "label": "Type",
+                  "color": "#607d8b",
+                  "settings": {},
+                  "_hash": 0.7289591281856399
+                },
+                {
+                  "name": "createdTime",
+                  "type": "entityField",
+                  "label": "createdTime",
+                  "color": "#9c27b0",
+                  "settings": {},
+                  "_hash": 0.5180026159688066,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "label",
+                  "type": "entityField",
+                  "label": "Label",
+                  "color": "#8bc34a",
+                  "settings": {},
+                  "_hash": 0.10404774858961197
+                },
+                {
+                  "name": "channel",
+                  "type": "attribute",
+                  "label": "channel",
+                  "color": "#3f51b5",
+                  "settings": {},
+                  "_hash": 0.0805385833746276
+                },
+                {
+                  "name": "localIp",
+                  "type": "attribute",
+                  "label": "localIp",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.9631246780607144
+                },
+                {
+                  "name": "ssid",
+                  "type": "attribute",
+                  "label": "ssid",
+                  "color": "#ffeb3b",
+                  "settings": {},
+                  "_hash": 0.23111185160488734
                 }
               ]
             }
@@ -504,8 +262,8 @@
               "interval": 1000,
               "timewindowMs": 60000,
               "fixedTimewindow": {
-                "startTimeMs": 1675275520883,
-                "endTimeMs": 1675361920883
+                "startTimeMs": 1676199078544,
+                "endTimeMs": 1676285478544
               },
               "quickInterval": "CURRENT_DAY"
             },
@@ -517,33 +275,38 @@
           "showTitle": false,
           "backgroundColor": "#fff",
           "color": "rgba(0, 0, 0, 0.87)",
-          "padding": "8px",
-          "settings": {},
-          "title": "New Attributes card",
-          "useDashboardTimewindow": true,
+          "padding": "0px",
+          "settings": {
+            "useMarkdownTextFunction": false,
+            "markdownTextPattern": "##### ${entityName}\n\n\n| **Attribute**   | **Current value** |\n|:-:|:-:|\n| **MAC address** | ${MAC address}    |\n| **RSSI**        | ${RSSI}           |\n| **BSSID**       | ${BSSID}          |\n| **SSID**        | ${ssid}           |\n| **Channel**     | ${channel}        |\n| **Local IP**    | ${localIp}        |\n| **Active**      | ${Active}         |\n\n###### Device info\n\n**Device label** - ${entityLabel}   \n**Device type**- ${Type}  \n**Created time** - {{ ${createdTime} | date:'full' }}  \n\n"
+          },
+          "title": "",
           "showTitleIcon": false,
-          "dropShadow": true,
-          "enableFullscreen": false,
-          "enableDataExport": true,
-          "widgetStyle": {},
-          "widgetCss": "",
-          "pageSize": 1024,
-          "noDataDisplayMessage": "",
-          "showLegend": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
           "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
           "titleStyle": {
             "fontSize": "16px",
             "fontWeight": 400
-          }
+          },
+          "showLegend": false,
+          "useDashboardTimewindow": true,
+          "enableDataExport": true,
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": ""
         },
         "row": 0,
         "col": 0,
-        "id": "9c38de8d-f044-28c1-2e76-8131470abf60"
+        "id": "1f7287a2-8b34-6c21-7b0d-2e019fbc8650"
       },
-      "c9ed4519-ac6c-e4be-1cba-caa53ce4892f": {
+      "40330404-8f8e-d21b-39a0-b2d33462711a": {
         "isSystemType": true,
         "bundleAlias": "input_widgets",
-        "typeAlias": "update_shared_integer_attribute",
+        "typeAlias": "update_multiple_attributes",
         "type": "latest",
         "title": "New widget",
         "image": null,
@@ -559,18 +322,90 @@
               "filterId": null,
               "dataKeys": [
                 {
-                  "name": "blinkingInterval",
+                  "name": "ledState",
                   "type": "attribute",
-                  "label": "blinkingInterval",
+                  "label": "LED state",
                   "color": "#2196f3",
-                  "settings": {},
-                  "_hash": 0.3073358716560519,
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "booleanSwitch",
+                    "required": false,
+                    "isEditable": "editable",
+                    "disabledOnDataKey": "ledMode",
+                    "slideToggleLabelPosition": "after",
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.493353703300103,
                   "aggregationType": null,
-                  "units": "ms",
+                  "units": null,
                   "decimals": null,
                   "funcBody": null,
                   "usePostProcessing": null,
                   "postFuncBody": null
+                },
+                {
+                  "name": "blinkingInterval",
+                  "type": "attribute",
+                  "label": "Blinking interval",
+                  "color": "#4caf50",
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "integer",
+                    "required": false,
+                    "isEditable": "editable",
+                    "disabledOnDataKey": "invertedLedMode",
+                    "step": 1,
+                    "minValue": 10,
+                    "maxValue": 60000,
+                    "minValueErrorMessage": "Value should be more than 10",
+                    "maxValueErrorMessage": "Value should be less than 60000",
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.02044489671048033,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": false,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "ledMode",
+                  "type": "attribute",
+                  "label": "ledMode",
+                  "color": "#f44336",
+                  "settings": {
+                    "dataKeyHidden": true
+                  },
+                  "_hash": 0.3366676892948328,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value==0;"
+                },
+                {
+                  "name": "ledMode",
+                  "type": "timeseries",
+                  "label": "invertedLedMode",
+                  "color": "#607d8b",
+                  "settings": {
+                    "dataKeyHidden": true
+                  },
+                  "_hash": 0.7735454610987619,
+                  "aggregationType": "NONE",
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value == 1;"
                 }
               ]
             }
@@ -589,8 +424,8 @@
               "interval": 1000,
               "timewindowMs": 60000,
               "fixedTimewindow": {
-                "startTimeMs": 1675275520883,
-                "endTimeMs": 1675361920883
+                "startTimeMs": 1676199078544,
+                "endTimeMs": 1676285478544
               },
               "quickInterval": "CURRENT_DAY"
             },
@@ -599,20 +434,22 @@
               "limit": 25000
             }
           },
-          "showTitle": true,
+          "showTitle": false,
           "backgroundColor": "#fff",
           "color": "rgba(0, 0, 0, 0.87)",
           "padding": "8px",
           "settings": {
-            "showLabel": false,
-            "isRequired": true,
             "showResultMessage": true,
-            "minValue": 10,
-            "maxValue": 60000
+            "showActionButtons": false,
+            "showGroupTitle": false,
+            "fieldsAlignment": "column",
+            "groupTitle": "${entityName}",
+            "fieldsInRow": 2
           },
-          "title": "Blinking interval for LED",
-          "dropShadow": true,
+          "title": "New Update Multiple Attributes",
+          "dropShadow": false,
           "enableFullscreen": false,
+          "enableDataExport": false,
           "widgetStyle": {},
           "titleStyle": {
             "fontSize": "16px",
@@ -622,7 +459,57 @@
           "showLegend": false,
           "actions": {},
           "showTitleIcon": false,
-          "titleTooltip": "",
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "40330404-8f8e-d21b-39a0-b2d33462711a"
+      },
+      "311d9a7a-dc79-f5e5-5777-e04a5b979e29": {
+        "isSystemType": true,
+        "bundleAlias": "control_widgets",
+        "typeAlias": "round_switch",
+        "type": "rpc",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 2.5,
+        "sizeY": 2,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#ffffff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "title": "Blinking mode",
+            "initialValue": true,
+            "retrieveValueMethod": "timeseries",
+            "valueKey": "ledMode",
+            "parseValueFunction": "return data==1;",
+            "setValueMethod": "setLedMode",
+            "convertValueFunction": "return value ? 1 : 0;",
+            "requestTimeout": 500,
+            "requestPersistent": false
+          },
+          "title": "Blinking mode",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "decimals": 2,
+          "datasources": [],
+          "targetDeviceAliasIds": [
+            "8c655e75-6c9c-5c47-bf9d-5eab6e9a8888"
+          ],
           "enableDataExport": true,
           "widgetCss": "",
           "pageSize": 1024,
@@ -630,64 +517,203 @@
         },
         "row": 0,
         "col": 0,
-        "id": "c9ed4519-ac6c-e4be-1cba-caa53ce4892f"
+        "id": "311d9a7a-dc79-f5e5-5777-e04a5b979e29"
+      },
+      "3c4e4d4f-cb76-488f-96ee-ac0252b8df8e": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "8c655e75-6c9c-5c47-bf9d-5eab6e9a8888",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "temperature",
+                  "type": "timeseries",
+                  "label": "temperature",
+                  "color": "#2196f3",
+                  "settings": {
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "excludeFromStacking": false,
+                    "showLines": true,
+                    "lineWidth": 1,
+                    "fillLines": true,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left",
+                    "comparisonSettings": {
+                      "showValuesForComparison": true,
+                      "comparisonValuesLabel": "",
+                      "color": ""
+                    },
+                    "thresholds": [
+                      {
+                        "thresholdValueSource": "predefinedValue",
+                        "thresholdValue": 15,
+                        "lineWidth": 2,
+                        "color": "#fecb71"
+                      },
+                      {
+                        "thresholdValueSource": "predefinedValue",
+                        "thresholdValue": 5,
+                        "lineWidth": 2,
+                        "color": "#fecb71"
+                      }
+                    ]
+                  },
+                  "_hash": 0.28779758998423766,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ],
+              "latestDataKeys": []
+            }
+          ],
+          "timewindow": {
+            "realtime": {
+              "timewindowMs": 60000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "stack": true,
+            "fontSize": 10,
+            "fontColor": "#545454",
+            "showTooltip": true,
+            "tooltipIndividual": true,
+            "tooltipCumulative": false,
+            "hideZeros": false,
+            "grid": {
+              "verticalLines": false,
+              "horizontalLines": false,
+              "outlineWidth": 1,
+              "color": "#545454",
+              "backgroundColor": null,
+              "tickColor": "#DDDDDD"
+            },
+            "xaxis": {
+              "title": null,
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "min": null,
+              "max": null,
+              "title": null,
+              "showLabels": true,
+              "color": "#545454",
+              "tickSize": null,
+              "tickDecimals": 0,
+              "ticksFormatter": ""
+            },
+            "shadowSize": 4,
+            "smoothLines": false,
+            "comparisonEnabled": false,
+            "xaxisSecond": {
+              "axisPosition": "top",
+              "title": null,
+              "showLabels": true
+            },
+            "customLegendEnabled": false
+          },
+          "title": "Temperature",
+          "dropShadow": false,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "enableDataExport": true,
+          "widgetStyle": {},
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": "",
+          "showLegend": false,
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false,
+            "showLatest": false
+          }
+        },
+        "row": 0,
+        "col": 0,
+        "id": "3c4e4d4f-cb76-488f-96ee-ac0252b8df8e"
       }
     },
     "states": {
       "default": {
-        "name": "Check data and control device",
+        "name": "Check and control device data dashboard",
         "root": true,
         "layouts": {
           "main": {
             "widgets": {
-              "236453bb-240b-3bc0-7cbe-6ccf5f73696b": {
-                "sizeX": 8,
-                "sizeY": 5,
-                "row": 5,
-                "col": 0
-              },
-              "bdf3216c-8701-3ec1-0642-77cb69609c3d": {
-                "sizeX": 4,
-                "sizeY": 3,
-                "row": 0,
-                "col": 20
-              },
-              "e95fb420-e727-1a13-bf39-587e8be285b8": {
-                "sizeX": 4,
-                "sizeY": 3,
-                "row": 5,
-                "col": 20
-              },
-              "54107065-481a-a96b-e804-5cbe229266d7": {
-                "sizeX": 12,
-                "sizeY": 5,
-                "row": 0,
-                "col": 8
-              },
               "c491181b-10b7-eef8-516b-63e55a076b54": {
-                "sizeX": 12,
-                "sizeY": 5,
-                "row": 5,
-                "col": 8
+                "sizeX": 6,
+                "sizeY": 3,
+                "row": 3,
+                "col": 9
               },
-              "9c38de8d-f044-28c1-2e76-8131470abf60": {
-                "sizeX": 8,
-                "sizeY": 5,
+              "1f7287a2-8b34-6c21-7b0d-2e019fbc8650": {
+                "sizeX": 9,
+                "sizeY": 10,
                 "row": 0,
                 "col": 0
               },
-              "c9ed4519-ac6c-e4be-1cba-caa53ce4892f": {
-                "sizeX": 4,
-                "sizeY": 2,
-                "row": 8,
-                "col": 20
+              "40330404-8f8e-d21b-39a0-b2d33462711a": {
+                "sizeX": 3,
+                "sizeY": 3,
+                "row": 0,
+                "col": 12
+              },
+              "311d9a7a-dc79-f5e5-5777-e04a5b979e29": {
+                "sizeX": 3,
+                "sizeY": 3,
+                "row": 0,
+                "col": 9
+              },
+              "3c4e4d4f-cb76-488f-96ee-ac0252b8df8e": {
+                "sizeX": 6,
+                "sizeY": 4,
+                "row": 6,
+                "col": 9
               }
             },
             "gridSettings": {
               "backgroundColor": "#eeeeee",
               "columns": 24,
               "margin": 10,
-              "backgroundSizeMode": "100%"
+              "backgroundSizeMode": "100%",
+              "autoFillHeight": false,
+              "backgroundImageUrl": null,
+              "mobileAutoFillHeight": false,
+              "mobileRowHeight": 70
             }
           }
         }
@@ -696,14 +722,12 @@
     "entityAliases": {
       "8c655e75-6c9c-5c47-bf9d-5eab6e9a8888": {
         "id": "8c655e75-6c9c-5c47-bf9d-5eab6e9a8888",
-        "alias": "Example device",
+        "alias": "My device alias",
         "filter": {
-          "type": "singleEntity",
-          "resolveMultiple": false,
-          "singleEntity": {
-            "entityType": "DEVICE",
-            "id": "d8463fc0-673a-11ed-861d-25ac767dd88b"
-          }
+          "type": "entityName",
+          "resolveMultiple": true,
+          "entityType": "DEVICE",
+          "entityNameFilter": "My device"
         }
       }
     },
@@ -718,7 +742,7 @@
       "selectedTab": 0,
       "realtime": {
         "realtimeType": 0,
-        "timewindowMs": 900000,
+        "timewindowMs": 300000,
         "quickInterval": "CURRENT_DAY",
         "interval": 5000
       },
@@ -729,14 +753,21 @@
     },
     "settings": {
       "stateControllerId": "entity",
-      "showTitle": false,
+      "showTitle": true,
       "showDashboardsSelect": true,
       "showEntitiesSelect": true,
       "showDashboardTimewindow": true,
       "showDashboardExport": true,
-      "toolbarAlwaysOpen": true
+      "toolbarAlwaysOpen": true,
+      "titleColor": "rgba(0,0,0,0.870588)",
+      "showDashboardLogo": false,
+      "dashboardLogoUrl": null,
+      "hideToolbar": false,
+      "showFilters": true,
+      "showUpdateDashboardImage": true,
+      "dashboardCss": ""
     }
   },
   "externalId": null,
-  "name": "Check data and control device"
+  "name": "Check and control device data dashboard"
 }

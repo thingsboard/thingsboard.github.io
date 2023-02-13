@@ -6,23 +6,28 @@ Responsible parts of the example code:
 ...
 void processSharedAttributes(const Shared_Attribute_Data &data) {
   for (auto it = data.begin(); it != data.end(); ++it) {
-    if (it->key() == BLINKING_INTERVAL_ATTR) {
+    if (strcmp(it->key().c_str(), BLINKING_INTERVAL_ATTR) == 0) {
       const uint16_t new_interval = it->value().as<uint16_t>();
       if (new_interval >= BLINKING_INTERVAL_MS_MIN && new_interval <= BLINKING_INTERVAL_MS_MAX) {
         blinkingInterval = new_interval;
+        Serial.print("Updated blinking interval to: ");
+        Serial.println(new_interval);
       }
+    } else if(strcmp(it->key().c_str(), LED_STATE_ATTR) == 0) {
+      ledState = it->value().as<bool>();
+      digitalWrite(LED_BUILTIN, ledState ? HIGH : LOW);
+      Serial.print("Updated state to: ");
+      Serial.println(ledState);
     }
   }
+  attributesChanged = true;
 }
 
 void processClientAttributes(const Shared_Attribute_Data &data) {
   for (auto it = data.begin(); it != data.end(); ++it) {
-    if (it->key() == LED_MODE_ATTR) {
+    if (strcmp(it->key().c_str(), LED_MODE_ATTR) == 0) {
       const uint16_t new_mode = it->value().as<uint16_t>();
       ledMode = new_mode;
-    } else if (it->key() == LED_STATE_ATTR) {
-      const uint16_t new_state = it->value().as<uint16_t>();
-      ledState = new_state;
     }
   }
 }
