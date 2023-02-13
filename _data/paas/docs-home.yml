@@ -28,6 +28,8 @@ toc:
       path: /docs/paas/solution-templates/air-quality-monitoring/
     - title: Smart Irrigation
       path: /docs/paas/solution-templates/smart-irrigation/
+    - title: Assisted Living
+      path: /docs/paas/solution-templates/assisted-living/
 - title: Key concepts
   section:
     - title: Entities and Relations

@@ -24,8 +24,10 @@ toc:
     path: /docs/pe/solution-templates/smart-retail/
   - title: Air quality monitoring
     path: /docs/pe/solution-templates/air-quality-monitoring/
-  - title: Smart Irrigation
+  - title: Smart irrigation
     path: /docs/pe/solution-templates/smart-irrigation/
+  - title: Assisted living
+    path: /docs/pe/solution-templates/assisted-living/
 - title: Key concepts
   section:
   - title: Entities and Relations

@@ -283,5 +283,26 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 </a>
             </div>
         </div>
+        <div class="dashboard-item">
+            <div class="item-description">
+                <h2>Assisted Living</h2>
+                <p>Monitor and control residents' health, track their movement and environment. Raise the service to a new level, notify service personnel about changes in conditions, and respond to them promptly in real time.</p>
+                <a class="read-more-button" href="/use-cases/assisted-living/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+            </div>
+            <div class="item-image-container">
+                <a class="img-button" href="/use-cases/assisted-living/">
+                    <div class="overlay">
+                        <div class="eye">
+                            <img src="/images/eye-icon.svg">See more
+                        </div>
+                    </div>
+                    <div class="dashboard-frame">
+                        <div class="frame-image">
+                            <img src="/images/usecases/assisted-living/video/assisted-living.png">
+                        </div>
+                    </div>                
+                </a>
+            </div>
+        </div>
     </div>
 </div>
