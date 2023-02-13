@@ -2,6 +2,7 @@
 Now it’s time to program the board to connect to ThingsBoard.  
 To do this, you can use the code below. It contains all required functionality for this guide.    
 
+
 ```cpp
 #if defined(ESP8266)
 #include <ESP8266WiFi.h>
@@ -10,35 +11,31 @@ To do this, you can use the code below. It contains all required functionality f
 #include <WiFiClientSecure.h>
 #endif
 
+#ifndef LED_BUILTIN
+#define LED_BUILTIN 99
+#endif
+
 #include <ThingsBoard.h>
 
-
-// PROGMEM can only be added when using the ESP32 WiFiClient,
-// will cause a crash if using the ESP8266WiFiSTAClass instead.
-#if defined(ESP8266)
 constexpr char WIFI_SSID[] = "YOUR_WIFI_SSID";
 constexpr char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
-#elif defined(ESP32)
-constexpr char WIFI_SSID[] PROGMEM = "YOUR_WIFI_SSID";
-constexpr char WIFI_PASSWORD[] PROGMEM = "YOUR_WIFI_PASSWORD";
-#endif
 
 // See https://thingsboard.io/docs/getting-started-guides/helloworld/
 // to understand how to obtain an access token
-constexpr char TOKEN[] PROGMEM = "YOUR_ACCESS_TOKEN";
+constexpr char TOKEN[] = "YOUR_ACCESS_TOKEN";
 
 // Thingsboard we want to establish a connection too
-constexpr char THINGSBOARD_SERVER[] PROGMEM = "{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
+constexpr char THINGSBOARD_SERVER[] = "{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
 // MQTT port used to communicate with the server, 1883 is the default unencrypted MQTT port.
-constexpr uint16_t THINGSBOARD_PORT PROGMEM = 1883U;
+constexpr uint16_t THINGSBOARD_PORT = 1883U;
 
 // Maximum size packets will ever be sent or received by the underlying MQTT client,
 // if the size is to small messages might not be sent or received messages will be discarded
-constexpr uint32_t MAX_MESSAGE_SIZE PROGMEM = 1024U;
+constexpr uint32_t MAX_MESSAGE_SIZE = 256U;
 
 // Baud rate for the debugging serial connection.
 // If the Serial output is mangled, ensure to change the monitor speed accordingly to this variable
-constexpr uint32_t SERIAL_DEBUG_BAUD PROGMEM = 115200U;
+constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 
 
 // Initialize underlying client, used to establish a connection
@@ -46,8 +43,17 @@ WiFiClient espClient;
 // Initialize ThingsBoard instance with the maximum needed buffer size
 ThingsBoardSized<MAX_MESSAGE_SIZE> tb(espClient);
 
+// Attribute names for attribute request and attribute updates functionality
+
+constexpr char BLINKING_INTERVAL_ATTR[] = "blinkingInterval";
+constexpr char LED_MODE_ATTR[] = "ledMode";
+constexpr char LED_STATE_ATTR[] = "ledState";
+
 // Statuses for subscribing to rpc
 bool subscribed = false;
+
+// handle led state and mode changes
+volatile bool attributesChanged = false;
 
 // LED modes: 0 - continious state, 1 - blinking
 volatile int ledMode = 0;
@@ -60,30 +66,21 @@ constexpr uint16_t BLINKING_INTERVAL_MS_MIN = 10U;
 constexpr uint16_t BLINKING_INTERVAL_MS_MAX = 60000U;
 volatile uint16_t blinkingInterval = 1000U;
 
-// To handle RPC for led state changes
-volatile bool stateChanged = false;
-
 uint32_t previousStateChange;
 
 // For telemetry
 constexpr int16_t telemetrySendInterval = 2000U;
 uint32_t previousDataSend;
 
-// Attribute names for attribute request and attribute updates functionality
-
-constexpr char BLINKING_INTERVAL_ATTR[] PROGMEM = "blinkingInterval";
-constexpr char LED_MODE_ATTR[] PROGMEM = "ledMode";
-constexpr char LED_STATE_ATTR[] PROGMEM = "ledState";
-
 // List of shared attributes for subscribing to their updates
-constexpr std::array<const char *, 1U> SHARED_ATTRIBUTES_LIST = {
+constexpr std::array<const char *, 2U> SHARED_ATTRIBUTES_LIST = {
+  LED_STATE_ATTR,
   BLINKING_INTERVAL_ATTR
 };
 
 // List of client attributes for requesting them (Using to initialize device states)
-constexpr std::array<const char *, 2U> CLIENT_ATTRIBUTES_LIST = {
-  LED_MODE_ATTR,
-  LED_STATE_ATTR
+constexpr std::array<const char *, 1U> CLIENT_ATTRIBUTES_LIST = {
+  LED_MODE_ATTR
 };
 
 /// @brief Initalizes WiFi connection,
@@ -114,57 +111,6 @@ const bool reconnect() {
   return true;
 }
 
-/// @brief Processes function for RPC call "getLedState"
-/// RPC_Data is a JSON variant, that can be queried using operator[]
-/// See https://arduinojson.org/v5/api/jsonvariant/subscript/ for more details
-/// @param data Data containing the rpc data that was called and its current value
-/// @return Response that should be sent to the cloud. Useful for getMethods
-RPC_Response processGetLedState(const RPC_Data &data) {
-  return RPC_Response("currentState", ledState);
-}
-
-/// @brief Processes function for RPC call "setLedState"
-/// RPC_Data is a JSON variant, that can be queried using operator[]
-/// See https://arduinojson.org/v5/api/jsonvariant/subscript/ for more details
-/// @param data Data containing the rpc data that was called and its current value
-/// @return Response that should be sent to the cloud. Useful for getMethods
-RPC_Response processGetLedMode(const RPC_Data &data) {
-  return RPC_Response("currentMode", ledMode);
-}
-
-/// @brief Processes function for RPC call "setLedState"
-/// RPC_Data is a JSON variant, that can be queried using operator[]
-/// See https://arduinojson.org/v5/api/jsonvariant/subscript/ for more details
-/// @param data Data containing the rpc data that was called and its current value
-/// @return Response that should be sent to the cloud. Useful for getMethods
-RPC_Response processSetLedState(const RPC_Data &data) {
-  Serial.println("Received the set led state RPC method");
-
-  // Process data
-  bool received_state = data;
-
-  Serial.print("Received state: ");
-  Serial.println(received_state);
-
-  bool changed = digitalRead(LED_BUILTIN) != received_state;
-
-  // If led mode is just a lightening - we don't need to set the same state again
-  if (!changed && ledMode == 0) {
-    return RPC_Response("error", "LED state is the same!");
-  }
-
-  digitalWrite(LED_BUILTIN, received_state);
-  ledState = received_state;
-  
-  tb.sendTelemetryInt(LED_MODE_ATTR, ledMode);
-  tb.sendTelemetryInt(LED_STATE_ATTR, ledState);
-  tb.sendAttributeInt(LED_MODE_ATTR, ledMode);
-  tb.sendAttributeInt(LED_STATE_ATTR, ledState);
-
-  // Was the led state changed
-  return RPC_Response("changed", changed);
-}
-
 
 /// @brief Processes function for RPC call "setLedMode"
 /// RPC_Data is a JSON variant, that can be queried using operator[]
@@ -185,24 +131,18 @@ RPC_Response processSetLedMode(const RPC_Data &data) {
   }
 
   ledMode = new_mode;
-  
-  tb.sendTelemetryInt(LED_MODE_ATTR, ledMode);
-  tb.sendTelemetryInt(LED_STATE_ATTR, ledState);
-  tb.sendAttributeInt(LED_MODE_ATTR, ledMode);
-  tb.sendAttributeInt(LED_STATE_ATTR, ledState);
+
+  attributesChanged = true;
 
   // Returning current mode
-  return RPC_Response("newMode", ledMode);
+  return RPC_Response("newMode", (int)ledMode);
 }
 
 
 // Optional, keep subscribed shared attributes empty instead,
 // and the callback will be called for every shared attribute changed on the device,
 // instead of only the one that were entered instead
-const std::array<RPC_Callback, 4U> callbacks = {
-  RPC_Callback{ "getLedState", processGetLedState },
-  RPC_Callback{ "getLedMode", processGetLedMode },
-  RPC_Callback{ "setLedState", processSetLedState },
+const std::array<RPC_Callback, 1U> callbacks = {
   RPC_Callback{ "setLedMode", processSetLedMode }
 };
 
@@ -212,23 +152,28 @@ const std::array<RPC_Callback, 4U> callbacks = {
 /// @param data Data containing the shared attributes that were changed and their current value
 void processSharedAttributes(const Shared_Attribute_Data &data) {
   for (auto it = data.begin(); it != data.end(); ++it) {
-    if (it->key() == BLINKING_INTERVAL_ATTR) {
+    if (strcmp(it->key().c_str(), BLINKING_INTERVAL_ATTR) == 0) {
       const uint16_t new_interval = it->value().as<uint16_t>();
       if (new_interval >= BLINKING_INTERVAL_MS_MIN && new_interval <= BLINKING_INTERVAL_MS_MAX) {
         blinkingInterval = new_interval;
+        Serial.print("Updated blinking interval to: ");
+        Serial.println(new_interval);
       }
+    } else if(strcmp(it->key().c_str(), LED_STATE_ATTR) == 0) {
+      ledState = it->value().as<bool>();
+      digitalWrite(LED_BUILTIN, ledState ? HIGH : LOW);
+      Serial.print("Updated state to: ");
+      Serial.println(ledState);
     }
   }
+  attributesChanged = true;
 }
 
 void processClientAttributes(const Shared_Attribute_Data &data) {
   for (auto it = data.begin(); it != data.end(); ++it) {
-    if (it->key() == LED_MODE_ATTR) {
+    if (strcmp(it->key().c_str(), LED_MODE_ATTR) == 0) {
       const uint16_t new_mode = it->value().as<uint16_t>();
       ledMode = new_mode;
-    } else if (it->key() == LED_STATE_ATTR) {
-      const uint16_t new_state = it->value().as<uint16_t>();
-      ledState = new_state;
     }
   }
 }
@@ -239,20 +184,22 @@ const Attribute_Request_Callback attribute_client_request_callback(CLIENT_ATTRIB
 
 void setup() {
   // Initalize serial connection for debugging
-  Serial.begin(SERIAL_DEBUG_BAUD);
+  Serial.begin(115200);
   pinMode(LED_BUILTIN, OUTPUT);
   delay(1000);
   InitWiFi();
 }
 
 void loop() {
-  delay(10);
+//  delay(10);
 
   if (!reconnect()) {
+    subscribed = false;
     return;
   }
 
   if (!tb.connected()) {
+    subscribed = false;
     // Connect to the ThingsBoard
     Serial.print("Connecting to: ");
     Serial.print(THINGSBOARD_SERVER);
@@ -295,20 +242,29 @@ void loop() {
       Serial.println("Failed to request for client attributes");
       return;
     }
-    tb.sendAttributeInt(LED_MODE_ATTR, ledMode);
-    tb.sendAttributeInt(LED_STATE_ATTR, ledState);
   }
 
-  if (stateChanged) {
-    stateChanged = false;
-    previousStateChange = millis();
+  if (attributesChanged) {
+    attributesChanged = false;
+    if (ledMode == 0) {
+      previousStateChange = millis();
+    }
+    tb.sendTelemetryInt(LED_MODE_ATTR, ledMode);
+    tb.sendTelemetryBool(LED_STATE_ATTR, ledState);
+    tb.sendAttributeInt(LED_MODE_ATTR, ledMode);
+    tb.sendAttributeBool(LED_STATE_ATTR, ledState);
   }
 
   if (ledMode == 1 && millis() - previousStateChange > blinkingInterval) {
     previousStateChange = millis();
     ledState = !ledState;
     digitalWrite(LED_BUILTIN, ledState);
-    tb.sendTelemetryInt(LED_STATE_ATTR, ledState);
+    tb.sendTelemetryBool(LED_STATE_ATTR, ledState);
+    tb.sendAttributeBool(LED_STATE_ATTR, ledState);
+    if (LED_BUILTIN == 99) {
+      Serial.print("LED state changed to: ");
+      Serial.println(ledState);
+    }
   }
 
   // Sending telemetry every telemetrySendInterval time
@@ -316,7 +272,10 @@ void loop() {
     previousDataSend = millis();
     tb.sendTelemetryInt("temperature", random(10, 20));
     tb.sendAttributeInt("rssi", WiFi.RSSI());
+    tb.sendAttributeInt("channel", WiFi.channel());
     tb.sendAttributeString("bssid", WiFi.BSSIDstr().c_str());
+    tb.sendAttributeString("localIp", WiFi.localIP().toString().c_str());
+    tb.sendAttributeString("ssid", WiFi.SSID().c_str());
   }
 
   tb.loop();
@@ -334,21 +293,44 @@ Necessary variables for connection:
 | WIFI_SSID | **YOUR_WIFI_SSID** | Your WiFi network name. | 
 | WIFI_PASSWORD | **YOUR_WIFI_PASSWORD** | Your WiFi network password. |
 | TOKEN | **YOUR_DEVICE_ACCESS_TOKEN** | Access token from device. Obtaining process described in #connect-device-to-thingsboard | 
-| THINGSBOARD_SERVER | **thingsboard.cloud** | Your ThingsBoard host or ip address. |
+| THINGSBOARD_SERVER | **{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address. |
+| THINGSBOARD_PORT | **1883U** | ThingsBoard server MQTT port. Can be default for this guide. |
+| MAX_MESSAGE_SIZE | **256U** | Maximal size of MQTT messages. Can be default for this guide. |
+| SERIAL_DEBUG_BAUD | **1883U** | Baud rate for serial port. Can be default for this guide. |  
 
-Sending data part (By default the example sends random value for **temperature** and **humidity** keys):  
+```cpp
+...
+
+constexpr char WIFI_SSID[] = "YOUR_WIFI_SSID";
+constexpr char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
+
+constexpr char TOKEN[] = "YOUR_ACCESS_TOKEN";
+
+constexpr char THINGSBOARD_SERVER[] = "{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
+constexpr uint16_t THINGSBOARD_PORT = 1883U;
+
+constexpr uint32_t MAX_MESSAGE_SIZE = 256U;
+constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
+
+...
+```
+
+Sending data part (By default the example sends random value for **temperature** key and some WiFi information):  
 ```cpp
 ...
     tb.sendTelemetryInt("temperature", random(10, 20));
     tb.sendAttributeInt("rssi", WiFi.RSSI());
     tb.sendAttributeString("bssid", WiFi.BSSIDstr().c_str());
+    tb.sendAttributeString("localIp", WiFi.localIP().toString().c_str());
+    tb.sendAttributeString("ssid", WiFi.SSID().c_str());
+    tb.sendAttributeInt("channel", WiFi.channel());
 ...
 ```
 
 Then upload the code to the device by pressing Upload button or keyboard combination Ctrl+U.  
 {% assign codeByUploadButton='
     ===
-        image: /images/devices-library/basic/arduino-ide-upload.png
+        image: /images/devices-library/basic/arduino-ide/upload.png
 ' 
 %}
 {% include images-gallery.liquid imageCollection=codeByUploadButton %}
@@ -357,10 +339,10 @@ If you cannot upload the code and receive an error: `Property 'upload.tool.seria
   
 {% assign codeByUploadWithProgrammer='
     ===
-        image: /images/devices-library/basic/arduino-ide-select-esptool-programmer.png,
+        image: /images/devices-library/basic/arduino-ide/select-esptool-programmer.png,
         title: Go to "Tools" > "Programmer" and select "Esptool" as a programmer.  
     ===
-        image: /images/devices-library/basic/arduino-ide-upload-using-programmer.png,
+        image: /images/devices-library/basic/arduino-ide/upload-using-programmer.png,
         title: Go to "Sketch" > "Upload Using Programmer".  
 ' 
 %}

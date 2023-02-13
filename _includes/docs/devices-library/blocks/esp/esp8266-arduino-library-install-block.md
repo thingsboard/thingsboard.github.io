@@ -1,7 +1,7 @@
 
 {% assign installESP8266='
     ===
-        image: /images/devices-library/basic/esp8266-arduino-ide-board-manager.png,
+        image: /images/devices-library/basic/esp/esp8266-arduino-ide-board-manager.png,
         title: Put ESP8266 into search field and install esp8266 by Espressif Community.
 ' %}
 
@@ -17,6 +17,7 @@ Next, go to **Tools** > **Board** > **Board Manager** and install the ***ESP8266
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=installESP8266 %}
 
-After the installation is complete, select the board from the **Tools** > **Board menu**.  
+After the installation is complete, select the board by Board menu:  
+**Tools** > **Board** > {{ arduinoBoardPath }}.  
 
 {% assign mbedtlsInstallationRequired="true" %}

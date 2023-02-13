@@ -1,3 +1,11 @@
+
+{% assign boardHasLed="true" %}
+{% assign arduinoBoardPath="**ESP8266** > **NodeMCU 1.0 (ESP-12E Module)**" %}
+{% assign prerequisites = "
+- NodeMCU V3
+- [Arduino IDE](https://www.arduino.cc/en/software)"
+ %}
+
 ## Introduction
 
 ![NodeMCU V3](/images/devices-library/nodemcuv3.png){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
