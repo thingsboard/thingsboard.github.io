@@ -28,7 +28,7 @@ Also, this dashboard has several states:
 - **Main state** - intended for provisions of residents, alarms of residents, and rooms;
 - **Residents state** - assigned to resident management;
 - **Zones state** - responsible for the management of zones, which in the future will be the basis for rooms and devices;
-- **Zone State** - intended for room and device management.
+- **specific Zone State** - intended for room and device management.
 
 <h2>Assisted Living Benefits</h2>
 Save up to 90% of development time for your assisted living solution by utilizing the following platform benefits:
