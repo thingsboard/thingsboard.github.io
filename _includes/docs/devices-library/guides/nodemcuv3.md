@@ -1,14 +1,17 @@
 
-{% assign boardHasLed="true" %}
+{% assign boardHasLed = "true" %}
+{% assign deviceName = "NodeMCU V3" %}
+{% assign imageName = "nodemcuv3.png"%}
 {% assign arduinoBoardPath="**ESP8266** > **NodeMCU 1.0 (ESP-12E Module)**" %}
 {% assign prerequisites = "
-- NodeMCU V3
+- " | append: deviceName | append: "
 - [Arduino IDE](https://www.arduino.cc/en/software)"
  %}
 
 ## Introduction
 
-![NodeMCU V3](/images/devices-library/nodemcuv3.png){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](/images/devices-library/{{imageName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+
 The NodeMCU is quite a popular development board that is broadly implemented across the internet world.   
 It is based on the ESP-12E Wi-Fi module that is perfectly associated with the combination of elements of easy programming with Arduino IDE as well as Wi-Fi capability.  
 The prototyping and development projects can be handled smoothly via the inbuilt programmer and CH340G USB-to-serial chip that flashes the ESP8266 and serial output on PC integration.
@@ -51,5 +54,5 @@ The unit allows to either host the application or to offload all Wi-Fi networkin
 
 ## Conclusion
 
-So, after this guide, you know how to connect NodeMCU and send the data to ThingsBoard.  
+So, after this guide, you know how to connect {{ deviceName }} and send the data to ThingsBoard.  
 By now you can move forward and send any data that you want.  

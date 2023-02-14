@@ -1,8 +1,8 @@
 
-{% assign boardHasLed = "false" %}
-{% assign deviceName = "ESP32 Pico Kit" %}
-{% assign imageName = "esp32-pico-kit.png" %}
-{% assign arduinoBoardPath = "**ESP32** > **ESP32 Pico Kit**" %}
+{% assign boardHasLed = "true" %}
+{% assign deviceName = "Dev Kit V1" %}
+{% assign imageName = "dev-kit-v1.jpg"%}
+{% assign arduinoBoardPath = "**ESP32** > **ESP32 Dev Module**" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
 - [Arduino IDE](https://www.arduino.cc/en/software)"
@@ -12,10 +12,11 @@
 
 ![{{deviceName}}](/images/devices-library/{{imageName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 
-ESP32 PICO KIT is an ESP32-based development board produced by Espressif.  
-The development board features a USB-to-UART Bridge circuit which allows developers to connect the board to a computer’s USB port for flashing and debugging.  
-Official documentation is available [here](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/hw-reference/esp32/get-started-pico-kit-1.html).
-
+The Dev Kit V1 dev kit is built on the ESP-WROOM-32 module, a new miniature high-performance Wi-Fi + BT + BLE chip from Espressif, designed for a wide range of applications, from micro-power network sensors to the most complex applications, such as encoding, streaming music and MP3 encoding.  
+The module contains all the necessary minimum peripherals, sufficient for a quick and comfortable start of work with ESP-WROOM-32.  
+ESP-WROOM-32 is based on the popular ESP32 dual-core chipset, with a variable clock frequency from 80 MHz to 240 MHz, the possibility of individual control and power supply.  
+The module is designed for portable and autonomous electronics and Internet of Things applications, made in a miniature 25.5 mm x 18 mm package, has on-board Flash memory, 40 MHz quartz and a PCB antenna that provides good RF characteristics.  
+  
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
 ## Create device on ThingsBoard
