@@ -1,8 +1,8 @@
 
-{% assign boardHasLed = "false" %}
-{% assign deviceName = "ESP32 Pico Kit" %}
-{% assign imageName = "esp32-pico-kit.png" %}
-{% assign arduinoBoardPath = "**ESP32** > **ESP32 Pico Kit**" %}
+{% assign boardHasLed = "true" %}
+{% assign deviceName = "NodeMCU V2" %}
+{% assign imageName = "nodemcuv2.jpg"%}
+{% assign arduinoBoardPath="**ESP8266** > **NodeMCU 1.0 (ESP-12E Module)**" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
 - [Arduino IDE](https://www.arduino.cc/en/software)"
@@ -12,9 +12,11 @@
 
 ![{{deviceName}}](/images/devices-library/{{imageName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 
-ESP32 PICO KIT is an ESP32-based development board produced by Espressif.  
-The development board features a USB-to-UART Bridge circuit which allows developers to connect the board to a computer’s USB port for flashing and debugging.  
-Official documentation is available [here](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/hw-reference/esp32/get-started-pico-kit-1.html).
+The NodeMCU is quite a popular development board that is broadly implemented across the internet world.   
+It is based on the ESP-12E Wi-Fi module that is perfectly associated with the combination of elements of easy programming with Arduino IDE as well as Wi-Fi capability.  
+The prototyping and development projects can be handled smoothly via the inbuilt programmer and CP2102 USB-to-serial chip that flashes the ESP8266 and serial output on PC integration.
+The NodeMCU development board integrates ESP8266.  It is a well-integrated chip that is specifically crafted to cater to the requirements of a new connected world.  
+The unit allows to either host the application or to offload all Wi-Fi networking functions derived from another application processing unit.
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
@@ -24,7 +26,7 @@ Official documentation is available [here](https://docs.espressif.com/projects/e
 
 ## Install required libraries and tools
 
-{% include /docs/devices-library/blocks/esp/esp32-arduino-library-install-block.md %}
+{% include /docs/devices-library/blocks/esp/esp8266-arduino-library-install-block.md %}
 
 {% include /docs/devices-library/blocks/esp/thingsboard-arduino-library-install-block.md %}
 
