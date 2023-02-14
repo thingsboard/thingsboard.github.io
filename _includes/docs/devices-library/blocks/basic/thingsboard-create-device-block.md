@@ -1,3 +1,4 @@
+For simplicity, we will provide the device manually using the UI.
 
 {% assign provisionDeviceCE = '
     ===

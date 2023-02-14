@@ -24,7 +24,7 @@ As an example we will use the following hardware and software:
 
 ## Create device on ThingsBoard
 
-{% include /docs/devices-library/blocks/minicomputers/create-device-on-thingsboard-block.md %}
+{% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
 
 ## Install required libraries and tools
 
@@ -32,7 +32,7 @@ As an example we will use the following hardware and software:
 
 ## Connect device to ThingsBoard
 
-{% include /docs/devices-library/blocks/minicomputers/connect-device-to-thingsboard-block.md %}
+{% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 {% include /docs/devices-library/blocks/minicomputers/general-code-to-program-block.md %}
 
 ## Check data on ThingsBoard
