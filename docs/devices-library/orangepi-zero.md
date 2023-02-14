@@ -1,6 +1,8 @@
 ---
 layout: docwithnav
 title: How to connect OrangePI Zero to ThingsBoard?
+category: minicomputer
+deviceImageFileName: orangepizero.png
 
 ---
 
