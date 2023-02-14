@@ -1,7 +1,8 @@
 ---
 layout: docwithnav
 title: How to connect ESP32 PICO KIT to ThingsBoard?
-
+category: esp32
+deviceImageFileName: esp32-pico-kit.png
 ---
 
 * TOC

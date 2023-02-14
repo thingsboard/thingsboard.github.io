@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-paas
-title: How to connect Wemos D1 R2 to ThingsBoard?
+title: How to connect WeMos D1 R2 to ThingsBoard?
 
 ---
 

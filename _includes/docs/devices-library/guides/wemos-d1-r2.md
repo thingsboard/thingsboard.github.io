@@ -1,7 +1,6 @@
 
 {% assign boardHasLed = "true" %}
-{% assign deviceName = "Wemos D1 R2" %}
-{% assign imageName = "wemos-d1-r2.jpg"%}
+{% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign arduinoBoardPath="**ESP8266** > **LOLIN(WEMOS) D1 R2 & mini**" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
@@ -10,7 +9,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{imageName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 
 The WeMos D1 board, developed by WeMos company, is based on the ESP8266 ESP-12 WiFi module.  
 Board programming is carried out using the standard Arduino IDE development environment.  

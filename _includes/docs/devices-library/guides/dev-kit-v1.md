@@ -1,6 +1,6 @@
 
 {% assign boardHasLed = "true" %}
-{% assign deviceName = "Dev Kit V1" %}
+{% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign imageName = "dev-kit-v1.jpg"%}
 {% assign arduinoBoardPath = "**ESP32** > **ESP32 Dev Module**" %}
 {% assign prerequisites = "
@@ -10,7 +10,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{imageName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 
 The Dev Kit V1 dev kit is built on the ESP-WROOM-32 module, a new miniature high-performance Wi-Fi + BT + BLE chip from Espressif, designed for a wide range of applications, from micro-power network sensors to the most complex applications, such as encoding, streaming music and MP3 encoding.  
 The module contains all the necessary minimum peripherals, sufficient for a quick and comfortable start of work with ESP-WROOM-32.  

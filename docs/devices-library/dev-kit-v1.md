@@ -1,7 +1,8 @@
 ---
 layout: docwithnav
 title: How to connect Dev Kit V1 to ThingsBoard?
-
+category: esp32
+deviceImageFileName: dev-kit-v1.jpg
 ---
 
 * TOC

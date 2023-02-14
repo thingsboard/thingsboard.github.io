@@ -1,7 +1,8 @@
 ---
 layout: docwithnav
 title: How to connect ESP-EYE to ThingsBoard?
-
+category: esp32
+deviceImageFileName: esp-eye.png
 ---
 
 * TOC

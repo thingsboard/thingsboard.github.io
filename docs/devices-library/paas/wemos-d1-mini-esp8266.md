@@ -1,6 +1,6 @@
 ---
 layout: docwithnav-paas
-title: How to connect Wemos D1 Mini based on ESP-12F ESP8266 to ThingsBoard?
+title: How to connect WeMos D1 Mini based on ESP-12F ESP8266 to ThingsBoard?
 
 ---
 

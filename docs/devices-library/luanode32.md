@@ -1,7 +1,8 @@
 ---
 layout: docwithnav
 title: How to connect LuaNode32 to ThingsBoard?
-
+category: esp32
+deviceImageFileName: luanode32.jpg
 ---
 
 * TOC

@@ -2,21 +2,47 @@
 * TOC
 {:toc}
 
-ThingsBoard Device Library and device connecting guides.  
+{% assign devicesLibraryPagePath = page.path | remove: ".md" | append: '/' %}
+{% assign esp8266Category = "" %}
+{% assign esp32Category = "" %}
+{% assign minicomputerCategory = "" %}
+
+{% for sitePage in site.pages %}
+{% if sitePage.path contains devicesLibraryPagePath %}
+{% assign possibleTargetPath = sitePage.path | remove: devicesLibraryPagePath %}
+{% unless possibleTargetPath contains '/' %}
+{% assign deviceName = sitePage.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
+{% unless deviceName %}
+{% assign deviceName = sitePage.deviceName %}  
+{% endunless %}
+{% capture value %}
+[![{{sitePage.deviceName}}](/images/devices-library/{{sitePage.deviceImageFileName}}){: style="max-width: 100px; max-height: 100px; margin: 0px 10px 0px 0px"}  
+**{{sitePage.title}}**](/docs/devices-library/{{docsPrefix}}{{possibleTargetPath | remove: ".md" }}/)
+{% endcapture %}
+{% case sitePage.category %}
+{% when "esp8266" %}
+{% assign esp8266Category = esp8266Category | append: value %}
+{% when "esp32" %}
+{% assign esp32Category = esp32Category | append: value %}
+{% when "minicomputer" %}
+{% assign minicomputerCategory = minicomputerCategory | append: value %}
+{% endcase %}  
+{% endunless %}
+{% endif %}
+{% endfor %}
 
 #### ESP32-based boards
 
-<!--[How to connect M5Stack Timer Camera X to ThingsBoard?](/docs/devices-library/{{docsPrefix}}m5stack-timer-camera-x/)  
-[How to connect ESP-EYE to ThingsBoard?](/docs/devices-library/{{docsPrefix}}esp-eye/)-->  
-
-[How to connect ESP32 PICO Kit to ThingsBoard?](/docs/devices-library/{{docsPrefix}}esp32picokit/)  
-[How to connect LuaNode32 to ThingsBoard?](/docs/devices-library/{{docsPrefix}}luanode32/)  
-[How to connect Dev Kit V1 to ThingsBoard?](/docs/devices-library/{{docsPrefix}}dev-kit-v1/)  
+{% for item in esp32Category %}
+{{ item }}  
+{% endfor %}
 
 #### ESP8266-based boards
+{% for item in esp8266Category %}
+{{ item }}  
+{% endfor %}
 
-[How to connect NodeMCU V3 to ThingsBoard?](/docs/devices-library/{{docsPrefix}}nodemcuv3/)  
-[How to connect NodeMCU V2 to ThingsBoard?](/docs/devices-library/{{docsPrefix}}nodemcuv2/)  
-[How to connect Wemos D1 mini to ThingsBoard?](/docs/devices-library/{{docsPrefix}}wemos-d1-mini-esp8266/)  
-[How to connect Wemos D1 R2 to ThingsBoard?](/docs/devices-library/{{docsPrefix}}wemos-d1-r2/)  
-
+#### Minicomputers
+{% for item in minicomputerCategory %}
+{{ item }}  
+{% endfor %}
