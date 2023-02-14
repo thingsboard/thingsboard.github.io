@@ -7,6 +7,8 @@ description: Installing ThingsBoard Edge using Docker (Windows)
 * TOC
 {:toc}
 
+{% include templates/edge/install/compatibility-warning-general.md %}
+
 {% assign docsPrefix = "edge/" %}
 
 This guide will help you to install and start ThingsBoard Edge using Docker on Windows. 

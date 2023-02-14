@@ -1,7 +1,4 @@
 {% capture local-deployment %}
-Use next **Edge** UI URL if during installation process you set **HTTP_BIND_PORT** to **18080**:
-
-**http://localhost:18080**
-
+Use next **ThingsBoard Edge UI** link **http://localhost:18080** if you updated HTTP 8080 bind port to **18080**.
 {% endcapture %}
 {% include templates/info-banner.md content=local-deployment %}

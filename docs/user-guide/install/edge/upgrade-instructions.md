@@ -79,10 +79,7 @@ description: ThingsBoard Edge upgrade instructions
     </li>
 </ul>
 
-{% capture update_server_first %}
-**Please update ThingsBoard server to the latest version before updating Edge services**.
-{% endcapture %}
-{% include templates/warn-banner.md content=update_server_first %}
+{% include templates/edge/install/compatibility-warning-general.md %}
 
 ## Prepare for upgrading ThingsBoard Edge {#prepare-for-upgrading}
 
@@ -163,6 +160,10 @@ Launch the "pgAdmin" software and login as superuser (postgres).
 Open your server and create backup of database **tb_edge** using 'Backup Dialog' functionality of "pgAdmin".
 
 ## Upgrading to 3.4.3EDGE {#upgrading-to-343}
+
+{% assign serverVersion = "3.4.3" %}
+{% assign updateServerLink = "#upgrading-to-343" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
 
 ### Ubuntu/CentOS {#ubuntucentos-343}
 
@@ -341,6 +342,10 @@ net start tb-edge
 
 ## Upgrading to 3.4.1EDGE {#upgrading-to-341}
 
+{% assign serverVersion = "3.4.1" %}
+{% assign updateServerLink = "#upgrading-to-341" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
+
 ### Ubuntu/CentOS {#ubuntucentos-341}
 
 **NOTE**: These steps are applicable for ThingsBoard Edge 3.4.0EDGE version.
@@ -517,6 +522,10 @@ net start tb-edge
 
 ## Upgrading to 3.4EDGE {#upgrading-to-34}
 
+{% assign serverVersion = "3.4" %}
+{% assign updateServerLink = "#upgrading-to-34" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
+
 ### Ubuntu/CentOS {#ubuntucentos-34}
 
 **NOTE**: These steps are applicable for ThingsBoard Edge 3.3.4.1EDGE version.
@@ -692,6 +701,10 @@ net start tb-edge
 {: .copy-code}
 
 ## Upgrading to 3.3.4.1EDGE {#upgrading-to-3341}
+
+{% assign serverVersion = "3.3.4.1" %}
+{% assign updateServerLink = "#upgrading-to-3341" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
 
 ### Ubuntu/CentOS {#ubuntucentos-3341}
 

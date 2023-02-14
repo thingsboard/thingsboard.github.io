@@ -50,7 +50,7 @@ The logic of message validation may be reused in other rule chains. For this pur
 ![image](/images/user-guide/rule-engine-2-0/nodes/rule-chain-node-inner.png)
 
 Notice the "Output" nodes we use in validation rule chain. 
-The names of the output nodes should match the outgoing [relations](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-relation) of the "rule chain node" in the main rule chain.
+The names of the output nodes should match the outgoing [relations](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection) of the "rule chain node" in the main rule chain.
 
 ##### Output Node
 
@@ -63,6 +63,6 @@ The names of the output nodes should match the outgoing [relations](/docs/{{docs
 </table> 
 
 Used in combination with the [rule chain node](#rule-chain-node). Allows to publish result of the message processing to the caller rule chain. 
-The output rule node name corresponds to the [relation](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-relation) type of the output message,
+The output rule node name corresponds to the [relation](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection) type of the output message,
 and it is used to forward messages to other rule nodes in the caller rule chain.
 See [rule chain node](#rule-chain-node) documentation for example.
