@@ -141,7 +141,7 @@ Let's walk through available parameters:
 * *nodeDescription* - short description of your node. Visible in the Rule Chain Editor;
 * *nodeDetails* - full description of your node with html tags support. Visible in the Rule Chain Editor;
 * *configClazz* - full class name of the class that describes the configuration json.  
-* *relationTypes* - array of strings with pre-defined [relation types](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-relation);
+* *relationTypes* - array of strings with pre-defined [relation types](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection);
 This values should correspond to the ones that are used in [TbContext.tellNext](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java#L76) method;
 * *customRelations* - boolean value that indicates you are going to use any custom relations in [TbContext.tellNext](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java#L76) method;
 * *configDirective* - name of the Angular based UI directive that will allow user to edit the configuration of the rule node. This is optional and may be empty. In such case, the user will see raw JSON editor;

@@ -11,6 +11,8 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ### v3.5
 
+* Upgrade to Angular 14;
+* Significant UI/UX improvements: new menu, home screen, etc. 
 * Notification system.
   New UI elements to display notifications about alarms, system events, etc on the main page.
   Ability to acknowledge the notification.

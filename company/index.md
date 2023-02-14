@@ -44,7 +44,7 @@ description:
         <div class="phone">+1 212 334 4096</div>
     </div>
     <div class="company-contact">
-        <div class="address">42 Broadway Suite 12-400, New York, NY, 10004, US</div>
+        <div class="address">110 Duane Street, Suite 1C, New York, NY 10007, USA</div>
     </div>
     <div class="company-contact">
         <div class="mail"><a href="mailto:info@thingsboard.io">info@thingsboard.io</a></div>
