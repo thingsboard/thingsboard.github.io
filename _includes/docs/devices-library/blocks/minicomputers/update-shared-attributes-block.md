@@ -7,27 +7,21 @@ REST API.
 
 {% assign updatingSharedAttributeCE = '
     ===
-        image: /images/user-guide/attributes/add-shared-ce-src.png,
-        title: test
+        image: /images/user-guide/attributes/add-shared-ce-src.png
     ===
-        image: /images/user-guide/attributes/add-shared-ce2-src.png,
-        title: test
+        image: /images/user-guide/attributes/add-shared-ce2-src.png
     ===
-        image: /images/user-guide/attributes/add-shared-ce3-src.png,
-        title: test
+        image: /images/user-guide/attributes/add-shared-ce3-src.png
     '
 %}
 
 {% assign updatingSharedAttributePE = '
     ===
-        image: /images/user-guide/attributes/add-shared-pe-src.png,
-        title: test
+        image: /images/user-guide/attributes/add-shared-pe-src.png
     ===
-        image: /images/user-guide/attributes/add-shared-pe2-src.png,
-        title: test
+        image: /images/user-guide/attributes/add-shared-pe2-src.png
     ===
-        image: /images/user-guide/attributes/add-shared-pe3-src.png,
-        title: test
+        image: /images/user-guide/attributes/add-shared-pe3-src.png
     '
 %}
 
@@ -50,30 +44,30 @@ period = 1.0
 # callback function that will call when we will change value of our Shared Attribute
 def attribute_callback(client, result):
     print(client, result)
-		# make sure that you paste YOUR shared attribute name
-		period = result['blinkingPeriod']
+    # make sure that you paste YOUR shared attribute name
+    period = result['blinkingPeriod']
 
 def main():
-	...
-	# make sure that you paste YOUR shared attribute name
+    ...
+    # make sure that you paste YOUR shared attribute name
     sub_id_1 = client.subscribe_to_attribute("blinkingPeriod", attribute_callback)
     sub_id_2 = client.subscribe_to_all_attributes(attribute_callback)
-	...
+    ...
 
 # blinking function that control built-in led
 def blink():
     led = digitalio.DigitalInOut(board.PD14)
-	led.direction = digitalio.Direction.OUTPUT
+    led.direction = digitalio.Direction.OUTPUT
 
-	while True:
-		led.value = True
-		time.sleep(period)
-		led.value = False
-		time.sleep(period)
+    while True:
+        led.value = True
+        time.sleep(period)
+        led.value = False
+        time.sleep(period)
 ```
 
 Also, if you are using the imported dashboard, you can change the blinking period using the following widget, which you 
 can see in the top right corner of the dashboard:
 
-![](/images/devices-library/orangepi/attribute-update-widget.png)
+![](/images/devices-library/basic/minicomputers/attribute-update-widget.png)
 

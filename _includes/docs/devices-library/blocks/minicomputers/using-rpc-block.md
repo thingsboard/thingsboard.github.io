@@ -4,7 +4,7 @@ Basically, this feature will enable you to send commands to/from devices and rec
 In this guide, we will configure the RPC command that allows immediately getting OrangePI telemetry data. If you are 
 using the imported dashboard, you don't need to configure anything as in your dashboard you can see the following widget:
 
-![](/images/devices-library/orangepi/one-way-rpc-widget.png)
+![](/images/devices-library/basic/minicomputers/one-way-rpc-widget.png)
 
 <aside>
 💡 If you create a new dashboard, you can use the “RPC Button” widget for one-way RPC  which is located in the “Control widgets” bundle.
@@ -35,7 +35,7 @@ def rpc_callback(id, request_body):
 ...
 
 def main():
-	...
+    ...
 
     # now rpc_request_response will process rpc requests from server
     client.set_server_side_rpc_request_handler(rpc_callback)
@@ -44,7 +44,7 @@ def main():
 ```
 
 Finally, let’s try to push our button and force getting OrangePI data:
-![](/images/devices-library/orangepi/timeseries-rpc-widget.png)
+![](/images/devices-library/basic/minicomputers/timeseries-rpc-widget.png)
 
 Also, if you did everything right, you should see the following console output:
 

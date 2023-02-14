@@ -23,4 +23,4 @@ ThingsBoard Device Library and device connecting guides.
 
 #### Minicomputers
 
-[How to connect OrangePI to ThingsBoard?](/docs/devices-library/{{docsPrefix}}orangepi/)
+[How to connect OrangePI Zero to ThingsBoard?](/docs/devices-library/{{docsPrefix}}orangepi-zero/)

@@ -28,64 +28,9 @@ should pop up, and you will be prompted to upload the JSON file and click “Imp
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importingDashboardCE %}
 {% endif %}
 
-JSON below is a dashboard:
-```json
-{
-  "title": "OrangePI",
-  "image": null,
-  "mobileHide": false,
-  "mobileOrder": null,
-  "configuration": {
-    "description": "",
-    "widgets": {
-      "847b32bd-ca5b-29d0-7958-6a9684c2ded8": {
-        "isSystemType": true,
-        "bundleAlias": "cards",
-        "typeAlias": "attributes_card",
-        "type": "latest",
-        "title": "New widget",
-        "image": null,
-        "description": null,
-        "sizeX": 7.5,
-        "sizeY": 3,
-        "config": {
-          "datasources": [
-            {
-              "type": "entity",
-              "name": null,
-              "entityAliasId": "e64513b0-faf1-efdc-518a-236fb9f8e79e",
-              "filterId": null,
-              "dataKeys": [
-                {
-                  "name": "active",
-                  "type": "attribute",
-                  "label": "active",
-                  "color": "#f44336",
-                  "settings": {},
-                  "_hash": 0.7425645028813859
-                },
-                {
-                  "name": "ip_address",
-                  "type": "attribute",
-                  "label": "ip_address",
-                  "color": "#2196f3",
-                  "settings": {},
-                  "_hash": 0.4956812732480287
-                },
-                {
-                  "name": "macaddress",
-                  "type": "attribute",
-                  "label": "macaddress",
-                  "color": "#4caf50",
-                  "settings": {},
-                  "_hash": 0.355748280280748
-                }
-              ]
-            }
-          ],
-          "timewindow": {
-            "displayValue": "",
-            "selectedTab": 0,
-```
+Below you can find the dashboard JSON file:
+
+[Check and control device data dashboard](/docs/devices-library/resources/dashboards/minicomputers/dashboard.json)
+
 If you did everything right, you have to see the following dashboard:
-![](/images/devices-library/orangepi/minicomputer-dashboard.png)
+![](/images/devices-library/basic/minicomputers/minicomputer-dashboard.png)

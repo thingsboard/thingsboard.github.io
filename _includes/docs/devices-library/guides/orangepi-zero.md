@@ -1,3 +1,12 @@
+{% assign deviceName = "OrangePI" %}
+{% assign prerequisites = "
+- " | append: deviceName | append: "
+- [tb-mqtt-client library](https://pypi.org/project/tb-mqtt-client/)
+- [python ≥ 3.7](https://www.python.org/)
+- [board library](https://pypi.org/project/board/)
+- [digitalio library](https://pypi.org/project/adafruit-circuitpython-mcp3xxx/) "
+ %}
+
 ## Introduction
 
 ![OrangePI](/images/devices-library/orangepizero.png){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
@@ -7,20 +16,7 @@ Orange Pi Zero is an open-source single-board computer. It is highly compact wit
 Android 4.4, Ubuntu, Debian. Orange Pi Zero uses the AllWinner H2 SoC, and has 256MB/512MB DDR3 SDRAM(256MB version is 
 Standard version), it integrates TF card, 100 Ethernet network, USB 2.0, 26Pin headers, etc. lt is powered through USB OTG. 
 
-In this guide we will show how to connect the minicomputer OrangePI with ThingsBoard, starting from creating a device on
-ThingsBoard, installing all required libraries and tools, connecting Orange PI to ThingsBoard, checking data receiving 
-and using shared attributes and RPCs.
-
-## Requirements:
-
-As an example we will use the following hardware and software:
-
-- OrangePI;
-- ThingsBoard Cloud;
-- python ≥ 3.7;
-- tb-mqtt-client library;
-- board library;
-- digitalio library.
+{% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
 ## Create device on ThingsBoard
 
@@ -35,15 +31,18 @@ As an example we will use the following hardware and software:
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 {% include /docs/devices-library/blocks/minicomputers/general-code-to-program-block.md %}
 
+## Synchronize device state using client and shared attribute requests
+{% include /docs/devices-library/blocks/minicomputers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
+
 ## Check data on ThingsBoard
 
 {% include /docs/devices-library/blocks/minicomputers/check-data-on-thingsboard-block.md %}
 
-## Update the interval of blinking led using shared attributes
+## Control device using shared attributes
 
 {% include /docs/devices-library/blocks/minicomputers/update-shared-attributes-block.md %}
 
-## Immediately getting telemetry using RPC
+## Control device using RPC
 
 {% include /docs/devices-library/blocks/minicomputers/using-rpc-block.md %}
 
