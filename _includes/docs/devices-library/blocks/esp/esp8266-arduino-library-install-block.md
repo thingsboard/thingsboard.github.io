@@ -17,7 +17,7 @@ Next, go to **Tools** > **Board** > **Board Manager** and install the ***ESP8266
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=installESP8266 %}
 
-After the installation is complete, select the board by Board menu:  
+Once the installation is complete, select the board by Board menu:  
 **Tools** > **Board** > {{ arduinoBoardPath }}.  
 
 {% assign mbedtlsInstallationRequired="true" %}

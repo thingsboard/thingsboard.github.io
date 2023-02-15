@@ -2,7 +2,7 @@
 {% assign importDashboardCE = '
     ===
         image: /images/user-guide/dashboards/creating-dash-1-ce.png,
-        title: Go to Dashboards through the main menu on the left of the screen.
+        title: Go to Dashboards through the main menu on the left side of the screen.
     ===
         image: /images/user-guide/dashboards/dashboard-import-ce.png,
         title: Click on the “+” button in the upper right corner of the page and choose "Import dashboard".
@@ -18,7 +18,7 @@
 {% assign importDashboardPE = '
     ===
         image: /images/user-guide/dashboards/creating-dash.png,
-        title: Go to Dashboard groups through the main menu on the left of the screen, to add a new dashboard group, click the "+" sign in the upper right corner of the screen, or open the "All" dashboard group.
+        title: Go to Dashboard groups through the main menu on the left side of the screen, to add a new dashboard group, click the "+" sign in the upper right corner of the screen, or open the "All" dashboard group.
     ===
         image: /images/user-guide/dashboards/dashboard-import-pe.png,
         title: Open Dashboard group by pressing on the icon "Open" (Or just by clicking on the row for TB 3.4+).
@@ -38,7 +38,7 @@ To check the data and get ability to send commands or data to the device we can 
 
 [Check and control device data dashboard](/docs/devices-library/resources/dashboards/esp/dashboard.json)
 
-In order to add the dashboard to ThingsBoard we need to import it, to do this we will do the following steps:  
+To add the dashboard to ThingsBoard, we need to import it, and to do this, we have to go through the following steps:  
 
 
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
@@ -48,5 +48,5 @@ In order to add the dashboard to ThingsBoard we need to import it, to do this we
 {% endif %} 
 
 After importing we should choose entity alias for our device.  
-To do this - we need to press pen icon and select entity aliases, select alias "My device" and open it to edit by pressing pen icon.    
+To do this - we need to press the pen icon and select entity aliases, select alias "My device" and open it for editing by pressing the pen icon.    
 Then choose a device with name My device from dropdown list and save entity alias, now you should be able to see the data from the device.     

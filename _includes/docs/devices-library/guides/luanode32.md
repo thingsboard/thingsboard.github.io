@@ -14,7 +14,7 @@
 
 The LuaNode32 dev kit is built on the ESP-WROOM-32 module, a new miniature high-performance Wi-Fi + BT + BLE chip from Espressif, designed for a wide range of applications, from micro-power network sensors to the most complex applications, such as encoding, streaming music and MP3 encoding.  
 The module contains all the necessary minimum peripherals, sufficient for a quick and comfortable start of work with ESP-WROOM-32.  
-ESP-WROOM-32 is based on the popular ESP32 dual-core chipset, with a variable clock frequency from 80 MHz to 240 MHz, the possibility of individual control and power supply.  
+ESP-WROOM-32 is based on the popular ESP32 dual-core chipset, with a variable clock frequency from 80 MHz to 240 MHz, with the possibility of individual control and power supply.  
 The module is designed for portable and autonomous electronics and Internet of Things applications, made in a miniature 25.5 mm x 18 mm package, has on-board Flash memory, 40 MHz quartz and a PCB antenna that provides good RF characteristics.  
   
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
@@ -53,5 +53,5 @@ The module is designed for portable and autonomous electronics and Internet of T
 
 ## Conclusion
 
-So, after this guide, you know how to connect {{ deviceName }} and send the data to ThingsBoard.  
-By now you can move forward and send any data that you want.  
+With the knowledge outlined in this guide, you can easily connect your LuaNode32 device and send data to ThingsBoard.
+From now on you can move forward and send any data that you want.  

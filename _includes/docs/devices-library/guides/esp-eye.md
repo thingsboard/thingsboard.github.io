@@ -41,5 +41,6 @@ It also supports image transmission via Wi-Fi and debugging through a Micro-USB 
 
 ## Conclusion
 
-So, after this guide, you know how to connect ESP-EYE and send the data to ThingsBoard cloud.  
-By now you can move forward and send any data that you want.  
+
+With the knowledge outlined in this guide, you can easily connect your ESP-EYE board and send data to ThingsBoard.
+From now on you can move forward and send any data that you want. 

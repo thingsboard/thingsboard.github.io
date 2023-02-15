@@ -12,7 +12,7 @@
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 
 The NodeMCU is quite a popular development board that is broadly implemented across the internet world.   
-It is based on the ESP-12E Wi-Fi module that is perfectly associated with the combination of elements of easy programming with Arduino IDE as well as Wi-Fi capability.  
+It is based on the ESP-12E Wi-Fi module that is perfectly associated with the combination of easy programming elements with Arduino IDE as well as Wi-Fi capability.  
 The prototyping and development projects can be handled smoothly via the inbuilt programmer and CP2102 USB-to-serial chip that flashes the ESP8266 and serial output on PC integration.
 The NodeMCU development board integrates ESP8266.  It is a well-integrated chip that is specifically crafted to cater to the requirements of a new connected world.  
 The unit allows to either host the application or to offload all Wi-Fi networking functions derived from another application processing unit.
@@ -53,5 +53,5 @@ The unit allows to either host the application or to offload all Wi-Fi networkin
 
 ## Conclusion
 
-So, after this guide, you know how to connect {{ deviceName }} and send the data to ThingsBoard.  
-By now you can move forward and send any data that you want.  
+With the knowledge outlined in this guide, you can easily connect your NodeMCU V2 board and send data to ThingsBoard.
+From now on you can move forward and send any data that you want. 
