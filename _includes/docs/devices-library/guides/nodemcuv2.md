@@ -53,5 +53,5 @@ The unit allows to either host the application or to offload all Wi-Fi networkin
 
 ## Conclusion
 
-With the knowledge outlined in this guide, you can easily connect your NodeMCU V2 board and send data to ThingsBoard.
+With the knowledge outlined in this guide, you can easily connect your {{deviceName}} and send data to ThingsBoard.
 From now on you can move forward and send any data that you want. 

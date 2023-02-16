@@ -53,5 +53,5 @@ The module is designed for portable and autonomous electronics and Internet of T
 
 ## Conclusion
 
-With the knowledge outlined in this guide, you can easily connect your LuaNode32 device and send data to ThingsBoard.
+With the knowledge outlined in this guide, you can easily connect your {{deviceName}} and send data to ThingsBoard.
 From now on you can move forward and send any data that you want.  

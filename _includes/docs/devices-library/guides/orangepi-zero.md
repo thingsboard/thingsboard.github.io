@@ -10,9 +10,9 @@
 ## Introduction
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-Orange Pi Zero is for anyone who wants to start creating with technology- not just consuming it. It's a simple, fun, 
+Orange Pi Zero is for anyone who wants to start creating with technology, not just consuming it. It's a simple, fun, 
 useful tool that you can use to start taking control of the world around you. 
-Orange Pi Zero is an open-source single-board computer. It is highly compact with a dimension of 48X46mm. It can run 
+Orange Pi Zero is an open-source single-board computer. It is very compact with a dimension of 48X46mm. It can run 
 Android 4.4, Ubuntu, Debian. Orange Pi Zero uses the AllWinner H2 SoC, and has 256MB/512MB DDR3 SDRAM(256MB version is 
 Standard version), it integrates TF card, 100 Ethernet network, USB 2.0, 26Pin headers, etc. lt is powered through USB OTG. 
 
@@ -46,6 +46,7 @@ Standard version), it integrates TF card, 100 Ethernet network, USB 2.0, 26Pin h
 
 {% include /docs/devices-library/blocks/minicomputers/using-rpc-block.md %}
 
+## Conclusion
 
-
-Thanks for your interest in the ThingsBoard platform and for reading this guide!
+With the knowledge outlined in this guide, you can easily connect your {{deviceName}} and send data to ThingsBoard.
+From now on you can move forward and send any data that you want. 

@@ -1,7 +1,7 @@
 ThingsBoard allows you to send Remote Procedure Calls (RPC) from server-side applications to devices and vice versa. 
 Basically, this feature will enable you to send commands to/from devices and receive the results of command execution.
 
-In this guide, we will configure the RPC command that allows immediately getting OrangePI telemetry data. If you are 
+In this guide, we will configure the RPC command to get OrangePI telemetry data immediately. If you are 
 using the imported dashboard, you don't need to configure anything as in your dashboard you can see the following widget:
 
 ![](/images/devices-library/basic/minicomputers/one-way-rpc-widget.png)

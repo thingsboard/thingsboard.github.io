@@ -10,7 +10,7 @@
  %}
 
 You can manually change state of the led and change mode between continuous lightning and blinking.
-In order to do this you can use the following parts of our dashboard:  
+To do this, you can use the following parts of our dashboard:  
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=changeStateAndMode %}
   

@@ -32,7 +32,7 @@ REST API.
 {% endif %}
 
 For now, we are ready to write our code. In this part, we use new packages for blinking our LED in the `blink` function.
-Also, we use the `attibute_callback` function, which will call when we change the value of our shared attribute. And 
+Also, we use the `attibute_callback` function, which will be called when we change the value of our shared attribute. And 
 finally, we bind our callback to subscriber in the `main` function.
 
 ```python

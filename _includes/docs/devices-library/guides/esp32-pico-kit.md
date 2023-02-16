@@ -52,5 +52,5 @@ Official documentation is available [here](https://docs.espressif.com/projects/e
 
 ## Conclusion
 
-With the knowledge outlined in this guide, you can easily connect your ESP32 PICO KIT device and send data to ThingsBoard.
+With the knowledge outlined in this guide, you can easily connect your {{deviceName}} and send data to ThingsBoard.
 From now on you can move forward and send any data that you want. 
