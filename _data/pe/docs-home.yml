@@ -203,8 +203,12 @@ toc:
   - title: Two-Factor Authentication
     path: /docs/pe/user-guide/two-factor-authentication/
     new: true
-  - title: OAuth 2 Support
-    path: /docs/pe/user-guide/oauth-2-support/
+  - title: OAuth 2
+    section:
+      - title: OAuth 2 Support
+        path: /docs/pe/user-guide/oauth-2-support/
+      - title: OAuth 2 with Azure
+        path: /docs/pe/user-guide/oauth/azure-oauth/
   - title: HTTP Transport
     section:
       - title: HTTP over SSL
