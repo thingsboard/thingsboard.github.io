@@ -53,5 +53,5 @@ WeMos is distinguished by its low cost and ease of connection and programming.
 
 ## Conclusion
 
-So, after this guide, you know how to connect {{ deviceName }} and send the data to ThingsBoard.  
-By now you can move forward and send any data that you want.  
+With the knowledge outlined in this guide, you can easily connect your {{deviceName}} and send data to ThingsBoard.
+From now on you can move forward and send any data that you want. 

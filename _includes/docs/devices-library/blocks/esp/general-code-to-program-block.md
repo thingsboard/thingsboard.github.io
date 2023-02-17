@@ -315,7 +315,7 @@ constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 ...
 ```
 
-Sending data part (By default the example sends random value for **temperature** key and some WiFi information):  
+Send data part (By default the example sends random value for **temperature** key and some WiFi information):  
 ```cpp
 ...
     tb.sendTelemetryInt("temperature", random(10, 20));

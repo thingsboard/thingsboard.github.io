@@ -6,7 +6,7 @@ To install ThingsBoard Arduino SDK - we will need to do the following steps:
         title: Go to "Tools" tab and click on "Manage libraries".
     ===
         image: /images/devices-library/basic/arduino-ide/manage-libraries-thingsboard.png
-        title: Put "ThingsBoard" into the search box and press "INSTALL" button for found library.
+        title: Put "ThingsBoard" into the search box and press "INSTALL" button for the found library.
 ' 
 %}
 
@@ -26,4 +26,4 @@ Also, for boards, based on ESP8266 chip we should install the "mbedtls" library.
 
 {% endif %}
 
-By now we have installed all required libraries and tools.  
+At this point, we have installed all required libraries and tools.  

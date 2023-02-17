@@ -30,7 +30,7 @@ Unfortunately, this board doesn't have built-in LED indicator that we can contro
 So you can check results of shared attribute change using Serial Monitor (**Tools** -> **Serial monitor**) and choose a baud rate 115200.  
 {% endif %}
 
-To reach this, we have a variable "blinkingInterval" used the following parts of the code:  
+To reach this, we have a variable "blinkingInterval" used in the following parts of the code:  
 - Callback for shared attributes update:  
     
 ```cpp

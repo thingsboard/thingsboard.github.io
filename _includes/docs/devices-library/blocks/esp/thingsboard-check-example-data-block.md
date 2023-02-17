@@ -13,7 +13,7 @@ To check the data from our device we need to open imported dashboard:
         title: Received attributes from device.
     ===
         image: /images/devices-library/basic/esp/dashboard/thingsboard-example-dashboard-device-info.png,
-        title: Information about the device, from ThingsBoard server.
+        title: Device information from the ThingsBoard server.
     ===
         image: /images/devices-library/basic/esp/dashboard/thingsboard-example-dashboard-led-mode-history.png,
         title: Widget to see the history of led mode changes.

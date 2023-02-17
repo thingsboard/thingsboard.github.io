@@ -165,7 +165,7 @@ def get_data():
 ...
 ```
 
-Sending data part, as you can see below, we send our attributes and telemetry data every 60 seconds (feel free to change it if you want more frequent data updating):
+Send data part, as you can see below, we send our attributes and telemetry data every 60 seconds (feel free to change it if you want more frequent data updating):
 ```python
 ...		
     while not client.stopped:

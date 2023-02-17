@@ -7,7 +7,7 @@ https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32
 ```
 {:.copy-code}
 
-Next steps is:  
+Next steps:  
 
 {% assign esp32ArduinoInstallation='
     ===

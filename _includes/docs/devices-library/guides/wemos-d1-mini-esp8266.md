@@ -13,7 +13,7 @@
 
 The WEMOS D1 mini is based on a 32-bit ESP8266 microcontroller and has a WiFi module.  
 The amount of flash memory of the device reaches 4 MB.  
-The improved WEMOS D1 mini model has 16 MB of memory, has an SMD antenna and an output for connecting an external antenna.  
+The improved WEMOS D1 mini model has 16 MB of memory, an SMD antenna, and an output for connecting an external antenna.  
 The sizes and location of contacts in both types of boards are the same.
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
@@ -52,5 +52,5 @@ The sizes and location of contacts in both types of boards are the same.
 
 ## Conclusion
 
-So, after this guide, you know how to connect {{ deviceName }} and send the data to ThingsBoard.  
-By now you can move forward and send any data that you want.  
+With the knowledge outlined in this guide, you can easily connect your {{deviceName}} and send data to ThingsBoard.
+From now on you can move forward and send any data that you want.

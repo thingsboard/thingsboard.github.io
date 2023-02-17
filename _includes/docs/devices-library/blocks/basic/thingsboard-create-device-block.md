@@ -2,7 +2,7 @@
 {% assign provisionDeviceCE = '
     ===
         image: /images/helloworld/hello-world-step-1-item-1.png,
-        title: Login in to your ThingsBoard instance and open the Devices page.
+        title: Log in to your ThingsBoard instance and open the Devices page.
     ===
         image: /images/helloworld/hello-world-step-1-item-2.png,
         title: Click on the "+" icon in the top right corner of the table and then select "Add new device".
@@ -18,7 +18,7 @@
 {% assign provisionDevicePE = '
     ===
         image: /images/helloworld/hello-world-pe-step-1-item-1.png,
-        title: Login in to your ThingsBoard instance and open the Devices page.
+        title: Log in to your ThingsBoard instance and open the Devices page.
     ===
         image: /images/helloworld/hello-world-pe-step-1-item-2.png,
         title: Click on the "+" icon in the top right corner of the table and then select "Add new device".

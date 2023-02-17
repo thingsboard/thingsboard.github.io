@@ -1,5 +1,5 @@
 In order to get the state of the device from ThingsBoard during booting we have functionality to do this in the code.  
-Responsible parts of the example code:  
+Responsible parts of the code example:  
 - Attribute callbacks:  
     
 ```cpp
@@ -38,7 +38,7 @@ const Attribute_Request_Callback attribute_client_request_callback(CLIENT_ATTRIB
 ```
 
 As you can see - we have 2 callbacks, the first one is for shared attributes and the second one is for client attributes.  
-The first one receives response with blinkingInterval to set the correct period for blinking.  
+The first one receives response with blinking Interval to set the correct period for blinking.  
 The second callback receives mode and state of the LED to save it and set them.  
 This functionality allows us to keep the actual state after rebooting.  
 
@@ -58,4 +58,4 @@ This functionality allows us to keep the actual state after rebooting.
     }
 ...
 ``` 
-In order to give ability to our callbacks to receive the data we have to send a request to ThingsBoard.  
+In order for our callbacks to receive the data, we have to send a request to ThingsBoard.  

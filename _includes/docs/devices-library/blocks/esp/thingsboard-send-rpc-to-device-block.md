@@ -10,13 +10,13 @@
  %}
 
 You can manually change state of the led and change mode between continuous lightning and blinking.
-In order to do this you can use the following parts of our dashboard:  
+To do this, you can use the following parts of our dashboard:  
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=changeStateAndMode %}
   
-Please notice that you can change the LED state only if blinking mode is disabled.  
+Please note that you can change the LED state only if blinking mode is disabled.  
 
-In the example code we have functionality to handle RPC commands.  
+In the code example we have functionality to handle RPC commands.  
 To get ability to control the device we have used the following parts of the code:  
 - Callback for RPC requests:  
     
