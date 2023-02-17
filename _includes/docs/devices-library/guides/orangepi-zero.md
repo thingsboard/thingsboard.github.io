@@ -47,6 +47,4 @@ Standard version), it integrates TF card, 100 Ethernet network, USB 2.0, 26Pin h
 {% include /docs/devices-library/blocks/minicomputers/using-rpc-block.md %}
 
 ## Conclusion
-
-With the knowledge outlined in this guide, you can easily connect your {{deviceName}} and send data to ThingsBoard.
-From now on you can move forward and send any data that you want. 
+{% include /docs/devices-library/blocks/basic/conclusion-block.md %}

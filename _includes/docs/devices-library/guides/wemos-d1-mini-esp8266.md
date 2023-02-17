@@ -52,5 +52,4 @@ The sizes and location of contacts in both types of boards are the same.
 
 ## Conclusion
 
-With the knowledge outlined in this guide, you can easily connect your {{deviceName}} and send data to ThingsBoard.
-From now on you can move forward and send any data that you want.
+{% include /docs/devices-library/blocks/basic/conclusion-block.md %}

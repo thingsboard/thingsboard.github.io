@@ -1,3 +1,6 @@
+
+
+
 ## Introduction
 
 ![ESP-EYE](/images/devices-library/esp-eye.png){: style="float: left; max-width: 150px; max-height: 150px; margin: 0px 10px 0px 10px"}
@@ -41,6 +44,4 @@ It also supports image transmission via Wi-Fi and debugging through a Micro-USB 
 
 ## Conclusion
 
-
-With the knowledge outlined in this guide, you can easily connect your ESP-EYE board and send data to ThingsBoard.
-From now on you can move forward and send any data that you want. 
+ {% include /docs/devices-library/blocks/basic/conclusion-block.md %} 
