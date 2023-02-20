@@ -119,7 +119,7 @@ Below is brief description of widget context properties:
 | widgetTitle                      | String             | If set, will override configured widget title text. **updateWidgetParams()** function must be called after this property change. |
 | detectChanges()                  | Function           | Trigger change detection for current widget. Must be invoked when widget HTML template bindings should be updated due to widget data changes. |
 | updateWidgetParams()             | Function           | Updates widget with runtime set properties such as **widgetTitle**, **hideTitlePanel**, etc. Must be invoked in order these properties changes take effect. |
-| pageLink(pageSize, page, textSearch, sortOrder) | [PageLink](https://github.com/thingsboard/thingsboard/blob/v3.4/ui-ngx/src/app/shared/models/page/page-link.ts#L96) | Using to create sorting configuration for get requests. **pageSize** - specifies how many entities will be in the page, **page** - specifies what page with entities will be get, **textSearch** - specifies what text must be included in entities, **sortOrder** - specifies in which order entities will be get. |
+| pageLink(pageSize, page, textSearch, sortOrder) | [PageLink](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/page/page-link.ts#L96) | Using to create sorting configuration for get requests. **pageSize** - specifies how many entities will be in the page, **page** - specifies what page with entities will be get, **textSearch** - specifies what text must be included in entities, **sortOrder** - specifies in which order entities will be get. |
 | defaultSubscription              | [IWidgetSubscription](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L220")             | Default widget subscription object contains all subscription information, including current data, according to the widget type. See [Subscription object](#subscription-object). |
 | timewindowFunctions              | [TimewindowFunctions](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L45)             | Object with timewindow functions used to manage widget data time frame. Can by used by Time-series or Alarm widgets. See [Timewindow functions](#timewindow-functions). |
 | controlApi                       | [RpcApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L58)             | Object that provides API functions for RPC (Control) widgets. See [Control API](#control-api). | 
@@ -264,7 +264,7 @@ Object with timewindow functions ([TimewindowFunctions](https://github.com/thing
 
 #### Control API
 
-Object that provides API functions ([RpcApi](https://github.com/thingsboard/thingsboard/blob/v3.4/ui-ngx/src/app/core/api/widget-api.models.ts#L73)) for [RPC (Control)](/docs/{{docsPrefix}}user-guide/ui/widget-library/#rpc-control-widget) widgets. Path: **widgetContext.controlApi**.
+Object that provides API functions ([RpcApi](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L73)) for [RPC (Control)](/docs/{{docsPrefix}}user-guide/ui/widget-library/#rpc-control-widget) widgets.This API working **only** with [RPC (Control) widget](#rpc-control-widget) Path: **widgetContext.controlApi**.
 
 | **Function**                                        | **Description**                                                                        |
 |-----------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -274,7 +274,7 @@ Object that provides API functions ([RpcApi](https://github.com/thingsboard/thin
 
 #### Actions API
 
-Set of API functions ([WidgetActionsApi](https://github.com/thingsboard/thingsboard/blob/v3.4/ui-ngx/src/app/core/api/widget-api.models.ts#L85)) to work with user defined actions. Path: **widgetContext.actionsApi**.
+Set of API functions ([WidgetActionsApi](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L85)) to work with user defined actions. Path: **widgetContext.actionsApi**.
 
 | **Function**                                                          | **Description**                                                                        |
 |-----------------------------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -283,6 +283,17 @@ Set of API functions ([WidgetActionsApi](https://github.com/thingsboard/thingsbo
 | ``` getActiveEntityInfo() ```                                         | Returns information about first find entity in widget.                                 |
 | ``` openDashboardStateInSeparateDialog(targetDashboardStateId, params?, dialogTitle?, hideDashboardToolbar?, dialogWidth?, dialogHeight?) ``` | Open dashboard state in the separate dialog by **stateId**. **targetDashboardStateId** - id of state that will be open in separate dialog, **params** - entity from dashboard state params, **dialogTitle** - title for separate dialog, **hideDashboardToolbar** - controls dasboard toolbar, **dialogWidth** - width of separate dialog, **dialogHeight** - height of pseparate dialog. |
 | ``` openDashboardStateInPopover($event, targetDashboardStateId, params?, hideDashboardToolbar?, preferredPlacement?, hideOnClickOutside?, popoverWidth?, popoverHeight?, popoverStyle?) ``` | Opens dashboard state in the popover window by **stateId**. **$event** - event object associated with action, **targetDashboardStateId** - id of state that will be open in popover, **params** - entity from dashboard state params, **hideDashboardToolbar** - controls dasboard toolbar, **preferredPlacement** - selects where popover will be opened, **hideOnClickOutside** - controls closing popup after clicking outside, **popoverWidth** - width of popover window, **popoverHeight** - height of popover window, **popoverStyle** - style of popover window. |
+
+#### Widget Subscription API
+
+Set of API functions ([WidgetSubscriptionApi](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L65)) to work with custom subscriptions. Path: **widgetContext.subscriptionApi**.
+
+| **Function**                                                          | **Description**                                                                        |
+|-----------------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| ``` createSubscription(options, subscribe?) ```                          | Creates subscription to the data. **options** -  sets the parameters of subscription, **subscribe** - controls the arrival of updated data. |
+| ``` createSubscriptionFromInfo(type, subscriptionsInfo, options, useDefaultComponents, subscribe ) ```  | Creates subscription to the data. **type** - type of widget, **subscriptionsInfo** - describes the data to be subscribed to, **options** -  sets the parameters of subscription, **useDefaultComponents** - If enabled, the default subscription settings will be used, **subscribe** - controls the arrival of updated data. |
+| ``` removeSubscription(id) ```                                         | Removes subscription. **id** - id of subscription.                                |
+
 
 #### State Controller
 
@@ -306,7 +317,7 @@ Reference to Dashboard state controller ([IStateController](https://github.com/t
 
 #### Broadcast Service
 
-Broadcast service ([BroadcastService](https://github.com/thingsboard/thingsboard/blob/v3.4/ui-ngx/src/app/core/services/broadcast.service.ts#L25)) using for data exchange between widgets at the UI level.
+Broadcast service ([BroadcastService](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/services/broadcast.service.ts#L25)) using for data exchange between widgets at the UI level.
 
 | **Function**                                        | **Description**                                                                        |
 |-----------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -868,6 +879,498 @@ This is just a static HTML widget.  There is no subscription data and no special
 Only custom **showAlert** function was implemented showing an alert with the content of **alertContent** property of widget settings.
 You can switch to dashboard edit mode in **Widget preview** section and change value of **alertContent** by changing widget settings in the "Advanced" tab of widget details.
 Then you can see that the new alert content is displayed. 
+
+### Custom subscriptions
+
+In the process of developing widgets, you may encounter a situation when the default subscription functionality will not be enough for your tasks. In this case, you can use a **custom subscription**.
+Usually **custom subscription** used with a **static** widget type because it doesn't have default subscription logic.
+
+#### Main information
+
+For creating custom subscriptions you have to use function **createSubscription** from [Widget Subscription API]( #widget-subscription-api ):
+ 
+```javascript
+    widgetContext.createSubscription(options);
+```
+
+Object [options](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L238) has all information about the subscription and has the following fields:
+
+| **Field**                                      | **Type**       |**Description**                                                               |
+|------------------------------------------------|----------------|------------------------------------------------------------------------------|
+| ```type```                                     | [widgetType](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L38)    | Sets subscription type |
+| ```datasources```                              | Array<[Datasource](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L329)> | Contains information about the data to be subscribed to |
+| ```alarmSource```                              | [Datasource](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L329) | Contains information about the alarms to be subscribed to |
+| ```datasourcesOptional```                      | Boolean | Sets whether the **datasources** is optional. For **static** widget type always true. |
+| ```hasDataPageLink```                          | Boolean | Sets whether pageLink is used for subscribing. |
+| ```singleEntity```                             | Boolean | Sets whether data will be get only from the first found entity. |
+| ```pageSize```                                 | Number  | Sets how many entities will get on a single page. |
+| ```warnOnPageDataOverflow```                   | Boolean | Activates warning about overflow page data. |
+| ```useDashboardTimewindow```                   | Boolean | If active, the subscription will be used time window from **dashboardTimewindow**, otherwise will be used **timeWindowConfig** (using to change time window in **time-series** subscriptions) |
+| ```dashboardTimewindow```                      | [Timewindow](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/time/time.models.ts#L95) | Contains the dashboard time window. |
+| ```timeWindowConfig```                         | [Timewindow](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/time/time.models.ts#L95) | Sets the **custom** time window. |
+| ```legendConfig```                             | [LegendConfig](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L238) | Sets params of legend. |
+| ```decimals```                                 | Number | Sets number of digits after floating point for **all** keys. |
+| ```units```                                    | String | Sets special symbol to show next to value for **all** keys. |
+| ```callbacks```                                | [WidgetSubscriptionCallbacks](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L221) | The set of callbacks used in the subscription life cycle. |     
+
+##### Datasources
+
+**Datasources** object describes what data you want to subscribe. The main functions are:
+
+- Description of the keys that you want to subscribe.
+- Description of the entities from which you want to retrieve data.
+- Filtering entities by certain keys and values.
+
+Object [datasource](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L329) has the following fields:
+
+| **Field**                                      | **Type**       |**Description**                                                               |
+|------------------------------------------------|----------------|------------------------------------------------------------------------------|
+| ```type```                                     | [DatasourceType](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L315)/any | Sets type of datasource. |
+| ```aliasName```                                | String | Name of datasource |
+| ```dataKeys```                                 | Array<[DataKey](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L304)> | Describes the keys to be subscribed to. |
+| ```latestDataKeys```                           | Array<[DataKey](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L304)> | Use this in case you have **time-series** subscription and at the same time, you want to subscribe to the **latest** data for some keys. |
+| ```pageLink```                                 | [EntityDataPageLink](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/query/query.models.ts#L700) | Sets pageLink for datasource |
+| ```keyFilters```                               | Array<[KeyFilter](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/query/query.models.ts#L370)> | Filters the data to be subscribed to by the value of the keys |
+| ```entityFilter```                             | [EntityFilter](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/query/query.models.ts#L686) | Filters the data to be subscribed to by entities params |
+
+##### Callbacks
+
+**Callbacks** object has a set of functions that are called at different stages of the subscription life cycle. It has next fields:
+
+| **Function**                                   | **Description**                                                              |
+|------------------------------------------------|------------------------------------------------------------------------------|
+| ```onDataUpdated```                            | Called after updating data.  |
+| ```onLatestDataUpdated```                      | Called only in time-series subscription after updating data from **latestDataKeys**. |
+| ```onDataUpdateError```                        | Called after an error in updating data. |
+| ```onLatestDataUpdateError```                  | Called only in time-series subscription after error in updating data from **latestDataKeys**. |
+| ```legendDataUpdated```                        | Called after update legend data. |
+| ```timeWindowUpdated```                        | Called after update **time window**. |
+| ```dataLoading```                              | Called after loading data. |
+| ```rpcStateChanged```                          | Called after change RPC state. |
+| ```onRpcSuccess```                             | Called only in rpc subscription after success RPC. |
+| ```onRpcFailed```                              | Called only in rpc subscription after failed RPC. |
+
+#### Examples
+
+Below is a set of typical custom subscription examples.
+
+##### Subscription for counting
+
+Let's create a custom subscription for the number of devices in the system, and the number of active devices:
+
+```javascript
+self.onInit = function() {
+    ...
+    const datasources = [
+        {
+            type: "entityCount", //Sets that there is a subscription to the entity count
+            dataKeys: [
+                {
+                    decimals: 0, //Number of digits after floating point for this key
+                    label: "Devices", //Key label
+                    name: "count", //Key name
+                    settings: {},
+                    type: "count" //Key type
+                }
+            ],
+            entityFilter: //Describes entities
+            {
+                type: "entityType", //Entity filter type
+                entityType: "DEVICE"  //Entity type
+            }
+        },
+        {
+            type: "entityCount",
+            dataKeys: [
+                {
+                    decimals: 0,
+                    label: "Active Devices",
+                    name: "count",
+                    settings: {},
+                    type: "count"
+                }
+            ],
+            entityFilter:
+            {
+                type: "entityType",
+                entityType: "DEVICE"
+            },
+            keyFilters: //Filtering entity by keys
+            [
+                {
+                    key: {
+                        key: "active", //Key name
+                        type: "ATTRIBUTE" //Key type
+                    },
+                    predicate: {
+                        operation: "EQUAL", //Operation type
+                        type: "BOOLEAN", //Sorting value type
+                        value: {
+                            defaultValue: true //Sorting value
+                        }
+                    },
+                    valueType: "BOOLEAN" //Value type
+                }
+            ]
+        }
+    ];
+
+    const options = {
+        type: 'latest', //Subscription type
+        datasources: datasources, //Describes what data you want to subscribe
+        callbacks: //Sets callbacks for subscription
+        {
+            onDataUpdated: () => {
+                self.onDataUpdated();
+            }
+        }
+    };
+    
+    self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
+        (subscription) => {
+            self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
+            self.ctx.data = subscription.data; //Saving data into widget context
+            self.ctx.datasources = subscription.datasources; //Saving datasource into widget context
+            ...
+        }
+    );
+    ...
+}
+...
+```
+
+As a result, will be created subscription to count devices in the system and count active devices (**the widget is illustrative**):
+![image](/images/user-guide/contribution/widgets/count-subscription.png)
+
+
+##### Subscription for attributes/telemetry
+
+Let's create a custom subscription to the latest **temperature** key value for active devices:
+```javascript
+self.onInit = function() {
+    ...
+    const datasources = [
+        {
+            type: "entity", //Sets that there is a subscription to entity data
+            dataKeys: //Describes keys
+            [
+                {
+                    decimals: 0, //Number of digits after floating point for this key
+                    label: "Temperature", //Key label
+                    name: "temperature", //Key name
+                    settings: {},
+                    type: "timeseries" //Key type
+                },
+                {
+                    decimals: 0,
+                    label: "Active",
+                    name: "active",
+                    settings: {},
+                    type: "attribute"
+                 }
+            ],
+            entityFilter: //Describes entities
+            {
+                type: "entityType", //Entity filter type
+                entityType: "DEVICE" //Entity type
+            },
+            keyFilters: //Filtering entity by keys
+            [
+                {
+                    key: {
+                        key: "active", //Key name
+                        type: "ATTRIBUTE" //Key type
+                    },
+                    predicate: {
+                        operation: "EQUAL", //Operation type
+                        type: "BOOLEAN", //Sorting value type
+                        value: {
+                            defaultValue: true //Sorting value
+                        }
+                    },
+                    valueType: "BOOLEAN" //Value type
+                }
+            ]
+        }
+    ];
+    
+    const options = {
+        type: 'latest', //Subscription type
+        datasources: datasources, //Describes what data you want to subscribe
+        callbacks: //Sets callbacks for subscription
+        {
+            onDataUpdated: () => {
+                self.onDataUpdated();
+            }
+        }
+    };
+    
+    self.ctx.subscriptionApi.createSubscription(options, true).subscribe(
+        (subscription) => {
+            self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
+            self.ctx.data = subscription.data; //Saving data into widget context
+            self.ctx.datasources = subscription.datasources; //Saving datasource into widget context
+            ...
+        }
+    );      
+    ...
+}
+...
+```
+As a result a subscription to the **temperature** and **active** keys will be created **only** for active devices (**the widget is illustrative**):
+![image](/images/user-guide/contribution/widgets/attributes-telemetry-subscription.png)
+
+##### Subscription with PageLink
+Let's create a custom subscription to the latest **temperature** key value that **greatest** 30 with two entities on the page:
+
+```javascript
+...
+self.onInit = function() {
+    ...
+    const datasources = [
+        {
+            type: "entity", //Sets that there is a subscription to entity data
+            dataKeys: //Describes keys
+            [
+                {
+                    label: "Temperature", //Key label
+                    name: "temperature", //Key name
+                    settings: {},
+                    type: "timeseries" //Key type
+                },
+                {
+                    label: "Active",
+                    name: "active",
+                    settings: {},
+                    type: "attribute"
+                }
+            ],
+            entityFilter: //Describes entities
+            {
+                type: "deviceType", //Entity filter type
+                deviceType: "thermostat" //Device type
+            },
+            keyFilters: //Filtering entity by keys
+            [
+                {
+                    key: {
+                        key: "temperature", //Key name
+                        type: "TIME_SERIES" //Key type
+                    },
+                    predicate: {
+                        operation: "GREATER", //Operation type
+                        type: "NUMERIC", //Sorting value type
+                        value: {
+                            defaultValue: 30 //Sorting value
+                        }
+                    },
+                    valueType: "NUMERIC" //Value type
+                }
+            ]
+        }
+    ];
+
+    const options = { 
+        type: 'latest', //Subscription type
+        datasources: datasources, //Describes what data you want to subscribe
+        hasDataPageLink: true, //Sets subscription into pageLink mode
+        callbacks: //Sets callbacks for subscription
+        {
+            onDataUpdated: () => {
+                self.onDataUpdated();
+            }
+        }
+    };
+
+    self.ctx.$scope.pageLink = { 
+        page: 0, //Page Number
+        pageSize: 2, //Number of entities per page
+        dynamic: true //If true, new entities will be automatically added to the widget if they meet the given parameters
+    };
+
+     self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
+        (subscription) => {
+            self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
+            subscribeForPaginatedData(self.ctx.$scope.pageLink);
+            self.ctx.data = subscription.data; //Saving data into widget context
+            self.ctx.datasources = subscription.datasources; //Saving datasource into widget context
+            self.ctx.dataPages = subscription.dataPages; //Saving dataPages into widget context
+            self.ctx.datasourcePages = subscription.datasourcePages; //Saving datasourcePages into widget context
+            ...
+        }
+     );
+    ...
+}
+
+function subscribeForPaginatedData(pageLink) {
+    self.ctx.defaultSubscription.subscribeAllForPaginatedData(pageLink, null); //Get information by pageLink params
+}
+...
+```
+As a result, a subscription to the **temperature** and **active** keys will be created using PageLink (**the widget is illustrative**):
+![image](/images/user-guide/contribution/widgets/page-link-subscription.png)
+
+##### Subscription for telemetry time-series
+
+Let's create a custom subscription to the time-series of **temperature** key from **Thermostat T2** device:
+
+```javascript
+...
+self.onInit = function() {
+    ...
+    const datasources = [
+        {
+            type: "entity", //Sets that there is a subscription to entity data
+            dataKeys: //Describes time-series keys
+            [
+                {
+                    label: "Temperature", //Key label
+                    name: "temperature", //Key name
+                    settings: {},
+                    type: "timeseries" //Key type
+                }
+            ],
+            latestDataKeys: //Describes latest keys
+            [
+                {
+                    label: "Active", //Key label
+                    name: "active", //Key name
+                    settings: {},
+                    type: "attribute" //Key type
+                }
+            ],
+            entityFilter: //Describes entities
+            {
+                type: "entityName", //Entity filter type
+                entityType: "DEVICE", //Entity type
+                entityNameFilter: "Thermostat T2" //Entity name
+            }
+        }
+    ];
+    
+    self.ctx.$scope.pageLink = {
+        page: 0, //Page Number
+        pageSize: 2  //Number of entities per page
+    };
+
+    const options = { 
+        type: 'timeseries', //Subscription type
+        datasources: datasources, //Describes what data you want to subscribe
+        hasDataPageLink: true, //Sets subscription into pageLink mode
+        useDashboardTimewindow: true,
+        callbacks: //Sets callbacks for subscription
+        {
+            onDataUpdated: () => {
+                self.onDataUpdated();
+            }
+        }
+    };
+
+
+     self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
+        (subscription) => {
+            self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
+            subscribeForPaginatedData(self.ctx.$scope.pageLink);
+            self.ctx.data = subscription.data; //Saving data into widget context
+            self.ctx.datasources = subscription.datasources; //Saving datasource into widget context
+            self.ctx.dataPages = subscription.dataPages; //Saving dataPages into widget context
+            self.ctx.datasourcePages = subscription.datasourcePages; //Saving datasourcePages into widget context
+            ...
+        }
+     );
+    ...
+}
+
+function subscribeForPaginatedData(pageLink) {
+    self.ctx.defaultSubscription.subscribeAllForPaginatedData(pageLink, null); //Get information by pageLink params
+}
+...
+```
+
+As a result, will be created subscription to the **temperature** telemetry time-series (**the widget is illustrative**):
+![image](/images/user-guide/contribution/widgets/timeseries-subscrition.png)
+
+
+##### Subscription for alarms
+Let’s create a custom subscription to the alarms from **thermostat** type devices
+ 
+```javascript
+...
+self.onInit = function() {
+    ...
+    const alarmSource = {
+        type: 'entity', //Sets that there is a subscription to entity data
+        dataKeys: //Describes keys
+        [
+          {
+            type: "alarm", //Key type
+            name: "createdTime" //Key name
+          },
+          {
+            type: "alarm",
+            name: "originator"
+          },
+          {
+            type: "alarm",
+            name: "type"
+          },
+          {
+            type: "alarm",
+            name: "severity"
+          },
+          {
+            type: "alarm",
+            name: "status"
+          }
+        ],
+        entityFilter: //Describes entities
+        {
+            type: "deviceType", //Entity filter type
+            deviceType: "thermostat" //Device type
+        }
+    };
+
+    const alarmDataPageLink = {
+        page: 0, //Page Number
+        pageSize: 10, //Number of alarms per page
+        statusList: [], //Status list (all statuses if empty)
+        severityList: [], //Severity list (all severities if empty)
+        typeList: [], //Type list (all alarm types if empty)
+        sortOrder: //Sorting params
+        {
+            key: {
+              key: "createdTime", //Key name
+              type: "ALARM_FIELD" //Key type
+            },
+            direction: "DESC"
+        }
+    }; 
+    
+    const subscriptionOptions = {
+        type: 'alarm', //Subscription type
+        alarmSource: alarmSource, //Describes what alarms data you want to subscribe
+        useDashboardTimewindow: true,
+        callbacks: //Sets callbacks for subscription
+        {
+            onDataUpdated: () => {
+               ...
+            }
+        }
+    };
+
+    self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
+        (subscription) => {
+            self.ctx.alarmsSubscription = subscription; //Saving subscription information into widget context
+            self.ctx.alarmsSubscription.subscribeForAlarms(alarmDataPageLink, null); //Get information by pageLink params
+            ...
+        }
+    );
+    ...
+}   
+...
+```
+As a result, a subscription to the thermostat's alarms will be created (**the widget is illustrative**):
+![image](/images/user-guide/contribution/widgets/alarm-subscription.png)
 
 ## Integrating existing code to create widget definition 
 
