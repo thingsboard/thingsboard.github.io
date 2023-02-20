@@ -42,5 +42,4 @@ In this guide, we will discuss how to connect the ESP32-based boards to ThingsBo
 
 ## Conclusion
 
-With the knowledge outlined in this guide, you can easily connect your M5Stack Timer Camera X and send data to ThingsBoard.
-From now on you can move forward and send any data that you want.   
+{% include /docs/devices-library/blocks/basic/conclusion-block.md %}   
