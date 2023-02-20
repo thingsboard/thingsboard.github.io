@@ -51,6 +51,4 @@ Official documentation is available [here](https://docs.espressif.com/projects/e
 {% include /docs/devices-library/blocks/esp/thingsboard-send-rpc-to-device-block.md %}
 
 ## Conclusion
-
-With the knowledge outlined in this guide, you can easily connect your {{deviceName}} and send data to ThingsBoard.
-From now on you can move forward and send any data that you want. 
+{% include /docs/devices-library/blocks/basic/conclusion-block.md %}
