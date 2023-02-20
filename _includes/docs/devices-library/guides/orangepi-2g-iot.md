@@ -10,11 +10,9 @@
 ## Introduction
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-Orange Pi Zero is for anyone who wants to start creating with technology, not just consuming it. It's a simple, fun, 
-useful tool that you can use to start taking control of the world around you. 
-Orange Pi Zero is an open-source single-board computer. It is very compact with a dimension of 48X46mm. It can run 
-Android 4.4, Ubuntu, Debian. Orange Pi Zero uses the AllWinner H2 SoC, and has 256MB/512MB DDR3 SDRAM(256MB version is 
-Standard version), it integrates TF card, 100 Ethernet network, USB 2.0, 26Pin headers, etc. lt is powered through USB OTG. 
+Orange Pi 2G-IoT uses the Allwinner H6 SoC, and has 2GB LPDDR3 SDRAM, 8GB EMMC Flash. It can run Android 9, Ubuntu, Debian. 
+Orange Pi 2G-IoT offers a range of different ports, including HDMI output, 26pin headers, Gbps Ethernet port, 1 * USB 3.0, 
+2 * USB2.0，etc. It is powered through Type-C. It is a good choice for applications that need strong networking performance. 
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
