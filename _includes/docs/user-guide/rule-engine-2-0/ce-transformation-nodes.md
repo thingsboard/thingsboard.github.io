@@ -20,7 +20,73 @@ Transformation Nodes are used for changing incoming Message fields like Originat
 The rule node transforms the incoming message data using the JSON path expression specified in the configuration.
 Please refer to the [README.md](https://github.com/json-path/JsonPath#operators) of the JsonPath library to view the list of available operators, functions, and path examples.
 
-If JSONPath expression evaluation failed, incoming message routes via Failure chain, otherwise Success chain is used.
+If JSONPath expression evaluation failed, incoming message routes via **Failure** chain, otherwise **Success** chain is used.
+
+## Copy Keys Node
+
+<table  style="width:250px;">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 3.4.2</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/transformation-copy-keys.png)
+
+The rule node copies message data or metadata keys with specified key names selected in the configuration. 
+See screenshot with configuration example below: 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/transformation-copy-keys-config-1.png)
+
+Additionally, rule node have ability to copy keys by a regular expression. 
+See screenshot with configuration example below:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/transformation-copy-keys-config-2.png)
+
+If specified field or fields that match specified regex is not part of message data or metadata, then field or set of fields will be ignored.
+
+## Delete Keys Node
+
+<table  style="width:250px;">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 3.4.2</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/transformation-delete-keys.png)
+
+The rule node removes keys from the message data or metadata with the specified key names selected in the configuration.
+See screenshot with configuration example below:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/transformation-delete-keys-config-1.png)
+
+Additionally, rule node have ability to delete keys by a regular expression:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/transformation-delete-keys-config-2.png)
+
+If specified field or fields that match specified regex is not part of message data or metadata, then field or set of fields will be ignored.
+
+## Rename Keys Node
+
+<table  style="width:250px;">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 3.4.2</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/transformation-rename-keys.png)
+
+The rule node renames message data or metadata keys to the new key names selected in the configuration key mapping.
+See screenshot with configuration example below:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/transformation-rename-keys-config.png)
+
+If the key that is selected in the key mapping is missed in the selected message source(data or metadata), it will be ignored.
 
 ## Change originator Node
 
@@ -46,17 +112,28 @@ The originator can be changed to:
 - Originator's Customer
 - Originator's Tenant
 - Related Entity that is identified by Relations Query
+- Alarm originator
+- Entity
 
 In 'Relations query' configuration Administrator can select required **Direction** and **relation depth level**. 
 Also set of **Relation filters** can be configured with required Relation type and Entity Types.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-change-originator-config.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/transformation-change-originator-config-1.png)
 
 If multiple Related Entities are found, **_only the first Entity is used_** as new originator, other entities are discarded.
 
 **Failure** chain is used if no Related Entity / Customer / Tenant was found, otherwise - **Success** chain.
 
 Outbound Message will have new originator Id.
+
+When 'Alarm originator' source selected rule node assumes that incoming message originator is **Alarm** and will try to change the originator of the message from Alarm to Alarm originator. 
+If incoming message originator is not an **Alarm**, incoming message will route via **Failure** chain.  
+
+When 'Entity' originator source selected rule node provides ability to change the originator to entity selected by name pattern:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/transformation-change-originator-config-2.png)
+
+Note: Rule node allows the use only type of entities that are cacheable by name.
 
 ## Script Transformation Node
 
