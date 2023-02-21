@@ -33,4 +33,4 @@ Below you can find the dashboard JSON file:
 [Check and control device data dashboard](/docs/devices-library/resources/dashboards/minicomputers/dashboard.json)
 
 If you did everything right, you have to see the following dashboard:
-![](/images/devices-library/basic/minicomputers/minicomputer-dashboard.png)
+![](/images/devices-library/basic/single-board-computers/minicomputer-dashboard.png)

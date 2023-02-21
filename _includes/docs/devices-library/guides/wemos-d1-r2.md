@@ -25,31 +25,33 @@ WeMos is distinguished by its low cost and ease of connection and programming.
 
 ## Install required libraries and tools
 
-{% include /docs/devices-library/blocks/esp/esp8266-arduino-library-install-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/esp8266-arduino-library-install-block.md %}
 
-{% include /docs/devices-library/blocks/esp/thingsboard-arduino-library-install-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-arduino-library-install-block.md %}
 
 ## Connect device to ThingsBoard 
 
-{% include /docs/devices-library/blocks/esp/general-code-to-program-block.md %}
+{% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
+
+{% include /docs/devices-library/blocks/microcontrollers/general-code-to-program-block.md %}
 
 ## Check data on ThingsBoard
 
 {% include /docs/devices-library/blocks/basic/thingsboard-upload-example-dashboard.md %}
 
-{% include /docs/devices-library/blocks/esp/thingsboard-check-example-data-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-check-example-data-block.md %}
 
 ## Synchronize device state using client and shared attribute requests
 
-{% include /docs/devices-library/blocks/esp/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
 ## Control device using shared attributes
 
-{% include /docs/devices-library/blocks/esp/thingsboard-update-shared-device-interval-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-device-interval-block.md %}
 
 ## Control device using RPC
 
-{% include /docs/devices-library/blocks/esp/thingsboard-send-rpc-to-device-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-send-rpc-to-device-block.md %}
 
 ## Conclusion
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}

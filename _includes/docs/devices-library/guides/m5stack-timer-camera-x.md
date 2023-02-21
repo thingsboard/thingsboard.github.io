@@ -14,31 +14,33 @@ In this guide, we will discuss how to connect the ESP32-based boards to ThingsBo
 
 ## Install required libraries and tools
 
-{% include /docs/devices-library/blocks/esp/m5stack-arduino-library-install-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/m5stack-arduino-library-install-block.md %}
 
-{% include /docs/devices-library/blocks/esp/thingsboard-arduino-library-install-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-arduino-library-install-block.md %}
 
 ## Connect device to ThingsBoard 
 
-{% include /docs/devices-library/blocks/esp/camera-code-to-program-block.md %}
+{% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
+
+{% include /docs/devices-library/blocks/microcontrollers/camera-code-to-program-block.md %}
 
 ## Check data on ThingsBoard
 
 {% include /docs/devices-library/blocks/basic/thingsboard-upload-example-dashboard.md %}
 
-{% include /docs/devices-library/blocks/esp/thingsboard-check-example-data-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-check-example-data-block.md %}
 
 ## Synchronize device state using client and shared attribute requests
 
-{% include /docs/devices-library/blocks/esp/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
 ## Control device using shared attributes
 
-{% include /docs/devices-library/blocks/esp/thingsboard-update-shared-device-interval-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-device-interval-block.md %}
 
 ## Control device using RPC
 
-{% include /docs/devices-library/blocks/esp/thingsboard-send-rpc-to-device-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-send-rpc-to-device-block.md %}
 
 ## Conclusion
 

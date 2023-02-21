@@ -8,7 +8,6 @@
  %}
 
 ## Introduction
-
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 Orange Pi Zero is for anyone who wants to start creating with technology, not just consuming it. It's a simple, fun, 
 useful tool that you can use to start taking control of the world around you. 
@@ -24,27 +23,29 @@ Standard version), it integrates TF card, 100 Ethernet network, USB 2.0, 26Pin h
 
 ## Install required libraries and tools
 
-{% include /docs/devices-library/blocks/minicomputers/orangepi/install-required-libraries-and-tools-block.md %}
+{% include /docs/devices-library/blocks/single-board-computers/orangepi/install-required-libraries-and-tools-block.md %}
 
 ## Connect device to ThingsBoard
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
-{% include /docs/devices-library/blocks/minicomputers/general-code-to-program-block.md %}
+
+{% include /docs/devices-library/blocks/single-board-computers/general-code-to-program-block.md %}
 
 ## Synchronize device state using client and shared attribute requests
-{% include /docs/devices-library/blocks/minicomputers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
+
+{% include /docs/devices-library/blocks/single-board-computers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
 ## Check data on ThingsBoard
 
-{% include /docs/devices-library/blocks/minicomputers/check-data-on-thingsboard-block.md %}
+{% include /docs/devices-library/blocks/single-board-computers/check-data-on-thingsboard-block.md %}
 
 ## Control device using shared attributes
 
-{% include /docs/devices-library/blocks/minicomputers/update-shared-attributes-block.md %}
+{% include /docs/devices-library/blocks/single-board-computers/update-shared-attributes-block.md %}
 
 ## Control device using RPC
 
-{% include /docs/devices-library/blocks/minicomputers/using-rpc-block.md %}
+{% include /docs/devices-library/blocks/single-board-computers/using-rpc-block.md %}
 
 ## Conclusion
 

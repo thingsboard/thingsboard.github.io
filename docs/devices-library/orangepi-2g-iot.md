@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: How to connect OrangePI 2G IoT to ThingsBoard?
-category: minicomputer
+category: single-board-computers
 deviceImageFileName: orangepi2giot.png
 
 ---

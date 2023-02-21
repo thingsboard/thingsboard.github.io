@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: How to connect M5Stack Timer Camera X to ThingsBoard?
-category: esp32
+category: microcontrollers
 deviceImageFileName: m5stack-timer-camera-x.svg
 ---
 
