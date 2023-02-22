@@ -25,12 +25,12 @@ If you are the **System administrator,** you can create a user in Tenant by the 
 
 1. Go to Tenants. Create Tenant Administrator, and click plus icon.
 
-    ![image](/images/user-guide/ui/users/ce/user-add-ce.png)
+   ![image](/images/user-guide/ui/users/ce/user-add-ce.png)
 
 2. Fill in the email and select the activation method in the Add User window. 
 The system administrator can also add the name and description optionally. Afterward click Add.
 
-    ![image](/images/user-guide/ui/users/ce/user-add-window.png)
+   ![image](/images/user-guide/ui/users/ce/user-add-window.png)
 
 3. If you selected the **activation link method,** click the arrow to copy this link and insert it in the browser or to any messenger used by the user. An example of an activation link is provided below.
 
@@ -40,6 +40,14 @@ The system administrator can also add the name and description optionally. After
 Click Activate Your Account, and follow the easy password-creating process.
 
    ![image](/images/user-guide/ui/users/ce/account-activation-email.png)
+
+{% capture difference %}
+**NOTE:**:
+<br>
+To receive an email from ThingsBoard, you should set up a mail server at the system administrator level in advance.
+Check out the [mail settings](/docs/{{docsPrefix}}user-guide/ui/mail-settings) instructions.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 **NOTE**: To receive an email from ThingsBoard, you should set up a mail server at the system administrator level in advance.
 Check out the [mail settings](/docs/{{docsPrefix}}user-guide/ui/mail-settings) instructions.
@@ -150,11 +158,17 @@ The Customer user can also optionally hide the home dashboard toolbar or change 
    
    ![image](/images/user-guide/ui/users/ce/profile-window.png)  
 
+## Video tutorial
+
 To learn more, check out the video tutorial below.
 
-                                                                                                            
+<br/>
 <div id="video"> 
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/KMsODExqeIw" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
+
+## Next steps
+
+{% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}
