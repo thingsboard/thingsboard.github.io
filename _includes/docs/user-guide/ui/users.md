@@ -9,9 +9,9 @@ There are three levels of roles on the ThingsBoard platform. It is possible to c
 
 These roles are as follows:
 
-1) **System administrator**. The system administrator can create a tenant administrator user.
+1) **System administrator**. The System administrator can create a tenant administrator user.
 
-2) **Tenant administrator**. The tenant administrator can create a customer user.
+2) **Tenant administrator**. The Tenant administrator can create a customer user.
 
 3) **Customer user**. The Customer user has read permissions to view dashboards and other entities assigned by the Tenant administrator. The Customer user by himself doesn’t create any customers and subcustomers.
 
@@ -164,4 +164,4 @@ The Customer user can also optionally hide the home dashboard toolbar or change 
 
 ## Next steps
 
-{% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}s
+{% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}
