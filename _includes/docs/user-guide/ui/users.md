@@ -25,7 +25,7 @@ If you are the **System administrator,** you can create a user in Tenant by the 
 
 1. Go to Tenants. Create Tenant Administrator, and click plus icon.
 
-   ![image](/images/user-guide/ui/users/ce/user-add-ce.png)
+   ![image](/images/user-guide/ui/users/ce/tenant-user-add.png)
 
 2. Fill in the email and select the activation method in the Add User window. 
 The system administrator can also add the name and description optionally. Afterward click Add.
@@ -42,15 +42,13 @@ Click Activate Your Account, and follow the easy password-creating process.
    ![image](/images/user-guide/ui/users/ce/account-activation-email.png)
 
 {% capture difference %}
-**NOTE:**:
+**NOTE:**
 <br>
 To receive an email from ThingsBoard, you should set up a mail server at the system administrator level in advance.
 Check out the [mail settings](/docs/{{docsPrefix}}user-guide/ui/mail-settings) instructions.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-**NOTE**: To receive an email from ThingsBoard, you should set up a mail server at the system administrator level in advance.
-Check out the [mail settings](/docs/{{docsPrefix}}user-guide/ui/mail-settings) instructions.
 
 After a user is created, the system administrator can use the action tabs on the tenant details page.
 
