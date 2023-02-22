@@ -11,6 +11,8 @@ toc:
         path: /docs/paas/reference/mqtt-api/
       - title: MQTT Gateway API Reference
         path: /docs/paas/reference/gateway-mqtt-api/
+      - title: MQTT Sparplug API
+        path: /docs/paas/reference/sparkplug-mqtt-api/
       - title: CoAP Device API
         path: /docs/paas/reference/coap-api/
       - title: HTTP Device API

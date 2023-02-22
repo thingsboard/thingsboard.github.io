@@ -11,6 +11,8 @@ toc:
     path: /docs/edge/reference/mqtt-api/
   - title: MQTT Gateway API Reference
     path: /docs/edge/reference/gateway-mqtt-api/
+  - title: MQTT Sparkplug API
+    path: /docs/edge/reference/sparkplug-mqtt-api/
   - title: CoAP Device API
     path: /docs/edge/reference/coap-api/
   - title: HTTP Device API
