@@ -5,12 +5,12 @@ To do this, you can use the code below. It contains all required functionality f
 
 ```cpp
 #if defined(ESP8266)
-#include <ESP8266WiFi.h>
+  #include <ESP8266WiFi.h>
+#elif defined(ARDUINO_NANO_RP2040_CONNECT)
+  #include <WiFiNINA_Generic.h>
 #elif defined(ESP32) || defined(RASPBERRYPI_PICO) || defined(RASPBERRYPI_PICO_W)
-#include <WiFi.h>
-#include <WiFiClientSecure.h>
-#else
-#include <WiFiNINA_Generic.h>
+  #include <WiFi.h>
+  #include <WiFiClientSecure.h>
 #endif
 
 #ifndef LED_BUILTIN
