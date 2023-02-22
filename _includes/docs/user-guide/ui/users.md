@@ -15,15 +15,20 @@ These roles are as follows:
 
 3) **Customer user**. The Customer user has read permissions to view dashboards and other entities assigned by the Tenant administrator. The Customer user by himself doesn’t create any customers and subcustomers.
 
-**IMPORTANT**: In Thingsboard Professional Edition, the Customer can create other customers or subcustomers.
+{% capture difference %}
+**Important:**
+<br>
+In Thingsboard Professional Edition, the Customer can create other customer users and subcustomers.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 The instructions below give an overview of adding the user on each level.
 
 ### System administrator ### 
 
-If you are the **System administrator,** you can create a user in Tenant by the following steps.
+If you are the **System administrator,** you can create the user in [Tenant](/docs/{{docsPrefix}}user-guide/ui/tenants) by the following steps.
 
-1. Go to Tenants. Create Tenant Administrator, and click plus icon.
+1. Go to Tenants on the left-hand menu. Navigate to Tenant admins, and click plus icon to add a new user.
 
    ![image](/images/user-guide/ui/users/ce/tenant-user-add.png)
 
@@ -62,7 +67,7 @@ They are as follows:
 
 4) **Login as Tenant administrator** opens the Thingsboard platform from the Tenant administrator UI. 
 
-5) The System Administrator can also delete the Tenant administrator from the tenants' users list.
+5) The System Administrator can also **delete** the Tenant administrator from the tenants' users list.
 
    ![image](/images/user-guide/ui/users/ce/user-tenant-tabs.png)
 
@@ -81,9 +86,9 @@ Similarly, when the admin clicks Enable User Account, he will see the message in
 
 ### Tenant administrator ###
 
-As a Tenant administrator, you can add a new user using the following steps.
+As a **Tenant administrator**, you can add a new user using the following steps.
 
-1. Go to Customers. Navigate to Customer Users, and click the plus icon to add the new user. 
+1. Go to Customers. Navigate to Customer Users, and click the plus icon to add a new user. 
 
    ![image](/images/user-guide/ui/users/ce/customer-user-add.png)
 
@@ -123,22 +128,24 @@ Likewise, the Tenant administrator can optionally assign the home dashboard for 
 
 If any questions arise, click the Question mark in the upper right corner.
 
-### Customer User UI with default dashboard as the home page ###
+### Customer User UI ###
+
+#### Default dashboard as the home page #### 
 
 When the Customer user logs into his account, the default dashboard is the first he sees. If the Tenant administrator sets the fullscreen default dashboard, the Customer user will see the dashboard without the lefthand menu, as in the example below. 
-The dashboard toolbar will always be available for the user, and he can switch to another dashboard if needed and set realtime ranges for himself.
-Additionally, there is an option to export this dashboard and set the fullscreen mode for each dashboard part.
+The dashboard toolbar will always be available for the user, and he can switch to another dashboard, if one is assigned, and set realtime ranges for himself.
+Additionally, there is an option to export this dashboard.
 
    ![image](/images/user-guide/ui/users/ce/default-dashboard.png) 
 
 
-Customer users can switch between the lefthand menu tabs to view all the assets, devices, entities, edges, and dashboards assigned by the Tenant administrator if the fullscreen mode is not check-marked.
+Customer users can switch between the left-hand menu tabs to view all the assets, devices, entities, edges, and dashboards assigned by the Tenant administrator if the fullscreen mode is not check-marked.
 The dashboard example is shown below.
 
-   ![image](/images/user-guide/ui/users/ce/default-dashboard-not-fullscreen.png)
+   ![image](/images/user-guide/ui/users/ce/default-dashboard-not-fullscreen-1.png) 
 
 
-### Customer User UI with home dashboard as the home page ###
+#### Home dashboard as the home page ####
 
 If the Tenant administrator assigns the dashboard as the home dashboard, then the Customer user will see this dashboard on his home page.
 If Hide home dashboard toolbar is selected, then the Customer user will see the home dashboard without the toolbar.
@@ -147,7 +154,6 @@ The dashboard with the disabled toolbar is shown below.
   ![image](/images/user-guide/ui/users/ce/home-dashboard-no-toolbar.png)    
 
 The dashboard with the enabled toolbar is shown in the picture below. The user can set real-time ranges and export the dashboard.
-Likewise, set the fullscreen mode of each dashboard part.
 
 
    ![image](/images/user-guide/ui/users/ce/home-dashboard-toolbar.png)
