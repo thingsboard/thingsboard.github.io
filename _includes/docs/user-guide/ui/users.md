@@ -24,7 +24,7 @@ In Thingsboard Professional Edition, the Customer can create other customer user
 
 The instructions below give an overview of adding the user on each level.
 
-### System administrator ### 
+### System administrator
 
 If you are the **System administrator,** you can create the user in [Tenant](/docs/{{docsPrefix}}user-guide/ui/tenants) by the following steps.
 
@@ -84,7 +84,7 @@ Similarly, when the admin clicks Enable User Account, he will see the message in
 
    ![image](/images/user-guide/ui/users/ce/user-account-enabled.png)
 
-### Tenant administrator ###
+### Tenant administrator
 
 As a **Tenant administrator**, you can add a new user using the following steps.
 
@@ -128,9 +128,9 @@ Likewise, the Tenant administrator can optionally assign the home dashboard for 
 
 If any questions arise, click the Question mark in the upper right corner.
 
-### Customer User UI ###
+### Customer User UI
 
-#### Default dashboard as the home page #### 
+#### Default dashboard as the home page
 
 When the Customer user logs into his account, the default dashboard is the first he sees. If the Tenant administrator sets the fullscreen default dashboard, the Customer user will see the dashboard without the lefthand menu, as in the example below. 
 The dashboard toolbar will always be available for the user, and he can switch to another dashboard, if one is assigned, and set realtime ranges for himself.
@@ -145,7 +145,7 @@ The dashboard example is shown below.
    ![image](/images/user-guide/ui/users/ce/default-dashboard-not-fullscreen-1.png) 
 
 
-#### Home dashboard as the home page ####
+#### Home dashboard as the home page
 
 If the Tenant administrator assigns the dashboard as the home dashboard, then the Customer user will see this dashboard on his home page.
 If Hide home dashboard toolbar is selected, then the Customer user will see the home dashboard without the toolbar.
@@ -162,17 +162,6 @@ The Customer user can also optionally hide the home dashboard toolbar or change 
    
    ![image](/images/user-guide/ui/users/ce/profile-window.png)  
 
-## Video tutorial
-
-To learn more, check out the video tutorial below.
-
-<br/>
-<div id="video"> 
-    <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/KMsODExqeIw" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div>
-
 ## Next steps
 
-{% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}
+{% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}s
