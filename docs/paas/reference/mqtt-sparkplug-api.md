@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-pe
+layout: docwithnav-paas
 assignees:
 - nick
 title: MQTT Sparkplug API
@@ -23,8 +23,7 @@ sparkplug-device-created:
         image: /images/sparkplug/sparkplug-device-created-after.png
         title: 'Created The Device Sparkplug after connect'
 
-
 ---
 
-{% assign docsPrefix = "pe/" %}
-{% include docs/reference/sparkplug-mqtt-api.md %}
+{% assign docsPrefix = "paas/" %}
+{% include docs/reference/mqtt-sparkplug-api.md %}

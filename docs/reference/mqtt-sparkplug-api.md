@@ -1,9 +1,9 @@
 ---
-layout: docwithnav-pe-edge
+layout: docwithnav
 assignees:
 - nick
 title: MQTT Sparkplug API
-description: Supported MQTT Sparkplug API Reference for IoT Devices
+description: Supported MQTT Sparkplug API Reference for IoT Devices 
 
 infrastructure-components:
     0:
@@ -25,5 +25,4 @@ sparkplug-device-created:
 
 ---
 
-{% assign docsPrefix = "pe/edge/" %}
-{% include docs/reference/sparkplug-mqtt-api.md %}
+{% include docs/reference/mqtt-sparkplug-api.md %}

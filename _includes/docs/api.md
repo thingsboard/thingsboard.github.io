@@ -4,7 +4,7 @@ ThingsBoard API consists of two main parts: device API and server-side API.
 Device API is grouped by supported communication protocols:
 
 * [**MQTT API**](/docs/{{docsPrefix}}reference/mqtt-api)
-* [**MQTT SPARKPLUG API**](/docs/{{docsPrefix}}reference/sparkplug-mqtt-api)  
+* [**MQTT SPARKPLUG API**](/docs/{{docsPrefix}}reference/mqtt-sparkplug-api)  
 * [**CoAP API**](/docs/{{docsPrefix}}reference/coap-api)
 * [**HTTP API**](/docs/{{docsPrefix}}reference/http-api)
 * [**LWM2M API**](/docs/{{docsPrefix}}reference/lwm2m-api)

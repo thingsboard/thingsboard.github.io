@@ -1,9 +1,9 @@
 ---
-layout: docwithnav
+layout: docwithnav-pe
 assignees:
 - nick
 title: MQTT Sparkplug API
-description: Supported MQTT Sparkplug API Reference for IoT Devices 
+description: Supported MQTT Sparkplug API Reference for IoT Devices
 
 infrastructure-components:
     0:
@@ -23,6 +23,8 @@ sparkplug-device-created:
         image: /images/sparkplug/sparkplug-device-created-after.png
         title: 'Created The Device Sparkplug after connect'
 
+
 ---
 
-{% include docs/reference/sparkplug-mqtt-api.md %}
+{% assign docsPrefix = "pe/" %}
+{% include docs/reference/mqtt-sparkplug-api.md %}

@@ -13,4 +13,4 @@ infrastructure-components:
 ---
 
 {% assign docsPrefix = "edge/" %}
-{% include docs/reference/sparkplug-mqtt-api.md %}
+{% include docs/reference/mqtt-sparkplug-api.md %}

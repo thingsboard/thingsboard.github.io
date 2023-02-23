@@ -12,7 +12,7 @@ toc:
   - title: MQTT Gateway API Reference
     path: /docs/pe/reference/gateway-mqtt-api/
   - title: MQTT Sparkplug API
-    path: /docs/pe/reference/sparkplug-mqtt-api/
+    path: /docs/pe/reference/mqtt-sparkplug-api/
   - title: CoAP Device API
     path: /docs/pe/reference/coap-api/
   - title: HTTP Device API

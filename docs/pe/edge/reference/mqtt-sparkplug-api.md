@@ -1,5 +1,5 @@
 ---
-layout: docwithnav-paas
+layout: docwithnav-pe-edge
 assignees:
 - nick
 title: MQTT Sparkplug API
@@ -25,5 +25,5 @@ sparkplug-device-created:
 
 ---
 
-{% assign docsPrefix = "paas/" %}
-{% include docs/reference/sparkplug-mqtt-api.md %}
+{% assign docsPrefix = "pe/edge/" %}
+{% include docs/reference/mqtt-sparkplug-api.md %}
