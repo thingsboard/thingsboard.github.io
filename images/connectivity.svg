@@ -24,6 +24,15 @@
 	.st18{fill-rule:evenodd;clip-rule:evenodd;fill:#305680;}
 	.st19{font-size:12.5px;}
 </style>
+<style>
+	svg .magic:hover {
+	stroke: #305680;
+	stroke-width: 3px;
+	 }
+	svg .black_magic:hover {
+	opacity: 1;
+	 }
+</style>
 <path class="st0" d="M7,254.5h96c3,0,5.5,2.5,5.5,5.5v41c0,3-2.5,5.5-5.5,5.5H7c-3,0-5.5-2.5-5.5-5.5v-41C1.5,256.9,4,254.5,7,254.5
 	z"/>
 <path class="st1" d="M16.1,277v-8.6h1.4v8.6H16.1z M24,275.1c0,0.6-0.2,1.1-0.7,1.5c-0.5,0.3-1.1,0.5-2,0.5c-0.9,0-1.6-0.1-2.1-0.4
@@ -1576,13 +1585,11 @@
 <path class="st7" d="M927,773c-0.6,0-1,0.4-1,1v3c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1v-3c0-0.6-0.4-1-1-1H927z M934,775.5
 	c0,0.3-0.2,0.5-0.5,0.5s-0.5-0.2-0.5-0.5s0.2-0.5,0.5-0.5S934,775.2,934,775.5z M935.5,776c0.3,0,0.5-0.2,0.5-0.5s-0.2-0.5-0.5-0.5
 	s-0.5,0.2-0.5,0.5S935.2,776,935.5,776z"/>
-<g class="st12">
-	
-		<animate  accumulate="none" additive="replace" attributeName="opacity" begin="tooltip1.mouseover" calcMode="linear" dur="0.1s" end="tooltip1.mouseout" fill="freeze" from="0" restart="always" to="1">
-		</animate>
-	
-		<animate  accumulate="none" additive="replace" attributeName="opacity" begin="tooltip1.mouseout" calcMode="linear" dur="0.1s" end="tooltip1.mouseout" fill="freeze" from="1" restart="always" to="0">
-		</animate>
+
+<rect id="tooltip1" x="1.5" y="254.5" width="107" height="52" rx="5.5" fill="#ffffff00"/>
+	<g opacity="0">
+	<animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="tooltip1.mouseover" end="tooltip1.mouseout" fill="freeze"/>
+	<animate attributeName="opacity" from="1" to="0" dur="0.1s" begin="tooltip1.mouseout" end="tooltip1.mouseout" fill="freeze"/>
 	<path class="st13" d="M7,254.5h96c3,0,5.5,2.5,5.5,5.5v41c0,3-2.5,5.5-5.5,5.5H7c-3,0-5.5-2.5-5.5-5.5v-41
 		C1.5,256.9,4,254.5,7,254.5z"/>
 	<path class="st0" d="M60,244.5h-0.2l-0.1,0.1l-4.6,4.6l-4.6-4.6l-0.1-0.1H50H6c-3,0-5.5-2.5-5.5-5.5v-41c0-3,2.5-5.5,5.5-5.5h236
@@ -1590,13 +1597,10 @@
 	<text transform="matrix(1 0 0 1 16.4043 214.6116)" class="st1 st9 st10">Is your device connected through the </text>
 	<text transform="matrix(1 0 0 1 20.6289 230.6116)" class="st1 st9 st10">common TCP/UDP based protocols?</text>
 </g>
-<g class="st12">
-	
-		<animate  accumulate="none" additive="replace" attributeName="opacity" begin="tooltip2.mouseover" calcMode="linear" dur="0.1s" end="tooltip2.mouseout" fill="freeze" from="0" restart="always" to="1">
-		</animate>
-	
-		<animate  accumulate="none" additive="replace" attributeName="opacity" begin="tooltip2.mouseout" calcMode="linear" dur="0.1s" end="tooltip2.mouseout" fill="freeze" from="1" restart="always" to="0">
-		</animate>
+<rect id="tooltip2" x="159.5" y="254.5" width="88" height="52" rx="5.5" stroke="#28232D" fill="#ffffff00"/>
+	<g opacity="0">
+	<animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="tooltip2.mouseover" end="tooltip2.mouseout" fill="freeze"/>
+		<animate attributeName="opacity" from="1" to="0" dur="0.1s" begin="tooltip2.mouseout" end="tooltip2.mouseout" fill="freeze"/>
 	<path class="st14" d="M159.5,260c0-3,2.5-5.5,5.5-5.5h77c3,0,5.5,2.5,5.5,5.5v41c0,3-2.5,5.5-5.5,5.5h-77c-3,0-5.5-2.5-5.5-5.5V260
 		z"/>
 	<path class="st0" d="M209,244.5h-0.2l-0.1,0.1l-4.6,4.6l-4.6-4.6l-0.1-0.1H199H24c-3,0-5.5-2.5-5.5-5.5v-41c0-3,2.5-5.5,5.5-5.5
@@ -1604,13 +1608,10 @@
 	<text transform="matrix(1 0 0 1 32.291 214.6116)" class="st1 st9 st10">Are you able to change and upload custom device firmware </text>
 	<text transform="matrix(1 0 0 1 36.3691 230.6116)" class="st1 st9 st10">to use ThingsBoard data format and supported protocols?</text>
 </g>
-<g class="st12">
-	
-		<animate  accumulate="none" additive="replace" attributeName="opacity" begin="tooltip3.mouseover" calcMode="linear" dur="0.1s" end="tooltip3.mouseout" fill="freeze" from="0" restart="always" to="1">
-		</animate>
-	
-		<animate  accumulate="none" additive="replace" attributeName="opacity" begin="tooltip3.mouseout" calcMode="linear" dur="0.1s" end="tooltip3.mouseout" fill="freeze" from="1" restart="always" to="0">
-		</animate>
+<rect id="tooltip3" x="298.5" y="136.5" width="137" height="52" rx="5.5" stroke="#28232D" fill="#ffffff00"/>
+	<g opacity="0">
+	<animate attributeName="opacity" from="0" to="1" dur="0.1s" begin="tooltip3.mouseover" end="tooltip3.mouseout" fill="freeze"/>
+		<animate attributeName="opacity" from="1" to="0" dur="0.1s" begin="tooltip3.mouseout" end="tooltip3.mouseout" fill="freeze"/>
 	<path class="st13" d="M298.5,142c0-3,2.5-5.5,5.5-5.5h126c3,0,5.5,2.5,5.5,5.5v41c0,3-2.5,5.5-5.5,5.5H304c-3,0-5.5-2.5-5.5-5.5
 		V142z"/>
 	<path class="st0" d="M372,126.5h-0.2l-0.1,0.1l-4.6,4.6l-4.6-4.6l-0.1-0.1H362H208c-3,0-5.5-2.5-5.5-5.5V80c0-3,2.5-5.5,5.5-5.5
@@ -1619,7 +1620,7 @@
 	<text transform="matrix(1 0 0 1 220.439 112.6118)" class="st1 st9 st10">itself using various protocols like BTLE, ZigBee, etc.</text>
 </g>
 <a xlink:href="/docs/user-guide/integrations/opc-ua/" target="_parent" xlink:title="OPC-UA">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st15" d="M649.5,368.5h82c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-82c-3.3,0-6-2.7-6-6v-24
 			C643.5,371.1,646.2,368.5,649.5,368.5z"/>
 		<path class="st6" d="M668,382h-4.3c-0.3-0.6-1-1-1.7-1s-1.4,0.4-1.7,1H656v2h4.3c0.2,0.3,0.4,0.6,0.7,0.7v2.3h2v-2.3
@@ -1631,7 +1632,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/user-guide/integrations/aws-iot/" target="_parent" xlink:title="AWS IoT Integration">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st15" d="M654.5,280.5h83c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-83c-3.3,0-6-2.7-6-6v-24
 			C648.5,283.1,651.2,280.5,654.5,280.5z"/>
 		<path class="st16" d="M666.5,304.4v1c0,0.3,0.2,0.5,0.5,0.5s0.5-0.2,0.5-0.5v-1c0.2,0,0.3,0,0.5-0.1v1.1c0,0.3,0.2,0.5,0.5,0.5
@@ -1648,7 +1649,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/user-guide/integrations/azure-event-hub/" target="_parent" xlink:title="Azure Event Hub Integration">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st15" d="M502.5,280.5h133c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-133c-3.3,0-6-2.7-6-6v-24
 			C496.5,283.1,499.2,280.5,502.5,280.5z"/>
 		<path class="st6" d="M511.5,296.5l4-3.5l-4,9.5H508L511.5,296.5z"/>
@@ -1657,7 +1658,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/user-guide/integrations/azure-iot-hub/" target="_parent" xlink:title="Azure IoT Hub Integration">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st15" d="M502.5,324.5h118c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-118c-3.3,0-6-2.7-6-6v-24
 			C496.5,327.1,499.2,324.5,502.5,324.5z"/>
 		<path class="st6" d="M511.5,340.5l4-3.5l-4,9.5H508L511.5,340.5z"/>
@@ -1666,7 +1667,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/user-guide/integrations/ibm-watson-iot/" target="_parent" xlink:title="IBM Watson IoT Integration">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st15" d="M502.5,368.5h127c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-127c-3.3,0-6-2.7-6-6v-24
 			C496.5,371.1,499.2,368.5,502.5,368.5z"/>
 		<path class="st6" d="M515,380c0.3,0,0.5,0.2,0.5,0.5v1.5c0,0.3-0.2,0.5-0.5,0.5s-0.5-0.2-0.5-0.5v-1.5
@@ -1693,7 +1694,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/user-guide/integrations/http/" target="_parent" xlink:title="HTTP Integration">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st15" d="M919.5,433.5h146c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-24
 			C913.5,436.1,916.2,433.5,919.5,433.5z"/>
 		<path class="st6" d="M938,447h-4.3c-0.3-0.6-1-1-1.7-1s-1.4,0.4-1.7,1H926v2h4.3c0.2,0.3,0.4,0.6,0.7,0.7v2.3h2v-2.3
@@ -1705,7 +1706,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/user-guide/integrations/coap/" target="_parent" xlink:title="CoAP Integration">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st15" d="M919.5,597.5h146c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-24
 			C913.5,600.1,916.2,597.5,919.5,597.5z"/>
 		<path class="st6" d="M938,611h-4.3c-0.3-0.6-1-1-1.7-1s-1.4,0.4-1.7,1H926v2h4.3c0.2,0.3,0.4,0.6,0.7,0.7v2.3h2v-2.3
@@ -1717,7 +1718,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/user-guide/integrations/" target="_parent" xlink:title="Platform Integrations">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st15" d="M919.5,745.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,748.1,916.2,745.5,919.5,745.5z"/>
 		<path class="st6" d="M938,767h-4.3c-0.3-0.6-1-1-1.7-1s-1.4,0.4-1.7,1H926v2h4.3c0.2,0.3,0.4,0.6,0.7,0.7v2.3h2v-2.3
@@ -1730,7 +1731,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/reference/mqtt-sparkplug-api/" target="_parent" xlink:title="MQTT Sparkplug API">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,61.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,64.1,916.2,61.5,919.5,61.5z"/>
 		<path class="st18" d="M925.6,84.2c-0.1,0.1-0.2,0.3-0.2,0.4c0,0.1,0.1,0.3,0.2,0.4c0.5,0.5,1.4,1.4,1.4,1.4l0.8-0.8
@@ -1775,7 +1776,7 @@
 <text transform="matrix(1 0 0 1 948 39.6153)" class="st2 st9 st10">MQTT Gateway API</text>
 <text transform="matrix(1 0 0 1 948 23.6153)" class="st2 st11 st10">ThingsBoard  </text>
 <a xlink:href="/docs/reference/gateway-mqtt-api/" target="_parent" xlink:title="MQTT Gateway API Reference">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,1.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,4.1,916.2,1.5,919.5,1.5z"/>
 		<path class="st18" d="M925.6,24.2c-0.1,0.1-0.2,0.3-0.2,0.4c0,0.1,0.1,0.3,0.2,0.4c0.5,0.5,1.4,1.4,1.4,1.4l0.8-0.8
@@ -1799,7 +1800,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/reference/mqtt-api/" target="_parent" xlink:title="MQTT Device API Reference">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,121.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,124.1,916.2,121.5,919.5,121.5z"/>
 		<path class="st18" d="M925.6,144.2c-0.1,0.1-0.2,0.3-0.2,0.4c0,0.1,0.1,0.3,0.2,0.4c0.5,0.5,1.4,1.4,1.4,1.4l0.8-0.8
@@ -1824,7 +1825,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/reference/http-api/" target="_parent" xlink:title="HTTP Device API Reference">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,181.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,184.1,916.2,181.5,919.5,181.5z"/>
 		<path class="st18" d="M925.6,204.2c-0.1,0.1-0.2,0.3-0.2,0.4c0,0.1,0.1,0.3,0.2,0.4c0.5,0.5,1.4,1.4,1.4,1.4l0.8-0.8
@@ -1849,7 +1850,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/reference/coap-api/" target="_parent" xlink:title="CoAP Device API Reference">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,241.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,244.1,916.2,241.5,919.5,241.5z"/>
 		<path class="st18" d="M925.6,264.2c-0.1,0.1-0.2,0.3-0.2,0.4c0,0.1,0.1,0.3,0.2,0.4c0.5,0.5,1.4,1.4,1.4,1.4l0.8-0.8
@@ -1874,7 +1875,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/reference/snmp-api/" target="_parent" xlink:title="SNMP Device API Reference">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,537.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,540.1,916.2,537.5,919.5,537.5z"/>
 		<path class="st18" d="M925.6,560.2c-0.1,0.1-0.2,0.3-0.2,0.4c0,0.1,0.1,0.3,0.2,0.4c0.5,0.5,1.4,1.4,1.4,1.4l0.8-0.8
@@ -1899,7 +1900,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/reference/lwm2m-api/" target="_parent" xlink:title="LwM2M Device API Reference">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,477.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,480.1,916.2,477.5,919.5,477.5z"/>
 		<path class="st18" d="M925.6,500.2c-0.1,0.1-0.2,0.3-0.2,0.4c0,0.1,0.1,0.3,0.2,0.4c0.5,0.5,1.4,1.4,1.4,1.4l0.8-0.8
@@ -1924,7 +1925,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/contact-us/" target="_parent" xlink:title="Contact Us">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,324.5h146c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-24
 			C913.5,327.1,916.2,324.5,919.5,324.5z"/>
 		<path class="st18" d="M926.5,338c-0.8,0-1.5,0.7-1.5,1.5v7c0,0.8,0.7,1.5,1.5,1.5h11c0.8,0,1.5-0.7,1.5-1.5v-7
@@ -1936,7 +1937,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/contact-us/" target="_parent" xlink:title="Contact Us">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,641.5h146c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-24
 			C913.5,644.1,916.2,641.5,919.5,641.5z"/>
 		<path class="st18" d="M926.5,655c-0.8,0-1.5,0.7-1.5,1.5v7c0,0.8,0.7,1.5,1.5,1.5h11c0.8,0,1.5-0.7,1.5-1.5v-7
@@ -1948,7 +1949,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/iot-gateway/what-is-iot-gateway/" target="_parent" xlink:title="What is ThingsBoard IoT Gateway?">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,685.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,688.1,916.2,685.5,919.5,685.5z"/>
 		<path class="st18" d="M927,706c-0.6,0-1,0.4-1,1v3c0,0.6,0.4,1,1,1h10c0.6,0,1-0.4,1-1v-3c0-0.6-0.4-1-1-1H927z M929,708.5
@@ -1964,7 +1965,7 @@
 	</g>
 </a>
 <a xlink:href="/docs/user-guide/integrations/mqtt/" target="_parent" xlink:title="MQTT Broker">
-	<g class="st12">
+	<g class="black_magic" opacity="0">
 		<path class="st15" d="M640.5,324.5h113c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-113c-3.3,0-6-2.7-6-6v-24
 			C634.5,327.1,637.2,324.5,640.5,324.5z"/>
 		<path class="st6" d="M659,338h-4.3c-0.3-0.6-1-1-1.7-1s-1.4,0.4-1.7,1H647v2h4.3c0.2,0.3,0.4,0.6,0.7,0.7v2.3h2v-2.3
