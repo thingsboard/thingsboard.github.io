@@ -37,9 +37,9 @@ For the device type [Device], the device profile is created in the parameters:
 [Device] type device may be created in Thingsboard with device profile before connecting or after successful connection of that Device [here](#step-1-create-device-profile).
 
 
-### Step 3. MQTT Sparkplug Connect
+### Step 3. MQTT Sparkplug Client connected
 
-Connects to the MQTT broker and sets the Will and Testament message (_**NDEATH**_)
+MQTT Edge of Network Nodes (MQTT EON - MQTT Sparkplug Client) connects to the MQTT broker and sets the Will and Testament message (_**NDEATH**_)
 
 We will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
 The application needs to send MQTT CONNECT message with username that contains **$ACCESS_TOKEN**.
@@ -56,21 +56,32 @@ After that, the thingsboard is ready to receive messages and publish commands.
 
 The first MQTT publish message will be publish message [*BIRTH](#publish-message-nbirth)
 
-### Step 4. Telemetry API
+### Step 4. Upload/Update Metrics from MQTT EON and Device
 
-#### Publish telemetry update to the server
+To publish telemetry to the ThingsBoard server node, Eon Node or Device sends a PUBLISH message:
+1. MQTT EON
+```shell
+client.publish(NAMESPACE + "/" + groupId + "/DDATA/" + edgeNode, 
+new SparkplugBPayloadEncoder().getBytes(nodePayload), 0, false);
+```
+2. Device
+```shell
+client.publish(NAMESPACE + "/" + groupId + "/DDATA/" + edgeNode + "/" + deviceId, 
+new SparkplugBPayloadEncoder().getBytes(devicePayload), 0, false);
+```
+#### Upload/Update Metrics from MQTT EON
+#### Publish a message from MQTT EON with Metrics as telemetry to the server
+#### Publish a message from MQTT EON with Metrics as attribute to the server
 
-### Step 5. Attributes API
+#### Upload/Update Metrics from Device
+#### Publish a message from Device with Metrics as telemetry to the server
+#### Publish a message from Device with Metrics as attribute to the server
 
-#### Publish attribute update to the server
+### Step 5. Update Metrics from Thingsboard server to MQTT EON and Device
+#### Update Metrics from Shared attribute to MQTT EON/Device
+#### Update Metrics from RPC to MQTT EON/Device
 
-#### Subscribe to attribute updates from the server
 
-In order to subscribe to shared device attribute changes, send GET request...
-
-### Step 6. RPC API
-
-In order to subscribe to RPC commands from the server, send GET request...
 
 ## Thingsboard and MQTT Sparkplug Payloads and Messages
 
@@ -139,16 +150,18 @@ After  Device disconnection, Telemetry with [DSTATE] "OFFLINE" is registered in 
 ### Subscribe to attribute updates from the server [spBv1.0/#]
 
 [Optional] After a successful MQTT EON connection, MQTT EON must be Subscribed to the NCMD topic on 
-```
-spBv1.0/group/NCMD/myNodeName/#
+```shell
+"spBv1.0+/" + groupId + "/NCMD/" + edgeNode + "/#"
 ```
 After a successful Device  connection, the Device is subscribed to  DCMD topic always (to perform the commands of updating attributes and RPC).
 
 ### Publish message NBIRTH
 After a successful MQTT EON connection, publish message NBIRTH will be  the first MQTT publish message.
-```
 The EoN Birth Certificate payload contains everything required to build out a data structure for all metrics for this
-EoN node. 
+EoN node.
+```shell
+client.publish(NAMESPACE + "/" + groupId + "/NBIRTH/" + edgeNode , 
+new SparkplugBPayloadEncoder().getBytes(nodePayload), 0, false);
 ```
 
 <details>
@@ -229,9 +242,10 @@ EoN node.
 
 ### Publish message DBIRTH
 After a  successful Device connection, publish message DBIRTH will be  the first MQTT publish message.
-
-```
-The DBIRTH payload contains everything required to build out a data structure for all metrics for this device. 
+The DBIRTH payload contains everything required to build out a data structure for all metrics for this device.
+```shell
+client.publish(NAMESPACE + "/" + groupId + "/DBIRTH/" + edgeNode + "/" + deviceId, 
+new SparkplugBPayloadEncoder().getBytes(devicePayload), 0, false);
 ```
 <details>
 <summary>
