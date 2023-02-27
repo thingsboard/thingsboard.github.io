@@ -2,6 +2,7 @@
 layout: docwithnav-paas
 title: How to connect OrangePI Zero to ThingsBoard?
 category: single-board-computers
+chip: Allwinner H2+
 deviceImageFileName: orangepizero.png
 
 ---

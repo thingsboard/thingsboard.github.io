@@ -2,6 +2,7 @@
 layout: docwithnav-pe
 title: How to connect Raspberry Pi Pico W to ThingsBoard?
 category: microcontrollers
+chip: rp2040
 deviceImageFileName: raspberry-pi-pico-w.jpg
 
 ---

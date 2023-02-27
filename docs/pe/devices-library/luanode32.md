@@ -2,6 +2,7 @@
 layout: docwithnav-pe
 title: How to connect LuaNode32 to ThingsBoard?
 category: microcontrollers
+chip: esp32
 deviceImageFileName: luanode32.jpg
 
 ---
