@@ -297,5 +297,21 @@
       }
     },
     "blurb": "MonoZ aim to assist System Integrators and Enterprises in connecting their assets (things) to the internet at the lowest possible cost and time.\nMonoZ belong to the first few E2C IoT enablers in the world to offer all the components required for businesses to make their ideas a reality"
+  },
+  {
+    "type": ["main", "bluetooth", "nbiot",  "wifi", "sigfox", "lora", "gsm", "modbus"],
+    "program": "",
+    "name": "EXXN",
+    "logo": "exxn.jpg",
+    "links": {
+      "Site": {
+        "href": "https://exxn.es/en/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/exxn/exxn"
+      }
+    },
+    "blurb": "At EXXN, we specialize in integrating technology into your business to enhance efficiency and productivity. Our multipurpose gateways, equipped with an ARM processor, are customizable to meet the specific needs of each customer and use case."
   }
 ]
