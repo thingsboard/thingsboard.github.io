@@ -281,5 +281,21 @@
       }
     },
     "blurb": "Dusun provides various kinds of gateways, hardware products and IOT service"
+  },
+  {
+    "type": ["main", "nbiot", "lte"],
+    "program": "",
+    "name": "monoZ",
+    "logo": "monoz-logo.png",
+    "links": {
+      "Site": {
+        "href": "https://monoz.io/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/monoz/LPWA_GPS_Tracker_with_monoZ"
+      }
+    },
+    "blurb": "MonoZ aim to assist System Integrators and Enterprises in connecting their assets (things) to the internet at the lowest possible cost and time.\nMonoZ belong to the first few E2C IoT enablers in the world to offer all the components required for businesses to make their ideas a reality"
   }
 ]
