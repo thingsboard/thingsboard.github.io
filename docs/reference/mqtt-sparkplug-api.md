@@ -13,10 +13,19 @@ infrastructure-components:
 sparkplug-device-profile-created:
     0:
         image: /images/sparkplug/sparkplug-device-profile-created.png
-        title: 'Created The Device profile Sparkplug'
+        title: 'Created The Device profile for device type MQTT EON'
     1:
         image: /images/sparkplug/sparkplug-device-profile-created-config.png
-        title: 'Transport configuration the Device profile Sparkplug'
+        title: 'Transport configuration the Device profile for device type MQTT EON'
+    2:
+        image: /images/sparkplug/sparkplug-device-profile-created-config-json.png
+        title: 'Transport configuration the Device profile for device type MQTT EON (format Json)'
+    3:
+        image: /images/sparkplug/sparkplug-device-profile-created-config-without-attr.png
+        title: 'Transport configuration the Device profile for device type MQTT EON (Without Attribute Metric...) '
+    4:
+        image: /images/sparkplug/sparkplug-device-profile-created-config-json-without-attr.png
+        title: 'Transport configuration the Device profile for device type MQTT EON ( (Without Attribute Metric..., format Json)'
 
 sparkplug-device-created:
     0:
