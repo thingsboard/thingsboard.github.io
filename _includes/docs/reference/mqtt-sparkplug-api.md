@@ -9,7 +9,7 @@ to get familiar with ThingsBoard.
 
 ## Sparkplug basics
 
-[What is Sparkplug?] An open source software specification that provides MQTT clients the framework to seamlessly
+<i>**What is Sparkplug?**</i> An open source software specification that provides MQTT clients the framework to seamlessly
 integrate data from their applications, sensors, devices, and gateways within the MQTT Infrastructure.
 
 You can find more information about **Sparkplug** [here](https://sparkplug.eclipse.org/) and about **Sparkplug™
@@ -24,53 +24,57 @@ Components  [here](#thingsboard-and-mqtt-sparkplug-payloads-and-messages).
 Please refer to the [MQTT transport type](/docs/{{docsPrefix}}user-guide/device-profiles/#mqtt-transport-type)
 configuration section in device profile article for more details.
 
-We assume that we have an MQTT EON with two Devices attached to this MQTT EON.
+We assume that we have an **MQTT EON** with *two* **Devices** attached to this **MQTT EON**.
 
 *Topic*:
 - **MQTT EON**:|{**NAMESPACE**} + "/" + {**groupId**} + "/{**Payloads by Message Type**}/" + {**edgeNode**}.
-- **Device**:|{**NAMESPACE**} + "/" + {**groupId**} + "/{**Payloads by Message Type**}/" + {**edgeNode**} + "/" + {**devicepId**}.
-- **Note**: Thingsboard only uses encoding in version **B** of the Sparkplug™ MQTT message payload. For the Sparkplug™ B version of
-the specification, the UTF-8 string constant for:
+- **Device**:|{**NAMESPACE**} + "/" + {**groupId**} + "/{**Payloads by Message Type**}/" + {**edgeNode**} + "/" + {**deviceId**}.
+- **Note**: Thingsboard only uses encoding in version **B** of the Sparkplug™ MQTT message payload. For the Sparkplug™ B version of the specification, the constant must be a UTF-8 string. 
   
-- {**NAMESPACE**} element will be = |<span style="color:green">“spBv1.0”</span>.
+- for the {**NAMESPACE**} element must be |<span style="color:green">“spBv1.0”</span>
 
-Other elements of topic:
-- {**groupId**} element may be var text, for example = |<span style="color:green">"MyGroupId"</span>.
-- **MQTT EON** has Id: {**edgeNode**} = |<span style="color:green">“NodeSparkplug”</span>.
-  With *Metrics*: |<span style="color:brown">["Node Control/Reboot", "Node Control/Rebirth", "Node Control/Next Server", "Node Control/Scan Rate"]</span> [here](#publish-message-nbirth).
-- **Device number one** has Id:  {**deviceId**} = |<span style="color:green">“DeviceSparkplug_01”</span>.
-  With *Metrics*: |<span style="color:brown">["Device Control/Reboot", "Device Control/Rebirth", "Device Control/Scan rate", "Properties/Hardware Make", "Last Update FW", "Current Grid Voltage (V)"]”</span> [here](#publish-message-dbirth-Device_01).
-- **Device number two** has Id:  {**deviceId**} = |<span style="color:green">“DeviceSparkplug_02”</span>.
-  With *Metrics*: |<span style="color:brown">["Device Control/Reboot", "Device Control/Rebirth", "Device Control/Scan rate", "Properties/Hardware Make", "Last Update FW", "Outputs/LEDs/Green", "Outputs/LEDs/Yellow"]”</span> [here](#publish-message-dbirth-Device_02).
+Other  elements of topic are string variables and for example, let's assign the following values:
+- The name of ID for **group** is {**groupId**}. We assign a value to it |<span style="color:green">"MyGroupId"</span>
+- The name of ID for **MQTT EON** is {**edgeNode**}. We assign a value to it  |<span style="color:green">“NodeSparkplug”</span>
+  With *Metrics*: |<span style="color:brown">["Node Control/Reboot", "Node Control/Rebirth", "Node Control/Next Server", "Node Control/Scan Rate"]</span> [here](#publish-message-nbirth)
+- The name of ID for **Device number one** is  {**deviceId**}. We assign a value to it |<span style="color:green">“DeviceSparkplug_01”</span>
+  With *Metrics*: |<span style="color:brown">["Device Control/Reboot", "Device Control/Rebirth", "Device Control/Scan rate", "Properties/Hardware Make", "Last Update FW", "Current Grid Voltage"]</span> [here](#publish-message-dbirth-Device_01)
+- The name of ID for **Device number two** is {**deviceId**}. We assign a value to it |<span style="color:green">“DeviceSparkplug_02”</span>
+  With *Metrics*: |<span style="color:brown">["Device Control/Reboot", "Device Control/Rebirth", "Device Control/Scan rate", "Properties/Hardware Make", "Last Update FW", "Outputs/LEDs/Green", "Outputs/LEDs/Yellow"]</span> [here](#publish-message-dbirth-Device_02)
 
-After a successful MQTT EON/Device connectione, publish message NBIRTH/DBIRTH will be the first MQTT publish message. The EoN/Device Birth Certificate payload contains everything required to build out a data structure for all metrics for this EoN node or Device.
-The first MQTT publish message will be publish message.
+**Pay attention** that {**NAMESPACE**} as the first elements of the topic is a constant, so it *cannot* be changed. 
 
-In order to connect them and receive information from them, we need to perform 4 steps:
+While **other elements** of the topic are variables, so they *can* be changed.
+
+After a *successful* MQTT EON/Device *connection*, the MQTT EON/Device **must** *send* a publish NBIRTH/DBIRTH message. This must be the **first** MQTT publish message. This message includes the MQTT EON/Device Birth Certificate payload which contains everything required to build out a data structure for all metrics for this MQTT EON or Device.
+
+In order to connect and receive information from them, we need to perform 4 steps:
 
 ### Step 1. Create device profile
 
-First you need to create device profile for the device type **MQTT EON** with next name of this device profile** and Parameters [here](#device-profile-transport-configuration-for-device-type-mqtt-eon). 
-- The **name of this device profile** for example: | <span style="color:green">"SparkPlugProfile"</span>;
-  The first parameter: **Transport configuration type**: | <span style="color:brown">MQTT</span>;
-  The second parameter: **MQTT device topic filters SparkPlug**: | <span style="color:brown">enable</span>;
-  The third parameter: **Fields "SparkPlug attributes metric names"** [<i>Optional</i>] for example: | <span style="color:brown">"Node Control/Next Server", "Last Update FW", "Outputs/LEDs/Green"</span>;
+First you need to create device profile for the device type **MQTT EON**, with next name and parameters of this **device profile**  [here](#device-profile-transport-configuration-for-device-type-mqtt-eon). 
+- This **MQTT EON device profile** hase **name**. Its is string variable and for example, let's assign the following value | <span style="color:green">"SparkPlugProfile"</span>
+  The first parameter: **Transport configuration type** must be | <span style="color:brown">MQTT</span>
+  The second parameter: **MQTT device topic filters SparkPlug** must be | <span style="color:brown">enable</span>
+  The third parameter: **Fields "SparkPlug attributes metric names"** is <i>Optional</i>. It is not necessary to assign a value to this parameter, but for an example, let’s assign the following values | <span style="color:brown">["Node Control/Next Server", "Last Update FW", "Outputs/LEDs/Green"]</span>
  
 {% include images-gallery.html imageCollection="sparkplug-device-profile-created" showListImageTitles="true" %}
 
 - **Note**: Only if you want to receive metric information as attributes, you add a value to the **SparkPlug Attribute Metric Names fields**
 - **Note**: 
-1. The first time you connect to a device of type Device, Thingsboard will automatically create both the Device itself with the name "deviceId" and a profile for it with the name equals [“EON device profile name” + “-node”].
-2. If you plan to create a device yourself in Thingsboard to connect to a device of type Device, for it, you can either use the profile created for the device type **MQTT EON**, or create a new device profile.
-  For a new profile device, the transport configuration type can be: <span style="color:brown">MQTT</span> or <span style="color:brown">default</span>.
+1. If you plan to create a device yourself in Thingsboard to connect to a device of type Device, for it, you can either use the profile created for the device type **MQTT EON**, or create a *new device profile*.
+   For a *new profile device*, the transport configuration type can be: <span style="color:brown">MQTT</span> or <span style="color:brown">default</span>.
+
+2. If you not plan to create a device yourself in Thingsboard to connect to a device of type Device, the first time you connect to a device of type Device, Thingsboard will automatically create both the Device itself with the name "deviceId" and a profile for it with the name equals {**MQTT EON device profile** name} + “**-node**”.
 
 ### Step 2. Create device
 
-[MQTT EON] type device must be created in Thingsboard with device profile before
+**MQTT EON** type device must be created in Thingsboard with device profile before
 connecting [here](#step-1-create-device-profile).
 
-[Device] type device may be created in Thingsboard with device profile before connecting or after successful connection
-of that Device [here](#step-1-create-device-profile).
+**Device** type device can be created in Thingsboard with a device profile before the first connection (manually).
+
+If **Device** type device with this device ID was not created in Thingsboard before connected it, after the first successful connection of this device, Thingsboard automatically create of that device and device profile for its [here](#step-1-create-device-profile).
 
 ### Step 3. MQTT Sparkplug Client connected
 
