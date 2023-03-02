@@ -1,0 +1,35 @@
+{% for devicesInCategoryList in devices %}
+    {% if devicesInCategoryList[0] %}
+        {% assign sectionTitle = devicesInCategoryList[0].category %}
+        <div class="guides-block" id="AnchorID">
+            <div class="guides-title-panel">
+                <div class="guides-text">
+                    <p class="guides-title">
+                        {{ sectionTitle }}
+                    </p>
+                </div>
+            </div>
+            <ul class="guides-list">
+                {% for devicePage in devicesInCategoryList %}
+                    <li class="guide-container">
+                        <a href="{{ devicePage.url }}">
+                            <div class="guide-text">
+                                <img class="guide-img"
+                                     src="/images/devices-library/{{ devicePage.deviceImageFileName }}">
+                                <p class="guide-title">
+                                    {{ devicePage.title }}
+                                </p>
+                                <p class="guide-subtitle">
+                                    {{ devicePage.description }}
+                                </p>
+                                <p class="guide-keywords">
+                                    {{ devicePage.chip | append: " " | append: devicePage.vendor | append: " " | append: devicePage.protocols }}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endfor %}

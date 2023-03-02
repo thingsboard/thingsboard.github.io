@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 title: How to connect NodeMCU V2 to ThingsBoard?
-category: microcontrollers
+category: Microcontrollers
 chip: esp8266
 deviceImageFileName: nodemcuv2.jpg
 ---
