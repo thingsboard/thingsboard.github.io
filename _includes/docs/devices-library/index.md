@@ -124,9 +124,9 @@
             {% case sitePage.category %}
                 {% when "ready-to-go-devices" %}
                     {% assign readyToGoDevicesCategory = readyToGoDevicesCategory | push: sitePage %}
-                {% when "Single-board computers" %}
+                {% when "single-board-computers" %}
                     {% assign singleBoardComputersCategory = singleBoardComputersCategory | push: sitePage %}
-                {% when "Microcontrollers" %}
+                {% when "microcontrollers" %}
                     {% assign microcontrollersCategory = microcontrollersCategory | push: sitePage %}
             {% endcase %}
         {% endunless %}
