@@ -28,91 +28,6 @@ Each resource has the following main properties:
 * Type - data type: String, Integer, etc.
 * Operations - R (read), RW (read-write), E (execute), etc.
 
-## ThingsBoard LwM2M support
-
-ThingsBoard implements both LwM2M server and bootstrap server that supports plain UDP and DTLS (secure transport over UDP).
-As a platform user, you are able to provision and define the mapping between the LwM2M resources and ThingsBoard device [attributes](/docs/{{docsPrefix}}user-guide/attributes/) and [time-series data](/docs/{{docsPrefix}}user-guide/telemetry/).
-The mapping is configured in the corresponding device profile. We will use some screenshots of the LwM2M device profile below to explain the basics. 
-See the [Getting Started](#getting-started) guide for a step-by-step instruction to create the device profile.
-
-#### Read LwM2M resources to ThingsBoard attributes
-
-You may configure device profile to read and observe certain LwM2M Resource. 
-The values of the resource may be stored as the device [attributes](/docs/{{docsPrefix}}user-guide/attributes/). 
-To do this, select the "Attribute" checkbox for the corresponding Resource. You may optionally change the auto-generated key name, defining the attribute name in ThingsBoard.
-For example, let's configure the platform to read the LwM2M Resource */3/0/2* (Device Serial Number) and store it as an attribute *serialNumber* in ThingsBoard:
-
-![image](/images/lwm2m/attributes-ce.png)
-
-ThingsBoard will read the attribute value during device registration (LwM2M "Register" operation) or during registration update (LwM2M "Update" operation).
-
-**Note:** 
-
-We may optionally issue the "Observe" operation to make sure we subscribe to the updates of the LwM2M resource.
-To do this, select the "Observe" checkbox for the corresponding Resource. Let's configure ThingsBoard to monitor the LwM2M Resource */3/0/15* (Timezone) and store it as the *timezone* attribute:
-
-![image](/images/lwm2m/attributes-observe-ce.png)
-
-Using the above configuration, we will make sure that the attribute *timezone* will always contain the latest value of the *Timezone* resource.
-
-#### Write LwM2M resource via ThingsBoard attributes update
-
-ThingsBoard [Shared Attributes](docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver the configuration updates to the device.
-You may change the shared attribute in multiple ways - via administration UI, dashboard widget, REST API, or rule engine node. 
-Once you change the shared attribute, ThingsBoard will search for the mapping between the attribute key and LwM2M resource.
-If the resource is marked as an attribute, platform will send the LwM2M Write operation to the LwM2M client device.
-
-See the *Timezone* example from the [read attributes](#read-lwm2m-resources-to-thingsboard-attributes)
-
-#### Read LwM2M resources to time-series data
-
-You may configure device profile to read and observe certain LwM2M Resource. The values of the resource may be stored as the device [time-series data](/docs/{{docsPrefix}}user-guide/telemetry/).
-To do this, select the "Telemetry" checkbox for the corresponding Resource. You may optionally change the auto-generated key name, defining the telemetry key in ThingsBoard.
-For example, let's configure the platform to read the LwM2M Resources: */3/0/7* (Power Source Voltage), */3/0/8* (Power Source Current), */3/0/9* (Battery Level), and */3/0/10* (Memory Free),
-and to store them as time-series data in ThingsBoard:
-
-![image](/images/lwm2m/time-series-ce.png)
-
-#### Execute LwM2M operation using the ThingsBoard RPC command
-
-ThingsBoard supports on-demand LwM2M operations using RPC(Remote Procedure Call) feature. We also use "command" to device instead of RPC for simplicity. 
-You can send the command using REST API, dashboard widget, rule engine, or custom script.
-See the structure of the command is documented [here](/docs/{{docsPrefix}}user-guide/rpc/#server-side-rpc). 
-
-Key properties of the command are *method* and *params*. 
-The *method* defines the LwM2M operation and is one of the following: 
-
-* [Execute](#execute-operation) - used by the LwM2M Server to initiate some action;
-* [Read](#read-operation) - access the value of a Resource;
-* [Discover](#discover-operation) - discover LwM2M Resources available on an Objects or Object Instances;
-* [WriteUpdate](#write-operation) - change the value of a Resource;
-* [WriteAttributes](#write-attributes-operation) - change attribute of the Resource;
-* [ReadComposite](#read-composite-operation) - selectively read any combination of Objects;
-* [WriteComposite](#write-composite-operation) - change the values of a number of different Resources across different Instances of one or more Objects;
-* [Delete](#delete-operation) - delete an Object Instance within the LwM2M Client;
-* [Observe](#observe-operation) - initiates an observation request for changes of a specific Resource;
-* [ObserveCancel](#cancel-observation-operation) - ends an observation relationship that was previously created with an “Observe” operation;
-* [ObserveCancelAll](#cancel-all-observations-operation) - Thingsboard-specific operation and allows to cancel all observations on the device at once;
-* [ObserveReadAll](#read-all-observations-operation) - Thingsboard-specific operation and allows to get all observations that are set on the device;
-* [DiscoverAll](#discover-all-operation) - Thingsboard-specific operation and allows to get the object and resources hierarchy, instantiated on the client.
-
-The *params* is typically a JSON that defines the resource id or multiple resources ids. 
-For example, to reboot the device one should execute the resource */3/0/4* (Reboot).
-
-So, the following RPC command need to be sent to ThingsBoard:
-
-```json
-{
-   "method": "Execute",
-   "params": {"id": "/3/0/4"}
-}
-```
-{: .copy-code}
-
-We have prepared a simple dashboard with the ability to execute commands to device (*/3/0/4* Reboot) and update device attributes (*/3/0/15* Timezone). 
-You may import the dashboard from [gist](https://gist.github.com/ashvayka/2374b1b6ebd8be5dca3d5252dee4c212#file-lwm2m_operations-json), once you complete the "Getting started" guide below. 
-Don't forget to change the dashboard [alias](/docs/{{docsPrefix}}user-guide/dashboards/#entity-aliases). 
-
 ## Getting started
 
 This part of documentation covers provisioning of your first LwM2M device in ThingsBoard. We will use [Eclipse Wakaama](https://github.com/eclipse/wakaama#test-client-example) test client to simulate LwM2M device.
@@ -202,6 +117,91 @@ Where
 The LwM2M transport implementation also stores the logs of communication with the device into telemetry. You should see the "transportLog" in the device telemetry tab.
 
 {% include images-gallery.html imageCollection="wakaama-terminal" showListImageTitles="true" %}
+
+## ThingsBoard LwM2M support
+
+ThingsBoard implements both LwM2M server and bootstrap server that supports plain UDP and DTLS (secure transport over UDP).
+As a platform user, you are able to provision and define the mapping between the LwM2M resources and ThingsBoard device [attributes](/docs/{{docsPrefix}}user-guide/attributes/) and [time-series data](/docs/{{docsPrefix}}user-guide/telemetry/).
+The mapping is configured in the corresponding device profile. We will use some screenshots of the LwM2M device profile below to explain the basics. 
+See the [Getting Started](#getting-started) guide for a step-by-step instruction to create the device profile.
+
+#### Read LwM2M resources to ThingsBoard attributes
+
+You may configure device profile to read and observe certain LwM2M Resource. 
+The values of the resource may be stored as the device [attributes](/docs/{{docsPrefix}}user-guide/attributes/). 
+To do this, select the "Attribute" checkbox for the corresponding Resource. You may optionally change the auto-generated key name, defining the attribute name in ThingsBoard.
+For example, let's configure the platform to read the LwM2M Resource */3/0/2* (Device Serial Number) and store it as an attribute *serialNumber* in ThingsBoard:
+
+![image](/images/lwm2m/attributes-ce.png)
+
+ThingsBoard will read the attribute value during device registration (LwM2M "Register" operation) or during registration update (LwM2M "Update" operation).
+
+**Note:** 
+
+We may optionally issue the "Observe" operation to make sure we subscribe to the updates of the LwM2M resource.
+To do this, select the "Observe" checkbox for the corresponding Resource. Let's configure ThingsBoard to monitor the LwM2M Resource */3/0/15* (Timezone) and store it as the *timezone* attribute:
+
+![image](/images/lwm2m/attributes-observe-ce.png)
+
+Using the above configuration, we will make sure that the attribute *timezone* will always contain the latest value of the *Timezone* resource.
+
+#### Write LwM2M resource via ThingsBoard attributes update
+
+ThingsBoard [Shared Attributes](docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver the configuration updates to the device.
+You may change the shared attribute in multiple ways - via administration UI, dashboard widget, REST API, or rule engine node. 
+Once you change the shared attribute, ThingsBoard will search for the mapping between the attribute key and LwM2M resource.
+If the resource is marked as an attribute, platform will send the LwM2M Write operation to the LwM2M client device.
+
+See the *Timezone* example from the [read attributes](#read-lwm2m-resources-to-thingsboard-attributes)
+
+#### Read LwM2M resources to time-series data
+
+You may configure device profile to read and observe certain LwM2M Resource. The values of the resource may be stored as the device [time-series data](/docs/{{docsPrefix}}user-guide/telemetry/).
+To do this, select the "Telemetry" checkbox for the corresponding Resource. You may optionally change the auto-generated key name, defining the telemetry key in ThingsBoard.
+For example, let's configure the platform to read the LwM2M Resources: */3/0/7* (Power Source Voltage), */3/0/8* (Power Source Current), */3/0/9* (Battery Level), and */3/0/10* (Memory Free),
+and to store them as time-series data in ThingsBoard:
+
+![image](/images/lwm2m/time-series-ce.png)
+
+#### Execute LwM2M operation using the ThingsBoard RPC command
+
+ThingsBoard supports on-demand LwM2M operations using RPC(Remote Procedure Call) feature. We also use "command" to device instead of RPC for simplicity. 
+You can send the command using REST API, dashboard widget, rule engine, or custom script.
+See the structure of the command is documented [here](/docs/{{docsPrefix}}user-guide/rpc/#server-side-rpc). 
+
+Key properties of the command are *method* and *params*. 
+The *method* defines the LwM2M operation and is one of the following: 
+
+* [Execute](#execute-operation) - used by the LwM2M Server to initiate some action;
+* [Read](#read-operation) - access the value of a Resource;
+* [Discover](#discover-operation) - discover LwM2M Resources available on an Objects or Object Instances;
+* [WriteUpdate](#write-operation) - change the value of a Resource;
+* [WriteAttributes](#write-attributes-operation) - change attribute of the Resource;
+* [ReadComposite](#read-composite-operation) - selectively read any combination of Objects;
+* [WriteComposite](#write-composite-operation) - change the values of a number of different Resources across different Instances of one or more Objects;
+* [Delete](#delete-operation) - delete an Object Instance within the LwM2M Client;
+* [Observe](#observe-operation) - initiates an observation request for changes of a specific Resource;
+* [ObserveCancel](#cancel-observation-operation) - ends an observation relationship that was previously created with an “Observe” operation;
+* [ObserveCancelAll](#cancel-all-observations-operation) - Thingsboard-specific operation and allows to cancel all observations on the device at once;
+* [ObserveReadAll](#read-all-observations-operation) - Thingsboard-specific operation and allows to get all observations that are set on the device;
+* [DiscoverAll](#discover-all-operation) - Thingsboard-specific operation and allows to get the object and resources hierarchy, instantiated on the client.
+
+The *params* is typically a JSON that defines the resource id or multiple resources ids. 
+For example, to reboot the device one should execute the resource */3/0/4* (Reboot).
+
+So, the following RPC command need to be sent to ThingsBoard:
+
+```json
+{
+   "method": "Execute",
+   "params": {"id": "/3/0/4"}
+}
+```
+{: .copy-code}
+
+We have prepared a simple dashboard with the ability to execute commands to device (*/3/0/4* Reboot) and update device attributes (*/3/0/15* Timezone). 
+You may import the dashboard from [gist](https://gist.github.com/ashvayka/2374b1b6ebd8be5dca3d5252dee4c212#file-lwm2m_operations-json), once you complete the "Getting started" guide below. 
+Don't forget to change the dashboard [alias](/docs/{{docsPrefix}}user-guide/dashboards/#entity-aliases). 
 
 ## RPC Commands
 
