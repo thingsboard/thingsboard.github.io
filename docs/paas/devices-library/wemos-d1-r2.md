@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
 title: How to connect WeMos D1 R2 to ThingsBoard?
-category: microcontrollers
+category: Microcontrollers
 chip: esp8266
 deviceImageFileName: wemos-d1-r2.jpg
 

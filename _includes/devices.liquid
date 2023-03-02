@@ -5,14 +5,6 @@
             <div class="guides-title-panel">
                 <div class="guides-text">
                     <p class="guides-title">
-                        {% case sectionTitle %}
-                            {% when "microcontrollers" %}
-                                {% assign sectionTitle = "Microcontrollers" %}
-                            {% when "single-board-computers" %}
-                                {% assign sectionTitle = "Single-board computers" %}
-                            {% when "ready-to-go-devices" %}
-                                {% assign sectionTitle = "Ready-to-go devices" %}
-                        {% endcase %}
                         {{ sectionTitle }}
                     </p>
                 </div>
@@ -20,7 +12,7 @@
             <ul class="guides-list">
                 {% for devicePage in devicesInCategoryList %}
                     <li class="guide-container">
-                        <a href="{{ devicePage.url | replace: "docs/", docsPrefix }}">
+                        <a href="{{ devicePage.url }}">
                             <div class="guide-text">
                                 <img class="guide-img"
                                      src="/images/devices-library/{{ devicePage.deviceImageFileName }}">

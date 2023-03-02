@@ -118,19 +118,17 @@
 {% assign devicesLibraryPagePath = page.path | remove: ".md" | append: '/' %}
 
 {% for sitePage in site.pages %}
-    {% if sitePage.path contains devicesLibraryPagePath %}
-        {% assign possibleTargetPath = sitePage.path | remove: devicesLibraryPagePath %}
-        {% unless possibleTargetPath contains '/' %}
-            {% case sitePage.category %}
-                {% when "ready-to-go-devices" %}
-                    {% assign readyToGoDevicesCategory = readyToGoDevicesCategory | push: sitePage %}
-                {% when "single-board-computers" %}
-                    {% assign singleBoardComputersCategory = singleBoardComputersCategory | push: sitePage %}
-                {% when "microcontrollers" %}
-                    {% assign microcontrollersCategory = microcontrollersCategory | push: sitePage %}
-            {% endcase %}
-        {% endunless %}
-    {% endif %}
+{% if sitePage.path contains devicesLibraryPagePath %}
+{% assign possibleTargetPath = sitePage.path | remove: devicesLibraryPagePath %}
+{% case sitePage.category %}
+    {% when "Ready-to-go devices" %}
+        {% assign readyToGoDevicesCategory = readyToGoDevicesCategory | push: sitePage %}
+    {% when "Single-board computers" %}
+        {% assign singleBoardComputersCategory = singleBoardComputersCategory | push: sitePage %}
+    {% when "Microcontrollers" %}
+        {% assign microcontrollersCategory = microcontrollersCategory | push: sitePage %}
+{% endcase %}
+{% endif %}
 {% endfor %}
 
 {% assign devices = devices | push: microcontrollersCategory %}
