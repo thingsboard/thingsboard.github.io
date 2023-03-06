@@ -42,7 +42,7 @@
     }
 
     function filterGuides() {
-        $('.guides-list').find('.guide-container').removeClass('hidden');
+        $('.guides-list').find('.guide-container').not('.filtered').removeClass('hidden');
         var guidesBlock = $('.guides-block').not('.filtered');
         guidesBlock.removeClass('hidden');
         searchPageCount = 0;
@@ -57,7 +57,7 @@
                 }
             }
             guidesBlock.each( function() {
-                var containers = $( this ).find('.guide-container');
+                var containers = $( this ).find('.guide-container').not('.filtered');
                 var total = containers.length;
                 containers.each( function() {
                     var paragraphs = $(this).find('p');

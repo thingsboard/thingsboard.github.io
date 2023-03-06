@@ -4,6 +4,8 @@ title: How to connect Arduino Nano RP2040 Connect to ThingsBoard?
 category: Microcontrollers
 chip: rp2040
 deviceImageFileName: arduino-nano-rp2040-connect.jpg
+vendor: Arduino
+protocols: WI-FI Bluetooth LE
 ---
 
 * TOC
