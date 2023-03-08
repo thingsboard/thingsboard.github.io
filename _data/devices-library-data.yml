@@ -16,11 +16,11 @@
       subtitle:
       keywords: microcontroller
       img: /images/devices-library/esp32-pico-kit.png
-    - path: /docs/devices-library/esp-eye/
+    - path: /docs/devices-library/microcontrollers-eye/
       title: ESP-EYE
       subtitle:
       keywords: microcontroller
-      img: /images/devices-library/esp-eye.png
+      img: /images/devices-library/microcontrollers-eye.png
     - path: /docs/devices-library/luanode32/
       title: LuaNode32
       subtitle:

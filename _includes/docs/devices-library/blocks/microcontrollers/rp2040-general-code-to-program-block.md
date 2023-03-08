@@ -4,21 +4,10 @@ To do this, you can use the code below. It contains all required functionality f
 
 
 ```cpp
-#if defined(ESP8266)
-  #include <ESP8266WiFi.h>
-#elif defined(ARDUINO_NANO_RP2040_CONNECT)
-  #include <WiFiNINA_Generic.h>
-#elif defined(ESP32) || defined(RASPBERRYPI_PICO) || defined(RASPBERRYPI_PICO_W)
-  #include <WiFi.h>
-  #include <WiFiClientSecure.h>
-#endif
-
-#ifndef LED_BUILTIN
-#define LED_BUILTIN 99
-#endif
-
+#include <WiFiNINA.h>
 #include <ThingsBoard.h>
 
+// Wifi credentials
 constexpr char WIFI_SSID[] = "YOUR_WIFI_SSID";
 constexpr char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
 
@@ -33,23 +22,24 @@ constexpr uint16_t THINGSBOARD_PORT = 1883U;
 
 // Maximum size packets will ever be sent or received by the underlying MQTT client,
 // if the size is to small messages might not be sent or received messages will be discarded
-constexpr uint32_t MAX_MESSAGE_SIZE = 256U;
+constexpr uint32_t MAX_MESSAGE_SIZE = 512U;
 
 // Baud rate for the debugging serial connection.
 // If the Serial output is mangled, ensure to change the monitor speed accordingly to this variable
-constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
+constexpr uint16_t SERIAL_DEBUG_BAUD = 115200U;
 
 
 // Initialize underlying client, used to establish a connection
 WiFiClient wifiClient;
 // Initialize ThingsBoard instance with the maximum needed buffer size
-ThingsBoardSized<MAX_MESSAGE_SIZE> tb(wifiClient);
+ThingsBoard tb(wifiClient, MAX_MESSAGE_SIZE);
 
 // Attribute names for attribute request and attribute updates functionality
 
 constexpr char BLINKING_INTERVAL_ATTR[] = "blinkingInterval";
 constexpr char LED_MODE_ATTR[] = "ledMode";
 constexpr char LED_STATE_ATTR[] = "ledState";
+constexpr char LED_COLOR_ATTR[] = "ledColor";
 
 // Statuses for subscribing to rpc
 bool subscribed = false;
@@ -63,6 +53,11 @@ volatile int ledMode = 0;
 // Current led state
 volatile bool ledState = false;
 
+// Current led colors
+volatile uint8_t redColor = 255;
+volatile uint8_t greenColor = 255;
+volatile uint8_t blueColor = 255;
+
 // Settings for interval in blinking mode
 constexpr uint16_t BLINKING_INTERVAL_MS_MIN = 10U;
 constexpr uint16_t BLINKING_INTERVAL_MS_MAX = 60000U;
@@ -75,15 +70,53 @@ constexpr int16_t telemetrySendInterval = 2000U;
 uint32_t previousDataSend;
 
 // List of shared attributes for subscribing to their updates
-constexpr std::array<const char *, 2U> SHARED_ATTRIBUTES_LIST = {
+constexpr std::array<const char *, 3U> SHARED_ATTRIBUTES_LIST = {
   LED_STATE_ATTR,
-  BLINKING_INTERVAL_ATTR
+  BLINKING_INTERVAL_ATTR,
+  LED_COLOR_ATTR
 };
 
 // List of client attributes for requesting them (Using to initialize device states)
 constexpr std::array<const char *, 1U> CLIENT_ATTRIBUTES_LIST = {
   LED_MODE_ATTR
 };
+
+const char *getMAC() {
+  uint8_t macAddress[WL_MAC_ADDR_LENGTH];
+  WiFi.macAddress(macAddress);
+  char macStr[12];
+  sprintf(macStr, "%x", *macAddress);
+  return macStr;
+}
+
+const char *getBSSID() {
+  uint8_t macAddress[WL_MAC_ADDR_LENGTH];
+  WiFi.BSSID(macAddress);
+  char macStr[12];
+  sprintf(macStr, "%x", *macAddress);
+  return macStr;
+}
+
+void setLedColor() {
+  if (redColor < 255 && ledState) {
+    analogWrite(LEDR, redColor);
+  } else {
+    pinMode(LEDR, OUTPUT);
+    digitalWrite(LEDR, LOW);
+  }
+  if (greenColor < 255 && ledState) {
+    analogWrite(LEDG, greenColor);
+  } else {
+    pinMode(LEDG, OUTPUT);
+    digitalWrite(LEDG, LOW);
+  }
+  if (blueColor < 255 && ledState) {
+    analogWrite(LEDB, blueColor);
+  } else {
+    pinMode(LEDB, OUTPUT);
+    digitalWrite(LEDB, LOW);
+  }
+}
 
 /// @brief Initalizes WiFi connection,
 // will endlessly delay until a connection has been successfully established
@@ -103,7 +136,7 @@ void InitWiFi() {
 /// @return Returns true as soon as a connection has been established again
 const bool reconnect() {
   // Check to ensure we aren't connected yet
-  const wl_status_t status = WiFi.status();
+  const uint8_t status = WiFi.status();
   if (status == WL_CONNECTED) {
     return true;
   }
@@ -161,11 +194,51 @@ void processSharedAttributes(const Shared_Attribute_Data &data) {
         Serial.print("Updated blinking interval to: ");
         Serial.println(new_interval);
       }
-    } else if(strcmp(it->key().c_str(), LED_STATE_ATTR) == 0) {
+    } else if (strcmp(it->key().c_str(), LED_STATE_ATTR) == 0) {
       ledState = it->value().as<bool>();
-      digitalWrite(LED_BUILTIN, ledState ? HIGH : LOW);
+      setLedColor();
       Serial.print("Updated state to: ");
       Serial.println(ledState);
+    } else if (strcmp(it->key().c_str(), LED_COLOR_ATTR) == 0) {
+      std::string data = it->value().as<std::string>();
+      Serial.print("Updated colors: ");
+      Serial.println(data.c_str());
+      int i = 0;
+      bool end = false;
+      while (data.length() > 0) {
+        int index = data.find(',');
+        if (index == -1) {
+          end = true;
+          index = data.length();
+        }
+        switch (i) {
+          case 0:
+            redColor = map(atoi(data.substr(0, index).c_str()), 0, 255, 255, 0);
+            break;
+          case 1:
+            greenColor = map(atoi(data.substr(0, index).c_str()), 0, 255, 255, 0);
+            break;
+          case 2:
+            blueColor = map(atoi(data.substr(0, index).c_str()), 0, 255, 255, 0);
+            break;
+          default:
+            break;
+        }
+        i++;
+        if (end) {
+          break;
+        } else {
+          data = data.substr(index + 1);
+        }
+      }
+      Serial.print("Updating led color to values:");
+      Serial.print("\tR: ");
+      Serial.print(redColor);
+      Serial.print("\tG: ");
+      Serial.print(greenColor);
+      Serial.print("\tB: ");
+      Serial.println(blueColor);
+      setLedColor();
     }
   }
   attributesChanged = true;
@@ -187,13 +260,18 @@ const Attribute_Request_Callback attribute_client_request_callback(CLIENT_ATTRIB
 void setup() {
   // Initalize serial connection for debugging
   Serial.begin(115200);
-  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(LEDR, OUTPUT);
+  pinMode(LEDG, OUTPUT);
+  pinMode(LEDB, OUTPUT);
+  digitalWrite(LEDR, LOW);
+  digitalWrite(LEDG, LOW);
+  digitalWrite(LEDB, LOW);
   delay(1000);
   InitWiFi();
 }
 
 void loop() {
-//  delay(10);
+  delay(10);
 
   if (!reconnect()) {
     subscribed = false;
@@ -212,7 +290,7 @@ void loop() {
       return;
     }
     // Sending a MAC address as an attribute
-    tb.sendAttributeString("macAddress", WiFi.macAddress().c_str());
+    tb.sendAttributeString("macAddress", getMAC());
   }
 
   if (!subscribed) {
@@ -260,13 +338,9 @@ void loop() {
   if (ledMode == 1 && millis() - previousStateChange > blinkingInterval) {
     previousStateChange = millis();
     ledState = !ledState;
-    digitalWrite(LED_BUILTIN, ledState);
+    setLedColor();
     tb.sendTelemetryBool(LED_STATE_ATTR, ledState);
     tb.sendAttributeBool(LED_STATE_ATTR, ledState);
-    if (LED_BUILTIN == 99) {
-      Serial.print("LED state changed to: ");
-      Serial.println(ledState);
-    }
   }
 
   // Sending telemetry every telemetrySendInterval time
@@ -274,7 +348,8 @@ void loop() {
     previousDataSend = millis();
     tb.sendTelemetryInt("temperature", random(10, 20));
     tb.sendAttributeInt("rssi", WiFi.RSSI());
-    tb.sendAttributeString("ssid", WiFi.SSID());
+    tb.sendAttributeString("ssid", WIFI_SSID);
+    tb.sendAttributeString("bssid", getBSSID());
     tb.sendAttributeString("localIp", String(String(WiFi.localIP()[0]) + "." + String(WiFi.localIP()[1]) + "." + String(WiFi.localIP()[2]) + "." + String(WiFi.localIP()[3])).c_str());
   }
 
@@ -295,7 +370,7 @@ Necessary variables for connection:
 | TOKEN | **YOUR_DEVICE_ACCESS_TOKEN** | Access token from device. Obtaining process described in #connect-device-to-thingsboard | 
 | THINGSBOARD_SERVER | **{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address. |
 | THINGSBOARD_PORT | **1883U** | ThingsBoard server MQTT port. Can be default for this guide. |
-| MAX_MESSAGE_SIZE | **256U** | Maximal size of MQTT messages. Can be default for this guide. |
+| MAX_MESSAGE_SIZE | **512U** | Maximal size of MQTT messages. Can be default for this guide. |
 | SERIAL_DEBUG_BAUD | **1883U** | Baud rate for serial port. Can be default for this guide. |  
 
 ```cpp
@@ -309,19 +384,20 @@ constexpr char TOKEN[] = "YOUR_ACCESS_TOKEN";
 constexpr char THINGSBOARD_SERVER[] = "{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
 constexpr uint16_t THINGSBOARD_PORT = 1883U;
 
-constexpr uint32_t MAX_MESSAGE_SIZE = 256U;
+constexpr uint32_t MAX_MESSAGE_SIZE = 512U;
 constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 
 ...
 ```
 
-Send data part (By default the example sends random value for **temperature** key and some WiFi information):  
+Send data part in code (By default the example sends random value for **temperature** key and some WiFi information):  
 
 ```cpp
 ...
     tb.sendTelemetryInt("temperature", random(10, 20));
     tb.sendAttributeInt("rssi", WiFi.RSSI());
-    tb.sendAttributeString("ssid", WiFi.SSID());
+    tb.sendAttributeString("ssid", WIFI_SSID);
+    tb.sendAttributeString("bssid", getBSSID());
     tb.sendAttributeString("localIp", String(String(WiFi.localIP()[0]) + "." + String(WiFi.localIP()[1]) + "." + String(WiFi.localIP()[2]) + "." + String(WiFi.localIP()[3])).c_str());
 ...
 ```

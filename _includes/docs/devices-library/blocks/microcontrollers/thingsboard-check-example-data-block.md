@@ -1,12 +1,20 @@
 
 To check the data from our device we need to open imported dashboard:  
 
+{% assign generalViewOfDashboardPath = "/images/devices-library/basic/microcontrollers/dashboard/thingsboard-general-view-of-example-dashboard.png" %}
+
+{% if boardLedCount == 3 %}
+{% assign generalViewOfDashboardPath = "/images/devices-library/basic/microcontrollers/dashboard/thingsboard-general-view-of-example-dashboard-rgb-led.png" %}
+{% elsif hasCamera == "true" %}
+{% assign generalViewOfDashboardPath = "/images/devices-library/basic/microcontrollers/dashboard/thingsboard-general-view-of-example-dashboard-camera.png" %}
+{% endif %}
+
 {% assign checkDataDashboard='
     ===
         image: /images/devices-library/paas/thingsboard-open-dashboard-click-on-row.png,
         title: Open dashboard by clicking on it in the table.
     ===
-        image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-general-view-of-example-dashboard.png,
+        image: ' | append: generalViewOfDashboardPath | append: ',
         title: The view of checking data and control our device dashboard.
     ===
         image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-device-attributes.png,

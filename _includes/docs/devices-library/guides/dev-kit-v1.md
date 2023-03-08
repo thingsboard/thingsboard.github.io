@@ -1,7 +1,6 @@
 
-{% assign boardHasLed = "true" %}
+{% assign boardLedCount = 1 %}
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
-{% assign imageName = "dev-kit-v1.jpg"%}
 {% assign arduinoBoardPath = "**ESP32** > **ESP32 Dev Module**" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
@@ -47,7 +46,7 @@ The module is designed for portable and autonomous electronics and Internet of T
 
 ## Control device using shared attributes
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-device-interval-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-attributes-device-block.md %}
 
 ## Control device using RPC
 

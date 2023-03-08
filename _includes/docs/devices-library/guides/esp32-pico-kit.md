@@ -1,7 +1,6 @@
 
-{% assign boardHasLed = "false" %}
+{% assign boardLedCount = 0 %}
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
-{% assign imageName = "esp32-pico-kit.png" %}
 {% assign arduinoBoardPath = "**ESP32** > **ESP32 Pico Kit**" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
@@ -46,7 +45,7 @@ Official documentation is available [here](https://docs.espressif.com/projects/e
 
 ## Control device using shared attributes
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-device-interval-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-attributes-device-block.md %}
 
 ## Control device using RPC
 

@@ -1,5 +1,5 @@
 
-{% assign boardHasLed = "true" %}
+{% assign boardLedCount = 3 %}
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign arduinoBoardPath="**Arduino Mbed OS Nano Boards** > **Arduino Nano RP2040 Connect**" %}
 {% assign prerequisites = "
@@ -46,7 +46,7 @@ Develop robust embedded AI solutions with minimal effort using the Arduino Nano 
 
 ## Control device using shared attributes
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-device-interval-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-attributes-device-block.md %}
 
 ## Control device using RPC
 

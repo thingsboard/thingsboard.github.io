@@ -1,5 +1,11 @@
-
-
+{% assign boardLedCount = 1 %}
+{% assign hasCamera = "true" %}
+{% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
+{% assign arduinoBoardPath = "**M5Stack** > **M5Stack-Timer-CAM**" %}
+{% assign prerequisites = "
+- " | append: deviceName | append: "
+- [Arduino IDE](https://www.arduino.cc/en/software)"
+ %}
 
 ## Introduction
 
@@ -38,7 +44,7 @@ It also supports image transmission via Wi-Fi and debugging through a Micro-USB 
 
 ## Control device using shared attributes
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-device-interval-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-attributes-device-block.md %}
 
 ## Control device using RPC
 
