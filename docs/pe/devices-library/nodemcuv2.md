@@ -3,6 +3,8 @@ layout: docwithnav-pe
 title: How to connect NodeMCU V2 to ThingsBoard?
 category: Microcontrollers
 chip: esp8266
+vendor: NodeMCU
+connectivity: MQTT
 deviceImageFileName: nodemcuv2.jpg
 
 ---
