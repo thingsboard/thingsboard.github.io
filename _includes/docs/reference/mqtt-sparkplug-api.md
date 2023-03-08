@@ -37,9 +37,9 @@ Other  elements of topic are string variables and for example, let's assign the 
 - The name of ID for **group** is {**groupId**}. We assign a value to it |<span style="color:green">"MyGroupId"</span>
 - The name of ID for **MQTT EON** is {**edgeNode**}. We assign a value to it  |<span style="color:green">“NodeSparkplug”</span>
   With *Metrics*: |<span style="color:brown">["Node Control/Reboot", "Node Control/Rebirth", "Node Control/Next Server", "Node Control/Scan Rate"]</span> [here](#publish-message-nbirth)
-- The name of ID for **Device number one** is  {**deviceId**}. We assign a value to it |<span style="color:green">“DeviceSparkplug_01”</span>
+- The name of ID for **Device number one** is  {**deviceId**}. We assign a value to it |<span style="color:green">“DeviceSparkplug_1”</span>
   With *Metrics*: |<span style="color:brown">["Device Control/Reboot", "Device Control/Rebirth", "Device Control/Scan rate", "Properties/Hardware Make", "Last Update FW", "Current Grid Voltage"]</span> [here](#publish-message-dbirth-Device_01)
-- The name of ID for **Device number two** is {**deviceId**}. We assign a value to it |<span style="color:green">“DeviceSparkplug_02”</span>
+- The name of ID for **Device number two** is {**deviceId**}. We assign a value to it |<span style="color:green">“DeviceSparkplug_2”</span>
   With *Metrics*: |<span style="color:brown">["Device Control/Reboot", "Device Control/Rebirth", "Device Control/Scan rate", "Properties/Hardware Make", "Last Update FW", "Outputs/LEDs/Green", "Outputs/LEDs/Yellow"]</span> [here](#publish-message-dbirth-Device_02)
 
 **Pay attention** that {**NAMESPACE**} as the first elements of the topic is a constant, so it *cannot* be changed. 
