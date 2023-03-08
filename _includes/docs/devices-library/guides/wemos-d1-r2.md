@@ -1,5 +1,5 @@
 
-{% assign boardHasLed = "true" %}
+{% assign boardLedCount = 1 %}
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign arduinoBoardPath="**ESP8266** > **LOLIN(WEMOS) D1 R2 & mini**" %}
 {% assign prerequisites = "
@@ -47,7 +47,7 @@ WeMos is distinguished by its low cost and ease of connection and programming.
 
 ## Control device using shared attributes
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-device-interval-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-attributes-device-block.md %}
 
 ## Control device using RPC
 

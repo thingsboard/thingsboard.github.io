@@ -1,5 +1,5 @@
 
-{% assign boardHasLed = "true" %}
+{% assign boardLedCount = 1 %}
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign arduinoBoardPath="**ESP8266** > **LOLIN(WEMOS) D1 R2 & mini**" %}
 {% assign prerequisites = "
@@ -46,7 +46,7 @@ The sizes and location of contacts in both types of boards are the same.
 
 ## Control device using shared attributes
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-device-interval-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-attributes-device-block.md %}
 
 ## Control device using RPC
 

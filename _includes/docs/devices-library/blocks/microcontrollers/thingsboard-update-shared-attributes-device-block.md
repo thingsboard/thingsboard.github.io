@@ -1,7 +1,7 @@
 
 Also we can change the period of the blinking using shared attribute update functionality.    
 
-{% assign updateLedBlinkingPeriod= '
+{% assign updateLedBlinkingPeriod = '
     ===
         image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-change-blinking-mode-1.png,
         title: To change period of the blinking we just need to change the value on our dashboard.
@@ -24,10 +24,11 @@ In order to change state when blinking is disabled - we can use the switch in th
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=updateLedState %}
 
+{% if boardLedCount == 0 %}
 
-{% if boardHasLed != "true" %}
 Unfortunately, this board doesn't have built-in LED indicator that we can control.  
 So you can check results of shared attribute change using Serial Monitor (**Tools** -> **Serial monitor**) and choose a baud rate 115200.  
+
 {% endif %}
 
 To reach this, we have a variable "blinkingInterval" used in the following parts of the code:  
@@ -89,5 +90,90 @@ const Shared_Attribute_Callback attributes_callback(SHARED_ATTRIBUTES_LIST.cbegi
   }
 ...
 ```
+
+{% if boardLedCount == 3 %}
+
+{% assign updateLedColor = '
+    ===
+        image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-change-led-color.png,
+        title: You can update the color of the led on the board, using the widget on ThingsBoard dashboard. 
+'
+%}
+
+Such as the board has included RGB LED we can control it color.  
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=updateLedColor %}
+
+To control the led we change "ledColor" shared attribute. It contains RGB values in the following string format "R,G,B". 
+
+The following part of the code used to parse incoming values and save them:  
+
+```cpp
+...
+if (strcmp(it->key().c_str(), LED_COLOR_ATTR) == 0) {
+  std::string data = it->value().as<std::string>();
+  Serial.print("Updated colors: ");
+  Serial.println(data.c_str());
+  int i = 0;
+  bool end = false;
+  while (data.length() > 0) {
+    int index = data.find(',');
+    if (index == -1) {
+      end = true;
+      index = data.length();
+    }
+    switch (i) {
+      case 0:
+        redColor = map(atoi(data.substr(0, index).c_str()), 0, 255, 255, 0);
+        break;
+      case 1:
+        greenColor = map(atoi(data.substr(0, index).c_str()), 0, 255, 255, 0);
+        break;
+      case 2:
+        blueColor = map(atoi(data.substr(0, index).c_str()), 0, 255, 255, 0);
+        break;
+      default:
+        break;
+    }
+    i++;
+    if (end) {
+      break;
+    } else {
+      data = data.substr(index + 1);
+    }
+  }
+  setLedColor();
+}
+...
+```
+
+To set the color of the LED we use the following function in the code:  
+
+```cpp
+...
+void setLedColor() {
+  if (redColor < 255 && ledState) {
+    analogWrite(LEDR, redColor);
+  } else {
+    pinMode(LEDR, OUTPUT);
+    digitalWrite(LEDR, LOW);
+  }
+  if (greenColor < 255 && ledState) {
+    analogWrite(LEDG, greenColor);
+  } else {
+    pinMode(LEDG, OUTPUT);
+    digitalWrite(LEDG, LOW);
+  }
+  if (blueColor < 255 && ledState) {
+    analogWrite(LEDB, blueColor);
+  } else {
+    pinMode(LEDB, OUTPUT);
+    digitalWrite(LEDB, LOW);
+  }
+}
+...
+```
+
+{% endif %}
 
 You can change the logic to reach your goals and add processing for your attributes.  

@@ -1,5 +1,5 @@
 
-{% assign boardHasLed = "true" %}
+{% assign boardLedCount = 3 %}
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign arduinoBoardPath="**Raspberry Pi Pico/RP2040** > **Raspberry Pi Pico W**" %}
 {% assign prerequisites = "
@@ -46,7 +46,7 @@ WiFi is enabled via the use of an Infineon CYW43439 wireless chip.
 
 ## Control device using shared attributes
 
-{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-device-interval-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/thingsboard-update-shared-attributes-device-block.md %}
 
 ## Control device using RPC
 
