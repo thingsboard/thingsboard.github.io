@@ -8,11 +8,17 @@
 
 ## Introduction
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-Orange Pi Zero is for anyone who wants to start creating with technology, not just consuming it. It's a simple, fun, 
-useful tool that you can use to start taking control of the world around you. 
-Orange Pi Zero is an open-source single-board computer. It is very compact with a dimension of 48X46mm. It can run 
-Android 4.4, Ubuntu, Debian. Orange Pi Zero uses the AllWinner H2 SoC, and has 256MB/512MB DDR3 SDRAM(256MB version is 
-Standard version), it integrates TF card, 100 Ethernet network, USB 2.0, 26Pin headers, etc. lt is powered through USB OTG. 
+BeagleBone Black is a low-cost, community-supported development platform suitable for both professionals and hobbyists. 
+Boot into Linux in less than 10 seconds and start developing your projects with just one USB cable.
+The BeagleBone Black is the latest addition to the BeagleBoard.org family and, like its predecessors, is aimed at the 
+open source development community, early adopters, and anyone interested in a low-cost ARM Cortex-A8-based processor. 
+It was equipped with a minimal set of features to allow the user to experience the power of the processor, and is not 
+intended as a full-fledged development platform, as many functions and interfaces provided by the processor are not 
+available with the BeagleBone Black through the embedded system. It is not a complete product designed to perform any 
+specific function. This is the basis for experiments and learning to program the processor and access peripheral devices 
+by creating your own software and hardware. It also offers access to many interfaces and allows the use of additional 
+expansion boards to add many different combinations of functions. The user can also design his own board or add his own 
+circuits.
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
