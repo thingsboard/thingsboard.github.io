@@ -1,29 +1,35 @@
 First, you must have Python installed on your OrangePI, we recommend using python 3.9 as a mainstream python version, if you haven’t installed Python, you can do it by the following command:
 
 ```bash
+sudo apt update
+sudo apt install software-properties-common
+```
+{:.copy-code}
+
+```bash
+sudo add-apt-repository ppa:deadsnakes/ppa
+```
+{:.copy-code}
+
+```bash
+sudo apt install python3.9
+```
+{:.copy-code}
+
+```bash
 sudo apt-get install -y python3 git python3-pip
 ```
 {:.copy-code}
 
 ```bash
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
-```
-{:.copy-code}
-
-```bash
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.5 2
-```
-{:.copy-code}
-
-```bash
-sudo update-alternatives --config python
+sudo apt-get install python3.9-venv
 ```
 {:.copy-code}
 
 Also, you should have installed thingsboard-python-client-sdk which can be installed using the following command. Still, we recommend installing packages outside the global environment (we will do it in step 3):
 
 ```bash
-pip3 install tb-mqtt-client board digitalio
+pip3 install tb-mqtt-client Adafruit-Blinka
 ```
 {:.copy-code}
 

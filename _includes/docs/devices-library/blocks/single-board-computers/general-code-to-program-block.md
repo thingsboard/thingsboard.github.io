@@ -5,14 +5,14 @@ Let’s setup our project:
 1. Create project folder:
 
     ```bash
-   mkdir orangepi_thingsboard
+   mkdir orangepi_thingsboard && cd orangepi_thingsboard
    ```
    {:.copy-code}
 
 2. Create a python virtual environment:
 
     ```bash
-   python3 -m venv venv
+   python3.9 -m venv venv
    ```
    {:.copy-code}
 
@@ -26,7 +26,7 @@ Let’s setup our project:
 4. Install packages:
 
    ```bash
-   pip install tb-mqtt-client board digitalio
+   pip install tb-mqtt-client Adafruit-Blinka
    ```
    {:.copy-code}
 
@@ -42,9 +42,10 @@ Let’s setup our project:
    ```python
    import logging.handlers
    import time
+   import os
    
    from tb_gateway_mqtt import TBDeviceMqttClient
-   import psutil
+
    logging.basicConfig(level=logging.DEBUG)
    
    client = None
@@ -73,18 +74,29 @@ Let’s setup our project:
    
    
    def get_data():
+       cpu_usage = round(float(os.popen('''grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage }' ''').readline()), 2)
+       ip_address = os.popen('''hostname -I''').readline()[:-2]
+       mac_address = os.popen('''cat /sys/class/net/*/address''').readline()[:-1]
+       processes_count = os.popen('''ps -Al | grep -c bash''').readline()[:-1]
+       swap_memory_usage = os.popen("free -m | grep Swap | awk '{print ($3/$2)*100}'").readline()[:-1]
+       ram_usage = float(os.popen("free -m | grep Mem | awk '{print ($3/$2) * 100}'").readline()[:-1])
+       st = os.statvfs('/')
+       used = (st.f_blocks - st.f_bfree) * st.f_frsize
+       boot_time = os.popen('uptime -p').read()[:-1]
+       avg_load = (cpu_usage + ram_usage) / 2
+   
        attributes = {
-           'ip_address': psutil.net_if_addrs()['en0'][0][1],
-           'macaddress': psutil.net_if_addrs()['en0'][1][1]
+           'ip_address': ip_address,
+           'macaddress': mac_address
        }
        telemetry = {
-           'cpu_usage': psutil.cpu_percent(),
-           'processes_count': psutil.cpu_count(),
-           'disk_usage': psutil.disk_usage('/')[-1],
-           'RAM_usage': psutil.virtual_memory()[2],
-           'swap_memory_usage': psutil.swap_memory()[3],
-           'battery': psutil.sensors_battery()[0],
-           'boot_time': psutil.boot_time()
+           'cpu_usage': cpu_usage,
+           'processes_count': processes_count,
+           'disk_usage': used,
+           'RAM_usage': ram_usage,
+           'swap_memory_usage': swap_memory_usage,
+           'boot_time': boot_time,
+           'avg_load': avg_load
        }
        return attributes, telemetry
    
@@ -108,7 +120,7 @@ Let’s setup our project:
    
         # now rpc_callback will process rpc requests from server
         client.set_server_side_rpc_request_handler(rpc_callback)
-   
+
         while not client.stopped:
             attributes, telemetry = get_data()
             client.send_attributes(attributes)
@@ -148,20 +160,31 @@ Data packing and returning in the `get_data` function, so you can easily add new
 ```python
 ...
 def get_data():
-    attributes = {
-        'ip_address': psutil.net_if_addrs()['en0'][0][1],
-        'macaddress': psutil.net_if_addrs()['en0'][1][1]
-    }
-    telemetry = {
-        'cpu_usage': psutil.cpu_percent(),
-        'processes_count': psutil.cpu_count(),
-        'disk_usage': psutil.disk_usage('/')[-1],
-        'RAM_usage': psutil.virtual_memory()[2],
-        'swap_memory_usage': psutil.swap_memory()[3],
-        'battery': psutil.sensors_battery()[0],
-        'boot_time': psutil.boot_time()
-    }
-    return attributes, telemetry
+       cpu_usage = round(float(os.popen('''grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage }' ''').readline()), 2)
+       ip_address = os.popen('''hostname -I''').readline()[:-2]
+       mac_address = os.popen('''cat /sys/class/net/*/address''').readline()[:-1]
+       processes_count = os.popen('''ps -Al | grep -c bash''').readline()[:-1]
+       swap_memory_usage = os.popen("free -m | grep Swap | awk '{print ($3/$2)*100}'").readline()[:-1]
+       ram_usage = float(os.popen("free -m | grep Mem | awk '{print ($3/$2) * 100}'").readline()[:-1])
+       st = os.statvfs('/')
+       used = (st.f_blocks - st.f_bfree) * st.f_frsize
+       boot_time = os.popen('uptime -p').read()[:-1]
+       avg_load = (cpu_usage + ram_usage) / 2
+   
+       attributes = {
+           'ip_address': ip_address,
+           'macaddress': mac_address
+       }
+       telemetry = {
+           'cpu_usage': cpu_usage,
+           'processes_count': processes_count,
+           'disk_usage': used,
+           'RAM_usage': ram_usage,
+           'swap_memory_usage': swap_memory_usage,
+           'boot_time': boot_time,
+           'avg_load': avg_load
+       }
+       return attributes, telemetry
 ...
 ```
 
