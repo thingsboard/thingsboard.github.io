@@ -35,11 +35,11 @@ To continue with this guide we will need the following:
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
-{% include /docs/devices-library/blocks/ready-to-go-devices/mixed-input-8-channel-analog-cellular-logger-configuration.md %}
+{% include /docs/devices-library/blocks/ready-to-go-devices/mixed-input-8-channel-analog-cellular-logger-configuration-block.md %}
 
 ## Check data on ThingsBoard
 
-{% include /docs/devices-library/blocks/ready-to-go-devices/mixed-input-8-channel-analog-cellular-logger-check-data.md %}
+{% include /docs/devices-library/blocks/ready-to-go-devices/mixed-input-8-channel-analog-cellular-logger-check-data-block.md %}
 
 ## Conclusion
 
