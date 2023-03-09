@@ -34,9 +34,9 @@
 '
 %}
 
-To check the data and get ability to send commands or data to the device we can use the following dashboard:  
+To check the data and get ability to send commands or data to the device we will create the dashboard.
 
-[Check and control device data dashboard](/docs/devices-library/resources/dashboards/esp/dashboard.json)
+First download the [Check and control device data dashboard](/docs/devices-library/resources/dashboards/esp/dashboard.json) file.
 
 To add the dashboard to ThingsBoard, we need to import it, and to do this, we have to go through the following steps:  
 

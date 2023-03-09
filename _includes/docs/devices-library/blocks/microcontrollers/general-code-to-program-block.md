@@ -2,6 +2,14 @@
 Now it’s time to program the board to connect to ThingsBoard.  
 To do this, you can use the code below. It contains all required functionality for this guide.    
 
+Copy the code and paste it into the Arduino IDE window
+
+{% assign mbedtlsInstallation='
+    ===
+        image: /images/devices-library/basic/arduino-ide/arduino-ide-1.png
+'%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=mbedtlsInstallation %}
 
 ```cpp
 #if defined(ESP8266)
