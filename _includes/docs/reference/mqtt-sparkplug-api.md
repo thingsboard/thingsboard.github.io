@@ -37,9 +37,9 @@ Other  elements of topic are string variables and for example, let's assign the 
 - The name of ID for **group** is {**groupId**}. We assign a value to it |<span style="color:green">"MyGroupId"</span>
 - The name of ID for **MQTT EON** is {**edgeNode**}. We assign a value to it  |<span style="color:green">“NodeSparkplug”</span>
   With *Metrics*: |<span style="color:brown">["Node Control/Reboot", "Node Control/Rebirth", "Node Control/Next Server", "Node Control/Scan Rate"]</span> [here](#publish-message-nbirth)
-- The name of ID for **Device number one** is  {**deviceId**}. We assign a value to it |<span style="color:green">“DeviceSparkplug_1”</span>
+- The name of ID for **Device number one** is  {**deviceId**}. We assign a value to it |<span style="color:green">“DeviceSparkplugId1”</span>
   With *Metrics*: |<span style="color:brown">["Device Control/Reboot", "Device Control/Rebirth", "Device Control/Scan rate", "Properties/Hardware Make", "Last Update FW", "Current Grid Voltage"]</span> [here](#publish-message-dbirth-Device_01)
-- The name of ID for **Device number two** is {**deviceId**}. We assign a value to it |<span style="color:green">“DeviceSparkplug_2”</span>
+- The name of ID for **Device number two** is {**deviceId**}. We assign a value to it |<span style="color:green">“DeviceSparkplugId2”</span>
   With *Metrics*: |<span style="color:brown">["Device Control/Reboot", "Device Control/Rebirth", "Device Control/Scan rate", "Properties/Hardware Make", "Last Update FW", "Outputs/LEDs/Green", "Outputs/LEDs/Yellow"]</span> [here](#publish-message-dbirth-Device_02)
 
 **Pay attention** that {**NAMESPACE**} as the first elements of the topic is a constant, so it *cannot* be changed. 
@@ -53,10 +53,10 @@ In order to connect and receive information from them, we need to perform 4 step
 ### Step 1. Create device profile
 
 First you need to create device profile for the device type **MQTT EON**, with next name and parameters of this **device profile**  [here](#device-profile-transport-configuration-for-device-type-mqtt-eon). 
-- This **MQTT EON device profile** hase **name**. Its is string variable and for example, let's assign the following value | <span style="color:green">"SparkPlugProfile"</span>
+- This **MQTT EON device profile** hase **name**. Its is string variable and for example, let's assign the following value | <span style="color:green">"sparkPlugProfile"</span>
   The first parameter: **Transport configuration type** must be | <span style="color:brown">MQTT</span>
   The second parameter: **MQTT device topic filters SparkPlug** must be | <span style="color:brown">enable</span>
-  The third parameter: **Fields "SparkPlug attributes metric names"** is <i>Optional</i>. It is not necessary to assign a value to this parameter, but for an example, let’s assign the following values | <span style="color:brown">["Node Control/Next Server", "Last Update FW", "Outputs/LEDs/Green"]</span>
+  The third parameter: **Fields "SparkPlug attributes metric names"** is <i>Optional</i>. It is not necessary to assign a value to this parameter, but for an example, let’s assign the following values | <span style="color:brown">["Node Control/Next Server", "Device Control/Reboot", "Device Control/Rebirth", "Last Update FW", "Outputs/LEDs/Green"]</span>
  
 {% include images-gallery.html imageCollection="sparkplug-device-profile-created" showListImageTitles="true" %}
 
