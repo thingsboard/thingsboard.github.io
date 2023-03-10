@@ -3,7 +3,7 @@ layout: docwithnav
 title: How to connect BeagleBone Black to ThingsBoard?
 category: Single-board computers
 chip: Sitara AM3352B
-connectivity: HTTP, MQTT
+connectivity: HTTP, MQTT, WIFI
 vendor: BeagleBone
 deviceImageFileName: beagleboneblack.jpg
 
