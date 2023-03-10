@@ -38,9 +38,9 @@ Other  elements of topic are string variables and for example, let's assign the 
 - The name of ID for **MQTT EON** is {**edgeNode**}. We assign a value to it  |<span style="color:green">“NodeSparkplug”</span>
   With *Metrics*: |<span style="color:brown">["Node Control/Reboot", "Node Control/Rebirth", "Node Control/Next Server", "Node Control/Scan Rate"]</span> [here](#publish-message-nbirth)
 - The name of ID for **Device number one** is  {**deviceId**}. We assign a value to it |<span style="color:green">“DeviceSparkplugId1”</span>
-  With *Metrics*: |<span style="color:brown">["Device Control/Reboot", "Device Control/Rebirth", "Device Control/Scan rate", "Properties/Hardware Make", "Last Update FW", "Current Grid Voltage"]</span> [here](#publish-message-dbirth-Device_01)
+  With *Metrics*: |<span style="color:brown">["Device Control/Reboot", "Device Control/Rebirth", "Device Control/Scan rate", "Properties/Hardware Make", "Last Update FW", "Current Grid Voltage"]</span> [here](#publish-message-dbirth-device_01)
 - The name of ID for **Device number two** is {**deviceId**}. We assign a value to it |<span style="color:green">“DeviceSparkplugId2”</span>
-  With *Metrics*: |<span style="color:brown">["Device Control/Reboot", "Device Control/Rebirth", "Device Control/Scan rate", "Properties/Hardware Make", "Last Update FW", "Outputs/LEDs/Green", "Outputs/LEDs/Yellow"]</span> [here](#publish-message-dbirth-Device_02)
+  With *Metrics*: |<span style="color:brown">["Device Control/Reboot", "Device Control/Rebirth", "Device Control/Scan rate", "Properties/Hardware Make", "Last Update FW", "Outputs/LEDs/Green", "Outputs/LEDs/Yellow"]</span> [here](#publish-message-dbirth-device_02)
 
 **Pay attention** that {**NAMESPACE**} as the first elements of the topic is a constant, so it *cannot* be changed. 
 
@@ -393,6 +393,21 @@ The EoN Birth Certificate payload contains everything required to build out a da
       "timestamp": 1486144502122,
       "dataType": "Int64",
       "value": 3000
+    }, {
+      "name": "Properties/Hardware Make",
+      "timestamp": 1486144502122,
+      "dataType": "String",
+      "value": "Properties Hardware Make: install"
+    }, {
+      "name": "Last Update FW",
+      "timestamp": 1486144502122,
+      "dataType": "DateTime",
+      "value": 1486144502122
+    }, {
+      "name": "Current Grid Voltage",
+      "timestamp": 1486144502122,
+      "dataType": "Float",
+      "value": 220
     }
   ],
   "seq": 0
@@ -416,32 +431,47 @@ The Device Birth Certificate payload contains everything required to build out a
       "name": "Device Control/Reboot",
       "timestamp": 1486144502122,
       "dataType": "Boolean",
-      "value": true
+      "value": false
     }, {
       "name": "Device Control/Rebirth",
       "timestamp": 1486144502122,
       "dataType": "Boolean",
-      "value": true
+      "value": false
+    }, {
+      "name": "Device Control/Next Server",
+      "timestamp": 1486144502122,
+      "dataType": "Boolean",
+      "value": false
     }, {
       "name": "Device Control/Scan rate",
       "timestamp": 1486144502122,
       "dataType": "Int64",
-      "value": 3000
+      "value": 922337203685477580
     }, {
       "name": "Properties/Hardware Make",
       "timestamp": 1486144502122,
       "dataType": "String",
-      "value": "Thinsboard Sparkplug™ B version: 3.4.4"
+      "value": "Thinsboard Sparkplug™ B version: 3.5"
     }, {
       "name": "Last Update FW",
       "timestamp": 1486144502122,
       "dataType": "DateTime",
       "value": 1486144501056
     }, {
-      "name": "Current Grid Voltage (V)",
+      "name": "Current Grid Voltage",
       "timestamp": 1486144502122,
-      "dataType": "Int32",
-      "value": 230
+      "dataType": "Float",
+      "value": 5.12
+    }, {
+      "name": "Outputs/LEDs/Green",
+      "timestamp": 1486144502122,
+      "dataType": "Boolean",
+      "value": false
+    }, {
+      "name": "Outputs/LEDs/Yellow",
+      "timestamp": 1486144502122,
+      "dataType": "Boolean",
+      "value": true
     }  
   ],
   "seq": 2
@@ -465,38 +495,45 @@ The Device Birth Certificate payload contains everything required to build out a
       "name": "Device Control/Reboot",
       "timestamp": 1486144502122,
       "dataType": "Boolean",
-      "value": true
+      "value": false
     }, {
       "name": "Device Control/Rebirth",
       "timestamp": 1486144502122,
       "dataType": "Boolean",
-      "value": true
+      "value": false
     }, {
-      "name": "Device Control/Scan rate",
+      "nameMetric": "MyNodeMetric01_Int32",
+      "timestamp": 1486144502122,
+      "dataType": "Int32",
+      "defaultValue": 2147483647,
+      "autoChange": true
+    },
+    {
+      "nameMetric": "MyNodeMetric02_LongInt64",
       "timestamp": 1486144502122,
       "dataType": "Int64",
-      "value": 3000
+      "value": 9223372036854775
     }, {
-      "name": "Properties/Hardware Make",
+      "nameMetric": "MyNodeMetric03_Double",
+      "timestamp": 1486144502122,
+      "dataType": "Double",
+      "value": 9223372036854775807
+    }, {
+      "nameMetric": "MyNodeMetric04_Float",
+      "timestamp": 1486144502122,
+      "dataType": "Float",
+      "value": 32.432
+    }, {
+      "nameMetric": "MyNodeMetric05_String",
       "timestamp": 1486144502122,
       "dataType": "String",
-      "value": "Thinsboard Sparkplug™ B version: 3.4.4"
+      "value": "MyNodeMetric05 String: changed"
     }, {
-      "name": "Last Update FW",
+      "nameMetric": "MyNodeMetric06_Json_Bytes",
       "timestamp": 1486144502122,
-      "dataType": "DateTime",
-      "value": 1486144501056
-    }, {
-      "name": "Outputs/LEDs/Green",
-      "timestamp": 1486144502122,
-      "dataType": "Boolean",
-      "value": false
-   }, {
-    "name": "Outputs/LEDs/Yellow",
-      "timestamp": 1486144502122,
-      "dataType": "Boolean",
-      "value": true
-    }  
+      "dataType": "Bytes",
+      "value": [12, 4, -120]
+    } 
   ],
   "seq": 2
 }
