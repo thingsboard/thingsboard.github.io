@@ -3,8 +3,7 @@
 - " | append: deviceName | append: "
 - [tb-mqtt-client library](https://pypi.org/project/tb-mqtt-client/)
 - [python ≥ 3.7](https://www.python.org/)
-- [board library](https://pypi.org/project/board/)
-- [digitalio library](https://pypi.org/project/adafruit-circuitpython-mcp3xxx/) "
+- [Adafruit-Blinka](https://pypi.org/project/Adafruit-Blinka/) "
  %}
 
 ## Introduction
@@ -47,5 +46,4 @@ Orange Pi 2G-IoT offers a range of different ports, including HDMI output, 26pin
 
 ## Conclusion
 
-With the knowledge outlined in this guide, you can easily connect your {{deviceName}} and send data to ThingsBoard.
-From now on you can move forward and send any data that you want.
+{% include /docs/devices-library/blocks/basic/conclusion-block.md %}

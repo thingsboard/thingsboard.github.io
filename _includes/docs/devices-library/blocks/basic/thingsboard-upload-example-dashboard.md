@@ -41,9 +41,9 @@
 {% assign exampleDashboardPath = "/docs/devices-library/resources/dashboards/microcontrollers/camera/dashboard.json"
 {% endif %}
 
-To check the data and get ability to send commands or data to the device we can use the following dashboard:  
+To check the data and get ability to send commands or data to the device we will create the dashboard.
 
-[Check and control device data dashboard]({{exampleDashboardPath}})
+First download the [Check and control device data dashboard]({{exampleDashboardPath}}) file.
 
 To add the dashboard to ThingsBoard, we need to import it, and to do this, we have to go through the following steps:  
 

@@ -53,4 +53,5 @@ Develop robust embedded AI solutions with minimal effort using the Arduino Nano 
 {% include /docs/devices-library/blocks/microcontrollers/thingsboard-send-rpc-to-device-block.md %}
 
 ## Conclusion
+
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}

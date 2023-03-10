@@ -3,8 +3,7 @@
 - " | append: deviceName | append: "
 - [tb-mqtt-client library](https://pypi.org/project/tb-mqtt-client/)
 - [python ≥ 3.7](https://www.python.org/)
-- [board library](https://pypi.org/project/board/)
-- [digitalio library](https://pypi.org/project/adafruit-circuitpython-mcp3xxx/) "
+- [Adafruit-Blinka](https://pypi.org/project/Adafruit-Blinka/) "
  %}
 
 ## Introduction

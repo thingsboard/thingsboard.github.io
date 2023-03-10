@@ -3,6 +3,8 @@ layout: docwithnav
 title: How to connect OrangePI Zero to ThingsBoard?
 category: Single-board computers
 chip: Allwinner H2+
+connectivity: HTTP, MQTT, WIFI
+vendor: Orange Pi
 deviceImageFileName: orangepizero.png
 vendor: Orange
 protocols: WI-FI Sigfox

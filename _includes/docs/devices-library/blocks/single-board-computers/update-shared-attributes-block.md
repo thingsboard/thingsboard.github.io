@@ -36,6 +36,9 @@ Also, we use the `attibute_callback` function, which will be called when we chan
 finally, we bind our callback to subscriber in the `main` function.
 
 ```python
+import digitalio
+import board
+
 ...
 
 # default blinking period
@@ -52,22 +55,16 @@ def main():
     # make sure that you paste YOUR shared attribute name
     sub_id_1 = client.subscribe_to_attribute("blinkingPeriod", attribute_callback)
     sub_id_2 = client.subscribe_to_all_attributes(attribute_callback)
-    ...
-
-# blinking function that control built-in led
-def blink():
     led = digitalio.DigitalInOut(board.PD14)
     led.direction = digitalio.Direction.OUTPUT
-
-    while True:
-        led.value = True
-        time.sleep(period)
-        led.value = False
-        time.sleep(period)
+    ...
+    led.value = True
+    time.sleep(period)
+    led.value = False
+    time.sleep(period)
 ```
 
 Also, if you are using the imported dashboard, you can change the blinking period using the following widget, which you 
 can see in the top right corner of the dashboard:
 
 ![](/images/devices-library/basic/single-board-computers/attribute-update-widget.png)
-

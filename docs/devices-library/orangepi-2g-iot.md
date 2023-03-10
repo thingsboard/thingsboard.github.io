@@ -3,6 +3,8 @@ layout: docwithnav
 title: How to connect OrangePI 2G IoT to ThingsBoard?
 category: Single-board computers
 chip: Allwinner H6
+connectivity: HTTP, MQTT, GSM/GPRS
+vendor: Orange Pi
 deviceImageFileName: orangepi2giot.png
 vendor: Orange
 protocols: WI-FI GSM/GPRS
