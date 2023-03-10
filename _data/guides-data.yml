@@ -131,6 +131,12 @@
       keywords: mqtt connect
       pe: false
       video: false
+    - path: /docs/reference/mqtt-sparkplug-api/
+      title: Connect devices using  ThingsBoard MQTT Sparkplug API
+      subtitle: Learn how to connect your devices using MQTT Sparkplug protocol and ThingsBoard built-in payload format.
+      keywords: sparkplug connect
+      pe: false
+      video: false
     - path: /docs/reference/lwm2m-api/
       title: Connect devices using ThingsBoard LwM2M API
       subtitle: Learn how to connect your devices using LwM2M protocol and ThingsBoard built-in payload format.
