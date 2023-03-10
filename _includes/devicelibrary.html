@@ -1,6 +1,10 @@
 {% assign siteData = site.data %}
 {% assign searchPath = "/docs/search/?q=" %}
+{% if include.docsTag %}
 {% assign docsTag = include.docsTag %}
+{% elsif page.docsTag %}
+{% assign docsTag = page.docsTag %}
+{% endif %}
 {% if docsTag %}
    {% assign siteData = site.data[docsTag] %}
    {% assign searchPath = "/docs/" | append: docsTag %}
@@ -121,34 +125,34 @@
 {% endif %}
 
 <section id="encyclopedia">
-  <div id="docsToc">
     <div id="device-filters">
-        <div>
-            <input type="checkbox" id="microcontrollers" class="device-category-filter" value="Microcontrollers">
-            <label for="microcontrollers">Microcontrollers</label>
+        <div class="header">
+            <div class="indicator"></div>
+            <div class="title">Devices Library</div>
         </div>
-        <div>
-            <input type="checkbox" id="singleBoardComputers" class="device-category-filter" value="Single-board computers">
-            <label for="singleBoardComputers">Single-board computers</label>
-        </div>
+        {% include device-filters.html %}
     </div>
-  </div>
-  <div id="docsContent" class="{{ docContentClassList }}">
-      <div id="table-of-contents">
-          {% if hasTocContent == "true" %}
-              <h4>On this page</h4>
-          {% endif %}
-      </div>
-      <div id="top-spacer"></div>
-      {% if notitle != "true" %}<h1>{{ title }}</h1>{% endif %}
-      <div id="content">
-          {{ content }}
-      </div>
-      {% include footer.html %}
-  </div>
+    <div id="docsContent" class="{{ docContentClassList }}">
+        <div id="table-of-contents">
+            {% if hasTocContent == "true" %}
+            <h4>On this page</h4>
+            {% endif %}
+        </div>
+        <div id="top-spacer"></div>
+        {% if notitle != "true" %}<h1>{{ title }}</h1>{% endif %}
+        <div id="content">
+            {{ content }}
+        </div>
+        {% include footer.html %}
+    </div>
 </section>
 
 <style>
+  @media screen and (max-width: 1280px) {
+    #top-spacer {
+        display: none;
+    }
+  }
   .cse .gsc-control-cse, .gsc-control-cse {
     padding: 0;
   }
@@ -284,135 +288,197 @@
 </script>
 <script>
     jqueryDefer(function () {
-        getValues = function ($el) {
+         function getValues ($el) {
             const items = [];
             $el.each(function () {
                 items.push($(this).val());
             });
 
             return items;
-        };
+        }
+
+        function testKeywords(keyRegexps, input) {
+            for (var i=0;i<keyRegexps.length;i++) {
+                if (keyRegexps[i].test(input)) {
+                    return true
+                }
+            }
+            return false;
+        }
 
         function render() {
-            const totalFilters = $('.device-category-filter').length;
-            const selectedFilters = getValues($(".device-category-filter:checked"));
-            let devicesBlocks = $('.guides-block');
-            devicesBlocks.removeClass('hidden filtered');
-            $('.guides-list').find('.guide-container').removeClass('hidden filtered');
-            console.log(selectedFilters, 'selectedCategories');
-            if (selectedFilters.length && selectedFilters.length < totalFilters) {
-                for (let filter of selectedFilters) {
-                    devicesBlocks.each(function() {
-                        let text = $(this).find('p.guides-title').html();
-                        if (filter !== text) {
-                            $(this).addClass('hidden filtered');
+            const totalFilters = $('.device-category-filter').length + $('.device-other-filter').length;
+            const selectedCategoryFilters = getValues($(".device-category-filter:checked"));
+            const selectedOtherFilters = getValues($(".device-other-filter:checked"))
+            const totalSelectedFilters = selectedCategoryFilters.length + selectedOtherFilters.length;
+            let devicesBlocks = $('.device-guides-block');
+            let devicesContainers =  $('.device-guides-list').find('.device-guide-container');
+            if (!totalSelectedFilters || totalSelectedFilters === totalFilters.length) {
+                devicesBlocks.each(function() {
+                    $(this).removeClass('hidden filtered');
+                })
+                devicesContainers.each(function() {
+                    $(this).removeClass('hidden filtered');
+                })
+                if ($('#searchGuideInput').val()) {
+                    filterGuides();
+                }
+                return;
+            }
+
+            devicesBlocks.addClass('hidden filtered');
+            devicesContainers.addClass('hidden filtered');
+
+            let categoryKeyRegexps = [];
+            for (let filter of selectedCategoryFilters) {
+                categoryKeyRegexps.push(new RegExp(filter.toLowerCase()));
+            }
+            let otherKeyRegexps = [];
+            for (let filter of selectedOtherFilters) {
+                otherKeyRegexps.push(new RegExp(filter.toLowerCase()));
+            }
+
+            devicesBlocks.each(function() {
+                let currentBlock = $(this);
+                if (selectedCategoryFilters.length) {
+                    let text = currentBlock.find('p.device-guides-title').html().toLowerCase();
+                    let matches = testKeywords(categoryKeyRegexps, text);
+                    if (matches) {
+                        currentBlock.removeClass('hidden filtered');
+                    }
+                } else {
+                    currentBlock.removeClass('hidden filtered');
+                }
+
+                if (selectedOtherFilters.length) {
+                    let hideblock = true;
+                    currentBlock.find('.device-guide-container').each(function() {
+                        let keywords = $(this).find('.device-guide-keywords').html().toLowerCase();
+                        let matches = testKeywords(otherKeyRegexps, keywords);
+                        if (matches) {
+                            hideblock = false;
+                            $(this).removeClass('hidden filtered');
                         }
                     })
+                    if (hideblock) {
+                        currentBlock.addClass('hidden filtered');
+                    }
+                } else {
+                    currentBlock.find('.device-guide-container').each(function() {
+                        $(this).removeClass('hidden filtered');
+                    })
                 }
-            } else {
-                devicesBlocks.removeClass('hidden filtered');
-                $('.guides-list').find('.guide-container').removeClass('hidden filtered');
+            })
+
+            if ($('#searchGuideInput').val()) {
+                filterGuides();
             }
         }
 
-        $(".device-category-filter").on("change", function () {
+        $(".device-category-filter, .device-other-filter").on("change", function () {
             render();
         })
     })
-    // jqueryDefer(function () {
-    //     var markdownTocs = null;
-    //     var contentAnchors = [];
-    //     var activeAnchor = null;
-    //     var firstAnchor = null;
-    //     var lastAnchor = null;
-    //
-    //     function updatePositions() {
-    //         contentAnchors = [];
-    //         markdownTocs.each(function (i) {
-    //             var tocAnchor = $(this).children('a');
-    //             var href = tocAnchor.attr('href');
-    //             var contentAnchor = $('div#content ' + href);
-    //             var top = Math.floor(contentAnchor.offset().top);
-    //             var bottom;
-    //             if (i < markdownTocs.length - 1) {
-    //                 var nextHref = $(markdownTocs[i + 1]).children('a').attr('href');
-    //                 var nextContentAnchor = $('div#content ' + nextHref);
-    //                 bottom = Math.floor(nextContentAnchor.offset().top);
-    //             } else {
-    //                 bottom = $('div#content').offset().top + $('div#content').innerHeight();
-    //             }
-    //             var contentAnchorInfo = {anchor: contentAnchor, toc: $(this), top: top, bottom: bottom, href: href};
-    //             contentAnchors.push(contentAnchorInfo);
-    //             if (i === 0) {
-    //                 firstAnchor = contentAnchorInfo;
-    //             }
-    //             if (i === markdownTocs.length - 1) {
-    //                 lastAnchor = contentAnchorInfo;
-    //             }
-    //         });
-    //     }
-    //
-    //     function findActiveContentToc() {
-    //         var top = $(window).scrollTop();
-    //         var bottom = top + $(window).height();
-    //         if (bottom === $('#encyclopedia').offset().top + $('#encyclopedia').innerHeight()) {
-    //             return lastAnchor;
-    //         } else {
-    //             bottom -= 154;
-    //             for (var i = 0; i < contentAnchors.length; i++) {
-    //                 var contentAnchor = contentAnchors[i];
-    //                 if (contentAnchor.top <= bottom &&
-    //                     contentAnchor.bottom > top) {
-    //                     return contentAnchor;
-    //                 }
-    //             }
-    //         }
-    //         return firstAnchor;
-    //     }
-    //
-    //     function updateActiveToc(init) {
-    //         updatePositions();
-    //         var newActiveAnchor = findActiveContentToc();
-    //         if (!activeAnchor || newActiveAnchor.href !== activeAnchor.href) {
-    //             activeAnchor = newActiveAnchor;
-    //             markdownTocs.removeClass('active');
-    //             activeAnchor.toc.addClass('active');
-    //             var tocTop = $('#table-of-contents').scrollTop() + 100;
-    //             var tocBottom = tocTop + $('#table-of-contents').innerHeight() - 200;
-    //             var activeTocTop = activeAnchor.toc.position().top;
-    //             var activeTocBottom = activeTocTop + activeAnchor.toc.children(':first').height();
-    //             if (tocTop > activeTocTop) {
-    //                 activeAnchor.toc[0].scrollIntoView();
-    //                 $('#table-of-contents')[0].scrollTop -= 100;
-    //             } else if (tocBottom < activeTocBottom) {
-    //                 activeAnchor.toc[0].scrollIntoView();
-    //                 $('#table-of-contents')[0].scrollTop += init ? -100 : 100;
-    //             }
-    //         }
-    //     }
-    //     $( document ).ready(function() {
-    //         var tocs = $('#content > ul#markdown-toc');
-    //         var tableOfContents = $('#table-of-contents');
-    //         tableOfContents.append(tocs);
-    //         markdownTocs = $('#table-of-contents ul#markdown-toc li').filter(function() {
-    //             var tocAnchor = $(this).children('a');
-    //             var href = tocAnchor.attr('href');
-    //             if (!href.startsWith('#')) {
-    //                 return false;
-    //             } else {
-    //                 var contentAnchor = $('div#content ' + href);
-    //                 return contentAnchor.length > 0;
-    //             }
-    //         });
-    //         updateActiveToc(true);
-    //     });
-    //
-    //     $(document).on("scroll", function() {
-    //         updateActiveToc(false);
-    //     });
-    //
-    // });
 </script>
+
+{% if hasTocContent == "true" %}
+<script>
+    jqueryDefer(function () {
+        var markdownTocs = null;
+        var contentAnchors = [];
+        var activeAnchor = null;
+        var firstAnchor = null;
+        var lastAnchor = null;
+
+        function updatePositions() {
+            contentAnchors = [];
+            markdownTocs.each(function (i) {
+                var tocAnchor = $(this).children('a');
+                var href = tocAnchor.attr('href');
+                var contentAnchor = $('div#content ' + href);
+                var top = Math.floor(contentAnchor.offset().top);
+                var bottom;
+                if (i < markdownTocs.length - 1) {
+                    var nextHref = $(markdownTocs[i + 1]).children('a').attr('href');
+                    var nextContentAnchor = $('div#content ' + nextHref);
+                    bottom = Math.floor(nextContentAnchor.offset().top);
+                } else {
+                    bottom = $('div#content').offset().top + $('div#content').innerHeight();
+                }
+                var contentAnchorInfo = {anchor: contentAnchor, toc: $(this), top: top, bottom: bottom, href: href};
+                contentAnchors.push(contentAnchorInfo);
+                if (i === 0) {
+                    firstAnchor = contentAnchorInfo;
+                }
+                if (i === markdownTocs.length - 1) {
+                    lastAnchor = contentAnchorInfo;
+                }
+            });
+        }
+
+        function findActiveContentToc() {
+            var top = $(window).scrollTop();
+            var bottom = top + $(window).height();
+            if (bottom === $('#encyclopedia').offset().top + $('#encyclopedia').innerHeight()) {
+                return lastAnchor;
+            } else {
+                bottom -= 154;
+                for (var i = 0; i < contentAnchors.length; i++) {
+                    var contentAnchor = contentAnchors[i];
+                    if (contentAnchor.top <= bottom &&
+                        contentAnchor.bottom > top) {
+                        return contentAnchor;
+                    }
+                }
+            }
+            return firstAnchor;
+        }
+
+        function updateActiveToc(init) {
+            updatePositions();
+            var newActiveAnchor = findActiveContentToc();
+            if (!activeAnchor || newActiveAnchor.href !== activeAnchor.href) {
+                activeAnchor = newActiveAnchor;
+                markdownTocs.removeClass('active');
+                activeAnchor.toc.addClass('active');
+                var tocTop = $('#table-of-contents').scrollTop() + 100;
+                var tocBottom = tocTop + $('#table-of-contents').innerHeight() - 200;
+                var activeTocTop = activeAnchor.toc.position().top;
+                var activeTocBottom = activeTocTop + activeAnchor.toc.children(':first').height();
+                if (tocTop > activeTocTop) {
+                    activeAnchor.toc[0].scrollIntoView();
+                    $('#table-of-contents')[0].scrollTop -= 100;
+                } else if (tocBottom < activeTocBottom) {
+                    activeAnchor.toc[0].scrollIntoView();
+                    $('#table-of-contents')[0].scrollTop += init ? -100 : 100;
+                }
+            }
+        }
+        $( document ).ready(function() {
+            var tocs = $('#content > ul#markdown-toc');
+            var tableOfContents = $('#table-of-contents');
+            tableOfContents.append(tocs);
+            markdownTocs = $('#table-of-contents ul#markdown-toc li').filter(function() {
+                var tocAnchor = $(this).children('a');
+                var href = tocAnchor.attr('href');
+                if (!href.startsWith('#')) {
+                    return false;
+                } else {
+                    var contentAnchor = $('div#content ' + href);
+                    return contentAnchor.length > 0;
+                }
+            });
+            updateActiveToc(true);
+        });
+
+        $(document).on("scroll", function() {
+            updateActiveToc(false);
+        });
+
+    });
+</script>
+
+{% endif %}
 
 {% include cookie-consent.html %}
 

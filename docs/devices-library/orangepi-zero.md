@@ -6,7 +6,6 @@ chip: Allwinner H2+
 connectivity: HTTP, MQTT, WIFI
 vendor: Orange Pi
 deviceImageFileName: orangepizero.png
-
 ---
 
 * TOC

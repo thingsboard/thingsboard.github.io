@@ -6,7 +6,6 @@ chip: Allwinner H6
 connectivity: HTTP, MQTT, GSM/GPRS
 vendor: Orange Pi
 deviceImageFileName: orangepi2giot.png
-
 ---
 
 * TOC
