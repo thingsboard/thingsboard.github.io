@@ -7,11 +7,13 @@
  %}
 
 ## Introduction
-
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-Orange Pi 2G-IoT uses the Allwinner H6 SoC, and has 2GB LPDDR3 SDRAM, 8GB EMMC Flash. It can run Android 9, Ubuntu, Debian. 
-Orange Pi 2G-IoT offers a range of different ports, including HDMI output, 26pin headers, Gbps Ethernet port, 1 * USB 3.0, 
-2 * USB2.0，etc. It is powered through Type-C. It is a good choice for applications that need strong networking performance. 
+The Raspberry Pi 3 Model B+ is currently the best Raspberry Pi computer you can buy. While the price stays at $35, the 
+new board one-ups its predecessor in several ways, most notably with a faster processor and Wi-Fi. The co-creator of 
+the board Eben Upton describes it as lying somewhere between the 2016 Raspberry Pi 3 and a future Raspberry Pi 4 in 
+terms of power and features. The hardware improvements, along with refinements to the Pi 3 B+’s official Raspbian OS, 
+elevate the board to the status of a perfectly acceptable everyday PC — impressive for a computer the price of a 
+restaurant meal.
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
@@ -30,6 +32,7 @@ Orange Pi 2G-IoT offers a range of different ports, including HDMI output, 26pin
 {% include /docs/devices-library/blocks/single-board-computers/general-code-to-program-block.md %}
 
 ## Synchronize device state using client and shared attribute requests
+
 {% include /docs/devices-library/blocks/single-board-computers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
 ## Check data on ThingsBoard

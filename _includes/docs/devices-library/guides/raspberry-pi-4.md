@@ -7,11 +7,12 @@
  %}
 
 ## Introduction
-
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-Orange Pi 2G-IoT uses the Allwinner H6 SoC, and has 2GB LPDDR3 SDRAM, 8GB EMMC Flash. It can run Android 9, Ubuntu, Debian. 
-Orange Pi 2G-IoT offers a range of different ports, including HDMI output, 26pin headers, Gbps Ethernet port, 1 * USB 3.0, 
-2 * USB2.0，etc. It is powered through Type-C. It is a good choice for applications that need strong networking performance. 
+Raspberry Pi has long been the gold standard for inexpensive single-board computing, powering everything from robots to 
+smart home devices to digital kiosks. When it launched in 2019, the Raspberry Pi 4 took Pi to another level, with 
+performance that’s good enough to use in a pinch as a desktop PC, plus the ability to output 4K video at 60 Hz or power 
+dual monitors. More recently, the Raspberry Pi 4 (8GB) model came out, offering enough RAM for serious desktop computing, 
+productivity and database hosting.
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
@@ -30,6 +31,7 @@ Orange Pi 2G-IoT offers a range of different ports, including HDMI output, 26pin
 {% include /docs/devices-library/blocks/single-board-computers/general-code-to-program-block.md %}
 
 ## Synchronize device state using client and shared attribute requests
+
 {% include /docs/devices-library/blocks/single-board-computers/thingsboard-synchronize-device-state-using-attribute-requests-block.md %}
 
 ## Check data on ThingsBoard
