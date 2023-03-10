@@ -251,6 +251,12 @@
       keywords: Tektelic connect
       pe: false
       video: false
+    - path: /docs/user-guide/integrations/tuya/
+      title: Connect smart devices through Tuya Smart
+      subtitle: Learn how to connect smart devices using Tuya Smart to ThingsBoard.
+      keywords:
+      pe: true
+      video: false
 - title: Data visualization
   subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards
   id: DataVisualization
