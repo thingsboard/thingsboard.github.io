@@ -3,8 +3,8 @@ layout: docwithnav-pe
 title: How to connect M5Stack Timer Camera X to ThingsBoard?
 category: Microcontrollers
 chip: esp32
+connectivity: HTTP, MQTT, WIFI, Bluetooth
 vendor: M5Stack
-connectivity: MQTT
 deviceImageFileName: m5stack-timer-camera-x.svg
 
 ---
