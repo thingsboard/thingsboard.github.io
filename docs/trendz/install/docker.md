@@ -53,7 +53,7 @@ version: '3.0'
 services:
   mytrendz:
     restart: always
-    image: "thingsboard/trendz:1.9.2-HF2"
+    image: "thingsboard/trendz:1.10.0"
     ports:
       - "8888:8888"
     environment:
@@ -89,9 +89,12 @@ Where:
 - `~/.mytrendz-logs:/var/log/thingsboard`   - mounts the volume `~/.mytrendz-logs` to Trendz logs directory
 - `mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.9.2-HF2`          - docker image
+- `thingsboard/trendz:1.10.0`          - docker image
 
-{% include templates/install/docker/docker-create-folders-sudo-explained.md %}
+
+Run following commands, before starting docker container(s), to create folders for storing data and logs.
+These commands additionally will change owner of newly created folders to docker container user.
+To do this (to change user) **chown** command is used, and this command requires *sudo* permissions (command will request password for a *sudo* access):
 
 ```bash
 mkdir -p ~/.mytrendz-data && sudo chown -R 799:799 ~/.mytrendz-data
@@ -124,7 +127,7 @@ to validate credentials.
 
 ## Upgrade Trendz Service
 
-Below is example on how to upgrade from 1.8.0 to 1.9.2
+Below is example on how to upgrade from 1.9.2 to 1.10.0
 
 
 * Create a dump of your database:
@@ -143,17 +146,17 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 * Set upgradeversion variable to your **previous** Trendz version.
 
 ```bash
-docker compose exec mytrendz sh -c "echo '1.8.0' > /data/.upgradeversion" 
+docker compose exec mytrendz sh -c "echo '1.9.2' > /data/.upgradeversion" 
 ```
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
 If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
-<br>**docker-compose exec mytrendz sh -c "echo '1.8.0' > /data/.upgradeversion"**
+<br>**docker-compose exec mytrendz sh -c "echo '1.9.2' > /data/.upgradeversion"**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with 1.9.2 instead of 1.8.0-SNAPSHOT:
+* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with 1.10.0 instead of 1.9.2:
 
 * Restart Trendz container
 

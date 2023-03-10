@@ -424,10 +424,10 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item" data-faq-id="subscription-support">
                             Email support within <b>12 hours</b>
                         </div>
-                        <div class="pricing-square-item">
-                            <b>Development</b> instance included
+                        <div class="pricing-square-item" data-faq-id="what-is-development-server">
+                            <b>Development</b> instance included 
                         </div>
-                        <div class="pricing-square-item">
+                        <div class="pricing-square-item" data-faq-id="additional-services">
                             <b>10 hours</b> of consulting or configuration services
                         </div>
                     </div>
@@ -995,7 +995,21 @@ defaultActivePricingSection: thingsboard-pe-options
                  So, customer can not stop using perpetual license and rely on total price for any subscription plan to be decreased.         
                 </p>    
             </div>    
+        </div>  
+        <div class="item" data-tag="h4" data-item-id="what-is-development-server" data-title="What is the Development instance?">
+            <div class="container">
+                <p>
+                 With the Perpetual Kit, the licensee gets two license keys: one for the Production, and the other one for the Development server. The platform that is activated with a development key, has a watermark and is meant to be used as a sandbox environment for development and testing purposes. The main idea is to keep the established production flows going with the primary license but keep developing new solutions or optimizing the existing ones on the additional instance without the risk of influencing current customers’ experience.         
+                </p>    
+            </div>    
         </div>
+       <div class="item" data-tag="h4" data-item-id="additional-services" data-title="How can I use my 10 hours bundle?">
+            <div class="container">
+                <p>
+                 It can be your advantage for a quick start with the platform. These 10 hours can be used for consulting, training, or development services. Training sessions imply pre-defined topics, while Consulting may cover various technical questions, platform configurations, or your Use Case-related issues. The above services are conducted online. Alternatively, these 10 hours can be used to support you in the PoC, MVP, or ready-for-market solutions development by a dedicated development unit from ThingsBoard.        
+                </p>    
+            </div>    
+        </div>    
         <div class="item" data-tag="h4" data-item-id="thingsboard-edge-discount" data-title="Can we have a discounted price for ThingsBoard Edges in case of bulk purchase?">
             <div class="container">
                 <p>
@@ -1003,6 +1017,7 @@ defaultActivePricingSection: thingsboard-pe-options
                 </p>    
             </div>    
         </div>
+        
         <div class="item" data-tag="h4" data-item-id="thingsboard-edge-compatibility" data-title="What ThingsBoard Edge compatibility means?">
             <div class="container">
                 <p>

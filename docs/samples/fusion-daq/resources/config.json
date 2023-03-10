@@ -1,0 +1,50 @@
+{
+  "name":"My MI-8 DAQ",
+  "thermo_type":["k","k","k","k","k","k"],
+  "num_thermo":3,
+  "num_rtd":2,
+  "ref_resistance":4000,
+  "rtd_type":["pt100","pt100","pt100","pt100"],
+  "rtd_connection":[4,4,4,4],
+  "dig_in_mode":["pulldown","pulldown","pulldown"],
+  "use_aux_header":false,
+  "debug_level":255,
+  "usb_mass_storage":true,
+  "sleep_voltage":9.9,
+  "wake_voltage":10.5,
+  "display_sleep":10,
+  "gnss_period":60,
+  "flip_display":false,
+  "network": {
+    "apn":"hologram",
+    "username":"",
+    "password":""
+  },
+  "push": {
+    "mode":"post",
+    "path":"api/v1/swQYq04wk17QfdQI86Ai/telemetry",
+    "attributes_path":"api/v1/swQYq04wk17QfdQI86Ai/attributes",
+    "server":"thingsboard.cloud",
+    "port":80,
+    "username":"",
+    "password":"",
+    "use_ssl":false,
+    "use_json":true,
+    "push_attributes":true,
+    "include_name":false,
+    "include_imei":false,
+    "include_iccid":false,
+    "track_min_max":false,
+    "use_headers":false
+  },
+  "trigger":[ {
+    "name":"Default",
+    "channels":"ambient,tc0,tc1,tc2,rtd0,rtd1,an0,lat,lon,alt,vbat,rssi",
+    "log_period":60,
+    "push_period":300,
+    "start_delay":0,
+    "stop_delay":0,
+    "condition":"1",
+    "append_log":true
+  }]
+}
