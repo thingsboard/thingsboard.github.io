@@ -1,30 +1,29 @@
 {% for devicesInCategoryList in devices %}
     {% if devicesInCategoryList[0] %}
         {% assign sectionTitle = devicesInCategoryList[0].category %}
-        <div class="guides-block" id="AnchorID">
-            <div class="guides-title-panel">
-                <div class="guides-text">
-                    <p class="guides-title">
+        <div class="device-guides-block" id="AnchorID{{ sectionTitle | remove: " "}}">
+            <div class="device-guides-title-panel">
+                <div class="device-guides-text">
+                    <p class="device-guides-title">
                         {{ sectionTitle }}
                     </p>
                 </div>
             </div>
-            <ul class="guides-list">
+            <ul class="device-guides-list">
                 {% for devicePage in devicesInCategoryList %}
-                    <li class="guide-container">
+                    <li class="device-guide-container">
                         <a href="{{ devicePage.url }}">
-                            <div class="guide-text">
-                                <img class="guide-img"
-                                     style="display: block;margin-left: auto;margin-right: auto;width: 50%;"
-                                     src="/images/devices-library/{{ devicePage.deviceImageFileName }}">
-                                <p class="guide-title">
-                                    {{ devicePage.title }}
+                            <img class="device-guide-img"
+                                 src="/images/devices-library/{{ devicePage.deviceImageFileName }}">
+                            <div class="device-guide-text">
+                                <p class="device-guide-title">
+                                    {{ devicePage.title | remove : "How to connect " | remove: " to ThingsBoard?"}}
                                 </p>
-                                <p class="guide-subtitle">
+                                <p class="device-guide-subtitle">
                                     {{ devicePage.description }}
                                 </p>
-                                <p class="guide-keywords">
-                                    {{ devicePage.chip | append: " " | append: devicePage.vendor | append: " " | append: devicePage.protocols }}
+                                <p class="device-guide-keywords">
+                                    {{ devicePage.chip | append: " " | append: devicePage.vendor | append: " " | append: devicePage.connectivity }}
                                 </p>
                             </div>
                         </a>

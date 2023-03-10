@@ -5,7 +5,6 @@ category: Ready-to-go devices
 connectivity: HTTP, MQTT, NB-IoT, LTE-M
 vendor: Fusion DAQ
 deviceImageFileName: mixed-input-8-channel-analog-cellular-logger.jpg
-
 ---
 
 * TOC

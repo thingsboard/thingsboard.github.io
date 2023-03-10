@@ -1,9 +1,10 @@
 ---
-layout: docwithnav-pe
+docsTag: "pe"
+layout: devicelibrary
 title: Devices Library
 description: Device library and connecting guides
+notitle: "true"
 
 ---
 
-{% assign docsPrefix = "pe/" %}
 {% include docs/devices-library/index.md %}

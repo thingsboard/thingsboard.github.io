@@ -1,9 +1,10 @@
 ---
-layout: docwithnav-paas
+docsTag: "paas"
+layout: devicelibrary
 title: Devices Library
 description: Device library and connecting guides
+notitle: "true"
 
 ---
 
-{% assign docsPrefix = "paas/" %}
 {% include docs/devices-library/index.md %}

@@ -42,8 +42,8 @@
     }
 
     function filterGuides() {
-        $('.guides-list').find('.guide-container').not('.filtered').removeClass('hidden');
-        var guidesBlock = $('.guides-block').not('.filtered');
+        $('.device-guides-list').find('.device-guide-container').not('.filtered').removeClass('hidden');
+        var guidesBlock = $('.device-guides-block').not('.filtered');
         guidesBlock.removeClass('hidden');
         searchPageCount = 0;
         var searchText = $('#searchGuideInput').val();
@@ -57,7 +57,7 @@
                 }
             }
             guidesBlock.each( function() {
-                var containers = $( this ).find('.guide-container').not('.filtered');
+                var containers = $( this ).find('.device-guide-container').not('.filtered');
                 var total = containers.length;
                 containers.each( function() {
                     var paragraphs = $(this).find('p');
@@ -111,9 +111,9 @@
 </script>
 
 {% assign devices = '' | split: "," %}
-{% assign microcontrollersCategory = "" | split: "," %}
-{% assign singleBoardComputersCategory = "" | split: "," %}
 {% assign readyToGoDevicesCategory = "" | split: "," %}
+{% assign singleBoardComputersCategory = "" | split: "," %}
+{% assign microcontrollersCategory = "" | split: "," %}
 
 {% assign devicesLibraryPagePath = page.path | remove: ".md" | append: '/' %}
 
@@ -131,14 +131,27 @@
 {% endif %}
 {% endfor %}
 
-{% assign devices = devices | push: microcontrollersCategory %}
 {% assign devices = devices | push: readyToGoDevicesCategory %}
 {% assign devices = devices | push: singleBoardComputersCategory %}
+{% assign devices = devices | push: microcontrollersCategory %}
 
-<div class="guides">
+<ul id="markdown-toc">
+    {% for category in devices %}
+    {% if guidesVersion == 'paas' and item.paaspage == 'false' %}
+    {% elsif guidesVersion == 'ce' and item.cepage == 'false' %}
+    {% elsif guidesVersion == 'pe' and item.pepage == 'false' %}
+    {% else %}
+        <li>
+            <a href="#AnchorID{{ category[0].category | remove: " " }}" id="markdown-toc-AnchorID{{ category[0].category | remove: " " }}">{{ category[0].category }}</a>
+        </li>
+    {% endif %}
+    {% endfor %}
+</ul>
+
+<div class="device-guides">
     <div class="filter-panel">
         <div id="searchGuideBox">
-            <input type="text" id="searchGuideInput" placeholder="Find a guide...">
+            <input type="text" id="searchGuideInput" placeholder="Find a device...">
             <button class="searchButton"></button>
         </div>
     </div>

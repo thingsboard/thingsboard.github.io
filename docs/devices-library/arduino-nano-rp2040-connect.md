@@ -6,8 +6,6 @@ chip: rp2040
 connectivity: HTTP, MQTT, WIFI, Bluetooth
 vendor: Arduino
 deviceImageFileName: arduino-nano-rp2040-connect.jpg
-vendor: Arduino
-protocols: WI-FI Bluetooth LE
 ---
 
 * TOC
