@@ -350,6 +350,11 @@
                         <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/iotcreators.com.svg"/><span>iotcreators.com (T-Mobile – IoT CDP)</span></div>
                     </a>
                 </div>
+                <div class="col-12 col-sm-6 mb-4">
+                    <a class="feature-card inner" href="/docs/{{peDocsPrefix}}user-guide/integrations/tuya/">
+                        <div class="feature-title"><img class="integration-logo" src="/images/feature-logo/integration/tuya.svg"/><span>Tuya</span></div>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
