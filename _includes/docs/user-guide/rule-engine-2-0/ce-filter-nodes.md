@@ -143,7 +143,7 @@ Checks that the entity type of the incoming message originator matches one of th
 
  * Originator types filter - list of entity types: Device, Asset, User, etc.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/check-relation-configuration.png)
+![image](/images/user-guide/rule-engine-2-0/nodes/entity-type-configuration.png)
 
 **Output**
 
