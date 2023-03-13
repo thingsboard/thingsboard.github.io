@@ -259,18 +259,87 @@ Result:
 ```shell
 "Properties/Hardware Make", "Current Grid Voltage".
 ```
-  
+
 Result:
 {% include images-gallery.html imageCollection="sparkplug-node-device-telemetry" showListImageTitles="true" %}
 
-
-
-
 ### Step 5. Update Metrics from Thingsboard server to MQTT EON and Device
+ThingsBoard [Shared Attributes](docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver metric value updates to the device.
+You may change the shared attribute in multiple ways - via administration UI, dashboard widget, REST API, or rule engine node.
+Once you change the shared attribute, ThingsBoard will search for the mapping between the attribute key and LwM2M resource.
+If the resource is marked as an attribute, platform will send the LwM2M Write operation to the LwM2M client device.
 
+* Request [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) and [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
+* Subscribe to [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
+
+You can change a shared attribute in several ways - using the admin UI, dashboard widget, REST API, or the rules engine host.
+
+In order to subscribe to RPC commands or other methods from the server, send [SUBSCRIBE message from "MQTT EON"/"Device"" to the server](#subscribe-to-metrics-updates-from-the-server):
+
+As soon as you change the **"value"** of metric, ThingsBoard will start looking for a mapping between the **attribute key** or key of RPC command (metric name) and the metrics that were sent by the device when connecting in the "*birth" topic.
+
+All available keys (metric names) for the device must be viewed in the "client attributes" or in the "telemetry" of this device after the moment of its successful connection.
+
+The type value and the value of the metric must match the dataType value of the metric.
+
+Valid Metric Value Types [here](https://sparkplug.eclipse.org/specification/version/2.2/documents/sparkplug-specification-2.2.pdf)
 #### Update Metrics from Shared attributes to MQTT EON/Device
+Examples: change value of metric:
+
+{% include images-gallery.html imageCollection="sparkplug-node-device-change-shared-sttributes" showListImageTitles="true" %}
+
 
 #### Update Metrics from RPC to MQTT EON/Device
+
+
+```shell
+v1/devices/me/rpc/request/+
+```
+
+Once subscribed, the client will receive individual commands as a PUBLISH message to the corresponding topic:
+
+```shell
+v1/devices/me/rpc/request/$request_id
+```
+
+where **$request_id** is an integer request identifier.
+
+The client should publish the response to the following topic:
+
+```shell
+v1/devices/me/rpc/response/$request_id
+```
+
+The following example is written in javascript and is based on mqtt.js.
+Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
+
+{% if docsPrefix == null %}
+Don't forget to replace $ACCESS_TOKEN with your device's access token. And replace hostname "demo.thingsboard.io" to your host in the "mqtt-js-rpc-from-server.js" file.
+In this example, hostname reference live demo server.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+Don't forget to replace $ACCESS_TOKEN with your device's access token. And replace hostname "127.0.0.1" to your host in the "mqtt-js-rpc-from-server.js" file.
+In this example, hostname reference your local installation.
+{% endif %}
+{% if docsPrefix == 'paas/' %}
+Replace $ACCESS_TOKEN with your device's access token.
+{% endif %}
+
+- Use **RPC debug terminal** dashboard;
+
+- Subscribe to RPC commands from the server;
+
+- Send an RPC request "connect" to the device;
+
+- You should receive a response from the device.
+
+{% include images-gallery.html imageCollection="server-side-rpc" %}
+
+{% capture tabspec %}mqtt-rpc-from-server
+A,MQTT.js,shell,resources/mqtt-js-rpc-from-server.sh,/docs/reference/resources/mqtt-js-rpc-from-server.sh
+B,mqtt-js-rpc-from-server.js,javascript,resources/mqtt-js-rpc-from-server.js,/docs/reference/resources/mqtt-js-rpc-from-server.js{% endcapture %}  
+{% include tabs.html %}
+
 
 ## Thingsboard and MQTT Sparkplug Payloads and Messages
 

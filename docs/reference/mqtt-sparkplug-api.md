@@ -57,6 +57,20 @@ sparkplug-node-device-telemetry:
         image: /images/sparkplug/sparkplug-device1-telemetry-after-update.png
         title: 'Metrics of Device with names <span style="color:brown">["Properties/Hardware Make", "Current Grid Voltage"]</span> with <b>value</b> send to telemetry of Device <span style="color:green">“DeviceSparkplugId1”</span>'
 
+sparkplug-node-device-change-shared-sttributes:
+    0:
+        image: /images/sparkplug/sparkplug-node-telemetry-before-update.png
+        title: 'Metrics of Device with names <span style="color:brown">["Outputs/LEDs/Green"]</span>, send value <b>["true"]</b>, dataType value <b>["Boolean"]</b> to Device <span style="color:green">“DeviceSparkplugId1”</span>' 
+    1:
+        image: /images/sparkplug/sparkplug-node-telemetry-after-update.png
+        title: 'Metric of MQTT EON with name <span style="color:brown">["Current Grid Voltage", "Properties/Hardware Make"]</span> with <b>value</b> send  to telemetry of MQTT EON <span style="color:green">“NodeSparkplug”</span>'
+    2:
+        image: /images/sparkplug/sparkplug-device1-telemetry-before-update.png
+        title: 'Metrics of Device with names <span style="color:brown">["Properties/Hardware Make", "Current Grid Voltage"]</span> with <b>value</b> the telemetry after Birth <b>before update</b>  of Device <span style="color:green">“DeviceSparkplugId1”</span>'
+    3:
+        image: /images/sparkplug/sparkplug-device1-telemetry-after-update.png
+        title: 'Metrics of Device with names <span style="color:brown">["Properties/Hardware Make", "Current Grid Voltage"]</span> with <b>value</b> send to telemetry of Device <span style="color:green">“DeviceSparkplugId1”</span>'
+
 ---
 
 {% include docs/reference/mqtt-sparkplug-api.md %}
