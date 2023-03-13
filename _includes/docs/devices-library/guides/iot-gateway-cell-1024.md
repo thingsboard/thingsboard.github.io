@@ -1,6 +1,7 @@
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
-{% assign prerequisites = "
-- [" | append: deviceName | append: '](https://exxn.es/en/iot-gateway/){target="_blank"}
+{% assign deviceVendorLink = "https://exxn.es/en/iot-gateway/" %}
+{% assign prerequisites = '
+- <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
 - Device have to be connected to the Internet via Ethernet, Modem or WIFI. '
  %}
  {% assign thingsboardInstanceLink = "https://demo.thingsboard.io" %}

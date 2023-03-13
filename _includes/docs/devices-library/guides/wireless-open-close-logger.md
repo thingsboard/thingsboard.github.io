@@ -1,9 +1,11 @@
 
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
-{% assign prerequisites = "
-- [" | append: deviceName | append: "](https://getefento.com/product/wireless-open-close-logger-nb-iot/)
+{% assign deviceVendorLink = "https://getefento.com/product/wireless-open-close-logger-nb-iot/" %}
+{% assign prerequisites = '
+- <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
 - [Efento mobile application](https://play.google.com/store/apps/details?id=pl.efento.cloud&hl=en)
-- [Read user manual (Optional)](https://getefento.com/support/)"
+- [Read user manual (Optional)](https://getefento.com/support/)
+'
  %}
 
 ## Introduction

@@ -1,8 +1,10 @@
 
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
-{% assign prerequisites = "
-- [" | append: deviceName | append: "](https://fusiondaq.com/product/mixed-input-8-channel-analog-cellular-logger/)
-- [Read user manual (Optional)](https://fusiondaq.com/wp-content/uploads/2023/01/LTEdaq_OperatingManual-1.pdf)"
+{% assign deviceVendorLink = "https://fusiondaq.com/product/mixed-input-8-channel-analog-cellular-logger/" %} 
+{% assign prerequisites = '
+- <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
+- [Read user manual (Optional)](https://fusiondaq.com/wp-content/uploads/2023/01/LTEdaq_OperatingManual-1.pdf)
+'
  %}
 
 ## Introduction
