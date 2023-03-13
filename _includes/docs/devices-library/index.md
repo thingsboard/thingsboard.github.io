@@ -148,6 +148,15 @@
     {% endfor %}
 </ul>
 
+#### Welcome to the ThingsBoard Devices Library!  
+
+This section is designed to provide a comprehensive collection of guides and tutorials that explain how to connect various devices to the ThingsBoard platform.  
+
+Our Devices Library is a constantly growing resource that contains guides on connecting various devices to ThingsBoard.  
+Each guide provides a step-by-step walkthrough of how to connect a specific device to ThingsBoard.  
+
+<br>
+
 <div class="device-guides">
     <div class="filter-panel">
         <div id="searchGuideBox">
@@ -157,3 +166,17 @@
     </div>
     {% include devices.liquid %}
 </div>
+
+<br>
+
+We encourage our community members to contribute to the Devices Library.  
+If you have a guide on connecting a device to ThingsBoard, we invite you to submit it to [**info@thingsboard.io**](mailto:info@thingsboard.io) for review.  
+Please include screenshots in your article to reduce the time required for review and publishing.  
+
+Our team will review your submission and may modify it, if necessary, to ensure its accuracy and quality.  
+Once approved, we will add it to the Devices Library to assist others in connecting their devices to ThingsBoard.  
+
+We hope you find our Devices Library useful and informative.  
+Please do not hesitate to contact us if you have any questions or feedback.  
+
+Thank you for choosing ThingsBoard!  
