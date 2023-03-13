@@ -52,7 +52,8 @@ In order to connect and receive information from them, we need to perform 4 step
 
 ### Step 1. Create device profile
 
-First you need to create device profile for the device type **MQTT EON**, with next name and parameters of this **device profile**  [here](#device-profile-transport-configuration-for-device-type-mqtt-eon). 
+First you need to create device profile for the device type **MQTT EON**, with next name and parameters of this **device profile**  [here](#device-profile-transport-configuration-for-device-type-mqtt-eon).
+See general device profile [documentation](/docs/{{docsPrefix}}user-guide/device-profiles/) for more info about device profiles also.
 - This **MQTT EON device profile** hase **name**. Its is string variable and for example, let's assign the following value | <span style="color:green">"sparkPlugProfile"</span>
   The first parameter: **Transport configuration type** must be | <span style="color:brown">MQTT</span>
   The second parameter: **MQTT device topic filters SparkPlug** must be | <span style="color:brown">enable</span>
@@ -74,9 +75,15 @@ connecting [here](#step-1-create-device-profile).
 
 **Device** type device can be created in Thingsboard with a device profile before the first connection (manually).
 
-If **Device** type device with this device ID was not created in Thingsboard before connected it, after the first successful connection of this device, Thingsboard automatically create of that device and device profile for its [here](#step-1-create-device-profile).
+If **Device** type device with this device ID was not created in Thingsboard before connected it, after the first successful connection of this device, Thingsboard automatically create of that device and device profile for its (with the name equals {**MQTT EON device profile** name} + “**-node**”.).
 
 ### Step 3. MQTT Sparkplug Client connected
+!!! ToDo change Repo
+- **Note**: To run Sparkplug Client and test you can use [SparkplugB Client Emulator](https://github.com/nickAS21/sparkplug).
+```shell
+git clone git@github.com:nickAS21/sparkplug.git
+```
+{: .copy-code}
 
 MQTT Edge of Network Nodes (MQTT EON - MQTT Sparkplug Client) connects to the MQTT broker and sets the Will and
 Testament message (_**NDEATH**_)
@@ -98,47 +105,68 @@ After that, the thingsboard is ready to receive messages and publish commands.
 
 The first MQTT publish message will be publish message [*BIRTH](#publish-message-nbirth)
 
-### Step 4. Upload/Update Metrics from MQTT EON and Device
+### Step 4. Upload/Update Metrics from MQTT EON and Devices
 
-Якщо ви бажаєте отримувати інформацію про метрики як атрибути, чи для MQTT EON ("NodeSparkplug") чи для Device "DeviceSparkplug": необхідно назви відповідних метрик додати в профайл ("SparkB") в Fields "SparkPlug attributes metric names".
-Якщо назва метрики, яка отримана від MQTT EON буде співпадать з одною із назв в Fields "SparkPlug attributes metric names", то ці данні будуть надіслані в розділ атрибутів "NodeSparkplug", 
-а якщо назва метрики, яка отримана від Device буде співпадать з одною із назв в Fields "SparkPlug attributes metric names", то ці данні будуть надіслані в розділ атрибутів "DeviceSparkplug".
-Всі інші метрики від MQTT EON будуть надіслані в розділ телеметрии  "NodeSparkplug", а віл Device будуть надіслані в розділ телеметрии "DeviceSparkplug".
-Розглянемо цю інформацію на блок-схемах та малюнках: 
+The metric updates of the MQTT  EON (<span style="color:green">"NodeSparkplug"</span>) or device (<span style="color:green">"DeviceSparkplugId1"</span> and/or <span style= " color :green">"DeviceSparkplugId2"</span>)  are sent using publish messages with Message Type "NDATA" or "DDATA" and payloads.
 
-4.2. В Thingsboard створюємо deviceб який відповідає за зв'язок та обробку інформаціїї від  MQTT EON. Його ім'я повинно мати ім'я MQTT EON, тобто: "NodeSparkplug"ж
+The **NDATA** topic from MQTT  EON: {NAMESPACE} + “/” + {groupId} + “/NDATA/” + {edgeNode}.
 
-To publish telemetry to the ThingsBoard host server, the Eon host or device sends a PUBLISH message. After decoding and
-receiving a list of metrics from the "Payload", the validity of the metric is checked:
+For example, for a MQTT  EON with ID = <span style="color:green">"NodeSparkplug"</span>:
+```shell
+"spBv1.0+/MyGroupId/NDATA/NodeSparkplug"
+```
+The **DDATA** topic from Device: {NAMESPACE} + “/” + {groupId} + “/NDATA/” + {edgeNode} + "/" + {devicepId}.
 
-- if a metric with this name was in [*BIRTH] and is in the Fields "SparkPlug attributes metric names" of MQTT EON`s profile, then its data is sent to attributes
-- if a metric with this name was in [*BIRTH] and it is not in the Fields "SparkPlug attribute metric names" of MQTT EON`s profile, then its data is sent to telemetry
-- if there was no metric of the same name in [*BIRTH], nothing happens;
+For example, for a deviceID = <span style="color:green">"DeviceSparkplugId1"</span>:
+```shell
+"spBv1.0+/MyGroupId/DDATA/NodeSparkplug/DeviceSparkplugId1"
+```
+
+If you want to receive information about metrics as attributes in Thingsboard, either for MQTT EON (<span style="color:green">“NodeSparkplug”</span>) or/and for Devices (<span style="color:green">“DeviceSparkplugId1”</span> or/and <span style="color:green">“DeviceSparkplugId2”</span>):
+- you need to add the names of the relevant metrics to the profile (<span style="color:green">"sparkPlugProfile"</span>) in Fields "SparkPlug **attributes** metric names".
+  
+If the metric name received from MQTT EON matches one of the names in the Fields "SparkPlug **attributes** metric names", then:
+-  this data will be sent to the <span style="color:green">“NodeSparkplug”</span> or/and <span style="color:green">“DeviceSparkplugId1”</span> or/and <span style="color:green">“DeviceSparkplugId2”</span> attributes section.
+   
+All other metrics from MQTT EON will be sent to the <span style="color:green">“NodeSparkplug”</span> or/and <span style="color:green">“DeviceSparkplugId1”</span> or/and <span style="color:green">“DeviceSparkplugId2”</span> **telemetry** section.
+   
+Consider this information in block diagrams and pictures:
+   
+4.1. To publish telemetry to the ThingsBoard host server, the Eon host or device sends a PUBLISH message. 
+
+After _decoding_ **payload** and receiving a list of **metrics** from the **payload**, the validity of the metric is checked:
+
+- if there was no metric of the same name in [*BIRTH](#publish-message-nbirth), nothing happens;
+- if a metrics from payload with this name was in the Fields "SparkPlug attributes metric names" of MQTT EON`s profile, then its data is sent to attributes
+- if a metrics from payload with this name is not in the Fields "SparkPlug attribute metric names" of MQTT EON`s profile, then its data is sent to telemetry
 
 #### Example: Upload/Update Metrics from MQTT EON/Device with Metrics as telemetry/attributes to the server
-<b>1. Sending Publish a message from MQTT EON/Device with Metrics</b>
-<details>
-<summary>
-<i>1.1 from MQTT EON:</i>
-</summary>
-{% highlight ruby %}
-- Metrics
+<b>1. Sending Publish a message from MQTT EON/Device with Message Type "NDATA" or "DDATA" and payload</b>
+
+<i>1.1 from MQTT EON: <span style="color:green">“NodeSparkplug”</span></i>
+
+- topic PUBLISH message:
+```ruby
+"spBv1.0+/MyGroupId/NDATA/NodeSparkplug"
+```
+- Metrics (from payload)
+```json
 {
   "timestamp": 1486144502122,
   "metrics": [
      {
-      "name": "Supply Voltage (V)",
+      "name": "Current Grid Voltage",
       "timestamp": 1486144502122,
       "dataType": "Float",
-      "value": 11.6
+      "value": 280.5
     },
     {
-      "name": "Node Control/Scan Rate",
+      "name": "Node Control/Next Server",
       "timestamp": 1486144502122,
-      "dataType": "Int64",
-      "value": 4000
+      "dataType": "Boolean",
+      "value": true
     }, {
-      "name": "Properties/Hardware Model",
+      "name": "Properties/Hardware Make",
       "timestamp": 1486144502122,
       "dataType": "String",
       "value": "Thinsboard Sparkplug™ B version: 3.4.5"
@@ -146,19 +174,16 @@ receiving a list of metrics from the "Payload", the validity of the metric is ch
   ],
   "seq": 0
 }
+```
 
-- PUBLISH message:
-  client.publish(NAMESPACE + "/" + groupId + "/DDATA/" + edgeNode, new SparkplugBPayloadEncoder().getBytes(nodePayload),
-  0, false); {% endhighlight %}
+<i>1.2 from Device: <span style="color:green">“DeviceSparkplugId1”</span></i>
 
-</details>
-
-<details>
-<summary>
-<i>1.2 from Device:</i>
-</summary>
-{% highlight ruby %}
+- topic PUBLISH message:
+```ruby
+"spBv1.0+/MyGroupId/DDATA/NodeSparkplug/DeviceSparkplugId1"
+```
 - Metrics
+```json
 {
   "timestamp": 1486144502122,
   "metrics": [
@@ -166,86 +191,70 @@ receiving a list of metrics from the "Payload", the validity of the metric is ch
       "name": "Outputs/LEDs/Green",
       "timestamp": 1486144502122,
       "dataType": "Boolean",
-      "value": false
+      "value": true
     }, {
       "name": "Properties/Hardware Make",
       "timestamp": 1486144502122,
       "dataType": "String",
-      "value": "Thingsboars"
+      "value": "Thinsboard Sparkplug™ B version: 3.4.5"
     }, {
       "name": "Last Update FW",
       "timestamp": 1486144502122,
       "dataType": "DateTime",
-      "value": 1486144502056
+      "value": 1486144502122
     }, {
-      "name": "Current Grid Voltage (V)",
+      "name": "Current Grid Voltage",
       "timestamp": 1486144502122,
-      "dataType": "Int32",
+      "dataType": "Float",
       "value": 250
     }
   ],
   "seq": 5
 }
+```
 
-- PUBLISH message:
-  client.publish(NAMESPACE + "/" + groupId + "/DDATA/" + edgeNode + "/" + deviceId, new SparkplugBPayloadEncoder()
-  .getBytes(devicePayload), 0, false);
+<b>2. Publish a message from MQTT EON/Device with Metrics to server as telemetry/attributes</b>
 
-{% endhighlight %}
-</details>
+* Upload [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes to the server.
 
-<b>2. Decoding Publish a message from MQTT EON/Device with Metrics as telemetry/attributes</b>
+<i>2.1 <b>Validate</b> Metric names: the metric will be in the topic [*BIRTH](#publish-message-nbirth)</i>
 
-<b>Importantly: <i>The metric will be  in the topic</i></b> [*BIRTH](#publish-message-nbirth).
-<details>
-<summary>
-<i>2.1 <b>Validate</b> Metric names:</i>
-</summary>
-{% highlight ruby %}
-- MetricsName`s MQTT EON is in the topic [NBIRTH]:
---"Supply Voltage (V)", "Node Control/Scan Rate", "Properties/Hardware Model".
+- MetricsName`s MQTT EON <span style="color:green">“NodeSparkplug”</span> is in the topic [NBIRTH](#publish-message-nbirth):
+```shell
+"Current Grid Voltage", "Node Control/Next Server", "Properties/Hardware Make".
+```
+- MetricsName`s device <span style="color:green">“DeviceSparkplugId1”</span> is in the topic [DBIRTH](#publish-message-nbirth):
+```shell
+"Outputs/LEDs/Green", "Properties/Hardware Make", "Last Update FW", "Current Grid Voltage".
+``` 
 
-- MetricsName`s device is in the topic [DBIRTH]:
---"Outputs/LEDs/Green", "Properties/Hardware Make", "Last Update FW", "Current Grid Voltage (V)".
-  
-{% endhighlight %}
-</details>
-
-<details>
-<summary>
 <i>2.2 Metrics to be sent to <b>attributes</b>:</i>
-</summary>
-{% highlight ruby %}
-- MetricsName`s MQTT EON is in the Fields "SparkPlug attribute metric names" of MQTT EON`s profile:
---"Properties/Hardware Model".
 
-- MetricsName`s device is in the Fields "SparkPlug attribute metric names" of MQTT EON`s profile:
---"Properties/Hardware Make".
+- MetricsName's MQTT EON <span style="color:green">“NodeSparkplug”</span> is in the Fields "SparkPlug attribute metric names" of MQTT EON's profile:
+```shell
+"Node Control/Next Server"
+```
+- MetricsName's device <span style="color:green">“DeviceSparkplugId1”</span> is in the Fields "SparkPlug attribute metric names" of MQTT EON's profile:
+```shell
+"Outputs/LEDs/Green", "Last Update FW"
+```
   
-Result: 
-- Metric of MQTT EON with name "Properties/Hardware Model" send to attributes of MQTT EON;
-- Metric of Device with name "Properties/Hardware Model" send to attributes of Device;
+Result:
+{% include images-gallery.html imageCollection="sparkplug-node-device-attributes" showListImageTitles="true" %}
 
-{% endhighlight %}
-</details>
-
-<details>
-<summary>
 <i>2.3 Metrics to be sent to <b>telemetry</b>:</i>
-</summary>
-{% highlight ruby %}
+
 - MetricsName`s MQTT EON is not in the Fields "SparkPlug attribute metric names" of MQTT EON`s profile:
---"Outputs/LEDs/Green", "Last Update FW", "Current Grid Voltage (V)".
+--"Outputs/LEDs/Green", "Last Update FW", "Current Grid Voltage".
 
 - MetricsName`s device is not in the Fields "SparkPlug attribute metric names" of MQTT EON`s profile:
-  --"Outputs/LEDs/Green", "Last Update FW", "Current Grid Voltage (V)".
+  --"Outputs/LEDs/Green", "Last Update FW", "Current Grid Voltage".
 
 Result:
-- Metrics of MQTT EON with name "Outputs/LEDs/Green", "Last Update FW" and "Current Grid Voltage (V)" send to telemetry of MQTT EON;
-- Metrics of Device with name "Outputs/LEDs/Green", "Last Update FW" and "Current Grid Voltage (V)" send to telemetry of Device;
+- Metrics of MQTT EON with name "Outputs/LEDs/Green", "Last Update FW" and "Current Grid Voltage" send to telemetry of MQTT EON;
+- Metrics of Device with name "Outputs/LEDs/Green", "Last Update FW" and "Current Grid Voltage" send to telemetry of Device;
 
-{% endhighlight %}
-</details>
+
 
 ### Step 5. Update Metrics from Thingsboard server to MQTT EON and Device
 
@@ -328,27 +337,27 @@ After MQTT EON disconnection, Telemetry with [NSTATE] "OFFLINE" is registered in
 
 Consider the following Sparkplug™ B payload in the DDEATH message shown above:
 
-```json5
+```json
 {
 "timestamp": 1486144502122,
 "seq": 123
 }
 ```
-The DDEATH topic on the server:
+The DEATH topic from Device: {NAMESPACE} + “/” + {groupId} + “/DDEATH/” + {edgeNode} + "/" + {devicepId}.
+For example, for a deviceID = <span style="color:green">"DeviceSparkplugId1"</span>: 
 ```shell
-client.publish(NAMESPACE + "/" + groupId + "/DDEATH/" + edgeNode+ "/" + devicepId , 
-new SparkplugBPayloadEncoder().getBytes(nodePayload), 0, false);
+"spBv1.0+/MyGroupId/DDEATH/NodeSparkplug/DeviceSparkplugId1"
 ```
 
 After Device disconnection, Telemetry with [DSTATE] "OFFLINE" is registered in the system.
 
-### Subscribe to attributes updates from the server [spBv1.0/#]
+### Subscribe to metrics updates from the server
 
 [Optional] After a successful MQTT EON connection, MQTT EON must be Subscribed to the NCMD topic on the server:
-- topic:
-
+- topic: {NAMESPACE} + “/” + {groupId} + “/NCMD/” + {edgeNode} + "/#"
+For example, for a edgeNode = <span style="color:green">"NodeSparkplug"</span>:
 ```shell
-"spBv1.0+/" + groupId + "/NCMD/" + edgeNode + "/#"
+"spBv1.0+/MyGroupId/DDEATH/NodeSparkplug/#"
 ```
 
 After a successful Device connection, the Device is subscribed to DCMD topic always (to perform the commands of updating
@@ -358,6 +367,7 @@ attributes and RPC).
 
 After a successful MQTT EON connection, publish message NBIRTH will be the first MQTT publish message with:
 - topic: {NAMESPACE} + "/" + {groupId} + "/NBIRTH/" + {edgeNode}.
+For example, for a edgeNode = <span style="color:green">"NodeSparkplug"</span>:
 ```shell
 spBv1.0+/MyGroupId/NBIRTH/NodeSparkplug
 ```
@@ -397,7 +407,7 @@ The EoN Birth Certificate payload contains everything required to build out a da
       "name": "Properties/Hardware Make",
       "timestamp": 1486144502122,
       "dataType": "String",
-      "value": "Properties Hardware Make: install"
+      "value": "Thinsboard Sparkplug™ B version: 3.3.5"
     }, {
       "name": "Last Update FW",
       "timestamp": 1486144502122,
@@ -419,7 +429,7 @@ The EoN Birth Certificate payload contains everything required to build out a da
 After a successful MQTT EON connection, publish message NBIRTH will be the first MQTT publish message with:
 - topic: {NAMESPACE} + "/" + {groupId} + "/DBIRTH/" + {edgeNode} +  "/" + {deviceId}.
 ```shell
-spBv1.0+/MyGroupId/DBIRTH/NodeSparkplug/DeviceSparkplug_01
+spBv1.0+/MyGroupId/DBIRTH/NodeSparkplug/DeviceSparkplugId1
 ```
 
 The Device Birth Certificate payload contains everything required to build out a data structure for all metrics for this Device.
@@ -451,7 +461,7 @@ The Device Birth Certificate payload contains everything required to build out a
       "name": "Properties/Hardware Make",
       "timestamp": 1486144502122,
       "dataType": "String",
-      "value": "Thinsboard Sparkplug™ B version: 3.5"
+      "value": "Thinsboard Sparkplug™ B version: 3.3.5"
     }, {
       "name": "Last Update FW",
       "timestamp": 1486144502122,
@@ -483,7 +493,7 @@ The Device Birth Certificate payload contains everything required to build out a
 After a successful MQTT EON connection, publish message NBIRTH will be the first MQTT publish message with:
 - topic: {NAMESPACE} + "/" + {groupId} + "/DBIRTH/" + {edgeNode} +  "/" + {deviceId}.
 ```shell
-spBv1.0+/MyGroupId/DBIRTH/NodeSparkplug/DeviceSparkplug_02
+spBv1.0+/MyGroupId/DBIRTH/NodeSparkplug/DeviceSparkplugId1
 ```
 
 The Device Birth Certificate payload contains everything required to build out a data structure for all metrics for this Device.

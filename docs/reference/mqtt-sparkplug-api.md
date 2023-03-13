@@ -18,14 +18,8 @@ sparkplug-device-profile-created:
         image: /images/sparkplug/sparkplug-device-profile-created-config.png
         title: 'Transport configuration the Device profile for device type MQTT EON'
     2:
-        image: /images/sparkplug/sparkplug-device-profile-created-config-json.png
-        title: 'Transport configuration the Device profile for device type MQTT EON (format Json)'
-    3:
         image: /images/sparkplug/sparkplug-device-profile-created-config-without-attr.png
         title: 'Transport configuration the Device profile for device type MQTT EON (Without Attribute Metric...) '
-    4:
-        image: /images/sparkplug/sparkplug-device-profile-created-config-json-without-attr.png
-        title: 'Transport configuration the Device profile for device type MQTT EON ( (Without Attribute Metric..., format Json)'
 
 sparkplug-device-created:
     0:
@@ -34,6 +28,14 @@ sparkplug-device-created:
     1:
         image: /images/sparkplug/sparkplug-device-created-after.png
         title: 'Created The Device Sparkplug after connect'
+
+sparkplug-node-device-attributes:
+    0:
+        image: /images/sparkplug/sparkplug-device-created-before.png
+        title: 'Metric of MQTT EON with name <span style="color:brown">["Node Control/Next Server"]</span> with <b>value</b> send to attributes of MQTT EON <span style="color:green">“NodeSparkplug”</span>'
+    1:
+        image: /images/sparkplug/sparkplug-device-created-after.png
+        title: 'Metrics of Device with names <span style="color:brown">["Outputs/LEDs/Green", "Last Update FW"]</span> with <b>value</b> send to attributes of Device <span style="color:green">“DeviceSparkplugId1”</span>'
 
 ---
 
