@@ -20,7 +20,7 @@ The EXXN IoT Gateway is a versatile device with an ARM processor that can be ada
 
 To continue with this guide we will need the following:  
 {{ prerequisites }}
-- [ThingsBoard account]({{thingsboardInstanceLink}}){:target="_blank"}
+- [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}  
 
 ## Create device on ThingsBoard
 

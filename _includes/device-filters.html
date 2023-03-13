@@ -14,7 +14,7 @@
         {% assign vendors = vendors | push: sitePage.vendor %}
     {% endif %}
 {% endfor %}
-{% assign categories = categories | compact | uniq | reverse %}
+{% assign categories = categories | compact | uniq %}
 {% assign chips = chips | compact | uniq %}
 {% assign connections = connections | compact | uniq %}
 {% assign vendors = vendors | compact | uniq %}

@@ -121,19 +121,19 @@
 {% if sitePage.path contains devicesLibraryPagePath %}
 {% assign possibleTargetPath = sitePage.path | remove: devicesLibraryPagePath %}
 {% case sitePage.category %}
-    {% when "Ready-to-go devices" %}
-        {% assign readyToGoDevicesCategory = readyToGoDevicesCategory | push: sitePage %}
     {% when "Single-board computers" %}
         {% assign singleBoardComputersCategory = singleBoardComputersCategory | push: sitePage %}
     {% when "Microcontrollers" %}
         {% assign microcontrollersCategory = microcontrollersCategory | push: sitePage %}
+    {% when "Other devices" %}
+        {% assign readyToGoDevicesCategory = readyToGoDevicesCategory | push: sitePage %}
 {% endcase %}
 {% endif %}
 {% endfor %}
 
-{% assign devices = devices | push: readyToGoDevicesCategory %}
-{% assign devices = devices | push: singleBoardComputersCategory %}
 {% assign devices = devices | push: microcontrollersCategory %}
+{% assign devices = devices | push: singleBoardComputersCategory %}
+{% assign devices = devices | push: readyToGoDevicesCategory %}
 
 <ul id="markdown-toc">
     {% for category in devices %}
@@ -150,11 +150,7 @@
 
 #### Welcome to the ThingsBoard Devices Library!  
 
-This section is designed to provide a comprehensive collection of guides and tutorials that explain how to connect various devices to the ThingsBoard platform.  
-
-Our Devices Library is a constantly growing resource that contains guides on connecting various devices to ThingsBoard.  
-Each guide provides a step-by-step walkthrough of how to connect a specific device to ThingsBoard.  
-
+Our Devices Library is a constantly growing resource is designed to provide a comprehensive collection of guides and tutorials that explain how to connect various devices to the ThingsBoard platform.  
 <br>
 
 <div class="device-guides">
