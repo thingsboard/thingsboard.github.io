@@ -2,7 +2,7 @@
 layout: docwithnav-pe
 title: How to connect NodeMCU V3 to ThingsBoard?
 category: Microcontrollers
-chip: esp8266
+chip: ESP8266
 connectivity: HTTP, MQTT, WIFI
 vendor: NodeMCU
 deviceImageFileName: nodemcuv3.png
