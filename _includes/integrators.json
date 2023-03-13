@@ -384,6 +384,18 @@
     }
   },
   {
+    "type": ["Africa"],
+    "country": ["South Africa"],
+    "name": "Fourier",
+    "contact": {
+      "href": "vrensburge@fourier.co.za"
+    },
+    "site": {
+      "href": "fourierit.co.za",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia"],
     "country": ["China"],
     "name": "PUXUAN LPWAN",
