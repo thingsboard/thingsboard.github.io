@@ -53,6 +53,7 @@ In order to connect and receive information from them, we need to perform 4 step
 ### Step 1. Create device profile
 
 First you need to create device profile for the device type **MQTT EON**, with next name and parameters of this **device profile**  [here](#device-profile-transport-configuration-for-device-type-mqtt-eon).
+
 See general device profile [documentation](/docs/{{docsPrefix}}user-guide/device-profiles/) for more info about device profiles also.
 - This **MQTT EON device profile** hase **name**. Its is string variable and for example, let's assign the following value | <span style="color:green">"sparkPlugProfile"</span>
   The first parameter: **Transport configuration type** must be | <span style="color:brown">MQTT</span>
@@ -74,6 +75,9 @@ See general device profile [documentation](/docs/{{docsPrefix}}user-guide/device
 connecting [here](#step-1-create-device-profile).
 
 **Device** type device can be created in Thingsboard with a device profile before the first connection (manually).
+
+Example: Creating The Device MQTT EON with ID <span style="color:brown">"NodeSparkplug"</span>.
+{% include images-gallery.html imageCollection="sparkplug-node-created" showListImageTitles="true" %}
 
 If **Device** type device with this device ID was not created in Thingsboard before connected it, after the first successful connection of this device, Thingsboard automatically create of that device and device profile for its (with the name equals {**MQTT EON device profile** name} + “**-node**”.).
 
@@ -111,13 +115,16 @@ The metric updates of the MQTT  EON (<span style="color:green">"NodeSparkplug"</
 
 The **NDATA** topic from MQTT  EON: {NAMESPACE} + “/” + {groupId} + “/NDATA/” + {edgeNode}.
 
-For example, for a MQTT  EON with ID = <span style="color:green">"NodeSparkplug"</span>:
+For example:
+- send publish messages from a MQTT  EON with ID <span style="color:green">"NodeSparkplug"</span>:
 ```shell
 "spBv1.0+/MyGroupId/NDATA/NodeSparkplug"
 ```
+
 The **DDATA** topic from Device: {NAMESPACE} + “/” + {groupId} + “/NDATA/” + {edgeNode} + "/" + {devicepId}.
 
-For example, for a deviceID = <span style="color:green">"DeviceSparkplugId1"</span>:
+For example:
+- send publish messages from a deviceID <span style="color:green">"DeviceSparkplugId1"</span>:
 ```shell
 "spBv1.0+/MyGroupId/DDATA/NodeSparkplug/DeviceSparkplugId1"
 ```
@@ -232,11 +239,11 @@ After _decoding_ **payload** and receiving a list of **metrics** from the **payl
 
 - MetricsName's MQTT EON <span style="color:green">“NodeSparkplug”</span> is in the Fields "SparkPlug attribute metric names" of MQTT EON's profile:
 ```shell
-"Node Control/Next Server"
+"Node Control/Next Server".
 ```
 - MetricsName's device <span style="color:green">“DeviceSparkplugId1”</span> is in the Fields "SparkPlug attribute metric names" of MQTT EON's profile:
 ```shell
-"Outputs/LEDs/Green", "Last Update FW"
+"Outputs/LEDs/Green", "Last Update FW".
 ```
   
 Result:
@@ -244,15 +251,18 @@ Result:
 
 <i>2.3 Metrics to be sent to <b>telemetry</b>:</i>
 
-- MetricsName`s MQTT EON is not in the Fields "SparkPlug attribute metric names" of MQTT EON`s profile:
---"Outputs/LEDs/Green", "Last Update FW", "Current Grid Voltage".
-
-- MetricsName`s device is not in the Fields "SparkPlug attribute metric names" of MQTT EON`s profile:
-  --"Outputs/LEDs/Green", "Last Update FW", "Current Grid Voltage".
-
+- MetricsName's MQTT EON <span style="color:green">“NodeSparkplug”</span> is not in the Fields "SparkPlug attribute metric names" of MQTT EON's profile:
+```shell
+"Current Grid Voltage", "Properties/Hardware Make".
+```
+- MetricsName's device <span style="color:green">“DeviceSparkplugId1”</span> is not in the Fields "SparkPlug attribute metric names" of MQTT EON's profile:
+```shell
+"Properties/Hardware Make", "Current Grid Voltage".
+```
+  
 Result:
-- Metrics of MQTT EON with name "Outputs/LEDs/Green", "Last Update FW" and "Current Grid Voltage" send to telemetry of MQTT EON;
-- Metrics of Device with name "Outputs/LEDs/Green", "Last Update FW" and "Current Grid Voltage" send to telemetry of Device;
+{% include images-gallery.html imageCollection="sparkplug-node-device-telemetry" showListImageTitles="true" %}
+
 
 
 
@@ -407,7 +417,7 @@ The EoN Birth Certificate payload contains everything required to build out a da
       "name": "Properties/Hardware Make",
       "timestamp": 1486144502122,
       "dataType": "String",
-      "value": "Thinsboard Sparkplug™ B version: 3.3.5"
+      "value": "Properties Hardware Make: install"
     }, {
       "name": "Last Update FW",
       "timestamp": 1486144502122,
@@ -466,7 +476,7 @@ The Device Birth Certificate payload contains everything required to build out a
       "name": "Last Update FW",
       "timestamp": 1486144502122,
       "dataType": "DateTime",
-      "value": 1486144501056
+      "value": 486144501056
     }, {
       "name": "Current Grid Voltage",
       "timestamp": 1486144502122,
