@@ -87,6 +87,22 @@ To find alarms for a specific device or asset you should:
 
 {% include images-gallery.html imageCollection="entityAlarms" %}
 
+### How to assign alarm to user?
+
+To assign alarm to user open alarm tab and select user in Assignee column:
+
+{% include images-gallery.html imageCollection="alarmAssignee" %}
+
+### How to find alarm comments and add your own?
+
+To find comments for a specific alarm open alarm details:
+
+{% include images-gallery.html imageCollection="alarmComments" %}
+
+Activity section contains two types of comments: user and system.
+User comments are comments that any authorized user can add/edit/delete. System comments are non-editable comments 
+colored with grey and describe alarm events such as changes to severity, alarm assignee etc. 
+
 ### How to visualize alarms on the dashboard?
 
 See this [doc](/docs/{{docsPrefix}}getting-started-guides/helloworld/#step-35-add-alarm-widget) to add an alarm widget to the dashboard. 
