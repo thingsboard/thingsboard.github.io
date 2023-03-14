@@ -1,5 +1,5 @@
 
-{% assign boardLedCount = 3 %}
+{% assign boardLedCount = 1 %}
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign arduinoBoardPath="**Raspberry Pi Pico/RP2040** > **Raspberry Pi Pico W**" %}
 {% assign prerequisites = "

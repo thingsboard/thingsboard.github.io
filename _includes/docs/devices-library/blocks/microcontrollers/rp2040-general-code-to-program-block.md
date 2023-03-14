@@ -4,9 +4,12 @@ To do this, you can use the code below. It contains all required functionality f
 
 
 ```cpp
-#include <WiFiNINA.h>
 #include <ThingsBoard.h>
-
+#if defined(ARDUINO_RASPBERRY_PI_PICO_W)
+#include <WiFi.h>
+#else 
+#include <WiFiNINA.h>
+#endif
 // Wifi credentials
 constexpr char WIFI_SSID[] = "YOUR_WIFI_SSID";
 constexpr char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
@@ -26,7 +29,7 @@ constexpr uint32_t MAX_MESSAGE_SIZE = 512U;
 
 // Baud rate for the debugging serial connection.
 // If the Serial output is mangled, ensure to change the monitor speed accordingly to this variable
-constexpr uint16_t SERIAL_DEBUG_BAUD = 115200U;
+constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 
 
 // Initialize underlying client, used to establish a connection
@@ -38,8 +41,8 @@ ThingsBoard tb(wifiClient, MAX_MESSAGE_SIZE);
 
 constexpr char BLINKING_INTERVAL_ATTR[] = "blinkingInterval";
 constexpr char LED_MODE_ATTR[] = "ledMode";
-constexpr char LED_STATE_ATTR[] = "ledState";
-constexpr char LED_COLOR_ATTR[] = "ledColor";
+constexpr char LED_STATE_ATTR[] = "ledState";{% if boardLedCount == 3 %}
+constexpr char LED_COLOR_ATTR[] = "ledColor";{% endif %}
 
 // Statuses for subscribing to rpc
 bool subscribed = false;
@@ -51,13 +54,11 @@ volatile bool attributesChanged = false;
 volatile int ledMode = 0;
 
 // Current led state
-volatile bool ledState = false;
-
+volatile bool ledState = false;{% if boardLedCount == 3 %}
 // Current led colors
 volatile uint8_t redColor = 255;
 volatile uint8_t greenColor = 255;
-volatile uint8_t blueColor = 255;
-
+volatile uint8_t blueColor = 255;{% endif %}
 // Settings for interval in blinking mode
 constexpr uint16_t BLINKING_INTERVAL_MS_MIN = 10U;
 constexpr uint16_t BLINKING_INTERVAL_MS_MAX = 60000U;
@@ -69,12 +70,16 @@ uint32_t previousStateChange;
 constexpr int16_t telemetrySendInterval = 2000U;
 uint32_t previousDataSend;
 
-// List of shared attributes for subscribing to their updates
+// List of shared attributes for subscribing to their updates{% if boardLedCount == 3 %}
 constexpr std::array<const char *, 3U> SHARED_ATTRIBUTES_LIST = {
   LED_STATE_ATTR,
   BLINKING_INTERVAL_ATTR,
   LED_COLOR_ATTR
-};
+};{% else %}
+constexpr std::array<const char *, 2U> SHARED_ATTRIBUTES_LIST = {
+  LED_STATE_ATTR,
+  BLINKING_INTERVAL_ATTR
+};{% endif %}
 
 // List of client attributes for requesting them (Using to initialize device states)
 constexpr std::array<const char *, 1U> CLIENT_ATTRIBUTES_LIST = {
@@ -96,7 +101,7 @@ const char *getBSSID() {
   sprintf(macStr, "%x", *macAddress);
   return macStr;
 }
-
+{% if boardLedCount == 3 %}
 void setLedColor() {
   if (redColor < 255 && ledState) {
     analogWrite(LEDR, redColor);
@@ -117,7 +122,7 @@ void setLedColor() {
     digitalWrite(LEDB, LOW);
   }
 }
-
+{% endif %}
 /// @brief Initalizes WiFi connection,
 // will endlessly delay until a connection has been successfully established
 void InitWiFi() {
@@ -173,14 +178,12 @@ RPC_Response processSetLedMode(const RPC_Data &data) {
   return RPC_Response("newMode", (int)ledMode);
 }
 
-
 // Optional, keep subscribed shared attributes empty instead,
 // and the callback will be called for every shared attribute changed on the device,
 // instead of only the one that were entered instead
 const std::array<RPC_Callback, 1U> callbacks = {
   RPC_Callback{ "setLedMode", processSetLedMode }
 };
-
 
 /// @brief Update callback that will be called as soon as one of the provided shared attributes changes value,
 /// if none are provided we subscribe to any shared attribute change instead
@@ -196,10 +199,10 @@ void processSharedAttributes(const Shared_Attribute_Data &data) {
       }
     } else if (strcmp(it->key().c_str(), LED_STATE_ATTR) == 0) {
       ledState = it->value().as<bool>();
-      setLedColor();
+      {% if boardLedCount == 3 %}setLedColor();{% endif %}
       Serial.print("Updated state to: ");
       Serial.println(ledState);
-    } else if (strcmp(it->key().c_str(), LED_COLOR_ATTR) == 0) {
+    } {% if boardLedCount == 3 %}else if (strcmp(it->key().c_str(), LED_COLOR_ATTR) == 0) {
       std::string data = it->value().as<std::string>();
       Serial.print("Updated colors: ");
       Serial.println(data.c_str());
@@ -239,7 +242,7 @@ void processSharedAttributes(const Shared_Attribute_Data &data) {
       Serial.print("\tB: ");
       Serial.println(blueColor);
       setLedColor();
-    }
+    }{%endif%}
   }
   attributesChanged = true;
 }
@@ -259,13 +262,15 @@ const Attribute_Request_Callback attribute_client_request_callback(CLIENT_ATTRIB
 
 void setup() {
   // Initalize serial connection for debugging
-  Serial.begin(115200);
+  Serial.begin(115200);{% if boardLedCount == 3 %}
   pinMode(LEDR, OUTPUT);
   pinMode(LEDG, OUTPUT);
   pinMode(LEDB, OUTPUT);
   digitalWrite(LEDR, LOW);
   digitalWrite(LEDG, LOW);
-  digitalWrite(LEDB, LOW);
+  digitalWrite(LEDB, LOW);{% elsif boardLedCount == 1 %}
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, LOW);{% endif %}
   delay(1000);
   InitWiFi();
 }
@@ -338,7 +343,7 @@ void loop() {
   if (ledMode == 1 && millis() - previousStateChange > blinkingInterval) {
     previousStateChange = millis();
     ledState = !ledState;
-    setLedColor();
+    {% if boardLedCount == 3 %}setLedColor();{% elsif boardLedCount == 1 %}digitalWrite(LED_BUILTIN, ledState);{% endif %}
     tb.sendTelemetryBool(LED_STATE_ATTR, ledState);
     tb.sendAttributeBool(LED_STATE_ATTR, ledState);
   }
