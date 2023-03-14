@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: devices-library-article
 title: How to connect Arduino Nano RP2040 Connect to ThingsBoard?
 category: Microcontrollers
 chip: RP2040

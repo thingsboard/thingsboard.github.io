@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: devices-library-article
 title: How to connect BeagleBone Black to ThingsBoard?
 category: Single-board computers
 chip: Sitara AM3352B

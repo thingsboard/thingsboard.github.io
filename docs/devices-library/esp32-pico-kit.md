@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: devices-library-article
 title: How to connect ESP32 PICO KIT to ThingsBoard?
 category: Microcontrollers
 chip: ESP32

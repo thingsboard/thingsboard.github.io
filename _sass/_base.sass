@@ -1684,7 +1684,6 @@ section
   z-index: 1
   margin-top: 130px
   overflow: hidden
-  transition: 0.3s
   .header
     display: none
     .indicator
@@ -1706,42 +1705,69 @@ section
       line-height: 24px
       margin-bottom: 12px
   .group
-    margin-bottom: 32px
+    padding-left: 20px
     .title
-      color: rgba(117, 118, 124, 0.6)
+      color: #75767C
       line-height: 24px
-      margin-bottom: 12px
-    .filter
-      margin-left: 5px
-      .filter-label
-        color: #75767C
-        line-height: 24px
-      input[type=checkbox]
-        -webkit-appearance: none
-        appearance: none
-        background-color: #fff
-        margin: 0
-        font: inherit
+      padding-left: 15px
+      cursor: pointer
+      &:hover
         color: var(--tb-main-color)
-        width: 1.15em
-        height: 1.15em
-        border: 0.15em solid var(--tb-main-color)
-        border-radius: 0.15em
-        transform: translateY(-0.075em)
-        display: inline-flex
-        justify-content: center
-        align-items: center
-      input[type="checkbox"]::before
-        content: ""
-        width: 0.65em
-        height: 0.65em
-        transform: scale(0)
-        transition: 120ms transform ease-in-out
-        box-shadow: inset 1em 1em var(--tb-main-color)
-        transform-origin: bottom left
-        clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%)
-      input[type="checkbox"]:checked::before
-        transform: scale(1)
+      &:before
+        content: "\f054"
+        font-family: FontAwesome
+        font-size: 14px
+        font-weight: 400
+        display: block
+        width: 10px
+        position: relative
+        left: -25px
+        top: 23.5px
+        transform: rotate(90deg)
+        transition: transform 0.3s
+        border: none
+        cursor: pointer
+      &.collapsed
+        &:before
+          transform: rotate(0deg)
+
+    .filters-wrapper
+      overflow: hidden
+      transition: height 0.3s
+      height: auto
+      padding-top: 10px
+      .filter
+        margin-left: 5px
+        .filter-label
+          color: #75767C
+          line-height: 24px
+        input[type=checkbox]
+          -webkit-appearance: none
+          appearance: none
+          background-color: #fff
+          margin: 0
+          font: inherit
+          color: var(--tb-main-color)
+          width: 1.15em
+          height: 1.15em
+          border: 0.15em solid var(--tb-main-color)
+          border-radius: 0.15em
+          transform: translateY(-0.075em)
+          display: inline-flex
+          justify-content: center
+          align-items: center
+          cursor: pointer
+        input[type="checkbox"]::before
+          content: ""
+          width: 0.65em
+          height: 0.65em
+          transform: scale(0)
+          transition: 120ms transform ease-in-out
+          box-shadow: inset 1em 1em var(--tb-main-color)
+          transform-origin: bottom left
+          clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%)
+        input[type="checkbox"]:checked::before
+          transform: scale(1)
 
 .faq-link
   position: relative

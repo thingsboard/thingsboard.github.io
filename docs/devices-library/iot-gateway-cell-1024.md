@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: devices-library-article
 title: How to connect IoT Gateway Cell 1024 to ThingsBoard?
 category: Other devices
 chip: ARM Cortex-A53
