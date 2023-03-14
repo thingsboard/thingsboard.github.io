@@ -119,6 +119,7 @@
 
 {% for sitePage in site.pages %}
 {% if sitePage.path contains devicesLibraryPagePath %}
+{% unless sitePage contains "guidelines" %}
 {% assign possibleTargetPath = sitePage.path | remove: devicesLibraryPagePath %}
 {% case sitePage.category %}
     {% when "Single-board computers" %}
@@ -128,6 +129,7 @@
     {% when "Other devices" %}
         {% assign readyToGoDevicesCategory = readyToGoDevicesCategory | push: sitePage %}
 {% endcase %}
+{% endunless %}
 {% endif %}
 {% endfor %}
 
@@ -150,7 +152,8 @@
 
 #### Welcome to the ThingsBoard Devices Library!  
 
-Our Devices Library is a constantly growing resource is designed to provide a comprehensive collection of guides and tutorials that explain how to connect various devices to the ThingsBoard platform.  
+Our Devices Library is a comprehensive collection of guides and tutorials that explain how to connect various devices to the ThingsBoard platform. It is a constantly extending resource.  
+We encourage our community members to contribute to the Devices Library.  
 <br>
 
 <div class="device-guides">
@@ -165,14 +168,4 @@ Our Devices Library is a constantly growing resource is designed to provide a co
 
 <br>
 
-We encourage our community members to contribute to the Devices Library.  
-If you have a guide on connecting a device to ThingsBoard, we invite you to submit it to [**info@thingsboard.io**](mailto:info@thingsboard.io) for review.  
-Please include screenshots in your article to reduce the time required for review and publishing.  
-
-Our team will review your submission and may modify it, if necessary, to ensure its accuracy and quality.  
-Once approved, we will add it to the Devices Library to assist others in connecting their devices to ThingsBoard.  
-
-We hope you find our Devices Library useful and informative.  
-Please do not hesitate to contact us if you have any questions or feedback.  
-
-Thank you for choosing ThingsBoard!  
+If you want to add your device to Devices Library, you can follow next [guidelines](/docs/devices-library/guidelines/).
