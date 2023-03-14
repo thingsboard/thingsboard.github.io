@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: devices-library-article
 title: How to connect Asus Tinker Board S to ThingsBoard?
 category: Single-board computers
 chip: Rockchip RK3288-C

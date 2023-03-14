@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: devices-library-article
 title: How to connect LuaNode32 to ThingsBoard?
 category: Microcontrollers
 chip: ESP32

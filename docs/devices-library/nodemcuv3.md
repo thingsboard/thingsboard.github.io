@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: devices-library-article
 title: How to connect NodeMCU V3 to ThingsBoard?
 category: Microcontrollers
 chip: ESP8266
