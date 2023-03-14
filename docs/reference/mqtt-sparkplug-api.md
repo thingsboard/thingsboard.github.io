@@ -59,17 +59,23 @@ sparkplug-node-device-telemetry:
 
 sparkplug-node-device-change-shared-sttributes:
     0:
-        image: /images/sparkplug/sparkplug-node-telemetry-before-update.png
-        title: 'Metrics of Device with names <span style="color:brown">["Outputs/LEDs/Green"]</span>, send value <b>["true"]</b>, dataType value <b>["Boolean"]</b> to Device <span style="color:green">“DeviceSparkplugId1”</span>' 
+        image: /images/sparkplug/sparkplug-device1-shared-attribute-update1.png
+        title: 'Metrics of Device with names <span style="color:brown">["Outputs/LEDs/Green"]</span>, value <b>["true"]</b>, dataType value <b>["Boolean"]</b> send shared attributes from server to Device <span style="color:green">“DeviceSparkplugId1”</span>' 
     1:
-        image: /images/sparkplug/sparkplug-node-telemetry-after-update.png
-        title: 'Metric of MQTT EON with name <span style="color:brown">["Current Grid Voltage", "Properties/Hardware Make"]</span> with <b>value</b> send  to telemetry of MQTT EON <span style="color:green">“NodeSparkplug”</span>'
+        image: /images/sparkplug/sparkplug-device1-logs-shared-attribute-update1.png
+        title: 'Metrics of Device <span style="color:green">“DeviceSparkplugId1”</span> with names <span style="color:brown">["Outputs/LEDs/Green"]</span>, value <b>["true"]</b>, dataType value <b>["Boolean"]</b>: logs in the [SparkplugB Client Emulator](https://github.com/nickAS21/sparkplug)'
     2:
-        image: /images/sparkplug/sparkplug-device1-telemetry-before-update.png
-        title: 'Metrics of Device with names <span style="color:brown">["Properties/Hardware Make", "Current Grid Voltage"]</span> with <b>value</b> the telemetry after Birth <b>before update</b>  of Device <span style="color:green">“DeviceSparkplugId1”</span>'
+        image: /images/sparkplug/sparkplug-device1-shared-attribute-update2.png
+        title: 'Metrics of Device with names <span style="color:brown">["Current Grid Voltage"]</span>, value <b>["true"]</b>, dataType value <b>["Float"]</b> send shared attributes from server to Device <span style="color:green">“DeviceSparkplugId1”</span>' 
     3:
-        image: /images/sparkplug/sparkplug-device1-telemetry-after-update.png
-        title: 'Metrics of Device with names <span style="color:brown">["Properties/Hardware Make", "Current Grid Voltage"]</span> with <b>value</b> send to telemetry of Device <span style="color:green">“DeviceSparkplugId1”</span>'
+        image: /images/sparkplug/sparkplug-device1-logs-shared-attribute-update2.png
+        title: 'Metrics of Device <span style="color:green">“DeviceSparkplugId1”</span> with names <span style="color:brown">["Current Grid Voltage"]</span>, value <b>["true"]</b>, dataType value <b>["Float"]</b>: logs in the [SparkplugB Client Emulator](https://github.com/nickAS21/sparkplug)'
+    4:
+        image: /images/sparkplug/sparkplug-node-shared-attribute-update.png
+        title: 'Metrics of Device with names <span style="color:brown">["Current Grid Voltage"]</span>, value <b>[234.56]</b>, dataType value <b>["Float"]</b> send shared attributes from server to Device <span style="color:green">“NodeSparkplug”</span>' 
+    5:
+        image: /images/sparkplug/sparkplug-node-logs-shared-attribute-update.png
+        title: 'Metrics of Device <span style="color:green">“NodeSparkplug”</span> with names <span style="color:brown">["Current Grid Voltage"]</span>, value <b>[234.56]</b>, dataType value <b>["Float"]</b>: logs in the [SparkplugB Client Emulator](https://github.com/nickAS21/sparkplug)'
 
 ---
 
