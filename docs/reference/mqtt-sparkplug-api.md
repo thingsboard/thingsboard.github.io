@@ -72,10 +72,27 @@ sparkplug-node-device-change-shared-sttributes:
         title: 'Metrics of Device <span style="color:green">“DeviceSparkplugId1”</span> with names <span style="color:brown">["Current Grid Voltage"]</span>, value <b>["true"]</b>, dataType value <b>["Float"]</b>: logs in the [SparkplugB Client Emulator](https://github.com/nickAS21/sparkplug)'
     4:
         image: /images/sparkplug/sparkplug-node-shared-attribute-update.png
-        title: 'Metrics of Device with names <span style="color:brown">["Current Grid Voltage"]</span>, value <b>[234.56]</b>, dataType value <b>["Float"]</b> send shared attributes from server to Device <span style="color:green">“NodeSparkplug”</span>' 
+        title: 'Metrics of MQTT EON with names <span style="color:brown">["Current Grid Voltage"]</span>, value <b>[234.56]</b>, dataType value <b>["Float"]</b> send shared attributes from server to MQTT EON <span style="color:green">“NodeSparkplug”</span>' 
     5:
         image: /images/sparkplug/sparkplug-node-logs-shared-attribute-update.png
-        title: 'Metrics of Device <span style="color:green">“NodeSparkplug”</span> with names <span style="color:brown">["Current Grid Voltage"]</span>, value <b>[234.56]</b>, dataType value <b>["Float"]</b>: logs in the [SparkplugB Client Emulator](https://github.com/nickAS21/sparkplug)'
+        title: 'Metrics of MQTT EON <span style="color:green">“NodeSparkplug”</span> with names <span style="color:brown">["Current Grid Voltage"]</span>, value <b>[234.56]</b>, dataType value <b>["Float"]</b>: logs in the [SparkplugB Client Emulator](https://github.com/nickAS21/sparkplug)'
+
+sparkplug-node-device-change-rpc:
+    0:
+        image: /images/sparkplug/sparkplug-new-rps-terminal-setting.png
+        title: 'New RPC debug terminal -> Advanced -> RPC settings -> RPC request timeout (ms)* => <span style="color:red">5000</span> (default = 500)'
+    1:
+        image: /images/sparkplug/sparkplug-node-rpc.png
+        title: 'Metrics of MQTT EON with names <span style="color:brown">["Node Control/Rebirth"]</span>, value <b>["true"]</b>, dataType value <b>["Boolean"]</b> send RPC command from debug terminal to MQTT EON <span style="color:green">“NodeSparkplug”</span>'
+    2:
+        image: /images/sparkplug/sparkplug-node-logs-rpc.png
+        title: 'Metrics of MQTT EON <span style="color:green">“NodeSparkplug”</span> with names <span style="color:brown">["Node Control/Rebirth"]</span>, value <b>[true]</b>, dataType value <b>["Boolean"]</b>: logs in the [SparkplugB Client Emulator](https://github.com/nickAS21/sparkplug)'
+    3:
+        image: /images/sparkplug/sparkplug-device-rpc.png
+        title: 'Metrics of Device with names <span style="color:brown">["Device Control/Rebirth"]</span>, value <b>["true"]</b>, dataType value <b>["Boolean"]</b> send RPC command from debug terminal to Device <span style="color:green">“DeviceSparkplugId1”</span>'
+    4:
+        image: /images/sparkplug/sparkplug-device-logs-rpc.png
+        title: 'Metrics of MQTT EON <span style="color:green">“DeviceSparkplugId1”</span> with names <span style="color:brown">["Device Control/Rebirth"]</span>, value <b>[true]</b>, dataType value <b>["Boolean"]</b>: logs in the [SparkplugB Client Emulator](https://github.com/nickAS21/sparkplug)'
 
 ---
 

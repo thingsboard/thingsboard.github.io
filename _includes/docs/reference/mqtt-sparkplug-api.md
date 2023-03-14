@@ -289,57 +289,125 @@ Examples: change value of metric:
 {% include images-gallery.html imageCollection="sparkplug-node-device-change-shared-sttributes" showListImageTitles="true" %}
 
 
-#### Update Metrics from RPC to MQTT EON/Device
+#### Update Metrics  using the ThingsBoard RPC command from server to MQTT EON/Device
 
+ThingsBoard supports on-demand update Metrics of MQTT EON or Device using RPC(Remote Procedure Call) feature. We also use "command" to device instead of RPC for simplicity.
+You can send the command using REST API, dashboard widget, rule engine, or custom script.
+See the structure of the command is documented [here](/docs/{{docsPrefix}}user-guide/rpc/#server-side-rpc).
 
+Key properties of the command are *method* and *params*.
+The *method* defines the LwM2M operation and is one of the following:
+
+The *params* is typically a JSON that defines the resource id or multiple resources ids.
+For example, to REBOOT:  
+- **MQTT EON**: you must send a publish message to the MQTT EON with Id <span style="color:green">“NodeSparkplug”</span>:
+
+--topic with message type **NCMD** - Node Command Message, 
 ```shell
-v1/devices/me/rpc/request/+
+"spBv1.0+/MyGroupId/NCMD/NodeSparkplug"
 ```
 
-Once subscribed, the client will receive individual commands as a PUBLISH message to the corresponding topic:
-
-```shell
-v1/devices/me/rpc/request/$request_id
+**payload** with "_metricName_":<span style="color:brown">["Node Control/Rebirth"]</span>,"_value_":<span style="color:red">true</span>
+```json
+{
+  "timestamp": 1486144502122,
+  "metrics": [
+    {
+      "name": "NNode Control/Rebirth",
+      "timestamp": 1486144502122,
+      "dataType": "Boolean",
+      "value": true
+    }
+  ]
+}
 ```
 
-where **$request_id** is an integer request identifier.
+- **Device**: you must send a publish message to the device with Id <span style="color:green">“DeviceSparkplugId1”</span>:
 
-The client should publish the response to the following topic:
-
+--topic with message type **DCMD** - Device Command Message, 
 ```shell
-v1/devices/me/rpc/response/$request_id
+"spBv1.0+/MyGroupId/DCMD/NodeSparkplug/DeviceSparkplugId1"
 ```
 
-The following example is written in javascript and is based on mqtt.js.
-Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
+**payload** with "_metricName_":<span style="color:brown">["Device Control/Rebirth"]</span>,"_value_":<span style="color:red">true</span>
+```json
+{
+  "timestamp": 1486144502122,
+  "metrics": [
+    {
+      "name": "Device Control/Rebirth",
+      "timestamp": 1486144502122,
+      "dataType": "Boolean",
+      "value": true
+    }
+  ]
+}
+```
 
-{% if docsPrefix == null %}
-Don't forget to replace $ACCESS_TOKEN with your device's access token. And replace hostname "demo.thingsboard.io" to your host in the "mqtt-js-rpc-from-server.js" file.
-In this example, hostname reference live demo server.
-{% endif %}
-{% if docsPrefix == "pe/" %}
-Don't forget to replace $ACCESS_TOKEN with your device's access token. And replace hostname "127.0.0.1" to your host in the "mqtt-js-rpc-from-server.js" file.
-In this example, hostname reference your local installation.
-{% endif %}
-{% if docsPrefix == 'paas/' %}
-Replace $ACCESS_TOKEN with your device's access token.
-{% endif %}
+- In response, the device should restart and send metrics [*BIRTH](#publish-message-nbirth)
 
-- Use **RPC debug terminal** dashboard;
+- **Note**: The NCMD/DCMD commands topic provides the Topic Namespace used to send commands to any connected EoN nodes/Device.
+  This means sending an updated metric value to an associated metric included in the [*BIRTH metric list](#publish-message-nbirth).
 
-- Subscribe to RPC commands from the server;
+So, the following RPC command need to be sent to ThingsBoard:
 
-- Send an RPC request "connect" to the device;
+Example of plain RPC call example for REST API:
+- API
+```shell
+ /api/plugins/rpc/twoway/ + device.getId().getId()
+```
+{: .copy-code}
 
-- You should receive a response from the device.
+1.. MQTT EON
+  
+  -- bodyStr
+  ```shell
+  method=NCMD, params={"metricName":"Node Control/Reboot","value":true}
+  ```
+  {: .copy-code}
+  -- bodyJson
+  ```json
+  {
+     "method": "NCMD",
+     "params": {"metricName": "Node Control/Rebirth", "value": true}
+  }
+  ```
+  {: .copy-code}
 
-{% include images-gallery.html imageCollection="server-side-rpc" %}
+2.. Device 
 
-{% capture tabspec %}mqtt-rpc-from-server
-A,MQTT.js,shell,resources/mqtt-js-rpc-from-server.sh,/docs/reference/resources/mqtt-js-rpc-from-server.sh
-B,mqtt-js-rpc-from-server.js,javascript,resources/mqtt-js-rpc-from-server.js,/docs/reference/resources/mqtt-js-rpc-from-server.js{% endcapture %}  
-{% include tabs.html %}
+  -- bodyStr
+  ```shell
+  method=DCMD, params={"metricName":"Device Control/Reboot","value":true}
+  ```
+  {: .copy-code}
+  -- bodyJson
+  ```json
+  {
+     "method": "DCMD",
+  "params": {"metricName": "Device Control/Rebirth", "value": true}
+  }
+  ```
+  {: .copy-code}
 
+
+Example change value of the metric with corresponding input in the debug terminal:
+
+-**Note**: When using **"New RPC debug terminal"** you need to change the **RPC request timeout (ms)*** parameter = 5000
+
+```ruby
+NCMD {"metricName":"Node Control/Rebirth","value":true}
+```
+{: .copy-code}
+
+or
+
+```ruby
+DCMD {"metricName":"Device Control/Rebirth","value":true}
+```
+{: .copy-code}
+
+{% include images-gallery.html imageCollection="sparkplug-node-device-change-rpc" showListImageTitles="true" %}
 
 ## Thingsboard and MQTT Sparkplug Payloads and Messages
 
