@@ -21,19 +21,19 @@ fi
 if [ -d "$dir" -a ! -h "$dir" ]
 then
    echo -e "${YELLOW}$dir${GREEN} found. Processing...${NC}"
-    for file in $dir/*.png; do
-        if [ "$(basename $file)" == "*.png" ]; then
-            echo -e "${RED}Can not find files with PNG extension in ${YELLOW}$dir${NC}"
+    for file in $dir/$filter; do
+        if [ "$(basename $file)" == $filter ]; then
+            echo -e "${RED}Can not find files with $filter extension in ${YELLOW}$dir${NC}"
             exit 0
         fi
         echo
         echo -e "${BROWN}###################################################################${NC}"
-        if file "$file" | grep -vE 'preview' | grep -E $filter | grep -qE 'png'; then
+        if file "$file" | grep -vE 'preview' | grep -E $filter; then
             echo -e "${GREEN}File ${BLUE}$(basename $file)${GREEN} is PNG image. Perform creating preview...${NC}"
             oldFilePath="$(dirname $file)/$(basename $file)"
-            previewFilePath="$(dirname $file)/$(basename $file .png)-preview.png"
+            previewFilePath="$(dirname $file)/$(basename $file ${filter#\*})-preview${filter#\*}"
             # Perform the copying and make the preview file, if copying successful
-            cp $oldFilePath $previewFilePath && mogrify -resize 10% $previewFilePath
+            cp $oldFilePath $previewFilePath && mogrify -resize 'x115' $previewFilePath
             if file $previewFilePath | grep -qE 'PNG'; then
                 echo -e "${GREEN}Preview  image ${BLUE}$previewFilePath${GREEN} created.${NC}"
             else

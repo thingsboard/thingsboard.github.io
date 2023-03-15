@@ -1,0 +1,109 @@
+{% assign categories = '' | split: "," %}
+{% assign vendors = "" | split: "," %}
+{% assign chips = "" | split: "," %}
+{% assign connections = "" | split: "," %}
+{% assign sitePages = site.pages %}
+{% assign devicesLibraryPagePath = page.path | remove: ".md" | append: '/' %}
+
+{% for sitePage in sitePages %}
+    {% if sitePage.path contains devicesLibraryPagePath %}
+        {% assign categories = categories | push: sitePage.category %}
+        {% assign chips = chips | push: sitePage.chip %}
+        {% assign deviceConnectivityArr = sitePage.connectivity | split: ", " %}
+        {% assign connections = connections | concat: deviceConnectivityArr %}
+        {% assign vendors = vendors | push: sitePage.vendor %}
+    {% endif %}
+{% endfor %}
+{% assign categories = categories | compact | uniq %}
+{% assign chips = chips | compact | uniq %}
+{% assign connections = connections | compact | uniq %}
+{% assign vendors = vendors | compact | uniq %}
+<div class="group">
+    <div class="title">Hardware types</div>
+    <div class="filters-wrapper">
+        {% for category in categories %}
+            <div class="filter">
+                <input type="checkbox" id="{{ category | downcase }}" class="device-category-filter"
+                       value="{{ category }}">
+                <label class="filter-label" for="{{ category | downcase }}">{{ category }}</label>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="group">
+    <div class="title">Connectivity</div>
+    <div class="filters-wrapper">
+        {% for connection in connections %}
+            <div class="filter">
+                <input type="checkbox" id="{{ connection | downcase }}" class="device-other-filter"
+                       value="{{ connection }}">
+                <label class="filter-label" for="{{ connection | downcase }}">{{ connection }}</label>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="group">
+    <div class="title">Chip</div>
+    <div class="filters-wrapper">
+        {% for chip in chips %}
+            <div class="filter">
+                <input type="checkbox" id="{{ chip | downcase }}" class="device-other-filter"
+                       value="{{ chip }}">
+                <label class="filter-label" for="{{ chip | downcase }}">{{ chip }}</label>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+<div class="group">
+    <div class="title">Vendors</div>
+    <div class="filters-wrapper">
+        {% for vendor in vendors %}
+            <div class="filter">
+                <input type="checkbox" id="{{ vendor | downcase }}" class="device-other-filter"
+                       value="{{ vendor }}">
+                <label class="filter-label" for="{{ vendor | downcase }}">{{ vendor }}</label>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    jqueryDefer(function () {
+        function collapseSection(element) {
+            var sectionHeight = element.prop('scrollHeight');
+            var elementTransition = element.css('transition');
+            element.css('transition', '');
+            requestAnimationFrame(function() {
+                element.css('height', sectionHeight + 'px');
+                element.css('transition', elementTransition);
+                requestAnimationFrame(function() {
+                    element.css('height', 0 + 'px');
+                });
+            });
+            element.attr('data-collapsed', 'true');
+        }
+
+        function expandSection(element) {
+            var sectionHeight = element.prop('scrollHeight');
+            element.css('height', sectionHeight + 'px')
+            element.on('transitionend', function(e) {
+                element.off('transitionend');
+                element.css('height', null);
+            });
+            element.attr('data-collapsed', 'false');
+        }
+
+        $('.title').on('click', function() {
+            var section = $(this).next();
+            var isCollapsed = section.attr('data-collapsed') === 'true';
+            if (isCollapsed) {
+                expandSection(section);
+                section.attr('data-collapsed', 'false');
+                $(this).removeClass('collapsed');
+            } else {
+                collapseSection(section);
+                $(this).addClass('collapsed');
+            }
+        });
+    });
+</script>
