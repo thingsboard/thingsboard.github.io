@@ -146,7 +146,7 @@
 
 <section id="encyclopedia">
     {% if siteData[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}
-        <div id="docsToc">
+        <div id="docsToc" style="background-color: rgba(0,0,0,0)">
             <div class="pi-accordion">
                 {% assign tree = siteData[foundTOC].toc %}{% include tree.html %}
             </div> <!-- /pi-accordion -->

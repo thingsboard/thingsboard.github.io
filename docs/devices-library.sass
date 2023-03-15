@@ -16,7 +16,7 @@
           line-height: 30px
           font-size: 18px
           vertical-align: middle
-          border: 1px solid #ebebeb
+          border: 1px solid #000
           background-color: transparent
           border-radius: 4px
           color: #212529
@@ -25,12 +25,12 @@
             color: #212529
             opacity: 0.6
           &:hover
-            border: 2px solid #000
+            border: 1px solid #000
             padding: 1px 15px
             cursor: pointer
           &:focus
             cursor: initial
-            border: 2px solid #2a7dec
+            border: 2px solid var(--tb-main-color)
             padding: 1px 15px
             color: #212529
             +placeholder
@@ -105,8 +105,9 @@
               display: block
               margin: 0 auto
               width: 50%
+              height: 120px
+              object-fit: scale-down
             .device-guide-text
-              margin: auto
               .device-guide-title
                 font-weight: 500
                 font-size: 18px
@@ -120,6 +121,14 @@
                 color: #212529
               .device-guide-keywords
                 display: none
+  .n-button.add-device
+    text-decoration: none
+    color: #fff
+    background-color: var(--tb-main-color)
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1)
+    &:hover
+      box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
 
 @media screen and (min-width: 750px)
   #docsContent
