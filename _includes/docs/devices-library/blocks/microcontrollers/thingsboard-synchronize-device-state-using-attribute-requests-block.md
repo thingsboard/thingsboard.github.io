@@ -1,4 +1,4 @@
-In order to get the state of the device from ThingsBoard during booting we have functionality to do this in the code.  
+In order to get the state of the device from ThingsBoard during booting we have [functionality](/docs/{{page.docsPrefix}}reference/mqtt-api/#request-attribute-values-from-the-server) to do this in the code.  
 Responsible parts of the code example:  
 - Attribute callbacks:  
     

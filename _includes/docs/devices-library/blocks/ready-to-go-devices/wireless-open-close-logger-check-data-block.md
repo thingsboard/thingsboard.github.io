@@ -15,7 +15,7 @@ If everything is set correctly, you should see the data in ThingsBoard, to do th
 
 **Important!**  
 For orders over 250 devices Efento can pre-configure the devices for you, so they will send the data to your ThingsBoard instance out-of-the-box and no configuration will be required on the sensor side.  
-Efento will provide you with a csv file, which allows you easily add and [provision all the devices at once](/docs/user-guide/bulk-provisioning/) on ThingsBoard instance.  
+Efento will provide you with a csv file, which allows you easily add and [provision all the devices at once](/docs/{{page.docsPrefix}}user-guide/bulk-provisioning/) on ThingsBoard instance.  
 
 {% endcapture %}
 

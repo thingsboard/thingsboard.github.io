@@ -8,7 +8,7 @@ Of course, we will control our device using provided functionality like [shared 
 
 To continue with this guide we will need the following:  
 {{ prerequisites }}
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
 - [ThingsBoard account](https://thingsboard.cloud)
 {% else %}
 - [ThingsBoard account](https://demo.thingsboard.io)
