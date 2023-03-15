@@ -25,7 +25,7 @@ REST API.
     '
 %}
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=updatingSharedAttributePE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=updatingSharedAttributeCE %}

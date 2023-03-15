@@ -16,7 +16,7 @@ To do this, you can use the following parts of our dashboard:
   
 Please note that you can change the LED state only if blinking mode is disabled.  
 
-In the code example we have functionality to handle RPC commands.  
+In the code example we have functionality to handle [RPC commands](/docs/{{page.docsPrefix}}user-guide/rpc/#server-side-rpc).  
 To get ability to control the device we have used the following parts of the code:  
 - Callback for RPC requests:  
     

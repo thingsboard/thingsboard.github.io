@@ -1,5 +1,5 @@
 
-Also we can change the period of the blinking using shared attribute update functionality.    
+Also we can change the period of the blinking using [shared attribute](/docs/{{page.docsPrefix}}user-guide/attributes/#shared-attributes) update functionality.    
 
 {% assign updateLedBlinkingPeriod = '
     ===
