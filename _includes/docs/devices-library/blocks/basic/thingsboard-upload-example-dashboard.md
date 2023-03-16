@@ -34,16 +34,18 @@
 '
 %}
 
-{% assign exampleDashboardPath = "/docs/devices-library/resources/dashboards/microcontrollers/basic/dashboard.json"
+{% assign exampleDashboardPath = "/docs/devices-library/resources/dashboards/microcontrollers/basic/dashboard.json" %}
 {% if boardLedCount == 3 %}
-{% assign exampleDashboardPath = "/docs/devices-library/resources/dashboards/microcontrollers/rgb-led/dashboard.json"
-{% elsif hasCamera == "true" %}
-{% assign exampleDashboardPath = "/docs/devices-library/resources/dashboards/microcontrollers/camera/dashboard.json"
+{% assign exampleDashboardPath = "/docs/devices-library/resources/dashboards/microcontrollers/rgb-led/dashboard.json" %}
+{% endif %}
+
+{% if hasCamera == "true" %}
+{% assign exampleDashboardPath = "/docs/devices-library/resources/dashboards/microcontrollers/camera/dashboard.json" %}
 {% endif %}
 
 To check the data and get ability to send commands or data to the device we will create the dashboard.
 
-First download the [Check and control device data dashboard]({{exampleDashboardPath}}) file.
+First download the [Check and control device data dashboard]({{exampleDashboardPath}}){:target="_blank" download="dashboard.json"} file.
 
 To add the dashboard to ThingsBoard, we need to import it, and to do this, we have to go through the following steps:  
 

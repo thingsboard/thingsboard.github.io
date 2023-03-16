@@ -6,12 +6,16 @@ To do this, you can use the code below. It contains all required functionality f
 ```cpp
 #if defined(ESP8266)
   #include <ESP8266WiFi.h>
+  #define THINGSBOARD_ENABLE_PROGMEM 0
 #elif defined(ARDUINO_NANO_RP2040_CONNECT)
   #include <WiFiNINA_Generic.h>
 #elif defined(ESP32) || defined(RASPBERRYPI_PICO) || defined(RASPBERRYPI_PICO_W)
   #include <WiFi.h>
   #include <WiFiClientSecure.h>
 #endif
+
+#define THINGSBOARD_ENABLE_PSRAM 0
+#define THINGSBOARD_ENABLE_DYNAMIC 1
 
 #ifndef LED_BUILTIN
 #define LED_BUILTIN 99
@@ -43,7 +47,7 @@ constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 // Initialize underlying client, used to establish a connection
 WiFiClient wifiClient;
 // Initialize ThingsBoard instance with the maximum needed buffer size
-ThingsBoardSized<MAX_MESSAGE_SIZE> tb(wifiClient);
+ThingsBoard tb(wifiClient, MAX_MESSAGE_SIZE);
 
 // Attribute names for attribute request and attribute updates functionality
 
