@@ -9,20 +9,20 @@ description:
         <main>
             <div class="content-list">
                 <div class="content-block">
-                    <h3 class="header">Anomaly detection</h3>
-                    <p class="text">Find and address issues that require immediate attention before they become a problem.</p>
+                    <h3 class="header">Flexible deployment</h3>
+                    <p class="text">Deploy Trendz Analytics Platform in the cloud or on-premises. Use commodity hardware to scale out horizontally by adding new nodes to your cluster when it is needed</p>
                 </div>
                 <div class="content-block">
-                    <h3 class="header">Forecasting</h3>
-                    <p class="text">Plan and optimize operations with insights into future events and system behavior.</p>
+                    <h3 class="header">Optimized for big Data</h3>
+                    <p class="text">All computations and aggregations performed on the Trendz server using asynchronous data streams. It guarantees fast request processing and data visualization</p>
                 </div>
                 <div class="content-block">
-                    <h3 class="header">Predictive maintenance</h3>
-                    <p class="text">Identify when a machine is likely to fail, and take preventive measures to avoid downtime</p>
+                    <h3 class="header">Explore in any dimensions</h3>
+                    <p class="text">Trendz automatically detects all relations inside your data so you can explore the dataset in any direction or dimension. Do it in real-time</p>
                 </div>
                 <div class="content-block">
                     <h3 class="header">Self-service Analytics</h3>
-                    <p class="text">Give users simple instrument for answering their own questions in minutes.</p>
+                    <p class="text">Trendz has a simple drag-n-drop interface for building visualizations. No technical skills required. Give users an instrument for answering their questions in minutes.</p>
                 </div>
             </div>
         </main>
@@ -83,7 +83,7 @@ description:
             <div class="content">
                 <h3 class="header">Connect Data</h3>
                 <p class="text">Connect Trendz to the ThingsBoard in few clicks with automatic Topology Discovery.</p>
-                <p class="text">Trendz works with all ThingsBoard products, including Open Source ThingsBoard Community Edition and ThingsBoard Professional Edition.</p>
+                <p class="text">Trendz works with all ThingsBoard products, including: Open Source ThingsBoard Community EditionThingsBoard Professional Edition.</p>
                 <a href="/docs/trendz/connect-thingsboard/" class="button try-pe">Learn More</a>           
             </div>
             <div class="image-block">
@@ -143,7 +143,7 @@ description:
             <p class="accent-text">Get it and learn easy</p>
             <h2 class="title">Learn fast</h2>
             <div class="btn-container">
-                <a target="_blank" href="https://www.youtube.com/playlist?list=PLYEKB_XwLCZIs-_Aoos3CdNIqSYrXk4LN" class="button try-pe">Watch Tutorials<span class="triangle-right"></span></a>
+                <a href="https://www.youtube.com/playlist?list=PLYEKB_XwLCZIs-_Aoos3CdNIqSYrXk4LN" class="button try-pe">Watch Tutorials<span class="triangle-right"></span></a>
             </div>
         </div>
         <div class="get-started">
@@ -165,7 +165,7 @@ description:
         <h1 class="main-title">Trendz analytics</h1>
         <p class="text">Our analysis and prediction is your financial result and advance growth</p>
         <div class="btn-block">
-            <a href="/pricing/?section=trendz-options&product=trendz-cloud" class="button accent-btn btn-open">Start Free</a>
+            <a href="/pricing/?section=trendz-options&product=trendz-self-managed" class="button accent-btn">Start Free</a>
             <a href="/products/trendz/trndz-request-demo" class="button try-pe">Request Demo</a>
         </div>
     </div>
