@@ -53,7 +53,7 @@ version: '3.0'
 services:
   mytrendz:
     restart: always
-    image: "thingsboard/trendz:1.10.0"
+    image: "thingsboard/trendz:1.10.0-HF1"
     ports:
       - "8888:8888"
     environment:
@@ -89,7 +89,7 @@ Where:
 - `~/.mytrendz-logs:/var/log/thingsboard`   - mounts the volume `~/.mytrendz-logs` to Trendz logs directory
 - `mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.10.0`          - docker image
+- `thingsboard/trendz:1.10.0-HF1`          - docker image
 
 
 Run following commands, before starting docker container(s), to create folders for storing data and logs.
@@ -127,7 +127,7 @@ to validate credentials.
 
 ## Upgrade Trendz Service
 
-Below is example on how to upgrade from 1.9.2 to 1.10.0
+Below is example on how to upgrade from 1.9.2 to 1.10.0-HF1
 
 
 * Create a dump of your database:
@@ -156,7 +156,7 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with 1.10.0 instead of 1.9.2:
+* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with 1.10.0-HF1 instead of 1.9.2:
 
 * Restart Trendz container
 
