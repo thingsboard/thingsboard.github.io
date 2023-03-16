@@ -725,7 +725,7 @@
         "alias": "My device alias",
         "filter": {
           "type": "entityName",
-          "resolveMultiple": true,
+          "resolveMultiple": false,
           "entityType": "DEVICE",
           "entityNameFilter": "My device"
         }
