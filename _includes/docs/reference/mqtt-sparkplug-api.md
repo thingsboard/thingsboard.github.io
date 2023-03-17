@@ -29,7 +29,7 @@ We assume that we have an **MQTT EON** with *two* **Devices** attached to this *
 *Topic*:
 - **MQTT EON**:|{**NAMESPACE**} + "/" + {**groupId**} + "/{**Payloads by Message Type**}/" + {**edgeNode**}.
 - **Device**:|{**NAMESPACE**} + "/" + {**groupId**} + "/{**Payloads by Message Type**}/" + {**edgeNode**} + "/" + {**deviceId**}.
-- **Note**: Thingsboard only uses encoding in version **B** of the Sparkplug™ MQTT message payload. For the Sparkplug™ B version of the specification, the constant must be a UTF-8 string. 
+> **Note**: Thingsboard only uses encoding in version **B** of the Sparkplug™ MQTT message payload. For the Sparkplug™ B version of the specification, the constant must be a UTF-8 string. 
   
 - for the {**NAMESPACE**} element must be |<span style="color:green">“spBv1.0”</span>
 
@@ -62,12 +62,12 @@ See general device profile [documentation](/docs/{{docsPrefix}}user-guide/device
  
 {% include images-gallery.html imageCollection="sparkplug-device-profile-created" showListImageTitles="true" %}
 
-- **Note**: Only if you want to receive metric information as attributes, you add a value to the **SparkPlug Attribute Metric Names fields**
-- **Note**: 
-1. If you plan to create a device yourself in Thingsboard to connect to a device of type Device, for it, you can either use the profile created for the device type **MQTT EON**, or create a *new device profile*.
-   For a *new profile device*, the transport configuration type can be: <span style="color:brown">MQTT</span> or <span style="color:brown">default</span>.
+> **Note**: Only if you want to receive metric information as attributes, you add a value to the **SparkPlug Attribute Metric Names fields**
 
-2. If you not plan to create a device yourself in Thingsboard to connect to a device of type Device, the first time you connect to a device of type Device, Thingsboard will automatically create both the Device itself with the name "deviceId" and a profile for it with the name equals {**MQTT EON device profile** name} + “**-node**”.
+> **Note**: 
+>   1. If you plan to create a device yourself in Thingsboard to connect to a device of type Device, for it, you can either use the profile created for the device type **MQTT EON**, or create a *new device profile*.
+       For a *new profile device*, the transport configuration type can be: <span style="color:brown">MQTT</span> or <span style="color:brown">default</span>.
+>   2. If you not plan to create a device yourself in Thingsboard to connect to a device of type Device, the first time you connect to a device of type Device, Thingsboard will automatically create both the Device itself with the name "deviceId" and a profile for it with the name equals {**MQTT EON device profile** name} + “**-node**”.
 
 ### Step 2. Create device
 
@@ -83,7 +83,7 @@ If **Device** type device with this device ID was not created in Thingsboard bef
 
 ### Step 3. MQTT Sparkplug Client connected
 !!! ToDo change Repo
-- **Note**: To run Sparkplug Client and test you can use [SparkplugB Client Emulator](https://github.com/nickAS21/sparkplug).
+> **Note**: To run Sparkplug Client and test you can use [SparkplugB Client Emulator](https://github.com/nickAS21/sparkplug).
 ```shell
 git clone git@github.com:nickAS21/sparkplug.git
 ```
@@ -346,7 +346,7 @@ For example, to REBOOT:
 
 - In response, the device should restart and send metrics [*BIRTH](#publish-message-nbirth)
 
-- **Note**: The NCMD/DCMD commands topic provides the Topic Namespace used to send commands to any connected EoN nodes/Device.
+> **Note**: The NCMD/DCMD commands topic provides the Topic Namespace used to send commands to any connected EoN nodes/Device.
   This means sending an updated metric value to an associated metric included in the [*BIRTH metric list](#publish-message-nbirth).
 
 So, the following RPC command need to be sent to ThingsBoard:
@@ -393,7 +393,7 @@ Example of plain RPC call example for REST API:
 
 Example change value of the metric with corresponding input in the debug terminal:
 
--**Note**: When using **"New RPC debug terminal"** you need to change the **RPC request timeout (ms)*** parameter = 5000
+> **Note**: When using **"New RPC debug terminal"** you need to change the **RPC request timeout (ms)*** parameter = 5000
 
 ```ruby
 NCMD {"metricName":"Node Control/Rebirth","value":true}
