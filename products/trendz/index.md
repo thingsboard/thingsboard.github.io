@@ -2,6 +2,29 @@
 layout: trendz
 title: Trendz BI & Analytics Platform
 description: 
+
+cloudPlan:
+    0:
+        image: /images/trendz/cloud-1.png
+        title: 'Log in to ThingsBaord Cloud account and select “Plan and Billing” menu option. Press “Update Plan” button'
+    1:
+        image: /images/trendz/cloud-2.png
+        title: 'Choose “ThingsBoard + Trendz” and select the most suitable plan for you'        
+    2:
+        image: /images/trendz/cloud-3.png
+        title: 'Reload the page to see new “Trendz Analytics” option in your ThingsBoard Menu'
+
+selfManagedPlan:
+    0:
+        image: /images/trendz/self-managed-1.png
+        title: 'Log into Licence Portal and create new Trendz Analytics Subscription'
+    1:
+        image: /images/trendz/self-managed-2.png
+        title: 'Get your license key'
+    2:
+        image: /images/trendz/self-managed-3.png
+        title: 'Follow the instructions to install Trendz the instructions to install Trendz Analytics to your server'
+
 ---
 
 <section class="pe-features trendz-features">
@@ -148,12 +171,12 @@ description:
         </div>
         <div class="get-started">
             <div class="get-started-container">
-                <h3 class="header">Getting started for Cloud Members</h3>
+                <h3 class="header">Trendz Cloud</h3>
                 <p class="text">Once your upgrade your plan - you will find Trendz Analytics tab in your Things Board menu</p>
                 <a href="https://thingsboard.cloud/billing" class="link">Upgrade your Things Board Plan</a>
             </div>
             <div class="get-started-container">
-                <h3 class="header">Getting started for Self-hosted Members</h3>
+                <h3 class="header">Trendz Self-Hosted</h3>
                 <p class="text">Use our step-by-step guide to install Trendz Analytics to your server </p>
                 <a href="/docs/trendz/install/installation-options/" class="link">Install Trendz to your server</a>
             </div>
@@ -165,7 +188,7 @@ description:
         <h1 class="main-title">Trendz analytics</h1>
         <p class="text">Our analysis and prediction is your financial result and advance growth</p>
         <div class="btn-block">
-            <a href="/pricing/?section=trendz-options&product=trendz-cloud" class="button accent-btn btn-open">Start Free</a>
+            <a href="#" class="button accent-btn btn-open" onClick="openTrendzWizard(event, 'cloud-content')">Start Free</a>
             <a href="/products/trendz/trndz-request-demo" class="button try-pe">Request Demo</a>
         </div>
     </div>
