@@ -5,74 +5,24 @@ description:
 ---
 
 <section class="pe-features trendz-features">
-    <div class="main-bg">
+    <div> 
         <main>
-            <div class="content">
-                <h3 class="header"><span class="cBlue" >Predict failures and forecast utilization</span></h3>
-                <p>For better decision making, resource planning and reducing cost business requires answers to 3 main questions:
-                   <b>What</b> will happen, <b>When</b>, and <b>Why</b>?</p>
-                   <p>Trendz provides an answer</p>
-                <a href="/docs/trendz/prediction/" class="button cBlue try-button">Start Analysis</a>           
-            </div>
-            <div class="image-block">
-                <div class="image-wrapper">
-                    <video poster="/images/trendz/trndz-home-pred.png" autoplay="" loop="" preload="auto" muted="">
-                    </video>
+            <div class="content-list">
+                <div class="content-block">
+                    <h3 class="header">Anomaly detection</h3>
+                    <p class="text">Find and address issues that require immediate attention before they become a problem.</p>
                 </div>
-            </div>
-        </main>
-    </div> 
-    <div class="main-bg">
-        <main>
-            <div class="content">
-                <h3 class="header"><span class="cBlue" >Find outliers and patterns fast</span></h3>
-                <p>With built-in visualizations and self-service interface, you can see your Devices and Assets data in a way you want it to be. 
-                        In combination with the human ability to identify visual patterns, Trendz quickly gets you from data to insights and actions.</p>
-                <a href="/docs/trendz/" class="button cBlue try-button">Learn More</a>           
-            </div>
-            <div class="image-block">
-                <div class="image-wrapper">
-                    <video poster="/images/trendz/preview/heatmap-preview.png" autoplay="" loop="" preload="auto" muted="">
-                        <source src="https://tb-videos.s3-us-west-1.amazonaws.com/heatmap_v3.webm" type="video/webm">                
-                    </video>
+                <div class="content-block">
+                    <h3 class="header">Forecasting</h3>
+                    <p class="text">Plan and optimize operations with insights into future events and system behavior.</p>
                 </div>
-            </div>
-        </main>
-    </div>
-    <div class="main-bg">
-            <main>
-                <div class="content">
-                    <h3 class="header"><span class="cBlue" >Define KPI using calculated fields</span></h3>
-                    <p>Calculated fields are one of the most powerful features for KPI monitoring and prediction. 
-                    Based on the input data, calculated fields allow you to run statistical functions and create 
-                    new data items by applying calculations.</p>
-                    <a href="/docs/trendz/calculated-fields/" class="button cBlue try-button">Start Analysis</a>           
+                <div class="content-block">
+                    <h3 class="header">Predictive maintenance</h3>
+                    <p class="text">Identify when a machine is likely to fail, and take preventive measures to avoid downtime</p>
                 </div>
-                <div class="image-block">
-                    <div class="image-wrapper">
-                        <video poster="/images/trendz/state-simple-view.png" autoplay="" loop="" preload="auto" muted="">
-                        </video>
-                    </div>
-                </div>
-            </main>
-        </div> 
-    <div class="main-bg">
-        <main>
-            <div class="content">
-                <h3 class="header"><span class="cBlue">Connect Data</span></h3>
-                <p>Connect Trendz to the ThingsBoard in few clicks with automatic Topology Discovery.</p>
-                <p>
-                    Trendz works with all ThingsBoard products, including:<br>
-                    <b>Open Source ThingsBoard Community Edition</b><br>
-                    <b>ThingsBoard Professional Edition</b>
-                </p>
-                <a href="/docs/trendz/connect-thingsboard/" class="button cBlue try-button">Learn More</a>
-            </div>
-            <div class="image-block">
-                <div class="image-wrapper">
-                    <video poster="/images/trendz/preview/table-preview.png" autoplay="" loop="" preload="auto" muted="">
-                        <source src="https://tb-videos.s3-us-west-1.amazonaws.com/table_v3.webm" type="video/webm">
-                    </video>
+                <div class="content-block">
+                    <h3 class="header">Self-service Analytics</h3>
+                    <p class="text">Give users simple instrument for answering their own questions in minutes.</p>
                 </div>
             </div>
         </main>
@@ -80,18 +30,17 @@ description:
     <div class="main-bg">
         <main>
             <div class="content">
-                <h3 class="header"><span class="cBlue">Plot and aggregate your data with any granularity</span></h3>
-                <p>
-                    See your data, like total resource consumption on any levels starting from country level and deep dive into concrete meter level.
-                    Clear dataset in real-time by grouping and filtering on dimensions that you are interested in.
-                </p>
-                <a href="/docs/trendz/data-grouping-aggregation/" class="button cBlue try-button">Start Analysis</a>
+                <h3 class="header">Predict failures and forecast utilization</h3>
+                <div class="mobile-img">
+                    <img src="/images/trendz/predict-screen.png">
+                </div>
+                <p class="text">For better decision making, resource planning and reducing cost business requires answers to 3 main questions: What will happen, When, and Why?</p>
+                <p class="accent-text">Trendz provides an answer</p>
+                <a href="/docs/trendz/prediction/" class="button try-pe">Start Analysis</a>           
             </div>
-            <div class="image-block">
-                <div class="image-wrapper">
-                    <video poster="/images/trendz/preview/corelation-preview.png" autoplay="" loop="" preload="auto" muted="">
-                        <source src="https://tb-videos.s3-us-west-1.amazonaws.com/corelation_v3.webm" type="video/webm">
-                    </video>
+            <div class="image-block screenshot-block">
+                <div class="image-wrapper screenshot" id="prediction">
+                    <img src="/images/trendz/predict-screen.png">
                 </div>
             </div>
         </main>
@@ -99,24 +48,87 @@ description:
     <div class="main-bg">
         <main>
             <div class="content">
-                <h3 class="header"><span class="cBlue">Share securely</span></h3>
-                <p>
-                    Share visualized insights with your users by:
-                </p>
-                <ul style="list-style-type: circle;">
-                    <li>Adding them on ThingsBoard dashboards</li>
-                    <li>Embedding on 3rd party web sites</li>
-                    <li>Exporting data into spreadsheets and images</li>
-                </ul>
-                <b>All with respect to ThingsBoard user permissions</b>
-                <br>                
-                <br>                
-                <a href="/docs/trendz/embed-visuals/" class="button cBlue try-button">Learn More</a>
+                <h3 class="header">Define KPI using calculated fields</h3>
+                <p class="text">Calculated fields are one of the most powerful features for KPI monitoring and prediction. Based on the input data, calculated fields allow you to run statistical functions and create new data items by applying calculations.</p>
+                <a href="/docs/trendz/calculated-fields/" class="button try-pe">Learn More</a>           
             </div>
             <div class="image-block">
-                <div class="image-wrapper">
-                    <video poster="/images/trendz/preview/dashboard-preview.png" autoplay="" loop="" preload="auto" muted="">
-                    </video>
+                <div class="image-wrapper chart-wrapper pie-chart">
+                    <div class="donut-chart chart-icon"></div>
+                    <div class="sphere chart-icon"></div>
+                    <div class="bar-chart chart-icon"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="main-bg">
+        <main>
+            <div class="content">
+                <h3 class="header">Detection Anomalies</h3>
+                <div class="mobile-img">
+                    <img src="/images/trendz/anomalies-screen.png">
+                </div>
+                <p class="text">Detect anomalies with automated tools based on built-in machine learning algorithms. Prioritise them and focus on real problems with anomaly scoring.</p>
+                <a href="/docs/trendz/anomaly/anomaly-detection-overview/" class="button try-pe">Start Analysis</a>           
+            </div>
+            <div class="image-block screenshot-block">
+                <div class="image-wrapper screenshot" id="anomalies">
+                    <img src="/images/trendz/anomalies-screen.png">
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="main-bg">
+        <main class="accent-circle">
+            <div class="content">
+                <h3 class="header">Connect Data</h3>
+                <p class="text">Connect Trendz to the ThingsBoard in few clicks with automatic Topology Discovery.</p>
+                <p class="text">Trendz works with all ThingsBoard products, including Open Source ThingsBoard Community Edition and ThingsBoard Professional Edition.</p>
+                <a href="/docs/trendz/connect-thingsboard/" class="button try-pe">Learn More</a>           
+            </div>
+            <div class="image-block">
+                <div class="image-wrapper chart-wrapper multiple-chart">
+                    <div class="sphere right-sphere chart-icon"></div>
+                    <div class="sphere left-sphere chart-icon"></div>
+                    <div class="sphere bottom-sphere chart-icon"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="main-bg">
+        <main>
+            <div class="content">
+                <h3 class="header">Share securely</h3>
+                <div class="mobile-img">
+                    <img src="/images/trendz/dashboard-screen.png">
+                </div>
+                <div class="text">
+                    <span>Share visualized insights with your users by:</span>
+                    <ul>
+                        <li>Adding them on ThingsBoard dashboards</li>
+                        <li>Embedding on 3rd party web sites</li>
+                        <li>Exporting data into spreadsheets and images</li>
+                    </ul>
+                </div>
+                <p class="text">All with respect to ThingsBoard user permissions.</p>
+                <a href="/docs/trendz/embed-visuals/" class="button try-pe">Learn More</a>           
+            </div>
+            <div class="image-block screenshot-block">
+                <div class="image-wrapper screenshot" id="dashboard">
+                    <img src="/images/trendz/dashboard-screen.png">
+                </div>
+            </div>
+        </main>
+    </div>
+    <div class="main-bg">
+        <main>
+            <div class="content">
+                <h3 class="header">Plot and aggregate your data with any granularity</h3>
+                <p class="text">See your data, like total resource consumption on any levels starting from country level and deep dive into concrete meter level. Clear dataset in real-time by grouping and filtering on dimensions that you are interested in.</p>
+                <a href="/docs/trendz/data-grouping-aggregation/" class="button try-pe">Start Analysis</a>           
+            </div>
+            <div class="image-block accent-circle accent-circle-center">
+                <div class="image-wrapper chart-wrapper line-chart">
                 </div>
             </div>
         </main>
@@ -125,58 +137,36 @@ description:
 
 <div id="deployment-options"></div>
 
-<div class="more-features">
-    <div class="more-features__head">
-        Get even more from Trendz
-    </div>
-    <div class="elements">
-        <div class="more-features__element js-bounceLeft">
-            <div class="more-features-elements__icon real-time"></div>
-            <div class="more-features__separation-block">
-                <div class="more-features-element__head">
-                    Explore in any dimensions, in real-time
-                </div>
-                <div class="more-features__text">
-                    Trendz automatically detects all relations inside your data so you can explore the dataset in any direction.
-                </div>
+<div class="main-bg accent-bg">
+    <main>
+        <div class="title-block">
+            <p class="accent-text">Get it and learn easy</p>
+            <h2 class="title">Learn fast</h2>
+            <div class="btn-container">
+                <a target="_blank" href="https://www.youtube.com/playlist?list=PLYEKB_XwLCZIs-_Aoos3CdNIqSYrXk4LN" class="button try-pe">Watch Tutorials<span class="triangle-right"></span></a>
             </div>
         </div>
-        <div class="more-features__element js-bounceRight">
-            <div class="more-features-elements__icon data"></div>
-            <div class="more-features__separation-block">
-                <div class="more-features-element__head">
-                    Optimized for big Data
-                </div>
-                <div class="more-features__text">
-                    All computations and aggregations performed on the Trendz server using asynchronous data streams. It guarantees fast request processing and data visualization no matter what client device used.
-                </div>
+        <div class="get-started">
+            <div class="get-started-container">
+                <h3 class="header">Getting started for Cloud Members</h3>
+                <p class="text">Once your upgrade your plan - you will find Trendz Analytics tab in your Things Board menu</p>
+                <a href="https://thingsboard.cloud/billing" class="link">Upgrade your Things Board Plan</a>
+            </div>
+            <div class="get-started-container">
+                <h3 class="header">Getting started for Self-hosted Members</h3>
+                <p class="text">Use our step-by-step guide to install Trendz Analytics to your server </p>
+                <a href="/docs/trendz/install/installation-options/" class="link">Install Trendz to your server</a>
             </div>
         </div>
-        <div class="more-features__element js-bounceLeft">
-            <div class="more-features-elements__icon analytics"></div>
-            <div class="more-features__separation-block">
-                <div class="more-features-element__head">
-                    Self-service Analytics
-                </div>
-                <div class="more-features__text">
-                    Trendz has a simple drag-n-drop interface for building visualizations. No technical skills required. Give your Users an instrument for answering their own questions in minutes.
-                </div>
-            </div>
-        </div>
-        <div class="more-features__element js-bounceRight">
-            <div class="more-features-elements__icon deployment"></div>
-            <div class="more-features__separation-block">
-                <div class="more-features-element__head">
-                    Flexible deployment options
-                </div>
-                <div class="more-features__text">
-                    Deploy Trendz Analytics Platform in the cloud or on-premises. Use commodity hardware to scale out horizontally by adding new nodes to your cluster when it is needed.
-                </div>
-            </div>
-        </div>
-    </div>
+    </main>
 </div>
-
-<div class="try-button-block">
-    <a href="/pricing/?section=trendz-options&product=trendz-self-managed" class="button try-trendz">Try Trendz</a>
+<div class="main-bg container-center">
+    <div class="content accent-circle">
+        <h1 class="main-title">Trendz analytics</h1>
+        <p class="text">Our analysis and prediction is your financial result and advance growth</p>
+        <div class="btn-block">
+            <a href="/pricing/?section=trendz-options&product=trendz-cloud" class="button accent-btn btn-open">Start Free</a>
+            <a href="/products/trendz/trndz-request-demo" class="button try-pe">Request Demo</a>
+        </div>
+    </div>
 </div>
