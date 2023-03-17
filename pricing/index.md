@@ -4,6 +4,29 @@ title: Pricing
 description: ThingsBoard Products Pricing
 defaultActivePricingSection: thingsboard-pe-options
 
+
+cloudPlan:
+    0:
+        image: /images/trendz/cloud-1.png
+        title: 'Log in to ThingsBaord Cloud account and select “Plan and Billing” menu option. Press “Update Plan” button'
+    1:
+        image: /images/trendz/cloud-2.png
+        title: 'Choose “ThingsBoard + Trendz” and select the most suitable plan for you'        
+    2:
+        image: /images/trendz/cloud-3.png
+        title: 'Reload the page to see new “Trendz Analytics” option in your ThingsBoard Menu'
+
+selfManagedPlan:
+    0:
+        image: /images/trendz/self-managed-1.png
+        title: 'Log into Licence Portal and create new Trendz Analytics Subscription'
+    1:
+        image: /images/trendz/self-managed-2.png
+        title: 'Get your license key'
+    2:
+        image: /images/trendz/self-managed-3.png
+        title: 'Follow the instructions to install Trendz the instructions to install Trendz Analytics to your server'
+
 ---
 
 <div class="container">
@@ -471,12 +494,7 @@ defaultActivePricingSection: thingsboard-pe-options
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <button class="btn-blue btn-pricing" 
-                                   onClick="getLicense(event,
-                                    false,
-                                    '31307df0-11f6-11ea-951e-b77b877a367b',
-                                    '2985f1a0-7afd-11ea-951e-b77b877a367b',
-                                    'Trendz Analytics Prototype', 'R1LKL1BWAB', false)">
+                                <button class="btn-blue btn-pricing" onClick="openTrendzWizard(event, 'self-managed-content', 'prototype')">
                                     Try 30 days for free
                                 </button>
                             </div>
@@ -506,11 +524,7 @@ defaultActivePricingSection: thingsboard-pe-options
                             </h4>
                             <div class="row justify-content-center">
                                 <button class="btn-blue btn-pricing" 
-                                   onClick="getLicense(event,
-                                    false,
-                                    '31307df0-11f6-11ea-951e-b77b877a367b',
-                                    '018b7520-7afe-11ea-951e-b77b877a367b',
-                                    'Trendz Analytics StartUp', 'R1LKL1BWAB', false)">
+                                   onClick="openTrendzWizard(event, 'self-managed-content', 'startup')">
                                     Try 30 days for free
                                 </button>
                             </div>
@@ -540,11 +554,7 @@ defaultActivePricingSection: thingsboard-pe-options
                             </h4>
                             <div class="row justify-content-center">
                                 <button class="btn-blue btn-pricing" 
-                                    onClick="getLicense(event,
-                                    false,
-                                    '31307df0-11f6-11ea-951e-b77b877a367b',
-                                    '6e3bb4f0-7afe-11ea-951e-b77b877a367b',
-                                    'Trendz Analytics Business', 'R1LKL1BWAB', false)">
+                                    onClick="openTrendzWizard(event, 'self-managed-content', 'business')">
                                     Try 30 days for free
                                 </button>
                             </div>
@@ -620,7 +630,7 @@ defaultActivePricingSection: thingsboard-pe-options
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/billing">
+                                <a class="btn-blue btn-pricing" href="#" onClick="openTrendzWizard(event, 'cloud-content')">
                                     Get Started
                                 </a>
                             </div>
@@ -650,7 +660,7 @@ defaultActivePricingSection: thingsboard-pe-options
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/billing">
+                                <a class="btn-blue btn-pricing" href="#" onClick="openTrendzWizard(event, 'cloud-content')">
                                     Get Started
                                 </a>
                             </div>
@@ -680,7 +690,7 @@ defaultActivePricingSection: thingsboard-pe-options
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/billing">
+                                <a class="btn-blue btn-pricing" href="#" onClick="openTrendzWizard(event, 'cloud-content')">
                                     Get Started
                                 </a>
                             </div>
