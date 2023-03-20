@@ -172,4 +172,4 @@ In case you wish to integrate existing **LoRaWAN, NB IoT, or SigFox** sensors in
 
 <br/>
 
-If you want to add your device to Devices Library, you can follow next [guidelines](/docs/{{page.docsPrefix}}devices-library/guidelines/).
+<a href="/docs/{{page.docsPrefix}}devices-library/guidelines/" class="n-button add-device">Add your device</a>
