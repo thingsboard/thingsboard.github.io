@@ -224,12 +224,9 @@
                 }
             });
 
-            var allCodeBlocksElements = $(".language-cpp");
+            var allCodeBlocksElements = $(".highlighter-rouge");
             allCodeBlocksElements.each(function (i) {
                 var codeBlock = $(this);
-                if (!codeBlock.hasClass('highlighter-rouge')) {
-                    codeBlock = codeBlock.find('.highlighter-rouge');
-                }
                 var pre = codeBlock.find('pre').first();
                 if (pre.prop('scrollHeight') > 2775) {
                     codeBlock.find('.rouge-gutter').css("width", "60px");
