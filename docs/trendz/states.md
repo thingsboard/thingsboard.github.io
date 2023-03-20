@@ -9,6 +9,12 @@ description: Trendz States
 * TOC
 {:toc}
 
+&nbsp;
+<div id="video">  
+    <div  id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/FrubZ-odF1s" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
 
 ## Simple state
 
@@ -24,11 +30,11 @@ Let's define our states:
 
 Here is condition that chack does machine in **Low Production** state or not:
 {% highlight javascript %}
-    double okRate = none(Machine.okDetails);
+    var okRate = none(Machine.okDetails);
     return okRate < 75;
 {% endhighlight %}  
 
-Here steps required to do this:
+Here are steps required to do this:
 * Create **Bar** chart
 * Add **Date(RAW)** to **X-axis**
 * Add **State** field and change title to **Low Production**
@@ -65,8 +71,8 @@ much time spent in critical state.
 
 Here is a formal definition of **Critical** state:
 {% highlight javascript %}
-    double pressure = none(Machine.pressure);
-    double speed = none(Machine.rotationSpeed);
+    var pressure = none(Machine.pressure);
+    var speed = none(Machine.rotationSpeed);
     return pressure > 700 && speed < 35;
 {% endhighlight %}  
 
@@ -95,7 +101,7 @@ Here is a list of supported aggregation functions for state fields:
 Before applying transformation you need to get a reference to the original field value. Here is an example how to do this:
 
 ```
-double temp = none(Machine.temperature);
+var temp = none(Machine.temperature);
 ```
 
 * none() - aggregation function
@@ -109,8 +115,8 @@ If original field value is an attribute, entity name or owner name - you should 
 This template can be used for comparing text fields:
 
 ```
-String currentState = none(machine.status);
-return "running".equals(currentState);
+var currentState = none(machine.status);
+return "running" === currentState;
 ```
 
 ## Supported Aggregation Functions
@@ -143,8 +149,7 @@ but real state fields that are added to View configuration are not affected.
 
 ## Language
 
-In most cases amount of data analysed during state calculation is big enough. To guarantee performance function should be defined 
-using Java language (Java 8).
+State fields use Javascript as a language for writing transformation function. Inner Engine provide 100% support of ECMAScript 5.1
 
 ## Next Steps
 

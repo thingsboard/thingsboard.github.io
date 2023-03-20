@@ -23,10 +23,9 @@ The goal of this tutorial is to demonstrate the basic usage of Trendz Analytics.
 ## Video Tutorial
 
 &nbsp;
-
 <div id="video">  
     <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/CDt-B5_JiIs" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/8a4cPI-XOkI" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
 

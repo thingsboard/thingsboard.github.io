@@ -19,3 +19,5 @@ gem "jekyll-seo-tag", "2.8.0"
 gem "jekyll-github-metadata", "2.13.0"
 gem "listen", "3.0.6"
 gem "activesupport", "5.2.8.1"
+
+gem "webrick", "~> 1.8"
