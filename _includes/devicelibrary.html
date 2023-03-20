@@ -143,7 +143,7 @@
         <div id="content">
             {{ content }}
         </div>
-        {% include footer.html %}
+        {% include_cached footer.html %}
     </div>
 </section>
 
@@ -480,7 +480,7 @@
 
 {% endif %}
 
-{% include cookie-consent.html %}
+{% include_cached cookie-consent.html %}
 
 </body>
 </html>

@@ -17,7 +17,7 @@
 <!Doctype html>
 <html id="docs" class="{{siteData[foundTOC].bigheader}} {{productInfo.tag}}">
 
-{% include head-header.html docsTag=docsTag %}
+{% include_cached head-header.html docsTag=docsTag %}
 
 <div id="searchBox">
     <input type="text" id="search" placeholder="Search" onkeydown="if (event.keyCode==13) window.location.replace('{{ searchPath }}' + this.value)">
@@ -139,7 +139,7 @@
       <div id="content">
           {{ content }}
       </div>
-      {% include footer.html %}
+      {% include_cached footer.html %}
   </div>
 </section>
 
@@ -376,7 +376,7 @@
 
 {% endif %}
 
-{% include cookie-consent.html %}
+{% include_cached cookie-consent.html %}
 
 </body>
 </html>

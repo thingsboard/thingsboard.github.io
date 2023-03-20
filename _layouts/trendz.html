@@ -38,7 +38,7 @@
 
 {% include trendz-wizard.html defaultPlan="business" %}
 
-{% include footer.html %}
+{% include_cached footer.html %}
 
 {% if site.data[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}
 <button class="flyout-button" onclick="tb.toggleToc()"></button>
@@ -138,7 +138,7 @@
 
 </script>
 
-{% include cookie-consent.html %}
+{% include_cached cookie-consent.html %}
 
 </body>
 </html>

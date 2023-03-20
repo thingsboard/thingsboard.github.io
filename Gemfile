@@ -17,6 +17,7 @@ gem "jekyll-paginate", "1.1.0"
 gem "jekyll-coffeescript", "1.1.1"
 gem "jekyll-seo-tag", "2.8.0"
 gem "jekyll-github-metadata", "2.13.0"
+gem 'jekyll-include-cache'
 gem "listen", "3.0.6"
 gem "activesupport", "5.2.8.1"
 

@@ -3,7 +3,7 @@
 <!Doctype html>
 <html id="common" class="use-cases">
 
-{% include head-header.html %}
+{% include_cached head-header.html %}
 
 <section id="hero" class="light-text">
 </section>
@@ -17,7 +17,7 @@
     </div>
 </section>
 
-{% include footer.html %}
+{% include_cached footer.html %}
 
 <script>
     jqueryDefer(function () {
@@ -68,7 +68,7 @@
     }
 </script>
 
-{% include cookie-consent.html %}
+{% include_cached cookie-consent.html %}
 
 </body>
 </html>
