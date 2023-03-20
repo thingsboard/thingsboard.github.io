@@ -14,7 +14,9 @@
 {% endif %}
 {% assign foundProduct = site.data.products | where: "tag", docsTag %}
 {% assign productInfo = foundProduct[0] %}
-{% for thistoc in siteData.globals.tocs %}{% if foundTOC %}{% break %}{% else %}{% assign tree = siteData[thistoc].toc %}{% include tocsearch.html %}{% endif %}{% endfor %}
+
+{% assign foundTOC = "devices-library" %}
+
 {% for override in siteData.overrides.overrides %}{% if page.path contains override.path %}{% assign notitle = "true" %}{% endif %}{% endfor %}
 {% if siteData[foundTOC].notitle == "true" or page.notitle == "true" %}{% assign notitle = "true" %}{% endif %}
 
