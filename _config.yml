@@ -68,7 +68,6 @@ permalink: pretty
 plugins:
   - jekyll-redirect-from
   - jekyll-seo-tag
-  - jekyll-include-cache
 
 collections:
   careers:
