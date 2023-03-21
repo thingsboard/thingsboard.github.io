@@ -11,6 +11,10 @@ In case you have not found out how to connect your device using the diagram or s
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
+#### Connecting well-known devices
+
+To explore how to connect widely used devices to ThingsBoard, you can check [Devices library](/docs/{{docsPrefix}}devices-library) section.  
+
 #### Built-in transport protocols
 
 The built-in transport protocol implementations are applicable for devices that communicate over those protocols and are able to connect directly to ThingsBoard.
