@@ -408,11 +408,11 @@ void loop() {
   tb.loop();
 }
 ```
-{:.copy-code}
+{:.copy-code.expandable-20}
 
 In the code, replace placeholders with your WiFi network SSID, password, ThingsBoard device access token.  
 
-Necessary variables for connection:  
+Necessary variables for connection:    
 
 | Variable name | Default value | Description | 
 |-|-|-|

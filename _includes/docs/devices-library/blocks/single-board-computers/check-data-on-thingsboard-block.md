@@ -30,7 +30,7 @@ Also, let’s display OrangePI attributes and telemetry on a dashboard. For this
 your custom widgets or use a ready-made dashboard and simply import it.
  
 {% capture minicomputerstogglespec %}
-New Dashboard<small>Recommended</small>%,%accessToken%,%templates/device-library/minicomputers/device-new-dashboard.md%br%
-Imported Dashboard<small>No security</small>%,%anonymous%,%templates/device-library/minicomputers/device-imported-dashboard.md{% endcapture %}
+Imported Dashboard%,%importedDashboard%,%templates/device-library/single-board-computers/device-imported-dashboard.md%br%
+New Dashboard%,%newDashboard%,%templates/device-library/single-board-computers/device-new-dashboard.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="minicomputersDashboard" toggle-spec=minicomputerstogglespec %}  
