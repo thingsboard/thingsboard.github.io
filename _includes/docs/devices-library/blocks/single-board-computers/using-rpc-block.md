@@ -48,5 +48,4 @@ Finally, let’s try to push our button and force getting OrangePI data:
 
 Also, if you did everything right, you should see the following console output:
 
-> {'method': 'getTelemetry', 'params': {}}
->
+`{'method': 'getTelemetry', 'params': {}}`

@@ -1,3 +1,5 @@
+### Import dashboard
+
 You are able to import a dashboard in JSON format. To import a dashboard, you should go to the Dashboard group and click
  on the “+” button in the upper right corner of the page and choose “Import dashboard”. The dashboard import window 
 should pop up, and you will be prompted to upload the JSON file and click “Import”.

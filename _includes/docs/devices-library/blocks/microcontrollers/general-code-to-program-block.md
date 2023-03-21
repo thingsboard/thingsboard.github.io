@@ -288,7 +288,7 @@ void loop() {
 }
 
 ```
-{:.copy-code}
+{:.copy-code.expandable-20}
 
 In the code, replace placeholders with your WiFi network SSID, password, ThingsBoard device access token.  
 
