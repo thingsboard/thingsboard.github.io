@@ -1,0 +1,481 @@
+{% assign siteData = site.data %}
+{% assign searchPath = "/docs/search/?q=" %}
+{% if include.docsTag %}
+{% assign docsTag = include.docsTag %}
+{% elsif page.docsTag %}
+{% assign docsTag = page.docsTag %}
+{% endif %}
+{% if docsTag %}
+   {% assign siteData = site.data[docsTag] %}
+   {% assign searchPath = "/docs/" | append: docsTag %}
+   {% assign searchPath = searchPath | append: "/search/?q=" %}
+{% else %}
+   {% assign docsTag = "ce" %}
+{% endif %}
+{% assign foundProduct = site.data.products | where: "tag", docsTag %}
+{% assign productInfo = foundProduct[0] %}
+{% for thistoc in siteData.globals.tocs %}{% if foundTOC %}{% break %}{% else %}{% assign tree = siteData[thistoc].toc %}{% include tocsearch.html %}{% endif %}{% endfor %}
+{% for override in siteData.overrides.overrides %}{% if page.path contains override.path %}{% assign notitle = "true" %}{% endif %}{% endfor %}
+{% if siteData[foundTOC].notitle == "true" or page.notitle == "true" %}{% assign notitle = "true" %}{% endif %}
+
+<!Doctype html>
+<html id="docs" class="{{siteData[foundTOC].bigheader}} {{productInfo.tag}}">
+
+{% include head-header.html docsTag=docsTag %}
+
+<div id="searchBox">
+    <input type="text" id="search" placeholder="Search" onkeydown="if (event.keyCode==13) window.location.replace('{{ searchPath }}' + this.value)">
+    <button class="searchButton"></button>
+</div>
+
+<div class="products-selector">
+    <div class="product-info">
+        <div class="product-title">
+            {{productInfo.title}}
+        </div>
+    </div>
+    <div class="products">
+        {% for product in site.data.products %}
+        {% include find-product-url.html %}
+        <a href="{{productUrl}}" class="product{% if product.tag == docsTag %} active{% endif %}">{{product.title}}</a>
+        {% endfor %}
+    </div>
+</div>
+<!--  HERO  -->
+<section id="hero">
+  <div id="hero-content">
+    <div id="vendorStrip">
+      <div id="docsList">
+          <ul>
+            {% for headertoc in siteData.globals.docs-header %}
+              {% assign toc = siteData[headertoc.toc] %}
+              {% assign active = "false" %}
+              {% if siteData[foundTOC].bigheader == toc.bigheader %}
+                {% assign active = "true" %}
+                {% assign activeHeaderToc = headertoc %}
+              {% endif %}
+              <li>
+                  <a href="{{ toc.toc[0].path }}" {% if active == "true" %}class="YAH"{% endif %}>{{ headertoc.title }}</a>
+                  {% if active == "true" %}
+                     <div class="indicator"><div class="head-arrow"></div><div class="line"></div><div class="sub-background"></div></div>
+                  {% endif %}
+              </li>
+            {% endfor %}
+          </ul>
+          <div id="docsBreadcrumbs">
+              {% if foundTOC %}
+                  {% assign tocSections = "" | split: ',' %}
+                  {% assign tree = siteData[foundTOC].toc %}
+                  {% assign tocSections = tocSections | push: activeHeaderToc %}
+                  {% for item in tree %}
+                      {% if item.path == page.url %}
+                        {% if tree.first != item %}
+                            {% assign tocSections = tocSections | push: item %}
+                        {% endif %}
+                        {% break %}
+                      {% elsif item.section %}
+                         {% assign tocSections = tocSections | push: item %}
+                         {% assign tree = item.section %}
+                         {% include breadcrumbs.html %}
+                         {% if foundItem %}
+                            {% break %}
+                         {% else %}
+                            {% assign tocSections = tocSections | pop %}
+                         {% endif %}
+                      {% endif %}
+                  {% endfor %}
+                  {% for section in tocSections %}
+                    <span class="item">{{ section.title }}</span>
+                    {% if tocSections.last != section %}
+                        <span class="divider">></span>
+                    {% endif %}
+                  {% endfor %}
+              {% else %}
+                <span class="item">{{ title }}</span>
+              {% endif %}
+          </div>
+      </div>
+    </div>
+  </div>
+</section>
+<div id="docsNav">
+    <div class="docItems">
+        {% for headertoc in siteData.globals.docs-header %}
+            {% assign toc = siteData[headertoc.toc] %}
+            {% if siteData[foundTOC].bigheader == toc.bigheader %}
+                <div class="pi-accordion">
+                    {% assign tree = siteData[foundTOC].toc %}{% include tree.html %}
+                </div>
+            {% else %}
+                <a class="toc" href="{{ toc.toc[0].path }}" >{{ headertoc.title }}</a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{% assign docContentClassList='' %}
+{% if siteData[foundTOC].hidetoc == "true" or page.hidetoc == "true" %}
+{% assign docContentClassList = docContentClassList | append: 'noToc' %}
+{% endif %}
+
+{% assign docContentClassList = docContentClassList | append: ' hasTocContent' %}
+{% assign hasTocContent = "false" %}
+{% if content contains '<ul id="markdown-toc"' %}
+    {% assign hasTocContent = "true" %}
+{% endif %}
+
+<section id="encyclopedia">
+    <div id="device-filters">
+        <div class="header">
+            <div class="indicator"></div>
+            <div class="title">Devices Library</div>
+        </div>
+        {% include device-filters.html %}
+    </div>
+    <div id="docsContent" class="{{ docContentClassList }}">
+        <div id="table-of-contents">
+            {% if hasTocContent == "true" %}
+            <h4>On this page</h4>
+            {% endif %}
+        </div>
+        <div id="top-spacer"></div>
+        {% if notitle != "true" %}<h1>{{ title }}</h1>{% endif %}
+        <div id="content">
+            {{ content }}
+        </div>
+        {% include footer.html %}
+    </div>
+</section>
+
+<style>
+  .cse .gsc-control-cse, .gsc-control-cse {
+    padding: 0;
+  }
+  .gsc-control-cse table, .gsc-control-cse-en table {
+    margin:0px !important;
+  }
+  .gsc-above-wrapper-area {
+    border-bottom: 0;
+  }
+</style>
+<script>
+    jqueryDefer(function () {
+        $(document).on('selectionchange',function() {
+        // $(document).mouseup(function () {
+            $('.clipboard-btn').removeClass('noChars');
+            var selectedChars = getSelectedText();
+            // $('#numberChars').html(selectedChars.length);
+            if (selectedChars == 0) {
+                $('.clipboard-btn').addClass('noChars');
+            }
+        });
+    });
+    function getSelectedText() {
+        var text;
+        if (window.getSelection) {
+            text = window.getSelection().toString();
+        } else if (document.getSelection) {
+            text = document.getSelection();
+        } else if (document.selection) {
+            text = document.selection.createRange().text;
+        }
+        return text;
+    }
+</script>
+<script>
+    jqueryDefer(function () {
+        $(document).ready(function () {
+
+            // Products selector
+
+            let productsSelector = $('.products-selector');
+            $(window).click(function(e) {
+                if (productsSelector[0].contains(e.target)) {
+                    if (productsSelector.hasClass('active')) {
+                        productsSelector.removeClass('active');
+                    } else {
+                        productsSelector.addClass('active');
+                    }
+                } else {
+                    productsSelector.removeClass('active');
+                }
+            });
+
+            var allCodeBlocksElements = $(".copy-code");
+            allCodeBlocksElements.each(function (i) {
+                var codeBlock = $(this);
+                if (!codeBlock.hasClass('highlighter-rouge')) {
+                    codeBlock = codeBlock.find('.highlighter-rouge');
+                }
+                codeBlock.each(function () {
+                    var block = codeBlock.find('pre.highlight > code .rouge-code');
+                    var currentId = "codeblock" + (i + 1);
+                    block.attr('id', currentId);
+                    var clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><p>Copy to clipboard</p><div><img src="/images/copy-code-icon.svg" alt="Copy to clipboard"></div></button>');
+                    $(this).append(clipButton);
+                    var troyan = codeBlock.find('pre.highlight');
+                    var Tooltip = $('<div class="customTooltip"><div class="tooltipText">Copied!</div></div>');
+                    troyan.append(Tooltip);
+                    troyan.addClass('clipboard-btn');
+                    troyan.attr('data-clipboard-target', "#" + currentId);
+                    troyan.on('mouseleave', clearTooltip);
+                    troyan.on('blur', clearTooltip);
+                    troyan.on('click', function(e) {
+                        var el = $(e.currentTarget);
+                        if (el.hasClass('showTool')) {
+                            clearTooltip(e);
+                            troyan.attr('data-skip-tooltip', "true");
+                        }
+                    });
+                });
+            });
+
+            var clipboard = new Clipboard('.noChars');
+            clipboard.on('success', function (e) {
+                $('.clipboard-btn').removeClass('noChars');
+                e.clearSelection();
+                var trigger = e.trigger;
+                if (!$(trigger).attr('data-skip-tooltip')) {
+                    showTooltip(e.trigger, 'Copied!');
+                } else {
+                    $(trigger).removeAttr('data-skip-tooltip');
+                }
+            });
+
+            $('#search').focus(
+                function(){
+                    $(this).parent('#searchBox').addClass('focused');
+                }).blur(
+                function(){
+                    $(this).parent('#searchBox').removeClass('focused');
+                });
+
+            $('#searchBox .searchButton').click(function () {
+                var value = $('#search').val();
+                window.location.replace('{{ searchPath }}' + value);
+            });
+
+            $('#docsBreadcrumbs').click(function () {
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    $('#docsNav').removeClass('active');
+                    $('#searchBox').removeClass('visible');
+                } else {
+                    $(this).addClass('active');
+                    $('#docsNav').addClass('active');
+                    $('#searchBox').addClass('visible');
+                }
+            });
+        });
+
+        function clearTooltip(e) {
+            var el = $(e.currentTarget);
+            el.removeClass('showTool');
+            el.attr('aria-label', null);
+        }
+
+        function showTooltip(elem, msg) {
+            var el = $(elem);
+            el.addClass('showTool');
+            el.attr('aria-label', msg);
+        }
+    });
+</script>
+<script>
+    jqueryDefer(function () {
+         function getValues ($el) {
+            const items = [];
+            $el.each(function () {
+                items.push($(this).val());
+            });
+
+            return items;
+        }
+
+        function testKeywords(keyRegexps, input) {
+            for (var i=0;i<keyRegexps.length;i++) {
+                if (keyRegexps[i].test(input)) {
+                    return true
+                }
+            }
+            return false;
+        }
+
+        function render() {
+            const totalFilters = $('.device-category-filter').length + $('.device-other-filter').length;
+            const selectedCategoryFilters = getValues($(".device-category-filter:checked"));
+            const selectedOtherFilters = getValues($(".device-other-filter:checked"))
+            const totalSelectedFilters = selectedCategoryFilters.length + selectedOtherFilters.length;
+            let devicesBlocks = $('.device-guides-block');
+            let devicesContainers =  $('.device-guides-list').find('.device-guide-container');
+            if (!totalSelectedFilters || totalSelectedFilters === totalFilters.length) {
+                devicesBlocks.each(function() {
+                    $(this).removeClass('hidden filtered');
+                })
+                devicesContainers.each(function() {
+                    $(this).removeClass('hidden filtered');
+                })
+                if ($('#searchGuideInput').val()) {
+                    filterGuides();
+                }
+                return;
+            }
+
+            devicesBlocks.addClass('hidden filtered');
+            devicesContainers.addClass('hidden filtered');
+
+            let categoryKeyRegexps = [];
+            for (let filter of selectedCategoryFilters) {
+                categoryKeyRegexps.push(new RegExp(filter.toLowerCase()));
+            }
+            let otherKeyRegexps = [];
+            for (let filter of selectedOtherFilters) {
+                otherKeyRegexps.push(new RegExp(filter.toLowerCase()));
+            }
+
+            devicesBlocks.each(function() {
+                let currentBlock = $(this);
+                if (selectedCategoryFilters.length) {
+                    let text = currentBlock.find('p.device-guides-title').html().toLowerCase();
+                    let matches = testKeywords(categoryKeyRegexps, text);
+                    if (matches) {
+                        currentBlock.removeClass('hidden filtered');
+                    }
+                } else {
+                    currentBlock.removeClass('hidden filtered');
+                }
+
+                if (selectedOtherFilters.length) {
+                    let hideblock = true;
+                    currentBlock.find('.device-guide-container').each(function() {
+                        let keywords = $(this).find('.device-guide-keywords').html().toLowerCase();
+                        let matches = testKeywords(otherKeyRegexps, keywords);
+                        if (matches) {
+                            hideblock = false;
+                            $(this).removeClass('hidden filtered');
+                        }
+                    })
+                    if (hideblock) {
+                        currentBlock.addClass('hidden filtered');
+                    }
+                } else {
+                    currentBlock.find('.device-guide-container').each(function() {
+                        $(this).removeClass('hidden filtered');
+                    })
+                }
+            })
+
+            if ($('#searchGuideInput').val()) {
+                filterGuides();
+            }
+        }
+
+        $(".device-category-filter, .device-other-filter").on("change", function () {
+            render();
+        })
+    })
+</script>
+
+{% if hasTocContent == "true" %}
+<script>
+    jqueryDefer(function () {
+        var markdownTocs = null;
+        var contentAnchors = [];
+        var activeAnchor = null;
+        var firstAnchor = null;
+        var lastAnchor = null;
+
+        function updatePositions() {
+            contentAnchors = [];
+            markdownTocs.each(function (i) {
+                var tocAnchor = $(this).children('a');
+                var href = tocAnchor.attr('href');
+                var contentAnchor = $('div#content ' + href);
+                var top = Math.floor(contentAnchor.offset().top);
+                var bottom;
+                if (i < markdownTocs.length - 1) {
+                    var nextHref = $(markdownTocs[i + 1]).children('a').attr('href');
+                    var nextContentAnchor = $('div#content ' + nextHref);
+                    bottom = Math.floor(nextContentAnchor.offset().top);
+                } else {
+                    bottom = $('div#content').offset().top + $('div#content').innerHeight();
+                }
+                var contentAnchorInfo = {anchor: contentAnchor, toc: $(this), top: top, bottom: bottom, href: href};
+                contentAnchors.push(contentAnchorInfo);
+                if (i === 0) {
+                    firstAnchor = contentAnchorInfo;
+                }
+                if (i === markdownTocs.length - 1) {
+                    lastAnchor = contentAnchorInfo;
+                }
+            });
+        }
+
+        function findActiveContentToc() {
+            var top = $(window).scrollTop();
+            var bottom = top + $(window).height();
+            if (bottom === $('#encyclopedia').offset().top + $('#encyclopedia').innerHeight()) {
+                return lastAnchor;
+            } else {
+                bottom -= 154;
+                for (var i = 0; i < contentAnchors.length; i++) {
+                    var contentAnchor = contentAnchors[i];
+                    if (contentAnchor.top <= bottom &&
+                        contentAnchor.bottom > top) {
+                        return contentAnchor;
+                    }
+                }
+            }
+            return firstAnchor;
+        }
+
+        function updateActiveToc(init) {
+            updatePositions();
+            var newActiveAnchor = findActiveContentToc();
+            if (!activeAnchor || newActiveAnchor.href !== activeAnchor.href) {
+                activeAnchor = newActiveAnchor;
+                markdownTocs.removeClass('active');
+                activeAnchor.toc.addClass('active');
+                var tocTop = $('#table-of-contents').scrollTop() + 100;
+                var tocBottom = tocTop + $('#table-of-contents').innerHeight() - 200;
+                var activeTocTop = activeAnchor.toc.position().top;
+                var activeTocBottom = activeTocTop + activeAnchor.toc.children(':first').height();
+                if (tocTop > activeTocTop) {
+                    activeAnchor.toc[0].scrollIntoView();
+                    $('#table-of-contents')[0].scrollTop -= 100;
+                } else if (tocBottom < activeTocBottom) {
+                    activeAnchor.toc[0].scrollIntoView();
+                    $('#table-of-contents')[0].scrollTop += init ? -100 : 100;
+                }
+            }
+        }
+        $( document ).ready(function() {
+            var tocs = $('#content > ul#markdown-toc');
+            var tableOfContents = $('#table-of-contents');
+            tableOfContents.append(tocs);
+            markdownTocs = $('#table-of-contents ul#markdown-toc li').filter(function() {
+                var tocAnchor = $(this).children('a');
+                var href = tocAnchor.attr('href');
+                if (!href.startsWith('#')) {
+                    return false;
+                } else {
+                    var contentAnchor = $('div#content ' + href);
+                    return contentAnchor.length > 0;
+                }
+            });
+            updateActiveToc(true);
+        });
+
+        $(document).on("scroll", function() {
+            updateActiveToc(false);
+        });
+
+    });
+</script>
+
+{% endif %}
+
+{% include cookie-consent.html %}
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+{% for devicesInCategoryList in devices %}
+    {% if devicesInCategoryList[0] %}
+        {% assign sectionTitle = devicesInCategoryList[0].category %}
+        <div class="device-guides-block" id="AnchorID{{ sectionTitle | remove: " "}}">
+            <div class="device-guides-title-panel">
+                <div class="device-guides-text">
+                    <p class="device-guides-title">
+                        {{ sectionTitle }}
+                    </p>
+                </div>
+            </div>
+            <ul class="device-guides-list">
+                {% for devicePage in devicesInCategoryList %}
+                    <li class="device-guide-container">
+                        <a href="{{ devicePage.url }}">
+                            <img src="/images/devices-library/{{ devicePage.deviceImageFileName }}">
+                            <div class="device-guide-text">
+                                <p class="device-guide-title">
+                                    {{ devicePage.title | remove : "How to connect " | remove: " to ThingsBoard?"}}
+                                </p>
+                                <p class="device-guide-subtitle">
+                                    {{ devicePage.description }}
+                                </p>
+                                <p class="device-guide-keywords">
+                                    {{ devicePage.chip | append: " " | append: devicePage.vendor | append: " " | append: devicePage.connectivity }}
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endfor %}
