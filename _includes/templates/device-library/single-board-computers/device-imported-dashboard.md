@@ -32,7 +32,7 @@ should pop up, and you will be prompted to upload the JSON file and click “Imp
 
 Below you can find the dashboard JSON file:
 
-[Check and control device data dashboard](/docs/devices-library/resources/dashboards/minicomputers/dashboard.json)
+[Check and control device data dashboard](/docs/devices-library/resources/dashboards/minicomputers/dashboard.json){:target="_blank" download="dashboard.json"}
 
 If you did everything right, you have to see the following dashboard:
 ![](/images/devices-library/basic/single-board-computers/minicomputer-dashboard.png)
