@@ -165,7 +165,7 @@ selfManagedPlan:
                         <div class="pricing-square">
                             <h2>Business</h2>
                             <div class="pricing-square-description">
-                                <p>For for the fast grown, defined long term projects</p>
+                                <p>For the fast grown, defined long term projects</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 $749
