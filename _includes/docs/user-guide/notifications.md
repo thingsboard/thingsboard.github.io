@@ -180,6 +180,16 @@ Available template parameters contain all parameters available for the [General]
   * *action* - one of: 'start', 'update', 'stop';    
   * *error* - the error text;
 
+##### Entity count limit
+
+The system administrator uses the entity count limit template to notify tenants that they will reach the limit on the number of entities (devices or assets).
+Available template parameters contain all parameters available for the [General](#general-template) template, plus:
+
+  * *entityType* - one of: 'Device', 'Asset', 'User', etc.;
+  * *currentCount* - the current count of entities;
+  * *limit* - the limit on number of entities;    
+  * *percents* - the percent from the notification rule configuration;
+
 ### Rules
 
 Notification rules allow you to automate the delivery of notifications on a particular trigger event. 
@@ -211,44 +221,6 @@ Template subject: `Alarm '${alarmType}' - ${action:lowerCase}`
 Template message: `${alarmOriginatorEntityType:capitalize} '${alarmOriginatorName}'`
 
 See [Alarm](#alarm-template) template for a list of the available template parameters.
-
-##### Device activity
-
-The device inactivity rule sends notifications when device becomes inactive or active.
-
-*Trigger settings*
-
-The trigger filter allows you to configure specific devices or device types. 
-You may also select the event types that will trigger notification.
-
-*Default rule*
-
-The default rule 'Device become inactive' will notify all tenant administrators and customer users when any device becomes inactive.
-
-Template subject: `Device '${deviceName}' inactive`
-
-Template message: `Device '${deviceName}' with type '${deviceType}' became inactive`
-
-See [Device activity](#device-activity) template for a list of the available template parameters.
-
-##### Entity action
-
-The entity action rule sends notifications when entity is created, updated or deleted.
-
-*Trigger settings*
-
-The trigger filter allows you to filter events by entity type. 
-You may also select the event types that will trigger notification.
-
-*Default rule*
-
-The default rule 'Device created or deleted' will notify all tenant administrators and customer users when any device is created or deleted.
-
-Template subject: `${entityType} was ${actionType}`
-
-Template message: `${entityType} '${entityName}' was ${actionType} by user ${originatorUserName}`
-
-See [Entity action](#entity-action) template for a list of the available template parameters.
 
 ##### Alarm comment
 
@@ -288,6 +260,44 @@ Template message: `${userName} assigned alarm on ${alarmOriginatorEntityType} '$
 
 See [Alarm assignment](#alarm-assignment) template for a list of the available template parameters.
 
+##### Device activity
+
+The device inactivity rule sends notifications when device becomes inactive or active.
+
+*Trigger settings*
+
+The trigger filter allows you to configure specific devices or device types. 
+You may also select the event types that will trigger notification.
+
+*Default rule*
+
+The default rule 'Device become inactive' will notify all tenant administrators and customer users when any device becomes inactive.
+
+Template subject: `Device '${deviceName}' inactive`
+
+Template message: `Device '${deviceName}' with type '${deviceType}' became inactive`
+
+See [Device activity](#device-activity) template for a list of the available template parameters.
+
+##### Entity action
+
+The entity action rule sends notifications when entity is created, updated or deleted.
+
+*Trigger settings*
+
+The trigger filter allows you to filter events by entity type. 
+You may also select the event types that will trigger notification.
+
+*Default rule*
+
+The default rule 'Device created or deleted' will notify all tenant administrators and customer users when any device is created or deleted.
+
+Template subject: `${entityType} was ${actionType}`
+
+Template message: `${entityType} '${entityName}' was ${actionType} by user ${originatorUserName}`
+
+See [Entity action](#entity-action) template for a list of the available template parameters.
+
 ##### Rule engine lifecycle event
 
 The rule engine lifecycle event rule sends notifications about the rule chain or rule node lifecycle events. 
@@ -306,3 +316,22 @@ Template subject: `${componentType} '${componentName}' failed to ${action}`
 Template message: `Rule chain '${ruleChainName}' - ${action} failure:<br/>${error}`
 
 See [Rule engine lifecycle event](#rule-engine-lifecycle-event) template for a list of the available template parameters.
+
+##### Entity count limit
+
+The system administrator uses the entity count limit rule to notify tenants that they will reach the limit on the number of entities (devices or assets). 
+For example, notify when tenant has reached 80% of the 100 devices allowed. The max number of devices is extracted from the tenant profile. 
+
+*Trigger settings*
+
+The trigger filter allows you to filter entities by type and setup threshold.
+
+*Default rule*
+
+The default rule 'Entities Limit' will notify affected tenant administrators and system administrators when number of devices is above 80% of allowed.
+
+Template subject: `${entityType}s limit will be reached soon`
+
+Template message: `${entityType}s usage: ${currentCount}/${limit} (${percents}%)`
+
+See [Entity count limit](#entity-count-limit) template for a list of the available template parameters.
