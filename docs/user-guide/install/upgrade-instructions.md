@@ -334,6 +334,12 @@ description: ThingsBoard IoT platform upgrade instructions
     </li>       
 </ul>
 
+## Upgrading to 3.5PE
+
+**NOTE**: Starting with this version uplink queue integration topic name is configurable in the same way as downlink.
+Default value for uplink topic name was updated to **tb_ie.uplink**. To use old value set queue.integration.uplink_topic to **tb_integrations_topic**
+(in the file ../thingsboard.yml or ../tb-integration-executor.yml for microservices).
+
 ## Upgrading to 3.4.4 {#upgrading-to-344}
 
 ### Ubuntu/CentOS {#ubuntucentos-344}
