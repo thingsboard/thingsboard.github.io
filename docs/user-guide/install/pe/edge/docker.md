@@ -80,10 +80,15 @@ services:
 {% include templates/install/docker/docker-create-folders-sudo-explained.md %}
 
 ```
-mkdir -p ~/.mytb-edge-data && sudo chown -R 799:799 ~/.mytb-edge-data
 mkdir -p ~/.mytb-edge-logs && sudo chown -R 799:799 ~/.mytb-edge-logs
 ```
 {: .copy-code}
+
+```
+mkdir -p ~/.mytb-edge-data && sudo chown -R 799:799 ~/.mytb-edge-data
+```
+{: .copy-code}
+
 
 **NOTE**: Replace directory `~/.mytb-edge-data` and `~/.mytb-edge-logs` with directories you’re planning to use in `docker-compose.yml`.
 
