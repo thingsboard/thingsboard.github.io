@@ -7,67 +7,67 @@ description: Getting started with ThingsBoard open-source IoT platform and simul
 redirect_from: "/docs/pe/getting-started-guides/helloworld/"
 step1:
     0:
-        image: /images/helloworld/hello-world-pe-step-1-item-1.png
-        title: 'Login to your ThingsBoard instance and open Device Groups page.'
+        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-1-pe.png
+        title: 'Login to your ThingsBoard instance and open Devices page.'
     1:
-        image: /images/helloworld/hello-world-pe-step-1-item-3.png
-        title: 'Navigate to default Device group “ALL”.'
+        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-2-pe.png
+        title: 'By default, you navigate to the device group “All”. To create a separate device group, go to the "Groups" tab and create a new device group. Click on the "+" icon in the top right corner of the table and then select "Add new device".'
     2:
-        image: /images/helloworld/hello-world-pe-step-1-item-2.png 
-        title: 'Click on the "+" icon in the top right corner of the table and then select "Add Device".'
-    3:
-        image: /images/helloworld/hello-world-pe-step-1-item-4.png
+        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-3-pe.png
         title: 'Input device name. For example, "My New Device". No other changes are required at this time. Click "Add" to add the device.'
+    3:
+        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png
+        title: 'Now your device should be listed first, since the table sorts devices using the time of the creation by default.'
     4:
-        image: /images/helloworld/hello-world-pe-step-1-item-5.png
+        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-5-pe.png
         title: 'Now your device should be listed first, since the table sorts devices using the time of the creation by default. '
         
 step2:
     0:
-        image: /images/helloworld/hello-world-pe-step-2-item-1.png
+        image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-1-pe.png
         title: 'Click on the device row in the table to open device details;'
     1:
-        image: /images/helloworld/hello-world-pe-step-2-item-2.png
+        image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-2-pe.png
         title: 'Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.'
 
 step3:
     0:
-        image: /images/helloworld/hello-world-pe-step-2-item-1.png 
+        image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-3-pe.png
         title: 'Click on the device row in the table to open device details;'
     1:
-        image: /images/helloworld/hello-world-pe-step-2-item-4.png
+        image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-4-pe.png
         title: 'Navigate to the telemetry tab.'
         
 step31:
     0:
-        image: /images/helloworld/hello-world-pe-step-31-item-1.png
-        title: 'Open Dashboard Groups page. Open default dashboard group “All”. Click on the "+" icon in the top right corner to create a new dashboard.'
+        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-1-pe.png
+        title: 'Open Dashboards page. By default, you navigate to the dashboard group “All”. To create a separate dashboard group, go to the "Groups" tab and create a new dashboard group. Click on the "+" icon in the top right corner to create a new dashboard.'
     1:
-        image: /images/helloworld/hello-world-pe-step-31-item-2.png
+        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-2-pe.png
         title: 'Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard.'
     2:
-        image: /images/helloworld/hello-world-pe-step-31-item-3.png
+        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-3-pe.png
         title: 'Now your dashboard should be listed first, since the table sorts dashboards using the time of the creation by default. Click on the "Open dashboard" icon.'
         
 step32:
     0:
-        image: /images/helloworld/hello-world-pe-step-32-item-1.png 
+        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-1-pe.png
         title: 'Enter edit mode. Click on the pencil button in the bottom right corner.'
     1:
-        image: /images/helloworld/hello-world-pe-step-32-item-2.png  
-        title: 'Click "Entity Aliases" icon in the top right part of the screen. You will see an empty list of Entity aliases.'
+        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-2-pe.png
+        title: 'Click "Entity aliases" icon in the top right part of the screen. You will see an empty list of Entity aliases.'
     2:
-        image: /images/helloworld/hello-world-pe-step-32-item-3.png  
-        title: 'Click "Add alias".'
+        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-3-pe.png
+        title: 'Click "Add alias" button.'
     3:
-        image: /images/helloworld/hello-world-pe-step-32-item-4.png  
-        title: 'Input alias name, for example "MyDevice". Select "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on the needed device.'        
+        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-4-pe.png
+        title: 'Input alias name, for example "My Device". Select "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on the needed device.'
     4:
-        image: /images/helloworld/hello-world-pe-step-32-item-5.png  
+        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-5-pe.png
         title: 'Click "Add" and then "Save".'        
     5:
-        image: /images/helloworld/hello-world-pe-step-32-item-6.png  
-        title: 'Finally, Click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.'
+        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-6-pe.png
+        title: 'Finally, click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.'
 
 step33:
     0:
