@@ -6,6 +6,7 @@ A custom converter is converter written for some device:
 |:-|:-|-
 | type                        | **custom**                      | Provides information to connector that custom converter will be uses for converting data from topic.                                                                      |
 | extension                   | **CustomMqttUplinkConverter**   | Name of custom converter class.                                                                                                                                           |
+| cached                        | **false**                      | Indicates whether to re-use this type of custom converter for all MQTT topics.                                                                      |
 | extension-config            |                                 | This subsection is a configuration for the custom converter. In default example it contains number of bytes and keys for telemetry.                                       |
 | temperatureBytes            | **2**                           | In default example first 2 bytes from received message will be interpreted as **temperature** key of telemetry (Substring "Bytes" will remove if exists).                 |
 | humidityBytes               | **2**                           | In default example the second and third byte from received message will be interpreted as **humidity** key of telemetry (Substring "Bytes" will remove if exists).        |
