@@ -36,7 +36,6 @@ toc:
       path: /docs/paas/user-guide/device-profiles/
     - title: Asset Profiles
       path: /docs/paas/user-guide/asset-profiles/
-      new: true
     - title: Attributes
       path: /docs/paas/user-guide/attributes/
     - title: Time-series data
@@ -47,6 +46,8 @@ toc:
       path: /docs/paas/user-guide/rpc/
     - title: OTA updates
       path: /docs/paas/user-guide/ota-updates/
+    - title: Notification center
+      path: /docs/paas/user-guide/notifications/
       new: true
 - title: Dashboards
   section:
