@@ -12,24 +12,34 @@
 The below commands set up your environment for running GitHub pages locally. 
 Any edits you make will be viewable on a lightweight webserver that runs on your local machine.
 
-Install Ruby **2.7.x**. If you're on Ubuntu 20.04.1 LTS, run these commands:
+Install Ruby **3.0.x**. If you're on Ubuntu, run this commands:
 
-	sudo apt-get install software-properties-common
-	sudo apt-add-repository ppa:brightbox/ruby-ng
-	sudo apt-get update
-	sudo apt-get install make ruby ruby-dev libffi-dev g++ zlib1g-dev
-	sudo gem install github-pages
-	sudo gem install jekyll bundler
-
-* If you're on a Mac, follow [these instructions](https://gorails.com/setup/osx/) and choose Ruby 2.7.6.
-* If you're on a Windows machine you can use the [Ruby Installer](http://rubyinstaller.org/downloads/). During the installation make sure to check the option for *Add Ruby executables to your PATH*.
+    sudo apt-get install ruby-full build-essential zlib1g-dev
+    sudo gem install github-pages jekyll bundler
 
 
-Clone our site:
+<details><summary>Or you can use Ruby <b>2.7.x</b>. (<i>Click to Open</i>)</summary>
+
+<p>If you're on Ubuntu 20.04 LTS, run these commands:</p>
+<pre>
+    sudo apt-get install software-properties-common
+    sudo apt-add-repository ppa:brightbox/ruby-ng
+    sudo apt-get update
+    sudo apt-get install make ruby ruby-dev libffi-dev g++ zlib1g-dev
+    sudo gem install github-pages
+    sudo gem install jekyll bundler
+</pre>
+
+</details>
+
+* If you're on a Mac, follow [these instructions](https://gorails.com/setup/osx/) and choose a Ruby version (**3.0.x** or **2.7.6**).  
+* If you're on a Windows machine you can use the [Ruby Installer](http://rubyinstaller.org/downloads/). During the installation make sure to check the option for *Add Ruby executables to your PATH*.  
+
+Clone our site:  
 
 	git clone https://github.com/thingsboard/thingsboard.github.io.git
 
-Make any changes you want. Then, to see your changes locally:
+Make any changes you want. Then, to see your changes locally:  
 
 	cd thingsboard.github.io
 	bundle install
