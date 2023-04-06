@@ -26,6 +26,20 @@ Also, for boards, based on ESP8266 chip we should install the "mbedtls" library.
 
 {% endif %}
 
+{% if OLEDInstallationRequired == "true" %}
+
+Also, to control display we should install the Adafruit SSD1306 library.  
+
+{% assign oledInstallation='
+    ===
+        image: /images/devices-library/basic/arduino-ide/install-adafruit-ssd1306.png,
+        title: Put into library search field "Adafruit SSD1306" and install the library - "Adafruit SSD1306 by Adafruit"
+'%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=oledInstallation %}
+
+{% endif %}
+
 {% if wifininaInstallationRequired == "true" %}
 
 Also, for boards, based on RP2040 chip we should install the "WiFiNINA" library.  
