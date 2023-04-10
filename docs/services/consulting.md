@@ -21,7 +21,7 @@ description: Professional services
 
   <div class="card">
     <h3 class="title">Consulting</h3>
-    <p class="description">Our core team will review your business use cases, existing environment, SLA requirements and develop solution architecture based on a synergy of existing infrastructure and ThignsBoard platform.</p>
+    <p class="description">Our core team will review your business use cases, existing environment, SLA requirements and develop solution architecture based on a synergy of existing infrastructure and ThingsBoard platform.</p>
   </div>
 
   <div class="card">
