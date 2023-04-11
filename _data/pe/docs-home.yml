@@ -205,7 +205,6 @@ toc:
     path: /docs/pe/user-guide/rbac/
   - title: Two-Factor Authentication
     path: /docs/pe/user-guide/two-factor-authentication/
-    new: true
   - title: OAuth 2 Support
     path: /docs/pe/user-guide/oauth-2-support/
   - title: HTTP Transport
