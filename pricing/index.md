@@ -534,7 +534,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Self-service Interface</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support within <b>36 hours</b>
+                                Email support
                             </div>
                             <br>
                             <div>
@@ -564,7 +564,7 @@ selfManagedPlan:
                             <div class="pricing-square-item">Self-service Interface</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support within <b>24 hours</b>
+                                Email support
                             </div>
                             <br/>
                             <div>
@@ -610,9 +610,9 @@ selfManagedPlan:
     <div class="container">
         <div class="pricing-content-header row">
             <div class="pricing-content-description-cloud pricing-cloud active col-lg">
-                <h2>Bundled subscription plans</h2>
+                <h2>Subscription plans</h2>
                 <div class="pricing-content-details">
-                    <b>ThingsBoard + Trendz</b> bundled subscription plan includes all features from ThingsBoard and Trendz products.
+                    <b>Trendz Cloud</b> subscription plans include hosting, backups, maintenance and already integrated with your ThingsBoard Cloud account.
                 </div>
             </div>
         </div>
@@ -626,7 +626,7 @@ selfManagedPlan:
                                 <p>Up to 100 Devices and Assets</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                $249
+                                $100
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
@@ -634,7 +634,6 @@ selfManagedPlan:
                                     Get Started
                                 </a>
                             </div>
-                            <div class="pricing-square-item">ThingsBoard Prototype subscription</div>
                             <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
                             <div class="pricing-square-item">Calculated Fields</div>
@@ -656,7 +655,7 @@ selfManagedPlan:
                                 <p>Up to 500 Devices and Assets</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                $649
+                                $250
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
@@ -664,14 +663,13 @@ selfManagedPlan:
                                     Get Started
                                 </a>
                             </div>
-                            <div class="pricing-square-item">ThingsBoard Startup subscription</div>
                             <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">Self-service Interface</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support within <b>36 hours</b>
+                                Email support
                             </div>
                             <br>
                             <div>
@@ -686,7 +684,7 @@ selfManagedPlan:
                                 <p>Up to 1000 Devices and Assets</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
-                                $1199
+                                $450
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
@@ -694,14 +692,13 @@ selfManagedPlan:
                                     Get Started
                                 </a>
                             </div>
-                            <div class="pricing-square-item">ThingsBoard Business subscription</div>
                             <div class="pricing-square-item">Anomalies detection</div> 
                             <div class="pricing-square-item">Predictive Analytics</div>
                             <div class="pricing-square-item">Calculated Fields</div>
                             <div class="pricing-square-item">Self-service Interface</div>
                             <div class="pricing-square-item">Advanced Visualizations</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
-                                Email support within <b>24 hours</b>
+                                Email support
                             </div>
                             <br/>
                             <div>
