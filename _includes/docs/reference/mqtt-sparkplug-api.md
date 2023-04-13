@@ -5,64 +5,56 @@
 ## Prerequisites
 
 We assume you have completed the general [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide
-to get familiar with ThingsBoard.
+to get familiar with ThingsBoard. We also recommend to review the [Device Profiles](/docs/{{docsPrefix}}user-guide/device-profiles/) documentation first.
 
 ## Sparkplug basics
 
-<i>**What is Sparkplug?**</i> An open source software specification that provides MQTT clients the framework to seamlessly
-integrate data from their applications, sensors, devices, and gateways within the MQTT Infrastructure.
+[Sparkplug](https://sparkplug.eclipse.org/) is an open source software specification that provides MQTT clients the framework 
+to seamlessly integrate data from their applications, sensors, devices, and gateways within the MQTT Infrastructure.
 
-You can find more information about **Sparkplug** [here](https://sparkplug.eclipse.org/) and about **Sparkplug™
-Specification**  [here](https://sparkplug.eclipse.org/specification/version/2.2/documents/sparkplug-specification-2.2.pdf)
-Thingsboard and MQTT Sparkplug Payloads, Messages and Infrastructure
-Components  [here](#thingsboard-and-mqtt-sparkplug-payloads-and-messages).
+ThingsBoard acts as an MQTT Server which support the SparkPlug payload and topic structure and allows connections from the 
+MQTT Edge of Network (EoN) Node.
+
+The EoN Node is any V3.1.1 compliant MQTT Client application that manages an MQTT Session and provides the physical and/or 
+logical gateway functions. The EoN node is responsible for any local protocol interface to existing legacy devices 
+(PLCs, RTUs, Flow Computers, Sensors, etc.) and/or any local discrete I/O, and/or any logical internal process variables(PVs).
+
+The protocol [specification](https://sparkplug.eclipse.org/specification/version/2.2/documents/sparkplug-specification-2.2.pdf) 
+defines both MQTT topic and message structure for the EoN Nodes to communicate with the MQTT Server.
+Single EoN Node may represent multiple physical devices and sensors and upload device metrics for each of those devices.
+ThingsBoard decodes the device metrics from the Sparkplug payload and stores it as a corresponding device 
+[attributes](/docs/{{docsPrefix}}user-guide/attributes/) or [time-series](/docs/{{docsPrefix}}user-guide/telemetry/) data. 
+You may also issue an update to the Sparkplug device using 
+[shared attributes update](#update-metrics-from-shared-attributes-to-mqtt-eondevice) or 
+[rpc command](#update-metrics--using-the-thingsboard-rpc-command-from-server-to-mqtt-eondevice).
+
+**NOTE:** ThingsBoard supports **Sparkplug™ B** payloads only. 
 
 ## Getting started
 
-#### Create in Thingsboard device and profile
-
-Please refer to the [MQTT transport type](/docs/{{docsPrefix}}user-guide/device-profiles/#mqtt-transport-type)
-configuration section in device profile article for more details.
-
-We assume that we have an **MQTT EON** with *two* **Devices** attached to this **MQTT EON**.
-
-*Topic*:
-- **MQTT EON**:|{**NAMESPACE**} + "/" + {**groupId**} + "/{**Payloads by Message Type**}/" + {**edgeNode**}.
-- **Device**:|{**NAMESPACE**} + "/" + {**groupId**} + "/{**Payloads by Message Type**}/" + {**edgeNode**} + "/" + {**deviceId**}.
-> **Note**: Thingsboard only uses encoding in version **B** of the Sparkplug™ MQTT message payload. For the Sparkplug™ B version of the specification, the constant must be a UTF-8 string. 
-  
-- for the {**NAMESPACE**} element must be |<span style="color:green">“spBv1.0”</span>
-
-Other  elements of topic are string variables and for example, let's assign the following values:
-- The name of ID for **group** is {**groupId**}. We assign a value to it |<span style="color:green">"MyGroupId"</span>
-- The name of ID for **MQTT EON** is {**edgeNode**}. We assign a value to it  |<span style="color:green">“NodeSparkplug”</span>
-  With *Metrics*: |<span style="color:brown">["Node Control/Reboot", "Node Control/Rebirth", "Node Control/Next Server", "Node Control/Scan Rate"]</span> [here](#publish-message-nbirth)
-- The name of ID for **Device number one** is  {**deviceId**}. We assign a value to it |<span style="color:green">“DeviceSparkplugId1”</span>
-  With *Metrics*: |<span style="color:brown">["Device Control/Reboot", "Device Control/Rebirth", "Device Control/Scan rate", "Properties/Hardware Make", "Last Update FW", "Current Grid Voltage"]</span> [here](#publish-message-dbirth-device_01)
-- The name of ID for **Device number two** is {**deviceId**}. We assign a value to it |<span style="color:green">“DeviceSparkplugId2”</span>
-  With *Metrics*: |<span style="color:brown">["Device Control/Reboot", "Device Control/Rebirth", "Device Control/Scan rate", "Properties/Hardware Make", "Last Update FW", "Outputs/LEDs/Green", "Outputs/LEDs/Yellow"]</span> [here](#publish-message-dbirth-device_02)
-
-**Pay attention** that {**NAMESPACE**} as the first elements of the topic is a constant, so it *cannot* be changed. 
-
-While **other elements** of the topic are variables, so they *can* be changed.
-
-After a *successful* MQTT EON/Device *connection*, the MQTT EON/Device **must** *send* a publish NBIRTH/DBIRTH message. This must be the **first** MQTT publish message. This message includes the MQTT EON/Device Birth Certificate payload which contains everything required to build out a data structure for all metrics for this MQTT EON or Device.
-
-In order to connect and receive information from them, we need to perform 4 steps:
+This guide will teach us how to: connect Sparkplug EoN node to ThingsBoard, 
+collect device metrics and store them as ThingsBoard time-series data, 
+and push commands back to devices.  
 
 ### Step 1. Create device profile
 
-First you need to create device profile for the device type **MQTT EON**, with next name and parameters of this **device profile**  [here](#device-profile-transport-configuration-for-device-type-mqtt-eon).
+First you need to create MQTT [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/) for Sparkplug devices:
 
-See general device profile [documentation](/docs/{{docsPrefix}}user-guide/device-profiles/) for more info about device profiles also.
-- This **MQTT EON device profile** hase **name**. Its is string variable and for example, let's assign the following value | <span style="color:green">"sparkPlugProfile"</span>
-  The first parameter: **Transport configuration type** must be | <span style="color:brown">MQTT</span>
-  The second parameter: **MQTT device topic filters SparkPlug** must be | <span style="color:brown">enable</span>
-  The third parameter: **Fields "SparkPlug attributes metric names"** is <i>Optional</i>. It is not necessary to assign a value to this parameter, but for an example, let’s assign the following values | <span style="color:brown">["Node Control/Next Server", "Device Control/Reboot", "Device Control/Rebirth", "Last Update FW", "Outputs/LEDs/Green"]</span>
- 
+1. Navigate to *Profiles->Device Profiles* and click on the "+" icon in the device profile table header to open the *Add device profile* dialog;
+2. Use *MQTT EON device profile* as profile name or any other meaningful value;
+3. Navigate to *Transport configuration* tab and select the *MQTT* transport type;
+4. Make sure you have selected the "MQTT Sparkplug B Edge of Network (EoN) node" checkbox;
+5. Input the names of Sparkplug metrics you would like to store as attributes instead of time-series data. 
+   This list should also include metrics you may want to update from the server side and push to the device.
+   For example: "Device Control/Reboot", "Outputs/LEDs/Green".  
+   
+TODO: update images.
+
 {% include images-gallery.html imageCollection="sparkplug-device-profile-created" showListImageTitles="true" %}
 
-> **Note**: Only if you want to receive metric information as attributes, you add a value to the **SparkPlug Attribute Metric Names fields**
+### Step 2. Configure the device credentials
+
+
 
 > **Note**: 
 >   1. If you plan to create a device yourself in Thingsboard to connect to a device of type Device, for it, you can either use the profile created for the device type **MQTT EON**, or create a *new device profile*.
