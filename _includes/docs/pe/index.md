@@ -65,6 +65,15 @@
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg-3 col-xxl-6 col-4xl-3 mb-4">
+        <a class="feature-card" href="/docs/{{docsPrefix}}devices-library/">
+            <img class="feature-logo" src="/images/feature-logo/guides.svg"/>
+            <div class="feature-title">Devices library</div>
+            <div class="feature-text">
+                Learn how to connect different devices to {{platformName}}.
+            </div>
+        </a>
+    </div>
+    <div class="col-12 col-sm-6 col-lg-3 col-xxl-6 col-4xl-3 mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}guides/">
             <img class="feature-logo" src="/images/feature-logo/guides.svg"/>
             <div class="feature-title">Guides</div>
@@ -73,7 +82,7 @@
             </div>
         </a>
     </div>
-    <div class="col col-lg-6 col-xxl col-4xl-6 mb-4">
+    <div class="col-12 col-sm-6 col-lg-3 col-xxl-6 col-4xl-3 mb-4">
         <a class="feature-card" href="/docs/{{docsPrefix}}api/">
             <img class="feature-logo" src="/images/feature-logo/api.svg"/>
             <div class="feature-title">API</div>

@@ -10,6 +10,32 @@ code
 
 .highlighter-rouge
 	position: relative
+	button.expand-code-btn
+		position: absolute
+		bottom: -33px
+		right: 0
+		left: 0
+		margin-right: auto
+		margin-left: auto
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		color: #2a7dec
+		width: 130px
+		height: 30px
+		outline: none
+		div
+			width: 0
+			height: 0
+		div.collapsed
+			border-left: 20px solid transparent
+			border-right: 20px solid transparent
+			border-top: 13px solid #2a7dec
+		div.expanded
+			border-left: 20px solid transparent
+			border-right: 20px solid transparent
+			border-bottom: 13px solid #2a7dec
 
 div.highlight
 	margin-top: 12px

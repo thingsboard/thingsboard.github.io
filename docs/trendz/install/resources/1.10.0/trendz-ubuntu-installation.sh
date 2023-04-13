@@ -1,0 +1,1 @@
+sudo dpkg -i trendz-1.10.0-HF1.deb

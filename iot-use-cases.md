@@ -262,5 +262,26 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 </a>
             </div>
         </div>
+        <div class="dashboard-item">
+            <div class="item-description">
+                <h2>Smart Irrigation</h2>
+                <p>Monitor the irrigation system and respond in time to changes in field conditions. List the fields and monitor their soil moisture, location, statistics, etc.</p>
+                <a class="read-more-button" href="/use-cases/smart-irrigation/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+            </div>
+            <div class="item-image-container">
+                <a class="img-button" href="/use-cases/smart-irrigation/">
+                    <div class="overlay">
+                        <div class="eye">
+                            <img src="/images/eye-icon.svg">See more
+                        </div>
+                    </div>
+                    <div class="dashboard-frame">
+                        <div class="frame-image">
+                            <img src="/images/usecases/smart-irrigation/video/smart-irrigation.png">
+                        </div>
+                    </div>                
+                </a>
+            </div>
+        </div>
     </div>
 </div>

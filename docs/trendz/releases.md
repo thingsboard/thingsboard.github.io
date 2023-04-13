@@ -8,6 +8,22 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
+## v1.10.0 (February, 2023)
+
+**Improvements:**
+* New Trendz UI design
+* Grouping visualizations into collections
+* New Card template with sparkline and comparison 
+* Add units into formatting function
+* Configurable axis ranges
+
+**Bug fixes:**
+
+* Fix title editor
+* Fix heatmap NaN error
+* Fix cached report race condition in clustered setup
+* Fix caching of non-timeseries fields
+
 ## v1.9.2-HF2 (December, 2022)
 
 **Improvements:**

@@ -11,7 +11,14 @@ description: Bar Chart and Histogram
 
 Trendz has built-in instruments for timeseries prediction in few clicks. All required work, like data filtering, normalization 
 and model training performed in the background. You can enable prediction for any fields including calculated fields.
- 
+
+&nbsp;
+<div id="video">  
+    <div  id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/cuGPiBeaA18" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
+
 ## Simple Prediction
 
 ![image](/images/trendz/prediction-simple-view.png)

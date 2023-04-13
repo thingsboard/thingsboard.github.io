@@ -8,6 +8,25 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
   
+## v3.4.4 (February 7, 2023)
+  
+Everything from [TB CE v3.4.4](https://github.com/thingsboard/thingsboard/releases/tag/v3.4.4) with the following bug fixes.
+
+**Bug fixes**
+
+* Core & Rule Engine:
+  
+  * Fixed check alarm permissions by originator;
+  * Fixed TBEL to MVEL in air quality monitoring template;
+  * Fixed SI attribute filtering;
+  * Fixed 'twilio voice' node;
+
+* UI:
+  
+  * Fixed search in entity group tables;
+  * Fixed applying custom translations on loading with slow network;
+  * Fixed some browsers don't open integration statistics when clicking 'Daily activity' column in Integration table;
+  
 ## v3.4.3 (December 21, 2022)
 
 Everything from [TB CE v3.4.3](https://github.com/thingsboard/thingsboard/releases/tag/v3.4.3) with the following improvements and bug fixes.

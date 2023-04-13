@@ -52,14 +52,14 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/trendz-1.9.2-HF2.rpm
+wget https://dist.thingsboard.io/trendz-1.10.0-HF1.rpm
 ```
 {: .copy-code}
 
 Install Trendz Analytics as a service
 
 ```bash
-sudo rpm -Uvh trendz-1.9.2-HF2.rpm
+sudo rpm -Uvh trendz-1.10.0-HF1.rpm
 ```
 {: .copy-code}
 

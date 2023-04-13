@@ -4,6 +4,29 @@ title: Pricing
 description: ThingsBoard Products Pricing
 defaultActivePricingSection: thingsboard-pe-options
 
+
+cloudPlan:
+    0:
+        image: /images/trendz/cloud-1.png
+        title: 'Log in to ThingsBaord Cloud account and select “Plan and Billing” menu option. Press “Update Plan” button'
+    1:
+        image: /images/trendz/cloud-2.png
+        title: 'Choose “ThingsBoard + Trendz” and select the most suitable plan for you'        
+    2:
+        image: /images/trendz/cloud-3.png
+        title: 'Reload the page to see new “Trendz Analytics” option in your ThingsBoard Menu'
+
+selfManagedPlan:
+    0:
+        image: /images/trendz/self-managed-1.png
+        title: 'Log into Licence Portal and create new Trendz Analytics Subscription'
+    1:
+        image: /images/trendz/self-managed-2.png
+        title: 'Get your license key'
+    2:
+        image: /images/trendz/self-managed-3.png
+        title: 'Follow the instructions to install Trendz the instructions to install Trendz Analytics to your server'
+
 ---
 
 <div class="container">
@@ -142,7 +165,7 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square">
                             <h2>Business</h2>
                             <div class="pricing-square-description">
-                                <p>For for the fast grown, defined long term projects</p>
+                                <p>For the fast grown, defined long term projects</p>
                             </div>
                             <h4 class="pricing-square-price mb-0">
                                 $749
@@ -424,10 +447,10 @@ defaultActivePricingSection: thingsboard-pe-options
                         <div class="pricing-square-item" data-faq-id="subscription-support">
                             Email support within <b>12 hours</b>
                         </div>
-                        <div class="pricing-square-item">
-                            <b>Development</b> instance included
+                        <div class="pricing-square-item" data-faq-id="what-is-development-server">
+                            <b>Development</b> instance included 
                         </div>
-                        <div class="pricing-square-item">
+                        <div class="pricing-square-item" data-faq-id="additional-services">
                             <b>10 hours</b> of consulting or configuration services
                         </div>
                     </div>
@@ -471,12 +494,7 @@ defaultActivePricingSection: thingsboard-pe-options
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <button class="btn-blue btn-pricing" 
-                                   onClick="getLicense(event,
-                                    false,
-                                    '31307df0-11f6-11ea-951e-b77b877a367b',
-                                    '2985f1a0-7afd-11ea-951e-b77b877a367b',
-                                    'Trendz Analytics Prototype', 'R1LKL1BWAB', false)">
+                                <button class="btn-blue btn-pricing" onClick="openTrendzWizard(event, 'self-managed-content', 'prototype')">
                                     Try 30 days for free
                                 </button>
                             </div>
@@ -506,11 +524,7 @@ defaultActivePricingSection: thingsboard-pe-options
                             </h4>
                             <div class="row justify-content-center">
                                 <button class="btn-blue btn-pricing" 
-                                   onClick="getLicense(event,
-                                    false,
-                                    '31307df0-11f6-11ea-951e-b77b877a367b',
-                                    '018b7520-7afe-11ea-951e-b77b877a367b',
-                                    'Trendz Analytics StartUp', 'R1LKL1BWAB', false)">
+                                   onClick="openTrendzWizard(event, 'self-managed-content', 'startup')">
                                     Try 30 days for free
                                 </button>
                             </div>
@@ -540,11 +554,7 @@ defaultActivePricingSection: thingsboard-pe-options
                             </h4>
                             <div class="row justify-content-center">
                                 <button class="btn-blue btn-pricing" 
-                                    onClick="getLicense(event,
-                                    false,
-                                    '31307df0-11f6-11ea-951e-b77b877a367b',
-                                    '6e3bb4f0-7afe-11ea-951e-b77b877a367b',
-                                    'Trendz Analytics Business', 'R1LKL1BWAB', false)">
+                                    onClick="openTrendzWizard(event, 'self-managed-content', 'business')">
                                     Try 30 days for free
                                 </button>
                             </div>
@@ -620,7 +630,7 @@ defaultActivePricingSection: thingsboard-pe-options
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/billing">
+                                <a class="btn-blue btn-pricing" href="#" onClick="openTrendzWizard(event, 'cloud-content')">
                                     Get Started
                                 </a>
                             </div>
@@ -650,7 +660,7 @@ defaultActivePricingSection: thingsboard-pe-options
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/billing">
+                                <a class="btn-blue btn-pricing" href="#" onClick="openTrendzWizard(event, 'cloud-content')">
                                     Get Started
                                 </a>
                             </div>
@@ -680,7 +690,7 @@ defaultActivePricingSection: thingsboard-pe-options
                                 <span>/month</span>
                             </h4>
                             <div class="row justify-content-center">
-                                <a class="btn-blue btn-pricing" href="https://thingsboard.cloud/billing">
+                                <a class="btn-blue btn-pricing" href="#" onClick="openTrendzWizard(event, 'cloud-content')">
                                     Get Started
                                 </a>
                             </div>
@@ -995,7 +1005,21 @@ defaultActivePricingSection: thingsboard-pe-options
                  So, customer can not stop using perpetual license and rely on total price for any subscription plan to be decreased.         
                 </p>    
             </div>    
+        </div>  
+        <div class="item" data-tag="h4" data-item-id="what-is-development-server" data-title="What is the Development instance?">
+            <div class="container">
+                <p>
+                 With the Perpetual Kit, the licensee gets two license keys: one for the Production, and the other one for the Development server. The platform that is activated with a development key, has a watermark and is meant to be used as a sandbox environment for development and testing purposes. The main idea is to keep the established production flows going with the primary license but keep developing new solutions or optimizing the existing ones on the additional instance without the risk of influencing current customers’ experience.         
+                </p>    
+            </div>    
         </div>
+       <div class="item" data-tag="h4" data-item-id="additional-services" data-title="How can I use my 10 hours bundle?">
+            <div class="container">
+                <p>
+                 It can be your advantage for a quick start with the platform. These 10 hours can be used for consulting, training, or development services. Training sessions imply pre-defined topics, while Consulting may cover various technical questions, platform configurations, or your Use Case-related issues. The above services are conducted online. Alternatively, these 10 hours can be used to support you in the PoC, MVP, or ready-for-market solutions development by a dedicated development unit from ThingsBoard.        
+                </p>    
+            </div>    
+        </div>    
         <div class="item" data-tag="h4" data-item-id="thingsboard-edge-discount" data-title="Can we have a discounted price for ThingsBoard Edges in case of bulk purchase?">
             <div class="container">
                 <p>
@@ -1003,6 +1027,7 @@ defaultActivePricingSection: thingsboard-pe-options
                 </p>    
             </div>    
         </div>
+        
         <div class="item" data-tag="h4" data-item-id="thingsboard-edge-compatibility" data-title="What ThingsBoard Edge compatibility means?">
             <div class="container">
                 <p>
