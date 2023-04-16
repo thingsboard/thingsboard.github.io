@@ -5,10 +5,39 @@
 
 ThingsBoard Notification Center allows you to send notifications to the end-users. 
 You may send notifications manually, via REST API, or based on a specific trigger event.
-Each notification may be delivered using multiple delivery methods: WebSocket, SMS, email, or [Slack](https://slack.com/). 
 You may also schedule delivery of the notification for a specific time. 
 
-Let's review the key components of the notification center below. 
+To go to the notification center, click on “Notification center” in the sidebar.
+
+{% include images-gallery.html imageCollection="notification-center" %}
+
+On this page you see the button to send a notification and five tabs: "Inbox", "Sent", "Recipients", "Templates" and "Rules".
+Let's look at each of the key components of the notification center below.
+
+
+
+### Notification options available in ThingsBoard
+
+Each notification may be delivered using multiple delivery methods: WebSocket, SMS, email, or [Slack](https://slack.com/).
+
+- **WebSocket**. Notifications will be sent to the Notification center in Thingsboard;
+- **SMS**. A notifications is sent to the user's phone. To receive notifications by SMS, a system administrator should set up the [SMS provider](/docs/user-guide/ui/sms-provider-settings/) properly;
+- **Email**. With this approach, the user receives a notification by mail. For sending notification by email, an [outgoing mail server](/docs/user-guide/ui/mail-settings/) should be configured;
+- **Slack**. Notifications will send as a Slack message to a list of Users or Channels. For sending notification by Slack must configure a Slack API [token](https://api.slack.com/authentication/token-types) in the *Settings* -> *Notifications* tab. Learn more about how to configure Slack settings in Thingsboard [here](/docs/{{docsPrefix}}user-guide/ui/slack-settings/).
+
+### Send notification
+
+To send a notification manually, follow these steps:
+
+ - Сlick the “Send notification” button in the upper right corner of the "Notification center" page;
+ - In new window, select recipients and one or more delivery methods. If necessary, use the scheduler. Click "Next";
+ - Enter the subject and text of the message;
+ - Also you can use the Action button in the notification. Enter the button name, select the action type ("Open dashboard" or "Open URL link") and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon and set its color. Click "Next";
+ - In this window, you can see how the notification will look and also view the list of notification recipients. Click "Send";
+ - User received a new notification. The user can view it by clicking on the bell icon in the upper right corner of the screen or in the Notification center page;
+ - By clicking on the "Open this dashboard" button in the message, the user will open the dashboard window.
+
+{% include images-gallery.html imageCollection="notification-center-send-notification" %}
 
 ### Inbox
 
@@ -16,76 +45,94 @@ The "Inbox" tab displays unread notifications by default.
 You may use the inbox table to browse the notifications and mark them as read. 
 You may also switch the view to browse all notifications.
 
-TODO: image
+{% include images-gallery.html imageCollection="notification-center-inbox" %}
 
 ### Sent 
 
 The "Sent" tab displays the status of sent notifications. 
 You may use the "Notify again" button to copy an existing notification and send it again.
 
+{% include images-gallery.html imageCollection="notification-center-sent" %}
+
 Also, you may investigate issues with the delivery of certain notifications here. 
 In case of delivery issues, the corresponding notification row will have information about the recipient who missed the update. 
 This typically happens when the email address is wrong, or the phone number is not configured.
-
-TODO: image
 
 ### Recipients
 
 The "Recipients" tab displays the list of notification recipients. You may create and delete notification recipients here.
 
-There are two types of recipients: platform users and Slack entities. Recipients group defines either a set of platform users or set of Slack entities.
+{% include images-gallery.html imageCollection="notification-center-recipients" %}
 
-TODO: image
+To add notification recipients, follow these steps:
+
+ - Click the "Add recipients" button in the upper right corner of the Recipients window;
+ - In the new window, enter the name of the notification recipients;
+ - Next, select one of the two types of recipients: platform users and Slack entities. Recipients group defines either a set of platform users or set of Slack entities;
+ - From the "User filter" list, select who you want to send messages or notifications to;
+ - Click "Add".
+
+{% include images-gallery.html imageCollection="notification-center-recipients-1" %}
+
+You can also add a new recipient at the stage of creating a new notification:
+
+ - Start creating a new notification. In the "New notification" window (in the "Recipients" field) click the "Create new" button;
+ - Enter the name of the notification recipients;
+ - Next, select one of the two types of recipients: platform users and Slack entities. Recipients group defines either a set of platform users or set of Slack entities;
+ - From the "User filter" list, select who you want to send messages or notifications to;
+ - Click "Add".
+
+{% include images-gallery.html imageCollection="notification-center-recipients-2" %}
 
 ###### Platform users
 
 There are several user filters that help you to define a recipient group. The scope of the filter depends on the role of the user that creates the recipient group.
 
+{% include images-gallery.html imageCollection="notification-center-platform-users" %}
+
 For **System Administrator**:
 
  * *All users* - all users of the platform. Includes all tenant administrators and all customer users;
 
-TODO: image
+ * *Tenant administrators* - set of tenant administrator users that are selected based on the list of tenants or their tenant profiles;
 
- * *Tenant administrators* - set of tenant administrator users that are selected based on the list of tenants or their tenant profiles.
+ * *Affected tenant administrators*;
 
-TODO: image
+ * *System administrators*.
 
 For **Tenant Administrator**:
 
  * *All users* - all users of the current tenant. Includes the tenant administrator and all customer users;
 
-TODO: image
-
  * *Tenant administrators* - all administrators of the current tenant;
-
-TODO: image
-
- * *Customer users* - all users that belong to customers of the current tenant;
-
-TODO: image
 
  * *User list* - selected users;
 
-TODO: image
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+ * *User group list* - selected user group;
+{% endif %}
+
+ * *Customer users* - all users that belong to customers of the current tenant;
+
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+ * *User role* - selected user role;
+{% endif %}
 
  * *Users of the entity owner* - all users that belong to the entity owner. For example, users of the customer that owns the device or tenant administrators if the device is not assigned to the customer;
-
-TODO: image
 
  * *Affected user* - The user that is affected by the notification trigger event. For example, the person that is assigned to investigate the alarm event;
 
 ###### Slack entities
 
-As a platform user, you may send notifications as a Slack message to a list of Users or Channels. Both public and private channels are supported. 
+As a platform user, you may send notifications as a Slack message to a list of Users or Channels. Both public and private channels and direct messages are supported.
 
-**Note:** Tenant administrator must configure a Slack API [token](https://api.slack.com/authentication/token-types) in the *System Settings -> Notification* tab.
+{% include images-gallery.html imageCollection="notification-center-recipients-slack" %}
 
 ### Templates
 
 The "Templates" tab displays the list of notification templates. You may create, copy and delete notification templates here.
 
-TODO: image
+{% include images-gallery.html imageCollection="notification-center-templates" %}
 
 The template defines the content of the notification and the set of delivery methods to use.
 Each template contains a notification subject and message. 
@@ -99,6 +146,19 @@ You may also modify the value of the parameter with one of the sufixes:
  * `upperCase`, for example - `${recipientFirstName:upperCase}`
  * `lowerCase`, for example - `${recipientFirstName:lowerCase}`
  * `capitalize`, for example - `${recipientFirstName:capitalize}`
+
+To create a new template, follow these steps:
+
+- Click the "Add template" button in the upper right corner of the "Templates" window;
+- In the new window, enter the notification template name;
+- Select a template from the template type list;
+- Next, select one or more delivery methods. Click "Next";
+- Enter the subject and text of the message;
+- Also you can use the Action button in the notification. Enter the button name, select the action type ("Open dashboard" or "Open URL link") and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon and set its color. Click "Next";
+- Click "Add".
+
+{% include images-gallery.html imageCollection="notification-center-add-templates" %}
+
 
 ##### General template
 
@@ -123,14 +183,37 @@ Available template parameters contain all parameters available for the [General]
   * *alarmOriginatorName* - the name of the alarm originator, e.g. 'Sensor T1';
   * *alarmOriginatorId* - the alarm originator entity id as uuid string;
 
+##### Device activity
+
+The alarm template is used to send notification about inactive devices.
+Available template parameters contain all parameters available for the [General](#general-template) template, plus:
+
+* *deviceId* - the device id as uuid string;
+* *deviceName* - the device name;
+* *deviceLabel* - the device label;
+* *deviceType* - the device type;
+* *actionType* - one of: 'inactive', 'active';
+
+##### Entity action
+
+The alarm template is used to send notification about entity action: creation, update or deletion.
+Available template parameters contain all parameters available for the [General](#general-template) template, plus:
+
+* *entityType* - the entity type, e.g. 'Device';
+* *entityId* - the entity id as uuid string;
+* *entityName* - the name of the entity;
+* *actionType* - one of: 'added', 'updated', 'deleted';
+* *originatorUserId* - the user who made the action;
+* *originatorUserName* - the user who made the action;    // WHY no EMAIL, first, last, entityLabel (if applicable)
+
 ##### Alarm comment
 
-The alarm comment template is used to send notification about comments on alarms. 
+The alarm comment template is used to send notification about comments on alarms.
 Available template parameters contain all parameters available for the [Alarm](#alarm-template) template, plus:
 
-  * *comment* - text of the comment;
-  * *userName* - name of the user who made the comment;
-  * *action* - one of: 'added', 'updated';
+* *comment* - text of the comment;
+* *userName* - name of the user who made the comment;
+* *action* - one of: 'added', 'updated';
 
 ##### Alarm assignment
 
@@ -142,29 +225,6 @@ Available template parameters contain all parameters available for the [Alarm](#
   * *assigneeLastName* - last name of the assignee;
   * *assigneeId* - the id of the assignee as uuid string;
   * *action* - one of: 'assigned', 'unassigned';
-
-##### Device activity
-
-The alarm template is used to send notification about inactive devices. 
-Available template parameters contain all parameters available for the [General](#general-template) template, plus:
-
-  * *deviceId* - the device id as uuid string;
-  * *deviceName* - the device name;    
-  * *deviceLabel* - the device label;    
-  * *deviceType* - the device type;
-  * *actionType* - one of: 'inactive', 'active';    
-
-##### Entity action
-
-The alarm template is used to send notification about entity action: creation, update or deletion. 
-Available template parameters contain all parameters available for the [General](#general-template) template, plus:
-
-  * *entityType* - the entity type, e.g. 'Device';
-  * *entityId* - the entity id as uuid string;
-  * *entityName* - the name of the entity;
-  * *actionType* - one of: 'added', 'updated', 'deleted';    
-  * *originatorUserId* - the user who made the action;    
-  * *originatorUserName* - the user who made the action;    // WHY no EMAIL, first, last, entityLabel (if applicable)
 
 ##### Rule engine lifecycle event
 
@@ -196,21 +256,32 @@ Notification rules allow you to automate the delivery of notifications on a part
 For example, rule automatically sends a notification when a new alarm is created.
 The trigger event types are tightly coupled to the notification template types. Let's review them below:
 
-##### Alarm trigger
+##### Alarm
 
 The alarm rule sends notifications on specific events: alarm is created, acknowledged, cleared, severity updated, or alarm deleted.
 
-*Escalation chain*
+To create a new alarm rule, follow these steps:
 
-The escalation chain allows you to configure multiple recipients of the notification. 
+ - Сlick the “Add rule” button in the upper right corner of the Rules window;
+ - In the new window, enter the rule`s name;
+ - Select Trigger - Alarm;
+ - Then, select Template from the list or create [your own](#templates);
+ - Build an Escalation chain. The escalation chain allows you to configure multiple recipients of the notification. 
 The first recipient group will receive the notification immediately. 
 Other recipient groups will receive the notification after a configurable delay. 
-You may also configure alarm statuses, which will stop the escalation chain.
+You may also configure alarm statuses, which will stop the escalation chain. Click "Next";
 
-*Trigger settings*
+{% capture difference %}
+**Important!**
+<br>
+If the first recipient of the notification cleared the alarm before the second recipient received the notification, the second and subsequent recipients will not receive the alarm notification.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
-The alarm trigger filter allows you to filter events based on alarm type and severity. 
-You may also select the event types that will trigger notification.
+ - The alarm trigger filter allows you to filter events based on alarm type and severity;
+ - You may also select the event types that will trigger notification. Click "Add".
+
+{% include images-gallery.html imageCollection="notification-center-add-rule" %}
 
 *Default rule*
 
@@ -221,6 +292,44 @@ Template subject: `Alarm '${alarmType}' - ${action:lowerCase}`
 Template message: `${alarmOriginatorEntityType:capitalize} '${alarmOriginatorName}'`
 
 See [Alarm](#alarm-template) template for a list of the available template parameters.
+
+##### Device activity
+
+The device inactivity rule sends notifications when device becomes inactive or active.
+
+*Trigger settings*
+
+The trigger filter allows you to configure specific devices or device types.
+You may also select the event types that will trigger notification.
+
+*Default rule*
+
+The default rule 'Device become inactive' will notify all tenant administrators and customer users when any device becomes inactive.
+
+Template subject: `Device '${deviceName}' inactive`
+
+Template message: `Device '${deviceName}' with type '${deviceType}' became inactive`
+
+See [Device activity](#device-activity) template for a list of the available template parameters.
+
+##### Entity action
+
+The entity action rule sends notifications when entity is created, updated or deleted.
+
+*Trigger settings*
+
+The trigger filter allows you to filter events by entity type.
+You may also select the event types that will trigger notification.
+
+*Default rule*
+
+The default rule 'Device created or deleted' will notify all tenant administrators and customer users when any device is created or deleted.
+
+Template subject: `${entityType} was ${actionType}`
+
+Template message: `${entityType} '${entityName}' was ${actionType} by user ${originatorUserName}`
+
+See [Entity action](#entity-action) template for a list of the available template parameters.
 
 ##### Alarm comment
 
@@ -259,44 +368,6 @@ Template subject: `Alarm '${alarmType}' (${alarmSeverity}) was assigned to user`
 Template message: `${userName} assigned alarm on ${alarmOriginatorEntityType} '${alarmOriginatorName}' to ${assigneeEmail}`
 
 See [Alarm assignment](#alarm-assignment) template for a list of the available template parameters.
-
-##### Device activity
-
-The device inactivity rule sends notifications when device becomes inactive or active.
-
-*Trigger settings*
-
-The trigger filter allows you to configure specific devices or device types. 
-You may also select the event types that will trigger notification.
-
-*Default rule*
-
-The default rule 'Device become inactive' will notify all tenant administrators and customer users when any device becomes inactive.
-
-Template subject: `Device '${deviceName}' inactive`
-
-Template message: `Device '${deviceName}' with type '${deviceType}' became inactive`
-
-See [Device activity](#device-activity) template for a list of the available template parameters.
-
-##### Entity action
-
-The entity action rule sends notifications when entity is created, updated or deleted.
-
-*Trigger settings*
-
-The trigger filter allows you to filter events by entity type. 
-You may also select the event types that will trigger notification.
-
-*Default rule*
-
-The default rule 'Device created or deleted' will notify all tenant administrators and customer users when any device is created or deleted.
-
-Template subject: `${entityType} was ${actionType}`
-
-Template message: `${entityType} '${entityName}' was ${actionType} by user ${originatorUserName}`
-
-See [Entity action](#entity-action) template for a list of the available template parameters.
 
 ##### Rule engine lifecycle event
 
