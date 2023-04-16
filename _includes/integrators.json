@@ -24,18 +24,6 @@
     }
   },
   {
-    "type": ["Asia"],
-    "country": ["India"],
-    "name": "Advance Mechanical Services Pvt. Ltd.",
-    "contact": {
-      "href": "contact@ams-india.co.in"
-    },
-    "site": {
-      "href": "ams-india.co.in",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Middle East"],
     "country": ["United Arab Emirates"],
     "name": "Agreefy FZE",
@@ -96,30 +84,6 @@
     }
   },
   {
-    "type": ["Europe"],
-    "country": ["France"],
-    "name": "arx iT",
-    "contact": {
-      "href": "info@arxit.com"
-    },
-    "site": {
-      "href": "arxit.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["China"],
-    "name": "AugeSmart Inc.",
-    "contact": {
-      "href": "service@augesmart.com"
-    },
-    "site": {
-      "href": "augesmart.com",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Europe", "Africa", "Asia", "Middle East"],
     "country": ["Turkey", "Georgia", "Kazakhstan", "Azerbaijan", "Tajikistan", "Turkmenistan", "Uzbekistan", "Kyrgyzstan", "Tunisia", "Libya", "Iraq", "Albania", "Montenegro", "Bosnia and Herzegovina"],
     "name": "Basari Muhendislik",
@@ -164,18 +128,6 @@
     },
     "site": {
       "href": "bhavamish.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["India"],
-    "name": "Bluetronics",
-    "contact": {
-      "href": "Info@bluetronics.co.in"
-    },
-    "site": {
-      "href": "bluetronics.co.in ",
       "target": "_blank"
     }
   },
@@ -264,18 +216,6 @@
     }
   },
   {
-    "type": ["Asia"],
-    "country": ["China"],
-    "name": "DEW Technology",
-    "contact": {
-      "href": "support@microraindrop.com"
-    },
-    "site": {
-      "href": "microraindrop.com",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Africa"],
     "country": ["India"],
     "name": "Digital Reach Pvt. Ltd.",
@@ -360,18 +300,6 @@
     }
   },
   {
-    "type": ["Asia"],
-    "country": ["India"],
-    "name": "Factorie Intelligent Operations Pvt. Ltd.",
-    "contact": {
-      "href": "naresh.yerrabachu@factorie.io"
-    },
-    "site": {
-      "href": "factorie.io",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Australia and Oceania"],
     "country": ["Australia"],
     "name": "FEEL Digital Asset Strategy",
@@ -408,18 +336,6 @@
     }
   },
   {
-    "type": ["Asia"],
-    "country": ["China"],
-    "name": "HAI Robotics Co., Ltd.",
-    "contact": {
-      "href": "qiang.han@gmail.com"
-    },
-    "site": {
-      "href": "",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Europe"],
     "country": ["Swizerland"],
     "name": "Halley Technologies SA",
@@ -440,18 +356,6 @@
     },
     "site": {
       "href": "hinditron.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["India"],
-    "name": "IBOT Control Systems Inc.",
-    "contact": {
-      "href": "connect@ibotcontrols.com"
-    },
-    "site": {
-      "href": "ibotcontrols.com",
       "target": "_blank"
     }
   },
@@ -536,18 +440,6 @@
     },
     "site": {
       "href": "link971.ae",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["India"],
-    "name": "Logicon Technosolutions Pvt. Ltd.",
-    "contact": {
-      "href": "support@logicontech.com"
-    },
-    "site": {
-      "href": "logicontech.com",
       "target": "_blank"
     }
   },
@@ -637,18 +529,6 @@
   },
   {
     "type": ["Asia"],
-    "country": ["India"],
-    "name": "NistantriTech Pvt. Ltd.",
-    "contact": {
-      "href": "contact@nistantritech.com"
-    },
-    "site": {
-      "href": "nistantritech.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
     "country": ["Japan"],
     "name": "NTT DATA Romania SA",
     "contact": {
@@ -668,18 +548,6 @@
     },
     "site": {
       "href": "omnicon.it",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["North America"],
-    "country": ["United States of America"],
-    "name": "Petrichor Science Group LLC",
-    "contact": {
-      "href": "miles@petrichorsciencegroup.com"
-    },
-    "site": {
-      "href": "petrichorsciencegroup.com",
       "target": "_blank"
     }
   },
@@ -704,18 +572,6 @@
     },
     "site": {
       "href": "produmize.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia", "Australia and Oceania"],
-    "country": ["India", "Australia"],
-    "name": "ProtoConvert",
-    "contact": {
-      "href": "sales@protoconvert.com"
-    },
-    "site": {
-      "href": "protoconvert.com",
       "target": "_blank"
     }
   },
@@ -800,30 +656,6 @@
     },
     "site": {
       "href": "sancloud.co.uk",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["India"],
-    "name": "SAR",
-    "contact": {
-      "href": "Contact@sar-bptc.com"
-    },
-    "site": {
-      "href": "sar-btpc.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Africa"],
-    "country": ["Nigeria"],
-    "name": "Sawtel Technologies Ltd.",
-    "contact": {
-      "href": "info@sawtelnigeria.com"
-    },
-    "site": {
-      "href": "sawtelnigeria.com",
       "target": "_blank"
     }
   },
@@ -1016,18 +848,6 @@
     },
     "site": {
       "href": "iot-experts.net",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["India"],
-    "name": "Velotech Solutions",
-    "contact": {
-      "href": "velotechsolutions@gmail.com"
-    },
-    "site": {
-      "href": "velotechsolutions.com",
       "target": "_blank"
     }
   },
