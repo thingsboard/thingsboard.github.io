@@ -35,7 +35,7 @@ openssl req -x509 -newkey rsa:4096 -keyout rootKey.pem -out rootCert.pem -sha256
 Sample output, referencing *company.com* as CN
 </summary>
 {% highlight text %}
-Generating a ED25519 private key
+Generating a RSA private key
 writing new private key to 'rootKey.pem'
 -----
 You are about to be asked to enter information that will be incorporated
@@ -70,7 +70,7 @@ openssl req -new -newkey rsa:4096 -keyout intermediateKey.pem -out intermediate.
 Sample output, referencing *group.company.com* as CN
 </summary>
 {% highlight text %}
-Generating a ED25519 private key
+Generating a RSA private key
 writing new private key to 'intermediateKey.pem'
 -----
 You are about to be asked to enter information that will be incorporated
@@ -130,7 +130,7 @@ openssl req -new -newkey rsa:4096 -keyout deviceKey.pem -out device.csr -sha256 
 Sample output, referencing <i>device123.group.company.com</i> as CN
 </summary>
 {% highlight text %}
-Generating a ED25519 private key
+Generating a RSA private key
 writing new private key to 'deviceKey.pem'
 -----
 You are about to be asked to enter information that will be incorporated
