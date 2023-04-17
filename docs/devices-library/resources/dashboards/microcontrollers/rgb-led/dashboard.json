@@ -356,7 +356,7 @@
                     "dataKeyType": "shared",
                     "dataKeyValueType": "integer",
                     "required": false,
-                    "isEditable": "readonly",
+                    "isEditable": "editable",
                     "disabledOnDataKey": "invertedLedMode",
                     "step": 1,
                     "minValue": 10,
@@ -410,11 +410,11 @@
                 {
                   "name": "ledColor",
                   "type": "attribute",
-                  "label": "LED color",
+                  "label": "LED Color",
                   "color": "#607d8b",
                   "settings": {
                     "dataKeyHidden": false,
-                    "dataKeyType": "server",
+                    "dataKeyType": "shared",
                     "dataKeyValueType": "string",
                     "required": false,
                     "isEditable": "editable",
@@ -423,7 +423,7 @@
                     "useGetValueFunction": false,
                     "useSetValueFunction": false
                   },
-                  "_hash": 0.3475988161648699,
+                  "_hash": 0.1537633719172815,
                   "aggregationType": null,
                   "units": null,
                   "decimals": null,
@@ -749,7 +749,7 @@
         "alias": "My device alias",
         "filter": {
           "type": "entityName",
-          "resolveMultiple": true,
+          "resolveMultiple": false,
           "entityType": "DEVICE",
           "entityNameFilter": "My device"
         }

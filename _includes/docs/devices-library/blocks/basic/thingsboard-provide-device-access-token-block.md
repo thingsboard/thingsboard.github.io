@@ -20,7 +20,7 @@ To connect the device you need to get the device credentials first. ThingsBoard 
     '
 %}
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDevicePE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDeviceCE %}

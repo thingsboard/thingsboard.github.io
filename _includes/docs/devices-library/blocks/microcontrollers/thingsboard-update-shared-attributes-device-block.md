@@ -1,5 +1,5 @@
 
-Also we can change the period of the blinking using shared attribute update functionality.    
+Also we can change the period of the blinking using [shared attribute](/docs/{{page.docsPrefix}}user-guide/attributes/#shared-attributes) update functionality.    
 
 {% assign updateLedBlinkingPeriod = '
     ===
@@ -171,6 +171,67 @@ void setLedColor() {
     digitalWrite(LEDB, LOW);
   }
 }
+...
+```
+
+{% endif %}
+
+{% if OLEDInstallationRequired == "true" %}
+
+{% assign updateTextOnDisplay = '
+    ===
+        image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-update-oled-screen.png,
+        title: Put text to the input box and apply changes. Text also will be displayed in the field above.
+'
+%}
+
+Also, you can change text on the display. To do this you can change **screenText** shared attribute or using the example dashboard.  
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=updateTextOnDisplay %}
+
+You can use the following special symbols:  
+- **\n** - new line.
+- **\t** - four spaces.
+
+To connect OLED display we use the following code parts (We have an I2C line, connected to pins **5** and **4** on the board):  
+
+```cpp
+...
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+...
+Wire.begin(5, 4);
+if(!display.begin(SSD1306_SWITCHCAPVCC, 0x3C, false, false)) { 
+    Serial.println("Cannot initialize screen!");
+}
+...
+```
+
+To process incoming text and handle special symbols we use the following code:  
+```cpp
+...
+if (strcmp(it->key().c_str(), SCREEN_TEXT_ATTR) == 0) {
+    screenText = String(it->value().as<const char*>());
+    screenText.replace("\\n", "\n");
+    screenText.replace("\\t", "    ");
+    screenTextUpdated = true;
+}
+...
+```
+
+To display incoming test on display we use the following part of code:  
+```cpp
+...
+
+  if (screenTextUpdated) {
+    screenTextUpdated = false;
+    display.clearDisplay();
+    display.setTextSize(1);
+    display.setTextColor(SSD1306_WHITE);
+    display.setCursor(0, 0);
+    display.println(screenText);
+    display.display();
+    Serial.println("Screen updated!");
+  }
 ...
 ```
 

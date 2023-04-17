@@ -5,7 +5,7 @@
 - Device have to be connected to the Internet via Ethernet, Modem or WIFI. '
  %}
  {% assign thingsboardInstanceLink = "https://demo.thingsboard.io" %}
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
 {% assign thingsboardInstanceLink = "https://thingsboard.cloud" %}
 {% endif %}
 

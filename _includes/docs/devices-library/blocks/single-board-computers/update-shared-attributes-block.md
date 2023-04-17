@@ -1,35 +1,8 @@
+Also we can change the period of the blinking using [shared attribute](/docs/{{page.docsPrefix}}user-guide/attributes/#shared-attributes) update functionality.
+
 This type of attribute is available only for Devices. It is similar to the Server-side attributes but has one important 
 difference. The device firmware/application may request the value of the shared attribute(s) or subscribe to the updates 
 of the attribute(s). The most common use case of shared attributes is to store device settings.
-
-The user may change the attribute via UI. The script or other server-side application may change the attribute value via 
-REST API.
-
-{% assign updatingSharedAttributeCE = '
-    ===
-        image: /images/user-guide/attributes/add-shared-ce-src.png
-    ===
-        image: /images/user-guide/attributes/add-shared-ce2-src.png
-    ===
-        image: /images/user-guide/attributes/add-shared-ce3-src.png
-    '
-%}
-
-{% assign updatingSharedAttributePE = '
-    ===
-        image: /images/user-guide/attributes/add-shared-pe-src.png
-    ===
-        image: /images/user-guide/attributes/add-shared-pe2-src.png
-    ===
-        image: /images/user-guide/attributes/add-shared-pe3-src.png
-    '
-%}
-
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
-    {% include images-gallery.liquid showListImageTitles="true" imageCollection=updatingSharedAttributePE %}
-{% else %}  
-    {% include images-gallery.liquid showListImageTitles="true" imageCollection=updatingSharedAttributeCE %}
-{% endif %}
 
 For now, we are ready to write our code. In this part, we use new packages for blinking our LED in the `blink` function.
 Also, we use the `attibute_callback` function, which will be called when we change the value of our shared attribute. And 

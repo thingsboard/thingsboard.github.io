@@ -127,6 +127,7 @@ Let’s setup our project:
             client.send_telemetry(telemetry)
             time.sleep(60)
    ```
+   {:.copy-code.expandable-20}
 
 7. And finally, let’s start our script:
 

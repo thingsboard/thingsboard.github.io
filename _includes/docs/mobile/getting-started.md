@@ -43,6 +43,40 @@ git clone {{appRepo}}
 ```
 {: .copy-code}
 
+#### DART ThingsBoard Client compatibility table 
+
+Determine the client version according to the version of ThingsBoard
+
+<table>
+    <thead>
+        <tr>
+          <td style="width: 50%"><b>Dart ThingsBoard Client</b></td><td style="width: 50%"><b>ThingsBoard version</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1.0.4</td>
+            <td>3.4.2+</td>
+        </tr>
+        <tr>
+            <td>1.0.3</td>
+            <td>3.4.x+</td>
+        </tr>
+        <tr>
+            <td>1.0.2</td>
+            <td>3.3.x+</td>
+        </tr>
+        <tr>
+            <td>1.0.1</td>
+            <td>3.3.x+</td>
+        <tr>
+            <td>1.0.0</td>
+            <td>3.3.0</td>
+        </tr>
+        </tr>
+    </tbody>
+</table>
+
 ## Step 3. Configure {{appPrefix}} API endpoint
 
 Open **{{appProject}}** project in your editor/IDE. Edit **lib/constants/app_constants.dart**.

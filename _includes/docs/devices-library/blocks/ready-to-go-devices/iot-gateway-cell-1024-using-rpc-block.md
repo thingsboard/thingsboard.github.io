@@ -6,5 +6,5 @@
 %}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=sendRpcCommand %} 
-
+To read more about the RPC commands - you can read [this article](/docs/{{page.docsPrefix}}user-guide/rpc/#server-side-rpc).  
 All the commands that can be sent to the device are explained in the EXXN IoT Gateway manual.

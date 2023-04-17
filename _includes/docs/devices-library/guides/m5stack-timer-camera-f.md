@@ -1,21 +1,22 @@
-
 {% assign boardLedCount = 1 %}
+{% assign hasCamera = "true" %}
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
-{% assign arduinoBoardPath = "**ESP32** > **ESP32 Dev Module**" %}
+{% assign arduinoBoardPath = "**M5Stack** > **M5Stack-Timer-CAM**" %}
 {% assign prerequisites = "
-- " | append: deviceName | append: "
+- [" | append: deviceName | append: "](https://shop.m5stack.com/collections/m5-cameras/products/esp32-psram-timer-camera-fisheye-ov3660)
 - [Arduino IDE](https://www.arduino.cc/en/software)"
  %}
 
 ## Introduction
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+[M5Stack Timer Camera F](https://shop.m5stack.com/collections/m5-cameras/products/esp32-psram-timer-camera-fisheye-ov3660) is a fisheye camera module based on ESP32-D0WDQ6-V3 with 8M PSRAM and 4M Flash on board.  
+3.0 megapixel camera (OV3660) with DFOV 120° and a maximum resolution of 2048x1536 photos can be captured.  
+The camera features an ultra-low-power design, and the internal integrated RTC (BM8563) draws out the IRQ signal, which can be used for sleep and timer wake-up (sleep current down to 2μA).  
+The built-in 270mAh battery provides more than one month of battery life with timed pictures (one per hour) enabled.  
+The module supports Wi-Fi image transfer and USB port debugging, and the HY2.0-4P output on the bottom can be used to expand other peripherals.  
+The on-board LED status indicator and reset button facilitate program development and debugging.  
 
-The Dev Kit V1 dev kit is built on the ESP-WROOM-32 module, a new miniature high-performance Wi-Fi + BT + BLE chip from Espressif, designed for a wide range of applications, from micro-power network sensors to the most complex applications, such as encoding, streaming music and MP3 encoding.  
-The module contains all the necessary minimum peripherals, sufficient for a quick and comfortable start of the work with ESP-WROOM-32.  
-ESP-WROOM-32 is based on the popular ESP32 dual-core chipset, with a variable clock frequency from 80 MHz to 240 MHz, with the possibility of individual control and power supply.  
-The module is designed for portable and autonomous electronics and Internet of Things applications, made in a miniature 25.5 mm x 18 mm package. It has on-board Flash memory, 40 MHz quartz and a PCB antenna that provides good RF characteristics.  
-  
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
 ## Create device on ThingsBoard
@@ -24,7 +25,7 @@ The module is designed for portable and autonomous electronics and Internet of T
 
 ## Install required libraries and tools
 
-{% include /docs/devices-library/blocks/microcontrollers/esp32-arduino-library-install-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/m5stack-arduino-library-install-block.md %}
 
 {% include /docs/devices-library/blocks/microcontrollers/thingsboard-arduino-library-install-block.md %}
 
@@ -32,7 +33,7 @@ The module is designed for portable and autonomous electronics and Internet of T
 
 {% include /docs/devices-library/blocks/basic/thingsboard-provide-device-access-token-block.md %}
 
-{% include /docs/devices-library/blocks/microcontrollers/general-code-to-program-block.md %}
+{% include /docs/devices-library/blocks/microcontrollers/camera-code-to-program-block.md %}
 
 ## Check data on ThingsBoard
 
@@ -54,4 +55,4 @@ The module is designed for portable and autonomous electronics and Internet of T
 
 ## Conclusion
 
-{% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include /docs/devices-library/blocks/basic/conclusion-block.md %}   
