@@ -1,4 +1,4 @@
-Create a [dashboard](https://thingsboard.io/docs/pe/user-guide/dashboards/){:target="_blank"} to visualize telemetry values in widgets.
+Create a [dashboard](https://thingsboard.io/docs/{{page.docsPrefix}}user-guide/dashboards/){:target="_blank"} to visualize telemetry values in widgets.
 
 {% assign dashboardCreation = '
     ===
@@ -16,5 +16,5 @@ Create a [dashboard](https://thingsboard.io/docs/pe/user-guide/dashboards/){:tar
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=dashboardCreation %}
 
 - All the measures that are "enabled" in the device's JSON configuration file will be found as metrics with the name specified in the same file.  
-- You can read more about widgets and their creation in [this guide](https://thingsboard.io/docs/pe/user-guide/dashboards/#widgets){:target="_blank"}.  
+- You can read more about widgets and their creation in [this guide](https://thingsboard.io/docs/{{page.docsPrefix}}user-guide/dashboards/#widgets){:target="_blank"}.  
 

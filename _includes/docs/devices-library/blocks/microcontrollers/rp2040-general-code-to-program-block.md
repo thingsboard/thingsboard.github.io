@@ -10,6 +10,7 @@ To do this, you can use the code below. It contains all required functionality f
 #else 
 #include <WiFiNINA.h>
 #endif
+
 // Wifi credentials
 constexpr char WIFI_SSID[] = "YOUR_WIFI_SSID";
 constexpr char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
@@ -19,7 +20,7 @@ constexpr char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
 constexpr char TOKEN[] = "YOUR_ACCESS_TOKEN";
 
 // Thingsboard we want to establish a connection too
-constexpr char THINGSBOARD_SERVER[] = "{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
+constexpr char THINGSBOARD_SERVER[] = "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
 // MQTT port used to communicate with the server, 1883 is the default unencrypted MQTT port.
 constexpr uint16_t THINGSBOARD_PORT = 1883U;
 
@@ -362,7 +363,7 @@ void loop() {
 }
 
 ```
-{:.copy-code}
+{:.copy-code.expandable-20}
 
 In the code, replace placeholders with your WiFi network SSID, password, ThingsBoard device access token.  
 
@@ -373,7 +374,7 @@ Necessary variables for connection:
 | WIFI_SSID | **YOUR_WIFI_SSID** | Your WiFi network name. | 
 | WIFI_PASSWORD | **YOUR_WIFI_PASSWORD** | Your WiFi network password. |
 | TOKEN | **YOUR_DEVICE_ACCESS_TOKEN** | Access token from device. Obtaining process described in #connect-device-to-thingsboard | 
-| THINGSBOARD_SERVER | **{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address. |
+| THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address. |
 | THINGSBOARD_PORT | **1883U** | ThingsBoard server MQTT port. Can be default for this guide. |
 | MAX_MESSAGE_SIZE | **512U** | Maximal size of MQTT messages. Can be default for this guide. |
 | SERIAL_DEBUG_BAUD | **1883U** | Baud rate for serial port. Can be default for this guide. |  
@@ -386,7 +387,7 @@ constexpr char WIFI_PASSWORD[] = "YOUR_WIFI_PASSWORD";
 
 constexpr char TOKEN[] = "YOUR_ACCESS_TOKEN";
 
-constexpr char THINGSBOARD_SERVER[] = "{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
+constexpr char THINGSBOARD_SERVER[] = "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
 constexpr uint16_t THINGSBOARD_PORT = 1883U;
 
 constexpr uint32_t MAX_MESSAGE_SIZE = 512U;

@@ -140,6 +140,9 @@ toc:
     path: /docs/user-guide/integrations/ibm-watson-iot/
   - title: Azure Event Hub
     path: /docs/user-guide/integrations/azure-event-hub/
+  - title: Azure Service Bus
+    path: /docs/user-guide/integrations/azure-service-bus/
+    new: true
   - title: Azure IoT Hub
     path: /docs/user-guide/integrations/azure-iot-hub/
   - title: TCP
@@ -206,7 +209,6 @@ toc:
     path: /docs/pe/user-guide/rbac/
   - title: Two-Factor Authentication
     path: /docs/pe/user-guide/two-factor-authentication/
-    new: true
   - title: OAuth 2 Support
     path: /docs/pe/user-guide/oauth-2-support/
   - title: HTTP Transport
@@ -257,6 +259,9 @@ toc:
     path: /docs/pe/user-guide/ui/dashboards/
   - title: SMS Provider Settings
     path: /docs/pe/user-guide/ui/sms-provider-settings/
+  - title: Slack Settings
+    path: /docs/pe/user-guide/ui/slack-settings/
+    new: true
   - title: Mail Settings
     path: /docs/pe/user-guide/ui/mail-settings/
   - title: JWT Security Settings

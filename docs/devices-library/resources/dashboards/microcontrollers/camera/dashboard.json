@@ -681,7 +681,7 @@
             {
               "type": "entity",
               "name": null,
-              "entityAliasId": "c0ac8d42-23f9-64b5-bd1c-b1e01506dacb",
+              "entityAliasId": "8c655e75-6c9c-5c47-bf9d-5eab6e9a8888",
               "filterId": null,
               "dataKeys": [
                 {
@@ -731,7 +731,8 @@
           "padding": "0px",
           "settings": {
             "useMarkdownTextFunction": false,
-            "markdownTextPattern": "\n<div>\n<img src=\"data:image/jpeg;base64, ${photo} \"/>\n</div>",
+            "markdownTextPattern": "\n<div>\n<img src=\"data:image/jpeg;base64,${photo}\"/>\n</div>",
+            "applyDefaultMarkdownStyle": true,
             "markdownCss": "div img {\n    display: flex;\n    width: 100%;\n    height: 100%;\n}"
           },
           "title": "Markdown/HTML Card",
@@ -880,21 +881,9 @@
         "alias": "My device alias",
         "filter": {
           "type": "entityName",
-          "resolveMultiple": true,
+          "resolveMultiple": false,
           "entityType": "DEVICE",
           "entityNameFilter": "My device"
-        }
-      },
-      "c0ac8d42-23f9-64b5-bd1c-b1e01506dacb": {
-        "id": "c0ac8d42-23f9-64b5-bd1c-b1e01506dacb",
-        "alias": "My device",
-        "filter": {
-          "type": "singleEntity",
-          "singleEntity": {
-            "entityType": "DEVICE",
-            "id": "d8463fc0-673a-11ed-861d-25ac767dd88b"
-          },
-          "resolveMultiple": false
         }
       }
     },

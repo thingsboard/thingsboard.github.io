@@ -3,7 +3,7 @@
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign arduinoBoardPath = "**M5Stack** > **M5Stack-Timer-CAM**" %}
 {% assign prerequisites = "
-- " | append: deviceName | append: "
+- [" | append: deviceName | append: "](https://shop.m5stack.com/collections/m5-cameras/products/esp32-psram-timer-camera-x-ov3660)
 - [Arduino IDE](https://www.arduino.cc/en/software)"
  %}
 
