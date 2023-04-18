@@ -200,7 +200,7 @@ Execute the following command to upload temperature readings to ThingsBoard Clou
 
 {% if docsPrefix == 'paas/' %}
 ```bash
-mosquitto_pub --cafile tb-cloud-chain.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
+mosquitto_pub --cafile tb-cloud-chain.pem -d -q 1 -h "mqtt.thingsboard.cloud" -p "8883" \
 -t "v1/devices/me/telemetry" --key deviceKey.pem --cert chain.pem -m {"temperature":25}
 ```
 {: .copy-code}
@@ -210,7 +210,6 @@ mosquitto_pub --cafile tb-server-chain.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
 -t "v1/devices/me/telemetry" --key deviceKey.pem --cert chain.pem -m {"temperature":25}
 ```
 {: .copy-code}
-{% endif %}
 
 Similar command for the [self-signed](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/#self-signed-certificates-generation) server certificate:
 
@@ -219,6 +218,8 @@ mosquitto_pub --insecure --cafile server.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883"
 -t "v1/devices/me/telemetry" --key deviceKey.pem --cert chain.pem -m {"temperature":25}
 ```
 {: .copy-code}
+{% endif %}
+
  
 
 Don't forget to replace **YOUR_TB_HOST** with the host of your ThingsBoard instance.

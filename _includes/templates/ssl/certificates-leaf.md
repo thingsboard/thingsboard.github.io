@@ -45,7 +45,7 @@ Execute the following command to upload temperature readings to ThingsBoard Clou
 
 {% if docsPrefix == 'paas/' %}
 ```bash
-mosquitto_pub --cafile tb-cloud-chain.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
+mosquitto_pub --cafile tb-cloud-chain.pem -d -q 1 -h "mqtt.thingsboard.cloud" -p "8883" \
 -t "v1/devices/me/telemetry" --key key.pem --cert cert.pem -m {"temperature":25}
 ```
 {: .copy-code}
