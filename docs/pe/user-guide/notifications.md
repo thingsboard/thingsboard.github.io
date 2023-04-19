@@ -15,7 +15,7 @@ notification-center-send-notification:
         title: 'To send a notification click the “Send notification” button in the upper right corner of the notification page;'
     1:
         image: /images/user-guide/notifications/notification-center-send-notification-2-pe.png
-        title: 'In new window, select recipients and one or more delivery methods;'
+        title: 'In new window, select recipients and one or more delivery methods. In this example, let`s consider the Web delivery method;'
     2:
         image: /images/user-guide/notifications/notification-center-send-notification-3-pe.png
         title: 'If necessary, use the scheduler. Click "Next";'
@@ -24,7 +24,7 @@ notification-center-send-notification:
         title: 'Enter the subject of the message and the text of the message;'
     4:
         image: /images/user-guide/notifications/notification-center-send-notification-5-pe.png
-        title: 'You can use the Action button in the notification. Enter the button name, select the action type ("Open dashboard" or "Open URL link") and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon and set its color. Click "Next";'
+        title: 'You can use the Action button in the notification. Enter the button text, select the action type ("Open dashboard" or "Open URL link") and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon in the notification and set its color. Click "Next";'
     5:
         image: /images/user-guide/notifications/notification-center-send-notification-6-pe.png
         title: 'In this window, you can see how the notification will look and also view the list of notification recipients. Click "Send";'
@@ -48,6 +48,11 @@ notification-center-inbox:
     2:
         image: /images/user-guide/notifications/notification-center-inbox-3-pe.png
         title: 'You may also switch the view to browse all notifications.'
+
+notification-center-inbox-bell-icon:
+    0:
+        image: /images/user-guide/notifications/notification-inbox-bell-icon-1-pe.png
+        title: 'Click on the bell icon to view incoming notifications.'
 
 notification-center-sent:
     0:
@@ -96,29 +101,128 @@ notification-center-templates:
 notification-center-add-templates:
     0:
         image: /images/user-guide/notifications/notification-center-add-templates-1-pe.png
-        title: 'Click the "Add template" button. Then enter notification template name and type. Select one or more delivery methods. Click "Next";'
+        title: 'Click the "Add template" button. Then enter notification template name and type. Select one or more delivery methods. In this example, let’s consider the Web delivery method. Click "Next";'
     1:
         image: /images/user-guide/notifications/notification-center-add-templates-2-pe.png
         title: 'Enter the subject of the message and the text of the message;'
     2:
         image: /images/user-guide/notifications/notification-center-add-templates-3-pe.png
-        title: 'You can use the "Action button" in the notification. Enter the button name, select the action type ("Open dashboard" or "Open URL link") and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon and set its color. Click "Next";'
+        title: 'You can use the "Action button" in the notification. Enter the button text, select the action type ("Open dashboard" or "Open URL link") and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon in the notification and set its color. Click "Next";'
     3:
         image: /images/user-guide/notifications/notification-center-add-templates-4-pe.png
         title: 'The new template is added.'
 
-notification-center-add-rule:
+notification-center-add-rule-alarm:
     0:
         image: /images/user-guide/notifications/notification-center-add-rule-alarm-1-pe.png
-        title: 'Сlick the "Add rule" button. Then enter rule name. Select Trigger - Alarm. Then, select Template from the list or create your own;'
+        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Alarm. Then, select template from the list or create your own;'
     1:
         image: /images/user-guide/notifications/notification-center-add-rule-alarm-2-pe.png
-        title: 'Build an Escalation chain. Configure one or multiple recipients of the notification. Click "Next";'
+        title: 'Build an Escalation chain. Configure one or multiple recipients of the notification. Also configure alarm statuses, which will stop the escalation chain Click "Next";'
     2:
         image: /images/user-guide/notifications/notification-center-add-rule-alarm-3-pe.png
-        title: 'Filter alarms by type and severity. Click "Add";'
+        title: 'Filter alarms by type and severity. Also select the event types that will trigger notification. Click "Add";'
     3:
         image: /images/user-guide/notifications/notification-center-add-rule-alarm-4-pe.png
+        title: 'The new rule is created.'
+
+notification-center-add-rule-device-activity:
+    0:
+        image: /images/user-guide/notifications/notification-center-add-rule-device-activity-1-pe.png
+        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Alarm. Then, select template from the list and specify recipient. Click "Next";'
+    1:
+        image: /images/user-guide/notifications/notification-center-add-rule-device-activity-2-pe.png
+        title: 'Filter notifications by specific devices or by device types. You may also select the event types that will trigger notification. Click "Add";'
+    2:
+        image: /images/user-guide/notifications/notification-center-add-rule-device-activity-3-pe.png
+        title: 'The new rule is created.'
+
+notification-center-add-rule-entity-action:
+    0:
+        image: /images/user-guide/notifications/notification-center-add-rule-entity-action-1-pe.png
+        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Entity action. Then, select template from the list and specify recipient. Click "Next";'
+    1:
+        image: /images/user-guide/notifications/notification-center-add-rule-entity-action-2-pe.png
+        title: 'Filter notifications by entity type. You may also select the event types that will trigger notification. Click "Add";'
+    2:
+        image: /images/user-guide/notifications/notification-center-add-rule-entity-action-3-pe.png
+        title: 'The new rule is created.'
+
+notification-center-add-rule-alarm-comment:
+    0:
+        image: /images/user-guide/notifications/notification-center-add-rule-alarm-comment-1-pe.png
+        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Alarm comment. Then, select template from the list and specify recipient. Click "Next";'
+    1:
+        image: /images/user-guide/notifications/notification-center-add-rule-alarm-comment-2-pe.png
+        title: 'The trigger filter allows you to filter alarms by type, severity, and status. You may also select to notify only on user comments and skip system comments. Optionally, you may notify users on comments update. Click "Add";'
+    2:
+        image: /images/user-guide/notifications/notification-center-add-rule-alarm-comment-3-pe.png
+        title: 'The new rule is created.'
+
+notification-center-add-rule-alarm-assignment:
+    0:
+        image: /images/user-guide/notifications/notification-center-add-rule-alarm-assignment-1-pe.png
+        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Alarm assignment. Then, select template from the list and specify recipient. Click "Next";'
+    1:
+        image: /images/user-guide/notifications/notification-center-add-rule-alarm-assignment-2-pe.png
+        title: 'The trigger filter allows you to filter alarms by type, severity, and status. You may also select the event types that will trigger notification: assign or unassign. Click "Add";'
+    2:
+        image: /images/user-guide/notifications/notification-center-add-rule-alarm-assignment-3-pe.png
+        title: 'The new rule is created.'
+
+notification-center-add-rule-engine-lifecycle-event:
+    0:
+        image: /images/user-guide/notifications/notification-center-add-rule-engine-lifecycle-event-1-pe.png
+        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Rule engine lifecycle event. Then, select template from the list and specify recipient. Click "Next";'
+    1:
+        image: /images/user-guide/notifications/notification-center-add-rule-engine-lifecycle-event-2-pe.png
+        title: 'The trigger filter allows you to filter alarms by type, severity, and status. You may also select the event types that will trigger notification: assign or unassign. Click "Add";'
+    2:
+        image: /images/user-guide/notifications/notification-center-add-rule-engine-lifecycle-event-3-pe.png
+        title: 'The new rule is created.'
+
+notification-center-add-rule-integration-lifecycle-event:
+    0:
+        image: /images/user-guide/notifications/notification-center-add-rule-integration-lifecycle-event-1-pe.png
+        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Integration lifecycle event. Then, select template from the list and specify recipient. Click "Next";'
+    1:
+        image: /images/user-guide/notifications/notification-center-add-rule-integration-lifecycle-event-2-pe.png
+        title: 'The trigger filter allows you to filter alarms by type, severity, and status. You may also select the event types that will trigger notification: assign or unassign. Click "Add";'
+    2:
+        image: /images/user-guide/notifications/notification-center-add-rule-integration-lifecycle-event-3-pe.png
+        title: 'The new rule is created.'
+
+notification-center-add-rule-entities-limit:
+    0:
+        image: /images/user-guide/notifications/notification-center-add-rule-entities-count-limit-1-pe.png
+        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Entities limit. Then, select template from the list and specify recipient. Click "Next";'
+    1:
+        image: /images/user-guide/notifications/notification-center-add-rule-entities-count-limit-2-pe.png
+        title: 'The trigger filter allows you to filter entities by type and setup threshold. Click "Add";'
+    2:
+        image: /images/user-guide/notifications/notification-center-add-rule-entities-count-limit-3-pe.png
+        title: 'The new rule is created.'
+
+notification-center-add-rule-api-usage-limit:
+    0:
+        image: /images/user-guide/notifications/notification-center-add-rule-api-usage-limit-1-pe.png
+        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - API usage limit. Then, select template from the list and specify recipient. Click "Next";'
+    1:
+        image: /images/user-guide/notifications/notification-center-add-rule-api-usage-limit-2-pe.png
+        title: 'The trigger filter allows you to filter entities by API features. You may also select the event types that will trigger notification: enable, warning, disabled. Click "Add";'
+    2:
+        image: /images/user-guide/notifications/notification-center-add-rule-api-usage-limit-3-pe.png
+        title: 'The new rule is created.'
+
+notification-center-add-rule-new-platform-version:
+    0:
+        image: /images/user-guide/notifications/notification-center-add-rule-new-platform-version-1-pe.png
+        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - New platform version. Then, select template from the list and specify recipient. Click "Next";'
+    1:
+        image: /images/user-guide/notifications/notification-center-add-rule-new-platform-version-2-pe.png
+        title: 'Optionally enter a description, then click "Add";'
+    2:
+        image: /images/user-guide/notifications/notification-center-add-rule-new-platform-version-3-pe.png
         title: 'The new rule is created.'
 
 ---
