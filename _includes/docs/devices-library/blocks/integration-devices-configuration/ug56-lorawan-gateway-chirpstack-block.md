@@ -1,0 +1,1 @@
+- UG56 Gateway configuration for Chirpstack
