@@ -5,10 +5,6 @@ assignees:
 title: Notification center
 description: IoT alarm notifications
 
-notification-center:
-    0:
-        image: /images/user-guide/notifications/notification-center-1-pe.png
-
 notification-center-send-notification:
     0:
         image: /images/user-guide/notifications/notification-center-send-notification-1-pe.png

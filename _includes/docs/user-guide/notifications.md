@@ -8,19 +8,22 @@ You may send notifications manually, via REST API, or based on a specific trigge
 You may also schedule delivery of the notification for a specific time. 
 
 To go to the notification center, click on “Notification center” in the sidebar.
-
-{% include images-gallery.html imageCollection="notification-center" %}
-
 On this page you see the button to send a notification and five tabs: "Inbox", "Sent", "Recipients", "Templates" and "Rules".
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/notifications/notification-center-1-ce.png)
+{% endif %}
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/notifications/notification-center-1-pe.png)
+{% endif %}
+
 Let's look at each of the key components of the notification center below.
-
-
 
 ### Notification options available in ThingsBoard
 
-Each notification may be delivered using multiple delivery methods: WebSocket, SMS, email, or [Slack](https://slack.com/).
+Each notification may be delivered using multiple delivery methods: Web, SMS, Email, or [Slack](https://slack.com/).
 
-- **WebSocket**. Notifications will be sent to the Notification center in Thingsboard;
+- **Web**. Notifications will be sent to the Notification center in Thingsboard;
 - **SMS**. A notifications is sent to the user's phone. To receive notifications by SMS, a system administrator should set up the [SMS provider](/docs/user-guide/ui/sms-provider-settings/) properly;
 - **Email**. With this approach, the user receives a notification by mail. For sending notification by email, an [outgoing mail server](/docs/user-guide/ui/mail-settings/) should be configured;
 - **Slack**. Notifications will send as a Slack message to a list of Users or Channels. For sending notification by Slack must configure a Slack API [token](https://api.slack.com/authentication/token-types) in the *Settings* -> *Notifications* tab. Learn more about how to configure Slack settings in Thingsboard [here](/docs/{{docsPrefix}}user-guide/ui/slack-settings/).
@@ -128,7 +131,7 @@ For **Tenant Administrator**:
 
  * *Users of the entity owner* - all users that belong to the entity owner. For example, users of the customer that owns the device or tenant administrators if the device is not assigned to the customer;
 
- * *Affected user* - The user that is affected by the notification trigger event. For example, the person that is assigned to investigate the alarm event;
+ * *Affected user* - The user that is affected by the notification trigger event. For example, the person that is assigned to investigate the alarm event.
 
 ###### Slack entities
 
@@ -180,7 +183,7 @@ Available template parameters:
 ##### Alarm
 
 The alarm template is used to send notification about alarms. For example, alarm creation or acknowledgment. 
-Available template parameters contain all parameters available for the [General](#general-template) template, plus:
+Available template parameters contain all parameters available for the [General](#general) template, plus:
 
   * *alarmType* - alarm type;
   * *action* - one of: 'created', 'severity changed', 'acknowledged', 'cleared', 'deleted';
@@ -194,7 +197,7 @@ Available template parameters contain all parameters available for the [General]
 ##### Device activity
 
 The device activity template is used to send notification about inactive devices.
-Available template parameters contain all parameters available for the [General](#general-template) template, plus:
+Available template parameters contain all parameters available for the [General](#general) template, plus:
 
 * *deviceId* - the device id as uuid string;
 * *deviceName* - the device name;
@@ -205,7 +208,7 @@ Available template parameters contain all parameters available for the [General]
 ##### Entity action
 
 The entity action template is used to send notification about entity action: creation, update or deletion.
-Available template parameters contain all parameters available for the [General](#general-template) template, plus:
+Available template parameters contain all parameters available for the [General](#general) template, plus:
 
 * *entityType* - the entity type, e.g. 'Device';
 * *entityId* - the entity id as uuid string;
@@ -214,23 +217,23 @@ Available template parameters contain all parameters available for the [General]
 * *userId* - id of the user who made the action;
 * *userEmail* - email of the user who made the action;
 * *userFirstName* - first name of the user who made the action;
-* *userLastName* - last name of the user who made the actionю
+* *userLastName* - last name of the user who made the action.
 
 ##### Alarm comment
 
 The alarm comment template is used to send notification about comments on alarms.
-Available template parameters contain all parameters available for the [Alarm](#alarm-template) template, plus:
+Available template parameters contain all parameters available for the [Alarm](#alarm) template, plus:
 
 * *comment* - text of the comment;
-* *action* - one of: 'added', 'updated'
+* *action* - one of: 'added', 'updated';
 * *userEmail* - email of the user who made the action;
 * *userFirstName* - first name of the user who made the action;
-* *userLastName* - last name of the user who made the action;
+* *userLastName* - last name of the user who made the action.
 
 ##### Alarm assignment
 
 The alarm assignment template is used to send notification when alarm is assigned or unassigned. 
-Available template parameters contain all parameters available for the [Alarm](#alarm-template) template, plus:
+Available template parameters contain all parameters available for the [Alarm](#alarm) template, plus:
 
   * *assigneeEmail* - email of the assignee;
   * *assigneeFirstName* - first name of the assignee;    
@@ -245,7 +248,7 @@ Available template parameters contain all parameters available for the [Alarm](#
 
 The rule engine lifecycle event template is used to send notification about rule chain or rule node lifecycle events. 
 For example, notify when new rule node fails to start. 
-Available template parameters contain all parameters available for the [General](#general-template) template, plus:
+Available template parameters contain all parameters available for the [General](#general) template, plus:
 
   * *componentType* - one of: 'rule chain', 'rule node';
   * *componentId* - the component id as uuid string;
@@ -259,14 +262,14 @@ Available template parameters contain all parameters available for the [General]
 ##### Rule engine
 
 The rule engine template is used to send notifications from the 'send notification' rule node. 
-The date or metadata from the rule node incoming message is inserted into the notification from the rule engine template and sent to the recipient.
-Available template parameters contain all parameters available for the [General](#general-template) template, plus:
+The data or metadata from the rule node incoming message is inserted into the notification from the rule engine template and sent to the recipient.
+Available template parameters contain all parameters available for the [General](#general) template, plus:
 
   * values from the incoming message metadata;
   * values from the incoming message data;
   * *originatorType* - type of the originator, e.g. 'Device';
-  * *originatorId* - id of the originator
-  * *msgType* - type of the message
+  * *originatorId* - id of the originator;
+  * *msgType* - type of the message;
   * *recipientEmail* - email of the recipient;
   * *recipientFirstName* - first name of the recipient;
   * *recipientLastName* - last name of the recipient.
@@ -275,7 +278,7 @@ Available template parameters contain all parameters available for the [General]
 ##### Integration lifecycle event
 
 The integration lifecycle event template is used to send notification about integration lifecycle events. For example, notify when new integration fails to start.
-Available template parameters contain all parameters available for the [General](#general-template) template, plus:
+Available template parameters contain all parameters available for the [General](#general) template, plus:
 
   * *integrationType* - type of the integration;
   * *integrationName* - name of the integration;
@@ -287,39 +290,39 @@ Available template parameters contain all parameters available for the [General]
 
 ##### Entities limit
 
-The system administrator uses the entities limit template to notify tenants that they will reach the limit on the number of entities (devices or assets).
-Available template parameters contain all parameters available for the [General](#general-template) template, plus:
+The system administrator uses the entities limit template to notify tenants that they will reach the limit on the number of entities (devices, assets, etc.).
+Available template parameters contain all parameters available for the [General](#general) template, plus:
 
   * *entityType* - one of: 'Device', 'Asset', 'User', etc.;
   * *currentCount* - the current count of entities;
   * *limit* - the limit on number of entities;    
-  * *percents* - the percent from the notification rule configuration.
+  * *percents* - the percent from the notification rule configuration;
   * *tenantId* - id of the tenant;
-  * *tenantName* - name of the tenant;
+  * *tenantName* - name of the tenant.
 
 ##### API usage limit
 
 The system administrator uses the API usage limit template to notify tenants when the current number of used units has reached the limit.
-Available template parameters contain all parameters available for the [General](#general-template) template, plus:
+Available template parameters contain all parameters available for the [General](#general) template, plus:
 
   * *feature* - API feature for which the limit is applied; one of: 'Device API', 'Telemetry persistence', 'Rule Engine execution', 'JavaScript functions execution', 'Email messages', 'SMS messages', 'Alarms';
   * *status* - one of: 'enabled', 'warning', 'disabled';
   * *unitLabel* - name of the limited unit; one of: 'message', 'data point', 'Rule Engine execution', 'JavaScript execution', 'email message', 'SMS message', 'alarm';
   * *limit* - the limit on used feature units;
-  * *currentValue* - current number of used units.
+  * *currentValue* - current number of used units;
   * *tenantId* - id of the tenant;
-  * *tenantName* - name of the tenant;
+  * *tenantName* - name of the tenant.
 
 ##### New platform version
 
 The system administrator uses the new platform version template to notify tenants of the release of a new version of the Thingsboard platform.
-Available template parameters contain all parameters available for the [General](#general-template) template, plus:
+Available template parameters contain all parameters available for the [General](#general) template, plus:
 
   * *latestVersion* - the latest platform version available;
   * *latestVersionReleaseNotesUrl* - release notes link for latest version;
   * *upgradeInstructionsUrl* - upgrade instructions link for latest version;
-  * *currentVersion* - the current platform version
-  * *currentVersionReleaseNotesUrl* - release notes link for current version;
+  * *currentVersion* - the current platform version;
+  * *currentVersionReleaseNotesUrl* - release notes link for current version.
 
 ### Rules
 
@@ -333,11 +336,11 @@ The alarm rule sends notifications on specific events: alarm is created, acknowl
 
 To create a new alarm rule, follow these steps:
 
- - Сlick the “Add rule” button in the upper right corner of the Rules window;
- - In the new window, enter the rule`s name;
+ - Сlick the “Add rule” button in the upper right corner of the Rules tab;
+ - In the new pop-up window, enter the rule`s name;
  - Select trigger - Alarm;
  - Then, select Template from the list or [create your own](#templates);
- - Build an Escalation chain. The escalation chain allows you to configure multiple recipients of the notification. 
+ - Build an escalation chain. The escalation chain allows you to configure multiple recipients of the notification. 
 The first recipient group will receive the notification immediately. 
 Other recipient groups will receive the notification after a configurable delay. 
 You may also configure alarm statuses, which will stop the escalation chain. Click "Next";
@@ -362,7 +365,7 @@ Template subject: `Alarm '${alarmType}' - ${action:lowerCase}`
 
 Template message: `${alarmOriginatorEntityType:capitalize} '${alarmOriginatorName}'`
 
-See [Alarm](#alarm-template) template for a list of the available template parameters.
+See [Alarm](#alarm) template for a list of the available template parameters.
 
 ##### Device activity
 
@@ -370,8 +373,8 @@ The device inactivity rule sends notifications when device becomes inactive or a
 
 To create a new device activity rule, follow these steps:
 
-- Сlick the “Add rule” button in the upper right corner of the Rules window;
-- In the new window, enter the rule`s name;
+- Сlick the “Add rule” button in the upper right corner of the Rules tab;
+- In the new pop-up window, enter the rule`s name;
 - Select trigger - Device activity;
 - Then, select template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
@@ -396,8 +399,8 @@ The entity action rule sends notifications when entity is created, updated or de
 
 To create a new entity action rule, follow these steps:
 
-- Сlick the “Add rule” button in the upper right corner of the Rules window;
-- In the new window, enter the rule`s name;
+- Сlick the “Add rule” button in the upper right corner of the Rules tab;
+- In the new pop-up window, enter the rule`s name;
 - Select trigger - Entity action;
 - Then, select template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
@@ -422,8 +425,8 @@ The alarm comment rule sends notifications when alarm is commented.
 
 To create a new alarm comment rule, follow these steps:
 
-- Сlick the “Add rule” button in the upper right corner of the Rules window;
-- In the new window, enter the rule`s name;
+- Сlick the “Add rule” button in the upper right corner of the Rules tab;
+- In the new pop-up window, enter the rule`s name;
 - Select trigger - Alarm comment;
 - Then, select template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
@@ -448,8 +451,8 @@ The alarm assignment rule sends notifications when alarm is assigned or unassign
 
 To create a new alarm assignment rule, follow these steps:
 
-- Сlick the “Add rule” button in the upper right corner of the Rules window;
-- In the new window, enter the rule`s name;
+- Сlick the “Add rule” button in the upper right corner of the Rules tab;
+- In the new pop-up window, enter the rule`s name;
 - Select trigger - Alarm assignment;
 - Then, select template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
@@ -479,8 +482,8 @@ The trigger filter allows you to filter based on rule chains and events: Started
 
 To create a new Rule engine lifecycle event rule, follow these steps:
 
-- Сlick the “Add rule” button in the upper right corner of the Rules window;
-- In the new window, enter the rule`s name;
+- Сlick the “Add rule” button in the upper right corner of the Rules tab;
+- In the new pop-up window, enter the rule`s name;
 - Select trigger - Rule engine lifecycle event;
 - Then, select template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
@@ -511,8 +514,8 @@ The trigger filter allows you to filter based on integration: Started, Updated, 
 
 To create a new integration lifecycle event rule, follow these steps:
 
-- Сlick the “Add rule” button in the upper right corner of the Rules window;
-- In the new window, enter the rule`s name;
+- Сlick the “Add rule” button in the upper right corner of the Rules tab;
+- In the new pop-up window, enter the rule`s name;
 - Select trigger - Integration lifecycle event;
 - Then, select template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
@@ -539,8 +542,8 @@ For example, notify when tenant has reached 80% of the 100 devices allowed. The 
 
 To create a new entities limit rule, follow these steps:
 
-- Сlick the “Add rule” button in the upper right corner of the Rules window;
-- In the new window, enter the rule`s name;
+- Сlick the “Add rule” button in the upper right corner of the Rules tab;
+- In the new pop-up window, enter the rule`s name;
 - Select trigger - Entities limit;
 - Then, select template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
@@ -556,7 +559,7 @@ Template subject: `${entityType}s limit will be reached soon`
 
 Template message: `${entityType}s usage: ${currentCount}/${limit} (${percents}%)`
 
-See [Entity count limit](#entities-limit) template for a list of the available template parameters.
+See [Entities limit](#entities-limit) template for a list of the available template parameters.
 
 ##### API usage limit
 
@@ -566,8 +569,8 @@ For example, notify when tenant has reached 80% of the 100 alarms . The max numb
 
 To create a new API usage limit rule, follow these steps:
 
-- Сlick the “Add rule” button in the upper right corner of the Rules window;
-- In the new window, enter the rule`s name;
+- Сlick the “Add rule” button in the upper right corner of the Rules tab;
+- In the new pop-up window, enter the rule`s name;
 - Select trigger - API usage limit;
 - Then, select template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
@@ -592,8 +595,8 @@ The system administrator uses the "New platform version" rule to notify tenants 
 
 To create a new platform version rule, follow these steps:
 
-- Сlick the “Add rule” button in the upper right corner of the Rules window;
-- In the new window, enter the rule`s name;
+- Сlick the “Add rule” button in the upper right corner of the Rules tab;
+- In the new pop-up window, enter the rule`s name;
 - Select trigger - New platform version;
 - Then, select template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
@@ -609,4 +612,4 @@ Template subject: `New version ${latestVersion} is available`
 
 Template message: `Current version is ${currentVersion}. You can upgrade your Thingsboard instance to version ${latestVersion}. `
 
-See [API usage limit](#new-platform-version) template for a list of the available template parameters.
+See [New platform version](#new-platform-version) template for a list of the available template parameters.
