@@ -41,20 +41,17 @@ and push commands back to devices.
 First you need to create MQTT [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/) for Sparkplug devices:
 
 1. Navigate to *Profiles->Device Profiles* and click on the "+" icon in the device profile table header to open the *Add device profile* dialog;
-2. Use *MQTT EON device profile* as profile name or any other meaningful value;
+2. Use *MQTT EoN Node* as profile name or any other meaningful value;
 3. Navigate to *Transport configuration* tab and select the *MQTT* transport type;
 4. Make sure you have selected the "MQTT Sparkplug B Edge of Network (EoN) node" checkbox;
 5. Input the names of Sparkplug metrics you would like to store as attributes instead of time-series data. 
    This list should also include metrics you may want to update from the server side and push to the device.
-   For example: "Device Control/Reboot", "Outputs/LEDs/Green".  
+   For example: "Device Control/Reboot", "Outputs/LEDs/Green", "Outputs/LEDs/Red".  
    
-TODO: update images.
-
-{% include images-gallery.html imageCollection="sparkplug-device-profile-created" showListImageTitles="true" %}
-
 ### Step 2. Configure the device credentials
 
-
+1. Navigate to *Entities->Devices* and click on the "+" icon in the device table header to open the *Add new device* dialog;
+2. Input your EoN node device name and select the existing device profile: *Sparkplug EoN Node*.
 
 > **Note**: 
 >   1. If you plan to create a device yourself in Thingsboard to connect to a device of type Device, for it, you can either use the profile created for the device type **MQTT EON**, or create a *new device profile*.
