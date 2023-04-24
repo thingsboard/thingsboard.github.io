@@ -3,28 +3,6 @@ layout: docwithnav-paas
 title: HTTP Integration
 description: HTTP integration guide 
 
-data-converters-tbel:
-    0:
-        image: /images/user-guide/integrations/http/data-converters-1-pe.png
-    1:
-        image: /images/user-guide/integrations/http/data-converters-2-tbel-pe.png
-
-data-converters-java:
-    0:
-        image: /images/user-guide/integrations/http/data-converters-1-pe.png
-    1:
-        image: /images/user-guide/integrations/http/data-converters-2-java-pe.png
-
-add-integration:
-    0:
-        image: /images/user-guide/integrations/http/add-integration-1-pe.png
-    1:
-        image: /images/user-guide/integrations/http/add-integration-2-pe.png
-    2:
-        image: /images/user-guide/integrations/http/add-integration-3-pe.png
-    3:
-        image: /images/user-guide/integrations/http/add-integration-4-pe.png
-
 send-uplink:
     0:
         image: /images/user-guide/integrations/http/send-uplink-message-1-pe.png

@@ -3,28 +3,6 @@ layout: docwithnav-pe
 title: HTTP Integration
 description: HTTP integration guide 
 
-data-converters-tbel:
-    0:
-        image: /images/user-guide/integrations/http/data-converters-1-pe.png
-    1:
-        image: /images/user-guide/integrations/http/data-converters-2-tbel-pe.png
-
-data-converters-java:
-    0:
-        image: /images/user-guide/integrations/http/data-converters-1-pe.png
-    1:
-        image: /images/user-guide/integrations/http/data-converters-2-java-pe.png
-
-add-integration:
-    0:
-        image: /images/user-guide/integrations/http/add-integration-1-pe.png
-    1:
-        image: /images/user-guide/integrations/http/add-integration-2-pe.png
-    2:
-        image: /images/user-guide/integrations/http/add-integration-3-pe.png
-    3:
-        image: /images/user-guide/integrations/http/add-integration-4-pe.png
-
 send-uplink:
     0:
         image: /images/user-guide/integrations/http/send-uplink-message-1-pe.png
@@ -35,27 +13,19 @@ send-uplink:
 
 converter-tbel:
     0:
-        image: /images/user-guide/integrations/http/converter-5-tbel-pe.png
+        image: /images/user-guide/integrations/http/http-create-data-converters-2-tbel-pe.png
     1:
-        image: /images/user-guide/integrations/http/converter-6-tbel-pe.png
+        image: /images/user-guide/integrations/http/http-create-data-converters-3-tbel-pe.png
     2:
-        image: /images/user-guide/integrations/http/converter-7-tbel-pe.png
+        image: /images/user-guide/integrations/http/http-create-data-converters-4-tbel-pe.png
 
 converter-java:
     0:
-        image: /images/user-guide/integrations/http/converter-5-java-pe.png
+        image: /images/user-guide/integrations/http/http-create-data-converters-2-java-pe.png
     1:
-        image: /images/user-guide/integrations/http/converter-6-java-pe.png
+        image: /images/user-guide/integrations/http/http-create-data-converters-3-java-pe.png
     2:
-        image: /images/user-guide/integrations/http/converter-7-java-pe.png
-
-security:
-    0:
-        image: /images/user-guide/integrations/http/security-1-pe.png
-
-security-1:
-    0:
-        image: /images/user-guide/integrations/http/security-2-pe.png
+        image: /images/user-guide/integrations/http/http-create-data-converters-4-java-pe.png
 
 device:
     0:
@@ -63,11 +33,11 @@ device:
 
 send-uplink-1:
     0:
-        image: /images/user-guide/integrations/http/add-integration-5-pe.png
+        image: /images/user-guide/integrations/http/http-received-data-1-pe.png
     1:
-        image: /images/user-guide/integrations/http/add-integration-6-pe.png
+        image: /images/user-guide/integrations/http/http-received-data-2-pe.png
     2:
-        image: /images/user-guide/integrations/http/add-integration-7-pe.png
+        image: /images/user-guide/integrations/http/http-received-data-3-pe.png
 
 creating-devices-is-forbidden:
     0:
@@ -75,17 +45,9 @@ creating-devices-is-forbidden:
     1:
         image: /images/user-guide/integrations/http/creating-devices-is-forbidden-2-pe.png
 
-solution-templates:
-    0:
-        image: /images/user-guide/integrations/http/solution-templates.png
-
 downlink-java:
     0:
         image: /images/user-guide/integrations/http/downlink-java-1-pe.png
-
-downlink-tbel:
-    0:
-        image: /images/user-guide/integrations/http/downlink-tbel-1-pe.png
 
 downlink-java-1:
     0:
@@ -95,29 +57,19 @@ downlink-tbel-1:
     0:
         image: /images/user-guide/integrations/http/downlink-tbel-2-pe.png
 
-downlink-rule:
-    0:
-        image: /images/user-guide/integrations/http/downlink-rule-chain-1-pe.png
-    1:
-        image: /images/user-guide/integrations/http/downlink-rule-chain-2-pe.png
-
-downlink-add-attribute:
-    0:
-        image: /images/user-guide/integrations/http/downlink-add-attribute-1-pe.png
-
 downlink-message:
     0:
-        image: /images/user-guide/integrations/http/downlink-message-1-pe.png
+        image: /images/user-guide/integrations/http/http-downlink-message-1-pe.png
     1:
-        image: /images/user-guide/integrations/http/downlink-message-2-pe.png
+        image: /images/user-guide/integrations/http/http-downlink-message-2-pe.png
     2:
-        image: /images/user-guide/integrations/http/downlink-message-3-pe.png
+        image: /images/user-guide/integrations/http/http-downlink-message-3-pe.png
 
 downlink-terminal:
     0:
-        image: /images/user-guide/integrations/http/downlink-responce-1-pe.png
+        image: /images/user-guide/integrations/http/http-downlink-responce-2-pe.png
     1:
-        image: /images/user-guide/integrations/http/downlink-responce-2-pe.png
+        image: /images/user-guide/integrations/http/http-downlink-responce-1-pe.png
 
 
 ---
