@@ -287,7 +287,7 @@ List of the predefined Message Types is presented in the following table:
             <br><b>userLastName</b> - user last name
             <br><b>userName</b> - user name
         </td>
-        <td>json containing created alarm details, see alarm detail<br>        
+        <td>json containing alarm details, see Alarm event<br>        
         </td>
       </tr>
       <tr>
@@ -304,7 +304,7 @@ List of the predefined Message Types is presented in the following table:
             <br><b>userLastName</b> - user last name
             <br><b>userName</b> - user name
         </td>
-        <td>json containing created alarm details, see Alarm event<br>        
+        <td>json containing alarm details, see Alarm event<br>        
         </td>
       </tr>
       <tr>
@@ -313,9 +313,14 @@ List of the predefined Message Types is presented in the following table:
         <td>Event produced when an alarm comment was created</td>
         <td> 
             All fields from original Message Metadata
-            <br><b>comment</b> - json object containing text of comment and creation time
+            <br><b>userId</b> - user id
+            <br><b>userName</b> - user name
+            <br><b>userFirstName</b> - first name of user
+            <br><b>userLastName</b> - last name of user
+            <br><b>userEmail</b> - email of user
+            <br><b>comment</b> - json object containing comment details and text of comment
         </td>
-        <td>json containing created alarm details, see Alarm event
+        <td>json containing alarm details, see Alarm event
         </td>
       </tr>
       <tr>
@@ -324,9 +329,14 @@ List of the predefined Message Types is presented in the following table:
         <td>Event produced when an alarm comment was updated</td>
         <td> 
             All fields from original Message Metadata
-            <br><b>comment</b> - json object containing text of comment, creation and edit info
+            <br><b>userId</b> - user id
+            <br><b>userName</b> - user name
+            <br><b>userFirstName</b> - first name of user
+            <br><b>userLastName</b> - last name of user
+            <br><b>userEmail</b> - email of user
+            <br><b>comment</b> - json object containing comment details and text of comment
         </td>
-        <td>json containing created alarm details, see Alarm event
+        <td>json containing alarm details, see Alarm event
         </td>
       </tr>
       <tr>
