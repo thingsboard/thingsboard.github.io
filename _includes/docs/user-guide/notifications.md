@@ -5,9 +5,9 @@
 
 ThingsBoard Notification Center allows you to send notifications to the end-users. 
 You may send notifications manually, via REST API, or based on a specific trigger event.
-You may also schedule delivery of the notification for a specific time. 
+You may also schedule delivery of the notification for a particular time. 
 
-To go to the notification center, click on “Notification center” in the sidebar.
+To go to the notification center, click on “Notification center” in the sidebar menu.
 On this page you see the button to send a notification and five tabs: "Inbox", "Sent", "Recipients", "Templates" and "Rules".
 
 {% if docsPrefix == null %}
@@ -23,17 +23,17 @@ Let's look at each of the key components of the notification center below.
 
 Each notification may be delivered using multiple delivery methods: Web, SMS, Email, or [Slack](https://slack.com/).
 
-- **Web**. Notifications will be sent to the Notification center in Thingsboard;
-- **SMS**. A notifications is sent to the user's phone. To receive notifications by SMS, a system administrator should set up the [SMS provider](/docs/user-guide/ui/sms-provider-settings/) properly;
-- **Email**. With this approach, the user receives a notification by mail. For sending notification by email, an [outgoing mail server](/docs/user-guide/ui/mail-settings/) should be configured;
-- **Slack**. Notifications will send as a Slack message to a list of Users or Channels. For sending notification by Slack must configure a Slack API [token](https://api.slack.com/authentication/token-types) in the *Settings* -> *Notifications* tab. Learn more about how to configure Slack settings in Thingsboard [here](/docs/{{docsPrefix}}user-guide/ui/slack-settings/).
+- **Web**. The notification will be sent to the Web UI in Thingsboard;
+- **SMS**. The notification is sent to the user's phone. To send notifications via SMS, a system administrator should set up the [SMS provider](/docs/user-guide/ui/sms-provider-settings/) properly;
+- **Email**. With this approach, the user receives a notification by Email. To send notifications via Email, a tenant administrator [outgoing mail server](/docs/user-guide/ui/mail-settings/) should be configured;
+- **Slack**. Notifications will send as a Slack message to the list of Users or Channels. To send notifications via Slack, a tenant administrator must configure a Slack API [token](https://api.slack.com/authentication/token-types) in the *Settings* -> *Notifications* tab. Learn more about how to configure Slack settings in Thingsboard [here](/docs/{{docsPrefix}}user-guide/ui/slack-settings/).
 
 ### Send notification
 
 To send a notification manually, follow these steps:
 
- - Сlick the “Send notification” button in the upper right corner of the "Notification center" page;
- - In new window, select recipients and one or more delivery methods. In this example, let's consider the Web delivery method. If necessary, use the scheduler. Click "Next";
+ - Сlick the “Send notification” button in the upper right corner of the "Notification center" page to open the new notification wizard;
+ - Select recipients and one or more delivery methods. In this example, let's consider the Web delivery method. Click "Next";
  - Enter the subject and text of the message;
  - Also you can use the Action button in the notification. Enter the button text, select the action type ("Open dashboard" or "Open URL link") and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon and set its color. Click "Next";
  - In this window, you can see how the notification will look and also view the list of notification recipients. Click "Send";
@@ -71,7 +71,7 @@ If you decide to delete an outgoing message, it will also be deleted for all rec
 
 ### Recipients
 
-The "Recipients" tab displays the list of notification recipients. You may create and delete notification recipients here.
+The "Recipients" tab displays the list of notification recipient groups. You may create and delete notification recipient groups here.
 
 {% include images-gallery.html imageCollection="notification-center-recipients" %}
 
@@ -261,12 +261,12 @@ Available template parameters contain all parameters available for the [General]
 
 ##### Rule engine
 
-The rule engine template is used to send notifications from the 'send notification' rule node. 
-The data or metadata from the rule node incoming message is inserted into the notification from the rule engine template and sent to the recipient.
+The rule engine template is used to send notifications from the 'send notification' rule node.
+You may use data or metadata from the incoming message to build the notification subject and body.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
 
-  * values from the incoming message metadata;
-  * values from the incoming message data;
+  * values from the incoming message metadata referenced using the metadata key name;
+  * values from the incoming message data referenced using the data key name;
   * *originatorType* - type of the originator, e.g. 'Device';
   * *originatorId* - id of the originator;
   * *msgType* - type of the message;
@@ -302,7 +302,7 @@ Available template parameters contain all parameters available for the [General]
 
 ##### API usage limit
 
-The system administrator uses the API usage limit template to notify tenants when the current number of used units has reached the limit.
+The system administrator uses the API usage limit template to notify tenants when they hit a specific API limit.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
 
   * *feature* - API feature for which the limit is applied; one of: 'Device API', 'Telemetry persistence', 'Rule Engine execution', 'JavaScript functions execution', 'Email messages', 'SMS messages', 'Alarms';
