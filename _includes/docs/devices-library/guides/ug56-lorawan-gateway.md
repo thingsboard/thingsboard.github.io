@@ -53,15 +53,32 @@ According to the [official user manual](https://resource.milesight-iot.com/miles
   3. Enter the username(Default: **admin**) and password(Default: **password**), click **Login**.
   
 - Wired connection:
-  Connect PC to UG56 Ethernet port directly or through PoE injector to access the web GUI of gateway. The following steps are based on Windows 10 system for your reference.
+  Connect PC to UG56 Ethernet port directly or through PoE injector to access the web GUI of gateway. The following steps are based on Windows 10 system for your reference.  
 
   1. Go to “Control Panel” → “Network and Internet” → “Network and Sharing Center”, then click “Ethernet” (May have different names).
   2. Go to “Properties” → “Internet Protocol Version 4(TCP/IPv4)” and select “Use the following IP address”, then assign a static IP manually within the same subnet of the gateway.
   3. Open a Web browser on your PC and type in the IP address **192.168.23.150** to access the web GUI.
   4. Enter the username and password, click “Login”.
 
-Now you have ability to configure the gateway.  
-Next steps will describe how to connect the gateway to network server.   
+{% assign gatewayGeneralSettings = '
+    ===
+        image: /images/devices-library/ready-to-go-devices/ug56-lorawan-gateway/general-settings-view.png,
+        title: Now you have ability to configure the gateway.
+'%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=gatewayGeneralSettings %}
+
+{% assign gatewayPacketForwarderTab = '
+    ===
+        image: /images/devices-library/ready-to-go-devices/ug56-lorawan-gateway/ns-configuration-before.png,
+        title: Open <b>Packet Forwarder</b> in the left menu and save <b>Gateway EUI</b> and <b>Gateway ID</b>, we will need them to create a gateway on network server.  
+'%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=gatewayPacketForwarderTab %}
+
+By default Gateway EUI and Gateway ID are the same.  
+
+Next steps will describe how to connect the gateway to network server.  
 
 ### Configuration
 
