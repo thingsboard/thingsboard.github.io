@@ -849,3 +849,174 @@ return parseBytesToInt(new byte[]{(byte) 0xAA, (byte) 0xBB, (byte) 0xCC, (byte) 
 return parseBytesToInt(new byte[]{(byte) 0xAA, (byte) 0xBB, (byte) 0xCC, (byte) 0xDD}, 0, 3, false); // returns 13417386 in Decimal or 0xCCBBAA
 ```
 {: .copy-code}
+
+#### toFlatMap
+
+Iterates recursive over the given object and creates a single level json object.  
+If the incoming message contains arrays, key for transformed value will contain index of the element.  
+
+**Syntax:**
+
+```java
+HashMap<String, Object> toFlatMap(Map<String, Object> json)
+HashMap<String, Object> toFlatMap(Map<String, Object> json, boolean pathInKey)
+HashMap<String, Object> toFlatMap(Map<String, Object> json, List<String> excludeList)
+HashMap<String, Object> toFlatMap(Map<String, Object> json, List<String> excludeList, boolean pathInKey)
+```
+
+**Parameters:**
+
+ - **json** `Map<String, Object>` - input JSON object.  
+ - **excludeList** `List<String>` - *optional* List with keys, for exclude from result. ***Default:*** `[]`.    
+ - **pathInKey** `boolean` - *optional* Add path to keys. ***Default:*** `true`.  
+
+{% capture warning %}
+If parameter **pathInKey** set to ***false*** - some keys can be overwritten by newly found values!  
+Recommended to use with caution with objects that contains similar keys on different levels.  
+{% endcapture %}
+{% include templates/warn-banner.md content=warning %}
+
+**Return value:**
+
+JSON Object
+
+**Examples:**
+
+*Input:*
+
+```json
+{
+    "key1": "value1",
+    "key2": 12,
+    "key3": {
+        "key4": "value4",
+        "key5": 34,
+        "key6": [{
+                "key7": "value7"
+            },
+            {
+                "key8": "value8"
+            },
+            "just_string_value_in_array",
+            56
+        ],
+        "key9": {
+            "key10": ["value10_1", "value10_2", "value10_3"]
+        }
+    },
+    "key_to_overwrite": "root_value",
+    "key11": {
+        "key_to_overwrite": "second_level_value"
+    }
+}
+```
+
+##### toFlatMap(json)
+
+Expected behavior - get the single level object with paths in keys. 
+
+```java
+return toFlatMap(json);
+```
+{: .copy-code}
+
+*Output:*
+
+```json
+{
+    "key1": "value1",
+    "key2": 12,
+    "key3.key4": "value4",
+    "key3.key5": 34,
+    "key3.key6.0.key7": "value7",
+    "key3.key6.1.key8": "value8",
+    "key3.key6.2": "just_string_value_in_array",
+    "key3.key6.3": 56,
+    "key3.key9.key10.0": "value10_1",
+    "key3.key9.key10.1": "value10_2",
+    "key3.key9.key10.2": "value10_3",
+    "key_to_overwrite": "root_value",
+    "key11.key_to_overwrite": "second_level_value"
+}
+```
+
+##### toFlatMap(json, pathInKey)
+
+Expected behavior - get the single level object without paths in keys.  
+**key_to_overwrite** should contain the value from **key11.key_to_overwrite**.  
+
+```java
+return toFlatMap(json, false);
+```
+{: .copy-code}
+
+*Output:*
+
+```json
+{
+    "key1": "value1",
+    "key2": 12,
+    "key4": "value4",
+    "key5": 34,
+    "key7": "value7",
+    "key8": "value8",
+    "key6.2": "just_string_value_in_array",
+    "key6.3": 56,
+    "key10.0": "value10_1",
+    "key10.1": "value10_2",
+    "key10.2": "value10_3",
+    "key_to_overwrite": "second_level_value"
+}
+```
+
+As you can see, **key_to_overwrite** is **second_level_value** instead of **root_value**.  
+  
+##### toFlatMap(json, excludeList)
+
+Expected behavior - get the single level object with paths in keys, without keys **key1** and **key3**.  
+
+```java
+return toFlatMap(json, ["key1", "key3"]);
+```
+{: .copy-code}
+
+*Output:*
+
+```json
+{
+    "key2": 12,
+    "key_to_overwrite": "root_value",
+    "key11.key_to_overwrite": "second_level_value"
+}
+```
+
+As you can see, **key1** and **key3** was removed from output. Excluding works on any level with incoming keys.   
+  
+##### toFlatMap(json, excludeList, pathInKey)
+
+Expected behavior - get the single level object without paths in keys, without keys **key2** and **key4**.  
+**key_to_overwrite** should contain the value from **key11.key_to_overwrite**.    
+
+```java
+return toFlatMap(json, ["key2", "key4"], false);
+```
+{: .copy-code}
+
+*Output:*
+
+```json
+{
+    "key1": "value1",
+    "key5": 34,
+    "key7": "value7",
+    "key8": "value8",
+    "key6.2": "just_string_value_in_array",
+    "key6.3": 56,
+    "key10.0": "value10_1",
+    "key10.1": "value10_2",
+    "key10.2": "value10_3",
+    "key_to_overwrite": "second_level_value"
+}
+```
+
+As you can see, **key2** and **key4** was excluded from the output and **key_to_overwrite** is **second_level_value**.  
