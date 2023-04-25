@@ -14,10 +14,11 @@ ThingsBoard is designed to support different device credentials. There are three
    - **Advantages:** high level of security using the encrypted network connection and public key infrastructure.
    - **Disadvantages:** not supported by some resource constrained devices. Affects battery and CPU usage.
 
-Device credentials need to be provisioned to corresponding device entity on the server. 
+Device credentials need to be created and assigned to corresponding device entity on the server. 
 There are multiple ways to do this:
 
  - **Automatically**, using ThingsBoard [REST API](/docs/{{docsPrefix}}reference/rest-api/). For example during manufacturing, QA or purchase order fulfilment.
  - **Manually**, using ThingsBoard [Web UI](/docs/{{docsPrefix}}user-guide/ui/devices/#manage-device-credentials). For example for development purposes, or by system administrator.
+ - **On-demand credentials generation**, using [device provisioning feature](/docs/{{docsPrefix}}user-guide/device-provisioning/). For example for a lot of devices or for devices with preprogrammed credentials.    
 
 
