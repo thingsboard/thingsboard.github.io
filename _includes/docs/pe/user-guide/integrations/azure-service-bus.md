@@ -12,9 +12,9 @@ Azure Service Bus Integration allows to stream data from Azure Service bus to Th
 ## Configure Azure Service Bus
 
 To create ThingsBoard Service Bus integration you will need two things created in Azure portal: **topic** and **subscription** to the topic. 
-After topic is created you will need to find and save **connection string**, you will need it later.
+You will also need to find and save **namespace connection string**, you will need it later.
 - [Create Topic and subscription to the topic](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal)
-- [Find connection string to the topic](https://azurelessons.com/azure-service-bus-connection-string/)
+- [Find connection string for the service bus namespace](https://azurelessons.com/azure-service-bus-connection-string/)
 
 ## Create Uplink Converter
 
@@ -54,14 +54,14 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/service-bus/servic
 
 ## Create Integration in Thingsboard
 
-At this time, we have topic created in Azure Portal and uplink converter created in Thingsboard.
+Now that we have a topic created in Azure Portal and an Uplink converter created, it is possible to create an integration.
 
 1) Go to the Thingsboard and choose **Integrations center** -> **Integrations** in menu
 
 2) Click on **'plus'** and in pop-up we have to enter Name, choose type **Azure Service Bus**, choose uplink converter,
-skip step with downlink converter, then fill in **connection string**, **topic**  and **subscription** names 
+skip step with downlink converter, then fill in **namespace connection string**, **topic**  and **subscription** names 
 
-3) [Optional] Click on **Check connection** button to check correctly copied connection string
+3) [Optional] Click on **Check connection** button to check correctly copied namespace connection string
 
 4) Click **Add** and see your created integration
 
@@ -86,7 +86,7 @@ To send a test message, use the additional functionality of Azure Service bus, S
 **Example of payload:**
 ```ruby
 {
-    "devName": "sensor01",
+    "devName": "Sensor A1",
     "msg": {
         "temp": 23,
         "humidity": 40
@@ -105,7 +105,7 @@ To send messages to device you need to configure downlink settings, such as down
 If you don`t have topic yet then [Create topic and subscription](https://learn.microsoft.com/en-us/azure/service-bus-messaging/service-bus-quickstart-topics-subscriptions-portal). 
 Create subscription to the topic for testing purpose so that you can check messages later.
 
-1) Save **topic** and **connection string** to the topic somewhere, you will need them later.
+1) Save **topic** somewhere, you will need them later.
 
 2) Create Downlink converter (You need to do same steps like when was creating Uplink, but choose Downlink and specify another function).
 
@@ -120,17 +120,18 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/service-bus/servic
 {% capture difference %}
 **NOTE**
 <br>
-If you used another name of device (not TB-D-01) you have to specify in the Downlink converter your device name for **deviceId** field
+If you used another name of device (not **Sensor B2**) you have to specify in the Downlink converter your device name for **deviceId** field
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
 ![image](/images/azure-service-bus/create_downlink_converter.png)
 
-3) Go to integration and specify this **converter** and add the name of **topic** and **connection string** to corresponding fields.
+3) Go to integration and specify this **converter** and add the name of **topic** and **namespace connection string** to corresponding fields.
 
 ![image](/images/azure-service-bus/fill_in_downlink_info.png)
 
-**Ok, downlink converter ready, integration ready, Let's test with help of downlink node:**
+<br/>
+Ok, downlink converter ready, integration ready, Let's test with help of downlink node:
 
 1) After test of uplink, integration have created the device inside Thingsboard, and we need to know for which Rule Chain it connected.
    Just go to the **Entities** -> **Devices** in Thingsboard menu and find the device with the name that we have used in the uplink.

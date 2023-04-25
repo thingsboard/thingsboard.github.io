@@ -8,7 +8,7 @@ var result = {
     contentType: "JSON",
     data: JSON.stringify(msg),
     metadata: {
-        deviceId: 'TB-D-01'
+        deviceId: 'Sensor B2'
     }
 };
 
