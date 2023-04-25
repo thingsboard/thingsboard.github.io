@@ -274,7 +274,7 @@ List of the predefined Message Types is presented in the following table:
         </td>
       </tr>
       <tr>
-        <td>ALARM_ASSIGN</td>
+        <td>ALARM_ASSIGNED</td>
         <td><b>Alarm Assigned</b></td>
         <td>Event produced when an alarm was assigned to some user</td>
         <td> 
@@ -291,7 +291,7 @@ List of the predefined Message Types is presented in the following table:
         </td>
       </tr>
       <tr>
-        <td>ALARM_UNASSIGN</td>
+        <td>ALARM_UNASSIGNED</td>
         <td><b>Alarm Unassigned</b></td>
         <td>Event produced when an alarm was unassigned from user</td>
         <td> 
