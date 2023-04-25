@@ -858,10 +858,10 @@ If the incoming message contains arrays, key for transformed value will contain 
 **Syntax:**
 
 ```java
-HashMap<String, Object> toFlatMap(Map<String, Object> json)
-HashMap<String, Object> toFlatMap(Map<String, Object> json, boolean pathInKey)
-HashMap<String, Object> toFlatMap(Map<String, Object> json, List<String> excludeList)
-HashMap<String, Object> toFlatMap(Map<String, Object> json, List<String> excludeList, boolean pathInKey)
+Map<String, Object> toFlatMap(Map<String, Object> json)
+Map<String, Object> toFlatMap(Map<String, Object> json, boolean pathInKey)
+Map<String, Object> toFlatMap(Map<String, Object> json, List<String> excludeList)
+Map<String, Object> toFlatMap(Map<String, Object> json, List<String> excludeList, boolean pathInKey)
 ```
 
 **Parameters:**
