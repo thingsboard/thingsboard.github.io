@@ -279,6 +279,12 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                         <div class="frame-image">
                             <img src="/images/usecases/smart-irrigation/video/smart-irrigation.png">
                         </div>
+                        <div class="frame-video">
+                            <video autoplay loop preload="auto" muted playsinline>
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-irrigation.mp4" type="video/mp4">
+                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-irrigation.webm" type="video/webm">
+                            </video>
+                        </div>
                     </div>                
                 </a>
             </div>
