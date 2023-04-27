@@ -30,3 +30,5 @@ function decodeToJson(payload) {
 return result;
 ```
 {: .copy-code}
+
+![image](/images/user-guide/integrations/azure-service-bus/azure-service-bus-integration-create-uplink-converter-java-1-pe.png)

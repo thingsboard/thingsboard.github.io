@@ -21,3 +21,5 @@ var result = {
 return result;
 ```
 {: .copy-code}
+
+![image](/images/user-guide/integrations/azure-service-bus/azure-service-bus-integration-create-uplink-converter-tbel-1-pe.png)
