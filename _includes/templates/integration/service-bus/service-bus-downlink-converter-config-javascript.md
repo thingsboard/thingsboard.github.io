@@ -1,4 +1,4 @@
-You can use our example of Downlink Converter, or write your own according to your configuration:
+You can use our example of downlink converter or write your own according to your configuration:
 
 ```javascript
 // Encode downlink data from incoming Rule Engine message
@@ -8,10 +8,12 @@ var result = {
     contentType: "JSON",
     data: JSON.stringify(msg),
     metadata: {
-        deviceId: 'Sensor B2'
+        deviceId: 'Sensor A1'
     }
 };
 
 return result;
 ```
 {: .copy-code}
+
+![image](/images/user-guide/integrations/azure-service-bus/azure-service-bus-integration-create-downlink-converter-java-1-pe.png)
