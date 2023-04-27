@@ -64,12 +64,6 @@ sparkplug-node-device-change-shared-sttributes:
     1:
         image: /images/sparkplug/sparkplug-device1-logs-shared-attribute-update1.png
         title: 'Metrics of Device <span style="color:green">“DeviceSparkplugId1”</span> with names <span style="color:brown">["Outputs/LEDs/Green"]</span>, value <b>["true"]</b>, dataType value <b>["Boolean"]</b>: logs in the [SparkplugB Client Emulator](https://github.com/nickAS21/sparkplug)'
-    2:
-        image: /images/sparkplug/sparkplug-device1-shared-attribute-update2.png
-        title: 'Metrics of Device with names <span style="color:brown">["Current Grid Voltage"]</span>, value <b>["true"]</b>, dataType value <b>["Float"]</b> send shared attributes from server to Device <span style="color:green">“DeviceSparkplugId1”</span>' 
-    3:
-        image: /images/sparkplug/sparkplug-device1-logs-shared-attribute-update2.png
-        title: 'Metrics of Device <span style="color:green">“DeviceSparkplugId1”</span> with names <span style="color:brown">["Current Grid Voltage"]</span>, value <b>["true"]</b>, dataType value <b>["Float"]</b>: logs in the [SparkplugB Client Emulator](https://github.com/nickAS21/sparkplug)'
     4:
         image: /images/sparkplug/sparkplug-node-shared-attribute-update.png
         title: 'Metrics of MQTT EON with names <span style="color:brown">["Current Grid Voltage"]</span>, value <b>[234.56]</b>, dataType value <b>["Float"]</b> send shared attributes from server to MQTT EON <span style="color:green">“NodeSparkplug”</span>' 
