@@ -53,25 +53,68 @@
     &__container
       padding: 4px 38px
       font-size: 20px
-      color: #BFC3C4
+      color: #707275
       cursor: pointer
       transition: 0.2s
+      font-weight: 500
+      &:hover:not(.selected)
+        color: #000
+    #cloud-option
+      &:before
+        content: ""
+        display: inline-block
+        vertical-align: middle
+        background-size: contain
+        background: url("/images/pricing/cloud-icon.svg") no-repeat
+        filter: invert(53%) sepia(8%) saturate(130%) hue-rotate(145deg) brightness(93%) contrast(91%)
+        width: 28px
+        height: 28px
+        margin-right: 10px
+        transition: 0.2s
+      &.selected
+        &:before
+          filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(242deg) brightness(107%) contrast(101%)
+      &:hover:not(.selected)
+        &:before
+          filter: invert(11%) sepia(10%) saturate(825%) hue-rotate(169deg) brightness(93%) contrast(90%)
+    #self-managed-option
+      &:before
+        content: ""
+        display: inline-block
+        vertical-align: middle
+        background-size: contain
+        background: url("/images/pricing/self-icon.svg") no-repeat
+        filter: invert(53%) sepia(8%) saturate(130%) hue-rotate(145deg) brightness(93%) contrast(91%)
+        width: 28px
+        height: 28px
+        margin-right: 10px
+        transition: 0.2s
+      &.selected
+        &:before
+          filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(242deg) brightness(107%) contrast(101%)
+      &:hover:not(.selected)
+        &:before
+          filter: invert(11%) sepia(10%) saturate(825%) hue-rotate(169deg) brightness(93%) contrast(90%)
+    .selected
+      color: #fff
+      z-index: 10
     .background
+      box-sizing: content-box
       position: absolute
       background: #437BE3
       height: 100%
       border-radius: 20px
-      z-index: -1
+      z-index: 1
       transition: 0.4s
+      top: -1px
+      border: 1px solid #437BE3
+      box-shadow: 0 18px 16px -10px rgba(42,125,236,0.25)
     .bg-right
       width: 60%
       left: 40%
     .bg-left
       width: 40%
-      left: 0
-    .selected
-      color: #fff
-      font-weight: 600
+      left: -1px
   .tab-content
     width: 100%
     display: flex
