@@ -46,7 +46,8 @@ If enabled, users on the platform can add an extra verification of their identit
 3. Activate the convenient verification method. One can activate multiple providers;
 4. Save changes.
 
-{% include images-gallery.html imageCollection="two-factor-authentication-password-and-authentication" %}
+{% include images-gallery.html imageCollection="two-factor-authentication-password-and-authentication" showListImageTitles="true" %}
+
 {% capture difference %}
 **Important!** The list of toggleable 2FA options depends on the system administrator's settings.
 {% endcapture %}
