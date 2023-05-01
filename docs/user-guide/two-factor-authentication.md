@@ -8,8 +8,10 @@ description: Two-Factor Authentication using ThingsBoard
 two-factor-authentication-password-and-authentication:
     0:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-password-and-authentication-1-ce.png
+        title: 'In the upper right corner, click on the three dots icon. In the dropdown menu, proceed with "Security";'
     1:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-password-and-authentication-2-ce.png
+        title: 'Activate the convenient verification method. One can activate multiple providers. Save changes.'
 
 two-factor-authentication-app:
     0:
@@ -17,7 +19,7 @@ two-factor-authentication-app:
         title: 'Toggle to enable authentication with the external app;'
     1:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-app-2-ce.png
-        title: 'Install and open the authenticator app on the device;'
+        title: 'Install and open the authenticator app on your mobile device;'
     2:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-app-3-ce.png
         title: 'Scan the QR code using the application;'
