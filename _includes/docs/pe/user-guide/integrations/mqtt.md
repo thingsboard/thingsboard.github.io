@@ -100,13 +100,15 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-downlink
 
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-4-pe.png)
 
-- Go to advanced settings. It is better to uncheck the **Clean session** parameter. Many brokers do not support sticky sessions, so will silently close the connection if you try to connect with this option enabled.
+- Go to **advanced settings**. It is better to uncheck the **Clean session** parameter. Many brokers do not support sticky sessions, so will silently close the connection if you try to connect with this option enabled;
 
-- Let's leave the **Downlink topic pattern** by default, meaning that the Integration will take the metadata.topic and use it as the downlink topic.
+- Let's leave the **Downlink topic pattern** by default, meaning that the Integration will take the metadata.topic and use it as the downlink topic;
 
-- Click **Add** to save the Integration.
+![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-5-pe.png)
 
-- ![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-5-pe.png)
+- [Optional] Click on **Check connection** button to check connection to your Service Bus topic. Click **Add** button to create the integration.
+
+![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-6-pe.png)
 
 #### Send Uplink message
 
@@ -121,17 +123,29 @@ mosquitto_pub -h broker.hivemq.com -p 1883 -t "tb/mqtt-integration-tutorial/sens
 
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-send-uplink-message-1.png)
 
+{% if docsPrefix == "pe/" %}
+After you sent uplink message a new device was created. You should receive a notification about it. 
+To view notification click on the bell icon in the upper right corner of the screen. 
+The notification will contain link to created device. Go to this device.
+
+![image](/images/user-guide/integrations/mqtt/mqtt-integration-go-to-devices-1-pe.png)
+
+Here you will see information about the new device. As well as the telemetry which we sent to the device.
+
+![image](/images/user-guide/integrations/mqtt/mqtt-integration-go-to-devices-2-pe.png)
+
+Learn more about **notifications** and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
+{% endif %}
+
+{% if docsPrefix == "paas/" %}
 Once you go to **Device Groups -> All** you should find a **SN-001** device provisioned by the Integration.
 Click on the device, go to **Latest Telemetry** tab to see "temperature" key and its value (25.1) there.
 
-{% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-go-to-devices-2-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-go-to-devices-2.png)
+
 {% endif %}
 
-Go back to your **Integration** and click on **Events** tab. There you'll see the message consumed by the Integration.
+Go back to your **Integration** page and click on **Events** tab. There you'll see the message consumed by the Integration.
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-events-1-pe.png)
@@ -140,7 +154,7 @@ Go back to your **Integration** and click on **Events** tab. There you'll see th
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-events-1.png)
 {% endif %}
 
-On **Events** tab of your **MQTT Uplink** converter there will be **In**, **Out**, and **Metadata** columns. 
+On **Events** tab of your **MQTT Uplink Converter** there will be **In**, **Out**, and **Metadata** columns. 
 The **In** and **Metadata** are the input for the data converter, and **Out** is the result.
 
 {% if docsPrefix == "pe/" %}
@@ -159,26 +173,21 @@ In more complex cases you can write a script that will take this data from any p
 
 This section describes how to send a one-way RPC request to the device using Control Widgets.
 
-- Go to **Dashboard Groups -> All** section and create a new dashboard named **MQTT RPC**. Open the dashboard add an alias by clicking on **Entity Aliases** icon on the top-right.
-
+- Go to **Dashboards** page and create a new dashboard named **MQTT RPC**. Open the dashboard add an alias by clicking on **Entity Aliases** icon on the top-right.
 - Name the alias (**Sensor**, for example), select filter type **"Single Entity"**, type **"Device"** and choose our **SN-001** sensor. Press **Add** and then **Save**.
-
-{% include images-gallery.html imageCollection="create_dashboard_1" %}
-
 - Now **Add New Widget**, select **Control Widgets** from drop down menu and select **Knob Control** widget.
 - On the **Data** field select created alias (**Sensor**). Set **Number of digits after floating point** to 0.
-- Go to **Advanced** tab and set **Minimum value** to 15 and **Maximum value** to 45. Leave the rest by default.
+- Go to **Advanced** tab and set **Minimum value** to 15 and **Maximum value** to 45. Leave the rest by default. Click **Add** to create widget.
 - Save the changes to the dashboard.
 
-{% include images-gallery.html imageCollection="create_dashboard_2" %}
+{% include images-gallery.html imageCollection="create_dashboard" %}
 
-Now go to **Rule Chains** section and open **Root Rule Chain**. Double-click on **Message Type Switch** node and enable the **Debug mode** on it. 
+Now go to **Rule Chains** page and open **Root Rule Chain**. Double-click on **Message Type Switch** node and enable the **Debug mode** on it. 
 
 {% include images-gallery.html imageCollection="edit_rule_node" %}
 
 <br>
 Now go back to your dashboard and turn knob a couple of times. 
-
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-turn-knob-1-pe.png)
