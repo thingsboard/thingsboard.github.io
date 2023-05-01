@@ -23,7 +23,7 @@ On the Tenant details page, you as the System administrator can view the attribu
 
 {% include images-gallery.html imageCollection="tenant-details-ce" %}
 
-### Сreate User in Tenant
+### Сreate Tenant Administrator
 
 The **System administrator** is also able to create multiple users with **Tenant administrator** role in each tenant.
 
