@@ -8,8 +8,10 @@ description: Two-Factor Authentication using ThingsBoard
 two-factor-authentication-password-and-authentication:
     0:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-password-and-authentication-1-pe.png
+        title: 'In the upper right corner, click on the three dots icon. In the dropdown menu, proceed with "Security";'
     1:
         image: /images/user-guide/two-factor-authentication/two-factor-authentication-password-and-authentication-2-pe.png
+        title: 'Activate the convenient verification method. One can activate multiple providers. Save changes.'
 
 two-factor-authentication-app:
     0:
