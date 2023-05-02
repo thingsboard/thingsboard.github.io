@@ -61,9 +61,9 @@ with RestClientPE(base_url=url) as rest_client:
         shared_dashboards_group = rest_client.save_entity_group(shared_dashboards_group)
 
         # Loading Dashboard from file
-        dashboard_json = None
-        with open("watermeters.json", "r") as dashboard_file:
+        with open("examples/watermeters.json", "r") as dashboard_file:
             dashboard_json = load(dashboard_file)
+
         dashboard = Dashboard(title=dashboard_json["title"], configuration=dashboard_json["configuration"])
         dashboard = rest_client.save_dashboard(dashboard)
 
@@ -72,24 +72,27 @@ with RestClientPE(base_url=url) as rest_client:
 
         # Creating Customer 1
         customer1 = Customer(title="Customer 1")
-        customer1 = rest_client.save_customer(customer1)
+        customer1 = rest_client.save_customer(body=customer1)
 
         # Creating Device
-        device = Device(name="WaterMeter1", type="waterMeter")
+        device = Device(name="WaterMeter1", type="waterMeter",
+                        device_profile_id=DeviceProfileId('YOUR_DEVICE_PROFILE_ID', 'DEVICE_PROFILE'))
         device = rest_client.save_device(device)
 
         # Fetching automatically created "Customer Administrators" Group.
-        customer1_administrators = rest_client.get_entity_group_info_by_owner_and_name_and_type(customer1.id, "USER", "Customer Administrators")
+        customer1_administrators = rest_client.get_entity_group_by_owner_and_name_and_type('CUSTOMER', customer1.id, "USER",
+                                                                                                "Customer Administrators")
 
         # Creating Read-Only Role
-        read_only_role = Role(name="Read-Only", permissions=['READ', 'READ_ATTRIBUTES', 'READ_TELEMETRY', 'READ_CREDENTIALS'], type="GROUP")
+        read_only_role = Role(name="Read-Only",
+                              permissions=['READ', 'READ_ATTRIBUTES', 'READ_TELEMETRY', 'READ_CREDENTIALS'],
+                              type="GROUP")
         read_only_role = rest_client.save_role(read_only_role)
 
         # Assigning Shared Dashboards to the Customer 1 Administrators
         tenant_id = current_user.tenant_id
         group_permission = GroupPermission(role_id=read_only_role.id,
                                            name="Read Only Permission",
-                                           is_public=False,
                                            user_group_id=customer1_administrators.id,
                                            tenant_id=tenant_id,
                                            entity_group_id=shared_dashboards_group.id,
@@ -108,7 +111,8 @@ with RestClientPE(base_url=url) as rest_client:
                     email=user_email,
                     additional_info=additional_info)
         user = rest_client.save_user(user, send_activation_mail=False)
-        rest_client.activate_user(user.id, user_password)
+        rest_client.activate_user(ActivateUserRequest(activate_token='ACTIVATE_TOKEN', password='PASSWORD'),
+                                  send_activation_mail=False)
 
         rest_client.add_entities_to_entity_group(customer1_administrators.id, [user.id.id])
 
@@ -144,6 +148,9 @@ password = "tenant"
 # Creating the REST client object with context manager to get auto token refresh
 with RestClientPE(base_url=url) as rest_client:
     try:
+        # Auth with credentials
+        rest_client.login(username=username, password=password)
+
         allowed_user_perms = rest_client.get_allowed_permissions()
         logging.info("Allowed user permissions: \n%r", allowed_user_perms)
     except ApiException as e:
@@ -178,7 +185,10 @@ password = "tenant"
 # Creating the REST client object with context manager to get auto token refresh
 with RestClientPE(base_url=url) as rest_client:
     try:
-        dashboards = rest_client.get_user_dashboards(page_size=str(10), page=str(0))
+        # Auth with credentials
+        rest_client.login(username=username, password=password)
+
+        dashboards = rest_client.get_user_dashboards(page_size=10, page=0)
         logging.info("Dashboards: \n%r", dashboards)
     except ApiException as e:
         logging.exception(e)
@@ -209,11 +219,14 @@ password = "tenant"
 # Creating the REST client object with context manager to get auto token refresh
 with RestClientPE(base_url=url) as rest_client:
     try:
+        # Auth with credentials
+        rest_client.login(username=username, password=password)
+
         # creating uplink converter
         converter = Converter(name='HTTP converter', type='UPLINK')
         converter = rest_client.save_converter(converter)
         logging.info("Created converter: \n%r", converter)
-        
+
         # creating integration
         integration = Integration(name='HTTP Integration', type='HTTP',
                                   routing_key='c5d29c90-75d3-6ae6-606a-589a28803e89',
@@ -247,7 +260,7 @@ with RestClientPE(base_url=url) as rest_client:
                                           "token": ""
                                       }
                                   }),
-                                  default_converter_id=ConverterId('CONVERTER', '504702d0-fe72-11eb-ab24-1f8899a6f9b3'),
+                                  default_converter_id=ConverterId('504702d0-fe72-11eb-ab24-1f8899a6f9b3', 'CONVERTER'),
                                   allow_create_devices_or_assets=True, enabled=True, remote=False, debug_mode=False,
                                   secret='your_secret_token')
         integration = rest_client.save_integration_post(integration)
@@ -283,27 +296,27 @@ password = "tenant"
 # Creating the REST client object with context manager to get auto token refresh
 with RestClientPE(base_url=url) as rest_client:
     try:
+        # Auth with credentials
+        rest_client.login(username=username, password=password)
+
+        # Creating an Asset
+        asset = Asset(name="Building 1", type="building")
+        asset = rest_client.save_asset(asset)
+
+        logging.info("Asset was created:\n%r\n", asset)
+
         # creating a Device
-        device = Device(name="Thermometer 1", type="thermometer")
+        device = Device(name="Thermometer 1", type='default',
+                        device_profile_id=DeviceProfileId('YOUR_DEVICE_PROFILE_ID', 'DEVICE_PROFILE'))
         device = rest_client.save_device(device)
 
         logging.info(" Device was created:\n%r\n", device)
 
-        # find device by device id
-        found_device = rest_client.get_device_by_id(DeviceId('DEVICE', device.id))
+        # Creating relations from device to asset
+        relation = EntityRelation(_from=asset.id, to=device.id, type="Contains")
+        relation = rest_client.save_relation(relation)
 
-        # save device shared attributes
-        res = rest_client.save_device_attributes("{'targetTemperature': 22.4}", DeviceId('DEVICE', device.id),
-                                                 'SERVER_SCOPE')
-
-        logging.info("Save attributes result: \n%r", res)
-
-        # Get device shared attributes
-        res = rest_client.get_attributes_by_scope('DEVICE', DeviceId('DEVICE', device.id), 'SERVER_SCOPE')
-        logging.info("Found device attributes: \n%r", res)
-
-        # delete the device
-        rest_client.delete_device(DeviceId('DEVICE', device.id))
+        logging.info(" Relation was created:\n%r\n", relation)
     except ApiException as e:
         logging.exception(e)
 ```
