@@ -281,8 +281,9 @@ Next we will create Integration with AWS Kinesis inside the Thingsboard. Open **
 Lets verify our integration. First, lets put message into uplink stream, so Thingsboard will fetch this message. 
 Type in the console:
 ```bash
-aws kinesis put-record --stream-name tb-test-uplink --partition-key 123 --data '{"devName": "kitchen_thermostat", "devType": "thermostat", "temperature": 22}'
+aws kinesis put-record --stream-name tb-test-uplink --partition-key 123 --data 'eyJkZXZOYW1lIjogImtpdGNoZW5fdGhlcm1vc3RhdCIsICJkZXZUeXBlIjogInRoZXJtb3N0YXQiLCAidGVtcGVyYXR1cmUiOiAyMn0='
 ```
+{: .copy-code}
 
 Go to **Device Group** -> **All** -> **kitchen_thermostat** - you can see that 
 
