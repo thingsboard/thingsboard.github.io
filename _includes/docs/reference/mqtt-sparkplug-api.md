@@ -28,7 +28,12 @@ You may also issue an update to the Sparkplug device using
 [shared attributes update](#update-metrics-from-shared-attributes-to-mqtt-eondevice) or 
 [rpc command](#update-metrics--using-the-thingsboard-rpc-command-from-server-to-mqtt-eondevice).
 
-**NOTE:** ThingsBoard supports **Sparkplug™ B** payloads only. 
+{% capture difference %}
+**NOTE:**
+<br>
+ThingsBoard supports **Sparkplug™ B** payloads only.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ## Getting started
 
@@ -40,41 +45,73 @@ and push commands back to devices.
 
 First you need to create MQTT [device profile](/docs/{{docsPrefix}}user-guide/device-profiles/) for Sparkplug devices:
 
-1. Navigate to *Profiles->Device Profiles* and click on the "+" icon in the device profile table header to open the *Add device profile* dialog;
+1. Navigate to *Profiles -> Device profiles* page and click on the "+" icon in the device profile table header to open the *Add device profile* dialog;
 2. Use *MQTT EoN Node* as profile name or any other meaningful value;
 3. Navigate to *Transport configuration* tab and select the *MQTT* transport type;
 4. Make sure you have selected the "MQTT Sparkplug B Edge of Network (EoN) node" checkbox;
 5. Input the names of Sparkplug metrics you would like to store as attributes instead of time-series data. 
    This list should also include metrics you may want to update from the server side and push to the device.
-   Simple asterisk suffix is supported as a wildcard. For example: "Node Control/*", "Device Control/*", "Properties/*".  
-   
+   Simple asterisk suffix is supported as a wildcard. For example: "Node Control/\*\", "Device Control/\*\", "Properties/\*\".  
+
+{% include images-gallery.html imageCollection="sparkplug-create-device-profile" %}
+
 ### Step 2. Configure the EoN node credentials
 
-1. Navigate to *Entities->Devices* and click on the "+" icon in the device table header to open the *Add new device* dialog;
-2. Input your EoN node device name (e.g. *Node 1*) and select the existing device profile: *Sparkplug EoN Node*.
+1. Navigate to *Entities -> Devices* page and click on the "+" icon in the device table header to open the *Add new device* dialog;
+2. Input your EoN node device name (e.g. *Node 1*) and select the existing device profile: *MQTT EoN Node*.
 3. Create device and navigate to the device details. Copy the access token. We will use it in the next step. Note that you may use other types of [credentials](/docs/{{docsPrefix}}user-guide/device-credentials/) as well.
+
+{% include images-gallery.html imageCollection="sparkplug-create-device" %}
 
 ### Step 3. Launch the EoN node emulator
 
 We have prepared sparkplug node [emulator](https://github.com/thingsboard/sparkplug-emulator) for the testing purposes.
 Let's launch it and connect to our platform instance. We will use access token credentials from the previous step:
 
-TODO: the demo.thingsboard.io should be relaced with thingsboard.cloud for PE and PAAS.
-
+{% if docsPrefix == null %}
 ```bash
 docker run -e SPARKPLUG_SERVER_URL='tcp://demo.thingsboard.io:1883' -e SPARKPLUG_CLIENT_MQTT_USERNAME='YOUR_THINGSBOARD_DEVICE_TOKEN' thingsboard/tb-sparkplug-emulator:latest
 ```
+{: .copy-code}
 
-Don't forget to replace <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code> with the actual value of the token. 
-You may also replace <code>demo.thingsboard.io</code> with your server hostname. 
-Please note that you can't use <code>localhost</code> inside the docker container.
+Don't forget to replace <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code> with the actual value of the token.
+You should also replace <code>demo.thingsboard.io</code> with your server hostname.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+```bash
+docker run -e SPARKPLUG_SERVER_URL='tcp://YOUR_SERVER_HOSTNAME:1883' -e SPARKPLUG_CLIENT_MQTT_USERNAME='YOUR_THINGSBOARD_DEVICE_TOKEN' thingsboard/tb-sparkplug-emulator:latest
+```
+{: .copy-code}
+
+Don't forget to replace <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code> with the actual value of the token.
+You should also replace <code>YOUR_SERVER_HOSTNAME</code> with your server hostname.
+{% endif %}
+{% if docsPrefix == "paas/" %}
+```bash
+docker run -e SPARKPLUG_SERVER_URL='tcp://thingsboard.cloud:1883' -e SPARKPLUG_CLIENT_MQTT_USERNAME='YOUR_THINGSBOARD_DEVICE_TOKEN' thingsboard/tb-sparkplug-emulator:latest
+```
+{: .copy-code}
+
+Don't forget to replace <code>YOUR_THINGSBOARD_DEVICE_TOKEN</code> with the actual value of the token.
+You should also replace <code>thingsboard.cloud</code> with your server hostname.
+{% endif %}
+
+{% capture difference %}
+**Please note**
+<br>
+You can't use <code>localhost</code> inside the docker container.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+![image](/images/reference/sparkplug/sparkplug-emulator.png)
 
 Once the emulator will launch successfully, you should see the following messages:
 
 ```shell
-2023-04-27 11:59:46,885 [pool-2-thread-1] INFO  o.t.sparkplug.SparkplugEmulation - Publishing [Sparkplug Node 1] NBIRTH
-2023-04-27 11:59:46,898 [pool-2-thread-1] INFO  o.t.sparkplug.SparkplugEmulation - Publishing [Sparkplug Device 1] DBIRTH
-2023-04-27 11:59:46,900 [pool-2-thread-1] INFO  o.t.sparkplug.SparkplugEmulation - Publishing [Sparkplug Device 2] DBIRTH
+2023-05-02 06:09:42,787 [pool-2-thread-1] INFO  o.t.sparkplug.SparkplugEmulation - Publishing [Sparkplug Node 1] NBIRTH
+2023-05-02 06:09:42,815 [pool-2-thread-1] INFO  o.t.sparkplug.SparkplugEmulation - Publishing [Sparkplug Device 1] DBIRTH
+2023-05-02 06:09:42,816 [pool-2-thread-1] INFO  o.t.sparkplug.SparkplugEmulation - Publishing [Sparkplug Device 2] DBIRTH
+
 ```
 
 ### Step 4. Observe device metrics as attributes and telemetry
@@ -82,10 +119,14 @@ Once the emulator will launch successfully, you should see the following message
 Navigate to the details of the EoN node device and open the *Latest telemetry* tab. You should see the device metrics, for example *Current Grid Voltage*.
 Navigate to the *Attributes* tab and select *Shared attributes* scope. You should see metrics that you have previously configured in the [Step 1](#step-1-create-device-profile).
 
-**Note:** Use *Device Profile -> Transport configuration -> SparkPlug metrics to store as attributes* to configure Sparkplug metrics that should be stored as shared attributes instead of telemetry.
+{% include images-gallery.html imageCollection="sparkplug-create-device-telemetry-and-attributes" %}
 
-Navigate to the Devices table and note that two new Sparkplug devices are created by the emulator: "Sparkplug Device 1" and "Sparkplug Device 2". 
+Refresh the *Devices* page and note that two new Sparkplug devices are created by the emulator: "Sparkplug Device 1" and "Sparkplug Device 2". 
 Both devices have their own attributes and telemetry values that are generated by the emulator.  
+
+Additionally, a separate device profile is created for the two new devices with a name consisting of your Sparkplug node's name + "device".
+
+{% include images-gallery.html imageCollection="sparkplug-create-two-devices" %}
 
 ### Step 5. Push updates to Sparkplug metrics from Thingsboard server to MQTT EON and Device
 
@@ -93,14 +134,43 @@ You may push update to Sparkplug node/device metric from ThingsBoard via shared 
 
 #### Update Metrics using shared attributes
 
-ThingsBoard [Shared Attributes](docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver metric value updates to the device.
+ThingsBoard [Shared Attributes](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver metric value updates to the device.
 You may change the shared attribute in multiple ways - via administration UI, dashboard widget, REST API, or rule engine node.
 
-**Note:** To update particular metric you need to add it to the *Device Profile -> Transport configuration -> SparkPlug metrics to store as attributes* list.
+Let's manually change the values of the attributes "*Outputs/LEDs/Green*" and "*Device Control/Scan Rate*".
 
-TODO: replace LEDs and Current Grid Voltage with the *Node Control/Scan Rate* example.
+To change the value of the attribute "Outputs/LEDs/Green", you first need to add a particular metric to the *MQTT EoN Node* device profile to store it as a shared attribute.
+In the *Transport сonfiguration* tab, add a new Sparkplug metric name — *"Outputs/\*\"*.
 
-{% include images-gallery.html imageCollection="sparkplug-node-device-change-shared-sttributes" showListImageTitles="true" %}
+Go back to the *Devices* page and select the *Sparkplug Device 1*.
+On the *Shared attributes* tab, you will see two new attributes: "*Outputs/LEDs/Green*" with the value "true" and "*Outputs/LEDs/Yellow*" with the value "false".
+These are metrics that are saved as attributes, and we can modify them and send values to the device.
+
+Click on the "pencil" icon and change the value of the attribute "*Outputs/LEDs/Green*" from "true" to "false" by unchecking the corresponding box. Then, click Update. An attribute with the name "*Outputs/LEDs/Green*" and the value "*false*" is sent from the server to the device "*Sparkplug Device 1*".
+
+In the *Terminal* where the emulator is running, you should see the following messages:
+
+```shell
+2023-05-02 06:19:00,417 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Message Arrived on topic spBv1.0/Sparkplug Group 1/DCMD/Sparkplug Node 1/Sparkplug Device 1
+2023-05-02 06:19:00,417 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Command: [DCMD]  nodeDeviceId: [Sparkplug Device 1]
+2023-05-02 06:19:00,417 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Metric [Outputs/LEDs/Green] value [false]
+```
+
+As you can see, the new attribute value for "*Outputs/LEDs/Green*" has been successfully sent to the device.
+
+Now let's change the value of the "*Device Control/Scan Rate*" attribute. Click on the "pencil" icon and change the value from "60000" to "30000". Click Update. An attribute with the name "*Device Control/Scan Rate*" and the value "*30000*" is sent from the server to the device "*Sparkplug Device 1*".
+
+In *Terminal* you should see the following messages:
+
+```shell
+2023-05-02 06:21:36,247 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Message Arrived on topic spBv1.0/Sparkplug Group 1/DCMD/Sparkplug Node 1/Sparkplug Device 1
+2023-05-02 06:21:36,248 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Command: [DCMD]  nodeDeviceId: [Sparkplug Device 1]
+2023-05-02 06:21:36,248 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Metric [Device Control/Scan Rate] value [30000]
+```
+
+The new attribute value for "*Device Control/Scan Rate*" has been successfully sent to the device.
+
+{% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes" %}
 
 #### Update Metrics  using the ThingsBoard RPC command from server to MQTT EON/Device
 
@@ -116,7 +186,7 @@ The *method* defines the Sparkplug operation and is one of the following:
 
 The *params* is a JSON that defines the metric and the value.
 
-For example, to reboot the Sparkplug EoN Node, you should send the following command:
+For example, to reboot the Sparkplug EoN *Node*, you should send the following command:
   
   ```json
   {
@@ -126,7 +196,7 @@ For example, to reboot the Sparkplug EoN Node, you should send the following com
   ```
   {: .copy-code}
 
-For example, to reboot the Sparkplug EoN Device, you should send the following command: 
+To reboot the Sparkplug EoN *Device*, you should send the following command: 
 
   ```json
   {
@@ -136,10 +206,27 @@ For example, to reboot the Sparkplug EoN Device, you should send the following c
   ```
   {: .copy-code}
 
-TODO: replace images below with the reboot Device/Node button example.
+In this example, we will use the "*RPC Button*" widget to reboot *Sparkplug EoN Node*.
 
-{% include images-gallery.html imageCollection="sparkplug-node-device-change-rpc" showListImageTitles="true" %}
+1. Go to the *Dashboard* page and create a new dashboard named *Sparkplug*. Open the dashboard and add new alias by clicking on *Entity aliases* icon on the top-right.
+Name the alias (*EoN Node*, for example), select filter type "*Single Entity*", type "*Device*" and choose *Node 1*. Press Add and then Save.
 
+2. Now let's create a new widget. Click "Add new widget", select *Control widgets* from drop down menu and select *RPC Button* widget. On the *Data* field select created alias (EoN Node). 
+Go to *Advanced* tab and enter *button label* - REBOOT NODE. In the *RPC settings* enter *RPC method* - "NCMD" (command to the EoN Node) and *RPC method params* - "*{"metricName": "Node Control/Reboot", "value": true}*". Click Add and save changes.
+
+3. Now click "REBOOT NODE" button on the widget. RPC command with name "Node Control/Reboot" and value "true" is sent from the server to the node "*Sparkplug Node 1*".
+
+In the *Terminal* where the emulator is running, you should see the following messages:
+
+```shell
+2023-05-02 06:46:16,137 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Message Arrived on topic spBv1.0/Sparkplug Group 1/NCMD/Sparkplug Node 1
+2023-05-02 06:46:16,138 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Command: [NCMD]  nodeDeviceId: [Sparkplug Node 1]
+2023-05-02 06:46:16,138 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Metric [Node Control/Reboot] value [true]
+```
+
+The *Sparkplug EoN Node 1* has been rebooted.
+
+{% include images-gallery.html imageCollection="sparkplug-update-metrics-using-the-thingsBoard-rpc-command" %}
 
 ## Next steps
 
