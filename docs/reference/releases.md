@@ -17,10 +17,10 @@ Major release with the following features and bug fixes:
 
 * Core & Rule Engine
   
-  * [#7911](https://github.com/thingsboard/thingsboard/pull/7911) Notification system by @ViacheslavKlimov
-  * [#7935](https://github.com/thingsboard/thingsboard/pull/7935) Device provisioning using X509 certificate chains by @AndriiLandiak
-  * [#7762](https://github.com/thingsboard/thingsboard/pull/7762) Alarm comments feature by @dashevchenko
-  * [#8414](https://github.com/thingsboard/thingsboard/pull/8414) Singleton mode for specific rule nodes by @YevhenBondarenko
+  * [#7911](https://github.com/thingsboard/thingsboard/pull/7911) [Notification system](/docs/user-guide/notifications/) by @ViacheslavKlimov
+  * [#7935](https://github.com/thingsboard/thingsboard/pull/7935) [Device provisioning](/docs/user-guide/certificates/?ubuntuThingsboardX509=x509Chain) using X509 certificate chains by @AndriiLandiak
+  * [#8090](https://github.com/thingsboard/thingsboard/pull/8090) [Alarm assignment](/docs/user-guide/alarms/#how-to-assign-alarm-to-user) feature by @imbeacon    
+  * [#7762](https://github.com/thingsboard/thingsboard/pull/7762) [Alarm comments](/docs/user-guide/alarms/#how-to-find-alarm-comments-and-add-your-own) feature by @dashevchenko
 
 * UI
   
@@ -33,6 +33,7 @@ Major release with the following features and bug fixes:
 
 * Core & Rule Engine
   
+  * [#8414](https://github.com/thingsboard/thingsboard/pull/8414) Singleton mode for specific rule nodes by @YevhenBondarenko
   * [#8304](https://github.com/thingsboard/thingsboard/pull/8304) Added entity & API usage statistics REST API call by @YevhenBondarenko
   * [#8335](https://github.com/thingsboard/thingsboard/pull/8335) Devices activity statistics by @ViacheslavKlimov
   * [#7974](https://github.com/thingsboard/thingsboard/pull/7974) New nodes 'asset type switch' & 'device type switch' by @YuriyLytvynchuk
