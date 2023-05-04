@@ -8,7 +8,7 @@ create_dashboard:
         title: 'Go to Dashboards page and create a new dashboard named MQTT RPC. Open this dashboard;'
     1:
         image: /images/user-guide/integrations/mqtt/mqtt-integration-create-new-dashboard-2-pe.png
-        title: 'Add an alias by clicking on Entity Aliases icon on the top-right. Name the alias (Sensor, for example), select filter type “Single Entity”, type “Device” and choose our SN-001 sensor. Press Add and then Save;'
+        title: 'Add an alias by clicking on Entity Aliases icon on the top-right. Name the alias (Sensor, for example), select filter type "Single Entity", type "Device" and choose our SN-001 sensor. Press Add and then Save;'
     2:
         image: /images/user-guide/integrations/mqtt/mqtt-integration-create-new-dashboard-4-pe.png
         title: 'Now Add New Widget;'
