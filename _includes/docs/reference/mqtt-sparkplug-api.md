@@ -103,15 +103,22 @@ You can't use <code>localhost</code> as a <code>SPARKPLUG_SERVER_URL</code> insi
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-![image](/images/reference/sparkplug/sparkplug-emulator.png)
+{% if docsPrefix == null %}
+![image](/images/reference/sparkplug/sparkplug-emulator-ce.png)
+{% endif %}
+{% if docsPrefix == "pe/" %}
+![image](/images/reference/sparkplug/sparkplug-emulator-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/reference/sparkplug/sparkplug-emulator-pe.png)
+{% endif %}
 
 Once the emulator will launch successfully, you should see the following messages:
 
 ```shell
-2023-05-02 06:09:42,787 [pool-2-thread-1] INFO  o.t.sparkplug.SparkplugEmulation - Publishing [Sparkplug Node 1] NBIRTH
-2023-05-02 06:09:42,815 [pool-2-thread-1] INFO  o.t.sparkplug.SparkplugEmulation - Publishing [Sparkplug Device 1] DBIRTH
-2023-05-02 06:09:42,816 [pool-2-thread-1] INFO  o.t.sparkplug.SparkplugEmulation - Publishing [Sparkplug Device 2] DBIRTH
-
+2023-05-04 13:40:42,787 [pool-2-thread-1] INFO  o.t.sparkplug.SparkplugEmulation - Publishing [Sparkplug Node 1] NBIRTH
+2023-05-04 13:40:42,815 [pool-2-thread-1] INFO  o.t.sparkplug.SparkplugEmulation - Publishing [Sparkplug Device 1] DBIRTH
+2023-05-04 13:40:42,816 [pool-2-thread-1] INFO  o.t.sparkplug.SparkplugEmulation - Publishing [Sparkplug Device 2] DBIRTH
 ```
 
 ### Step 4. Observe device metrics as attributes and telemetry
@@ -156,29 +163,27 @@ Click on the "pencil" icon and change the value of the attribute "*Outputs/LEDs/
 In the *Terminal* where the emulator is running, you should see the following messages:
 
 ```shell
-2023-05-02 06:19:00,417 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Message Arrived on topic spBv1.0/Sparkplug Group 1/DCMD/Sparkplug Node 1/Sparkplug Device 1
-2023-05-02 06:19:00,417 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Command: [DCMD]  nodeDeviceId: [Sparkplug Device 1]
-2023-05-02 06:19:00,417 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Metric [Outputs/LEDs/Green] value [false]
+2023-05-04 14:09:00,417 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Message Arrived on topic spBv1.0/Sparkplug Group 1/DCMD/Sparkplug Node 1/Sparkplug Device 1
+2023-05-04 14:09:00,417 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Command: [DCMD]  nodeDeviceId: [Sparkplug Device 1]
+2023-05-04 14:09:00,417 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Metric [Outputs/LEDs/Green] value [false]
 ```
 
 As you can see, the new attribute value for "*Outputs/LEDs/Green*" has been successfully sent to the device.
 
 {% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes-3" %}
 
-<br/>
 Now let's change the value of the "*Device Control/Scan Rate*" attribute. Click on the "pencil" icon and change the value from "*60000*" to "*30000*". Click Update.
 
 When the new value for the "*Device Control/Scan Rate*" attribute is sent to the "*Sparkplug Device 1*" device, you will see the following messages in the *Terminal*:
 
 ```shell
-2023-05-02 06:21:36,247 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Message Arrived on topic spBv1.0/Sparkplug Group 1/DCMD/Sparkplug Node 1/Sparkplug Device 1
-2023-05-02 06:21:36,248 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Command: [DCMD]  nodeDeviceId: [Sparkplug Device 1]
-2023-05-02 06:21:36,248 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Metric [Device Control/Scan Rate] value [30000]
+2023-05-04 14:16:51,715 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Message Arrived on topic spBv1.0/Sparkplug Group 1/DCMD/Sparkplug Node 1/Sparkplug Device 1
+2023-05-04 14:16:51,715 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Command: [DCMD]  nodeDeviceId: [Sparkplug Device 1]
+2023-05-04 14:16:51,715 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Metric [Device Control/Scan Rate] value [30000]
 ```
 
 {% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes-4" %}
 
-<br/>
 The attribute values for "*Outputs/LEDs/Green*" and "*Device Control/Scan Rate*" have been changed and sent to the "*Sparkplug Device 1*" device.
 
 {% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes-5" %}
@@ -236,9 +241,9 @@ Now click "*REBOOT NODE*" button on the widget. RPC command with name "Node Cont
 In the *Terminal* where the emulator is running, you should see the following messages:
 
 ```shell
-2023-05-02 06:46:16,137 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Message Arrived on topic spBv1.0/Sparkplug Group 1/NCMD/Sparkplug Node 1
-2023-05-02 06:46:16,138 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Command: [NCMD]  nodeDeviceId: [Sparkplug Node 1]
-2023-05-02 06:46:16,138 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Metric [Node Control/Reboot] value [true]
+2023-05-04 14:27:02,215 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Message Arrived on topic spBv1.0/Sparkplug Group 1/NCMD/Sparkplug Node 1
+2023-05-04 14:27:02,215 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Command: [NCMD]  nodeDeviceId: [Sparkplug Node 1]
+2023-05-04 14:27:02,215 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Metric [Node Control/Reboot] value [true]
 ```
 
 The *Sparkplug EoN Node 1* has been rebooted.
