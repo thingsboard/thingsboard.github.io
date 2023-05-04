@@ -99,7 +99,7 @@ You should also replace <code>thingsboard.cloud</code> with your server hostname
 {% capture difference %}
 **Please note**
 <br>
-You can't use <code>localhost</code> inside the docker container.
+You can't use <code>localhost</code> as a <code>SPARKPLUG_SERVER_URL</code> inside the docker container.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -137,14 +137,19 @@ You may push update to Sparkplug node/device metric from ThingsBoard via shared 
 ThingsBoard [Shared Attributes](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver metric value updates to the device.
 You may change the shared attribute in multiple ways - via administration UI, dashboard widget, REST API, or rule engine node.
 
+<br/>
 Let's manually change the values of the attributes "*Outputs/LEDs/Green*" and "*Device Control/Scan Rate*".
 
-To change the value of the attribute "Outputs/LEDs/Green", you first need to add a particular metric to the *MQTT EoN Node* device profile to store it as a shared attribute.
+To change the value of the attribute "Outputs/LEDs/Green", you first need to add a particular metric to the *MQTT EoN Node* device profile to store it as a shared attribute instead of telemetry.
 In the *Transport сonfiguration* tab, add a new Sparkplug metric name — *"Outputs/\*\"*.
 
+{% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes-1" %}
+
 Go back to the *Devices* page and select the *Sparkplug Device 1*.
-On the *Shared attributes* tab, you will see two new attributes: "*Outputs/LEDs/Green*" with the value "true" and "*Outputs/LEDs/Yellow*" with the value "false".
-These are metrics that are saved as attributes, and we can modify them and send values to the device.
+On the *Shared attributes* tab, you will see two new attributes: "*Outputs/LEDs/Green*" with the value "*true*" and "*Outputs/LEDs/Yellow*" with the value "*false*".
+These are metrics that are stored as attributes, and we can modify and send their values to the device.
+
+{% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes-2" %}
 
 Click on the "pencil" icon and change the value of the attribute "*Outputs/LEDs/Green*" from "true" to "false" by unchecking the corresponding box. Then, click Update. An attribute with the name "*Outputs/LEDs/Green*" and the value "*false*" is sent from the server to the device "*Sparkplug Device 1*".
 
@@ -158,9 +163,12 @@ In the *Terminal* where the emulator is running, you should see the following me
 
 As you can see, the new attribute value for "*Outputs/LEDs/Green*" has been successfully sent to the device.
 
-Now let's change the value of the "*Device Control/Scan Rate*" attribute. Click on the "pencil" icon and change the value from "60000" to "30000". Click Update. An attribute with the name "*Device Control/Scan Rate*" and the value "*30000*" is sent from the server to the device "*Sparkplug Device 1*".
+{% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes-3" %}
 
-In *Terminal* you should see the following messages:
+<br/>
+Now let's change the value of the "*Device Control/Scan Rate*" attribute. Click on the "pencil" icon and change the value from "*60000*" to "*30000*". Click Update.
+
+When the new value for the "*Device Control/Scan Rate*" attribute is sent to the "*Sparkplug Device 1*" device, you will see the following messages in the *Terminal*:
 
 ```shell
 2023-05-02 06:21:36,247 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Message Arrived on topic spBv1.0/Sparkplug Group 1/DCMD/Sparkplug Node 1/Sparkplug Device 1
@@ -168,9 +176,12 @@ In *Terminal* you should see the following messages:
 2023-05-02 06:21:36,248 [MQTT Call: Sparkplug Node 1] INFO  o.t.sparkplug.SparkplugMqttCallback - Metric [Device Control/Scan Rate] value [30000]
 ```
 
-The new attribute value for "*Device Control/Scan Rate*" has been successfully sent to the device.
+{% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes-4" %}
 
-{% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes" %}
+<br/>
+The attribute values for "*Outputs/LEDs/Green*" and "*Device Control/Scan Rate*" have been changed and sent to the "*Sparkplug Device 1*" device.
+
+{% include images-gallery.html imageCollection="sparkplug-update-metrics-using-shared-attributes-5" %}
 
 #### Update Metrics  using the ThingsBoard RPC command from server to MQTT EON/Device
 
@@ -206,15 +217,21 @@ To reboot the Sparkplug EoN *Device*, you should send the following command:
   ```
   {: .copy-code}
 
-In this example, we will use the "*RPC Button*" widget to reboot *Sparkplug EoN Node*.
+In this example, we will use the "*RPC Button*" widget to reboot *Sparkplug EoN Node*. See the step-by-step guide with screenshots below.
 
-1. Go to the *Dashboard* page and create a new dashboard named *Sparkplug*. Open the dashboard and add new alias by clicking on *Entity aliases* icon on the top-right.
+Go to the *Dashboards* page and create a new dashboard named *Sparkplug*. Open the dashboard and add new alias by clicking on *Entity aliases* icon.
 Name the alias (*EoN Node*, for example), select filter type "*Single Entity*", type "*Device*" and choose *Node 1*. Press Add and then Save.
 
-2. Now let's create a new widget. Click "Add new widget", select *Control widgets* from drop down menu and select *RPC Button* widget. On the *Data* field select created alias (EoN Node). 
+{% include images-gallery.html imageCollection="sparkplug-update-metrics-using-the-thingsboard-rpc-command-1" %}
+
+Now create a new widget. Click "Add new widget", select the *Control widgets* bundle from the drop-down menu and select the *RPC Button* widget. On the *Data* field select created alias (EoN Node). 
 Go to *Advanced* tab and enter *button label* - REBOOT NODE. In the *RPC settings* enter *RPC method* - "NCMD" (command to the EoN Node) and *RPC method params* - "*{"metricName": "Node Control/Reboot", "value": true}*". Click Add and save changes.
 
-3. Now click "REBOOT NODE" button on the widget. RPC command with name "Node Control/Reboot" and value "true" is sent from the server to the node "*Sparkplug Node 1*".
+{% include images-gallery.html imageCollection="sparkplug-update-metrics-using-the-thingsboard-rpc-command-2" %}
+
+Now click "*REBOOT NODE*" button on the widget. RPC command with name "Node Control/Reboot" and value "true" is sent from the server to the node "*Sparkplug Node 1*".
+
+{% include images-gallery.html imageCollection="sparkplug-update-metrics-using-the-thingsboard-rpc-command-3" %}
 
 In the *Terminal* where the emulator is running, you should see the following messages:
 
@@ -225,8 +242,6 @@ In the *Terminal* where the emulator is running, you should see the following me
 ```
 
 The *Sparkplug EoN Node 1* has been rebooted.
-
-{% include images-gallery.html imageCollection="sparkplug-update-metrics-using-the-thingsBoard-rpc-command" %}
 
 ## Next steps
 
