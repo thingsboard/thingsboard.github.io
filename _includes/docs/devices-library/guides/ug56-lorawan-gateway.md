@@ -9,9 +9,7 @@
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
 - [UG56 gateway user manual](https://resource.milesight-iot.com/milesight/document/ug56-user-guide-en.pdf)
-- [UG56 gateway connected to the Internet](https://support.milesight-iot.com/support/solutions/articles/73000514278-how-to-connect-milesight-gateway-to-the-internet)
 - [Network Server account](#configuration)
-- [Connection guide for connecting the gateway to TheThingsStack](https://support.milesight-iot.com/support/solutions/articles/73000514079-how-to-connect-milesight-gateway-to-the-things-stack-v3-via-basic-station)
 '
  %}
 
@@ -45,7 +43,7 @@ To continue with this guide we will need the following:
 
 ### Gateway connection
 
-According to the [official user manual](https://resource.milesight-iot.com/milesight/document/ug56-user-guide-en.pdf) you can connect the gateway to the network and get access to the WebUI in two ways:
+According to the [official user manual](https://resource.milesight-iot.com/milesight/document/ug56-user-guide-en.pdf) and [this guide](https://support.milesight-iot.com/support/solutions/articles/73000514278-how-to-connect-milesight-gateway-to-the-internet) you can connect the gateway to the network and get access to the WebUI in two ways:
 
 - Wireless connection:
   1. Enable Wireless Network Connection on your computer and search for access point “Gateway_******” to connect it.
@@ -76,7 +74,7 @@ According to the [official user manual](https://resource.milesight-iot.com/miles
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=gatewayPacketForwarderTab %}
 
-By default Gateway EUI and Gateway ID are the same.  
+By default, Gateway EUI and Gateway ID are the same.  
 
 Next steps will describe how to connect the gateway to network server.  
 
@@ -95,4 +93,4 @@ Loriot
 
 ## Conclusion
 
-{% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include /docs/devices-library/blocks/basic/lora-gateway-conclusion-block.md %}
