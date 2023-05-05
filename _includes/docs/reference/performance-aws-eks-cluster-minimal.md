@@ -18,13 +18,17 @@ What are the tasks for the cluster?
 ## Cluster architecture
 
 A minimal cluster requires at least 3 nodes in independent zones (AZ) within the same region.
+
 Node configuration is 4 vCPUs / 32G DDR5 (r7g.xlarge). ARM architecture is for energy saving.
 
 ## Total ownership cost - TOC
 
 Hardware costs 3 x 125$ (1 Yr reserved r7g.xlarge) = 375$.
+
 For other cloud provider costs (storage, traffic, k8s, load balancer, etc.) let's estimate a maximum of 50% of the hardware.
+
 Total cloud costs 375 * 1.5 = 563$/mo.
+
 With 100k devices per cluster, TOC is 0.6 cents per device monthly for the cloud, with no labor costs included.
 
 ## Performance results
@@ -38,8 +42,11 @@ The fancy graphics below:
 ## Conclusions
 
 2023 IoT winner
+
 The best IoT choice award
+
 Easy to cloud nominated
+
 Skyrocket approved
 
 ## TL;DR Deep dive in details
