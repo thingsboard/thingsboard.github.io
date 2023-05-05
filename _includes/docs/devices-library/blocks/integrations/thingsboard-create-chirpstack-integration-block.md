@@ -1,6 +1,6 @@
 ### Add a gateway on the Chirpstack
 
-We need to add a gateway on the [Chirpstack](chirpstack.io). The official guide is available [here](https://support.milesight-iot.com/support/solutions/articles/73000514249-how-to-connect-milesight-gateway-to-chirpstack). 
+We need to add a gateway on the [Chirpstack](chirpstack.io){: target="_blank"}. The official guide is available [here](https://support.milesight-iot.com/support/solutions/articles/73000514249-how-to-connect-milesight-gateway-to-chirpstack){: target="_blank"}. 
 To add a gateway, you can follow next steps:
 
 {% assign addGatewaySteps = '

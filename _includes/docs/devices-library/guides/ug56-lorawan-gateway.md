@@ -8,7 +8,7 @@
 {% endif %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
-- [UG56 gateway user manual](https://resource.milesight-iot.com/milesight/document/ug56-user-guide-en.pdf)
+- [UG56 gateway user manual](https://resource.milesight-iot.com/milesight/document/ug56-user-guide-en.pdf){: target="_blank"}
 - [Network Server account](#configuration)
 '
  %}
@@ -16,7 +16,7 @@
 ## Introduction
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-[UG56 LoRaWAN® Gateway]() is a high-performance 8-channel LoRaWAN® gateway that offers reliable connectivity for industrial applications.  
+[UG56 LoRaWAN® Gateway]({{deviceVendorLink}}){: target="_blank"} is a high-performance 8-channel LoRaWAN® gateway that offers reliable connectivity for industrial applications.  
   
 Industrial-Grade Design  
 Listen Before Talk  
@@ -29,21 +29,17 @@ RU864/IN865/EU868/AU915/US915/KR920/AS923
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
-After doing steps described in this guide you will have a configured gateway and integration on ThingsBoard, it will allow you to add devices, receive data from them and process a data.  
-
-[//]: # (In this guide, we will [create integration on ThingsBoard]&#40;#create-integration-on-thingsboard&#41;.  )
-[//]: # (After this we will [create uplink converter for integration]&#40;#create-uplink-converter-for-integration&#41;, and [configure integration]&#40;#configure-integration-on-thingsboard&#41;.  )
-[//]: # (Then, to be sure that everything is OK we will [check connection of integration]&#40;#check-connection-of-integration-on-thingsboard&#41;.)
+After doing steps described in this guide you will have a connected and configured gateway on a network server and integration on ThingsBoard, it will allow you to add devices, receive data from them and process a data.
 
 ### Prerequisites
 
 To continue with this guide we will need the following:  
 {{ prerequisites }}
-- [ThingsBoard account]({{ thingsboardHost }})
+- [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
 ### Gateway connection
 
-According to the [official user manual](https://resource.milesight-iot.com/milesight/document/ug56-user-guide-en.pdf) and [this guide](https://support.milesight-iot.com/support/solutions/articles/73000514278-how-to-connect-milesight-gateway-to-the-internet) you can connect the gateway to the network and get access to the WebUI in two ways:
+According to the [official user manual](https://resource.milesight-iot.com/milesight/document/ug56-user-guide-en.pdf){: target="_blank"} and [this guide](https://support.milesight-iot.com/support/solutions/articles/73000514278-how-to-connect-milesight-gateway-to-the-internet){: target="_blank"} you can connect the gateway to the network and get access to the WebUI in two ways:
 
 - Wireless connection:
   1. Enable Wireless Network Connection on your computer and search for access point “Gateway_******” to connect it.
@@ -69,7 +65,7 @@ According to the [official user manual](https://resource.milesight-iot.com/miles
 {% assign gatewayPacketForwarderTab = '
     ===
         image: /images/devices-library/ready-to-go-devices/ug56-lorawan-gateway/ns-configuration-before.png,
-        title: Open <b>Packet Forwarder</b> in the left menu and save <b>Gateway EUI</b> and <b>Gateway ID</b>, we will need them to create a gateway on network server.  
+        title: Open **Packet Forwarder** in the left menu and save **Gateway EUI** and **Gateway ID**, we will need them to create a gateway on network server.  
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=gatewayPacketForwarderTab %}
@@ -90,6 +86,9 @@ Loriot
 '%}
 
 {% include /docs/devices-library/blocks/basic/thingsboard-create-integration-block.liquid target-integration-types=targetIntegrationTypes %}
+
+{% include /docs/devices-library/blocks/basic/thingsboard-check-integration-connection.md %}
+
 
 ## Conclusion
 

@@ -15,6 +15,9 @@ To do this please follow next steps:
     ===
         image: /images/devices-library/ready-to-go-devices/ug56-lorawan-gateway/ns-configuration-after.png,
         title: Press **Save** button.
+    ===
+        image: /images/devices-library/basic/integrations/loriot/gateway-added.png,
+        title: Now you can check the status of the gateway on the Loriot, it should be connected.
 '
 %}
 
