@@ -21,9 +21,4 @@ return result;
 ```
 {: .copy-code}
 
-{% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/sigfox/sigfox-create-downlink-converter-java-1-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/sigfox/sigfox-create-downlink-converter-java-1-paas.png)
-{% endif %}
