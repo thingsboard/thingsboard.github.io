@@ -31,15 +31,15 @@ In this tutorial, we will use:
  - an advanced [device simulator](/docs/user-guide/integrations/resources/mqtt-client.py) for RPC simulation example.
 
 Let's assume that we have a sensor which is sending current temperature readings.
-Our sensor device *SN-001* publishes it's temperature readings to '*tb/mqtt-integration-tutorial/sensors/SN-001/temperature*' and it is subscribed to '*tb/mqtt-integration-tutorial/sensors/SN-001/rx*' to receive RPC calls.
+Our sensor device *SN-001* publishes it's temperature readings to '**tb/mqtt-integration-tutorial/sensors/SN-001/temperature**' and it is subscribed to '**tb/mqtt-integration-tutorial/sensors/SN-001/rx**' to receive RPC calls.
 
 ### ThingsBoard setup
 
-Before setting up an MQTT integration, you need to create an Uplink and a Downlink converters.
+Before setting up an MQTT integration, you need to create uplink and downlink converters.
 
-*Uplink Converter* is a script for parsing and transforming the data received by MQTT integration.
+Uplink converter is a script for parsing and transforming the data received by MQTT integration.
 
-*Downlink Converter* parses and transforms the data sent from ThingsBoard to the format that is consumed by existing device(s).
+Downlink converter parses and transforms the data sent from ThingsBoard to the format that is consumed by existing device(s).
 
 #### Uplink Converter
 
@@ -47,8 +47,8 @@ The purpose of the decoder function is to parse the incoming data and metadata t
 *deviceName* and *deviceType* are required, while *attributes* and *telemetry* are optional.
 *Attributes* and *telemetry* are flat key-value objects. Nested objects are not supported.
 
-To create an Uplink Converter go to *Data converters* section and Click *Add new data converter —> Create new converter*.
-Name it *"MQTT Uplink Converter"* and select type *Uplink*. Use debug mode for now.
+To create an uplink converter go to the **Integrations center** -> **Data converters** page and click "plus" button.
+Name it "**MQTT Uplink Converter**" and select type **Uplink**. Use **debug mode** for now.
 
 {% capture difference %}
 **NOTE:**
@@ -76,7 +76,7 @@ Even if you won't send downlink RPC, you still need to create a dummy Downlink c
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-Create another converter with the name "*MQTT Downlink Converter*" and type *Downlink*. Leave the default script and click *Add*.     
+Create another converter with the name "**MQTT Downlink Converter**" and type **Downlink**. Leave the default script and click **Add**.     
 
 {% include templates/tbel-vs-js.md %}
 
@@ -89,36 +89,36 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-downlink
 
 #### MQTT Integration Setup
 
-- Go to the *Integrations* page and click *Add new integration* button. Name it "*MQTT Integration*", select type *MQTT*;
+- Go to the **Integrations center** -> **Integrations** page and click "plus" icon to add a new integration. Name it "**MQTT Integration**", select type **MQTT**;
 
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-1-pe.png)
 
-- The next steps is to add the recently created *Uplink* and *Downlink* converters;
+- The next steps is to add the recently created **uplink** and **downlink** converters;
 
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-2-pe.png)
 
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-3-pe.png)
 
-- Specify *host*: **broker.hivemq.com** and *port*: **1883** at the connection step;
+- Specify **host**: **broker.hivemq.com** and **port**: **1883** at the connection step;
 
-- Add a *topic filter*:
+- Add a **topic filter**:
 
 ```shell
 tb/mqtt-integration-tutorial/sensors/+/temperature
 ```
 {: .copy-code}
 
- - You can also select an MQTT *QoS* level. We use MQTT QoS level 0 (At most once) by default;
+ - You can also select an MQTT **QoS** level. We use MQTT QoS level 0 (At most once) by default;
 
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-4-pe.png)
 
-- Go to the *advanced settings*. It is better to uncheck the *Clean session* parameter. Many brokers do not support sticky sessions, so will silently close the connection if you try to connect with this option enabled;
+- Go to the **advanced settings**. It is better to uncheck the **Clean session** parameter. Many brokers do not support sticky sessions, so will silently close the connection if you try to connect with this option enabled;
 
-- Let's leave the *Downlink topic pattern* by default, meaning that the Integration will take the metadata.topic and use it as the downlink topic;
+- Let's leave the **Downlink topic pattern** by default, meaning that the Integration will take the metadata.topic and use it as the downlink topic;
 
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-5-pe.png)
 
-- [Optional] Click on *Check connection* button to check connection to your Service Bus topic. Click *Add* button to create the integration.
+- [Optional] Click on **Check connection** button to check connection to your Service Bus topic. Click **Add** button to create the integration.
 
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-6-pe.png)
 
@@ -150,14 +150,14 @@ Learn more about *notifications* and how to configure them [here](/docs/{{docsPr
 {% endif %}
 
 {% if docsPrefix == "paas/" %}
-Once you go to *Device Groups -> All* you should find a *SN-001* device provisioned by the Integration.
+Once you go to the **Device Groups** -> **All* you should find a *SN-001* device provisioned by the Integration.
 Click on the device, go to *Latest Telemetry* tab to see "temperature" key and its value (25.1) there.
 
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-go-to-devices-2.png)
 
 {% endif %}
 
-Go back to your *Integrations* page and navigate to the *Events* tab. There you'll see the message consumed by the *MQTT Integration*.
+Go back to your **Integrations** page and navigate to the **Events** tab. There you'll see the message consumed by the **MQTT Integration**.
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-events-1-pe.png)
@@ -166,7 +166,7 @@ Go back to your *Integrations* page and navigate to the *Events* tab. There you'
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-events-1.png)
 {% endif %}
 
-On *Events* tab of your *MQTT Uplink Converter* there will be "*In*", "*Out*", and "*Metadata*" columns. 
+On **Events** tab of your **MQTT Uplink Converter** there will be "*In*", "*Out*", and "*Metadata*" columns. 
 The "*In*" and "*Metadata*" are the input for the data converter, and "*Out*" is the result.
 
 {% if docsPrefix == "pe/" %}
@@ -185,16 +185,16 @@ In more complex cases you can write a script that will take this data from any p
 
 This section describes how to send a one-way RPC request to the device using Control Widgets.
 
-- Go to *Dashboards* page and create a new dashboard named *MQTT RPC*. Open the dashboard add an alias by clicking on *Entity Aliases* icon;
-- Name the alias (*Sensor*, for example), select filter type *"Single Entity"*, type *"Device"* and choose our *SN-001* sensor. Press *Add* and then *Save*;
-- Now *Add New Widget*, select the *Control Widgets* bundle from drop down menu and select the *Knob Control* widget;
-- On the *Data* field select created alias (*Sensor*). Set *Number of digits after floating point* to 0;
-- Go to *Advanced* tab and set *Minimum value* to 15 and *Maximum value* to 45. Leave the rest by default. Click *Add* to create widget;
-- Save the changes to the dashboard.
+- Go to the **Dashboards** page and create a new dashboard named **MQTT RPC**. Open the dashboard add an alias by clicking on **Entity aliases** icon;
+- Name the alias (**Sensor**, for example), select filter type **Single Entity**, type **Device** and choose our **SN-001** sensor. Press **Add** and then **Save**;
+- Now add a new widget, select the **Control Widgets** bundle from drop down menu and select the **Knob Control** widget;
+- On the **Data** field select created alias (**Sensor**). Set **Number of digits after floating point** to 0;
+- Go to **Advanced** tab and set **Minimum value** to 15 and **Maximum value** to 45. Leave the rest by default. Click **Add** to create widget;
+- Save changes.
 
 {% include images-gallery.html imageCollection="create_dashboard" %}
 
-Now go to *Rule Chains* page and open *Root Rule Chain*. Double-click on *Message Type Switch* node and enable the *Debug mode* on it. 
+Now go to the **Rule Chains** page and open **Root Rule Chain**. Double-click on **message type switch** node and enable the **Debug mode** on it. 
 
 {% include images-gallery.html imageCollection="edit_rule_node" %}
 
@@ -207,17 +207,17 @@ Now go back to your dashboard and turn knob a couple of times.
 ![image](/images/user-guide/integrations/mqtt/mqtt-integration-turn-knob-1.png)
 {% endif %}
 
-In the *Message Type Switch* node on the *Events* tab you should then see incoming messages with the message type *RPC_CALL_FROM_SERVER_TO_DEVICE* and relation type *RPC Request to Device*. You can check out what data and metadata was sent by the Knob Control to the Rule Engine.
+In the **message type switch** node on the **Events** tab you should then see incoming messages with the message type *RPC_CALL_FROM_SERVER_TO_DEVICE* and relation type *RPC Request to Device*. You can check out what data and metadata was sent by the Knob Control to the Rule Engine.
 
 {% include images-gallery.html imageCollection="incoming_messages" %}
 
-To make sensor performing this command you need *RPC Request to Device* type messages to be forwarded to the Downlink Data Converter.
-In the Root Rule Chain editor find the *Integration Downlink* node, drag and drop it to the rule chain. Name it *MQTT Integration Downlink*, select our *MQTT Integration* and click *Add*.
+To make sensor performing this command you need **RPC Request to Device** type messages to be forwarded to the downlink data converter.
+In the Root Rule Chain editor find the **integration downlink** node, drag and drop it to the rule chain. Name it **MQTT Integration Downlink**, select our **MQTT Integration** and click **Add**.
 Drag a connection from Message Type Switch node to MQTT Integration Downlink node with label "RPC Request to Device" and click add.
 
 {% include images-gallery.html imageCollection="add_rule_node" %}
 
-Go to *Data Converters* section, open your *MQTT Downlink Converter* and replace the default script with this one:
+Go to the **Data converters** page, open your "**MQTT Downlink Converter**" and replace the default script with this one:
 
 {% capture mqttdownlinkconverterconfig2 %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-downlink-converter-config-tbel-2.md%br%
@@ -226,7 +226,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-downlink
 {% include content-toggle.html content-toggle-id="mqttdownlinkconverterconfig2" toggle-spec=mqttdownlinkconverterconfig2 %}
 
 The script above removes quotes from *msg.params* value, which comes as quoted string, and parses it to integer. Then it builds a result object which is passed to the Integration.
-The result object structure should be followed: the data (the message payload sent to the external MQTT broker as-is) and the metadata (is used by Integrationin). As mentioned: the Integration downlink topic is configured to *${topic}*, which means that the integration will take the metadata.topic and use it as the downlink topic.
+The result object structure should be followed: the data (the message payload sent to the external MQTT broker as-is) and the metadata (is used by Integrationin). As mentioned: the Integration downlink topic is configured to **${topic}**, which means that the integration will take the metadata.topic and use it as the downlink topic.
 
 Open the terminal window and execute the following command:
 
@@ -258,10 +258,10 @@ Go to the dashboard and turn the wheel again. In your terminal window you should
 
 Now try to simulate sending an RPC request to the device with recieving a response.
 
-First you should modify converters to send downlink messages to '*tb/mqtt-integration-tutorial/sensors/+/rx/twoway*' topic and receive device responses on 
-*tb/mqtt-integration-tutorial/sensors/+/rx/response*' topic.
+First you should modify converters to send downlink messages to '**tb/mqtt-integration-tutorial/sensors/+/rx/twoway**' topic and receive device responses on 
+**tb/mqtt-integration-tutorial/sensors/+/rx/response**' topic.
 
-Change downlink converter code to send messages to '*tb/mqtt-integration-tutorial/sensors/+/rx/twoway*' topic. Go to the "*MQTT Downlink Converter*" and change the code on line 16 to
+Change downlink converter code to send messages to '**tb/mqtt-integration-tutorial/sensors/+/rx/twoway**' topic. Go to the "**MQTT Downlink Converter**" and change the code on line 16 to
 
 ```shell
 topic: 'tb/mqtt-integration-tutorial/sensors/'+metadata['deviceName']+'/rx/twoway'
@@ -276,7 +276,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-downlink
 
 {% include content-toggle.html content-toggle-id="mqttdownlinkconverterconfig3" toggle-spec=mqttdownlinkconverterconfig3 %}
 
-Then prepare the uplink converter to receive the response messages. Go to the *"MQTT Uplink Converter"* and paste the following code in the decoder window:
+Then prepare the uplink converter to receive the response messages. Go to the "**MQTT Uplink Converter**" and paste the following code in the decoder window:
 
 {% capture mqttuplinkconverterconfig2 %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-uplink-converter-config-tbel-2.md%br%
@@ -286,8 +286,8 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-uplink-c
 
 The script above is slightly different from what we had initially. It distinguishes between Post Telemetry requests and RPC call Responses, thus publishing different kind of output to Rule Engine.
 
-You also must add a topic filter in your *integration* to receive the RPC response messages: *MQTT Integration* -> *Topic Filters* -> *Add Topic Filter*. 
-Add this topic with the default QoS level:
+You also must add a topic filter in your integration to receive the RPC response messages: **MQTT Integration** -> **Topic filters** -> **Add topic filter**. 
+Add this topic with the default **QoS** level:
 
 ```shell
 tb/mqtt-integration-tutorial/sensors/+/rx/response
@@ -303,7 +303,7 @@ Apply changes.
 ![image](/images/user-guide/integrations/mqtt/mqtt-rpc-edit-integration-1.png)
 {% endif %}
 
-Now run device emulator. Notice, the *mosquitto_pub* and *mosquitto_sub* is not suffice, so please launch an [advanced simulator](/docs/user-guide/integrations/resources/mqtt-client.py):
+Now run device emulator. Notice, the **mosquitto_pub** and **mosquitto_sub** is not suffice, so please launch an [advanced simulator](/docs/user-guide/integrations/resources/mqtt-client.py):
 
 ```js
 python mqtt-client.py
@@ -329,7 +329,7 @@ Sending a response message: {"rpcReceived":"OK"}
 ![image](/images/user-guide/integrations/mqtt/mqtt-rpc-turn-the-wheel-1.png)
 {% endif %}
 
-Go to the *Devices* page and find *rpcReceived* telemetry value is *"OK"* in the *Telemetry* tab of your SN-001 device.
+Go to the **Devices** page and find *rpcReceived* telemetry value is "*OK*" on the **Latest telemetry** tab of your SN-001 device.
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/mqtt/mqtt-rpc-device-1-pe.png)
