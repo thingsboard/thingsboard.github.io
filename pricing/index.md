@@ -83,7 +83,7 @@ selfManagedPlan:
             <div class="pricing-content-description pricing-cloud active col-lg">
                 <h2>Subscription plans</h2>
                 <div class="pricing-content-details">
-                    All subscription plans include <b>hosting</b>, <b>sms</b> and <b>email</b> costs. Focus on your solution while we manage the servers for you.
+                    All subscription plans include <b>hosting</b>, <b>sms</b> and <b>email</b> costs. For <b>Maker</b> plan SMS feature is disabled. Focus on your solution while we manage the servers for you.
                 </div>
             </div>
         </div>
