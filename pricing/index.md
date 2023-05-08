@@ -65,10 +65,10 @@ selfManagedPlan:
     </div>
     <div id="trendz-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
         <div class="product-selector">
-            <div class="solution trendz-cloud active defaultselection" data-product-id="trendz-cloud" onClick="activateProductSection('trendz-cloud')">
+            <div class="solution trendz-cloud" data-product-id="trendz-cloud" onClick="activateProductSection('trendz-cloud')">
                 <h3 data-faq-id="what-is-cloud" data-faq-link-size="70%">Cloud</h3>
             </div>
-            <div class="solution trendz-self-managed" data-product-id="trendz-self-managed" onClick="activateProductSection('trendz-self-managed')">
+            <div class="solution trendz-self-managed active defaultselection" data-product-id="trendz-self-managed" onClick="activateProductSection('trendz-self-managed')">
                 <h3 data-faq-id="difference" data-faq-link-size="70%">Self-managed</h3>
             </div>
         </div>
