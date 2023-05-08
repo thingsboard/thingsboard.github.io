@@ -2,7 +2,7 @@
 /** Encoder **/
 
 var value = parseInt(msg.params.replaceAll("[\"]",""));
-var data = {value: value}
+var data = {value: value};
 // Result object with encoded downlink payload
 var result = {
 
