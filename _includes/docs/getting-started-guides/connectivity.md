@@ -20,6 +20,7 @@ You can check the [Devices library](/docs/{{docsPrefix}}devices-library) section
 The built-in transport protocol implementations are applicable for devices that communicate over those protocols and are able to connect directly to ThingsBoard.
 
 - [MQTT API reference](/docs/{{docsPrefix}}reference/mqtt-api)
+- [MQTT Sparkplug API reference](/docs/{{docsPrefix}}reference/mqtt-sparkplug-api)
 - [CoAP API reference](/docs/{{docsPrefix}}reference/coap-api)
 - [HTTP API reference](/docs/{{docsPrefix}}reference/http-api)
 - [LwM2M API reference](/docs/{{docsPrefix}}reference/lwm2m-api)

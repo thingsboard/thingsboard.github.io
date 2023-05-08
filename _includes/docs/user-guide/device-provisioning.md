@@ -5,6 +5,8 @@
 
 As a device manufacturer or firmware developer, I would like my devices to automatically provision themselves in ThingsBoard.
 During the automatic provisioning, the device may either generate unique credentials or ask the server to provide unique credentials for the device. 
+
+From the 3.5 version, ThingsBoard allows the auto-provision of new devices on authentication over MQTT using [X.509 Certificate chain](/docs/{{docsPrefix}}user-guide/certificates/).
    
 ## How it works?
 

@@ -42,6 +42,12 @@
       keywords: mqtt connect
       pe: false
       video: false
+    - path: /docs/reference/mqtt-sparkplug-api/
+      title: Connect devices using  ThingsBoard MQTT Sparkplug API
+      subtitle: Learn how to connect your devices using MQTT Sparkplug protocol and ThingsBoard built-in payload format.
+      keywords: sparkplug connect
+      pe: false
+      video: false
     - path: /docs/reference/lwm2m-api/
       title: Connect devices using ThingsBoard LwM2M API
       subtitle: Learn how to connect your devices using LwM2M protocol and ThingsBoard built-in payload format.
@@ -161,6 +167,12 @@
       subtitle: Learn how to route messages from TEKTELIC KONA Core Network Server to ThingsBoard.
       keywords: Tektelic connect
       pe: false
+      video: false
+    - path: /docs/user-guide/integrations/tuya/
+      title: Connect smart devices through Tuya Smart
+      subtitle: Learn how to connect smart devices using Tuya Smart to ThingsBoard.
+      keywords:
+      pe: true
       video: false
 - title: Data visualization
   subtitle: These guides contain instructions how to configure complex ThingsBoard dashboards

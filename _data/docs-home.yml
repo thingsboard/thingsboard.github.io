@@ -17,7 +17,6 @@ toc:
     path: /docs/user-guide/device-profiles/
   - title: Asset Profiles
     path: /docs/user-guide/asset-profiles/
-    new: true
   - title: Attributes
     path: /docs/user-guide/attributes/
   - title: Time-series data
@@ -28,6 +27,8 @@ toc:
     path: /docs/user-guide/rpc/
   - title: OTA updates
     path: /docs/user-guide/ota-updates/
+  - title: Notification center
+    path: /docs/user-guide/notifications/
     new: true
 - title: Dashboards
   section:
@@ -129,6 +130,9 @@ toc:
     path: /docs/user-guide/integrations/ibm-watson-iot/
   - title: Azure Event Hub
     path: /docs/user-guide/integrations/azure-event-hub/
+  - title: Azure Service Bus
+    path: /docs/user-guide/integrations/azure-service-bus/
+    new: true
   - title: Azure IoT Hub
     path: /docs/user-guide/integrations/azure-iot-hub/
   - title: TCP
@@ -139,6 +143,9 @@ toc:
     path: /docs/user-guide/integrations/sigfox/
   - title: Ocean Connect
     path: /docs/user-guide/integrations/ocean-connect/
+  - title: Tuya
+    path: /docs/user-guide/integrations/tuya/
+    new: true
   - title: Custom Integration development guide
     path: /docs/user-guide/integrations/custom/
   - title: Notifications and Alarms on your smartphone using Telegram Bot
@@ -198,7 +205,6 @@ toc:
       pe: true
     - title: Two-Factor Authentication
       path: /docs/user-guide/two-factor-authentication/
-      new: true
     - title: OAuth 2 Support
       path: /docs/user-guide/oauth-2-support/
     - title: HTTP Transport
@@ -249,6 +255,9 @@ toc:
     path: /docs/user-guide/ui/dashboards/
   - title: SMS Provider Settings
     path: /docs/user-guide/ui/sms-provider-settings/
+  - title: Slack Settings
+    path: /docs/user-guide/ui/slack-settings/
+    new: true
   - title: Mail Settings
     path: /docs/user-guide/ui/mail-settings/
   - title: JWT Security Settings
