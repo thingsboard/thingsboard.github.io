@@ -1,97 +1,104 @@
+* TOC
+{:toc}
 
 ThingsBoard System Administrator is able to configure a connection to a SMTP server that will be used to distribute activation and password reset emails to users.{% unless docsPrefix %}
 This configuration step is required in production environments. If you are evaluating the platform, pre-provisioned
 [**demo accounts**](/docs/samples/demo-account/#demo-tenant) are sufficient in most of the use cases.
 {% endunless %}
-  
-**NOTE** System Mail settings are used only during user creation and password reset process and are controlled by a system administrator. 
-Tenant administrator is able to [**setup email rule node**](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) to distribute alarms produced by [**rule engine**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/).  
 
-* TOC
-{:toc}
+{% capture difference %}
+**NOTE:**
+<br>
+System Mail settings are used only during user creation and password reset process and are controlled by a system administrator.
+Tenant administrator is able to [**setup email rule node**](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) to distribute alarms produced by [**rule engine**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
-Following steps are required to configure system mail settings.
+### Mail Server configuration
 
-#### Step 1. Login as system administrator
+Following steps are required to configure Mail Server settings.
 
-Login to your ThingsBoard instance WEB UI as a system administrator using default [**account**](/docs/samples/demo-account/#system-administrator).
+First, you must login to your ThingsBoard instance WEB UI as a *system administrator*. Then, right click on the burger in the top-right corner of the WEB UI and select 'Profile'.
+Change 'sysadmin@thingsboard.org' to your email address. Now re-login as administrator again.
 
-#### Step 2. Change administrator email address 
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/mail/mail-settings-change-administrator-email-address-ce.png)
+{% endif %}
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/ui/mail/mail-settings-change-administrator-email-address-pe.png)
+{% endif %}
 
-Right click on the burger in the top-right corner of the WEB UI and select 'Profile'.
-Change 'sysadmin@thingsboard.org' to your email address. Now re-login as administrator again. 
+<br/>
+Now we need to configure SMTP server.
 
-#### Step 3. Open 'Outgoing Mail' and populate SMTP server settings
+This guide provides examples of configure SMTP server using Sendgrid and Gmail. In your configuration you can use any other SMTP server.
 
-Navigate to **System Settings -> Outgoing Mail** and populate the form. Click on 'Send Test Email' button.
-
-A test email will be sent to the email address that you have specified in 'Step 2'.
-In case of error in configuration, you should receive a popup with the error log.
-
-##### Step 3.1. Sendgrid configuration example
+##### Sendgrid configuration example
 
 SendGrid configuration is fairly simple and straightforward. First, you need to create [SendGrid](https://sendgrid.com/) account. 
 You can try it for free and the free plan is most likely enough for platform evaluation.
 
-Once you create your account, you will be forwarded to the welcome page. Now you can provision your SMTP Relay credentials. See the screen-shot below. 
+Once you create your account, you will be forwarded to the welcome page.
 
-{:refdef: style="text-align: center;"}
 ![image](/images/user-guide/ui/mail/sendgrid-welcome.png)
-{: refdef}
 
-Please choose SMTP relay on the next page.
+Go to the 'Integration Guide' page and choose 'SMTP Relay'.
 
-{:refdef: style="text-align: center;"}
 ![image](/images/user-guide/ui/mail/sendgrid-smtp-relay.png)
-{: refdef}
 
-Once you populate the API key name and generate it, you will be able to copy-paste settings from the screen to ThingsBoard mail settings form.
+Populate the API key name and generate it.
 
-{:refdef: style="text-align: center;"}
 ![image](/images/user-guide/ui/mail/sendgrid-token.png)
-{: refdef}
 
-Copy-paste the settings, update 'Mail From' field and click on 'Send Test Mail' button. 
+Now navigate to the 'Settings' page -> 'Mail Server' tab your ThingsBoard instance and populate the form.
+Update 'Mail From' field, copy tthe data from the SendGrid page and paste to the Thingsboard mail server settings form.
 
-{:refdef: style="text-align: center;"}
-![image](/images/user-guide/ui/mail/sendgrid-settings.png)
-{: refdef}
+- SMTP host: **smtp.sendgrid.com**;
+- SMTP port: **465**;
+- Username: **apikey**;
+- Password: previously generated **password**.
 
-Once you receive the notification about a successfull test, save populated data. You can also complete verification on the SendGrid website.
-
-{:refdef: style="text-align: center;"}
-![image](/images/user-guide/ui/mail/sendgrid-it-works.png)
-{: refdef}
-
-
-
-
-
-##### Step 3.2. Gmail configuration example
-
-In order to use G-mail, you will need to do two extra steps. 
-First, you need to allow [**less secure apps**](https://support.google.com/accounts/answer/6010255?hl=en).
-Second, you need to enable two-step verification and generate an [**app password**](https://support.google.com/accounts/answer/185833?hl=en).
-Although the second step is not mandatory, it is highly recommended.
-
-{:refdef: style="text-align: center;"}
-![image](/images/user-guide/ui/mail/app-password.png)
-{: refdef}
-
-Once this is ready, you should be able to setup Gmail account using the information below
-
-{:refdef: style="text-align: center;"}
-![image](/images/user-guide/ui/mail/gmail-settings.png)
-{: refdef}
-
-Similar settings are available for G-suite accounts, however, you may need to contact your system administrator to enable less secure apps, etc.
 Note that you can also enable/disable TLS using checkbox.
 
-{:refdef: style="text-align: center;"}
-![image](/images/user-guide/ui/mail/gsuite-settings.png)
-{: refdef}
+Click on 'Send test mail' button.
 
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/mail/sendgrid-settings-ce.png)
+{% endif %}
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/ui/mail/sendgrid-settings-pe.png)
+{% endif %}
 
-#### Step 4. Save configuration
+Once you receive test mail on your email, save Mail Server configuration.
+In case of error in configuration, you should receive a popup with the error log.
 
-Once you will receive test email you can save SMTP server configuration.
+You can also complete verification on the SendGrid website.
+
+![image](/images/user-guide/ui/mail/sendgrid-it-works.png)
+
+##### Gmail configuration example
+
+In order to use Gmail, you will need to enable two-step verification (this step is not mandatory, but it is highly recommended.) and generate an [**app password**](https://support.google.com/accounts/answer/185833?hl=en).
+
+{% include images-gallery.html imageCollection="gmail-generate-an-app-password" %}
+
+Once this is ready, you should be able to setup mail server using the information below:
+
+- SMTP host: **smtp.gmail.com**;
+- SMTP port: **465**;
+- Username: your email;
+- Password: previously created **app password**.
+
+You can also enable/disable TLS using checkbox.
+
+Click '**Send test mail**' button.
+
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/mail/gmail-settings-ce.png)
+{% endif %}
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/ui/mail/gmail-settings-pe.png)
+{% endif %}
+
+Once you receive test mail on your email, save Mail Server configuration.
+In case of error in configuration, you should receive a popup with the error log.
