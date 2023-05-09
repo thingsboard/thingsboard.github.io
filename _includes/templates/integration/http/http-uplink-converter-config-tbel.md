@@ -1,4 +1,9 @@
-{% include images-gallery.html imageCollection="data-converters-tbel" %}
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/http/http-create-data-converters-1-tbel-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/http/data-converters-2-tbel-pe.png)
+{% endif %}
 
 **Example for the Uplink converter:**
 

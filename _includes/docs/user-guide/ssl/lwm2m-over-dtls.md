@@ -48,45 +48,6 @@ After completing the setup, start or restart the ThingsBoard server.
 {% include templates/ssl/pem_files_location.md %}
 
 
-### SSL configuration using Java keystore (deprecated)
-
-Configure the following environment variables via [configuration](/docs/{{docsPrefix}}user-guide/install/config/) file, docker-compose or kubernetes scripts.
-We will use **thingsboard.conf** for example:
-
-```bash
-...
-export LWM2M_SERVER_CREDENTIALS_ENABLED=true
-export LWM2M_SERVER_CREDENTIALS_TYPE=KEYSTORE
-export LWM2M_SERVER_KEY_STORE_TYPE=JKS
-export LWM2M_SERVER_KEY_STORE=server.jks
-export LWM2M_SERVER_KEY_STORE_PASSWORD=secret
-export LWM2M_SERVER_KEY_ALIAS=server
-export LWM2M_SERVER_KEY_PASSWORD=secret
-# To enable Bootstrap and Bootstrap over DTLS
-export LWM2M_ENABLED_BS=true
-export LWM2M_BS_CREDENTIALS_ENABLED=true
-export LWM2M_BS_CREDENTIALS_TYPE=JKS
-export LWM2M_BS_KEY_STORE=server.jks
-export LWM2M_BS_KEY_STORE_PASSWORD=secret
-export LWM2M_BS_KEY_ALIAS=server
-export LWM2M_BS_KEY_PASSWORD=secret
-...
-```
-
-where:
-
-* LWM2M_SERVER_CREDENTIALS_ENABLED - Enable/disable X509 Certificate/RPK credentials support;
-* LWM2M_SERVER_CREDENTIALS_TYPE - Server credentials type. PEM - pem certificate file; KEYSTORE - java keystore;
-* LWM2M_SERVER_KEY_STORE_TYPE - Type of the key store supported by your Java distribution. PKCS12 is recommended.
-* LWM2M_SERVER_KEY_STORE - Path to the key store that holds the SSL certificate. Holds server certificate or certificate chain and the private key;
-* LWM2M_SERVER_KEY_STORE_PASSWORD - Password to access the key store;
-* LWM2M_SERVER_KEY_ALIAS - Optional alias of the private key; If not set, the platform will load the first private key from the keystore;
-* LWM2M_SERVER_KEY_PASSWORD - Optional password to access the private key. If not set, the platform will attempt to load the private keys that are not protected with the password;
-
-After completing the setup, start or restart the ThingsBoard server.
-
-{% include templates/ssl/jks_files_location.md %}
-
 ### Additional configuration properties
 
 You may configure following additional environment variables via [configuration](/docs/{{docsPrefix}}user-guide/install/config/) file, docker-compose or kubernetes scripts.

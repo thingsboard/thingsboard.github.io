@@ -36,7 +36,6 @@ toc:
       path: /docs/paas/user-guide/device-profiles/
     - title: Asset Profiles
       path: /docs/paas/user-guide/asset-profiles/
-      new: true
     - title: Attributes
       path: /docs/paas/user-guide/attributes/
     - title: Time-series data
@@ -47,7 +46,6 @@ toc:
       path: /docs/paas/user-guide/rpc/
     - title: OTA updates
       path: /docs/paas/user-guide/ota-updates/
-      new: true
 - title: Dashboards
   section:
     - title: Overview
@@ -138,6 +136,9 @@ toc:
       path: /docs/paas/user-guide/integrations/ibm-watson-iot/
     - title: Azure Event Hub
       path: /docs/paas/user-guide/integrations/azure-event-hub/
+    - title: Azure Service Bus
+      path: /docs/paas/user-guide/integrations/azure-service-bus/
+      new: true
     - title: Azure IoT Hub
       path: /docs/paas/user-guide/integrations/azure-iot-hub/
     - title: TCP
@@ -148,6 +149,9 @@ toc:
       path: /docs/paas/user-guide/integrations/sigfox/
     - title: Ocean Connect
       path: /docs/paas/user-guide/integrations/ocean-connect/
+    - title: Tuya
+      path: /docs/paas/user-guide/integrations/tuya/
+      new: true
     - title: Custom Integration development guide
       path: /docs/paas/user-guide/integrations/custom/
     - title: Notifications and Alarms on your smartphone using Telegram Bot

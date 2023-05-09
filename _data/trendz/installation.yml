@@ -3,6 +3,8 @@ abstract: "Documentation for installation and configuration of Trendz Analytics.
 toc:
 - title: Installation options
   path: /docs/trendz/install/installation-options/
+- title: Trendz Cloud
+  path: /docs/trendz/install/cloud/
 - title: On premise
   section:
   - title: Ubuntu Server

@@ -1,4 +1,4 @@
-You can use our example of Downlink Converter, or write your own according to your configuration:
+You can use our example of downlink converter, or write your own according to your configuration:
 
 ```javascript
 // Encode downlink data from incoming Rule Engine message
@@ -21,9 +21,4 @@ return result;
 ```
 {: .copy-code}
 
-{% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/sigfox/sigfox-create-downlink-converter-tbel-1-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/sigfox/sigfox-create-downlink-converter-tbel-1-paas.png)
-{% endif %}
