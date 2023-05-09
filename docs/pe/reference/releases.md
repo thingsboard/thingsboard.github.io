@@ -42,7 +42,6 @@ Everything from [TB CE v3.5](https://github.com/thingsboard/thingsboard/releases
 * Fixed no outgoing message issue when doCalculate fails in Aggregate Latest node;
 * Fixed telemetry/attribute update while device bulk import;
 * Fixed incorrect validation credentials in Azure Iot Hub integration;
-* Fixed asset lifecycle message broadcasting in cluster mode;
   
 ## v3.4.4 (February 7, 2023)
   
