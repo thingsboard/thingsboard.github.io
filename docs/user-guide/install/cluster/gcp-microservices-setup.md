@@ -76,6 +76,10 @@ cd thingsboard-ce-k8s/gcp/microservices
 {% assign tbServicesFile = "transport/tb-lwm2m-transport.yml" %}
 {% include templates/install/gcp/configure-lwm2m.md %}
 
+### 8.5. Configure Edge Load Balancer (Optional)
+
+{% include templates/install/gcp/configure-edge.md %}
+
 ## Step 9. Using
 
 {% include templates/install/gcp/using.md %}

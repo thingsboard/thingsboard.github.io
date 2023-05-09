@@ -86,6 +86,10 @@ This version of setup does not support an automatic redirect of http port 80 to 
 
 {% include templates/install/gcp/configure-udp.md %}
 
+### 8.4. Configure Edge Load Balancer (Optional)
+
+{% include templates/install/gcp/configure-edge.md %}
+
 ## Step 9. Using
 
 {% include templates/install/gcp/using.md %}
