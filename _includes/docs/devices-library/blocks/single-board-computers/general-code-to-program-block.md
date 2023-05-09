@@ -157,26 +157,15 @@ Let’s setup our project:
    {:.copy-code}
 
 If you did everything right, you should see the following console output:
-
+```
 > INFO:tb_device_mqtt:connection SUCCESS
 > 
 > 
 > {'ip_address': '192.168.1.198', 'macaddress': '3c:06:30:44:e0:24'} {'cpu_usage': 6.6, 'processes_count': 8, 'disk_usage': 70.0, 'RAM_usage': 73.9, 'swap_memory_usage': 69.4, 'battery': 29, 'boot_time': 1675154176.0}
 > 
-
-Let’s review and make an explanation for our code. In this step, we are interested in the `main` and `get_data` functions.
-
-In case to connect to ThingsBoard we need to provide a device access token and connect our device, this functionality is provided by this piece of code:
-
-```python
-...
-def main():
-    global client
-    client = TBDeviceMqttClient(THINGSBOARD_SERVER, THINGSBOARD_PORT, ACCESS_TOKEN)
-    client.connect()
-    ...
 ```
 
+Let’s review and make an explanation for our code. In this step, we are interested in the `get_data` function.
 Data packing and returning in the `get_data` function, so you can easily add new telemetry or attributes to the dictionary if you want to monitor more values:
 ```python
 ...
