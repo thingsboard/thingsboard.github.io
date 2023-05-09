@@ -172,7 +172,7 @@ In case to connect to ThingsBoard we need to provide a device access token and c
 ...
 def main():
     global client
-    client = TBDeviceMqttClient("thingsboard.cloud", 1883, "TEST_TOKEN")
+    client = TBDeviceMqttClient(THINGSBOARD_SERVER, THINGSBOARD_PORT, ACCESS_TOKEN)
     client.connect()
     ...
 ```
