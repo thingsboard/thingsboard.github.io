@@ -39,7 +39,8 @@ Let’s setup our project:
 
 6. Copy and paste the following code:
 
-   ```python
+   ```pythonv
+   import logging.handlers
    import time
    import os
    
@@ -48,6 +49,8 @@ Let’s setup our project:
    ACCESS_TOKEN = "TEST_TOKEN"
    THINGSBOARD_SERVER = '{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}'
    THINGSBOARD_PORT = 1883
+
+   logging.basicConfig(level=logging.DEBUG)
    
    client = None
    
