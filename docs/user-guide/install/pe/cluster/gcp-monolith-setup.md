@@ -100,7 +100,7 @@ This version of setup does not support an automatic redirect of http port 80 to 
 
 ### 9.4. Configure Edge Load Balancer (Optional)
 
-{% include templates/install/gcp/configure-edge.md %}
+{% include templates/install/k8s-configure-edge-load-balancer.md %}
 
 ## Step 10. Using
 

@@ -89,7 +89,7 @@ cd thingsboard-pe-k8s/gcp/microservices
 
 ### 9.5. Configure Edge Load Balancer (Optional)
 
-{% include templates/install/gcp/configure-edge.md %}
+{% include templates/install/k8s-configure-edge-load-balancer.md %}
 
 ## Step 10. Using
 
