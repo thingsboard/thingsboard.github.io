@@ -39,7 +39,7 @@ Let’s setup our project:
 
 6. Copy and paste the following code:
 
-   ```pythonv
+   ```python
    import logging.handlers
    import time
    import os
