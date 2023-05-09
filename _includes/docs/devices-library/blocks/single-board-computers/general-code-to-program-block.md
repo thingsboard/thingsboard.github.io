@@ -48,8 +48,6 @@ Let’s setup our project:
    ACCESS_TOKEN = "TEST_TOKEN"
    THINGSBOARD_SERVER = '{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}'
    THINGSBOARD_PORT = 1883
-
-   logging.basicConfig(level=logging.DEBUG)
    
    client = None
    
@@ -134,7 +132,7 @@ Let’s setup our project:
        if ACCESS_TOKEN != "TEST_TOKEN":
            main()
        else:
-           print("Please change the access token for device and run.")
+           print("Please change the ACCESS_TOKEN variable to match your device access token and run script again.")
    ```
    {:.copy-code.expandable-15}
 
