@@ -40,7 +40,6 @@ Let’s setup our project:
 6. Copy and paste the following code:
 
    ```python
-   import logging.handlers
    import time
    import os
    
@@ -132,7 +131,10 @@ Let’s setup our project:
             time.sleep(60)
    
    if __name__=='__main__':
-       main()
+       if ACCESS_TOKEN != "TEST_TOKEN":
+           main()
+       else:
+           print("Please change the access token for device and run.")
    ```
    {:.copy-code.expandable-15}
 
