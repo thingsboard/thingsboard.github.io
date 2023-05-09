@@ -14,6 +14,14 @@ alarmWidgetDataSettings:
     1:
         image: /images/user-guide/alarms/advanced-widget-settings-CE.png        
 
+alarmComments:
+    0:
+        image: /images/user-guide/alarms/alarm-comments-CE.png
+
+alarmAssignee:
+    0:
+        image: /images/user-guide/alarms/alarm-assignee-CE.png
+
 ---
 
 {% include docs/user-guide/alarms.md %}
