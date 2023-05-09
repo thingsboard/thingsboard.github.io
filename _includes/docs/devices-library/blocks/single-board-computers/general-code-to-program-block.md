@@ -37,7 +37,7 @@ Let’s setup our project:
    ```
    {:.copy-code}
 
-6. Write the following code:
+6. Copy and paste the following code:
 
    ```python
    import logging.handlers
@@ -45,6 +45,10 @@ Let’s setup our project:
    import os
    
    from tb_gateway_mqtt import TBDeviceMqttClient
+   
+   ACCESS_TOKEN = "TEST_TOKEN"
+   THINGSBOARD_SERVER = '{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}'
+   THINGSBOARD_PORT = 1883
 
    logging.basicConfig(level=logging.DEBUG)
    
@@ -110,7 +114,7 @@ Let’s setup our project:
    
    def main():
         global client
-        client = TBDeviceMqttClient("thingsboard.cloud", 1883, "TEST_TOKEN")
+        client = TBDeviceMqttClient(THINGSBOARD_SERVER, THINGSBOARD_PORT, ACCESS_TOKEN)
         client.connect()
         client.request_attributes(shared_keys=['blinkingPeriod'], callback=sync_state)
         
@@ -126,8 +130,21 @@ Let’s setup our project:
             client.send_attributes(attributes)
             client.send_telemetry(telemetry)
             time.sleep(60)
+   
+   if __name__=='__main__':
+       main()
    ```
-   {:.copy-code.expandable-20}
+   {:.copy-code.expandable-15}
+
+   In the code above change values for the following variables - THINGSBOARD_SERVER, ACCESS_TOKEN to your credentials.
+   
+   Necessary variables for connection:  
+   
+   | Variable name | Default value | Description | 
+   |-|-|
+   | ACCESS_TOKEN | **TEST_TOKEN** | Your device access token |
+   | THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address. |
+   | THINGSBOARD_PORT | **1883** | ThingsBoard server MQTT port. Can be default for this guide. |
 
 7. And finally, let’s start our script:
 
