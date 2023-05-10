@@ -1,52 +1,55 @@
 * TOC
 {:toc}
 
-## Troubleshooting instruments and tips
+## Troubleshooting Tools and Tips
 
-### Consumer group message lag for Kafka Queue
+### Kafka Queue: Consumer Group Message Lag 
 
-With the log shown below, you can identify if there's some issue with the processing of your messages or other parts of the MQTT broker infrastructure
-(since Kafka is used for MQTT message processing and other major parts of the system like **client_session**, **client_subscriptions**, **retain_msg**, etc.
-you can analyze the overall state of the broker).
+You can use the log shown below to identify any issues with the processing of messages or other parts of the MQTT broker infrastructure. 
+Since Kafka is used for MQTT message processing and other major parts of the system, such as `client_session`, `client_subscriptions`, `retain_msg`, etc., 
+you can analyze the overall state of the broker.
 
-ThingsBoard MQTT broker provides the ability to monitor if the rate of pushing messages to the Kafka is faster than rate of consuming and processing them (in such case you will have a growing latency for message processing).
-To enable this functionality, you need to ensure that Kafka consumer-stats are enabled (see <b>queue.kafka.consumer-stats</b> section of the [Configuration properties](/docs/mqtt-broker/install/config/))
+The ThingsBoard MQTT broker provides the ability to monitor whether the rate of pushing messages to Kafka is faster than the rate of consuming and processing them. 
+In such cases, you will experience a growing latency for message processing. 
+To enable this functionality, ensure that Kafka consumer-stats are enabled (see the **queue.kafka.consumer-stats** section of the [Configuration properties](/docs/mqtt-broker/install/config/)).
 
-Once Kafka consumer-stats are enabled, you will see logs (see [Troubleshooting](#logs)) about offset lag for consumer groups.
+Once Kafka consumer-stats are enabled, logs (see [Troubleshooting](#logs)) about offset lag for consumer groups will be generated.
 
-Here's an example of the log message:
+Here is an example of the log message:
 
 ```bash
 2022-11-27 02:33:23,625 [kafka-consumer-stats-1-thread-1] INFO  o.t.m.b.q.k.s.TbKafkaConsumerStatsService - [publish-msg-consumer-group] Topic partitions with lag: [[topic=[publish_msg], partition=[2], lag=[5]]].
 ```
 
-From this message we can see that there are 5 messages pushed to the <b>publish_msg</b> topic but not yet processed.
+From this message we can see that there are five messages pushed to the `publish_msg` topic but not yet processed.
 
-In general the logs have the following structure:
+In general, the logs have the following structure:
 
 ```bash
 TIME [STATS_PRINTING_THREAD_NAME] INFO  o.t.m.b.q.k.s.TbKafkaConsumerStatsService - [CONSUMER_GROUP_NAME] Topic partitions with lag: [[topic=[KAFKA_TOPIC], partition=[KAFKA_TOPIC_PARTITION], lag=[LAG]],[topic=[ANOTHER_TOPIC], partition=[], lag=[]],...].
 ```
 
 Where:
-- `CONSUMER_GROUP_NAME` - name of the consumer group which is processing messages;
-- `KAFKA_TOPIC` - name of the exact Kafka topic;
-- `KAFKA_TOPIC_PARTITION` - number of the topic's partition;
-- `LAG` - the amount of unprocessed messages.
+- `CONSUMER_GROUP_NAME` - Name of the consumer group that is processing messages.
+- `KAFKA_TOPIC` - Name of the exact Kafka topic.
+- `KAFKA_TOPIC_PARTITION` - Number of the topic's partition.
+- `LAG` - The amount of unprocessed messages.
 
 **NOTE:** Logs about consumer lag are printed only if there is a lag for this consumer group.
 
 ### CPU/Memory Usage
 
-Sometimes the problem is that you don't have enough resources for some service. You can view CPU and Memory usage by logging into your server/container/pod and executing <code>top</code> linux command.
+Sometimes, a problem arises due to a lack of resources for a particular service. 
+You can view CPU and Memory usage by logging into your `server/container/pod` and executing the `top` Linux command.
 
-For the more convenient monitoring it is better to have configured Prometheus and Grafana.
+For more convenient monitoring, it is better to configure Prometheus and Grafana.
 
-If you see that some services sometimes use 100% of the CPU, you should either scale the service horizontally by creating new nodes in cluster or scale it vertically by increasing the total amount of CPU.
+If you see that some services sometimes use 100% of the CPU, you should either scale the service horizontally by creating new nodes 
+in the cluster or scale it vertically by increasing the total amount of CPU.
 
 ## Logs
 
-### Read logs
+### Reading Logs
 
 Regardless of the deployment type, ThingsBoard MQTT Broker logs are stored in the following directory:
 
@@ -62,19 +65,18 @@ Kubernetes Deployment%,%kubernetes%,%templates/mqtt-broker/troubleshooting/logs/
 
 {% include content-toggle.html content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype %}
 
-### Enable certain logs
+### Enabling Certain Logs
 
-ThingsBoard MQTT Broker provides the ability to enable/disable logging for certain parts of the system depending on what information do you need for troubleshooting.
-
-You can do this by modifying <b>logback.xml</b> file. As logs itself, it is stored in the following directory:
+To facilitate troubleshooting, ThingsBoard MQTT Broker allows users to enable or disable logging for specific parts of the system. 
+This can be achieved by modifying the **logback.xml** file, which is located in the following directory:
 
 ```bash
 /usr/share/thingsboard-mqtt-broker/conf
 ```
 
-You can find respectful files for k8s and docker deployments.
+Please note that there are separate files for **k8s** and **Docker** deployments
 
-Here's an example of the <b>logback.xml</b> configuration:
+Here's an example of the **logback.xml** configuration:
 
 ```bash
 <!DOCTYPE configuration>
@@ -105,14 +107,14 @@ Here's an example of the <b>logback.xml</b> configuration:
 </configuration>
 ```
 
-The most useful for the troubleshooting parts of the config files are <i>loggers</i>.
-They allow you to enable/disable logging for the certain class or group of classes.
-In the example above the default logging level is <b>INFO</b> (it means that logs will contain only general information, warnings and errors), but for the package <code>org.thingsboard.mqtt.broker.actors.client.service.connect</code> we enabled the most detailed level of logging.
-There's also a possibility to completely disable logs for some part of the system, in the example above we did it to <code>org.thingsboard.mqtt.broker.actors.DefaultTbActorSystem</code> class using <b>OFF</b> log-level.
+The configuration files contain _loggers_ which are the most useful for troubleshooting, as they allow you to enable or disable logging for a certain class or group of classes. 
+In the example given above, the default logging level is set to **INFO**, which means that the logs will contain general information, warnings, and errors. 
+However, for the `org.thingsboard.mqtt.broker.actors.client.service.connect` package, the most detailed level of logging is enabled. 
+You can also completely disable logs for a part of the system, as is done for the `org.thingsboard.mqtt.broker.actors.DefaultTbActorSystem` class using the **OFF** log-level.
 
-To enable/disable logging for some part of the system you need to add proper <code></logger></code> configuration and wait up to 10 seconds.
+To enable or disable logging for a certain part of the system, you need to add the appropriate `</logger>` configuration and wait for up to 10 seconds.
 
-Different deployment tools provide different ways to update logs:
+Different deployment tools have different ways to update logs:
 
 {% capture contenttogglespecdeploymenttype %}
 Docker-Compose Deployment%,%docker-compose%,%templates/mqtt-broker/troubleshooting/logs/enable-logs/docker-compose-enable-logs.md%br%
@@ -122,15 +124,17 @@ Kubernetes Deployment%,%kubernetes%,%templates/mqtt-broker/troubleshooting/logs/
 
 ## Metrics
 
-You may enable prometheus metrics by setting environment variables `STATS_ENABLED` to value `true` and `METRICS_ENDPOINTS_EXPOSE` to value `prometheus` in the configuration file.
+To enable Prometheus metrics in ThingsBoard MQTT Broker you must: 
+- Set the `STATS_ENABLED` environment variable to `true`.
+- Set the `METRICS_ENDPOINTS_EXPOSE` environment variable to `prometheus` in the configuration file.
 
-These metrics exposed at the path: `https://<yourhostname>/actuator/prometheus` which can be scraped by prometheus (No authentication required).
+The metrics can then be accessed via the following path: `https://<yourhostname>/actuator/prometheus`, and scraped by Prometheus (authentication is not required).
 
 ## Prometheus metrics
 
-Some internal state metrics can be exposed by the Spring Actuator using Prometheus.
+The Spring Actuator in ThingsBoard MQTT Broker can expose some internal state metrics through Prometheus.
 
-Here's the list of metrics ThingsBoard MQTT Broker pushes to Prometheus.
+Here is a list of the metrics that ThingsBoard MQTT Broker pushes to Prometheus:
 
 #### MQTT Broker-specific metrics:
 
@@ -183,9 +187,9 @@ Here's the list of metrics ThingsBoard MQTT Broker pushes to Prometheus.
 
 #### PostgreSQL-specific metrics:
 - <i>sqlQueue.UpdatePacketTypeQueue_queueIndex_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about updating <b>persisted packet's type</b> to the database.
-  Note that there are several queues (threads) in order to reach maximum performance.
 - <i>sqlQueue.DeletePacketQueue_queueIndex_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about deleting <b>persisted packets</b> from the database.
-  Note that there are several queues (threads) in order to reach maximum performance.
+
+Please note that in order to achieve maximum performance, **ThingsBoard uses several queues (threads)**.
 
 ## Getting help
 
@@ -193,19 +197,19 @@ Here's the list of metrics ThingsBoard MQTT Broker pushes to Prometheus.
     <div id="gettingHelp">
         <a href="https://gitter.im/thingsboard/chat">
             <h1>Community chat</h1>
-            <p>Our Gitter channel is the best way to contact our engineers and share your ideas with them.</p>
+            <p>The best way to contact our engineers and share your ideas with them is through our Gitter channel.</p>
         </a>
         <a href="https://groups.google.com/forum/#!forum/thingsboard">
             <h1>Q&A forum</h1>
-            <p>Our user forum is a great place to go for community support.</p>
+            <p>For community support, we recommend visiting our user forum. It's a great place to connect with other users and find solutions to common issues.</p>
         </a>
         <a href="http://stackoverflow.com/questions/tagged/thingsboard">
             <h1>Stack Overflow</h1>
-            <p>The ThingsBoard team will also monitor posts tagged thingsboard. If there aren’t any existing questions that help, please ask a new one!</p>
+            <p>The ThingsBoard team actively monitors posts that are tagged with "thingsboard" on the user forum. If you can't find an existing question that addresses your issue, feel free to ask a new one. Our team will be happy to assist you.</p>
         </a>
     </div>
 </section>
 
-If your problem isn't answered by any of the guides above, feel free to contact ThingsBoard team.
+If you are unable to find a solution to your problem from any of the guides provided above, please do not hesitate to contact the ThingsBoard team for further assistance.
 
 <a class="button" href="/docs/contact-us/">Contact us</a>

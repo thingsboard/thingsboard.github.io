@@ -8,84 +8,84 @@ description: Security Configuration
 * TOC
 {:toc}
 
-This guide will describe the available options to be able to enable authentication and authorization of the MQTT clients.
+This guide describes the options available to enable **authentication** and **authorization** of the MQTT clients depending on your requirements and infrastructure.
 
 ## Authentication
 
 ### Basic Authentication
 
-To enable basic authentication (based on username, password, and clientId) you need to set `SECURITY_MQTT_BASIC_ENABLED` environment variable to `true` 
-and create MQTT Client Credentials of type `MQTT_BASIC`.
-Please follow [this guide](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) on how to create MQTT_BASIC credentials using Web UI 
-or [this guide](/docs/mqtt-broker/mqtt-client-credentials-management/) using REST API.
-Once the credentials are being created, the `credentialsId` field is auto-generated. See below for more information.
+To enable basic authentication based on username, password, and clientId, you need to do the following:
 
-When the client connects, the combination of username, password, and clientId from the _CONNECT_ packet should be matched 
-with the persisted credentials in order to authenticate the client. 
-The matching is done by the auto-generated `credentialsId` field from MQTT Client Credentials.
+1. Set the `SECURITY_MQTT_BASIC_ENABLED` environment variable to `true`.
+2. Create MQTT client credentials of type `MQTT_BASIC` using either the [Web UI guide](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) or the [REST API guide](/docs/mqtt-broker/mqtt-client-credentials-management/). 
+3. Once the credentials are created, the credentialsId field is auto-generated. See below for more information.
 
-Possible combinations of MQTT_BASIC credentials matchers:
-- **clientId** - will check if connecting client has specified clientId;
-- **username** - will check if connecting client has specified username;
-- **clientId and username** - will check if connecting client has both specified clientId and username;
-- **username and password** - will check if connecting client has both specified username and password;
-- **clientId and password** - will check if connecting client has both specified clientId and password;
-- **clientId, username and password** - will check if connecting client has specified clientId, username and password.
+When a client connects, the combination of the username, password, and clientId from the _CONNECT_ packet is matched with the persisted credentials to authenticate the client. 
+The matching is based on the auto-generated `credentialsId` field from the MQTT client credentials.
 
-Generation of `credentialsId` is done as follows:
+The following are the **possible combinations** of MQTT_BASIC credentials matchers:
+- **clientId** - checks if the connecting client has specified clientId.
+- **username** - checks if the connecting client has specified a username.
+- **clientId and username** - checks if the connecting client has specified both clientId and username.
+- **username and password** - checks if the connecting client has specified both username and password.
+- **clientId and password** - checks if the connecting client has specified both clientId and password.
+- **clientId, username and password** - checks if the connecting client has specified clientId, username, and password.
+
+The `credentialsId` is generated as follows:
 
 - credentialsId = username\|$CLIENT_USERNAME (when only username is present);
-- credentialsId = client_id\|$CLIENT_ID (when only client id is present);
-- credentialsId = mixed\|$CLIENT_USERNAME\|$CLIENT_ID (when both username and client id are present)
+- credentialsId = client_id\|$CLIENT_ID (when only client ID is present);
+- credentialsId = mixed\|$CLIENT_USERNAME\|$CLIENT_ID (when both username and client ID are present)
 
-where $CLIENT_USERNAME - specified username, $CLIENT_ID - specified client id from the _CONNECT_ packet.
+where $CLIENT_USERNAME refers to the specified username  and $CLIENT_ID refers to the specified client ID from the _CONNECT_ packet.
 
 ### TLS Authentication
 
-ThingsBoard MQTT Broker supports authentication using TLS.
-To enable TLS authentication first of all you need to [enable TLS listener](/docs/mqtt-broker/mqtt-listeners/) so that client's certificate chain is involved 
-in the authentication process.
+ThingsBoard MQTT Broker supports authentication using TLS. 
+To enable TLS authentication, you must first [enable the TLS listener](/docs/mqtt-broker/mqtt-listeners/) so that the client's certificate chain is involved in the authentication process.
 
-Afterward, you need to set `SECURITY_MQTT_SSL_ENABLED` environment variable to `true` and create MQTT Client Credentials of type `SSL`.
-Please follow [this guide](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) on how to create SSL credentials using Web UI
-or [this guide](/docs/mqtt-broker/mqtt-client-credentials-management/) using REST API.
-Once the credentials are being created, the `credentialsId` field is auto-generated. See below for more information.
+After enabling the TLS listener, you need to do the following to enable TLS authentication:
 
-For each certificate in the chain, the common name (CN) is compared to the common names of the persisted credentials.
-This means that if authentication is enabled, only clients connecting using certificates with the persisted common names will be authenticated.
+1. Set the `SECURITY_MQTT_SSL_ENABLED` environment variable to `true`.
+2. Create MQTT client credentials of type `SSL` using either the [Web UI guide](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) or the [REST API guide](/docs/mqtt-broker/mqtt-client-credentials-management/).
+3. Once the credentials are created, the `credentialsId` field is auto-generated. See below for more information.
 
-Generation of `credentialsId` is done as follows:
+When authentication is enabled, only clients connecting using certificates with common names (CN) that match the persisted common names will be authenticated. 
+This matching process is done by comparing the CN of each certificate in the chain with the common names of the persisted credentials.
 
-- credentialsId = ssl\|$CERTIFICATE_COMMON_NAME
+The generation of `credentialsId` is done as follows:
 
-where $CERTIFICATE_COMMON_NAME - common name of the certificate from the chain.
+- credentialsId = ssl|$CERTIFICATE_COMMON_NAME
+
+where $CERTIFICATE_COMMON_NAME is the common name of the certificate from the chain.
 
 ### Authentication procedure
 
-ThingsBoard MQTT Broker has a `SECURITY_MQTT_AUTH_STRATEGY` parameter with two values available - `BOTH` (default value) or `SINGLE`.
+ThingsBoard MQTT Broker has the parameter named `SECURITY_MQTT_AUTH_STRATEGY`, which has two possible values: `BOTH` (the default value) or `SINGLE`.
 
-When both Basic and TLS authentications are enabled and `BOTH` value is set, `MQTT_BASIC` authentication will have a higher priority, 
-which means that if the client successfully authenticates with basic credentials, the system will not attempt to authenticate it with `TLS` authentication.
-If `MQTT_BASIC` fails, the authentication using `TLS` will be continued. If one of the authentication types is disabled, then another one will only be used.
-
-When `SECURITY_MQTT_AUTH_STRATEGY` is set to `SINGLE`, then only `MQTT_BASIC` authentication will be used in case of client's connection to the TCP listener.
-Respectively, only `TLS` authentication will be used in case of client's connection to the TLS listener.
+1. **BOTH**. When both Basic and TLS authentications are enabled and the `SECURITY_MQTT_AUTH_STRATEGY` parameter is set to default `BOTH`, 
+the MQTT Broker will prioritize `MQTT_BASIC` authentication. 
+This means that if a client successfully authenticates with basic credentials, the system will not attempt to authenticate it using `TLS` authentication. 
+However, if `MQTT_BASIC` authentication fails, the system will continue with the authentication process using `TLS`. 
+If one of the authentication types is disabled, the other type will be used.
+2. **SINGLE**. When `SECURITY_MQTT_AUTH_STRATEGY` is set to `SINGLE`, the broker will only use one type of authentication depending on the listener to which the client is connected. 
+For example, if the client connects to the TCP listener, only `MQTT_BASIC` authentication will be used. 
+On the other hand, if the client connects to the TLS listener, only `TLS` authentication will be used.
 
 ## Authorization
 
-After the user is authenticated it's possible to restrict the access to topics the client can publish/subscribe to.
-You can do it both for TLS and Basic auth.
+After the user has been authenticated, it is possible to restrict the client's access to topics they can publish or subscribe to for both TLS and Basic authentication.
 
-For both types of authorization ThingsBoard MQTT Broker uses regular expressions in order to allow users flexible control over auth rules.
+To provide flexible control over authorization rules, ThingsBoard MQTT Broker uses regular expressions. 
 
-For example to allow clients to publish/subscribe to all topics that start with **city/** you need to create auth rule **city/.***.
+For example, to **allow clients to publish or subscribe to all topics** that begin with **city/**, an authorization rule should be created with the value **city/.***.
 
 ### Basic
 
-For Basic type, authorization is configured by the **pubAuthRulePatterns** and **subAuthRulePatterns** of the corresponding MQTT Client Credentials.
-So for each basic MQTT Client credentials you can configure the authorization rules for the topics these clients can access.
-**pubAuthRulePatterns** and **subAuthRulePatterns** is based on regular expression syntax.
-For example,
+For the Basic type, authorization is configured through the **pubAuthRulePatterns** and **subAuthRulePatterns** of the corresponding MQTT client credentials. 
+Therefore, for each Basic MQTT client credential, you can configure the authorization rules for the topics that these clients can access. 
+
+The **pubAuthRulePatterns** and **subAuthRulePatterns** are based on regular expression syntax. For example,
 ```
 {
     "pubAuthRulePatterns": ["country/.*"],
@@ -93,12 +93,13 @@ For example,
 }
 ```
 {: .copy-code}
-will allow clients to publish messages to topics that start with **country/** and to subscribe to topics that start with **city/**.
+The following configuration allows clients to publish messages to topics that start with **country/** and subscribe to topics that start with **city/**:
 
 ### TLS
 
-For TLS type, authorization is configured by the **authRulesMapping** value of corresponding MQTT Client Credentials.
-Here's a model of the credentials value:
+For TLS type, authorization is configured using the **authRulesMapping** field of the corresponding MQTT Client Credentials
+
+Here is a model of the credentials value:
 
 ```
 {
@@ -109,8 +110,8 @@ Here's a model of the credentials value:
 {: .copy-code}
 
 Where:
-- $parentCertCommonName - the common name that should be in the certificate from the chain,
-- $authRulesMapping - the mappings to configure what restrictions do different keywords have.
+- $parentCertCommonName - the common name that should be present in the certificate chain.
+- $authRulesMapping - the mapping used to configure the access restrictions for different keywords.
   For example,
   ```
   {
@@ -125,8 +126,8 @@ Where:
   }
   ```
   {: .copy-code}
-  will allow clients connecting with the certificate that contains **example_1** in it's CN publish only to topics that start with **example_pub_topic/**
-  and subscribe to topics that start with **example_sub_topic/**,
-  and clients with the certificate that contains **example_2** to publish/subscribe to every topic.
 
-**Note**, in case **pubAuthRulePatterns** or **subAuthRulePatterns** equals to `null` or an empty list (`[]`), this means the client can not pub/sub to any topics.
+This allows clients to connect with a certificate containing **example_1** in its CN to publish only to topics that start with **example_pub_topic/** and 
+subscribe to topics that start with **example_sub_topic/**. Clients with a certificate containing **example_2** are allowed to publish and subscribe to any topic.
+
+**Note** that if either **pubAuthRulePatterns** or **subAuthRulePatterns** is set to `null` or an empty list (`[]`), the client will not be able to publish to or subscribe to any topics.

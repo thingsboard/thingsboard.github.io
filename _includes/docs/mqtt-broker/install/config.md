@@ -1,50 +1,45 @@
 * TOC
 {:toc}
 
-This guide will help you to get familiar with ThingsBoard MQTT Broker configuration files and parameters. We **recommend** to
-configure MQTT Broker using environment variables. This way you do not need to merge the configuration files when new
-platform release arrives. List of available configuration parameters and corresponding environment variables is
-located [here](#configuration-parameters).
+This guide will help you become familiar with ThingsBoard MQTT Broker configuration files and parameters. 
+We **strongly recommend** configuring the MQTT Broker using environment variables. 
+This way, you won't need to merge the configuration files when a new platform release arrives. 
+
+The list of available configuration parameters and corresponding environment variables can be found [here](#configuration-parameters).
 
 ## How to change configuration parameters?
 
-#### Docker based deployment
+#### Docker-Based deployment
 
-If ThingsBoard MQTT Broker is installed in a docker compose environment, you may edit the scripts and add environment variables for
-the corresponding containers.
-See [docker documentation](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option) for
-more details.
+If ThingsBoard MQTT Broker is installed in a Docker Compose environment, you can edit the scripts and add environment variables for 
+the corresponding containers. For more details, refer to the [Docker documentation](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option).
 
-#### K8S based deployment
+#### K8S-Based deployment
 
-If ThingsBoard MQTT Broker is installed in a K8S environment, you may edit the scripts and add environment variables for the
-corresponding deployments/stateful sets.
-See [K8S documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/)
-for more details.
+If ThingsBoard MQTT Broker is installed in a K8S environment, you can edit the scripts and add environment variables for the 
+corresponding deployments/stateful sets. For more details, refer to the [K8S documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/).
 
 ## Configuration parameters
 
-The configuration file is written in YAML.
-All configuration parameters have corresponding environment variable name and default value. 
-In order to change configuration parameter you can simply change its default value.
-For example:
+The configuration file is written in YAML format. All configuration parameters have corresponding environment variable names and default values. 
+To change a configuration parameter, simply modify its default value. For example:
 
 ```bash
 server:
   address: "${HTTP_BIND_ADDRESS:0.0.0.0}"
 ```
 
-In this case, *'HTTP_BIND_ADDRESS'* is environment variable name and *'0.0.0.0'* is a default value.
+In this case, *'HTTP_BIND_ADDRESS'* is the environment variable name and *'0.0.0.0'* is the default value.
 
-Use simple example below to add new environment variable 'HTTP_BIND_PORT' with value '8084'.
+You can use the simple example below to add a new environment variable 'HTTP_BIND_PORT' with value '8084'.
 
 ```bash
 ...
 export HTTP_BIND_PORT=8084
 ```
 
-The parameters are grouped by system components. The list contains the name (address in thingsboard-mqtt-broker.yml file), 
-environment variable, default value and description.
+The parameters are grouped by system components. The list contains the name (address in **thingsboard-mqtt-broker.yml** file), 
+environment variable, default value, and description.
 
 <table>
   <thead>
@@ -1378,4 +1373,4 @@ environment variable, default value and description.
 
 #### logback.xml
 
-The configuration file for logging. Allows controlling the log level, the size of log files and the total size/volume of logs.
+The configuration file for logging is **logback.xml**. It allows for controlling the log level, the size of log files, and the total size/volume of logs.
