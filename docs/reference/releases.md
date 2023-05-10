@@ -9,7 +9,7 @@ description: ThingsBoard architecture
 {:toc}
 
 
-## v3.5.0 (May 9, 2023)
+## v3.5.0 (May 9, 2023) {#v35}
 
 Major release with the following features and bug fixes:
 
