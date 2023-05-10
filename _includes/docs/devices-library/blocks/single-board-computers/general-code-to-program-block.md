@@ -59,16 +59,16 @@ Let’s setup our project:
    
    
    # callback function that will call when we will change value of our Shared Attribute
-   def attribute_callback(client, result):
-        print(client, result)
+   def attribute_callback(result, _):
+        print(result)
         # make sure that you paste YOUR shared attribute name
-        period = result['blinkingPeriod']
-   
+        period = result.get('blinkingPeriod', 1.0)
+
    # callback function that will call when we will send RPC
    def rpc_callback(id, request_body):
        # request body contains method and other parameters
        print(request_body)
-       method = request_body["method"]
+       method = request_body.get('method')
        if method == 'getTelemetry':
            attributes, telemetry = get_data()
            client.send_attributes(attributes)
@@ -110,8 +110,8 @@ Let’s setup our project:
         if exception is not None:
             print("Exception: " + str(exception))
         else:
-            period = result['shared']['blinkingPeriod']
-   
+            period = result.get('shared', {'blinkingPeriod': 1.0})['blinkingPeriod']
+
    def main():
         global client
         client = TBDeviceMqttClient(THINGSBOARD_SERVER, THINGSBOARD_PORT, ACCESS_TOKEN)
@@ -121,7 +121,7 @@ Let’s setup our project:
         # now attribute_callback will process shared attribute request from server
         sub_id_1 = client.subscribe_to_attribute("blinkingPeriod", attribute_callback)
         sub_id_2 = client.subscribe_to_all_attributes(attribute_callback)
-   
+
         # now rpc_callback will process rpc requests from server
         client.set_server_side_rpc_request_handler(rpc_callback)
 

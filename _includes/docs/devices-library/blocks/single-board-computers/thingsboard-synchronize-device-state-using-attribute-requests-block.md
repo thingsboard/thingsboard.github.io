@@ -8,7 +8,7 @@ def sync_state(result, exception=None):
     if exception is not None:
         print("Exception: " + str(exception))
     else:
-        period = result['shared']['blinkingPeriod']
+        period = result.get('shared', {'blinkingPeriod': 1.0})['blinkingPeriod']
 ```
 
 Attribute request:

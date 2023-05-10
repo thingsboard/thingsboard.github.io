@@ -21,7 +21,7 @@ period = 1.0
 def attribute_callback(client, result):
     print(client, result)
     # make sure that you paste YOUR shared attribute name
-    period = result['blinkingPeriod']
+    period = result.get('blinkingPeriod', 1.0)
 
 def main():
     ...
