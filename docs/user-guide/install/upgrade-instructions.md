@@ -351,6 +351,8 @@ description: ThingsBoard IoT platform upgrade instructions
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4.4. In order to upgrade to 3.5 you need to [**upgrade to 3.4.4 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-344).
 
+{% include templates/install/tb-350-update.md %}
+
 #### ThingsBoard package download
 
 {% capture tabspec %}thingsboard-download-3-5
@@ -389,6 +391,8 @@ $ sudo service thingsboard start
 ### Windows {#windows-35}
 
 **NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4.4. In order to upgrade to 3.5 you need to [**upgrade to 3.4.4 first**](/docs/user-guide/install/upgrade-instructions/#windows-344).
+
+{% include templates/install/tb-350-update.md %}
 
 #### ThingsBoard package download
 
