@@ -24,7 +24,7 @@ The Banana Pi BPI-M5 is a powerful single-board computer that comes with either 
 
 ## Install required libraries and tools
 
-{% include /docs/devices-library/blocks/single-board-computers/orangepi/install-required-libraries-and-tools-block.md %}
+{% include /docs/devices-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
 
 ## Connect device to ThingsBoard
 
