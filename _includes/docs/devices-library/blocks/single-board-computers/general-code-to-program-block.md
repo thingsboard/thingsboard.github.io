@@ -5,14 +5,14 @@ Let’s setup our project:
 1. Create project folder:
 
     ```bash
-   mkdir orangepi_thingsboard && cd orangepi_thingsboard
+   mkdir thingsboard-example && cd thingsboard-example
    ```
    {:.copy-code}
 
 2. Create a python virtual environment:
 
     ```bash
-   python3.9 -m venv venv
+   python3 -m venv venv
    ```
    {:.copy-code}
 

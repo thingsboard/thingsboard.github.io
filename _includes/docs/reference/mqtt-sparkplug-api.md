@@ -51,7 +51,7 @@ First you need to create MQTT [device profile](/docs/{{docsPrefix}}user-guide/de
 4. Make sure you have selected the "MQTT Sparkplug B Edge of Network (EoN) node" checkbox;
 5. Input the names of Sparkplug metrics you would like to store as attributes instead of time-series data. 
    This list should also include metrics you may want to update from the server side and push to the device.
-   Simple asterisk suffix is supported as a wildcard. For example: "Node Control/\*\", "Device Control/\*\", "Properties/\*\".  
+   Simple asterisk suffix is supported as a wildcard. For example: "Node Control/\*\", "Device Control/\*\", "Properties/\*\".
 
 {% include images-gallery.html imageCollection="sparkplug-create-device-profile" %}
 
@@ -123,8 +123,8 @@ Once the emulator will launch successfully, you should see the following message
 
 ### Step 4. Observe device metrics as attributes and telemetry
 
-Navigate to the details of the EoN node device and open the *Latest telemetry* tab. You should see the device metrics, for example *Current Grid Voltage*.
-Navigate to the *Attributes* tab and select *Shared attributes* scope. You should see metrics that you have previously configured in the [Step 1](#step-1-create-device-profile).
+Navigate to the details of the EoN node device (e.g. *Node 1*) and open the *Latest telemetry* tab. You should see the device metrics, for example *Current Grid Voltage*.
+Navigate to the *Attributes* tab and select *Shared attributes* scope. You will see metrics that you have previously configured in the [Step 1](#step-1-create-device-profile) (item 5).
 
 {% include images-gallery.html imageCollection="sparkplug-create-device-telemetry-and-attributes" %}
 

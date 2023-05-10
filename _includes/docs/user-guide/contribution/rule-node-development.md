@@ -27,7 +27,7 @@ We also assume you have the following third-party installed:
 Clone the repository and navigate to the repo folder:
 
 ```bash
-git clone https://github.com/thingsboard/rule-node-examples
+git clone -b {{ site.release.branch }} https://github.com/thingsboard/rule-node-examples
 cd rule-node-examples
 ```
 {: .copy-code}

@@ -7,22 +7,7 @@ sudo apt install software-properties-common
 {:.copy-code}
 
 ```bash
-sudo add-apt-repository ppa:deadsnakes/ppa
-```
-{:.copy-code}
-
-```bash
-sudo apt install python3.9
-```
-{:.copy-code}
-
-```bash
-sudo apt-get install -y python3 git python3-pip
-```
-{:.copy-code}
-
-```bash
-sudo apt-get install python3.9-venv
+sudo apt-get install -y python3 python3-pip python3-venv git
 ```
 {:.copy-code}
 
