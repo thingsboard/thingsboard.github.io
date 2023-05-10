@@ -207,7 +207,7 @@ Please see table below to compare the API limits of the subscription plans. The 
       </tr>
       <tr>
           <td>SMS</td>
-          <td>10</td>
+          <td>0</td>
           <td>100</td>
           <td>500</td>
           <td>1000</td>

@@ -25,9 +25,9 @@ The validity period of the secret and the remaining properties available for the
 
 The system administrator user configures the default security policies and options for all remaining users. The former can turn on/off the possibility to use 2FA of any kind while the end user defines whether to use an additional verification or not. Follow the steps below to enable two-factor authentication for your ThingsBoard instance.
 
-1. Log in as a sysadmin to your ThingsBoard platform instance.
-2. Go to System Settings &mdash; Two-factor authentication section.
-3. Activate and configure one or more verification methods. Edit settings for all enabled 2FA providers (verification message template, verification code lifetime, total allowed time for verification, etc) if necessary.
+1. Log in as a sysadmin to your ThingsBoard platform instance;
+2. Go to "Security" page &mdash; "Two-factor authentication" section;
+3. Activate and configure one or more verification methods. Edit settings for all enabled 2FA providers (verification message template, verification code lifetime, total allowed time for verification, etc) if necessary;
 4. Save changes.
 
 {% if docsPrefix == null %}
@@ -41,54 +41,33 @@ The system administrator user configures the default security policies and optio
 
 If enabled, users on the platform can add an extra verification of their identity to access the data. Although 2FA can be a corporate security standard, the final decision on whether to use it or not is with a particular user. Sysadmin cannot force users to authenticate with 2FA.    
 
-1. Log in with basic credentials.
-2. In the upper right corner, click on the three dots icon. In the dropdown menu, proceed with Password and authentication. 
-3. Activate the convenient verification method. One can activate multiple providers. 
+1. Log in with basic credentials;
+2. In the upper right corner, click on the three dots icon. In the dropdown menu, proceed with "Security";
+3. Activate the convenient verification method. One can activate multiple providers;
 4. Save changes.
 
-{% include images-gallery.html imageCollection="two-factor-authentication-password-and-authentication" %}
+{% include images-gallery.html imageCollection="two-factor-authentication-password-and-authentication" showListImageTitles="true" %}
 
-*Important!* The list of toggleable 2FA options depends on the system administrator's settings. 
+{% capture difference %}
+**Important!** The list of toggleable 2FA options depends on the system administrator's settings.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
-###### 2FA with email
-1. Enable authentication by email.
-2. Enter an email to receive a secret code.
-3. Enter the 6-digit code from the verification email.
-4. The next time the user logs in, he/she will need to provide the code received by email.
-5. While login, on your first step the user enters the email and password. Afterward, the security code from a mailbox should be populated.
+###### 2FA with Authenticator app
 
-{% include images-gallery.html imageCollection="two-factor-authentication-email" %}
-
-###### 2FA with Authenticator app:
-
-1. Enable authentication with the external app.
-2. Install and open the authenticator app on the device. 
-3. Scan a QR code using the application.
-4. Enter the 6-digit code from authenticator.
-5. The next time the user logs in, he/she will need to provide the code rendered by the application.
-6. While login, on the first step the user enters the email and password. Afterward, the security code from the authenticator app should be populated.
-
-{% include images-gallery.html imageCollection="two-factor-authentication-app" %}
+{% include images-gallery.html imageCollection="two-factor-authentication-app" showListImageTitles="true" %}
 
 ###### 2FA with SMS
 
-1. Turn on the authentication by SMS.
-2. Enter the valid phone number and expect to receive a verification short message.
-3. Input the 6-digit code from your verification SMS.
-4. The next time the user logs in, he/she will need to provide the code received in the SMS.
-5. While login, on the first step the user enters the email and password. Afterward, the security code from your SMS should be populated.
+{% include images-gallery.html imageCollection="two-factor-authentication-sms" showListImageTitles="true" %}
 
-{% include images-gallery.html imageCollection="two-factor-authentication-sms" %}
+###### 2FA with email
+
+{% include images-gallery.html imageCollection="two-factor-authentication-email" showListImageTitles="true" %}
 
 ###### 2FA with a Backup code
 
-1. Enable authentication with backup code.
-2. Once turned on, the codes will be available on the screen. The user can download them (txt) or print them. Each backup code can be used once.
-3. While regular login process, after email and password step click "Try another way" button.
-4. Select a way to verify with a backup code;
-4. Enter the 8-digit code from your backup codes list.
-
-{% include images-gallery.html imageCollection="two-factor-authentication-backup-code" %}
+{% include images-gallery.html imageCollection="two-factor-authentication-backup-code" showListImageTitles="true" %}
 
 ## Next steps
 

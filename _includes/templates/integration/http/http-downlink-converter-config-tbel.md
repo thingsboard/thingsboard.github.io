@@ -1,5 +1,11 @@
-{% include images-gallery.html imageCollection="downlink-tbel" %}
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/http/http-create-downlink-tbel-1-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/http/downlink-tbel-1-pe.png)
+{% endif %}
 
+<br/>
 Add a converter to the integration. You can customize a downlink according to your configuration.
 Let’s consider an example where we send an attribute update message. So we should change code in the downlink encoder function under line **//downlink data** input:
 
@@ -9,8 +15,14 @@ data: JSON.stringify(msg)
 {: .copy-code}
 where **msg** is the message that we receive and send back to the device.
 
-{% include images-gallery.html imageCollection="downlink-tbel-1" %}
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/http/http-create-downlink-tbel-2-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/http/downlink-tbel-2-pe.png)
+{% endif %}
 
+<br/>
 An example of downlink converter:
 
 ```ruby
