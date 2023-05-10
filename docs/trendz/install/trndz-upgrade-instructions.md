@@ -8,6 +8,17 @@ description: ThingsBoard Trendz Analytics upgrade instructions
 
 <ul id="markdown-toc">
         <li>
+          <a href="#upgrading-to-1101" id="markdown-toc-upgrading-to-1101">Upgrading to 1.10.1</a>
+          <ul>
+              <li>
+                  <a href="#ubuntucentos-1100" id="markdown-toc-ubuntucentos-1101">Ubuntu/CentOS</a>        
+              </li>
+              <li>
+                  <a href="#windows-1101" id="markdown-toc-windows-1101">Windows</a>        
+              </li>
+          </ul>
+        </li>
+        <li>
           <a href="#upgrading-to-1100" id="markdown-toc-upgrading-to-1100">Upgrading to 1.10.0</a>
           <ul>
               <li>
@@ -127,6 +138,85 @@ description: ThingsBoard Trendz Analytics upgrade instructions
     </ul>
   </li>  
 </ul>
+
+## Upgrading to 1.10.1
+
+These steps are applicable for 1.10.0 Trendz Analytics version.
+
+### Ubuntu/CentOS {#ubuntucentos-1101}
+
+#### Trendz Analytics package download
+
+{% capture tabspec %}trendz-download-1-10-1
+trendz-download-1-8-0-ubuntu,Ubuntu,shell,resources/1.10.1/trendz-ubuntu-download.sh,/docs/user-guide/install/resources/1.10.1/trendz-ubuntu-download.sh
+trendz-download-1-8-0-centos,CentOS,shell,resources/1.10.1/trendz-centos-download.sh,/docs/user-guide/install/resources/1.10.1/trendz-centos-download.sh{% endcapture %}  
+{% include tabs.html %}
+
+#### Trendz Analytics service upgrade
+
+* Stop Trendz Analytics service if it is running.
+
+```bash
+sudo service trendz stop
+```
+{: .copy-code}
+
+* Install latest Trendz Analytics service
+
+{% capture tabspec %}trendz-installation-1-10-1
+trendz-installation-1-8-0-ubuntu,Ubuntu,shell,resources/1.10.1/trendz-ubuntu-installation.sh,/docs/user-guide/install/resources/1.10.1/trendz-ubuntu-installation.sh
+trendz-installation-1-8-0-centos,CentOS,shell,resources/1.10.1/trendz-centos-installation.sh,/docs/user-guide/install/resources/1.10.1/trendz-centos-installation.sh{% endcapture %}  
+{% include tabs.html %}
+
+**NOTE:** Package installer will ask you to merge your trendz configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+
+Execute regular upgrade script:
+
+```bash
+sudo /usr/share/trendz/bin/install/upgrade.sh --fromVersion=1.10.0
+```   
+
+#### Start the service
+
+```bash
+sudo service trendz start
+```
+{: .copy-code}
+
+### Windows {#windows-1101}
+
+#### Trendz Analytics package download
+
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.10.1.zip](https://dist.thingsboard.io/trendz-windows-1.10.1.zip).
+
+#### Trendz Analytics service upgrade
+
+* Stop Trendz service if it is running.
+
+```text
+net stop trendz
+```
+{: .copy-code}
+
+* Make a backup of previous Trendz Analytics configuration located in \<Trendz install dir\>\conf (for ex. C:\trendz\conf).
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare your old Trendz configuration files (from the backup you made in the first step) with new ones.
+
+* Finally, run **upgrade.bat** script to upgrade Trendz to the new version.
+
+**NOTE** Scripts listed above should be executed using Administrator Role.
+
+```text
+C:\trendz>upgrade.bat --fromVersion=1.10.0
+```
+
+#### Start the service
+
+```text
+net start trendz
+```
+{: .copy-code}
 
 ## Upgrading to 1.10.0
 
