@@ -1,3 +1,9 @@
+{% capture difference %}
+<br>
+**Don't forget to create shared attribute `blinkingPeriod` on your device.** 
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 In order to get the state of the device from ThingsBoard during booting we have functionality to do this in the code.
 Responsible parts of the example code:
 
@@ -8,7 +14,7 @@ def sync_state(result, exception=None):
     if exception is not None:
         print("Exception: " + str(exception))
     else:
-        period = result['shared']['blinkingPeriod']
+        period = result.get('shared', {'blinkingPeriod': 1.0})['blinkingPeriod']
 ```
 
 Attribute request:
