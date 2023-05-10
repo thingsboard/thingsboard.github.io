@@ -1032,6 +1032,18 @@
     }
   },
   {
+    "type": ["Europe"],
+    "country": ["France"],
+    "name": "Wiifor",
+    "contact": {
+      "href": "contact@wiifor.com"
+    },
+    "site": {
+      "href": "wiifor.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia"],
     "country": ["India"],
     "name": "YuDash Systems Pvt. Ltd.",

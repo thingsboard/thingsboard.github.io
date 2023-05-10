@@ -61,9 +61,4 @@ return result;
 ```
 {: .copy-code}
 
-{% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/sigfox/sigfox-uplink-converter-tbel-pe.png)
-{% endif %}
-{% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/sigfox/sigfox-uplink-converter-tbel-paas.png)
-{% endif %}

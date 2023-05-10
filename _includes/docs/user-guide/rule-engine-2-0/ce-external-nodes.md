@@ -439,6 +439,30 @@ You can see the real life example, where this node is used, in the next tutorial
 
 <br/>
 
+# Send Notification Node
+
+<table  style="width:250px;">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 3.5</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/external-send-notification.png)
+
+The node can send notification to recipients group using the template.
+The template needs to be of a 'Rule node' type. You can use incoming message data and metadata in your template (see [templatization help page](/docs/{{docsPrefix}}user-guide/notifications/#templates) for this notification type).
+
+Configuration:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/external-send-notification-config.png)
+
+- **Template** - specify a notification template;
+- **Recipients** - notification recipients.
+
+<br/>
+
 # Send SMS Node
 
 <table  style="width:250px;">
@@ -492,3 +516,31 @@ Configuration:
 SMS message will be sent to all recipients taken from **Phone Numbers To** list.
 
 If SMS message will be sent to all recipients successfully, original Message will be passed to the next nodes via **Success** chain, otherwise **Failure** chain is used.
+
+<br/>
+
+# Send to Slack Node
+
+<table  style="width:250px;">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 3.5</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+![image](/images/user-guide/rule-engine-2-0/nodes/external-send-to-slack.png)
+
+The node create a message based on the incoming data and metadata, and send it via [Slack](https://slack.com/) to a public channel, private channel or direct message.
+If chosen to use system Slack settings, the node will take the Slack API token from system settings. Otherwise, you need to specify the token in the node configuration.
+Learn more about how to configure Slack settings in Thingsboard [here](/docs/{{docsPrefix}}user-guide/ui/slack-settings/).
+
+Configuration:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/external-send-to-slack-config.png)
+
+- **Message template** - the template for a Slack message; you may optionally reference fields from incoming message data and metadata;
+- **Use system slack settings** - if enabled, the node will take the Slack API token from system settings;
+- **Slack API token** - token to integrate Thingsboard with Slack;
+- **Slack channel type** - send message via Slack to a public channel, private channel or direct message;
+- **Conversation** - public channel, private channel or user in Slack to send message to.

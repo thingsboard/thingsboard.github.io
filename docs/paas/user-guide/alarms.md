@@ -14,6 +14,14 @@ alarmWidgetDataSettings:
     1:
         image: /images/user-guide/alarms/advanced-widget-settings-PAAS.png        
 
+alarmComments:
+    0:
+        image: /images/user-guide/alarms/alarm-comments-PAAS.png
+    
+alarmAssignee:
+    0:
+        image: /images/user-guide/alarms/alarm-assignee-PAAS.png
+
 ---
 
 {% assign docsPrefix = "paas/" %}
