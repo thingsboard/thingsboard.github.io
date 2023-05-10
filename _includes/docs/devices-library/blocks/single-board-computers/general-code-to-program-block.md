@@ -9,7 +9,6 @@ Let’s setup our project:
    ```
    {:.copy-code}
 
-4. Install packages:
 2. Install packages:
 
    ```bash
