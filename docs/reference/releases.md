@@ -79,7 +79,7 @@ Major release with the following features and bug fixes:
 * Edge
   
   * [#7862](https://github.com/thingsboard/thingsboard/pull/7862) Push latest timeseries key-value pair to edge on assignment entity to edge by @volodymyr-babak
-  * [#7878](https://github.com/thingsboard/thingsboard/pull/7878) Add edgestallstructions for docker  by @volodymyr-babak
+  * [#7878](https://github.com/thingsboard/thingsboard/pull/7878) Add edge install instructions for docker  by @volodymyr-babak
   * [#7914](https://github.com/thingsboard/thingsboard/pull/7914) Added default edge rule chain to asset/device profiles by @volodymyr-babak
   * [#8301](https://github.com/thingsboard/thingsboard/pull/8301) Edge computing solution templates by @volodymyr-babak
   * [#8340](https://github.com/thingsboard/thingsboard/pull/8340) Handle gRPC messages exceeding default max message size by @volodymyr-babak
