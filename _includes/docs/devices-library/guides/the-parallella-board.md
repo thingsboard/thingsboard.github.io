@@ -22,7 +22,7 @@ The Parallella Board is a single-board computer based on the Xilinx Zynq Z-7010 
 
 ## Install required libraries and tools
 
-{% include /docs/devices-library/blocks/single-board-computers/orangepi/install-required-libraries-and-tools-block.md %}
+{% include /docs/devices-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
 
 ## Connect device to ThingsBoard
 

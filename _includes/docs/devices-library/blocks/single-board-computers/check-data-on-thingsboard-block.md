@@ -26,7 +26,7 @@ Once you have successfully published the attributes and telemetry data, you shou
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=deviceTelemetryCE %}
 {% endif %} 
 
-Also, let’s display OrangePI attributes and telemetry on a dashboard. For this, you can create your own dashboard with 
+Also, let’s display single board computer attributes and telemetry on a dashboard. For this, you can create your own dashboard with 
 your custom widgets or use a ready-made dashboard and simply import it.
  
 {% capture minicomputerstogglespec %}

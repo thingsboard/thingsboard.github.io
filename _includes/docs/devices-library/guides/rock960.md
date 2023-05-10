@@ -22,7 +22,7 @@ The Rock960 is a single-board computer based on the Rockchip RK3399 SoC with two
 
 ## Install required libraries and tools
 
-{% include /docs/devices-library/blocks/single-board-computers/orangepi/install-required-libraries-and-tools-block.md %}
+{% include /docs/devices-library/blocks/single-board-computers/install-required-libraries-and-tools-block.md %}
 
 ## Connect device to ThingsBoard
 

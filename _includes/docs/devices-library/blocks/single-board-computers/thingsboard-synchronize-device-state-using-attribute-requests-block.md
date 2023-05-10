@@ -1,3 +1,9 @@
+{% capture difference %}
+<br>
+**Don't forget to create shared attribute `blinkingPeriod` on your device.** 
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 In order to get the state of the device from ThingsBoard during booting we have functionality to do this in the code.
 Responsible parts of the example code:
 

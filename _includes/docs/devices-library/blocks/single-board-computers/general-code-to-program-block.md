@@ -5,39 +5,26 @@ Let’s setup our project:
 1. Create project folder:
 
     ```bash
-   mkdir thingsboard-example && cd thingsboard-example
-   ```
-   {:.copy-code}
-
-2. Create a python virtual environment:
-
-    ```bash
-   python3 -m venv venv
-   ```
-   {:.copy-code}
-
-3. Activate python virtual environment:
-
-   ```bash
-   source venv/bin/activate
+   mkdir thingsboard_example && cd thingsboard_example
    ```
    {:.copy-code}
 
 4. Install packages:
+2. Install packages:
 
    ```bash
-   pip install tb-mqtt-client Adafruit-Blinka
+   pip install tb-mqtt-client
    ```
    {:.copy-code}
 
-5. Create the main script:
+3. Create the main script:
 
    ```bash
-   touch main.py
+   nano main.py
    ```
    {:.copy-code}
 
-6. Copy and paste the following code:
+4. Copy and paste the following code:
 
    ```python
    import logging.handlers
@@ -78,12 +65,12 @@ Let’s setup our project:
    
    
    def get_data():
-       cpu_usage = round(float(os.popen('''grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage }' ''').readline()), 2)
-       ip_address = os.popen('''hostname -I''').readline()[:-2]
-       mac_address = os.popen('''cat /sys/class/net/*/address''').readline()[:-1]
-       processes_count = os.popen('''ps -Al | grep -c bash''').readline()[:-1]
-       swap_memory_usage = os.popen("free -m | grep Swap | awk '{print ($3/$2)*100}'").readline()[:-1]
-       ram_usage = float(os.popen("free -m | grep Mem | awk '{print ($3/$2) * 100}'").readline()[:-1])
+       cpu_usage = round(float(os.popen('''grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage }' ''').readline().replace('\n', '').replace(',', '.')), 2)
+       ip_address = os.popen('''hostname -I''').readline().replace('\n', '').replace(',', '.')[:-1]
+       mac_address = os.popen('''cat /sys/class/net/*/address''').readline().replace('\n', '').replace(',', '.')
+       processes_count = os.popen('''ps -Al | grep -c bash''').readline().replace('\n', '').replace(',', '.')[:-1]
+       swap_memory_usage = os.popen("free -m | grep Swap | awk '{print ($3/$2)*100}'").readline().replace('\n', '').replace(',', '.')[:-1]
+       ram_usage = float(os.popen("free -m | grep Mem | awk '{print ($3/$2) * 100}'").readline().replace('\n', '').replace(',', '.')[:-1])
        st = os.statvfs('/')
        used = (st.f_blocks - st.f_bfree) * st.f_frsize
        boot_time = os.popen('uptime -p').read()[:-1]
@@ -102,6 +89,7 @@ Let’s setup our project:
            'boot_time': boot_time,
            'avg_load': avg_load
        }
+       print(attributes, telemetry)
        return attributes, telemetry
    
    # request attribute callback
@@ -149,10 +137,11 @@ Let’s setup our project:
    | THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address. |
    | THINGSBOARD_PORT | **1883** | ThingsBoard server MQTT port. Can be default for this guide. |
 
-7. And finally, let’s start our script:
+5. Click **Ctrl+X** and **Ctrl+O** keys to save the file.
+6. And finally, let’s start our script:
 
    ```bash
-   python main.py
+   python3 main.py
    ```
    {:.copy-code}
 
@@ -170,12 +159,12 @@ Data packing and returning in the `get_data` function, so you can easily add new
 ```python
 ...
 def get_data():
-       cpu_usage = round(float(os.popen('''grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage }' ''').readline()), 2)
-       ip_address = os.popen('''hostname -I''').readline()[:-2]
-       mac_address = os.popen('''cat /sys/class/net/*/address''').readline()[:-1]
-       processes_count = os.popen('''ps -Al | grep -c bash''').readline()[:-1]
-       swap_memory_usage = os.popen("free -m | grep Swap | awk '{print ($3/$2)*100}'").readline()[:-1]
-       ram_usage = float(os.popen("free -m | grep Mem | awk '{print ($3/$2) * 100}'").readline()[:-1])
+       cpu_usage = round(float(os.popen('''grep 'cpu ' /proc/stat | awk '{usage=($2+$4)*100/($2+$4+$5)} END {print usage }' ''').readline().replace('\n', '').replace(',', '.')), 2)
+       ip_address = os.popen('''hostname -I''').readline().replace('\n', '').replace(',', '.')[:-1]
+       mac_address = os.popen('''cat /sys/class/net/*/address''').readline().replace('\n', '').replace(',', '.')
+       processes_count = os.popen('''ps -Al | grep -c bash''').readline().replace('\n', '').replace(',', '.')[:-1]
+       swap_memory_usage = os.popen("free -m | grep Swap | awk '{print ($3/$2)*100}'").readline().replace('\n', '').replace(',', '.')[:-1]
+       ram_usage = float(os.popen("free -m | grep Mem | awk '{print ($3/$2) * 100}'").readline().replace('\n', '').replace(',', '.')[:-1])
        st = os.statvfs('/')
        used = (st.f_blocks - st.f_bfree) * st.f_frsize
        boot_time = os.popen('uptime -p').read()[:-1]
@@ -194,6 +183,7 @@ def get_data():
            'boot_time': boot_time,
            'avg_load': avg_load
        }
+       print(attributes, telemetry)
        return attributes, telemetry
 ...
 ```
