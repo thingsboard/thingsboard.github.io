@@ -54,7 +54,7 @@ Using custom binary format or some serialization framework is also possible. See
 
 In order to publish telemetry data to ThingsBoard server node, send POST request to the following URL:
 
-{% if docsPrefix == null %}
+{% if docsPrefix == null {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry
 ```
@@ -63,25 +63,14 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry
 Where  
 - **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
 - **$ACCESS_TOKEN** - device access token.
-
+{% endif %}
+{% if docsPrefix == null %}
 If you use live demo server, the command will look like this:
 
 ```shell
 coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry
 ```
 {: .copy-code}
-
-{% endif %}
-{% if docsPrefix == "pe/" %}
-
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry
-```
-{: .copy-code}
-
-Where  
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
-- **$ACCESS_TOKEN** - device access token.
 
 {% endif %}
 {% if docsPrefix == "paas/" %}
@@ -143,7 +132,7 @@ ThingsBoard attributes API allows devices to
 
 In order to publish client-side device attributes to ThingsBoard server node, send POST request to the following URL:
 
-{% if docsPrefix == null %}
+{% if docsPrefix == null {% if docsPrefix == null or docsPrefix == "pe/" %}
 
 ```shell
 coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
@@ -154,24 +143,14 @@ Where
 - **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
 - **$ACCESS_TOKEN** - device access token.
 
+{% endif %}
+{% if docsPrefix == null %}
 If you use live demo server, the command will look like this:
 
 ```shell
 coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes
 ```
 {: .copy-code}
-
-{% endif %}
-{% if docsPrefix == "pe/" %}
-
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
-```
-{: .copy-code}
-
-Where  
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
-- **$ACCESS_TOKEN** - device access token.
 
 {% endif %}
 {% if docsPrefix == "paas/" %}
@@ -194,7 +173,7 @@ B,new-attributes-values.json,json,resources/new-attributes-values.json,/docs/ref
 
 In order to request client-side or shared device attributes to ThingsBoard server node, send GET request to the following URL:
 
-{% if docsPrefix == null %}
+{% if docsPrefix == null or docsPrefix == "pe/"%}
 ```shell
 coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
 ```
@@ -204,23 +183,14 @@ Where
 - **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
 - **$ACCESS_TOKEN** - device access token.
 
+{% endif %}
+{% if docsPrefix == null %}
 If you use live demo server, the command will look like this:
 
 ```shell
 coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "pe/" %}
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
-```
-{: .copy-code}
-
-Where  
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
-- **$ACCESS_TOKEN** - device access token.
-
 {% endif %}
 {% if docsPrefix == "paas/" %}
 ```shell
@@ -256,7 +226,7 @@ However, it is still possible to have same keys for client, shared or even serve
 
 In order to subscribe to shared device attribute changes, send GET request with Observe option to the following URL:
 
-{% if docsPrefix == null %}
+{% if docsPrefix == null or docsPrefix == "pe/"%}
 ```shell
 coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
 ```
@@ -265,24 +235,14 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
 Where  
 - **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
 - **$ACCESS_TOKEN** - device access token.
-
+{% endif %}
+{% if docsPrefix == null %}
 If you use live demo server, the command will look like this:
 
 ```shell
 coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "pe/" %}
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
-```
-{: .copy-code}
-
-Where  
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
-- **$ACCESS_TOKEN** - device access token.
-
 {% endif %}
 {% if docsPrefix == "paas/" %}
 ```shell
@@ -311,7 +271,7 @@ B,Result,json,resources/attributes-response.json,/docs/reference/resources/attri
 
 In order to subscribe to RPC commands from the server, send GET request with observe flag to the following URL:
 
-{% if docsPrefix == null %}
+{% if docsPrefix == null or docsPrefix == "pe/"%}
 ```shell
 coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
 ```
@@ -320,24 +280,14 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
 Where  
 - **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
 - **$ACCESS_TOKEN** - device access token.
-
+{% endif %}
+{% if docsPrefix == null %}
 If you use live demo server, the command will look like this:
 
 ```shell
 coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "pe/" %}
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
-```
-{: .copy-code}
-
-Where  
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
-- **$ACCESS_TOKEN** - device access token.
-
 {% endif %}
 {% if docsPrefix == "paas/" %}
 ```shell
@@ -370,25 +320,19 @@ where
 
 and can reply to them using POST request to the following URL:
 
-{% if docsPrefix == null %}
+{% if docsPrefix == null or docsPrefix == "pe/"%}
 ```shell
 coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc/{$id}
 ```
 {: .copy-code}
-
+{% endif %}
+{% if docsPrefix == null %}
 If you use live demo server, the command will look like this:
 
 ```shell
 coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc/{$id}
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "pe/" %}
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc/{$id}
-```
-{: .copy-code}
-
 {% endif %}
 {% if docsPrefix == "paas/" %}
 ```shell
@@ -425,7 +369,7 @@ C,rpc-response.json,shell,resources/rpc-response.json,/docs/reference/resources/
 
 In order to send RPC commands to the server, send POST request to the following URL:
 
-{% if docsPrefix == null %}
+{% if docsPrefix == null or docsPrefix == "pe/"%}
 ```shell
 coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
 ```
@@ -434,24 +378,14 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
 Where  
 - **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
 - **$ACCESS_TOKEN** - device access token.
-
+{% endif %}
+{% if docsPrefix == null %}
 If you use live demo server, the command will look like this:
 
 ```shell
 coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "pe/" %}
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
-```
-{: .copy-code}
-
-Where  
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
-- **$ACCESS_TOKEN** - device access token.
-
 {% endif %}
 {% if docsPrefix == "paas/" %}
 ```shell
@@ -494,7 +428,7 @@ Please see the corresponding article to get more information about the [Claiming
 
 In order to initiate claiming device, send POST request to the following URL:
 
-{% if docsPrefix == null %}
+{% if docsPrefix == null or docsPrefix == "pe/"%}
 ```shell
 coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/claim
 ```
@@ -503,24 +437,14 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/claim
 Where  
 - **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
 - **$ACCESS_TOKEN** - device access token.
-
+{% endif %}
+{% if docsPrefix == null %}
 If you use live demo server, the command will look like this:
 
 ```shell
 coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/claim
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "pe/" %}
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/claim
-```
-{: .copy-code}
-
-Where  
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
-- **$ACCESS_TOKEN** - device access token.
-
 {% endif %}
 {% if docsPrefix == "paas/" %}
 ```shell
@@ -552,29 +476,21 @@ Please see the corresponding article to get more information about the [Device p
 
 In order to initiate device provisioning, send POST request to the following URL:
 
-{% if docsPrefix == null %}
+{% if docsPrefix == null or docsPrefix == "pe/"%}
 ```shell
 coap://$THINGSBOARD_HOST_NAME/api/v1/provision
 ```
 {: .copy-code}
 
 Where **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address.
-
+{% endif %}
+{% if docsPrefix == null %}
 If you use live demo server, the command will look like this:
 
 ```shell
 coap://demo.thingsboard.io/api/v1/provision
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "pe/" %}
-```shell
-coap://$THINGSBOARD_HOST_NAME/api/v1/provision
-```
-{: .copy-code}
-
-Where **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address.
-
 {% endif %}
 {% if docsPrefix == "paas/" %}
 ```shell
@@ -597,7 +513,7 @@ The supported data format is:
 
 The CoAP client has to issue the GET request to
 
-{% if docsPrefix == null %}
+{% if docsPrefix == null or docsPrefix == "pe/"%}
 ```shell
 coap get coap://$THINGSBOARD_HOST_NAME/api/v1/${access_token}/firmware?title=${title}&version=${version}
 ```
@@ -608,26 +524,14 @@ Where
 - **${access_token}** -  device access token;  
 - **${title}** - the firmware title;  
 - **${version}** - the version of the target firmware.
-
+{% endif %}
+{% if docsPrefix == null %}
 If you use live demo server, the command will look like this:
 
 ```shell
 coap get coap://demo.thingsboard.io/api/v1/${access_token}/firmware?title=${title}&version=${version}
 ```
 {: .copy-code}
-{% endif %}
-{% if docsPrefix == "pe/" %}
-```shell
-coap get coap://$THINGSBOARD_HOST_NAME/api/v1/${access_token}/firmware?title=${title}&version=${version}
-```
-{: .copy-code}
-
-Where  
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
-- **${access_token}** -  device access token;  
-- **${title}** - the firmware title;  
-- **${version}** - the version of the target firmware.
-
 {% endif %}
 {% if docsPrefix == "paas/" %}
 ```shell
