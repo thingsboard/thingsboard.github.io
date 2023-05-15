@@ -372,6 +372,18 @@
     }
   },
   {
+    "type": ["Europe"],
+    "country": ["France"],
+    "name": "Jems Group",
+    "contact": {
+      "href": "https://www.jems-group.com/fr/contact/"
+    },
+    "site": {
+      "href": "https://www.jems-group.com/",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia"],
     "country": ["China"],
     "name": "PUXUAN LPWAN",
