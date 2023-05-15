@@ -56,7 +56,7 @@ Now we need to configure integration on The Things Industries. to do this please
 At first, we will create an uplink converter to process the incoming data:
 
 ```javascript
-decodeToJson(payload);
+var data = decodeToJson(payload);
 
 var deviceName = data.end_device_ids.device_id;
 var deviceType = data.end_device_ids.application_ids.application_id;
