@@ -31,12 +31,11 @@ Possible error codes and their reasons:
 
 Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization) for more details.
 
-
 ## Telemetry upload API
 
 In order to publish telemetry data to ThingsBoard server node, send POST request to the following URL:
 
-{% if docsPrefix == null {% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry
 ```
@@ -82,7 +81,6 @@ In this case, the server-side timestamp will be assigned to uploaded data!
 
 In case your device is able to get the client-side timestamp, you can use following format:
 
-
 ```json
 {"ts":1451649600512, "values":{"key1":"value1", "key2":"value2"}}
 ```
@@ -97,7 +95,6 @@ C,telemetry-data-as-array.json,json,resources/telemetry-data-as-array.json,/docs
 D,telemetry-data-with-ts.json,json,resources/telemetry-data-with-ts.json,/docs/reference/resources/telemetry-data-with-ts.json{% endcapture %}
 {% include tabs.html %}
 
- 
 ## Attributes API
 
 ThingsBoard attributes API allows devices to
@@ -110,7 +107,7 @@ ThingsBoard attributes API allows devices to
 
 In order to publish client-side device attributes to ThingsBoard server node, send POST request to the following URL:
 
-{% if docsPrefix == null {% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
 ```
@@ -149,7 +146,7 @@ C,new-attributes-values.json,json,resources/new-attributes-values.json,/docs/ref
 
 In order to request client-side or shared device attributes to ThingsBoard server node, send GET request to the following URL:
 
-{% if docsPrefix == null {% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2
 ```
@@ -196,7 +193,7 @@ However, it is still possible to have same keys for client, shared or even serve
 
 In order to subscribe to shared device attribute changes, send GET request with optional "timeout" request parameter to the following URL:
 
-{% if docsPrefix == null {% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes/updates
 ```
@@ -243,7 +240,7 @@ B,Result,json,resources/attributes-response.json,/docs/reference/resources/attri
 
 In order to subscribe to RPC commands from the server, send GET request with optional "timeout" request parameter to the following URL:
 
-{% if docsPrefix == null {% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
 ```
@@ -295,7 +292,7 @@ where
 
 and can reply to them using POST request to the following URL:
 
-{% if docsPrefix == null {% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc/{$id}
 ```
@@ -347,7 +344,7 @@ C,Reply Body,shell,resources/rpc-response.json,/docs/reference/resources/rpc-res
 
 In order to send RPC commands to the server, send POST request to the following URL:
 
-{% if docsPrefix == null {% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
 ```
@@ -398,7 +395,7 @@ return {msg: {time:String(new Date())}, metadata: metadata, msgType: msgType};
 
 {% capture tabspec %}http-rpc-from-client
 A,Example Request,shell,resources/http-rpc-from-client.sh,/docs/reference/resources/http-rpc-from-client.sh
-B,Request Body,shell,resources/rpc-client-request.json,/docs/reference/resources/rpc-client-request.json
+B,rpc-client-request.json,shell,resources/rpc-client-request.json,/docs/reference/resources/rpc-client-request.json
 C,Response Body,shell,resources/rpc-server-response.json,/docs/reference/resources/rpc-server-response.json{% endcapture %}  
 {% include tabs.html %}
 
@@ -408,7 +405,7 @@ Please see the corresponding article to get more information about the [Claiming
 
 In order to initiate claiming device, send POST request to the following URL:
 
-{% if docsPrefix == null {% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/claim
 ```
@@ -458,7 +455,7 @@ Please see the corresponding article to get more information about the [Device p
 
 In order to initiate device provisioning, send POST request to the following URL:
 
-{% if docsPrefix == null {% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 http(s)://$THINGSBOARD_HOST_NAME/api/v1/provision
 ```
@@ -498,7 +495,7 @@ The supported data format is:
 When ThingsBoard initiates the firmware update over HTTP it sets the fw_title, fw_version, fw_checksum, fw_checksum_algorithm shared attributes.
 To receive the shared attribute updates, the device has to GET request
 
-{% if docsPrefix == null {% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 http(s)://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
 ```
