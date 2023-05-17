@@ -54,7 +54,7 @@ Using custom binary format or some serialization framework is also possible. See
 
 In order to publish telemetry data to ThingsBoard server node, send POST request to the following URL:
 
-{% if docsPrefix == null {% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
 coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry
 ```
@@ -73,6 +73,7 @@ coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry
 {: .copy-code}
 
 {% endif %}
+
 {% if docsPrefix == "paas/" %}
 
 ```shell
@@ -132,7 +133,7 @@ ThingsBoard attributes API allows devices to
 
 In order to publish client-side device attributes to ThingsBoard server node, send POST request to the following URL:
 
-{% if docsPrefix == null {% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if docsPrefix == null or docsPrefix == "pe/" %}
 
 ```shell
 coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
@@ -515,34 +516,34 @@ The CoAP client has to issue the GET request to
 
 {% if docsPrefix == null or docsPrefix == "pe/"%}
 ```shell
-coap get coap://$THINGSBOARD_HOST_NAME/api/v1/${access_token}/firmware?title=${title}&version=${version}
+coap get coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
 ```
 {: .copy-code}
 
 Where  
 - **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
-- **${access_token}** -  device access token;  
-- **${title}** - the firmware title;  
-- **${version}** - the version of the target firmware.
+- **$ACCESS_TOKEN** -  device access token;
+- **$TITLE** - the firmware title;
+- **$VERSION** - the version of the target firmware.
 {% endif %}
 {% if docsPrefix == null %}
 If you use live demo server, the command will look like this:
 
 ```shell
-coap get coap://demo.thingsboard.io/api/v1/${access_token}/firmware?title=${title}&version=${version}
+coap get coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
 ```
 {: .copy-code}
 {% endif %}
 {% if docsPrefix == "paas/" %}
 ```shell
-coap get coap://coap.thingsboard.cloud/api/v1/${access_token}/firmware?title=${title}&version=${version}
+coap get coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/firmware?title=$TITLE&version=$VERSION
 ```
 {: .copy-code}
 
 Where  
-- **${access_token}** -  device access token;  
-- **${title}** - the firmware title;  
-- **${version}** - the version of the target firmware.
+- **$ACCESS_TOKEN** -  device access token;  
+- **$TITLE** - the firmware title;  
+- **$VERSION** - the version of the target firmware.
 
 {% endif %}
 
