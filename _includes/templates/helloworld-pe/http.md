@@ -44,14 +44,14 @@ curl -v -X POST -d "{\"temperature\": 25}" https://thingsboard.cloud/api/v1/ABC1
 Replace $THINGSBOARD_HOST_NAME and $ACCESS_TOKEN with corresponding values.
 
 ```bash
-curl -v -X POST -d "{\"temperature\": 25}" https://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json" 
+curl -v -X POST -d "{\"temperature\": 25}" http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json" 
 ```
 {: .copy-code}
 
 For example, $THINGSBOARD_HOST_NAME reference your local installation, $ACCESS_TOKEN is ABC123:
 
 ```bash
-curl -v -X POST -d "{\"temperature\": 25}" https://localhost/api/v1/ABC123/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d "{\"temperature\": 25}" http://localhost/api/v1/ABC123/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 
