@@ -27,21 +27,6 @@ loading dashboard from the config JSON file and adding this dashboard to the gro
 creating a customer with some permissions and making administration actions on it.
 
 ```python
-#      Copyright 2020. ThingsBoard
-#  #
-#      Licensed under the Apache License, Version 2.0 (the "License");
-#      you may not use this file except in compliance with the License.
-#      You may obtain a copy of the License at
-#  #
-#          http://www.apache.org/licenses/LICENSE-2.0
-#  #
-#      Unless required by applicable law or agreed to in writing, software
-#      distributed under the License is distributed on an "AS IS" BASIS,
-#      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#      See the License for the specific language governing permissions and
-#      limitations under the License.
-#
-
 import logging
 from json import load
 # Importing models and REST client class from Professional Edition version
@@ -312,21 +297,6 @@ if __name__ == '__main__':
 The following sample code demonstrates basic concepts of device management API (add/get/delete device, get/save device attributes).
 
 ```python
-#      Copyright 2020. ThingsBoard
-#  #
-#      Licensed under the Apache License, Version 2.0 (the "License");
-#      you may not use this file except in compliance with the License.
-#      You may obtain a copy of the License at
-#  #
-#          http://www.apache.org/licenses/LICENSE-2.0
-#  #
-#      Unless required by applicable law or agreed to in writing, software
-#      distributed under the License is distributed on an "AS IS" BASIS,
-#      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#      See the License for the specific language governing permissions and
-#      limitations under the License.
-#
-
 import logging
 # Importing models and REST client class from Community Edition version
 from tb_rest_client.rest_client_pe import *
