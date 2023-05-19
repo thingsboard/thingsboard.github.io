@@ -1,0 +1,54 @@
+.tb-liquid-content-toggle
+  .panel-heading
+    display: flex
+    flex-direction: row
+    flex-wrap: wrap
+    padding-top: 20px
+    padding-bottom: 30px
+    a.content-toggle-button
+      padding: 10px
+      border: 1px solid #ebebeb
+      border-radius: 4px
+      margin: 0.75em 0.75em
+      cursor: pointer
+      &.active
+        border: 2px solid #2a7dec
+        padding: 9px
+        .content-toggle-button-text
+          font-weight: 600
+          small
+            color: #212529
+      &:not(.active):hover
+        border: 2px solid #212529
+        padding: 9px
+        .content-toggle-button-text
+          small
+            color: #212529
+      .content-toggle-button-text
+        font-size: 18px
+        font-weight: 500
+        color: #333
+        height: 80px
+        width: 260px
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        text-align: center
+        small
+          color: rgba(33, 37, 41, 0.6)
+          line-height: 24px
+
+  .panel-collapse
+    .panel-body
+      > table
+        width: auto !important
+        border: none !important
+        margin: 0 !important
+        display: block
+        > tbody
+          display: block
+          > tr
+            display: block
+            > td
+              display: block
