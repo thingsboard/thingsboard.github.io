@@ -70,8 +70,8 @@ var deviceName = data.end_device_ids.device_id;
 var deviceType = data.end_device_ids.application_ids.application_id;
 
 // If you want to parse incoming data somehow, you can add your code to this function.
-// input: bytes 
-// expected output: 
+// input: bytes
+// expected output:
 //  {
 //    "attributes": {"attributeKey": "attributeValue"},
 //    "telemetry": {"telemetryKey": "telemetryValue"}
@@ -81,9 +81,9 @@ var deviceType = data.end_device_ids.application_ids.application_id;
 function decodeFrmPayload(input) {
     var output = { attributes:{}, telemetry: {} };
     // --- Decoding code --- //
-    
+
     output.telemetry.HEX_bytes = bytesToHex(input);
-    
+
     // --- Decoding code --- //
     return output;
 }
@@ -116,7 +116,10 @@ var telemetryData = toFlatMap(data.uplink_message, excludeFromTelemetryList, fal
 var attributesData = toFlatMap(data, excludeFromAttributesList, false);
 
 // Passing incoming bytes to decodeFrmPayload function, to get custom decoding
-var customDecoding = decodeFrmPayload(base64ToBytes(data.uplink_message.frm_payload));
+var customDecoding = {};
+if (data.uplink_message.get("frm_payload") != null) {
+  customDecoding = decodeFrmPayload(base64ToBytes(data.uplink_message.frm_payload));
+}
 
 // Collecting data to result
 if (customDecoding.?telemetry.size() > 0) {
@@ -134,7 +137,7 @@ var result = {
     deviceName: deviceName,
     deviceType: deviceType,
     telemetry: {
-        ts: timestamp, 
+        ts: timestamp,
         values: telemetry
     },
     attributes: attributes
