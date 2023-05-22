@@ -26,6 +26,8 @@ toc:
     path: /docs/pe/solution-templates/air-quality-monitoring/
   - title: Smart Irrigation
     path: /docs/pe/solution-templates/smart-irrigation/
+  - title: Waste management
+    path: /docs/pe/solution-templates/waste-management/
 - title: Key concepts
   section:
   - title: Entities and Relations
