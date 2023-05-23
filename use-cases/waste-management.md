@@ -58,11 +58,6 @@ Save up to 90% of development time for your waste management solution by utilizi
     </div>
 </div>
 
-<div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://thingsboard.cloud/dashboard/ec564620-82b2-11ed-a624-8360a2a6cb0e?publicId=4978baf0-8a92-11ec-98f9-ff45c37940c6" class="button">View live demo</a>
-</div>
-
-
 ## ThingsBoard advantages
 <section class="usecase-advantages">
     <div class="usecase-background">
