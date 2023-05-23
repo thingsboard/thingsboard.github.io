@@ -40,14 +40,15 @@
             $('.panel-heading.{{contentToggleId}} > a').each(function() {
                 toggleBlocksIds.push($(this).attr("data-target").substring(1));
             });
-
+            let i = 0;
             for (let id of toggleBlocksIds) {
                 toggleBlocksIdsToTocsIds{{contentToggleId}}[id] = [];
                 $('#' + id).find(":header").each(function() {
+                    let heading = $(this);
+                    heading.attr("id", heading.attr("id") + i++);
                     toggleBlocksIdsToTocsIds{{contentToggleId}}[id].push('markdown-toc-' + $(this).attr('id'));
                 });
             }
-            console.log(toggleBlocksIdsToTocsIds{{contentToggleId}}, 'toggleBlocksIdsToTocsIds{{contentToggleId}}');
             window.addEventListener('popstate', onPopState{{contentToggleId}});
 
             onPopState{{contentToggleId}}();
