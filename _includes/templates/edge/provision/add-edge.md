@@ -1,19 +1,6 @@
 In order to connect ThingsBoard Edge you must create <strong>Edge entity</strong> on the ThingsBoard server first.
 
-{% if docsPrefix == 'pe/edge/' %}
-{% capture important_note %}
-**Note**
-
-You can create Edge entity on ThingsBoard server in case you are using **3.3 version or higher**.
-{% endcapture %}
-{% include templates/info-banner.md content= important_note %}
-{% endif %}
-
 #### Create edge entity
-
-{% if docsPrefix == 'pe/edge/' %}
-Please make sure you have ThingsBoard Edge license key from **Step 1** in front of you.
-{% endif %}
 
 {% include images-gallery.html imageCollection="addEdge" showListImageTitles="true" %}
 

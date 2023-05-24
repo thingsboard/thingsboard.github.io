@@ -6,98 +6,95 @@
 {% endif %}
 
 {% capture tb-open-source %}
-ThingsBoard is an open-source IoT platform for data collection, processing, visualization, and device management.
-See [**What is ThingsBoard?**](/docs/getting-started-guides/what-is-thingsboard/) if you are new platform user, before proceeding with ThingsBoard Edge.  
+ThingsBoard is an open-source IoT platform that provides a robust suite of features for data collection, processing, visualization, and device management.
+If you are a new platform user, we suggest reading [**What is ThingsBoard?**](/docs/getting-started-guides/what-is-thingsboard/) before proceeding with ThingsBoard Edge.  
 {% endcapture %}
 {% include templates/info-banner.md content=tb-open-source %}
 
-The **ThingsBoard Edge** is a ThingsBoard's software product for edge computing.
+**ThingsBoard Edge** is a robust software product by ThingsBoard, designed to leverage edge computing.
 
 {% if docsPrefix == 'pe/edge/' %}
-It allows bringing data analysis and management to the edge, where the data created.
-At the same time ThingsBoard Edge PE seamlessly synchronizing with the ThingsBoard PE ([cloud](https://thingsboard.cloud) or on premise installations) according to your business needs.
+With ThingsBoard Edge, data analysis and management is brought to the point of data generation - the edge. 
+It seamlessly synchronizes with ThingsBoard PE, whether it's a [cloud](https://thingsboard.cloud) or an on-premise installation, aligning with your business requirements.
 
-ThingsBoard Edge PE is **single** tenant and(or) **single** customer (Edge PE is going to support multiple customers starting from [v3.5](/docs/pe/edge/roadmap/#v35) release).
-You cannot share ThingsBoard Edge between multiple tenants.
-And devices from multiple tenants can not be connected to a single ThingsBoard Edge.
-In this case you'll need to provision multiple ThingsBoard Edge instances for every tenant.
+ThingsBoard Edge PE is designed for a **single** tenant and/or **multiple** customers.
+As such, you cannot share ThingsBoard Edge between multiple tenants, and devices from different tenants cannot be connected to a single ThingsBoard Edge.
+In such scenarios, separate ThingsBoard Edge instances would need to be provisioned for each tenant.
 {% else %}
-It allows bringing data analysis and management to the edge, where the data created.
-At the same time ThingsBoard Edge seamlessly synchronizing with the ThingsBoard CE ([demo](https://demo.thingsboard.io/) or on premise installations) according to your business needs.
+With ThingsBoard Edge, data analysis and management is brought to the edge, where data generation happens. 
+It synchronizes effortlessly with ThingsBoard CE, whether it's a [demo](https://demo.thingsboard.io/) or an on-premise installation, according to your business requirements.
 
-ThingsBoard Edge CE is **single** tenant and(or) **single** customer.
-You cannot share ThingsBoard Edge between multiple tenants or customers.
-And devices from multiple tenants can not be connected to a single ThingsBoard Edge.
-In this case you'll need to provision multiple ThingsBoard Edge instances for every tenant or customer.
+ThingsBoard Edge CE is designed for a **single** tenant and/or **single** customer. 
+Sharing ThingsBoard Edge between multiple tenants or customers is not feasible, and devices from different tenants or customers cannot be connected to a single ThingsBoard Edge.
+In such cases, multiple ThingsBoard Edge instances need to be provisioned for each tenant or customer.
 {% endif %}
 
 <br>
 
 ![image](/images/edge/overview/edge_overview.svg)
 
-#### ThingsBoard Edge use-cases
+#### Use-Cases for ThingsBoard Edge
 
 - **Autonomous Vehicles**
-  Edge computing makes it possible to collect, process and react to road events with almost no latency. Modern autonomous vehicles produces tons of data - between 5 TB and 20 TB a day. 4G or 5G will not able to provide that network throughput, but with ThingsBoard Edge you are able to filter data. Most of this data should be processed locally, and only subset of this data will be pushed to the cloud.
+  Edge computing allows for the collection, processing, and response to road events with minimal latency. Modern autonomous vehicles generate enormous amounts of data - ranging from 5 TB to 20 TB per day. 4G or 5G networks might not be able to handle such high throughput, but ThingsBoard Edge can filter this data, processing most of it locally, and only pushing a subset of this data to the cloud.
 
 - **Smart Farming**
-  Quickly react to failures of silo aeration systems on a remote site even if connectivity to the cloud from on-field location is pure at the moment.
+  Rapidly respond to failures of silo aeration systems at remote sites, even if the cloud connectivity from the on-field location is currently weak.
 
 - **Smart Houses**
-  Bringing the processing and analyzing data closer to the smart house provides the possibility to secure sensitive user information at the edge. Additionally, it provides a good user experience because of the low latency of smart house solutions - user will get responses from end devices much faster, comparing to connecting edge devices to the cloud to make some decisions.
+  Processing and analyzing data closer to smart houses allows for enhanced security of sensitive user information. The low latency of smart house solutions results in a better user experience, with quicker responses from end devices compared to the time it takes for edge devices to connect to the cloud for decision-making.
 
 - **Security Solutions**
-  It's necessary to react to security violations and threats within seconds and edge provides this possibility. You don't need to care about quality of your connectivity to cloud - decision will be made by local edge engine on a remote site in real-time.
+  Responding to security violations and threats in a matter of seconds is a necessity. Edge computing provides this capability, making the quality of your connectivity to the cloud irrelevant - decisions will be made by the local edge engine on a remote site in real-time.
 
-- **In-hospital Monitoring**
-  To secure data privacy in healthcare devices processing of this data must be done on the edge. Push to the cloud only required pieces of readings from medical devices, while storing all other sensitive data on the edge.
-  Additional benefit from edge processing in this use-case - react to critical medical cases as quickly as possible due to real time processing of data from edge medical devices.
+- **In-Hospital Monitoring**
+  For data privacy in healthcare devices, data processing must occur at the edge. Only necessary pieces of readings from medical devices are pushed to the cloud, while all other sensitive data is stored on the edge. An additional benefit of edge processing in this scenario is the ability to react to critical medical cases as quickly as possible due to real-time processing of data from edge medical devices.
 
 - **Predictive Maintenance**
-  Brings processing and storage of edge device readings closer to the equipment. Analyze tons of data locally and detect changes in the production lines before a failure occurs. Send to the cloud only average readings from productions lines according to your business needs.
+  Processing and storing data from edge devices closer to the equipment enables analysis of vast amounts of data locally. This allows detection of changes in production lines before a failure occurs, with only average readings from production lines being sent to the cloud, according to your business needs.
 
-#### ThingsBoard Edge features
+#### Features of ThingsBoard Edge
 
-With **ThingsBoard Edge** you get the following benefits:
+With **ThingsBoard Edge**, you get:
 
-- **Local deployment and storage** to process and store data from edge (local) devices without connection to the cloud. Push updates to the cloud once connection restored.
+- **Local deployment and storage**: Process and store data from local (edge) devices without connecting to the cloud. Push updates to the cloud once the connection is restored.
 
 ![image](/images/edge/overview/offline_network_.svg)
 
-- **Traffic filtering** to filter data from edge (local) devices on the ThingsBoard Edge service and push to cloud only subset of the data for further processing or storage.
+- **Traffic filtering**: Filter data from local (edge) devices on the ThingsBoard Edge service and push only a subset of the data to the cloud for further processing or storage.
 
 ![image](/images/edge/overview/data_filtering.svg)
 
-- **Local alarms** to react instantly to critical situations on site without connectivity to cloud.
+- **Local alarms**: Instantly respond to critical situations on site, without the need for a cloud connection.
 
 ![image](/images/edge/overview/alarm.svg)
 
-- Monitor local events and timeseries data with a **real-time dashboards**.
-- **Local storage** to store data from the edge devices on the edge if there is no active connection to cloud and push to the cloud updates once connection restored.
-- **Batch Update** thousands of edge configurations in a single click.
+- **Real-time dashboards**: Monitor local events and timeseries data.
+- **Local storage**: Store data from edge devices on the edge if the cloud connection is inactive and push updates to the cloud once the connection is restored.
+- **Batch Update**: Update thousands of edge configurations with a single click.
 
 ![image](/images/edge/overview/update_dashboard.svg)
 
-ThingsBoard Edge inherits features from {{appPrefix}} to provide you the same experience how to connect, manage and process data from your devices.
+ThingsBoard Edge inherits features from {{appPrefix}}, providing the same experience for connecting, managing, and processing data from your devices.
 
-It supports next **ThingsBoard** features:
-* [**Attributes**](/docs/{{cloudDocsPrefix}}user-guide/attributes/) - assign and manage custom attributes to your entities.
-* [**Telemetry**](/docs/{{cloudDocsPrefix}}user-guide/telemetry/) - API for collection of time-series data of your devices.
-* [**Entities and relations**](/docs/{{cloudDocsPrefix}}user-guide/entities-and-relations/) - model physical world objects (e.g. devices and assets) and relations between them.
-* [**Data visualization**](/docs/{{cloudDocsPrefix}}guides#AnchorIDDataVisualization) - develop custom dashboards and widgets.
-* [**Rule engine**](/docs/{{cloudDocsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) - manage data processing & actions on incoming telemetry and events.
-* [**RPC**](/docs/{{cloudDocsPrefix}}user-guide/rpc/) - send remote procedure calls (RPC) **both from edge and cloud sides** to devices and vice versa.
-* [**Audit log**](/docs/{{cloudDocsPrefix}}user-guide/audit-log/) - track user activity.
-* [**API Limits**](/docs/{{cloudDocsPrefix}}user-guide/api-limits/) - control and limit number of API requests from a single host.
+It supports the following **ThingsBoard** features:
+* [**Attributes**](/docs/{{cloudDocsPrefix}}user-guide/attributes/) - Assign and manage custom attributes to your entities.
+* [**Telemetry**](/docs/{{cloudDocsPrefix}}user-guide/telemetry/) - API for collecting time-series data from your devices.
+* [**Entities and relations**](/docs/{{cloudDocsPrefix}}user-guide/entities-and-relations/) - Model physical world objects (e.g., devices and assets) and the relationships between them.
+* [**Data visualization**](/docs/{{cloudDocsPrefix}}guides#AnchorIDDataVisualization) - Develop custom dashboards and widgets.
+* [**Rule engine**](/docs/{{cloudDocsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) - Manage data processing & actions on incoming telemetry and events.
+* [**RPC**](/docs/{{cloudDocsPrefix}}user-guide/rpc/) - Send remote procedure calls (RPC) **from both edge and cloud sides** to devices, and vice versa.
+* [**Audit log**](/docs/{{cloudDocsPrefix}}user-guide/audit-log/) - Track user activity.
+* [**API Limits**](/docs/{{cloudDocsPrefix}}user-guide/api-limits/) - Control and limit the number of API requests from a single host.
 
 {% if docsPrefix == 'pe/edge/' %}
-As well Edge PE supports next **ThingsBoard PE** features:
+Furthermore, Edge PE supports the following **ThingsBoard PE** features:
 * [**Integrations**](/docs/user-guide/integrations/)
-    * Connect existing NB IoT, LoRaWAN, SigFox and other devices with specific payload formats directly to ThingsBoard platform.
+    * Connect existing NB IoT, LoRaWAN, SigFox, and other devices with specific payload formats directly to the ThingsBoard platform.
     * Stream data from devices connected to existing IoT Platforms to enable real-time interactive dashboards and efficient data processing.
-* [**White-labeling**](/docs/pe/user-guide/white-labeling/) - allows you to configure a custom menu, logo, color scheme, email server settings, customer email templates to interact with the users etc.
-* [**Scheduler**](/docs/pe/user-guide/scheduler/) - allows you to schedule various types of events with flexible schedule configuration.
-* [**Entity Groups**](/docs/pe/user-guide/groups/) - allows you to organize entities into groups, assign roles to specific user group, grant specific permissions to specific user groups over specific device groups.
+* [**White-labeling**](/docs/pe/user-guide/white-labeling/) - Configure a custom menu, logo, color scheme, email server settings, and customer email templates to interact with users, etc.
+* [**Scheduler**](/docs/pe/user-guide/scheduler/) - Schedule various types of events with flexible configuration.
+* [**Entity Groups**](/docs/pe/user-guide/groups/) - Organize entities into groups, assign roles to specific user groups, grant specific permissions to specific user groups over specific device groups.
 {% endif %}
 
 #### Project Roadmap

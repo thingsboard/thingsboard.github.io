@@ -6,7 +6,7 @@ description: Provision ThingsBoard Edge on ThingsBoard CE server
 addEdge:
     0:
         image: /images/edge/installation-add-edge-item-1.png
-        title: 'Login to your ThingsBoard <b>CE</b> instance and open "Edge Instances" page.'
+        title: 'Login to your ThingsBoard <b>CE</b> instance and open "Edge management" -> "Instances" page.'
     1:
         image: /images/edge/installation-add-edge-item-2.png  
         title: 'Click on the "+" icon in the top right corner. Select "Add new edge".'
