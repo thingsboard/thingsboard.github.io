@@ -33,4 +33,4 @@ your custom widgets or use a ready-made dashboard and simply import it.
 Imported Dashboard%,%importedDashboard%,%templates/device-library/single-board-computers/device-imported-dashboard.md%br%
 New Dashboard%,%newDashboard%,%templates/device-library/single-board-computers/device-new-dashboard.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="minicomputersDashboard" toggle-spec=minicomputerstogglespec %}  
+{% include content-toggle.liquid content-toggle-id="minicomputersDashboard" toggle-spec=minicomputerstogglespec %}  

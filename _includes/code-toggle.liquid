@@ -1,0 +1,7 @@
+{% capture codeBlock %}
+```{{ include.language }}
+{{ include.code | strip }}
+```
+{:{{ include.classes }}}
+{% endcapture %}
+<table class="includecode"><tr><td>{{ codeBlock | markdownify }}</td></tr></table>
