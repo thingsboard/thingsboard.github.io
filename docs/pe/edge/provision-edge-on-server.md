@@ -6,21 +6,18 @@ description: Provision ThingsBoard Edge on ThingsBoard PE server
 addEdge:
     0:
         image: /images/pe/edge/installation-add-edge-item-1.png
-        title: 'Login to your ThingsBoard <b>PE</b> instance and open "Edge management" -> "Instances" page.'
+        title: 'Sign in to your ThingsBoard <b>PE</b> instance and navigate to the "Edge Management" -> "Instances" page. Click the "+" icon in the top right corner and select "Add Edge".'
     1:
-        image: /images/pe/edge/installation-add-edge-item-3.png  
-        title: 'Click on the "+" icon in the top right corner "Add edge".'
+        image: /images/pe/edge/installation-add-edge-item-2.png
+        title: 'Enter a name for your edge. For instance, "My New Edge". If necessary, update the cloud endpoint. This URL should be accessible from the edge. If the edge is running in a Docker container, using "localhost" is <b>incorrect</b>. It must be the IP address of the machine where ThingsBoard <b>PE</b> is running and accessible by the edge container. If you are using the ThingsBoard <b>Cloud</b> server to evaluate the edge, leave this setting as it is. Click "Add" to create your new edge.'
     2:
-        image: /images/pe/edge/installation-add-edge-item-4.png
-        title: 'Input edge name. For example, "My New Edge". Additionally, please update cloud endpoint if required - this URL should be accessible by the edge. If edge is running in a docker container "localhost" is always <b>wrong</b>. It must be IP address of the machine where ThingsBoard <b>PE</b> is running and accessible by the edge container. If you are using ThingsBoard <b>Cloud</b> server to evaluate edge please leave it as is. Click "Add" to add the edge.'
-    3:
-        image: /images/pe/edge/installation-add-edge-item-5.png
-        title: 'Now your edge should be listed first, since table sort edges using created time by default.'
+        image: /images/pe/edge/installation-add-edge-item-3.png
+        title: 'Your new edge should now appear at the top of the list, as entries are sorted by creation time by default.'
 
 copyEdgeCredentials:
     0:
         image: /images/pe/edge/installation-copy-edge-credentials-item-1.png
-        title: 'Click "Copy Edge key" and "Copy Edge secret" in edge details to copy your edge credentials to the clipboard and store them to some place, these values will be used in further steps.'
+        title: 'Click on "Copy Edge Key" and "Copy Edge Secret" in the edge details section. This will copy your edge credentials to your clipboard. Be sure to store them in a secure location, as these values will be needed in the following steps.'
     
 ---
 

@@ -3,13 +3,13 @@
 
 {% if docsPrefix == 'pe/edge/' %}
 {% assign appPrefix = "ThingsBoard PE" %}
-{% assign step1Link = "/docs/pe/edge/provision-edge-on-server/" %}
+{% assign provisionEdgeOnCloudLink = "/docs/pe/edge/provision-edge-on-server/" %}
 {% else %}
 {% assign appPrefix = "ThingsBoard" %}
-{% assign step1Link = "/docs/edge/provision-edge-on-server/" %}
+{% assign provisionEdgeOnCloudLink = "/docs/edge/provision-edge-on-server/" %}
 {% endif %}
 
-To start using ThingsBoard **Edge** you need to have {{appPrefix}} server that supports edge functionality up and running.
+To begin using ThingsBoard **Edge**, you must have a {{appPrefix}} server supporting edge functionality up and running.
 
 {% if docsPrefix == 'pe/edge/' %}
 {% include templates/edge/obtain-pe-cloud.md %}
@@ -18,6 +18,7 @@ To start using ThingsBoard **Edge** you need to have {{appPrefix}} server that s
 {% endif %}
  
 #### Edge provision on cloud
-Additionally, you will need to provision ThingsBoard **Edge** on cloud server. Please follow [Step 1]({{step1Link}}) first if you skipped it.
 
-Once ThingsBoard **Edge** provisioned on cloud server please follow installation steps below.
+Additionally, you will need to provision ThingsBoard **Edge** on a cloud server. If you haven't done so yet, please follow the [Provision Edge on Cloud]({{provisionEdgeOnCloudLink}}) guide.
+
+Once the ThingsBoard **Edge** is provisioned on the cloud server, please follow the installation steps provided below.

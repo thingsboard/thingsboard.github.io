@@ -41,8 +41,8 @@ Please change **CLOUD_RPC_SSL_ENABLED** to **true** as well.
 {% include templates/info-banner.md content=cloud_rpc_host %}
 
 {% capture local-deployment %}
-If ThingsBoard Edge is going to be running on the same machine where **{{appPrefix}}** server (cloud) is running, you'll need to update docker compose port mapping to avoid port collision between ThingsBoard server and ThingsBoard Edge.
- 
+If ThingsBoard Edge is set to run on the same machine where the **{{appPrefix}}** server is operating, you need to update additional configuration parameters to prevent port collision between the ThingsBoard server and ThingsBoard Edge. 
+
 Please update next lines of `docker-compose.yml` file:
 <br>**...**
 <br>**ports:**
@@ -51,7 +51,7 @@ Please update next lines of `docker-compose.yml` file:
 <br> - "**15683-15688**:5683-5688/udp"
 <br>**...**
 
-Please make sure ports above (18080, 11883, 15683-15688) are not used by any other application.
+Ensure that the ports listed above (18080, 11883, 15683-15688) are not being used by any other application.
 
 {% endcapture %}
 {% include templates/info-banner.md content=local-deployment %}
