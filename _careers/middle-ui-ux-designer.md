@@ -11,7 +11,7 @@ layout: career
 ### Requirements:
 2+ years experience with UI/UX design, understanding of the methodologies and processes (portfolio proving this experience);
 
-Experience with Figm2+ years experience with UI/UX design, understanding of the methodologies and processes (portfolio proving this experience);
+Experience with Figmа;
 
 Experience with design of the data visualization tools: charts, maps, infographics;
 
