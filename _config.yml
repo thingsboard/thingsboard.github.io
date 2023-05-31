@@ -88,3 +88,5 @@ release:
   edge_full_ver: 3.5.0EDGE
   pe_edge_ver: 3.5pe
   pe_edge_full_ver: 3.5.0EDGEPE
+  ce_flutter_app_ver: 1.0.6
+  pe_flutter_app_ver: 1.0.7
