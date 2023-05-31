@@ -34,25 +34,37 @@ To install ThingsBoard MQTT Broker execute the following command:
 
 ## Step 3. Running
 
-Execute the following command to run installation:
+Execute the following command to deploy ThingsBoard MQTT Broker:
 
 ```bash
 ./k8s-deploy-tb-broker.sh
 ```
 {: .copy-code}
 
-After a while when all resources will be successfully started you can open `http://{your-cluster-ip}:30001` in your browser (for ex. `http://172.17.0.3:30001`).
-You should see the ThingsBoard MQTT Broker login page.
-**Note:** you can check your Minikube IP with this command:
-
-```
+After a while when all resources will be successfully started you can open `http://{your-cluster-ip}:30001` in your browser (e.g. [http://192.168.49.2:30001](http://192.168.49.2:30001)).
+You can check your cluster IP using command:
+```bash
 minikube ip
 ```
 {: .copy-code}
 
-Use the following default credentials:
+You should see the ThingsBoard MQTT Broker login page.
+Use the following default credentials for **System Administrator**:
 
-- **System Administrator**: sysadmin@thingsboard.org / sysadmin
+**Username**:
+```
+sysadmin@thingsboard.org
+```
+{: .copy-code}
+**Password**:
+```
+sysadmin
+```
+{: .copy-code}
+
+On the first user log-in you will be asked to change the default password to the preferred one and then re-login.
+
+## Step 4. Logs, delete statefulsets and services
 
 In case of any issues, you can examine service logs for errors.
 For example to see ThingsBoard MQTT Broker node logs execute the following commands:
@@ -67,18 +79,39 @@ kubectl get pods -l app=tb-broker
 2) Fetch logs of the tb-broker pod:
 
 ```bash
-kubectl logs -f [tb-broker-pod-name]
+kubectl logs -f TB_BROKER_POD_NAME
 ```
 {: .copy-code}
 
 Where:
 
-- `tb-broker-pod-name` - tb-broker pod name obtained from the list of the running tb-broker pods.
+- `TB_BROKER_POD_NAME` - tb-broker pod name obtained from the list of the running tb-broker pods.
 
-Or use `kubectl get pods` to see the state of all the pods.
-Or use `kubectl get services` to see the state of all the services.
-Or use `kubectl get deployments` to see the state of all the deployments.
-See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) command reference for details.
+Or use the next command to see the state of all the pods.
+```bash
+kubectl get pods
+```
+{: .copy-code}
+
+Use the next command to see the state of all the services.
+```bash
+kubectl get services
+```
+{: .copy-code}
+
+Use the next command to see the state of all the deployments.
+```bash
+kubectl get deployments
+```
+{: .copy-code}
+
+Use the next command to see the state of all the statefulsets.
+```bash
+kubectl get statefulsets
+```
+{: .copy-code}
+
+See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) command reference for more details.
 
 Execute the following command to delete ThingsBoard MQTT Broker nodes:
 
