@@ -24,14 +24,14 @@ If you are looking for a cluster installation instruction, please visit [cluster
 Create docker-compose file for ThingsBoard MQTT Broker:
 
 ```bash
-sudo nano docker-compose.yml
+nano docker-compose.yml
 ```
 {: .copy-code}
 
 Add the following lines to the yml file.
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   postgres:
     restart: always
@@ -45,7 +45,7 @@ services:
     - ~/.tb-mqtt-broker-data/postgres:/var/lib/postgresql/data
   zookeeper:
     restart: always
-    image: "zookeeper:3.5"
+    image: "zookeeper:3.8"
     ports:
       - "2181"
     environment:
@@ -53,7 +53,7 @@ services:
       ZOO_SERVERS: server.1=zookeeper:2888:3888;zookeeper:2181
   kafka:
     restart: always
-    image: "wurstmeister/kafka:2.13-2.7.0"
+    image: "wurstmeister/kafka:2.13-2.8.1"
     depends_on:
       - zookeeper
     ports:
@@ -104,8 +104,8 @@ Where:
 - `SECURITY_MQTT_ENABLED: false`         - by default security is disabled. **Note**: make sure to configure security in production environment
 
 
-Before starting Docker container run following commands to create a directory for storing data and logs and then change its owner to docker container user,
-to be able to change user, **chown** command is used, which requires sudo permissions (command will request password for a sudo access):
+Before starting Docker container run following commands to create a directory for storing data and logs and then change its owner to docker container user.
+To be able to change user, **chown** command is used, which requires sudo permissions (command will request password for a sudo access):
 
 ```
 mkdir -p ~/.tb-mqtt-broker-data/log && mkdir -p ~/.tb-mqtt-broker-data/conf && mkdir -p ~/.tb-mqtt-broker-data/postgres && sudo chown -R 799:799 ~/.tb-mqtt-broker-data
@@ -116,12 +116,12 @@ mkdir -p ~/.tb-mqtt-broker-data/log && mkdir -p ~/.tb-mqtt-broker-data/conf && m
 
 ## Installation
 
-Set the terminal in the directory which contains the `docker-compose.yml` file and execute the following command to up install ThingsBoard MQTT Broker:
+Set the terminal to the directory which contains the `docker-compose.yml` file and execute the following command to install ThingsBoard MQTT Broker:
 
 ```
-docker-compose pull
-docker-compose up -d postgres
-docker-compose run --no-deps --rm -e INSTALL_TB=true tb-mqtt-broker
+docker compose pull
+docker compose up -d postgres
+docker compose run --no-deps --rm -e INSTALL_TB=true tb-mqtt-broker
 ```
 {: .copy-code}
 
@@ -130,39 +130,48 @@ docker-compose run --no-deps --rm -e INSTALL_TB=true tb-mqtt-broker
 To run the broker execute the following command:
 
 ```
-docker-compose up -d
+docker compose up -d
 ```
 {: .copy-code}
 
 
-After executing this command you can open `http://{your-host-ip}:8083` in your browser (for ex. `http://localhost:8083`).
-You should see ThingsBoard MQTT Broker login page. Use the following default credentials:
+After executing this command you can open `http://{your-host-ip}:8083` in your browser (e.g. [http://localhost:8083](http://localhost:8083)).
+You should see ThingsBoard MQTT Broker login page. Use the following default credentials for **System Administrator**:
 
-- **System Administrator**: sysadmin@thingsboard.org / sysadmin
+**Username**:
+```
+sysadmin@thingsboard.org
+```
+{: .copy-code}
+**Password**:
+```
+sysadmin
+```
+{: .copy-code}
 
-You can always change password in account profile page.
+On the first user log-in you will be asked to change the default password to the preferred one and then re-login.
 
 ## Stop and start commands
 
 In case of any issues you can examine service logs for errors.
-For example to see ThingsBoard node logs execute the following command:
+For example to see ThingsBoard MQTT Broker logs execute the following command:
 
 ```
-docker-compose logs -f tb-mqtt-broker
-```
-{: .copy-code}
-
-To stop the container:
-
-```
-docker-compose stop
+docker compose logs -f tb-mqtt-broker
 ```
 {: .copy-code}
 
-To start the container:
+To stop the containers:
 
 ```
-docker-compose start
+docker compose stop
+```
+{: .copy-code}
+
+To start the containers:
+
+```
+docker compose start
 ```
 {: .copy-code}
 
