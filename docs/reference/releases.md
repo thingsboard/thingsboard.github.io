@@ -8,6 +8,7 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.5.1 (May 31, 2023) {#v351}
 
 ## v3.5.0 (May 9, 2023) {#v35}
 
