@@ -85,7 +85,7 @@ services:
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
       TB_KAFKA_SERVERS: kafka:9092
-      SECURITY_MQTT_ENABLED: 'false'
+      SECURITY_MQTT_BASIC_ENABLED: 'false'
     volumes:
       - ~/.tb-mqtt-broker-data/conf:/config
       - ~/.tb-mqtt-broker-data/log:/var/log/thingsboard-mqtt-broker

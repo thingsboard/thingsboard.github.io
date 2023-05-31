@@ -35,9 +35,9 @@ cd thingsboard-mqtt-broker/docker
 ```
 {: .copy-code}
 
-## Step 3. Running
+## Step 3. Installation
 
-Execute the following command to create log folders for the services and chown of these folders to the docker container users.
+Execute the following command to create log folders for the services and change owner of these folders to the docker container users.
 To be able to change user, **chown** command is used, which requires sudo permissions (script will request password for a sudo access):
 
 ```bash
@@ -52,6 +52,8 @@ Execute the following command to run installation:
 ```
 {: .copy-code}
 
+## Step 4. Running
+
 Execute the following command to start services:
 
 ```bash
@@ -59,22 +61,45 @@ Execute the following command to start services:
 ```
 {: .copy-code}
 
-After a while when all services will be successfully started you can make requests to `http://{your-host-ip}:8083` in you browser (for ex. `http://localhost:8083`)
-and connect using MQTT protocol on 1883 port (for ex. `http://localhost:1883`).
+After a while when all services will be successfully started you can make requests to `http://{your-host-ip}:8083` 
+in you browser (e.g. [http://localhost:8083](http://localhost:8083)) and connect clients using MQTT protocol on 1883 port.
 
-{% include templates/mqtt-broker/authentication.md %}
+Use the following default credentials for **System Administrator**:
+
+**Username**:
+```
+sysadmin@thingsboard.org
+```
+{: .copy-code}
+**Password**:
+```
+sysadmin
+```
+{: .copy-code}
+
+On the first user log-in you will be asked to change the default password to the preferred one and then re-login.
+
+## Step 5. Logs, stop and start commands
 
 In case of any issues you can examine service logs for errors.
 For example to see ThingsBoard Mqtt Broker logs execute the following command:
 
 ```bash
-docker-compose logs -f tb-mqtt-broker-1
+docker compose logs -f tb-mqtt-broker-1
 ```
 {: .copy-code}
 
-Or use `docker-compose ps` to see the state of all the containers.
-Use `docker-compose logs --f` to inspect the logs of all running services.
-See [docker-compose logs](https://docs.docker.com/compose/reference/logs/) command reference for details.
+Or use the following command to see the state of all the containers.
+```bash
+docker compose ps
+```
+{: .copy-code}
+Use next command to inspect the logs of all running services.
+```bash
+docker compose logs --f
+```
+{: .copy-code}
+See [docker compose logs](https://docs.docker.com/compose/reference/logs/) command reference for more details.
 
 Execute the following command to stop services:
 
