@@ -38,4 +38,9 @@ notitle: "true"
         <h5 class="title">Industry 4.0</h5>
         <p></p>
     </a>
+    <a href="/industries/warehouse-monitoring/" class="card">
+        <img src="/images/sb-s-icon.svg">
+        <h5 class="title">Warehouse monitoring</h5>
+        <p></p>
+    </a>
 </div>

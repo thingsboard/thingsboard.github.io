@@ -123,5 +123,5 @@ description:
 </section>
 
 <section id="bottom">
-    <a href="/pricing/?active=thingsboard-edge" class="bottom-button">Try Edge</a>
+    <a href="/docs/edge/getting-started/" class="bottom-button">Try Edge now</a>
 </section>

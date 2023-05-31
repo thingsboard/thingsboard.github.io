@@ -10,7 +10,7 @@ docker-compose.yml
 Add the following line to the yml file:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytb:
     restart: always

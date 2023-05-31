@@ -20,6 +20,14 @@ toc:
     path: /docs/pe/solution-templates/fleet-tracking/
   - title: Water metering
     path: /docs/pe/solution-templates/water-metering/
+  - title: Smart retail
+    path: /docs/pe/solution-templates/smart-retail/
+  - title: Air quality monitoring
+    path: /docs/pe/solution-templates/air-quality-monitoring/
+  - title: Smart Irrigation
+    path: /docs/pe/solution-templates/smart-irrigation/
+  - title: Waste management
+    path: /docs/pe/solution-templates/waste-management/
 - title: Key concepts
   section:
   - title: Entities and Relations
@@ -28,10 +36,8 @@ toc:
     path: /docs/pe/user-guide/tenant-profiles/
   - title: Device Profiles
     path: /docs/pe/user-guide/device-profiles/
-    new: true
   - title: Asset Profiles
     path: /docs/pe/user-guide/asset-profiles/
-    new: true
   - title: Attributes
     path: /docs/pe/user-guide/attributes/
   - title: Time-series data
@@ -42,6 +48,8 @@ toc:
     path: /docs/pe/user-guide/rpc/
   - title: OTA updates
     path: /docs/pe/user-guide/ota-updates/
+  - title: Notification center
+    path: /docs/pe/user-guide/notifications/
     new: true
 - title: Dashboards
   section:
@@ -49,10 +57,20 @@ toc:
     path: /docs/pe/user-guide/dashboards/
   - title: Aliases
     path: /docs/pe/user-guide/ui/aliases/
-  - title: Widget Actions
-    path: /docs/pe/user-guide/ui/widget-actions/
-  - title: Widgets Library
-    path: /docs/pe/user-guide/ui/widget-library/
+  - title: Widgets
+    section:
+      - title: Widget Actions
+        path: /docs/pe/user-guide/ui/widget-actions/
+      - title: Widgets Library
+        path: /docs/pe/user-guide/ui/widget-library/
+      - title: Chart Widgets
+        path: /docs/pe/user-guide/ui/chart-widget/
+      - title: Entities Table widget
+        path: /docs/pe/user-guide/ui/entity-table-widget/
+      - title: Trip Animation Widget
+        path: /docs/pe/user-guide/ui/trip-animation-widget/
+      - title: Advanced data key configuration
+        path: /docs/pe/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
   section:
   - title: Getting Started
@@ -61,7 +79,6 @@ toc:
     path: /docs/pe/user-guide/rule-engine-2-0/overview/
   - title: Queues
     path: /docs/pe/user-guide/rule-engine-2-5/queues/
-    new: true
   - title: Nodes
     section:
     - title: Filter Nodes
@@ -108,7 +125,7 @@ toc:
     path: /docs/user-guide/integrations/opc-ua/
   - title: Actility ThingPark
     path: /docs/user-guide/integrations/thingpark/
-  - title: TheThingsNetwork
+  - title: TheThingsStack
     path: /docs/user-guide/integrations/ttn/
   - title: TheThingsIndustries
     path: /docs/user-guide/integrations/tti/
@@ -124,6 +141,9 @@ toc:
     path: /docs/user-guide/integrations/ibm-watson-iot/
   - title: Azure Event Hub
     path: /docs/user-guide/integrations/azure-event-hub/
+  - title: Azure Service Bus
+    path: /docs/user-guide/integrations/azure-service-bus/
+    new: true
   - title: Azure IoT Hub
     path: /docs/user-guide/integrations/azure-iot-hub/
   - title: TCP
@@ -134,6 +154,9 @@ toc:
     path: /docs/user-guide/integrations/sigfox/
   - title: Ocean Connect
     path: /docs/user-guide/integrations/ocean-connect/
+  - title: Tuya
+    path: /docs/user-guide/integrations/tuya/
+    new: true
   - title: Custom Integration development guide
     path: /docs/user-guide/integrations/custom/
   - title: Notifications and Alarms on your smartphone using Telegram Bot
@@ -160,7 +183,6 @@ toc:
       path: /docs/pe/user-guide/advanced-filters/
     - title: Version Control
       path: /docs/pe/user-guide/version-control/
-      new: true
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning
@@ -175,6 +197,9 @@ toc:
       path: /docs/pe/user-guide/csv-xls-data-export/
     - title: File Storage
       path: /docs/pe/user-guide/file-storage/
+    - title: ThingsBoard Expression Language (TBEL)
+      path: /docs/pe/user-guide/tbel/
+      new: true
 - title: Security
   section:
   - title: Enable HTTPS
@@ -185,7 +210,6 @@ toc:
     path: /docs/pe/user-guide/rbac/
   - title: Two-Factor Authentication
     path: /docs/pe/user-guide/two-factor-authentication/
-    new: true
   - title: OAuth 2 Support
     path: /docs/pe/user-guide/oauth-2-support/
   - title: HTTP Transport
@@ -236,18 +260,13 @@ toc:
     path: /docs/pe/user-guide/ui/dashboards/
   - title: SMS Provider Settings
     path: /docs/pe/user-guide/ui/sms-provider-settings/
+  - title: Slack Settings
+    path: /docs/pe/user-guide/ui/slack-settings/
+    new: true
   - title: Mail Settings
     path: /docs/pe/user-guide/ui/mail-settings/
-  - title: Widgets
-    section:
-      - title: Chart Widgets
-        path: /docs/pe/user-guide/ui/chart-widget/
-      - title: Entity Table Widget
-        path: /docs/pe/user-guide/ui/entity-table-widget/
-      - title: Trip Animation Widget
-        path: /docs/pe/user-guide/ui/trip-animation-widget/
-      - title: Advanced data key configuration
-        path: /docs/pe/user-guide/ui/advanced-data-key-configuration/
+  - title: JWT Security Settings
+    path: /docs/pe/user-guide/ui/jwt-security-settings/
 - title: Contribution Guide
   section:
     - title: How to contribute your device integration guide

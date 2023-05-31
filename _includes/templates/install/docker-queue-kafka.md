@@ -11,7 +11,7 @@ nano docker-compose.yml
 Add the following lines to the yml file.
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   zookeeper:
     restart: always

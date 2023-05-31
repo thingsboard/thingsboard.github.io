@@ -1,6 +1,18 @@
-The command to send a message to the CoAP server that is hosted on **int.thingsboard.cloud** will look like this:
+{% if docsPrefix == "pe/" %}
+Use this command to send the message to the CoAP server that is hosted on **localhost**. Replace **$YOUR_COAP_ENDPOINT_URL** with corresponding values.
+{% endif %}
+{% if docsPrefix == "paas/" %}
+Use this command to send the message to the CoAP server that is hosted on **int.thingsboard.cloud**. Replace **$YOUR_COAP_ENDPOINT_URL** with corresponding values.
+{% endif %}
 
 ```shell
-echo -e -n '\x53\x4e\x2d\x30\x30\x31\x64\x65\x66\x61\x75\x6c\x74\x32\x35\x2e\x37\x36\x39' | coap-client -m post coap://int.thingsboard.cloud/i/2ab11247-0fd2-20d6-9e3e-02c917561b45 -t application/octet-stream -f-
+echo -e -n '\x53\x4e\x2d\x30\x30\x31\x64\x65\x66\x61\x75\x6c\x74\x32\x35\x2e\x37\x36\x39' | coap-client -m post $YOUR_COAP_ENDPOINT_URL -t application/octet-stream -f-
 ```
 {: .copy-code}
+
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/coap/terminal-binary-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/coap/terminal-binary-paas.png)
+{% endif %}

@@ -8,6 +8,118 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
   
+
+## v3.5.0 (May 9, 2023) {#v35}
+
+Everything from [TB CE v3.5](https://github.com/thingsboard/thingsboard/releases/tag/v3.5) with the following features bug fixes.
+
+**Improvements**
+
+* Core & Rule Engine
+
+  * Azure Service bus integration;
+  * Tuya integration;
+  * Ability to create relation between DEVICE and DATA CONVERTER;
+
+* UI
+  
+  * New solution template "Waste Monitoring";
+  * Support of new menu and entity tables;
+  
+* Edge
+  
+  * Edge computing support for solution templates;
+
+**Bug fixes**
+
+* Fixed relation query for customer level;
+* Fixed error flood after reboot of disabled integration;
+* Fixed deletion of solution template entities;
+* Fixed solution template scheduler event creation;
+* Fixed column key mapping for asset_profile;
+* Fixed search for entity views by customer;
+* fixed opc integration host configuration;
+* Fixed no outgoing message issue when doCalculate fails in Aggregate Latest node;
+* Fixed telemetry/attribute update while device bulk import;
+* Fixed incorrect validation credentials in Azure Iot Hub integration;
+  
+## v3.4.4 (February 7, 2023)
+  
+Everything from [TB CE v3.4.4](https://github.com/thingsboard/thingsboard/releases/tag/v3.4.4) with the following bug fixes.
+
+**Bug fixes**
+
+* Core & Rule Engine:
+  
+  * Fixed check alarm permissions by originator;
+  * Fixed TBEL to MVEL in air quality monitoring template;
+  * Fixed SI attribute filtering;
+  * Fixed 'twilio voice' node;
+
+* UI:
+  
+  * Fixed search in entity group tables;
+  * Fixed applying custom translations on loading with slow network;
+  * Fixed some browsers don't open integration statistics when clicking 'Daily activity' column in Integration table;
+  
+## v3.4.3 (December 21, 2022)
+
+Everything from [TB CE v3.4.3](https://github.com/thingsboard/thingsboard/releases/tag/v3.4.3) with the following improvements and bug fixes.
+
+* Core & Rule Engine:
+  * Air Quality Monitoring solution template;
+  
+* UI:
+  * MQTT integration credentials password is optional;
+
+**Bug fixes**
+
+* Core & Rule Engine:
+  
+  * Fixed device bulk import with empty credentials;
+  * Fixed upgrade from CE;
+  * Fixed remote integrations update;
+  * Fixed NPE on WS subscription for sysadmin;
+
+* UI:
+  
+  * Fixed Things Park integration validation;
+  * Fixed validation in bulk import and improvement bulk import for Edge;
+  * Fixed scheduler update configuration;
+  * Fixed Azure IoT Hub integration validation;
+  
+* Edge:
+
+  * Fixed NPE during sync process in case edge owner is customer;
+
+## v3.4.2 (December 1, 2022)
+
+Everything from [TB CE v3.4.2](https://github.com/thingsboard/thingsboard/releases/tag/v3.4.2) with the following improvements and bug fixes.
+
+* Core:
+  * Real-time sync WhiteLabeling, LoginWhiteLabeling and CustomTranslation to edge;
+  * Smart irrigation solution template;  
+  * Integration Monitoring via Prometheus;
+  * Improved 'alarms count v2' rule node;
+  * Partitioning and TTL for BLOB entities;
+
+* UI:
+  * Improved the design of the integrations UI: added creation dialog, statistics and states to the integration table;
+
+**Bug Fixes**
+
+* Core:
+  * [#7415](https://github.com/thingsboard/thingsboard/issues/7415) Fixed Entity Group Name filter;
+  * [#7225](https://github.com/thingsboard/thingsboard/issues/7225) Fixed Scheduler timezone gap;
+  * Fixed Scheduler bug with incorrect "Start time";  
+  * Fixed binary uplink data converter;
+  * Fixed issue with overwrite of the WL settings ;
+
+* UI:
+  * Fixed display of the host field value for TTN/TTI integrations;
+
+  
+  
 ## v3.4.1 (August 18, 2022)
 
 Everything from [TB CE v3.4.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.4.1) with the following improvements and bug fixes.

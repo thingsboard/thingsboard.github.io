@@ -74,18 +74,18 @@ collections:
     output: true
 
 release:
-  branch: release-3.4
-  branch_minor_next: develop/3.4.2
+  branch: release-3.5
   branch_major_next: develop/3.5
-  ver: 3.4.1
-  ce_ver: 3.4.1
-  ce_tag: v3.4.1
-  ce_full_ver: 3.4.1
-  pe_ver: 3.4.1pe
-  pe_full_ver: 3.4.1PE
-  edge_ver: 3.4.1
-  edge_tag: v3.4.1
-  edge_full_ver: 3.4.1EDGE
-  pe_edge_ver: 3.4.1pe
-  pe_edge_full_ver: 3.4.1EDGEPE
+  ver: 3.5
+  ce_ver: 3.5
+  ce_tag: v3.5
+  ce_full_ver: 3.5.0
+  pe_ver: 3.5pe
+  pe_full_ver: 3.5.0PE
+  # DO NOT UPDATE EDGE VERSION WITH CE/PE UPDATE - EDGE RELEASED ONCE THINGSBOARD.CLOUD IS UPDATED
+  edge_ver: 3.5
+  edge_tag: v3.5
+  edge_full_ver: 3.5.0EDGE
+  pe_edge_ver: 3.5pe
+  pe_edge_full_ver: 3.5.0EDGEPE
   broker_full_ver: 1.0.0

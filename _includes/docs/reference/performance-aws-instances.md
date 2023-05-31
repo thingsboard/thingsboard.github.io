@@ -103,7 +103,7 @@ Setup the ThingsBoard instance on AWS EC2
 Use the Docker Compose file listed below to setup the AWS EC2 instance based on the [instruction](/docs/{{docsPrefix}}reference/performance/setup-aws-instances/).  
 
 ```bash
-version: '3'
+version: '3.0'
 services:
   postgres:
     image: "postgres:14"
@@ -344,7 +344,7 @@ Take a note that Zookeeper is required to run Kafka these days.
 Here is the docker-compose file to set up _ThingsBoard + Postgresql + Zookeeper + Kafka_ on AWS EC2 instance based on the [instruction](/docs/{{docsPrefix}}reference/performance/setup-aws-instances/).
 
 ```bash
-version: '3'
+version: '3.0'
 services:
   zookeeper:
     image: docker.io/bitnami/zookeeper:3.7
@@ -559,7 +559,7 @@ It is more than x5 times (152 / 29) cheaper than PostgreSQL disk consumption!
 
 {% include images-gallery.html imageCollection="cassandra-25k-10k-30k-disk" %}
 
-Finally, let's check the JVM state on each Thingboard, Zookeeper, Kafka and Cassandra
+Finally, let's check the JVM state on each Thingsboard, Zookeeper, Kafka and Cassandra
 Let's forward JMX port with SSH to connect and monitor all Java applications presented.
 
 ```bash
@@ -600,7 +600,7 @@ Use the Docker Compose file listed below to setup the AWS EC2 instance based on 
 Here the docker-compose with ThingsBoard + Postgresql + Zookeeper + Kafka + **Cassandra**
 
 ```bash
-version: '3'
+version: '3.0'
 services:
   cassandra:
     image: bitnami/cassandra:4.0
@@ -764,7 +764,7 @@ Use the Docker Compose file listed below to setup the AWS EC2 instance based on 
 Here the docker-compose with ThingsBoard + Postgresql + Zookeeper + Kafka + **Cassandra**
 
 ```bash
-version: '3'
+version: '3.0'
 services:
   cassandra:
     image: bitnami/cassandra:4.0
@@ -994,7 +994,7 @@ Use the Docker Compose file listed below to setup the AWS EC2 instance based on 
 Here the docker-compose with ThingsBoard + Postgresql + Zookeeper + Kafka + **Cassandra**
 
 ```bash
-version: '3'
+version: '3.0'
 services:
   cassandra:
     image: bitnami/cassandra:4.0

@@ -310,8 +310,10 @@ Here are the other integration field values:
 - Security: None (can be *Basic128Rsa15 / Basic256 / Basic256Sha256 / None*)
 - Identity: Anonymous (can be *Anonymous / Username*)
 - Mapping:
-    - Device Node Pattern: `Objects\.BuildingAutomation\.AirConditioner_\d+$` (regular expression used to match scanned OPC UA Node FQNs/IDs to device name.)
     - MappingType: Fully Qualified Name (can be *Fully Qualified Name* / *ID*)
+    - Device Node Pattern: `Objects\.BuildingAutomation\.AirConditioner_\d+$` (regular expression used to match scanned OPC UA Node FQNs/IDs to device name. 
+  In this sample, path on OPC UA Explorer is `Objects/BuildingAutomation/AirConditioner_X`, where X is a number from 1 to *N*. 
+  That's why we use `Objects\.BuildingAutomation\.AirConditioner_\d+$` as regular expression, because `\d+` means any number from 1 to *N*, and `$` means the end of the string)
     - Subscription tags (list of node tags (**Path**) to subscribe with mappings to keys (**Key**) used in the output message):
         - state - State
         - temperature - Temperature

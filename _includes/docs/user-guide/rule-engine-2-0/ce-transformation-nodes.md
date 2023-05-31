@@ -77,7 +77,7 @@ All fields in resulting object are optional and will be taken from original mess
 
 Outbound Message from this Node will be new Message that was constructed using configured JavaScript function.
 
-JavaScript transform function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-javascript-functions).
+JavaScript transform function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
 <br/>
 **Example**
@@ -132,7 +132,7 @@ You can see real life example, how to use this node in those tutorials:
 
 Transforms message to Email Message by populating email fields using values derived from Message metadata.
 Set 'SEND_EMAIL' output Message type that can be accepted later by [**Send Email Node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#send-email-node).
-All email fields can be configured to use values from metadata.
+All email fields can be configured to use values from metadata. Supports sending of HTML pages and images.
   
 ![image](/images/user-guide/rule-engine-2-0/nodes/transformation-to-email-config.png)
 
@@ -146,8 +146,10 @@ In this case value of **deviceName** can be referenced as <code>${deviceName}</c
  
 <br/>
 
-Additionally this node can prepare email attachments if incoming message metadata contains **attachments** field with reference to files stored in DataBase. 
+If you like to send html or image you have to choose **HTML** or **Dynamic** in field **Mail Body type**. See [send HTML or image inside email](/docs/user-guide/rule-engine-2-0/tutorials/send-email-html)
+examples.
 
+Additionally, this node can prepare email attachments if incoming message metadata contains **attachments** field with reference to files stored in DataBase.
 **NOTE**: This is part of [File Storage](/docs/{{docsPrefix}}user-guide/file-storage/) feature supported by [ThingsBoard Professional Edition](/products/thingsboard-pe/).
 
 <br/>
@@ -155,5 +157,5 @@ Additionally this node can prepare email attachments if incoming message metadat
 You can see the real life example, where this node is used, in the next tutorial:
 
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
-
+- [Send HTML or image inside email](/docs/user-guide/rule-engine-2-0/tutorials/send-email-html)
 

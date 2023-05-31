@@ -29,14 +29,22 @@ Rule Engine Message contains the following information:
 Rule Node is a basic component of Rule Engine that process single incoming message at a time and produce one or more outgoing messages. 
 Rule Node is a main logical unit of the Rule Engine. Rule Node can filter, enrich, transform incoming messages, perform action or communicate with external systems.
 
-#### Rule Node Relation
+#### Rule Node Connection
 
-Rule Nodes may be related to other rule nodes. Each relation has relation type, a label used to identify logical meaning of the relation. 
+Rule Nodes may be connected to other rule nodes. Each relation has relation type, a label used to identify logical meaning of the relation. 
 When rule node produces the outgoing message it always specifies the relation type which is used to route message to next nodes.
  
 Typical rule node relations are "Success" and "Failure". 
 Rule nodes that represent logical operations may use "True" or "False". 
-Some specific rule nodes may use completely different relation types, for example: "Post Telemetry", "Attributes Updated", "Entity Created", etc. 
+Some specific rule nodes may use completely different relation types, for example: "Post Telemetry", "Attributes Updated", "Entity Created", etc.
+
+
+Some rule nodes support custom connection names. Just type your custom connection name and click the "Create a new one!" link:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/custom-connection.png)
+
+
+All connection names are **case-sensitive**.
 
 #### Rule Chain
 
@@ -266,6 +274,72 @@ List of the predefined Message Types is presented in the following table:
         </td>
       </tr>
       <tr>
+        <td>ALARM_ASSIGNED</td>
+        <td><b>Alarm Assigned</b></td>
+        <td>Event produced when an alarm was assigned to some user</td>
+        <td> 
+            All fields from original Message Metadata
+            <br><b>entityName</b> - name of alarm
+            <br><b>entityType</b> - ALARM
+            <br><b>userEmail</b> - user email
+            <br><b>userFirstName</b> - user first name
+            <br><b>userId</b> - user id
+            <br><b>userLastName</b> - user last name
+            <br><b>userName</b> - user name
+        </td>
+        <td>json containing alarm details, see Alarm event<br>        
+        </td>
+      </tr>
+      <tr>
+        <td>ALARM_UNASSIGNED</td>
+        <td><b>Alarm Unassigned</b></td>
+        <td>Event produced when an alarm was unassigned from user</td>
+        <td> 
+            All fields from original Message Metadata
+            <br><b>entityName</b> - name of alarm
+            <br><b>entityType</b> - ALARM
+            <br><b>userEmail</b> - user email
+            <br><b>userFirstName</b> - user first name
+            <br><b>userId</b> - user id
+            <br><b>userLastName</b> - user last name
+            <br><b>userName</b> - user name
+        </td>
+        <td>json containing alarm details, see Alarm event<br>        
+        </td>
+      </tr>
+      <tr>
+        <td>COMMENT_CREATED</td>
+        <td><b>Comment Created</b></td>
+        <td>Event produced when an alarm comment was created</td>
+        <td> 
+            All fields from original Message Metadata
+            <br><b>userId</b> - user id
+            <br><b>userName</b> - user name
+            <br><b>userFirstName</b> - first name of user
+            <br><b>userLastName</b> - last name of user
+            <br><b>userEmail</b> - email of user
+            <br><b>comment</b> - json object containing comment details and text of comment
+        </td>
+        <td>json containing alarm details, see Alarm event
+        </td>
+      </tr>
+      <tr>
+        <td>COMMENT_UPDATED</td>
+        <td><b>Comment Updated</b></td>
+        <td>Event produced when an alarm comment was updated</td>
+        <td> 
+            All fields from original Message Metadata
+            <br><b>userId</b> - user id
+            <br><b>userName</b> - user name
+            <br><b>userFirstName</b> - first name of user
+            <br><b>userLastName</b> - last name of user
+            <br><b>userEmail</b> - email of user
+            <br><b>comment</b> - json object containing comment details and text of comment
+        </td>
+        <td>json containing alarm details, see Alarm event
+        </td>
+      </tr>
+      <tr>
           <td>REST_API_REQUEST</td>
           <td><b>REST API Request to Rule Engine</b></td>
           <td>Event produced when user executes REST API call</td>
@@ -295,9 +369,9 @@ Rule Node configuration window may be opened by double-clicking on the node in t
   
 ![image](/images/user-guide/rule-engine-2-0/rule-node-configuration.png)
 
-### Test JavaScript functions
+### Test script functions
 
-Some rule nodes have specific UI feature that allow users to test JS functions. 
+Some rule nodes have specific UI feature that allow users to test TBEL/JS functions. 
 Once you click on the **Test Filter Function** you will see the JS Editor that allows you to substitute input parameters and verify the output of the function.
     
 ![image](/images/user-guide/rule-engine-2-0/rule-node-test-function.png)
@@ -307,7 +381,7 @@ You can define:
 - **Message Type** in the top left field.
 - **Message payload** in the left Message section.
 - **Metadata** in right Metadata section.
-- Actual **JS script** in Filter section.
+- Actual **TBEL/JS script** in Filter section.
 
 After pressing **Test** output will be returned in right **Output** section.
 

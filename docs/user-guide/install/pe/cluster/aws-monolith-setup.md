@@ -50,7 +50,7 @@ This guide will help you to set up ThingsBoard in monolith mode in AWS EKS.
 ## Step 1. Clone ThingsBoard PE K8S scripts repository
 
 ```bash
-git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git
+git clone -b release- {{site.release.ver}} https://github.com/thingsboard/thingsboard-pe-k8s.git
 cd thingsboard-pe-k8s/aws/monolith
 ```
 {: .copy-code}
@@ -70,7 +70,7 @@ cd thingsboard-pe-k8s/aws/monolith
 
 {% include templates/install/aws/rds-setup.md %}
 
-### Step 4.2 Cassandra
+### Step 4.2 Cassandra (optional)
 
 {% include templates/install/aws/configure-cassandra.md %}
 
@@ -79,8 +79,6 @@ cd thingsboard-pe-k8s/aws/monolith
 {% include templates/install/k8s-license-secret.md %}
 
 ## Step 6. Installation
-
-Edit "tb-node-db-configmap.yml" and replace **YOUR_RDS_ENDPOINT_URL** and **YOUR_RDS_PASSWORD** with the values you have obtained during [step 4](#step-4-amazon-postgresql-db-configuration).
 
 {% include templates/install/aws/eks-installation.md %}
 
@@ -109,6 +107,10 @@ see `tb-node-0` pod in the `READY` state.
 ### 8.3. Configure UDP Load Balancer (Optional)
 
 {% include templates/install/aws/configure-udp.md %}
+
+### 8.4. Configure Edge Load Balancer (Optional)
+
+{% include templates/install/k8s-configure-edge-load-balancer.md %}
 
 ## Step 9. Validate the setup
 

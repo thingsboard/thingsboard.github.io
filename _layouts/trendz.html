@@ -3,25 +3,30 @@
 
 {% include head-header.html productTag="trendz" %}
 <!--  HERO  -->
-<section id="hero" class="light-text"
-         data-vide-bg="webm: https://tb-videos.s3-us-west-1.amazonaws.com/trendz-background-rotation.webm,
-                       poster: /images/trendz/preview/line-preview.png"
-         data-vide-options="bgColor: #000000, loop: true, muted: true, posterType: png">
-    <div class="video-cover"></div>
-    <div id="hero-content">
-        <h1 class="h1 header-animation pe-title">Trendz Analytics <br>Platform</h1>
-        <div class="header-animation pe-subTitle">Turn data into insights and make better decisions in minutes</div>
-        <div class="header-btn-block">
-            <div class="header-animation header-start-btn">
-                <a href="/pricing/?active=trendz" class="button try-pe">Start Free</a>
-            </div>
-            <div class="header-animation">
-                <a href="/products/trendz/trndz-request-demo" class="button try-pe">Request a Demo</a>
+<section id="hero" class="light-text">
+    <div class="hero-container">
+        <div id="hero-content">
+            <p class="pe-title">Trendz Analytics Platform</p>
+            <p class="pe-heading animated fadeInLeft">Driving more revenue with in-depth analytics</p>
+            <p class="pe-subTitle">Turn data into insights and make better decisions in minutes</p>
+            <div class="btn-block">
+                <div>
+                    <a href="/products/trendz/trndz-request-demo" class="button accent-btn">Get a demo</a>
+                </div>
+                <div>
+                    <a href="/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go" class="button button try-pe">Get started</a>
+                </div>
             </div>
         </div>
-        <div class="pe-arrow">
-            <a href="#docsContent"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>
+        <div class="hero-image">
+            <div class="image-wrapper">
+            </div>
         </div>
+        <div class="icon" id="upper-icon-left"></div>
+        <div class="icon" id="upper-icon-center"></div>
+        <div class="icon" id="upper-icon-right"></div>
+        <div class="icon" id="down-icon-left"></div>
+        <div class="icon" id="down-icon-right"></div>
     </div>
 </section>
 
@@ -30,6 +35,8 @@
         {{ content }}
     </div>
 </section>
+
+{% include trendz-wizard.html defaultPlan="business" %}
 
 {% include footer.html %}
 
@@ -44,54 +51,63 @@
                 slideUp();
             }
         });
-        $('#hero-content > .pe-arrow > a').click(function(event) {
-            event.preventDefault();
-            var target = $('#encyclopedia');
-            $('html, body').animate({
-                scrollTop: target.offset().top - 60 //header height
-            }, 1000, "easeOutCirc");
-        });
-
     });
 
     inViewportDefer(function() {
-        $("#hero-content").inViewport(function(px){
-            if($(this).height()-px >= 60) {
-                $(this).addClass("arrow-hidden");
-            } else {
-                $(this).removeClass("arrow-hidden");
-            }
-        });
-        $(".pe-features .main-bg:nth-child(odd) main .image-block, .pe-features .main-bg:nth-child(even) main .content").inViewport(function(px){
+        $(".pie-chart .sphere, .multiple-chart .right-sphere").inViewport(function(px){
             if(px >= 80) {
-                $(this).addClass("animated bounceInRight");
+                $(this).addClass("animation-fromTopRight animated");
+                return true;
+            }
+        })
+        $(".pie-chart .donut-chart, .multiple-chart .left-sphere").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animation-fromTopLeft animated");
+                return true;
+            }
+        })
+        $(".pie-chart .bar-chart").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animation-fromBottomRight animated");
+                return true;
+            }
+        })
+        $(".multiple-chart .bottom-sphere").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animation-fromBottomLeft animated");
+                return true;
+            }
+        })
+        $(".pe-features .main-bg:nth-child(even) main .content").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animated fadeInRight");
                 return true;
             }
         });
 
         $(".pe-features .main-bg:nth-child(even) main .image-block, .pe-features .main-bg:nth-child(odd) main .content").inViewport(function(px){
             if(px >= 80) {
-                $(this).addClass("animated bounceInLeft");
+                $(this).addClass("animated fadeInLeft");
                 return true;
             }
         });
         $(".js-bounceRight").inViewport(function(px){
             if(px >= 80) {
-                $(this).addClass("animated bounceInRight");
+                $(this).addClass("animated fadeInRight");
                 return true;
             }
         });
         $(".js-bounceLeft").inViewport(function(px){
             if(px >= 80) {
-                $(this).addClass("animated bounceInLeft");
+                $(this).addClass("animated fadeInLeft");
                 return true;
             }
         });
 
         $("#feature-comparison table th:nth-child(2), " +
-                "#feature-comparison table th:nth-child(4), " +
-                "#feature-comparison table td:nth-child(2), " +
-                "#feature-comparison table td:nth-child(4)").inViewport(function(px){
+            "#feature-comparison table th:nth-child(4), " +
+            "#feature-comparison table td:nth-child(2), " +
+            "#feature-comparison table td:nth-child(4)").inViewport(function(px){
             if(px >= 80) {
                 $(this).addClass("animated flipInY");
                 return true;
@@ -117,6 +133,8 @@
         el.before(newone);
         el.remove();
     }
+
+
 
 </script>
 

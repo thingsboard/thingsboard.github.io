@@ -7,6 +7,8 @@ description: Installing ThingsBoard Edge on CentOS/RHEL Server
 * TOC
 {:toc}
 
+{% include templates/edge/install/compatibility-warning-general.md %}
+
 {% assign docsPrefix = "pe/edge/" %}
 
 This guide describes how to install ThingsBoard Edge on RHEL/CentOS 7/8.
@@ -66,7 +68,7 @@ sudo service tb-edge restart
 
 {% include templates/edge/install/open-edge-ui.md %} 
 
-### Troubleshootings
+### Troubleshooting
 
 ThingsBoard Edge logs are stored in the following directory:
  

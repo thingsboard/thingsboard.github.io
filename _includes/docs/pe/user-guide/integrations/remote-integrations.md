@@ -81,16 +81,7 @@ CoAP<br/> Integration<br/>%,%coap%,%templates/install/integration/coap-docker.md
 
 - **Troubleshooting**
 
-
-**Note** If you observe errors related to DNS issues, for example
-
-```bash
-127.0.1.1:53: cannot unmarshal DNS message
-```
-{: .copy-code}
-
-You may configure your system to use Google public DNS servers. 
-See corresponding [Linux](https://developers.google.com/speed/public-dns/docs/using#linux) and [Mac OS](https://developers.google.com/speed/public-dns/docs/using#mac_os) instructions.
+{% include templates/troubleshooting/dns-issues.md %}
 
 ### Docker on Windows
 
@@ -116,15 +107,7 @@ CoAP<br/> Integration<br/>%,%coap%,%templates/install/integration/coap-docker-wi
 
 - **Troubleshooting**
 
-
-**Note** If you observe errors related to DNS issues, for example
-
-```bash
-127.0.1.1:53: cannot unmarshal DNS message
-```
-
-You may configure your system to use [Google public DNS servers](https://developers.google.com/speed/public-dns/docs/using#windows)
-
+{% include templates/troubleshooting/dns-issues-windows.md %}
 
 ### Ubuntu Server
 
@@ -176,7 +159,7 @@ Explore guides and video tutorials related to specific integrations:
  - [Actility ThingPark](/docs/{{peDocsPrefix}}user-guide/integrations/thingpark/)
  - [SigFox](/docs/{{peDocsPrefix}}user-guide/integrations/sigfox/)
  - [OceanConnect](/docs/{{peDocsPrefix}}user-guide/integrations/ocean-connect/)
- - [TheThingsNetwork](/docs/{{peDocsPrefix}}user-guide/integrations/ttn/)
+ - [TheThingsStack](/docs/{{peDocsPrefix}}user-guide/integrations/ttn/)
  - [OPC-UA](/docs/{{peDocsPrefix}}user-guide/integrations/opc-ua/)
  - [TCP](/docs/{{peDocsPrefix}}user-guide/integrations/tcp/)
  - [UDP](/docs/{{peDocsPrefix}}user-guide/integrations/udp/)

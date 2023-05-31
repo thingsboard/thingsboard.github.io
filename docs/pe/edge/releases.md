@@ -8,6 +8,21 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v3.5.0 (May 10, 2023) {#v35}
+
+**Major** release with everything from [TB Edge v3.5](/docs/edge/releases/#v35) and [TB PE v3.5](/docs/pe/reference/releases/#v35) with the following improvements and bug fixes:
+
+* Edge computing support for solution templates;
+
+## v3.4.3 (December 22, 2022)
+
+**Minor** release with everything from [TB Edge v3.4.3](/docs/edge/releases/#v343-december-22-2022) and [TB PE v3.4.3](/docs/pe/reference/releases/#v343-december-21-2022) with the following improvements and bug fixes:
+
+* Customers Hierarchy Support (partial support - only direct parents for the edge owner);
+* Real-time sync WhiteLabeling, LoginWhiteLabeling and CustomTranslation to edge;
+* Fixed NPE during sync process in case edge owner is customer;
+* Integration/Converter/Role constructors - fixed null pointer exception in case additional info is null;
+
 ## v3.4.1 (August 19, 2022)
 
 **Minor** release with everything from [TB Edge v3.4.1](/docs/edge/releases/#v341-august-19-2022) and [TB PE v3.4.1](/docs/pe/reference/releases/#v341-august-18-2022) with the following improvements and bug fixes:

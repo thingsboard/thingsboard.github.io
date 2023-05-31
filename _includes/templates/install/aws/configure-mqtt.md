@@ -20,17 +20,17 @@ To enable the **one-way TLS**:
 
 Use [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/) to create or import SSL certificate. Note your certificate ARN.
 
-Edit the load balancer configuration and replace *YOUR_HTTPS_CERTIFICATE_ARN* with your certificate ARN:
+Edit the load balancer configuration and replace *YOUR_MQTTS_CERTIFICATE_ARN* with your certificate ARN:
 
 ```bash
-nano receipts/https-load-balancer.yml
+nano receipts/mqtts-load-balancer.yml
 ```
 {: .copy-code}
 
 Execute the following command to deploy plain https load balancer:
 
 ```bash
-kubectl apply -f receipts/https-load-balancer.yml
+kubectl apply -f receipts/mqtts-load-balancer.yml
 ```
 {: .copy-code}
 
@@ -47,11 +47,14 @@ You'll need to create a config-map with your PEM file, you can do it by calling 
 
 ```
 kubectl create configmap tb-mqtts-config \
-             --from-file=server.pem=YOUR_PEM_FILENAME -o yaml --dry-run=client | kubectl apply -f -
+ --from-file=server.pem=YOUR_PEM_FILENAME \
+ --from-file=mqttserver_key.pem=YOUR_PEM_KEY_FILENAME \
+ -o yaml --dry-run=client | kubectl apply -f -
 ```
 {: .copy-code}
 
-where **YOUR_PEM_FILENAME** is the name of your **.pem** file. 
+* where **YOUR_PEM_FILENAME** is the name of your **server certificate file**.
+* where **YOUR_PEM_KEY_FILENAME** is the name of your **server certificate private key file**. 
 
 Then, uncomment all sections in the '{{tbServicesFile}}' file that are marked with "Uncomment the following lines to enable two-way MQTTS".
 

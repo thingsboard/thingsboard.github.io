@@ -119,11 +119,7 @@ cd thingsboard-ce-k8s/aws/microservices
 
 {% include templates/install/aws/redis-setup.md %}
 
-## Step 7. Configure links to the Kafka (Amazon MSK)/Redis/Postgres
-
-{% include templates/install/aws/links.md %}
-
-## Step 8. CPU and Memory resources allocation
+## Step 7. CPU and Memory resources allocation
 
 The scripts have preconfigured values of resources for each service. You can change them in `.yml` files under `resources` submenu.
 
@@ -138,11 +134,11 @@ Recommended CPU/memory resources allocation:
 - JS Executor: 0.1 CPU / 100Mi memory
 - Zookeeper: 0.1 CPU / 0.5Gi memory
 
-## Step 9. Installation
+## Step 8. Installation
 
 {% include templates/install/aws/eks-installation.md %}
 
-## Step 10. Starting
+## Step 9. Starting
 
 Execute the following command to deploy ThingsBoard services:
 
@@ -163,22 +159,26 @@ Every pod should be in the `READY` state.
 
 {% include templates/install/aws/start-transports.md %}
 
-## Step 11. Configure Load Balancers
+## Step 10. Configure Load Balancers
 
-### 11.1 Configure HTTP(S) Load Balancer
+### 10.1 Configure HTTP(S) Load Balancer
 
 {% include templates/install/aws/http-lb.md %}
 
-### 11.2. Configure MQTT Load Balancer (Optional)
+### 10.2. Configure MQTT Load Balancer (Optional)
 
 {% assign tbServicesFile = "tb-services.yml" %}
 {% include templates/install/aws/configure-mqtt.md %}
 
-### 11.3. Configure UDP Load Balancer (Optional)
+### 10.3. Configure UDP Load Balancer (Optional)
 
 {% include templates/install/aws/configure-udp.md %}
 
-## Step 12. Validate the setup
+### 10.4. Configure Edge Load Balancer (Optional)
+
+{% include templates/install/k8s-configure-edge-load-balancer.md %}
+
+## Step 11. Validate the setup
 
 {% include templates/install/aws/eks-validate.md %}
 

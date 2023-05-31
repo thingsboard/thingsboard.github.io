@@ -4,6 +4,11 @@
 {% assign platformName = 'ThingsBoard' %}
 {% endif %}
 
+{% if docsPrefix != 'pe/' %}
+<h3>Click <a style="pointer-events: all;" href="/docs/pe/edge/">here</a> for ThingsBoard PE Edge documentation.</h3>
+<br>
+{% endif %}
+
 The {{platformName}} **Edge** will help you to distribute data processing and analysis using edge computing.
 
 For example, you can do the calculation and grouping of data from edge devices on the {{platformName}} Edge and push to the cloud only filtered and grouped data to reduce traffic and safe money.

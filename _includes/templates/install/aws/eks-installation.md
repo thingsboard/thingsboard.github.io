@@ -13,5 +13,9 @@ After this command finish you should see the next line in the console:
 ```
 Installation finished successfully!
 ```
+{% capture aws-rds %}
 
-Otherwise, please check if you set the PostgreSQL URL in the `tb-node-db-configmap.yml` correctly.
+Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in the `tb-node-db-configmap.yml` correctly.
+
+{% endcapture %}
+{% include templates/info-banner.md content=aws-rds %}

@@ -28,20 +28,20 @@ In small and medium installations Trendz can be installed **on the same** server
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/trendz-1.8.2.deb
+wget https://dist.thingsboard.io/trendz-1.10.1.deb
 ```
 {: .copy-code}
 
 Install Trendz Analytics as a service
 
 ```bash
-sudo dpkg -i trendz-1.8.2.deb
+sudo dpkg -i trendz-1.10.1.deb
 ```
 {: .copy-code}
 
 ### Step 3. Obtain and configure license key 
 
-We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
+We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
 Once you get the license secret, you should put it to the trendz configuration file. 
@@ -136,7 +136,7 @@ sudo service trendz start
 Once started, you will be able to open Web UI using the following link:
 
 ```bash
-http://localhost:8888/
+http://localhost:8888/trendz
 ```
 **Note**:  If Trendz installed on a remote server, you have to replace localhost with the public IP address of 
 the server or with a domain name. Also, check that port 8888 opened for public access.
@@ -197,6 +197,35 @@ https://new-trendz-domain.com
 **Fresh installation on new server**
 
 Please follow this [guide](/docs/user-guide/install/pe/add-haproxy-ubuntu) to install HAProxy and generate valid SSL certificate using Let's Encrypt.
+
+### Step 9. Host ThingsBoard and Trendz on the same domain
+ThingsBoard and Trendz can share same domain name. In this case ThingsBoard web page would be loaded using following link:
+
+```bash
+https://{my-domain}/
+```
+
+and Trendz web page would be loaded using following link
+
+```bash
+https://{my-domain}/trendz
+```
+
+For enabling such configuration we have to update HAProxy config to route specific requests to Trendz service. 
+Open HAProxy configuration file
+```bash
+sudo nano /etc/haproxy/haproxy.cfg
+```
+{: .copy-code}
+
+Locate **frontend https_in** section, add new access list that will match traffic by URL path and redirect this traffic to Trendz backend:
+
+```bash
+...
+acl trendz_acl path_beg /trendz path_beg /apiTrendz
+....
+use_backend tb-trendz if trendz_acl
+```
 
 ### Troubleshooting
 

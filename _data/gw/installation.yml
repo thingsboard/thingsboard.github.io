@@ -44,4 +44,4 @@ toc:
     - title: FTP Connector
       path: /docs/iot-gateway/config/ftp/
     - title: Socket Connector
-      path: /docs/iot-geteway/config/socket/
+      path: /docs/iot-gateway/config/socket/

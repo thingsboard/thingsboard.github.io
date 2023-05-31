@@ -19,6 +19,13 @@ Follow 2 simple steps to make it:
 
 #### Import Trendz widget bundle
 
+###### For ThingsBoard 3.4+ and Trendz 1.9+
+
+* Go to Trendz settings page - http://{my-domain}/trendz/settings
+* Navigate to **Trendz Widget Bundle Management** section
+* Press **Upload bundle to ThingsBoard** button to add Trendz widget library to the ThingsBoard. 
+
+
 ###### For ThingsBoard 3.3+ and Trendz 1.8+
 Starting from ThingsBoard 3.3 and Trendz 1.8 - Trendz widgets can be natively embedded into the ThingsBaord dashboard.
 Native Trendz widgets works much faster compared to original Trendz widgets that are based on iFrame. 

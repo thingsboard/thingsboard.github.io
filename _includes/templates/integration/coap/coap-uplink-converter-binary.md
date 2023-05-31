@@ -39,7 +39,6 @@ function decodeToJson(payload) {
 }
 
 return result;
-
 ``` 
 {: .copy-code}
 

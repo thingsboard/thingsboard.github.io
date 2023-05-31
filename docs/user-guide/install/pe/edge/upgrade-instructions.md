@@ -22,6 +22,34 @@ description: ThingsBoard PE Edge upgrade instructions
         </ul>
     </li>
     <li>
+        <a href="#upgrading-to-35" id="markdown-toc-upgrading-to-35">Upgrading to 3.5.0EDGEPE</a>
+        <ul>
+            <li>
+                <a href="#ubuntucentos-35" id="markdown-toc-ubuntucentos-35">Ubuntu/CentOS</a>
+            </li>
+            <li>
+                <a href="#docker-linux-mac-35" id="markdown-toc-docker-linux-mac-35">Docker (Linux or Mac OS)</a>
+            </li>            
+            <li>
+                <a href="#windows-35" id="markdown-toc-windows-35">Windows</a>
+            </li> 
+        </ul>
+    </li>
+    <li>
+        <a href="#upgrading-to-343" id="markdown-toc-upgrading-to-343">Upgrading to 3.4.3EDGEPE</a>
+        <ul>
+            <li>
+                <a href="#ubuntucentos-343" id="markdown-toc-ubuntucentos-343">Ubuntu/CentOS</a>
+            </li>
+            <li>
+                <a href="#docker-linux-mac-343" id="markdown-toc-docker-linux-mac-343">Docker (Linux or Mac OS)</a>
+            </li>            
+            <li>
+                <a href="#windows-343" id="markdown-toc-windows-343">Windows</a>
+            </li> 
+        </ul>
+    </li>
+    <li>
         <a href="#upgrading-to-341" id="markdown-toc-upgrading-to-341">Upgrading to 3.4.1EDGEPE</a>
         <ul>
             <li>
@@ -93,10 +121,8 @@ description: ThingsBoard PE Edge upgrade instructions
     </li>
 </ul>
 
-{% capture update_server_first %}
-**Please update ThingsBoard server to the latest version before updating Edge services**.
-{% endcapture %}
-{% include templates/warn-banner.md content=update_server_first %}
+{% assign docsPrefix = "pe/" %}
+{% include templates/edge/install/compatibility-warning-general.md %}
 
 ## Prepare for upgrading ThingsBoard Edge {#prepare-for-upgrading}
 
@@ -142,10 +168,17 @@ Check backup file created successfully.
 
 Set the terminal in the directory which contains the `docker-compose.yml` file and execute the following command to stop and remove currently running TB Edge container:
 ```
-docker-compose stop
-docker-compose rm mytbedge
+docker compose stop
+docker compose rm mytbedge
 ```
 {: .copy-code}
+
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
+<br>**docker-compose stop**
+<br>**docker-compose rm mytbedge**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
 
 #### Backup Database
 
@@ -169,7 +202,374 @@ net stop tb-edge
 Launch the "pgAdmin" software and login as superuser (postgres). 
 Open your server and create backup of database **tb_edge** using 'Backup Dialog' functionality of "pgAdmin".
 
+## Upgrading to 3.5.0EDGEPE {#upgrading-to-35}
+
+{% assign serverVersion = "3.5.0PE" %}
+{% assign updateServerLink = "#upgrading-to-35pe" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
+
+### Ubuntu/CentOS {#ubuntucentos-35}
+
+**NOTE**: These steps are applicable for ThingsBoard Edge 3.4.3EDGEPE version.
+
+#### ThingsBoard Edge package download
+
+{% capture tabspec %}tb-edge-pe-download-3-5-0
+tb-edge-pe-download-3-5-0-ubuntu,Ubuntu,shell,resources/3.5/tb-edge-ubuntu-download.sh,/docs/user-guide/install/pe/edge/resources/3.5/tb-edge-ubuntu-download.sh
+tb-edge-pe-download-3-5-0-centos,CentOS,shell,resources/3.5/tb-edge-centos-download.sh,/docs/user-guide/install/pe/edge/resources/3.5/tb-edge-centos-download.sh{% endcapture %}
+{% include tabs.html %}
+
+#### ThingsBoard Edge service upgrade
+
+* Stop ThingsBoard Edge service if it is running.
+
+```bash
+sudo service tb-edge stop
+```
+{: .copy-code}
+
+{% capture tabspec %}tb-edge-pe-installation-3-5-0
+tb-edge-pe-installation-3-5-0-ubuntu,Ubuntu,shell,resources/3.5/tb-edge-ubuntu-installation.sh,/docs/user-guide/install/pe/edge/resources/3.5/tb-edge-ubuntu-installation.sh
+tb-edge-pe-installation-3-5-0-centos,CentOS,shell,resources/3.5/tb-edge-centos-installation.sh,/docs/user-guide/install/pe/edge/resources/3.5/tb-edge-centos-installation.sh{% endcapture %}
+{% include tabs.html %}
+
+**NOTE:** Package installer may ask you to merge your tb-edge configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+
+Execute regular upgrade script:
+
+```bash
+sudo /usr/share/tb-edge/bin/install/upgrade.sh --fromVersion=3.4.3
+```
+{: .copy-code}
+
+#### Start the service
+
+```bash
+sudo service tb-edge start
+```
+{: .copy-code}
+
+### Docker (Linux or Mac OS) {#docker-linux-mac-35}
+
+**NOTE**: These steps are applicable for ThingsBoard Edge 3.4.3EDGEPE version.
+
+Execute the following command to pull **3.5.0EDGEPE** image:
+```
+docker pull thingsboard/tb-edge-pe:3.5.0EDGEPE
+```
+{: .copy-code}
+
+Set the terminal in the directory which contains the `docker-compose.yml` file and execute the following command to stop and remove currently running TB Edge container (if it's still running):
+```
+docker compose stop
+docker compose rm mytbedge
+```
+{: .copy-code}
+
+Create docker compose file for ThingsBoard Edge upgrade process:
+
+```text
+nano docker-compose-upgrade.yml
+```
+{: .copy-code}
+
+Add the following lines to the yml file:
+
+```yml
+version: '3.0'
+services:
+  mytbedge:
+    restart: on-failure
+    image: "thingsboard/tb-edge-pe:3.5.0EDGEPE"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/tb-edge
+    volumes:
+      - ~/.mytb-edge-data:/data
+      - ~/.mytb-edge-logs:/var/log/tb-edge
+    entrypoint: upgrade-tb-edge.sh
+  postgres:
+    restart: always
+    image: "postgres:12"
+    ports:
+      - "5432"
+    environment:
+      POSTGRES_DB: tb-edge
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ~/.mytb-edge-data/db:/var/lib/postgresql/data
+```
+{: .copy-code}
+
+Execute the following command to start upgrade process:
+```
+docker compose -f docker-compose-upgrade.yml up
+```
+{: .copy-code}
+
+Once upgrade process successfully completed, exit from the docker-compose shell by this combination:
+```
+Ctrl + C
+```
+
+Execute the following command to stop TB Edge upgrade container:
+```
+docker compose -f docker-compose-upgrade.yml stop
+```
+{: .copy-code}
+
+Modify 'main' docker compose (`docker-compose.yml`) file for ThingsBoard Edge and update version of the image:
+
+```text
+nano docker-compose.yml
+```
+{: .copy-code}
+
+```yml
+version: '3.0'
+services:
+  mytbedge:
+    restart: always
+    image: "thingsboard/tb-edge-pe:3.5.0EDGEPE"
+...
+```
+
+Make sure your image is the set to tb-edge-**pe:3.5.0EDGEPE**.
+
+Execute the following commands to up this docker compose directly:
+```
+docker compose up -d
+docker compose logs -f mytbedge
+```
+{: .copy-code}
+
+
+### Windows {#windows-35}
+
+**NOTE**: These steps are applicable for ThingsBoard Edge 3.4.3EDGEPE version.
+
+#### ThingsBoard Edge package download
+
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.5pe.zip](https://dist.thingsboard.io/tb-edge-windows-3.5pe.zip).
+
+#### ThingsBoard Edge service upgrade
+
+* Stop ThingsBoard Edge service if it is running:
+
+```text
+net stop tb-edge
+```
+{: .copy-code}
+
+* Make a backup of previous ThingsBoard Edge configuration located in *\<ThingsBoard Edge install dir\>\conf* (for example: *C:\tb-edge\conf*).
+
+* Extract ThingsBoard Edge package.
+
+* Compare and merge your old ThingsBoard Edge configuration files (from the backup you made in the previous step) with new ones.
+
+* Finally, run **upgrade.bat** script to upgrade ThingsBoard Edge to the new version.
+
+**NOTE** Scripts listed below should be executed using Administrator Role.
+
+Execute regular upgrade script:
+
+```text
+C:\tb-edge>upgrade.bat --fromVersion=3.4.3
+```
+
+#### Start the service
+
+```text
+net start tb-edge
+```
+{: .copy-code}
+
+
+## Upgrading to 3.4.3EDGEPE {#upgrading-to-343}
+
+{% assign serverVersion = "3.4.3PE" %}
+{% assign updateServerLink = "#upgrading-to-343pe" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
+
+### Ubuntu/CentOS {#ubuntucentos-343}
+
+**NOTE**: These steps are applicable for ThingsBoard Edge 3.4.1EDGEPE version.
+
+#### ThingsBoard Edge package download
+
+{% capture tabspec %}tb-edge-pe-download-3-4-3
+tb-edge-pe-download-3-4-3-ubuntu,Ubuntu,shell,resources/3.4.3/tb-edge-ubuntu-download.sh,/docs/user-guide/install/pe/edge/resources/3.4.3/tb-edge-ubuntu-download.sh
+tb-edge-pe-download-3-4-3-centos,CentOS,shell,resources/3.4.3/tb-edge-centos-download.sh,/docs/user-guide/install/pe/edge/resources/3.4.3/tb-edge-centos-download.sh{% endcapture %}
+{% include tabs.html %}
+
+#### ThingsBoard Edge service upgrade
+
+* Stop ThingsBoard Edge service if it is running.
+
+```bash
+sudo service tb-edge stop
+```
+{: .copy-code}
+
+{% capture tabspec %}tb-edge-pe-installation-3-4-3
+tb-edge-pe-installation-3-4-3-ubuntu,Ubuntu,shell,resources/3.4.3/tb-edge-ubuntu-installation.sh,/docs/user-guide/install/pe/edge/resources/3.4.3/tb-edge-ubuntu-installation.sh
+tb-edge-pe-installation-3-4-3-centos,CentOS,shell,resources/3.4.3/tb-edge-centos-installation.sh,/docs/user-guide/install/pe/edge/resources/3.4.3/tb-edge-centos-installation.sh{% endcapture %}
+{% include tabs.html %}
+
+**NOTE:** Package installer may ask you to merge your tb-edge configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+
+Execute regular upgrade script:
+
+```bash
+sudo /usr/share/tb-edge/bin/install/upgrade.sh --fromVersion=3.4.1
+```
+{: .copy-code}
+
+#### Start the service
+
+```bash
+sudo service tb-edge start
+```
+{: .copy-code}
+
+### Docker (Linux or Mac OS) {#docker-linux-mac-343}
+
+**NOTE**: These steps are applicable for ThingsBoard Edge 3.4.1EDGEPE version.
+
+Execute the following command to pull **3.4.3EDGEPE** image:
+```
+docker pull thingsboard/tb-edge-pe:3.4.3EDGEPE
+```
+{: .copy-code}
+
+Set the terminal in the directory which contains the `docker-compose.yml` file and execute the following command to stop and remove currently running TB Edge container (if it's still running):
+```
+docker compose stop
+docker compose rm mytbedge
+```
+{: .copy-code}
+
+Create docker compose file for ThingsBoard Edge upgrade process:
+
+```text
+nano docker-compose-upgrade.yml
+```
+{: .copy-code}
+
+Add the following lines to the yml file:
+
+```yml
+version: '3.0'
+services:
+  mytbedge:
+    restart: on-failure
+    image: "thingsboard/tb-edge-pe:3.4.3EDGEPE"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/tb-edge
+    volumes:
+      - ~/.mytb-edge-data:/data
+      - ~/.mytb-edge-logs:/var/log/tb-edge
+    entrypoint: upgrade-tb-edge.sh
+  postgres:
+    restart: always
+    image: "postgres:12"
+    ports:
+      - "5432"
+    environment:
+      POSTGRES_DB: tb-edge
+      POSTGRES_PASSWORD: postgres
+    volumes:
+      - ~/.mytb-edge-data/db:/var/lib/postgresql/data
+```
+{: .copy-code}
+
+Execute the following command to start upgrade process:
+```
+docker compose -f docker-compose-upgrade.yml up
+```
+{: .copy-code}
+
+Once upgrade process successfully completed, exit from the docker-compose shell by this combination:
+```
+Ctrl + C
+```
+
+Execute the following command to stop TB Edge upgrade container:
+```
+docker compose -f docker-compose-upgrade.yml stop
+```
+{: .copy-code}
+
+Modify 'main' docker compose (`docker-compose.yml`) file for ThingsBoard Edge and update version of the image:
+
+```text
+nano docker-compose.yml
+```
+{: .copy-code}
+
+```yml
+version: '3.0'
+services:
+  mytbedge:
+    restart: always
+    image: "thingsboard/tb-edge-pe:3.4.3EDGEPE"
+...
+```
+
+Make sure your image is the set to tb-edge-**pe:3.4.3EDGEPE**.
+
+Execute the following commands to up this docker compose directly:
+```
+docker compose up -d
+docker compose logs -f mytbedge
+```
+{: .copy-code}
+
+
+### Windows {#windows-343}
+
+**NOTE**: These steps are applicable for ThingsBoard Edge 3.4.1EDGEPE version.
+
+#### ThingsBoard Edge package download
+
+Download ThingsBoard Edge package for Windows: [tb-edge-windows-3.4.3pe.zip](https://dist.thingsboard.io/tb-edge-windows-3.4.3pe.zip).
+
+#### ThingsBoard Edge service upgrade
+
+* Stop ThingsBoard Edge service if it is running:
+
+```text
+net stop tb-edge
+```
+{: .copy-code}
+
+* Make a backup of previous ThingsBoard Edge configuration located in *\<ThingsBoard Edge install dir\>\conf* (for example: *C:\tb-edge\conf*).
+
+* Extract ThingsBoard Edge package.
+
+* Compare and merge your old ThingsBoard Edge configuration files (from the backup you made in the previous step) with new ones.
+
+* Finally, run **upgrade.bat** script to upgrade ThingsBoard Edge to the new version.
+
+**NOTE** Scripts listed below should be executed using Administrator Role.
+
+Execute regular upgrade script:
+
+```text
+C:\tb-edge>upgrade.bat --fromVersion=3.4.1
+```
+
+#### Start the service
+
+```text
+net start tb-edge
+```
+{: .copy-code}
+
 ## Upgrading to 3.4.1EDGEPE {#upgrading-to-341}
+
+{% assign serverVersion = "3.4.1PE" %}
+{% assign updateServerLink = "#upgrading-to-341pe" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
 
 ### Ubuntu/CentOS {#ubuntucentos-341}
 
@@ -239,7 +639,7 @@ nano docker-compose-upgrade.yml
 Add the following lines to the yml file:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: on-failure
@@ -288,7 +688,7 @@ nano docker-compose.yml
 {: .copy-code}
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: always
@@ -347,6 +747,10 @@ net start tb-edge
 
 
 ## Upgrading to 3.4EDGEPE {#upgrading-to-34}
+
+{% assign serverVersion = "3.4PE" %}
+{% assign updateServerLink = "#upgrading-to-34pe" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
 
 ### Ubuntu/CentOS {#ubuntucentos-34}
 
@@ -416,7 +820,7 @@ nano docker-compose-upgrade.yml
 Add the following lines to the yml file:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: on-failure
@@ -465,7 +869,7 @@ nano docker-compose.yml
 {: .copy-code}
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: always
@@ -523,6 +927,10 @@ net start tb-edge
 {: .copy-code}
 
 ## Upgrading to 3.3.4.1EDGEPE {#upgrading-to-3341}
+
+{% assign serverVersion = "3.3.4.1PE" %}
+{% assign updateServerLink = "#upgrading-to-3341pe" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
 
 ### Ubuntu/CentOS {#ubuntucentos-3341}
 
@@ -592,7 +1000,7 @@ nano docker-compose-upgrade.yml
 Add the following lines to the yml file:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: on-failure
@@ -641,7 +1049,7 @@ nano docker-compose.yml
 {: .copy-code}
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: always
@@ -699,6 +1107,10 @@ net start tb-edge
 {: .copy-code}
 
 ## Upgrading to 3.3.4EDGEPE {#upgrading-to-334}
+
+{% assign serverVersion = "3.3.4PE" %}
+{% assign updateServerLink = "#upgrading-to-334pe" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
 
 ### Ubuntu/CentOS {#ubuntucentos-334}
 
@@ -768,7 +1180,7 @@ nano docker-compose-upgrade.yml
 Add the following lines to the yml file:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: on-failure
@@ -817,7 +1229,7 @@ nano docker-compose.yml
 {: .copy-code}
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: always
@@ -875,6 +1287,10 @@ net start tb-edge
 {: .copy-code}
 
 ## Upgrading to 3.3.3EDGE {#upgrading-to-333}
+
+{% assign serverVersion = "3.3.3PE" %}
+{% assign updateServerLink = "#upgrading-to-333pe" %}
+{% include templates/edge/install/compatibility-warning-version.md %}
 
 ### Ubuntu/CentOS {#ubuntucentos-333}
 
@@ -944,7 +1360,7 @@ nano docker-compose-upgrade.yml
 Add the following lines to the yml file:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: on-failure
@@ -993,7 +1409,7 @@ nano docker-compose.yml
 {: .copy-code}
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbedge:
     restart: always

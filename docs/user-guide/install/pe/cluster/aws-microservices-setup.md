@@ -112,7 +112,7 @@ cd thingsboard-pe-k8s/aws/microservices
 
 {% include templates/install/aws/rds-setup.md %}
 
-### Step 4.2 Cassandra
+### Step 4.2 Cassandra (optional)
 
 {% include templates/install/aws/configure-cassandra.md %}
 
@@ -185,6 +185,10 @@ Every pod should be in the `READY` state.
 ### 12.3. Configure UDP Load Balancer (Optional)
 
 {% include templates/install/aws/configure-udp.md %}
+
+### 12.4. Configure Edge Load Balancer (Optional)
+
+{% include templates/install/k8s-configure-edge-load-balancer.md %}
 
 ## Step 13. Validate the setup
 

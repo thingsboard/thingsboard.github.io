@@ -17,7 +17,9 @@ This guide will help you to setup ThingsBoard in cluster mode using Docker Compo
 ## Prerequisites
 
 ThingsBoard Microservices are running in dockerized environment.
-Before starting please make sure [Docker CE](https://docs.docker.com/install/) and [Docker Compose](https://docs.docker.com/compose/install/) are installed in your system. 
+Before starting please make sure Docker Engine and Docker Compose are installed in your system. 
+
+{% include templates/install/docker-install.md %}
 
 {% include templates/install/docker-install-note.md %}
 
@@ -72,84 +74,8 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 
 ## Step 7. Running
 
-Execute the following command to create log folders for the services and chown of these folders to the docker container users. 
-To be able to change user, **chown** command is used, which requires sudo permissions (script will request password for a sudo access): 
-
-```bash
-./docker-create-log-folders.sh
-```
-{: .copy-code}
-
-Execute the following command to run installation:
-
-```bash
-./docker-install-tb.sh --loadDemo
-```
-{: .copy-code}
-
-Where:
-
-- `--loadDemo` - optional argument. Whether to load additional demo data.
-
-Execute the following command to start services:
-
-```bash
-./docker-start-services.sh
-```
-{: .copy-code}
-
-After a while when all services will be successfully started you can open `http://{your-host-ip}` in you browser (for ex. `http://localhost`).
-You should see ThingsBoard login page.
-
-Use the following default credentials:
-
-- **System Administrator**: sysadmin@thingsboard.org / sysadmin
-
-If you installed DataBase with demo data (using `--loadDemo` flag) you can also use the following credentials:
-
-- **Tenant Administrator**: tenant@thingsboard.org / tenant
-- **Customer User**: customer@thingsboard.org / customer
-
-In case of any issues you can examine service logs for errors.
-For example to see ThingsBoard node logs execute the following command:
-
-```bash
-docker-compose logs -f tb-core1 tb-rule-engine1
-```
-{: .copy-code}
-
-Or use `docker-compose ps` to see the state of all the containers.
-Use `docker-compose logs --f` to inspect the logs of all running services.
-See [docker-compose logs](https://docs.docker.com/compose/reference/logs/) command reference for details.
-
-Execute the following command to stop services:
-
-```bash
-./docker-stop-services.sh
-```
-{: .copy-code}
-
-Execute the following command to stop and completely remove deployed docker containers:
-
-```bash
-./docker-remove-services.sh
-```
-{: .copy-code}
-
-Execute the following command to update particular or all services (pull newer docker image and rebuild container):
-
-```bash
-./docker-update-service.sh [SERVICE...]
-```
-{: .copy-code}
-
-Where:
-
-- `[SERVICE...]` - list of services to update (defined in docker-compose configurations). If not specified all services will be updated.
-
-{% include templates/install/upgrade-docker-compose.md %}
-
-{% include templates/install/generate_certificate_docker-compose.md %}
+{% assign dockerComposeFileLocation = "" %}
+{% include templates/install/docker/docker-compose-setup-running.md %}
 
 ## Next steps
 

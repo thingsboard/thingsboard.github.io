@@ -19,3 +19,7 @@ sudo service cassandra start
 # Configure the database to start automatically when OS starts.
 sudo chkconfig cassandra on
 ```
+
+You can use Astra DB cloud instead installing your own Cassandra.
+See how to [connect ThingsBoard to Astra DB](/docs/user-guide/install/pe/cassandra-cloud-astra-db/)
+

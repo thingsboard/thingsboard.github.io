@@ -46,7 +46,10 @@ Update the following lines in the configuration file. Don't forget **to replace*
 # export HTTP_BIND_PORT=18080
 # export MQTT_BIND_PORT=11883
 # export COAP_BIND_PORT=15683
-
+# export LWM2M_ENABLED=false
+{% if docsPrefix == 'pe/edge/' %}
+# export INTEGRATIONS_RPC_PORT=19090
+{% endif %}
 # UNCOMMENT NEXT LINES IF YOU HAVE CHANGED DEFAULT POSTGRESQL DATASOURCE SETTINGS:
 # export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/tb_edge
 # export SPRING_DATASOURCE_USERNAME=postgres
@@ -55,14 +58,17 @@ Update the following lines in the configuration file. Don't forget **to replace*
 {: .copy-code}
 
 {% capture local-deployment %}
-If ThingsBoard Edge is going to be running on the same machine where **{{appPrefix}}** server is running you'll need to update additional configuration parameters to avoid port collision.
- 
+If ThingsBoard Edge is going to be running on the same machine where **{{appPrefix}}** server (cloud) is running, you'll need to update additional configuration parameters to avoid port collision between ThingsBoard server and ThingsBoard Edge. 
+
 Please uncomment next parameters in ThingsBoard Edge configuration file (**/etc/tb-edge/conf/tb-edge.conf**): 
 <br>**export HTTP_BIND_PORT=18080**
 <br>**export MQTT_BIND_PORT=11883**
 <br>**export COAP_BIND_PORT=15683**
-
-Please make sure ports above are not used by any other application.
+<br>**export LWM2M_ENABLED=false**
+{% if docsPrefix == 'pe/edge/' %}
+<br>**export INTEGRATIONS_RPC_PORT=19090**
+{% endif %}
+Please make sure ports above (18080, 11883, 15683) are not used by any other application.
 
 {% endcapture %}
 {% include templates/info-banner.md content=local-deployment %}

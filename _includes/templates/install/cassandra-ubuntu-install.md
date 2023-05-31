@@ -10,3 +10,6 @@ sudo apt-get install cassandra
 ## Tools installation
 sudo apt-get install cassandra-tools
 ```
+
+You can use Astra DB cloud instead installing your own Cassandra.
+See how to [connect ThingsBoard to Astra DB](/docs/user-guide/install/pe/cassandra-cloud-astra-db/)

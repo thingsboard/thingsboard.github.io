@@ -11,11 +11,16 @@ In case you have not found out how to connect your device using the diagram or s
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
+#### Connecting well-known devices
+
+You can check the [Devices library](/docs/{{docsPrefix}}devices-library) section to explore how to connect widely used devices to ThingsBoard.
+
 #### Built-in transport protocols
 
 The built-in transport protocol implementations are applicable for devices that communicate over those protocols and are able to connect directly to ThingsBoard.
 
 - [MQTT API reference](/docs/{{docsPrefix}}reference/mqtt-api)
+- [MQTT Sparkplug API reference](/docs/{{docsPrefix}}reference/mqtt-sparkplug-api)
 - [CoAP API reference](/docs/{{docsPrefix}}reference/coap-api)
 - [HTTP API reference](/docs/{{docsPrefix}}reference/http-api)
 - [LwM2M API reference](/docs/{{docsPrefix}}reference/lwm2m-api)
@@ -35,7 +40,7 @@ See [What is IoT Gateway?](/docs/iot-gateway/what-is-iot-gateway/) for more info
 It is possible to integrate ChirpStack network server with ThingsBoard Community Edition using this [guide](https://www.chirpstack.io/application-server/integrations/thingsboard/).
 
 [ThingsBoard PE](/products/thingsboard-pe/) supports ChirpStack and many other network servers via [Integrations](/docs/{{peDocsPrefix}}user-guide/integrations/).
-For example: [TheThingsNetwork](/docs/{{peDocsPrefix}}user-guide/integrations/ttn/), [TheThingsIndustries](/docs/{{peDocsPrefix}}user-guide/integrations/tti/),
+For example: [TheThingsStack](/docs/{{peDocsPrefix}}user-guide/integrations/ttn/), [TheThingsIndustries](/docs/{{peDocsPrefix}}user-guide/integrations/tti/),
 [LORIOT](/docs/{{peDocsPrefix}}user-guide/integrations/loriot/),
 [Actility ThingPark](/docs/{{peDocsPrefix}}user-guide/integrations/thingpark/) or any other network server that supports the [webhooks](/docs/{{peDocsPrefix}}user-guide/integrations/http/) or [mqtt](/docs/{{peDocsPrefix}}user-guide/integrations/mqtt/).
 Big advantage of ThingsBoard PE integrations is the ability to define custom [data converter](/docs/{{peDocsPrefix}}user-guide/integrations/#data-converters) functions.

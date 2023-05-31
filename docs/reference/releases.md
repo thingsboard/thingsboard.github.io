@@ -7,6 +7,355 @@ description: ThingsBoard architecture
 
 * TOC
 {:toc}
+
+
+## v3.5.0 (May 9, 2023) {#v35}
+
+Major release with the following features and bug fixes:
+
+**Major Improvements:**
+
+* Core & Rule Engine
+  
+  * [#7911](https://github.com/thingsboard/thingsboard/pull/7911) [Notification system](/docs/user-guide/notifications/) by @ViacheslavKlimov
+  * [#7935](https://github.com/thingsboard/thingsboard/pull/7935) [Device provisioning](/docs/user-guide/certificates/?ubuntuThingsboardX509=x509Chain) using X509 certificate chains by @AndriiLandiak
+  * [#8090](https://github.com/thingsboard/thingsboard/pull/8090) [Alarm assignment](/docs/user-guide/alarms/#how-to-assign-alarm-to-user) feature by @imbeacon    
+  * [#7762](https://github.com/thingsboard/thingsboard/pull/7762) [Alarm comments](/docs/user-guide/alarms/#how-to-find-alarm-comments-and-add-your-own) feature by @dashevchenko
+
+* UI
+  
+  * [#8247](https://github.com/thingsboard/thingsboard/pull/8247) Sidebar menu optimization by @ikulikov
+  * New home page by @ikulikov
+  * Improved entity pages by @ikulikov  
+  * [#8169](https://github.com/thingsboard/thingsboard/pull/8169) Migrate to Angular 15 by @ikulikov
+
+**Minor Improvements:**
+
+* Core & Rule Engine
+  
+  * [#8414](https://github.com/thingsboard/thingsboard/pull/8414) Singleton mode for specific rule nodes by @YevhenBondarenko
+  * [#8304](https://github.com/thingsboard/thingsboard/pull/8304) Added entity & API usage statistics REST API call by @YevhenBondarenko
+  * [#8335](https://github.com/thingsboard/thingsboard/pull/8335) Devices activity statistics by @ViacheslavKlimov
+  * [#7974](https://github.com/thingsboard/thingsboard/pull/7974) New nodes 'asset type switch' & 'device type switch' by @YuriyLytvynchuk
+  * [#8051](https://github.com/thingsboard/thingsboard/pull/8051) User settings API by @dashevchenko
+  * [#8094](https://github.com/thingsboard/thingsboard/pull/8094) Find users by query by @dashevchenko
+  * [#8110](https://github.com/thingsboard/thingsboard/pull/8110) Moved password history from 'tb_user' to 'user_credentials' by @dashevchenko
+  * [#7858](https://github.com/thingsboard/thingsboard/pull/7858) Rest API Call node - add ability to remove quotes from request body by @AndriiLandiak
+  * [#7991](https://github.com/thingsboard/thingsboard/pull/7991) Ability to configure kafkajs *connectionTimeout* property by @AndreMaz
+  * [#8026](https://github.com/thingsboard/thingsboard/pull/8026) Added possibility to specify multiple types,stead of single one entity filter by @volodymyr-babak
+  * [#8241](https://github.com/thingsboard/thingsboard/pull/8241) Changed default value for wsMsgQueueLimitPerSession parameter by @dashevchenko
+  * [#8353](https://github.com/thingsboard/thingsboard/pull/8353) Fixed xss vulnerabilities attributes and telemetry keys by @YevhenBondarenko
+  * [#8398](https://github.com/thingsboard/thingsboard/pull/8398) Added new message types to rule engine by @dashevchenko
+  
+* UI
+
+  * [#8017](https://github.com/thingsboard/thingsboard/pull/8017) Added quarter and half yeartervals to time window. by @devaskim
+  * [#7926](https://github.com/thingsboard/thingsboard/pull/7926) Exclude specified subtypes from autocomplete widget. by @devaskim
+  * [#8057](https://github.com/thingsboard/thingsboard/pull/8057) Leave only lower bound for widget's height mobile mode. by @devaskim
+  * [#8071](https://github.com/thingsboard/thingsboard/pull/8071) Added Base64 functions to utils service. by @devaskim
+  * [#8167](https://github.com/thingsboard/thingsboard/pull/8167) Added hint to the "Password / access token"put (Repository settings) by @kalutkaz
+  * [#8255](https://github.com/thingsboard/thingsboard/pull/8255) Added "delete" icon to the default icon list by @kalutkaz
+  * [#7625](https://github.com/thingsboard/thingsboard/pull/7625) Added dashboard filter duplication option by @devaskim
+  * [#8272](https://github.com/thingsboard/thingsboard/pull/8272) Refactoring dashboard-select component by @kalutkaz
+  * [#8072](https://github.com/thingsboard/thingsboard/pull/8072) Optionally update dashboard state when using navigate back API. by @devaskim
+  * [#8287](https://github.com/thingsboard/thingsboard/pull/8287) API version 3 support has been added to HERE map widget by @vvlladd28
+  * [#8294](https://github.com/thingsboard/thingsboard/pull/8294) Update links for alarmfo widget custom action help by @ChantsovaEkaterina
+  * [#5311](https://github.com/thingsboard/thingsboard/pull/5311) Ability to handle JSON attribute edit multiple by @Dmitriymush
+  * [#8298](https://github.com/thingsboard/thingsboard/pull/8298) Added label parsing select entity dialog by @kalutkaz
+  * [#8351](https://github.com/thingsboard/thingsboard/pull/8351) Updated tinycolor for version 1.6.0 by @vvlladd28
+  * [#8364](https://github.com/thingsboard/thingsboard/pull/8364) Redesign of color picker by @ArtemDzhereleiko
+  * [#8409](https://github.com/thingsboard/thingsboard/pull/8409) Add help link for calculate delta rule node by @ArtemDzhereleiko
+  * [#8396](https://github.com/thingsboard/thingsboard/pull/8396) Fixed validation of the TBEL "foreach" loop the "Script fuction" UI component by @nickAS21
+  * [#8419](https://github.com/thingsboard/thingsboard/pull/8419) Added assetProfileService to ServicesMap by @devaskim
+  * [#8447](https://github.com/thingsboard/thingsboard/pull/8447) Copy button for attribute table by @ArtemDzhereleiko
+  * [#8438](https://github.com/thingsboard/thingsboard/pull/8438) Widget extension module support custom action by @ChantsovaEkaterina
+  
+* Transport
+  
+  * [#7596](https://github.com/thingsboard/thingsboard/pull/7596) Mqtt v5 reason codes for connect, ack and disconnect messages by @imbeacon
+  * [#6986](https://github.com/thingsboard/thingsboard/pull/6986) Added ability to create&subscribe custom mqtt attributes topics by @adovh
+  * [#8186](https://github.com/thingsboard/thingsboard/pull/8186) MQTT Sparkplug protocol support by @nickAS21
+  
+* Edge
+  
+  * [#7862](https://github.com/thingsboard/thingsboard/pull/7862) Push latest timeseries key-value pair to edge on assignment entity to edge by @volodymyr-babak
+  * [#7878](https://github.com/thingsboard/thingsboard/pull/7878) Add edge install instructions for docker  by @volodymyr-babak
+  * [#7914](https://github.com/thingsboard/thingsboard/pull/7914) Added default edge rule chain to asset/device profiles by @volodymyr-babak
+  * [#8301](https://github.com/thingsboard/thingsboard/pull/8301) Edge computing solution templates by @volodymyr-babak
+  * [#8340](https://github.com/thingsboard/thingsboard/pull/8340) Handle gRPC messages exceeding default max message size by @volodymyr-babak
+  * [#8344](https://github.com/thingsboard/thingsboard/pull/8344) Push edge connect/disconnect events to rule chain by @volodymyr-babak
+  * [#8346](https://github.com/thingsboard/thingsboard/pull/8346) Improved Keep Alive Functionality between Edge and Cloud to Prevent Data Loss by @volodymyr-babak
+
+**Bug fixes**
+
+* Core & Rule Engine
+  
+  * [#8108](https://github.com/thingsboard/thingsboard/pull/8108) Bugfix for remove latest telemetry by @ShvaykaD
+  * [#8138](https://github.com/thingsboard/thingsboard/pull/8138) Fixed filtering by entity name by @YevhenBondarenko
+  * [#8310](https://github.com/thingsboard/thingsboard/pull/8310) Fixed forcorrect longtegers, sent on ws to FE  by @adovh
+  * [#7857](https://github.com/thingsboard/thingsboard/pull/7857) Report device activity during RPC processing by @ShvaykaD
+  * [#8238](https://github.com/thingsboard/thingsboard/pull/8238) Fixed xss vulnerabilities attributes and telemetry by @adovh
+  * [#8375](https://github.com/thingsboard/thingsboard/pull/8375) Fixed deduplication and delay rule nodes outgoing messages processing by @ShvaykaD
+  * [#8376](https://github.com/thingsboard/thingsboard/pull/8376) Fixed external id substitution when loading version of dashboard or rule chain by @ViacheslavKlimov
+  * [#8387](https://github.com/thingsboard/thingsboard/pull/8387) Fixed telemetry/attribute update while device bulk import by @dashevchenko
+  * [#8435](https://github.com/thingsboard/thingsboard/pull/8435) Fixedvalid removed outdated alarms count logs  by @ViacheslavKlimov
+  * [#8444](https://github.com/thingsboard/thingsboard/pull/8444) Fixed asset lifecycle message broadcasting cluster mode by @dashevchenko
+  * [#8449](https://github.com/thingsboard/thingsboard/pull/8449) Fixed using default timeout and improvements by @YevhenBondarenko
+
+* UI
+  
+  * [#8062](https://github.com/thingsboard/thingsboard/pull/8062) Refactoring time window component by @ArtemDzhereleiko
+  * [#7823](https://github.com/thingsboard/thingsboard/pull/7823) Fixed different size sort header arrow by @ArtemDzhereleiko
+  * [#8118](https://github.com/thingsboard/thingsboard/pull/8118) 'Horizontal bar' widget displayscorrectly decimal values that ends with zeros by @deaflynx
+  * [#8264](https://github.com/thingsboard/thingsboard/pull/8264) Fixed labelText andput text to entity autocomplete by @kalutkaz
+  * [#8267](https://github.com/thingsboard/thingsboard/pull/8267) Fixed locales for tenant profile field "REST requests for tenant" by @deaflynx
+  * [#8413](https://github.com/thingsboard/thingsboard/pull/8413) Fixed error when call test function rule node by @vvlladd28
+  * [#8428](https://github.com/thingsboard/thingsboard/pull/8428) Fixed help link for resources by @vvlladd28
+  * [#8458](https://github.com/thingsboard/thingsboard/pull/8458) Fixed add/edit entity custom action code samples by @ChantsovaEkaterina
+  
+* Edge
+  
+  * [#8274](https://github.com/thingsboard/thingsboard/pull/8274) Alarm entity that was delivered from the edge is stored with provided ID by @volodymyr-babak
+  * [#7929](https://github.com/thingsboard/thingsboard/pull/7929) Push public customer to the edge - fixes usage of public dashboards on the edge by @volodymyr-babak
+
+
+
+  
+## v3.4.4 (February 7, 2023)  
+
+**Improvements**
+
+* UI:
+  
+  * [#7951](https://github.com/thingsboard/thingsboard/pull/7951) Queue autocomplete addput hint by @kalutkaz
+  * [#7884](https://github.com/thingsboard/thingsboard/pull/7884) Update locale.constant-zh_TW.json by @wusung
+  * [#7863](https://github.com/thingsboard/thingsboard/pull/7863) Optimizations for dashboard-pages that open popover or dialog. by @Terny22
+  * [#7837](https://github.com/thingsboard/thingsboard/pull/7837) Remove default device profile from OTA updates creation form by @ArtemDzhereleiko
+
+**Bug fixes**
+
+* Core & Rule Engine:
+  
+  * [#7838](https://github.com/thingsboard/thingsboard/pull/7838) Fixed device sessions dump by @YevhenBondarenko
+  * [#7963](https://github.com/thingsboard/thingsboard/pull/7963) Fixed js cache by @YevhenBondarenko
+  * [#8009](https://github.com/thingsboard/thingsboard/pull/8009) Rollback "tellFailure" logic change TbAbstractGetAttributesNode by @ShvaykaD
+  * [#8002](https://github.com/thingsboard/thingsboard/pull/8002) Fixed data convertion for BigInteger values that stored DB as String by @ShvaykaD
+
+* UI:
+  
+  * [#7871](https://github.com/thingsboard/thingsboard/pull/7871) Detected changes of switching fixed layout side by @ArtemDzhereleiko
+  * [#7868](https://github.com/thingsboard/thingsboard/pull/7868) Fixedcorrect calculate width when used right layout dashboard by @vvlladd28
+  * [#7903](https://github.com/thingsboard/thingsboard/pull/7903) Fixed gap for widget setting mobile mod and fix translation by @ArtemDzhereleiko
+  * [#7875](https://github.com/thingsboard/thingsboard/pull/7875) Fixed phoneput update on save changes by @ArtemDzhereleiko
+  * [#7873](https://github.com/thingsboard/thingsboard/pull/7873) Fixed when deleting a value the search field time shows null value by @vvlladd28
+  * [#8010](https://github.com/thingsboard/thingsboard/pull/8010) Fixed auto-indexing for keys with aggregation by @ArtemDzhereleiko
+  * [#8012](https://github.com/thingsboard/thingsboard/pull/8012) Fixed applying custom translation to labels of latest data keys timeseries widgets by @ChantsovaEkaterina
+  * [#8013](https://github.com/thingsboard/thingsboard/pull/8013) Fixed error on loading custom widgets module withing dashboard state component by @ChantsovaEkaterina
+  * [#8054](https://github.com/thingsboard/thingsboard/pull/8054) Fixedcorrect resolve state entity by @vvlladd28
+  * [#8031](https://github.com/thingsboard/thingsboard/pull/8031) Fixed device profile url for navigation cards settings by @ArtemDzhereleiko
+  * [#8037](https://github.com/thingsboard/thingsboard/pull/8037) Fixed loading widget resources, when one of the resources is marked as module by @ChantsovaEkaterina
+  
+## v3.4.3 (December 21, 2022)  
+
+**Improvements**
+
+* Core & Rule Engine:
+  * [#7778](https://github.com/thingsboard/thingsboard/pull/7778) Version control: 'Show merge commits' option, improved entity versions comparing by @ViacheslavKlimov
+
+* UI:
+  * [#7785](https://github.com/thingsboard/thingsboard/pull/7785) Danish language by @vvlladd28
+  * [#7795](https://github.com/thingsboard/thingsboard/pull/7795) Always visible action button in multiple input widgets by @vvlladd28 
+
+**Bug fixes**
+
+* Core & Rule Engine:
+
+  * [#7752](https://github.com/thingsboard/thingsboard/pull/7752) Fixed asset's profile changing by @ViacheslavKlimov
+  * [#7761](https://github.com/thingsboard/thingsboard/pull/7761) Fixed no timeseries data in widget for entity view; fix State Chart invalid behavior by @ViacheslavKlimov
+  * [#7773](https://github.com/thingsboard/thingsboard/pull/7773) Fixed getting a lot of updates over WS in case of aggregation query, even if no real updates happened by @volodymyr-babak
+  * [#7783](https://github.com/thingsboard/thingsboard/pull/7783) Fixed device bulk import with empty credentials by @YevhenBondarenko
+  * [#7786](https://github.com/thingsboard/thingsboard/pull/7786) Fixed saveDeviceWithCredentials notifications by @YevhenBondarenko 
+  * [#7791](https://github.com/thingsboard/thingsboard/pull/7791) Fixed support of empty arrays in 'split array msg' rule node by @YuriyLytvynchuk
+  * [#7801](https://github.com/thingsboard/thingsboard/pull/7801) Added DeviceProfileService and AssetProfileService to TBContext by @dashevchenko
+  
+* UI:
+  
+  * [#7758](https://github.com/thingsboard/thingsboard/pull/7758) Fixed validation in bulk import and improvement bulk import for Edge by @vvlladd28
+  * [#7782](https://github.com/thingsboard/thingsboard/pull/7782) Fixed Catalan locale designator by @ArtemDzhereleiko
+
+* Edge:
+  
+  * [#7792](https://github.com/thingsboard/thingsboard/pull/7792) Edge root rule chain update fix. USER entity support added. INACTIVITY_TIMEOUT pushed to edge. by @volodymyr-babak
+
+## v3.4.2 (December 1, 2022)
+
+Minor release with the following features and bug fixes:
+
+**Major Improvements:**
+
+* Core & Rule Engine:
+
+  * [#7455](https://github.com/thingsboard/thingsboard/pull/7455) TBEL executor;
+  * [#7342](https://github.com/thingsboard/thingsboard/pull/7342) Asset Profiles Feature;
+  * [#7371](https://github.com/thingsboard/thingsboard/pull/7371) TTL and table partitioning for audit logs;
+  * [#7564](https://github.com/thingsboard/thingsboard/pull/7564) Table partitioning for edge events;    
+  * [#7347](https://github.com/thingsboard/thingsboard/issues/7347) New rule node: 'math function';
+  * [#7297](https://github.com/thingsboard/thingsboard/pull/7297) Generate random JWT on install or upgrade;   
+
+* UI:
+
+  * [#7288](https://github.com/thingsboard/thingsboard/pull/7288) Support of aggregation for the latest values in the widget data source;
+
+* Edge:
+
+  * [#7592](https://github.com/thingsboard/thingsboard/pull/7592) Support of Device to Cloud RPC Requests;
+  
+
+**Minor Improvements:**
+
+* Core & Rule Engine:
+
+  * [#7339](https://github.com/thingsboard/thingsboard/pull/7339) DB calls stats by tenant in the logs;
+  * [#7350](https://github.com/thingsboard/thingsboard/pull/7350) Limits for JS script body, input args and invocation result size;
+  * [#7403](https://github.com/thingsboard/thingsboard/pull/7403) Improvements for the JS executor request payload size;      
+  * [#7483](https://github.com/thingsboard/thingsboard/pull/7483) Version control Repository settings with 'Read-only' flag;
+  * [#7245](https://github.com/thingsboard/thingsboard/pull/7245) Add 'Entity' source to the 'change originator node';
+  * [#7341](https://github.com/thingsboard/thingsboard/pull/7341) Email validation pattern improvements;
+  * [#7239](https://github.com/thingsboard/thingsboard/pull/7239) New rule node: 'fetch device credentials';
+  * [#7240](https://github.com/thingsboard/thingsboard/pull/7240) New rule node: 'copy keys';
+  * [#7241](https://github.com/thingsboard/thingsboard/pull/7241) New rule node: 'rename keys';    
+  * [#7242](https://github.com/thingsboard/thingsboard/pull/7242) New rule node: 'delete keys';
+  * [#7243](https://github.com/thingsboard/thingsboard/pull/7243) New rule node: 'json path';
+  * [#7244](https://github.com/thingsboard/thingsboard/pull/7244) New rule node: 'split array msg';
+  * [#7238](https://github.com/thingsboard/thingsboard/pull/7238) New rule node: 'delete attributes';
+  * [#7278](https://github.com/thingsboard/thingsboard/pull/7278) Redirect to the targeted url after the successful login via oauth2;
+  * [#7367](https://github.com/thingsboard/thingsboard/pull/7367) Details rule node returns entity's ID as well;
+  * [#7370](https://github.com/thingsboard/thingsboard/pull/7370) Added support of creating relation to USER entity;
+  * [#7394](https://github.com/thingsboard/thingsboard/pull/7394) Add 'retained' button for MQTT rule node;
+  * [#7425](https://github.com/thingsboard/thingsboard/pull/7425) Optional key pattern field for Kafka rule node;
+  * [#7442](https://github.com/thingsboard/thingsboard/pull/7442) Upgrade protobuf version from 3.17.2 -> 3.21.7, support Mac M1(ARM Core) protobuf files compile;
+  * [#7522](https://github.com/thingsboard/thingsboard/pull/7522) Postgresql driver update up to 42.5.0;
+  * [#7538](https://github.com/thingsboard/thingsboard/pull/7538) Alarm service optimization - remove async().get() calls from synchronous methods;
+  * [#7377](https://github.com/thingsboard/thingsboard/pull/7377) Add ability to fetch attributes/latest telemetry to msg data in rule nodes;
+  * [#7548](https://github.com/thingsboard/thingsboard/pull/7548) Improvement to the recursive relations query;
+  * [#7453](https://github.com/thingsboard/thingsboard/pull/7453) Audit log on oauth2 login;    
+  * [#7435](https://github.com/thingsboard/thingsboard/pull/7435) JWT invalidate on logout;
+  * [#7541](https://github.com/thingsboard/thingsboard/pull/7541) Use default SQL null ordering for ts_kv;
+  * [#7587](https://github.com/thingsboard/thingsboard/pull/7587) HTTP client returns headers as an array if there is more than one;
+  * [#7629](https://github.com/thingsboard/thingsboard/pull/7629) Cassandra partition 'always exists' mode to optimize queries;
+  * [#7666](https://github.com/thingsboard/thingsboard/pull/7666) Add options send notifications for 'save attribute' & 'delete attribute' rule nodes;  
+
+* UI:
+  * [#7304](https://github.com/thingsboard/thingsboard/pull/7304) Let data keys of entities widget to hide in mobile mode;  
+  * [#7084](https://github.com/thingsboard/thingsboard/pull/7084) Pass widget context to callback of entities hierarchy widget;
+  * [#7230](https://github.com/thingsboard/thingsboard/pull/7230) Added Catalan locale;  
+  * [#6374](https://github.com/thingsboard/thingsboard/pull/6374) Dashboard layouts width configuration;
+  * [#7267](https://github.com/thingsboard/thingsboard/pull/7267) Added new widget-subscription setting - "onTimewindowChangeFunction";
+  * [#7386](https://github.com/thingsboard/thingsboard/pull/7386) Add widget context API call to create alarm queries;
+  * [#7436](https://github.com/thingsboard/thingsboard/pull/7436) Added API to close dashboard opened as dialog;
+  * [#7458](https://github.com/thingsboard/thingsboard/pull/7458) Update zh_CN locale;
+  * [#7248](https://github.com/thingsboard/thingsboard/pull/7248) Update de_DE locale;    
+  * [#7311](https://github.com/thingsboard/thingsboard/pull/7311) Added clustering markers color function;
+  * [#7387](https://github.com/thingsboard/thingsboard/pull/7387) Added support of custom table header title in addition to data key label;
+  * [#7475](https://github.com/thingsboard/thingsboard/pull/7475) Form field appearance in timezone and entity autocomplete components;
+  * [#7531](https://github.com/thingsboard/thingsboard/pull/7531) Chart thresholds support array of values;
+  * [#7356](https://github.com/thingsboard/thingsboard/pull/7356) Let user to drag-n-drop widget actions in list;
+  * [#7534](https://github.com/thingsboard/thingsboard/pull/7534) Let phone component to accept numbers with spaces, hyphens and parenthesis;
+  * [#7275](https://github.com/thingsboard/thingsboard/pull/7275) Add API to create telemetry websocket updater in custom widgets;  
+
+* Transports:
+
+  * [#7232](https://github.com/thingsboard/thingsboard/pull/7232) DTLS retransmission timeout is now configurable and set to 9 seconds by default;
+  * [#7519](https://github.com/thingsboard/thingsboard/pull/7519) Make log shorter on IOException for MQTT transport;  
+
+* Edge:
+
+  * [#7395](https://github.com/thingsboard/thingsboard/pull/7395) Customers hierarchy support;
+  * [#7478](https://github.com/thingsboard/thingsboard/pull/7478) Added functionality to drop messages that are not able to be processed by the edge;  
+
+* Build scripts:
+
+  * [#7155](https://github.com/thingsboard/thingsboard/pull/7155) Update bouncycastle from 1.67 to 1.69 to avoid duplicate of dependencies;
+  * [#7518](https://github.com/thingsboard/thingsboard/pull/7518) Cassandra cloud connects to Datastax Astra DB;
+  * [#7566](https://github.com/thingsboard/thingsboard/pull/7566) Moved black-box tests to TestNG;
+  * [#7665](https://github.com/thingsboard/thingsboard/pull/7665) Provisioning black box tests;
+  * [#7686](https://github.com/thingsboard/thingsboard/pull/7686) Compatibility with Compose V2 in the docker compose scripts;   
+
+**Bug Fixes**
+
+* Core & Rule Engine:
+
+  * [#7544](https://github.com/thingsboard/thingsboard/pull/7544) Inactivity timeout fix;
+  * [#7385](https://github.com/thingsboard/thingsboard/pull/7385) Additional validation for AuditLog entities; 
+  * [#7145](https://github.com/thingsboard/thingsboard/pull/7145) Make entity relations deletion transactional;
+  * [#7157](https://github.com/thingsboard/thingsboard/pull/7157) SNMP/CoAP/LWM2M device profile transport configuration missing Serialization;
+  * [#7547](https://github.com/thingsboard/thingsboard/pull/7547) TbMsgProcessingStackItem missing Serialization;
+  * [#7268](https://github.com/thingsboard/thingsboard/pull/7268) 'originator telemetry' rule node;
+  * [#7246](https://github.com/thingsboard/thingsboard/pull/7246) Check value for "null" in the 'originator fields' rule node;
+  * [#7316](https://github.com/thingsboard/thingsboard/pull/7316) Default destroy method bug fix in the TbNode interface;
+  * [#7381](https://github.com/thingsboard/thingsboard/pull/7381) Add inactivity event support to the 'copy to view' rule node;
+  * [#7456](https://github.com/thingsboard/thingsboard/pull/7456) SQL batch sort enabled by default; additional deadlock logging;
+  * [#7237](https://github.com/thingsboard/thingsboard/pull/7237) Improve the processException extension for tbHttpClient;
+  * [#7250](https://github.com/thingsboard/thingsboard/pull/7250) Bulk import null node handling fix;
+  * [#7324](https://github.com/thingsboard/thingsboard/pull/7324) Fix for rate limits filter;
+  * [#7552](https://github.com/thingsboard/thingsboard/pull/7552) Fix Cassandra prepared statement produces NullPointerException due to race condition;
+  * [#7554](https://github.com/thingsboard/thingsboard/pull/7554) Fix alarm subscriptions on REST API call;
+  * [#7549](https://github.com/thingsboard/thingsboard/pull/7549) Check tenant entity for rule nodes;
+  * [#7589](https://github.com/thingsboard/thingsboard/pull/7589) Fix of alarm count query with null sortOrder and textSearch specified;
+  * [#7636](https://github.com/thingsboard/thingsboard/pull/7636) Validation for entity's additionalInfo;
+  * [#7699](https://github.com/thingsboard/thingsboard/pull/7699) Fixed queue notifications in monolith mode;
+  * [#7707](https://github.com/thingsboard/thingsboard/pull/7707) OTA image assigned to device profile does not populate device shared properties;  
+  
+* UI:
+
+  * [#7127](https://github.com/thingsboard/thingsboard/pull/7127) Fixed tooltip display in map edit button; 
+  * [#7181](https://github.com/thingsboard/thingsboard/pull/7181) Fixed close tooltip button for map widgets;
+  * [#6917](https://github.com/thingsboard/thingsboard/pull/6917) Let custom widget to process no-data case;
+  * [#7092](https://github.com/thingsboard/thingsboard/pull/7092) Fixed DatetimeAdapter for 'en-GB' locale;
+  * [#7129](https://github.com/thingsboard/thingsboard/pull/7129) Fixed Pie-Flot issue with timewindow display;
+  * [#7131](https://github.com/thingsboard/thingsboard/pull/7131) Fixed TextSearch input for tenants does not resolve empty field properly;
+  * [#7159](https://github.com/thingsboard/thingsboard/pull/7159) Fixed displaying of Markdown/HTML value function content in markdown widget settings;
+  * [#7174](https://github.com/thingsboard/thingsboard/pull/7174) Fixed label polyline/circle follow the mouse for image map;
+  * [#7211](https://github.com/thingsboard/thingsboard/pull/7211) Fixed file input loader;
+  * [#7217](https://github.com/thingsboard/thingsboard/pull/7217) Text 'Items per page' in table widgets are not translated;
+  * [#7251](https://github.com/thingsboard/thingsboard/pull/7251) Update message type list for rule node relations;
+  * [#7236](https://github.com/thingsboard/thingsboard/pull/7236) Allow whitespace in issuer name at TOTP 2FA provider;
+  * [#7290](https://github.com/thingsboard/thingsboard/pull/7290) Widget datasource css issues;
+  * [#7326](https://github.com/thingsboard/thingsboard/pull/7326) Fixed check isEmpty validation in EntityDataCmd models;
+  * [#7360](https://github.com/thingsboard/thingsboard/pull/7360) Let user to selective export widget bundles to version control;
+  * [#7471](https://github.com/thingsboard/thingsboard/pull/7471) Fixed height and console error for Event filter panel;
+  * [#7500](https://github.com/thingsboard/thingsboard/pull/7500) Use row layout on screen bigger than xs size;
+  * [#7485](https://github.com/thingsboard/thingsboard/pull/7485) Fix phone dial code detection for default country;
+  * [#7365](https://github.com/thingsboard/thingsboard/pull/7365) Fix markdown widget by @kalutkaz;
+  * [#7591](https://github.com/thingsboard/thingsboard/pull/7591) Fixed function setFixedLayout in dashboard layout;
+  * [#7618](https://github.com/thingsboard/thingsboard/pull/7618) Fixes delete attribute or telemetry whose name has special characters;
+  * [#7652](https://github.com/thingsboard/thingsboard/pull/7652) Fixed custom dashboard CSS was not applied when a dashboard is full-screen;
+  * [#7658](https://github.com/thingsboard/thingsboard/pull/7658) Make possible to hide widget in desktop mode;
+  
+* Edge:
+
+  * [#7093](https://github.com/thingsboard/thingsboard/pull/7093) Edge sync functionality - fixed cluster support; 
+  * [#7214](https://github.com/thingsboard/thingsboard/pull/7214) Notify devices in case shared attribute updates from edge;
+  * [#7651](https://github.com/thingsboard/thingsboard/pull/7651) Updates to stability of synchronization between edge and cloud in case of many events simultaneously;  
+
+* Build scripts:
+
+  * [#7199](https://github.com/thingsboard/thingsboard/pull/7199) Fixed default value of the events.debug_partition_size env variable;
+  * [#7402](https://github.com/thingsboard/thingsboard/pull/7402) Update package version for tb docker images;  
+  * [#7555](https://github.com/thingsboard/thingsboard/pull/7555) improved lifecycle events and added kill for crash event for js-executor;
+  * [#7655](https://github.com/thingsboard/thingsboard/pull/7655) added max_old_space_size to node.js based modules.
+  
+## We welcome our new contributors:
+
+  * [@ashaforost](https://github.com/ashaforost) made their first contribution in [#7199](https://github.com/thingsboard/thingsboard/pull/7199)
+  * [@Lenteguppie](https://github.com/Lenteguppie) made their first contribution in [#7394](https://github.com/thingsboard/thingsboard/pull/7394)
+  * [@adrianAzoitei](https://github.com/adrianAzoitei) made their first contribution in [#7425](https://github.com/thingsboard/thingsboard/pull/7425)
+  * [@sanshengshui](https://github.com/sanshengshui) made their first contribution in [#7442](https://github.com/thingsboard/thingsboard/pull/7442)
+  * [@Fliner](https://github.com/Fliner) made their first contribution in [#7458](https://github.com/thingsboard/thingsboard/pull/7458)
+  * [@AndriiLandiak](https://github.com/AndriiLandiak) made their first contribution in [#7564](https://github.com/thingsboard/thingsboard/pull/7564)
+  * [@dashevchenko](https://github.com/dashevchenko) made their first contribution in [#7566](https://github.com/thingsboard/thingsboard/pull/7566)
+  * [@struggle3](https://github.com/struggle3) made their first contribution in [#7581](https://github.com/thingsboard/thingsboard/pull/7581)
+
   
 ## v3.4.1 (August 18, 2022)
 

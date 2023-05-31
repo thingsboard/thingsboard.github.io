@@ -137,7 +137,7 @@ Here the docker-compose config
 
 ```bash
 #1M (million) devices
-version: '3'
+version: '3.0'
 services:
   cassandra:
     image: bitnami/cassandra:4.0

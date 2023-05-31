@@ -35,12 +35,24 @@ Use java installation [instructions](#java) to fix this.
 
 #### Source code
 
+{% capture windows_line_endings %}
+**NOTE: Building Docker image on Windows machine**
+
+To build Docker image certain scripts, configuration files and sources what will be a part of the Docker image must have **LF** line endings.
+So before cloning the repo set to _input_ the Git [core.autocrlf](https://git-scm.com/docs/git-config#Documentation/git-config.txt-coreautocrlf) configuration option.
+
+For example, to set *core.autocrlf* globally:
+
+`git config --global core.autocrlf input`{:.language-bash}
+{% endcapture %}
+{% include templates/warn-banner.md content=windows_line_endings %}
+
 You can clone source code of the project from the official [github repo](https://github.com/thingsboard/thingsboard).
 
 ```bash
-git clone git@github.com:thingsboard/thingsboard.git
 # checkout latest release branch
-git checkout {{ site.release.branch }}
+git clone -b {{ site.release.branch }} git@github.com:thingsboard/thingsboard.git
+cd thingsboard
 ```
 
 #### Build
@@ -52,6 +64,8 @@ mvn clean install -DskipTests
 ```
 
 #### Build local docker images
+
+{% include templates/warn-banner.md content=windows_line_endings %}
 
 Make sure that [Docker](https://docs.docker.com/engine/install/) is installed.
 
@@ -106,4 +120,13 @@ rm -rf ui-ngx/node_modules
 - build in parallel, format headers, build docker images
 ```bash
 mvn -T 0.8C license:format clean install -DskipTests -Ddockerfile.skip=false
+```
+
+#### Build and runtime errors
+
+- If you see such errors when running locally-built Docker image, re-clone the repo with **LF** [file ending](https://git-scm.com/docs/git-config#Documentation/git-config.txt-coreautocrlf) and re-build the image.
+To fix this read [Source code](#source-code) section.
+
+```bash
+Standard_init_linux.go:175 exec user process caused no such file
 ```

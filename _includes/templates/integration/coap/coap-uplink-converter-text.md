@@ -29,7 +29,6 @@ function decodeToString(payload) {
 }
 
 return result;
-
 ``` 
 {: .copy-code}
 

@@ -71,15 +71,8 @@ Where:
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
 - `image: thingsboard/tb-postgres`          - docker image, can be also `thingsboard/tb-cassandra` or `thingsboard/tb`
 
-Execute the following command to up this docker compose directly:
-
-**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file. 
-
-```
-docker-compose pull
-docker-compose up
-```
-{: .copy-code}
+{% assign serviceName = "tb" %}
+{% include templates/install/docker/docker-compose-up.md %}
 
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
 
@@ -113,29 +106,8 @@ You can always change passwords for each account in account profile page.
 
 ## Detaching, stop and start commands
 
-You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
-
-In case of any issues you can examine service logs for errors.
-For example to see ThingsBoard node logs execute the following command:
-
-```
-docker-compose logs -f mytbpe
-```
-{: .copy-code}
-
-To stop the container:
-
-```
-docker-compose stop
-```
-{: .copy-code}
-
-To start the container:
-
-```
-docker-compose start
-```
-{: .copy-code}
+{% assign serviceFullName = "ThingsBoard" %}
+{% include templates/install/docker/detaching-stop-start-commands.md %}
 
 ## Upgrading
 
@@ -143,11 +115,22 @@ In order to update to the latest image, open "Docker Quickstart Terminal" and ex
 
 ```
 $ docker pull thingsboard/tb-postgres
-$ docker-compose stop
+$ docker compose stop
 $ docker run -it -v mytb-data:/data --rm thingsboard/tb-postgres upgrade-tb.sh
-$ docker rm mytb
-$ docker-compose up
+$ docker compose rm mytb
+$ docker compose up
 ```
+
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
+<br>**$ docker pull thingsboard/tb-postgres**
+<br>**$ docker-compose stop**
+<br>**$ docker run -it -v mytb-data:/data --rm thingsboard/tb-postgres upgrade-tb.sh**
+<br>**$ docker-compose rm mytb**
+<br>**$ docker-compose up**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
+
 
 **NOTE**: if you use different database change image name in all commands from `thingsboard/tb-postgres` to `thingsboard/tb-cassandra` or `thingsboard/tb` correspondingly.
  
@@ -157,14 +140,7 @@ $ docker-compose up
 
 ### DNS issues
 
-**Note** If you observe errors related to DNS issues, for example
-
-```bash
-127.0.1.1:53: cannot unmarshal DNS message
-```
-
-You may configure your system to use [Google public DNS servers](https://developers.google.com/speed/public-dns/docs/using#windows)
-
+{% include templates/troubleshooting/dns-issues-windows.md %}
 
 ## Next steps
 

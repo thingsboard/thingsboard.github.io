@@ -39,12 +39,14 @@ So please make sure, that ThingsBoard Edge is not restarted during offline perio
 ## Can multiple tenants or customers access single ThingsBoard Edge on remote location?
 
 {% if docsPrefix == 'pe/edge/' %}
-ThingsBoard Edge PE is **single** tenant and(or) **single** customer (Edge PE is going to support multiple customers starting from [v3.5](/docs/pe/edge/roadmap/#v35) release).
+ThingsBoard Edge PE is **single** tenant and **multiple** customers (partial support of multiple customers). 
+In case Edge owner is sub-customer, all the parents of Edge owner sub-customer until tenant level are going to be provisioned to the Edge.
+So customers from the same hierarchy path are able to access the same ThingsBoard Edge PE instance.
 You cannot share ThingsBoard Edge between multiple tenants.
 And devices from multiple tenants can not be connected to a single ThingsBoard Edge.
 In this case you'll need to provision multiple ThingsBoard Edge instances for every tenant.
 {% else %}
-ThingsBoard Edge CE is **single** tenant and(or) **single** customer.
+ThingsBoard Edge CE is **single** tenant and **single** customer.
 You cannot share ThingsBoard Edge between multiple tenants or customers.
 And devices from multiple tenants can not be connected to a single ThingsBoard Edge.
 In this case you'll need to provision multiple ThingsBoard Edge instances for every tenant or customer.

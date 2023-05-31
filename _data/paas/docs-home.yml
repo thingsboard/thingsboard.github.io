@@ -22,16 +22,22 @@ toc:
       path: /docs/paas/solution-templates/fleet-tracking/
     - title: Water metering
       path: /docs/paas/solution-templates/water-metering/
+    - title: Smart retail
+      path: /docs/paas/solution-templates/smart-retail/
+    - title: Air quality monitoring
+      path: /docs/paas/solution-templates/air-quality-monitoring/
+    - title: Smart Irrigation
+      path: /docs/paas/solution-templates/smart-irrigation/
+    - title: Waste management
+      path: /docs/paas/solution-templates/waste-management/
 - title: Key concepts
   section:
     - title: Entities and Relations
       path: /docs/paas/user-guide/entities-and-relations/
     - title: Device Profiles
       path: /docs/paas/user-guide/device-profiles/
-      new: true
     - title: Asset Profiles
       path: /docs/paas/user-guide/asset-profiles/
-      new: true
     - title: Attributes
       path: /docs/paas/user-guide/attributes/
     - title: Time-series data
@@ -42,19 +48,28 @@ toc:
       path: /docs/paas/user-guide/rpc/
     - title: OTA updates
       path: /docs/paas/user-guide/ota-updates/
-      new: true
 - title: Dashboards
   section:
     - title: Overview
       path: /docs/paas/user-guide/dashboards/
     - title: Aliases
       path: /docs/paas/user-guide/ui/aliases/
-    - title: Widget Actions
-      path: /docs/paas/user-guide/ui/widget-actions/
-    - title: Widgets Library
-      path: /docs/paas/user-guide/ui/widget-library/
-    - title: Widgets development
-      path: /docs/paas/user-guide/contribution/widgets-development/
+    - title: Widgets
+      section:
+        - title: Widget Actions
+          path: /docs/paas/user-guide/ui/widget-actions/
+        - title: Widgets Library
+          path: /docs/paas/user-guide/ui/widget-library/
+        - title: Widgets development
+          path: /docs/paas/user-guide/contribution/widgets-development/
+        - title: Chart widgets
+          path: /docs/pe/user-guide/ui/chart-widget/
+        - title: Entities Table widget
+          path: /docs/paas/user-guide/ui/entity-table-widget/
+        - title: Trip Animation Widget
+          path: /docs/paas/user-guide/ui/trip-animation-widget/
+        - title: Advanced data key configuration
+          path: /docs/paas/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
   section:
     - title: Getting Started
@@ -107,7 +122,7 @@ toc:
       path: /docs/paas/user-guide/integrations/opc-ua/
     - title: Actility ThingPark
       path: /docs/paas/user-guide/integrations/thingpark/
-    - title: TheThingsNetwork
+    - title: TheThingsStack
       path: /docs/paas/user-guide/integrations/ttn/
     - title: TheThingsIndustries
       path: /docs/paas/user-guide/integrations/tti/
@@ -123,6 +138,9 @@ toc:
       path: /docs/paas/user-guide/integrations/ibm-watson-iot/
     - title: Azure Event Hub
       path: /docs/paas/user-guide/integrations/azure-event-hub/
+    - title: Azure Service Bus
+      path: /docs/paas/user-guide/integrations/azure-service-bus/
+      new: true
     - title: Azure IoT Hub
       path: /docs/paas/user-guide/integrations/azure-iot-hub/
     - title: TCP
@@ -133,6 +151,9 @@ toc:
       path: /docs/paas/user-guide/integrations/sigfox/
     - title: Ocean Connect
       path: /docs/paas/user-guide/integrations/ocean-connect/
+    - title: Tuya
+      path: /docs/paas/user-guide/integrations/tuya/
+      new: true
     - title: Custom Integration development guide
       path: /docs/paas/user-guide/integrations/custom/
     - title: Notifications and Alarms on your smartphone using Telegram Bot
@@ -159,7 +180,6 @@ toc:
       path: /docs/paas/user-guide/advanced-filters/
     - title: Version Control
       path: /docs/paas/user-guide/version-control/
-      new: true
     - title: PSM and eDRX Support
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning
@@ -174,6 +194,9 @@ toc:
       path: /docs/paas/user-guide/csv-xls-data-export/
     - title: File Storage
       path: /docs/paas/user-guide/file-storage/
+    - title: ThingsBoard Expression Language (TBEL)
+      path: /docs/paas/user-guide/tbel/
+      new: true
 - title: Security
   section:
     - title: Audit Log
@@ -218,14 +241,6 @@ toc:
       path: /docs/paas/user-guide/ui/rule-chains/
     - title: Dashboards
       path: /docs/paas/user-guide/ui/dashboards/
-    - title: Widgets
-      section:
-        - title: Trip Animation Widget
-          path: /docs/paas/user-guide/ui/trip-animation-widget/
-        - title: Advanced Settings of the Entity Table widget
-          path: /docs/paas/user-guide/ui/entity-table-widget/
-        - title: Advanced data key configuration
-          path: /docs/paas/user-guide/ui/advanced-data-key-configuration/
 - title: Subscriptions
   path: /products/paas/subscription/
 - title: Plan and billing

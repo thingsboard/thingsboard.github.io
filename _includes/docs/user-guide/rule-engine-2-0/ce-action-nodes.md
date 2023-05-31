@@ -151,7 +151,8 @@ if (metadata.prevAlarmDetails) {
 }
 {% endhighlight %}
 
-**Alarm Details Builder** script function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-javascript-functions).
+
+**Alarm Details Builder** script function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
  
 **Example of Details Builder Function**
 
@@ -276,7 +277,7 @@ if (metadata.prevAlarmDetails) {
 }
 {% endhighlight %}
 
-**Alarm Details Builder** script function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-javascript-functions).
+**Alarm Details Builder** script function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
 **Example of Details Builder Function**
 
@@ -420,7 +421,7 @@ All fields in resulting object are optional and will be taken from previously ge
 
 Outbound Message from this Node will be new Message that was constructed using configured JavaScript function.
 
-JavaScript generator function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-javascript-functions).
+JavaScript generator function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
 This node can be used for Rule Chain debugging purposes.
 
@@ -452,7 +453,7 @@ Script should return String value.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-log-config.png)
 
-JavaScript transform function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-javascript-functions).
+JavaScript transform function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
 You can see the real life example, where this node is used, in the next tutorial:
 
@@ -885,22 +886,27 @@ The rule node fetches perimeter information from message metadata by default. If
 
 ###### Fetch perimeter information from message metadata
 
-There are two options of area definition based on the perimeter type:
+There are two options of area definition based on the perimeter type: **Polygon** and **Circle**
 
-- Polygon 
-           
-    Metadata of the incoming message must include key with name **perimeter** and following data structure:
-     
-{% highlight java %}[[lat1,lon1],[lat2,lon2], ... ,[latN,lonN]]{% endhighlight %}
- 
+Metadata of the incoming message must include key with name **perimeter** and following data structure:
+
+- Polygon
+
+{% highlight java %}[[latitude1,longitude1],[latitude2,longitude2], ... ,[latitudeN,longitudeN]]{% endhighlight %}
+
 - Circle
-                 
-{% highlight java %}"centerLatitude": "value1", "centerLongitude": "value2", "range": "value3"
+
+{% highlight java %}
+{"latitude":"value1","longitude":"value2","radius":"value3","radiusUnit":"KILOMETER"}
+{% endhighlight %}
+
+Keys **"latitude"** and **"longitude"** it's coordinates of the point.
+
+The **"radius"** key - it's the distance from the coordinate point to the circle.
 
 All values for these keys are in double-precision floating-point data type.
 
-The "rangeUnit" key requires specific value from a list of METER, KILOMETER, FOOT, MILE, NAUTICAL_MILE (capital letters obligatory).
-{% endhighlight %}
+The **"radiusUnit"** key requires specific value from a list of **METER**, **KILOMETER**, **FOOT**, **MILE**, **NAUTICAL_MILE** (capital letters obligatory).
 
 ###### Fetch perimeter information from node configuration
  

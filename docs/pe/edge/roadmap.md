@@ -10,12 +10,6 @@ description: Upcoming releases
 
 ## ThingsBoard Edge PE
 
-### v3.5
-
-Everything in PE 3.5 and Edge 3.5, plus:
-
-* Multiple customers support
-
 ### Upcoming releases
 * Edge Templates
 * Full RBAC support

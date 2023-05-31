@@ -7,6 +7,8 @@ description: Installing ThingsBoard Edge on Windows
 * TOC
 {:toc}
 
+{% include templates/edge/install/compatibility-warning-general.md %}
+
 {% assign docsPrefix = "edge/" %}
 
 {% include templates/install/windows-warning-note.md %}
@@ -53,7 +55,7 @@ https://github.com/thingsboard/thingsboard-edge/releases/download/{{ site.releas
 
 {% include templates/edge/install/open-edge-ui.md %} 
 
-### Troubleshootings
+### Troubleshooting
 
 The log files are located in **logs** folder ("C:\Program Files (x86)\tb-edge\logs" in our case).
 

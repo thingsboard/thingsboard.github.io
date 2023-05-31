@@ -50,7 +50,21 @@ sudo tar -xvzf configs.tar.gz -C /etc/thingsboard-gateway
 {: .copy-code}
 
 
-**4. Check installation you can with command** (You will get errors about connection, because you don't configure gateway for yourself. *For configuration please use [Configuration guide](/docs/iot-gateway/configuration/)):*
+**4. Set permission to the folders:**
+
+- For logs folder:
+```bash
+sudo chown YOUR_USER:YOUR_USER -R /var/log/thingsboard-gateway
+```
+{: .copy-code}
+
+- For configs folder
+```bash
+sudo chown YOUR_USER:YOUR_USER -R /etc/thingsboard-gateway
+```
+Where `YOUR_USER` is a user who will run the gateway.
+
+**5. Check installation you can with command** (You will get errors about connection, because you don't configure gateway for yourself. *For configuration please use [Configuration guide](/docs/iot-gateway/configuration/)):*
 
 ```bash
 thingsboard-gateway
