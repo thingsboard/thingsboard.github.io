@@ -84,13 +84,13 @@ environment variable, default value and description.
           <td>listener.tcp.netty.boss_group_thread_count</td>
           <td>TCP_NETTY_BOSS_GROUP_THREADS</td>
           <td>1</td>
-          <td>Netty BOSS threads count</td>
+          <td>Netty boss group threads count</td>
       </tr>
       <tr>
           <td>listener.tcp.netty.worker_group_thread_count</td>
           <td>TCP_NETTY_WORKER_GROUP_THREADS</td>
           <td>12</td>
-          <td>Netty worker threads count</td>
+          <td>Netty worker group threads count</td>
       </tr>
       <tr>
           <td>listener.tcp.netty.max_payload_size</td>
@@ -147,13 +147,13 @@ environment variable, default value and description.
           <td>listener.ssl.netty.boss_group_thread_count</td>
           <td>SSL_NETTY_BOSS_GROUP_THREADS</td>
           <td>1</td>
-          <td>Netty BOSS threads count</td>
+          <td>Netty boss group threads count</td>
       </tr>
       <tr>
           <td>listener.ssl.netty.worker_group_thread_count</td>
           <td>SSL_NETTY_WORKER_GROUP_THREADS</td>
           <td>12</td>
-          <td>Netty worker threads count</td>
+          <td>Netty worker group threads count</td>
       </tr>
       <tr>
           <td>listener.ssl.netty.max_payload_size</td>
@@ -436,7 +436,7 @@ environment variable, default value and description.
           <td>actors.client.dispatcher-pool-size</td>
           <td>ACTORS_SYSTEM_CLIENT_DISPATCHER_POOL_SIZE</td>
           <td>4</td>
-          <td>Number of threads processing the MQTT client actor's messages</td>
+          <td>Number of threads processing the MQTT client actors messages</td>
       </tr>
       <tr>
           <td>actors.client.wait-before-generated-actor-stop-seconds</td>
@@ -449,6 +449,18 @@ environment variable, default value and description.
           <td>ACTORS_SYSTEM_CLIENT_WAIT_BEFORE_NAMED_ACTOR_STOP_SECONDS</td>
           <td>60</td>
           <td>Time in seconds to wait until the actor is stopped for clients that specified client id</td>
+      </tr>
+      <tr>
+          <td>actors.rule.mail_thread_pool_size</td>
+          <td>ACTORS_RULE_MAIL_THREAD_POOL_SIZE</td>
+          <td>2</td>
+          <td>Thread pool size for mail sender executor service</td>
+      </tr>
+      <tr>
+          <td>actors.rule.mail_password_reset_thread_pool_size</td>
+          <td>ACTORS_RULE_MAIL_PASSWORD_RESET_THREAD_POOL_SIZE</td>
+          <td>2</td>
+          <td>Thread pool size for password reset emails executor service</td>
       </tr>
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">MQTT parameters</span></td>
