@@ -64,20 +64,7 @@ Execute the following command to start services:
 After a while when all services will be successfully started you can make requests to `http://{your-host-ip}:8083` 
 in you browser (e.g. [http://localhost:8083](http://localhost:8083)) and connect clients using MQTT protocol on 1883 port.
 
-Use the following default credentials for **System Administrator**:
-
-**Username**:
-```
-sysadmin@thingsboard.org
-```
-{: .copy-code}
-**Password**:
-```
-sysadmin
-```
-{: .copy-code}
-
-On the first user log-in you will be asked to change the default password to the preferred one and then re-login.
+{% include templates/mqtt-broker/login.md %}
 
 ## Step 5. Logs, stop and start commands
 

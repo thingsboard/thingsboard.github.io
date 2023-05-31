@@ -136,20 +136,8 @@ docker compose up -d
 
 
 After executing this command you can open `http://{your-host-ip}:8083` in your browser (e.g. [http://localhost:8083](http://localhost:8083)).
-You should see ThingsBoard MQTT Broker login page. Use the following default credentials for **System Administrator**:
 
-**Username**:
-```
-sysadmin@thingsboard.org
-```
-{: .copy-code}
-**Password**:
-```
-sysadmin
-```
-{: .copy-code}
-
-On the first user log-in you will be asked to change the default password to the preferred one and then re-login.
+{% include templates/mqtt-broker/login.md %}
 
 ## Stop and start commands
 

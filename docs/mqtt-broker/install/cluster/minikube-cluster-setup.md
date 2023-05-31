@@ -48,21 +48,7 @@ minikube ip
 ```
 {: .copy-code}
 
-You should see the ThingsBoard MQTT Broker login page.
-Use the following default credentials for **System Administrator**:
-
-**Username**:
-```
-sysadmin@thingsboard.org
-```
-{: .copy-code}
-**Password**:
-```
-sysadmin
-```
-{: .copy-code}
-
-On the first user log-in you will be asked to change the default password to the preferred one and then re-login.
+{% include templates/mqtt-broker/login.md %}
 
 ## Step 4. Logs, delete statefulsets and services
 
