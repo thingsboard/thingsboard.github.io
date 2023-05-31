@@ -38,14 +38,14 @@ Here are the fields you can change depending on your needs:
 - `region` - should be the AWS region where you want your cluster to be located (the default value is `us-east-1`)
 - `availabilityZones` - should specify the exact IDs of the region's availability zones
   (the default value is `[us-east-1a,us-east-1b,us-east-1c]`)
-- `instanceType` - the type of the instance with TB node (the default value is `m5.large`)
+- `instanceType` - the type of the instance with TB node (the default value is `m6a.large`)
 
-**Note**: if you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy **1** node of type **m5.large**.
+**Note**: if you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy 2 nodes of type m6a.large.
 
 {% capture aws-eks-security %}
 In case you want to secure access to the PostgreSQL and MSK, you'll need to configure the existing VPC or create a new one,
 set it as the VPC for the ThingsBoard MQTT Broker cluster, create security groups for PostgreSQL and MSK,
-set them for `main-node-group` node-group in the ThingsBoard MQTT Broker cluster and configure the access from the ThingsBoard MQTT Broker cluster nodes to PostgreSQL/MSK using another security group.
+set them for `tb-mqtt-broker` node-group in the ThingsBoard MQTT Broker cluster and configure the access from the ThingsBoard MQTT Broker cluster nodes to PostgreSQL/MSK using another security group.
 
 You can find more information about configuring VPC for `eksctl` [here](https://eksctl.io/usage/vpc-networking/).
 {% endcapture %}
@@ -121,16 +121,16 @@ Also, you should enable `Plaintext` communication between clients and brokers:
 
 **Note**, some recommendations:
 
-* Make sure your Apache Kafka version is 2.8.x;
+* Apache Kafka version can be safely set to the latest 3.4.0 version as the TB MQTT Broker is fully tested on it;
 * Use m5.large or similar instance types;
-* Use default 'Monitoring' settings or enable 'Enhenced topic level monitoring'.
+* Use default 'Monitoring' settings or enable 'Enhanced topic-level monitoring'.
 
 ## Step 6. Configure links to the Kafka (Amazon MSK)/Postgres
 
 ### Amazon RDS PostgreSQL
 
 Once the database switch to the ‘Available’ state, on AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to 
-`SPRING_DATASOURCE_URL` in the `tb-broker-configmap.yml`.
+`SPRING_DATASOURCE_URL` in the `tb-broker-configmap.yml` instead of `RDS_URL_HERE` part.
 
 ![image](/images/mqtt-broker/install/aws-rds-endpoint.png)
 
@@ -149,7 +149,7 @@ Where **$CLUSTER_ARN** is the Amazon Resource Name (ARN) of the MSK cluster:
 
 You'll need to paste data from the `BootstrapBrokerString` to the `TB_KAFKA_SERVERS` environment variable in the `tb-broker.yml` file.
 
-Otherwise, click ‘View client information’. Copy bootstrap server information in plaintext.
+Otherwise, click `View client information` seen on the screenshot above. Copy bootstrap server information in plaintext.
 
 ## Step 7. Installation
 
@@ -169,24 +169,29 @@ Otherwise, please check if you set the PostgreSQL URL in the `tb-broker-configma
 
 ## Step 8. Starting
 
-Execute the following command to run installation:
+Execute the following command to deploy the broker:
 
 ```bash
 ./k8s-deploy-tb-broker.sh
 ```
 {: .copy-code}
 
-After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to see `tb-broker-0` pod.
-Every pod should be in the `READY` state.
+After a few minutes, you may execute the next command to check the state of all pods.
+```bash
+kubectl get pods
+```
+{: .copy-code}
+
+If everything went fine, you should be able to see `tb-broker-0` and `tb-broker-1` pods. Every pod should be in the `READY` state.
 
 ## Step 9. Validate the setup
 
 Now you can open ThingsBoard MQTT Broker web interface in your browser using DNS name of the load balancer.
 
-You can see DNS name of the load-balancers using command:
+You can get DNS name of the load-balancers using the next command:
 
 ```
-kubectl get service
+kubectl get services
 ```
 {: .copy-code}
 
@@ -196,9 +201,7 @@ You should see the similar picture:
 
 Use `EXTERNAL-IP` field of the `tb-broker-loadbalancer-external` to connect to the cluster.
 
-Use the following default credentials:
-
-- **System Administrator**: sysadmin@thingsboard.org / sysadmin
+{% include templates/mqtt-broker/login.md %}
 
 #### Troubleshooting
 
@@ -209,10 +212,13 @@ kubectl logs -f tb-broker-0
 ```
 {: .copy-code}
 
-Or use `kubectl get pods` to see the state of the pods.
-Or use `kubectl get services` to see the state of all the services.
-Or use `kubectl get statefulsets` to see the state of all the deployments.
-See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) command reference for details.
+Use the next command to see the state of all statefulsets.
+```bash
+kubectl get statefulsets
+```
+{: .copy-code}
+
+See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) command reference for more details.
 
 ## Cluster deletion
 
@@ -230,7 +236,7 @@ Execute the following command to delete all ThingsBoard MQTT Broker nodes and co
 ```
 {: .copy-code}
 
-Execute the following command to delete EKS cluster (you should change the name of the cluster and zone):
+Execute the following command to delete the EKS cluster (you should change the name of the cluster and the region if those differ):
 ```
 eksctl delete cluster -r us-east-1 -n thingsboard-mqtt-broker-cluster -w
 ```
