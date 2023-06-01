@@ -9,7 +9,7 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ## ThingsBoard CE
 
-### v3.5.1
+### v3.5.2
 
 * Simplified widget configuration;
 * Dedicated dashboard for gateway management;  

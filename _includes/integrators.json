@@ -336,6 +336,18 @@
     }
   },
   {
+    "type": ["Asia"],
+    "country": ["Thailand"],
+    "name": "Epithos Co., Ltd",
+    "contact": {
+      "href": "pnt@epithos.com"
+    },
+    "site": {
+      "href": "epithos.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe"],
     "country": ["Ukraine"],
     "name": "Euristiq",
