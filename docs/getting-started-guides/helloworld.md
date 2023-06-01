@@ -31,7 +31,7 @@ step2:
 
 step3:
     0:
-        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-3-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-1-ce.png
         title: 'Click on the device row in the table to open device details;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-4-ce.png
@@ -54,16 +54,16 @@ step32:
         title: 'Enter edit mode. Click on the pencil button in the bottom right corner;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-2-ce.png
-        title: 'Click the "Entity aliases" icon in the top right part of the screen. You will see an empty list of Entity aliases;'
+        title: 'Click the "Entity aliases" icon in the top right part of the screen;'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-3-ce.png
-        title: 'Click "Add alias" button;'
+        title: 'You will see an empty list of Entity aliases. Click "Add alias" button;'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-4-ce.png
-        title: 'Input alias name, for example, "My Device". Select the "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on it;'
+        title: 'Input alias name, for example, "My Device". Select the "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on it. Click "Add";'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-5-ce.png
-        title: 'Click "Add" and then "Save";'
+        title: 'Click "Save";'
     5:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-6-ce.png
         title: 'Finally, click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.'
@@ -198,7 +198,7 @@ step71:
         title: 'Click the "+" sign to add a customer;'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-3-ce.png
-        title: 'Add customer title and click "Add".'
+        title: 'Input customer title and click "Add".'
 
 step72:
     0:
@@ -211,7 +211,7 @@ step72:
 step73:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-3-ce.png
-        title: 'Open Dashboards page. Click "Manage assigned customers" icon;'
+        title: 'Open Dashboards page. Click "Manage assigned customers" icon for "My New Dashboard";'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-4-ce.png
         title: 'Select "My New Customer" and click "Update".'
@@ -219,7 +219,7 @@ step73:
 step74:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-1-ce.png
-        title: 'Navigate back to the "Customers" page and click the "Manage customer users" icon;'
+        title: 'Navigate back to the "Customers" page and click the "Manage customer users" icon for "My New Customer";'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-2-ce.png
         title: 'Click the "Add user" icon;'
@@ -228,21 +228,18 @@ step74:
         title: 'Specify email that you will use to login as a customer user and click "Add";'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-4-ce.png
-        title: 'Copy the activation link and save it to a safe place. You will use it later to set the password;'
+        title: 'Copy the activation link and save it to a safe place. You will use it later to set the password. Click "OK";'
     4:
-        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-5-ce.png
-        title: 'Open user details;'
-    5:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-6-ce.png
-        title: 'Toggle edit mode;'
-    6:
+        title: 'Click on the created user to open details. Click "pencil" icon to enter edit mode;'
+    5:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-7-ce.png
         title: 'Select default dashboard and check "Always fullscreen". Apply changes.'
 
 step75:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-1-ce.png
-        title: 'Use the activation link to set the password. Click "Create Password". You will automatically login as a customer user;'
+        title: 'To set the password, paste the previously copied link into a new browser tab and press Enter. Come up with and enter a password twice, then press "Create Password". You will automatically login as a customer user;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-2-ce.png
         title: 'You have logged in as a Customer User. You may browse the data and acknowledge/clear alarms.'
@@ -279,8 +276,11 @@ We will connect and visualize data from the temperature sensor to keep it simple
 
 For simplicity, we will provision the device manually using the UI. 
  
-{% include images-gallery.html imageCollection="step1" showListImageTitles="true" %} 
+{% include images-gallery.html imageCollection="step1" showListImageTitles="true" %}
 
+Learn more about **notifications** and how to configure them [here](#step-6-alarm-notifications).
+
+<br/>
 You may also use:
  * [Bulk provisioning](/docs/user-guide/bulk-provisioning/) to provision multiple devices from a CSV file using UI;
  * [Device provisioning](/docs/user-guide/device-provisioning/) to allow device firmware to automatically provision the device, so you don't need to configure each device manually; 
@@ -370,11 +370,10 @@ Note that the temperature value should be 26 or higher to raise the alarm. Once 
 
 ## Step 6. Alarm notifications
 
-It is quite easy to configure email or sms notifications for alarms. We recommend reviewing alarm rule [examples](/docs/user-guide/device-profiles/#alarm-rules) 
-and documentation about [alarm notifications](/docs/user-guide/device-profiles/#notifications-about-alarms). 
- 
-**Note**: At the moment ThingsBoard supports AWS SNS and Twilio to send SMS. 
-Both services are non-free and require you to create an account. However, you may integrate with other SMS/EMAIL gateways using [REST API call](/docs/user-guide/rule-engine-2-0/external-nodes/#rest-api-call-node) node.  
+It's quite easy to set up notifications using the [Notifications center](/docs/{{docsPrefix}}user-guide/notifications/). ThingsBoard Notification Center allows you to send notifications to the end-users.
+
+We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules)
+and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms).
 
 ## Step 7. Assign Device and Dashboard to Customer
 
@@ -402,7 +401,7 @@ Let's share our dashboard with the Customer. The Customer users will have read-o
 
 #### Step 7.4 Create customer user
 
-Finally, let's create a user that will belong to the customer and will have read-only access to the dashboard and the device.
+Finally, let's create a user that will belong to the customer and will have `read-only` access to the dashboard and the device.
 You may optionally configure the dashboard to appear just after user login to the platform web UI.
 
 {% include images-gallery.html imageCollection="step74" showListImageTitles="true" %}
@@ -414,16 +413,6 @@ You may optionally configure the dashboard to appear just after user login to th
 ## Next steps
 
 {% assign currentGuide = "GettingStartedGuides" %}{% include templates/guides-banner.md %}
-
-## ThingsBoard Community Edition education course
- 
- <div id="video">  
-     <div id="video_wrapper">
-         <iframe src="https://www.youtube.com/embed/videoseries?list=PLYEKB_XwLCZJ6T8RPLTjRwMw0eoabpEKO" frameborder="0" allowfullscreen></iframe>
-     </div>
- </div>
- <p></p>
-
 
 ## Your feedback
 

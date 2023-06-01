@@ -22,6 +22,9 @@ For simplicity, we will provision device manually using the UI.
  
 {% include images-gallery.html imageCollection="step1" showListImageTitles="true" %} 
 
+Learn more about **notifications** and how to configure them [here](#step-6-alarm-notifications).
+
+<br/>
 You may also use:
  * [Bulk provisioning](/docs/{{docsPrefix}}user-guide/bulk-provisioning/) to provision multiple devices from a CSV file using UI;
  * [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning/) to allow device firmware to automatically provision the device, so you don't need to configure each device manually;
@@ -111,11 +114,10 @@ Note that the temperature value should be 26 or higher to raise the alarm. Once 
 
 ## Step 6. Alarm notifications
 
-It is quite easy to configure email or sms notifications for alarms. We recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules)
+It's quite easy to set up notifications using the [Notifications center](/docs/{{docsPrefix}}user-guide/notifications/). ThingsBoard Notification Center allows you to send notifications to the end-users.
+
+We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules)
 and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms).
- 
-**Note**: At the moment ThingsBoard supports AWS SNS and Twilio to send SMS. 
-Both services are non-free and require you to create an account. However, you may integrate with other SMS/EMAIL gateways using [REST API call](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#rest-api-call-node) node.
 
 ## Step 7. Share dashboard with customers
 
@@ -150,7 +152,7 @@ Our dashboard is in the group "All". Ideally, we should create another dashboard
 
 #### Step 7.4 Create customer user
 
-Finally, let's create a user that will belong to the customer and will have read-only access to the dashboard and the device itself.
+Finally, let's create a user that will belong to the customer and will have `read-only` access to the dashboard and the device itself.
 You may optionally configure the dashboard to appear just after the user login to the platform web UI. 
 
 {% include images-gallery.html imageCollection="step74" showListImageTitles="true" %}
@@ -162,16 +164,6 @@ You may optionally configure the dashboard to appear just after the user login t
 ## Next steps
 
 {% assign currentGuide = "GettingStartedGuides" %}{% include templates/multi-project-guides-banner.md %}
-
-## ThingsBoard Professional Edition white-labeling guide
-
- <div id="video">  
-     <div id="video_wrapper">
-         <iframe src="https://www.youtube.com/embed/VSNZWl1NjWU" frameborder="0" allowfullscreen></iframe>
-     </div>
- </div>
- <p></p>
-
 
 ## Your feedback
 
