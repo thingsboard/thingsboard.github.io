@@ -464,7 +464,19 @@ environment variable, default value and description.
       </tr>
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">MQTT parameters</span></td>
-      </tr>  
+      </tr>
+      <tr>
+          <td>mqtt.connect.threads</td>
+          <td>MQTT_CONNECT_THREADS</td>
+          <td>4</td>
+          <td>Number of threads for clients connection thread pool</td>
+      </tr>
+      <tr>
+          <td>mqtt.msg-subscriptions-parallel-processing</td>
+          <td>MQTT_MSG_SUBSCRIPTIONS_PARALLEL_PROCESSING</td>
+          <td>false</td>
+          <td>Enable/disable processing of found subscriptions in parallel for published messages</td>
+      </tr>
       <tr>
           <td>mqtt.pre-connect-queue.max-size</td>
           <td>MQTT_PRE_CONNECT_QUEUE_MAX_SIZE</td>
@@ -480,7 +492,7 @@ environment variable, default value and description.
       <tr>
           <td>mqtt.retransmission.enabled</td>
           <td>MQTT_RETRANSMISSION_ENABLED</td>
-          <td>true</td>
+          <td>false</td>
           <td>Enable/disable MQTT msg retransmission</td>
       </tr>
       <tr>
@@ -516,8 +528,8 @@ environment variable, default value and description.
       <tr>
           <td>mqtt.topic.max-segments-count</td>
           <td>MQTT_TOPIC_MAX_SEGMENTS_COUNT</td>
-          <td>6000</td>
-          <td>Maximum number of segments in topics. If it's too large, processing of topics with too much segments can lead to errors</td>
+          <td>0</td>
+          <td>Maximum number of segments in topics. If it's too large, processing of topics with too much segments can lead to errors. 0 means limitation is disabled</td>
       </tr>
       <tr>
           <td>mqtt.shared-subscriptions.processing-type</td>
@@ -571,7 +583,7 @@ environment variable, default value and description.
           <td>mqtt.client-session-expiry.zone</td>
           <td>MQTT_CLIENT_SESSION_EXPIRY_ZONE</td>
           <td>UTC</td>
-          <td>Timezone for the client-sessions clearing cron-job</td>
+          <td>Timezone for the client sessions clearing cron-job</td>
       </tr>
       <tr>
           <td>mqtt.client-session-expiry.max-expiry-interval</td>
@@ -580,10 +592,34 @@ environment variable, default value and description.
           <td>Max expiry interval allowed for client-sessions in seconds. Defaults to one week</td>
       </tr>
       <tr>
+          <td>mqtt.client-session-expiry.ttl</td>
+          <td>MQTT_CLIENT_SESSION_EXPIRY_TTL</td>
+          <td>604800</td>
+          <td>Administration TTL in seconds for clearing sessions that do not expire by session expiry interval</td>
+      </tr>
+      <tr>
           <td>mqtt.version-3-1.max-client-id-length</td>
           <td>MQTT_3_1_MAX_CLIENT_ID_LENGTH</td>
           <td>1024</td>
           <td>Max ClientId length for 3.1 version of protocol</td>
+      </tr>
+      <tr>
+          <td>mqtt.handler.all_msg_callback_threads</td>
+          <td>MQTT_HANDLER_ALL_MSG_CALLBACK_THREADS</td>
+          <td>2</td>
+          <td>Number of threads in thread pool for processing all publish msgs callbacks after sending them to Kafka</td>
+      </tr>
+      <tr>
+          <td>mqtt.handler.device_msg_callback_threads</td>
+          <td>MQTT_HANDLER_DEVICE_MSG_CALLBACK_THREADS</td>
+          <td>2</td>
+          <td>Number of threads in thread pool for processing device persisted publish msgs callbacks after sending them to Kafka</td>
+      </tr>
+      <tr>
+          <td>mqtt.handler.app_msg_callback_threads</td>
+          <td>MQTT_HANDLER_APP_MSG_CALLBACK_THREADS</td>
+          <td>2</td>
+          <td>Number of threads in thread pool for processing application persisted publish msgs callbacks after sending them to Kafka</td>
       </tr>
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">MQTT Persistence parameters</span></td>
@@ -780,7 +816,7 @@ environment variable, default value and description.
           <td>queue.kafka.default.producer.batch-size</td>
           <td>TB_KAFKA_DEFAULT_PRODUCER_BATCH_SIZE</td>
           <td>16384</td>
-          <td>The producer will attempt to batch records together into fewer requests whenever multiple records are being sent to the same partition</td>
+          <td>The producer will attempt to batch records together into fewer requests whenever multiple records are being sent to the same partition. Size in bytes</td>
       </tr>
       <tr>
           <td>queue.kafka.default.producer.linger-ms</td>
@@ -793,6 +829,19 @@ environment variable, default value and description.
           <td>TB_KAFKA_DEFAULT_PRODUCER_BUFFER_MEMORY</td>
           <td>33554432</td>
           <td>The total bytes of memory the producer can use to buffer records waiting to be sent to the server</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.default.producer.compression-type</td>
+          <td>TB_KAFKA_DEFAULT_COMPRESSION_TYPE</td>
+          <td>none</td>
+          <td>The compression type for all data generated by the producer. Valid values are `none`, `gzip`, `snappy`, `lz4`, or `zstd`</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.default.consumer.partition-assignment-strategy</td>
+          <td>TB_KAFKA_DEFAULT_CONSUMER_PARTITION_ASSIGNMENT_STRATEGY</td>
+          <td>org.apache.kafka.clients.consumer.StickyAssignor</td>
+          <td>A list of class names or class types, ordered by preference, of supported partition assignment strategies 
+            that the client will use to distribute partition ownership amongst consumer instances when group management is used</td>
       </tr>
       <tr>
           <td>queue.kafka.default.consumer.session-timeout-ms</td>
@@ -813,16 +862,28 @@ environment variable, default value and description.
           <td>The maximum number of records returned in a single call to poll()</td>
       </tr>
       <tr>
+          <td>queue.kafka.default.consumer.max-partition-fetch-bytes</td>
+          <td>TB_KAFKA_DEFAULT_CONSUMER_MAX_PARTITION_FETCH_BYTES</td>
+          <td>16777216</td>
+          <td>The maximum amount of data in bytes per-partition the server will return</td>
+      </tr>
+      <tr>
           <td>queue.kafka.default.consumer.fetch-max-bytes</td>
           <td>TB_KAFKA_DEFAULT_CONSUMER_FETCH_MAX_BYTES</td>
           <td>134217728</td>
           <td>The maximum amount of data in bytes the server should return for a fetch request</td>
-      </tr>  
+      </tr>
+      <tr>
+          <td>queue.kafka.admin.config</td>
+          <td>TB_KAFKA_ADMIN_CONFIG</td>
+          <td>retries:1</td>
+          <td>List of configs separated by semicolon used for admin kafka client creation</td>
+      </tr>
       <tr>
           <td>queue.kafka.consumer-stats.enabled</td>
           <td>TB_KAFKA_CONSUMER_STATS_ENABLED</td>
           <td>true</td>
-          <td>Prints lag between consumer group offset and last messages offset in Kafka topics</td>
+          <td>Prints lag if enabled between consumer group offset and last messages offset in Kafka topics</td>
       </tr>
       <tr>
           <td>queue.kafka.consumer-stats.print-interval-ms</td>
@@ -837,66 +898,84 @@ environment variable, default value and description.
           <td>Time to wait in milliseconds for the stats-loading requests to Kafka to finish</td>
       </tr>
       <tr>
+          <td>queue.kafka.consumer-stats.consumer-config</td>
+          <td>TB_KAFKA_CONSUMER_STATS_CONSUMER_CONFIG</td>
+          <td></td>
+          <td>List of configs separated by semicolon used for kafka stats consumer</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.home-page.consumer-config</td>
+          <td>TB_KAFKA_HOME_PAGE_CONSUMER_CONFIG</td>
+          <td></td>
+          <td>List of configs separated by semicolon used for kafka admin client for home page</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.home-page.kafka-response-timeout-ms</td>
+          <td>TB_KAFKA_HOME_PAGE_RESPONSE_TIMEOUT_MS</td>
+          <td>1000</td>
+          <td>Time to wait in milliseconds for the home page requests to Kafka to finish</td>
+      </tr>
+      <tr>
            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Custom Kafka parameters</span></td>
       </tr>
       <tr>
-          <td>queue.kafka.publish-msg.topic</td>
-          <td>TB_KAFKA_PUBLISH_MSG_TOPIC</td>
-          <td>publish_msg</td>
+          <td>queue.kafka.msg-all.topic</td>
+          <td>TB_KAFKA_MSG_ALL_TOPIC</td>
+          <td>tbmq.msg.all</td>
           <td>Topic for persisting incoming PUBLISH messages</td>
       </tr>
       <tr>
-          <td>queue.kafka.publish-msg.topic-properties</td>
-          <td>TB_KAFKA_PUBLISH_MSG_TOPIC_PROPERTIES</td>
+          <td>queue.kafka.msg-all.topic-properties</td>
+          <td>TB_KAFKA_MSG_ALL_TOPIC_PROPERTIES</td>
           <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:2147483648;partitions:24;replication.factor:1</td>
-          <td>Kafka topic properties for "publish-msg" topic</td>
+          <td>Kafka topic properties for "msg-all" topic</td>
       </tr>
       <tr>
-          <td>queue.kafka.publish-msg.additional-consumer-config</td>
-          <td>TB_KAFKA_PUBLISH_MSG_ADDITIONAL_CONSUMER_CONFIG</td>
+          <td>queue.kafka.msg-all.additional-consumer-config</td>
+          <td>TB_KAFKA_MSG_ALL_ADDITIONAL_CONSUMER_CONFIG</td>
           <td></td>
-          <td>Additional Kafka consumer configs for "publish-msg" topic</td>
+          <td>Additional Kafka consumer configs for "msg-all" topic</td>
       </tr>
       <tr>
-          <td>queue.kafka.publish-msg.additional-producer-config</td>
-          <td>TB_KAFKA_PUBLISH_MSG_ADDITIONAL_PRODUCER_CONFIG</td>
+          <td>queue.kafka.msg-all.additional-producer-config</td>
+          <td>TB_KAFKA_MSG_ALL_ADDITIONAL_PRODUCER_CONFIG</td>
           <td></td>
-          <td>Additional Kafka producer configs for "publish-msg" topic</td>
+          <td>Additional Kafka producer configs for "msg-all" topic</td>
       </tr>
       <tr>
           <td>queue.kafka.application-persisted-msg.topic-properties</td>
           <td>TB_KAFKA_APP_PERSISTED_MSG_TOPIC_PROPERTIES</td>
           <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;replication.factor:1</td>
-          <td>Kafka topic properties for "application-persisted-msg" topic</td>
+          <td>Kafka topic properties for "application-persisted-msg" topics</td>
       </tr>
       <tr>
           <td>queue.kafka.application-persisted-msg.additional-consumer-config</td>
           <td>TB_KAFKA_APP_PERSISTED_MSG_ADDITIONAL_CONSUMER_CONFIG</td>
           <td>max.poll.records:512</td>
-          <td>Additional Kafka consumer configs for "application-persisted-msg" topic</td>
+          <td>Additional Kafka consumer configs for "application-persisted-msg" topics</td>
       </tr>
       <tr>
           <td>queue.kafka.application-persisted-msg.additional-producer-config</td>
           <td>TB_KAFKA_APP_PERSISTED_MSG_ADDITIONAL_PRODUCER_CONFIG</td>
           <td></td>
-          <td>Additional Kafka producer configs for "application-persisted-msg" topic</td>
+          <td>Additional Kafka producer configs for "application-persisted-msg" topics</td>
       </tr>
       <tr>
           <td>queue.kafka.application-persisted-msg.shared-topic.topic-properties</td>
           <td>TB_KAFKA_APP_PERSISTED_MSG_SHARED_TOPIC_PROPERTIES</td>
           <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;replication.factor:1</td>
-          <td>Kafka topic properties for application shared subscription topic</td>
+          <td>Kafka topic properties for application shared subscription topics</td>
       </tr>
       <tr>
           <td>queue.kafka.application-persisted-msg.shared-topic.additional-consumer-config</td>
           <td>TB_KAFKA_APP_PERSISTED_MSG_SHARED_ADDITIONAL_CONSUMER_CONFIG</td>
           <td>max.poll.records:512</td>
-          <td>Additional Kafka consumer configs for application shared subscription topic</td>
+          <td>Additional Kafka consumer configs for application shared subscription topics</td>
       </tr>
       <tr>
           <td>queue.kafka.device-persisted-msg.topic</td>
           <td>TB_KAFKA_DEVICE_PERSISTED_MSG_TOPIC</td>
-          <td>device_persisted_msg</td>
+          <td>tbmq.msg.persisted</td>
           <td>Topic for persisting Device messages before saving them in Database</td>
       </tr>
       <tr>
@@ -920,7 +999,7 @@ environment variable, default value and description.
       <tr>
           <td>queue.kafka.retained-msg.topic</td>
           <td>TB_KAFKA_RETAINED_MSG_TOPIC</td>
-          <td>retained_msg</td>
+          <td>tbmq.msg.retained</td>
           <td>Topic for retained messages</td>
       </tr>
       <tr>
@@ -944,7 +1023,7 @@ environment variable, default value and description.
       <tr>
           <td>queue.kafka.client-session.topic</td>
           <td>TB_KAFKA_CLIENT_SESSION_TOPIC</td>
-          <td>client_session</td>
+          <td>tbmq.client.session</td>
           <td>Topic for persisting Client Sessions</td>
       </tr>
       <tr>
@@ -968,7 +1047,7 @@ environment variable, default value and description.
       <tr>
           <td>queue.kafka.client-subscriptions.topic</td>
           <td>TB_KAFKA_CLIENT_SUBSCRIPTIONS_TOPIC</td>
-          <td>client_subscriptions</td>
+          <td>tbmq.client.subscriptions</td>
           <td>Topic for persisting Client Subscriptions</td>
       </tr>
       <tr>
@@ -992,8 +1071,8 @@ environment variable, default value and description.
       <tr>
           <td>queue.kafka.client-session-event.topic</td>
           <td>TB_KAFKA_CLIENT_SESSION_EVENT_TOPIC</td>
-          <td>client_session_event</td>
-          <td>Topic for sending Client Session Events</td>
+          <td>tbmq.client.session.event.request</td>
+          <td>Topic for sending Client Session Event requests</td>
       </tr>
       <tr>
           <td>queue.kafka.client-session-event.topic-properties</td>
@@ -1016,7 +1095,7 @@ environment variable, default value and description.
       <tr>
           <td>queue.kafka.client-session-event-response.topic-prefix</td>
           <td>TB_KAFKA_CLIENT_SESSION_EVENT_RESPONSE_TOPIC_PREFIX</td>
-          <td>client_session_event_response</td>
+          <td>tbmq.client.session.event.response</td>
           <td>Prefix for topics for sending Client Session Event Responses to Broker nodes</td>
       </tr>
       <tr>
@@ -1040,7 +1119,7 @@ environment variable, default value and description.
       <tr>
           <td>queue.kafka.disconnect-client-command.topic-prefix</td>
           <td>TB_KAFKA_DISCONNECT_CLIENT_COMMAND_TOPIC_PREFIX</td>
-          <td>disconnect_client_command</td>
+          <td>tbmq.client.disconnect</td>
           <td>Prefix for topics for sending Disconnect Client Commands to Broker nodes</td>
       </tr>
       <tr>
@@ -1062,97 +1141,151 @@ environment variable, default value and description.
           <td>Additional Kafka producer configs for "disconnect-client-command" topics</td>
       </tr>
       <tr>
-          <td>queue.kafka.basic-downlink-publish-msg.topic-prefix</td>
-          <td>TB_KAFKA_BASIC_DOWNLINK_PUBLISH_MSG_TOPIC_PREFIX</td>
-          <td>basic_downlink_publish_msg</td>
-          <td>Prefix for topics for persisting non-persistent messages to Broker nodes</td>
+          <td>queue.kafka.basic-downlink-msg.topic-prefix</td>
+          <td>TB_KAFKA_BASIC_DOWNLINK_MSG_TOPIC_PREFIX</td>
+          <td>tbmq.msg.downlink.basic</td>
+          <td>Prefix for topics for persisting non-persistent Device messages that should be transferred to other Broker nodes</td>
       </tr>
       <tr>
-          <td>queue.kafka.basic-downlink-publish-msg.topic-properties</td>
-          <td>TB_KAFKA_BASIC_DOWNLINK_PUBLISH_MSG_RESPONSE_TOPIC_PROPERTIES</td>
+          <td>queue.kafka.basic-downlink-msg.topic-properties</td>
+          <td>TB_KAFKA_BASIC_DOWNLINK_MSG_TOPIC_PROPERTIES</td>
           <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:12;replication.factor:1</td>
-          <td>Kafka topic properties for "basic-downlink-publish-msg" topics</td>
+          <td>Kafka topic properties for "basic-downlink-msg" topics</td>
       </tr>
       <tr>
-          <td>queue.kafka.basic-downlink-publish-msg.additional-consumer-config</td>
-          <td>TB_KAFKA_BASIC_DOWNLINK_PUBLISH_MSG_ADDITIONAL_CONSUMER_CONFIG</td>
+          <td>queue.kafka.basic-downlink-msg.additional-consumer-config</td>
+          <td>TB_KAFKA_BASIC_DOWNLINK_MSG_ADDITIONAL_CONSUMER_CONFIG</td>
           <td></td>
-          <td>Additional Kafka consumer configs for "basic-downlink-publish-msg" topics</td>
+          <td>Additional Kafka consumer configs for "basic-downlink-msg" topics</td>
       </tr>
       <tr>
-          <td>queue.kafka.basic-downlink-publish-msg.additional-producer-config</td>
-          <td>TB_KAFKA_BASIC_DOWNLINK_PUBLISH_MSG_ADDITIONAL_PRODUCER_CONFIG</td>
+          <td>queue.kafka.basic-downlink-msg.additional-producer-config</td>
+          <td>TB_KAFKA_BASIC_DOWNLINK_MSG_ADDITIONAL_PRODUCER_CONFIG</td>
           <td>batch.size:32768</td>
-          <td>Additional Kafka producer configs for "basic-downlink-publish-msg" topics</td>
+          <td>Additional Kafka producer configs for "basic-downlink-msg" topics</td>
       </tr>
       <tr>
-          <td>queue.kafka.persistent-downlink-publish-msg.topic-prefix</td>
-          <td>TB_KAFKA_PERSISTENT_DOWNLINK_PUBLISH_MSG_TOPIC_PREFIX</td>
-          <td>persistent_downlink_publish_msg</td>
-          <td>Prefix for topics for persisting persistent Device messages to Broker nodes</td>
+          <td>queue.kafka.persisted-downlink-msg.topic-prefix</td>
+          <td>TB_KAFKA_PERSISTED_DOWNLINK_MSG_TOPIC_PREFIX</td>
+          <td>tbmq.msg.downlink.persisted</td>
+          <td>Prefix for topics for persisting persistent Device messages that should be transferred to other Broker nodes</td>
       </tr>
       <tr>
-          <td>queue.kafka.persistent-downlink-publish-msg.topic-properties</td>
-          <td>TB_KAFKA_PERSISTENT_DOWNLINK_PUBLISH_MSG_RESPONSE_TOPIC_PROPERTIES</td>
+          <td>queue.kafka.persisted-downlink-msg.topic-properties</td>
+          <td>TB_KAFKA_PERSISTED_DOWNLINK_MSG_TOPIC_PROPERTIES</td>
           <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:12;replication.factor:1</td>
-          <td>Kafka topic properties for "persistent-downlink-publish-msg" topics</td>
+          <td>Kafka topic properties for "persisted-downlink-msg" topics</td>
       </tr>
       <tr>
-          <td>queue.kafka.persistent-downlink-publish-msg.additional-consumer-config</td>
-          <td>TB_KAFKA_PERSISTENT_DOWNLINK_PUBLISH_MSG_ADDITIONAL_CONSUMER_CONFIG</td>
+          <td>queue.kafka.persisted-downlink-msg.additional-consumer-config</td>
+          <td>TB_KAFKA_PERSISTED_DOWNLINK_MSG_ADDITIONAL_CONSUMER_CONFIG</td>
           <td></td>
-          <td>Additional Kafka consumer configs for "persistent-downlink-publish-msg" topics</td>
+          <td>Additional Kafka consumer configs for "persisted-downlink-msg" topics</td>
       </tr>
       <tr>
-          <td>queue.kafka.persistent-downlink-publish-msg.additional-producer-config</td>
-          <td>TB_KAFKA_PERSISTENT_DOWNLINK_PUBLISH_MSG_ADDITIONAL_PRODUCER_CONFIG</td>
+          <td>queue.kafka.persisted-downlink-msg.additional-producer-config</td>
+          <td>TB_KAFKA_PERSISTED_DOWNLINK_MSG_ADDITIONAL_PRODUCER_CONFIG</td>
           <td></td>
-          <td>Additional Kafka producer configs for "persistent-downlink-publish-msg" topics</td>
+          <td>Additional Kafka producer configs for "persisted-downlink-msg" topics</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.application-removed-event.topic</td>
+          <td>TB_KAFKA_APPLICATION_REMOVED_EVENT_TOPIC</td>
+          <td>tbmq.sys.app.removed</td>
+          <td>Topic for sending events to remove application topics when application clients are changed to be device clients</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.application-removed-event.topic-properties</td>
+          <td>TB_KAFKA_APPLICATION_REMOVED_EVENT_TOPIC_PROPERTIES</td>
+          <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;replication.factor:1</td>
+          <td>Kafka topic properties for "application-removed-event" topic</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.application-removed-event.additional-consumer-config</td>
+          <td>TB_KAFKA_APPLICATION_REMOVED_EVENT_ADDITIONAL_CONSUMER_CONFIG</td>
+          <td></td>
+          <td>Additional Kafka consumer configs for "application-removed-event" topic</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.application-removed-event.additional-producer-config</td>
+          <td>TB_KAFKA_APPLICATION_REMOVED_EVENT_ADDITIONAL_PRODUCER_CONFIG</td>
+          <td></td>
+          <td>Additional Kafka producer configs for "application-removed-event" topic</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.historical-data-total.topic</td>
+          <td>TB_KAFKA_HISTORICAL_DATA_TOTAL_TOPIC</td>
+          <td>tbmq.sys.historical.data</td>
+          <td>Topic for sending historical data stats to be summed from each broker</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.historical-data-total.topic-properties</td>
+          <td>TB_KAFKA_HISTORICAL_DATA_TOTAL_TOPIC_PROPERTIES</td>
+          <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;replication.factor:1</td>
+          <td>Kafka topic properties for "historical-data-total" topic</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.historical-data-total.additional-consumer-config</td>
+          <td>TB_KAFKA_HISTORICAL_DATA_TOTAL_ADDITIONAL_CONSUMER_CONFIG</td>
+          <td></td>
+          <td>Additional Kafka consumer configs for "historical-data-total" topic</td>
+      </tr>
+      <tr>
+          <td>queue.kafka.historical-data-total.additional-producer-config</td>
+          <td>TB_KAFKA_HISTORICAL_DATA_TOTAL_ADDITIONAL_PRODUCER_CONFIG</td>
+          <td></td>
+          <td>Additional Kafka producer configs for "historical-data-total" topic</td>
       </tr>
       <tr>
            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Kafka queue processing params</span></td>
       </tr>
       <tr>
-          <td>queue.publish-msg.publisher-thread-max-delay</td>
-          <td>TB_PUBLISH_MSG_PUBLISHER_THREAD_MAX_DELAY</td>
-          <td>50</td>
-          <td>Max timeout for PUBLISH messages producer-queue polling. Value set in milliseconds</td>
-      </tr>
-      <tr>
-          <td>queue.publish-msg.consumers-count</td>
-          <td>TB_PUBLISH_MSG_CONSUMERS_COUNT</td>
+          <td>queue.msg-all.consumers-count</td>
+          <td>TB_MSG_ALL_CONSUMERS_COUNT</td>
           <td>2</td>
           <td>Number of parallel PUBLISH messages consumers</td>
       </tr>
+       <tr>
+          <td>queue.msg-all.threads-count</td>
+          <td>TB_MSG_ALL_THREADS_COUNT</td>
+          <td>2</td>
+          <td>Number of threads in the pool to process consumers tasks</td>
+      </tr>
       <tr>
-          <td>queue.publish-msg.poll-interval</td>
-          <td>TB_PUBLISH_MSG_POLL_INTERVAL</td>
+          <td>queue.msg-all.poll-interval</td>
+          <td>TB_MSG_ALL_POLL_INTERVAL</td>
           <td>100</td>
-          <td>Interval in milliseconds to poll messages from 'publish-msg' topic</td>
+          <td>Interval in milliseconds to poll messages from 'msg-all' topic</td>
       </tr>
       <tr>
-          <td>queue.publish-msg.pack-processing-timeout</td>
-          <td>TB_PUBLISH_MSG_PACK_PROCESSING_TIMEOUT</td>
+          <td>queue.msg-all.pack-processing-timeout</td>
+          <td>TB_MSG_ALL_PACK_PROCESSING_TIMEOUT</td>
           <td>10000</td>
-          <td>Timeout in milliseconds for processing a 'publish-msg' pack</td>
+          <td>Timeout in milliseconds for processing a 'msg-all' pack</td>
       </tr>
       <tr>
-          <td>queue.publish-msg.ack-strategy.type</td>
-          <td>TB_PUBLISH_MSG_ACK_STRATEGY_TYPE</td>
+          <td>queue.msg-all.ack-strategy.type</td>
+          <td>TB_MSG_ALL_ACK_STRATEGY_TYPE</td>
           <td>SKIP_ALL</td>
-          <td>'publish-msg' queue processing strategy. Can be: SKIP_ALL, RETRY_ALL</td>
+          <td>'msg-all' queue processing strategy. Can be: SKIP_ALL, RETRY_ALL</td>
       </tr>
       <tr>
-          <td>queue.publish-msg.ack-strategy.retries</td>
-          <td>TB_PUBLISH_MSG_ACK_STRATEGY_RETRIES</td>
+          <td>queue.msg-all.ack-strategy.retries</td>
+          <td>TB_MSG_ALL_ACK_STRATEGY_RETRIES</td>
           <td>1</td>
           <td>Number of retries, 0 is unlimited. Use for RETRY_ALL processing strategy</td>
       </tr>
       <tr>
-          <td>queue.application-persisted-msg.publisher-thread-max-delay</td>
-          <td>TB_APP_PERSISTED_MSG_PUBLISHER_THREAD_MAX_DELAY</td>
-          <td>50</td>
-          <td>Max timeout for Application persisted messages producer-queue polling. Value set in milliseconds</td>
+          <td>queue.msg-all.msg-parallel-processing</td>
+          <td>TB_MSG_ALL_PARALLEL_PROCESSING</td>
+          <td>false</td>
+          <td>Enable/disable processing of consumed messages in parallel (grouped by publishing client id to preserve order)</td>
+      </tr>
+      <tr>
+          <td>queue.application-persisted-msg.threads-count</td>
+          <td>TB_APP_PERSISTED_MSG_THREADS_COUNT</td>
+          <td>2</td>
+          <td>Number of threads in the pool to process Application consumers tasks</td>
       </tr>
       <tr>
           <td>queue.application-persisted-msg.poll-interval</td>
@@ -1164,7 +1297,7 @@ environment variable, default value and description.
           <td>queue.application-persisted-msg.pack-processing-timeout</td>
           <td>TB_APP_PERSISTED_MSG_PACK_PROCESSING_TIMEOUT</td>
           <td>2000</td>
-          <td>Timeout in milliseconds for processing a 'application-persisted-msg' pack</td>
+          <td>Timeout in milliseconds for processing an 'application-persisted-msg' pack</td>
       </tr>
       <tr>
           <td>queue.application-persisted-msg.ack-strategy.type</td>
@@ -1179,10 +1312,22 @@ environment variable, default value and description.
           <td>Number of retries, 0 is unlimited. Use for RETRY_ALL processing strategy</td>
       </tr>
       <tr>
-          <td>queue.device-persisted-msg.publisher-thread-max-delay</td>
-          <td>TB_DEVICE_PERSISTED_MSG_PUBLISHER_THREAD_MAX_DELAY</td>
-          <td>50</td>
-          <td>Max timeout for Device persisted messages producer-queue polling. Value set in milliseconds</td>
+          <td>queue.application-persisted-msg.client-id-validation</td>
+          <td>TB_APP_PERSISTED_MSG_CLIENT_ID_VALIDATION</td>
+          <td>true</td>
+          <td>Enable/disable check that Application client id contains only alphanumeric chars for Kafka topic creation</td>
+      </tr>
+      <tr>
+          <td>queue.application-persisted-msg.shared-topic-validation</td>
+          <td>TB_APP_PERSISTED_MSG_SHARED_TOPIC_VALIDATION</td>
+          <td>true</td>
+          <td>Enable/disable check that Application shared subscription topic filter contains only alphanumeric chars or '+' or '#' for Kafka topic creation</td>
+      </tr>
+      <tr>
+          <td>queue.device-persisted-msg.threads-count</td>
+          <td>TB_DEVICE_PERSISTED_MSG_THREADS_COUNT</td>
+          <td>2</td>
+          <td>Number of threads in the pool to process Device consumers tasks</td>
       </tr>
       <tr>
           <td>queue.device-persisted-msg.consumers-count</td>
@@ -1221,16 +1366,34 @@ environment variable, default value and description.
           <td>Interval in milliseconds to poll messages from 'retained-msg' topic</td>
       </tr>
       <tr>
+          <td>queue.retained-msg.acknowledge-wait-timeout-ms</td>
+          <td>TB_RETAINED_MSG_ACK_WAIT_TIMEOUT_MS</td>
+          <td>500</td>
+          <td>Interval in milliseconds to wait for system messages to be delivered to 'retained-msg' topic</td>
+      </tr>
+      <tr>
           <td>queue.client-session.poll-interval</td>
           <td>TB_CLIENT_SESSION_POLL_INTERVAL</td>
           <td>100</td>
           <td>Interval in milliseconds to poll messages from 'client-session' topic</td>
       </tr>
       <tr>
+          <td>queue.client-session.acknowledge-wait-timeout-ms</td>
+          <td>TB_CLIENT_SESSION_ACK_WAIT_TIMEOUT_MS</td>
+          <td>500</td>
+          <td>Interval in milliseconds to wait for system messages to be delivered to 'client-session' topic</td>
+      </tr>
+      <tr>
           <td>queue.client-subscriptions.poll-interval</td>
           <td>TB_CLIENT_SUBSCRIPTIONS_POLL_INTERVAL</td>
           <td>100</td>
           <td>Interval in milliseconds to poll messages from 'client-subscriptions' topic</td>
+      </tr>
+      <tr>
+          <td>queue.client-subscriptions.acknowledge-wait-timeout-ms</td>
+          <td>TB_CLIENT_SUBSCRIPTIONS_ACK_WAIT_TIMEOUT_MS</td>
+          <td>500</td>
+          <td>Interval in milliseconds to wait for system messages to be delivered to 'client-subscriptions' topic</td>
       </tr>
       <tr>
           <td>queue.client-session-event.consumers-count</td>
@@ -1249,6 +1412,12 @@ environment variable, default value and description.
           <td>TB_CLIENT_SESSION_EVENT_POLL_INTERVAL</td>
           <td>100</td>
           <td>Interval in milliseconds to poll messages from 'client-session-event' topic</td>
+      </tr>
+      <tr>
+          <td>queue.client-session-event.batch-wait-timeout-ms</td>
+          <td>TB_CLIENT_SESSION_EVENT_BATCH_WAIT_MS</td>
+          <td>2000</td>
+          <td>Max interval in milliseconds to process 'client-session-event' messages when consuming</td>
       </tr>
       <tr>
           <td>queue.client-session-event-response.response-sender-threads</td>
@@ -1281,40 +1450,64 @@ environment variable, default value and description.
           <td>Interval in milliseconds to poll messages from 'disconnect-client-command' topics</td>
       </tr>
       <tr>
-          <td>queue.persistent-downlink-publish-msg.publisher-thread-max-delay</td>
-          <td>TB_PUBLISH_MSG_PUBLISHER_THREAD_MAX_DELAY</td>
-          <td>50</td>
-          <td>Max timeout for persistent downlink messages producer-queue polling. Value set in milliseconds</td>
+          <td>queue.persisted-downlink-msg.threads-count</td>
+          <td>TB_PERSISTED_DOWNLINK_MSG_THREADS_COUNT</td>
+          <td>1</td>
+          <td>Number of threads in the pool to process consumers tasks</td>
       </tr>
       <tr>
-          <td>queue.persistent-downlink-publish-msg.consumers-count</td>
-          <td>TB_PERSISTENT_DOWNLINK_PUBLISH_MSG_CONSUMERS_COUNT</td>
+          <td>queue.persisted-downlink-msg.consumers-count</td>
+          <td>TB_PERSISTED_DOWNLINK_MSG_CONSUMERS_COUNT</td>
           <td>1</td>
           <td>Number of parallel persistent downlink messages consumers</td>
       </tr>
       <tr>
-          <td>queue.persistent-downlink-publish-msg.poll-interval</td>
-          <td>TB_PERSISTENT_DOWNLINK_PUBLISH_MSG_POLL_INTERVAL</td>
+          <td>queue.persisted-downlink-msg.poll-interval</td>
+          <td>TB_PERSISTED_DOWNLINK_MSG_POLL_INTERVAL</td>
           <td>100</td>
-          <td>Interval in milliseconds to poll messages from 'persistent-downlink-publish-msg' topics</td>
+          <td>Interval in milliseconds to poll messages from 'persisted-downlink-msg' topics</td>
       </tr>
       <tr>
-          <td>queue.basic-downlink-publish-msg.publisher-thread-max-delay</td>
-          <td>TB_PUBLISH_MSG_PUBLISHER_THREAD_MAX_DELAY</td>
-          <td>50</td>
-          <td>Max timeout for basic downlink messages producer-queue polling. Value set in milliseconds</td>
+          <td>queue.basic-downlink-msg.threads-count</td>
+          <td>TB_BASIC_DOWNLINK_MSG_THREADS_COUNT</td>
+          <td>1</td>
+          <td>Number of threads in the pool to process consumers tasks</td>
       </tr>
       <tr>
-          <td>queue.basic-downlink-publish-msg.consumers-count</td>
-          <td>TB_BASIC_DOWNLINK_PUBLISH_MSG_CONSUMERS_COUNT</td>
+          <td>queue.basic-downlink-msg.consumers-count</td>
+          <td>TB_BASIC_DOWNLINK_MSG_CONSUMERS_COUNT</td>
           <td>1</td>
           <td>Number of parallel basic downlink messages consumers</td>
       </tr>
       <tr>
-          <td>queue.basic-downlink-publish-msg.poll-interval</td>
-          <td>TB_BASIC_DOWNLINK_PUBLISH_MSG_POLL_INTERVAL</td>
+          <td>queue.basic-downlink-msg.poll-interval</td>
+          <td>TB_BASIC_DOWNLINK_MSG_POLL_INTERVAL</td>
           <td>100</td>
-          <td>Interval in milliseconds to poll messages from 'basic-downlink-publish-msg' topics</td>
+          <td>Interval in milliseconds to poll messages from 'basic-downlink-msg' topics</td>
+      </tr>
+      <tr>
+          <td>queue.application-removed-event.poll-interval</td>
+          <td>TB_APPLICATION_REMOVED_EVENT_POLL_INTERVAL</td>
+          <td>100</td>
+          <td>Interval in milliseconds to poll messages from 'application-removed-event' topics</td>
+      </tr>
+      <tr>
+          <td>queue.application-removed-event.processing.cron</td>
+          <td>TB_APPLICATION_REMOVED_EVENT_PROCESSING_CRON</td>
+          <td>0 0 3 * * *</td>
+          <td>Cron expression to when execute the consuming and processing of messages</td>
+      </tr>
+      <tr>
+          <td>queue.application-removed-event.processing.zone</td>
+          <td>TB_APPLICATION_REMOVED_EVENT_PROCESSING_ZONE</td>
+          <td>UTC</td>
+          <td>Timezone for the Application removed events processing cron-job</td>
+      </tr>
+      <tr>
+          <td>queue.historical-data-total.poll-interval</td>
+          <td>TB_HISTORICAL_DATA_TOTAL_POLL_INTERVAL</td>
+          <td>100</td>
+          <td>Interval in milliseconds to poll messages from 'historical-data-total' topics</td>
       </tr>
       <tr>
            <td colspan="4"><span style="font-weight: bold; font-size: 24px;">ThingsBoard MQTT Broker cache parameters</span></td>
@@ -1384,7 +1577,7 @@ environment variable, default value and description.
           <td>ANALYSIS_LOG_CLIENT_IDS</td>
           <td></td>
           <td>List of ClientIds separated with comas. Events for those clients will be logged</td>
-      </tr>     
+      </tr>
   </tbody>
 </table>
 
