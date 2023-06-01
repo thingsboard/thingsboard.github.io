@@ -114,7 +114,8 @@ Note that the temperature value should be 26 or higher to raise the alarm. Once 
 
 ## Step 6. Alarm notifications
 
-It's quite easy to set up notifications using the [Notifications center](/docs/{{docsPrefix}}user-guide/notifications/). ThingsBoard Notification Center allows you to send notifications to the end-users.
+It's quite easy to set up notifications using the **Notification center**. ThingsBoard Notification center allows you to send notifications to the end-users.
+Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
 
 We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules)
 and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms).
