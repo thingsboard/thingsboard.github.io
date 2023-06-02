@@ -7,30 +7,26 @@ toc:
   path: /docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/
 - title: Configuration
   path: /docs/mqtt-broker/install/config/
-- title: Key concepts
-  section:
-    - title: Monitoring Tools
-      path: /docs/mqtt-broker/user-guide/monitoring/
-    - title: MQTT client type
-      path: /docs/mqtt-broker/user-guide/mqtt-client-type/
-    - title: Sessions
-      path: /docs/mqtt-broker/user-guide/sessions/
 - title: Security
   path: /docs/mqtt-broker/security/
-- title: MQTT Listeners
-  path: /docs/mqtt-broker/mqtt-listeners/
 - title: Features
   section:
     - title: Shared Subscriptions
       path: /docs/mqtt-broker/user-guide/shared-subscriptions/
     - title: Retained Messages
       path: /docs/mqtt-broker/user-guide/retained-messages/
+    - title: MQTT client type
+      path: /docs/mqtt-broker/user-guide/mqtt-client-type/
 - title: Administration UI
   section:
+    - title: Monitoring Tools
+      path: /docs/mqtt-broker/user-guide/monitoring/
     - title: Users
       path: /docs/mqtt-broker/user-guide/ui/users/
     - title: MQTT Client Credentials
       path: /docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/
+    - title: Sessions
+      path: /docs/mqtt-broker/user-guide/sessions/
     - title: Shared Subscriptions
       path: /docs/mqtt-broker/user-guide/ui/shared-subscriptions/
     - title: Mail Server

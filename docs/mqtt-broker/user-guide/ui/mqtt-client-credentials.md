@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: MQTT Client Credentials management
-description: UI MQTT Client Credentials management
+title: MQTT Client Credentials
+description: UI MQTT Client Credentials
 
 add-client-credentials:
   0:
