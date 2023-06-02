@@ -5,7 +5,7 @@
 ## Introduction
 
 The goal of this tutorial is to demonstrate the basic usage of the ThingsBoard MQTT Broker. You will learn how to:
-* Connect MQTT clients with no authentication;
+* Connect MQTT clients;
 * Publish MQTT message;
 * Subscribe to topics to receive published messages;
 * Configure authentication and authorization of MQTT clients.

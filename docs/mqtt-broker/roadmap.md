@@ -14,4 +14,3 @@ The product roadmap listed below covers only main features and does not cover sm
 
 * MQTT 5 full support
 * WS support (MQTT over WS)
-* Multi-tenancy
