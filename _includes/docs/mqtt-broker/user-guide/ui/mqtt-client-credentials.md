@@ -28,20 +28,16 @@ For more information on security issues, please consult this [guide](/docs/mqtt-
 To add new client credentials, please follow these steps:
 
 1. Go to the _Credentials_ page and click the Add _Client Credentials_ button, represented by a plus icon.
-
-   ![image](/images/mqtt-broker/user-guide/ui/mqtt-client-creds.png)
-
 2. Fill in the Name field (which does not need to be unique).
 3. Select the appropriate _Client Type_:
    - **Device**. Use for clients that usually publish a lot of messages, but subscribe to a few topics with low message rate, i.e. IoT devices.
    - **Applications**. Use for clients that subscribe to topics with high message rates and require message persistence when the client is offline, such as applications like **ThingsBoard, AWS IoT Core** etc.
      For more information on client types, please refer to the [docs]().
-
 4. Select the desired _Credentials Type_ and configure the authentication parameters and authorization rules.
 
-### MQTT Basic Credentials
+{% include images-gallery.html imageCollection="add-client-credentials" %}
 
-![image](/images/mqtt-broker/user-guide/ui/mqtt-client-credentials-save-basic.png)
+### MQTT Basic Credentials
 
 #### Authentication
 
@@ -65,20 +61,14 @@ Authorization rule patterns allow controlling what topics clients can publish/su
 
 Broker administrators can modify the password for MQTT Basic client credentials. To do this, follow these instructions:
 1. Go to _Client Credentials_ page.
-
 2. Click on the corresponding row of the Credentials.
-
 3. Click the _Edit_ button.
-
 4. Click the _Change password_ button. Input your current password and set a new one.
-
 5. Click the _Change password_ button.
 
-6. Click the _Apply changes_ button.
+{% include images-gallery.html imageCollection="change-password-basic-credentials" %}
 
-![image](/images/mqtt-broker/user-guide/ui/mqtt-client-credentials-change-pass.png)
-
-### SSL credentials
+### SSL Credentials
 
 **X.509 Certificate chain** is a secure two-way authentication method over TLS with a chain of public-key certificates.
 
@@ -87,7 +77,9 @@ Broker administrators can modify the password for MQTT Basic client credentials.
 The **certificate's common name (CN)** should exactly match the client's or, if present, one of the parent's certificate CN. 
 Authentication will fail if none of the certificates in the chain has the same CN.
 
-#### Authorization rules
+![image](/images/mqtt-broker/user-guide/ui/ssl-credentials-1.png)
+
+#### Authorization Rules
 
 Authorization rules allow controlling what topics authenticated clients can publish/subscribe to based on the successful combination of:
 
@@ -100,9 +92,9 @@ Please consider the following examples:
 * If Subscribe authorization rule patterns is set to default value `.*` - client will be able to subscribe to any topic.
 * If Publish/Subscribe authorization rules has no rules (field is empty) - client will be forbidden to publish/subscribe to any topics.
 
-![image](/images/mqtt-broker/user-guide/ui/mqtt-client-credentials-save-ssl.png)
+![image](/images/mqtt-broker/user-guide/ui/ssl-credentials-2.png)
 
-## Delete client credentials
+## Delete Client Credentials
 
 Broker administrators can remove client credentials from the ThingsBoard MQTT Broker system using the Web UI or [REST Api]().
 
@@ -113,4 +105,4 @@ There are a few ways of deleting client credentials:
 2. **Delete mulptiple.** 
    * By clicking on the checkbox you can select multiple items. Then click the _Delete_ icon in the top right corner and cofirm action.
 
-![image](/images/mqtt-broker/user-guide/ui/mqtt-client-creds-delete.png)
+{% include images-gallery.html imageCollection="delete-client-credentials" %}
