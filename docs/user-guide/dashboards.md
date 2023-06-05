@@ -29,9 +29,9 @@ editMode:
 
 toolbar-review:
     0:
-        image: /images/user-guide/dashboards/toolbar-not-editmode.png
+        image: /images/user-guide/dashboards/toolbar-not-editmode-ce.png
     1:
-        image: /images/user-guide/dashboards/toolbar-editmode.png
+        image: /images/user-guide/dashboards/toolbar-editmode-ce.png
 
 aliases:
     0:
