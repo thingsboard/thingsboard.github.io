@@ -144,12 +144,20 @@ Let's make Customer become the owner of the device.
 
 {% include images-gallery.html imageCollection="step72" showListImageTitles="true" %}
 
+You can make the customer the owner of the device during its creation stage.
+
+{% include images-gallery.html imageCollection="step72_1" showListImageTitles="true" %}
+
 #### Step 7.3 Share the dashboard
 
-Let's share our dashboard with the Customer. 
+Let's share our dashboard with the customer. 
 Our dashboard is in the group "All". Ideally, we should create another dashboard group, but to simplify the guide, we will use the group "All". 
 
 {% include images-gallery.html imageCollection="step73" showListImageTitles="true" %}
+
+You can also share the dashboard with your customer or user during its creation stage.
+
+{% include images-gallery.html imageCollection="step73_1" showListImageTitles="true" %}
 
 #### Step 7.4 Create customer user
 

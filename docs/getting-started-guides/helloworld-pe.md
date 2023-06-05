@@ -36,19 +36,19 @@ step3:
         title: 'Click on the device row in the table to open device details;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-4-pe.png
-        title: 'Navigate to the telemetry tab.'
+        title: 'Navigate to the "Latest telemetry" tab.'
         
 step31:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-1-pe.png
-        title: 'Open Dashboards page. By default, you navigate to the dashboard group “All”. Click on the "+" icon in the top right corner. Select "Create new dashboard";'
+        title: 'Open the "Dashboards" page. By default, you navigate to the dashboard group “All”. Click on the "+" icon in the top right corner. Select "Create new dashboard";'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-2-pe.png
         title: 'Input dashboard name. For example, "My New Dashboard". Click "Add" to create the dashboard;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-3-pe.png
         title: 'Your first dashboard has been created. As long as you have one dashboard. But as new dashboards are added, they will be added to the top of the table, since the table sorts dashboards using the time of the creation by default. Click on the row to open the dashboard.'
-        
+
 step32:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-1-pe.png
@@ -150,13 +150,13 @@ step35:
 step4:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-1-pe.png
-        title: 'Navigate to the "Profiles". Then click the "Device profiles" page;'
+        title: 'Navigate to the "Profiles". Then click on the "Device profiles" page;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-2-pe.png
-        title: 'Click on the default device profile. This will open device profile details;'
+        title: 'Click on the default device profile row to open its details;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-3-pe.png
-        title: 'Select the "Alarm rules" tab and toggle edit mode;'
+        title: 'Select the "Alarm rules" tab and click "pencil" button to enter edit mode;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-4-pe.png
         title: 'Click "Add alarm rule" button;'
@@ -193,36 +193,59 @@ step5:
 step71:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-1-pe.png
-        title: 'Navigate to the Customers page;'
+        title: 'Navigate to the "Customers" page;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-2-pe.png
-        title: 'By default, you navigate to the customer group “All”. Click the "+" sign to add a new customer;'
+        title: 'By default, you navigate to the customer group "All". Click the "+" sign to add a new customer;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-3-pe.png
-        title: 'Input customer title and click "Add";'
+        title: 'Input the customer title. Additionally, you can input personal details for the customer and assign a home dashboard. To finalize the customer creation, you can click the "Add" button. In this case, the new customer will be created and will be located in the "All" customers folder. Let`s create a separate group for our customer. To do this, click on "Next: Owner and groups" button;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-4-pe.png
-        title: 'Customer has been created.'
+        title: 'If desired, you can assign a different owner for this customer. We will leave this option unchanged. Enter a name for the new group and click "Create a new one!";'
+    4:
+        image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-5-pe.png
+        title: 'Click "Add" to create a new customers group;'
+    5:
+        image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-6-pe.png
+        title: 'Now, click "Add" to create a new customer;'
+    6:
+        image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-7-pe.png
+        title: 'The customer has been created and is located in the "My Customers" group. You can navigate to this group by clicking on its name.'
 
 step72:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-1-pe.png
-        title: 'Open Devices page. Select your device and click the "Change owner" button;'
+        title: 'Open "Devices" page. Mark your device and click the "Change owner" button;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-2-pe.png
-        title: 'Start typing the customer name and then click on the customer item. When click the "Change owner" button;'
+        title: 'Start typing the customer name and then select the customer. When click the "Change owner" button;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-3-pe.png
         title: 'Click "Yes". You can always change the owner back to the tenant;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-4-pe.png
-        title: 'Your device list should be empty now. This is because it displays the devices of the tenant. Toggle the "Include custom entities" slider to see your customers devices in the general list of devices;'
+        title: 'By default, your device list displays both tenant devices and devices of your customers. Disable the "Include custom entities" slider to see only tenant devices in the list of devices;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-5-pe.png
-        title: 'Navigate to the customer to see your device. Click "Manage customer devices" icon for "My New Customer";'
+        title: 'Your device list should be empty now;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-6-pe.png
-        title: 'Your device is now in the customer device groups "All".'
+        title: 'Navigate to the "Customers" page. Find your customer in the list of customers and then click on the "Manage customer devices" icon;'
+    6:
+        image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-7-pe.png
+        title: 'Your device is now owned by the customer and is located in the customer`s device group "All".'
+
+step72_1:
+    0:
+        image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-8-pe.png
+        title: 'Click on the "+" icon in the top right corner of the table. Input device name (for example, "Thermostat") and navigate to the "Owner and groups" tab;'
+    1:
+        image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-9-pe.png
+        title: 'Select new owner and click "Add";'
+    2:
+        image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-10-pe.png
+        title: 'The device has been created, and it immediately belongs to your customer;'
 
 step73:
     0:
@@ -232,16 +255,36 @@ step73:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-4-pe.png
         title: 'Select the customer and specify permission - "Read". Click "Share".'
 
+step73_1:
+    0:
+        image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-5-pe.png
+        title: 'Click on the "+" icon in the top right corner of the table. Input dashboard name (for example, "Thermostats") and navigate to the "Owner and groups" tab;'
+    1:
+        image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-6-pe.png
+        title: 'Let`s create a separate group for them. Input a name (for example, "Thermostats group") for the new group and click "Create a new one!";'
+    2:
+        image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-7-pe.png
+        title: 'Click "Next: Share entity group" button;'
+    3:
+        image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-8-pe.png
+        title: 'Checkbox "Share entity group, then select the customer with whom you want to share the dashboard and specify permission. Click "Add";'
+    4:
+        image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-9-pe.png
+        title: 'Click "Add" dashboard;'
+    5:
+        image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-10-pe.png
+        title: 'The dashboard has been created and is located in the "Thermostats group" group. You can navigate to this group by clicking on its name.'
+
 step74:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-user-1-pe.png 
-        title: 'Go to "Customers" page, then click "Manage customer users" icon;'
+        title: 'Navigate to "Customers" page. Find your customer in the list of customers and then click on the "Manage customer users" icon;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-user-2-pe.png
         title: 'Navigate to the "Group" tab and select "Customer Users" group;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-user-3-pe.png
-        title: 'Click "plus" icon in the upper right corner to add a new user;'
+        title: 'Click "plus" icon in the top right corner to add a new user;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-user-4-pe.png
         title: 'Specify email, first and last name. Click "Add";'

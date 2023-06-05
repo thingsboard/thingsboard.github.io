@@ -23,7 +23,7 @@ step1:
 
 step2:
     0:
-        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-1-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-3-ce.png
         title: 'Click on the device row in the table to open device details;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-2-ce.png
@@ -31,16 +31,16 @@ step2:
 
 step3:
     0:
-        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-1-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-3-ce.png
         title: 'Click on the device row in the table to open device details;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-4-ce.png
-        title: 'Navigate to the telemetry tab. Here you should see the previously published "temperature" reading.'
+        title: 'Navigate to the "Latest telemetry" tab. Here you should see the previously published "temperature" reading.'
         
 step31:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-1-ce.png 
-        title: 'Open the Dashboards page. Click on the "+" icon in the top right corner. Select "Create new dashboard";'
+        title: 'Open the "Dashboards" page. Click on the "+" icon in the top right corner. Select "Create new dashboard";'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-2-ce.png
         title: 'Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard;'
@@ -149,13 +149,13 @@ step35:
 step4:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-1-ce.png
-        title: 'Navigate to the "Profiles". Then click the "Device profiles" page;'
+        title: 'Navigate to the "Profiles". Then click on the "Device profiles" page;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-2-ce.png
-        title: 'Click the default profile row. This will open device profile details;'
+        title: 'Click on the default device profile row to open its details;'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-3-ce.png
-        title: 'Select the "Alarm Rules" tab and toggle edit mode;'
+        title: 'Select the "Alarm rules" tab and click "pencil" button to enter edit mode;'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-4-ce.png
         title: 'Click "Add alarm rule" button;' 
@@ -203,26 +203,49 @@ step71:
 step72:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-1-ce.png
-        title: 'Open Devices page. Click "Assign to customer" icon for "My New Device";'
+        title: 'Open "Devices" page. Click "Assign to customer" icon for "My New Device";'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-2-ce.png
-        title: 'Select "My New Customer" and click "Assign".'
+        title: 'Select "My New Customer" and click "Assign";'
+    2:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-5-ce.png
+        title: 'Navigate to "Customers" page. Find your customer in the list of customers and then click on the "Manage customer devices" icon;'
+    3:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-6-ce.png
+        title: 'Your device is now owned by the customer.'
+
+step72_1:
+    0:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-8-ce.png
+        title: 'Click on the "+" icon in the top right corner of the table. Input device name (for example, "Thermostat") and navigate to the "Customer" tab;'
+    1:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-9-ce.png
+        title: 'Select the customer to whom you want to assign the new device. Then click "Add";'
+    2:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-10-ce.png
+        title: 'The device has been created, and it immediately belongs to the selected customer;'
 
 step73:
     0:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-3-ce.png
-        title: 'Open Dashboards page. Click "Manage assigned customers" icon for "My New Dashboard";'
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-3-ce.png
+        title: 'Open "Dashboards" page. Mark your dashboard and click the "Assign dashboards" icon;'
     1:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-4-ce.png
-        title: 'Select "My New Customer" and click "Update".'
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-4-ce.png
+        title: 'Mark "My New Customer" and click "Assign";'
+    2:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-5-ce.png
+        title: 'Navigate to the "Customers" page. Click "Manage customer dashboards" icon for "My New Customer";'
+    3:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-6-ce.png
+        title: '"My New Dashboard" is assigned to your customer.'
 
 step74:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-1-ce.png
-        title: 'Navigate back to the "Customers" page and click the "Manage customer users" icon for "My New Customer";'
+        title: 'Navigate to "Customers" page. Find your customer in the list of customers and then click on the "Manage customer users" icon;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-2-ce.png
-        title: 'Click the "Add user" icon;'
+        title: 'Click the "Add user" icon in the top right corner of the table;'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-3-ce.png
         title: 'Specify email that you will use to login as a customer user and click "Add";'
@@ -390,13 +413,17 @@ Let's create a customer with title "My New Customer". Please see instruction bel
 
 #### Step 7.2 Assign device to Customer
 
-Let's assign device to the Customer. The Customer users will have ability to read and write telemetry and send commands to devices. 
+Let's assign device to the customer. The customer users will have ability to read and write telemetry and send commands to devices. 
 
 {% include images-gallery.html imageCollection="step72" showListImageTitles="true" %}
 
+You can make the customer the owner of the device during its creation stage.
+
+{% include images-gallery.html imageCollection="step72_1" showListImageTitles="true" %}
+
 #### Step 7.3 Assign dashboard to Customer
 
-Let's share our dashboard with the Customer. The Customer users will have read-only access to the Dashboard. 
+Let's share our dashboard with the customer. The customer users will have read-only access to the dashboard. 
 
 {% include images-gallery.html imageCollection="step73" showListImageTitles="true" %}
 
