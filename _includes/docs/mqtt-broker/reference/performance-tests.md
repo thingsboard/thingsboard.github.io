@@ -2,23 +2,24 @@
 * TOC
 {:toc}
 
-One of the key features of the MQTT broker is to receive messages published by clients, 
-filter the messages by topic, and distribute them to subscribers, and this is a crucial process that must work reliably under high load. 
-In this article, we are going to describe steps that we have made to ensure that ThingsBoard MQTT Broker can constantly handle around **1M** connected clients 
-and process **200k MQTT publish messages per second** as inbound and outbound traffic.
+An essential attribute of the MQTT broker involves the reception of messages disseminated by clients, their filtration based on topics, and subsequent distribution to subscribers. 
+This procedure bears immense significance, particularly when operating under substantial workloads.
+Within this discourse, we shall illustrate the measures undertaken to ascertain that the ThingsBoard MQTT broker maintains unwavering capability 
+in simultaneously accommodating approximately **100M** connected clients, while effectively managing the influx and outflow of **3M MQTT publish messages per second**.
 
 ![image](/images/mqtt-broker/reference/perf-tests/mqtt-broker-perf-tests.png)
 
 ### Test methodology
 
 We have chosen Amazon Web Services (AWS) as the target cloud provider to conduct the performance test.
-We have deployed the ThingsBoard (TB) MQTT broker cluster of 5 nodes in [EKS](https://aws.amazon.com/eks/) 
-cluster (on a single EC2 instance, or node, 1 broker pod is deployed) with the connection to [RDS](https://aws.amazon.com/rds/) and [MSK](https://aws.amazon.com/msk/). 
-See the next page for more information about the ThingsBoard MQTT broker [architecture](/docs/mqtt-broker/architecture/).
-RDS has been deployed as a single instance and MSK has been deployed containing 3 brokers, each located in a separate Availability Zone (AZ).
+We have deployed the ThingsBoard (TB) MQTT broker cluster of 25 nodes in [EKS](https://aws.amazon.com/eks/) 
+cluster (on a single EC2 instance, or node, 1 broker pod is deployed) with the connection to [RDS](https://aws.amazon.com/rds/) and [Kafka](https://kafka.apache.org/).
+For a comprehensive understanding of the ThingsBoard MQTT broker architecture, please refer to the subsequent [page](/docs/mqtt-broker/architecture/).
+RDS has been deployed as a single instance while the Kafka setup consists of 9 brokers distributed across 3 distinct Availability Zones (AZs).
 
-The [test agent](#how-to-repeat-the-tests) provisions and connects a configurable number of MQTT clients that constantly publish time-series data over MQTT to specific topics.
-Additionally, it provisions a configurable number of MQTT clients that subscribe by topic filters to receive published messages.
+The [test agent](#how-to-repeat-the-tests) orchestrates the provisioning and establishment of MQTT clients, allowing for flexible configuration of their numbers.
+These clients operate persistently, continuously publishing time-series data over MQTT to designated topics.
+Furthermore, the agent facilitates the provisioning of MQTT clients that subscribe by topic filters to receive the messages published by the aforementioned clients.
 
 Various IoT device profiles differ based on the number of messages they produce and the size of each message.
 We have emulated smart tracker devices that send messages with five data points. The size of a single "publish" message is approximately **114 bytes**.
@@ -27,95 +28,136 @@ Below you can see the emulated message structure with some differences from a re
 { "lat": 40.761894, "long": -73.970455, "speed": 55.5, "fuel": 92, "batLvl": 81 }
 ```
 
-Publishers are split into 20 groups (resulting in 50k publishers and 10k msg/s per group), each sending data to their own topic pattern.
-The topic pattern is `CountryCode/City/Region/Part/ClientId` (e.g. `usa/ny/manh/west/${client_id}`). 
-In total, publishers are sending data to 1M different topics.
-Accordingly, 20 subscriber groups are configured with 1 `APPLICATION` subscriber in each. The topic filter corresponds to the topic pattern of the publisher group 
-(e.g. `usa/ny/manh/west/+`) resulting in 10k messages received per second per subscriber.
+The publishers are organized into 500 distinct groups, resulting in a total of 200k publishers and 6k msg/s per group. 
+Each group is responsible for transmitting data to its designated topic pattern, which follows the format of `CountryCode/RandomString/GroupId/ClientId`. 
+Consequently, an extensive range of **100M** unique topics are being utilized by the publishers.
+In parallel, 500 subscriber groups have been configured, each featuring a single `APPLICATION` subscriber.
+The topic filter employed by these subscribers corresponds to the topic pattern employed by the respective publisher group (i.e. `CountryCode/RandomString/GroupId/+`). 
+As a consequence, each subscriber is capable of receiving 6k messages per second, ensuring the efficient processing of incoming data.
 
-In this case, the ThingsBoard MQTT broker cluster constantly maintains 1,000,020 connections and processes 200k messages per second or 8,640M messages overall during 12 hours of running the test.
-This causes ~1TB of data to the initial Kafka topic (`publish_msg`).
-Each subscriber receives 432M messages overall and has its special topic in Kafka where those messages are stored.
-Configuration of 20 APPLICATION subscribers means only Kafka is used to collect data and Postgres is not since 
-`DEVICE` persistent clients are not configured.
+In the described scenario, the ThingsBoard MQTT broker cluster consistently sustains 100,000,500 connections and efficiently handles the processing 
+of 3M messages per second, resulting in a total of 10,800M messages over the course of 1-hour test run.
+
+In contemplation of the warm-up phase for the clients, it is noteworthy to acknowledge that 6 iterations of publishers transmitting a single message each took place. 
+Consequently, a total of 600M warm-up messages were generated within a span of ~7 minutes. 
+These warm-up messages serve the purpose of preparing the system and initiating the flow of data.
+In addition to the warm-up phase, the overall test encompasses a grand total of 11,400M messages that were processed. 
+This figure encapsulates both the warm-up messages and the subsequent messages generated and handled during the complete test duration.
+
+This substantial volume of data amounts to approximately 1TB, which is stored in the initial Kafka topic labeled as `tbmq.msg.all`.
+Each individual subscriber, being configured as an APPLICATION subscriber, has its dedicated topic within Kafka 
+where it receives a cumulative total of 22.8M messages for further processing and analysis.
+Notably, with the configuration of 500 APPLICATION subscribers, the data collection process solely relies on Kafka, and Postgres is not involved. 
+This is because the persistent clients categorized as `DEVICE` are not included in the current configuration setup.
 
 **Tip**: to plan and manage the Kafka disk space, please, adjust the [size retention policy](https://kafka.apache.org/documentation/#brokerconfigs_log.retention.bytes) 
-and [period retention policy](https://www.baeldung.com/kafka-message-retention). You can find all the needed configurations for every topic in the 
-[configuration](/docs/mqtt-broker/install/config/) document.
+and [period retention policy](https://www.baeldung.com/kafka-message-retention). 
+For detailed information regarding the configurations associated with each topic, please refer to the [configuration](/docs/mqtt-broker/install/config/) document.
 
-Each MQTT client uses a separate connection to the broker.
+Every individual MQTT client establishes a distinct connection to the broker. 
+This approach ensures that each client operates independently and maintains its own dedicated connection for seamless communication with the broker.
 
 ### Hardware used
 
-| Service Name             | **TB MQTT Broker** | **AWS RDS (PostgreSQL)** | **AWS MSK**    |
-|--------------------------|--------------------|--------------------------|----------------|
-| Instance Type            | m6a.2xlarge        | db.m6i.large             | kafka.m5.large |
-| Memory (GiB)             | 32                 | 8                        | 8              |
-| vCPU                     | 8                  | 2                        | 2              |
-| Storage (GiB)            | 80                 | 100                      | 1500           |
-| Network bandwidth (Gbps) | 12.5               | 10                       | 10             |
+| Service Name              | **TB MQTT Broker** | **AWS RDS (PostgreSQL)** | **Kafka**   |
+|---------------------------|--------------------|--------------------------|-------------|
+| Instance Type             | m6g.metal          | db.m6i.large             | m6a.2xlarge |
+| Memory (GiB)              | 256                | 8                        | 32          |
+| vCPU                      | 64                 | 2                        | 8           |
+| Storage (GiB)             | 10                 | 100                      | 500         |
+| Network bandwidth (Gibps) | 25                 | 12.5                     | 12.5        |
 
 [comment]: <> ( To format table as markdown, please use the online table generator https://www.tablesgenerator.com/markdown_tables )
 
 ### Test summary
 
-All clients were connected to the cluster within less than 1 minute, resulting in approximately 20k connected clients per second.
-The test was running for 12 hours to ensure there is no resource leakage or performance degradation over time.
-200k messages published per second result in 8,640M messages overall or ~1TB incoming/outgoing throughput.
-MQTT Quality of Service (QoS) level of **1** (`AT_LEAST_ONCE`) was used for publishers and subscribers.
+The connection rate of the clients reached a notable level of ~22k connections per second, signifying an efficient setup.
+To ensure the absence of any resource leakage or performance degradation over time, the test was executed for a duration of one hour, allowing for thorough observation and analysis.
 
-Let's review a simple table with the main points of the test.
+With a rate of 3M messages published per second, including warm-up messages, a total of 11,400M messages were processed throughout the test, resulting in an impressive incoming and outgoing throughput of approximately 1TB. 
+This substantial volume of data showcases the scalability and handling capabilities of the MQTT broker.
+To maintain a high level of reliability and message delivery assurance, an MQTT Quality of Service (QoS) level of **1**, specifically `AT_LEAST_ONCE`, was employed for both the publishers and subscribers. 
+This QoS level ensures that messages are guaranteed to be delivered at least once, ensuring data integrity and consistency.
 
-| Devices | Msgs/sec | Broker CPU | Broker Memory | Kafka CPU | Kafka  Network RX/TX packets | PostgreSQL  CPU | PostgreSQL Read/Write IOPS |
-|---------|----------|------------|---------------|-----------|------------------------------|-----------------|----------------------------|
-| 1M      | 200k     | 74.6%      | 10.3GB        | 27%       | 3.5k                         | 2%              | less than 1/ less than 3   |
+Considering the comprehensive scope of the test, it would be advantageous to review an informative table that summarizes the key elements and outcomes of the conducted test.
 
-Below you can see the stats from the Kafka topics (i.e. `publish_msg` is the main Kafka topic where all the messages are stored, and several examples of application 
-topics for `APPLICATION` subscribers that receive the data).
+| Devices | Msgs/sec | Broker CPU | Broker Memory | Kafka CPU | Kafka Read/Write throughput | PostgreSQL  CPU | PostgreSQL Read/Write IOPS |
+|---------|----------|------------|---------------|-----------|-----------------------------|-----------------|----------------------------|
+| 100M    | 3M       | 45%        | 160GiB        | 58%       | 7k / 80k KiB/s              | 2%              | less than 1 / less than 3  |
+
+The following statistics provide insights into the Kafka topics used during the test 
+(i.e. `publish_msg`, after [Kafka topics renaming [1]](#references) `tbmq.msg.all`, 
+is the main Kafka topic where all the messages are stored, and several examples of application topics for APPLICATION subscribers that receive the data).
 
 {% include images-gallery.html imageCollection="broker-topics-monitoring" %}
 
-Note, based on the above info we can see that 100% of messages were processed successfully. 
-`publish_msg` topic has less storage size than mentioned before due to the fact that producers are sending compressed data and Kafka brokers
-retain the original compression codec set by the producers (`compression.type` property). Application topics do not preserve all the messages due to the retention policy configured.
+It is important to highlight that the provided information demonstrates a 100% success rate in processing all the messages.
+`publish_msg` and application topics contain compressed data since producers are sending compressed data and Kafka brokers
+retain the original compression codec set by the producers (`compression.type` property). 
+This approach ensures efficient data storage and transmission while maintaining the integrity and original compression settings of the messages.
 
-What about the message processing latency? Below you can find the table with the most important stats.
+We should now turn our attention to the matter of message processing latency.
+Below you can find a table containing the essential statistics, which shed light on this crucial aspect of the evaluation.
 
 | Msg latency Avg | Msg latency 95th | Pub Ack Avg | Pub Ack 95th |
 |-----------------|------------------|-------------|--------------|
-| 250 ms          | 387 ms           | 92 ms       | 186 ms       |
+| 195 ms          | 295 ms           | 23 ms       | 55 ms        |
 
-where "Msg latency Avg" - is the average time passed from the message being sent from the publisher to be received by the subscriber, 
-"Pub Ack Avg" - is the average time elapsed from the message being sent from the publisher to the time `PUBACK` is received by the one, 
+where "Msg latency Avg" represents the average duration from the moment a message is transmitted by the publisher until it is received by the subscriber, 
+"Pub Ack Avg" indicates the average time elapsed from the point of message transmission by the publisher to the reception of the `PUBACK` acknowledgment, 
 and 95th is the 95th percentile of the respectful latency statistics.
 
 **Lessons learned**
 
 ThingsBoard MQTT Broker cluster in the current configuration contains the capacity to process an even bigger load. Kafka provides reliable and highly-available processing of messages.
-PostgreSQL is almost not loaded in such a case since it processed a few operations per second due to the nature of the test and usage of `APPLICATION` subscribers.
-There is no communication between the TB MQTT broker nodes in this test meaning we can scale horizontally more and receive nearly linear growth of performance.
-Thus, we expect 25 TB MQTT Brokers to be enough to process 1M messages per second.
-The QoS level of 0 would give an even higher message rate, however, we wanted to demonstrate the processing capabilities with a more generic setup. 
-The QoS level of 1 is the most popular configuration in general, giving both speed and reliability of message delivery.
-ThingsBoard MQTT Broker is a great choice for both low and high message rates, different processing use cases (e.g. fan-in, fan-out, etc.), and either small or big deployments 
-since it can easily be scaled vertically and horizontally.
+In this scenario, the utilization of `APPLICATION` subscribers and the nature of the test resulted in minimal load on PostgreSQL, with only a few operations executed per second.
+There is no communication between the TB MQTT broker nodes that helped scale horizontally to achieve the mentioned results.
+Although employing a QoS level of 0 would further elevate the message rate, our intention was to demonstrate the MQTT broker's processing capabilities with a more generic setup.
+In practice, a QoS level of 1 is widely favored as it strikes a balance between message delivery speed and reliability, making it a popular configuration choice.
+ThingsBoard MQTT Broker is a great choice for both low and high message rates. 
+It excels in various processing use cases, such as fan-in and fan-out scenarios, and proves equally suitable for deployments of various scales.
+Thanks to its inherent capacity for both vertical and horizontal scalability, the broker adapts to the demands of either small-scale or large-scale deployments.
+
+**Challenges faced during testing**
+
+During the pursuit of achieving such substantial levels of connections and data flow, we encountered various scenarios that demanded some effort in code optimization.
+
+One such instance involved addressing Kafka producer disconnects, which had the undesirable consequence of message loss. 
+To solve this issue, we implemented a distinct executor service dedicated to processing publish [callbacks for Kafka producers[2]](#references). 
+This measure effectively resolved the aforementioned disconnections.
+
+To further enhance performance, we [eliminated the need for a specialized publish queue[3]](#references) by leveraging the inherent thread-safe nature of Kafka producers. 
+This adjustment yielded additional benefits in terms of overall system efficiency as the message ordering guarantees were achieved in another way.
+
+Additional adjustments were introduced to elevate the processing rate, as evidenced by the commits related to improvements in [message pack processing, 
+UUID generation[4]](#references), and the adoption of a mechanism for sending messages [without the need for explicit flushing[5]](#references).
+
+To optimize memory utilization and minimize unnecessary garbage creation, we undertook substantial efforts to improve overall memory usage. 
+These [enhancements[6][7][8]](#references) not only contributed to enhanced Garbage Collector performance but also reduced stop-the-world pauses, thereby improving overall system responsiveness.
+
+During our later testing phases on larger scales, we observed an uneven distribution of clients among the broker nodes.
+This resulted in a disproportionate workload for a specific broker node, which posed minimal issues for publishers but had a notable impact on APPLICATION clients, requiring more substantial resource utilization.
+That resulted in one broker node processing much more requests than others.
+To address this concern, we devised a mechanism to ensure an [even distribution of clients among the broker nodes[9]](#references), alongside other minor performance improvements.
+
+Through these diligent efforts, we successfully addressed various challenges along the way, optimizing code performance and ensuring a smooth and efficient operation of the system.
 
 ### TCO calculations
 
 Herewith you can find total cost of ownership (TCO) calculations for ThingsBoard MQTT Broker deployed using AWS.
 
-**Important notice**: all calculations and pricing below are approximate and are listed as an example.
-Please consult your cloud provider in order to get your accurate pricing.
+**Important notice**: all the calculations and pricing provided below are approximations and are intended solely for illustrative purposes.
+To obtain precise and accurate pricing information, it is highly recommended that you consult with your respective cloud service provider.
 
-AWS EKS cluster in us-east-1 region. Approx. price is ~73 USD/month.
+AWS EKS cluster in the us-east-1 region. Approx. price is ~73 USD/month.
 
-AWS Instance Type: 5 x m6a.2xlarge instances (8 vCPUs AMD EPYC 3rd, 32 GiB, EBS GP3 80GiB) to host 5 ThingsBoard MQTT brokers. Approx. price is ~1300 USD/month.
+AWS Instance Type: 25 x m6g.metal instances (64 vCPUs AWS Graviton2 Processor, 256 GiB, EBS GP3 10GiB) to host 25 ThingsBoard MQTT brokers. Approx. price is ~23,800 USD/month.
 
-AWS RDS: db.m6i.large (2 vCPU, 8 GiB), 100GiB storage. Approx. price is ~142 USD/month.
+AWS RDS: db.m6i.large (2 vCPU, 8 GiB), 100GiB storage. Approx. price is ~100 USD/month.
 
-AWS MSK: 3 brokers (1 broker per AZ), kafka.m5.large (2 vCPU, 8 GiB), 1,500GiB storage. Approx. price is ~620 USD/month.
+AWS MSK: 9 brokers (3 brokers per AZ) x m6a.2xlarge (8 vCPU, 32 GiB), 4,500GiB total storage. Approx. price is ~2,600 USD/month.
 
-**TCO**: ~2,135 USD per month or 0.002 USD per month per device.
+**TCO**: ~26,573 USD per month or 0.0003 USD per month per device.
 
 ### Running tests
 
@@ -229,8 +271,31 @@ to simulate the desired load.
 
 ### Conclusion
 
-This performance test demonstrates how a ThingsBoard MQTT Broker cluster can receive, process and distribute 200k messages per second from your devices. 
-We will continue our work on performance improvements and are going to publish updated performance results for the cluster of ThingsBoard MQTT Broker in the near future. 
-We hope this article will be useful for people who are evaluating the platform and want to execute performance tests on their own.
+This performance test demonstrates the capabilities of the ThingsBoard MQTT Broker cluster in efficiently receiving,
+processing, and distributing 3M messages per second originating from diverse devices along with handling 100M concurrent connections.
+Our commitment to continuous improvement compels us to undertake further efforts aimed at enhancing performance.
+As a result, we anticipate publishing updated performance results for the ThingsBoard MQTT Broker cluster in the near future.
+We sincerely hope that this article be valuable to individuals evaluating the ThingsBoard MQTT broker and those seeking to conduct performance tests within their own environments.
 
-Please let us know your feedback and follow our project on [GitHub](https://github.com/thingsboard/thingsboard-mqtt-broker) or [Twitter](https://twitter.com/thingsboard).
+Your feedback is highly appreciated, and we encourage you to stay connected with our project by following us 
+on [GitHub](https://github.com/thingsboard/thingsboard-mqtt-broker) and [Twitter](https://twitter.com/thingsboard).
+
+### References
+
+[1] - [Kafka topics renaming](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/8871403fcfdce3489ee2a49c1505b998ceb46c3c#diff-85b2fafc998caf1c7d67f51c40f5639ac9ee0ee68379e07ad2f63b083f010f13).
+
+[2] - [Kafka producer callbacks](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/4e8e6d8a2f9855c7df88074efc935cb7d19f593d).
+
+[3] - [Stop adding publish messages to queue](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/443e260924e214ae89b0158a6369b06f38801bd0).
+
+[4] - [Msg pack processing, UUID generation improvements](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/47e674589269bb45291f471528c54370ebdaf7ed).
+
+[5] - [Send messages without flush](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/3ec317072dead5cb5355d29dd7319ccde3403d04).
+
+[6] - [ClientSessionInfo object reuse](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/56ede8e5ebbaa8deafd24b7a0d4050401835ebc0).
+
+[7] - [Remove application publish msg copies](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/395d48917be0186fafbdfa12c0a9b145b66f31d2).
+
+[8] - [Bytebuf in publish msg](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/fa424ffc32837b4d4aa48b890eb3bc06908a7476).
+
+[9] - [MQTT clients even distribution among broker nodes](https://github.com/thingsboard/tb-mqtt-perf-tests/commit/bd7649a9321f56f68303b380e634617fa0abc098).

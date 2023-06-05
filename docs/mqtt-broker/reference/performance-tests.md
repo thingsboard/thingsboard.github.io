@@ -40,16 +40,13 @@ broker-tests-jmx-monitoring:
 broker-topics-monitoring:
     0:
         image: /images/mqtt-broker/reference/topics/mqtt-pub-topic.png
-        title: 'Publish msg topic - received all 8,640M messages'
+        title: 'Publish msg topic - received all 11,400M messages'
     1:
         image: /images/mqtt-broker/reference/topics/mqtt-app-topic-1.png
-        title: 'Application topic example 1 - received all 432M messages'
+        title: 'Application topic example 1 - received all 22.8M messages'
     2:
         image: /images/mqtt-broker/reference/topics/mqtt-app-topic-2.png
-        title: 'Application topic example 2 - received all 432M messages'
-    3:
-        image: /images/mqtt-broker/reference/topics/mqtt-app-topic-3.png
-        title: 'Application topic example 3 - received all 432M messages'
+        title: 'Application topic example 2 - received all 22.8M messages'
 ---
 
 {% include docs/mqtt-broker/reference/performance-tests.md %}
