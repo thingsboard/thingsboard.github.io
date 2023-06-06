@@ -77,9 +77,12 @@ Dashboard toolbar allows you to manage
 [layouts](/docs/{{docsPrefix}}user-guide/dashboards/#layouts), 
 [settings](/docs/{{docsPrefix}}user-guide/dashboards/#settings), 
 [aliases](/docs/{{docsPrefix}}user-guide/dashboards/#entity-aliases), 
-[filters](/docs/{{docsPrefix}}user-guide/dashboards/#entity-filters), and configure [timewindow](/docs/{{docsPrefix}}user-guide/dashboards/#timewindow) using the corresponding icons in the toolbar.
+[filters](/docs/{{docsPrefix}}user-guide/dashboards/#entity-filters),
+[export](/docs/{{docsPrefix}}user-guide/dashboards/#export) dashboard in the needed format,
+[version control](/docs/{{docsPrefix}}user-guide/version-control/)
+and configure [timewindow](/docs/{{docsPrefix}}user-guide/dashboards/#4-widget-time-window) using the corresponding icons in the toolbar.
 
-Some of these icons (stats, layout, settings) are visible only in the "edit" mode. All other icons are visible in both "view" and "edit" mode. 
+Some of these icons (states, layout, settings, entity aliases, filters, version control) are visible only in the "edit" mode. All other icons are visible in both "view" and "edit" mode. 
 You can hide these icons or configure the toolbar to be minimized by default using [settings](/docs/{{docsPrefix}}user-guide/dashboards/#settings).
 
 {% include images-gallery.html imageCollection="toolbar-review" %}
