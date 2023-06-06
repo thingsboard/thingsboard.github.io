@@ -163,36 +163,36 @@ AWS MSK: 9 brokers (3 brokers per AZ) x m6a.2xlarge (8 vCPU, 32 GiB), 4,500GiB t
 
 **Load configuration:**
 
-* 1M connected MQTT clients (smart tracker devices);
-* 20 subscribe MQTT clients (specific applications that consume the data - e.g. for analysis/graphs);
-* 200k msg/sec over MQTT, each MQTT message contains 5 data points, approx. message size is 114 bytes;
+* 100M publish MQTT clients (smart tracker devices);
+* 500 persistent subscribe MQTT clients (specific applications that consume the data - e.g. for analysis/graphs);
+* 3M msg/sec over MQTT, each MQTT message contains 5 data points, message size is 114 bytes;
 * PostgreSQL database to store MQTT client credentials, client session states;
 * Kafka queue to persist messages.
 
-The above message rate and message size, as seen previously, cause **~82GB** of data per hour in the initial Kafka topic, and **4GB** of data per hour per subscriber topic.
+The aforementioned message rate and message size, as observed previously, result in approximately **~1TB** of data per hour in the initial Kafka topic, 
+and around **~1.6GB** of data per hour per subscriber topic.
 
-However, the data is not needed to be stored for the long term for visualization, analysis purposes, or others. MQTT broker is required to receive messages, distribute them 
-among the subscribers and optionally store them for a short period of time for offline clients. That's why we recommend configuring a reasonable amount of storage size 
-based on your requirements. **Note**, as a reminder, do not forget to configure the size retention policy and period retention policy for Kafka topics.
+However, it is not necessary to store the data for an extended period for purposes such as visualization, analysis, or others. 
+The MQTT broker is responsible for receiving messages, distributing them among the subscribers, and optionally storing them temporarily for offline clients. 
+Hence, it is advisable to configure an appropriate storage size based on your specific requirements. 
+Additionally, as a reminder, it is crucial to configure the size retention policy and period retention policy for the Kafka topics.
 
-The test agent represents the cluster of performance test nodes (runners) and an orchestrator that rules the runners.
-We have deployed 40 small Kubernetes pods to serve the runner's purpose and 1 pod to be the orchestrator.
+The test agent represents a cluster of performance test nodes (runners) and an orchestrator that supervises these runners. 
+To fulfill the role of runners, we have deployed 2000 publisher and 500 subscriber Kubernetes pods, while a single pod serves as the orchestrator.
 
-The topic prefix is constructed to simulate smart trackers collecting data in NY city, USA, for all
-5 boroughs (Brooklyn, Manhattan, etc.) divided by 4 areas (west, east, north, south).
-
-With the JSON configuration, we are able to specify the publishers and subscribers separately, gathered into groups for more flexible control.
-Let's review the publishers' and subscribers' configurations.
+By utilizing the JSON configuration, we have the capability to specify the publishers and subscribers separately, organizing them into groups for more flexible control.
+Let us now examine the configurations for both publishers and subscribers.
 
 Publisher group:
 ```json
 {
     "id":1,
-    "publishers":50000,
-    "topicPrefix":"usa/ny/brkl/east/",
+    "publishers":200000,
+    "topicPrefix":"usa/ydwvv/1/",
     "clientIdPrefix":null
 }
 ```
+{: .copy-code}
 where
 * _id_ - identifier of the publisher group;
 * _publishers_ - number of publisher clients in the group;
@@ -204,7 +204,7 @@ Subscriber group:
 {
     "id":1,
     "subscribers":1,
-    "topicFilter":"usa/ny/brkl/east/+",
+    "topicFilter":"usa/ydwvv/1/+",
     "expectedPublisherGroups":[1],
     "persistentSessionInfo":{
         "clientType":"APPLICATION"
@@ -212,24 +212,26 @@ Subscriber group:
     "clientIdPrefix":null
 }
 ```
+{: .copy-code}
 where
 * _id_ - identifier of the subscriber group;
 * _subscribers_ - number of subscriber clients in the group;
 * _topicFilter_ - respectively topic filter to subscribe to;
-* _expectedPublisherGroups_ - list of ids of publisher groups whose messages current subscribers will receive (parameter is used for debugging and statistics purposes - e.g. to calculate the total expected received messages);
+* _expectedPublisherGroups_ - list of ids of publisher groups whose messages current subscribers will receive (parameter is used for debugging and statistics purposes);
 * _persistentSessionInfo_ - persistent info object containing [client type](/docs/mqtt-broker/user-guide/mqtt-client-type/);
 * _clientIdPrefix_ - client id prefix of subscribers.
 
 **Test run**
 
-The test is starting with the clients connecting to the cluster, `APPLICATION` clients subscribing to the appropriate topics.
-All the 1,000,020 clients are distributed among 40 performance test nodes, connecting those clients to the broker in parallel.
+The test commences by establishing connections between the clients and the cluster. `APPLICATION` clients subscribe to the relevant topics, while publishers undergo a warm-up phase. 
+The 100,000,500 clients are evenly distributed among the performance test pods, facilitating parallel connections to the broker.
 
-After approximately 1 minute all the clients are connected successfully and each performance test node is notifying the orchestrator about its readiness.
+After a period of time, all clients successfully establish connections, and each performance test pod notifies the orchestrator of its readiness.
 
-We can see on the ThingsBoard MQTT broker UI the connected sessions.
+To gauge the progress, we can examine the `client_session` (after [Kafka topics renaming [1]](#references) `tbmq.client.session`) Kafka topic. 
+This topic provides an approximate count of the connected sessions.
 
-![image](/images/mqtt-broker/reference/1m-mqtt-clients.png)
+![image](/images/mqtt-broker/reference/topics/100m-mqtt-clients.png)
 
 Once all the runners are ready, the orchestrator notifies the cluster is ready and the message publishing is started.
 
@@ -237,29 +239,32 @@ Once all the runners are ready, the orchestrator notifies the cluster is ready a
 09:12:35.407 [main] INFO  o.t.m.b.tests.MqttPerformanceTest - Start msg publishing.
 ```
 
-After some time of processing, we can review the monitoring tools (JMX, [Kafka UI](https://github.com/redpanda-data/console)) 
-used for the test and AWS CloudWatch for more details. 
-We can see pretty good results. Published and consumed messages are processed without the delay. 
-Application processors are delivering the messages to the subscribers fast enough to not experience the lag. 
-All 1,000,020 clients are stably connected to the broker.
+After a period of processing, we can evaluate the monitoring tools such as JMX, Grafana, and [Kafka UI](https://github.com/redpanda-data/console) 
+that were employed during the test, along with AWS CloudWatch for more comprehensive insights.
+Upon examination, we observe favorable outcomes. The published and consumed messages are being processed without any noticeable delays.
+The application processors efficiently deliver the messages to the subscribers, ensuring a smooth and uninterrupted flow. 
+Additionally, all 100,000,500 clients maintain stable connections with the broker.
 
-AWS instance (where TB MQTT Brokers are deployed) monitoring shows about 70% average CPU load. 
-AWS RDS resources are almost not used due to the absence of DEVICE persistent clients and few requests per second processed to update sessions. 
-AWS MSK monitoring shows Kafka has plenty of resources left to receive even more load.
+{% include images-gallery.html imageCollection="broker-grafana-monitoring" %}
 
-{% include images-gallery.html imageCollection="broker-tests-aws-monitoring" %}
+AWS instance (where TB MQTT Brokers are deployed) monitoring shows about 45% average CPU load.
+The AWS RDS resources, on the other hand, are not utilized as there are no DEVICE persistent clients and only a few requests per second are sent.
+Meanwhile, the Kafka monitoring indicates that there are more resources available, suggesting that it can handle even higher loads if necessary.
 
-Finally, let’s check the JVM state on several ThingBoard MQTT brokers. For that, we need to forward the JMX port to connect and monitor Java applications.
+{% include images-gallery.html imageCollection="broker-aws-monitoring" %}
+
+Lastly, let us examine the JVM state of the ThingBoard MQTT broker. To accomplish this, we must forward the JMX port to establish a connection and monitor the Java applications.
 
 ```bash
 kubectl port-forward tb-broker-0 9999:9999
 ```
 {: .copy-code}
 
-Open [VisualVM](https://visualvm.github.io/), add the local applications, open it and let the data be gathered for a few minutes.
-Here is the JMX monitoring for ThingsBoard MQTT brokers. The broker nodes are stable.
+To proceed, please open [VisualVM](https://visualvm.github.io/) and add the local application. 
+Once added, open it and allow the data to be collected for a few minutes.
+Here is the JMX monitoring for the ThingsBoard MQTT broker. The broker nodes are operating steadily and without any notable issues.
 
-{% include images-gallery.html imageCollection="broker-tests-jmx-monitoring" %}
+{% include images-gallery.html imageCollection="broker-jmx-monitoring" %}
 
 ### How to repeat the tests
 
