@@ -31,7 +31,7 @@ step2:
 
 step3:
     0:
-        image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-1-pe.png
+        image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-3-pe.png
         title: 'Click on the device row in the table to open device details;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-4-pe.png

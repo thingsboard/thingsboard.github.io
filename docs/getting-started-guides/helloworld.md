@@ -23,7 +23,7 @@ step1:
 
 step2:
     0:
-        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-3-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-1-ce.png
         title: 'Click on the device row in the table to open device details;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-2-ce.png
