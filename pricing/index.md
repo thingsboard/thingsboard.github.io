@@ -881,8 +881,8 @@ selfManagedPlan:
                                 false,
                                 'd3b7d030-fe4c-11ea-951e-b77b877a367b',
                                 '302e3420-fe4e-11ea-951e-b77b877a367b',
-                                'Edge Nano', 'LKPFMBRZH7', false)">
-                                Try 30 days for free
+                                'Edge Nano', null, false)">
+                                Get your license
                             </button>
                         </div>
                         <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with TB PE Server</b></div>

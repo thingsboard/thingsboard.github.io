@@ -9,9 +9,11 @@
 <br>
 {% endif %}
 
-The {{platformName}} **Edge** will help you to distribute data processing and analysis using edge computing.
+The {{platformName}} **Edge** empowers you to leverage edge computing for the distribution of data processing and analysis.
 
-For example, you can do the calculation and grouping of data from edge devices on the {{platformName}} Edge and push to the cloud only filtered and grouped data to reduce traffic and safe money.
+For instance, it allows you to perform calculations and group data from edge devices right on the {{platformName}} Edge. 
+By doing so, you can push only filtered and grouped data to the cloud. 
+This strategy effectively reduces data traffic and saves cost.
 
 <div class="doc-features row mt-4">
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">

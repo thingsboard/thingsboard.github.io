@@ -4,90 +4,88 @@
 
 ## What is ThingsBoard Edge?
 
-ThingsBoard Edge is a ThingsBoard's software product for edge computing. 
-It allows bringing data analysis and management to the edge, where the data created. At the same time ThingsBoard Edge seamlessly synchronizing with the ThingsBoard cloud (ThingsBoard Cloud, ThingsBoard Demo, ThingsBoard PE or ThingsBoard CE) according to your business needs.
-If this is your first experience with the edge we recommend to review [what-is-edge](/docs/{{docsPrefix}}getting-started-guides/what-is-edge/) 
-and [getting started guide](/docs/{{docsPrefix}}getting-started/).
-You can find more information on the dedicated page.
+ThingsBoard Edge is a product designed for edge computing offered by ThingsBoard. 
+It facilitates the analysis and management of data at the edge, i.e., where the data is generated, while maintaining seamless synchronization with the ThingsBoard server (Cloud, Demo, PE or CE), as per your business requirements. 
+If you're new to edge computing, we recommend reviewing [what-is-edge](/docs/{{docsPrefix}}getting-started-guides/what-is-edge/) and the [getting started guide](/docs/{{docsPrefix}}getting-started/). 
+More information can be found on the dedicated page.
 
 ## How do I get started?
 
-We recommend to [install](/docs/user-guide/install/{{docsPrefix}}installation-options/) ThingsBoard Edge locally on your laptop or PC using Docker
-and follow the [getting started guide](/docs/{{docsPrefix}}getting-started/).
+We recommend [installing](/docs/user-guide/install/{{docsPrefix}}installation-options/) ThingsBoard Edge on your local machine (laptop or PC) using Docker and following the [getting started guide](/docs/{{docsPrefix}}getting-started/).
 
-## Does ThingsBoard Edge require connection to the internet?
+## Does ThingsBoard Edge require an internet connection?
 
-No, ThingsBoard Edge does not require connection to the internet. 
-You can use it without internet connection.
-The only connection required is the one to the ThingsBoard cloud platform over gRPC.
+No, ThingsBoard Edge doesn't require an internet connection. 
+You can operate it without one. 
+The only necessary connection is to the ThingsBoard cloud platform via gRPC.
 
 {% if docsPrefix == 'pe/edge/' %}
-Additionally, ThingsBoard Edge uses HTTP(s) connection to the ThingsBoard cloud platform instance to verify the license.
-ThingsBoard Edge uses URL that is set in **Cloud Endpoint** configuration to do this validation.
-Please, make sure, that HTTP(s) connection to the cloud platform is not blocked by any firewall settings.
-ThingsBoard cloud platform acts as proxy for ThingsBoard Edge to connect to ThingsBoard license server.
+However, ThingsBoard Edge does utilize an HTTP(s) connection to the ThingsBoard cloud platform to verify the license. 
+The URL set in the **Cloud Endpoint** configuration is used for this validation. 
+Please ensure that the HTTP(s) connection to the cloud platform is not blocked by any firewall settings. 
+The ThingsBoard cloud platform acts as a proxy for ThingsBoard Edge to connect to the ThingsBoard license server.
 {% endif %}
 
 {% if docsPrefix == 'pe/edge/' %}
-## What happens if the connection to the ThingsBoard cloud platform is temporary unavailable? How the license check will happen in this case?
+## What happens if the connection to the ThingsBoard cloud platform is temporarily unavailable? How will the license check be carried out in this case?
 
-ThingsBoard Edge is able to work offline, without connection to the ThingsBoard cloud platform, for **7 days**.
-During this time, ThingsBoard Edge should **not be restarted** - restart requires connection to the ThingsBoard cloud platform to do initial license check.
-So please make sure, that ThingsBoard Edge is not restarted during offline period.
+ThingsBoard Edge can operate offline, without a connection to the ThingsBoard cloud platform, for up to **7 days**. 
+During this time, ThingsBoard Edge should **not be restarted** as a restart necessitates an initial license check which requires a connection to the ThingsBoard cloud platform. 
+Therefore, ensure that ThingsBoard Edge is not restarted during the offline period.
 {% endif %}
 
-## Can multiple tenants or customers access single ThingsBoard Edge on remote location?
+## Can multiple tenants or customers access a single ThingsBoard Edge in a remote location?
 
 {% if docsPrefix == 'pe/edge/' %}
-ThingsBoard Edge PE is **single** tenant and **multiple** customers (partial support of multiple customers). 
-In case Edge owner is sub-customer, all the parents of Edge owner sub-customer until tenant level are going to be provisioned to the Edge.
-So customers from the same hierarchy path are able to access the same ThingsBoard Edge PE instance.
-You cannot share ThingsBoard Edge between multiple tenants.
-And devices from multiple tenants can not be connected to a single ThingsBoard Edge.
-In this case you'll need to provision multiple ThingsBoard Edge instances for every tenant.
+ThingsBoard Edge PE supports a **single** tenant and **multiple** customers (partial support of multiple customers).
+If the owner of the Edge is a sub-customer, all the parent entities of that sub-customer up to the tenant level will be provisioned to the Edge.
+This means customers from the same hierarchy path can access the same ThingsBoard Edge PE instance.
+However, you cannot share a ThingsBoard Edge between multiple tenants, and devices from multiple tenants cannot connect to a single ThingsBoard Edge.
+In such cases, you'll need to provision multiple ThingsBoard Edge instances for each tenant.
 {% else %}
-ThingsBoard Edge CE is **single** tenant and **single** customer.
-You cannot share ThingsBoard Edge between multiple tenants or customers.
-And devices from multiple tenants can not be connected to a single ThingsBoard Edge.
-In this case you'll need to provision multiple ThingsBoard Edge instances for every tenant or customer.
+ThingsBoard Edge CE supports a **single** tenant and a **single** customer.
+You cannot share ThingsBoard Edge between multiple tenants or customers, and devices from multiple tenants cannot connect to a single ThingsBoard Edge.
+In such cases, you'll need to provision multiple ThingsBoard Edge instances for each tenant or customer.
 {% endif %}
 
 ## Can I connect devices from multiple tenants to a single ThingsBoard Edge?
 
-ThingsBoard Edge is **single** Tenant.
-You cannot connect devices from multiple tenants to a single ThingsBoard Edge entity. 
-In this case you'll need to provision multiple ThingsBoard Edge instances for every tenant.
+No, a ThingsBoard Edge supports a **single** tenant only. 
+You cannot connect devices from multiple tenants to a single ThingsBoard Edge. 
+In such cases, you'll need to provision multiple ThingsBoard Edge instances for each tenant.
 
 ## What can I do with ThingsBoard Edge?
 
-With ThingsBoard Edge, you can connect your on-site devices to ThingsBoard Edge, that is installed on-site as well, instead of direct connection to ThingsBoard cloud and get next benefits:
-- **Local deployment and storage**<br>
-*Process and store data from edge (local) devices without connection to the cloud. Push updates to the cloud once connection restored.*
-- **Traffic filtering**<br>
-*Filter data from edge (local) devices on the ThingsBoard Edge service and push to cloud only subset of the data for further processing or storage.*
-- **Local alarms**<br>
-*React instantly to critical situations on site without connectivity to cloud.*
-- **Batch update and visualization**<br>
-*Update thousands of edge configurations in a single click. Monitor local events and timeseries data with a real-time dashboard.*
+ThingsBoard Edge allows you to connect your on-site devices to a local ThingsBoard Edge instead of directly connecting them to the ThingsBoard cloud. 
+This setup offers the following benefits:
+- **Local Deployment and Storage**<br>
+*Process and store data from local devices without a cloud connection. You can push updates to the cloud once the connection is restored.*
+- **Traffic Filtering**<br>
+*Filter data from local devices at the ThingsBoard Edge level and only push a subset of data to the cloud for further processing or storage.*
+- **Local Alarms**<br>
+*Respond immediately to critical situations on-site without relying on cloud connectivity.*
+- **Batch Update and Visualization**<br>
+*Update thousands of edge configurations in a single click. Monitor local events and time-series data with a real-time dashboard.*
 
-## How to connect my device?
+## How can I connect my device?
 
-ThingsBoard provides
+ThingsBoard supports various protocols including
 [MQTT](/docs/{{docsPrefix}}reference/mqtt-api), 
 [CoAP](/docs/{{docsPrefix}}reference/coap-api), 
 [HTTP](/docs/{{docsPrefix}}reference/http-api), and
-[LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api) protocols support.
-**Existing** devices may be connected to the platform using **[ThingsBoard Gateway](/docs/iot-gateway/what-is-iot-gateway/)**.
-You can find more information on the [connectivity](/docs/{{docsPrefix}}reference/protocols/) page. 
+[LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api).
+**Existing** devices can be connected to the platform using the **[ThingsBoard Gateway](/docs/iot-gateway/what-is-iot-gateway/)**.
+More information is available on the [connectivity](/docs/{{docsPrefix}}reference/protocols/) page.
 
 {% if docsPrefix == 'pe/edge/' %}
-Additionally, you can use ThingsBoard [**Integrations**](/docs/user-guide/integrations/) to connect devices from different sources and with custom payloads to the edge. 
+Furthermore, you can use ThingsBoard [**Integrations**](/docs/user-guide/integrations/) to connect devices from different sources and with custom payloads to the edge.
 {% endif %}
 
 ## Do I need to use an SDK?
 
-No, many IoT devices can't afford to embed third-party SDK. ThingsBoard Edge provides quite simple API over common IoT protocols. You can choose any client-side library you like or use your own.
-Some useful references:
+No, many IoT devices are not designed to embed third-party SDKs. 
+ThingsBoard Edge provides a straightforward API over common IoT protocols, so you can select any client-side library of your preference or even use your own. 
+Some useful references include:
  
  - [MQTT client-side libraries list](https://github.com/mqtt/mqtt.github.io/wiki/libraries) 
  - [C-implementation for CoAP](https://libcoap.net/)
@@ -95,28 +93,27 @@ Some useful references:
 ## What about security?
 
 You can use MQTT (over SSL) or HTTPS protocols for transport encryption. 
-
-Each device has unique access token credentials that is used to setup connection. Credentials type is pluggable, so X.509 certificates support is coming soon.
+Each device has unique access token credentials or X.509 certificates used to establish a connection.
 
 ## How many devices can ThingsBoard Edge support?
 
 {% if docsPrefix == 'pe/edge/' %}
-Number of connected devices depends on your subscription plan. 
-There are plans with 'Unlimited Devices and Assets' - there is no any soft limits on creating devices and assets on the edge side.
+The number of connected devices depends on your subscription plan. 
+Some plans offer 'Unlimited Devices and Assets', thus there are no soft limits on creating devices and assets on the edge side.
 {% else %}
-There is no any soft limits on creating devices and assets on the edge side.
+There are no soft limits on creating devices and assets on the edge side.
 {% endif %}
 
-<b>But</b> in real case deployment there are couple additional factors, that must be considered to be able host a lot of devices on edge side - <b>hardware, speed of internet connection and gRPC channel bound limits</b>.
-Edge <b>hardware</b> must be powerful enough to process messages from 'unlimited' number of devices and assets.
-Additionally, <b>speed of internet connection</b> between ThingsBoard Edge and ThingsBoard server must be fast to deliver huge amount of data from 'unlimited' number of devices and assets.
-And last, but not least -  payload size and messages rate should be taken into consideration as well - <b>gRPC channel bound limits</b> affects messages delivery rate.
-ThingsBoard Edge designed in mind as an edge computing service, located in remote locations with possible low bandwidth connectivity, so we do not recommend connecting more than *1000* devices to a single edge.
+**However**, in real-world deployments, several additional factors must be considered to support a large number of devices on the edge side - hardware, internet connection speed, and gRPC channel bound limits. 
+Your edge **hardware** must be powerful enough to process messages from an 'unlimited' number of devices and assets. 
+The **speed of your internet connection** between ThingsBoard Edge and the ThingsBoard server must be fast enough to deliver a large amount of data. 
+Lastly, **gRPC channel bound limits**, which affect message delivery rate, should also be considered. 
+Since ThingsBoard Edge is designed with remote locations with potentially low bandwidth connectivity in mind, we do not recommend connecting more than *1000* devices to a single edge.
   
 ## Where does ThingsBoard Edge store data?
 
-The data is stored in [PostgreSQL](https://www.postgresql.org/) database. PostgreSQL suites well for storage and querying of entities and local time-series data.
- 
-## How to get support?
+Data is stored in the [PostgreSQL](https://www.postgresql.org/) database, which is well-suited for storing and querying entities and local time-series data.
 
-You can use troubleshooting instructions and community resources or [contact us](/docs/contact-us) and learn more about [services](/docs/services/) we provide.
+## How can I get support?
+
+You can refer to our troubleshooting instructions and community resources, or [contact us](/docs/contact-us) to learn more about the [services](/docs/services/) we provide.

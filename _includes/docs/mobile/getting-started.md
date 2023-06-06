@@ -4,12 +4,14 @@
 {% assign appProject = "flutter_thingsboard_pe_app" %}
 {% assign cloudApp = "[ThingsBoard Cloud](https://thingsboard.cloud/signup)" %}
 {% assign cloudEndpoint = "https://thingsboard.cloud" %}
+{% assign flutterAppVer = site.release.pe_flutter_app_ver %}
 {% else %}
 {% assign appPrefix = "ThingsBoard" %}
 {% assign appRepo = "https://github.com/thingsboard/flutter_thingsboard_app.git" %}
 {% assign appProject = "flutter_thingsboard_app" %}
 {% assign cloudApp = "[Live Demo](https://demo.thingsboard.io/signup)" %}
 {% assign cloudEndpoint = "https://demo.thingsboard.io" %}
+{% assign flutterAppVer = site.release.ce_flutter_app_ver %}
 {% endif %}
 
 * TOC
@@ -30,52 +32,79 @@ Flutter {{appPrefix}} Mobile Application requires Flutter SDK starting from vers
 Follow [these](https://flutter.dev/docs/get-started/install) instructions in order to setup Flutter SDK.
 For an even better experience we recommend to set up an editor using [these](https://flutter.dev/docs/get-started/editor) instructions.
 
-Flutter {{appPrefix}} Mobile Application is served by {{appPrefix}} platform starting from version 3.3.0.
+Flutter {{appPrefix}} Mobile Application is served by {{appPrefix}} platform starting from version 3.4.0{% if docsPrefix == 'pe/' %}PE{% endif %}.
 You will need to have {{appPrefix}} server up and running. The easiest way is to use {{cloudApp}}.
 The alternative option is to install {{appPrefix}} using [Installation Guide](/docs/user-guide/install/{{docsPrefix}}installation-options/).
 
 ## Step 2. Get app source code
 
-You can get Flutter {{appPrefix}} Mobile Application source code by cloning it from [github repository]({{appRepo}}):
+#### Flutter {{appPrefix}} Mobile Application compatibility table 
 
-```bash
-git clone {{appRepo}}
-```
-{: .copy-code}
+Determine the Flutter {{appPrefix}} Mobile Application version according to the version of {{appPrefix}}.
 
-#### DART ThingsBoard Client compatibility table 
-
-Determine the client version according to the version of ThingsBoard
+{% if docsPrefix != 'pe/' %}
 
 <table>
     <thead>
         <tr>
-          <td style="width: 50%"><b>Dart ThingsBoard Client</b></td><td style="width: 50%"><b>ThingsBoard version</b></td>
+          <td style="width: 50%"><b>ThingsBoard version</b></td><td style="width: 50%"><b>Flutter ThingsBoard Mobile Application</b></td><td style="width: 50%"><b>Dart ThingsBoard Client</b></td>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td>1.0.4</td>
+            <td>3.5.0+</td>
+            <td>1.0.6</td>
+            <td>1.0.6</td>
+        </tr>
+        <tr>
             <td>3.4.2+</td>
+            <td>1.0.4</td>
+            <td>1.0.4</td>
         </tr>
         <tr>
+            <td>3.4.0+</td>
             <td>1.0.3</td>
-            <td>3.4.x+</td>
-        </tr>
-        <tr>
-            <td>1.0.2</td>
-            <td>3.3.x+</td>
-        </tr>
-        <tr>
-            <td>1.0.1</td>
-            <td>3.3.x+</td>
-        <tr>
-            <td>1.0.0</td>
-            <td>3.3.0</td>
-        </tr>
+            <td>1.0.3</td>
         </tr>
     </tbody>
 </table>
+
+{% else %}
+
+<table>
+    <thead>
+        <tr>
+          <td style="width: 50%"><b>ThingsBoard PE version</b></td><td style="width: 50%"><b>Flutter ThingsBoard PE Mobile Application</b></td><td style="width: 50%"><b>Dart ThingsBoard PE Client</b></td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>3.5.0PE+</td>
+            <td>1.0.7</td>
+            <td>1.0.7</td>
+        </tr>
+        <tr>
+            <td>3.4.2PE+</td>
+            <td>1.0.5</td>
+            <td>1.0.5</td>
+        </tr>
+        <tr>
+            <td>3.4.0PE+</td>
+            <td>1.0.4</td>
+            <td>1.0.4</td>
+        </tr>
+    </tbody>
+</table>
+
+
+{% endif %}
+
+You can get Flutter {{appPrefix}} Mobile Application source code by cloning it from [github repository]({{appRepo}}):
+
+```bash
+git clone -b release/{{flutterAppVer}} {{appRepo}}
+```
+{: .copy-code}
 
 ## Step 3. Configure {{appPrefix}} API endpoint
 
