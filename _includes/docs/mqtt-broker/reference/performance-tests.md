@@ -2,7 +2,7 @@
 * TOC
 {:toc}
 
-An essential attribute of the MQTT broker involves the reception of messages disseminated by clients, their filtration based on topics, and subsequent distribution to subscribers. 
+An essential attribute of the MQTT broker involves the reception of messages published by clients, their filtration based on topics, and subsequent distribution to subscribers. 
 This procedure bears immense significance, particularly when operating under substantial workloads.
 Within this discourse, we shall illustrate the measures undertaken to ascertain that the ThingsBoard MQTT broker maintains unwavering capability 
 in simultaneously accommodating approximately **100M** connected clients, while effectively managing the influx and outflow of **3M MQTT publish messages per second**.
@@ -12,12 +12,12 @@ in simultaneously accommodating approximately **100M** connected clients, while 
 ### Test methodology
 
 We have chosen Amazon Web Services (AWS) as the target cloud provider to conduct the performance test.
-We have deployed the ThingsBoard (TB) MQTT broker cluster of 25 nodes in [EKS](https://aws.amazon.com/eks/) 
+We have deployed the ThingsBoard (TB) MQTT broker cluster of 25 nodes in the [EKS](https://aws.amazon.com/eks/) 
 cluster (on a single EC2 instance, or node, 1 broker pod is deployed) with the connection to [RDS](https://aws.amazon.com/rds/) and [Kafka](https://kafka.apache.org/).
 For a comprehensive understanding of the ThingsBoard MQTT broker architecture, please refer to the subsequent [page](/docs/mqtt-broker/architecture/).
 RDS has been deployed as a single instance while the Kafka setup consists of 9 brokers distributed across 3 distinct Availability Zones (AZs).
 
-The [test agent](#how-to-repeat-the-tests) orchestrates the provisioning and establishment of MQTT clients, allowing for flexible configuration of their numbers.
+The [test agent](#how-to-repeat-the-tests) orchestrates the provisioning and establishment of MQTT clients, allowing for flexible configuration of their count.
 These clients operate persistently, continuously publishing time-series data over MQTT to designated topics.
 Furthermore, the agent facilitates the provisioning of MQTT clients that subscribe by topic filters to receive the messages published by the aforementioned clients.
 
@@ -136,7 +136,7 @@ To optimize memory utilization and minimize unnecessary garbage creation, we und
 These [enhancements[6][7][8]](#references) not only contributed to enhanced Garbage Collector performance but also reduced stop-the-world pauses, thereby improving overall system responsiveness.
 
 During our later testing phases on larger scales, we observed an uneven distribution of clients among the broker nodes.
-This resulted in a disproportionate workload for a specific broker node, which posed minimal issues for publishers but had a notable impact on APPLICATION clients, requiring more substantial resource utilization.
+This resulted in a disproportionate workload for the specific broker node, which posed minimal issues for publishers but had a notable impact on APPLICATION clients, requiring more substantial resource utilization.
 That resulted in one broker node processing much more requests than others.
 To address this concern, we devised a mechanism to ensure an [even distribution of clients among the broker nodes[9]](#references), alongside other minor performance improvements.
 
