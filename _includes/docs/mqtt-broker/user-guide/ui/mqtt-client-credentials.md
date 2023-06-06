@@ -64,7 +64,7 @@ Broker administrators can modify the password for MQTT Basic client credentials.
 2. Click on the corresponding row of the Credentials.
 3. Click the _Edit_ button.
 4. Click the _Change password_ button. Input your current password and set a new one.
-5. Click the _Change password_ button.
+5. Confirm changes.
 
 {% include images-gallery.html imageCollection="change-password-basic-credentials" %}
 
