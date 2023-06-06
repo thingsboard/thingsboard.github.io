@@ -263,10 +263,14 @@ Here is the JMX monitoring for ThingsBoard MQTT brokers. The broker nodes are st
 
 ### How to repeat the tests
 
-Check out the next [installation guide](/docs/mqtt-broker/install/cluster/aws-cluster-setup/) on how to deploy ThingsBoard MQTT Broker on AWS.
-Additionally, check out the [folder](https://github.com/thingsboard/thingsboard-mqtt-broker/tree/perf-tests/k8s/aws) with scripts and parameters of the broker used during the run.
-And finally, the [performance tests tool](https://github.com/thingsboard/tb-mqtt-perf-tests) that generates MQTT clients and produces the load.
-Performance tests [configuration file](https://github.com/thingsboard/tb-mqtt-perf-tests/blob/master/k8s/mqtt-broker-test-run-config.yml#L59) can be reviewed and adjusted 
+Please refer to the subsequent [installation guide](/docs/mqtt-broker/install/cluster/aws-cluster-setup/) to learn how to deploy the ThingsBoard MQTT Broker on AWS.
+In addition, you may explore the [directory](https://github.com/thingsboard/thingsboard-mqtt-broker/tree/100M/k8s/aws#readme) 
+containing the scripts and parameters employed for running the TB MQTT broker during the performance test.
+Lastly, the [performance tests tool](https://github.com/thingsboard/tb-mqtt-perf-tests/tree/100M) available for conducting performance tests, 
+which generates MQTT clients and produces the load.
+For configuring the performance tests, you can review and modify the configuration files for the
+[publishers](https://github.com/thingsboard/tb-mqtt-perf-tests/blob/100M/k8s/broker-tests-publishers-config.yml) and
+[subscribers](https://github.com/thingsboard/tb-mqtt-perf-tests/blob/100M/k8s/broker-tests-subscribers-config.yml) 
 to simulate the desired load.
 
 ### Conclusion
