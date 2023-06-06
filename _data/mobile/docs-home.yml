@@ -3,8 +3,6 @@ abstract: "ThingsBoard Mobile Application - starting point for your IoT mobile p
 toc:
   - title: Mobile Application
     path: /docs/mobile/
-  - title: Getting Started
-    path: /docs/mobile/getting-started/
   - title: Customize your app
     section:
       - title: Overview

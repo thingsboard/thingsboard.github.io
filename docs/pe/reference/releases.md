@@ -7,11 +7,26 @@ description: ThingsBoard architecture
 
 * TOC
 {:toc}
-  
 
+## v3.5.1 (May 31, 2023) {#v351}  
+
+Everything from [TB CE v3.5.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.5.1) with the following bug fixes.
+
+**Bug fixes**
+
+* UI:
+  
+  * Fixed missing query params when redirecting old dashboard URL by @vvlladd28
+  * Fixed dashboard link resent dashboard widget by @vvlladd28
+  * Fixed buttons trigger by enter press fortegrations by @ArtemDzhereleiko
+  * Fixed TCP integration handler configuration by @ArtemDzhereleiko
+  * Fixed customer hierarchy update for entity group by @ArtemDzhereleiko
+  * Fixed solution template documentation links by @ArtemDzhereleiko
+  * Removed change owner action for system administrator by @ArtemDzhereleiko
+  
 ## v3.5.0 (May 9, 2023) {#v35}
 
-Everything from [TB CE v3.5](https://github.com/thingsboard/thingsboard/releases/tag/v3.5) with the following features bug fixes.
+Everything from [TB CE v3.5](https://github.com/thingsboard/thingsboard/releases/tag/v3.5) with the following features and bug fixes.
 
 **Improvements**
 

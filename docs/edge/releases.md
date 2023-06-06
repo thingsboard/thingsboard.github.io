@@ -8,6 +8,10 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v3.5.1 (Jun 1, 2023) {#v351}
+
+**Minor** release with everything from [TB CE v3.5.1](/docs/reference/releases/#v351).
+
 ## v3.5.0 (May 10, 2023) {#v35}
 
 **Major** release with everything from [TB CE v3.5](/docs/reference/releases/#v35) with the following improvements and bug fixes:
