@@ -12,3 +12,6 @@ Server-side API is available as REST API:
 * [**Admin User Management**](/docs/mqtt-broker/user-management/) - The server-side APIs for User management.
 * [**MQTT Client Credentials Management**](/docs/mqtt-broker/mqtt-client-credentials-management/) - The server-side APIs for MQTT client credentials management.
 * [**Application Shared Subscriptions Management**](/docs/mqtt-broker/application-shared-subscription/) - The server-side APIs for Application Shared Subscriptions management.
+
+These APIs offer a comprehensive set of tools and functionalities to manage and interact with the ThingsBoard MQTT Broker, 
+empowering users to administer, control, and customize their MQTT-based applications effectively.
