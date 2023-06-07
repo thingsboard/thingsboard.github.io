@@ -203,16 +203,22 @@ step71:
 step72:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-1-ce.png
-        title: 'Open "Devices" page. Click "Assign to customer" icon for "My New Device";'
+        title: 'Open "Devices" page, then select your device to open its details;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-2-ce.png
-        title: 'Select "My New Customer" and click "Assign";'
+        title: 'Click "Assign to customer" button;'
     2:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-5-ce.png
-        title: 'Navigate to "Customers" page. Find your customer in the list of customers and then click on the "Manage customer devices" icon;'
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-3-ce.png
+        title: 'Select the customer to whom you want to assign the device, and then click "Assign";'
     3:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-4-ce.png
+        title: 'You have changed the owner of the device. In the "Customer" column, you can see the owners name of the device;'
+    4:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-5-ce.png
+        title: 'Navigate to "Customers" page to make sure that the device is assigned to your customer. Find your customer in the list of customers and then click on the "Manage customer devices" icon;'
+    5:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-6-ce.png
-        title: 'Your device is now owned by the customer.'
+        title: 'The device is with your client.'
 
 step72_1:
     0:
@@ -223,7 +229,7 @@ step72_1:
         title: 'Select the customer to whom you want to assign the new device. Then click "Add";'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-10-ce.png
-        title: 'The device has been created, and it immediately belongs to the selected customer;'
+        title: 'The device has been created, and it immediately belongs to the selected customer.'
 
 step73:
     0:

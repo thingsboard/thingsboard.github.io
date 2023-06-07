@@ -216,36 +216,47 @@ step71:
 step72:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-1-pe.png
-        title: 'Open "Devices" page. Mark your device and click the "Change owner" button;'
+        title: 'Open "Devices" page. Select your device to open its details;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-2-pe.png
-        title: 'Start typing the customer name and then select the customer. When click the "Change owner" button;'
+        title: 'Click "Manage owner and groups" button;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-3-pe.png
-        title: 'Click "Yes". You can always change the owner back to the tenant;'
+        title: 'In the "Owner" line, start typing the customer name and then select the customer;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-4-pe.png
-        title: 'By default, your device list displays both tenant devices and devices of your customers. Disable the "Include custom entities" slider to see only tenant devices in the list of devices;'
+        title: 'Now create a device group. In the "Groups" line, input the desired device group name. Then, click "Create a new one";'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-5-pe.png
-        title: 'Your device list should be empty now;'
+        title: 'In the next window, click "Add" button to create device group;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-6-pe.png
-        title: 'Navigate to the "Customers" page. Find your customer in the list of customers and then click on the "Manage customer devices" icon;'
+        title: 'Click "Update" to change owner for your device. You can always change the owner back to the tenant;'
     6:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-7-pe.png
-        title: 'Your device is now owned by the customer and is located in the customer`s device group "All".'
+        title: 'By default, the general device list displays both tenant devices and devices of your customers. Disable "Include customer entities" to only see tenant devices in the device list;'
+    7:
+        image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-8-pe.png
+        title: 'Your device list should be empty now.'
 
 step72_1:
     0:
-        image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-8-pe.png
+        image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-9-pe.png
+        title: 'Navigate to "Customers" page. Find your customer in the list of customers and then click on the "Manage customer devices" icon;'
+    1:
+        image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-10-pe.png
+        title: 'Your device is owned by the customer and is located in the customer`s device group "My Devices".'
+
+step72_2:
+    0:
+        image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-11-pe.png
         title: 'Click on the "+" icon in the top right corner of the table. Input device name (for example, "Thermostat") and navigate to the "Owner and groups" tab;'
     1:
-        image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-9-pe.png
+        image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-12-pe.png
         title: 'Select new owner and click "Add";'
     2:
-        image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-10-pe.png
-        title: 'The device has been created, and it immediately belongs to your customer;'
+        image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-13-pe.png
+        title: 'The device has been created, and it immediately belongs to your customer.'
 
 step73:
     0:

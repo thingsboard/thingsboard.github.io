@@ -140,13 +140,17 @@ Let's create a customer with title "My New Customer". Please see instruction bel
 
 #### Step 7.2 Change owner of the device
 
-Let's make Customer become the owner of the device.
+Let's make the customer become the owner of the device. We will also create a group of devices and add our device to this group.
 
 {% include images-gallery.html imageCollection="step72" showListImageTitles="true" %}
 
-You can make the customer the owner of the device during its creation stage.
+Make sure that the device is assigned to your customer.
 
 {% include images-gallery.html imageCollection="step72_1" showListImageTitles="true" %}
+
+You can make the customer the owner of the device during its creation stage.
+
+{% include images-gallery.html imageCollection="step72_2" showListImageTitles="true" %}
 
 #### Step 7.3 Share the dashboard
 
