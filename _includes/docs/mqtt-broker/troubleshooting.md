@@ -6,10 +6,10 @@
 ### Kafka Queue: Consumer Group Message Lag 
 
 You can use the log shown below to identify any issues with the processing of messages or other parts of the MQTT broker infrastructure. 
-Since Kafka is used for MQTT message processing and other major parts of the system, such as `client_session`, `client_subscriptions`, `retain_msg`, etc., 
+Since Kafka is used for MQTT message processing and other major parts of the system, such as `client sessions`, `client subscriptions`, `retained messages`, etc., 
 you can analyze the overall state of the broker.
 
-The ThingsBoard MQTT broker provides the ability to monitor whether the rate of pushing messages to Kafka is faster than the rate of consuming and processing them. 
+The ThingsBoard MQTT broker provides the ability to monitor whether the rate of producing messages to Kafka is faster than the rate of consuming and processing them. 
 In such cases, you will experience a growing latency for message processing. 
 To enable this functionality, ensure that Kafka consumer-stats are enabled (see the **queue.kafka.consumer-stats** section of the [Configuration properties](/docs/mqtt-broker/install/config/)).
 
@@ -18,10 +18,10 @@ Once Kafka consumer-stats are enabled, logs (see [Troubleshooting](#logs)) about
 Here is an example of the log message:
 
 ```bash
-2022-11-27 02:33:23,625 [kafka-consumer-stats-1-thread-1] INFO  o.t.m.b.q.k.s.TbKafkaConsumerStatsService - [publish-msg-consumer-group] Topic partitions with lag: [[topic=[publish_msg], partition=[2], lag=[5]]].
+2022-11-27 02:33:23,625 [kafka-consumer-stats-1-thread-1] INFO  o.t.m.b.q.k.s.TbKafkaConsumerStatsService - [msg-all-consumer-group] Topic partitions with lag: [[topic=[tbmq.msg.all], partition=[2], lag=[5]]].
 ```
 
-From this message we can see that there are five messages pushed to the `publish_msg` topic but not yet processed.
+From this message we can see that there are five messages pushed to the `tbmq.msg.all` topic but not yet processed.
 
 In general, the logs have the following structure:
 
@@ -74,7 +74,7 @@ This can be achieved by modifying the **logback.xml** file, which is located in 
 /usr/share/thingsboard-mqtt-broker/conf
 ```
 
-Please note that there are separate files for **k8s** and **Docker** deployments
+Please note that there are separate files for **k8s** and **Docker** deployments.
 
 Here's an example of the **logback.xml** configuration:
 
@@ -138,8 +138,8 @@ Here is a list of the metrics that ThingsBoard MQTT Broker pushes to Prometheus:
 
 #### MQTT Broker-specific metrics:
 
-- <i>incomingPublishMsg.published</i> (statsNames - <i>totalMsgs, successfulMsgs, failedMsgs</i>): stats about incoming Publish messages to be persisted in the general queue.
-- <i>incomingPublishMsg.consumed</i> (statsNames - <i>totalMsgs, successfulMsgs, timeoutMsgs, failedMsgs, tmpTimeout,
+- <i>incomingPublishMsg_published</i> (statsNames - <i>totalMsgs, successfulMsgs, failedMsgs</i>): stats about incoming Publish messages to be persisted in the general queue.
+- <i>incomingPublishMsg_consumed</i> (statsNames - <i>totalMsgs, successfulMsgs, timeoutMsgs, failedMsgs, tmpTimeout,
   tmpFailed, successfulIterations, failedIterations</i>): stats about incoming Publish messages processing from general queue.
 - <i>deviceProcessor</i> (statsNames - <i>successfulMsgs, failedMsgs, tmpFailed, successfulIterations, failedIterations</i>):
   stats about DEVICE client messages processing.
@@ -154,8 +154,8 @@ Here is a list of the metrics that ThingsBoard MQTT Broker pushes to Prometheus:
   - <i>timeoutPubRelMsgs</i>: number of PubRel messages that timed out and were discarded afterwards
   - <i>timeoutPublishMsgs</i>: number of Publish messages that timed out and were discarded afterwards
   - <i>failedIterations</i>: iterations of processing messages pack where at least one message wasn't processed successfully
-- <i>appProcessor.latency</i> (statsNames - <i>puback, pubrec, pubcomp</i>): stats about APPLICATION processor latency of different message types.
-- <i>actors.processing</i> (statsNames - <i>MQTT_CONNECT_MSG, MQTT_PUBLISH_MSG, MQTT_PUBACK_MSG, etc.</i>): 
+- <i>appProcessor_latency</i> (statsNames - <i>puback, pubrec, pubcomp</i>): stats about APPLICATION processor latency of different message types.
+- <i>actors_processing</i> (statsNames - <i>MQTT_CONNECT_MSG, MQTT_PUBLISH_MSG, MQTT_PUBACK_MSG, etc.</i>): 
   stats about actors processing average time of different message types.
 - <i>clientSubscriptionsConsumer</i> (statsNames - <i>totalSubscriptions, acceptedSubscriptions, ignoredSubscriptions</i>):
   stats about the client subscriptions read from Kafka by the broker node.
@@ -182,14 +182,13 @@ Here is a list of the metrics that ThingsBoard MQTT Broker pushes to Prometheus:
 - <i>activeAppProcessors</i>: stats about active APPLICATION processors count.
 - <i>activeSharedAppProcessors</i>: stats about active APPLICATION processors count for shared subscriptions.
 - <i>runningActors</i>: stats about running actors count.
-- <i>pendingProducerMessages</i> (statsNames - <i>applicationMsg, deviceMsg, basicDownlink, persistentDownlink, publishMsg</i>): 
-  stats about pending messages count that should be persisted in Kafka topics.
 
 #### PostgreSQL-specific metrics:
-- <i>sqlQueue.UpdatePacketTypeQueue_queueIndex_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about updating <b>persisted packet's type</b> to the database.
-- <i>sqlQueue.DeletePacketQueue_queueIndex_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about deleting <b>persisted packets</b> from the database.
+- <i>sqlQueue_UpdatePacketTypeQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about updating <b>persisted packet's type</b> to the database.
+- <i>sqlQueue_DeletePacketQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about deleting <b>persisted packets</b> from the database.
+- <i>sqlQueue_TimeseriesQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about <b>historical stats persistence</b> to the database.
 
-Please note that in order to achieve maximum performance, **ThingsBoard uses several queues (threads)**.
+Please note that in order to achieve maximum performance, **ThingsBoard MQTT broker uses several queues (threads)** per each of the specified queues above.
 
 ## Getting help
 
