@@ -1,4 +1,7 @@
 
+* TOC
+{:toc}
+
 Shared subscriptions are the MQTT version 5 feature that allows multiple clients to share a single subscription and receive messages from the subscribed topic. 
 
 Shared subscriptions can help in:

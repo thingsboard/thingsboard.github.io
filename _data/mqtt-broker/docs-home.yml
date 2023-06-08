@@ -19,14 +19,14 @@ toc:
       path: /docs/mqtt-broker/user-guide/mqtt-client-type/
 - title: Administration UI
   section:
-    - title: Monitoring Tools
-      path: /docs/mqtt-broker/user-guide/monitoring/
+    - title: Monitoring
+      path: /docs/mqtt-broker/user-guide/ui/monitoring/
     - title: Users
       path: /docs/mqtt-broker/user-guide/ui/users/
     - title: MQTT Client Credentials
       path: /docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/
     - title: Sessions
-      path: /docs/mqtt-broker/user-guide/sessions/
+      path: /docs/mqtt-broker/user-guide/ui/sessions/
     - title: Shared Subscriptions
       path: /docs/mqtt-broker/user-guide/ui/shared-subscriptions/
     - title: Mail Server

@@ -1,3 +1,5 @@
+* TOC
+{:toc}
 
 Retained Messages is an MQTT feature that allows storing the "last known good" message for a 
 particular topic on the broker and delivering the message to a client whenever the client subscribes to a matching topic.
