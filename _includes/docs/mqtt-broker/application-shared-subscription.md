@@ -2,11 +2,12 @@
 * TOC
 {:toc}
 
-Application Shared Subscription entity allows you to start using the [Shared Subscriptions](/docs/mqtt-broker/user-guide/shared-subscriptions/) 
-feature for **APPLICATION** clients. Once the entity is created, the corresponding Kafka topic is created, where all the messages are pushed that relate to 
-a shared subscription.
+The Application Shared Subscription entity provides the capability to leverage the [Shared Subscriptions](/docs/mqtt-broker/user-guide/shared-subscriptions/) 
+feature for **APPLICATION** clients. This feature enables multiple clients to subscribe and receive messages from a shared subscription. 
+Upon creating the Application Shared Subscription entity, a corresponding Kafka topic is automatically created. 
+This Kafka topic serves as a repository for all messages pertaining to the shared subscription.
 
-To create a new application shared subscription entity in the system first of all you need to authorize as an Admin.
+To create a new Application Shared Subscription entity within the system, it is necessary to authenticate as an Admin user.
 
 {% include templates/mqtt-broker/authentication.md %}
 
@@ -14,18 +15,21 @@ To create a new application shared subscription entity in the system first of al
 
 ```bash
 curl --location --request POST 'http://localhost:8083/api/app/shared/subs' \
---header 'X-Authorization: Bearer $ACCESS_TOKEN' \
+--header "X-Authorization: Bearer $ACCESS_TOKEN" \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "test",
     "partitions": 1,
-    "topic": "test/topic"
+    "topicFilter": "test/topic"
 }'
 ```
 {: .copy-code}
 
-The above request will create an entity in the PostgreSQL database and Kafka topic with the name `test.topic` and 1 partition.
-The topic name construction is done as follows (MQTT topic -> Kafka topic):
+Upon executing the aforementioned request, an entity will be created within the PostgreSQL database, and a Kafka topic named `test.topic` will be added. 
+The Kafka topic will consist of a single partition.
+The construction of the topic name is determined by mapping the MQTT topic filter to the corresponding Kafka topic. 
+This mapping is achieved by following a specific naming convention (MQTT topic filter -> Kafka topic).
+
 ```
 test/topic -> test.topic
 test/# -> test.mlw
@@ -37,19 +41,27 @@ where
 * `#` is replaced by `mlw` (multi-lvl wildcard)
 * `+` is replaced by `slw` (single-lvl wildcard)
 
-**Note,** once the entity is created, you can not update the _partitions_ or _topic_ fields. So, think carefully about the needed topic
-and the number of partitions before you create the entity. It is recommended to create the entity with more partitions than fewer since then you can scale horizontally by 
-adding new clients to the shared subscription.
-Otherwise, you will be required to delete the improper entity and re-create it with the correct values.
+If the MQTT topic filter contains any special characters not mentioned earlier, the hash derived from the topic filter will be utilized to create the Kafka topic. 
+This approach ensures that the resulting Kafka topic remains valid and adheres to the necessary naming conventions.
+The behavior described above can be regulated by the `TB_APP_PERSISTED_MSG_SHARED_TOPIC_VALIDATION` property.
 
-For example, if you plan to have a topic to which 5 clients will be subscribed, it is better to configure the number of partitions by the factor of 5 (5, 10, 15).
-This will guarantee the load is distributed evenly by the subscribers.
+**Please be aware** that once the entity is created, it is not possible to update the _partitions_ or _topicFilter_ fields. 
+Therefore, it is crucial to carefully consider the desired topic filter and the number of partitions before creating the entity.
+It is recommended to create the entity with a greater number of partitions rather than fewer. 
+This allows for horizontal scalability by accommodating the addition of new clients to the shared subscription in the future.
+In situations where the entity has been created with improper values or configurations, it becomes necessary to delete the entity and 
+subsequently create a new one with the correct values. 
+Thus, it is essential to exercise caution and make well-informed decisions during the initial creation process to avoid the need for subsequent modifications or recreations.
+
+As an example, if you anticipate having a topic filter to which 5 clients will be subscribed, 
+it is advisable to configure the number of partitions as a multiple of 5, such as 5, 10, or 15. 
+By doing so, you ensure that the load is evenly distributed among the subscribers, promoting balanced processing and improved performance.
 
 ##### Get all Application Shared Subscription entities
 
 ```bash
 curl --location --request GET 'http://localhost:8083/api/app/shared/subs?pageSize=100&page=0' \
---header 'X-Authorization: Bearer $ACCESS_TOKEN'
+--header "X-Authorization: Bearer $ACCESS_TOKEN"
 ```
 {: .copy-code}
 **Note**, _pageSize_ parameter equal to 100 and _page_ parameter equal to 0, so the above request will fetch first 100 application shared subscription entities.
@@ -61,8 +73,8 @@ Once you delete Application Shared Subscription entity, the respectful Kafka top
 
 ```bash
 curl --location --request DELETE 'http://localhost:8083/api/app/shared/subs/$APP_SHARED_SUBS_ID' \
---header 'X-Authorization: Bearer $ACCESS_TOKEN'
+--header "X-Authorization: Bearer $ACCESS_TOKEN"
 ```
 {: .copy-code}
 
-Paste actual ID of the Application shared subscription entity you want to delete instead of <i>$APP_SHARED_SUBS_ID</i>.
+Paste actual ID of the Application shared subscription entity you want to delete instead of _$APP_SHARED_SUBS_ID_.
