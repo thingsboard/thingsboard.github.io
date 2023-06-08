@@ -1,7 +1,9 @@
 ##### Authentication
 
-To perform administrative operations with the broker you need to log into the system and get Access Token.
-You can get it using <b>curl</b> command:
+To carry out administrative operations with the broker, it is imperative to log into the system and obtain an Access Token. 
+This Access Token is essential for authenticating and authorizing your administrative actions.
+
+To acquire the Access Token, you can execute the following command:
 
 ```bash
 curl --location --request POST 'http://localhost:8083/api/auth/login' \
@@ -13,8 +15,17 @@ curl --location --request POST 'http://localhost:8083/api/auth/login' \
 ```
 {: .copy-code}
 
-**Note**: If Broker installed on a remote server, you have to replace localhost with the public IP address of the server or with a domain name. Also, check that port 8083 opened for public access.
-**Note**: In production you should create new admin user with a unique password.
+**Please be aware** that if the broker is installed on a remote server, you must substitute "localhost" in the provided command with either 
+the public IP address of the server or a designated domain name. 
+Moreover, ensure that port 8083 is accessible publicly to establish the necessary connection.
+Additionally, remember to replace the "username" and "password" values in the command with the appropriate and valid credentials specific to your setup.
 
-After authorization, you will see **token** value in the auth response. You should use that token to make all administrative requests to ThingsBoard MQTT Broker.
-You can paste the value corresponding to the **token** field to the <i>ACCESS_TOKEN</i> environment variable or just replace <i>$ACCESS_TOKEN</i> string from the requests in this tutorial.
+Upon successful authorization, the response will include a valuable piece of information known as the **token**. 
+It is crucial to utilize this token for all subsequent administrative requests to the ThingsBoard MQTT Broker.
+To streamline the process, you can either assign the value of the token field to an environment variable named <i>ACCESS_TOKEN</i> 
+or directly replace occurrences of the <i>$ACCESS_TOKEN</i> string within the requests outlined in this tutorial.
+
+```bash
+export ACCESS_TOKEN=PLACE_YOUR_TOKEN_HERE
+```
+{: .copy-code}
