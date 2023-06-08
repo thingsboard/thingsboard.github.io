@@ -8,9 +8,14 @@ description: Create/Update/Delete MQTT Client Credentials
 * TOC
 {:toc}
 
-MQTT Client Credentials allow you to configure security for the connecting clients.
+MQTT Client Credentials provide the means to configure security measures for connecting clients within the system.
 
-To create a new client credentials in the system first of all you need to authorize as an Admin.
+To create new client credentials within the system, it is imperative to first authenticate as an Admin user. 
+This authorization process grants you the necessary privileges and access rights to perform administrative tasks.
+
+By authenticating as an Admin user, you will have the authority to create and manage client credentials, 
+enabling you to enforce robust security measures for the clients connecting to the system. 
+This approach ensures that the system remains secure and that only authorized clients can establish connections and interact with the MQTT Broker.
 
 {% include templates/mqtt-broker/authentication.md %}
 
@@ -20,7 +25,7 @@ To create a new client credentials in the system first of all you need to author
 
 ```bash
 curl --location --request POST 'http://localhost:8083/api/mqtt/client/credentials' \
---header 'X-Authorization: Bearer $ACCESS_TOKEN' \
+--header "X-Authorization: Bearer $ACCESS_TOKEN" \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "testCreds",
@@ -30,46 +35,50 @@ curl --location --request POST 'http://localhost:8083/api/mqtt/client/credential
 ```
 {: .copy-code}
 
-This configuration will allow to log in for clients with username **test_user** and password **test_pass**.
-Clients that are logged in by these credentials will be able to publish only to topics that start with _test/_ and subscribe to topics that start with _my/_.
+By implementing the above configuration, clients with the username **test_user** and password **test_pass** will be able to successfully log in to the system. 
+However, it's important to note that these clients will have restricted privileges based on the specified topic access permissions.
+
+Clients authenticated with these credentials will be limited to publishing messages solely to topics that start with _test/_. 
+Additionally, they will be allowed to subscribe exclusively to topics that start with _my/_. 
+This configuration ensures that the clients' access is constrained to specific topic patterns, thereby maintaining a controlled and secure environment.
 
 **SSL** credentials example:
 
 ```bash
 curl --location --request POST 'http://localhost:8083/api/mqtt/client/credentials' \
---header 'X-Authorization: Bearer $ACCESS_TOKEN' \
+--header "X-Authorization: Bearer $ACCESS_TOKEN" \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "name": "testSSLCreds",
     "credentialsType":"SSL",
-    "credentialsValue":"{ \"parentCertCommonName\": \"Root Common Name\", \"authRulesMapping\": { \"test\": { \"pubAuthRulePatterns\": [\"test_ssl\/.*\"], \"subAuthRulePatterns\": [\"test_ssl\/.*\"] } } }"
+    "credentialsValue":"{ \"certCommonName\": \"Root Common Name\", \"authRulesMapping\": { \"test\": { \"pubAuthRulePatterns\": [\"test_ssl\/.*\"], \"subAuthRulePatterns\": [\"test_ssl\/.*\"] } } }"
 }'
 ```
 {: .copy-code}
 
 Where:
-- **parentCertCommonName** - the common name of the certificate in the certificate chain.
-  **Note**, certificates that are closer to client's certificate have higher priority than certificates which are closer to the root certificate.
-- **authRulesMapping** - mapping rules to map extracted from the common name keyword to the authorization rules (to allow client publish and subscribe only to certain topics).
+- **certCommonName** - the common name (CN) of the specific certificate in the certificate chain.
+- **authRulesMapping** - mapping rules to map extracted from the CN keyword to the authorization rules (to allow clients to publish and subscribe only to certain topics).
 
-This configuration will allow to log in clients with the SSL certificate that has _Root Common Name_ as the root certificate and where the certificate common name contains string _test_.
-Clients that are logged in by these credentials will be able to publish/subscribe only to topics that start with _test_ssl/_.
+By employing the above configuration, clients connecting with an SSL certificate chain will be permitted to log in based on specific criteria.
+The SSL certificate chain should have the root certificate CN that matches the _Root Common Name_ string, and the certificate's CN should contain the string _test_.
+Once authenticated using these credentials, clients will gain access to publishing and subscribing privileges limited to topics that start with _test_ssl/_.
 
 ##### Get all MQTT Client Credentials
 
 ```bash
 curl --location --request GET 'http://localhost:8083/api/mqtt/client/credentials?pageSize=100&page=0' \
---header 'X-Authorization: Bearer $ACCESS_TOKEN'
+--header "X-Authorization: Bearer $ACCESS_TOKEN"
 ```
 {: .copy-code}
-**Note**, _pageSize_ parameter equal to 100 and _page_ parameter equal to 0, so the above request will fetch first 100 mqtt client credentials.
+**Note**, _pageSize_ parameter equal to 100 and _page_ parameter equal to 0, so the above request will fetch first 100 MQTT client credentials.
 
 ##### Delete MQTT Client Credentials
 
 ```bash
 curl --location --request DELETE 'http://localhost:8083/api/mqtt/client/credentials/$CREDENTIALS_ID' \
---header 'X-Authorization: Bearer $ACCESS_TOKEN'
+--header "X-Authorization: Bearer $ACCESS_TOKEN"
 ```
 {: .copy-code}
 
-Paste actual ID of the MQTT client credentials you want to delete instead of <i>$CREDENTIALS_ID</i>.
+Paste actual ID of the MQTT client credentials you want to delete instead of _$CREDENTIALS_ID_.
