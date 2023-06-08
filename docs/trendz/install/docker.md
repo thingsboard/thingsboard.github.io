@@ -20,19 +20,12 @@ This guide will help you to install and start Trendz Analytics using Docker on L
 
 ## Step 1. Obtain the license key 
 
-We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
+We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
 Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
 
-## Step 2. Checkout Trendz Analytics image on Docker Hub
-
-Open official [Trendz Analytics](https://hub.docker.com/_/trndz) Docker Hub page and proceed to checkout.
-
-Populate basic information about yourself and click "Get Content"
- 
-
-## Step 3. Running Trendz service
+## Step 2. Running Trendz service
 
 ##### Docker Compose setup
 
@@ -53,7 +46,7 @@ version: '3.0'
 services:
   mytrendz:
     restart: always
-    image: "thingsboard/trendz:1.9.2-HF2"
+    image: "thingsboard/trendz:1.10.1"
     ports:
       - "8888:8888"
     environment:
@@ -89,9 +82,12 @@ Where:
 - `~/.mytrendz-logs:/var/log/thingsboard`   - mounts the volume `~/.mytrendz-logs` to Trendz logs directory
 - `mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.9.2-HF2`          - docker image
+- `thingsboard/trendz:1.10.1`          - docker image
 
-{% include templates/install/docker/docker-create-folders-sudo-explained.md %}
+
+Run following commands, before starting docker container(s), to create folders for storing data and logs.
+These commands additionally will change owner of newly created folders to docker container user.
+To do this (to change user) **chown** command is used, and this command requires *sudo* permissions (command will request password for a *sudo* access):
 
 ```bash
 mkdir -p ~/.mytrendz-data && sudo chown -R 799:799 ~/.mytrendz-data
@@ -124,7 +120,7 @@ to validate credentials.
 
 ## Upgrade Trendz Service
 
-Below is example on how to upgrade from 1.8.0 to 1.9.2
+Below is example on how to upgrade from 1.10.0 to 1.10.1
 
 
 * Create a dump of your database:
@@ -143,17 +139,17 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 * Set upgradeversion variable to your **previous** Trendz version.
 
 ```bash
-docker compose exec mytrendz sh -c "echo '1.8.0' > /data/.upgradeversion" 
+docker compose exec mytrendz sh -c "echo '1.10.0' > /data/.upgradeversion" 
 ```
 {: .copy-code}
 
 {% capture dockerComposeStandalone %}
 If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
-<br>**docker-compose exec mytrendz sh -c "echo '1.8.0' > /data/.upgradeversion"**
+<br>**docker-compose exec mytrendz sh -c "echo '1.10.0' > /data/.upgradeversion"**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with 1.9.2 instead of 1.8.0-SNAPSHOT:
+* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with 1.10.1 instead of 1.10.0:
 
 * Restart Trendz container
 

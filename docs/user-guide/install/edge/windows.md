@@ -7,6 +7,8 @@ description: Installing ThingsBoard Edge on Windows
 * TOC
 {:toc}
 
+{% include templates/edge/install/compatibility-warning-general.md %}
+
 {% assign docsPrefix = "edge/" %}
 
 {% include templates/install/windows-warning-note.md %}

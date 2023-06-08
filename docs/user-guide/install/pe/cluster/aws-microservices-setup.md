@@ -186,6 +186,10 @@ Every pod should be in the `READY` state.
 
 {% include templates/install/aws/configure-udp.md %}
 
+### 12.4. Configure Edge Load Balancer (Optional)
+
+{% include templates/install/k8s-configure-edge-load-balancer.md %}
+
 ## Step 13. Validate the setup
 
 {% include templates/install/aws/eks-validate.md %}

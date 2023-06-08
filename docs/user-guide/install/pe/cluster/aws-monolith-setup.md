@@ -108,6 +108,10 @@ see `tb-node-0` pod in the `READY` state.
 
 {% include templates/install/aws/configure-udp.md %}
 
+### 8.4. Configure Edge Load Balancer (Optional)
+
+{% include templates/install/k8s-configure-edge-load-balancer.md %}
+
 ## Step 9. Validate the setup
 
 {% include templates/install/aws/eks-validate.md %}

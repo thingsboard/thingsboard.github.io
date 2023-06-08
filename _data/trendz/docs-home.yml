@@ -21,12 +21,18 @@ toc:
       path: /docs/trendz/visualizations-heatmap/
     - title: Calendar
       path: /docs/trendz/visualizations-calendar/
+    - title: Cards with line chart
+      path: /docs/trendz/visualizations-card-with-line/
     - title: Cards
       path: /docs/trendz/visualizations-card/
+    - title: Anomaly view
+      path: /docs/trendz/anomaly/anomaly-view/
     - title: View Settings
       path: /docs/trendz/view-settings/
 - title: Anomaly detection
   path: /docs/trendz/anomaly/anomaly-detection-overview/
+- title: Anomaly autodiscovery job
+  path: /docs/trendz/anomaly/anomaly-autodiscovery/
 - title: Grouping and Aggregation
   path: /docs/trendz/data-grouping-aggregation/
 - title: Filtering
@@ -39,6 +45,8 @@ toc:
   path: /docs/trendz/prediction/
 - title: Share and embed Visualizations
   path: /docs/trendz/embed-visuals/
+- title: Save telemetry to ThingsBoard
+  path: /docs/trendz/save-telemetry-to-thingsboard/
 - title: Caching
   path: /docs/trendz/cache-settings/
 - title: Trendz REST API

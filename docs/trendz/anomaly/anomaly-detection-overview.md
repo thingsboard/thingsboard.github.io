@@ -20,8 +20,15 @@ but it is useless in scenarios where hidden correlations between multiple teleme
 define thresholds because we just don't know them. For such use cases, Trendz Analytics provides automated anomaly detection instruments that are based on 
 built-in machine learning algorithms.   
 
-The purpose of this article is to give a general overview of what is anomaly detection, how it works and how to implement it.
+You can find details how to use Trendz Analytics to create anomaly detection models here:
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/pbjXGDJ-SI0" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
 
+The purpose of this article is to give a general overview of what is anomaly detection, how it works and how to implement it.
 
 ## What is an anomaly
 In the beginning, we need to define what [**Anomaly**](https://en.wikipedia.org/wiki/Anomaly_detection){:target="_blank"} - 

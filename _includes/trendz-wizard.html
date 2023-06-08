@@ -1,0 +1,169 @@
+<section class="modal-wizard hidden">
+  <button class="btn-close" onClick="closeWizard(event)">&#10005;</button>
+  <div class="modal-wizard__content">
+    <h3 class="modal-wizard__header">Trendz analytics platform</h3>
+    <p class="modal-wizard__text">
+      You are one step closer to get a powerful analytics tool that will help you to grow your business and predict changes
+    </p>
+  </div>
+  <div id="choose-plan">
+    <div class="options">
+      <div class="options__container" id="cloud-option" onClick="openChosenPlan('cloud-content')">
+        <span>Cloud</span>
+      </div>
+      <div class="options__container" id="self-managed-option" onClick="openChosenPlan('self-managed-content')">
+        <span>Self-Managed</span>
+      </div>
+      <div class="background bg-left" id="options-bg"></div>
+    </div>
+    <div id="cloud-content" class="tab-content">
+      <div class="steps-container">
+        <div class="step step-1">
+          <h4 class="step__header">Step 1</h4>
+          <p class="step__content">Log in to ThingsBaord Cloud account and select “Plan and Billing” menu option. Press “Update Plan” button</p>
+        </div>
+        <div class="step step-2">
+          <h4 class="step__header">Step 2</h4>
+          <p class="step__content">Choose “ThingsBoard + Trendz” and select the most suitable plan for you</p>
+        </div>
+        <div class="step step-3">
+          <h4 class="step__header">Step 3</h4>
+          <p class="step__content">Reload the page to see new “Trendz Analytics” option in your ThingsBoard Menu</p>
+        </div>
+      </div>
+      {% include images-gallery.html imageCollection="cloudPlan" max-width="100%" align="space-between" %}
+      <div class="modal-wizard__button">
+        <a href="https://thingsboard.cloud/billing" target="_blank" onClick="goToPurchase(event, 'cloud')">Go to ThingsBoard Cloud</a>
+      </div>
+    </div>
+    <div id="self-managed-content" class="tab-content">
+        <div class="steps-container" >
+          <div class="step step-1">
+            <h4 class="step__header">Step 1</h4>
+            <p class="step__content">Log into Licence Portal and create new Trendz Analytics Subscription</p>
+          </div>
+          <div class="step step-2">
+            <h4 class="step__header">Step 2</h4>
+            <p class="step__content">Get your license key</p>
+          </div>
+          <div class="step step-3">
+            <h4 class="step__header">Step 3</h4>
+            <p class="step__content">
+              Follow
+              <a href="/docs/trendz/install/installation-options/">the instructions to install Trendz</a>
+              the instructions to install Trendz Analytics to your server
+            </p>
+          </div>
+        </div>
+        {% include images-gallery.html imageCollection="selfManagedPlan" max-width="100%" align="space-between" %}
+        <div class="modal-wizard__button">
+          <a href="https://license.thingsboard.io" target="_blank" onClick="goToPurchase(event, '{{ include.defaultPlan }}')">Go to License Portal</a>
+        </div>
+    </div>
+  </div>
+  <div id="go-to-portal">
+    <div class="text-container">
+      <div class="text-block">
+        <p class="header">Well Done! You are all set!</p>
+        <p>If you want to use your account effectively, please, check the materials we have prepared for you:</p>
+      </div>
+      <div class="text-block">
+        <p>
+          Our detailed
+          <a href="/docs/trendz">articles </a>
+          on how to use Trendz features
+        </p>
+        <p>
+          Our easy and quick
+          <a href="https://www.youtube.com/playlist?list=PLYEKB_XwLCZIs-_Aoos3CdNIqSYrXk4LN">“How to” videos</a>
+        </p>
+      </div>
+    </div>
+    <div class="modal-wizard__button">
+      <a href="/docs/trendz">Documentation</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  let chosenPlan;
+  function openTrendzWizard(e, id, plan){
+    e.preventDefault();
+    $('.modal-wizard').removeClass('hidden');
+    $('body').css('overflow', 'hidden');
+
+    openChosenPlan(id);
+    $('#choose-plan').css('display', 'flex');
+    $('#go-to-portal').hide();
+
+    if(plan) {
+      chosenPlan = plan;
+      console.log(plan)
+    }
+  }
+
+  function openChosenPlan(id){
+    $(`.tab-content`).hide();
+    $(`#${id}`).show();
+
+    if(id === 'cloud-content') {
+      $('#options-bg').removeClass('bg-right');
+      $('#options-bg').addClass('bg-left');
+      $('#cloud-option').addClass('selected');
+      $('#self-managed-option').removeClass('selected');
+    } else {
+      $('#options-bg').removeClass('bg-left');
+      $('#options-bg').addClass('bg-right');
+      $('#cloud-option').removeClass('selected');
+      $('#self-managed-option').addClass('selected');
+    }
+  }
+  function closeWizard(e){
+    e.preventDefault();
+    $('.modal-wizard').addClass('hidden');
+    $('body').css('overflow', 'auto');
+  }
+
+  function goToPurchase(e, plan){
+    $('#go-to-portal').css('display', 'flex');
+    $('#choose-plan').hide();
+
+    if(!plan) plan = chosenPlan;
+
+    reportTrendzWizrdAction('wizard', plan);
+
+    if(plan === 'maker') {
+      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '10ba4770-e4f4-11ed-aaaa-83bc8f41f932', 'Trendz Analytics Maker', 'R1LKL1BWAB')
+    } else if(plan === 'prototype') {
+      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '2985f1a0-7afd-11ea-951e-b77b877a367b', 'Trendz Analytics Prototype', 'R1LKL1BWAB')
+    } else if(plan === 'startup'){
+      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '018b7520-7afe-11ea-951e-b77b877a367b', 'Trendz Analytics Business', 'R1LKL1BWAB')
+    } else if(plan === 'business') {
+      getLicense(e, false, '31307df0-11f6-11ea-951e-b77b877a367b', '6e3bb4f0-7afe-11ea-951e-b77b877a367b', 'Trendz Analytics Business', 'R1LKL1BWAB')
+    }
+  }
+
+  function getLicense(event, isPerpetual, productId, planId, productName, coupon) {
+    event.preventDefault();
+    var url = "https://license.thingsboard.io/signup?createSubscription=true&perpetual=";
+    if (isPerpetual) {
+      url += "true";
+    } else {
+      url += "false";
+    }
+    url += "&productId="+productId;
+    url += "&planId="+planId;
+    if (coupon) {
+      url += "&coupon="+coupon;
+    }
+
+    window.open(url, "_blank");
+  }
+
+  function reportTrendzWizrdAction(link, product) {
+    if (!ga.hasOwnProperty("loaded") || ga.loaded !== true || !link || !product) {
+      return;
+    }
+    ga("send", "event", "TrendzWizrdAction", product, link);
+  }
+</script>

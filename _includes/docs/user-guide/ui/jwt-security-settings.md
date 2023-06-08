@@ -2,11 +2,16 @@ ThingsBoard uses [JWT](https://jwt.io/) tokens for representing claims securely 
 
 The main token is the short-lived token you should use to perform the API calls. The refresh token is used to get a new main token once it is expired.
 
-ThingsBoard System Administrator can customize JWT. This configuration step is optional.
+To customize JWT, log in to ThingsBoard as a System Administrator.
 
-Following steps are customize JWT settings.
+{% if docsPrefix == null %}
+![image](/images/user-guide/ui/jwt/jwt-provider-settings-step-1-ce.png)
+{% endif %}
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/ui/jwt/jwt-provider-settings-step-1-pe.png)
+{% endif %}
 
-{% include images-gallery.html imageCollection="jwtSecuritySettings" showListImageTitles="true" %}
+You can customize the following JWT options:
 
 **Issuer name** - this field is required and added to the token’s default “iss” claim value. This field is included in generated tokens and validated in a decoded token.
 

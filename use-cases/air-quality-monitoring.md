@@ -13,7 +13,7 @@ notitle: "true"
 Air quality control is an important component of modern life, as high levels of pollutants can negatively affect people's health. 
 Particularly noteworthy are megacities with a large number of cars and industrial areas in which the concentration of pollutants is higher.
 
-We developed the AIR Quality Monitoring template which represents a solution for general air pollution monitoring and provides general recommendations in a user-friendly manner. 
+We developed the AIR Quality Monitoring <a href="/docs/paas/solution-templates/air-quality-monitoring">template</a> which represents a solution for general air pollution monitoring and provides general recommendations in a user-friendly manner. 
 The main metric for controlling the level of air pollution is AQI.
 AQI is calculated based on the sensor readings about such pollutants: Ozone (ppm), PM2.5 (µg/m3 ), PM10 (µg/m3 ), CO (ppm), SO2 (ppb), NO2 (ppb);
 The solution supports sensors that report either all or a subset of the readings.
@@ -28,6 +28,16 @@ As part of this solution, we have created 2 dashboards that display data from mu
 The **Public Dashboard** is designed for end-users. It is configured to be "public", meaning the end-user does NOT need to log in to access the dashboard. The dashboard has multiple states:
 - **City state** represents the air pollution monitoring of a specific city (in our case Los Angeles) and calculates  value based on the AQI received from city sensors.
 - **Sensor state** represents the selected sensor deployed in a particular city district.
+
+<h2>Air Quality Monitoring Benefits</h2>
+Save up to 90% of development time for your air monitoring solution by utilizing the following platform benefits:
+- reliable and scalable data collection for your smart monitors;
+- powerful rule engine to process collected data and produce alarms and valuable insights;
+- advanced and flexible visualization for real-time and historical data;
+- customizable end-user dashboards to analyze and share the results of air quality monitoring;
+- integration with third-party analytics frameworks and solutions for advanced usage analytics;
+- remote control and OTA updates for your smart sensors and other devices;
+- customizable mobile applications with minimum coding efforts.
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>

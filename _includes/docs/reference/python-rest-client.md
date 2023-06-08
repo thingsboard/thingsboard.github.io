@@ -57,7 +57,8 @@ with RestClientCE(base_url=url) as rest_client:
         logging.info("Asset was created:\n%r\n", asset)
 
         # creating a Device
-        device = Device(name="Thermometer 1", type="thermometer")
+        device = Device(name="Thermometer 1", type='default',
+                        device_profile_id=DeviceProfileId('YOUR_DEVICE_PROFILE_ID', 'DEVICE_PROFILE'))
         device = rest_client.save_device(device)
 
         logging.info(" Device was created:\n%r\n", device)
@@ -98,27 +99,28 @@ password = "tenant"
 # Creating the REST client object with context manager to get auto token refresh
 with RestClientCE(base_url=url) as rest_client:
     try:
+        rest_client.login(username=username, password=password)
         # creating a Device
-        device = Device(name="Thermometer 1", type="thermometer")
+        device = Device(name="Thermometer 1", type="thermometer",
+                        device_profile_id=DeviceProfileId('YOUR_DEVICE_PROFILE_ID', 'DEVICE_PROFILE'))
         device = rest_client.save_device(device)
 
         logging.info(" Device was created:\n%r\n", device)
 
         # find device by device id
-        found_device = rest_client.get_device_by_id(DeviceId('DEVICE', device.id))
+        found_device = rest_client.get_device_by_id(DeviceId(device.id, 'DEVICE'))
 
         # save device shared attributes
-        res = rest_client.save_device_attributes("{'targetTemperature': 22.4}", DeviceId('DEVICE', device.id),
-                                                 'SERVER_SCOPE')
+        res = rest_client.save_device_attributes(DeviceId(device.id, 'DEVICE'), 'SERVER_SCOPE', {'targetTemperature': 22.4})
 
         logging.info("Save attributes result: \n%r", res)
 
         # Get device shared attributes
-        res = rest_client.get_attributes_by_scope('DEVICE', DeviceId('DEVICE', device.id), 'SERVER_SCOPE')
+        res = rest_client.get_attributes_by_scope(EntityId(device.id, 'DEVICE'), 'SERVER_SCOPE', 'targetTemperature')
         logging.info("Found device attributes: \n%r", res)
 
         # delete the device
-        rest_client.delete_device(DeviceId('DEVICE', device.id))
+        rest_client.delete_device(DeviceId(device.id, 'DEVICE'))
     except ApiException as e:
         logging.exception(e)
 ```
@@ -149,7 +151,8 @@ password = "tenant"
 # Creating the REST client object with context manager to get auto token refresh
 with RestClientCE(base_url=url) as rest_client:
     try:
-        res = rest_client.get_tenant_device_infos(page_size=str(10), page=str(0))
+        rest_client.login(username=username, password=password)
+        res = rest_client.get_tenant_device_infos(page_size=10, page=0)
 
         logging.info("Device info:\n%r", res)
     except ApiException as e:
@@ -182,9 +185,10 @@ password = "tenant"
 # Creating the REST client object with context manager to get auto token refresh
 with RestClientCE(base_url=url) as rest_client:
     try:
+        rest_client.login(username=username, password=password)
         user = rest_client.get_user()
-        devices = rest_client.get_customer_device_infos(customer_id=CustomerId('CUSTOMER', user.id), page_size=str(10),
-                                                        page=str(0))
+        devices = rest_client.get_customer_device_infos(customer_id=CustomerId(user.id, 'CUSTOMER'), page_size=10,
+                                                        page=0)
         logging.info("Devices: \n%r", devices)
     except ApiException as e:
         logging.exception(e)
@@ -216,6 +220,7 @@ password = "tenant"
 # Creating the REST client object with context manager to get auto token refresh
 with RestClientCE(base_url=url) as rest_client:
     try:
+        rest_client.login(username=username, password=password)
         # Create entity filter to get all devices
         entity_filter = EntityFilter()
 

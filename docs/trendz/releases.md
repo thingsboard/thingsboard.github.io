@@ -8,6 +8,49 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
+## v1.10.1 (May, 2023)
+
+**Improvements:**
+* Add the ability to schedule anomalies autodiscovery
+* Add debug instruments for developing calculated fields
+* Migrate simple calculated field computation into the backend JS engine
+* Update widget bundle to ThingsBoard v3.5
+* Add prediction support for calculated fields
+* Case-insensitive search for view fields
+* Add top-N limit for table, pie, and bar charts
+* Add groupBy as the input parameter for a calculated field
+* Add the ability to display separately the chart and table of the Anomaly View
+* Anomaly calendar - add full range view mode
+* Add unit into chart label and tooltip
+* Add user details menu
+
+**Bug fixes:**
+* Clear cached storage on logout
+* Fix responsive layout for calendar heatmap
+* Fix background job authorization error
+* Fix the model change for the Anomaly view
+* Fix view title text size autoscaling
+* Fix authentication by the token in URL
+* Fix time formatting in exported data
+* Fix the merging process in the chart options editor
+* Fix date picker positioning for widgets
+
+## v1.10.0 (February, 2023)
+
+**Improvements:**
+* New Trendz UI design
+* Grouping visualizations into collections
+* New Card template with sparkline and comparison 
+* Add units into formatting function
+* Configurable axis ranges
+
+**Bug fixes:**
+
+* Fix title editor
+* Fix heatmap NaN error
+* Fix cached report race condition in clustered setup
+* Fix caching of non-timeseries fields
+
 ## v1.9.2-HF2 (December, 2022)
 
 **Improvements:**

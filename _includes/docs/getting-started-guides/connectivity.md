@@ -11,11 +11,16 @@ In case you have not found out how to connect your device using the diagram or s
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
+#### Connecting well-known devices
+
+You can check the [Devices library](/docs/{{docsPrefix}}devices-library) section to explore how to connect widely used devices to ThingsBoard.
+
 #### Built-in transport protocols
 
 The built-in transport protocol implementations are applicable for devices that communicate over those protocols and are able to connect directly to ThingsBoard.
 
 - [MQTT API reference](/docs/{{docsPrefix}}reference/mqtt-api)
+- [MQTT Sparkplug API reference](/docs/{{docsPrefix}}reference/mqtt-sparkplug-api)
 - [CoAP API reference](/docs/{{docsPrefix}}reference/coap-api)
 - [HTTP API reference](/docs/{{docsPrefix}}reference/http-api)
 - [LwM2M API reference](/docs/{{docsPrefix}}reference/lwm2m-api)

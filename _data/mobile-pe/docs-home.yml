@@ -3,8 +3,6 @@ abstract: "ThingsBoard PE Mobile Application - starting point for your IoT mobil
 toc:
   - title: PE Mobile Application
     path: /docs/pe/mobile/
-  - title: Getting Started
-    path: /docs/pe/mobile/getting-started/
   - title: Customize your app
     section:
       - title: Overview

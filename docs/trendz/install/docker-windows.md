@@ -19,18 +19,12 @@ This guide will help you to install and start Trendz Analytics using Docker on W
 
 ## Step 1. Obtain the license key 
 
-We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
+We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
 Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE guide.
 
-## Step 2. Checkout Trendz Analytics image on Docker Hub
-
-Open official [Trendz Analytics](https://hub.docker.com/_/trndz) Docker Hub page and proceed to checkout.
-Populate basic information about yourself and click "Get Content"
-
-
-## Step 3. Running Trendz service
+## Step 2. Running Trendz service
 
 ##### Docker Compose setup
 
@@ -51,7 +45,7 @@ version: '3.0'
 services:
   mytrendz:
     restart: always
-    image: "thingsboard/trendz:1.9.2-HF2"
+    image: "thingsboard/trendz:1.10.1"
     ports:
       - "8888:8888"
     environment:
@@ -94,7 +88,7 @@ Where:
 - `mytrendz-logs:/var/log/trendz`   - mounts the volume `mytrendz-logs` to Trendz logs directory
 - `mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.9.2-HF2`          - docker image
+- `thingsboard/trendz:1.10.1`          - docker image
     
 ##### Setup Docker volumes    
     

@@ -24,18 +24,6 @@
     }
   },
   {
-    "type": ["Asia"],
-    "country": ["India"],
-    "name": "Advance Mechanical Services Pvt. Ltd.",
-    "contact": {
-      "href": "contact@ams-india.co.in"
-    },
-    "site": {
-      "href": "ams-india.co.in",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Middle East"],
     "country": ["United Arab Emirates"],
     "name": "Agreefy FZE",
@@ -348,6 +336,18 @@
     }
   },
   {
+    "type": ["Asia"],
+    "country": ["Thailand"],
+    "name": "Epithos Co., Ltd",
+    "contact": {
+      "href": "pnt@epithos.com"
+    },
+    "site": {
+      "href": "epithos.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe"],
     "country": ["Ukraine"],
     "name": "Euristiq",
@@ -360,18 +360,6 @@
     }
   },
   {
-    "type": ["Asia"],
-    "country": ["India"],
-    "name": "Factorie Intelligent Operations Pvt. Ltd.",
-    "contact": {
-      "href": "naresh.yerrabachu@factorie.io"
-    },
-    "site": {
-      "href": "factorie.io",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Australia and Oceania"],
     "country": ["Australia"],
     "name": "FEEL Digital Asset Strategy",
@@ -380,6 +368,30 @@
     },
     "site": {
       "href": "feelvirtualreality.com.au",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Africa"],
+    "country": ["South Africa"],
+    "name": "Fourier",
+    "contact": {
+      "href": "vrensburge@fourier.co.za"
+    },
+    "site": {
+      "href": "fourierit.co.za",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["France"],
+    "name": "Jems Group",
+    "contact": {
+      "href": "https://www.jems-group.com/fr/contact/"
+    },
+    "site": {
+      "href": "https://www.jems-group.com/",
       "target": "_blank"
     }
   },
@@ -660,18 +672,6 @@
     }
   },
   {
-    "type": ["North America"],
-    "country": ["United States of America"],
-    "name": "Petrichor Science Group LLC",
-    "contact": {
-      "href": "miles@petrichorsciencegroup.com"
-    },
-    "site": {
-      "href": "petrichorsciencegroup.com",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Europe"],
     "country": ["Romania"],
     "name": "Polisea S.A.",
@@ -800,18 +800,6 @@
     },
     "site": {
       "href": "sar-btpc.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Africa"],
-    "country": ["Nigeria"],
-    "name": "Sawtel Technologies Ltd.",
-    "contact": {
-      "href": "info@sawtelnigeria.com"
-    },
-    "site": {
-      "href": "sawtelnigeria.com",
       "target": "_blank"
     }
   },
@@ -1064,6 +1052,18 @@
     },
     "site": {
       "href": "wirelesssolution.asia",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["France"],
+    "name": "Wiifor",
+    "contact": {
+      "href": "contact@wiifor.com"
+    },
+    "site": {
+      "href": "wiifor.com",
       "target": "_blank"
     }
   },

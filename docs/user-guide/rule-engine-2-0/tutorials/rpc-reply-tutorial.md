@@ -80,7 +80,7 @@ to the request, so we need to construct proper payload in Transformation node.
 
 Configuration:
 
-- Name: **build responce**
+- Name: **build response**
 - Script: {% highlight javascript %} msg = {"temperature" : metadata.temp} return {msg: msg, msgType: msgType}; {% endhighlight %}
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/transform.png)
@@ -92,7 +92,7 @@ This node takes message payload and sends it as the response to the Message Orig
 
 Configuration:
 
-- Name : **send responce**
+- Name : **send response**
 - Request ID : **requestId**
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/reply.png)
@@ -177,13 +177,13 @@ with content type = **application/json** and payload <code>{"method": "getTemper
 curl -X POST -d '{"method": "getTemperature", "params":{}}' http://localhost:8080/api/v1/IAkHBb9N7kKD9ieLRMFN/rpc --header "Content-Type:application/json"
 {% endhighlight %}
 
-Responce:
+Response:
 {% highlight bash %}
 {"temperature":"52"}
 {% endhighlight %}
 
 It is expected result. **Controller A** sends RPC call to the Thingsboard with method **getTemperature**. 
-Message was routed via configured Rule Chain and attribute of the related thermostat were fetched and returned in the responce.
+Message was routed via configured Rule Chain and attribute of the related thermostat were fetched and returned in the response.
 
 If we try to submit request with unknown method we will see message in the Thingsboard log file:
 {% highlight bash %}

@@ -8,6 +8,16 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v3.5.1 (Jun 1, 2023) {#v351}
+
+**Minor** release with everything from [TB Edge v3.5.1](/docs/edge/releases/#v351) and [TB PE v3.5.1](/docs/pe/reference/releases/#v351).
+
+## v3.5.0 (May 10, 2023) {#v35}
+
+**Major** release with everything from [TB Edge v3.5](/docs/edge/releases/#v35) and [TB PE v3.5](/docs/pe/reference/releases/#v35) with the following improvements and bug fixes:
+
+* Edge computing support for solution templates;
+
 ## v3.4.3 (December 22, 2022)
 
 **Minor** release with everything from [TB Edge v3.4.3](/docs/edge/releases/#v343-december-22-2022) and [TB PE v3.4.3](/docs/pe/reference/releases/#v343-december-21-2022) with the following improvements and bug fixes:

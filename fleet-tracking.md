@@ -10,22 +10,34 @@ notitle: "true"
 
 <h1 class="usecase-title">Smart tracking and fleet management</h1>
 
-## Overview
+Manage your company's fleet and assets with ThingsBoard using convenient and efficient IoT solutions. 
+Fleet tracking systems allow businesses to easily control and monitor their assets, routes, fuel consumption, etc. Having the necessary information about the state of assets affairs, responsible persons can make appropriate strategic decisions and improve the work of the links that need it.
 
-ThingsBoard platform dramatically reduces time to market and efforts to create fleet-tracking solutions.
-Save up to 90% of development time for your fleet-tracking solution by utilizing the following platform benefits:
+Installing a fleet tracking <a href="/docs/paas/solution-templates/fleet-tracking/">template</a> allows drivers, managers, and staff to improve communication, increase efficiency, and maintain a high level of safety.
 
-  - Reliable and scalable data collection for your vehicle trackers and embedded sensors;
-  - Built-in support of geolocation rules and complex perimeter definitions;
-  - Built-in support of protobuf to optimize network traffic and increase battery life;  
-  - Advanced and flexible IoT data visualization for both real-time and historical vehicle data;
-  - Customizable end-user dashboards to share data from the vehicle tracking system with end users and customers;
-  - Remote control and OTA updates for your smart trackers;
-  - Customizable mobile applications with minimum coding efforts;
+Therefore, use IoT solutions in your enterprise and get the benefits now.
+
+## Fleet Tracking Structure
+
+As part of this solution, we have created a dashboard that displays data from tracking sensors.
+This dashboard helps to monitor and control location, speed, and fuel level in real time.
+Our dashboard has multiple states - **Main state** and  **Bus state**.
+
+**Main state** contains an interactive map for monitoring the movement of transport, a list of existing buses with detailed information about them, and a table of Alarms.
+
+**Bus state** contains an interactive map of the history of the route, the current route area, detailed information about the bus, and corresponding alarms.
+
+Collected data is processed via the rule engine to raise alarms when:
+- vehicle leaves configurable route perimeter;
+- the vehicle is not moving for 2 minutes while on the route;
+- fuel level is low;
+- violation of speed limits.
+
+The following interactive dashboard presents an intelligent visualization of IoT data that you can easily integrate into your IoT solution. See more details <a href="/docs/paas/solution-templates/fleet-tracking/">here</a>.
 
 ## Fleet tracking dashboard
 
-The following interactive dashboard hosted on live demo server represents vehicle routes and state indicators that may be embedded in your IoT fleet tracking project. See dashboard description below.
+The following interactive dashboard hosted on live demo server represents vehicle routes and state indicators that may be embedded in your IoT fleet tracking project. 
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
@@ -43,16 +55,18 @@ The following interactive dashboard hosted on live demo server represents vehicl
     <a target="_blank" href="https://demo.thingsboard.io/dashboard/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button">View live demo</a>
 </div>
 
-The live dashboard displays real-time bus location, speed and fuel level collected using ThingsBoard MQTT API.
-Collected data is processed via the rule engine to raise alarms on when:
+The live Fleet Tracking dashboard displays real-time data from several tracking sensors collected using ThingsBoard MQTT API. Collected data is processed via the rule engine to raise alarms on certain thresholds. You may export the dashboard from our live demo server and import it to your ThingsBoard instance.
 
- * Vehicle leaves configurable route perimeter;
- * Vehicle is not moving for 2 minutes while on route;
- * Fuel level is low;
- * Violation of speed limits;
+## Benefits of the Fleet Tracking template
 
-The main dashboard displays the bus location, corresponding alarms, and the latest values of bus speed, fuel and status.
-Click on the alarm or bus row to open the vehicle details and route history.
+Save up to 90% of development time for your fleet tracking solution by utilizing the following platform benefits:
+- reliable and scalable data collection for your fleet tracking sensors;
+- powerful rule engine to process collected data and produce alarms and valuable insights;
+- advanced and flexible visualization for real-time and historical data;
+- customizable end-user dashboards to analyze and share the results of fleet tracking;
+- integration with third-party analytics frameworks and solutions for advanced analytics;
+- remote control and OTA updates for your tracking sensors and other devices;
+- customizable mobile applications with minimum coding efforts.
 
 Of course, you may extend the list of alarms and completely customize the dashboard. 
 You may export the dashboard from our live demo server and import it to your ThingsBoard instance.

@@ -177,6 +177,25 @@
     "blurb": "What drives us is the passion to create scalable electronics solutions that work anywhere. We have implemented projects throughout developing countries, from Peru to Sri Lanka, and we will continue working where we can have the highest impact."
   },
   {
+    "type": ["main", "lora", "bluetooth"],
+    "program": "",
+    "name": "SensiEdge",
+    "logo": "sensiedge_logo.png",
+    "links": {
+      "Site": {
+        "href": "https://www.sensiedge.com/",
+        "target": "_blank"
+      },
+      "Getting Started SensiLoRa 2.0 V1.2": {
+        "href": "/docs/samples/sensiedge/getting_started_sensiLoRa.pdf"
+      },
+      "Connect SensiBLE 1.0 & 2.1 to ThingsBoard": {
+        "href": "/docs/samples/sensiedge/connect_sensi_ble.pdf"
+      }
+    },
+    "blurb": "SensiEDGE IoT SoM is a fully customisable solution for developers who want to focus on their own applications and core competencies rather than the underlying hardware platform or production logistics when creating products for the IoT."
+  },
+  {
     "type": ["main", "gsm"],
     "program": "",
     "name": "DECODE",
@@ -204,6 +223,35 @@
       }
     },
     "blurb": "TEKTELIC is a leading supplier of LoRaWAN IoT equipment including best-in-class gateways and end devices."
+  },
+  {
+    "type": ["main", "nbiot", "lte"],
+    "program": "",
+    "name": "AKKR8",
+    "logo": "akkr8.png",
+    "links": {
+      "Site": {
+        "href": "https://www.akkr8.io/",
+        "target": "_blank"
+      }
+    },
+    "blurb": "AKKR8 is developed and produced in Sweden. It is a sensor-to-platform solution with a scalable design to fit different IoT scenarios. AKKR8 can run on battery, solar power, or your mains power. It uses NB-IoT or LTE-M to connect to the outside world and is sold pre-configured for the ThingsBoard platform."
+  },
+  {
+    "type": ["main", "wifi"],
+    "program": "",
+    "name": "ROLTEK",
+    "logo": "roltek_logo_dark.png",
+    "links": {
+      "Site": {
+        "href": "https://www.roltek.com.tr/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/roltek/roltek/"
+      }
+    },
+    "blurb": "Roltek provides end-to-end IoT solutions that enable rapid development, management, and scalability of IoT projects, either through cloud-based or on-premise deployments. Roltek hardware IoT Gateway products come with different communication options such as ISM and NarrowBand RF, 4G/LTE, WiFi, NB-IoT, and LoRaWan, making them suitable for harsh field conditions."
   },
   {
     "type": ["main", "modbus"],
@@ -268,5 +316,53 @@
       }
     },
     "blurb": "Dusun provides various kinds of gateways, hardware products and IOT service"
+  },
+  {
+    "type": ["main", "nbiot", "lte"],
+    "program": "",
+    "name": "monoZ",
+    "logo": "monoz-logo.png",
+    "links": {
+      "Site": {
+        "href": "https://monoz.io/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/monoz/LPWA_GPS_Tracker_with_monoZ"
+      }
+    },
+    "blurb": "MonoZ aim to assist System Integrators and Enterprises in connecting their assets (things) to the internet at the lowest possible cost and time.\nMonoZ belong to the first few E2C IoT enablers in the world to offer all the components required for businesses to make their ideas a reality"
+  },
+  {
+    "type": ["main", "bluetooth", "nbiot",  "wifi", "sigfox", "lora", "gsm", "modbus"],
+    "program": "",
+    "name": "EXXN",
+    "logo": "exxn.jpg",
+    "links": {
+      "Site": {
+        "href": "https://exxn.es/en/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/exxn/exxn"
+      }
+    },
+    "blurb": "At EXXN, we specialize in integrating technology into your business to enhance efficiency and productivity. Our multipurpose gateways, equipped with an ARM processor, are customizable to meet the specific needs of each customer and use case."
+  },
+  {
+    "type": ["main", "nbiot", "lte"],
+    "program": "",
+    "name": "Fusion DAQ",
+    "logo": "FusionDAQ-Nav-Logo.png",
+    "links": {
+      "Site": {
+        "href": "https://fusiondaq.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/fusion-daq/fusion-daq"
+      }
+    },
+    "blurb": "Fusion DAQ develops and maintains a core product line of data acquisition components and accessories. This includes electronic design, electromechanical integration, PCB and component assembly, as well as software, both embedded and PC."
   }
 ]

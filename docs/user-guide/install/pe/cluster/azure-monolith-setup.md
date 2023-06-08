@@ -86,6 +86,10 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
 {% assign tbServicesFile = "tb-node.yml" %}
 {% include templates/install/azure/configure-udp.md %}
 
+### 9.4. Configure Edge Load Balancer (Optional)
+
+{% include templates/install/k8s-configure-edge-load-balancer.md %}
+
 ## Step 10. Using
 
 {% include templates/install/azure/using.md %}
