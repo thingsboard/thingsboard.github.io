@@ -2,25 +2,31 @@
 * TOC
 {:toc}
 
-Shared subscriptions are a powerful feature introduced in MQTT v5, which was highly requested by end-users. 
-Although ThingsBoard MQTT Broker does not require this feature to work only with MQTT v5 clients, clients with any protocol version can use it.
-The official [documentation](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901250) provides more information on this feature. 
-In this tutorial, we will go through the essential aspects of this feature.
+Shared subscriptions are an advanced capability introduced in MQTT v5 that has been widely anticipated by users. 
+While ThingsBoard MQTT Broker does not restrict its usage to MQTT v5 clients exclusively, clients with any protocol version can leverage this feature. 
+The official [documentation](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901250) offers comprehensive details on shared subscriptions, 
+and this tutorial will focus on the fundamental aspects of this functionality. 
+By understanding and exploring shared subscriptions, users can harness the full potential of this powerful feature in their MQTT interactions.
 
 ### What are Shared Subscriptions?
 
-For standard subscriptions, each subscribed client receives a copy of every published message to the topic. 
-However, shared subscriptions allow MQTT clients to share the subscription load between several clients in a group, known as **client load balancing**.
+In traditional or standard subscriptions, each subscribed client receives a duplicate copy of every published message that matches the subscribed topic. 
+This approach ensures that all clients receive the same set of messages. 
+However, shared subscriptions introduce a more efficient mechanism for distributing the subscription load among multiple clients within a defined group. 
+This technique, known as **client load balancing**, enables MQTT clients to collectively handle the incoming message flow more effectively, 
+optimizing network bandwidth and reducing overall processing overhead.
 
-Shared subscriptions are identified using a special style of topic filter in the following format:
+Shared subscriptions are identified by a distinct style of topic filter, which follows a specific format. 
+The format for a shared subscription topic filter is as follows:
 ```
 $share/{ShareName}/{TopicFilter}
 ```
 
 where:
-* $share - is a constant that identifies the subscription as shared.
-* {ShareName} - is the identifier of the shared subscription.
-* {TopicFilter} - is the actual topic filter, as for a regular subscription. It can include wildcards (`#`, `+`).
+* $share - is a constant that denotes the subscription as shared.
+* {ShareName} - is the identifier of the shared subscription, which helps distinguish it from other shared subscriptions.
+* {TopicFilter} - represents the topic filter used for the subscription, similar to regular subscriptions. 
+It can include wildcards such as `#` and `+` to match multiple topics.
 
 For example, the following is a shared subscription:
 
@@ -30,12 +36,21 @@ $share/group1/country/+/city/+/home/#
 
 ### Shared Subscription Use Cases
 
-One can use shared subscriptions for any use case appropriate to the feature. 
-However, there are several use cases that are especially suitable and commonly used:
+Shared subscriptions can be applied to various use cases based on their suitability and advantages. 
+However, there are several common scenarios where shared subscriptions are particularly beneficial:
 
-* Specific backend applications subscribe to the MQTT message stream with a requirement to scale horizontally.
-* The topic has a high message rate, which clients cannot handle alone.
-* Distribute system resources more evenly to prevent bottlenecks.
+* **Horizontal scaling of backend applications.** When specific backend applications need to subscribe to the MQTT message stream and 
+handle a high volume of messages, shared subscriptions allow for horizontal scaling. Multiple application instances can be part of the shared subscription group, 
+distributing the workload and improving scalability.
+* **High message rate topics.** In situations where certain topics experience a high message rate that individual clients may struggle to handle, 
+shared subscriptions can be utilized. By distributing the load among multiple clients within the shared subscription group, 
+the message processing can be more efficient and avoid overwhelming a single client.
+* **Balancing system resources**. Shared subscriptions help distribute system resources evenly, mitigating the risk of bottlenecks. 
+By leveraging multiple clients within the shared subscription group, message processing and resource utilization can be optimized, 
+ensuring a balanced and efficient operation of the system.
+
+In summary, shared subscriptions offer flexibility and scalability for scenarios involving backend applications, 
+high message rates, and resource optimization, allowing for better management of MQTT message streams.
 
 ### Subscribing to Shared Subscriptions
 
@@ -49,7 +64,10 @@ To initiate a shared subscription, execute the following commands in two separat
 
 ```bash
 mosquitto_sub -d -t '$share/group/home/temp' -q 1 -V mqttv5 -i client1
+```
+{: .copy-code}
 
+```bash
 mosquitto_sub -d -t '$share/group/home/temp' -q 1 -V mqttv5 -i client2
 ```
 {: .copy-code}
@@ -57,7 +75,7 @@ mosquitto_sub -d -t '$share/group/home/temp' -q 1 -V mqttv5 -i client2
 As a result, a new shared subscription is initiated (with ShareName equal to `group`) with two clients (`client1` and `client2`) subscribing to the `home/temp` topic. 
 Both clients will receive messages published on the mentioned topic evenly.
 
-You can now publish some messages to the broker for the `home/temp` topic so that the clients from the shared subscription can receive messages. 
+To ensure that the clients belonging to the shared subscription receive messages, you can publish some messages to the broker targeting the `home/temp` topic.
 Execute the following command to do so:
 
 ```bash
@@ -65,44 +83,63 @@ mosquitto_pub -d -t 'home/temp' -m 32 -q 1
 ```
 {: .copy-code}
 
-The number of subscriptions in the group can be **increased** by subscribing a new client or **decreased** by unsubscribing present clients.
+The number of subscriptions within a shared subscription group can be **increased** by subscribing a new client to the group, 
+or **decreased** by unsubscribing existing clients from the group. 
+This dynamic adjustment allows for flexibility in managing the load distribution and scaling of the shared subscription.
 
-Let's see this in action:
+Let's see shared subscription processing in action:
 
 ![image](/images/mqtt-broker/user-guide/shared-subscription-demo.gif)
 
 ### Shared Subscriptions Load Balancing Strategy
 
-At present, ThingsBoard MQTT Broker supports only the **ROUND_ROBIN** load balancing strategy type. We plan to add more types in the near future, such as random and hash. Please stay tuned for updates.
+Currently, ThingsBoard MQTT Broker supports the **ROUND_ROBIN** load balancing strategy type for shared subscriptions. 
+This means that incoming messages for a shared subscription are evenly distributed among the subscribed clients in a round-robin fashion. 
+Each client in the group receives messages in sequential order, taking turns to handle the message load.
+We are continuously working on enhancing the MQTT Broker and plan to introduce additional load-balancing strategy types in the near future. 
+These may include random and hash-based load-balancing strategies. Stay tuned for updates as we expand the capabilities of ThingsBoard MQTT Broker.
 
 ### Shared Subscriptions & Client Type
 
-The **DEVICE** and **APPLICATION** clients are implemented differently, which affects the shared subscription feature's usage and processing capabilities for each.
+The **DEVICE** and **APPLICATION** clients in ThingsBoard MQTT Broker are implemented differently, and this impacts how the shared subscription feature 
+is utilized and how it processes messages for each client type.
 
-If you create a shared subscription with the same structure and subscribe to it with DEVICE and APPLICATION clients, 
-they will be separated into two different shared subscription groups.
+If you create a shared subscription with the same structure and subscribe to it with both DEVICE and APPLICATION clients, 
+the MQTT Broker will treat them as separate shared subscription groups. 
+This means that messages published to the shared subscription topic will be distributed only among clients of the same type. 
+DEVICE clients will receive messages within the DEVICE shared subscription group, while APPLICATION clients will receive messages within the APPLICATION shared subscription group.
+
+Therefore, it's important to consider the client type when working with shared subscriptions in ThingsBoard MQTT Broker, 
+as the messages will be processed and distributed accordingly based on the client type within their respective shared subscription groups.
 
 #### DEVICE client type
 
-From the user's perspective, no action is required to start using the feature for DEVICE clients. 
-You can simply subscribe with your clients, and everything will work as designed.
+From the user's perspective, using the shared subscription feature for DEVICE clients in ThingsBoard MQTT Broker is seamless. 
+Simply subscribe your clients to the shared subscription, and the feature will work as intended.
 
-However, if the shared subscription group contains persistent clients, there are some special cases you should be aware of:
-1. If the shared subscription group **contains some persistent clients**, they will share the message load for the subscription topic until they go offline. 
+However, there are some considerations when persistent clients are involved in the shared subscription group:
+1. If the shared subscription group **contains some persistent clients**, they will share the message load for the subscription topic as well until they go offline. 
 Once they are offline, the messages will not be distributed among them.
-2. On the other hand, if the shared subscription group **contains only persistent clients**, and they all go offline, 
+2. On the other hand, if the shared subscription group **consists solely of persistent clients**, and they all go offline, 
 newly received messages will be stored per shared subscription group in the PostgreSQL database. 
-Once the first client from the group reconnects to the broker, it will receive persistent messages.
+Once the first client from the group reconnects to the broker, it will receive stored persistent messages related to the shared subscription.
+
+These considerations ensure that message distribution and persistence are handled appropriately for shared subscription groups containing persistent clients.
 
 #### APPLICATION client type
 
-To start using the shared subscription feature for APPLICATION clients, you must first create an Application Shared Subscription entity in the PostgreSQL database. 
-You can do this using the REST API. Please refer to the [documentation](/docs/mqtt-broker/application-shared-subscription/) on how to create such an entity in the system and how to manage it.
+To utilize the shared subscription feature for APPLICATION clients in ThingsBoard MQTT Broker, you need to follow an additional step. 
+First, you'll need to create an Application Shared Subscription entity in the PostgreSQL database. 
+To do so follow the instructions from the following [guide](/docs/mqtt-broker/user-guide/ui/shared-subscriptions/).
+This can also be done through the REST API, and detailed instructions can be found in the next [documentation](/docs/mqtt-broker/application-shared-subscription/). 
+The entity creation process includes the automatic creation of a corresponding Kafka topic.
 
-Once this entity is created, the corresponding Kafka topic is automatically created, and everything is ready to go. 
-When the first client connects to the broker and initiates a shared subscription, a new Kafka consumer is created for 
-that client and added to the [Consumer Group](https://docs.confluent.io/platform/current/clients/consumer.html) (CG). 
-As new clients subscribe to the shared subscription, their consumers are added to the CG to share the load. 
-Similarly, when a client unsubscribes, its consumer is removed from the CG, and the group rebalances.
+Once the entity is created, you're all set to start using the shared subscription feature. 
+When the first client connects to the broker and initiates a shared subscription, a new Kafka consumer is created for that client and added to the 
+[Consumer Group](https://docs.confluent.io/platform/current/clients/consumer.html) (CG).
+As more clients subscribe to the shared subscription, their consumers are added to the CG as well, allowing them to share the message load. 
+Likewise, when a client unsubscribes, its consumer is removed from the CG, and the group rebalances accordingly.
 
-In this way, the performance and scalability of Kafka help us achieve greater performance and reliability.
+This utilization of Kafka's capabilities enables enhanced performance, scalability, and reliability for shared subscriptions with APPLICATION clients in ThingsBoard MQTT Broker. 
+By leveraging Kafka's features, the system can effectively manage and distribute the workload among the subscribed clients, ensuring optimal performance and fault tolerance.
+
