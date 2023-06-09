@@ -9,10 +9,10 @@ details-retained-messages:
     title: "Navigate to the 'Retained Messages' page."
   1:
     image: /images/mqtt-broker/user-guide/ui/details-retained-messages-2.png
-    title: "Click on the button 'Payload', represented by icon `{}`."
+    title: "Click on the button 'Payload', represented by icon '{}'."
   2:
     image: /images/mqtt-broker/user-guide/ui/details-retained-messages-3.png
-    title: "Click on the button 'User Properties', represented by icon `[]`."
+    title: "Click on the button 'User Properties', represented by icon '[]'."
 
 delete-retained-messages:
   0:
