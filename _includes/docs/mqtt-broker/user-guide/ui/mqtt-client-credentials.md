@@ -11,12 +11,12 @@ ThingsBoard MQTT Broker supports the following types of client credentials to au
   - **Disadvantages:** Complexity and increased cost. Setting up and managing SSL client credentials can be more complex and requires more expertise. SSL encryption and decryption require more computing resources.
 
 Before using any of the client credential types mentioned above, please ensure that they are enabled in the ThingsBoard MQTT Broker [configuration file]().
-- To enable **MQTT Basic Credentials**, set `SECURITY_MQTT_BASIC_ENABLED` to `true`.
-- To enable **MQTT SSL Credentials** set `SECURITY_MQTT_SSL_ENABLED` to `true`.
+- **Basic Auth.** To enable MQTT Basic Credentials, set `SECURITY_MQTT_BASIC_ENABLED` to `true`.
+- **X.509 Certificate Auth.** To enable MQTT SSL Credentials set `SECURITY_MQTT_SSL_ENABLED` to `true`.
 
-Note that on the Web UI's _Home page_, you can check the current state of those parameters on the Configuration card:
+Note that on the Web UI's _Home page_, you can check the current state of those parameters on the Configuration card.
 
-[image]
+![image](/images/mqtt-broker/user-guide/ui/config-card.png)
 
 For more information on security issues, please consult this [guide](/docs/mqtt-broker/security/).
 
