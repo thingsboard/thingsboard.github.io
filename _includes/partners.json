@@ -179,7 +179,7 @@
   {
     "type": ["main", "lora", "bluetooth"],
     "program": "",
-    "name": "SensiEdge",
+    "name": "SensiEDGE",
     "logo": "sensiedge_logo.png",
     "links": {
       "Site": {
