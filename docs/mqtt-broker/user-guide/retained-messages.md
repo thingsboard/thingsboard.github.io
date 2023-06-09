@@ -20,7 +20,7 @@ delete-retained-messages:
     title: "Delete single. Click on the icon 'Delete retained message' and confirm action."
   1:
     image: /images/mqtt-broker/user-guide/ui/delete-retained-messages-2.png
-    title: "Delete multiple. Select messages you want to delete and click on the 'Delete retained messages' button in the top right corner."
+    title: "Delete multiple. Select messages you want to delete and click on the 'Delete' icon in the top right corner."
 
 clear-empty-retained-messages:
   0:

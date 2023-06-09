@@ -39,3 +39,28 @@ Contains information regarding some commonly used configuration parameters:
   - **X.509 Certificate Auth.** By default, TLS authentication is disabled. To enable it, set the `SECURITY_MQTT_SSL_ENABLED` environment variable to `true`.
 
 ![image](/images/mqtt-broker/user-guide/ui/config-card.png)
+
+### Kafka Brokers
+Displays basic information regarding the Kafka Brokers:
+- **Address.**
+- **Size.**
+
+![image](/images/mqtt-broker/user-guide/ui/kafka-brokers-card.png)
+
+### Kafka Topics
+Displays basic information regarding the Kafka Topics:
+- **Name.**
+- **Partitions.**
+- **Replicas.**
+- **Size.**
+
+![image](/images/mqtt-broker/user-guide/ui/kafka-topics-card.png)
+
+### Kafka Consumer Groups
+Displays basic information regarding the Kafka Consumer Groups:
+- **ID.**
+- **State.**
+- **Members.**
+- **Lag.**
+
+![image](/images/mqtt-broker/user-guide/ui/kafka-consumer-groups-card.png)
