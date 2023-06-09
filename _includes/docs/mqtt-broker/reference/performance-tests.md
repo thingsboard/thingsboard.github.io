@@ -86,7 +86,7 @@ Considering the comprehensive scope of the test, it would be advantageous to rev
 | 100M    | 3M       | 45%        | 160GiB        | 58%       | 7k / 80k KiB/s              | 2%              | less than 1 / less than 3  |
 
 The following statistics provide insights into the Kafka topics used during the test 
-(i.e. `publish_msg`, after [Kafka topics renaming [1]](#references) `tbmq.msg.all`, 
+(i.e. `publish_msg`, after [Kafka topics renaming [1]](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/8871403fcfdce3489ee2a49c1505b998ceb46c3c#diff-85b2fafc998caf1c7d67f51c40f5639ac9ee0ee68379e07ad2f63b083f010f13) `tbmq.msg.all`, 
 is the main Kafka topic where all the messages are stored, and several examples of application topics for APPLICATION subscribers that receive the data).
 
 {% include images-gallery.html imageCollection="broker-topics-monitoring" %}
@@ -123,22 +123,28 @@ Thanks to its inherent capacity for both vertical and horizontal scalability, th
 During the pursuit of achieving such substantial levels of connections and data flow, we encountered various scenarios that demanded some effort in code optimization.
 
 One such instance involved addressing Kafka producer disconnects, which had the undesirable consequence of message loss. 
-To solve this issue, we implemented a distinct executor service dedicated to processing publish [callbacks for Kafka producers[2]](#references). 
+To solve this issue, we implemented a distinct executor service dedicated to processing publish [callbacks for Kafka producers[2]](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/4e8e6d8a2f9855c7df88074efc935cb7d19f593d). 
 This measure effectively resolved the aforementioned disconnections.
 
-To further enhance performance, we [eliminated the need for a specialized publish queue[3]](#references) by leveraging the inherent thread-safe nature of Kafka producers. 
+To further enhance performance, we [eliminated the need for a specialized publish queue[3]](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/443e260924e214ae89b0158a6369b06f38801bd0) 
+by leveraging the inherent thread-safe nature of Kafka producers. 
 This adjustment yielded additional benefits in terms of overall system efficiency as the message ordering guarantees were achieved in another way.
 
 Additional adjustments were introduced to elevate the processing rate, as evidenced by the commits related to improvements in [message pack processing, 
-UUID generation[4]](#references), and the adoption of a mechanism for sending messages [without the need for explicit flushing[5]](#references).
+UUID generation[4]](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/47e674589269bb45291f471528c54370ebdaf7ed), 
+and the adoption of a mechanism for sending messages [without the need for explicit flushing[5]](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/3ec317072dead5cb5355d29dd7319ccde3403d04).
 
 To optimize memory utilization and minimize unnecessary garbage creation, we undertook substantial efforts to improve overall memory usage. 
-These [enhancements[6][7][8]](#references) not only contributed to enhanced Garbage Collector performance but also reduced stop-the-world pauses, thereby improving overall system responsiveness.
+These enhancements [6](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/56ede8e5ebbaa8deafd24b7a0d4050401835ebc0), 
+[7](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/395d48917be0186fafbdfa12c0a9b145b66f31d2), 
+[8](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/fa424ffc32837b4d4aa48b890eb3bc06908a7476) 
+not only contributed to enhanced Garbage Collector performance but also reduced stop-the-world pauses, thereby improving overall system responsiveness.
 
 During our later testing phases on larger scales, we observed an uneven distribution of clients among the broker nodes.
 This resulted in a disproportionate workload for the specific broker node, which posed minimal issues for publishers but had a notable impact on APPLICATION clients, requiring more substantial resource utilization.
 That resulted in one broker node processing much more requests than others.
-To address this concern, we devised a mechanism to ensure an [even distribution of clients among the broker nodes[9]](#references), alongside other minor performance improvements.
+To address this concern, we devised a mechanism to ensure an [even distribution of clients among the broker nodes[9]](https://github.com/thingsboard/tb-mqtt-perf-tests/commit/bd7649a9321f56f68303b380e634617fa0abc098), 
+alongside other minor performance improvements.
 
 Through these diligent efforts, we successfully addressed various challenges along the way, optimizing code performance and ensuring a smooth and efficient operation of the system.
 
@@ -228,8 +234,8 @@ The 100,000,500 clients are evenly distributed among the performance test pods, 
 
 After a period of time, all clients successfully establish connections, and each performance test pod notifies the orchestrator of its readiness.
 
-To gauge the progress, we can examine the `client_session` (after [Kafka topics renaming [1]](#references) `tbmq.client.session`) Kafka topic. 
-This topic provides an approximate count of the connected sessions.
+To gauge the progress, we can examine the `client_session` (after [Kafka topics renaming [1]](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/8871403fcfdce3489ee2a49c1505b998ceb46c3c#diff-85b2fafc998caf1c7d67f51c40f5639ac9ee0ee68379e07ad2f63b083f010f13) `tbmq.client.session`) 
+Kafka topic. This topic provides an approximate count of the connected sessions.
 
 ![image](/images/mqtt-broker/reference/topics/100m-mqtt-clients.png)
 
@@ -289,7 +295,7 @@ We sincerely hope that this article be valuable to individuals evaluating the Th
 Your feedback is highly appreciated, and we encourage you to stay connected with our project by following us 
 on [GitHub](https://github.com/thingsboard/thingsboard-mqtt-broker) and [Twitter](https://twitter.com/thingsboard).
 
-### References
+### Reference Commits
 
 [1] - [Kafka topics renaming](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/8871403fcfdce3489ee2a49c1505b998ceb46c3c#diff-85b2fafc998caf1c7d67f51c40f5639ac9ee0ee68379e07ad2f63b083f010f13).
 
