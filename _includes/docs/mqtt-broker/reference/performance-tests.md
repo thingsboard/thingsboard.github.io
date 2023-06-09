@@ -17,10 +17,6 @@ cluster (on a single EC2 instance, or node, 1 broker pod is deployed) with the c
 For a comprehensive understanding of the ThingsBoard MQTT broker architecture, please refer to the subsequent [page](/docs/mqtt-broker/architecture/).
 RDS has been deployed as a single instance while the Kafka setup consists of 9 brokers distributed across 3 distinct Availability Zones (AZs).
 
-The [test agent](#how-to-repeat-the-tests) orchestrates the provisioning and establishment of MQTT clients, allowing for flexible configuration of their count.
-These clients operate persistently, continuously publishing time-series data over MQTT to designated topics.
-Furthermore, the agent facilitates the provisioning of MQTT clients that subscribe by topic filters to receive the messages published by the aforementioned clients.
-
 Various IoT device profiles differ based on the number of messages they produce and the size of each message.
 We have emulated smart tracker devices that send messages with five data points. The size of a single "publish" message is approximately **114 bytes**.
 Below you can see the emulated message structure with some differences from a real test case since the test agent generates the payload values.
@@ -38,6 +34,10 @@ As a consequence, each subscriber is capable of receiving 6k messages per second
 In the described scenario, the ThingsBoard MQTT broker cluster consistently sustains 100,000,500 connections and efficiently handles the processing 
 of 3M messages per second, resulting in a total of 10,800M messages over the course of 1-hour test run.
 
+The [test agent](#how-to-repeat-the-tests) orchestrates the provisioning and establishment of MQTT clients, allowing for flexible configuration of their count.
+These clients operate persistently, continuously publishing time-series data over MQTT to designated topics.
+Furthermore, the agent facilitates the provisioning of MQTT clients that subscribe by topic filters to receive the messages published by the aforementioned clients.
+
 In contemplation of the warm-up phase for the clients, it is noteworthy to acknowledge that 6 iterations of publishers transmitting a single message each took place. 
 Consequently, a total of 600M warm-up messages were generated within a span of ~7 minutes. 
 These warm-up messages serve the purpose of preparing the system and initiating the flow of data.
@@ -47,8 +47,8 @@ This figure encapsulates both the warm-up messages and the subsequent messages g
 This substantial volume of data amounts to approximately 1TB, which is stored in the initial Kafka topic labeled as `tbmq.msg.all`.
 Each individual subscriber, being configured as an APPLICATION subscriber, has its dedicated topic within Kafka 
 where it receives a cumulative total of 22.8M messages for further processing and analysis.
-Notably, with the configuration of 500 APPLICATION subscribers, the data collection process solely relies on Kafka, and Postgres is not involved. 
-This is because the persistent clients categorized as `DEVICE` are not included in the current configuration setup.
+Notably, with the configuration of 500 subscribers, the data collection process solely relies on Kafka, and Postgres is not involved. 
+This is because only the persistent clients categorized as `APPLICATION` are included in the current configuration setup.
 
 **Tip**: to plan and manage the Kafka disk space, please, adjust the [size retention policy](https://kafka.apache.org/documentation/#brokerconfigs_log.retention.bytes) 
 and [period retention policy](https://www.baeldung.com/kafka-message-retention). 
@@ -111,9 +111,9 @@ and 95th is the 95th percentile of the respectful latency statistics.
 
 ThingsBoard MQTT Broker cluster in the current configuration contains the capacity to process an even bigger load. Kafka provides reliable and highly-available processing of messages.
 In this scenario, the utilization of `APPLICATION` subscribers and the nature of the test resulted in minimal load on PostgreSQL, with only a few operations executed per second.
-There is no communication between the TB MQTT broker nodes that helped scale horizontally to achieve the mentioned results.
-Although employing a QoS level of 0 would further elevate the message rate, our intention was to demonstrate the MQTT broker's processing capabilities with a more generic setup.
-In practice, a QoS level of 1 is widely favored as it strikes a balance between message delivery speed and reliability, making it a popular configuration choice.
+There is no direct communication between the TB MQTT broker nodes that helped scale horizontally to achieve the mentioned results.
+Although employing a QoS level of 0 would further elevate the message rate, our intention was to demonstrate the MQTT broker's processing capabilities with a more practical setup.
+In general, a QoS level of 1 is widely favored as it strikes a balance between message delivery speed and reliability, making it a popular configuration choice.
 ThingsBoard MQTT Broker is a great choice for both low and high message rates. 
 It excels in various processing use cases, such as fan-in and fan-out scenarios, and proves equally suitable for deployments of various scales.
 Thanks to its inherent capacity for both vertical and horizontal scalability, the broker adapts to the demands of either small-scale or large-scale deployments.
