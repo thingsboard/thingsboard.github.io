@@ -11,12 +11,12 @@ toc:
   path: /docs/mqtt-broker/security/
 - title: Features
   section:
+    - title: MQTT client type
+      path: /docs/mqtt-broker/user-guide/mqtt-client-type/
     - title: Shared Subscriptions
       path: /docs/mqtt-broker/user-guide/shared-subscriptions/
     - title: Retained Messages
       path: /docs/mqtt-broker/user-guide/retained-messages/
-    - title: MQTT client type
-      path: /docs/mqtt-broker/user-guide/mqtt-client-type/
 - title: Administration UI
   section:
     - title: Monitoring
