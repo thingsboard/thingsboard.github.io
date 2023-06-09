@@ -1,70 +1,53 @@
+* TOC
+{:toc}
 
 Retained Messages is an MQTT feature that allows storing the "last known good" message for a 
 particular topic on the broker and delivering the message to a client whenever the client subscribes to a matching topic.
 
-This feature can useful in different cases. For example, if you have a rain sensor that periodically updates status when the weather condition
-changes and a new subscriber subscribes to this status. The subscriber would not receive the last status and would need to wait until the next update.
-But using the retained messages feature guarantees that subscribers will get the last successfully published message from the broker.
-
-**CHECK WITH QOS usage if such case possible.**
-
-Important notes on retained messages:
+There are a few important notes to mention regarding retained messages:
 * Only **one message** can be stored on the broker **per topic**.
 * The **next message** published on the same topic will **replace the previous one**.
 * The subscribers for the topic will receive **only the last message**.
 
 ### Publish Retained Message
 
-Basically, retained message is a normal MQTT message that has flag `retained` set to `true`. E.g. in  use `-r/--retain` flag.
-Let’s review a simple command to upload status readings using [Eclipse Mosquitto]() to ThingsBoard MQTT Broker as retained message to a topic `demo/topic`.
+In MQTT, a retained message is a regular message with the `retained` flag set to `true`.
+Let's consider a simple command using `mosquitto_pub` to publish a retained message. Do not forget to put your hostname instead of `YOUR_MQTT_BROKER_HOST`.
 
 ```shell
-mosquitto_pub -d -h "YOUR_MQTT_BROKER_HOST" -p 1883 -q 1 -t demo/topic -m {"status":1} -r
+mosquitto_pub -d -h "YOUR_MQTT_BROKER_HOST" -p 1883 -D PUBLISH user-property hello world -q 0 -t demo/topic -V mqttv5 -m "Hello world" -r
 ```
+{: .copy-code}
 
-### Retained Message Details
+### Payload, User Properties
 
-On the WEB UI _Retained Messages_ page administator is able to check the payload message and user properties of last message for particular topic.
+To access and view the payload message and user properties of the last message for a specific topic on the WEB UI Retained Messages page, please follow these steps:
 
-#### Payload
+1. Open page Retained Messages.
+2. To view the payload of a retained message, click on the icon `{}`. 
+3. To see the User Properties of retained message click on the icon `[]`. Please note that if the button is disabled, the retained message does not have any user properties.
 
-To see the payload of retained message click on the _icon {} 'Payload'_.
-
-[image]
-
-#### User Properties
-
-```shell
-mosquitto_pub -d -h "YOUR_MQTT_BROKER_HOST" -p 1883 -D PUBLISH user-property tb_mqtt_1 user_details_1 -q 0 -t demo/topic -V mqttv5 -m "ThingsBoard MQTT" -r
-```
-
-To see the User Properties of retained message click on the _icon [] 'User Properties'_. Note, if the button is inactive - message has no User Properties.
-
-[image]
+{% include images-gallery.html imageCollection="details-retained-messages" %}
 
 ### Deleting Retained Message
 
-Deleting a retained message is simple. You can send a retained message with a zero-byte payload on the topic where you want to delete the previous retained message. 
-The broker deletes the retained message, and new subscribers no longer receive the retained message for that topic.
+Deleting a retained message is a straightforward process. To remove a previous retained message, you can send a new retained message with a `zero-byte payload` to the 
+specific topic associated with the retained message you want to delete. Subsequently, any new subscribers to that topic will no longer receive the previously retained message.
 
-For example, this simple command will delete retained message for topic `demo/topic` by sending `-n` flag as zero-byte.
+To delete a retained message for the topic `demo/topic`, you can use the following command, specifying the `-n` flag with a zero-byte payload:
 
 ```shell
 mosquitto_pub -d -h "YOUR_MQTT_BROKER_HOST" -p 1883 -q 1 -t demo/topic -n -r
 ```
+{: .copy-code}
 
-Or you can use WEB UI of ThingsBoard MQTT Broker to delete messages.
+To delete retained messages using the WEB UI of ThingsBoard MQTT Broker, you have two options based on the number of messages you want to delete:
+1. **Deleting a Single Retained Message.** Click on the icon 'Delete retained message' and confirm action.
+2. **Deleting Multiple Retained Messages:** 
+  * Select messages you want to delete.
+  * Click on the 'Delete retained messages' button in the top right corner and confirm the action when prompted.
 
-To **delete single** retained message:
-- Click on the _icon trash 'Delete retained message'_ and confirm action.
-
-[image]
-
-To **delete multiple** retained messages:
-- Click on the checkbox icon.
-- Click _Delete retained messages_ button in the top right corner and confirm action.
-
-[image]
+{% include images-gallery.html imageCollection="delete-retained-messages" %}
 
 ### Clearing Empty Retained Message Nodes
 
@@ -75,6 +58,6 @@ These empty nodes can cause inefficiencies and waste memory resources.
 Clearing empty retained message nodes frees up memory, resources and can improve the performance of the broker, 
 as it can process MQTT messages more quickly when there are fewer empty nodes to search through.
 
-To Clear empty retained message nodes click on the _trash icon_ in the top right corner of the Retained messages table.
+To Clear empty retained message nodes click on the button 'Clear empty retained messages nodes' in the top right corner and confirm action.
 
-[image]
+{% include images-gallery.html imageCollection="clear-empty-retained-messages" %}

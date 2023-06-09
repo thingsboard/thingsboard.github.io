@@ -14,7 +14,7 @@ add-client-credentials:
 change-password-basic-credentials:
   0:
     image: /images/mqtt-broker/user-guide/ui/change-password-1.png
-    title: 'Go to Client Credentials page, click on the corresponding row and click the Edit button.'
+    title: 'Go to the Credentials page, click on the corresponding row and click the Edit button.'
   1:
     image: /images/mqtt-broker/user-guide/ui/change-password-2.png
     title: "Click the Change password button."
@@ -24,11 +24,11 @@ change-password-basic-credentials:
 
 delete-client-credentials:
   0:
-    image: /images/mqtt-broker/user-guide/ui/delete-client-credentials-1.png
-    title: 'Find the user in the Admins table and click on the corresponding row.'
+    image: /images/mqtt-broker/user-guide/ui/delete-credentials-1.png
+    title: 'Delete single. Click on the icon "Delete".'
   1:
-    image: /images/mqtt-broker/user-guide/ui/delete-client-credentials-2.png
-    title: 'Click the Delete Client Credentials button and confirm the action by selecting Yes.'
+    image: /images/mqtt-broker/user-guide/ui/delete-credentials-2.png
+    title: 'Delete mulptiple. Click on the checkboxes and confirm action by clicking on the button "Delete" in the top right corner.'
 
 ---
 

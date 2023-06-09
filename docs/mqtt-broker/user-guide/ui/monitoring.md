@@ -1,8 +1,8 @@
 ---
 layout: docwithnav-mqtt-broker
-title: Monitoring Tools
+title: Monitoring
 description: ThingsBoard MQTT Broker Monitoring Tools
 
 ---
 
-{% include docs/mqtt-broker/user-guide/monitoring.md %}
+{% include docs/mqtt-broker/user-guide/ui/monitoring.md %}

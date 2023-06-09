@@ -1,4 +1,7 @@
 
+* TOC
+{:toc}
+
 Shared subscriptions are the MQTT version 5 feature that allows multiple clients to share a single subscription and receive messages from the subscribed topic. 
 
 Shared subscriptions can help in:
@@ -35,6 +38,8 @@ In order to add new shared subscriptions please follow next steps:
      * **Can not be changed afrer creation.**
 3. Click the _Add_ button.
 
+{% include images-gallery.html imageCollection="add-shared-subscriptions" %}
+
 ## Editing Shared Subscriptions
 
 In the current version of the ThingsBoard MQTT Broker only field Name of shared subscription can be edited after creation.
@@ -56,3 +61,5 @@ There are a few ways of deleting:
    * Click on the row and then click the _Delete Application Shared Subscription_ button in the entity details right side panel.
 2. **Delete mulptiple**.
    * By clicking on the checkbox you can select multiple items. Then click the Delete icon in the top right corner and confirm action.
+
+{% include images-gallery.html imageCollection="delete-shared-subscriptions" %}
