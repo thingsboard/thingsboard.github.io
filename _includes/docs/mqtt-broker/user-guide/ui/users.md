@@ -26,11 +26,11 @@ To edit the details of an existing administrator, please follow these steps:
 
 {% include images-gallery.html imageCollection="edit-user-broker" %}
 
-Please note that users may change their own email addresses only via the _Profile_ page. Refer to the [docs]() for further information.
+Please note that users may change their own email addresses only via the _Profile_ page. 
 
 ## Delete User
 
-Logged-in user can delete other users, but not itself. To delete user click follow these steps:
+Logged-in user can delete other users, but not itself. To delete user follow these steps:
 
 1. Find the user in the _Admins_ table and click on the corresponding row.
 2. Click the _Delete user_ button and confirm the action by selecting _Yes_.
