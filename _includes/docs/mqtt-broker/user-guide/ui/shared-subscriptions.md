@@ -2,25 +2,18 @@
 * TOC
 {:toc}
 
-Shared subscriptions are the MQTT version 5 feature that allows multiple clients to share a single subscription and receive messages from the subscribed topic. 
-
-Shared subscriptions can help in:
-* Reducing the number of connections and subscriptions.
-* Improving scalability and resource efficiency.
-* Providing more flexibility in distributing messages to clients.
-
-However, the feature also has limitations such as limited message ordering, potential message loss, and increased complexity. 
-More details about architecture and usage of Shared Subscriptions feature in the ThingsBoard MQTT Broker you can find the [docs]().
+The Application Shared Subscription entity provides the capability to leverage the [Shared Subscriptions](/docs/mqtt-broker/user-guide/shared-subscriptions/) 
+feature for **APPLICATION** clients. This feature enables multiple clients to subscribe and receive messages from a shared subscription.
 
 ## Usage Notes
 
-In the ThinsBoard MQTT Broker shared subscriptions are entities that used for management of shared subscriptions.
+In the ThinsBoard MQTT Broker Application shared subscriptions are entities that used for management of shared subscriptions.
 
-* Add shared subscriptions if you plan to use these entities with [Application clients]().
-* After creation **Topic filter** and **Partitions** fields **can not be changed**, instead only Name is editable.
+* Add Application shared subscriptions if you plan to use shared subscriptions feature with [Application clients](/docs/mqtt-broker/user-guide/mqtt-client-type/#application-client).
+* After creation of the entity **Topic filter** and **Partitions** fields **can not be changed**.
 * Application Shared Subscription feature **works with MQTT v5 and earlier versions**.
 
-Broker administrators are able to manage shared subscriptions via Web UI or [REST API]().
+Broker administrators are able to manage shared subscriptions via Web UI or [REST API](/docs/mqtt-broker/application-shared-subscription/).
 
 ## Adding Shared Subscription
 
@@ -37,6 +30,9 @@ In order to add new shared subscriptions please follow next steps:
 
 {% include images-gallery.html imageCollection="add-shared-subscriptions" %}
 
+Upon executing the aforementioned actions, a Kafka topic named `tbmq.msg.app.shared.city.slw.home.mlw` will be added.
+{% include templates/mqtt-broker/application-shared-subscriptions.md %}
+
 ## Editing Shared Subscriptions
 
 In the current version of the ThingsBoard MQTT Broker only field Name of shared subscription can be edited after creation.
@@ -49,14 +45,17 @@ To edit entity please do the following steps:
 
 ## Deleting Shared Subscriptions
 
-Shared Subscriptions entities can be removed from the ThingsBoard MQTT Broker system using the Web UI or [REST Api]().
+Shared Subscriptions entities can be removed from the ThingsBoard MQTT Broker system using the Web UI or [REST API](/docs/mqtt-broker/application-shared-subscription/).
 
 There are a few ways of deleting:
 
 1. **Delete single**.
-   * Click on the Delete icon in the corresponding row of the credentials and confirm action.
+   * Click on the Delete icon in the corresponding row of the subscriptions and confirm action.
    * Click on the row and then click the _Delete Application Shared Subscription_ button in the entity details right side panel.
-2. **Delete mulptiple**.
+2. **Delete multiple**.
    * By clicking on the checkbox you can select multiple items. Then click the Delete icon in the top right corner and confirm action.
 
 {% include images-gallery.html imageCollection="delete-shared-subscriptions" %}
+
+Once you delete Application Shared Subscription entity, the respectful Kafka topic will also be deleted.
+**Note**, for this `TB_KAFKA_ENABLE_TOPIC_DELETION` environment variable should be set to `true`.
