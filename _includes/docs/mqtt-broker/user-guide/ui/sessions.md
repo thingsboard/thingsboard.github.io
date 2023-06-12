@@ -2,6 +2,11 @@
 * TOC
 {:toc}
 
+The respective page offers the capability to observe and analyze all the sessions stored within the broker's system. 
+This encompasses both the existing online sessions, representing clients currently connected to the broker, and the disconnected sessions of persistent clients. 
+By accessing this page, users can gain a comprehensive overview of all stored sessions, enabling them to monitor and 
+manage both the active and historical records of client interactions with the broker.
+
 ### Session Details
 
 To access the detailed information of the current ThingsBoard MQTT Broker sessions, please follow these steps:
@@ -12,7 +17,7 @@ The details dialog will appear, providing you with basic information about the s
 * Connected At time. 
 * Disconnected At time.
 * Keep Alive (seconds) - indicates the duration for which the Broker and Client can remain without communication before the session is closed.
-* Node name.
+* Node ID.
 * Clean Start. If the checkbox is set to true, it means that the session is non-persistent. In other words, all information and messages from the previous persistent session will be lost upon disconnection.
 * Client ID.
 * Client IP.
