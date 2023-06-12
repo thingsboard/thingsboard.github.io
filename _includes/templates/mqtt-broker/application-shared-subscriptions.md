@@ -1,3 +1,4 @@
+
 The construction of the topic name is determined by mapping the MQTT topic filter to the corresponding Kafka topic. 
 This mapping is achieved by following a specific naming convention (MQTT topic filter -> Kafka topic).
 
