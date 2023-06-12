@@ -14,24 +14,29 @@ At the top of the **Home** page, you will find a set of five charts that display
   - **Sessions.** The number of current MQTT sessions is represented in this chart.
   - **Subscriptions.** This chart displays the number of current subscriptions.
 
-Please note that on the [Monitoring]() page, users have the ability to delve deeper into the chart data. They can zoom in on specific sections, set custom date ranges to display data, or open the charts in full-screen mode.
+Please note that on the Monitoring page, users have the ability to delve deeper into the chart data. 
+They can zoom in on specific sections, set custom date ranges to display data, or open the charts in full-screen mode.
 
 ![image](/images/mqtt-broker/user-guide/ui/monitoring-page.png)
 
-### Sessions 
+### Sessions
+
 The Sessions card provides an overview of both connected and disconnected sessions. 
-Users can access comprehensive information about these sessions, including their status, duration, and additional details by going to the [Sessions]() page.
+Users can access comprehensive information about these sessions, including their status, duration, and additional details by going to the [Sessions](/docs/mqtt-broker/user-guide/ui/sessions/) page.
 
 ### Credentials
-The system displays the number of Client Credentials categorized into two types: **Device** and **Application**. For more information regarding the different types of Credentials, please refer to the [documentation]().
+
+The system displays the number of Client Credentials categorized into two types: **Device** and **Application**. 
+For more information regarding the different types of Credentials, please refer to the [documentation](/docs/mqtt-broker/user-guide/mqtt-client-type/).
 
 ![image](/images/mqtt-broker/user-guide/ui/sessions-credentials-card.png)
  
 ### Config
+
 Contains information regarding some commonly used configuration parameters:
   - **Port MQTT.** By default, the TCP listener is enabled on the `1883` port. To modify port, you can set the `LISTENER_TCP_BIND_PORT` environment variable.
-  - **TLS TCP Port.** The SSL/TLS listener is enabled on port `8883` by default. To change the default port, set the `LISTENER_SSL_BIND_PORT` environment variable.
-  - **TCP Listener.** Is disabled by default. To enable it, set the `LISTENER_TCP_ENABLED` environment variable to `true`.
+  - **TLS TCP Port.** The SSL/TLS listener is disabled by default on port `8883`. To change the default port, set the `LISTENER_SSL_BIND_PORT` environment variable.
+  - **TCP Listener.** Is enabled by default. To disable it, set the `LISTENER_TCP_ENABLED` environment variable to `false`.
   - **TLS Listener.** Is disabled by default. To enable the SSL/TLS listener, set the `LISTENER_SSL_ENABLED` environment variable to `true`.
   - **TCP Listener Max Payload Size.** This parameter defines the maximum allowed size of the payload in a TCP message. The default value is `65536` bytes. To modify it, set the `TCP_NETTY_MAX_PAYLOAD_SIZE` environment variable in bytes.
   - **TLS Listener Max Payload Size.** Similar to the TCP listener, this parameter specifies the maximum allowed size of the payload in an SSL/TLS-encrypted message. The default value is `65536` bytes. To change it, set the `SSL_NETTY_MAX_PAYLOAD_SIZE` environment variable in bytes.
@@ -41,26 +46,29 @@ Contains information regarding some commonly used configuration parameters:
 ![image](/images/mqtt-broker/user-guide/ui/config-card.png)
 
 ### Kafka Brokers
+
 Displays basic information regarding the Kafka Brokers:
-- **Address.**
-- **Size.**
+- **Address.** Address of the Kafka broker.
+- **Size.** Size of data stored on the broker.
 
 ![image](/images/mqtt-broker/user-guide/ui/kafka-brokers-card.png)
 
 ### Kafka Topics
+
 Displays basic information regarding the Kafka Topics:
-- **Name.**
-- **Partitions.**
-- **Replicas.**
-- **Size.**
+- **Name.** Name of Kafka topic.
+- **Partitions.** Number of partitions in the topic.
+- **Replicas.** Replication factor of the topic.
+- **Size.** Size of the topic.
 
 ![image](/images/mqtt-broker/user-guide/ui/kafka-topics-card.png)
 
 ### Kafka Consumer Groups
-Displays basic information regarding the Kafka Consumer Groups:
-- **ID.**
-- **State.**
-- **Members.**
-- **Lag.**
+
+Displays basic information regarding the Kafka Consumer Groups (CG):
+- **ID.** Consumer Group ID.
+- **State.** State of the CG. Can be `STABLE`, `PREPARING_REBALANCE`, `COMPLETING_REBALANCE`, `EMPTY`, `DEAD` or `UNKNOWN`.
+- **Members.** Number of consumers in the CG.
+- **Lag.** Sum of all consumers lags within the group. Consumer lag is the delta between the consumer's last committed offset and the producer's end offset.
 
 ![image](/images/mqtt-broker/user-guide/ui/kafka-consumer-groups-card.png)
