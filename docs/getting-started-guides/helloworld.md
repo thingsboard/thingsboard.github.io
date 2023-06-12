@@ -213,14 +213,16 @@ step72:
     3:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-4-ce.png
         title: 'You have changed the owner of the device. In the "Customer" column, you can see the owners name of the device;'
-    4:
+
+step72_1:
+    0:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-5-ce.png
         title: 'Navigate to "Customers" page to make sure that the device is assigned to your customer. Find your customer in the list of customers and then click on the "Manage customer devices" icon;'
-    5:
+    1:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-6-ce.png
         title: 'The device is with your client.'
 
-step72_1:
+step72_2:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-8-ce.png
         title: 'Click on the "+" icon in the top right corner of the table. Input device name (for example, "Thermostat") and navigate to the "Customer" tab;'
@@ -423,9 +425,13 @@ Let's assign device to the customer. The customer users will have ability to rea
 
 {% include images-gallery.html imageCollection="step72" showListImageTitles="true" %}
 
-You can make the customer the owner of the device during its creation stage.
+Make sure that the device is assigned to your customer.
 
 {% include images-gallery.html imageCollection="step72_1" showListImageTitles="true" %}
+
+You can make the customer the owner of the device during its creation stage.
+
+{% include images-gallery.html imageCollection="step72_2" showListImageTitles="true" %}
 
 #### Step 7.3 Assign dashboard to Customer
 
