@@ -20,7 +20,7 @@ security-authorization:
     title: 'TLS authorization rules examples.'
   3:
     image: /images/mqtt-broker/features/security-authorization-4.png
-    title: 'TLS rule pattern examples of filter/allow all/forbid all.'
+    title: 'TLS rule pattern examples of allow all/forbid all.'
 
 ---
 
