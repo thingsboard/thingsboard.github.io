@@ -5,7 +5,7 @@ You can refer to the ThingsBoard MQTT Broker documentation to set up the broker 
 <div class="doc-features row mt-4">
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/">
-            <img class="feature-logo" src="/images/feature-logo/tbmq-logo.svg"/>
+            <img class="feature-logo" src="/images/feature-logo/thingsboard-logo.svg"/>
             <div class="feature-title">What is ThingsBoard MQTT Broker?</div>
             <div class="feature-text">
                 <ul>
