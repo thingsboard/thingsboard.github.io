@@ -23,7 +23,7 @@ This guide will help you to set up ThingsBoard MQTT Broker in cluster mode using
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
 ```bash
-docker pull thingsboard/tb-mqtt-broker:1.0.0-SNAPSHOT
+docker pull thingsboard/tb-mqtt-broker:{{ site.release.broker_full_ver }}
 ```
 {: .copy-code}
 
