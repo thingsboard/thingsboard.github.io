@@ -1,6 +1,14 @@
 
-**ThingsBoard MQTT Broker** is an open-source MQTT message broker that is specifically designed to operate quickly and reliably in common scenarios.
-It is developed using Java and uses Kafka as an internal tool for persisting and processing messages.
+**ThingsBoard MQTT Broker** represents an open-source MQTT message broker renowned for its remarkable capacity to handle a staggering number of connected MQTT clients, 
+reaching up to **4M** clients, while proficiently processing a minimum of **200K messages per second** per node. 
+In the cluster mode, its capabilities are further enhanced, enabling it to effortlessly support an impressive **100M** concurrently connected clients 
+and handle **3M messages per second**. For more comprehensive insights and detailed information, kindly refer to the [performance tests page](/docs/mqtt-broker/reference/performance-tests/).
+
+Implemented in Java, this cutting-edge solution is developed utilizing prominent open-source technologies such as Kafka, 
+which ensures low-latency message delivery, data durability, and horizontal scalability of the platform.
+
+Commencing in 2018, an active and continuous development process was initiated, leading to the integration of the broker into commercial applications as of 2021. 
+Following its successful deployment in production environments, it was determined in early 2023 that a public version of the broker should be made available.
 
 #### ThingsBoard MQTT Broker Features
 
