@@ -69,6 +69,8 @@ services:
       KAFKA_LOG_SEGMENT_BYTES: 268435456
       KAFKA_LOG_RETENTION_MS: 300000
       KAFKA_LOG_CLEANUP_POLICY: delete
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
   tb-mqtt-broker:
     restart: always
     image: "thingsboard/tb-mqtt-broker:1.0.0-SNAPSHOT"
