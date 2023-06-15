@@ -765,7 +765,7 @@ environment variable, default value, and description.
       <tr>
           <td>sql.ts_key_value_partitioning</td>
           <td>SQL_TS_KV_PARTITIONING</td>
-          <td>MONTHS</td>
+          <td>DAYS</td>
           <td>Specify partitioning size for timestamp key-value storage. Example: DAYS, MONTHS, YEARS, INDEFINITE</td>
       </tr>
       <tr>
@@ -801,8 +801,8 @@ environment variable, default value, and description.
       <tr>
           <td>sql.ttl.ts.ts_key_value_ttl</td>
           <td>SQL_TTL_TS_KEY_VALUE_TTL</td>
-          <td>0</td>
-          <td>The parameter to specify system TTL(Time To Live) value for time-series records. Value set in seconds. 0 - records are never expired</td>
+          <td>604800</td>
+          <td>The parameter to specify system TTL(Time To Live) value for time-series records. Value set in seconds. 0 - records are never expired. Default value corresponds to seven days</td>
       </tr>
       <tr>
           <td>db.connection-check-rate-ms</td>
