@@ -66,7 +66,7 @@ step32:
         title: 'Click "Save";'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-6-pe.png
-        title: 'Finally, click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.'
+        title: 'Finally, click "Apply changes" in the dashboard editor to save the changes.'
 
 step33:
     0:
@@ -74,7 +74,7 @@ step33:
         title: 'Enter edit mode. Click on the "Add new widget" button;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-2-pe.png
-        title: Select the "Cards" widget bundle;'
+        title: 'Select the "Cards" widget bundle;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-3-pe.png
         title: 'Select the "Entities table" widget;'
@@ -83,10 +83,10 @@ step33:
         title: 'The "Add Widget" window will appear. Click "Add" to add the data source. A widget may have multiple data sources, but we will use only one in this case;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-5-pe.png
-        title: 'Select "My Device" entity alias. Then click on the input field on the right. The auto-complete with available data points will appear. Select "temperature" data point and click "Add";'        
+        title: 'Select "My Device" entity alias. Then click on the "Latest data key" field on the right. The auto-complete with available data points will appear. Select "temperature" data point and click "Add";'        
     5:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-6-pe.png
-        title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. You can also play with the advanced settings if you would like to edit the widget. Apply changes.'
+        title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. Apply changes.'
 
 step34:
     0:
@@ -311,7 +311,7 @@ step74:
 step75:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-7-5-activate-customer-user-1-pe.png
-        title: 'To set the password, paste the previously copied link into a new browser tab and press Enter. Come up with and enter a password twice, then press "Create Password". You will automatically login as a customer user;'
+        title: 'Paste the previously copied link into a new browser tab and press Enter. Come up with and enter a password twice, then press "Create Password". You will automatically login as a customer user;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-7-5-activate-customer-user-2-pe.png
         title: 'You have logged in as a Customer User. You may browse the data and acknowledge/clear alarms.'

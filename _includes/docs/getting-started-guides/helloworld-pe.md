@@ -71,6 +71,8 @@ You may learn more about different aliases [here](/docs/{{docsPrefix}}user-guide
 
 ### Step 3.3 Add table widget
 
+Entity Table widget displays the latest values with list of entities that matches selected alias and filter with ability of additional full text search and pagination options.
+
 To add the table widget we need to select it from the widget library. Widgets are grouped into widget bundles.
 Each widget has a data source. This is how the widget "knows" what data to display.
 To see the latest value of our "temperature" data that we sent during step 2, we should configure the data source.
@@ -81,6 +83,8 @@ Congratulations! You have added the first widget. Now you are able to send a new
 
 ### Step 3.4 Add chart widget
 
+Chart widgets allow you to display time series data with customizable line charts and bar charts.
+
 To add the chart widget we need to select it from the widget library. 
 Chart widget displays multiple historical values of the same data key ("temperature" in our case).
 We should also configure the time window to use the chart widget.
@@ -90,6 +94,9 @@ We should also configure the time window to use the chart widget.
 Congratulations! You have added chart widget. Now you are able to send new telemetry reading and it will immediately appear in the chart. 
 
 ### Step 3.5 Add alarm widget
+
+Alarms table widget displays alarms related to the specified entity in the certain time window.
+Alarm widget is configured by specifying an entity as the alarm source, and the corresponding alarm fields.
 
 {% include images-gallery.html imageCollection="step35" showListImageTitles="true" %}
 

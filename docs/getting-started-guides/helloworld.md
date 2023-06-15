@@ -66,7 +66,7 @@ step32:
         title: 'Click "Save";'
     5:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-6-ce.png
-        title: 'Finally, click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.'
+        title: 'Finally, click "Apply changes" in the dashboard editor to save the changes.'
 
 step33:
     0:
@@ -83,10 +83,10 @@ step33:
         title: 'The "Add Widget" window will appear. Click "Add" to add the data source. A widget may have multiple data sources, but we will use only one in this case;'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-5-ce.png
-        title: 'Select "My Device" entity alias. Then click on the input field on the right. The auto-complete with available data points will appear. Select "temperature" data point and click "Add";'
+        title: 'Select "My Device" entity alias. Then click on the "Latest data key" field on the right. The auto-complete with available data points will appear. Select "temperature" data point and click "Add";'
     5:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-6-ce.png
-        title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. You can also play with the advanced settings if you would like to edit the widget. Apply changes.'
+        title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. Apply changes.'
 
 step34:
     0:
@@ -270,7 +270,7 @@ step74:
 step75:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-1-ce.png
-        title: 'To set the password, paste the previously copied link into a new browser tab and press Enter. Come up with and enter a password twice, then press "Create Password". You will automatically login as a customer user;'
+        title: 'Paste the previously copied link into a new browser tab and press Enter. Come up with and enter a password twice, then press "Create Password". You will automatically login as a customer user;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-2-ce.png
         title: 'You have logged in as a Customer User. You may browse the data and acknowledge/clear alarms.'
@@ -358,6 +358,8 @@ You may learn more about different aliases [here](/docs/user-guide/ui/aliases/).
 
 ### Step 3.3 Add Table Widget
 
+Entity Table widget displays the latest values with list of entities that matches selected alias and filter with ability of additional full text search and pagination options.
+
 To add the table widget we need to select it from the widget library. Widgets are grouped into widget bundles.
 Each widget has a data source. This is how the widget "knows" what data to display.
 To see the latest value of our "temperature" data that we sent during step 2, we should configure the data source.
@@ -368,6 +370,8 @@ Congratulations! You have added the first widget. Now you can send new telemetry
 
 ### Step 3.4 Add Chart Widget
 
+Chart widgets allow you to display time series data with customizable line charts and bar charts.
+
 To add the chart widget we need to select it from the widget library. 
 Chart widget displays multiple historical values of the same data key ("temperature" in our case).
 We should also configure the time window to use the chart widget.
@@ -377,6 +381,9 @@ We should also configure the time window to use the chart widget.
 Congratulations! You have added a chart widget. Now you can send new telemetry reading and it will immediately appear in the chart. 
 
 ### Step 3.5 Add Alarm Widget
+
+Alarms table widget displays alarms related to the specified entity in the certain time window (for example, “Alarms table”). 
+Alarm widget is configured by specifying an entity as the alarm source, and the corresponding alarm fields.
 
 {% include images-gallery.html imageCollection="step35" showListImageTitles="true" %}
 
