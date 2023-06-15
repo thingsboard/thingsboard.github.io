@@ -38,7 +38,7 @@ ThingsBoard MQTT Broker is designed to be:
 
 * **scalable**: the platform is horizontally scalable and built using the leading open-source technologies.
 * **fault-tolerant**: there is no single point of failure, and every node in the cluster is identical, ensuring high availability and fault tolerance.
-* **robust and efficient**: depending on the use case, a single server node can handle tens of thousands of clients and messages per second, making it highly efficient.
+* **robust and efficient**: depending on the use case, a single server node can handle millions of clients and hundreds of thousands of messages per second, making it highly efficient.
 * **durable**: the broker ensures data durability, preventing data loss.
 
 See [**ThingsBoard MQTT Broker Architecture**](/docs/mqtt-broker/architecture) for more details.
