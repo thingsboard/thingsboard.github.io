@@ -58,7 +58,7 @@ Retained messages in the broker are stored in the memory using the [Trie](https:
 which is known for its efficient searching capabilities.
 The Trie (also called a prefix tree) is a tree-based data structure that allows for quick retrieval of information based on a key or a sequence of characters.
 
-The Trie organizes the topic filters in a hierarchical manner, where each node represents a topic level from the topic filter.
+The Trie organizes the topic names in a hierarchical manner, where each node represents a topic level from the topic name.
 By using the Trie data structure, the broker can quickly locate and retrieve retained messages based on the topic filter provided by a subscribing client. 
 This ensures that clients receive the retained messages they are interested in without significant delays, contributing to improved performance and responsiveness of the broker.
 
