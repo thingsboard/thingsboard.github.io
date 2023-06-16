@@ -19,7 +19,7 @@ This guide will help you to set up ThingsBoard MQTT Broker in AWS EKS.
 Run the following command to verify that you can pull the image from the Docker hub.
 
 ```bash
-docker pull thingsboard/tb-mqtt-broker:{{ site.release.broker_full_ver }}
+docker pull thingsboard/tbmq-node:{{ site.release.broker_full_ver }}
 ```
 {: .copy-code}
 
