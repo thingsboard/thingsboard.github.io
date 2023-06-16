@@ -4,34 +4,69 @@ assignees:
 - ashvayka
 title: Customers
 description: ThingsBoard Customers management
-customers-pe:
-    0:
-        image: /images/user-guide/ui/customers/pe/customer-pe.png
-        title: 'Customer can manage the account at its own level: devices, rule chains, assets, etc.'
 
-customer-addnew-pe:
+customer-add-new-pe:
     0:
-        image: /images/user-guide/ui/customers/pe/add-new-customer-pe.png
-        title: 'Click the plus sign in the upper right corner of the screen. In the opened dialog box, enter a name of the new customer and click Add;'
+        image: /images/user-guide/ui/customers/pe/create-customer-1-pe.png
+        title: 'Navigate to the "Customers" page. By default, you navigate to the customer group "All". Then click the plus sign in the upper right corner of the screen;'
     1:
-        image: /images/user-guide/ui/customers/pe/add-new-customer-1-pe.png
-        title: 'In the same way, you can add as many customers as you want and manage customer account'
+        image: /images/user-guide/ui/customers/pe/create-customer-2-pe.png
+        title: 'In the opened dialog box, enter the name of the new customer. Additionally, you can input personal details for the customer and assign a home dashboard. Then click "Add";'
+    2:
+        image: /images/user-guide/ui/customers/pe/create-customer-3-pe.png
+        title: 'New customer is created. You can add as many customers as you want in the same way.'
+
+customer-add-new-2-pe:
+    0:
+        image: /images/user-guide/ui/customers/pe/create-customer-4-pe.png
+        title: 'Navigate to the "Customers" page. Click the "+" sign to add a new customer. Input the customer title. Additionally, you can input personal details for the customer and assign a home dashboard. Then, click on "Next: Owner and groups" button;'
+    1:
+        image: /images/user-guide/ui/customers/pe/create-customer-5-pe.png
+        title: 'If desired, you can assign a different owner for this customer. We will leave this option unchanged. Enter a name for the new group and click "Create a new one!";'
+    2:
+        image: /images/user-guide/ui/customers/pe/create-customer-6-pe.png
+        title: 'In the opened dialog box, click "Add" to create a new customers group;'
+    3:
+        image: /images/user-guide/ui/customers/pe/create-customer-7-pe.png
+        title: 'Now, click "Add" to create a new customer;'
+    4:
+        image: /images/user-guide/ui/customers/pe/create-customer-8-pe.png
+        title: 'The customer has been created and is located in the "My Customers" group. You can navigate to this group by clicking on its name.'
 
 edit-customer-pe:
     0:
-        image: /images/user-guide/ui/customers/pe/edit-customer-pe.png
-        title: ''
-    1:
         image: /images/user-guide/ui/customers/pe/edit-customer-1-pe.png
-        title: ''
-
-deleting-customer-pe:
-    0:
-        image: /images/user-guide/ui/customers/pe/deleting-customer-pe.png
-        title: 'Click a trash can opposite to the customer name and confirm deleting an account in the dialog box.'
+        title: 'Click on a customer`s name to open their details. Click the "pencil" icon to enter edit mode;'
     1:
-        image: /images/user-guide/ui/customers/pe/deleting-customer-1-pe.png
-        title: 'In the customer details, select Delete customer and confirm deleting an account in the dialog box.'
+        image: /images/user-guide/ui/customers/pe/edit-customer-2-pe.png
+        title: 'Edit the fields. For example, you can specify a home dashboard for this customer. After that, save all changes;'
+    2:
+        image: /images/user-guide/ui/customers/pe/edit-customer-3-pe.png
+        title: 'You have updated customer information.'
+
+delete-customer-pe:
+    0:
+        image: /images/user-guide/ui/customers/pe/delete-user-1-pe.png
+        title: 'Click a trash can opposite to the customer name;'
+    1:
+        image: /images/user-guide/ui/customers/pe/delete-user-2-pe.png
+        title: 'Confirm deleting an account in the dialog box.'
+
+delete-customer-2-pe:
+    0:
+        image: /images/user-guide/ui/customers/pe/delete-user-3-pe.png
+        title: 'Click on the customer that you want to delete. In the customer details, click "Delete customer" button;'
+    1:
+        image: /images/user-guide/ui/customers/pe/delete-user-4-pe.png
+        title: 'Confirm deleting an account in the dialog box.'
+
+delete-customer-3-pe:
+    0:
+        image: /images/user-guide/ui/customers/pe/delete-user-5-pe.png
+        title: 'Mark the customers you want to delete. Click on the trash bin icon in the top right corner;'
+    1:
+        image: /images/user-guide/ui/customers/pe/delete-user-6-pe.png
+        title: 'Confirm deleting customers in the dialog box.'
 
 ---
 
