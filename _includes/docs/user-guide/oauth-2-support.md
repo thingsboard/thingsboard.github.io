@@ -189,6 +189,65 @@ If we are logged as System Administrator, you will see that Tenant name is our *
 
 We have completed our sample and now your users are not required to create accounts inside ThingsBoard - they can use already exist SSO providers for this.
 
+### Login with Casdoor
+
+Now let's add one more provider to our list - [Casdoor](https://casdoor.com/).
+This time we are going to create customers for our users inside a single domain tenant.
+
+Firstly, you should deploy a Casdoor instance.
+
+You can refer to the Casdoor official documentation for the
+[Server Installation](https://casdoor.org/docs/basic/server-installation).
+
+After a successful deployment, you need to ensure:
+
+- The Casdoor server is successfully running on **http://localhost:8000**.
+- Input `admin` and `123` to test login functionality is working fine.
+
+Then you can quickly implement a Casdoor-based login page in your own app with the following steps.
+
+To use the Casdoor platform for Login, let's create a new application like below.
+
+1. Create or use an existing Casdoor application.
+2. Add a redirect url: `http://CASDOOR_HOSTNAME/login`
+[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/cas.png&#41;)
+{% include images-gallery.html imageCollection="step29" preview="false" max-width="100%" %}
+3. Copy the client ID and client secret, we will need it in the following steps.
+
+#### Configuration of ThingsBoard
+
+Now we can add one more provider:
+
+[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/19-oauth2-add-provider.png&#41;)
+{% include images-gallery.html imageCollection="step19" preview="false" max-width="100%" %}
+
+Then select **Custom:**
+
+[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/20-oauth2-add-provider-custom.png&#41;)
+{% include images-gallery.html imageCollection="step20" preview="false" max-width="100%" %}
+
+Please provide information (**client ID** and **Client secret**) from your application details, and you may find all the required URLs in the advanced details section.
+
+Select **POST** in the *client authentication method* field. We indicate **Auth0** in the *provider label* field. Then check the “Allow user creation” checkbox. Add to the scope field: *openid, email, profile*. And go to the **Mapper** block.
+
+[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/img_2.png&#41;)
+{% include images-gallery.html imageCollection="step30" preview="false" max-width="100%" %}
+
+Select the **Basic** type and, if necessary fill in the fields *(described in more detail below in this article in the Basic mapper part).* Some configurations are available only in Professional Edition. Then, **save** the settings.
+
+[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/22-oauth2-custom-mapper-pe.png&#41;)
+{% include images-gallery.html imageCollection="step22" preview="false" max-width="100%" %}
+
+So that the resulted oauth2 configurations for OAuth0 will look similar to the provided below.
+
+
+If we navigate to Login screen, we will see two possible Login with options - **Casdoor**:
+
+[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/img_3.png&#41;)
+{% include images-gallery.html imageCollection="step31" preview="false" max-width="100%" %}
+
+Once we click it and select our *Casdoor* Account, we are going to be logged into ThingsBoard with our email's as Customer User.
+
 ### Resulted Snippet
 This snippet contains both providers that are used in our sample:
 

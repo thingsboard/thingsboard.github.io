@@ -115,6 +115,17 @@ step28:
    0:
        image: /images/user-guide/oauth-2-support/28-oauth2-google-general-mapper-custom.png
 
+step29:
+   0:
+       image: /images/user-guide/oauth-2-support/cas.png
+
+step30:
+    0:
+        image: /images/user-guide/oauth-2-support/img_2.png
+
+step31:
+    0:
+        image: /images/user-guide/oauth-2-support/img_3.png
 ---
 
 {% include docs/user-guide/oauth-2-support.md %}
