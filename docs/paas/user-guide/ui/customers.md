@@ -36,7 +36,7 @@ customer-add-new-2-pe:
 edit-customer-pe:
     0:
         image: /images/user-guide/ui/customers/pe/edit-customer-1-pe.png
-        title: 'Click on a customer`s name to open their details. Click the "pencil" icon to enter edit mode;'
+        title: 'Click on the customer to open their details. Click the "pencil" icon to enter edit mode;'
     1:
         image: /images/user-guide/ui/customers/pe/edit-customer-2-pe.png
         title: 'Edit the fields. For example, you can specify a home dashboard for this customer. After that, save all changes;'
@@ -46,26 +46,26 @@ edit-customer-pe:
 
 delete-customer-pe:
     0:
-        image: /images/user-guide/ui/customers/pe/delete-user-1-pe.png
-        title: 'Click a trash can opposite to the customer name;'
+        image: /images/user-guide/ui/customers/pe/delete-customer-1-pe.png
+        title: 'Click a trash icon can opposite the customer`s name you want to delete;'
     1:
-        image: /images/user-guide/ui/customers/pe/delete-user-2-pe.png
+        image: /images/user-guide/ui/customers/pe/delete-customer-2-pe.png
         title: 'Confirm deleting an account in the dialog box.'
 
 delete-customer-2-pe:
     0:
-        image: /images/user-guide/ui/customers/pe/delete-user-3-pe.png
+        image: /images/user-guide/ui/customers/pe/delete-customer-3-pe.png
         title: 'Click on the customer that you want to delete. In the customer details, click "Delete customer" button;'
     1:
-        image: /images/user-guide/ui/customers/pe/delete-user-4-pe.png
+        image: /images/user-guide/ui/customers/pe/delete-customer-4-pe.png
         title: 'Confirm deleting an account in the dialog box.'
 
 delete-customer-3-pe:
     0:
-        image: /images/user-guide/ui/customers/pe/delete-user-5-pe.png
-        title: 'Mark the customers you want to delete. Click on the trash bin icon in the top right corner;'
+        image: /images/user-guide/ui/customers/pe/delete-customer-5-pe.png
+        title: 'Mark one or multiple customers you want to delete. Click on the trash bin icon in the top right corner;'
     1:
-        image: /images/user-guide/ui/customers/pe/delete-user-6-pe.png
+        image: /images/user-guide/ui/customers/pe/delete-customer-6-pe.png
         title: 'Confirm deleting customers in the dialog box.'
 
 ---

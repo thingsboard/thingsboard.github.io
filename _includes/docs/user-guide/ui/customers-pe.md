@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-### Introduction
+## Introduction
 
 A Customer can be a separate business-entity: an individual, or an organization that purchases or uses tenant devices and/or assets. 
 Customer can also be a division within the Tenant organization. 
@@ -12,12 +12,12 @@ In turn, customers have an opportunity to add and edit their own customers, user
 All of these you and your customers are able to do in the user details:
 to manage such options as customer groups, [user groups](/docs/{{docsPrefix}}user-guide/ui/users/), [asset groups](/docs/{{docsPrefix}}user-guide/ui/assets/),
 [device groups](/docs/{{docsPrefix}}user-guide/ui/devices/), [entity view groups](/docs/{{docsPrefix}}user-guide/entity-views/),
-[dashboard groups](/docs/user-guide/dashboards/), and [delete a customer](#delete-customer).
+[dashboard groups](/docs/{{docsPrefix}}user-guide/dashboards/), [edges](/docs/pe/edge/), and [delete a customer](#delete-customer).
 
 
 ### Create new customer
 
-The tenant can add a customer to his account with limited permissions. Permissions for the new customer can be configured later with the help of [Roles](/docs/{{docsPrefix}}user-guide/rbac/).
+The Tenant administrator can add a customer to his account with limited permissions. Permissions for the new customer can be configured later with the help of [Roles](/docs/{{docsPrefix}}user-guide/rbac/).
 
 To add a new customer, you should:
 
@@ -34,14 +34,14 @@ Read more information about entity groups [here](/docs/{{docsPrefix}}user-guide/
 
 ### Edit customer
 
-You can edit the title, specify a home dashboard and edit the rest of the fields for this customer.
+The Tenant administrator can edit the title, specify a home dashboard and edit the rest of the fields for this customer.
 Let’s see how to do this:
 
 {% include images-gallery.html imageCollection="edit-customer-pe" showListImageTitles="true" %}
 
 ### Delete customer
 
-You can delete a customer account in two ways:
+The tenant administrator can delete a customer using one of the following ways:
 
 First way:
 
