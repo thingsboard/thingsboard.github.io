@@ -11,3 +11,5 @@ toc:
     path: /docs/mqtt-broker/install/cluster/minikube-cluster-setup/
   - title: Cluster setup with Kubernetes on AWS
     path: /docs/mqtt-broker/install/cluster/aws-cluster-setup/
+  - title: Building from sources
+    path: /docs/mqtt-broker/install/building-from-source/

@@ -54,6 +54,15 @@ notitle: "true"
                                             </span>
                                         </a>
                                     </div>
+                                    <div class="deployment-card-block">
+                                        <a href="/docs/mqtt-broker/install/building-from-source/">
+                                            <span>
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/platform/sources.svg" title="Building from sources" alt="Building from sources">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
                                </div>                    
                             </div>                        
                         </div>
