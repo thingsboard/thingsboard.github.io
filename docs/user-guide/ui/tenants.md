@@ -4,13 +4,14 @@ assignees:
 - ashvayka
 title: Tenants
 description: ThingsBoard Tenants management
+
 create-tenants-ce:
     0:
         image: /images/user-guide/tenant-profile/CE/create-tenant-1-ce.png
         title: 'Login to your ThingsBoard instance WEB UI as a system administrator;'
     1:
         image: /images/user-guide/tenant-profile/CE/create-tenant-2-ce.png
-        title: 'Navigate to the Tenants page. Then click on the "plus" icon in the top right corner;'
+        title: 'Navigate to the Tenants page. Then click on the "plus" icon in the upper right corner of the screen;'
     2:
         image: /images/user-guide/tenant-profile/CE/create-tenant-3-ce.png
         title: 'You must fill in the required fields: title and tenant profile;'
@@ -33,7 +34,7 @@ create-tenant-admin-ce:
         title: 'If you selected the option "Show activation link", copy the link address and send it to the user. Click "OK";'
     3:
         image: /images/user-guide/tenant-profile/CE/create-user-in-tenant-4-ce.png
-        title: 'New user is created.'
+        title: 'New user with tenant administrator role is created.'
 
 tenant-edit-ce:
     0:
