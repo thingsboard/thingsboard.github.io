@@ -2,7 +2,9 @@
 * TOC
 {:toc}
 
-## Rule Chains page
+## Introduction
+
+Rule Chain - nodes are connected with each other with relations, so the outbound message from rule node is sent to next connected rule nodes.
 
 Rule Chains Administration UI page displays a table of configured tenant rule chains.
 You are able to do following operations:
@@ -14,29 +16,71 @@ You are able to do following operations:
  
 See [**Rule Engine**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) documentation for more details.
 
-![image](/images/user-guide/ui/rule-chain-page.png)
+### Create new rule chain
 
-## Rule Chains import/export
+To add a new rule chain, you should:
 
-#### Rule Chain export
+{% include images-gallery.html imageCollection="create-rule-chain" showListImageTitles="true" %}
 
-You are able to export your rule chain to JSON format and import it to the same or another ThingsBoard instance.
+### Rule chains export/import
 
-In order to export rule chain, you should navigate to the **Rule Chains** page and click on the export button located on the particular rule chain row.
- 
-![image](/images/user-guide/ui/export-rule-chain.png)
+#### Rule chain export
 
-#### Rule import
+You are able to export your rule chain to а JSON file and import it to the same or another ThingsBoard instance.
 
-Similar, to import the rule chain you should navigate to the **Rule Chains** page and click on the "+" button located in the top-right corner of the **Rule chains** table and then choose "Import rule chain" option. 
+In order to export rule chain, you should:
 
-![image](/images/user-guide/ui/rule-import.png)
+{% include images-gallery.html imageCollection="export-rule-chain" showListImageTitles="true" %}
 
-**Note 1:** All imported Rule chains are **Not** Root Rule Chains.
- 
-**Note 2:** If imported Rule Chain contains references to other Rule Chains (via **Rule Chain** node), then you will need to update those references before saving Rule Chain. 
+#### Rule chain import
 
-#### Troubleshooting
+To import rule chain from а JSON file, you should:
+
+{% include images-gallery.html imageCollection="import-rule-chain" showListImageTitles="true" %}
+
+{% capture difference %}
+**Note 1:**
+<br>
+All imported Rule chains are **Not** Root Rule Chains.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+{% capture difference %}
+**Note 2:**
+<br>
+If imported Rule Chain contains references to other Rule Chains (via **Rule Chain** node), then you will need to update those references before saving Rule Chain.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+### Edit rule chain
+
+You can edit the name and description rows as well as enable/disable debug mode.
+
+{% include images-gallery.html imageCollection="edit-rule-chain" showListImageTitles="true" %}
+
+### Make rule chain as root
+
+To make rule chain as root, you should:
+
+{% include images-gallery.html imageCollection="make-rule-chain-as-root" showListImageTitles="true" %}
+
+### Delete rule chain
+
+You can delete a rule chain using one of the following ways:
+
+First way:
+
+{% include images-gallery.html imageCollection="delete-rule-chain-1" showListImageTitles="true" %}
+
+Second way:
+
+{% include images-gallery.html imageCollection="delete-rule-chain-1" showListImageTitles="true" %}
+
+You can also delete multiple rule chains at once.
+
+{% include images-gallery.html imageCollection="delete-rule-chain-3" showListImageTitles="true" %}
+
+### Troubleshooting
 
 Possible issues while importing the rule:
 
