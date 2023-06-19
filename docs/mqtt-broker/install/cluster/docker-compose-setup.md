@@ -9,7 +9,7 @@ description: Cluster setup using Docker Compose
 {:toc}
 
 
-This guide will help you to set up ThingsBoard MQTT Broker in cluster mode using Docker Compose.
+This guide will help you to set up TBMQ in cluster mode using Docker Compose.
 
 ## Prerequisites
 
@@ -18,7 +18,7 @@ This guide will help you to set up ThingsBoard MQTT Broker in cluster mode using
 
 {% include templates/install/docker-install-note.md %}
 
-## Step 1. Pull ThingsBoard MQTT Broker Image
+## Step 1. Pull TBMQ Image
 
 Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
 
@@ -27,7 +27,7 @@ docker pull thingsboard/tbmq-node:{{ site.release.broker_full_ver }}
 ```
 {: .copy-code}
 
-## Step 2. Clone ThingsBoard MQTT Broker repository
+## Step 2. Clone TBMQ repository
 
 ```bash
 git clone https://github.com/thingsboard/thingsboard-mqtt-broker.git
@@ -69,7 +69,7 @@ in you browser (e.g. [http://localhost:8083](http://localhost:8083)) and connect
 ## Step 5. Logs, stop and start commands
 
 In case of any issues you can examine service logs for errors.
-For example to see ThingsBoard Mqtt Broker logs execute the following command:
+For example to see TBMQ logs execute the following command:
 
 ```bash
 docker compose logs -f tb-mqtt-broker-1

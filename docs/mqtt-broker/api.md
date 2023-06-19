@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: ThingsBoard MQTT Broker API reference
-description: ThingsBoard MQTT Broker API reference
+title: TBMQ API reference
+description: TBMQ API reference
 
 ---
 

@@ -1,20 +1,20 @@
 ---
 layout: docwithnav-mqtt-broker
 title: Cluster setup using AWS infrastructure
-description: ThingsBoard MQTT Broker microservices setup with Kubernetes in AWS EKS
+description: TBMQ microservices setup with Kubernetes in AWS EKS
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to set up ThingsBoard MQTT Broker in AWS EKS.
+This guide will help you to set up TBMQ in AWS EKS.
 
 ## Prerequisites
 
 {% include templates/install/aws/eks-prerequisites.md %}
 
-### Pull ThingsBoard MQTT Broker image from docker hub
+### Pull TBMQ image from docker hub
 
 Run the following command to verify that you can pull the image from the Docker hub.
 
@@ -23,7 +23,7 @@ docker pull thingsboard/tbmq-node:{{ site.release.broker_full_ver }}
 ```
 {: .copy-code}
 
-## Step 1. Open ThingsBoard MQTT Broker K8S scripts repository
+## Step 1. Open TBMQ K8S scripts repository
 
 ```bash
 git clone https://github.com/thingsboard/thingsboard-mqtt-broker.git
@@ -44,8 +44,8 @@ Here are the fields you can change depending on your needs:
 
 {% capture aws-eks-security %}
 In case you want to secure access to the PostgreSQL and MSK, you'll need to configure the existing VPC or create a new one,
-set it as the VPC for the ThingsBoard MQTT Broker cluster, create security groups for PostgreSQL and MSK,
-set them for `tb-mqtt-broker` node-group in the ThingsBoard MQTT Broker cluster and configure the access from the ThingsBoard MQTT Broker cluster nodes to PostgreSQL/MSK using another security group.
+set it as the VPC for TBMQ cluster, create security groups for PostgreSQL and MSK,
+set them for `tb-mqtt-broker` node-group in TBMQ cluster and configure the access from TBMQ cluster nodes to PostgreSQL/MSK using another security group.
 
 You can find more information about configuring VPC for `eksctl` [here](https://eksctl.io/usage/vpc-networking/).
 {% endcapture %}
@@ -71,7 +71,7 @@ You'll need to set up PostgreSQL on Amazon RDS.
 One of the ways to do it is by following [this](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SettingUp.html) guide.
 
 **Note**: Make sure your database is accessible from the cluster, one of the way to achieve this is to create
-the database in the same VPC and subnets as ThingsBoard MQTT Broker cluster and use 
+the database in the same VPC and subnets as TBMQ cluster and use 
 ‘eksctl-thingsboard-mqtt-broker-cluster-ClusterSharedNodeSecurityGroup-*’ security group. See screenshots below.
 
 Here you should choose VPC with the name of your cluster:
@@ -103,11 +103,11 @@ You should see the similar image:
 
 ![image](/images/mqtt-broker/install/aws-msk-creation.png)
 
-**Note**: Make sure your MSK instance is accessible from the ThingsBoard MQTT Broker cluster.
+**Note**: Make sure your MSK instance is accessible from TBMQ cluster.
 The easiest way to achieve this is to deploy the MSK instance in the same VPC.
 We also recommend to use private subnets. This way it will be nearly impossible to accidentally expose it to the internet;
 
-Now you should choose the ThingsBoard MQTT Broker cluster's VPC for the Kafka cluster:
+Now you should choose TBMQ cluster's VPC for the Kafka cluster:
 
 ![image](/images/mqtt-broker/install/aws-msk-vpc.png)
 
@@ -121,7 +121,7 @@ Also, you should enable `Plaintext` communication between clients and brokers:
 
 **Note**, some recommendations:
 
-* Apache Kafka version can be safely set to the latest 3.4.0 version as the TB MQTT Broker is fully tested on it;
+* Apache Kafka version can be safely set to the latest 3.4.0 version as TBMQ is fully tested on it;
 * Use m5.large or similar instance types;
 * Use default 'Monitoring' settings or enable 'Enhanced topic-level monitoring'.
 
@@ -186,7 +186,7 @@ If everything went fine, you should be able to see `tb-broker-0` and `tb-broker-
 
 ## Step 9. Validate the setup
 
-Now you can open ThingsBoard MQTT Broker web interface in your browser using DNS name of the load balancer.
+Now you can open TBMQ web interface in your browser using DNS name of the load balancer.
 
 You can get DNS name of the load-balancers using the next command:
 
@@ -205,7 +205,7 @@ Use `EXTERNAL-IP` field of the `tb-broker-loadbalancer-external` to connect to t
 
 #### Troubleshooting
 
-In case of any issues you can examine service logs for errors. For example to see ThingsBoard MQTT broker logs execute the following command:
+In case of any issues you can examine service logs for errors. For example to see TBMQ logs execute the following command:
 
 ```
 kubectl logs -f tb-broker-0
@@ -222,14 +222,14 @@ See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatshee
 
 ## Cluster deletion
 
-Execute the following command to delete ThingsBoard MQTT Broker nodes:
+Execute the following command to delete TBMQ nodes:
 
 ```
 ./k8s-delete-tb-broker.sh
 ```
 {: .copy-code}
 
-Execute the following command to delete all ThingsBoard MQTT Broker nodes and configmaps:
+Execute the following command to delete all TBMQ nodes and configmaps:
 
 ```
 ./k8s-delete-all.sh

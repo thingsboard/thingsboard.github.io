@@ -2,9 +2,9 @@
 {:toc}
 
 
-## What is ThingsBoard MQTT Broker?
+## What is TBMQ?
 
-The ThingsBoard MQTT Broker represents an open-source software product developed by ThingsBoard, designed to facilitate communication between MQTT clients. 
+TBMQ represents an open-source software product developed by ThingsBoard, designed to facilitate communication between MQTT clients. 
 This particular product is freely available for both personal and commercial purposes, with the added flexibility of being deployable in any desired location. 
 For individuals new to utilizing the broker, we suggest consulting the comprehensive resources, namely the
 [what-is-thingsboard-mqtt-broker](/docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/) and the
@@ -13,17 +13,17 @@ Further details can be found on the dedicated page, providing a wealth of additi
 
 ## How do I get started?
 
-We recommend [installing](/docs/mqtt-broker/install/installation-options/) ThingsBoard MQTT Broker locally on your laptop or PC using Docker
+We recommend [installing](/docs/mqtt-broker/install/installation-options/) TBMQ locally on your laptop or PC using Docker
 and follow the [getting started guide](/docs/mqtt-broker/getting-started/).
 
-## What can I do with ThingsBoard MQTT Broker?
+## What can I do with TBMQ?
 
-The ThingsBoard MQTT Broker facilitates the establishment of connections between MQTT clients, enabling the seamless exchange of data. 
+TBMQ facilitates the establishment of connections between MQTT clients, enabling the seamless exchange of data. 
 Furthermore, it extends robust support for various MQTT features, enhancing the overall functionality and versatility of the system.
 
-## Where can I host ThingsBoard MQTT Broker?
+## Where can I host TBMQ?
 
-The hosting options for the ThingsBoard MQTT Broker are highly flexible, allowing you to choose from cloud-based environments, on-premises setups, 
+The hosting options for TBMQ are highly flexible, allowing you to choose from cloud-based environments, on-premises setups, 
 or even running it locally on your personal laptop or PC.
 For initiating the setup process, we advise opting for the [Docker installation](/docs/mqtt-broker/install/docker/), which offers a streamlined and efficient approach. 
 If you're interested in configuring a cluster setup, a comprehensive [guide](/docs/mqtt-broker/install/cluster/docker-compose-setup/) is available, specifically designed for Docker Compose setups.
@@ -34,22 +34,22 @@ The utilization of MQTT with SSL encryption is supported, ensuring secure and en
 In addition, it is possible to create MQTT client credentials, granting the ability to authenticate and authorize clients, 
 thereby enhancing the overall security and control of the system.
 
-## How many clients and messages per second can ThingsBoard MQTT Broker support?
+## How many clients and messages per second can TBMQ support?
 
-The ThingsBoard MQTT Broker boasts horizontal scalability, meaning it can be expanded seamlessly to accommodate growing demands. 
+TBMQ boasts horizontal scalability, meaning it can be expanded seamlessly to accommodate growing demands. 
 Each broker, or node, within the cluster possesses identical capabilities and handles a specific subset of the data. 
 It's worth noting that the actual performance of the system is contingent upon the specific usage scenario, 
 with factors such as payload size and message rate playing crucial roles in determining the overall efficiency and throughput of the system.
-For a comprehensive understanding of the performance capabilities of the ThingsBoard MQTT Broker, we recommend referring to the dedicated 
+For a comprehensive understanding of the performance capabilities of TBMQ, we recommend referring to the dedicated 
 [performance test page](/docs/mqtt-broker/reference/performance-tests/).
   
-## Where does ThingsBoard MQTT Broker store data?
+## Where does TBMQ store data?
 
 The data is stored in [PostgreSQL](https://www.postgresql.org/) database and in [Kafka](https://kafka.apache.org/).
 
-## What license type does ThingsBoard MQTT Broker use?
+## What license type does TBMQ use?
 
-ThingsBoard MQTT Broker is licensed under Apache 2.0 License. It is free for both personal and commercial usage, and you can deploy it anywhere.
+TBMQ is licensed under Apache 2.0 License. It is free for both personal and commercial usage, and you can deploy it anywhere.
  
 ## How to get support?
 

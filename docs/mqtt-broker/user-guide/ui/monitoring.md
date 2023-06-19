@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
 title: Monitoring
-description: ThingsBoard MQTT Broker Monitoring Tools
+description: TBMQ Monitoring Tools
 
 ---
 

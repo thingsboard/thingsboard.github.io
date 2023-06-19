@@ -1,18 +1,18 @@
 * TOC
 {:toc}
 
-ThingsBoard MQTT Broker offers various options for managing MQTT client credentials via both its Web UI and [REST API](/docs/mqtt-broker/mqtt-client-credentials-management/). 
+TBMQ offers various options for managing MQTT client credentials via both its Web UI and [REST API](/docs/mqtt-broker/mqtt-client-credentials-management/). 
 
-ThingsBoard MQTT Broker supports the following types of client credentials to authenticate client connections:
+TBMQ supports the following types of client credentials to authenticate client connections:
 - [Basic](/docs/mqtt-broker/security/#basic-authentication) - basic security measures based on combinations of client ID, username and password.
   - **Advantages:** Simple and easy to implement. Widely supported by applications and services. Low network overhead.
   - **Disadvantages:** Limited security.
 - [X.509 Certificate Chain](/docs/mqtt-broker/security/#tls-authentication) - advanced security measures based on X509 certificate chain that helps in verifying the identity of clients.
-  - **Advantages:** Enhanced security compared to the basic client credentials type. With SSL client credentials, both the client and the MQTT broker can authenticate each other. 
+  - **Advantages:** Enhanced security compared to the basic client credentials type. With SSL client credentials, both the client and TBMQ can authenticate each other. 
   The SSL client credentials type provides more flexibility in terms of access control, as it allows for more granular access control policies based on the certificate subject name and other attributes.
   - **Disadvantages:** Complexity and increased cost. Setting up and managing SSL client credentials can be more complex and requires more expertise. SSL encryption and decryption require more computing resources.
 
-Before using any of the client credential types mentioned above, please ensure that they are enabled in the ThingsBoard MQTT Broker [configuration file](/docs/mqtt-broker/install/config/).
+Before using any of the client credential types mentioned above, please ensure that they are enabled in TBMQ [configuration file](/docs/mqtt-broker/install/config/).
 - **Basic Auth.** To enable MQTT Basic Credentials, set `SECURITY_MQTT_BASIC_ENABLED` to `true`.
 - **X.509 Certificate Auth.** To enable MQTT SSL Credentials set `SECURITY_MQTT_SSL_ENABLED` to `true`.
 
@@ -97,7 +97,7 @@ Please consider the following examples:
 
 ## Delete Client Credentials
 
-Broker administrators can remove client credentials from the ThingsBoard MQTT Broker system using the Web UI or [REST API](/docs/mqtt-broker/mqtt-client-credentials-management/).
+Broker administrators can remove client credentials from TBMQ system using the Web UI or [REST API](/docs/mqtt-broker/mqtt-client-credentials-management/).
 
 There are a few ways of deleting client credentials:
 1. **Delete single**.

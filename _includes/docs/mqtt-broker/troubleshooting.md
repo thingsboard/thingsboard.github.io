@@ -5,11 +5,11 @@
 
 ### Kafka Queue: Consumer Group Message Lag 
 
-You can use the log shown below to identify any issues with the processing of messages or other parts of the MQTT broker infrastructure. 
+You can use the log shown below to identify any issues with the processing of messages or other parts of TBMQ infrastructure. 
 Since Kafka is used for MQTT message processing and other major parts of the system, such as `client sessions`, `client subscriptions`, `retained messages`, etc., 
 you can analyze the overall state of the broker.
 
-The ThingsBoard MQTT broker provides the ability to monitor whether the rate of producing messages to Kafka is faster than the rate of consuming and processing them. 
+TBMQ provides the ability to monitor whether the rate of producing messages to Kafka is faster than the rate of consuming and processing them. 
 In such cases, you will experience a growing latency for message processing. 
 To enable this functionality, ensure that Kafka consumer-stats are enabled (see the **queue.kafka.consumer-stats** section of the [Configuration properties](/docs/mqtt-broker/install/config/)).
 
@@ -51,7 +51,7 @@ in the cluster or scale it vertically by increasing the total amount of CPU.
 
 ### Reading Logs
 
-Regardless of the deployment type, ThingsBoard MQTT Broker logs are stored in the following directory:
+Regardless of the deployment type, TBMQ logs are stored in the following directory:
 
 ```bash
 /var/log/thingsboard-mqtt-broker
@@ -67,7 +67,7 @@ Kubernetes Deployment%,%kubernetes%,%templates/mqtt-broker/troubleshooting/logs/
 
 ### Enabling Certain Logs
 
-To facilitate troubleshooting, ThingsBoard MQTT Broker allows users to enable or disable logging for specific parts of the system. 
+To facilitate troubleshooting, TBMQ allows users to enable or disable logging for specific parts of the system. 
 This can be achieved by modifying the **logback.xml** file, which is located in the following directory:
 
 ```bash
@@ -124,7 +124,7 @@ Kubernetes Deployment%,%kubernetes%,%templates/mqtt-broker/troubleshooting/logs/
 
 ## Metrics
 
-To enable Prometheus metrics in ThingsBoard MQTT Broker you must: 
+To enable Prometheus metrics in TBMQ you must: 
 - Set the `STATS_ENABLED` environment variable to `true`.
 - Set the `METRICS_ENDPOINTS_EXPOSE` environment variable to `prometheus` in the configuration file.
 
@@ -132,11 +132,11 @@ The metrics can then be accessed via the following path: `https://<yourhostname>
 
 ## Prometheus metrics
 
-The Spring Actuator in ThingsBoard MQTT Broker can expose some internal state metrics through Prometheus.
+The Spring Actuator in TBMQ can expose some internal state metrics through Prometheus.
 
-Here is a list of the metrics that ThingsBoard MQTT Broker pushes to Prometheus:
+Here is a list of the metrics that TBMQ pushes to Prometheus:
 
-#### MQTT Broker-specific metrics:
+#### TBMQ-specific metrics:
 
 - <i>incomingPublishMsg_published</i> (statsNames - <i>totalMsgs, successfulMsgs, failedMsgs</i>): stats about incoming Publish messages to be persisted in the general queue.
 - <i>incomingPublishMsg_consumed</i> (statsNames - <i>totalMsgs, successfulMsgs, timeoutMsgs, failedMsgs, tmpTimeout,
@@ -188,7 +188,7 @@ Here is a list of the metrics that ThingsBoard MQTT Broker pushes to Prometheus:
 - <i>sqlQueue_DeletePacketQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about deleting <b>persisted packets</b> from the database.
 - <i>sqlQueue_TimeseriesQueue_${index_of_queue}</i> (statsNames - <i>totalMsgs, failedMsgs, successfulMsgs</i>): stats about <b>historical stats persistence</b> to the database.
 
-Please note that in order to achieve maximum performance, **ThingsBoard MQTT broker uses several queues (threads)** per each of the specified queues above.
+Please note that in order to achieve maximum performance, **TBMQ uses several queues (threads)** per each of the specified queues above.
 
 ## Getting help
 

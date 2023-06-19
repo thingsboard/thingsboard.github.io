@@ -7,7 +7,7 @@ feature for **APPLICATION** clients. This feature enables multiple clients to su
 
 ## Usage Notes
 
-In the ThinsBoard MQTT Broker Application shared subscriptions are entities that used for management of shared subscriptions.
+In TBMQ Application shared subscriptions are entities that used for management of shared subscriptions.
 
 * Add Application shared subscriptions if you plan to use shared subscriptions feature with [Application clients](/docs/mqtt-broker/user-guide/mqtt-client-type/#application-client).
 * After creation of the entity **Topic filter** and **Partitions** fields **can not be changed**.
@@ -35,7 +35,7 @@ Upon executing the aforementioned actions, a Kafka topic named `tbmq.msg.app.sha
 
 ## Editing Shared Subscriptions
 
-In the current version of the ThingsBoard MQTT Broker only field Name of shared subscription can be edited after creation.
+In the current version of TBMQ only field Name of shared subscription can be edited after creation.
 
 To edit entity please do the following steps:
 1. Click on the corresponding row of the table Shared Subscriptions.
@@ -45,7 +45,7 @@ To edit entity please do the following steps:
 
 ## Deleting Shared Subscriptions
 
-Shared Subscriptions entities can be removed from the ThingsBoard MQTT Broker system using the Web UI or [REST API](/docs/mqtt-broker/application-shared-subscription/).
+Shared Subscriptions entities can be removed from TBMQ system using the Web UI or [REST API](/docs/mqtt-broker/application-shared-subscription/).
 
 There are a few ways of deleting:
 

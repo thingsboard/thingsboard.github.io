@@ -1,21 +1,21 @@
 ---
 layout: docwithnav-mqtt-broker
 title: Cluster setup using Minikube
-description: ThingsBoard MQTT Broker cluster setup with Kubernetes and Minikube guide
+description: TBMQ cluster setup with Kubernetes and Minikube guide
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to set up ThingsBoard MQTT Broker in cluster mode using Minikube.
+This guide will help you to set up TBMQ in cluster mode using Minikube.
 
 ## Prerequisites
 
 You need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster.
 If you don't have Minikube installed, please follow [these instructions](https://kubernetes.io/docs/setup/learning-environment/minikube/).
 
-## Step 1. Clone ThingsBoard MQTT Broker repository
+## Step 1. Clone TBMQ repository
 
 ```bash
 git clone https://github.com/thingsboard/thingsboard-mqtt-broker.git
@@ -25,7 +25,7 @@ cd thingsboard-mqtt-broker/k8s/minikube
 
 ## Step 2. Installation
 
-To install ThingsBoard MQTT Broker execute the following command:
+To install TBMQ execute the following command:
 
 ```bash
 ./k8s-install-tb-mqtt-broker.sh
@@ -34,7 +34,7 @@ To install ThingsBoard MQTT Broker execute the following command:
 
 ## Step 3. Running
 
-Execute the following command to deploy ThingsBoard MQTT Broker:
+Execute the following command to deploy TBMQ:
 
 ```bash
 ./k8s-deploy-tb-broker.sh
@@ -53,7 +53,7 @@ minikube ip
 ## Step 4. Logs, delete statefulsets and services
 
 In case of any issues, you can examine service logs for errors.
-For example to see ThingsBoard MQTT Broker node logs execute the following commands:
+For example to see TBMQ node logs execute the following commands:
 
 1) Get the list of the running tb-broker pods:
 
@@ -99,7 +99,7 @@ kubectl get statefulsets
 
 See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) command reference for more details.
 
-Execute the following command to delete ThingsBoard MQTT Broker nodes:
+Execute the following command to delete TBMQ nodes:
 
 ```bash
 ./k8s-delete-tb-broker.sh

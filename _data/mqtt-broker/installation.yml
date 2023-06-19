@@ -1,9 +1,9 @@
 bigheader: "Installation"
-abstract: "Documentation for installation and configuration of ThingsBoard MQTT Broker."
+abstract: "Documentation for installation and configuration of TBMQ."
 toc:
   - title: Installation options
     path: /docs/mqtt-broker/install/installation-options/
-  - title: Installing MQTT Broker using Docker
+  - title: Installing TBMQ using Docker
     path: /docs/mqtt-broker/install/docker/
   - title: Cluster setup with Docker Compose
     path: /docs/mqtt-broker/install/cluster/docker-compose-setup/

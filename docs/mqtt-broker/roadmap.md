@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: ThingsBoard MQTT Broker Roadmap
-description: ThingsBoard MQTT Broker upcoming releases
+title: TBMQ Roadmap
+description: TBMQ upcoming releases
 
 ---
 

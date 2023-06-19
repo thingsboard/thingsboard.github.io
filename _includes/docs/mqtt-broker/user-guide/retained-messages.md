@@ -44,7 +44,7 @@ mosquitto_pub -d -h "YOUR_MQTT_BROKER_HOST" -p 1883 -q 1 -t demo/topic -n -r
 ```
 {: .copy-code}
 
-To delete retained messages using the WEB UI of ThingsBoard MQTT Broker, you have two options based on the number of messages you want to delete:
+To delete retained messages using the WEB UI of TBMQ, you have two options based on the number of messages you want to delete:
 1. **Deleting a Single Retained Message.** Click on the icon 'Delete retained message' and confirm action.
 2. **Deleting Multiple Retained Messages:** 
   * Select messages you want to delete.

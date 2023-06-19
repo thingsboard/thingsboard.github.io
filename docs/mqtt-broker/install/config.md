@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
 title: Configuration properties
-description: ThingsBoard MQTT Broker configuration properties and environment variables
+description: TBMQ configuration properties and environment variables
 
 ---
 

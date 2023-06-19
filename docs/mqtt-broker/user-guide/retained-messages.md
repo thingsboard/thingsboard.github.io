@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
 title: Retained Messages
-description: ThingsBoard MQTT Broker Retained Messages feature
+description: TBMQ Retained Messages feature
 
 details-retained-messages:
   0:

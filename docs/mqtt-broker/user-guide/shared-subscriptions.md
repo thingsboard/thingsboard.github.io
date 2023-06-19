@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
 title: Shared Subscriptions
-description: ThingsBoard MQTT Broker Shared Subscriptions feature overview
+description: TBMQ Shared Subscriptions feature overview
 
 ---
 

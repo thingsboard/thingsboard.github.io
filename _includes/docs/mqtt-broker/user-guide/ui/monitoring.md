@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-The ThingsBoard MQTT Broker offers user-friendly tools that enable users to monitor broker activity and conveniently access features through the **Home** and **Monitoring** pages.
+TBMQ offers user-friendly tools that enable users to monitor broker activity and conveniently access features through the **Home** and **Monitoring** pages.
 
 ![image](/images/mqtt-broker/user-guide/ui/home-page.png)
 

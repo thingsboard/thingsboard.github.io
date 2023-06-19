@@ -2,18 +2,18 @@
 * TOC
 {:toc}
 
-In the implementation of ThingsBoard MQTT Broker, two distinct types of clients are supported: **DEVICE** and **APPLICATION**. 
+In the implementation of TBMQ, two distinct types of clients are supported: **DEVICE** and **APPLICATION**. 
 This categorization is based on our extensive experience in the IoT ecosystem, 
 where we have observed that the majority of clients can be classified into one of these two predominant use cases.
 
 * The DEVICE clients primarily engaged in publishing a significant volume of messages while subscribing to a limited number of topics with relatively low message rates. 
-These clients are typically associated with IoT devices or sensors that frequently transmit data to the MQTT Broker.
+These clients are typically associated with IoT devices or sensors that frequently transmit data to TBMQ.
 
 * APPLICATION clients specialize in subscribing to topics with high message rates. 
 They often require messages to be persisted when the client is offline with later delivery, ensuring the availability of crucial data. 
 APPLICATION clients are commonly utilized for real-time analytics, data processing, or other application-level functionalities.
 
-By categorizing clients into these distinct types, we can better tailor the MQTT Broker to accommodate the specific 
+By categorizing clients into these distinct types, we can better tailor TBMQ to accommodate the specific 
 requirements and performance expectations of each use case. 
 This segregation of clients simplifies the implementation of different IoT scenarios, thereby optimizing overall system performance.
 
@@ -37,17 +37,17 @@ the [Clean Start](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.htm
 [Session Expiry Interval](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901048) properties in MQTT v5. 
 These properties, defined in the respective MQTT specifications, provide insights into the behavior and handling of client sessions in terms of persistence.
 
-The MQTT Broker employs a Kafka consumer that actively polls messages from the `tbmq.msg.all` topic, subsequently forwarding these messages to their intended recipients. 
+TBMQ employs a Kafka consumer that actively polls messages from the `tbmq.msg.all` topic, subsequently forwarding these messages to their intended recipients. 
 However, the processing logic differs between persistent and non-persistent clients.
 
 For non-persistent clients, messages are directly published to the subscribed clients without any additional steps or considerations.
 
 In the case of persistent clients, a distinct approach is taken. 
 These clients maintain a session state that persists beyond individual connections, allowing them to receive messages even when they were offline. 
-This persistence enables the MQTT Broker to ensure message delivery to the client once it reconnects.
+This persistence enables TBMQ to ensure message delivery to the client once it reconnects.
 
 By leveraging Kafka as intermediary message storage and employing different processing strategies based on client characteristics, 
-the MQTT Broker optimizes message delivery and ensures reliable communication in both persistent and non-persistent client scenarios.
+TBMQ optimizes message delivery and ensures reliable communication in both persistent and non-persistent client scenarios.
 
 ### Device client
 

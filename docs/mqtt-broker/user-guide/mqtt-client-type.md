@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
 title: MQTT Client Type
-description: ThingsBoard MQTT Broker MQTT Client types overview
+description: TBMQ MQTT Client types overview
 
 mqtt-client-type:
   0:

@@ -4,7 +4,7 @@
 
 ## Swagger UI
 
-After installing the ThingsBoard MQTT Broker, you can explore the REST API using the Swagger UI.
+After installing TBMQ, you can explore the REST API using the Swagger UI.
 
 Access the Swagger UI by opening the following URL:
 
@@ -19,8 +19,8 @@ http://localhost:8083/swagger-ui/
 ```
 {: .copy-code}
 
-This URL will provide you with an interactive interface to navigate and interact with the available REST API endpoints of the ThingsBoard MQTT Broker.
-By utilizing the Swagger UI, you can conveniently explore the functionality, test API calls, and gather information about the server-side APIs provided by the ThingsBoard MQTT Broker.
+This URL will provide you with an interactive interface to navigate and interact with the available REST API endpoints of TBMQ.
+By utilizing the Swagger UI, you can conveniently explore the functionality, test API calls, and gather information about the server-side APIs provided by TBMQ.
 
 The documentation page will automatically use your credentials if you have previously authorized on the main login page.
 This allows you to seamlessly access the documentation without the need for additional authentication.
@@ -34,7 +34,7 @@ By utilizing the "Authorize" button, you have the flexibility to authenticate as
 
 ## JWT Tokens
 
-The ThingsBoard MQTT Broker leverages [JWT](https://jwt.io/) (JSON Web Tokens) for securely representing claims between the API client (such as browsers and scripts) and the platform. 
+TBMQ leverages [JWT](https://jwt.io/) (JSON Web Tokens) for securely representing claims between the API client (such as browsers and scripts) and the platform. 
 JWT tokens are used as a mechanism to exchange information securely.
 
 When you log in to the broker, your username and password are exchanged for a pair of tokens. These tokens, in the form of JWT, 

@@ -1,11 +1,11 @@
 ---
 layout: docwithnav-mqtt-broker
-title: ThingsBoard MQTT Broker
+title: TBMQ
 description:
 
 ---
 
-<p>The ThingsBoard MQTT Broker documentation can help you set up ThingsBoard MQTT Broker.</p>
+<p>TBMQ documentation can help you set up TBMQ.</p>
 
 
 

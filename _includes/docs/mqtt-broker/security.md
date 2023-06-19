@@ -17,18 +17,18 @@ you can ensure secure and controlled access to the MQTT broker, protecting your 
 
 ## MQTT Listeners
 
-The ThingsBoard MQTT broker provides the flexibility to configure its listening capabilities for both the TCP and SSL/TLS protocols.
+TBMQ provides the flexibility to configure its listening capabilities for both the TCP and SSL/TLS protocols.
 
 ### TCP Listener
 
-By default, the ThingsBoard MQTT broker has the TCP listener enabled on port `1883`.
+By default, TBMQ has the TCP listener enabled on port `1883`.
 However, if you wish to disable the TCP listener, you can set the `LISTENER_TCP_ENABLED` environment variable to `false`.
 
 Furthermore, if you need to change the host address that the broker is binding to or the port it is listening on, 
 you can modify the `LISTENER_TCP_BIND_ADDRESS` and `LISTENER_TCP_BIND_PORT` variables, respectively. 
 This gives you the flexibility to configure the broker to listen on a specific network interface and port of your choice.
 
-By adjusting these environment variables, you can customize the TCP listening behavior of the ThingsBoard MQTT broker to suit your specific requirements.
+By adjusting these environment variables, you can customize the TCP listening behavior of TBMQ to suit your specific requirements.
 
 ### TLS Listener
 
@@ -86,7 +86,7 @@ Where `$CLIENT_USERNAME` refers to the specified username, `$CLIENT_ID` refers t
 
 ### TLS Authentication
 
-ThingsBoard MQTT Broker supports authentication using TLS. 
+TBMQ supports authentication using TLS. 
 To enable TLS authentication, you must first [enable the TLS listener](/docs/mqtt-broker/security/#tls-listener) so that the client's certificate chain is involved in the authentication process.
 
 After enabling the TLS listener, you need to do the following to enable TLS authentication:
@@ -112,7 +112,7 @@ Where `$CERTIFICATE_COMMON_NAME` is the common name of the certificate from the 
 
 ### Strategies
 
-ThingsBoard MQTT Broker allows to set the authentication strategy by setting the environment variable `SECURITY_MQTT_AUTH_STRATEGY`, which has two possible values:
+TBMQ allows to set the authentication strategy by setting the environment variable `SECURITY_MQTT_AUTH_STRATEGY`, which has two possible values:
 
 1. **BOTH** (default). When both Basic and TLS authentications are enabled, 
 the MQTT Broker will prioritize `Basic` authentication. 
@@ -127,7 +127,7 @@ On the other hand, if the client connects to the TLS listener, only `TLS` authen
 
 After the user has been authenticated, it is possible to restrict the client's access to topics they can publish or subscribe to for both TLS and Basic authentications.
 
-To provide flexible control over authorization rules, ThingsBoard MQTT Broker uses regular expressions. 
+To provide flexible control over authorization rules, TBMQ uses regular expressions. 
 
 For example, to **allow clients to publish or subscribe to all topics** that begin with **city/**, an authorization rule should be created with the value **city/.***.
 

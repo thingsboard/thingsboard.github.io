@@ -1,9 +1,9 @@
 bigheader: "MQTT Broker Documentation"
-abstract: "ThingsBoard MQTT Broker."
+abstract: "TBMQ."
 toc:
-- title: ThingsBoard MQTT Broker
+- title: TBMQ
   path: /docs/mqtt-broker/
-- title: What is ThingsBoard MQTT Broker?
+- title: What is TBMQ?
   path: /docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/
 - title: Configuration
   path: /docs/mqtt-broker/install/config/

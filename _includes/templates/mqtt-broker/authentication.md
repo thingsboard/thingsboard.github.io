@@ -21,7 +21,7 @@ Moreover, ensure that port 8083 is accessible publicly to establish the necessar
 Additionally, remember to replace the "username" and "password" values in the command with the appropriate and valid credentials specific to your setup.
 
 Upon successful authorization, the response will include a valuable piece of information known as the **token**. 
-It is crucial to utilize this token for all subsequent administrative requests to the ThingsBoard MQTT Broker.
+It is crucial to utilize this token for all subsequent administrative requests to TBMQ.
 To streamline the process, you can either assign the value of the token field to an environment variable named <i>ACCESS_TOKEN</i> 
 or directly replace occurrences of the <i>$ACCESS_TOKEN</i> string within the requests outlined in this tutorial.
 

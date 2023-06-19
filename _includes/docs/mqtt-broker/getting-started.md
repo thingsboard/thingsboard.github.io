@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The goal of this tutorial is to showcase the fundamental usage of the ThingsBoard MQTT Broker. 
+The goal of this tutorial is to showcase the fundamental usage of TBMQ. 
 Through this tutorial, you will gain knowledge and proficiency in the following areas:
 
 * Establishing connections between MQTT clients and the broker.
@@ -12,13 +12,13 @@ Through this tutorial, you will gain knowledge and proficiency in the following 
 * Subscribing to topics to receive published messages.
 * Configuring authentication and authorization mechanisms for MQTT clients.
 
-For more comprehensive information regarding the architecture of the ThingsBoard MQTT Broker, navigate to the following [document](/docs/mqtt-broker/architecture/).
+For more comprehensive information regarding the architecture of TBMQ, navigate to the following [document](/docs/mqtt-broker/architecture/).
 This resource will provide you with detailed insights into the underlying structure and design principles of the broker,
 allowing you to develop a deeper understanding of its inner functionalities.
 
-## Installing ThingsBoard MQTT Broker
+## Installing TBMQ
 
-To obtain detailed instructions on how to install the ThingsBoard MQTT Broker on different platforms, we recommend exploring the
+To obtain detailed instructions on how to install TBMQ on different platforms, we recommend exploring the
 [**Installation options**](/docs/mqtt-broker/install/installation-options) documentation. 
 This resource will provide you with step-by-step guidance tailored to various deployment scenarios.
 
@@ -31,7 +31,7 @@ docker compose up -d
 ```
 {: .copy-code}
 
-Once the installation process is complete for local deployment, you can access the ThingsBoard MQTT Broker UI by visiting the following URL: [http://localhost:8083](http://localhost:8083). 
+Once the installation process is complete for local deployment, you can access TBMQ UI by visiting the following URL: [http://localhost:8083](http://localhost:8083). 
 Wait patiently until the services are up and running. To log in, utilize the following default credentials.
 
 **Username:**
@@ -77,7 +77,7 @@ Please refer to the following links to learn how to [publish messages](https://m
 
 ### Subscribe to topic
 
-To subscribe to the **sensors/temperature** topic and start receiving messages from the ThingsBoard MQTT Broker, you can utilize the following command:
+To subscribe to the **sensors/temperature** topic and start receiving messages from TBMQ, you can utilize the following command:
 
 ```bash
 mosquitto_sub -d -h $THINGSBOARD_MQTT_BROKER_HOST_NAME -p 1883 -t sensors/temperature -q 1 -u username -P password
@@ -100,7 +100,7 @@ Upon successful establishment of the connection, we can proceed to examine the s
 
 ### Publish message
 
-To publish a message to the ThingsBoard MQTT Broker for the topic **sensors/temperature**, you can utilize the following command:
+To publish a message to TBMQ for the topic **sensors/temperature**, you can utilize the following command:
 
 ```bash
 mosquitto_pub -d -h $THINGSBOARD_MQTT_BROKER_HOST_NAME -p 1883 -t sensors/temperature -m 32 -q 1 -u username -P password

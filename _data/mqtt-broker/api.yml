@@ -1,7 +1,7 @@
-bigheader: "ThingsBoard MQTT Broker API reference"
+bigheader: "TBMQ API reference"
 abstract: "Clients connectivity and server-side APIs."
 toc:
-- title: ThingsBoard MQTT Broker API reference
+- title: TBMQ API reference
   path: /docs/mqtt-broker/api/
 - title: REST APIs
   section:

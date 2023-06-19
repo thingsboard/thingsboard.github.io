@@ -1,12 +1,12 @@
 ---
 layout: docwithnav-mqtt-broker
-title: ThingsBoard MQTT Broker performance tests
-description: ThingsBoard MQTT Broker performance tests
+title: TBMQ performance tests
+description: TBMQ performance tests
 
 broker-aws-monitoring:
     0:
         image: /images/mqtt-broker/reference/aws/aws-broker.png
-        title: 'AWS EC2 MQTT Broker Monitoring'
+        title: 'AWS EC2 TBMQ Monitoring'
     1:
         image: /images/mqtt-broker/reference/aws/aws-kafka.png
         title: 'AWS EC2 Kafka Monitoring'
@@ -20,7 +20,7 @@ broker-aws-monitoring:
 broker-jmx-monitoring:
     0:
         image: /images/mqtt-broker/reference/jmx/broker-jmx.png
-        title: 'TB MQTT Broker JMX'
+        title: 'TBMQ JMX'
 
 broker-topics-monitoring:
     0:

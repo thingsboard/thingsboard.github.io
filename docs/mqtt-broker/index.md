@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: ThingsBoard MQTT Broker
-description: ThingsBoard MQTT Broker - broker for real Use Cases
+title: TBMQ
+description: TBMQ - learn about the platform and get your IoT projects running on TBMQ
 ---
 
 {% include docs/mqtt-broker/index.md %}

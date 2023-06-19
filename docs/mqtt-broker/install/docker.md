@@ -1,14 +1,14 @@
 ---
 layout: docwithnav-mqtt-broker
-title: Installing ThingsBoard MQTT Broker using Docker (Linux or Mac OS)
-description: Installing ThingsBoard MQTT Broker using Docker (Linux or Mac OS)
+title: Installing TBMQ using Docker (Linux or Mac OS)
+description: Installing TBMQ using Docker (Linux or Mac OS)
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to install and start standalone ThingsBoard MQTT Broker using Docker on Linux or Mac OS.
+This guide will help you to install and start standalone TBMQ using Docker on Linux or Mac OS.
 If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/mqtt-broker/install/cluster/docker-compose-setup/).
 
 ## Prerequisites
@@ -21,7 +21,7 @@ If you are looking for a cluster installation instruction, please visit [cluster
 
 ## Configuration
 
-Create docker-compose file for ThingsBoard MQTT Broker:
+Create docker-compose file for TBMQ:
 
 ```bash
 nano docker-compose.yml
@@ -98,11 +98,11 @@ Where:
 
 - `8083:8083`               - connect local port 8083 to exposed internal HTTP port 8083
 - `1883:1883`               - connect local port 1883 to exposed internal MQTT port 1883
-- `~/.tb-mqtt-broker-data/postgres:/data`   - mounts the host's dir `~/.tb-mqtt-broker-data/postgres` to ThingsBoard MQTT Broker DataBase data directory
-- `~/.tb-mqtt-broker-data/conf:/config`   - mounts the host's dir `~/.tb-mqtt-broker-data/conf` to ThingsBoard MQTT Broker config directory
-- `~/.tb-mqtt-broker-data/log:/var/log/thingsboard`   - mounts the host's dir `~/.tb-mqtt-broker-data/log` to ThingsBoard MQTT Broker logs directory
+- `~/.tb-mqtt-broker-data/postgres:/data`   - mounts the host's dir `~/.tb-mqtt-broker-data/postgres` to TBMQ DataBase data directory
+- `~/.tb-mqtt-broker-data/conf:/config`   - mounts the host's dir `~/.tb-mqtt-broker-data/conf` to TBMQ config directory
+- `~/.tb-mqtt-broker-data/log:/var/log/thingsboard`   - mounts the host's dir `~/.tb-mqtt-broker-data/log` to TBMQ logs directory
 - `tb-mqtt-broker`          - friendly local name of this machine
-- `restart: always`         - automatically start ThingsBoard MQTT Broker in case of system reboot and restart in case of failure.
+- `restart: always`         - automatically start TBMQ in case of system reboot and restart in case of failure.
 - `SECURITY_MQTT_ENABLED: false`         - by default security is disabled. **Note**: make sure to configure security in production environment
 
 
@@ -118,7 +118,7 @@ mkdir -p ~/.tb-mqtt-broker-data/log && mkdir -p ~/.tb-mqtt-broker-data/conf && m
 
 ## Installation
 
-Set the terminal to the directory which contains the `docker-compose.yml` file and execute the following command to install ThingsBoard MQTT Broker:
+Set the terminal to the directory which contains the `docker-compose.yml` file and execute the following command to install TBMQ:
 
 ```
 docker compose pull
@@ -144,7 +144,7 @@ After executing this command you can open `http://{your-host-ip}:8083` in your b
 ## Stop and start commands
 
 In case of any issues you can examine service logs for errors.
-For example to see ThingsBoard MQTT Broker logs execute the following command:
+For example to see TBMQ logs execute the following command:
 
 ```
 docker compose logs -f tb-mqtt-broker

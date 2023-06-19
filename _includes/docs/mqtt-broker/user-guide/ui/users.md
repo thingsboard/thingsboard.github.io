@@ -1,6 +1,6 @@
-The ThingsBoard MQTT Broker presently offers a single tier of user roles, namely 'Administrator'. Administrators are authorized to create, modify, and remove user accounts.
+TBMQ presently offers a single tier of user roles, namely 'Administrator'. Administrators are authorized to create, modify, and remove user accounts.
 
-User management can be performed through the ThingsBoard MQTT Broker's Web UI or [REST API](/docs/mqtt-broker/user-management/), which enables users to modify user details.
+User management can be performed through TBMQ's Web UI or [REST API](/docs/mqtt-broker/user-management/), which enables users to modify user details.
 
 * TOC
 {:toc}

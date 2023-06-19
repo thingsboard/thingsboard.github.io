@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
 title: Troubleshooting
-description: ThingsBoard MQTT Broker troubleshooting guide
+description: TBMQ troubleshooting guide
 
 ---
 

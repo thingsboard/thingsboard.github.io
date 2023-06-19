@@ -3,7 +3,7 @@
 {:toc}
 
 Shared subscriptions are an advanced capability introduced in MQTT v5 that has been widely anticipated by users. 
-While ThingsBoard MQTT Broker does not restrict its usage to MQTT v5 clients exclusively, clients with any protocol version can leverage this feature. 
+While TBMQ does not restrict its usage to MQTT v5 clients exclusively, clients with any protocol version can leverage this feature. 
 The official [documentation](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901250) offers comprehensive details on shared subscriptions, 
 and this tutorial will focus on the fundamental aspects of this functionality. 
 By understanding and exploring shared subscriptions, users can harness the full potential of this powerful feature in their MQTT interactions.
@@ -93,28 +93,28 @@ Let's see shared subscription processing in action:
 
 ### Shared Subscriptions Load Balancing Strategy
 
-Currently, ThingsBoard MQTT Broker supports the **ROUND_ROBIN** load balancing strategy type for shared subscriptions. 
+Currently, TBMQ supports the **ROUND_ROBIN** load balancing strategy type for shared subscriptions. 
 This means that incoming messages for a shared subscription are evenly distributed among the subscribed clients in a round-robin fashion. 
 Each client in the group receives messages in sequential order, taking turns to handle the message load.
-We are continuously working on enhancing the MQTT Broker and plan to introduce additional load-balancing strategy types in the near future. 
-These may include random and hash-based load-balancing strategies. Stay tuned for updates as we expand the capabilities of ThingsBoard MQTT Broker.
+We are continuously working on enhancing TBMQ and plan to introduce additional load-balancing strategy types in the near future. 
+These may include random and hash-based load-balancing strategies. Stay tuned for updates as we expand the capabilities of TBMQ.
 
 ### Shared Subscriptions & Client Type
 
-The **DEVICE** and **APPLICATION** clients in ThingsBoard MQTT Broker are implemented differently, and this impacts how the shared subscription feature 
+The **DEVICE** and **APPLICATION** clients in TBMQ are implemented differently, and this impacts how the shared subscription feature 
 is utilized and how it processes messages for each client type.
 
-If you create a shared subscription with the same structure and subscribe to it with both DEVICE and APPLICATION clients, 
-the MQTT Broker will treat them as separate shared subscription groups. 
+If you create a shared subscription with the same structure and subscribe to it with both DEVICE and APPLICATION clients,
+TBMQ will treat them as separate shared subscription groups. 
 This means that messages published to the shared subscription topic will be distributed only among clients of the same type. 
 DEVICE clients will receive messages within the DEVICE shared subscription group, while APPLICATION clients will receive messages within the APPLICATION shared subscription group.
 
-Therefore, it's important to consider the client type when working with shared subscriptions in ThingsBoard MQTT Broker, 
+Therefore, it's important to consider the client type when working with shared subscriptions in TBMQ, 
 as the messages will be processed and distributed accordingly based on the client type within their respective shared subscription groups.
 
 #### DEVICE client type
 
-From the user's perspective, using the shared subscription feature for DEVICE clients in ThingsBoard MQTT Broker is seamless. 
+From the user's perspective, using the shared subscription feature for DEVICE clients in TBMQ is seamless. 
 Simply subscribe your clients to the shared subscription, and the feature will work as intended.
 
 However, there are some considerations when persistent clients are involved in the shared subscription group:
@@ -128,7 +128,7 @@ These considerations ensure that message distribution and persistence are handle
 
 #### APPLICATION client type
 
-To utilize the shared subscription feature for APPLICATION clients in ThingsBoard MQTT Broker, you need to follow an additional step. 
+To utilize the shared subscription feature for APPLICATION clients in TBMQ, you need to follow an additional step. 
 First, you'll need to create an Application Shared Subscription entity in the PostgreSQL database. 
 To do so follow the instructions from the following [guide](/docs/mqtt-broker/user-guide/ui/shared-subscriptions/).
 This can also be done through the REST API, and detailed instructions can be found in the next [documentation](/docs/mqtt-broker/application-shared-subscription/). 
@@ -140,6 +140,6 @@ When the first client connects to the broker and initiates a shared subscription
 As more clients subscribe to the shared subscription, their consumers are added to the CG as well, allowing them to share the message load. 
 Likewise, when a client unsubscribes, its consumer is removed from the CG, and the group rebalances accordingly.
 
-This utilization of Kafka's capabilities enables enhanced performance, scalability, and reliability for shared subscriptions with APPLICATION clients in ThingsBoard MQTT Broker. 
+This utilization of Kafka's capabilities enables enhanced performance, scalability, and reliability for shared subscriptions with APPLICATION clients in TBMQ. 
 By leveraging Kafka's features, the system can effectively manage and distribute the workload among the subscribed clients, ensuring optimal performance and fault tolerance.
 

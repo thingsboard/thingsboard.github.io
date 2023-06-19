@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: ThingsBoard MQTT Broker Release Notes
-description: ThingsBoard MQTT Broker Releases
+title: TBMQ Release Notes
+description: TBMQ Releases
 
 ---
 

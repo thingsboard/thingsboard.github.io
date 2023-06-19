@@ -12,7 +12,7 @@ kubectl logs -f POD_NAME
 ```
 {: .copy-code}
 
-To view ThingsBoard MQTT Broker logs use command:
+To view TBMQ logs use command:
 
 ```bash
 kubectl logs -f tb-broker-0
@@ -35,7 +35,7 @@ kubectl logs -f tb-broker-1 > tb-broker-1.log
 ```
 {: .copy-code}
 
-**Note:** you can always log into the ThingsBoard MQTT Broker container and view logs there:
+**Note:** you can always log into TBMQ container and view logs there:
 
 ```bash
 kubectl exec -it tb-broker-0 -- bash

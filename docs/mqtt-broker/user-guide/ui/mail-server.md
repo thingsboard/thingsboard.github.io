@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
 title: Mail Server
-description: ThingsBoard MQTT Broker Mail Server
+description: TBMQ Mail Server
 
 ---
 

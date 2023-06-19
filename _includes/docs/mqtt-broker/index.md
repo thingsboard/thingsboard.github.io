@@ -1,12 +1,13 @@
-The **ThingsBoard MQTT Broker** facilitates MQTT client connectivity, message publishing, and distribution among subscribers.
+**TBMQ** is an industry-ready MQTT broker developed and distributed under the ThingsBoard umbrella that facilitates MQTT client connectivity, 
+message publishing, and distribution among subscribers.
 
-You can refer to the ThingsBoard MQTT Broker documentation to set up the broker and understand its primary features, including the MQTT protocol.
+You can refer to the TBMQ documentation to set up the broker and understand its primary features, including the MQTT protocol.
 
 <div class="doc-features row mt-4">
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/">
             <img class="feature-logo" src="/images/feature-logo/thingsboard-logo.svg"/>
-            <div class="feature-title">What is ThingsBoard MQTT Broker?</div>
+            <div class="feature-title">What is TBMQ?</div>
             <div class="feature-text">
                 <ul>
                     <li>Features</li>
@@ -20,7 +21,7 @@ You can refer to the ThingsBoard MQTT Broker documentation to set up the broker 
             <img class="feature-logo" src="/images/feature-logo/getting-started.svg"/>
             <div class="feature-title">Getting started</div>
             <div class="feature-text">
-                Learn how to use ThingsBoard MQTT Broker.
+                Learn how to use TBMQ.
             </div>
         </a>
     </div>
@@ -29,7 +30,7 @@ You can refer to the ThingsBoard MQTT Broker documentation to set up the broker 
             <img class="feature-logo" src="/images/feature-logo/install.svg"/>
             <div class="feature-title">Installation</div>
             <div class="feature-text">
-                Learn how to install and upgrade ThingsBoard MQTT Broker.
+                Learn how to install and upgrade TBMQ.
             </div>
         </a>
     </div>
@@ -48,7 +49,7 @@ You can refer to the ThingsBoard MQTT Broker documentation to set up the broker 
             <img class="feature-logo" src="/images/feature-logo/configuration.svg"/>
             <div class="feature-title">Configuration</div>
             <div class="feature-text">
-                Configuration of ThingsBoard Mqtt Broker.
+                Configuration of TBMQ.
             </div>
         </a>
     </div>

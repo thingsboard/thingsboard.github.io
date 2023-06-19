@@ -9,7 +9,7 @@ manage both the active and historical records of client interactions with the br
 
 ### Session Details
 
-To access the detailed information of the current ThingsBoard MQTT Broker sessions, please follow these steps:
+To access the detailed information of the current TBMQ sessions, please follow these steps:
 
 **1. Session details.** Navigate to the left-hand menu and click on 'Sessions.' Then, click on the session row. 
 The details dialog will appear, providing you with basic information about the session:

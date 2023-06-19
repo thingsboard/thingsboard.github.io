@@ -15,7 +15,7 @@ This authorization process grants you the necessary privileges and access rights
 
 By authenticating as an Admin user, you will have the authority to create and manage client credentials, 
 enabling you to enforce robust security measures for the clients connecting to the system. 
-This approach ensures that the system remains secure and that only authorized clients can establish connections and interact with the MQTT Broker.
+This approach ensures that the system remains secure and that only authorized clients can establish connections and interact with TBMQ.
 
 {% include templates/mqtt-broker/authentication.md %}
 

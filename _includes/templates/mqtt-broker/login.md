@@ -1,4 +1,4 @@
-You should see ThingsBoard MQTT Broker login page. Use the following default credentials for **System Administrator**:
+You should see TBMQ login page. Use the following default credentials for **System Administrator**:
 
 **Username**:
 ```

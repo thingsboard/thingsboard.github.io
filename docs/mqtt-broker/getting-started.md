@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: Getting started with ThingsBoard MQTT Broker
-description: ThingsBoard MQTT Broker - broker for real Use Cases
+title: Getting started with TBMQ
+description: TBMQ - broker for real Use Cases
 
 broker-sessions:
     0:

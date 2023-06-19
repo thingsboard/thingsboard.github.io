@@ -1,8 +1,8 @@
 * TOC
 {:toc}
 
-This guide will help you become familiar with ThingsBoard MQTT Broker configuration files and parameters. 
-We **strongly recommend** configuring the MQTT Broker using environment variables. 
+This guide will help you become familiar with TBMQ configuration files and parameters. 
+We **strongly recommend** configuring TBMQ using environment variables. 
 This way, you won't need to merge the configuration files when a new platform release arrives. 
 
 The list of available configuration parameters and corresponding environment variables can be found [here](#configuration-parameters).
@@ -11,12 +11,12 @@ The list of available configuration parameters and corresponding environment var
 
 #### Docker-Based deployment
 
-If ThingsBoard MQTT Broker is installed in a Docker Compose environment, you can edit the scripts and add environment variables for 
+If TBMQ is installed in a Docker Compose environment, you can edit the scripts and add environment variables for 
 the corresponding containers. For more details, refer to the [Docker documentation](https://docs.docker.com/compose/environment-variables/#/the-envfile-configuration-option).
 
 #### K8S-Based deployment
 
-If ThingsBoard MQTT Broker is installed in a K8S environment, you can edit the scripts and add environment variables for the 
+If TBMQ is installed in a K8S environment, you can edit the scripts and add environment variables for the 
 corresponding deployments/stateful sets. For more details, refer to the [K8S documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/).
 
 ## Configuration parameters
@@ -1535,7 +1535,7 @@ environment variable, default value, and description.
           <td>Interval in milliseconds to poll messages from 'historical-data-total' topics</td>
       </tr>
       <tr>
-           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">ThingsBoard MQTT Broker cache parameters</span></td>
+           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">TBMQ cache parameters</span></td>
       </tr>
       <tr>
           <td>cache.type</td>
@@ -1592,7 +1592,7 @@ environment variable, default value, and description.
           <td>basicCredentialsPassword cache max size. maxSize: 0 means the cache is disabled</td>
       </tr>
       <tr>
-           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">ThingsBoard MQTT Broker service parameters</span></td>
+           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">TBMQ service parameters</span></td>
       </tr>
       <tr>
           <td>service.id</td>
@@ -1643,7 +1643,7 @@ environment variable, default value, and description.
           <td>Timezone for the historical data stats processing</td>
       </tr>
       <tr>
-           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">ThingsBoard MQTT Broker statistics and troubleshooting</span></td>
+           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">TBMQ statistics and troubleshooting</span></td>
       </tr>
       <tr>
           <td>management.endpoints.web.exposure.include</td>
@@ -1723,13 +1723,13 @@ environment variable, default value, and description.
       <tr>
           <td>swagger.title</td>
           <td>SWAGGER_TITLE</td>
-          <td>ThingsBoard MQTT Broker REST API</td>
+          <td>TBMQ REST API</td>
           <td>The title on the API doc UI page</td>
       </tr>
       <tr>
           <td>swagger.description</td>
           <td>SWAGGER_DESCRIPTION</td>
-          <td>ThingsBoard MQTT Broker open-source REST API documentation</td>
+          <td>TBMQ open-source REST API documentation</td>
           <td>The description on the API doc UI page</td>
       </tr>
       <tr>

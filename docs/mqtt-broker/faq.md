@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
 title: FAQ
-description: ThingsBoard MQTT Broker FAQ
+description: TBMQ FAQ
 
 ---
 
