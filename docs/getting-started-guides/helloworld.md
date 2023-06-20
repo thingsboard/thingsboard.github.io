@@ -24,7 +24,7 @@ step1:
 step2:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-1-ce.png
-        title: 'Click on the device row in the table to open device details;'
+        title: 'Click on the device row in the table to open device details. Note that the device state is "Inactive";'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-2-ce.png
         title: 'Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.'
@@ -32,15 +32,15 @@ step2:
 step3:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-3-ce.png
-        title: 'Click on the device row in the table to open device details;'
+        title: 'Navigate to the "Latest telemetry" tab. You should see the previously published "temperature" readings;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-4-ce.png
-        title: 'Navigate to the telemetry tab. Here you should see the previously published "temperature" reading.'
+        title: 'Close the device details tab and refresh the "Devices" page. The device state should be changed from "Inactive" to "Active".'
         
 step31:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-1-ce.png 
-        title: 'Open the Dashboards page. Click on the "+" icon in the top right corner. Select "Create new dashboard";'
+        title: 'Open the "Dashboards" page. Click on the "+" icon in the top right corner. Select "Create new dashboard";'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-2-ce.png
         title: 'Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard;'
@@ -54,19 +54,19 @@ step32:
         title: 'Enter edit mode. Click on the pencil button in the bottom right corner;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-2-ce.png
-        title: 'Click the "Entity aliases" icon in the top right part of the screen. You will see an empty list of Entity aliases;'
+        title: 'Click the "Entity aliases" icon in the top right part of the screen;'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-3-ce.png
-        title: 'Click "Add alias" button;'
+        title: 'You will see an empty list of Entity aliases. Click "Add alias" button;'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-4-ce.png
-        title: 'Input alias name, for example, "My Device". Select the "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on it;'
+        title: 'Input alias name, for example, "My Device". Select the "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on it. Click "Add";'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-5-ce.png
-        title: 'Click "Add" and then "Save";'
+        title: 'Click "Save";'
     5:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-6-ce.png
-        title: 'Finally, click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.'
+        title: 'Finally, click "Apply changes" in the dashboard editor to save the changes.'
 
 step33:
     0:
@@ -83,10 +83,10 @@ step33:
         title: 'The "Add Widget" window will appear. Click "Add" to add the data source. A widget may have multiple data sources, but we will use only one in this case;'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-5-ce.png
-        title: 'Select "My Device" entity alias. Then click on the input field on the right. The auto-complete with available data points will appear. Select "temperature" data point and click "Add";'
+        title: 'Select "My Device" entity alias. Then click on the "Latest data key" field on the right. The auto-complete with available data points will appear. Select "temperature" data point and click "Add";'
     5:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-6-ce.png
-        title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. You can also play with the advanced settings if you would like to edit the widget. Apply changes.'
+        title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. Apply changes.'
 
 step34:
     0:
@@ -149,13 +149,13 @@ step35:
 step4:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-1-ce.png
-        title: 'Navigate to the "Profiles". Then click the "Device profiles" page;'
+        title: 'Navigate to the "Profiles". Then click on the "Device profiles" page;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-2-ce.png
-        title: 'Click the default profile row. This will open device profile details;'
+        title: 'Click on the default device profile row to open its details;'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-3-ce.png
-        title: 'Select the "Alarm Rules" tab and toggle edit mode;'
+        title: 'Select the "Alarm rules" tab and click "pencil" button to enter edit mode;'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-4-ce.png
         title: 'Click "Add alarm rule" button;' 
@@ -198,51 +198,79 @@ step71:
         title: 'Click the "+" sign to add a customer;'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-3-ce.png
-        title: 'Add customer title and click "Add".'
+        title: 'Input customer title and click "Add".'
 
 step72:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-1-ce.png
-        title: 'Open Devices page. Click "Assign to customer" icon for "My New Device";'
+        title: 'Open "Devices" page, then select your device to open its details;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-2-ce.png
-        title: 'Select "My New Customer" and click "Assign".'
+        title: 'Click "Assign to customer" button;'
+    2:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-3-ce.png
+        title: 'Select the customer to whom you want to assign the device, and then click "Assign";'
+    3:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-4-ce.png
+        title: 'You have changed the owner of the device. In the "Customer" column, you can see the owners name of the device;'
+
+step72_1:
+    0:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-5-ce.png
+        title: 'Navigate to "Customers" page to make sure that the device is assigned to your customer. Find your customer in the list of customers and then click on the "Manage customer devices" icon;'
+    1:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-6-ce.png
+        title: 'The device is with your client.'
+
+step72_2:
+    0:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-8-ce.png
+        title: 'Click on the "+" icon in the top right corner of the table. Input device name (for example, "Thermostat") and navigate to the "Customer" tab;'
+    1:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-9-ce.png
+        title: 'Select the customer to whom you want to assign the new device. Then click "Add";'
+    2:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-10-ce.png
+        title: 'The device has been created, and it immediately belongs to the selected customer.'
 
 step73:
     0:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-3-ce.png
-        title: 'Open Dashboards page. Click "Manage assigned customers" icon;'
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-3-ce.png
+        title: 'Open "Dashboards" page. Mark your dashboard and click the "Assign dashboards" icon;'
     1:
-        image: /images/helloworld/getting-started-ce/hello-world-71-assign-device-to-customer-4-ce.png
-        title: 'Select "My New Customer" and click "Update".'
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-4-ce.png
+        title: 'Mark "My New Customer" and click "Assign";'
+    2:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-5-ce.png
+        title: 'Navigate to the "Customers" page. Click "Manage customer dashboards" icon for "My New Customer";'
+    3:
+        image: /images/helloworld/getting-started-ce/hello-world-71-assign-dashboard-to-customer-6-ce.png
+        title: '"My New Dashboard" is assigned to your customer.'
 
 step74:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-1-ce.png
-        title: 'Navigate back to the "Customers" page and click the "Manage customer users" icon;'
+        title: 'Navigate to "Customers" page. Find your customer in the list of customers and then click on the "Manage customer users" icon;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-2-ce.png
-        title: 'Click the "Add user" icon;'
+        title: 'Click the "Add user" icon in the top right corner of the table;'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-3-ce.png
         title: 'Specify email that you will use to login as a customer user and click "Add";'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-4-ce.png
-        title: 'Copy the activation link and save it to a safe place. You will use it later to set the password;'
+        title: 'Copy the activation link and save it to a safe place. You will use it later to set the password. Click "OK";'
     4:
-        image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-5-ce.png
-        title: 'Open user details;'
-    5:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-6-ce.png
-        title: 'Toggle edit mode;'
-    6:
+        title: 'Click on the created user to open details. Click "pencil" icon to enter edit mode;'
+    5:
         image: /images/helloworld/getting-started-ce/hello-world-7-create-customer-user-7-ce.png
         title: 'Select default dashboard and check "Always fullscreen". Apply changes.'
 
 step75:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-1-ce.png
-        title: 'Use the activation link to set the password. Click "Create Password". You will automatically login as a customer user;'
+        title: 'Paste the previously copied link into a new browser tab and press Enter. Come up with and enter a password twice, then press "Create Password". You will automatically login as a customer user;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-2-ce.png
         title: 'You have logged in as a Customer User. You may browse the data and acknowledge/clear alarms.'
@@ -279,8 +307,11 @@ We will connect and visualize data from the temperature sensor to keep it simple
 
 For simplicity, we will provision the device manually using the UI. 
  
-{% include images-gallery.html imageCollection="step1" showListImageTitles="true" %} 
+{% include images-gallery.html imageCollection="step1" showListImageTitles="true" %}
 
+Learn more about **notifications** and how to configure them [here](#step-6-alarm-notifications).
+
+<br/>
 You may also use:
  * [Bulk provisioning](/docs/user-guide/bulk-provisioning/) to provision multiple devices from a CSV file using UI;
  * [Device provisioning](/docs/user-guide/device-provisioning/) to allow device firmware to automatically provision the device, so you don't need to configure each device manually; 
@@ -327,6 +358,8 @@ You may learn more about different aliases [here](/docs/user-guide/ui/aliases/).
 
 ### Step 3.3 Add Table Widget
 
+Entity Table widget displays the latest values with list of entities that matches selected alias and filter with ability of additional full text search and pagination options.
+
 To add the table widget we need to select it from the widget library. Widgets are grouped into widget bundles.
 Each widget has a data source. This is how the widget "knows" what data to display.
 To see the latest value of our "temperature" data that we sent during step 2, we should configure the data source.
@@ -337,6 +370,8 @@ Congratulations! You have added the first widget. Now you can send new telemetry
 
 ### Step 3.4 Add Chart Widget
 
+Chart widgets allow you to display time series data with customizable line charts and bar charts.
+
 To add the chart widget we need to select it from the widget library. 
 Chart widget displays multiple historical values of the same data key ("temperature" in our case).
 We should also configure the time window to use the chart widget.
@@ -346,6 +381,9 @@ We should also configure the time window to use the chart widget.
 Congratulations! You have added a chart widget. Now you can send new telemetry reading and it will immediately appear in the chart. 
 
 ### Step 3.5 Add Alarm Widget
+
+Alarms table widget displays alarms related to the specified entity in the certain time window (for example, “Alarms table”). 
+Alarm widget is configured by specifying an entity as the alarm source, and the corresponding alarm fields.
 
 {% include images-gallery.html imageCollection="step35" showListImageTitles="true" %}
 
@@ -370,11 +408,11 @@ Note that the temperature value should be 26 or higher to raise the alarm. Once 
 
 ## Step 6. Alarm notifications
 
-It is quite easy to configure email or sms notifications for alarms. We recommend reviewing alarm rule [examples](/docs/user-guide/device-profiles/#alarm-rules) 
-and documentation about [alarm notifications](/docs/user-guide/device-profiles/#notifications-about-alarms). 
- 
-**Note**: At the moment ThingsBoard supports AWS SNS and Twilio to send SMS. 
-Both services are non-free and require you to create an account. However, you may integrate with other SMS/EMAIL gateways using [REST API call](/docs/user-guide/rule-engine-2-0/external-nodes/#rest-api-call-node) node.  
+It's quite easy to set up notifications using the **Notification center**. ThingsBoard Notification center allows you to send notifications to the end-users.
+Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
+
+We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules)
+and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms).
 
 ## Step 7. Assign Device and Dashboard to Customer
 
@@ -390,19 +428,27 @@ Let's create a customer with title "My New Customer". Please see instruction bel
 
 #### Step 7.2 Assign device to Customer
 
-Let's assign device to the Customer. The Customer users will have ability to read and write telemetry and send commands to devices. 
+Let's assign device to the customer. The customer users will have ability to read and write telemetry and send commands to devices. 
 
 {% include images-gallery.html imageCollection="step72" showListImageTitles="true" %}
 
+Make sure that the device is assigned to your customer.
+
+{% include images-gallery.html imageCollection="step72_1" showListImageTitles="true" %}
+
+You can make the customer the owner of the device during its creation stage.
+
+{% include images-gallery.html imageCollection="step72_2" showListImageTitles="true" %}
+
 #### Step 7.3 Assign dashboard to Customer
 
-Let's share our dashboard with the Customer. The Customer users will have read-only access to the Dashboard. 
+Let's share our dashboard with the customer. The customer users will have read-only access to the dashboard. 
 
 {% include images-gallery.html imageCollection="step73" showListImageTitles="true" %}
 
 #### Step 7.4 Create customer user
 
-Finally, let's create a user that will belong to the customer and will have read-only access to the dashboard and the device.
+Finally, let's create a user that will belong to the customer and will have `read-only` access to the dashboard and the device.
 You may optionally configure the dashboard to appear just after user login to the platform web UI.
 
 {% include images-gallery.html imageCollection="step74" showListImageTitles="true" %}
@@ -414,16 +460,6 @@ You may optionally configure the dashboard to appear just after user login to th
 ## Next steps
 
 {% assign currentGuide = "GettingStartedGuides" %}{% include templates/guides-banner.md %}
-
-## ThingsBoard Community Edition education course
- 
- <div id="video">  
-     <div id="video_wrapper">
-         <iframe src="https://www.youtube.com/embed/videoseries?list=PLYEKB_XwLCZJ6T8RPLTjRwMw0eoabpEKO" frameborder="0" allowfullscreen></iframe>
-     </div>
- </div>
- <p></p>
-
 
 ## Your feedback
 
