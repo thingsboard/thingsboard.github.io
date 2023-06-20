@@ -24,7 +24,7 @@ step1:
 step2:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-1-ce.png
-        title: 'Click on the device row in the table to open device details;'
+        title: 'Click on the device row in the table to open device details. Note that the device state is "Inactive";'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-2-ce.png
         title: 'Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.'
@@ -32,10 +32,10 @@ step2:
 step3:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-3-ce.png
-        title: 'Click on the device row in the table to open device details;'
+        title: 'Navigate to the "Latest telemetry" tab. You should see the previously published "temperature" readings;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-4-ce.png
-        title: 'Navigate to the "Latest telemetry" tab. Here you should see the previously published "temperature" reading.'
+        title: 'Close the device details tab and refresh the "Devices" page. The device state should be changed from "Inactive" to "Active".'
         
 step31:
     0:
