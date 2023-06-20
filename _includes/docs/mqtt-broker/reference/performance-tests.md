@@ -126,7 +126,7 @@ One such instance involved addressing Kafka producer disconnects, which had the 
 To solve this issue, we implemented a distinct executor service dedicated to processing publish [callbacks for Kafka producers[2]](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/4e8e6d8a2f9855c7df88074efc935cb7d19f593d). 
 This measure effectively resolved the aforementioned disconnections.
 
-To further enhance performance, we [eliminated the need for a specialized publish queue[3]](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/443e260924e214ae89b0158a6369b06f38801bd0) 
+To further enhance performance, we [eliminated the need for a specialized publishing queue[3]](https://github.com/thingsboard/thingsboard-mqtt-broker/commit/443e260924e214ae89b0158a6369b06f38801bd0) 
 by leveraging the inherent thread-safe nature of Kafka producers. 
 This adjustment yielded additional benefits in terms of overall system efficiency as the message ordering guarantees were achieved in another way.
 
@@ -275,8 +275,8 @@ Here is the JMX monitoring for TBMQ. The broker nodes are operating steadily and
 ### How to repeat the tests
 
 Please refer to the subsequent [installation guide](/docs/mqtt-broker/install/cluster/aws-cluster-setup/) to learn how to deploy TBMQ on AWS.
-In addition, you may explore the [directory](https://github.com/thingsboard/thingsboard-mqtt-broker/tree/100M/k8s/aws#readme) 
-containing the scripts and parameters employed for running TBMQ during the performance test.
+In addition, you may explore the [branch](https://github.com/thingsboard/thingsboard-mqtt-broker/tree/100M/k8s/aws#readme) 
+containing the scripts and parameters employed for running TBMQ during this performance test.
 Lastly, the [performance tests tool](https://github.com/thingsboard/tb-mqtt-perf-tests/tree/100M) available for conducting performance tests, 
 which generates MQTT clients and produces the load.
 For configuring the performance tests, you can review and modify the configuration files for the
