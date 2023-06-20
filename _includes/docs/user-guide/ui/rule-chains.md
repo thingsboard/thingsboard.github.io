@@ -4,16 +4,11 @@
 
 ## Introduction
 
-Rule Chain - nodes are connected with each other with relations, so the outbound message from rule node is sent to next connected rule nodes.
+Rule chain - nodes are connected with each other with relations, so the outbound message from rule node is sent to next connected rule nodes.
 
-Rule Chains Administration UI page displays a table of configured tenant rule chains.
-You are able to do following operations:
+Rule chains page displays a table of configured tenant rule chains.
+You can create, export/import, delete, and mark the desired rule chain as root.
 
- - Import Or Create new Rule Chain
- - Export Rule Chain to JSON
- - Mark Rule Chain as **Root Rule Chain**
- - Delete the Rule Chain
- 
 See [**Rule Engine**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) documentation for more details.
 
 ### Create new rule chain
@@ -22,17 +17,23 @@ To add a new rule chain, you should:
 
 {% include images-gallery.html imageCollection="create-rule-chain" showListImageTitles="true" %}
 
-### Rule chains export/import
+### Edit rule chain
 
-#### Rule chain export
+You can edit the name and description rows as well as enable/disable debug mode.
 
-You are able to export your rule chain to а JSON file and import it to the same or another ThingsBoard instance.
+{% include images-gallery.html imageCollection="edit-rule-chain" showListImageTitles="true" %}
+
+### Export/import rule chain 
+
+You are able to [export](#export-rule-chain) your rule chain to а JSON file and [import](#import-rule-chain) it to the same or another ThingsBoard instance.
+
+#### Export rule chain 
 
 In order to export rule chain, you should:
 
 {% include images-gallery.html imageCollection="export-rule-chain" showListImageTitles="true" %}
 
-#### Rule chain import
+#### Import rule chain
 
 To import rule chain from а JSON file, you should:
 
@@ -41,26 +42,20 @@ To import rule chain from а JSON file, you should:
 {% capture difference %}
 **Note 1:**
 <br>
-All imported Rule chains are **Not** Root Rule Chains.
+All imported rule chain are **not root** rule chain.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
 {% capture difference %}
 **Note 2:**
 <br>
-If imported Rule Chain contains references to other Rule Chains (via **Rule Chain** node), then you will need to update those references before saving Rule Chain.
+If imported rule chain contains references to other rule chains (via **Rule Chain** node), then you will need to update those references before saving rule chain.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-### Edit rule chain
+### Make rule chain root
 
-You can edit the name and description rows as well as enable/disable debug mode.
-
-{% include images-gallery.html imageCollection="edit-rule-chain" showListImageTitles="true" %}
-
-### Make rule chain as root
-
-To make rule chain as root, you should:
+To make rule chain root, you should:
 
 {% include images-gallery.html imageCollection="make-rule-chain-as-root" showListImageTitles="true" %}
 
@@ -74,14 +69,12 @@ First way:
 
 Second way:
 
-{% include images-gallery.html imageCollection="delete-rule-chain-1" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="delete-rule-chain-2" showListImageTitles="true" %}
 
 You can also delete multiple rule chains at once.
 
 {% include images-gallery.html imageCollection="delete-rule-chain-3" showListImageTitles="true" %}
 
-### Troubleshooting
+## Next steps
 
-Possible issues while importing the rule:
-
- - References to other Rule Chains via **Rule Chain** node should be updated before saving changes.
+{% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}
