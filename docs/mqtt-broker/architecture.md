@@ -63,15 +63,40 @@ To optimize performance, TBMQ employs the [Trie](#subscriptions-trie) data struc
 enabling efficient persistence of client subscriptions in memory and facilitating swift access to relevant topic patterns.
 
 Upon a publisher client dispatching a _PUBLISH_ message, it is stored in the initial Kafka topic called **tbmq.msg.all**. 
-Once Kafka acknowledges the message's persistence, the broker promptly responds to the publisher with a _PUBACK_/_PUBREC_ message, 
+Once Kafka acknowledges the message's persistence, the broker promptly responds to the publisher with either a _PUBACK_/_PUBREC_ message or no response at all, 
 depending on the chosen Quality of Service (QoS) level.
 
 Subsequently, separate threads, functioning as Kafka consumers, retrieve messages from the aforementioned Kafka topic and utilize the 
 Subscription Trie data structure to identify the intended recipients. 
-Depending on the client type (**DEVICE** or **APPLICATION**) and persistence options, 
+Depending on the [client type](/docs/mqtt-broker/user-guide/mqtt-client-type/) (**DEVICE** or **APPLICATION**) and persistence options described below, 
 the broker either redirects the message to another specific Kafka topic or directly delivers it to the recipient.
 
+### Non-persistent client
+
+A client is classified as a non-persistent one when the following conditions are met in the _CONNECT_ packet:
+
+For **MQTT v3.x**:
+* `clean_session` flag is set to _true_.
+
+For **MQTT v5**:
+* `clean_start` flag is set to _true_ and `sessionExpiryInterval` is set to _0_ or not specified.
+
+In the case of non-persistent clients, all messages intended for them are published directly without undergoing additional persistence.
+It is important to note that non-persistent clients can only be of type **DEVICE**.
+
 **!!! TODO !!!**: place here the architecture diagram for non-persistent DEV client!
+
+### Persistent client
+
+MQTT clients that do not meet the non-persistent conditions mentioned above are categorized as persistent clients. 
+Let's delve into the conditions for persistent clients:
+
+For **MQTT v3.x**:
+* `clean_session` flag is set to _false_.
+
+For **MQTT v5 clients**:
+* `sessionExpiryInterval` is greater than _0_ (regardless of the `clean_start` flag).
+* `clean_start` flag is set to _false_ and `sessionExpiryInterval` is set to _0_ or not specified.
 
 ### Client type
 
@@ -90,44 +115,17 @@ Consequently, we made a strategic decision to optimize performance by segregatin
 
 **!!! TODO !!!**: place here the architecture diagram for persistent DEV client!
 
-For **DEVICE** clients, we employ the **tbmq.msg.persisted** Kafka topic as a means of processing published messages that are extracted from the **tbmq.msg.all** topic. 
+For **DEVICE** persistent clients, we employ the **tbmq.msg.persisted** Kafka topic as a means of processing published messages that are extracted from the **tbmq.msg.all** topic. 
 Dedicated threads, functioning as Kafka consumers, retrieve these messages and store them in a [PostgreSQL](#postgresql-database) database utilized for persistence storage. 
 This approach is particularly suitable for DEVICE clients, as they typically do not require extensive message reception and may not be concerned about message loss during offline periods. 
 By leveraging this method, we facilitate the seamless restoration of persisted messages upon reconnection of a DEVICE client, 
 while simultaneously ensuring satisfactory performance for scenarios involving a low incoming message rate.
 
-It is important to note that DEVICE clients can be classified as either [non-persistent](#non-persistent-client) or [persistent](#persistent-client).
-
-##### Non-persistent client
-
-A client is classified as a non-persistent one when the following conditions are met in the _CONNECT_ packet:
-
-For **MQTT v3.x**:
-* `clean_session` flag is set to _true_.
-
-For **MQTT v5**:
-* `clean_start` flag is set to _true_ and `sessionExpiryInterval` is set to _0_ or not specified.
-
-In the case of non-persistent clients, all messages intended for them are published directly without undergoing persistence. 
-It is important to note that non-persistent clients can only be of type **DEVICE**.
-
-##### Persistent client
-
-MQTT clients that do not meet the non-persistent conditions mentioned above are categorized as persistent clients. 
-Let's delve into the conditions for persistent clients:
-
-For **MQTT v3.x**:
-* `clean_session` flag is set to _false_.
-
-For **MQTT v5 clients**:
-* `sessionExpiryInterval` is greater than _0_ (regardless of the `clean_start` flag).
-* `clean_start` flag is set to _false_ and `sessionExpiryInterval` is set to _0_ or not specified.
-
 #### APPLICATION client
 
 **!!! TODO !!!**: place here the architecture diagram for persistent APP client!
 
-For **APPLICATION** clients, we adopt a distinct approach. 
+For **APPLICATION** persistent clients, we adopt a distinct approach. 
 A dedicated Kafka topic is created for each client and every message that is extracted from the **tbmq.msg.all** topic and is intended for a specific APPLICATION is stored in the corresponding Kafka topic. 
 Subsequently, a separate thread (Kafka consumer) is assigned to each APPLICATION. These threads retrieve messages from the corresponding Kafka topics and deliver them to the respective clients. 
 This approach significantly enhances performance by ensuring efficient message delivery.
