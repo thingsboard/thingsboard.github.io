@@ -36,7 +36,7 @@ step3:
         title: 'Navigate to the "Latest telemetry" tab. You should see the previously published "temperature" readings;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-4-pe.png
-        title: 'Close the device details tab and refresh the "Devices" page. The device state should be changed from "Inactive" to "Active".'
+        title: 'Close the device details tab and refresh the "Devices" table. The device state should be changed from "Inactive" to "Active".'
         
 step31:
     0:
