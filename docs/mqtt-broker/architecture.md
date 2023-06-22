@@ -24,9 +24,7 @@ TBMQ is meticulously engineered to embody the following attributes:
 
 The subsequent diagram illustrates the pivotal constituents of the broker and the route of message transmission.
 
-**!!! TODO !!!**: replace with the architecture diagram!
-
-![image](/images/mqtt-broker/reference/perf-tests/mqtt-broker-perf-tests.png)
+![image](/images/mqtt-broker/architecture/tbmq-architecture.png)
 
 ## Motivation
 
@@ -84,7 +82,7 @@ For **MQTT v5**:
 In the case of non-persistent clients, all messages intended for them are published directly without undergoing additional persistence.
 It is important to note that non-persistent clients can only be of type **DEVICE**.
 
-**!!! TODO !!!**: place here the architecture diagram for non-persistent DEV client!
+![image](/images/mqtt-broker/architecture/tbmq-non-persistent-dev.png)
 
 ### Persistent client
 
@@ -113,7 +111,7 @@ Consequently, we made a strategic decision to optimize performance by segregatin
 
 #### DEVICE client
 
-**!!! TODO !!!**: place here the architecture diagram for persistent DEV client!
+![image](/images/mqtt-broker/architecture/tbmq-persistent-dev.png)
 
 For **DEVICE** persistent clients, we employ the **tbmq.msg.persisted** Kafka topic as a means of processing published messages that are extracted from the **tbmq.msg.all** topic. 
 Dedicated threads, functioning as Kafka consumers, retrieve these messages and store them in a [PostgreSQL](#postgresql-database) database utilized for persistence storage. 
@@ -123,7 +121,7 @@ while simultaneously ensuring satisfactory performance for scenarios involving a
 
 #### APPLICATION client
 
-**!!! TODO !!!**: place here the architecture diagram for persistent APP client!
+![image](/images/mqtt-broker/architecture/tbmq-app.png)
 
 For **APPLICATION** persistent clients, we adopt a distinct approach. 
 A dedicated Kafka topic is created for each client and every message that is extracted from the **tbmq.msg.all** topic and is intended for a specific APPLICATION is stored in the corresponding Kafka topic. 
