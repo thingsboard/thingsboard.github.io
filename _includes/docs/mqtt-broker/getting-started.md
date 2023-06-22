@@ -4,7 +4,7 @@
 
 ## Introduction
 
-The goal of this tutorial is to showcase the fundamental usage of TBMQ. 
+The goal of this tutorial is to showcase the fundamental usage of [TBMQ](/docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/). 
 Through this tutorial, you will gain knowledge and proficiency in the following areas:
 
 * Establishing connections between MQTT clients and the broker.
