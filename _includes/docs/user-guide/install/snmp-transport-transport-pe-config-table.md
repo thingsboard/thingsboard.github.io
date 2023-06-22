@@ -1,0 +1,75 @@
+<table>
+  <thead>
+      <tr>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>transport.snmp.enabled</td>
+          <td>SNMP_ENABLED</td>
+          <td>true</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.snmp.response_processing.parallelism_level</td>
+          <td>SNMP_RESPONSE_PROCESSING_PARALLELISM_LEVEL</td>
+          <td>20</td>
+          <td>parallelism level for executor (workStealingPool) that is responsible for handling responses from SNMP devices</td>
+      </tr>
+      <tr>
+          <td>transport.snmp.underlying_protocol</td>
+          <td>SNMP_UNDERLYING_PROTOCOL</td>
+          <td>udp</td>
+          <td>to configure SNMP to work over UDP or TCP</td>
+      </tr>
+      <tr>
+          <td>transport.sessions.inactivity_timeout</td>
+          <td>TB_TRANSPORT_SESSIONS_INACTIVITY_TIMEOUT</td>
+          <td>300000</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.sessions.report_timeout</td>
+          <td>TB_TRANSPORT_SESSIONS_REPORT_TIMEOUT</td>
+          <td>3000</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.json.type_cast_enabled</td>
+          <td>JSON_TYPE_CAST_ENABLED</td>
+          <td>true</td>
+          <td>Cast String data types to Numeric if possible when processing Telemetry/Attributes JSON</td>
+      </tr>
+      <tr>
+          <td>transport.json.max_string_value_length</td>
+          <td>JSON_MAX_STRING_VALUE_LENGTH</td>
+          <td>0</td>
+          <td>Maximum allowed string value length when processing Telemetry/Attributes JSON (0 value disables string value length check)</td>
+      </tr>
+      <tr>
+          <td>transport.log.enabled</td>
+          <td>TB_TRANSPORT_LOG_ENABLED</td>
+          <td>true</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.log.max_length</td>
+          <td>TB_TRANSPORT_LOG_MAX_LENGTH</td>
+          <td>1024</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.stats.enabled</td>
+          <td>TB_TRANSPORT_STATS_ENABLED</td>
+          <td>true</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.stats.print-interval-ms</td>
+          <td>TB_TRANSPORT_STATS_PRINT_INTERVAL_MS</td>
+          <td>60000</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>

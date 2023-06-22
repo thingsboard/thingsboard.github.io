@@ -1,0 +1,51 @@
+<table>
+  <thead>
+      <tr>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>spring.freemarker.checkTemplateLocation</td>
+          <td></td>
+          <td>false</td>
+          <td>spring freemaker configuration</td>
+      </tr>
+      <tr>
+          <td>spring.mvc.async.request-timeout</td>
+          <td>SPRING_MVC_ASYNC_REQUEST_TIMEOUT</td>
+          <td>30000</td>
+          <td>The default timeout for asynchronous requests in milliseconds</td>
+      </tr>
+      <tr>
+          <td>spring.resources.chain.compressed</td>
+          <td></td>
+          <td>true</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>spring.resources.chain.strategy.content.enabled</td>
+          <td></td>
+          <td>true</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>spring.servlet.multipart.max-file-size</td>
+          <td></td>
+          <td>50MB</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>spring.servlet.multipart.max-request-size</td>
+          <td></td>
+          <td>50MB</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>spring.main.allow-circular-references</td>
+          <td></td>
+          <td>true</td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>

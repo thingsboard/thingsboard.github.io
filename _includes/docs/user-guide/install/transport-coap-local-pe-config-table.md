@@ -1,0 +1,51 @@
+<table>
+  <thead>
+      <tr>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>transport.coap.enabled</td>
+          <td>COAP_ENABLED</td>
+          <td>true</td>
+          <td>Enable/disable coap transport protocol.</td>
+      </tr>
+      <tr>
+          <td>transport.coap.timeout</td>
+          <td>COAP_TIMEOUT</td>
+          <td>10000</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.coap.piggyback_timeout</td>
+          <td>COAP_PIGGYBACK_TIMEOUT</td>
+          <td>500</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.coap.psm_activity_timer</td>
+          <td>COAP_PSM_ACTIVITY_TIMER</td>
+          <td>10000</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.coap.paging_transmission_window</td>
+          <td>COAP_PAGING_TRANSMISSION_WINDOW</td>
+          <td>10000</td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.enabled</td>
+          <td>COAP_DTLS_ENABLED</td>
+          <td>false</td>
+          <td>Enable/disable DTLS 1.2 support</td>
+      </tr>
+      <tr>
+          <td>transport.coap.dtls.retransmission_timeout</td>
+          <td>COAP_DTLS_RETRANSMISSION_TIMEOUT_MS</td>
+          <td>9000</td>
+          <td>RFC7925_RETRANSMISSION_TIMEOUT_IN_MILLISECONDS = 9000</td>
+      </tr>
+  </tbody>
+</table>
