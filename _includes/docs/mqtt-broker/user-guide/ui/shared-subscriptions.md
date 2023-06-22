@@ -20,8 +20,8 @@ Broker administrators are able to manage shared subscriptions via Web UI or [RES
 In order to add new shared subscriptions please follow next steps:
 1. Open _Shared Subscriptions_ page and click on the plus icon button Add Application Shared Subscription.
 2. In the dialog please fill the following fields:
-   - **Name** - indicates the shared subscription name.
-   - **Topic filter** - this is the actual topic filter that can include wildcards (#, +). If shared subscription topic is `$share/group1/city/+/home/#`, set Topic filter as `city/+/home/#`.
+   - **Name** - indicates the shared subscription name. Can be any name you like, e.g., "Application Shared Subscription".
+   - **Topic filter** - this is the actual topic filter that can include wildcards (#, +). If shared subscription topic filter is `$share/group1/city/+/home/#`, set Topic filter field as `city/+/home/#`.
        Can not be changed after creation and must be unique.
    - **Partitions** - It is recommended that the number of partitions to be equal or multiple of an expected number of clients of the shared subscription.
      For example, if 5 clients are going to be subscribed to the shared subscription, set the Partitions to 5, 10 or 15. 

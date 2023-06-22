@@ -27,7 +27,7 @@ toc:
       path: /docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/
     - title: Sessions
       path: /docs/mqtt-broker/user-guide/ui/sessions/
-    - title: Shared Subscriptions
+    - title: Application Shared Subscriptions
       path: /docs/mqtt-broker/user-guide/ui/shared-subscriptions/
     - title: Mail Server
       path: /docs/mqtt-broker/user-guide/ui/mail-server/

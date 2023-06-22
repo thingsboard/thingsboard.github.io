@@ -20,7 +20,8 @@ mosquitto_pub -d -h "YOUR_MQTT_BROKER_HOST" -p 1883 -D PUBLISH user-property hel
 ```
 {: .copy-code}
 
-**Note,** do not forget to put your hostname instead of `YOUR_MQTT_BROKER_HOST`.
+**Note,** do not forget to put your hostname instead of `YOUR_MQTT_BROKER_HOST`. 
+Make sure authentications are disabled. Otherwise, adjust the commands in this guide appropriately.
 
 ### Payload, User Properties
 

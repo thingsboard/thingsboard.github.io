@@ -54,23 +54,27 @@ high message rates, and resource optimization, allowing for better management of
 
 ### Subscribing to Shared Subscriptions
 
-In this tutorial, we will be using the Mosquitto client library, which can be installed using the following command:
+In this tutorial, we will be connecting [DEVICE](/docs/mqtt-broker/user-guide/mqtt-client-type/#device-client) non-persistent clients and using the Mosquitto client library, 
+which can be installed using the following command:
 ```
-apt-get install mosquitto-clients
+sudo apt-get install mosquitto-clients
 ```
 {: .copy-code}
 
 To initiate a shared subscription, execute the following commands in two separate terminals:
 
 ```bash
-mosquitto_sub -d -t '$share/group/home/temp' -q 1 -V mqttv5 -i client1
+mosquitto_sub -d -h "YOUR_MQTT_BROKER_HOST" -p 1883 -t '$share/group/home/temp' -q 1 -V mqttv5 -i client1
 ```
 {: .copy-code}
 
 ```bash
-mosquitto_sub -d -t '$share/group/home/temp' -q 1 -V mqttv5 -i client2
+mosquitto_sub -d -h "YOUR_MQTT_BROKER_HOST" -p 1883 -t '$share/group/home/temp' -q 1 -V mqttv5 -i client2
 ```
 {: .copy-code}
+
+**Note,** do not forget to put your hostname instead of `YOUR_MQTT_BROKER_HOST`.
+Make sure authentications are disabled. Otherwise, adjust the commands in this guide appropriately.
 
 As a result, a new shared subscription is initiated (with ShareName equal to `group`) with two clients (`client1` and `client2`) subscribing to the `home/temp` topic. 
 Both clients will receive messages published on the mentioned topic evenly.
@@ -79,7 +83,7 @@ To ensure that the clients belonging to the shared subscription receive messages
 Execute the following command to do so:
 
 ```bash
-mosquitto_pub -d -t 'home/temp' -m 32 -q 1
+mosquitto_pub -d -h "YOUR_MQTT_BROKER_HOST" -p 1883 -t 'home/temp' -m 32 -q 1
 ```
 {: .copy-code}
 
