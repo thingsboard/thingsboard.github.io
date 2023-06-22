@@ -448,13 +448,13 @@ environment variable, default value, and description.
       <tr>
           <td>actors.rule.mail_thread_pool_size</td>
           <td>ACTORS_RULE_MAIL_THREAD_POOL_SIZE</td>
-          <td>2</td>
+          <td>4</td>
           <td>Thread pool size for mail sender executor service</td>
       </tr>
       <tr>
           <td>actors.rule.mail_password_reset_thread_pool_size</td>
           <td>ACTORS_RULE_MAIL_PASSWORD_RESET_THREAD_POOL_SIZE</td>
-          <td>2</td>
+          <td>4</td>
           <td>Thread pool size for password reset emails executor service</td>
       </tr>
       <tr>
@@ -956,6 +956,12 @@ environment variable, default value, and description.
           <td>Additional Kafka consumer configs for application shared subscription topics</td>
       </tr>
       <tr>
+          <td>queue.kafka.application-persisted-msg.shared-topic.additional-producer-config</td>
+          <td>TB_KAFKA_APP_PERSISTED_MSG_SHARED_ADDITIONAL_PRODUCER_CONFIG</td>
+          <td></td>
+          <td>Additional Kafka producer configs for application shared subscription topics</td>
+      </tr>
+      <tr>
           <td>queue.kafka.device-persisted-msg.topic</td>
           <td>TB_KAFKA_DEVICE_PERSISTED_MSG_TOPIC</td>
           <td>tbmq.msg.persisted</td>
@@ -1267,13 +1273,13 @@ environment variable, default value, and description.
       <tr>
           <td>queue.msg-all.consumers-count</td>
           <td>TB_MSG_ALL_CONSUMERS_COUNT</td>
-          <td>2</td>
+          <td>4</td>
           <td>Number of parallel PUBLISH messages consumers</td>
       </tr>
        <tr>
           <td>queue.msg-all.threads-count</td>
           <td>TB_MSG_ALL_THREADS_COUNT</td>
-          <td>2</td>
+          <td>4</td>
           <td>Number of threads in the pool to process consumers tasks</td>
       </tr>
       <tr>
@@ -1309,7 +1315,7 @@ environment variable, default value, and description.
       <tr>
           <td>queue.application-persisted-msg.threads-count</td>
           <td>TB_APP_PERSISTED_MSG_THREADS_COUNT</td>
-          <td>2</td>
+          <td>8</td>
           <td>Number of threads in the pool to process Application consumers tasks</td>
       </tr>
       <tr>
@@ -1477,13 +1483,13 @@ environment variable, default value, and description.
       <tr>
           <td>queue.persisted-downlink-msg.threads-count</td>
           <td>TB_PERSISTED_DOWNLINK_MSG_THREADS_COUNT</td>
-          <td>1</td>
+          <td>2</td>
           <td>Number of threads in the pool to process consumers tasks</td>
       </tr>
       <tr>
           <td>queue.persisted-downlink-msg.consumers-count</td>
           <td>TB_PERSISTED_DOWNLINK_MSG_CONSUMERS_COUNT</td>
-          <td>1</td>
+          <td>2</td>
           <td>Number of parallel persistent downlink messages consumers</td>
       </tr>
       <tr>
@@ -1495,13 +1501,13 @@ environment variable, default value, and description.
       <tr>
           <td>queue.basic-downlink-msg.threads-count</td>
           <td>TB_BASIC_DOWNLINK_MSG_THREADS_COUNT</td>
-          <td>1</td>
+          <td>2</td>
           <td>Number of threads in the pool to process consumers tasks</td>
       </tr>
       <tr>
           <td>queue.basic-downlink-msg.consumers-count</td>
           <td>TB_BASIC_DOWNLINK_MSG_CONSUMERS_COUNT</td>
-          <td>1</td>
+          <td>2</td>
           <td>Number of parallel basic downlink messages consumers</td>
       </tr>
       <tr>
