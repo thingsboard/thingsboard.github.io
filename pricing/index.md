@@ -455,6 +455,30 @@ selfManagedPlan:
                         </div>
                     </div>
                 </div>
+                <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                    <div class="pricing-square">
+                        <h2>Enterprise Bundle</h2>
+                        <div class="pricing-square-description" style="min-height: 50px;">
+                            <p>Supercharge your IoT solution</p>
+                        </div>
+                        <h4 class="pricing-square-price mb-0">
+                            $11999
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a class="btn-blue btn-pricing" href="/docs/contact-us/" target="_blank">Get your license</a> 
+                        </div>
+                        <div class="pricing-square-item">ThingsBoard perpetual license</div>
+                        <div class="pricing-square-item">ThingsBoard development license</div>
+                        <div class="pricing-square-item">Trendz perpetual license</div>
+                        <div class="pricing-square-item">Trendz development license</div>
+                        <div class="pricing-square-item">3 Edge perpetual licenses</div>
+                        <div class="pricing-square-item">Training sessions</div>
+                        <div class="pricing-square-item" data-faq-id="subscription-support">
+                            Email support within <b>12 hours</b>
+                        </div>
+                        <div class="pricing-square-item">1 year of software updates for all products in bundle</div>
+                    </div>
+                </div>
            </div>
         </div>
     </div>
