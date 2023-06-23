@@ -26,7 +26,7 @@ For Linux users who have Docker installed, the execution of the following comman
 
 ```shell
 wget https://raw.githubusercontent.com/thingsboard/TBMQ/main/msa/tbmq/configs/docker-compose.yml
-mkdir -p ~/.tb-mqtt-broker-data/kafka && mkdir -p ~/.tb-mqtt-broker-data/log && mkdir -p ~/.tb-mqtt-broker-data/conf && mkdir -p ~/.tb-mqtt-broker-data/postgres && sudo chown -R 799:799 ~/.tb-mqtt-broker-data
+mkdir -p ~/.tb-mqtt-broker-data/kafka && mkdir -p ~/.tb-mqtt-broker-data/log && mkdir -p ~/.tb-mqtt-broker-data/conf && mkdir -p ~/.tb-mqtt-broker-data/data && mkdir -p ~/.tb-mqtt-broker-data/postgres && sudo chown -R 799:799 ~/.tb-mqtt-broker-data
 docker compose up -d
 ```
 {: .copy-code}
