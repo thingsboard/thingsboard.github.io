@@ -32,8 +32,6 @@ All messages published by MQTT clients are persistently stored in the `tbmq.msg.
 The subsequent processing of these messages varies based on the client type and whether the client is persistent or non-persistent.
 
 {% capture difference %}
-**NOTE**:
-<br>
 To delve into the details of client persistence, it is worthwhile to explore the concept of the 
 [Clean Session](https://docs.oasis-open.org/mqtt/mqtt/v3.1.1/os/mqtt-v3.1.1-os.html#_Toc398718030) property in MQTT v3.x or 
 the [Clean Start](https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html#_Toc3901039) and
