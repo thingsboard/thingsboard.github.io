@@ -26,8 +26,8 @@ docker pull thingsboard/tbmq-node:{{ site.release.broker_full_ver }}
 ## Step 1. Open TBMQ K8S scripts repository
 
 ```bash
-git clone https://github.com/thingsboard/thingsboard-mqtt-broker.git
-cd thingsboard-mqtt-broker/k8s/aws
+git clone https://github.com/thingsboard/TBMQ.git
+cd TBMQ/k8s/aws
 ```
 {: .copy-code}
 

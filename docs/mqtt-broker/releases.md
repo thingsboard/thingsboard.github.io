@@ -10,4 +10,4 @@ description: TBMQ Releases
 
 ## v1.0.0 (Month ?, 2023)
 
-Initial release. See [GitHub](https://github.com/thingsboard/thingsboard-mqtt-broker#thingsboard-mqtt-broker) for more info.
+Initial release. See [GitHub](https://github.com/thingsboard/TBMQ#tbmq) for more info.

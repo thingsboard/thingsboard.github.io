@@ -61,17 +61,17 @@ Use java installation [instructions](#java) to fix this.
 
 #### Source code
 
-You can clone source code of the project from the official [GitHub repo](https://github.com/thingsboard/thingsboard-mqtt-broker).
+You can clone source code of the project from the official [GitHub repo](https://github.com/thingsboard/TBMQ).
 
 ```bash
-git clone git@github.com:thingsboard/thingsboard-mqtt-broker.git
-cd thingsboard-mqtt-broker
+git clone git@github.com:thingsboard/TBMQ.git
+cd TBMQ
 ```
 {: .copy-code}
 
 #### Build
 
-Run the following command from the thingsboard-mqtt-broker folder to build the project:
+Run the following command from the TBMQ folder to build the project:
 
 ```bash
 mvn clean install -DskipTests

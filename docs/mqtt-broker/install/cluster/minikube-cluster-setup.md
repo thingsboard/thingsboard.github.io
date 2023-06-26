@@ -18,8 +18,8 @@ If you don't have Minikube installed, please follow [these instructions](https:/
 ## Step 1. Clone TBMQ repository
 
 ```bash
-git clone https://github.com/thingsboard/thingsboard-mqtt-broker.git
-cd thingsboard-mqtt-broker/k8s/minikube
+git clone https://github.com/thingsboard/TBMQ.git
+cd TBMQ/k8s/minikube
 ```
 {: .copy-code}
 
