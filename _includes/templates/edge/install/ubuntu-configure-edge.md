@@ -10,21 +10,21 @@ sudo nano /etc/tb-edge/conf/tb-edge.conf
 ``` 
 {: .copy-code}
 
-Update the following lines in the configuration file. Don't forget **to replace**:
- * "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your **real postgres user password**.
- * "PUT_YOUR_CLOUD_IP" with an IP address of the machine where **{{appPrefix}}** server is running:
+Please update the following lines in your configuration file. Make sure **to replace**:
+ * "PUT_YOUR_POSTGRESQL_PASSWORD_HERE" with your **actual postgres user password**.
+ * "PUT_YOUR_CLOUD_IP" with an IP address of the machine where **{{appPrefix}}** server is running. Depending on your setup:
    {% if docsPrefix == 'pe/edge/' %}
-    * Use **thingsboard.cloud** in case you are connecting edge to [**ThingsBoard Cloud**](https://thingsboard.cloud/signup).
+    * If you're connecting the edge to [**ThingsBoard Cloud**](https://thingsboard.cloud/signup), use **thingsboard.cloud**.
 
-    **NOTE**: **thingsboard.cloud** uses SSL protocol for edge communication.
-    Please uncomment **export CLOUD_RPC_SSL_ENABLED=true** as well.
+    **NOTE**: **thingsboard.cloud** employs the SSL protocol for edge communication. 
+    You should also uncomment **export CLOUD_RPC_SSL_ENABLED=true** in this case.
    {% else %}
-    * Use **demo.thingsboard.io** if you are connecting edge to [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) for evaluation.
+    * If you're connecting the edge to the [**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup) for evaluation, use **demo.thingsboard.io**.
    {% endif %}
-    * Use **localhost** in case edge is running on the same machine where cloud instance is running. 
-    * Use **X.X.X.X** IP address in case edge is connecting to the cloud instance in the same network or in the docker.
+    * Use **localhost** if the edge is running on the same machine as the cloud instance. 
+    * Use an **X.X.X.X** IP address if the edge is connecting to the cloud instance in the same network or in a Docker container.
 
- * "PUT_YOUR_EDGE_KEY_HERE" and "PUT_YOUR_EDGE_SECRET_HERE" with Edge **key and secret** respectively (edge credentials you can find in cloud instance):
+ * Replace "PUT_YOUR_EDGE_KEY_HERE" and "PUT_YOUR_EDGE_SECRET_HERE" with the respective **Edge key and secret** (you can find these edge credentials in your cloud instance):
 
 ```bash
 # UNCOMMENT NEXT LINES AND PUT YOUR CLOUD CONNECTION SETTINGS:
@@ -58,9 +58,9 @@ Update the following lines in the configuration file. Don't forget **to replace*
 {: .copy-code}
 
 {% capture local-deployment %}
-If ThingsBoard Edge is going to be running on the same machine where **{{appPrefix}}** server (cloud) is running, you'll need to update additional configuration parameters to avoid port collision between ThingsBoard server and ThingsBoard Edge. 
+If ThingsBoard Edge is set to run on the same machine where the **{{appPrefix}}** server is operating, you need to update additional configuration parameters to prevent port collision between the ThingsBoard server and ThingsBoard Edge.
 
-Please uncomment next parameters in ThingsBoard Edge configuration file (**/etc/tb-edge/conf/tb-edge.conf**): 
+Please uncomment the following parameters in the ThingsBoard Edge configuration file (**/etc/tb-edge/conf/tb-edge.conf**): 
 <br>**export HTTP_BIND_PORT=18080**
 <br>**export MQTT_BIND_PORT=11883**
 <br>**export COAP_BIND_PORT=15683**
@@ -68,7 +68,7 @@ Please uncomment next parameters in ThingsBoard Edge configuration file (**/etc/
 {% if docsPrefix == 'pe/edge/' %}
 <br>**export INTEGRATIONS_RPC_PORT=19090**
 {% endif %}
-Please make sure ports above (18080, 11883, 15683) are not used by any other application.
+Ensure that the ports listed above (18080, 11883, 15683) are not being used by any other application.
 
 {% endcapture %}
 {% include templates/info-banner.md content=local-deployment %}

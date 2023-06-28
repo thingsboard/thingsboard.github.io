@@ -36,6 +36,28 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
+        <img class="customer-logo" src="/images/customers/utvyakta-logo.png">
+        <a class="outlink" href="https://utvyakta.com/" alt="Utvyakta"> Utvyakta </a>
+    </div>
+    <div class="customer-content">
+        <div class="person-container">
+            <img class="person-logo" src="/images/customers/sudhir-ravindramohan.png"/>
+            <div class="person-title">
+                <p class="person-name"> Sudhir Ravindramohan </p>
+                <p class="person-position"> Co-founder and CTO </p>
+            </div>
+        </div>
+        <h2>
+            Using Thingsboard has been a game-changer for our IoT projects. The platform's intuitive interface and robust features have simplified our process, from device management to data visualization.
+        </h2>
+        <p>
+            Utvyakta Solutions is an IIoT company specializing in providing remote air compressor monitoring solutions. We are committed to reducing carbon emissions through smart technology interventions that reduce energy consumption and maintenance costs for industrial machines. We recommend Thingsboard as the go-to remote air compressor monitoring platform. The seamless integration, real-time data visualization, and powerful analytics provided by Thingsboard have revolutionized our monitoring capabilities. The platform's reliability and scalability have allowed us to efficiently manage and optimize our air compressor operations, resulting in improved productivity. With Thingsboard, our clients can confidently monitor their compressors from anywhere, ensuring uninterrupted performance and proactive maintenance. Highly recommended!"
+        </p>
+    </div>
+</div>
+
+<div class="customer-block">
+    <div class="customer-company">
         <img class="customer-logo" src="/images/customers/Farinia.png">
         <a class="outlink" href="https://www.farinia.com/" alt="Farinia Group"> Farinia Group </a>
     </div>

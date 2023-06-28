@@ -1,13 +1,13 @@
 ---
 layout: thingsboard-edge
 title: ThingsBoard Edge
-description:
+description: Comprehensive software solutions for edge computing, providing data analysis and management at the source of data creation.
 ---
 
 <section id="intro">
 	<main>
-		<h1 class="intro_title">The ThingsBoard Edge <a href="/docs/edge/getting-started-guides/what-is-edge/">CE</a> and <a href="/docs/pe/edge/getting-started-guides/what-is-edge/">PE</a> are ThingsBoard's software products for edge computing</h1>
-        <p class="labeling">It allows bringing data analysis and management to the edge, where the data created. At the same time ThingsBoard Edge seamlessly synchronizing with the ThingsBoard cloud (ThingsBoard Cloud, ThingsBoard Demo, ThingsBoard PE or ThingsBoard CE) according to your business needs.</p>
+		<h1 class="intro_title">Introducing ThingsBoard Edge <a href="/docs/edge/getting-started-guides/what-is-edge/">CE</a> and <a href="/docs/pe/edge/getting-started-guides/what-is-edge/">PE</a>: Our software products specifically designed for edge computing</h1>
+        <p class="labeling">With ThingsBoard Edge, data analysis and management are executed at the edge, right where data is created. Furthermore, it synchronizes seamlessly with the ThingsBoard cloud platform  (Cloud, Demo, PE, or CE) to cater to your specific business requirements.</p>
 	</main>
 </section>
 
@@ -17,8 +17,8 @@ description:
             <div class="main1"></div><div class="small1"></div><div class="small2"></div><div class="small3"></div><div class="small4"></div>
         </div>
         <div class="block">
-            <div class="feature-des"><h2>Local deployment and storage</h2>
-                <p>Process and store data from edge (local) devices without connection to the cloud. Push updates to the cloud once connection restored.</p>
+            <div class="feature-des"><h2>Local Deployment and Storage</h2>
+                <p>Process and store data from local (edge) devices independently of the cloud. Sync updates with the cloud once connectivity is restored.</p>
                 <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
                 <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
@@ -35,8 +35,8 @@ description:
             <div class="block-img">
                 <img src="/images/edge/data-filtering.svg">
             </div>
-            <div class="feature-des"><h2>Traffic filtering</h2>
-                <p>Filter data from edge (local) devices on the ThingsBoard Edge service and push to cloud only subset of the data for further processing or storage.</p>
+            <div class="feature-des"><h2>Data Filtering</h2>
+                <p>Use the ThingsBoard Edge service to filter data from local (edge) devices and forward only a subset of data to the cloud for further processing or storage.</p>
                 <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
                 <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
@@ -50,8 +50,8 @@ description:
             <div class="main2"></div><div class="small5"></div><div class="small6"></div><div class="small7"></div>
         </div>
         <div class="block">
-            <div class="feature-des"><h2>Local alarms</h2>
-                <p>React instantly to critical situations on site without connectivity to cloud.</p>
+            <div class="feature-des"><h2>Local Alarms</h2>
+                <p>Respond instantly to critical situations on-site, even without cloud connectivity.</p>
                 <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
                 <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
@@ -68,8 +68,8 @@ description:
             <div class="block-img">
                 <img src="/images/edge/batch-update.svg">
             </div>
-            <div class="feature-des"><h2>Batch update and visualization</h2>
-                <p>Update thousands of edge configurations in a single click. Monitor local events and timeseries data with a real-time dashboard.</p>
+            <div class="feature-des"><h2>Batch Update and Visualization</h2>
+                <p>Update thousands of edge configurations with a single click. Monitor local events and timeseries data using a real-time dashboard.</p>
                 <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
                 <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
@@ -89,8 +89,8 @@ description:
                 <div class="block">
                     <img src="/images/edge/robust-icon.svg">
                     <div>
-                        <h4 class="title">Robust and efficient</h4>
-                        <p>Single edge can handle up to 1000 of devices depending on the use-case and deployed hardware.</p>
+                        <h4 class="title">Robust and Efficient</h4>
+                        <p>A single Edge instance is capable of handling up to 1,000 devices, depending on the use-case and the capabilities of the deployed hardware.</p>
                     </div>
                 </div>
             </div>
@@ -98,7 +98,7 @@ description:
                 <div class="block"><img src="/images/edge/durable-icon.svg">
                     <div>
                         <h4 class="title">Durable</h4>
-                        <p>Edge collects all messages and events in the persistence layer. Particular messages could be transferred to the cloud, if required.</p>
+                        <p>The Edge system collects all messages and events in a persistent layer. Selected messages can be transferred to the cloud, as per necessity.</p>
                     </div>
                 </div>
             </div>
@@ -106,7 +106,7 @@ description:
                 <div class="block"><img src="/images/edge/customizable-icon.svg">
                     <div>
                     <h4 class="title">Customizable</h4>
-                    <p>Adding new functionality is easy with rule engine, customizable widgets and dashboards.</p>
+                    <p>Enhancing functionality is effortless with our rule engine, alongside the ability to customize widgets and dashboards to your preference.</p>
                     </div>
                 </div>
             </div>
@@ -114,7 +114,7 @@ description:
                 <div class="block"><img src="/images/edge/scalable-icon.svg">
                     <div>
                     <h4 class="title">Scalable</h4>
-                    <p>Spread your computation and data analysis on thousands of edges.</p>
+                    <p>Distribute your computational tasks and data analysis across thousands of Edge instances for superior scalability.</p>
                     </div>
                 </div>
             </div>

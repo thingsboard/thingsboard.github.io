@@ -6,4 +6,4 @@ ThingsBoard UI was migrated to Angular 15. You need to re-build your custom widg
 We suggest consulting [**this guide**](https://v15.material.angular.io/guide/mdc-migration).
 
 {% endcapture %}
-{% include templates/info-banner.md content=tb_3_5_0_upgrade_note %}
+{% include templates/warn-banner.md content=tb_3_5_0_upgrade_note %}

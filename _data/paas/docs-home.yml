@@ -28,6 +28,8 @@ toc:
       path: /docs/paas/solution-templates/air-quality-monitoring/
     - title: Smart Irrigation
       path: /docs/paas/solution-templates/smart-irrigation/
+    - title: Waste management
+      path: /docs/paas/solution-templates/waste-management/
 - title: Key concepts
   section:
     - title: Entities and Relations
@@ -46,6 +48,9 @@ toc:
       path: /docs/paas/user-guide/rpc/
     - title: OTA updates
       path: /docs/paas/user-guide/ota-updates/
+    - title: Notification center
+      path: /docs/paas/user-guide/notifications/
+      new: true
 - title: Dashboards
   section:
     - title: Overview

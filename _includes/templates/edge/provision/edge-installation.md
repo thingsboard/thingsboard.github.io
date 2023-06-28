@@ -1,1 +1,1 @@
-Once ThingsBoard **Edge** provisioned on ThingsBoard server please follow **Step - 2** from [Installation Guide](/docs/user-guide/install/{{docsPrefix}}installation-options/) - this guide will help you to install ThingsBoard **Edge** and connect it to ThingsBoard server.
+For further assistance, refer to the [Edge Install Guide](/docs/user-guide/install/{{docsPrefix}}installation-options/). This guide will aid in the installation of ThingsBoard Edge and its connection to the ThingsBoard server.

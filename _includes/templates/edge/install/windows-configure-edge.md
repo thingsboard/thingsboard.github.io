@@ -64,7 +64,7 @@ cloud:
 ```
 
 {% capture local-deployment %}
-If ThingsBoard Edge is going to be running on the same machine where **{{appPrefix}}** server (cloud) is running, you'll need to update additional configuration parameters to avoid port collision between ThingsBoard server and ThingsBoard Edge. 
+If ThingsBoard Edge is set to run on the same machine where the **{{appPrefix}}** server is operating, you need to update additional configuration parameters to prevent port collision between the ThingsBoard server and ThingsBoard Edge.
 
 Please locate and change next parameters in ThingsBoard Edge configuration file (**C:\Program Files (x86)\tb-edge\conf\tb-edge.yml**):
 <br>
@@ -81,7 +81,7 @@ Please locate and change next parameters in ThingsBoard Edge configuration file 
 <br>**bind_port: "${INTEGRATIONS_RPC_PORT:19090}"**
 <br>**...**
 {% endif %}
-Please make sure ports above (18080, 11883, 15683) are not used by any other application.
+Ensure that the ports listed above (18080, 11883, 15683) are not being used by any other application.
 
 {% endcapture %}
 {% include templates/info-banner.md content=local-deployment %}
