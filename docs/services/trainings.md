@@ -8,219 +8,144 @@ description: ThingsBoard training sessions
 
 <h1 class="mainTitle">Training sessions</h1>
 
-ThingsBoard training sessions are educational events that are delivered to your company’s engineers by ThingsBoard core team members. The primary goals of ThingsBoard education courses are:
+ThingsBoard training sessions are educational events delivered to your company's engineers by members of the ThingsBoard core team. The primary goals of ThingsBoard education courses are:
 
 - Boosting your experience with the ThingsBoard platform.
-- Familiarizing you with platform features, APIs and integrations.
+- Familiarizing you with platform features, APIs, and integrations.
 - Addressing practical questions related to your use cases.
 - Minimizing time-to-market for your IoT product or solution.
+
+Key additions:
+- The minimum training bundle consists of 8 hours, which will be divided into four 2-hour sessions. You have the flexibility to combine any of the topics listed.
+- Please note that only one session (2 hours) can be scheduled per day.
+- Once the first session is scheduled, the remaining sessions must be scheduled within a month. This allows for efficient continuity in the training process.
 
 ThingsBoard training sessions are on-demand online events for up to 8 people. On-site training sessions are also available. [Contact us](/docs/contact-us/) for more details.
 
 <br/>
 
-<span class="heading">Training courses:</span>
+<span class="heading">Training topics:</span>
 
 <div class="service-info-blocks">
-  <div class="card">
-    <h3 class="title">ThingsBoard Basics</h3>
-    <p class="sub-title">Basic understanding of IoT and programming concepts</p>
-    <p class="description">Learn how ThingsBoard platform helps businesses to implement IoT use cases and support IoT solutions. This training session will provide you with the basic understanding of ThingsBoard features and how they can be used in your IoT product.</p>
-    <div class="card-bot">
-      <p class="length"><b>8 hours</b> ( 1 full work day or two 4-hour sessions)</p>
-      <p class="audience"><b>software and hardware engineers, architects</b></p>
-      <div id="thingsboard-basics" class="card-drop" onclick="dropContent(id)">Agenda</div>
-    </div>
-    <div id="thingsboard-basics" class="drop-content">
-      <div>
-        <p>Platform overview</p>
-        <li>Explain platform capabilities and functionality.</li>
-        <li>Discussion on your use case to highlight key points during the training session.</li>
-        <p>Platform installation</p>
-        <li>Review available installation options. Highlight security and configuration aspects.</li>
-        <li>Exercise: setup ThingsBoard instance on AWS.</li>
-        <p>Web UI</p>
-        <li>Explain basic web UI capabilities and main entities: Devices, Customers, Users, Dashboards.</li>
-        <li>Review available widget types and explain their basic configuration parameters.</li>
-        <li>Explain ThingsBoard user roles and their permissions.</li>
-        <li>Exercise: create Device and provision Device Credentials.</li>
-        <li>Exercise: create Dashboard and assign it to the Customer.</li>
-        <p>ThingsBoard API</p>
-        <li>Explain ThingsBoard API for device connectivity and integration with server-side applications.</li>
-        <li>Exercise: create device firmware to publish telemetry and attributes over MQTT.</li>
-        <li>Exercise: add widgets to the Dashboard to visualize data from the previous exercise.</li>
-        <p>Rule Engine</p>
-        <li>Explain Rule engine data flow.</li>
-        <li>Review Rule components: messages, relations, nodes and their available implementations.</li>
-        <li>Exercise: configure alerting rule based on device attributes and timeseries values.</li>
-        <p>Use-cases and Q&A session</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
+    <div class="card">
     <h3 class="title">ThingsBoard Data Visualization</h3>
     <p class="sub-title">Basic concepts of ThingsBoard platform</p>
-    <p class="description">Learn how ThingsBoard platform helps to collect and visualize IoT data and use this knowledge to improve customer experience. This training session will provide you with the in-depth understanding of ThingsBoard visualization capabilities, widget customization, user roles, and permissions.</p>
+    <p class="description">Learn how ThingsBoard platform helps to collect and visualize IoT data and use this knowledge to improve customer experience. This training sessions will provide you with the in-depth understanding of ThingsBoard visualization capabilities.</p>
     <div class="card-bot">
-      <p class="length"><b>8 hours</b> ( 1 full work day or two 4-hour sessions)</p>
-      <p class="audience"><b>front-end developers, engineers, architects</b></p>
+      <p class="length"><b>4 hours</b> (two 2-hour sessions)</p>
+      <p class="audience"><b>front-end developers</b></p>
       <div id="thingsboard-data-visualization" class="card-drop" onclick="dropContent(id)">Agenda</div>
     </div>
     <div id="thingsboard-data-visualization" class="drop-content">
       <div>
-        <p>Web UI</p>
-        <li>Explain web UI capabilities and main business entities: Devices, Customers, Users, and Dashboards.</li>
-        <li>Explain ThingsBoard user roles and their permissions.</li>
-        <li>Exercise: create Device and provision Device Credentials</li>
-        <p>Dashboards</p>
-        <li>Explain Dashboard features and capabilities</li>
-        <li>Exercise: create Dashboard and assign it to Customer.</li>
-        <li>Exercise: modify dashboard settings: background color, image, margins.</li>
-        <li>Exercise: working with device aliases.</li>
-        <li>Exercise: import/export your dashboard.</li>
-        <p>Widgets</p>
-        <li>Explain widget types, data sources, basic and advanced settings.</li>
-        <li>Exercise: configure and tune widget to show simulated device values.</li>
-        <li>Exercise: configure and tune widget to show real device values.</li>
-        <li>Exercise: configure and tune card widgets.</li>
-        <li>Exercise: configure and tune gauge widgets.</li>
-        <li>Exercise: configure and tune line chart widgets.</li>
-        <li>Exercise: configure and tune map widgets.</li>
-        <p>Real-time and historical data visualization</p>
-        <li>Configure line chart widget to show historical data</li>
-        <li>Configure line chart widget to show real-time data with time-window.</li>
-        <p>Custom widgets</p>
-        <li>Explain widget library functionality</li>
-        <li>Exercise: Customize widget look and feel</li>
-        <li>Exercise: Customize widget logic</li>
+        <p>ThingsBoard Data Modeling and Visualization (Basic)</p>
+        <p class="sub-title">Explain basic Web UI capabilities and main entities:</p>
+        <li>Overview of TB hierarchy and main features based on real examples.</li>
+        <li>Devices, Assets, Entity Views, Customers, Users, and Dashboards based on real-life examples.</li>
+        <li>Explain ThingsBoard entity attributes and telemetry APIs. Overview of best practices with the naming of data keys and usage of the APIs.</li>
+        <li>Device and Asset Groups (PE feature). Covers configuration of the groups and usage scenarios.</li>
+        <li>Entity relations. Covers entity relation types, usage scenarios, and limitations.</li>
+        <li>The dashboard features overview: Covers entity Aliases, Time Window selection, General Settings, Dashboard states, and transition between states.</li>
+        <li>Q&A.</li>
+        <p>ThingsBoard Data Visualization (Advanced)</p>
+        <p class="sub-title">Review widget bundles:</p>
+        <li>Creating a dashboard with multiple states to display Asset hierarchy with the ability to drill down to particular asset/device details.</li>
+        <li>Exploring advanced configuration of Chart, Markdown/HTML Card, and Map widgets.</li>
+        <li>Custom Tooltip functions and custom Dashboard Actions.</li>
+        <li>Q&A.</li>
       </div>
     </div>
   </div>
 
   <div class="card">
-    <h3 class="title">Device connectivity and application development using ThingsBoard</h3>
-    <p class="sub-title">Basic concepts of ThingsBoard platform</p>
-    <p class="description">Learn how to use ThingsBoard platform APIs to build connected applications for your IoT devices. This training session will provide you with the in-depth understanding of supported network protocols and device APIs.</p>
+    <h3 class="title">ThingsBoard Custom Widget Development</h3>
+    <p class="sub-title">A guideline and best practices to get you started in ThingsBoard Widget development.</p>
+    <p class="description">Learn about widget types, data sources, and advanced settings. Go through the widget building process and principles.</p>
     <div class="card-bot">
-      <p class="length"><b>8 hours</b> ( 1 full work day or two 4-hour sessions)</p>
-      <p class="audience"><b>developers, engineers, architects</b></p>
+      <p class="length"><b>4 hours</b> (two 2-hour sessions)</p>
+      <p class="audience"><b>front-end developers</b></p>
       <div id="device-connectivity" class="card-drop" onclick="dropContent(id)">Agenda</div>
     </div>
     <div id="device-connectivity" class="drop-content">
       <div>
-        <p>Platform overview</p>
-        <li>Explain platform capabilities and functionality.</li>
-        <li>Discussion on your use case to highlight key points during the training session.</li>
-        <p>Device connectivity options</p>
-        <li>Review of supported network protocols: MQTT, HTTP and CoAP.</li>
-        <li>Exercise: telemetry data upload using MQTT.</li>
-        <li>Exercise: telemetry data upload using HTTP.</li>
-        <li>Exercise: telemetry data upload using CoAP.</li>
-        <p>Attributes API</p>
-        <li>Use cases and feature overview.</li>
-        <li>Exercise: Reporting device attribute changes to ThingsBoard.</li>
-        <li>Exercise: Subscribe to server-side attribute updates.</li>
-        <li>Exercise: Save and restore application state using ThingsBoard server.</li>
-        <p>Timeseries API</p>
-        <li>Use cases and feature overview.</li>
-        <li>Exercise: Reporting time-series data to ThingsBoard.</li>
-        <p>RPC API</p>
-        <li>Use cases and feature overview.</li>
-        <li>Exercise: Send one-way RPC command to Device.</li>
-        <li>Exercise: Send two-way RPC command to Device.</li>
-        <li>Exercise: Send RPC command from Device to Server.</li>
-        <p>Messaging between Devices</p>
-        <li>Messaging rule nodes overview.</li>
-        <li>Exercise: Send message from one device application to another.</li>
-        <p>Load Balancing, Scalability, and Failover</p>
-        <li>Use cases and platform capabilities overview.</li>
+        <p>ThingsBoard Custom Widget Development (Part 1)</p>
+        <li>Creating new bundles/widgets. Modifying system-bundles. Import/Export bundles and widgets. Built editor overview.</li>
+        <li>Building “Last values”-type widget.</li>
+        <li>Building “Timeseries”-type widget(simple time-series-table or line-chart).</li>
+        <li>Custom actions and custom actions templates with HTML.</li>
+        <li>Q&A.</li>
+        <p>ThingsBoard Custom Widget Development (Part 2)</p>
+        <li>Building “Control”-type widget.</li>
+        <li>Building “Static”-type widget.</li>
+        <li>Building Markdown/HTML Card based widget.</li>
+        <li>Q&A.</li>
       </div>
     </div>
   </div>
 
   <div class="card">
-    <h3 class="title">Server-side application development using ThingsBoard API</h3>
-    <p class="sub-title">Basic concepts of ThingsBoard platform</p>
-    <p class="description">Learn how to connect your cloud applications with your IoT devices using ThingsBoard platform APIs. This training session will provide you with in-depth understanding platform REST and websocket APIs, rule engine, data collection and analytics use cases.</p>
-    <div class="card-bot">
-      <p class="length"><b>8 hours</b> ( 1 full work day or two 4-hour sessions)</p>
-      <p class="audience"><b>developers, engineers, analysts and architects</b></p>
-      <div id="server-side-application" class="card-drop" onclick="dropContent(id)">Agenda</div>
+    <h3 class="title">Rule engine</h3>
+    <p class="sub-title">ㅤ</p>
+    <div>
+        <li> - Rule engine data flow.</li>
+        <li> - What is a rule node and how it can be used in rule chains.</li>
+        <li> - How profiles may affect data flow to rule chains.</li>
+        <li> - How to build efficient and proper data flow logic for any business use case.</li>
+        <li> - Q&A.</li>
     </div>
-    <div id="server-side-application" class="drop-content">
-      <div>
-        <p>Platform overview</p>
-        <li>Explain platform capabilities and functionality.</li>
-        <li>Discussion on your use case to highlight key points during the training session.</li>
-        <p>Platform API</p>
-        <li>REST API overview.</li>
-        <li>Exercise: Create tenant, device and customer using REST API.</li>
-        <li>Exercise: Create dashboard and assign it to user using REST API.</li>
-        <li>Exercise: Send RPC command to device using REST API.</li>
-        <li>Exercise: Fetch device data using REST API.</li>
-        <li>Exercise: Update device attribute using REST API.</li>
-        <li>Exercise: Subscribe to device data feed using websocket.</li>
-        <p>Rule engine</p>
-        <li>Explain Rule engine data flow.</li>
-        <li>Review Rule components: filters, processors and actions and their available implementations.</li>
-        <li>Explain available rule nodes and their implementations.</li>
-        <p>Data collection and analytics</p>
-        <li>Use cases and data flow overview.</li>
-        <li>Exercise: Pushing telemetry and attributes data to Kafka.</li>
-        <li>Exercise: Pushing telemetry and attributes data to RabbitMQ.</li>
-        <li>Exercise: Pushing telemetry and attributes data to REST API.</li>
-        <p>RPC API</p>
-        <li>Use cases and feature overview.</li>
-        <li>Exercise: Send one-way RPC command to Device.</li>
-        <li>Exercise: Send two-way RPC command to Device.</li>
-        <p>Load Balancing, Scalability and Failover</p>
-        <li>Use cases and platform capabilities overview.</li>
-      </div>
+    <div class="card-bot">
+      <p class="length"><b>2 hours</b></p>
+      <p class="audience"><b>back-end developers</b></p>
     </div>
   </div>
 
   <div class="card">
-    <h3 class="title">ThingsBoard Administration</h3>
-    <p class="sub-title">Basic understanding of IoT and system administration</p>
-    <p class="description">Learn how to provision, monitor and scale your ThingsBoard cluster. This training session will provide you with in-depth understanding platform configuration, troubleshooting and scalability. We will also cover security and load balancing topics.</p>
-    <div class="card-bot">
-      <p class="length"><b>8 hours</b> ( 1 full work day or two 4-hour sessions)</p>
-      <p class="audience"><b>system administrators and architects</b></p>
-      <div id="thingsboard-administration" class="card-drop" onclick="dropContent(id)">Agenda</div>
+    <h3 class="title">Alarm events and notifications</h3>
+    <p class="sub-title">ㅤ</p>
+    <div>
+        <li> - Alarm events: what are they and ways to manage them.</li>
+        <li> - Visualisation of alarm events.</li>
+        <li> - Alarm notifications: how users can be notified and when.</li>
+        <li> - Notification center.</li>
+        <li> - Q&A.</li>
     </div>
-    <div id="thingsboard-administration" class="drop-content">
-      <div>
-        <p>Platform overview</p>
-        <li>Explain platform capabilities and functionality.</li>
-        <li>Discussion on your use case to highlight key points during the training session.</li>
-        <p>Single-node platform installation</p>
-        <li>Explain installation options. Highlight security and configuration aspects.</li>
-        <li>Exercise: setup ThingsBoard instance on AWS using public AMIs.</li>
-        <li>Exercise: setup ThingsBoard instance on CentOS.</li>
-        <p>ThingsBoard configuration</p>
-        <li>Explain main configuration files.</li>
-        <li>Exercise: general system configuration.</li>
-        <p>ThingsBoard troubleshooting</p>
-        <li>Review log files and their configuration.</li>
-        <li>Exercise: changing log levels for particular components.</li>
-        <p>ThingsBoard cluster installation</p>
-        <li>Explain cluster deployment options and configuration.</li>
-        <li>Exercise: ThingsBoard cluster setup.</li>
-        <li>Exercise: ThingsBoard cluster setup troubleshooting.</li>
-        <p>Load Balancing, Scalability, and Failover</p>
-        <li>Use cases and platform capabilities overview.</li>
-        <li>ThingsBoard architecture overview.</li>
-        <li>Exercise: Tuning cluster performance.</li>
-        <li>Exercise: Scaling ThingsBoard cluster.</li>
-        <li>Exercise: Replacing Failed node.</li>
-        <li>Exercise: Load balancing device connections.</li>
-        <li>Exercise: Load balancing server-side API calls.</li>
-        <p>Security</p>
-        <li>Use cases and security options overview.</li>
-        <li>Exercise: Securing MQTT API calls using SSL and X.509 certificates.</li>
-        <li>Exercise: Securing HTTP API calls using SSL.</li>
-      </div>
+    <div class="card-bot">
+      <p class="length"><b>2 hours</b></p>
+      <p class="audience"><b>back-end developers</b></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="title">ThingsBoard Professional Edition Security Model</h3>
+    <p class="sub-title">ㅤ</p>
+    <div>
+        <li> - Overview of Security Challenges we address.</li>
+        <li> - Possibilities and restrictions for different user types.</li>
+        <li> - Roles and user permissions.</li>
+        <li> - Customer Hierarchy and ways to manage it.</li>
+        <li> - Use cases and hands-on session.</li>
+        <li> - Q&A.</li>
+    </div>
+    <div class="card-bot">
+      <p class="length"><b>2 hours</b></p>
+      <p class="audience"><b>back-end developers</b></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3 class="title">Platform API</h3>
+    <p class="sub-title">ㅤ</p>
+    <div>
+        <li> - REST API overview and ways to work with it.</li>
+        <li> - Swagger UI: what useful information it has.</li>
+        <li> - How ThingsBoard authenticates and authorizes incoming API requests.</li>
+        <li> - RPC commands and available possibilities.</li>
+        <li> - WebSocket connection: how to subscribe to data feed.</li>
+        <li> - Q&A.</li>
+    </div>
+    <div class="card-bot">
+      <p class="length"><b>2 hours</b></p>
+      <p class="audience"><b>back-end developers</b></p>
     </div>
   </div>
 </div>
