@@ -25,8 +25,14 @@ This resource will provide you with step-by-step guidance tailored to various de
 For Linux users who have Docker installed, the execution of the following commands is recommended:
 
 ```shell
-wget https://raw.githubusercontent.com/thingsboard/TBMQ/main/msa/tbmq/configs/docker-compose.yml
+wget https://raw.githubusercontent.com/thingsboard/tbmq/main/msa/tbmq/configs/docker-compose.yml
 mkdir -p ~/.tb-mqtt-broker-data/kafka && mkdir -p ~/.tb-mqtt-broker-data/log && mkdir -p ~/.tb-mqtt-broker-data/conf && mkdir -p ~/.tb-mqtt-broker-data/data && mkdir -p ~/.tb-mqtt-broker-data/postgres && sudo chown -R 799:799 ~/.tb-mqtt-broker-data
+```
+{: .copy-code}
+
+Start TBMQ:
+
+```shell
 docker compose up -d
 ```
 {: .copy-code}
@@ -61,6 +67,8 @@ Once Basic authentication is enabled, it is necessary to create MQTT Client Cred
 * Click "Add" to save credentials.
 
 {% include images-gallery.html imageCollection="broker-mqtt-creds-creation" %}
+
+A wider range of authentication methods can be found within the [security guide](/docs/mqtt-broker/security/#basic-authentication), offering enhanced options for ensuring secure access.
 
 ## Publishing and Subscribing to Topics
 
