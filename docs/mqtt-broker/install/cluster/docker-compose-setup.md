@@ -30,8 +30,8 @@ docker pull thingsboard/tbmq-node:{{ site.release.broker_full_ver }}
 ## Step 2. Clone TBMQ repository
 
 ```bash
-git clone https://github.com/thingsboard/TBMQ.git
-cd TBMQ/docker
+git clone https://github.com/thingsboard/tbmq.git
+cd tbmq/docker
 ```
 {: .copy-code}
 

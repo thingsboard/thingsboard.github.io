@@ -86,7 +86,7 @@ Considering the comprehensive scope of the test, it would be advantageous to rev
 | 100M    | 3M       | 45%        | 160GiB        | 58%       | 7k / 80k KiB/s              | 2%              | less than 1 / less than 3  |
 
 The following statistics provide insights into the Kafka topics used during the test 
-(i.e. `publish_msg`, after [Kafka topics renaming [1]](https://github.com/thingsboard/TBMQ/commit/8871403fcfdce3489ee2a49c1505b998ceb46c3c#diff-85b2fafc998caf1c7d67f51c40f5639ac9ee0ee68379e07ad2f63b083f010f13) `tbmq.msg.all`, 
+(i.e. `publish_msg`, after [Kafka topics renaming [1]](https://github.com/thingsboard/tbmq/commit/8871403fcfdce3489ee2a49c1505b998ceb46c3c#diff-85b2fafc998caf1c7d67f51c40f5639ac9ee0ee68379e07ad2f63b083f010f13) `tbmq.msg.all`, 
 is the main Kafka topic where all the messages are stored, and several examples of application topics for APPLICATION subscribers that receive the data).
 
 {% include images-gallery.html imageCollection="broker-topics-monitoring" %}
@@ -123,21 +123,21 @@ Thanks to its inherent capacity for both vertical and horizontal scalability, th
 During the pursuit of achieving such substantial levels of connections and data flow, we encountered various scenarios that demanded some effort in code optimization.
 
 One such instance involved addressing Kafka producer disconnects, which had the undesirable consequence of message loss. 
-To solve this issue, we implemented a distinct executor service dedicated to processing publish [callbacks for Kafka producers[2]](https://github.com/thingsboard/TBMQ/commit/4e8e6d8a2f9855c7df88074efc935cb7d19f593d). 
+To solve this issue, we implemented a distinct executor service dedicated to processing publish [callbacks for Kafka producers[2]](https://github.com/thingsboard/tbmq/commit/4e8e6d8a2f9855c7df88074efc935cb7d19f593d). 
 This measure effectively resolved the aforementioned disconnections.
 
-To further enhance performance, we [eliminated the need for a specialized publishing queue[3]](https://github.com/thingsboard/TBMQ/commit/443e260924e214ae89b0158a6369b06f38801bd0) 
+To further enhance performance, we [eliminated the need for a specialized publishing queue[3]](https://github.com/thingsboard/tbmq/commit/443e260924e214ae89b0158a6369b06f38801bd0) 
 by leveraging the inherent thread-safe nature of Kafka producers. 
 This adjustment yielded additional benefits in terms of overall system efficiency as the message ordering guarantees were achieved in another way.
 
 Additional adjustments were introduced to elevate the processing rate, as evidenced by the commits related to improvements in [message pack processing, 
-UUID generation[4]](https://github.com/thingsboard/TBMQ/commit/47e674589269bb45291f471528c54370ebdaf7ed), 
-and the adoption of a mechanism for sending messages [without the need for explicit flushing[5]](https://github.com/thingsboard/TBMQ/commit/3ec317072dead5cb5355d29dd7319ccde3403d04).
+UUID generation[4]](https://github.com/thingsboard/tbmq/commit/47e674589269bb45291f471528c54370ebdaf7ed), 
+and the adoption of a mechanism for sending messages [without the need for explicit flushing[5]](https://github.com/thingsboard/tbmq/commit/3ec317072dead5cb5355d29dd7319ccde3403d04).
 
 To optimize memory utilization and minimize unnecessary garbage creation, we undertook substantial efforts to improve overall memory usage. 
-These enhancements [6](https://github.com/thingsboard/TBMQ/commit/56ede8e5ebbaa8deafd24b7a0d4050401835ebc0), 
-[7](https://github.com/thingsboard/TBMQ/commit/395d48917be0186fafbdfa12c0a9b145b66f31d2), 
-[8](https://github.com/thingsboard/TBMQ/commit/fa424ffc32837b4d4aa48b890eb3bc06908a7476) 
+These enhancements [6](https://github.com/thingsboard/tbmq/commit/56ede8e5ebbaa8deafd24b7a0d4050401835ebc0), 
+[7](https://github.com/thingsboard/tbmq/commit/395d48917be0186fafbdfa12c0a9b145b66f31d2), 
+[8](https://github.com/thingsboard/tbmq/commit/fa424ffc32837b4d4aa48b890eb3bc06908a7476) 
 not only contributed to enhanced Garbage Collector performance but also reduced stop-the-world pauses, thereby improving overall system responsiveness.
 
 During our later testing phases on larger scales, we observed an uneven distribution of clients among the broker nodes.
@@ -234,7 +234,7 @@ The 100,000,500 clients are evenly distributed among the performance test pods, 
 
 After a period of time, all clients successfully establish connections, and each performance test pod notifies the orchestrator of its readiness.
 
-To gauge the progress, we can examine the `client_session` (after [Kafka topics renaming [1]](https://github.com/thingsboard/TBMQ/commit/8871403fcfdce3489ee2a49c1505b998ceb46c3c#diff-85b2fafc998caf1c7d67f51c40f5639ac9ee0ee68379e07ad2f63b083f010f13) `tbmq.client.session`) 
+To gauge the progress, we can examine the `client_session` (after [Kafka topics renaming [1]](https://github.com/thingsboard/tbmq/commit/8871403fcfdce3489ee2a49c1505b998ceb46c3c#diff-85b2fafc998caf1c7d67f51c40f5639ac9ee0ee68379e07ad2f63b083f010f13) `tbmq.client.session`) 
 Kafka topic. This topic provides an approximate count of the connected sessions.
 
 ![image](/images/mqtt-broker/reference/topics/100m-mqtt-clients.png)
@@ -275,7 +275,7 @@ Here is the JMX monitoring for TBMQ. The broker nodes are operating steadily and
 ### How to repeat the tests
 
 Please refer to the subsequent [installation guide](/docs/mqtt-broker/install/cluster/aws-cluster-setup/) to learn how to deploy TBMQ on AWS.
-In addition, you may explore the [branch](https://github.com/thingsboard/TBMQ/tree/100M/k8s/aws#readme) 
+In addition, you may explore the [branch](https://github.com/thingsboard/tbmq/tree/100M/k8s/aws#readme) 
 containing the scripts and parameters employed for running TBMQ during this performance test.
 Lastly, the [performance tests tool](https://github.com/thingsboard/tb-mqtt-perf-tests/tree/100M) available for conducting performance tests, 
 which generates MQTT clients and produces the load.
@@ -293,24 +293,24 @@ As a result, we anticipate publishing updated performance results for TBMQ clust
 We sincerely hope that this article be valuable to individuals evaluating TBMQ and those seeking to conduct performance tests within their own environments.
 
 Your feedback is highly appreciated, and we encourage you to stay connected with our project by following us 
-on [GitHub](https://github.com/thingsboard/TBMQ) and [Twitter](https://twitter.com/thingsboard).
+on [GitHub](https://github.com/thingsboard/tbmq) and [Twitter](https://twitter.com/thingsboard).
 
 ### Reference Commits
 
-[1] - [Kafka topics renaming](https://github.com/thingsboard/TBMQ/commit/8871403fcfdce3489ee2a49c1505b998ceb46c3c#diff-85b2fafc998caf1c7d67f51c40f5639ac9ee0ee68379e07ad2f63b083f010f13).
+[1] - [Kafka topics renaming](https://github.com/thingsboard/tbmq/commit/8871403fcfdce3489ee2a49c1505b998ceb46c3c#diff-85b2fafc998caf1c7d67f51c40f5639ac9ee0ee68379e07ad2f63b083f010f13).
 
-[2] - [Kafka producer callbacks](https://github.com/thingsboard/TBMQ/commit/4e8e6d8a2f9855c7df88074efc935cb7d19f593d).
+[2] - [Kafka producer callbacks](https://github.com/thingsboard/tbmq/commit/4e8e6d8a2f9855c7df88074efc935cb7d19f593d).
 
-[3] - [Stop adding publish messages to queue](https://github.com/thingsboard/TBMQ/commit/443e260924e214ae89b0158a6369b06f38801bd0).
+[3] - [Stop adding publish messages to queue](https://github.com/thingsboard/tbmq/commit/443e260924e214ae89b0158a6369b06f38801bd0).
 
-[4] - [Msg pack processing, UUID generation improvements](https://github.com/thingsboard/TBMQ/commit/47e674589269bb45291f471528c54370ebdaf7ed).
+[4] - [Msg pack processing, UUID generation improvements](https://github.com/thingsboard/tbmq/commit/47e674589269bb45291f471528c54370ebdaf7ed).
 
-[5] - [Send messages without flush](https://github.com/thingsboard/TBMQ/commit/3ec317072dead5cb5355d29dd7319ccde3403d04).
+[5] - [Send messages without flush](https://github.com/thingsboard/tbmq/commit/3ec317072dead5cb5355d29dd7319ccde3403d04).
 
-[6] - [ClientSessionInfo object reuse](https://github.com/thingsboard/TBMQ/commit/56ede8e5ebbaa8deafd24b7a0d4050401835ebc0).
+[6] - [ClientSessionInfo object reuse](https://github.com/thingsboard/tbmq/commit/56ede8e5ebbaa8deafd24b7a0d4050401835ebc0).
 
-[7] - [Remove application publish msg copies](https://github.com/thingsboard/TBMQ/commit/395d48917be0186fafbdfa12c0a9b145b66f31d2).
+[7] - [Remove application publish msg copies](https://github.com/thingsboard/tbmq/commit/395d48917be0186fafbdfa12c0a9b145b66f31d2).
 
-[8] - [Bytebuf in publish msg](https://github.com/thingsboard/TBMQ/commit/fa424ffc32837b4d4aa48b890eb3bc06908a7476).
+[8] - [Bytebuf in publish msg](https://github.com/thingsboard/tbmq/commit/fa424ffc32837b4d4aa48b890eb3bc06908a7476).
 
 [9] - [MQTT clients even distribution among broker nodes](https://github.com/thingsboard/tb-mqtt-perf-tests/commit/bd7649a9321f56f68303b380e634617fa0abc098).

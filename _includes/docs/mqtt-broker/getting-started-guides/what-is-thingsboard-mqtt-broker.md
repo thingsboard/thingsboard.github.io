@@ -29,7 +29,7 @@ Following its successful deployment in production environments, it was determine
 - Access control (ACL) based on client ID, username or SSL certificate
 - REST query support for clients' status and subscriptions
 - Rate limits of incoming messages per client
-- MQTT 5 [*](https://github.com/thingsboard/TBMQ#tbmq)
+- MQTT 5 [*](https://github.com/thingsboard/tbmq#tbmq)
 
 
 #### Architecture

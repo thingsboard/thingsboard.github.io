@@ -1765,7 +1765,7 @@ environment variable, default value, and description.
       <tr>
           <td>swagger.license.url</td>
           <td>SWAGGER_LICENSE_URL</td>
-          <td>https://github.com/thingsboard/TBMQ/blob/main/LICENSE</td>
+          <td>https://github.com/thingsboard/tbmq/blob/main/LICENSE</td>
           <td>Link to the license body on the API doc UI page</td>
       </tr>
       <tr>

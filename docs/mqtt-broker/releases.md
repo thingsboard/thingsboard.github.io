@@ -8,6 +8,6 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
-## v1.0.0 (Month ?, 2023)
+## v1.0.0 (June 29, 2023)
 
-Initial release. See [GitHub](https://github.com/thingsboard/TBMQ#tbmq) for more info.
+Initial release. See [GitHub](https://github.com/thingsboard/tbmq#tbmq) for more info.

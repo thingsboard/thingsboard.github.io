@@ -73,7 +73,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
   tb-mqtt-broker:
     restart: always
-    image: "thingsboard/tbmq-node:1.0.0-SNAPSHOT"
+    image: "thingsboard/tbmq-node:1.0.0"
     depends_on:
       - postgres
       - kafka
