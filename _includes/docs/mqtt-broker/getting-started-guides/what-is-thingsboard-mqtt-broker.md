@@ -1,8 +1,15 @@
 
-**TBMQ** represents an open-source MQTT message broker renowned for its remarkable capacity to handle a staggering number of connected MQTT clients, 
-reaching up to **4M** clients, while proficiently processing a minimum of **200K messages per second** per node. 
-In the cluster mode, its capabilities are further enhanced, enabling it to effortlessly support an impressive **100M** concurrently connected clients 
-and handle **3M messages per second**. For more comprehensive insights and detailed information, kindly refer to the [performance tests page](/docs/mqtt-broker/reference/performance-tests/).
+**TBMQ** represents an open-source MQTT message broker with the capacity to handle up to **4M** concurrent client connections, 
+while proficiently processing a minimum of **200K messages per second** per single cluster node. 
+In the cluster mode, its capabilities are further enhanced, enabling it to effortlessly support more than **100M** 
+concurrently connected clients and handle more than [3M messages per second](/docs/mqtt-broker/reference/performance-tests/).
+
+Within the ThingsBoard company, our expertise and understanding of diverse IoT requirements and use cases have enabled us to discern
+two primary scenarios in which our clients develop their solutions. 
+The first scenario entails numerous devices generating a substantial volume of messages that are consumed by specific applications, 
+resulting in a fan-in pattern. Conversely, the second scenario involves numerous devices subscribing to specific updates or notifications, 
+leading to a few incoming requests that necessitate a high volume of outgoing data, known as a fan-out pattern. 
+Acknowledging these scenarios, we purposefully designed TBMQ to be exceptionally well-suited for both.
 
 Implemented in Java, this cutting-edge solution is developed utilizing prominent open-source technologies such as Kafka, 
 which ensures low-latency message delivery, data durability, and horizontal scalability of the platform.

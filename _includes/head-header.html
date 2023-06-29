@@ -2,7 +2,16 @@
 {% if page.description %}{% assign description=page.description %}{% endif %}
 {% assign docsTag = include.docsTag %}
 {% assign productTag = include.productTag %}
+{% assign githubLink = "https://github.com/thingsboard/thingsboard" %}
+{% assign githubLabel = "Star thingsboard/thingsboard on GitHub" %}
 {% if docsTag %}
+    {% if docsTag == "mqtt-broker" %}
+        {% assign githubLink = "https://github.com/thingsboard/tbmq" %}
+        {% assign githubLabel = "Star thingsboard/tbmq on GitHub" %}
+    {% elsif docsTag == "gw" %}
+        {% assign githubLink = "https://github.com/thingsboard/thingsboard-gateway" %}
+        {% assign githubLabel = "Star thingsboard/thingsboard-gateway on GitHub" %}
+    {% endif %}
     {% assign foundProduct = site.data.products | where: "tag", docsTag %}
     {% assign productInfo = foundProduct[0] %}
     {% unless page.customTitle == "true" %}
@@ -474,8 +483,8 @@
         <a href="/" class="logo"></a>
         <button onclick="Burger()" class="burger"></button>
         <div id="githubButtonContainer">
-            <a class="github-button" href="https://github.com/thingsboard/thingsboard" data-show-count="true"
-               aria-label="Star thingsboard/thingsboard on GitHub">Star</a>
+            <a class="github-button" href="{{ githubLink }}" data-show-count="true"
+               aria-label="{{ githubLabel }}">Star</a>
         </div>
     </div>
     <nav class="head-menu">
