@@ -51,6 +51,8 @@ toc:
     - title: Notification center
       path: /docs/paas/user-guide/notifications/
       new: true
+    - title: Domains
+      path: /products/paas/domains/
 - title: Dashboards
   section:
     - title: Overview
@@ -105,8 +107,6 @@ toc:
       path: /docs/paas/user-guide/custom-translation/
     - title: Custom Menu
       path: /docs/paas/user-guide/custom-menu/
-    - title: Domains
-      path: /products/paas/domains/
 - title: Integrations
   section:
     - title: Overview
