@@ -1,6 +1,9 @@
 **TBMQ** is an industry-ready MQTT broker developed and distributed under the ThingsBoard umbrella that facilitates MQTT client connectivity, 
 message publishing, and distribution among subscribers.
 
+TBMQ is a scalable, fault-tolerant broker with the capacity to handle up to **4M** concurrent client connections, while proficiently processing a minimum of **200K messages per second** per single cluster node. 
+In the cluster mode, its capabilities are further enhanced, enabling it to effortlessly support more than **100M** concurrently connected clients and handle more than [3M messages per second](/docs/mqtt-broker/reference/performance-tests/).
+
 You can refer to the TBMQ documentation to set up the broker and understand its primary features, including the MQTT protocol.
 
 <div class="doc-features row mt-4">
