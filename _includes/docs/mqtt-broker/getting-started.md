@@ -68,7 +68,7 @@ Once Basic authentication is enabled, it is necessary to create MQTT Client Cred
 
 {% include images-gallery.html imageCollection="broker-mqtt-creds-creation" %}
 
-A wider range of authentication methods can be found within the [security guide](/docs/mqtt-broker/security/#basic-authentication), offering enhanced options for ensuring secure access.
+A wider range of authentication methods can be found within the [security guide](/docs/mqtt-broker/security/), offering enhanced options for ensuring secure access.
 
 ## Publishing and Subscribing to Topics
 
