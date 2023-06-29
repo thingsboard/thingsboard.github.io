@@ -120,23 +120,23 @@ group-roles-example-6:
 supervisors-add-dashboard-group:
     0:
         image: /images/user-guide/security/rbac/supervisors-add-dashboard-group-1-pe.png
-        title: 'Navigate to the Groups tab in the Dashboards page and click plus button to create new entity group. Input the name of your dashboard group. In our case it’s Supervisor Dashboards. Click on the "Add" button;'
+        title: 'Navigate to the "Groups" tab in the "Dashboards" page and click "plus" icon to create new dashboard group. Input the name of your dashboard group. In our case it’s "Supervisor Dashboards". Click on the "Add" button;'
     1:
         image: /images/user-guide/security/rbac/supervisors-add-dashboard-group-2-pe.png
         title: 'Dashboard group "Supervisor Dashboards" has been created.'
 
-create-generic-role:
+supervisors-create-generic-role:
     0:
         image: /images/user-guide/security/rbac/supervisors-create-two-roles-1-pe.png
-        title: 'Create new generic role;'
+        title: 'Create new generic role. Fill in all required fields and click "Add";'
     1:
         image: /images/user-guide/security/rbac/supervisors-create-two-roles-2-pe.png
         title: 'New generic role has been created.'
 
-create-group-role:
+supervisors-create-group-role:
     0:
         image: /images/user-guide/security/rbac/supervisors-create-two-roles-3-pe.png
-        title: 'Create new group role;'
+        title: 'Create new group role. Fill in all required fields and click "Add";'
     1:
         image: /images/user-guide/security/rbac/supervisors-create-two-roles-4-pe.png
         title: 'New group role has been created.'
@@ -144,19 +144,19 @@ create-group-role:
 supervisors-assign-roles-to-supervisors-group:
     0:
         image: /images/user-guide/security/rbac/supervisors-assign-roles-to-supervisors-group-1-pe.png
-        title: 'In the Groups tab in Users section click on the plus sign (Add Entity Group) at the top right of the screen. Input the name Supervisors, then click on the Add" button;'
+        title: 'Navigate to the "Users" page -> "Groups" tab and click on the plus sign (Add entity group) at the top right of the screen. Input the name - "Supervisors", then click on the Add" button;'
     1:
         image: /images/user-guide/security/rbac/supervisors-assign-roles-to-supervisors-group-2-pe.png
-        title: 'Youll see the created "Supervisors" group. Click on it;'
+        title: 'The "Supervisors" user group is created. Click on it;'
     2:
         image: /images/user-guide/security/rbac/supervisors-assign-roles-to-supervisors-group-3-pe.png
-        title: 'Click on the created "Supervisors" group. In the opened menu navigate to the "Roles" tab and  click on the "+" sign at the right top of the opened menu;'
+        title: 'Click on the "pencil" icon to open entity group details. Navigate to the "Roles" tab and click on the "plus" icon at the right top of the opened menu;'
     3:
         image: /images/user-guide/security/rbac/supervisors-assign-roles-to-supervisors-group-4-pe.png
-        title: 'Choose "Generic" for a role type and "All Entities Read-only" in the options. Click "Add";'
+        title: 'Select role type - "Generic" and select previously created role - "All Entities Read-only". Then, click "Add";'
     4:
         image: /images/user-guide/security/rbac/supervisors-assign-roles-to-supervisors-group-5-pe.png
-        title: 'Again press the "+" sign at the top of the opened window. Choose "Generic" for a role type and "All Entities Read-only" in the options. Click "Add";'
+        title: 'Again press the "+" sign. This time select role type - "Group" and select role - "Entity Group Administrator". For a group owner select "Tenant", for a entity type select "Dashboard", and select entity group - "Supervisor Dashboard". Click "Add";'
     5:
         image: /images/user-guide/security/rbac/supervisors-assign-roles-to-supervisors-group-6-pe.png
         title: 'We have assigned these roles to the Supervisors group.'
@@ -164,30 +164,30 @@ supervisors-assign-roles-to-supervisors-group:
 supervisors-add-new-user:
     0:
         image: /images/user-guide/security/rbac/supervisors-add-new-user-1-pe.png
-        title: 'Go to the "Hierarchy" tab on the "Customers" page and navigate to the "All" customer group;'
+        title: 'Navigate to the "Customers" page and click on the "+" sign (Add customer) at the top right of the screen. Input the title "Building A" and click "Add";'
     1:
-        image: /images/user-guide/security/rbac/supervisors-add-new-user-2-pe.png
-        title: 'Click on the “+” sign (Add Customer) at the top right of the screen. Input the title "Building A" and click "Add";'
-    2:
         image: /images/user-guide/security/rbac/supervisors-add-new-user-3-pe.png
-        title: 'At the left top of the screen you, shall see the icon “All”. Click on it. In the drop-down menu follow the path: Building A –> User Groups –> Customer Administrators. On the right side of the screen should have been opened “Customers Administrators: Users”, click on the “+” sign at the top right of the screen;'
-    3:
+        title: 'Click on the "Manage customer users" icon opposite the "Building A" customer;'
+    2:
         image: /images/user-guide/security/rbac/supervisors-add-new-user-4-pe.png
-        title: 'Input email address, for instance, we can use janesmith@thingsboard.io, and click "Add";'
-    4:
+        title: 'Navigate to the "Groups" tab and click on the "Customer Administrators" user group;'
+    3:
         image: /images/user-guide/security/rbac/supervisors-add-new-user-5-pe.png
+        title: 'Click on the "+" sign at the top right of the screen. Input email address, for instance, we can use janesmith@thingsboard.io, and click "Add";'
+    4:
+        image: /images/user-guide/security/rbac/supervisors-add-new-user-6-pe.png
         title: 'In the opened window you can see the user activation link, click "OK";'
     5:
-        image: /images/user-guide/security/rbac/supervisors-add-new-user-6-pe.png
-        title: 'Customer has been created.'
+        image: /images/user-guide/security/rbac/supervisors-add-new-user-7-pe.png
+        title: 'Customer user Jane has been created.'
 
 supervisors-end-users:
     0:
         image: /images/user-guide/security/rbac/supervisors-end-users-1-pe.png
-        title: 'Login as customer Jane Smith;'
+        title: 'Login as customer user Jane Smith;'
     1:
         image: /images/user-guide/security/rbac/supervisors-end-users-3-pe.png
-        title: 'Go to the Dashboards page, click on the "+" icon in the top right corner. Select "Create new dashboard". Input dashboard name (for example, "End User Dashboard"). Click "Add" to create the dashboard.'
+        title: 'Go to the "Dashboards" page, click on the "plus" icon in the top right corner. Select "Create new dashboard". Input dashboard name (for example, "End User Dashboard"). Click "Add" to create the dashboard.'
     2:
         image: /images/user-guide/security/rbac/supervisors-end-users-4-pe.png
         title: 'Open created dashboard and enter edit mode;'
@@ -202,7 +202,7 @@ supervisors-end-users:
         title: 'Select "Simple card" widget;'
     6:
         image: /images/user-guide/security/rbac/supervisors-end-users-9-pe.png
-        title: 'In the Datasource select the type as "Function" and the key as "Random". Click "Add".'
+        title: 'In the "Datasources" section select the type as "Function" and the key as "Random". Click "Add".'
     7:
         image: /images/user-guide/security/rbac/supervisors-end-users-10-pe.png
         title: 'The widget has been created. Save the dashboard.'
@@ -210,16 +210,16 @@ supervisors-end-users:
 supervisors-create-read-only-user:
     0:
         image: /images/user-guide/security/rbac/supervisors-create-read-only-user-1-pe.png
-        title: 'Choose "Customer Users" in the "Groups" tab "Users" page;'
+        title: 'Select "Customer Users" on the "Groups" tab on the "Users" page of the user Jane;'
     1:
         image: /images/user-guide/security/rbac/supervisors-create-read-only-user-2-pe.png
-        title: 'Click "+" at the top right of the screen to add user. Input email address, for example, we will use bob@thingsboard.io, click "Add";'
+        title: 'Click "+" at the top right of the screen to add new user. Input email address, for example, we will use bob@thingsboard.io, then click "Add";'
     2:
         image: /images/user-guide/security/rbac/supervisors-create-read-only-user-3-pe.png
         title: 'In the opened window you can see the user activation link, click "OK";'
     3:
         image: /images/user-guide/security/rbac/supervisors-create-read-only-user-5-pe.png
-        title: 'Now, click at the created user. At the right top of the screen you shall see the "Pen" icon, click on it to enter edit mode;'
+        title: 'Now, click on the created user. At the right top of the screen you shall see the "pen" icon. Click on it to enter edit mode;'
     4:
         image: /images/user-guide/security/rbac/supervisors-create-read-only-user-6-pe.png
         title: 'Check the box "Always fullscreen" and choose "End User Dashboard" in the "Default dashboard" line. Then save changes;'
@@ -228,7 +228,7 @@ supervisors-create-read-only-user:
         title: 'Now login as customer user Bob;'
     6:
         image: /images/user-guide/security/rbac/supervisors-create-read-only-user-8-pe.png
-        title: 'Dashboard will open full screen. Our user will not have access to the administration panel to the left. The user is not allowed to perform any server-side API calls, only browsing the data.'
+        title: 'Dashboard will open full screen. User Bob will not have access to the administration panel to the left. Bob is not allowed to perform any server-side API calls, only browsing the data.'
 
 ---
 

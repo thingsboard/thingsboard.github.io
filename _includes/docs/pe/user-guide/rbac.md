@@ -288,7 +288,7 @@ We will create a separate *user group* named "Supervisors", a separate *dashboar
 Our goal is to allow supervisors to manage dashboards in the "Supervisor Dashboards" group, but for all other entities in the system, they should have read-only access. 
 
 Let's start by creating a "Supervisor Dashboards" group: 
-1. Navigate to the Groups tab in the Dashboards page and click "plus" button to create new entity group;
+1. Navigate to the "Groups" tab in the "Dashboards" page and click "plus" button to create new entity group;
 2. Input the name of your dashboard group. In our case, it's "Supervisor Dashboards". Click on the "Add" button;
 3. New dashboard group "Supervisor Dashboards" has been created.
 
@@ -298,37 +298,36 @@ Let's start by creating a "Supervisor Dashboards" group:
 
 Next we should create two roles to implement this use case:
 
- * "All Entities Read-only" - the **generic role** that will allow access to all entities' data except device credentials. 
-1. In the Security section -> Roles page, click on the "+" sign at the top right of the screen;
-2. Input the name "All Entities Read-only";
-3. You should choose "Generic" for the Role type;
-4. In the Permissions for Resources choose "All";
-5. For the Operations input "Read", "Read Attributes", and "Read Telemetry";
+ * "All Entities Read-only" - the **generic role** that will allow access to all entities' data except device credentials.
+1. Navigate to the "Security" section -> "Roles" page and click on the "+" sign at the top right of the screen;
+2. Input the role name - "All Entities Read-only";
+3. Select role type - "Generic";
+4. In the "Permissions" section select "All" for the "Resources";
+5. select operations: "Read", "Read Attributes" and "Read Telemetry";
 6. Click on the lowest "Add" button, the one without a "+" sign.  
 
-{% include images-gallery.html imageCollection="create-generic-role" %}
+{% include images-gallery.html imageCollection="supervisors-create-generic-role" %}
 
 [//]: # (<img data-gifffer="/images/user-guide/security/smart-buildings-role1.gif" /> )
 
- * "Entity Group Administrator" - the **group role** that allows all operations for the group. 
-1. In the Roles page click on the "+" sign at the top right of the screen;
-2. Input the name "Entity Group Administrator";
-3. You should choose "Group" for the Role type;
-4. In the Permissions for Operations choose "All";
-5. Click on the “Add” button.
+ * "Entity Group Administrator" - the **group role** that allows all operations for the group.
+1. Again, click the "plus" icon in the upper right corner of the "Roles" page screen;
+2. Input the role name - "Entity Group Administrator";
+3. Select role type - "Group";
+4. In the "Permissions" section select "All" operations;
+5. Click on the "Add" button.
 
-{% include images-gallery.html imageCollection="create-group-role" %}
+{% include images-gallery.html imageCollection="supervisors-create-group-role" %}
 
 [//]: # (<img data-gifffer="/images/user-guide/security/smart-buildings-role2.gif" />)
 
-Now let's assign those roles to the "Supervisors" group. 
-1. In the Groups tab in Users section click on the "+" sign (Add Entity Group) at the top right of the screen;
-2. Input the name "Supervisors", then click on the "Add" button. You'll see the created "Supervisors" group;
-3. Click on the created "Supervisors" group;
-4. Click on the "Pencil" sign to open entity group details;
-5. Choose Roles tab at the right top of the opened menu and click on the "+" sign to add permission;
-6. Choose role type - "Generic" and role - "All Entities Read-only" in the options. Click "Add";
-7. Again press the "+" sign. This time choose role type - "Group" and role - "Entity Group Administrator". For a group owner choose "Tenant", for a type choose "Dashboard", and click on the "Supervisor Dashboard" in the entity group.
+Now let's assign those roles to the "Supervisors" group.
+1. Navigate to the "Users" page -> "Groups" tab and click on the "+" sign (Add entity group) at the top right of the screen;
+2. Input the name - "Supervisors", then click on the "Add" button. The "Supervisors" user group is created. Click on it;
+3. Click on the "pencil" icon to open entity group details;
+4. Navigate to the "Roles" tab and click on the "plus" icon at the right top of the opened menu;
+5. Select role type - "Generic" and select previously created role - "All Entities Read-only". Then, click "Add";
+6. Again press the "+" sign. This time select role type - "Group" and select role - "Entity Group Administrator". For a group owner select "Tenant", for a entity type select "Dashboard", and select entity group - "Supervisor Dashboard". Click "Add". We have assigned these roles to the Supervisors group.
 
 {% include images-gallery.html imageCollection="supervisors-assign-roles-to-supervisors-group" %}
 
@@ -336,16 +335,15 @@ Now let's assign those roles to the "Supervisors" group.
  
 **Facility Managers**
 
-We will create a separate customer entity for each building or group of buildings. We will add the Facility Manager user account to the default "Customer Administrators" group which is automatically created for each Customer.
+We will create a separate customer entity for each building or group of buildings. We will add the Facility Manager user account to the default "Customer Administrators" user group which is automatically created for each customer.
 Now, as Facility Manager, we can log in, design dashboards, provision devices, and end-users.
-1. Go to the "Hierarchy" tab on the "Customers" page and navigate to the "All" customer group;
-2. Click on the "+" sign (Add Customer) at the top right of the screen;
-3. Input the Title "Building A" and click "Add";
-4. At the left top of the screen you, shall see the icon "All". Click on it. In the drop-down menu follow the path: Building A --> User Groups --> Customer Administrators;
-5. On the right side of the screen should have been opened "Customers Administrators: Users", click on the "+" sign at the top right of the screen;
-6. Input email address, for instance, we can use _janesmith@thingsboard.io_, and click "Add";
-7. In the opened window you can see the User Activation Link, click "ok";
-8. Customer has been created.
+1. Navigate to the "Customers" page and click on the "+" sign (Add customer) at the top right of the screen;
+2. Input the title "Building A" and click "Add";
+3. Click on the "Manage customer users" icon opposite the "Building A" customer;
+4. Navigate to the "Groups" tab and click on the "Customer Administrators" user group;
+5. Click on the "+" sign at the top right of the screen. Input email address, for instance, we can use _janesmith@thingsboard.io_, and click "Add";
+6. In the opened window you can see the user activation link, click "OK";
+7. Customer user Jane has been created.
 
 {% include images-gallery.html imageCollection="supervisors-add-new-user" %}
 
@@ -353,13 +351,13 @@ Now, as Facility Manager, we can log in, design dashboards, provision devices, a
 
 **End Users**
 
-Let's log in as customer Jane Smith (created in a previous guide), Building A administrator, and create a dashboard.
-1. Login as customer Jane Smith;
-2. Go to the Dashboards page, click on the "+" icon in the top right corner. Select "Create new dashboard";
+Let's log in as customer user Jane Smith (created in a previous guide), Building A administrator, and create a dashboard.
+1. Login as customer user Jane Smith;
+2. Go to the "Dashboards" page, and click on the "plus" icon in the top right corner. Select "Create new dashboard";
 3. Input dashboard name. For example, "End User Dashboard". Click "Add" to create the dashboard;
 4. Open created dashboard and enter edit mode;
-5. Click "Add new widget" and select "Simple card" widget in Cards widgets bundle;
-9. In this example, we will generate random temperature values in the widget. In the Datasource select the type as "Function" and the key as "Random". Click "Add";
+5. Click "Add new widget" and select "Simple card" widget in "Cards" widgets bundle;
+9. In this example, we will generate random temperature values in the widget. In the "Datasources" section select the type as "Function" and the key as "Random". Click "Add";
 10. The widget has been created. Save the dashboard.
 
 {% include images-gallery.html imageCollection="supervisors-end-users" %}
@@ -368,15 +366,15 @@ Let's log in as customer Jane Smith (created in a previous guide), Building A ad
 
 Now, let's create a Read-only User. Let's assume we want to assign "End User Dashboard" to him and make sure that this Dashboard will open full screen once the user is logged in. 
 So, our read-only user will not have access to the administration panel to the left, since they are still not allowed to perform any server-side API calls, except read-only browsing the data.  
-1. Choose "Customer Users" in the "Groups" tab "Users" section;
-2. Click "+" at the top right of the screen to add user;
-3. Input email address, for example, we will use bob@thingsboard.io, click "Add";
-4. In the opened window you can see the User Activation Link, click "OK";
+1. Select "Customer Users" on the "Groups" tab of the "Users" page;
+2. Click "+" at the top right of the screen to add new user;
+3. Input email address, for example, we will use _bob@thingsboard.io_, then click "Add";
+4. In the opened window you can see the user activation link, click "OK";
 5. Now, click on the created user;
-6. At the right top of the screen you shall see the "Pen" icon, click on it to enter edit mode;
+6. At the right top of the screen you shall see the "pen" icon. Click on it to enter edit mode;
 7. Check the box "Always fullscreen" and choose "End User Dashboard" in the "Default dashboard" line. Then save changes;
-8. Login as customer user Bob. Dashboard will open full screen. Our user will not have access to the administration panel to the left. 
-The user is not allowed to perform any server-side API calls, only browsing the data.
+8. Login as customer user Bob. Dashboard will open full screen. User Bob will not have access to the administration panel to the left. 
+Bob is not allowed to perform any server-side API calls, only browsing the data.
 
 {% include images-gallery.html imageCollection="supervisors-create-read-only-user" %}
 
@@ -396,4 +394,3 @@ You can watch the video tutorial for step-by-step instructions on role-based acc
 ## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}
-
