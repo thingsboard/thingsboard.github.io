@@ -396,7 +396,7 @@ selfManagedPlan:
                             <p>Use your ThingsBoard instance forever</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
-                            $2999
+                            $2,999
                         </h4>                  
                         <div class="row justify-content-center">
                             <button class="btn-blue btn-pricing" 
@@ -426,7 +426,7 @@ selfManagedPlan:
                             <p>Everything your product needs to succeed</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
-                            $4999
+                            $4,999
                         </h4>                  
                         <div class="row justify-content-center">
                             <button class="btn-blue btn-pricing" 
@@ -462,15 +462,16 @@ selfManagedPlan:
                             <p>Supercharge your IoT solution</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
-                            $11999
+                            $14,999
                         </h4>
                         <div class="row justify-content-center">
                             <a class="btn-blue btn-pricing" href="/docs/contact-us/" target="_blank">Get your license</a> 
                         </div>
-                        <div class="pricing-square-item">ThingsBoard Perpetual Kit</div>
-                        <div class="pricing-square-item">Trendz perpetual license</div>
-                        <div class="pricing-square-item">Trendz development license</div>
+                        <div class="pricing-square-item"><b>2 ThingsBoard Perpetual Kits</b></div>
+                        <div class="pricing-square-item">1 Trendz perpetual license</div>
+                        <div class="pricing-square-item">1 Trendz development license</div>
                         <div class="pricing-square-item">3 Edge perpetual licenses</div>
+                        <div class="pricing-square-item"><b>White-labeling</b></div>
                         <div class="pricing-square-item">Training sessions</div>
                         <div class="pricing-square-item" data-faq-id="subscription-support">
                             Email support within <b>12 hours</b>
