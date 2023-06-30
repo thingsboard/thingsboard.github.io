@@ -408,7 +408,6 @@ selfManagedPlan:
                                 Get your license
                             </button>
                         </div>
-                        <div class="pricing-square-item">1 year of software updates</div>
                         <div class="pricing-square-item">Unlimited Devices and Assets</div>
                         <div class="pricing-square-item">Integrations feature</div>
                         <div class="pricing-square-item">Unlimited datapoints and messages</div>
@@ -417,6 +416,7 @@ selfManagedPlan:
                         <div class="pricing-square-item" data-faq-id="subscription-support">
                             Email support within <b>24 hours</b>
                         </div>
+                        <div class="pricing-square-item">1 year of software updates</div>
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
@@ -438,7 +438,6 @@ selfManagedPlan:
                                 Get your license
                             </button>
                         </div>
-                        <div class="pricing-square-item">1 year of software updates</div>
                         <div class="pricing-square-item">Unlimited Devices and Assets</div>
                         <div class="pricing-square-item">Integrations feature</div>
                         <div class="pricing-square-item">Unlimited datapoints and messages</div>
@@ -453,6 +452,7 @@ selfManagedPlan:
                         <div class="pricing-square-item" data-faq-id="additional-services">
                             <b>10 hours</b> of consulting or configuration services
                         </div>
+                        <div class="pricing-square-item">1 year of software updates</div>
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
@@ -467,8 +467,7 @@ selfManagedPlan:
                         <div class="row justify-content-center">
                             <a class="btn-blue btn-pricing" href="/docs/contact-us/" target="_blank">Get your license</a> 
                         </div>
-                        <div class="pricing-square-item">ThingsBoard perpetual license</div>
-                        <div class="pricing-square-item">ThingsBoard development license</div>
+                        <div class="pricing-square-item">ThingsBoard Perpetual Kit</div>
                         <div class="pricing-square-item">Trendz perpetual license</div>
                         <div class="pricing-square-item">Trendz development license</div>
                         <div class="pricing-square-item">3 Edge perpetual licenses</div>
