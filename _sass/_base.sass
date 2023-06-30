@@ -111,6 +111,10 @@ $quickstart-button-padding: 0 50px
     --tb-main-color: #1F8B4D
     --tb-main-background: rgba(31, 139, 77, 0.08)
     --tb-main-color-filter: invert(25%) sepia(43%) saturate(5965%) hue-rotate(143deg) brightness(97%) contrast(76%)
+  &.mqtt-broker
+    --tb-main-color: #1F8B4D
+    --tb-main-background: rgba(31, 139, 77, 0.08)
+    --tb-main-color-filter: invert(25%) sepia(43%) saturate(5965%) hue-rotate(143deg) brightness(97%) contrast(76%)
 
 body
   background-color: white
@@ -499,6 +503,9 @@ header
               color: #305680
 
             &.mobile-pe-lnk:hover .sub-text h1
+              color: #1F8B4D
+
+            &.mqtt-broker-lnk:hover .sub-text h1
               color: #1F8B4D
 
             &:last-child
@@ -2294,6 +2301,9 @@ $header-clearance: 210px
 
       &.trendz
         background: #5555FF
+
+      &.mqtt-broker
+        background: #00695c
 
       .card-img
         position: absolute

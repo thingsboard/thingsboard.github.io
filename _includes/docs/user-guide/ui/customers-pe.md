@@ -4,7 +4,7 @@
 ## Introduction
 
 A Customer can be a separate business-entity: an individual, or an organization that purchases or uses tenant devices and/or assets. 
-Customer can also be a division within the Tenant organization. 
+Customer can also be a division within the tenant organization. 
 Customer can have multiple users, inner customers, and millions of devices and/or assets.
 
 [Tenant administrators](/docs/{{docsPrefix}}user-guide/ui/tenants/) can create customer groups and customers. 
@@ -17,9 +17,7 @@ to manage such options as customer groups, [user groups](/docs/{{docsPrefix}}use
 
 ### Create new customer
 
-The Tenant administrator can add a customer to his account with limited permissions. Permissions for the new customer can be configured later with the help of [Roles](/docs/{{docsPrefix}}user-guide/rbac/).
-
-To add a new customer, you should:
+The tenant administrator can add a new customer using the following steps.
 
 {% include images-gallery.html imageCollection="customer-add-new-pe" showListImageTitles="true" %}
 
@@ -32,16 +30,28 @@ Let's create another client and a separate customer group for it.
 
 Read more information about entity groups [here](/docs/{{docsPrefix}}user-guide/groups/).
 
-### Edit customer
+### Create customer user
 
-The Tenant administrator can edit the title, specify a home dashboard and edit the rest of the fields for this customer.
+The tenant administrator can add a customer user to his account with limited permissions. Permissions for the new customer user can be configured later with the help of [Roles](/docs/{{docsPrefix}}user-guide/rbac/).
+
+{% include images-gallery.html imageCollection="add-customer-user" showListImageTitles="true" %}
+
+### Edit customer or customer user
+
+The Tenant administrator can edit the title, specify a home dashboard and edit the rest of the fields for the customer.
 Let’s see how to do this:
 
 {% include images-gallery.html imageCollection="edit-customer-pe" showListImageTitles="true" %}
 
-### Delete customer
+Also, you can edit customer user information.
 
-The tenant administrator can delete a customer using one of the following ways:
+The steps are similar to how we edit the customer:
+
+{% include images-gallery.html imageCollection="edit-customer-user" showListImageTitles="true" %}
+
+### Delete customer or customer user
+
+The tenant administrator can delete a customer along with all its customer users using one of the following ways:
 
 First way:
 
@@ -54,3 +64,7 @@ Second way:
 You can also delete multiple customers at once.
 
 {% include images-gallery.html imageCollection="delete-customer-3-pe" showListImageTitles="true" %}
+
+Also, you can delete any customer user from the customer. The steps are the same as when deleting a customer.
+
+{% include images-gallery.html imageCollection="delete-customer-user-1" showListImageTitles="true" %}

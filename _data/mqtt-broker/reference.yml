@@ -1,0 +1,7 @@
+bigheader: "Architecture"
+abstract: "Design docs, deployment scenarios and performance"
+toc:
+- title: Architecture Overview
+  path: /docs/mqtt-broker/architecture/
+- title: Performance Tests
+  path: /docs/mqtt-broker/reference/performance-tests/

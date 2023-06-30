@@ -129,10 +129,10 @@ step35:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-2-pe.png
         title: 'Click "Add new widget" icon in the bottom right corner of the screen;'
     2:
-        image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-3-pe.png 
+        image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-3-pe.png
         title: 'Click "Create new widget" icon;'
     3:
-        image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-4-pe.png 
+        image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-4-pe.png
         title: 'Select "Alarm widgets" bundle;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-5-pe.png
