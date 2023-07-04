@@ -8,6 +8,13 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v3.5.1.1 (Jul 4, 2023) {#v3511}
+
+**Hotfix** release to fix incorrect update of sequential id offset:
+
+* [#57](https://github.com/thingsboard/thingsboard-edge/issues/57) ThingsBoard Edge PE disconnects from cloud;
+* [#60](https://github.com/thingsboard/thingsboard-edge/issues/60) edge error log;
+
 ## v3.5.1 (Jun 1, 2023) {#v351}
 
 **Minor** release with everything from [TB Edge v3.5.1](/docs/edge/releases/#v351) and [TB PE v3.5.1](/docs/pe/reference/releases/#v351).
