@@ -2,8 +2,8 @@
 layout: docwithnav-mqtt-broker
 assignees:
 - stitenko
-title: Integration with ThingsBoard PE
-description: TBMQ (MQTT broker) Integration guide
+title: Integration with ThingsBoard
+description: Integration guide of TBMQ with ThingsBoard
 
 create-client-credentials:
     0:
@@ -11,7 +11,7 @@ create-client-credentials:
         title: 'Navigate to "Credentials" tab, click on the "plus" icon in the top right corner of the table;'
     1:
         image: /images/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-add-client-credentials-2-pe.png
-        title: 'Input client credentials name, select client type. Enable "Basic" authentication type and input "Username" and "Password" with chosen values. For example, use username and password values respectively. Click "Add" to save credentials;'
+        title: 'Input client credentials name, select client type. Enable "Basic" authentication type and input "Username" and "Password" with chosen values. For example, use `tb-pe` value for Username and `secret` for Password fields. Click "Add" to save credentials;'
     2:
         image: /images/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-add-client-credentials-3-pe.png
         title: 'New client credentials is created.'
@@ -38,7 +38,7 @@ create-integration:
         title: 'Now go to the advanced settings. Uncheck the "Clean session" parameter and specify client ID;'
     5:
         image: /images/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-integration-add-integration-6-pe.png
-        title: '[Optional] Click on Check connection button to check connection to your Service Bus topic. Click Add button to create the integration.'
+        title: '[Optional] Click on Check connection button to check connection to TBMQ. Click Add button to create the integration.'
 
 successful-connection-tbmq-to-thingsboard:
     0:

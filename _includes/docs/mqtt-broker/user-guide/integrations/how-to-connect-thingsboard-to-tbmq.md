@@ -6,13 +6,15 @@
 **TBMQ** is an industry-ready MQTT broker developed and distributed under the ThingsBoard umbrella that facilitates MQTT client connectivity, message publishing, and distribution among subscribers.
 
 In this guide, we integrate the TBMQ with the ThingsBoard using MQTT integration. 
-We utilize TBMQ client credentials with type APPLICATION to connect ThingsBoard integration as APPLICATION client.
+We utilize TBMQ client credentials with the type **APPLICATION** to connect ThingsBoard integration as an APPLICATION client.
 APPLICATION clients specialize in subscribing to topics with high message rates. 
 The messages will be persisted when the client is offline and will be delivered once it goes online, ensuring the availability of crucial data. 
-Read more about APPLICATION client [here](https://thingsboard.io/docs/mqtt-broker/user-guide/mqtt-client-type/)
+Read more about the APPLICATION client [here](https://thingsboard.io/docs/mqtt-broker/user-guide/mqtt-client-type/).
 
-ThingsBoard MQTT Integration acts as an MQTT client. It subscribes to topics and converts the data into telemetry and attribute updates. In case of downlink message, MQTT integration converts it to the device-suitable format and pushes to TBMQ. 
-Pay attention: TBMQ should be either co-located with ThingsBoard instance or deployed in the cloud and have a valid DNS name or static IP address. ThingsBoard instance that is running in the cloud can’t connect to the TBMQ deployed in local area network.
+ThingsBoard MQTT Integration acts as an MQTT client. It subscribes to topics and converts the received data into telemetry and attribute updates. 
+In case of a downlink message, MQTT integration converts it to the device-suitable format and pushes it to TBMQ. 
+Pay attention: TBMQ should be either co-located with the ThingsBoard instance or deployed in the cloud and have a valid DNS name or static IP address. 
+ThingsBoard instance that is running in the cloud can’t connect to the TBMQ deployed in the local area network.
 
 ### Prerequisites
 
@@ -33,7 +35,7 @@ To do this, login to your TBMQ user interface and follow the next steps.
 {% capture difference %}
 **Please note**:
 <br>
-The "SECURITY_MQTT_BASIC_ENABLED" parameter must be set to "true".
+The "SECURITY_MQTT_BASIC_ENABLED" environment variable must be set to "true".
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -68,7 +70,7 @@ Now create an integration.
 
 {% include images-gallery.html imageCollection="create-integration" showListImageTitles="true" %}
 
-Now go to the "Sessions" page in the TBMQ UI. Upon successful establishment of the connection ThingsBoard to TBMQ, we will see a new session and its status - "Connected".
+Now go to the "Sessions" page in the TBMQ UI. Upon successful establishment of the connection between ThingsBoard and TBMQ, we will see a new session and its status - "Connected".
 
 {% include images-gallery.html imageCollection="successful-connection-tbmq-to-thingsboard" %}
 
@@ -78,9 +80,9 @@ And on the "Home" page, in the "Kafka Topics" window, you will see a name of Kaf
 
 #### Send Uplink message
 
-Now let's simulate the device sending a temperature reading to the integration. 
+Now let's simulate the device sending a temperature reading to TBMQ. 
 
-Open the terminal and execute the following command to send a message with temperature readings in a simple format: *`{"value":25.1}`* to the topic "tb/mqtt-integration-tutorial/sensors/+/temperature":
+Open the terminal and execute the following command to send a message with temperature readings in a simple format: *`{"value":25.1}`* to the topic "tb/mqtt-integration-tutorial/sensors/SN-001/temperature":
 
 ```shell
 mosquitto_pub -h $THINGSBOARD_MQTT_BROKER_HOST_NAME -p 1883 -t "tb/mqtt-integration-tutorial/sensors/SN-001/temperature" -m '{"value":25.1}' -u "username" -P "password"
@@ -109,4 +111,4 @@ Click on the device, go to "Latest Telemetry" tab to see "temperature" key and i
 
 ## Next steps
 
-{% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}
+{% assign currentGuide = "TBIntegrationGuide" %}{% include templates/mqtt-broker-guides-banner.md %}
