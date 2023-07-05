@@ -32,10 +32,10 @@ create-integration:
         title: 'Leave the "Downlink data converter" field empty. Click "Skip";'
     3:
         image: /images/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-integration-add-integration-4-pe.png
-        title: 'Specify host and port of TBMQ instance. Select "Basic" credentials type and specify TBMQ client credentials. Add a topic filter: "tb/mqtt-integration-tutorial/sensors/+/temperature" and select an MQTT QoS level;'
+        title: 'Specify host and port of TBMQ instance. Select "Basic" credentials type and specify TBMQ client credentials. Add a topic filter: "tb/mqtt-integration-tutorial/sensors/+/temperature" and select an MQTT QoS level higher than 0;'
     4:
         image: /images/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-integration-add-integration-5-pe.png
-        title: 'Now go to the advanced settings. Uncheck the "Clean session" parameter and specify client ID;'
+        title: 'Now go to the advanced settings. Uncheck the "Clean session" parameter and specify client ID as `tbpeintegration`;'
     5:
         image: /images/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-integration-add-integration-6-pe.png
         title: '[Optional] Click on Check connection button to check connection to TBMQ. Click Add button to create the integration.'

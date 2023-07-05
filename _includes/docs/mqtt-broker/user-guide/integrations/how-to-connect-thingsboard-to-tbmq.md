@@ -85,7 +85,7 @@ Now let's simulate the device sending a temperature reading to TBMQ.
 Open the terminal and execute the following command to send a message with temperature readings in a simple format: *`{"value":25.1}`* to the topic "tb/mqtt-integration-tutorial/sensors/SN-001/temperature":
 
 ```shell
-mosquitto_pub -h $THINGSBOARD_MQTT_BROKER_HOST_NAME -p 1883 -t "tb/mqtt-integration-tutorial/sensors/SN-001/temperature" -m '{"value":25.1}' -u "username" -P "password"
+mosquitto_pub -h $THINGSBOARD_MQTT_BROKER_HOST_NAME -p 1883 -q 1 -t "tb/mqtt-integration-tutorial/sensors/SN-001/temperature" -m '{"value":25.1}' -u "username" -P "password"
 ```
 {: .copy-code}
 
@@ -94,7 +94,7 @@ Replace the `$THINGSBOARD_MQTT_BROKER_HOST_NAME` with the correct public IP addr
 Use the following command for our example:
 
 ```shell
-mosquitto_pub -h localhost -p 1883 -t "tb/mqtt-integration-tutorial/sensors/SN-001/temperature" -m '{"value":25.1}' -u "tb-pe" -P "secret"
+mosquitto_pub -h localhost -p 1883 -q 1 -t "tb/mqtt-integration-tutorial/sensors/SN-001/temperature" -m '{"value":25.1}' -u "tb-pe" -P "secret"
 ```
 {: .copy-code}
 
