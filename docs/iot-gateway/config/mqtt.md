@@ -243,7 +243,11 @@ This configuration section contains array of topics that the gateway will subscr
 |---
 
 
-The **topicFilter** supports special symbols: '#' and '+' to allow to subscribe to multiple topics. Also, MQTT connector support shared subscriptions.
+The **topicFilter** supports special symbols: '#' and '+' to allow to subscribe to multiple topics.
+
+Also, MQTT connector supports shared subscriptions. 
+To create shared subscription you need to add "**$share/**" as a prefix for topic filter and shared subscription group name.
+For example to subscribe to the *my-shared-topic* in group ***my-group-name*** you can set the topic filter to "$share/***my-group-name***/*my-shared-topic*".
 
 Let's assume we would like to subscribe and process following data from Thermometer devices:
 

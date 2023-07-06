@@ -31,9 +31,9 @@ Configuration example:
         "type": "tcp",
         "method": "socket",
         "tls": {
-          "certfile": "./cert.ca",
-          "keyfile": "./client.key",
-          "password": "some_password",
+          "certfile": "/etc/thingsboard-gateway/certificate.pem",
+          "keyfile": "/etc/thingsboard-gateway/privateKey.pem",
+          "password": "YOUR_PASSWORD",
           "server_hostname": "localhost"
         },
         "timeout": 35,

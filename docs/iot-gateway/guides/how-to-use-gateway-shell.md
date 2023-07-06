@@ -25,14 +25,14 @@ The `storage` command provides functionality related to storage operations.
 To retrieve the storage name, use the following command:
 
 ```
-$ python gateway_shell.py storage -n
+$ tb-gateway-shell storage -n
 ```
 
 #### Get Storage Events Count
 To obtain the count of storage events, use the following command:
 
 ```
-$ python gateway_shell.py storage -c
+$ tb-gateway-shell storage -c
 ```
 
 ### Connector Command
@@ -42,21 +42,21 @@ The `connector` command enables actions related to connectors.
 To list the available connectors, use the following command:
 
 ```
-$ python gateway_shell.py connector -l
+$ tb-gateway-shell connector -l
 ```
 
 #### Get Connector Status
 To retrieve the status of a specific connector, provide the connector name as follows:
 
 ```
-$ python gateway_shell.py connector -s <name>
+$ tb-gateway-shell connector -s <name>
 ```
 
 #### Get Connector Config
 To obtain the configuration of a specific connector, provide the connector name as follows:
 
 ```
-$ python gateway_shell.py connector -c <name>
+$ tb-gateway-shell connector -c <name>
 ```
 
 ### Gateway Command
@@ -66,7 +66,7 @@ The `gateway` command allows operations related to the gateway itself.
 To retrieve the status of the gateway, use the following command:
 
 ```
-$ python gateway_shell.py gateway -s
+$ tb-gateway-shell gateway -s
 ```
 
 ## Next steps

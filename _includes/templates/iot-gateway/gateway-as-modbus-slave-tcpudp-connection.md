@@ -27,9 +27,9 @@ Configuration example:
 "slave": {
   "type": "tcp",
   "security": {
-    "certfile": "./cert.ca",
-    "keyfile": "server.key",
-    "password": "some_password",
+    "certfile": "/etc/thingsboard-gateway/certificate.pem",
+    "keyfile": "/etc/thingsboard-gateway/privateKey.pem",
+    "password": "YOUR_PASSWORD",
     "reqclicert": false
   },
   "host": "127.0.0.1",
