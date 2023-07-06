@@ -212,14 +212,15 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
 
 ### Section "broker"
 
-| **Parameter** | **Default value**              | **Description**                                            |
-|:-|:-|-
-| name          | **Default Local Broker**       | Broker name for logs and saving to persistent devices.     |
-| host          | **localhost**                  | Mqtt broker hostname or ip address.                        |
-| port          | **1883**                       | Mqtt port on the broker.                                   |
-| clientId      | **ThingsBoard_gateway**        | This is the client ID. It must be unique for each session. |
-| version       | **5**                          | MQTT protocol version.                                     |
-|---
+| **Parameter**        | **Default value**        | **Description**                                                                         |
+|:---------------------|:-------------------------|-----------------------------------------------------------------------------------------
+| name                 | **Default Local Broker** | Broker name for logs and saving to persistent devices.                                  |
+| host                 | **localhost**            | Mqtt broker hostname or ip address.                                                     |
+| port                 | **1883**                 | Mqtt port on the broker.                                                                |
+| clientId             | **ThingsBoard_gateway**  | This is the client ID. It must be unique for each session.                              |
+| version              | **5**                    | MQTT protocol version.                                                                  |
+| sendDataOnlyOnChange | **false**                | Sending only if data changed from last check, if no – data will send after every check. |
+| ---                  
 
 #### Subsection "security"
 
@@ -242,7 +243,7 @@ This configuration section contains array of topics that the gateway will subscr
 |---
 
 
-The **topicFilter** supports special symbols: '#' and '+' to allow to subscribe to multiple topics.
+The **topicFilter** supports special symbols: '#' and '+' to allow to subscribe to multiple topics. Also, MQTT connector support shared subscriptions.
 
 Let's assume we would like to subscribe and process following data from Thermometer devices:
 

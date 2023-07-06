@@ -11,3 +11,27 @@
 | byteOrder                     | **BIG**                                 | Order of bytes to read.                                                                                                       |
 | unitId                        | **0**                                   | Unit id of the device                                                                                                         |
 |---
+
+Also, you can configure TLS connection using the following configuration:
+
+| **Parameter**                 | **Default value**                            | **Description**                           |
+|:-|:-|-------------------------------------------
+| certfile                      | **/etc/thingsboard-gateway/certificate.pem** | Path to certificate file.                 |
+| keyfile                       | **/etc/thingsboard-gateway/privateKey.pem**  | Path to private key file.                 |
+| password                      | **YOUR_PASSWORD**                            | Server password.                          |
+| reqclicert                    | **false**                                    | Request certificate file from the client. |
+|---
+
+Configuration example:
+```json
+"slave": {
+  "type": "tcp",
+  "security": {
+    "certfile": "./cert.ca",
+    "keyfile": "server.key",
+    "password": "some_password",
+    "reqclicert": false
+  },
+  "host": "127.0.0.1",
+  ...
+```
