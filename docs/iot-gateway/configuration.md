@@ -332,7 +332,7 @@ Access Token<small>Predefined access token</small>%,%accesstoken%,%templates/iot
 Basic MQTT<small>Basic MQTT Credentials</small>%,%basicmqtt%,%templates/iot-gateway/provisioning-basic-mqtt-config.md%br%
 X.509 Certificate<small></small>%,%x509%,%templates/iot-gateway/provisioning-x-509-config.md%br%{% endcapture %}
 
-There are 4 options of provisioning configuration (you can read more about provisioning in the official documentation):
+There are 4 options of provisioning configuration (you can read more about provisioning in [the official documentation](/docs/user-guide/device-provisioning/)):
 {% include content-toggle.html content-toggle-id="provisioningConfig" toggle-spec=provisioningtogglespec %}
 
 #### Storage configuration
