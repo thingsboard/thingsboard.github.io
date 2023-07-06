@@ -25,7 +25,7 @@ This resource will provide you with step-by-step guidance tailored to various de
 For Linux users who have Docker installed, the execution of the following commands is recommended:
 
 ```shell
-wget https://raw.githubusercontent.com/thingsboard/tbmq/develop/1.0.1/msa/tbmq/configs/tbmq-install-and-run.sh && sudo chmod +x tbmq-install-and-run.sh && ./tbmq-install-and-run.sh
+wget https://raw.githubusercontent.com/thingsboard/tbmq/main/msa/tbmq/configs/tbmq-install-and-run.sh && sudo chmod +x tbmq-install-and-run.sh && ./tbmq-install-and-run.sh
 ```
 {: .copy-code}
 

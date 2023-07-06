@@ -24,7 +24,7 @@ To run TBMQ on a single machine you will need at least 2Gb of RAM.
 Execute the following commands to download the script that will install and start TBMQ:
 
 ```shell
-wget https://raw.githubusercontent.com/thingsboard/tbmq/develop/1.0.1/msa/tbmq/configs/tbmq-install-and-run.sh && sudo chmod +x tbmq-install-and-run.sh && ./tbmq-install-and-run.sh
+wget https://raw.githubusercontent.com/thingsboard/tbmq/main/msa/tbmq/configs/tbmq-install-and-run.sh && sudo chmod +x tbmq-install-and-run.sh && ./tbmq-install-and-run.sh
 ```
 {: .copy-code}
 
