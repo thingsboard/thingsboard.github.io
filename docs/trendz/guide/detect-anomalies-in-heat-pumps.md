@@ -1,0 +1,132 @@
+---
+layout: docwithnav-trendz
+assignees:
+- vparomskiy
+title: Detect anomalies in Heat Pumps
+description: Detect anomalies in Heat Pumps 
+---
+
+* TOC
+{:toc}
+
+## Introduction
+Detecting anomalies in heat pumps is essential to maintain their performance and avoid expensive repairs. 
+Identifying unusual patterns or changes in a heat pump's operation, such as power usage, compressor speed, air flow, coolant pressure and temperature, can help detect issues and address them before they escalate. 
+Common heat pump problems include low coolant levels, blocked air filters, faulty compressors, and overheating.
+By implementing an anomaly detection algorithm, it is possible to identify these issues in their early stages, allowing 
+for timely intervention and maintenance to prevent further complications and costly repairs. This proactive approach not only extends the lifespan of the heat pump but also ensures its efficient operation.
+
+**Task definition:** Detect anomalies in heat pumps in real-time and notify maintenance team about potential problems.
+
+### Implementation plan
+* Create anomaly detection model for heat pumps using historical telemetry data.
+* Configure anomalies auto-detection on real-time telemetry data.
+* Create table to review all detected anomalies.
+* Notify maintenance team about detected anomalies
+* Create dashboard for maintenance team to track anomalies and check real-time heat pump status.
+
+## Getting started:
+
+### Prerequisites
+TBD
+
+### Step 1: Create anomaly detection model
+To identify possible issues with heat pumps, we will use Trendz anomaly detection instruments. Trendz uses unsupervised machine learning algorithms to detect anomalies in time series data. 
+To train a model, we need to configure what telemetry keys should be analyzed. In our case, we will use the following keys: `compressorSpeed`, `airflow`, `coolantPressure`, `coolantTemperature`, `powerUsageWh`.
+
+* Go to anomalies page and click on `Create model` button.
+* Set model name to `HeatPumpAnomalyModel` 
+* Define anomaly detection model properties
+  * Cluster algorithm: `K-Means`
+  * Segment time range: `1 hour` - wa want to detect abnormal behaviour in 1 hour time range.
+  * Comparison type: `Behavior based` - we want to detect anomalies based on behavior of heat pump.
+* Datasource properties
+  * Time Range: `Last 90 days` - we will use last 90 days of telemetry data to train model for detecting normal and abnormal behaviour.
+  * Fields - here we defined what telemetry keys should be used in the model.
+    * `heatPump.compressorSpeed`
+    * `heatPump.airflow`
+    * `heatPump.coolantPressure`
+    * `heatPump.coolantTemperature`
+    * `heatPump.powerUsageWh`
+  * Filters - leave blank because we want to use data from all heat pumps in the system. In some cases, you may want to train model for specific heat pump or group of heat pumps to detect specific anomalies that happen only on these heat pumps.
+* Press **Build model** button.
+
+During model creation Trendz will fetch all required data for the model, analyse and train to detect what is normal behavior for a heat pump. Based on this information anomaly detection model will be created.
+
+Once model trained we will see historical anomalies that were discovered by the model. Each anomaly has `score` and `score index` properties that tells us how abnormal is this anomaly. Higher values means that anomaly is more abnormal.
+
+### Step 2: Schedule anomaly autodiscovery
+Our model is ready and now we want to schedule a job that will analyze real-time telemetry data and detect anomalies.
+* On model summary page click on `Auto discovery` button.
+* Enable **Auto discovery** checkbox
+* Set **Interval** to `1 hour`
+* Press **Apply** button
+
+Once configuration saved Trendz will periodically fetch new data from heat pumps and identify anomalies. If anomaly was detected, Trendz will compute anomaly score and save it in the database.
+
+### Step 3: Review all discovered anomalies
+Now we will create a view that will show all anomalies that where discovered during model creation and new anomalies that were discovered by auto discovery job.
+
+* Create view **Anomaly**
+* Select model that was created in step 1. - `HeatPumpAnomalyModel`
+* Add `heatPump` field to the Filter section - it allows to focus on anomalies for specific heat pump.
+* Press **Build report** button and review new discovered anomalies.
+* Set view name - **heat pump anomalies table**
+* Press **Save** button 
+
+### Step 4: Notify maintenance team about detected anomalies
+We have anomaly detection model that can discover anomalies and setup job to rediscover them on fresh data. Final step is to notify maintenance team about detected anomalies.
+To make it happen we need to:
+
+#### Save current anomaly score for heat pump as a telemetry back to ThingsBoard
+* Create Table view in Trendz
+* Add `heatPump` field into Columns section
+* Add Date FULL_HOUR field into Columns section
+* Add Anomaly field into Columns section
+  * Select `HeatPumpAnomalyModel` model
+  * Anomaly field - `score index`
+  * Aggregation - `MAX`
+  * Label - `heatpumpAnomalyScore` - Trendz will save anomaly score index as telemetry with this name.
+* Add `heatPump` field into Filters section
+* Open view settings and enable telemetry save in `Tb calculated telemetry save` section.
+  * Enabled - true
+  * Save interval - 1
+  * Save unit - hours
+* In settings open `View mode fields` section and **heatPump** entity in `Row click entity` dropdown - this step tells Trendz under what entity score index telemetry should be saved.
+* Set default time range to **Last 7 days**
+* Save view with name **Heatpump anomaly score save job**
+
+Once view saved, Trendz would schedule background job that will periodically check heat pumps anomaly score and save result as telemetry of the heat pump device.
+
+#### Configure alert if anomaly score is higher than 50.
+At this moment we already have `heatpumpAnomalyScore` telemetry for each heat pump in the ThingsBoard which tells as how abnormal its current behavior. It means that we can create Alarm Rule in ThignsBoard to raise an alarm if score index is higher than 50.
+
+* In ThingsBoard open heat pump's device profile and add new Alarm Rule
+* Alarm type - **Abnormal behavior**
+* Create alarm rule
+  * Severity - `Warning`
+  * Condition - `heatpumpAnomalyScore` is greater than `50`
+* Clear alarm rule
+  * Condition - `heatpumpAnomalyScore` is lower or equals `50`
+
+#### Send notification once alarm created
+Final step is to send notification to the maintenance team once alarm created. We will use ThingsBoard Rule Engine to send email notification to the maintenance team. If Alarm Rule in device profile raised an alarm, we can catch this event and add steps to send an email.
+
+* Open Root rule chain in ThingsBoard
+* add `toEmail` rule node after `Device profile` node and connect it with `Alarm Created` relation.
+* Open `toEmail` node settings and configure it to send email to the maintenance team.
+  * From template - `info@testmail.org`
+  * To template - `maintenance@testmail.com`
+  * Subject template - `Abnormal behavior in ${entityName}`
+  * Body template - `Maintenance required for heat pump ${entityName}. Anomaly score is ${heatpumpAnomalyScore}. Please check heat pump status on the dashboard.`
+* add `send email` rule node after `toEmail` node and connect it with `Successfull` relation.
+* Save rule chain.
+
+With this configuration ThingsBoard will send notification to the maintenance team once anomaly was detected in heat pumps behavior.
+
+## Summary
+In sum, the maintenance and efficient operation of heat pumps can be significantly enhanced by deploying an anomaly detection algorithm. 
+This technology, which monitors changes in power usage, compressor speed, air flow, coolant pressure and temperature, can identify potential 
+issues such as low coolant levels, blocked air filters, faulty compressors, and overheating early on. This early detection allows for prompt intervention, thereby preventing further complications and costly repairs. 
+The outlined implementation plan involves developing an anomaly detection model, configuring real-time telemetry data, and creating an interactive dashboard for the maintenance team to track anomalies and heat pump status. 
+Future work should focus on refining this model, expanding its predictive capabilities, and integrating it seamlessly into current maintenance practices.
