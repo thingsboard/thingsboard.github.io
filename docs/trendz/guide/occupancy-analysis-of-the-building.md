@@ -5,15 +5,75 @@ assignees:
 title: Analyze hotel occupancy
 description: Analyze and predict occupancy of different areas in the building
 
-energy-analytic-dashboard:
+building-occupancy-dashboard:
   0:
-    image: /images/trendz/guide/energy_analytic_dashboard.png
-    title: 'Dashboard for energy usage analysis of the building'
+    image: /images/trendz/guide/building_occupancy/hotel_occupancy_dashboard.png
+    title: 'Building occupancy analytic dashboard'
 
-hourly-occupancy-rate-heatmap:
+building-occupancy-weakly-heatmap:
   0:
-    image: /images/trendz/guide/energy_analytic_dashboard.png
-    title: 'Hourly occupancy rate heatmap'
+    image: /images/trendz/guide/building_occupancy/hotel_hourly_occupansy_heatmap_create.png
+    title: 'Create heatmap view in Trendz'
+  1:
+    image: /images/trendz/guide/building_occupancy/hotel_hourly_occupansy_add_dates.png
+    title: 'Add date fields into heatmap view to group data by hour and day'
+  2:
+    image: /images/trendz/guide/building_occupancy/hotel_hourly_occupansy_calcualtion.png
+    title: 'Calculate occupancy rate for each hour of the day'
+  3:
+    image: /images/trendz/guide/building_occupancy/hotel_hourly_occupansy_filtering.png
+    title: 'Add filtering options to focus on specific area of the hotel'
+  4:
+    image: /images/trendz/guide/building_occupancy/hotel_weakly_occupansy_heatmap.png
+    title: 'Hourly occupancy rate heatmap for the last 7 days'
+
+building-occupancy-forecast-configuration:
+  0:
+    image: /images/trendz/guide/building_occupancy/hotel_occupancy_forecast_create.png
+    title: 'Create building occupancy line chart'
+  1:
+    image: /images/trendz/guide/building_occupancy/hotel_occupancy_forecast_configuration.png
+    title: 'Enable prediction and configure forecast settings'
+  2:
+    image: /images/trendz/guide/building_occupancy/hotel_occupancy_forecast_for_next_weak.png
+    title: 'Building occupancy forecast for the next week'
+
+building-occupancy-top-crowded-areas:
+  0:
+    image: /images/trendz/guide/building_occupancy/hotel_occupancu_top_crowded_areas_sorting.png
+    title: 'Enable descending sorting by occupancy rate to find top crowded areas'
+  1:
+    image: /images/trendz/guide/building_occupancy/hotel_occupancu_top_crowded_areas.png
+    title: 'Top 5 overcrowded areas in the building'
+
+building-occupancy-dashboard-configuration:
+  0:
+    image: /images/trendz/guide/building_occupancy/hotel_occupancy_create_dashboard.png
+    title: 'Create dashboard for analyzing building occupancy'
+  1:
+    image: /images/trendz/guide/building_occupancy/hotel_occupancy_configure_aliases.png
+    title: 'Configure dashboard aliases to filter entities by building, floor and area'
+  2:
+    image: /images/trendz/guide/building_occupancy/hotel_occupancy_configure_filter_alias.png
+    title: 'Configure alias for showing all available buildings'
+  3:
+    image: /images/trendz/guide/building_occupancy/hotel_occupancy_add_hierarchy_widget.png
+    title: 'Add hierarchy widget to the dashboard'
+  4:
+    image: /images/trendz/guide/building_occupancy/hotel_occupancy_configure_hierarchy.png
+    title: 'Configure hierarchy widget to show all floors in the building'
+  5:
+    image: /images/trendz/guide/building_occupancy/hotel_occupancy_enable_rowclick.png
+    title: 'Enable row click event to apply filtering by selected entity'
+  6:
+    image: /images/trendz/guide/building_occupancy/hotel_occupancy_configure_filter_by_building.png
+    title: 'Configure row click event'    
+  7:
+    image: /images/trendz/guide/building_occupancy/hotel_occupancy_share_view.png
+    title: 'Add Trendz views on the occupancy dashboard'
+  8:
+    image: /images/trendz/guide/building_occupancy/hotel_occupancy_add_on_dashboard.png
+    title: 'Configure Trendz views to show occupancy rate for the selected building'
 
 ---
 
@@ -28,7 +88,7 @@ Additionally, they were interested in reducing their environmental impact by red
 
 **Task definition** - Analyze occupancy rates for different areas within a hotel and predict hourly occupancy rates for the upcoming week.
 
-{% include images-gallery.html imageCollection="energy-analytic-dashboard" showListImageTitles="false" %}
+{% include images-gallery.html imageCollection="building-occupancy-dashboard" %}
 
 ### Implementation plan
 * Compute hourly occupancy rate as a percent from max capacity for each area.
@@ -76,6 +136,8 @@ return peopleCnt / maxCapacity * 100;
 * Add Area, Floor and Building fields into `filter` section so user can focus on specific area of the hotel.
 * Set default time range to **Last 7 days**
 * Save view with name **Weekly occupancy rate heatmap**
+
+{% include images-gallery.html imageCollection="building-occupancy-weakly-heatmap" %}
 
 ### Step 2: Compute occupancy rate for the whole floor and building
 Heatmap created in _Step 1_ contains filter fields. If no filers are selected, heatmap will show occupancy rate for the whole system. Data from all areas, floors and buildings will be aggregated and displayed on the heatmap.
@@ -125,6 +187,8 @@ Finally, we have to predict calculated **Occupancy rate** field for the next 7 d
 
 Historical data for each area visualized with solid line and forecast is shown with dashed line. 
 
+{% include images-gallery.html imageCollection="building-occupancy-forecast-configuration" %}
+
 ### Step 4: Bar chart with top-5 overcrowded/underutilized areas in the hotel
 Tom-5 bar charts are a good option to better understand our system on a big time range. We can compare assets and understand which areas are overcrowded and which are underutilized. Let's start with overcrowded areas.
 
@@ -140,6 +204,8 @@ Tom-5 bar charts are a good option to better understand our system on a big time
 * Save view with name **top-5 overcrowded areas**
 
 Almost the same steps should be done for a bar chart with top-5 underutilized areas in the hotel. Just change sorting to **Ascending** and change view name to **top-5 underutilized areas**.
+
+{% include images-gallery.html imageCollection="building-occupancy-top-crowded-areas" %}
 
 ### Step 5: Create occupancy analysis dashboard in ThingsBoard
 All Trendz analytic charts are ready and we can create user dashboard in ThingsBoard. Note that user can have access to multiple hotels and we want to create a dashboard that will work for all of them. User should have an ability to select a hotel, floor and area.
@@ -180,6 +246,8 @@ After that all Trendz widgets on the dashboard would be updated because they use
   * State entity parameter name - **selectedEntity**
 * For all Trendz widgets on the dashboard set datasource alias to **Filtered areas**.
 * Save dashboard.
+
+{% include images-gallery.html imageCollection="building-occupancy-dashboard-configuration" %}
 
 ## Summary
 In conclusion, the implementation of occupancy monitoring technology helped our client to achieve their goals of improving guest experience, reducing operational costs, and minimizing their environmental footprint. 
