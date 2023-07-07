@@ -9,6 +9,8 @@ toc:
   path: /docs/mqtt-broker/install/config/
 - title: Security
   path: /docs/mqtt-broker/security/
+- title: Integration with ThingsBoard
+  path: /docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/
 - title: Features
   section:
     - title: MQTT client type

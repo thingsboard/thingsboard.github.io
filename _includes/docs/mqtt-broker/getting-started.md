@@ -25,15 +25,7 @@ This resource will provide you with step-by-step guidance tailored to various de
 For Linux users who have Docker installed, the execution of the following commands is recommended:
 
 ```shell
-wget https://raw.githubusercontent.com/thingsboard/tbmq/main/msa/tbmq/configs/docker-compose.yml
-mkdir -p ~/.tb-mqtt-broker-data/kafka && mkdir -p ~/.tb-mqtt-broker-data/log && mkdir -p ~/.tb-mqtt-broker-data/conf && mkdir -p ~/.tb-mqtt-broker-data/data && mkdir -p ~/.tb-mqtt-broker-data/postgres && sudo chown -R 799:799 ~/.tb-mqtt-broker-data
-```
-{: .copy-code}
-
-Start TBMQ:
-
-```shell
-docker compose up -d
+wget https://raw.githubusercontent.com/thingsboard/tbmq/main/msa/tbmq/configs/tbmq-install-and-run.sh && sudo chmod +x tbmq-install-and-run.sh && ./tbmq-install-and-run.sh
 ```
 {: .copy-code}
 
