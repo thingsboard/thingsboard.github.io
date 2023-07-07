@@ -12,7 +12,7 @@ description: Trendz Analytics guides and tutorials
 [Predict remaining time to next maintenance of the equipment](/docs/trendz/guide/prognose-remaining-time-equipment-maintenance/)
 
 * ~~article~~
-* images
+* ~~images~~
 * seo
 * review
 
@@ -22,7 +22,7 @@ description: Trendz Analytics guides and tutorials
 [Track Overall Equipment Effectiveness (OEE) on industrial plant](/docs/trendz/guide/industrial-oee-score-monitoring/)
 
 * ~~article~~
-* images
+* ~~images~~
 * seo
 * review
 

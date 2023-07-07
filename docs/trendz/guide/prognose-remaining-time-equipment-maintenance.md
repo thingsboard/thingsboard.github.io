@@ -3,7 +3,72 @@ layout: docwithnav-trendz
 assignees:
 - vparomskiy
 title: Predict remaining time to next maintenance of the equipment
-description: Predict remaining time to next maintenance of the equipment 
+description: Predict remaining time to next maintenance of the equipment
+
+predictive-maintenance-dashboard:
+  0:
+    image: /images/trendz/guide/predictive_maintenance/predict_remaining_time_to_next_maintenance_of_the_equipment.png
+    title: 'Predict remaining time to next maintenance of the equipment'
+    
+predictive-maintenance-forecast-next-maintenance-time:
+  0:
+    image: /images/trendz/guide/predictive_maintenance/Remaining_time_create_table_St1_1.png
+    title: 'Create table view in Trendz Analytics'
+  1:
+    image: /images/trendz/guide/predictive_maintenance/Remaining_time_add_fields_St1_2.png
+    title: 'Add Machine and calculated field into columns section'
+  2:
+    image: /images/trendz/guide/predictive_maintenance/Remaining_time_prediction_calculated_St1_3.png
+    title: 'Calculate remaining time to next maintenance based on production forecast'
+
+predictive-maintenance-save-remaining-time-as-telemetry:
+  0:
+    image: /images/trendz/guide/predictive_maintenance/Remaining_time_rename_St2_1.png
+    title: 'Define key name for calculated telemetry'
+  1:
+    image: /images/trendz/guide/predictive_maintenance/Remaining_time_TB_calculated_telemetry_save_St2_2.png
+    title: 'Enable telemetry save in Tb calculated telemetry save section'
+  2:
+    image: /images/trendz/guide/predictive_maintenance/Remaining_time_row_click_entity_St2_3.png
+    title: 'Set Machine entity as row click entity'
+
+predictive-maintenance-create-alarm:
+  0:
+    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_open_machine_device_St3_1.png
+    title: 'Go to Alarm rules section in ThingsBoard'
+  1:
+    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_create_alarm_rule_St3_2.png
+    title: 'Define Alarm that will be raised when remaining time less than 14 days'
+  2:
+    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_less_than_St3_3.png
+    title: 'Set threshold condition to create an alarm'
+  3:
+    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_clear_alarm_rule_St3_4.png
+    title: 'Add clear condition to close active alarm'    
+  4:
+    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_save_alarm_St3_6.png
+    title: 'Save alarm rule'
+
+predictive-maintenance-notify-maintenance-team:
+  0:
+    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_open_root_rule_chain_St4_1.png
+    title: 'Go to default rule chain in ThingsBoard'
+  1:
+    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_to_email_St4_2.png
+    title: 'Add toEmail node with email properties'
+  2:
+    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_to_email_setup_St4_3.png
+    title: 'Set dynamic email body to notify maintenance team'
+  3:
+    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_alarm_add_link_St4_4.png
+    title: 'Connect node with device profile node'
+  4:
+    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_send_email_St4_5.png
+    title: 'Add send email node'
+  5:
+    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_rule_chain_view_St4_6.png
+    title: 'Final rule chain view'
+
 ---
 
 * TOC
@@ -17,6 +82,8 @@ To ensure that we have enough time to order parts and schedule the maintenance t
 With Trendz Analytics, we can predict when each machine needs maintenance and receive notifications with enough lead time, allowing us to keep our machines running efficiently and reducing unplanned downtime.
 
 **Task definition** - predict the number of days until each cap assembly machine produces 500,000 caps and create an alarm to notify 14 days before the predicted date.
+
+{% include images-gallery.html imageCollection="predictive-maintenance-dashboard" %}
 
 ### Implementation plan
 * Create a forecast for the amount of caps produced by each machine using Trendz Analytics.
@@ -73,6 +140,8 @@ return [{ts: 1, value: remainingDays}];
 
 After pressing `Build Report` button we will see table with estimated time in days to next maintenance for each machine.
 
+{% include images-gallery.html imageCollection="predictive-maintenance-forecast-next-maintenance-time" %}
+
 ### Step 2: Save remaining time as a machine telemetry
 Next step is to save calculated remaining time as a telemetry of the machine. In this case Trendz periodically executes calculation function on fresh data and saves result as a telemetry of the machine back to ThingsBoard.
 We need to tell how frequently we want to execute calculation function. In our case it would be once per hour.
@@ -88,6 +157,8 @@ We need to tell how frequently we want to execute calculation function. In our c
 
 Once view saved, Trendz would schedule background job that will periodically execute calculation function and save result as telemetry of the machine. On each run Trendz would fetch new data from ThingsBoard and execute calculation function on it.
 
+{% include images-gallery.html imageCollection="predictive-maintenance-save-remaining-time-as-telemetry" %}
+
 ### Step 3: Create alarm if remaining time less than 14 days
 At this moment we already have `capsForecast` telemetry for each machine in the ThingsBoard which tells as how many days left until next maintenance. It means that we can create Alarm Rule in ThignsBoard to raise an alarm if remaining time less than 14 days.
 
@@ -101,6 +172,8 @@ At this moment we already have `capsForecast` telemetry for each machine in the 
 
 Once alarm rule created, ThingsBoard will raise an alarm if remaining time less than 14 days and clear it once remaining time greater than 14 days.
 
+{% include images-gallery.html imageCollection="predictive-maintenance-create-alarm" %}
+
 ### Step 4: Send notification once alarm created
 Final step is to send notification to the maintenance team once alarm created. We will use ThingsBoard Rule Engine to send email notification to the maintenance team. If Alarm Rule in device profile raised an alarm, we can catch this event and add steps to send an email.
 
@@ -111,9 +184,12 @@ Final step is to send notification to the maintenance team once alarm created. W
   * `To template` - maintenance@testmail.com
   * `Subject template` - Maintenance required for ${entityName}
   * `Body template` - Maintenance required for ${entityName}. Remaining time: ${capsForecast} days
+* add `send email` rule node after `toEmail` node and connect it with `Successfull` relation.
 * Save rule chain.
 
 With this configuration ThingsBoard will send notification to the maintenance team once alarm created.
+
+{% include images-gallery.html imageCollection="predictive-maintenance-notify-maintenance-team" %}
 
 ## Summary
 Implementing a predictive maintenance strategy using Trendz Analytics can help reduce unplanned downtime and increase the efficiency of cap assembly machines. 
