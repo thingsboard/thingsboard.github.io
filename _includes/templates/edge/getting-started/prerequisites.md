@@ -1,15 +1,4 @@
-{% include templates/edge/prerequisites.md %}
-
-##### Provisioning edge on cloud
-
-Additionally, you will need to have ThingsBoard **Edge** up and running and connected to the {{currentThingsBoardVersion}} server.
-
-{% if currentThingsBoardVersion == "ThingsBoard Professional Edition" %}
-To provision ThingsBoard **Edge** on {{currentThingsBoardVersion}} server please visit this guide [Provision ThingsBoard Edge on {{currentThingsBoardVersion}} server](/docs/pe/edge/provision-edge-on-server/).
-{% endif %}
-{% if currentThingsBoardVersion == "ThingsBoard Community Edition" %}
-To provision ThingsBoard **Edge** on {{currentThingsBoardVersion}} server please visit this guide [Provision ThingsBoard Edge on {{currentThingsBoardVersion}} server](/docs/edge/provision-edge-on-server/).
-{% endif %}
+{% include templates/edge/install/prerequisites.md %}
 
 ##### Edge installation
 

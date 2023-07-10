@@ -336,6 +336,18 @@
     }
   },
   {
+    "type": ["Asia"],
+    "country": ["Thailand"],
+    "name": "Epithos Co., Ltd",
+    "contact": {
+      "href": "pnt@epithos.com"
+    },
+    "site": {
+      "href": "epithos.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe"],
     "country": ["Ukraine"],
     "name": "Euristiq",
@@ -368,6 +380,18 @@
     },
     "site": {
       "href": "fourierit.co.za",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["France"],
+    "name": "Jems Group",
+    "contact": {
+      "href": "https://www.jems-group.com/fr/contact/"
+    },
+    "site": {
+      "href": "https://www.jems-group.com/",
       "target": "_blank"
     }
   },

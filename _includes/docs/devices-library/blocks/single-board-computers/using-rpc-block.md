@@ -24,7 +24,7 @@ client = None
 def rpc_callback(id, request_body):
     # request body contains method and other parameters
     print(request_body)
-    method = request_body["method"]
+    method = request_body.get('method')
     if method == 'getTelemetry':
         attributes, telemetry = get_data()
         client.send_attributes(attributes)

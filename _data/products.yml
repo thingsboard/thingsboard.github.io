@@ -73,4 +73,10 @@
   path: /docs/pe/mobile/
   docsPrefix: /docs/pe/mobile/
   getStarted: /docs/pe/mobile/getting-started/
-
+- title: MQTT Broker
+  fulltitle: MQTT Broker
+  description: MQTT Broker Documentation
+  tag: mqtt-broker
+  icon: /images/tbmq-icon.svg
+  path: /docs/mqtt-broker/
+  getStarted: /docs/mqtt-broker/getting-started/

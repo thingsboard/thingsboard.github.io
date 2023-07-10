@@ -176,6 +176,7 @@ To create a new template, follow these steps:
 The general template is used to send generic notifications. For example, system maintenance or important announcement. 
 Available template parameters:
 
+  * *recipientTitle* - title of the recipient (first and last name if specified, email otherwise);
   * *recipientEmail* - email of the recipient;
   * *recipientFirstName* - first name of the recipient;
   * *recipientLastName* - last name of the recipient.
@@ -259,9 +260,9 @@ Available template parameters contain all parameters available for the [General]
   * *action* - one of: 'start', 'update', 'stop';    
   * *error* - the error text.
 
-##### Rule engine
+##### Rule node
 
-The rule engine template is used to send notifications from the 'send notification' rule node.
+The rule node template is used to send notifications from the 'send notification' rule node.
 You may use data or metadata from the incoming message to build the notification subject and body.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
 
@@ -274,7 +275,7 @@ Available template parameters contain all parameters available for the [General]
   * *recipientFirstName* - first name of the recipient;
   * *recipientLastName* - last name of the recipient.
 
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
 ##### Integration lifecycle event
 
 The integration lifecycle event template is used to send notification about integration lifecycle events. For example, notify when new integration fails to start.
@@ -288,6 +289,7 @@ Available template parameters contain all parameters available for the [General]
   * *error* - the error text.
 {% endif %}
 
+{% unless docsPrefix == 'paas/' %}
 ##### Entities limit
 
 The system administrator uses the entities limit template to notify tenants that they will reach the limit on the number of entities (devices, assets, etc.).
@@ -323,6 +325,7 @@ Available template parameters contain all parameters available for the [General]
   * *upgradeInstructionsUrl* - upgrade instructions link for latest version;
   * *currentVersion* - the current platform version;
   * *currentVersionReleaseNotesUrl* - release notes link for current version.
+{% endunless %}
 
 ### Rules
 
@@ -502,7 +505,7 @@ Template message: `Rule chain '${ruleChainName}' - ${action} failure:<br/>${erro
 
 See [Rule engine lifecycle event](#rule-engine-lifecycle-event) template for a list of the available template parameters.
 
-{% if docsPrefix == "pe/" %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
 ##### Integration lifecycle event
 
 The integration lifecycle event rule sends notifications about the integration lifecycle events.
@@ -535,6 +538,7 @@ Template message: `${integrationType} integration '${integrationName}' - ${actio
 See [Integration lifecycle event](#integration-lifecycle-event) template for a list of the available template parameters.
 {% endif %}
 
+{% unless docsPrefix == 'paas/' %}
 ##### Entities limit
 
 The system administrator uses the entities limit rule to notify tenants that they will reach the limit on the number of entities (devices or assets). 
@@ -613,3 +617,4 @@ Template subject: `New version ${latestVersion} is available`
 Template message: `Current version is ${currentVersion}. You can upgrade your Thingsboard instance to version ${latestVersion}. `
 
 See [New platform version](#new-platform-version) template for a list of the available template parameters.
+{% endunless %}

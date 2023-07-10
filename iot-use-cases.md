@@ -289,5 +289,26 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 </a>
             </div>
         </div>
+        <div class="dashboard-item">
+            <div class="item-description">
+                <h2>Waste Management</h2>
+                <p>Optimize waste management operations with our solution.  Streamline processes, monitor waste levels, and track data for efficient and sustainable practices. </p>
+                <a class="read-more-button" href="/use-cases/waste-management/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+            </div>
+            <div class="item-image-container">
+                <a class="img-button" href="/use-cases/waste-management/">
+                    <div class="overlay">
+                        <div class="eye">
+                            <img src="/images/eye-icon.svg">See more
+                        </div>
+                    </div>
+                    <div class="dashboard-frame">
+                        <div class="frame-image">
+                            <img src="/images/solutions/waste_monitoring/waste-monitoring-1.png">
+                        </div>
+                    </div>                
+                </a>
+            </div>
+        </div>
     </div>
 </div>

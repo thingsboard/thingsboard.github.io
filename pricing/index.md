@@ -65,10 +65,10 @@ selfManagedPlan:
     </div>
     <div id="trendz-options" class="select-product-content justify-content-center align-items-center" style="display: none;">
         <div class="product-selector">
-            <div class="solution trendz-cloud active defaultselection" data-product-id="trendz-cloud" onClick="activateProductSection('trendz-cloud')">
+            <div class="solution trendz-cloud" data-product-id="trendz-cloud" onClick="activateProductSection('trendz-cloud')">
                 <h3 data-faq-id="what-is-cloud" data-faq-link-size="70%">Cloud</h3>
             </div>
-            <div class="solution trendz-self-managed" data-product-id="trendz-self-managed" onClick="activateProductSection('trendz-self-managed')">
+            <div class="solution trendz-self-managed active defaultselection" data-product-id="trendz-self-managed" onClick="activateProductSection('trendz-self-managed')">
                 <h3 data-faq-id="difference" data-faq-link-size="70%">Self-managed</h3>
             </div>
         </div>
@@ -396,7 +396,7 @@ selfManagedPlan:
                             <p>Use your ThingsBoard instance forever</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
-                            $2999
+                            $2,999
                         </h4>                  
                         <div class="row justify-content-center">
                             <button class="btn-blue btn-pricing" 
@@ -408,7 +408,6 @@ selfManagedPlan:
                                 Get your license
                             </button>
                         </div>
-                        <div class="pricing-square-item">1 year of software updates</div>
                         <div class="pricing-square-item">Unlimited Devices and Assets</div>
                         <div class="pricing-square-item">Integrations feature</div>
                         <div class="pricing-square-item">Unlimited datapoints and messages</div>
@@ -417,6 +416,7 @@ selfManagedPlan:
                         <div class="pricing-square-item" data-faq-id="subscription-support">
                             Email support within <b>24 hours</b>
                         </div>
+                        <div class="pricing-square-item">1 year of software updates</div>
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
@@ -426,7 +426,7 @@ selfManagedPlan:
                             <p>Everything your product needs to succeed</p>
                         </div>
                         <h4 class="pricing-square-price mb-0">
-                            $4999
+                            $4,999
                         </h4>                  
                         <div class="row justify-content-center">
                             <button class="btn-blue btn-pricing" 
@@ -438,7 +438,6 @@ selfManagedPlan:
                                 Get your license
                             </button>
                         </div>
-                        <div class="pricing-square-item">1 year of software updates</div>
                         <div class="pricing-square-item">Unlimited Devices and Assets</div>
                         <div class="pricing-square-item">Integrations feature</div>
                         <div class="pricing-square-item">Unlimited datapoints and messages</div>
@@ -453,6 +452,31 @@ selfManagedPlan:
                         <div class="pricing-square-item" data-faq-id="additional-services">
                             <b>10 hours</b> of consulting or configuration services
                         </div>
+                        <div class="pricing-square-item">1 year of software updates</div>
+                    </div>
+                </div>
+                <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
+                    <div class="pricing-square">
+                        <h2>Enterprise Bundle</h2>
+                        <div class="pricing-square-description" style="min-height: 50px;">
+                            <p>Supercharge your IoT solution</p>
+                        </div>
+                        <h4 class="pricing-square-price mb-0">
+                            $14,999
+                        </h4>
+                        <div class="row justify-content-center">
+                            <a class="btn-blue btn-pricing" href="/docs/contact-us/" target="_blank">Get your license</a> 
+                        </div>
+                        <div class="pricing-square-item"><b>2 ThingsBoard Perpetual Kits</b></div>
+                        <div class="pricing-square-item">1 Trendz perpetual license</div>
+                        <div class="pricing-square-item">1 Trendz development license</div>
+                        <div class="pricing-square-item">3 Edge perpetual licenses</div>
+                        <div class="pricing-square-item"><b>White-labeling</b></div>
+                        <div class="pricing-square-item">Training sessions</div>
+                        <div class="pricing-square-item" data-faq-id="subscription-support">
+                            Email support within <b>12 hours</b>
+                        </div>
+                        <div class="pricing-square-item">1 year of software updates for all products in bundle</div>
                     </div>
                 </div>
            </div>
@@ -881,8 +905,8 @@ selfManagedPlan:
                                 false,
                                 'd3b7d030-fe4c-11ea-951e-b77b877a367b',
                                 '302e3420-fe4e-11ea-951e-b77b877a367b',
-                                'Edge Nano', 'LKPFMBRZH7', false)">
-                                Try 30 days for free
+                                'Edge Nano', null, false)">
+                                Get your license
                             </button>
                         </div>
                         <div class="pricing-square-item" data-faq-id="thingsboard-edge-compatibility"><b>Compatible with TB PE Server</b></div>

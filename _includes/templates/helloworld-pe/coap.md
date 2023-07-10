@@ -17,7 +17,7 @@ echo -n '{"temperature": 25}' | coap post coap://coap.thingsboard.cloud/api/v1/$
 For example, $ACCESS_TOKEN is ABC123:
 
 ```bash
-echo -n '{"temperature": 25}' | coap post coap://coap.thingsboard.cloud/api/v1/ABC123/telemetry 
+echo -n '{"temperature": 25}' | coap post coap://coap.thingsboard.cloud/api/v1/ABC123/telemetry
 ```
 {: .copy-code}
 

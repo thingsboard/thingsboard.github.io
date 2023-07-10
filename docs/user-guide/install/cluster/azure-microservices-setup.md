@@ -88,6 +88,10 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
 {% assign tbServicesFile = "transport/tb-lwm2m-transport.yml" %}
 {% include templates/install/azure/configure-lwm2m.md %}
 
+### 9.5. Configure Edge Load Balancer (Optional)
+
+{% include templates/install/k8s-configure-edge-load-balancer.md %}
+
 ## Step 10. Using
 
 {% include templates/install/azure/using.md %}

@@ -52,20 +52,20 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/trendz-1.10.0-HF1.rpm
+wget https://dist.thingsboard.io/trendz-1.10.1.rpm
 ```
 {: .copy-code}
 
 Install Trendz Analytics as a service
 
 ```bash
-sudo rpm -Uvh trendz-1.10.0-HF1.rpm
+sudo rpm -Uvh trendz-1.10.1.rpm
 ```
 {: .copy-code}
 
 ### Step 3. Obtain and configure license key 
 
-We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
+We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
 Once you get the license secret, you should put it to the trendz configuration file. 

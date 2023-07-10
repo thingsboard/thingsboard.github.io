@@ -2,7 +2,16 @@
 {% if page.description %}{% assign description=page.description %}{% endif %}
 {% assign docsTag = include.docsTag %}
 {% assign productTag = include.productTag %}
+{% assign githubLink = "https://github.com/thingsboard/thingsboard" %}
+{% assign githubLabel = "Star thingsboard/thingsboard on GitHub" %}
 {% if docsTag %}
+    {% if docsTag == "mqtt-broker" %}
+        {% assign githubLink = "https://github.com/thingsboard/tbmq" %}
+        {% assign githubLabel = "Star thingsboard/tbmq on GitHub" %}
+    {% elsif docsTag == "gw" %}
+        {% assign githubLink = "https://github.com/thingsboard/thingsboard-gateway" %}
+        {% assign githubLabel = "Star thingsboard/thingsboard-gateway on GitHub" %}
+    {% endif %}
     {% assign foundProduct = site.data.products | where: "tag", docsTag %}
     {% assign productInfo = foundProduct[0] %}
     {% unless page.customTitle == "true" %}
@@ -474,8 +483,8 @@
         <a href="/" class="logo"></a>
         <button onclick="Burger()" class="burger"></button>
         <div id="githubButtonContainer">
-            <a class="github-button" href="https://github.com/thingsboard/thingsboard" data-show-count="true"
-               aria-label="Star thingsboard/thingsboard on GitHub">Star</a>
+            <a class="github-button" href="{{ githubLink }}" data-show-count="true"
+               aria-label="{{ githubLabel }}">Star</a>
         </div>
     </div>
     <nav class="head-menu">
@@ -547,11 +556,11 @@
                                     <p>Connect legacy protocols</p>
                                 </div>
                             </a>
-                            <a class="license-lnk" href="/products/license-server/">
-                                <img src="/images/license-icon.svg">
+                            <a class="mqtt-broker-lnk" href="/docs/mqtt-broker/">
+                                <img src="/images/tbmq-icon.svg">
                                 <div class="sub-text">
-                                    <h1>License Server</h1>
-                                    <p>Billing solution</p>
+                                    <h1>MQTT Broker</h1>
+                                    <p>Connect MQTT clients</p>
                                 </div>
                             </a>
                         </div>
@@ -650,11 +659,11 @@
                                     <p>Connect legacy protocols</p>
                                 </div>
                             </a>
-                            <a class="license-lnk" href="/products/license-server/">
-                                <img src="/images/license-icon.svg">
+                            <a class="mqtt-broker-lnk" href="/docs/mqtt-broker/">
+                                <img src="/images/tbmq-icon.svg">
                                 <div class="sub-text">
-                                    <h1>License Server</h1>
-                                    <p>Billing solution</p>
+                                    <h1>MQTT Broker</h1>
+                                    <p>Connect MQTT clients</p>
                                 </div>
                             </a>
                         </div>
@@ -722,6 +731,13 @@
                                 <div class="sub-text">
                                     <h1>Air Quality Monitoring</h1>
                                     <p>Monitor outdoor air quality using a wide range of sensors</p>
+                                </div>
+                            </a>
+                            <a href="/use-cases/waste-management/">
+                                <img src="/images/case-waste-icon.svg">
+                                <div class="sub-text">
+                                    <h1>Waste Management</h1>
+                                    <p>Real-time waste management for streamlined processes</p>
                                 </div>
                             </a>
                         </div>

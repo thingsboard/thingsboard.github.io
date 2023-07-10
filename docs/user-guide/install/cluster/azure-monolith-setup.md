@@ -77,6 +77,10 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
          
 {% include templates/install/azure/configure-udp.md %}
 
+### 8.4. Configure Edge Load Balancer (Optional)
+
+{% include templates/install/k8s-configure-edge-load-balancer.md %}
+
 ## Step 9. Using
 
 {% include templates/install/azure/using.md %}

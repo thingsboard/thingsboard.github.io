@@ -438,8 +438,8 @@
               "interval": 1000,
               "timewindowMs": 60000,
               "fixedTimewindow": {
-                "startTimeMs": 1676280479985,
-                "endTimeMs": 1676366879985
+                "startTimeMs": 1683629324083,
+                "endTimeMs": 1683715724083
               },
               "quickInterval": "CURRENT_DAY"
             },
@@ -737,8 +737,8 @@
               "interval": 1000,
               "timewindowMs": 60000,
               "fixedTimewindow": {
-                "startTimeMs": 1676280479985,
-                "endTimeMs": 1676366879985
+                "startTimeMs": 1683629324083,
+                "endTimeMs": 1683715724083
               },
               "quickInterval": "CURRENT_DAY"
             },
@@ -781,7 +781,7 @@
     },
     "states": {
       "default": {
-        "name": "OrangePI",
+        "name": "Single Board Computer",
         "root": true,
         "layouts": {
           "main": {
@@ -840,7 +840,7 @@
     "entityAliases": {
       "e64513b0-faf1-efdc-518a-236fb9f8e79e": {
         "id": "e64513b0-faf1-efdc-518a-236fb9f8e79e",
-        "alias": "OrangePI",
+        "alias": "Single Board Computer",
         "filter": {
           "type": "singleEntity",
           "resolveMultiple": false,

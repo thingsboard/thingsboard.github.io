@@ -38,3 +38,7 @@
   title: Smart Irrigation
   link: /use-cases/smart-irrigation/
   icon: /images/smart-irrigation.svg
+- id: waste-management
+  title: Waste Management
+  link: /use-cases/waste-management/
+  icon: /images/case-waste-icon.svg

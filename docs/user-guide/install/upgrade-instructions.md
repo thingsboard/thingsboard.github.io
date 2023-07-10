@@ -11,6 +11,17 @@ description: ThingsBoard IoT platform upgrade instructions
 
 <ul id="markdown-toc">
     <li>
+      <a href="#upgrading-to-351" id="markdown-toc-upgrading-to-351">Upgrading to 3.5.1</a>
+      <ul>
+          <li>
+              <a href="#ubuntucentos-351" id="markdown-toc-ubuntucentos-351">Ubuntu/CentOS</a>
+          </li>
+          <li>
+              <a href="#windows-351" id="markdown-toc-windows-351">Windows</a>
+          </li>
+      </ul>
+    </li>
+    <li>
       <a href="#upgrading-to-35" id="markdown-toc-upgrading-to-35">Upgrading to 3.5</a>
       <ul>
           <li>
@@ -345,11 +356,120 @@ description: ThingsBoard IoT platform upgrade instructions
     </li>       
 </ul>
 
+## Upgrading to 3.5.1 {#upgrading-to-351}
+
+### Ubuntu/CentOS {#ubuntucentos-351}
+
+{% capture difference %}
+**NOTE**:
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.5. In order to upgrade to 3.5.1 you need to [**upgrade to 3.5 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-35).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+#### ThingsBoard package download
+
+{% capture tabspec %}thingsboard-download-3-5-1
+thingsboard-download-3-5-1-ubuntu,Ubuntu,shell,resources/3.5.1/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/3.5.1/thingsboard-ubuntu-download.sh
+thingsboard-download-3-5-1-centos,CentOS,shell,resources/3.5.1/thingsboard-centos-download.sh,/docs/user-guide/install/resources/3.5.1/thingsboard-centos-download.sh{% endcapture %}
+{% include tabs.html %}
+
+#### ThingsBoard service upgrade
+
+* Stop ThingsBoard service if it is running.
+
+```bash
+sudo service thingsboard stop
+```
+{: .copy-code}
+
+{% capture tabspec %}thingsboard-installation-3-5-1
+thingsboard-installation-3-5-1-ubuntu,Ubuntu,shell,resources/3.5.1/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/3.5.1/thingsboard-ubuntu-installation.sh
+thingsboard-installation-3-5-1-centos,CentOS,shell,resources/3.5.1/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/3.5.1/thingsboard-centos-installation.sh{% endcapture %}
+{% include tabs.html %}
+
+{% capture difference %}
+**NOTE:**
+<br>
+Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Execute regular upgrade script:
+
+```bash
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.5.0
+```
+{: .copy-code}
+
+#### Start the service
+
+```bash
+sudo service thingsboard start
+```
+{: .copy-code}
+
+### Windows {#windows-351}
+
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.5. In order to upgrade to 3.5.1 you need to [**upgrade to 3.5 first**](/docs/user-guide/install/upgrade-instructions/#windows-35).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+#### ThingsBoard package download
+
+Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.5.1.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.5.1/thingsboard-windows-3.5.1.zip).
+
+#### ThingsBoard service upgrade
+
+* Stop ThingsBoard service if it is running.
+
+```text
+net stop thingsboard
+```
+{: .copy-code}
+
+* Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
+* Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
+
+{% capture difference %}
+**NOTE:**
+<br>
+Scripts listed above should be executed using Administrator Role.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Execute regular upgrade script:
+
+```text
+C:\thingsboard>upgrade.bat --fromVersion=3.5.0
+```
+{: .copy-code}
+
+#### Start the service
+
+```text
+net start thingsboard
+```
+{: .copy-code}
+
 ## Upgrading to 3.5 {#upgrading-to-35}
 
 ### Ubuntu/CentOS {#ubuntucentos-35}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4.4. In order to upgrade to 3.5 you need to [**upgrade to 3.4.4 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-344).
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.4.4. In order to upgrade to 3.5 you need to [**upgrade to 3.4.4 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-344).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+{% include templates/install/tb-350-update.md %}
 
 #### ThingsBoard package download
 
@@ -363,32 +483,46 @@ thingsboard-download-3-5-centos,CentOS,shell,resources/3.5/thingsboard-centos-do
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 {% capture tabspec %}thingsboard-installation-3-5
 thingsboard-installation-3-5-ubuntu,Ubuntu,shell,resources/3.5/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/3.5/thingsboard-ubuntu-installation.sh
 thingsboard-installation-3-5-centos,CentOS,shell,resources/3.5/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/3.5/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
-**NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% capture difference %}
+**NOTE:**
+<br>
+Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.4.4
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.4.4
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-35}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4.4. In order to upgrade to 3.5 you need to [**upgrade to 3.4.4 first**](/docs/user-guide/install/upgrade-instructions/#windows-344).
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.4.4. In order to upgrade to 3.5 you need to [**upgrade to 3.4.4 first**](/docs/user-guide/install/upgrade-instructions/#windows-344).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+{% include templates/install/tb-350-update.md %}
 
 #### ThingsBoard package download
 
@@ -401,34 +535,45 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.5.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-
 * Remove ThingsBoard install dir.
 * Unzip installation archive to ThingsBoard install dir.
 * Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
-
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
-**NOTE** Scripts listed above should be executed using Administrator Role.
+{% capture difference %}
+**NOTE:**
+<br>
+Scripts listed above should be executed using Administrator Role.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 Execute regular upgrade script:
 
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.4.4
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.4.4 {#upgrading-to-344}
 
 ### Ubuntu/CentOS {#ubuntucentos-344}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4.3. In order to upgrade to 3.4.4 you need to [**upgrade to 3.4.3 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-343).
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.4.3. In order to upgrade to 3.4.4 you need to [**upgrade to 3.4.3 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-343).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### ThingsBoard package download
 
@@ -442,25 +587,37 @@ thingsboard-download-3-4-4-centos,CentOS,shell,resources/3.4.4/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 {% capture tabspec %}thingsboard-installation-3-4-4
 thingsboard-installation-3-4-4-ubuntu,Ubuntu,shell,resources/3.4.4/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/3.4.4/thingsboard-ubuntu-installation.sh
 thingsboard-installation-3-4-4-centos,CentOS,shell,resources/3.4.4/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/3.4.4/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
-**NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% capture difference %}
+**NOTE:**
+<br>
+Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-344}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4.3. In order to upgrade to 3.4.4 you need to [**upgrade to 3.4.3 first**](/docs/user-guide/install/upgrade-instructions/#windows-343).
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.4.3. In order to upgrade to 3.4.4 you need to [**upgrade to 3.4.3 first**](/docs/user-guide/install/upgrade-instructions/#windows-343).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### ThingsBoard package download
 
@@ -473,9 +630,9 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.4.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-
 * Remove ThingsBoard install dir.
 * Unzip installation archive to ThingsBoard install dir.
 * Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
@@ -485,12 +642,18 @@ net stop thingsboard
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.4.3 {#upgrading-to-343}
 
 ### Ubuntu/CentOS {#ubuntucentos-343}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4.2. In order to upgrade to 3.4.3 you need to [**upgrade to 3.4.2 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-342).
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.4.2. In order to upgrade to 3.4.3 you need to [**upgrade to 3.4.2 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-342).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### ThingsBoard package download
 
@@ -504,25 +667,37 @@ thingsboard-download-3-4-3-centos,CentOS,shell,resources/3.4.3/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 {% capture tabspec %}thingsboard-installation-3-4-3
 thingsboard-installation-3-4-3-ubuntu,Ubuntu,shell,resources/3.4.3/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/3.4.3/thingsboard-ubuntu-installation.sh
 thingsboard-installation-3-4-3-centos,CentOS,shell,resources/3.4.3/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/3.4.3/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
-**NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% capture difference %}
+**NOTE:**
+<br>
+Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-343}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4.2. In order to upgrade to 3.4.3 you need to [**upgrade to 3.4.2 first**](/docs/user-guide/install/upgrade-instructions/#windows-342).
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.4.2. In order to upgrade to 3.4.3 you need to [**upgrade to 3.4.2 first**](/docs/user-guide/install/upgrade-instructions/#windows-342).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### ThingsBoard package download
 
@@ -535,9 +710,9 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.4.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-
 * Remove ThingsBoard install dir.
 * Unzip installation archive to ThingsBoard install dir.
 * Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
@@ -547,12 +722,18 @@ net stop thingsboard
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.4.2 {#upgrading-to-342}
 
 ### Ubuntu/CentOS {#ubuntucentos-342}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4.1. In order to upgrade to 3.4.2 you need to [**upgrade to 3.4.1 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-341).
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.4.1. In order to upgrade to 3.4.2 you need to [**upgrade to 3.4.1 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-341).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### ThingsBoard package download
 
@@ -566,28 +747,35 @@ thingsboard-download-3-4-2-centos,CentOS,shell,resources/3.4.2/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 {% capture tabspec %}thingsboard-installation-3-4-2
 thingsboard-installation-3-4-2-ubuntu,Ubuntu,shell,resources/3.4.2/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/3.4.2/thingsboard-ubuntu-installation.sh
 thingsboard-installation-3-4-2-centos,CentOS,shell,resources/3.4.2/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/3.4.2/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
-**NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% capture difference %}
+**NOTE:**
+<br>
+Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.4.1
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.4.1
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 {% capture default-jwt %}
 Update the JWT signing key if you use the default one "thingsboardDefaultSigningKey" on production environments. See [JWT security settings](/docs/user-guide/ui/jwt-security-settings/) for details. 
@@ -596,7 +784,12 @@ Update the JWT signing key if you use the default one "thingsboardDefaultSigning
 
 ### Windows {#windows-342}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4.1. In order to upgrade to 3.4.2 you need to [**upgrade to 3.4.1 first**](/docs/user-guide/install/upgrade-instructions/#windows-341).
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.4.1. In order to upgrade to 3.4.2 you need to [**upgrade to 3.4.1 first**](/docs/user-guide/install/upgrade-instructions/#windows-341).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### ThingsBoard package download
 
@@ -609,40 +802,50 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.4.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-
 * Remove ThingsBoard install dir.
 * Unzip installation archive to ThingsBoard install dir.
 * Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
-
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
-**NOTE** Scripts listed above should be executed using Administrator Role.
+{% capture difference %}
+**NOTE:**
+<br>
+Scripts listed above should be executed using Administrator Role.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 Execute regular upgrade script:
 
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.4.1
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 {% capture default-jwt %}
 Update the JWT signing key if you use the default one "thingsboardDefaultSigningKey" on production environments. See [JWT security settings](/docs/user-guide/ui/jwt-security-settings/) for details. 
 {% endcapture %}
 {% include templates/info-banner.md content=default-jwt %}
 
-
 ## Upgrading to 3.4.1 {#upgrading-to-341}
 
 ### Ubuntu/CentOS {#ubuntucentos-341}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4. In order to upgrade to 3.4.1 you need to [**upgrade to 3.4 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-34).
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.4. In order to upgrade to 3.4.1 you need to [**upgrade to 3.4 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-34).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### ThingsBoard package download
 
@@ -656,32 +859,44 @@ thingsboard-download-3-4-1-centos,CentOS,shell,resources/3.4.1/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 {% capture tabspec %}thingsboard-installation-3-4-1
 thingsboard-installation-3-4-1-ubuntu,Ubuntu,shell,resources/3.4.1/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/3.4.1/thingsboard-ubuntu-installation.sh
 thingsboard-installation-3-4-1-centos,CentOS,shell,resources/3.4.1/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/3.4.1/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
-**NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% capture difference %}
+**NOTE:**
+<br>
+Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.4.0
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.4.0
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-341}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.4. In order to upgrade to 3.4.1 you need to [**upgrade to 3.4 first**](/docs/user-guide/install/upgrade-instructions/#windows-34).
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.4. In order to upgrade to 3.4.1 you need to [**upgrade to 3.4 first**](/docs/user-guide/install/upgrade-instructions/#windows-34).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### ThingsBoard package download
 
@@ -694,35 +909,45 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.4.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-
 * Remove ThingsBoard install dir.
 * Unzip installation archive to ThingsBoard install dir.
 * Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
-
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
-**NOTE** Scripts listed above should be executed using Administrator Role.
+{% capture difference %}
+**NOTE:**
+<br>
+Scripts listed above should be executed using Administrator Role.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 Execute regular upgrade script:
 
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.4.0
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
-
+{: .copy-code}
 
 ## Upgrading to 3.4 {#upgrading-to-34}
 
 ### Ubuntu/CentOS {#ubuntucentos-34}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.4.1. In order to upgrade to 3.4 you need to [**upgrade to 3.3.4.1 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-3341).
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.3.4.1. In order to upgrade to 3.4 you need to [**upgrade to 3.3.4.1 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-3341).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### ThingsBoard package download
 
@@ -736,32 +961,44 @@ thingsboard-download-3-4-centos,CentOS,shell,resources/3.4/thingsboard-centos-do
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 {% capture tabspec %}thingsboard-installation-3-4
 thingsboard-installation-3-4-ubuntu,Ubuntu,shell,resources/3.4/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/3.4/thingsboard-ubuntu-installation.sh
 thingsboard-installation-3-4-centos,CentOS,shell,resources/3.4/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/3.4/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
-**NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% capture difference %}
+**NOTE:**
+<br>
+Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.4
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.4
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-34}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.4.1. In order to upgrade to 3.4 you need to [**upgrade to 3.3.4.1 first**](/docs/user-guide/install/upgrade-instructions/#windows-3341).
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.3.4.1. In order to upgrade to 3.4 you need to [**upgrade to 3.3.4.1 first**](/docs/user-guide/install/upgrade-instructions/#windows-3341).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### ThingsBoard package download
 
@@ -774,36 +1011,45 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.4.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-
 * Remove ThingsBoard install dir.
 * Unzip installation archive to ThingsBoard install dir.
 * Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
-
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
-**NOTE** Scripts listed above should be executed using Administrator Role.
+{% capture difference %}
+**NOTE:**
+<br>
+Scripts listed above should be executed using Administrator Role.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 Execute regular upgrade script:
 
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.3.4
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
-
-
+{: .copy-code}
 
 ## Upgrading to 3.3.4.1 {#upgrading-to-3341}
 
 ### Ubuntu/CentOS {#ubuntucentos-3341}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.4. In order to upgrade to 3.3.4.1 you need to [**upgrade to 3.3.4 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-334).
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.3.4. In order to upgrade to 3.3.4.1 you need to [**upgrade to 3.3.4 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-334).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### ThingsBoard package download
 
@@ -817,25 +1063,37 @@ thingsboard-download-3-3-4-1-centos,CentOS,shell,resources/3.3.4.1/thingsboard-c
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 {% capture tabspec %}thingsboard-installation-3-3-4-1
 thingsboard-installation-3-3-4-1-ubuntu,Ubuntu,shell,resources/3.3.4.1/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/3.3.4.1/thingsboard-ubuntu-installation.sh
 thingsboard-installation-3-3-4-1-centos,CentOS,shell,resources/3.3.4.1/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/3.3.4.1/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
-**NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% capture difference %}
+**NOTE:**
+<br>
+Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-3341}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.4. In order to upgrade to 3.3.4.1 you need to [**upgrade to 3.3.4 first**](/docs/user-guide/install/upgrade-instructions/#windows-334).
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.3.4. In order to upgrade to 3.3.4.1 you need to [**upgrade to 3.3.4 first**](/docs/user-guide/install/upgrade-instructions/#windows-334).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### ThingsBoard package download
 
@@ -848,9 +1106,9 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.3.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-
 * Remove ThingsBoard install dir.
 * Unzip installation archive to ThingsBoard install dir.
 * Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
@@ -860,12 +1118,18 @@ net stop thingsboard
 ```text
 net start thingsboard
 ```
+{: .copy-code}
 
 ## Upgrading to 3.3.4 {#upgrading-to-334}
 
 ### Ubuntu/CentOS {#ubuntucentos-334}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.3. In order to upgrade to 3.3.4 you need to [**upgrade to 3.3.3 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-333).
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.3.3. In order to upgrade to 3.3.4 you need to [**upgrade to 3.3.3 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-333).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### ThingsBoard package download
 
@@ -879,32 +1143,44 @@ thingsboard-download-3-3-4-centos,CentOS,shell,resources/3.3.4/thingsboard-cento
 * Stop ThingsBoard service if it is running.
 
 ```bash
-$ sudo service thingsboard stop
+sudo service thingsboard stop
 ```
+{: .copy-code}
 
 {% capture tabspec %}thingsboard-installation-3-3-4
 thingsboard-installation-3-3-4-ubuntu,Ubuntu,shell,resources/3.3.4/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/3.3.4/thingsboard-ubuntu-installation.sh
 thingsboard-installation-3-3-4-centos,CentOS,shell,resources/3.3.4/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/3.3.4/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
-**NOTE:** Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% capture difference %}
+**NOTE:**
+<br>
+Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 Execute regular upgrade script:
 
 ```bash
-# Execute regular upgrade script
-$ sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.3
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.3.3
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```bash
-$ sudo service thingsboard start
+sudo service thingsboard start
 ```
+{: .copy-code}
 
 ### Windows {#windows-334}
 
-**NOTE**: These upgrade steps are applicable for ThingsBoard version 3.3.3. In order to upgrade to 3.3.4 you need to [**upgrade to 3.3.3 first**](/docs/user-guide/install/upgrade-instructions/#windows-333).
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.3.3. In order to upgrade to 3.3.4 you need to [**upgrade to 3.3.3 first**](/docs/user-guide/install/upgrade-instructions/#windows-333).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### ThingsBoard package download
 
@@ -917,29 +1193,34 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.3.
 ```text
 net stop thingsboard
 ```
+{: .copy-code}
 
 * Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
-
 * Remove ThingsBoard install dir.
 * Unzip installation archive to ThingsBoard install dir.
 * Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
-
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
-**NOTE** Scripts listed above should be executed using Administrator Role.
+{% capture difference %}
+**NOTE:**
+<br>
+Scripts listed above should be executed using Administrator Role.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 Execute regular upgrade script:
 
 ```text
 C:\thingsboard>upgrade.bat --fromVersion=3.3.3
 ```
+{: .copy-code}
 
 #### Start the service
 
 ```text
 net start thingsboard
 ```
-
+{: .copy-code}
 
 ## Upgrading to 3.3.3 {#upgrading-to-333}
 

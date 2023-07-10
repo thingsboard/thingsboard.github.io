@@ -70,6 +70,8 @@ Now that the Uplink converter has been created, it is possible to create an inte
 
  - Please note down **HTTP endpoint URL** we will use this value later;
 
+ - In **Advanced settings** enable "**Replace response status from 'No-Content' to 'OK'**";
+
  - Click **Add** button to save the Integration.
 
 {% if docsPrefix == "pe/" %}
