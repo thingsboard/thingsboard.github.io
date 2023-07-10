@@ -35,7 +35,7 @@ To add a gateway, you can follow next steps:
 
 At first, copy the code for uplink converter, we will need it for integration:
 
-```javascript
+{% capture converterCode %}
 var data = decodeToJson(payload);
 var deviceName = data.EUI;
 var deviceType = "LoraDevices";
@@ -128,8 +128,9 @@ if (data.cmd == "gw") {
 }
 
 return uplinkDataList;
-```
-{: .copy-code .expandable-20}
+{% endcapture %}
+
+{% include code-toggle.liquid code=converterCode params="javascript|.copy-code.expandable-20" %}
 
 ### Create integration
 

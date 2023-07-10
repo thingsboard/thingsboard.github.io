@@ -63,7 +63,7 @@ Now we can move to ThingsBoard to configure integration.
 
 At first, copy the code for uplink converter, we will need it for integration:
 
-```javascript
+{% capture converterCode %}
 var data = decodeToJson(payload);
 
 var deviceName = data.end_device_ids.device_id;
@@ -144,8 +144,9 @@ var result = {
 };
 
 return result;
-```
-{: .copy-code .expandable-20}
+{% endcapture %}
+
+{% include code-toggle.liquid code=converterCode params="javascript|.copy-code.expandable-20" %}
 
 ### Create integration
 
