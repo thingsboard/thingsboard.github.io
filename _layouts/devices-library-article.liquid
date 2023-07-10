@@ -228,16 +228,11 @@
             allCodeBlocksElements.each(function (i) {
                 var codeBlock = $(this);
                 var pre = codeBlock.find('pre').first();
-                if (pre.prop('scrollHeight') > 2775) {
-                    codeBlock.find('.rouge-gutter').css("width", "60px");
-                }
                 for (let className of codeBlock.attr('class').split(' ')) {
                     let match = className.startsWith('expandable') ? className : null;
                     if (match) {
                         let rows = parseInt(match.split('-')[1]);
                         let collapsedHeight = rows * 28 + 5;
-                        let expandedHeight = pre.prop('scrollHeight');
-
                         pre.css('height', collapsedHeight + 'px');
                         codeBlock.find('.highlight').first().css("margin-bottom", "45px");
                         let button = $('<button class="expand-code-btn"><div class="collapsed"></div><p>expand</p></button>');
@@ -250,7 +245,10 @@
                                 button.find('div').removeClass('expanded');
                                 button.find('div').addClass('collapsed');
                             } else {
-                                pre.css('height', expandedHeight + 'px');
+                                if (pre.prop('scrollHeight') > 2775) {
+                                    codeBlock.find('.rouge-gutter').css("width", "60px");
+                                }
+                                pre.css('height', pre.prop('scrollHeight') + 'px');
                                 button.attr('data-expanded', 'true');
                                 button.find('p').text('collapse');
                                 button.find('div').removeClass('collapsed');
