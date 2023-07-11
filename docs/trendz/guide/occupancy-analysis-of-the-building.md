@@ -2,13 +2,13 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Analyze hotel occupancy
-description: Analyze and predict occupancy of different areas in the building
+title: Predictive occupancy monitoring for hotels
+description: Analyze and predict occupancy of different zones, areas and spaces in the building
 
 building-occupancy-dashboard:
   0:
     image: /images/trendz/guide/building_occupancy/hotel_occupancy_dashboard.png
-    title: 'Building occupancy analytic dashboard'
+    title: 'Real time occupancy tacking dashboard'
 
 building-occupancy-weakly-heatmap:
   0:
@@ -83,8 +83,8 @@ building-occupancy-dashboard-configuration:
 ## Introduction
 
 As a mid-sized hotel looking to improve their guest experience and reduce operational costs, our client turned to occupancy monitoring. 
-They wanted to gain a better understanding of which areas of the hotel were most popular and when, in order to allocate their staff and resources more effectively. 
-Additionally, they were interested in reducing their environmental impact by reducing their energy usage and identifying potential issues with their HVAC system.
+They wanted to gain a better understanding of which areas of the hotel were most popular and when, in order to allocate their staff and resources more effectively.
+Additionally, they were interested in reducing their environmental impact by reducing their energy usage and identifying potential issues with their HVAC system.  
 
 **Task definition** - Analyze occupancy rates for different areas within a hotel and predict hourly occupancy rates for the upcoming week.
 

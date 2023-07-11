@@ -2,13 +2,13 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Detect anomalies in Heat Pumps
-description: Detect anomalies in Heat Pumps
+title: Anomaly detection in Heat Pumps
+description: Building predictive maintenance system for heat pumps based on unsupervised multivariate time series anomaly detection 
 
 heatpumps-dashboard:
   0:
     image: /images/trendz/guide/heatpump_anomalies/heatpump_anomaly_detection_dashboard.png
-    title: 'Dashboard for analyzing discovered anomalies in Heat Pumps operation'
+    title: 'Dashboard for investigating discovered anomalies in Heat Pumps operation'
 
 heatpumps-create-anomaly-model:
   0:
@@ -94,8 +94,8 @@ heatpumps-notify-about-anomalies:
 Detecting anomalies in heat pumps is essential to maintain their performance and avoid expensive repairs. 
 Identifying unusual patterns or changes in a heat pump's operation, such as power usage, compressor speed, air flow, coolant pressure and temperature, can help detect issues and address them before they escalate. 
 Common heat pump problems include low coolant levels, blocked air filters, faulty compressors, and overheating.
-By implementing an anomaly detection algorithm, it is possible to identify these issues in their early stages, allowing 
-for timely intervention and maintenance to prevent further complications and costly repairs. This proactive approach not only extends the lifespan of the heat pump but also ensures its efficient operation.
+By implementing a predictive maintenance system that combines condition monitoring with unsupervised anomaly detection algorithms, it is possible to identify these issues in their early stages, allowing 
+for timely intervention and maintenance to prevent further complications and costly repairs of hvac system. This proactive approach not only extends the lifespan of the heat pump but also ensures its efficient operation.
 
 **Task definition:** Detect anomalies in heat pumps in real-time and notify maintenance team about potential problems.
 

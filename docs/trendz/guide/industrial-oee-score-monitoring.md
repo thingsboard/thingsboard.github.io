@@ -3,7 +3,7 @@ layout: docwithnav-trendz
 assignees:
 - vparomskiy
 title: Track Overall Equipment Effectiveness (OEE) on industrial plant
-description: Track Overall Equipment Effectiveness (OEE) on industrial plant
+description: How to track Overall Equipment Effectiveness (OEE) on industrial plant and perform machine downtime analysis using ThingsBoard and Trendz. 
 
 oee-score-dashboard:
   0:
@@ -63,9 +63,9 @@ oee-score-quality-score:
 {:toc}
 
 ## Introduction
-A manufacturing plant produces automotive parts and operates 24/7. The plant has three assembly lines, and each line has an OEE score of 85%, 90%, and 75%, respectively.
-By collecting and analyzing real-time data from the assembly lines, we can track Availability, Performance, and Quality indicators for the whole plant and for each individual part in assembly line. Once we will track those metrics in real-time 
-and on daily basis we would be able to identify the root cause of the low OEE score, like unplanned downtime, low performance, or low quality.
+A manufacturing plant produces automotive parts and operates 24/7. The plant has three assembly lines, and each line has an Overall Equipment Efficiency (OEE) score of 85%, 90%, and 75%, respectively.
+By utilizing data from iot sensors, installed near assembly lines in smart factory, and analyzing real-time data from the assembly lines, we can track Availability, Performance, and Quality indicators for the whole plant and for each individual part in assembly line. Once we will track those metrics in real-time 
+and on daily basis we would be able to analyze equipment downtime reasons and identify the root cause of the low OEE score, like unplanned downtime, low performance, or low quality.
 
 **Task definition:** Track OEE score for the whole plant and for each assembly line in real-time and on daily basis.
 

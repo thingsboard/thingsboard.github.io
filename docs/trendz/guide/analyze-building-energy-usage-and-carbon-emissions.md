@@ -2,8 +2,8 @@
 layout: docwithnav-trendz
 assignees:
   - vparomskiy
-title: Analyze energy consumption sources in the building
-description: Analyze energy consumption sources in the building
+title: Analyze building energy usage and emissions tracking
+description: How to optimize energy usage in the building and reduce carbon emissions
 
 energy-analytic-dashboard:
   0:
@@ -54,13 +54,13 @@ energy-compare-time-ranges:
 co2_emission_card_with_trend:
   0:
     image: /images/trendz/guide/building_energy/co2_emission_transform_formula_for_energy.png
-    title: 'Add calculated field to compute CO2 emission based on energy consumption'
+    title: 'Add calculated field to compute carbon emissions based on energy consumption'
   1:
     image: /images/trendz/guide/building_energy/co2_emission_compare_with_prev_interval.png
     title: 'Enable comparison with previous interval to see trend'
   2:
     image: /images/trendz/guide/building_energy/co2_emission_card_with_trend_and_dynamic.png
-    title: 'CO2 emission card with trend and dynamic over last 7 days'
+    title: 'CO2 emissions card with trend and dynamic over last 7 days'
 
 building_energy_dashboard:
   0:
@@ -102,10 +102,11 @@ building_energy_dashboard:
 
 ## Introduction
 
-In today's competitive business landscape, companies are always looking for ways to reduce costs and improve their bottom line.
+In today's competitive business landscape, companies are always looking for ways to reduce costs, improve their bottom line and implement sustainable business practices.
 One of the most significant expenses for many businesses is energy consumption, particularly those that operate out of large buildings.
-However, without accurate data on energy usage, identifying areas for improvement can be challenging.
-In this article, we will describe how to gain insights into energy usage patterns, identify areas for improvement, and implement measures to reduce costs and improve sustainability.
+However, without accurate data on energy usage, identifying areas for improvement can be challenging. This includes tracking elements such as carbon emission accounting, an increasingly important aspect of sustainable operations.
+In this article, we will describe how to gain insights into energy usage patterns, identify areas for improvement, and implement measures to reduce costs, improve sustainability, 
+and integrate carbon emission accounting into everyday business practices.
 
 **Task definition** - create an analytic dashboard to analyze energy consumption sources in the building and identify areas for improvement.
 
@@ -116,7 +117,7 @@ In this article, we will describe how to gain insights into energy usage pattern
 * Create similar table but with breakdown by areas inside a building (offices, meeting rooms, kitchen, storage, etc.)
 * Stacked bar chart to compare energy consumption by source.
 * Stacked bar chart to compare current and previous year with monthly breakdown.
-* Compute CO2 emission in a building
+* Calculate carbon emissions in a building
 * Create ThingsBoard dashboard to visualize data with filtering options
 
 ## Getting started:
@@ -180,7 +181,7 @@ The only difference is to use `energyMeter.area` instead of `energyMeter.sourceT
 
 {% include images-gallery.html imageCollection="energy-consumption-by-areas-table" %}
 
-### Step 3: Compare energy use by source type
+### Step 3: Compare energy usage by source type
 Tables created in previous steps are usefull to get exact numbers about energy usage. But they are not ideal for quick compare of different consumption sources. To make it easier to compare energy usage by source type we will create a stacked bar chart.
 
 * Create bar chart in Trendz
@@ -199,7 +200,7 @@ With such visualization it would be much quicker and easier understand top consu
 
 {% include images-gallery.html imageCollection="energy-compare-sources-bar" %}
 
-### Step 4: Compare current and previous year with monthly breakdown
+### Step 4: Compare current and previous year energy usage with monthly breakdown
 To better understand year over year and month over month dynamic of energy usage we will create a bar chart that will show monthly consumption. Also we will split it into multiple series to compare monthly energy consumption in different years.
 Here is a description how to do that:
 
@@ -218,9 +219,9 @@ Such visualization allows to quickly identify months with high energy consumptio
 {% include images-gallery.html imageCollection="energy-compare-time-ranges" %}
 
 
-### Step 5: Compute CO2 emissions and show dynamic over last 6 months
-Final card should show overall CO2 emissions of the building. Showing only 1 metric is not interesting because it does not describe the whole picture. Since we work on energy usage analysis let's add additional insights to this card.
-First one would be a comparison with the previous time period. Second one would be a dynamic of CO2 emissions over the last 6 months as a sparkline chart.
+### Step 5: Calculate carbon emissions and show dynamic over last 6 months
+Final card should show overall CO2 footprint of the building to simplify carbon emission accounting. Showing only 1 metric is not interesting because it does not describe the whole picture. Since we work on energy usage analysis let's add additional insights to this card.
+First one would be a comparison with the previous time period. Second one would be a dynamic of carbon emissions over the last 6 months as a sparkline chart.
 
 * Create `Card with line chart` view in Trendz
 * Add calculated field with label **CO2 emissions**, set unit to `kg CO2e` and decimals to `1`
@@ -282,7 +283,7 @@ After that all Trendz widgets on the dashboard would be updated because they use
 {% include images-gallery.html imageCollection="building_energy_dashboard" %}
 
 ## Summary
-reducing energy consumption is crucial for businesses looking to improve their bottom line and sustainability. 
+Reducing energy consumption and carbon emissions is crucial for businesses looking to improve their bottom line and sustainability. 
 To achieve this, gaining insights into energy usage patterns and identifying areas for improvement is essential. 
 By following the implementation plan outlined in this article, businesses can create an analytic dashboard to visualize their energy consumption data by source and areas inside the building, 
 compare current and previous years with monthly breakdown, and compute CO2 emissions. These steps can help businesses reduce costs, improve sustainability, 

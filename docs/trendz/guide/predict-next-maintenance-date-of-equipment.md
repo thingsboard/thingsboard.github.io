@@ -3,7 +3,7 @@ layout: docwithnav-trendz
 assignees:
 - vparomskiy
 title: Predict remaining time to next maintenance of the equipment
-description: Predict remaining time to next maintenance of the equipment
+description: Predictive maintenance system for industrial equipment
 
 predictive-maintenance-dashboard:
   0:
@@ -76,10 +76,11 @@ predictive-maintenance-notify-maintenance-team:
 
 ## Introduction
 
-Our FRTB-ZH3 cap assembly machines can produce between 200-350 pieces per hour, but varying loads make maintenance scheduling difficult. 
+Our FRTB-ZH3 cap assembly machines can produce between 200-350 pieces per hour, but varying loads make preventive maintenance scheduling difficult. 
 To reduce unplanned downtime and minimize the risk of breakdowns, we plan to perform maintenance after each machine produces 500,000 caps. 
 To ensure that we have enough time to order parts and schedule the maintenance team, we need to be notified two weeks before the scheduled maintenance. 
-With Trendz Analytics, we can predict when each machine needs maintenance and receive notifications with enough lead time, allowing us to keep our machines running efficiently and reducing unplanned downtime.
+With Trendz Analytics, we implement predictive maintenance solution that can predict when each machine needs maintenance and receive notifications with enough lead time, 
+allowing us to keep our machines running efficiently and reducing unplanned downtime.
 
 **Task definition** - predict the number of days until each cap assembly machine produces 500,000 caps and create an alarm to notify 14 days before the predicted date.
 
@@ -194,7 +195,7 @@ With this configuration ThingsBoard will send notification to the maintenance te
 {% include images-gallery.html imageCollection="predictive-maintenance-notify-maintenance-team" %}
 
 ## Summary
-Implementing a predictive maintenance strategy using Trendz Analytics can help reduce unplanned downtime and increase the efficiency of cap assembly machines. 
+Implementing a predictive maintenance strategy using Trendz Analytics can help reduce unplanned downtime of the equipment on manufacturing site and increase the efficiency of cap assembly machines. 
 By predicting when each machine will produce 500,000 caps and creating an alarm to notify the maintenance team 14 days before the scheduled maintenance, 
 you can ensure that the necessary parts and resources are available to perform maintenance and prevent machine breakdowns.
 
