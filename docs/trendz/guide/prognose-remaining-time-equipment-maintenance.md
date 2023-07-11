@@ -101,14 +101,16 @@ With Trendz Analytics, we can predict when each machine needs maintenance and re
 
 ### Prerequisites
 
-Assembly machines already connected to ThingsBoard via OPC-UA integration and telemetry data is available in ThingsBoard. You can find more details how to do this in our [connectivity guides](https://thingsboard.io/docs/pe/guides/#AnchorIDConnectYourDevice)
+Assembly machines already connected to ThingsBoard via OPC-UA integration and telemetry data is available in ThingsBoard. You can find more details how to do this in our [connectivity guides](https://thingsboard.io/docs/pe/guides/#AnchorIDConnectYourDevice).
+Equipment reports a lot of useful telemetry data, but for this use case we will use only `capsProduced` telemetry.
+
 
 ### Step 1: Create a forecast for the amount of caps produced by machine
 We start with creating a forecast for the amount of caps produced by each machine. Machine reports the number of produced caps every 5 minutes in the format `{ts: 1675421880000, values: { capsProduced: 738}}`.
 Submitted value always increments and reset once maintenance performed. Let's start with a prediction of `capsProduced` telemetry for the next 3 months.
 
 * Create table.
-* Add machine name into columns section - this step will create a separate forecast for each machine.
+* Add `machine name` into columns section - this step will create a separate forecast for each machine.
 * Add calculated field into columns section.
 * Enable batch calculation checkbox.
 * Enable checkbox `Prediction`

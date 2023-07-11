@@ -104,14 +104,15 @@ for timely intervention and maintenance to prevent further complications and cos
 ### Implementation plan
 * Create anomaly detection model for heat pumps using historical telemetry data.
 * Configure anomalies auto-detection on real-time telemetry data.
-* Create table to review all detected anomalies.
+* Create table widget to review all detected anomalies.
 * Notify maintenance team about detected anomalies
 * Create dashboard for maintenance team to track anomalies and check real-time heat pump status.
 
 ## Getting started:
 
 ### Prerequisites
-TBD
+Heat pump reports telemetry data to ThingsBoard via MQTT protocol. They registered in platform as a device entity. Devices have relation to Apartment asset and apartments assigned to customer account. 
+They way how heat pumps provisioned in the system is out of scope of this guide as well as user self registration process. You can find tutorials how to do that in our documentation. 
 
 ### Step 1: Create anomaly detection model
 To identify possible issues with heat pumps, we will use Trendz anomaly detection instruments. Trendz uses unsupervised machine learning algorithms to detect anomalies in time series data. 

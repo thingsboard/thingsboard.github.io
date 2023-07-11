@@ -78,12 +78,22 @@ and on daily basis we would be able to identify the root cause of the low OEE sc
 * Analyze **Performance** metric by tracking speed of production compared to the planned speed.
 * Compute **Quality** metric based on amount of rejected parts and rejection reasons.
 
-### Key outcomes
-* 7% increase OEE score for assembly lines.
+
 ## Getting started:
 
 ### Prerequisites
-TBD
+Lets take a look at entities that exists in ThingsBoard in scope of the solution that we are discussing. It is important to understand how they are connected between each other and what raw telemetry we receive from sensors. 
+The mechanisms how entities and sensors are provisioned are out of scope of this guide. You can find details how to do that in our documentation. So here is how our domain model looks like:
+
+* `Manufacturing plant` registered in ThingsBoard as an asset. 
+* `Assembly line` registered in ThingsBoard as devices and has a relation to the manufacturing plant asset.
+* On-site Gateway collects data from assembly lines via modbus protocol and sends it to ThingsBoard as a telemetry.
+* Following metrics colelcted from assembly line:
+  * `powerUsageWh` - amount of energy consumed by assembly line in Wh
+  * `producedParts` - amount of parts produced
+  * `rejectedParts` - amount of parts rejected during quality check
+  * `status` - current status of assembly line (running, stopped, maintenance, etc)
+  * `reason` - reason of downtime event (maintenance, lack of materials, etc)
 
 ### Step 1: Analyze equipment downtime duration and compute Availability metric
 We have all required information from assembly line to compute how much time it was down and what was the reason. Every 30 seconds we receive energy consumption details from assembly line 
