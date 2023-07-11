@@ -1,6 +1,6 @@
 ### Add a gateway on the Loriot
 
-We need to add a gateway on the [Loriot](loriot.io){: target="_blank"}. The official guide is available [here](https://support.milesight-iot.com/support/solutions/articles/73000514249-how-to-connect-milesight-gateway-to-loriot){: target="_blank"}. 
+We need to add a gateway on the [Loriot](https://loriot.io){: target="_blank"}.   
 To add a gateway, you can follow next steps:
 
 {% assign addGatewaySteps = '
@@ -134,7 +134,7 @@ return uplinkDataList;
 
 ### Create integration
 
-Next we will create Integration with Loriot inside the ThingsBoard.  
+Next we will create an integration with Loriot inside the ThingsBoard.  
 
 
 {% assign createLoriotIntegration = '

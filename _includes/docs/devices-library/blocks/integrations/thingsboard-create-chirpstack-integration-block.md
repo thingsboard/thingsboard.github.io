@@ -1,6 +1,6 @@
 ### Add a gateway on the Chirpstack
 
-We need to add a gateway on the [Chirpstack](chirpstack.io){: target="_blank"}. The official guide is available [here](https://support.milesight-iot.com/support/solutions/articles/73000514249-how-to-connect-milesight-gateway-to-chirpstack){: target="_blank"}. 
+We need to add a gateway on the [Chirpstack](https://chirpstack.io){: target="_blank"}.   
 To add a gateway, you can follow next steps:
 
 {% assign addGatewaySteps = '
@@ -33,7 +33,7 @@ To add a gateway, you can follow next steps:
 
 ### Configure application on the Chirpstack
 
-Now we need to configure integration on the Chirpstack. To do this please follow next steps:  
+Now we need to configure application on the Chirpstack. To do this please follow next steps:  
 
 {% assign addIntegrationSteps = '
     ===
@@ -161,7 +161,7 @@ return uplinkDataList;
 
 ### Create integration
 
-Next we will create Integration with Chirpstack inside the ThingsBoard and configure the integration on Chirpstack.
+Next we will create an integration with Chirpstack inside the ThingsBoard and configure the integration on Chirpstack.
 
 {% assign createChirpstackIntegration = '
     ===

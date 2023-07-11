@@ -1,7 +1,6 @@
 ### Add a gateway on The Things Stack Community Edition
 
 We need to add a gateway on [The Things Stack Community Edition](https://console.cloud.thethings.network){:target="_blank"}.  
-Official guide is available [here](https://support.milesight-iot.com/support/solutions/articles/73000514119-how-to-connect-milesight-gateway-to-the-things-stack-v3-via-semtech-packet-forwarder){:target="_blank"}.
 To add a gateway, you can follow next steps:  
 
 {% assign addGatewaySteps = '
@@ -35,7 +34,7 @@ To add a gateway, you can follow next steps:
 
 ### Configure application on The Things Stack Community Edition
 
-Now we need to configure integration on The Things Stack. To do this please follow next steps:  
+Now we need to configure application on The Things Stack. To do this please follow next steps:  
 
 {% assign addIntegrationSteps = '
     === 
@@ -150,7 +149,7 @@ return result;
 
 ### Create integration
 
-Next we will create Integration with The Things Stack (TTS) inside the ThingsBoard.
+Next we will create an integration with The Things Stack (TTS) inside the ThingsBoard.
 
 {% assign createTTSIntegration = '
     ===

@@ -1,7 +1,6 @@
 ### Add a gateway on The Things Industries
 
 We need to add a gateway on The Things Industries cloud.  
-Official guide is available [here](https://support.milesight-iot.com/support/solutions/articles/73000514119-how-to-connect-milesight-gateway-to-the-things-stack-v3-via-semtech-packet-forwarder){:target="_blank"}.
 To add a gateway, you can follow next steps:  
 
 {% assign addGatewaySteps = '
@@ -142,7 +141,7 @@ return result;
 
 ### Create integration
 
-Next we will create Integration with TheThingsIndustries inside the ThingsBoard.  
+Next we will create an integration with The Things Industries inside the ThingsBoard.  
 
 {% assign createTTIIntegration = '
     ===
