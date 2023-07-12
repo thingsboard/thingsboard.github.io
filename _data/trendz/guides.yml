@@ -1,15 +1,6 @@
-bigheader: "Installation"
-abstract: "Documentation for installation and configuration of Trendz Analytics."
+bigheader: "Trendz Analytics guides"
+abstract: "Tutorials and guides for analysing data with Trendz Analytics."
+hidetoc: "true"
 toc:
 - title: Guides overview
-  path: /docs/trendz/guide/home/
-- title: Predict remaining time to next maintenance of the equipment
-  path: /docs/trendz/guide/prognose-remaining-time-equipment-maintenance/
-- title: Track Overall Equipment Effectiveness (OEE) on industrial plant
-  path: /docs/trendz/guide/industrial-oee-score-monitoring/
-- title: Occupancy analysis of the building
-  path: /docs/trendz/guide/occupancy-analysis-of-the-building/
-- title: Analyze energy consumption sources in the building
-  path: /docs/trendz/guide/building-energy-consumption-sources/
-- title: Detect anomalies in Heat Pumps
-  path: /docs/trendz/guide/detect-anomalies-in-heat-pumps/
+  path: /docs/trendz/guides/

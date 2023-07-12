@@ -1,6 +1,7 @@
 tocs:
 - docs-home
 - getting-started
+- guides
 - installation
 docs-header:
 - toc: getting-started
