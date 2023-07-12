@@ -187,8 +187,6 @@ toc:
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning
       path: /docs/paas/user-guide/bulk-provisioning/
-    - title: Entity Groups
-      path: /docs/paas/user-guide/groups/
     - title: Scheduler
       path: /docs/paas/user-guide/scheduler/
     - title: Reporting
@@ -244,6 +242,8 @@ toc:
       path: /docs/paas/user-guide/ui/rule-chains/
     - title: Dashboards
       path: /docs/paas/user-guide/ui/dashboards/
+    - title: Entity Groups
+      path: /docs/paas/user-guide/groups/
 - title: Subscriptions
   path: /products/paas/subscription/
 - title: Plan and billing
