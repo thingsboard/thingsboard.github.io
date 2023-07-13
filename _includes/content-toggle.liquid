@@ -1,0 +1,99 @@
+{% assign contentToggleId = include.content-toggle-id %}
+{% assign toggleraw = include.toggle-spec | split: '%br%' %}
+{% assign content = "" %}
+
+<div class="tb-liquid-content-toggle" id="{{contentToggleId}}">
+    <div class="panel panel-default">
+        <div class="panel-heading {{contentToggleId}}">
+            {% for content in toggleraw %}
+            {% assign thisContent = content | split: '%,%' %}
+            {% assign buttonText=thisContent[0] | strip %}
+            {% assign toggleName=thisContent[1] %}
+            {% if forloop.first == true %}{% assign firstTargetId=thisContent[1] %}{% endif %}
+            <a class="content-toggle-button" data-target="#{{toggleName}}">
+                <div class="content-toggle-button-text">
+                    {{buttonText}}
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+        {% for content in toggleraw %}
+        {% assign thisContent = content | split: '%,%' %}
+        {% assign toggleName=thisContent[1] %}
+        {% assign togglePath=thisContent[2] %}
+        {% capture toggleText %}{% include {{togglePath}} %}{% endcapture %}
+        <div id="{{toggleName}}" class="panel-collapse collapse">
+            <div class="panel-body">
+                {{ toggleText | markdownify }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script>
+    jqueryUiDefer(initContentToggle{{contentToggleId}});
+    let toggleBlocksIdsToTocsIds{{contentToggleId}} = {};
+    function initContentToggle{{contentToggleId}}() {
+        $(function(){
+            let toggleBlocksIds = [];
+            $('.panel-heading.{{contentToggleId}} > a').each(function() {
+                toggleBlocksIds.push($(this).attr("data-target").substring(1));
+            });
+            let i = 0;
+            for (let id of toggleBlocksIds) {
+                toggleBlocksIdsToTocsIds{{contentToggleId}}[id] = [];
+                $('#' + id).find(":header").each(function() {
+                    let heading = $(this);
+                    heading.attr("id", heading.attr("id") + i++);
+                    toggleBlocksIdsToTocsIds{{contentToggleId}}[id].push('markdown-toc-' + $(this).attr('id'));
+                });
+            }
+            window.addEventListener('popstate', onPopState{{contentToggleId}});
+
+            onPopState{{contentToggleId}}();
+
+            $('.tb-liquid-content-toggle#{{contentToggleId}} a.content-toggle-button').click(function(event) {
+                event.preventDefault();
+                var id = $(this).attr("data-target").substring(1);
+                var param = '{{contentToggleId}}';
+                var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+                params[param] = id;
+
+                var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
+                if (window.location.hash) {
+                    newurl += window.location.hash;
+                }
+                window.history.pushState({ path: newurl }, '', newurl);
+                selectTarget{{contentToggleId}}(id);
+            });
+        });
+    }
+
+    function onPopState{{contentToggleId}}() {
+        var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+        var targetId = params['{{contentToggleId}}'];
+        if (!targetId) {
+            targetId = '{{firstTargetId}}';
+        }
+        selectTarget{{contentToggleId}}(targetId);
+    }
+
+    function selectTarget{{contentToggleId}}(targetId) {
+        for (let toggleBlockId in toggleBlocksIdsToTocsIds{{contentToggleId}}) {
+            for (let tocid of toggleBlocksIdsToTocsIds{{contentToggleId}}[toggleBlockId]) {
+                let tocItem = $('#' + tocid);
+                if (toggleBlockId === targetId) {
+                    tocItem.parent().removeClass('hide');
+                    continue
+                }
+                tocItem.parent().addClass('hide');
+            }
+        }
+        $(".tb-liquid-content-toggle#{{contentToggleId}} a.content-toggle-button").removeClass("active");
+        $(".tb-liquid-content-toggle#{{contentToggleId}} a.content-toggle-button[data-target='#"+targetId+"']").addClass("active");
+        $('.tb-liquid-content-toggle#{{contentToggleId}} .panel-collapse').removeClass("show");
+        $('.tb-liquid-content-toggle#{{contentToggleId}} .panel-collapse#'+targetId).addClass("show");
+    }
+
+</script>
