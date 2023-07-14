@@ -2,8 +2,8 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Share and embed Visualizations
-description: Share analysis results and group visualizations on Dashboards 
+title: Add Trandz widgets on dashboard
+description: Add Trandz widgets on dashboard 
 
 ---
 
@@ -13,74 +13,25 @@ description: Share analysis results and group visualizations on Dashboards
 All interactive visualizations created with the Trendz Analytics Platform could be shared with other users and embed on ThingsBoard Dashboards 
 or external sites. In this guide, you will learn how to do this. 
 
-## Share via ThingsBoard dashboard
-You can share created visualizations or even provide a self-service interface for your users by adding Trendz widgets on ThingsBoard dashboards.
-Follow 2 simple steps to make it: 
+## Prerequisites
 
-#### Import Trendz widget bundle
+You should [import Trendz widget bundle into ThingsBoard](/docs/trendz/trendz-bundle#Import-Trendz-bundle-into-ThingsBoard). If you are using ThingsBoard Cloud - you should already have required bundle imported into ThingsBoard.
 
-###### For ThingsBoard 3.4+ and Trendz 1.9+
+## Add visualization on ThingsBoard Dashboard
 
-* Go to Trendz settings page - http://{my-domain}/trendz/settings
-* Navigate to **Trendz Widget Bundle Management** section
-* Press **Upload bundle to ThingsBoard** button to add Trendz widget library to the ThingsBoard. 
+#### Add using share wizard
 
+* Click on **Share** button in the top right corner of the visualization.
+* Select whether you want to add view on new or existing dashboard.
+* Select on what dashboard state view should be added.
+* Enable `Create alias from filter` - enable this option if you want to create dashboard alias that would be used to filter data in view. For example if you created view that shows data from multiple devices - you can use dashboard state alias to filter data by device name. Once alias value changed - filter inside Trendz view would be automatically updated.
+* Press Save button.
 
-###### For ThingsBoard 3.3+ and Trendz 1.8+
-Starting from ThingsBoard 3.3 and Trendz 1.8 - Trendz widgets can be natively embedded into the ThingsBaord dashboard.
-Native Trendz widgets works much faster compared to original Trendz widgets that are based on iFrame. 
+#### Add via direct link to Trendz view
 
-Add native Trendz library into ThingsBaord extensions:
-* Download <a href="https://dist.thingsboard.io/trendz-tb-lib-1.8.0-SNAPSHOT.jar" download target="_blank">Native Trendz Library</a>
-* Deploy library into ThingsBoard extension directory
-
-```
-scp trendz-tb-lib-1.8.0-SNAPSHOT.jar ubuntu@${THINGSBOARD_SERVER}:~/.
-
-ssh ${THINGSBOARD_SERVER}
-
-sudo cp trendz-tb-lib-1.0.0-SNAPSHOT.jar /usr/share/thingsboard/extensions/
-sudo chown thingsboard:thingsboard /usr/share/thingsboard/extensions/trendz-tb-lib-1.0.0-SNAPSHOT.jar
-```
-
-* Restart ThingsBoard service to apply changes
-
-```
-sudo service thingsboard restart
-```
-
-Import Native Trendz widgets bundle
-* Download <a href="https://dist.thingsboard.io/native_trendz_bundle.json" download target="_blank">Native_Trendz_widgets_bundle</a>
-* Login as Tenant Administrator into ThingsBoard and go to **Widget Library**
-* Press **Add new widget bundle** and select **import widget bundle**
-* Import downloaded  widget bundle 
-
-###### For ThingsBoard 3.0 - 3.2
-* Download a <a href="https://dist.thingsboard.io/trendz_bundle_tb3.json" download target="_blank">Trendz_widgets_bundle V3</a> 
-* Login as Tenant Administrator into ThingsBoard and go to **Widget Library**
-* Press **Add new widget bundle** and select **import widget bundle**
-* Import downloaded  widget bundle 
-
-###### For ThingsBoard 2.x
-* Download a <a href="https://dist.thingsboard.io/trendz_bundle_tb2.json" download target="_blank">Trendz_widgets_bundle V2</a> 
-* Login as Tenant Administrator into ThingsBoard and go to **Widget Library**
-* Press **Add new widget bundle** and select **import widget bundle**
-* Import downloaded  widget bundle
-
-This bundle contains 3 widgets:
-* **Trendz View Static**- allow adding saved Trendz visualizations into ThingsBoard dashboards
-* **Trendz View - with filter alias**- similar to previous but also support dashboard aliases for resolving entities
-* **Trendz Builder** - Trendz Visualization Builder for providing self-service interface to your end-users, 
-so they can create their own analysis using ThingsBoard dashboard. 
-
-**Note:** If after importing Trendz Widget Bundle into ThingsBoard, widgets do not work and white screen with error displayed - double-check
-that correct bundle was imported. Widget API in ThingsBoard v2.x and v3.x is different. Ensure that you downloaded bundle for 
-the correct ThingsBoard version.
-
-#### Add visualization on ThingsBoard Dashboard
-Once widgets bundle imported and you already have saved Trendz Visualization - follow next steps to add them on the dashboard:
+Once widgets bundle imported, and you already have saved Trendz Visualization - follow next steps to add them on the dashboard:
 * In Trendz, open required visualization
-* Press **Share** button, sharable URL will be copied into the clipboard
+* Press **Share** button, and click `Copy link` button - sharable URL will be copied into the clipboard
 * Open required ThingsBoard Dashboard and press Edit button
 * Select **Trendz View Static** widget from **Trendz Bundle** and add it on the Dashboard
 * Switch to **Advanced** tab of the widget and insert the copied URL from step 1
@@ -88,63 +39,7 @@ Once widgets bundle imported and you already have saved Trendz Visualization - f
 
 ![image](/images/trendz/embed-trendz.gif) 
 
-#### Use Dashboard alias in Trendz View
-
-In this case you want to conect standard ThingsBoard widgets located on the dashboard with Trendz View. 
-You can do this using ThingsBoard dashboard aliases and **Trendz View - with filter alias** from **Trendz widget Bundle**.
-
-**Example**: we have 10 **Machine** devices in ThingsBoard. We want to create a dashboard that will show all **Machine** devices 
-in a list and once device selected - other widget on the dashboard should show details about selected device. In total we will have 2 widgets 
-on the dashboard:
-* Entity List - will show list of devices
-* Trendz view - line chart that will show temperature of selected device 
- 
-On ThingsBoard side we setup a dashboard and add 2 widgets. Detailed instruction how to do this is not part of this tutorial, 
-so here are brief steps:
-* Create **all_devices** alias that resolves all devices with type **Machine**
-* Create **selected_device** alias with type **entity form dashboard state** - this alias hold reference to selected device
-
-![image](/images/trendz/embed-tb-alias.png)
- 
-* Add **Entity List** widget and use **all_devices** alias as a datasource
-* Configure **On row click** action that will save selected device to **selected_device** alias 
-* Save dashboard
-
-On **Trendz View** side:
-* Open view in Trendz
-* Add **Machine** field to filter section - it will allow us to filter Machines by name
-* Save View
-* Copy Link to this view
-
-Return to ThingsBoard Dashboard:
-* Edit dashboard
-* Add  **Trendz View - with filter alias** from **Trendz widget Bundle** to the dashboard
-* Set **selected_device** as a datasource for Trendz View
-* Use **name** as a key from alias
-
-![image](/images/trendz/embed-trndz-alias.png)
-
-* Switch to **Advanced** tab
-* Insert link to view into **View URL**
-* Insert **Machine** into **Filter Name** - content of this field should be the same as it typed in Trendz View Filter
-* Save Dashboard
-
-![image](/images/trendz/embed-trndz-filter-name.png)
-![image](/images/trendz/embed-tb-filter-name.png)
-
-Now, every time when **selected_device** alias updated, value if its Entity Name would be inserted into Trendz View filter.
-
-If multiple filters configured in Trendz View - system will match required filter by name.
-
-<div class="image-block">
-    <div class="image-wrapper">
-       <video poster="/images/trendz/embed-trndz-alias.png" autoplay="" loop="" preload="auto" muted="" style="width: 750px">
-            <source src="https://tb-videos.s3-us-west-1.amazonaws.com/trndz-alias-connect.webm" type="video/webm">                 
-        </video> 
-    </div>
-</div>
-
-#### Use Dashboard time window
+## Use Dashboard time window
 
 By default, all Trendz visualizations use individual time range. However you can change this behavior and configure widget to toke time from ThingsBoard Dashboard.
 This option available for both, Static Trendz widget and for Trendz View with aliases.
@@ -153,32 +48,6 @@ This option available for both, Static Trendz widget and for Trendz View with al
 * Select required Trendz Widget
 * Switch to **Advanced** Tab
 * Enable checkbox **Use Dashboard Time Window** 
-
-#### Configure OnRowClock action
-Trendz Table view support onRowClick action. You can configure what should happen when user click on a Row in a table. 
-For example you can save entity to the Dashboard state alias or open new dashboard state.
-
-To enable row click event:
-* Add Trendz Table View on ThingsBoard dashboard.
-* Open widget edit mode and switch to **Actions** tab.
-* Press **Add action** button.
-* In **Action source** field select **On row click**.
-* Proceed standard widget action configuration. 
-
-Each row has multiple fields from on or multiple devices/assets. It means that 1 row can be connected with multiple items. 
-If you want to use 'onRowClick' action - you need to define what item is selected when row clicked.
-* Open **View Settings** in Trendz View edit mode.
-* Open **View Mode fields** section.
-* Select required Device/Asset type in **Row click entity** dropdown.
-* Save changes.
-
- 
-
-#### Configure Date selected action
-
-#### Configure Switch Field action
-
-![image](/images/trendz/trndz_dashboard_time.png)
 
 ## Embed visualization on external site
 You can also embed Trendz visualization into your web site by adding iFrame that points to required visualization.

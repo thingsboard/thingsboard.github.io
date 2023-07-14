@@ -195,7 +195,7 @@ return qualityScore;
 
 In the formula for calculated field we are computing percent of 'good' details produced by assembly line.
 
-{% include images-gallery.html imageCollection="oee-score-production-speed-vs-planned" %}
+{% include images-gallery.html imageCollection="oee-score-quality-score" %}
 
 ## Summary
 By tracking OEE scores and their components for each assembly line, we can pinpoint the specific factors that are impacting efficiency and identify opportunities for improvement. 

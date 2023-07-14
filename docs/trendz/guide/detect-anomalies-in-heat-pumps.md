@@ -180,8 +180,8 @@ To make it happen we need to:
 * Add `heatPump` field into Filters section
 * Open view settings and enable telemetry save in `Tb calculated telemetry save` section.
   * Enabled - true
-  * Save interval - 1
-  * Save unit - hours
+  * Interval - 1
+  * Unit - hours
 * In settings open `View mode fields` section and **heatPump** entity in `Row click entity` dropdown - this step tells Trendz under what entity score index telemetry should be saved.
 * Set default time range to **Last 7 days**
 * Save view with name **Heatpump anomaly score save job**

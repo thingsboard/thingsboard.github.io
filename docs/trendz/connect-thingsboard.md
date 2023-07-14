@@ -24,7 +24,7 @@ If your ThingsBoard installation is hosted on another instance/port - you have t
 Open Trendz configuration file:
 
 ```
-sudo nano /usr/share/trandz/conf/trendz.conf
+sudo nano /usr/share/trendz/conf/trendz.conf
 ```
     
 And update this property to the correct value:
