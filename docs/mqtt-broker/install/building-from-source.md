@@ -98,7 +98,7 @@ cd application/target
 
 #### Running tests
 
-We are using [docker](https://docs.docker.com/engine/install/) and [docker-compose](https://docs.docker.com/compose/install/) to run all kind of integration and black-box tests.
+We are using [Docker](https://docs.docker.com/engine/install/) to run all kind of integration and black-box tests.
 
 Please, manage [Docker as a non-root user](https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user) to run tests properly.
 

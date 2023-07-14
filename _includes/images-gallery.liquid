@@ -27,7 +27,7 @@
 {% if include.showListImageTitles %}
 <ul>
     {% for title in imageTitles %}
-        <li> {{ title }} </li>
+        <li> {{ title | markdownify }} </li>
     {% endfor %}
 </ul>
 {% endif %}
@@ -52,7 +52,7 @@
                     >
                 </a>
                 <figcaption itemprop="caption description"
-                            style="display: none">{{ imageTitles[forloop.index0] }}</figcaption>
+                            style="display: none">{{ imageTitles[forloop.index0] | markdownify }}</figcaption>
             </figure>
         {% endfor %}
     </div>

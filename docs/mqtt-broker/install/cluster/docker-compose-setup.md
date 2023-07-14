@@ -13,8 +13,7 @@ This guide will help you to set up TBMQ in cluster mode using Docker Compose.
 
 ## Prerequisites
 
-- [Install Docker CE](https://docs.docker.com/engine/installation/)
-- [Install Docker Compose](https://docs.docker.com/compose/install/)
+- [Install Docker](https://docs.docker.com/engine/installation/)
 
 {% include templates/install/docker-install-note.md %}
 

@@ -154,6 +154,10 @@ Herewith you can find total cost of ownership (TCO) calculations for TBMQ deploy
 
 **Important notice**: all the calculations and pricing provided below are approximations and are intended solely for illustrative purposes.
 To obtain precise and accurate pricing information, it is highly recommended that you consult with your respective cloud service provider.
+For instance, AWS provides cost-saving opportunities such as [Savings Plans](https://aws.amazon.com/savingsplans/) (up to 72% discount), 
+[RDS Reserved Instances](https://aws.amazon.com/rds/reserved-instances/) (up to 69%), 
+[MSK Tiered Storage](https://aws.amazon.com/about-aws/whats-new/2022/10/amazon-msk-offers-low-cost-storage-tier-scales-virtually-unlimited-storage/) (50% or more),
+along with a multitude of additional options.
 
 AWS EKS cluster in the us-east-1 region. Approx. price is ~73 USD/month.
 
