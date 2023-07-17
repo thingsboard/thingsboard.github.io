@@ -140,11 +140,14 @@ connectors:
 
 #### Connection to ThingsBoard
 
-|**Parameter**             | **Default value**                            |   **Description**                                              |
-|---                       |---                                           |---                                                             |
-| ***thingsboard***        |                                              | Configuration for connection to server.                        |
-| host                     | **thingsboard.cloud**                        | Hostname or ip address of ThingsBoard server.                  |
-| port                     | **1883**                                     | Port of mqtt service on ThingsBoard server.                    |
+|**Parameter**             | **Default value**                            | **Description**                                                                         |
+|---                       |---                                           |-----------------------------------------------------------------------------------------|
+| ***thingsboard***        |                                              | Configuration for connection to server.                                                 |
+| host                     | **thingsboard.cloud**                        | Hostname or ip address of ThingsBoard server.                                           |
+| port                     | **1883**                                     | Port of mqtt service on ThingsBoard server.                                             |
+| qos                      | **1**                                        | QoS levels 0 (at most once) and 1 (at least once).                                      |
+| minPackSendDelayMS       | **200**                                      | Delay between sending packets (Decreasing this setting results in increased CPU usage). |
+| minPackSizeToSend        | **500**                                      | Minimum size of packs to send.                                                          |
 
 ###### Subsection "statistics"
 
@@ -194,6 +197,105 @@ This configuration file can look like the example below:
   }
 ]
 ```
+Also, you can find example files for different OS (Linux, macOS, Windows) in `/config/statistics/` folder.
+
+###### Subsection "deviceFiltering"
+
+This subsection is optional and used to filter allowed devices to send data to ThingsBoard.
+
+The Device Filtering feature allows you to define rules for filtering devices based on specific criteria.
+
+| **Parameter**                    | **Default value** | **Description**                                       |
+|:---------------------------------|:------------------|------------------------------------------------------- 
+| deviceFiltering                  |                   | Configuration for device filtering                    |
+| ... enable                       | **false**         | Boolean value that is used to on/off device filtering |
+| ... filterFile                   | **list.json**     | Name of a configuration file                          |
+| ---                              
+
+Configuration file can look like the example below:
+```json
+{
+  "deny": {
+    "MQTT Broker Connector": [
+      "Temperature Device",
+      "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$)"
+    ],
+    "Modbus Connector": [
+      "My Modbus Device"
+    ]
+  },
+  "allow": {
+    "MQTT Broker Connector": [
+      "My Temperature Sensor"
+    ]
+  }
+}
+```
+The configuration above consists of two main properties: "deny" and "allow". Each property contains a 
+set of connector types as keys, with corresponding arrays of device names as their values.
+
+The "deny" property is used to specify devices that should be denied access to certain connector names. 
+The devices listed under each connector name will be blocked from accessing the specified connector.
+
+The structure of the "deny" property is as follows:
+```json
+"deny": {
+  "<Connector Name>": [
+    "<Device Name 1>",
+    "<Device Name 2>",
+    ...
+  ],
+  ...
+}
+```
+Example:
+```json
+"deny": {
+  "MQTT Broker Connector": [
+    "Temperature Device",
+    "(^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$)"
+  ],
+  "Modbus Connector": [
+    "My Modbus Device"
+  ]
+}
+```
+
+In the above example, the following rules are defined:
+* The device named "Temperature Device" and any device with an email address format are denied access to the "MQTT Broker Connector".
+* The device named "My Modbus Device" is denied access to the "Modbus Connector".
+
+The "allow" property is used to specify devices that should be explicitly allowed to access certain connector names. 
+The devices listed under each connector name will have unrestricted access to the specified connector.
+
+The structure of the "allow" property is as follows:
+```json
+"allow": {
+  "<Connector Name>": [
+    "<Device Name 1>",
+    "<Device Name 2>",
+    ...
+  ],
+  ...
+}
+```
+
+Example:
+```json
+"allow": {
+  "MQTT Broker Connector": [
+    "My Temperature Sensor"
+  ]
+}
+```
+
+In the above example, the following rule is defined:
+* The device named "My Temperature Sensor" is allowed access to the "MQTT Broker Connector".
+
+The Device Filtering feature provides a flexible way to define rules for allowing or denying access 
+to connector types based on device names. By using the "deny" and "allow" properties, you can easily control device 
+access within your gateway.
+
 
 ###### Subsection “checkingDeviceActivity”
 
@@ -222,6 +324,16 @@ There are 3 variants of security subsection:
 
 {% include content-toggle.html content-toggle-id="securityConfig" toggle-spec=securitytogglespec %}
 
+###### Subsection "provisioning"
+
+{% capture provisioningtogglespec %}
+Auto<small>Server generated access token</small>%,%auto%,%templates/iot-gateway/provisioning-auto-config.md%br%
+Access Token<small>Predefined access token</small>%,%accesstoken%,%templates/iot-gateway/provisioning-access-token-config.md%br%
+Basic MQTT<small>Basic MQTT Credentials</small>%,%basicmqtt%,%templates/iot-gateway/provisioning-basic-mqtt-config.md%br%
+X.509 Certificate<small></small>%,%x509%,%templates/iot-gateway/provisioning-x-509-config.md%br%{% endcapture %}
+
+There are 4 options of provisioning configuration (you can read more about provisioning in [the official documentation](/docs/user-guide/device-provisioning/)):
+{% include content-toggle.html content-toggle-id="provisioningConfig" toggle-spec=provisioningtogglespec %}
 
 #### Storage configuration
 

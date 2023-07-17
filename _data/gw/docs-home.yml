@@ -54,6 +54,10 @@ toc:
       path: /docs/iot-gateway/guides/how-to-configure-gateway-using-configurator/
     - title: GET/SET RPC methods
       path: /docs/iot-gateway/guides/how-to-use-get-set-rpc-methods/
+    - title: Remote converter update
+      path: /docs/iot-gateway/guides/how-to-use-remote-converter-update/
+    - title: Gateway Shell
+      path: /docs/iot-gateway/guides/how-to-use-gateway-shell/
 - title: IoT Gateway Roadmap
   path: /docs/iot-gateway/roadmap/
 - title: Customization guide
