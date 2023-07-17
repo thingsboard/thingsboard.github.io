@@ -46,7 +46,7 @@
                             {% else %}
                                 {{ image | split: "" | reverse | join: "" | replace_first: ".", ".weiverp-" | split: "" | reverse | join: "" }}
                             {% endif %}"
-                         itemprop="thumbnail" alt="image"
+                         itemprop="thumbnail" alt='{{imageTitles[forloop.index0] | replace: "'", "\""}}'
                          style="max-width: min({{ include.max-width | default: '225px' }}, 100%);
                                  max-height: min({{ include.max-height | default: '115px' }}, 100%);"
                     >
