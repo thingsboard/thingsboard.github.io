@@ -58,7 +58,7 @@ def main():
             current_user = rest_client.get_user()
 
             # Creating Dashboard Group on the Tenant Level
-            shared_dashboards_group = EntityGroup(name="Shared Dashboards3", type="DASHBOARD")
+            shared_dashboards_group = EntityGroup(name="Shared Dashboards", type="DASHBOARD")
             shared_dashboards_group = rest_client.save_entity_group(shared_dashboards_group)
             logging.info('Dashboard group created:\n%r\n', shared_dashboards_group)
 
