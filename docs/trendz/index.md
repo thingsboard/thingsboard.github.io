@@ -17,9 +17,12 @@ With Trendz you can:
 
 <div class="doc-features row mt-4">
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
-        <a class="feature-card" href="/products/trendz/">
+        <a class="feature-card" href="/docs/trendz/guides/">
             <img class="feature-logo" src="/images/feature-logo/edge-logo.svg"/>
-            <div class="feature-title">What is Trendz Analytics?</div>
+            <div class="feature-title">Guides</div>
+            <div class="feature-text">
+                Learn how to use Trendz for data analysis.
+            </div>
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
