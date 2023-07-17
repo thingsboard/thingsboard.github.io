@@ -102,3 +102,49 @@ Click '**Send test mail**' button.
 
 Once you receive test mail on your email, save Mail Server configuration.
 In case of error in configuration, you should receive a popup with the error log.
+
+##### Sending emails using GMail SMTP with OAuth2 authentication
+
+Starting from Thingsboard 3.5.2 it is possible to use OAuth2 authorization for Gmail SMTP server. Using
+Oauth 2.0 protocol, user can do authentication by Gmail Web OAuth instead of inputting user and password
+directly in application. This way is more secure, but a little bit complex.
+
+For sending emails with oauth2 authentication you will need execute next steps:
+
+ - Create project. To use Gmail OAUTH in your application, you must create a project in [Google Developers Console](https://console.developers.google.com/projectcreate) at first;
+ - Then you need create creadentials. 
+
+Select your project -> APIs & Services -> Dashboard -> Credentials -> Create Credentials -> OAuth client ID -> Web application.
+
+![image](/images/user-guide/ui/mail/create-oauth-client-id.png)
+
+Specify authorized redirect URI. For this go to Thingsboard portal -> Settings → Mail server → copy Redirect URI.
+
+![image](/images/user-guide/ui/mail/create-oauth-client-id.png)
+
+Click "Create", you will get your client id and client secret.
+
+3. Back to Thingsboard portal and fill in:
+ – **Client ID**;
+ – **Client Secret**;
+4. Click **Generate token** and your browser will redirect you to provider login page. Please follow the steps
+   in your browser and after acceptance we will automatically fill in Refresh Token and Access Token. To test
+   everything works fine click “Send test email”. Each time you change provider info system will drop refresh
+   and access token.
+
+##### Sending emails using Office 365 SMTP with OAuth2 authentication
+
+Starting from Thingsboard 3.5.2 it is possible to use OAuth2 authorization for Office 365 SMTP server. For
+sending emails with oauth2 authentication you will need execute next steps:
+1. Register an application in the [Azure portal](https://learn.microsoft.com/en-us/azure/active-directory/develop/quickstart-register-app).
+
+After application is created you can find client id and directory (tenant) id on Overview page. Save it for future steps.
+
+![image](/images/user-guide/ui/mail/microsoft-azure-tb-overview.png)
+
+2. Add a redirect URI.
+   For this select your app → Authentication (Under Manage) → Add a platform (Under Platform
+   configurations) → Select Web.
+   Fill in redirect URI with Thingsboard redirect URI value with Thingsboard value:
+   go to Thindsboard portal ->Settings -> Mail Server. Select Office 365 as SMTP provider. Under
+   Authentication choose OAuth2 and copy redirect URI
