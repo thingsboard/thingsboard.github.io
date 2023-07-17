@@ -43,7 +43,7 @@ With Trendz you can:
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card"  target="_blank" href="https://www.youtube.com/playlist?list=PLYEKB_XwLCZIs-_Aoos3CdNIqSYrXk4LN" >
             <img class="feature-logo" src="/images/feature-logo/tutorials.svg"/>
-            <div class="feature-title">Vedio tutorials</div>
+            <div class="feature-title">Video tutorials</div>
             <div class="feature-text">
                 Watch Video tutorials how-to use Trendz Analytics built-in instruments.
             </div>
