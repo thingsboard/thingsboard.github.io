@@ -9,6 +9,9 @@ description: Anomaly view
 * TOC
 {:toc}
 
+## Anomaly view widget
+
+To visualize anomalies discovered during model creation and anomalies that we re discovered during anomaly refresh job, you can use `Anomaly view` widget from Trendz.  
 View Anomaly widget shows anomalies that anomaly model detected. It consists of two parts:
 
 * List with all detected anomalies that allows you to select a specific anomaly to see its information in the chart.
@@ -35,3 +38,8 @@ anomalies, you can configure it in Chart Settings - View Mode fields. In this se
 you can choose to enable or disable the **Hide anomalies list/chart** option to show the desired part of the Anomaly View.
 
 ![image](/images/trendz/anomaly/anomaly-view-hide-options.png)
+
+## Anomaly field
+
+Also, you can use `Anomaly` field on any visualization that are available in Trendz. IT may help to visualize bigger picture of anomalies - apply required filtering, data grouping, etc.
+For example, you can create a pie chart that will show amount of anomalies discovered grouped by device, so user can understand most problematic devices.
