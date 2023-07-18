@@ -192,6 +192,18 @@
     }
   },
   {
+    "type": ["Europe"],
+    "country": ["Switzerland"],
+    "name": "Clavis IT",
+    "contact": {
+      "href": "info@clavisit.com"
+    },
+    "site": {
+      "href": "clavisit.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Middle East", "Asia"],
     "country": ["Saudi Arabia"],
     "name": "Clever Platform",
