@@ -18,7 +18,7 @@ Tenant administrator is able to [**set up email rule node**](/docs/user-guide/ru
 
 Following steps are required to configure Mail Server settings.
 
-First, you must log in to your ThingsBoard instance WEB UI as a *system administrator*. Then, right click on the burger in the top-right corner of the WEB UI and select "Profile".
+First, you must log in to your ThingsBoard instance WEB UI as a *system administrator*. Then, left click on the three dots in the top-right corner of the WEB UI and select "Profile".
 Change 'sysadmin@thingsboard.org' to your email address. Now re-login as administrator again.
 
 {% if docsPrefix == null %}
@@ -48,7 +48,7 @@ You can try it for free and the free plan is most likely enough for platform eva
 
 **ㅤ2. Setup ThingsBoard mail server settings**
 
-Now navigate to the "Settings" page -> "Mail Server" tab your ThingsBoard instance and populate the form:
+Now navigate to the "Settings" page -> "Mail Server" tab your ThingsBoard instance and fill in the form:
 
 - Fill in the "Mail From" field;
 - Select SMTP provider - **SendGrid**;
@@ -85,7 +85,7 @@ In order to use Gmail, you will need to enable two-step verification (this step 
 **ㅤ2. Setup ThingsBoard mail server settings**
 
 Once this is ready, you should be able to set up mail server using the information below.
-Navigate to the "Settings" page -> "Mail Server" tab your ThingsBoard instance and populate the form:
+Navigate to the "Settings" page -> "Mail Server" tab your ThingsBoard instance and fill in the form:
 
 - Fill in the "Mail From" field;
 - Select SMTP provider - **Google**;
@@ -185,7 +185,7 @@ To use Office 365 OAuth2 you need to register an application in the Azure portal
  - Select SMTP provider - "**Office 365**";
  - In the "Authentication" block, fill in username with email address you are going to use for sending mail from;
  - Toggle the authentication type to **OAuth2**;
- - Copy and save the "**Redirect URI template**". It will be needed while set up Google project credentials.
+ - Copy and save the "**Redirect URI template**". It will be needed while set up the Azure portal credentials.
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/mail/microsoft-azure-oauth-settings-1-ce.png)
@@ -247,3 +247,7 @@ If you see authentication errors while sendind email (e.x. 5.7.3):
 
 1. Make sure SMTP settings are enabled for user. For this go to [here](https://portal.office.com/adminportal/home#/users). Then select user →  Mail → Manage email apps → Authenticate SMTP (if enabled - disable and enable again);
 2. In Azure portal make sure Security defaults are disabled.
+
+## Next steps
+
+{% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

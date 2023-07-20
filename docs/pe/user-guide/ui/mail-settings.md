@@ -14,7 +14,7 @@ sendgrid-configuration:
         title: 'Go to the "Email API" section -> "Integration Guide" page and choose a setup method - "SMTP Relay";'
     2:
         image: /images/user-guide/ui/mail/sendgrid-token.png
-        title: 'Create an API key: populate the API key name and generate it.'
+        title: 'Create an API key: enter the API key name and generate it.'
 
 gmail-generate-an-app-password:
     0:
