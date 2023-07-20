@@ -37,7 +37,7 @@ In the "General" tab you can set or change the following options:
 ![image](/images/user-guide/white-labeling/application-title-paas.png)
 {% endif %}
 
- - Website icon - you can change the default website icon to your own;
+ - Favicon (website icon) - you can change the default website icon to your own;
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/white-labeling/website-icon.png)
