@@ -324,7 +324,30 @@ mqttWindows:
     1:
         image: /images/helloworld/hello-world-pe-step-3-item-2.png
         title: 'Populate the topic name and payload. Make sure the payload is a valid JSON document. Click "Publish" button.'
-                              
+
+mosquitto-windows:
+    0:
+        image: /images/helloworld/getting-started-pe/mosquitto-windows-1.png
+        title: 'Press the Win + X, then select "System". Then click on the "System" page;'
+    1:
+        image: /images/helloworld/getting-started-pe/mosquitto-windows-2.png
+        title: 'Navigate to the "About" section, then click "Advanced system settings";'
+    2:
+        image: /images/helloworld/getting-started-pe/mosquitto-windows-3.png
+        title: 'In the "System Properties" pop-up window, click "Environment Variables" button on the "Advanced" tab;'
+    3:
+        image: /images/helloworld/getting-started-pe/mosquitto-windows-4.png
+        title: 'In the "Environment Variables" pop-up window select the "Path", then click on the "Edit" button;'
+    4:
+        image: /images/helloworld/getting-started-pe/mosquitto-windows-5.png
+        title: 'In the "Edit environment variable" pop-up window click on the "New" button and add the path to the directory containing &#39;mosquitto_pub.exe&#39; and &#39;mosquitto_sub.exe&#39; (&#39;C:\Program Files\mosquitto&#39; by default). Click "OK";'
+    5:
+        image: /images/helloworld/getting-started-pe/mosquitto-windows-6.png
+        title: 'Click "OK" button to save changes in the environment variables;'
+    6:
+        image: /images/helloworld/getting-started-pe/mosquitto-windows-7.png
+        title: 'Finally, click "OK" button to apply all changes in the system properties.'
+           
 ---
 
 {% assign docsPrefix = "paas/" %}
