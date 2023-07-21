@@ -243,7 +243,7 @@ To check if everything works click "Send test email" button. Keep in mind that e
 <br/>
 **Office 365 troubleshooting**
 
-If you see authentication errors while sendind email (e.x. 5.7.3):
+If you see authentication errors while sending email (e.x. 5.7.3):
 
 1. Make sure SMTP settings are enabled for user. For this go to [here](https://portal.office.com/adminportal/home#/users). Then select user →  Mail → Manage email apps → Authenticate SMTP (if enabled - disable and enable again);
 2. In Azure portal make sure Security defaults are disabled.
