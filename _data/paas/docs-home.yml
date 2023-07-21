@@ -95,7 +95,7 @@ toc:
           path: /docs/paas/user-guide/rule-engine-2-0/analytics-nodes/
         - title: Flow Nodes
           path: /docs/paas/user-guide/rule-engine-2-0/flow-nodes/
-- title: White-labeling
+- title: White Labeling
   section:
     - title: Overview
       path: /docs/paas/user-guide/white-labeling/
