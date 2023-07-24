@@ -28,7 +28,6 @@ We support the Ukrainian army and volunteer organizations as much as we can. We 
 
 <a style="margin: 10px 10px 10px 0;" href="https://war.ukraine.ua/support-ukraine/" class="button">Support Ukraine</a>
 
-
 ## Message to our users and clients from Russia
 
 We expect you to protest against the war!
@@ -39,9 +38,5 @@ However, we will stop sales of our licenses to russian companies asap.
 Don't believe your government.
 See photos of the mass destruction of civilians and your young soldiers who were sent to the war against their will.
 You have the power to stop this madness.
-Бездействие — то же самое, что поддержка.
-
 
 {: style="text-align: center;"}
-
-

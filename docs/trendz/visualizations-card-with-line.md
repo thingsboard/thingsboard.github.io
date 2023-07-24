@@ -2,8 +2,8 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Card
-description: Trendz Card
+title: Card with line chart
+description: Card with line chart to show data trend
 ---
 
 * TOC

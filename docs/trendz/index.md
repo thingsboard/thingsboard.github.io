@@ -6,22 +6,11 @@ title: Trendz Analytics
 description: ThingsBoard Trends - Business Intelligence and Analytics Platform for Iot powered Business
 ---
 
-The ThingsBoard **Trendz** is an Analytics Platform that converts the IoT dataset into insights and simplifies the decision-making process. 
-With Trendz you can:
- - Analyse behavior patterns, outliers and trends
- - Predict system behavior and react beforehand
- - Define KPI using calculated fields, review dynamic and understand what affects it
- - Monitor how much time equipment spend in different states
- - Filter, group and aggregate data in different dimensions
- - Share the analysis with other users by embedding visualizations into a dashboard   
+Welcome to the Trendz Analytics documentation homepage!  
+Here, you'll find comprehensive resources to assist you in establishing your data analytics pipeline using Trendz. Discover a wide array of instruments and features available on our platform, 
+and explore step-by-step how-to guides for constructing end-to-end IoT solutions.
 
 <div class="doc-features row mt-4">
-    <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
-        <a class="feature-card" href="/products/trendz/">
-            <img class="feature-logo" src="/images/feature-logo/edge-logo.svg"/>
-            <div class="feature-title">What is Trendz Analytics?</div>
-        </a>
-    </div>
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card" href="/docs/trendz/getting-started/">
             <img class="feature-logo" src="/images/feature-logo/getting-started.svg"/>
@@ -41,9 +30,18 @@ With Trendz you can:
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
+        <a class="feature-card" href="/docs/trendz/guides/">
+            <img class="feature-logo" src="/images/feature-logo/guides.svg"/>
+            <div class="feature-title">Guides</div>
+            <div class="feature-text">
+                Learn how to use Trendz for data analysis.
+            </div>
+        </a>
+    </div>
+    <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
         <a class="feature-card"  target="_blank" href="https://www.youtube.com/playlist?list=PLYEKB_XwLCZIs-_Aoos3CdNIqSYrXk4LN" >
             <img class="feature-logo" src="/images/feature-logo/tutorials.svg"/>
-            <div class="feature-title">Vedio tutorials</div>
+            <div class="feature-title">Video tutorials</div>
             <div class="feature-text">
                 Watch Video tutorials how-to use Trendz Analytics built-in instruments.
             </div>
