@@ -157,6 +157,9 @@ toc:
     - title: Tuya
       path: /docs/paas/user-guide/integrations/tuya/
       new: true
+    - title: Particle
+      path: /docs/paas/user-guide/integrations/particle/
+      new: true
     - title: Custom Integration development guide
       path: /docs/paas/user-guide/integrations/custom/
     - title: Notifications and Alarms on your smartphone using Telegram Bot
