@@ -139,8 +139,14 @@ To do this please follow next steps:
 
 {% assign createParticleCloudIntegration = '
    ===
-      image: /images/user-guide/integrations/particle/
-      title:
+      image: /images/user-guide/integrations/particle/particle-console-integrations-2.png,
+      title: Go to **Integrations** section and click "**Add new integration**" button;
+   ===
+      image: /images/user-guide/integrations/particle/particle-console-integrations-3.png,
+      title: Click on the **Webhook**.
+   ===
+      image: /images/user-guide/integrations/particle/particle-console-integrations-4.png,
+      title: Fill in all required fields. Then click **Create webhook**.
 '
 %}
 
@@ -172,6 +178,9 @@ In order to process command on device we will use an example app **Web-Connected
 
 Click on **Use this example** and thunder icon to flash it to the device.  
 
+#### Configure dashboard
+
+Let's return to ThingsBoard and configure the dashboard to control device.  
 To demonstrate on how to send a command to the device we will use a **Switch Control Widget**, to use it you can follow next steps:  
 - Click on **Edit mode** button to enable edit mode.  
 - Open existing or create a new dashboard.  
