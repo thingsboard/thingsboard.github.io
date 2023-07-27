@@ -90,6 +90,7 @@ Then, according to [official documentation](https://docs.particle.io/reference/d
 particle login
 ```
 {:.copy-code}
+
 ![Login](/images/user-guide/integrations/particle/cli-login.png)
 
 After logging in you will need to [create an access token](https://docs.particle.io/reference/developer-tools/cli/#particle-token-create).  
@@ -130,6 +131,21 @@ Save created token, we will need it in the next step.
 Now, we should create an integration in ThingsBoard, to do this you can follow next steps:  
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=createIntegrationUsingWizard %}
+
+### Integration on particle.io
+
+In order to receive incoming data from Particle cloud, we need to configure an integration on Particle CLI.  
+To do this please follow next steps:  
+
+{% assign createParticleCloudIntegration = '
+   ===
+      image: /images/user-guide/integrations/particle/
+      title:
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=createParticleCloudIntegration %}
+
 
 ### Rule Chain configuration
 
