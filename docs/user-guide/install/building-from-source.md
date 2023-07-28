@@ -51,7 +51,7 @@ You can clone source code of the project from the official [github repo](https:/
 
 ```bash
 # checkout latest release branch
-git clone -b {{ site.release.branch }} git@github.com:thingsboard/thingsboard.git
+git clone -b {{ site.release.branch }} git@github.com:thingsboard/thingsboard.git --depth 1
 cd thingsboard
 ```
 
