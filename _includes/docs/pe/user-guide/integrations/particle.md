@@ -28,7 +28,7 @@ To do this we need to the following steps, from [official guide](https://docs.pa
    As soon as it is plugged in, the RGB LED on your device should begin blinking blue.  
    If your device is not blinking blue, **hold** down the **SETUP** button.
 2. **Connect your Photon to the Internet using the setup web application**: 
-   -  Go to **[setup.particle.io](setup.particle.io)**
+   -  Go to **[setup.particle.io](https://setup.particle.io/)**
    -  Click on **Setup** a **Photon**
    -  After clicking on NEXT, you should be presented with a file (**photonsetup.html**)
    -  Open the file
@@ -90,6 +90,7 @@ Then, according to [official documentation](https://docs.particle.io/reference/d
 particle login
 ```
 {:.copy-code}
+
 ![Login](/images/user-guide/integrations/particle/cli-login.png)
 
 After logging in you will need to [create an access token](https://docs.particle.io/reference/developer-tools/cli/#particle-token-create).  
@@ -126,22 +127,32 @@ Save created token, we will need it in the next step.
 '
 %}
 
-
 Now, we should create an integration in ThingsBoard, to do this you can follow next steps:  
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=createIntegrationUsingWizard %}
 
-### Rule Chain configuration
+### Integration on particle.io
 
-When integration configured and ready to use, we need to go to **Rule Chains**, choose **"Root Rule Chain"** and here create rule node **Integration Downlink**. Input some name here, choose earlier created Particle integration, and tap **Add**.  
+In order to receive incoming data from Particle cloud, we need to configure an integration on Particle CLI.  
+To do this please follow next steps:  
 
-![image](/images/user-guide/integrations/particle/tb-create-downlink-rule-node.png)
+{% assign createParticleCloudIntegration = '
+   ===
+      image: /images/user-guide/integrations/particle/particle-console-integrations-2.png,
+      title: Go to **Integrations** section and click "**Add new integration**" button;
+   ===
+      image: /images/user-guide/integrations/particle/particle-console-integrations-3.png,
+      title: Click on the **Webhook**.
+   ===
+      image: /images/user-guide/integrations/particle/particle-console-integrations-4.png,
+      title: Fill in all required fields. Then click **Create webhook**.
+   ===
+      image: /images/user-guide/integrations/particle/particle-console-integrations-5.png,
+      title: Your integration was created successfully.
+'
+%}
 
-After these steps, we need to tap on a right grey square of rule node **message type switch** and drag this square to left side of **Integration Downlink**. In pop-up window add **"RPC Request to Device"** relation, and tap "Add".  
-
-![image](/images/user-guide/integrations/particle/tb-root-rule-chain.png)
-
-Click on check mark in bottom right corner of the screen to save the Root Rule Chain.  
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=createParticleCloudIntegration %}
 
 ### Uplink message
 
@@ -149,13 +160,29 @@ Once integration is created and any message arrived to it - you will be able to 
 
 ![image](/images/user-guide/integrations/particle/tb-new-device-created.png)
 
+### Rule Chain configuration
+
+When integration configured and ready to use, we need to go to **Rule Chains**, choose **"Root Rule Chain"** and here create rule node **Integration Downlink**. Input some name here, choose earlier created Particle integration, and tap **Add**.
+
+![image](/images/user-guide/integrations/particle/tb-create-downlink-rule-node.png)
+
+After these steps, we need to tap on a right grey square of rule node **message type switch** and drag this square to left side of **Integration Downlink**. In pop-up window add **"RPC Request to Device"** relation, and tap "Add".
+
+![image](/images/user-guide/integrations/particle/tb-root-rule-chain.png)
+
+Click on check mark in bottom right corner of the screen to save the Root Rule Chain.
+
 ### Downlink message to device from dashboard
 
 In order to process command on device we will use an example app **Web-Connected LED** from [Particle WebIDE](https://build.particle.io/build).  
+
 ![Particle WebIDE](/images/user-guide/integrations/particle/particle-webide-example.png)  
 
 Click on **Use this example** and thunder icon to flash it to the device.  
 
+#### Configure dashboard
+
+Let's return to ThingsBoard and configure the dashboard to control device.  
 To demonstrate on how to send a command to the device we will use a **Switch Control Widget**, to use it you can follow next steps:  
 - Click on **Edit mode** button to enable edit mode.  
 - Open existing or create a new dashboard.  
@@ -170,10 +197,30 @@ To demonstrate on how to send a command to the device we will use a **Switch Con
   ```
   {:.copy-code}
 - Click on **Add** button to save a widget.  
-- Click on save button to save a dashboard.  
+- Click on save button to save a dashboard.
 
-Now, you can toggle the button and LED on your Photon should change the state.  
-If no - check that your device is connected to Particle and connection is stable.  
+Now, you can toggle the button and LED on your Photon should change it&#39;s led state.  
+If no - check that your device is connected to Particle and connection is stable.
+
+{% assign createParticleDashboard = '
+   ===
+      image: /images/user-guide/integrations/particle/particle-add-widget-1.png,
+      title: Go to the "**Dashboards**" page, create a new dashboard and select "**Switch Control**" widget from the "**Control Widgets**" bundle.
+   ===
+      image: /images/user-guide/integrations/particle/particle-add-widget-2.png,
+      title: Add new alias with previously created device. Then navigate to the "**Appearance**" tab.
+   ===
+      image: /images/user-guide/integrations/particle/particle-add-widget-3.png,
+      title: Change retrieve value to "**Don&#39;t retrieve**" and change "***RPC set value method***" to "**led**". Then paste the convert value function copied from the documentation. Click "**Add**", then save dashboard.
+   ===
+      image: /images/user-guide/integrations/particle/particle-add-widget-5.png,
+      title: Now toggle the button and LED on your Photon should change it&#39;s led state.
+'
+%}
+
+{% include images-gallery.liquid imageCollection=createParticleDashboard %}
+
+Read more about dashboards [here](/docs/{{docsPrefix}}user-guide/dashboards/).
 
 ## Next steps
 
