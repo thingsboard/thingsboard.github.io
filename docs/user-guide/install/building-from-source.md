@@ -54,6 +54,7 @@ You can clone source code of the project from the official [github repo](https:/
 git clone -b {{ site.release.branch }} git@github.com:thingsboard/thingsboard.git --depth 1
 cd thingsboard
 ```
+{: .copy-code}
 
 #### Build
 
@@ -62,6 +63,7 @@ Run the following command from the thingsboard folder to build the project:
 ```bash
 mvn clean install -DskipTests
 ```
+{: .copy-code}
 
 #### Build local docker images
 
@@ -72,6 +74,7 @@ Make sure that [Docker](https://docs.docker.com/engine/install/) is installed.
 ```bash
 mvn clean install -DskipTests -Ddockerfile.skip=false
 ```
+{: .copy-code}
 
 #### Build artifacts
 
@@ -80,6 +83,7 @@ You can find debian, rpm and windows packages in the target folder:
 ```bash
 application/target
 ```
+{: .copy-code}
 
 #### Running tests
 
@@ -94,6 +98,7 @@ Run all unit and integration tests:
 ```bash
 mvn clean install
 ```
+{: .copy-code}
 
 To run black-box tests, please refer [black-box tests readme](https://github.com/thingsboard/thingsboard/blob/master/msa/black-box-tests/README.md).
 
@@ -109,18 +114,25 @@ Here are some tips and tricks to boost build experience:
 ```bash
 rm -rf ~/.m2/repository
 ```
+{: .copy-code}
+
 - clean gradle cache
 ```bash
 rm -rf ~/.gradle/caches/
 ```
+{: .copy-code}
+
 - clean node modules
 ```bash
 rm -rf ui-ngx/node_modules
 ```
+{: .copy-code}
+
 - build in parallel, format headers, build docker images
 ```bash
 mvn -T 0.8C license:format clean install -DskipTests -Ddockerfile.skip=false
 ```
+{: .copy-code}
 
 #### Build and runtime errors
 
@@ -130,3 +142,4 @@ To fix this read [Source code](#source-code) section.
 ```bash
 Standard_init_linux.go:175 exec user process caused no such file
 ```
+{: .copy-code}
