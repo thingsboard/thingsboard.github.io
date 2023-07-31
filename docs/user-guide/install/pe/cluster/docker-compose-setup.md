@@ -37,7 +37,7 @@ Please note that for the deployment of Rule Engine as a separate service, an add
 ## Step 2. Clone ThingsBoard PE Docker Compose scripts
 
 ```bash
-git clone -b release-{{ site.release.ce_ver }} https://github.com/thingsboard/thingsboard-pe-docker-compose.git tb-pe-docker-compose
+git clone -b release-{{ site.release.ce_ver }} https://github.com/thingsboard/thingsboard-pe-docker-compose.git tb-pe-docker-compose --depth 1
 cd tb-pe-docker-compose
 ```
 {: .copy-code}

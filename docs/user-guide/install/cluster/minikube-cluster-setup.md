@@ -26,6 +26,7 @@ To enable ingress, please execute the following command:
 ```
 minikube addons enable ingress
 ```
+{: .copy-code}
 
 ## Step 1. Review the architecture page
 
@@ -35,9 +36,10 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 ## Step 2. Clone ThingsBoard CE Kubernetes scripts repository
 
 ```bash
-git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git
+git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git --depth 1
 cd thingsboard-ce-k8s/minikube
 ```
+{: .copy-code}
 
 ## Step 3. Configure ThingsBoard database
 
@@ -66,6 +68,7 @@ Execute the following command to run installation:
 ```
 ./k8s-install-tb.sh --loadDemo
 ```
+{: .copy-code}
 
 Where:
 
@@ -76,6 +79,7 @@ Execute the following command to deploy third-party resources:
 ```
 ./k8s-deploy-thirdparty.sh
 ```
+{: .copy-code}
 
 Type **'yes'** when prompted, if you are running ThingsBoard in `high-availability` `DEPLOYMENT_TYPE` for the first time or don't have configured Redis cluster.
 
@@ -85,6 +89,7 @@ Execute the following command to deploy ThingsBoard resources:
 ```
 ./k8s-deploy-resources.sh
 ```
+{: .copy-code}
 
 After a while when all resources will be successfully started you can open `http://{your-cluster-ip}` in your browser (for ex. `http://192.168.99.101`).
 You can see your cluster IP using command:
@@ -92,6 +97,7 @@ You can see your cluster IP using command:
 ```
 minikube ip
 ```
+{: .copy-code}
 
 You should see ThingsBoard login page.
 
@@ -112,12 +118,14 @@ For example to see ThingsBoard node logs execute the following command:
 ```
 kubectl get pods -l app=tb-node
 ```
+{: .copy-code}
 
 2) Fetch logs of the tb-node pod:
 
 ```
 kubectl logs -f [tb-node-pod-name]
 ```
+{: .copy-code}
 
 Where:
 
@@ -133,18 +141,21 @@ Execute the following command to delete all ThingsBoard microservices:
 ```
 ./k8s-delete-resources.sh
 ```
+{: .copy-code}
 
 Execute the following command to delete all third-party microservices:
 
 ```
 ./k8s-delete-thirdparty.sh
 ```
+{: .copy-code}
 
 Execute the following command to delete all resources (including database):
 
 ```
 ./k8s-delete-all.sh
 ```
+{: .copy-code}
 
 ## Upgrading
 
