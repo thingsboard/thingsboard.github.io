@@ -103,6 +103,8 @@ toc:
       path: /docs/paas/user-guide/white-labeling/
     - title: Self-registration
       path: /docs/paas/user-guide/self-registration/
+    - title: Mail Templates
+      path: /docs/paas/user-guide/mail-templates/
     - title: Custom Translations
       path: /docs/paas/user-guide/custom-translation/
     - title: Custom Menu

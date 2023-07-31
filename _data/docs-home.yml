@@ -90,6 +90,8 @@ toc:
       path: /docs/pe/user-guide/white-labeling/
     - title: Self-registration
       path: /docs/pe/user-guide/self-registration/
+    - title: Mail Templates
+      path: /docs/pe/user-guide/mail-templates/
     - title: Custom Translations
       path: /docs/pe/user-guide/custom-translation/
     - title: Custom Menu
