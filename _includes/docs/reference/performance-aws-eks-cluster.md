@@ -379,7 +379,7 @@ kubectl apply -f psql-override-conf.yml
 {: .copy-code}
 
 ```bash
-helm update postgresql bitnami/postgresql-ha --version 9.2.1 \
+helm upgrade postgresql bitnami/postgresql-ha --version 9.2.1 \
  ...
   --set postgresql.extendedConfCM=psql-override-conf \
  ...
