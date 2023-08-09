@@ -3,7 +3,7 @@ Install the CoAP client with DTLS support on Linux by following the next steps:
 - step 1: clone libcoap git repo: 
 
 ```bash
-git clone https://github.com/obgm/libcoap --recursive
+git clone https://github.com/obgm/libcoap --recursive --depth 1
 ```
 {: .copy-code}
 

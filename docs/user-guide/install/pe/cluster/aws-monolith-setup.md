@@ -50,7 +50,7 @@ This guide will help you to set up ThingsBoard in monolith mode in AWS EKS.
 ## Step 1. Clone ThingsBoard PE K8S scripts repository
 
 ```bash
-git clone -b release- {{site.release.ver}} https://github.com/thingsboard/thingsboard-pe-k8s.git
+git clone -b release- {{site.release.ver}} https://github.com/thingsboard/thingsboard-pe-k8s.git --depth 1
 cd thingsboard-pe-k8s/aws/monolith
 ```
 {: .copy-code}

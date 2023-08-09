@@ -25,6 +25,7 @@ To access OpenShift cluster you'll have to login first. By default, you may logi
 ```
 oc login -u developer -p developer
 ``` 
+{: .copy-code}
 
 ### Create project
 
@@ -34,6 +35,7 @@ To create it, please execute next command:
 ```
 oc new-project thingsboard
 ``` 
+{: .copy-code}
 
 
 ## Step 1. Review the architecture page
@@ -44,9 +46,10 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 ## Step 2. Clone ThingsBoard CE Kubernetes scripts repository
 
 ```bash
-git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git
+git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git --depth 1
 cd thingsboard-ce-k8s/openshift
 ```
+{: .copy-code}
 
 ## Step 3. Configure ThingsBoard database
 
@@ -75,6 +78,7 @@ Execute the following command to run installation:
 ```
 ./k8s-install-tb.sh --loadDemo
 ```
+{: .copy-code}
 
 Where:
 
@@ -85,6 +89,7 @@ Execute the following command to deploy third-party resources:
 ```
 ./k8s-deploy-thirdparty.sh
 ```
+{: .copy-code}
 
 Type **'yes'** when prompted, if you are running ThingsBoard in `high-availability` `DEPLOYMENT_TYPE` for the first time or don't have configured Redis cluster.
 
@@ -94,6 +99,7 @@ Execute the following command to deploy ThingsBoard resources:
 ```
 ./k8s-deploy-resources.sh
 ```
+{: .copy-code}
 
 To see how to reach your ThingsBoard application on cluster, login as ***developer*** user (default password is ***developer*** too), open `thingsboard` project, then go to `Application -> Routes` menu and you'll see all your configured routes.
 The *root* route should look like `https://tb-route-node-root-thingsboard.127.0.0.1.nip.io/`.
@@ -117,12 +123,14 @@ For example to see ThingsBoard node logs execute the following command:
 ```
 oc get pods -l app=tb-node
 ```
+{: .copy-code}
 
 2) Fetch logs of the tb-node pod:
 
 ```
 oc logs -f [tb-node-pod-name]
 ```
+{: .copy-code}
 
 Where:
 
@@ -138,18 +146,21 @@ Execute the following command to delete all ThingsBoard microservices:
 ```
 ./k8s-delete-resources.sh
 ```
+{: .copy-code}
 
 Execute the following command to delete all third-party microservices:
 
 ```
 ./k8s-delete-thirdparty.sh
 ```
+{: .copy-code}
 
 Execute the following command to delete all resources (including database):
 
 ```
 ./k8s-delete-all.sh
 ```
+{: .copy-code}
 
 ## Upgrading
 
@@ -160,6 +171,7 @@ In case when database upgrade is needed, execute the following commands:
 ./k8s-upgrade-tb.sh --fromVersion=[FROM_VERSION]
 ./k8s-deploy-resources.sh
 ```
+{: .copy-code}
 
 Where:
 
