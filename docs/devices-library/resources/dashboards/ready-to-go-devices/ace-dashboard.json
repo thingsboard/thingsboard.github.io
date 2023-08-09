@@ -1,0 +1,1338 @@
+{
+  "title": "Ace Automation",
+  "image": null,
+  "mobileHide": false,
+  "mobileOrder": null,
+  "configuration": {
+    "description": "",
+    "widgets": {
+      "067ca996-ed07-d2b9-43eb-7e84ca8bcc7c": {
+        "isSystemType": true,
+        "bundleAlias": "input_widgets",
+        "typeAlias": "update_multiple_attributes",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "41139b3a-7863-e69d-05b4-907137a80e67",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "DO1",
+                  "type": "attribute",
+                  "label": "Digital Output 1",
+                  "color": "#2196f3",
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "booleanSwitch",
+                    "required": false,
+                    "isEditable": "editable",
+                    "slideToggleLabelPosition": "after",
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.7689570174937688,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "DO2",
+                  "type": "attribute",
+                  "label": "Digital Output 2",
+                  "color": "#4caf50",
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "booleanSwitch",
+                    "required": false,
+                    "isEditable": "editable",
+                    "slideToggleLabelPosition": "after",
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.13006805439611968,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "DO3",
+                  "type": "attribute",
+                  "label": "Digital Output 3",
+                  "color": "#f44336",
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "booleanSwitch",
+                    "required": false,
+                    "isEditable": "editable",
+                    "slideToggleLabelPosition": "after",
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.9389228922287653,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "DO4",
+                  "type": "attribute",
+                  "label": "Digital Output 4",
+                  "color": "#ffc107",
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "booleanSwitch",
+                    "required": false,
+                    "isEditable": "editable",
+                    "slideToggleLabelPosition": "after",
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.00431654604455578,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "DO5",
+                  "type": "attribute",
+                  "label": "Digital Output 5",
+                  "color": "#607d8b",
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "booleanSwitch",
+                    "required": false,
+                    "isEditable": "editable",
+                    "slideToggleLabelPosition": "after",
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.3003259588257543,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "DO6",
+                  "type": "attribute",
+                  "label": "Digital Output 6",
+                  "color": "#9c27b0",
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "booleanSwitch",
+                    "required": false,
+                    "isEditable": "editable",
+                    "slideToggleLabelPosition": "after",
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.12442008505071955,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "DO7",
+                  "type": "attribute",
+                  "label": "Digital Output 7",
+                  "color": "#8bc34a",
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "booleanSwitch",
+                    "required": false,
+                    "isEditable": "editable",
+                    "slideToggleLabelPosition": "after",
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.35334301428393866,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "DO8",
+                  "type": "attribute",
+                  "label": "Digital Output 8",
+                  "color": "#3f51b5",
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "booleanSwitch",
+                    "required": false,
+                    "isEditable": "editable",
+                    "slideToggleLabelPosition": "after",
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.7614437971507717,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "DO9",
+                  "type": "attribute",
+                  "label": "Digital Output 9",
+                  "color": "#e91e63",
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "booleanSwitch",
+                    "required": false,
+                    "isEditable": "editable",
+                    "slideToggleLabelPosition": "after",
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.04482228489449547,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY"
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1689066358079,
+                "endTimeMs": 1689152758079
+              },
+              "quickInterval": "CURRENT_DAY"
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showResultMessage": true,
+            "showActionButtons": false,
+            "showGroupTitle": false,
+            "fieldsAlignment": "row",
+            "fieldsInRow": 5,
+            "groupTitle": "${entityName}"
+          },
+          "title": "Coils",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "enableDataExport": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "067ca996-ed07-d2b9-43eb-7e84ca8bcc7c"
+      },
+      "99722fa4-5fc8-3dc8-b98b-09f055f7a78a": {
+        "isSystemType": true,
+        "bundleAlias": "input_widgets",
+        "typeAlias": "update_multiple_attributes",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 7.5,
+        "sizeY": 3,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "41139b3a-7863-e69d-05b4-907137a80e67",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "AO1",
+                  "type": "attribute",
+                  "label": "Analog Output 1",
+                  "color": "#2196f3",
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "double",
+                    "required": false,
+                    "isEditable": "editable",
+                    "step": 0.1,
+                    "minValue": 0,
+                    "maxValue": 10,
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.8168905675819766,
+                  "aggregationType": null,
+                  "units": "V",
+                  "decimals": 2,
+                  "funcBody": null,
+                  "usePostProcessing": false,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "AO2",
+                  "type": "attribute",
+                  "label": "Analog Output 2",
+                  "color": "#4caf50",
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "double",
+                    "required": false,
+                    "isEditable": "editable",
+                    "step": 0.1,
+                    "minValue": 0,
+                    "maxValue": 10,
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.7915199958314116,
+                  "aggregationType": null,
+                  "units": "V",
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "AO3",
+                  "type": "attribute",
+                  "label": "Analog Output 3",
+                  "color": "#f44336",
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "double",
+                    "required": false,
+                    "isEditable": "editable",
+                    "step": 0.1,
+                    "minValue": 0,
+                    "maxValue": 10,
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.13760199794955885,
+                  "aggregationType": null,
+                  "units": "V",
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "AO4",
+                  "type": "attribute",
+                  "label": "Analog Output 4",
+                  "color": "#ffc107",
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "double",
+                    "required": false,
+                    "isEditable": "editable",
+                    "step": 0.1,
+                    "minValue": 0,
+                    "maxValue": 10,
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.39590865967851374,
+                  "aggregationType": null,
+                  "units": "V",
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "AO5",
+                  "type": "attribute",
+                  "label": "Analog Output 5",
+                  "color": "#607d8b",
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "double",
+                    "required": false,
+                    "isEditable": "editable",
+                    "step": 0.1,
+                    "minValue": 0,
+                    "maxValue": 10,
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.9235285120373153,
+                  "aggregationType": null,
+                  "units": "V",
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "AO6",
+                  "type": "attribute",
+                  "label": "Analog Output 6",
+                  "color": "#9c27b0",
+                  "settings": {
+                    "dataKeyHidden": false,
+                    "dataKeyType": "shared",
+                    "dataKeyValueType": "double",
+                    "required": false,
+                    "isEditable": "editable",
+                    "step": 0.1,
+                    "minValue": 0,
+                    "maxValue": 10,
+                    "useCustomIcon": false,
+                    "useGetValueFunction": false,
+                    "useSetValueFunction": false
+                  },
+                  "_hash": 0.23177214823084236,
+                  "aggregationType": null,
+                  "units": "V",
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY"
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1689069195310,
+                "endTimeMs": 1689155595310
+              },
+              "quickInterval": "CURRENT_DAY"
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "showResultMessage": true,
+            "showActionButtons": false,
+            "showGroupTitle": false,
+            "fieldsAlignment": "row",
+            "fieldsInRow": 3,
+            "groupTitle": "${entityName}"
+          },
+          "title": "Analog Outputs",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "enableDataExport": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "99722fa4-5fc8-3dc8-b98b-09f055f7a78a"
+      },
+      "4c8da137-7457-2b28-455b-93d0d5951122": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "41139b3a-7863-e69d-05b4-907137a80e67",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "rs485_1_baudrate",
+                  "type": "attribute",
+                  "label": "rs485_1_baudrate",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.18445161425818934,
+                  "aggregationType": null,
+                  "units": "b/sec",
+                  "decimals": 0,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value == 0) {\n    return 1200;\n} else if (value == 1) {\n    return 2400;\n} else if (value == 2) {\n    return 4800;\n} else if (value == 3) {\n    return 9600;\n} else if (value == 4) {\n    return 19200;\n} else {\n    return 38400;\n}"
+                },
+                {
+                  "name": "rs485_1_parity",
+                  "type": "attribute",
+                  "label": "rs485_1_parity",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.8445336591158719,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": 0,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value == 0) {\n    return 'NONE';\n} else if (value == 1) {\n    return 'EVEN';\n} else if (value == 2) {\n    return 'ODD';\n}"
+                },
+                {
+                  "name": "rs485_1_slave_id",
+                  "type": "attribute",
+                  "label": "rs485_1_slave_id",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.05927502743677793,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": 0,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "rs485_1_stopbits",
+                  "type": "attribute",
+                  "label": "rs485_1_stopbits",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.8347097647786077,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY"
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1689162752313,
+                "endTimeMs": 1689249152313
+              },
+              "quickInterval": "CURRENT_DAY"
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "useMarkdownTextFunction": false,
+            "markdownTextPattern": "##### RS 485 #1\n\n<table>\n<thead>\n<tr>\n    <th>Attribute</th>\n    <th>Current value</th>\n  </tr>\n</thead>\n  <tr>\n    <td><b>Slave ID</b></td>\n    <td>{{ ${rs485_1_slave_id} }}</td>\n  </tr>\n  <tr>\n    <td><b>Baud Rate</b></td>\n    <td>{{ ${rs485_1_baudrate} }} b/sec</td>\n  </tr>\n  <tr>\n    <td><b>Stop bits</b></td>\n    <td>{{ ${rs485_1_stopbits} }}</td>\n  </tr>\n  <tr>\n    <td><b>Parity</b></td>\n    <td>${rs485_1_parity}</td>\n  </tr>\n</table>\n",
+            "applyDefaultMarkdownStyle": true
+          },
+          "title": "RTU485 #1",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "useDashboardTimewindow": true,
+          "enableDataExport": false,
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "4c8da137-7457-2b28-455b-93d0d5951122"
+      },
+      "081e13df-1034-b222-3dfc-c69f26f81525": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "41139b3a-7863-e69d-05b4-907137a80e67",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "rs485_2_baudrate",
+                  "type": "attribute",
+                  "label": "rs485_2_baudrate",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.3153382749481646,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value == 0) {\n    return 1200;\n} else if (value == 1) {\n    return 2400;\n} else if (value == 2) {\n    return 4800;\n} else if (value == 3) {\n    return 9600;\n} else if (value == 4) {\n    return 19200;\n} else {\n    return 38400;\n}"
+                },
+                {
+                  "name": "rs485_2_parity",
+                  "type": "attribute",
+                  "label": "rs485_2_parity",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.5789290153862046,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value == 0) {\n    return 'NONE';\n} else if (value == 1) {\n    return 'EVEN';\n} else if (value == 2) {\n    return 'ODD';\n}"
+                },
+                {
+                  "name": "rs485_2_slave_id",
+                  "type": "attribute",
+                  "label": "rs485_2_slave_id",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.8416699264080252,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "rs485_2_stopbits",
+                  "type": "attribute",
+                  "label": "rs485_2_stopbits",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.7687314187799899,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY"
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1689164414060,
+                "endTimeMs": 1689250814060
+              },
+              "quickInterval": "CURRENT_DAY"
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "useMarkdownTextFunction": false,
+            "markdownTextPattern": "##### RS 485 #2\n\n<table>\n<thead>\n<tr>\n    <th>Attribute</th>\n    <th>Current value</th>\n  </tr>\n</thead>\n  <tr>\n    <td><b>Slave ID</b></td>\n    <td>{{ ${rs485_2_slave_id} }}</td>\n  </tr>\n  <tr>\n    <td><b>Baud Rate</b></td>\n    <td>{{ ${rs485_2_baudrate} }} b/sec</td>\n  </tr>\n  <tr>\n    <td><b>Stop bits</b></td>\n    <td>{{ ${rs485_2_stopbits} }}</td>\n  </tr>\n  <tr>\n    <td><b>Parity</b></td>\n    <td>${rs485_2_parity}</td>\n  </tr>\n</table>\n",
+            "applyDefaultMarkdownStyle": true
+          },
+          "title": "New Markdown/HTML Card",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "useDashboardTimewindow": true,
+          "enableDataExport": false,
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "081e13df-1034-b222-3dfc-c69f26f81525"
+      },
+      "9edd6b63-2e8e-33d3-7ecc-9b9d9ddc523b": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "41139b3a-7863-e69d-05b4-907137a80e67",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "rs485_3_baudrate",
+                  "type": "attribute",
+                  "label": "rs485_3_baudrate",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.5627458469250832,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value == 0) {\n    return 1200;\n} else if (value == 1) {\n    return 2400;\n} else if (value == 2) {\n    return 4800;\n} else if (value == 3) {\n    return 9600;\n} else if (value == 4) {\n    return 19200;\n} else {\n    return 38400;\n}"
+                },
+                {
+                  "name": "rs485_3_parity",
+                  "type": "attribute",
+                  "label": "rs485_3_parity",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.6944157656892689,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value == 0) {\n    return 'NONE';\n} else if (value == 1) {\n    return 'EVEN';\n} else if (value == 2) {\n    return 'ODD';\n}"
+                },
+                {
+                  "name": "rs485_3_slave_id",
+                  "type": "attribute",
+                  "label": "rs485_3_slave_id",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.4746450597147145,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "rs485_3_stopbits",
+                  "type": "attribute",
+                  "label": "rs485_3_stopbits",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.6221653628184882,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY"
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1689164554653,
+                "endTimeMs": 1689250954653
+              },
+              "quickInterval": "CURRENT_DAY"
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "useMarkdownTextFunction": false,
+            "markdownTextPattern": "##### RS 485 #3\n\n<table>\n<thead>\n<tr>\n    <th>Attribute</th>\n    <th>Current value</th>\n  </tr>\n</thead>\n  <tr>\n    <td><b>Slave ID</b></td>\n    <td>{{ ${rs485_3_slave_id} }}</td>\n  </tr>\n  <tr>\n    <td><b>Baud Rate</b></td>\n    <td>{{ ${rs485_3_baudrate} }} b/sec</td>\n  </tr>\n  <tr>\n    <td><b>Stop bits</b></td>\n    <td>{{ ${rs485_3_stopbits} }}</td>\n  </tr>\n  <tr>\n    <td><b>Parity</b></td>\n    <td>${rs485_3_parity}</td>\n  </tr>\n</table>\n",
+            "applyDefaultMarkdownStyle": true
+          },
+          "title": "New Markdown/HTML Card",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "useDashboardTimewindow": true,
+          "enableDataExport": false,
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "9edd6b63-2e8e-33d3-7ecc-9b9d9ddc523b"
+      },
+      "fbcfcd18-01b0-1890-8156-dc47a944fbec": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "41139b3a-7863-e69d-05b4-907137a80e67",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "gateway_1",
+                  "type": "attribute",
+                  "label": "gateway_1",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.005163539414574814
+                },
+                {
+                  "name": "gateway_2",
+                  "type": "attribute",
+                  "label": "gateway_2",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.7124708648626827
+                },
+                {
+                  "name": "gateway_3",
+                  "type": "attribute",
+                  "label": "gateway_3",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.01984819124213688
+                },
+                {
+                  "name": "gateway_4",
+                  "type": "attribute",
+                  "label": "gateway_4",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.49384305491661573
+                },
+                {
+                  "name": "ip_1",
+                  "type": "attribute",
+                  "label": "ip_1",
+                  "color": "#607d8b",
+                  "settings": {},
+                  "_hash": 0.7273869222526688
+                },
+                {
+                  "name": "ip_2",
+                  "type": "attribute",
+                  "label": "ip_2",
+                  "color": "#9c27b0",
+                  "settings": {},
+                  "_hash": 0.8231126176789885
+                },
+                {
+                  "name": "ip_3",
+                  "type": "attribute",
+                  "label": "ip_3",
+                  "color": "#8bc34a",
+                  "settings": {},
+                  "_hash": 0.708025916364238
+                },
+                {
+                  "name": "ip_4",
+                  "type": "attribute",
+                  "label": "ip_4",
+                  "color": "#3f51b5",
+                  "settings": {},
+                  "_hash": 0.624606009603125
+                },
+                {
+                  "name": "mac_1",
+                  "type": "attribute",
+                  "label": "mac_1",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.4704428104631091,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value.toString(16).toUpperCase().padStart(2, 0);"
+                },
+                {
+                  "name": "mac_2",
+                  "type": "attribute",
+                  "label": "mac_2",
+                  "color": "#ffeb3b",
+                  "settings": {},
+                  "_hash": 0.25375409773307744,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value.toString(16).toUpperCase().padStart(2, 0);"
+                },
+                {
+                  "name": "mac_3",
+                  "type": "attribute",
+                  "label": "mac_3",
+                  "color": "#03a9f4",
+                  "settings": {},
+                  "_hash": 0.36959509831856585,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value.toString(16).toUpperCase().padStart(2, 0);"
+                },
+                {
+                  "name": "mac_4",
+                  "type": "attribute",
+                  "label": "mac_4",
+                  "color": "#ff9800",
+                  "settings": {},
+                  "_hash": 0.5386101713113158,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value.toString(16).toUpperCase().padStart(2, 0);"
+                },
+                {
+                  "name": "mac_5",
+                  "type": "attribute",
+                  "label": "mac_5",
+                  "color": "#673ab7",
+                  "settings": {},
+                  "_hash": 0.950146930414435,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value.toString(16).toUpperCase().padStart(2, 0);"
+                },
+                {
+                  "name": "mac_6",
+                  "type": "attribute",
+                  "label": "mac_6",
+                  "color": "#cddc39",
+                  "settings": {},
+                  "_hash": 0.4722148190442126,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value.toString(16).toUpperCase().padStart(2, 0);"
+                },
+                {
+                  "name": "subnetmask_1",
+                  "type": "attribute",
+                  "label": "subnetmask_1",
+                  "color": "#009688",
+                  "settings": {},
+                  "_hash": 0.8385545450510179
+                },
+                {
+                  "name": "subnetmask_2",
+                  "type": "attribute",
+                  "label": "subnetmask_2",
+                  "color": "#795548",
+                  "settings": {},
+                  "_hash": 0.1359861551449817
+                },
+                {
+                  "name": "subnetmask_3",
+                  "type": "attribute",
+                  "label": "subnetmask_3",
+                  "color": "#00bcd4",
+                  "settings": {},
+                  "_hash": 0.10711526081992595
+                },
+                {
+                  "name": "subnetmask_4",
+                  "type": "attribute",
+                  "label": "subnetmask_4",
+                  "color": "#ff5722",
+                  "settings": {},
+                  "_hash": 0.2974800418662722
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY"
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1689167753876,
+                "endTimeMs": 1689254153876
+              },
+              "quickInterval": "CURRENT_DAY"
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "useMarkdownTextFunction": false,
+            "markdownTextPattern": "##### Certa Mentor 30D\n\n<table>\n<thead>\n<tr>\n    <th>Attribute</th>\n    <th>Current value</th>\n  </tr>\n</thead>\n  <tr>\n    <td><b>IP Address</b></td>\n    <td>\n        <p>{{ ${ip_1} }}.{{ ${ip_2} }}.{{ ${ip_3} }}.{{ ${ip_4} }}</p>\n    </td>\n  </tr>\n  <tr>\n    <td><b>MAC</b></td>\n    <td>\n        <p>${mac_1}.${mac_2}.${mac_3}.${mac_4}.${mac_5}.${mac_6}</p>\n    </td>\n  </tr>\n  <tr>\n    <td><b>Subnet Mask</b></td>\n    <td>\n        <p>{{ ${subnetmask_1} }}.{{ ${subnetmask_2} }}.{{ ${subnetmask_3} }}.{{ ${subnetmask_4} }}</p>\n    </td>\n  </tr>\n  <tr>\n    <td><b>Gateway</b></td>\n    <td>\n        <p>{{ ${gateway_1} }}.{{ ${gateway_2} }}.{{ ${gateway_3} }}.{{ ${gateway_4} }}</p>\n    </td>\n  </tr>\n</table>",
+            "applyDefaultMarkdownStyle": true
+          },
+          "title": "New Markdown/HTML Card",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "useDashboardTimewindow": true,
+          "enableDataExport": false,
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "fbcfcd18-01b0-1890-8156-dc47a944fbec"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Ace Automation",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "067ca996-ed07-d2b9-43eb-7e84ca8bcc7c": {
+                "sizeX": 38,
+                "sizeY": 6,
+                "row": 20,
+                "col": 0
+              },
+              "99722fa4-5fc8-3dc8-b98b-09f055f7a78a": {
+                "sizeX": 38,
+                "sizeY": 8,
+                "row": 12,
+                "col": 0
+              },
+              "4c8da137-7457-2b28-455b-93d0d5951122": {
+                "sizeX": 9,
+                "sizeY": 12,
+                "row": 0,
+                "col": 11
+              },
+              "081e13df-1034-b222-3dfc-c69f26f81525": {
+                "sizeX": 9,
+                "sizeY": 12,
+                "row": 0,
+                "col": 20
+              },
+              "9edd6b63-2e8e-33d3-7ecc-9b9d9ddc523b": {
+                "sizeX": 9,
+                "sizeY": 12,
+                "row": 0,
+                "col": 29
+              },
+              "fbcfcd18-01b0-1890-8156-dc47a944fbec": {
+                "sizeX": 11,
+                "sizeY": 12,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "outerMargin": true,
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "41139b3a-7863-e69d-05b4-907137a80e67": {
+        "id": "41139b3a-7863-e69d-05b4-907137a80e67",
+        "alias": "ACE Gateway",
+        "filter": {
+          "type": "singleEntity",
+          "resolveMultiple": false,
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "4a19d9b0-2098-11ee-9b50-cbf3d8e9f405"
+          }
+        }
+      }
+    },
+    "filters": {},
+    "timewindow": {
+      "displayValue": "",
+      "hideInterval": false,
+      "hideLastInterval": false,
+      "hideQuickInterval": false,
+      "hideAggregation": false,
+      "hideAggInterval": false,
+      "hideTimezone": false,
+      "selectedTab": 0,
+      "realtime": {
+        "realtimeType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "quickInterval": "CURRENT_DAY"
+      },
+      "history": {
+        "historyType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "fixedTimewindow": {
+          "startTimeMs": 1689065998203,
+          "endTimeMs": 1689152398203
+        },
+        "quickInterval": "CURRENT_DAY"
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "externalId": null,
+  "name": "Ace Automation"
+}
