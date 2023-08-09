@@ -1,0 +1,920 @@
+{
+  "title": "Teltonika RTU955",
+  "image": null,
+  "mobileHide": false,
+  "mobileOrder": null,
+  "configuration": {
+    "description": "",
+    "widgets": {
+      "fbcfcd18-01b0-1890-8156-dc47a944fbec": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "b9c7a1c6-e887-520e-272c-c1482ca88db8",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "ip_1",
+                  "type": "attribute",
+                  "label": "ip_1",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.02484711812727003
+                },
+                {
+                  "name": "ip_2",
+                  "type": "attribute",
+                  "label": "ip_2",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.6882252686987189
+                },
+                {
+                  "name": "ip_3",
+                  "type": "attribute",
+                  "label": "ip_3",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.780654840948525
+                },
+                {
+                  "name": "ip_4",
+                  "type": "attribute",
+                  "label": "ip_4",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.986349766823265
+                },
+                {
+                  "name": "mac_1",
+                  "type": "attribute",
+                  "label": "mac_1",
+                  "color": "#607d8b",
+                  "settings": {},
+                  "_hash": 0.17810572253414336,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value.toString(16).toUpperCase().padStart(2, 0);"
+                },
+                {
+                  "name": "mac_2",
+                  "type": "attribute",
+                  "label": "mac_2",
+                  "color": "#9c27b0",
+                  "settings": {},
+                  "_hash": 0.2393765358111919,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value.toString(16).toUpperCase().padStart(2, 0);"
+                },
+                {
+                  "name": "mac_3",
+                  "type": "attribute",
+                  "label": "mac_3",
+                  "color": "#8bc34a",
+                  "settings": {},
+                  "_hash": 0.015873441850670522,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value.toString(16).toUpperCase().padStart(2, 0);"
+                },
+                {
+                  "name": "mac_4",
+                  "type": "attribute",
+                  "label": "mac_4",
+                  "color": "#3f51b5",
+                  "settings": {},
+                  "_hash": 0.5305146866455468,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value.toString(16).toUpperCase().padStart(2, 0);"
+                },
+                {
+                  "name": "mac_5",
+                  "type": "attribute",
+                  "label": "mac_5",
+                  "color": "#e91e63",
+                  "settings": {},
+                  "_hash": 0.6399891525681116,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value.toString(16).toUpperCase().padStart(2, 0);"
+                },
+                {
+                  "name": "mac_6",
+                  "type": "attribute",
+                  "label": "mac_6",
+                  "color": "#ffeb3b",
+                  "settings": {},
+                  "_hash": 0.6912962891533581,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "return value.toString(16).toUpperCase().padStart(2, 0);"
+                },
+                {
+                  "name": "gateway_1",
+                  "type": "attribute",
+                  "label": "gateway_1",
+                  "color": "#03a9f4",
+                  "settings": {},
+                  "_hash": 0.9111621353940587
+                },
+                {
+                  "name": "gateway_2",
+                  "type": "attribute",
+                  "label": "gateway_2",
+                  "color": "#ff9800",
+                  "settings": {},
+                  "_hash": 0.03527454321519907
+                },
+                {
+                  "name": "gateway_3",
+                  "type": "attribute",
+                  "label": "gateway_3",
+                  "color": "#673ab7",
+                  "settings": {},
+                  "_hash": 0.09261798483854444
+                },
+                {
+                  "name": "gateway_4",
+                  "type": "attribute",
+                  "label": "gateway_4",
+                  "color": "#cddc39",
+                  "settings": {},
+                  "_hash": 0.6533378036458926
+                },
+                {
+                  "name": "subnetmask_1",
+                  "type": "attribute",
+                  "label": "subnetmask_1",
+                  "color": "#009688",
+                  "settings": {},
+                  "_hash": 0.5482723995503895
+                },
+                {
+                  "name": "subnetmask_2",
+                  "type": "attribute",
+                  "label": "subnetmask_2",
+                  "color": "#795548",
+                  "settings": {},
+                  "_hash": 0.29206828860032186
+                },
+                {
+                  "name": "subnetmask_3",
+                  "type": "attribute",
+                  "label": "subnetmask_3",
+                  "color": "#00bcd4",
+                  "settings": {},
+                  "_hash": 0.4189884280164671
+                },
+                {
+                  "name": "subnetmask_4",
+                  "type": "attribute",
+                  "label": "subnetmask_4",
+                  "color": "#ff5722",
+                  "settings": {},
+                  "_hash": 0.8761895605344616
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY"
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1689167753876,
+                "endTimeMs": 1689254153876
+              },
+              "quickInterval": "CURRENT_DAY"
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "useMarkdownTextFunction": false,
+            "markdownTextPattern": "##### Certa Mentor 30D\n\n<table>\n<thead>\n<tr>\n    <th>Attribute</th>\n    <th>Current value</th>\n  </tr>\n</thead>\n  <tr>\n    <td><b>IP Address</b></td>\n    <td>\n        <p>{{ ${ip_1} }}.{{ ${ip_2} }}.{{ ${ip_3} }}.{{ ${ip_4} }}</p>\n    </td>\n  </tr>\n  <tr>\n    <td><b>MAC</b></td>\n    <td>\n        <p>${mac_1}.${mac_2}.${mac_3}.${mac_4}.${mac_5}.${mac_6}</p>\n    </td>\n  </tr>\n  <tr>\n    <td><b>Subnet Mask</b></td>\n    <td>\n        <p>{{ ${subnetmask_1} }}.{{ ${subnetmask_2} }}.{{ ${subnetmask_3} }}.{{ ${subnetmask_4} }}</p>\n    </td>\n  </tr>\n  <tr>\n    <td><b>Gateway</b></td>\n    <td>\n        <p>{{ ${gateway_1} }}.{{ ${gateway_2} }}.{{ ${gateway_3} }}.{{ ${gateway_4} }}</p>\n    </td>\n  </tr>\n</table>",
+            "applyDefaultMarkdownStyle": true
+          },
+          "title": "New Markdown/HTML Card",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "useDashboardTimewindow": true,
+          "enableDataExport": false,
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "fbcfcd18-01b0-1890-8156-dc47a944fbec"
+      },
+      "4c8da137-7457-2b28-455b-93d0d5951122": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "b9c7a1c6-e887-520e-272c-c1482ca88db8",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "rs485_1_slave_id",
+                  "type": "attribute",
+                  "label": "rs485_1_slave_id",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.3090246909091432
+                },
+                {
+                  "name": "rs485_1_slave_baudrate",
+                  "type": "attribute",
+                  "label": "rs485_1_slave_baudrate",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.4291920845458843,
+                  "aggregationType": null,
+                  "units": "b/sec",
+                  "decimals": 0,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value == 0) {\n    return 1200;\n} else if (value == 1) {\n    return 2400;\n} else if (value == 2) {\n    return 4800;\n} else if (value == 3) {\n    return 9600;\n} else if (value == 4) {\n    return 19200;\n} else {\n    return 38400;\n}"
+                },
+                {
+                  "name": "rs485_1_slave_parity",
+                  "type": "attribute",
+                  "label": "rs485_1_slave_parity",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.4386686471101655,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value == 0) {\n    return 'NONE';\n} else if (value == 1) {\n    return 'EVEN';\n} else if (value == 2) {\n    return 'ODD';\n}"
+                },
+                {
+                  "name": "rs485_1_slave_stopbits",
+                  "type": "attribute",
+                  "label": "rs485_1_slave_stopbits",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.22861005695654368,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": false,
+                  "postFuncBody": null
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY"
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1689162752313,
+                "endTimeMs": 1689249152313
+              },
+              "quickInterval": "CURRENT_DAY"
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "useMarkdownTextFunction": false,
+            "markdownTextPattern": "##### RS 485 #1\n\n<table>\n<thead>\n<tr>\n    <th>Attribute</th>\n    <th>Current value</th>\n  </tr>\n</thead>\n  <tr>\n    <td><b>Slave ID</b></td>\n    <td>{{ ${rs485_1_slave_id} }}</td>\n  </tr>\n  <tr>\n    <td><b>Baud Rate</b></td>\n    <td>{{ ${rs485_1_slave_baudrate} }} b/sec</td>\n  </tr>\n  <tr>\n    <td><b>Stop bits</b></td>\n    <td>{{ ${rs485_1_slave_stopbits} }}</td>\n  </tr>\n  <tr>\n    <td><b>Parity</b></td>\n    <td>${rs485_1_slave_parity}</td>\n  </tr>\n</table>\n",
+            "applyDefaultMarkdownStyle": true
+          },
+          "title": "RTU485 #1",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "useDashboardTimewindow": true,
+          "enableDataExport": false,
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "4c8da137-7457-2b28-455b-93d0d5951122"
+      },
+      "081e13df-1034-b222-3dfc-c69f26f81525": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "b9c7a1c6-e887-520e-272c-c1482ca88db8",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "rs485_2_slave_id",
+                  "type": "attribute",
+                  "label": "rs485_2_slave_id",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.8116155461942147
+                },
+                {
+                  "name": "rs485_2_slave_baudrate",
+                  "type": "attribute",
+                  "label": "rs485_2_slave_baudrate",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.16102145119843891,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value == 0) {\n    return 1200;\n} else if (value == 1) {\n    return 2400;\n} else if (value == 2) {\n    return 4800;\n} else if (value == 3) {\n    return 9600;\n} else if (value == 4) {\n    return 19200;\n} else {\n    return 38400;\n}"
+                },
+                {
+                  "name": "rs485_2_slave_parity",
+                  "type": "attribute",
+                  "label": "rs485_2_slave_parity",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.04490076634161477,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value == 0) {\n    return 'NONE';\n} else if (value == 1) {\n    return 'EVEN';\n} else if (value == 2) {\n    return 'ODD';\n}"
+                },
+                {
+                  "name": "rs485_2_slave_stopbits",
+                  "type": "attribute",
+                  "label": "rs485_2_slave_stopbits",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.34047954782651657
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY"
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1689164414060,
+                "endTimeMs": 1689250814060
+              },
+              "quickInterval": "CURRENT_DAY"
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "useMarkdownTextFunction": false,
+            "markdownTextPattern": "##### RS 485 #2\n\n<table>\n<thead>\n<tr>\n    <th>Attribute</th>\n    <th>Current value</th>\n  </tr>\n</thead>\n  <tr>\n    <td><b>Slave ID</b></td>\n    <td>{{ ${rs485_2_slave_id} }}</td>\n  </tr>\n  <tr>\n    <td><b>Baud Rate</b></td>\n    <td>{{ ${rs485_2_slave_baudrate} }} b/sec</td>\n  </tr>\n  <tr>\n    <td><b>Stop bits</b></td>\n    <td>{{ ${rs485_2_slave_stopbits} }}</td>\n  </tr>\n  <tr>\n    <td><b>Parity</b></td>\n    <td>${rs485_2_slave_parity}</td>\n  </tr>\n</table>\n",
+            "applyDefaultMarkdownStyle": true
+          },
+          "title": "New Markdown/HTML Card",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "useDashboardTimewindow": true,
+          "enableDataExport": false,
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "081e13df-1034-b222-3dfc-c69f26f81525"
+      },
+      "9edd6b63-2e8e-33d3-7ecc-9b9d9ddc523b": {
+        "isSystemType": true,
+        "bundleAlias": "cards",
+        "typeAlias": "markdown_card",
+        "type": "latest",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "b9c7a1c6-e887-520e-272c-c1482ca88db8",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "rs485_3_slave_id",
+                  "type": "attribute",
+                  "label": "rs485_3_slave_id",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.24008949127075074
+                },
+                {
+                  "name": "rs485_3_slave_baudrate",
+                  "type": "attribute",
+                  "label": "rs485_3_slave_baudrate",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.47601281093823933,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value == 0) {\n    return 1200;\n} else if (value == 1) {\n    return 2400;\n} else if (value == 2) {\n    return 4800;\n} else if (value == 3) {\n    return 9600;\n} else if (value == 4) {\n    return 19200;\n} else {\n    return 38400;\n}"
+                },
+                {
+                  "name": "rs485_3_slave_parity",
+                  "type": "attribute",
+                  "label": "rs485_3_slave_parity",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.0745581797007453,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": true,
+                  "postFuncBody": "if (value == 0) {\n    return 'NONE';\n} else if (value == 1) {\n    return 'EVEN';\n} else if (value == 2) {\n    return 'ODD';\n}"
+                },
+                {
+                  "name": "rs485_3_slave_stopbits",
+                  "type": "attribute",
+                  "label": "rs485_3_slave_stopbits",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.27770580996417604
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY"
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1689164554653,
+                "endTimeMs": 1689250954653
+              },
+              "quickInterval": "CURRENT_DAY"
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "useMarkdownTextFunction": false,
+            "markdownTextPattern": "##### RS 485 #3\n\n<table>\n<thead>\n<tr>\n    <th>Attribute</th>\n    <th>Current value</th>\n  </tr>\n</thead>\n  <tr>\n    <td><b>Slave ID</b></td>\n    <td>{{ ${rs485_3_slave_id} }}</td>\n  </tr>\n  <tr>\n    <td><b>Baud Rate</b></td>\n    <td>{{ ${rs485_3_slave_baudrate} }} b/sec</td>\n  </tr>\n  <tr>\n    <td><b>Stop bits</b></td>\n    <td>{{ ${rs485_3_slave_stopbits} }}</td>\n  </tr>\n  <tr>\n    <td><b>Parity</b></td>\n    <td>${rs485_3_slave_parity}</td>\n  </tr>\n</table>\n",
+            "applyDefaultMarkdownStyle": true
+          },
+          "title": "New Markdown/HTML Card",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "useDashboardTimewindow": true,
+          "enableDataExport": false,
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "9edd6b63-2e8e-33d3-7ecc-9b9d9ddc523b"
+      },
+      "3d88780e-8dda-daa4-a042-5f16739a33ed": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "b9c7a1c6-e887-520e-272c-c1482ca88db8",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "temp",
+                  "type": "timeseries",
+                  "label": "Temperature",
+                  "color": "#2196f3",
+                  "settings": {
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "excludeFromStacking": false,
+                    "showLines": true,
+                    "lineWidth": 1,
+                    "fillLines": true,
+                    "fillLinesOpacity": 0.4,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisPosition": "left",
+                    "comparisonSettings": {
+                      "showValuesForComparison": true,
+                      "comparisonValuesLabel": "",
+                      "color": ""
+                    },
+                    "thresholds": []
+                  },
+                  "_hash": 0.8117891303424103,
+                  "aggregationType": null,
+                  "units": null,
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              },
+              "latestDataKeys": []
+            }
+          ],
+          "timewindow": {
+            "hideInterval": false,
+            "hideLastInterval": false,
+            "hideQuickInterval": false,
+            "hideAggregation": false,
+            "hideAggInterval": false,
+            "hideTimezone": false,
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 0,
+              "timewindowMs": 300000,
+              "quickInterval": "CURRENT_DAY",
+              "interval": 1000
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "stack": true,
+            "fontSize": 10,
+            "fontColor": "#545454",
+            "showTooltip": true,
+            "tooltipIndividual": false,
+            "tooltipCumulative": false,
+            "hideZeros": false,
+            "grid": {
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1,
+              "color": "#545454",
+              "backgroundColor": null,
+              "tickColor": "#DDDDDD"
+            },
+            "xaxis": {
+              "title": null,
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "min": null,
+              "max": null,
+              "title": null,
+              "showLabels": true,
+              "color": "#545454",
+              "tickSize": null,
+              "tickDecimals": 0,
+              "ticksFormatter": ""
+            },
+            "shadowSize": 4,
+            "smoothLines": false,
+            "comparisonEnabled": false,
+            "timeForComparison": "previousInterval",
+            "comparisonCustomIntervalValue": 7200000,
+            "xaxisSecond": {
+              "axisPosition": "top",
+              "title": null,
+              "showLabels": true
+            },
+            "customLegendEnabled": false,
+            "dataKeysListForLabels": []
+          },
+          "title": "Temperature Sensor",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": false,
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "enableDataExport": false,
+          "widgetStyle": {},
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": "",
+          "showLegend": true,
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": false,
+            "showMax": false,
+            "showAvg": true,
+            "showTotal": false,
+            "showLatest": false
+          },
+          "displayTimewindow": true
+        },
+        "row": 0,
+        "col": 0,
+        "id": "3d88780e-8dda-daa4-a042-5f16739a33ed"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Teltonika RTU955",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "fbcfcd18-01b0-1890-8156-dc47a944fbec": {
+                "sizeX": 7,
+                "sizeY": 8,
+                "row": 0,
+                "col": 0
+              },
+              "4c8da137-7457-2b28-455b-93d0d5951122": {
+                "sizeX": 7,
+                "sizeY": 8,
+                "row": 0,
+                "col": 7
+              },
+              "081e13df-1034-b222-3dfc-c69f26f81525": {
+                "sizeX": 7,
+                "sizeY": 8,
+                "row": 0,
+                "col": 14
+              },
+              "9edd6b63-2e8e-33d3-7ecc-9b9d9ddc523b": {
+                "sizeX": 8,
+                "sizeY": 8,
+                "row": 0,
+                "col": 21
+              },
+              "3d88780e-8dda-daa4-a042-5f16739a33ed": {
+                "sizeX": 29,
+                "sizeY": 9,
+                "row": 8,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "outerMargin": true,
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "b9c7a1c6-e887-520e-272c-c1482ca88db8": {
+        "id": "b9c7a1c6-e887-520e-272c-c1482ca88db8",
+        "alias": "Teltonika RTU955",
+        "filter": {
+          "type": "singleEntity",
+          "resolveMultiple": false,
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "ba7bb5e0-2474-11ee-81f8-19e7983a2f6e"
+          }
+        }
+      }
+    },
+    "filters": {},
+    "timewindow": {
+      "displayValue": "",
+      "hideInterval": false,
+      "hideLastInterval": false,
+      "hideQuickInterval": false,
+      "hideAggregation": false,
+      "hideAggInterval": false,
+      "hideTimezone": false,
+      "selectedTab": 0,
+      "realtime": {
+        "realtimeType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "quickInterval": "CURRENT_DAY"
+      },
+      "history": {
+        "historyType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "fixedTimewindow": {
+          "startTimeMs": 1689492726585,
+          "endTimeMs": 1689579126585
+        },
+        "quickInterval": "CURRENT_DAY"
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "externalId": null,
+  "name": "Teltonika RTU955"
+}
