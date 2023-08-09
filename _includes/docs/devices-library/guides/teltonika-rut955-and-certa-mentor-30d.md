@@ -233,7 +233,6 @@ Open **Integrations** section and add new Integration with the following paramet
 - **Name**: *Integration name*
 - **Type**: *Integration type*
 - **Uplink** data converter: *Integration Uplink Converter*
-- **Downlink** data converter: *Integration Downlink Converter*
 - **Connection**: *Settings for connection to external MQTT Broker*
 
 
