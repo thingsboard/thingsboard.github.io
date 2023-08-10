@@ -48,7 +48,7 @@ Once you are connected to the {{deviceName}}, you can change its IP address if y
 - Click **"Edit"** button on **"lan"** interface;
 - Enter a new IP address that is not already being used by another device on your network.
 
-The next step, you have to up and run external MQTT Broker (for example in our case we are using 
+The next step, you have to up and run external MQTT Broker (in this guide we will use 
 [TBMQ Broker](https://thingsboard.io/docs/mqtt-broker/)).
 
 Now we are ready to configure the MQTT connection and topics for both data reception and transmission, 
@@ -109,7 +109,7 @@ If you did everything right, you have to receive the following MQTT message:
 
 ## Create uplink converter
 
-At first, copy the code for uplink converter, we will need it for integration:
+You can use the following code for your uplink converter in "Create integration" step:
 
 {% capture uplinkConverterCode %}
 // Decode an uplink message from a buffer

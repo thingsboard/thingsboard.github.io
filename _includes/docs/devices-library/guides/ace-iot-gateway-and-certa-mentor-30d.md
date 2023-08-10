@@ -52,7 +52,7 @@ Once you are connected to the ACE-GTW-MQTT, you can change its IP address if you
 
 **Also, don't forget to change default password.**
 
-The next step, you have to up and run external MQTT Broker (for example in our case we are using 
+The next step, you have to up and run external MQTT Broker (in this guide we will use 
 [TBMQ Broker](https://thingsboard.io/docs/mqtt-broker/)).
 
 Now we are ready to configure the MQTT connection and topics for both data reception and transmission, 
@@ -711,7 +711,7 @@ config topics
 
 ## Create uplink converter
 
-At first, copy the code for uplink converter, we will need it for integration:
+You can use the following code for your uplink converter in "Create integration" step:
 
 {% capture uplinkConverterCode %}
 // Decode an uplink message from a buffer
@@ -757,7 +757,7 @@ return result;
 
 ## Create downlink converter
 
-Copy the code for the downlink converter, we will need it for sending data to our device:
+You can use the following code for your downlink converter in "Create integration" step:
 
 {% capture downlinkConverterCode %}
 // Encode downlink data from incoming Rule Engine message

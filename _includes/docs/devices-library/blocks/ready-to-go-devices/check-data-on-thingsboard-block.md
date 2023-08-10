@@ -1,4 +1,4 @@
-Once you have successfully done all steps above and {{deviceName}} send data, you should immediately see them in the 
+Once you have successfully done all steps above and {{deviceName}} send data, you can see it in the 
 Device Telemetry Tab:
 
 {% assign deviceTelemetryPE = '
