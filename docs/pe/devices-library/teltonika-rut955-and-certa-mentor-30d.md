@@ -1,6 +1,6 @@
 ---
 layout: devices-library-article
-title: How to connect Modbus To MQTT Gateway to ThingsBoard?
+title: How to connect Teltonika RUT955 to ThingsBoard?
 category: Other devices
 connectivity: HTTP, MQTT, Ethernet, WiFi
 vendor: Teltonika

@@ -1,10 +1,10 @@
-{% assign deviceName = "Teltonika RUT955" %}
+{% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign deviceVendorLink = "https://teltonika-networks.com/ua/products/routers/rut955/" %}
 {% assign controllerName = "Certa Mentor 30D" %}
 {% assign controllerVendorLink = "http://certa.com.ua/products/controllers/mentor30D/" %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
-- Modbus Controller (in our case <a href="' | append: controllerVendorLink | append: '" target="_blank">' | append: controllerName | append: '</a>)
+- Modbus Controller (in our case Certa Mentor 30D)
 - Device have to be connected to the Internet via Ethernet, Modem or WIFI. '
  %}
 {% assign thingsboardInstanceLink = "https://demo.thingsboard.io" %}
