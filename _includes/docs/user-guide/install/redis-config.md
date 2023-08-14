@@ -9,7 +9,7 @@
             <td>redis.connection.type</td>
             <td>REDIS_CONNECTION_TYPE</td>
             <td>standalone</td>
-            <td>Redis connection type - <b>standalone</b> or <b>cluster</b></td>
+            <td>Redis connection type - <b>standalone</b> or <b>cluster</b> or <b>sentinel</b></td>
         </tr>
         <tr>
             <td>redis.standalone.host</td>
@@ -67,6 +67,30 @@
         </tr>
         <tr>
             <td>redis.cluster.useDefaultPoolConfig</td>
+            <td>REDIS_USE_DEFAULT_POOL_CONFIG</td>
+            <td>true</td>
+            <td>Use default redis pool configuration. If set to "true", the REDIS_POOL_CONFIG_* properties will be ignored.</td>
+        </tr>
+        <tr>
+            <td>redis.sentinel.master</td>
+            <td>REDIS_MASTER</td>
+            <td></td>
+            <td>Redis sentinel master name</td>
+        </tr>
+	    <tr>
+            <td>redis.sentinel.sentinels</td>
+            <td>REDIS_SENTINELS</td>
+            <td></td>
+            <td>Comma-separated list of "host:port" pairs of sentinels. Default is located on port 26379 of your redis server.</td>
+        </tr>
+	    <tr>
+            <td>redis.sentinel.password</td>
+            <td>REDIS_SENTINEL_PASSWORD</td>
+            <td></td>
+            <td>Password to authenticate with this sentinel and to authenticate to other sentinels.</td>
+        </tr>
+	    <tr>
+            <td>redis.sentinel.useDefaultPoolConfig</td>
             <td>REDIS_USE_DEFAULT_POOL_CONFIG</td>
             <td>true</td>
             <td>Use default redis pool configuration. If set to "true", the REDIS_POOL_CONFIG_* properties will be ignored.</td>
