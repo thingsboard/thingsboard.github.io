@@ -5,17 +5,128 @@ assignees:
 title: Working with IoT dashboards
 description: IoT dashboards using ThingsBoard
 redirect_from: "/docs/user-guide/ui/dashboards/"
-creating-dash:
+
+creating-dashboard:
     0:
-        image: /images/user-guide/dashboards/creating-dash-1-ce.png
+        image: /images/user-guide/dashboards/overview/create-dashboard-1-ce.png
+        title: 'Go to the "Dashboards" page through the main menu on the left of the screen. To add a new dashboard group, click the "+" sign in the upper right corner of the screen. Select "Create new dashboard" from the drop-down menu;'
     1:
-        image: /images/user-guide/dashboards/creating-dash-2-ce.png
-  
+        image: /images/user-guide/dashboards/overview/create-dashboard-2-ce.png
+        title: 'In the opened dialog, necessary to enter a dashboard title, description is optional. Click "Add";'
+    2:
+        image: /images/user-guide/dashboards/overview/create-dashboard-3-ce.png
+        title: 'Your first dashboard has been created. As long as you have one dashboard. But as new dashboards are added, they will be added to the top of the table, since the table sorts dashboards using the time of the creation by default.'
+
+export-dashboard:
+    0:
+        image: /images/user-guide/dashboards/overview/export-dashboard-1-ce.png
+        title: 'To export a dashboard, go to the "Dashboards" page and click the "Export dashboard" icon next to the dashboard that you want to export. The dashboard is exported in JSON file.'
+
 make-public:
     0:
-        image: /images/user-guide/dashboards/make-public-ce.png
+        image: /images/user-guide/dashboards/overview/make-public-dashboard-1-ce.png
+        title: 'Go to the "Dashboards" page. Click the "Make public" icon next to the dashboard that you want to make public;'
     1:
-        image: /images/user-guide/dashboards/make-public-1-ce.png
+        image: /images/user-guide/dashboards/overview/make-public-dashboard-2-ce.png
+        title: 'Dashboard is now public. In the pop-up window, click "Copy public link" icon. Now you can share a dashboard with this link. For example, send it by email. Or you can use the quick buttons to share the link on social networks;'
+    2:
+        image: /images/user-guide/dashboards/overview/make-public-dashboard-3-ce.png
+        title: 'Next time you can find the public link to the dashboard in the dashboard details window;'
+
+make-private:
+    0:
+        image: /images/user-guide/dashboards/overview/make-public-dashboard-4-ce.png
+        title: 'Click the "Make private" icon next to the dashboard that you want to make private;'
+    1:
+        image: /images/user-guide/dashboards/overview/make-public-dashboard-5-ce.png
+        title: 'In the confirmation dialog box, click "Yes".'
+
+manage-assigned-customers:
+    0:
+        image: /images/user-guide/dashboards/overview/manage-assigned-customers-1-ce.png
+        title: 'Go to the "Dashboards" page and click the "Manage assigned customers" icon next to the dashboard that you want to make assigned to the customer;'
+    1:
+        image: /images/user-guide/dashboards/overview/manage-assigned-customers-2-ce.png
+        title: 'Select the customer(s) to assign the dashboard. Click "Update";'
+    2:
+        image: /images/user-guide/dashboards/overview/manage-assigned-customers-3-ce.png
+        title: 'The dashboard assigned to the selected customer;'
+
+manage-unassigned-customers:
+    0:
+        image: /images/user-guide/dashboards/overview/manage-assigned-customers-1-ce.png
+        title: 'Go to the "Dashboards" page and click the "Manage assigned customers" icon next to the dashboard that you want to make assigned to the customer;'
+    1:
+        image: /images/user-guide/dashboards/overview/manage-assigned-customers-5-ce.png
+        title: 'Remove the customer(s) from the assigned customer list. Click "Update";'
+    2:
+        image: /images/user-guide/dashboards/overview/manage-assigned-customers-6-ce.png
+        title: 'Assigned customers list updated;'
+
+assigned-multiple-dashboards:
+    0:
+        image: /images/user-guide/dashboards/overview/manage-assigned-customers-4-ce.png
+        title: 'Go to the "Dashboards" page and mark one or multiple dashboards. Use the "Assign Dashboards" or "Unassign Dashboards" buttons, select customer(s) and confirm the action;'
+    1:
+        image: /images/user-guide/dashboards/overview/manage-assigned-customers-7-ce.png
+        title: 'Select the customer(s) to assign the dashboards. Click "Update";'
+    2:
+        image: /images/user-guide/dashboards/overview/manage-assigned-customers-8-ce.png
+        title: 'Assigned customers list updated;'
+
+dashboard-details:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-details-1-ce.png
+        title: 'Go to the "Dashboards" page and click the "Dashboard details" icon next to the dashboard that you want to edit;'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-details-2-ce.png
+        title: 'Click the "pencil" icon to enter edit mode;'
+    2:
+        image: /images/user-guide/dashboards/overview/dashboard-details-3-ce.png
+        title: 'Edit the fields you need. For example, edit the title of the dashboard, specify description. After making the edits, remember to save all changes;'
+    3:
+        image: /images/user-guide/dashboards/overview/dashboard-details-4-ce.png
+        title: 'You have updated the dashboard information.'
+
+delete-dashboard-1:
+    0:
+        image: /images/user-guide/dashboards/overview/delete-dashboard-1-ce.png
+        title: 'Go to the "Dashboards" page and click the "trash" icon can opposite the dashboard`s name you want to delete;'
+    1:
+        image: /images/user-guide/dashboards/overview/delete-dashboard-2-ce.png
+        title: 'Confirm deleting the dashboard in the dialog box.'
+
+delete-dashboard-2:
+    0:
+        image: /images/user-guide/dashboards/overview/delete-dashboard-3-ce.png
+        title: 'Click the "Dashboard details" icon next to the dashboard that you want to delete;'
+    1:
+        image: /images/user-guide/dashboards/overview/delete-dashboard-4-ce.png
+        title: 'In the dashboard details, click "Delete dashboard" button;'
+    2:
+        image: /images/user-guide/dashboards/overview/delete-dashboard-5-ce.png
+        title: 'Confirm deleting the dashboard in the dialog box.'
+
+delete-dashboard-3:
+    0:
+        image: /images/user-guide/dashboards/overview/delete-dashboard-6-ce.png
+        title: 'Mark one or multiple dashboards you want to delete. Click on the trash bin icon in the top right corner;'
+    1:
+        image: /images/user-guide/dashboards/overview/delete-dashboard-7-ce.png
+        title: 'Confirm deleting dashboards in the dialog box.'
+
+dashboard-toolbar:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-toolbar-view-mode-ce.png
+        title: 'Dashboard toolbar in view mode.'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-toolbar-edit-mode-ce.png
+        title: 'Dashboard toolbar in edit mode.'
+
+dashboard-toolbar-export:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-toolbar-export-1-pe.png
+        title: 'Go to the "Dashboards" page, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen.'
 
 dash-title:
     0:

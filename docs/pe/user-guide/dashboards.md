@@ -5,27 +5,298 @@ assignees:
 title: Working with IoT dashboards
 description: IoT dashboards using ThingsBoard
 redirect_from: "/docs/pe/user-guide/ui/dashboards/"
-creating-dash:
+
+creating-dashboard:
     0:
-        image: /images/user-guide/dashboards/creating-dash.png
+        image: /images/user-guide/dashboards/overview/create-dashboard-1-pe.png
+        title: 'Go to the "Dashboards" page through the main menu on the left of the screen. By default, you navigate to the dashboard group "All";'
     1:
-        image: /images/user-guide/dashboards/creating-dash-1.png
+        image: /images/user-guide/dashboards/overview/create-dashboard-2-pe.png
+        title: 'To add a new dashboard group, click the "+" sign in the upper right corner of the screen. Select "Create new dashboard" from the drop-down menu;'
     2:
-        image: /images/user-guide/dashboards/creating-dash-2.png
+        image: /images/user-guide/dashboards/overview/create-dashboard-3-pe.png
+        title: 'In the opened dialog, necessary to enter a dashboard title, description is optional. Click "Add";'
+    3:
+        image: /images/user-guide/dashboards/overview/create-dashboard-4-pe.png
+        title: 'Your first dashboard has been created. As long as you have one dashboard. But as new dashboards are added, they will be added to the top of the table, since the table sorts dashboards using the time of the creation by default.'
+
+creating-dashboard-2:
+    0:
+        image: /images/user-guide/dashboards/overview/create-dashboard-5-pe.png
+        title: 'In the "Add Dashboard" dialog enter a dashboard title, then click on the "Next: Owner and groups" button;'
+    1:
+        image: /images/user-guide/dashboards/overview/create-dashboard-6-pe.png
+        title: 'Change owner and specify existing or create new dashboard group. Click "Add";'
+    2:
+        image: /images/user-guide/dashboards/overview/create-dashboard-7-pe.png
+        title: 'The dashboard has been created. It belongs to Customer A and is placed in the "Sensors" group.'
+
+creating-dashboard-3:
+    0:
+        image: /images/user-guide/dashboards/overview/create-dashboard-8-pe.png
+        title: 'By default, the list of dashboards displays all dashboards, including those of your customers. To display only your dashboards, toggle the switch labeled "Include customer entities".'
+
+export-dashboard:
+    0:
+        image: /images/user-guide/dashboards/overview/export-dashboard-1-pe.png
+        title: 'To export a dashboard, go to the "Dashboards" page. Opposite the name of the dashboard in the list, click on the “Export dashboard” button. The configuration file in JSON format with all settings on the control panel will be saved on your PC.'
+
+share-dashboard-group:
+    0:
+        image: /images/user-guide/dashboards/overview/share-dashboard-group-1-pe.png
+        title: 'Go to the "Dashboards" page -> "Groups" tab. Click the "Share" icon next to the dashboard group that you want to share;'
+    1:
+        image: /images/user-guide/dashboards/overview/share-dashboard-group-2-pe.png
+        title: 'Select the customer to which you want to share the dashboard group. Additionally, you can share the dashboard group with a specific user group or with all users of the customer. Specify permissions and click "Share".'
 
 make-public:
     0:
-        image: /images/user-guide/dashboards/creating-dash.png
+        image: /images/user-guide/dashboards/overview/make-public-dashboard-1-pe.png
+        title: 'Go to the "Dashboards" page -> "Groups" tab. Click the "Make public" icon next to the dashboard group that you want to make public;'
     1:
-        image: /images/user-guide/dashboards/make-public-1.png
+        image: /images/user-guide/dashboards/overview/make-public-dashboard-2-pe.png
+        title: 'In the confirmation dialog box, click "Yes";'
     2:
-        image: /images/user-guide/dashboards/make-public-2.png
+        image: /images/user-guide/dashboards/overview/make-public-dashboard-3-pe.png
+        title: 'To copy the public dashboard link and share it, open public dashboard group and click the "Public dashboard link" icon opposite the needed dashboard;'
     3:
-        image: /images/user-guide/dashboards/make-public-3.png
+        image: /images/user-guide/dashboards/overview/make-public-dashboard-4-pe.png
+        title: 'In the pop-up window, click "Copy public link" icon. Now you can share a dashboard with this link. For example, send its link by email. Or you can use the quick buttons to share the link on social networks;'
+
+make-private:
+    0:
+        image: /images/user-guide/dashboards/overview/make-public-dashboard-5-pe.png
+        title: 'Go to the "Dashboards" page -> "Groups" tab. Click the "Make private" icon next to the dashboard group that you want to make private;'
+    1:
+        image: /images/user-guide/dashboards/overview/make-public-dashboard-6-pe.png
+        title: 'In the confirmation dialog box, click "OK".'
+
+dashboard-details:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-details-1-pe.png
+        title: 'Go to the "Dashboards" page and click the "Dashboard details" icon next to the dashboard that you want to edit;'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-details-2-pe.png
+        title: 'In the "Dashboard details" window, click the "pencil" icon to enter edit mode;'
+    2:
+        image: /images/user-guide/dashboards/overview/dashboard-details-3-pe.png
+        title: 'Edit the fields you need. For example, edit the title of the dashboard, specify description. After making the edits, remember to save all changes;'
+    3:
+        image: /images/user-guide/dashboards/overview/dashboard-details-4-pe.png
+        title: 'You have updated the dashboard information.'
+
+delete-dashboard-1:
+    0:
+        image: /images/user-guide/dashboards/overview/delete-dashboard-1-pe.png
+        title: 'Go to the "Dashboards" page and click the "trash" icon can opposite the dashboard`s name you want to delete;'
+    1:
+        image: /images/user-guide/dashboards/overview/delete-dashboard-2-pe.png
+        title: 'Confirm deleting the dashboard in the dialog box.'
+
+delete-dashboard-2:
+    0:
+        image: /images/user-guide/dashboards/overview/delete-dashboard-3-pe.png
+        title: 'Click the "Dashboard details" icon next to the dashboard that you want to delete;'
+    1:
+        image: /images/user-guide/dashboards/overview/delete-dashboard-4-pe.png
+        title: 'In the "Dashboard details" window, click "Delete dashboard" button;'
+    2:
+        image: /images/user-guide/dashboards/overview/delete-dashboard-5-pe.png
+        title: 'Confirm deleting the dashboard in the dialog box.'
+
+delete-dashboard-3:
+    0:
+        image: /images/user-guide/dashboards/overview/delete-dashboard-6-pe.png
+        title: 'Mark one or multiple dashboards you want to delete. Click on the trash bin icon in the top right corner;'
+    1:
+        image: /images/user-guide/dashboards/overview/delete-dashboard-7-pe.png
+        title: 'Confirm deleting dashboards in the dialog box.'
+
+dashboard-toolbar:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-toolbar-view-mode.png
+        title: 'Dashboard toolbar in view mode.'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-toolbar-edit-mode.png
+        title: 'Dashboard toolbar in edit mode.'
+
+dashboard-toolbar-export:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-toolbar-export-1-pe.png
+        title: 'Go to the "Dashboards" page, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen.'
+
+edit-mode:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-settings-edit-mode-1-pe.png
+        title: 'To enter dashboard edit mode, open the dashboard and click the "Edit mode" button in the upper right corner of the screen;'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-settings-edit-mode-2-pe.png
+        title: 'Click "Save" button to save the dashboard or click "Cancel" button to rollback all unsaved changes.'
+
+settings:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-settings-1-pe.png
+        title: 'Open the dashboard and click the "Edit mode" button in the upper right corner of the screen;'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-settings-2-pe.png
+        title: 'Click the “gear” icon at the top of the window.'
+
+settings-state-controller:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-settings-3-pe.png
+        title: 'Open the dashboard and click the "Edit mode" button in the upper right corner of the screen;'
+
+title-settings:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-settings-title-color-1-pe.png
+        title: 'Check the box "Display dashboard title" and select colot of title;'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-settings-title-color-2-pe.png
+        title: 'The changed title appears on the top left of the Dashboard.'
+
+dashboard-logo-settings:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-logo-settings-2-pe.png
+        title: 'Display logo in dashboard fullscreen mode" and add dashboard logo image;'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-logo-settings-3-pe.png
+        title: 'Expand dashboard to fullscreen;'
+    2:
+        image: /images/user-guide/dashboards/overview/dashboard-logo-settings-4-pe.png
+        title: 'The added logo appears in the top left corner in the fullscreen mode of the dashboard.'
+
+toolbar-dashboard-1:
+    0:
+        image: /images/user-guide/dashboards/overview/toolbar-settings-1-pe.png
+        title: 'Hide "Display dashboards selection", "Display timewindow" and "Display export" icons on the dashboard page;'
+    1:
+        image: /images/user-guide/dashboards/overview/toolbar-settings-2-pe.png
+        title: 'The specified icons are hidden on the dashboard page.'
+
+toolbar-dashboard-2:
+    0:
+        image: /images/user-guide/dashboards/overview/toolbar-settings-3-pe.png
+        title: 'Display logo in dashboard fullscreen mode" and add dashboard logo image;'
+    1:
+        image: /images/user-guide/dashboards/overview/toolbar-settings-4-pe.png
+        title: 'Expand dashboard to fullscreen;'
+
+toolbar-dashboard-3:
+    0:
+        image: /images/user-guide/dashboards/overview/toolbar-settings-5-pe.png
+        title: 'Display logo in dashboard fullscreen mode" and add dashboard logo image;'
+    1:
+        image: /images/user-guide/dashboards/overview/toolbar-settings-6-pe.png
+        title: 'Display logo in dashboard fullscreen mode" and add dashboard logo image;'
+
+layout-1:
+    0:
+        image: /images/user-guide/dashboards/overview/manage-layouts-1-pe.png
+        title: 'Enter edit mode and click the small button three-rectangles "Manage layouts" in the upper left corner of the dashboard window;'
+    1:
+        image: /images/user-guide/dashboards/overview/manage-layouts-2-pe.png
+        title: 'It opens the small window for layouts’ control.'
+layout-2:
+    0:
+        image: /images/user-guide/dashboards/overview/manage-layouts-3-pe.png
+        title: 'The Layout settings window will open. The layouts’ settings are identical to the layout settings and the background settings of the dashboard settings.'
+
+layout-3:
+    0:
+        image: /images/user-guide/dashboards/overview/manage-layouts-4-pe.png
+        title: 'Toggle the "Divider";'
+
+layout-4:
+    0:
+        image: /images/user-guide/dashboards/overview/manage-layouts-5-pe.png
+        title: 'Set up both layouts in completely different ways. Set a different background for each window. And resize the window sizes in a certain percentage ratio to each other. Then save changes;'
+    1:
+        image: /images/user-guide/dashboards/overview/manage-layouts-6-pe.png
+
+states-1:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-states-1-pe.png
+        title: 'Toggle the "Divider";'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-states-2-pe.png
+        title: 'Toggle the "Divider";'
+
+states-2:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-states-3-pe.png
+        title: 'Toggle the "Divider";'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-states-4-pe.png
+        title: 'Toggle the "Divider";'
+    2:
+        image: /images/user-guide/dashboards/overview/dashboard-states-5-pe.png
+        title: 'Toggle the "Divider";'
+    3:
+        image: /images/user-guide/dashboards/overview/dashboard-states-6-pe.png
+        title: 'Toggle the "Divider";'
+
+states-3:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-states-7-pe.png
+        title: 'Toggle the "Divider";'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-states-8-pe.png
+        title: 'Toggle the "Divider";'
+    2:
+        image: /images/user-guide/dashboards/overview/dashboard-states-9-pe.png
+        title: 'Toggle the "Divider";'
+    3:
+        image: /images/user-guide/dashboards/overview/dashboard-states-10-pe.png
+        title: 'Toggle the "Divider";'
+    4:
+        image: /images/user-guide/dashboards/overview/dashboard-states-11-pe.png
+        title: 'Toggle the "Divider";'
+    5:
+        image: /images/user-guide/dashboards/overview/dashboard-states-12-pe.png
+        title: 'Toggle the "Divider";'
+
+states-4:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-states-13-pe.png
+        title: 'Toggle the "Divider";'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-states-14-pe.png
+        title: 'Toggle the "Divider";'
+    2:
+        image: /images/user-guide/dashboards/overview/dashboard-states-15-pe.png
+        title: 'Toggle the "Divider";'
+    3:
+        image: /images/user-guide/dashboards/overview/dashboard-states-16-pe.png
+        title: 'Toggle the "Divider";'
+    4:
+        image: /images/user-guide/dashboards/overview/dashboard-states-17-pe.png
+        title: 'Toggle the "Divider";'
+    5:
+        image: /images/user-guide/dashboards/overview/dashboard-states-18-pe.png
+        title: 'Toggle the "Divider";'
+
+
+
+
+entity-name:
+    0:
+        image: /images/user-guide/dashboards/settings/entity-name.png
+    1:
+        image: /images/user-guide/dashboards/settings/entity-name-1.png
+    2:
+        image: /images/user-guide/dashboards/settings/entity-name-2.png
+    3:
+        image: /images/user-guide/dashboards/settings/entity-name-3.png
+    4:
+        image: /images/user-guide/dashboards/settings/entity-name-4.png
+    5:
+        image: /images/user-guide/dashboards/settings/entity-name-5.png
+    6:
+        image: /images/user-guide/dashboards/settings/entity-name-6.png
 
 dash-title:
     0:
-        image: /images/user-guide/dashboards/dash-title-pe.png 
+        image: /images/user-guide/dashboards/dash-title-pe.png
 
 editMode:
     0:
@@ -260,11 +531,6 @@ dashboards-settings-enter:
     0: 
         image: /images/user-guide/dashboards/settings/dashboard-settings-pe.png
 
-toolbar-dashboard:
-    0:
-        image: /images/user-guide/dashboards/settings/toolbar-off-pe.png
-    1:
-        image: /images/user-guide/dashboards/settings/no-toolbar-dashboard-pe.png
 
 title-on-dashboard:
     0:
@@ -339,59 +605,6 @@ pro-export:
         image: /images/user-guide/dashboards/settings/pro-format.png
     1:
         image: /images/user-guide/dashboards/settings/pdf-export.png
-
-layouts: 
-    0:
-        image: /images/user-guide/dashboards/settings/manage-layout-pe.png
-
-right-layout:
-    0:
-        image: /images/user-guide/dashboards/settings/right-pe.png
-
-layout-difference:
-    0:
-        image: /images/user-guide/dashboards/settings/layouts-difference-pe.png
-    1:
-        image: /images/user-guide/dashboards/settings/example-layouts-pe.png
-states:
-    0:
-        image: /images/user-guide/dashboards/settings/states-pe.png
-    1:
-        image: /images/user-guide/dashboards/settings/add-state-pe.png
-    2:
-        image: /images/user-guide/dashboards/settings/save-the-state-pe.png
-    3:
-        image: /images/user-guide/dashboards/settings/2states-exist-pe.png
-
-entity-name:
-    0:
-        image: /images/user-guide/dashboards/settings/entity-name.png
-    1:
-        image: /images/user-guide/dashboards/settings/entity-name-1.png
-    2:
-        image: /images/user-guide/dashboards/settings/entity-name-2.png
-    3:
-        image: /images/user-guide/dashboards/settings/entity-name-3.png
-    4:
-        image: /images/user-guide/dashboards/settings/entity-name-4.png
-    5:
-        image: /images/user-guide/dashboards/settings/entity-name-5.png
-    6:
-        image: /images/user-guide/dashboards/settings/entity-name-6.png
-
-action-state:
-    0:
-        image: /images/user-guide/dashboards/settings/enter-edit-widget-pe.png
-    1:
-        image: /images/user-guide/dashboards/settings/action-navigation-pe.png
-    2:
-        image: /images/user-guide/dashboards/settings/adding-action-pe.png
-    3:
-        image: /images/user-guide/dashboards/settings/save-action-pe.png
-    4:
-        image: /images/user-guide/dashboards/settings/click-on-row-pe.png
-    5:
-        image: /images/user-guide/dashboards/settings/state1-transfer-pe.png
 
 entity-count:
     0:
