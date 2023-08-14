@@ -58,7 +58,7 @@ azure-portal:
         title: 'Sign in to the Azure portal and select Azure Active Directory;'
     1:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-2-pe.png
-        title: 'Under "Manage", select "App registrations" then click "New registration";'
+        title: 'Under "Manage" select "App registrations" then click "New registration";'
     2:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-3-pe.png
         title: 'Input a name for your application and enter the previously copied "Redirect URI template". Click "Register";'
@@ -80,7 +80,7 @@ azure-portal-2:
 add-api-permissions:
     0:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-api-permissions-1-pe.png
-        title: 'In the Azure portal, go to “API permissions” page and click “Add a permission” button;'
+        title: 'In the Azure portal go to “API permissions” page and click “Add a permission” button;'
     1:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-api-permissions-2-pe.png
         title: 'Select an API - "Microsoft Graph";'
