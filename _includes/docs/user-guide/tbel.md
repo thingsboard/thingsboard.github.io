@@ -484,33 +484,6 @@ Alias for the [bytesToString](#bytestostring)
 
 Decodes a list of bytes to the JSON document.
 
-1. Input <code>String value</code> (format jsonString) 
-
-
-**Syntax:**
-
-*String decodeToJson(String inputStr)*
-
-**Parameters:**
-
-<ul>
-  <li><b>inputStr:</b> <code>String</code> - String value in Json string format.</li>
-</ul>
-
-**Return value:**
-
-A JSON object or primitive.
-
-**Examples:**
-
-```java
-var input = "{\"hello\": \"world\"}"; // String value in Json string format
-return decodeToJson(input); // Returns '{"hello": "world"}'
-```
-{: .copy-code}
-
-2. Input <code>List of Bytes</code>
-
 **Syntax:**
 
 *String decodeToJson(List<Byte> bytesList)*
