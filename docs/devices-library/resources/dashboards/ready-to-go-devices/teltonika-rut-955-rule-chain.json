@@ -1,0 +1,125 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": ""
+    },
+    "name": "Teltonika routers",
+    "type": "CORE",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null,
+    "externalId": null
+  },
+  "metadata": {
+    "firstNodeIndex": 0,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 353,
+          "layoutY": 151
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode",
+        "name": "Message type check",
+        "debugMode": false,
+        "singletonMode": false,
+        "configuration": {
+          "messageTypes": [
+            "POST_TELEMETRY_REQUEST"
+          ]
+        },
+        "externalId": null
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 353,
+          "layoutY": 283
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "Convert incoming data to required format",
+        "debugMode": true,
+        "singletonMode": false,
+        "configuration": {
+          "scriptLang": "TBEL",
+          "jsScript": "return {msg: msg, metadata: metadata, msgType: msgType};",
+          "tbelScript": "var telemetry = {};\nvar attributes = {};\n\nvar ts = (long) msg.ts * 1000;\nmetadata.ts = ts;\n\nif (msg.reg == 305209) {\n    telemetry.temperature = msg.data / 10;\n} else if (msg.reg == 406001) {\n    attributes.rs485_1_slave_id = msg.data;\n} else if (msg.reg == 406002) {\n    attributes.rs485_1_slave_baudrate = msg.data;\n} else if (msg.reg == 406003) {\n    attributes.rs485_1_slave_stopbits = msg.data;\n} else if (msg.reg == 406004) {\n    attributes.rs485_1_slave_parity = msg.data;\n} else if (msg.reg == 406005) {\n    attributes.rs485_2_slave_id = msg.data;\n} else if (msg.reg == 406006) {\n    attributes.rs485_2_slave_baudrate = msg.data;\n} else if (msg.reg == 406007) {\n    attributes.rs485_2_slave_stopbits = msg.data;\n} else if (msg.reg == 406008) {\n    attributes.rs485_2_slave_parity = msg.data;\n} else if (msg.reg == 406009) {\n    attributes.rs485_3_slave_id = msg.data;\n} else if (msg.reg == 406010) {\n    attributes.rs485_3_slave_baudrate = msg.data;\n} else if (msg.reg == 406011) {\n    attributes.rs485_3_slave_stopbits = msg.data;\n} else if (msg.reg == 406012) {\n    attributes.rs485_3_slave_parity = msg.data;\n} else if (msg.reg == 406033) {\n    attributes.ip_1 = msg.data;\n} else if (msg.reg == 406034) {\n    attributes.ip_2 = msg.data;\n} else if (msg.reg == 406035) {\n    attributes.ip_3 = msg.data;\n} else if (msg.reg == 406036) {\n    attributes.ip_4 = msg.data;\n} else if (msg.reg == 406037) {\n    attributes.subnetmask_1 = msg.data;\n} else if (msg.reg == 406038) {\n    attributes.subnetmask_2 = msg.data;\n} else if (msg.reg == 406039) {\n    attributes.subnetmask_3 = msg.data;\n} else if (msg.reg == 406040) {\n    attributes.subnetmask_4 = msg.data;\n} else if (msg.reg == 406041) {\n    attributes.gateway_1 = msg.data;\n} else if (msg.reg == 406042) {\n    attributes.gateway_2 = msg.data;\n} else if (msg.reg == 406043) {\n    attributes.gateway_3 = msg.data;\n} else if (msg.reg == 406044) {\n    attributes.gateway_4 = msg.data;\n} else if (msg.reg == 406045) {\n    attributes.mac_1 = msg.data;\n} else if (msg.reg == 406046) {\n    attributes.mac_2 = msg.data;\n} else if (msg.reg == 406047) {\n    attributes.mac_3 = msg.data;\n} else if (msg.reg == 406048) {\n    attributes.mac_4 = msg.data;\n} else if (msg.reg == 406049) {\n    attributes.mac_5 = msg.data;\n} else if (msg.reg == 406050) {\n    attributes.mac_6 = msg.data;\n}\n\nreturn [{msg: telemetry, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"}, {msg: attributes, metadata: metadata, msgType: \"POST_ATTRIBUTES_REQUEST\"}];"
+        },
+        "externalId": null
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 659,
+          "layoutY": 280
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode",
+        "name": "Switch message type",
+        "debugMode": false,
+        "singletonMode": false,
+        "configuration": {
+          "version": 0
+        },
+        "externalId": null
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1004,
+          "layoutY": 353
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "Save timeseries",
+        "debugMode": false,
+        "singletonMode": false,
+        "configuration": {
+          "defaultTTL": 0,
+          "skipLatestPersistence": false,
+          "useServerTs": false
+        },
+        "externalId": null
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1004,
+          "layoutY": 231
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode",
+        "name": "Save attributes",
+        "debugMode": false,
+        "singletonMode": false,
+        "configuration": {
+          "scope": "CLIENT_SCOPE",
+          "notifyDevice": false,
+          "sendAttributesUpdatedNotification": false
+        },
+        "externalId": null
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "type": "True"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 2,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 3,
+        "type": "Post telemetry"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 4,
+        "type": "Post attributes"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

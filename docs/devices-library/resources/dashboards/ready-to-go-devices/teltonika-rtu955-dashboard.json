@@ -1,5 +1,5 @@
 {
-  "title": "Teltonika RTU955",
+  "title": "Teltonika RUT955",
   "image": null,
   "mobileHide": false,
   "mobileOrder": null,
@@ -671,7 +671,7 @@
               "filterId": null,
               "dataKeys": [
                 {
-                  "name": "temp",
+                  "name": "temperature",
                   "type": "timeseries",
                   "label": "Temperature",
                   "color": "#2196f3",
@@ -721,9 +721,9 @@
             "selectedTab": 0,
             "realtime": {
               "realtimeType": 0,
-              "timewindowMs": 300000,
+              "timewindowMs": 600000,
               "quickInterval": "CURRENT_DAY",
-              "interval": 1000
+              "interval": 5000
             },
             "aggregation": {
               "type": "AVG",
@@ -804,7 +804,7 @@
             "showTotal": false,
             "showLatest": false
           },
-          "displayTimewindow": true
+          "displayTimewindow": false
         },
         "row": 0,
         "col": 0,
@@ -813,7 +813,7 @@
     },
     "states": {
       "default": {
-        "name": "Teltonika RTU955",
+        "name": "Teltonika RUT955",
         "root": true,
         "layouts": {
           "main": {
@@ -863,14 +863,12 @@
     "entityAliases": {
       "b9c7a1c6-e887-520e-272c-c1482ca88db8": {
         "id": "b9c7a1c6-e887-520e-272c-c1482ca88db8",
-        "alias": "Teltonika RTU955",
+        "alias": "Teltonika RUT955",
         "filter": {
-          "type": "singleEntity",
+          "type": "entityName",
           "resolveMultiple": false,
-          "singleEntity": {
-            "entityType": "DEVICE",
-            "id": "ba7bb5e0-2474-11ee-81f8-19e7983a2f6e"
-          }
+          "entityType": "DEVICE",
+          "entityNameFilter": "Teltonika RUT955"
         }
       }
     },
@@ -916,5 +914,5 @@
     }
   },
   "externalId": null,
-  "name": "Teltonika RTU955"
+  "name": "Teltonika RUT955"
 }

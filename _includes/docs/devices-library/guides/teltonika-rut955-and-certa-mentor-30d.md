@@ -26,9 +26,81 @@ To continue with this guide we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}  
 
-## Create device on ThingsBoard
+## Import Rule chain
 
-{% include /docs/devices-library/blocks/basic/thingsboard-create-device-block.md %}
+To import rule chain from а JSON file, you should:
+
+{% assign importRuleChain = '
+    ===
+        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/import-rule-chain-1-pe.png,
+        title: Navigate to the "Rule chains" page and click on the "+" button in the upper right corner of the screen and then choose "Import rule chain" option. The toolbar import popup window will appear. Upload a JSON file and click on the "Import" button;,
+    ===
+        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/import-rule-chain-2-pe.png,
+        title: The imported rule chain will open. Click on the "Apply changes" button to save the rule chain. Then, go back to the main "Rule chains" page;,
+    ===
+        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/import-rule-chain-3-pe.png,
+        title: Rule chain is imported.,
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="false" imageCollection=importRuleChain %}
+
+Below you can find the dashboard JSON file:
+
+[Teltonika Rule Chain](/docs/devices-library/resources/dashboards/ready-to-go-devices/teltonika-rut-955-rule-chain.json){:target="_blank" download="rule-chain.json"}
+
+## Create device profile
+
+Now, we are ready to create device profile. For this, follow steps below:
+
+1. Go to **Profiles** > **Device profiles** and click on **"Add"** button > **"Create new device profile"**;
+2. Input **Name** field with **"Teltonika routers"** value;
+3. Select **"Teltonika routers"** imported rule chain from the step above;
+4. Click on **"Transport configuration"** tab;
+5. Select **MQTT** transport type;
+6. Change **Telemetry topic filter** value from **"v1/devices/me/telemetry"** to **"RUT/"**;
+7. Click on **"Add"** button.
+
+{% assign createDeviceProfile = '
+    ===
+        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-1-pe.png,
+    ===
+        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-2-pe.png,
+    ===
+        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-3-pe.png,
+    ===
+        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-4-pe.png,
+    '
+%}
+
+{% include images-gallery.liquid showListImageTitles="false" imageCollection=createDeviceProfile %}
+
+## Create device
+
+For simplicity, we will provide the device manually using the UI:
+
+1. Open the **Devices** page;
+2. By default, you navigate to the device group **“All”**. Click on the **“+”** icon in the top right corner of the table and then select **“Add new device”**;
+3. Input device name. For example, **“Teltonika RUT955”**;
+4. Select created device profile from the step above, in our case **"Teltonika routers"**;
+5. Click on **"Credentials"** tab;
+6. Check **"Add credentials"** and select **"MQTT Basic"** credentials type;
+7. Click on **"Generate"** button on each field;
+8. Click **"Add"** button.
+
+{% assign provisionDevice = '
+    ===
+        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-1-pe.png,
+    ===
+        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-2-pe.png,
+    ===
+        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-3-pe.png,
+    ===
+        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-4-pe.png,
+    '
+%}
+
+{% include images-gallery.liquid showListImageTitles="false" imageCollection=provisionDevice %}
 
 ## Gateway connection
 
@@ -48,9 +120,6 @@ Once you are connected to the {{deviceName}}, you can change its IP address if y
 - Click **"Edit"** button on **"lan"** interface;
 - Enter a new IP address that is not already being used by another device on your network.
 
-The next step, you have to up and run external MQTT Broker (in this guide we will use 
-[TBMQ Broker](https://thingsboard.io/docs/mqtt-broker/)).
-
 Now we are ready to configure the MQTT connection and topics for both data reception and transmission, 
 as well as establishing the Modbus connection.
 
@@ -58,6 +127,7 @@ Let first configure Modbus Connection. As mention above we use Certa Mentor 30D 
 with a display that can solve a wide range of automation tasks. The controller is programmed using Function Block 
 Diagrams (FBD) in the ViCS development environment. RS-485 ports can be isolated or non-isolated and are supplied 
 separately as RS485i or RS485ni option cards. 
+
 
 ![](/images/devices-library/ready-to-go-devices/Mentor30D.png)
 
@@ -68,6 +138,8 @@ Follow the next steps:
 4. Click on **“Save & Apply”** button.
 
 In our case we have the following settings:
+
+
 ![](/images/devices-library/ready-to-go-devices/teltonika-rut955/modbus-serial-master-config.png)
 
 Also, we have to add Modbus slave device configuration. To do this, follow the steps below:
@@ -100,149 +172,15 @@ The next thing we have to do is configure Data Sender. To do this, follow the st
 4. Click on **“Save & Apply”** button.
 
 In our case we have the following settings:
+
+
+
 ![](/images/devices-library/ready-to-go-devices/teltonika-rut955/sender-config.png)
 
 If you did everything right, you have to receive the following MQTT message:
 ```json
 [{"data": 242, "reg": 305209},{"data": 1, "reg": 406001},{"data": 5, "reg": 406002},{"data": 2, "reg": 406003},{"data": 0, "reg": 406004},{"data": 1, "reg": 406005},{"data": 5, "reg": 406006},{"data": 2, "reg": 406007},{"data": 0, "reg": 406008},{"data": 1, "reg": 406009},{"data": 5, "reg": 406010},{"data": 2, "reg": 406011},{"data": 0, "reg": 406012},{"data": 192, "reg": 406033},{"data": 168, "reg": 406034},{"data": 1, "reg": 406035},{"data": 5, "reg": 406036},{"data": 255, "reg": 406037},{"data": 255, "reg": 406038},{"data": 255, "reg": 406039},{"data": 0, "reg": 406040},{"data": 0, "reg": 406041},{"data": 0, "reg": 406042},{"data": 0, "reg": 406043},{"data": 0, "reg": 406044},{"data": 2, "reg": 406045},{"data": 38, "reg": 406046},{"data": 214, "reg": 406047},{"data": 86, "reg": 406048},{"data": 229, "reg": 406049},{"data": 161, "reg": 406050}]
 ```
-
-## Create uplink converter
-
-You can use the following code for your uplink converter in "Create integration" step:
-
-{% capture uplinkConverterCode %}
-// Decode an uplink message from a buffer
-// payload - array of bytes
-// metadata - key/value object
-
-/** Decoder **/
-
-// decode payload to JSON
-var data = decodeToJson(payload);
-
-var deviceName = 'Teltonika RTU955';
-var deviceType = 'default';
-
-var telemetry = {};
-var attributes = {};
-
-for (item: data) {
-    if (item.reg == 305209) {
-        telemetry.temp = item.data / 10;
-    } else if (item.reg == 406001) {
-        attributes.rs485_1_slave_id = item.data;
-    } else if (item.reg == 406002) {
-        attributes.rs485_1_slave_baudrate = item.data;
-    } else if (item.reg == 406003) {
-        attributes.rs485_1_slave_stopbits = item.data;
-    } else if (item.reg == 406004) {
-        attributes.rs485_1_slave_parity = item.data;
-    } else if (item.reg == 406005) {
-        attributes.rs485_2_slave_id = item.data;
-    } else if (item.reg == 406006) {
-        attributes.rs485_2_slave_baudrate = item.data;
-    } else if (item.reg == 406007) {
-        attributes.rs485_2_slave_stopbits = item.data;
-    } else if (item.reg == 406008) {
-        attributes.rs485_2_slave_parity = item.data;
-    } else if (item.reg == 406009) {
-        attributes.rs485_3_slave_id = item.data;
-    } else if (item.reg == 406010) {
-        attributes.rs485_3_slave_baudrate = item.data;
-    } else if (item.reg == 406011) {
-        attributes.rs485_3_slave_stopbits = item.data;
-    } else if (item.reg == 406012) {
-        attributes.rs485_3_slave_parity = item.data;
-    } else if (item.reg == 406033) {
-        attributes.ip_1 = item.data;
-    } else if (item.reg == 406034) {
-        attributes.ip_2 = item.data;
-    } else if (item.reg == 406035) {
-        attributes.ip_3 = item.data;
-    } else if (item.reg == 406036) {
-        attributes.ip_4 = item.data;
-    } else if (item.reg == 406037) {
-        attributes.subnetmask_1 = item.data;
-    } else if (item.reg == 406038) {
-        attributes.subnetmask_2 = item.data;
-    } else if (item.reg == 406039) {
-        attributes.subnetmask_3 = item.data;
-    } else if (item.reg == 406040) {
-        attributes.subnetmask_4 = item.data;
-    } else if (item.reg == 406041) {
-        attributes.gateway_1 = item.data;
-    } else if (item.reg == 406042) {
-        attributes.gateway_2 = item.data;
-    } else if (item.reg == 406043) {
-        attributes.gateway_3 = item.data;
-    } else if (item.reg == 406044) {
-        attributes.gateway_4 = item.data;
-    } else if (item.reg == 406045) {
-        attributes.mac_1 = item.data;
-    } else if (item.reg == 406046) {
-        attributes.mac_2 = item.data;
-    } else if (item.reg == 406047) {
-        attributes.mac_3 = item.data;
-    } else if (item.reg == 406048) {
-        attributes.mac_4 = item.data;
-    } else if (item.reg == 406049) {
-        attributes.mac_5 = item.data;
-    } else if (item.reg == 406050) {
-        attributes.mac_6 = item.data;
-    }
-}
-
-// Result object with device/asset attributes/telemetry data
-var result = {
-   "deviceName": deviceName,
-   "deviceType": deviceType,
-   "telemetry": telemetry,
-   "attributes": attributes,
-};
-
-/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/
-
-return result;
-{% endcapture %}
-
-{% include code-toggle.liquid code=uplinkConverterCode params="javascript|.copy-code.expandable-20" %}
-
-## Create integration
-
-Next we will create an MQTT integration inside the ThingsBoard.
-
-{% assign createIntegration = '
-    ===
-        image: /images/user-guide/integrations/mqtt/mqtt-integration-add-integration-1-pe.png,
-        title: Go to **Integrations**, press **plus** button and choose **MQTT** as a type, put some name.
-    ===
-        image: /images/user-guide/integrations/mqtt/mqtt-integration-add-integration-2-pe.png,
-        title: Check **Create new uplink data converter** and replace a code or create the existing one.
-	===
-        /images/user-guide/integrations/mqtt/mqtt-integration-add-integration-4-pe.png,
-        title: Fill the field with your parameters.
-	===
-        /images/user-guide/integrations/mqtt/mqtt-integration-add-integration-6-pe.png,
-        title: [Optional] Click on Check connection button to check connection to your Service Bus topic.
-'
-%}
-
-Open **Integrations** section and add new Integration with the following parameters:  
-
-- **Name**: *Integration name*
-- **Type**: *Integration type*
-- **Uplink** data converter: *Integration Uplink Converter*
-- **Connection**: *Settings for connection to external MQTT Broker*
-
-
-To add integration click on '**+**' button and follow the next steps:  
-
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=createIntegration %} 
-
-Press **Add** button and integration will be added. 
-
-{% include /docs/devices-library/blocks/basic/thingsboard-check-integration-connection.md %}
 
 ## Check data on ThingsBoard
 
