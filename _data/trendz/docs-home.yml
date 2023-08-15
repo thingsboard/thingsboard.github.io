@@ -3,7 +3,19 @@ abstract: "Analytics Platform that converts the IoT dataset into insights and si
 toc:
 - title: Trendz Analytics
   path: /docs/trendz/
-- title: Data Visualization
+- title: What is Trendz Analytics?
+  path: /docs/trendz/what-is-trendz/
+- title: Key concepts
+  section:
+    - title: Business entities
+      path: /docs/trendz/business-entities/
+    - title: Group by time
+      path: /docs/trendz/group-by-time/
+    - title: Group by category
+      path: /docs/trendz/group-by-category/
+    - title: Filtering
+      path: /docs/trendz/data-filtering/
+- title: Data visualization
   section:
     - title: Overview
       path: /docs/trendz/visualizations-overview/
@@ -25,31 +37,59 @@ toc:
       path: /docs/trendz/visualizations-card-with-line/
     - title: Cards
       path: /docs/trendz/visualizations-card/
-    - title: Anomaly view
-      path: /docs/trendz/anomaly/anomaly-view/
-    - title: View Settings
+    - title: View settings
       path: /docs/trendz/view-settings/
+    - title: View collections
+      path: /docs/trendz/view-collections/
 - title: Anomaly detection
-  path: /docs/trendz/anomaly/anomaly-detection-overview/
-- title: Anomaly autodiscovery job
-  path: /docs/trendz/anomaly/anomaly-autodiscovery/
-- title: Grouping and Aggregation
-  path: /docs/trendz/data-grouping-aggregation/
-- title: Filtering
-  path: /docs/trendz/data-filtering/
+  section:
+    - title: Overview
+      path: /docs/trendz/anomaly/anomaly-detection-overview/
+    - title: Model properties
+      path: /docs/trendz/anomaly/model-properties/
+    - title: Anomaly autodiscovery job
+      path: /docs/trendz/anomaly/anomaly-autodiscovery/
+    - title: Visualize anomalies
+      path: /docs/trendz/anomaly/anomaly-view/
+    - title: Report anomaly to ThingsBoard
+      path: /docs/trendz/anomaly/anomaly-score-save-to-thingsboard/
 - title: Calculated Fields
-  path: /docs/trendz/calculated-fields/
+  section:
+    - title: Overview
+      path: /docs/trendz/calculated-fields/
+    - title: Batch calculations
+      path: /docs/trendz/batch-calculated-fields/
+    - title: Test functions
+      path: /docs/trendz/test-calculated-fields/
+    - title: Save metric to ThingsBoard
+      path: /docs/trendz/save-calculated-to-thingsboard/
+- title: Prediction
+  section:
+    - title: Overview
+      path: /docs/trendz/prediction/
+    - title: Predict remaining time
+      path: /docs/trendz/predict-remaining-time/
+    - title: Save predictions into ThingsBoard
+      path: /docs/trendz/prediction-save-to-tb/
+- title: Share views
+  section:
+    - title: Trendz widget bundle
+      path: /docs/trendz/trendz-bundle/
+    - title: Add on dashboard
+      path: /docs/trendz/embed-visuals/
+    - title: Filter by dashboard alias
+      path: /docs/trendz/widget-filter-by-alias/
+    - title: Widget actions
+      path: /docs/trendz/widget-actions/
+- title: Sync to ThingsBoard
+  path: /docs/trendz/save-telemetry-to-thingsboard/
 - title: States
   path: /docs/trendz/states/
-- title: Prediction
-  path: /docs/trendz/prediction/
-- title: Share and embed Visualizations
-  path: /docs/trendz/embed-visuals/
-- title: Save telemetry to ThingsBoard
-  path: /docs/trendz/save-telemetry-to-thingsboard/
 - title: Caching
   path: /docs/trendz/cache-settings/
+- title: Processing jobs
+  path: /docs/trendz/background-jobs/
 - title: Trendz REST API
   path: /docs/trendz/rest-api/
-- title: Trendz Release Notes
+- title: Trendz release notes
   path: /docs/trendz/releases/

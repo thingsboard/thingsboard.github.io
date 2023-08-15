@@ -1,33 +1,36 @@
 ---
 layout: docwithnav-paas
-title: White-labeling
+title: White Labeling
 description:
+
+white-labeling-default:
+    0:
+        image: /images/user-guide/white-labeling/white-labeling-default.png
+
+white-labeling-custom:
+    0:
+        image: /images/user-guide/white-labeling/white-labeling-custom.png
+
+advanced-css-1:
+    0:
+        image: /images/user-guide/white-labeling/white-labeling-advanced-css-1.png
+        title: 'Click on the "Advanced CSS" button;'
+    1:
+        image: /images/user-guide/white-labeling/white-labeling-advanced-css-2.png
+        title: 'Paste the CSS code with the style for the user interface into the "Advanced CSS" pop-up window and click "Save". Then save all changes;'
+    2:
+        image: /images/user-guide/white-labeling/white-labeling-advanced-css-3.png
+        title: 'As you can see icons color changed to purple.'
+
+advanced-css-2:
+    0:
+        image: /images/user-guide/white-labeling/white-labeling-advanced-css-4.png
+        title: 'Paste the CSS-code into the "Advanced CSS" window. Do not delete the previously added CSS code to keep the previous color scheme. Save all changes;'
+    1:
+        image: /images/user-guide/white-labeling/white-labeling-advanced-css-5.png
+        title: 'Added a gradient to the left menu color scheme.'
+
 ---
 
 {% assign docsPrefix = "paas/" %}
-
-ThingsBoard web interface allows you to configure your company or product logo and color scheme in 2 minutes with zero coding efforts and no service restart required.
-The following configuration options are available:
-
-- Configure color scheme, icon and favicon on System Administrator level;
-- Tenant and Customer Administrator UI inherits configuration changes by default;
-- Tenant and Customer Administrators are able to set up their own white-labeling configuration;
-- System and Tenant Administrator are able to set up custom email templates to interact with the users;
-- Allow Tenant administrator to enable/disable white-labeling for each customer;
-- Allow Tenant administrator to configure custom translation of system components and end-user dashboard elements.
-
-[Contact us](/docs/contact-us/) to suggest missing feature for your use case.
-
-See video tutorial below for step-by-step instruction how to use this feature.
-
-<br/>
-<div id="video">  
-    <div id="video_wrapper">
-        <iframe src="https://www.youtube.com/embed/VSNZWl1NjWU" frameborder="0" allowfullscreen></iframe>
-    </div>
-</div> 
-
-## Next steps
-
-{% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}
-
+{% include docs/pe/user-guide/white-labeling.md %}

@@ -2,17 +2,19 @@
 * TOC
 {:toc}
 
-### Tenants overview
+### Introduction
 
 ThingsBoard supports [Multitenancy](https://en.wikipedia.org/wiki/Multitenancy) out-of-the-box.
-You can treat ThingsBoard Tenant as a separate business-entity: individual or organization who owns or produces devices.
 
-The **System administrator** is able to create one or more tenant entities.
-Tenant may have multiple tenant administrator users and enormous number of customers, devices and assets.
+You can treat Tenant as a separate business-entity: individual or organization who owns or produces devices and assets.
 
-### Сreate a new Tenant
+Tenant may have multiple tenant administrator users, enormous number of [customers](/docs/{{docsPrefix}}user-guide/ui/customers), and an unlimited number of [users](/docs/{{docsPrefix}}user-guide/ui/users), assets, and devices.
 
-To add a new **Tenant**, please follow the instructions below:
+### Сreate new tenant
+
+The **System administrator** is able to create tenant entities.
+
+To add a new tenant, please follow the instructions below:
 
 {% include images-gallery.html imageCollection="create-tenants-ce" showListImageTitles="true" %}
 
@@ -23,9 +25,9 @@ On the Tenant details page, you as the System administrator can view the attribu
 
 {% include images-gallery.html imageCollection="tenant-details-ce" %}
 
-### Сreate Tenant Administrator
+### Сreate tenant administrator
 
-The **System administrator** is also able to create multiple users with **Tenant administrator** role in each tenant.
+The **System administrator** is also able to create multiple **users with Tenant administrator role** in each tenant.
 
 To add the User follow the instructions below:
 
@@ -45,9 +47,7 @@ In a tenant details window, the System administrator can use the following actio
 
 {% include images-gallery.html imageCollection="user-details-ce" %}
 
-Learn more about user creating process [here](/docs/{{docsPrefix}}user-guide/ui/users).
-
-### Edit Tenant or User
+### Edit tenant or user
 
 In the Tenant details you can edit all fields.
 
@@ -61,7 +61,7 @@ The steps are similar to how we edit the tenant:
 
 {% include images-gallery.html imageCollection="user-edit-ce" showListImageTitles="true" %}
 
-### Delete Tenant or User
+### Delete tenant or user
 
 You can delete the **Tenant** at once with all its users. To do this, click on the "trash" icon and then also confirm the deletion by clicking on "Yes".
 
@@ -79,7 +79,7 @@ In addition, there is an option to delete the Tenant using the action tab in Ten
 
 {% include images-gallery.html imageCollection="user-delete-2-ce" %}
 
-### Login as a Tenant Administrator
+### Login as tenant administrator
 
 If you need to log in as a tenant, just open the tenant group and click the icon opposite to the user account to log in as this tenant.
 
