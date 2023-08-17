@@ -89,6 +89,8 @@ toc:
   path: /docs/trendz/cache-settings/
 - title: Processing jobs
   path: /docs/trendz/background-jobs/
+- title: White labeling
+  path: /docs/trendz/white-labeling/
 - title: Trendz REST API
   path: /docs/trendz/rest-api/
 - title: Trendz release notes
