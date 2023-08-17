@@ -81,6 +81,8 @@ toc:
       path: /docs/trendz/widget-filter-by-alias/
     - title: Widget actions
       path: /docs/trendz/widget-actions/
+    - title: Widget autorefresh
+      path: /docs/trendz/widget-autorefresh/
 - title: Sync to ThingsBoard
   path: /docs/trendz/save-telemetry-to-thingsboard/
 - title: States
