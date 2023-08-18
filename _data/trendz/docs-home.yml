@@ -67,6 +67,8 @@ toc:
   section:
     - title: Overview
       path: /docs/trendz/prediction/
+    - title: Custom Python models
+      path: /docs/trendz/predict-with-python-models/
     - title: Predict remaining time
       path: /docs/trendz/predict-remaining-time/
     - title: Save predictions into ThingsBoard
