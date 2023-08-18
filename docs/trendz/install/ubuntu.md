@@ -28,14 +28,14 @@ In small and medium installations Trendz can be installed **on the same** server
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/trendz-1.10.1.deb
+wget https://dist.thingsboard.io/trendz-1.10.2.deb
 ```
 {: .copy-code}
 
 Install Trendz Analytics as a service
 
 ```bash
-sudo dpkg -i trendz-1.10.1.deb
+sudo dpkg -i trendz-1.10.2.deb
 ```
 {: .copy-code}
 
@@ -149,7 +149,34 @@ For first authentication you need to use **Tenant Administrator** credentials fr
 Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
 to validate credentials.
 
-### Step 8. HTTPS configuration
+### Step 8. Install Trendz Python executor
+For writing custom Python models and transformation script you need to install Python libraries on the server where Trendz is installed. 
+Alternative option is to run executor as a docker container, you can find how to do that in [install instructions for Docker](/docs/trendz/install/docker/#standalone-python-executor-service).
+But in this section we will write how to install Python libraries directly on the server with Trendz.
+
+* Install Python3
+```bash
+sudo apt update
+sudo apt install python3
+sudo apt install python3-pip
+```
+{: .copy-code}
+
+* Install required python packages
+```bash
+echo "flask == 2.3.2" > requirements.txt
+echo "numpy == 1.24.1" >> requirements.txt
+echo "statsmodels == 0.13.5" >> requirements.txt
+echo "pandas == 1.5.3" >> requirements.txt
+echo "scikit-learn == 1.2.2" >> requirements.txt
+echo "prophet == 1.1.3" >> requirements.txt
+echo "seaborn == 0.12.2" >> requirements.txt
+echo "pmdarima == 2.0.3" >> requirements.txt
+pip3 install --no-cache-dir -r requirements.txt
+```
+{: .copy-code}
+
+### Step 9. HTTPS configuration
 
 You may want to configure HTTPS access using HAProxy. 
 This is possible in case you are hosting Trendz in the cloud and have a valid DNS name assigned to your instance.
@@ -198,7 +225,7 @@ https://new-trendz-domain.com
 
 Please follow this [guide](/docs/user-guide/install/pe/add-haproxy-ubuntu) to install HAProxy and generate valid SSL certificate using Let's Encrypt.
 
-### Step 9. Host ThingsBoard and Trendz on the same domain
+### Step 10. Host ThingsBoard and Trendz on the same domain
 ThingsBoard and Trendz can share same domain name. In this case ThingsBoard web page would be loaded using following link:
 
 ```bash
