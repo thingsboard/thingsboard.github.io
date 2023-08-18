@@ -125,7 +125,6 @@ for i in range(0, regressorsCount):
 print(f"inputX: {inputX}")
 print(f"inputY: {inputY}")
 print(f"outputX: {outputX}")
-print(f"outputY: {outputY}")
 
 df = pd.DataFrame()
 df['ds'] = pd.to_datetime(inputX, unit='ms')
