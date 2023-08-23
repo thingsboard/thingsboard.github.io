@@ -69,6 +69,19 @@ docker compose start
 ```
 {: .copy-code}
 
+## Upgrading
+
+In order to update to the latest version, execute the following commands:
+
+```shell
+wget https://raw.githubusercontent.com/thingsboard/tbmq/main/msa/tbmq/configs/tbmq-upgrade.sh && sudo chmod +x tbmq-upgrade.sh && ./tbmq-upgrade.sh
+```
+{: .copy-code}
+
+**NOTE**: replace `db_url`, `db_username`, and `db_password` variables in the script with the corresponding values used during DB initialization.
+
+**NOTE**: replace the host’s directory `data_dir` variable with the directory used during container creation.
+
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

@@ -101,6 +101,10 @@ Execute the following command to stop and completely remove deployed docker cont
 ```
 {: .copy-code}
 
+## Upgrading
+
+TODO!!!
+
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

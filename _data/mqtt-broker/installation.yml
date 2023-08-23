@@ -13,3 +13,5 @@ toc:
     path: /docs/mqtt-broker/install/cluster/aws-cluster-setup/
   - title: Building from sources
     path: /docs/mqtt-broker/install/building-from-source/
+  - title: Upgrade instructions
+    path: /docs/mqtt-broker/install/upgrade-instructions/

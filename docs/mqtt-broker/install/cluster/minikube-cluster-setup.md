@@ -113,6 +113,10 @@ Execute the following command to delete all resources (including database):
 ```
 {: .copy-code}
 
+## Upgrading
+
+TODO!!!
+
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

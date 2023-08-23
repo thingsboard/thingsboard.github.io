@@ -220,6 +220,10 @@ kubectl get statefulsets
 
 See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) command reference for more details.
 
+## Upgrading
+
+TODO!!!
+
 ## Cluster deletion
 
 Execute the following command to delete TBMQ nodes:
