@@ -103,7 +103,28 @@ Execute the following command to stop and completely remove deployed docker cont
 
 ## Upgrading
 
-TODO!!!
+In case you would like to upgrade, please pull the latest changes from `main` branch:
+
+```bash
+git pull origin main
+```
+{: .copy-code}
+
+**Note**, make sure custom changes of yours if available are not lost during the merge process.
+
+**Note**, make sure `TBMQ_VERSION` in .env file is set to the target version (e.g., set it to {{ site.release.broker_full_ver }} if you are upgrading to the latest).
+
+After that execute the following commands:
+
+```bash
+./scripts/docker-stop-services.sh
+./scripts/docker-upgrade-tbmq.sh --fromVersion=FROM_VERSION
+./scripts/docker-start-services.sh
+```
+{: .copy-code}
+
+Where `FROM_VERSION` - from which version upgrade should be started. 
+See [Upgrade Instructions](/docs/mqtt-broker/install/upgrade-instructions/) for valid `fromVersion` values.
 
 ## Next steps
 
