@@ -38,6 +38,8 @@ toc:
     path: /docs/user-guide/ui/aliases/
   - title: Widgets
     section:
+      - title: Overview
+        path: /docs/user-guide/widgets/
       - title: Widget Actions
         path: /docs/user-guide/ui/widget-actions/
       - title: Widgets Library

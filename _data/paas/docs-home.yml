@@ -61,6 +61,8 @@ toc:
       path: /docs/paas/user-guide/ui/aliases/
     - title: Widgets
       section:
+        - title: Overview
+          path: /docs/paas/user-guide/widgets/
         - title: Widget Actions
           path: /docs/paas/user-guide/ui/widget-actions/
         - title: Widgets Library

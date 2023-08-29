@@ -36,6 +36,20 @@ creating-dashboard-3:
         image: /images/user-guide/dashboards/overview/create-dashboard-8-pe.png
         title: 'By default, the list of dashboards displays all dashboards, including those of your customers. To display only your dashboards, toggle the switch labeled "Include customer entities".'
 
+import-dashboard:
+    0:
+        image: /images/user-guide/dashboards/overview/import-dashboard-1-pe.png
+        title: 'Go to the "Dashboards" page and click on the "+" button in the upper right corner of the page and choose "Import dashboard";'
+    1:
+        image: /images/user-guide/dashboards/overview/import-dashboard-2-pe.png
+        title: 'The import dashboard window opens. Upload the JSON file and click "Import";'
+    2:
+        image: /images/user-guide/dashboards/overview/import-dashboard-3-pe.png
+        title: 'You have imported a dashboard. Open it;'
+    3:
+        image: /images/user-guide/dashboards/overview/import-dashboard-4-pe.png
+        title: 'The dashboard has been imported along with its widgets.'
+
 export-dashboard:
     0:
         image: /images/user-guide/dashboards/overview/export-dashboard-1-pe.png
@@ -123,7 +137,50 @@ dashboard-toolbar:
 dashboard-toolbar-export:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-toolbar-export-1-pe.png
-        title: 'Go to the "Dashboards" page, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen.'
+        title: 'Go to the "Dashboards" page, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen and select "Export JSON configuration".'
+
+pro-export:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-toolbar-export-png-pdf-1-pe.png
+        title: 'Go to the "Dashboards" page, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen. Choose from several additional formats: PDF, PNG or JPEG, and click on it;'
+    1:
+        image: /images/user-guide/dashboards/overview/pdf-export.png
+        title: 'The dashboard that was exported as PNG.'
+
+time-window:
+    0:
+        image: /images/user-guide/dashboards/overview/timewindow-real-time-mode-1-pe.png
+        title: 'In the real-time mode, widgets constantly receive updates from the server and automatically show you only the data that matches the time window for a current timestamp.'
+    1:
+        image: /images/user-guide/dashboards/overview/timewindow-history-mode-1-pe.png
+        title: 'In the history mode, widgets receive data only during the initial load and no updates are issued over WebSockets.'
+
+time-window-aggregation:
+    0:
+        image: /images/user-guide/dashboards/overview/timewindow-aggregation-pe.png
+
+time-window-interval:
+    0:
+        image: /images/user-guide/dashboards/overview/timewindow-interval-3-pe.png
+        title: 'From the begging of the specified timestamp (12 am) to the end of it (12 am the next night).'
+    1:
+        image: /images/user-guide/dashboards/overview/timewindow-interval-1-pe.png
+        title: 'From the begging of the specified timestamp (12 am) to the end of it (12 am the next night).'
+    2:
+        image: /images/user-guide/dashboards/overview/timewindow-interval-2-pe.png
+        title: 'The chart shows from the begging of the day (12 am at night) until the time when the time window was updated.'
+
+time-window-time-zone:
+    0:
+        image: /images/user-guide/dashboards/overview/timewindow-timezone.png
+
+time-window-zoom-in:
+    0:
+        image: /images/user-guide/dashboards/overview/timewindow-zoom-1-pe.png
+        title: 'Zoom in by holding the right mouse key and move it on the chart in the place where you need to get a closer look.'
+    1:
+        image: /images/user-guide/dashboards/overview/timewindow-zoom-2-pe.png
+        title: 'To zoom out to the original size of the chart, double-click on the widget.'
 
 edit-mode:
     0:
@@ -133,23 +190,60 @@ edit-mode:
         image: /images/user-guide/dashboards/overview/dashboard-settings-edit-mode-2-pe.png
         title: 'Click "Save" button to save the dashboard or click "Cancel" button to rollback all unsaved changes.'
 
+filters:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-filters-1-pe.png
+        title: 'Open your dashboard, enter edit mode and click the "Filters" button in the upper right corner of the dashboard window. In the pop-up window click "Add filter" button;'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-filters-2-pe.png
+        title: 'In the pop-up window click "Add key filter" button;'
+    2:
+        image: /images/user-guide/dashboards/overview/dashboard-filters-3-pe.png
+        title: 'Enter key name, select key type and value type. Then add a filter that checks if the smart sensor model is "DHT22" and click "Add";'
+    3:
+        image: /images/user-guide/dashboards/overview/dashboard-filters-4-pe.png
+        title: 'Add another key filter;'
+    4:
+        image: /images/user-guide/dashboards/overview/dashboard-filters-5-pe.png
+        title: 'Add filter that checks if the battery level is less than 20 percent;'
+    5:
+        image: /images/user-guide/dashboards/overview/dashboard-filters-6-pe.png
+        title: 'Click "Add" button to add new filter;'
+    6:
+        image: /images/user-guide/dashboards/overview/dashboard-filters-7-pe.png
+        title: 'Click "Save" and apply all changes.'
+
+aliases:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-aliases-1-pe.png
+        title: 'Open your dashboard, enter edit mode and click the "Entity aliases" button in the upper right corner of the dashboard window. In the pop-up window click "Add alias" button;'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-aliases-2-pe.png
+        title: 'In the pop-up window enter alias name, select filter type and device type. Then click "Add" button;'
+    2:
+        image: /images/user-guide/dashboards/overview/dashboard-aliases-3-pe.png
+        title: 'Click "Save" button to save the alias and save all changes.'
+
 settings:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-settings-1-pe.png
         title: 'Open the dashboard and click the "Edit mode" button in the upper right corner of the screen;'
     1:
         image: /images/user-guide/dashboards/overview/dashboard-settings-2-pe.png
-        title: 'Click the “gear” icon at the top of the window.'
+        title: 'Click the “gear” icon at the top of the window;'
+    2:
+        image: /images/user-guide/dashboards/overview/dashboard-settings-3-pe.png
+        title: 'The dashboard settings window will open.'
 
 settings-state-controller:
     0:
-        image: /images/user-guide/dashboards/overview/dashboard-settings-3-pe.png
+        image: /images/user-guide/dashboards/overview/dashboard-settings-state-controller-1-pe.png
         title: 'Open the dashboard and click the "Edit mode" button in the upper right corner of the screen;'
 
 title-settings:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-settings-title-color-1-pe.png
-        title: 'Check the box "Display dashboard title" and select colot of title;'
+        title: 'Check the box "Display dashboard title" and select color of title;'
     1:
         image: /images/user-guide/dashboards/overview/dashboard-settings-title-color-2-pe.png
         title: 'The changed title appears on the top left of the Dashboard.'
@@ -157,7 +251,7 @@ title-settings:
 dashboard-logo-settings:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-logo-settings-2-pe.png
-        title: 'Display logo in dashboard fullscreen mode" and add dashboard logo image;'
+        title: 'Display logo in dashboard fullscreen mode" and add dashboard logo image. Apply changes;'
     1:
         image: /images/user-guide/dashboards/overview/dashboard-logo-settings-3-pe.png
         title: 'Expand dashboard to fullscreen;'
@@ -176,30 +270,82 @@ toolbar-dashboard-1:
 toolbar-dashboard-2:
     0:
         image: /images/user-guide/dashboards/overview/toolbar-settings-3-pe.png
-        title: 'Display logo in dashboard fullscreen mode" and add dashboard logo image;'
+        title: 'The “Hide Toolbar” will hide the toolbar from the dashboard page.'
     1:
         image: /images/user-guide/dashboards/overview/toolbar-settings-4-pe.png
-        title: 'Expand dashboard to fullscreen;'
+        title: 'Instead of the toolbar, on the upper right of the screen, you will find “Enter edit mode” icon.'
 
 toolbar-dashboard-3:
     0:
         image: /images/user-guide/dashboards/overview/toolbar-settings-5-pe.png
-        title: 'Display logo in dashboard fullscreen mode" and add dashboard logo image;'
+        title: 'The "Keep toolbar opened" is responsible for displaying the toolbar on the dashboard page.'
     1:
         image: /images/user-guide/dashboards/overview/toolbar-settings-6-pe.png
-        title: 'Display logo in dashboard fullscreen mode" and add dashboard logo image;'
+        title: 'Instead of the toolbar, on the upper right of the screen you find the three-dots icon. By clicking on it, the hidden toolbar will be opened.'
+
+columns:
+    0:
+        image: /images/user-guide/dashboards/overview/layout-settings-columns-count-1-pe.png
+        title: 'Specify number of columns;'
+    1:
+        image: /images/user-guide/dashboards/overview/layout-settings-columns-count-2-pe.png
+
+margin:
+    0:
+        image: /images/user-guide/dashboards/overview/layout-settings-margin-between-widgets-1-pe.png
+        title: 'Specify margin between widgets;'
+    1:
+        image: /images/user-guide/dashboards/overview/layout-settings-margin-between-widgets-2-pe.png
+        title: 'By default, the margin is set on 10;'
+    2:
+        image: /images/user-guide/dashboards/overview/layout-settings-margin-between-widgets-3-pe.png
+        title: 'The maximum margin is 50.'
+
+autofill:
+    0:
+        image: /images/user-guide/dashboards/overview/layout-settings-auto-fill-layout-height-1-pe.png
+        title: 'When the checkbox is ticked, all the widgets fit vertically in the space of a screen;'
+    1:
+        image: /images/user-guide/dashboards/overview/layout-settings-auto-fill-layout-height-2-pe.png
+        title: 'Auto fill layout height disabled, so we have to scroll down the widgets;'
+    2:
+        image: /images/user-guide/dashboards/overview/layout-settings-auto-fill-layout-height-3-pe.png
+        title: 'When auto fill layout height is enabled, the widgets fit on the screen.'
+
+background-settings:
+    0:
+        image: /images/user-guide/dashboards/overview/layout-settings-background-color-1-pe.png
+        title: 'Click on the background color row.'
+    1:
+        image: /images/user-guide/dashboards/overview/layout-settings-background-color-2-pe.png
+        title: 'In the pop-up window with sliders choose the needed color and wished transparency. Then, press “Save” to apply changes.'
+    2:
+        image: /images/user-guide/dashboards/overview/layout-settings-background-color-3-pe.png
+        title: 'After saving, you can see the customized background.'
+
+background-image:
+    0:
+        image: /images/user-guide/dashboards/overview/layout-settings-background-image-1-pe.png
+        title: 'Drop an image in the appropriate field, or upload it from a folder on your computer.'
+    1:
+        image: /images/user-guide/dashboards/overview/layout-settings-background-image-2-pe.png
+        title: 'To adjust the position of the image more precisely, click the "Background size mode" drop-down menu and choose how exactly the picture will fill the background space.'
+    2:
+        image: /images/user-guide/dashboards/overview/layout-settings-background-image-3-pe.png
+        title: 'After saving, you can see the customized background.'
 
 layout-1:
     0:
         image: /images/user-guide/dashboards/overview/manage-layouts-1-pe.png
-        title: 'Enter edit mode and click the small button three-rectangles "Manage layouts" in the upper left corner of the dashboard window;'
-    1:
-        image: /images/user-guide/dashboards/overview/manage-layouts-2-pe.png
-        title: 'It opens the small window for layouts’ control.'
+        title: 'Enter edit mode and click the button three-rectangles "Manage layouts" in the upper left corner of the dashboard window. It opens the small window for layouts’ control;'
+
 layout-2:
     0:
+        image: /images/user-guide/dashboards/overview/manage-layouts-2-pe.png
+        title: 'Click the "gear" icon named "Layout setting" to open layout settings window.'
+    1:    
         image: /images/user-guide/dashboards/overview/manage-layouts-3-pe.png
-        title: 'The Layout settings window will open. The layouts’ settings are identical to the layout settings and the background settings of the dashboard settings.'
+        title: 'The layouts’ settings are identical to the layout settings and the background settings of the dashboard settings.'
 
 layout-3:
     0:
@@ -216,485 +362,83 @@ layout-4:
 states-1:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-states-1-pe.png
-        title: 'Toggle the "Divider";'
-    1:
-        image: /images/user-guide/dashboards/overview/dashboard-states-2-pe.png
-        title: 'Toggle the "Divider";'
+        title: 'Enter edit mode and сlick the button two-layered squares "Manage dashboard states" in the upper left corner of the dashboard window. It will open the window with a dashboard state configuration.'
 
 states-2:
     0:
-        image: /images/user-guide/dashboards/overview/dashboard-states-3-pe.png
-        title: 'Toggle the "Divider";'
+        image: /images/user-guide/dashboards/overview/dashboard-states-2-pe.png
+        title: 'To add a new state, you need to click the “+” button in the right upper of the manage dashboard states window.'
     1:
         image: /images/user-guide/dashboards/overview/dashboard-states-4-pe.png
-        title: 'Toggle the "Divider";'
+        title: 'Enter a state name, State ID will form automatically according to the name, but you can change it. Click "Add".'
     2:
         image: /images/user-guide/dashboards/overview/dashboard-states-5-pe.png
-        title: 'Toggle the "Divider";'
+        title: 'After adding states, save all changes;'
     3:
         image: /images/user-guide/dashboards/overview/dashboard-states-6-pe.png
-        title: 'Toggle the "Divider";'
+        title: 'You can navigate between states through a drop-down menu.'
 
 states-3:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-states-7-pe.png
-        title: 'Toggle the "Divider";'
+        title: 'Click the “pencil” icon (edit widget) at the upper right corner of the widget to enter the widget configuration mode;'
     1:
         image: /images/user-guide/dashboards/overview/dashboard-states-8-pe.png
-        title: 'Toggle the "Divider";'
-    2:
-        image: /images/user-guide/dashboards/overview/dashboard-states-9-pe.png
-        title: 'Toggle the "Divider";'
-    3:
-        image: /images/user-guide/dashboards/overview/dashboard-states-10-pe.png
-        title: 'Toggle the "Divider";'
-    4:
-        image: /images/user-guide/dashboards/overview/dashboard-states-11-pe.png
-        title: 'Toggle the "Divider";'
-    5:
-        image: /images/user-guide/dashboards/overview/dashboard-states-12-pe.png
-        title: 'Toggle the "Divider";'
+        title: 'Navigate to the “Action” tab and click the “+” icon to add a new action;'
 
 states-4:
     0:
+        image: /images/user-guide/dashboards/overview/dashboard-states-9-pe.png
+        title: 'Enter action name, select action source, an aim of the action and select a state to which you will be transferred. Then click "Add" button;'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-states-10-pe.png
+        title: 'The new action appears in the actions list. Apply changes;'
+    2:
+        image: /images/user-guide/dashboards/overview/dashboard-states-11-pe.png
+        title: 'Click on the row of our widget to bring the action into effect;'
+    3:
+        image: /images/user-guide/dashboards/overview/dashboard-states-12-pe.png
+        title: 'After clicking, we immediately transfer to the chosen state.'
+
+states-5:
+    0:
         image: /images/user-guide/dashboards/overview/dashboard-states-13-pe.png
-        title: 'Toggle the "Divider";'
+        title: 'For the state to be named after the entity, use ${entityName} as the name of the state;'
     1:
         image: /images/user-guide/dashboards/overview/dashboard-states-14-pe.png
-        title: 'Toggle the "Divider";'
+        title: 'Click the “pencil” icon (edit widget) at the upper right corner of the widget to enter the widget configuration mode;'
     2:
         image: /images/user-guide/dashboards/overview/dashboard-states-15-pe.png
-        title: 'Toggle the "Divider";'
+        title: 'Enter action name, select action source, an aim of the action and select a state to which you will be transferred. Then click "Add" button;'
     3:
         image: /images/user-guide/dashboards/overview/dashboard-states-16-pe.png
-        title: 'Toggle the "Divider";'
+        title: 'The new action appears in the actions list. Apply changes;'
     4:
         image: /images/user-guide/dashboards/overview/dashboard-states-17-pe.png
-        title: 'Toggle the "Divider";'
+        title: 'Click on the row of our widget to bring the action into effect;'
     5:
         image: /images/user-guide/dashboards/overview/dashboard-states-18-pe.png
-        title: 'Toggle the "Divider";'
+        title: 'After clicking, you will be transitioned to a state that is called the same as the entity that took part in the action.'
 
-
-
-
-entity-name:
+add-new-widget:
     0:
-        image: /images/user-guide/dashboards/settings/entity-name.png
+        image: /images/user-guide/dashboards/overview/add-new-dashboard-1-pe.png
+        title: 'Open your dashboard and enter edit mode;'
     1:
-        image: /images/user-guide/dashboards/settings/entity-name-1.png
+        image: /images/user-guide/dashboards/overview/add-new-dashboard-2-pe.png
+        title: 'Click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
     2:
-        image: /images/user-guide/dashboards/settings/entity-name-2.png
+        image: /images/user-guide/dashboards/overview/add-new-dashboard-3-pe.png
+        title: 'Select widget bundle, for example, "Charts". To find the widget you want as quickly as possible, use the search bar by clicking a magnifying glass icon and inputting the name of the widget there;'
     3:
-        image: /images/user-guide/dashboards/settings/entity-name-3.png
+        image: /images/user-guide/dashboards/overview/add-new-dashboard-4-pe.png
+        title: 'Select a widget, for example, “Timeseries Line Chart”, and click on it to open the “Add Widget” dialog box.'
     4:
-        image: /images/user-guide/dashboards/settings/entity-name-4.png
+        image: /images/user-guide/dashboards/overview/add-new-dashboard-5-pe.png
+        title: 'Add a data source, choose basic and advanced settings, and click the "Add" button. Then apply changes;'
     5:
-        image: /images/user-guide/dashboards/settings/entity-name-5.png
-    6:
-        image: /images/user-guide/dashboards/settings/entity-name-6.png
-
-dash-title:
-    0:
-        image: /images/user-guide/dashboards/dash-title-pe.png
-
-editMode:
-    0:
-        image: /images/user-guide/dashboards/edit-mode1-src-pe.png
-    1:
-        image: /images/user-guide/dashboards/edit-mode2-src-pe.png
-
-toolbar-review:
-    0:
-        image: /images/user-guide/dashboards/toolbar-not-editmode-pe.png
-    1:
-        image: /images/user-guide/dashboards/toolbar-editmode-pe.png
-
-aliases:
-    0:
-        image: /images/user-guide/dashboards/alias1-src-pe.png
-    1:
-        image: /images/user-guide/dashboards/alias2-src-pe.png
-    2:
-        image: /images/user-guide/dashboards/alias3-src-pe.png
-
-filters:
-    0: 
-        image: /images/user-guide/dashboards/filters1-src-pe.png
-    1:
-        image: /images/user-guide/dashboards/filters2-src-pe.png
-    2:
-        image: /images/user-guide/dashboards/filters3-src-pe.png
-    3:
-        image: /images/user-guide/dashboards/missing-screen-pe.png
-    4:
-        image: /images/user-guide/dashboards/filters4-src-pe.png
-    5:
-        image: /images/user-guide/dashboards/filters5-src-pe.png
-    6:
-        image: /images/user-guide/dashboards/filters6-src-pe.png
-
-add-widget:
-    0: 
-        image: /images/user-guide/dashboards/12-edit-mode3-src-pe.png
-    1:
-        image: /images/user-guide/dashboards/13-edit-mode4-src-pe.png
-    2:
-        image: /images/user-guide/dashboards/add-widget1-src-pe.png
-    3:
-        image: /images/user-guide/dashboards/add-widget2-src-pe.png
-    4:
-        image: /images/user-guide/dashboards/add-widget3-src-pe.png
-
-add-data-source1:
-    0:
-        image: /images/user-guide/dashboards/add-data-source1-src-pe.png
-
-add-data-source2:
-    0:
-        image: /images/user-guide/dashboards/add-data-source2-src-pe.png
-
-add-data-source3:
-    0:
-        image: /images/user-guide/dashboards/add-data-source3-src-pe.png
-
-add-data-source4:
-    0:
-        image: /images/user-guide/dashboards/add-data-source4-src-pe.png
-    1:
-        image: /images/user-guide/dashboards/add-data-source5-src-pe.png
-
-add-data-source5:
-    0:
-        image: /images/user-guide/dashboards/widget-settings-alternative-message-1-pe.png
-    1:
-        image: /images/user-guide/dashboards/widget-settings-alternative-message-2-pe.png
-    2:
-        image: /images/user-guide/dashboards/widget-settings-alternative-message-3-pe.png
-
-add-data-source6:
-    0:
-        image: /images/user-guide/dashboards/add-data-source-enable-data-export1-pe.png
-    1:
-        image: /images/user-guide/dashboards/add-data-source-enable-data-export2-pe.png
-
-
-basic-data-key-settings-1:
-    0:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-key-1-paas.png
-    1:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-key-2-paas.png
-    2:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-key-3-paas.png
-
-basic-data-key-settings-2:
-    0:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-label-1-paas.png
-    1:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-label-2-paas.png
-    2:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-label-3-paas.png
-
-basic-data-key-settings-3:
-    0:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-1-paas.png
-    1:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-2-paas.png
-    2:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-3-paas.png
-    3:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-4-paas.png
-    4:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-5-paas.png
-
-basic-data-key-settings-4:
-    0:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-special-symbol-2-paas.png
-    1:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-special-symbol-3-paas.png
-
-basic-data-key-settings-5:
-    0:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-number-of-digits-2-paas.png
-    1:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-number-of-digits-3-paas.png
-
-basic-data-key-settings-6:
-    0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-post-processing-1-paas.png
-
-basic-data-key-settings-7:
-    0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-none-0-pe.png
-    1:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-avg-delta-1-pe.png
-
-basic-data-key-settings-8:
-    0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-0-pe.png
-
-basic-data-key-settings-9:
-    0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-avg-0-pe.png
-
-basic-data-key-settings-10:
-    0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-sum-0-pe.png
-
-basic-data-key-settings-11:
-    0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-count-0-pe.png
-
-basic-data-key-settings-12:
-    0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-delta-0-pe.png
-    1:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-delta-1-pe.png
-
-basic-data-key-settings-13:
-    0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-sum-delta-dayago-0-pe.png
-
-basic-data-key-settings-14:
-    0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-avg-delta-week-0-pe.png
-
-basic-data-key-settings-15:
-    0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-delta-monthago-0-pe.png
-
-basic-data-key-settings-16:
-    0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-delta-yearago-0-pe.png
-
-basic-data-key-settings-17:
-    0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-delta-custom-0-pe.png
-
-time-window1:
-    0:
-        image: /images/user-guide/dashboards/add-time-window1-src-pe.png
-
-alarm-filters:
-    0:
-        image: /images/user-guide/dashboards/alarm-filters1-src-pe.png
-    1:
-        image: /images/user-guide/dashboards/alarm-filters2-src-pe.png
-
-basic-settings:
-    0:
-        image: /images/user-guide/dashboards/basic-widget-settings1-src-pe.png
-
-basic-settings-title:
-    0:
-        image: /images/user-guide/dashboards/basic-widget-settings1-src-pe.png
-    1:
-        image: /images/user-guide/dashboards/basic-widget-settings-title1-src-pe.png
-    2:
-        image: /images/user-guide/dashboards/basic-widget-settings-title2-src-pe.png
-    3:
-        image: /images/user-guide/dashboards/basic-widget-settings-title3-src-pe.png
-
-basic-settings-style:
-    0:
-        image: /images/user-guide/dashboards/basic-widget-settings-title-noedits-src-pe.png
-    1:
-        image: /images/user-guide/dashboards/basic-widget-settings-style1-src-pe.png
-    2:
-        image: /images/user-guide/dashboards/basic-widget-settings-style2-src-pe.png
-
-basic-settings-legend:
-    0:
-        image: /images/user-guide/dashboards/basic-widget-settings-title-noedits-src-pe.png
-    1:
-        image: /images/user-guide/dashboards/basic-widget-settings-legend2-src-pe.png
-    2:
-        image: /images/user-guide/dashboards/basic-widget-settings-legend3-src-pe.png
-    3:
-        image: /images/user-guide/dashboards/basic-widget-settings-legend4-src-pe.png
-    4:
-        image: /images/user-guide/dashboards/basic-widget-settings-legend5-src-pe.png
-
-mobile-settings:
-    0:
-        image: /images/user-guide/dashboards/basic-widget-settings-mobile1-src-pe.png
-    1:
-        image: /images/user-guide/dashboards/basic-widget-settings-mobile2-src-pe.png
-    2:
-        image: /images/user-guide/dashboards/basic-widget-settings-mobile3-src-pe.png
-
-dashboards-edit-enter:
-    0:
-        image: /images/user-guide/dashboards/settings/dashboard-enter-edit-pe.png
-
-dashboards-settings-enter:
-    0: 
-        image: /images/user-guide/dashboards/settings/dashboard-settings-pe.png
-
-
-title-on-dashboard:
-    0:
-        image: /images/user-guide/dashboards/settings/title-color-pe.png
-    1:
-        image: /images/user-guide/dashboards/settings/title-settings-check-pe.png
-    2:
-        image: /images/user-guide/dashboards/settings/title-on-dashboard-pe.png
-
-toolbar-dashboard-settings:
-    0:
-        image: /images/user-guide/dashboards/settings/toolbar-visibility-set-pe.png
-    1:
-        image: /images/user-guide/dashboards/settings/toolbar-settings-on-pe.png
-
-text-color:
-    0: 
-        image: /images/user-guide/dashboards/settings/text-color-pe.png
-    1:
-        image: /images/user-guide/dashboards/settings/text-color-changed-pe.png
-
-columns:
-    0:
-        image: /images/user-guide/dashboards/settings/settings-capacity-pe.png
-    1:
-        image: /images/user-guide/dashboards/settings/columns-grid-pe.png
-
-margin:
-    0:
-        image: /images/user-guide/dashboards/settings/settings-margin-pe.png
-    1:
-        image: /images/user-guide/dashboards/settings/margin0-pe.png
-    2:
-        image: /images/user-guide/dashboards/settings/margin50-pe.png
-
-autofill:
-    0:
-        image: /images/user-guide/dashboards/settings/settings-autofill-pe.png
-    1:
-        image: /images/user-guide/dashboards/settings/no-autofill-pe.png
-    2:
-        image: /images/user-guide/dashboards/settings/autofill-on-pe.png
-
-background-settings:
-    0:
-        image: /images/user-guide/dashboards/settings/background-color-pe.png
-    1:
-        image: /images/user-guide/dashboards/settings/background-changed-pe.png
-
-background-image:
-    0:
-        image: /images/user-guide/dashboards/settings/background-image-select-pe.png
-    1:
-        image: /images/user-guide/dashboards/settings/drop-down-select-pe.png
-    2: 
-        image: /images/user-guide/dashboards/settings/background-pic-pe.png
-
-dashboard-export:
-    0:
-        image: /images/user-guide/dashboards/settings/dashboard-list-pe.png
-
-dashboard-export-direct:
-    0:
-        image: /images/user-guide/dashboards/settings/dashboard-direct-pe.png
-
-export-widget:
-    0:
-        image: /images/user-guide/dashboards/settings/export-widget-pe.png
-
-pro-export:
-    0:
-        image: /images/user-guide/dashboards/settings/pro-format.png
-    1:
-        image: /images/user-guide/dashboards/settings/pdf-export.png
-
-entity-count:
-    0:
-        image: /images/user-guide/dashboards/entitycount/add-alias.png
-    1:
-        image: /images/user-guide/dashboards/entitycount/add-alias-1.png
-    2:
-        image: /images/user-guide/dashboards/entitycount/add-alias-2.png
-
-entity-count-1:
-    0:
-        image: /images/user-guide/dashboards/entitycount/add-widget.png
-    1:
-        image: /images/user-guide/dashboards/entitycount/add-widget-1.png
-    2:
-        image: /images/user-guide/dashboards/entitycount/add-widget-2.png
-    3:
-        image: /images/user-guide/dashboards/entitycount/datasource.png
-
-entity-count-3:
-    0:
-        image: /images/user-guide/dashboards/entitycount/datasource-1.png
-    1:
-        image: /images/user-guide/dashboards/entitycount/edit-widget.png
-    2:
-        image: /images/user-guide/dashboards/entitycount/edit-widget-1.png
-
-add-alias-ds:
-    0:
-        image: /images/user-guide/dashboards/entitycount/add-alias.png
-    1:
-        image: /images/user-guide/dashboards/entity-type-ds.png
-    2:
-        image: /images/user-guide/dashboards/entity-type-ds-0.5.png
-
-add-widget-ds:
-    0:
-        image: /images/user-guide/dashboards/entitycount/add-widget.png
-    1:
-        image: /images/user-guide/dashboards/entitycount/add-widget-1.png
-    2:
-        image: /images/user-guide/dashboards/add-widget-ds.png
-    3:
-        image: /images/user-guide/dashboards/add-widget-ds-1.png
-    4:
-        image: /images/user-guide/dashboards/add-widget-ds-2.png
-
-function-ds:
-    0:
-        image: /images/user-guide/dashboards/entitycount/add-widget.png
-    1:
-        image: /images/user-guide/dashboards/entitycount/add-widget-1.png
-    2:
-        image: /images/user-guide/dashboards/add-widget-ds.png
-    3:
-        image: /images/user-guide/dashboards/function-ds.png
-    4:
-        image: /images/user-guide/dashboards/function-ds-1.png
-
-tw:
-    0:
-        image: /images/user-guide/dashboards/tw.png
-    1:
-        image: /images/user-guide/dashboards/tw-1.png
-
-tw-current-day:
-    0:
-        image: /images/user-guide/dashboards/tw-current-day.png
-    1:
-        image: /images/user-guide/dashboards/tw-current-day-sofar.png
-
-tw-time-zone:
-    0:
-        image: /images/user-guide/dashboards/tw-time-zone.png
-
-zoom-in:
-    0:
-        image: /images/user-guide/dashboards/zoom-in.png
-    1:
-        image: /images/user-guide/dashboards/zoom-in-1.png
-
-import:
-    0:
-        image: /images/user-guide/dashboards/dashboard-import-pe.png
-    1:
-        image: /images/user-guide/dashboards/dashboard-import-1-pe.png
-    2:
-        image: /images/user-guide/dashboards/dashboard-import-2-pe.png
-    3:
-        image: /images/user-guide/dashboards/dashboard-import-3-pe.png
+        image: /images/user-guide/dashboards/overview/add-new-dashboard-6-pe.png
+        title: 'Your first widget is created.'
 
 --- 
 

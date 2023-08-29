@@ -17,6 +17,20 @@ creating-dashboard:
         image: /images/user-guide/dashboards/overview/create-dashboard-3-ce.png
         title: 'Your first dashboard has been created. As long as you have one dashboard. But as new dashboards are added, they will be added to the top of the table, since the table sorts dashboards using the time of the creation by default.'
 
+import-dashboard:
+    0:
+        image: /images/user-guide/dashboards/overview/import-dashboard-1-pe.png
+        title: 'Go to the "Dashboards" page and click on the "+" button in the upper right corner of the page and choose "Import dashboard";'
+    1:
+        image: /images/user-guide/dashboards/overview/import-dashboard-2-pe.png
+        title: 'The import dashboard window opens. Upload the JSON file and click "Import";'
+    2:
+        image: /images/user-guide/dashboards/overview/import-dashboard-3-pe.png
+        title: 'You have imported a dashboard. Open it;'
+    3:
+        image: /images/user-guide/dashboards/overview/import-dashboard-4-pe.png
+        title: 'The dashboard has been imported along with its widgets.'
+
 export-dashboard:
     0:
         image: /images/user-guide/dashboards/overview/export-dashboard-1-ce.png
@@ -127,6 +141,49 @@ dashboard-toolbar-export:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-toolbar-export-1-pe.png
         title: 'Go to the "Dashboards" page, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen.'
+
+pro-export:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-toolbar-export-png-pdf-1-pe.png
+        title: 'To enter dashboard edit mode, open the dashboard and click the "Edit mode" button in the upper right corner of the screen;'
+    1:
+        image: /images/user-guide/dashboards/overview/pdf-export.png
+        title: 'The dashboard that was exported as PNG.'
+
+time-window:
+    0:
+        image: /images/user-guide/dashboards/overview/timewindow-real-time-mode-1-pe.png
+        title: 'In the real-time mode, widgets constantly receive updates from the server and automatically show you only the data that matches the time window for a current timestamp.'
+    1:
+        image: /images/user-guide/dashboards/overview/timewindow-history-mode-1-pe.png
+        title: 'In the history mode, widgets receive data only during the initial load and no updates are issued over WebSockets.'
+
+time-window-aggregation:
+    0:
+        image: /images/user-guide/dashboards/overview/timewindow-aggregation-pe.png
+
+time-window-interval:
+    0:
+        image: /images/user-guide/dashboards/overview/timewindow-interval-1-pe.png
+        title: 'From the begging of the specified timestamp (12 am) to the end of it (12 am the next night).'
+    1:
+        image: /images/user-guide/dashboards/overview/timewindow-interval-2-pe.png
+        title: 'The chart shows from the begging of the day (12 am at night) until the time when the time window was updated.'
+
+time-window-time-zone:
+    0:
+        image: /images/user-guide/dashboards/overview/timewindow-timezone.png
+
+time-window-zoom-in:
+    0:
+        image: /images/user-guide/dashboards/overview/timewindow-zoom-1-pe.png
+    1:
+        image: /images/user-guide/dashboards/overview/timewindow-zoom-2-pe.png
+
+
+
+
+
 
 dash-title:
     0:
@@ -433,12 +490,6 @@ dashboard-export-direct:
 export-widget:
     0:
         image: /images/user-guide/dashboards/settings/export-widget.png
-
-pro-export:
-    0:
-        image: /images/user-guide/dashboards/settings/pro-format.png
-    1:
-        image: /images/user-guide/dashboards/settings/pdf-export.png
 
 layouts: 
     0:
