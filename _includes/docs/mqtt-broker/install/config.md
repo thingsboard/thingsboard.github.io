@@ -1676,32 +1676,32 @@ environment variable, default value, and description.
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Spring MVC/Resources parameters</span></td>
       </tr>
       <tr>
-          <td>spring.mvc.cors.mappings.[/api/**].allowed-origins</td>
-          <td></td>
+          <td>spring.mvc.cors.mappings.[/api/**].allowed-origin-patterns</td>
+          <td>MVC_CORS_API_ALLOWED_ORIGIN_PATTERNS</td>
           <td>*</td>
-          <td>Comma-separated list of origins to allow. '*' allows all origins. When not set,CORS support is disabled</td>
+          <td>Comma-separated list of origins to allow. '*' allows all origins. When not set, CORS support is disabled</td>
       </tr>
       <tr>
           <td>spring.mvc.cors.mappings.[/api/**].allowed-methods</td>
-          <td></td>
+          <td>MVC_CORS_API_ALLOWED_METHODS</td>
           <td>*</td>
           <td>Comma-separated list of methods to allow. '*' allows all methods</td>
       </tr>
       <tr>
           <td>spring.mvc.cors.mappings.[/api/**].allowed-headers</td>
-          <td></td>
+          <td>MVC_CORS_API_ALLOWED_HEADERS</td>
           <td>*</td>
           <td>Comma-separated list of headers to allow in a request. '*' allows all headers</td>
       </tr>
       <tr>
           <td>spring.mvc.cors.mappings.[/api/**].max-age</td>
-          <td></td>
+          <td>MVC_CORS_API_MAX_AGE</td>
           <td>1800</td>
           <td>How long, in seconds, the response from a pre-flight request can be cached by clients</td>
       </tr>
       <tr>
           <td>spring.mvc.cors.mappings.[/api/**].allow-credentials</td>
-          <td></td>
+          <td>MVC_CORS_API_ALLOW_CREDENTIALS</td>
           <td>true</td>
           <td>Set whether credentials are supported. When not set, credentials are not supported</td>
       </tr>
