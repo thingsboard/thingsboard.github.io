@@ -47,7 +47,7 @@ To be able to change user, **chown** command is used, which requires sudo permis
 Execute the following command to run installation:
 
 ```bash
-./scripts/docker-install-tb-mqtt-broker.sh
+./scripts/docker-install-tbmq.sh
 ```
 {: .copy-code}
 
