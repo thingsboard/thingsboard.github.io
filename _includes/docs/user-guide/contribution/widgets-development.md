@@ -1252,11 +1252,11 @@ Object example:
 
 Provides a hint about the data type of the entity field that is defined in the filter key. The value type impacts the list of possible operations that you may use in the corresponding predicate. For example, you may use **STARTS_WITH** or **END_WITH**, but you can't use **GREATER_OR_EQUAL** for string values. The following filter value types and corresponding predicate operations are supported:
 
-| **Type**                        | **Description**                                                                                                                                                        |
-|-------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ```STRING```           | Used to filter any **String** or **JSON** values. Operations: **EQUAL**, **NOT_EQUAL**, **STARTS_WITH**, **ENDS_WITH**, **CONTAINS**, **NOT_CONTAINS**                 |
-| ```NUMERIC```     | Used for **Long** and **Double** values. Operations: **EQUAL**, **NOT_EQUAL**, **GREATER**, **LESS**, **GREATER_OR_EQUAL**, **LESS_OR_EQUAL**                          |
-| ```BOOLEAN```       | Used for **Boolean** values. Operations: **EQUAL**, **NOT_EQUAL**                                                                                                      |
+| **Type**                        | **Description**                                                                                                                                          |
+|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ```STRING```           | Used to filter any **String** or **JSON** values. Operations: **EQUAL**, **NOT_EQUAL**, **STARTS_WITH**, **ENDS_WITH**, **CONTAINS**, **NOT_CONTAINS**   |
+| ```NUMERIC```     | Used for **Long** and **Double** values. Operations: **EQUAL**, **NOT_EQUAL**, **GREATER**, **LESS**, **GREATER_OR_EQUAL**, **LESS_OR_EQUAL** |
+| ```BOOLEAN```       | Used for **Boolean** values. Operations: **EQUAL**, **NOT_EQUAL**                                                                                        |
 | ```DATE_TIME``` | Similar to numeric, transforms value to milliseconds since epoch. Operations: **EQUAL**, **NOT_EQUAL**, **GREATER**, **LESS**, **GREATER_OR_EQUAL**, **LESS_OR_EQUAL** |
 
 - **Predicate object**
@@ -1386,7 +1386,7 @@ self.onInit = function() {
                     type: "count" //Key type
                 }
             ],
-            entityFilter: //Describes entities
+            entityFilter: //Describes entities (See Entity Filters topic)
             {
                 type: "entityType", //Entity filter type
                 entityType: "DEVICE"  //Entity type
@@ -1403,12 +1403,12 @@ self.onInit = function() {
                     type: "count"
                 }
             ],
-            entityFilter:
+            entityFilter: //Describes entities (See Entity Filters topic)
             {
                 type: "entityType",
                 entityType: "DEVICE"
             },
-            keyFilters: //Filtering entity by keys
+            keyFilters: //Filtering entity by keys (See Key Filters topic)
             [
                 {
                     key: {
@@ -1416,7 +1416,7 @@ self.onInit = function() {
                         type: "ATTRIBUTE" //Key type
                     },
                     predicate: {
-                        operation: "EQUAL", //Operation type
+                        operation: "EQUAL", //Operation type (You can find full list of operations in Key Filter topic)
                         type: "BOOLEAN", //Sorting value type
                         value: {
                             defaultValue: true //Sorting value
@@ -1482,12 +1482,12 @@ self.onInit = function() {
                     type: "attribute"
                  }
             ],
-            entityFilter: //Describes entities
+            entityFilter: //Describes entities (See Entity Filters topic)
             {
                 type: "entityType", //Entity filter type
                 entityType: "DEVICE" //Entity type
             },
-            keyFilters: //Filtering entity by keys
+            keyFilters: //Filtering entity by keys (See Key Filters topic)
             [
                 {
                     key: {
@@ -1495,7 +1495,7 @@ self.onInit = function() {
                         type: "ATTRIBUTE" //Key type
                     },
                     predicate: {
-                        operation: "EQUAL", //Operation type
+                        operation: "EQUAL", //Operation type (You can find full list of operations in Key Filter topic)
                         type: "BOOLEAN", //Sorting value type
                         value: {
                             defaultValue: true //Sorting value
@@ -1558,12 +1558,12 @@ self.onInit = function() {
                     type: "attribute"
                 }
             ],
-            entityFilter: //Describes entities
+            entityFilter: //Describes entities (See Entity Filters topic)
             {
                 type: "deviceType", //Entity filter type
                 deviceType: "thermostat" //Device type
             },
-            keyFilters: //Filtering entity by keys
+            keyFilters: //Filtering entity by keys (See Key Filter topic)
             [
                 {
                     key: {
@@ -1571,7 +1571,7 @@ self.onInit = function() {
                         type: "TIME_SERIES" //Key type
                     },
                     predicate: {
-                        operation: "GREATER", //Operation type
+                        operation: "GREATER", //Operation type (You can find full list of operations in Key Filter topic)
                         type: "NUMERIC", //Sorting value type
                         value: {
                             defaultValue: 30 //Sorting value
@@ -1652,7 +1652,7 @@ self.onInit = function() {
                     type: "attribute" //Key type
                 }
             ],
-            entityFilter: //Describes entities
+            entityFilter: //Describes entities (See Entity Filters topic)
             {
                 type: "entityName", //Entity filter type
                 entityType: "DEVICE", //Entity type
@@ -1736,7 +1736,7 @@ self.onInit = function() {
             name: "status"
           }
         ],
-        entityFilter: //Describes entities
+        entityFilter: //Describes entities (See Entity Filters topic)
         {
             type: "deviceType", //Entity filter type
             deviceType: "thermostat" //Device type
