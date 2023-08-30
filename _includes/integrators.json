@@ -720,6 +720,18 @@
     }
   },
   {
+    "type": ["Europe", "North America"],
+    "country": ["Canada", "United States of America"],
+    "name": "qnectd",
+    "contact": {
+      "href": "sales@qnectd.com"
+    },
+    "site": {
+      "href": "qnectd.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe"],
     "country": ["Norway"],
     "name": "RFID Solutions AS",
