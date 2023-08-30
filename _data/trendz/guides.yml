@@ -1,0 +1,6 @@
+bigheader: "Trendz Analytics guides"
+abstract: "Tutorials and guides for analysing data with Trendz Analytics."
+hidetoc: "true"
+toc:
+- title: Guides overview
+  path: /docs/trendz/guides/

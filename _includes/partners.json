@@ -177,6 +177,25 @@
     "blurb": "What drives us is the passion to create scalable electronics solutions that work anywhere. We have implemented projects throughout developing countries, from Peru to Sri Lanka, and we will continue working where we can have the highest impact."
   },
   {
+    "type": ["main", "lora", "bluetooth"],
+    "program": "",
+    "name": "SensiEDGE",
+    "logo": "sensiedge_logo.png",
+    "links": {
+      "Site": {
+        "href": "https://www.sensiedge.com/",
+        "target": "_blank"
+      },
+      "Getting Started SensiLoRa 2.0 V1.2": {
+        "href": "/docs/samples/sensiedge/getting_started_sensiLoRa.pdf"
+      },
+      "Connect SensiBLE 1.0 & 2.1 to ThingsBoard": {
+        "href": "/docs/samples/sensiedge/connect_sensi_ble.pdf"
+      }
+    },
+    "blurb": "SensiEDGE IoT SoM is a fully customisable solution for developers who want to focus on their own applications and core competencies rather than the underlying hardware platform or production logistics when creating products for the IoT."
+  },
+  {
     "type": ["main", "gsm"],
     "program": "",
     "name": "DECODE",
@@ -217,6 +236,22 @@
       }
     },
     "blurb": "AKKR8 is developed and produced in Sweden. It is a sensor-to-platform solution with a scalable design to fit different IoT scenarios. AKKR8 can run on battery, solar power, or your mains power. It uses NB-IoT or LTE-M to connect to the outside world and is sold pre-configured for the ThingsBoard platform."
+  },
+  {
+    "type": ["main", "wifi"],
+    "program": "",
+    "name": "ROLTEK",
+    "logo": "roltek_logo_dark.png",
+    "links": {
+      "Site": {
+        "href": "https://www.roltek.com.tr/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/roltek/roltek/"
+      }
+    },
+    "blurb": "Roltek provides end-to-end IoT solutions that enable rapid development, management, and scalability of IoT projects, either through cloud-based or on-premise deployments. Roltek hardware IoT Gateway products come with different communication options such as ISM and NarrowBand RF, 4G/LTE, WiFi, NB-IoT, and LoRaWan, making them suitable for harsh field conditions."
   },
   {
     "type": ["main", "modbus"],

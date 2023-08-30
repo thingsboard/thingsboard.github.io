@@ -1,7 +1,21 @@
 
 Now it’s time to program the board to connect to ThingsBoard.  
-To do this, you can use the code below. It contains all required functionality for this guide.    
+To do this, you can use the code below. It contains all required functionality for this guide.  
 
+{% capture demoExample %}
+If you want to use [**demo.thingsboard.io**](https://demo.thingsboard.io), please notice that it has a size limit for the MQTT messages - **1024 bytes per message**.  
+  
+In this case you can reduce the resolution, quality and cut the encoded photo.  
+To do this you can change the value of variable **DEMO_MODE** to **1**:  
+<code>
+#define DEMO_MODE 1  
+</code>
+
+{% endcapture %}
+
+{% unless page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+{% include templates/warn-banner.md content=demoExample %}
+{% endunless %}
 
 ```cpp
 
@@ -10,7 +24,9 @@ To do this, you can use the code below. It contains all required functionality f
 #include <WiFi.h>
 #include "soc/soc.h"
 #include "soc/rtc_cntl_reg.h"
-
+{% unless page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+#define DEMO_MODE 0
+{% endunless %}
 #define THINGSBOARD_ENABLE_DYNAMIC 1
 
 #include <ThingsBoard.h>
@@ -34,7 +50,7 @@ constexpr uint16_t THINGSBOARD_PORT = 1883U;
 
 // Maximum size packets will ever be sent or received by the underlying MQTT client,
 // if the size is to small messages might not be sent or received messages will be discarded
-constexpr uint32_t MAX_MESSAGE_SIZE = 100U * 1024;
+constexpr size_t MAX_MESSAGE_SIZE = 100U * 1024;
 
 // Baud rate for the debugging serial connection.
 // If the Serial output is mangled, ensure to change the monitor speed accordingly to this variable
@@ -161,10 +177,14 @@ bool initCamera() {
   config.pin_reset = RESET_GPIO_NUM;
   config.xclk_freq_hz = 20000000;
   config.pixel_format = PIXFORMAT_JPEG;
-
+  config.fb_count = 1;{% unless page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+  if (DEMO_MODE == 1) {
+    config.frame_size = FRAMESIZE_96X96;
+    config.jpeg_quality = 63;
+  } else { {% endunless %}
   config.frame_size = FRAMESIZE_240X240;
-  config.jpeg_quality = 10;
-  config.fb_count = 1;
+  config.jpeg_quality = 10;{% unless page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+  }{% endunless %}
 
   esp_err_t err = esp_camera_init(&config);
   if (err != ESP_OK) {
@@ -194,7 +214,10 @@ bool captureImage() {
 }
 
 
-void encode(const uint8_t *data, size_t length) {
+void encode(const uint8_t *data, size_t length) { {% unless page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+  if (DEMO_MODE == 1) {
+    length = 756;
+  }{% endunless %} 
   size_t size = base64_encode_expected_len(length) + 1;
   base64_encodestate _state;
   base64_init_encodestate(&_state);
@@ -410,19 +433,65 @@ void loop() {
 ```
 {:.copy-code.expandable-20}
 
+{% capture table %}
+
+| Framesize parameter value | Photo resolution | Approximate message size (in bytes) |
+|:-------------------------:|:----------------:|:-----------------------------------:|
+|      FRAMESIZE_96X96      |      96x96       |                4608                 |
+|      FRAMESIZE_QQVGA      |     160x120      |                7200                 |
+|      FRAMESIZE_QCIF       |     176x144      |                9792                 |
+|      FRAMESIZE_HQVGA      |     240x176      |                12288                |
+|     FRAMESIZE_240X240     |     240x240      |                14400                |
+|      FRAMESIZE_QVGA       |     320x240      |                19200                |
+|       FRAMESIZE_CIF       |     400x296      |                29760                |
+|      FRAMESIZE_HVGA       |     480x320      |                34560                |
+|       FRAMESIZE_VGA       |     640x480      |                76800                |
+|      FRAMESIZE_SVGA       |     800x600      |               144000                |
+|       FRAMESIZE_XGA       |     1024x768     |               294912                |
+|       FRAMESIZE_HD        |     1280x720     |               345600                |
+|      FRAMESIZE_SXGA       |    1280x1024     |               491520                |
+|      FRAMESIZE_UXGA       |    1600x1200     |               921600                |
+|       FRAMESIZE_FHD       |    1920x1080     |               933120                |
+|      FRAMESIZE_P_HD       |     720x1280     |               1036800               |
+|      FRAMESIZE_P_3MP      |     864x1536     |               1776384               |
+|      FRAMESIZE_QXGA       |    2048x1536     |               4718592               |
+|       FRAMESIZE_QHD       |    2560x1440     |               5529600               |
+|      FRAMESIZE_WQXGA      |    2560x1600     |               6144000               |
+|      FRAMESIZE_P_FHD      |    1080x1920     |               6220800               |
+|      FRAMESIZE_QSXGA      |    2560x1920     |               7864320               |
+
+{% endcapture %}
+
+{% capture messageSizeInfo %}
+Data, send by this device may require increasing of the allowed message size for MQTT on **your ThingsBoard instance**.  
+To do this you can modify parameter **NETTY_MAX_PAYLOAD_SIZE** in **thingsboard.yml** file, default value on regular setup is 65535 bytes.  
+Required size depends on chosen resolution and quality.
+<br/>
+<br/>
+<details><summary><b>Click to see dependency between resolution and approximate message size</b></summary>
+<br/>
+{{ table | markdownify }}
+
+<br/>
+</details>
+
+{% endcapture %}
+
+{% include templates/info-banner.md content=messageSizeInfo %}
+
 In the code, replace placeholders with your WiFi network SSID, password, ThingsBoard device access token.  
 
 Necessary variables for connection:    
 
-| Variable name | Default value | Description | 
-|-|-|-|
-| WIFI_SSID | **YOUR_WIFI_SSID** | Your WiFi network name. | 
-| WIFI_PASSWORD | **YOUR_WIFI_PASSWORD** | Your WiFi network password. |
-| TOKEN | **YOUR_DEVICE_ACCESS_TOKEN** | Access token from device. Obtaining process described in #connect-device-to-thingsboard | 
-| THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address. |
-| THINGSBOARD_PORT | **1883U** | ThingsBoard server MQTT port. Can be default for this guide. |
-| MAX_MESSAGE_SIZE | **256U** | Maximal size of MQTT messages. Can be default for this guide. |
-| SERIAL_DEBUG_BAUD | **1883U** | Baud rate for serial port. Can be default for this guide. |  
+| Variable name | Default value                                                                                                                | Description                                                                             | 
+|-|------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| WIFI_SSID | **YOUR_WIFI_SSID**                                                                                                           | Your WiFi network name.                                                                 | 
+| WIFI_PASSWORD | **YOUR_WIFI_PASSWORD**                                                                                                       | Your WiFi network password.                                                             |
+| TOKEN | **YOUR_DEVICE_ACCESS_TOKEN**                                                                                                 | Access token from device. Obtaining process described in #connect-device-to-thingsboard | 
+| THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address.                                                    |
+| THINGSBOARD_PORT | **1883U**                                                                                                                    | ThingsBoard server MQTT port. Can be default for this guide.                            |
+| MAX_MESSAGE_SIZE | **100U*1024**                                                                                                                | Maximal size of MQTT messages. Should be more than picture size + ~1024 or more.        |
+| SERIAL_DEBUG_BAUD | **1883U**                                                                                                                    | Baud rate for serial port. Can be default for this guide.                               |  
 
 ```cpp
 ...
@@ -435,7 +504,7 @@ constexpr char TOKEN[] = "YOUR_ACCESS_TOKEN";
 constexpr char THINGSBOARD_SERVER[] = "{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}";
 constexpr uint16_t THINGSBOARD_PORT = 1883U;
 
-constexpr uint32_t MAX_MESSAGE_SIZE = 256U;
+constexpr uint32_t MAX_MESSAGE_SIZE = 100U * 1024;
 constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 
 ...

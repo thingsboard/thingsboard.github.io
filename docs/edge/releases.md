@@ -8,6 +8,29 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v3.5.1.1 (Jul 4, 2023) {#v3511}
+
+**Hotfix** release to fix incorrect update of sequential id offset:
+
+* [#57](https://github.com/thingsboard/thingsboard-edge/issues/57) ThingsBoard Edge PE disconnects from cloud;
+* [#60](https://github.com/thingsboard/thingsboard-edge/issues/60) edge error log;
+
+## v3.5.1 (Jun 1, 2023) {#v351}
+
+**Minor** release with everything from [TB CE v3.5.1](/docs/reference/releases/#v351).
+
+## v3.5.0 (May 10, 2023) {#v35}
+
+**Major** release with everything from [TB CE v3.5](/docs/reference/releases/#v35) with the following improvements and bug fixes:
+
+* [#7862](https://github.com/thingsboard/thingsboard/pull/7862) Push latest timeseries key-value pair to edge on assignment entity to edge;
+* [#7878](https://github.com/thingsboard/thingsboard/pull/7878) Add edge install instructions for docker;
+* [#7914](https://github.com/thingsboard/thingsboard/pull/7914) Added default edge rule chain to asset/device profiles;
+* [#8301](https://github.com/thingsboard/thingsboard/pull/8301) Edge computing solution templates;
+* [#8340](https://github.com/thingsboard/thingsboard/pull/8340) Handle gRPC messages exceeding default max message size;
+* [#8344](https://github.com/thingsboard/thingsboard/pull/8344) Push edge connect/disconnect events to rule chain;
+* [#8346](https://github.com/thingsboard/thingsboard/pull/8346) Improved Keep Alive Functionality between Edge and Cloud to Prevent Data Loss;
+
 ## v3.4.3 (December 22, 2022)
 
 **Minor** release with everything from [TB CE v3.4.3](/docs/reference/releases/#v343-december-21-2022) with the following improvements and bug fixes:

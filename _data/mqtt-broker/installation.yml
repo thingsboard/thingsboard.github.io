@@ -1,0 +1,15 @@
+bigheader: "Installation"
+abstract: "Documentation for installation and configuration of TBMQ."
+toc:
+  - title: Installation options
+    path: /docs/mqtt-broker/install/installation-options/
+  - title: Installing TBMQ using Docker
+    path: /docs/mqtt-broker/install/docker/
+  - title: Cluster setup with Docker Compose
+    path: /docs/mqtt-broker/install/cluster/docker-compose-setup/
+  - title: Cluster setup with Kubernetes on Minikube
+    path: /docs/mqtt-broker/install/cluster/minikube-cluster-setup/
+  - title: Cluster setup with Kubernetes on AWS
+    path: /docs/mqtt-broker/install/cluster/aws-cluster-setup/
+  - title: Building from sources
+    path: /docs/mqtt-broker/install/building-from-source/

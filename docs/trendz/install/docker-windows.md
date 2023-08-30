@@ -19,18 +19,12 @@ This guide will help you to install and start Trendz Analytics using Docker on W
 
 ## Step 1. Obtain the license key 
 
-We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
+We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
 Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE guide.
 
-## Step 2. Checkout Trendz Analytics image on Docker Hub
-
-Open official [Trendz Analytics](https://hub.docker.com/_/trndz) Docker Hub page and proceed to checkout.
-Populate basic information about yourself and click "Get Content"
-
-
-## Step 3. Running Trendz service
+## Step 2. Running Trendz service
 
 ##### Docker Compose setup
 
@@ -51,7 +45,7 @@ version: '3.0'
 services:
   mytrendz:
     restart: always
-    image: "thingsboard/trendz:1.10.0-HF1"
+    image: "thingsboard/trendz:1.10.2"
     ports:
       - "8888:8888"
     environment:
@@ -61,9 +55,24 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/trendz
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
+      SCRIPT_ENGINE_PROVIDER: DOCKER_CONTAINER
+      SCRIPT_ENGINE_DOCKER_PROVIDER_URL: mypyexecutor:8080
+      SCRIPT_ENGINE_TIMEOUT: 30000
     volumes:
       - mytrendz-data:/data
       - mytrendz-logs:/var/log/trendz
+  mypyexecutor:
+    restart: always
+    image: "thingsboard/trendz-python-executor:1.10.2"
+    ports:
+      - "8080"
+    environment:
+      SCRIPT_ENGINE_RUNTIME_TIMEOUT: 30000
+      EXECUTOR_MANAGER: 1
+      EXECUTOR_SCRIPT_ENGINE: 6
+      THROTTLING_QUEUE_CAPACITY: 10
+      THROTTLING_THREAD_POOL_SIZE: 6
+      NETWORK_BUFFER_SIZE: 10485760
   postgres:
     restart: always
     image: "postgres:12"
@@ -94,7 +103,9 @@ Where:
 - `mytrendz-logs:/var/log/trendz`   - mounts the volume `mytrendz-logs` to Trendz logs directory
 - `mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.10.0-HF1`          - docker image
+- `thingsboard/trendz:1.10.2`          - Trendz docker image
+- `thingsboard/trendz-python-executor:1.10.2`          - Trendz python script executor docker image
+- `SCRIPT_ENGINE_RUNTIME_TIMEOUT`          - Python script execution timeout
     
 ##### Setup Docker volumes    
     

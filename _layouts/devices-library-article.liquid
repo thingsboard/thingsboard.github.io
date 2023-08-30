@@ -206,7 +206,7 @@
     }
 </script>
 <script>
-    jqueryDefer(function () {
+    jqueryUiDefer(function () {
         $(document).ready(function () {
 
             // Products selector
@@ -228,16 +228,11 @@
             allCodeBlocksElements.each(function (i) {
                 var codeBlock = $(this);
                 var pre = codeBlock.find('pre').first();
-                if (pre.prop('scrollHeight') > 2775) {
-                    codeBlock.find('.rouge-gutter').css("width", "60px");
-                }
                 for (let className of codeBlock.attr('class').split(' ')) {
                     let match = className.startsWith('expandable') ? className : null;
                     if (match) {
                         let rows = parseInt(match.split('-')[1]);
                         let collapsedHeight = rows * 28 + 5;
-                        let expandedHeight = pre.prop('scrollHeight');
-
                         pre.css('height', collapsedHeight + 'px');
                         codeBlock.find('.highlight').first().css("margin-bottom", "45px");
                         let button = $('<button class="expand-code-btn"><div class="collapsed"></div><p>expand</p></button>');
@@ -250,7 +245,10 @@
                                 button.find('div').removeClass('expanded');
                                 button.find('div').addClass('collapsed');
                             } else {
-                                pre.css('height', expandedHeight + 'px');
+                                if (pre.prop('scrollHeight') > 2775) {
+                                    codeBlock.find('.rouge-gutter').css("width", "60px");
+                                }
+                                pre.css('height', pre.prop('scrollHeight') + 'px');
                                 button.attr('data-expanded', 'true');
                                 button.find('p').text('collapse');
                                 button.find('div').removeClass('collapsed');
@@ -349,25 +347,33 @@
             function updatePositions() {
                 contentAnchors = [];
                 markdownTocs.each(function (i) {
-                    var tocAnchor = $(this).children('a');
-                    var href = tocAnchor.attr('href');
-                    var contentAnchor = $('div#content ' + href);
-                    var top = Math.floor(contentAnchor.offset().top);
-                    var bottom;
-                    if (i < markdownTocs.length - 1) {
-                        var nextHref = $(markdownTocs[i + 1]).children('a').attr('href');
-                        var nextContentAnchor = $('div#content ' + nextHref);
-                        bottom = Math.floor(nextContentAnchor.offset().top);
-                    } else {
-                        bottom = $('div#content').offset().top + $('div#content').innerHeight();
-                    }
-                    var contentAnchorInfo = {anchor: contentAnchor, toc: $(this), top: top, bottom: bottom, href: href};
-                    contentAnchors.push(contentAnchorInfo);
-                    if (i === 0) {
-                        firstAnchor = contentAnchorInfo;
-                    }
-                    if (i === markdownTocs.length - 1) {
-                        lastAnchor = contentAnchorInfo;
+                    if (!$(this).hasClass('hide')) {
+                        var tocAnchor = $(this).children('a');
+                        var href = tocAnchor.attr('href');
+                        var contentAnchor = $('div#content ' + href);
+                        var top = Math.floor(contentAnchor.offset().top);
+                        var bottom;
+                        if (i < markdownTocs.length - 1) {
+                            var nextHref = null;
+                            for (let j = 1; j < markdownTocs.length; j++) {
+                                if (!$(markdownTocs[i + j]).hasClass('hide')) {
+                                    nextHref = $(markdownTocs[i + j]).children('a').attr('href');
+                                    break;
+                                }
+                            }
+                            var nextContentAnchor = $('div#content ' + nextHref);
+                            bottom = Math.floor(nextContentAnchor.offset().top);
+                        } else {
+                            bottom = $('div#content').offset().top + $('div#content').innerHeight();
+                        }
+                        var contentAnchorInfo = {anchor: contentAnchor, toc: $(this), top: top, bottom: bottom, href: href};
+                        contentAnchors.push(contentAnchorInfo);
+                        if (i === 0) {
+                            firstAnchor = contentAnchorInfo;
+                        }
+                        if (i === markdownTocs.length - 1) {
+                            lastAnchor = contentAnchorInfo;
+                        }
                     }
                 });
             }
@@ -415,6 +421,7 @@
                 var tocs = $('#content > ul#markdown-toc');
                 var tableOfContents = $('#table-of-contents');
                 tableOfContents.append(tocs);
+
                 markdownTocs = $('#table-of-contents ul#markdown-toc li').filter(function () {
                     var tocAnchor = $(this).children('a');
                     var href = tocAnchor.attr('href');
@@ -426,6 +433,15 @@
                     }
                 });
                 updateActiveToc(true);
+                $('#table-of-contents ul#markdown-toc > li > ul').each(function() {
+                    let i = 0;
+                    $(this).find('li').each(function() {
+                        var tocAnchor = $(this).children('a');
+                        if (!$(tocAnchor.attr('href')).parent().hasClass('panel-body')) return true;
+                        tocAnchor.attr('href', tocAnchor.attr('href') + i);
+                        tocAnchor.attr('id', tocAnchor.attr('id') + i++);
+                    })
+                })
             });
 
             $(document).on("scroll", function () {

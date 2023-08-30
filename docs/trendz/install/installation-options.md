@@ -21,6 +21,15 @@ notitle: "true"
                            <div class="deployment-cards">
                                 <div class="deployment-cards-container">
                                     <div class="deployment-card-block">
+                                        <a href="/docs/trendz/install/cloud/">
+                                            <span>
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/platform/trendz-cloud.svg" title="Trendz Cloud" alt="Trendz Cloud">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="deployment-card-block">
                                         <a href="/docs/trendz/install/ubuntu/">
                                             <span>
                                                 <div class="deployment-logo">

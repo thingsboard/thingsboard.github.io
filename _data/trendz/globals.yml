@@ -1,11 +1,14 @@
 tocs:
 - docs-home
 - getting-started
+- guides
 - installation
 docs-header:
 - toc: getting-started
   title: Getting Started
 - toc: docs-home
   title: Documentation
+- toc: guides
+  title: Guides
 - toc: installation
   title: Installation

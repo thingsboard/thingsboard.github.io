@@ -26,7 +26,7 @@ This guide will help you to set up ThingsBoard in microservices mode in GKE.
 Clone the repository and change the working directory to GCP scripts.
 
 ```bash
-git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git
+git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git --depth 1
 cd thingsboard-pe-k8s/gcp/microservices
 ```
 {: .copy-code}
@@ -86,6 +86,10 @@ cd thingsboard-pe-k8s/gcp/microservices
 
 {% assign tbServicesFile = "transport/tb-lwm2m-transport.yml" %}
 {% include templates/install/gcp/configure-lwm2m.md %}
+
+### 9.5. Configure Edge Load Balancer (Optional)
+
+{% include templates/install/k8s-configure-edge-load-balancer.md %}
 
 ## Step 10. Using
 

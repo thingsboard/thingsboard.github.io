@@ -7,6 +7,56 @@ description: ThingsBoard architecture
 
 * TOC
 {:toc}
+
+## v3.5.1 (May 31, 2023) {#v351}  
+
+Everything from [TB CE v3.5.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.5.1) with the following bug fixes.
+
+**Bug fixes**
+
+* UI:
+  
+  * Fixed missing query params when redirecting old dashboard URL by @vvlladd28
+  * Fixed dashboard link resent dashboard widget by @vvlladd28
+  * Fixed buttons trigger by enter press fortegrations by @ArtemDzhereleiko
+  * Fixed TCP integration handler configuration by @ArtemDzhereleiko
+  * Fixed customer hierarchy update for entity group by @ArtemDzhereleiko
+  * Fixed solution template documentation links by @ArtemDzhereleiko
+  * Removed change owner action for system administrator by @ArtemDzhereleiko
+  
+## v3.5.0 (May 9, 2023) {#v35}
+
+Everything from [TB CE v3.5](https://github.com/thingsboard/thingsboard/releases/tag/v3.5) with the following features and bug fixes.
+
+**Improvements**
+
+* Core & Rule Engine
+
+  * Azure Service bus integration;
+  * Tuya integration;
+  * Ability to create relation between DEVICE and DATA CONVERTER;
+
+* UI
+  
+  * New solution template "Waste Monitoring";
+  * Support of new menu and entity tables;
+  
+* Edge
+  
+  * Edge computing support for solution templates;
+
+**Bug fixes**
+
+* Fixed relation query for customer level;
+* Fixed error flood after reboot of disabled integration;
+* Fixed deletion of solution template entities;
+* Fixed solution template scheduler event creation;
+* Fixed column key mapping for asset_profile;
+* Fixed search for entity views by customer;
+* fixed opc integration host configuration;
+* Fixed no outgoing message issue when doCalculate fails in Aggregate Latest node;
+* Fixed telemetry/attribute update while device bulk import;
+* Fixed incorrect validation credentials in Azure Iot Hub integration;
   
 ## v3.4.4 (February 7, 2023)
   

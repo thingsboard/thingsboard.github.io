@@ -26,6 +26,8 @@ toc:
     path: /docs/pe/solution-templates/air-quality-monitoring/
   - title: Smart Irrigation
     path: /docs/pe/solution-templates/smart-irrigation/
+  - title: Waste management
+    path: /docs/pe/solution-templates/waste-management/
 - title: Key concepts
   section:
   - title: Entities and Relations
@@ -36,7 +38,6 @@ toc:
     path: /docs/pe/user-guide/device-profiles/
   - title: Asset Profiles
     path: /docs/pe/user-guide/asset-profiles/
-    new: true
   - title: Attributes
     path: /docs/pe/user-guide/attributes/
   - title: Time-series data
@@ -47,6 +48,8 @@ toc:
     path: /docs/pe/user-guide/rpc/
   - title: OTA updates
     path: /docs/pe/user-guide/ota-updates/
+  - title: Notification center
+    path: /docs/pe/user-guide/notifications/
     new: true
 - title: Dashboards
   section:
@@ -76,7 +79,6 @@ toc:
     path: /docs/pe/user-guide/rule-engine-2-0/overview/
   - title: Queues
     path: /docs/pe/user-guide/rule-engine-2-5/queues/
-    new: true
   - title: Nodes
     section:
     - title: Filter Nodes
@@ -95,12 +97,14 @@ toc:
       path: /docs/pe/user-guide/rule-engine-2-0/flow-nodes/
   - title: Custom Rule Nodes
     path: /docs/user-guide/contribution/rule-node-development/
-- title: White-labeling
+- title: White Labeling
   section:
     - title: Overview
       path: /docs/pe/user-guide/white-labeling/
     - title: Self-registration
       path: /docs/pe/user-guide/self-registration/
+    - title: Mail Templates
+      path: /docs/pe/user-guide/mail-templates/
     - title: Custom Translations
       path: /docs/pe/user-guide/custom-translation/
     - title: Custom Menu
@@ -139,6 +143,9 @@ toc:
     path: /docs/user-guide/integrations/ibm-watson-iot/
   - title: Azure Event Hub
     path: /docs/user-guide/integrations/azure-event-hub/
+  - title: Azure Service Bus
+    path: /docs/user-guide/integrations/azure-service-bus/
+    new: true
   - title: Azure IoT Hub
     path: /docs/user-guide/integrations/azure-iot-hub/
   - title: TCP
@@ -149,6 +156,9 @@ toc:
     path: /docs/user-guide/integrations/sigfox/
   - title: Ocean Connect
     path: /docs/user-guide/integrations/ocean-connect/
+  - title: Tuya
+    path: /docs/user-guide/integrations/tuya/
+    new: true
   - title: Custom Integration development guide
     path: /docs/user-guide/integrations/custom/
   - title: Notifications and Alarms on your smartphone using Telegram Bot
@@ -202,7 +212,6 @@ toc:
     path: /docs/pe/user-guide/rbac/
   - title: Two-Factor Authentication
     path: /docs/pe/user-guide/two-factor-authentication/
-    new: true
   - title: OAuth 2 Support
     path: /docs/pe/user-guide/oauth-2-support/
   - title: HTTP Transport
@@ -253,6 +262,9 @@ toc:
     path: /docs/pe/user-guide/ui/dashboards/
   - title: SMS Provider Settings
     path: /docs/pe/user-guide/ui/sms-provider-settings/
+  - title: Slack Settings
+    path: /docs/pe/user-guide/ui/slack-settings/
+    new: true
   - title: Mail Settings
     path: /docs/pe/user-guide/ui/mail-settings/
   - title: JWT Security Settings

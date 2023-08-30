@@ -28,7 +28,7 @@ This guide will help you to set up ThingsBoard in monolith mode using [Google Ku
 Clone the repository and change the working directory to GCP scripts.
 
 ```bash
-git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git
+git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git --depth 1
 cd thingsboard-pe-k8s/gcp/monolith
 ```
 {: .copy-code}
@@ -97,6 +97,10 @@ This version of setup does not support an automatic redirect of http port 80 to 
 ### 9.3. Configure UDP Load Balancer (Optional)
 
 {% include templates/install/gcp/configure-udp.md %}
+
+### 9.4. Configure Edge Load Balancer (Optional)
+
+{% include templates/install/k8s-configure-edge-load-balancer.md %}
 
 ## Step 10. Using
 

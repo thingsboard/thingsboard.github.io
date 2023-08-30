@@ -188,8 +188,8 @@ selfManagedPlan:
         <h1 class="main-title">Trendz analytics</h1>
         <p class="text">Our analysis and prediction is your financial result and advance growth</p>
         <div class="btn-block">
-            <a href="#" class="button accent-btn btn-open" onClick="openTrendzWizard(event, 'cloud-content')">Start Free</a>
-            <a href="/products/trendz/trndz-request-demo" class="button try-pe">Request Demo</a>
+            <a href="/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go" class="button accent-btn btn-open">Start Free</a>
+            <a href="/products/trendz/trndz-request-demo" class="button try-pe">Get a demo</a>
         </div>
     </div>
 </div>

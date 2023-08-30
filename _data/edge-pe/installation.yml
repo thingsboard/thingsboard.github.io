@@ -19,7 +19,5 @@ toc:
     path: /docs/user-guide/install/pe/edge/docker/
 - title: Upgrade instructions
   path: /docs/user-guide/install/pe/edge/upgrade-instructions/
-- title: Activate edge functionality on ThingsBoard server (3.3.0 only)
-  path: /docs/pe/edge/enable-edge/
 - title: Configuration
   path: /docs/pe/edge/user-guide/install/config/

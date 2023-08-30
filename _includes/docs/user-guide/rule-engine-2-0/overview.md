@@ -274,6 +274,72 @@ List of the predefined Message Types is presented in the following table:
         </td>
       </tr>
       <tr>
+        <td>ALARM_ASSIGNED</td>
+        <td><b>Alarm Assigned</b></td>
+        <td>Event produced when an alarm was assigned to some user</td>
+        <td> 
+            All fields from original Message Metadata
+            <br><b>entityName</b> - name of alarm
+            <br><b>entityType</b> - ALARM
+            <br><b>userEmail</b> - user email
+            <br><b>userFirstName</b> - user first name
+            <br><b>userId</b> - user id
+            <br><b>userLastName</b> - user last name
+            <br><b>userName</b> - user name
+        </td>
+        <td>json containing alarm details, see Alarm event<br>        
+        </td>
+      </tr>
+      <tr>
+        <td>ALARM_UNASSIGNED</td>
+        <td><b>Alarm Unassigned</b></td>
+        <td>Event produced when an alarm was unassigned from user</td>
+        <td> 
+            All fields from original Message Metadata
+            <br><b>entityName</b> - name of alarm
+            <br><b>entityType</b> - ALARM
+            <br><b>userEmail</b> - user email
+            <br><b>userFirstName</b> - user first name
+            <br><b>userId</b> - user id
+            <br><b>userLastName</b> - user last name
+            <br><b>userName</b> - user name
+        </td>
+        <td>json containing alarm details, see Alarm event<br>        
+        </td>
+      </tr>
+      <tr>
+        <td>COMMENT_CREATED</td>
+        <td><b>Comment Created</b></td>
+        <td>Event produced when an alarm comment was created</td>
+        <td> 
+            All fields from original Message Metadata
+            <br><b>userId</b> - user id
+            <br><b>userName</b> - user name
+            <br><b>userFirstName</b> - first name of user
+            <br><b>userLastName</b> - last name of user
+            <br><b>userEmail</b> - email of user
+            <br><b>comment</b> - json object containing comment details and text of comment
+        </td>
+        <td>json containing alarm details, see Alarm event
+        </td>
+      </tr>
+      <tr>
+        <td>COMMENT_UPDATED</td>
+        <td><b>Comment Updated</b></td>
+        <td>Event produced when an alarm comment was updated</td>
+        <td> 
+            All fields from original Message Metadata
+            <br><b>userId</b> - user id
+            <br><b>userName</b> - user name
+            <br><b>userFirstName</b> - first name of user
+            <br><b>userLastName</b> - last name of user
+            <br><b>userEmail</b> - email of user
+            <br><b>comment</b> - json object containing comment details and text of comment
+        </td>
+        <td>json containing alarm details, see Alarm event
+        </td>
+      </tr>
+      <tr>
           <td>REST_API_REQUEST</td>
           <td><b>REST API Request to Rule Engine</b></td>
           <td>Event produced when user executes REST API call</td>

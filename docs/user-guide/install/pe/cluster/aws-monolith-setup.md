@@ -50,7 +50,7 @@ This guide will help you to set up ThingsBoard in monolith mode in AWS EKS.
 ## Step 1. Clone ThingsBoard PE K8S scripts repository
 
 ```bash
-git clone -b release- {{site.release.ver}} https://github.com/thingsboard/thingsboard-pe-k8s.git
+git clone -b release- {{site.release.ver}} https://github.com/thingsboard/thingsboard-pe-k8s.git --depth 1
 cd thingsboard-pe-k8s/aws/monolith
 ```
 {: .copy-code}
@@ -107,6 +107,10 @@ see `tb-node-0` pod in the `READY` state.
 ### 8.3. Configure UDP Load Balancer (Optional)
 
 {% include templates/install/aws/configure-udp.md %}
+
+### 8.4. Configure Edge Load Balancer (Optional)
+
+{% include templates/install/k8s-configure-edge-load-balancer.md %}
 
 ## Step 9. Validate the setup
 

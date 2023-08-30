@@ -176,8 +176,6 @@ mqttWindows:
 
 {% include templates/edge/getting-started/introduction.md %}
 
-## Prerequisites
-
 {% assign docsPrefix = "edge/" %}
 {% include templates/edge/getting-started/prerequisites.md %}
 

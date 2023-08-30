@@ -1,47 +1,39 @@
 
 * TOC
 {:toc}
-## Tenants overview
+
+### Introduction
 
 ThingsBoard supports [Multitenancy](https://en.wikipedia.org/wiki/Multitenancy) out-of-the-box.
-You can treat ThingsBoard Tenant as a separate business-entity: individual or organization who owns or produces devices.
 
-The **System administrator** is able to create one or more tenant entities.
-Tenant may have multiple tenant administrator users and enormous number of customers, devices and assets.
+You can treat Tenant as a separate business-entity: individual or organization who owns or produces devices and assets.
 
-### Adding a Tenant 
+Tenant may have multiple tenant administrator users, enormous number of [customers](/docs/{{docsPrefix}}user-guide/ui/customers), and an unlimited number of [users](/docs/{{docsPrefix}}user-guide/ui/users), assets, and devices.
 
-To add a new **Tenant**, please follow the instructions below:
+### Сreate new tenant
 
-Select **Tenants** from the menu on the left. Then, click plus icon to add a new Tenant.
+The **System administrator** is able to create tenant entities.
 
-![image](/images/user-guide/ui/tenants/add-tenant1.png)
+To add a new tenant, please follow the instructions below:
 
-In the opened window, you can edit all the Tenant information. You should fill in the title and tenant profile here.
-Optionally, include the country, city, address, phone number, and email address.
-
+{% include images-gallery.html imageCollection="create-tenants-ce" showListImageTitles="true" %}
 
 Learn more about tenant profiles [here](/docs/{{docsPrefix}}user-guide/tenant-profiles).
 
-
-![image](/images/user-guide/ui/tenants/add-tenant-window.png) 
-
+<br/>
 On the Tenant details page, you as the System administrator can view the attributes, the latest telemetry, assign the home dashboard, and copy the tenant ID.
 
+{% include images-gallery.html imageCollection="tenant-details-ce" %}
 
-![image](/images/user-guide/ui/tenants/tenant-details.png) 
+### Сreate tenant administrator
 
-### Adding a Tenant Administrator
+The **System administrator** is also able to create multiple **users with Tenant administrator role** in each tenant.
 
-The **System administrator** is also able to create multiple users with **Tenant administrator** role in each tenant.
+To add the User follow the instructions below:
 
-To add the Tenant administrator follow the instructions below:
+{% include images-gallery.html imageCollection="create-tenant-admin-ce" showListImageTitles="true" %}
 
-In the Tenant you created click **Manage tenant admins**, and then click plus icon to add a new user.
-
-![image](/images/user-guide/ui/tenants/add-user.png)
-
-In the newly created user details window, the System administrator can edit the data and use the following action tabs:
+In a tenant details window, the System administrator can use the following action tabs:
 
 1) **Disable the User account**.
 
@@ -51,20 +43,47 @@ In the newly created user details window, the System administrator can edit the 
 
 4) **Login as Tenant administrator** opens the Thingsboard platform from the Tenant administrator UI.
 
-5) The System Administrator can also **Delete user** from both the user details page and tenant admins list. 
+5) The System Administrator can also **Delete user** from both the user details page and tenant admins list.
 
+{% include images-gallery.html imageCollection="user-details-ce" %}
 
-![image](/images/user-guide/ui/tenants/user-details.png)    
+### Edit tenant or user
 
-Learn more about user creating process [here](/docs/{{docsPrefix}}user-guide/ui/users).
+In the Tenant details you can edit all fields.
 
-### Login as a Tenant Administrator
+Let's see how to do this:
 
-If necessary, you can log in as the Tenant administrator to view the user interface from his perspective.
-To do this you need to open Tenant Admins list and click on the arrow opposite the user account.
+{% include images-gallery.html imageCollection="tenant-edit-ce" showListImageTitles="true" %}
 
-![image](/images/user-guide/ui/tenants/login-as-tenant.png)
+Also, you can edit the **user**.
 
+The steps are similar to how we edit the tenant:
+
+{% include images-gallery.html imageCollection="user-edit-ce" showListImageTitles="true" %}
+
+### Delete tenant or user
+
+You can delete the **Tenant** at once with all its users. To do this, click on the "trash" icon and then also confirm the deletion by clicking on "Yes".
+
+{% include images-gallery.html imageCollection="tenant-delete-1-ce" %}
+
+In addition, there is an option to delete the user using the action tab in Tenant details window.
+
+{% include images-gallery.html imageCollection="tenant-delete-2-ce" %}
+
+Also, you can delete any **user** from the Tenant. To do this, go to the Tenant, find the user you need and click on the "trash" icon. After clicking, a warning window will appear. If you are sure you want to delete the user, click on "Yes".
+
+{% include images-gallery.html imageCollection="user-delete-ce" %}
+
+In addition, there is an option to delete the Tenant using the action tab in Tenant details window.
+
+{% include images-gallery.html imageCollection="user-delete-2-ce" %}
+
+### Login as tenant administrator
+
+If you need to log in as a tenant, just open the tenant group and click the icon opposite to the user account to log in as this tenant.
+
+{% include images-gallery.html imageCollection="tenant-login-ce" %}
 
 The Tenant Administrator is able to do following actions:
 
@@ -77,21 +96,6 @@ The Tenant Administrator is able to do following actions:
 
 All actions listed above are available using [REST API](/docs/{{docsPrefix}}reference/rest-api/).
 
-### Deleting a Tenant
-
-In addition, there is an option to delete the Tenant using the action tab in Tenant details window.
-
-![image](/images/user-guide/ui/tenants/delete1.png)
-
-
-Alternatively, after selecting the required Tenant, you can delete him straight from the Tenants list with all its users, as seen in the image below.
-
-![image](/images/user-guide/ui/tenants/delete-tenant2.png)
-
-Moreover, you can delete the Tenant from the list of Tenants together with all of its users by simply clicking the trash can icon, as seen below.
-
-![image](/images/user-guide/ui/tenants/delete3.png)
-
-## Next steps
+### Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

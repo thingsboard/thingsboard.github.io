@@ -10,8 +10,6 @@ description: ThingsBoard IoT platform cluster setup with Docker Compose guide
 * TOC
 {:toc}
 
-
-
 This guide will help you to setup ThingsBoard in cluster mode using Docker Compose tool. 
 
 ## Prerequisites
@@ -46,9 +44,10 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 ## Step 3. Clone ThingsBoard CE repository
 
 ```bash
-git clone -b {{ site.release.branch }} https://github.com/thingsboard/thingsboard.git
+git clone -b {{ site.release.branch }} https://github.com/thingsboard/thingsboard.git --depth 1
 cd thingsboard/docker
 ```
+{: .copy-code}
 
 ## Step 4. Configure ThingsBoard database
 

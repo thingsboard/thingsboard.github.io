@@ -1,0 +1,619 @@
+{
+  "title": "Tuya smart plug",
+  "image": null,
+  "mobileHide": false,
+  "mobileOrder": null,
+  "configuration": {
+    "description": "",
+    "widgets": {
+      "084142d2-2b7e-3d9a-36d1-f7157a79b939": {
+        "isSystemType": true,
+        "bundleAlias": "control_widgets",
+        "typeAlias": "round_switch",
+        "type": "rpc",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 2.5,
+        "sizeY": 2,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#e6e7e8",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "initialValue": false,
+            "retrieveValueMethod": "timeseries",
+            "valueKey": "switch_1",
+            "parseValueFunction": "return data ? true : false;",
+            "setValueMethod": "switch_1",
+            "convertValueFunction": "return value;",
+            "requestTimeout": 500,
+            "requestPersistent": false
+          },
+          "title": "New Round switch",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "decimals": 2,
+          "datasources": [],
+          "targetDeviceAliasIds": [
+            "c41693fc-5ab0-cd48-20c3-612e05f82c27"
+          ]
+        },
+        "row": 0,
+        "col": 0,
+        "id": "084142d2-2b7e-3d9a-36d1-f7157a79b939"
+      },
+      "3dd1803e-033c-07d2-c5bf-5694c1c93bcc": {
+        "isSystemType": true,
+        "bundleAlias": "charts",
+        "typeAlias": "basic_timeseries",
+        "type": "timeseries",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 8,
+        "sizeY": 5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "c41693fc-5ab0-cd48-20c3-612e05f82c27",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "cur_power",
+                  "type": "timeseries",
+                  "label": "Power",
+                  "color": "#155111",
+                  "settings": {},
+                  "_hash": 0.05099516997858533,
+                  "aggregationType": null,
+                  "units": "W",
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "cur_voltage",
+                  "type": "timeseries",
+                  "label": "Voltage",
+                  "color": "#6878f5",
+                  "settings": {
+                    "hideDataByDefault": false,
+                    "disableDataHiding": false,
+                    "removeFromLegend": false,
+                    "excludeFromStacking": false,
+                    "showLines": true,
+                    "lineWidth": 2,
+                    "fillLines": false,
+                    "showPoints": false,
+                    "showSeparateAxis": false,
+                    "axisMin": 0,
+                    "axisMax": 300,
+                    "axisPosition": "left",
+                    "comparisonSettings": {
+                      "showValuesForComparison": true,
+                      "comparisonValuesLabel": "",
+                      "color": ""
+                    },
+                    "thresholds": []
+                  },
+                  "_hash": 0.4339028599646353,
+                  "aggregationType": null,
+                  "units": "V",
+                  "decimals": 0,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                },
+                {
+                  "name": "cur_current",
+                  "type": "timeseries",
+                  "label": "Current",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.3605242029393576,
+                  "aggregationType": null,
+                  "units": "A",
+                  "decimals": null,
+                  "funcBody": null,
+                  "usePostProcessing": null,
+                  "postFuncBody": null
+                }
+              ],
+              "latestDataKeys": []
+            }
+          ],
+          "timewindow": {
+            "hideInterval": false,
+            "hideLastInterval": false,
+            "hideQuickInterval": false,
+            "hideAggregation": false,
+            "hideAggInterval": false,
+            "hideTimezone": false,
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 0,
+              "timewindowMs": 120000,
+              "quickInterval": "CURRENT_DAY",
+              "interval": 10000
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": true,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "8px",
+          "settings": {
+            "shadowSize": 4,
+            "fontColor": "#545454",
+            "fontSize": 10,
+            "xaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "yaxis": {
+              "showLabels": true,
+              "color": "#545454"
+            },
+            "grid": {
+              "color": "#545454",
+              "tickColor": "#DDDDDD",
+              "verticalLines": true,
+              "horizontalLines": true,
+              "outlineWidth": 1
+            },
+            "legend": {
+              "show": true,
+              "position": "nw",
+              "backgroundColor": "#f0f0f0",
+              "backgroundOpacity": 0.85,
+              "labelBoxBorderColor": "rgba(1, 1, 1, 0.45)"
+            },
+            "decimals": 1,
+            "stack": false,
+            "tooltipIndividual": false
+          },
+          "title": "Current, Power and Voltage History",
+          "dropShadow": false,
+          "enableFullscreen": true,
+          "titleStyle": {
+            "fontSize": "20px",
+            "fontWeight": "bold",
+            "opacity": "0.67",
+            "padding": "5px 10px 5px 10px"
+          },
+          "useDashboardTimewindow": true,
+          "showTitleIcon": false,
+          "titleTooltip": "",
+          "enableDataExport": true,
+          "widgetStyle": {
+            "borderBottom": "solid 1px #aaa",
+            "borderRight": "solid 1px #aaa",
+            "backgroundImage": "url(https://thingsboard.io/images/dashboards/smart-building/energy-bg.jpg)",
+            "backgroundSize": "cover",
+            "backgroundPosition": "center"
+          },
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": "",
+          "showLegend": true,
+          "legendConfig": {
+            "direction": "column",
+            "position": "bottom",
+            "sortDataKeys": false,
+            "showMin": true,
+            "showMax": true,
+            "showAvg": false,
+            "showTotal": false,
+            "showLatest": false
+          },
+          "displayTimewindow": true
+        },
+        "row": 0,
+        "col": 0,
+        "id": "3dd1803e-033c-07d2-c5bf-5694c1c93bcc"
+      },
+      "bd5975b3-6965-5f0a-0dd7-4a590136a0bd": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "simple_neon_gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 6,
+        "sizeY": 6,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "c41693fc-5ab0-cd48-20c3-612e05f82c27",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "cur_voltage",
+                  "type": "timeseries",
+                  "label": "cur_voltage",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.3289853492834591,
+                  "aggregationType": "NONE",
+                  "units": null,
+                  "decimals": 0,
+                  "funcBody": null,
+                  "usePostProcessing": false,
+                  "postFuncBody": null
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY"
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1674049749316,
+                "endTimeMs": 1674136149316
+              },
+              "quickInterval": "CURRENT_DAY"
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fffefe",
+          "color": "rgba(1, 1, 1, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "minValue": 0,
+            "maxValue": 360,
+            "gaugeType": "donut",
+            "donutStartAngle": 90,
+            "gaugeWidthScale": 1,
+            "neonGlowBrightness": 0,
+            "dashThickness": 1.5,
+            "roundedLineCap": false,
+            "useFixedLevelColor": false,
+            "levelColors": [],
+            "showTitle": true,
+            "title": "VOLTAGE",
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500"
+            },
+            "showUnitTitle": false,
+            "showTimestamp": false,
+            "showValue": true,
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 14
+            },
+            "showMinMax": true,
+            "minMaxFont": {
+              "family": "Segment7Standard",
+              "size": 12,
+              "style": "normal",
+              "weight": "500"
+            },
+            "showTicks": false,
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear"
+          },
+          "title": "New Simple neon gauge - justGage",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "widgetStyle": {
+            "borderBottom": "solid 1px #aaa",
+            "borderRight": "solid 1px #aaa"
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": false,
+          "units": "V",
+          "decimals": 0,
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": "",
+          "showTitleIcon": false,
+          "titleTooltip": ""
+        },
+        "id": "bd5975b3-6965-5f0a-0dd7-4a590136a0bd"
+      },
+      "90c90206-7111-b511-5f8b-bbcf609c9a51": {
+        "isSystemType": true,
+        "bundleAlias": "digital_gauges",
+        "typeAlias": "simple_neon_gauge_justgage",
+        "type": "latest",
+        "title": "New widget",
+        "sizeX": 6,
+        "sizeY": 6,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": null,
+              "entityAliasId": "c41693fc-5ab0-cd48-20c3-612e05f82c27",
+              "filterId": null,
+              "dataKeys": [
+                {
+                  "name": "cur_power",
+                  "type": "timeseries",
+                  "label": "cur_power",
+                  "color": "#ff0000",
+                  "settings": {},
+                  "_hash": 0.5887231563617981
+                }
+              ]
+            }
+          ],
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY"
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1674049749316,
+                "endTimeMs": 1674136149316
+              },
+              "quickInterval": "CURRENT_DAY"
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fffefe",
+          "color": "rgba(1, 1, 1, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "minValue": 0,
+            "maxValue": 100,
+            "gaugeType": "donut",
+            "donutStartAngle": 90,
+            "gaugeWidthScale": 1,
+            "neonGlowBrightness": 0,
+            "dashThickness": 1.5,
+            "roundedLineCap": false,
+            "useFixedLevelColor": false,
+            "levelColors": [],
+            "showTitle": true,
+            "title": "POWER",
+            "titleFont": {
+              "family": "Roboto",
+              "size": 12,
+              "style": "normal",
+              "weight": "500"
+            },
+            "showUnitTitle": false,
+            "showTimestamp": false,
+            "showValue": true,
+            "valueFont": {
+              "family": "Roboto",
+              "style": "normal",
+              "weight": "500",
+              "size": 14
+            },
+            "showMinMax": true,
+            "minMaxFont": {
+              "family": "Segment7Standard",
+              "size": 12,
+              "style": "normal",
+              "weight": "500"
+            },
+            "showTicks": false,
+            "animation": true,
+            "animationDuration": 500,
+            "animationRule": "linear"
+          },
+          "title": "New Simple neon gauge - justGage",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "widgetStyle": {
+            "borderBottom": "solid 1px #aaa",
+            "borderRight": "solid 1px #aaa"
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "enableDataExport": false,
+          "units": "W",
+          "decimals": 2,
+          "alarmSearchStatus": "UNACK",
+          "alarmsPollingInterval": 5,
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": ""
+        },
+        "id": "90c90206-7111-b511-5f8b-bbcf609c9a51"
+      },
+      "cbc80518-670d-9e0a-fe28-5dbe607d047d": {
+        "isSystemType": true,
+        "bundleAlias": "control_widgets",
+        "typeAlias": "led_indicator",
+        "type": "rpc",
+        "title": "New widget",
+        "image": null,
+        "description": null,
+        "sizeX": 2.5,
+        "sizeY": 2.5,
+        "config": {
+          "targetDeviceAliases": [],
+          "showTitle": false,
+          "backgroundColor": "#e6e7e8",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "title": "Smart Plug status",
+            "ledColor": "#4caf50",
+            "initialValue": false,
+            "performCheckStatus": false,
+            "retrieveValueMethod": "timeseries",
+            "valueAttribute": "switch_1",
+            "parseValueFunction": "return data ? true : false;"
+          },
+          "title": "New Led indicator",
+          "dropShadow": true,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "useDashboardTimewindow": true,
+          "showLegend": false,
+          "actions": {},
+          "decimals": 2,
+          "datasources": [],
+          "targetDeviceAliasIds": [
+            "c41693fc-5ab0-cd48-20c3-612e05f82c27"
+          ]
+        },
+        "row": 0,
+        "col": 0,
+        "id": "cbc80518-670d-9e0a-fe28-5dbe607d047d"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "Tuya smart plug",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "084142d2-2b7e-3d9a-36d1-f7157a79b939": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 4,
+                "col": 0
+              },
+              "3dd1803e-033c-07d2-c5bf-5694c1c93bcc": {
+                "sizeX": 16,
+                "sizeY": 8,
+                "row": 0,
+                "col": 4
+              },
+              "bd5975b3-6965-5f0a-0dd7-4a590136a0bd": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 0,
+                "col": 20
+              },
+              "90c90206-7111-b511-5f8b-bbcf609c9a51": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 4,
+                "col": 20
+              },
+              "cbc80518-670d-9e0a-fe28-5dbe607d047d": {
+                "sizeX": 4,
+                "sizeY": 4,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "c41693fc-5ab0-cd48-20c3-612e05f82c27": {
+        "id": "c41693fc-5ab0-cd48-20c3-612e05f82c27",
+        "alias": "smartPlug",
+        "filter": {
+          "type": "singleEntity",
+          "resolveMultiple": false,
+          "singleEntity": {
+            "entityType": "DEVICE",
+            "id": "710526f0-933b-11ed-882f-fbfdfcd95bca"
+          }
+        }
+      }
+    },
+    "filters": {},
+    "timewindow": {
+      "hideInterval": false,
+      "hideLastInterval": false,
+      "hideQuickInterval": false,
+      "hideAggregation": false,
+      "hideAggInterval": false,
+      "hideTimezone": false,
+      "selectedTab": 0,
+      "realtime": {
+        "realtimeType": 0,
+        "timewindowMs": 3600000,
+        "quickInterval": "CURRENT_DAY",
+        "interval": 60000
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "externalId": null,
+  "name": "Tuya smart plug"
+}

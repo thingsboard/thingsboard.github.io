@@ -71,14 +71,25 @@ git clone https://github.com/thingsboard/thingsboard.github.io.git website
 ### Deploy the site using the docker run command
 
 Please replace the `THINGSBOARD_WEBSITE_DIR` with the full path to your local thingsboard.github.io repository.
+>To deploy a fork, you need to replace the environment variable PAGES_REPO_NWO with the name of your repository.
+As example: \
+`PAGES_REPO_NWO="your_github_nickname/thingsboard.github.io"`
 
 ```bash
-docker run --rm -d -p 4000:4000 --name thingsboard_website --volume="THINGSBOARD_WEBSITE_DIR:/website" thingsboard/website
+docker run --rm -d -p 4000:4000 --name thingsboard_website -e PAGES_REPO_NWO="thingsboard/thingsboard.github.io" --volume="THINGSBOARD_WEBSITE_DIR:/website" thingsboard/website
 ```
+
+
 
 ### Deploy the site using the docker-compose file
 
-Please replace the `THINGSBOARD_WEBSITE_DIR` with the full path to your local thingsboard.github.io repository and create docker-compose.yml file:
+Please replace the `THINGSBOARD_WEBSITE_DIR` with the full path to your local thingsboard.github.io repository.
+
+>To deploy a fork, you need to replace the environment variable PAGES_REPO_NWO with the name of your repository.
+As example:\
+`PAGES_REPO_NWO: "your_github_nickname/thingsboard.github.io"`
+
+Create docker-compose.yml file:
 
 ```bash
 cat <<EOT | sudo tee docker-compose.yml
@@ -88,6 +99,8 @@ services:
     container_name: thingsboard_website
     restart: always
     image: "thingsboard/website"
+    environment:
+      PAGES_REPO_NWO: "thingsboard/thingsboard.github.io"
     ports:
       - "4000:4000"
     volumes:

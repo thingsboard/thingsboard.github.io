@@ -753,7 +753,7 @@ The **Widget Editor** will be opened, pre-populated with the content of the defa
  
 ```javascript
 self.onInit = function() {
-    var pageLink = self.ctx.pageLink();
+    var pageLink = self.ctx.pageLink(100);
 
     pageLink.typeList = self.ctx.widgetConfig.alarmTypeList;
     pageLink.statusList = self.ctx.widgetConfig.alarmStatusList;

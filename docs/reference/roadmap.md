@@ -9,28 +9,27 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ## ThingsBoard CE
 
-### v3.5
+### v3.5.2
 
-* Upgrade to Angular 14;
-* Significant UI/UX improvements: new menu, home screen, etc. 
-* Notification system.
-  New UI elements to display notifications about alarms, system events, etc on the main page.
-  Ability to acknowledge the notification.
-  Simplified delivery of notifications about alarms via email, sms, etc.
-  Support of push notifications to mobile apps.
-* Ability to add comments to the alarms; Automatic comments on state/severity change. Manual comments by users;   
-* Alarm assignment to users;
-* Refactoring of alarm rules and some new features in alarm rules;  
-* Numerous usability improvements;
-* New widgets and rule nodes;
+* Simplified widget configuration;
+* Dedicated dashboard for gateway management;  
+* New card widget  
+* Bugfixes;
 
 ### v3.6
 
 * Migration to JDK 17.
+* Alarm rules:
+  * refactoring to separate entity;
+  * simplified configuration;
+  * support of more complex conditions;
+* Notification system:
+  Support of push notifications to mobile apps.
 * Diagnostics system.
   Automatically detect issues in the system configuration and notify the tenant administrator.
   For example, wrong script in the rule node or issues with external systems: sending emails, sms, etc.
-
+* Numerous usability improvements;
+* New widgets and rule nodes;
 
 See active development in progress [here](https://github.com/thingsboard/thingsboard/tree/{{ site.release.branch_major_next }}) and work on latest release bug fixes [here](https://github.com/thingsboard/thingsboard/tree/master).
 

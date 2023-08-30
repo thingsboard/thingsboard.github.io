@@ -29,7 +29,7 @@ In small and medium installations Trendz can be installed **on the same** server
 Download and extract the package.
 
 ```bash
-https://dist.thingsboard.io/trendz-windows-1.10.0-HF1.zip
+https://dist.thingsboard.io/trendz-windows-1.10.2.zip
 ```
 {: .copy-code}
 
@@ -37,7 +37,7 @@ https://dist.thingsboard.io/trendz-windows-1.10.0-HF1.zip
 
 ### Step 3. Obtain and configure license key 
 
-We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
+We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
 Once you get the license secret, you should put it to the trendz configuration file. 

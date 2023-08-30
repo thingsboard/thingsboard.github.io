@@ -19,6 +19,14 @@ Before creating the integration, you need to create an Uplink converter in Data 
 Click on the “plus” and on “Create new converter”. To view the events, enable Debug. 
 In the function decoder field, specify a script to parse and transform data.
 
+{% capture difference %}
+**NOTE**
+<br>
+While Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode can significantly increase the disk space used by the database since all the debug data is stored there. It is highly recommended turning the Debug mode off after debugging is complete.  
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+
 {% include templates/tbel-vs-js.md %}
 
 {% capture httpuplinkconverterconfig %}
@@ -27,41 +35,55 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/http/http-uplink-c
 
 {% include content-toggle.html content-toggle-id="httpuplinkconverterconfig" toggle-spec=httpuplinkconverterconfig %}
 
-{% capture difference %}
-**NOTE**
-<br>
-While Debug mode is very useful for development and troubleshooting, leaving it enabled in production mode can significantly increase the disk space used by the database since all the debug data is stored there. It is highly recommended turning the Debug mode off after debugging is complete.  
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
+Now that the Uplink converter has been created, it is possible to create an integration.
 
 ## Create integration
 
-Now that the Uplink converter has been created, it is possible to create an integration.
+- Go to **Integrations center** section -> **Integrations** page and click "plus" button to create new integration. Name it **HTTP Integration**, select type **HTTP**. Click "Next";
 
-{% include images-gallery.html imageCollection="add-integration" %}
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/http/http-add-integration-1-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/http/add-integration-1-pe.png)
+{% endif %}
 
-#### Enable security option
+- At this step, you can select a previously created or create a new upnlink converter right in this window. Select the previously created **HTTP Uplink Converter**. Click "Next";
 
-If necessary, you can specify additional parameters, without which the data will not be included in the integration.
-To do this, check the Enable security checkbox and click on the Headers filter. Specify an arbitrary value and save the changes.
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/http/http-add-integration-2-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/http/add-integration-2-pe.png)
+{% endif %}
 
-{% include images-gallery.html imageCollection="security" %}
+- At the step of adding a downlink converter, you can also select a previously created or create a new downlink converter. But for now, leave the "Downlink data converter" field empty. Click "Skip";
 
-Once the Headers filter has been configured, it will also need to be specified in the uplink message as follows.
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/http/http-add-integration-3-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/http/add-integration-3-pe.png)
+{% endif %}
 
-```ruby
--H "test-header:secret"
-```
-{: .copy-code}
+ - At this step, specify your **Base URL**;
 
-{% include images-gallery.html imageCollection="security-1" %}
+ - Please note down **HTTP endpoint URL** we will use this value later;
+
+ - In **Advanced settings** enable "**Replace response status from 'No-Content' to 'OK'**";
+
+ - Click **Add** button to save the Integration.
+
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/http/http-add-integration-4-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/http/add-integration-4-pe.png)
+{% endif %}
 
 ## Send uplink message
 
-To send an uplink message, you need a HTTP endpoint URL from the integration.  
-Let`s go to the Integrations tab in ThingsBoard. Find your HTTP integration and click on it. There you can find the HTTP endpoint URL. Click on the icon to copy the url.
-
-{% include images-gallery.html imageCollection="send-uplink" %}
+To send an uplink message, you need the previously copied **HTTP endpoint URL** from the integration.
 
 Use this command to send the message. Replace $DEVICEname, $DEVICEtype and $YOUR_HTTP_ENDPOINT_URL with corresponding values.
 
@@ -70,20 +92,47 @@ curl -v -X POST -d "{\"deviceName\":\"$DEVICEname\",\"deviceType\":\"$DEVICEtype
 ```
 {: .copy-code}
 
-Use this command to send the message. Replace $DEVICEname, $DEVICEtype, $YOUR_HTTP_ENDPOINT_URL and $VALUE with corresponding values.
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/http/http-send-uplink-message-1-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/http/send-uplink-message-1-pe.png)
+{% endif %}
 
-```ruby
-curl -v -X POST -d "{\"deviceName\":\"$DEVICEname\",\"deviceType\":\"$DEVICEtype\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json" -H "$VALUE"
-```
-{: .copy-code}
+<br/>
+Go to the **Events** tab in your HTTP integration. If you have done everything correctly, you should see one event with the status "OK."
 
-The created device with data can be seen in the section **Device groups -> All**
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/http/http-send-uplink-message-3-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/http/send-uplink-message-3-pe.png)
+{% endif %}
 
-{% include images-gallery.html imageCollection="device" %}
+{% if docsPrefix == "pe/" %}
+<br/>
+When you sent the message, a new device was created. You should receive a notification about it. To view notification, click on the bell icon in the upper right corner of the screen. 
+The notification will contain an action button by clicking which you can go to the details of the new device. Click this button.
 
-Received data can be viewed in the Uplink converter. In the **“In”** and **“Out”** blocks of the Events tab:
+![image](/images/user-guide/integrations/http/http-device-2-pe.png)
 
-{% include images-gallery.html imageCollection="send-uplink-1" %}
+<br/>
+Here you will see information about the new device. As well as the telemetry which we sent to the device.
+
+![image](/images/user-guide/integrations/http/http-device-1-pe.png)
+
+<br/>
+Learn more about **notifications** and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
+
+{% endif %}
+
+{% if docsPrefix == "paas/" %}
+<br/>
+The created device with data can be seen in the section **Device groups -> All**.
+
+![image](/images/user-guide/integrations/http/device-1-pe.png)
+
+{% endif %}
 
 {% capture difference %}
 **NOTE**
@@ -92,12 +141,52 @@ If the "Allow create devices or assets" checkbox is unchecked, when sending a me
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-Use the Dashboards to work with data. Dashboards are a modern format for collecting and visualizing data sets. Visibility of data presentation is achieved through a variety of widgets.  
-ThingsBoard has examples of several types of dashboards that you can use. You can find them in **Solution templates** tab.
+Also, sent and received data can be viewed in the Uplink converter. In the **"In"** and **"Out"** blocks of the Events tab
 
-{% include images-gallery.html imageCollection="solution-templates" %}
+{% include images-gallery.html imageCollection="send-uplink-1" %}
 
-How to work with dashboards [read here](/docs/{{docsPrefix}}user-guide/dashboards/).
+<br/>
+Use the [Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/) to work with data. Dashboards are a modern format for collecting and visualizing data sets. Visibility of data presentation is achieved through a variety of widgets.  
+ThingsBoard has examples of several types of dashboards that you can use. Learn more about **Solution templates** [here](/docs/{{docsPrefix}}solution-templates/overview/).
+
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/http/http-solution-templates.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/http/solution-templates.png)
+{% endif %}
+
+#### Enable security option
+
+If necessary, you can specify additional parameters, without which the data will not be included in the integration.
+To do this, check the Enable security checkbox and click on the Headers filter. Specify an arbitrary value and save the changes.
+
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/http/http-enable-security-1-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/http/security-1-pe.png)
+{% endif %}
+
+Once the Headers filter has been configured, it will also need to be specified in the uplink message as follows:
+
+```ruby
+-H "test-header:secret"
+```
+
+Use this command to send the message with enable security option. Replace $DEVICEname, $DEVICEtype, $YOUR_HTTP_ENDPOINT_URL and $VALUE with corresponding values.
+
+```ruby
+curl -v -X POST -d "{\"deviceName\":\"$DEVICEname\",\"deviceType\":\"$DEVICEtype\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json" -H "$VALUE"
+```
+{: .copy-code}
+
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/http/http-enable-security-2-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/http/security-2-pe.png)
+{% endif %}
 
 ## Downlink Converter
 
@@ -111,24 +200,57 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/http/http-downlink
 
 {% include content-toggle.html content-toggle-id="httpdownlinkconverterconfig" toggle-spec=httpdownlinkconverterconfig %}
 
-We can send a message to the device from Rule chain using the rule node. 
-For example, create an **integration downlink** node and set the “**Attributes updated**” link to it. 
-When changes are made to the attribute, the downlink message will be sent to the integration.
+Now you need to add the created downlink converter to the integration.
 
-{% include images-gallery.html imageCollection="downlink-rule" %}
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/http/http-add-downlink-converter-1-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/http/http-add-downlink-converter-1-pe.png)
+{% endif %}
 
-To see this with an example, we go to the "Device group" section, the "All" folder. In the "Shared attributes" of our device, create an attribute with the serial number of the device. Click on the "plus" icon.
+<br/>
+When integration configured and ready to use, we can send a message to the device from Rule chain using the rule node. 
+Create an **integration downlink** node.
+
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/http/http-downlink-rule-chain-1-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/http/downlink-rule-chain-1-pe.png)
+{% endif %}
+
+<br/>
+Set the "**Attributes updated**" and "**Post attributes**" links to it. 
+When the attribute is created or changes are made to the attribute, the downlink message will be sent to the integration.
+
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/http/http-downlink-rule-chain-2-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/http/downlink-rule-chain-2-pe.png)
+{% endif %}
+
+<br/>
+To see this with an example, we go to the **Devices** page. Select your device and navigate to the **Attributes** tab. Select **Shared attributes** and click on the "plus" icon to create new attribute.
 Then set the attribute name, its value (for example, the key name is firmware, value: 01052020.v1.1) and save the data.
 
-{% include images-gallery.html imageCollection="downlink-add-attribute" %}
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/integrations/http/http-downlink-add-attribute-1-pe.png)
+{% endif %}
+{% if docsPrefix == "paas/" %}
+![image](/images/user-guide/integrations/http/downlink-add-attribute-1-pe.png)
+{% endif %}
 
-Received data and data that was sent can be viewed in the downlink converter. In the “In” block of the Events tab, we see what data entered and in the “Out” field displays messages to device:
+<br/>
+Send the uplink message again. We will receive a response from the ThingsBoard in the terminal:
+
+{% include images-gallery.html imageCollection="downlink-terminal" %}
+
+Received data and data that was sent can be viewed in the downlink converter. In the "In" block of the Events tab, we see what data entered and in the "Out" field, the message sent to the device is displayed:
 
 {% include images-gallery.html imageCollection="downlink-message" %}
 
-An example of a sent message and a response from ThingsBoard in the terminal:
-
-{% include images-gallery.html imageCollection="downlink-terminal" %}
 
 ## Next steps
 

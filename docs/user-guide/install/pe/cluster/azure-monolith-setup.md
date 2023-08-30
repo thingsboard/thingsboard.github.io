@@ -24,7 +24,7 @@ This guide will help you to setup ThingsBoard in monolith mode in Azure AKS.
 ## Step 1. Clone ThingsBoard PE K8S scripts repository
 
 ```bash
-git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git
+git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git --depth 1
 cd thingsboard-pe-k8s/azure/monolith
 ```
 {: .copy-code}
@@ -85,6 +85,10 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
 
 {% assign tbServicesFile = "tb-node.yml" %}
 {% include templates/install/azure/configure-udp.md %}
+
+### 9.4. Configure Edge Load Balancer (Optional)
+
+{% include templates/install/k8s-configure-edge-load-balancer.md %}
 
 ## Step 10. Using
 

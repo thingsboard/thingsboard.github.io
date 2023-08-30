@@ -2,20 +2,20 @@ Once you have successfully published the attributes and telemetry data, you shou
 
 {% assign deviceTelemetryCE = '
     ===
-        image: /images/helloworld/hello-world-step-2-item-1.png,
+        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-1-ce.png,
         title: Click on the device row in the table to open device details.
     ===
-        image: /images/helloworld/hello-world-step-3-item-3.png,
+        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-2-ce.png,
         title: Navigate to the telemetry tab.
     '
 %}
 
 {% assign deviceTelemetryPE = '
     ===
-        image: /images/helloworld/hello-world-pe-step-1-item-1.png,
+        image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-1-pe.png,
         title: Click on the device row in the table to open device details.
     ===
-        image: /images/helloworld/hello-world-pe-step-2-item-4.png,
+        image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-2-pe.png,
         title: Navigate to the telemetry tab.
     '
 %}
@@ -26,11 +26,11 @@ Once you have successfully published the attributes and telemetry data, you shou
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=deviceTelemetryCE %}
 {% endif %} 
 
-Also, let’s display OrangePI attributes and telemetry on a dashboard. For this, you can create your own dashboard with 
+Also, let’s display single board computer attributes and telemetry on a dashboard. For this, you can create your own dashboard with 
 your custom widgets or use a ready-made dashboard and simply import it.
  
 {% capture minicomputerstogglespec %}
 Imported Dashboard%,%importedDashboard%,%templates/device-library/single-board-computers/device-imported-dashboard.md%br%
 New Dashboard%,%newDashboard%,%templates/device-library/single-board-computers/device-new-dashboard.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="minicomputersDashboard" toggle-spec=minicomputerstogglespec %}  
+{% include content-toggle.liquid content-toggle-id="minicomputersDashboard" toggle-spec=minicomputerstogglespec %}  

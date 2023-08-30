@@ -1,6 +1,7 @@
-#### Edge hardware requirements
-Hardware requirements depend on an amount of devices connected to the edge and GUI usage locally. 
+#### Edge Hardware Requirements
 
-To run ThingsBoard Edge ***without*** heavily usage of GUI (local dashboards, device management etc.) and relatively small amount of devices (under 100) on a single machine you will need at least 1GB of RAM.
+The hardware requirements for ThingsBoard Edge depend on the number of devices connected to the edge and the extent of GUI usage locally.
 
-To run ThingsBoard Edge ***with*** heavily usage of GUI (local dashboards, device management etc.) and with 100+ devices on a single machine we recommend having at least 4GB of RAM.
+If you're planning to run ThingsBoard Edge **without** heavy GUI usage (local dashboards, device management, etc.), and you have a relatively small number of devices (under 100) connected to a single machine, then a minimum of 1GB of RAM should suffice.
+
+On the other hand, if you anticipate heavy GUI usage (local dashboards, device management, etc.) and you're connecting 100+ devices on a single machine, we recommend having at least 4GB of RAM to ensure optimal performance.
