@@ -966,7 +966,7 @@ Allows to filter only one entity based on the id. For example, this entity filte
     }
 }
 ```
-
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 - **Group Entities Filter**
 
 Allows to filter multiple entities of the same type using the entity group type and id. For example, this entity filter selects all devices that belong to the group  **e52b0020-2a7a-11ec-94eb-213c95f54092**:
@@ -977,6 +977,7 @@ Allows to filter multiple entities of the same type using the entity group type 
     entityGroup: "e52b0020-2a7a-11ec-94eb-213c95f54092"
 }
 ```
+{% endif %}
 
 - **Entity List Filter**
 
@@ -1057,8 +1058,6 @@ Other example, this entity filter selects all devices which belong to group **Wa
 }
 ```
 
-{% endif %}
-
 - **Entity owner Filter**
 
 Allows to fetch owner (Tenant or Customer) of the specified entity. For example, this entity filter selects owner of the device with id **e52b0020-2a7a-11ec-94eb-213c95f54093**:
@@ -1071,6 +1070,7 @@ Allows to fetch owner (Tenant or Customer) of the specified entity. For example,
     }
 }
 ```
+{% endif %}
 
 - **Api Usage Filter**
 
@@ -1416,7 +1416,7 @@ self.onInit = function() {
                         type: "ATTRIBUTE" //Key type
                     },
                     predicate: {
-                        operation: "EQUAL", //Operation type (You can find full list of operations in Key Filter topic)
+                        operation: "EQUAL", //Operation type (You can find full list of operations in Key Filters topic)
                         type: "BOOLEAN", //Sorting value type
                         value: {
                             defaultValue: true //Sorting value
@@ -1495,7 +1495,7 @@ self.onInit = function() {
                         type: "ATTRIBUTE" //Key type
                     },
                     predicate: {
-                        operation: "EQUAL", //Operation type (You can find full list of operations in Key Filter topic)
+                        operation: "EQUAL", //Operation type (You can find full list of operations in Key Filters topic)
                         type: "BOOLEAN", //Sorting value type
                         value: {
                             defaultValue: true //Sorting value
@@ -1571,7 +1571,7 @@ self.onInit = function() {
                         type: "TIME_SERIES" //Key type
                     },
                     predicate: {
-                        operation: "GREATER", //Operation type (You can find full list of operations in Key Filter topic)
+                        operation: "GREATER", //Operation type (You can find full list of operations in Key Filters topic)
                         type: "NUMERIC", //Sorting value type
                         value: {
                             defaultValue: 30 //Sorting value
