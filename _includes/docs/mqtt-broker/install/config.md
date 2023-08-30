@@ -259,7 +259,7 @@ environment variable, default value, and description.
           <td>listener.ws.netty.sub_protocols</td>
           <td>WS_NETTY_SUB_PROTOCOLS</td>
           <td>mqttv3.1,mqtt</td>
-          <td>Comma-separated list of subprotocols that the WebSocket can negotiate</td>
+          <td>Comma-separated list of subprotocols that the WebSocket can negotiate. The subprotocol setting `mqtt` represents MQTT 3.1.1 and MQTT 5</td>
       </tr>
       <tr>
           <td>listener.ws.netty.leak_detector_level</td>
@@ -328,7 +328,7 @@ environment variable, default value, and description.
           <td>listener.wss.netty.sub_protocols</td>
           <td>WSS_NETTY_SUB_PROTOCOLS</td>
           <td>mqttv3.1,mqtt</td>
-          <td>Comma-separated list of subprotocols that the WebSocket can negotiate</td>
+          <td>Comma-separated list of subprotocols that the WebSocket can negotiate. The subprotocol setting `mqtt` represents MQTT 3.1.1 and MQTT 5</td>
       </tr>
       <tr>
           <td>listener.wss.netty.leak_detector_level</td>
