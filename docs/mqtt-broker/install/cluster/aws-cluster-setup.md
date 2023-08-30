@@ -40,7 +40,7 @@ Here are the fields you can change depending on your needs:
   (the default value is `[us-east-1a,us-east-1b,us-east-1c]`)
 - `instanceType` - the type of the instance with TB node (the default value is `m6a.large`)
 
-**Note**: if you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy 2 nodes of type m6a.large.
+**Note**: If you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy 2 nodes of type m6a.large.
 
 {% capture aws-eks-security %}
 In case you want to secure access to the PostgreSQL and MSK, you'll need to configure the existing VPC or create a new one,
@@ -53,7 +53,7 @@ You can find more information about configuring VPC for `eksctl` [here](https://
 
 Command to create AWS cluster:
 
-```
+```bash
 eksctl create cluster -f cluster.yml
 ```
 {: .copy-code}
@@ -82,7 +82,7 @@ Here you should choose security group corresponding to the one on the screen:
 
 ![image](/images/mqtt-broker/install/aws-rds-vpc-sg.png)
 
-**Note**, some recommendations:
+**Note**: Some recommendations:
 
 * Make sure your PostgreSQL version is latest 12.x, not 13.x yet;
 * Use ‘Production’ template for high availability. It enables a lot of useful settings by default;
@@ -93,7 +93,7 @@ Make sure that `thingsboard_mqtt_broker` database is created along with PostgreS
 
 ![image](/images/mqtt-broker/install/aws-rds-default-database.png)
 
-**Note:** You may also change `username` field and set or auto-generate `password` field (keep your postgresql password in a safe place).
+**Note**: You may also change `username` field and set or auto-generate `password` field (keep your postgresql password in a safe place).
 
 ## Step 5. Amazon MSK Configuration
 
@@ -119,7 +119,7 @@ Also, you should enable `Plaintext` communication between clients and brokers:
 
 ![image](/images/mqtt-broker/install/aws-msk-security.png)
 
-**Note**, some recommendations:
+**Note**: Some recommendations:
 
 * Apache Kafka version can be safely set to the latest 3.4.0 version as TBMQ is fully tested on it;
 * Use m5.large or similar instance types;
@@ -139,7 +139,7 @@ Also, you'll need to set `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PAS
 ### Amazon MSK
 
 Once the MSK cluster switch to the ‘Active’ state, to get the list of brokers execute the next command:
-```
+```bash
 aws kafka get-bootstrap-brokers --region us-east-1 --cluster-arn $CLUSTER_ARN
 ```
 {: .copy-code}
@@ -154,8 +154,8 @@ Otherwise, click `View client information` seen on the screenshot above. Copy bo
 ## Step 7. Installation
 
 Execute the following command to run installation:
-```
-./k8s-install-tb-mqtt-broker.sh
+```bash
+./k8s-install-tbmq.sh
 ```
 {: .copy-code}
 
@@ -172,7 +172,7 @@ Otherwise, please check if you set the PostgreSQL URL in the `tb-broker-configma
 Execute the following command to deploy the broker:
 
 ```bash
-./k8s-deploy-tb-broker.sh
+./k8s-deploy-tbmq.sh
 ```
 {: .copy-code}
 
@@ -190,7 +190,7 @@ Now you can open TBMQ web interface in your browser using DNS name of the load b
 
 You can get DNS name of the load-balancers using the next command:
 
-```
+```bash
 kubectl get services
 ```
 {: .copy-code}
@@ -207,7 +207,7 @@ Use `EXTERNAL-IP` field of the `tb-broker-loadbalancer-external` to connect to t
 
 In case of any issues you can examine service logs for errors. For example to see TBMQ logs execute the following command:
 
-```
+```bash
 kubectl logs -f tb-broker-0
 ```
 {: .copy-code}
@@ -222,26 +222,60 @@ See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatshee
 
 ## Upgrading
 
-TODO!!!
+In case you would like to upgrade, please pull the latest changes from `main` branch:
+
+```bash
+git pull origin main
+```
+{: .copy-code}
+
+**Note**: Make sure custom changes of yours if available are not lost during the merge process.
+
+After that execute the following command:
+
+```bash
+./k8s-upgrade-tbmq.sh --fromVersion=FROM_VERSION
+```
+{: .copy-code}
+
+Where `FROM_VERSION` - from which version upgrade should be started.
+See [Upgrade Instructions](/docs/mqtt-broker/install/upgrade-instructions/) for valid `fromVersion` values.
+
+**Note**: You may optionally stop the TBMQ pods while you run the upgrade of the database with the below command. 
+
+```bash
+./k8s-delete-tbmq.sh
+```
+{: .copy-code}
+
+This will cause downtime, but will make sure that the DB state will be consistent after the update. 
+Most of the updates do not require the TBMQ to be stopped.
+
+Once completed, execute deployment of the resources again. This will cause rollout restart of the TBMQ with the newest version.
+
+```bash
+./k8s-deploy-tbmq.sh
+```
+{: .copy-code}
 
 ## Cluster deletion
 
 Execute the following command to delete TBMQ nodes:
 
-```
-./k8s-delete-tb-broker.sh
+```bash
+./k8s-delete-tbmq.sh
 ```
 {: .copy-code}
 
 Execute the following command to delete all TBMQ nodes and configmaps:
 
-```
+```bash
 ./k8s-delete-all.sh
 ```
 {: .copy-code}
 
 Execute the following command to delete the EKS cluster (you should change the name of the cluster and the region if those differ):
-```
+```bash
 eksctl delete cluster -r us-east-1 -n thingsboard-mqtt-broker-cluster -w
 ```
 {: .copy-code}

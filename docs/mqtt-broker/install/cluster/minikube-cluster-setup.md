@@ -122,7 +122,7 @@ git pull origin main
 ```
 {: .copy-code}
 
-**Note**, make sure custom changes of yours if available are not lost during the merge process.
+**Note**: Make sure custom changes of yours if available are not lost during the merge process.
 
 After that execute the following commands:
 

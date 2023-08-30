@@ -110,9 +110,9 @@ git pull origin main
 ```
 {: .copy-code}
 
-**Note**, make sure custom changes of yours if available are not lost during the merge process.
+**Note**: Make sure custom changes of yours if available are not lost during the merge process.
 
-**Note**, make sure `TBMQ_VERSION` in .env file is set to the target version (e.g., set it to {{ site.release.broker_full_ver }} if you are upgrading to the latest).
+**Note**: Make sure `TBMQ_VERSION` in .env file is set to the target version (e.g., set it to {{ site.release.broker_full_ver }} if you are upgrading to the latest).
 
 After that execute the following commands:
 
