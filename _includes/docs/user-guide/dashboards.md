@@ -52,7 +52,8 @@ To display only your dashboards, toggle the "Include customer entities".
 
 ### Import dashboard
 
-You are able to import a dashboard in JSON format. 
+You can import a dashboard from a JSON file.
+
 To import a dashboard, you should:
 
 {% include images-gallery.html imageCollection="import-dashboard" showListImageTitles="true" %}
@@ -322,7 +323,7 @@ Please see the [Entity aliases documentation](/docs/{{docsPrefix}}user-guide/ui/
 ### Settings
 
 Dashboard settings allow adjusting and altering the overall look of the Dashboard. 
-To start customizing the Dashboard for a better user experience, enter the [Edit mode](#edit-mode).
+To start customizing the Dashboard enter the [Edit mode](#edit-mode).
 After entering the edit mode, click the “gear” icon at the top of the window, so the dashboard settings will be opened.
 
 {% include images-gallery.html imageCollection="settings" %}
@@ -348,6 +349,12 @@ You can set dashboard logo which displayed in dashboard fullscreen mode. For thi
 {% include images-gallery.html imageCollection="dashboard-logo-settings" %}
 
 **Toolbar settings**
+
+The checkboxes _Display dashboard selection, Display entities selection, Display filters, Display timewindow, Display export_ and _Display update dashboard image_
+are responsible for the visibility of the appropriate options on the Dashboard toolbar panel.
+
+_Display filters_ option is shown on the toolbar panel only when the one has been created. If the filter was created,
+but you'd like to limit the customer's opportunity to modify the device's indicators, we disable the ability to see filters on the toolbar panel by unchecking the corresponding checkbox.
 
 You can display/hide toolbar icons. Let's hide "Display dashboards selection", "Display timewindow" and "Display export" icons on the dashboard page.
 

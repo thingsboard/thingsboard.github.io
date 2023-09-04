@@ -42,7 +42,7 @@ import-dashboard:
         title: 'Go to the "Dashboards" page and click on the "+" button in the upper right corner of the page and choose "Import dashboard";'
     1:
         image: /images/user-guide/dashboards/overview/import-dashboard-2-pe.png
-        title: 'The import dashboard window opens. Upload the JSON file and click "Import";'
+        title: 'The dashboard import window will open. Upload the JSON file and click "Import";'
     2:
         image: /images/user-guide/dashboards/overview/import-dashboard-3-pe.png
         title: 'You have imported a dashboard. Open it;'
@@ -422,22 +422,22 @@ states-5:
 
 add-new-widget:
     0:
-        image: /images/user-guide/dashboards/overview/add-new-dashboard-1-pe.png
+        image: /images/user-guide/widgets/overview/add-new-dashboard-1-pe.png
         title: 'Open your dashboard and enter edit mode;'
     1:
-        image: /images/user-guide/dashboards/overview/add-new-dashboard-2-pe.png
+        image: /images/user-guide/widgets/overview/add-new-dashboard-2-pe.png
         title: 'Click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
     2:
-        image: /images/user-guide/dashboards/overview/add-new-dashboard-3-pe.png
+        image: /images/user-guide/widgets/overview/add-new-dashboard-3-pe.png
         title: 'Select widget bundle, for example, "Charts". To find the widget you want as quickly as possible, use the search bar by clicking a magnifying glass icon and inputting the name of the widget there;'
     3:
-        image: /images/user-guide/dashboards/overview/add-new-dashboard-4-pe.png
+        image: /images/user-guide/widgets/overview/add-new-dashboard-4-pe.png
         title: 'Select a widget, for example, “Timeseries Line Chart”, and click on it to open the “Add Widget” dialog box.'
     4:
-        image: /images/user-guide/dashboards/overview/add-new-dashboard-5-pe.png
+        image: /images/user-guide/widgets/overview/add-new-dashboard-5-pe.png
         title: 'Add a data source, choose basic and advanced settings, and click the "Add" button. Then apply changes;'
     5:
-        image: /images/user-guide/dashboards/overview/add-new-dashboard-6-pe.png
+        image: /images/user-guide/widgets/overview/add-new-dashboard-6-pe.png
         title: 'Your first widget is created.'
 
 --- 

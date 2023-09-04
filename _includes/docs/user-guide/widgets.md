@@ -33,9 +33,17 @@ To add a new widget to a dashboard, you should:
 
 {% include images-gallery.html imageCollection="add-widget" showListImageTitles="true" %}
 
+### Import widget
+
+You can import a widget from a JSON file.
+
+To import a widget, you should:
+
+{% include images-gallery.html imageCollection="import-widget" showListImageTitles="true" %}
+
 ## Widget settings
 
-Widget consists of one or multiple data sources, basic and advanced settings, and actions that you can add.
+Widget settings consists of one or multiple data sources, appearance settings, and actions that you can customize and perform on the widget's content.
 
 {% capture difference %}
 **Note**
@@ -44,30 +52,25 @@ that only the data source configuration is strictly required. You can leave all 
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-### Data settings
-
-Widget data settings are for adding one or multiple data sources.
-A data source is a combination of [a data source type](/docs/{{docsPrefix}}user-guide/widgets/#widget-data-source-types),
-[an entity alias](/docs/{{docsPrefix}}user-guide/dashboards/#entity-aliases), [an optional filter](/docs/{{docsPrefix}}user-guide/dashboards/#entity-filters), and list of data keys (entity time series).
-Basically, the data source determines which entities (alias and filter) widget should use and what data keys to fetch for those entities.
-
 During widget creation, you can choose between **basic** and **advanced** functionality.
 Switching between modes is done in the top right corner of the widget creation window.
 
 **Basic functionality**
 
-Basic mode is suitable for a quick start when you are using a single data source type (entity alias or device) without additional conditions and filters.
-
-Basic mode contains time window settings, data source selection, and a basic set of widget appearance settings.
+Basic functionality is suitable for a quick start when you are using a single data source type without additional conditions or filters.
+It includes settings for the timewindow, datasource selection (entity alias or device), and a basic set of widget appearance settings.
 
 {% include images-gallery.html imageCollection="add-widget-basic-mode" %}
 
 **Advanced functionality**
 
-In the advanced mode, you can use multiple data sources (if supported by the widget) and apply filters.
-Additionally, the advanced functionality includes five tabs for more detailed widget configuration: Data, Appearance, Widget card, Actions and Mobile.
+In the advanced functionality, you can use multiple datasources (if supported by the widget), apply filters, and it includes five tabs for more detailed widget configuration: [Data](#data-settings), [Appearance](#appearance), Widget card, Actions and Mobile.
+
+Additionally, in the advanced functionality, there are additional datasource types available: Function, Entities count and Alarms count (these data types are not supported by all widgets).
 
 {% include images-gallery.html imageCollection="add-widget-advanced-mode" %}
+
+### Data settings
 
 #### Widget time window
 
@@ -82,18 +85,23 @@ Learn more about time window configuration [here](/docs/{{docsPrefix}}user-guide
 
 #### Data source types
 
+Widget data settings are for adding one or multiple data sources.
+A data source is a combination of a data source type,
+[an entity alias](/docs/{{docsPrefix}}user-guide/dashboards/#entity-aliases), [an optional filter](/docs/{{docsPrefix}}user-guide/dashboards/#filters), and list of data keys (entity time series).
+Basically, the data source determines which entities (alias and filter) widget should use and what data keys to fetch for those entities.
+
 There are three main types of data sources: **Device**, **Entity**, and **Function**.
 
 Additionally, for some widgets (such as the Value card), there are additional data source types, such as **Entities сount** and **Alarms сount**.
 
 Below, we will discuss each of these types.
+<br>
 
-**Device**
+**Device as the data source**
 
 Specifying a device as the data source retrieves data from the specified device.
 
 Let's assume you have a device that publishes indoor temperature values, and you want to display these data on a widget.
-
 Let's visualize this data using the Thermometer scale widget.
 
 {% include images-gallery.html imageCollection="data-source-type-device" showListImageTitles="true" %}
@@ -104,19 +112,20 @@ Let's visualize this data using the Thermometer scale widget.
 that in this case, the data source can only be a single device.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
-<br>
 
-**Entity**
+**Entity as the data source**
 
-Entity data source fetches data from specified entity alias. Let’s get familiar with this feature using a basic example, displaying all existing devices on the widget.
+Specifying an entity as a data source fetches data from specified entity alias. 
+
+Let’s get familiar with this feature using a basic example, displaying all existing devices on the widget.
 
 {% include images-gallery.html imageCollection="data-source-type-entity" showListImageTitles="true" %}
 
 <br>
 
-**Function**
+**Function as the data source**
 
-Function data source is used when you do not have any date, but you'd like to test a widget visualization.
+Function as a data source is used when you do not have any data, but you'd like to test a widget visualization.
 Let's say you haven't added alias and haven't received any telemetry, but you want to see how a widget displays data.
 
 {% include images-gallery.html imageCollection="data-source-type-random" showListImageTitles="true" %}
@@ -125,7 +134,7 @@ Let's say you haven't added alias and haven't received any telemetry, but you wa
 
 **Entities сount**
 
-Entities сount allows you to see the number of entities by displaying them on a widget and thus determine the number of devices, assets, etc.
+The Entities сount allows you to see the number of entities by displaying them on a widget and thus determine the number of devices, assets, etc.
 
 Let's get familiar with this feature using a basic example, displaying the total number of existing devices on the widget.
 
@@ -135,9 +144,9 @@ Let's get familiar with this feature using a basic example, displaying the total
 
 **Alarms count**
 
-Entities сount allows you to see the number of entities by displaying them on a widget and thus determine the number of devices, assets, etc.
+The Alarms count allows you to display the total number of alarms from all your devices and devices of your customers on a widget.
 
-Let's get familiar with this feature using a basic example, displaying the total number of existing devices on the widget.
+Let's get familiar with this feature using a basic example, displaying the total number of existing alarms on the widget.
 
 {% include images-gallery.html imageCollection="data-source-type-alarms-сount" showListImageTitles="true" %}
 
@@ -171,33 +180,25 @@ To add a time series or attribute key to the data source, click on the data keys
 
 Let's assume you don't have the required time series or attribute key in the database yet.
 In such a case, you can still add a key to the data source, and the widget will start displaying the data as soon as the device will send it to ThingsBoard.
+To do this, click on the data key row, then enter the name and select the type of the future key: Attributes, Entity field, or Timeseries.
 
 {% include images-gallery.html imageCollection="add-key-in-the-future" %}
 
-
-
-{% if docsPrefix == null %}
-{% endif %}
-
-
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-
-The "Enable data export" button is responsible for enabling/disabling the ability to export data that is displayed in the widget.
-By default data export is enabled.
-To download data, click on the “Export widget data” icon at the top right of the widget.
-You can export the data in csv, xls or xlsx format.
-
-{% include images-gallery.html imageCollection="add-data-source6" %}
-
-{% endif %}
-
-<br><br>
-
 **General data key settings**
 
-In basic data key settings, you can change the name and color of the key, change the label name, set special symbol to show next to value (only for the Timeseries key), specify the number of digits after the floating point and enable/disable "Use post processing function".
+In General data key settings, you can change the name and color of the key, change the label name, set special symbol to show next to value (only for the Timeseries key), specify the number of digits after the floating point and enable/disable "Use post-processing function".
 
-Let's look at the basic data key settings an example of the "Entities table" widget from the "Cards" bundle:
+If you use the basic functionality for adding a new widget, these settings are available right in the widget creation window.
+
+{% include images-gallery.html imageCollection="edit-basic-key-configuration" %}
+
+To open the full data key settings, click the "pencil" icon of a key in the data keys row.
+
+{% include images-gallery.html imageCollection="edit-key-configuration" %}
+
+**Basic data key settings**
+
+Let's look at the basic data key settings an example of the "Entities table" widget from the "Tables" bundle:
 
 - **Key.** You can change the name of the key. In this case, will be displayed data of the key, which key name you specify in the "Key" line. Change the name of the key and click “Save”.
 
@@ -212,29 +213,28 @@ Let's look at the basic data key settings an example of the "Entities table" wid
 
 {% include images-gallery.html imageCollection="data-key-configuration-label" %}
 
+- **Units.** You can indicate a special symbol that will be displayed next to the value. Enter the desired character in the units field and click "Save".
+
+{% include images-gallery.html imageCollection="data-key-configuration-units" %}
+
+- **Decimals.** Specify the desired number of digits to be displayed after floating-point number and click “Save”.
+
+{% include images-gallery.html imageCollection="data-key-configuration-decimals" %}
+
 - **Color.** Each key is assigned a different color. In some widgets (for example, Chart), the color of the graph line displayed in the widget is the color of the key. You can change color of the key. Click on the colored circle, select the desired label color and press “Select”.
 
-{% include images-gallery.html imageCollection="basic-data-key-settings-3" %}
+{% include images-gallery.html imageCollection="data-key-configuration-color" %}
 
-- **Special symbol to show next to value.** You can indicate a special symbol that will be displayed next to the value. Enter the desired character in this field and click “Save”.
+**Aggregation of key.** 
 
-{% include images-gallery.html imageCollection="basic-data-key-settings-4" %}
-
-- **Number of digits after floating point.** Specify the desired number of digits to be displayed after floating-point number and click “Save”.
-
-{% include images-gallery.html imageCollection="basic-data-key-settings-5" %}
-
-**Aggregation of key**
-
-Since version [3.4.2](https://thingsboard.io/docs/pe/reference/releases/), additional aggregation functionality has been
-implemented. By default, the Latest values widgets do not have the time window. If you enable aggregation for any data
+By default, the Latest values widgets do not have the time window. If you enable aggregation for any data
 key in the '**Latest values**' widgets, the time window control will appear. You can set up aggregation for each telemetry
 key individually, which you want to display and at the same time do not need to store it in the database. The time window
 configuration is limited to the real-time intervals (**Current Hour/Day/Month**) and '**History**' time intervals. The real-time
 intervals like 'last 30 minutes' or 'last 24 hours' are not supported for performance reasons. If you need to store the
 aggregation as telemetry, follow for more details at [the link](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/).
 
-{% include images-gallery.html imageCollection="basic-data-key-settings-7" %}
+{% include images-gallery.html imageCollection="data-key-configuration-aggregation" %}
 
 **Aggregation options:**
 
@@ -258,9 +258,10 @@ aggregation as telemetry, follow for more details at [the link](https://thingsbo
   Calculates the total number of transmitted messages for the selected period. It can be useful in setting up and
   optimizing devices running on battery power or when evaluating sensor activation sensitivity, etc.
   {% include images-gallery.html imageCollection="basic-data-key-settings-11" %}
+
   **Delta function:**
 
-  Allows you to calculate the delta between aggregated values for current and relative time window intervals.
+Allows you to calculate the delta between aggregated values for current and relative time window intervals.
 
   **Comparison period** - is a parameter that takes the history interval as a basis and converts it according to the selected option. List of options below.
 - **Previous interval** (default) - set as a default option, when calculating, not only time is taken into account, but
@@ -268,12 +269,12 @@ aggregation as telemetry, follow for more details at [the link](https://thingsbo
   <br>
   Example: **History** - **Current month so far** option, suppose is interval 1.09.22 to 25.09.22 then previous interval will be 1.08.22 to 25.08.22
 
-  {% include images-gallery.html imageCollection="basic-data-key-settings-12" %}
+  {% include images-gallery.html imageCollection="data-key-configuration-settings-agg-max-delta" %}
 
-    - **Day ago** - from the start and end of the history interval, takes away 24 hours.
-      <br>
-      For example, with the amount of water spent **Current day** and **Delta** - **Day ago**:
-      {% include images-gallery.html imageCollection="basic-data-key-settings-13" %}
+- **Day ago** - from the start and end of the history interval, takes away 24 hours.
+  <br>
+  For example, with the amount of water spent **Current day** and **Delta** - **Day ago**:
+  {% include images-gallery.html imageCollection="data-key-configuration-settings-agg-sum-delta-dayago" %}
 
 - **Week ago** - takes interval one week earlier from history interval (168 hours).
   <br>
@@ -307,7 +308,7 @@ This option allows you to specify how the result should be displayed:
 
 **Use data post-processing function.** The data post-processing function allows changing the output data depending on your wishes. To use data post-processing function, you must check the "Use data post-processing function" checkbox and enter the function in the field below. Then click the "Save" button in the lower-right corner.
 
-{% include images-gallery.html imageCollection="basic-data-key-settings-6" %}
+{% include images-gallery.html imageCollection="data-key-configuration-settings-post-processing" %}
 
 **Advanced data key settings**
 
@@ -326,7 +327,7 @@ You can choose a combination of alarm statuses and severity. You may also define
 
 ### Appearance
 
-**Default data settings**
+#### **Data settings**
 
 You can choose which symbol to display next to the value and the number of digits after the floating-point number.
 These settings are useful if you want to apply the same settings for all axis.
@@ -341,7 +342,7 @@ You can also specify an alternative message that will be displayed if widget doe
 
 {% include images-gallery.html imageCollection="add-data-source5" %}
 
-**Common settings**
+#### **Common settings**
 
 Let's assume you have added the "Timeseries Line Chart" widget to display thermometers using the widget data configuration [step](/docs/{{docsPrefix}}user-guide/dashboards/#widget-data-settings) only.
 You should see a similar widget (note that you should send/simulate some data to see the actual lines in the chart):
@@ -350,49 +351,7 @@ You should see a similar widget (note that you should send/simulate some data to
 
 Let's use the basic widget settings to customize the widget. We will demonstrate how each setting affects the widget.
 
-##### 1. Widget Title
-
-You can input custom widget title, tooltip and title style. You may also add an icon to the title and control icon color and size. See configuration and the corresponding result below.
-
-
-{% include images-gallery.html imageCollection="basic-settings-title" %}
-
-
-Title style from the screen above:
-
-```json
-{
-  "fontSize": "15px",
-  "fontWeight": 600
-}
-```
-{: .copy-code}
-
-##### 2. Widget Style
-
-You can customize personal  style for the widget using CSS properties. This style will be applied to the main div element of the widget.
-
-You may also disable the widget shadow using the "Drop shadow" checkbox and disable fullscreen using the "Enable fullscreen" checkbox.
-All those settings are enabled by default.
-
-You can also change the background color, text color, padding, and margin.
-See the configuration and the corresponding result below.
-
-Please note that the style and background color are just an example and are definitely not part of our guidelines.
-
-{% include images-gallery.html imageCollection="basic-settings-style" %}
-
-Widget style from the screen above:
-
-```json
-{
-  "border": "3px solid #2E86C1",
-  "cursor": "pointer"
-}
-```
-{: .copy-code}
-
-##### 3. Legend settings
+#### Legend settings
 
 For chart widgets, the “Display legend” option is enabled by default. The legend is used to display the min/max/average/total values.
 Other widgets have this option disabled.
@@ -407,16 +366,68 @@ See configuration and the corresponding result below:
 
 {% include images-gallery.html imageCollection="basic-settings-legend" %}
 
-##### 4. Mobile mode settings
+#### Axis
 
-Mobile Mode settings consist of two options:
-- Order - set to an integer, specifies the priority of the order of displaying widgets in mobile mode (note that in mobile mode all widgets are displayed in one vertical column).
-  If you need to arrange widgets in this column in a custom order, you can configure different order values for each widget.
-- Height - takes an integer value from 1 to 10. It sets the height of the widget in Mobile Mode in the range from 70px (1) to 700px (10), ignoring its original height.
-  For example, with a value of 5, the widget height will be 350px. (70 * 5)
-  If no value is specified, its original height will be used.
+Configure the preferred axis parameters.
 
-{% include images-gallery.html imageCollection="mobile-settings" %}
+Specify the names of the vertical and horizontal axes, and set the minimum and maximum scale values.
+
+You can also set the tick color, the number of decimal places, and step size between ticks.
+
+{% include images-gallery.html imageCollection="appearance-horizontal-axis" %}
+
+{% include images-gallery.html imageCollection="appearance-vertical-axis" %}
+
+**Ticks formatter function, f(value)**
+
+Let’s say we have telemetry which takes values of very large numbers, especially when there is a special symbol near values. 
+However, we need to build a small graph (since we don’t have a lot of free space on the dashboard). 
+Therefore, using the ticks-formatter function, we can convert the ticks values to a more compact form.
+
+```ruby
+return value.toExponential(1) + " C";
+```
+{: .copy-code}
+
+{% include images-gallery.html imageCollection="appearance-ticks-formatter-function" %}
+
+#### Chart background settings
+
+You can change the appearance of the chart grid: customize the color of the background, the grid frame and its ticks, and turn off lines visibility.
+
+{% include images-gallery.html imageCollection="appearance-chart-background" %}
+
+#### Tooltip settings
+
+- **Hover individual points**. When the box "Hover individual points" is checked, you won't see value points on the lines.
+
+- **Show cumulative values in stacking mode**. While stacking mode is on, you can check the box "Cumulative values" to enable your chart to display sum of all entity values.
+
+- **Tooltip value format function, f(value, latestData)** is used when you want to manually customize the tooltip.
+
+You can customize the values that will be displayed in the tooltip via [Settings](/docs/{{docsPrefix}}user-guide/dashboards/#5-other-settings) or
+[Advanced Data key configuration](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/#2-charts).
+Tooltip configuration via Settings is basic and applied to all entities at the same time. When configured in the Advanced Data key configuration,
+it is applied only to the specific time series data, and the basic tooltip function will be overwritten by this configuration.
+
+In State Chart, you can configure entity states to be shown on a tooltip depending on entity values.
+
+Let's use the function to convert values from Celsius to Fahrenheit and display these values side by side:
+
+```ruby
+let celsiusValue = parseFloat(value).toFixed(2);
+let farenheitValue = parseFloat(celsiusValue*1.8 + 32).toFixed(2);
+return celsiusValue + ' °C (' + farenheitValue + ' °F)';
+```
+{: .copy-code}
+
+{% include images-gallery.html imageCollection="appearance-tooltip-function" showListImageTitles="true" %}
+
+#### Comparison settings
+
+You can show historical data with which to compare.
+
+{% include images-gallery.html imageCollection="appearance-comparison" showListImageTitles="true" %}
 
 #### Advanced widget settings
 
@@ -426,7 +437,74 @@ Learn more about specific advanced settings in the corresponding widget document
 
 Coming soon...
 
-#### Widget actions
+### Widget card
+
+#### Widget title
+
+You can input custom widget title, tooltip and title style. You may also add an icon to the title and control icon color and size. See configuration and the corresponding result below.
+
+{% include images-gallery.html imageCollection="widget-card-title" %}
+
+Title style from the screen above:
+
+```json
+{
+  "fontSize": "15px",
+  "fontWeight": 600
+}
+```
+{: .copy-code}
+
+#### Widget style
+
+You can customize personal  style for the widget using CSS properties. This style will be applied to the main div element of the widget.
+
+You may also disable the widget shadow using the "Drop shadow" checkbox and disable fullscreen using the "Enable fullscreen" checkbox.
+All those settings are enabled by default.
+
+You can also change the background color, text color, padding, and margin.
+See the configuration and the corresponding result below.
+
+Please note that the style and background color are just an example and are definitely not part of our guidelines.
+
+{% include images-gallery.html imageCollection="widget-card-style" %}
+
+Widget style from the screen above:
+
+```json
+{
+  "border": "3px solid #2E86C1",
+  "cursor": "pointer"
+}
+```
+{: .copy-code}
+
+
+
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+
+#### Widget buttons
+
+**Enable data export**
+
+The "Enable data export" button is responsible for enabling/disabling the ability to export data that is displayed in the widget.
+By default, data export is enabled.
+To download data, click on the “Export widget data” icon at the top right of the widget.
+You can export the data in csv, xls or xlsx format.
+
+{% include images-gallery.html imageCollection="enable-data-export" %}
+
+**Enable fullscreen**
+
+You may disable fullscreen using the “Enable fullscreen” checkbox. This setting is enabled by default.
+
+All those settings are enabled by default.
+
+{% include images-gallery.html imageCollection="enable-fullscreen" %}
+
+{% endif %}
+
+### Widget actions
 
 Actions allow quickly and easily configuring the transition to the created state, transferring to other dashboards, or even updating the dashboard you are in. Depending on the widget, the action sources differ.
 However, the type of action you are able to choose will be the same for all widgets.
@@ -435,61 +513,21 @@ To fully understand how to use Actions, you have to [add a State to your widget]
 
 Read more about [widget actions](/docs/{{docsPrefix}}user-guide/ui/widget-actions/) in the documentaion dedicated to it.
 
-## Settings
+### Mobile mode settings
 
-Dashboard settings allow adjusting and altering the overall look of the Dashboard.
-To start customizing the Dashboard for a better user experience,
-the first thing you need to do is to enter the Edit mode by clicking the "Pencil" icon at the bottom right of the page (Enter edit mode).
+Mobile Mode settings consist of two options:
+- **Order** - set to an integer, specifies the priority of the order of displaying widgets in mobile mode (note that in mobile mode all widgets are displayed in one vertical column).
+  If you need to arrange widgets in this column in a custom order, you can configure different order values for each widget.
+- **Height** - takes an integer value from 1 to 10. It sets the height of the widget in Mobile Mode in the range from 70px (1) to 700px (10), ignoring its original height.
+  For example, with a value of 5, the widget height will be 350px. (70 * 5)
+  If no value is specified, its original height will be used.
 
-{% include images-gallery.html imageCollection="dashboards-edit-enter" %}
+{% include images-gallery.html imageCollection="mobile-settings" %}
 
-After entering the edit mode, click the "Gear" icon at the top of the window, so the Dashboard Settings will be opened.
+## Export widget
 
-{% include images-gallery.html imageCollection="dashboards-settings-enter" %}
-
-#### State controller
-
-The first thing that can be changed is _State controller_.
-By default, it's set to "entity", so to use all the features and work with the Dashboard as comfortable as possible we need to leave it that way.
-
-#### Title of the Dashboard
-
-If you'd like to see the Title of the Dashboard, you need to check the box _Display dashboard title_.
-The default text color is black. Color and transparency are easily adjusted using the _Title color_ parameter by clicking the colored circle and choosing the desired color for the title by moving the slider.
-The changed title appears on the top left of the Dashboard.
-
-{% include images-gallery.html imageCollection="title-on-dashboard" %}
-
-#### Dashboard Toolbar Settings
-
-The checkboxes _Display Dashboard selection, Display entities selection, Display filters, Display timewindow,_ and _Display export_
-are responsible for the visibility of the appropriate options on the Dashboard toolbar panel.
-
-_Filters_ option is shown on the toolbar panel only when the one has been created. If the filter was created,
-but you'd like to limit the customer's opportunity to modify the device's indicators, we disable the ability to see filters on the toolbar panel by unchecking the corresponding checkbox.
-
-{% include images-gallery.html imageCollection="toolbar-dashboard-settings" %}
-
-#### Color
-
-The line _Color_ indicates the color of the text messages that you may see while editing your Dashboard. The _Color_ adjusts by clicking the colored circle on the left from the line.
-A small window will open, and by moving the sliders, you can adjust the color and transparency of the text. By default, the color is set to black.
-For instance, if the widgets haven't yet been added to the dashboard, and we change the _Color_, the message "Add new widget" will change.
-
-{% include images-gallery.html imageCollection="text-color" %}
-
-## Import dashboard
-
-You are able to import a dashboard in JSON format.
-To import a dashboard, you should go to the Dashboard group and click on the “+” button in the upper right corner of the page and choose “Import dashboard”.
-The dashboard import window should pop up, and you will be prompted to upload the JSON file and click "Import".
-
-{% include images-gallery.html imageCollection="import" preview='false' %}
-
-### Export widget
-
-To export the widget, you should go to a Dashboard, where the widget is located.  
-Then go to the "Edit mode" by clicking on the "Pencil" icon in the lower right corner.
+To export a widget, you should go to a dashboard, where a widget is located.  
+Then go to the "Edit mode".
 Now in the upper right corner of the needed widget, click the button "Export widget".
 This action saves the configuration file of the JSON format with all the settings of a particular widget to your PC.
 

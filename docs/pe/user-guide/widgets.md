@@ -6,28 +6,49 @@ title: Working with widgets
 
 add-widget:
     0:
-        image: /images/user-guide/dashboards/overview/add-new-dashboard-1-pe.png
+        image: /images/user-guide/widgets/overview/add-new-dashboard-1-pe.png
         title: 'Open your dashboard and enter edit mode;'
     1:
-        image: /images/user-guide/dashboards/overview/add-new-dashboard-2-pe.png
+        image: /images/user-guide/widgets/overview/add-new-dashboard-2-pe.png
         title: 'Click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
     2:
-        image: /images/user-guide/dashboards/overview/add-new-dashboard-3-pe.png
+        image: /images/user-guide/widgets/overview/add-new-dashboard-3-pe.png
         title: 'Select widget bundle, for example, "Charts". To find the widget you want as quickly as possible, use the search bar by clicking a magnifying glass icon and inputting the name of the widget there;'
     3:
-        image: /images/user-guide/dashboards/overview/add-new-dashboard-4-pe.png
+        image: /images/user-guide/widgets/overview/add-new-dashboard-4-pe.png
         title: 'Select a widget, for example, “Timeseries Line Chart”, and click on it to open the “Add Widget” dialog box.'
     4:
-        image: /images/user-guide/dashboards/overview/add-new-dashboard-5-pe.png
-        title: 'Add a data source, specify basic and advanced settings, and click the "Add" button. Then apply changes;'
+        image: /images/user-guide/widgets/overview/add-new-dashboard-5-pe.png
+        title: 'Specify datasource, add data key, and click the "Add" button. Then apply changes;'
     5:
-        image: /images/user-guide/dashboards/overview/add-new-dashboard-6-pe.png
+        image: /images/user-guide/widgets/overview/add-new-dashboard-6-pe.png
         title: 'Your first widget is created.'
+
+import-widget:
+    0:
+        image: /images/user-guide/widgets/overview/data-source-type-device-1-pe.png
+        title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
+    1:
+        image: /images/user-guide/widgets/overview/import-widget-2-pe.png
+        title: 'Click the "Import widget" button in the upper right corner of the screen;'
+    2:
+        image: /images/user-guide/widgets/overview/import-widget-3-pe.png
+        title: 'The widget import window will open. Upload the JSON file and click "Import";'
+    3:
+        image: /images/user-guide/widgets/overview/import-widget-4-pe.png
+        title: 'The widget has been imported. Adjust widget size and save changes.'
+    4:
+        image: /images/user-guide/widgets/overview/import-widget-5-pe.png
+        title: ''
+
+export-widget:
+    0:
+        image: /images/user-guide/widgets/overview/export-widget-1-pe.png
 
 add-widget-basic-mode:
     0:
         image: /images/user-guide/widgets/overview/add-widget-basic-mode-1-pe.png
-        title: 'Select the data source type (device or entity alias) and specify the series key. Click "Add".'
+        title: 'If you are using basic features to create a widget, you need to select the datasource type (device or entity alias) and add the series key. Then click "Add";'
     1:
         image: /images/user-guide/widgets/overview/add-widget-basic-mode-2-pe.png
         title: 'The widget have been added.'
@@ -35,7 +56,7 @@ add-widget-basic-mode:
 add-widget-advanced-mode:
     0:
         image: /images/user-guide/widgets/overview/add-widget-advanced-mode-1-pe.png
-        title: 'Configure data source to fetch temperature and humidity values for all "Thermometer" devices that have model "DHT22", and their battery level is less than 20 percent. We will use "Thermometer" alias and "Low battery DHT22 Thermometers" filter configured in the document about dashboards correspondingly;'
+        title: 'Using advanced functionality to create a widget, you need select multiple datasources (if supported by the widget) and apply filters. Then click "Add";'
     1:
         image: /images/user-guide/widgets/overview/add-widget-advanced-mode-2-pe.png
         title: 'The widget have been added.'
@@ -43,10 +64,10 @@ add-widget-advanced-mode:
 timewindow:
     0:
         image: /images/user-guide/widgets/overview/time-window-1-pe.png
-        title: 'The widget have been added.'
+        title: 'By default, every widget uses the main timewindow determined in the dashboard&#39;s toolbar.'
     1:
         image: /images/user-guide/widgets/overview/time-window-2-pe.png
-        title: 'The widget have been added.'
+        title: 'Toggle the "Use widget timewindow" checkbox to overwrite the default timewindow.'
 
 data-source-type-device:
     0:
@@ -57,10 +78,10 @@ data-source-type-device:
         title: 'Select "Analogue gauge" widget bundle;'
     2:
         image: /images/user-guide/widgets/overview/data-source-type-device-3-pe.png
-        title: 'Select a "Thermometer scale" widget;'
+        title: 'Then select a "Thermometer scale" widget;'
     3:
         image: /images/user-guide/widgets/overview/data-source-type-device-4-pe.png
-        title: 'The "Add Widget" dialog box will open. Select data source type - "Device" and select your device. Then choose data key - "temperature". Click "Add" and apply changes;'
+        title: 'The "Add Widget" dialog box will open. Select data source type - "Device" and select your device. Then add data key - "temperature". Click "Add" and save all changes;'
     4:
         image: /images/user-guide/widgets/overview/data-source-type-device-5-pe.png
         title: 'Thermometer scale widget is created.'
@@ -74,36 +95,42 @@ data-source-type-entity:
         title: 'Select "Cards" widget bundle;'
     2:
         image: /images/user-guide/widgets/overview/data-source-type-entity-3-pe.png
-        title: 'Select a "Entities table" widget;'
+        title: 'Then select an "Entities table" widget;'
     3:
         image: /images/user-guide/widgets/overview/data-source-type-entity-4-pe.png
         title: 'The "Add Widget" dialog box will open. Select data source type - "Entity". Now, we need create new entity alias. Click "Create new" button in the entity alias row;'
     4:
         image: /images/user-guide/widgets/overview/data-source-type-entity-5-pe.png
-        title: 'In the opened Add alias dialog, enter an alias name, select filter type - "Entity type", and choose an entity type -Device. Click "Add";'
+        title: 'In the opened Add alias dialog, enter an alias name, select filter type - "Entity type", and choose an entity type - "Device". Click "Add";'
     5:
         image: /images/user-guide/widgets/overview/data-source-type-entity-6-pe.png
-        title: 'Choose data keys and click "Add" and apply changes;'
+        title: 'Add data keys. Then click "Add" and save all changes;'
     6:
         image: /images/user-guide/widgets/overview/data-source-type-entity-7-pe.png
-        title: 'Widget that displays all devices through entity data source has been added.'
+        title: 'A widget has been added that displays all devices using an entity alias as the data source.'
 
 data-source-type-random:
     0:
         image: /images/user-guide/widgets/overview/data-source-type-device-1-pe.png
         title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
     1:
-        image: /images/user-guide/widgets/overview/data-source-type-random-2-pe.png
-        title: 'Select "Cards" widget bundle;'
+        image: /images/user-guide/widgets/overview/data-source-type-entity-2-pe.png
+        title: 'Select a "Cards" widget bundle;'
     2:
         image: /images/user-guide/widgets/overview/data-source-type-random-3-pe.png
-        title: 'Select a "Value card" widget;'
+        title: 'Then select a "Value card" widget;'
     3:
         image: /images/user-guide/widgets/overview/data-source-type-random-4-pe.png
-        title: 'The "Add Widget" dialog box will open. Go to the advanced functionality and select data source type - "Random". Then choose latest key function - "Random". Click "Add" and apply changes;'
+        title: 'The "Add Widget" dialog box will open. Navigate to the advanced functionality and select data source type - "Random". Then add a function - "Random" and click the "pencil" icon of the "Random" key to open data key configuration window;'
     4:
         image: /images/user-guide/widgets/overview/data-source-type-random-5-pe.png
-        title: 'Value card widget with random value is created.'
+        title: 'Change the label name to "temperature" and specify units. Click "Save";'
+    5:
+        image: /images/user-guide/widgets/overview/data-source-type-random-6-pe.png
+        title: 'Click "Add" and save all changes;'
+    6:
+        image: /images/user-guide/widgets/overview/data-source-type-random-7-pe.png
+        title: 'Created the value card widget which displays random value.'
 
 data-source-type-entities-сount:
     0:
@@ -111,25 +138,25 @@ data-source-type-entities-сount:
         title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
     1:
         image: /images/user-guide/widgets/overview/data-source-type-entities-сount-2-pe.png
-        title: 'Select "Cards" widget bundle;'
+        title: 'Select a "Cards" widget bundle;'
     2:
         image: /images/user-guide/widgets/overview/data-source-type-entities-сount-3-pe.png
-        title: 'Select a "Simple card" widget;'
+        title: 'Then select a "Simple card" widget;'
     3:
         image: /images/user-guide/widgets/overview/data-source-type-entities-сount-4-pe.png
         title: 'The "Add Widget" dialog box will open. Go to the advanced functionality and select data source type - "Entities count". Now, we need create new entity alias. Click "Create new" button in the entity alias row;'
     4:
         image: /images/user-guide/widgets/overview/data-source-type-entities-сount-5-pe.png
-        title: 'In the opened Add alias dialog, enter an alias name, select filter type - "Entity type", and choose an entity type - Device. Click "Add";'
+        title: 'In the opened Add alias dialog, enter an alias name, select filter type - "Entity type", and choose an entity type - "Device". Click "Add";'
     5:
         image: /images/user-guide/widgets/overview/data-source-type-entities-сount-6-pe.png
         title: 'In the Data key row click the "pencil" icon of the "count" key to open data key configuration window;'
     6:
         image: /images/user-guide/widgets/overview/data-source-type-entities-сount-7-pe.png
-        title: 'Change label name and specify units. Click "Save";'
+        title: 'Change label name to "Device count" and specify units. Click "Save";'
     7:
         image: /images/user-guide/widgets/overview/data-source-type-entities-сount-8-pe.png
-        title: 'Finally, click "Add" and apply changes;'
+        title: 'Finally, click "Add" and save all changes;'
     8:
         image: /images/user-guide/widgets/overview/data-source-type-entities-сount-9-pe.png
         title: 'Now we have a widget that displays the number of existing devices.'
@@ -143,13 +170,13 @@ data-source-type-alarms-сount:
         title: 'Select "Cards" widget bundle;'
     2:
         image: /images/user-guide/widgets/overview/data-source-type-entities-сount-3-pe.png
-        title: 'Select a "Simple card" widget;'
+        title: 'Then select a "Simple card" widget;'
     3:
         image: /images/user-guide/widgets/overview/data-source-type-alarms-сount-4-pe.png
         title: 'The "Add Widget" dialog box will open. Go to the advanced functionality, select data source type - "Alarms count" and specify filters. In the Data key row click the "pencil" icon of the "count" key to open data key configuration window;'
     4:
         image: /images/user-guide/widgets/overview/data-source-type-alarms-сount-5-pe.png
-        title: 'Change label name and specify units. Click "Save";'
+        title: 'Change label name to "Alarms count" and specify units. Click "Save";'
     5:
         image: /images/user-guide/widgets/overview/data-source-type-alarms-сount-6-pe.png
         title: 'Finally, click "Add" and apply changes;'
@@ -168,11 +195,8 @@ add-key-in-the-future:
 
 alarm-filters:
     0:
-        image: /images/user-guide/widgets/overview/alarm-filters-1-pe.png
-        title: 'To add a key to the data source, click on the data keys row and select the desired key from the dropdown menu.'
-    1:
         image: /images/user-guide/widgets/overview/alarm-filters-2-pe.png
-        title: 'To add a key to the data source, click on the data keys row and select the desired key from the dropdown menu.'
+        title: 'Filter alarms by status, severity and type.'
 
 default-data-settings:
     0:
@@ -182,28 +206,209 @@ default-data-settings:
         image: /images/user-guide/widgets/overview/default-data-settings-2-pe.png
         title: ''
 
+edit-basic-key-configuration:
+    0:
+        image: /images/user-guide/widgets/overview/edit-basic-key-configuration-key-1-pe.png
+        title: ''
+
+edit-key-configuration:
+    0:
+        image: /images/user-guide/widgets/overview/edit-key-configuration-1-pe.png
+        title: ''
+
 data-key-configuration-key:
     0:
         image: /images/user-guide/widgets/overview/data-key-configuration-key-1-pe.png
+        title: ''
     1:
         image: /images/user-guide/widgets/overview/data-key-configuration-key-2-pe.png
+        title: ''
     2:
         image: /images/user-guide/widgets/overview/data-key-configuration-key-3-pe.png
+        title: ''
+    3:
+        image: /images/user-guide/widgets/overview/data-key-configuration-key-4-pe.png
+        title: ''
 
 data-key-configuration-label:
     0:
         image: /images/user-guide/widgets/overview/data-key-configuration-label-1-pe.png
+        title: ''
     1:
         image: /images/user-guide/widgets/overview/data-key-configuration-label-2-pe.png
+        title: ''
     2:
         image: /images/user-guide/widgets/overview/data-key-configuration-label-3-pe.png
+        title: ''
+    3:
+        image: /images/user-guide/widgets/overview/data-key-configuration-label-4-pe.png
+    title: ''
+
+data-key-configuration-units:
+    0:
+        image: /images/user-guide/widgets/overview/data-key-configuration-special-symbol-1-pe.png
+        title: ''
+    1:
+        image: /images/user-guide/widgets/overview/data-key-configuration-special-symbol-2-pe.png
+        title: ''
+
+data-key-configuration-decimals:
+    0:
+        image: /images/user-guide/widgets/overview/data-key-configuration-decimals-1-pe.png
+        title: ''
+    1:
+        image: /images/user-guide/widgets/overview/data-key-configuration-decimals-2-pe.png
+        title: ''
+
+data-key-configuration-color:
+    0:
+        image: /images/user-guide/widgets/overview/data-key-configuration-color-1-pe.png
+        title: 'Click on the colored icon of the data key;'
+    1:
+        image: /images/user-guide/widgets/overview/data-key-configuration-color-2-pe.png
+        title: 'Select the desired label color and press "Select";'
+    2:
+        image: /images/user-guide/widgets/overview/data-key-configuration-color-3-pe.png
+        title: 'The label color is changed. Save all changes;'
+    3:
+        image: /images/user-guide/widgets/overview/data-key-configuration-color-4-pe.png
+        title: 'The graph line color is changed;'
+    4:
+        image: /images/user-guide/widgets/overview/data-key-configuration-color-5-pe.png
+        title: ''
+
+data-key-configuration-aggregation:
+    0:
+        image: /images/user-guide/widgets/overview/data-key-configuration-aggregation-1-pe.png
+        title: ''
+    1:
+        image: /images/user-guide/widgets/overview/data-key-configuration-aggregation-2-pe.png
+        title: ''
+    2:
+        image: /images/user-guide/widgets/overview/data-key-configuration-aggregation-3-pe.png
+        title: ''
+
+data-key-configuration-settings-post-processing:
+    0:
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-post-processing-1-pe.png
+
+data-key-configuration-settings-agg-max-delta:
+    0:
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-max-delta-0-pe.png
+    1:
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-max-delta-1-pe.png
+
+data-key-configuration-settings-agg-sum-delta-dayago:
+    0:
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-sum-delta-dayago-0-pe.png
+
+
+
+appearance-ticks-formatter-function:
+    0:
+        image: /images/user-guide/widgets/overview/appearance-ticks-formatter-function-1-pe.png
+        title: 'In the Tooltip value format function field, enter your function and apply changes;'
+    1:
+        image: /images/user-guide/widgets/overview/appearance-ticks-formatter-function-2-pe.png
+        title: 'Hover with your mouse over the widget to see tooltip with applied value format function.'
+    2:
+        image: /images/user-guide/widgets/overview/appearance-ticks-formatter-function-3-pe.png
+        title: 'In the Tooltip value format function field, enter your function and apply changes;'
+    3:
+        image: /images/user-guide/widgets/overview/appearance-ticks-formatter-function-4-pe.png
+        title: 'Hover with your mouse over the widget to see tooltip with applied value format function.'
+
+appearance-vertical-axis:
+    0:
+        image: /images/user-guide/widgets/overview/appearance-vertical-axis-1-pe.png
+        title: 'In the Tooltip value format function field, enter your function and apply changes;'
+    1:
+        image: /images/user-guide/widgets/overview/appearance-vertical-axis-2-pe.png
+        title: 'Hover with your mouse over the widget to see tooltip with applied value format function.'
+
+appearance-horizontal-axis:
+    0:
+        image: /images/user-guide/widgets/overview/appearance-horizontal-axis-1-pe.png
+        title: 'In the tooltip value format function field, enter your function and apply changes;'
+    1:
+        image: /images/user-guide/widgets/overview/appearance-horizontal-axis-2-pe.png
+        title: 'Hover with your mouse over the widget to see tooltip with applied value format function.'
+
+appearance-chart-background:
+    0:
+        image: /images/user-guide/widgets/overview/appearance-chart-background-1-pe.png
+        title: 'Configure preferred grid settings and apply changes;'
+    1:
+        image: /images/user-guide/widgets/overview/appearance-chart-background-2-pe.png
+        title: ''
+
+
+appearance-tooltip-function:
+    0:
+        image: /images/user-guide/widgets/overview/appearance-tooltip-function-1-pe.png
+        title: 'In the Tooltip value format function field, enter your function and apply changes;'
+    1:
+        image: /images/user-guide/widgets/overview/appearance-tooltip-function-2-pe.png
+        title: 'Hover with your mouse over the widget to see tooltip with applied value format function.'
+
+appearance-comparison:
+    0:
+        image: /images/user-guide/widgets/overview/appearance-comparison-1-pe.png
+        title: 'In the Appearance tab, toggle the "Enable comparison" checkbox and from the drop-down menu select time to show historical data with which to compare. In the "Comparison X axis settings" section, select axis position, where the compared axis will be located on the widget. Also, you can enter the axis title and show axis tick labels. When you are done with Comparison Settings configuration, then apply changes;'
+    1:
+        image: /images/user-guide/widgets/overview/appearance-comparison-2-pe.png
+        title: 'Since comparison settings work only in history time window mode, click "Edit time window" icon in the dashboard toolbar and select the "History" tab. Then click "Update" to apply;'
+    2:
+        image: /images/user-guide/widgets/overview/appearance-comparison-3-pe.png
+        title: 'Now you can compare value for last minute and the one from day ago.'
 
 
 
 
 
+widget-card-title:
+    0:
+        image: /images/user-guide/widgets/overview/widget-card-title-1-pe.png
+        title: ''
+    1:
+        image: /images/user-guide/widgets/overview/widget-card-title-3-pe.png
+        title: ''
+    2:
+        image: /images/user-guide/widgets/overview/widget-card-title-4-pe.png
+        title: ''
 
+widget-card-style:
+    0:
+        image: /images/user-guide/widgets/overview/widget-card-title-1-pe.png
+        title: ''
+    1:
+        image: /images/user-guide/widgets/overview/widget-card-style-2-pe.png
+        title: ''
+    2:
+        image: /images/user-guide/widgets/overview/widget-card-style-3-pe.png
+        title: ''
 
+enable-data-export:
+    0:
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-enable-data-export-1-pe.png
+        title: 'By default, data export is enabled.'
+    1:
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-enable-data-export-2-pe.png
+        title: 'To download widget data, click on the “Export widget data” icon at the top right of the widget. You can export the data in csv, xls or xlsx format.'
+    2:
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-enable-data-export-3-pe.png
+        title: 'You can disable the ability to export data.'
+
+enable-fullscreen:
+    0:
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-enable-fullscreen-1-pe.png
+        title: 'By default, fullscreen is enabled.'
+    1:
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-enable-fullscreen-2-pe.png
+        title: 'To expand widget to fullscreen, click on the “Expand to fullscreen” icon at the top right of the widget.'
+    2:
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-enable-fullscreen-3-pe.png
+        title: 'You can disable the ability to expand widget to fullscreen.'
 
 
 
@@ -235,11 +440,7 @@ add-data-source5:
     2:
         image: /images/user-guide/dashboards/widget-settings-alternative-message-3-pe.png
 
-add-data-source6:
-    0:
-        image: /images/user-guide/dashboards/add-data-source-enable-data-export1-pe.png
-    1:
-        image: /images/user-guide/dashboards/add-data-source-enable-data-export2-pe.png
+
 
 
 data-key-configuration:
@@ -258,17 +459,7 @@ basic-data-key-settings-2:
     2:
         image: /images/user-guide/dashboards/basic-data-key-configuration-settings-label-3-paas.png
 
-basic-data-key-settings-3:
-    0:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-1-paas.png
-    1:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-2-paas.png
-    2:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-3-paas.png
-    3:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-4-paas.png
-    4:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-color-5-paas.png
+
 
 basic-data-key-settings-4:
     0:
@@ -282,57 +473,47 @@ basic-data-key-settings-5:
     1:
         image: /images/user-guide/dashboards/basic-data-key-configuration-settings-number-of-digits-3-paas.png
 
-basic-data-key-settings-6:
-    0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-post-processing-1-paas.png
+
 
 basic-data-key-settings-7:
     0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-none-0-pe.png
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-none-0-pe.png
     1:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-avg-delta-1-pe.png
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-avg-delta-1-pe.png
 
 basic-data-key-settings-8:
     0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-0-pe.png
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-max-0-pe.png
 
 basic-data-key-settings-9:
     0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-avg-0-pe.png
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-avg-0-pe.png
 
 basic-data-key-settings-10:
     0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-sum-0-pe.png
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-sum-0-pe.png
 
 basic-data-key-settings-11:
     0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-count-0-pe.png
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-count-0-pe.png
 
-basic-data-key-settings-12:
-    0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-delta-0-pe.png
-    1:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-delta-1-pe.png
 
-basic-data-key-settings-13:
-    0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-sum-delta-dayago-0-pe.png
 
 basic-data-key-settings-14:
     0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-avg-delta-week-0-pe.png
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-avg-delta-week-0-pe.png
 
 basic-data-key-settings-15:
     0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-delta-monthago-0-pe.png
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-max-delta-monthago-0-pe.png
 
 basic-data-key-settings-16:
     0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-delta-yearago-0-pe.png
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-max-delta-yearago-0-pe.png
 
 basic-data-key-settings-17:
     0:
-        image: /images/user-guide/dashboards/data-key-configuration-settings-agg-max-delta-custom-0-pe.png
+        image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-max-delta-custom-0-pe.png
 
 
 
@@ -341,23 +522,7 @@ basic-settings:
     0:
         image: /images/user-guide/dashboards/basic-widget-settings1-src-pe.png
 
-basic-settings-title:
-    0:
-        image: /images/user-guide/dashboards/basic-widget-settings1-src-pe.png
-    1:
-        image: /images/user-guide/dashboards/basic-widget-settings-title1-src-pe.png
-    2:
-        image: /images/user-guide/dashboards/basic-widget-settings-title2-src-pe.png
-    3:
-        image: /images/user-guide/dashboards/basic-widget-settings-title3-src-pe.png
 
-basic-settings-style:
-    0:
-        image: /images/user-guide/dashboards/basic-widget-settings-title-noedits-src-pe.png
-    1:
-        image: /images/user-guide/dashboards/basic-widget-settings-style1-src-pe.png
-    2:
-        image: /images/user-guide/dashboards/basic-widget-settings-style2-src-pe.png
 
 basic-settings-legend:
     0:
@@ -378,119 +543,6 @@ mobile-settings:
         image: /images/user-guide/dashboards/basic-widget-settings-mobile2-src-pe.png
     2:
         image: /images/user-guide/dashboards/basic-widget-settings-mobile3-src-pe.png
-
-dashboards-edit-enter:
-    0:
-        image: /images/user-guide/dashboards/settings/dashboard-enter-edit-pe.png
-
-dashboards-settings-enter:
-    0:
-        image: /images/user-guide/dashboards/settings/dashboard-settings-pe.png
-
-
-title-on-dashboard:
-    0:
-        image: /images/user-guide/dashboards/settings/title-color-pe.png
-    1:
-        image: /images/user-guide/dashboards/settings/title-settings-check-pe.png
-    2:
-        image: /images/user-guide/dashboards/settings/title-on-dashboard-pe.png
-
-toolbar-dashboard-settings:
-    0:
-        image: /images/user-guide/dashboards/settings/toolbar-visibility-set-pe.png
-    1:
-        image: /images/user-guide/dashboards/settings/toolbar-settings-on-pe.png
-
-text-color:
-    0:
-        image: /images/user-guide/dashboards/settings/text-color-pe.png
-    1:
-        image: /images/user-guide/dashboards/settings/text-color-changed-pe.png
-
-
-dashboard-export:
-    0:
-        image: /images/user-guide/dashboards/settings/dashboard-list-pe.png
-
-dashboard-export-direct:
-    0:
-        image: /images/user-guide/dashboards/settings/dashboard-direct-pe.png
-
-export-widget:
-    0:
-        image: /images/user-guide/dashboards/settings/export-widget-pe.png
-
-
-
-entity-count:
-    0:
-        image: /images/user-guide/dashboards/entitycount/add-alias.png
-    1:
-        image: /images/user-guide/dashboards/entitycount/add-alias-1.png
-    2:
-        image: /images/user-guide/dashboards/entitycount/add-alias-2.png
-
-entity-count-1:
-    0:
-        image: /images/user-guide/dashboards/entitycount/add-widget.png
-    1:
-        image: /images/user-guide/dashboards/entitycount/add-widget-1.png
-    2:
-        image: /images/user-guide/dashboards/entitycount/add-widget-2.png
-    3:
-        image: /images/user-guide/dashboards/entitycount/datasource.png
-
-entity-count-3:
-    0:
-        image: /images/user-guide/dashboards/entitycount/datasource-1.png
-    1:
-        image: /images/user-guide/dashboards/entitycount/edit-widget.png
-    2:
-        image: /images/user-guide/dashboards/entitycount/edit-widget-1.png
-
-add-alias-ds:
-    0:
-        image: /images/user-guide/dashboards/entitycount/add-alias.png
-    1:
-        image: /images/user-guide/dashboards/entity-type-ds.png
-    2:
-        image: /images/user-guide/dashboards/entity-type-ds-0.5.png
-
-add-widget-ds:
-    0:
-        image: /images/user-guide/dashboards/entitycount/add-widget.png
-    1:
-        image: /images/user-guide/dashboards/entitycount/add-widget-1.png
-    2:
-        image: /images/user-guide/dashboards/add-widget-ds.png
-    3:
-        image: /images/user-guide/dashboards/add-widget-ds-1.png
-    4:
-        image: /images/user-guide/dashboards/add-widget-ds-2.png
-
-function-ds:
-    0:
-        image: /images/user-guide/dashboards/entitycount/add-widget.png
-    1:
-        image: /images/user-guide/dashboards/entitycount/add-widget-1.png
-    2:
-        image: /images/user-guide/dashboards/add-widget-ds.png
-    3:
-        image: /images/user-guide/dashboards/function-ds.png
-    4:
-        image: /images/user-guide/dashboards/function-ds-1.png
-
-import:
-    0:
-        image: /images/user-guide/dashboards/dashboard-import-pe.png
-    1:
-        image: /images/user-guide/dashboards/dashboard-import-1-pe.png
-    2:
-        image: /images/user-guide/dashboards/dashboard-import-2-pe.png
-    3:
-        image: /images/user-guide/dashboards/dashboard-import-3-pe.png
-
 
 ---
 
