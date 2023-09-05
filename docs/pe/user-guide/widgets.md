@@ -302,37 +302,59 @@ data-key-configuration-settings-agg-sum-delta-dayago:
     0:
         image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-sum-delta-dayago-0-pe.png
 
-
-
-appearance-ticks-formatter-function:
+appearance-stacking-mode:
     0:
-        image: /images/user-guide/widgets/overview/appearance-ticks-formatter-function-1-pe.png
-        title: 'In the Tooltip value format function field, enter your function and apply changes;'
+        image: /images/user-guide/widgets/overview/appearance-stacking-mode-1-pe.png
+        title: 'In the upper right corner of the screen, click on the Time window configuration and choose any preferred Data aggregation function other than None. Click "Update" to apply changes;'
     1:
-        image: /images/user-guide/widgets/overview/appearance-ticks-formatter-function-2-pe.png
-        title: 'Hover with your mouse over the widget to see tooltip with applied value format function.'
+        image: /images/user-guide/widgets/overview/appearance-stacking-mode-2-pe.png
+        title: 'In the Appearance tab, toggle "Enable stacking mode" checkbox and apply changes;'
     2:
-        image: /images/user-guide/widgets/overview/appearance-ticks-formatter-function-3-pe.png
-        title: 'In the Tooltip value format function field, enter your function and apply changes;'
-    3:
-        image: /images/user-guide/widgets/overview/appearance-ticks-formatter-function-4-pe.png
-        title: 'Hover with your mouse over the widget to see tooltip with applied value format function.'
+        image: /images/user-guide/widgets/overview/appearance-stacking-mode-3-pe.png
+        title: 'Hover the mouse over a bar to see values of all entities.'
+
+appearance-legend-settings-1:
+    0:
+        image: /images/user-guide/widgets/overview/appearance-legend-settings-1-pe.png
+        title: 'The legend is used to display the min/max/average/total/latest values;'
+    1:
+        image: /images/user-guide/widgets/overview/appearance-legend-settings-2-pe.png
+        title: ''
+
+appearance-legend-settings-2:
+    0:
+        image: /images/user-guide/widgets/overview/appearance-legend-settings-3-pe.png
+        title: 'Use "${entity Name}" to take the entity name from the device.'
+    1:
+        image: /images/user-guide/widgets/overview/appearance-legend-settings-4-pe.png
+        title: ''
 
 appearance-vertical-axis:
     0:
         image: /images/user-guide/widgets/overview/appearance-vertical-axis-1-pe.png
-        title: 'In the Tooltip value format function field, enter your function and apply changes;'
+        title: 'Set the minimum and maximum scale values. Also, you can specify the vertical axis title, set the ticks color, decimals and step size between ticks of the vertical axis.'
     1:
         image: /images/user-guide/widgets/overview/appearance-vertical-axis-2-pe.png
-        title: 'Hover with your mouse over the widget to see tooltip with applied value format function.'
+        title: ''
 
 appearance-horizontal-axis:
     0:
         image: /images/user-guide/widgets/overview/appearance-horizontal-axis-1-pe.png
-        title: 'In the tooltip value format function field, enter your function and apply changes;'
+        title: 'You can specify the title of the horizontal axis and set the ticks color.'
     1:
         image: /images/user-guide/widgets/overview/appearance-horizontal-axis-2-pe.png
-        title: 'Hover with your mouse over the widget to see tooltip with applied value format function.'
+        title: ''
+
+appearance-ticks-formatter-function:
+    0:
+        image: /images/user-guide/widgets/overview/appearance-ticks-formatter-function-1-pe.png
+        title: ''
+    1:
+        image: /images/user-guide/widgets/overview/appearance-ticks-formatter-function-2-pe.png
+        title: 'In the Appearance tab, in the Ticks formatter function field, enter the custom function and apply changes.'
+    2:
+        image: /images/user-guide/widgets/overview/appearance-ticks-formatter-function-3-pe.png
+        title: 'The function has been applied and values became more compact. By hovering the mouse over a widget you can see the tooltip with not reduced values.'
 
 appearance-chart-background:
     0:
@@ -342,11 +364,10 @@ appearance-chart-background:
         image: /images/user-guide/widgets/overview/appearance-chart-background-2-pe.png
         title: ''
 
-
 appearance-tooltip-function:
     0:
         image: /images/user-guide/widgets/overview/appearance-tooltip-function-1-pe.png
-        title: 'In the Tooltip value format function field, enter your function and apply changes;'
+        title: 'In the Tooltip value format function field, enter your tooltip function, then apply changes;'
     1:
         image: /images/user-guide/widgets/overview/appearance-tooltip-function-2-pe.png
         title: 'Hover with your mouse over the widget to see tooltip with applied value format function.'
@@ -360,11 +381,21 @@ appearance-comparison:
         title: 'Since comparison settings work only in history time window mode, click "Edit time window" icon in the dashboard toolbar and select the "History" tab. Then click "Update" to apply;'
     2:
         image: /images/user-guide/widgets/overview/appearance-comparison-3-pe.png
-        title: 'Now you can compare value for last minute and the one from day ago.'
+        title: 'Now you can compare the value for the current minute and the five minutes ago.'
 
-
-
-
+appearance-custom-legend-settings:
+    0:
+        image: /images/user-guide/widgets/overview/appearance-custom-legend-settings-1-pe.png
+        title: 'In the Appearance tab, toggle the "Enable custom legend" checkbox to use attribute or time series values in key labels. Click the "+ Add new key" button. From the appeared drop-down menu, select key type. The Key name is entered in the line below;'
+    1:
+        image: /images/user-guide/widgets/overview/appearance-custom-legend-settings-2-pe.png
+        title: 'Go to Data tab and click the pencil icon on the data key to open Data key configuration window;'
+    2:
+        image: /images/user-guide/widgets/overview/appearance-custom-legend-settings-3-pe.png
+        title: 'In the label line, enter the patter ${} with the data key name inside the brackets. Click "Save" to apply new label name. Then apply all changes;'
+    3:
+        image: /images/user-guide/widgets/overview/appearance-custom-legend-settings-4-pe.png
+        title: 'As you can see on the widget, custom legend settings have been applied.'
 
 widget-card-title:
     0:
@@ -372,21 +403,18 @@ widget-card-title:
         title: ''
     1:
         image: /images/user-guide/widgets/overview/widget-card-title-3-pe.png
-        title: ''
+        title: 'Edit widget title settings and apply changes;'
     2:
         image: /images/user-guide/widgets/overview/widget-card-title-4-pe.png
-        title: ''
+        title: 'The title style have been changed.'
 
 widget-card-style:
     0:
-        image: /images/user-guide/widgets/overview/widget-card-title-1-pe.png
-        title: ''
-    1:
         image: /images/user-guide/widgets/overview/widget-card-style-2-pe.png
-        title: ''
-    2:
+        title: 'Customize the widget style and apply changes;'
+    1:
         image: /images/user-guide/widgets/overview/widget-card-style-3-pe.png
-        title: ''
+        title: 'The widget style have been changed.'
 
 enable-data-export:
     0:
@@ -431,17 +459,6 @@ add-data-source4:
         image: /images/user-guide/dashboards/add-data-source4-src-pe.png
     1:
         image: /images/user-guide/dashboards/add-data-source5-src-pe.png
-
-add-data-source5:
-    0:
-        image: /images/user-guide/dashboards/widget-settings-alternative-message-1-pe.png
-    1:
-        image: /images/user-guide/dashboards/widget-settings-alternative-message-2-pe.png
-    2:
-        image: /images/user-guide/dashboards/widget-settings-alternative-message-3-pe.png
-
-
-
 
 data-key-configuration:
     0:
@@ -514,27 +531,6 @@ basic-data-key-settings-16:
 basic-data-key-settings-17:
     0:
         image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-max-delta-custom-0-pe.png
-
-
-
-
-basic-settings:
-    0:
-        image: /images/user-guide/dashboards/basic-widget-settings1-src-pe.png
-
-
-
-basic-settings-legend:
-    0:
-        image: /images/user-guide/dashboards/basic-widget-settings-title-noedits-src-pe.png
-    1:
-        image: /images/user-guide/dashboards/basic-widget-settings-legend2-src-pe.png
-    2:
-        image: /images/user-guide/dashboards/basic-widget-settings-legend3-src-pe.png
-    3:
-        image: /images/user-guide/dashboards/basic-widget-settings-legend4-src-pe.png
-    4:
-        image: /images/user-guide/dashboards/basic-widget-settings-legend5-src-pe.png
 
 mobile-settings:
     0:

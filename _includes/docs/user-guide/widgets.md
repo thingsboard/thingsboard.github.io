@@ -327,29 +327,36 @@ You can choose a combination of alarm statuses and severity. You may also define
 
 ### Appearance
 
-#### **Data settings**
+Let's assume you have added the "Timeseries Line Chart" widget to display thermometers using the widget data configuration [step](/docs/{{docsPrefix}}user-guide/widgets/#data-settings) only.
+You should see a similar widget (note that you should send/simulate some data to see the actual lines in the chart):
+
+![image](/images/user-guide/widgets/overview/widget-example.png)
+
+Let's use the basic widget settings to customize the widget. We will demonstrate how each setting affects the widget.
+
+#### Data settings
 
 You can choose which symbol to display next to the value and the number of digits after the floating-point number.
 These settings are useful if you want to apply the same settings for all axis.
 For example, if you are showing temperature readings for multiple devices, you can add '°C' or '°F' symbol.
 However, if you are displaying both temperature and humidity, you have to configure these data keys separately using data key settings.
 
+You can also specify an alternative message that will be displayed if widget doesn't have incoming data. When data arrives, the message will disappear and the incoming data will be displayed.
+
 You can find these settings in the "**Advanced**" functionality, "**Appearance**" tab of the widgets settings.
 
 {% include images-gallery.html imageCollection="default-data-settings" %}
 
-You can also specify an alternative message that will be displayed if widget doesn't have incoming data. When data arrives, the message will disappear and the incoming data will be displayed.
+#### Common settings
 
-{% include images-gallery.html imageCollection="add-data-source5" %}
+**Stacking mode**.
 
-#### **Common settings**
+Use this function if the data aggregation function **is not** set to None. 
+If the Stacking box checked, the bar will be split according to the values of the entities used. 
+If this box isn’t checked, the widget will show you the sum of the used entity values. 
+To see the values of all entities, you need to hover your mouse over the bar.
 
-Let's assume you have added the "Timeseries Line Chart" widget to display thermometers using the widget data configuration [step](/docs/{{docsPrefix}}user-guide/dashboards/#widget-data-settings) only.
-You should see a similar widget (note that you should send/simulate some data to see the actual lines in the chart):
-
-{% include images-gallery.html imageCollection="basic-settings" %}
-
-Let's use the basic widget settings to customize the widget. We will demonstrate how each setting affects the widget.
+{% include images-gallery.html imageCollection="appearance-stacking-mode" %}
 
 #### Legend settings
 
@@ -358,25 +365,29 @@ Other widgets have this option disabled.
 
 While the legend is enabled, you can choose the direction and position of the legend. Also, you can choose which data to include (min, max, average, total) and either to sort the data keys or not.
 
-You may notice that the legend displays the [data key](/docs/{{docsPrefix}}user-guide/dashboards/#data-keys) label for each configured data key.
+{% include images-gallery.html imageCollection="appearance-legend-settings-1" %}
+
+You may notice that the legend displays the [data key](/docs/{{docsPrefix}}user-guide/widgets/#data-keys) label for each configured data key.
 When you have data from multiple devices in the same widget, it is hard to find which device corresponds to which record in the legend or in the tooltip.
 In order to make the legend and tooltip clear, you should use "${entityName}" or "${entityLabel}" in the data key configuration.
 
-See configuration and the corresponding result below:
+{% include images-gallery.html imageCollection="appearance-legend-settings-2" %}
 
-{% include images-gallery.html imageCollection="basic-settings-legend" %}
-
-#### Axis
+#### Axis settings
 
 Configure the preferred axis parameters.
 
-Specify the names of the vertical and horizontal axes, and set the minimum and maximum scale values.
+Specify the titles of the vertical and horizontal axis, and set the minimum and maximum scale values.
 
-You can also set the tick color, the number of decimal places, and step size between ticks.
+You can also set the ticks color, the number of decimal places, and step size between ticks.
 
-{% include images-gallery.html imageCollection="appearance-horizontal-axis" %}
+**Vertical axis settings**:
 
 {% include images-gallery.html imageCollection="appearance-vertical-axis" %}
+
+**Horizontal axis settings**:
+
+{% include images-gallery.html imageCollection="appearance-horizontal-axis" %}
 
 **Ticks formatter function, f(value)**
 
@@ -403,9 +414,9 @@ You can change the appearance of the chart grid: customize the color of the back
 
 - **Show cumulative values in stacking mode**. While stacking mode is on, you can check the box "Cumulative values" to enable your chart to display sum of all entity values.
 
-- **Tooltip value format function, f(value, latestData)** is used when you want to manually customize the tooltip.
+**Tooltip value format function, f(value, latestData)** is used when you want to manually customize the tooltip.
 
-You can customize the values that will be displayed in the tooltip via [Settings](/docs/{{docsPrefix}}user-guide/dashboards/#5-other-settings) or
+You can customize the values that will be displayed in the tooltip via tooltip settings or
 [Advanced Data key configuration](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/#2-charts).
 Tooltip configuration via Settings is basic and applied to all entities at the same time. When configured in the Advanced Data key configuration,
 it is applied only to the specific time series data, and the basic tooltip function will be overwritten by this configuration.
@@ -429,17 +440,16 @@ You can show historical data with which to compare.
 
 {% include images-gallery.html imageCollection="appearance-comparison" showListImageTitles="true" %}
 
-#### Advanced widget settings
+#### Custom legend settings
 
-Advanced widget settings are specific to widget implementation. Those settings allow you to fine tune the widget. For example, “Timeseries - Flot” widget allows you to configure line style, width, enable comparison with the previous time interval and use entity attributes in the legend.
+Custom Legend Settings are for cases when you need to display data that cannot be displayed in the chart such as attributes or display specific time series only in the Chart legend. 
+For the example let’s use active/inactive attributes that can not be displayed on a Chart, only in a Table widget.
 
-Learn more about specific advanced settings in the corresponding widget documentation:
-
-Coming soon...
+{% include images-gallery.html imageCollection="appearance-custom-legend-settings" showListImageTitles="true" %}
 
 ### Widget card
 
-#### Widget title
+#### Widget title settings
 
 You can input custom widget title, tooltip and title style. You may also add an icon to the title and control icon color and size. See configuration and the corresponding result below.
 
@@ -455,7 +465,7 @@ Title style from the screen above:
 ```
 {: .copy-code}
 
-#### Widget style
+#### Widget style settings
 
 You can customize personal  style for the widget using CSS properties. This style will be applied to the main div element of the widget.
 
@@ -483,7 +493,7 @@ Widget style from the screen above:
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 
-#### Widget buttons
+#### Widget buttons settings
 
 **Enable data export**
 
