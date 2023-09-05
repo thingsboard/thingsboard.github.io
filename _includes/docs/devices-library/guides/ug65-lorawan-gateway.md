@@ -1,6 +1,6 @@
 
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
-{% assign deviceVendorLink = "https://www.milesight-iot.com/lorawan/gateway/ug56/" %}
+{% assign deviceVendorLink = "https://www.milesight-iot.com/lorawan/gateway/ug65" %}
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
 {% assign thingsboardHost = 'https://thingsboard.cloud' %}
 {% else %}
@@ -8,7 +8,7 @@
 {% endif %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
-- [UG56 gateway user manual](https://resource.milesight-iot.com/milesight/document/ug56-user-guide-en.pdf){: target="_blank"}
+- [UG65 gateway user manual](https://resource.milesight-iot.com/milesight/document/ug65-user-guide-en.pdf){: target="_blank"}
 - [Network Server account](#configuration)
 '
  %}
@@ -16,16 +16,22 @@
 ## Introduction
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-[UG56 LoRaWAN® Gateway]({{deviceVendorLink}}){: target="_blank"} is a high-performance 8-channel LoRaWAN® gateway that offers reliable connectivity for industrial applications.  
-  
-Industrial-Grade Design  
-Listen Before Talk  
-Gateway Fleet  
-  
-Free Embedded Network Server  
-Multiple Backhaul Connectivities  
-Global LoRaWAN® Frequency Plans:  
-RU864/IN865/EU868/AU915/US915/KR920/AS923  
+[UG65 LoRaWAN® Gateway]({{deviceVendorLink}}){: target="_blank"} is a robust 8-channel indoor LoRaWAN® gateway. Adopting SX1302 LoRa chip and high-performance quad-core CPU, UG65 supports connection with more than 2000 nodes.  
+
+Key features:  
+ - Quad-core industrial processor with big memory  
+ - Equip with SX1302 chip, handling a higher amount of traffic with lower consumption  
+ - 8 half/full-duplex channels  
+ - IP65 enclosure and industrial design for parts of outdoor environment applications like eaves  
+ - Desktop, wall, or pole mounting    
+ - Multi-backhaul backups with Ethernet, cellular (4G/3G), and Wi-Fi  
+ - DeviceHub and Milesight IoT Cloud provide easy and centralized management of remote devices  
+ - Enable security communication with multiple VPNs like IPsec/OpenVPN/L2TP/PPTP/DMVPN  
+ - Compatible with mainstream network servers like The Things Industries, ChirpStack, etc.  
+ - Detect and analyze the noise level and provide an intuitive diagram for deployment  
+ - Built-in network server and MQTT/HTTP/HTTPS API for easy integration  
+ - Embedded Python SDK for users' secondary development  
+ - Fast and user-friendly programming by Node-RED development tool  
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
@@ -39,7 +45,7 @@ To continue with this guide we will need the following:
 
 ## Gateway connection
 
-According to the [official user manual](https://resource.milesight-iot.com/milesight/document/ug56-user-guide-en.pdf){: target="_blank"} and [this guide](https://support.milesight-iot.com/support/solutions/articles/73000514278-how-to-connect-milesight-gateway-to-the-internet){: target="_blank"} you can connect the gateway to the network and get access to the WebUI in two ways:
+According to the [official user manual](https://resource.milesight-iot.com/milesight/document/ug65-user-guide-en.pdf){: target="_blank"} and [this guide](https://support.milesight-iot.com/support/solutions/articles/73000514278-how-to-connect-milesight-gateway-to-the-internet){: target="_blank"} you can connect the gateway to the network and get access to the WebUI in two ways:
 
 - Wireless connection:
   1. Enable Wireless Network Connection on your computer and search for access point “Gateway_******” to connect it.
@@ -47,7 +53,7 @@ According to the [official user manual](https://resource.milesight-iot.com/miles
   3. Enter the username(Default: **admin**) and password(Default: **password**), click **Login**.
   
 - Wired connection:
-  Connect PC to UG56 Ethernet port directly or through PoE injector to access the web GUI of gateway. The following steps are based on Windows 10 system for your reference.  
+  Connect PC to UG65 Ethernet port directly or through PoE injector to access the web GUI of gateway. The following steps are based on Windows 10 system for your reference.  
 
   1. Go to “Control Panel” → “Network and Internet” → “Network and Sharing Center”, then click “Ethernet” (May have different names).
   2. Go to “Properties” → “Internet Protocol Version 4(TCP/IPv4)” and select “Use the following IP address”, then assign a static IP manually within the same subnet of the gateway.
