@@ -43,6 +43,10 @@
 {% assign exampleDashboardPath = "/docs/devices-library/resources/dashboards/microcontrollers/camera/dashboard.json" %}
 {% endif %}
 
+{% if include.exampleDashboardPath %}
+{% assign exampleDashboardPath = include.exampleDashboardPath %}
+{% endif %}
+
 To check the data and get ability to send commands or data to the device we will create the dashboard.
 
 First download the [Check and control device data dashboard]({{exampleDashboardPath}}){:target="_blank" download="dashboard.json"} file.
@@ -57,5 +61,5 @@ To add the dashboard to ThingsBoard, we need to import it, and to do this, we ha
 {% endif %} 
 
 After importing we should choose entity alias for our device.  
-To do this - we need to press the pen icon and select entity aliases, select alias "My device" and open it for editing by pressing the pen icon.    
-Then choose a device with name My device from dropdown list and save entity alias, now you should be able to see the data from the device.     
+To do this - we need to press the pen icon or **Edit mode** button, select entity aliases, select an alias and open it for editing by pressing the pen icon.    
+Then choose a device from dropdown list and save entity alias, now you should be able to see the data from the device.     

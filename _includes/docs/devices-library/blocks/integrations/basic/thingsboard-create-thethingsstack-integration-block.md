@@ -1,58 +1,66 @@
-### Add a gateway on The Things Industries
+### Add a gateway on The Things Stack Community Edition
 
-We need to add a gateway on The Things Industries cloud.  
+We need to add a gateway on [The Things Stack Community Edition](https://console.cloud.thethings.network){:target="_blank"}.  
 To add a gateway, you can follow next steps:  
 
 {% assign addGatewaySteps = '
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/1-login-page.png,
+        image: /images/devices-library/basic/integrations/thethingsstack/1-tts-login.png,
         title: Login to the cloud and open your console.
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/2-cloud-console.png,
-        title: Choose **Gateways**.
+        image: /images/devices-library/basic/integrations/thethingsstack/2-welcome-screen.png,
+        title: Choose **Register a gateway**.
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/3-gateway-list.png,
+        image: /images/devices-library/basic/integrations/thethingsstack/3-gateway-list.png,
         title: Press **Add gateway** button.
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/4-register-gateway.png,
+        image: /images/devices-library/basic/integrations/thethingsstack/4-register-gateway.png,
         title: Put information about the gateway (gateway EUI).
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/5-gateway-info.png,
-        title: The gateway is added, copy and save **Gateway Server address**, we will need it later. 
+        image: /images/devices-library/basic/integrations/thethingsstack/5-gateway-info.png,
+        title: The gateway is added.
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addGatewaySteps %}
 
+
 {% if page.hasIntegrationDeviceConfiguration | downcase == "true"%}
 {% assign articleFilename = page.name |  replace: ".md", "" %}
-{% assign guideFilePath = "/docs/devices-library/blocks/integration-devices-configuration/" | append: articleFilename | append: "-thethingsindustries-block.md" %}
+{% assign guideFilePath = "/docs/devices-library/blocks/integrations/devices-configuration/" | append: articleFilename | append: "-thethingsstack-block.md" %}
 
 {% include {{ guideFilePath }} %}
 
 {% endif %}
 
-### Configure application on The Things Industries cloud
+### Configure application on The Things Stack Community Edition
 
-Now we need to configure integration on The Things Industries. to do this please follow next steps:  
+Now we need to configure application on The Things Stack. To do this please follow next steps:  
 
 {% assign addIntegrationSteps = '
+    === 
+        image: /images/devices-library/basic/integrations/thethingsstack/2-welcome-screen.png,
+        title: Open your console and click on <b>Create an application</b>.
+    === 
+        image: /images/devices-library/basic/integrations/thethingsstack/3-create-application.png,
+        title: Create a new application.
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/application-integration-mqtt.png,
+        image: /images/devices-library/basic/integrations/thethingsstack/4-tts-integration-mqtt.png,
         title: Open <b>Integrations</b> -> <b>MQTT</b> in the menu.
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/integration-mqtt-new-key.png,
+        image: /images/devices-library/basic/integrations/thethingsstack/5-generate-new-api-key.png,
         title: Click on <b>Generate new API key</b> button.
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/integration-mqtt.png,
-        title: Press on copy icon to copy a key and save it (After leaving the page it won't be displayed).
+        image: /images/devices-library/basic/integrations/thethingsstack/6-copy-access-key.png,
+        title: Press on copy icon to copy a key and save it.
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addIntegrationSteps %}
 
+Now we can move to ThingsBoard to configure integration.  
 
 ### Create uplink converter
 
-At first, we will create an uplink converter to process the incoming data:
+At first, copy the code for uplink converter, we will need it for integration:
 
 {% capture converterCode %}
 var data = decodeToJson(payload);
@@ -141,29 +149,32 @@ return result;
 
 ### Create integration
 
-Next we will create an integration with The Things Industries inside the ThingsBoard.  
+Next we will create an integration with The Things Stack (TTS) inside the ThingsBoard.
 
-{% assign createTTIIntegration = '
+{% assign createTTSIntegration = '
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/1-create-tti-integration.png,
-        title: Go to **Integrations**, press **plus** button and choose **The Things Industries Integration** as a type, put some name.
+        image: /images/devices-library/basic/integrations/thethingsstack/1-create-tts-integration.png,
+        title: Go to **Integrations**, press **plus** button and choose **The Things Stack Community** as a type, put some name.
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/2-create-tti-integration-uplink.png,
+        image: /images/devices-library/basic/integrations/thethingsstack/2-create-tts-integration-uplink.png,
         title: Check **Create new uplink data converter** and replace a code or create the existing one.
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/3-create-tti-integration-configuration.png,
+        image: /images/devices-library/basic/integrations/thethingsstack/3-create-tts-integration-configuration.png,
         title: Fill the field with your parameters, 
 '
 %}
 
 Open **Integrations** section and add new Integration with the following parameters:  
 
-- **Region**: *eu1* (region where your application was registered inside The Things Industries Console)
-- **Username**: *thingsboard-data-integration@thingsboard* (use ***Username*** from integration on The Things Stack Industries)
-- **Password**: use ***Password*** from integration on The Things Industries
+- **Name**: *The Things Stack Application*
+- **Type**: *The Things Stack Community*
+- **Uplink** data converter: *The Things Stack Integration Uplink Converter*
+- **Region**: *eu1* (region where your application was registered inside The Things Stack Community)
+- **Username**: *thingsboard-application@ttn* (use ***Username*** from integration on TTS)
+- **Password**: use ***Password*** from integration on The Things Stack Community
 
 To add integration click on '**+**' button and follow the next steps:  
 
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=createTTIIntegration %} 
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=createTTSIntegration %} 
 
 Press **Add** button and integration will be added.  

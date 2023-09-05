@@ -25,3 +25,6 @@ To add a device, you can follow next steps:
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addGatewaySteps %}
+
+
+{% include /docs/devices-library/blocks/integrations/converters/basic/add-or-change-converter-block.md integration-type="thethingsstack" %}

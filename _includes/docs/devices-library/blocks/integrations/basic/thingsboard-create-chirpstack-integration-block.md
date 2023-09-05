@@ -25,7 +25,7 @@ To add a gateway, you can follow next steps:
 
 {% if page.hasIntegrationDeviceConfiguration | downcase == "true"%}
 {% assign articleFilename = page.name |  replace: ".md", "" %}
-{% assign guideFilePath = "/docs/devices-library/blocks/integration-devices-configuration/" | append: articleFilename | append: "-chirpstack-block.md" %}
+{% assign guideFilePath = "/docs/devices-library/blocks/integrations/devices-configuration/" | append: articleFilename | append: "-chirpstack-block.md" %}
 
 {% include {{ guideFilePath }} %}
 

@@ -62,8 +62,7 @@ Loriot
 
 {% include /docs/devices-library/blocks/basic/thingsboard-add-lorawan-device-through-integration-block.liquid target-integration-types=targetIntegrationTypes %}
 
-{% include /docs/devices-library/blocks/basic/thingsboard-check-integration-connection.md %}
-
+{% include /docs/devices-library/blocks/ready-to-go-devices/ws202-pir-and-light-sensor-check-data-block.md %}
 
 ## Conclusion
 
