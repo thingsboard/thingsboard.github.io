@@ -24,7 +24,7 @@ Change 'sysadmin@thingsboard.org' to your email address. Now re-login as adminis
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/mail/mail-settings-change-administrator-email-address-ce.png)
 {% endif %}
-{% if docsPrefix == "pe/" %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ![image](/images/user-guide/ui/mail/mail-settings-change-administrator-email-address-pe.png)
 {% endif %}
 
@@ -60,7 +60,7 @@ Click "Save" button.
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/mail/sendgrid-settings-ce.png)
 {% endif %}
-{% if docsPrefix == "pe/" %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ![image](/images/user-guide/ui/mail/sendgrid-settings-pe.png)
 {% endif %}
 
@@ -98,7 +98,7 @@ Click "Save" button.
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/mail/gmail-settings-basic-ce.png)
 {% endif %}
-{% if docsPrefix == "pe/" %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ![image](/images/user-guide/ui/mail/gmail-settings-basic-pe.png)
 {% endif %}
 
@@ -128,7 +128,7 @@ To use Gmail OAuth2 you need to create a project in Google Developers Console bu
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/mail/google-oauth-settings-1-ce.png)
 {% endif %}
-{% if docsPrefix == "pe/" %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ![image](/images/user-guide/ui/mail/google-oauth-settings-1-pe.png)
 {% endif %}
 
@@ -149,7 +149,7 @@ Back to the Thingsboard portal and paste **Client ID** and **Client secret** fro
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/mail/google-oauth-settings-2-ce.png)
 {% endif %}
-{% if docsPrefix == "pe/" %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ![image](/images/user-guide/ui/mail/google-oauth-settings-2-pe.png)
 {% endif %}
 
@@ -163,7 +163,7 @@ If access token was successfully generated you will see status "generated".
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/mail/google-oauth-settings-3-ce.png)
 {% endif %}
-{% if docsPrefix == "pe/" %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ![image](/images/user-guide/ui/mail/google-oauth-settings-3-pe.png)
 {% endif %}
 
@@ -190,7 +190,7 @@ To use Office 365 OAuth2 you need to register an application in the Azure portal
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/mail/microsoft-azure-oauth-settings-1-ce.png)
 {% endif %}
-{% if docsPrefix == "pe/" %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ![image](/images/user-guide/ui/mail/microsoft-azure-oauth-settings-1-pe.png)
 {% endif %}
 
@@ -217,7 +217,7 @@ Back to the ThingsBoard portal and paste **Client ID**, **Client secret** and **
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/mail/microsoft-azure-oauth-settings-2-ce.png)
 {% endif %}
-{% if docsPrefix == "pe/" %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ![image](/images/user-guide/ui/mail/microsoft-azure-oauth-settings-2-pe.png)
 {% endif %}
 
@@ -231,7 +231,7 @@ If access token was successfully generated you will see status "generated".
 {% if docsPrefix == null %}
 ![image](/images/user-guide/ui/mail/microsoft-azure-oauth-settings-3-ce.png)
 {% endif %}
-{% if docsPrefix == "pe/" %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ![image](/images/user-guide/ui/mail/microsoft-azure-oauth-settings-3-pe.png)
 {% endif %}
 

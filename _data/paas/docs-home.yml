@@ -246,6 +246,8 @@ toc:
       path: /docs/paas/user-guide/ui/rule-chains/
     - title: Dashboards
       path: /docs/paas/user-guide/ui/dashboards/
+    - title: Mail Settings
+      path: /docs/paas/user-guide/ui/mail-settings/
 - title: Subscriptions
   path: /products/paas/subscription/
 - title: Plan and billing
