@@ -14,7 +14,7 @@ TBMQ supports the following types of client credentials to authenticate client c
 
 Before using any of the client credential types mentioned above, please ensure that they are enabled in TBMQ [configuration file](/docs/mqtt-broker/install/config/).
 - **Basic Auth.** To enable MQTT Basic Credentials, set `SECURITY_MQTT_BASIC_ENABLED` to `true`.
-- **X.509 Certificate Auth.** To enable MQTT SSL Credentials set `SECURITY_MQTT_SSL_ENABLED` to `true`.
+- **X.509 Certificate Chain Auth.** To enable MQTT SSL Credentials set `SECURITY_MQTT_SSL_ENABLED` to `true`.
 
 Note that on the Web UI _Home page_, you can check the current state of those parameters on the Configuration card.
 
