@@ -41,10 +41,6 @@ import-widget:
         image: /images/user-guide/widgets/overview/import-widget-5-pe.png
         title: ''
 
-export-widget:
-    0:
-        image: /images/user-guide/widgets/overview/export-widget-1-pe.png
-
 add-widget-basic-mode:
     0:
         image: /images/user-guide/widgets/overview/add-widget-basic-mode-1-pe.png
@@ -438,59 +434,21 @@ enable-fullscreen:
         image: /images/user-guide/widgets/overview/data-key-configuration-settings-enable-fullscreen-3-pe.png
         title: 'You can disable the ability to expand widget to fullscreen.'
 
-
-
-
-add-data-source1:
+mobile-settings:
     0:
-        image: /images/user-guide/dashboards/add-data-source1-src-pe.png
-
-
-
-
-add-data-source2:
-    0:
-        image: /images/user-guide/dashboards/add-data-source2-src-pe.png
-
-
-
-add-data-source4:
-    0:
-        image: /images/user-guide/dashboards/add-data-source4-src-pe.png
+        image: /images/user-guide/widgets/overview/widget-settings-mobile-1-pe.png
+        title: ''
     1:
-        image: /images/user-guide/dashboards/add-data-source5-src-pe.png
-
-data-key-configuration:
-    0:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-key-1-paas.png
-    1:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-key-2-paas.png
+        image: /images/user-guide/widgets/overview/widget-settings-mobile-2-pe.png
+        title: ''
     2:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-key-3-paas.png
+        image: /images/user-guide/widgets/overview/widget-settings-mobile-3-pe.png
+        title: ''
 
-basic-data-key-settings-2:
+export-widget:
     0:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-label-1-paas.png
-    1:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-label-2-paas.png
-    2:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-label-3-paas.png
-
-
-
-basic-data-key-settings-4:
-    0:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-special-symbol-2-paas.png
-    1:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-special-symbol-3-paas.png
-
-basic-data-key-settings-5:
-    0:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-number-of-digits-2-paas.png
-    1:
-        image: /images/user-guide/dashboards/basic-data-key-configuration-settings-number-of-digits-3-paas.png
-
-
+        image: /images/user-guide/widgets/overview/export-widget-1-pe.png
+        title: 'To export a widget, enter “Edit mode”. Now in the upper right corner of the needed widget, click the button “Export widget”. This action saves the configuration file of the JSON format with all the settings of a particular widget to your PC.'
 
 basic-data-key-settings-7:
     0:
@@ -514,8 +472,6 @@ basic-data-key-settings-11:
     0:
         image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-count-0-pe.png
 
-
-
 basic-data-key-settings-14:
     0:
         image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-avg-delta-week-0-pe.png
@@ -531,14 +487,6 @@ basic-data-key-settings-16:
 basic-data-key-settings-17:
     0:
         image: /images/user-guide/widgets/overview/data-key-configuration-settings-agg-max-delta-custom-0-pe.png
-
-mobile-settings:
-    0:
-        image: /images/user-guide/dashboards/basic-widget-settings-mobile1-src-pe.png
-    1:
-        image: /images/user-guide/dashboards/basic-widget-settings-mobile2-src-pe.png
-    2:
-        image: /images/user-guide/dashboards/basic-widget-settings-mobile3-src-pe.png
 
 ---
 

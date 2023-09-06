@@ -519,11 +519,15 @@ All those settings are enabled by default.
 Actions allow quickly and easily configuring the transition to the created state, transferring to other dashboards, or even updating the dashboard you are in. Depending on the widget, the action sources differ.
 However, the type of action you are able to choose will be the same for all widgets.
 Actions are adjusted in the Edit mode of the needed widget.
-To fully understand how to use Actions, you have to [add a State to your widget](/docs/{{docsPrefix}}user-guide/dashboards/#states).
+To fully understand how to use Actions, you have to [add a State to your widget](/docs/{{docsPrefix}}user-guide/dashboards/#manage-dashboard-states).
 
 Read more about [widget actions](/docs/{{docsPrefix}}user-guide/ui/widget-actions/) in the documentaion dedicated to it.
 
 ### Mobile mode settings
+
+With mobile mode settings, you can optimize the widget for easy viewing on mobile devices.
+
+Additionally, you can hide/show the widget in mobile mode or desktop mode.
 
 Mobile Mode settings consist of two options:
 - **Order** - set to an integer, specifies the priority of the order of displaying widgets in mobile mode (note that in mobile mode all widgets are displayed in one vertical column).
