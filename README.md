@@ -14,7 +14,7 @@ Any edits you make will be viewable on a lightweight webserver that runs on your
 
 Install Ruby **3.0.x**. If you're on Ubuntu, run this commands:
 
-    sudo apt-get install ruby-full build-essential zlib1g-dev
+    sudo apt-get install ruby-full build-essential zlib1g-dev git
     sudo gem install github-pages jekyll bundler
 
 
