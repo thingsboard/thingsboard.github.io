@@ -18,7 +18,7 @@ You can download a simple dashboard for this device, it is configured to display
 You can change device in **Edit mode** in "Entity aliases" window. (To open it - open the dashboard, click on "**Edit mode**" button and click on "**Aliases**" button, choose your device instead of default one.)  
 <br/>  
   
-{% include /docs/devices-library/blocks/basic/thingsboard-upload-example-dashboard.md exampleDashboardPath="/docs/devices-library/resources/dashboards/ready-to-go-devices/ws101-smart-button.json" %}
+{% include /docs/devices-library/blocks/basic/thingsboard-upload-example-dashboard.md exampleDashboardPath="/docs/devices-library/resources/dashboards/ready-to-go-devices/ws_101_smart_button.json" %}
 <br/>  
   
 Example of the dashboard with data:  
