@@ -42,7 +42,7 @@ Clone our site:
 Make any changes you want. Then, to see your changes locally:  
 
 	cd thingsboard.github.io
-	bundle install
+	sudo bundle install
 	bundle exec jekyll serve --host 0.0.0.0
 	
 In case you change the layout or website structure you might need to execute following command:
