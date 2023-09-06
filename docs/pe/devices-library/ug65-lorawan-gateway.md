@@ -5,7 +5,7 @@ category: Other devices
 connectivity: HTTP, MQTT, UDP, LTE, 4G, 3G, LoRaWAN®
 vendor: Milesight
 hasIntegrationDeviceConfiguration: true
-deviceImageFileName: ug67-lorawan-gateway.png
+deviceImageFileName: ug65-lorawan-gateway.png
 docsPrefix: pe/
 ---
 

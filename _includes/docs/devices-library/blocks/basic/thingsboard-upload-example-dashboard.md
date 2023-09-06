@@ -47,7 +47,7 @@
 {% assign exampleDashboardPath = include.exampleDashboardPath %}
 {% endif %}
 
-To check the data and get ability to send commands or data to the device we will create the dashboard.
+On dashboards, you can display data, send commands to devices, update device attributes, etc. So, we will create the dashboard, for our device.  
 
 First download the [Check and control device data dashboard]({{exampleDashboardPath}}){:target="_blank" download="dashboard.json"} file.
 
