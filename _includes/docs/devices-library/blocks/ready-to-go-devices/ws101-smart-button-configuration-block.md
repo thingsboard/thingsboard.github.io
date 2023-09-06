@@ -5,13 +5,15 @@ At first we are going to configure the device, and save required information for
 To add a device to network server and get information from it, we will need the following device parameters:  
  - **Device EUI** - device identifier
  - **Application EUI** - Application identifier
- - **Application Key** - Application key to identify device. We recommend to use a generated key, not from the example!
-Parameters above are required for connection.  
+ - **Application Key** - Application key to identify device. We recommend to use a generated key, not from the example!  
+
+The parameters above are required for connection.  
   
 Depending on the network server, you may also need to provide join type (OTAA), LoRaWAN version.  
   
 To configure device via NFC, you will need to hold your smartphone like on the picture below:  
-![NFC zone](/images/devices-library/ready-to-go-devices/ws101-smart-button/nfc-area.png)
+![NFC zone](/images/devices-library/ready-to-go-devices/ws101-smart-button/nfc-area.png)  
+<br/>
 
 To read and write configuration on the device you may follow next steps on your smartphone:  
 {% assign readWriteConfiguration = '
