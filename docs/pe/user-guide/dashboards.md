@@ -162,7 +162,7 @@ time-window-aggregation:
 time-window-interval:
     0:
         image: /images/user-guide/dashboards/overview/timewindow-interval-3-pe.png
-        title: 'From the begging of the specified timestamp (12 am) to the end of it (12 am the next night).'
+        title: ''
     1:
         image: /images/user-guide/dashboards/overview/timewindow-interval-1-pe.png
         title: 'From the begging of the specified timestamp (12 am) to the end of it (12 am the next night).'

@@ -546,3 +546,7 @@ Now in the upper right corner of the needed widget, click the button "Export wid
 This action saves the configuration file of the JSON format with all the settings of a particular widget to your PC.
 
 {% include images-gallery.html imageCollection="export-widget" %}
+
+## Next steps
+
+{% assign currentGuide = "GettingStartedGuides" %}{% include templates/multi-project-guides-banner.md %}

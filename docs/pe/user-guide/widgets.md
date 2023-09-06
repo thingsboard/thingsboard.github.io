@@ -382,10 +382,10 @@ appearance-comparison:
 appearance-custom-legend-settings:
     0:
         image: /images/user-guide/widgets/overview/appearance-custom-legend-settings-1-pe.png
-        title: 'In the Appearance tab, toggle the "Enable custom legend" checkbox to use attribute or time series values in key labels. Click the "+ Add new key" button. From the appeared drop-down menu, select key type. The Key name is entered in the line below;'
+        title: 'In the Appearance tab, toggle the "Enable custom legend" checkbox to use attribute or time series values in key labels. Click the "+ Add new key" button. From the appeared drop-down menu, enter key name and select key type. Then navigate to the "Data" tab;'
     1:
         image: /images/user-guide/widgets/overview/appearance-custom-legend-settings-2-pe.png
-        title: 'Go to Data tab and click the pencil icon on the data key to open Data key configuration window;'
+        title: 'Click the pencil icon on the data key to open Data key configuration window;'
     2:
         image: /images/user-guide/widgets/overview/appearance-custom-legend-settings-3-pe.png
         title: 'In the label line, enter the patter ${} with the data key name inside the brackets. Click "Save" to apply new label name. Then apply all changes;'

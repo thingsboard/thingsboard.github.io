@@ -170,10 +170,10 @@ Dashboard toolbar allows you to manage
 [layouts](/docs/{{docsPrefix}}user-guide/dashboards/#layouts),
 [settings](/docs/{{docsPrefix}}user-guide/dashboards/#settings),
 [aliases](/docs/{{docsPrefix}}user-guide/dashboards/#entity-aliases),
-[filters](/docs/{{docsPrefix}}user-guide/dashboards/#entity-filters),
+[filters](/docs/{{docsPrefix}}user-guide/dashboards/#filters),
 [version control](/docs/{{docsPrefix}}user-guide/version-control/),
-[export dashboard](/docs/{{docsPrefix}}user-guide/dashboards/#export) in the needed format,
-configure [timewindow](/docs/{{docsPrefix}}user-guide/dashboards/#4-widget-time-window),
+[export dashboard](/docs/{{docsPrefix}}user-guide/dashboards/#export-dashboard) in the needed format,
+configure [timewindow](/docs/{{docsPrefix}}user-guide/dashboards/#timewindow),
 [enter edit mode](#edit-mode) and [add new widgets](#add-new-widget) using the corresponding icons in the toolbar.
 
 Some of these icons (states, layout, settings, entity aliases, filters, version control, add new widget) are visible only in the "edit" mode. All other icons are visible in both "view" and "edit" mode.
@@ -228,7 +228,7 @@ In **ThingsBoard Professional Edition**, in addition to exporting the dashboard 
 ### Timewindow
 
 Dashboard timewindow represents the time interval and aggregation function that will be used to fetch the time series or alarm data.
-Timewindow is used by all the time series and alarm widgets unless they are explicitly [configured](/docs/{{docsPrefix}}user-guide/dashboards/#4-widget-time-window) to overwrite its execution.  
+Timewindow is used by all the time series and alarm widgets unless they are explicitly [configured](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window) to overwrite its execution.  
 In the case of a time series widget, ThingsBoard fetches telemetry with a timestamp that matches the timewindow.  
 In the case of an alarm widget, ThingsBoard fetches alarms with the created time that matches the timewindow.
 
@@ -371,7 +371,7 @@ By clicking on it, the hidden toolbar will be opened.
 
 {% include images-gallery.html imageCollection="toolbar-dashboard-3" %}
 
-### Manage layouts
+### Layouts
 
 Layouts define how widgets are arranged on a Dashboard. To manage a layout, you should enter [edit mode](#edit-mode) and click the button three-rectangles "Manage layouts" in the upper left corner of the dashboard window.
 It opens the small window for layouts' control.
@@ -445,7 +445,7 @@ After adjusting the settings, click the "Save" button in the Layouts window to s
 
 {% include images-gallery.html imageCollection="layout-4" %}
 
-### Manage dashboard states
+### States
 
 The States feature exists to create a layered hierarchy in your Dashboard. To use States properly you need to assign a specific action to a widget that will help you fast "travel" among the required states.
 To do this, you should enter [edit mode](#edit-mode) and сlick the button two-layered squares "Manage dashboard states" in the upper left corner of the dashboard window. It will open the window with a dashboard state configuration.
