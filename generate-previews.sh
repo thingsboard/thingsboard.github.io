@@ -28,7 +28,7 @@ then
         fi
         echo
         echo -e "${BROWN}###################################################################${NC}"
-        if file "$file" | ggrep -vE 'preview' | ggrep -E $filter; then
+        if file "$file" | grep -vE 'preview' | grep -E $filter; then
             echo -e "${GREEN}File ${BLUE}$(basename $file)${GREEN} is PNG image. Perform creating preview...${NC}"
             oldFilePath="$(dirname $file)/$(basename $file)"
             previewFilePath="$(dirname $file)/$(basename $file ${filter#\*})-preview${filter#\*}"
