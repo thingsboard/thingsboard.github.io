@@ -126,6 +126,19 @@ After that execute the following commands:
 Where `FROM_VERSION` - from which version upgrade should be started. 
 See [Upgrade Instructions](/docs/mqtt-broker/install/upgrade-instructions/) for valid `fromVersion` values.
 
+## Generate certificate for HTTPS
+
+We are using HAproxy for proxying traffic to containers and for web UI by default we are using 8083 and 443 ports. 
+For using HTTPS with a valid certificate, execute these commands:
+
+```bash
+docker exec haproxy-certbot certbot-certonly --domain your_domain --email your_email
+docker exec haproxy-certbot haproxy-refresh
+```
+{: .copy-code}
+
+**Note**: Valid certificate is used only when you visit web UI by domain in URL.
+
 ## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}
