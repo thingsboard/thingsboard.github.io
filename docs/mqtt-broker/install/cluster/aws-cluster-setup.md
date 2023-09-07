@@ -84,7 +84,7 @@ Here you should choose security group corresponding to the one on the screen:
 
 **Note**: Some recommendations:
 
-* Make sure your PostgreSQL version is latest 12.x, not 13.x yet;
+* Make sure your PostgreSQL version is 15.x;
 * Use ‘Production’ template for high availability. It enables a lot of useful settings by default;
 * Consider creation of custom parameters group for your RDS instance. It will make change of DB parameters easier;
 * Consider deployment of the RDS instance into private subnets. This way it will be nearly impossible to accidentally expose it to the internet.
