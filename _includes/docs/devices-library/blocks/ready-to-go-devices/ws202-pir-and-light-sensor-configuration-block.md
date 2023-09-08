@@ -19,7 +19,7 @@ To read and write configuration on the device you may follow next steps on your 
 {% assign readWriteConfiguration = '
     ===
         image: /images/devices-library/ready-to-go-devices/ws202-pir-and-light-sensor/toolbox-application.png,
-        title: Open ToolBox application.
+        title: Open **ToolBox** application.
     ===
         image: /images/devices-library/ready-to-go-devices/ws202-pir-and-light-sensor/toolbox-read-success.png,
         title: Click on **NFC Read** button and hold your smartphone near the device.
