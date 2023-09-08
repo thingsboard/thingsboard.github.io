@@ -1020,3 +1020,170 @@ return toFlatMap(json, ["key2", "key4"], false);
 ```
 
 As you can see, **key2** and **key4** was excluded from the output and **key_to_overwrite** is **second_level_value**.  
+
+####  tbDate: toLocaleString
+
+The *Tbel* library uses all standard JavaScript methods in the **"toLocaleString"** method [JavaScript Date toLocaleString](https://www.w3schools.com/jsref/jsref_tolocalestring.asp);
+
+##### timeZone
+
+**Syntax:**
+
+*String toLocaleString(String locale)*
+
+**Parameters:**
+Time Zone default: UTC;
+<ul>
+  <li><b>locale:</b> <code>string</code> - Language specific format to use.</li>
+</ul>
+
+**Return value:**
+
+a Date object as a string, using locale settings, time zone Id default "UTC"".
+
+**Examples:**
+
+```java
+var d = new Date(2023, 8, 6, 4, 4, 5);
+var us = d.toLocaleString("en-US");     //  return "06/09/2023 01:04:05" timeZone UTC
+```
+{: .copy-code}
+
+**Syntax:**
+
+*String toLocaleString(String locale, String tz)*
+
+**Parameters:**
+<ul>
+  <li><b>locale:</b> <code>string</code> - Language specific format to use.</li>
+  <li><b>tz:</b> <code>string</code> - Id local time zone.</li>  
+</ul>
+
+**Return value:**
+
+a Date object as a string, using locale settings and Id time zone.
+
+**Examples:**
+
+```java
+var d = new Date(2023, 8, 6, 4, 4, 5);
+vsr us = d.toLocaleString("en-US", "America/New_York");    // return "05/09/2023 21:04:05" UTC - 04:00
+```
+{: .copy-code}
+
+##### pattern
+
+**Syntax:**
+
+*String toLocaleString(String locale, String tz, String pattern)*
+
+**Parameters:**
+<ul>
+  <li><b>locale:</b> <code>string</code> - Language specific format to use.</li>
+  <li><b>tz:</b> <code>string</code> - Id local time zone.</li>  
+  <li><b>pattern:</b> <code>string</code> - Date Time string format to use.</li>  
+</ul>
+
+**Return value:**
+
+a Date object as a string, using locale settings, Id time zone and Date Time string format (pattern).
+
+**Examples:**
+
+```java
+var d = new Date(2023, 8, 6, 4, 4, 5);
+vsr us = d.toLocaleString("en-US", "America/New_York", "dd/MM/yyyy HH:mm:ss");    // return "05/09/2023 21:04:05" UTC - 04:00
+```
+{: .copy-code}
+
+###### With Map options
+
+*options* - JSON object where you can set some properties.
+
+Legal properties:
+
+```json
+{
+  "timeZone": "undefined",    //?: string
+  "weekday": "undefined",     //?: "long" | "short" | "narrow" 
+  "era": "undefined", //?: "long" | "short" | "narrow"  
+  "year ": "undefined", //?: "numeric" | "2-digit" | undefined;
+  "month": "undefined", //?: "numeric" | "2-digit" | "long" | "short" | "narrow"
+  "day": "undefined", //?: "numeric" | "2-digit" 
+  "hour": "undefined", //?: "numeric" | "2-digit" 
+  "minute": "undefined", //?: "numeric" | "2-digit"
+  "second": "undefined", //?: "numeric" | "2-digit"
+  "timeZoneName": "undefined", //?: "full" |  "long" | "short"
+  "timeZoneNameNumeric": "undefined", //?:  "numeric" | "long" | "middle" | "short"
+  "hour12": false, //?: false | true
+  "delimiter": "/", //?: delimiter can be -, /, or .  
+}
+```
+
+**Syntax:**
+
+*String toLocaleString(Map options)*
+
+Locale default: Locale.getDefault(Locale.Category.FORMAT).toString();
+
+**Parameters:**
+<ul>
+  <li><b>options:</b> <code>Map<String, Object></code> - input JSON object where you can set some properties.</li>
+</ul>
+
+**Return value:**
+
+a Date object as a string, using locale settings, Id time zone (from options, default UTC)) and Date Time string format (pattern from options).
+
+**Examples:**
+
+```java
+var d = new Date(2023, 8, 6, 4, 4, 5);
+var utcStr = d.toLocaleString({             // return "06/09/2023 01:04:05 +0000"
+        timeZone: "UTC",
+        timeZoneNameNumeric: 'numeric',
+        year: 'numeric',
+        month: '2-digit',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: false
+        });
+```
+{: .copy-code}
+
+**Syntax:**
+
+*String toLocaleString(String locale, Map options)*
+
+**Parameters:**
+<ul>
+  <li><b>locale:</b> <code>string</code> - Language specific format to use.</li>
+  <li><b>options:</b> <code>Map<String, Object></code> - input JSON object where you can set some properties.</li>
+</ul>
+
+**Return value:**
+
+a Date object as a string, using locale settings, Id time zone and Date Time string format (pattern from options).
+
+**Examples:**
+
+```java
+var d = new Date(2023, 8, 6, 4, 4, 5);
+var localStr = d.toLocaleString("uk-UA", {      // return  "ср, 6 вересня 2023 н. е. 4:5 дп EEST+03:00 (за східноєвропейським літнім часом)"
+        timeZone: "Europe/Kiev",
+        weekday: 'short',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: 'numerict',
+        minute: 'numeric',
+        second: 'numeric',
+        hour12: true,
+        timeZoneName: 'full',
+        delimiter: '.',
+        era: 'long'
+```
+{: .copy-code}
+
