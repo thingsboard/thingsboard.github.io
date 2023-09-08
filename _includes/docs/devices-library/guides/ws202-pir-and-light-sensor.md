@@ -67,4 +67,4 @@ Loriot
 
 ## Conclusion
 
-{% include /docs/devices-library/blocks/basic/lora-gateway-conclusion-block.md %}
+{% include /docs/devices-library/blocks/basic/conclusion-block.md %}
