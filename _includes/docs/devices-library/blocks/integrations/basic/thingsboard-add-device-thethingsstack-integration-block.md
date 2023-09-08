@@ -9,19 +9,16 @@ To add a device, you can follow next steps:
         title: Login to the cloud and open your console.
     ===
         image: /images/devices-library/basic/integrations/thethingsstack/create-device-step-0.png,
-        title: Go to **Applications**.
+        title: Go to the **Applications** page. Then select your application and click on its name.
     ===
         image: /images/devices-library/basic/integrations/thethingsstack/create-device-step-1.png,
-        title: Choose your application and click on it`s name.
-    ===
-        image: /images/devices-library/basic/integrations/thethingsstack/create-device-step-2.png,
-        title: Click on **Register end device button**.
+        title: Click on the **Register end device** button.
     ===
         image: /images/devices-library/basic/integrations/thethingsstack/create-device-step-3.png,
-        title: Put the **Join EUI** value to the field. You can use **Application EUI** and press **Confirm** button.
+        title: Put the **Join EUI** value to the field. You can use **Application EUI** and press the **Confirm** button.
     ===
         image: /images/devices-library/basic/integrations/thethingsstack/create-device-step-4.png,
-        title: Fill the rest parameters and press **Register end device**.
+        title: Fill the rest parameters and press **Register end device** button.
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addGatewaySteps %}
