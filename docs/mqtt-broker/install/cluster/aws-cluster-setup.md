@@ -12,7 +12,7 @@ This guide will help you to set up TBMQ in AWS EKS.
 
 ## Prerequisites
 
-{% include templates/install/aws/eks-prerequisites.md %}
+{% include templates/mqtt-broker/install/aws/eks-prerequisites.md %}
 
 ### Pull TBMQ image from docker hub
 
@@ -62,6 +62,10 @@ eksctl create cluster -f cluster.yml
 
 Once the cluster is ready you'll need to create AWS load-balancer controller.
 You can do it by following [this](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) guide.
+The cluster provisioning scripts will create several load balancers:
+
+* tb-broker-http-loadbalancer - AWS ALB that is responsible for the web UI and REST API;
+* tb-broker-mqtt-loadbalancer - AWS NLB that is responsible for the MQTT communication.
 
 Provisioning of the AWS load-balancer controller is a **very important step** that is required for those load balancers to work properly.
 
@@ -165,7 +169,12 @@ After this command finish you should see the next line in the console:
 INFO  o.t.m.b.i.ThingsboardMqttBrokerInstallService - Installation finished successfully!
 ```
 
-Otherwise, please check if you set the PostgreSQL URL in the `tb-broker-configmap.yml` correctly.
+{% capture aws-rds %}
+
+Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in the `tb-broker-db-configmap.yml` correctly.
+
+{% endcapture %}
+{% include templates/info-banner.md content=aws-rds %}
 
 ## Step 8. Starting
 
@@ -184,7 +193,11 @@ kubectl get pods
 
 If everything went fine, you should be able to see `tb-broker-0` and `tb-broker-1` pods. Every pod should be in the `READY` state.
 
-## Step 9. Validate the setup
+## Step 9. Configure Load Balancers
+
+**TODO**...
+
+## Step 10. Validate the setup
 
 Now you can open TBMQ web interface in your browser using DNS name of the load balancer.
 
@@ -202,6 +215,24 @@ You should see the similar picture:
 Use `EXTERNAL-IP` field of the `tb-broker-loadbalancer-external` to connect to the cluster.
 
 {% include templates/mqtt-broker/login.md %}
+
+#### Validate MQTT access
+
+To connect to the cluster via MQTT you will need to get corresponding service IP. You can do this with the command:
+
+```bash
+kubectl get services
+```
+{: .copy-code}
+
+You should see the similar picture:
+
+```text
+NAME                          TYPE           CLUSTER-IP       EXTERNAL-IP                                                                     PORT(S)                         AGE
+tb-broker-mqtt-loadbalancer   LoadBalancer   10.100.119.170   k8s-thingsbo-tbbroker-b9f99d1ab6-1049a98ba4e28403.elb.eu-west-1.amazonaws.com   1883:30308/TCP,8883:31609/TCP   6m58s
+```
+
+Use `EXTERNAL-IP` field of the load-balancer to connect to the cluster via MQTT protocol.
 
 #### Troubleshooting
 
