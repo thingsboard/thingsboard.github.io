@@ -14,15 +14,6 @@ This guide will help you to set up TBMQ in AWS EKS.
 
 {% include templates/mqtt-broker/install/aws/eks-prerequisites.md %}
 
-### Pull TBMQ image from docker hub
-
-Run the following command to verify that you can pull the image from the Docker hub.
-
-```bash
-docker pull thingsboard/tbmq-node:{{ site.release.broker_full_ver }}
-```
-{: .copy-code}
-
 ## Step 1. Open TBMQ K8S scripts repository
 
 ```bash
@@ -342,7 +333,7 @@ NAME                          CLASS    HOSTS   ADDRESS                          
 tb-broker-http-loadbalancer   <none>   *       k8s-thingsbo-tbbroker-000aba1305-222186756.eu-west-1.elb.amazonaws.com   80      3d1h
 ```
 
-Use `EXTERNAL-IP` field of the `tb-broker-http-loadbalancer` to connect to the cluster.
+Use `ADDRESS` field of the `tb-broker-http-loadbalancer` to connect to the cluster.
 
 {% include templates/mqtt-broker/login.md %}
 
