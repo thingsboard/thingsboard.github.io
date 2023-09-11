@@ -220,6 +220,8 @@ This is useful when you need to send the data displayed in your dashboard by ema
 To export the dashboard directly from the toolbar, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen.
 Dashboard is exported to the configuration file in JSON format.
 
+{% include images-gallery.html imageCollection="dashboard-toolbar-export" %}
+
 In **ThingsBoard Professional Edition**, in addition to exporting the dashboard in JSON format, dashboard export is possible in several additional formats: PDF, PNG & JPEG. This is useful when you need to send the data displayed in your dashboard by email or print.
 
 {% include images-gallery.html imageCollection="pro-export" %}

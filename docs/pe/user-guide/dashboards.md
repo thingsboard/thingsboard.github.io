@@ -17,7 +17,10 @@ creating-dashboard:
         image: /images/user-guide/dashboards/overview/create-dashboard-3-pe.png
         title: 'In the opened dialog, necessary to enter a dashboard title, description is optional. Click "Add";'
     3:
-        image: /images/user-guide/dashboards/overview/create-dashboard-4-pe.png
+        image: /images/user-guide/dashboards/overview/create-dashboard-4-ce.png
+        title: 'The created dashboard will open. Save it by clicking the "Save" button in the upper right corner.'
+    4:
+        image: /images/user-guide/dashboards/overview/create-dashboard-4-1-pe.png
         title: 'Your first dashboard has been created. As long as you have one dashboard. But as new dashboards are added, they will be added to the top of the table, since the table sorts dashboards using the time of the creation by default.'
 
 creating-dashboard-2:
@@ -38,92 +41,92 @@ creating-dashboard-3:
 
 import-dashboard:
     0:
-        image: /images/user-guide/dashboards/overview/import-dashboard-1-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-pe.png
         title: 'Go to the "Dashboards" page and click on the "+" button in the upper right corner of the page and choose "Import dashboard";'
     1:
-        image: /images/user-guide/dashboards/overview/import-dashboard-2-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-pe.png
         title: 'The dashboard import window will open. Upload the JSON file and click "Import";'
     2:
-        image: /images/user-guide/dashboards/overview/import-dashboard-3-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-3-pe.png
         title: 'You have imported a dashboard. Open it;'
     3:
-        image: /images/user-guide/dashboards/overview/import-dashboard-4-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-4-pe.png
         title: 'The dashboard has been imported along with its widgets.'
 
 export-dashboard:
     0:
-        image: /images/user-guide/dashboards/overview/export-dashboard-1-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/export-dashboard-1-pe.png
         title: 'To export a dashboard, go to the "Dashboards" page. Opposite the name of the dashboard in the list, click on the “Export dashboard” button. The configuration file in JSON format with all settings on the control panel will be saved on your PC.'
 
 share-dashboard-group:
     0:
-        image: /images/user-guide/dashboards/overview/share-dashboard-group-1-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/share-dashboard-group-1-pe.png
         title: 'Go to the "Dashboards" page -> "Groups" tab. Click the "Share" icon next to the dashboard group that you want to share;'
     1:
-        image: /images/user-guide/dashboards/overview/share-dashboard-group-2-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/share-dashboard-group-2-pe.png
         title: 'Select the customer to which you want to share the dashboard group. Additionally, you can share the dashboard group with a specific user group or with all users of the customer. Specify permissions and click "Share".'
 
 make-public:
     0:
-        image: /images/user-guide/dashboards/overview/make-public-dashboard-1-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-1-pe.png
         title: 'Go to the "Dashboards" page -> "Groups" tab. Click the "Make public" icon next to the dashboard group that you want to make public;'
     1:
-        image: /images/user-guide/dashboards/overview/make-public-dashboard-2-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-2-pe.png
         title: 'In the confirmation dialog box, click "Yes";'
     2:
-        image: /images/user-guide/dashboards/overview/make-public-dashboard-3-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-3-pe.png
         title: 'To copy the public dashboard link and share it, open public dashboard group and click the "Public dashboard link" icon opposite the needed dashboard;'
     3:
-        image: /images/user-guide/dashboards/overview/make-public-dashboard-4-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-4-pe.png
         title: 'In the pop-up window, click "Copy public link" icon. Now you can share a dashboard with this link. For example, send its link by email. Or you can use the quick buttons to share the link on social networks;'
 
 make-private:
     0:
-        image: /images/user-guide/dashboards/overview/make-public-dashboard-5-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-5-pe.png
         title: 'Go to the "Dashboards" page -> "Groups" tab. Click the "Make private" icon next to the dashboard group that you want to make private;'
     1:
-        image: /images/user-guide/dashboards/overview/make-public-dashboard-6-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-6-pe.png
         title: 'In the confirmation dialog box, click "OK".'
 
 dashboard-details:
     0:
-        image: /images/user-guide/dashboards/overview/dashboard-details-1-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/dashboard-details-1-pe.png
         title: 'Go to the "Dashboards" page and click the "Dashboard details" icon next to the dashboard that you want to edit;'
     1:
-        image: /images/user-guide/dashboards/overview/dashboard-details-2-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/dashboard-details-2-pe.png
         title: 'In the "Dashboard details" window, click the "pencil" icon to enter edit mode;'
     2:
-        image: /images/user-guide/dashboards/overview/dashboard-details-3-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/dashboard-details-3-pe.png
         title: 'Edit the fields you need. For example, edit the title of the dashboard, specify description. After making the edits, remember to save all changes;'
     3:
-        image: /images/user-guide/dashboards/overview/dashboard-details-4-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/dashboard-details-4-pe.png
         title: 'You have updated the dashboard information.'
 
 delete-dashboard-1:
     0:
-        image: /images/user-guide/dashboards/overview/delete-dashboard-1-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-1-pe.png
         title: 'Go to the "Dashboards" page and click the "trash" icon can opposite the dashboard`s name you want to delete;'
     1:
-        image: /images/user-guide/dashboards/overview/delete-dashboard-2-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-2-pe.png
         title: 'Confirm deleting the dashboard in the dialog box.'
 
 delete-dashboard-2:
     0:
-        image: /images/user-guide/dashboards/overview/delete-dashboard-3-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-3-pe.png
         title: 'Click the "Dashboard details" icon next to the dashboard that you want to delete;'
     1:
-        image: /images/user-guide/dashboards/overview/delete-dashboard-4-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-4-pe.png
         title: 'In the "Dashboard details" window, click "Delete dashboard" button;'
     2:
-        image: /images/user-guide/dashboards/overview/delete-dashboard-5-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-5-pe.png
         title: 'Confirm deleting the dashboard in the dialog box.'
 
 delete-dashboard-3:
     0:
-        image: /images/user-guide/dashboards/overview/delete-dashboard-6-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-6-pe.png
         title: 'Mark one or multiple dashboards you want to delete. Click on the trash bin icon in the top right corner;'
     1:
-        image: /images/user-guide/dashboards/overview/delete-dashboard-7-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-7-pe.png
         title: 'Confirm deleting dashboards in the dialog box.'
 
 dashboard-toolbar:
@@ -133,6 +136,34 @@ dashboard-toolbar:
     1:
         image: /images/user-guide/dashboards/overview/dashboard-toolbar-edit-mode.png
         title: 'Dashboard toolbar in edit mode.'
+
+edit-mode:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-settings-edit-mode-1-pe.png
+        title: 'To enter dashboard edit mode, open the dashboard and click the "Edit mode" button in the upper right corner of the screen;'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-settings-edit-mode-2-pe.png
+        title: 'Click "Save" button to save the dashboard or click "Cancel" button to rollback all unsaved changes.'
+
+add-new-widget:
+    0:
+        image: /images/user-guide/widgets/overview/add-new-dashboard-1-pe.png
+        title: 'Open your dashboard and enter edit mode;'
+    1:
+        image: /images/user-guide/widgets/overview/add-new-dashboard-2-pe.png
+        title: 'Click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
+    2:
+        image: /images/user-guide/widgets/overview/add-new-dashboard-3-pe.png
+        title: 'Select widget bundle, for example, "Charts". To find the widget you want as quickly as possible, use the search bar by clicking a magnifying glass icon and inputting the name of the widget there;'
+    3:
+        image: /images/user-guide/widgets/overview/add-new-dashboard-4-pe.png
+        title: 'Select a widget, for example, “Timeseries Line Chart”, and click on it to open the “Add Widget” dialog box.'
+    4:
+        image: /images/user-guide/widgets/overview/add-new-dashboard-5-pe.png
+        title: 'Add a data source, choose basic and advanced settings, and click the "Add" button. Then apply changes;'
+    5:
+        image: /images/user-guide/widgets/overview/add-new-dashboard-6-pe.png
+        title: 'Your first widget is created.'
 
 dashboard-toolbar-export:
     0:
@@ -182,13 +213,6 @@ time-window-zoom-in:
         image: /images/user-guide/dashboards/overview/timewindow-zoom-2-pe.png
         title: 'To zoom out to the original size of the chart, double-click on the widget.'
 
-edit-mode:
-    0:
-        image: /images/user-guide/dashboards/overview/dashboard-settings-edit-mode-1-pe.png
-        title: 'To enter dashboard edit mode, open the dashboard and click the "Edit mode" button in the upper right corner of the screen;'
-    1:
-        image: /images/user-guide/dashboards/overview/dashboard-settings-edit-mode-2-pe.png
-        title: 'Click "Save" button to save the dashboard or click "Cancel" button to rollback all unsaved changes.'
 
 filters:
     0:
@@ -419,26 +443,6 @@ states-5:
     5:
         image: /images/user-guide/dashboards/overview/dashboard-states-18-pe.png
         title: 'After clicking, you will be transitioned to a state that is called the same as the entity that took part in the action.'
-
-add-new-widget:
-    0:
-        image: /images/user-guide/widgets/overview/add-new-dashboard-1-pe.png
-        title: 'Open your dashboard and enter edit mode;'
-    1:
-        image: /images/user-guide/widgets/overview/add-new-dashboard-2-pe.png
-        title: 'Click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
-    2:
-        image: /images/user-guide/widgets/overview/add-new-dashboard-3-pe.png
-        title: 'Select widget bundle, for example, "Charts". To find the widget you want as quickly as possible, use the search bar by clicking a magnifying glass icon and inputting the name of the widget there;'
-    3:
-        image: /images/user-guide/widgets/overview/add-new-dashboard-4-pe.png
-        title: 'Select a widget, for example, “Timeseries Line Chart”, and click on it to open the “Add Widget” dialog box.'
-    4:
-        image: /images/user-guide/widgets/overview/add-new-dashboard-5-pe.png
-        title: 'Add a data source, choose basic and advanced settings, and click the "Add" button. Then apply changes;'
-    5:
-        image: /images/user-guide/widgets/overview/add-new-dashboard-6-pe.png
-        title: 'Your first widget is created.'
 
 --- 
 

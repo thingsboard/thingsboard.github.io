@@ -15,118 +15,121 @@ creating-dashboard:
         title: 'In the opened dialog, necessary to enter a dashboard title, description is optional. Click "Add";'
     2:
         image: /images/user-guide/dashboards/overview/create-dashboard-3-ce.png
+        title: 'The created dashboard will open. Save it by clicking the "Save" button in the upper right corner.'
+    3:
+        image: /images/user-guide/dashboards/overview/create-dashboard-4-ce.png
         title: 'Your first dashboard has been created. As long as you have one dashboard. But as new dashboards are added, they will be added to the top of the table, since the table sorts dashboards using the time of the creation by default.'
 
 import-dashboard:
     0:
-        image: /images/user-guide/dashboards/overview/import-dashboard-1-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-ce.png
         title: 'Go to the "Dashboards" page and click on the "+" button in the upper right corner of the page and choose "Import dashboard";'
     1:
-        image: /images/user-guide/dashboards/overview/import-dashboard-2-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-ce.png
         title: 'The import dashboard window opens. Upload the JSON file and click "Import";'
     2:
-        image: /images/user-guide/dashboards/overview/import-dashboard-3-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-3-ce.png
         title: 'You have imported a dashboard. Open it;'
     3:
-        image: /images/user-guide/dashboards/overview/import-dashboard-4-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-4-ce.png
         title: 'The dashboard has been imported along with its widgets.'
 
 export-dashboard:
     0:
-        image: /images/user-guide/dashboards/overview/export-dashboard-1-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/export-dashboard-1-ce.png
         title: 'To export a dashboard, go to the "Dashboards" page and click the "Export dashboard" icon next to the dashboard that you want to export. The dashboard is exported in JSON file.'
 
 make-public:
     0:
-        image: /images/user-guide/dashboards/overview/make-public-dashboard-1-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-1-ce.png
         title: 'Go to the "Dashboards" page. Click the "Make public" icon next to the dashboard that you want to make public;'
     1:
-        image: /images/user-guide/dashboards/overview/make-public-dashboard-2-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-2-ce.png
         title: 'Dashboard is now public. In the pop-up window, click "Copy public link" icon. Now you can share a dashboard with this link. For example, send it by email. Or you can use the quick buttons to share the link on social networks;'
     2:
-        image: /images/user-guide/dashboards/overview/make-public-dashboard-3-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-3-ce.png
         title: 'Next time you can find the public link to the dashboard in the dashboard details window;'
 
 make-private:
     0:
-        image: /images/user-guide/dashboards/overview/make-public-dashboard-4-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-4-ce.png
         title: 'Click the "Make private" icon next to the dashboard that you want to make private;'
     1:
-        image: /images/user-guide/dashboards/overview/make-public-dashboard-5-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-5-ce.png
         title: 'In the confirmation dialog box, click "Yes".'
 
 manage-assigned-customers:
     0:
-        image: /images/user-guide/dashboards/overview/manage-assigned-customers-1-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/manage-assigned-customers-1-ce.png
         title: 'Go to the "Dashboards" page and click the "Manage assigned customers" icon next to the dashboard that you want to make assigned to the customer;'
     1:
-        image: /images/user-guide/dashboards/overview/manage-assigned-customers-2-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/manage-assigned-customers-2-ce.png
         title: 'Select the customer(s) to assign the dashboard. Click "Update";'
     2:
-        image: /images/user-guide/dashboards/overview/manage-assigned-customers-3-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/manage-assigned-customers-3-ce.png
         title: 'The dashboard assigned to the selected customer;'
 
 manage-unassigned-customers:
     0:
-        image: /images/user-guide/dashboards/overview/manage-assigned-customers-1-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/manage-assigned-customers-1-ce.png
         title: 'Go to the "Dashboards" page and click the "Manage assigned customers" icon next to the dashboard that you want to make assigned to the customer;'
     1:
-        image: /images/user-guide/dashboards/overview/manage-assigned-customers-5-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/manage-assigned-customers-5-ce.png
         title: 'Remove the customer(s) from the assigned customer list. Click "Update";'
     2:
-        image: /images/user-guide/dashboards/overview/manage-assigned-customers-6-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/manage-assigned-customers-6-ce.png
         title: 'Assigned customers list updated;'
 
 assigned-multiple-dashboards:
     0:
-        image: /images/user-guide/dashboards/overview/manage-assigned-customers-4-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/manage-assigned-customers-4-ce.png
         title: 'Go to the "Dashboards" page and mark one or multiple dashboards. Use the "Assign Dashboards" or "Unassign Dashboards" buttons, select customer(s) and confirm the action;'
     1:
-        image: /images/user-guide/dashboards/overview/manage-assigned-customers-7-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/manage-assigned-customers-7-ce.png
         title: 'Select the customer(s) to assign the dashboards. Click "Update";'
     2:
-        image: /images/user-guide/dashboards/overview/manage-assigned-customers-8-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/manage-assigned-customers-8-ce.png
         title: 'Assigned customers list updated;'
 
 dashboard-details:
     0:
-        image: /images/user-guide/dashboards/overview/dashboard-details-1-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/dashboard-details-1-ce.png
         title: 'Go to the "Dashboards" page and click the "Dashboard details" icon next to the dashboard that you want to edit;'
     1:
-        image: /images/user-guide/dashboards/overview/dashboard-details-2-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/dashboard-details-2-ce.png
         title: 'Click the "pencil" icon to enter edit mode;'
     2:
-        image: /images/user-guide/dashboards/overview/dashboard-details-3-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/dashboard-details-3-ce.png
         title: 'Edit the fields you need. For example, edit the title of the dashboard, specify description. After making the edits, remember to save all changes;'
     3:
-        image: /images/user-guide/dashboards/overview/dashboard-details-4-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/dashboard-details-4-ce.png
         title: 'You have updated the dashboard information.'
 
 delete-dashboard-1:
     0:
-        image: /images/user-guide/dashboards/overview/delete-dashboard-1-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-1-ce.png
         title: 'Go to the "Dashboards" page and click the "trash" icon can opposite the dashboard`s name you want to delete;'
     1:
-        image: /images/user-guide/dashboards/overview/delete-dashboard-2-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-2-ce.png
         title: 'Confirm deleting the dashboard in the dialog box.'
 
 delete-dashboard-2:
     0:
-        image: /images/user-guide/dashboards/overview/delete-dashboard-3-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-3-ce.png
         title: 'Click the "Dashboard details" icon next to the dashboard that you want to delete;'
     1:
-        image: /images/user-guide/dashboards/overview/delete-dashboard-4-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-4-ce.png
         title: 'In the dashboard details, click "Delete dashboard" button;'
     2:
-        image: /images/user-guide/dashboards/overview/delete-dashboard-5-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-5-ce.png
         title: 'Confirm deleting the dashboard in the dialog box.'
 
 delete-dashboard-3:
     0:
-        image: /images/user-guide/dashboards/overview/delete-dashboard-6-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-6-ce.png
         title: 'Mark one or multiple dashboards you want to delete. Click on the trash bin icon in the top right corner;'
     1:
-        image: /images/user-guide/dashboards/overview/delete-dashboard-7-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-7-ce.png
         title: 'Confirm deleting dashboards in the dialog box.'
 
 dashboard-toolbar:
@@ -137,9 +140,37 @@ dashboard-toolbar:
         image: /images/user-guide/dashboards/overview/dashboard-toolbar-edit-mode-ce.png
         title: 'Dashboard toolbar in edit mode.'
 
+edit-mode:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-settings-edit-mode-1-ce.png
+        title: 'To enter dashboard edit mode, open the dashboard and click the "Edit mode" button in the upper right corner of the screen;'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-settings-edit-mode-2-ce.png
+        title: 'Click "Save" button to save the dashboard or click "Cancel" button to rollback all unsaved changes.'
+
+add-new-widget:
+    0:
+        image: /images/user-guide/widgets/overview/add-new-dashboard-1-ce.png
+        title: 'Open your dashboard and enter edit mode;'
+    1:
+        image: /images/user-guide/widgets/overview/add-new-dashboard-2-ce.png
+        title: 'Click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
+    2:
+        image: /images/user-guide/widgets/overview/add-new-dashboard-3-ce.png
+        title: 'Select widget bundle, for example, "Charts". To find the widget you want as quickly as possible, use the search bar by clicking a magnifying glass icon and inputting the name of the widget there;'
+    3:
+        image: /images/user-guide/widgets/overview/add-new-dashboard-4-ce.png
+        title: 'Select a widget, for example, “Timeseries Line Chart”, and click on it to open the “Add Widget” dialog box.'
+    4:
+        image: /images/user-guide/widgets/overview/add-new-dashboard-5-ce.png
+        title: 'Add a data source, choose basic and advanced settings, and click the "Add" button. Then apply changes;'
+    5:
+        image: /images/user-guide/widgets/overview/add-new-dashboard-6-ce.png
+        title: 'Your first widget is created.'
+
 dashboard-toolbar-export:
     0:
-        image: /images/user-guide/dashboards/overview/dashboard-toolbar-export-1-pe.png
+        image: /images/user-guide/dashboards/overview/dashboard-toolbar-export-1-ce.png
         title: 'Go to the "Dashboards" page, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen.'
 
 pro-export:
@@ -152,22 +183,22 @@ pro-export:
 
 time-window:
     0:
-        image: /images/user-guide/dashboards/overview/timewindow-real-time-mode-1-pe.png
+        image: /images/user-guide/dashboards/overview/timewindow-real-time-mode-1-ce.png
         title: 'In the real-time mode, widgets constantly receive updates from the server and automatically show you only the data that matches the time window for a current timestamp.'
     1:
-        image: /images/user-guide/dashboards/overview/timewindow-history-mode-1-pe.png
+        image: /images/user-guide/dashboards/overview/timewindow-history-mode-1-ce.png
         title: 'In the history mode, widgets receive data only during the initial load and no updates are issued over WebSockets.'
 
 time-window-aggregation:
     0:
-        image: /images/user-guide/dashboards/overview/timewindow-aggregation-pe.png
+        image: /images/user-guide/dashboards/overview/timewindow-aggregation-ce.png
 
 time-window-interval:
     0:
-        image: /images/user-guide/dashboards/overview/timewindow-interval-1-pe.png
+        image: /images/user-guide/dashboards/overview/timewindow-interval-1-ce.png
         title: 'From the begging of the specified timestamp (12 am) to the end of it (12 am the next night).'
     1:
-        image: /images/user-guide/dashboards/overview/timewindow-interval-2-pe.png
+        image: /images/user-guide/dashboards/overview/timewindow-interval-2-ce.png
         title: 'The chart shows from the begging of the day (12 am at night) until the time when the time window was updated.'
 
 time-window-time-zone:
