@@ -57,6 +57,15 @@ notitle: "true"
                                             </span>
                                         </a>
                                     </div>
+                                    <div class="deployment-card-block">
+                                        <a href="/docs/mqtt-broker/install/cluster/azure-cluster-setup/#upgrading">
+                                            <span>
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/cloud/azure.svg" title="Cluster setup on AKS" alt="Azure K8S cluster">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
                                </div>                    
                             </div>                        
                         </div>

@@ -45,7 +45,7 @@ Here are the fields you can change depending on your needs:
 {% capture aws-eks-security %}
 In case you want to secure access to the PostgreSQL and MSK, you'll need to configure the existing VPC or create a new one,
 set it as the VPC for TBMQ cluster, create security groups for PostgreSQL and MSK,
-set them for `tb-mqtt-broker` node-group in TBMQ cluster and configure the access from TBMQ cluster nodes to PostgreSQL/MSK using another security group.
+set them for `managed` node-group in TBMQ cluster and configure the access from TBMQ cluster nodes to PostgreSQL/MSK using another security group.
 
 You can find more information about configuring VPC for `eksctl` [here](https://eksctl.io/usage/vpc-networking/).
 {% endcapture %}
@@ -74,9 +74,17 @@ Provisioning of the AWS load-balancer controller is a **very important step** th
 You'll need to set up PostgreSQL on Amazon RDS.
 One of the ways to do it is by following [this](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SettingUp.html) guide.
 
+**Note**: Some recommendations:
+
+* Make sure your PostgreSQL version is 15.x;
+* Use ‘Production’ template for high availability. It enables a lot of useful settings by default;
+* Consider creation of custom parameters group for your RDS instance. It will make change of DB parameters easier;
+* Consider deployment of the RDS instance into private subnets. This way it will be nearly impossible to accidentally expose it to the internet.
+* You may also change `username` field and set or auto-generate `password` field (keep your postgresql password in a safe place).
+
 **Note**: Make sure your database is accessible from the cluster, one of the way to achieve this is to create
 the database in the same VPC and subnets as TBMQ cluster and use 
-‘eksctl-thingsboard-mqtt-broker-cluster-ClusterSharedNodeSecurityGroup-*’ security group. See screenshots below.
+`eksctl-tbmq-cluster-ClusterSharedNodeSecurityGroup-*` security group. See screenshots below.
 
 Here you should choose VPC with the name of your cluster:
 
@@ -86,18 +94,9 @@ Here you should choose security group corresponding to the one on the screen:
 
 ![image](/images/mqtt-broker/install/aws-rds-vpc-sg.png)
 
-**Note**: Some recommendations:
-
-* Make sure your PostgreSQL version is 15.x;
-* Use ‘Production’ template for high availability. It enables a lot of useful settings by default;
-* Consider creation of custom parameters group for your RDS instance. It will make change of DB parameters easier;
-* Consider deployment of the RDS instance into private subnets. This way it will be nearly impossible to accidentally expose it to the internet.
-
-Make sure that `thingsboard_mqtt_broker` database is created along with PostgreSQL instance (or create it afterwards).
+Make sure that `thingsboard_mqtt_broker` database is created along with PostgreSQL instance (or create it afterward).
 
 ![image](/images/mqtt-broker/install/aws-rds-default-database.png)
-
-**Note**: You may also change `username` field and set or auto-generate `password` field (keep your postgresql password in a safe place).
 
 ## Step 5. Amazon MSK Configuration
 
@@ -106,6 +105,13 @@ To do so you need to open AWS console, MSK submenu, press `Create cluster` butto
 You should see the similar image:
 
 ![image](/images/mqtt-broker/install/aws-msk-creation.png)
+
+**Note**: Some recommendations:
+
+* Apache Kafka version can be safely set to the latest 3.4.0 version as TBMQ is fully tested on it;
+* Use m5.large or similar instance types;
+* Consider creation of custom cluster configuration for your MSK. It will make change of Kafka parameters easier;
+* Use default 'Monitoring' settings or enable 'Enhanced topic-level monitoring'.
 
 **Note**: Make sure your MSK instance is accessible from TBMQ cluster.
 The easiest way to achieve this is to deploy the MSK instance in the same VPC.
@@ -123,18 +129,14 @@ Also, you should enable `Plaintext` communication between clients and brokers:
 
 ![image](/images/mqtt-broker/install/aws-msk-security.png)
 
-**Note**: Some recommendations:
-
-* Apache Kafka version can be safely set to the latest 3.4.0 version as TBMQ is fully tested on it;
-* Use m5.large or similar instance types;
-* Use default 'Monitoring' settings or enable 'Enhanced topic-level monitoring'.
+At the end, carefully review the whole configuration of the MSK and then finish the cluster creation.
 
 ## Step 6. Configure links to the Kafka (Amazon MSK)/Postgres
 
 ### Amazon RDS PostgreSQL
 
 Once the database switch to the ‘Available’ state, on AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to 
-`SPRING_DATASOURCE_URL` in the `tb-broker-configmap.yml` instead of `RDS_URL_HERE` part.
+`SPRING_DATASOURCE_URL` in the `tb-broker-db-configmap.yml` instead of `RDS_URL_HERE` part.
 
 ![image](/images/mqtt-broker/install/aws-rds-endpoint.png)
 
@@ -195,7 +197,132 @@ If everything went fine, you should be able to see `tb-broker-0` and `tb-broker-
 
 ## Step 9. Configure Load Balancers
 
-**TODO**...
+### 9.1 Configure HTTP(S) Load Balancer
+
+Configure HTTP(S) Load Balancer to access web interface of your TBMQ instance. Basically you have 2 possible options of configuration:
+
+* http - Load Balancer without HTTPS support. Recommended for **development**. The only advantage is simple configuration and minimum costs. May be good option for development server but definitely not suitable for production.
+* https - Load Balancer with HTTPS support. Recommended for **production**. Acts as an SSL termination point. You may easily configure it to issue and maintain a valid SSL certificate. Automatically redirects all non-secure (HTTP) traffic to secure (HTTPS) port.
+
+See links/instructions below on how to configure each of the suggested options.
+
+#### HTTP Load Balancer
+
+Execute the following command to deploy plain http load balancer:
+
+```bash
+kubectl apply -f receipts/http-load-balancer.yml
+```
+{: .copy-code}
+
+The process of load balancer provisioning may take some time. You may periodically check the status of the load balancer using the following command:
+
+```bash
+kubectl get ingress
+```
+{: .copy-code}
+
+Once provisioned, you should see similar output:
+
+```text
+NAME                          CLASS    HOSTS   ADDRESS                                                                  PORTS   AGE
+tb-broker-http-loadbalancer   <none>   *       k8s-thingsbo-tbbroker-000aba1305-222186756.eu-west-1.elb.amazonaws.com   80      3d1h
+```
+
+#### HTTPS Load Balancer
+
+Use [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/) to create or import SSL certificate. Note your certificate ARN.
+
+Edit the load balancer configuration and replace YOUR_HTTPS_CERTIFICATE_ARN with your certificate ARN:
+
+```bash
+nano receipts/https-load-balancer.yml
+```
+{: .copy-code}
+
+Execute the following command to deploy plain https load balancer:
+
+```bash
+kubectl apply -f receipts/https-load-balancer.yml
+```
+{: .copy-code}
+
+### 9.2 Configure MQTT Load Balancer
+
+Configure MQTT load balancer to be able to use MQTT protocol to connect devices.
+
+Create TCP load balancer using following command:
+
+```bash
+kubectl apply -f receipts/mqtt-load-balancer.yml
+```
+{: .copy-code}
+
+The load balancer will forward all TCP traffic for ports 1883 and 8883.
+
+#### One-way TLS
+
+The simplest way to configure MQTTS is to make your MQTT load balancer (AWS NLB) to act as a TLS termination point. 
+This way we set up the one-way TLS connection, where the traffic between your devices and load balancers is encrypted, and the traffic between your load balancer and TBMQ is not encrypted.
+There should be no security issues, since the ALB/NLB is running in your VPC. 
+The only major disadvantage of this option is that you can’t use “X.509 certificate” MQTT client credentials, 
+since information about client certificate is not transferred from the load balancer to the TBMQ.
+
+To enable the one-way TLS:
+
+Use [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/) to create or import SSL certificate. Note your certificate ARN.
+
+Edit the load balancer configuration and replace YOUR_MQTTS_CERTIFICATE_ARN with your certificate ARN:
+
+```bash
+nano receipts/mqtts-load-balancer.yml
+```
+{: .copy-code}
+
+Execute the following command to deploy plain MQTTS load balancer:
+
+```bash
+kubectl apply -f receipts/mqtts-load-balancer.yml
+```
+{: .copy-code}
+
+#### Two-way TLS
+
+The more complex way to enable MQTTS is to obtain valid (signed) TLS certificate and configure it in the TBMQ. 
+The main advantage of this option is that you may use it in combination with “X.509 certificate” MQTT client credentials.
+
+To enable the two-way TLS:
+
+Follow [this guide](https://thingsboard.io/docs/user-guide/mqtt-over-ssl/) to create a .pem file with the SSL certificate. Store the file as _server.pem_ in the working directory.
+
+You’ll need to create a config-map with your PEM file, you can do it by calling command:
+
+```bash
+kubectl create configmap tbmq-mqtts-config \
+ --from-file=server.pem=YOUR_PEM_FILENAME \
+ --from-file=mqttserver_key.pem=YOUR_PEM_KEY_FILENAME \
+ -o yaml --dry-run=client | kubectl apply -f -
+```
+{: .copy-code}
+
+* where **YOUR_PEM_FILENAME** is the name of your **server certificate file**.
+* where **YOUR_PEM_KEY_FILENAME** is the name of your **server certificate private key file**.
+
+Then, uncomment all sections in the ‘tb-broker.yml’ file that are marked with “Uncomment the following lines to enable two-way MQTTS”.
+
+Execute command to apply changes:
+
+```bash
+kubectl apply -f tb-broker.yml
+```
+{: .copy-code}
+
+Finally, deploy the "transparent" load balancer:
+
+```bash
+kubectl apply -f receipts/mqtt-load-balancer.yml
+```
+{: .copy-code}
 
 ## Step 10. Validate the setup
 
@@ -204,15 +331,18 @@ Now you can open TBMQ web interface in your browser using DNS name of the load b
 You can get DNS name of the load-balancers using the next command:
 
 ```bash
-kubectl get services
+kubectl get ingress
 ```
 {: .copy-code}
 
 You should see the similar picture:
 
-![image](/images/mqtt-broker/install/aws-loadbalancer.png)
+```text
+NAME                          CLASS    HOSTS   ADDRESS                                                                  PORTS   AGE
+tb-broker-http-loadbalancer   <none>   *       k8s-thingsbo-tbbroker-000aba1305-222186756.eu-west-1.elb.amazonaws.com   80      3d1h
+```
 
-Use `EXTERNAL-IP` field of the `tb-broker-loadbalancer-external` to connect to the cluster.
+Use `EXTERNAL-IP` field of the `tb-broker-http-loadbalancer` to connect to the cluster.
 
 {% include templates/mqtt-broker/login.md %}
 
@@ -307,7 +437,7 @@ Execute the following command to delete all TBMQ nodes and configmaps:
 
 Execute the following command to delete the EKS cluster (you should change the name of the cluster and the region if those differ):
 ```bash
-eksctl delete cluster -r us-east-1 -n thingsboard-mqtt-broker-cluster -w
+eksctl delete cluster -r us-east-1 -n tbmq -w
 ```
 {: .copy-code}
 
