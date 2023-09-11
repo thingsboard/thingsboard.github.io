@@ -145,6 +145,22 @@
     "blurb": "Things On Edge designs easy to use, ultra low power Wi-Fi modules."
   },
   {
+    "type": ["main", "ethernet"],
+    "program": "",
+    "name": "Solandtec",
+    "logo": "solandtec.png",
+    "links": {
+      "Site": {
+        "href": "https://solandtec.com/",
+        "target": "_blank"
+      },
+      "Integration guide": {
+        "href": "/docs/samples/solandtec/thingsboard-guide-solandtec/"
+      }
+    },
+    "blurb": "With 5+ years' experience, SOLANDTEC excels in tailored automation, enhancing production and cutting costs. We adeptly apply tech to meet unique needs, reflecting commitment to excellence. Embracing Industry 4.0, we seamlessly integrate IoT, enabling data-driven decisions and proactive steps. We pride in enhancing efficiency and connectivity for evolving businesses."
+  },
+  {
     "type": ["main", "lora", "lte", "nbiot"],
     "program": "",
     "name": "Actility",
