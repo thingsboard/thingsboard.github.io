@@ -17,23 +17,26 @@ Minor release with the following features, improvements, and bug fixes.
 * [#53](https://github.com/thingsboard/tbmq/pull/53) MQTT over WebSockets;
 * [#63](https://github.com/thingsboard/tbmq/pull/63) MQTT 5 message expiry;
 * [#66](https://github.com/thingsboard/tbmq/pull/66) MQTT 5 topic alias;
-* [#68](https://github.com/thingsboard/tbmq/pull/68) UI: New home page.
+* [#68](https://github.com/thingsboard/tbmq/pull/68) UI: New Home page.
 
 **Improvements:**
 
 * Core:
   
   * [#57](https://github.com/thingsboard/tbmq/pull/57) Additional validation for entities to protect from XSS;
-  * Introduced dedicated thread pool for Application shared subscriptions processing, corrected stats for number of active shared subscriptions processors.
+  * Introduced dedicated thread pool for Application shared subscriptions processing, corrected stats for number of active shared subscriptions processors;
+  * Time-series controller API calls improved validation;
+  * MQTT client credentials and Application shared subscription entities search by 'contains'.
 
 * UI:
 
-  * Introduced responsive design for the home page;
-  * Extended config card on the home page with parameters related to WebSocket listeners;
+  * Introduced responsive design for the Home page;
+  * Extended config card on the Home page with parameters related to WebSocket listeners;
   * Sorting capabilities on the config card;
-  * Possibility to view Kafka topics and Kafka consumer groups widgets in full-screen mode on the home page;
-  * Added last timestamps to charts on the home page;
-  * Added upgrade info and link to the version card on the home page;
+  * Possibility to view Kafka topics and Kafka consumer groups widgets in full-screen mode on the Home page;
+  * Added last timestamps to charts on the Home page;
+  * Added upgrade info and link to the version card on the Home page;
+  * New quick links to the documentation on the Home page;
   * Option to skip changing the default password on the first user login;
   * Quality of Service level displayed with respective number.
 
@@ -41,11 +44,14 @@ Minor release with the following features, improvements, and bug fixes.
 
 * Core:
 
-  * [#52](https://github.com/thingsboard/tbmq/pull/52) Spring CORS configuration issue.
+  * [#52](https://github.com/thingsboard/tbmq/pull/52) Spring CORS configuration issue;
+  * Deny deletion of own sysadmin user by API.
 
 * UI:
   
-  * Fixed making multiple same fetch requests on home page loading.
+  * Fixed making multiple same fetch requests on Home page loading;
+  * Tooltip display fix for graphs on Monitoring page;
+  * Full screen issue on Monitoring page.
 
 ## v1.0.1 (July 07, 2023)
 
