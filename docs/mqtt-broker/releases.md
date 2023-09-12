@@ -8,7 +8,7 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
-## v1.1.0 (September ?, 2023)
+## v1.1.0 (September 12, 2023)
 
 Minor release with the following features, improvements, and bug fixes.
 
@@ -24,7 +24,7 @@ Minor release with the following features, improvements, and bug fixes.
 * Core:
   
   * [#57](https://github.com/thingsboard/tbmq/pull/57) Additional validation for entities to protect from XSS;
-  * Introduced dedicated thread pool for Application shared subscriptions processing, corrected stats for number of active shared subscriptions processors;
+  * Introduced a dedicated thread pool for Application shared subscriptions processing, corrected stats for the number of active shared subscriptions processors;
   * Time-series controller API calls improved validation;
   * MQTT client credentials and Application shared subscription entities search by 'contains'.
 
@@ -50,8 +50,8 @@ Minor release with the following features, improvements, and bug fixes.
 * UI:
   
   * Fixed making multiple same fetch requests on Home page loading;
-  * Tooltip display fix for graphs on Monitoring page;
-  * Full screen issue on Monitoring page.
+  * Tooltip display fix for graphs on the Monitoring page;
+  * Full-screen issue on the Monitoring page.
 
 ## v1.0.1 (July 07, 2023)
 
