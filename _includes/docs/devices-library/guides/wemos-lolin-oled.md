@@ -1,5 +1,5 @@
 
-{% assign hasDisplay = 0 %}
+{% assign hasDisplay = "true" %}
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
 {% assign arduinoBoardPath = "**ESP32** > **WEMOS LOLIN32**" %}
 {% assign OLEDInstallationRequired = "true" %}
