@@ -2,13 +2,14 @@ Instructions listed below will help you to install Cassandra.
 
 ```bash
 # Add cassandra repository
-sudo touch /etc/yum.repos.d/cassandra.repo
-echo '[cassandra]' | sudo tee --append /etc/yum.repos.d/cassandra.repo > /dev/null
-echo 'name=Apache Cassandra' | sudo tee --append /etc/yum.repos.d/cassandra.repo > /dev/null
-echo 'baseurl=https://redhat.cassandra.apache.org/41x/' | sudo tee --append /etc/yum.repos.d/cassandra.repo > /dev/null
-echo 'gpgcheck=1' | sudo tee --append /etc/yum.repos.d/cassandra.repo > /dev/null
-echo 'repo_gpgcheck=1' | sudo tee --append /etc/yum.repos.d/cassandra.repo > /dev/null
-echo 'gpgkey=https://downloads.apache.org/cassandra/KEYS' | sudo tee --append /etc/yum.repos.d/cassandra.repo > /dev/null
+cat << EOF | sudo tee /etc/yum.repos.d/cassandra.repo > /dev/null
+[cassandra]
+name=Apache Cassandra
+baseurl=https://redhat.cassandra.apache.org/41x/
+gpgcheck=1
+repo_gpgcheck=1
+gpgkey=https://downloads.apache.org/cassandra/KEYS
+EOF
 
 # Cassandra installation
 sudo yum install cassandra
