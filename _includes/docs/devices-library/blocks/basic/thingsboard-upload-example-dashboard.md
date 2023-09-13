@@ -39,6 +39,10 @@
 {% assign exampleDashboardPath = "/docs/devices-library/resources/dashboards/microcontrollers/rgb-led/dashboard.json" %}
 {% endif %}
 
+{% if hasDisplay == "true" %}
+{% assign exampleDashboardPath = "/docs/devices-library/resources/dashboards/microcontrollers/display/dashboard.json" %}
+{% endif %}
+
 {% if hasCamera == "true" %}
 {% assign exampleDashboardPath = "/docs/devices-library/resources/dashboards/microcontrollers/camera/dashboard.json" %}
 {% endif %}

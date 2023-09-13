@@ -15,6 +15,7 @@ Go to File > Preferences and add the following URL to the Additional Boards Mana
 ```bash
 https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
 ```
+{:.copy-code}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=raspberryPiPicoInstallation %}
 
