@@ -3,17 +3,22 @@
 
 ## Prerequisites
 
-For faster learning and a better understanding of this guide, first, you have to follow the [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to get familiar with ThingsBoard devices and dashboards.
+Before proceeding with this guide, it's recommended that you follow [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to become familiar with ThingsBoard devices and dashboards. This will enhance your learning experience and understanding of the concepts presented here.
 
 ## Introduction
 
-ThingsBoard provides the ability to create and customize interactive visualizations (dashboards) for monitoring and managing data and devices. 
-Through Thingsboard dashboards, users can efficiently manage and monitor their IoT devices and data, creating customizable interfaces tailored to their needs.
-Each dashboard can contain plenty of widgets. Dashboards display data from many entities: devices, assets, etc. Dashboards can be assigned to Customers.
+ThingsBoard offers a powerful feature – the ability to create and customize interactive visualizations, also known as dashboards. These dashboards are instruments for monitoring and managing your data and devices efficiently.
+With ThingsBoard dashboards, users can adapt interfaces to their specific needs, making it easier than ever to inspect their IoT devices and data. What's brilliant is that each dashboard can be populated with numerous widgets, offering flexibility and customization.
+These dashboards aren't limited to a single data source; they can display data from various entities, including devices, assets, and more. Plus, you can assign dashboards to specific Customers, ensuring that the right individuals or teams have access to the data they need.
 
+{% if docsPrefix == null %}
+![image](/images/user-guide/dashboards/overview/dashboard-introduction-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ![image](/images/user-guide/dashboards/overview/dashboard-introduction.png)
+{% endif %}
 
-Dashboards in Thingsboard provide users with the following capabilities:
+Dashboards in ThingsBoard provide users with the following capabilities:
 
  - **Data Visualization**: Users can create various widgets such as charts, graphs, tables, and more to visualize data obtained from connected devices. This enables operators and analysts to easily analyze information and track device statuses.
 
@@ -23,12 +28,12 @@ Dashboards in Thingsboard provide users with the following capabilities:
 
  - **Display Customization**: Users can customize the arrangement and size of widgets, choose color palettes, fonts, and other visualization aspects to create a user-friendly and informative interface.
 
- - **Role-Based Access**: Thingsboard allows controlling access to dashboards with different levels of privileges based on user [roles](/docs/{{docsPrefix}}user-guide/rbac/). This ensures data security and confidentiality.
+ - **Role-Based Access**: ThingsBoard allows controlling access to dashboards with different levels of privileges based on user [roles](/docs/{{docsPrefix}}user-guide/rbac/). This ensures data security and confidentiality.
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-ThingsBoard also provides convenient IoT **solution templates** to reduce time-to-market for your IoT products. 
-The template includes interactive dashboards, processing logic, sample devices, users and all other required entities. You can treat template as a complete PoC/MVP.
-Read more about solution templates [here](/docs/{{docsPrefix}}solution-templates/overview/)
+ThingsBoard also offers convenient IoT solution templates to reduce time-to-market for your IoT products. 
+These templates include interactive dashboards, processing logic, sample devices, users, and all other necessary entities. Think of these templates as a complete PoC/MVP. 
+Read more about solution templates [here](/docs/{{docsPrefix}}solution-templates/overview/).
 {% endif %}
 
 This guide covers main concepts and various dashboard settings.
@@ -78,6 +83,30 @@ You can use this file to transfer your Dashboard or widget configuration to anot
 To export a dashboard, go to the "Dashboards" page. Opposite the name of the dashboard in the list, click on the “Export dashboard” button. The configuration file in JSON format with all settings on the control panel will be saved on your PC.
 
 {% include images-gallery.html imageCollection="export-dashboard" %}
+
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+To export the dashboard directly from the toolbar, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen and select "Export JSON configuration".
+The dashboard is exported to the configuration file in JSON format.
+
+{% include images-gallery.html imageCollection="dashboard-toolbar-export" %}
+
+Dashboard export is also possible in several additional formats: PDF, PNG or JPEG.
+This is useful when you need to send the data displayed in your dashboard by email or print.
+
+{% include images-gallery.html imageCollection="pro-export" %}
+
+{% endif %}
+{% if docsPrefix == null %}
+To export the dashboard directly from the toolbar, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen.
+Dashboard is exported to the configuration file in JSON format.
+
+{% include images-gallery.html imageCollection="dashboard-toolbar-export" %}
+
+In **ThingsBoard Professional Edition**, in addition to exporting the dashboard in JSON format, dashboard export is possible in several additional formats: PDF, PNG & JPEG. This is useful when you need to send the data displayed in your dashboard by email or print.
+
+{% include images-gallery.html imageCollection="pro-export" %}
+
+{% endif %}
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ### Share dashboard group
@@ -172,7 +201,6 @@ Dashboard toolbar allows you to manage
 [aliases](/docs/{{docsPrefix}}user-guide/dashboards/#entity-aliases),
 [filters](/docs/{{docsPrefix}}user-guide/dashboards/#filters),
 [version control](/docs/{{docsPrefix}}user-guide/version-control/),
-[export dashboard](/docs/{{docsPrefix}}user-guide/dashboards/#export-dashboard) in the needed format,
 configure [timewindow](/docs/{{docsPrefix}}user-guide/dashboards/#timewindow),
 [enter edit mode](#edit-mode) and [add new widgets](#add-new-widget) using the corresponding icons in the toolbar.
 
@@ -201,31 +229,6 @@ To add a widget to a dashboard, you should:
 
 Each widget typically has specific settings and parameters that allow users to customize its behavior and appearance according to their needs.
 Read more about widgets, their creation and settings [here](/docs/{{docsPrefix}}user-guide/widgets).
-
-### Export dashboard
-
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-To export the dashboard directly from the toolbar, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen and select "Export JSON configuration". 
-The dashboard is exported to the configuration file in JSON format.
-
-{% include images-gallery.html imageCollection="dashboard-toolbar-export" %}
-
-Dashboard export is also possible in several additional formats: PDF, PNG or JPEG.
-This is useful when you need to send the data displayed in your dashboard by email or print.
-
-{% include images-gallery.html imageCollection="pro-export" %}
-
-{% endif %}
-{% if docsPrefix == null %}
-To export the dashboard directly from the toolbar, open the dashboard and click the "Export dashboard" button in the upper right corner of the screen.
-Dashboard is exported to the configuration file in JSON format.
-
-{% include images-gallery.html imageCollection="dashboard-toolbar-export" %}
-
-In **ThingsBoard Professional Edition**, in addition to exporting the dashboard in JSON format, dashboard export is possible in several additional formats: PDF, PNG & JPEG. This is useful when you need to send the data displayed in your dashboard by email or print.
-
-{% include images-gallery.html imageCollection="pro-export" %}
-{% endif %}
 
 ### Timewindow
 
@@ -324,7 +327,7 @@ Please see the [Entity aliases documentation](/docs/{{docsPrefix}}user-guide/ui/
 
 ### Settings
 
-Dashboard settings allow adjusting and altering the overall look of the Dashboard. 
+Dashboard settings allow adjusting and altering the overall look of the Dashboard. You can change the title, logo, and customize the toolbar.
 To start customizing the Dashboard enter the [Edit mode](#edit-mode).
 After entering the edit mode, click the “gear” icon at the top of the window, so the dashboard settings will be opened.
 
@@ -484,7 +487,7 @@ As we have chosen the "On row click" action, we need to click on the row of our 
 
 For the state to be named after the entity, use ${entityName} as the name of the state. Thus during the action, you will be transitioned to a state that is called the same as the entity that took part in the action.
 
-{% include images-gallery.html imageCollection="states-5" %}
+{% include images-gallery.html imageCollection="states-entity-name" %}
 
 ## Next steps
 

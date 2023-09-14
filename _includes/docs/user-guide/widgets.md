@@ -41,6 +41,15 @@ To import a widget, you should:
 
 {% include images-gallery.html imageCollection="import-widget" showListImageTitles="true" %}
 
+## Export widget
+
+To export a widget, you should go to a dashboard, where a widget is located.  
+Then go to the "Edit mode".
+Now in the upper right corner of the needed widget, click the button "Export widget".
+This action saves the configuration file of the JSON format with all the settings of a particular widget to your PC.
+
+{% include images-gallery.html imageCollection="export-widget" %}
+
 ## Widget settings
 
 Widget settings consists of one or multiple data sources, appearance settings, and actions that you can customize and perform on the widget's content.
@@ -64,7 +73,7 @@ It includes settings for the timewindow, datasource selection (entity alias or d
 
 **Advanced functionality**
 
-In the advanced functionality, you can use multiple datasources (if supported by the widget), apply filters, and it includes five tabs for more detailed widget configuration: [Data](#data-settings), [Appearance](#appearance), Widget card, Actions and Mobile.
+In the advanced functionality, you can use multiple datasources (if supported by the widget), apply filters, and it includes five tabs for more detailed widget configuration: [Data](#data-settings), [Appearance](#appearance), [Widget card](#widget-card), [Actions](#widget-actions) and [Mobile](#mobile-mode-settings).
 
 Additionally, in the advanced functionality, there are additional datasource types available: Function, Entities count and Alarms count (these data types are not supported by all widgets).
 
@@ -225,7 +234,7 @@ Let's look at the basic data key settings an example of the "Entities table" wid
 
 {% include images-gallery.html imageCollection="data-key-configuration-color" %}
 
-**Aggregation of key.** 
+**Aggregation of key** 
 
 By default, the Latest values widgets do not have the time window. If you enable aggregation for any data
 key in the '**Latest values**' widgets, the time window control will appear. You can set up aggregation for each telemetry
@@ -242,22 +251,22 @@ aggregation as telemetry, follow for more details at [the link](https://thingsbo
   <br>
   Selects the minimum or maximum value from the given interval. Using to detect peak negative or positive values.
   For example, power surges in the power cable, air pollution, equipment workload, etc.
-  {% include images-gallery.html imageCollection="basic-data-key-settings-8" %}
+  {% include images-gallery.html imageCollection="aggregation-min-max" %}
 - **Average:**
   <br>
   Calculates the average from the selected interval (Summarizes, then divides by the count of telemetry from the selected interval).
   For example, you can use average aggregation for weekly fuel consumption, acoustical noise in dB, rotation fan speed, signal quality, etc.
-  {% include images-gallery.html imageCollection="basic-data-key-settings-9" %}
+  {% include images-gallery.html imageCollection="aggregation-average" %}
 - **Sum:**
   <br>
   Summarizes all telemetry for the specified period.
   Aggregation, for example, uses for different types of telemetry, mileage (km), water consumption, idle time, etc.
-  {% include images-gallery.html imageCollection="basic-data-key-settings-10" %}
+  {% include images-gallery.html imageCollection="aggregation-sum" %}
 - **Count:**
   <br>
   Calculates the total number of transmitted messages for the selected period. It can be useful in setting up and
   optimizing devices running on battery power or when evaluating sensor activation sensitivity, etc.
-  {% include images-gallery.html imageCollection="basic-data-key-settings-11" %}
+  {% include images-gallery.html imageCollection="aggregation-count" %}
 
   **Delta function:**
 
@@ -269,32 +278,32 @@ Allows you to calculate the delta between aggregated values for current and rela
   <br>
   Example: **History** - **Current month so far** option, suppose is interval 1.09.22 to 25.09.22 then previous interval will be 1.08.22 to 25.08.22
 
-  {% include images-gallery.html imageCollection="data-key-configuration-settings-agg-max-delta" %}
+  {% include images-gallery.html imageCollection="aggregation-previous-interval" %}
 
 - **Day ago** - from the start and end of the history interval, takes away 24 hours.
   <br>
   For example, with the amount of water spent **Current day** and **Delta** - **Day ago**:
-  {% include images-gallery.html imageCollection="data-key-configuration-settings-agg-sum-delta-dayago" %}
+  {% include images-gallery.html imageCollection="aggregation-day-ago" %}
 
 - **Week ago** - takes interval one week earlier from history interval (168 hours).
   <br>
   Example with average, history interval - **Current day**, and **Week ago** delta:
-  {% include images-gallery.html imageCollection="basic-data-key-settings-14" %}
+  {% include images-gallery.html imageCollection="aggregation-week-ago" %}
 
 - **Month ago** - The same interval (in days) as the history interval and subtracts from the current history interval.
   Example, if the current month is February (28 days) then **Month ago** would be the previous 28 days, not the entire previous month.
   <br>
   Example, with sum water, history - **Current day** and **Delta** - **Month ago**:
 
-  {% include images-gallery.html imageCollection="basic-data-key-settings-15" %}
+  {% include images-gallery.html imageCollection="aggregation-month-ago" %}
 
 - **Year ago** - Interval that was 365 days ago from the current history interval.
   <br>If it is necessary to compare, suppose the aggregation for the previous month and the month of the past year.
-  {% include images-gallery.html imageCollection="basic-data-key-settings-16" %}
+  {% include images-gallery.html imageCollection="aggregation-year-ago" %}
 
 - **Custom interval** - This option is for setting individual intervals. The maximum allowed value is limited to the **int** type. Example: 43200000 = 12 hours.
 
-  {% include images-gallery.html imageCollection="basic-data-key-settings-17" %}
+  {% include images-gallery.html imageCollection="aggregation-custom-interval" %}
 
 **Delta calculation result:**
 
@@ -489,11 +498,9 @@ Widget style from the screen above:
 ```
 {: .copy-code}
 
-
+#### Widget buttons settings
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-
-#### Widget buttons settings
 
 **Enable data export**
 
@@ -504,6 +511,8 @@ You can export the data in csv, xls or xlsx format.
 
 {% include images-gallery.html imageCollection="enable-data-export" %}
 
+{% endif %}
+
 **Enable fullscreen**
 
 You may disable fullscreen using the “Enable fullscreen” checkbox. This setting is enabled by default.
@@ -511,8 +520,6 @@ You may disable fullscreen using the “Enable fullscreen” checkbox. This sett
 All those settings are enabled by default.
 
 {% include images-gallery.html imageCollection="enable-fullscreen" %}
-
-{% endif %}
 
 ### Widget actions
 
@@ -537,15 +544,6 @@ Mobile Mode settings consist of two options:
   If no value is specified, its original height will be used.
 
 {% include images-gallery.html imageCollection="mobile-settings" %}
-
-## Export widget
-
-To export a widget, you should go to a dashboard, where a widget is located.  
-Then go to the "Edit mode".
-Now in the upper right corner of the needed widget, click the button "Export widget".
-This action saves the configuration file of the JSON format with all the settings of a particular widget to your PC.
-
-{% include images-gallery.html imageCollection="export-widget" %}
 
 ## Next steps
 

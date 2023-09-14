@@ -17,11 +17,11 @@ creating-dashboard:
         image: /images/user-guide/dashboards/overview/create-dashboard-3-pe.png
         title: 'In the opened dialog, necessary to enter a dashboard title, description is optional. Click "Add";'
     3:
-        image: /images/user-guide/dashboards/overview/create-dashboard-4-ce.png
-        title: 'The created dashboard will open. Save it by clicking the "Save" button in the upper right corner.'
+        image: /images/user-guide/dashboards/overview/create-dashboard-4-pe.png
+        title: 'Once you have created the dashboard, it will be automatically opened. Save it by clicking the "Save" button in the upper right corner.'
     4:
         image: /images/user-guide/dashboards/overview/create-dashboard-4-1-pe.png
-        title: 'Your first dashboard has been created. As long as you have one dashboard. But as new dashboards are added, they will be added to the top of the table, since the table sorts dashboards using the time of the creation by default.'
+        title: 'Your first dashboard has been successfully created. As you continue to add new dashboards, they will appear at the top of the list. This default sort is based on the creation timestamp.'
 
 creating-dashboard-2:
     0:
@@ -105,7 +105,7 @@ dashboard-details:
 delete-dashboard-1:
     0:
         image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-1-pe.png
-        title: 'Go to the "Dashboards" page and click the "trash" icon can opposite the dashboard`s name you want to delete;'
+        title: 'Go to the "Dashboards" page and click the "Trash" icon can opposite the dashboard`s name you want to delete;'
     1:
         image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-2-pe.png
         title: 'Confirm deleting the dashboard in the dialog box.'
@@ -124,7 +124,7 @@ delete-dashboard-2:
 delete-dashboard-3:
     0:
         image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-6-pe.png
-        title: 'Mark one or multiple dashboards you want to delete. Click on the trash bin icon in the top right corner;'
+        title: 'Mark one or multiple dashboards you want to delete. Click on the "Trash" bin icon in the top right corner;'
     1:
         image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-7-pe.png
         title: 'Confirm deleting dashboards in the dialog box.'
@@ -203,7 +203,7 @@ time-window-interval:
 
 time-window-time-zone:
     0:
-        image: /images/user-guide/dashboards/overview/timewindow-timezone.png
+        image: /images/user-guide/dashboards/overview/timewindow-timezone-pe.png
 
 time-window-zoom-in:
     0:
@@ -212,7 +212,6 @@ time-window-zoom-in:
     1:
         image: /images/user-guide/dashboards/overview/timewindow-zoom-2-pe.png
         title: 'To zoom out to the original size of the chart, double-click on the widget.'
-
 
 filters:
     0:
@@ -240,13 +239,13 @@ filters:
 aliases:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-aliases-1-pe.png
-        title: 'Open your dashboard, enter edit mode and click the "Entity aliases" button in the upper right corner of the dashboard window. In the pop-up window click "Add alias" button;'
+        title: 'To add an alias, go to your dashboard and enter edit mode. Then, in the upper right corner, locate the "Entity aliases" button and click it. A pop-up window will appear, where you should click the "Add alias" button;'
     1:
         image: /images/user-guide/dashboards/overview/dashboard-aliases-2-pe.png
-        title: 'In the pop-up window enter alias name, select filter type and device type. Then click "Add" button;'
+        title: 'In the new pop-up window, fill in the alias name, select the filter type and device type, and then click the "Add" button;'
     2:
         image: /images/user-guide/dashboards/overview/dashboard-aliases-3-pe.png
-        title: 'Click "Save" button to save the alias and save all changes.'
+        title: 'Click "Save" button to save the alias and all changes.'
 
 settings:
     0:
@@ -307,6 +306,31 @@ toolbar-dashboard-3:
         image: /images/user-guide/dashboards/overview/toolbar-settings-6-pe.png
         title: 'Instead of the toolbar, on the upper right of the screen you find the three-dots icon. By clicking on it, the hidden toolbar will be opened.'
 
+layout-1:
+    0:
+        image: /images/user-guide/dashboards/overview/manage-layouts-1-pe.png
+        title: 'Enter edit mode and click the button three-rectangles "Manage layouts" in the upper left corner of the dashboard window. It opens the small window for layouts’ control;'
+
+layout-2:
+    0:
+        image: /images/user-guide/dashboards/overview/manage-layouts-2-pe.png
+        title: 'Click the "gear" icon named "Layout setting" to open layout settings window.'
+    1:    
+        image: /images/user-guide/dashboards/overview/manage-layouts-3-pe.png
+        title: 'The layouts’ settings are identical to the layout settings and the background settings of the dashboard settings.'
+
+layout-3:
+    0:
+        image: /images/user-guide/dashboards/overview/manage-layouts-4-pe.png
+        title: 'Toggle the "Divider";'
+
+layout-4:   
+    0:
+        image: /images/user-guide/dashboards/overview/manage-layouts-5-pe.png
+        title: 'Set up both layouts in completely different ways. Set a different background for each window. And resize the window sizes in a certain percentage ratio to each other. Then save changes;'
+    1:
+        image: /images/user-guide/dashboards/overview/manage-layouts-6-pe.png
+
 columns:
     0:
         image: /images/user-guide/dashboards/overview/layout-settings-columns-count-1-pe.png
@@ -358,31 +382,6 @@ background-image:
         image: /images/user-guide/dashboards/overview/layout-settings-background-image-3-pe.png
         title: 'After saving, you can see the customized background.'
 
-layout-1:
-    0:
-        image: /images/user-guide/dashboards/overview/manage-layouts-1-pe.png
-        title: 'Enter edit mode and click the button three-rectangles "Manage layouts" in the upper left corner of the dashboard window. It opens the small window for layouts’ control;'
-
-layout-2:
-    0:
-        image: /images/user-guide/dashboards/overview/manage-layouts-2-pe.png
-        title: 'Click the "gear" icon named "Layout setting" to open layout settings window.'
-    1:    
-        image: /images/user-guide/dashboards/overview/manage-layouts-3-pe.png
-        title: 'The layouts’ settings are identical to the layout settings and the background settings of the dashboard settings.'
-
-layout-3:
-    0:
-        image: /images/user-guide/dashboards/overview/manage-layouts-4-pe.png
-        title: 'Toggle the "Divider";'
-
-layout-4:
-    0:
-        image: /images/user-guide/dashboards/overview/manage-layouts-5-pe.png
-        title: 'Set up both layouts in completely different ways. Set a different background for each window. And resize the window sizes in a certain percentage ratio to each other. Then save changes;'
-    1:
-        image: /images/user-guide/dashboards/overview/manage-layouts-6-pe.png
-
 states-1:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-states-1-pe.png
@@ -424,13 +423,13 @@ states-4:
         image: /images/user-guide/dashboards/overview/dashboard-states-12-pe.png
         title: 'After clicking, we immediately transfer to the chosen state.'
 
-states-5:
+states-entity-name:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-states-13-pe.png
         title: 'For the state to be named after the entity, use ${entityName} as the name of the state;'
     1:
         image: /images/user-guide/dashboards/overview/dashboard-states-14-pe.png
-        title: 'Click the “pencil” icon (edit widget) at the upper right corner of the widget to enter the widget configuration mode;'
+        title: 'Click the “pencil” icon (edit widget) at the upper right corner of the widget to enter the widget configuration mode. Navigate to the “Action” tab and click the “+” icon to add a new action;'
     2:
         image: /images/user-guide/dashboards/overview/dashboard-states-15-pe.png
         title: 'Enter action name, select action source, an aim of the action and select a state to which you will be transferred. Then click "Add" button;'
