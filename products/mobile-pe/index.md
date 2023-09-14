@@ -33,8 +33,8 @@ description:
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/pe/browse-dashboards.mp4" type="video/mp4">
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/pe/browse-dashboards.webm" type="video/webm">
+                                 <source src="https://video.thingsboard.io/mobile/pe/browse-dashboards.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/mobile/pe/browse-dashboards.webm" type="video/webm">
                             </video>
                         </div>
                     </div>
@@ -51,8 +51,8 @@ description:
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/pe/white-labeling.mp4" type="video/mp4">
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/pe/white-labeling.webm" type="video/webm">
+                                 <source src="https://video.thingsboard.io/mobile/pe/white-labeling.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/mobile/pe/white-labeling.webm" type="video/webm">
                             </video>
                         </div>
                     </div>
@@ -87,8 +87,8 @@ description:
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/pe/self-registration.mp4" type="video/mp4">
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/pe/self-registration.webm" type="video/webm">
+                                 <source src="https://video.thingsboard.io/mobile/pe/self-registration.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/mobile/pe/self-registration.webm" type="video/webm">
                             </video>
                         </div>
                     </div>
@@ -105,8 +105,8 @@ description:
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/pe/manage-alarms.mp4" type="video/mp4">
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/pe/manage-alarms.webm" type="video/webm">
+                                 <source src="https://video.thingsboard.io/mobile/pe/manage-alarms.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/mobile/pe/manage-alarms.webm" type="video/webm">
                             </video>
                         </div>
                     </div>
@@ -141,8 +141,8 @@ description:
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/pe/navigate-devices.mp4" type="video/mp4">
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/pe/navigate-devices.webm" type="video/webm">
+                                 <source src="https://video.thingsboard.io/mobile/pe/navigate-devices.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/mobile/pe/navigate-devices.webm" type="video/webm">
                             </video>
                         </div>
                     </div>
@@ -159,8 +159,8 @@ description:
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/pe/mobile-actions.mp4" type="video/mp4">
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/pe/mobile-actions.webm" type="video/webm">
+                                 <source src="https://video.thingsboard.io/mobile/pe/mobile-actions.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/mobile/pe/mobile-actions.webm" type="video/webm">
                             </video>
                         </div>
                     </div>

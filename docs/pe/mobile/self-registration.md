@@ -118,8 +118,8 @@ If your setup is correct you should be able to perform sign up and activate acco
         </div>
         <div class="frame-video">
             <video autoplay loop preload="auto" muted playsinline>
-                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/pe/self-registration.mp4" type="video/mp4">
-                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/pe/self-registration.webm" type="video/webm">
+                 <source src="https://video.thingsboard.io/mobile/pe/self-registration.mp4" type="video/mp4">
+                 <source src="https://video.thingsboard.io/mobile/pe/self-registration.webm" type="video/webm">
             </video>
         </div>
     </div>
