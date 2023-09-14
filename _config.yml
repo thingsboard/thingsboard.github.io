@@ -37,6 +37,7 @@ incremental: true
 
 exclude:
   - .idea
+  - images/
 
 safe: false
 lsi: false
@@ -72,6 +73,8 @@ plugins:
 collections:
   careers:
     output: true
+
+images_url: "https://img.thingsboard.io/"
 
 release:
   branch: release-3.5
