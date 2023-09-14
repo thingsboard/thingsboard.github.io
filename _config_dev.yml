@@ -1,6 +1,2 @@
-exclude:
-  - .idea
-
-images_url: "/images/"
 
 skipFindProductUrl: true
