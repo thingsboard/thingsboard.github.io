@@ -15,13 +15,16 @@ echo "$(date +"%H:%M") Replacing image urls.. done."
 echo "$(date +"%H:%M") Uploading images to s3.."
 cd images
 aws s3 sync . s3://tb-website-images --size-only --quiet
-cd -
-
 echo "$(date +"%H:%M") Uploading images to s3.. done."
 
 echo "$(date +"%H:%M") Cleanup images.."
-git rm images
+dirs=( "user-guide" "pe" "reference" "edge" "lwm2m")
+for dirname in "${dirs[@]}"
+do
+  git rm -r $dirname
+done
 echo "$(date +"%H:%M") Cleanup images.. done."
 
+cd -
 
-
+echo "$(date +"%H:%M") Please review changes and commit. "
