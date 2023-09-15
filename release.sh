@@ -3,6 +3,8 @@
 echo "$(date +"%H:%M") Replacing image urls.. "
 
 extensions=( "*.md" "*.yml" "*.html" "*.liquid" "*.sass" "*.css" "*.js" "*.json" "*.sql" "*.cql")
+cleanup_dirs=( "user-guide" "pe" "reference" "edge" "lwm2m")
+
 for ext in "${extensions[@]}"
 do
   echo "Replacing the image url in $ext files"
@@ -18,10 +20,9 @@ aws s3 sync . s3://tb-website-images --size-only --quiet
 echo "$(date +"%H:%M") Uploading images to s3.. done."
 
 echo "$(date +"%H:%M") Cleanup images.."
-dirs=( "user-guide" "pe" "reference" "edge" "lwm2m")
-for dirname in "${dirs[@]}"
+for cleanup_dir in "${cleanup_dirs[@]}"
 do
-  git rm -r $dirname
+  git rm -r $cleanup_dir
 done
 echo "$(date +"%H:%M") Cleanup images.. done."
 
