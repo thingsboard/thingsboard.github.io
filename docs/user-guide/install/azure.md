@@ -27,7 +27,7 @@ description: Installing ThingsBoard CE on Azure
                                        <a href="/docs/user-guide/install/cluster/azure-aks-setup/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/azure-aks.svg" title="ThingsBoard setup with Kubernetes on Azure AKS" alt="Azure AKS">
+                                                   <img width="" src="https://img.thingsboard.io/install/cloud/azure-aks.svg" title="ThingsBoard setup with Kubernetes on Azure AKS" alt="Azure AKS">
                                                    <h5 class="title">Azure Kubernetes Service</h5>
                                                 </div>
                                            </span>

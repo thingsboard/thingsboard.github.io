@@ -21,7 +21,7 @@ tb-gateway-configurator
 
 If you have correctly installed the gateway, you will see the following:
 
-![](/images/gateway/gateway-cli.png)
+![](https://img.thingsboard.io/gateway/gateway-cli.png)
 
 # Step 2 Configuring
 
@@ -31,7 +31,7 @@ displays in the input field).
 **NOTE**: Default value is taken from **/etc/thingsboard-gateway/config/tb_gateway.yaml** and all your configuration via
 CLI will be saved there.
 
-![](/images/gateway/gateway-cli-questions.png)
+![](https://img.thingsboard.io/gateway/gateway-cli-questions.png)
 
 # Step 3 Starting Gateway
 

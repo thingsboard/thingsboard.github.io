@@ -9,7 +9,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The ASUS Tinker Board 2S is a powerful and versatile single board computer.  
  It features a Rockchip RK3399 processor, 2GB of RAM, and a Mali-T860MP4 GPU.  
  It also has Gigabit Ethernet, Wi-Fi, Bluetooth, and USB connectivity, making it easy to connect to the internet or other devices.  

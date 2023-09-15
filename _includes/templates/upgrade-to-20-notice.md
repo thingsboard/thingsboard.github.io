@@ -1,7 +1,7 @@
 <table style="background-color:#eeeeee">
 <tr>
   <td style="width: 58px;" valign="top">
-      <img width="58" height="58" src="/images/info-sign.svg"/>
+      <img width="58" height="58" src="https://img.thingsboard.io/info-sign.svg"/>
   </td>
   <td>
       <br/>  

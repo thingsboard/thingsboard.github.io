@@ -93,7 +93,7 @@ This dynamic adjustment allows for flexibility in managing the load distribution
 
 Let's see shared subscription processing in action:
 
-![image](/images/mqtt-broker/user-guide/shared-subscription-demo.gif)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/shared-subscription-demo.gif)
 
 ### Shared Subscriptions Load Balancing Strategy
 

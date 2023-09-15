@@ -40,8 +40,8 @@ return result;
 {: .copy-code}
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tcp/tcp-create-uplink-converter-json-java-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-create-uplink-converter-json-java-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tcp/tcp-create-uplink-converter-json-java-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-create-uplink-converter-json-java-paas.png)
 {% endif %}

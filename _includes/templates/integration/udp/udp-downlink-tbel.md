@@ -21,8 +21,8 @@ return result;
 {: .copy-code}
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-create-downlink-converter-tbel-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-create-downlink-converter-tbel-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-create-downlink-converter-tbel-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-create-downlink-converter-tbel-paas.png)
 {% endif %}

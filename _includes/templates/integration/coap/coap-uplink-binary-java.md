@@ -43,8 +43,8 @@ return result;
 {: .copy-code}
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/coap/coap-uplink-converter-binary-java-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/coap/coap-uplink-converter-binary-java-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/coap/coap-uplink-converter-binary-java-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/coap/coap-uplink-converter-binary-java-paas.png)
 {% endif %}

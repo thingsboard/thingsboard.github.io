@@ -17,10 +17,10 @@ The diagram below shows key system components and interfaces they provide. Let's
 
 
 {% if docsPrefix == null %}
-<object width="100%" data="/images/reference/thingsboard-architecture.svg"></object>
+<object width="100%" data="https://img.thingsboard.io/reference/thingsboard-architecture.svg"></object>
 {% endif %}
 {% if docsPrefix == "pe/" %}
-<object width="100%" data="/images/reference/thingsboard-architecture-pe.svg"></object>
+<object width="100%" data="https://img.thingsboard.io/reference/thingsboard-architecture-pe.svg"></object>
 {% endif %}
 
 

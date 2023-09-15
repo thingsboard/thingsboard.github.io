@@ -1,26 +1,26 @@
 
 {% assign importDashboardCE = '
     ===
-        image: /images/user-guide/dashboards/creating-dash-ce.png,
+        image: https://img.thingsboard.io/user-guide/dashboards/creating-dash-ce.png,
         title: Open the "Dashboards" page. Click on the "+" icon in the top right corner. Select "Import dashboard".
     ===
-        image: /images/user-guide/dashboards/dashboard-import-ce.png,
+        image: https://img.thingsboard.io/user-guide/dashboards/dashboard-import-ce.png,
         title: The dashboard import window should pop up, and you will be prompted to upload the JSON file and click "Import".
     ===
-        image: /images/user-guide/dashboards/dashboard-import-1-ce.png,
+        image: https://img.thingsboard.io/user-guide/dashboards/dashboard-import-1-ce.png,
         title: Dashboard has been imported.
 '
 %}
 
 {% assign importDashboardPE = '
     ===
-        image: /images/user-guide/dashboards/creating-dash-pe.png,
+        image: https://img.thingsboard.io/user-guide/dashboards/creating-dash-pe.png,
         title: Open the "Dashboards" page. By default, you navigate to the dashboard group "All". Click on the "+" icon in the top right corner. Select "Import dashboard".
     ===
-        image: /images/user-guide/dashboards/dashboard-import-pe.png,
+        image: https://img.thingsboard.io/user-guide/dashboards/dashboard-import-pe.png,
         title: The dashboard import window should pop up, and you will be prompted to upload the JSON file and click "Import".
     ===
-        image: /images/user-guide/dashboards/dashboard-import-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/dashboards/dashboard-import-1-pe.png,
         title: Dashboard has been imported.
 '
 %}

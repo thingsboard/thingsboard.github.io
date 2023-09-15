@@ -35,7 +35,7 @@ The video below demonstrates the final result of this tutorial.
 
 Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
 
-![image](/images/samples/esp8266/temperature/dashboard.gif)
+![image](https://img.thingsboard.io/samples/esp8266/temperature/dashboard.gif)
 
 {% include templates/prerequisites.md %}
 
@@ -43,11 +43,11 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
  - [Raspberry Pi 3](https://www.aliexpress.com/item/Raspberry-Pi-Model-B-Featuring-the-ARM1176JZF-S-Running-at-700MHz-with-512MB-of-RAM-version/2008093537.html?spm=2114.01010208.3.186.mgDFUO&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10000009_10084_10083_10080_10082_10081_10060_10062_10056_503_10055_10054_10059_10099_10078_501_10079_426_10103_10073_10102_10096_10052_10053_10108_10050_10107_10051_10106,searchweb201603_3,afswitch_3&btsid=2b2a0772-e248-4fa1-a79c-941b5c410deb)
 
-  ![image](/images/samples/raspberry/RaspberryPi3.jpg)
+  ![image](https://img.thingsboard.io/samples/raspberry/RaspberryPi3.jpg)
 
  - [DHT22 sensor](https://www.aliexpress.com/item/1pcs-DHT22-digital-temperature-and-humidity-sensor-Temperature-and-humidity-module-AM2302-replace-SHT11-SHT15/32316036161.html?spm=2114.03010208.3.49.aZvfaG&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_426_10073_10103_10102_10096_10052_10050_10051,searchweb201603_6&btsid=28d9ee9a-283a-4e97-af7b-a7e530490916)
 
-  ![image](/images/samples/arduino/temperature/dht22-pinout.png)
+  ![image](https://img.thingsboard.io/samples/arduino/temperature/dht22-pinout.png)
 
  - Resistor (between 4.7K and 10K)
   
@@ -71,7 +71,7 @@ Finally, place a resistor (between 4.7K and 10K) between pin number 1 and 2 of t
 
 The following picture summarizes the connections for this project:
 
-![image](/images/samples/raspberry/temperature/schema.png)
+![image](https://img.thingsboard.io/samples/raspberry/temperature/schema.png)
  
 {% include templates/thingsboard-configuration.md %}
 
@@ -86,12 +86,12 @@ Open ThingsBoard Web UI (http://localhost:8080) in browser and login as tenant a
  
 Goto "Devices" section. Click "+" button and create a device with the name "DHT22 Demo Device". 
 
-![image](/images/samples/raspberry/temperature/device.png)
+![image](https://img.thingsboard.io/samples/raspberry/temperature/device.png)
 
 Once device created, open its details and click "Manage credentials".
 Copy auto-generated access token from the "Access token" field. Please save this device token. It will be referred to later as **$ACCESS_TOKEN**.
 
-![image](/images/samples/raspberry/temperature/credentials.png)
+![image](https://img.thingsboard.io/samples/raspberry/temperature/credentials.png)
 
 
 Click "Copy Device ID" in device details to copy your device id to the clipboard.
@@ -168,7 +168,7 @@ See **[live-demo](/docs/user-guide/live-demo/)** page for more details how to ge
 Go to **"Devices"** section and locate **"DHT22 Demo Device"**, open device details and switch to **"Latest telemetry"** tab. 
 If all is configured correctly you should be able to see latest values of *"temperature"* and *"humidity"* in the table.
 
-![image](/images/samples/raspberry/temperature/attributes.png)
+![image](https://img.thingsboard.io/samples/raspberry/temperature/attributes.png)
 
 After, open **"Dashboards"** section then locate and open **"DHT22: Temperature & Humidity Demo Dashboard"**. 
 As a result you will see two digital gauges and two time-series charts displaying temperature and humidity level (similar to dashboard image in the introduction).

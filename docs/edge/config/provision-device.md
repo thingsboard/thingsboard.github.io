@@ -5,12 +5,12 @@ description: Provision Device from cloud to edge
 
 edgeDevices:
     0:
-        image: /images/edge/sync/ce-edge-devices-1.png
+        image: https://img.thingsboard.io/edge/sync/ce-edge-devices-1.png
     1:
-        image: /images/edge/sync/ce-edge-devices-2.png
+        image: https://img.thingsboard.io/edge/sync/ce-edge-devices-2.png
 ---
 
-![image](/images/coming-soon.jpg)
+![image](https://img.thingsboard.io/coming-soon.jpg)
 
 #### Devices management
 

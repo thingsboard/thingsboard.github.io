@@ -9,7 +9,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 
 ESP32 PICO KIT is an ESP32-based development board produced by Espressif.  
 The development board features a USB-to-UART Bridge circuit which allows developers to connect the board to a computer’s USB port for flashing and debugging.  

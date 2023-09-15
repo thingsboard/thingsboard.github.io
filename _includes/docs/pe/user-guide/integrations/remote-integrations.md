@@ -30,20 +30,20 @@ Let's create dummy uplink and downlink converters and will set them to work in d
 While running in debug mode, those converters will record all incoming events. 
 This will help us to tune the converters once we start receiving the data.
 
-![image](/images/user-guide/integrations/remote/default-converters.gif)  
+![image](https://img.thingsboard.io/user-guide/integrations/remote/default-converters.gif)  
 
 ### Step 2. Create Remote Integration 
 
 Let's create remote integration that will connect to the local broker using port 1883 and subscribe to all topics. 
 Notice that we enable "Debug" and "Execute remotely".   
 
-![image](/images/user-guide/integrations/remote/mqtt-integration.gif)
+![image](https://img.thingsboard.io/user-guide/integrations/remote/mqtt-integration.gif)
 
 ### Step 3. Save Remote Integration credentials.
 
 Let's copy-paste the integration key and secret from the integration details.
 
-![image](/images/user-guide/integrations/remote/copy-integration-credentials.gif)
+![image](https://img.thingsboard.io/user-guide/integrations/remote/copy-integration-credentials.gif)
 
 ## Remote integration installation steps
 

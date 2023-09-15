@@ -7,66 +7,66 @@ description: Predictive maintenance system for industrial equipment
 
 predictive-maintenance-dashboard:
   0:
-    image: /images/trendz/guide/predictive_maintenance/predict_remaining_time_to_next_maintenance_of_the_equipment.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/predict_remaining_time_to_next_maintenance_of_the_equipment.png
     title: 'Predict remaining time to next maintenance of the equipment'
     
 predictive-maintenance-forecast-next-maintenance-time:
   0:
-    image: /images/trendz/guide/predictive_maintenance/Remaining_time_create_table_St1_1.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Remaining_time_create_table_St1_1.png
     title: 'Create table view in Trendz Analytics'
   1:
-    image: /images/trendz/guide/predictive_maintenance/Remaining_time_add_fields_St1_2.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Remaining_time_add_fields_St1_2.png
     title: 'Add Machine and calculated field into columns section'
   2:
-    image: /images/trendz/guide/predictive_maintenance/Remaining_time_prediction_calculated_St1_3.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Remaining_time_prediction_calculated_St1_3.png
     title: 'Calculate remaining time to next maintenance based on production forecast'
 
 predictive-maintenance-save-remaining-time-as-telemetry:
   0:
-    image: /images/trendz/guide/predictive_maintenance/Remaining_time_rename_St2_1.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Remaining_time_rename_St2_1.png
     title: 'Define key name for calculated telemetry'
   1:
-    image: /images/trendz/guide/predictive_maintenance/Remaining_time_TB_calculated_telemetry_save_St2_2.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Remaining_time_TB_calculated_telemetry_save_St2_2.png
     title: 'Enable telemetry save in Tb calculated telemetry save section'
   2:
-    image: /images/trendz/guide/predictive_maintenance/Remaining_time_row_click_entity_St2_3.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Remaining_time_row_click_entity_St2_3.png
     title: 'Set Machine entity as row click entity'
 
 predictive-maintenance-create-alarm:
   0:
-    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_open_machine_device_St3_1.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Predict_remaining_open_machine_device_St3_1.png
     title: 'Go to Alarm rules section in ThingsBoard'
   1:
-    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_create_alarm_rule_St3_2.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Predict_remaining_create_alarm_rule_St3_2.png
     title: 'Define Alarm that will be raised when remaining time less than 14 days'
   2:
-    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_less_than_St3_3.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Predict_remaining_less_than_St3_3.png
     title: 'Set threshold condition to create an alarm'
   3:
-    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_clear_alarm_rule_St3_4.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Predict_remaining_clear_alarm_rule_St3_4.png
     title: 'Add clear condition to close active alarm'    
   4:
-    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_save_alarm_St3_6.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Predict_remaining_save_alarm_St3_6.png
     title: 'Save alarm rule'
 
 predictive-maintenance-notify-maintenance-team:
   0:
-    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_open_root_rule_chain_St4_1.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Predict_remaining_open_root_rule_chain_St4_1.png
     title: 'Go to default rule chain in ThingsBoard'
   1:
-    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_to_email_St4_2.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Predict_remaining_to_email_St4_2.png
     title: 'Add toEmail node with email properties'
   2:
-    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_to_email_setup_St4_3.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Predict_remaining_to_email_setup_St4_3.png
     title: 'Set dynamic email body to notify maintenance team'
   3:
-    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_alarm_add_link_St4_4.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Predict_remaining_alarm_add_link_St4_4.png
     title: 'Connect node with device profile node'
   4:
-    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_send_email_St4_5.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Predict_remaining_send_email_St4_5.png
     title: 'Add send email node'
   5:
-    image: /images/trendz/guide/predictive_maintenance/Predict_remaining_rule_chain_view_St4_6.png
+    image: https://img.thingsboard.io/trendz/guide/predictive_maintenance/Predict_remaining_rule_chain_view_St4_6.png
     title: 'Final rule chain view'
 
 ---

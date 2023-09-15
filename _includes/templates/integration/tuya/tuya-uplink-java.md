@@ -61,8 +61,8 @@ return result;
 {: .copy-code}
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tuya/tuya-create-uplink-converter-java-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-create-uplink-converter-java-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tuya/tuya-create-uplink-converter-java-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-create-uplink-converter-java-pe.png)
 {% endif %}

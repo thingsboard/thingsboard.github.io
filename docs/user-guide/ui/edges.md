@@ -17,7 +17,7 @@ ThingsBoard support following edge management features using Web UI and [REST AP
 
 Tenant administrator is able to register new edges or delete them from ThingsBoard cloud service.
 
-![image](/images/edge/help/edges.png)
+![image](https://img.thingsboard.io/edge/help/edges.png)
 
 ## Get edge Id, key and secret
   
@@ -25,14 +25,14 @@ Tenant administrator and customer users are able to copy:
  - **Edge id** to clipboard using "Copy Edge Id" button
  - **Edge key** and **Edge secret** using buttons "Copy edge key", "Copy edge secret".
 
-![image](/images/edge/help/edge-copy-credentials.png)
+![image](https://img.thingsboard.io/edge/help/edge-copy-credentials.png)
 
 ## Assign edge to customers
 
 Tenant administrator is able to assign edges to certain [customer](/docs/edge/help/customers/).
 This will allow Customer users to fetch edge data using REST APIs or Web UI.
  
- ![image](/images/edge/help/assign-edge-to-customer.png)
+ ![image](https://img.thingsboard.io/edge/help/assign-edge-to-customer.png)
  
 ## Assign entities to edge
 
@@ -40,19 +40,19 @@ Tenant administrator is able to assign/unassign to the edge following entity gro
 
 In case of using **ThingsBoard Professional Edition** also [scheduler events](/docs/user-guide/scheduler/) could be assigned to the edge.
 
- ![image](/images/edge/overview/cloud-management2.png)
+ ![image](https://img.thingsboard.io/edge/overview/cloud-management2.png)
  
 ## Create edge rule chains and rule nodes
 
 Tenant administrator is able to create edge [rule engine](/docs/user-guide/rule-engine-2-0/re-getting-started/).
 
-![image](/images/edge/help/edge-rulechains.png)
+![image](https://img.thingsboard.io/edge/help/edge-rulechains.png)
 
 ## Make rule chain default
 
 Tenant administrator is able to make edge rule chain [default](/docs/edge/overview/#default-edge-rule-chains).
 
-![image](/images/edge/nodes/make-default.png)
+![image](https://img.thingsboard.io/edge/nodes/make-default.png)
 
 ## Add edge rule nodes
 
@@ -68,11 +68,11 @@ Tenant administrator and customer users are able to browse events related to par
 
 Each edge has **Downlink** event type with message history from cloud to edge.
 
- ![image](/images/edge/help/edge-events.png)
+ ![image](https://img.thingsboard.io/edge/help/edge-events.png)
 
 ## Manage edge relations
  
 Tenant administrator and customer users are able to manage edge [relations](/docs/user-guide/entities-and-relations).
 
- ![image](/images/edge/help/edge-relations.png)
+ ![image](https://img.thingsboard.io/edge/help/edge-relations.png)
   

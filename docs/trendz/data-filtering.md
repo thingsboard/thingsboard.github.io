@@ -15,7 +15,7 @@ Drag-n-drop fields that you want to filter on into **Filter** section and apply 
 You can apply filters even on fields that are not used for actual data visualization. For example, during energy consumption analysis, we want to filter out all 
 empty apartments and focus on apartments located on the second and third floors. Here is how our config will look like:
 
-![image](/images/trendz/filter-example.png)
+![image](https://img.thingsboard.io/trendz/filter-example.png)
 
 
 ## Filter Options
@@ -38,7 +38,7 @@ Filter support following field types:
 
 To change filter condition - click on the filter field and select the required option:
 
-![image](/images/trendz/filter-dialog.png)
+![image](https://img.thingsboard.io/trendz/filter-dialog.png)
 
 ## Filter by hierarchy (relation)
 

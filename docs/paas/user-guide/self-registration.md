@@ -35,7 +35,7 @@ We need to protect our sign-up form from Robots.
 Generate the ReCAPTCHA for that purpose. Navigate to the Google ReCaptcha [admin console](https://www.google.com/recaptcha/intro/v3.html) and use your new domain name there.
 Important: use ReCAPTCHA v2 only. See example configuration below.
 
-![image](/images/user-guide/self-registration/reCAPTCHA.png)
+![image](https://img.thingsboard.io/user-guide/self-registration/reCAPTCHA.png)
 
 Copy-paste the site key and secret to the safe place.
 
@@ -44,7 +44,7 @@ Copy-paste the site key and secret to the safe place.
 We have prepared a ThingsBoard Prototype instance running on DigitalOcean.
 Specific domain name: srd.thingsboard.io (srd stands for “self registration demo”) to server’s IP address: 46.101.146.242.
 
-![image](/images/user-guide/self-registration/digitalocean.png)
+![image](https://img.thingsboard.io/user-guide/self-registration/digitalocean.png)
 
 ## ThingsBoard configuration
 
@@ -55,7 +55,7 @@ This role is auto-generated when you create first Customer entity in scope of yo
 If you don’t have this Role yet, you can easily add it.
 The Role type is “Generic” and it allows “All” operations for “All” entities.
 
-![image](/images/user-guide/self-registration/customer-admin-role.png)
+![image](https://img.thingsboard.io/user-guide/self-registration/customer-admin-role.png)
 
 So, when you apply this role to your customer user, Customer User can control every entity in scope of the Customer.
 Of course, you may create different role. For example, we may create a Role that is read-only.
@@ -63,7 +63,7 @@ Of course, you may create different role. For example, we may create a Role that
 “Read-Only” Group Role. We will use this Role to allow read-only access to the specific dashboard.
 This Dashboard will be the same for all our Self-Registered Customers.
 
-![image](/images/user-guide/self-registration/read-only-role.png)
+![image](https://img.thingsboard.io/user-guide/self-registration/read-only-role.png)
 
 ### Step 4. Create shared dashboard
 
@@ -77,7 +77,7 @@ BTW, we use new widget from Entity Admin Widgets Bundle.
 
 Few things to notice here.
 
-![image](/images/user-guide/self-registration/dashboard.gif)
+![image](https://img.thingsboard.io/user-guide/self-registration/dashboard.gif)
 
 Let’s see what happens when we want to add a device.
 This and other UI forms are configured in the widget configuration.
@@ -87,13 +87,13 @@ Delete action is as simple as that, but Add and Edit Device actions uses brand n
 Now you can completely control the UI and logic of your dialogs.
 Let’s open an “Add” action and expand it to full screen.
 
-![image](/images/user-guide/self-registration/dashboard-config.png)
+![image](https://img.thingsboard.io/user-guide/self-registration/dashboard-config.png)
 
 You can see custom Resources, CSS, HTML and JS tabs.
 This is the exact place where Add/Edit dialogs are configured.
 See more on the custom actions and forms in a separate video tutorial.
 
-![image](/images/user-guide/self-registration/action-config.png)
+![image](https://img.thingsboard.io/user-guide/self-registration/action-config.png)
 
 ### Step 5. Signup Form to open Dashboard on Full Screen
 
@@ -106,14 +106,14 @@ Second is the Read-Only access to the shared dashboard that we have just created
 
 Change the text message and privacy policy (optional).
 
-![image](/images/user-guide/self-registration/signup-form-config.png)
+![image](https://img.thingsboard.io/user-guide/self-registration/signup-form-config.png)
 
 Congratulations! We have completed our self-registration form setup. Save now and navigate to sign-up form.
 Create a new user and see that they are completely isolated and control their own devices.
 
 See signup form example below:
 
-![image](/images/user-guide/self-registration/signup-form.png)
+![image](https://img.thingsboard.io/user-guide/self-registration/signup-form.png)
 
 
 ## Next steps

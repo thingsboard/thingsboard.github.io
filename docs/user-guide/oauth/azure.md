@@ -39,11 +39,11 @@ For those reasons we first go for the [Azure Active Directory](https://portal.az
 
 Now we need to create the application. 
 
-![image](/images/user-guide/oauth-2-support/azure/azure-go-for-ad.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/azure/azure-go-for-ad.png)
 
 Then we need to go for the application registration and register the application of ours. 
 
-![image](/images/user-guide/oauth-2-support/azure/azure-go-for-and-create-application.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/azure/azure-go-for-and-create-application.png)
 
 The platform type equals to **Web** in our case. 
 
@@ -59,25 +59,25 @@ Where under the domain, please, specify the current **domain** of yours and for 
 For the example of ours, we have the **domain** equals to the tb.tbsupport.xyz and the **port** 443, so that there is no need to specify the port additionally.  
  
 
-![image](/images/user-guide/oauth-2-support/azure/azure-create-application.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/azure/azure-create-application.png)
 
 Then we need to confirm the registration of the application.
 
-![image](/images/user-guide/oauth-2-support/azure/azure-application-general-data.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/azure/azure-application-general-data.png)
 
 Now we are on the general page of ours, where we can find the **clientId**, and the **clientName** which we previously specified.  
   
-![image](/images/user-guide/oauth-2-support/azure/azure-application-authentication.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/azure/azure-application-authentication.png)
 
 Now let us go for the **Authentication** tab. Here we can find the **redirectUriTemplate**, and we need to specify the token 
 for the authorization endpoint. We will specify the **access token** for the example reasons, and we need to **save the 
 changes** which we have applied. 
 
-![image](/images/user-guide/oauth-2-support/azure/azure-application-secrets.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/azure/azure-application-secrets.png)
 
 Then we are going for the **Certificates & secrets** tab and create the **clientSecret** 
 
-![image](/images/user-guide/oauth-2-support/azure/azure-application-endpoints.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/azure/azure-application-endpoints.png)
 
 We also need to acquire the list of the links for the next variables:  
 
@@ -180,7 +180,7 @@ $ sudo service thingsboard restart
 ```  
 After that, proceed to the User Interface of yours, to make sure there are no troubles, press the **Login With Azure Active Directory**.
 
-![image](/images/user-guide/oauth-2-support/azure/azure-login.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/azure/azure-login.png)
 
 In case of the troubleshooting with those, please, contact us [using the contact us form](/docs/contact-us/).
 

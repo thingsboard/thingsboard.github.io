@@ -31,9 +31,9 @@ Longitude and latitude are the key data for map visualization so that you'll see
 Create a new device **Tracker1**.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-device-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-device-1-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-device-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-device-1-pe.png)
 {% endif %}
 
 {% if docsPrefix == null %}
@@ -56,21 +56,21 @@ node timeseries-map-bus.js $ACCESSTOKEN
 Where **$ACCESSTOKEN** is your device access token.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/device-emulator-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/device-emulator-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/device-emulator-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/device-emulator-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/device-emulator-paas.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/device-emulator-paas.png)
 {% endif %}
 
 **$ACCESSTOKEN** is located in a device details.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/access-token-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/access-token-1-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/access-token-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/access-token-1-pe.png)
 {% endif %}
 
 Emulator is capable with Node.js v8.10.0
@@ -90,9 +90,9 @@ In our example, we create a new dashboard called “Dashboard1” for our guide 
 Create and open an empty dashboard. And let’s fill it with some content. Click pencil button "Enter edit mode".
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-1-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-1-pe.png)
 {% endif %}
 
 Firstly we need to create an **alias** to specify entity from which we’ll receive telemetry data. 
@@ -100,25 +100,25 @@ Firstly we need to create an **alias** to specify entity from which we’ll rece
 Our entity in this guide will be **“Tracker1”** device which we created previously. We’ll give **“GeoData1”** name to our alias. 
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-2-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-2-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-2-pe.png)
 {% endif %}
 
 Now we go for adding a widget!
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-3-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-3-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-3-pe.png)
 {% endif %}
 
 Trip animation widget is located in Maps bundle 
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-4-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-4-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-4-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-4-pe.png)
 {% endif %}
 
 In our widget we add **coordinates**, **latitude**, **longitude**, **radius**, **speed** and **status** from our alias **“GeoData1”** as our parameters.
@@ -130,33 +130,33 @@ We use **Trip Animation** widget in our guide. It’s located in Maps Bundle, Ti
 Also, we’ll go for “Use dashboard timewindow” so that we’ll make it easier to synchronise our data.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-5-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-5-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-5-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-5-pe.png)
 {% endif %}
 
 In addition to this, we’ll use last minute received data to visualize and change aggregation function to None, because we don’t need to guess possible data value for the next time period, we receive data in realtime without any errors.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-6-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-6-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-6-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-6-pe.png)
 {% endif %}
 
 Now we can take a look at how our device is being moving for the last minute in a realtime. Press the “Start” button.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-7-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-7-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-7-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-7-pe.png)
 {% endif %}
 
 We also can speed up our timeline cursor up to 1,5,10,25 times so that we can make a check on its routing much faster.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-8-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-8-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/adding-widget-8-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/adding-widget-8-pe.png)
 {% endif %}
 
 ## Customization
@@ -187,15 +187,15 @@ Now, when we got the basics of what our widget can provide, let us go for editin
 Let's see how it works.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/widget-settings-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/widget-settings-1-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/widget-settings-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/widget-settings-1-pe.png)
 {% endif %}
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/widget-settings-2-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/widget-settings-2-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/widget-settings-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/widget-settings-2-pe.png)
 {% endif %}
 
 ### Advanced tab
@@ -205,9 +205,9 @@ In a settings tab, we can specify unique parametres for Trip animation widget fo
 #### Map Provider Settings
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-1-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-1-pe.png)
 {% endif %}
 
 #### Trip Animation Settings
@@ -215,9 +215,9 @@ In a settings tab, we can specify unique parametres for Trip animation widget fo
 ##### Normalization data step (ms) 
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-2-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-2-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-2-pe.png)
 {% endif %}
 
 ##### Latitude & Longitude key names
@@ -324,9 +324,9 @@ return res;
 * Path decorator, its size in px, end/beginning offset, decorator repeater, stroke weight and stroke opacity
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-path-decorator-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-path-decorator-1-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-path-decorator-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-path-decorator-1-pe.png)
 {% endif %}
 
 #### Points Settings
@@ -340,17 +340,17 @@ The next option is a show points option. Points are a telemetry data updates so 
 * Point size px
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-points-settings-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-points-settings-1-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-points-settings-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-points-settings-1-pe.png)
 {% endif %}
 
 * Use color point function
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-point-color-function-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-point-color-function-1-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-point-color-function-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-point-color-function-1-pe.png)
 {% endif %}
 
 Points color function:
@@ -404,49 +404,49 @@ For the polygon, we can specify the next settings:
 * Show/Hide polygon
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-1-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-1-pe.png)
 {% endif %}
 
 * Enable/disable polygon edit
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-2-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-2-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-2-pe.png)
 {% endif %}
 
 * Polygon label text or polygon label function (you may change data contained in a polygon label based on *data, dsData, dsIndex*)
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-3-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-3-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-3-pe.png)
 {% endif %}
 
 * Polygon tooltip text or polygon tooltip function (you may change data contained in a polygon tooltip based on *data, dsData, dsIndex*) 
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-4-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-4-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-4-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-4-pe.png)
 {% endif %}
 
 * Polygon color, polygon opacity, or polygon color function (you may change polygon color based on *data, dsData, dsIndex*)
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-5-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-5-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-5-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-5-pe.png)
 {% endif %}
 
 * Polygon stroke color, polygon opacity, polygon weight or polygon stroke color function (you may change polygon color based on *data, dsData, dsIndex*)
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-6-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-6-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-6-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-polygon-settings-6-pe.png)
 {% endif %}
 
 #### Circle settings
@@ -467,49 +467,49 @@ For the circle, we can specify the next settings:
 * Show/Hide circle
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-1-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-1-pe.png)
 {% endif %}
 
 * Enable/disable circle edit
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-2-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-2-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-2-pe.png)
 {% endif %}
 
 * Circle label text or circle label function (you may change data contained in a circle label based on *data, dsData, dsIndex*)
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-3-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-3-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-3-pe.png)
 {% endif %}
 
 * Circle tooltip text or circle tooltip function (you may change data contained in a circle tooltip based on *data, dsData, dsIndex*)
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-4-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-4-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-4-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-4-pe.png)
 {% endif %}
 
 * Circle fill color, circle fill color opacity, or circle fill color function (you may change circle color based on *data, dsData, dsIndex*)
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-5-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-5-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-5-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-5-pe.png)
 {% endif %}
 
 * Circle stroke color, stroke opacity, stroke weight or circle stroke color function (you may change circle color based on *data, dsData, dsIndex*)
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-6-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-6-ce.png)
 {% else %}
-![image](/images/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-6-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/trip-animation-widget/advanced-settings-circle-settings-6-pe.png)
 {% endif %}
 
 

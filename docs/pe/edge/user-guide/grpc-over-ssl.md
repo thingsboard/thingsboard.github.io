@@ -4,7 +4,7 @@ title: Enable gRPC over SSL/TLS for edge communication
 description: Enable gRPC over SSL/TLS for edge communication
 ---
 
-![image](/images/coming-soon.jpg)
+![image](https://img.thingsboard.io/coming-soon.jpg)
 
 #### Next Steps
 

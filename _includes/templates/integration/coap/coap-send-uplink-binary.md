@@ -11,8 +11,8 @@ echo -e -n '\x53\x4e\x2d\x30\x30\x31\x64\x65\x66\x61\x75\x6c\x74\x32\x35\x2e\x37
 {: .copy-code}
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/coap/terminal-binary-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/coap/terminal-binary-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/coap/terminal-binary-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/coap/terminal-binary-paas.png)
 {% endif %}

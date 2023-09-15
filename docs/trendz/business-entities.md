@@ -15,7 +15,7 @@ This guide describes how Trendz uses entities from ThingsBoard, like asset, devi
 Let's assume that we have a Smart Building solution. Our topology contains Buildings, Apartments and different Meters that are connected with each other using relations.
 Here is how our topology will look like:
 
-![image](/images/reference/pe-demo/smart-metering-model.svg)
+![image](https://img.thingsboard.io/reference/pe-demo/smart-metering-model.svg)
 
 
 In fact, Trendz operates with this topology as with the flat table that has columns for all attributes/telemetry from all Devices/Assets in this topology.
@@ -51,18 +51,18 @@ The Next important step is to define how data should be aggregated. Here are sup
 * UNIQ
 
 For changing aggregation type - just click on the field and select required value.
-![image](/images/trendz/field-aggregation.png)
+![image](https://img.thingsboard.io/trendz/field-aggregation.png)
 
 
 ## Work with pulse output telemetry
 Water meter is a good example of a device with pulse output - telemetry value always growing and during analysis, we want to convert it into delta values.
 Here is an example chart for such telemetry:
 
-![image](/images/trendz/pulse-before.png)
+![image](https://img.thingsboard.io/trendz/pulse-before.png)
 
 Let's apply **DELTA** aggregation for this field and see how our data will look like:
 
-![image](/images/trendz/pulse-after.png)
+![image](https://img.thingsboard.io/trendz/pulse-after.png)
 
 Trendz automatically computes delta for this field for defined time ranges with required granularity.
 In case when **DELTA** aggregation applied for multiple devices - Trendz will apply **SUM** aggregation to the aggregate group - as the result, we can see total consumption on different levels (city, building, etc.)

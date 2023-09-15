@@ -9,7 +9,7 @@ https://dl.espressif.com/dl/package_esp32_index.json
 
 {% assign esp32ArduinoPreferences='
     ===
-        image: /images/devices-library/basic/arduino-ide/preferences.png
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/preferences.png
 '%}
 
 {% include images-gallery.liquid showListImageTitles="false" imageCollection=esp32ArduinoPreferences %}
@@ -18,7 +18,7 @@ Then go to <b>Tools</b> > <b>Board</b> > <b>Board Manager</b> and install the <b
 
 {% assign esp32ArduinoInstallation='
     ===
-        image: /images/devices-library/basic/microcontrollers/esp32-arduino-ide-board-manager.png
+        image: https://img.thingsboard.io/devices-library/basic/microcontrollers/esp32-arduino-ide-board-manager.png
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=esp32ArduinoInstallation %}

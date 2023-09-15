@@ -7,7 +7,7 @@ MQTT Integration allows to connect to external MQTT brokers, subscribe to data s
 
 Please review the integration diagram to learn more. 
 
-<object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/mqtt-integration.svg"></object>
+<object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/user-guide/integrations/mqtt-integration.svg"></object>
 
 ThingsBoard MQTT Integration acts as an MQTT client. It subscribes to topics and converts the data into telemetry and attribute updates. In case of downlink message, MQTT integration converts it to the device-suitable format and pushes to external MQTT broker. 
 Pay attention: MQTT broker should be either co-located with ThingsBoard instance or deployed in the cloud and have a valid DNS name or static IP address. ThingsBoard instance that is running in the cloud can’t connect to the MQTT broker deployed in local area network.
@@ -91,13 +91,13 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-downlink
 
 - Go to the **Integrations center** -> **Integrations** page and click "plus" icon to add a new integration. Name it "**MQTT Integration**", select type **MQTT**;
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-add-integration-1-pe.png)
 
 - The next steps is to add the recently created **uplink** and **downlink** converters;
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-add-integration-2-pe.png)
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-add-integration-3-pe.png)
 
 - Specify **host**: **broker.hivemq.com** and **port**: **1883** at the connection step;
 
@@ -110,17 +110,17 @@ tb/mqtt-integration-tutorial/sensors/+/temperature
 
  - You can also select an MQTT **QoS** level. We use MQTT QoS level 0 (At most once) by default;
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-4-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-add-integration-4-pe.png)
 
 - Go to the **advanced settings**. It is better to uncheck the **Clean session** parameter. Many brokers do not support sticky sessions, so will silently close the connection if you try to connect with this option enabled;
 
 - Let's leave the **Downlink topic pattern** by default, meaning that the Integration will take the metadata.topic and use it as the downlink topic;
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-5-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-add-integration-5-pe.png)
 
 - [Optional] Click on **Check connection** button to check connection to your Service Bus topic. Click **Add** button to create the integration.
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-integration-6-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-add-integration-6-pe.png)
 
 #### Send Uplink message
 
@@ -133,18 +133,18 @@ mosquitto_pub -h broker.hivemq.com -p 1883 -t "tb/mqtt-integration-tutorial/sens
 ```
 {: .copy-code}
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-send-uplink-message-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-send-uplink-message-1.png)
 
 {% if docsPrefix == "pe/" %}
 After you sent uplink message a new device was created. You should receive a notification about it. 
 To view notification click on the bell icon in the upper right corner of the screen. 
 The notification will contain link to created device. Go to this device.
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-go-to-devices-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-go-to-devices-1-pe.png)
 
 Here you will see information about the new device. As well as the telemetry which we sent to the device.
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-go-to-devices-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-go-to-devices-2-pe.png)
 
 Learn more about *notifications* and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
 {% endif %}
@@ -153,27 +153,27 @@ Learn more about *notifications* and how to configure them [here](/docs/{{docsPr
 Once you go to the **Device Groups** -> **All* you should find a *SN-001* device provisioned by the Integration.
 Click on the device, go to *Latest Telemetry* tab to see "temperature" key and its value (25.1) there.
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-go-to-devices-2.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-go-to-devices-2.png)
 
 {% endif %}
 
 Go back to your **Integrations** page and navigate to the **Events** tab. There you'll see the message consumed by the **MQTT Integration**.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-events-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-events-1-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-events-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-events-1.png)
 {% endif %}
 
 On **Events** tab of your **MQTT Uplink Converter** there will be "*In*", "*Out*", and "*Metadata*" columns. 
 The "*In*" and "*Metadata*" are the input for the data converter, and "*Out*" is the result.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-converter-events-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-converter-events-1-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-converter-events-1-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-converter-events-1-paas.png)
 {% endif %}
 
 <br>
@@ -201,10 +201,10 @@ Now go to the **Rule Chains** page and open **Root Rule Chain**. Double-click on
 Now go back to your dashboard and turn knob a couple of times. 
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-turn-knob-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-turn-knob-1-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-turn-knob-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-turn-knob-1.png)
 {% endif %}
 
 In the **message type switch** node on the **Events** tab you should then see incoming messages with the message type *RPC_CALL_FROM_SERVER_TO_DEVICE* and relation type *RPC Request to Device*. You can check out what data and metadata was sent by the Knob Control to the Rule Engine.
@@ -235,7 +235,7 @@ mosquitto_sub -h broker.hivemq.com -p 1883 -t "tb/mqtt-integration-tutorial/sens
 ```
 {: .copy-code}
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-execute-command.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-execute-command.png)
 
 Go to the dashboard and turn the wheel again. In your terminal window you should receive series of the incoming messages sent by thew knob control widget:
 ```shell
@@ -244,14 +244,14 @@ Go to the dashboard and turn the wheel again. In your terminal window you should
 ```
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-turn-the-wheel-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-turn-the-wheel-1-pe.png)
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-turn-the-wheel-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-turn-the-wheel-2-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-turn-the-wheel-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-turn-the-wheel-1.png)
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-turn-the-wheel-2.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-turn-the-wheel-2.png)
 {% endif %}
 
 ### Simulating of Two-Way RPC 
@@ -297,10 +297,10 @@ tb/mqtt-integration-tutorial/sensors/+/rx/response
 Apply changes.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/mqtt/mqtt-rpc-edit-integration-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-rpc-edit-integration-1-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/mqtt/mqtt-rpc-edit-integration-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-rpc-edit-integration-1.png)
 {% endif %}
 
 Now run device emulator. Notice, the **mosquitto_pub** and **mosquitto_sub** is not suffice, so please launch an [advanced simulator](/docs/user-guide/integrations/resources/mqtt-client.py):
@@ -310,7 +310,7 @@ python mqtt-client.py
 ```
 {: .copy-code}
 
-![image](/images/user-guide/integrations/mqtt/mqtt-rpc-send-message-2.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-rpc-send-message-2.png)
 
 Try to turn the knob wheel on a dashboard. In the terminal window you should have an output similar to :
 
@@ -323,19 +323,19 @@ Sending a response message: {"rpcReceived":"OK"}
 ```
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/mqtt/mqtt-rpc-turn-the-wheel-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-rpc-turn-the-wheel-1-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/mqtt/mqtt-rpc-turn-the-wheel-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-rpc-turn-the-wheel-1.png)
 {% endif %}
 
 Go to the **Devices** page and find *rpcReceived* telemetry value is "*OK*" on the **Latest telemetry** tab of your SN-001 device.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/mqtt/mqtt-rpc-device-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-rpc-device-1-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/mqtt/mqtt-rpc-device-1-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-rpc-device-1-paas.png)
 {% endif %}
 
 ## Video tutorials

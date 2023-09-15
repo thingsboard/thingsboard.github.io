@@ -104,13 +104,13 @@ You can't use <code>localhost</code> as a <code>SPARKPLUG_SERVER_URL</code> insi
 {% include templates/info-banner.md content=difference %}
 
 {% if docsPrefix == null %}
-![image](/images/reference/sparkplug/sparkplug-emulator-ce.png)
+![image](https://img.thingsboard.io/reference/sparkplug/sparkplug-emulator-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" %}
-![image](/images/reference/sparkplug/sparkplug-emulator-pe.png)
+![image](https://img.thingsboard.io/reference/sparkplug/sparkplug-emulator-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/reference/sparkplug/sparkplug-emulator-pe.png)
+![image](https://img.thingsboard.io/reference/sparkplug/sparkplug-emulator-pe.png)
 {% endif %}
 
 Once the emulator will launch successfully, you should see the following messages:

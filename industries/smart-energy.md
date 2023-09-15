@@ -36,12 +36,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/circutor.svg">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/circutor.svg">
         <a class="outlink" href="http://www.circutor.com/" alt="Circutor">Circutor</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/circutor-person.jpg"/>
+            <img class="person-logo" src="https://img.thingsboard.io/customers/circutor-person.jpg"/>
             <div class="person-title">
                 <p class="person-name"> Daniel Portero </p>
                 <p class="person-position"> Cloud & App Development Manager </p>
@@ -61,12 +61,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/oneserve.svg">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/oneserve.svg">
         <a class="outlink" href="https://www.oneserve.co.uk/" alt="Oneserve Limited">Oneserve Limited</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/oneserve-person.png"/>
+            <img class="person-logo" src="https://img.thingsboard.io/customers/oneserve-person.png"/>
             <div class="person-title">
                 <p class="person-name"> Mark Hunt </p>
                 <p class="person-position"> CTO </p>
@@ -89,7 +89,7 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/nettra.png">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/nettra.png">
         <a class="outlink" href="http://www.nettra.tech/" alt="Nettra">Nettra</a>
     </div>
     <div class="customer-content">
@@ -113,12 +113,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/bei.jpg">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/bei.jpg">
         <a class="outlink" href="http://www.berliner-energieinstitut.de/" alt="Berliner Energieinstitut GmbH">Berliner Energieinstitut GmbH</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/bei-person.jpg"/>
+            <img class="person-logo" src="https://img.thingsboard.io/customers/bei-person.jpg"/>
             <div class="person-title">
                 <p class="person-name"> David Eitzinger </p>
                 <p class="person-position"> Managing Director </p>
@@ -135,7 +135,7 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/e2c.png">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/e2c.png">
         <a class="outlink" href="http://www.e2cbms.com/" alt="Environmental Energy Controls">Environmental Energy Controls</a>
     </div>
     <div class="customer-content">
@@ -168,12 +168,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/comet.gif">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/comet.gif">
         <a class="outlink" href="http://co-met.info" alt="co.met GmbH">co.met GmbH</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/peter_backes.jpg"/>
+            <img class="person-logo" src="https://img.thingsboard.io/customers/peter_backes.jpg"/>
             <div class="person-title">
                 <p class="person-name"> Peter Backes </p>
                 <p class="person-position"> CEO </p>

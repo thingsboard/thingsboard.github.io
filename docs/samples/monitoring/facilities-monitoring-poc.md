@@ -22,7 +22,7 @@ This article describes development and configuration steps we have done in order
 
 The prototype is open-source and is also based on open-source technologies, so you are able to use it for building commercial products.
 
-   ![image](/images/samples/monitoring/facilities-management.svg)
+   ![image](https://img.thingsboard.io/samples/monitoring/facilities-management.svg)
 
 ## Devices and Connectivity
 
@@ -39,7 +39,7 @@ The server-side part of the solution will be based on the ThingsBoard IoT platfo
 
 The initial step of the PoC is to provision several devices and their attributes. We’ve decided to support three zone types: work area, meeting and server rooms. We have registered three buildings with four rooms in each. During registration, we have populated Zone Id, Zone Type server-side attributes. Note that the server-side device attributes may be used by the processing rules, but are not visible to the device itself.
 
-  ![image](/images/samples/monitoring/service-side-attributes.png)
+  ![image](https://img.thingsboard.io/samples/monitoring/service-side-attributes.png)
   
 ### Step 2. Flushing the devices
 
@@ -110,19 +110,19 @@ At this step, we provisioned several dashboards to visualize the data. We will d
 
 This dashboard shows multiple buildings on the map with their short status available in the tooltip. You can use links in the tooltips to navigate to Floor Plan and Historical Data dashboards.
 
-   ![image](/images/samples/monitoring/map.png)
+   ![image](https://img.thingsboard.io/samples/monitoring/map.png)
 
 ### Floor Plan dashboard
 
 This dashboard uses a static background image with the floor plan. We have placed widgets that show temperature and humidity in each room that is being monitored.
 
-   ![image](/images/samples/monitoring/plan.png)
+   ![image](https://img.thingsboard.io/samples/monitoring/plan.png)
 
 ### Historical dashboard
 
 This dashboard shows last minute of sensor readings that are reported each second.
 
-   ![image](/images/samples/monitoring/history-all.png)
+   ![image](https://img.thingsboard.io/samples/monitoring/history-all.png)
 
 ## Live Demo
 

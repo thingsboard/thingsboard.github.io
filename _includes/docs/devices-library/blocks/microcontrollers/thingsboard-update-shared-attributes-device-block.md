@@ -3,10 +3,10 @@ Also we can change the period of the blinking using [shared attribute](/docs/{{p
 
 {% assign updateLedBlinkingPeriod = '
     ===
-        image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-change-blinking-mode-1.png,
+        image: https://img.thingsboard.io/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-change-blinking-mode-1.png,
         title: To change period of the blinking we just need to change the value on our dashboard.
     ===
-        image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-blinking-interval-change.png,
+        image: https://img.thingsboard.io/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-blinking-interval-change.png,
         title: After applying by pressing check mark you will see a confirmation message.
 '
 %} 
@@ -15,7 +15,7 @@ Also we can change the period of the blinking using [shared attribute](/docs/{{p
 
 {% assign updateLedState= '
     ===
-        image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-change-blinking-mode-0.png,
+        image: https://img.thingsboard.io/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-change-blinking-mode-0.png,
         title: It can be done only when the blinking mode is disabled.
 '
 %}
@@ -95,7 +95,7 @@ const Shared_Attribute_Callback attributes_callback(SHARED_ATTRIBUTES_LIST.cbegi
 
 {% assign updateLedColor = '
     ===
-        image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-change-led-color.png,
+        image: https://img.thingsboard.io/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-change-led-color.png,
         title: You can update the color of the led on the board, using the widget on ThingsBoard dashboard. 
 '
 %}
@@ -180,7 +180,7 @@ void setLedColor() {
 
 {% assign updateTextOnDisplay = '
     ===
-        image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-update-oled-screen.png,
+        image: https://img.thingsboard.io/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-update-oled-screen.png,
         title: Put text to the input box and apply changes. Text also will be displayed in the field above.
 '
 %}

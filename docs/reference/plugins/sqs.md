@@ -45,15 +45,15 @@ The information on how to create SQS Queues can be found [here](http://docs.aws.
 
 Let's configure SQS plugin first. Go to *Plugins* menu and create new plugin:
 
-![image](/images/reference/plugins/sqs/sqs-plugin-config-1.png)
+![image](https://img.thingsboard.io/reference/plugins/sqs/sqs-plugin-config-1.png)
 
-![image](/images/reference/plugins/sqs/sqs-plugin-config-2.png)
+![image](https://img.thingsboard.io/reference/plugins/sqs/sqs-plugin-config-2.png)
 
 Make sure to replace <$YOUR_ACCESS_KEY_ID> and <$YOUR_SECRET_ACCESS_KEY> placeholders with the actual values and set the right region. 
 
 Click on *'Activate'* plugin button:
 
-![image](/images/reference/plugins/sqs/sqs-activate-plugin.png)
+![image](https://img.thingsboard.io/reference/plugins/sqs/sqs-activate-plugin.png)
 
 ### SQS Standard Queue Rule Configuration
 
@@ -61,25 +61,25 @@ Click on *'Activate'* plugin button:
 
 In order to create SQS Standard Queue Rule, go to Rules screen and click 'Add New rule' button.
 
-![image](/images/reference/plugins/sqs/sqs-standard-queue-rule.png)
+![image](https://img.thingsboard.io/reference/plugins/sqs/sqs-standard-queue-rule.png)
 
 Add filter for **POST_TELEMETRY** message type:
 
-![image](/images/reference/plugins/post-telemetry-filter.png)
+![image](https://img.thingsboard.io/reference/plugins/post-telemetry-filter.png)
 
 Click *'Add'* button to add filter.
 
 Then select *'SQS Plugin'* in the drop-down box for the Plugin field:
 
-![image](/images/reference/plugins/sqs/sqs-plugin-selection.png)
+![image](https://img.thingsboard.io/reference/plugins/sqs/sqs-plugin-selection.png)
 
 Add action that will send temperature telemetry of device to the particular SQS Standard Queue:
 
-![image](/images/reference/plugins/sqs/sqs-standard-queue-action.png)
+![image](https://img.thingsboard.io/reference/plugins/sqs/sqs-standard-queue-action.png)
 
 Click *'Add'* button and then activate Rule.
 
-![image](/images/reference/plugins/sqs/sqs-standard-queue-activate-rule.png)
+![image](https://img.thingsboard.io/reference/plugins/sqs/sqs-standard-queue-activate-rule.png)
 
 ### Sending Temperature Telemetry
 
@@ -97,7 +97,7 @@ mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$ACCESS
 
 Now you should be able to see the message available in your SQS Standard Queue through AWS console:
 
-![image](/images/reference/plugins/sqs/sqs-standard-queue-message-received.png)
+![image](https://img.thingsboard.io/reference/plugins/sqs/sqs-standard-queue-message-received.png)
 
 ### SQS FIFO Queue Rule Configuration
 
@@ -108,25 +108,25 @@ SQS FIFO Queue Rule configation is very similar to the SQS Standard Queue config
 
 In order to create SQS FIFO Queue Rule, go to Rules screen and click 'Add New rule' button.
 
-![image](/images/reference/plugins/sqs/sqs-fifo-queue-rule.png)
+![image](https://img.thingsboard.io/reference/plugins/sqs/sqs-fifo-queue-rule.png)
 
 Add filter for **POST_TELEMETRY** message type:
 
-![image](/images/reference/plugins/sqs/post-telemetry-filter.png)
+![image](https://img.thingsboard.io/reference/plugins/sqs/post-telemetry-filter.png)
 
 Click *'Add'* button to add filter.
 
 Then select *'SQS Plugin'* in the drop-down box for the Plugin field:
 
-![image](/images/reference/plugins/sqs/sqs-plugin-selection.png)
+![image](https://img.thingsboard.io/reference/plugins/sqs/sqs-plugin-selection.png)
 
 Add action that will send temperature telemetry of device to the particular SQS FIFO Queue:
 
-![image](/images/reference/plugins/sqs/sqs-fifo-queue-action.png)
+![image](https://img.thingsboard.io/reference/plugins/sqs/sqs-fifo-queue-action.png)
 
 Click *'Add'* button and then activate Rule.
 
-![image](/images/reference/plugins/sqs/sqs-fifo-queue-activate-rule.png)
+![image](https://img.thingsboard.io/reference/plugins/sqs/sqs-fifo-queue-activate-rule.png)
 
 ### Sending Temperature Telemetry
 
@@ -144,4 +144,4 @@ mosquitto_pub -d -h "localhost" -p 1883 -t "v1/devices/me/telemetry" -u "$ACCESS
 
 Now you should be able to see the message available in your SQS FIFO Queue through AWS console:
 
-![image](/images/reference/plugins/sqs/sqs-fifo-queue-message-received.png)
+![image](https://img.thingsboard.io/reference/plugins/sqs/sqs-fifo-queue-message-received.png)

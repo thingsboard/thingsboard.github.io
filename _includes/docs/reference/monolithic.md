@@ -22,7 +22,7 @@ you can not open more then 4096 MQTT sessions from device and websocket user ses
 
 ## Architecture diagram
 
- <object width="80%" data="/images/reference/mono-architecture.svg"></object> 
+ <object width="80%" data="https://img.thingsboard.io/reference/mono-architecture.svg"></object> 
 
 ## Transport components
 

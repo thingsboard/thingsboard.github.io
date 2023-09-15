@@ -101,7 +101,7 @@ The root-level Owner is Tenant. Each Owner may have multiple Entity Groups (EGs)
 Since CGs can contain multiple Customers, each Customer can also own his EGs, UGs, and CGs (i.e. sub-customer groups). 
 See the diagram below for a visual representation of relations between those entities. 
  
-![image](/images/user-guide/security/customer-hierarchy-diagram.svg)
+![image](https://img.thingsboard.io/user-guide/security/customer-hierarchy-diagram.svg)
 
 ## Roles
 
@@ -119,7 +119,7 @@ User Bob will be able to perform any operations over any entity that belongs to 
 However, User Alice will be able to perform any operations over any entity that belongs to only her Customer B and all it's sub-customers.
 So, Alice and Bob are able to access Device B1, but only Bob is able to access Device A1.        
 
-![image](/images/user-guide/security/generic-role-diagram.svg)
+![image](https://img.thingsboard.io/user-guide/security/generic-role-diagram.svg)
 
 ### Group roles
 
@@ -133,7 +133,7 @@ Basically, Bob has a full control over both Device Groups A and B.
 User Alice belongs to "Group A Administrators" and has reading/writing access to all devices in device group A. 
 However, Alice will not be able to see or use devices from group B.
 
-![image](/images/user-guide/security/group-role-diagram.svg)      
+![image](https://img.thingsboard.io/user-guide/security/group-role-diagram.svg)      
 
 **Note:** Since Entity Group has only one Owner, you can assign Group Role to any User Group that belongs to the same Owner or any parents of the Owner.
 
@@ -165,7 +165,7 @@ Let's start by creating a "Supervisor Dashboards" group:
 2. Input the name of your Device Group. In our case it's "Supervisor Dashboards";
 3. Click on the "Add" button.
 
-<img data-gifffer="/images/user-guide/security/smart-buildings-dashboards-group.gif" />
+<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-dashboards-group.gif" />
 
 We should create two roles to implement this use case:
 
@@ -177,7 +177,7 @@ We should create two roles to implement this use case:
 5. For the Operations input "Read", "Raed Attributes", and "Read Telemetry";
 6. Click on the lowest "Add" button, the one without a "+" sign.  
 
-<img data-gifffer="/images/user-guide/security/smart-buildings-role1.gif" /> 
+<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-role1.gif" /> 
  
  * "Entity Group Administrator" - the **group role** that allows all operations for the group. 
 1. In the Roles section click on the “+” sign at the bottom right of the screen;
@@ -186,7 +186,7 @@ We should create two roles to implement this use case:
 4. In the Permissions for Operations choose “All”;
 5. Click on the “Add” button.
 
-<img data-gifffer="/images/user-guide/security/smart-buildings-role2.gif" />
+<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-role2.gif" />
   
 Now let's assign those roles to the "Supervisors" group. 
 1. In the User Groups section click on the "+" sign (Add Entity Group) at the bottom right of the screen;
@@ -199,7 +199,7 @@ Now let's assign those roles to the "Supervisors" group.
 8. This time choose "Group" for a Role Type and "Entity Group Administrator" for a Role;
 9. For a Group Owner choose "Tenant", for a Type choose "Dashboard", and click on the "Supervisor Dashboard" in the Entity Group.
 
-<img data-gifffer="/images/user-guide/security/smart-buildings-user-group.gif" />
+<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-user-group.gif" />
  
 **Facility Managers**
 
@@ -213,7 +213,7 @@ Now, as Facility Manager, we can log in, design dashboards, provision devices, a
 6. Input email address, for instance, we can use _alice@thingsboard.oi_, and click "Add";
 7. In the opened window you can see the User Activation Link, click "ok".  
 
-<img data-gifffer="/images/user-guide/security/smart-buildings-building-a.gif" />  
+<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-building-a.gif" />  
 
 **End Users**
 
@@ -222,7 +222,7 @@ Let's log in as Alice (created in a previous guide), Building A administrator, a
 2. Input dashboard name. For example, "End User Dashboard". Click "Add" to add the dashboard.
 3. Now your dashboard should be listed first, since the table sort dashboards using created time by default.
       
-![image](/images/user-guide/security/smart-buildings-building-a-dashboards.png)
+![image](https://img.thingsboard.io/user-guide/security/smart-buildings-building-a-dashboards.png)
 
 Now, let's create a Read-only User. Let's assume we want to assign "End User Dashboard" to him and make sure that this Dashboard will open full screen once the user is logged in. 
 So, our read-only user will not have access to the administration panel to the left, since they are still not allowed to perform any server-side API calls, except read-only browsing the data.  
@@ -234,7 +234,7 @@ So, our read-only user will not have access to the administration panel to the l
 6. At the right top of the screen you shall see the "Pen" icon, click on it;
 7. Check the box "Always full screen" and choose "End User Dashboard" in the Select Dashboard menu.
 
-<img data-gifffer="/images/user-guide/security/smart-buildings-read-only-user.gif" />
+<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-read-only-user.gif" />
  
 ## Next steps
 

@@ -45,7 +45,7 @@ The video below demonstrates the final result of this tutorial.
  You can use this [basic instruction](https://www.raspberrypi.org/documentation/usage/gpio/) or [another one](https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/) to wire some LEDs.
  Below is sample wiring schema used in this tutorial.
 
- ![image](/images/samples/raspberry/gpio-android-things/raspberry-gpio-leds.png)
+ ![image](https://img.thingsboard.io/samples/raspberry/gpio-android-things/raspberry-gpio-leds.png)
 
 ## Programming the Raspberry Pi
 
@@ -128,7 +128,7 @@ Now you can switch status of GPIOs using control panel. As a result, you will se
 
 Below is the screenshot of the "Raspberry PI GPIO Demo Dashboard".  
 
- ![image](/images/samples/raspberry/gpio/dashboard.png)
+ ![image](https://img.thingsboard.io/samples/raspberry/gpio/dashboard.png)
  
 ## See also
 

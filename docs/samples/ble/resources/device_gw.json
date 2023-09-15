@@ -88,7 +88,7 @@
             }
           ],
           "widgetStyle": {
-            "backgroundImage": "url(https://thingsboard.io/images/dashboards/districts/apartments-bg.jpg)",
+            "backgroundImage": "url(https://img.thingsboard.io/dashboards/districts/apartments-bg.jpg)",
             "backgroundSize": "cover"
           },
           "actions": {}
@@ -166,7 +166,7 @@
           },
           "mobileHeight": null,
           "widgetStyle": {
-            "backgroundImage": "url(https://thingsboard.io/images/dashboards/districts/districts-bg.jpg)",
+            "backgroundImage": "url(https://img.thingsboard.io/dashboards/districts/districts-bg.jpg)",
             "backgroundSize": "cover"
           },
           "useDashboardTimewindow": true,
@@ -246,7 +246,7 @@
           },
           "mobileHeight": null,
           "widgetStyle": {
-            "backgroundImage": "url(https://thingsboard.io/images/dashboards/districts/alarms-bg.jpg)",
+            "backgroundImage": "url(https://img.thingsboard.io/dashboards/districts/alarms-bg.jpg)",
             "backgroundSize": "cover"
           },
           "useDashboardTimewindow": true,

@@ -5,11 +5,11 @@ It is possible to log user actions related to main entities: assets, devices, da
 
 Tenant Administrator is able to review audit logs that belong to corresponding tenant account. The administrator is able to setup date range and executes a full-text search for fetched entities.
 
-![image](/images/user-guide/ui/audit-log.png)
+![image](https://img.thingsboard.io/user-guide/ui/audit-log.png)
 
 The "details" button allows reviewing low-level details of the logged action.
 
-![image](/images/user-guide/ui/audit-log-details.png)
+![image](https://img.thingsboard.io/user-guide/ui/audit-log-details.png)
 
 ### REST API
 

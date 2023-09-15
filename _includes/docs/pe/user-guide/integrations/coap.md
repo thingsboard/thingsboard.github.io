@@ -9,7 +9,7 @@ CoAP Integration allows to stream data from devices that use a CoAP protocol to 
 
 Please review the integration diagram to learn more.
 
-![image](/images/user-guide/integrations/coap-integration.svg)
+![image](https://img.thingsboard.io/user-guide/integrations/coap-integration.svg)
 
 ## Prerequisites
 
@@ -120,7 +120,7 @@ CoAP Integration allows us to choose a security mode:
 - **DTLS**
 - **MIXED**
 
-![image](/images/user-guide/integrations/coap/coap-integration-modes-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/coap/coap-integration-modes-1.png)
 
 {% if docsPrefix != "paas/" %}
 
@@ -156,7 +156,7 @@ In addition, CoAP integration will provide us automatically generated CoAP endpo
 
 You can also update the CoAP endpoint URL by setting additional path prefixes in front of base URL:
 
-![image](/images/user-guide/integrations/coap/coap-integration-configuration-extra-path-prefix-1-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/coap/coap-integration-configuration-extra-path-prefix-1-paas.png)
 
 Each of the additional path prefixes will be added to the CoAP server as CoAP resources, where:
 - **api** - parent resource
@@ -181,10 +181,10 @@ Once the command will send you can go to **Device groups** -> **All** you should
 Click on the device, go to the **Latest Telemetry** tab to see the “temperature” key and its value (25.7) there and also the “humidity” key and its value (69) there as well.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/coap/coap-integration-test-uplink-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/coap/coap-integration-test-uplink-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/coap/coap-integration-test-uplink-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/coap/coap-integration-test-uplink-paas.png)
 {% endif %}
 
 ## Next steps

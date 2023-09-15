@@ -4,7 +4,7 @@ title: Rule Chain templates
 description: Rule Chain templates
 ---
 
-![image](/images/coming-soon.jpg)
+![image](https://img.thingsboard.io/coming-soon.jpg)
 
 #### Next Steps
 

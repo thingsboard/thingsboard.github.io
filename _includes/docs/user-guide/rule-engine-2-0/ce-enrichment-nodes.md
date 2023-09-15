@@ -13,7 +13,7 @@ Enrichment Nodes are used to update meta-data of the incoming Message.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-calculate-delta.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-calculate-delta.png)
 
 Calculates 'delta' based on the previous time-series reading and current reading and adds it to the message.
 Delta calculation is done in scope of the message originator, e.g. device, asset or customer.
@@ -42,7 +42,7 @@ The rule node produces message with one of the following relations:
 
 Let's review the rule node behaviour by example. Let's assume the following configuration:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-calculate-delta-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-calculate-delta-config.png)
 
 Let's assume next messages originated by the same device and arrive to the rule node in the sequence they are listed:
 
@@ -74,7 +74,7 @@ msg: {"pulseCounter": 42}, metadata: {"ts": "1616510487000"}, relation: Failure
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes.png)
 
 Node finds Customer of the Message Originator entity and adds Customers Attributes or Latest Telemetry value into Message Metadata. 
 
@@ -83,7 +83,7 @@ Administrator can configure the mapping between original attribute name and Meta
 There is **Latest Telemetry** checkbox in the Node configuration. 
 If this checkbox selected, Node will fetch Latest telemetry for configured keys. Otherwise, Node will fetch server scope attributes.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-customer-attributes-config.png)
 
 Outbound Message Metadata will contain configured attributes if they exist.
 To access fetched attributes in other nodes you can use this template '<code>metadata.temperature</code>'
@@ -118,7 +118,7 @@ You can see the real life example, where this node is used, in the next tutorial
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes.png)
 
 Node finds Related Device of the Message Originator entity using configured query and adds Attributes (client\shared\server scope) 
 and Latest Telemetry value into Message Metadata.
@@ -136,7 +136,7 @@ Server attributes use 'ss_' prefix. Latest telemetry value added into Message Me
 In 'Device relations query' configuration Administrator can select required **Direction** and **relation depth level**.
 Also **Relation type** can be configured with required set of **Device types**.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-device-attributes-config.png)
 
 If multiple Related Entities were found, **_only the first Entity is used_** for attributes enrichment, other entities will be discarded.
 
@@ -150,7 +150,7 @@ To access fetched attributes in other nodes you can use this template '<code>met
 
 **Note:** Since TB Version 2.3.1 the rule node has the ability to enable/disable reporting **Failure** if at least one selected key doesn't exist in the outbound message.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-orignator-and-device-attributes-tell-failure.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-orignator-and-device-attributes-tell-failure.png)
 
 ##### Originator attributes
 
@@ -162,7 +162,7 @@ To access fetched attributes in other nodes you can use this template '<code>met
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-attributes.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-attributes.png)
 
 Add Message Originator Attributes (client\shared\server scope) and Latest Telemetry value into Message Metadata. 
 
@@ -176,7 +176,7 @@ Attributes are added into metadata with scope prefix:
 For example, shared attribute 'version' will be added into Metadata with the name 'shared_version'. Client attributes will use 'cs_' prefix. 
 Server attributes use 'ss_' prefix. Latest telemetry value added into Message Metadata as is, without prefix.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-attributes-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-attributes-config.png)
 
 Outbound Message Metadata will contain configured attributes if they exist.
 
@@ -184,7 +184,7 @@ To access fetched attributes in other nodes you can use this template '<code>met
 
 **Note:** Since TB Version 2.3.1 the rule node has the ability to enable/disable reporting **Failure** if at least one selected key doesn't exist in the outbound message.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-orignator-and-device-attributes-tell-failure.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-orignator-and-device-attributes-tell-failure.png)
 
 You can see the real life example, where this node is used, in the following tutorials:
 
@@ -202,13 +202,13 @@ You can see the real life example, where this node is used, in the following tut
 </table> 
 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields.png)
 
 Node fetches fields values of the Message Originator entity and adds them into Message Metadata. 
 Administrator can configure the mapping between field name and Metadata attribute name.
 If specified field is not part of Message Originator entity fields it will be ignored.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-fields-config.png)
 
 Following Message Originator types are allowed: **Tenant**, **Customer**, **User**, **Asset**, **Device**, **Alarm**, **Rule Chain**.
 
@@ -230,7 +230,7 @@ To access fetched attributes in other nodes you can use this template '<code>met
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-related-attributes.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-related-attributes.png)
 
 Node finds Related Entity of the Message Originator entity using configured query and adds Attributes or Latest Telemetry value into Message Metadata.
  
@@ -242,7 +242,7 @@ Also set of **Relation filters** can be configured with required Relation type a
 There is **Latest Telemetry** checkbox in the Node configuration. If this checkbox selected, Node will fetch Latest telemetry for configured keys. 
 Otherwise, Node will fetch server scope attributes.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-related-attributes-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-related-attributes-config.png)
 
 If multiple Related Entities are found, **_only first Entity is used_** for attributes enrichment, other entities are discarded.
 
@@ -270,7 +270,7 @@ You can see the real life example, where this node is used, in the next tutorial
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-attributes.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-tenant-attributes.png)
 
 Node finds Tenant of the Message Originator entity and adds Tenant Attributes or Latest Telemetry value into Message Metadata. 
 
@@ -278,7 +278,7 @@ Administrator can configure the mapping between original attribute name and Meta
 
 There is **Latest Telemetry** checkbox in the Node configuration. If this checkbox selected, Node will fetch Latest telemetry for configured keys. Otherwise, Node will fetch server scope attributes.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-attributes-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-tenant-attributes-config.png)
 
 Outbound Message Metadata will contain configured attributes if they exist. To access fetched attributes in other nodes you can use this template '<code>metadata.tempo</code>'
 
@@ -302,11 +302,11 @@ An example of this feature you can see in the description for the **Customer att
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry.png)
 
 Adds Message Originator telemetry values from particular time range that was selected in node configuration to the Message Metadata. 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-config.png)
 
 Telemetry values added to Message Metadata without prefix.
 
@@ -318,7 +318,7 @@ The rule node has three fetch modes:
 
  - ALL: retrieves all telemetry from the database, which is in the specified time range.
  
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-fetch-mode.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-fetch-mode.png)
 
 If selected fetch mode **FIRST** or **LAST**, Outbound Message Metadata would contain JSON elements(key/value)
 
@@ -360,7 +360,7 @@ If selected checkbox: **Use metadata interval patterns**, rule node will use Sta
 
 Patterns units sets in the milliseconds since the UNIX epoch (January 1, 1970 00:00:00 UTC)
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-patterns.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-patterns.png)
 
  - If any pattern will be absent in the Message metadata, the outbound message will be routed via **failure** chain.
  
@@ -374,7 +374,7 @@ To access fetched telemetry in other nodes you can use this template: <code>JSON
 
 **Note:** Since TB Version 2.3 the rule node has the ability to choose telemetry sampling order when selected Fetch mode: **ALL**.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-order-by.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-originator-telemetry-order-by.png)
 
 You can see the real-life example, where this node is used, in the following tutorials:
 
@@ -390,13 +390,13 @@ You can see the real-life example, where this node is used, in the following tut
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-details.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-tenant-details.png)
 
 Rule Node Adds fields from Tenant details to the message body or metadata.
 
 There is **Add selected details to the message metadata** checkbox in the Node configuration. If this checkbox selected, existing fields will be added to the message metadata instead of message data.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-tenant-details-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-tenant-details-config.png)
 
 Selected details are added into metadata with prefix: **tenant_**. Outbound Message will contain configured details if they exist.
 
@@ -418,13 +418,13 @@ To access fetched details in other nodes you can use one of the following templa
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-details.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-customer-details.png)
 
 Rule Node Adds fields from Customer details to the message body or metadata.
 
 There is **Add selected details to the message metadata** checkbox in the Node configuration. If this checkbox selected, existing fields will be added to the message metadata instead of message data.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/enrichment-customer-details-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/enrichment-customer-details-config.png)
 
 Selected details are added into metadata with prefix: **customer_**. Outbound Message will contain configured details if they exist.
 

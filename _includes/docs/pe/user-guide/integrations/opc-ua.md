@@ -12,7 +12,7 @@
 
 OPC UA Integration allows you to stream data from the OPC UA server to ThingsBoard and converts the device payloads to the ThingsBoard format.
 
-<object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/opc-ua-integration.svg"></object>
+<object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/user-guide/integrations/opc-ua-integration.svg"></object>
 
 
 # OPC-UA Integration Tutorial
@@ -27,11 +27,11 @@ and allow the user to switch on/off any Airconditioner using the Integration dow
 - After installation, launch the **UA Admin Dialog**
 - Verify that the **Endpoint URL** is set correctly and remember the values of **Endpoint Host** and **Endpoint Port**. These values will be needed during the OPC-UA Integration setup
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-server-config.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-server-config.png)
 
 - Launch the **UaCPPServer**. The console dialog will open showing the server endpoints URLs
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-server-config-2.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-server-config-2.png)
 
 ## ThingsBoard setup
 
@@ -123,20 +123,20 @@ Destination node is detected using the *deviceName* field of the incoming messag
  - Open the **Integrations center** section -> **Integrations** page and click 'plus' button to create new integration. 
 Name it **OPC-UA Integration**, select type **OPC-UA**. Click 'Next';
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-create-integration-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-create-integration-1.png)
 
  - The next steps is to add the recently created uplink and downlink converters;
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-create-integration-2.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-create-integration-2.png)
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-create-integration-3.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-create-integration-3.png)
 
 - Specify host: **Endpoint Host** (see [Prerequisites](#prerequisites));
 - Specify port: **Endpoint Port** (see [Prerequisites](#prerequisites));
 - Security: **None** (can be *Basic128Rsa15* / *Basic256* / *Basic256Sha256* / *None*);
 - Identity: **Anonymous** (can be *Anonymous* / *Username*).
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-create-integration-4.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-create-integration-4.png)
 
 - Mapping:
      - MappingType: **Fully Qualified Name** (can be *Fully Qualified Name* / *ID*)
@@ -149,18 +149,18 @@ Name it **OPC-UA Integration**, select type **OPC-UA**. Click 'Next';
         - *humidity* - Humidity;
         - *powerConsumption* - PowerConsumption.
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-create-integration-5.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-create-integration-5.png)
 
 ### Devices
 
 After created OPC-UA integration, go to the **Entities** section -> **Devices** page. You will see 10 devices created by the integration.
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-devices-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-devices-1.png)
 
 Open the details of any Airconditioner and navigate to the **Latest Telemetry** tab.
 You will see that telemetry values are frequently updated.
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-devices-2.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-devices-2.png)
 
 ### Airconditioners Rule Chain
 
@@ -193,21 +193,21 @@ To visualize the Airconditioners data and test RPC commands, we will create the 
 - To import this JSON file, click the `+` button at the top right corner of the **Dashboards** page and select '**Import dashboard**'.
 - Drag and drop downloaded JSON file to the **Import dashboard** window. Click 'Import'.
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-dashboard-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-dashboard-1.png)
 
  - Open the **Airconditioners** dashboard;
  - You will see the telemetry till the last minute from all the 10 airconditioners;
  - Open any Airconditioner details page by clicking on the details button in the Entities widget;
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-dashboard-2.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-dashboard-2.png)
 
  - You will find the Airconditioner status light green. Try to switch off the airconditioner by clicking on the **On/Off Round switch**;
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-dashboard-4.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-dashboard-4.png)
 
  - The Airconditioner status light will turn into grey, the temperature will start rising, the humidity will start increasing and the power consumption will stop.
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-dashboard-5.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-dashboard-5.png)
 
 # Video tutorial
 

@@ -132,7 +132,7 @@ The values of the resource may be stored as the device [attributes](/docs/{{docs
 To do this, select the "Attribute" checkbox for the corresponding Resource. You may optionally change the auto-generated key name, defining the attribute name in ThingsBoard.
 For example, let's configure the platform to read the LwM2M Resource */3/0/2* (Device Serial Number) and store it as an attribute *serialNumber* in ThingsBoard:
 
-![image](/images/lwm2m/attributes-ce.png)
+![image](https://img.thingsboard.io/lwm2m/attributes-ce.png)
 
 ThingsBoard will read the attribute value during device registration (LwM2M "Register" operation) or during registration update (LwM2M "Update" operation).
 
@@ -141,7 +141,7 @@ ThingsBoard will read the attribute value during device registration (LwM2M "Reg
 We may optionally issue the "Observe" operation to make sure we subscribe to the updates of the LwM2M resource.
 To do this, select the "Observe" checkbox for the corresponding Resource. Let's configure ThingsBoard to monitor the LwM2M Resource */3/0/15* (Timezone) and store it as the *timezone* attribute:
 
-![image](/images/lwm2m/attributes-observe-ce.png)
+![image](https://img.thingsboard.io/lwm2m/attributes-observe-ce.png)
 
 Using the above configuration, we will make sure that the attribute *timezone* will always contain the latest value of the *Timezone* resource.
 
@@ -161,7 +161,7 @@ To do this, select the "Telemetry" checkbox for the corresponding Resource. You 
 For example, let's configure the platform to read the LwM2M Resources: */3/0/7* (Power Source Voltage), */3/0/8* (Power Source Current), */3/0/9* (Battery Level), and */3/0/10* (Memory Free),
 and to store them as time-series data in ThingsBoard:
 
-![image](/images/lwm2m/time-series-ce.png)
+![image](https://img.thingsboard.io/lwm2m/time-series-ce.png)
 
 #### Execute LwM2M operation using the ThingsBoard RPC command
 

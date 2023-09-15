@@ -29,7 +29,7 @@ Rule Engine may also invoke external system if needed. Once the message is proce
 See the diagram below:
 
    {:refdef: style="text-align: center;"}
-   ![image](/images/user-guide/client-side-rpc.svg)
+   ![image](https://img.thingsboard.io/user-guide/client-side-rpc.svg)
    {: refdef}
 
 The client-side RPC request consists of two fields, both of them are mandatory:
@@ -105,13 +105,13 @@ Server-side RPC is divided into one-way and two-way:
  - One-way RPC request does not expect device to provide any reply.  
    
    {:refdef: style="text-align: center;"}
-   ![image](/images/user-guide/one-way-rpc.svg)
+   ![image](https://img.thingsboard.io/user-guide/one-way-rpc.svg)
    {: refdef}
    
  - Two-way RPC request expects to receive a response from the device within configurable timeout.
 
    {:refdef: style="text-align: center;"}
-   ![image](/images/user-guide/two-way-rpc.svg)
+   ![image](https://img.thingsboard.io/user-guide/two-way-rpc.svg)
    {: refdef}
    
 

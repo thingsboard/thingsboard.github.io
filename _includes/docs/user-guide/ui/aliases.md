@@ -10,7 +10,7 @@ specific assets from a list.
 
 **In this tutorial, aliases will be used on a system according to the scheme shown below and all devices have "temperature" generated values coming to them:**
 
-<object width="60%" data="/images/user-guide/ui/alias-scheme.svg"></object>
+<object width="60%" data="https://img.thingsboard.io/user-guide/ui/alias-scheme.svg"></object>
 
 ## Alias types
 

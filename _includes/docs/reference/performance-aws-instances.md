@@ -86,7 +86,7 @@ Tip: Enable Unlimited mode in credit specification to get a good performance at 
 And survive extra load above the limit (additional charges may apply).
 Without unlimited mode at the first start you have 0 credits to burst CPU up and the system is throttled down to baseline 20% CPU. That will cause the first setup is quite slow without "unlimited mode".
 
-![AWS enable unlimited mode in credit specification](/images/reference/performance-aws-instances/method/t3-medium/postgres/aws-credit-spec-unlimited-mode.png)
+![AWS enable unlimited mode in credit specification](https://img.thingsboard.io/reference/performance-aws-instances/method/t3-medium/postgres/aws-credit-spec-unlimited-mode.png)
 
 </details>
 

@@ -11,7 +11,7 @@ kubectl get ingress
 
 You should see the similar picture:
 
-![image](/images/install/cloud/aws-application-loadbalancers.png)
+![image](https://img.thingsboard.io/install/cloud/aws-application-loadbalancers.png)
 
 Use the following default credentials:
 
@@ -33,7 +33,7 @@ kubectl get service
 
 You should see the similar picture:
 
-![image](/images/install/cloud/aws-network-loadbalancers.png)
+![image](https://img.thingsboard.io/install/cloud/aws-network-loadbalancers.png)
 
 
 There are two load-balancers:

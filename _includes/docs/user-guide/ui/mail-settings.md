@@ -22,10 +22,10 @@ First, you must login to your ThingsBoard instance WEB UI as a *system administr
 Change 'sysadmin@thingsboard.org' to your email address. Now re-login as administrator again.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/mail/mail-settings-change-administrator-email-address-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/mail-settings-change-administrator-email-address-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/ui/mail/mail-settings-change-administrator-email-address-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/mail-settings-change-administrator-email-address-pe.png)
 {% endif %}
 
 <br/>
@@ -40,15 +40,15 @@ You can try it for free and the free plan is most likely enough for platform eva
 
 Once you create your account, you will be forwarded to the welcome page.
 
-![image](/images/user-guide/ui/mail/sendgrid-welcome.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/sendgrid-welcome.png)
 
 Go to the 'Integration Guide' page and choose 'SMTP Relay'.
 
-![image](/images/user-guide/ui/mail/sendgrid-smtp-relay.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/sendgrid-smtp-relay.png)
 
 Populate the API key name and generate it.
 
-![image](/images/user-guide/ui/mail/sendgrid-token.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/sendgrid-token.png)
 
 Now navigate to the 'Settings' page -> 'Mail Server' tab your ThingsBoard instance and populate the form.
 Update 'Mail From' field, copy tthe data from the SendGrid page and paste to the Thingsboard mail server settings form.
@@ -63,10 +63,10 @@ Note that you can also enable/disable TLS using checkbox.
 Click on 'Send test mail' button.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/mail/sendgrid-settings-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/sendgrid-settings-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/ui/mail/sendgrid-settings-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/sendgrid-settings-pe.png)
 {% endif %}
 
 Once you receive test mail on your email, save Mail Server configuration.
@@ -74,7 +74,7 @@ In case of error in configuration, you should receive a popup with the error log
 
 You can also complete verification on the SendGrid website.
 
-![image](/images/user-guide/ui/mail/sendgrid-it-works.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/sendgrid-it-works.png)
 
 ##### Gmail configuration example
 
@@ -94,10 +94,10 @@ You can also enable/disable TLS using checkbox.
 Click '**Send test mail**' button.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/ui/mail/gmail-settings-ce.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/gmail-settings-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/ui/mail/gmail-settings-pe.png)
+![image](https://img.thingsboard.io/user-guide/ui/mail/gmail-settings-pe.png)
 {% endif %}
 
 Once you receive test mail on your email, save Mail Server configuration.

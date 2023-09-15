@@ -48,8 +48,8 @@ return result;
 {: .copy-code}
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-uplink-converter-hex-java-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-uplink-converter-hex-java-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-uplink-converter-hex-java-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-uplink-converter-hex-java-paas.png)
 {% endif %}

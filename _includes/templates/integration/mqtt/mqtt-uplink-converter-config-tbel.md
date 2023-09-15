@@ -29,4 +29,4 @@ return result;
 ``` 
 {: .copy-code}
 
-![image](/images/user-guide/integrations/mqtt/mqtt-integration-add-uplink-converter-tbel-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/mqtt/mqtt-integration-add-uplink-converter-tbel-1-pe.png)

@@ -6,21 +6,21 @@ should pop up, and you will be prompted to upload the JSON file and click “Imp
 
 {% assign importingDashboardCE = '
     ===
-        image: /images/user-guide/dashboards/dashboard-import-ce.png
+        image: https://img.thingsboard.io/user-guide/dashboards/dashboard-import-ce.png
     ===
-        image: /images/user-guide/dashboards/dashboard-import-1-ce.png
+        image: https://img.thingsboard.io/user-guide/dashboards/dashboard-import-1-ce.png
     ===
-        image: /images/user-guide/dashboards/dashboard-import-2-ce.png
+        image: https://img.thingsboard.io/user-guide/dashboards/dashboard-import-2-ce.png
     '
 %}
 
 {% assign importingDashboardPE = '
     ===
-        image: /images/user-guide/dashboards/dashboard-import-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/dashboard-import-pe.png
     ===
-        image: /images/user-guide/dashboards/dashboard-import-1-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/dashboard-import-1-pe.png
     ===
-        image: /images/user-guide/dashboards/dashboard-import-2-pe.png
+        image: https://img.thingsboard.io/user-guide/dashboards/dashboard-import-2-pe.png
     '
 %}
 
@@ -39,4 +39,4 @@ To do this - we need to press the pen icon and select entity aliases, select ali
 Then choose a device with name My device from dropdown list and save entity alias, now you should be able to see the data from the device. 
 
 If you did everything right, you have to see the following dashboard:
-![](/images/devices-library/basic/single-board-computers/minicomputer-dashboard.png)
+![](https://img.thingsboard.io/devices-library/basic/single-board-computers/minicomputer-dashboard.png)

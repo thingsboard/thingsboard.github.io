@@ -4,7 +4,7 @@ Basically, this feature will enable you to send commands to/from devices and rec
 In this guide, we will configure the RPC command to get OrangePI telemetry data immediately. If you are 
 using the imported dashboard, you don't need to configure anything as in your dashboard you can see the following widget:
 
-![](/images/devices-library/basic/single-board-computers/one-way-rpc-widget.png)
+![](https://img.thingsboard.io/devices-library/basic/single-board-computers/one-way-rpc-widget.png)
 
 <aside>
 💡 If you create a new dashboard, you can use the “RPC Button” widget for one-way RPC  which is located in the “Control widgets” bundle.
@@ -44,7 +44,7 @@ def main():
 ```
 
 Finally, let’s try to push our button and force getting OrangePI data:
-![](/images/devices-library/basic/single-board-computers/timeseries-rpc-widget.png)
+![](https://img.thingsboard.io/devices-library/basic/single-board-computers/timeseries-rpc-widget.png)
 
 Also, if you did everything right, you should see the following console output:
 

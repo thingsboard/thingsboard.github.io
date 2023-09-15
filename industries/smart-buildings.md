@@ -36,12 +36,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/sensolyze.png">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/sensolyze.png">
         <a class="outlink" href="https://www.sensolyze.com/" alt="Sensolyze GmbH">Sensolyze GmbH</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/sensolyze-person.png"/>
+            <img class="person-logo" src="https://img.thingsboard.io/customers/sensolyze-person.png"/>
             <div class="person-title">
                 <p class="person-name"> Andreas Brandl </p>
                 <p class="person-position"> Founder & CEO </p>
@@ -66,12 +66,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/mdeg.png">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/mdeg.png">
         <a class="outlink" href="https://www.mdeg-digital.com/" alt="mdeg GmbH">mdeg GmbH</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/mdeg-cbeck.jpg"/>
+            <img class="person-logo" src="https://img.thingsboard.io/customers/mdeg-cbeck.jpg"/>
             <div class="person-title">
                 <p class="person-name"> Christoph Beck </p>
                 <p class="person-position"> Founder and CEO </p>
@@ -91,7 +91,7 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/e2c.png">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/e2c.png">
         <a class="outlink" href="http://www.e2cbms.com/" alt="Environmental Energy Controls">Environmental Energy Controls</a>
     </div>
     <div class="customer-content">
@@ -124,12 +124,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/beaconzone.png">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/beaconzone.png">
         <a class="outlink" href="https://www.beaconzone.co.uk/" alt="BeaconZone">BeaconZone</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/beaconzone-person.jpg"/>
+            <img class="person-logo" src="https://img.thingsboard.io/customers/beaconzone-person.jpg"/>
             <div class="person-title">
                 <p class="person-name"> Simon Judge </p>
                 <p class="person-position"> Co-founder at BeaconZone </p>
@@ -146,7 +146,7 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/conbee.svg">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/conbee.svg">
     </div>
     <div class="customer-content">
         <div class="person-container">
@@ -169,12 +169,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/oneserve.svg">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/oneserve.svg">
         <a class="outlink" href="https://www.oneserve.co.uk/" alt="Oneserve Limited">Oneserve Limited</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/oneserve-person.png"/>
+            <img class="person-logo" src="https://img.thingsboard.io/customers/oneserve-person.png"/>
             <div class="person-title">
                 <p class="person-name"> Mark Hunt </p>
                 <p class="person-position"> CTO </p>
@@ -197,7 +197,7 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/tpssystems.png">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/tpssystems.png">
         <a class="outlink" href="https://tpsystems.it/" alt="TOURISTIC PLATFORM SYSTEMS SRL">TOURISTIC PLATFORM SYSTEMS SRL</a>
     </div>
     <div class="customer-content">

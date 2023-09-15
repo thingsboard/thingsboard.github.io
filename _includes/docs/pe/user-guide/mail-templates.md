@@ -20,14 +20,14 @@ ThingsBoard provides default system mail message templates with sample content, 
 To do this, following steps:
  - Go to the "**White Labeling**" page -> "**Mail Templates**" tab;
 
-![image](/images/user-guide/white-labeling/mail-templates-1.png)
+![image](https://img.thingsboard.io/user-guide/white-labeling/mail-templates-1.png)
 
  - Uncheck "**Use System Mail Templates**" box; 
  - Select **mail template** from the drop-down list, that you want to edit;
  - Edit **mail subject** and **mail body**; 
  - Save changes.
 
-![image](/images/user-guide/white-labeling/mail-templates-2.png)
+![image](https://img.thingsboard.io/user-guide/white-labeling/mail-templates-2.png)
 
 ## Next steps
 

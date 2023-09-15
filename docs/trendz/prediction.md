@@ -7,18 +7,18 @@ description: How to build time series prediction models in Trendz based on data 
 
 trendz-prediction-overview-simple:
   0:
-    image: /images/trendz/prediction-simple-initial.png
+    image: https://img.thingsboard.io/trendz/prediction-simple-initial.png
     title: 'Configure prediction for energy consumption on line chart'
   1:
-    image: /images/trendz/prediction-simple-cfg.png
+    image: https://img.thingsboard.io/trendz/prediction-simple-cfg.png
     title: 'Select prediction model and forecast horizon'
 
 trendz-prediction-overview-bar-consumption:
  0:
-  image: /images/trendz/prediction-sum-view.png
+  image: https://img.thingsboard.io/trendz/prediction-sum-view.png
   title: 'Resource usage foreacast for the next year'
  1:
-  image: /images/trendz/prediction-sum-cfg1.png
+  image: https://img.thingsboard.io/trendz/prediction-sum-cfg1.png
   title: 'Select prediction model and forecast horizon'
 
 ---
@@ -58,7 +58,7 @@ Trendz implements different multivariable and univariable ML models for timeseri
 
 ## Simple Prediction
 
-![image](/images/trendz/prediction-simple-view.png)
+![image](https://img.thingsboard.io/trendz/prediction-simple-view.png)
 
 In this example we monitor vibration of pumps on water station. We want predict when vibration will rich critical levels
 so we can schedule preventive maintenance for the pump and avoid unplanned downtime.
@@ -80,7 +80,7 @@ Now we can press 'Build report' buten and check how our forecast looks like.
 
 <div class="image-block">
     <div class="image-wrapper">
-       <video poster="/images/trendz/prediction-simple-view.png" autoplay="" loop="" preload="auto" muted="" style="width: 750px">
+       <video poster="https://img.thingsboard.io/trendz/prediction-simple-view.png" autoplay="" loop="" preload="auto" muted="" style="width: 750px">
             <source src="https://tb-videos.s3-us-west-1.amazonaws.com/trndz-vibration-predict.webm" type="video/webm">                 
         </video> 
     </div>
@@ -105,7 +105,7 @@ has energy meter. We need to aggregate telemetry from sensors on building level 
 
 <div class="image-block">
     <div class="image-wrapper">
-       <video poster="/images/trendz/prediction-sum-view.png" autoplay="" loop="" preload="auto" muted="" style="width: 750px">
+       <video poster="https://img.thingsboard.io/trendz/prediction-sum-view.png" autoplay="" loop="" preload="auto" muted="" style="width: 750px">
             <source src="https://tb-videos.s3-us-west-1.amazonaws.com/trndz-enrgy-predict.webm" type="video/webm">                 
         </video> 
     </div>
@@ -117,7 +117,7 @@ has energy meter. We need to aggregate telemetry from sensors on building level 
 If you want to see how trained model looks like compared to historical data you need to enable **Show Historical part** checkbox
  in field configuration. Once enabled, predicted dataset will contain historical part predicted with the same model.
  
-![image](/images/trendz/prediction-validation.png)
+![image](https://img.thingsboard.io/trendz/prediction-validation.png)
  
 ## Next Steps
 
