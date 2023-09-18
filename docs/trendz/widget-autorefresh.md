@@ -7,7 +7,7 @@ description: Trendz widget auto refresh to display real time data
 
 trendz-widget-automated-refresh:
   0:
-    image: /images/trendz/images/trendz-widget-auto-refresh-data.png
+    image: /images/trendz/trendz-widget-auto-refresh-data.png
     title: 'Trendz widget data refresh settings'
 
 ---
