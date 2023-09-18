@@ -3,7 +3,7 @@
 echo "$(date +"%H:%M") Replacing image urls.. "
 
 extensions=( "*.md" "*.yml" "*.html" "*.liquid" "*.sass" "*.css" "*.js" "*.json" "*.sql" "*.cql")
-cleanup_dirs=( "user-guide" "pe" "reference" "edge" "lwm2m")
+cleanup_dirs=( "user-guide" "reference" "edge" "lwm2m")
 
 for ext in "${extensions[@]}"
 do
