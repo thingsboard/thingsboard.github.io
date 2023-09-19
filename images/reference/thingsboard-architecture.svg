@@ -683,7 +683,7 @@ opacity: 1;
 
 
 
-<a xlink:href="/docs/user-guide/rule-engine-2-0/re-getting-started/" target="_parent" xlink:title="Rule Engine">
+<a xlink:href="https://thingsboard.io/docs/user-guide/rule-engine-2-0/re-getting-started/" target="_parent" xlink:title="Rule Engine">
 <g class="black_magic" opacity="0">
 <path d="M659 281C659 277.686 661.686 275 665 275H805C808.314 275 811 277.686 811 281V306C811 309.314 808.314 312 805 312H665C661.686 312 659 309.314 659 306V281Z" fill="white"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M805 274H665C661.134 274 658 277.134 658 281V306C658 309.866 661.134 313 665 313H805C808.866 313 812 309.866 812 306V281C812 277.134 808.866 274 805 274ZM665 277H805C807.209 277 809 278.791 809 281V306C809 308.209 807.209 310 805 310H665C662.791 310 661 308.209 661 306V281C661 278.791 662.791 277 665 277Z" fill="#305680"/>
@@ -701,7 +701,7 @@ opacity: 1;
 </g>
 </a>
 
-<a xlink:href="/docs/reference/msa/#thingsboard-node" target="_parent" xlink:title="ThingsBoard Node" >
+<a xlink:href="https://thingsboard.io/docs/reference/msa/#thingsboard-node" target="_parent" xlink:title="ThingsBoard Node" >
 <g class="black_magic" opacity="0">
 <path d="M659 139C659 135.686 661.686 133 665 133H805C808.314 133 811 135.686 811 139V164C811 167.314 808.314 170 805 170H665C661.686 170 659 167.314 659 164V139Z" fill="white"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M805 132H665C661.134 132 658 135.134 658 139V164C658 167.866 661.134 171 665 171H805C808.866 171 812 167.866 812 164V139C812 135.134 808.866 132 805 132ZM665 135H805C807.209 135 809 136.791 809 139V164C809 166.209 807.209 168 805 168H665C662.791 168 661 166.209 661 164V139C661 136.791 662.791 135 665 135Z" fill="#305680"/>
@@ -724,7 +724,7 @@ opacity: 1;
 </g>
 </a>
 
-<a xlink:href="/docs/reference/msa/#web-ui-microservices" target="_parent" xlink:title="Web UI Microservices">
+<a xlink:href="https://thingsboard.io/docs/reference/msa/#web-ui-microservices" target="_parent" xlink:title="Web UI Microservices">
 <g class="black_magic" opacity="0">
 <path d="M583 52C583 48.6863 585.686 46 589 46H722C725.314 46 728 48.6863 728 52V77C728 80.3137 725.314 83 722 83H589C585.686 83 583 80.3137 583 77V52Z" fill="white"/>
 <path fill-rule="evenodd" clip-rule="evenodd" d="M722 45H589C585.134 45 582 48.134 582 52V77C582 80.866 585.134 84 589 84H722C725.866 84 729 80.866 729 77V52C729 48.134 725.866 45 722 45ZM589 48H722C724.209 48 726 49.7909 726 52V77C726 79.2091 724.209 81 722 81H589C586.791 81 585 79.2091 585 77V52C585 49.7909 586.791 48 589 48Z" fill="#305680"/>
@@ -745,19 +745,19 @@ opacity: 1;
 </g>
 </a>
 
-<a xlink:href="/docs/reference/#message-queues-are-awesome" target="_parent" xlink:title="Message Queues are awesome!">
+<a xlink:href="https://thingsboard.io/docs/reference/#message-queues-are-awesome" target="_parent" xlink:title="Message Queues are awesome!">
 <path class="qmagic" d="M542 151C542 141.059 547.61 133 554.53 133H616.47C623.39 133 629 141.059 629 151V152C629 161.941 623.39 170 616.47 170H554.53C547.61 170 542 161.941 542 152V151Z" fill="#ffffff00"/>
 <path class="qmagic" d="M734.216 253C718.633 253 706 247.39 706 240.47L706 204.53C706 197.61 718.633 192 734.216 192L735.784 192C751.367 192 764 197.61 764 204.53L764 240.47C764 247.39 751.367 253 735.784 253L734.216 253Z" fill="#ffffff00"/>
 <path class="qmagic" d="M542 293C542 283.059 547.61 275 554.53 275H616.47C623.39 275 629 283.059 629 293V294C629 303.941 623.39 312 616.47 312H554.53C547.61 312 542 303.941 542 294V293Z" fill="#ffffff00"/>
 </a>
-<a xlink:href="/docs/iot-gateway/what-is-iot-gateway/" target="_parent" xlink:title="What is ThingsBoard IoT Gateway?">
+<a xlink:href="https://thingsboard.io/docs/iot-gateway/what-is-iot-gateway/" target="_parent" xlink:title="What is ThingsBoard IoT Gateway?">
 <rect class="magic" x="161.5" y="233.5" width="103" height="36" rx="5.5" stroke-linecap="round" fill="#ffffff00"/>
 </a>
-<a xlink:href="/docs/reference/msa/#transport-microservices" target="_parent" xlink:title="Transport Microservices" >
+<a xlink:href="https://thingsboard.io/docs/reference/msa/#transport-microservices" target="_parent" xlink:title="Transport Microservices" >
 <rect class="magic" x="315.5" y="117.5" width="196" height="180" rx="9.5" stroke-linecap="round" fill="#ffffff00"/>
 </a>
 
-<a xlink:href="/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach" target="_parent" xlink:title="SQL vs NoSQL vs Hybrid database approach">
+<a xlink:href="https://thingsboard.io/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach" target="_parent" xlink:title="SQL vs NoSQL vs Hybrid database approach">
 <rect class="magic" x="851.5" y="133.5" width="143" height="36" rx="5.5" stroke-linecap="round" fill="#ffffff00"/>
 <rect class="magic" x="851.5" y="275.5" width="143" height="36" rx="5.5" stroke-linecap="round" fill="#ffffff00"/>
 </a>
