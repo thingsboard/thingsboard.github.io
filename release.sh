@@ -28,4 +28,5 @@ echo "$(date +"%H:%M") Cleanup images.. done."
 
 cd -
 
+
 echo "$(date +"%H:%M") Please review changes and commit. "
