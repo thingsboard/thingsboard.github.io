@@ -235,11 +235,203 @@ environment variable, default value, and description.
           <td>Password used to access the key</td>
       </tr>
       <tr>
-          <td>listener.ssl.config.skip_validity_check_for_client_cert</td>
-          <td>LISTENER_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">WS MQTT listener parameters</span></td>
+      </tr>   
+      <tr>
+          <td>listener.ws.enabled</td>
+          <td>LISTENER_WS_ENABLED</td>
+          <td>true</td>
+          <td>Enable/disable MQTT WS port listener</td>
+      </tr>  
+      <tr>
+          <td>listener.ws.bind_address</td>
+          <td>LISTENER_WS_BIND_ADDRESS</td>
+          <td>0.0.0.0</td>
+          <td>MQTT WS listener bind address</td>
+      </tr>
+      <tr>
+          <td>listener.ws.bind_port</td>
+          <td>LISTENER_WS_BIND_PORT</td>
+          <td>8084</td>
+          <td>MQTT WS listener bind port</td>
+      </tr>
+      <tr>
+          <td>listener.ws.netty.sub_protocols</td>
+          <td>WS_NETTY_SUB_PROTOCOLS</td>
+          <td>mqttv3.1,mqtt</td>
+          <td>Comma-separated list of subprotocols that the WebSocket can negotiate. The subprotocol setting `mqtt` represents MQTT 3.1.1 and MQTT 5</td>
+      </tr>
+      <tr>
+          <td>listener.ws.netty.leak_detector_level</td>
+          <td>WS_NETTY_LEAK_DETECTOR_LVL</td>
+          <td>DISABLED</td>
+          <td>Netty leak detector level</td>
+      </tr>
+      <tr>
+          <td>listener.ws.netty.boss_group_thread_count</td>
+          <td>WS_NETTY_BOSS_GROUP_THREADS</td>
+          <td>1</td>
+          <td>Netty boss group threads count</td>
+      </tr>
+      <tr>
+          <td>listener.ws.netty.worker_group_thread_count</td>
+          <td>WS_NETTY_WORKER_GROUP_THREADS</td>
+          <td>12</td>
+          <td>Netty worker group threads count</td>
+      </tr>
+      <tr>
+          <td>listener.ws.netty.max_payload_size</td>
+          <td>WS_NETTY_MAX_PAYLOAD_SIZE</td>
+          <td>65536</td>
+          <td>Max payload size in bytes</td>
+      </tr>
+      <tr>
+          <td>listener.ws.netty.so_keep_alive</td>
+          <td>WS_NETTY_SO_KEEPALIVE</td>
+          <td>true</td>
+          <td>Enable/disable keep-alive mechanism to periodically probe the other end of a connection</td>
+      </tr>
+      <tr>
+          <td>listener.ws.netty.shutdown_quiet_period</td>
+          <td>WS_NETTY_SHUTDOWN_QUIET_PERIOD</td>
+          <td>0</td>
+          <td>Period in seconds in graceful shutdown during which no new tasks are submitted</td>
+      </tr>
+      <tr>
+          <td>listener.ws.netty.shutdown_timeout</td>
+          <td>WS_NETTY_SHUTDOWN_TIMEOUT</td>
+          <td>5</td>
+          <td>The max time in seconds to wait until the executor is stopped</td>
+      </tr>
+      <tr>
+          <td colspan="4"><span style="font-weight: bold; font-size: 24px;">WSS MQTT listener parameters</span></td>
+      </tr>   
+      <tr>
+          <td>listener.wss.enabled</td>
+          <td>LISTENER_WSS_ENABLED</td>
           <td>false</td>
-          <td>Skip check of client certificate validity</td>
+          <td>Enable/disable MQTT WSS port listener</td>
+      </tr>  
+      <tr>
+          <td>listener.wss.bind_address</td>
+          <td>LISTENER_WSS_BIND_ADDRESS</td>
+          <td>0.0.0.0</td>
+          <td>MQTT WSS listener bind address</td>
+      </tr>
+      <tr>
+          <td>listener.wss.bind_port</td>
+          <td>LISTENER_WSS_BIND_PORT</td>
+          <td>8085</td>
+          <td>MQTT WSS listener bind port</td>
+      </tr>
+      <tr>
+          <td>listener.wss.netty.sub_protocols</td>
+          <td>WSS_NETTY_SUB_PROTOCOLS</td>
+          <td>mqttv3.1,mqtt</td>
+          <td>Comma-separated list of subprotocols that the WebSocket can negotiate. The subprotocol setting `mqtt` represents MQTT 3.1.1 and MQTT 5</td>
+      </tr>
+      <tr>
+          <td>listener.wss.netty.leak_detector_level</td>
+          <td>WSS_NETTY_LEAK_DETECTOR_LVL</td>
+          <td>DISABLED</td>
+          <td>Netty leak detector level</td>
+      </tr>
+      <tr>
+          <td>listener.wss.netty.boss_group_thread_count</td>
+          <td>WSS_NETTY_BOSS_GROUP_THREADS</td>
+          <td>1</td>
+          <td>Netty boss group threads count</td>
+      </tr>
+      <tr>
+          <td>listener.wss.netty.worker_group_thread_count</td>
+          <td>WSS_NETTY_WORKER_GROUP_THREADS</td>
+          <td>12</td>
+          <td>Netty worker group threads count</td>
+      </tr>
+      <tr>
+          <td>listener.wss.netty.max_payload_size</td>
+          <td>WSS_NETTY_MAX_PAYLOAD_SIZE</td>
+          <td>65536</td>
+          <td>Max payload size in bytes</td>
+      </tr>
+      <tr>
+          <td>listener.wss.netty.so_keep_alive</td>
+          <td>WSS_NETTY_SO_KEEPALIVE</td>
+          <td>true</td>
+          <td>Enable/disable keep-alive mechanism to periodically probe the other end of a connection</td>
+      </tr>
+      <tr>
+          <td>listener.wss.netty.shutdown_quiet_period</td>
+          <td>WSS_NETTY_SHUTDOWN_QUIET_PERIOD</td>
+          <td>0</td>
+          <td>Period in seconds in graceful shutdown during which no new tasks are submitted</td>
+      </tr>
+      <tr>
+          <td>listener.wss.netty.shutdown_timeout</td>
+          <td>WSS_NETTY_SHUTDOWN_TIMEOUT</td>
+          <td>5</td>
+          <td>The max time in seconds to wait until the executor is stopped</td>
+      </tr>
+      <tr>
+          <td>listener.wss.config.protocol</td>
+          <td>LISTENER_WSS_PROTOCOL</td>
+          <td>TLSv1.2</td>
+          <td>SSL protocol: see <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#SSLContext">this link</a></td>
+      </tr>
+      <tr>
+          <td>listener.wss.config.credentials.type</td>
+          <td>LISTENER_WSS_CREDENTIALS_TYPE</td>
+          <td>PEM</td>
+          <td>Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
+      </tr>
+      <tr>
+          <td>listener.wss.config.credentials.pem.cert_file</td>
+          <td>LISTENER_WSS_PEM_CERT</td>
+          <td>ws_mqtt_server.pem</td>
+          <td>Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
+      </tr>
+      <tr>
+          <td>listener.wss.config.credentials.pem.key_file</td>
+          <td>LISTENER_WSS_PEM_KEY</td>
+          <td>ws_mqtt_server_key.pem</td>
+          <td>Path to the server certificate private key file (optional)</td>
+      </tr>
+      <tr>
+          <td>listener.wss.config.credentials.pem.key_password</td>
+          <td>LISTENER_WSS_PEM_KEY_PASSWORD</td>
+          <td>ws_server_key_password</td>
+          <td>Server certificate private key password (optional)</td>
+      </tr>
+      <tr>
+          <td>listener.wss.config.credentials.keystore.type</td>
+          <td>LISTENER_WSS_KEY_STORE_TYPE</td>
+          <td>JKS</td>
+          <td>Type of the key store</td>
+      </tr>
+      <tr>
+          <td>listener.wss.config.credentials.keystore.store_file</td>
+          <td>LISTENER_WSS_KEY_STORE</td>
+          <td>ws_mqtt_server.jks</td>
+          <td>Path to the key store that holds the SSL certificate</td>
+      </tr>
+      <tr>
+          <td>listener.wss.config.credentials.keystore.store_password</td>
+          <td>LISTENER_WSS_KEY_STORE_PASSWORD</td>
+          <td>ws_server_ks_password</td>
+          <td>Password used to access the key store</td>
+      </tr>
+      <tr>
+          <td>listener.wss.config.credentials.keystore.key_alias</td>
+          <td>LISTENER_WSS_KEY_ALIAS</td>
+          <td></td>
+          <td>Key alias</td>
       </tr> 
+      <tr>
+          <td>listener.wss.config.credentials.keystore.key_password</td>
+          <td>LISTENER_WSS_KEY_PASSWORD</td>
+          <td>ws_server_key_password</td>
+          <td>Password used to access the key</td>
+      </tr>
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">HTTP server parameters</span></td>
       </tr>
@@ -381,6 +573,12 @@ environment variable, default value, and description.
           <td>SECURITY_MQTT_SSL_ENABLED</td>
           <td>false</td>
           <td>Enable/disable SSL MQTT auth</td>
+      </tr>
+      <tr>
+          <td>security.mqtt.ssl.skip_validity_check_for_client_cert</td>
+          <td>SECURITY_MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
+          <td>false</td>
+          <td>Skip check of client certificate validity</td>
       </tr>
       <tr>
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Actor system parameters</span></td>
@@ -527,6 +725,18 @@ environment variable, default value, and description.
           <td>Maximum number of segments in topics. If it's too large, processing of topics with too much segments can lead to errors. 0 means limitation is disabled</td>
       </tr>
       <tr>
+          <td>mqtt.topic.alias-max</td>
+          <td>MQTT_TOPIC_ALIAS_MAX</td>
+          <td>10</td>
+          <td>Max count of topic aliases per connection. 0 indicates that the Broker does not accept any Topic Aliases for all connections meaning the 'Topic Alias' feature is disabled</td>
+      </tr>
+      <tr>
+          <td>mqtt.topic.min-length-for-alias-replacement</td>
+          <td>MQTT_TOPIC_MIN_LENGTH_FOR_ALIAS_REPLACEMENT</td>
+          <td>50</td>
+          <td>Minimal required topic name length that Broker publishes to client that can be replaced with topic alias</td>
+      </tr>
+      <tr>
           <td>mqtt.shared-subscriptions.processing-type</td>
           <td>MQTT_SHARED_SUBSCRIPTIONS_PROCESSING_TYPE</td>
           <td>ROUND_ROBIN</td>
@@ -567,6 +777,12 @@ environment variable, default value, and description.
           <td>MQTT_RETAIN_MSG_TRIE_CLEAR_NODES_ZONE</td>
           <td>UTC</td>
           <td>Timezone for retain msg clearing cron-job</td>
+      </tr>
+      <tr>
+          <td>mqtt.retain-msg.expiry-processing-period-ms</td>
+          <td>MQTT_RETAIN_MSG_EXPIRY_PROCESSING_PERIOD_MS</td>
+          <td>60000</td>
+          <td>Period in milliseconds to clear retained messages by expiry feature of MQTT</td>
       </tr>
       <tr>
           <td>mqtt.client-session-expiry.cron</td>
@@ -1355,6 +1571,12 @@ environment variable, default value, and description.
           <td>Enable/disable check that Application shared subscription topic filter contains only alphanumeric chars or '+' or '#' for Kafka topic creation</td>
       </tr>
       <tr>
+          <td>queue.application-persisted-msg.shared-subs-threads-count</td>
+          <td>TB_APP_PERSISTED_MSG_SHARED_SUBS_THREADS_COUNT</td>
+          <td>16</td>
+          <td>Number of threads in the pool to process Application shared subscriptions consumers tasks</td>
+      </tr>
+      <tr>
           <td>queue.device-persisted-msg.threads-count</td>
           <td>TB_DEVICE_PERSISTED_MSG_THREADS_COUNT</td>
           <td>2</td>
@@ -1676,32 +1898,32 @@ environment variable, default value, and description.
           <td colspan="4"><span style="font-weight: bold; font-size: 24px;">Spring MVC/Resources parameters</span></td>
       </tr>
       <tr>
-          <td>spring.mvc.cors.mappings.[/api/**].allowed-origins</td>
-          <td></td>
+          <td>spring.mvc.cors.mappings.[/api/**].allowed-origin-patterns</td>
+          <td>MVC_CORS_API_ALLOWED_ORIGIN_PATTERNS</td>
           <td>*</td>
-          <td>Comma-separated list of origins to allow. '*' allows all origins. When not set,CORS support is disabled</td>
+          <td>Comma-separated list of origins to allow. '*' allows all origins. When not set, CORS support is disabled</td>
       </tr>
       <tr>
           <td>spring.mvc.cors.mappings.[/api/**].allowed-methods</td>
-          <td></td>
+          <td>MVC_CORS_API_ALLOWED_METHODS</td>
           <td>*</td>
           <td>Comma-separated list of methods to allow. '*' allows all methods</td>
       </tr>
       <tr>
           <td>spring.mvc.cors.mappings.[/api/**].allowed-headers</td>
-          <td></td>
+          <td>MVC_CORS_API_ALLOWED_HEADERS</td>
           <td>*</td>
           <td>Comma-separated list of headers to allow in a request. '*' allows all headers</td>
       </tr>
       <tr>
           <td>spring.mvc.cors.mappings.[/api/**].max-age</td>
-          <td></td>
+          <td>MVC_CORS_API_MAX_AGE</td>
           <td>1800</td>
           <td>How long, in seconds, the response from a pre-flight request can be cached by clients</td>
       </tr>
       <tr>
           <td>spring.mvc.cors.mappings.[/api/**].allow-credentials</td>
-          <td></td>
+          <td>MVC_CORS_API_ALLOW_CREDENTIALS</td>
           <td>true</td>
           <td>Set whether credentials are supported. When not set, credentials are not supported</td>
       </tr>

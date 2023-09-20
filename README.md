@@ -14,7 +14,7 @@ Any edits you make will be viewable on a lightweight webserver that runs on your
 
 Install Ruby **3.0.x**. If you're on Ubuntu, run this commands:
 
-    sudo apt-get install ruby-full build-essential zlib1g-dev
+    sudo apt-get install ruby-full build-essential zlib1g-dev git
     sudo gem install github-pages jekyll bundler
 
 
@@ -42,7 +42,7 @@ Clone our site:
 Make any changes you want. Then, to see your changes locally:  
 
 	cd thingsboard.github.io
-	bundle install
+	sudo bundle install
 	bundle exec jekyll serve --host 0.0.0.0
 	
 In case you change the layout or website structure you might need to execute following command:
