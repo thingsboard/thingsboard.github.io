@@ -31,7 +31,8 @@ Also, do not forget to specify the port for the device:
 **Tools** > **Port** > **/dev/ttyUSB0**. 
 
 Port depends on operation system and may be different:
-- for Linux/MacOS it will be **/dev/ttyUSB**X
+- for Linux it will be **/dev/ttyUSB**X
+- for MacOS it will be **usb.serial**X.. or **usb.modem**X..
 - for Windows - **COM**X.  
 
 Where X - some number, that was assigned by your system.  

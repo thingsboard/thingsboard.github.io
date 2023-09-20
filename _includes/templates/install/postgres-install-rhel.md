@@ -6,10 +6,10 @@ sudo yum update
 ```
 {: .copy-code}
 
-**For CentOS 7:**
+**For CentOS/RHEL 7:**
 
 ```bash
-# Install the repository RPM (for CentOS 7):
+# Install the repository RPM:
 sudo yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-7-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 # Install packages
 sudo yum -y install epel-release yum-utils
@@ -24,10 +24,10 @@ sudo systemctl enable --now postgresql-12
 ```
 {: .copy-code}
 
-**For CentOS 8:**
+**For RHEL 8 and derivatives (Alma, Rocky, Oracle):**
 
 ```bash
-# Install the repository RPM (for CentOS 8):
+# Install the repository RPM:
 sudo yum -y install https://download.postgresql.org/pub/repos/yum/reporpms/EL-8-x86_64/pgdg-redhat-repo-latest.noarch.rpm
 # Install packages
 sudo dnf -qy module disable postgresql

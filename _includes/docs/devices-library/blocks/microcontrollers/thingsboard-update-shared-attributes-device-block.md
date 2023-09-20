@@ -81,8 +81,8 @@ const Shared_Attribute_Callback attributes_callback(SHARED_ATTRIBUTES_LIST.cbegi
     previousStateChange = millis();
     ledState = !ledState;
     digitalWrite(LED_BUILTIN, ledState);
-    tb.sendTelemetryBool(LED_STATE_ATTR, ledState);
-    tb.sendAttributeBool(LED_STATE_ATTR, ledState);
+    tb.sendTelemetryData(LED_STATE_ATTR, ledState);
+    tb.sendAttributeData(LED_STATE_ATTR, ledState);
     if (LED_BUILTIN == 99) {
       Serial.print("LED state changed to: ");
       Serial.println(ledState);

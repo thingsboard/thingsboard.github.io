@@ -1627,7 +1627,7 @@
 	<text transform="matrix(1 0 0 1 220.439 112.6118)" class="st1 st9 st10">itself using various protocols like BTLE, ZigBee, etc.</text>
 </g>
 
-<a xlink:href="/docs/user-guide/integrations/opc-ua/" target="_parent" xlink:title="OPC-UA">
+<a xlink:href="https://thingsboard.io/docs/user-guide/integrations/opc-ua/" target="_parent" xlink:title="OPC-UA">
 	<g class="black_magic" opacity="0">
 		<path class="st15" d="M649.5,368.5h82c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-82c-3.3,0-6-2.7-6-6v-24
 			C643.5,371.1,646.2,368.5,649.5,368.5z"/>
@@ -1639,7 +1639,7 @@
 		<text transform="matrix(1 0 0 1 678 390.6115)" class="st1 st9 st10">OPC-UA</text>
 	</g>
 </a>
-<a xlink:href="/docs/user-guide/integrations/aws-iot/" target="_parent" xlink:title="AWS IoT Integration">
+<a xlink:href="https://thingsboard.io/docs/user-guide/integrations/aws-iot/" target="_parent" xlink:title="AWS IoT Integration">
 	<g class="black_magic" opacity="0">
 		<path class="st15" d="M654.5,280.5h83c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-83c-3.3,0-6-2.7-6-6v-24
 			C648.5,283.1,651.2,280.5,654.5,280.5z"/>
@@ -1656,7 +1656,7 @@
 		<text transform="matrix(1 0 0 1 683 302.6115)" class="st1 st9 st10">AWS IoT</text>
 	</g>
 </a>
-<a xlink:href="/docs/user-guide/integrations/azure-event-hub/" target="_parent" xlink:title="Azure Event Hub Integration">
+<a xlink:href="https://thingsboard.io/docs/user-guide/integrations/azure-event-hub/" target="_parent" xlink:title="Azure Event Hub Integration">
 	<g class="black_magic" opacity="0">
 		<path class="st15" d="M502.5,280.5h133c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-133c-3.3,0-6-2.7-6-6v-24
 			C496.5,283.1,499.2,280.5,502.5,280.5z"/>
@@ -1665,7 +1665,7 @@
 		<text transform="matrix(1 0 0 1 531 302.6115)" class="st1 st9 st10">Azure Event Hub</text>
 	</g>
 </a>
-<a xlink:href="/docs/user-guide/integrations/azure-iot-hub/" target="_parent" xlink:title="Azure IoT Hub Integration">
+<a xlink:href="https://thingsboard.io/docs/user-guide/integrations/azure-iot-hub/" target="_parent" xlink:title="Azure IoT Hub Integration">
 	<g class="black_magic" opacity="0">
 		<path class="st15" d="M502.5,324.5h118c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-118c-3.3,0-6-2.7-6-6v-24
 			C496.5,327.1,499.2,324.5,502.5,324.5z"/>
@@ -1674,7 +1674,7 @@
 		<text transform="matrix(1 0 0 1 531 346.6115)" class="st1 st9 st10">Azure IoT Hub</text>
 	</g>
 </a>
-<a xlink:href="/docs/user-guide/integrations/ibm-watson-iot/" target="_parent" xlink:title="IBM Watson IoT Integration">
+<a xlink:href="https://thingsboard.io/docs/user-guide/integrations/ibm-watson-iot/" target="_parent" xlink:title="IBM Watson IoT Integration">
 	<g class="black_magic" opacity="0">
 		<path class="st15" d="M502.5,368.5h127c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-127c-3.3,0-6-2.7-6-6v-24
 			C496.5,371.1,499.2,368.5,502.5,368.5z"/>
@@ -1701,7 +1701,7 @@
 		<text transform="matrix(1 0 0 1 531 390.6115)" class="st1 st9 st10">IBM Watson IoT</text>
 	</g>
 </a>
-<a xlink:href="/docs/user-guide/integrations/http/" target="_parent" xlink:title="HTTP Integration">
+<a xlink:href="https://thingsboard.io/docs/user-guide/integrations/http/" target="_parent" xlink:title="HTTP Integration">
 	<g class="black_magic" opacity="0">
 		<path class="st15" d="M919.5,433.5h146c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-24
 			C913.5,436.1,916.2,433.5,919.5,433.5z"/>
@@ -1713,7 +1713,7 @@
 		<text transform="matrix(1 0 0 1 948 455.6115)" class="st1 st9 st10">HTTP Integration</text>
 	</g>
 </a>
-<a xlink:href="/docs/user-guide/integrations/coap/" target="_parent" xlink:title="CoAP Integration">
+<a xlink:href="https://thingsboard.io/docs/user-guide/integrations/coap/" target="_parent" xlink:title="CoAP Integration">
 	<g class="black_magic" opacity="0">
 		<path class="st15" d="M919.5,597.5h146c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-24
 			C913.5,600.1,916.2,597.5,919.5,597.5z"/>
@@ -1725,7 +1725,7 @@
 		<text transform="matrix(1 0 0 1 948 619.6116)" class="st1 st9 st10">CoAP Integration</text>
 	</g>
 </a>
-<a xlink:href="/docs/user-guide/integrations/" target="_parent" xlink:title="Platform Integrations">
+<a xlink:href="https://thingsboard.io/docs/user-guide/integrations/" target="_parent" xlink:title="Platform Integrations">
 	<g class="black_magic" opacity="0">
 		<path class="st15" d="M919.5,745.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,748.1,916.2,745.5,919.5,745.5z"/>
@@ -1738,7 +1738,7 @@
 		<text transform="matrix(1 0 0 1 948 783.6116)" class="st1 st9 st10">Integrations</text>
 	</g>
 </a>
-<a xlink:href="/docs/reference/mqtt-sparkplug-api/" target="_parent" xlink:title="MQTT Sparkplug API">
+<a xlink:href="https://thingsboard.io/docs/reference/mqtt-sparkplug-api/" target="_parent" xlink:title="MQTT Sparkplug API">
 	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,61.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,64.1,916.2,61.5,919.5,61.5z"/>
@@ -1781,7 +1781,7 @@
 	l3.1-0.9l-0.3-1.1c-0.2,0.2-0.5,0.3-0.7,0.1c-0.2-0.1-0.3-0.4-0.2-0.7l0.6-1.3C932.5,24.2,932.5,24.2,932.6,24.1L932.6,24.1z"/>
 <text transform="matrix(1 0 0 1 948 39.6153)" class="st2 st9 st10">MQTT Gateway API</text>
 <text transform="matrix(1 0 0 1 948 23.6153)" class="st2 st11 st10">ThingsBoard  </text>
-<a xlink:href="/docs/reference/gateway-mqtt-api/" target="_parent" xlink:title="MQTT Gateway API Reference">
+<a xlink:href="https://thingsboard.io/docs/reference/gateway-mqtt-api/" target="_parent" xlink:title="MQTT Gateway API Reference">
 	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,1.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,4.1,916.2,1.5,919.5,1.5z"/>
@@ -1805,7 +1805,7 @@
 		<text transform="matrix(1 0 0 1 948 23.6153)" class="st1 st11 st10">ThingsBoard  </text>
 	</g>
 </a>
-<a xlink:href="/docs/reference/mqtt-api/" target="_parent" xlink:title="MQTT Device API Reference">
+<a xlink:href="https://thingsboard.io/docs/reference/mqtt-api/" target="_parent" xlink:title="MQTT Device API Reference">
 	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,121.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,124.1,916.2,121.5,919.5,121.5z"/>
@@ -1830,7 +1830,7 @@
 		<text transform="matrix(1 0 0 1 948 143.6118)" class="st1 st11 st10">ThingsBoard  </text>
 	</g>
 </a>
-<a xlink:href="/docs/reference/http-api/" target="_parent" xlink:title="HTTP Device API Reference">
+<a xlink:href="https://thingsboard.io/docs/reference/http-api/" target="_parent" xlink:title="HTTP Device API Reference">
 	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,181.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,184.1,916.2,181.5,919.5,181.5z"/>
@@ -1855,7 +1855,7 @@
 		<text transform="matrix(1 0 0 1 948 203.6116)" class="st1 st11 st10">ThingsBoard  </text>
 	</g>
 </a>
-<a xlink:href="/docs/reference/coap-api/" target="_parent" xlink:title="CoAP Device API Reference">
+<a xlink:href="https://thingsboard.io/docs/reference/coap-api/" target="_parent" xlink:title="CoAP Device API Reference">
 	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,241.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,244.1,916.2,241.5,919.5,241.5z"/>
@@ -1880,7 +1880,7 @@
 		<text transform="matrix(1 0 0 1 948 263.6115)" class="st1 st11 st10">ThingsBoard  </text>
 	</g>
 </a>
-<a xlink:href="/docs/reference/snmp-api/" target="_parent" xlink:title="SNMP Device API Reference">
+<a xlink:href="https://thingsboard.io/docs/reference/snmp-api/" target="_parent" xlink:title="SNMP Device API Reference">
 	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,537.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,540.1,916.2,537.5,919.5,537.5z"/>
@@ -1905,7 +1905,7 @@
 		<text transform="matrix(1 0 0 1 948 559.6115)" class="st1 st11 st10">ThingsBoard  </text>
 	</g>
 </a>
-<a xlink:href="/docs/reference/lwm2m-api/" target="_parent" xlink:title="LwM2M Device API Reference">
+<a xlink:href="https://thingsboard.io/docs/reference/lwm2m-api/" target="_parent" xlink:title="LwM2M Device API Reference">
 	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,477.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,480.1,916.2,477.5,919.5,477.5z"/>
@@ -1930,7 +1930,7 @@
 		<text transform="matrix(1 0 0 1 948 499.6115)" class="st1 st11 st10">ThingsBoard  </text>
 	</g>
 </a>
-<a xlink:href="/docs/contact-us/" target="_parent" xlink:title="Contact Us">
+<a xlink:href="https://thingsboard.io/docs/contact-us/" target="_parent" xlink:title="Contact Us">
 	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,324.5h146c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-24
 			C913.5,327.1,916.2,324.5,919.5,324.5z"/>
@@ -1942,7 +1942,7 @@
 		<text transform="matrix(1 0 0 1 948 346.6115)" class="st1 st9 st10">Contact Us</text>
 	</g>
 </a>
-<a xlink:href="/docs/contact-us/" target="_parent" xlink:title="Contact Us">
+<a xlink:href="https://thingsboard.io/docs/contact-us/" target="_parent" xlink:title="Contact Us">
 	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,641.5h146c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-24
 			C913.5,644.1,916.2,641.5,919.5,641.5z"/>
@@ -1954,7 +1954,7 @@
 		<text transform="matrix(1 0 0 1 948 663.6116)" class="st1 st9 st10">Contact Us</text>
 	</g>
 </a>
-<a xlink:href="/docs/iot-gateway/what-is-iot-gateway/" target="_parent" xlink:title="What is ThingsBoard IoT Gateway?">
+<a xlink:href="https://thingsboard.io/docs/iot-gateway/what-is-iot-gateway/" target="_parent" xlink:title="What is ThingsBoard IoT Gateway?">
 	<g class="black_magic" opacity="0">
 		<path class="st17" d="M919.5,685.5h146c3.3,0,6,2.7,6,6v40c0,3.3-2.7,6-6,6h-146c-3.3,0-6-2.7-6-6v-40
 			C913.5,688.1,916.2,685.5,919.5,685.5z"/>
@@ -1970,7 +1970,7 @@
 		<text transform="matrix(1 0 0 1 948 707.6116)" class="st1 st11 st10">ThingsBoard </text>
 	</g>
 </a>
-<a xlink:href="/docs/user-guide/integrations/mqtt/" target="_parent" xlink:title="MQTT Broker">
+<a xlink:href="https://thingsboard.io/docs/user-guide/integrations/mqtt/" target="_parent" xlink:title="MQTT Broker">
 	<g class="black_magic" opacity="0">
 		<path class="st15" d="M640.5,324.5h113c3.3,0,6,2.7,6,6v24c0,3.3-2.7,6-6,6h-113c-3.3,0-6-2.7-6-6v-24
 			C634.5,327.1,637.2,324.5,640.5,324.5z"/>
