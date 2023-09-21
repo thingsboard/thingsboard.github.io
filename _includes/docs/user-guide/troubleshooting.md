@@ -59,7 +59,7 @@ After this you can find the following messages in your [logs](#logs):
 **Note:** This can be used only if Redis is selected as a cache.
 
 It is possible that the data inside the cache somehow got corrupted. Regardless of the reason, it is always safe to clear cache, ThingsBoard will just refill it at the runtime.
-To clear Redis cache you need to log into the server/container/pod with Redis on it and call <code>redis-cli FLUSHALL</code> command.
+To clear Redis cache you need to log into the server/container/pod with Redis on it and call <code>redis-cli FLUSHALL</code> command. To clear the cache in Redis Sentinel mode, access the master container and execute the cache-clearing command.
 
 So if you are struggling with identifying the reason of some problem, you can safely clear Redis cache to make sure it isn't the reason of the issue.
 

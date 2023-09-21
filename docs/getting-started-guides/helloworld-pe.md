@@ -16,9 +16,15 @@ step1:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-3-pe.png
         title: 'Input device name. For example, "My New Device". No other changes are required at this time. Click "Add" to add the device;'
     3:
+        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-connectivity-1-pe.png
+        title: 'The window to check the device&#39;s connection to ThingsBoard will open. This step is optional. Select the messaging protocol and your operating system. Install the necessary client tools and copy the command;'
+    4:
+        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-connectivity-3-pe.png
+        title: 'Execute previously copied command. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings. Then, close connectivity window;'
+    5:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png
         title: 'Your first device has been added. As long as you have one device. But as new devices are added, they will be added to the top of the table, since the table sorts devices using the time of the creation by default;'
-    4:
+    6:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-5-pe.png
         title: 'When adding a new device, you will receive a notification. You can view it by clicking on the "bell" icon in the top right corner.'
 
