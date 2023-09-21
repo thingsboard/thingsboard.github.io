@@ -4,7 +4,7 @@
 
 IBM Watson IoT Integration allows to stream data from IBM Watson IoT to ThingsBoard and converts device payloads to the ThingsBoard format.
 
- ![image](/images/user-guide/integrations/ibm-watson-integration.svg)
+ ![image](https://img.thingsboard.io/user-guide/integrations/ibm-watson-integration.svg)
  
 ## Video tutorial
  

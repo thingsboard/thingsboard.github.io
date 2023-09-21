@@ -29,13 +29,13 @@ function rengen() {
 		if (obj.program) {
             var programImg = document.createElement('img');
             programImg.className = 'partner-program';
-            programImg.src = '/images/partners/' + obj.program + '-partner.svg';
+            programImg.src = 'https://img.thingsboard.io/partners/' + obj.program + '-partner.svg';
             box.appendChild(programImg);
         }
 
 		var img = document.createElement('img');
         img.className = 'logo';
-		img.src = '/images/partners/' + obj.logo;
+		img.src = 'https://img.thingsboard.io/partners/' + obj.logo;
 
 		var div = document.createElement('div');
 

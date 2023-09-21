@@ -4,7 +4,7 @@ If everything is set correctly, you should see the data in ThingsBoard, to do th
 
 {% assign checkEfentoSensorData = '
     ===
-        image: /images/devices-library/ready-to-go-devices/wireless-open-close-sensor/check-device-data.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/wireless-open-close-sensor/check-device-data.png,
         title: Click on the device and the most recent data from the device will be visible in the “Latest telemetry” tab.
 '
 %}

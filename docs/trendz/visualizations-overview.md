@@ -21,7 +21,7 @@ Trendz provides major visualization types required for analyzing IoT datasets.
 
 <div class="image-block">
     <div class="image-wrapper">
-       <video poster="/images/trendz/simple-line.png" autoplay="" loop="" preload="auto" muted="" style="width: 750px">
+       <video poster="https://img.thingsboard.io/trendz/simple-line.png" autoplay="" loop="" preload="auto" muted="" style="width: 750px">
             <source src="https://tb-videos.s3-us-west-1.amazonaws.com/trndz-first-view.webm" type="video/webm">                 
         </video> 
     </div>

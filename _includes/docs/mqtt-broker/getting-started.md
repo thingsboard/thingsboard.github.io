@@ -117,7 +117,7 @@ mosquitto_pub -d -h localhost -p 1883 -t sensors/temperature -m 32 -q 1 -u usern
 
 You should receive and observe the published message for the subscribed client.
 
-![image](/images/mqtt-broker/getting-started/broker-pub-sub.png)
+![image](https://img.thingsboard.io/mqtt-broker/getting-started/broker-pub-sub.png)
 
 ## Next Steps
 

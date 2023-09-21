@@ -41,37 +41,37 @@ Prerequisites before continuing REST API Call extension configuration:
 
 Let's configure REST API Call plugin first. Go to *Plugins* menu, click on a '+' button and create new plugin:
 
-![image](/images/reference/plugins/rest-api-call/rest-api-call-plugin-config-1.png)
+![image](https://img.thingsboard.io/reference/plugins/rest-api-call/rest-api-call-plugin-config-1.png)
 
-![image](/images/reference/plugins/rest-api-call/rest-api-call-plugin-config-2.png)
+![image](https://img.thingsboard.io/reference/plugins/rest-api-call/rest-api-call-plugin-config-2.png)
 
 Please set URL, port, path and authentication method correctly for the REST endpoint where the request is going to be transferred.
 
 Save plugin and click on *'Activate'* plugin button:
 
-![image](/images/reference/plugins/rest-api-call/rest-api-call-activate-plugin.png)
+![image](https://img.thingsboard.io/reference/plugins/rest-api-call/rest-api-call-activate-plugin.png)
 
 ### REST API Call Rule Configuration
 
 Now it's time to create appropriate Rule.
 
-![image](/images/reference/plugins/rest-api-call/rest-api-call-rule-config.png)
+![image](https://img.thingsboard.io/reference/plugins/rest-api-call/rest-api-call-rule-config.png)
 
 Add filter for **POST_TELEMETRY** message type:
 
-![image](/images/reference/plugins/rest-api-call/post-telemetry-filter.png)
+![image](https://img.thingsboard.io/reference/plugins/rest-api-call/post-telemetry-filter.png)
 
 Click *'Add'* button to add the filter.
 
 Then select *'REST API Call Plugin'* in the drop-down box for the Plugin field:
 
-![image](/images/reference/plugins/rest-api-call/rest-api-call-plugin-selection.png)
+![image](https://img.thingsboard.io/reference/plugins/rest-api-call/rest-api-call-plugin-selection.png)
 
 Add an action that will send temperature telemetry of the device to the particular REST action-path. In the action you can provide request type and result code that you expected from the REST endpoint in case of a successful call.
 
-![image](/images/reference/plugins/rest-api-call/rest-api-call-rule-action-config-1.png)
+![image](https://img.thingsboard.io/reference/plugins/rest-api-call/rest-api-call-rule-action-config-1.png)
 
-![image](/images/reference/plugins/rest-api-call/rest-api-call-rule-action-config-2.png)
+![image](https://img.thingsboard.io/reference/plugins/rest-api-call/rest-api-call-rule-action-config-2.png)
 
 Click *'Add'* button and then activate Rule.
 

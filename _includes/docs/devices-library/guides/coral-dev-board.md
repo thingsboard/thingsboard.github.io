@@ -9,7 +9,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The Coral Dev Board is a single-board computer with a removable system-on-module (SOM) that contains the Google Edge TPU ML accelerator coprocessor.  
  It is designed for developers who want to prototype and deploy machine learning models at the edge.  
 

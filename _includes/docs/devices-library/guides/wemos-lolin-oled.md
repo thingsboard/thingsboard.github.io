@@ -10,7 +10,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 
 {{deviceName}} is an ESP32 development board with a built-in 128×64 pixels SSD1306 OLED display.  
 The display communicates with the ESP32 via I2C communication protocol.  

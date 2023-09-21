@@ -1,4 +1,4 @@
-![image](/images/user-guide/integrations/uplink-converter-example-tbel.png)
+![image](https://img.thingsboard.io/user-guide/integrations/uplink-converter-example-tbel.png)
 
 The full source code of TBEL function used in converter:
 

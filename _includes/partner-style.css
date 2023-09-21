@@ -15,7 +15,7 @@ body {
 
 .background img {
 	content: "";
-	background-image: url(/images/partners/hardware-map.svg);
+	background-image: url(https://img.thingsboard.io/partners/hardware-map.svg);
 	background-size: contain;
 	display: block;
 	position: fixed;
@@ -110,7 +110,7 @@ body {
 
 .filter .filter-content .actions .checked:after {
 	content: "";
-	background-image: url(/images/checked-box-icon.svg);
+	background-image: url(https://img.thingsboard.io/checked-box-icon.svg);
 	background-size: contain;
 	display: block;
 	position: absolute;
@@ -247,7 +247,7 @@ body {
 
 .partner-box div.links a:first-child:after {
     content: "";
-    background-image: url(/images/link-arrow.svg);
+    background-image: url(https://img.thingsboard.io/link-arrow.svg);
     background-size: contain;
     display: block;
     position: absolute;

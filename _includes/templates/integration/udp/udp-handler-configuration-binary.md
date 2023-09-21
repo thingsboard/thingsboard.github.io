@@ -1,3 +1,3 @@
 Please select **Handler Type** as **BINARY**
 
-![image](/images/user-guide/integrations/udp/handler-configuration-binary.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/handler-configuration-binary.png)

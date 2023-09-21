@@ -48,11 +48,11 @@ Make sure you create new Security Group based on seller settings.
 
 - Click the **Create New Based on Seller Settings** button
 
-![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch-security.png)
+![image](https://img.thingsboard.io/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch-security.png)
 
 Populate necessary Security Group name and details and save new group
 
-![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-new-security-group.png)
+![image](https://img.thingsboard.io/user-guide/install/aws-marketplace-pe/tb-pe-mk-new-security-group.png)
 
 Click the "Save" button.
 
@@ -66,19 +66,19 @@ We will use the key file later in this guide.
 
 Finally, click the "Launch" button.
 
-![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch-launch.png)
+![image](https://img.thingsboard.io/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch-launch.png)
 
 #### Step 3.6. Open EC2 console
 
 Once Launch is complete, you can navigate to EC2 console to find out the Public IP address of the newly created instance.
 
-![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch-complete.png)
+![image](https://img.thingsboard.io/user-guide/install/aws-marketplace-pe/tb-pe-mk-launch-complete.png)
 
 #### Step 3.7. Obtain your Public IP and EC2 Instance ID
 
 In AWS EC2 console you need to wait while instance state will be changes to **running** and all Status checks will be finished.
 
-![image](/images/user-guide/install/aws-marketplace-pe/tb-pe-mk-ec2-console.png)
+![image](https://img.thingsboard.io/user-guide/install/aws-marketplace-pe/tb-pe-mk-ec2-console.png)
 
 On the image above example instance has this Public DNS name 
 

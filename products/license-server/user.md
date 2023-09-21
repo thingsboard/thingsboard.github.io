@@ -12,7 +12,7 @@ Single account on License server may create unlimited Users. Users page allows i
 
 The way for creating a new user as same as any customer os user account in ThingsBoard PE. Press ***Add User*** , fill the required fields and send the ***Activation link*** to the user.    
 
- ![image](/images/license/users.png)     
+ ![image](https://img.thingsboard.io/license/users.png)     
 
 Within User management page you may log in as particular user or delete the user also. 
 

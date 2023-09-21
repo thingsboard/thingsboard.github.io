@@ -19,7 +19,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [WS101 Smart Button]({{deviceVendorLink}}){: target="_blank"} is a LoRaWAN®-based smart button for wireless controls, triggers and alarms.  
 WS101 supports multiple press actions, all of which can be defined by the user to control devices or trigger scenes.
 WS101 can be widely used in smart homes, smart offices, schools, warehouses, etc.  

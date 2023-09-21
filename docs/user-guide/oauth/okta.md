@@ -28,12 +28,12 @@ To apply the configurations properly, we need to obtain the **clientName**,  **c
 For these reasons we first go for the [Okta Developer Console](https://developer.okta.com/).  
 First we need to create the application. 
 
-![image](/images/user-guide/oauth-2-support/okta/okta-go-for-application.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/okta/okta-go-for-application.png)
 
 Then we need to specify platform type.  
 The platform type equals to **Web** in our case. 
 
-![image](/images/user-guide/oauth-2-support/okta/okta-go-for-application-creation-1.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/okta/okta-go-for-application-creation-1.png)
 
 The name equals the **clientName**, and the Login Redirect URIs equals to the **redirectUriTemplate** from ours side.   
 The  **redirectUriTemplate** can be found in the **thingsboard.yml**
@@ -47,25 +47,25 @@ Where under the domain, please, specify the current **domain** of yours and for 
 For the example of ours, we have the **domain** equals to the tb.tbsupport.xyz and the **port** 80, so that there is no need to specify the port additionally.  
  
 
-![image](/images/user-guide/oauth-2-support/okta/okta-go-for-application-creation-2.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/okta/okta-go-for-application-creation-2.png)
 
 Then we need to confirm the settings we have applied.
   
-![image](/images/user-guide/oauth-2-support/okta/okta-go-for-application-creation-3.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/okta/okta-go-for-application-creation-3.png)
 
 To apply the configurations properly, we need to obtain the **clientId** and **clientSecret** first.  
 Those can be found on the page bottom. 
 
-![image](/images/user-guide/oauth-2-support/okta/okta-go-for-application-creation-clientIdSecret.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/okta/okta-go-for-application-creation-clientIdSecret.png)
 
 
 Then we need to create the **Authorization server**.
 
-![image](/images/user-guide/oauth-2-support/okta/okta-go-for-authorization-server-creation.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/okta/okta-go-for-authorization-server-creation.png)
 
 The **name** and the **audience** can be set any for the **Authorization server**.
 
-![image](/images/user-guide/oauth-2-support/okta/okta-go-for-authorization-server-creation-1.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/okta/okta-go-for-authorization-server-creation-1.png)
 
 
 So that we have received three values which are required to be inserted for the **thingsboard.yml** of ours.  
@@ -82,7 +82,7 @@ SECURITY_OAUTH2_DEFAULT_JWK_SET_URI
 
 The Up to date list of those can be found on the link for the Metadata URI. 
 
-![image](/images/user-guide/oauth-2-support/okta/okta-go-for-authorization-server-creation-2.png)
+![image](https://img.thingsboard.io/user-guide/oauth-2-support/okta/okta-go-for-authorization-server-creation-2.png)
 
 Clicking on those provide us with the json where we need to find the next fields.
 

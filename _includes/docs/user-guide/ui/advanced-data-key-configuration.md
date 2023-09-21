@@ -9,7 +9,7 @@ Charts widget bundle has its own unique advanced data key configuration. All oth
 
 To enter a data key configuration, you should click the pencil icon on the specific data key that you'd like to adjust.
 
-![image](/images/user-guide/ui/widgets/advanced-datakey/enter-data-key-configuration.png)
+![image](https://img.thingsboard.io/user-guide/ui/widgets/advanced-datakey/enter-data-key-configuration.png)
 
 ## 1. Entity table and alarms table widgets
 

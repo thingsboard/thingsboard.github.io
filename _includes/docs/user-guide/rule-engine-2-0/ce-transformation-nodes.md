@@ -14,7 +14,7 @@ Transformation Nodes are used for changing incoming Message fields like Originat
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-change-originator.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-change-originator.png)
 
 All incoming Messages in the Thingsboard have originator field that identifies an entity that submits Message. 
 It could be a Device, Asset, Customer, Tenant, etc.
@@ -32,7 +32,7 @@ The originator can be changed to:
 In 'Relations query' configuration Administrator can select required **Direction** and **relation depth level**. 
 Also set of **Relation filters** can be configured with required Relation type and Entity Types.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-change-originator-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-change-originator-config.png)
 
 If multiple Related Entities are found, **_only the first Entity is used_** as new originator, other entities are discarded.
 
@@ -52,7 +52,7 @@ Outbound Message will have new originator Id.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-script.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-script.png)
 
 Changes Message payload, Metadata or Message type using configured JavaScript function.
 
@@ -71,7 +71,7 @@ Script should return the following structure:
 }
 {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-script-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-script-config.png)
 
 All fields in resulting object are optional and will be taken from original message if not specified.
 
@@ -128,13 +128,13 @@ You can see real life example, how to use this node in those tutorials:
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-to-email.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-to-email.png)
 
 Transforms message to Email Message by populating email fields using values derived from Message metadata.
 Set 'SEND_EMAIL' output Message type that can be accepted later by [**Send Email Node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#send-email-node).
 All email fields can be configured to use values from metadata. Supports sending of HTML pages and images.
   
-![image](/images/user-guide/rule-engine-2-0/nodes/transformation-to-email-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/transformation-to-email-config.png)
 
 For example incoming message has **deviceName** field in metadata and email body should contain its value.
 

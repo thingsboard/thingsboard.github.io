@@ -5,88 +5,88 @@ description: ThingsBoard Trends - Business Intelligence and Analytics Platform f
 
 discover-topology:
   0:
-    image: /images/trendz/getting-started/topology1.png
+    image: https://img.thingsboard.io/trendz/getting-started/topology1.png
     title: "Once logged in you should click on <b>Discover Topology</b> button to discover ThingsBoard entities."
   1:
-    image: /images/trendz/getting-started/topology2.png
+    image: https://img.thingsboard.io/trendz/getting-started/topology2.png
     title: 'When Topology Discovery finished click <b>Finish</b>'
 
 table-view:
   0:
-    image: /images/trendz/getting-started/table_1.png
+    image: https://img.thingsboard.io/trendz/getting-started/table_1.png
     title: 'Create Table view'
   1:
-    image: /images/trendz/getting-started/table_2.png
+    image: https://img.thingsboard.io/trendz/getting-started/table_2.png
     title: 'Add required fields'
   2:
-    image: /images/trendz/getting-started/table_3.png
+    image: https://img.thingsboard.io/trendz/getting-started/table_3.png
     title: 'Define calculations'
   3:
-    image: /images/trendz/getting-started/table_4.png
+    image: https://img.thingsboard.io/trendz/getting-started/table_4.png
     title: 'Add filters'
 
 add-on-dashboard:
   0:
-    image: /images/trendz/getting-started/dashboard_1.png
+    image: https://img.thingsboard.io/trendz/getting-started/dashboard_1.png
     title: 'Click Share button'
   1:
-    image: /images/trendz/getting-started/dashboard_2.png
+    image: https://img.thingsboard.io/trendz/getting-started/dashboard_2.png
     title: 'Configure dashboard details'
   2:
-    image: /images/trendz/getting-started/dashboard_3.png
+    image: https://img.thingsboard.io/trendz/getting-started/dashboard_3.png
     title: 'Dashboard added into ThingsBoard'
 
 predict-energy-line-chart:
   0:
-    image: /images/trendz/getting-started/prediction_1.png
+    image: https://img.thingsboard.io/trendz/getting-started/prediction_1.png
     title: 'Create Line chart'
   1:
-    image: /images/trendz/getting-started/prediction_2.png
+    image: https://img.thingsboard.io/trendz/getting-started/prediction_2.png
     title: 'Add required fields'
   2:
-    image: /images/trendz/getting-started/prediction_3.png
+    image: https://img.thingsboard.io/trendz/getting-started/prediction_3.png
     title: 'Enable time series prediction'
   3:
-    image: /images/trendz/getting-started/prediction_4.png
+    image: https://img.thingsboard.io/trendz/getting-started/prediction_4.png
     title: 'Join Y-axis into one'
   4:
-    image: /images/trendz/getting-started/prediction_5.png
+    image: https://img.thingsboard.io/trendz/getting-started/prediction_5.png
     title: 'Final line chart with predictions'
 
 anomaly-detection-model:
   0:
-    image: /images/trendz/getting-started/anomaly_1.png
+    image: https://img.thingsboard.io/trendz/getting-started/anomaly_1.png
     title: 'Create anomaly detection model'
   1:
-    image: /images/trendz/getting-started/anomaly_2.png
+    image: https://img.thingsboard.io/trendz/getting-started/anomaly_2.png
     title: 'Configure model parameters'
   2:
-    image: /images/trendz/getting-started/anomaly_3.png
+    image: https://img.thingsboard.io/trendz/getting-started/anomaly_3.png
     title: 'Review discovered anomalies'
   3:
-    image: /images/trendz/getting-started/anomaly_4.png
+    image: https://img.thingsboard.io/trendz/getting-started/anomaly_4.png
     title: 'Schedule anomalies autodiscovery job'
 
 save-anomaly-score:
   0:
-    image: /images/trendz/getting-started/anomaly_telemetry_1.png
+    image: https://img.thingsboard.io/trendz/getting-started/anomaly_telemetry_1.png
     title: 'Create Table view with anomaly score data for each energy meter'
   1:
-    image: /images/trendz/getting-started/anomaly_telemetry_2.png
+    image: https://img.thingsboard.io/trendz/getting-started/anomaly_telemetry_2.png
     title: 'Enable telemetry save job'
   2:
-    image: /images/trendz/getting-started/anomaly_telemetry_3.png
+    image: https://img.thingsboard.io/trendz/getting-started/anomaly_telemetry_3.png
     title: 'Set row click entity to energy meter'
 
 create-anomaly-alarm:
   0:
-    image: /images/trendz/getting-started/alarm_1.png
+    image: https://img.thingsboard.io/trendz/getting-started/alarm_1.png
     title: 'Open device profile'
   1:
-    image: /images/trendz/getting-started/alarm_2.png
+    image: https://img.thingsboard.io/trendz/getting-started/alarm_2.png
     title: 'Create Alarm Rule'
   2:
-    image: /images/trendz/getting-started/alarm_3.png
+    image: https://img.thingsboard.io/trendz/getting-started/alarm_3.png
     title: 'Define clear and create conditions'
 ---
 

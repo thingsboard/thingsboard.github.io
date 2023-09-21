@@ -43,7 +43,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                         <a href="https://thingsboard.cloud/signup">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/sign-pe-img.svg" title="Live Demo" alt="Live Demo">
+                                                    <img width="" src="https://img.thingsboard.io/sign-pe-img.svg" title="Live Demo" alt="Live Demo">
                                                  </div>
                                             </span>
                                         </a>
@@ -58,7 +58,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                         <a href="/docs/user-guide/install/pe/ubuntu/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/ubuntu.svg" title="Ubuntu" alt="Ubuntu">
+                                                    <img width="" src="https://img.thingsboard.io/install/platform/ubuntu.svg" title="Ubuntu" alt="Ubuntu">
                                                  </div>
                                             </span>
                                         </a>
@@ -67,7 +67,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                         <a href="/docs/user-guide/install/pe/rhel/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/centos-redhat.svg" title="CentOS/RHEL" alt="CentOS/RHEL">
+                                                    <img width="" src="https://img.thingsboard.io/install/platform/centos-redhat.svg" title="CentOS/RHEL" alt="CentOS/RHEL">
                                                  </div>
                                             </span>
                                         </a>
@@ -76,7 +76,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                         <a href="/docs/user-guide/install/pe/windows/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/windows.svg" title="Windows" alt="Windows">
+                                                    <img width="" src="https://img.thingsboard.io/install/platform/windows.svg" title="Windows" alt="Windows">
                                                  </div>
                                             </span>
                                         </a>
@@ -85,7 +85,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                         <a href="/docs/user-guide/install/pe/docker-windows/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
+                                                    <img width="" src="https://img.thingsboard.io/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
                                                  </div>
                                             </span>
                                         </a>
@@ -94,7 +94,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                         <a href="/docs/user-guide/install/pe/docker/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+                                                    <img width="" src="https://img.thingsboard.io/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
                                                  </div>
                                             </span>
                                         </a>
@@ -103,7 +103,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                         <a href="/docs/user-guide/install/pe/cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/cluster.svg" title="Cluster setup" alt="Cluster setup">
+                                                    <img width="" src="https://img.thingsboard.io/install/platform/cluster.svg" title="Cluster setup" alt="Cluster setup">
                                                  </div>
                                             </span>
                                         </a>
@@ -118,7 +118,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                         <a href="/docs/user-guide/install/pe/aws/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/aws.svg" title="AWS" alt="AWS">
+                                                    <img width="" src="https://img.thingsboard.io/install/cloud/aws.svg" title="AWS" alt="AWS">
                                                  </div>
                                             </span>
                                         </a>
@@ -127,7 +127,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                         <a href="/docs/user-guide/install/pe/azure/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/azure.svg" title="Microsoft Azure" alt="Microsoft Azure">
+                                                    <img width="" src="https://img.thingsboard.io/install/cloud/azure.svg" title="Microsoft Azure" alt="Microsoft Azure">
                                                  </div>
                                             </span>
                                         </a>
@@ -136,7 +136,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                         <a href="/docs/user-guide/install/pe/digital-ocean/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/digitalocean.svg" title="DigitalOcean" alt="DigitalOcean">
+                                                    <img width="" src="https://img.thingsboard.io/install/cloud/digitalocean.svg" title="DigitalOcean" alt="DigitalOcean">
                                                  </div>
                                             </span>
                                         </a>
@@ -145,7 +145,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                         <a href="/docs/user-guide/install/pe/gcp/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/gcp.svg" title="Google Cloud Platform" alt="Google Cloud Platform">
+                                                    <img width="" src="https://img.thingsboard.io/install/cloud/gcp.svg" title="Google Cloud Platform" alt="Google Cloud Platform">
                                                  </div>
                                             </span>
                                         </a>
@@ -154,7 +154,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                         <a href="/docs/user-guide/install/pe/ibm-cloud/">
                                             <span>
                                                 <div class="deployment-logo coming-soon">
-                                                    <img width="" src="/images/install/cloud/ibm-cloud.png" title="IBM Cloud" alt="IBM Cloud">
+                                                    <img width="" src="https://img.thingsboard.io/install/cloud/ibm-cloud.png" title="IBM Cloud" alt="IBM Cloud">
                                                  </div>
                                             </span>
                                         </a>
@@ -163,7 +163,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                         <a href="/docs/user-guide/install/pe/alibaba-cloud/">
                                             <span>
                                                 <div class="deployment-logo coming-soon">
-                                                    <img width="" src="/images/install/cloud/alibaba-cloud.jpg" title="Alibaba Cloud" alt="Alibaba Cloud">
+                                                    <img width="" src="https://img.thingsboard.io/install/cloud/alibaba-cloud.jpg" title="Alibaba Cloud" alt="Alibaba Cloud">
                                                  </div>
                                             </span>
                                         </a>

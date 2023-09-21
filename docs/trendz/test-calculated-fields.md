@@ -11,7 +11,7 @@ description: Test calculated fields
 
 The Calculate Tester is a tool that allows you to debug the code of the Calculate Fields. To open the Calculate Tester window, you need to click on the **Test** button in the Calculate field settings.
 
-![image](/images/trendz/test-calculated-open.png)
+![image](https://img.thingsboard.io/trendz/test-calculated-open.png)
 
 The layout is divided into four sections:
 
@@ -20,7 +20,7 @@ The layout is divided into four sections:
 * **Input**: Here you can view and modify the input data values.
 * **Output**: The resulting output data after the calculation will be shown here, along with any logs if the "Function" field contains any console.log() statements.
 
-![image](/images/trendz/test-calculated-details.png)
+![image](https://img.thingsboard.io/trendz/test-calculated-details.png)
 
 #### Preview
 This part is just a smaller copy of the main visualization. It is not dependent on test data; it is based solely on real data. 
@@ -61,11 +61,11 @@ Pressing **Get real data** again will overwrite the current changes.
 
 #### Example for simple Calculated Field
 
-![image](/images/trendz/test-calculated-simple-field.png)
+![image](https://img.thingsboard.io/trendz/test-calculated-simple-field.png)
 
 #### Example for batch Calculated Field
 
-![image](/images/trendz/test-calculated-batch-field.png)
+![image](https://img.thingsboard.io/trendz/test-calculated-batch-field.png)
 
 #### Function
 More details on how to write a function for the Calculated Field can be found in the corresponding section of the documentation. 
@@ -76,11 +76,11 @@ This is a non-editable field that has two modes:
 
 * **Output data**:  you can see the calculation results. This is the value that the function returns at the end. For non-batch Calculate Fields, this will be a simple value (number or string), and for batch ones, it will be an array of objects similar to Input Data.
 
-![image](/images/trendz/test-calculated-output.png)
+![image](https://img.thingsboard.io/trendz/test-calculated-output.png)
 
 * **Logs**: logs are displayed, similar to those displayed in the browser console, if any console.log() is present in the "Formula" field.
 
-![image](/images/trendz/test-calculated-logs.png)
+![image](https://img.thingsboard.io/trendz/test-calculated-logs.png)
 
 
 Output data and logs updated after clicking the **Test** button. The logs are also updated when you click on **Get real data**, which sometimes makes it possible to make them more complete than the **Test** button.

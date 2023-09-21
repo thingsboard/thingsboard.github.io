@@ -30,9 +30,9 @@ For creating simple Card view:
 * drag and drop the field that you would like to monitor in the **Main Value** column;
 * select required aggregation type
 
-![image](/images/trendz/card-simple.png)
+![image](https://img.thingsboard.io/trendz/card-simple.png)
 
-![image](/images/trendz/card-simple-view.png)
+![image](https://img.thingsboard.io/trendz/card-simple-view.png)
 
 ## Compare with other value
 
@@ -41,9 +41,9 @@ And we ant compare it with how many products already produced.
 
 * Add the value for comparison in the **Compared value** column;
 
-![image](/images/trendz/card-compare.png)
+![image](https://img.thingsboard.io/trendz/card-compare.png)
 
-![image](/images/trendz/card-compare-view.png)
+![image](https://img.thingsboard.io/trendz/card-compare-view.png)
 
 The compared value will present the difference between these two figures in percentage.
 
@@ -56,9 +56,9 @@ this month compared to the previous month:
 * Select **Prev Month** time range
 * For the main view time range set **This Month**
 
-![image](/images/trendz/card-local-config.png)
+![image](https://img.thingsboard.io/trendz/card-local-config.png)
 
-![image](/images/trendz/card-local.png)
+![image](https://img.thingsboard.io/trendz/card-local.png)
 
 The compared value will present the difference between these two figures in percentage.
 

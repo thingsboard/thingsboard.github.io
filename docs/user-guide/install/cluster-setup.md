@@ -30,7 +30,7 @@ description: ThingsBoard IoT platform cluster setup guide
                                         <a href="/docs/user-guide/install/cluster/docker-compose-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cluster/docker-compose.svg" title="Docker Compose" alt="Docker Compose">
+                                                    <img width="" src="https://img.thingsboard.io/install/cluster/docker-compose.svg" title="Docker Compose" alt="Docker Compose">
                                                  </div>
                                             </span>
                                         </a>
@@ -39,7 +39,7 @@ description: ThingsBoard IoT platform cluster setup guide
                                         <a href="/docs/user-guide/install/cluster/minikube-cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cluster/minikube.svg" title="Minikube" alt="Minikube">
+                                                    <img width="" src="https://img.thingsboard.io/install/cluster/minikube.svg" title="Minikube" alt="Minikube">
                                                  </div>
                                             </span>
                                         </a>
@@ -48,7 +48,7 @@ description: ThingsBoard IoT platform cluster setup guide
                                         <a href="/docs/user-guide/install/cluster/openshift-cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cluster/openshift.svg" title="Openshift" alt="Openshift">
+                                                    <img width="" src="https://img.thingsboard.io/install/cluster/openshift.svg" title="Openshift" alt="Openshift">
                                                  </div>
                                             </span>
                                         </a>

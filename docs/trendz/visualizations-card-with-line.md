@@ -20,7 +20,7 @@ For creating simple Card with line chart view:
 * Select required aggregation type;
 * Click “Build Report”.
 
-![image](/images/trendz/card-with-line-simple.png)
+![image](https://img.thingsboard.io/trendz/card-with-line-simple.png)
 
 ## Comparison with the previous period
 
@@ -30,7 +30,7 @@ For example, if we have the amount of water consumed in the last 7 days, we can 
 * Turn on **Enable comparison in the settings**.
 * Click **Build Report**.
 
-![image](/images/trendz/card-with-line-comparison.png)
+![image](https://img.thingsboard.io/trendz/card-with-line-comparison.png)
 
 The compared value will present the difference between these two figures in percentage. The chart will also show the dynamics together for both of these periods.
 
@@ -42,7 +42,7 @@ The comparison of two periods will be presented by default as a red number with 
 * To invert the color, enable or disable the **Reverse comparison colors** option in the settings.
 * Click **Build Report**.
 
-![image](/images/trendz/card-with-line-reverse-colors.png)
+![image](https://img.thingsboard.io/trendz/card-with-line-reverse-colors.png)
 
 ## Manual setting the visualization of the value difference
 It is also possible to manually set the visualization of the value difference by specifying ranges and colors for normal, warning, and dangerous value ranges.
@@ -52,4 +52,4 @@ It is also possible to manually set the visualization of the value difference by
 
 Please note that in this case, the **Reverse comparison colors setting** will be ignored.
 
-![image](/images/trendz/card-with-line-custom-colors.png)
+![image](https://img.thingsboard.io/trendz/card-with-line-custom-colors.png)

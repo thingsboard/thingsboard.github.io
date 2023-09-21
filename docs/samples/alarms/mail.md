@@ -36,17 +36,17 @@ Login to [Live Demo](https://demo.thingsboard.io) server using Tenant Administra
 
 Open **Plugins** page and click on big red "+" button. Populate plugin name and description. 
 
-![image](/images/samples/alarms/plugin-form.png)
+![image](https://img.thingsboard.io/samples/alarms/plugin-form.png)
 
 Once you choose the corresponding plugin type, the form will expand. Populate values as shown below. Use API key as a password.
 
 **NOTE** Since demo instance is hosted on Google Cloud, you need to specify 2525 port. All other SMTP related ports are blocked.
 
-![image](/images/samples/alarms/plugin-configuration.png)
+![image](https://img.thingsboard.io/samples/alarms/plugin-configuration.png)
 
 Don't forget to add other email properties that will force a secure connection.
 
-![image](/images/samples/alarms/plugin-configuration-other.png)
+![image](https://img.thingsboard.io/samples/alarms/plugin-configuration-other.png)
 
 Click on "Add" button.
 
@@ -54,7 +54,7 @@ Click on "Add" button.
 
 Once a plugin is saved successfully, don't forget to activate it by clicking on "Activate" button.
 
-![image](/images/samples/alarms/activate-plugin.png)
+![image](https://img.thingsboard.io/samples/alarms/activate-plugin.png)
 
 ## Next Steps
 
@@ -65,5 +65,5 @@ Explore next [tutorial](/docs/samples/alarms/basic-rules/) to provision basic ru
 Once you configure your plugin and corresponding rules, you may review statistics and events on plugin details page.
 If you have configured something wrong, you should see errors logged on the corresponding tab:
 
-  ![image](/images/samples/alarms/plugin-events.png)
+  ![image](https://img.thingsboard.io/samples/alarms/plugin-events.png)
 

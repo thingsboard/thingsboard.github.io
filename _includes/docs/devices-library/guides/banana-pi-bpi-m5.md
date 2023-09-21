@@ -9,7 +9,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The Banana Pi BPI-M5 is a powerful single-board computer that comes with either a Realtek RTD 7682DD or Rockchip RK3328 processor.  
  It offers a range of connectivity options, including Ethernet, WIFI, and Bluetooth.  
  The board is designed for a wide range of applications, from media centers to gaming and AI projects.  

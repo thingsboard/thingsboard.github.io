@@ -2,13 +2,13 @@ Create a [dashboard](https://thingsboard.io/docs/{{page.docsPrefix}}user-guide/d
 
 {% assign dashboardCreation = '
     ===
-        image: /images/devices-library/ready-to-go-devices/iot-gateway-cell-1024/exxn-create-dashboard-1.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/iot-gateway-cell-1024/exxn-create-dashboard-1.png,
         title: Go to the <b>Dashboard groups</b> tab -> <b>All</b>. Creat new dashboard by clicking the "plus" button in the upper right corner of the dashboards page. Enter dashboard name and click on "<b>Add</b>" button.
     ===
-        image: /images/devices-library/ready-to-go-devices/iot-gateway-cell-1024/exxn-create-dashboard-2.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/iot-gateway-cell-1024/exxn-create-dashboard-2.png,
         title: Create <b>Radial gauge</b> widget from the <b>Analog gauges</b> bundle. We used <b><i>sc0_temperature</i></b>.
     ===
-        image: /images/devices-library/ready-to-go-devices/iot-gateway-cell-1024/exxn-create-dashboard-3.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/iot-gateway-cell-1024/exxn-create-dashboard-3.png,
         title: The data will be shown on the selected widget.
 '
 %}

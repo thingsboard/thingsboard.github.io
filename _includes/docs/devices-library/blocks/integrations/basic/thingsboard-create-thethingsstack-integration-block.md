@@ -5,19 +5,19 @@ To add a gateway, you can follow next steps:
 
 {% assign addGatewaySteps = '
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/1-tts-login.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/1-tts-login.png,
         title: Login to the cloud and open your console.
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/2-welcome-screen.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/2-welcome-screen.png,
         title: Choose **Register a gateway**.
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/3-gateway-list.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/3-gateway-list.png,
         title: Press **Add gateway** button.
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/4-register-gateway.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/4-register-gateway.png,
         title: Put information about the gateway (gateway EUI).
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/5-gateway-info.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/5-gateway-info.png,
         title: The gateway is added.
 '%}
 
@@ -38,19 +38,19 @@ Now we need to configure application on The Things Stack. To do this please foll
 
 {% assign addIntegrationSteps = '
     === 
-        image: /images/devices-library/basic/integrations/thethingsstack/2-welcome-screen.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/2-welcome-screen.png,
         title: Open your console and click on <b>Create an application</b>.
     === 
-        image: /images/devices-library/basic/integrations/thethingsstack/3-create-application.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/3-create-application.png,
         title: Create a new application.
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/4-tts-integration-mqtt.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/4-tts-integration-mqtt.png,
         title: Open <b>Integrations</b> -> <b>MQTT</b> in the menu.
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/5-generate-new-api-key.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/5-generate-new-api-key.png,
         title: Click on <b>Generate new API key</b> button.
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/6-copy-access-key.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/6-copy-access-key.png,
         title: Press on copy icon to copy a key and save it.
 '%}
 
@@ -153,13 +153,13 @@ Next we will create an integration with The Things Stack (TTS) inside the Things
 
 {% assign createTTSIntegration = '
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/1-create-tts-integration.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/1-create-tts-integration.png,
         title: Go to **Integrations**, press **plus** button and choose **The Things Stack Community** as a type, put some name.
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/2-create-tts-integration-uplink.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/2-create-tts-integration-uplink.png,
         title: Check **Create new uplink data converter** and replace a code or create the existing one.
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/3-create-tts-integration-configuration.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/3-create-tts-integration-configuration.png,
         title: Fill the field with your parameters, 
 '
 %}

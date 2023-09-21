@@ -9,7 +9,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The Lenovo Leez SBC P710 is a single-board computer designed for makers and developers.  
  It features an Allwinner H5 quad-core ARM Cortex-A53 processor, 2GB DDR3 RAM, 16GB eMMC flash storage, and a Mali-450MP4 GPU.  
  It also includes Gigabit Ethernet, Wi-Fi 802.11ac, and Bluetooth 4.  

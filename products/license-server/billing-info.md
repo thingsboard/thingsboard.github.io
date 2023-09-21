@@ -16,11 +16,11 @@ Now you can easily pay for the subscription or purchase a perperual license onli
 
 Notice: payments are non-refundable. Although if you decide to terminate (***Cancel***) the subscription before the end time, remain amount of units will be reserved upon your account. In the Billing section you will see the ***Account credit*** notice next to ***Payment method*** and ***Billing information***. These credits will be deducted from the total sum of your next purchasing.  
 
-![image](/images/license/accountcredit.png) 
+![image](https://img.thingsboard.io/license/accountcredit.png) 
 
 All invoices are automatically generated and available for download in the License portal in a PDF-format.
 
-![image](/images/license/billing.png) 
+![image](https://img.thingsboard.io/license/billing.png) 
  
 ### Payment method
 ThingsBoard Inc. wants the customer get most of the product and the way to get it was as comfortable as possible.  Launching of License portal allowed to use credit/debit cards for online payments. But we continue diversifying payment methods and this section will constantly extend.

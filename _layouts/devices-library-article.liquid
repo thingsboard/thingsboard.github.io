@@ -264,7 +264,7 @@
                         var block = codeBlock.find('pre.highlight > code .rouge-code');
                         var currentId = "codeblock" + (i + 1);
                         block.attr('id', currentId);
-                        var clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><p>Copy to clipboard</p><div><img src="/images/copy-code-icon.svg" alt="Copy to clipboard"></div></button>');
+                        var clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><p>Copy to clipboard</p><div><img src="https://img.thingsboard.io/copy-code-icon.svg" alt="Copy to clipboard"></div></button>');
                         $(this).append(clipButton);
                         var troyan = codeBlock.find('pre.highlight');
                         var Tooltip = $('<div class="customTooltip"><div class="tooltipText">Copied!</div></div>');

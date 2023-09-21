@@ -29,13 +29,13 @@ Login as tenant administrator. Use [default credentials](/docs/samples/demo-acco
 Open **Devices** and click on "+" button in the top right corner.
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/device-page.png)
+![image](https://img.thingsboard.io/gateway/device-page.png)
 {: refdef} 
 
 Populate your gateway name and select "Is gateway" checkbox. Click "Add".
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/device-add.png)
+![image](https://img.thingsboard.io/gateway/device-add.png)
 {: refdef}
 
 **NOTE:** Gateway and device names should be unique in the scope of a tenant.
@@ -44,7 +44,7 @@ Open your new device card and click on "Copy Access Token" button.
 Paste the token to a safe place. We will use it for ThingsBoard configuration in the next steps.
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/device-token.png)
+![image](https://img.thingsboard.io/gateway/device-token.png)
 {: refdef} 
 
 ## Step 2: Install the gateway
@@ -126,7 +126,7 @@ Open "Latest Telemetry" tab and review following statistics: "**eventsProduced**
 All values should be set to "0".
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/review-gateway-statistics.png)
+![image](https://img.thingsboard.io/gateway/review-gateway-statistics.png)
 {: refdef}
 
 ## Step 6: Add connectors to the main configuration file 

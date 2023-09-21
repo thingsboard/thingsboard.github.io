@@ -13,7 +13,7 @@ User can access stored files using **Files** or **Reports** widgets which is par
 
 ThingsBoard provides access to stored files via **Files** Widget which is part of **Files** Widgets Bundle.
 
-![image](/images/user-guide/ui/file-storage-files-widget.png)
+![image](https://img.thingsboard.io/user-guide/ui/file-storage-files-widget.png)
  
 The widget has ability to filter files using time range component and ability to search files by name.
 Each file can be downloaded by clicking on **Download file** button.

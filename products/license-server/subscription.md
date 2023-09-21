@@ -36,11 +36,11 @@ or choose exact plan directly from [pricing](/pricing/). Once you press ***Get y
 By default, subscription covers single ThingsBoard PE instance (server process). However, customer can add more instances to the same subscription. This allows to launch multiple instances that use same subscription credentials in one server cluster.
 This feature is very useful for container based setups.
 
-![image](/images/license/manageInstance.png)  
+![image](https://img.thingsboard.io/license/manageInstance.png)  
 
 Once you purchase a subscription, you can flexibly upgrade or downgrade your subscription plan. If the subscription is deleted before expiration, Stripe will keep the balance. After a certain time period (about an hour) negative Amount due (***Account credit***) with the remain units will appear in [Billing section](/products/license-server/billing-info/) of License portal. This sum is deducted from Total fee whenever particular customer purchase a new plan or a perpetual license.
 
-![image](/images/license/subscription.png)  
+![image](https://img.thingsboard.io/license/subscription.png)  
  
 
 ### User Guide

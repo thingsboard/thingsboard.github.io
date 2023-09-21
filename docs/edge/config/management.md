@@ -4,7 +4,7 @@ title: Edge Management Overview
 description: Edge Management Overview
 ---
 
-![image](/images/coming-soon.jpg)
+![image](https://img.thingsboard.io/coming-soon.jpg)
 
 ### Synchronization architecture
 
@@ -21,14 +21,14 @@ Once the connection established ThingsBoard CE/PE cloud will push all messages i
 
 User is able to see list of transferred messages from the cloud to edge using **Downlinks** tab of **Edge** entity.
 
-![image](/images/edge/sync/downlink-events.png)
+![image](https://img.thingsboard.io/edge/sync/downlink-events.png)
 
 ##### Force synchronization procedure
 
 In case of network outage, or some other communication problem ThingsBoard Edge could become out of sync from the cloud.
 User is able to force synchronization process by clicking on the **Sync Edge** button:
 
-![image](/images/edge/sync/sync-button.png)
+![image](https://img.thingsboard.io/edge/sync/sync-button.png)
 
 ### Device management on edge
 

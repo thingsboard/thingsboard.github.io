@@ -13,7 +13,7 @@ Useful if you don't want to reprocess the failed messages.
 For example, the rule chain below will reprocess the failed messages only for important messages. 
 Failure of unimportant message will be simply ignored. 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/acknowledge-failed.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/acknowledge-failed.png)
 
 **Note:** We recommend the "acknowledge" rule node to be the last in the processing chain.
 Theoretically, you may add other rule nodes after the "acknowledge" one. However, this may cause the OOM errors. 
@@ -43,11 +43,11 @@ The output node enables reuse of the rule chains and extraction of the processin
 
 For example, you may create a rule chain that validates the incoming message, and process valid and invalid messages separately.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/rule-chain-node-main.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/rule-chain-node-main.png)
 
 The logic of message validation may be reused in other rule chains. For this purpose, we extract it in a separate rule chain.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/rule-chain-node-inner.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/rule-chain-node-inner.png)
 
 Notice the "Output" nodes we use in validation rule chain. 
 The names of the output nodes should match the outgoing [relations](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-node-connection) of the "rule chain node" in the main rule chain.

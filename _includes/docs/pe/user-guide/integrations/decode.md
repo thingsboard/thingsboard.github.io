@@ -6,7 +6,7 @@ This tutorial will show how to set up and integrate diverse signals from Distric
 
 
 
-![image](/images/user-guide/integrations/decode/Picture0.png)
+![image](https://img.thingsboard.io/user-guide/integrations/decode/Picture0.png)
 
 
 
@@ -15,7 +15,7 @@ System diagram shows some typical automation and metering elements in DHS: subst
 
 
 
-![image](/images/user-guide/integrations/decode/Picture1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/decode/Picture1.png)
 
 
 
@@ -38,7 +38,7 @@ After the successful login procedure, click on the Devices entry in the left sid
 
 
 
-![image](/images/user-guide/integrations/decode/Picture2.png)
+![image](https://img.thingsboard.io/user-guide/integrations/decode/Picture2.png)
 
 
 
@@ -46,7 +46,7 @@ DL28 device appears on a Device window. Click on DL28 to open Device details win
 
 
 
-![image](/images/user-guide/integrations/decode/Picture3.png)
+![image](https://img.thingsboard.io/user-guide/integrations/decode/Picture3.png)
 
 
 
@@ -57,7 +57,7 @@ Click on the Dashboards entry in the left side menu and then on "+" icon. Select
 
 
 
-![image](/images/user-guide/integrations/decode/Picture4.png)
+![image](https://img.thingsboard.io/user-guide/integrations/decode/Picture4.png)
 
 
 
@@ -68,7 +68,7 @@ Click on DL28, then on OPEN DASHBOARD button to open Dashboard. Click on the pen
 
 
 
-![image](/images/user-guide/integrations/decode/Picture5.png)
+![image](https://img.thingsboard.io/user-guide/integrations/decode/Picture5.png)
 
 
 
@@ -76,7 +76,7 @@ In Add Widget window click on the Entity alias field and press ENTER. Add DL28 d
 
 
 
-![image](/images/user-guide/integrations/decode/Picture6.png)
+![image](https://img.thingsboard.io/user-guide/integrations/decode/Picture6.png)
 
 
 
@@ -84,7 +84,7 @@ Click on a Advanced tab and enter following parameters.
 
 
 
-![image](/images/user-guide/integrations/decode/Picture7.png)
+![image](https://img.thingsboard.io/user-guide/integrations/decode/Picture7.png)
 
 
 
@@ -97,7 +97,7 @@ else return { "exio_relay_1": 0 };
 
 
 
-![image](/images/user-guide/integrations/decode/Picture8.png)
+![image](https://img.thingsboard.io/user-guide/integrations/decode/Picture8.png)
 
 
 
@@ -107,7 +107,7 @@ Using similar procedure add two Led indicator widgets to display relay states, u
 
 
 
-![image](/images/user-guide/integrations/decode/Picture9.png)
+![image](https://img.thingsboard.io/user-guide/integrations/decode/Picture9.png)
 
 
 
@@ -115,7 +115,7 @@ Using similar procedure add Digital gauge widget to display return temperature f
 
 
 
-![image](/images/user-guide/integrations/decode/Picture10.png)
+![image](https://img.thingsboard.io/user-guide/integrations/decode/Picture10.png)
 
 
 
@@ -134,7 +134,7 @@ In Modbus Poll list menu add two parameters. For relay on/off control use ForceS
 
 
 
-![image](/images/user-guide/integrations/decode/Picture11.png)
+![image](https://img.thingsboard.io/user-guide/integrations/decode/Picture11.png)
 
 
 
@@ -145,7 +145,7 @@ Select a show/hide option to show detailed device data. Data values from M-Bus a
 
 
 
-![image](/images/user-guide/integrations/decode/Picture12.png)
+![image](https://img.thingsboard.io/user-guide/integrations/decode/Picture12.png)
 
 
 
@@ -155,7 +155,7 @@ In MQTT Publish List menu add three parameters, two for publishing relay states,
 
 
 
-![image](/images/user-guide/integrations/decode/Picture13.png)
+![image](https://img.thingsboard.io/user-guide/integrations/decode/Picture13.png)
 
 
 
@@ -164,7 +164,7 @@ Click on a Save button to save changes and restart application by clicking on Re
 
 
 
-![image](/images/user-guide/integrations/decode/Picture14.png)
+![image](https://img.thingsboard.io/user-guide/integrations/decode/Picture14.png)
 
 
 
@@ -173,7 +173,7 @@ Open the DL28 dashboard. Relays are controlled by clicking on switches EXIO RL1 
 
 
 
-![image](/images/user-guide/integrations/decode/Picture15.png)
+![image](https://img.thingsboard.io/user-guide/integrations/decode/Picture15.png)
 
 
 

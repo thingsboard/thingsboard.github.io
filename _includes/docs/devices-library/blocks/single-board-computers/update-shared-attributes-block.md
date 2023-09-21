@@ -80,4 +80,4 @@ def main():
 Also, if you are using the imported dashboard, you can change the blinking period using the following widget, which you 
 can see in the bottom right corner of the dashboard:
 
-![](/images/devices-library/basic/single-board-computers/attribute-update-widget.png)
+![](https://img.thingsboard.io/devices-library/basic/single-board-computers/attribute-update-widget.png)

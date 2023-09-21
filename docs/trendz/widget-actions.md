@@ -32,7 +32,7 @@ If you want to use 'onRowClick' action - you need to define what item is selecte
 
 #### Configure Switch Field action
 
-![image](/images/trendz/trndz_dashboard_time.png)
+![image](https://img.thingsboard.io/trendz/trndz_dashboard_time.png)
 
 ## Next Steps
 

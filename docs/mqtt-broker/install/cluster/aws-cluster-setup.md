@@ -79,15 +79,15 @@ the database in the same VPC and subnets as TBMQ cluster and use
 
 Here you should choose VPC with the name of your cluster:
 
-![image](/images/mqtt-broker/install/aws-rds-vpc.png)
+![image](https://img.thingsboard.io/mqtt-broker/install/aws-rds-vpc.png)
 
 Here you should choose security group corresponding to the one on the screen:
 
-![image](/images/mqtt-broker/install/aws-rds-vpc-sg.png)
+![image](https://img.thingsboard.io/mqtt-broker/install/aws-rds-vpc-sg.png)
 
 Make sure that `thingsboard_mqtt_broker` database is created along with PostgreSQL instance (or create it afterward).
 
-![image](/images/mqtt-broker/install/aws-rds-default-database.png)
+![image](https://img.thingsboard.io/mqtt-broker/install/aws-rds-default-database.png)
 
 ## Step 5. Amazon MSK Configuration
 
@@ -95,7 +95,7 @@ You'll need to set up Amazon MSK.
 To do so you need to open AWS console, MSK submenu, press `Create cluster` button and choose `Custom create` mode.
 You should see the similar image:
 
-![image](/images/mqtt-broker/install/aws-msk-creation.png)
+![image](https://img.thingsboard.io/mqtt-broker/install/aws-msk-creation.png)
 
 **Note**: Some recommendations:
 
@@ -110,15 +110,15 @@ We also recommend to use private subnets. This way it will be nearly impossible 
 
 Now you should choose TBMQ cluster's VPC for the Kafka cluster:
 
-![image](/images/mqtt-broker/install/aws-msk-vpc.png)
+![image](https://img.thingsboard.io/mqtt-broker/install/aws-msk-vpc.png)
 
 After that you need to browse the security groups and choose group corresponding to the one on the screen:
 
-![image](/images/mqtt-broker/install/aws-msk-vpc-sg.png)
+![image](https://img.thingsboard.io/mqtt-broker/install/aws-msk-vpc-sg.png)
 
 Also, you should enable `Plaintext` communication between clients and brokers:
 
-![image](/images/mqtt-broker/install/aws-msk-security.png)
+![image](https://img.thingsboard.io/mqtt-broker/install/aws-msk-security.png)
 
 At the end, carefully review the whole configuration of the MSK and then finish the cluster creation.
 
@@ -129,7 +129,7 @@ At the end, carefully review the whole configuration of the MSK and then finish 
 Once the database switch to the ‘Available’ state, on AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to 
 `SPRING_DATASOURCE_URL` in the `tb-broker-db-configmap.yml` instead of `RDS_URL_HERE` part.
 
-![image](/images/mqtt-broker/install/aws-rds-endpoint.png)
+![image](https://img.thingsboard.io/mqtt-broker/install/aws-rds-endpoint.png)
 
 Also, you'll need to set `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD` with PostgreSQL `username` and `password` corresponding.
 
@@ -142,7 +142,7 @@ aws kafka get-bootstrap-brokers --region us-east-1 --cluster-arn $CLUSTER_ARN
 {: .copy-code}
 Where **$CLUSTER_ARN** is the Amazon Resource Name (ARN) of the MSK cluster:
 
-![image](/images/mqtt-broker/install/aws-msk-arn.png)
+![image](https://img.thingsboard.io/mqtt-broker/install/aws-msk-arn.png)
 
 You'll need to paste data from the `BootstrapBrokerString` to the `TB_KAFKA_SERVERS` environment variable in the `tb-broker.yml` file.
 

@@ -17,10 +17,10 @@ Let's take a look at the settings available in the asset profile.
 To create an asset profile, go to the Asset Profiles on the Profiles tab and click on the plus button to add a new asset profile.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/asset-profile/asset-profile-add-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-add-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/asset-profile/asset-profile-add-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-add-1-pe.png)
 {% endif %}
 
 ## Asset Profile settings
@@ -36,17 +36,17 @@ The new Rule Chain will receive asset attributes updates, and asset lifecycle(Cr
 This setting is available in the Asset Profile details.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/asset-profile/asset-profile-rule-chain-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-rule-chain-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/asset-profile/asset-profile-rule-chain-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-rule-chain-1-pe.png)
 {% endif %}
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/asset-profile/asset-profile-rule-chain-2-ce.png)
+![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-rule-chain-2-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/asset-profile/asset-profile-rule-chain-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-rule-chain-2-pe.png)
 {% endif %}
 
 ### Queue
@@ -61,18 +61,18 @@ Separation of the queues also allows you to customize different [submit](/docs/{
 This setting is available when you create an Asset Profile and in the Asset Profile details.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/asset-profile/asset-profile-queue-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-queue-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/asset-profile/asset-profile-queue-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-queue-1-pe.png)
 {% endif %}
 
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/asset-profile/asset-profile-queue-2-ce.png)
+![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-queue-2-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/asset-profile/asset-profile-queue-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/asset-profile/asset-profile-queue-2-pe.png)
 {% endif %}
 
 ## Related guides

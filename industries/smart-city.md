@@ -36,12 +36,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/x-telia.png">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/x-telia.png">
         <a class="outlink" href="https://x-telia.com/" alt="X-TELIA"> X-TELIA </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/x-telia-person.jpg"/>
+            <img class="person-logo" src="https://img.thingsboard.io/customers/x-telia-person.jpg"/>
             <div class="person-title">
                 <p class="person-name"> Eric Bourbeau </p>
                 <p class="person-position"> Président fondateur / Founder and CEO </p>
@@ -67,7 +67,7 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/ositech.jpg">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/ositech.jpg">
         <a class="outlink" href="https://www.ositech.com/" alt="Ositech Communications, Inc."> Ositech Communications, Inc. </a>
     </div>
     <div class="customer-content">
@@ -88,7 +88,7 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/conbee.svg">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/conbee.svg">
     </div>
     <div class="customer-content">
         <div class="person-container">
@@ -111,12 +111,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/iioote.png">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/iioote.png">
         <a class="outlink" href="https://www.iioote.com/" alt="iiOOTE AB"> iiOOTE AB </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/bertil.png"/>
+            <img class="person-logo" src="https://img.thingsboard.io/customers/bertil.png"/>
             <div class="person-title">
                 <p class="person-name"> Bertil Moberg </p>
                 <p class="person-position"> Co-Founder & Head of IoT Solutions </p>
@@ -136,7 +136,7 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/makerssro.jpg">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/makerssro.jpg">
         <a class="outlink" href="https://www.makers.sk/" alt="MAKERS s. r. o."> MAKERS s. r. o. </a>
     </div>
     <div class="customer-content">

@@ -8,10 +8,10 @@ In addition to entering a password, one must populate a secret code that comes t
 The validity period of the secret and the remaining properties available for the system administrator can make online accounts invulnerable to cybercriminals.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/two-factor-authentication/two-factor-authentication-ce.png)
+![image](https://img.thingsboard.io/user-guide/two-factor-authentication/two-factor-authentication-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/two-factor-authentication/two-factor-authentication-pe.png)
+![image](https://img.thingsboard.io/user-guide/two-factor-authentication/two-factor-authentication-pe.png)
 {% endif %}
 
 ### Two-factor authentication options available in ThingsBoard
@@ -31,10 +31,10 @@ The system administrator user configures the default security policies and optio
 4. Save changes.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/two-factor-authentication/two-factor-authentication-sysadmin-ce.png)
+![image](https://img.thingsboard.io/user-guide/two-factor-authentication/two-factor-authentication-sysadmin-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/two-factor-authentication/two-factor-authentication-sysadmin-pe.png)
+![image](https://img.thingsboard.io/user-guide/two-factor-authentication/two-factor-authentication-sysadmin-pe.png)
 {% endif %}
 
 ### Two-factor authentication for the user login

@@ -7,8 +7,8 @@ return msg.temperature == null
 {: .copy-code}
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/script-config-tbel-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/script-config-tbel-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/script-config-tbel-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/script-config-tbel-pe.png)
 {% endif %}

@@ -7,7 +7,7 @@ kubectl get ingress
 
 You should see the similar picture:
 
-![image](/images/install/cloud/application-loadbalancers.png)
+![image](https://img.thingsboard.io/install/cloud/application-loadbalancers.png)
 
 To connect to the cluster via MQTT or COAP you'll need to get corresponding service, you can do it with command:
 
@@ -18,7 +18,7 @@ kubectl get service
 
 You should see the similar picture:
 
-![image](/images/install/cloud/network-loadbalancers.png)
+![image](https://img.thingsboard.io/install/cloud/network-loadbalancers.png)
 
 There are two load-balancers:
 - tb-mqtt-loadbalancer - for TCP (MQTT) protocol

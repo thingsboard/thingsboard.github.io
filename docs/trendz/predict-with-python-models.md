@@ -8,16 +8,16 @@ description: Batch Calculated Fields
 
 python-prediction-basic-example:
   0:
-    image: /images/trendz/python-predict-univariable-barview.png
+    image: https://img.thingsboard.io/trendz/python-predict-univariable-barview.png
     title: 'Create bar chart'
   1:
-    image: /images/trendz/python-predict-univariable-enable.png
+    image: https://img.thingsboard.io/trendz/python-predict-univariable-enable.png
     title: 'Enable prediction and select Custom model'
   2:
-    image: /images/trendz/python-predict-univariable-sources.png
+    image: https://img.thingsboard.io/trendz/python-predict-univariable-sources.png
     title: 'Write python code for timeseries forecasting'
   3:
-    image: /images/trendz/python-predict-univariable-result.png
+    image: https://img.thingsboard.io/trendz/python-predict-univariable-result.png
     title: 'Bar chart with historical data and forecast for the next 14 days'
 ---
 

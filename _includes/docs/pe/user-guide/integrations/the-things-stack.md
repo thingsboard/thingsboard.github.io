@@ -25,7 +25,7 @@ The first step is to create an **application** in TheThingsStack console. Go to 
 Handler registration - used to identify region where application will be registered. In our example it
 will be *eu* region.
 
-![image](/images/user-guide/integrations/ttn/ttn-add-application.png)
+![image](https://img.thingsboard.io/user-guide/integrations/ttn/ttn-add-application.png)
 
 ##### Payload Decoder
 Our device submits data in binary format. We have 2 options where to decode this data:
@@ -45,7 +45,7 @@ function Decoder(bytes, port) {
 ```
 {: .copy-code}
 
-![image](/images/user-guide/integrations/ttn/ttn-decoder.png)
+![image](https://img.thingsboard.io/user-guide/integrations/ttn/ttn-decoder.png)
 
 Press **Save payload function**
 
@@ -59,9 +59,9 @@ Next step is a Device creation in the TTS. Open **Devices** page and press **reg
 - AppKey - press **generate** button for generating random identified
 
 
-![image](/images/user-guide/integrations/ttn/ttn-add-device_0.png)
+![image](https://img.thingsboard.io/user-guide/integrations/ttn/ttn-add-device_0.png)
 
-![image](/images/user-guide/integrations/ttn/ttn-add-device_1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/ttn/ttn-add-device_1.png)
 
 Press **Register** button.
 
@@ -83,7 +83,7 @@ and transform it into JSON.
 }
 ```
 
-![image](/images/user-guide/integrations/ttn/payload_format.png)
+![image](https://img.thingsboard.io/user-guide/integrations/ttn/payload_format.png)
 
 #### Access key (API key)
 
@@ -173,9 +173,9 @@ return result;
 ```
 {: .copy-code}
 
-![image](/images/user-guide/integrations/ttn/tb-converter_0.png)
+![image](https://img.thingsboard.io/user-guide/integrations/ttn/tb-converter_0.png)
 
-![image](/images/user-guide/integrations/ttn/tb-converter_1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/ttn/tb-converter_1.png)
 
 ##### Thingsboard Downlink Data Converter
 For sending Downlink messages from Thingsboard to the device inside TTS, we need to define a Downlink 
@@ -222,7 +222,7 @@ return result;
 This converter will take the **version** field from the incoming message and add it as a payload field 
 in the outbound message. The destination device is a **thermostat-a** device.
 
-![image](/images/user-guide/integrations/ttn/tb-downlink-converter.png)
+![image](https://img.thingsboard.io/user-guide/integrations/ttn/tb-downlink-converter.png)
 
 ##### TTS Integration
 
@@ -238,12 +238,12 @@ Next we will create the integration with TheThingsStack inside Thingsboard. Open
 - Access Key: use **Access Key** from TTS
 - Use API v3: Set **Enable**
 
-![image](/images/user-guide/integrations/ttn/tb-integration_0.png)
+![image](https://img.thingsboard.io/user-guide/integrations/ttn/tb-integration_0.png)
 
 When adding the integration, you can test the connection between ThingsBoard and TheThingsStack. For it, 
 after all required configurations, click the **Check connection** button.
 
-![image](/images/user-guide/integrations/ttn/tb-integration_1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/ttn/tb-integration_1.png)
 
 ## Validation
 
@@ -251,35 +251,35 @@ after all required configurations, click the **Check connection** button.
 Let's verify our integration. Go to the device **thermostat-a** page in TheThingsStack. Scroll to the **Simulate Uplink** section.
 Our device will publish temperature **0F** (15). So enter **0F** into the payload field and press the **Send** button.
 
-![image](/images/user-guide/integrations/ttn/ttn-send-payload.png)
+![image](https://img.thingsboard.io/user-guide/integrations/ttn/ttn-send-payload.png)
 
 In Thingsboard go to **Device Group** -> **All** -> **thermostat-a** - here you can see that 
 
 - a new device was registered in Thingsboard
 - in the **Latest Telemetry** section you will see that the last submitted temperature equals 15.
 
-![image](/images/user-guide/integrations/ttn/tb-device-telemetry.png)
+![image](https://img.thingsboard.io/user-guide/integrations/ttn/tb-device-telemetry.png)
 
 ##### Validate Downlink Messages
 For testing Downlink Messages, we will update our Root Rule Chain to send downlink message when a device attribute is changed.
 Open and edit **Root Rule Chain**. Add **Integration Downlink** Action node and connect it with the **Message Type Switch** Node using the relation 
 **Attributes Updated**
 
-![image](/images/user-guide/integrations/ttn/tb-add-rule-downlink.png)
+![image](https://img.thingsboard.io/user-guide/integrations/ttn/tb-add-rule-downlink.png)
 
-![image](/images/user-guide/integrations/ttn/tb-route-to-downlink.png)
+![image](https://img.thingsboard.io/user-guide/integrations/ttn/tb-route-to-downlink.png)
 
 Save Changes.
 
 Go to **Device Group** -> **All** -> **thermostat_a** -> attributes section. We will add **Shared attribute** with the name **version** and
 the value **v.0.11**
 
-![image](/images/user-guide/integrations/ttn/tb-add-version.png)
+![image](https://img.thingsboard.io/user-guide/integrations/ttn/tb-add-version.png)
 
 By making this step, we triggered a downlink message to the device **thermostat-a** and this message should contain the versions field value. 
 Open TTS Console, navigate to **tb_platform** application, to the section **Data**. And we see that the Downlink message was received.
 
-![image](/images/user-guide/integrations/ttn/ttn-downlink-verified.png)
+![image](https://img.thingsboard.io/user-guide/integrations/ttn/ttn-downlink-verified.png)
 
 ## See also
 With this integration you can also configure Downlink converters and trigger required actions using Rule Engine nodes.

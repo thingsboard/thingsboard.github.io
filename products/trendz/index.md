@@ -5,24 +5,24 @@ description:
 
 cloudPlan:
     0:
-        image: /images/trendz/cloud-1.png
+        image: https://img.thingsboard.io/trendz/cloud-1.png
         title: 'Log in to ThingsBaord Cloud account and select “Plan and Billing” menu option. Press “Update Plan” button'
     1:
-        image: /images/trendz/cloud-2.png
+        image: https://img.thingsboard.io/trendz/cloud-2.png
         title: 'Choose “ThingsBoard + Trendz” and select the most suitable plan for you'        
     2:
-        image: /images/trendz/cloud-3.png
+        image: https://img.thingsboard.io/trendz/cloud-3.png
         title: 'Reload the page to see new “Trendz Analytics” option in your ThingsBoard Menu'
 
 selfManagedPlan:
     0:
-        image: /images/trendz/self-managed-1.png
+        image: https://img.thingsboard.io/trendz/self-managed-1.png
         title: 'Log into Licence Portal and create new Trendz Analytics Subscription'
     1:
-        image: /images/trendz/self-managed-2.png
+        image: https://img.thingsboard.io/trendz/self-managed-2.png
         title: 'Get your license key'
     2:
-        image: /images/trendz/self-managed-3.png
+        image: https://img.thingsboard.io/trendz/self-managed-3.png
         title: 'Follow the instructions to install Trendz the instructions to install Trendz Analytics to your server'
 
 ---
@@ -55,7 +55,7 @@ selfManagedPlan:
             <div class="content">
                 <h3 class="header">Predict failures and forecast utilization</h3>
                 <div class="mobile-img">
-                    <img src="/images/trendz/predict-screen.png">
+                    <img src="https://img.thingsboard.io/trendz/predict-screen.png">
                 </div>
                 <p class="text">For better decision making, resource planning and reducing cost business requires answers to 3 main questions: What will happen, When, and Why?</p>
                 <p class="accent-text">Trendz provides an answer</p>
@@ -63,7 +63,7 @@ selfManagedPlan:
             </div>
             <div class="image-block screenshot-block">
                 <div class="image-wrapper screenshot" id="prediction">
-                    <img src="/images/trendz/predict-screen.png">
+                    <img src="https://img.thingsboard.io/trendz/predict-screen.png">
                 </div>
             </div>
         </main>
@@ -89,14 +89,14 @@ selfManagedPlan:
             <div class="content">
                 <h3 class="header">Detection Anomalies</h3>
                 <div class="mobile-img">
-                    <img src="/images/trendz/anomalies-screen.png">
+                    <img src="https://img.thingsboard.io/trendz/anomalies-screen.png">
                 </div>
                 <p class="text">Detect anomalies with automated tools based on built-in machine learning algorithms. Prioritise them and focus on real problems with anomaly scoring.</p>
                 <a href="/docs/trendz/anomaly/anomaly-detection-overview/" class="button try-pe">Start Analysis</a>           
             </div>
             <div class="image-block screenshot-block">
                 <div class="image-wrapper screenshot" id="anomalies">
-                    <img src="/images/trendz/anomalies-screen.png">
+                    <img src="https://img.thingsboard.io/trendz/anomalies-screen.png">
                 </div>
             </div>
         </main>
@@ -123,7 +123,7 @@ selfManagedPlan:
             <div class="content">
                 <h3 class="header">Share securely</h3>
                 <div class="mobile-img">
-                    <img src="/images/trendz/dashboard-screen.png">
+                    <img src="https://img.thingsboard.io/trendz/dashboard-screen.png">
                 </div>
                 <div class="text">
                     <span>Share visualized insights with your users by:</span>
@@ -138,7 +138,7 @@ selfManagedPlan:
             </div>
             <div class="image-block screenshot-block">
                 <div class="image-wrapper screenshot" id="dashboard">
-                    <img src="/images/trendz/dashboard-screen.png">
+                    <img src="https://img.thingsboard.io/trendz/dashboard-screen.png">
                 </div>
             </div>
         </main>

@@ -5,55 +5,55 @@ description: CoAP Integration Guide
 
 addConverter:
     0:
-        image: /images/pe/edge/integrations/coap/add-converter-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/add-converter-step-1.png
     1:
-        image: /images/pe/edge/integrations/coap/add-converter-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/add-converter-step-2.png
 
 modifyConverter:
     0:
-        image: /images/pe/edge/integrations/coap/modify-converter-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/modify-converter-step-1.png
     1:
-        image: /images/pe/edge/integrations/coap/modify-converter-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/modify-converter-step-2.png
 
 addIntegration:
     0:
-        image: /images/pe/edge/integrations/coap/add-integration-template-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/add-integration-template-step-1.png
         title: 'Go to <b>Integration templates</b> section and click <b>Add new integration</b> button.'
     1:
-        image: /images/pe/edge/integrations/coap/add-integration-template-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/add-integration-template-step-2.png
         title: 'Name it <b>CoAP Integration</b>, select type <b>CoAP</b>, turn the Debug mode on and from drop-down menus add recently created Uplink converter. Set Base URL as <b>${{edgeIP}}</b>. Please note down <b>CoAP endpoint URL</b> value - we will use it later in <b>coap-client</b> for testing CoAP Integration.'
 
 assignIntegration:
     0:
-        image: /images/pe/edge/integrations/coap/assign-integration-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/assign-integration-step-1.png
         title: 'Add <b>edgeIP</b> attribute to Edge and set value as your Edge IP <b>192.168.1.15</b>. Please use <b>YOUR</b> IP address of your Edge instance!'
     1:
-        image: /images/pe/edge/integrations/coap/assign-integration-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/assign-integration-step-2.png
         title: 'Click <b>Manage Integrations</b> button of Edge entity'
     2:
-        image: /images/pe/edge/integrations/coap/assign-integration-step-3.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/assign-integration-step-3.png
         title: 'Assign Integration to the Edge'
     3:
-        image: /images/pe/edge/integrations/coap/assign-integration-step-4.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/assign-integration-step-4.png
         title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
 
 sendUplink:
     0:
-        image: /images/pe/edge/integrations/coap/send-uplink-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/send-uplink-step-1.png
     1:
-        image: /images/pe/edge/integrations/coap/send-uplink-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/send-uplink-step-2.png
 
 device:
     0:
-        image: /images/pe/edge/integrations/coap/device.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/device.png
 
 converterEvents:
     0:
-        image: /images/pe/edge/integrations/coap/converter-events-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/converter-events-step-1.png
     1:
-        image: /images/pe/edge/integrations/coap/converter-events-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/converter-events-step-2.png
     2:
-        image: /images/pe/edge/integrations/coap/converter-events-step-3.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/converter-events-step-3.png
 
 ---
 
@@ -70,7 +70,7 @@ CoAP Integration allows to stream data from devices that use a CoAP protocol to 
 
 Please review the integration diagram to learn more.
 
-![image](/images/user-guide/integrations/coap-integration.svg)
+![image](https://img.thingsboard.io/user-guide/integrations/coap-integration.svg)
 
 ## Prerequisites
 

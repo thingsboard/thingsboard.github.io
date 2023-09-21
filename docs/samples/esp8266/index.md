@@ -22,4 +22,4 @@ The applications in this samples that are running on ESP8266 core for Arduino an
  - [ESP8266 core for Arduino](https://github.com/esp8266/Arduino)
  - [Official page](https://espressif.com/en/products/hardware/esp8266ex/overview)
 
- ![image](/images/samples/arduino/temperature/esp8266-pinout.png)
+ ![image](https://img.thingsboard.io/samples/arduino/temperature/esp8266-pinout.png)

@@ -11,7 +11,7 @@ description: Trendz Calendar
 
 Heatmap Calendar widget shows quick overview how metric changed over a year with day by day breakdown.
 
-![image](/images/trendz/calendar_heatmap.png)
+![image](https://img.thingsboard.io/trendz/calendar_heatmap.png)
 
 ## Single field configuration
 
@@ -24,7 +24,7 @@ You can change color schema and View Settings.
 
 You can add multiple fields into **Value** section. In this case you can switch between fields using radio button.
 
-![image](/images/trendz/calendar_heatmap_multiple.png)
+![image](https://img.thingsboard.io/trendz/calendar_heatmap_multiple.png)
 
 ## Select date action
 

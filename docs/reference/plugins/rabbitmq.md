@@ -43,35 +43,35 @@ Prerequisites before continuing RabbitMQ extension configuration:
 
 Let's configure RabbitMQ plugin first. Go to *Plugins* menu, click on a '+' button and create new plugin:
 
-![image](/images/reference/plugins/rabbitmq/rabbitmq-plugin-config-1.png)
+![image](https://img.thingsboard.io/reference/plugins/rabbitmq/rabbitmq-plugin-config-1.png)
 
-![image](/images/reference/plugins/rabbitmq/rabbitmq-plugin-config-2.png)
+![image](https://img.thingsboard.io/reference/plugins/rabbitmq/rabbitmq-plugin-config-2.png)
 
 Please set host, port and credentials correctly so extension is able to connect to RabbitMQ broker.
 
 Save plugin and click on *'Activate'* plugin button:
 
-![image](/images/reference/plugins/rabbitmq/rabbitmq-activate-plugin.png)
+![image](https://img.thingsboard.io/reference/plugins/rabbitmq/rabbitmq-activate-plugin.png)
 
 ### RabbitMQ Rule Configuration
 
 Now it's time to create appropriate Rule.
 
-![image](/images/reference/plugins/rabbitmq/rabbitmq-rule-config.png)
+![image](https://img.thingsboard.io/reference/plugins/rabbitmq/rabbitmq-rule-config.png)
 
 Add filter for **POST_TELEMETRY** message type:
 
-![image](/images/reference/plugins/rabbitmq/post-telemetry-filter.png)
+![image](https://img.thingsboard.io/reference/plugins/rabbitmq/post-telemetry-filter.png)
 
 Click *'Add'* button to add the filter.
 
 Then select *'RabbitMQ Plugin'* in the drop-down box for the Plugin field:
 
-![image](/images/reference/plugins/rabbitmq/rabbitmq-plugin-selection.png)
+![image](https://img.thingsboard.io/reference/plugins/rabbitmq/rabbitmq-plugin-selection.png)
 
 Add action that will send temperature telemetry of device to particular RabbitMQ queue:
 
-![image](/images/reference/plugins/rabbitmq/rabbitmq-rule-action-config.png)
+![image](https://img.thingsboard.io/reference/plugins/rabbitmq/rabbitmq-rule-action-config.png)
 
 Click *'Add'* button and then activate Rule.
 

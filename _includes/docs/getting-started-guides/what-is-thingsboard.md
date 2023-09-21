@@ -19,10 +19,10 @@ With ThingsBoard, you are able to:
 See [**ThingsBoard features list**](/docs/{{docsPrefix}}#features) for more features and useful links to the specific feature documentation. 
 
 {% if docsPrefix == null %}
-<object width="100%" data="/images/reference/thingsboard-architecture.svg"></object>
+<object width="100%" data="https://img.thingsboard.io/reference/thingsboard-architecture.svg"></object>
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-<object width="100%" data="/images/reference/thingsboard-architecture-pe.svg"></object>
+<object width="100%" data="https://img.thingsboard.io/reference/thingsboard-architecture-pe.svg"></object>
 {% endif %}
 
 #### Architecture

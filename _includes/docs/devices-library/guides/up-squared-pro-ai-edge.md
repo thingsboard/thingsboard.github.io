@@ -9,7 +9,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The UP Squared Pro AI Edge is a high-performance single-board computer designed for AI applications.  
  It features an Intel Atom x7-E3950 Processor and 8GB of RAM, and comes with a range of connectivity options including Gigabit Ethernet, Wi-Fi 5, and Bluetooth 4.  
 2. With its powerful computing capabilities, this board is well-suited for complex deep learning tasks, computer vision applications, and robotics projects.  

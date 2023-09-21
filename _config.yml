@@ -1,7 +1,7 @@
 title: ThingsBoard
 name: ThingsBoard
 author: thingsboard
-logo: /images/thingsboard_logo.png
+logo: https://img.thingsboard.io/thingsboard_logo.png
 url: https://thingsboard.io
 
 twitter:
@@ -50,9 +50,9 @@ defaults:
       path: ""
     values:
       image:
-        path: /images/thingsboard_logo.png
-        twitter: /images/thingsboard_logo.png
-        facebook: /images/thingsboard_logo.png
+        path: https://img.thingsboard.io/thingsboard_logo.png
+        twitter: https://img.thingsboard.io/thingsboard_logo.png
+        facebook: https://img.thingsboard.io/thingsboard_logo.png
       version: "v1.0"
       githubbranch: "master"
       docsbranch: "master"
