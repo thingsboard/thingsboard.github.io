@@ -26,32 +26,32 @@ creating-dashboard:
 creating-dashboard-2:
     0:
         image: /images/user-guide/dashboards/overview/create-dashboard-5-pe.png
-        title: 'In the "Add Dashboard" dialog enter a dashboard title, then click on the "Next: Owner and groups" button;'
+        title: 'In the "Add Dashboard" dialog, enter the dashboard title, and then click "Next: Owner and groups";'
     1:
         image: /images/user-guide/dashboards/overview/create-dashboard-6-pe.png
-        title: 'Change owner and specify existing or create new dashboard group. Click "Add";'
+        title: 'Change the owner and select an existing dashboard group or create a new one, then click "Add";'
     2:
         image: /images/user-guide/dashboards/overview/create-dashboard-7-pe.png
-        title: 'The dashboard has been created. It belongs to Customer A and is placed in the "Sensors" group.'
+        title: 'Your dashboard has now been created, and it belongs to Customer A, residing in the "Sensors" group.'
 
 creating-dashboard-3:
     0:
         image: /images/user-guide/dashboards/overview/create-dashboard-8-pe.png
-        title: 'By default, the list of dashboards displays all dashboards, including those of your customers. To display only your dashboards, toggle the switch labeled "Include customer entities".'
+        title: 'By default, the list of dashboards displays all dashboards, including those of your customers. To view only your dashboards, toggle the "Include customer entities" option.'
 
 import-dashboard:
     0:
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-pe.png
-        title: 'Go to the "Dashboards" page and click on the "+" button in the upper right corner of the page and choose "Import dashboard";'
+        title: 'Go to the "Dashboards" page and click on the "+" button in the upper right corner of the page and select "Import dashboard";'
     1:
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-pe.png
-        title: 'The dashboard import window will open. Upload the JSON file and click "Import";'
+        title: 'In the dashboard import window, upload the JSON file and click "Import";'
     2:
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-3-pe.png
         title: 'You have imported a dashboard. Open it;'
     3:
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-4-pe.png
-        title: 'The dashboard has been imported along with its widgets.'
+        title: 'Your dashboard has now been imported along with its widgets.'
 
 export-dashboard:
     0:
@@ -61,7 +61,7 @@ export-dashboard:
 share-dashboard-group:
     0:
         image: /images/user-guide/dashboards/managing-dashboard/share-dashboard-group-1-pe.png
-        title: 'Go to the "Dashboards" page -> "Groups" tab. Click the "Share" icon next to the dashboard group that you want to share;'
+        title: 'Go to the "Dashboards" page and navigate to the "Groups" tab. Click the "Share" icon next to the dashboard group that you want to share;'
     1:
         image: /images/user-guide/dashboards/managing-dashboard/share-dashboard-group-2-pe.png
         title: 'Select the customer to which you want to share the dashboard group. Additionally, you can share the dashboard group with a specific user group or with all users of the customer. Specify permissions and click "Share".'
@@ -69,7 +69,7 @@ share-dashboard-group:
 make-public:
     0:
         image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-1-pe.png
-        title: 'Go to the "Dashboards" page -> "Groups" tab. Click the "Make public" icon next to the dashboard group that you want to make public;'
+        title: 'Go to the "Dashboards" page and navigate to the "Groups" tab. Click the "Make public" icon next to the dashboard group that you want to make public;'
     1:
         image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-2-pe.png
         title: 'In the confirmation dialog box, click "Yes";'
@@ -78,12 +78,12 @@ make-public:
         title: 'To copy the public dashboard link and share it, open public dashboard group and click the "Public dashboard link" icon opposite the needed dashboard;'
     3:
         image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-4-pe.png
-        title: 'In the pop-up window, click "Copy public link" icon. Now you can share a dashboard with this link. For example, send its link by email. Or you can use the quick buttons to share the link on social networks;'
+        title: 'In the pop-up window, click "Copy public link" icon. You can now share the dashboard using this link, for example, by sending it via email. Or you can use the quick buttons to share the link on social networks;'
 
 make-private:
     0:
         image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-5-pe.png
-        title: 'Go to the "Dashboards" page -> "Groups" tab. Click the "Make private" icon next to the dashboard group that you want to make private;'
+        title: 'Go to the "Dashboards" page and select the "Groups" tab. Click the "Make private" icon next to the dashboard group that you want to make private;'
     1:
         image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-6-pe.png
         title: 'In the confirmation dialog box, click "OK".'
@@ -94,7 +94,7 @@ dashboard-details:
         title: 'Go to the "Dashboards" page and click the "Dashboard details" icon next to the dashboard that you want to edit;'
     1:
         image: /images/user-guide/dashboards/managing-dashboard/dashboard-details-2-pe.png
-        title: 'In the "Dashboard details" window, click the "pencil" icon to enter edit mode;'
+        title: 'In the "Dashboard details" window, click the "Pencil" icon to enter edit mode;'
     2:
         image: /images/user-guide/dashboards/managing-dashboard/dashboard-details-3-pe.png
         title: 'Edit the fields you need. For example, edit the title of the dashboard, specify description. After making the edits, remember to save all changes;'
@@ -140,7 +140,7 @@ dashboard-toolbar:
 edit-mode:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-settings-edit-mode-1-pe.png
-        title: 'To enter dashboard edit mode, open the dashboard and click the "Edit mode" button in the upper right corner of the screen;'
+        title: 'To enter dashboard edit mode, simply open the dashboard you wish to edit and click the "Edit mode" button found in the upper right corner of the screen;'
     1:
         image: /images/user-guide/dashboards/overview/dashboard-settings-edit-mode-2-pe.png
         title: 'Click "Save" button to save the dashboard or click "Cancel" button to rollback all unsaved changes.'

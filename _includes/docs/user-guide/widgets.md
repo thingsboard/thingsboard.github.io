@@ -3,14 +3,14 @@
 
 ## Prerequisites
 
-For faster learning and a better understanding of this guide, first, you have to follow the [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to get familiar with ThingsBoard devices and dashboards.
+Before proceeding with this guide, it's recommended that you follow [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to become familiar with ThingsBoard devices and dashboards. This will enhance your learning experience and understanding of the concepts presented here.
 
 ## Introduction
 
 All IoT dashboards are constructed using ThingsBoard widgets.
 
 A widget is an element that displays a specific type of information or functionality on a dashboard. 
-Widgets are used to visualize data, remote device control, alarms management, and display static custom html content.
+Widgets are used to display data and visualize information obtained from devices connected to the Thingsboard platform, remote device control, alarms management, and display static custom html content.
 
 There are five types of widgets:
 

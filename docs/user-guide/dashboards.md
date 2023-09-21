@@ -23,16 +23,16 @@ creating-dashboard:
 import-dashboard:
     0:
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-ce.png
-        title: 'Go to the "Dashboards" page and click on the "+" button in the upper right corner of the page and choose "Import dashboard";'
+        title: 'Go to the "Dashboards" page and click on the "+" button in the upper right corner of the page and select "Import dashboard";'
     1:
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-ce.png
-        title: 'The import dashboard window opens. Upload the JSON file and click "Import";'
+        title: 'in the import dashboard window, upload the JSON file and click "Import";'
     2:
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-3-ce.png
         title: 'You have imported a dashboard. Open it;'
     3:
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-4-ce.png
-        title: 'The dashboard has been imported along with its widgets.'
+        title: 'Your dashboard has now been imported along with its widgets.'
 
 export-dashboard:
     0:
@@ -45,7 +45,7 @@ make-public:
         title: 'Go to the "Dashboards" page. Click the "Make public" icon next to the dashboard that you want to make public;'
     1:
         image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-2-ce.png
-        title: 'Dashboard is now public. In the pop-up window, click "Copy public link" icon. Now you can share a dashboard with this link. For example, send it by email. Or you can use the quick buttons to share the link on social networks;'
+        title: 'Dashboard is now public. In the pop-up window, click "Copy public link" icon. You can now share the dashboard using this link, for example, by sending it via email. Or you can use the quick buttons to share the link on social networks;'
     2:
         image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-3-ce.png
         title: 'Next time you can find the public link to the dashboard in the dashboard details window;'
@@ -143,7 +143,7 @@ dashboard-toolbar:
 edit-mode:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-settings-edit-mode-1-ce.png
-        title: 'To enter dashboard edit mode, open the dashboard and click the "Edit mode" button in the upper right corner of the screen;'
+        title: 'To enter dashboard edit mode, simply open the dashboard you wish to edit and click the "Edit mode" button found in the upper right corner of the screen;'
     1:
         image: /images/user-guide/dashboards/overview/dashboard-settings-edit-mode-2-ce.png
         title: 'Click "Save" button to save the dashboard or click "Cancel" button to rollback all unsaved changes.'

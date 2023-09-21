@@ -45,7 +45,7 @@ To add a new dashboard, you should:
 {% include images-gallery.html imageCollection="creating-dashboard" showListImageTitles="true" %}
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-At the stage of creating a dashboard, you can immediately specify another dashboard owner and assign the dashboard to the selected dashboard group.
+At the stage of creating a dashboard, you can specify it to a different owner and a specific dashboard group right away.
 
 {% include images-gallery.html imageCollection="creating-dashboard-2" showListImageTitles="true" %}
 
@@ -59,7 +59,7 @@ To display only your dashboards, toggle the "Include customer entities".
 
 You can import a dashboard from a JSON file.
 
-To import a dashboard, you should:
+To import a dashboard, follow these steps:
 
 {% include images-gallery.html imageCollection="import-dashboard" showListImageTitles="true" %}
 
@@ -80,7 +80,7 @@ Let's look at each operation.
 In the ThingsBoard you can export a dashboard as a configuration file in JSON format.
 You can use this file to transfer your Dashboard or widget configuration to another instance.
 
-To export a dashboard, go to the "Dashboards" page. Opposite the name of the dashboard in the list, click on the “Export dashboard” button. The configuration file in JSON format with all settings on the control panel will be saved on your PC.
+To export a dashboard, go to the “Dashboards” page. Find the dashboard you want to export in the list and click on the "Export dashboard" button located next to the dashboard's name. The configuration file in JSON format with all settings on the control panel will be saved on your PC.
 
 {% include images-gallery.html imageCollection="export-dashboard" %}
 
@@ -113,7 +113,7 @@ In **ThingsBoard Professional Edition**, in addition to exporting the dashboard 
 
 You can share a dashboard group with your customers, granting them permissions such as "Read", "Write", or using a previously created role. 
 Roles are sets of permissions that define what actions users can perform.
-For more information about roles read [here](/docs/{{docsPrefix}}user-guide/rbac/)
+For more information about roles read [here](/docs/{{docsPrefix}}user-guide/rbac/).
 
 To share a dashboard group, follow these steps:
 
@@ -136,7 +136,7 @@ For this you should:
 
 {% include images-gallery.html imageCollection="make-public" showListImageTitles="true" %}
 
-If you want to make your dashboard private again, you should:
+To make a dashboard private again, follow these steps:
 
 {% include images-gallery.html imageCollection="make-private" showListImageTitles="true" %}
 
@@ -168,7 +168,7 @@ To assign/unassign multiple dashboards to a customer(s) simultaneously, select t
 
 ### Edit dashboard
 
-Нou can edit the title, description, and other fields of the dashboard.
+You can edit the title, description, and other fields of the dashboard.
 
 Let’s see how to do this:
 
@@ -204,16 +204,17 @@ Dashboard toolbar allows you to manage
 configure [timewindow](/docs/{{docsPrefix}}user-guide/dashboards/#timewindow),
 [enter edit mode](#edit-mode) and [add new widgets](#add-new-widget) using the corresponding icons in the toolbar.
 
-Some of these icons (states, layout, settings, entity aliases, filters, version control, add new widget) are visible only in the "edit" mode. All other icons are visible in both "view" and "edit" mode.
+Some of these icons (states, layout, settings, entity aliases, filters, version control, add new widget) are visible only in the "Edit" mode. All other icons are visible in both "View" and "Edit" mode.
 You can hide these icons or configure the toolbar to be minimized by default using [settings](/docs/{{docsPrefix}}user-guide/dashboards/#settings).
 
 {% include images-gallery.html imageCollection="dashboard-toolbar" %}
 
 ### Edit mode
 
-To enter dashboard edit mode, open the dashboard and click the "Edit mode" button in the upper right corner of the screen.
-Once you switch to the edit mode, you can add new and access controls in the dashboard toolbar.
-You can also use "Save" button to save the dashboard or "Cancel" button to rollback all unsaved changes.
+To enter dashboard edit mode, simply open the dashboard you wish to edit and click the "Edit mode" button found in the upper right corner of the screen.
+
+Once you've switched to edit mode, you can access the dashboard toolbar to add new elements and access controls. 
+Don't forget to save your changes using the "Save" button, or if you decide to discard any unsaved edits, you can do so by clicking the "Cancel" button.
 
 {% include images-gallery.html imageCollection="edit-mode" %}
 
