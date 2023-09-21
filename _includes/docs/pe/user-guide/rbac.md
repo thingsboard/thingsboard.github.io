@@ -28,7 +28,7 @@ ThingsBoard Community Edition functionality is sufficient for a lot of simple us
 ThingsBoard Professional Edition brings much more flexibility in terms of user, customer, and role management. 
 It is designed to cover use cases for businesses and enterprises with multiple user groups that have different permissions but may interact with the same devices and assets. 
 
-ThingsBoard supports the "recursive" customer hierarchy with an unlimited number of sub-customers.
+ThingsBoard supports the "recursive" customer hierarchy with tens of thousands of sub-customers.
 The root-level Owner is Tenant. Each Owner may have multiple Entity Groups, User Groups, and Customer Groups.
 
 Since Customer Groups can contain multiple Customers, each Customer can also own his Entity Groups, User Groups, and Customer Groups (i.e. sub-customer groups).
