@@ -222,7 +222,7 @@ filters:
         title: 'In the pop-up window click "Add key filter" button;'
     2:
         image: /images/user-guide/dashboards/overview/dashboard-filters-3-pe.png
-        title: 'Enter key name, select key type and value type. Then add a filter that checks if the smart sensor model is "DHT22" and click "Add";'
+        title: 'Enter key name, select key type and value type. Then add a filter that checks if the sensor model is "DHT22" and click "Add";'
     3:
         image: /images/user-guide/dashboards/overview/dashboard-filters-4-pe.png
         title: 'Add another key filter;'

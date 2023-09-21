@@ -282,7 +282,7 @@ Entity filters allow you to specify a filter for the list of entities resolved b
 
 Let's look at an example. Suppose you have thousands of "Thermometer" devices, and you would like to display thermometers of a specific model and with certain battery levels.
 Let's also assume that thermometer model is stored as an attribute, and the battery level is stored as a time series data.
-We will define a filter that checks if the model is "DHT22" and the battery level is less than 20 percent. 
+We will define a filter that checks if the sensor model is "DHT22" and the battery level is less than 20 percent. 
 
 {% capture difference %}
 **Please note**
