@@ -9,7 +9,7 @@
           <td>service.type</td>
           <td>TB_SERVICE_TYPE</td>
           <td>tb-vc-executor</td>
-          <td></td>
+          <td>Name of service</td>
       </tr>
       <tr>
           <td>service.id</td>

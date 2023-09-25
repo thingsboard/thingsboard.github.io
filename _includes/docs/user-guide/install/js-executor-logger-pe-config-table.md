@@ -9,19 +9,19 @@
           <td>logger.level</td>
           <td>LOGGER_LEVEL</td>
           <td>info</td>
-          <td></td>
+          <td>Default logger level. Allowed values: DEBUG, INFO, TRACE</td>
       </tr>
       <tr>
           <td>logger.path</td>
           <td>LOG_FOLDER</td>
           <td>logs</td>
-          <td></td>
+          <td>Default log file path</td>
       </tr>
       <tr>
           <td>logger.filename</td>
           <td>LOGGER_FILENAME</td>
           <td>tb-js-executor-%DATE%.log</td>
-          <td></td>
+          <td>Default log files name</td>
       </tr>
   </tbody>
 </table>

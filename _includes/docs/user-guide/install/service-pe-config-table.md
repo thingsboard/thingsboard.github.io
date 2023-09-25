@@ -21,13 +21,25 @@
           <td>service.integrations.supported</td>
           <td>TB_SERVICE_INTEGRATIONS_SUPPORTED</td>
           <td>ALL</td>
-          <td></td>
+          <td>Allow to enable integration on service/microservice integration executor. Allowed values: OCEANCONNECT, SIGFOX, THINGPARK, TPE, CHIRPSTACK, TUYA, UDP, TCP, TTN, TTI, AZURE_EVENT_HUB, OPC_UA, IBM_WATSON_IOT, AWS_IOT, AWS_SQS, LORIOT, COAP, AZURE_SERVICE_BUS, HTTP, MQTT or ALL to allow all</td>
       </tr>
       <tr>
           <td>service.integrations.excluded</td>
           <td>TB_SERVICE_INTEGRATIONS_EXCLUDED</td>
           <td>NONE</td>
+          <td>List of integrations to exclude from processing on service/microservice integration executor. Allowed values: OCEANCONNECT, SIGFOX, THINGPARK, TPE, CHIRPSTACK, TUYA, UDP, TCP, TTN, TTI, AZURE_EVENT_HUB, OPC_UA, IBM_WATSON_IOT, AWS_IOT, AWS_SQS, LORIOT, COAP, AZURE_SERVICE_BUS, HTTP, MQTT. By default NONE</td>
+      </tr>
+      <tr>
+          <td>service.rule_engine.assigned_tenant_profiles</td>
+          <td>TB_RULE_ENGINE_ASSIGNED_TENANT_PROFILES</td>
           <td></td>
+          <td>Comma-separated list of tenant profiles ids assigned to this Rule Engine. This Rule Engine will only be responsible for tenants with these profiles (in case 'isolation' option is enabled in profile).</td>
+      </tr>
+      <tr>
+          <td>service.integrations.excluded</td>
+          <td>TB_SERVICE_INTEGRATIONS_EXCLUDED</td>
+          <td>NONE</td>
+          <td>List of integrations to exclude from processing on service/microservice integration executor. Allowed values: OCEANCONNECT, SIGFOX, THINGPARK, TPE, CHIRPSTACK, TUYA, UDP, TCP, TTN, TTI, AZURE_EVENT_HUB, OPC_UA, IBM_WATSON_IOT, AWS_IOT, AWS_SQS, LORIOT, COAP, AZURE_SERVICE_BUS, HTTP, MQTT. By default NONE</td>
       </tr>
   </tbody>
 </table>

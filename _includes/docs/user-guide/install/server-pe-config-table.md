@@ -93,61 +93,61 @@
           <td>server.log_controller_error_stack_trace</td>
           <td>HTTP_LOG_CONTROLLER_ERROR_STACK_TRACE</td>
           <td>false</td>
-          <td></td>
+          <td>Log errors with stacktrace when REST API throws exception with message "Please contact sysadmin"</td>
       </tr>
       <tr>
           <td>server.ws.send_timeout</td>
           <td>TB_SERVER_WS_SEND_TIMEOUT</td>
           <td>5000</td>
-          <td></td>
+          <td>Timeout for sending data to client WebSocket session in milliseconds</td>
       </tr>
       <tr>
           <td>server.ws.ping_timeout</td>
           <td>TB_SERVER_WS_PING_TIMEOUT</td>
           <td>30000</td>
-          <td>recommended timeout >= 30 seconds. Platform will attempt to send 'ping' request 3 times within the timeout</td>
+          <td>Recommended timeout >= 30 seconds. Platform will attempt to send 'ping' request 3 times within the timeout</td>
       </tr>
       <tr>
           <td>server.ws.dynamic_page_link.refresh_interval</td>
           <td>TB_SERVER_WS_DYNAMIC_PAGE_LINK_REFRESH_INTERVAL_SEC</td>
           <td>60</td>
-          <td></td>
+          <td>Refresh rate of the dynamic alarm end entity data queries</td>
       </tr>
       <tr>
           <td>server.ws.dynamic_page_link.refresh_pool_size</td>
           <td>TB_SERVER_WS_DYNAMIC_PAGE_LINK_REFRESH_POOL_SIZE</td>
           <td>1</td>
-          <td></td>
+          <td>Thread pool size to execute dynamic queries</td>
       </tr>
       <tr>
           <td>server.ws.dynamic_page_link.max_alarm_queries_per_refresh_interval</td>
           <td>TB_SERVER_WS_MAX_ALARM_QUERIES_PER_REFRESH_INTERVAL</td>
           <td>10</td>
-          <td></td>
+          <td>Maximum number of dynamic queries per refresh interval. For example, no more then 10 alarm queries executed by user simultaneously in all browsers.</td>
       </tr>
       <tr>
           <td>server.ws.dynamic_page_link.max_per_user</td>
           <td>TB_SERVER_WS_DYNAMIC_PAGE_LINK_MAX_PER_USER</td>
           <td>10</td>
-          <td></td>
+          <td>Maximum number of dynamic queries per user. For example, no more then 10 alarm widgets opened by user simultaneously in all browsers</td>
       </tr>
       <tr>
           <td>server.ws.max_entities_per_data_subscription</td>
           <td>TB_SERVER_WS_MAX_ENTITIES_PER_DATA_SUBSCRIPTION</td>
           <td>10000</td>
-          <td></td>
+          <td>Maximum number of entities returned for single entity subscription. For example, no more then 10 000 entities on the map widget</td>
       </tr>
       <tr>
           <td>server.ws.max_entities_per_alarm_subscription</td>
           <td>TB_SERVER_WS_MAX_ENTITIES_PER_ALARM_SUBSCRIPTION</td>
           <td>10000</td>
-          <td></td>
+          <td>Maximum number of alarms returned for single alarm subscription. For example, no more then 10 000 alarms on the alarm widget</td>
       </tr>
       <tr>
           <td>server.ws.max_queue_messages_per_session</td>
           <td>TB_SERVER_WS_DEFAULT_QUEUE_MESSAGES_PER_SESSION</td>
           <td>1000</td>
-          <td></td>
+          <td>Maximum queue size of the websocket updates per session. This restriction prevents infinite updates of WS</td>
       </tr>
       <tr>
           <td>server.rest.server_side_rpc.min_timeout</td>
@@ -165,7 +165,7 @@
           <td>server.rest.rate_limits.reset_password_per_user</td>
           <td>RESET_PASSWORD_PER_USER_RATE_LIMIT_CONFIGURATION</td>
           <td>5:3600</td>
-          <td></td>
+          <td>Limit that prohibits resetting the password for the user too often. The value of rate limit. By default, no more then 5 requests per hour</td>
       </tr>
   </tbody>
 </table>

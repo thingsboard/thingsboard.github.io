@@ -9,127 +9,127 @@
           <td>audit-log.enabled</td>
           <td>AUDIT_LOG_ENABLED</td>
           <td>true</td>
-          <td>Enable/disable audit log functionality.</td>
+          <td>Enable/disable audit log functionality</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.device</td>
           <td>AUDIT_LOG_MASK_DEVICE</td>
           <td>W</td>
-          <td></td>
+          <td>Device logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.asset</td>
           <td>AUDIT_LOG_MASK_ASSET</td>
           <td>W</td>
-          <td></td>
+          <td>Asset logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.dashboard</td>
           <td>AUDIT_LOG_MASK_DASHBOARD</td>
           <td>W</td>
-          <td></td>
+          <td>Dashboard logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.customer</td>
           <td>AUDIT_LOG_MASK_CUSTOMER</td>
           <td>W</td>
-          <td></td>
+          <td>Customer logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.user</td>
           <td>AUDIT_LOG_MASK_USER</td>
           <td>W</td>
-          <td></td>
+          <td>User logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.rule_chain</td>
           <td>AUDIT_LOG_MASK_RULE_CHAIN</td>
           <td>W</td>
-          <td></td>
+          <td>Rule Chain logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.alarm</td>
           <td>AUDIT_LOG_MASK_ALARM</td>
           <td>W</td>
-          <td></td>
+          <td>Alarm logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.integration</td>
           <td>AUDIT_LOG_MASK_INTEGRATION</td>
           <td>W</td>
-          <td></td>
+          <td>Integration logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.converter</td>
           <td>AUDIT_LOG_MASK_CONVERTER</td>
           <td>W</td>
-          <td></td>
+          <td>Converter logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.entity_group</td>
           <td>AUDIT_LOG_MASK_ENTITY_GROUP</td>
           <td>W</td>
-          <td></td>
+          <td>Entity Group logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.scheduler_event</td>
           <td>AUDIT_LOG_MASK_SCHEDULER_EVENT</td>
           <td>W</td>
-          <td></td>
+          <td>Scheduler Event logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.blob_entity</td>
           <td>AUDIT_LOG_MASK_BLOB_ENTITY</td>
           <td>W</td>
-          <td></td>
+          <td>Blob entity logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.entity_view</td>
           <td>AUDIT_LOG_MASK_ENTITY_VIEW</td>
           <td>W</td>
-          <td></td>
+          <td>Entity View logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.device_profile</td>
           <td>AUDIT_LOG_MASK_DEVICE_PROFILE</td>
           <td>W</td>
-          <td></td>
+          <td>Device profile logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.asset_profile</td>
           <td>AUDIT_LOG_MASK_ASSET_PROFILE</td>
           <td>W</td>
-          <td></td>
+          <td>Asset profile logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.edge</td>
           <td>AUDIT_LOG_MASK_EDGE</td>
           <td>W</td>
-          <td></td>
+          <td>Edge logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.tb_resource</td>
           <td>AUDIT_LOG_MASK_RESOURCE</td>
           <td>W</td>
-          <td></td>
+          <td>Resources logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.ota_package</td>
           <td>AUDIT_LOG_MASK_OTA_PACKAGE</td>
           <td>W</td>
-          <td></td>
+          <td>OTA updates logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.role</td>
           <td>AUDIT_LOG_MASK_ROLE</td>
           <td>W</td>
-          <td></td>
+          <td>Roles logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.logging-level.mask.group_permission</td>
           <td>AUDIT_LOG_MASK_GROUP_PERMISSION</td>
           <td>W</td>
-          <td></td>
+          <td>Group permission logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
       </tr>
       <tr>
           <td>audit-log.sink.type</td>
@@ -159,25 +159,25 @@
           <td>audit-log.sink.host</td>
           <td>AUDIT_LOG_SINK_HOST</td>
           <td>localhost</td>
-          <td></td>
+          <td>Host of external sink system</td>
       </tr>
       <tr>
           <td>audit-log.sink.port</td>
           <td>AUDIT_LOG_SINK_PORT</td>
           <td>9200</td>
-          <td></td>
+          <td>Port of external sink system</td>
       </tr>
       <tr>
           <td>audit-log.sink.user_name</td>
           <td>AUDIT_LOG_SINK_USER_NAME</td>
           <td></td>
-          <td></td>
+          <td>Username used to access external sink system</td>
       </tr>
       <tr>
           <td>audit-log.sink.password</td>
           <td>AUDIT_LOG_SINK_PASSWORD</td>
           <td></td>
-          <td></td>
+          <td>Password used to access external sink system</td>
       </tr>
   </tbody>
 </table>

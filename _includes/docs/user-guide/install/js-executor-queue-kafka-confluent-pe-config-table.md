@@ -15,7 +15,7 @@
           <td>kafka.replication_factor</td>
           <td>TB_QUEUE_KAFKA_REPLICATION_FACTOR</td>
           <td>1</td>
-          <td></td>
+          <td>The multiple copies of data over the multiple brokers of Kafka. By default - 1, means single node</td>
       </tr>
       <tr>
           <td>kafka.acks</td>
@@ -27,13 +27,13 @@
           <td>kafka.batch_size</td>
           <td>TB_KAFKA_BATCH_SIZE</td>
           <td>128</td>
-          <td>for producer</td>
+          <td>This setting gives the upper bound of the batch size to be sent (for producer)</td>
       </tr>
       <tr>
           <td>kafka.linger_ms</td>
           <td>TB_KAFKA_LINGER_MS</td>
           <td>5</td>
-          <td>for producer</td>
+          <td>This variable creates a small amount of artificial delay—that is, rather than immediately sending out a record (for producer)</td>
       </tr>
       <tr>
           <td>kafka.partitions_consumed_concurrently</td>
@@ -57,19 +57,19 @@
           <td>kafka.compression</td>
           <td>TB_QUEUE_KAFKA_COMPRESSION</td>
           <td>gzip</td>
-          <td>gzip or uncompressed</td>
+          <td>Compression type (gzip or uncompressed)</td>
       </tr>
       <tr>
           <td>kafka.topic_properties</td>
           <td>TB_QUEUE_KAFKA_JE_TOPIC_PROPERTIES</td>
           <td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:104857600;partitions:100;min.insync.replicas:1</td>
-          <td></td>
+          <td>Kafka topic properties</td>
       </tr>
       <tr>
           <td>kafka.use_confluent_cloud</td>
           <td>TB_QUEUE_KAFKA_USE_CONFLUENT_CLOUD</td>
           <td>false</td>
-          <td></td>
+          <td>Enable/Disable using of Confluent Cloud</td>
       </tr>
       <tr>
           <td>kafka.client_id</td>
@@ -81,7 +81,7 @@
           <td>kafka.confluent.sasl.mechanism</td>
           <td>TB_QUEUE_KAFKA_CONFLUENT_SASL_MECHANISM</td>
           <td>PLAIN</td>
-          <td></td>
+          <td>The mechanism used to authenticate Schema Registry requests. SASL/PLAIN should only be used with TLS/SSL as transport layer to ensure that clear passwords are not transmitted on the wire without encryption</td>
       </tr>
       <tr>
           <td>kafka.confluent.username</td>

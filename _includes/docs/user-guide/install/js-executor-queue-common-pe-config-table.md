@@ -9,13 +9,13 @@
           <td>queue_type</td>
           <td>TB_QUEUE_TYPE</td>
           <td>kafka</td>
-          <td>kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+          <td>Queue type name. Allowed values: rabbitmq, kafka, pubsub, aws_sqs, service_bus</td>
       </tr>
       <tr>
           <td>request_topic</td>
           <td>REMOTE_JS_EVAL_REQUEST_TOPIC</td>
           <td>js_eval.requests</td>
-          <td></td>
+          <td>Default topic name for JS executor</td>
       </tr>
   </tbody>
 </table>

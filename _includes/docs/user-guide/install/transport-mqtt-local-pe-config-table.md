@@ -9,19 +9,19 @@
           <td>transport.mqtt.enabled</td>
           <td>MQTT_ENABLED</td>
           <td>true</td>
-          <td>Enable/disable mqtt transport protocol.</td>
+          <td>Enable/disable mqtt transport protocol</td>
       </tr>
       <tr>
           <td>transport.mqtt.bind_address</td>
           <td>MQTT_BIND_ADDRESS</td>
           <td>0.0.0.0</td>
-          <td></td>
+          <td>MQTT bind address</td>
       </tr>
       <tr>
           <td>transport.mqtt.bind_port</td>
           <td>MQTT_BIND_PORT</td>
           <td>1883</td>
-          <td></td>
+          <td>MQTT bind port</td>
       </tr>
       <tr>
           <td>transport.mqtt.proxy_enabled</td>
@@ -33,43 +33,43 @@
           <td>transport.mqtt.timeout</td>
           <td>MQTT_TIMEOUT</td>
           <td>10000</td>
-          <td></td>
+          <td>MQTT processing timeout in milliseconds</td>
       </tr>
       <tr>
           <td>transport.mqtt.msg_queue_size_per_device_limit</td>
           <td>MQTT_MSG_QUEUE_SIZE_PER_DEVICE_LIMIT</td>
           <td>100</td>
-          <td>messages await in the queue before device connected state. This limit works on low level before TenantProfileLimits mechanism</td>
+          <td>Messages await in the queue before device connected state. This limit works on low level before TenantProfileLimits mechanism</td>
       </tr>
       <tr>
           <td>transport.mqtt.netty.leak_detector_level</td>
           <td>NETTY_LEAK_DETECTOR_LVL</td>
           <td>DISABLED</td>
-          <td></td>
+          <td>Netty leak detector level</td>
       </tr>
       <tr>
           <td>transport.mqtt.netty.boss_group_thread_count</td>
           <td>NETTY_BOSS_GROUP_THREADS</td>
           <td>1</td>
-          <td></td>
+          <td>Netty BOSS threads count</td>
       </tr>
       <tr>
           <td>transport.mqtt.netty.worker_group_thread_count</td>
           <td>NETTY_WORKER_GROUP_THREADS</td>
           <td>12</td>
-          <td></td>
+          <td>Netty worker threads count</td>
       </tr>
       <tr>
           <td>transport.mqtt.netty.max_payload_size</td>
           <td>NETTY_MAX_PAYLOAD_SIZE</td>
           <td>65536</td>
-          <td></td>
+          <td>Max payload size in bytes</td>
       </tr>
       <tr>
           <td>transport.mqtt.netty.so_keep_alive</td>
           <td>NETTY_SO_KEEPALIVE</td>
           <td>false</td>
-          <td></td>
+          <td>Enables TCP keepalive. This means that TCP starts sending keepalive probes when a connection is idle for some time</td>
       </tr>
       <tr>
           <td>transport.mqtt.ssl.enabled</td>
@@ -111,7 +111,7 @@
           <td>transport.mqtt.ssl.credentials.pem.key_file</td>
           <td>MQTT_SSL_PEM_KEY</td>
           <td>mqttserver_key.pem</td>
-          <td>Path to the server certificate private key file. Optional by default. Required if the private key is not present in server certificate file;</td>
+          <td>Path to the server certificate private key file. Optional by default. Required if the private key is not present in server certificate file</td>
       </tr>
       <tr>
           <td>transport.mqtt.ssl.credentials.pem.key_password</td>
@@ -141,19 +141,19 @@
           <td>transport.mqtt.ssl.credentials.keystore.key_alias</td>
           <td>MQTT_SSL_KEY_ALIAS</td>
           <td></td>
-          <td>Optional alias of the private key; If not set, the platform will load the first private key from the keystore;</td>
+          <td>Optional alias of the private key; If not set, the platform will load the first private key from the keystore</td>
       </tr>
       <tr>
           <td>transport.mqtt.ssl.credentials.keystore.key_password</td>
           <td>MQTT_SSL_KEY_PASSWORD</td>
           <td>server_key_password</td>
-          <td>Optional password to access the private key. If not set, the platform will attempt to load the private keys that are not protected with the password;</td>
+          <td>Optional password to access the private key. If not set, the platform will attempt to load the private keys that are not protected with the password</td>
       </tr>
       <tr>
           <td>transport.mqtt.ssl.skip_validity_check_for_client_cert</td>
           <td>MQTT_SSL_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
           <td>false</td>
-          <td>Skip certificate validity check for client certificates.</td>
+          <td>Skip certificate validity check for client certificates</td>
       </tr>
   </tbody>
 </table>

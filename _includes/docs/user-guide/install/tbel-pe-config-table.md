@@ -9,25 +9,25 @@
           <td>tbel.enabled</td>
           <td>TBEL_ENABLED</td>
           <td>true</td>
-          <td></td>
+          <td>Enable/Disable TBEL feature.</td>
       </tr>
       <tr>
           <td>tbel.max_total_args_size</td>
           <td>TBEL_MAX_TOTAL_ARGS_SIZE</td>
           <td>100000</td>
-          <td></td>
+          <td>Limit on the number of arguments that are passed to the function to execute the script</td>
       </tr>
       <tr>
           <td>tbel.max_result_size</td>
           <td>TBEL_MAX_RESULT_SIZE</td>
           <td>300000</td>
-          <td></td>
+          <td>Maximum allowed symbols in a result after processing a script</td>
       </tr>
       <tr>
           <td>tbel.max_script_body_size</td>
           <td>TBEL_MAX_SCRIPT_BODY_SIZE</td>
           <td>50000</td>
-          <td></td>
+          <td>Maximum allowed symbols in script body</td>
       </tr>
       <tr>
           <td>tbel.max_memory_limit_mb</td>
@@ -63,19 +63,19 @@
           <td>tbel.compiled_scripts_cache_size</td>
           <td>TBEL_COMPILED_SCRIPTS_CACHE_SIZE</td>
           <td>1000</td>
-          <td></td>
+          <td>Maximum cache size of TBEL compiled scripts</td>
       </tr>
       <tr>
           <td>tbel.stats.enabled</td>
           <td>TB_TBEL_STATS_ENABLED</td>
           <td>false</td>
-          <td></td>
+          <td>Enable/Disable stats collection for TBEL engine</td>
       </tr>
       <tr>
           <td>tbel.stats.print_interval_ms</td>
           <td>TB_TBEL_STATS_PRINT_INTERVAL_MS</td>
           <td>10000</td>
-          <td></td>
+          <td>Interval of logging for TBEL stats</td>
       </tr>
   </tbody>
 </table>

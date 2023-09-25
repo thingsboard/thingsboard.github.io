@@ -9,7 +9,7 @@
           <td>transport.snmp.enabled</td>
           <td>SNMP_ENABLED</td>
           <td>true</td>
-          <td></td>
+          <td>Enable/disable SNMP transport protocol</td>
       </tr>
       <tr>
           <td>transport.snmp.response_processing.parallelism_level</td>

@@ -15,13 +15,13 @@
           <td>coap.bind_address</td>
           <td>COAP_BIND_ADDRESS</td>
           <td>0.0.0.0</td>
-          <td></td>
+          <td>CoAP bind address</td>
       </tr>
       <tr>
           <td>coap.bind_port</td>
           <td>COAP_BIND_PORT</td>
           <td>5683</td>
-          <td></td>
+          <td>CoAP bind port</td>
       </tr>
       <tr>
           <td>coap.dtls.enabled</td>
@@ -57,7 +57,7 @@
           <td>coap.dtls.credentials.pem.key_file</td>
           <td>COAP_DTLS_PEM_KEY</td>
           <td>coapserver_key.pem</td>
-          <td>Path to the server certificate private key file. Optional by default. Required if the private key is not present in server certificate file;</td>
+          <td>Path to the server certificate private key file. Optional by default. Required if the private key is not present in server certificate file</td>
       </tr>
       <tr>
           <td>coap.dtls.credentials.pem.key_password</td>
@@ -99,19 +99,19 @@
           <td>coap.dtls.x509.skip_validity_check_for_client_cert</td>
           <td>TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
           <td>false</td>
-          <td>Skip certificate validity check for client certificates.</td>
+          <td>Skip certificate validity check for client certificates</td>
       </tr>
       <tr>
           <td>coap.dtls.x509.dtls_session_inactivity_timeout</td>
           <td>TB_COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT</td>
           <td>86400000</td>
-          <td></td>
+          <td>Inactivity timeout of DTLS session. Used to cleanup cache</td>
       </tr>
       <tr>
           <td>coap.dtls.x509.dtls_session_report_timeout</td>
           <td>TB_COAP_X509_DTLS_SESSION_REPORT_TIMEOUT</td>
           <td>1800000</td>
-          <td></td>
+          <td>Interval of periodic eviction of the timed-out DTLS sessions</td>
       </tr>
   </tbody>
 </table>

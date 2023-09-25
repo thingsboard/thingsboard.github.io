@@ -21,7 +21,7 @@
           <td>vc.git.repositories-folder</td>
           <td>TB_VC_GIT_REPOSITORIES_FOLDER</td>
           <td>${java.io.tmpdir}/repositories</td>
-          <td></td>
+          <td>Default storing repository path</td>
       </tr>
   </tbody>
 </table>

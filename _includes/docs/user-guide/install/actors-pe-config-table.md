@@ -9,55 +9,55 @@
           <td>actors.system.throughput</td>
           <td>ACTORS_SYSTEM_THROUGHPUT</td>
           <td>5</td>
-          <td></td>
+          <td>Number of messages the actor system will process per actor before switching to processing of messages for next actor</td>
       </tr>
       <tr>
           <td>actors.system.scheduler_pool_size</td>
           <td>ACTORS_SYSTEM_SCHEDULER_POOL_SIZE</td>
           <td>1</td>
-          <td></td>
+          <td>Thread pool size for actor system scheduler</td>
       </tr>
       <tr>
           <td>actors.system.max_actor_init_attempts</td>
           <td>ACTORS_SYSTEM_MAX_ACTOR_INIT_ATTEMPTS</td>
           <td>10</td>
-          <td></td>
+          <td>Maximum number of attempts to init the actor before disabling the actor</td>
       </tr>
       <tr>
           <td>actors.system.app_dispatcher_pool_size</td>
           <td>ACTORS_SYSTEM_APP_DISPATCHER_POOL_SIZE</td>
           <td>1</td>
-          <td></td>
+          <td>Thread pool size for main actor system dispatcher</td>
       </tr>
       <tr>
           <td>actors.system.tenant_dispatcher_pool_size</td>
           <td>ACTORS_SYSTEM_TENANT_DISPATCHER_POOL_SIZE</td>
           <td>2</td>
-          <td></td>
+          <td>Thread pool size for actor system dispatcher that process messages for tenant actors</td>
       </tr>
       <tr>
           <td>actors.system.device_dispatcher_pool_size</td>
           <td>ACTORS_SYSTEM_DEVICE_DISPATCHER_POOL_SIZE</td>
           <td>4</td>
-          <td></td>
+          <td>Thread pool size for actor system dispatcher that process messages for device actors</td>
       </tr>
       <tr>
           <td>actors.system.rule_dispatcher_pool_size</td>
           <td>ACTORS_SYSTEM_RULE_DISPATCHER_POOL_SIZE</td>
           <td>4</td>
-          <td></td>
+          <td>Thread pool size for actor system dispatcher that process messages for rule engine (chain/node) actors</td>
       </tr>
       <tr>
           <td>actors.tenant.create_components_on_init</td>
           <td>ACTORS_TENANT_CREATE_COMPONENTS_ON_INIT</td>
           <td>true</td>
-          <td></td>
+          <td>Create components in initialization</td>
       </tr>
       <tr>
           <td>actors.session.max_concurrent_sessions_per_device</td>
           <td>ACTORS_MAX_CONCURRENT_SESSION_PER_DEVICE</td>
           <td>1</td>
-          <td></td>
+          <td>Max number of concurrent sessions per device</td>
       </tr>
       <tr>
           <td>actors.session.sync.timeout</td>
@@ -117,13 +117,13 @@
           <td>actors.rule.chain.debug_mode_rate_limits_per_tenant.enabled</td>
           <td>ACTORS_RULE_CHAIN_DEBUG_MODE_RATE_LIMITS_PER_TENANT_ENABLED</td>
           <td>true</td>
-          <td></td>
+          <td>Enable/Disable the rate limit of persisted debug events for all rule nodes per tenant</td>
       </tr>
       <tr>
           <td>actors.rule.chain.debug_mode_rate_limits_per_tenant.configuration</td>
           <td>ACTORS_RULE_CHAIN_DEBUG_MODE_RATE_LIMITS_PER_TENANT_CONFIGURATION</td>
           <td>50000:3600</td>
-          <td></td>
+          <td>The value of DEBUG mode rate limit. By default, no more then 50 thousand events per hour</td>
       </tr>
       <tr>
           <td>actors.rule.node.error_persist_frequency</td>
@@ -147,13 +147,13 @@
           <td>actors.rpc.max_retries</td>
           <td>ACTORS_RPC_MAX_RETRIES</td>
           <td>5</td>
-          <td></td>
+          <td>Maximum number of persistent RPC call retries in case of failed requests delivery</td>
       </tr>
       <tr>
           <td>actors.rpc.sequential</td>
           <td>ACTORS_RPC_SEQUENTIAL</td>
           <td>false</td>
-          <td></td>
+          <td>Enable/Disable sequential processing of RPC calls per device</td>
       </tr>
       <tr>
           <td>actors.statistics.enabled</td>
@@ -165,13 +165,13 @@
           <td>actors.statistics.js_print_interval_ms</td>
           <td>ACTORS_JS_STATISTICS_PRINT_INTERVAL_MS</td>
           <td>10000</td>
-          <td></td>
+          <td>Frequency of printing the JS executor statistics</td>
       </tr>
       <tr>
           <td>actors.statistics.persist_frequency</td>
           <td>ACTORS_STATISTICS_PERSIST_FREQUENCY</td>
           <td>3600000</td>
-          <td></td>
+          <td>Actors statistic persistence frequency in milliseconds</td>
       </tr>
   </tbody>
 </table>

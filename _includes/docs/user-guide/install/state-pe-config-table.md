@@ -15,7 +15,7 @@
           <td>state.defaultStateCheckIntervalInSec</td>
           <td>DEFAULT_STATE_CHECK_INTERVAL</td>
           <td>60</td>
-          <td></td>
+          <td>Interval for checking the device state after a specified period of time. Time in seconds</td>
       </tr>
       <tr>
           <td>state.persistToTelemetry</td>

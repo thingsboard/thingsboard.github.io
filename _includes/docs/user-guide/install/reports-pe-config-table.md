@@ -9,31 +9,31 @@
           <td>reports.server.endpointUrl</td>
           <td>REPORTS_SERVER_ENDPOINT_URL</td>
           <td>http://localhost:8383</td>
-          <td></td>
+          <td>Report server endpoint</td>
       </tr>
       <tr>
           <td>reports.server.maxResponseSize</td>
           <td>MAX_RESPONSE_SIZE</td>
           <td>52428800</td>
-          <td>50MB</td>
+          <td>Maximum response size. The default value set to 50 mb</td>
       </tr>
       <tr>
           <td>reports.rate_limits.enabled</td>
           <td>REPORTS_TENANT_RATE_LIMITS_ENABLED</td>
           <td>false</td>
-          <td></td>
+          <td>Enable/disable reports tenant rate limits</td>
       </tr>
       <tr>
           <td>reports.rate_limits.configuration</td>
           <td>REPORTS_TENANT_RATE_LIMITS_CONFIGURATION</td>
           <td>5:300</td>
-          <td></td>
+          <td>The value of repors rate limits. By default, no more then 5 reports per 300 second</td>
       </tr>
       <tr>
           <td>reports.scheduler.min_interval</td>
           <td>REPORTS_SCHEDULER_MIN_INTERVAL_IN_SEC</td>
           <td>60</td>
-          <td>minimum interval between subsequent scheduler events. Applicable for timer based events.</td>
+          <td>Minimum interval between subsequent scheduler events. Applicable for timer based events.</td>
       </tr>
   </tbody>
 </table>

@@ -9,7 +9,7 @@
           <td>transport.lwm2m.enabled</td>
           <td>LWM2M_ENABLED</td>
           <td>true</td>
-          <td>Enable/disable lvm2m transport protocol.</td>
+          <td>Enable/disable lvm2m transport protocol</td>
       </tr>
       <tr>
           <td>transport.lwm2m.dtls.retransmission_timeout</td>
@@ -21,31 +21,31 @@
           <td>transport.lwm2m.server.id</td>
           <td>LWM2M_SERVER_ID</td>
           <td>123</td>
-          <td></td>
+          <td>LwM2M Server ID</td>
       </tr>
       <tr>
           <td>transport.lwm2m.server.bind_address</td>
           <td>LWM2M_BIND_ADDRESS</td>
           <td>0.0.0.0</td>
-          <td></td>
+          <td>LwM2M server bind address. Bind to all interfaces by default</td>
       </tr>
       <tr>
           <td>transport.lwm2m.server.bind_port</td>
           <td>LWM2M_BIND_PORT</td>
           <td>5685</td>
-          <td></td>
+          <td>LwM2M server bind port</td>
       </tr>
       <tr>
           <td>transport.lwm2m.server.security.bind_address</td>
           <td>LWM2M_SECURITY_BIND_ADDRESS</td>
           <td>0.0.0.0</td>
-          <td></td>
+          <td>LwM2M server bind address for DTLS. Bind to all interfaces by default</td>
       </tr>
       <tr>
           <td>transport.lwm2m.server.security.bind_port</td>
           <td>LWM2M_SECURITY_BIND_PORT</td>
           <td>5686</td>
-          <td></td>
+          <td>LwM2M server bind port for DTLS</td>
       </tr>
       <tr>
           <td>transport.lwm2m.server.security.credentials.enabled</td>
@@ -117,37 +117,37 @@
           <td>transport.lwm2m.bootstrap.enabled</td>
           <td>LWM2M_ENABLED_BS</td>
           <td>true</td>
-          <td></td>
+          <td>Enable/disable Bootstrap Server</td>
       </tr>
       <tr>
           <td>transport.lwm2m.bootstrap.id</td>
           <td>LWM2M_SERVER_ID_BS</td>
           <td>111</td>
-          <td></td>
+          <td>Default value in Lwm2mClient after start in mode Bootstrap for the object : name "LWM2M Security" field: "Short Server ID" (deviceProfile: Bootstrap.BOOTSTRAP SERVER.Short ID)</td>
       </tr>
       <tr>
           <td>transport.lwm2m.bootstrap.bind_address</td>
           <td>LWM2M_BS_BIND_ADDRESS</td>
           <td>0.0.0.0</td>
-          <td></td>
+          <td>LwM2M bootstrap server bind address. Bind to all interfaces by default</td>
       </tr>
       <tr>
           <td>transport.lwm2m.bootstrap.bind_port</td>
           <td>LWM2M_BS_BIND_PORT</td>
           <td>5687</td>
-          <td></td>
+          <td>LwM2M bootstrap server bind port</td>
       </tr>
       <tr>
           <td>transport.lwm2m.bootstrap.security.bind_address</td>
           <td>LWM2M_BS_SECURITY_BIND_ADDRESS</td>
           <td>0.0.0.0</td>
-          <td></td>
+          <td>LwM2M bootstrap server bind address for DTLS. Bind to all interfaces by default</td>
       </tr>
       <tr>
           <td>transport.lwm2m.bootstrap.security.bind_port</td>
           <td>LWM2M_BS_SECURITY_BIND_PORT</td>
           <td>5688</td>
-          <td></td>
+          <td>LwM2M bootstrap server bind port</td>
       </tr>
       <tr>
           <td>transport.lwm2m.bootstrap.security.credentials.enabled</td>
@@ -201,7 +201,7 @@
           <td>transport.lwm2m.bootstrap.security.credentials.keystore.key_alias</td>
           <td>LWM2M_BS_KEY_ALIAS</td>
           <td>bootstrap</td>
-          <td>Key alias</td>
+          <td>Key alias of LWM2M Bootstrap Server</td>
       </tr>
       <tr>
           <td>transport.lwm2m.bootstrap.security.credentials.keystore.key_password</td>
@@ -249,61 +249,61 @@
           <td>transport.lwm2m.security.recommended_ciphers</td>
           <td>LWM2M_RECOMMENDED_CIPHERS</td>
           <td>false</td>
-          <td></td>
+          <td>Set usage of recommended cipher suites; true - allow only recommended cipher suites; false - allow not recommended cipher suites</td>
       </tr>
       <tr>
           <td>transport.lwm2m.security.recommended_supported_groups</td>
           <td>LWM2M_RECOMMENDED_SUPPORTED_GROUPS</td>
           <td>true</td>
-          <td></td>
+          <td>Set usage of recommended supported groups (curves); true - allow only recommended supported groups, false - allow not recommended supported groups</td>
       </tr>
       <tr>
           <td>transport.lwm2m.timeout</td>
           <td>LWM2M_TIMEOUT</td>
           <td>120000</td>
-          <td></td>
+          <td>Timeout of LwM2M operation</td>
       </tr>
       <tr>
           <td>transport.lwm2m.uplink_pool_size</td>
           <td>LWM2M_UPLINK_POOL_SIZE</td>
           <td>10</td>
-          <td></td>
+          <td>Thread pool size for processing of the LwM2M uplinks</td>
       </tr>
       <tr>
           <td>transport.lwm2m.downlink_pool_size</td>
           <td>LWM2M_DOWNLINK_POOL_SIZE</td>
           <td>10</td>
-          <td></td>
+          <td>Thread pool size for processing of the LwM2M downlinks</td>
       </tr>
       <tr>
           <td>transport.lwm2m.ota_pool_size</td>
           <td>LWM2M_OTA_POOL_SIZE</td>
           <td>10</td>
-          <td></td>
+          <td>Thread pool size for processing of the OTA updates</td>
       </tr>
       <tr>
           <td>transport.lwm2m.clean_period_in_sec</td>
           <td>LWM2M_CLEAN_PERIOD_IN_SEC</td>
           <td>2</td>
-          <td></td>
+          <td>Period of cleanup for the registrations in store</td>
       </tr>
       <tr>
           <td>transport.lwm2m.log_max_length</td>
           <td>LWM2M_LOG_MAX_LENGTH</td>
           <td>1024</td>
-          <td></td>
+          <td>Maximum log size</td>
       </tr>
       <tr>
           <td>transport.lwm2m.psm_activity_timer</td>
           <td>LWM2M_PSM_ACTIVITY_TIMER</td>
           <td>10000</td>
-          <td></td>
+          <td>PSM Activity Timer if not specified in device profile</td>
       </tr>
       <tr>
           <td>transport.lwm2m.paging_transmission_window</td>
           <td>LWM2M_PAGING_TRANSMISSION_WINDOW</td>
           <td>10000</td>
-          <td></td>
+          <td>Paging Transmission Window for eDRX support if not specified in the device profile</td>
       </tr>
       <tr>
           <td>transport.lwm2m.network_config</td>

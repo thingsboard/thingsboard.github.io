@@ -9,7 +9,7 @@
           <td>spring.main.allow-circular-references</td>
           <td></td>
           <td>true</td>
-          <td></td>
+          <td>Spring Boot configuration property that controls whether circular dependencies between beans are allowed or not.</td>
       </tr>
   </tbody>
 </table>

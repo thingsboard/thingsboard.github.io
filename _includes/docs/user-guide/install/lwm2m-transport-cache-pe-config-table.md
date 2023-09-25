@@ -9,7 +9,7 @@
           <td>cache.type</td>
           <td>CACHE_TYPE</td>
           <td>redis</td>
-          <td></td>
+          <td>Type of caching engine</td>
       </tr>
   </tbody>
 </table>

@@ -9,31 +9,31 @@
           <td>transport.coap.enabled</td>
           <td>COAP_ENABLED</td>
           <td>true</td>
-          <td>Enable/disable coap transport protocol.</td>
+          <td>Enable/disable coap transport protocol</td>
       </tr>
       <tr>
           <td>transport.coap.timeout</td>
           <td>COAP_TIMEOUT</td>
           <td>10000</td>
-          <td></td>
+          <td>CoaP processing timeout in milliseconds</td>
       </tr>
       <tr>
           <td>transport.coap.piggyback_timeout</td>
           <td>COAP_PIGGYBACK_TIMEOUT</td>
           <td>500</td>
-          <td></td>
+          <td>CoaP piggyback response timeout in milliseconds</td>
       </tr>
       <tr>
           <td>transport.coap.psm_activity_timer</td>
           <td>COAP_PSM_ACTIVITY_TIMER</td>
           <td>10000</td>
-          <td></td>
+          <td>Default PSM Activity Timer if not specified in device profile</td>
       </tr>
       <tr>
           <td>transport.coap.paging_transmission_window</td>
           <td>COAP_PAGING_TRANSMISSION_WINDOW</td>
           <td>10000</td>
-          <td></td>
+          <td>Default Paging Transmission Window for eDRX support if not specified in the device profile</td>
       </tr>
       <tr>
           <td>transport.coap.dtls.enabled</td>

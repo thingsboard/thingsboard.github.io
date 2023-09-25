@@ -9,7 +9,7 @@
           <td>service.type</td>
           <td>TB_SERVICE_TYPE</td>
           <td>tb-transport</td>
-          <td></td>
+          <td>Service internal type</td>
       </tr>
       <tr>
           <td>service.id</td>

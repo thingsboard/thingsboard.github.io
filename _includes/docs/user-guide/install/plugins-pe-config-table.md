@@ -5,11 +5,11 @@
       </tr>
   </thead>
   <tbody>
-<tr>
-<td>plugins.scan_packages</td>
-<td>PLUGINS_SCAN_PACKAGES</td>
-<td>org.thingsboard.server.extensions,org.thingsboard.rule.engine</td>
-<td>Comma separated package list used during classpath scanning for plugins</td>
-</tr>
+      <tr>
+          <td>plugins.scan_packages</td>
+          <td>PLUGINS_SCAN_PACKAGES</td>
+          <td>org.thingsboard.server.extensions,org.thingsboard.rule.engine</td>
+          <td>Comma separated package list used during classpath scanning for plugins</td>
+      </tr>
   </tbody>
 </table>

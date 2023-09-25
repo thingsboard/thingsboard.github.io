@@ -9,7 +9,7 @@
           <td>http_port</td>
           <td>HTTP_PORT</td>
           <td>8888</td>
-          <td>/livenessProbe</td>
+          <td>Bind port (/livenessProbe)</td>
       </tr>
   </tbody>
 </table>

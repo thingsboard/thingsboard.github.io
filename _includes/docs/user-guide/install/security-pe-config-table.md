@@ -21,7 +21,7 @@
           <td>security.jwt.tokenIssuer</td>
           <td>JWT_TOKEN_ISSUER</td>
           <td>thingsboard.io</td>
-          <td></td>
+          <td>User JWT Token issuer</td>
       </tr>
       <tr>
           <td>security.jwt.tokenSigningKey</td>
@@ -57,7 +57,7 @@
           <td>security.basic.enabled</td>
           <td>SECURITY_BASIC_ENABLED</td>
           <td>false</td>
-          <td></td>
+          <td>Enable/Disable basic security options</td>
       </tr>
       <tr>
           <td>security.oauth2.loginProcessingUrl</td>
@@ -69,19 +69,19 @@
           <td>security.oauth2.githubMapper.emailUrl</td>
           <td>SECURITY_OAUTH2_GITHUB_MAPPER_EMAIL_URL_KEY</td>
           <td>https://api.github.com/user/emails</td>
-          <td></td>
+          <td>The email addresses that will be mapped from the URL.</td>
       </tr>
       <tr>
           <td>security.java_cacerts.path</td>
           <td>SECURITY_JAVA_CACERTS_PATH</td>
           <td>${java.home}/lib/security/cacerts</td>
-          <td></td>
+          <td>CA certificates keystore default path. Typically this keystore is at JAVA_HOME/lib/security/cacerts</td>
       </tr>
       <tr>
           <td>security.java_cacerts.password</td>
           <td>SECURITY_JAVA_CACERTS_PASSWORD</td>
           <td>changeit</td>
-          <td></td>
+          <td>The password of the cacerts keystore file</td>
       </tr>
   </tbody>
 </table>

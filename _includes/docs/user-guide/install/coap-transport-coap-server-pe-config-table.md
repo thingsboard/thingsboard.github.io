@@ -9,19 +9,19 @@
           <td>coap.enabled</td>
           <td>COAP_SERVER_ENABLED</td>
           <td>true</td>
-          <td>Enable/disable coap transport protocol.</td>
+          <td>Enable/disable coap transport protocol</td>
       </tr>
       <tr>
           <td>coap.bind_address</td>
           <td>COAP_BIND_ADDRESS</td>
           <td>0.0.0.0</td>
-          <td></td>
+          <td>CoAP bind address</td>
       </tr>
       <tr>
           <td>coap.bind_port</td>
           <td>COAP_BIND_PORT</td>
           <td>5683</td>
-          <td></td>
+          <td>CoAP bind port</td>
       </tr>
       <tr>
           <td>coap.dtls.enabled</td>
@@ -105,13 +105,13 @@
           <td>coap.dtls.x509.dtls_session_inactivity_timeout</td>
           <td>TB_COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT</td>
           <td>86400000</td>
-          <td></td>
+          <td>Inactivity timeout of DTLS session. Used to cleanup cache</td>
       </tr>
       <tr>
           <td>coap.dtls.x509.dtls_session_report_timeout</td>
           <td>TB_COAP_X509_DTLS_SESSION_REPORT_TIMEOUT</td>
           <td>1800000</td>
-          <td></td>
+          <td>Interval of periodic eviction of the timed-out DTLS sessions</td>
       </tr>
   </tbody>
 </table>

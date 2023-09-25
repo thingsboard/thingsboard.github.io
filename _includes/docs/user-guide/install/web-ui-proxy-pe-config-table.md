@@ -9,7 +9,7 @@
           <td>thingsboard.enableProxy</td>
           <td>TB_ENABLE_PROXY</td>
           <td>false</td>
-          <td></td>
+          <td>Enable/Disable proxy feature</td>
       </tr>
       <tr>
           <td>thingsboard.host</td>

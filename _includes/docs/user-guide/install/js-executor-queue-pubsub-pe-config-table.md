@@ -9,19 +9,19 @@
           <td>pubsub.project_id</td>
           <td>TB_QUEUE_PUBSUB_PROJECT_ID</td>
           <td></td>
-          <td></td>
+          <td>Project ID from Google Cloud</td>
       </tr>
       <tr>
           <td>pubsub.service_account</td>
           <td>TB_QUEUE_PUBSUB_SERVICE_ACCOUNT</td>
           <td></td>
-          <td></td>
+          <td>API Credentials in JSON format</td>
       </tr>
       <tr>
           <td>pubsub.queue_properties</td>
           <td>TB_QUEUE_PUBSUB_JE_QUEUE_PROPERTIES</td>
           <td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-          <td></td>
+          <td>PubSub queue properties</td>
       </tr>
   </tbody>
 </table>

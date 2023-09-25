@@ -9,25 +9,25 @@
           <td>js.evaluator</td>
           <td>JS_EVALUATOR</td>
           <td>local</td>
-          <td>local/remote</td>
+          <td>local (Nashorn Engine, deprecated) OR remote JS-Executors (NodeJS)</td>
       </tr>
       <tr>
           <td>js.max_total_args_size</td>
           <td>JS_MAX_TOTAL_ARGS_SIZE</td>
           <td>150000</td>
-          <td></td>
+          <td>Limit on the number of arguments that are passed to the function to execute the script</td>
       </tr>
       <tr>
           <td>js.max_result_size</td>
           <td>JS_MAX_RESULT_SIZE</td>
           <td>300000</td>
-          <td></td>
+          <td>Maximum allowed symbols in a result after processing a script</td>
       </tr>
       <tr>
           <td>js.max_script_body_size</td>
           <td>JS_MAX_SCRIPT_BODY_SIZE</td>
           <td>50000</td>
-          <td></td>
+          <td>Maximum allowed symbols in script body</td>
       </tr>
       <tr>
           <td>js.local.js_thread_pool_size</td>
@@ -75,13 +75,13 @@
           <td>js.local.stats.enabled</td>
           <td>TB_JS_LOCAL_STATS_ENABLED</td>
           <td>false</td>
-          <td></td>
+          <td>Enable/Disable stats collection for local JS executor</td>
       </tr>
       <tr>
           <td>js.local.stats.print_interval_ms</td>
           <td>TB_JS_LOCAL_STATS_PRINT_INTERVAL_MS</td>
           <td>10000</td>
-          <td></td>
+          <td>Interval of logging for local JS executor stats</td>
       </tr>
       <tr>
           <td>js.remote.js_thread_pool_size</td>
@@ -99,19 +99,19 @@
           <td>js.remote.max_black_list_duration_sec</td>
           <td>REMOTE_JS_SANDBOX_MAX_BLACKLIST_DURATION_SEC</td>
           <td>60</td>
-          <td>Maximum time in seconds for black listed function to stay in the list.</td>
+          <td>Maximum time in seconds for black listed function to stay in the list</td>
       </tr>
       <tr>
           <td>js.remote.stats.enabled</td>
           <td>TB_JS_REMOTE_STATS_ENABLED</td>
           <td>false</td>
-          <td></td>
+          <td>Enable/Disable stats collection for remote JS executor</td>
       </tr>
       <tr>
           <td>js.remote.stats.print_interval_ms</td>
           <td>TB_JS_REMOTE_STATS_PRINT_INTERVAL_MS</td>
           <td>10000</td>
-          <td></td>
+          <td>Interval of logging for remote JS executor stats</td>
       </tr>
   </tbody>
 </table>

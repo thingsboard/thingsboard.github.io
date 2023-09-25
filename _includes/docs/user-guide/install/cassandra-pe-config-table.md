@@ -51,7 +51,7 @@
           <td>cassandra.ssl.trust_store_password</td>
           <td>CASSANDRA_SSL_TRUST_STORE_PASSWORD</td>
           <td></td>
-          <td></td>
+          <td>The password for Cassandra trust store key</td>
       </tr>
       <tr>
           <td>cassandra.ssl.key_store</td>
@@ -63,7 +63,7 @@
           <td>cassandra.ssl.key_store_password</td>
           <td>CASSANDRA_SSL_KEY_STORE_PASSWORD</td>
           <td></td>
-          <td></td>
+          <td>The password for Cassandra key store</td>
       </tr>
       <tr>
           <td>cassandra.ssl.cipher_suites</td>
@@ -105,13 +105,13 @@
           <td>cassandra.max_requests_per_connection_local</td>
           <td>CASSANDRA_MAX_REQUESTS_PER_CONNECTION_LOCAL</td>
           <td>32768</td>
-          <td></td>
+          <td>Cassandra max local requests per connection</td>
       </tr>
       <tr>
           <td>cassandra.max_requests_per_connection_remote</td>
           <td>CASSANDRA_MAX_REQUESTS_PER_CONNECTION_REMOTE</td>
           <td>32768</td>
-          <td></td>
+          <td>Cassandra max remote requests per connection</td>
       </tr>
       <tr>
           <td>cassandra.credentials</td>
@@ -135,85 +135,85 @@
           <td>cassandra.cloud.secure_connect_bundle_path</td>
           <td>CASSANDRA_CLOUD_SECURE_BUNDLE_PATH</td>
           <td></td>
-          <td>/etc/thingsboard/astra/secure-connect-thingsboard.zip</td>
+          <td>To connect to your Astra DB database using the drivers, download the secure connect bundle from the DataStax Astra Portal that contains the connection credentials. Example path is /etc/thingsboard/astra/secure-connect-thingsboard.zip</td>
       </tr>
       <tr>
           <td>cassandra.cloud.client_id</td>
           <td>CASSANDRA_CLOUD_CLIENT_ID</td>
           <td></td>
-          <td>DucitQPHMzPCBOZqFYexAfKk</td>
+          <td>ClientID from AstraDB Cloud panel. An example of clientID - DucitQPHMzPCBOZqFYexAfKk</td>
       </tr>
       <tr>
           <td>cassandra.cloud.client_secret</td>
           <td>CASSANDRA_CLOUD_CLIENT_SECRET</td>
           <td></td>
-          <td>ZnF7FpuHp43FP5BzM+KY8wGmSb4Ql6BhT4Z7sOU13ze+gXQ-n7OkFpNuB,oACUIQObQnK0g4bSPoZhK5ejkcF9F.j6f64j71Sr.tiRe0Fsq2hPS1ZCGSfAaIgg63IydG</td>
+          <td>Client Secret from AstraDB Cloud panel. An example of secret - ZnF7FpuHp43FP5BzM+KY8wGmSb4Ql6BhT4Z7sOU13ze+gXQ-n7OkFpNuB,oACUIQObQnK0g4bSPoZhK5ejkcF9F.j6f64j71Sr.tiRe0Fsq2hPS1ZCGSfAaIgg63IydG</td>
       </tr>
       <tr>
           <td>cassandra.socket.connect_timeout</td>
           <td>CASSANDRA_SOCKET_TIMEOUT</td>
           <td>5000</td>
-          <td></td>
+          <td>Sets the timeout, in millisecond, of a native connection from ThingsBoard to Cassandra. The default value is 5000</td>
       </tr>
       <tr>
           <td>cassandra.socket.read_timeout</td>
           <td>CASSANDRA_SOCKET_READ_TIMEOUT</td>
           <td>20000</td>
-          <td></td>
+          <td>Timeout before closing the connection. Value set in milliseconds</td>
       </tr>
       <tr>
           <td>cassandra.socket.keep_alive</td>
           <td>CASSANDRA_SOCKET_KEEP_ALIVE</td>
           <td>true</td>
-          <td></td>
+          <td>Gets if TCP keep-alive must be used</td>
       </tr>
       <tr>
           <td>cassandra.socket.reuse_address</td>
           <td>CASSANDRA_SOCKET_REUSE_ADDRESS</td>
           <td>true</td>
-          <td></td>
+          <td>Enable/Disable reuse-address.The socket option allows for the reuse of local addresses and ports</td>
       </tr>
       <tr>
           <td>cassandra.socket.so_linger</td>
           <td>CASSANDRA_SOCKET_SO_LINGER</td>
           <td></td>
-          <td></td>
+          <td>Sets the linger-on-close timeout. By default, this option is not set by the driver. The actual value will be the default from the underlying Netty transport</td>
       </tr>
       <tr>
           <td>cassandra.socket.tcp_no_delay</td>
           <td>CASSANDRA_SOCKET_TCP_NO_DELAY</td>
           <td>false</td>
-          <td></td>
+          <td>Enable/Disable Nagle's algorithm</td>
       </tr>
       <tr>
           <td>cassandra.socket.receive_buffer_size</td>
           <td>CASSANDRA_SOCKET_RECEIVE_BUFFER_SIZE</td>
           <td></td>
-          <td></td>
+          <td>Sets a hint to the size of the underlying buffers for incoming network I/O. By default, this option is not set by the driver. The actual value will be the default from the underlying Netty transport</td>
       </tr>
       <tr>
           <td>cassandra.socket.send_buffer_size</td>
           <td>CASSANDRA_SOCKET_SEND_BUFFER_SIZE</td>
           <td></td>
-          <td></td>
+          <td>Returns the hint to the size of the underlying buffers for outgoing network I/O. By default, this option is not set by the driver. The actual value will be the default from the underlying Netty transport</td>
       </tr>
       <tr>
           <td>cassandra.query.read_consistency_level</td>
           <td>CASSANDRA_READ_CONSISTENCY_LEVEL</td>
           <td>ONE</td>
-          <td></td>
+          <td>Consistency levels in Cassandra can be configured to manage availability versus data accuracy. The consistency level defaults to ONE for all write and read operations</td>
       </tr>
       <tr>
           <td>cassandra.query.write_consistency_level</td>
           <td>CASSANDRA_WRITE_CONSISTENCY_LEVEL</td>
           <td>ONE</td>
-          <td></td>
+          <td>Consistency levels in Cassandra can be configured to manage availability versus data accuracy. The consistency level defaults to ONE for all write and read operations</td>
       </tr>
       <tr>
           <td>cassandra.query.default_fetch_size</td>
           <td>CASSANDRA_DEFAULT_FETCH_SIZE</td>
           <td>2000</td>
-          <td></td>
+          <td>The fetch size specifies how many rows will be returned at once by Cassandra (in other words, it’s the size of each page)</td>
       </tr>
       <tr>
           <td>cassandra.query.ts_key_value_partitioning</td>
@@ -225,79 +225,79 @@
           <td>cassandra.query.use_ts_key_value_partitioning_on_read</td>
           <td>USE_TS_KV_PARTITIONING_ON_READ</td>
           <td>true</td>
-          <td></td>
+          <td>Enable/Disable timestamp key-value partioning on read queries</td>
       </tr>
       <tr>
           <td>cassandra.query.ts_key_value_partitions_max_cache_size</td>
           <td>TS_KV_PARTITIONS_MAX_CACHE_SIZE</td>
           <td>100000</td>
-          <td></td>
+          <td>The number of partitions that are cached in memory of each service. Useful to decrease load of re-inserting same partitions again</td>
       </tr>
       <tr>
           <td>cassandra.query.ts_key_value_ttl</td>
           <td>TS_KV_TTL</td>
           <td>0</td>
-          <td></td>
+          <td>Timeseries Time To Live (in seconds) for Cassandra Record. 0 - record is never expired</td>
       </tr>
       <tr>
           <td>cassandra.query.buffer_size</td>
           <td>CASSANDRA_QUERY_BUFFER_SIZE</td>
           <td>200000</td>
-          <td></td>
+          <td>Maximum number of Cassandra queries that are waiting for execution</td>
       </tr>
       <tr>
           <td>cassandra.query.concurrent_limit</td>
           <td>CASSANDRA_QUERY_CONCURRENT_LIMIT</td>
           <td>1000</td>
-          <td></td>
+          <td>Maximum number of concurrent Cassandra queries</td>
       </tr>
       <tr>
           <td>cassandra.query.permit_max_wait_time</td>
           <td>PERMIT_MAX_WAIT_TIME</td>
           <td>120000</td>
-          <td></td>
+          <td>Max time in milliseconds query waits for execution</td>
       </tr>
       <tr>
           <td>cassandra.query.dispatcher_threads</td>
           <td>CASSANDRA_QUERY_DISPATCHER_THREADS</td>
           <td>2</td>
-          <td></td>
+          <td>Amount of threads to dispatch cassandra queries</td>
       </tr>
       <tr>
           <td>cassandra.query.callback_threads</td>
           <td>CASSANDRA_QUERY_CALLBACK_THREADS</td>
           <td>4</td>
-          <td></td>
+          <td>Amount of threads used to invoke callbacks for queries results</td>
       </tr>
       <tr>
           <td>cassandra.query.poll_ms</td>
           <td>CASSANDRA_QUERY_POLL_MS</td>
           <td>50</td>
-          <td></td>
+          <td>Cassandra query queue polling interval in milliseconds</td>
       </tr>
       <tr>
           <td>cassandra.query.rate_limit_print_interval_ms</td>
           <td>CASSANDRA_QUERY_RATE_LIMIT_PRINT_MS</td>
           <td>10000</td>
-          <td></td>
+          <td>Interval in milliseconds for printing Cassandra query queue statistic</td>
       </tr>
       <tr>
           <td>cassandra.query.set_null_values_enabled</td>
           <td>CASSANDRA_QUERY_SET_NULL_VALUES_ENABLED</td>
           <td>false</td>
-          <td>set all data types values except target to null for the same ts on save</td>
+          <td>Set all data types values except target to null for the same ts on save</td>
       </tr>
       <tr>
           <td>cassandra.query.print_queries_freq</td>
           <td>CASSANDRA_QUERY_PRINT_FREQ</td>
           <td>0</td>
-          <td>log one of cassandra queries with specified frequency (0 - logging is disabled)</td>
+          <td>Log one of cassandra queries with specified frequency (0 - logging is disabled)</td>
       </tr>
       <tr>
           <td>cassandra.query.tenant_rate_limits.print_tenant_names</td>
           <td>CASSANDRA_QUERY_TENANT_RATE_LIMITS_PRINT_TENANT_NAMES</td>
           <td>false</td>
-          <td></td>
+          <td>Whether to print rate-limited tenant names when printing Cassandra query queue statistic</td>
       </tr>
   </tbody>
 </table>

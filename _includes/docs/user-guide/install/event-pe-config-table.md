@@ -9,7 +9,7 @@
           <td>event.debug.max-symbols</td>
           <td>TB_MAX_DEBUG_EVENT_SYMBOLS</td>
           <td>4096</td>
-          <td></td>
+          <td>Maximum number of symbols per debug event. The event content will be truncated if needed.</td>
       </tr>
   </tbody>
 </table>

@@ -9,79 +9,79 @@
           <td>queue.rabbitmq.exchange_name</td>
           <td>TB_QUEUE_RABBIT_MQ_EXCHANGE_NAME</td>
           <td></td>
-          <td></td>
+          <td>By default empty</td>
       </tr>
       <tr>
           <td>queue.rabbitmq.host</td>
           <td>TB_QUEUE_RABBIT_MQ_HOST</td>
           <td>localhost</td>
-          <td></td>
+          <td>RabbitMQ host used to establish connection</td>
       </tr>
       <tr>
           <td>queue.rabbitmq.port</td>
           <td>TB_QUEUE_RABBIT_MQ_PORT</td>
           <td>5672</td>
-          <td></td>
+          <td>RabbitMQ host used to establish connection</td>
       </tr>
       <tr>
           <td>queue.rabbitmq.virtual_host</td>
           <td>TB_QUEUE_RABBIT_MQ_VIRTUAL_HOST</td>
           <td>/</td>
-          <td></td>
+          <td>Virtual hosts provide logical grouping and separation of resources</td>
       </tr>
       <tr>
           <td>queue.rabbitmq.username</td>
           <td>TB_QUEUE_RABBIT_MQ_USERNAME</td>
           <td>YOUR_USERNAME</td>
-          <td></td>
+          <td>Username for RabbitMQ user account</td>
       </tr>
       <tr>
           <td>queue.rabbitmq.password</td>
           <td>TB_QUEUE_RABBIT_MQ_PASSWORD</td>
           <td>YOUR_PASSWORD</td>
-          <td></td>
+          <td>User password for RabbitMQ user account</td>
       </tr>
       <tr>
           <td>queue.rabbitmq.automatic_recovery_enabled</td>
           <td>TB_QUEUE_RABBIT_MQ_AUTOMATIC_RECOVERY_ENABLED</td>
           <td>false</td>
-          <td></td>
+          <td>Network connection between clients and RabbitMQ nodes can fail. RabbitMQ Java client supports automatic recovery of connections and topology (queues, exchanges, bindings, and consumers)</td>
       </tr>
       <tr>
           <td>queue.rabbitmq.connection_timeout</td>
           <td>TB_QUEUE_RABBIT_MQ_CONNECTION_TIMEOUT</td>
           <td>60000</td>
-          <td></td>
+          <td>The connection timeout for the RabbitMQ connection factory</td>
       </tr>
       <tr>
           <td>queue.rabbitmq.handshake_timeout</td>
           <td>TB_QUEUE_RABBIT_MQ_HANDSHAKE_TIMEOUT</td>
           <td>10000</td>
-          <td></td>
+          <td>RabbitMQ has a timeout for connection handshake. When clients run in heavily constrained environments, it may be necessary to increase the timeout</td>
       </tr>
       <tr>
           <td>queue.rabbitmq.queue-properties.rule-engine</td>
           <td>TB_QUEUE_RABBIT_MQ_RE_QUEUE_PROPERTIES</td>
           <td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-          <td></td>
+          <td>RabbitMQ properties for Rule Engine queues</td>
       </tr>
       <tr>
           <td>queue.rabbitmq.queue-properties.core</td>
           <td>TB_QUEUE_RABBIT_MQ_CORE_QUEUE_PROPERTIES</td>
           <td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-          <td></td>
+          <td>RabbitMQ properties for Core queues</td>
       </tr>
       <tr>
           <td>queue.rabbitmq.queue-properties.transport-api</td>
           <td>TB_QUEUE_RABBIT_MQ_TA_QUEUE_PROPERTIES</td>
           <td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-          <td></td>
+          <td>RabbitMQ properties for Transport API queues</td>
       </tr>
       <tr>
           <td>queue.rabbitmq.queue-properties.notifications</td>
           <td>TB_QUEUE_RABBIT_MQ_NOTIFICATIONS_QUEUE_PROPERTIES</td>
           <td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-          <td></td>
+          <td>RabbitMQ properties for Notification queues</td>
       </tr>
   </tbody>
 </table>
