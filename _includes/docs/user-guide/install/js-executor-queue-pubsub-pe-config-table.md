@@ -1,0 +1,27 @@
+<table>
+  <thead>
+      <tr>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>pubsub.project_id</td>
+          <td>TB_QUEUE_PUBSUB_PROJECT_ID</td>
+          <td></td>
+          <td>Project ID from Google Cloud</td>
+      </tr>
+      <tr>
+          <td>pubsub.service_account</td>
+          <td>TB_QUEUE_PUBSUB_SERVICE_ACCOUNT</td>
+          <td></td>
+          <td>API Credentials in JSON format</td>
+      </tr>
+      <tr>
+          <td>pubsub.queue_properties</td>
+          <td>TB_QUEUE_PUBSUB_JE_QUEUE_PROPERTIES</td>
+          <td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
+          <td>PubSub queue properties</td>
+      </tr>
+  </tbody>
+</table>

@@ -1,0 +1,33 @@
+<table>
+  <thead>
+      <tr>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>aws_sqs.access_key_id</td>
+          <td>TB_QUEUE_AWS_SQS_ACCESS_KEY_ID</td>
+          <td></td>
+          <td>Access key ID from AWS IAM user</td>
+      </tr>
+      <tr>
+          <td>aws_sqs.secret_access_key</td>
+          <td>TB_QUEUE_AWS_SQS_SECRET_ACCESS_KEY</td>
+          <td></td>
+          <td>Secret access key from AWS IAM user</td>
+      </tr>
+      <tr>
+          <td>aws_sqs.region</td>
+          <td>TB_QUEUE_AWS_SQS_REGION</td>
+          <td></td>
+          <td>Region from AWS account</td>
+      </tr>
+      <tr>
+          <td>aws_sqs.queue_properties</td>
+          <td>TB_QUEUE_AWS_SQS_JE_QUEUE_PROPERTIES</td>
+          <td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
+          <td>AWS SQS queue properties</td>
+      </tr>
+  </tbody>
+</table>
