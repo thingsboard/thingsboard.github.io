@@ -1,0 +1,51 @@
+<table>
+  <thead>
+      <tr>
+          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>zk.enabled</td>
+          <td>ZOOKEEPER_ENABLED</td>
+          <td>true</td>
+          <td>Enable/disable zookeeper discovery service.</td>
+      </tr>
+      <tr>
+          <td>zk.url</td>
+          <td>ZOOKEEPER_URL</td>
+          <td>localhost:2181</td>
+          <td>Zookeeper connect string</td>
+      </tr>
+      <tr>
+          <td>zk.retry_interval_ms</td>
+          <td>ZOOKEEPER_RETRY_INTERVAL_MS</td>
+          <td>3000</td>
+          <td>Zookeeper retry interval in milliseconds</td>
+      </tr>
+      <tr>
+          <td>zk.connection_timeout_ms</td>
+          <td>ZOOKEEPER_CONNECTION_TIMEOUT_MS</td>
+          <td>3000</td>
+          <td>Zookeeper connection timeout in milliseconds</td>
+      </tr>
+      <tr>
+          <td>zk.session_timeout_ms</td>
+          <td>ZOOKEEPER_SESSION_TIMEOUT_MS</td>
+          <td>3000</td>
+          <td>Zookeeper session timeout in milliseconds</td>
+      </tr>
+      <tr>
+          <td>zk.zk_dir</td>
+          <td>ZOOKEEPER_NODES_DIR</td>
+          <td>/thingsboard</td>
+          <td>Name of the directory in zookeeper 'filesystem'</td>
+      </tr>
+      <tr>
+          <td>zk.recalculate_delay</td>
+          <td>ZOOKEEPER_RECALCULATE_DELAY_MS</td>
+          <td>0</td>
+          <td>The recalculate_delay property recommended in a microservices architecture setup for rule-engine services. This property provides a pause to ensure that when a rule-engine service is restarted, other nodes don't immediately attempt to recalculate their partitions. The delay is recommended because the initialization of rule chain actors is time-consuming. Avoiding unnecessary recalculations during a restart can enhance system performance and stability.</td>
+      </tr>
+  </tbody>
+</table>

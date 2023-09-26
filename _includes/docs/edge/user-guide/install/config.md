@@ -388,7 +388,7 @@ environment variable, default value and description.
     </tbody>
 </table>
 
-{% include docs/user-guide/install/zookeeper-config.md %}
+{% include docs/user-guide/install/zk-config-table.md %}
 
 #### Cluster stats parameters
 
@@ -1015,8 +1015,8 @@ assign UI_HELP_BASE_URL_VALUE = "pe-ui" %} {% endif %}
 #### Platform integrations parameters
 {% endif %}
 
-{% if docsPrefix == "pe/" %} 
-{% include docs/user-guide/install/platform-integrations-and-reports-parameters.md %} 
+{% if docsPrefix == "pe/" %}
+{% include docs/user-guide/install/integrations-config-table.md %}
 {% endif %}
 
 #### Cache parameters
@@ -1303,7 +1303,7 @@ assign UI_HELP_BASE_URL_VALUE = "pe-ui" %} {% endif %}
 
 #### Redis connection parameters
 
-{% include docs/user-guide/install/redis-config.md %}
+{% include docs/user-guide/install/redis-config-table.md %}
 
 #### Check new version updates parameters
 
@@ -1873,108 +1873,27 @@ assign UI_HELP_BASE_URL_VALUE = "pe-ui" %} {% endif %}
 
 #### Transport parameters
 
-{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %} {% include
-docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-stats-parameters.md %}
+{% assign JSON_TYPE_CAST_ENABLED_VALUE = "true" %} {% include docs/user-guide/install/transport-common-config-table.md %}
 
 ##### Local HTTP transport parameters
 
-<table>
-    <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>transport.http.enabled</td>
-        <td>HTTP_ENABLED</td>
-        <td>true</td>
-        <td>Enable/Disable local HTTP transport protocol</td>
-    </tr>
-    </tbody>
-</table>
-
-{% include docs/user-guide/install/http-transport.md %}
+{% include docs/user-guide/install/transport-http-local-config-table.md %}
 
 ##### Local MQTT transport parameters
 
-<table>
-    <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>transport.mqtt.enabled</td>
-        <td>MQTT_ENABLED</td>
-        <td>true</td>
-        <td>Enable/Disable local MQTT transport protocol</td>
-    </tr>
-    </tbody>
-</table>
-
-{% include docs/user-guide/install/mqtt-transport.md %}
+{% include docs/user-guide/install/transport-mqtt-local-config-table.md %}
 
 ##### Local CoAP transport parameters
 
-<table>
-    <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>transport.coap.enabled</td>
-        <td>COAP_ENABLED</td>
-        <td>true</td>
-        <td>Enable/Disable local CoAP transport protocol</td>
-    </tr>
-    </tbody>
-</table>
-
-{% include docs/user-guide/install/coap-transport.md %}
+{% include docs/user-guide/install/transport-coap-local-config-table.md %}
 
 ##### Local LwM2M transport parameters
 
-<table>
-    <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>transport.lwm2m.enabled</td>
-        <td>LWM2M_ENABLED</td>
-        <td>false</td>
-        <td>Enable/disable lvm2m transport protocol</td>
-    </tr>
-    </tbody>
-</table>
-
-{% include docs/user-guide/install/lwm2m-transport.md %}
+{% include docs/user-guide/install/transport-lwm2m-local-config-table.md %}
 
 ##### Local SNMP transport parameters
 
-<table>
-    <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td>transport.snmp.enabled</td>
-        <td>SNMP_ENABLED</td>
-        <td>false</td>
-        <td>Enable/disable SNMP transport protocol</td>
-    </tr>
-    </tbody>
-</table>
-
-{% include docs/user-guide/install/snmp-transport.md %}
+{% include docs/user-guide/install/transport-snmp-local-config-table.md %}
 
 {% if docsPrefix == "pe/" %} 
 #### License parameters
@@ -2078,30 +1997,37 @@ docs/user-guide/install/transport-sessions-json-client_side_rpc-api_enabled-log-
     </tbody>
 </table>
 
-#### Queue parameters
+#### Common queue parameters
 
-<table>
-    <thead>
-      <tr>
-          <td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-      </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>queue.type</td>
-            <td>TB_QUEUE_TYPE</td>
-            <td>in-memory</td>
-            <td>In-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
-        </tr>
-        <tr>
-            <td>queue.in_memory.stats.print-interval-ms</td>
-            <td>TB_QUEUE_IN_MEMORY_STATS_PRINT_INTERVAL_MS</td>
-            <td>60000</td>
-            <td>For debug lvl</td>
-        </tr>
-    </tbody>
-</table>
-{% include docs/user-guide/install/queue-parameters.md %}
+{% include docs/user-guide/install/queue-common-config-table.md %}
+
+##### In-memory queue parameters
+
+{% include docs/user-guide/install/queue-in-memory-config-table.md %}
+
+##### Kafka and Confluent Cloud queues parameters
+
+{% include docs/user-guide/install/queue-kafka-confluent-config-table.md %}
+
+##### AWS SQS queue parameters
+
+{% include docs/user-guide/install/queue-aws-sqs-config-table.md %}
+
+##### Google Pub/Sub queue parameters
+
+{% include docs/user-guide/install/queue-pubsub-config-table.md %}
+
+##### Azure Service Bus queue parameters
+
+{% include docs/user-guide/install/queue-servicebus-config-table.md %}
+
+##### RabbitMQ queue parameters
+
+{% include docs/user-guide/install/queue-rabbitmq-config-table.md %}
+
+#### Queue topic parameters
+
+{% include docs/user-guide/install/queue-topic-config-table.md %}
 
 #### ThingsBoard event parameters
 
