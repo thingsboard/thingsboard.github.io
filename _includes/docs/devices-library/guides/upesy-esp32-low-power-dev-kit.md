@@ -11,7 +11,7 @@
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 
-The [uPesy ESP32 Wroom DevKit v2](https://www.upesy.com/products/upesy-esp32-wroom-low-power-devkit) is built on the ESP-WROOM-32D module, a miniature high-performance Wi-Fi + BT + BLE chip from Espressif, designed for a wide range of applications, from micro-power network sensors to the most complex applications, such as encoding, streaming music and MP3 encoding.  
+The [uPesy ESP32 Low power DevKit](https://www.upesy.com/products/upesy-esp32-wroom-low-power-devkit) is built on the ESP-WROOM-32D module, a miniature high-performance Wi-Fi + BT + BLE chip from Espressif, designed for a wide range of applications, from micro-power network sensors to the most complex applications, such as encoding, streaming music and MP3 encoding.  
 The module contains all the necessary minimum peripherals, sufficient for a quick and comfortable start of the work with ESP-WROOM-32 family.  
 ESP-WROOM-32D is based on the popular ESP32 dual-core chipset, with a variable clock frequency from 80 MHz to 240 MHz, with the possibility of individual control and power supply.  
 It has on-board Flash memory, 40 MHz quartz and a PCB antenna that provides good RF characteristics.
