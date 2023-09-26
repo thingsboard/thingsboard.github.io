@@ -4,7 +4,7 @@
 ## Introduction
 
 All [IoT Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/) are constructed using **ThingsBoard widgets** defined in the Widget Library.
-Each widget provides end-user functionality such as data visualization, remote device control, alarm management and display of static custom HTML content.
+Widgets are used to display data and visualize information obtained from devices connected to the Thingsboard platform, remote device control, alarms management, and display static custom html content.
 
 ## Widget Types
 
@@ -22,11 +22,12 @@ There are five widget types:
 Each widget type has its own specific data source configuration and the corresponding API widget.
 Each widget requires data sources to visualize data. Types of available data source depend on widget type of the widget:
 
- - Target device - this data source type is used in RPC. Basically, you need to specify the target device for the RPC widget;
- - Alarm source - this data source type is used in Alarm widgets. This data source requires the source entity to display related alarms and corresponding alarm fields;
- - Entity - this datasource type is used in both time-series and latest values widgets. Basically, you need to specify the target entity, and the time series key, or the attribute name;
- - Entities count - this data source type is used in latest values widgets. Basically, you need to specify the target entity.
- - Function - this data source type is used in both time series and latest values widgets for debugging.
+ - **Target device** - this data source type is used in RPC. Basically, you need to specify the target device for the RPC widget;
+ - **Alarm source** - this data source type is used in Alarm widgets. This data source requires the source entity to display related alarms and corresponding alarm fields;
+ - **Alarms count** - this data source type is used in latest values widgets. You need to specify the target entity.
+ - **Entity** - this datasource type is used in both time-series and latest values widgets. Basically, you need to specify the target entity, and the time series key, or the attribute name;
+ - **Entities count** - this data source type is used in latest values widgets.You need to specify the target entity.
+ - **Function** - this data source type is used in both time series and latest values widgets for debugging.
    Basically, you can specify a javascript function that will simulate data from a device in order to set up visualization;
 
 ### Latest values
@@ -112,11 +113,20 @@ justify-content: center;
  
 ## Widgets Library (Bundles)
 
-Widgets are grouped into widget bundles according to their purposes. There are System-level and Tenant-level Widgets bundles.
-Initial ThingsBoard installation comes with a basic set of system-level Widgets bundles.  
+Widgets are grouped into widget bundles according to their purposes.
+Some widgets can be found in multiple packages simultaneously. For example, the Alarm Count widget can be found in the Alarm Widgets bundle and the Count Widgets bundle.
+
+There are System-level and Tenant-level Widgets bundles. Initial ThingsBoard installation comes with a basic set of system-level Widgets bundles.
+
 System level bundles can be managed by a **System administrator** and are available for use by any tenant in the system.
 Tenant level bundles can be managed by a **Tenant administrator** and are available for use only by this tenant and his customers. 
 You can always implement and add your widgets by following this [guide](/docs/{{docsPrefix}}user-guide/contribution/widgets-development/).
+
+To find the widget you need among all the widget bundles, you can use the search function.
+
+{% include images-gallery.html imageCollection="wl-bundle" %}
+
+You can also find the widget you need by its name on the "Widgets" tab. Here, all available widgets are listed by default in alphabetical order.
 
 {% include images-gallery.html imageCollection="wl" %}
 
@@ -150,6 +160,12 @@ Control widgets bundle is useful for visualization the current state and sending
 
 {% include images-gallery.html imageCollection="wl-control-bundle" %}
 
+### Count widgets
+
+Counter widgets bundle is useful for counting and visualizing the current number of alarms and entities based on the selected filter..
+
+{% include images-gallery.html imageCollection="wl-count-bundle" %}
+
 ### Date widgets 
 
 Date widgets bundle is useful for changing the data range for other widgets on the dashboard.
@@ -162,11 +178,29 @@ Digital Gauges bundle is useful for visualization temperature, humidity, speed a
 
 {% include images-gallery.html imageCollection="wl-digital-bundle" %}
 
+### Edge widgets
+
+Edge widgets bundle is useful for an overview of entities related to the specified ThingsBoard Edge instance.
+
+{% include images-gallery.html imageCollection="wl-edge-widgets-bundle" %}
+
 ### Entity admin widgets
 
 Entity admin widgets are templates of complex widgets that allow listing and creating/updating/deleting devices and assets.
 
 {% include images-gallery.html imageCollection="wl-entity-admin-bundle" %}
+
+### Entity widgets
+
+Entity admin widgets displays a list of entities with their data, counting entities, and displays the hierarchy of entities based on their relations.
+
+{% include images-gallery.html imageCollection="wl-entity-bundle" %}
+
+### Files widgets
+
+Files widgets display a list of files or pdf reports as a table. Allows to download and delete the file.
+
+{% include images-gallery.html imageCollection="wl-files-bundle" %}
 
 ### Gateway widgets
 
@@ -179,6 +213,18 @@ Gateway widgets bundle is useful for managing extensions.
 GPIO widgets bundle is useful for visualization and controlling GPIO state for target devices.
 
 {% include images-gallery.html imageCollection="wl-gpio" %}
+
+### Home page widgets
+
+Home page widget bundle is useful to customize and display quick links to the platform's UI components, documentation or any other resources on the home page, display statistics about the number of entities and API usege, etc.
+
+{% include images-gallery.html imageCollection="wl-home" %}
+
+### HTML widgets
+
+HTML widgets bundle is useful to inject custom HTML code. Or for displaying configurable HTML with the ability to inject values from the selected data source.
+
+{% include images-gallery.html imageCollection="wl-html" %}
 
 ### Input widgets
 
@@ -200,12 +246,69 @@ Navigation widgets bundle is useful to define home dashboard of the user.
 
 ### Scheduling widgets
 
-[Scheduling](/docs/{{docsPrefix}}user-guide/scheduler/) widgets bundle is useful for scheduling various types of events with flexible schedule configuration.  
+{% capture difference %}
 **Available only in PE and PaaS.**
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+[Scheduling](/docs/{{docsPrefix}}user-guide/scheduler/) widgets bundle is useful for scheduling various types of events with flexible schedule configuration.  
 
 {% include images-gallery.html imageCollection="wl-scheduling-bundle" %}
 
-## Adding widgets bundle
+### Tables idgets
+
+Tables widget bundle is useful when you need to display a list of entities, a list of alarm signals, and time series data for one or several entities. 
+It is widget bundle also useful for displaying Persistent RPC requests based on entity alias and optional filter with the ability of pagination.
+
+{% include images-gallery.html imageCollection="wl-tables-bundle" %}
+
+## Operations with Widget Type
+
+### Adding Widget Type
+
+If the system administrator adds a new widget, it automatically becomes a system one. It means that only he can add, edit and delete widget.
+Tenant administrators can create widgetas well. In this case, they have permissions to modify created widgets.
+You can always implement and add your widgets by following this [guide](/docs/{{docsPrefix}}user-guide/contribution/widgets-development/).
+
+To add a new widget, you should:
+
+{% include images-gallery.html imageCollection="add-widget" showListImageTitles="true" %}
+
+### Exporting Widget Type
+
+You can export a specific type of widget from a widget bundle in JSON format, and import it in the same or different ThingsBoard instance.
+
+In order to export a widget type, you should:
+
+{% include images-gallery.html imageCollection="export-widget" showListImageTitles="true" %}
+
+### Importing Widget Type
+
+Please note that only system administrators can modify system (default) widgets. This means that only they can edit and delete widgets inside the bundle,
+add or import new widgets into the bundle. By creating a new widget bundle at the system administrator level, it will be displayed in the accounts of his tenants as a system one,
+and they will not be able to modify it.  
+Nevertheless, tenants can add their own widgets. In this case, they have full rights to manage created widget types inside the bundle.
+
+To import a widget type, you should:
+
+{% include images-gallery.html imageCollection="import-widget" showListImageTitles="true" %}
+
+### Deleting Widget Type
+
+The system administrator or tenant administrator can delete a widget type using one of the following ways:
+
+First way:
+
+{% include images-gallery.html imageCollection="delete-widget-1" showListImageTitles="true" %}
+
+Second way:
+
+{% include images-gallery.html imageCollection="delete-widget-2" showListImageTitles="true" %}
+
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+## Operations with Widgets Bundle
+
+### Adding Widgets Bundle
 
 If the system administrator adds a new widgets bundle, it automatically becomes a system one. It means that only he can delete, edit and add widget types into the bundle. 
 Tenant administrators can create widgets bundles as well. In this case, they have permissions to modify created bundles.
@@ -213,41 +316,32 @@ You can always implement and add your widgets by following this [guide](/docs/{{
 
 To add a new widgets bundle, you should:
 
-{% include images-gallery.html imageCollection="wl-add" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="wl-add-widgets-bundle" showListImageTitles="true" %}
 
-## Widgets Bundles export/import
-
-#### Widgets Bundle export
+### Exporting Widgets Bundle 
 
 You can export a widgets bundle in JSON format, and import it in the same or different ThingsBoard instance.
 
 In order to export widgets bundle, you should:
 
-{% include images-gallery.html imageCollection="wl-export" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="export-widgets-bundle" showListImageTitles="true" %}
 
-#### Widgets Bundle import
+### Importing Widgets Bundle
 
-Importing a widgets bundle is very similar to exporting it. To import the widgets bundle, you should: 
+To import widgets bundle, you should: 
 
-{% include images-gallery.html imageCollection="wl-import" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="import-widgets-bundle" showListImageTitles="true" %}
 
-## Widget Types export/import
+### Deleting Widgets Bundle
 
-You can export a specific type of widget from a widget bundle in JSON format, and import it in the same or different ThingsBoard instance.
+The system administrator or tenant administrator can delete a widgets bundle using one of the following ways:
 
-#### Widget Type export
+First way:
 
-In order to export a widget type, you should: 
+{% include images-gallery.html imageCollection="delete-widgets-bundle-1" showListImageTitles="true" %}
 
-{% include images-gallery.html imageCollection="wl-export-widget" showListImageTitles="true" %}
+Second way:
 
-#### Widget Type import
+{% include images-gallery.html imageCollection="delete-widgets-bundle-2" showListImageTitles="true" %}
 
-Please note that only system administrators can modify system (default) widget bundles. This means that only they can delete the system widget bundle, edit and delete widgets inside the bundle, 
-add or import new widgets into the bundle. By creating a new widget bundle at the system administrator level, it will be displayed in the accounts of his tenants as a system one, 
-and they will not be able to modify it.  
-Nevertheless, tenants can add their own widgets bundles. In this case, they have full rights to manage created widget types inside the bundle. 
-
-To import a widget type, you should: 
-
-{% include images-gallery.html imageCollection="wl-import-widget" showListImageTitles="true" %}
+{% endif %}
