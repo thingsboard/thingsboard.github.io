@@ -12,13 +12,13 @@ Next, go to **Tools** > **Board** > **Board Manager** and install the ***M5Stack
 ![M5Stack Arduino IDE installation](/images/devices-library/basic/microcontrollers/m5stack-arduino-ide-board-manager.png)
 
 After the installation is complete, select the board by Board menu:  
-**Tools** > **Board** > {{ arduinoBoardPath }}.    
+**Tools** > **Board** > {{ arduinoBoardPath }}.  
 
-Also, do not forget to specify the port for the device:
+Connect the device to computer using USB cable and select the port for the device:  
 
-**Tools** > **Port** > **/dev/ttyUSB0**.
+**Tools** > **Port** > **/dev/ttyUSB0**.  
 
-Port depends on operation system and may be different:
-- for Linux it will be **/dev/ttyUSB**X
-- for MacOS it will be **usb.serial**X.. or **usb.modem**X..
+Port depends on operation system and may be different:  
+- for Linux it will be **/dev/ttyUSB**X  
+- for MacOS it will be **usb.serial**X.. or **usb.modem**X..  
 - for Windows - **COM**X.  

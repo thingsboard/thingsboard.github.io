@@ -22,4 +22,13 @@ https://github.com/earlephilhower/arduino-pico/releases/download/global/package_
 After the installation is complete, select the board by Board menu:  
 **Tools** > **Board** > {{ arduinoBoardPath }}.  
 
+Connect the device to computer using USB cable and select the port for the device:  
+
+**Tools** > **Port** > **/dev/ttyUSB0**.  
+
+Port depends on operation system and may be different:  
+- for Linux it will be **/dev/ttyUSB**X  
+- for MacOS it will be **usb.serial**X.. or **usb.modem**X..  
+- for Windows - **COM**X.  
+
 {% assign wifininaInstallationRequired = "true" %}

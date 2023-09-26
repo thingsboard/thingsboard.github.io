@@ -50,15 +50,12 @@ Also, to control display we should install the Adafruit SSD1306 library.
 
 {% if wifininaInstallationRequired == "true" %}
 
-Also, for boards, based on RP2040 chip we should install the "WiFiNINA" and Ticker libraries.  
+Also, for boards, based on RP2040 chip we should install the "WiFiNINA" library.  
 
 {% assign wifininaInstallation='
     ===
         image: /images/devices-library/basic/arduino-ide/install-wifinina.png,
         title: Put into library search field "WiFiNINA" and install the library - "WiFiNINA by Arduino"
-    ===
-        image: /images/devices-library/basic/arduino-ide/install-ticker.png,
-        title: Put into library search field "**Ticker**" and install the library - "Ticker *by Stefan Staub*"
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=wifininaInstallation %}

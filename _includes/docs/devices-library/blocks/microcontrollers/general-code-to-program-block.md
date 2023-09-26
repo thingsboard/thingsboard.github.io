@@ -7,8 +7,6 @@ To do this, you can use the code below. It contains all required functionality f
 #if defined(ESP8266)
   #include <ESP8266WiFi.h>
   #define THINGSBOARD_ENABLE_PROGMEM 0
-#elif defined(ARDUINO_NANO_RP2040_CONNECT)
-  #include <WiFiNINA_Generic.h>
 #elif defined(ESP32) || defined(RASPBERRYPI_PICO) || defined(RASPBERRYPI_PICO_W)
   #include <WiFi.h>
   #include <WiFiClientSecure.h>
@@ -37,7 +35,7 @@ constexpr uint16_t THINGSBOARD_PORT = 1883U;
 
 // Maximum size packets will ever be sent or received by the underlying MQTT client,
 // if the size is to small messages might not be sent or received messages will be discarded
-constexpr uint32_t MAX_MESSAGE_SIZE = 256U;
+constexpr uint32_t MAX_MESSAGE_SIZE = 1024U;
 
 // Baud rate for the debugging serial connection.
 // If the Serial output is mangled, ensure to change the monitor speed accordingly to this variable
@@ -54,9 +52,6 @@ ThingsBoard tb(wifiClient, MAX_MESSAGE_SIZE);
 constexpr char BLINKING_INTERVAL_ATTR[] = "blinkingInterval";
 constexpr char LED_MODE_ATTR[] = "ledMode";
 constexpr char LED_STATE_ATTR[] = "ledState";
-
-// Statuses for subscribing to rpc
-bool subscribed = false;
 
 // handle led state and mode changes
 volatile bool attributesChanged = false;
@@ -200,12 +195,10 @@ void loop() {
 //  delay(10);
 
   if (!reconnect()) {
-    subscribed = false;
     return;
   }
 
   if (!tb.connected()) {
-    subscribed = false;
     // Connect to the ThingsBoard
     Serial.print("Connecting to: ");
     Serial.print(THINGSBOARD_SERVER);
@@ -217,9 +210,7 @@ void loop() {
     }
     // Sending a MAC address as an attribute
     tb.sendAttributeData("macAddress", WiFi.macAddress().c_str());
-  }
-
-  if (!subscribed) {
+    
     Serial.println("Subscribing for RPC...");
     // Perform a subscription. All consequent data processing will happen in
     // processSetLedState() and processSetLedMode() functions,
@@ -235,7 +226,6 @@ void loop() {
     }
 
     Serial.println("Subscribe done");
-    subscribed = true;
 
     // Request current states of shared attributes
     if (!tb.Shared_Attributes_Request(attribute_shared_request_callback)) {

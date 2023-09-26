@@ -59,9 +59,6 @@ constexpr char SCREEN_TEXT_ATTR[] = "screenText";
 String screenText;
 volatile bool screenTextUpdated;
 
-// Statuses for subscribing to rpc
-bool subscribed = false;
-
 // handle led state and mode changes
 volatile bool attributesChanged = false;
 
@@ -216,12 +213,10 @@ void loop() {
   delay(10);
 
   if (!reconnect()) {
-    subscribed = false;
     return;
   }
 
   if (!tb.connected()) {
-    subscribed = false;
     // Connect to the ThingsBoard
     Serial.print("Connecting to: ");
     Serial.print(THINGSBOARD_SERVER);
@@ -234,9 +229,7 @@ void loop() {
     }
     // Sending a MAC address as an attribute
     tb.sendAttributeData("macAddress", WiFi.macAddress().c_str());
-  }
-
-  if (!subscribed) {
+    
     Serial.println("Subscribing for RPC...");
     // Perform a subscription. All consequent data processing will happen in
     // processSetLedState() and processSetLedMode() functions,
@@ -252,7 +245,6 @@ void loop() {
     }
 
     Serial.println("Subscribe done");
-    subscribed = true;
 
     // Request current states of shared attributes
     if (!tb.Shared_Attributes_Request(attribute_shared_request_callback)) {
