@@ -126,6 +126,11 @@ wl-navigation-bundle:
         image: /images/user-guide/ui/widgets/widget-library/wl-navigation-bundle-ce.png
         title: 'For defining home dashboard of the user.'
 
+wl-scheduling-bundle:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-scheduling-bundle-pe.png
+        title: 'For scheduling various types of events with flexible schedule configuration.'
+
 wl-add:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-ce.png
