@@ -16,8 +16,8 @@ Please see default directory structure below for daemon installation.
 
 ```text
 /etc/thingsboard-gateway/config                   - Configuration folder.
-    tb_gateway.yaml                               - Main configuration file for Gateway.
-    logs.conf                                     - Configuration file for logging.
+    tb_gateway.json                               - Main configuration file for Gateway.
+    logs.json                                     - Configuration file for logging.
     modbus.json                                   - Modbus connector configuration.
     mqtt.json                                     - MQTT connector configuration.
     ble.json                                      - BLE connector configuration.
@@ -57,75 +57,78 @@ If you like to use only one of them - just remove all other connectors.
 <b>Example of main configuration file. Press to show.</b>
 </summary>
 
-{% highlight yaml %}
+{% highlight json %}
 
-thingsboard:
-  host: thingsboard.cloud
-  port: 1883
-  remoteShell: false
-  remoteConfiguration: false
-  statistics:
-    enable: true
-    statsSendPeriodInSeconds: 3600
-  minPackSendDelayMS: 0
-  checkConnectorsConfigurationInSeconds: 60
-  handleDeviceRenaming: true
-  checkingDeviceActivity:
-    checkDeviceInactivity: false
-    inactivityTimeoutSeconds: 120
-    inactivityCheckPeriodSeconds: 10
-  security:
-    accessToken: PUT_YOUR_ACCESS_TOKEN_HERE
-  qos: 1
-storage:
-  type: memory
-  read_records_count: 100
-  max_records_count: 100000
-grpc:
-  enabled: false
-  serverPort: 9595
-  keepaliveTimeMs: 10000
-  keepaliveTimeoutMs: 5000
-  keepalivePermitWithoutCalls: true
-  maxPingsWithoutData: 0
-  minTimeBetweenPingsMs: 10000
-  minPingIntervalWithoutDataMs: 5000
-connectors:
-  -
-    name: MQTT Broker Connector
-    type: mqtt
-    configuration: mqtt.json
-
-  -
-    name: Modbus Connector
-    type: modbus
-    configuration: modbus.json
-
-  -
-    name: Modbus Connector
-    type: modbus
-    configuration: modbus_serial.json
-
-  -
-    name: OPC-UA Connector
-    type: opcua
-    configuration: opcua.json
-
-  -
-    name: BLE Connector
-    type: ble
-    configuration: ble.json
-
-  -
-    name: CAN Connector
-    type: can
-    configuration: can.json
-
-  -
-    name: Custom Serial Connector
-    type: serial
-    configuration: custom_serial.json
-    class: CustomSerialConnector
+{
+  "thingsboard": {
+    "host": "thingsboard.cloud",
+    "port": 1883,
+    "remoteShell": false,
+    "remoteConfiguration": true,
+    "statistics": {
+      "enable": true,
+      "statsSendPeriodInSeconds": 60
+    },
+    "deviceFiltering": {
+      "enable": false,
+      "filterFile": "list.json"
+    },
+    "maxPayloadSizeBytes": 1024,
+    "minPackSendDelayMS": 60,
+    "minPackSizeToSend": 500,
+    "checkConnectorsConfigurationInSeconds": 10,
+    "handleDeviceRenaming": true,
+    "security": {
+      "type": "accessToken",
+      "accessToken": "YOUR_ACCESS_TOKEN"
+    },
+    "qos": 1,
+    "checkingDeviceActivity": {
+      "checkDeviceInactivity": false,
+      "inactivityTimeoutSeconds": 200,
+      "inactivityCheckPeriodSeconds": 500
+    }
+  },
+  "storage": {
+    "type": "memory",
+    "read_records_count": 100,
+    "max_records_count": 10000
+  },
+  "grpc": {
+    "enabled": false,
+    "serverPort": 9595,
+    "keepaliveTimeMs": 10000,
+    "keepaliveTimeoutMs": 5000,
+    "keepalivePermitWithoutCalls": true,
+    "maxPingsWithoutData": 0,
+    "minTimeBetweenPingsMs": 10000,
+    "minPingIntervalWithoutDataMs": 5000,
+    "keepAliveTimeMs": 10000,
+    "keepAliveTimeoutMs": 5000
+  },
+  "connectors": [
+    {
+      "type": "mqtt",
+      "name": "MQTT Broker Connector",
+      "configuration": "mqtt.json"
+    },
+    {
+      "type": "modbus",
+      "name": "Modbus Connector",
+      "configuration": "modbus.json"
+    },
+    {
+      "type": "modbus",
+      "name": "Modbus Serial Connector",
+      "configuration": "modbus_serial.json"
+    },
+    {
+      "type": "opcua",
+      "name": "OPC-UA Connector",
+      "configuration": "opcua.json"
+    }
+  ]
+}
 
 {% endhighlight %}
 <b><i>Spaces identity are important.</i></b>  
@@ -368,44 +371,31 @@ Config for every connector in this section must have parameters as in table belo
 
 Section connectors in your configuration file may differ from shown below, but they should have structure like this:  
 
-```yaml
-connectors:
-
-  -
-    name: MQTT Broker Connector
-    type: mqtt
-    configuration: mqtt.json
-
-  -
-    name: Modbus Connector
-    type: modbus
-    configuration: modbus.json
-
-  -
-    name: Modbus Connector
-    type: modbus
-    configuration: modbus_serial.json
-
-  -
-    name: OPC-UA Connector
-    type: opcua
-    configuration: opcua.json
-
-  -
-    name: BLE Connector
-    type: ble
-    configuration: ble.json
-
-  -
-    name: CAN Connector
-    type: can
-    configuration: can.json
-
-  -
-    name: Custom Serial Connector
-    type: serial
-    configuration: custom_serial.json
-    class: CustomSerialConnector
+```json
+...
+"connectors": [
+  {
+    "type": "mqtt",
+    "name": "MQTT Broker Connector",
+    "configuration": "mqtt.json"
+  },
+  {
+    "type": "modbus",
+    "name": "Modbus Connector",
+    "configuration": "modbus.json"
+  },
+  {
+    "type": "modbus",
+    "name": "Modbus Serial Connector",
+    "configuration": "modbus_serial.json"
+  },
+  {
+    "type": "opcua",
+    "name": "OPC-UA Connector",
+    "configuration": "opcua.json"
+  }
+]
+...
 ```
 
 **Note:** You can use several similar connectors at same time, but you should provide different names and configuration files to them. 
