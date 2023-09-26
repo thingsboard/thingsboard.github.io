@@ -18,14 +18,12 @@ To do this you can change the value of variable **DEMO_MODE** to **1**:
 {% endunless %}
 
 ```cpp
-
-#include "battery.h"
 #include "esp_camera.h"
 #include <WiFi.h>
 #include "soc/soc.h"
 #include "soc/rtc_cntl_reg.h"
 {% unless page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
-#define DEMO_MODE 0
+#define DEMO_MODE 1
 {% endunless %}
 #define THINGSBOARD_ENABLE_DYNAMIC 1
 
@@ -85,9 +83,6 @@ constexpr char BLINKING_INTERVAL_ATTR[] = "blinkingInterval";
 constexpr char LED_MODE_ATTR[] = "ledMode";
 constexpr char LED_STATE_ATTR[] = "ledState";
 constexpr char PICTURE_ATTR[] = "photo";
-
-// Statuses for subscribing to rpc
-bool subscribed = false;
 
 // handle led state and mode changes
 volatile bool attributesChanged = false;
@@ -154,7 +149,6 @@ const bool reconnect() {
   return true;
 }
 
-
 bool initCamera() {
   camera_config_t config;
   config.ledc_channel = LEDC_CHANNEL_0;
@@ -201,7 +195,6 @@ bool initCamera() {
   return true;
 }
 
-
 bool captureImage() {
   camera_fb_t *fb = NULL;
   fb = esp_camera_fb_get();
@@ -213,7 +206,6 @@ bool captureImage() {
   return true;
 }
 
-
 void encode(const uint8_t *data, size_t length) { {% unless page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
   if (DEMO_MODE == 1) {
     length = 756;
@@ -224,7 +216,6 @@ void encode(const uint8_t *data, size_t length) { {% unless page.docsPrefix == "
   int len = base64_encode_block((char *)&data[0], length, &imageBuffer[0], &_state);
   len = base64_encode_blockend((imageBuffer + len), &_state);
 }
-
 
 /// @brief Processes function for RPC call "setLedMode"
 /// RPC_Data is a JSON variant, that can be queried using operator[]
@@ -252,7 +243,6 @@ RPC_Response processSetLedMode(const RPC_Data &data) {
   return RPC_Response("newMode", (int)ledMode);
 }
 
-
 /// @brief Processes function for RPC call "setLedMode"
 /// RPC_Data is a JSON variant, that can be queried using operator[]
 /// See https://arduinojson.org/v5/api/jsonvariant/subscript/ for more details
@@ -271,7 +261,6 @@ RPC_Response processTakePicture(const RPC_Data &data) {
   return RPC_Response("size", strlen(imageBuffer));
 }
 
-
 // Optional, keep subscribed shared attributes empty instead,
 // and the callback will be called for every shared attribute changed on the device,
 // instead of only the one that were entered instead
@@ -279,7 +268,6 @@ const std::array<RPC_Callback, 2U> callbacks = {
   RPC_Callback{ "setLedMode", processSetLedMode },
   RPC_Callback{ "takePicture", processTakePicture }
 };
-
 
 /// @brief Update callback that will be called as soon as one of the provided shared attributes changes value,
 /// if none are provided we subscribe to any shared attribute change instead
@@ -317,12 +305,10 @@ const Attribute_Request_Callback attribute_shared_request_callback(SHARED_ATTRIB
 const Attribute_Request_Callback attribute_client_request_callback(CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend(), &processClientAttributes);
 
 void setup() {
-  WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0);  // disable   detector
-  bat_init();
-  bat_hold_output();
+  WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0);
   ledcAttachPin(4, 4);
   ledcSetup(4, 5000, 8);
-  // Initalize serial connection for debugging
+  
   imageBuffer = (char *)ps_malloc(50U * 1024);
   Serial.begin(SERIAL_DEBUG_BAUD);
   Serial.println("Camera initialization...");
@@ -334,60 +320,61 @@ void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
   delay(1000);
   InitWiFi();
+  tb.connect(THINGSBOARD_SERVER, TOKEN, THINGSBOARD_PORT);
+  tb.RPC_Subscribe(callbacks.cbegin(), callbacks.cend());
+  tb.Shared_Attributes_Subscribe(attributes_callback);
+  tb.Shared_Attributes_Request(attribute_shared_request_callback);
+  tb.Client_Attributes_Request(attribute_client_request_callback);
 }
 
 void loop() {
   delay(10);
 
   if (!reconnect()) {
-    subscribed = false;
     return;
   }
 
   if (!tb.connected()) {
-    subscribed = false;
-    // Connect to the ThingsBoard
-    Serial.print("Connecting to: ");
-    Serial.print(THINGSBOARD_SERVER);
-    Serial.print(" with token ");
-    Serial.println(TOKEN);
+      // Connect to the ThingsBoard
+      Serial.print("Connecting to: ");
+      Serial.print(THINGSBOARD_SERVER);
+      Serial.print(" with token ");
+      Serial.println(TOKEN);
     if (!tb.connect(THINGSBOARD_SERVER, TOKEN, THINGSBOARD_PORT)) {
       Serial.println("Failed to connect");
       return;
     }
-    // Sending a MAC address as an attribute
-    tb.sendAttributeData("macAddress", WiFi.macAddress().c_str());
+  Serial.println("Connection to server successful");
+  // Sending a MAC address as an attribute
+  tb.sendAttributeData("macAddress", WiFi.macAddress().c_str());
+
+  Serial.println("Subscribing for RPC...");
+  // Perform a subscription. All consequent data processing will happen in
+  // processSetLedState() and processSetLedMode() functions,
+  // as denoted by callbacks array.
+  if (!tb.RPC_Subscribe(callbacks.cbegin(), callbacks.cend())) {
+    Serial.println("Failed to subscribe for RPC");
+    return;
   }
 
-  if (!subscribed) {
-    Serial.println("Subscribing for RPC...");
-    // Perform a subscription. All consequent data processing will happen in
-    // processSetLedState() and processSetLedMode() functions,
-    // as denoted by callbacks array.
-    if (!tb.RPC_Subscribe(callbacks.cbegin(), callbacks.cend())) {
-      Serial.println("Failed to subscribe for RPC");
-      return;
-    }
+  if (!tb.Shared_Attributes_Subscribe(attributes_callback)) {
+    Serial.println("Failed to subscribe for shared attribute updates");
+    return;
+  }
 
-    if (!tb.Shared_Attributes_Subscribe(attributes_callback)) {
-      Serial.println("Failed to subscribe for shared attribute updates");
-      return;
-    }
+  Serial.println("Subscribe done");
 
-    Serial.println("Subscribe done");
-    subscribed = true;
+  // Request current states of shared attributes
+  if (!tb.Shared_Attributes_Request(attribute_shared_request_callback)) {
+    Serial.println("Failed to request for shared attributes");
+    return;
+  }
 
-    // Request current states of shared attributes
-    if (!tb.Shared_Attributes_Request(attribute_shared_request_callback)) {
-      Serial.println("Failed to request for shared attributes");
-      return;
-    }
-
-    // Request current states of client attributes
-    if (!tb.Client_Attributes_Request(attribute_client_request_callback)) {
-      Serial.println("Failed to request for client attributes");
-      return;
-    }
+  // Request current states of client attributes
+  if (!tb.Client_Attributes_Request(attribute_client_request_callback)) {
+    Serial.println("Failed to request for client attributes");
+    return;
+  }
   }
 
   if (sendPicture) {
