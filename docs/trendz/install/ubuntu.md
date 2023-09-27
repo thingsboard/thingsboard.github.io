@@ -28,14 +28,14 @@ In small and medium installations Trendz can be installed **on the same** server
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/trendz-1.10.2.deb
+wget https://dist.thingsboard.io/trendz-1.10.3.deb
 ```
 {: .copy-code}
 
 Install Trendz Analytics as a service
 
 ```bash
-sudo dpkg -i trendz-1.10.2.deb
+sudo dpkg -i trendz-1.10.3.deb
 ```
 {: .copy-code}
 
@@ -172,7 +172,7 @@ echo "scikit-learn == 1.2.2" >> requirements.txt
 echo "prophet == 1.1.3" >> requirements.txt
 echo "seaborn == 0.12.2" >> requirements.txt
 echo "pmdarima == 2.0.3" >> requirements.txt
-pip3 install --no-cache-dir -r requirements.txt
+sudo -u trendz pip3 install --user --no-cache-dir -r requirements.txt
 ```
 {: .copy-code}
 
