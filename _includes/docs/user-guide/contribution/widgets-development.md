@@ -119,7 +119,7 @@ Below is brief description of widget context properties:
 | widgetTitle                      | String             | If set, will override configured widget title text. **updateWidgetParams()** function must be called after this property change. |
 | detectChanges()                  | Function           | Trigger change detection for current widget. Must be invoked when widget HTML template bindings should be updated due to widget data changes. |
 | updateWidgetParams()             | Function           | Updates widget with runtime set properties such as **widgetTitle**, **hideTitlePanel**, etc. Must be invoked in order these properties changes take effect. |
-| pageLink(pageSize, page, textSearch, sortOrder) | [PageLink](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/page/page-link.ts#L96) | Using to create sorting configuration for get requests. **pageSize** - specifies how many entities will be in the page, **page** - specifies what page with entities will be get, **textSearch** - specifies what text must be included in entities, **sortOrder** - specifies in which order entities will be get. |
+| pageLink(pageSize, page, textSearch, sortOrder) | [PageLink](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/page/page-link.ts#L98) | Using to create sorting configuration for get requests. **pageSize** - specifies how many entities will be in the page, **page** - specifies what page with entities will be get, **textSearch** - specifies what text must be included in entities, **sortOrder** - specifies in which order entities will be get. |
 | defaultSubscription              | [IWidgetSubscription](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L220")             | Default widget subscription object contains all subscription information, including current data, according to the widget type. See [Subscription object](#subscription-object). |
 | timewindowFunctions              | [TimewindowFunctions](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L45)             | Object with timewindow functions used to manage widget data time frame. Can by used by Time-series or Alarm widgets. See [Timewindow functions](#timewindow-functions). |
 | controlApi                       | [RpcApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L58)             | Object that provides API functions for RPC (Control) widgets. See [Control API](#control-api). | 
@@ -264,7 +264,7 @@ Object with timewindow functions ([TimewindowFunctions](https://github.com/thing
 
 #### Control API
 
-Object that provides API functions ([RpcApi](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L73)) for [RPC (Control)](/docs/{{docsPrefix}}user-guide/ui/widget-library/#rpc-control-widget) widgets.This API working **only** with [RPC (Control) widget](#rpc-control-widget) Path: **widgetContext.controlApi**.
+Object that provides API functions ([RpcApi](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L74)) for [RPC (Control)](/docs/{{docsPrefix}}user-guide/ui/widget-library/#rpc-control-widget) widgets.This API working **only** with [RPC (Control) widget](#rpc-control-widget) Path: **widgetContext.controlApi**.
 
 | **Function**                                        | **Description**                                                                        |
 |-----------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -274,7 +274,7 @@ Object that provides API functions ([RpcApi](https://github.com/thingsboard/thin
 
 #### Actions API
 
-Set of API functions ([WidgetActionsApi](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L85)) to work with user defined actions. Path: **widgetContext.actionsApi**.
+Set of API functions ([WidgetActionsApi](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L86)) to work with user defined actions. Path: **widgetContext.actionsApi**.
 
 | **Function**                                                          | **Description**                                                                        |
 |-----------------------------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -286,7 +286,7 @@ Set of API functions ([WidgetActionsApi](https://github.com/thingsboard/thingsbo
 
 #### Widget Subscription API
 
-Set of API functions ([WidgetSubscriptionApi](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L65)) to work with custom subscriptions. Path: **widgetContext.subscriptionApi**.
+Set of API functions ([WidgetSubscriptionApi](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L66)) to work with custom subscriptions. Path: **widgetContext.subscriptionApi**.
 
 | **Function**                                                          | **Description**                                                                        |
 |-----------------------------------------------------------------------|----------------------------------------------------------------------------------------|
@@ -893,25 +893,25 @@ For creating custom subscriptions you have to use function **createSubscription*
     widgetContext.createSubscription(options);
 ```
 
-Object [options](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L238) has all information about the subscription and has the following fields:
+Object [options](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L240) has all information about the subscription and has the following fields:
 
-| **Field**                                      | **Type**       |**Description**                                                               |
-|------------------------------------------------|----------------|------------------------------------------------------------------------------|
-| ```type```                                     | [widgetType](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L38)    | Sets subscription type |
-| ```datasources```                              | Array<[Datasource](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L329)> | Contains information about the data to be subscribed to |
-| ```alarmSource```                              | [Datasource](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L329) | Contains information about the alarms to be subscribed to |
-| ```datasourcesOptional```                      | Boolean | Sets whether the **datasources** is optional. For **static** widget type always true. |
-| ```hasDataPageLink```                          | Boolean | Sets whether pageLink is used for subscribing. |
-| ```singleEntity```                             | Boolean | Sets whether data will be get only from the first found entity. |
-| ```pageSize```                                 | Number  | Sets how many entities will get on a single page. |
-| ```warnOnPageDataOverflow```                   | Boolean | Activates warning about overflow page data. |
-| ```useDashboardTimewindow```                   | Boolean | If active, the subscription will be used time window from **dashboardTimewindow**, otherwise will be used **timeWindowConfig** (using to change time window in **time-series** subscriptions) |
-| ```dashboardTimewindow```                      | [Timewindow](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/time/time.models.ts#L95) | Contains the dashboard time window. |
-| ```timeWindowConfig```                         | [Timewindow](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/time/time.models.ts#L95) | Sets the **custom** time window. |
-| ```legendConfig```                             | [LegendConfig](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L238) | Sets params of legend. |
-| ```decimals```                                 | Number | Sets number of digits after floating point for **all** keys. |
-| ```units```                                    | String | Sets special symbol to show next to value for **all** keys. |
-| ```callbacks```                                | [WidgetSubscriptionCallbacks](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L221) | The set of callbacks used in the subscription life cycle. |
+| **Field**                                      | **Type**                                                                                                                                                               |**Description**                                                               |
+|------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
+| ```type```                                     | [widgetType](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L46)                  | Sets subscription type |
+| ```datasources```                              | Array<[Datasource](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L369)>          | Contains information about the data to be subscribed to |
+| ```alarmSource```                              | [Datasource](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L369)                 | Contains information about the alarms to be subscribed to |
+| ```datasourcesOptional```                      | Boolean                                                                                                                                                                | Sets whether the **datasources** is optional. For **static** widget type always true. |
+| ```hasDataPageLink```                          | Boolean                                                                                                                                                                | Sets whether pageLink is used for subscribing. |
+| ```singleEntity```                             | Boolean                                                                                                                                                                | Sets whether data will be get only from the first found entity. |
+| ```pageSize```                                 | Number                                                                                                                                                                 | Sets how many entities will get on a single page. |
+| ```warnOnPageDataOverflow```                   | Boolean                                                                                                                                                                | Activates warning about overflow page data. |
+| ```useDashboardTimewindow```                   | Boolean                                                                                                                                                                | If active, the subscription will be used time window from **dashboardTimewindow**, otherwise will be used **timeWindowConfig** (using to change time window in **time-series** subscriptions) |
+| ```dashboardTimewindow```                      | [Timewindow](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/time/time.models.ts#L96)               | Contains the dashboard time window. |
+| ```timeWindowConfig```                         | [Timewindow](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/time/time.models.ts#L96)               | Sets the **custom** time window. |
+| ```legendConfig```                             | [LegendConfig](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L271)               | Sets params of legend. |
+| ```decimals```                                 | Number                                                                                                                                                                 | Sets number of digits after floating point for **all** keys. |
+| ```units```                                    | String                                                                                                                                                                 | Sets special symbol to show next to value for **all** keys. |
+| ```callbacks```                                | [WidgetSubscriptionCallbacks](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L223) | The set of callbacks used in the subscription life cycle. |
 
 ##### Datasources
 
@@ -921,17 +921,17 @@ Object [options](https://github.com/thingsboard/thingsboard/blob/{{ site.release
 - Description of the entities from which you want to retrieve data.
 - Filtering entities by certain keys and values.
 
-Object [datasource](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L329) has the following fields:
+Object [datasource](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L369) has the following fields:
 
-| **Field**                                      | **Type**       | **Description**                                                                                                                          |
-|------------------------------------------------|----------------|------------------------------------------------------------------------------------------------------------------------------------------|
-| ```type```                                     | [DatasourceType](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L315)/any | Sets type of datasource.                                                                                                                 |
-| ```aliasName```                                | String | Name of datasource                                                                                                                       |
-| ```dataKeys```                                 | Array<[DataKey](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L304)> | Describes the keys to be subscribed to.                                                                                                  |
-| ```latestDataKeys```                           | Array<[DataKey](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L304)> | Use this in case you have **time-series** subscription and at the same time, you want to subscribe to the **latest** data for some keys. |
-| ```pageLink```                                 | [EntityDataPageLink](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/query/query.models.ts#L700) | Sets pageLink for datasource                                                                                                             |
-| ```keyFilters```                               | Array<[KeyFilter](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/query/query.models.ts#L370)> | Filters the data to be subscribed to by the value of the keys. You can find all information about key filters [here](#key-filters)       |
-| ```entityFilter```                             | [EntityFilter](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/query/query.models.ts#L686) | Filters the data to be subscribed to by entities params. You can find all information about entity filters [here](#entity-filters)       |
+| **Field**                                      | **Type**                                                                                                                                                            | **Description**                                                                                                                          |
+|------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| ```type```                                     | [DatasourceType](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L351)/any      | Sets type of datasource.                                                                                                                 |
+| ```aliasName```                                | String                                                                                                                                                              | Name of datasource                                                                                                                       |
+| ```dataKeys```                                 | Array<[DataKey](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L334)>          | Describes the keys to be subscribed to.                                                                                                  |
+| ```latestDataKeys```                           | Array<[DataKey](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L334)>          | Use this in case you have **time-series** subscription and at the same time, you want to subscribe to the **latest** data for some keys. |
+| ```pageLink```                                 | [EntityDataPageLink](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/query/query.models.ts#L709) | Sets pageLink for datasource                                                                                                             |
+| ```keyFilters```                               | Array<[KeyFilter](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/query/query.models.ts#L379)>   | Filters the data to be subscribed to by the value of the keys. You can find all information about key filters [here](#key-filters)       |
+| ```entityFilter```                             | [EntityFilter](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/query/query.models.ts#L695)       | Filters the data to be subscribed to by entities params. You can find all information about entity filters [here](#entity-filters)       |
 
 ##### Callbacks
 
