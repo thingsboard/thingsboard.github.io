@@ -254,6 +254,9 @@ toc:
     path: /docs/user-guide/ui/rule-chains/
   - title: Dashboards
     path: /docs/user-guide/ui/dashboards/
+  - title: Entity Groups
+    path: /docs/pe/user-guide/groups/
+    pe: true
   - title: SMS Provider Settings
     path: /docs/user-guide/ui/sms-provider-settings/
   - title: Slack Settings

@@ -12,5 +12,7 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ### Upcoming releases
 
-* MQTT 5 full support
-* WS support (MQTT over WS)
+* MQTT 5 full support;
+* Redis cache;
+* Shared Subscriptions view/management;
+* MQTT clients monitoring enhancements.

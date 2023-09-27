@@ -1,0 +1,1 @@
+{% include /docs/devices-library/blocks/integrations/devices-configuration/milesight-lorawan-gateway-loriot-block.md %}

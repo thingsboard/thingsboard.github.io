@@ -74,23 +74,22 @@ collections:
     output: true
 
 release:
-  branch: release-3.5
-  branch_major_next: develop/3.5.2
-  ver: 3.5.1
-  ce_ver: 3.5.1
-  ce_tag: v3.5.1
-  ce_full_ver: 3.5.1
-  pe_ver: 3.5.1pe
-  pe_full_ver: 3.5.1PE
+  branch: release-3.6
+  branch_major_next: develop/3.6.1
+  ver: 3.6
+  ce_ver: 3.6
+  ce_tag: v3.6
+  ce_full_ver: 3.6.0
+  pe_ver: 3.6pe
+  pe_full_ver: 3.6.0PE
   wd_examples_commit: v3.4.4
-  # --- EDGE
-  # DO NOT UPDATE EDGE VERSION WITH CE/PE UPDATE - EDGE RELEASED ONCE THINGSBOARD.CLOUD IS UPDATED
-  edge_ver: 3.5.1.1
-  edge_tag: v3.5.1.1
-  edge_full_ver: 3.5.1.1EDGE
-  pe_edge_ver: 3.5.1.1pe
-  pe_edge_full_ver: 3.5.1.1EDGEPE
-  # --- EDGE
+  # >>> EDGE
+  edge_ver: 3.6
+  edge_tag: v3.6
+  edge_full_ver: 3.6.0EDGE
+  pe_edge_ver: 3.6pe
+  pe_edge_full_ver: 3.6.0EDGEPE
+  # <<< EDGE
   ce_flutter_app_ver: 1.0.6
   pe_flutter_app_ver: 1.0.7
-  broker_full_ver: 1.0.1
+  broker_full_ver: 1.1.0

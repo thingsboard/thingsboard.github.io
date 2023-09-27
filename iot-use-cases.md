@@ -38,8 +38,8 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-energy.mp4" type="video/mp4">
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-energy.webm" type="video/webm">
+                                 <source src="https://video.thingsboard.io/usecases/smart-energy.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/usecases/smart-energy.webm" type="video/webm">
                             </video>
                         </div>
                     </div>                
@@ -65,8 +65,8 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-farming.mp4" type="video/mp4">
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-farming.webm" type="video/webm">
+                                 <source src="https://video.thingsboard.io/usecases/smart-farming.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/usecases/smart-farming.webm" type="video/webm">
                             </video>
                         </div>
                     </div>                
@@ -92,8 +92,8 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/fleet-tracking.mp4" type="video/mp4">
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/fleet-tracking.webm" type="video/webm">
+                                 <source src="https://video.thingsboard.io/usecases/fleet-tracking.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/usecases/fleet-tracking.webm" type="video/webm">
                             </video>
                         </div>
                     </div>                
@@ -119,8 +119,8 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-metering.mp4" type="video/mp4">
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-metering.webm" type="video/webm">
+                                 <source src="https://video.thingsboard.io/usecases/smart-metering.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/usecases/smart-metering.webm" type="video/webm">
                             </video>
                         </div>
                     </div>                
@@ -146,8 +146,8 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/environment-monitoring.mp4" type="video/mp4">
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/environment-monitoring.webm" type="video/webm">
+                                 <source src="https://video.thingsboard.io/usecases/environment-monitoring.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/usecases/environment-monitoring.webm" type="video/webm">
                             </video>
                         </div>
                     </div>                
@@ -173,8 +173,8 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-office.mp4" type="video/mp4">
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-office.webm" type="video/webm">
+                                 <source src="https://video.thingsboard.io/usecases/smart-office.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/usecases/smart-office.webm" type="video/webm">
                             </video>
                         </div>
                     </div>                
@@ -200,8 +200,8 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/water-metering.mp4" type="video/mp4">
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/water-metering.webm" type="video/webm">
+                                 <source src="https://video.thingsboard.io/usecases/water-metering.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/usecases/water-metering.webm" type="video/webm">
                             </video>
                         </div>
                     </div>                
@@ -227,8 +227,8 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-retail.mp4" type="video/mp4">
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-retail.webm" type="video/webm">
+                                 <source src="https://video.thingsboard.io/usecases/smart-retail.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/usecases/smart-retail.webm" type="video/webm">
                             </video>
                         </div>
                     </div>                
@@ -254,8 +254,8 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/air-quality.mp4" type="video/mp4">
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/air-quality.webm" type="video/webm">
+                                 <source src="https://video.thingsboard.io/usecases/air-quality.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/usecases/air-quality.webm" type="video/webm">
                             </video>
                         </div>
                     </div>                
@@ -281,8 +281,8 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-irrigation.mp4" type="video/mp4">
-                                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/usecases/smart-irrigation.webm" type="video/webm">
+                                 <source src="https://video.thingsboard.io/usecases/smart-irrigation.mp4" type="video/mp4">
+                                 <source src="https://video.thingsboard.io/usecases/smart-irrigation.webm" type="video/webm">
                             </video>
                         </div>
                     </div>                

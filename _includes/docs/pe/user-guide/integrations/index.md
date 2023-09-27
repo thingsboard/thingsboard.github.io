@@ -220,7 +220,18 @@ Converter may also output array of device values and/or contain timestamps in th
     }
 ]
 ```
- 
+
+##### Update only keys field
+
+To avoid constant updates for telemetry attributes or keys, you can use the "Update only keys list" field.  
+Any keys provided in this field that exist in the telemetry or attribute arrays in the message after conversion will not be updated if the values associated with those keys have not changed from their previous values.
+
+{% capture update-only-keys-cluster-mode %}
+Please note that in a cluster setup, values, associated with keys specified in the "Update only keys list" field may be updated more than once if a message is received by a different integration executor nodes.  
+The same behavior is expected if the converter configuration has been updated.  
+{% endcapture %}
+{% include templates/warn-banner.md content=update-only-keys-cluster-mode %}
+
 ##### Example
 
 Let's assume a complex example where payload is encoded in hex "value" field and there is a timestamp associated with each record. 

@@ -2,7 +2,7 @@
 ThingsBoard supports following protocols for device connectivity:
 
  - **[MQTT](/docs/{{docsPrefix}}reference/mqtt-api)**
- - **[MQTT Sparplug](/docs/{{docsPrefix}}reference/mqtt-sparkplug-api)**
+ - **[MQTT Sparkplug](/docs/{{docsPrefix}}reference/mqtt-sparkplug-api)**
  - **[CoAP](/docs/{{docsPrefix}}reference/coap-api)**
  - **[HTTP](/docs/{{docsPrefix}}reference/http-api)**
  - **[LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api)**

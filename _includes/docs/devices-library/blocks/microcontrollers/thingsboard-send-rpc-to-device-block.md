@@ -121,7 +121,7 @@ Our encoded picture will be sent in the main loop:
 ```cpp
 ...
 if (sendPicture) {
-tb.sendTelemetryString(PICTURE_ATTR, imageBuffer);
+tb.sendTelemetryData(PICTURE_ATTR, imageBuffer);
 sendPicture = false;
 }
 ...

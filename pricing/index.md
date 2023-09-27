@@ -416,7 +416,7 @@ selfManagedPlan:
                         <div class="pricing-square-item" data-faq-id="subscription-support">
                             Email support within <b>24 hours</b>
                         </div>
-                        <div class="pricing-square-item">1 year of software updates</div>
+                        <div class="pricing-square-item">1 year of software updates and support</div>
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
@@ -452,7 +452,7 @@ selfManagedPlan:
                         <div class="pricing-square-item" data-faq-id="additional-services">
                             <b>10 hours</b> of consulting or configuration services
                         </div>
-                        <div class="pricing-square-item">1 year of software updates</div>
+                        <div class="pricing-square-item">1 year of software updates and support</div>
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 mb-4">
@@ -476,7 +476,7 @@ selfManagedPlan:
                         <div class="pricing-square-item" data-faq-id="subscription-support">
                             Email support within <b>12 hours</b>
                         </div>
-                        <div class="pricing-square-item">1 year of software updates for all products in bundle</div>
+                        <div class="pricing-square-item">1 year of software updates and support for all products in bundle</div>
                     </div>
                 </div>
            </div>

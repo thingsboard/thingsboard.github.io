@@ -41,6 +41,20 @@ Key configuration points for TBMQ in docker-compose file:
 - `restart: always` - automatically start TBMQ in case of system reboot and restart in case of failure
 - `SECURITY_MQTT_BASIC_ENABLED: true` - enables MQTT basic security. **Note**: by default security is disabled
 
+**Note**: In case the TBMQ is being installed on the same host where ThingsBoard is already running, the following issue can be seen:
+
+```
+Error response from daemon: ... Bind for 0.0.0.0:1883 failed: port is already allocated
+```
+
+In order to fix this, you need to expose another host's port for the TBMQ container,
+i.e. change the `1883:1883` line in the downloaded docker-compose.yml file with, for example, `1889:1883`. After that re-run the script.
+
+```shell
+./tbmq-install-and-run.sh
+```
+{: .copy-code}
+
 Once the installation process is complete you can access TBMQ UI by visiting the following URL `http://{your-host-ip}:8083` in your browser (e.g. [http://localhost:8083](http://localhost:8083)).
 
 {% include templates/mqtt-broker/login.md %}
@@ -68,6 +82,19 @@ To start the containers:
 docker compose start
 ```
 {: .copy-code}
+
+## Upgrading
+
+In order to update to the latest version, execute the following commands:
+
+```shell
+wget https://raw.githubusercontent.com/thingsboard/tbmq/main/msa/tbmq/configs/tbmq-upgrade.sh && sudo chmod +x tbmq-upgrade.sh && ./tbmq-upgrade.sh
+```
+{: .copy-code}
+
+**NOTE**: replace `db_url`, `db_username`, and `db_password` variables in the script with the corresponding values used during DB initialization.
+
+**NOTE**: replace the host’s directory `data_dir` variable with the directory used during container creation.
 
 ## Next steps
 

@@ -13,6 +13,8 @@ To do this, you can use the code below. It contains all required functionality f
 #define THINGSBOARD_ENABLE_PSRAM 0
 #define THINGSBOARD_ENABLE_DYNAMIC 1
 
+#include <ThingsBoard.h>
+
 #ifndef LED_BUILTIN
 #define LED_BUILTIN 99
 #endif
@@ -231,7 +233,7 @@ void loop() {
       return;
     }
     // Sending a MAC address as an attribute
-    tb.sendAttributeString("macAddress", WiFi.macAddress().c_str());
+    tb.sendAttributeData("macAddress", WiFi.macAddress().c_str());
   }
 
   if (!subscribed) {
@@ -281,18 +283,18 @@ void loop() {
     if (ledMode == 0) {
       previousStateChange = millis();
     }
-    tb.sendTelemetryInt(LED_MODE_ATTR, ledMode);
-    tb.sendTelemetryBool(LED_STATE_ATTR, ledState);
-    tb.sendAttributeInt(LED_MODE_ATTR, ledMode);
-    tb.sendAttributeBool(LED_STATE_ATTR, ledState);
+    tb.sendTelemetryData(LED_MODE_ATTR, ledMode);
+    tb.sendTelemetryData(LED_STATE_ATTR, ledState);
+    tb.sendAttributeData(LED_MODE_ATTR, ledMode);
+    tb.sendAttributeData(LED_STATE_ATTR, ledState);
   }
 
   if (ledMode == 1 && millis() - previousStateChange > blinkingInterval) {
     previousStateChange = millis();
     ledState = !ledState;
     digitalWrite(LED_BUILTIN, ledState);
-    tb.sendTelemetryBool(LED_STATE_ATTR, ledState);
-    tb.sendAttributeBool(LED_STATE_ATTR, ledState);
+    tb.sendTelemetryData(LED_STATE_ATTR, ledState);
+    tb.sendAttributeData(LED_STATE_ATTR, ledState);
     if (LED_BUILTIN == 99) {
       Serial.print("LED state changed to: ");
       Serial.println(ledState);
@@ -302,12 +304,12 @@ void loop() {
   // Sending telemetry every telemetrySendInterval time
   if (millis() - previousDataSend > telemetrySendInterval) {
     previousDataSend = millis();
-    tb.sendTelemetryInt("temperature", random(10, 20));
-    tb.sendAttributeInt("rssi", WiFi.RSSI());
-    tb.sendAttributeInt("channel", WiFi.channel());
-    tb.sendAttributeString("bssid", WiFi.BSSIDstr().c_str());
-    tb.sendAttributeString("localIp", WiFi.localIP().toString().c_str());
-    tb.sendAttributeString("ssid", WiFi.SSID().c_str());
+    tb.sendTelemetryData("temperature", random(10, 20));
+    tb.sendAttributeData("rssi", WiFi.RSSI());
+    tb.sendAttributeData("channel", WiFi.channel());
+    tb.sendAttributeData("bssid", WiFi.BSSIDstr().c_str());
+    tb.sendAttributeData("localIp", WiFi.localIP().toString().c_str());
+    tb.sendAttributeData("ssid", WiFi.SSID().c_str());
   }
 
   tb.loop();
@@ -350,12 +352,12 @@ constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 Send data part (By default the example sends random value for **temperature** key and some WiFi information):  
 ```cpp
 ...
-    tb.sendTelemetryInt("temperature", random(10, 20));
-    tb.sendAttributeInt("rssi", WiFi.RSSI());
-    tb.sendAttributeString("bssid", WiFi.BSSIDstr().c_str());
-    tb.sendAttributeString("localIp", WiFi.localIP().toString().c_str());
-    tb.sendAttributeString("ssid", WiFi.SSID().c_str());
-    tb.sendAttributeInt("channel", WiFi.channel());
+    tb.sendTelemetryData("temperature", random(10, 20));
+    tb.sendAttributeData("rssi", WiFi.RSSI());
+    tb.sendAttributeData("bssid", WiFi.BSSIDstr().c_str());
+    tb.sendAttributeData("localIp", WiFi.localIP().toString().c_str());
+    tb.sendAttributeData("ssid", WiFi.SSID().c_str());
+    tb.sendAttributeData("channel", WiFi.channel());
 ...
 ```
 

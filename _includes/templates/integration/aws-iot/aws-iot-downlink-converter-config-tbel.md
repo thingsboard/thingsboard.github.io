@@ -15,7 +15,7 @@ var data = {};
 
 // Process data from incoming message and metadata
 data.v0 = msg.state;
-data.m0 = "att_upd_success"
+data.m0 = "att_upd_success";
 data.devSerialNumber = metadata['ss_serialNumber'];
 
 // Result object with encoded downlink payload
