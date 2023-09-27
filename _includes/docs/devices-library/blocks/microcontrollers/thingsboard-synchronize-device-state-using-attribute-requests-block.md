@@ -1,5 +1,7 @@
 In order to get the state of the device from ThingsBoard during booting we have [functionality](/docs/{{page.docsPrefix}}reference/mqtt-api/#request-attribute-values-from-the-server) to do this in the code.  
-Responsible parts of the code example:  
+
+Below are the relevant parts of the code example:  
+
 - Attribute callbacks:  
     
 ```cpp
@@ -37,9 +39,12 @@ const Attribute_Request_Callback attribute_client_request_callback(CLIENT_ATTRIB
 ...
 ```
 
-As you can see - we have 2 callbacks, the first one is for shared attributes and the second one is for client attributes.  
-The first one receives response with blinking Interval to set the correct period for blinking.  
-The second callback receives mode and state of the LED to save it and set them.  
+We have two callbacks:
+* Shared Attributes Callback: 
+  This callback is specific to shared attributes. Its primary function is to receive a response containing the blinking interval, which determines the appropriate blinking period.;
+* Client Attributes Callback: 
+  This callback is specific to client attributes. It receives information regarding the mode and state of the LED. Once this data is received, the system saves and sets these parameters.
+
 This functionality allows us to keep the actual state after rebooting.  
 
 - Attribute requests:    

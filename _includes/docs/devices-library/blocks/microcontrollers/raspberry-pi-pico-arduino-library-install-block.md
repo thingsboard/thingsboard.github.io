@@ -4,7 +4,7 @@ Install the board for Arduino IDE:
 {% assign raspberryPiPicoInstallation = '
     ===
         image: /images/devices-library/basic/microcontrollers/raspberry-pi-pico-w-arduino-ide-board-manager.png,
-        title: Go to <b>Tools</b> > <b>Board</b> > <b>Board Manager</b> and install the <b><i>Raspberry Pi Pico/RP2040 by Earle F. Philhower</i></b> board.
+        title: Go to **Tools** > **Board** > **Board Manager** and install the ***Raspberry Pi Pico/RP2040 by Earle F. Philhower*** board.
 '
 %}
 

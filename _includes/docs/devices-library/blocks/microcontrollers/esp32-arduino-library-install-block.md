@@ -14,7 +14,7 @@ https://dl.espressif.com/dl/package_esp32_index.json
 
 {% include images-gallery.liquid showListImageTitles="false" imageCollection=esp32ArduinoPreferences %}
 
-Then go to <b>Tools</b> > <b>Board</b> > <b>Board Manager</b> and install the <b><i>ESP32 by Espressif Systems</i></b> board.
+Then go to **Tools** > **Board** > **Board Manager** and install the ***ESP32 by Espressif Systems*** board.
 
 {% assign esp32ArduinoInstallation='
     ===
