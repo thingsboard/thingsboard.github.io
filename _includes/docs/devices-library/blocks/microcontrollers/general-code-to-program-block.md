@@ -280,7 +280,11 @@ void loop() {
 ```
 {:.copy-code.expandable-20}
 
-In the code, replace placeholders with your WiFi network SSID, password, ThingsBoard device access token.  
+{% capture replacePlaceholders %}
+Don’t forget to replace placeholders with your real WiFi network SSID, password, ThingsBoard device access token.
+{% endcapture %}
+
+{% include templates/info-banner.md content=replacePlaceholders %}
 
 Necessary variables for connection:  
 
@@ -338,10 +342,10 @@ If you cannot upload the code and receive an error: `Property 'upload.tool.seria
 {% assign codeByUploadWithProgrammer='
     ===
         image: /images/devices-library/basic/arduino-ide/select-esptool-programmer.png,
-        title: Go to "Tools" > "Programmer" and select "Esptool" as a programmer.  
+        title: Go to "**Tools**" > "**Programmer**" and select "**Esptool**" as a programmer.  
     ===
         image: /images/devices-library/basic/arduino-ide/upload-using-programmer.png,
-        title: Go to "Sketch" > "Upload Using Programmer".  
+        title: Go to "**Sketch**" > "**Upload Using Programmer**".  
 ' 
 %}
 

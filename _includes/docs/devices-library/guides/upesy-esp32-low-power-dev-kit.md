@@ -16,11 +16,11 @@ The module contains all the necessary minimum peripherals, sufficient for a quic
 ESP-WROOM-32D is based on the popular ESP32 dual-core chipset, with a variable clock frequency from 80 MHz to 240 MHz, with the possibility of individual control and power supply.  
 It has on-board Flash memory, 40 MHz quartz and a PCB antenna that provides good RF characteristics.
 
-- Optimised consumption : This is an optimized version of the uPesy Wroom DevKit board for very low power consumption when the ESP32 is in Deep Sleep mode. It consumes less than 15µA in Deep Sleep mode.  
-- Convenient : Compatible with the uPesy Wroom Devkit board : same size, same pins (only the GPIO35 pin will not be usable because it allows to estimate the battery level).  
+- **Optimised consumption** : This is an optimized version of the uPesy Wroom DevKit board for very low power consumption when the ESP32 is in Deep Sleep mode. It consumes less than 15µA in Deep Sleep mode.  
+- **Convenient** : Compatible with the uPesy Wroom Devkit board : same size, same pins (only the GPIO35 pin will not be usable because it allows to estimate the battery level).  
   It benefits from all its practical advantages : breadboard compatible, automatic uploading, USB C connector ...  
-- Built-in battery charger: The uPesy ESP32 Wroom Low Power DevKit has a built-in charger that allows you to charge a Li-Ion/Li-Polymer battery via the USB connector.  
-- Reliable : High quality board designed in France. Each uPesy ESP32 Wroom Low Power DevKit board is individually tested to make sure it work properly! It comes with MicroPython already installed.  
+- **Built-in battery charger**: The uPesy ESP32 Wroom Low Power DevKit has a built-in charger that allows you to charge a Li-Ion/Li-Polymer battery via the USB connector.  
+- **Reliable** : High quality board designed in France. Each uPesy ESP32 Wroom Low Power DevKit board is individually tested to make sure it work properly! It comes with MicroPython already installed.  
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
