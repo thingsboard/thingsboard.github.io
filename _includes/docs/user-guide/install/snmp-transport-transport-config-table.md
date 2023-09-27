@@ -21,7 +21,7 @@
           <td>transport.snmp.max_request_oids</td>
           <td>SNMP_MAX_REQUEST_OIDS</td>
           <td>100</td>
-          <td></td>
+          <td>Batch size to request OID mappings from device (useful when device profile has multiple hundreds of OID mappings)</td>
       </tr>
       <tr>
           <td>transport.snmp.response_processing.parallelism_level</td>

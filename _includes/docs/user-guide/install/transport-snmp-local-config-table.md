@@ -33,7 +33,7 @@
           <td>transport.snmp.response.ignore_type_cast_errors</td>
           <td>SNMP_RESPONSE_IGNORE_TYPE_CAST_ERRORS</td>
           <td>false</td>
-          <td></td>
+          <td>To ignore SNMP response values that do not match data type of the configured OID mapping (by default false - will throw error if any value of the response not matches configured data types)</td>
       </tr>
   </tbody>
 </table>
