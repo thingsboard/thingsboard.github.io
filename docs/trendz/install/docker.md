@@ -68,12 +68,13 @@ services:
     ports:
       - "8080"
     environment:
+      MAX_HEAP_SIZE: 750M
       SCRIPT_ENGINE_RUNTIME_TIMEOUT: 30000
       EXECUTOR_MANAGER: 1
       EXECUTOR_SCRIPT_ENGINE: 6
       THROTTLING_QUEUE_CAPACITY: 10
       THROTTLING_THREAD_POOL_SIZE: 6
-      NETWORK_BUFFER_SIZE: 10485760
+      NETWORK_BUFFER_SIZE: 5242880
   postgres:
     restart: always
     image: "postgres:12"
@@ -148,12 +149,13 @@ Full content of docker compose file you can find at the beginning of this articl
     ports:
       - "8080"
     environment:
+      MAX_HEAP_SIZE: 750M
       SCRIPT_ENGINE_RUNTIME_TIMEOUT: 30000
       EXECUTOR_MANAGER: 1
       EXECUTOR_SCRIPT_ENGINE: 6
       THROTTLING_QUEUE_CAPACITY: 10
       THROTTLING_THREAD_POOL_SIZE: 6
-      NETWORK_BUFFER_SIZE: 10485760
+      NETWORK_BUFFER_SIZE: 5242880
 ```
 {: .copy-code}
 
