@@ -85,6 +85,8 @@ toc:
       path: /docs/trendz/widget-actions/
     - title: Widget autorefresh
       path: /docs/trendz/widget-autorefresh/
+- title: External datasources
+  path: /docs/trendz/mix-sql-datasource/
 - title: Sync to ThingsBoard
   path: /docs/trendz/save-telemetry-to-thingsboard/
 - title: States

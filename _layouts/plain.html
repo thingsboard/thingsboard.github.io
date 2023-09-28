@@ -27,7 +27,7 @@
             while (el && (typeof el.tagName == 'undefined' || el.tagName.toLowerCase() != 'a' || !el.href)) {
                 el = el.parentNode;
             }
-            if (el && el.href) {
+            if (el && el.href && el.getAttribute('itemprop') !== 'contentUrl') {
                 var link = el.href;
                 if ((link.indexOf(location.host) == -1 || link.indexOf('.' + location.host) > 0) && !link.match(/^javascript\:/i)) {
                     var target = (el.target && !el.target.match(/^_(self|parent|top)$/i)) ? el.target : false;

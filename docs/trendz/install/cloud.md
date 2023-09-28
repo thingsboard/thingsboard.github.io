@@ -41,7 +41,7 @@ You need to have active ThingsBoard Cloud account to active Trendz Analytics Clo
 - Choose **ThingsBoard + Trendz** and select the most suitable plan for you
 
 
-{% include images-gallery.html imageCollection="cloudPlan" showListImageTitles="false" %}
+{% include images-gallery.html imageCollection="cloudPlan" %}
 
 ### Next steps
 
