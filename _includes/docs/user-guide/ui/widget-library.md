@@ -12,8 +12,8 @@ According to the provided features, each widget definition represents a specific
 There are five widget types:
 
  - [Latest values;](#latest-values)
- - [Timeseries;](#time-series)
- - [RPC (Control widget);](#rpc-control-widget)
+ - [Time series;](#timeseries)
+ - [Control widget;](#control-widget)
  - [Alarm widget;](#alarm-widget)
  - [Static widget.](#static)
 
@@ -26,12 +26,11 @@ Each widget type has its own specific data source configuration to visualize dat
  - **Device** - this data source type is used in both time-series and latest values widgets. Basically, you need to specify the target device, and the time series key, or the attribute name, or entity field;
  - **Entities count** - this data source type is used in latest values widgets. You need to specify the target entity;
  - **Entity** - this data source type is used in both time-series and latest values widgets. Basically, you need to select the target entity by specifying an [entity alias](/docs/{{docsPrefix}}user-guide/ui/aliases/), and the time series key, or the attribute name;
- - **Function** - this data source type is used in both time series and latest values widgets for debugging.
-   Basically, you can specify a javascript function that will simulate data from a device in order to set up visualization;
+ - **Function** - this data source type is used in both time series and latest values widgets for debugging. Basically, you can specify a JavaScript function that will simulate data from a device in order to set up visualization.
 
 ### Latest values
 
-_Latest values_ widget type is designed to showcase the latest values of a specific entity attribute or time series data point (e.g., any Gauge Widget or Entities Table widget).
+The Latest values widget type is designed to showcase the latest values of a specific entity attribute or time series data point (e.g., any Gauge Widget or Entities Table widget).
 This type of widget uses values of entity attribute(s) or time series as a data source.
 Digital Gauge in example is displaying current temperature value.
  
@@ -39,8 +38,8 @@ Digital Gauge in example is displaying current temperature value.
 
 ### Time series
 
-_Time series_ widget type displays historical values for the selected period of time, or the latest values in the certain time window (e.g., Timeseries Line Chart or Timeseries Bar Chart).
-This widget types uses only the values of entity time series as a data source.
+The Time series widget type displays historical values for the selected period of time, or the latest values in the certain time window (e.g., Timeseries Line Chart or Timeseries Bar Chart).
+This widget type uses only the values of entity time series as a data source.
 In order to specify the time frame of displayed values, _Timewindow_ settings are used.
 The timewindow can be specified on the dashboard page or in the widget details. It can be either _Realtime_ - the dynamically changed time frame for a certain latest interval, or _History_ - a fixed historical time frame.
 All these settings are part of Timeseries widget configuration.
@@ -48,9 +47,9 @@ In the example, the "Timeseries Line Chart" displays the speed value of device i
 
 {% include images-gallery.html imageCollection="wl-timeseries" %}
 
-### RPC (Control widget)
+### Control widget
 
-Control widget allows sending RPC commands to devices, it handles and visualize reply from the device (e.g., Raspberry Pi GPIO Control)
+The Control widget allows sending RPC commands to devices, it handles and visualizes reply from the device (e.g., Raspberry Pi GPIO Control)
 The RPC widgets are configured by specifying the target device as the target endpoint for RPC commands.
 In the example, the “Basic GPIO Control” widget sends GPIO switch commands and detects the current GPIOs switch status.
 
@@ -58,10 +57,10 @@ In the example, the “Basic GPIO Control” widget sends GPIO switch commands a
 
 ### Alarm Widget
 
-The _Alarm Widget_ type displays alarms related to the specified entity in the certain time window (e.g., Alarms table).
+The Alarm Widget type displays alarms related to the specified entity in the certain time window (e.g., Alarms table).
 The Alarm widget is configured by specifying an entity as the alarm source, and the corresponding alarm fields.
 As the _Timeseries widgets_, Alarm widgets have the _timewindow_ configuration to specify the time frame of the displayed alarms.
-Additionally, the configuration includes parameters such as "Alarm status," "Alarm severity," and "Alarm type".
+Additionally, the configuration includes parameters such as "Alarm status", "Alarm severity", and "Alarm type".
 The "Alarm status" parameter is used to show the status of the alarms being fetched.
 The "Alarm severity" parameter shows the frequency of alarm fetches in seconds.
 The "Alarm Type" parameter helps identify the primary source of the alarm.
@@ -72,7 +71,7 @@ In this context, the "Alarms table" widget displays the latest alarm for the dev
 
 ### Static
 
-The _Static_ widget type displays static customizable HTML content (e.g., HTML card).
+The Static widget type displays static customizable HTML content (e.g., HTML card).
 Static widgets don’t use any data sources and are usually configured by specifying static HTML content and optionally CSS styles.
 An example of a Static widget is the “HTML card” that displays the specified HTML content.
 
@@ -115,12 +114,12 @@ justify-content: center;
 ## Widgets Library (Bundles)
 
 Widgets are grouped into widget bundles according to their purposes.
-Some widgets can be found in multiple packages simultaneously. For example, the Alarm Count widget can be found in the Alarm Widgets bundle and the Count Widgets bundle.
+Some widgets can be found in multiple packages simultaneously. For example, the Alarm Count widget can be found in the Alarm widgets bundle and the Count widgets bundle.
 
-There are System-level and Tenant-level Widgets bundles. Initial ThingsBoard installation comes with a basic set of system-level Widgets bundles.
+There are system-level and tenant-level widgets bundles. Initial ThingsBoard installation comes with a basic set of system-level widgets bundles.
 
-System-level bundles can be managed by a **System administrator** and are available for use by any tenant in the system.
-Tenant-level bundles can be managed by a **Tenant administrator** and are available for use only by this tenant and his customers.
+The system-level bundles can be managed by a **System administrator** and are available for use by any tenant in the system.
+The tenant-level bundles can be managed by a **Tenant administrator** and are available for use only by this tenant and his customers.
 You can always implement and add your widgets by following this [guide](/docs/{{docsPrefix}}user-guide/contribution/widgets-development/).
 
 To find the widget you need among all the widget bundles, you can use the search function.
@@ -133,31 +132,31 @@ You can also find the widget you need by its name on the "Widgets" tab. Here, al
 
 ### Alarm widgets
 
-The Alarm widgets bundle is useful for visualization alarms for specific entities, both in real-time and history modes.
+The Alarm widgets bundle is useful for visualization of alarms for specific entities, both in real-time and history modes.
 
 {% include images-gallery.html imageCollection="wl-alarm-bundle" %}
 
 ### Analog Gauges
 
-The Analog Gauges bundle is useful for visualization temperature, humidity, speed, and other integer or float values.
+The Analog Gauges bundle is useful for visualization of temperature, humidity, speed, and other integer or float values.
 
 {% include images-gallery.html imageCollection="wl-analog-gauges-bundle" %}
 
 ### Cards
 
-The Cards bundle is useful for visualization time series data or attributes in table or card widgets.
+The Cards bundle is useful for visualization of time series data or attributes in table or card widgets.
 
 {% include images-gallery.html imageCollection="wl-cards-bundle" %}
 
 ### Charts
 
-The Charts bundle is useful for visualization historical or real-time data with a time window.
+The Charts bundle is useful for visualization of historical or real-time data with a time window.
 
 {% include images-gallery.html imageCollection="wl-charts-bundle" %}
 
 ### Control widgets
 
-The Control widgets bundle is useful for visualization the current state and sending RPC commands to target devices.
+The Control widgets bundle is useful for visualization of the current state and sending RPC commands to target devices.
 
 {% include images-gallery.html imageCollection="wl-control-bundle" %}
 
@@ -175,7 +174,7 @@ The Date widgets bundle is useful for changing the data range for other widgets 
 
 ### Digital Gauges
 
-The Digital Gauges bundle is useful for visualization temperature, humidity, speed and other integer or float values.
+The Digital Gauges bundle is useful for visualization of temperature, humidity, speed and other integer or float values.
 
 {% include images-gallery.html imageCollection="wl-digital-bundle" %}
 
@@ -228,7 +227,7 @@ The Home page widget bundle is useful for customizing and displaying quick links
 
 ### HTML widgets
 
-The HTML widgets bundle is useful to injecting custom HTML code. Or for displaying configurable HTML with the ability to inject values from the selected data source.
+The HTML widgets bundle is useful for injecting custom HTML code. Or for displaying configurable HTML with the ability to inject values from the selected data source.
 
 {% include images-gallery.html imageCollection="wl-html" %}
 
@@ -296,7 +295,7 @@ Please note that only system administrators can modify system (default) widgets.
 When a system administrator creates a new widget bundle, it's set as a system-level item for tenants, preventing them from modifying it.
 Nevertheless, tenants can add their own widgets. In this case, they have full rights to manage created widget types inside the bundle.
 
-To import a widget type, you should:
+To import a widget, you should:
 
 {% include images-gallery.html imageCollection="import-widget" showListImageTitles="true" %}
 
@@ -317,7 +316,7 @@ Second way:
 ### Adding Widgets Bundle
 
 If the system administrator adds a new widgets bundle, it automatically becomes a system one. 
-It means that only he can delete edit and add widget into the bundle. 
+It means that only he can delete, edit, and add widget into the bundle. 
 Tenant administrators can create widgets bundles as well. In this case, they have permissions to modify created bundles.
 You can always implement and add your widgets by following this [guide](/docs/{{docsPrefix}}user-guide/contribution/widgets-development/).
 
