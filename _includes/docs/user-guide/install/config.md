@@ -2473,7 +2473,7 @@ Edition" %} {% assign SWAGGER_CONTACT_NAME_VALUE = "ThingsBoard, Inc." %} {% end
             <td>TB_RULE_ENGINE_ASSIGNED_TENANT_PROFILES</td>
             <td></td>
             <td>Comma-separated list of tenant profiles ids assigned to this Rule Engine. 
-                This Rule Engine will only be responsible for processing of tenants with these profiles (in case isolation option is enabled for needed profiles).
+                This Rule Engine will only be responsible for processing of tenants with these profiles (in case isolation option is enabled for needed profiles)</td>
         </tr>
     </tbody>
 </table>
