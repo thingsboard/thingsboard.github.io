@@ -12,7 +12,7 @@ According to the provided features, each widget definition represents a specific
 There are five widget types:
 
  - [Latest values;](#latest-values)
- - [Time series;](#timeseries)
+ - [Time series;](#time-series)
  - [Control widget;](#control-widget)
  - [Alarm widget;](#alarm-widget)
  - [Static widget.](#static)
