@@ -59,9 +59,6 @@ constexpr char SCREEN_TEXT_ATTR[] = "screenText";
 String screenText;
 volatile bool screenTextUpdated;
 
-// Statuses for subscribing to rpc
-bool subscribed = false;
-
 // handle led state and mode changes
 volatile bool attributesChanged = false;
 
@@ -216,12 +213,10 @@ void loop() {
   delay(10);
 
   if (!reconnect()) {
-    subscribed = false;
     return;
   }
 
   if (!tb.connected()) {
-    subscribed = false;
     // Connect to the ThingsBoard
     Serial.print("Connecting to: ");
     Serial.print(THINGSBOARD_SERVER);
@@ -234,9 +229,7 @@ void loop() {
     }
     // Sending a MAC address as an attribute
     tb.sendAttributeData("macAddress", WiFi.macAddress().c_str());
-  }
-
-  if (!subscribed) {
+    
     Serial.println("Subscribing for RPC...");
     // Perform a subscription. All consequent data processing will happen in
     // processSetLedState() and processSetLedMode() functions,
@@ -252,7 +245,6 @@ void loop() {
     }
 
     Serial.println("Subscribe done");
-    subscribed = true;
 
     // Request current states of shared attributes
     if (!tb.Shared_Attributes_Request(attribute_shared_request_callback)) {
@@ -318,19 +310,24 @@ void loop() {
 ```
 {:.copy-code.expandable-20}
 
-In the code, replace placeholders with your WiFi network SSID, password, ThingsBoard device access token.  
+
+{% capture replacePlaceholders %}
+Don’t forget to replace placeholders with your real WiFi network SSID, password, ThingsBoard device access token.
+{% endcapture %}
+
+{% include templates/info-banner.md content=replacePlaceholders %}
 
 Necessary variables for connection:  
 
-| Variable name | Default value | Description | 
-|-|-|-|
-| WIFI_SSID | **YOUR_WIFI_SSID** | Your WiFi network name. | 
-| WIFI_PASSWORD | **YOUR_WIFI_PASSWORD** | Your WiFi network password. |
-| TOKEN | **YOUR_DEVICE_ACCESS_TOKEN** | Access token from device. Obtaining process described in #connect-device-to-thingsboard | 
-| THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address. |
-| THINGSBOARD_PORT | **1883U** | ThingsBoard server MQTT port. Can be default for this guide. |
-| MAX_MESSAGE_SIZE | **256U** | Maximal size of MQTT messages. Can be default for this guide. |
-| SERIAL_DEBUG_BAUD | **1883U** | Baud rate for serial port. Can be default for this guide. |  
+| Variable name      | Default value                                                                                                                | Description                                                                             | 
+|--------------------|------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| WIFI_SSID          | **YOUR_WIFI_SSID**                                                                                                           | Your WiFi network name.                                                                 | 
+| WIFI_PASSWORD      | **YOUR_WIFI_PASSWORD**                                                                                                       | Your WiFi network password.                                                             |
+| TOKEN              | **YOUR_DEVICE_ACCESS_TOKEN**                                                                                                 | Access token from device. Obtaining process described in #connect-device-to-thingsboard | 
+| THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address.                                                    |
+| THINGSBOARD_PORT   | **1883U**                                                                                                                    | ThingsBoard server MQTT port. Can be default for this guide.                            |
+| MAX_MESSAGE_SIZE   | **256U**                                                                                                                     | Maximal size of MQTT messages. Can be default for this guide.                           |
+| SERIAL_DEBUG_BAUD  | **1883U**                                                                                                                    | Baud rate for serial port. Can be default for this guide.                               |  
 
 ```cpp
 ...
