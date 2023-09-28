@@ -365,7 +365,12 @@ void loop() {
 ```
 {:.copy-code.expandable-20}
 
-In the code, replace placeholders with your WiFi network SSID, password, ThingsBoard device access token.  
+
+{% capture replacePlaceholders %}
+Don’t forget to replace placeholders with your real WiFi network SSID, password, ThingsBoard device access token.
+{% endcapture %}
+
+{% include templates/info-banner.md content=replacePlaceholders %}
 
 Necessary variables for connection:  
 
