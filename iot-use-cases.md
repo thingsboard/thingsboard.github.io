@@ -23,10 +23,10 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
             <div class="item-description">
                 <h2>Smart energy</h2>
                 <p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
-                <a class="read-more-button" href="/smart-energy/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/use-cases/smart-energy/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/smart-energy/">
+                <a class="img-button" href="/use-cases/smart-energy/">
                     <div class="overlay">
                         <div class="eye">
                             <img src="/images/eye-icon.svg">See more
@@ -50,10 +50,10 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
             <div class="item-description">
                 <h2>Smart farming</h2>
                 <p>Collect important indicators for your agricultural production such as soil conditions or facilities state via IoT sensors and visualize them using end-user customizable dashboards provided by ThingsBoard platform.</p>
-                <a class="read-more-button" href="/smart-farming/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/use-cases/smart-farming/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/smart-farming/">
+                <a class="img-button" href="/use-cases/smart-farming/">
                     <div class="overlay">
                         <div class="eye">
                             <img src="/images/eye-icon.svg">See more
@@ -77,10 +77,10 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
             <div class="item-description">
                 <h2>Fleet tracking</h2>
                 <p>ThingsBoard platform allows to track vehicles state and alerts via various sensors, plot vehicle routes in real-time and browse their sensors reading history at the same time using customizable high quality widgets and dashboards.</p>
-                <a class="read-more-button" href="/fleet-tracking/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/use-cases/fleet-tracking/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/fleet-tracking/">
+                <a class="img-button" href="/use-cases/fleet-tracking/">
                     <div class="overlay">
                         <div class="eye">
                             <img src="/images/eye-icon.svg">See more
@@ -104,10 +104,10 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
             <div class="item-description">
                 <h2>Smart metering</h2>
                 <p>Collect, store and aggregate data from smart meters in reliable and fault-tolerant way. Analyze resource consumption and raise alerts on leakage, anomaly or fraud. Present results of the analysis to end users.</p>
-                <a class="read-more-button" href="/smart-metering/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/use-cases/smart-metering/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/smart-metering/">
+                <a class="img-button" href="/use-cases/smart-metering/">
                     <div class="overlay">
                         <div class="eye">
                             <img src="/images/eye-icon.svg">See more
@@ -305,6 +305,27 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                     <div class="dashboard-frame">
                         <div class="frame-image">
                             <img src="/images/solutions/waste_monitoring/waste-monitoring-1.png">
+                        </div>
+                    </div>                
+                </a>
+            </div>
+        </div>
+        <div class="dashboard-item">
+            <div class="item-description">
+                <h2>Fuel Level Monitoring</h2>
+                <p>ThingsBoard platform allows to solution that simplifies fuel management for your business. Control the placement of fuel tanks, monitor information about a specific tank, and control all alarms related to the remaining fuel level, temperature, and battery level.</p>
+                <a class="read-more-button" href="/use-cases/fuel-level-monitoring/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+            </div>
+            <div class="item-image-container">
+                <a class="img-button" href="/use-cases/fuel-level-monitoring/">
+                    <div class="overlay">
+                        <div class="eye">
+                            <img src="/images/eye-icon.svg">See more
+                        </div>
+                    </div>
+                    <div class="dashboard-frame">
+                        <div class="frame-image">
+                            <img src="/images/solutions/fuel_level_monitoring/fuel-monitoring-1.png">
                         </div>
                     </div>                
                 </a>

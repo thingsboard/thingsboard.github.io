@@ -1,23 +1,20 @@
 ---
 layout: use-case
-title: Fleet tracking and fleet management
-description: Fleet tracking and fleet management with ThingsBoard IoT Platform
+title: Fuel Level Monitoring
+description: Fuel Level Monitoring with ThingsBoard IoT Platform
 notitle: "true"
 
 ---
 
-{% include usecase-nav.html usecase="fleet-tracking" %}
+{% include usecase-nav.html usecase="fuel-level-monitoring" %}
 
-<h1 class="usecase-title">Smart tracking and fleet management</h1>
+<h1 class="usecase-title">Fuel Level Monitoring solution</h1>
 
-Manage your company's fleet and assets with ThingsBoard using convenient and efficient IoT solutions. 
-Fleet tracking systems allow businesses to easily control and monitor their assets, routes, fuel consumption, etc. Having the necessary information about the state of assets affairs, responsible persons can make appropriate strategic decisions and improve the work of the links that need it.
+Fuel Level Monitoring offers a powerful solution that simplifies fuel management for your business. Our cutting-edge solution provides real-time insights into fuel levels, enabling you to make informed decisions that drive efficiency, optimize maintenance schedules, and reduce costs.
 
-Installing a fleet tracking <a href="/docs/paas/solution-templates/fleet-tracking/">template</a> allows drivers, managers, and staff to improve communication, increase efficiency, and maintain a high level of safety.
+With a user-friendly dashboard that is easy to navigate and provides clear visualizations of data, you can easily monitor fuel levels across your entire operation, set custom alerts for low fuel levels, and track fuel usage to identify inefficiencies and opportunities for improvement. Our solution is also highly adaptable to various industries, including transportation, agriculture, and more. Say goodbye to unexpected downtime and wasted fuel and hello to a streamlined, cost-effective operation with Fuel Level Monitoring. Try it today and see the difference for yourself.
 
-Therefore, use IoT solutions in your enterprise and get the benefits now.
-
-## Fleet Tracking Structure
+## Fuel Level Monitoring Structure
 
 As part of this solution, we have created a dashboard that displays data from tracking sensors.
 This dashboard helps to monitor and control location, speed, and fuel level in real time.
@@ -41,13 +38,16 @@ The following interactive dashboard hosted on live demo server represents vehicl
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/fleet-tracking/ft1.png" />
+        <img class="item-image" src="/images/usecases/fuel-level-monitoring/fuel-monitoring-1.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/fleet-tracking/ft2.png" />
+        <img class="item-image" src="/images/usecases/fuel-level-monitoring/fuel-monitoring-2.png" />
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/fleet-tracking/ft3.png" />
+        <img class="item-image" src="/images/usecases/fuel-level-monitoring/fuel-monitoring-3.png" />
+    </div>
+    <div>
+        <img class="item-image" src="/images/usecases/fuel-level-monitoring/fuel-monitoring-4.png" />
     </div>
 </div>
 
@@ -103,7 +103,7 @@ You may edit the route area widget and enable configuration of the route area fo
             <div class="block">
                 <img src="/images/integration-icon.svg">
                 <div>
-                    <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
+                    <a class="title" href="/docs/user-guide/integrations">LoRaWAN & SigFox Support</a>
                     <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
                 </div>
             </div>
@@ -139,7 +139,7 @@ You may edit the route area widget and enable configuration of the route area fo
             <div class="block">
                 <img src="/images/device-icon.svg">
                 <div>
-                    <a class="title" href="/docs/mobile/">Mobile application</a>
+                    <a class="title" href="/docs/mobile">Mobile application</a>
                     <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
                 </div>
             </div>

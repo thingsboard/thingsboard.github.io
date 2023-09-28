@@ -99,7 +99,7 @@ You may export the dashboard from our live demo server and import it to your Thi
             <div class="block">
                 <object data="/images/integration-icon.svg"></object>
                 <div>
-                    <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
+                    <a class="title" href="/docs/user-guide/integrations">LoRaWAN & SigFox Support</a>
                     <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
                 </div>
             </div>
@@ -135,7 +135,7 @@ You may export the dashboard from our live demo server and import it to your Thi
             <div class="block">
                 <object data="/images/phone-icon.svg"></object>
                 <div>
-                    <a class="title" href="/docs/mobile/">Mobile application</a>
+                    <a class="title" href="/docs/mobile">Mobile application</a>
                     <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
                 </div>
             </div>
