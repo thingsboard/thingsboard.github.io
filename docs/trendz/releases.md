@@ -8,6 +8,24 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
+## v1.10.3 (September, 2023)
+
+**Improvements:**
+
+* Add support of SQL datasources
+* Add option to remove blank series form view
+* Improve root selection during query planing
+* Add support of new ThingsBoard widget bundle format (ThingBoard 3.6+)
+* Improve predefined options to date picker
+* Add user timezone to calculated field
+* Topology validation during discovery
+
+**Bug fixes:**
+
+* Fix trend-line calculation for scatter plot
+* Fix blank view during report generation
+* Fix delta aggregation
+
 ## v1.10.2 (August, 2023)
 
 **Improvements:**
