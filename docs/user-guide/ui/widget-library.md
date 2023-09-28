@@ -12,7 +12,7 @@ wl-dashboard-widgets:
 wl-latest-values-datasource:
     0:
         image: /images/user-guide/ui/widgets/widget-library/latest-values-datasource-1-ce.png
-        title: 'This widget type uses values of entity time series as a data source.'
+        title: 'This widget type uses values of entity time series as a data source;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/latest-values-datasource-2-ce.png
         title: 'Digital Gauge displaying current power value.'
@@ -20,15 +20,15 @@ wl-latest-values-datasource:
 wl-timeseries:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-timeseries-1-ce.png
-        title: 'This kind of widgets uses only the values of entity time series as a data source.'
+        title: 'This kind of widgets uses only the values of entity time series as a data source;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-timeseries-2-ce.png
-        title: 'An example of time series widget is the "Timeseries Line Chart". It displays amperage values of devices in real-time.'
+        title: 'An example of timeseries widget is the "Timeseries Line Chart". It displays amperage values of devices in real-time.'
 
 wl-control-widget:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-control-widget-1-ce.png
-        title: 'RPC widgets are configured by specifying target device as target endpoint for RPC commands.'
+        title: 'RPC widgets are configured by specifying target device as target endpoint for RPC commands;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-control-widget-2-ce.png
         title: 'An example of RPC widget is “Basic GPIO Control”. It sends GPIO switch commands and detects current GPIOs switch status.'
@@ -36,7 +36,7 @@ wl-control-widget:
 wl-alarms:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-alarms-1-ce.png
-        title: 'Alarm widget is configured by specifying an entity as the alarm source, and the corresponding alarm fields.'
+        title: 'Alarm widget is configured by specifying an entity as the alarm source, and the corresponding alarm fields;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-alarms-2-ce.png
         title: 'An example of Alarm widget is the “Alarms table” widget that displays the latest alarm for the device in real-time.'
@@ -44,7 +44,7 @@ wl-alarms:
 wl-static:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-static-1-ce.png
-        title: 'Static widget type is configured by specifying static HTML content and optionally CSS styles.'
+        title: 'Static widget type is configured by specifying static HTML content and optionally CSS styles;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-static-2-ce.png
         title: 'An example of a Static widget is the “HTML card” that displays the specified HTML content.'
@@ -65,7 +65,7 @@ wl-alarm-bundle:
 wl-analog-gauges-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-analog-gauges-bundle-ce.png
-        title: 'For visualization of temperature, humidity, speed and other integer or float values.'
+        title: 'For visualization of temperature, humidity, speed, and other integer or float values.'
 
 wl-cards-bundle:
     0:
@@ -95,7 +95,7 @@ wl-date-bundle:
 wl-digital-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-digital-bundle-ce.png
-        title: 'For visualization of temperature, humidity, speed and other integer or float values.'
+        title: 'For visualization of temperature, humidity, speed, and other integer or float values.'
 
 wl-edge-widgets-bundle:
     0:
@@ -110,12 +110,12 @@ wl-entity-admin-bundle:
 wl-entity-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-entity-widgets-bundle-ce.png
-        title: 'For display a list of entities with their data, counting entities, and displays the hierarchy of entities based on their relations.'
+        title: 'For displaying a list of entities with their data, counting entities, and displays the hierarchy of entities based on their relations.'
 
 wl-files-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-files-bundle-pe.png
-        title: 'For display a list of files or pdf reports as a table. Allows to download and delete the file.'
+        title: 'For displaying a list of files or PDF reports as a table. Allows to download and delete the file.'
 
 wl-gpio:
     0:
@@ -125,7 +125,7 @@ wl-gpio:
 wl-home:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-home-page-bundles-ce.png
-        title: 'For customize and display quick links to the platform&#39;s UI components, documentation or any other resources on the home page, display statistics about the number of entities and API usege, etc.'
+        title: 'For customize and display quick links to the platform&#39;s UI components, documentation or any other resources on the home page, display statistics about the number of entities and API usage, etc.'
 
 wl-html:
     0:
@@ -165,13 +165,13 @@ wl-tables-bundle:
 add-widget:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-widget-1-ce.png
-        title: 'Navigate to the "Widgets Library" page using the main menu on the left. Click the "+" icon in the upper right corner of the screen, and select the "Create new widgets type" option from the drop-down menu.'
+        title: 'Navigate to the "Widgets Library" page using the main menu on the left. Click the "+" icon in the upper right corner of the screen, and select the "Create new widgets type" option from the drop-down menu;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-widget-2-ce.png
-        title: 'In the pop-up window select widget type.'
+        title: 'In the pop-up window select widget type;'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-widget-3-ce.png
-        title: 'In the pop-up window select widget type. In the dialog window that appears, enter the name of the new widget. Enter the widget JavaScript code, then click "Save" to complete the creation of widget.'
+        title: 'In the pop-up window select widget type. In the dialog window that appears, enter the name of the new widget. Enter the widget JavaScript code, then click "Save" to complete the creation of widget;'
     3:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-widget-4-ce.png
         title: 'A new widget is created.'
@@ -179,16 +179,16 @@ add-widget:
 wl-add-widgets-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-1-ce.png
-        title: 'Navigate to the "Widgets bundle" page using the main menu on the left. Click the "+" icon in the upper right corner of the screen, and select the "Create new widgets bundle" option from the drop-down menu.'
+        title: 'Navigate to the "Widgets bundle" page using the main menu on the left. Click the "+" icon in the upper right corner of the screen, and select the "Create new widgets bundle" option from the drop-down menu;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-2-сe.png
-        title: 'In the opened dialog window, enter the name of the new bundle. Adding an image and a description is optional. Click "Add".'
+        title: 'In the opened dialog window, enter the name of the new bundle. Adding an image and a description is optional. Click "Add";'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-3-сe.png
-        title: 'The new widgets bundle is opened. After adding the widgets bundle, you can add widgets in there. For this, click the "+ Add Widget".'
+        title: 'The new widgets bundle is opened. After adding the widgets bundle, you can add widgets in there. For this, click the "+ Add Widget";'
     3:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-4-ce.png
-        title: 'Select one or multiple widgets and click "Save" to complete add widget to your widget bundle.'
+        title: 'Select one or multiple widgets and click "Save" to complete add widget to your widget bundle;'
     4:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-5-ce.png
         title: 'Since widgets bundles are in alphabetical order, the newly created one may be on the second page.'
@@ -196,7 +196,7 @@ wl-add-widgets-bundle:
 export-widgets-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-export-bundle-1-ce.png
-        title: 'Go to the "Widgets Library" page, navigate to the "Widgets Bundle" tab, and click the export button on the specific widgets bundle row.'
+        title: 'Go to the "Widgets Library" page, navigate to the "Widgets Bundle" tab, and click the export button on the specific widgets bundle row;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-export-bundle-2-ce.png
         title: 'In the pop-up window, optionally check the "Include bundle widget types in exported data", then click "Export". The widgets bundle configuration file will be saved in JSON format on your computer.'
@@ -204,10 +204,10 @@ export-widgets-bundle:
 import-widgets-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-import-bundle-1-ce.png
-        title: 'Go to the "Widgets Library" page, and click the "+" button in the upper right corner of the "Widgets Bundles" page. Select "Import widgets bundle" from the drop-down menu.'
+        title: 'Go to the "Widgets Library" page, and click the "+" button in the upper right corner of the "Widgets Bundles" page. Select "Import widgets bundle" from the drop-down menu;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-import-bundle-2-ce.png
-        title: 'In the popup, you will be prompted to upload the JSON file. Drag and drop a file from your computer, then click "Import" to add a widget bundle to the library.'
+        title: 'In the popup, you will be prompted to upload the JSON file. Drag and drop a file from your computer, then click "Import" to add a widget bundle to the library;'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-import-bundle-3-ce.png
         title: 'The widgets bundle is imported'
@@ -220,18 +220,18 @@ export-widget:
 import-widget:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-import-widget-1-ce.png
-        title: 'Go to the "Widgets Library" page, navigate to the "Widgets" tab, and click the "+" button in the upper right corner of the screen. Select "Import widgets type" from the drop-down menu.'
+        title: 'Go to the "Widgets Library" page, navigate to the "Widgets" tab, and click the "+" button in the upper right corner of the screen. Select "Import widgets type" from the drop-down menu;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-import-widget-2-ce.png
-        title: 'In the popup, you will be prompted to upload the JSON file. Drag and drop a file from your computer, then click the "Import" to add a widget to the widget bundle.'
+        title: 'In the popup, you will be prompted to upload the JSON file. Drag and drop a file from your computer, then click the "Import" to add a widget to the widget bundle;'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-import-widget-3-ce.png
-        title: 'The widgets is imported to the bundle.'
+        title: 'The widget is imported to the bundle.'
 
 delete-widgets-bundle-1:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-bundle-1-ce.png
-        title: 'Go to the "Widgets Library" page, navigate to the "Widgets Bundle" tab, and click a "Trash" icon next to the name of the widget bundle you want to delete.'
+        title: 'Go to the "Widgets Library" page, navigate to the "Widgets Bundle" tab, and click a "Trash" icon next to the name of the widget bundle you want to delete;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-bundle-2-ce.png
         title: 'Confirm deleting the widgets bundle in the dialog box.'
@@ -239,10 +239,10 @@ delete-widgets-bundle-1:
 delete-widgets-bundle-2:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-bundle-3-ce.png
-        title: 'Go to the "Widgets Library" page, navigate to the "Widgets Bundle" tab, and click a "Pencil" icon in the widgets bundle row to open widgets bundle details.'
+        title: 'Go to the "Widgets Library" page, navigate to the "Widgets Bundle" tab, and click a "Pencil" icon in the widgets bundle row to open widgets bundle details;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-bundle-4-ce.png
-        title: 'Click on the "Delete widgets bundle" button in the widgets bundle details.'
+        title: 'Click on the "Delete widgets bundle" button in the widgets bundle details;'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-bundle-5-ce.png
         title: 'Confirm deleting the widgets bundle in the dialog box.'
@@ -250,7 +250,7 @@ delete-widgets-bundle-2:
 delete-widget-1:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-1-ce.png
-        title: 'Go to the "Widgets Library" page, navigate to the "Widgets" tab, and click a "Trash" icon in the widget&#39;s type row you want to delete.'
+        title: 'Go to the "Widgets Library" page, navigate to the "Widgets" tab, and click a "Trash" icon in the widget&#39;s type row you want to delete;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-2-ce.png
         title: 'Confirm deleting the widget type in the dialog box.'
@@ -258,10 +258,10 @@ delete-widget-1:
 delete-widget-2:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-3-ce.png
-        title: 'Go to the "Widgets Library" page, navigate to the "Widgets" tab, and click a "Pencil" icon in the widget&#39;s type row to open widget details.'
+        title: 'Go to the "Widgets Library" page, navigate to the "Widgets" tab, and click a "Pencil" icon in the widget&#39;s type row to open widget details;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-4-ce.png
-        title: 'Click on the "Delete widget type" button in the widget details.'
+        title: 'Click on the "Delete widget type" button in the widget details;'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-5-ce.png
         title: 'Confirm deleting the widget type in the dialog box.'
