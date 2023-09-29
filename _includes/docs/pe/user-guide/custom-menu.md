@@ -91,17 +91,16 @@ Example of JSON data format to hide "Home" and "Alarms" menu items:
 | home_settings             | This parameter provides the option to hide the "Home Settings" tab in the "Settings" page.            |
 | mail_server               | This parameter provides the option to hide the "Mail Server" tab in the "Settings" page.              |
 | notification_settings     | This parameter provides the option to hide the "Notifications" tab in the "Settings" page.            |
-| queues                    | This parameter provides the option to hide the "Home Settings" tab in the "Settings" page.            |
-| domain                    | This parameter provides the option to hide the "Home Settings" tab in the "Settings" page.            |
+| queues                    | This parameter provides the option to hide the "Queues" tab in the "Settings" page. (Sysadmin)        |
 | repository_settings       | This parameter provides the option to hide the "Repository settings" tab in the "Settings" page.      |
 | auto_commit_settings      | This parameter provides the option to hide the "Auto-commit settings" tab in the "Settings" page.     |
-| security_settings         | This parameter provides the option to hide the "Login" tab in the "White Labeling" page.                                                   |
-| security_settings_general | Сreate sub-menu items grouped under one section.                                                      |
-| 2fa                       | Сreate sub-menu items grouped under one section.                                                      |
-| roles                     | Specify the dashboard ID you want to open.                                                            |
-| self_registration         | Show/hide the dashboard toolbar.                                                                      |
-| audit_log                 | Specify the dashboard ID you want to open.                                                            |
-| oauth2                    | Сreate sub-menu items grouped under one section.                                                      |
+| security_settings         | This parameter provides the option to hide the "Security" item on the left panel.                     |
+| security_settings_general | This parameter provides the option to hide the "General" item on the left panel. (Sysadmin)           |
+| 2fa                       | This parameter provides the option to hide the "Two-factor authentication" item on the left panel.    |
+| roles                     | This parameter provides the option to hide the "Roles" item on the left panel.                        |
+| self_registration         | This parameter provides the option to hide the "Self Registration" item on the left panel.            |
+| audit_log                 | This parameter provides the option to hide the "Audit Logs" item on the left panel.                   |
+| oauth2                    | This parameter provides the option to hide the "Oauth2" item on the left panel.                       |
 | ---                       
 
 
