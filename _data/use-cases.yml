@@ -13,7 +13,7 @@
 - id: fuel-level-monitoring
   title: Fuel Level Monitoring
   link: /use-cases/fuel-level-monitoring/
-  icon: /images/case-trk-icon.svg
+  icon: /images/case-wat-icon.svg
 - id: smart-metering
   title: Smart Metering
   link: /use-cases/smart-metering/

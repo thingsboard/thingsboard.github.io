@@ -8,33 +8,28 @@ notitle: "true"
 
 {% include usecase-nav.html usecase="fuel-level-monitoring" %}
 
-<h1 class="usecase-title">Fuel Level Monitoring solution</h1>
+<h1 class="usecase-title">Fuel level monitoring solution</h1>
 
-Fuel Level Monitoring offers a powerful solution that simplifies fuel management for your business. Our cutting-edge solution provides real-time insights into fuel levels, enabling you to make informed decisions that drive efficiency, optimize maintenance schedules, and reduce costs.
+Efficient fuel level monitoring is indispensable for businesses, particularly gas stations, focusing on optimizing fuel inventory and preventing shortages or surplus. Inaccurate fuel level monitoring can lead to operational inefficiencies, loss of revenue, and, in severe cases, safety hazards due to fuel spillage.
 
-With a user-friendly dashboard that is easy to navigate and provides clear visualizations of data, you can easily monitor fuel levels across your entire operation, set custom alerts for low fuel levels, and track fuel usage to identify inefficiencies and opportunities for improvement. Our solution is also highly adaptable to various industries, including transportation, agriculture, and more. Say goodbye to unexpected downtime and wasted fuel and hello to a streamlined, cost-effective operation with Fuel Level Monitoring. Try it today and see the difference for yourself.
+Our Fuel Level Monitoring <a href="/docs/paas/solution-templates/fuel-level-monitoring/">template</a> offers real-time insight into fuel levels, facilitating proactive management of fuel stocks and refining operational workflows. The solution employs advanced technology, including adaptable sensors and robust communication protocols, to accurately track fuel levels in tanks. With our intuitive dashboard, users can effortlessly monitor tank state, configure measurement details and custom alerts, and track fuel consumption. By mastering your fuel management processes, you can diminish operational disruptions and ensure continuous fuel availability, leading to streamlined operations and enhanced customer satisfaction.
 
-## Fuel Level Monitoring Structure
+Moreover, our solution is entirely customisable to accommodate the unique requirements of your business, whether you operate within the retail, industrial, or any other sector requiring meticulous fuel level monitoring. By leveraging our Fuel Level Monitoring solution, you can secure a competitive edge and attain superior operational efficiency. Revolutionize fuel management and propel your business to new heights with our Fuel Level Monitoring solution.
 
-As part of this solution, we have created a dashboard that displays data from tracking sensors.
-This dashboard helps to monitor and control location, speed, and fuel level in real time.
-Our dashboard has multiple states - **Main state** and  **Bus state**.
+## Fuel Level Monitoring Solution Structure
 
-**Main state** contains an interactive map for monitoring the movement of transport, a list of existing buses with detailed information about them, and a table of Alarms.
+Within this solution, we have developed a Fuel Level Monitoring dashboard that amalgamates data from various sensors. 
+This dashboard empowers you to scrutinize fuel levels meticulously and react promptly to alterations in the tank state. 
+It features components that can be effortlessly integrated into your IoT solution, enhancing the adaptability and user-friendliness of the system. 
+Additionally, the dashboard is equipped with multiple states, allowing for a diverse range of interactions and data presentations to accommodate varying user needs and preferences:
 
-**Bus state** contains an interactive map of the history of the route, the current route area, detailed information about the bus, and corresponding alarms.
+**Main state** - designed to monitor the remaining fuel and control the placement of tanks, device management, and the alarm system;
 
-Collected data is processed via the rule engine to raise alarms when:
-- vehicle leaves configurable route perimeter;
-- the vehicle is not moving for 2 minutes while on the route;
-- fuel level is low;
-- violation of speed limits.
+**Tank state** - designed to display information about a specific tank;
 
-The following interactive dashboard presents an intelligent visualization of IoT data that you can easily integrate into your IoT solution. See more details <a href="/docs/paas/solution-templates/fleet-tracking/">here</a>.
+## Fuel Level Monitoring dashboard
 
-## Fleet tracking dashboard
-
-The following interactive dashboard hosted on live demo server represents vehicle routes and state indicators that may be embedded in your IoT fleet tracking project. 
+The Fuel Level Monitoring interactive dashboard contains 2 states that are specialised for monitoring fuel levels in tanks, observing consumption statistics, managing devices.
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
@@ -51,27 +46,18 @@ The following interactive dashboard hosted on live demo server represents vehicl
     </div>
 </div>
 
-<div class="center" style="margin-bottom: 64px;">
-    <a target="_blank" href="https://demo.thingsboard.io/dashboard/3d0bf910-ee09-11e6-b619-bb0136cc33d0?publicId=963ab470-34c9-11e7-a7ce-bb0136cc33d0" class="button">View live demo</a>
-</div>
+The incorporation of tanks and units selection further personalises the user interface, enabling more precise monitoring and management, while the streamlined interface ensures swift navigation and enhanced user experience, catering to various monitoring and management needs related to fuel level in tanks.
 
-The live Fleet Tracking dashboard displays real-time data from several tracking sensors collected using ThingsBoard MQTT API. Collected data is processed via the rule engine to raise alarms on certain thresholds. You may export the dashboard from our live demo server and import it to your ThingsBoard instance.
+## Benefits of the Fuel Level Monitoring template
 
-## Benefits of the Fleet Tracking template
-
-Save up to 90% of development time for your fleet tracking solution by utilizing the following platform benefits:
-- reliable and scalable data collection for your fleet tracking sensors;
-- powerful rule engine to process collected data and produce alarms and valuable insights;
-- advanced and flexible visualization for real-time and historical data;
-- customizable end-user dashboards to analyze and share the results of fleet tracking;
-- integration with third-party analytics frameworks and solutions for advanced analytics;
-- remote control and OTA updates for your tracking sensors and other devices;
-- customizable mobile applications with minimum coding efforts.
-
-Of course, you may extend the list of alarms and completely customize the dashboard. 
-You may export the dashboard from our live demo server and import it to your ThingsBoard instance.
-You may edit the route area widget and enable configuration of the route area for your local copy of the dashboard. 
-
+Save up to 90% of development time for your fuel level monitoring solution by utilising the following platform benefits:
+ - reliable and scalable data collection for your tanks sensors;
+ - powerful rule engine to process collected data and produce alarms and valuable insights;
+ - advanced and flexible visualisation for real-time and historical data;
+ - customisable end-user dashboards to analyse and share the results of tank monitoring;
+ - integration with third-party analytics frameworks and solutions for advanced usage analytics;
+ - remote control and OTA updates for your smart sensors and other devices;
+ - customisable mobile applications with minimum coding efforts.
 
 ## ThingsBoard advantages
 <section class="usecase-advantages">
@@ -156,14 +142,14 @@ You may edit the route area widget and enable configuration of the route area fo
     </div>
 </section>
 
-## Fleet tracking solution overview
+## Fuel level monitoring solution overview
 
-The diagram below identifies data flow and integration points for a typical fleet-tracking solution that uses the ThingsBoard platform to collect and analyze data from vehicle trackers.
+The diagram below identifies data flow and integration points for a typical fuel level monitoring solution that uses the ThingsBoard platform to collect and analyze data from fuel tanks.
 
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/fleet-tracking.svg"></object>
 
-You may notice plenty of connectivity options for the vehicle trackers: direct connection to the cloud, through the IoT Gateway or integration with a third-party system.
-Most of vehicle-tracking projects today use direct connection to the cloud using MQTT or CoAP in case of NB IoT. 
+You may notice plenty of connectivity options for the fuel tanks devices: direct connection to the cloud, through the IoT Gateway or integration with a third-party system.
+Most of a fuel level monitoring projects today use direct connection to the cloud using MQTT or CoAP in case of NB IoT. 
 ThingsBoard supports either plain JSON or Protobuf, which significantly optimize network traffic and increase battery life;
 
 The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
