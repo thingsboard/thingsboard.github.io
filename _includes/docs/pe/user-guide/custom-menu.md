@@ -25,91 +25,78 @@ Example of JSON data format to hide "Home" and "Alarms" menu items:
 ```
 {: .copy-code}
 
-| **Available ThingsBoard menu items names that can be disabled:**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|:-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| "home", "tenants", "alarms", "rule_chains", "dashboards", "dashboard_all", "dashboard_groups", "solution_templates", "entities", "devices", "assets", "entity_views", "profiles", "device_profiles", "asset_profiles", "tenant_profiles", "customers", "customer_all", "customer_groups", "customers_hierarchy", "users", "user_all", "user_groups", "edge_management", "edges", "rulechain_templates", "integration_templates", "converter_templates", "integrations_center", "integrations", "converters", "features", "otaUpdates", "version_control", "scheduler", "white_labeling", "white_labeling_general", "login_white_labeling", "mail_templates", "custom_translation", "custom_menu", "notifications_center", "notification_inbox", "notification_sent", "notification_recipients", "notification_templates", "notification_rules", "settings", "general", "home_settings", "mail_server", "notification_settings", "repository_settings", "auto_commit_settings", "queues", "security_settings", "security_settings_general", "oauth2", "roles", "self_registration", "2fa", "resources", "widget_library", "resources_library", "api_usage", "audit_log" |
-
-
 **Available ThingsBoard menu items names that can be disabled:**  
 
-| **Parameter**             | **Description**                                                                                       |
-|:--------------------------|:------------------------------------------------------------------------------------------------------|
-| home                      | This parameter provides the option to hide the "Home" item on the left panel.                         |
-| tenants                   | This parameter provides the option to hide the "Tenants" item on the left panel.                      |
-| tenant_profiles           | This parameter provides the option to hide the "Tenant Profiles" item on the left panel.              |
-| billing                   | This parameter provides the option to hide the "Plan and Billing" item on the left panel.             |
-| alarms                    | This parameter provides the option to hide the "Alarms" item on the left panel.                       |
-| dashboards                | This parameter provides the option to hide the "Dashboards" item on the left panel.                   |
-| dashboard_all             | This parameter provides the option to hide the "All" tab in the "Dashboards" page.                    |
-| dashboard_groups          | This parameter provides the option to hide the "Groups" tab in the "Dashboards" page.                 |
-| solution_templates        | This parameter provides the option to hide the "Solution Templates" item on the left panel.           |
-| entities                  | This parameter provides the option to hide the "Entities" item on the left panel.                     |
-| devices                   | This parameter provides the option to hide the "Devices" item on the left panel.                      |
-| assets                    | This parameter provides the option to hide the "Assets" item on the left panel.                       |
-| entity_views              | This parameter provides the option to hide the "Entity Views" item on the left panel.                 |
-| profiles                  | This parameter provides the option to hide the "Profiles" item on the left panel.                     |
-| device_profiles           | This parameter provides the option to hide the "Device profiles" item on the left panel.              |
-| asset_profiles            | This parameter provides the option to hide the "Asset profiles" item on the left panel.               |
-| customers                 | This parameter provides the option to hide the "Customers" item on the left panel.                    |
-| customer_all              | This parameter provides the option to hide the "All" tab in the "Customers" page.                     |
-| customer_groups           | This parameter provides the option to hide the "Groups" tab in the "Customers" page.                  |
-| customers_hierarchy       | This parameter provides the option to hide the "Hierarchy" tab in the "Customers" page.               |
-| users                     | This parameter provides the option to hide the "Users" item on the left panel.                        |
-| user_all                  | This parameter provides the option to hide the "All" tab in the "Customers" page.                     |
-| user_groups               | This parameter provides the option to hide the "Groups" tab in the "Customers" page.                  |
-| integrations_center       | This parameter provides the option to hide the "Integrations center" item on the left panel.          |
-| integrations              | This parameter provides the option to hide the "Integrations" item on the left panel.                 |
-| converters                | This parameter provides the option to hide the "Data converters" item on the left panel.              |
-| rule_chains               | This parameter provides the option to hide the "Rule chains" item on the left panel.                  |
-| edge_management           | This parameter provides the option to hide the "Edge management" item on the left panel.              |
-| edges                     | This parameter provides the option to hide the "Instances" item on the left panel.                    |
-| rulechain_templates       | This parameter provides the option to hide the "Rule chain templates" item on the left panel.         |
-| integration_templates     | This parameter provides the option to hide the "Integration templates" item on the left panel.        |
-| converter_templates       | This parameter provides the option to hide the "Converter templates" item on the left panel.          |
-| features                  | This parameter provides the option to hide the "Advanced features" item on the left panel.            |
-| otaUpdates                | This parameter provides the option to hide the "OTA updates" item on the left panel.                  |
-| version_control           | This parameter provides the option to hide the "Version control" item on the left panel.              |
-| scheduler                 | This parameter provides the option to hide the "Scheduler" item on the left panel.                    |
-| resources                 | This parameter provides the option to hide the "Resources" item on the left panel.                    |
-| widget_library            | This parameter provides the option to hide the "Widgets Library" item on the left panel.              |
-| resources_library         | This parameter provides the option to hide the "Resources library" item on the left panel.            |
-| notifications_center      | This parameter provides the option to hide the "Notifications center" item on the left panel.         |
-| notification_inbox        | This parameter provides the option to hide the "Inbox" tab in the "Notifications center" page.        |
-| notification_sent         | This parameter provides the option to hide the "Sent" tab in the "Notifications center" page.         |
-| notification_recipients   | This parameter provides the option to hide the "Recipients" tab in the "Notifications center" page.   |
-| notification_templates    | This parameter provides the option to hide the "Templates" tab in the "Notifications center" page.    |
-| notification_rules        | This parameter provides the option to hide the "Rules" tab in the "Notifications center" page.        |
-| api_usage                 | This parameter provides the option to hide the "Instances" item on the left panel.                    |
-| white_labeling            | This parameter provides the option to hide the "White Labeling" item on the left panel.               |
-| white_labeling_general    | This parameter provides the option to hide the "General" tab in the "White Labeling" page.            |
-| login_white_labeling      | This parameter provides the option to hide the "Login" tab in the "White Labeling" page.              |
-| mail_templates            | This parameter provides the option to hide the "Mail Templates" tab in the "White Labeling" page.     |
-| custom_translation        | This parameter provides the option to hide the "Custom Translation" tab in the "White Labeling" page. |
-| custom_menu               | This parameter provides the option to hide the "Custom Menu" tab in the "White Labeling" page.        |
-| settings                  | This parameter provides the option to hide the "Settings" item on the left panel.                     |
-| general                   | This parameter provides the option to hide the "General" tab in the "Settings" page. (Sysadmin)       |
-| home_settings             | This parameter provides the option to hide the "Home Settings" tab in the "Settings" page.            |
-| mail_server               | This parameter provides the option to hide the "Mail Server" tab in the "Settings" page.              |
-| notification_settings     | This parameter provides the option to hide the "Notifications" tab in the "Settings" page.            |
-| queues                    | This parameter provides the option to hide the "Queues" tab in the "Settings" page. (Sysadmin)        |
-| repository_settings       | This parameter provides the option to hide the "Repository settings" tab in the "Settings" page.      |
-| auto_commit_settings      | This parameter provides the option to hide the "Auto-commit settings" tab in the "Settings" page.     |
-| security_settings         | This parameter provides the option to hide the "Security" item on the left panel.                     |
-| security_settings_general | This parameter provides the option to hide the "General" item on the left panel. (Sysadmin)           |
-| 2fa                       | This parameter provides the option to hide the "Two-factor authentication" item on the left panel.    |
-| roles                     | This parameter provides the option to hide the "Roles" item on the left panel.                        |
-| self_registration         | This parameter provides the option to hide the "Self Registration" item on the left panel.            |
-| audit_log                 | This parameter provides the option to hide the "Audit Logs" item on the left panel.                   |
-| oauth2                    | This parameter provides the option to hide the "Oauth2" item on the left panel.                       |
+| **Parameter**             | **Description**                                                                                                                          |
+|:--------------------------|:-----------------------------------------------------------------------------------------------------------------------------------------|
+| home                      | This parameter provides the option to hide the "Home" item on the left panel.                                                            |
+| tenants                   | This parameter provides the option to hide the "Tenants" item on the left panel.                                                         |
+| tenant_profiles           | This parameter provides the option to hide the "Tenant Profiles" item on the left panel (only at the system administrator level).        |
+| billing                   | This parameter provides the option to hide the "Plan and Billing" item on the left panel.                                                |
+| alarms                    | This parameter provides the option to hide the "Alarms" item on the left panel.                                                          |
+| dashboards                | This parameter provides the option to hide the "Dashboards" item on the left panel.                                                      |
+| dashboard_all             | This parameter provides the option to hide the "All" tab on the "Dashboards" page.                                                       |
+| dashboard_groups          | This parameter provides the option to hide the "Groups" tab on the "Dashboards" page.                                                    |
+| solution_templates        | This parameter provides the option to hide the "Solution Templates" item on the left panel.                                              |
+| entities                  | This parameter provides the option to hide the "Entities" item on the left panel.                                                        |
+| devices                   | This parameter provides the option to hide the "Devices" item on the left panel.                                                         |
+| assets                    | This parameter provides the option to hide the "Assets" item on the left panel.                                                          |
+| entity_views              | This parameter provides the option to hide the "Entity Views" item on the left panel.                                                    |
+| profiles                  | This parameter provides the option to hide the "Profiles" item on the left panel.                                                        |
+| device_profiles           | This parameter provides the option to hide the "Device profiles" item on the left panel.                                                 |
+| asset_profiles            | This parameter provides the option to hide the "Asset profiles" item on the left panel.                                                  |
+| customers                 | This parameter provides the option to hide the "Customers" item on the left panel.                                                       |
+| customer_all              | This parameter provides the option to hide the "All" tab on the "Customers" page.                                                        |
+| customer_groups           | This parameter provides the option to hide the "Groups" tab on the "Customers" page.                                                     |
+| customers_hierarchy       | This parameter provides the option to hide the "Hierarchy" tab on the "Customers" page.                                                  |
+| users                     | This parameter provides the option to hide the "Users" item on the left panel.                                                           |
+| user_all                  | This parameter provides the option to hide the "All" tab on the "Customers" page.                                                        |
+| user_groups               | This parameter provides the option to hide the "Groups" tab on the "Customers" page.                                                     |
+| integrations_center       | This parameter provides the option to hide the "Integrations center" item on the left panel.                                             |
+| integrations              | This parameter provides the option to hide the "Integrations" item on the left panel.                                                    |
+| converters                | This parameter provides the option to hide the "Data converters" item on the left panel.                                                 |
+| rule_chains               | This parameter provides the option to hide the "Rule chains" item on the left panel.                                                     |
+| edge_management           | This parameter provides the option to hide the "Edge management" item on the left panel.                                                 |
+| edges                     | This parameter provides the option to hide the "Instances" item on the left panel.                                                       |
+| rulechain_templates       | This parameter provides the option to hide the "Rule chain templates" item on the left panel.                                            |
+| integration_templates     | This parameter provides the option to hide the "Integration templates" item on the left panel.                                           |
+| converter_templates       | This parameter provides the option to hide the "Converter templates" item on the left panel.                                             |
+| features                  | This parameter provides the option to hide the "Advanced features" item on the left panel.                                               |
+| otaUpdates                | This parameter provides the option to hide the "OTA updates" item on the left panel.                                                     |
+| version_control           | This parameter provides the option to hide the "Version control" item on the left panel.                                                 |
+| scheduler                 | This parameter provides the option to hide the "Scheduler" item on the left panel.                                                       |
+| resources                 | This parameter provides the option to hide the "Resources" item on the left panel.                                                       |
+| widget_library            | This parameter provides the option to hide the "Widgets Library" item on the left panel.                                                 |
+| resources_library         | This parameter provides the option to hide the "Resources library" item on the left panel.                                               |
+| notifications_center      | This parameter provides the option to hide the "Notifications center" item on the left panel.                                            |
+| notification_inbox        | This parameter provides the option to hide the "Inbox" tab on the "Notifications center" page.                                           |
+| notification_sent         | This parameter provides the option to hide the "Sent" tab on the "Notifications center" page.                                            |
+| notification_recipients   | This parameter provides the option to hide the "Recipients" tab on the "Notifications center" page.                                      |
+| notification_templates    | This parameter provides the option to hide the "Templates" tab on the "Notifications center" page.                                       |
+| notification_rules        | This parameter provides the option to hide the "Rules" tab on the "Notifications center" page.                                           |
+| api_usage                 | This parameter provides the option to hide the "Api Usage" item on the left panel.                                                       |
+| white_labeling            | This parameter provides the option to hide the "White Labeling" item on the left panel.                                                  |
+| white_labeling_general    | This parameter provides the option to hide the "General" tab on the "White Labeling" page.                                               |
+| login_white_labeling      | This parameter provides the option to hide the "Login" tab on the "White Labeling" page.                                                 |
+| mail_templates            | This parameter provides the option to hide the "Mail Templates" tab on the "White Labeling" page.                                        |
+| custom_translation        | This parameter provides the option to hide the "Custom Translation" tab on the "White Labeling" page.                                    |
+| custom_menu               | This parameter provides the option to hide the "Custom Menu" tab on the "White Labeling" page.                                           |
+| settings                  | This parameter provides the option to hide the "Settings" item on the left panel.                                                        |
+| general                   | This parameter provides the option to hide the "General" tab on the "Settings" page (only at the system administrator level).            |
+| home_settings             | This parameter provides the option to hide the "Home Settings" tab on the "Settings" page.                                               |
+| mail_server               | This parameter provides the option to hide the "Mail Server" tab on the "Settings" page.                                                 |
+| notification_settings     | This parameter provides the option to hide the "Notifications" tab on the "Settings" page.                                               |
+| queues                    | This parameter provides the option to hide the "Queues" tab on the "Settings" page (only at the system administrator level).             |
+| repository_settings       | This parameter provides the option to hide the "Repository settings" tab on the "Settings" page.                                         |
+| auto_commit_settings      | This parameter provides the option to hide the "Auto-commit settings" tab on the "Settings" page.                                        |
+| security_settings         | This parameter provides the option to hide the "Security" item on the left panel.                                                        |
+| security_settings_general | This parameter provides the option to hide the "General" item in the "Security" drop-down menu (only at the system administrator level). |
+| 2fa                       | This parameter provides the option to hide the "Two-factor authentication" item on the left panel.                                       |
+| roles                     | This parameter provides the option to hide the "Roles" item on the left panel.                                                           |
+| self_registration         | This parameter provides the option to hide the "Self Registration" item on the left panel.                                               |
+| audit_log                 | This parameter provides the option to hide the "Audit Logs" item on the left panel.                                                      |
+| oauth2                    | This parameter provides the option to hide the "Oauth2" item on the left panel.                                                          |
 | ---                       
-
-
-
-
-
-
-
-
 
 Let's see how this works:
 
