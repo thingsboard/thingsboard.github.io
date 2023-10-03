@@ -6,9 +6,9 @@ ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cl
 Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide to provision server certificate if you are hosting your own ThingsBoard instance.
 
 Once provisioned, you should prepare a certificate chain in pem format. This chain will be used by mqtt client to validate the server certificate.
-Save the chain to your working directory as {% if docsPrefix == 'paas/' %}"**tb-cloud-chain.pem**".{% else %}"**tb-server-chain.pem**".{% endif %}
+Save the chain to your working directory as {% if docsPrefix == 'paas/' %}"**tb-cloud-root-ca.pem**".{% else %}"**tb-server-chain.pem**".{% endif %}
 An example of certificate chain for *mqtt.thingsboard.cloud* is located 
-{% if docsPrefix == 'paas/' %}[here](/docs/paas/user-guide/resources/mqtt-over-ssl/tb-cloud-chain.pem).{% else %}[here](/docs/paas/user-guide/resources/mqtt-over-ssl/tb-server-chain.pem).{% endif %}
+{% if docsPrefix == 'paas/' %}[here](/docs/paas/user-guide/resources/mqtt-over-ssl/tb-cloud-root-ca.pem).{% else %}[here](/docs/paas/user-guide/resources/mqtt-over-ssl/tb-server-chain.pem).{% endif %}
 
 #### Step 2. Generate Client certificate chain
 
@@ -200,7 +200,7 @@ Execute the following command to upload temperature readings to ThingsBoard Clou
 
 {% if docsPrefix == 'paas/' %}
 ```bash
-mosquitto_pub --cafile tb-cloud-chain.pem -d -q 1 -h "mqtt.thingsboard.cloud" -p "8883" \
+mosquitto_pub --cafile tb-cloud-root-ca.pem -d -q 1 -h "mqtt.thingsboard.cloud" -p "8883" \
 -t "v1/devices/me/telemetry" --key deviceKey.pem --cert chain.pem -m {"temperature":25}
 ```
 {: .copy-code}
