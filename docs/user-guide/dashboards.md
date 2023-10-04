@@ -154,19 +154,19 @@ add-new-widget:
         title: 'Open your dashboard and enter edit mode;'
     1:
         image: /images/user-guide/widgets/overview/add-new-dashboard-2-ce.png
-        title: 'Click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
+        title: 'Click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the Select widgets bundle dialog box;'
     2:
         image: /images/user-guide/widgets/overview/add-new-dashboard-3-ce.png
-        title: 'Select widget bundle, for example, "Charts". To find the widget you want as quickly as possible, use the search bar by clicking a magnifying glass icon and inputting the name of the widget there;'
+        title: 'Select a widget bundle, such as "Charts". To quickly find your desired widget, use the search bar by clicking the magnifying glass icon and entering the widget&#39;s name;'
     3:
         image: /images/user-guide/widgets/overview/add-new-dashboard-4-ce.png
-        title: 'Select a widget, for example, “Timeseries Line Chart”, and click on it to open the “Add Widget” dialog box.'
+        title: 'Choose a widget, for instance, "Timeseries Line Chart," and click on it to open the "Add Widget" dialog box;'
     4:
         image: /images/user-guide/widgets/overview/add-new-dashboard-5-ce.png
-        title: 'Add a data source, choose basic and advanced settings, and click the "Add" button. Then apply changes;'
+        title: 'In the dialog box, add a data source, optionally configure basic or advanced settings, and then click the "Add" button. Be sure to apply the changes;'
     5:
         image: /images/user-guide/widgets/overview/add-new-dashboard-6-ce.png
-        title: 'Your first widget is created.'
+        title: 'Your first widget has been created.'
 
 dashboard-toolbar-export:
     0:

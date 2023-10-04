@@ -49,8 +49,8 @@ At the stage of creating a dashboard, you can specify it to a different owner an
 
 {% include images-gallery.html imageCollection="creating-dashboard-2" showListImageTitles="true" %}
 
-By default, the list of dashboards displays all dashboards, including those of your customers. 
-To display only your dashboards, toggle the "Include customer entities".
+By default, the list of dashboards displays all dashboards, including those of your customers.
+To view only your dashboards, disable the "Include customer entities" option.
 
 {% include images-gallery.html imageCollection="creating-dashboard-3" %}
 {% endif %}
@@ -222,7 +222,7 @@ Don't forget to save your changes using the "Save" button, or if you decide to d
 
 All IoT dashboards are constructed using ThingsBoard widgets.
 A widget is an element that displays a specific type of information or functionality on a dashboard.
-Widgets are used to visualize data, remote device control, alarms management, and display static custom html content.
+Widgets are used to visualize data, remote device control, alarms management, and display static custom HTML content.
 
 To add a widget to a dashboard, you should:
 
@@ -257,7 +257,7 @@ We recommend using aggregation functions whenever is possible if you have a lot 
 The ThingsBoard it is possible to use predefined **intervals** (Current Day, Previous Day, Previous Month, etc.) in addition to last X minutes/hours/days.
 
 {% capture difference %}
-**Note**
+**Please note:**
 <br>
 that the **Current day** interval means 24 hours (12 am at night to 12 am the next night), whereas the **Current day so far** means from 12 am at night until the time when the time window was updated.
 All other intervals are distinguished in the same way.
@@ -285,7 +285,7 @@ Let's also assume that thermometer model is stored as an attribute, and the batt
 We will define a filter that checks if the sensor model is "DHT22" and the battery level is less than 20 percent. 
 
 {% capture difference %}
-**Please note**
+**Please note:**
 <br>
 while adding the filter, you can configure the ability to edit it for users by moving the slider opposite the Filter name.
 {% endcapture %}
@@ -310,7 +310,7 @@ See more examples how to use filters in this video:
 ### Entity aliases
 
 Entity Aliases determine which entities (devices, assets, etc) you would like to display on the dashboard.
-You can treat alias as a reference to one or more devices. These references can be static or dynamic.
+You can treat alias as a reference to one or multiple devices. These references can be static or dynamic.
 
 An example of the static alias is the [Single entity](/docs/{{docsPrefix}}user-guide/ui/aliases/#single-entity) alias. An entity is configured once in the alias dialog box.
 All users see the same data if they have permission to access this device.

@@ -10,36 +10,39 @@ add-widget:
         title: 'Open your dashboard and enter edit mode;'
     1:
         image: /images/user-guide/widgets/overview/add-new-dashboard-2-ce.png
-        title: 'Click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
+        title: 'Click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the Select widgets bundle dialog window;'
     2:
         image: /images/user-guide/widgets/overview/add-new-dashboard-3-ce.png
-        title: 'Select widget bundle, for example, "Charts". To find the widget you want as quickly as possible, use the search bar by clicking a magnifying glass icon and inputting the name of the widget there;'
+        title: 'Select widget bundle, for example, "Charts". To quickly find your desired widget, use the search bar by clicking the magnifying glass icon and entering the widget&#39;s name;'
     3:
         image: /images/user-guide/widgets/overview/add-new-dashboard-4-ce.png
-        title: 'Select a widget, for example, “Timeseries Line Chart”, and click on it to open the “Add Widget” dialog box.'
+        title: 'Choose a widget, for instance, "Timeseries Line Chart" and click on it to open the "Add Widget" dialog window;'
     4:
         image: /images/user-guide/widgets/overview/add-new-dashboard-5-ce.png
-        title: 'Specify datasource, add data key, and click the "Add" button. Then apply changes;'
+        title: 'Specify the data source, add the data key, and click the "Add" button. Finally, apply your changes;'
     5:
         image: /images/user-guide/widgets/overview/add-new-dashboard-6-ce.png
-        title: 'Your first widget is created.'
+        title: 'Your first widget has been created.'
 
 import-widget:
     0:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-1-ce.png
-        title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
+        title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the Select widgets bundle dialog window;'
     1:
-        image: /images/user-guide/widgets/overview/data-settings/import-widget-2-ce.png
+        image: /images/user-guide/widgets/overview/import-widget-2-ce.png
         title: 'Click the "Import widget" button in the upper right corner of the screen;'
     2:
-        image: /images/user-guide/widgets/overview/data-settings/import-widget-3-ce.png
-        title: 'The widget import window will open. Upload the JSON file and click "Import";'
+        image: /images/user-guide/widgets/overview/import-widget-3-ce.png
+        title: 'In the widget import window, upload the JSON file and click "Import";'
     3:
-        image: /images/user-guide/widgets/overview/data-settings/import-widget-4-ce.png
-        title: 'The widget has been imported. Adjust widget size and save changes.'
+        image: /images/user-guide/widgets/overview/import-widget-4-ce.png
+        title: 'The widget has been imported. However, the widget does not yet display data because the data source is not specified. Enter Edit widget mode to specify the data source;'
     4:
-        image: /images/user-guide/widgets/overview/data-settings/import-widget-5-ce.png
-        title: 'Widget is imported.'
+        image: /images/user-guide/widgets/overview/import-widget-5-ce.png
+        title: 'Specify data source, add the data key(s), and apply changes;'
+    5:
+        image: /images/user-guide/widgets/overview/import-widget-6-ce.png
+        title: 'You should now see the data in the widget. In our case, this is a temperature graph. After all the settings, save the dashboard.'
 
 add-widget-basic-mode:
     0:
@@ -49,7 +52,7 @@ add-widget-basic-mode:
 add-widget-advanced-mode:
     0:
         image: /images/user-guide/widgets/overview/add-widget-advanced-mode-1-ce.png
-        title: 'Using advanced functionality to create a widget, you need select multiple datasources (if supported by the widget) and apply filters. Then click "Add".'
+        title: 'Using advanced functionality to create a widget, you need to select multiple datasources (if supported by the widget) and apply filters. Then click "Add".'
 
 timewindow:
     0:
@@ -62,7 +65,7 @@ timewindow:
 data-source-type-device:
     0:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-1-ce.png
-        title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
+        title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog window;'
     1:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-2-ce.png
         title: 'Select "Analogue gauge" widget bundle;'
@@ -71,7 +74,7 @@ data-source-type-device:
         title: 'Then select a "Thermometer scale" widget;'
     3:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-4-ce.png
-        title: 'The "Add Widget" dialog box will open. Select data source type - "Device" and select your device. Then add data key - "temperature". Click "Add" and save all changes;'
+        title: 'The "Add Widget" dialog window will open. Select data source type - "Device" and select your device. Then add data key - "temperature". Click "Add" and save all changes;'
     4:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-5-ce.png
         title: 'Thermometer scale widget is created.'
@@ -79,7 +82,7 @@ data-source-type-device:
 data-source-type-entity:
     0:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-1-ce.png
-        title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
+        title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog window;'
     1:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-entity-2-ce.png
         title: 'Select "Tables" widget bundle;'
@@ -88,7 +91,7 @@ data-source-type-entity:
         title: 'Then select an "Entities table" widget;'
     3:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-entity-4-ce.png
-        title: 'The "Add Widget" dialog box will open. Select data source type - "Entity". Now, we need create new entity alias. Click "Create new" button in the entity alias row;'
+        title: 'The "Add Widget" dialog window will open. Select data source type - "Entity". Now, we need to create a new entity alias. Click "Create new" button in the entity alias row;'
     4:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-entity-5-ce.png
         title: 'In the opened Add alias dialog, enter an alias name, select filter type - "Entity type", and choose an entity type - "Device". Click "Add";'
@@ -97,21 +100,21 @@ data-source-type-entity:
         title: 'Add data keys. Then click "Add" and save all changes;'
     6:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-entity-7-ce.png
-        title: 'A widget has been added that displays all devices using an entity alias as the data source.'
+        title: 'A widget has been added that displays all devices using an entity alias as the datasource.'
 
 data-source-type-random:
     0:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-1-ce.png
-        title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
+        title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog window;'
     1:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-сount-2-ce.png
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-count-2-ce.png
         title: 'Select a "Cards" widget bundle;'
     2:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-random-3-ce.png
         title: 'Then select a "Value card" widget;'
     3:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-random-4-ce.png
-        title: 'The "Add Widget" dialog box will open. Navigate to the advanced functionality and select data source type - "Random". Then add a function - "Random" and click the "pencil" icon of the "Random" key to open data key configuration window;'
+        title: 'The "Add Widget" dialog window will open. Navigate to the advanced functionality and select data source type - "Random". Then add a function - "Random" and click the "pencil" icon of the "Random" key to open data key configuration window;'
     4:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-random-5-ce.png
         title: 'Change the label name to "temperature" and specify units. Click "Save";'
@@ -125,53 +128,53 @@ data-source-type-random:
 data-source-type-entities-сount:
     0:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-1-ce.png
-        title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
+        title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog window;'
     1:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-сount-2-ce.png
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-count-2-ce.png
         title: 'Select a "Cards" widget bundle;'
     2:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-сount-3-ce.png
-        title: 'Then select a "Simple card" widget;'
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-count-3-ce.png
+        title: 'Then select a "Value card" widget;'
     3:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-сount-4-ce.png
-        title: 'The "Add Widget" dialog box will open. Go to the advanced functionality and select data source type - "Entities count". Now, we need create new entity alias. Click "Create new" button in the entity alias row;'
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-count-4-ce.png
+        title: 'The "Add Widget" dialog window will open. Go to the advanced functionality and select data source type - "Entities count". Now, we need create new entity alias. Click "Create new" button in the entity alias row;'
     4:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-сount-5-ce.png
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-count-5-ce.png
         title: 'In the opened Add alias dialog, enter an alias name, select filter type - "Entity type", and choose an entity type - "Device". Click "Add";'
     5:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-сount-6-ce.png
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-count-6-ce.png
         title: 'In the Data key row click the "pencil" icon of the "count" key to open data key configuration window;'
     6:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-сount-7-ce.png
-        title: 'Change label name to "Device count" and specify units. Click "Save";'
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-count-7-ce.png
+        title: 'Change label name to "Devices count" and specify units. Click "Save";'
     7:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-сount-8-ce.png
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-count-8-ce.png
         title: 'Finally, click "Add" and save all changes;'
     8:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-сount-9-ce.png
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-count-9-ce.png
         title: 'Now we have a widget that displays the number of existing devices.'
 
 data-source-type-alarms-сount:
     0:
         image: /images/user-guide/widgets/overview/data-settings/data-source-type-device-1-ce.png
-        title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog box;'
+        title: 'Open your dashboard and enter edit mode. Then click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the "Widgets bundle” dialog window;'
     1:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-сount-2-ce.png
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-count-2-ce.png
         title: 'Select "Cards" widget bundle;'
     2:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-сount-3-ce.png
-        title: 'Then select a "Simple card" widget;'
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-entities-count-3-ce.png
+        title: 'Then select a "Value card" widget;'
     3:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-alarms-сount-4-ce.png
-        title: 'The "Add Widget" dialog box will open. Go to the advanced functionality, select data source type - "Alarms count" and specify filters. In the Data key row click the "pencil" icon of the "count" key to open data key configuration window;'
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-alarms-count-4-ce.png
+        title: 'The "Add Widget" dialog window will open. Go to the advanced functionality, select data source type - "Alarms count" and specify filters. In the Data key row click the "pencil" icon of the "count" key to open data key configuration window;'
     4:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-alarms-сount-5-ce.png
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-alarms-count-5-ce.png
         title: 'Change label name to "Alarms count" and specify units. Click "Save";'
     5:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-alarms-сount-6-ce.png
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-alarms-count-6-ce.png
         title: 'Finally, click "Add" and apply changes;'
     6:
-        image: /images/user-guide/widgets/overview/data-settings/data-source-type-alarms-сount-7-ce.png
+        image: /images/user-guide/widgets/overview/data-settings/data-source-type-alarms-count-7-ce.png
         title: 'Now we have a widget that displays all alarms of existing devices.'
 
 add-data-key:
@@ -322,15 +325,26 @@ default-data-settings:
         image: /images/user-guide/widgets/overview/appearance/default-data-settings-2-ce.png
         title: ''
 
-appearance-stacking-mode:
+appearance-stacking-mode-1:
     0:
         image: /images/user-guide/widgets/overview/appearance/appearance-stacking-mode-1-ce.png
         title: 'In the upper right corner of the screen, click on the Time window configuration and choose any preferred Data aggregation function other than None. Click "Update" to apply changes;'
     1:
         image: /images/user-guide/widgets/overview/appearance/appearance-stacking-mode-2-ce.png
-        title: 'In the Appearance tab, toggle "Enable stacking mode" checkbox and apply changes;'
+        title: 'In the widget settings, on the "Appearance" tab, toggle "Enable stacking mode" checkbox and apply changes;'
     2:
         image: /images/user-guide/widgets/overview/appearance/appearance-stacking-mode-3-ce.png
+        title: 'To view the values of all entities, you need to hover your mouse over the bar.'
+
+appearance-stacking-mode-2:
+    0:
+        image: /images/user-guide/widgets/overview/appearance/appearance-stacking-mode-4-ce.png
+        title: 'If you need to exclude a specific key from stacking, go to the advanced configuration of that data key;'
+    1:
+        image: /images/user-guide/widgets/overview/appearance/appearance-stacking-mode-5-ce.png
+        title: 'Check the "Exclude from stacking" checkbox. Apply changes.'
+    2:
+        image: /images/user-guide/widgets/overview/appearance/appearance-stacking-mode-6-ce.png
         title: 'Hover the mouse over a bar to see values of all entities.'
 
 appearance-legend-settings-1:
@@ -412,16 +426,16 @@ appearance-comparison:
 appearance-custom-legend-settings:
     0:
         image: /images/user-guide/widgets/overview/appearance/appearance-custom-legend-settings-1-ce.png
-        title: 'In the Appearance tab, toggle the "Enable custom legend" checkbox to use attribute or time series values in key labels. Click the "+ Add new key" button. From the appeared drop-down menu, enter key name and select key type. Then navigate to the "Data" tab;'
+        title: 'Navigate to the Appearance tab. Activate the "Enable custom legend" option to use attribute or time series values as key labels. Click on "+ Add new key". In the drop-down menu that appears, input the key name and choose the key type;'
     1:
         image: /images/user-guide/widgets/overview/appearance/appearance-custom-legend-settings-2-ce.png
-        title: 'Click the pencil icon on the data key to open Data key configuration window;'
+        title: 'Proceed to the Data tab. Click the pencil icon next to a data key to access the Data key configuration window;'
     2:
         image: /images/user-guide/widgets/overview/appearance/appearance-custom-legend-settings-3-ce.png
-        title: 'In the label line, enter the patter ${} with the data key name inside the brackets. Click "Save" to apply new label name. Then apply all changes;'
+        title: 'In the label line, input the pattern "${}" and place the data key name within the brackets. Click "Save" to set the new label name and apply all changes;'
     3:
         image: /images/user-guide/widgets/overview/appearance/appearance-custom-legend-settings-4-ce.png
-        title: 'As you can see on the widget, custom legend settings have been applied.'
+        title: 'Now, when you view the widget, you&#39;ll see that the custom legend settings have been applied.'
 
 widget-card-title:
     0:
@@ -440,7 +454,7 @@ widget-card-style:
         title: 'Customize the widget style and apply changes;'
     1:
         image: /images/user-guide/widgets/overview/widget-card-style-3-ce.png
-        title: 'The widget style have been changed.'
+        title: 'The widget style has been changed.'
 
 enable-fullscreen:
     0:
