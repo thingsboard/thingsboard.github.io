@@ -34,14 +34,17 @@ For purpose of this guide, we will use following things:
  - Restart the gateway with the new configuration.
 
 Example of the **thingsboard** section in the general configuration file:
-```yaml
-thingsboard:
-  host: thingsboard.cloud
-  port: 1883
-  remoteShell: true
-  remoteConfiguration: false
-  security:
-    accessToken: PUT_YOUR_GW_ACCESS_TOKEN_HERE
+```json
+{
+  "thingsboard": {
+    "host": "thingsboard.cloud",
+    "port": 1883,
+    "security": {
+      "type": "accessToken",
+      "accessToken": "YOUR_ACCESS_TOKEN"
+    }
+  },
+}
 ```
 
 # Step 2. Create a dashboard to use the remote shell
