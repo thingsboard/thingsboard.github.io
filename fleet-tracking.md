@@ -1,14 +1,14 @@
 ---
 layout: use-case
-title: Fleet tracking and fleet management
-description: Fleet tracking and fleet management with ThingsBoard IoT Platform
+title: ᐉ IoT Fleet Tracking System — Fleet Monitoring
+description: IoT fleet management solutions ✔ Fleet monitoring ⚫ ThingsBoard ➤ Manage your company’s fleet and assets using convenient and efficient IoT solutions
 notitle: "true"
 
 ---
 
 {% include usecase-nav.html usecase="fleet-tracking" %}
 
-<h1 class="usecase-title">Smart tracking and fleet management</h1>
+<h1 class="usecase-title">IoT Fleet Tracking System</h1>
 
 Manage your company's fleet and assets with ThingsBoard using convenient and efficient IoT solutions. 
 Fleet tracking systems allow businesses to easily control and monitor their assets, routes, fuel consumption, etc. Having the necessary information about the state of assets affairs, responsible persons can make appropriate strategic decisions and improve the work of the links that need it.
