@@ -85,6 +85,18 @@
   },
   {
     "type": ["Europe"],
+    "country": ["Romania"],
+    "name": "Archibus Solution Center-Romania SRL",
+    "contact": {
+      "href": "connect@archibus.ro"
+    },
+    "site": {
+      "href": "asc-ro.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
     "country": ["France"],
     "name": "arx iT",
     "contact": {
@@ -1036,7 +1048,7 @@
     "country": ["Israel"],
     "name": "IoT Experts",
     "contact": {
-      "href": "tom@iot-experts.net"
+      "href": ""
     },
     "site": {
       "href": "iot-experts.net",

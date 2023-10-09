@@ -39,6 +39,13 @@ You need to link your devices to this project using your Smart Life app account.
 
 {% include images-gallery.html imageCollection="tuya-add-smart-life-app" showListImageTitles="true" %}
 
+<br>
+**Note:**
+<br>
+Make sure you enabled Messaging rule (filter) to receive uplinks. The very basic filter (statusReport) should be sufficient for testing purposes
+
+{% include images-gallery.html imageCollection="tuya-enable-rules-environment" showListImageTitles="true" %}
+
 ## Tuya Integration Configuration
 
 ### Uplink Converter
