@@ -28,7 +28,7 @@ We will create a dashboard and add the most popular widgets. See the instruction
     '
 %}
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or page.docsPrefix == "pe/" or page.docsPrefix == "pass/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingDashboardPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingDashboardCE %}
@@ -37,7 +37,7 @@ We will create a dashboard and add the most popular widgets. See the instruction
 ### Add Entity Alias
 
 Alias is a reference to a single entity or group of entities that are used in the widgets. An alias may be static or 
-dynamic. For simplicity, we will use the “Single entity” alias that references the one and only entity (“OrangePI” in 
+dynamic. For simplicity, we will use the “Single entity” alias that references the one and only entity (“{{deviceName}}” in 
 our case). It is possible to configure an alias that references multiple devices. For example, devices of a certain 
 type or related to a certain asset. You may learn more about different aliases here.
 
@@ -53,7 +53,7 @@ type or related to a certain asset. You may learn more about different aliases h
         title: Click "Add alias".
     ===
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-4-ce.png,
-        title: Input alias name, for example, "OrangePI". Select the "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on it.
+        title: Input alias name. Select the "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on it.
     ===
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-alias-5-ce.png,
         title: Click "Add" and then "Save".
@@ -75,7 +75,7 @@ type or related to a certain asset. You may learn more about different aliases h
         title: Click "Add alias".
     ===
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-4-pe.png,
-        title: Input alias name, for example, "OrangePI". Select the "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on it.
+        title: Input alias name, for example. Select the "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on it.
     ===
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-5-pe.png,
         title: Click "Add" and then "Save".
@@ -85,7 +85,7 @@ type or related to a certain asset. You may learn more about different aliases h
     '
 %}
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" or page.docsPrefix == "pe/" or page.docsPrefix="paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingEntityAliasPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingEntityAliasCE %}
@@ -96,5 +96,5 @@ To add the new widget we need to select it from the widget library. Widgets are 
 - Enter edit mode. Click on the "Add new widget" button.
 - Select the "Charts" widget bundle. Click on the header of the Entities widget. The "Add Widget" window will appear.
 - Click "Add" to add the data source. A widget may have multiple data sources, but we will use only one in this case.
-- Select the "OrangePI" entity alias. Then click on the input field on the right. The auto-complete with available data points will appear. Select the "cpu_usage" data point and click "Add".
+- Select the "{{deviceName}}" entity alias. Then click on the input field on the right. The auto-complete with available data points will appear. Select the "cpu_usage" data point and click "Add".
 - Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. You can also play with the advanced settings if you would like to edit the widget.
