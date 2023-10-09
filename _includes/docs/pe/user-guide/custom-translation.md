@@ -95,20 +95,20 @@ if(value>70){
     }else{
         description.innerText = "{i18n:custom.my-widget.normal-temperature}"
     }
-    
+
 </script>
-   
+
 <div class='card'>
     <div class='content'>
         <div class='column'>
             <h1>Thermostat Device</h1>
             <div class='value'>
                 Temperature: ${temperature:0} °C
-            </div>    
+            </div>
             <div class='description'>
             </div>
         </div>
-        <img height="80px" src="http://icons.iconarchive.com/icons/iconsmind/outline/512/Temperature-icon.png" />
+        <img height="80px" src="http://icons.iconarchive.com/icons/iconsmind/outline/512/Temperature-icon.png">
     </div>
 </div>
 ```
@@ -131,13 +131,13 @@ Date widget, Gateways widgets, Scheduling widgets.
 
 See video tutorial below for step-by-step instruction how to use this feature.
 
-<br/>
-<div id="video">  
+<br>
+<div id="video">
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/VSNZWl1NjWU" frameborder="0" allowfullscreen></iframe>
     </div>
-</div> 
- 
+</div>
+
 ## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

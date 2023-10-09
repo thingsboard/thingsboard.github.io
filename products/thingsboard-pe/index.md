@@ -143,8 +143,8 @@ description:
             <thead>
                 <tr>
                     <td></td>
-                    <th>Community<br/>Edition</th>
-                    <th>Professional<br/>Edition</th>
+                    <th>Community<br>Edition</th>
+                    <th>Professional<br>Edition</th>
                     <th>Cloud</th>
                 </tr>
             </thead>
@@ -190,55 +190,55 @@ description:
                     <td>Basic</td>
                     <td>Advanced</td>
                     <td>Advanced</td>
-                </tr>              
+                </tr>
                 <tr>
                     <th><a href="/docs/user-guide/groups/">Entity groups<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>              
+                </tr>
                 <tr>
                     <th><a href="/docs/user-guide/rbac/">Advanced RBAC for IoT<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>              
+                </tr>
                 <tr>
                     <th><a href="/docs/user-guide/scheduler/">Scheduler<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>              
+                </tr>
                 <tr>
                     <th><a href="/docs/user-guide/reporting/">Reporting<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>              
+                </tr>
                 <tr>
                     <th><a href="/docs/user-guide/white-labeling/">White-labeling<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>              
+                </tr>
                 <tr>
                     <th><a href="/docs/user-guide/csv-xls-data-export/">CSV/XLS data export<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>              
+                </tr>
                 <tr>
                     <th><a href="/docs/user-guide/integrations/">Platform Integrations<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>     
+                </tr>
                 <tr>
                     <th><a href="/products/paas/domains/">Domain management<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>       
+                </tr>
             </tbody>
     </table>
 	</main>
@@ -266,7 +266,7 @@ description:
 </main>
 </section>
 
-<script type="text/javascript">
+<script>
 	inViewportDefer(function() {
 		$("#install-cards main").inViewport(function(px){
 			if(px >= 80) {

@@ -2,7 +2,7 @@
 layout: common
 title: Smart City customers
 notitle: "true"
-description: 
+description:
 
 ---
 
@@ -41,7 +41,7 @@ description:
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/x-telia-person.jpg"/>
+            <img class="person-logo" src="/images/customers/x-telia-person.jpg">
             <div class="person-title">
                 <p class="person-name"> Eric Bourbeau </p>
                 <p class="person-position"> Président fondateur / Founder and CEO </p>
@@ -82,7 +82,7 @@ description:
         </h2>
         <p>
             A special thank you to Thingsboard for their professional services in helping create a dashboard in a short period of time customized to our specific requirements. They were responsive to our needs and worked diligently to resolve any issues. Work well done.
-        </p> 
+        </p>
     </div>
 </div>
 
@@ -105,7 +105,7 @@ description:
         </p>
         <p>
             ThingsBoard is the platform which fulfilled our requirements and It is easy to adapt, flexible and have the ability to present data on different widgets in an attractive way with easy access. In addition, we are thankful to the ThingsBoard team for their tremendous service and we are looking forward to making more IOT solutions with ThingsBoard in future.
-        </p> 
+        </p>
     </div>
 </div>
 
@@ -116,7 +116,7 @@ description:
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/bertil.png"/>
+            <img class="person-logo" src="/images/customers/bertil.png">
             <div class="person-title">
                 <p class="person-name"> Bertil Moberg </p>
                 <p class="person-position"> Co-Founder & Head of IoT Solutions </p>
@@ -151,6 +151,6 @@ description:
         </h2>
         <p>
             While building the Smart City solution for OMS, a. s. we were looking for IoT platform serving as core backend for our solutions. ThingsBoard became our first clear choice. It contains necessary business functionality and support all needed technologies/protocols which we required. Later on, ThingsBoard became the heart of the upcoming solution. In any implementation of complex systems cooperation and support are crucial to success achievement. We are glad that we found stable partners in design, implementation and deployment of ThingsBoard in the Smart City solution.
-        </p> 
+        </p>
     </div>
 </div>

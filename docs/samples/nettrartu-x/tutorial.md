@@ -24,7 +24,7 @@ This guide contains step-by-step instructions on how to connect your Nettra RTU 
 The RTU-X is easly configurable via a [RTU-X Configuration Interface](http://wiki.nettra.tech/en/downloads). To adapt the RTU-X to each application, it runs a fully customizable script, accessible and editable from the Configuration Interface. In this guide we will provide one as an example quite simple and easy to understand.
 
 Once you complete this sample/tutorial, you will see your sensor data on a dashboard like the following on the right.
-<br /><br/>
+<br /><br>
 
 ![rtu_x](https://user-images.githubusercontent.com/61634031/133831823-b6e2420e-5669-433a-a3fa-54b506ab24b9.png) ![dash2](https://user-images.githubusercontent.com/61634031/134074200-5063cd05-6091-4f36-90a3-91771373bd65.png)
 
@@ -44,7 +44,7 @@ Once you complete this sample/tutorial, you will see your sensor data on a dashb
 ## Connection diagram <a name="connection_diagram"></a>
 
 The following picture summarizes the connections for this simple project:
-<br/><br/>
+<br><br>
 ![copy_941957077](https://user-images.githubusercontent.com/61634031/133837072-8340491f-ea35-4204-91e1-7d513641d7bb.png)
 
 ## ThingsBoard configuration <a name="tb_configuration"></a>
@@ -57,11 +57,11 @@ Sign up ThingsBoard Web UI as [live-demo](https://demo.thingsboard.io/signup). S
 
 1. Go to *"Devices"* section. 
 2. Click on *"+"* button and create a device with the name **"RTU-X"**. Set *"Device type"* to **"default"**.
-<br/><br/>
+<br><br>
 ![add_opt (1)](https://user-images.githubusercontent.com/61634031/133840783-8b605dfd-3a50-430b-bb63-a8244a53cad9.png)
-<br/><br/>
+<br><br>
 3. Once the device is created, open its details and click *"Copy access token"*. Please save this device token. It will be referred to later as **$RTU_DEMO_TOKEN**.
-<br/><br/>
+<br><br>
 ![access_opt (3)](https://user-images.githubusercontent.com/61634031/133840798-1ea7dc07-c157-4fda-ab1c-9ecb0bba1bb8.png)
 
 ### Dashboard
@@ -156,12 +156,12 @@ while (1)
 Finally, open ThingsBoard Web UI in the Live Demo server with same user and password as *ThingsBoard configuration* section.
 
 Go to *"Devices"* section and locate *"RTU-X Device"*, open device details and switch to *"Latest telemetry"* tab.
-If all is configured correctly you should be able to see latest values of *"variable"* in the table.<br/><br/>
+If all is configured correctly you should be able to see latest values of *"variable"* in the table.<br><br>
 
 ![dev](https://user-images.githubusercontent.com/61634031/134029353-d4d80304-0396-4a10-b313-02a249300280.png)
 
 After, open *"Dashboards"* section then locate and open *"RTU-X"* dashboard.
-As a result, you will see an analog gauge (similar to dashboard image in the introduction).<br/><br/>
+As a result, you will see an analog gauge (similar to dashboard image in the introduction).<br><br>
 
 ![dash](https://user-images.githubusercontent.com/61634031/134030076-19fd80de-38fd-4114-b1f1-221f61756782.png)
 

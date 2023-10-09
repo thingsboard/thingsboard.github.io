@@ -41,13 +41,13 @@ The following interactive dashboard hosted on live demo server represents vehicl
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/fleet-tracking/ft1.png" />
+        <img class="item-image" src="/images/usecases/fleet-tracking/ft1.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/fleet-tracking/ft2.png" />
+        <img class="item-image" src="/images/usecases/fleet-tracking/ft2.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/fleet-tracking/ft3.png" />
+        <img class="item-image" src="/images/usecases/fleet-tracking/ft3.png">
     </div>
 </div>
 

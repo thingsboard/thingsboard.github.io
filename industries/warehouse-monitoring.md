@@ -41,20 +41,20 @@ description:
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/JTMcGibbon.jpeg"/>
+            <img class="person-logo" src="/images/customers/JTMcGibbon.jpeg">
             <div class="person-title">
                 <p class="person-name"> JT McGibbon </p>
                 <p class="person-position"> General manager </p>
             </div>
         </div>
         <h2>
-            Industrial IoT solutions provider targeting perishable food items, pharmaceuticals, and other environmentally sensitive goods monitoring to ensure the highest quality products to your customers 
+            Industrial IoT solutions provider targeting perishable food items, pharmaceuticals, and other environmentally sensitive goods monitoring to ensure the highest quality products to your customers
         </h2>
         <p>
             I wanted to thank everyone at Thingsboard on behalf of us here at Vypin for the tremendous support over the past few months. This has allowed Vypin to taste the finish line for our two primary projects. We are looking forward to continuing our partnership and even strengthening our business relationship and opportunities going forward.
         </p>
         <p>
-            Read Vypin's <a href="/case-study/Vypin.pdf">case study.</a>  
+            Read Vypin's <a href="/case-study/Vypin.pdf">case study.</a>
         </p>
     </div>
 </div>

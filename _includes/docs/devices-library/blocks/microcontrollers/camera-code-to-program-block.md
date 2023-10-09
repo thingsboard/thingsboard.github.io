@@ -453,13 +453,13 @@ void loop() {
 Data, send by this device may require increasing of the allowed message size for MQTT on **your ThingsBoard instance**.  
 To do this you can modify parameter **NETTY_MAX_PAYLOAD_SIZE** in **thingsboard.yml** file, default value on regular setup is 65535 bytes.  
 Required size depends on chosen resolution and quality.
-<br/>
-<br/>
+<br>
+<br>
 <details><summary><b>Click to see dependency between resolution and approximate message size</b></summary>
-<br/>
+<br>
 {{ table | markdownify }}
 
-<br/>
+<br>
 </details>
 
 {% endcapture %}

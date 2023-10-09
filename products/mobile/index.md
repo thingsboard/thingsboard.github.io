@@ -88,7 +88,7 @@ description:
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
                                  <source src="https://video.thingsboard.io/mobile/navigate-devices.mp4" type="video/mp4">
-                                 <source src="https://video.thingsboard.io/mobile/navigate-devices.webm" type="video/webm">          
+                                 <source src="https://video.thingsboard.io/mobile/navigate-devices.webm" type="video/webm">
                             </video>
                         </div>
                     </div>
@@ -106,7 +106,7 @@ description:
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
                                  <source src="https://video.thingsboard.io/mobile/mobile-actions.mp4" type="video/mp4">
-                                 <source src="https://video.thingsboard.io/mobile/mobile-actions.webm" type="video/webm"> 
+                                 <source src="https://video.thingsboard.io/mobile/mobile-actions.webm" type="video/webm">
                             </video>
                         </div>
                     </div>

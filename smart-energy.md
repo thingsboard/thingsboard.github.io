@@ -27,13 +27,13 @@ The following interactive dashboard represents smart-energy IoT data visualizati
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/smart-energy/se1.png" />
+        <img class="item-image" src="/images/usecases/smart-energy/se1.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-energy/se2.png" />
+        <img class="item-image" src="/images/usecases/smart-energy/se2.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-energy/se3.png" />
+        <img class="item-image" src="/images/usecases/smart-energy/se3.png">
     </div>
 </div>
 
@@ -128,7 +128,7 @@ You may export the dashboard from our live demo server and import it to your Thi
     </div>
 </section>
 
-## Smart energy solution overview 
+## Smart energy solution overview
 
 The diagram below identifies data flow and integration points for a typical smart-energy solution that uses the ThingsBoard platform to collect and analyze energy monitoring data from smart meters.
 

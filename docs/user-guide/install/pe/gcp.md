@@ -19,7 +19,7 @@ description: ThingsBoard IoT platform  GCP cluster setup guide
                         You may deploy ThingsBoard IoT Platform using different tools and platforms
                     </p>
                 </div>
-            </div>            
+            </div>
             <div class="deployment-container one-line-deployment-container">
                 <div class="deployment-div">
                     <div class="container">
@@ -46,11 +46,11 @@ description: ThingsBoard IoT platform  GCP cluster setup guide
                                             </span>
                                         </a>
                                     </div>
-                              </div>                     
-                            </div>                        
+                              </div>
+                            </div>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
           </div>
        </div>

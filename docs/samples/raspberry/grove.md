@@ -9,10 +9,10 @@ description: ThingsBoard IoT Platform sample for Raspberry Pi Grove Base Hat con
 * TOC
 {:toc}
 
-## Introduction 
+## Introduction
 
-ThingsBoard Community Edition is an open-source server-side platform that allows you to monitor and control IoT devices. 
-It is free for both personal and commercial usage and you can deploy it anywhere. 
+ThingsBoard Community Edition is an open-source server-side platform that allows you to monitor and control IoT devices.
+It is free for both personal and commercial usage and you can deploy it anywhere.
 If you are not familiar with the platform yet, we recommend to review [what is thingsboard page](/docs/getting-started-guides/what-is-thingsboard/) and [getting started guide](/docs/getting-started-guides/helloworld/) at first and then proceed with this tutorial.
 Within this guide we use [thingsboard.cloud](https://thingsboard.cloud).
 
@@ -28,7 +28,7 @@ At the end we will get the following result:
 <br>
 <br>
 
-<img src="/images/samples/raspberry/grove/grove-image.gif"/>
+<img src="/images/samples/raspberry/grove/grove-image.gif">
 
 
 </div>
@@ -86,7 +86,7 @@ By first we need to configure the Raspberry Pi. Please follow this [article](htt
 
 After the configuration we need to install libraries used in the script to the Raspberry Pi.
 
-The following command will install thingsboard python client sdk, it is used for communication with ThingsBoard server: 
+The following command will install thingsboard python client sdk, it is used for communication with ThingsBoard server:
 
 
 ```bash
@@ -132,7 +132,7 @@ Also we need say to ThingsBoard that we want to connect this device and get the 
 ![image](/images/samples/raspberry/grove/create-access-token.gif)
 
 
-<br> 
+<br>
 
 
 After this you need to replace the THINGSBOARD_HOST and ACCESS_TOKEN in the script below, with your values. In case you use Live demo, populate <b>thingsboard.cloud</b> as THINGSBOARD_HOST
@@ -166,7 +166,7 @@ def main():
     # Grove - Servo connected to PWM port
     servo = GroveServo(12)
     servo_angle = 90
-    
+
     # Grove - mini PIR motion pir_sensor connected to port D5
     pir_sensor = GroveMiniPIRMotionSensor(5)
 
@@ -277,7 +277,7 @@ if __name__ == '__main__':
 
 ## Data Visualization and Control
 
-To configure dashboard you should login into ThingsBoard environment. 
+To configure dashboard you should login into ThingsBoard environment.
 
 To proceed with this step, please download a [grove_seeed_studio.json](/docs/samples/raspberry/resources/grove_seeed_studio.json) file, which contains preconfigured dashboard for this script.
 Once logged in, open Dashboards, click on the plus button in the bottom right corner of the screen and select the "Import dashboard" icon. Select recently downloaded file of dashboard configuration. Now you must edit the alias of Grove widget you should do this by pressing on the pen icon. Select the Filter type parameter as "Single entity", set Type as "Device" and from the list of devices  - select your GROVE device.
@@ -312,9 +312,9 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
  - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
  - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.
  - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
- 
+
 {% include templates/feedback.md %}
-  
+
 {% include socials.html %}
 
 ## Next steps

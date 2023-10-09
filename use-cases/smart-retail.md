@@ -25,19 +25,19 @@ browse current and historical state of their supermarkets.
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/smart-retail/sr1.png" />
+        <img class="item-image" src="/images/usecases/smart-retail/sr1.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-retail/sr2.png" />
+        <img class="item-image" src="/images/usecases/smart-retail/sr2.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-retail/sr3.png" />
+        <img class="item-image" src="/images/usecases/smart-retail/sr3.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-retail/sr4.png" />
+        <img class="item-image" src="/images/usecases/smart-retail/sr4.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-retail/sr5.png" />
+        <img class="item-image" src="/images/usecases/smart-retail/sr5.png">
     </div>
 </div>
 
@@ -65,7 +65,7 @@ is designed for supermarket managers to monitor state of the supermarket and rea
       Nevertheless, the common elements of the device details is the header and alarms list.
       Header contains information about current state of the device and it's battery level (if device is battery powered). 
       Header also allows you to navigate to the settings of the particular device. Those settings allow you to configure the alarm thresholds.
-      
+
 Some dashboard features (for example, ability to delete devices) were disabled on the live demo dashboard because it is publicly available.
 
 Once you install the solution template, you will also receive access to "**Smart Supermarket Administration**"

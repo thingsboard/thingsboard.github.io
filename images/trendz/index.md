@@ -1,11 +1,11 @@
 ---
 layout: trendz
 title: Trendz BI & Analytics Platform
-description: 
+description:
 ---
 
 <section class="pe-features trendz-features">
-    <div> 
+    <div>
         <main>
             <div class="content-list">
                 <div class="content-block">
@@ -36,7 +36,7 @@ description:
                 </div>
                 <p class="text">For better decision making, resource planning and reducing cost business requires answers to 3 main questions: What will happen, When, and Why?</p>
                 <p class="accent-text">Trendz provides an answer</p>
-                <a href="/docs/trendz/prediction/" class="button try-pe">Start Analysis</a>           
+                <a href="/docs/trendz/prediction/" class="button try-pe">Start Analysis</a>
             </div>
             <div class="image-block screenshot-block">
                 <div class="image-wrapper screenshot" id="prediction">
@@ -50,7 +50,7 @@ description:
             <div class="content">
                 <h3 class="header">Define KPI using calculated fields</h3>
                 <p class="text">Calculated fields are one of the most powerful features for KPI monitoring and prediction. Based on the input data, calculated fields allow you to run statistical functions and create new data items by applying calculations.</p>
-                <a href="/docs/trendz/calculated-fields/" class="button try-pe">Learn More</a>           
+                <a href="/docs/trendz/calculated-fields/" class="button try-pe">Learn More</a>
             </div>
             <div class="image-block">
                 <div class="image-wrapper chart-wrapper pie-chart">
@@ -69,7 +69,7 @@ description:
                     <img src="/images/trendz/anomalies-screen.png">
                 </div>
                 <p class="text">Detect anomalies with automated tools based on built-in machine learning algorithms. Prioritise them and focus on real problems with anomaly scoring.</p>
-                <a href="/docs/trendz/anomaly/anomaly-detection-overview/" class="button try-pe">Start Analysis</a>           
+                <a href="/docs/trendz/anomaly/anomaly-detection-overview/" class="button try-pe">Start Analysis</a>
             </div>
             <div class="image-block screenshot-block">
                 <div class="image-wrapper screenshot" id="anomalies">
@@ -84,7 +84,7 @@ description:
                 <h3 class="header">Connect Data</h3>
                 <p class="text">Connect Trendz to the ThingsBoard in few clicks with automatic Topology Discovery.</p>
                 <p class="text">Trendz works with all ThingsBoard products, including: Open Source ThingsBoard Community EditionThingsBoard Professional Edition.</p>
-                <a href="/docs/trendz/connect-thingsboard/" class="button try-pe">Learn More</a>           
+                <a href="/docs/trendz/connect-thingsboard/" class="button try-pe">Learn More</a>
             </div>
             <div class="image-block">
                 <div class="image-wrapper chart-wrapper multiple-chart">
@@ -111,7 +111,7 @@ description:
                     </ul>
                 </div>
                 <p class="text">All with respect to ThingsBoard user permissions.</p>
-                <a href="/docs/trendz/embed-visuals/" class="button try-pe">Learn More</a>           
+                <a href="/docs/trendz/embed-visuals/" class="button try-pe">Learn More</a>
             </div>
             <div class="image-block screenshot-block">
                 <div class="image-wrapper screenshot" id="dashboard">
@@ -125,7 +125,7 @@ description:
             <div class="content">
                 <h3 class="header">Plot and aggregate your data with any granularity</h3>
                 <p class="text">See your data, like total resource consumption on any levels starting from country level and deep dive into concrete meter level. Clear dataset in real-time by grouping and filtering on dimensions that you are interested in.</p>
-                <a href="/docs/trendz/data-grouping-aggregation/" class="button try-pe">Start Analysis</a>           
+                <a href="/docs/trendz/data-grouping-aggregation/" class="button try-pe">Start Analysis</a>
             </div>
             <div class="image-block accent-circle accent-circle-center">
                 <div class="image-wrapper chart-wrapper line-chart">

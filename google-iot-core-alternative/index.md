@@ -12,7 +12,7 @@ notitle: "true"
             <h1 class="clari"></h1>
         </main>
     </section>
-    
+
     <section class="description">
         <main>
             <div class="features-top">
@@ -26,12 +26,12 @@ notitle: "true"
                            Launched in 2016 as an open source project, ThingsBoard has grown to a mature platform with 1000+ customers worldwide.</p>
                         <p>ThingsBoard, Inc. provides managed services, training, support, and software development services around the platform. 
                            We may also host and manage a private platform instance in your existing Google Cloud infrastructure. </p>
-                    </div>    
+                    </div>
                 </div>
             </div>
         </main>
     </section>
-    
+
     <section class="description features-comparison">
         <main>
             <div class="features-top">
@@ -42,12 +42,12 @@ notitle: "true"
                            ThingsBoard provides an alternative implementation to Google IoT Core features with similar and, in some cases, identical APIs.
                            Our platform is much more than a <a href="/docs/reference/msa/">scalable</a> service to accept and route telemetry.
                            ThingsBoard brings full IoT application enablement capabilities. See the feature comparison table below: </p>
-                    </div>    
+                    </div>
                 </div>
             </div>
         </main>
     </section>
-    
+
     <section class="matrix">
         <main>
             <div class="backg-matrix">
@@ -58,8 +58,8 @@ notitle: "true"
                     <thead>
                         <tr>
                             <td></td>
-                            <th>Google<br/>IoT Core</th>
-                            <th>ThingsBoard<br/>Professional Edition</th>
+                            <th>Google<br>IoT Core</th>
+                            <th>ThingsBoard<br>Professional Edition</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -132,7 +132,7 @@ notitle: "true"
             <h3>Key concepts</h3>
             <p>See mapping of the key IoT Core concepts to ThingsBoard features documentation below:</p>
             <div class="row cards">
-                <div class="col-lg-6">  
+                <div class="col-lg-6">
 					<div class="block">
 						<div>
 							<a class="title" href="/docs/pe/user-guide/ui/devices/">Device</a>
@@ -142,7 +142,7 @@ notitle: "true"
 						</div>
 					</div>
 				</div>
-                <div class="col-lg-6">  
+                <div class="col-lg-6">
 					<div class="block">
 						<div>
 							<a class="title" href="/docs/pe/user-guide/telemetry/">Telemetry</a>
@@ -153,7 +153,7 @@ notitle: "true"
 						</div>
 					</div>
 				</div>
-                <div class="col-lg-6">  
+                <div class="col-lg-6">
 					<div class="block">
 						<div>
 							<a class="title" href="/docs/pe/user-guide/device-connectivity-status/">Device state</a>
@@ -165,7 +165,7 @@ notitle: "true"
 						</div>
 					</div>
 				</div>
-                <div class="col-lg-6">  
+                <div class="col-lg-6">
 					<div class="block">
 						<div>
 							<a class="title" href="/docs/pe/user-guide/attributes/">Device configuration</a>
@@ -178,7 +178,7 @@ notitle: "true"
 						</div>
 					</div>
 				</div>
-                <div class="col-lg-6">  
+                <div class="col-lg-6">
 					<div class="block">
 						<div>
 							<a class="title" href="/docs/pe/user-guide/device-provisioning/">Device registry and device manager</a>
@@ -203,10 +203,10 @@ notitle: "true"
                             ThingsBoard suppors <a href="/docs/pe/user-guide/access-token/">access tokens</a>,
                             <a href="/docs/pe/user-guide/basic-mqtt/">basic MQTT credentials</a> or
                             <a href="/docs/pe/user-guide/certificates/">X.509 certificates</a>.
-                            
+
                             In addition to MQTT and HTTP support, devices can natively communicate with the platform using other protocols like CoAP, LwM2M, and SNMP. 
                             You may also use our <a href="/docs/iot-gateway/what-is-iot-gateway/">IoT Gateway</a> to integrate devices connected to legacy and third-party systems via BLE, CAN, Modbus, OPC-UA, BACnet, ODBC, etc.
-                            
+
                             ThingsBoard also has built-in integrations with external systems like SigFox, LoRaWAN, NB IoT, etc. 
                             You may find a list of all available integrations <a href="/docs/user-guide/integrations/">here</a>.</p>
 						</div>

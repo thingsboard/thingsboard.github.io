@@ -18,7 +18,7 @@ Platform is widely used for:
   - relief monitoring and seismology alerts/prediction;
   - Water quality of public pumps and other facilities;
   - Noise level;
-  
+
 Save up to 90% of development time for your environment monitoring solution by utilizing the following platform benefits:
 
   - Reliable and fault-tolerant data collection from your IoT devices and sensors;
@@ -26,7 +26,7 @@ Save up to 90% of development time for your environment monitoring solution by u
   - Advanced and flexible visualization for real-time and historical data;
   - Customizable end-user dashboards to share the monitoring results;
   - On-premises and cloud deployment options;
-  - Remote control and OTA updates for your IoT devices;    
+  - Remote control and OTA updates for your IoT devices;
   - Customizable mobile applications with minimum coding efforts;
 
 The platform provides production-ready server infrastructure to connect your IoT devices, store, analyze and share collected IoT data;
@@ -39,13 +39,13 @@ You may quickly adapt it to Air quality or other sensors and add remote control 
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/environment-monitoring/em1.png" />
+        <img class="item-image" src="/images/usecases/environment-monitoring/em1.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/environment-monitoring/em2.png" />
+        <img class="item-image" src="/images/usecases/environment-monitoring/em2.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/environment-monitoring/em3.png" />
+        <img class="item-image" src="/images/usecases/environment-monitoring/em3.png">
     </div>
 </div>
 

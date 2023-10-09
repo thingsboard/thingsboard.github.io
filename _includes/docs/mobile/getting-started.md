@@ -173,7 +173,7 @@ To be familiar with common app features try out our ThingsBoard Live mobile appl
 
 <div class="mobile-market-badges">
     <a href="https://play.google.com/store/apps/details?id=org.thingsboard.demo.app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank">
-        <img src="/images/mobile/get-it-on-google-play.png" alt="Get it on Google Play"/>
+        <img src="/images/mobile/get-it-on-google-play.png" alt="Get it on Google Play">
     </a>
     <a href="https://apps.apple.com/us/app/thingsboard-live/id1594355695?itsct=apps_box_badge&amp;itscg=30200" target="_blank">
         <img src="/images/mobile/download-on-the-app-store.png" alt="Download on the App Store">

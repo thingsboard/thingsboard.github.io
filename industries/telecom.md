@@ -65,7 +65,7 @@ description:
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/tektelic-person.png"/>
+            <img class="person-logo" src="/images/customers/tektelic-person.png">
             <div class="person-title">
                 <p class="person-name"> Roman Nemish </p>
                 <p class="person-position"> President </p>
@@ -93,7 +93,7 @@ description:
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/x-telia-person.jpg"/>
+            <img class="person-logo" src="/images/customers/x-telia-person.jpg">
             <div class="person-title">
                 <p class="person-name"> Eric Bourbeau </p>
                 <p class="person-position"> Président fondateur / Founder and CEO </p>

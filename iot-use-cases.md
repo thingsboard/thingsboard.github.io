@@ -42,9 +42,9 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/smart-energy.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
-            </div>   
+            </div>
         </div>
         <div class="dashboard-item">
             <div class="item-description">
@@ -69,9 +69,9 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/smart-farming.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
-            </div>   
+            </div>
         </div>
         <div class="dashboard-item">
             <div class="item-description">
@@ -96,7 +96,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/fleet-tracking.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>
@@ -123,7 +123,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/smart-metering.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>
@@ -150,7 +150,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/environment-monitoring.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>
@@ -177,7 +177,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/smart-office.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>
@@ -204,7 +204,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/water-metering.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>
@@ -231,7 +231,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/smart-retail.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>
@@ -258,7 +258,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/air-quality.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>
@@ -285,7 +285,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/smart-irrigation.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>
@@ -306,7 +306,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                         <div class="frame-image">
                             <img src="/images/solutions/waste_monitoring/waste-monitoring-1.png">
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>

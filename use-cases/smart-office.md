@@ -18,7 +18,7 @@ Platform is widely used for:
   - indoor tracking of employees;
   - occupancy of meeting and lavatory rooms;
   - indoor air quality and HVAC monitoring;
- 
+
 Save up to 90% of development time for your smart office solution by utilizing the following platform benefits:
 
   - Reliable and fault-tolerant data collection from your IoT devices and sensors;
@@ -26,7 +26,7 @@ Save up to 90% of development time for your smart office solution by utilizing t
   - Advanced and flexible visualization for real-time and historical data;
   - Customizable end-user dashboards to share the monitoring results;
   - On-premises and cloud deployment options;
-  - Remote control and OTA updates for your IoT devices;    
+  - Remote control and OTA updates for your IoT devices;
   - Customizable mobile applications with minimum coding efforts;
 
 The platform provides production-ready server infrastructure to connect your IoT devices, store, analyze and share collected IoT data;
@@ -39,19 +39,19 @@ and have a high-level report of key metrics necessary for effective and proactiv
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/smart-office/so1.png" />
+        <img class="item-image" src="/images/usecases/smart-office/so1.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-office/so2.png" />
+        <img class="item-image" src="/images/usecases/smart-office/so2.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-office/so3.png" />
+        <img class="item-image" src="/images/usecases/smart-office/so3.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-office/so4.png" />
+        <img class="item-image" src="/images/usecases/smart-office/so4.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-office/so5.png" />
+        <img class="item-image" src="/images/usecases/smart-office/so5.png">
     </div>
 </div>
 

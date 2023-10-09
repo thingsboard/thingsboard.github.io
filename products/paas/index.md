@@ -1,7 +1,7 @@
 ---
 layout: thingsboard-paas
 title: ThingsBoard Cloud
-description: 
+description:
 ---
 
 <div id="background">
@@ -20,7 +20,7 @@ description:
 <section id="intro">
 	<main>
 		<h1 class="intro_title"><a href="what-is-thingsboard-cloud/">ThingsBoard Cloud</a> is a fully managed, scalable and fault-tolerant platform for your IoT applications</h1>
-		<div id="labeling"> 
+		<div id="labeling">
         <p>ThingsBoard Cloud is for everyone who would like to use ThingsBoard Professional Edition but don’t want to host their own instance of the platform.</p>
 		</div>
         <div id="cards" class="row">
@@ -69,8 +69,8 @@ description:
             <thead>
                 <tr>
                     <td></td>
-                    <th>Community<br/>Edition</th>
-                    <th>Professional<br/>Edition</th>
+                    <th>Community<br>Edition</th>
+                    <th>Professional<br>Edition</th>
                     <th>Cloud</th>
                 </tr>
             </thead>
@@ -116,55 +116,55 @@ description:
                     <td>Basic</td>
                     <td>Advanced</td>
                     <td>Advanced</td>
-                </tr>              
+                </tr>
                 <tr>
                     <th><a href="/docs/user-guide/groups/">Entity groups<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>              
+                </tr>
                 <tr>
                     <th><a href="/docs/user-guide/rbac/">Advanced RBAC for IoT<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>              
+                </tr>
                 <tr>
                     <th><a href="/docs/user-guide/scheduler/">Scheduler<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>              
+                </tr>
                 <tr>
                     <th><a href="/docs/user-guide/reporting/">Reporting<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>              
+                </tr>
                 <tr>
                     <th><a href="/docs/user-guide/white-labeling/">White-labeling<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>              
+                </tr>
                 <tr>
                     <th><a href="/docs/user-guide/csv-xls-data-export/">CSV/XLS data export<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>              
+                </tr>
                 <tr>
                     <th><a href="/docs/user-guide/integrations/">Platform Integrations<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>     
+                </tr>
                 <tr>
                     <th><a href="/products/paas/domains/">Domain management<img src="/images/pe/help-black18.svg"></a></th>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/unchecked.svg"></td>
                     <td><img src="/images/pe/checked.svg"></td>
-                </tr>       
+                </tr>
             </tbody>
     </table>
 	</main>

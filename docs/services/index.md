@@ -23,5 +23,5 @@ description: ThingsBoard support plans, services and training sessions
         <img src="/images/prof-icon.svg">
         <h5 class="title">Professional services</h5>
         <p>Ensure the success of your IoT product on every stage</p>
-    </a>    
+    </a>
 </div>

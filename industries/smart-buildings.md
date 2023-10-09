@@ -41,7 +41,7 @@ description:
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/sensolyze-person.png"/>
+            <img class="person-logo" src="/images/customers/sensolyze-person.png">
             <div class="person-title">
                 <p class="person-name"> Andreas Brandl </p>
                 <p class="person-position"> Founder & CEO </p>
@@ -71,7 +71,7 @@ description:
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/mdeg-cbeck.jpg"/>
+            <img class="person-logo" src="/images/customers/mdeg-cbeck.jpg">
             <div class="person-title">
                 <p class="person-name"> Christoph Beck </p>
                 <p class="person-position"> Founder and CEO </p>
@@ -129,7 +129,7 @@ description:
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/beaconzone-person.jpg"/>
+            <img class="person-logo" src="/images/customers/beaconzone-person.jpg">
             <div class="person-title">
                 <p class="person-name"> Simon Judge </p>
                 <p class="person-position"> Co-founder at BeaconZone </p>
@@ -163,7 +163,7 @@ description:
         </p>
         <p>
             ThingsBoard is the platform which fulfilled our requirements and It is easy to adapt, flexible and have the ability to present data on different widgets in an attractive way with easy access. In addition, we are thankful to the ThingsBoard team for their tremendous service and we are looking forward to making more IOT solutions with ThingsBoard in future.
-        </p> 
+        </p>
     </div>
 </div>
 
@@ -174,7 +174,7 @@ description:
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/oneserve-person.png"/>
+            <img class="person-logo" src="/images/customers/oneserve-person.png">
             <div class="person-title">
                 <p class="person-name"> Mark Hunt </p>
                 <p class="person-position"> CTO </p>
@@ -185,13 +185,13 @@ description:
         </h2>
         <p>
             We operate in highly competitive markets; from housing management to utilities and manufacturing sectors. Technology innovation is at the heart of our product strategy and service delivery approach. As we grow and extend our field service management solution, we recognised that we needed a flexible IoT platform that enables our delivery needs with lower complexity and cost without sacrificing functionality and extensibility. 
-        </p> 
+        </p>
         <p>
             The ThingsBoard platform has, within a short space of time, easily fulfilled our requirements. It is easy to adapt, has highly flexible implementation options and includes a broad suite of integration and visualization capabilities out of the box.
-        </p> 
+        </p>
         <p>
             The platform is continually being extended and improved, with the ThingsBoard Team both accessible and supportive to all of our needs. We now have a robust industrial platform that unlocks our IoT service goals.
-        </p> 
+        </p>
     </div>
 </div>
 

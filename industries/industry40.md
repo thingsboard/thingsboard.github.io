@@ -41,7 +41,7 @@ description:
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/sudhir-ravindramohan.png"/>
+            <img class="person-logo" src="/images/customers/sudhir-ravindramohan.png">
             <div class="person-title">
                 <p class="person-name"> Sudhir Ravindramohan </p>
                 <p class="person-position"> Co-founder and CTO </p>
@@ -63,7 +63,7 @@ description:
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/Mamadou.png"/>
+            <img class="person-logo" src="/images/customers/Mamadou.png">
             <div class="person-title">
                 <p class="person-name"> Mamadou Ly </p>
                 <p class="person-position"> Project Manager at Safir (Farinia Group) </p>
@@ -88,7 +88,7 @@ description:
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/julio.jpg"/>
+            <img class="person-logo" src="/images/customers/julio.jpg">
             <div class="person-title">
                 <p class="person-name"> Júlio Sá </p>
                 <p class="person-position"> I4.0 researcher at CITEVE </p>
@@ -134,7 +134,7 @@ description:
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/charles-henri.jpg"/>
+            <img class="person-logo" src="/images/customers/charles-henri.jpg">
             <div class="person-title">
                 <p class="person-name"> Charles-Henri Hallard </p>
                 <p class="person-position"> Président </p>

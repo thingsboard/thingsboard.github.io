@@ -32,13 +32,13 @@ You may quickly adapt it to other farm assets tracking or remote control scenari
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/smart-farming/sf1.png" />
+        <img class="item-image" src="/images/usecases/smart-farming/sf1.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-farming/sf2.png" />
+        <img class="item-image" src="/images/usecases/smart-farming/sf2.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-farming/sf3.png" />
+        <img class="item-image" src="/images/usecases/smart-farming/sf3.png">
     </div>
 </div>
 

@@ -18,7 +18,7 @@ Save up to 90% of development time for your smart office solution by utilizing t
   - Advanced and flexible visualization for real-time and historical data;
   - Customizable end-user dashboards to share the monitoring results;
   - On-premises and cloud deployment options;
-  - Remote control and OTA updates for your IoT devices;    
+  - Remote control and OTA updates for your IoT devices;
   - Customizable mobile applications with minimum coding efforts;
 
 The platform provides production-ready server infrastructure to connect your IoT water meters, store, analyze and share collected IoT data;
@@ -32,22 +32,22 @@ You may easily integrate with external billing systems to produce and distribute
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm1.png" />
+        <img class="item-image" src="/images/usecases/water-metering/wm1.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm2.png" />
+        <img class="item-image" src="/images/usecases/water-metering/wm2.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm3.png" />
+        <img class="item-image" src="/images/usecases/water-metering/wm3.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm4.png" />
+        <img class="item-image" src="/images/usecases/water-metering/wm4.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm5.png" />
+        <img class="item-image" src="/images/usecases/water-metering/wm5.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm6.png" />
+        <img class="item-image" src="/images/usecases/water-metering/wm6.png">
     </div>
 </div>
 
@@ -66,8 +66,8 @@ Once you install the solution template, you will also receive access to "Water M
 that allows you to manage water metering devices, users and alarms:
 
 * observe location and status of the water meters on the map. Markers are clustered to be able to show thousands of meters simultaneously;
-* use "Analytics" view to compare consumption for the current and previous month; 
-* use "Devices" view to get the list of all water meter devices with ability to 
+* use "Analytics" view to compare consumption for the current and previous month;
+* use "Devices" view to get the list of all water meter devices with ability to
     * create a new device and assign it to the customer;
     * change the location of the device;
     * configure alarm thresholds for this device;
@@ -78,13 +78,13 @@ that allows you to manage water metering devices, users and alarms:
     * change water meter location information
     * upload water meter photo;
     * change location of the device;
-* use "Customers" view to manage your customers;   
+* use "Customers" view to manage your customers;
 * use "Alarms" view to browse and clear alarms from water meters;
 * use "Settings" view to:
     * turn system alarms on and off;
     * define thresholds for system alarms;
     * turn sms and email notifications on and off;
-  
+
 Some dashboard features (for example, ability to create devices) were disabled on the live demo dashboard because it is publicly available.
 
 ## ThingsBoard advantages

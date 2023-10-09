@@ -61,27 +61,27 @@ Finally, the following changes should be performed to enable activation link pro
 
     Edit **android/app/src/main/AndroidManifest.xml**, find and set scheme and host of browsable intent filter of the **MainActivity**.
     Set value of **android:scheme** to the value of **Application URL scheme** field, set value of **android:host** to the value of **Application URL hostname** field:
-    
+
     ```xml
       ...
         <activity
                 android:name=".MainActivity"
-    
+
                 ...
-    
+
                 <intent-filter>
                     <action android:name="android.intent.action.VIEW" />
                     <category android:name="android.intent.category.DEFAULT" />
                     <category android:name="android.intent.category.BROWSABLE" />
                     <data android:scheme="value of Application URL scheme field" android:host="value of Application URL hostname field"/>
                 </intent-filter>
-    
+
         </activity>
       ...
     ```
 
 2. For iOS:
-    
+
     Edit **ios/Runner/Info-Debug.plist** and **ios/Runner/Info-Release.plist** files, find **CFBundleURLTypes** array property.
     Set string value of **CFBundleURLName** property to the value of **Application URL hostname** field,
     set value of string array property **CFBundleURLSchemes** to the value of **Application URL scheme** field:

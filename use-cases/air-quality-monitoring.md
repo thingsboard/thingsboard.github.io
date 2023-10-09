@@ -41,13 +41,13 @@ Save up to 90% of development time for your air monitoring solution by utilizing
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/air-quality/aq1.png" />
+        <img class="item-image" src="/images/usecases/air-quality/aq1.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/air-quality/aq2.png" />
+        <img class="item-image" src="/images/usecases/air-quality/aq2.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/air-quality/aq3.png" />
+        <img class="item-image" src="/images/usecases/air-quality/aq3.png">
     </div>
 </div>
 
@@ -61,10 +61,10 @@ The **Administration Dashboard** dashboard is designed for tenant administrators
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/air-quality/aq4.png" />
+        <img class="item-image" src="/images/usecases/air-quality/aq4.png">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/air-quality/aq5.png" />
+        <img class="item-image" src="/images/usecases/air-quality/aq5.png">
     </div>
 </div>
 
@@ -149,14 +149,14 @@ The **Administration Dashboard** dashboard is designed for tenant administrators
     </div>
 </section>
 
-## Air Quality Monitoring solution overview 
+## Air Quality Monitoring solution overview
 
 The diagram below identifies data flow and integration points for a typical air quality monitoring solution that uses the ThingsBoard platform to collect and analyze monitoring data from air stations.
 
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
 
 You may notice plenty of connectivity options for the air monitoring stations: direct connection to the cloud, through the IoT Gateway, or an Integration with a third-party system.
-The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database. 
+The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
 ## Learn more

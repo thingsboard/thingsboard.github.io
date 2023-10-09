@@ -20,8 +20,8 @@ Data is collected by a python script that is running on [Raspberry Pi](https://e
 
 ## List of hardware
 
-* [ESP32-PICO-KIT](https://www.espressif.com/en/products/hardware/development-boards) 
-  
+* [ESP32-PICO-KIT](https://www.espressif.com/en/products/hardware/development-boards)
+
   <img src="https://cdn.xingosoftware.com/elektor/images/fetch/dpr_1/https%3A%2F%2Fwww.elektormagazine.com%2Fassets%2Fupload%2Fimages%2F18%2F20171221112541_esp32-pico-kit-v4-004.jpg" width="400">
 
 * [HTU21D Digital Relative Humidity Sensor](https://ru.aliexpress.com/item/NEW-HTU21D-Temperature-Humidity-Sensor-Breakout-Board-Module/32451061596.html?spm=a2g0v.search0104.3.8.69f56062P2BU8f&ws_ab_test=searchweb0_0,searchweb201602_3_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=c8c9941c-ea29-40e5-b74a-d1c0ae217af7-1&algo_pvid=c8c9941c-ea29-40e5-b74a-d1c0ae217af7)
@@ -35,7 +35,7 @@ Data is collected by a python script that is running on [Raspberry Pi](https://e
   <img src="https://images-na.ssl-images-amazon.com/images/I/91zSu44%2B34L._SL1500_.jpg" width="400">
 
 * Xiaomi Smart Temperature & Humidity Sensor
-  
+
   <img src="http://cdn.shopify.com/s/files/1/0011/9957/1005/products/211941-1_1200x1200.jpg?v=1527580517" width="400">
 
 ## Hardware setup
@@ -190,7 +190,7 @@ The [**main**](https://github.com/thingsboard/tb-ble-adapter/blob/master/tb_ble_
 Extensions are [**modules**](https://github.com/thingsboard/tb-ble-adapter/tree/master/tb_ble_adapter/extensions) that responsible for extracting application-specific data from the BLE device. If you want to implement support for a new device, you can create additional extension class and inherit it from [**provided intarface**](https://github.com/thingsboard/tb-ble-adapter/blob/master/tb_ble_adapter/extensions/ExtensionInterface.py). Use [**this**](https://github.com/thingsboard/tb-ble-adapter/blob/master/tb_ble_adapter/extensions/MiTempHumidityExtension.py) as an example.
 
 ### Installing gateway scripts on Raspberry Pi
-Login to your Raspberry PI using SSH and install demo. It requires at least **python3.4**. 
+Login to your Raspberry PI using SSH and install demo. It requires at least **python3.4**.
 Also script requires superuser rights for Bluetooth management, so you need to install it system-wide.
 ```
 sudo apt-get install libglib2.0-dev
@@ -322,7 +322,7 @@ After, open **“Dashboards”** section and find previously imported dashboard 
   ![Dashboard](/images/samples/ble/dashboard.png)
 
 ## Troubleshooting
-In order to perform troubleshooting, you must check demo script output. It displays connection status with every device, as well as received and sent data. 
+In order to perform troubleshooting, you must check demo script output. It displays connection status with every device, as well as received and sent data.
 
 ## See also
 Browse other  [samples](/docs/samples)  or explore guides related to main ThingsBoard features:

@@ -12,7 +12,7 @@ description:
 <p class="company-info">ThingsBoard, Inc. was founded in 2016. We develop IoT software products under ThingsBoard™ umbrella.
    Our flagship IoT platform is the most popular open-source project in its class. ThingsBoard's freeware and licensed software is widely used by both IoT
    enthusiasts who design and prototype their smart solutions in their garages and industrial customers with a wide range of requirements for device management,
-   data processing, security, privacy, analysis, etc.<br/><br/>
+   data processing, security, privacy, analysis, etc.<br><br>
    ThingsBoard, Inc. evolved from a startup with 2 employees to a renowned IoT enabler with hundreds of licensees and thousands of community users in a very short period.
    Currently, our R&D office is in Kyiv, Ukraine. However, the company is fast-growing and new offices will appear in the future. Stay in touch with us.
 </p>
@@ -27,7 +27,7 @@ description:
     <div class="our-mission-info">
         <h1 class="our-mission">Our mission</h1>
         <p class="company-info">
-          IoT helps to reduce the negative impacts of human development on the environment and helps us to work and live better by surrounding us with smart devices.   
+          IoT helps to reduce the negative impacts of human development on the environment and helps us to work and live better by surrounding us with smart devices.
           We invest our time and knowledge in the future by providing IoT cloud platform and products that help companies follow their sustainability commitments.
         </p>
     </div>
