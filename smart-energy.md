@@ -1,14 +1,14 @@
 ---
 layout: use-case
-title: Smart energy monitoring, data visualization and energy efficiency analysis
-description: Smart energy monitoring and data visualization with ThingsBoard IoT Platform
+title: ᐉ IoT Energy Management & Monitoring — ThingsBoard
+description: IoT Energy Management ✔IoT Energy Monitoring ⚫ ThingsBoard ➤ Smart energy monitoring and data visualization with ThingsBoard IoT Platform
 notitle: "true"
 
 ---
 
 {% include usecase-nav.html usecase="smart-energy" %}
 
-<h1 class="usecase-title">Smart energy monitoring, data visualization and energy efficiency analysis</h1>
+<h1 class="usecase-title">IoT Energy Management</h1>
 
 ThingsBoard platform dramatically reduces time to market and efforts to create smart-energy solutions. 
 Save up to 90% of development time for your smart-energy solution by utilizing the following platform benefits:
