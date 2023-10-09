@@ -18,7 +18,8 @@ For purpose of this guide, we will use following things:
 <body>
   <p>
     <b style="color:red">WARNING:</b>
-    <span style="color:black">if you have already configured the gateway - save the settings in another place, as the remote configuration will overwrite the settings. Also, if you used gateway version < 3.4, the gateway will automatically generate a new configuration in JSON format.</span>
+    <span style="color:black">if you have already configured the gateway - create a backup, because the new remote configuration will overwrite settings files. 
+    <br>If you used gateway version < 3.4, the gateway will automatically generate a new configuration files in JSON format.</span>
   </p>
 </body>
 {% endcapture %}
@@ -80,29 +81,29 @@ The dashboard consists of 4 main widgets:
   
    ![](/images/gateway/dashboard/gateway-dashboard-launch-command.png)
 
-   - General configuration - dashboard with general gateway settings;
+   - [General configuration](#general-configuration) - dashboard with general gateway settings;
   
-   ![](/images/gateway/dashboard/gateway-dashboard-gen-conf-button.png)
+   [![](/images/gateway/dashboard/gateway-dashboard-gen-conf-button.png)](#general-configuration)
 
-   - Connectors configuration - dashboard with management and configuration of connectors;
+   - [Connectors configuration](#connector-configuration) - dashboard with management and configuration of connectors;
   
-   ![](/images/gateway/dashboard/gateway-dashboard-connectors-conf-button.png)
+   [![](/images/gateway/dashboard/gateway-dashboard-connectors-conf-button.png)](#connector-configuration)
 
-   - Logs - a dashboard with various types of logs (it should be noted that the button is active only when **Remote Logging** is enabled on the gateway);
+   - [Logs](#logs) - a dashboard with various types of logs (it should be noted that the button is active only when **Remote Logging** is enabled on the gateway);
   
-   ![](/images/gateway/dashboard/gateway-dashboard-logs-button.png)
+   [![](/images/gateway/dashboard/gateway-dashboard-logs-button.png)](#logs)
 
-   - Statistics - a dashboard with general and custom statistics of the gateway;
+   - [Statistics](#statistics) - a dashboard with general and custom statistics of the gateway;
 
-   ![](/images/gateway/dashboard/gateway-dashboard-statistics-button.png)
+   [![](/images/gateway/dashboard/gateway-dashboard-statistics-button.png)](#statistics)
 
-   - Remote Shell - dashboard with Remote Shell (it should be noted that the button is active only when **Remote Shell** is enabled on the gateway);
+   - [Remote Shell](#remote-shell) - dashboard with Remote Shell (it should be noted that the button is active only when **Remote Shell** is enabled on the gateway);
 
-   ![](/images/gateway/dashboard/gateway-dashboard-remote-shell-button.png)
+   [![](/images/gateway/dashboard/gateway-dashboard-remote-shell-button.png)](#remote-shell)
 
-   - RPC - Gateway RPC sending dashboard.
+   - [RPC](#rpc) - Gateway RPC sending dashboard.
 
-   ![](/images/gateway/dashboard/gateway-dashboard-rpc-button.png)
+   [![](/images/gateway/dashboard/gateway-dashboard-rpc-button.png)](#rpc)
 
 ### General Configuration
 
@@ -117,12 +118,12 @@ For each field there are hints that appear when hovering over the **"i"** icon.
 {% include templates/info-banner.md content=info %}
 
 {% capture gatewayconfigurationspec %}
-General%,%general%,%templates/iot-gateway/gateway-dashboard-general-conf.md%br%
-Logs%,%logs%,%templates/iot-gateway/gateway-dashboard-logs-conf.md%br%
-Storage%,%storage%,%templates/iot-gateway/gateway-dashboard-storage-conf.md%br%
-GRPC%,%grpc%,%templates/iot-gateway/gateway-dashboard-grpc-conf.md%br%
-Statistics%,%statistics%,%templates/iot-gateway/gateway-dashboard-statistics-conf.md%br%
-Other%,%other%,%templates/iot-gateway/gateway-dashboard-other-conf.md{% endcapture %}
+General%,%general-toggle%,%templates/iot-gateway/gateway-dashboard-general-conf.md%br%
+Logs%,%logs-toggle%,%templates/iot-gateway/gateway-dashboard-logs-conf.md%br%
+Storage%,%storage-toggle%,%templates/iot-gateway/gateway-dashboard-storage-conf.md%br%
+GRPC%,%grpc-toggle%,%templates/iot-gateway/gateway-dashboard-grpc-conf.md%br%
+Statistics%,%statistics-toggle%,%templates/iot-gateway/gateway-dashboard-statistics-conf.md%br%
+Other%,%other-toggle%,%templates/iot-gateway/gateway-dashboard-other-conf.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="GatewayConfiguration" toggle-spec=gatewayconfigurationspec %}
 

@@ -9,8 +9,8 @@ description: Write your first IoT project using ThingsBoard IoT Gateway
 {:toc}
 
 This guide covers initial IoT Gateway installation and configuration.
-We will connect IoT Gateway to ThingsBoard server and visualize some basic gateway statistics: the amount of devices connected and messages processed.
-We will also configure MQTT and OPC-UA extension in order to subscribe to device data feed from external devices or applications.  
+We will connect IoT Gateway to ThingsBoard server, control it and visualize some basic gateway statistics: the amount of devices connected and messages processed.
+We will also configure MQTT connector in order to subscribe to device data feed from external devices.  
 
 
 ### Prerequisites
@@ -23,18 +23,25 @@ to fix this.
 ## Create new gateway device on ThingsBoard
 
 Firstly, we have to add Gateway device on your ThingsBoard instance. To do this we use following steps:
-- Open **Dashboards** tab and go to **Gateway** dashboard;
-  <br><br>
-  ![](/images/gateway/dashboard/gateway-getting-started-1-ce.png)
-- Click **"+"** button, fill in gateway device name and select device profile in the opened modal window;
-  <br><br>
-  ![](/images/gateway/dashboard/gateway-getting-started-2-ce.png)
+
+{% assign createNewGatewayDevice = '
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-1-ce.png,
+        title: Open **Dashboards** tab and go to **Gateway** dashboard.
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-2-ce.png,
+        title: Click **"+"** button, fill in gateway device name and select device profile in the opened modal window.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=createNewGatewayDevice %} 
 
 {% capture info %}
 <body>
   <p>
     <b style="color:red">WARNING:</b>
-    <span style="color:black">if you have already configured the gateway - save the settings in another place, as the remote configuration will overwrite the settings. Also, if you used gateway version < 3.4, the gateway will automatically generate a new configuration in JSON format.</span>
+    <span style="color:black">if you have already configured the gateway - create a backup, because the new remote configuration will overwrite settings files. 
+    <br>If you used gateway version < 3.4, the gateway will automatically generate a new configuration files in JSON format.</span>
   </p>
 </body>
 {% endcapture %}
@@ -49,15 +56,18 @@ Manually<small>Recommended if you installed Gateway any other way except docker<
 ## Add new connector
 
 Let's finally add MQTT connector to the created gateway. To do this we use following steps:
-- Click **"Connectors configuration"** button on the right panel;
-  <br><br>
-  ![](/images/gateway/dashboard/gateway-getting-started-7-ce.png)
-- Click **"+"** button and fill in **"Name"**, **"Type"** and **"Logging level"** fields;
-  <br><br>
-  ![](/images/gateway/dashboard/gateway-getting-started-8-ce.png)
-- Paste your connector configuration into **"Configuration"** field and click on "Save" button;
-  <br><br>
-  ![](/images/gateway/dashboard/gateway-getting-started-9-ce.png)
+
+{% assign addNewConnector = '
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
+        title: Click **"Connectors configuration"** button on the right panel.
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-8-ce.png,
+        title: Paste your connector configuration into **"Configuration"** field and click on "Save" button.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=addNewConnector %} 
 
 After all the above steps, Gateway will receive the configuration, apply it and synchronize the state with the remote.
 
