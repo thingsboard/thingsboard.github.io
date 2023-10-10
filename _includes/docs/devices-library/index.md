@@ -158,7 +158,7 @@ Device Library is a constantly extending resource. We encourage our community me
 
 In case you wish to integrate existing **LoRaWAN, NB IoT, or SigFox** sensors into ThingsBoard, see the [How to connect my device?](/docs/{{page.docsPrefix}}getting-started-guides/connectivity/)
 
-<br/>
+<br>
 
 <div class="device-guides">
     <div class="filter-panel">
@@ -170,6 +170,6 @@ In case you wish to integrate existing **LoRaWAN, NB IoT, or SigFox** sensors in
     {% include devices.liquid %}
 </div>
 
-<br/>
+<br>
 
 <a href="/docs/{{page.docsPrefix}}devices-library/guidelines/" class="n-button add-device">Add your device</a>

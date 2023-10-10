@@ -23,15 +23,15 @@ The application that is running on Raspberry Pi is written in Python which is qu
 
 The video below demonstrates the final result of this tutorial.
 
-<br/>
-<br/>
+<br>
+<br>
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/-26bxb90tt0" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
-<br/>
-<br/>
+<br>
+<br>
 
 Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
 

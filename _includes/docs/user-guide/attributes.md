@@ -178,7 +178,7 @@ As an alternative to curl, you may use [Java](/docs/{{docsPrefix}}reference/rest
 - subscribe to *shared* attribute updates from the server: [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/#subscribe-to-attribute-updates-from-the-server), [CoAP API](/docs/{{docsPrefix}}reference/coap-api/#subscribe-to-attribute-updates-from-the-server), [HTTP API](/docs/{{docsPrefix}}reference/http-api/#subscribe-to-attribute-updates-from-the-server), [LwM2M API](/docs/{{docsPrefix}}reference/lwm2m-api/#attributes-api);.
 
 {% capture missed_updates %}
-If device went offline, it may miss the important attribute update notification. <br/> We recommend to subscribe to attribute updates on application startup and request latest values of the attributes after each connect or reconnect.
+If device went offline, it may miss the important attribute update notification. <br> We recommend to subscribe to attribute updates on application startup and request latest values of the attributes after each connect or reconnect.
 
 {% endcapture %}
 {% include templates/info-banner.md content=missed_updates %}

@@ -512,7 +512,7 @@ The default rule 'Rule node initialization failure' will notify all tenant admin
 
 Template subject: `${componentType} '${componentName}' failed to ${action}`
 
-Template message: `Rule chain '${ruleChainName}' - ${action} failure:<br/>${error}`
+Template message: `Rule chain '${ruleChainName}' - ${action} failure:<br>${error}`
 
 See [Rule engine lifecycle event](#rule-engine-lifecycle-event) template for a list of the available template parameters.
 

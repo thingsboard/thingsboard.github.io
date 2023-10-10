@@ -7,8 +7,8 @@ redirect_to: "/pricing/"
 
 # ThingsBoard Professional Edition on AWS Marketplace
 
-<br/>
-<br/>
+<br>
+<br>
 <div id="pe-aws-pricing">
     <table>
         <thead>
@@ -149,7 +149,7 @@ redirect_to: "/pricing/"
 
 ## Frequently asked questions
 
-<br/>
+<br>
 
 <div class="pi-accordion">
     <h3 id="trial--billing">Trial &amp; Billing</h3>    
@@ -225,13 +225,13 @@ redirect_to: "/pricing/"
         <div class="container">
             <p>
                 Step 1. Find out your new instance <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-instance-addressing.html#concepts-public-addresses">external IP</a> address 
-                or assign <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP</a> address.<br/>
-                Step 2. Assign valid domain name system (DNS) record to your external IP address for first step.<br/>
-                Step 3. Connect to your instance using SSH or PuTTY using instructions from the previous questions above.<br/>
-                Step 4. Execute the following commands:<br/><br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;sudo certbot-certonly --domain <b>smth.yourcompany.com</b> --email <b>support@yourcompany.com</b><br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;sudo haproxy-refresh<br/><br/>
-                where <b>smth.yourcompany.com</b> is your DNS name from the second step<br/>
+                or assign <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP</a> address.<br>
+                Step 2. Assign valid domain name system (DNS) record to your external IP address for first step.<br>
+                Step 3. Connect to your instance using SSH or PuTTY using instructions from the previous questions above.<br>
+                Step 4. Execute the following commands:<br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;sudo certbot-certonly --domain <b>smth.yourcompany.com</b> --email <b>support@yourcompany.com</b><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;sudo haproxy-refresh<br><br>
+                where <b>smth.yourcompany.com</b> is your DNS name from the second step<br>
                 and <b>support@yourcompany.com</b> is your email to get notifications from <a href="https://certbot.eff.org/">certbot</a>.   
             </p>    
         </div>    
@@ -268,12 +268,12 @@ redirect_to: "/pricing/"
         <div class="container">
             <p>
                 Let's assume your number of devices is constantly growing and you decide to upgrade to new instance type. 
-                It is relatively easy to upgrade while you plan to use the same database type. Just execute the following steps:<br/><br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;1) stop your instance and backup your database<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;2) start a new subscription with a new instance type<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;3) restore the database backup on the instance with a new subscription<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;4) ensure everything is working as expected<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;5) cancel old subscription if needed<br/><br/>
+                It is relatively easy to upgrade while you plan to use the same database type. Just execute the following steps:<br><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;1) stop your instance and backup your database<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;2) start a new subscription with a new instance type<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;3) restore the database backup on the instance with a new subscription<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;4) ensure everything is working as expected<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;5) cancel old subscription if needed<br><br>
                 However, if you plan to upgrade from PostgreSQL to Cassandra this may become a challenge. 
                 ThingsBoard team is planning to have a tool for this purpose but the release is scheduled for the end of 2019. 
                 So, we recommend to maintain the same database type or consider a hybrid database approach.  
@@ -292,9 +292,9 @@ redirect_to: "/pricing/"
     <div class="item" data-tag="h4" data-item-id="how-do-i-get-free-help-tb" data-title="How do I get help from community?">
         <div class="container">
             <p>
-                Available community resources are listed below:<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/thingsboard/thingsboard/issues">GitHub issues page</a> - Our GitHub issues page contains a lot of Q&A and discussions about ThingsBoard.<br/>
-                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://groups.google.com/forum/#!forum/thingsboard">Q&A forum</a> - Our user forum is a great place to go for community support.<br/>
+                Available community resources are listed below:<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://github.com/thingsboard/thingsboard/issues">GitHub issues page</a> - Our GitHub issues page contains a lot of Q&A and discussions about ThingsBoard.<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;<a href="https://groups.google.com/forum/#!forum/thingsboard">Q&A forum</a> - Our user forum is a great place to go for community support.<br>
                 &nbsp;&nbsp;&nbsp;&nbsp;<a href="http://stackoverflow.com/questions/tagged/thingsboard">Stack Overflow</a> - The ThingsBoard team will also monitor posts tagged thingsboard. 
             </p>    
         </div>    

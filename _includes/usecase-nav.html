@@ -2,12 +2,12 @@
     <div class="crop-nav">
         <ul>
             {% for usecase in site.data.use-cases %}
-                <li><a href="{{usecase.link}}" class="{% if usecase.id == include.usecase %}active{% endif %}"><img src="{{usecase.icon}}">{{usecase.title}}</a></li>
+                <li><a href="{{usecase.link}}" class="{% if usecase.id == include.usecase %}active{% endif %}"><img src="{{usecase.icon}}" alt="usecase icon">{{usecase.title}}</a></li>
             {% endfor %}
         </ul>
     </div>
 </nav>
-<script type="text/javascript">
+<script>
     document.querySelector('.crop-nav ul li a.active').parentElement.scrollIntoView();
     jqueryDefer(function () {
         $( document ).ready(function() {

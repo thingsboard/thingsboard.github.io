@@ -32,5 +32,5 @@ Login to your ThingsBoard UI as a tenant administrator. Navigate to "Settings" p
 
 {% include images-gallery.html imageCollection="thingsboardTenantAdminSettings" %}
 
-<br/>
+<br>
 Once you have configured your notifications, you will start receiving notifications in your Slack channel whenever an event is triggered in your Thingsboard instance according to the notification rules you set. You will also be able to send messages to any of your users.

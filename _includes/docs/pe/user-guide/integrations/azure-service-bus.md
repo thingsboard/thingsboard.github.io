@@ -100,7 +100,7 @@ To check if the message has arrived at Service Bus integration open the '**Event
 
 ![image](/images/user-guide/integrations/azure-service-bus/azure-service-bus-integration-send-check-uplink-1-pe.png)
 
-<br/>
+<br>
 Received data can be viewed in the Uplink converter. In the '**In**' and '**Out**' blocks of the '**Events**' tab:
 
 {% include images-gallery.html imageCollection="uplink-converter-events" preview="false" %}
@@ -142,7 +142,7 @@ Go to integration and specify created **downlink converter**. Then open **Advanc
 
 ![image](/images/user-guide/integrations/azure-service-bus/azure-service-bus-integration-add-downlink-converter-1-pe.png)
 
-<br/>
+<br>
 Ok, downlink converter ready, integration ready. Let's test integration with help of downlink node.
 
 After test uplink message was sent integration has created the device inside Thingsboard. Let`s check with which Rule Chain it is connected.
@@ -179,7 +179,7 @@ Select **Receive mode**, then click on **Receive messages**. In pop-up click '**
 
 ![image](/images/user-guide/integrations/azure-service-bus/azure-service-bus-integration-send-uplink-message-2-pe.png)
 
-<br/>
+<br>
 
 ![image](/images/user-guide/integrations/azure-service-bus/azure-service-bus-integration-send-uplink-message-3-pe.png)
 

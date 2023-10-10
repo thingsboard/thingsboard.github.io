@@ -48,16 +48,16 @@ The following interactive dashboard hosted on live demo server represents smart 
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm1.png" />
+        <img class="item-image" src="/images/usecases/smart-metering/sm1.png" alt="smart metering 1">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm2.png" />
+        <img class="item-image" src="/images/usecases/smart-metering/sm2.png" alt="smart metering 2">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm3.png" />
+        <img class="item-image" src="/images/usecases/smart-metering/sm3.png" alt="smart metering 3">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm4.png" />
+        <img class="item-image" src="/images/usecases/smart-metering/sm4.png" alt="smart metering 4">
     </div>
 </div>
 
@@ -152,7 +152,7 @@ You may export the dashboard from our live demo server and import it to your Thi
     </div>
 </section>
 
-## Smart energy solution overview 
+## Smart energy solution overview
 
 The diagram below identifies data flow and integration points for a typical smart-metering solution that uses the ThingsBoard platform to collect and analyze energy monitoring data from smart meters.
 

@@ -55,7 +55,7 @@ Common Name (e.g. server FQDN or YOUR name) []:company.com
 Email Address []:
 {% endhighlight %}
 </details>
-<br/>
+<br>
 
 **Step 2.2** Generate intermediate certificate 
 
@@ -95,7 +95,7 @@ A challenge password []:
 An optional company name []:
 {% endhighlight %}
 </details>
-<br/>
+<br>
 
 To generate the intermediate certificate, use the following command. Don't forget to put the correct CN when prompted:
 
@@ -114,7 +114,7 @@ subject=C = AU, ST = Some-State, O = Internet Widgits Pty Ltd, CN = group.compan
 Getting CA Private Key
 {% endhighlight %}
 </details>
-<br/>
+<br>
 
 
 **Step 2.3** Generate device certificate 
@@ -155,7 +155,7 @@ A challenge password []:
 An optional company name []:
 {% endhighlight %}
 </details>
-<br/>
+<br>
 
 To generate the intermediate certificate, use the following command. Don't forget to put the correct CN when prompted:
 
@@ -174,7 +174,7 @@ subject=C = AU, ST = Some-State, O = Internet Widgits Pty Ltd, CN = device.group
 Getting CA Private Key
 {% endhighlight %}
 </details>
-<br/>
+<br>
 
 
 Finally, you need to concatenate certificates into a chain starting from the device certificate till the root.
