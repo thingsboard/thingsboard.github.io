@@ -246,6 +246,11 @@ toc:
       path: /docs/paas/user-guide/ui/dashboards/
     - title: Entity Groups
       path: /docs/paas/user-guide/groups/
+    - title: Slack Settings
+      path: /docs/paas/user-guide/ui/slack-settings/
+    - title: Microsoft Teams Settings
+      path: /docs/paas/user-guide/ui/microsoft-teams-settings/
+      new: true
     - title: Mail Settings
       path: /docs/paas/user-guide/ui/mail-settings/
 - title: Subscriptions
