@@ -2,5 +2,5 @@ To send an image, you just need to specify the name of the image with the file e
 
 Example of HTML with image
 ```html
-<img src="cid:tb.example.png">
+<img src="cid:tb.example.png" alt="example">
 ```

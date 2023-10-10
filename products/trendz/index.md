@@ -55,7 +55,7 @@ selfManagedPlan:
             <div class="content">
                 <h3 class="header">Predict failures and forecast utilization</h3>
                 <div class="mobile-img">
-                    <img src="/images/trendz/predict-screen.png">
+                    <img src="/images/trendz/predict-screen.png" alt="predict screen">
                 </div>
                 <p class="text">For better decision making, resource planning and reducing cost business requires answers to 3 main questions: What will happen, When, and Why?</p>
                 <p class="accent-text">Trendz provides an answer</p>
@@ -63,7 +63,7 @@ selfManagedPlan:
             </div>
             <div class="image-block screenshot-block">
                 <div class="image-wrapper screenshot" id="prediction">
-                    <img src="/images/trendz/predict-screen.png">
+                    <img src="/images/trendz/predict-screen.png" alt="predict screen">
                 </div>
             </div>
         </main>
@@ -89,14 +89,14 @@ selfManagedPlan:
             <div class="content">
                 <h3 class="header">Detection Anomalies</h3>
                 <div class="mobile-img">
-                    <img src="/images/trendz/anomalies-screen.png">
+                    <img src="/images/trendz/anomalies-screen.png" alt="anomalies screen">
                 </div>
                 <p class="text">Detect anomalies with automated tools based on built-in machine learning algorithms. Prioritise them and focus on real problems with anomaly scoring.</p>
                 <a href="/docs/trendz/anomaly/anomaly-detection-overview/" class="button try-pe">Start Analysis</a>
             </div>
             <div class="image-block screenshot-block">
                 <div class="image-wrapper screenshot" id="anomalies">
-                    <img src="/images/trendz/anomalies-screen.png">
+                    <img src="/images/trendz/anomalies-screen.png" alt="anomalies screen">
                 </div>
             </div>
         </main>
@@ -123,7 +123,7 @@ selfManagedPlan:
             <div class="content">
                 <h3 class="header">Share securely</h3>
                 <div class="mobile-img">
-                    <img src="/images/trendz/dashboard-screen.png">
+                    <img src="/images/trendz/dashboard-screen.png" alt="dashboard screen">
                 </div>
                 <div class="text">
                     <span>Share visualized insights with your users by:</span>
@@ -138,7 +138,7 @@ selfManagedPlan:
             </div>
             <div class="image-block screenshot-block">
                 <div class="image-wrapper screenshot" id="dashboard">
-                    <img src="/images/trendz/dashboard-screen.png">
+                    <img src="/images/trendz/dashboard-screen.png" alt="dashboard screen">
                 </div>
             </div>
         </main>

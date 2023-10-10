@@ -37,19 +37,19 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-1.png">
+        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-1.png" alt="smart irrigation 1">
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-2.png">
+        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-2.png" alt="smart irrigation 2">
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-3.png">
+        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-3.png" alt="smart irrigation 3">
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-4.png">
+        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-4.png" alt="smart irrigation 4">
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-5.png">
+        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-5.png" alt="smart irrigation 5">
     </div>
 </div>
 

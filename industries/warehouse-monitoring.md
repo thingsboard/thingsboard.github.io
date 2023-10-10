@@ -36,12 +36,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/vypin.jpeg">
-        <a class="outlink" href="https://www.vypin.com/" alt="Vypin LLC"> Vypin LLC </a>
+        <img class="customer-logo" src="/images/customers/vypin.jpeg" alt="Vypin LLC">
+        <a class="outlink" href="https://www.vypin.com/"> Vypin LLC </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/JTMcGibbon.jpeg">
+            <img class="person-logo" src="/images/customers/JTMcGibbon.jpeg" alt="JT McGibbon">
             <div class="person-title">
                 <p class="person-name"> JT McGibbon </p>
                 <p class="person-position"> General manager </p>

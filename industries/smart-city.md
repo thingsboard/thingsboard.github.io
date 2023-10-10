@@ -36,12 +36,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/x-telia.png">
-        <a class="outlink" href="https://x-telia.com/" alt="X-TELIA"> X-TELIA </a>
+        <img class="customer-logo" src="/images/customers/x-telia.png" alt="X-TELIA">
+        <a class="outlink" href="https://x-telia.com/"> X-TELIA </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/x-telia-person.jpg">
+            <img class="person-logo" src="/images/customers/x-telia-person.jpg" alt="Eric Bourbeau">
             <div class="person-title">
                 <p class="person-name"> Eric Bourbeau </p>
                 <p class="person-position"> Président fondateur / Founder and CEO </p>
@@ -67,8 +67,8 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/ositech.jpg">
-        <a class="outlink" href="https://www.ositech.com/" alt="Ositech Communications, Inc."> Ositech Communications, Inc. </a>
+        <img class="customer-logo" src="/images/customers/ositech.jpg" alt="Ositech Communications, Inc.">
+        <a class="outlink" href="https://www.ositech.com/"> Ositech Communications, Inc. </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
@@ -88,7 +88,7 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/conbee.svg">
+        <img class="customer-logo" src="/images/customers/conbee.svg" alt="Michael Nickolai">
     </div>
     <div class="customer-content">
         <div class="person-container">
@@ -111,12 +111,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/iioote.png">
-        <a class="outlink" href="https://www.iioote.com/" alt="iiOOTE AB"> iiOOTE AB </a>
+        <img class="customer-logo" src="/images/customers/iioote.png" alt="iiOOTE AB">
+        <a class="outlink" href="https://www.iioote.com/"> iiOOTE AB </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/bertil.png">
+            <img class="person-logo" src="/images/customers/bertil.png" alt="Bertil Moberg">
             <div class="person-title">
                 <p class="person-name"> Bertil Moberg </p>
                 <p class="person-position"> Co-Founder & Head of IoT Solutions </p>
@@ -136,8 +136,8 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/makerssro.jpg">
-        <a class="outlink" href="https://www.makers.sk/" alt="MAKERS s. r. o."> MAKERS s. r. o. </a>
+        <img class="customer-logo" src="/images/customers/makerssro.jpg" alt="MAKERS s. r. o.">
+        <a class="outlink" href="https://www.makers.sk/"> MAKERS s. r. o. </a>
     </div>
     <div class="customer-content">
         <div class="person-container">

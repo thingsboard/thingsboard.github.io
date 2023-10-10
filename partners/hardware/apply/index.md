@@ -17,7 +17,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="/images/partners/silver-partner.svg">
+                        <img src="/images/partners/silver-partner.svg" alt="silver partner">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Silver Partnership does not require any fees but assumes you have basic ThingsBoard knowledge and will prepare the online tutorial and demo dashboard on your own.</p>
@@ -67,7 +67,7 @@ notitle: "true"
                     Submit
                 </button>
                 <button disabled="disabled" style="display: none;" type="button" class="loading">
-                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
                 </button>
             </fieldset>
         </form>
@@ -80,7 +80,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="/images/partners/gold-partner.svg">
+                        <img src="/images/partners/gold-partner.svg" alt="gold partner">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Gold Partnership includes our support services and help with preparing online tutorials and dashboards that will become an ultimate selling tool for your devices.</p>
@@ -135,7 +135,7 @@ notitle: "true"
                     Submit
                 </button>
                 <button disabled="disabled" style="display: none;" type="button" class="loading">
-                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
                 </button>
             </fieldset>
         </form>
@@ -148,7 +148,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="/images/partners/platinum-partner.svg">
+                        <img src="/images/partners/platinum-partner.svg" alt="Platinum Level">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Platinum Partnership includes access to white-labeled partner portal, our support services and help with preparing online tutorials and dashboards that will become an ultimate selling tool for your devices.</p>
@@ -203,7 +203,7 @@ notitle: "true"
                     Submit
                 </button>
                 <button disabled="disabled" style="display: none;" type="button" class="loading">
-                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
                 </button>
             </fieldset>
         </form>

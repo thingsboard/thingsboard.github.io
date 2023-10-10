@@ -26,7 +26,7 @@ There are three reserved parameters names: Name, Type and Label that have a pred
 
 Upload a CSV file to the system.
 
-<img data-gifffer="/images/user-guide/bull-provisioning/bulk-provision-step-1.gif">
+<img data-gifffer="/images/user-guide/bull-provisioning/bulk-provision-step-1.gif" alt="bulk provision step 1">
 
 ### Step 2: Import configuration
 
@@ -36,13 +36,13 @@ For the uploaded file you need to configure the following parameters::
  - **First line contains column names** - if this option is activated, the first line of the file will be used as the default values for the parameter names in the next step;
  - **Update attributes/telemetry** -  if this parameter is activated, for all entities whose names match the existing entities in the ThingsBoard system, the parameter values will be updated. Otherwise, for all the entities whose names already exist in the ThingsBoard system, an error message will be displayed.
 
-<img data-gifffer="/images/user-guide/bull-provisioning/bulk-provision-step-2.gif">
+<img data-gifffer="/images/user-guide/bull-provisioning/bulk-provision-step-2.gif" alt="bulk provision step 2">
 
 ### Step 3: Select columns type
 
 At this step, you need to define a match between the columns of the downloaded file and the type of data in the ThingsBoard platform. You can also set/change the default name for attribute/telemetry key.
 
-<img data-gifffer="/images/user-guide/bull-provisioning/bulk-provision-step-3.gif">
+<img data-gifffer="/images/user-guide/bull-provisioning/bulk-provision-step-3.gif" alt="bulk provision step 3">
 
 ### Step 4: Creating new entities
 
@@ -52,7 +52,7 @@ Processing input data.
 
 The result of the query execution: the number of created/updated entities and the number of errors that occurred during execution.
 
-<img data-gifffer="/images/user-guide/bull-provisioning/bulk-provision-step-5.gif">
+<img data-gifffer="/images/user-guide/bull-provisioning/bulk-provision-step-5.gif" alt="bulk provision step 5">
 
 
 ## Use case

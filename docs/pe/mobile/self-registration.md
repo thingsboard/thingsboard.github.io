@@ -114,7 +114,7 @@ If your setup is correct you should be able to perform sign up and activate acco
     <div class="mobile-frame ios">
         <div class="phone-shadow right"></div>
         <div class="frame-image">
-            <img src="/images/mobile/pe/self-registration-frame.png">
+            <img src="/images/mobile/pe/self-registration-frame.png" alt="self registration frame">
         </div>
         <div class="frame-video">
             <video autoplay loop preload="auto" muted playsinline>

@@ -20,9 +20,9 @@ description:
     <div class="our-mission-logos">
         <div class="spacer"></div>
         <div class="about-mission-background"></div>
-        <img class="about-mission-index" src="/images/about-mission-index.svg">
-        <img class="about-mission-left" src="/images/about-mission-left.svg">
-        <img class="about-mission-right" src="/images/about-mission-right.svg">
+        <img class="about-mission-index" src="/images/about-mission-index.svg" alt="about mission index">
+        <img class="about-mission-left" src="/images/about-mission-left.svg" alt="about mission left">
+        <img class="about-mission-right" src="/images/about-mission-right.svg" alt="about mission right">
     </div>
     <div class="our-mission-info">
         <h1 class="our-mission">Our mission</h1>

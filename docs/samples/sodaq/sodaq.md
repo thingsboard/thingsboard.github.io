@@ -29,7 +29,7 @@ ThingsBoard Platform Integrations feature allows pushing data from various platf
 We will use "T-Mobile IoT CDP" platform integration to consume data from T-Mobile NB IoT Network and automatically register devices in ThingsBoard.
 Besides configuring the integration, we will also set up ThingsBoard to decode incoming data, store it in the database, visualize on the dashboard and generate alarms based on configurable thresholds.
 
-<img data-gifffer="/images/samples/sodaq/demo-dashboard.gif">
+<img data-gifffer="/images/samples/sodaq/demo-dashboard.gif" alt="demo dashboard">
 
 ## Step 1. Data Converter configuration
 
@@ -140,13 +140,13 @@ Few things to notice:
 - Import following json file: [**SODAQ Uplink data converter**](/sodaq/sodaq-uplink-data-converter.json) (left click on the link and then 'Ctrl+S' to download)
 as described on the following screencast:
 
-<img data-gifffer="/images/samples/sodaq/import-and-test-converter.gif" />
+<img data-gifffer="/images/samples/sodaq/import-and-test-converter.gif" alt="Import and test converter">
 
 ## Step 2. Integration configuration
 
 - Create new integration and copy-paste the HTTP Endpoint URL from the integration window based on the screencast below:
 
-<img data-gifffer="/images/samples/sodaq/import-integration.gif" />
+<img data-gifffer="/images/samples/sodaq/import-integration.gif" alt="Import integration">
 
 - Fill in the fields with the input data shown in the following table:
 
@@ -210,7 +210,7 @@ curl -v -X POST -d @telemetry-data.json $HTTP_ENDPOINT_URL --header "Content-Typ
 
 Device should be created:
 
-<img data-gifffer="/images/samples/sodaq/validate-integration.gif">
+<img data-gifffer="/images/samples/sodaq/validate-integration.gif" alt="validate integration">
 
 Now you can delete this dummy device if needed.
 
@@ -238,7 +238,7 @@ Download the attached json [**file**](/docs/user-guide/resources/sodaq/tracker-a
 <br>
 <br>The following screencast will show how to import and configure rule chains:
 
-<img data-gifffer="/images/samples/sodaq/configure-rule-chains.gif" />
+<img data-gifffer="/images/samples/sodaq/configure-rule-chains.gif" alt="Configure rule chains">
 <br>
 
 ## Step 7: Demo dashboard import
@@ -247,7 +247,7 @@ Download and import attached json [**file**](/sodaq/sodaq-dashboard.json) with a
 
 <br>The following screencast will show how to import the dashboard:
 
-<img data-gifffer="/images/samples/sodaq/import-dashboard.gif" />
+<img data-gifffer="/images/samples/sodaq/import-dashboard.gif" alt="Import dashboard">
 <br>
 
 After Dashboard creation navigate to Tracker details state to sets the limit values, namely:

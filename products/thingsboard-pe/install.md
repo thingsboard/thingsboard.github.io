@@ -58,7 +58,7 @@ hidetoc: "true"
                 </p>
                 <div class="marketplace" style="padding-bottom: 10px;">
                     <div id="pe-cloud-trial" class="pricing-image-wrapper clickable" style="max-width: 50%;">
-                        <img src="/images/pe/pe_cloud_signup.svg">
+                        <img src="/images/pe/pe_cloud_signup.svg" alt="pe cloud signup">
                         <a target="_blank" href="https://thingsboard.cloud/signup"></a>
                     </div>
                 </div>
@@ -78,11 +78,11 @@ hidetoc: "true"
                 </div>
                 <div class="marketplace">
                     <div id="aws-trial-market" class="pricing-image-wrapper clickable">
-                        <img src="/images/pe/aws_logo.svg">
+                        <img src="/images/pe/aws_logo.svg" alt="aws logo">
                         <a href="/products/thingsboard-pe/aws/"></a>
                     </div>
                     <div id="azure-trial-market" class="pricing-image-wrapper">
-                        <img src="/images/pe/azure_logo.svg">
+                        <img src="/images/pe/azure_logo.svg" alt="azure logo">
                     </div>
                 </div>
             </div>
@@ -142,7 +142,7 @@ hidetoc: "true"
                                 Submit
                             </button>
                             <button disabled="disabled" style="display: none;" type="button" class="loading">
-                                <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                                <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
                             </button>
                         </div>
                     </form>
@@ -204,7 +204,7 @@ hidetoc: "true"
                                 Submit
                             </button>
                             <button disabled="disabled" style="display: none;" type="button" class="loading">
-                                <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                                <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
                             </button>
                         </div>
                     </form>
@@ -223,7 +223,7 @@ hidetoc: "true"
                         <span>On premises</span>
                     </div>
                     <div id="aws-pay-yearly-market" class="pricing-image-wrapper clickable">
-                        <img src="/images/pe/aws_logo.svg">
+                        <img src="/images/pe/aws_logo.svg" alt="aws logo">
                         <a href="/products/thingsboard-pe/aws/"></a>
                     </div>
                 </div>
@@ -242,7 +242,7 @@ hidetoc: "true"
                             <div class="form-section mb20">
                                 <div class="cloud-provider">
                                     <div class="logo-container">
-                                        <img src="/images/pe/cloud-providers.svg">
+                                        <img src="/images/pe/cloud-providers.svg" alt="cloud providers">
                                     </div>
                                     <div class="cloud-provider-desc">
                                         <p>Install ThingsBoard PE on any cloud or on premises and pay one-time license fee per server and optional software updates subscription for subsequent years of usage.
@@ -290,7 +290,7 @@ hidetoc: "true"
                                 Submit
                             </button>
                             <button disabled="disabled" style="display: none;" type="button" class="loading">
-                                <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                                <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
                             </button>
                         </div>
                     </form>
@@ -306,11 +306,11 @@ hidetoc: "true"
                 </p>
                 <div class="marketplace">
                     <div id="aws-pay-go-market" class="pricing-image-wrapper clickable">
-                        <img src="/images/pe/aws_logo.svg">
+                        <img src="/images/pe/aws_logo.svg" alt="aws logo">
                         <a href="/products/thingsboard-pe/aws/"></a>
                     </div>
                     <div id="azure-pay-go-market" class="pricing-image-wrapper">
-                        <img src="/images/pe/azure_logo.svg">
+                        <img src="/images/pe/azure_logo.svg" alt="azure logo">
                     </div>
                 </div>
             </div>
@@ -328,7 +328,7 @@ hidetoc: "true"
                             <div class="form-section mb20">
                                 <div class="cloud-provider">
                                     <div class="logo-container">
-                                        <img src="/images/pe/aws_logo.svg">
+                                        <img src="/images/pe/aws_logo.svg" alt="aws logo">
                                     </div>
                                     <div class="cloud-provider-desc">
                                         <p>Deploy using AWS marketplace. Pay only when you use the platform. Ideal for evaluation and PoCs.</p>
@@ -374,7 +374,7 @@ hidetoc: "true"
                                 Submit
                             </button>
                             <button disabled="disabled" style="display: none;" type="button" class="loading">
-                                <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                                <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
                             </button>
                         </div>
                     </form>
@@ -394,7 +394,7 @@ hidetoc: "true"
                             <div class="form-section mb20">
                                 <div class="cloud-provider">
                                     <div class="logo-container azure">
-                                        <img src="/images/pe/azure_logo.svg">
+                                        <img src="/images/pe/azure_logo.svg" alt="azure logo">
                                     </div>
                                     <div class="cloud-provider-desc">
                                         <p>Deploy using Azure marketplace. Pay only when you use the platform. Ideal for evaluation and PoCs.</p>
@@ -440,7 +440,7 @@ hidetoc: "true"
                                 Submit
                             </button>
                             <button disabled="disabled" style="display: none;" type="button" class="loading">
-                                <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                                <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
                             </button>
                         </div>
                     </form>

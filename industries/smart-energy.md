@@ -36,12 +36,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/circutor.svg">
-        <a class="outlink" href="http://www.circutor.com/" alt="Circutor">Circutor</a>
+        <img class="customer-logo" src="/images/customers/circutor.svg" alt="Circutor">
+        <a class="outlink" href="http://www.circutor.com/">Circutor</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/circutor-person.jpg">
+            <img class="person-logo" src="/images/customers/circutor-person.jpg" alt="Daniel Portero">
             <div class="person-title">
                 <p class="person-name"> Daniel Portero </p>
                 <p class="person-position"> Cloud & App Development Manager </p>
@@ -61,12 +61,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/oneserve.svg">
-        <a class="outlink" href="https://www.oneserve.co.uk/" alt="Oneserve Limited">Oneserve Limited</a>
+        <img class="customer-logo" src="/images/customers/oneserve.svg" alt="Oneserve Limited">
+        <a class="outlink" href="https://www.oneserve.co.uk/">Oneserve Limited</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/oneserve-person.png">
+            <img class="person-logo" src="/images/customers/oneserve-person.png" alt="Mark Hunt">
             <div class="person-title">
                 <p class="person-name"> Mark Hunt </p>
                 <p class="person-position"> CTO </p>
@@ -89,8 +89,8 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/nettra.png">
-        <a class="outlink" href="http://www.nettra.tech/" alt="Nettra">Nettra</a>
+        <img class="customer-logo" src="/images/customers/nettra.png" alt="Nettra">
+        <a class="outlink" href="http://www.nettra.tech/">Nettra</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
@@ -113,12 +113,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/bei.jpg">
-        <a class="outlink" href="http://www.berliner-energieinstitut.de/" alt="Berliner Energieinstitut GmbH">Berliner Energieinstitut GmbH</a>
+        <img class="customer-logo" src="/images/customers/bei.jpg" alt="Berliner Energieinstitut GmbH">
+        <a class="outlink" href="http://www.berliner-energieinstitut.de/">Berliner Energieinstitut GmbH</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/bei-person.jpg">
+            <img class="person-logo" src="/images/customers/bei-person.jpg" alt="David Eitzinger">
             <div class="person-title">
                 <p class="person-name"> David Eitzinger </p>
                 <p class="person-position"> Managing Director </p>
@@ -135,8 +135,8 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/e2c.png">
-        <a class="outlink" href="http://www.e2cbms.com/" alt="Environmental Energy Controls">Environmental Energy Controls</a>
+        <img class="customer-logo" src="/images/customers/e2c.png" alt="Environmental Energy Controls">
+        <a class="outlink" href="http://www.e2cbms.com/">Environmental Energy Controls</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
@@ -168,12 +168,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/comet.gif">
-        <a class="outlink" href="http://co-met.info" alt="co.met GmbH">co.met GmbH</a>
+        <img class="customer-logo" src="/images/customers/comet.gif" alt="co.met GmbH">
+        <a class="outlink" href="http://co-met.info">co.met GmbH</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/peter_backes.jpg">
+            <img class="person-logo" src="/images/customers/peter_backes.jpg" alt="Peter Backes">
             <div class="person-title">
                 <p class="person-name"> Peter Backes </p>
                 <p class="person-position"> CEO </p>

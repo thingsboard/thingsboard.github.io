@@ -17,7 +17,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="/images/pe/aws_logo.svg">
+                        <img src="/images/pe/aws_logo.svg" alt="aws logo">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Deploy using AWS marketplace. With up to 10 devices, this pricing model is ideal for makers that are getting started with ThingsBoard PE.</p>
@@ -68,7 +68,7 @@ notitle: "true"
                     Submit
                 </button>
                 <button disabled="disabled" style="display: none;" type="button" class="loading">
-                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
                 </button>
             </fieldset>
         </form>
@@ -81,7 +81,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="/images/pe/aws_logo.svg">
+                        <img src="/images/pe/aws_logo.svg" alt="aws logo">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Deploy using AWS marketplace. With up to 100 devices and white-labeling feature enabled, this pricing model is ideal for PoCs and to be used as an ultimate selling tool for your solution.</p>
@@ -132,7 +132,7 @@ notitle: "true"
                     Submit
                 </button>
                 <button disabled="disabled" style="display: none;" type="button" class="loading">
-                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
                 </button>
             </fieldset>
         </form>
@@ -145,7 +145,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="/images/pe/aws_logo.svg">
+                        <img src="/images/pe/aws_logo.svg" alt="aws logo">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Deploy using AWS marketplace. With up to 500 devices and white-labeling feature enabled, this pricing model is ideal for startups and field trials.</p>
@@ -196,7 +196,7 @@ notitle: "true"
                     Submit
                 </button>
                 <button disabled="disabled" style="display: none;" type="button" class="loading">
-                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
                 </button>
             </fieldset>
         </form>
@@ -209,7 +209,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="/images/pe/aws_logo.svg">
+                        <img src="/images/pe/aws_logo.svg" alt="aws logo">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Deploy using AWS marketplace. With up to 1000 devices and white-labeling feature enabled, this pricing model is ideal for small businesses and solutions.</p>
@@ -260,7 +260,7 @@ notitle: "true"
                     Submit
                 </button>
                 <button disabled="disabled" style="display: none;" type="button" class="loading">
-                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
                 </button>
             </fieldset>
         </form>
@@ -273,7 +273,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="/images/pe/aws_logo.svg">
+                        <img src="/images/pe/aws_logo.svg" alt="aws logo">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Deploy using AWS marketplace. This pricing model is ideal for businesses with large number of devices. No limits per device, message, data points or commands triggered.</p>
@@ -324,7 +324,7 @@ notitle: "true"
                     Submit
                 </button>
                 <button disabled="disabled" style="display: none;" type="button" class="loading">
-                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
                 </button>
             </fieldset>
         </form>

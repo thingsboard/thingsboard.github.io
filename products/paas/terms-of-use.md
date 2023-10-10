@@ -5,7 +5,7 @@ description: ThingsBoard Cloud Terms of Use
 
 ---
 
-<br />
+<br>
 <p style="text-align: center; font-size: 1.5em; font-weight: bold;">TERMS OF USE</p>
 
 <h2>PLEASE READ THESE TERMS AND CONDITIONS</h2> 

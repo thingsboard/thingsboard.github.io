@@ -32,7 +32,7 @@ The FDQ-99900 MI-8 is a compact, 24-bit data acquisition system (DAQ) designed t
 * Integrated GPS (GNSS) Receiver
 
 <p align="center">
-   <img src="/images/samples/fusion-daq/m-8-device.png">
+   <img src="/images/samples/fusion-daq/m-8-device.png" alt="m 8 device">
 </p>
 
 ## Provisioning the device for ThingsBoard

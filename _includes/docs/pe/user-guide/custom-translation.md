@@ -108,7 +108,7 @@ if(value>70){
             <div class='description'>
             </div>
         </div>
-        <img height="80px" src="http://icons.iconarchive.com/icons/iconsmind/outline/512/Temperature-icon.png">
+        <img height="80px" src="http://icons.iconarchive.com/icons/iconsmind/outline/512/Temperature-icon.png" alt="Temperature icon">
     </div>
 </div>
 ```

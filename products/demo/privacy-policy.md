@@ -5,7 +5,7 @@ description: ThingsBoard Demo Server Privacy Policy
 
 ---
 
-<br />
+<br>
 <p style="text-align: center; font-size: 1.5em; font-weight: bold;">PRIVACY POLICY</p>
 
 Your privacy is important to us, and so is being transparent about how we collect, use, and share information about you. This policy is intended to help you understand:

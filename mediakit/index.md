@@ -14,17 +14,17 @@ description: ThingsBoard Media Kit
 <div class="mediakit-logos">
     <div class="mediakit-logo logo-blue">
         <div class="logo-container">
-            <img src="/images/thingsboard_logo_blue.svg">
+            <img src="/images/thingsboard_logo_blue.svg" alt="logo blue">
         </div>
     </div>
     <div class="mediakit-logo logo-white">
         <div class="logo-container">
-            <img src="/images/thingsboard_logo_white.svg">
+            <img src="/images/thingsboard_logo_white.svg" alt="logo white">
         </div>
     </div>
     <div class="mediakit-logo logo-black">
         <div class="logo-container">
-            <img src="/images/thingsboard_logo_black.svg">
+            <img src="/images/thingsboard_logo_black.svg" alt="logo black">
         </div>
     </div>
 </div>

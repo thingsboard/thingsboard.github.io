@@ -27,13 +27,13 @@ The following interactive dashboard represents smart-energy IoT data visualizati
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/smart-energy/se1.png">
+        <img class="item-image" src="/images/usecases/smart-energy/se1.png" alt="smart energy 1">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-energy/se2.png">
+        <img class="item-image" src="/images/usecases/smart-energy/se2.png" alt="smart energy 2">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-energy/se3.png">
+        <img class="item-image" src="/images/usecases/smart-energy/se3.png" alt="smart energy 3">
     </div>
 </div>
 

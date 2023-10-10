@@ -41,13 +41,13 @@ Save up to 90% of development time for your air monitoring solution by utilizing
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/air-quality/aq1.png">
+        <img class="item-image" src="/images/usecases/air-quality/aq1.png" alt="air quality 1">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/air-quality/aq2.png">
+        <img class="item-image" src="/images/usecases/air-quality/aq2.png" alt="air quality 2">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/air-quality/aq3.png">
+        <img class="item-image" src="/images/usecases/air-quality/aq3.png" alt="air quality 3">
     </div>
 </div>
 
@@ -61,10 +61,10 @@ The **Administration Dashboard** dashboard is designed for tenant administrators
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/air-quality/aq4.png">
+        <img class="item-image" src="/images/usecases/air-quality/aq4.png" alt="air quality 4">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/air-quality/aq5.png">
+        <img class="item-image" src="/images/usecases/air-quality/aq5.png" alt="air quality 5">
     </div>
 </div>
 

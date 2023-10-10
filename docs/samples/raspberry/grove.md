@@ -28,7 +28,7 @@ At the end we will get the following result:
 <br>
 <br>
 
-<img src="/images/samples/raspberry/grove/grove-image.gif">
+<img src="/images/samples/raspberry/grove/grove-image.gif" alt="grove image">
 
 
 </div>

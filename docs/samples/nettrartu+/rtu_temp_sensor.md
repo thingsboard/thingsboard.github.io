@@ -18,7 +18,7 @@ This guide contains step-by-step instructions on how to connect your Nettra RTU 
 The RTU+ is easly configurable via a [RTU+ Configuration Interface](https://nettra.atlassian.net/wiki/spaces/RTU/pages/26083766/Software). To adapt the RTU+ to each application, it runs a fully customizable script, accessible and editable from the Configuration Interface. In this guide we will provide one as an example quite simple and easy to understand.
 
 Once you complete this sample/tutorial, you will see your sensor data on a dashboard like the following on the right.
-<br /><br>
+<br><br>
 ![image](/images/samples/nettrartu+/nettrartu+.png)   ![image](/images/samples/nettrartu+/rtu_temp_sensor/dashboard.png)
 
 ## Prerequisites

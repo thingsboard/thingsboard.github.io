@@ -39,7 +39,7 @@ The technical specifications of the EXXN IoT Gateway 'Cell 1024' used in this gu
 * Possibility of hardware development for custom functionalities
 
 <p align="center">
-   <img src="/images/samples/exxn/cell_1024.jpg">
+   <img src="/images/samples/exxn/cell_1024.jpg" alt="cell 1024">
 </p>
 
 ## Provisioning the device for Thingsboard
@@ -65,11 +65,11 @@ Your device has been created. Open its details and copy auto-generated **access 
 Open a Browser to the administration web of Cell 1024 using this URL: https://[IP_DEVICE] and go to the 'Cloud' tab:
 <br>
 <br>
-  <img src="/images/samples/exxn/conn1.png">
+  <img src="/images/samples/exxn/conn1.png" alt="conn1">
 
 Activate the Cloud control and configure all the parameters to connect the device to the specific ThingsBoard platform via MQTT:
 
-<img src="/images/samples/exxn/conn2.png">
+<img src="/images/samples/exxn/conn2.png" alt="conn2">
 
 Configuration parameters:
 - **Cloud Platform**: Select ThingsBoard.
@@ -89,7 +89,7 @@ Currently, the IoT EXXN Gateways use the 'Access Token' integration method. We a
 
 Click "Save configuration" button.
 
-<img src="/images/samples/exxn/conn3.png">
+<img src="/images/samples/exxn/conn3.png" alt="conn3">
 
 <br>
 To verify that the device is connected correctly to ThingsBoard, go to the **Device groups** menu -> **All** devices, select your device. In the **device details** select **client attributes** tab and check if the client attributes have been communicated to the device.

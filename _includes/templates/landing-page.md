@@ -74,7 +74,7 @@ h2, h3, h4 {
 {% for card in page.cards %}{% if card.title %}
   <div class="col3rd shadowbox">
     <h3>{{card.title}}</h3>
-    <p>{% if card.image %}<img src="{{card.image}}">{% endif %}{{card.description}}</p>
+    <p>{% if card.image %}<img src="{{card.image}}" alt="card image">{% endif %}{{card.description}}</p>
   </div>
 {% endif %}{% endfor %}
 </div>

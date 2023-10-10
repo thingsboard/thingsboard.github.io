@@ -36,8 +36,8 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/tmobile.png">
-        <a class="outlink" href="https://t-mobile.cz/" alt="T-Mobile Czech Republic a.s."> T-Mobile Czech Republic a.s. </a>
+        <img class="customer-logo" src="/images/customers/tmobile.png" alt="T-Mobile Czech Republic a.s.">
+        <a class="outlink" href="https://t-mobile.cz/"> T-Mobile Czech Republic a.s. </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
@@ -60,12 +60,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/tektelic.png">
-        <a class="outlink" href="https://tektelic.com/" alt="TEKTELIC Communications Inc."> TEKTELIC Communications Inc. </a>
+        <img class="customer-logo" src="/images/customers/tektelic.png" alt="TEKTELIC Communications Inc.">
+        <a class="outlink" href="https://tektelic.com/"> TEKTELIC Communications Inc. </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/tektelic-person.png">
+            <img class="person-logo" src="/images/customers/tektelic-person.png" alt="Roman Nemish">
             <div class="person-title">
                 <p class="person-name"> Roman Nemish </p>
                 <p class="person-position"> President </p>
@@ -88,12 +88,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/x-telia.png">
-        <a class="outlink" href="https://x-telia.com/" alt="X-TELIA"> X-TELIA </a>
+        <img class="customer-logo" src="/images/customers/x-telia.png" alt="X-TELIA">
+        <a class="outlink" href="https://x-telia.com/"> X-TELIA </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/x-telia-person.jpg">
+            <img class="person-logo" src="/images/customers/x-telia-person.jpg" alt="Eric Bourbeau">
             <div class="person-title">
                 <p class="person-name"> Eric Bourbeau </p>
                 <p class="person-position"> Président fondateur / Founder and CEO </p>
