@@ -64,6 +64,8 @@ for more details.
 The parameters are grouped by system components. The list contains the name (address in thingsboard.yml file),
 environment variable, default value and description.
 
+### ThingsBoard Monolithic Parameters
+
 {% if docsPrefix == null %}
 {% include docs/user-guide/install/ce-config-tables.md %}
 {% endif %}

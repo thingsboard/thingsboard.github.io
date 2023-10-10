@@ -31,7 +31,7 @@ def parse_line(table_name, comment, key_level_map, parent_line_level, index, lin
             if line_level == 0:
                 table_name = line.lstrip('#')
             elif line_level == parent_line_level:
-                comment = comment + '\n' + line.lstrip('#')
+                comment = comment + '\n' + line.lstrip('#') if comment else line.lstrip('#')
             else:
                 comment = line.lstrip('#')
             index = index + 1
@@ -75,14 +75,19 @@ def extract_property_info(properties):
 
 
 def generate_html_table(table_name, rows):
-    html_table = '#### ' + table_name + '\n'
+    html_table = '#### ' + table_name + '\n\n'
     html_table += '<table>\n'
-    html_table += '<thead><tr><td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td></tr></thead><tbody>\n'
+    html_table += '\t<thead>\n' \
+                  '\t\t<tr>\n' \
+                  '\t\t\t<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>\n' \
+                  '\t\t</tr>\n' \
+                  '\t</thead>\n' \
+                  '\t<tbody>\n'
 
     for row in rows:
-        html_table += f'<tr><td>{row[0]}</td><td>{row[1]}</td><td>{row[2]}</td><td>{row[3]}</td></tr>\n'
+        html_table += f'\t\t<tr>\n\t\t\t<td>{row[0]}</td>\n\t\t\t<td>{row[1]}</td>\n\t\t\t<td>{row[2]}</td>\n\t\t\t<td>{row[3]}</td>\n\t\t</tr>\n'
 
-    html_table += '</tbody></table>\n'
+    html_table += '\t</tbody>\n</table>\n'
     return html_table
 
 
