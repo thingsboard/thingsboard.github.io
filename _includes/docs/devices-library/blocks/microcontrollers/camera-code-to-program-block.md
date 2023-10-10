@@ -18,13 +18,12 @@ To do this you can change the value of variable **DEMO_MODE** to **1**:
 {% endunless %}
 
 ```cpp
+#include <Arduino_MQTT_Client.h>
 #include "esp_camera.h"
 #include <WiFi.h>
 #include "soc/soc.h"
 #include "soc/rtc_cntl_reg.h"
-{% unless page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
-#define DEMO_MODE 1
-{% endunless %}
+
 #define THINGSBOARD_ENABLE_DYNAMIC 1
 
 #include <ThingsBoard.h>
@@ -74,8 +73,10 @@ constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 
 // Initialize underlying client, used to establish a connection
 WiFiClient wifiClient;
+// Initalize the Mqtt client instance
+Arduino_MQTT_Client mqttClient(wifiClient);
 // Initialize ThingsBoard instance with the maximum needed buffer size
-ThingsBoard tb(wifiClient, MAX_MESSAGE_SIZE);
+ThingsBoard tb(mqttClient, MAX_MESSAGE_SIZE);
 
 // Attribute names for attribute request and attribute updates functionality
 
@@ -300,9 +301,9 @@ void processClientAttributes(const Shared_Attribute_Data &data) {
   }
 }
 
-const Shared_Attribute_Callback attributes_callback(SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend(), &processSharedAttributes);
-const Attribute_Request_Callback attribute_shared_request_callback(SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend(), &processSharedAttributes);
-const Attribute_Request_Callback attribute_client_request_callback(CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend(), &processClientAttributes);
+const Shared_Attribute_Callback attributes_callback(&processSharedAttributes, SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend());
+const Attribute_Request_Callback attribute_shared_request_callback(&processSharedAttributes, SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend());
+const Attribute_Request_Callback attribute_client_request_callback(&processClientAttributes, CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend());
 
 void setup() {
   WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0);
