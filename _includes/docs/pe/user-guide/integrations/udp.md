@@ -67,7 +67,7 @@ Here is the description of the bytes in this payload:
 - **6-12** bytes - **\x64\x65\x66\x61\x75\x6c\x74** - device type. If we convert it to text - **default**;
 - **13-16** bytes - **\x32\x35\x2e\x37** - temperature telemetry. If we convert it to text - **25.7**;
 - **17-18** bytes - **\x36\x39** - humidity telemetry. If we convert it to text - **69**.
-<br/>
+<br>
 - **Hex** - in this case payload is hexadecimal string:
 
 ```text
@@ -182,10 +182,10 @@ We leave other options by default, but there is brief description of them:
 Choose device payload type for **Handler Configuration**
 
 {% capture handlerconfiguration %}
-Text payload<br/>%,%text%,%templates/integration/udp/udp-handler-configuration-text.md%br%
-JSON payload<br/>%,%json%,%templates/integration/udp/udp-handler-configuration-json.md%br%
-Binary payload<br/>%,%binary%,%templates/integration/udp/udp-handler-configuration-binary.md%br%
-Hex payload<br/>%,%hex%,%templates/integration/udp/udp-handler-configuration-hex.md{% endcapture %}
+Text payload<br>%,%text%,%templates/integration/udp/udp-handler-configuration-text.md%br%
+JSON payload<br>%,%json%,%templates/integration/udp/udp-handler-configuration-json.md%br%
+Binary payload<br>%,%binary%,%templates/integration/udp/udp-handler-configuration-binary.md%br%
+Hex payload<br>%,%hex%,%templates/integration/udp/udp-handler-configuration-hex.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="udpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
 
@@ -211,10 +211,10 @@ Once ThingsBoard UDP Integration has been created, the UDP server starts, and th
 Choose device payload type to send uplink message
 
 {% capture senduplink %}
-Text payload<br/>%,%text%,%templates/integration/udp/udp-send-uplink-text.md%br%
-JSON payload<br/>%,%json%,%templates/integration/udp/udp-send-uplink-json.md%br%
-Binary payload<br/>%,%binary%,%templates/integration/udp/udp-send-uplink-binary.md%br%
-Hex payload<br/>%,%hex%,%templates/integration/udp/udp-send-uplink-hex.md{% endcapture %}
+Text payload<br>%,%text%,%templates/integration/udp/udp-send-uplink-text.md%br%
+JSON payload<br>%,%json%,%templates/integration/udp/udp-send-uplink-json.md%br%
+Binary payload<br>%,%binary%,%templates/integration/udp/udp-send-uplink-binary.md%br%
+Hex payload<br>%,%hex%,%templates/integration/udp/udp-send-uplink-hex.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="udpintegrationsenduplink" toggle-spec=senduplink %}
 
@@ -255,7 +255,7 @@ Cache size - maximum size of messages for UDP client.
 ![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-add-downlink-converter-paas.png)
 {% endif %}
 
-<br/>
+<br>
 When integration configured and ready to use, we need to go to Rule Chains, choose 'Root Rule Chain' and here create rule node
 **Integration Downlink**. Input here some name, choose which integration you need to use and tap **Add**.
 

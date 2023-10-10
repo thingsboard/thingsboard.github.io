@@ -75,7 +75,7 @@ with failure reason and parent entity as originator. Failure message is forwarde
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
-<br/>
+<br>
 
 # Aggregate Stream Node
 
@@ -163,7 +163,7 @@ with failure reason and entity as originator. Failure message is forwarded via *
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
-<br/>
+<br>
 
 # Alarms Count Node (deprecated)
 
@@ -219,4 +219,4 @@ with failure reason and entity as originator. Failure message is forwarded via *
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
-<br/>
+<br>

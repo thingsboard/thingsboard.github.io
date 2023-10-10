@@ -45,7 +45,7 @@ In this section, we explain the purpose of each node in this tutorial:
 - Node C: [**Send Email**](/docs/user-guide/rule-engine-2-0/external-nodes/#send-email-node) node.
   - this node will actually send email from the inbound message using system SMTP settings.   
 
-<br/>
+<br>
 
 # Configure Rule Chains
 
@@ -53,7 +53,7 @@ In this tutorial, we used Rule Chains from [create & clear alarms](/docs/user-gu
 We modified Rule Chain **Create & Clear Alarms** by adding nodes that was described above in the section [Message flow](/docs/user-guide/rule-engine-2-0/tutorials/send-email/#message-flow)<br>
  and renamed this rule chain to: **Create/Clear Alarm & Send Email**.
 
-<br/>The following screenshots show how the above Rule Chains should look like:
+<br>The following screenshots show how the above Rule Chains should look like:
  
   - **Create/Clear Alarm & Send Email:**
 
@@ -63,12 +63,12 @@ We modified Rule Chain **Create & Clear Alarms** by adding nodes that was descri
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/email v2/root-rule-chain.png)
 
-<br/> 
+<br> 
 
 Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/create_clear_alarm___send_email.json) for the **Create/Clear Alarm & Send Email** rule chain.
 
 The following section shows you how to modify this rule chain from scratch.
-<br/> 
+<br> 
  
 ## Modify **Create/Clear Alarm & Send Email**
 
@@ -139,15 +139,15 @@ In this rule chain, you will create 3 nodes as it will be explained in the follo
 - otherwise, mark a field **Use system SMTP settings**.
 
 
- Please note that at Demo Server was already configured SendGrid provider as system SMTP. <br/>
+ Please note that at Demo Server was already configured SendGrid provider as system SMTP. <br>
 
 The instructions of how to configure these settings will be explained in the section below.
 
-<br/>
+<br>
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/email v2/send-email.png)
 
-<br/>
+<br>
 
 Chain configuration is finished and we need to save it.
 
@@ -180,7 +180,7 @@ System SMTP settings configuration is finished. Don’t forget to press button *
 
 If you can't access to the account of the System administrator you could configured SMTP settings right in the node but you can't be checked that email was successfully sent.
 
-<br/>
+<br>
 
 # Post telemetry and verify
 For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api). For this we will need to
@@ -213,8 +213,8 @@ Also, you can see the more information about how to:
 
 Please refer to the first link under the **See Also** section to see how to do this.
 
-<br/>
-<br/>
+<br>
+<br>
 
 # See Also
 

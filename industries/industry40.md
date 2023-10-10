@@ -36,12 +36,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="https://img.thingsboard.io/customers/utvyakta-logo.png">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/utvyakta-logo.png" alt="utvyakta">
         <a class="outlink" href="https://utvyakta.com/" alt="Utvyakta"> Utvyakta </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="https://img.thingsboard.io/customers/sudhir-ravindramohan.png"/>
+            <img class="person-logo" src="https://img.thingsboard.io/customers/sudhir-ravindramohan.png" alt="Sudhir Ravindramohan">
             <div class="person-title">
                 <p class="person-name"> Sudhir Ravindramohan </p>
                 <p class="person-position"> Co-founder and CTO </p>
@@ -58,12 +58,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="https://img.thingsboard.io/customers/Farinia.png">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/Farinia.png" alt="Farinia">
         <a class="outlink" href="https://www.farinia.com/" alt="Farinia Group"> Farinia Group </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="https://img.thingsboard.io/customers/Mamadou.png"/>
+            <img class="person-logo" src="https://img.thingsboard.io/customers/Mamadou.png" alt="Mamadou">
             <div class="person-title">
                 <p class="person-name"> Mamadou Ly </p>
                 <p class="person-position"> Project Manager at Safir (Farinia Group) </p>
@@ -83,12 +83,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="https://img.thingsboard.io/customers/citeve.png">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/citeve.png" alt="CITEVE">
         <a class="outlink" href="https://www.citeve.pt/" alt="CITEVE"> CITEVE </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="https://img.thingsboard.io/customers/julio.jpg"/>
+            <img class="person-logo" src="https://img.thingsboard.io/customers/julio.jpg" alt="Júlio">
             <div class="person-title">
                 <p class="person-name"> Júlio Sá </p>
                 <p class="person-position"> I4.0 researcher at CITEVE </p>
@@ -108,7 +108,7 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="https://img.thingsboard.io/customers/insystec.jpg">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/insystec.jpg" alt="INSYS">
         <a class="outlink" href="https://www.insys-tec.de/" alt="INSYS icom"> INSYS icom </a>
     </div>
     <div class="customer-content">
@@ -129,12 +129,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="https://img.thingsboard.io/customers/ch2i.jpg">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/ch2i.jpg" alt="CH2i">
         <a class="outlink" href="https://ch2i.eu/" alt="CH2i"> CH2i </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="https://img.thingsboard.io/customers/charles-henri.jpg"/>
+            <img class="person-logo" src="https://img.thingsboard.io/customers/charles-henri.jpg" alt="Charles-Henri Hallard">
             <div class="person-title">
                 <p class="person-name"> Charles-Henri Hallard </p>
                 <p class="person-position"> Président </p>

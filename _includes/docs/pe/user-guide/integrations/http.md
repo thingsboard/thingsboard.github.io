@@ -99,7 +99,7 @@ curl -v -X POST -d "{\"deviceName\":\"$DEVICEname\",\"deviceType\":\"$DEVICEtype
 ![image](https://img.thingsboard.io/user-guide/integrations/http/send-uplink-message-1-pe.png)
 {% endif %}
 
-<br/>
+<br>
 Go to the **Events** tab in your HTTP integration. If you have done everything correctly, you should see one event with the status "OK."
 
 {% if docsPrefix == "pe/" %}
@@ -110,24 +110,24 @@ Go to the **Events** tab in your HTTP integration. If you have done everything c
 {% endif %}
 
 {% if docsPrefix == "pe/" %}
-<br/>
+<br>
 When you sent the message, a new device was created. You should receive a notification about it. To view notification, click on the bell icon in the upper right corner of the screen. 
 The notification will contain an action button by clicking which you can go to the details of the new device. Click this button.
 
 ![image](https://img.thingsboard.io/user-guide/integrations/http/http-device-2-pe.png)
 
-<br/>
+<br>
 Here you will see information about the new device. As well as the telemetry which we sent to the device.
 
 ![image](https://img.thingsboard.io/user-guide/integrations/http/http-device-1-pe.png)
 
-<br/>
+<br>
 Learn more about **notifications** and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
 
 {% endif %}
 
 {% if docsPrefix == "paas/" %}
-<br/>
+<br>
 The created device with data can be seen in the section **Device groups -> All**.
 
 ![image](https://img.thingsboard.io/user-guide/integrations/http/device-1-pe.png)
@@ -145,7 +145,7 @@ Also, sent and received data can be viewed in the Uplink converter. In the **"In
 
 {% include images-gallery.html imageCollection="send-uplink-1" %}
 
-<br/>
+<br>
 Use the [Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/) to work with data. Dashboards are a modern format for collecting and visualizing data sets. Visibility of data presentation is achieved through a variety of widgets.  
 ThingsBoard has examples of several types of dashboards that you can use. Learn more about **Solution templates** [here](/docs/{{docsPrefix}}solution-templates/overview/).
 
@@ -209,7 +209,7 @@ Now you need to add the created downlink converter to the integration.
 ![image](https://img.thingsboard.io/user-guide/integrations/http/http-add-downlink-converter-1-pe.png)
 {% endif %}
 
-<br/>
+<br>
 When integration configured and ready to use, we can send a message to the device from Rule chain using the rule node. 
 Create an **integration downlink** node.
 
@@ -220,7 +220,7 @@ Create an **integration downlink** node.
 ![image](https://img.thingsboard.io/user-guide/integrations/http/downlink-rule-chain-1-pe.png)
 {% endif %}
 
-<br/>
+<br>
 Set the "**Attributes updated**" and "**Post attributes**" links to it. 
 When the attribute is created or changes are made to the attribute, the downlink message will be sent to the integration.
 
@@ -231,7 +231,7 @@ When the attribute is created or changes are made to the attribute, the downlink
 ![image](https://img.thingsboard.io/user-guide/integrations/http/downlink-rule-chain-2-pe.png)
 {% endif %}
 
-<br/>
+<br>
 To see this with an example, we go to the **Devices** page. Select your device and navigate to the **Attributes** tab. Select **Shared attributes** and click on the "plus" icon to create new attribute.
 Then set the attribute name, its value (for example, the key name is firmware, value: 01052020.v1.1) and save the data.
 
@@ -242,7 +242,7 @@ Then set the attribute name, its value (for example, the key name is firmware, v
 ![image](https://img.thingsboard.io/user-guide/integrations/http/downlink-add-attribute-1-pe.png)
 {% endif %}
 
-<br/>
+<br>
 Send the uplink message again. We will receive a response from the ThingsBoard in the terminal:
 
 {% include images-gallery.html imageCollection="downlink-terminal" %}

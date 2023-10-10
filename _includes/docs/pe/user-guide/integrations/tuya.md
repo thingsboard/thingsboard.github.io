@@ -201,7 +201,7 @@ timeseries data keys of your device may differ from those presented. If necessar
 ![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-edit-timeseries-data-keys-pe.png)
 {% endif %}
 
-<br/>
+<br>
 If you have everything configured correctly, you will see Smart Plug status light (on/off) and telemetry for the last hour: voltage, power, and current.
 
 {% if docsPrefix == "pe/" %}

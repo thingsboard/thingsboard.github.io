@@ -63,7 +63,7 @@ notification-center-recipients:
 notification-center-recipients-1:
     0:
         image: https://img.thingsboard.io/user-guide/notifications/notification-center-recipients-2-pe.png
-        title: 'Enter the name of the notification recipients. Next, select one of the two types of recipients: platform users and Slack entities. Recipients group defines either a set of platform users or set of Slack entities. From the "User filter" list, select who you want to send messages or notifications to. Click "Add";'
+        title: 'Click the "Add recipients" button. Enter the name of the notification recipients. Next, select one of the three types of recipients: platform users, Microsoft Teams and Slack entities. From the "User filter" list, select who you want to send messages or notifications to. Click "Add";'
     1:
         image: https://img.thingsboard.io/user-guide/notifications/notification-center-recipients-3-pe.png
         title: 'The new recipient is added.'
@@ -74,7 +74,7 @@ notification-center-recipients-2:
         title: 'Click the “Send notification” button. Then click the "Create new" button;'
     1:
         image: https://img.thingsboard.io/user-guide/notifications/notification-center-recipients-5-pe.png
-        title: 'Enter the name of the notification recipients. Next, select one of the two types of recipients: platform users and Slack entities. Recipients group defines either a set of platform users or set of Slack entities. From the "User filter" list, select who you want to send messages or notifications to. Click "Add";'
+        title: 'Enter the name of the notification recipients. Next, select one of the three types of recipients: platform users, Microsoft Teams and Slack entities. From the "User filter" list, select who you want to send messages or notifications to. Click "Add";'
     2:
         image: https://img.thingsboard.io/user-guide/notifications/notification-center-recipients-6-pe.png
         title: 'The new recipient is added.'
@@ -88,6 +88,11 @@ notification-center-recipients-slack:
     0:
         image: https://img.thingsboard.io/user-guide/notifications/notification-center-recipients-slack-1-pe.png
         title: 'Select Slack channel type to define notification recipients.'
+
+notification-center-recipients-microsoft-teams:
+    0:
+        image: https://img.thingsboard.io/user-guide/notifications/notification-center-recipients-microsoft-teams-1-pe.png
+        title: 'Create a new notification recipients group of type "Microsoft Teams" enter webhook URL and channel name.'
 
 notification-center-templates:
     0:

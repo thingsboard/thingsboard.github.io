@@ -168,9 +168,9 @@ We leave other options by default, but there is brief description of them:
 Choose device payload type for **Handler Configuration**
 
 {% capture handlerconfiguration %}
-Text payload<br/>%,%text%,%templates/integration/tcp/tcp-handler-configuration-text.md%br%
-JSON payload<br/>%,%json%,%templates/integration/tcp/tcp-handler-configuration-json.md%br%
-Binary payload<br/>%,%binary%,%templates/integration/tcp/tcp-handler-configuration-binary.md{% endcapture %}
+Text payload<br>%,%text%,%templates/integration/tcp/tcp-handler-configuration-text.md%br%
+JSON payload<br>%,%json%,%templates/integration/tcp/tcp-handler-configuration-json.md%br%
+Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-handler-configuration-binary.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="tcpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
 
@@ -196,9 +196,9 @@ Once ThingsBoard TCP Integration has been created, the TCP server starts, and th
 Choose device payload type to send uplink message
 
 {% capture senduplink %}
-Text payload<br/>%,%text%,%templates/integration/tcp/tcp-send-uplink-text.md%br%
-JSON payload<br/>%,%json%,%templates/integration/tcp/tcp-send-uplink-json.md%br%
-Binary payload<br/>%,%binary%,%templates/integration/tcp/tcp-send-uplink-binary.md{% endcapture %}
+Text payload<br>%,%text%,%templates/integration/tcp/tcp-send-uplink-text.md%br%
+JSON payload<br>%,%json%,%templates/integration/tcp/tcp-send-uplink-json.md%br%
+Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-send-uplink-binary.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="tcpintegrationsenduplink" toggle-spec=senduplink %}
 
@@ -257,7 +257,7 @@ Cache size - maximum size of messages for UDP client.
 ![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-add-downlink-converter-paas.png)
 {% endif %}
 
-<br/>
+<br>
 
 
 When integration configured and ready to use, we need to go to Rule Chains, choose ‘Root Rule Chain’ and here create rule node **Integration Downlink**. Input here some name, choose which integration you need to use and tap **Add**.

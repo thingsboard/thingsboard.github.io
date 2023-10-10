@@ -1,14 +1,14 @@
 ---
 layout: use-case
-title: Fleet tracking and fleet management
-description: Fleet tracking and fleet management with ThingsBoard IoT Platform
+title: ᐉ IoT Fleet Tracking System — Fleet Monitoring
+description: IoT fleet management solutions ✔ Fleet monitoring ⚫ ThingsBoard ➤ Manage your company’s fleet and assets using convenient and efficient IoT solutions
 notitle: "true"
 
 ---
 
 {% include usecase-nav.html usecase="fleet-tracking" %}
 
-<h1 class="usecase-title">Smart tracking and fleet management</h1>
+<h1 class="usecase-title">IoT Fleet Tracking System</h1>
 
 Manage your company's fleet and assets with ThingsBoard using convenient and efficient IoT solutions. 
 Fleet tracking systems allow businesses to easily control and monitor their assets, routes, fuel consumption, etc. Having the necessary information about the state of assets affairs, responsible persons can make appropriate strategic decisions and improve the work of the links that need it.
@@ -41,13 +41,13 @@ The following interactive dashboard hosted on live demo server represents vehicl
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/fleet-tracking/ft1.png" />
+        <img class="item-image" src="https://img.thingsboard.io/usecases/fleet-tracking/ft1.png" alt="item">
     </div>
     <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/fleet-tracking/ft2.png" />
+        <img class="item-image" src="https://img.thingsboard.io/usecases/fleet-tracking/ft2.png" alt="item">
     </div>
     <div>
-        <img class="item-image" src="https://img.thingsboard.io/usecases/fleet-tracking/ft3.png" />
+        <img class="item-image" src="https://img.thingsboard.io/usecases/fleet-tracking/ft3.png" alt="item">
     </div>
 </div>
 
@@ -81,7 +81,7 @@ You may edit the route area widget and enable configuration of the route area fo
     <div class="cards row">
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/microservices-icon.svg">
+                <img src="https://img.thingsboard.io/microservices-icon.svg" alt="Scalability and high availability">
                 <div>
                     <a class="title" href="/docs/reference/msa/">Scalability and high availability</a>
                     <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. 
@@ -91,7 +91,7 @@ You may edit the route area widget and enable configuration of the route area fo
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/telemetry-icon.svg">
+                <img src="https://img.thingsboard.io/telemetry-icon.svg" alt="Connectivity">
                 <div>
                     <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
                     <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. 
@@ -101,7 +101,7 @@ You may edit the route area widget and enable configuration of the route area fo
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/integration-icon.svg">
+                <img src="https://img.thingsboard.io/integration-icon.svg" alt="LoRaWAN & SigFox Support">
                 <div>
                     <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
                     <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
@@ -110,7 +110,7 @@ You may edit the route area widget and enable configuration of the route area fo
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/security-icon.svg">
+                <img src="https://img.thingsboard.io/security-icon.svg" alt="Security">
                 <div>
                     <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
                     <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
@@ -119,7 +119,7 @@ You may edit the route area widget and enable configuration of the route area fo
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/engine-icon.svg">
+                <img src="https://img.thingsboard.io/engine-icon.svg" alt="Data processing">
                 <div>
                     <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">Data processing</a>
                     <p>ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. You are free to process data with the Rule engine or push it to further processing in external systems.</p>
@@ -128,7 +128,7 @@ You may edit the route area widget and enable configuration of the route area fo
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/visualization-icon.svg">
+                <img src="https://img.thingsboard.io/visualization-icon.svg" alt="Data visualization">
                 <div>
                     <a class="title" href="/docs/user-guide/dashboards/">Data visualization</a>
                     <p>Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. Customize every dashboard aspect using advanced widget settings or even custom widget bundles. Low latency updates are possible with embedded web-sockets support.</p>
@@ -137,7 +137,7 @@ You may edit the route area widget and enable configuration of the route area fo
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/device-icon.svg">
+                <img src="https://img.thingsboard.io/device-icon.svg" alt="Mobile application">
                 <div>
                     <a class="title" href="/docs/mobile/">Mobile application</a>
                     <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
@@ -146,7 +146,7 @@ You may edit the route area widget and enable configuration of the route area fo
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="https://img.thingsboard.io/tenancy-icon.svg">
+                <img src="https://img.thingsboard.io/tenancy-icon.svg" alt="Multi-tenancy">
                 <div>
                     <a class="title" href="/docs/user-guide/entities-and-relations/">Multi-tenancy</a>
                     <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>

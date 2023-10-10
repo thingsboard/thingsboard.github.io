@@ -65,13 +65,13 @@ Please use one of the next steps.
 
 
 {% capture contenttogglespec %}
-HTTP Integrations<br/><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br/> T-Mobile IoT CDP)</small>%,%http%,%templates/install/integration/http-docker.md%br%
-MQTT Integrations<br/><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/install/integration/mqtt-docker.md%br%
-AWS SQS<br/> Integration<br/>%,%aws%,%templates/install/integration/aws-docker.md%br%
-Azure Event Hub<br/>Integration<br/>%,%azure%,%templates/install/integration/azure-docker.md%br%
-OPC UA<br/> Integration<br/>%,%opcua%,%templates/install/integration/opcua-docker.md%br%
-TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-docker.md%br%
-CoAP<br/> Integration<br/>%,%coap%,%templates/install/integration/coap-docker.md{% endcapture %}
+HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/install/integration/http-docker.md%br%
+MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/install/integration/mqtt-docker.md%br%
+AWS SQS<br> Integration<br>%,%aws%,%templates/install/integration/aws-docker.md%br%
+Azure Event Hub<br>Integration<br>%,%azure%,%templates/install/integration/azure-docker.md%br%
+OPC UA<br> Integration<br>%,%opcua%,%templates/install/integration/opcua-docker.md%br%
+TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/install/integration/tcpudp-docker.md%br%
+CoAP<br> Integration<br>%,%coap%,%templates/install/integration/coap-docker.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="remoteintegrationdockerinstall" toggle-spec=contenttogglespec %}
 
@@ -91,13 +91,13 @@ CoAP<br/> Integration<br/>%,%coap%,%templates/install/integration/coap-docker.md
 
 
 {% capture contenttogglespecwin %}
-HTTP Integrations<br/><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br/> T-Mobile IoT CDP)</small>%,%http%,%templates/install/integration/http-docker-windows.md%br%
-MQTT Integrations<br/><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/install/integration/mqtt-docker-windows.md%br%
-AWS SQS<br/> Integration<br/>%,%aws%,%templates/install/integration/aws-docker-windows.md%br%
-Azure Event Hub<br/>Integration<br/>%,%azure%,%templates/install/integration/azure-docker-windows.md%br%
-OPC UA<br/> Integration<br/>%,%opcua%,%templates/install/integration/opcua-docker-windows.md%br%
-TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-docker-windows.md%br%
-CoAP<br/> Integration<br/>%,%coap%,%templates/install/integration/coap-docker-windows.md{% endcapture %}
+HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/install/integration/http-docker-windows.md%br%
+MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/install/integration/mqtt-docker-windows.md%br%
+AWS SQS<br> Integration<br>%,%aws%,%templates/install/integration/aws-docker-windows.md%br%
+Azure Event Hub<br>Integration<br>%,%azure%,%templates/install/integration/azure-docker-windows.md%br%
+OPC UA<br> Integration<br>%,%opcua%,%templates/install/integration/opcua-docker-windows.md%br%
+TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/install/integration/tcpudp-docker-windows.md%br%
+CoAP<br> Integration<br>%,%coap%,%templates/install/integration/coap-docker-windows.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="remoteintegrationdockerinstallwin" toggle-spec=contenttogglespecwin %}
 
@@ -118,13 +118,13 @@ CoAP<br/> Integration<br/>%,%coap%,%templates/install/integration/coap-docker-wi
  - **Choose Integration package to install**
  
 {% capture ubuntuinstallspec %}
-HTTP Integrations<br/><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br/> T-Mobile IoT CDP)</small>%,%http%,%templates/install/integration/http-ubuntu.md%br%
-MQTT Integrations<br/><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/install/integration/mqtt-ubuntu.md%br%
-AWS SQS<br/> Integration<br/>%,%aws%,%templates/install/integration/aws-ubuntu.md%br%
-Azure Event Hub<br/>Integration<br/>%,%azure%,%templates/install/integration/azure-ubuntu.md%br%
-OPC UA<br/> Integration<br/>%,%opcua%,%templates/install/integration/opcua-ubuntu.md%br%
-TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-ubuntu.md%br%
-CoAP<br/> Integration<br/>%,%coap%,%templates/install/integration/coap-ubuntu.md{% endcapture %}
+HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/install/integration/http-ubuntu.md%br%
+MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/install/integration/mqtt-ubuntu.md%br%
+AWS SQS<br> Integration<br>%,%aws%,%templates/install/integration/aws-ubuntu.md%br%
+Azure Event Hub<br>Integration<br>%,%azure%,%templates/install/integration/azure-ubuntu.md%br%
+OPC UA<br> Integration<br>%,%opcua%,%templates/install/integration/opcua-ubuntu.md%br%
+TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/install/integration/tcpudp-ubuntu.md%br%
+CoAP<br> Integration<br>%,%coap%,%templates/install/integration/coap-ubuntu.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="remoteintegrationinstallubuntu" toggle-spec=ubuntuinstallspec %} 
 
@@ -137,12 +137,12 @@ CoAP<br/> Integration<br/>%,%coap%,%templates/install/integration/coap-ubuntu.md
  - **Choose Integration package to install**
  
 {% capture rhelinstallspec %}
-HTTP Integrations<br/><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br/> T-Mobile IoT CDP)</small>%,%http%,%templates/install/integration/http-rhel.md%br%
-MQTT Integrations<br/><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/install/integration/mqtt-rhel.md%br%
-AWS SQS<br/> Integration<br/>%,%aws%,%templates/install/integration/aws-rhel.md%br%
-Azure Event Hub<br/>Integration<br/>%,%azure%,%templates/install/integration/azure-rhel.md%br%
-OPC UA<br/> Integration<br/>%,%opcua%,%templates/install/integration/opcua-rhel.md%br%
-TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/install/integration/tcpudp-rhel.md{% endcapture %}
+HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/install/integration/http-rhel.md%br%
+MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/install/integration/mqtt-rhel.md%br%
+AWS SQS<br> Integration<br>%,%aws%,%templates/install/integration/aws-rhel.md%br%
+Azure Event Hub<br>Integration<br>%,%azure%,%templates/install/integration/azure-rhel.md%br%
+OPC UA<br> Integration<br>%,%opcua%,%templates/install/integration/opcua-rhel.md%br%
+TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/install/integration/tcpudp-rhel.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="remoteintegrationinstallrhel" toggle-spec=rhelinstallspec %} 
 

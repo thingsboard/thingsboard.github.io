@@ -344,7 +344,7 @@ Go to the **Devices** page and find *rpcReceived* telemetry value is "*OK*" on t
 
 This video is a step-by-step tutorial on setting up of MQTT Integration.
 
-<br/>
+<br>
 <div id="video">  
  <div id="video_wrapper">
      <iframe src="https://www.youtube.com/embed/BeN5bsDQbdo" frameborder="0" allowfullscreen></iframe>
@@ -355,7 +355,7 @@ This video is a step-by-step tutorial on setting up of MQTT Integration.
 
 For your convenience you may follow this video to configure RPC request to device and receive simulated response via MQTT Integration.
 
-<br/>
+<br>
 <div id="video">  
  <div id="video_wrapper">
      <iframe src="https://www.youtube.com/embed/A_jCXQj_LXs" frameborder="0" allowfullscreen></iframe>

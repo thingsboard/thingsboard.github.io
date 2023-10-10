@@ -94,7 +94,7 @@ Custom MQTT topic filters support single '**+**' and multi-level '**#**' wildcar
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-mqtt-1-pe.png)
 {% endif %}
 
-<br/>
+<br>
 
 Using the configuration from the image below will allow you to publish time-series data with the following command:
 
@@ -349,7 +349,7 @@ The rule node processes all incoming messages and reacts to the attributes and t
 ![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-rule-node-1-pe.png)
 {% endif %}
 
-<br/>
+<br>
 There are two important settings in the rule node:
 
 **Persist state of alarm rules** - forces the rule node to store the state of processing. Disabled by default. This setting is useful if you have duration or repeating conditions. 

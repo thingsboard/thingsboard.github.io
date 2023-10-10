@@ -154,9 +154,9 @@ In the function decoder field, specify a script to parse and transform data.
 Choose device payload type to for decoder configuration:
 
 {% capture uplinkpayload %}
-Text payload<br/>%,%text%,%templates/integration/tcp/tcp-uplink-converter-text.md%br%
-JSON payload<br/>%,%json%,%templates/integration/tcp/tcp-uplink-converter-json.md%br%
-Binary payload<br/>%,%binary%,%templates/integration/tcp/tcp-uplink-converter-binary.md{% endcapture %}
+Text payload<br>%,%text%,%templates/integration/tcp/tcp-uplink-converter-text.md%br%
+JSON payload<br>%,%json%,%templates/integration/tcp/tcp-uplink-converter-json.md%br%
+Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-uplink-converter-binary.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="tcpintegartionuplinkpayload" toggle-spec=uplinkpayload %}
 
@@ -223,9 +223,9 @@ We leave other options by default, but there is brief description of them:
 Choose device payload type for **Handler Configuration**:
 
 {% capture handlerconfiguration %}
-Text payload<br/>%,%text%,%templates/integration/tcp/tcp-handler-configuration-text.md%br%
-JSON payload<br/>%,%json%,%templates/integration/tcp/tcp-handler-configuration-json.md%br%
-Binary payload<br/>%,%binary%,%templates/integration/tcp/tcp-handler-configuration-binary.md{% endcapture %}
+Text payload<br>%,%text%,%templates/integration/tcp/tcp-handler-configuration-text.md%br%
+JSON payload<br>%,%json%,%templates/integration/tcp/tcp-handler-configuration-json.md%br%
+Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-handler-configuration-binary.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="tcpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
 
@@ -262,9 +262,9 @@ Once ThingsBoard TCP Integration has been created, the TCP server starts, and th
 Choose device payload type to send uplink message:
 
 {% capture senduplink %}
-Text payload<br/>%,%text%,%templates/integration/tcp/tcp-send-uplink-text.md%br%
-JSON payload<br/>%,%json%,%templates/integration/tcp/tcp-send-uplink-json.md%br%
-Binary payload<br/>%,%binary%,%templates/integration/tcp/tcp-send-uplink-binary.md{% endcapture %}
+Text payload<br>%,%text%,%templates/integration/tcp/tcp-send-uplink-text.md%br%
+JSON payload<br>%,%json%,%templates/integration/tcp/tcp-send-uplink-json.md%br%
+Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-send-uplink-binary.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="tcpintegrationsenduplink" toggle-spec=senduplink %}
 

@@ -8,7 +8,7 @@ ThingsBoard allows you to generate reports using existing dashboards.
 
 Reports can be generated either from the currently opened dashboard or scheduled using the [Scheduler](/docs/{{docsPrefix}}user-guide/scheduler/#generate-report) capabilities.
 
-<br/>
+<br>
 
 ![image](https://img.thingsboard.io/user-guide/reporting.svg)
 
@@ -16,7 +16,7 @@ Reports can be generated either from the currently opened dashboard or scheduled
 
 See video tutorial below for step-by-step instruction how to use this feature.
 
-<br/>
+<br>
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/QTeCoe5rUF0" frameborder="0" allowfullscreen></iframe>

@@ -37,8 +37,8 @@ There is a room where 2 devices are installed: Thermostat and Controller.
     - Attribute value: **52**
     
 We want to initiate RPC request from **Controller A** and ask the latest temperature of the Thermostat in the same room (**Thermostat A**)
-<br/>
-<br/>
+<br>
+<br>
 
 # Configure Rule Chain
 
@@ -97,8 +97,8 @@ Configuration:
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/reply.png)
 
-<br/>
-<br/>
+<br>
+<br>
 
 This Rule chain is ready and we should save it. Here is how **Related thermostat temperature** Rule Chain should look like:
 
@@ -148,8 +148,8 @@ Configuration:
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/log-unexpected.png)
 
-<br/>
-<br/>
+<br>
+<br>
 
 Changes in the **Root Rule Chain** are finished and we should save it. Here is how **Root Rule Chain** should look like:
 
@@ -196,8 +196,8 @@ curl -X POST -d '{"method": "UNKNOWN", "params":{}}' http://localhost:8080/api/v
 {"deviceType":"Controller","requestId":"0","deviceName":"Controller A"}
 </code>
 
-<br/>
-<br/>
+<br>
+<br>
 For more details how RPC works in the Thignsboard, please read [RPC capabilities](/docs/user-guide/rpc/#server-side-rpc-api) Article.
-<br/>
-<br/>
+<br>
+<br>

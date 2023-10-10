@@ -28,7 +28,7 @@ Sensor data are transmitted in real-time using the standard LoRaWAN® protocol.
 LoRaWAN® enables encrypted radio transmissions over long distances while consuming very little power.  
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
-<br/>
+<br>
 
 ## Prerequisites
 

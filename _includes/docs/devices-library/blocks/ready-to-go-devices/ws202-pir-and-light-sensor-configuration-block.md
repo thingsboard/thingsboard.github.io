@@ -13,7 +13,7 @@ Depending on the network server, you may also need to provide join type (OTAA), 
 
 To configure device via NFC, you will need to hold your smartphone like on the picture below:  
 ![NFC zone](https://img.thingsboard.io/devices-library/ready-to-go-devices/ws202-pir-and-light-sensor/nfc-area.png)  
-<br/>
+<br>
 
 To read and write configuration on the device you may follow next steps on your smartphone:  
 {% assign readWriteConfiguration = '

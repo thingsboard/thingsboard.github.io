@@ -40,13 +40,13 @@ In this section, we explain the purpose of each node in this tutorial:
 - Node C: **Rule Chain** node.
   - Forwards incoming Message to specified Rule Chain **Create & Clear Alarms with details**.     
 
-<br/>  
+<br>  
   
 # Configure Rule Chains  
 
 In this tutorial, we only modified **Create & Clear Alarms** rule chain, namely configured Alarm Details function in nodes that was described above in the section [Message flow](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/#message-flow)<br> Also, we renamed this Rule Chain to **Create & Clear Alarms with details**.
 
-<br/>The following screenshots show how the above Rule Chains should look like:
+<br>The following screenshots show how the above Rule Chains should look like:
  
   - **Create & Clear Alarms with details:**
 
@@ -56,12 +56,12 @@ In this tutorial, we only modified **Create & Clear Alarms** rule chain, namely 
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms/root-rule-chain.png)
 
-<br/> 
+<br> 
 
 Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/create___clear_alarms_with_details.json) for the **Create & Clear Alarms with details:** rule chain. 
 Create Node **C** as shown on the image above in the root rule chain to forward telemetry to the imported rule chain.
-<br/>
-<br/>
+<br>
+<br>
 
 The following section shows you how to modify this rule chain, specifically: rule nodes [**A**](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/#node-a-create-alarm) and [**B**](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/#node-b-clear-alarm).
 
@@ -129,7 +129,7 @@ If Alarm do exist - it is cleared and passed to other nodes via relation **Clear
 
 Chain configuration is finished and we need to **save it**.
 
-<br/>
+<br>
 
 # Configure Dashboard 
 

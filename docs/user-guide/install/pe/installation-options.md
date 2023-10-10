@@ -108,8 +108,8 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                             </span>
                                         </a>
                                     </div>
-                               </div>                    
-                            </div>                        
+                               </div>
+                            </div>
                         </div>
                         <div class="deployment-section deployment-cloud" id="cloud">
                             <div class="deployment-cards">
@@ -168,19 +168,18 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
                                             </span>
                                         </a>
                                     </div>
-                               </div>                    
-                            </div>                                                      
+                               </div>
+                            </div>
                         </div>
                     </div>
-                </div>    
-            </div>            
+                </div>
+            </div>
           </div>
        </div>
     </div>
 </div>
 
-<script type="text/javascript">
-
+<script>
     jqueryDefer(function () {
         window.addEventListener('popstate', onPopStatePeInstallOptions);
         onPopStatePeInstallOptions();
@@ -197,7 +196,7 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
             window.history.pushState({ path: newurl }, '', newurl);
             selectTargetPeInstallOption(id);
     }
-    
+
     function onPopStatePeInstallOptions() {
             var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
             var targetId = params['peInstallType'];
@@ -206,12 +205,11 @@ redirect_from: "/docs/pe/user-guide/install/installation-options/"
             }
             selectTargetPeInstallOption(targetId);
     }
-        
+
     function selectTargetPeInstallOption(targetId) {
          $("li.menu-item").removeClass("active");
          $("li.menu-item#menu-item-"+targetId).addClass("active");
          $('.deployment-div .deployment-section').removeClass("active");
          $('.deployment-div .deployment-section#'+targetId).addClass("active");
     }
-
 </script>

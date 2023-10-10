@@ -5,7 +5,7 @@
 ![image](https://img.thingsboard.io/user-guide/integrations/http/downlink-tbel-1-pe.png)
 {% endif %}
 
-<br/>
+<br>
 Add a converter to the integration. You can customize a downlink according to your configuration.
 Let’s consider an example where we send an attribute update message. So we should change code in the downlink encoder function under line **//downlink data** input:
 
@@ -22,7 +22,7 @@ where **msg** is the message that we receive and send back to the device.
 ![image](https://img.thingsboard.io/user-guide/integrations/http/downlink-tbel-2-pe.png)
 {% endif %}
 
-<br/>
+<br>
 An example of downlink converter:
 
 ```ruby

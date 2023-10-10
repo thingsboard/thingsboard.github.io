@@ -17,7 +17,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="https://img.thingsboard.io/partners/silver-partner.svg">
+                        <img src="https://img.thingsboard.io/partners/silver-partner.svg" alt="silver partner">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Silver Partnership does not require any fees but assumes you have basic ThingsBoard knowledge and will prepare the online tutorial and demo dashboard on your own.</p>
@@ -29,7 +29,7 @@ notitle: "true"
                         <label for="fields[first_name]">
                             <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>First name*</p>
-                        </label>    
+                        </label>
                     </div>
                     <div class="form-element half ml-field-last_name ml-validate-required">
                         <label for="fields[last_name]">
@@ -47,19 +47,19 @@ notitle: "true"
                         <label for="fields[company]">
                             <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company*</p>
-                        </label>                                    
+                        </label>
                     </div>
                     <div class="form-element first half ml-field-company_website ml-validate-required">
                         <label for="fields[company_website]">
                             <input type="text" name="fields[company_website]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company Website*</p>
                         </label>
-                    </div>                                
+                    </div>
                     <div class="form-element half ml-field-phone">
                         <label for="fields[phone]">
                             <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Phone Number</p>
-                        </label>    
+                        </label>
                     </div>
                 </div>
                 <input type="hidden" name="ml-submit" value="1" />
@@ -67,7 +67,7 @@ notitle: "true"
                     Submit
                 </button>
                 <button disabled="disabled" style="display: none;" type="button" class="loading">
-                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
                 </button>
             </fieldset>
         </form>
@@ -80,15 +80,15 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="https://img.thingsboard.io/partners/gold-partner.svg">
+                        <img src="https://img.thingsboard.io/partners/gold-partner.svg" alt="gold partner">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Gold Partnership includes our support services and help with preparing online tutorials and dashboards that will become an ultimate selling tool for your devices.</p>
-                        <br/>
+                        <br>
                         <p>
                             <span class="cloud-price-aws-desc">Yearly fee:</span>
                             <span class="cloud-price-aws">$500</span>
-                        </p>  
+                        </p>
                     </div>
                 </div>
                 <p>Please fill this form to get further instructions.</p>
@@ -97,7 +97,7 @@ notitle: "true"
                         <label for="fields[first_name]">
                             <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>First name*</p>
-                        </label>    
+                        </label>
                     </div>
                     <div class="form-element half ml-field-last_name ml-validate-required">
                         <label for="fields[last_name]">
@@ -115,19 +115,19 @@ notitle: "true"
                         <label for="fields[company]">
                             <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company*</p>
-                        </label>                                    
+                        </label>
                     </div>
                     <div class="form-element first half ml-field-company_website ml-validate-required">
                         <label for="fields[company_website]">
                             <input type="text" name="fields[company_website]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company Website*</p>
                         </label>
-                    </div>                                
+                    </div>
                     <div class="form-element half ml-field-phone">
                         <label for="fields[phone]">
                             <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Phone Number</p>
-                        </label>    
+                        </label>
                     </div>
                 </div>
                 <input type="hidden" name="ml-submit" value="1" />
@@ -135,7 +135,7 @@ notitle: "true"
                     Submit
                 </button>
                 <button disabled="disabled" style="display: none;" type="button" class="loading">
-                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
                 </button>
             </fieldset>
         </form>
@@ -148,15 +148,15 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="https://img.thingsboard.io/partners/platinum-partner.svg">
+                        <img src="https://img.thingsboard.io/partners/platinum-partner.svg" alt="Platinum Level">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Platinum Partnership includes access to white-labeled partner portal, our support services and help with preparing online tutorials and dashboards that will become an ultimate selling tool for your devices.</p>
-                        <br/>
+                        <br>
                         <p>
                             <span class="cloud-price-aws-desc">Yearly fee:</span>
                             <span class="cloud-price-aws">$2000</span>
-                        </p> 
+                        </p>
                     </div>
                 </div>
                 <p>Please fill this form to get further instructions.</p>
@@ -165,7 +165,7 @@ notitle: "true"
                         <label for="fields[first_name]">
                             <input type="text" name="fields[first_name]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>First name*</p>
-                        </label>    
+                        </label>
                     </div>
                     <div class="form-element half ml-field-last_name ml-validate-required">
                         <label for="fields[last_name]">
@@ -183,19 +183,19 @@ notitle: "true"
                         <label for="fields[company]">
                             <input type="text" name="fields[company]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company*</p>
-                        </label>                                    
+                        </label>
                     </div>
                     <div class="form-element first half ml-field-company_website ml-validate-required">
                         <label for="fields[company_website]">
                             <input type="text" name="fields[company_website]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Company Website*</p>
                         </label>
-                    </div>                                
+                    </div>
                     <div class="form-element half ml-field-phone">
                         <label for="fields[phone]">
                             <input type="text" name="fields[phone]" class="form-control" value="" spellcheck="false" autocapitalize="off" autocorrect="off">
                             <p>Phone Number</p>
-                        </label>    
+                        </label>
                     </div>
                 </div>
                 <input type="hidden" name="ml-submit" value="1" />
@@ -203,44 +203,44 @@ notitle: "true"
                     Submit
                 </button>
                 <button disabled="disabled" style="display: none;" type="button" class="loading">
-                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="rolling">
                 </button>
             </fieldset>
         </form>
     </div>
     <p class="questions">Questions about partner programs? <a href="/docs/contact-us/" target="_blank">Contact us</a>.</p>
-</section>         
+</section>
 
-<script type="text/javascript" src="https://static.mailerlite.com/js/w/webforms.min.js?v3772b61f1ec61c541c401d4eadfdd02f"></script>
-<script type="text/javascript">
+<script src="https://static.mailerlite.com/js/w/webforms.min.js?v3772b61f1ec61c541c401d4eadfdd02f"></script>
+<script>
 
     var programType = "silver";
-    
+
     var programTypeForms = {
         "silver": "#mlb2-11249142",
         "gold": "#mlb2-11249172",
         "platinum": "#mlb2-11249200"
     };
-    
+
     function ml_webform_success_11249142() {
-        var $ = ml_jQuery || jQuery;        
+        var $ = ml_jQuery || jQuery;
         $(location).attr('href', '/partners/hardware/apply/thanks/?type='+programType);
     };
-    
+
     function ml_webform_success_11249172() {
-        var $ = ml_jQuery || jQuery;        
+        var $ = ml_jQuery || jQuery;
         $(location).attr('href', '/partners/hardware/apply/thanks/?type='+programType);
     };
 
     function ml_webform_success_11249200() {
-        var $ = ml_jQuery || jQuery;        
+        var $ = ml_jQuery || jQuery;
         $(location).attr('href', '/partners/hardware/apply/thanks/?type='+programType);
     };
-            
+
     jqueryDefer(
         function () {
             $( document ).ready(function() {
-            
+
                  $('.subscribe-form .form-section .form-group input').addClass("input--empty");
                  $('.subscribe-form .form-section .form-group input').on('input', function() {
                       if( !$(this).val() ) {
@@ -252,12 +252,12 @@ notitle: "true"
                  $.urlParam = function (name) {
                     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
                     return results ? results[1] : null;
-                 };                 
+                 };
                  programType = $.urlParam('program');
                  if (!programType) {
                     programType = "silver";
                  }
-                 
+
                  var formId = programTypeForms[programType];
                  if (formId) {
                     var programForm = $(formId);

@@ -40,7 +40,7 @@ set ns=3;i=1001 23
 {:refdef: style="text-align: left;"}
 ![image](https://img.thingsboard.io/gateway/gateway-opc-ua-rpc-1.png)
 {: refdef}
-<br/>
+<br>
 To set new value (T3000) for **"model"** attribute, run the query:
 ```bash
 set ns=3;i=1008; T3000

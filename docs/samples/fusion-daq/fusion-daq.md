@@ -32,7 +32,7 @@ The FDQ-99900 MI-8 is a compact, 24-bit data acquisition system (DAQ) designed t
 * Integrated GPS (GNSS) Receiver
 
 <p align="center">
-   <img src="https://img.thingsboard.io/samples/fusion-daq/m-8-device.png" >
+   <img src="https://img.thingsboard.io/samples/fusion-daq/m-8-device.png" alt="m 8 device">
 </p>
 
 ## Provisioning the device for ThingsBoard
@@ -74,14 +74,14 @@ The **use_ssl** field describes whether HTTP or HTTPS is used. The **server** fi
 
 Set server to “**thingsboard.cloud**”. Username and password should remain empty.
 
-Set **path** to “api/vi/{ACCESS_TOKEN}/telemetry” and set **attributes_path** to “api/vi/{ACCESS_TOKEN}/attributes”. 
-Replace **{ACCESS_TOKEN}** with the access token from the device credentials page in ThingsBoard. 
-Each device has an unique access token. 
+Set **path** to “api/vi/{ACCESS_TOKEN}/telemetry” and set **attributes_path** to “api/vi/{ACCESS_TOKEN}/attributes”.
+Replace **{ACCESS_TOKEN}** with the access token from the device credentials page in ThingsBoard.
+Each device has an unique access token.
 Sensors values will be sent to **path** periodically, attributes (name, IMEI, ICCID, etc) are sent to **attributes_path** once when the MI-8 first powers up.
 
 Set **push_attributes** equal to true so that attributes (things such as the MI-8 IMEI number which don’t change frequently) are sent once each power up.
 
-Set **port** equal to 80 and **use_ssl** equal to false to use an unsecured HTTP connection to push data to ThingsBoard. 
+Set **port** equal to 80 and **use_ssl** equal to false to use an unsecured HTTP connection to push data to ThingsBoard.
 Set **port** equal to 443 and **use_ssl** equal to true to use SSL encryption (HTTPS). Either protocol is supported, but HTTPS will consume more cellular data each time data is pushed to the server.
 
 Set **use_json** equal to true. All data sent to ThingsBoard should be formatted as JSON to simplify integration.
@@ -94,16 +94,16 @@ Save config.json, disconnect the PC from the MI-8 USB port (if connected and mas
 
 ### Verify MI-8 Connection Within ThingsBoard
 
-At this point the MI-8 should be configured and ready to communicate with ThingsBoard. 
-Return to your ThingsBoard instance, then navigate to "Device groups" and then "All". 
-Click on the device that was just associated with the MI-8 and then navigate to the "Latest Telemetry" tab. 
-All sensor values configured in the active MI-8 trigger [see operating manual](https://fusiondaq.com/wp-content/uploads/2023/01/LTEdaq_OperatingManual-1.pdf) should be present once the MI-8 powers up and is able to establish a cellular connection. 
-Note that GPS values are only transmitted after the first GPS fix, which could take several minutes depending on how long it has been and how far the MI-8 has moved since the last fix. 
+At this point the MI-8 should be configured and ready to communicate with ThingsBoard.
+Return to your ThingsBoard instance, then navigate to "Device groups" and then "All".
+Click on the device that was just associated with the MI-8 and then navigate to the "Latest Telemetry" tab.
+All sensor values configured in the active MI-8 trigger [see operating manual](https://fusiondaq.com/wp-content/uploads/2023/01/LTEdaq_OperatingManual-1.pdf) should be present once the MI-8 powers up and is able to establish a cellular connection.
+Note that GPS values are only transmitted after the first GPS fix, which could take several minutes depending on how long it has been and how far the MI-8 has moved since the last fix.
 GPS values (lat, lon and alt) will only appear in the telemetry window after they have been transmitted at least once.
 
 ![image](https://img.thingsboard.io/samples/fusion-daq/fusion-daq-mi-8-latest-telemetry-1.png)
 
-Now, navigate to the "Attributes" tab. Attributes are additional data sent from the MI-8 to ThingsBoard that are more or less fixed and do not change such as the modem IMEI, the SIM ID (ICCID), and the MI-8 firmware version. 
+Now, navigate to the "Attributes" tab. Attributes are additional data sent from the MI-8 to ThingsBoard that are more or less fixed and do not change such as the modem IMEI, the SIM ID (ICCID), and the MI-8 firmware version.
 Attributes are only sent to ThingsBoard once each time the MI-8 is powered on.
 
 ![image](https://img.thingsboard.io/samples/fusion-daq/fusion-daq-mi-8-attributes-1.png)

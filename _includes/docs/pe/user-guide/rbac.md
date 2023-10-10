@@ -284,17 +284,17 @@ Let's configure ThingsBoard to support this use case. The instructions below ass
 
 **Supervisors**
 
-We will create a separate *user group* named "Supervisors", a separate *dashboard group* "Supervisor Dashboards" and one *dashboard*. 
-Our goal is to allow supervisors to manage dashboards in the "Supervisor Dashboards" group, but for all other entities in the system, they should have read-only access. 
+We will create a separate *user group* named "Supervisors", a separate *dashboard group* "Supervisor Dashboards" and one *dashboard*.
+Our goal is to allow supervisors to manage dashboards in the "Supervisor Dashboards" group, but for all other entities in the system, they should have read-only access.
 
-Let's start by creating a "Supervisor Dashboards" group: 
+Let's start by creating a "Supervisor Dashboards" group:
 1. Navigate to the "Groups" tab in the "Dashboards" page and click "plus" button to create new entity group;
 2. Input the name of your dashboard group. In our case, it's "Supervisor Dashboards". Click on the "Add" button;
 3. New dashboard group "Supervisor Dashboards" has been created.
 
 {% include images-gallery.html imageCollection="supervisors-add-dashboard-group" %}
 
-[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-dashboards-group.gif" />)
+[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-dashboards-group.gif">)
 
 Next we should create two roles to implement this use case:
 
@@ -304,11 +304,11 @@ Next we should create two roles to implement this use case:
 3. Select role type - "Generic";
 4. In the "Permissions" section select "All" for the "Resources";
 5. select operations: "Read", "Read Attributes" and "Read Telemetry";
-6. Click on the lowest "Add" button, the one without a "+" sign.  
+6. Click on the lowest "Add" button, the one without a "+" sign.
 
 {% include images-gallery.html imageCollection="supervisors-create-generic-role" %}
 
-[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-role1.gif" /> )
+[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-role1.gif"> )
 
  * "Entity Group Administrator" - the **group role** that allows all operations for the group.
 1. Again, click the "plus" icon in the upper right corner of the "Roles" page screen;
@@ -319,7 +319,7 @@ Next we should create two roles to implement this use case:
 
 {% include images-gallery.html imageCollection="supervisors-create-group-role" %}
 
-[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-role2.gif" />)
+[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-role2.gif">)
 
 Now let's assign those roles to the "Supervisors" group.
 1. Navigate to the "Users" page -> "Groups" tab and click on the "+" sign (Add entity group) at the top right of the screen;
@@ -331,8 +331,8 @@ Now let's assign those roles to the "Supervisors" group.
 
 {% include images-gallery.html imageCollection="supervisors-assign-roles-to-supervisors-group" %}
 
-[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-user-group.gif" />)
- 
+[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-user-group.gif">)
+
 **Facility Managers**
 
 We will create a separate customer entity for each building or group of buildings. We will add the Facility Manager user account to the default "Customer Administrators" user group which is automatically created for each customer.
@@ -347,7 +347,7 @@ Now, as Facility Manager, we can log in, design dashboards, provision devices, a
 
 {% include images-gallery.html imageCollection="supervisors-add-new-user" %}
 
-[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-building-a.gif" />  )
+[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-building-a.gif">  )
 
 **End Users**
 
@@ -364,8 +364,8 @@ Let's log in as customer user Jane Smith (created in a previous guide), Building
 
 [//]: # (![image]&#40;https://img.thingsboard.io/user-guide/security/smart-buildings-building-a-dashboards.png&#41;)
 
-Now, let's create a Read-only User. Let's assume we want to assign "End User Dashboard" to him and make sure that this Dashboard will open full screen once the user is logged in. 
-So, our read-only user will not have access to the administration panel to the left, since they are still not allowed to perform any server-side API calls, except read-only browsing the data.  
+Now, let's create a Read-only User. Let's assume we want to assign "End User Dashboard" to him and make sure that this Dashboard will open full screen once the user is logged in.
+So, our read-only user will not have access to the administration panel to the left, since they are still not allowed to perform any server-side API calls, except read-only browsing the data.
 1. Select "Customer Users" on the "Groups" tab of the "Users" page;
 2. Click "+" at the top right of the screen to add new user;
 3. Input email address, for example, we will use _bob@thingsboard.io_, then click "Add";
@@ -373,19 +373,19 @@ So, our read-only user will not have access to the administration panel to the l
 5. Now, click on the created user;
 6. At the right top of the screen you shall see the "pen" icon. Click on it to enter edit mode;
 7. Check the box "Always fullscreen" and choose "End User Dashboard" in the "Default dashboard" line. Then save changes;
-8. Login as customer user Bob. Dashboard will open full screen. User Bob will not have access to the administration panel to the left. 
+8. Login as customer user Bob. Dashboard will open full screen. User Bob will not have access to the administration panel to the left.
 Bob is not allowed to perform any server-side API calls, only browsing the data.
 
 {% include images-gallery.html imageCollection="supervisors-create-read-only-user" %}
 
-[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-read-only-user.gif" />)
+[//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-read-only-user.gif">)
 
 ## Video tutorial
 
 You can watch the video tutorial for step-by-step instructions on role-based access control.
 
-<br/>
-<div id="video">  
+<br>
+<div id="video">
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/xpnYzSiDiJo" frameborder="0" allowfullscreen></iframe>
     </div>

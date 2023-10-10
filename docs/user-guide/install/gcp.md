@@ -19,7 +19,7 @@ description: Installing ThingsBoard CE on Google Cloud Platform
                         You may deploy ThingsBoard IoT Platform using different tools and platforms
                     </p>
                 </div>
-            </div>            
+            </div>
             <div class="deployment-container one-line-deployment-container">
                 <div class="deployment-div">
                     <div class="container">
@@ -46,11 +46,11 @@ description: Installing ThingsBoard CE on Google Cloud Platform
                                             </span>
                                         </a>
                                     </div>
-                              </div>                     
-                            </div>                        
+                              </div>
+                            </div>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
           </div>
        </div>

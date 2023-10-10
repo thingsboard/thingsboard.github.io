@@ -121,9 +121,9 @@ In the function decoder field, specify a script to parse and transform data.
 Choose device payload type to for decoder configuration:
 
 {% capture uplinkpayload %}
-Text payload<br/>%,%text%,%templates/integration/coap/coap-uplink-converter-text.md%br%
-JSON payload<br/>%,%json%,%templates/integration/coap/coap-uplink-converter-json.md%br%
-Binary payload<br/>%,%binary%,%templates/integration/coap/coap-uplink-converter-binary.md{% endcapture %}
+Text payload<br>%,%text%,%templates/integration/coap/coap-uplink-converter-text.md%br%
+JSON payload<br>%,%json%,%templates/integration/coap/coap-uplink-converter-json.md%br%
+Binary payload<br>%,%binary%,%templates/integration/coap/coap-uplink-converter-binary.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="coapintegartionuplinkpayload" toggle-spec=uplinkpayload %}
 
@@ -157,9 +157,9 @@ Let's log in to ThingsBoard **Edge** and go to the **Integrations** page. Find y
 Choose device payload type to send uplink message (Replace **$YOUR_COAP_ENDPOINT_URL** with corresponding value):
 
 {% capture senduplink %}
-Text payload<br/>%,%text%,%templates/edge/integrations/coap/coap-send-uplink-text.md%br%
-JSON payload<br/>%,%json%,%templates/edge/integrations/coap/coap-send-uplink-json.md%br%
-Binary payload<br/>%,%binary%,%templates/edge/integrations/coap/coap-send-uplink-binary.md{% endcapture %}
+Text payload<br>%,%text%,%templates/edge/integrations/coap/coap-send-uplink-text.md%br%
+JSON payload<br>%,%json%,%templates/edge/integrations/coap/coap-send-uplink-json.md%br%
+Binary payload<br>%,%binary%,%templates/edge/integrations/coap/coap-send-uplink-binary.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="coapintegrationsenduplink" toggle-spec=senduplink %}
 

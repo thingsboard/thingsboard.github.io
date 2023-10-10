@@ -10,7 +10,7 @@ IBM Watson IoT Integration allows to stream data from IBM Watson IoT to ThingsBo
  
 See video tutorial below for step-by-step instruction how to setup IBM Watson IoT Integration.
 
-<br/>
+<br>
 <div id="video">  
  <div id="video_wrapper">
      <iframe src="https://www.youtube.com/embed/eqSObPW2P1g" frameborder="0" allowfullscreen></iframe>

@@ -72,8 +72,8 @@ This tutorial will explain in details the device Inactivity event and it will sh
  - configure a parameter for the inactivity timeout.
 
 
-<br/>
-<br/>
+<br>
+<br>
 
 
 
@@ -84,8 +84,8 @@ This tutorial will explain in details the device Inactivity event and it will sh
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/add-device.png)    
 
-<br/>
-<br/>
+<br>
+<br>
 
 # Configuring the Device
 
@@ -95,8 +95,8 @@ This tutorial will explain in details the device Inactivity event and it will sh
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/add-attribute.png)    
 
-<br/>
-<br/>
+<br>
+<br>
 
 # Configuring the Rule Chain
 
@@ -193,12 +193,12 @@ This Node loads the latest Alarm with the configured Alarm Type for the Message 
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/clear-alarm.png)
 
-<br/>
+<br>
 
 This Rule chain is now ready and you need to save it. 
 
-<br/>
-<br/>
+<br>
+<br>
 
 # How to verify the Rule Chain and Post telemetry
 
@@ -221,7 +221,7 @@ curl -v -X POST -d '{"temperature":20}' http://localhost:8080/api/v1/$ACCESS_TOK
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/created-alarm.png)
 
-<br/>
+<br>
 
 Also, you can:
 
@@ -233,8 +233,8 @@ Please refer to the first two links under the **See Also** section to see how to
 
 
     
-<br/>
-<br/>
+<br>
+<br>
 
 # See Also
 

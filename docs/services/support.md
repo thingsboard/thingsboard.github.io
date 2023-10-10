@@ -83,7 +83,7 @@ defaultActivePricingSection: thingsboard-pe
                             <div>
                                 What's in?
                             </div>
-                            <br/>
+                            <br>
                             <div class="pricing-square-item">
                                 <strong>Email</strong> <strong>consulting</strong>: 2h per month
                             </div>
@@ -116,7 +116,7 @@ defaultActivePricingSection: thingsboard-pe
                             <div>
                                 What's in?
                             </div>
-                            <br/>
+                            <br>
                             <div class="pricing-square-item">
                                 <strong>Email</strong> <strong>consulting</strong>: 4h per month
                             </div>
@@ -149,7 +149,7 @@ defaultActivePricingSection: thingsboard-pe
                             <div>
                                 What's in?
                             </div>
-                            <br/>
+                            <br>
                             <div class="pricing-square-item">
                                 <strong>Email</strong> <strong>consulting</strong>: 8h per month
                             </div>

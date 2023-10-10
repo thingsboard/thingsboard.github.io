@@ -13,7 +13,7 @@ description: Connect Trendz Analytics platform to the ThingsBoard
 ## Connect to ThingsBoard
 You can connect Trendz Analytics to the ThingsBoard Community Edition or ThingsBoard Professional Edition.
 
-<br/>
+<br>
 
 By default, Trendz expects that ThingsBoard is hosted on the same instance and accessible via an URL:
  
@@ -69,7 +69,7 @@ As a result, Trendz will extract and save the collection of Business Entities. Y
 
 ![image](https://img.thingsboard.io/trendz/first-discovery.png)
 
-<br/>
+<br>
 
 ![image](https://img.thingsboard.io/trendz/discover-results.png)
  

@@ -254,7 +254,7 @@ The result can be tracked on AWS page where you subscribed to the topic:
 
 See video tutorial below for step-by-step instruction how to setup AWS IoT Integration (Outdated interface).
 
-<br/>
+<br>
 <div id="video">  
  <div id="video_wrapper">
      <iframe src="https://www.youtube.com/embed/udkuOUrNzWk" frameborder="0" allowfullscreen></iframe>

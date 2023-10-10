@@ -44,8 +44,8 @@ Widget/dashboard example for visualization of the data from your device. You can
 
 Choose one of the suitable methods of integration according to Connectivity diagram below
 
-<br/>
-<br/>
+<br>
+<br>
 
 <object width="80%" data="https://img.thingsboard.io/connectivity.svg"></object>
 

@@ -58,7 +58,7 @@ Like Web UI all other ThingsBoard Cloud services such as MQTT/HTTP/CoAP transpor
 
 {% capture domain_owner_note %}
 **Note**
-<br/>
+<br>
 You must be owner of the domain you are registering.
 {% endcapture %}
 {% include templates/info-banner.md content=domain_owner_note %}

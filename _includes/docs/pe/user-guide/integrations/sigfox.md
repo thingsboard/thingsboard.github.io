@@ -53,7 +53,7 @@ Let’s review sample uplink message from SigFox device:
 ```
  - the "*device*" is responsible for the name of the device;
  - the "*data*" is a telemetry concatenation by two characters, where value "02af" - temperature, "21" - humidity*, "0246" - co2, "2a" - co2Baseline.
-<br/><br/>
+<br><br>
 
 {% include templates/tbel-vs-js.md %}
 
@@ -196,7 +196,7 @@ Go to the **Statistics** tab. You will see a downlink message on the chart.
  
 See video tutorial below for step-by-step instruction how to setup SigFox Integration.
 
-<br/>
+<br>
 <div id="video"> 
  <div id="video_wrapper">
      <iframe src="https://www.youtube.com/embed/T769XqaqeFU" frameborder="0" allowfullscreen></iframe>

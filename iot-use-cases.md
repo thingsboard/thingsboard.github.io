@@ -23,7 +23,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
             <div class="item-description">
                 <h2>Smart energy</h2>
                 <p>Deliver and store data from smart meters in reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards, integrate with third-party analytics frameworks and solutions.</p>
-                <a class="read-more-button" href="/smart-energy/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/smart-energy/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/smart-energy/">
@@ -34,7 +34,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="https://img.thingsboard.io/usecases/smart-energy/video/smart-energy.png">
+                            <img src="https://img.thingsboard.io/usecases/smart-energy/video/smart-energy.png" alt="smart energy">
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
@@ -42,15 +42,15 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/smart-energy.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
-            </div>   
+            </div>
         </div>
         <div class="dashboard-item">
             <div class="item-description">
                 <h2>Smart farming</h2>
                 <p>Collect important indicators for your agricultural production such as soil conditions or facilities state via IoT sensors and visualize them using end-user customizable dashboards provided by ThingsBoard platform.</p>
-                <a class="read-more-button" href="/smart-farming/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/smart-farming/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/smart-farming/">
@@ -61,7 +61,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="https://img.thingsboard.io/usecases/smart-farming/video/smart-farming.png">
+                            <img src="https://img.thingsboard.io/usecases/smart-farming/video/smart-farming.png" alt="smart farming">
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
@@ -69,15 +69,15 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/smart-farming.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
-            </div>   
+            </div>
         </div>
         <div class="dashboard-item">
             <div class="item-description">
                 <h2>Fleet tracking</h2>
                 <p>ThingsBoard platform allows to track vehicles state and alerts via various sensors, plot vehicle routes in real-time and browse their sensors reading history at the same time using customizable high quality widgets and dashboards.</p>
-                <a class="read-more-button" href="/fleet-tracking/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/fleet-tracking/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/fleet-tracking/">
@@ -88,7 +88,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="https://img.thingsboard.io/usecases/fleet-tracking/video/fleet-tracking.png">
+                            <img src="https://img.thingsboard.io/usecases/fleet-tracking/video/fleet-tracking.png" alt="fleet tracking">
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
@@ -96,7 +96,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/fleet-tracking.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>
@@ -104,7 +104,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
             <div class="item-description">
                 <h2>Smart metering</h2>
                 <p>Collect, store and aggregate data from smart meters in reliable and fault-tolerant way. Analyze resource consumption and raise alerts on leakage, anomaly or fraud. Present results of the analysis to end users.</p>
-                <a class="read-more-button" href="/smart-metering/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/smart-metering/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/smart-metering/">
@@ -115,7 +115,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="https://img.thingsboard.io/usecases/smart-metering/video/smart-metering.png">
+                            <img src="https://img.thingsboard.io/usecases/smart-metering/video/smart-metering.png" alt="smart metering">
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
@@ -123,7 +123,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/smart-metering.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>
@@ -131,7 +131,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
             <div class="item-description">
                 <h2>Environment Monitoring</h2>
                 <p>Monitor and analyze indoor and outdoor environments using a wide range of sensors. ThingsBoard supports data acquisition using modern connectivity technologies and protocols: NB IoT, LoRaWAN, SigFox, MQTT, CoAP, HTTP, LwM2M, and others.</p>
-                <a class="read-more-button" href="/use-cases/environment-monitoring/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/use-cases/environment-monitoring/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/use-cases/environment-monitoring/">
@@ -142,7 +142,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="https://img.thingsboard.io/usecases/environment-monitoring/video/environment-monitoring.png">
+                            <img src="https://img.thingsboard.io/usecases/environment-monitoring/video/environment-monitoring.png" alt="environment monitoring">
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
@@ -150,7 +150,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/environment-monitoring.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>
@@ -158,7 +158,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
             <div class="item-description">
                 <h2>Smart Office</h2>
                 <p>Ensure employee health and safety to boost organization productivity. Optimize resource consumption by monitoring and control of the office indoor climate. ThingsBoard provides rich data visualization, powerful processing engine, remote control and OTA updates capabilities.</p>
-                <a class="read-more-button" href="/use-cases/smart-office/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/use-cases/smart-office/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/use-cases/smart-office/">
@@ -169,7 +169,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="https://img.thingsboard.io/usecases/smart-office/video/smart-office.png">
+                            <img src="https://img.thingsboard.io/usecases/smart-office/video/smart-office.png" alt="smart office">
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
@@ -177,7 +177,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/smart-office.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>
@@ -185,7 +185,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
             <div class="item-description">
                 <h2>Water Metering</h2>
                 <p>Enable water consumption data collection, analysis and fraud detection using ThingsBoard. Use interactive dashboards that allow administrators and end-users to browse the state of the water meters and aggregated water consumption statistics. Enable alarms over SMS and email and integrate with external billing systems.</p>
-                <a class="read-more-button" href="/use-cases/water-metering/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/use-cases/water-metering/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/use-cases/water-metering/">
@@ -196,7 +196,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="https://img.thingsboard.io/usecases/water-metering/video/water-metering.png">
+                            <img src="https://img.thingsboard.io/usecases/water-metering/video/water-metering.png" alt="water metering">
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
@@ -204,7 +204,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/water-metering.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>
@@ -212,7 +212,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
             <div class="item-description">
                 <h2>Smart Retail</h2>
                 <p>Control quality of food storage by monitoring chillers and freezers. Ensure availability of the goods using smart shelves. Ensure safety using motion detection and fire alarms. ThingsBoard provides a solution template to monitor supermarket assets, browse historical data and generate alarms based on user-defined thresholds.</p>
-                <a class="read-more-button" href="/use-cases/smart-retail/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/use-cases/smart-retail/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/use-cases/smart-retail/">
@@ -223,7 +223,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="https://img.thingsboard.io/usecases/smart-retail/video/smart-retail.png">
+                            <img src="https://img.thingsboard.io/usecases/smart-retail/video/smart-retail.png" alt="smart retail">
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
@@ -231,7 +231,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/smart-retail.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>
@@ -239,7 +239,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
             <div class="item-description">
                 <h2>Air Quality Monitoring</h2>
                 <p>Monitor outdoor air quality using a wide range of sensors. Solution provides general recommendations in a user-friendly manner. Manage air control stations using the Administration Dashboard.</p>
-                <a class="read-more-button" href="/use-cases/air-quality-monitoring/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/use-cases/air-quality-monitoring/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/use-cases/air-quality-monitoring/">
@@ -250,7 +250,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="https://img.thingsboard.io/usecases/air-quality/video/air-quality.png">
+                            <img src="https://img.thingsboard.io/usecases/air-quality/video/air-quality.png" alt="air quality">
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
@@ -258,7 +258,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/air-quality.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>
@@ -266,7 +266,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
             <div class="item-description">
                 <h2>Smart Irrigation</h2>
                 <p>Monitor the irrigation system and respond in time to changes in field conditions. List the fields and monitor their soil moisture, location, statistics, etc.</p>
-                <a class="read-more-button" href="/use-cases/smart-irrigation/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/use-cases/smart-irrigation/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/use-cases/smart-irrigation/">
@@ -277,7 +277,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="https://img.thingsboard.io/usecases/smart-irrigation/video/smart-irrigation.png">
+                            <img src="https://img.thingsboard.io/usecases/smart-irrigation/video/smart-irrigation.png" alt="smart irrigation">
                         </div>
                         <div class="frame-video">
                             <video autoplay loop preload="auto" muted playsinline>
@@ -285,7 +285,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                                  <source src="https://video.thingsboard.io/usecases/smart-irrigation.webm" type="video/webm">
                             </video>
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>
@@ -293,7 +293,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
             <div class="item-description">
                 <h2>Waste Management</h2>
                 <p>Optimize waste management operations with our solution.  Streamline processes, monitor waste levels, and track data for efficient and sustainable practices. </p>
-                <a class="read-more-button" href="/use-cases/waste-management/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg"></a>
+                <a class="read-more-button" href="/use-cases/waste-management/">More information<img class="arrow first" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="https://img.thingsboard.io/pe/read-more-arrow.svg" alt="arrow third"></a>
             </div>
             <div class="item-image-container">
                 <a class="img-button" href="/use-cases/waste-management/">
@@ -304,9 +304,9 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-1.png">
+                            <img src="https://img.thingsboard.io/solutions/waste_monitoring/waste-monitoring-1.png" alt="waste monitoring">
                         </div>
-                    </div>                
+                    </div>
                 </a>
             </div>
         </div>

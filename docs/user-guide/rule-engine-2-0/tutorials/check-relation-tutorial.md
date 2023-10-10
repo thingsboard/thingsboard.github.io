@@ -19,7 +19,7 @@ Let’s assume the following use case:
    
    - **Fire Alarm System** which provides a fire alarm, when the smoke is present.
    
-However, there are different ways for the realization of this case, for example, it can be implemented using the **Switch** node that routes incoming Message to one or multiple output chains.<br/>
+However, there are different ways for the realization of this case, for example, it can be implemented using the **Switch** node that routes incoming Message to one or multiple output chains.<br>
 For more information about how to use the **Switch** node, please check the link to **The article of Switch Node** in the  [**See Also**](/docs/user-guide/rule-engine-2-0/tutorials/check-relation-tutorial/#see-also) section.   
  
 ## Prerequisites
@@ -43,10 +43,10 @@ You need to read the following guides before you start this tutorial:
   
   The following screenshots show how to do this:
   
-   ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/smoke-sensor.png) ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/fire-alarm-system.png) <br/>
+   ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/smoke-sensor.png) ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/fire-alarm-system.png) <br>
    ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/add-relation.png)
    
-<br/>
+<br>
 
 # Message flow  
 
@@ -69,13 +69,13 @@ In this section, we explain the purpose of each node in this tutorial:
 - Node H: **Rule Chain** node.
   - Forwards incoming Message to specified Rule Chain **Related Fire Alarm System**. 
 
-<br/>
+<br>
   
 # Configure Rule Chains
 
 In this tutorial, we modified our **Root Rule Chain** and also created Rule Chain **Related Fire Alarm System**
 
-<br/>The following screenshots show how the above Rule Chains should look like:
+<br>The following screenshots show how the above Rule Chains should look like:
  
   - **Related Fire Alarm System:**
 
@@ -85,17 +85,17 @@ In this tutorial, we modified our **Root Rule Chain** and also created Rule Chai
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/chain.png)
 
-<br/> 
+<br> 
 
 Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/check-relation-tutorial.json) for the **Root Rule Chain**. Don't forget to mark this rule chain as **root**.
 
-<br/> 
+<br> 
   
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/root-chain.png)
 
 Also, you need to create **Related Fire Alarm System** Rule Chain or you can download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/related_fire_alarm_system.json) for this Chain and import it.
-<br/>
-<br/>
+<br>
+<br>
 
  The following section shows you how to create it.
 
@@ -117,7 +117,7 @@ In this rule chain, you will create 4 nodes as it will be explained in the follo
 
 ###### Node A: **Check Relation**
 
- - Add the **Check Relation** node and connect it to the **Input** node.<br/>
+ - Add the **Check Relation** node and connect it to the **Input** node.<br>
 
     This node will check the relation from the Device, **Fire Alarm System**, to the originator of the message **Smoke Detector** using the type and direction of relation. 
     If the relation exists, the message will be sent through the True chain.
@@ -294,8 +294,8 @@ The following screenshot shows how the final **Root Rule Chain** should look lik
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/view-chain.png)
 
-<br/>
-<br/>
+<br>
+<br>
 
 # How to verify the Rule Chain and Post telemetry
 
@@ -316,11 +316,11 @@ curl -v -X POST -d '{"smoke":"true"}' http://demo.thingsboard.io/api/v1/$ACCESS_
 
 **you need to replace $ACCESS_TOKEN with the actual device token**
 {% endhighlight %}
-<br/>
+<br>
 
   ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/smoke-telemetry.png)![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/fire-alarm-telemetry.png)
 
-<br/>
+<br>
 Also, you can:
 
   - configure the Dashboard by adding an alarm widget to visualize the alarms.
@@ -329,7 +329,7 @@ Also, you can:
 
 Please refer to the third and fourth links under the **See Also** section to see how to do this.
   
-<br/>
+<br>
 
 # See Also
 

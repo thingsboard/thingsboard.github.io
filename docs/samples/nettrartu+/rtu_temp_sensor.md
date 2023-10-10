@@ -18,7 +18,7 @@ This guide contains step-by-step instructions on how to connect your Nettra RTU 
 The RTU+ is easly configurable via a [RTU+ Configuration Interface](https://nettra.atlassian.net/wiki/spaces/RTU/pages/26083766/Software). To adapt the RTU+ to each application, it runs a fully customizable script, accessible and editable from the Configuration Interface. In this guide we will provide one as an example quite simple and easy to understand.
 
 Once you complete this sample/tutorial, you will see your sensor data on a dashboard like the following on the right.
-<br /><br/>
+<br><br>
 ![image](https://img.thingsboard.io/samples/nettrartu+/nettrartu+.png)   ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/dashboard.png)
 
 ## Prerequisites
@@ -38,7 +38,7 @@ Once you complete this sample/tutorial, you will see your sensor data on a dashb
 ## Connection diagram
 
 The following picture summarizes the connections for this simple project:
-<br/><br/>
+<br><br>
 
 ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/connection_diagram.png)
 
@@ -52,12 +52,12 @@ Sign up ThingsBoard Web UI as [live-demo](https://demo.thingsboard.io/signup). S
 
 1. Go to *"Devices"* section. 
 2. Click *"+"* button and create a device with the name **"RTU+"**. Set *"Device type"* to **"default"**.
-<br/><br/>
+<br><br>
 ![image](https://img.thingsboard.io/samples/nettrartu+/device.png)
-<br/><br/>
+<br><br>
 3. Once device created, open its details and click *"Manage credentials"*.
 4. Copy auto-generated access token from the *"Access token"* field. Please save this device token. It will be referred to later as **$RTU_DEMO_TOKEN**.
-<br/><br/>
+<br><br>
  ![image](https://img.thingsboard.io/samples/nettrartu+/credentials.png)
 
 ### Dashboard
@@ -102,21 +102,21 @@ Once you have your RTU+ connected to the PC, we can proceed with its configurati
 1. Go to *"Comunicaciones"*.
 2. Click *"MQTT y Hora"*.
 3. Fill the ***MQTT*** boxes as follow:
-   <br/><br/>
-   **Interfaz** : Ethernet &nbsp;&nbsp; **Puerto** : 1883<br/>
-   **Servidor** : ThingsBoard HOST/IP address that is accessible within your local network. Specify `demo.thingsboard.io` if you are using [live demo](https://demo.thingsboard.io/) server.<br/>
-   **Usuario** : $RTU_DEMO_TOKEN (provided in *Device* subsection)<br/>
-   **Contraseña** : Leave empty<br/>
-   **Client ID** : RTU+<br/>
-   **Telemetry Topic** : v1/devices/me/telemetry<br/>
-   **Attributes Topic** : v1/devices/me/attributes<br/>
-   **Formato** : Telemetry+<br/>
+   <br><br>
+   **Interfaz** : Ethernet &nbsp;&nbsp; **Puerto** : 1883<br>
+   **Servidor** : ThingsBoard HOST/IP address that is accessible within your local network. Specify `demo.thingsboard.io` if you are using [live demo](https://demo.thingsboard.io/) server.<br>
+   **Usuario** : $RTU_DEMO_TOKEN (provided in *Device* subsection)<br>
+   **Contraseña** : Leave empty<br>
+   **Client ID** : RTU+<br>
+   **Telemetry Topic** : v1/devices/me/telemetry<br>
+   **Attributes Topic** : v1/devices/me/attributes<br>
+   **Formato** : Telemetry+<br>
 4. Fill the ***Time Synchronization*** boxes as follow:
-   <br/><br/>
-   **Interfaz** : NTP Ethernet<br/>
-   **Servidor** : ThingsBoard HOST/IP address that is accessible within your local network. Specify `demo.thingsboard.io` if you are using [live demo](https://demo.thingsboard.io/) server.<br/>
-   **Frecuencia** : 10<br/>
-   **Huso** : Write your time zone<br/>
+   <br><br>
+   **Interfaz** : NTP Ethernet<br>
+   **Servidor** : ThingsBoard HOST/IP address that is accessible within your local network. Specify `demo.thingsboard.io` if you are using [live demo](https://demo.thingsboard.io/) server.<br>
+   **Frecuencia** : 10<br>
+   **Huso** : Write your time zone<br>
 
 5. Click *"Aplicar cambios"* to save.
 
@@ -141,14 +141,14 @@ Once you have your RTU+ connected to the PC, we can proceed with its configurati
 
 2. Here we have two possibles configurations, depending on your temperature sensor.
 
-   If your temperature sensor output range is between **4-20mA** :<br/>
-   Select *"Corriente"* in *"Entrada Analógica 0: "*. Fill *"X0"* with **"819"** and *"X1"* with **"4096"**. Fill *"Y0"* with minimum sensor temperature and *"Y1"* with maximum sensor temperature.<br/>
+   If your temperature sensor output range is between **4-20mA** :<br>
+   Select *"Corriente"* in *"Entrada Analógica 0: "*. Fill *"X0"* with **"819"** and *"X1"* with **"4096"**. Fill *"Y0"* with minimum sensor temperature and *"Y1"* with maximum sensor temperature.<br>
    Example: Sensor Range: -10°C to 100°C. *"X0" = 819*, *"Y0" = -10*, *"X1" = 4096* and *"Y1" = 100*
 
    ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/current_input.png)
 
-   If your temperature sensor output range is between **0-20V** :<br/>
-   Select *"Tensión"* in *"Entrada Analógica 0: "*. Fill *"X0"* with **"0"** and *"X1"* with **"4096"**. Fill *"Y0"* with minimum sensor temperature and *"Y1"* with maximum sensor temperature.<br/>
+   If your temperature sensor output range is between **0-20V** :<br>
+   Select *"Tensión"* in *"Entrada Analógica 0: "*. Fill *"X0"* with **"0"** and *"X1"* with **"4096"**. Fill *"Y0"* with minimum sensor temperature and *"Y1"* with maximum sensor temperature.<br>
    Example: Sensor Range: -10°C to 100°C. *"X0" = 0*, *"Y0" = -10*, *"X1" = 4096* and *"Y1" = 100*
 
    ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/voltage_input.png)
@@ -207,12 +207,12 @@ while(1)
 Finally, open ThingsBoard Web UI in the Live Demo server with same user and password as *ThingsBoard configuration* section.
 
 Go to *"Devices"* section and locate *"RTU+ Device"*, open device details and switch to *"Latest telemetry"* tab.
-If all is configured correctly you should be able to see latest values of *"temperature"* in the table.<br/><br/>
+If all is configured correctly you should be able to see latest values of *"temperature"* in the table.<br><br>
 
 ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/telemetry_table.png)
 
 After, open *"Dashboards"* section then locate and open *"RTU+"* dashboard.
-As a result, you will see a time-series chart displaying temperature level (similar to dashboard image in the introduction).<br/><br/>
+As a result, you will see a time-series chart displaying temperature level (similar to dashboard image in the introduction).<br><br>
 
 ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/dashboard.png)
 

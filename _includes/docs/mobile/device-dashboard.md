@@ -28,7 +28,7 @@ To verify your configuration run the mobile app. Then navigate to the devices li
     <div class="mobile-frame ios">
         <div class="phone-shadow right"></div>
         <div class="frame-image">
-            <img src="https://img.thingsboard.io/mobile/{{docsPrefix}}device-dashboard-frame.png">
+            <img src="https://img.thingsboard.io/mobile/{{docsPrefix}}device-dashboard-frame.png" alt="device dashboard frame">
         </div>
         <div class="frame-video">
             <video autoplay loop preload="auto" muted playsinline>

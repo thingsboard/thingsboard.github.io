@@ -239,9 +239,9 @@ Output connection types: "True" or "False".
 
 **Examples**
  
-Message payload can be accessed via <code>msg</code> variable. For example <code>msg.temperature < 10;</code><br/> 
-Message metadata can be accessed via <code>metadata</code> variable. For example <code>metadata.deviceType === 'DHT11';</code><br/> 
-Message type can be accessed via <code>msgType</code> variable. For example <code>msgType === 'POST_TELEMETRY_REQUEST'</code><br/> 
+Message payload can be accessed via <code>msg</code> variable. For example <code>msg.temperature < 10;</code><br> 
+Message metadata can be accessed via <code>metadata</code> variable. For example <code>metadata.deviceType === 'DHT11';</code><br> 
+Message type can be accessed via <code>msgType</code> variable. For example <code>msgType === 'POST_TELEMETRY_REQUEST'</code><br> 
 
 Full script example:
 
@@ -292,9 +292,9 @@ See rule node [connections](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overv
 
 **Examples**
 
-Message payload can be accessed via <code>msg</code> variable. For example <code>msg.temperature < 10;</code><br/> 
-Message metadata can be accessed via <code>metadata</code> variable. For example <code>metadata.customerName === 'John';</code><br/> 
-Message type can be accessed via <code>msgType</code> variable. For example <code>msgType === 'POST_TELEMETRY_REQUEST'</code><br/> 
+Message payload can be accessed via <code>msg</code> variable. For example <code>msg.temperature < 10;</code><br> 
+Message metadata can be accessed via <code>metadata</code> variable. For example <code>metadata.customerName === 'John';</code><br> 
+Message type can be accessed via <code>msgType</code> variable. For example <code>msgType === 'POST_TELEMETRY_REQUEST'</code><br> 
 
 Full script example:
 

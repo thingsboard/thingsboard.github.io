@@ -16,7 +16,7 @@ description: Installing ThingsBoard PE on Azure
                         You may deploy ThingsBoard IoT Platform with different infrastructure setup
                     </p>
                 </div>
-            </div>            
+            </div>
             <div class="deployment-container one-line-deployment-container">
                 <div class="deployment-div">
                     <div class="container">
@@ -43,11 +43,11 @@ description: Installing ThingsBoard PE on Azure
                                            </span>
                                        </a>
                                    </div>
-                                </div>                     
-                            </div>                        
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
           </div>
        </div>

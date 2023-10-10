@@ -192,7 +192,7 @@ Now you can proceed to the next steps.
 
 Customer may still use <a href="https://thingsboard.cloud" target="blank">ThingsBoard Cloud</a> for that. 
 30 days of seamless experience and the newest features, except white-labeling, from the latest source code!
-<br/><br/>
+<br><br>
 
 **What is the Total Cost of Ownership (TCO) for my TB PE instance?**
 
@@ -216,35 +216,35 @@ Customer may still use <a href="https://thingsboard.cloud" target="blank">Things
 </ul>
 <p>All prices are in USD.</p>
 
-<br/>
+<br>
 
 
 **How to connect to my new ThingsBoard PE instance using SSH?**
 
 See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AccessingInstancesLinux.html">official documentation page</a> for more details.
-<br/><br/>
+<br><br>
 
 **How to connect to my new ThingsBoard PE instance using PuTTY?**
 
 See <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/putty.html">official documentation page</a> for more details.
-<br/><br/>
+<br><br>
 
 **How to enable HTTPS?**
 
 See <a href="/docs/user-guide/install/pe/aws/#post-installation-steps">Post-installation steps</a>
-<br/><br/>
+<br><br>
 
 **How do I configure my TB PE instance?**
 
 See <a href="/docs/user-guide/install/config/">official documentation page</a> for more details.
 
-<br/>
+<br>
 
 **How do I get software updates for my TB PE instance?**
 
 You will receive an email notification about new software versions once it becomes available. 
 This email notification will contain a link to <a href="/docs/user-guide/install/aws-marketplace-pe-upgrade/">official documentation page</a> with the upgrade instructions.
-<br/><br/>
+<br><br>
 
 **How do I backup my database?**
 Depending on your instance type and configuration, ThingsBoard may store data in SQL or NoSQL databases. 
@@ -253,23 +253,23 @@ Please review <a href="/docs/reference/#sql-vs-nosql-vs-hybrid-database-approach
 Once you figure out the database type(s) you are using in your instance, you can review official <a href="https://www.postgresql.org/docs/9.1/backup.html">PostgreSQL</a> 
 or <a href="https://docs.datastax.com/en/cassandra/3.0/cassandra/operations/opsBackupRestore.html">Cassandra</a> documentation. 
 There is also planty of docs and tools in the web how you can backup and restore your DB. 
-<br/><br/>
+<br><br>
 
 **How do I upgrade my instance type?**
 
 See official License Server <a href="/products/license-server/">documentation page</a> for more details.
-<br/><br/>
+<br><br>
 
 **Where is my ThingsBoard instance logs?**
 
 ThingsBoard logs are stored in the <i>/var/log/thingsboard</i> folder. 
 See <a href="/docs/user-guide/install/config/#logging">configuration page</a> to find out how to configure logging levels.
-<br/><br/>
+<br><br>
 
 **How do I get professional support?**
 
 Please review ThingsBoard professional <a href="/docs/services/support/">support plans</a> and <a href="/docs/contact-us/">contact us</a>.
-<br/><br/>
+<br><br>
 
 ### Next steps
 

@@ -16,7 +16,7 @@ notitle: "true"
                         ThingsBoard IoT Gateway is designed to run and utilize on majority of hardware, from single-board computers like Raspberry Pi to powerful Edge Gateways for IoT
                     </p>
                 </div>
-            </div>            
+            </div>
             <div class="deployment-container one-line-deployment-container">
                 <div class="deployment-div">
                     <div class="container">
@@ -76,12 +76,12 @@ notitle: "true"
                                                  </div>
                                             </span>
                                         </a>
-                                    </div>                                    
-                               </div>                    
-                            </div>                        
+                                    </div>
+                               </div>
+                            </div>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
           </div>
        </div>

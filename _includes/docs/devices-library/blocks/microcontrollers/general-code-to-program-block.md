@@ -5,20 +5,17 @@ To do this, you can use the code below. It contains all required functionality f
 
 ```cpp
 #if defined(ESP8266)
-  #include <ESP8266WiFi.h>
-  #define THINGSBOARD_ENABLE_PROGMEM 0
+#include <ESP8266WiFi.h>
+#define THINGSBOARD_ENABLE_PROGMEM 0
 #elif defined(ESP32) || defined(RASPBERRYPI_PICO) || defined(RASPBERRYPI_PICO_W)
-  #include <WiFi.h>
-  #include <WiFiClientSecure.h>
+#include <WiFi.h>
 #endif
-
-#define THINGSBOARD_ENABLE_PSRAM 0
-#define THINGSBOARD_ENABLE_DYNAMIC 1
 
 #ifndef LED_BUILTIN
 #define LED_BUILTIN 99
 #endif
 
+#include <Arduino_MQTT_Client.h>
 #include <ThingsBoard.h>
 
 constexpr char WIFI_SSID[] = "YOUR_WIFI_SSID";
@@ -44,8 +41,10 @@ constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 
 // Initialize underlying client, used to establish a connection
 WiFiClient wifiClient;
+// Initalize the Mqtt client instance
+Arduino_MQTT_Client mqttClient(wifiClient);
 // Initialize ThingsBoard instance with the maximum needed buffer size
-ThingsBoard tb(wifiClient, MAX_MESSAGE_SIZE);
+ThingsBoard tb(mqttClient, MAX_MESSAGE_SIZE);
 
 // Attribute names for attribute request and attribute updates functionality
 
@@ -157,13 +156,15 @@ void processSharedAttributes(const Shared_Attribute_Data &data) {
       const uint16_t new_interval = it->value().as<uint16_t>();
       if (new_interval >= BLINKING_INTERVAL_MS_MIN && new_interval <= BLINKING_INTERVAL_MS_MAX) {
         blinkingInterval = new_interval;
-        Serial.print("Updated blinking interval to: ");
+        Serial.print("Blinking interval is set to: ");
         Serial.println(new_interval);
       }
-    } else if(strcmp(it->key().c_str(), LED_STATE_ATTR) == 0) {
+    } else if (strcmp(it->key().c_str(), LED_STATE_ATTR) == 0) {
       ledState = it->value().as<bool>();
-      digitalWrite(LED_BUILTIN, ledState ? HIGH : LOW);
-      Serial.print("Updated state to: ");
+      if (LED_BUILTIN != 99) {
+        digitalWrite(LED_BUILTIN, ledState);
+      }
+      Serial.print("LED state is set to: ");
       Serial.println(ledState);
     }
   }
@@ -179,20 +180,22 @@ void processClientAttributes(const Shared_Attribute_Data &data) {
   }
 }
 
-const Shared_Attribute_Callback attributes_callback(SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend(), &processSharedAttributes);
-const Attribute_Request_Callback attribute_shared_request_callback(SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend(), &processSharedAttributes);
-const Attribute_Request_Callback attribute_client_request_callback(CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend(), &processClientAttributes);
+const Shared_Attribute_Callback attributes_callback(&processSharedAttributes, SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend());
+const Attribute_Request_Callback attribute_shared_request_callback(&processSharedAttributes, SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend());
+const Attribute_Request_Callback attribute_client_request_callback(&processClientAttributes, CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend());
 
 void setup() {
   // Initalize serial connection for debugging
-  Serial.begin(115200);
-  pinMode(LED_BUILTIN, OUTPUT);
+  Serial.begin(SERIAL_DEBUG_BAUD);
+  if (LED_BUILTIN != 99) {
+    pinMode(LED_BUILTIN, OUTPUT);
+  }
   delay(1000);
   InitWiFi();
 }
 
 void loop() {
-//  delay(10);
+  delay(10);
 
   if (!reconnect()) {
     return;
@@ -210,7 +213,7 @@ void loop() {
     }
     // Sending a MAC address as an attribute
     tb.sendAttributeData("macAddress", WiFi.macAddress().c_str());
-    
+
     Serial.println("Subscribing for RPC...");
     // Perform a subscription. All consequent data processing will happen in
     // processSetLedState() and processSetLedMode() functions,
@@ -254,12 +257,13 @@ void loop() {
   if (ledMode == 1 && millis() - previousStateChange > blinkingInterval) {
     previousStateChange = millis();
     ledState = !ledState;
-    digitalWrite(LED_BUILTIN, ledState);
     tb.sendTelemetryData(LED_STATE_ATTR, ledState);
     tb.sendAttributeData(LED_STATE_ATTR, ledState);
     if (LED_BUILTIN == 99) {
       Serial.print("LED state changed to: ");
       Serial.println(ledState);
+    } else {
+      digitalWrite(LED_BUILTIN, ledState);
     }
   }
 

@@ -264,6 +264,8 @@ toc:
     path: /docs/pe/user-guide/ui/sms-provider-settings/
   - title: Slack Settings
     path: /docs/pe/user-guide/ui/slack-settings/
+  - title: Microsoft Teams Settings
+    path: /docs/pe/user-guide/ui/microsoft-teams-settings/
     new: true
   - title: Mail Settings
     path: /docs/pe/user-guide/ui/mail-settings/

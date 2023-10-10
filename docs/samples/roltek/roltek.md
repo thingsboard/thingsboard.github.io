@@ -21,13 +21,13 @@ Login to your ThingsBoard platform and ppen "**Devices**" page.
 
 ![image](https://img.thingsboard.io/samples/roltek/tb1.png)
 
-<br/>
+<br>
 Click "**plus**" button then click "**Add new device**" button to add new device.
 **Enter name** for your device. Then click "**Next: Credentials**" button;
 
 ![image](https://img.thingsboard.io/samples/roltek/tb3.png)
 
-<br/>
+<br>
 Enable "**Add credentials**" option. Enter the desirable **Access Token** and click "**Add**" button to save changes.
 
 ![image](https://img.thingsboard.io/samples/roltek/tb4.png)
@@ -44,14 +44,14 @@ On the "**MQTT Settings**" page:
 
 ![image](https://img.thingsboard.io/samples/roltek/tb5.png)
 
-<br/>
+<br>
 Users can add **Nodes** and **Tags** as described in the user manual. In this demo we will work with device’s default node and tags.
 
 On the **Rules** page navigate to the **MQTT Payloads** tab and click Add **MQTT Payload** button.
 
 ![image](https://img.thingsboard.io/samples/roltek/tb6.png)
 
-<br/>
+<br>
 In new window enter values:
  - Select **Payload Type** - **JSON**;
  - Enter "**{**" to **Header**;
@@ -62,12 +62,12 @@ In new window enter values:
 
 ![image](https://img.thingsboard.io/samples/roltek/tb7.png)
 
-<br/>
+<br>
 On the **Rules** page navigate to the **MQTT Publishers** tab and click **Add MQTT Publisher** button.
 
 ![image](https://img.thingsboard.io/samples/roltek/tb8.png)
 
-<br/>
+<br>
 In new window enter values:
  - Enter publish period you want to **Period**;
  - Choose **QoS** option you want;
@@ -92,17 +92,17 @@ To access it you should follow these steps:
 
 ![image](https://img.thingsboard.io/samples/roltek/tb10.png)
 
-<br/>
+<br>
 Choose widget bundle accordingly to your data. Choose suitable chart for your data visualization. Click "**Add to dashboard**" button.
 
 ![image](https://img.thingsboard.io/samples/roltek/tb11.png)
 
-<br/>
+<br>
 Now select "**Create new dashboard**". Mark "**Open dashboard**" (with this option enabled after addition you will be redirected to newly created dashboard) and click "**Add**" to create new dashboard.
 
 ![image](https://img.thingsboard.io/samples/roltek/tb12.png)
 
-<br/>
+<br>
 ![image](https://img.thingsboard.io/samples/roltek/tb13.png)
 
 ## Next steps

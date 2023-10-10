@@ -41,7 +41,7 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain.
 
-<br/>
+<br>
 
 # Remove From Group Node
 
@@ -77,7 +77,7 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain.
 
-<br/>
+<br>
 
 # Generate Report Node
 
@@ -135,7 +135,7 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain.
 
-<br/>
+<br>
 
 # Integration Downlink Node
 
@@ -163,7 +163,7 @@ Configuration:
 
 **Failure** chain is used if Message push to Integration will fail, otherwise **Success** chain.
 
-<br/>
+<br>
 
 # REST Call Reply Node
 
@@ -187,7 +187,7 @@ Configuration:
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply-config.png)
 
-<br/>
+<br>
 
 # Change Owner Node
 
@@ -221,4 +221,4 @@ Rule node finds target Owner by owner name pattern and then change the owner of 
 
 If an entity already belongs to this owner or entity owner is successfully changed - Message sent via **Success** chain, otherwise, **Failure** chain will be used.
 
-<br/>
+<br>

@@ -158,10 +158,10 @@ In the function decoder field, specify a script to parse and transform data.
 Choose device payload type to for decoder configuration:
 
 {% capture uplinkpayload %}
-Text payload<br/>%,%text%,%templates/integration/udp/udp-uplink-converter-text.md%br%
-JSON payload<br/>%,%json%,%templates/integration/udp/udp-uplink-converter-json.md%br%
-Binary payload<br/>%,%binary%,%templates/integration/udp/udp-uplink-converter-binary.md%br%
-Hex payload<br/>%,%hex%,%templates/integration/udp/udp-uplink-converter-hex.md{% endcapture %}
+Text payload<br>%,%text%,%templates/integration/udp/udp-uplink-converter-text.md%br%
+JSON payload<br>%,%json%,%templates/integration/udp/udp-uplink-converter-json.md%br%
+Binary payload<br>%,%binary%,%templates/integration/udp/udp-uplink-converter-binary.md%br%
+Hex payload<br>%,%hex%,%templates/integration/udp/udp-uplink-converter-hex.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="udpintegartionuplinkpayload" toggle-spec=uplinkpayload %}
 
@@ -225,10 +225,10 @@ We leave other options by default, but there is brief description of them:
 Choose device payload type for **Handler Configuration**:
 
 {% capture handlerconfiguration %}
-Text payload<br/>%,%text%,%templates/integration/udp/udp-handler-configuration-text.md%br%
-JSON payload<br/>%,%json%,%templates/integration/udp/udp-handler-configuration-json.md%br%
-Binary payload<br/>%,%binary%,%templates/integration/udp/udp-handler-configuration-binary.md%br%
-Hex payload<br/>%,%hex%,%templates/integration/udp/udp-handler-configuration-hex.md{% endcapture %}
+Text payload<br>%,%text%,%templates/integration/udp/udp-handler-configuration-text.md%br%
+JSON payload<br>%,%json%,%templates/integration/udp/udp-handler-configuration-json.md%br%
+Binary payload<br>%,%binary%,%templates/integration/udp/udp-handler-configuration-binary.md%br%
+Hex payload<br>%,%hex%,%templates/integration/udp/udp-handler-configuration-hex.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="udpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
 
@@ -265,10 +265,10 @@ Once ThingsBoard UDP Integration has been created, the UDP server starts, and th
 Choose device payload type to send uplink message:
 
 {% capture senduplink %}
-Text payload<br/>%,%text%,%templates/integration/udp/udp-send-uplink-text.md%br%
-JSON payload<br/>%,%json%,%templates/integration/udp/udp-send-uplink-json.md%br%
-Binary payload<br/>%,%binary%,%templates/integration/udp/udp-send-uplink-binary.md%br%
-Hex payload<br/>%,%hex%,%templates/integration/udp/udp-send-uplink-hex.md{% endcapture %}
+Text payload<br>%,%text%,%templates/integration/udp/udp-send-uplink-text.md%br%
+JSON payload<br>%,%json%,%templates/integration/udp/udp-send-uplink-json.md%br%
+Binary payload<br>%,%binary%,%templates/integration/udp/udp-send-uplink-binary.md%br%
+Hex payload<br>%,%hex%,%templates/integration/udp/udp-send-uplink-hex.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="udpintegrationsenduplink" toggle-spec=senduplink %}
 

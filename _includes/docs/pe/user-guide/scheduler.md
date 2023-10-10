@@ -10,7 +10,7 @@ from the event configuration which has a similar structure with a Rule Engine Me
 Generated message is then forwarded to [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) and processed starting from
 the [Root Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain).
 
-<br/>
+<br>
 
 ![image](https://img.thingsboard.io/user-guide/scheduler.svg)
 
@@ -18,7 +18,7 @@ the [Root Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#r
 
 See video tutorial below for step-by-step instruction how to use this feature.
 
-<br/>
+<br>
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/RnHAao8yET4" frameborder="0" allowfullscreen></iframe>

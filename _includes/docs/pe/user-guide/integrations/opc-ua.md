@@ -65,7 +65,7 @@ However, you can use another mapping in your specific use cases.
 
 Also, we will retrieve the values of the *temperature*, *humidity* and *powerConsumption* fields and use them as device telemetries.
 
-<br/>
+<br>
 Go to the **Integrations center** section -> **Data converters** page and create a new uplink converter
 
 {% include templates/tbel-vs-js.md %}
@@ -102,7 +102,7 @@ downlink Converter.
         - *args* - array of method input values
 - *metadata* - not used in case of OPC UA Integration and can be empty.
 
-<br/>
+<br>
 Go to the **Integrations center** section -> **Data converters** page and create a new downlink converter.
 
 {% include templates/tbel-vs-js.md %}
@@ -213,14 +213,14 @@ To visualize the Airconditioners data and test RPC commands, we will create the 
 
 See video tutorial below for step-by-step instruction how to setup OPC-UA Integration.
 
-<br/>
+<br>
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/KK0gXGXFQ0E" frameborder="0" allowfullscreen></iframe>
     </div>
 </div> 
 
-<br/>
+<br>
 # See also
 
 - [Integration Overview](/docs/{{peDocsPrefix}}user-guide/integrations/)
