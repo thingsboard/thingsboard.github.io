@@ -12,9 +12,11 @@ All IoT dashboards are constructed using ThingsBoard widgets.
 A widget is an element that displays a specific type of information or functionality on a dashboard. 
 Widgets are used to display data and visualize information obtained from devices connected to the ThingsBoard platform, remote device control, alarms management, and display static custom HTML content.
 
+### Widget types
+
 There are five types of widgets:
 
-* **Timeseries** widgets display data for a specific time window. It can be either Realtime - the dynamically changed time frame for a certain latest interval, or History - a fixed historical time frame;  
+* **Timeseries** widgets display data for a specific time window. It can be either Realtime - the dynamically changed time frame for a certain latest interval, or History - a fixed historical time frame.  
   Examples of timeseries widgets are chart widgets. Obviously, timeseries widgets are designed to display time series and not attributes;
 * **Latest values** widgets display the latest values of particular [attribute](/docs/{{docsPrefix}}user-guide/attributes/) or [time series](/docs/{{docsPrefix}}user-guide/telemetry/) keys. For example, device model or latest temperature reading;
 * **Control** widgets allow you to send [RPC commands](/docs/{{docsPrefix}}user-guide/rpc/) to your devices. For example, control desired temperature on the thermostat device;
@@ -52,7 +54,7 @@ This action saves the configuration file of the JSON format with all the setting
 
 ## Widget settings
 
-Widget settings consists of one or multiple data sources, appearance settings, widget card settings, actions, and mobile appearance that you can customize and perform on the widget’s content.
+Widget settings consist of one or multiple data sources, appearance settings, widget card settings, actions, and mobile appearance that you can customize and perform on the widget’s content.
 
 {% capture difference %}
 **Please note**
@@ -104,8 +106,8 @@ There are three main types of data sources: **Device**, **Entity**, and **Functi
 Additionally, for some widgets (such as the Value card), there are additional data source types, such as **Entities count** and **Alarms count**.
 
 Below, we will discuss each of these types.
-<br>
 
+<br>
 **Device as the datasource**
 
 Specifying a device as the data source retrieves data from the specified device.
@@ -122,7 +124,7 @@ that in this case, the data source can only be a single device.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-**Entity as the data source**
+**Entity as the datasource**
 
 Specifying an entity as a data source fetches data from specified entity alias. 
 
@@ -132,7 +134,7 @@ Let’s get familiar with this feature using a basic example, displaying all exi
 
 <br>
 
-**Function as the data source**
+**Function as the datasource**
 
 Function as a data source is used when you do not have any data, but you'd like to test a widget visualization.
 Let's say you haven't added alias and haven't received any telemetry, but you want to see how a widget displays data.
@@ -169,19 +171,19 @@ The list of available attribute keys is basically a list of all client, server a
 The list of available time series keys depends on what time series data your devices [report](/docs/{{docsPrefix}}user-guide/telemetry/#device-telemetry-upload-api) to ThingsBoard
 or what time series data you have saved via rule engine or [REST API](/docs/{{docsPrefix}}reference/rest-api/).
 
-List of entity fields depends on the entity type and may extend in the future:
+The list of entity fields depends on the entity type and may extend in the future:
 
 * **Devices, assets and entity views** have the following fields: create time, entity type, name, type, label, additional info.
 * **User** has the following fields: created time, first name, last name, email and additional info.
 * **Customer** has the following fields: create time, entity type, email, title, country, state, city, address, zip code, phone, additional info.
 
-The data keys list for data source depends on the [widget type](/docs/{{docsPrefix}}user-guide/dashboards/#widget-types):
+The data keys list for data source depends on the [widget type](/docs/{{docsPrefix}}user-guide/widgets/#widget-types):
 
-* **Timeseries widgets** allow choosing time series data keys. Additionally, you can configure [timewindow](/docs/{{docsPrefix}}user-guide/dashboards/#time-window);
+* **Timeseries widgets** allow choosing time series data keys. Additionally, you can configure [timewindow](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window);
 * **Latest values widgets** allow choosing time series, attributes and entity fields;
 * **Static and Control widgets** do not require a data key;
 * **Alarm widgets** allow choosing all data keys: time series, attributes, entity and alarm fields.
-  Additionally, you can configure [timewindow](/docs/{{docsPrefix}}user-guide/dashboards/#time-window) and [alarm filter](/docs/{{docsPrefix}}user-guide/dashboards/#alarm-filter).
+  Additionally, you can configure [timewindow](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window) and [alarm filter](/docs/{{docsPrefix}}user-guide/widgets/#alarm-filter).
 
 To add a time series or attribute key to the data source, click on the data keys row and select the desired key from the dropdown menu.
 
@@ -388,11 +390,11 @@ While the legend is enabled, you have the flexibility to:
  - Select which data values to include (min, max, average, total);
  - Select to sort the data keys or keep them unsorted.
 
- - {% include images-gallery.html imageCollection="appearance-legend-settings-1" %}
+{% include images-gallery.html imageCollection="appearance-legend-settings-1" %}
 
 You may notice that the legend displays the [data key](/docs/{{docsPrefix}}user-guide/widgets/#data-keys) label for each configured data key.
 When you have data from multiple devices in the same widget, it is hard to find which device corresponds to which record in the legend or in the tooltip.
-In order to make the legend and tooltip clear, you should use "${entityName}" or "${entityLabel}" in the data key configuration.
+In order to make the legend and tooltip clear, you should use **${entityName}** or **${entityLabel}** in the data key configuration.
 
 {% include images-gallery.html imageCollection="appearance-legend-settings-2" %}
 

@@ -46,6 +46,7 @@ To add a new dashboard, you should:
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 At the stage of creating a dashboard, you can specify it to a different owner and a specific dashboard group right away.
+How to create a new group of dashboards, read [here](/docs/{{docsPrefix}}user-guide/groups/#create-new-entity-group).
 
 {% include images-gallery.html imageCollection="creating-dashboard-2" showListImageTitles="true" %}
 
@@ -112,8 +113,7 @@ In **ThingsBoard Professional Edition**, in addition to exporting the dashboard 
 ### Share dashboard group
 
 You can share a dashboard group with your customers, granting them permissions such as "Read", "Write", or using a previously created role. 
-Roles are sets of permissions that define what actions users can perform.
-For more information about roles read [here](/docs/{{docsPrefix}}user-guide/rbac/).
+Roles are sets of permissions that define what actions users can perform. For more information about roles read [here](/docs/{{docsPrefix}}user-guide/rbac/).
 
 To share a dashboard group, follow these steps:
 
@@ -129,7 +129,7 @@ You can make the dashboard public and share a link to it with other users.
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ### Make dashboard group public
 
-You can make the dashboard group and all its dashboards public and share links to those dashboards with other users.
+You can make the dashboard group and all its dashboards public and then share links to those dashboards with other users.
 {% endif %}
 
 For this you should:
@@ -213,7 +213,7 @@ You can hide these icons or configure the toolbar to be minimized by default usi
 
 To enter dashboard edit mode, simply open the dashboard you wish to edit and click the "Edit mode" button found in the upper right corner of the screen.
 
-Once you've switched to edit mode, you can access the dashboard toolbar to add new elements and access controls. 
+Once you've switched to edit mode, you access the dashboard toolbar to add new elements and access controls. 
 Don't forget to save your changes using the "Save" button, or if you decide to discard any unsaved edits, you can do so by clicking the "Cancel" button.
 
 {% include images-gallery.html imageCollection="edit-mode" %}
@@ -329,20 +329,14 @@ Please see the [Entity aliases documentation](/docs/{{docsPrefix}}user-guide/ui/
 ### Settings
 
 Dashboard settings allow adjusting and altering the overall look of the Dashboard. You can change the title, logo, and customize the toolbar.
-To start customizing the Dashboard enter the [Edit mode](#edit-mode).
-After entering the edit mode, click the “gear” icon at the top of the window, so the dashboard settings will be opened.
+
+To start customizing the Dashboard enter [Edit mode](#edit-mode), then click the "gear" icon in the upper right corner of the dashboard window to open the dashboard settings window.
 
 {% include images-gallery.html imageCollection="settings" %}
 
-**State controller**
-
-The first thing that can be changed is State controller. By default, it’s set to “entity”, so to use all the features and work with the Dashboard as comfortable as possible we need to leave it that way.
-
-{% include images-gallery.html imageCollection="settings-state-controller" %}
-
 **Title settings**
 
-If you’d like to see the Title of the Dashboard, you need to check the box "Display dashboard title". The default text color is black. 
+If you want the Title to be displayed on the dashboard, you need to enable the "Display dashboard title" checkbox. The default text color is black. 
 Color and transparency are easily adjusted using the Title color parameter by clicking the colored circle and choosing the desired color for the title by moving the slider. 
 The changed title appears on the top left of the Dashboard.
 
@@ -356,22 +350,22 @@ You can set dashboard logo which displayed in dashboard fullscreen mode. For thi
 
 **Toolbar settings**
 
-The checkboxes _Display dashboard selection, Display entities selection, Display filters, Display timewindow, Display export_ and _Display update dashboard image_
-are responsible for the visibility of the appropriate options on the Dashboard toolbar panel.
+The checkboxes "Display dashboard selection", "Display entities selection", "Display filters", "Display timewindow", "Display export" and "Display update dashboard image" are responsible for the visibility of the appropriate options on the Dashboard toolbar panel.
 
-_Display filters_ option is shown on the toolbar panel only when the one has been created. If the filter was created,
-but you'd like to limit the customer's opportunity to modify the device's indicators, we disable the ability to see filters on the toolbar panel by unchecking the corresponding checkbox.
+The "Display filters" option is shown on the toolbar panel only if at least one filter has been created. 
+If the filter was created, but you'd like to limit the customer's opportunity to modify the device's indicators, we disable the ability to see filters on the toolbar panel by unchecking the corresponding checkbox.
 
+<br>
 You can display/hide toolbar icons. Let's hide "Display dashboards selection", "Display timewindow" and "Display export" icons on the dashboard page.
 
 {% include images-gallery.html imageCollection="toolbar-dashboard-1" %}
 
-The "Hide Toolbar" will hide the toolbar from the dashboard page.
+The "Hide Toolbar" option will hide the toolbar from the dashboard page.
 Instead of it, on the upper right of the screen, you will find "Enter edit mode" icon.
 
 {% include images-gallery.html imageCollection="toolbar-dashboard-2" %}
 
-The "Keep toolbar opened" is responsible for displaying the toolbar on the dashboard page. 
+The "Keep toolbar opened" option is responsible for displaying the toolbar on the dashboard page. 
 If we disable it, the toolbar will be closed. Instead of it, on the upper right of the screen you find the three-dots icon. 
 By clicking on it, the hidden toolbar will be opened.
 
@@ -459,9 +453,11 @@ To do this, you should enter [edit mode](#edit-mode) and сlick the button two-l
 {% include images-gallery.html imageCollection="states-1" %}
 
 Since you haven't created any states yet, you have only your "Root state", namely your Dashboard. Root state defines the main state of your hierarchy.
-After creating additional states. You easily can change a root state by clicking the "Pencil" icon (Edit dashboard state) and ticking the "Root state" checkbox.
+After creating additional states, you easily can change a root state by clicking the "Pencil" icon (Edit dashboard state) and ticking the "Root state" checkbox.
 
-To add a new state, you need to click the "+" button in the right upper of the window, it will open a small window for a creating of a new state.
+{% include images-gallery.html imageCollection="states-root" %}
+
+To add a new state, you need to click on the "+" icon in the right upper of the window, it will open a small window for a creating of a new state.
 Give it a name, a State ID will form automatically according to the name, but you can change it. Click "Add" and then save all changes.
 
 {% include images-gallery.html imageCollection="states-2" %}
@@ -486,7 +482,7 @@ As we have chosen the "On row click" action, we need to click on the row of our 
 
 {% include images-gallery.html imageCollection="states-4" %}
 
-For the state to be named after the entity, use ${entityName} as the name of the state. Thus during the action, you will be transitioned to a state that is called the same as the entity that took part in the action.
+For the state to be named after the entity, use **${entityName}** as the name of the state. Thus during the action, you will be transitioned to a state that is called the same as the entity that took part in the action.
 
 {% include images-gallery.html imageCollection="states-entity-name" %}
 

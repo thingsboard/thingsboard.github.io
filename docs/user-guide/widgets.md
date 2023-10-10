@@ -13,7 +13,7 @@ add-widget:
         title: 'Click the "+ Add widget" icon at the top of the screen, or (if this is your first widget on this dashboard) click a large "Add new widget" sign in the middle of the screen to open the Select widgets bundle dialog window;'
     2:
         image: /images/user-guide/widgets/overview/add-new-dashboard-3-ce.png
-        title: 'Select widget bundle, for example, "Charts". To quickly find your desired widget, use the search bar by clicking the magnifying glass icon and entering the widget&#39;s name;'
+        title: 'Select a widget bundle, such as "Charts". To quickly find your desired widget, use the search bar by clicking the magnifying glass icon and entering the widget&#39;s name;'
     3:
         image: /images/user-guide/widgets/overview/add-new-dashboard-4-ce.png
         title: 'Choose a widget, for instance, "Timeseries Line Chart" and click on it to open the "Add Widget" dialog window;'
@@ -385,7 +385,7 @@ appearance-ticks-formatter-function:
         title: ''
     1:
         image: /images/user-guide/widgets/overview/appearance/appearance-ticks-formatter-function-2-ce.png
-        title: 'In the Appearance tab, in the Ticks formatter function field, enter the custom function and apply changes.'
+        title: 'In the "Appearance" tab, in the Ticks formatter function field, enter the custom function and apply changes.'
     2:
         image: /images/user-guide/widgets/overview/appearance/appearance-ticks-formatter-function-3-ce.png
         title: 'The function has been applied and values became more compact. By hovering the mouse over a widget you can see the tooltip with not reduced values.'
@@ -409,16 +409,16 @@ appearance-tooltip-function:
 appearance-comparison:
     0:
         image: /images/user-guide/widgets/overview/appearance/appearance-comparison-1-ce.png
-        title: 'In the Appearance tab, toggle the "Enable comparison" checkbox and from the drop-down menu select time to show historical data with which to compare. In the "Comparison X axis settings" section, select axis position, where the compared axis will be located on the widget. Also, you can enter the axis title and show axis tick labels;'
+        title: 'In the "Appearance" tab, toggle the "Enable comparison" checkbox and from the drop-down menu select time to show historical data with which to compare. In the "Comparison X axis settings" section, select axis position, where the compared axis will be located on the widget. Also, you can enter the axis title and show axis tick labels;'
     1:
         image: /images/user-guide/widgets/overview/appearance/appearance-comparison-2-ce.png
-        title: 'Navigate to the Data tab and click the “pencil” icon of a key in the data keys row;'
+        title: 'Navigate to the "Data" tab and click the “pencil” icon of a key in the data keys row;'
     2:
         image: /images/user-guide/widgets/overview/appearance/appearance-comparison-3-ce.png
-        title: 'In the data key configuration window, navigate to the advanced tab and choose the comparison line color. When you are done with Comparison Settings configuration, then apply changes;'
+        title: 'In the data key configuration window, navigate to the "Advanced" tab and choose the comparison line color. When you are done with Comparison Settings configuration, then apply changes;'
     3:
         image: /images/user-guide/widgets/overview/appearance/appearance-comparison-4-ce.png
-        title: 'Since comparison settings work only in history time window mode, click "Edit time window" icon in the dashboard toolbar and select the "History" tab. Then click "Update" to apply;'
+        title: 'Since comparison settings work only in history time window mode, click "Edit time window" icon in the dashboard toolbar, go to the "History" tab, and select the time interval with which you want to compare the current data. Then click "Update" to apply;'
     4:
         image: /images/user-guide/widgets/overview/appearance/appearance-comparison-5-ce.png
         title: 'Now you can compare the value for the current minute and the five minutes ago.'
@@ -426,13 +426,13 @@ appearance-comparison:
 appearance-custom-legend-settings:
     0:
         image: /images/user-guide/widgets/overview/appearance/appearance-custom-legend-settings-1-ce.png
-        title: 'Navigate to the Appearance tab. Activate the "Enable custom legend" option to use attribute or time series values as key labels. Click on "+ Add new key". In the drop-down menu that appears, input the key name and choose the key type;'
+        title: 'Navigate to the "Appearance" tab. Activate the "Enable custom legend" option to use attribute or time series values as key labels. Click on "+ Add new key". In the drop-down menu that appears, input the key name and choose the key type;'
     1:
         image: /images/user-guide/widgets/overview/appearance/appearance-custom-legend-settings-2-ce.png
-        title: 'Proceed to the Data tab. Click the pencil icon next to a data key to access the Data key configuration window;'
+        title: 'Proceed to the "Data" tab. Click the pencil icon next to a data key to access the Data key configuration window;'
     2:
         image: /images/user-guide/widgets/overview/appearance/appearance-custom-legend-settings-3-ce.png
-        title: 'In the label line, input the pattern "${}" and place the data key name within the brackets. Click "Save" to set the new label name and apply all changes;'
+        title: 'In the label line, input the pattern ${} and place the data key name within the brackets. Click "Save" to set the new label name and apply all changes;'
     3:
         image: /images/user-guide/widgets/overview/appearance/appearance-custom-legend-settings-4-ce.png
         title: 'Now, when you view the widget, you&#39;ll see that the custom legend settings have been applied.'

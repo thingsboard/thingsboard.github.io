@@ -9,10 +9,10 @@ redirect_from: "/docs/pe/user-guide/ui/dashboards/"
 creating-dashboard:
     0:
         image: /images/user-guide/dashboards/overview/create-dashboard-1-pe.png
-        title: 'Go to the "Dashboards" page through the main menu on the left of the screen. By default, you navigate to the dashboard group "All";'
+        title: 'Login to your ThingsBoard instance and navigate to the "Dashboards" page through the main menu on the left of the screen. By default, you navigate to the dashboard group "All";'
     1:
         image: /images/user-guide/dashboards/overview/create-dashboard-2-pe.png
-        title: 'To add a new dashboard group, click the "+" sign in the upper right corner of the screen. Select "Create new dashboard" from the drop-down menu;'
+        title: 'Click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu;'
     2:
         image: /images/user-guide/dashboards/overview/create-dashboard-3-pe.png
         title: 'In the opened dialog, necessary to enter a dashboard title, description is optional. Click "Add";'
@@ -32,7 +32,7 @@ creating-dashboard-2:
         title: 'Change the owner and select an existing dashboard group or create a new one, then click "Add";'
     2:
         image: /images/user-guide/dashboards/overview/create-dashboard-7-pe.png
-        title: 'Your dashboard has now been created, and it belongs to Customer A, residing in the "Sensors" group.'
+        title: 'The created dashboard is located in the "Sensors" dashboard&#39;s group and belongs to Customer A.'
 
 creating-dashboard-3:
     0:
@@ -42,7 +42,7 @@ creating-dashboard-3:
 import-dashboard:
     0:
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-pe.png
-        title: 'Go to the "Dashboards" page and click on the "+" button in the upper right corner of the page and select "Import dashboard";'
+        title: 'Go to the "Dashboards" page and click on the "+" button in the upper right corner of the page and select "Import dashboard" from the drop-down menu;'
     1:
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-pe.png
         title: 'In the dashboard import window, upload the JSON file and click "Import";'
@@ -51,7 +51,7 @@ import-dashboard:
         title: 'You have imported a dashboard. Open it;'
     3:
         image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-4-pe.png
-        title: 'Your dashboard has now been imported along with its widgets.'
+        title: 'Your dashboard has been imported along with all of its widgets.'
 
 export-dashboard:
     0:
@@ -78,7 +78,7 @@ make-public:
         title: 'To copy the public dashboard link and share it, open public dashboard group and click the "Public dashboard link" icon opposite the needed dashboard;'
     3:
         image: /images/user-guide/dashboards/managing-dashboard/make-public-dashboard-4-pe.png
-        title: 'In the pop-up window, click "Copy public link" icon. You can now share the dashboard using this link, for example, by sending it via email. Or you can use the quick buttons to share the link on social networks;'
+        title: 'In the pop-up window, click "Copy public link" icon. You can now share the dashboard using this link, for example, by sending it via email. Or you can use the quick buttons to share the link on social networks.'
 
 make-private:
     0:
@@ -239,7 +239,7 @@ filters:
 aliases:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-aliases-1-pe.png
-        title: 'To add an alias, go to your dashboard and enter edit mode. Then, in the upper right corner, locate the "Entity aliases" button and click it. A pop-up window will appear, where you should click the "Add alias" button;'
+        title: 'To add an alias, open your dashboard and enter edit mode. Then, in the upper right corner, locate the "Entity aliases" button and click it. A pop-up window will appear, where you should click the "Add alias" button;'
     1:
         image: /images/user-guide/dashboards/overview/dashboard-aliases-2-pe.png
         title: 'In the new pop-up window, fill in the alias name, select the filter type and device type, and then click the "Add" button;'
@@ -257,11 +257,6 @@ settings:
     2:
         image: /images/user-guide/dashboards/overview/dashboard-settings-3-pe.png
         title: 'The dashboard settings window will open.'
-
-settings-state-controller:
-    0:
-        image: /images/user-guide/dashboards/overview/dashboard-settings-state-controller-1-pe.png
-        title: 'Open the dashboard and click the "Edit mode" button in the upper right corner of the screen;'
 
 title-settings:
     0:
@@ -322,7 +317,7 @@ layout-2:
 layout-3:
     0:
         image: /images/user-guide/dashboards/overview/manage-layouts-4-pe.png
-        title: 'Toggle the "Divider";'
+        title: 'Toggle the "Divider" to divide the dashboard into two separate parts.'
 
 layout-4:   
     0:
@@ -363,7 +358,7 @@ autofill:
 background-settings:
     0:
         image: /images/user-guide/dashboards/overview/layout-settings-background-color-1-pe.png
-        title: 'Click on the background color row.'
+        title: 'Click on the "Background color" row.'
     1:
         image: /images/user-guide/dashboards/overview/layout-settings-background-color-2-pe.png
         title: 'In the pop-up window with sliders choose the needed color and wished transparency. Then, press “Save” to apply changes.'
@@ -377,15 +372,23 @@ background-image:
         title: 'Drop an image in the appropriate field, or upload it from a folder on your computer.'
     1:
         image: /images/user-guide/dashboards/overview/layout-settings-background-image-2-pe.png
-        title: 'To adjust the position of the image more precisely, click the "Background size mode" drop-down menu and choose how exactly the picture will fill the background space.'
+        title: 'To adjust the position of the image more precisely, click the "Background size mode" drop-down menu and choose how exactly the picture will fill the background space. After, apply changes;'
     2:
         image: /images/user-guide/dashboards/overview/layout-settings-background-image-3-pe.png
-        title: 'After saving, you can see the customized background.'
+        title: 'After saving changes, you can see the customized background.'
 
 states-1:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-states-1-pe.png
         title: 'Enter edit mode and сlick the button two-layered squares "Manage dashboard states" in the upper left corner of the dashboard window. It will open the window with a dashboard state configuration.'
+
+states-root:
+    0:
+        image: /images/user-guide/dashboards/overview/dashboard-states-root-1-pe.png
+        title: 'You can change a root state by clicking the “Pencil” icon (Edit dashboard state);'
+    1:
+        image: /images/user-guide/dashboards/overview/dashboard-states-root-2-pe.png
+        title: 'Tick the “Root state” checkbox, and save changes.'
 
 states-2:
     0:
