@@ -100,31 +100,31 @@ Each widget function should be defined as a property of the **self** variable.
 **self** variable has property **ctx** of type [WidgetContext](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/modules/home/models/widget-component.models.ts#L83) - a reference to widget context that has all necessary API and data used by widget instance.
 Below is brief description of widget context properties:
  
-| **Property**                     | **Type**           |  **Description**                                                |
-|----------------------------------|--------------------|-----------------------------------------------------------------|
-| $container                       | jQuery Object      | Container element of the widget. Can be used to dynamically access or modify widget DOM using jQuery API. |
-| $scope                           | [IDynamicWidgetComponent](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/modules/home/models/widget-component.models.ts#L274")             | Reference to the current widget component. Can be used to access/modify component properties when widget is built using Angular approach. |
-| width                            | Number             | Current width of widget container in pixels.                     |
-| height                           | Number             | Current height of widget container in pixels.                    |
-| isEdit                           | Boolean            | Indicates whether the dashboard is in in the view or editing state.|
-| isMobile                         | Boolean            | Indicates whether the dashboard view is less then 960px width (default mobile breakpoint). |
-| widgetConfig                     | [WidgetConfig](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L341)             | Common widget configuration containing properties such as **color** (text color), **backgroundColor** (widget background color), etc. |
-| settings                         | Object             | Widget settings containing widget specific properties according to the defined [settings json schema](#settings-schema-section) |
-| datasources                      | Array<[Datasource](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L250)>  | Array of resolved widget datasources. See [Subscription object](#subscription-object). |
-| data                             | Array<[DatasourceData](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L275)>  | Array of latest datasources data. See [Subscription object](#subscription-object). |
-| timeWindow                       | [WidgetTimewindow](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/time/time.models.ts#L104)   | Current widget timewindow (applicable for timeseries widgets). Holds information about current timewindow bounds. **minTime** - minimum time in UTC milliseconds, **maxTime** - maximum time in UTC milliseconds, **interval** - current aggregation interval in milliseconds.|
-| units                            | String             | Optional property defining units text of values displayed by widget. Useful for simple widgets like cards or gauges. |
-| decimals                         | Number             | Optional property defining how many positions should be used to display decimal part of the value number.  |
-| hideTitlePanel                   | Boolean            | Manages visibility of widget title panel. Useful for widget with custom title panels or different states. **updateWidgetParams()** function must be called after this property change. |
-| widgetTitle                      | String             | If set, will override configured widget title text. **updateWidgetParams()** function must be called after this property change. |
-| detectChanges()                  | Function           | Trigger change detection for current widget. Must be invoked when widget HTML template bindings should be updated due to widget data changes. |
-| updateWidgetParams()             | Function           | Updates widget with runtime set properties such as **widgetTitle**, **hideTitlePanel**, etc. Must be invoked in order these properties changes take effect. |
-| pageLink(pageSize, page, textSearch, sortOrder) | [PageLink](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/page/page-link.ts#L98) | Using to create sorting configuration for get requests. **pageSize** - specifies how many entities will be in the page, **page** - specifies what page with entities will be get, **textSearch** - specifies what text must be included in entities, **sortOrder** - specifies in which order entities will be get. |
-| defaultSubscription              | [IWidgetSubscription](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L220")             | Default widget subscription object contains all subscription information, including current data, according to the widget type. See [Subscription object](#subscription-object). |
-| timewindowFunctions              | [TimewindowFunctions](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L45)             | Object with timewindow functions used to manage widget data time frame. Can by used by Time-series or Alarm widgets. See [Timewindow functions](#timewindow-functions). |
-| controlApi                       | [RpcApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L58)             | Object that provides API functions for RPC (Control) widgets. See [Control API](#control-api). | 
-| actionsApi                       | [WidgetActionsApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L67)             | Set of API functions to work with user defined actions. See [Actions API](#actions-api). |
-| stateController                  | [IStateController](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L121)             | Reference to Dashboard state controller, providing API to manage current dashboard state. See [State Controller](#state-controller). |
+| **Property**                     | **Type**           | **Description**                                                                                                                                                                                                                                                                                                  |
+|----------------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| $container                       | jQuery Object      | Container element of the widget. Can be used to dynamically access or modify widget DOM using jQuery API.                                                                                                                                                                                                        |
+| $scope                           | [IDynamicWidgetComponent](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/modules/home/models/widget-component.models.ts#L274")             | Reference to the current widget component. Can be used to access/modify component properties when widget is built using Angular approach.                                                                                                                                                                        |
+| width                            | Number             | Current width of widget container in pixels.                                                                                                                                                                                                                                                                     |
+| height                           | Number             | Current height of widget container in pixels.                                                                                                                                                                                                                                                                    |
+| isEdit                           | Boolean            | Indicates whether the dashboard is in in the view or editing state.                                                                                                                                                                                                                                              |
+| isMobile                         | Boolean            | Indicates whether the dashboard view is less then 960px width (default mobile breakpoint).                                                                                                                                                                                                                       |
+| widgetConfig                     | [WidgetConfig](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L341)             | Common widget configuration containing properties such as **color** (text color), **backgroundColor** (widget background color), etc.                                                                                                                                                                            |
+| settings                         | Object             | Widget settings containing widget specific properties according to the defined [settings json schema](#settings-schema-section).                                                                                                                                                                                 |
+| datasources                      | Array<[Datasource](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L250)>  | Array of resolved widget datasources. See [Subscription object](#subscription-object).                                                                                                                                                                                                                           |
+| data                             | Array<[DatasourceData](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L275)>  | Array of latest datasources data. See [Subscription object](#subscription-object).                                                                                                                                                                                                                               |
+| timeWindow                       | [WidgetTimewindow](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/time/time.models.ts#L104)   | Current widget timewindow (applicable for timeseries widgets). Holds information about current timewindow bounds. **minTime** - minimum time in UTC milliseconds, **maxTime** - maximum time in UTC milliseconds, **interval** - current aggregation interval in milliseconds.                                   |
+| units                            | String             | Optional property defining units text of values displayed by widget. Useful for simple widgets like cards or gauges.                                                                                                                                                                                             |
+| decimals                         | Number             | Optional property defining how many positions should be used to display decimal part of the value number.                                                                                                                                                                                                        |
+| hideTitlePanel                   | Boolean            | Manages visibility of widget title panel. Useful for widget with custom title panels or different states. **updateWidgetParams()** function must be called after this property change.                                                                                                                           |
+| widgetTitle                      | String             | If set, will override configured widget title text. **updateWidgetParams()** function must be called after this property change.                                                                                                                                                                                 |
+| detectChanges()                  | Function           | Trigger change detection for current widget. Must be invoked when widget HTML template bindings should be updated due to widget data changes.                                                                                                                                                                    |
+| updateWidgetParams()             | Function           | Updates widget with runtime set properties such as **widgetTitle**, **hideTitlePanel**, etc. Must be invoked in order these properties changes take effect.                                                                                                                                                      |
+| pageLink(pageSize, page, textSearch, sortOrder) | [PageLink](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/page/page-link.ts#L98) | Using to create sorting configuration for GET requests. **pageSize** - determines the number of entities displayed on a page, **page** - specifies which page should be displayed, **textSearch** - filters entities based on the included text, **sortOrder** - sets the order in which entities are displayed. |
+| defaultSubscription              | [IWidgetSubscription](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L220")             | Default widget subscription object contains all subscription information, including current data, according to the widget type. See [Subscription object](#subscription-object).                                                                                                                                 |
+| timewindowFunctions              | [TimewindowFunctions](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L45)             | Object with timewindow functions used to manage widget data time frame. Can by used by Time-series or Alarm widgets. See [Timewindow functions](#timewindow-functions).                                                                                                                                          |
+| controlApi                       | [RpcApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L58)             | Object that provides API functions for RPC (Control) widgets. See [Control API](#control-api).                                                                                                                                                                                                                   | 
+| actionsApi                       | [WidgetActionsApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L67)             | Set of API functions to work with user defined actions. See [Actions API](#actions-api).                                                                                                                                                                                                                         |
+| stateController                  | [IStateController](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L121)             | Reference to Dashboard state controller, providing API to manage current dashboard state. See [State Controller](#state-controller).                                                                                                                                                                             |
 
 In order to implement a new widget, the following JavaScript functions should be defined *(Note: each function is optional and can be implemented according to  widget specific behaviour):*
    
@@ -264,71 +264,71 @@ Object with timewindow functions ([TimewindowFunctions](https://github.com/thing
 
 #### Control API
 
-Object that provides API functions ([RpcApi](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L74)) for [RPC (Control)](/docs/{{docsPrefix}}user-guide/ui/widget-library/#rpc-control-widget) widgets.This API working **only** with [RPC (Control) widget](#rpc-control-widget) Path: **widgetContext.controlApi**.
+The Control API ([RpcApi](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L74)) provides API functions for the [Control widgets](/docs/{{docsPrefix}}user-guide/ui/widget-library/#rpc-control-widget). Path: **widgetContext.controlApi**.
 
 | **Function**                                        | **Description**                                                                        |
 |-----------------------------------------------------|----------------------------------------------------------------------------------------|
 | ``` sendOneWayCommand(method, params, timeout) ```  | Sends one way (without response) RPC command to the device. Returns command execution promise. **method** - RPC method name, string, **params** - RPC method params, custom json object, **timeout** - maximum delay in milliseconds to wait until response/acknowledgement is received.  |
 | ``` sendTwoWayCommand(method, params, timeout) ```  | Sends two way (with response) RPC command to the device. Returns command execution promise with response body in success callback. |
-| ``` completedCommand() ```                          | Completes RPC command to the device. |
+| ``` completedCommand() ```                          | Stops the RPC execution for the device. |
 
 #### Actions API
 
 Set of API functions ([WidgetActionsApi](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L86)) to work with user defined actions. Path: **widgetContext.actionsApi**.
 
-| **Function**                                                          | **Description**                                                                        |
-|-----------------------------------------------------------------------|----------------------------------------------------------------------------------------|
-| ``` getActionDescriptors(actionSourceId) ```                          | Returns the list of action descriptors for provided **actionSourceId**                 |
-| ``` handleWidgetAction($event, descriptor, entityId, entityName) ```  | Handles action produced by particular action source. **$event** - event object associated with action, **descriptor** - action descriptor, **entityId** and **entityName** - current entity id and name provided by action source if available. |
-| ``` getActiveEntityInfo() ```                                         | Returns information about first find entity in widget.                                 |
-| ``` openDashboardStateInSeparateDialog(targetDashboardStateId, params?, dialogTitle?, hideDashboardToolbar?, dialogWidth?, dialogHeight?) ``` | Open dashboard state in the separate dialog by **stateId**. **targetDashboardStateId** - id of state that will be open in separate dialog, **params** - entity from dashboard state params, **dialogTitle** - title for separate dialog, **hideDashboardToolbar** - controls dasboard toolbar, **dialogWidth** - width of separate dialog, **dialogHeight** - height of pseparate dialog. |
-| ``` openDashboardStateInPopover($event, targetDashboardStateId, params?, hideDashboardToolbar?, preferredPlacement?, hideOnClickOutside?, popoverWidth?, popoverHeight?, popoverStyle?) ``` | Opens dashboard state in the popover window by **stateId**. **$event** - event object associated with action, **targetDashboardStateId** - id of state that will be open in popover, **params** - entity from dashboard state params, **hideDashboardToolbar** - controls dasboard toolbar, **preferredPlacement** - selects where popover will be opened, **hideOnClickOutside** - controls closing popup after clicking outside, **popoverWidth** - width of popover window, **popoverHeight** - height of popover window, **popoverStyle** - style of popover window. |
+| **Function**                                                          | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+|-----------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ``` getActionDescriptors(actionSourceId) ```                          | Returns the list of action descriptors for provided **actionSourceId**.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| ``` handleWidgetAction($event, descriptor, entityId, entityName) ```  | Handles action produced by particular action source. **$event** - event object associated with action, **descriptor** - action descriptor, **entityId** and **entityName** - current entity id and name provided by action source if available.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ``` getActiveEntityInfo() ```                                         | Returns information about the first found entity in the widget.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ``` openDashboardStateInSeparateDialog(targetDashboardStateId, params?, dialogTitle?, hideDashboardToolbar?, dialogWidth?, dialogHeight?) ``` | Open the dashboard state in a separate dialog using **stateId**. The parameter **targetDashboardStateId** refers to the ID of the state that will be opened in this separate dialog. The **params** - contains information about state entity and additional info. The **dialogTitle** sets the title for the separate dialog. The **hideDashboardToolbar** parameter determines the visibility of the dashboard toolbar. **dialogWidth** and **dialogHeight** define the width and height of the separate dialog, respectively.                                                                                                                                                                                                            |
+| ``` openDashboardStateInPopover($event, targetDashboardStateId, params?, hideDashboardToolbar?, preferredPlacement?, hideOnClickOutside?, popoverWidth?, popoverHeight?, popoverStyle?) ``` | Opens dashboard state in the popover window by **stateId**. The **$event** - event object associated with the action. The **targetDashboardStateId** refers to the id of the state that will be open in popover. The **params** - contains information about state entity and additional info. The **hideDashboardToolbar** parameter determines the visibility of the dashboard toolbar. The **referredPlacement** determines the position for opening the popover. The **hideOnClickOutside** parameter, when enabled, ensures the popup closes upon an outside click.  The **popoverStyle** sets the style of popover window. **popoverWidth** and **popoverHeight** define the width and height of the separate dialog, respectively. |
 
 #### Widget Subscription API
 
 Set of API functions ([WidgetSubscriptionApi](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L66)) to work with custom subscriptions. Path: **widgetContext.subscriptionApi**.
 
-| **Function**                                                          | **Description**                                                                        |
-|-----------------------------------------------------------------------|----------------------------------------------------------------------------------------|
-| ``` createSubscription(options, subscribe?) ```                          | Creates subscription to the data. **options** -  sets the parameters of subscription, **subscribe** - controls the arrival of updated data. |
-| ``` createSubscriptionFromInfo(type, subscriptionsInfo, options, useDefaultComponents, subscribe ) ```  | Creates subscription to the data. **type** - type of widget, **subscriptionsInfo** - describes the data to be subscribed to, **options** -  sets the parameters of subscription, **useDefaultComponents** - If enabled, the default subscription settings will be used, **subscribe** - controls the arrival of updated data. |
-| ``` removeSubscription(id) ```                                         | Removes subscription. **id** - id of subscription.                                |
+| **Function**                                                          | **Description**                                                                                                                                                                                                                                                                                                                                |
+|-----------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ``` createSubscription(options, subscribe?) ```                          | Creates subscription to the data. The **options** - contain information regarding the subscription, **subscribe** - controls the arrival of updated data.                                                                                                                                                                                      |
+| ``` createSubscriptionFromInfo(type, subscriptionsInfo, options, useDefaultComponents, subscribe) ```  | Creates subscription to the data. The **type** - type of widget, the **subscriptionsInfo** - describes the data for a subscription, **options** - contain information regarding the subscription, **useDefaultComponents** - if enabled, the default subscription settings will be used, **subscribe** - controls the arrival of updated data. |
+| ``` removeSubscription(id) ```                                         | Removes subscription. The **id** parameter refers id of subscription.                                                                                                                                                                                                                                                                          |
 
 
 #### State Controller
 
 Reference to Dashboard state controller ([IStateController](https://github.com/thingsboard/thingsboard/blob/v3.4/ui-ngx/src/app/core/api/widget-api.models.ts#L151)), providing API to manage current dashboard state. Path: **widgetContext.dashboard.stateController**.
 
-| **Function**                                        | **Description**                                                                        |
-|-----------------------------------------------------|----------------------------------------------------------------------------------------|
-| ``` openState(id, params, openRightLayout) ```      | Navigates to new dashboard state. **id** - id of the target dashboard state, **params** - object with state parameters to use by the new state, **openRightLayout** - optional boolean argument to force open right dashboard layout if present in mobile view mode. |
+| **Function**                                        | **Description**                                                                                                                                                                                                                                                                                                   |
+|-----------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ``` openState(id, params, openRightLayout) ```      | Navigates to new dashboard state. **id** - id of the target dashboard state, **params** - object with state parameters to use by the new state, **openRightLayout** - optional boolean argument to force open right dashboard layout if present in mobile view mode.                                              |
 | ``` updateState(id, params, openRightLayout) ```    | Updates current dashboard state. **id** - optional id of the target dashboard state to replace current state id, **params** - object with state parameters to update current state parameters, **openRightLayout** - optional boolean argument to force open right dashboard layout if present in mobile view mode. |
-| ``` resetState() ```                                | Resets current dashboard state. |                                               
-| ``` getStateId() ```                                | Returns current dashboard state id. |
-| ``` getStateIndex() ```                             | Returns the depth of nesting of the state. |
-| ``` getStateIdAtIndex(index) ```                    | Returns **stateId** by index. |
-| ``` getCurrentStateName() ```                       | Returns **name** of current state. |
-| ``` getStateParams() ```                            | Returns current dashboard state parameters. |
-| ``` getEntityId(entityParamName) ```                | Returns **entityId** by state entity parameter name. **entityParamName** - state entity parameter name. |
-| ``` getStateParamsByStateId(id) ```                 | Returns state parameters for particular dashboard state identified by **id**. |
-| ``` openRightLayout() ```                           | Opens right layout of the current state (in mobile mode). |
-| ``` preserveState() ```                             | Saves state params into **preservedState**. |
-| ``` cleanupPreservedStates() ```                    | Cleanes **preservedState**. |
+| ``` resetState() ```                                | Resets current dashboard state.                                                                                                                                                                                                                                                                                   |                                               
+| ``` getStateId() ```                                | Returns current dashboard state id.                                                                                                                                                                                                                                                                               |
+| ``` getStateIndex() ```                             | Returns the depth of nesting of the state.                                                                                                                                                                                                                                                                        |
+| ``` getStateIdAtIndex(index) ```                    | Returns **stateId** by index.                                                                                                                                                                                                                                                                                     |
+| ``` getCurrentStateName() ```                       | Returns **name** of current state.                                                                                                                                                                                                                                                                                |
+| ``` getStateParams() ```                            | Returns current dashboard state parameters.                                                                                                                                                                                                                                                                       |
+| ``` getEntityId(entityParamName) ```                | Returns **entityId** by state entity parameter name. **entityParamName** - state entity parameter name.                                                                                                                                                                                                           |
+| ``` getStateParamsByStateId(id) ```                 | Returns state parameters for particular dashboard state identified by **id**.                                                                                                                                                                                                                                     |
+| ``` openRightLayout() ```                           | Opens right layout of the current state (in mobile mode).                                                                                                                                                                                                                                                         |
+| ``` preserveState() ```                             | Saves state parameters into **preservedState**.                                                                                                                                                                                                                         |
+| ``` cleanupPreservedStates() ```                    | Clears the **preservedState**.                                                                                                                                                                                                                                                                                       |
 
 #### Broadcast Service
 
-Broadcast service ([BroadcastService](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/services/broadcast.service.ts#L25)) using for data exchange between widgets at the UI level.
+The Broadcast Service ([BroadcastService](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/services/broadcast.service.ts#L25)) is used for data exchange between widgets at the UI level.
 
-| **Function**                                        | **Description**                                                                        |
-|-----------------------------------------------------|----------------------------------------------------------------------------------------|
-| ``` broadcast(name, args) ```      | Sends data to subscribers. **name** - unique identifier, **argc** - data that you want to send |
-| ``` on(name, listener) ```    | Subscription to data by unique identifier and its processing. You can add as many subscribers as you want. **name** - unique identifier that using for subscriptions, **listener** - function that will process the received data. |
+| **Function**                                        | **Description**                                                                                                                                                                                                                                    |
+|-----------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ``` broadcast(name, args) ```      | Sends data to subscribers. **name** - unique identifier, **argc** - data that you want to send.                                                                                                                                                    |
+| ``` on(name, listener) ```    | Subscribe to data using a unique identifier and process it accordingly. Multiple subscribers can be added. The **name** serves as the unique identifier for subscriptions, while **listener** is the function that will process the received data. |
 
-For example let`s send data from Widget 1 to Widget 2.
+For example, consider sending data from Widget 1 to Widget 2.
 
 ![image](/images/user-guide/contribution/widgets/broadcast-service-start.png) 
 
-In Widget 1 you must send data using broadcast(...):
+In Widget 1 you must send data using broadcast(...) function:
 ```  
 self.onInit = function() {
     ...
@@ -341,7 +341,7 @@ self.onInit = function() {
 }
 ```
 
-In Widget 2 you must subscribe on data using on(...):
+In Widget 2 you must subscribe on data using on(...) function:
 ```  
 self.onInit = function() {
     ...
@@ -357,6 +357,7 @@ self.onInit = function() {
 ```
 
 as a result on Widget 2 you can see your data:
+
 ![image](/images/user-guide/contribution/widgets/broadcast-service-finish.png) 
 
 #### Type parameters object
@@ -882,77 +883,78 @@ Then you can see that the new alert content is displayed.
 
 ### Custom subscriptions
 
-In the process of developing widgets, you may encounter a situation when the default subscription functionality will not be enough for your tasks. In this case, you can use a **custom subscription**.
-Usually **custom subscription** used with a **static** widget type because it doesn't have default subscription logic.
+During widget development, there might be instances where the default subscription functionality doesn't suffice. In such scenarios, a **custom subscription** can be employed.
+Typically, **custom subscriptions** are used with **static** widget types, as they don't have default subscription logic.
 
 #### Main information
 
 For creating custom subscriptions you have to use function **createSubscription** from [Widget Subscription API]( #widget-subscription-api ):
  
 ```javascript
-    widgetContext.createSubscription(options);
+widgetContext.createSubscription(options);
 ```
 
-Object [options](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L240) has all information about the subscription and has the following fields:
+The object [options](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L240) contain comprehensive information regarding the subscription and include the following fields:
 
-| **Field**                                      | **Type**                                                                                                                                                               |**Description**                                                               |
-|------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| ```type```                                     | [widgetType](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L46)                  | Sets subscription type |
-| ```datasources```                              | Array<[Datasource](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L369)>          | Contains information about the data to be subscribed to |
-| ```alarmSource```                              | [Datasource](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L369)                 | Contains information about the alarms to be subscribed to |
-| ```datasourcesOptional```                      | Boolean                                                                                                                                                                | Sets whether the **datasources** is optional. For **static** widget type always true. |
-| ```hasDataPageLink```                          | Boolean                                                                                                                                                                | Sets whether pageLink is used for subscribing. |
-| ```singleEntity```                             | Boolean                                                                                                                                                                | Sets whether data will be get only from the first found entity. |
-| ```pageSize```                                 | Number                                                                                                                                                                 | Sets how many entities will get on a single page. |
-| ```warnOnPageDataOverflow```                   | Boolean                                                                                                                                                                | Activates warning about overflow page data. |
-| ```useDashboardTimewindow```                   | Boolean                                                                                                                                                                | If active, the subscription will be used time window from **dashboardTimewindow**, otherwise will be used **timeWindowConfig** (using to change time window in **time-series** subscriptions) |
-| ```dashboardTimewindow```                      | [Timewindow](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/time/time.models.ts#L96)               | Contains the dashboard time window. |
-| ```timeWindowConfig```                         | [Timewindow](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/time/time.models.ts#L96)               | Sets the **custom** time window. |
-| ```legendConfig```                             | [LegendConfig](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L271)               | Sets params of legend. |
-| ```decimals```                                 | Number                                                                                                                                                                 | Sets number of digits after floating point for **all** keys. |
-| ```units```                                    | String                                                                                                                                                                 | Sets special symbol to show next to value for **all** keys. |
-| ```callbacks```                                | [WidgetSubscriptionCallbacks](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L223) | The set of callbacks used in the subscription life cycle. |
+| **Field**                                      | **Type**                                                                                                                                                               | **Description**                                                                                                                                                                                |
+|------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ```type```                                     | [widgetType](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L46)                  | Sets subscription type.                                                                                                                                                                        |
+| ```datasources```                              | Array<[Datasource](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L369)>          | Contains information about the data to be subscribed to.                                                                                                                                       |
+| ```alarmSource```                              | [Datasource](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L369)                 | Contains information about the alarms to be subscribed to.                                                                                                                                     |
+| ```datasourcesOptional```                      | Boolean                                                                                                                                                                | Sets whether the **datasources** are optional. For **static** widget type always true.                                                                                                         |
+| ```hasDataPageLink```                          | Boolean                                                                                                                                                                | Sets whether pageLink is used for subscribing.                                                                                                                                                 |
+| ```singleEntity```                             | Boolean                                                                                                                                                                | Determines if data will be retrieved only from the first found entity.                                                                                                                         |
+| ```pageSize```                                 | Number                                                                                                                                                                 | Determines the number of entities displayed on a page.                                                                                                                                         |
+| ```warnOnPageDataOverflow```                   | Boolean                                                                                                                                                                | Activates warning about overflow page data.                                                                                                                                                    |
+| ```useDashboardTimewindow```                   | Boolean                                                                                                                                                                | If active, the subscription will be used time window from **dashboardTimewindow**, otherwise will be used **timeWindowConfig** (using to change time window in **time-series** subscriptions). |
+| ```dashboardTimewindow```                      | [Timewindow](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/time/time.models.ts#L96)               | Contains the dashboard timewindow.                                                                                                                                                             |
+| ```timeWindowConfig```                         | [Timewindow](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/time/time.models.ts#L96)               | Sets the **custom** timewindow.                                                                                                                                                                |
+| ```legendConfig```                             | [LegendConfig](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L271)               | Sets params of legend.                                                                                                                                                                         |
+| ```decimals```                                 | Number                                                                                                                                                                 | Sets number of digits after floating point for **all** keys.                                                                                                                                   |
+| ```units```                                    | String                                                                                                                                                                 | Sets special symbol to show next to value for **all** keys.                                                                                                                                    |
+| ```callbacks```                                | [WidgetSubscriptionCallbacks](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/core/api/widget-api.models.ts#L223) | The set of callbacks used in the subscription life cycle.                                                                                                                                      |
 
 ##### Datasources
 
-**Datasources** object describes what data you want to subscribe. The main functions are:
+The **Datasources** object describes what data you want to subscribe to.
+The main functions are:
 
-- Description of the keys that you want to subscribe.
-- Description of the entities from which you want to retrieve data.
-- Filtering entities by certain keys and values.
+- Description of the keys that you want to subscribe to.
+- Specifying the entities you need to extract data from.
+- Filtering entities based on specific keys and values.
 
-Object [datasource](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L369) has the following fields:
+The [datasource](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L369) object includes the subsequent fields:
 
 | **Field**                                      | **Type**                                                                                                                                                            | **Description**                                                                                                                          |
 |------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------|
 | ```type```                                     | [DatasourceType](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L351)/any      | Sets type of datasource.                                                                                                                 |
-| ```aliasName```                                | String                                                                                                                                                              | Name of datasource                                                                                                                       |
+| ```aliasName```                                | String                                                                                                                                                              | Name of datasource.                                                                                                                      |
 | ```dataKeys```                                 | Array<[DataKey](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L334)>          | Describes the keys to be subscribed to.                                                                                                  |
 | ```latestDataKeys```                           | Array<[DataKey](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/widget.models.ts#L334)>          | Use this in case you have **time-series** subscription and at the same time, you want to subscribe to the **latest** data for some keys. |
-| ```pageLink```                                 | [EntityDataPageLink](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/query/query.models.ts#L709) | Sets pageLink for datasource                                                                                                             |
-| ```keyFilters```                               | Array<[KeyFilter](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/query/query.models.ts#L379)>   | Filters the data to be subscribed to by the value of the keys. You can find all information about key filters [here](#key-filters)       |
-| ```entityFilter```                             | [EntityFilter](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/query/query.models.ts#L695)       | Filters the data to be subscribed to by entities params. You can find all information about entity filters [here](#entity-filters)       |
+| ```pageLink```                                 | [EntityDataPageLink](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/query/query.models.ts#L709) | Sets pageLink for datasource.                                                                                                            |
+| ```keyFilters```                               | Array<[KeyFilter](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/query/query.models.ts#L379)>   | Filters the data to be subscribed to by the value of the keys. You can find all information about key filters [here](#key-filters).      |
+| ```entityFilter```                             | [EntityFilter](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/query/query.models.ts#L695)       | Filters the data to be subscribed to by entities params. You can find all information about entity filters [here](#entity-filters).      |
 
 ##### Callbacks
 
-**Callbacks** object has a set of functions that are called at different stages of the subscription life cycle. It has next fields:
+**Callbacks** object has a set of functions that are called at different stages of the subscription life cycle. It has the following fields:
 
-| **Function**                                   | **Description**                                                              |
-|------------------------------------------------|------------------------------------------------------------------------------|
+| **Function**                                   | **Description**                                                             |
+|------------------------------------------------|-----------------------------------------------------------------------------|
 | ```onDataUpdated```                            | Called after updating data.  |
 | ```onLatestDataUpdated```                      | Called only in time-series subscription after updating data from **latestDataKeys**. |
 | ```onDataUpdateError```                        | Called after an error in updating data. |
 | ```onLatestDataUpdateError```                  | Called only in time-series subscription after error in updating data from **latestDataKeys**. |
 | ```legendDataUpdated```                        | Called after update legend data. |
-| ```timeWindowUpdated```                        | Called after update **time window**. |
+| ```timeWindowUpdated```                        | Called after update **timewindow**. |
 | ```dataLoading```                              | Called after loading data. |
 | ```rpcStateChanged```                          | Called after change RPC state. |
-| ```onRpcSuccess```                             | Called only in rpc subscription after success RPC. |
-| ```onRpcFailed```                              | Called only in rpc subscription after failed RPC. |
+| ```onRpcSuccess```                             | Called exclusively in the RPC subscription after a successful RPC. |
+| ```onRpcFailed```                              | Called exclusively in the RPC subscription after a failed RPC. |
 
 ##### Entity Filters
 
-Entity filter is an important part of custom subscription creation because it controls from which entities your subscription gets information. Entity Filter body depends on the **type** parameter. Let's review available entity filter types. In fact, they do correspond to available dashboard aliases.
+The entity filter is an important part of creating custom subscriptions as it defines the entities from which your subscription extracts information. The Entity Filter body depends on the **type** parameter. Let's delve into the available entity filter types, which, in essence, align with the existing dashboard aliases.
 
 - **Single Entity**
 
@@ -995,7 +997,7 @@ Allows to filter entities of the same type using their ids. For example, this en
 
 - **Entity Name Filter**
 
-Allows to filter entities of the same type using the **starts with** expression over entity name. For example, this entity filter selects all devices which name starts with **Air Quality**:
+Allows to filter entities of the same type using the **starts with** expression over entity name. For example, this entity filter selects all devices whose name starts with **Air Quality**:
 ```javascript
 {
     type: "entityName",
@@ -1028,7 +1030,7 @@ Return multiple groups of the same type using specified ids. For example, this e
 
 - **Group Name Filter**
 
-Allows to filter entity groups based on their type and the **starts with** expression over their name. For example, this entity filter selects all devices which name starts with **CAT**:
+Allows to filter entity groups based on their type and the **starts with** expression over their name. For example, this entity filter selects all devices whose name starts with **CAT**:
 ```javascript
 {
     type: "entityGroupName",
@@ -1039,7 +1041,7 @@ Allows to filter entity groups based on their type and the **starts with** expre
 
 - **Entities by Group Name Filter**
 
-Allows to filter entities that belong to group based on the entity type and the group name. Optional parameter **ownerId** allows you to specify the owner of the group (Tenant or Customer, current user owner by default). For example, this entity filter selects all devices which belong to group **Water Meters**:
+Allows to filter entities that belong to group based on the entity type and the group name. Optional parameter **ownerId** allows you to specify the owner of the group (Tenant or Customer, current user owner by default). For example, this entity filter selects all devices that belong to group **Water Meters**:
 ```javascript
 {
     type: "entitiesByGroupName",
@@ -1048,7 +1050,7 @@ Allows to filter entities that belong to group based on the entity type and the 
 }
 ```
 
-Other example, this entity filter selects all devices which belong to group **Water Meters** which in turn belongs to (sub-)Customer with id **e52b0020-2a7a-11ec-94eb-213c95f54093**:
+Another example, this entity filter selects all devices that belong to group **Water Meters** which in turn belongs to (sub-)Customer with id **e52b0020-2a7a-11ec-94eb-213c95f54093**:
 ```javascript
 {
     type: "entitiesByGroupName",
@@ -1087,9 +1089,9 @@ Allows to query for Api Usage based on optional customer id. If the customer id 
 
 - **Relations Query Filter**
 
-Allows to filter entities that are related to the provided root entity. Possible direction values are **TO** and **FROM**. The **maxLevel** defines how many relation levels should the query search recursively. Assuming the **maxLevel > 1**, the **fetchLastLevelOnly** defines either to return all related entities or only entities that are on the last level of relations. The filter objects(inside **filters** array) allows you to define the relation type and set of acceptable entity types to search for. The relation query calculates all related entities, even if they are filtered using different relation types, and then extracts only those who match the filters.
+Allows to filter entities that are related to the provided root entity. Possible direction values are **TO** and **FROM**. The **maxLevel** defines how many relation levels should the query search recursively. Assuming the **maxLevel > 1**, the **fetchLastLevelOnly** defines either to return all related entities or only entities that are on the last level of relations. The filter objects(inside **filters** array) allows you to define the relation type and set of acceptable entity types to search for. The relation query calculates all related entities, even if they are filtered using different relation types, and then extracts only those that match the filters.
 
-For example, this entity filter selects all devices and assets which are related to the asset with id **e51de0c0-2a7a-11ec-94eb-213c95f54092**:
+For example, this entity filter selects all devices and assets that are related to the asset with id **e51de0c0-2a7a-11ec-94eb-213c95f54092**:
 ```javascript
 {
     type: "relationsQuery",
@@ -1116,7 +1118,7 @@ For example, this entity filter selects all devices and assets which are related
 
 Allows to filter assets that are related to the provided root entity. Filters related assets based on the relation type and set of asset types. Possible direction values are **TO** and **FROM**. The **maxLevel** defines how many relation levels should the query search recursively. Assuming the **maxLevel > 1**, the **fetchLastLevelOnly** defines either to return all related entities or only entities that are on the last level of relations. The **relationType** defines the type of the relation to search for. The **assetTypes** defines the type of the asset to search for. The relation query calculates all related entities, even if they are filtered using different relation types, and then extracts only assets that match **relationType** and **assetTypes** conditions.
 
-For example, this entity filter selects **Charging station** assets which are related to the asset with id **e51de0c0-2a7a-11ec-94eb-213c95f54092** using **Contains** relation:
+For example, this entity filter selects **Charging station** assets that are related to the asset with id **e51de0c0-2a7a-11ec-94eb-213c95f54092** using **Contains** relation:
 
 ```javascript
 {
@@ -1139,7 +1141,7 @@ For example, this entity filter selects **Charging station** assets which are re
 
 Allows to filter devices that are related to the provided root entity. Filters related devices based on the relation type and set of device types. Possible direction values are **TO** and **FROM**. The **maxLevel** defines how many relation levels should the query search recursively. Assuming the **maxLevel > 1**, the **fetchLastLevelOnly** defines either to return all related entities or only entities that are on the last level of relations. The **relationType** defines the type of the relation to search for. The **deviceTypes** defines the type of the device to search for. The relation query calculates all related entities, even if they are filtered using different relation types, and then extracts only devices that match **relationType** and **deviceTypes** conditions.
 
-For example, this entity filter selects **Charging port** and **Air Quality Sensor** devices which are related to the asset with id **e52b0020-2a7a-11ec-94eb-213c95f54092** using **Contains** relation:
+For example, this entity filter selects **Charging port** and **Air Quality Sensor** devices that are related to the asset with id **e52b0020-2a7a-11ec-94eb-213c95f54092** using **Contains** relation:
 ```javascript
 {
     type: "deviceSearchQuery",
@@ -1162,7 +1164,7 @@ For example, this entity filter selects **Charging port** and **Air Quality Sens
 
 Allows to filter entity views that are related to the provided root entity. Filters related entity views based on the relation type and set of entity view types. Possible direction values are **TO** and **FROM**. The **maxLevel** defines how many relation levels should the query search recursively. Assuming the **maxLevel > 1**, the **fetchLastLevelOnly** defines either to return all related entities or only entities that are on the last level of relations. The **relationType** defines the type of the relation to search for. The **entityViewTypes** defines the type of the entity view to search for. The relation query calculates all related entities, even if they are filtered using different relation types, and then extracts only devices that match **relationType** and **deviceTypes** conditions.
 
-For example, this entity filter selects **Concrete mixer** entity views which are related to the asset with id **e52b0020-2a7a-11ec-94eb-213c95f54092** using **Contains** relation:
+For example, this entity filter selects **Concrete mixer** entity views that are related to the asset with id **e52b0020-2a7a-11ec-94eb-213c95f54092** using **Contains** relation:
 ```javascript
 {
     type: "entityViewSearchQuery",
@@ -1184,7 +1186,7 @@ For example, this entity filter selects **Concrete mixer** entity views which ar
 
 Allows to filter edge instances that are related to the provided root entity. Filters related edge instances based on the relation type and set of edge types. Possible direction values are **TO** and **FROM**. The **maxLevel** defines how many relation levels should the query search recursively. Assuming the **maxLevel > 1**, the **fetchLastLevelOnly** defines either to return all related entities or only entities that are on the last level of relations. The **relationType** defines the type of the relation to search for. The **edgeTypes** defines the type of the edge to search for. The relation query calculates all related entities, even if they are filtered using different relation types, and then extracts only edge instances that match **relationType** and **edgeTypes** conditions.
 
-For example, this entity filter selects **Factory** edge instances which are related to the asset with id **e52b0020-2a7a-11ec-94eb-213c95f54092** using **Contains** relation:
+For example, this entity filter selects **Factory** edge instances that are related to the asset with id **e52b0020-2a7a-11ec-94eb-213c95f54092** using **Contains** relation:
 ```javascript
 {
     type: "edgeSearchQuery",
@@ -1204,7 +1206,7 @@ For example, this entity filter selects **Factory** edge instances which are rel
 
 ##### Key Filters
 
-Key Filter allows you to define complex logical expressions over entity field, attribute or latest time-series value. The filter is defined using **key**, **valueType** and **predicate** objects. Single Entity Query may have zero, one or multiple predicates. If multiple filters are defined, they are evaluated using logical **AND**. The example below checks that temperature of the entity is above 20 degrees:
+Key Filter allows you to define complex logical expressions over entity field, attribute, or latest time series value. The filter is defined using **key**, **valueType**, and **predicate** objects. The Single Entity Query may have zero, one, or multiple predicates. If multiple filters are defined, they are evaluated using logical **AND**. The example below checks that temperature of the entity is above 20 degrees:
 
 ```javascript
 {
@@ -1228,17 +1230,17 @@ Now let's review **key**, **valueType** and **predicate** objects in detail.
 
 - **Key object**
 
-Filter Key defines either entity field, attribute or telemetry. It is a JSON object that consists the key name and type. The following filter key types are supported:
+Filter Key defines either entity field, attribute, or telemetry. It is a JSON object that consists of the key name and type. The following filter key types are supported:
 
-| **Type**                        | **Description**                                                                                                             |
-|-------------------------------|-----------------------------------------------------------------------------------------------------------------------------|
-| ```CLIENT_ATTRIBUTE```           | Used for client attributes                                                                                                  |
-| ```SHARED_ATTRIBUTE```     | Used for shared attributes                                                                                                  |
-| ```SERVER_ATTRIBUTE```       | Used for server attributes                                                                                                  |
-| ```ATTRIBUTE``` | Used for any of the above                                                                                                   |
-| ```TIME_SERIES```       | Used for time-series values                                                                                                 |
-| ```ENTITY_FIELD```       | Used for accessing entity fields like **name**, **label**, **etc**. The list of available fields depends on the entity type |
-| ```ALARM_FIELD```             | Similar to entity field, but is used in alarm queries only                                                                  |
+| **Type**                        | **Description**                                                                                                              |
+|-------------------------------|------------------------------------------------------------------------------------------------------------------------------|
+| ```CLIENT_ATTRIBUTE```           | Used for client attributes.                                                                                                  |
+| ```SHARED_ATTRIBUTE```     | Used for shared attributes.                                                                                                  |
+| ```SERVER_ATTRIBUTE```       | Used for server attributes.                                                                                                  |
+| ```ATTRIBUTE``` | Used for any of the above.                                                                                                   |
+| ```TIME_SERIES```       | Used for time-series values.                                                                                                 |
+| ```ENTITY_FIELD```       | Used for accessing entity fields like **name**, **label**, **etc**. The list of available fields depends on the entity type. |
+| ```ALARM_FIELD```             | Similar to entity field, but is used in alarm queries only.                                                                  |
 
 Object example:
 ```javascript
@@ -1252,16 +1254,16 @@ Object example:
 
 Provides a hint about the data type of the entity field that is defined in the filter key. The value type impacts the list of possible operations that you may use in the corresponding predicate. For example, you may use **STARTS_WITH** or **END_WITH**, but you can't use **GREATER_OR_EQUAL** for string values. The following filter value types and corresponding predicate operations are supported:
 
-| **Type**                        | **Description**                                                                                                                                          |
-|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ```STRING```           | Used to filter any **String** or **JSON** values. Operations: **EQUAL**, **NOT_EQUAL**, **STARTS_WITH**, **ENDS_WITH**, **CONTAINS**, **NOT_CONTAINS**   |
-| ```NUMERIC```     | Used for **Long** and **Double** values. Operations: **EQUAL**, **NOT_EQUAL**, **GREATER**, **LESS**, **GREATER_OR_EQUAL**, **LESS_OR_EQUAL** |
-| ```BOOLEAN```       | Used for **Boolean** values. Operations: **EQUAL**, **NOT_EQUAL**                                                                                        |
-| ```DATE_TIME``` | Similar to numeric, transforms value to milliseconds since epoch. Operations: **EQUAL**, **NOT_EQUAL**, **GREATER**, **LESS**, **GREATER_OR_EQUAL**, **LESS_OR_EQUAL** |
+| **Type**                        | **Description**                                                                                                                                                         |
+|-------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ```STRING```           | Used to filter any **String** or **JSON** values. Operations: **EQUAL**, **NOT_EQUAL**, **STARTS_WITH**, **ENDS_WITH**, **CONTAINS**, **NOT_CONTAINS**.                 |
+| ```NUMERIC```     | Used for **Long** and **Double** values. Operations: **EQUAL**, **NOT_EQUAL**, **GREATER**, **LESS**, **GREATER_OR_EQUAL**, **LESS_OR_EQUAL**.                          |
+| ```BOOLEAN```       | Used for **Boolean** values. Operations: **EQUAL**, **NOT_EQUAL**.                                                                                                      |
+| ```DATE_TIME``` | Similar to numeric, transforms value to milliseconds since epoch. Operations: **EQUAL**, **NOT_EQUAL**, **GREATER**, **LESS**, **GREATER_OR_EQUAL**, **LESS_OR_EQUAL**. |
 
 - **Predicate object**
 
-Filter Predicate defines the logical expression to evaluate. The list of available operations depends on the filter value type, see above. Platform supports 4 predicate types: **STRING**, **NUMERIC**, **BOOLEAN** and **COMPLEX**. The last one allows to combine multiple operations over one filter key.
+Filter Predicate defines the logical expression to evaluate. The list of available operations depends on the filter value type, see above. The platform supports 4 predicate types: **STRING**, **NUMERIC**, **BOOLEAN**, and **COMPLEX**. The last one allows combining multiple operations over one filter key.
 
 Simple predicate example to check **value < 100**:
 
@@ -1453,6 +1455,7 @@ self.onInit = function() {
 ```
 
 As a result, will be created subscription to count devices in the system and count active devices (**the widget is illustrative**):
+
 ![image](/images/user-guide/contribution/widgets/count-subscription.png)
 
 
@@ -1531,6 +1534,7 @@ self.onInit = function() {
 ...
 ```
 As a result a subscription to the **temperature** and **active** keys will be created **only** for active devices (**the widget is illustrative**):
+
 ![image](/images/user-guide/contribution/widgets/attributes-telemetry-subscription.png)
 
 ##### Subscription with PageLink
@@ -1621,9 +1625,10 @@ function subscribeForPaginatedData(pageLink) {
 ...
 ```
 As a result, a subscription to the **temperature** and **active** keys will be created using PageLink (**the widget is illustrative**):
+
 ![image](/images/user-guide/contribution/widgets/page-link-subscription.png)
 
-##### Subscription for telemetry time-series
+##### Subscription for telemetry time series
 
 Let's create a custom subscription to the time-series of **temperature** key from **Thermostat T2** device:
 
@@ -1701,6 +1706,7 @@ function subscribeForPaginatedData(pageLink) {
 ```
 
 As a result, will be created subscription to the **temperature** telemetry time-series (**the widget is illustrative**):
+
 ![image](/images/user-guide/contribution/widgets/timeseries-subscrition.png)
 
 
@@ -1783,6 +1789,7 @@ self.onInit = function() {
 ...
 ```
 As a result, a subscription to the thermostat's alarms will be created (**the widget is illustrative**):
+
 ![image](/images/user-guide/contribution/widgets/alarm-subscription.png)
 
 ## Integrating existing code to create widget definition 
