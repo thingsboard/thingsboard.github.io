@@ -27,7 +27,7 @@ Each notification may be delivered using multiple delivery methods: Web, SMS, Em
 - **SMS**. The notification is sent to the user's phone. To send notifications via SMS, a system administrator should set up the [SMS provider](/docs/user-guide/ui/sms-provider-settings/) properly;
 - **Email**. With this approach, the user receives a notification by Email. To send notifications via Email, a tenant administrator [outgoing mail server](/docs/user-guide/ui/mail-settings/) should be configured;
 - **Slack**. Notifications will send as a Slack message to the list of Users or Channels. To send notifications via Slack, a tenant administrator must configure a Slack API [token](https://api.slack.com/authentication/token-types) in the *Settings* -> *Notifications* tab. Learn more about how to configure Slack settings in Thingsboard [here](/docs/{{docsPrefix}}user-guide/ui/slack-settings/).
-- **Microsoft Teams**. Notifications will send as a Microsoft Teams message to the list of Users or Channels. To send notifications via Microsoft Teams, a tenant administrator must get **webhook URL** for a needed channel using this [guide](/docs/{{docsPrefix}}user-guide/ui/microsoft-teams-settings/).
+- **Microsoft Teams**. Notifications will send as a Microsoft Teams message to the list of channels. To send notifications via Microsoft Teams, a tenant administrator must get **webhook URL** for a needed channel using this [guide](/docs/{{docsPrefix}}user-guide/ui/microsoft-teams-settings/).
 
 ### Send notification
 
@@ -80,7 +80,7 @@ To add notification recipients, follow these steps:
 
  - Click the "Add recipients" button in the upper right corner of the Recipients tab;
  - In the new window, enter the name of the notification recipients;
- - Next, select one of the two types of recipients: platform users and Slack entities. Recipients group defines either a set of platform users or set of Slack entities;
+ - Next, select one of the three types of recipients: platform users, Microsoft Teams and Slack entities;
  - From the "User filter" list, select who you want to send messages or notifications to;
  - Click "Add".
 
@@ -142,7 +142,7 @@ As a platform user, you may send notifications as a Slack message to a list of U
 
 ###### Microsoft Teams
 
-As a platform user, you may send notifications as a Microsoft Teams message to a list of Users or Channels.
+As a platform user, you may send notifications as a Microsoft Teams message to a list of сhannels.
 
 To send notifications via Microsoft Teams, get your **webhook URL** for a needed channel using this [guide](/docs/{{docsPrefix}}user-guide/ui/microsoft-teams-settings/).
 

@@ -7,7 +7,7 @@ description: ThingsBoard IoT platform Microsoft Teams settings
 microsoft-teams-settings:
     0:
         image: /images/user-guide/ui/microsoft-teams/microsoft-teams-1-settings.png
-        title: 'Sign in to Microsoft Teams and navigate to the "Teams" tab, then click on the three dots next to the your team name. In the drop-down menu click on the "Connectors" item;'
+        title: 'Sign in to Microsoft Teams and navigate to the "Teams" tab, then click on the three dots next to your channel name. In the drop-down menu click on the "Connectors" item;'
     1:
         image: /images/user-guide/ui/microsoft-teams/microsoft-teams-2-settings.png
         title: 'Find "Incoming Webhook" connector and click "Configure";'
