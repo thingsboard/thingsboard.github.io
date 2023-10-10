@@ -326,7 +326,7 @@ The Broadcast Service ([BroadcastService](https://github.com/thingsboard/thingsb
 
 For example, consider sending data from Widget 1 to Widget 2.
 
-![image](/images/user-guide/contribution/widgets/broadcast-service-start.png) 
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/broadcast-service-start.png) 
 
 In Widget 1 you must send data using broadcast(...) function:
 ```  
@@ -358,7 +358,7 @@ self.onInit = function() {
 
 as a result on Widget 2 you can see your data:
 
-![image](/images/user-guide/contribution/widgets/broadcast-service-finish.png) 
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/broadcast-service-finish.png) 
 
 #### Type parameters object
 
@@ -1456,7 +1456,7 @@ self.onInit = function() {
 
 As a result, will be created subscription to count devices in the system and count active devices (**the widget is illustrative**):
 
-![image](/images/user-guide/contribution/widgets/count-subscription.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/count-subscription.png)
 
 
 ##### Subscription for attributes/telemetry
@@ -1535,7 +1535,7 @@ self.onInit = function() {
 ```
 As a result a subscription to the **temperature** and **active** keys will be created **only** for active devices (**the widget is illustrative**):
 
-![image](/images/user-guide/contribution/widgets/attributes-telemetry-subscription.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/attributes-telemetry-subscription.png)
 
 ##### Subscription with PageLink
 Let's create a custom subscription to the latest **temperature** key value that **greatest** 30 with two entities on the page:
@@ -1626,7 +1626,7 @@ function subscribeForPaginatedData(pageLink) {
 ```
 As a result, a subscription to the **temperature** and **active** keys will be created using PageLink (**the widget is illustrative**):
 
-![image](/images/user-guide/contribution/widgets/page-link-subscription.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/page-link-subscription.png)
 
 ##### Subscription for telemetry time series
 
@@ -1707,7 +1707,7 @@ function subscribeForPaginatedData(pageLink) {
 
 As a result, will be created subscription to the **temperature** telemetry time-series (**the widget is illustrative**):
 
-![image](/images/user-guide/contribution/widgets/timeseries-subscrition.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/timeseries-subscrition.png)
 
 
 ##### Subscription for alarms
@@ -1790,7 +1790,7 @@ self.onInit = function() {
 ```
 As a result, a subscription to the thermostat's alarms will be created (**the widget is illustrative**):
 
-![image](/images/user-guide/contribution/widgets/alarm-subscription.png)
+![image](https://img.thingsboard.io/user-guide/contribution/widgets/alarm-subscription.png)
 
 ## Integrating existing code to create widget definition 
 
