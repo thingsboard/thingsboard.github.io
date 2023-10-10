@@ -89,6 +89,11 @@ notification-center-recipients-slack:
         image: /images/user-guide/notifications/notification-center-recipients-slack-1-pe.png
         title: 'Select Slack channel type to define notification recipients.'
 
+notification-center-recipients-microsoft-teams:
+    0:
+        image: /images/user-guide/notifications/notification-center-recipients-microsoft-teams-1-pe.png
+        title: 'Create a new notification recipients group of type "Microsoft Teams" enter webhook URL and channel name.'
+
 notification-center-templates:
     0:
         image: /images/user-guide/notifications/notification-center-templates-1-pe.png

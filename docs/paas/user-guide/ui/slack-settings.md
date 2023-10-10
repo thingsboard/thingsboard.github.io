@@ -1,5 +1,5 @@
 ---
-layout: docwithnav
+layout: docwithnav-paas
 assignees:
 - ashvayka
 title: Slack Settings
@@ -35,15 +35,15 @@ slackProviderSettings:
 
 thingsboardSystemAdminSettings:
     0:
-        image: /images/user-guide/ui/slack/add-slack-api-token-sysadmin-1-ce.png
+        image: /images/user-guide/ui/slack/add-slack-api-token-sysadmin-1-pe.png
         title: 'Login to your ThingsBoard UI as a system administrator. Navigate to "Settings" page, "Notification" tab. In "Slack settings" window paste copied Slack API token to "Slack api token" row and click "Save".'
 
 thingsboardTenantAdminSettings:
     0:
-        image: /images/user-guide/ui/slack/add-slack-api-token-tenant-admin-1-ce.png
+        image: /images/user-guide/ui/slack/add-slack-api-token-tenant-admin-1-pe.png
         title: 'Login to your ThingsBoard UI as a tenant administrator. Navigate to "Settings" page, "Notification" tab. In "Slack settings" window paste copied Slack API token to "Slack api token" row and click "Save".'
-
 
 ---
 
+{% assign docsPrefix = "paas/" %}
 {% include docs/user-guide/ui/slack-settings.md %}
