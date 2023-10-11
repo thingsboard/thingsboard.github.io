@@ -168,7 +168,8 @@ To assign/unassign multiple dashboards to a customer(s) simultaneously, select t
 
 ### Edit dashboard
 
-You can edit the title, description, and other fields of the dashboard.
+Edit the fields you need, such as the title or description of the dashboard. After making the edits, remember to save all changes.
+With these steps, you will have successfully updated the dashboard information.
 
 Let’s see how to do this:
 
@@ -194,7 +195,7 @@ You can also delete multiple dashboards at once.
 
 Before starting working with a dashboard, get familiar with its interface to understand which features are responsible for what actions.
 
-Dashboard toolbar allows you to manage
+The dashboard toolbar allows you to manage
 [states](/docs/{{docsPrefix}}user-guide/dashboards/#states),
 [layouts](/docs/{{docsPrefix}}user-guide/dashboards/#layouts),
 [settings](/docs/{{docsPrefix}}user-guide/dashboards/#settings),
@@ -204,7 +205,7 @@ Dashboard toolbar allows you to manage
 configure [timewindow](/docs/{{docsPrefix}}user-guide/dashboards/#timewindow),
 [enter edit mode](#edit-mode) and [add new widgets](#add-new-widget) using the corresponding icons in the toolbar.
 
-Some of these icons (states, layout, settings, entity aliases, filters, version control, add new widget) are visible only in the "Edit" mode. All other icons are visible in both "View" and "Edit" mode.
+Some of these icons (states, layout, settings, entity aliases, filters, version control, add new widget) are visible only in the "Edit" mode. All other icons are visible in both "View" and "Edit" modes.
 You can hide these icons or configure the toolbar to be minimized by default using [settings](/docs/{{docsPrefix}}user-guide/dashboards/#settings).
 
 {% include images-gallery.html imageCollection="dashboard-toolbar" %}
@@ -249,7 +250,7 @@ The timewindow can work in two modes:
 There are five aggregation functions available at the moment: Min, Max, Average, Sum and Count. The special function called None is used to disable the aggregation.
 Data aggregation is useful when you don't want to fetch all time-series data to UI, and you would like to pre-aggregate it on the database level.
 Using the aggregation functions saves network bandwidth and computation power of the client browser.
-We recommend using aggregation functions whenever is possible if you have a lot of raw values.
+We recommend using aggregation functions whenever possible if you have a lot of raw values.
 
 {% include images-gallery.html imageCollection="time-window-aggregation" %}
 <br>
@@ -266,12 +267,13 @@ All other intervals are distinguished in the same way.
 
 {% include images-gallery.html imageCollection="time-window-interval" %}
 
-There are times when the time intervals are long, and you'd like to see the data closer without changing timestamps, therefore, you need to zoom in. Zoom in by holding the right mouse key and move it on the chart
-in the place where you need to get a closer look. To zoom out to the original size of the chart, double-click on the widget.
+There are times when the time intervals are long, and you'd like to see the data closer without changing timestamps, therefore, you need to zoom in. 
+Zoom in by holding the right mouse key and move it on the chart to the place where you need to get a closer look. 
+To zoom out to the original size of the chart, double-click on the widget.
 
 {% include images-gallery.html imageCollection="time-window-zoom-in" %}
 
-The ThingsBoard introduces time zone configurations. By default, dashboard uses the time zone provided by the browser.
+The ThingsBoard introduces time zone configurations. By default, the dashboard uses the time zone provided by the browser.
 Now it is possible to set the time of your browser or a specific country. To quickly find the needed time zone, start typing its name in the time zone bar.
 
 {% include images-gallery.html imageCollection="time-window-time-zone" %}
@@ -297,9 +299,9 @@ Filters are applied only to the "latest" value of the attribute or time series k
 
 You can combine different logical expressions over one key using "complex" filters. For example: "(A > 0 and A < 20) or (A > 50 and A < 100)".   
 Also, you can combine two expressions for different keys using the "and" relation. For example: "(A > 0 and A < 20) and (B > 50 and B < 100)".  
-It's not possible to use "or" relation to combining different keys yet. For example: "(A > 0 and A < 20) or (B > 50 and B < 100)".
+It's not possible to use "or" in relation to combining different keys yet. For example: "(A > 0 and A < 20) or (B > 50 and B < 100)".
 
-See more examples how to use filters in this video:
+See more examples of how to use filters in this video:
 
 <div id="video">
   <div id="video_wrapper">
@@ -309,15 +311,15 @@ See more examples how to use filters in this video:
 
 ### Entity aliases
 
-Entity Aliases determine which entities (devices, assets, etc) you would like to display on the dashboard.
-You can treat alias as a reference to one or multiple devices. These references can be static or dynamic.
+Entity Aliases determine which entities (devices, assets, etc.) you would like to display on the dashboard.
+An alias can be thought of as a reference to one or more devices. These references can be static or dynamic.
 
 An example of the static alias is the [Single entity](/docs/{{docsPrefix}}user-guide/ui/aliases/#single-entity) alias. An entity is configured once in the alias dialog box.
 All users see the same data if they have permission to access this device.
 
 An example of a dynamic alias is the [Device type](/docs/{{docsPrefix}}user-guide/ui/aliases/#device-type) alias, which displays all devices of a certain type (e.g. "Thermometer").
 This alias is dynamic because the list of devices depends on the user using the dashboard.
-If you are logged in as a Tenant administrator, this alias will be resolved all Thermometer devices.
+If you are logged in as a Tenant administrator, this alias will be allowed for all Thermometer devices.
 However, if you are logged in as a Customer user, this alias will be resolved to Thermometer devices that are assigned/owned by that Customer.
 
 Let’s create a dynamic alias, which displays all devices of a certain "Smart sensors" type.
@@ -355,7 +357,6 @@ The checkboxes "Display dashboard selection", "Display entities selection", "Dis
 The "Display filters" option is shown on the toolbar panel only if at least one filter has been created. 
 If the filter was created, but you'd like to limit the customer's opportunity to modify the device's indicators, we disable the ability to see filters on the toolbar panel by unchecking the corresponding checkbox.
 
-<br>
 You can display/hide toolbar icons. Let's hide "Display dashboards selection", "Display timewindow" and "Display export" icons on the dashboard page.
 
 {% include images-gallery.html imageCollection="toolbar-dashboard-1" %}
@@ -373,13 +374,14 @@ By clicking on it, the hidden toolbar will be opened.
 
 ### Layouts
 
-Layouts define how widgets are arranged on a Dashboard. To manage a layout, you should enter [edit mode](#edit-mode) and click the button three-rectangles "Manage layouts" in the upper left corner of the dashboard window.
+Layouts define how widgets are arranged on a Dashboard. 
+To manage a layout, you should enter [edit mode](#edit-mode) and click the button three-rectangles "Manage layouts" in the upper left corner of the dashboard window.
 It opens the small window for layouts' control.
 
 {% include images-gallery.html imageCollection="layout-1" %}
 
-The "Main" layout is the one which you're managing now. Basically, it's your dashboard.
-If you click the “gear” icon named "Layout setting", the Layout settings window will open.
+The "Main" layout is the one that you’re managing now. Basically, it's your dashboard.
+Click the "gear" icon named "Layout setting" to open the layout settings window.
 
 {% include images-gallery.html imageCollection="layout-2" %}
 
@@ -387,7 +389,7 @@ If you click the “gear” icon named "Layout setting", the Layout settings win
 
 *Columns count*
 
-While editing the Dashboard, specifically the size and space of your widgets, you can notice a whitish grid on a grey background.
+While editing the Dashboard, specifically the size and space of your widgets, you can notice a whitish grid on a gray background.
 These are columns that determine how many widgets can fit horizontally on a Dashboard.
 By default, the number of columns is 24. You can increase or decrease their number. The minimum number of columns is 10. The maximum number is 1000 columns.
 
@@ -396,13 +398,13 @@ By default, the number of columns is 24. You can increase or decrease their numb
 *Margin between widgets*
 
 This margin type determines how much space is between widgets.
-By default, the margin is set on 10. You can remove it by placing 0 in the _Margin between widgets_ line, or increase margin,  that is, the distance between widgets. The maximum margin is 50.
+By default, the margin is set to 10. You can remove it by setting the _Margin between widgets_ field to 0 or increasing the margin, meaning the distance between widgets. The maximum allowable margin is 50.
 
 {% include images-gallery.html imageCollection="margin" %}
 
 *Auto fill layout height*
 
-By default, the _Automatic Fill Layout Height_ checkbox is unchecked so that you can freely adjust the size of the widgets.
+By default, the _Auto fill layout height_ checkbox is unchecked so that you can freely adjust the size of the widgets.
 If you tick this option, all the widgets on the Dashboard will fill in vertically in the space of the screen.
 
 {% include images-gallery.html imageCollection="autofill" %}
@@ -410,7 +412,7 @@ If you tick this option, all the widgets on the Dashboard will fill in verticall
 *Background color*
 
 The Background color option allows you to customize the color that you'd like to be on the Dashboard's background.
-To alter it, click on the background color row. In the pop-up window with sliders choose the needed color and wished transparency. Then, press "Save" to apply changes.
+To change it, click on the background color row. In the pop-up window with sliders choose the needed color and wished transparency. Then, press "Save" to apply changes.
 After saving, you can see the customized background.
 
 {% include images-gallery.html imageCollection="background-settings" %}
@@ -426,54 +428,56 @@ For instance, let's choose "Cover" and click "Save" to see how the background ha
 
 *Mobile layout settings*
 
-By default, the *Automatic fill layout height* checkbox is unchecked so that you can freely adjust the size of the widgets on your mobile device.
+By default, the *Auto fill layout height* checkbox is unchecked so that you can freely adjust the size of the widgets on your mobile device.
 If you tick this option, all the widgets on the Dashboard will fill in vertically in the space of the screen.
 
 *Mobile row height* determines how tall you’d like your widgets to be on your mobile device.
-By default, the height is set to 70px, but you can make it smaller or larger. The minimum Mobile row height is 5px, the maximum is 200px.
+By default, the height is set to 70px, but you can make it smaller or larger. The minimum Mobile row height is 5px, and the maximum allowable value is 200px.
 <br>
 
 **Divider**
 
-Back to main layout. If we toggle the "Divider" checkbox, we divide the dashboard into two separate parts. For each part, we are able to configure their own settings and interface.
+If we toggle the "Divider" checkbox, we divide the dashboard into two separate parts. For each part, we are able to configure their own settings and interface.
 
 {% include images-gallery.html imageCollection="layout-3" %}
 
 Just to see how it can look like, let's set up both layouts in completely different ways.
-Let's add a background image to the left layout, and for the right layout, apply a new background color. And we resize the window sizes in a certain percentage ratio to each other (it is just an example and definitely not a recommendation).
-After adjusting the settings, click the "Save" button in the Layouts window to see the changes.
+Let's add a background image to the left layout and apply a new background color to the right layout.
+And we resize the window in a certain percentage ratio to each other (it is just an example and definitely not a recommendation).
+After setting the parameters, click the "Save" button in the Layouts window to see the changes.
+After setting the parameters, click the "Save" button in the Layouts window to see the changes.
 
 {% include images-gallery.html imageCollection="layout-4" %}
 
 ### States
 
-The States feature exists to create a layered hierarchy in your Dashboard. To use States properly you need to assign a specific action to a widget that will help you fast "travel" among the required states.
-To do this, you should enter [edit mode](#edit-mode) and сlick the button two-layered squares "Manage dashboard states" in the upper left corner of the dashboard window. It will open the window with a dashboard state configuration.
+The States feature exists to create a layered hierarchy in your Dashboard. To use States properly, you need to assign a specific action to a widget that will help you fast "travel" among the required states.
+To do this, you should enter [edit mode](#edit-mode) and click the button two-layered squares "Manage dashboard states" in the upper left corner of the dashboard window. The Manage dashboard states configuration window will open.
 
 {% include images-gallery.html imageCollection="states-1" %}
 
 Since you haven't created any states yet, you have only your "Root state", namely your Dashboard. Root state defines the main state of your hierarchy.
-After creating additional states, you easily can change a root state by clicking the "Pencil" icon (Edit dashboard state) and ticking the "Root state" checkbox.
+After creating additional states, you easily can change a root state by clicking the "Pencil" icon (Edit dashboard state) and selecting the “Root state” checkbox.
 
 {% include images-gallery.html imageCollection="states-root" %}
 
-To add a new state, you need to click on the "+" icon in the right upper of the window, it will open a small window for a creating of a new state.
-Give it a name, a State ID will form automatically according to the name, but you can change it. Click "Add" and then save all changes.
+To add a new state, you need to click on the "+" icon in the right upper of the window, it will open the Add dashboard state window.
+Assign a name, and the State ID will automatically generate based on that name, though you have the option to modify it. Click "Add" and then save all changes.
 
 {% include images-gallery.html imageCollection="states-2" %}
 
 Giving a corresponding action to a particular widget allows traveling between states.
-To add an action, you should click the "pencil" icon (Edit widget) at the upper right corner of the widget to enter the widget configuration mode.
+To add an action, you should click the "pencil" icon (Edit widget) in the upper right corner of the widget to enter the widget configuration mode.
 There you need to navigate to the "Action" tab and click the "+" icon to add a new action.
 
 {% include images-gallery.html imageCollection="states-3" %}
 
 It will open the "Add action" window.
 
-- _Action source_ is a particular act that needs to be done to achieve an aim.
-- _Name_ means a preferred title to an action.
-- _Icon_ defines a symbol for action.
-- _Type_ determines an aim of the action.
+- The _Action source_ is a particular act that needs to be done to achieve an aim.
+- The _Name_ means a preferred title to an action.
+- The _Icon_ defines a symbol for action.
+- The _Type_ determines an aim of the action.
 
 In our case, a _Type_ should be "Navigate to new dashboard state". After choosing this option, the line "Target dashboard state" will appear, where we have to choose a newly created state.
 When the configuration for a new action is done, click the "Add" button. The new action appears in the actions list. Click the "Apply" button at the upper right of the window to apply changes.

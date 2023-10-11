@@ -12,7 +12,7 @@ creating-dashboard:
         title: 'Login to your ThingsBoard instance and navigate to the "Dashboards" page through the main menu on the left of the screen. Then, click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu;'
     1:
         image: /images/user-guide/dashboards/overview/create-dashboard-2-ce.png
-        title: 'In the opened dialog, necessary to enter a dashboard title, description is optional. Click "Add";'
+        title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add";'
     2:
         image: /images/user-guide/dashboards/overview/create-dashboard-3-ce.png
         title: 'Once you have created the dashboard, it will be automatically opened. Save it by clicking the "Save" button in the upper right corner.'
@@ -108,7 +108,7 @@ dashboard-details:
 delete-dashboard-1:
     0:
         image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-1-ce.png
-        title: 'Go to the "Dashboards" page and click the "Trash" icon can opposite the dashboard`s name you want to delete;'
+        title: 'Go to the "Dashboards" page and click the "Trash" icon opposite the dashboard`s name you want to delete;'
     1:
         image: /images/user-guide/dashboards/managing-dashboard/delete-dashboard-2-ce.png
         title: 'Confirm deleting the dashboard in the dialog box.'
@@ -160,10 +160,10 @@ add-new-widget:
         title: 'Select a widget bundle, such as "Charts". To quickly find your desired widget, use the search bar by clicking the magnifying glass icon and entering the widget&#39;s name;'
     3:
         image: /images/user-guide/widgets/overview/add-new-dashboard-4-ce.png
-        title: 'Choose a widget, for instance, "Timeseries Line Chart," and click on it to open the "Add Widget" dialog box;'
+        title: 'Choose a widget, for instance, "Timeseries Line Chart," and click on it to open the "Add Widget" dialog window;'
     4:
         image: /images/user-guide/widgets/overview/add-new-dashboard-5-ce.png
-        title: 'In the dialog box, add a data source, optionally configure basic or advanced settings, and then click the "Add" button. Be sure to apply the changes;'
+        title: 'Specify the data source, add the data key, and click the "Add" button. Finally, apply your changes;'
     5:
         image: /images/user-guide/widgets/overview/add-new-dashboard-6-ce.png
         title: 'Your first widget has been created.'
@@ -211,7 +211,7 @@ time-window-time-zone:
 time-window-zoom-in:
     0:
         image: /images/user-guide/dashboards/overview/timewindow-zoom-1-ce.png
-        title: 'Zoom in by holding the right mouse key and move it on the chart in the place where you need to get a closer look.'
+        title: 'Zoom in by holding the right mouse key and move it on the chart to the place where you need to get a closer look.'
     1:
         image: /images/user-guide/dashboards/overview/timewindow-zoom-2-ce.png
         title: 'To zoom out to the original size of the chart, double-click on the widget.'
@@ -332,17 +332,17 @@ layout-4:
 columns:
     0:
         image: /images/user-guide/dashboards/overview/layout-settings-columns-count-1-ce.png
-        title: 'Specify number of columns;'
+        title: 'Specify the number of columns;'
     1:
         image: /images/user-guide/dashboards/overview/layout-settings-columns-count-2-ce.png
 
 margin:
     0:
         image: /images/user-guide/dashboards/overview/layout-settings-margin-between-widgets-1-ce.png
-        title: 'Specify margin between widgets;'
+        title: 'Specify the margin between widgets;'
     1:
         image: /images/user-guide/dashboards/overview/layout-settings-margin-between-widgets-2-ce.png
-        title: 'By default, the margin is set on 10;'
+        title: 'By default, the margin is set to 10;'
     2:
         image: /images/user-guide/dashboards/overview/layout-settings-margin-between-widgets-3-ce.png
         title: 'The maximum margin is 50.'
@@ -361,10 +361,10 @@ autofill:
 background-settings:
     0:
         image: /images/user-guide/dashboards/overview/layout-settings-background-color-1-ce.png
-        title: 'Click on the "Background color" row.'
+        title: 'Click on the "Background color" row;'
     1:
         image: /images/user-guide/dashboards/overview/layout-settings-background-color-2-ce.png
-        title: 'In the pop-up window with sliders choose the needed color and wished transparency. Then, press “Save” to apply changes.'
+        title: 'In the pop-up window with sliders choose the needed color and wished transparency. Then, press “Save” to apply changes;'
     2:
         image: /images/user-guide/dashboards/overview/layout-settings-background-color-3-ce.png
         title: 'After saving, you can see the customized background.'
@@ -372,10 +372,10 @@ background-settings:
 background-image:
     0:
         image: /images/user-guide/dashboards/overview/layout-settings-background-image-1-ce.png
-        title: 'Drop an image in the appropriate field, or upload it from a folder on your computer.'
+        title: 'Drop an image in the appropriate field, or upload it from a folder on your computer;'
     1:
         image: /images/user-guide/dashboards/overview/layout-settings-background-image-2-ce.png
-        title: 'To adjust the position of the image more precisely, click the "Background size mode" drop-down menu and choose how exactly the picture will fill the background space. After, apply changes;'
+        title: 'To adjust the position of the image more precisely, click the "Background size mode" drop-down menu and choose how exactly the picture will fill the background space. And apply changes;'
     2:
         image: /images/user-guide/dashboards/overview/layout-settings-background-image-3-ce.png
         title: 'After saving changes, you can see the customized background.'
@@ -396,10 +396,10 @@ states-root:
 states-2:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-states-2-ce.png
-        title: 'To add a new state, you need to click the “+” button in the right upper of the manage dashboard states window.'
+        title: 'To add a new state, you need to click the “+” button in the right upper of the manage dashboard states window;'
     1:
         image: /images/user-guide/dashboards/overview/dashboard-states-4-ce.png
-        title: 'Enter a state name, State ID will form automatically according to the name, but you can change it. Click "Add".'
+        title: 'Enter a state name, State ID will form automatically according to the name, but you can change it. Click "Add";'
     2:
         image: /images/user-guide/dashboards/overview/dashboard-states-5-ce.png
         title: 'After adding states, save all changes;'
@@ -410,21 +410,21 @@ states-2:
 states-3:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-states-7-ce.png
-        title: 'Click the “pencil” icon (edit widget) at the upper right corner of the widget to enter the widget configuration mode;'
+        title: 'Click the “pencil” icon (edit widget) in the upper right corner of the widget to enter the widget configuration mode;'
     1:
         image: /images/user-guide/dashboards/overview/dashboard-states-8-ce.png
-        title: 'Navigate to the “Action” tab and click the “+” icon to add a new action;'
+        title: 'Navigate to the “Action” tab and click the “+” icon to add a new action.'
 
 states-4:
     0:
         image: /images/user-guide/dashboards/overview/dashboard-states-9-ce.png
-        title: 'Enter action name, select action source, an aim of the action and select a state to which you will be transferred. Then click "Add" button;'
+        title: 'Enter the action name, select the action source, an aim of the action, and select the state to which you will be transferred. Then click "Add" button;'
     1:
         image: /images/user-guide/dashboards/overview/dashboard-states-10-ce.png
         title: 'The new action appears in the actions list. Apply changes;'
     2:
         image: /images/user-guide/dashboards/overview/dashboard-states-11-ce.png
-        title: 'Click on the button to bring the action into effect;'
+        title: 'Click on the button to activate the action;'
     3:
         image: /images/user-guide/dashboards/overview/dashboard-states-12-ce.png
         title: 'After clicking, we immediately transfer to the chosen state.'
@@ -435,7 +435,7 @@ states-entity-name:
         title: 'For the state to be named after the entity, use ${entityName} as the name of the state;'
     1:
         image: /images/user-guide/dashboards/overview/dashboard-states-14-ce.png
-        title: 'Click the “pencil” icon (edit widget) at the upper right corner of the widget to enter the widget configuration mode. Navigate to the “Action” tab and click the “+” icon to add a new action;'
+        title: 'Click the “pencil” icon (edit widget) in the upper right corner of the widget to enter the widget configuration mode. Navigate to the “Action” tab and click the “+” icon to add a new action;'
     2:
         image: /images/user-guide/dashboards/overview/dashboard-states-15-ce.png
         title: 'Enter action name, select action source, an aim of the action and select a state to which you will be transferred. Then click "Add" button;'
@@ -444,7 +444,7 @@ states-entity-name:
         title: 'The new action appears in the actions list. Apply changes;'
     4:
         image: /images/user-guide/dashboards/overview/dashboard-states-17-ce.png
-        title: 'Click on the row of our widget to bring the action into effect;'
+        title: 'Click the row of our widget to activate the action;'
     5:
         image: /images/user-guide/dashboards/overview/dashboard-states-18-ce.png
         title: 'After clicking, you will be transitioned to a state that is called the same as the entity that took part in the action.'
