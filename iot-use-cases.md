@@ -29,7 +29,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="img-button" href="/smart-energy/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg">See more
+                            <img src="/images/eye-icon.svg" alt="See more">See more
                         </div>
                     </div>
                     <div class="dashboard-frame">
@@ -56,7 +56,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="img-button" href="/smart-farming/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg">See more
+                            <img src="/images/eye-icon.svg" alt="See more">See more
                         </div>
                     </div>
                     <div class="dashboard-frame">
@@ -83,7 +83,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="img-button" href="/fleet-tracking/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg">See more
+                            <img src="/images/eye-icon.svg" alt="See more">See more
                         </div>
                     </div>
                     <div class="dashboard-frame">
@@ -110,7 +110,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="img-button" href="/smart-metering/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg">See more
+                            <img src="/images/eye-icon.svg" alt="See more">See more
                         </div>
                     </div>
                     <div class="dashboard-frame">
@@ -137,7 +137,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="img-button" href="/use-cases/environment-monitoring/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg">See more
+                            <img src="/images/eye-icon.svg" alt="See more">See more
                         </div>
                     </div>
                     <div class="dashboard-frame">
@@ -164,7 +164,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="img-button" href="/use-cases/smart-office/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg">See more
+                            <img src="/images/eye-icon.svg" alt="See more">See more
                         </div>
                     </div>
                     <div class="dashboard-frame">
@@ -191,7 +191,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="img-button" href="/use-cases/water-metering/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg">See more
+                            <img src="/images/eye-icon.svg" alt="See more">See more
                         </div>
                     </div>
                     <div class="dashboard-frame">
@@ -218,7 +218,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="img-button" href="/use-cases/smart-retail/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg">See more
+                            <img src="/images/eye-icon.svg" alt="See more">See more
                         </div>
                     </div>
                     <div class="dashboard-frame">
@@ -245,7 +245,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="img-button" href="/use-cases/air-quality-monitoring/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg">See more
+                            <img src="/images/eye-icon.svg" alt="See more">See more
                         </div>
                     </div>
                     <div class="dashboard-frame">
@@ -272,7 +272,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="img-button" href="/use-cases/smart-irrigation/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg">See more
+                            <img src="/images/eye-icon.svg" alt="See more">See more
                         </div>
                     </div>
                     <div class="dashboard-frame">
@@ -299,7 +299,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="img-button" href="/use-cases/waste-management/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg">See more
+                            <img src="/images/eye-icon.svg" alt="See more">See more
                         </div>
                     </div>
                     <div class="dashboard-frame">
