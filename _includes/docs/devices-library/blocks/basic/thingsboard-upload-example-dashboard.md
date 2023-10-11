@@ -18,7 +18,7 @@
         title: Navigate to the "**Dashboards**" page. By default, you navigate to the dashboard group "All". Click on the "**+**" icon in the top right corner. Select "**Import dashboard**".
     ===
         image: /images/user-guide/dashboards/dashboard-import-pe.png,
-        title:In the dashboard import window, upload the JSON file and click "**Import**" button.
+        title: In the dashboard import window, upload the JSON file and click "**Import**" button.
     ===
         image: /images/user-guide/dashboards/dashboard-import-1-pe.png,
         title: Dashboard has been imported.
