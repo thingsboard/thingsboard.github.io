@@ -1,26 +1,26 @@
 
 {% assign importDashboardCE = '
     ===
-        image: /images/user-guide/dashboards/creating-dash-ce.png,
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-ce.png,
         title: Navigate to the "**Dashboards**" page and click the "**+**" button in the upper right corner of the page and select "**Import dashboard**".
     ===
-        image: /images/user-guide/dashboards/dashboard-import-ce.png,
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-ce.png,
         title: In the dashboard import window, upload the JSON file and click "**Import**" button.
     ===
-        image: /images/user-guide/dashboards/dashboard-import-1-ce.png,
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-3-ce.png,
         title: Dashboard has been imported.
 '
 %}
 
 {% assign importDashboardPE = '
     ===
-        image: /images/user-guide/dashboards/creating-dash-pe.png,
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-pe.png,
         title: Navigate to the "**Dashboards**" page. By default, you navigate to the dashboard group "All". Click on the "**+**" icon in the top right corner. Select "**Import dashboard**".
     ===
-        image: /images/user-guide/dashboards/dashboard-import-pe.png,
-        title:In the dashboard import window, upload the JSON file and click "**Import**" button.
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-pe.png,
+        title: In the dashboard import window, upload the JSON file and click "**Import**" button.
     ===
-        image: /images/user-guide/dashboards/dashboard-import-1-pe.png,
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-3-pe.png,
         title: Dashboard has been imported.
 '
 %}
@@ -49,7 +49,7 @@ To add the dashboard to ThingsBoard, we need to import it. To import a dashboard
 
 - First download the [Check and control device data dashboard]({{exampleDashboardPath}}){:target="_blank" download="dashboard.json"} file.
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or  docsPrefix == "pe/" or docsPrefix == "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importDashboardPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importDashboardCE %}

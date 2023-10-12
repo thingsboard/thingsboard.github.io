@@ -6,7 +6,7 @@ chip: NVIDIA CUDA
 connectivity: Ethernet, WIFI, Bluetooth
 vendor: NVIDIA
 deviceImageFileName: nvidia-jetson-xavier-nx-developer-kit.png
-docsPrefix: paas
+docsPrefix: paas/
 ---
 
 
