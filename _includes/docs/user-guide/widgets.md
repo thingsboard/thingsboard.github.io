@@ -35,23 +35,6 @@ To add a new widget to a dashboard, you should:
 
 {% include images-gallery.html imageCollection="add-widget" showListImageTitles="true" %}
 
-### Import widget
-
-You can import a widget from a JSON file.
-
-To import a widget, you should:
-
-{% include images-gallery.html imageCollection="import-widget" showListImageTitles="true" %}
-
-## Export widget
-
-To export a widget, you should go to a dashboard, where a widget is located.  
-Then go to the "Edit mode".
-Now in the upper right corner of the needed widget, click the button "Export widget".
-This action saves the configuration file of the JSON format with all the settings of a particular widget to your PC.
-
-{% include images-gallery.html imageCollection="export-widget" %}
-
 ## Widget settings
 
 Widget settings consist of one or multiple data sources, appearance settings, widget card settings, actions, and mobile appearance that you can customize and perform on the widget’s content.
@@ -560,6 +543,25 @@ Mobile Mode settings consist of two options:
   If no value is specified, its original height will be used.
 
 {% include images-gallery.html imageCollection="mobile-settings" %}
+
+## Import and Export widget
+
+### Import widget
+
+You can import a widget from a JSON file.
+
+To import a widget, you should:
+
+{% include images-gallery.html imageCollection="import-widget" showListImageTitles="true" %}
+
+### Export widget
+
+To export a widget, you should go to a dashboard, where a widget is located.  
+Then go to the "Edit mode".
+Now in the upper right corner of the needed widget, click the button "Export widget".
+This action saves the configuration file of the JSON format with all the settings of a particular widget to your PC.
+
+{% include images-gallery.html imageCollection="export-widget" %}
 
 ## Next steps
 

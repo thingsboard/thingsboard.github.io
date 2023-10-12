@@ -230,7 +230,12 @@ To add a widget to a dashboard, you should:
 {% include images-gallery.html imageCollection="add-new-widget" showListImageTitles="true" %}
 
 Each widget typically has specific settings and parameters that allow users to customize its behavior and appearance according to their needs.
-Read more about widgets, their creation and settings [here](/docs/{{docsPrefix}}user-guide/widgets).
+For more information about widgets, how to create them, and their settings, click the button below:
+
+<br>
+<p><a href="/docs/{{docsPrefix}}user-guide/widgets/" class="n-button add-device">Widgets documentation</a></p>
+
+<br>
 
 ### Timewindow
 
@@ -244,7 +249,6 @@ The timewindow can work in two modes:
 - In the **history mode**, widgets receive data only during the initial load and no updates are issued over WebSockets.
 
 {% include images-gallery.html imageCollection="time-window" %}
-<br>
 
 **The data aggregation function** is applicable for time series data and is not applicable for alarms.  
 There are five aggregation functions available at the moment: Min, Max, Average, Sum and Count. The special function called None is used to disable the aggregation.
@@ -253,7 +257,6 @@ Using the aggregation functions saves network bandwidth and computation power of
 We recommend using aggregation functions whenever possible if you have a lot of raw values.
 
 {% include images-gallery.html imageCollection="time-window-aggregation" %}
-<br>
 
 The ThingsBoard it is possible to use predefined **intervals** (Current Day, Previous Day, Previous Month, etc.) in addition to last X minutes/hours/days.
 
@@ -303,6 +306,7 @@ It's not possible to use "or" in relation to combining different keys yet. For e
 
 See more examples of how to use filters in this video:
 
+<br>
 <div id="video">
   <div id="video_wrapper">
     <iframe src="https://www.youtube.com/embed/yTAhUpZiFkM?start=177" frameborder="0" allowfullscreen=""></iframe>
