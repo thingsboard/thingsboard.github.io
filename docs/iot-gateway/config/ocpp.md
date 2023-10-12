@@ -18,14 +18,10 @@ We will describe connector configuration file below.
 Connector configuration is a JSON file that contains information about how to connect to Charge Points, how to process
 the data and other service features. Let’s review the format of the configuration file using example below.
 
-<br>
-<details>
 
-<summary>
-<b>Example of OCPP Connector config file. Press to expand.</b>
-</summary>
+<b>Example of OCPP Connector config file.</b>
 
-{% highlight json %}
+{% capture ocppConf %}
 {
   "centralSystem": {
     "name": "Central System",
@@ -92,9 +88,8 @@ the data and other service features. Let’s review the format of the configurat
     }
   ]
 }
-{% endhighlight %}
-
-</details>
+{% endcapture %}
+{% include code-toggle.liquid code=ocppConf params="conf|.copy-code.expandable-20" %}
 
 ### Section "centralSystem"
 

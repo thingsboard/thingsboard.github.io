@@ -20,16 +20,9 @@ YUM<br/>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="SystemLibraries" toggle-spec=systemtogglespec %}
 
+<b> Example of BLE Connector config file.</b>
 
-<br>
-
-<details>
-
-<summary>
-<b> Example of BLE Connector config file. Press to expand.</b>
-</summary>
-
-{% highlight json %}
+{% capture bleConf %}
 
 {
     "name": "BLE Connector",
@@ -87,9 +80,8 @@ YUM<br/>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 }
 
 
-{% endhighlight %}
-
-</details>
+{% endcapture %}
+{% include code-toggle.liquid code=bleConf params="conf|.copy-code.expandable-20" %}
 
 <br>
 

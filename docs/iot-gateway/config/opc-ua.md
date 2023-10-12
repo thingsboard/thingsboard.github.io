@@ -23,16 +23,9 @@ This guide will help you to get familiar with OPC-UA connector configuration for
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this extension.
 We will describe connector configuration file below.
 
+<b>Example of OPC-UA Connector config file.</b>
 
-<br>
-
-<details>
-
-<summary>
-<b>Example of OPC-UA Connector config file. Press to expand.</b>
-</summary>
-
-{% highlight json %}
+{% capture opcuaConf %}
 
 {
   "server": {
@@ -84,9 +77,8 @@ We will describe connector configuration file below.
   }
 }
 
-{% endhighlight %}
-
-</details>
+{% endcapture %}
+{% include code-toggle.liquid code=opcuaConf params="conf|.copy-code.expandable-20" %}
 
 ## Section "server"
 

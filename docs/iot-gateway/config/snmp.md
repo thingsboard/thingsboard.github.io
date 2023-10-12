@@ -21,17 +21,12 @@ We will describe connector configuration file below.
 Connector configuration is a JSON file that contains information about SNMP managers and how to process the data.  
 Let's review the format of the configuration file using example below.    
 
-<br>
-<details>
-
-<summary>
-<b>Example of SNMP Connector config file. Press to expand.</b>
-</summary>
+<b>Example of SNMP Connector config file.</b>
 
 Example listed below will connect to a manager on **snmp.live.gambitcommunications.com**.  
 Then, connector will try to read the data from objects using configuration from attributes, telemetry section. See more info in a description below.  
 
-{% highlight json %}
+{% capture snmpConf %}
 {
   "devices": [
     {
@@ -171,10 +166,8 @@ Then, connector will try to read the data from objects using configuration from 
   ]
 }
 
-
-{% endhighlight %}
-
-</details>
+{% endcapture %}
+{% include code-toggle.liquid code=snmpConf params="conf|.copy-code.expandable-20" %}
 
 
 ### General section

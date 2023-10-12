@@ -12,15 +12,9 @@ This guide will help you to get familiar with ODBC connector configuration for T
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this connector.
 We will describe connector configuration file below.
 
-<br/>
+<b>Example of ODBC Connector config file.</b>
 
-<details>
-
-<summary>
-<b>Example of ODBC Connector config file. Press to expand.</b>
-</summary>
-
-{% highlight json %}
+{% capture odbcConf %}
 
 {
   "connection": {
@@ -77,9 +71,8 @@ We will describe connector configuration file below.
   }
 }
 
-{% endhighlight %}
-
-</details>
+{% endcapture %}
+{% include code-toggle.liquid code=odbcConf params="conf|.copy-code.expandable-20" %}
 
 ## Prerequisites
 

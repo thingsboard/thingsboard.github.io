@@ -10,17 +10,11 @@ description: CAN protocol support for ThingsBoard IoT Gateway
 
 This guide will help you to get familiar with CAN connector configuration for ThingsBoard IoT Gateway.  
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this connector.  
-We will describe connector configuration file below.  
+We will describe connector configuration file below.
 
-<br>
+<b>Example of CAN Connector config file.</b>
 
-<details>
-
-<summary>
-<b>Example of CAN Connector config file. Press to expand.</b>
-</summary>
-
-{% highlight json %}
+{% capture canConf %}
 
 {
   "interface": "socketcan",
@@ -112,9 +106,8 @@ We will describe connector configuration file below.
   ]
 }
 
-{% endhighlight %}
-
-</details>
+{% endcapture %}
+{% include code-toggle.liquid code=canConf params="conf|.copy-code.expandable-20" %}
 
 ## Root section
 The root part of the CAN connector configuration provides basic information to connect/reconnect to a CAN bus and the list of device configurations.  
