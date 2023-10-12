@@ -19,7 +19,7 @@ To connect your device, you'll first need to get its credentials. While ThingsBo
     '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDevicePE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDeviceCE %}

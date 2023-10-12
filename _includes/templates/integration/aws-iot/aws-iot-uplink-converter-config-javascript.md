@@ -38,4 +38,4 @@ return result;
 ```
 {: .copy-code}
 
-![image](https://img.thingsboard.io/user-guide/integrations/aws-iot/aws-iot-uplink-converter-java-pe.png)
+![image](/images/user-guide/integrations/aws-iot/aws-iot-uplink-converter-java-pe.png)

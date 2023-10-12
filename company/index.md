@@ -6,9 +6,9 @@ description:
 
 ---
 
-<h1 class="aboutus-title">About Us</h1>
+<h1 class="aboutus-title">About Us</h1> 
 
-<h1 class="who-we-are">Who we are?</h1>
+<h2 class="who-we-are">Who we are?</h2>
 <p class="company-info">ThingsBoard, Inc. was founded in 2016. We develop IoT software products under ThingsBoard™ umbrella.
    Our flagship IoT platform is the most popular open-source project in its class. ThingsBoard's freeware and licensed software is widely used by both IoT
    enthusiasts who design and prototype their smart solutions in their garages and industrial customers with a wide range of requirements for device management,
@@ -25,7 +25,7 @@ description:
         <img class="about-mission-right" src="https://img.thingsboard.io/about-mission-right.svg" alt="about mission right">
     </div>
     <div class="our-mission-info">
-        <h1 class="our-mission">Our mission</h1>
+        <h2 class="our-mission">Our mission</h2>
         <p class="company-info">
           IoT helps to reduce the negative impacts of human development on the environment and helps us to work and live better by surrounding us with smart devices.
           We invest our time and knowledge in the future by providing IoT cloud platform and products that help companies follow their sustainability commitments.
@@ -33,7 +33,7 @@ description:
     </div>
 </div>
 <div class="our-goal">
-    <h1>Our goal</h1>
+    <h2>Our goal</h2>
     <p>Reduce time-to-market for IoT solutions that change the world.</p>
 </div>
 <div class="center" style="margin-top: 48px;">

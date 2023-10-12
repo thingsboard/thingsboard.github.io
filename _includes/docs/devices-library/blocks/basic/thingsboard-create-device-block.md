@@ -32,7 +32,10 @@ For simplicity, we will provide the device manually using the UI.
     '
 %}
 
-{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
+page docsPrefix {{page.docsPrefix}}
+docsPrefix {{docsPrefix}}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDevicePE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDeviceCE %}

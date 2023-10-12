@@ -59,6 +59,8 @@ toc:
     path: /docs/pe/user-guide/ui/aliases/
   - title: Widgets
     section:
+      - title: Overview
+        path: /docs/pe/user-guide/widgets/
       - title: Widget Actions
         path: /docs/pe/user-guide/ui/widget-actions/
       - title: Widgets Library

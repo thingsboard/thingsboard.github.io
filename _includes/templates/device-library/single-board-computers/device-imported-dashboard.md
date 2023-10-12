@@ -6,25 +6,25 @@ should pop up, and you will be prompted to upload the JSON file and click “Imp
 
 {% assign importingDashboardCE = '
     ===
-        image: https://img.thingsboard.io/user-guide/dashboards/dashboard-import-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-ce.png
     ===
-        image: https://img.thingsboard.io/user-guide/dashboards/dashboard-import-1-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-ce.png
     ===
-        image: https://img.thingsboard.io/user-guide/dashboards/dashboard-import-2-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-3-ce.png
     '
 %}
 
 {% assign importingDashboardPE = '
     ===
-        image: https://img.thingsboard.io/user-guide/dashboards/dashboard-import-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-pe.png
     ===
-        image: https://img.thingsboard.io/user-guide/dashboards/dashboard-import-1-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-pe.png
     ===
-        image: https://img.thingsboard.io/user-guide/dashboards/dashboard-import-2-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-3-pe.png
     '
 %}
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importingDashboardPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importingDashboardCE %}
@@ -39,4 +39,4 @@ To do this - we need to press the pen icon and select entity aliases, select ali
 Then choose a device with name My device from dropdown list and save entity alias, now you should be able to see the data from the device. 
 
 If you did everything right, you have to see the following dashboard:
-![](https://img.thingsboard.io/devices-library/basic/single-board-computers/minicomputer-dashboard.png)
+![](/images/devices-library/basic/single-board-computers/minicomputer-dashboard.png)
