@@ -28,12 +28,12 @@ To verify your configuration run the mobile app. Then navigate to the devices li
     <div class="mobile-frame ios">
         <div class="phone-shadow right"></div>
         <div class="frame-image">
-            <img src="/images/mobile/{{docsPrefix}}device-dashboard-frame.png">
+            <img src="/images/mobile/{{docsPrefix}}device-dashboard-frame.png" alt="device dashboard frame">
         </div>
         <div class="frame-video">
             <video autoplay loop preload="auto" muted playsinline>
-                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/{{docsPrefix}}device-dashboard.mp4" type="video/mp4">
-                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/{{docsPrefix}}device-dashboard.webm" type="video/webm">
+                 <source src="https://video.thingsboard.io/mobile/{{docsPrefix}}device-dashboard.mp4" type="video/mp4">
+                 <source src="https://video.thingsboard.io/mobile/{{docsPrefix}}device-dashboard.webm" type="video/webm">
             </video>
         </div>
     </div>

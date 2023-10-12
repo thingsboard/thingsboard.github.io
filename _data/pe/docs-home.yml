@@ -191,8 +191,6 @@ toc:
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning
       path: /docs/pe/user-guide/bulk-provisioning/
-    - title: Entity Groups
-      path: /docs/pe/user-guide/groups/
     - title: Scheduler
       path: /docs/pe/user-guide/scheduler/
     - title: Reporting
@@ -262,10 +260,14 @@ toc:
     path: /docs/pe/user-guide/ui/rule-chains/
   - title: Dashboards
     path: /docs/pe/user-guide/ui/dashboards/
+  - title: Entity Groups
+    path: /docs/pe/user-guide/groups/
   - title: SMS Provider Settings
     path: /docs/pe/user-guide/ui/sms-provider-settings/
   - title: Slack Settings
     path: /docs/pe/user-guide/ui/slack-settings/
+  - title: Microsoft Teams Settings
+    path: /docs/pe/user-guide/ui/microsoft-teams-settings/
     new: true
   - title: Mail Settings
     path: /docs/pe/user-guide/ui/mail-settings/

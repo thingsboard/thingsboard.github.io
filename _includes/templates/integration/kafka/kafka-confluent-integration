@@ -48,7 +48,7 @@ Also, need will be to add several **other properties**, namely:
 
 - **`CLUSTER_API_KEY`** - your access key from Cluster settings.
 - **`CLUSTER_API_SECRET`** - your access secret from Cluster settings.
-  <br/>
+  <br>
 
 To generate the required API key and secret for it, in the cluster you must go to the Data Integration menu, select the API Keys submenu, pick Create key and Select the Scope for the API Key. Here you will see the key and secret to it, which should be used in the integration properties.
 

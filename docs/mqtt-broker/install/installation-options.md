@@ -14,7 +14,7 @@ notitle: "true"
             </div>
             <div class="deployment-container one-line-deployment-container">
                 <div class="deployment-div">
-                    <div class="container">                        
+                    <div class="container">
                         <div class="deployment-section deployment-on-premise active" id="onPremise">
                            <div class="deployment-cards">
                                 <div class="deployment-cards-container">
@@ -55,6 +55,15 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
+                                        <a href="/docs/mqtt-broker/install/cluster/azure-cluster-setup/">
+                                            <span>
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/cloud/azure.svg" title="Cluster setup on AKS" alt="Azure K8S cluster">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="deployment-card-block">
                                         <a href="/docs/mqtt-broker/install/building-from-source/">
                                             <span>
                                                 <div class="deployment-logo">
@@ -63,12 +72,12 @@ notitle: "true"
                                             </span>
                                         </a>
                                     </div>
-                               </div>                    
-                            </div>                        
+                               </div>
+                            </div>
                         </div>
                     </div>
-                </div>    
-            </div>            
+                </div>
+            </div>
           </div>
        </div>
     </div>

@@ -35,38 +35,44 @@
     jqueryUiDefer(initContentToggle{{contentToggleId}});
     let toggleBlocksIdsToTocsIds{{contentToggleId}} = {};
     function initContentToggle{{contentToggleId}}() {
-        $(function(){
-            let toggleBlocksIds = [];
-            $('.panel-heading.{{contentToggleId}} > a').each(function() {
-                toggleBlocksIds.push($(this).attr("data-target").substring(1));
-            });
-            let i = 0;
-            for (let id of toggleBlocksIds) {
-                toggleBlocksIdsToTocsIds{{contentToggleId}}[id] = [];
-                $('#' + id).find(":header").each(function() {
-                    let heading = $(this);
-                    heading.attr("id", heading.attr("id") + i++);
-                    toggleBlocksIdsToTocsIds{{contentToggleId}}[id].push('markdown-toc-' + $(this).attr('id'));
+        $(function() {
+            if ($('#table-of-contents').find('#markdown-toc').length) {
+                let toggleBlocksIds = [];
+                $('.panel-heading.{{contentToggleId}} > a').each(function() {
+                    toggleBlocksIds.push($(this).attr("data-target").substring(1));
                 });
-            }
-            window.addEventListener('popstate', onPopState{{contentToggleId}});
-
-            onPopState{{contentToggleId}}();
-
-            $('.tb-liquid-content-toggle#{{contentToggleId}} a.content-toggle-button').click(function(event) {
-                event.preventDefault();
-                var id = $(this).attr("data-target").substring(1);
-                var param = '{{contentToggleId}}';
-                var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
-                params[param] = id;
-
-                var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
-                if (window.location.hash) {
-                    newurl += window.location.hash;
+                let i = 0;
+                for (let id of toggleBlocksIds) {
+                    toggleBlocksIdsToTocsIds{{contentToggleId}}[id] = [];
+                    $('#' + id).find(":header").each(function() {
+                        let heading = $(this);
+                        heading.attr("id", heading.attr("id") + i++);
+                        toggleBlocksIdsToTocsIds{{contentToggleId}}[id].push('markdown-toc-' + $(this).attr('id'));
+                    });
                 }
-                window.history.pushState({ path: newurl }, '', newurl);
-                selectTarget{{contentToggleId}}(id);
-            });
+                window.addEventListener('popstate', onPopState{{contentToggleId}});
+
+                onPopState{{contentToggleId}}();
+
+                $('.tb-liquid-content-toggle#{{contentToggleId}} a.content-toggle-button').click(function(event) {
+                    event.preventDefault();
+                    var id = $(this).attr("data-target").substring(1);
+                    var param = '{{contentToggleId}}';
+                    var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+                    params[param] = id;
+
+                    var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
+                    if (window.location.hash) {
+                        newurl += window.location.hash;
+                    }
+                    window.history.pushState({ path: newurl }, '', newurl);
+                    selectTarget{{contentToggleId}}(id);
+                });
+            } else {
+                setTimeout(function() {
+                    initContentToggle{{contentToggleId}}();
+                }, 50);
+            }
         });
     }
 

@@ -77,7 +77,7 @@
             "useTooltipFunction": true,
             "useLabelFunction": true,
             "labelFunction": "        return '<div style=\"position: relative; white-space: nowrap; text-align: center; font-size: 13px; top: 3px;\"><span style=\"margin-left: -500%;\"></span><span style=\"border: solid rgb(0,105,92); border-radius: 10px; color: rgb(0,105,92); background-color: #fff; padding-left: 5px; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;\">${entityName}</span><span style=\"margin-right: -500%;\"></span></div>';\n",
-            "tooltipFunction": "var type = dsData[dsIndex][\"mapType\"];\nif (typeof type !== undefined) {\n    if (type == \"tracker\") {\n        return '<div style=\"color:black\"><b>${entityName}</b><br><br/><b>Latitude:</b> ${latitude:7}<br/><b>Longitude:</b> ${longitude:7}<br/><br/><link-act name=\"tracker_tag_action\">Tracker details</link-act><br/></div>';\n    }\n}\n"
+            "tooltipFunction": "var type = dsData[dsIndex][\"mapType\"];\nif (typeof type !== undefined) {\n    if (type == \"tracker\") {\n        return '<div style=\"color:black\"><b>${entityName}</b><br><br><b>Latitude:</b> ${latitude:7}<br><b>Longitude:</b> ${longitude:7}<br><br><link-act name=\"tracker_tag_action\">Tracker details</link-act><br></div>';\n    }\n}\n"
           },
           "title": "New OpenStreetMap",
           "dropShadow": true,

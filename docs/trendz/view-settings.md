@@ -35,6 +35,18 @@ For line and bar charts can select stroke type that used for drawing lines. Poss
 * straight
 * stepline
 
+##### Horizontal Bar
+For bar charts you can select horizontal or vertical bars.
+
+##### Stacked Bar
+Show the composition and comparison of several variables, relative or absolute, over a period of time, appearing as a series of bars stacked on top of each other.
+
+##### Show Labels
+Shows values in charts.
+
+##### Show timeline
+Add a timeline at the bottom of the chart for quick selection of time periods (zoom).
+
 ##### Use single Y-axis
 
 By default each timeseries field in **Y-axis** re-use separate axis. If you show 3 timeseries on chart - you will have 3 different Y-axis.
@@ -54,8 +66,20 @@ X axis can be drawn on top of the chart or bottom. This config useful for big he
 When multiple entities are used for visualization and some of them do have telemetry and others don't it may be useful to 
 remove entities without telemetry from the view (chart/table/heatmap). For making it - enable empty series removing and system will not render them.
 
+##### Enable filter auto refresh
+Loading the list of elements for the selected filters in real time. By default, the actual list of these elements is loaded during the creation of the view (after pressing the "Build" buttons).
+
 ##### Sort Order
 Define default sorting for Tables.
+
+##### Manual Y axis range
+Set the MIN and MAX values to display on the Y-axis
+
+##### Manual X axis range
+Set the MIN and MAX values to display on the X-axis.
+
+##### Show toolbox (export and zoom)
+Displays a toolbox in the upper right corner of the visualization that allows you to export and zoom in on a selection for some types of visualizations
 
 ##### Show total row
 Show/Hide Total row for Tables.
@@ -68,7 +92,12 @@ If chart contains multiple lines/series system applies different colors for them
 
 Note that you can also define specific color for each field individually in field configuration window. 
 
-## Entities Root
+## Query params
+
+##### Preview mode
+The ability to load only part of the data from limited set of devices or assets to quickly see how the view will look.
+
+##### Entities Root
 
 Let's assume that we have 2 buildings and 2 sensors registered in the ThingsBoard and relations configured among them:
 
@@ -89,7 +118,7 @@ Trendz select Root Entity automatically during view calculation. However you can
 * Save and rebuild view  
 
 
-## Topology Entities
+##### Topology Entities
 
 Trendz create query plan for each view. For making it system collects all fields and entities that are used in the View. 
 Then, using **Topology Graph**, system identified best query plan for this request by finding the shortest path between used Entities.
@@ -99,3 +128,47 @@ For Complex Topology shortest path is not always the best and you modify what en
 * Open View Settings
 * Select required **Topology Entities** that should be included into query plan
 * Save and rebuild view
+
+## View Mode fields
+
+##### Hide filters
+Hide the **filter** field for full-screen view and for display on the dashboard.
+
+##### Hide date picker
+Hide the **date picker** field for full-screen view and for display on the dashboard.
+
+##### Hide By Option
+Hide the **by option** field for full-screen view and for display on the dashboard.
+
+##### GET filter values from url
+The ability to get filtering parameters for the ThingsBoard dashboard using the URL line (query parameters) of the browser.
+
+##### SET filter values to url
+The ability to set filtering parameters for the ThingsBoard dashboard using the URL line (query parameters) of the browser.
+
+##### Hidden filters
+Hide specific filters when displayed in the ThingsBoard dashboard
+
+##### Row-click entity
+An entity that will be passed on a click on a view element (table row, bar of chart, etc.) to the ThingsBoard alias. This is usually used to change filters of view in other widgets.
+[**More details you can find here**](/docs/trendz/embed-visuals/#configure-onrowclock-action)
+
+## Colors
+
+##### Annotations
+Color Zones on the chart for ranges along the Y axis. [**More details you can find here**](/docs/trendz/visualizations-line/#color-zones) 
+
+## Caching
+
+##### Cache report
+If the query plan is not changed will be return cached View Report without loading data from ThignsBoard.
+[**More details you can find here**](/docs/trendz/cache-settings/)
+
+##### Enable caching
+In cases when data can be grouped by fixed intervals, like Hour or Date, will be load already computed\aggregated field value from cache instead of reloading data from ThingsBoard.
+[**More details you can find here**](/docs/trendz/cache-settings/)
+
+## TB calculated telemetry save
+It feature provides the ability to make and save (to the same item) a new telemetry that is made by a calculation field that is derived from any telemetry field that you want. 
+It is a scheduled action that will be launched every chosen time unit to keep actual values during the present time.
+[**More details you can find here**](/docs/trendz/save-telemetry-to-thingsboard/)

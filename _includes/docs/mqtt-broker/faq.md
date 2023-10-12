@@ -7,7 +7,7 @@
 TBMQ represents an open-source software product developed by ThingsBoard, designed to facilitate communication between MQTT clients. 
 This particular product is freely available for both personal and commercial purposes, with the added flexibility of being deployable in any desired location. 
 For individuals new to utilizing the broker, we suggest consulting the comprehensive resources, namely the
-[what-is-thingsboard-mqtt-broker](/docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/) and the
+[what-is-tbmq](/docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/) and the
 [getting started guide](/docs/mqtt-broker/getting-started/), in order to gain a thorough understanding of its functionality. 
 Further details can be found on the dedicated page, providing a wealth of additional information.
 

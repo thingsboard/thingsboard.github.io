@@ -8,6 +8,16 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v3.6.0 (Sep 22, 2023) {#v36}
+
+**Major** release with everything from [TB CE v3.6](/docs/reference/releases/#v36) with the following improvements and bug fixes:
+
+* [#9087](https://github.com/thingsboard/thingsboard/pull/9087) Add possibility to create Assets, Dashboards, EntityViews, AssetProfile, DeviceProfile on edge by @AndriiLandiak;
+* [#9062](https://github.com/thingsboard/thingsboard/pull/9062) Push tenant and tenant profile entities to the edge by @AndriiLandiak;
+* [#9052](https://github.com/thingsboard/thingsboard/pull/9052) Introduce Event Pub/Sub Model for Detecting Changes in Entities by @AndriiLandiak;
+* [#8830](https://github.com/thingsboard/thingsboard/pull/8830) Edge event table - added sequential ID column to handle properly heavy load and cluster cases by @volodymyr-babak;
+* [#9245](https://github.com/thingsboard/thingsboard/pull/9245) Edge instructions for ubuntu, centos by @deaflynx and @AndriiLandiak;
+
 ## v3.5.1.1 (Jul 4, 2023) {#v3511}
 
 **Hotfix** release to fix incorrect update of sequential id offset:

@@ -20,7 +20,7 @@ To add a new tenant, please follow the instructions below:
 
 Learn more about tenant profiles [here](/docs/{{docsPrefix}}user-guide/tenant-profiles).
 
-<br/>
+<br>
 On the Tenant details page, you as the System administrator can view the attributes, the latest telemetry, assign the home dashboard, and copy the tenant ID.
 
 {% include images-gallery.html imageCollection="tenant-details-ce" %}

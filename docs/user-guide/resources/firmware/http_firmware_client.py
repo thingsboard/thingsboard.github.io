@@ -11,13 +11,13 @@
 #      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #      See the License for the specific language governing permissions and
 #      limitations under the License.
-import requests.status_codes
 from requests import get, post
 from time import sleep
 from zlib import crc32
 from hashlib import sha256, sha384, sha512, md5
 from mmh3 import hash, hash128
 from math import ceil
+from random import randint
 
 
 FW_CHECKSUM_ATTR = "fw_checksum"

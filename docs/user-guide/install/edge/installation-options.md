@@ -17,9 +17,9 @@ notitle: "true"
                     </p>
                 </div>
             </div>
-            <div class="col-lg-12 deployment-container">                
+            <div class="col-lg-12 deployment-container">
                 <div class="deployment-div">
-                    <div class="container">                        
+                    <div class="container">
                         <div class="deployment-section deployment-on-premise" id="onPremise">
                            <div class="deployment-cards">
                                 <div class="deployment-cards-container">
@@ -77,12 +77,12 @@ notitle: "true"
                                             </span>
                                         </a>
                                     </div>
-                               </div>                    
-                            </div>                        
+                               </div>
+                            </div>
                         </div>
                     </div>
-                </div>    
-            </div>            
+                </div>
+            </div>
           </div>
        </div>
     </div>

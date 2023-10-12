@@ -87,17 +87,17 @@ Refer to [docs.monoz.io](https://docs.monoz.io) for STM32CubeIDE operations, CLI
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-1.Open the project file in STM32CubeIDE.<br/>
+1.Open the project file in STM32CubeIDE.<br>
 2.Go to Lib -> tool_gen -> MZ_GPSSensor and change the mqtt client config as per your setup.
 
 ![image](/images/samples/monoz/monoZero-07.png)
 
-<br/>
+<br>
 3.Go to Lib -> tool_gen -> MZ_modemconfig and change the apn settings as per your setup.
 
 ![image](/images/samples/monoz/monoZero-08.png)
 
-<br/>
+<br>
 4.Build the code and directly flashed to our board.
 
 5.The expected CLI screen upon successful flashing.

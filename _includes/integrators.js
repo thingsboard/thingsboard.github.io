@@ -112,7 +112,7 @@ ajax().then(function(data) {
   }).change();
 });
 
-function Map(m)
+function mapSelect(m)
 {
     if (document.getElementById('integratorsContainerEmpty') != null) {
     document.getElementById('integratorsContainerEmpty').id = 'integratorsContainer';

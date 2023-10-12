@@ -15,7 +15,7 @@ notitle: "true"
             <div class="cards">
                 <a href="/docs/user-guide/install/installation-options/" class="card thingsboard-ce">
                     <div class="card-title">
-                        <span class="title-text">ThingsBoard<br/>Community Edition</span>
+                        <span class="title-text">ThingsBoard<br>Community Edition</span>
                     </div>
                     <div class="card-img product community-edition-bg"></div>
                     <div class="card-description">
@@ -24,7 +24,7 @@ notitle: "true"
                 </a>
                 <a href="/docs/user-guide/install/pe/installation-options/" class="card thingsboard-pe">
                     <div class="card-title">
-                        <span class="title-text">ThingsBoard<br/>Professional Edition</span>
+                        <span class="title-text">ThingsBoard<br>Professional Edition</span>
                     </div>
                     <div class="card-img product professional-edition-bg"></div>
                     <div class="card-description">  
