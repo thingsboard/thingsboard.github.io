@@ -12,7 +12,7 @@ description: Installation structure and configuration of ThingsBoard IoT Gateway
 
 ## Directory structure
 
-Please see default directory structure below for daemon installation.  
+Please see default directory structure below for daemon installation.
 
 ```text
 /etc/thingsboard-gateway/config                   - Configuration folder.
@@ -29,15 +29,15 @@ Please see default directory structure below for daemon installation.
 /var/lib/thingsboard_gateway/extensions           - Folder for custom connectors/converters.                      
     modbus                                        - Folder for Modbus custom connectors/converters.
     mqtt                                          - Folder for MQTT custom connectors/converters.
-        __init__.py                               - Default python package file, needed for correct imports.
-        custom_uplink_mqtt_converter.py           - Custom Mqtt converter example.
+        __init__.py                               - Default Python package file, needed for correct imports.
+        custom_uplink_mqtt_converter.py           - Custom MQTT converter example.
     ...
     opcua                                         - Folder for OPC-UA custom connectors/converters.
     ble                                           - Folder for BLE custom connectors/converters.
     request                                       - Folder for Request custom connectors/converters.
     can                                           - Folder for CAN custom connectors/converters.
 
-/var/log/thingsboard-gateway                      - Logs folder
+/var/log/thingsboard-gateway                      - Logs folder.
     connector.log                                 - Connector logs.
     service.log                                   - Main gateway service logs.
     storage.log                                   - Storage logs.
@@ -47,17 +47,14 @@ Please see default directory structure below for daemon installation.
 ## General configuration file
 
 The main configuration file that is used for connection to ThingsBoard platform instance and enable/disable connectors. 
-This configuration points to ThingsBoard instance thingsboard.cloud and uses 
-memory file storage configured to store maximum of 100,000 records. There are 4 different connectors active. 
-If you like to use only one of them - just remove all other connectors. 
 
-<br>
-<details>
-<summary>
+The example configuration file provided below sets a connection to the ThingsBoard instance located at 
+thingsboard.cloud and utilizes memory file storage, which is set up to hold a maximum of 100,000 records. There are 4 
+different connectors active. If you prefer to use only one, simply remove the others from the configuration.
+
 <b>Example of main configuration file. Press to show.</b>
-</summary>
 
-{% highlight json %}
+{% capture genConf %}
 
 {
   "thingsboard": {
@@ -130,9 +127,8 @@ If you like to use only one of them - just remove all other connectors.
   ]
 }
 
-{% endhighlight %}
-<b><i>Spaces identity are important.</i></b>  
-</details>
+{% endcapture %}
+{% include code-toggle.liquid code=genConf params="conf|.copy-code.expandable-20" %}
 
 #### Sections in config file
 
@@ -146,22 +142,22 @@ If you like to use only one of them - just remove all other connectors.
 |**Parameter**             | **Default value**                            | **Description**                                                                         |
 |---                       |---                                           |-----------------------------------------------------------------------------------------|
 | ***thingsboard***        |                                              | Configuration for connection to server.                                                 |
-| host                     | **thingsboard.cloud**                        | Hostname or ip address of ThingsBoard server.                                           |
-| port                     | **1883**                                     | Port of mqtt service on ThingsBoard server.                                             |
+| host                     | **thingsboard.cloud**                        | Hostname or IP address of ThingsBoard server.                                           |
+| port                     | **1883**                                     | Port of MQTT service on ThingsBoard server.                                                |
 | qos                      | **1**                                        | QoS levels 0 (at most once) and 1 (at least once).                                      |
 | minPackSendDelayMS       | **200**                                      | Delay between sending packets (Decreasing this setting results in increased CPU usage). |
 | minPackSizeToSend        | **500**                                      | Minimum size of packs to send.                                                          |
 
 ###### Subsection "statistics"
 
-This subsection uses to configure collecting statistics data and sending them to ThingsBoard Gateway device attributes.
+This subsection is used to configure collecting statistics data and sending them to ThingsBoard Gateway device attributes.
 
-|**Parameter**|**Default value**|**Description**|
-|:-|:-|-
-| statistics                   |                 | Configuration for enabling statistics collecting                   |
-| ... enable                   | true            | A boolean value that is used to on/off collecting statistics       |
-| ... statsSendPeriodInSeconds | 3600            | An integer value that is used to send data some every period       |
-| ... configuration            | statistics.json | Name of a configuration file for additional user statistics data   |
+|**Parameter**|**Default value**| **Description**                                                                |
+|:-|:-|--------------------------------------------------------------------------------
+| statistics                   |                 | Configuration for enabling statistics collecting.                              |
+| ... enable                   | true            | A boolean value that is used to on/off collecting statistics.                  |
+| ... statsSendPeriodInSeconds | 3600            | An integer value is utilized for transmitting data at regular intervals.       |
+| ... configuration            | statistics.json | Name of a configuration file for additional user statistics data (in seconds). |
 |---
 
 You can define additional parameter "configuration" and provide your own command for collecting some additional data.

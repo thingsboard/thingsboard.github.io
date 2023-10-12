@@ -20,7 +20,7 @@ the data and other service features. Let’s review the format of the configurat
 
 <b>Example of XMPP Connector config file.</b>
 
-{% capture bleConf %}
+{% capture xmppConf %}
 {
   "server": {
     "jid": "gateway@localhost",

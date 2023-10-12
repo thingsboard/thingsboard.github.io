@@ -18,12 +18,12 @@ For purpose of this guide, we will use following things:
 <body>
   <p>
     <b style="color:red">WARNING:</b>
-    <span style="color:black">if you have already configured the gateway - create a backup, because the new remote configuration will overwrite settings files. 
-    <br>If you used gateway version < 3.4, the gateway will automatically generate a new configuration files in JSON format.</span>
+    <span style="color:black">If you've previously configured the gateway, create a backup, as the new remote configuration will overwrite existing settings files.  
+    <br>For those who used a gateway version earlier than 3.4, the gateway will automatically generate a new configuration file in JSON format.</span>
   </p>
 </body>
 {% endcapture %}
-{% include templates/info-banner.md content=info %}
+{% include templates/warn-banner.md content=info %}
 
 ## Dashboard overview
 
@@ -140,7 +140,7 @@ The dashboard consists of two main sections:
    - Name of connector;
    - Type of connector;
    - Configuration status - displays whether the remote configuration is synchronized with the local configuration;
-   - Status of the connector - if it is "green" - there are no errors, the connector is working correctly, if it is "red" - the connector is not working correctly;
+   - Status of the connector - if it is "green" - there are no errors, and the connector is working correctly. If it is "red" - the connector is not working correctly;
    - Actions:
      - RPC - dashboard for sending [RPC through gateway to connector](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods/);
      - Logs - dashboard with connector logs;

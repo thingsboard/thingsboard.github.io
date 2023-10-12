@@ -11,7 +11,6 @@ description: OPC-UA protocol support for ThingsBoard IoT Gateway
 {:toc}
 
 {% capture difference %}
-<br>
 **From Gateway version 3.1 we added a new OPC-UA connector based on the AsyncIO library. 
 Note that the connector is in the early beta, so it can have bugs. 
 Also, it is not recommended to use it in production mode for now.

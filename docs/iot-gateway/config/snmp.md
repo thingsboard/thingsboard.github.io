@@ -286,11 +286,6 @@ ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device t
  
 Configuration, provided in this section uses for sending RPC requests from ThingsBoard to device through the gateway.
 
-| **Parameter**                 | **Default value**                                                 | **Description**                                                                       |
-|:-|:-|-
-| 
-|---
-
 {% capture rpc_variants %}
 **There are 2 types of the RPC calls:**  
 1. With reply, after sending request the gateway will wait for response and send it to ThingsBoard.
@@ -339,7 +334,11 @@ Supported methods are:
 
  - **get**
 
-   Specific configuration parameters:  
+   Specific configuration parameters:  <br>  
+   **oid** - Array of object identifiers. 
+
+   **method** - Method name. 
+
    **timeout** - Request timeout in seconds.
    
    Configuration example:
@@ -354,9 +353,12 @@ Supported methods are:
 
  - **multiget**
  
-   Specific configuration parameters:  
+   Specific configuration parameters:  <br>  
    **oid** - Array of object identifiers.  
-   **timeout** - Request timeout in seconds.    
+
+   **timeout** - Request timeout in seconds.  
+
+   **method** - Method name.
    
    Configuration example:  
    ```json
@@ -373,8 +375,12 @@ Supported methods are:
    
  - **getnext**
  
-   Specific configuration parameters:  
-   **timeout** - Request timeout in seconds.
+   Specific configuration parameters: <br>  
+   **oid** - Array of object identifiers. 
+
+   **timeout** - Request timeout in seconds.    
+
+   **method** - Method name.
    
    Configuration example:  
    ```json
@@ -388,8 +394,10 @@ Supported methods are:
 
  - **multiwalk**
  
-   Specific configuration parameters:  
-   **oid** - Array of object identifiers  
+   Specific configuration parameters:  <br>  
+   **oid** - Array of object identifiers.
+
+   **method** - Method name.
    
    Configuration example:  
    ```json
@@ -405,8 +413,10 @@ Supported methods are:
    
  - **bulkwalk**
  
-   Specific configuration parameters:  
-   **oid** - Array of object identifiers  
+   Specific configuration parameters:  <br>  
+   **oid** - Array of object identifiers.
+
+   **method** - Method name.
    
    Configuration example:  
    ```json
@@ -421,9 +431,11 @@ Supported methods are:
    ```
  - **bulkget**
  
-   Specific configuration parameters:  
-   **scalardOid** - Array of non-repeaters object identifiers.  
-   **repeatingOid** - Array of max-repetitions object identifiers.  
+   Specific configuration parameters:  <br>  
+   **scalardOid** - Array of non-repeaters object identifiers.
+
+   **repeatingOid** - Array of max-repetitions object identifiers.   
+
    **maxListSize** - Maximum size of the returning list.  
    
    Configuration example:
@@ -444,7 +456,7 @@ Supported methods are:
    ```
  - **walk**
  
-   Specific configuration parameters:  
+   Specific configuration parameters:  <br>  
    **community** - Manager object community type.    
    
    Configuration example:

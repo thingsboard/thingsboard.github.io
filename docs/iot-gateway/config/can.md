@@ -133,7 +133,7 @@ For example, the SocketCAN interface [supports](https://python-can.readthedocs.i
 * *receive_own_messages*
 * *fd*
 * *can_filters*
-ё
+
 ```json
 "backend": {
   "receive_own_messages": true,
