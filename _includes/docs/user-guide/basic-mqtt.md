@@ -73,13 +73,13 @@ One-way SSL authentication is a standard authentication mode, where your client 
 ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://thingsboard.cloud/signup).
 Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide to provision server certificate if you are hosting your own ThingsBoard instance.
 
-Once provisioned, you should prepare a certificate chain in pem format. This chain will be used by mqtt client to validate the server certificate.
-Save the chain to your working directory as "**tb-server-chain.pem**".
-An example of certificate chain for *mqtt.thingsboard.cloud* is located [here](/docs/paas/user-guide/resources/mqtt-over-ssl/tb-server-chain.pem).
+Once provisioned, you should prepare a CA certificate in pem format. This certificate will be used by mqtt client to validate the server certificate.
+Save the CA certificate to your working directory as "**tb-ca.pem**".
+An example of CA certificate for *mqtt.thingsboard.cloud* is located [here](/docs/paas/user-guide/resources/mqtt-over-ssl/tb-cloud-root-ca.pem).
 
-Now you may use the *tb-server-chain.pem* to setup a secure connection to your ThingsBoard instance (*YOUR_TB_HOST*) to upload telemetry:
+Now you may use the *tb-ca.pem* to setup a secure connection to your ThingsBoard instance (*YOUR_TB_HOST*) to upload telemetry:
 ```bash
-mosquitto_pub --cafile tb-server-chain.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
+mosquitto_pub --cafile tb-ca.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
 -t "v1/devices/me/telemetry" -i "YOUR_CLIENT_ID" -u "YOUR_CLIENT_USERNAME" -P "YOUR_CLIENT_PASSWORD" -m {"temperature":25}
 ```
 {: .copy-code}

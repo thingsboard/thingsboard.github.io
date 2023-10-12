@@ -81,7 +81,7 @@ The above command uses **mqtt.thingsboard.cloud** host and **1883** port and req
 
 One-way SSL authentication is a standard authentication mode, where your client device verifies the identity of a server using server certificate.
 ThingsBoard Cloud uses a valid certificate.
-Please download the certificate chain using this [**link**](/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ssl/tb-cloud-root-ca.pem)
+Please download the CA certificate using this [**link**](/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ssl/tb-cloud-root-ca.pem)
 and save it to your working directory as "**tb-cloud-root-ca.pem**".
 
 ```bash
