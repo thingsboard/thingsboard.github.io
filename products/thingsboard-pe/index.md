@@ -18,7 +18,7 @@ description:
 <section id="intro">
 	<main>
 		<h1>Advanced ThingsBoard IoT Platform distribution</h1>
-		<h1 class="clari">with value added features</h1>
+		<h2 class="clari">with value added features</h2>
 	</main>
 </section>
 
@@ -248,13 +248,13 @@ description:
     <main>
         <div class="item">
             <img src="/images/pe/cloud-premises.svg" alt="Flexible deployment options">
-            <h1>Flexible deployment options</h1>
+            <h2 class="in-the-passt-h1">Flexible deployment options</h2>
             <p>Deploy ThingsBoard platform in the cloud or on premises. Use commodity hardware to scale out horizontally by adding new nodes to your cluster. Single ThingsBoard server can support 10 000+ devices and 100M messages per hour, while simple cluster can support millions of devices and billions of messages.</p>
         </div>
         <div class="divider"></div>
         <div class="item">
             <img src="/images/pe/pricing-models.svg" alt="Simple and predictable pricing models">
-            <h1>Simple and predictable pricing models</h1>
+            <h2>Simple and predictable pricing models</h2>
             <p>Say "No!" to per message or per device pricing that turns to a monster bills in production system. ThingsBoard PE supports two simple and predictable pricing models depending on your product life-cycle stage.</p>
         </div>
 	</main>
