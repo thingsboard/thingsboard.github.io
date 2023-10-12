@@ -250,15 +250,15 @@ For OAuth2 configuration click [here](/docs/{{docsPrefix}}user-guide/oauth-2-sup
 <section id="talkToUs">
     <div id="gettingHelp">
         <a href="https://gitter.im/thingsboard/chat">
-            <h1>Community chat</h1>
+            <h2>Community chat</h2>
             <p>Our Gitter channel is the best way to contact our engineers and share your ideas with them.</p>
         </a>
         <a href="https://groups.google.com/forum/#!forum/thingsboard">
-            <h1>Q&A forum</h1>
+            <h2>Q&A forum</h2>
             <p>Our user forum is a great place to go for community support.</p>
         </a>
         <a href="http://stackoverflow.com/questions/tagged/thingsboard">
-            <h1>Stack Overflow</h1>
+            <h2>Stack Overflow</h2>
             <p>The ThingsBoard team will also monitor posts tagged thingsboard. If there aren’t any existing questions that help, please ask a new one!</p>
         </a>
     </div>

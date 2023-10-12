@@ -9,7 +9,7 @@ notitle: "true"
     <section class="intro">
         <main>
             <h1>ThingsBoard as a Google IoT Core alternative</h1>
-            <h1 class="clari"></h1>
+            <h2 class="clari"></h2>
         </main>
     </section>
 

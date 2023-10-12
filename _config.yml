@@ -34,7 +34,6 @@ kramdown:
       start_line: 1
 baseurl:
 incremental: true
-auto-regenerate: true
 
 exclude:
   - .idea
