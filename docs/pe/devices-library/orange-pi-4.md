@@ -6,7 +6,7 @@ chip: Rockchip RK3399
 connectivity: Ethernet, WIFI, Bluetooth
 vendor: Orange Pi
 deviceImageFileName: orange-pi-4.jpg
-docsPrefix: pe
+docsPrefix: pe/
 ---
 
 
