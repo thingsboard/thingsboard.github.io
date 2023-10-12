@@ -330,7 +330,7 @@ You can choose a combination of alarm statuses and severity. You may also define
 Let's assume you have added the "Timeseries Line Chart" widget to display thermometers using the widget data configuration [step](/docs/{{docsPrefix}}user-guide/widgets/#data-settings) only.
 You should see a similar widget (note that you should send/simulate some data to see the actual lines in the chart):
 
-![image](/images/user-guide/widgets/overview/widget-example.png)
+![image](https://img.thingsboard.io/user-guide/widgets/overview/widget-example.png)
 
 Let's use the basic widget settings to customize the widget. We will demonstrate how each setting affects the widget.
 

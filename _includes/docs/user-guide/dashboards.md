@@ -12,10 +12,10 @@ With ThingsBoard dashboards, users can adapt interfaces to their specific needs,
 These dashboards aren't limited to a single data source; they can display data from various entities, including devices, assets, and more. Plus, you can assign dashboards to specific Customers, ensuring that the right individuals or teams have access to the data they need.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/dashboards/overview/dashboard-introduction-ce.png)
+![image](https://img.thingsboard.io/user-guide/dashboards/overview/dashboard-introduction-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/dashboards/overview/dashboard-introduction.png)
+![image](https://img.thingsboard.io/user-guide/dashboards/overview/dashboard-introduction.png)
 {% endif %}
 
 Dashboards in ThingsBoard provide users with the following capabilities:
