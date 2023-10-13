@@ -36,13 +36,13 @@ To import rule chain from а JSON file, you should:
 
 {% assign importRuleChain = '
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/import-rule-chain-1-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-1-pe.png,
         title: Navigate to the "Rule chains" page and click on the "+" button in the upper right corner of the screen and then choose "Import rule chain" option. The toolbar import popup window will appear. Upload a JSON file and click on the "Import" button;,
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/import-rule-chain-2-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-2-pe.png,
         title: The imported rule chain will open. Click on the "Apply changes" button to save the rule chain. Then, go back to the main "Rule chains" page;,
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/import-rule-chain-3-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-3-pe.png,
         title: Rule chain is imported.,
 '
 %}
@@ -63,13 +63,13 @@ Now, we are ready to create device profile. For this, follow steps below:
 
 {% assign createDeviceProfile = '
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-1-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-1-pe.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-2-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-2-pe.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-3-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-3-pe.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-4-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-4-pe.png,
     '
 %}
 
@@ -90,13 +90,13 @@ For simplicity, we will provide the device manually using the UI:
 
 {% assign provisionDevice = '
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-1-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-1-pe.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-2-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-2-pe.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-3-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-3-pe.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-4-pe.png,
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-4-pe.png,
     '
 %}
 
