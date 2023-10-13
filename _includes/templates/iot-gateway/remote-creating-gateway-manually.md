@@ -1,9 +1,9 @@
 {% assign remoteCreateGatewayManually = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-5-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-5-ce.png,
         title: Click on **General configuration** button on the right panel.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-6-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-6-ce.png,
         title: Copy auto-generated access token (we will use it later).
 '
 %}

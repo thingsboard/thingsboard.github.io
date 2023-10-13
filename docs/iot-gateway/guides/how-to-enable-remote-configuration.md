@@ -33,7 +33,7 @@ Resources (OPTIONAL):
 
 ### Gateway List
 
-![](/images/gateway/dashboard/gateway-dashboard-list.png)
+![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-list.png)
 
 This dashboard displays all your gateways and all the necessary details about them, namely:
 - Date and time of creation;
@@ -53,7 +53,7 @@ Also, on this page, you can create a new gateway, as well as sort them according
 
 If you select a gateway and click on it, you will be transferred to the dashboard of the selected gateway.
 
-![](/images/gateway/dashboard/gateway-dashboard.png)
+![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard.png)
 
 The dashboard consists of 4 main widgets:
 - **General gateway information**, which consists of the following cards:
@@ -64,7 +64,7 @@ The dashboard consists of 4 main widgets:
    - Connectors (Active/Inactive) with link to Connectors dashboard;
    - Errors count with link to Logs dashboard.
 
-![](/images/gateway/dashboard/gateway-dashboard-cards.png)
+![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-cards.png)
 
 - **Devices** is a table that contains basic information about connected devices through the gateway:
    - Device Name;
@@ -74,40 +74,40 @@ The dashboard consists of 4 main widgets:
    - Connector Type;
    - As well as elements of filtering and searching for the necessary devices.
 
-![](/images/gateway/dashboard/gateway-dashboard-devices.png)
+![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-devices.png)
 
 - **Alarms** is a standard alarm widget where you will receive all alarms related to selected gateway;
 
-![](/images/gateway/dashboard/gateway-dashboard-alarms.png)
+![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-alarms.png)
 
 - **Navigation Panel** is a navigation panel on which all other dashboards for configuring, managing and monitoring the gateway are located, namely:
    - Launch command - a modal window with an auto-generated command for launching the gateway;
   
-   ![](/images/gateway/dashboard/gateway-dashboard-launch-command.png)
+   ![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-launch-command.png)
 
    - [General configuration](#general-configuration) - dashboard with general gateway settings;
   
-   [![](/images/gateway/dashboard/gateway-dashboard-gen-conf-button.png)](#general-configuration)
+   [![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-gen-conf-button.png)](#general-configuration)
 
    - [Connectors configuration](#connector-configuration) - dashboard with management and configuration of connectors;
   
-   [![](/images/gateway/dashboard/gateway-dashboard-connectors-conf-button.png)](#connector-configuration)
+   [![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-connectors-conf-button.png)](#connector-configuration)
 
    - [Logs](#logs) - a dashboard with various types of logs (it should be noted that the button is active only when **Remote Logging** is enabled on the gateway);
   
-   [![](/images/gateway/dashboard/gateway-dashboard-logs-button.png)](#logs)
+   [![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-logs-button.png)](#logs)
 
    - [Statistics](#statistics) - a dashboard with general and custom statistics of the gateway;
 
-   [![](/images/gateway/dashboard/gateway-dashboard-statistics-button.png)](#statistics)
+   [![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-statistics-button.png)](#statistics)
 
    - [Remote Shell](#remote-shell) - dashboard with Remote Shell (it should be noted that the button is active only when **Remote Shell** is enabled on the gateway);
 
-   [![](/images/gateway/dashboard/gateway-dashboard-remote-shell-button.png)](#remote-shell)
+   [![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-remote-shell-button.png)](#remote-shell)
 
    - [RPC](#rpc) - Gateway RPC sending dashboard.
 
-   [![](/images/gateway/dashboard/gateway-dashboard-rpc-button.png)](#rpc)
+   [![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-rpc-button.png)](#rpc)
 
 ### General Configuration
 
@@ -136,7 +136,7 @@ Other%,%other-toggle%,%templates/iot-gateway/gateway-dashboard-other-conf.md{% e
 If you click on the **Connectors configuration** button on the gateway dashboard in the **Navigation Panel**, you will be transferred
 to the **Connectors configuration dashboard**.
 
-![](/images/gateway/dashboard/gateway-dashboard-connectors.png)
+![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-connectors.png)
 
 The dashboard consists of two main sections:
 - Connectors list - basic information and control elements of all created connectors are displayed here:
@@ -165,7 +165,7 @@ It should be noted that the **Logs dashboard** is active only when **Remote Logg
 If you click on the **Logs** button on the gateway dashboard in the **Navigation Panel**, you will be transferred
 to the Logs dashboard.
 
-![](/images/gateway/dashboard/gateway-dashboard-logs.png)
+![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-logs.png)
 
 The dashboard displays the main gateway log information in real time (General, Service, Connection, Storage, Extension):
 - Created time;
@@ -177,7 +177,7 @@ The dashboard displays the main gateway log information in real time (General, S
 If you click on the **Statistics** button on the gateway dashboard in the **Navigation Panel**, you will be transferred
 to the Statistics dashboard. 
 
-![](/images/gateway/dashboard/gateway-dashboard-statistics.png)
+![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-statistics.png)
 
 The dashboard consists of two widgets:
 - Gateway General Chart Statistics - general statistics metrics are displayed here, namely:
@@ -200,7 +200,7 @@ It should be noted that the **Remote Shell dashboard** is active only when **Rem
 If you click on the **Remote Shell** button on the gateway dashboard in the **Navigation Panel**, you will be transferred
 to the Remote Shell dashboard.
 
-![](/images/gateway/dashboard/gateway-dashboard-shell.png)
+![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-shell.png)
 
 The dashboard allows control of the operating system with the gateway from the Remote Shell widget.
 
@@ -209,7 +209,7 @@ The dashboard allows control of the operating system with the gateway from the R
 If you click on the **RPC** button on the gateway dashboard in the **Navigation Panel**, you will be transferred
 to the Gateway RPC sending dashboard. 
 
-![](/images/gateway/dashboard/gateway-dashboard-rpc.png)
+![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-rpc.png)
 
 The dashboard consists of 3 widgets:
 - Service RPC - for sending RPC and viewing the result of command execution:

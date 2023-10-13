@@ -26,10 +26,10 @@ First, we have to add Gateway device to your ThingsBoard instance. This can be d
 
 {% assign createNewGatewayDevice = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-1-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-1-ce.png,
         title: Open **Dashboards** tab and go to **Gateway** dashboard.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-2-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-2-ce.png,
         title: Click the **"+"** button, fill in the gateway device name and select the device profile.
 '
 %}
@@ -59,10 +59,10 @@ Let's finally add MQTT connector to the created gateway. To do this we use follo
 
 {% assign addNewConnector = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-7-ce.png,
         title: Click **"Connectors configuration"** button on the right panel.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-8-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-8-ce.png,
         title: Paste your connector configuration into **"Configuration"** field and click on "Save" button.
 '
 %}
@@ -98,5 +98,5 @@ specifics about each connector.
 Note that all values should initially be set to “0”.
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/review-gateway-statistics.png)
+![image](https://img.thingsboard.io/gateway/review-gateway-statistics.png)
 {: refdef}

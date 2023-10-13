@@ -1,4 +1,4 @@
-![](/images/gateway/dashboard/gateway-dashboard-logs-conf.png)
+![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-logs-conf.png)
 
 Logs - a tab for setting local and [remote logs](/docs/iot-gateway/guides/how-to-enable-remote-logging/), which consists of 3 main sections:
 - General log settings - the usual settings for the Python [logging](https://docs.python.org/3.8/library/logging.config.html) module are used here:
