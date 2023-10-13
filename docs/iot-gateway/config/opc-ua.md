@@ -11,7 +11,6 @@ description: OPC-UA protocol support for ThingsBoard IoT Gateway
 {:toc}
 
 {% capture difference %}
-<br>
 **From Gateway version 3.1 we added a new OPC-UA connector based on the AsyncIO library. 
 Note that the connector is in the early beta, so it can have bugs. 
 Also, it is not recommended to use it in production mode for now.
@@ -23,16 +22,9 @@ This guide will help you to get familiar with OPC-UA connector configuration for
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this extension.
 We will describe connector configuration file below.
 
+<b>Example of OPC-UA Connector config file.</b>
 
-<br>
-
-<details>
-
-<summary>
-<b>Example of OPC-UA Connector config file. Press to expand.</b>
-</summary>
-
-{% highlight json %}
+{% capture opcuaConf %}
 
 {
   "server": {
@@ -84,9 +76,8 @@ We will describe connector configuration file below.
   }
 }
 
-{% endhighlight %}
-
-</details>
+{% endcapture %}
+{% include code-toggle.liquid code=opcuaConf params="conf|.copy-code.expandable-20" %}
 
 ## Section "server"
 
