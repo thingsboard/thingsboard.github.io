@@ -51,21 +51,17 @@ To activate and set logging level, please follow next steps:
 It may be not convenient to review logs in the Device details window. We should show them on a dashboard.  
 So we will be able to investigate all logs, not only the latest one.  
 To do this we use following steps:
-  
-  - Check **LOGS** key and click "**Show on widget**" button:  
-  <br><br>
+
+  - Check **LOGS** key and click "**Show on widget**" button:
   ![](/images/gateway/show-logs-on-widget.png)
- 
-  - We will use the default **Cards** widget:  
-  <br><br>
+
+  - We will use the default **Cards** widget:
   ![](/images/gateway/add-logs-to-dashboard.png)
-    
+
   - Choose **Timeseries table** Card widget and add it to the Dashboard. It can be either the new one or the existing dashboard.
-  <br><br>
   ![](/images/gateway/create-new-dashboard-for-logs.png)
-  
+
   - As a result now we can monitor the status of the gateway device from ThingsBoard environment.
-  <br><br>
   ![](/images/gateway/logs-dashboard.png) 
 
 ## Next steps
