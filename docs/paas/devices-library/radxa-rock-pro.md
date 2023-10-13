@@ -6,7 +6,7 @@ chip: Rockchip RK3188
 connectivity: WIFI, Bluetooth, Ethernet
 vendor: Radxa
 deviceImageFileName: radxa-rock-pro.jpg
-docsPrefix: paas
+docsPrefix: paas/
 ---
 
 

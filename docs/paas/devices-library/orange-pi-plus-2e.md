@@ -6,7 +6,7 @@ chip: Allwinner H3
 connectivity: Ethernet, WIFI, Bluetooth
 vendor: Orange Pi
 deviceImageFileName: orange-pi-plus-2e.jpg
-docsPrefix: paas
+docsPrefix: paas/
 ---
 
 

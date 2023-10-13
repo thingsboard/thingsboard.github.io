@@ -26,5 +26,5 @@ echo -n '{"temperature": 25}' | coap post coap://localhost/api/v1/ABC123/telemet
 ```
 {: .copy-code}
 
-<br/>
-<br/>
+<br>
+<br>

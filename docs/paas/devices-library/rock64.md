@@ -6,7 +6,7 @@ chip: Rockchip RK3328
 connectivity: Ethernet
 vendor: PINE64
 deviceImageFileName: rock64.jpg
-docsPrefix: paas
+docsPrefix: paas/
 ---
 
 

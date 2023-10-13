@@ -23,7 +23,7 @@
 - [Advanced features](/docs/pe/guides#AnchorIDAdvancedFeatures) - Learn about advanced ThingsBoard features.
 {% endif %}
   
-<br/>
+<br>
 
 
 

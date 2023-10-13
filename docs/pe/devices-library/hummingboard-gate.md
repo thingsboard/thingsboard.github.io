@@ -6,7 +6,7 @@ chip: i.MX6DualLite
 connectivity: Ethernet, WIFI, Bluetooth
 vendor: SolidRun
 deviceImageFileName: hummingboard-gate.png
-docsPrefix: pe
+docsPrefix: pe/
 ---
 
 

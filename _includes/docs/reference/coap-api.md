@@ -344,8 +344,8 @@ coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc/{$id}
 {% endif %}
 
 Where **$id** is an integer request identifier.
-<br/>
-<br/>
+<br>
+<br>
 **Let’s look at an example:**
 
 - Use **RPC debug terminal** dashboard;
@@ -399,8 +399,8 @@ Where **$ACCESS_TOKEN** - device access token.
 {% endif %}
 
 Both request and response body should be valid JSON documents. The content of the documents is specific to the rule node that will handle your request.
-<br/>
-<br/>
+<br>
+<br>
 **Let's look at an example:**
 
 - Add two nodes to the Rule Chain: "script" and "rpc call reply";

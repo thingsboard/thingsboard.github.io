@@ -6,7 +6,7 @@ chip: Allwinner H5
 connectivity: Ethernet, WIFI, Bluetooth
 vendor: Lenovo
 deviceImageFileName: lenovo-leez-sbc-p710.jpg
-docsPrefix: pe
+docsPrefix: pe/
 ---
 
 

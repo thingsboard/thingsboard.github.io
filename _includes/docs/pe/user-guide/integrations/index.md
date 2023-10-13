@@ -48,7 +48,7 @@ The most common use cases are:
  
 Once message is pushed by the rule engine, ThingsBoard invokes assigned [**Downlink Data Converter**](/docs/{{peDocsPrefix}}user-guide/integrations/#downlink-data-converter) and transforms the rule engine message to the specific data format that is used by the Integration.
 
-<br/>
+<br>
 
 <object width="80%" data="/images/user-guide/integrations/integrations-overview.svg"></object>
  
@@ -106,7 +106,7 @@ To create an Uplink Converter go to Data Converters section and Click Add new da
 
 ![image](/images/user-guide/integrations/uplink-converter-add.png)
 
-<br/>
+<br>
 Uplink Converter is basically a user defined function with the following signature:
 
 ```javascript
@@ -250,7 +250,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/overview/uplink-da
 
 See video tutorial below for step-by-step instruction how to setup Uplink Data Converter.
 
-<br/>
+<br>
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/CojStpYCTGI" frameborder="0" allowfullscreen></iframe>
@@ -266,7 +266,7 @@ To create a Downlink Converter go to Data Converters section and Click Add new d
 
 ![image](/images/user-guide/integrations/downlink-converter-add.png)
 
-<br/>
+<br>
 Downlink Converter is basically a user defined function with the following signature:
 
 ```javascript

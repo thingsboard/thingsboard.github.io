@@ -34,7 +34,7 @@ We want to write **temperature** (register address is 0) and **humidity** (regis
 ## Step 1. Configuring the Modbus connector
 
 In order to configure the connector, we must create MODBUS setup file and put configuration there.
-You may use default modbus.json file (from /etc/thingsboard-gateway/config in case of daemon installation or from folder with tb_gateway.yaml file in case you use python package).  
+You may use default modbus.json file (from /etc/thingsboard-gateway/config in case of daemon installation or from folder with tb_gateway.json file in case you use python package).  
 Simply replace some parameters with our values.
 For example: 
 

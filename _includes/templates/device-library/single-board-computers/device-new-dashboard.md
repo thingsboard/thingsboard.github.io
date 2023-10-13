@@ -85,7 +85,7 @@ type or related to a certain asset. You may learn more about different aliases h
     '
 %}
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" or page.docsPrefix == "pe/" or page.docsPrefix="paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingEntityAliasPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingEntityAliasCE %}

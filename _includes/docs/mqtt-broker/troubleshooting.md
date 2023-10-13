@@ -195,15 +195,15 @@ Please note that in order to achieve maximum performance, **TBMQ uses several qu
 <section id="talkToUs">
     <div id="gettingHelp">
         <a href="https://gitter.im/thingsboard/chat">
-            <h1>Community chat</h1>
+            <h2>Community chat</h2>
             <p>The best way to contact our engineers and share your ideas with them is through our Gitter channel.</p>
         </a>
         <a href="https://groups.google.com/forum/#!forum/thingsboard">
-            <h1>Q&A forum</h1>
+            <h2>Q&A forum</h2>
             <p>For community support, we recommend visiting our user forum. It's a great place to connect with other users and find solutions to common issues.</p>
         </a>
         <a href="http://stackoverflow.com/questions/tagged/thingsboard">
-            <h1>Stack Overflow</h1>
+            <h2>Stack Overflow</h2>
             <p>The ThingsBoard team actively monitors posts that are tagged with "thingsboard" on the user forum. If you can't find an existing question that addresses your issue, feel free to ask a new one. Our team will be happy to assist you.</p>
         </a>
     </div>

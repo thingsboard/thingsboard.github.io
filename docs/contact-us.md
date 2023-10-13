@@ -109,16 +109,16 @@ notitle: "true"
                     </select>
                     <p>Subject*</p>
                 </label>
-            </div>        
+            </div>
             <div class="form-element">
                 <label for="message">
                     <textarea class="form-control text-area" placeholder="Enter Message" name="message" cols="50" rows="4" maxlength="3000"></textarea>
                     <p class="text-area-label">Message*</p>
                 </label>
             </div>
-            <input type="hidden" name="_next" value="/docs/contact-us-thanks/" />
-            <input type="text" name="_gotcha" style="display:none" />
-        </div>    
+            <input type="hidden" name="_next" value="/docs/contact-us-thanks/">
+            <input type="text" name="_gotcha" style="display:none">
+        </div>
         <div class="submit-button-container">
              <input class="button" value="Submit" type="submit">
         </div>

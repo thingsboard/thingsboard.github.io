@@ -18,13 +18,19 @@ To configure Slack settings in Thingsboard, first register an application in Sla
 
 {% include images-gallery.html imageCollection="slackProviderSettings" showListImageTitles="true" %}
 
+{% unless docsPrefix == 'paas/' %}
 ### Slack settings configuration as System administrator
 
-{% include images-gallery.html imageCollection="thingsboardSystemAdminSettings" showListImageTitles="true" %}
+Login to your ThingsBoard UI as a system administrator. Navigate to "Settings" page, "Notification" tab. In "Slack settings" window paste copied Slack API token to "Slack api token" row and click "Save".
+
+{% include images-gallery.html imageCollection="thingsboardSystemAdminSettings" %}
+{% endunless %}
 
 ### Slack settings configuration as Tenant administrator
 
-{% include images-gallery.html imageCollection="thingsboardTenantAdminSettings" showListImageTitles="true" %}
+Login to your ThingsBoard UI as a tenant administrator. Navigate to "Settings" page, "Notification" tab. In "Slack settings" window paste copied Slack API token to "Slack api token" row and click "Save".
 
-<br/>
+{% include images-gallery.html imageCollection="thingsboardTenantAdminSettings" %}
+
+<br>
 Once you have configured your notifications, you will start receiving notifications in your Slack channel whenever an event is triggered in your Thingsboard instance according to the notification rules you set. You will also be able to send messages to any of your users.

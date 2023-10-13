@@ -42,6 +42,8 @@ toc:
 - title: IoT Gateway features
   path: /docs/iot-gateway/features/
   section:
+    - title: Remote configuration
+      path: /docs/iot-gateway/guides/how-to-enable-remote-configuration/
     - title: Remote logging
       path: /docs/iot-gateway/guides/how-to-enable-remote-logging/
     - title: Service RPC methods

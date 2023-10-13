@@ -398,7 +398,7 @@ Polygon coordinates are being received in a format:
 
 where **n** - number of coordinates which polygon is described by.
 
-<br/>
+<br>
 For the polygon, we can specify the next settings:
 
 * Show/Hide polygon
@@ -461,7 +461,7 @@ Circle coordinates are being received in a format:
 {"latitude": 37.770460000, "longitude":-122.510870000, "radius":700}
 ``` 
 
-<br/>
+<br>
 For the circle, we can specify the next settings:
 
 * Show/Hide circle

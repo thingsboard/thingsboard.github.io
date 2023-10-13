@@ -22,18 +22,13 @@ We will describe connector configuration file below.
 Connector configuration is a JSON file that contains information about how to connect to external API endpoints, what urls to use when reading data and how to process the data.  
 Let's review the format of the configuration file using example below.    
 
-<br>
-<details>
-
-<summary>
-<b>Example of Request Connector config file. Press to expand.</b>
-</summary>
+<b>Example of Request Connector config file.</b>
 
 Example listed below will connect to server on a localhost with 5000 port.  
 Connector will use basic HTTP authorization using username and password.  
 Then, connector will read data from a list of endpoints using urls from mapping section. See more info in a description below.  
 
-{% highlight json %}
+{% capture requestConf %}
 {
   "host": "http://127.0.0.1:5000",
   "SSLVerify": true,
@@ -151,9 +146,8 @@ Then, connector will read data from a list of endpoints using urls from mapping 
   ]
 }
 
-{% endhighlight %}
-
-</details>
+{% endcapture %}
+{% include code-toggle.liquid code=requestConf params="conf|.copy-code.expandable-20" %}
 
 
 ### General section

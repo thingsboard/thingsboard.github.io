@@ -28,7 +28,7 @@ Change 'sysadmin@thingsboard.org' to your email address. Now re-login as adminis
 ![image](/images/user-guide/ui/mail/mail-settings-change-administrator-email-address-pe.png)
 {% endif %}
 
-<br/>
+<br>
 Now we need to configure SMTP server.
 
 Starting from ThingsBoard 3.5.2 we have added mail settings templates for such providers: Google, Office 356, SendGrid. 
@@ -64,7 +64,7 @@ Click "Save" button.
 ![image](/images/user-guide/ui/mail/sendgrid-settings-pe.png)
 {% endif %}
 
-<br/>
+<br>
 **ㅤ3. Send test email**
 
 Optional, you can receive test mail on your email.
@@ -102,7 +102,7 @@ Click "Save" button.
 ![image](/images/user-guide/ui/mail/gmail-settings-basic-pe.png)
 {% endif %}
 
-<br/>
+<br>
 **ㅤ3. Send test email**
 
 Optional, you can receive test mail on your email.
@@ -132,7 +132,7 @@ To use Gmail OAuth2 you need to create a project in Google Developers Console bu
 ![image](/images/user-guide/ui/mail/google-oauth-settings-1-pe.png)
 {% endif %}
 
-<br/>
+<br>
 **ㅤ2. Now let's create a project in [Google Developers Console](https://console.developers.google.com/projectcreate)**
 
 {% include images-gallery.html imageCollection="create-gmail-project" showListImageTitles="true" %}
@@ -141,7 +141,7 @@ To use Gmail OAuth2 you need to create a project in Google Developers Console bu
 
 {% include images-gallery.html imageCollection="create-gmail-credentials" showListImageTitles="true" %}
 
-<br/>
+<br>
 **ㅤ4. Complete ThingsBoard settings setup**
 
 Back to the Thingsboard portal and paste **Client ID** and **Client secret** from the previous steps into the appropriate fields. Click "Save".
@@ -153,7 +153,7 @@ Back to the Thingsboard portal and paste **Client ID** and **Client secret** fro
 ![image](/images/user-guide/ui/mail/google-oauth-settings-2-pe.png)
 {% endif %}
 
-<br/>
+<br>
 **ㅤ5. Generate access token**
 
 Finally, we can get access token. For this click on the **Generate access token** and your browser will redirect you to provider login page. 
@@ -167,7 +167,7 @@ If access token was successfully generated you will see status "generated".
 ![image](/images/user-guide/ui/mail/google-oauth-settings-3-pe.png)
 {% endif %}
 
-<br/>
+<br>
 **ㅤ6. Send test email**
 
 To check if everything works click "Send test email" button. Keep in mind that each time you change provider info system will drop refresh and access token and you will need to generate it again.
@@ -194,22 +194,22 @@ To use Office 365 OAuth2 you need to register an application in the Azure portal
 ![image](/images/user-guide/ui/mail/microsoft-azure-oauth-settings-1-pe.png)
 {% endif %}
 
-<br/>
+<br>
 **ㅤ2. Now let's register an application in the [Azure portal](https://portal.azure.com/)**
 
 {% include images-gallery.html imageCollection="azure-portal" showListImageTitles="true" %}
 
-<br/>
+<br>
 **ㅤ3. Then you need to create a "Client secret"**
 
 {% include images-gallery.html imageCollection="azure-portal-2" showListImageTitles="true" %}
 
-<br/>
+<br>
 **ㅤ4. To finish the authentication set up you need add API permissions for SMTP**
 
 {% include images-gallery.html imageCollection="add-api-permissions" showListImageTitles="true" %}
 
-<br/>
+<br>
 **ㅤ5. Complete ThingsBoard settings setup**
 
 Back to the ThingsBoard portal and paste **Client ID**, **Client secret** and **Directory (tenant) ID** from the previous steps into the appropriate fields. Click "Save".
@@ -221,7 +221,7 @@ Back to the ThingsBoard portal and paste **Client ID**, **Client secret** and **
 ![image](/images/user-guide/ui/mail/microsoft-azure-oauth-settings-2-pe.png)
 {% endif %}
 
-<br/>
+<br>
 **ㅤ6. Generate access token**
 
 Finally, we can get access token. For this click on the "Generate access token" button and your browser will redirect you to provider login page. Please follow the steps
@@ -235,12 +235,12 @@ If access token was successfully generated you will see status "generated".
 ![image](/images/user-guide/ui/mail/microsoft-azure-oauth-settings-3-pe.png)
 {% endif %}
 
-<br/>
+<br>
 **ㅤ7. Send test email**
 
 To check if everything works click "Send test email" button. Keep in mind that each time you change provider info system will drop refresh and access token and you will need to generate it again.
 
-<br/>
+<br>
 **Office 365 troubleshooting**
 
 If you see authentication errors while sending email (e.x. 5.7.3):

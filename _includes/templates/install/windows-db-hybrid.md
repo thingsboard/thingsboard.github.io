@@ -4,8 +4,6 @@ In this case, ThingsBoard will be storing timeseries data in Cassandra while con
 {% endcapture %}
 {% include templates/info-banner.md content=hybrid-info %}
 
-{% include templates/install/cassandra-4x-beta.md %}
-
 ##### PostgreSQL Installation
 
 Download the installation file (PostgreSQL 11.7 or newer releases) [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows) and follow the installation instructions.

@@ -19,7 +19,7 @@ redirect_from: "/docs/pe/user-guide/install/cluster-setup/"
                         ThingsBoard IoT can be bootstrapped using different tools and platforms
                     </p>
                 </div>
-            </div>            
+            </div>
             <div class="deployment-container one-line-deployment-container">
                 <div class="deployment-div">
                     <div class="container">
@@ -44,11 +44,11 @@ redirect_from: "/docs/pe/user-guide/install/cluster-setup/"
                                             </span>
                                         </a>
                                     </div>
-                               </div>                    
-                            </div>                        
+                               </div>
+                            </div>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
           </div>
        </div>
