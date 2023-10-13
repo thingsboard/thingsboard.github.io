@@ -71,7 +71,7 @@ See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity
 
 ### Alarms
 Alarms are generated using two <a href="https://thingsboard.io/docs/user-guide/device-profiles/#alarm-rules" target="_blank">Alarm rules</a> in the
-"AIR Sensor" <a href="/deviceProfiles" target="_blank">device profile</a>.
+"AIR Sensor" <a href="/docs/pe/user-guide/device-profiles/" target="_blank">device profile</a>.
 User may turn alarms on and off as well as configure the alarm thresholds via the <a href="${MAIN_DASHBOARD_URL}" target="_blank">"Air Quality Monitoring"</a> dashboard using "Edit Sensor" form.
 
 
