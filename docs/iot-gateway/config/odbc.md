@@ -165,14 +165,14 @@ LIMIT 10                                             (6)
 
 ### Subsection "iterator"
 This **mandatory** subsection provides information on what database column is used to iterate through the result set, where to get the initial value of the iterator and whether to use iterator data between gateway work sessions.
-<br/>
-<br/>
+<br>
+<br>
 **IMPORTANT** 
 
 The main challenge of the *iterator* feature is to unambiguously figure out whether to restore iterator data from a previous gateway work session or to use values from the connector configuration file.
 
 Each *iterator* has its own file that has been stored in *config/odbc/* folder. After each polling iteration the connector saves *iterator* data (see below the *persistent* option) to such file.
-<br/>
+<br>
 <hr/>
 *\- How does connector distinguish iterator files from each other?*
 
@@ -188,12 +188,12 @@ The *iterator* file name is a hash of:
 * database name
 * iterator column (see below the *column* option)
 
-<br/>
+<br>
 **DRAWBACK**
 
 There may happen that while using the same database the list of **tables is totally changed** but the ***iterator* column name is not** just because the same column name is used in the different tables. In this case **the connector loads wrong *iterator* data**.
-<br/>
-<br/>
+<br>
+<br>
 **CONCLUSION**
 
 1. For the same database use unique name for each iterator.
@@ -305,7 +305,7 @@ The connector supports several configuration modes for the *methods* subsection:
 "methods": [ "procedureOne", "procedureTwo" ]
 ```
 * list of procedure/function configurations
-<br/><br/>
+<br><br>
 **The order of arguments matters**. It must be the same as the order of parameters in SQL procedure/function.
 ```json
 "methods": [

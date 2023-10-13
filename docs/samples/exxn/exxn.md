@@ -14,7 +14,7 @@ The EXXN IoT Gateway is a versatile device with an ARM processor that can be ada
 
 This guide outlines the process for integrating an EXXN IoT Gateway with the ThingsBoard platform to enable remote monitoring and management of devices.
 
-<br/>
+<br>
 An example of a dashboard developed with ThingsBoard that displays metrics captured by an EXXN IoT Gateway.
 
 ![image](/images/samples/exxn/ennx-dashboard.png)
@@ -39,7 +39,7 @@ The technical specifications of the EXXN IoT Gateway 'Cell 1024' used in this gu
 * Possibility of hardware development for custom functionalities
 
 <p align="center">
-   <img src="/images/samples/exxn/cell_1024.jpg" >  
+   <img src="/images/samples/exxn/cell_1024.jpg" alt="cell 1024">
 </p>
 
 ## Provisioning the device for Thingsboard
@@ -63,14 +63,14 @@ Your device has been created. Open its details and copy auto-generated **access 
 ### Device configuration
 
 Open a Browser to the administration web of Cell 1024 using this URL: https://[IP_DEVICE] and go to the 'Cloud' tab:
-<br/>
-<br/>
-  <img src="/images/samples/exxn/conn1.png" >  
+<br>
+<br>
+  <img src="/images/samples/exxn/conn1.png" alt="conn1">
 
 Activate the Cloud control and configure all the parameters to connect the device to the specific ThingsBoard platform via MQTT:
 
-<img src="/images/samples/exxn/conn2.png" >  
- 
+<img src="/images/samples/exxn/conn2.png" alt="conn2">
+
 Configuration parameters:
 - **Cloud Platform**: Select ThingsBoard.
 - **MQTT broker URL**: URL to de Broker of the server we want to integrate to.
@@ -89,9 +89,9 @@ Currently, the IoT EXXN Gateways use the 'Access Token' integration method. We a
 
 Click "Save configuration" button.
 
-<img src="/images/samples/exxn/conn3.png" >  
+<img src="/images/samples/exxn/conn3.png" alt="conn3">
 
-<br/>
+<br>
 To verify that the device is connected correctly to ThingsBoard, go to the **Device groups** menu -> **All** devices, select your device. In the **device details** select **client attributes** tab and check if the client attributes have been communicated to the device.
 
 If you did everything is correct, we will see client attributes like the *serial_number*, *last_rebbot*, *device_model*, etc.
@@ -135,12 +135,12 @@ All the measures that are 'enabled' in the device's JSON configuration file will
 
 ![image](/images/samples/exxn/exxn-create-dashboard-2.png)
 
-<br/>
+<br>
 ![image](/images/samples/exxn/exxn-create-dashboard-3.png)
 
 ### RPC commands
 
-It is possible to send commands to the device to execute certain tasks. The parameters of the method must be in JSON format. 
+It is possible to send commands to the device to execute certain tasks. The parameters of the method must be in JSON format.
 
 ![image](/images/samples/exxn/exxn-rpc-button.png)
 
@@ -150,13 +150,13 @@ All the commands that can be sent to the device are explained in the EXXN IoT Ga
 
 ### Troubleshooting
  - The most common problem in the integration process is not having a connection with the MQTT Broker. Make sure the device is connected to the internet and is able to communicate with the ThingsBoard Broker.
- - Another common problem is not setting the correct Access Token. Check that the provided Access token is configured in ThingsBoard for the device. 
+ - Another common problem is not setting the correct Access Token. Check that the provided Access token is configured in ThingsBoard for the device.
 
-<br/>
+<br>
 
 ### Feedback & Contact Us for your integration
 
-For more information, visit our website at [EXXN Engineering](http://exxn.es/en/). 
+For more information, visit our website at [EXXN Engineering](http://exxn.es/en/).
 <br>
 If you have any problems or doubts, please do not hesitate in contact us at: [troubleshooting@exxn.es](mailto://troubleshooting@exxn.es)
 

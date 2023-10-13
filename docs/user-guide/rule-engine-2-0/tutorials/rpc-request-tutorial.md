@@ -83,8 +83,8 @@ In this section, we explain the purpose of each node in this tutorial:
   - Takes the message payload and sends it as a response to the **Rotating System**.
   
 
-<br/>
-<br/>
+<br>
+<br>
 
 # Configuring the Rule Chain
 
@@ -183,7 +183,7 @@ In this tutorial, you will create 8 nodes as it will be explained in the followi
 ###### Node D: **Change Originator**
 - Add the **Change Originator** node and connect it to the **Save TimeSeries** node with a relation type **Success**. <br>
   This node will change the originator from Devices **Wind Direction Sensor** and **Rotating System** to the Related Asset **Wind Turbine** that has a relation of the type **Contains** from each of them. 
-  <br/>As a result, the submitted message will be processed as a message from this Entity
+  <br>As a result, the submitted message will be processed as a message from this Entity
 - Fill in the fields with the input data shown in the following table: 
 
 <table style="width: 25%">
@@ -278,12 +278,12 @@ This node will transform an original message into RPC request message.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/request.png)
 
-<br/>
+<br>
 
 This Rule chain is now ready and you need to save it.
 
-<br/>
-<br/>
+<br>
+<br>
 
 # How to verify the Rule Chain
 
@@ -311,8 +311,8 @@ To run the scripts, you need to do the following steps:
     - node RotatingSystemEmulator.js
 
 
-<br/>
-<br/>
+<br>
+<br>
 
 # Configuring Dashboards
 The following screenshot shows how the **Wind Turbine Dashboard** should look like:

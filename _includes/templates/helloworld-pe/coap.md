@@ -39,5 +39,5 @@ echo -n '{"temperature": 25}' | coap post coap://localhost/api/v1/ABC123/telemet
 
 {% endif %}
 
-<br/>
-<br/>
+<br>
+<br>

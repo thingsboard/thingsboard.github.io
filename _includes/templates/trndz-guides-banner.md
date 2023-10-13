@@ -25,4 +25,4 @@
 {% if currentGuide != "EmbedVisualizations" %}
 - [**Share and embed Visualizations**](/docs/trendz/embed-visuals) - Learn how to add Trendz visualizations on ThingsBoard dashboard or 3rd party web pages.
 {% endif %}  
-<br/>
+<br>

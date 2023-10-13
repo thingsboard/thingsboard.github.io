@@ -127,16 +127,16 @@ At this stage, you need to set the parameters to establish a connection between 
 |---
 
 {% capture integrationTypes %}
-Kafka<br/><small>Common/Docker </small>%,%common%,%templates/integration/kafka/kafka-common-and-docker-integration%br%
-Confluent Cloud<br/><small>Cloud solution</small>%,%confluent%,%/templates/integration/kafka/kafka-confluent-integration{% endcapture %}
+Kafka<br><small>Common/Docker </small>%,%common%,%templates/integration/kafka/kafka-common-and-docker-integration%br%
+Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/integration/kafka/kafka-confluent-integration{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="integrationTypes" toggle-spec=integrationTypes %}
 
 ## Send test Uplink message from
 
 {% capture uplinkTypes %}
-Kafka<br/><small>Common/Docker </small>%,%common%,%templates/integration/kafka/kafka-common-and-docker-send-msg%br%
-Confluent Cloud<br/><small>Cloud solution</small>%,%confluent%,%/templates/integration/kafka/kafka-confluent-send-msg{% endcapture %}
+Kafka<br><small>Common/Docker </small>%,%common%,%templates/integration/kafka/kafka-common-and-docker-send-msg%br%
+Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/integration/kafka/kafka-confluent-send-msg{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="uplinkTypes" toggle-spec=uplinkTypes %}
 

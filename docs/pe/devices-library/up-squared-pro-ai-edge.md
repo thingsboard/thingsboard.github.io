@@ -6,7 +6,7 @@ chip: Intel Atom x7-E3950 Processor
 connectivity: Ethernet, WIFI, Bluetooth
 vendor: Aaeon
 deviceImageFileName: up-squared-pro-ai-edge.png
-docsPrefix: pe
+docsPrefix: pe/
 ---
 
 

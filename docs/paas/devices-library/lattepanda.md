@@ -6,7 +6,7 @@ chip: Intel Atom x5-Z8350
 connectivity: WIFI, Bluetooth
 vendor: LattePanda
 deviceImageFileName: lattepanda.jpg
-docsPrefix: paas
+docsPrefix: paas/
 ---
 
 

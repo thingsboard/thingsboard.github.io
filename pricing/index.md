@@ -107,7 +107,7 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Up to 30 Devices</div>
                             <div class="pricing-square-item">Up to 30 Assets</div>
-                            <div class="pricing-square-item">10 million <span data-faq-id="data-points">data points</span><br/> per month</div> 
+                            <div class="pricing-square-item">10 million <span data-faq-id="data-points">data points</span><br> per month</div> 
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
                             </div>
@@ -130,7 +130,7 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Up to 100 Devices</div>
                             <div class="pricing-square-item">Up to 100 Assets</div>
-                            <div class="pricing-square-item">100 million <span data-faq-id="data-points">data points</span><br/> per month</div> 
+                            <div class="pricing-square-item">100 million <span data-faq-id="data-points">data points</span><br> per month</div> 
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
                             </div>
@@ -154,7 +154,7 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Up to 500 Devices</div>
                             <div class="pricing-square-item">Up to 500 Assets</div>
-                            <div class="pricing-square-item">500 million <span data-faq-id="data-points">data points</span><br/> per month</div>
+                            <div class="pricing-square-item">500 million <span data-faq-id="data-points">data points</span><br> per month</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Email support
                             </div>
@@ -178,7 +178,7 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Up to 1000 Devices</div>
                             <div class="pricing-square-item">Up to 1000 Assets</div>
-                            <div class="pricing-square-item">1 billion <span data-faq-id="data-points">data points</span><br/> per month</div>
+                            <div class="pricing-square-item">1 billion <span data-faq-id="data-points">data points</span><br> per month</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Email support
                             </div>
@@ -201,7 +201,7 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Dedicated server instances</div>
                             <div class="pricing-square-item">Unlimited Devices and Assets</div>
-                            <div class="pricing-square-item">Unlimited <span data-faq-id="data-points">data points</span><br/> per month</div>
+                            <div class="pricing-square-item">Unlimited <span data-faq-id="data-points">data points</span><br> per month</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Custom <b>SLA</b>
                             </div>
@@ -533,7 +533,7 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
                             </div>
-                            <br/>
+                            <br>
                             <div>
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
                             </div>                            
@@ -562,7 +562,7 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
                             </div>
-                            <br/>
+                            <br>
                             <div>
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
                             </div>                            
@@ -622,7 +622,7 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Email support
                             </div>
-                            <br/>
+                            <br>
                             <div>
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
                             </div>   
@@ -707,7 +707,7 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
                             </div>
-                            <br/>
+                            <br>
                             <div>
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
                             </div>                            
@@ -736,7 +736,7 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="community-support">
                                 Community support
                             </div>
-                            <br/>
+                            <br>
                             <div>
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
                             </div>                            
@@ -794,7 +794,7 @@ selfManagedPlan:
                             <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Email support
                             </div>
-                            <br/>
+                            <br>
                             <div>
                                 <a href="/products/trendz/"><span class="a-full-green">Learn More</span></a>
                             </div>   
@@ -816,7 +816,7 @@ selfManagedPlan:
                             </div>
                             <div class="pricing-square-item">Dedicated server instances</div>
                             <div class="pricing-square-item">Unlimited Devices and Assets</div>
-                            <div class="pricing-square-item">Unlimited <span data-faq-id="data-points">data points</span><br/> per month</div>
+                            <div class="pricing-square-item">Unlimited <span data-faq-id="data-points">data points</span><br> per month</div>
                             <div class="pricing-square-item" data-faq-id="subscription-support">
                                 Custom <b>SLA</b>
                             </div>
@@ -1080,9 +1080,9 @@ selfManagedPlan:
                     Whenever you purchase a perpetual fallback license you get one year of software updates included. 
                     You can purchase additional updates if required. 
                     Typical price for one year update package is 1199 USD.                    
-                    <br/><br/><b>Example 1</b>: Let's assume you purchased one license for ThingsBoard v2.4 in June 2019 and received an update to ThingsBoard v3.0 in May 2020.
+                    <br><br><b>Example 1</b>: Let's assume you purchased one license for ThingsBoard v2.4 in June 2019 and received an update to ThingsBoard v3.0 in May 2020.
                     This means you can continue using this ThingsBoard v3.0 instance forever. You can also migrate to different hardware without issues.
-                    <br/><br/><b>Example 2</b>: Let's assume you purchased one license for ThingsBoard v2.4 in June 2019 and received an update to ThingsBoard v3.0 in May 2020.
+                    <br><br><b>Example 2</b>: Let's assume you purchased one license for ThingsBoard v2.4 in June 2019 and received an update to ThingsBoard v3.0 in May 2020.
                     This means you can continue using this ThingsBoard v3.0 instance forever. Later, in August 2020 we released v3.1. 
                     In order to get the v3.1 update, you will need to purchase an additional year of software updates for ThingsBoard PE which will cost 1199 USD. 
                     However, you can continue using v3.0 without updates.                    
@@ -1220,7 +1220,7 @@ selfManagedPlan:
             <div class="container">
                 <p>
                 The Enterprise subscription plan consists of the fixed platform cost and price per device.
-                <br/><br/>The <b>platform cost</b> includes:
+                <br><br>The <b>platform cost</b> includes:
                 <ul>
                   <li>White-labeling;</li>
                   <li>Dedicated server instances that will scale with the number of your devices;</li>

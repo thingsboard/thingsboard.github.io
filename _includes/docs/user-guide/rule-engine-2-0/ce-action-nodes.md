@@ -137,9 +137,9 @@ inside Alarm. For example you can save attribute name/value pair from Original M
  
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-config.png)
 
-- Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br/> 
-- Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br/> 
-- Message _type_ can be accessed via <code>msgType</code> property. For example <code>msgType</code><br/>
+- Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br> 
+- Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br> 
+- Message _type_ can be accessed via <code>msgType</code> property. For example <code>msgType</code><br>
 
 **Optional:** previous Alarm Details can be accessed via <code>metadata.prevAlarmDetails</code>. 
 If previous Alarm does not exist, this field will not be present in Metadata. **Note** that  <code>metadata.prevAlarmDetails</code> 
@@ -231,7 +231,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 
-<br/>
+<br>
 
 # Clear Alarm Node
 
@@ -263,9 +263,9 @@ inside Alarm. For example you can save attribute name/value pair from Original M
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm-config.png)
  
-- Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br/> 
-- Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br/> 
-- Message _type_ can be accessed via <code>msgType</code> property. For example <code>msgType</code><br/>
+- Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br> 
+- Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br> 
+- Message _type_ can be accessed via <code>msgType</code> property. For example <code>msgType</code><br>
 - Current Alarm Details can be accessed via <code>metadata.prevAlarmDetails</code>. 
 
 **Note** that  <code>metadata.prevAlarmDetails</code> 
@@ -351,7 +351,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 
-<br/>
+<br>
 
 # Delay Node
 
@@ -378,7 +378,7 @@ When delay period for particular incoming message will be reached it will be rem
   
 Each next message will be routed via **Failure** chain if the maximum pending messages limit will be reached.  
 
-<br/>
+<br>
 
 # Generator Node
 
@@ -425,7 +425,7 @@ JavaScript generator function can be verified using [Test JavaScript function](/
 
 This node can be used for Rule Chain debugging purposes.
 
-<br/>
+<br>
 
 # Log Node 
 
@@ -555,7 +555,7 @@ Otherwise Message will be routed via **Success** chain.
 
 For more details how RPC works in the Thingsboard, please read [RPC capabilities](/docs/{{docsPrefix}}user-guide/rpc/) article.
 
-<br/>
+<br>
 
 # Save Attributes Node
 
@@ -599,7 +599,7 @@ to the expected format and set message type to **POST_ATTRIBUTES_REQUEST**. It c
 After successful attributes saving, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
-<br/>
+<br>
 
 # Save Timeseries Node 
 
@@ -661,7 +661,7 @@ So, to make sure that all the messages will be processed correctly, one should e
 After successful timeseries data saving, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
-<br/>
+<br>
 
 # Save to Custom Table
 
@@ -693,7 +693,7 @@ If specified message field does not exist in the **data** of the message or is n
 
 **NOTE**: Please make sure that you are not using **metadata** keys in the configuration - only **data** keys are possible.  
 
-<br/>
+<br>
 
 # Assign To Customer Node 
 
@@ -730,7 +730,7 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain. 
 
-<br/>
+<br>
 
 # Unassign From Customer Node
 
@@ -764,7 +764,7 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain. 
 
-<br/>
+<br>
 
 # Create Relation Node 
 
@@ -820,7 +820,7 @@ In other cases Message will be routed via **Success** chain.
  
     ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-change-originator.png)
 
-<br/>
+<br>
 
 # Delete Relation Node
 
@@ -862,7 +862,7 @@ In other cases Message will be routed via **Success** chain.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-new-functionality.png)
 
-<br/>
+<br>
 
 # GPS Geofencing Events Node
 
