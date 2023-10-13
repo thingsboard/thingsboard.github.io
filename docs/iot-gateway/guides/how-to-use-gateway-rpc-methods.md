@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-gw
-title: ThingsBoard IoT Gateway Features
-description: ThingsBoard IoT Gateway features 
+title: Service RPC Methods
+description: Service RPC Methods
 
 ---
 

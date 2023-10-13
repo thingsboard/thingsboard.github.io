@@ -122,7 +122,7 @@ If you would like to minimize resources spent for the database maintenance, we r
 
 This deployment scenario rather similar to scenario A, but requires fully-managed database deployed on a separate server(s). 
 ThingsBoard customers successfully utilize [AWS RDS](https://aws.amazon.com/rds/postgresql/), [Azure Database for PostgreSQL](https://azure.microsoft.com/en-us/services/postgresql/) and
-[Google Cloud SQL](https://cloud.google.com/sql/docs/{{docsPrefix}}postgres/) to minimize efforts on database setup, backups and support.
+[Google Cloud SQL](https://cloud.google.com/sql/docs/postgres/) to minimize efforts on database setup, backups and support.
 See diagram below.
 
 <object width="80%" data="https://img.thingsboard.io/reference/deployment/standalone.svg"></object>

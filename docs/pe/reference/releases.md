@@ -400,7 +400,7 @@ Main features:
 
 * Update custom menu: Introduce dashboardId parameter to embed dashboard instead of using iframe;
 * Azure Event Hub Integration is updated to use new SDK;
-* Added new version of ["Alarms Count Node"](/docs/user-guide/rule-engine-2-0/pe/analytics-nodes/#alarms-count-node).
+* Added new version of ["Alarms Count Node"](/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/#alarms-count-node).
 * Added "Duplicate to group entities by group name" rule node;
 * Added ability to aggregate data on each message in the "Aggregate stream node".
 * Add ability to aggregate data weekly from Sunday to Saturday in the "Aggregate stream node".

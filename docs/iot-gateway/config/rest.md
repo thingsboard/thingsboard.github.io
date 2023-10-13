@@ -22,18 +22,13 @@ We will describe connector configuration file below.
 Connector configuration is a JSON file that contains information about how to create API endpoints and how to process the data.  
 Let's review the format of the configuration file using example below.    
 
-<br>
-<details>
-
-<summary>
-<b>Example of REST Connector config file. Press to expand.</b>
-</summary>
+<b>Example of REST Connector config file.</b>
 
 Example listed below will create a server on a localhost using 5000 port.  
 Connector will use basic HTTP authorization using username and password.  
 Then, connector will create endpoints from a list of endpoints using endpoints from mapping section. See more info in a description below.  
 
-{% highlight json %}
+{% capture restConf %}
 {
   "host": "127.0.0.1",
   "port": "5000",
@@ -119,9 +114,8 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
   ]
 }
 
-{% endhighlight %}
-
-</details>
+{% endcapture %}
+{% include code-toggle.liquid code=restConf params="conf|.copy-code.expandable-20" %}
 
 
 ### General section

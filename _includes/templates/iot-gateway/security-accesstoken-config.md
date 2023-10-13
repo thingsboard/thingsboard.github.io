@@ -13,9 +13,10 @@ open this device and press the "COPY ACCESS TOKEN" button and replace default wi
 
 Security subsection in configuration file will look like this: 
 
-```yaml
+```json
 ...
-  security:
-    accessToken: PUT_YOUR_GW_ACCESS_TOKEN_HERE
+"security": {
+  "accessToken": "YOUR_ACCESS_TOKEN"
+},
 ...
 ```

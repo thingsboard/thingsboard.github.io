@@ -9,8 +9,8 @@ description: Write your first IoT project using ThingsBoard IoT Gateway
 {:toc}
 
 This guide covers initial IoT Gateway installation and configuration.
-We will connect IoT Gateway to ThingsBoard server and visualize some basic gateway statistics: the amount of devices connected and messages processed.
-We will also configure MQTT and OPC-UA extension in order to subscribe to device data feed from external devices or applications.  
+We will connect IoT Gateway to ThingsBoard server, control it and visualize some basic gateway statistics: the amount of devices connected and messages processed.
+We will also configure MQTT connector in order to subscribe to device data feed from external devices.  
 
 
 ### Prerequisites
@@ -20,122 +20,62 @@ If you don't have access to a running ThingsBoard instance, use either [**Live D
 to fix this. 
 
 
-## Step 1: Provision the gateway
+## Create new gateway device on ThingsBoard
 
-In order to connect your IoT gateway to ThingsBoard server, you need to provision gateway credentials first. We will use access token credentials as the most simple one.
-See [device authentication options](/docs/user-guide/device-credentials/) for more details.
+First, we have to add Gateway device to your ThingsBoard instance. This can be done by following these steps:
 
-Login as tenant administrator. Use [default credentials](/docs/samples/demo-account/#demo-tenant) in case of local ThingsBoard server.
-Open **Devices** and click on "+" button in the top right corner.
+{% assign createNewGatewayDevice = '
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-1-ce.png,
+        title: Open **Dashboards** tab and go to **Gateway** dashboard.
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-2-ce.png,
+        title: Click the **"+"** button, fill in the gateway device name and select the device profile.
+'
+%}
 
-{:refdef: style="text-align: center;"}
-![image](https://img.thingsboard.io/gateway/device-page.png)
-{: refdef} 
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=createNewGatewayDevice %} 
 
-Populate your gateway name and select "Is gateway" checkbox. Click "Add".
+{% capture info %}
+<body>
+  <p>
+    <b style="color:red">WARNING:</b>
+    <span style="color:black">If you've previously configured the gateway, create a backup, as the new remote configuration will overwrite existing settings files.  
+    <br>For those who used a gateway version earlier than 3.4, the gateway will automatically generate a new configuration file in JSON format.</span>
+  </p>
+</body>
+{% endcapture %}
+{% include templates/warn-banner.md content=info %}
 
-{:refdef: style="text-align: center;"}
-![image](https://img.thingsboard.io/gateway/device-add.png)
-{: refdef}
+{% capture gatewaycreatingspec %}
+Docker<small>Recommended</small>%,%docker%,%templates/iot-gateway/remote-creating-gateway-docker.md%br%
+Manually<small>Recommended if you installed Gateway any other way except docker</small>%,%manually%,%templates/iot-gateway/remote-creating-gateway-manually.md{% endcapture %}
 
-**NOTE:** Gateway and device names should be unique in the scope of a tenant.
+{% include content-toggle.html content-toggle-id="GatewayCreating" toggle-spec=gatewaycreatingspec %}
 
-Open your new device card and click on "Copy Access Token" button. 
-Paste the token to a safe place. We will use it for ThingsBoard configuration in the next steps.
+## Add new connector
 
-{:refdef: style="text-align: center;"}
-![image](https://img.thingsboard.io/gateway/device-token.png)
-{: refdef} 
+Let's finally add MQTT connector to the created gateway. To do this we use following steps:
 
-## Step 2: Install the gateway
+{% assign addNewConnector = '
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
+        title: Click **"Connectors configuration"** button on the right panel.
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-8-ce.png,
+        title: Paste your connector configuration into **"Configuration"** field and click on "Save" button.
+'
+%}
 
-Browse available gateway [**installation options**](/docs/iot-gateway/installation/) and choose the most suitable installation guide.
-Follow steps in chosen gateway installation guide. The Gateway configuration steps are covered below.
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=addNewConnector %} 
 
-## Step 3: Gateway configuration
+After all the above steps, Gateway will receive the configuration, apply it and synchronize the state with the remote.
 
-Navigate to the gateway configuration folder and edit **tb-gateway.yaml** file.
-```bash
-/etc/thingsboard-gateway/config/tb_gateway.yaml
-```
-  
-Change **host** and **port** properties in the section *"thingsboard"* to your ThingsBoard host.
+For now, your Gateway is ready to process data through the newly remote-created and configured MQTT connector.
 
-Change **accessToken** property in the section *"security"* to your access token that was copied during step 3.
-
-Your gateway configuration should look similar to this file:
-
-```yaml
-
-thingsboard:
-  host: thingsboard.cloud
-  port: 1883
-  remoteShell: false
-  remoteConfiguration: false
-  statistics:
-    enable: true
-    statsSendPeriodInSeconds: 3600
-  minPackSendDelayMS: 0
-  checkConnectorsConfigurationInSeconds: 60
-  handleDeviceRenaming: true
-  checkingDeviceActivity:
-    checkDeviceInactivity: false
-    inactivityTimeoutSeconds: 120
-    inactivityCheckPeriodSeconds: 10
-  security:
-    accessToken: PUT_YOUR_GW_ACCESS_TOKEN_HERE
-storage:
-  type: memory
-  read_records_count: 10
-  max_records_count: 1000
-grpc:
-  enabled: false
-  serverPort: 9595
-  keepaliveTimeMs: 10000
-  keepaliveTimeoutMs: 5000
-  keepalivePermitWithoutCalls: true
-  maxPingsWithoutData: 0
-  minTimeBetweenPingsMs: 10000
-  minPingIntervalWithoutDataMs: 5000
-connectors:
-
-  -
-    name: MQTT Broker Connector
-    type: mqtt
-    configuration: mqtt.json
-
-```
-
-**You can read more in [this article](/docs/iot-gateway/configuration/) about configuration files and their properties.**  
-
-## Step 4: Restart gateway to accept new configuration
-
-This step depends on chosen type of installation. If you install thingsboard-gateway as daemon - you should use following command:  
-```bash
-systemctl restart thingsboard-gateway.service
-```
-{: .copy-code}
-
-In other case, if you have installed the gateway as python module - you should just rerun gateway process.   
-
-## Step 5: Review gateway statistics
-
-Open the web UI of your ThingsBoard server and review statistics that is uploaded from your thingsboard gateway.  
-Login as Tenant Administrator and open **Devices** page. Click on the gateway device card.   
-Open "Latest Telemetry" tab and review following statistics: "**eventsProduced**", "**eventsSent**" and parameters that provide information about every connector.  
-All values should be set to "0".
-
-{:refdef: style="text-align: center;"}
-![image](https://img.thingsboard.io/gateway/review-gateway-statistics.png)
-{: refdef}
-
-## Step 6: Add connectors to the main configuration file 
+More about Gateway Dashboard you can [read here](/docs/iot-gateway/guides/how-to-enable-remote-configuration/).
  
-For connection to some devices we use connectors, they are connect to different devices and servers to collect data.  
-To provide for gateway information about connectors that you need - you should write a configuration to section "connectors" in tb_gateway.yaml (At least one connector needed for correct work).  
-For correct configuration please use [this article](/docs/iot-gateway/configuration/#section-connectors).  
- 
-## Step 7: Configure connectors
+## Configure connectors
 
 After successful installation you should configure the connectors to connect to different devices, please use one (or more) following articles to configure connector files:  
  - [**MQTT** connector](/docs/iot-gateway/config/mqtt/)
@@ -149,3 +89,14 @@ After successful installation you should configure the connectors to connect to 
  - [**XMPP** connector](/docs/iot-gateway/config/xmpp/)
  - [**OCPP** connector](/docs/iot-gateway/config/ocpp/)
  - [**Custom** connector](/docs/iot-gateway/custom/)
+
+## Review gateway statistics
+
+To review the statistics uploaded from your gateway, navigate to the **Devices** page and click on the gateway device card. 
+Once there, open the “Latest Telemetry” tab to review parameters such as **“eventsProduced”**, **“eventsSent”**, and other 
+specifics about each connector.
+Note that all values should initially be set to “0”.
+
+{:refdef: style="text-align: center;"}
+![image](/images/gateway/review-gateway-statistics.png)
+{: refdef}

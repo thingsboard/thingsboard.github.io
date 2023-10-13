@@ -11,11 +11,14 @@ In table below described parameters to configure authorization of IoT gateway on
 
 Security subsection in configuration file will look like this: 
 
-```yaml
-  security:
-    privateKey: /etc/thingsboard-gateway/privateKey.pem
-    caCert: /etc/thingsboard-gateway/ca.pem
-    cert: /etc/thingsboard-gateway/certificate.pem
-    checkCertPeriod: 86400
-    certificateDaysLeft: 3
+```json
+...
+"security": {
+  "caCert": "/etc/thingsboard-gateway/ca.pem",
+  "privateKey": "/etc/thingsboard-gateway/privateKey.pem",
+  "cert": "/etc/thingsboard-gateway/certificate.pem",
+  "checkCertPeriod": 86400,
+  "certificateDaysLeft": 3
+},
+...
 ```
