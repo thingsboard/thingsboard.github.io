@@ -81,18 +81,18 @@ The above command uses **mqtt.thingsboard.cloud** host and **1883** port and req
 
 One-way SSL authentication is a standard authentication mode, where your client device verifies the identity of a server using server certificate.
 ThingsBoard Cloud uses a valid certificate.
-Please download the CA certificate using this [**link**](/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ssl/tb-cloud-root-ca.pem)
-and save it to your working directory as "**tb-cloud-root-ca.pem**".
+Please download the CA root certificate using this [**link**](/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ssl/ca-root.pem)
+and save it to your working directory as "**ca-root.pem**".
 
 ```bash
-wget https://thingsboard.io/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ssl/tb-cloud-root-ca.pem
+wget https://thingsboard.io/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ssl/ca-root.pem
 ```
 {: .copy-code}
 
-Now you may use the *tb-cloud-root-ca.pem* to setup secure connection to ThingsBoard Cloud and Access Token *YOUR_ACCESS_TOKEN* to authenticate the device to upload telemetry:
+Now you may use the *ca-root.pem* to setup secure connection to ThingsBoard Cloud and Access Token *YOUR_ACCESS_TOKEN* to authenticate the device to upload telemetry:
 
 ```bash
-mosquitto_pub --cafile tb-cloud-root-ca.pem -d -q 1 -h "mqtt.thingsboard.cloud" -p "8883" \
+mosquitto_pub --cafile ca-root.pem -d -q 1 -h "mqtt.thingsboard.cloud" -p "8883" \
 -t "v1/devices/me/telemetry" -i "YOUR_CLIENT_ID" -u "YOUR_CLIENT_USERNAME" -P "YOUR_CLIENT_PASSWORD" -m {"temperature":25}
 ```
 {: .copy-code}

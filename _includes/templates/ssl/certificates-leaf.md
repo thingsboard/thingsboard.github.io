@@ -5,10 +5,10 @@
 ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://thingsboard.cloud/signup).
 Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide to provision server certificate if you are hosting your own ThingsBoard instance.
 
-Once provisioned, you should prepare a CA certificate in pem format. This certificate will be used by mqtt client to validate the server certificate.
-Save the CA certificate to your working directory as {% if docsPrefix == 'paas/' %}"**tb-cloud-root-ca.pem**".{% else %}"**tb-ca.pem**".{% endif %}
-An example of CA certificate for *mqtt.thingsboard.cloud* is located
-[here](/docs/paas/user-guide/resources/mqtt-over-ssl/tb-cloud-root-ca.pem).
+Once provisioned, you should prepare a CA root certificate in pem format. This certificate will be used by mqtt client to validate the server certificate.
+Save the CA root certificate to your working directory as "**ca-root.pem**".
+An example of CA root certificate for *mqtt.thingsboard.cloud* is located
+[here](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem).
 
 #### Step 2. Generate Client certificate
 
@@ -45,13 +45,13 @@ Execute the following command to upload temperature readings to ThingsBoard Clou
 
 {% if docsPrefix == 'paas/' %}
 ```bash
-mosquitto_pub --cafile tb-cloud-root-ca.pem -d -q 1 -h "mqtt.thingsboard.cloud" -p "8883" \
+mosquitto_pub --cafile ca-root.pem -d -q 1 -h "mqtt.thingsboard.cloud" -p "8883" \
 -t "v1/devices/me/telemetry" --key key.pem --cert cert.pem -m {"temperature":25}
 ```
 {: .copy-code}
 {% else %}
 ```bash
-mosquitto_pub --cafile tb-ca.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
+mosquitto_pub --cafile ca-root.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
 -t "v1/devices/me/telemetry" --key key.pem --cert cert.pem -m {"temperature":25}
 ```
 {: .copy-code}
