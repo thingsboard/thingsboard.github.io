@@ -320,7 +320,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                 <a class="img-button" href="/use-cases/fuel-level-monitoring/">
                     <div class="overlay">
                         <div class="eye">
-                            <img src="/images/eye-icon.svg">See more
+                            <img src="/images/eye-icon.svg" alt="See more">See more
                         </div>
                     </div>
                     <div class="dashboard-frame">
