@@ -8,4 +8,4 @@ To do this, follow these steps:
 {% include images-gallery.html imageCollection="microsoft-teams-settings" showListImageTitles="true" %}
 
 <br>
-Now you are ready to use Microsoft Teams via [Notification Center](/docs/{{docsPrefix}}user-guide/notifications/#microsoft-teams-settings).
+Now you are ready to use Microsoft Teams via [Notification Center](/docs/{{docsPrefix}}user-guide/notifications/#microsoft-teams).
