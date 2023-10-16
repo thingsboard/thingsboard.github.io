@@ -6,7 +6,7 @@ chip: Allwinner A64
 connectivity: Ethernet, WIFI, Bluetooth
 vendor: PINE64
 deviceImageFileName: pine-a64.jpg
-docsPrefix: pe
+docsPrefix: pe/
 ---
 
 

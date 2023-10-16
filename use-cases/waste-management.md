@@ -39,22 +39,22 @@ Save up to 90% of development time for your waste management solution by utilizi
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-1.png" />
+        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-1.png" alt="waste monitoring 1">
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-2.png" />
+        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-2.png" alt="waste monitoring 2">
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-3.png" />
+        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-3.png" alt="waste monitoring 3">
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-4.png" />
+        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-4.png" alt="waste monitoring 4">
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-5.png" />
+        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-5.png" alt="waste monitoring 5">
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-6.png" />
+        <img class="item-image" src="/images/solutions/waste_monitoring/waste-monitoring-6.png" alt="waste monitoring 6">
     </div>
 </div>
 
@@ -139,14 +139,14 @@ Save up to 90% of development time for your waste management solution by utilizi
     </div>
 </section>
 
-## Waste Management solution overview 
+## Waste Management solution overview
 
 The diagram below identifies data flow and integration points for a typical waste management solution that uses the ThingsBoard platform to collect and analyze monitoring data from waste sensors.
 
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
 
 You may notice plenty of connectivity options for the waste sensors: direct connection to the cloud, through the IoT Gateway, or an Integration with a third-party system.
-The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database. 
+The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
 ## Learn more

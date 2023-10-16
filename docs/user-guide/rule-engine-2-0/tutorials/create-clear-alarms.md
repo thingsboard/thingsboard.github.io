@@ -33,7 +33,7 @@ Add Device entity in ThingsBoard. Its name is **Thermostat Home** and its type i
   
 ![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/add-device.png)
    
-<br/>
+<br>
 
 # Message flow  
 
@@ -48,13 +48,13 @@ In this section, we explain the purpose of each node in this tutorial:
 - Node D: **Rule Chain** node.
   - Forwards incoming Message to specified Rule Chain **Create & Clear Alarms**. 
 
-<br/>
+<br>
 
 # Configure Rule Chains
 
 In this tutorial, we modified our **Root Rule Chain** and also created Rule Chain **Create & Clear Alarms**
 
-<br/>The following screenshots show how the above Rule Chains should look like:
+<br>The following screenshots show how the above Rule Chains should look like:
  
   - **Create & Clear Alarms:**
 
@@ -64,12 +64,12 @@ In this tutorial, we modified our **Root Rule Chain** and also created Rule Chai
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/root-rule-chain.png)
 
-<br/> 
+<br> 
 
 Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/create___clear_alarms.json) for the **Create & Clear Alarms** rule chain. 
 Create Node D as shown on the image above in the root rule chain to forward telemetry to the imported rule chain.
-<br/>
-<br/>
+<br>
+<br>
 
 The following section shows you how to create this rule chain from scratch.
  
@@ -134,14 +134,14 @@ The initial Rule Chain has been modified by adding the following node:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/add-chain-node.png)
 
-<br/>
+<br>
 
 The following screenshot shows how the final **Root Rule Chain** should look like:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/root-rule-chain.png)
 
-<br/>
-<br/>
+<br>
+<br>
 
 # How to verify the Rule Chain and Post telemetry
 
@@ -154,7 +154,7 @@ copy device access token from the device **Thermometer**.
 
 Let's pushed debug mode button in Clear Alarm and Create Alarm node to verify the results.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/debug-mode-clear-alarm.png)<br/>
+![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/debug-mode-clear-alarm.png)<br>
 ![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/debug-mode-create-alarm.png)
 
 sent temperature = 99. Alarm should be created:
@@ -181,7 +181,7 @@ curl -v -X POST -d '{"temperature":30}' http://localhost:8080/api/v1/$ACCESS_TOK
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/alarm-cleared.png)
 
-<br/>
+<br>
 
 Also, you can:
 
@@ -193,7 +193,7 @@ Also, you can:
 
 Please refer to the links from the second to the fourth under the **See Also** section to see how to do this.
   
-<br/>
+<br>
 
 # See Also
 

@@ -6,7 +6,7 @@ chip: BCM2835
 connectivity: WIFI, Bluetooth, BLE
 vendor: Raspberry
 deviceImageFileName: raspberry-pi-zero-w.jpg
-docsPrefix: paas
+docsPrefix: paas/
 ---
 
 

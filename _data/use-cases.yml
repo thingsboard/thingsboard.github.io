@@ -1,14 +1,14 @@
 - id: smart-energy
   title: Smart Energy
-  link: /use-cases/smart-energy/
+  link: /smart-energy/
   icon: /images/case-eng-icon.svg
 - id: smart-farming
   title: Smart Farming
-  link: /use-cases/smart-farming/
+  link: /smart-farming/
   icon: /images/case-fam-icon.svg
 - id: fleet-tracking
   title: Fleet Tracking
-  link: /use-cases/fleet-tracking/
+  link: /fleet-tracking/
   icon: /images/case-trk-icon.svg
 - id: fuel-level-monitoring
   title: Fuel Level Monitoring
@@ -16,7 +16,7 @@
   icon: /images/case-wat-icon.svg
 - id: smart-metering
   title: Smart Metering
-  link: /use-cases/smart-metering/
+  link: /smart-metering/
   icon: /images/case-met-icon.svg
 - id: environment-monitoring
   title: Environment Monitoring

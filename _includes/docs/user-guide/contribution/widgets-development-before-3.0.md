@@ -524,15 +524,15 @@ self.onInit = function() {
         commandPromise.then(
             function success(response) {
                 if (oneWayElseTwoWay) {
-                    self.ctx.$scope.rpcCommandResponse = "Command was successfully received by device.<br/> No response body because of one way command mode.";
+                    self.ctx.$scope.rpcCommandResponse = "Command was successfully received by device.<br> No response body because of one way command mode.";
                 } else {
-                    self.ctx.$scope.rpcCommandResponse = "Response from device:<br/>";                    
+                    self.ctx.$scope.rpcCommandResponse = "Response from device:<br>";                    
                     self.ctx.$scope.rpcCommandResponse += angular.toJson(response);
                 }
             },
             function fail(rejection) {
-                self.ctx.$scope.rpcCommandResponse = "Failed to send command to the device:<br/>"
-                self.ctx.$scope.rpcCommandResponse += "Status: " + rejection.status + "<br/>";
+                self.ctx.$scope.rpcCommandResponse = "Failed to send command to the device:<br>"
+                self.ctx.$scope.rpcCommandResponse += "Status: " + rejection.status + "<br>";
                 self.ctx.$scope.rpcCommandResponse += "Status text: '" + rejection.statusText + "'";
             }
             

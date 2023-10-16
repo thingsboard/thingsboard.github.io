@@ -6,25 +6,25 @@ should pop up, and you will be prompted to upload the JSON file and click “Imp
 
 {% assign importingDashboardCE = '
     ===
-        image: /images/user-guide/dashboards/dashboard-import-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-ce.png
     ===
-        image: /images/user-guide/dashboards/dashboard-import-1-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-ce.png
     ===
-        image: /images/user-guide/dashboards/dashboard-import-2-ce.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-3-ce.png
     '
 %}
 
 {% assign importingDashboardPE = '
     ===
-        image: /images/user-guide/dashboards/dashboard-import-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-pe.png
     ===
-        image: /images/user-guide/dashboards/dashboard-import-1-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-pe.png
     ===
-        image: /images/user-guide/dashboards/dashboard-import-2-pe.png
+        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-3-pe.png
     '
 %}
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importingDashboardPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=importingDashboardCE %}

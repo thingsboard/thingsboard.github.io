@@ -11,9 +11,12 @@ with your value.
 |---
 
 
-```yaml
-  security:
-    clientId: YOUR_CLIENT_ID
-    username: YOUR_USERNAME
-    password: YOUR_PASSWORD
+```json
+...
+"security": {
+  "clientId": "YOUR_CLIENT_ID",
+  "username": "YOUR_USERNAME",
+  "password": "YOUR_PASSWORD"
+},
+...
 ```

@@ -18,7 +18,7 @@ Save up to 90% of development time for your smart office solution by utilizing t
   - Advanced and flexible visualization for real-time and historical data;
   - Customizable end-user dashboards to share the monitoring results;
   - On-premises and cloud deployment options;
-  - Remote control and OTA updates for your IoT devices;    
+  - Remote control and OTA updates for your IoT devices;
   - Customizable mobile applications with minimum coding efforts;
 
 The platform provides production-ready server infrastructure to connect your IoT water meters, store, analyze and share collected IoT data;
@@ -32,22 +32,22 @@ You may easily integrate with external billing systems to produce and distribute
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm1.png" />
+        <img class="item-image" src="/images/usecases/water-metering/wm1.png" alt="water metering 1">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm2.png" />
+        <img class="item-image" src="/images/usecases/water-metering/wm2.png" alt="water metering 2">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm3.png" />
+        <img class="item-image" src="/images/usecases/water-metering/wm3.png" alt="water metering 3">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm4.png" />
+        <img class="item-image" src="/images/usecases/water-metering/wm4.png" alt="water metering 4">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm5.png" />
+        <img class="item-image" src="/images/usecases/water-metering/wm5.png" alt="water metering 5">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/water-metering/wm6.png" />
+        <img class="item-image" src="/images/usecases/water-metering/wm6.png" alt="water metering 6">
     </div>
 </div>
 
@@ -66,8 +66,8 @@ Once you install the solution template, you will also receive access to "Water M
 that allows you to manage water metering devices, users and alarms:
 
 * observe location and status of the water meters on the map. Markers are clustered to be able to show thousands of meters simultaneously;
-* use "Analytics" view to compare consumption for the current and previous month; 
-* use "Devices" view to get the list of all water meter devices with ability to 
+* use "Analytics" view to compare consumption for the current and previous month;
+* use "Devices" view to get the list of all water meter devices with ability to
     * create a new device and assign it to the customer;
     * change the location of the device;
     * configure alarm thresholds for this device;
@@ -78,13 +78,13 @@ that allows you to manage water metering devices, users and alarms:
     * change water meter location information
     * upload water meter photo;
     * change location of the device;
-* use "Customers" view to manage your customers;   
+* use "Customers" view to manage your customers;
 * use "Alarms" view to browse and clear alarms from water meters;
 * use "Settings" view to:
     * turn system alarms on and off;
     * define thresholds for system alarms;
     * turn sms and email notifications on and off;
-  
+
 Some dashboard features (for example, ability to create devices) were disabled on the live demo dashboard because it is publicly available.
 
 ## ThingsBoard advantages
@@ -95,7 +95,7 @@ Some dashboard features (for example, ability to create devices) were disabled o
     <div class="cards row">
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/microservices-icon.svg">
+                <img src="/images/microservices-icon.svg" alt="Scalability and high availability">
                 <div>
                     <a class="title" href="/docs/reference/msa/">Scalability and high availability</a>
                     <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. 
@@ -105,7 +105,7 @@ Some dashboard features (for example, ability to create devices) were disabled o
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/telemetry-icon.svg">
+                <img src="/images/telemetry-icon.svg" alt="Connectivity">
                 <div>
                     <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
                     <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. 
@@ -115,7 +115,7 @@ Some dashboard features (for example, ability to create devices) were disabled o
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/integration-icon.svg">
+                <img src="/images/integration-icon.svg" alt="LoRaWAN & SigFox Support">
                 <div>
                     <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
                     <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
@@ -124,7 +124,7 @@ Some dashboard features (for example, ability to create devices) were disabled o
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/security-icon.svg">
+                <img src="/images/security-icon.svg" alt="Security">
                 <div>
                     <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
                     <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
@@ -133,7 +133,7 @@ Some dashboard features (for example, ability to create devices) were disabled o
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/engine-icon.svg">
+                <img src="/images/engine-icon.svg" alt="Data processing">
                 <div>
                     <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">Data processing</a>
                     <p>ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. You are free to process data with the Rule engine or push it to further processing in external systems.</p>
@@ -142,7 +142,7 @@ Some dashboard features (for example, ability to create devices) were disabled o
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/visualization-icon.svg">
+                <img src="/images/visualization-icon.svg" alt="Data visualization">
                 <div>
                     <a class="title" href="/docs/user-guide/dashboards/">Data visualization</a>
                     <p>Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. Customize every dashboard aspect using advanced widget settings or even custom widget bundles. Low latency updates are possible with embedded web-sockets support.</p>
@@ -151,7 +151,7 @@ Some dashboard features (for example, ability to create devices) were disabled o
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/device-icon.svg">
+                <img src="/images/device-icon.svg" alt="Mobile application">
                 <div>
                     <a class="title" href="/docs/mobile/">Mobile application</a>
                     <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
@@ -160,7 +160,7 @@ Some dashboard features (for example, ability to create devices) were disabled o
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/tenancy-icon.svg">
+                <img src="/images/tenancy-icon.svg" alt="Multi-tenancy">
                 <div>
                     <a class="title" href="/docs/user-guide/entities-and-relations/">Multi-tenancy</a>
                     <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>

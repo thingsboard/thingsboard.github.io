@@ -31,7 +31,7 @@ def collect_required_data():
             "Please write path to your server public certificate or leave it blank to use default (mqttserver.pub.pem): ")
         config["ca_cert"] = ca_cert if ca_cert else "mqttserver.pub.pem"
     else:
-        config["ca_cert"] = "tb-cloud-chain.pem"
+        config["ca_cert"] = "ca-root.pem"
     token = ""
     while not token:
         token = input("Please write accessToken for device: ")

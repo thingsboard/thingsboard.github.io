@@ -171,9 +171,9 @@ Once CoAP Integration has been created, the CoAP server register appropriate res
 Choose device payload type to send uplink message
 
 {% capture senduplink %}
-Text payload<br/>%,%text%,%templates/integration/coap/coap-send-uplink-text.md%br%
-JSON payload<br/>%,%json%,%templates/integration/coap/coap-send-uplink-json.md%br%
-Binary payload<br/>%,%binary%,%templates/integration/coap/coap-send-uplink-binary.md{% endcapture %}
+Text payload<br>%,%text%,%templates/integration/coap/coap-send-uplink-text.md%br%
+JSON payload<br>%,%json%,%templates/integration/coap/coap-send-uplink-json.md%br%
+Binary payload<br>%,%binary%,%templates/integration/coap/coap-send-uplink-binary.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="coapintegrationsenduplink" toggle-spec=senduplink %}
 

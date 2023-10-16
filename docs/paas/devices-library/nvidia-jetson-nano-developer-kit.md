@@ -6,7 +6,7 @@ chip: NVIDIA CUDA
 connectivity: Ethernet, WIFI, Bluetooth
 vendor: NVIDIA
 deviceImageFileName: nvidia-jetson-nano-developer-kit.jpg
-docsPrefix: paas
+docsPrefix: paas/
 ---
 
 

@@ -22,18 +22,13 @@ We will describe connector configuration file below.
 Connector configuration is a JSON file that contains information about how to connect to external FTP server, what paths to use when reading data and how to process the data.  
 Let's review the format of the configuration file using example below.
 
-<br>
-<details>
-
-<summary>
-<b>Example of FTP Connector config file. Press to expand.</b>
-</summary>
+<b>Example of FTP Connector config file.</b>
 
 Example listed below will connect to FTP server in a local network deployed on server with IP 0.0.0.0. 
 Connector will use basic FTP auth using username and password. 
 Then, connector will subscribe to a list of paths from mapping section. See more info in a description below.
 
-{% highlight json %}
+{% capture ftpConf %}
 
 {
   "host": "0.0.0.0",
@@ -101,9 +96,8 @@ Then, connector will subscribe to a list of paths from mapping section. See more
   ]
 }
 
-{% endhighlight %}
-
-</details>
+{% endcapture %}
+{% include code-toggle.liquid code=ftpConf params="conf|.copy-code.expandable-20" %}
 
 ### General section
 

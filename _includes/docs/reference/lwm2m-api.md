@@ -147,7 +147,7 @@ Using the above configuration, we will make sure that the attribute *timezone* w
 
 #### Write LwM2M resource via ThingsBoard attributes update
 
-ThingsBoard [Shared Attributes](docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver the configuration updates to the device.
+ThingsBoard [Shared Attributes](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver the configuration updates to the device.
 You may change the shared attribute in multiple ways - via administration UI, dashboard widget, REST API, or rule engine node. 
 Once you change the shared attribute, ThingsBoard will search for the mapping between the attribute key and LwM2M resource.
 If the resource is marked as an attribute, platform will send the LwM2M Write operation to the LwM2M client device.

@@ -62,6 +62,8 @@ toc:
     path: /docs/pe/user-guide/ui/aliases/
   - title: Widgets
     section:
+      - title: Overview
+        path: /docs/pe/user-guide/widgets/
       - title: Widget Actions
         path: /docs/pe/user-guide/ui/widget-actions/
       - title: Widgets Library
@@ -267,6 +269,8 @@ toc:
     path: /docs/pe/user-guide/ui/sms-provider-settings/
   - title: Slack Settings
     path: /docs/pe/user-guide/ui/slack-settings/
+  - title: Microsoft Teams Settings
+    path: /docs/pe/user-guide/ui/microsoft-teams-settings/
     new: true
   - title: Mail Settings
     path: /docs/pe/user-guide/ui/mail-settings/

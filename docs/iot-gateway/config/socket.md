@@ -22,14 +22,9 @@ We will describe connector configuration file below.
 Connector configuration is a JSON file that contains information about how to connect to external server, how to process
 the data and other service features. Let’s review the format of the configuration file using example below.
 
-<br>
-<details>
+<b>Example of Socket Connector config file.</b>
 
-<summary>
-<b>Example of Socket Connector config file. Press to expand.</b>
-</summary>
-
-{% highlight json %}
+{% capture socketConf %}
 {
   "name": "TCP Connector Example",
   "type": "TCP",
@@ -90,9 +85,8 @@ the data and other service features. Let’s review the format of the configurat
     }
   ]
 }
-{% endhighlight %}
-
-</details>
+{% endcapture %}
+{% include code-toggle.liquid code=socketConf params="conf|.copy-code.expandable-20" %}
 
 ### General section
 

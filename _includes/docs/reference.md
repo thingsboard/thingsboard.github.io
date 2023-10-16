@@ -52,7 +52,7 @@ See [submit strategies](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#q
 for more details.
 
 ThingsBoard Rule Engine may operate in two modes: shared and isolated. In shared mode, rule engine process messages that belong to multiple tenants.
-In isolated mode Rule Engine may be configured to process messages for specific tenant only. 
+In isolated mode Rule Engine may be configured to process messages for tenants of specific tenant profile only. 
 
 **ThingsBoard Web UI**
 

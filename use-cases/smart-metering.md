@@ -48,16 +48,16 @@ The following interactive dashboard hosted on live demo server represents smart 
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm1.png" />
+        <img class="item-image" src="/images/usecases/smart-metering/sm1.png" alt="smart metering 1">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm2.png" />
+        <img class="item-image" src="/images/usecases/smart-metering/sm2.png" alt="smart metering 2">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm3.png" />
+        <img class="item-image" src="/images/usecases/smart-metering/sm3.png" alt="smart metering 3">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm4.png" />
+        <img class="item-image" src="/images/usecases/smart-metering/sm4.png" alt="smart metering 4">
     </div>
 </div>
 
@@ -99,7 +99,7 @@ You may export the dashboard from our live demo server and import it to your Thi
             <div class="block">
                 <object data="/images/integration-icon.svg"></object>
                 <div>
-                    <a class="title" href="/docs/user-guide/integrations">LoRaWAN & SigFox Support</a>
+                    <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
                     <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
                 </div>
             </div>
@@ -135,7 +135,7 @@ You may export the dashboard from our live demo server and import it to your Thi
             <div class="block">
                 <object data="/images/phone-icon.svg"></object>
                 <div>
-                    <a class="title" href="/docs/mobile">Mobile application</a>
+                    <a class="title" href="/docs/mobile/">Mobile application</a>
                     <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
                 </div>
             </div>
@@ -152,7 +152,7 @@ You may export the dashboard from our live demo server and import it to your Thi
     </div>
 </section>
 
-## Smart energy solution overview 
+## Smart energy solution overview
 
 The diagram below identifies data flow and integration points for a typical smart-metering solution that uses the ThingsBoard platform to collect and analyze energy monitoring data from smart meters.
 

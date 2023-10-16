@@ -33,11 +33,11 @@ Where:
 After executing this command you can open logs which are located here `~/.tb-pe-aws-integration-logs`. 
 You should see some INFO log messages with your latest Integration configuration that arrived from the server.
 
-<br/>
+<br>
 
 You can detach from session terminal with **`Ctrl-p`**+**`Ctrl-q`** - the container will keep running in the background.
 
-<br/>
+<br>
 
 - **Reattaching, stop and start commands**
 

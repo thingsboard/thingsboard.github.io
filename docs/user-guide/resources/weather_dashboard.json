@@ -82,7 +82,7 @@
             "lngKeyName": "longitude",
             "showLabel": true,
             "label": "<div style=\"position: relative; white-space: nowrap; text-align: center; font-size: 13px; top: 3px;\"><span style=\"margin-left: -500%;\"></span><span style=\"border: solid #ff3f26; border-radius: 10px; color: #ff3f26; background-color: #fff; padding-left: 5px; padding-right: 5px; padding-top: 3px; padding-bottom: 3px;\">${entityName}</span><span style=\"margin-right: -500%;\"></span></div>",
-            "tooltipPattern": "<div style=\"color:black\"><b>${entityName}</b><br/><br/><b>Max outside temperature:</b> ${outsideMaxTemp:1}<br/><b>Min outside temperature:</b> ${outsideMinTemp:1}<br/><b>Current outside temperature:</b> ${outsideTemperature:1}<br/><b>Current outside humidity:</b> ${outsideHumidity:1}<br/></div>",
+            "tooltipPattern": "<div style=\"color:black\"><b>${entityName}</b><br><br><b>Max outside temperature:</b> ${outsideMaxTemp:1}<br><b>Min outside temperature:</b> ${outsideMinTemp:1}<br><b>Current outside temperature:</b> ${outsideTemperature:1}<br><b>Current outside humidity:</b> ${outsideHumidity:1}<br></div>",
             "markerImageSize": 34,
             "useColorFunction": true,
             "markerImages": [

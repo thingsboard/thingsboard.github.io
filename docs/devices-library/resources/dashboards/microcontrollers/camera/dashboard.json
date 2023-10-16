@@ -731,7 +731,7 @@
           "padding": "0px",
           "settings": {
             "useMarkdownTextFunction": false,
-            "markdownTextPattern": "\n<div>\n<img src=\"data:image/jpeg;base64,${photo}\"/>\n</div>",
+            "markdownTextPattern": "\n<div>\n<img src=\"data:image/jpeg;base64,${photo}\">\n</div>",
             "applyDefaultMarkdownStyle": true,
             "markdownCss": "div img {\n    display: flex;\n    width: 100%;\n    height: 100%;\n}"
           },

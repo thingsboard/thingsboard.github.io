@@ -6,7 +6,7 @@ chip: Samsung Exynos5422
 connectivity: Ethernet
 vendor: Hardkernel
 deviceImageFileName: odroid-xu4.jpg
-docsPrefix: pe
+docsPrefix: pe/
 ---
 
 
