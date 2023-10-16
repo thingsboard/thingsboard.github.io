@@ -10,6 +10,6 @@ docsPrefix: paas/
 ---
 
 * TOC
-  {:toc}
+{:toc}
 
 {% include /docs/devices-library/guides/ug67-lorawan-gateway.md %}
