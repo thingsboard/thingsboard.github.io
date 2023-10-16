@@ -9,32 +9,43 @@ Charts widget bundle has its own unique advanced data key configuration. All oth
 
 To enter a data key configuration, you should click the pencil icon on the specific data key that you'd like to adjust.
 
-![image](https://img.thingsboard.io/user-guide/ui/widgets/advanced-datakey/enter-data-key-configuration.png)
+{% if docsPrefix == null %}
+![image](/images/user-guide/widgets/advanced-data-key/enter-data-key-configuration-ce.png)
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+![image](/images/user-guide/widgets/advanced-data-key/enter-data-key-configuration-pe.png)
+{% endif %}
 
-## 1. Entity table and alarms table widgets
+## Advanced data keys configuration
 
-Entity table widget, alarms table widget, and entity admin widget bundle have the same advanced data key configuration. 
-Let's break advanced configuration down with an example on the entity table widget from the cards bundle.
+Let's break advanced configuration down with an example on the "Entitys table" widget from the "Tables" bundle.
 
-{% include images-gallery.html imageCollection="entity-table-example" %}
+Please follow these steps to start the advanced configuration of the key data.
 
-##### 1.1. Column width (px or %)
+{% include images-gallery.html imageCollection="entity-table-example" showListImageTitles="true" %}
 
-_The column width_ bar allows you to adjust the width of the column in pixels or percentage. Manually enter the desired width (for example, 500px) and click "Save" in the lower right corner of the dialog box.
+### Custom header title
+
+The _custom header title_ allows you to change the column caption to whatever you prefer. By default, the column name is the same as the key name.
+
+{% include images-gallery.html imageCollection="custom-header-title" %}
+
+### Column width (px or %)
+
+The _column width_ bar allows you to adjust the width of the column in pixels or percentage. Manually enter the desired width (for example, 200px).
 In the same way, you can change the width as a percentage.
 
 {% include images-gallery.html imageCollection="column-width" %}
 
-##### 1.2. Cell style function
+### Cell style function
 
 Cell style function allows adjusting color of rows based on values, entity, or [ctx](/docs/{{docsPrefix}}user-guide/contribution/widgets-development/#basic-widget-api).
-The time series table widget also has a cell style function. To configure the cell style function, you should check the box _Use cell style function_ and input the function in the field below. 
-Then, click the "Save" button in the lower right corner of the Data key configuration dialog. To apply changes, click the big orange checkmark in the upper right corner of the widget edit mode. 
-To save applied changes, click the orange checkmark in the lower right corner of the dashboard edit mode.
+The Timeseries table widget also has a cell style function. 
+To configure the cell style function, you should check the box _Use cell style function_ and input the function in the _Cell style function_ field below. 
 
 {% include images-gallery.html imageCollection="style-function" %}
 
-An example of a cell style function:
+An example of a cell style function where the cell color changes depending on its values:
 
 ```ruby
 if(value < 0) {
@@ -57,16 +68,14 @@ if(value < 0) {
 ```
 {: .copy-code}
 
-##### 1.3. Cell content function
+### Cell content function
 
 Cell content function allows changing the text of the data key column based on the value, entity, or [ctx](/docs/{{docsPrefix}}user-guide/contribution/widgets-development/#basic-widget-api).
 The time series table widget from cards widget bundle also has a cell content function. To configure the cell style function, you should check the _Use cell content function_ box and input the function in the field below.
-Then click the "Save" button in the lower right corner of the Data key configuration dialog. To apply changes, click the big orange checkmark in the upper right corner of the widget edit mode.
-To save applied changes, click the orange checkmark in the lower right corner of the dashboard edit mode.
 
 In the example, we have two possible device answers: true or false. Cell content function can change the answers text. It is acceptable when devices are not so many.
 
-{% include images-gallery.html imageCollection="content-function" %}
+{% include images-gallery.html imageCollection="content-function-1" %}
 
 ```ruby
 if (value == "true") {
@@ -80,7 +89,7 @@ if (value == "true") {
 However, there are times when it is not suitable to read the returning text to find out if a device is active or inactive.
 The cell content function allows configuring a more convenient way of displaying it by inputting a custom function to depicture an active/inactive status (see an example of a function below).
 
-{% include images-gallery.html imageCollection="cntnt-function" %}
+{% include images-gallery.html imageCollection="content-function-2" %}
 
 Configurable function to depicture an active/inactive status:
 
@@ -93,27 +102,27 @@ if (value == "true") {
 ```
 {: .copy-code}
 
-##### 1.4. Default column visibility 
+### Default column visibility 
 
-**Since 3.2.2,** in the drop-down menu, you can select visible/hidden options to choose whether the data key column will be displayed in the widget.
+Cell style function allows, you can select visible/hidden options to choose whether the data key column will be displayed in the widget.
 This is especially helpful during exporting a widget when you need to exclude a specific data key.
 
 {% include images-gallery.html imageCollection="column-visibility" %}
 
-##### 1.5. Column selection in 'Column to display'
+### Column selection in 'Column to display'
 
-**Since 3.2.2,** in the drop-down menu, you can select whether the column will be shown in the visibility selection menu, therefore, clients without permissions will not be able to hide it.
+Cell style function allows, you can select whether the column will be shown in the visibility selection menu, therefore, clients without permissions will not be able to hide it.
 
 {% include images-gallery.html imageCollection="column-to-display" %}
 
-{% unless docsPrefix == null %}
-##### 1.6. Include column in export
+### Include column in export
 
 {% assign feature = "Include in column in export" %}{% include templates/pe-feature-banner.md %}
 
-**Since 3.2.2,** you can choose under what conditions widget with a specific data key column can be exported. 
-There are three options: always, only if column visible (you can change the visibility in [default column visibility](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/#14-default-column-visibility))
-and never. This feature is only available in the Professional Edition.
+Cell style function allows, you can choose under what conditions widget with a specific data key column can be exported. 
+There are three options: always, only if column visible (you can change the visibility in [default column visibility](#default-column-visibility))
+and never.
 
 {% include images-gallery.html imageCollection="column-export" %}
-{% endunless %}
+
+## Advanced data keys configuration for 
