@@ -21,9 +21,9 @@ notitle: "true"
                 </div>
                 <div class="block" style="padding-top: 160px; ">
                     <div>
-                        <p>Google Cloud will shut down the IoT Core service in August 2023. You might be wondering where and how to migrate. 
+                        <p>Google Cloud shut down the IoT Core service in August 2023. You might be wondering where and how to migrate. 
                            ThingsBoard is an excellent alternative to Google IoT Cloud. 
-                           Launched in 2016 as an open source project, ThingsBoard has grown to a mature platform with 1000+ customers worldwide.</p>
+                           Launched in 2016 as an open-source project, ThingsBoard has grown to a mature platform with 1000+ customers worldwide.</p>
                         <p>ThingsBoard, Inc. provides managed services, training, support, and software development services around the platform. 
                            We may also host and manage a private platform instance in your existing Google Cloud infrastructure. </p>
                     </div>
@@ -137,7 +137,7 @@ notitle: "true"
 						<div>
 							<a class="title" href="/docs/pe/user-guide/ui/devices/">Device</a>
 							<p>ThingsBoard supports provisioning and management of <a href="/docs/pe/user-guide/ui/devices/">devices</a> similar to Google IoT Core. 
-                            However, IoT application is not only about devices. ThingsBoard support other <a href="/docs/pe/user-guide/entities-and-relations/">entities and relations</a> between them.
+                            However, IoT application is not only about devices. ThingsBoard supports other <a href="/docs/pe/user-guide/entities-and-relations/">entities and relations</a> between them.
                             The relations model enables advanced use cases and business logic. For example, you may configure relations between assets, devices, customers, etc.</p>
 						</div>
 					</div>
@@ -149,7 +149,7 @@ notitle: "true"
 							<p>Telemetry is the event data sent from the device to the cloud. For example, measurements about the environment. 
                             ThingsBoard allows you to collect data from devices similar to IoT Core. ThingsBoard also enables data processing (including validation, alerting, etc.) and storage inside the platform.
                             See <a href="/docs/pe/user-guide/rule-engine-2-0/re-getting-started/">Rule Engine</a> for more details.
-                            You may also forward the data to external systems (e.g. PubSub) and reuse your existing data processing flow.</p>
+                            You may also forward the data to external systems (e.g., PubSub) and reuse your existing data processing flow.</p>
 						</div>
 					</div>
 				</div>
@@ -159,7 +159,7 @@ notitle: "true"
 							<a class="title" href="/docs/pe/user-guide/device-connectivity-status/">Device state</a>
 							<p>ThingsBoard monitors device <a href="/docs/pe/user-guide/device-connectivity-status/">connectivity status</a>
                             and allows devices to upload their state via the client <a href="/docs/pe/user-guide/attributes/#client-side-attributes">attributes</a> feature.
-                            You may configure platform to raise alerts when devices are offline or change state. 
+                            You can configure the platform to raise alerts when devices are offline or change state. 
                             ThingsBoard also allows you to distribute over-the-air <a href="/docs/pe/user-guide/ota-updates/">firmware and software updates</a> and monitor the update process. 
                             </p>
 						</div>
@@ -200,7 +200,7 @@ notitle: "true"
                             ThingsBoard also acts like an MQTT broker, but there are a few differences. 
                             With ThingsBoard, you are not limited by static topic name patterns and can define any wildcard topic filters for your needs.
                             The platform accepts JSON or protobuf payloads.
-                            ThingsBoard suppors <a href="/docs/pe/user-guide/access-token/">access tokens</a>,
+                            ThingsBoard supports <a href="/docs/pe/user-guide/access-token/">access tokens</a>,
                             <a href="/docs/pe/user-guide/basic-mqtt/">basic MQTT credentials</a> or
                             <a href="/docs/pe/user-guide/certificates/">X.509 certificates</a>.
 
