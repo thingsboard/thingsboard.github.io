@@ -18,7 +18,7 @@ You need high speed and low latency Internet connection to communicate with Cass
 
 Register a new or sign in existed account. To register a new account visit [Astra DB register page](https://astra.datastax.com/register)
 
-![Register or sign in to Astra DB](../../../../images/user-guide/install/datastax-astra-db/register_or_sign_in_astra_db.png)
+![Register or sign in to Astra DB](/images/user-guide/install/datastax-astra-db/register_or_sign_in_astra_db.png)
 
 ![Login success. Main page with no database](../../../../images/user-guide/install/datastax-astra-db/astra_main_page.png)
 

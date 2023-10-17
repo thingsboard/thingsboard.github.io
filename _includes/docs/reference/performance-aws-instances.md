@@ -23,9 +23,9 @@ Our team executed the tests for at least 24 hours to ensure no resource leakage 
 We have also included instructions to replicate the tests. Links to the instructions are in the details of each test run.
 
 Additional tool set we use for our tests: 
-[Postgres](/docs/{{docsPrefix}}reference/performance/tools/postgres-pgadmin-monitoring/), 
-[Java](/docs/{{docsPrefix}}reference/performance/tools/java-jmx-monitoring/) and 
-[ThingsBoard](/docs/{{docsPrefix}}reference/performance/tools/thingsboard-performance-charts/) used to visualize the performance.
+[Postgres](/docs/reference/performance/tools/postgres-pgadmin-monitoring/), 
+[Java](/docs/reference/performance/tools/java-jmx-monitoring/) and 
+[ThingsBoard](/docs/reference/performance/tools/thingsboard-performance-charts/) used to visualize the performance.
 
 As an output we will analyse the ThingsBoard rule engine [statistics](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-statistics) dashboard and fancy API usage stats.
 
@@ -100,7 +100,7 @@ Without unlimited mode at the first start you have 0 credits to burst CPU up and
 Setup the ThingsBoard instance on AWS EC2
 </summary>
 
-Use the Docker Compose file listed below to setup the AWS EC2 instance based on the [instruction](/docs/{{docsPrefix}}reference/performance/setup-aws-instances/).  
+Use the Docker Compose file listed below to setup the AWS EC2 instance based on the [instruction](/docs/reference/performance/setup-aws-instances/).  
 
 ```bash
 version: '3.0'
@@ -150,7 +150,7 @@ volumes: # to persist data between container restarts or being recreated
 Launch performance test tool
 </summary>
 
-Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-tool/).
+Use the Docker command listed below to launch the performance test tool based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 ```bash
 # Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
@@ -200,7 +200,7 @@ Message rate have been increased gradually.
 Performance test was stopped and run with a greater numbers step by step
 </summary>
 
-Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-tool/).
+Use the Docker command listed below to launch the performance test tool based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 ```bash
 # Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
@@ -251,7 +251,7 @@ Some lag will build up. Let's see what is happening inside the memory and the co
 Launch performance test tool
 </summary>
 
-Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-tool/).
+Use the Docker command listed below to launch the performance test tool based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 ```bash
 # Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
@@ -417,7 +417,7 @@ volumes: # to persist data between container restarts or being recreated
 Launch performance test tool
 </summary>
 
-Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-tool/).
+Use the Docker command listed below to launch the performance test tool based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 ```bash
 # Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
@@ -474,7 +474,7 @@ After a while, we may see that the lag is going down from 2.8M to 1.2M. Eventual
 Launch performance test tool
 </summary>
 
-Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-tool/).
+Use the Docker command listed below to launch the performance test tool based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 ```bash
 # Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
@@ -705,7 +705,7 @@ volumes: # to persist data between container restarts or being recreated
 Launch performance test tool
 </summary>
 
-Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-tool/).
+Use the Docker command listed below to launch the performance test tool based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 ```bash
 # Put your ThingsBoard private IP address here, assuming both ThingsBoard and performance tests EC2 instances are in same VPC.
@@ -877,7 +877,7 @@ volumes: # to persist data between container restarts or being recreated
 Launch performance test tool on two nodes
 </summary>
 
-Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-tool/).
+Use the Docker command listed below to launch the performance test tool based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 We need at least two performance-test instances to produce 100k simultaneous connections because each test instance may create up to 65535 simultaneous connections to a particular external server.
 By default, Ubuntu Linux allows you to spin up a 28232 outgoing connection providing a local port range from 32768 to 60999.
@@ -1108,7 +1108,7 @@ volumes: # to persist data between container restarts or being recreated
 Launch performance test tool on two nodes
 </summary>
 
-Use the Docker command listed below to launch the performance test tool based on the [instruction](/docs/{{docsPrefix}}reference/performance/performance-test-tool/).
+Use the Docker command listed below to launch the performance test tool based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 We need at least two performance-test instances to produce 100k simultaneous connections because each test instance may create up to 65535 simultaneous connections to a particular external server.
 By default, Ubuntu Linux allows you to spin up a 28232 outgoing connection providing a local port range from 32768 to 60999.

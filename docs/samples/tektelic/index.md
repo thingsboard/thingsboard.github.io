@@ -15,8 +15,8 @@ This guide describes how to stream data from TEKTELIC KONA Core Network Server t
  A gateway and a sensor that is designed to work in EU868 frequency band will be used.
 
  To start it necessary to have:
- - [Smart Room Sensor](https://tektelic.com/wp-content/uploads/Smart-Room-Sensor.pdf).
- - [KONA Micro IoT Gateway](https://tektelic.com/wp-content/uploads/KONA-Micro.pdf).
+ - [Smart Room Sensor](https://tektelic.com/products/sensors/comfort-base-smart-room-sensor/).
+ - [KONA Micro IoT Gateway](https://tektelic.com/products/gateways/kona-micro-iot-gateway/).
  - Customer account at [EU instance](https://lorawan-ns-eu.tektelic.com) TEKTELIC KONA Core Network Server.
  To get an account contact [Tektelic support](mailto:support@tektelic.com).
 

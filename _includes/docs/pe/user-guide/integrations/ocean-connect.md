@@ -15,5 +15,5 @@ Configuration steps:
 ![image](/images/user-guide/integrations/oceanconnect.png) 
 
  - Copy HTTP endpoint URL from the auto-generated field in the form (highlighted with red)
- - Review official OceanConnect [documentation](http://developer.huawei.com/ict/en/site-oceanconnect)
+ - Review official OceanConnect [documentation](https://support.huawei.com/enterprise/en/cloud-computing/oceanconnect-platform-pid-22559503)
   to learn how to provision the endpoint URL from the previous step 

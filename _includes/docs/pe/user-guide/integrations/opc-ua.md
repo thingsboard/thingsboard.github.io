@@ -94,11 +94,11 @@ downlink Converter.
 - *contentType* - defines how data will be encoded {TEXT \| JSON \| BINARY}. In case of OPC UA Integration, JSON is used by default.
 - *data* - the actual data that will be processed by OPC UA Integration and sent to the target OPC UA nodes:
     - *writeValues* - array of write values methods:
-        - *nodeId* - target node in [OPC UA NodeId format](http://documentation.unified-automation.com/uasdkhp/1.0.0/html/_l2_ua_node_ids.html#UaNodeIdsConcept) (`ns=<namespaceIndex>;<identifiertype>=<identifier>`)
+        - *nodeId* - target node in [OPC UA NodeId format](https://documentation.unified-automation.com/uasdkhp/1.4.1/html/_l2_ua_node_ids.html) (`ns=<namespaceIndex>;<identifiertype>=<identifier>`)
         - *value* - value to write
     - *callMethods* - array of call methods:
-        - *objectId* - target object in [OPC UA NodeId format](http://documentation.unified-automation.com/uasdkhp/1.0.0/html/_l2_ua_node_ids.html#UaNodeIdsConcept)
-        - *methodId* - target method in [OPC UA NodeId format](http://documentation.unified-automation.com/uasdkhp/1.0.0/html/_l2_ua_node_ids.html#UaNodeIdsConcept)
+        - *objectId* - target object in [OPC UA NodeId format](https://documentation.unified-automation.com/uasdkhp/1.4.1/html/_l2_ua_node_ids.html)
+        - *methodId* - target method in [OPC UA NodeId format](https://documentation.unified-automation.com/uasdkhp/1.4.1/html/_l2_ua_node_ids.html)
         - *args* - array of method input values
 - *metadata* - not used in case of OPC UA Integration and can be empty.
 

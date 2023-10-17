@@ -66,7 +66,7 @@ description:
 <div class="customer-block">
     <div class="customer-company">
         <img class="customer-logo" src="/images/customers/enviroeye.png" alt="">
-        <a class="outlink" href="https://www.enviroeye.com.au/" alt="Enviroeye">Enviroeye</a>
+        <a class="outlink" href="/industries/agriculture/" alt="Enviroeye">Enviroeye</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
