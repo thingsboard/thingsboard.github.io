@@ -49,8 +49,6 @@ docker run hello-world
 
 ### Step 4. Run the performance test
 
-Use the command listed in the "How to reproduce the test" section that corresponds to your performance test [scenario](/docs/{{docsPrefix}}reference/performance-comparison/#test-summary).
-
 The command is similar to the one listed below. Don't forget to replace the value of TB_INTERNAL_IP with the private IP address of your target ThingsBoard instance.
 
 ```bash
