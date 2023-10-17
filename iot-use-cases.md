@@ -304,7 +304,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="/images/solutions/waste_monitoring/waste-monitoring-1.png">
+                            <img src="/images/solutions/waste_monitoring/waste-monitoring-1.png" alt="waste monitoring">
                         </div>
                     </div>                
                 </a>
@@ -325,7 +325,7 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                     </div>
                     <div class="dashboard-frame">
                         <div class="frame-image">
-                            <img src="/images/solutions/fuel_level_monitoring/fuel-monitoring-1.png">
+                            <img src="/images/solutions/fuel_level_monitoring/fuel-monitoring-1.png" alt="fuel level monitoring">
                         </div>
                     </div>
                 </a>
