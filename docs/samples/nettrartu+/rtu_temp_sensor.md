@@ -13,9 +13,9 @@ hidetoc: "true"
 This guide contains step-by-step instructions on how to connect your Nettra RTU device to ThingsBoard Community Edition through ethernet, using as sample, one of the many applications that the Nettra RTU has. In particular, this sample application will allow you to monitor temperature using ThingsBoard web UI to display the data coming from the sensor. 
 
 ### Nettra RTU
-[Nettra RTU](https://nettra.tech/en/home/) called **"RTU+"** is a powerful IoT electronic device that has digital and analog inputs and outputs, as well as several integrated communication interfaces as modem, ethernet, 802.15.4, RS485, RS232 and GPS. It is an ideal product to implement monitoring, acquisition and control applications over a distributed data network. 
+[Nettra RTU](https://nettra.tech) called **"RTU+"** is a powerful IoT electronic device that has digital and analog inputs and outputs, as well as several integrated communication interfaces as modem, ethernet, 802.15.4, RS485, RS232 and GPS. It is an ideal product to implement monitoring, acquisition and control applications over a distributed data network. 
 
-The RTU+ is easly configurable via a [RTU+ Configuration Interface](https://nettra.tech/en/home/). To adapt the RTU+ to each application, it runs a fully customizable script, accessible and editable from the Configuration Interface. In this guide we will provide one as an example quite simple and easy to understand.
+The RTU+ is easly configurable via a [RTU+ Configuration Interface](https://nettra.tech). To adapt the RTU+ to each application, it runs a fully customizable script, accessible and editable from the Configuration Interface. In this guide we will provide one as an example quite simple and easy to understand.
 
 Once you complete this sample/tutorial, you will see your sensor data on a dashboard like the following on the right.
 <br><br>
@@ -25,14 +25,14 @@ Once you complete this sample/tutorial, you will see your sensor data on a dashb
 
 ### Hardware
 
- - 1x [RTU+](https://nettra.atlassian.net/wiki/spaces/RTU/pages/26149134/Manual+de+Usuario)
+ - 1x [RTU+](https://nettra.tech)
  - 1x Temperature sensor (Operation range: 4-20mA or 0-20V)
  - 1x 12VDC supply voltage
  - 1x USB to Serial cable
  - 1x Ethernet cable
 
 ### Software
- - [RTU+ Configuration Interface](https://nettra.tech/en/home/).
+ - [RTU+ Configuration Interface](https://nettra.tech).
  - You will need to have ThingsBoard server up and running. Use either [Live Demo](/docs/user-guide/live-demo/) or [Installation Guide](/docs/user-guide/install/installation-options/) to install ThingsBoard.
 
 ## Connection diagram
@@ -67,7 +67,7 @@ Use import/export [instructions](/docs/user-guide/ui/dashboards/#iot-dashboard-i
 
 ## Connect RTU+ to PC
 
- - Download and install last version of [RTU+ Configuration Interface](https://nettra.tech/en/home/).
+ - Download and install last version of [RTU+ Configuration Interface](https://nettra.tech).
 
  - Once you have the RTU+ connected to the temperature sensor and the 12VDC power supply as shown in *Connection Diagram* section, connect the RTU+ to the PC using the USB-Serial cable (make sure you have all the necessary drivers installed for that).
 
@@ -194,7 +194,7 @@ while(1)
 ```
 
 1. Go to *"Nettra-C"* 
-2. Import the script clicking *"Cargar"*. If you want to make your own script, you can see the [Nettra C](https://nettra.atlassian.net/wiki/spaces/RTU/pages/26116334/Script+Nettra-C) user manual.
+2. Import the script clicking *"Cargar"*. If you want to make your own script, you can see the [Nettra C](https://nettra.tech) user manual.
 
    ![image](/images/samples/nettrartu+/rtu_temp_sensor/import_script.png)
 

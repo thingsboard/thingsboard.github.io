@@ -109,7 +109,7 @@ downlink_result:
 
 solution_templates:
     0:
-        image: /images/loriot/solution_templates.png
+        image: /images/user-guide/integrations/loriot/solution_templates.png
 
 ---
 {% assign docsPrefix = "pe/" %}

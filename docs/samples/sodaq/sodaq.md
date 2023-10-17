@@ -243,7 +243,7 @@ Download the attached json [**file**](/docs/user-guide/resources/sodaq/tracker-a
 
 ## Step 7: Demo dashboard import
 
-Download and import attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/sodaq-dashboard.json) with a dashboard from this tutorial.
+Download and import attached json [**file**](/docs/user-guide/resources/sodaq/sodaq-dashboard.json) with a dashboard from this tutorial.
 
 <br>The following screencast will show how to import the dashboard:
 
@@ -303,7 +303,7 @@ In this tutorial, we modified our **Root Rule Chain** and also created Rule Chai
 
 <br>
 
-Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/tracker-alarms.json) for the **Tracker Alarms** chain.
+Download the attached json [**file**](/docs/user-guide/resources/sodaq/tracker-alarms.json) for the **Tracker Alarms** chain.
 <br>
 <br>
 
