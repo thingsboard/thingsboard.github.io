@@ -4,7 +4,7 @@
 ## Build and release an Android version
 
 Follow [Build and release an Android app](https://docs.flutter.dev/deployment/android){:target="_blank"} article when you’re ready to prepare a release version of your app,
-for example to [publish to the Google Play Store](https://developer.android.com/distribute/googleplay/start){:target="_blank"}.
+for example to [publish to the Google Play](https://support.google.com/googleplay/android-developer/answer/9859152?hl=en){:target="_blank"}.
 
 {% capture android_build_notice %}
 **Improtant notice:** When building app for release, for example build app bundle you must provide **----no-tree-shake-icons** flag to your build command:

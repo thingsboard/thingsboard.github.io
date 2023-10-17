@@ -340,7 +340,7 @@ python3 configure_vcs_access.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_POR
 
 You can use the following script, based on [tb-rest-client](#python-rest-client) to save current state of your entities to your repository on version control system.
 
-The latest source code you can find [here](https://github.com/thingsboard/thingsboard-python-rest-client/blob/master/examples/save_all_entities_to_vcs_ce.py).
+The latest source code you can find [here](https://github.com/thingsboard/thingsboard-python-rest-client/blob/master/examples/load_all_entities_to_vcs_ce.py).
 
 
 To save entities from command line we will use the following arguments and data:  
@@ -362,13 +362,13 @@ To save entities from command line we will use the following arguments and data:
 
 Let's download the script:
 ```bash
-wget https://raw.githubusercontent.com/thingsboard/thingsboard-python-rest-client/master/examples/save_all_entities_to_vcs_ce.py
+wget https://raw.githubusercontent.com/thingsboard/thingsboard-python-rest-client/master/examples/load_all_entities_to_vcs_ce.py
 ```
 
 Now we can run our script and save our entities to the repository on version control system, we will publish to default branch with default settings to show minimal required configuration:
 
 ```bash
-python3 save_all_entities_to_vcs_ce.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD
+python3 load_all_entities_to_vcs_ce.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD
 ```
 
 In output message you will receive information about how many entities were saved.
@@ -377,7 +377,7 @@ In output message you will receive information about how many entities were save
 
 You can use the following script, based on [tb-rest-client](#python-rest-client) to save current state of your entities to your repository on version control system.
 
-The latest source code you can find [here](https://github.com/thingsboard/thingsboard-python-rest-client/blob/master/examples/load_all_entities_to_vcs_ce.py).
+The latest source code you can find [here](https://github.com/thingsboard/thingsboard-python-rest-client/blob/master/examples/load_all_entities_from_vcs_ce.py).
 
 
 To load entities from command line we will use the following arguments and data:  
@@ -399,13 +399,13 @@ To load entities from command line we will use the following arguments and data:
 
 Let's download the script:
 ```bash
-wget https://raw.githubusercontent.com/thingsboard/thingsboard-python-rest-client/master/examples/load_all_entities_to_vcs_ce.py
+wget https://raw.githubusercontent.com/thingsboard/thingsboard-python-rest-client/master/examples/load_all_entities_from_vcs_ce.py
 ```
 
 Now we can run our script and restore entities version and state from the repository on version control system:
 
 ```bash
-python3 load_all_entities_to_vcs_ce.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -N YOUR_VERSION_NAME 
+python3 load_all_entities_from_vcs_ce.py -H YOUR_THINGSBOARD_HOST -p YOUR_THINGSBOARD_PORT -U YOUR_THINGSBOARD_USER_EMAIL -P YOUR_THINGSBOARD_USER_PASSWORD -N YOUR_VERSION_NAME 
 ```
 
 In output you will receive information about how many entities were loaded.

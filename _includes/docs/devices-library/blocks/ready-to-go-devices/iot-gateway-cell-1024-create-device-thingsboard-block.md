@@ -1,4 +1,4 @@
-Open your instance ThingsBoard ([local](http://localhost:8080){:target="_blank"} or [cloud]({{thingsboardInstanceLink}}){:target="_blank"}) in browser and login as tenant administrator.  
+Open your platform instance or ThingsBoard [cloud]({{thingsboardInstanceLink}}){:target="_blank"} in browser and login as tenant administrator.  
 
 {% assign deviceCreation = '
     ===

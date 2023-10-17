@@ -139,6 +139,14 @@ Immediate processing:
 * **Send message poll for each consumer** - the queue is composed of partitions. If the checkbox is unchecked, there is one consumer for all partitions. If checked, there will be separate consumers for each partition.
 * **Processing within** - interval in milliseconds for processing of the particular pack of messages returned by consumer.
 
+##### Custom properties
+
+You may specify custom properties for queue (topic) creation. They are specific for a queue provider,
+for example `retention.ms:604800000;retention.bytes:1048576000` for Kafka, 
+or `MaximumMessageSize:262144;MessageRetentionPeriod:604800` for AWS SQS, etc.
+
+Note, that these properties are applied only when a queue is first created.
+
 #### Default queues
 
 There are three default queues configured: Main, HighPriority and SequentialByOriginator.

@@ -50,7 +50,7 @@ NodeMCU D5|DHT-11 Data (S)
 ## Programming the NodeMCU device
 
 We need to download and build firmware with Lua interpreter for NodeMCU. 
-This process is described in [official documentation](https://nodemcu.readthedocs.io/en/master/en/build/) and there are multiple ways to do this.
+This process is described in [official documentation](https://nodemcu.readthedocs.io/) and there are multiple ways to do this.
 You can use [cloud build service](http://nodemcu-build.com/) for this purpose, however, we will use [Docker Image](https://hub.docker.com/r/marcelstoer/nodemcu-build/).
 
 ### Firmware download

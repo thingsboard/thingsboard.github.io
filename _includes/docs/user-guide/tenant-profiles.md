@@ -100,8 +100,12 @@ By default, all messages (such as telemetry, connectivity, and lifecycle events)
 ThingsBoard pushes messages for all Tenants to a common queue when isolated processing is disabled (default). 
 
 ThingsBoard pushes messages to a separate queue when you select processing to be isolated for a particular tenant. 
-This provides a better level of isolation for those tenants. However, this also requires you to create tenant profile with enabled "isolated ThingsBoard Rule Engine" box and assign for a particular Tenant. 
-This will instruct Rule Engine to subscribe to specific message queue topics that contain data for that particular Tenant.
+This provides a better level of isolation for those tenants. You need to create tenant profile with enabled "Use isolated ThingsBoard Rule Engine queues" box 
+and assign for a particular Tenant, or update existing tenant profile. 
+This will instruct Rule Engine to subscribe to specific message queue topics that contain data for corresponding tenants.
+
+You might as well set up a separate Rule Engine instance that will be responsible for tenants of specific tenant profiles only.
+See [configuration parameters](/docs/user-guide/install/config/#thingsboard-service-parameters).
 
 ### Queue configuration for isolated tenants
 

@@ -48,7 +48,7 @@ Contains instructions that are necessary to connect your device to ThingsBoard.
 
 ### Create device
 
-Open your instance ThingsBoard ([local](http://localhost:8080) or [cloud](https://thingsboard.cloud/)) in browser and login as tenant administrator.
+Open your platform instance or ThingsBoard [cloud](https://thingsboard.cloud/) in browser and login as tenant administrator.
 
 Go to "**Device groups**" tab -> "**All**" and click "plus" button to add a new device.
 

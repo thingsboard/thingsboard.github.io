@@ -5,5 +5,5 @@ Please use your [Cloud](https://thingsboard.cloud/signup) tenant credentials to 
 
 We are going to refer to this URL as **http://SERVER_URL** below in tutorial.
 
-ThingsBoard **Edge** UI will be available using the URL: [http://localhost:8080](http://localhost:8080).
+ThingsBoard **Edge** UI will be available using the URL: **http://localhost:8080**.
 You may use your [Cloud](https://thingsboard.cloud/signup) tenant credentials to log in.
