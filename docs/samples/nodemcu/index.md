@@ -20,7 +20,7 @@ The applications in these samples that are running on NodeMCU are written using 
 
  - [GitHub Repository for NodeMCU Firmware](https://github.com/nodemcu/nodemcu-firmware)
  - [NodeMCU Wiki](https://github.com/nodemcu/nodemcu-firmware/wiki)
- - [NodeMCU Documentation](http://nodemcu.readthedocs.io/)
+ - [NodeMCU Documentation](https://nodemcu.readthedocs.io/)
 
  ![image](/images/samples/nodemcu/temperature/nodemcu.png)
  

@@ -4,7 +4,7 @@ This tool also creates entities like devices, dashboards, etc.
 
 #### Step 1. Launch EC2 instance.
 
-Launch the instance in the same VPC where your target ThingsBoard server is [deployed](/docs/{{docsPrefix}}reference/performance/setup-aws-instances/).
+Launch the instance in the same VPC where your target ThingsBoard server is [deployed](/docs/reference/performance/setup-aws-instances/).
 Make sure ThingsBoard instance ports 8080 and 1883 are accessible from the test instance.
 
 #### Step 2. Setup SSH to the instance.
@@ -48,8 +48,6 @@ docker run hello-world
 
 
 ### Step 4. Run the performance test
-
-Use the command listed in the "How to reproduce the test" section that corresponds to your performance test [scenario](/docs/{{docsPrefix}}reference/performance-comparison/#test-summary).
 
 The command is similar to the one listed below. Don't forget to replace the value of TB_INTERNAL_IP with the private IP address of your target ThingsBoard instance.
 

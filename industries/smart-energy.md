@@ -114,7 +114,7 @@ description:
 <div class="customer-block">
     <div class="customer-company">
         <img class="customer-logo" src="/images/customers/bei.jpg" alt="Berliner Energieinstitut GmbH">
-        <a class="outlink" href="http://www.berliner-energieinstitut.de/">Berliner Energieinstitut GmbH</a>
+        <a class="outlink" href="https://www.berliner-energieinstitut.de/">Berliner Energieinstitut GmbH</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
@@ -136,7 +136,7 @@ description:
 <div class="customer-block">
     <div class="customer-company">
         <img class="customer-logo" src="/images/customers/e2c.png" alt="Environmental Energy Controls">
-        <a class="outlink" href="http://www.e2cbms.com/">Environmental Energy Controls</a>
+        <a class="outlink" href="https://www.e2cbms.com/">Environmental Energy Controls</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
@@ -169,7 +169,7 @@ description:
 <div class="customer-block">
     <div class="customer-company">
         <img class="customer-logo" src="/images/customers/comet.gif" alt="co.met GmbH">
-        <a class="outlink" href="http://co-met.info">co.met GmbH</a>
+        <a class="outlink" href="https://www.co-met.info">co.met GmbH</a>
     </div>
     <div class="customer-content">
         <div class="person-container">

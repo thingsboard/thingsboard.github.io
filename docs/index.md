@@ -89,7 +89,7 @@ description: ThingsBoard documentation - learn about the platform and get your I
 
 <div class="doc-features row mt-4">
     <div class="col-12 col-sm-6 col-lg-4 col-xxl-6 col-4xl-4 mb-4">
-        <a class="feature-card" href="/docs/guides#AnchorIDDataVisualization">
+        <a class="feature-card" href="/docs/guides/#AnchorIDDataVisualization">
             <div class="feature-title">Data visualization</div>
             <div class="feature-text">
                 Covers data visualization capabilities: Widgets, Dashboards, Dashboard states.

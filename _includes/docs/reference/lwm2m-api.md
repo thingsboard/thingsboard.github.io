@@ -10,7 +10,7 @@ We assume you have completed the general [Getting Started](/docs/{{docsPrefix}}g
 
 [LwM2M](https://en.wikipedia.org/wiki/OMA_LWM2M) is a device management protocol designed for constrained devices and the demands of a machine-to-machine (M2M) environment.
 You can find more information about LwM2M [here](https://omaspecworks.org/what-is-oma-specworks/iot/lightweight-m2m-LWM2M/).
-Key advantage of the LwM2M protocol is a rich library of data structures that is called [LwM2M Object and Resource Registry](http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html).
+Key advantage of the LwM2M protocol is a rich library of data structures that is called [LwM2M Object and Resource Registry](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html).
 The up-to-date list of available objects is available inside [this](https://github.com/OpenMobileAlliance/lwm2m-registry) Github repository.
 
 The registry allows efficient serialization/deserialization of telemetry.
@@ -147,7 +147,7 @@ Using the above configuration, we will make sure that the attribute *timezone* w
 
 #### Write LwM2M resource via ThingsBoard attributes update
 
-ThingsBoard [Shared Attributes](docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver the configuration updates to the device.
+ThingsBoard [Shared Attributes](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver the configuration updates to the device.
 You may change the shared attribute in multiple ways - via administration UI, dashboard widget, REST API, or rule engine node. 
 Once you change the shared attribute, ThingsBoard will search for the mapping between the attribute key and LwM2M resource.
 If the resource is marked as an attribute, platform will send the LwM2M Write operation to the LwM2M client device.

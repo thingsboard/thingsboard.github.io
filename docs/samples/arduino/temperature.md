@@ -29,7 +29,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
 ## List of hardware and pinouts
 
- - [Arduino UNO](https://store.arduino.cc/product/GBX00066)
+ - Arduino UNO
 
   ![image](/images/samples/arduino/temperature/arduino-uno-pinout.png)
 

@@ -23,15 +23,7 @@ and allow the user to switch on/off any Airconditioner using the Integration dow
 
 ## Prerequisites
 
-- Download and install the [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers.html)
-- After installation, launch the **UA Admin Dialog**
-- Verify that the **Endpoint URL** is set correctly and remember the values of **Endpoint Host** and **Endpoint Port**. These values will be needed during the OPC-UA Integration setup
-
-![image](/images/user-guide/integrations/opc-ua/opc-ua-server-config.png)
-
-- Launch the **UaCPPServer**. The console dialog will open showing the server endpoints URLs
-
-![image](/images/user-guide/integrations/opc-ua/opc-ua-server-config-2.png)
+{% include templates/integration/opc-ua/opc-ua-server-setup-steps.md %}
 
 ## ThingsBoard setup
 
@@ -94,11 +86,11 @@ downlink Converter.
 - *contentType* - defines how data will be encoded {TEXT \| JSON \| BINARY}. In case of OPC UA Integration, JSON is used by default.
 - *data* - the actual data that will be processed by OPC UA Integration and sent to the target OPC UA nodes:
     - *writeValues* - array of write values methods:
-        - *nodeId* - target node in [OPC UA NodeId format](http://documentation.unified-automation.com/uasdkhp/1.0.0/html/_l2_ua_node_ids.html#UaNodeIdsConcept) (`ns=<namespaceIndex>;<identifiertype>=<identifier>`)
+        - *nodeId* - target node in [OPC UA NodeId format](https://documentation.unified-automation.com/uasdkhp/1.4.1/html/_l2_ua_node_ids.html) (`ns=<namespaceIndex>;<identifiertype>=<identifier>`)
         - *value* - value to write
     - *callMethods* - array of call methods:
-        - *objectId* - target object in [OPC UA NodeId format](http://documentation.unified-automation.com/uasdkhp/1.0.0/html/_l2_ua_node_ids.html#UaNodeIdsConcept)
-        - *methodId* - target method in [OPC UA NodeId format](http://documentation.unified-automation.com/uasdkhp/1.0.0/html/_l2_ua_node_ids.html#UaNodeIdsConcept)
+        - *objectId* - target object in [OPC UA NodeId format](https://documentation.unified-automation.com/uasdkhp/1.4.1/html/_l2_ua_node_ids.html)
+        - *methodId* - target method in [OPC UA NodeId format](https://documentation.unified-automation.com/uasdkhp/1.4.1/html/_l2_ua_node_ids.html)
         - *args* - array of method input values
 - *metadata* - not used in case of OPC UA Integration and can be empty.
 

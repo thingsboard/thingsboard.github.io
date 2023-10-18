@@ -41,7 +41,7 @@ Execute the following command to deploy TBMQ:
 ```
 {: .copy-code}
 
-After a while when all resources will be successfully started you can open `http://{your-cluster-ip}:30001` in your browser (e.g. [http://192.168.49.2:30001](http://192.168.49.2:30001)).
+After a while when all resources will be successfully started you can open `http://{your-cluster-ip}:30001` in your browser (e.g. **http://192.168.49.2:30001**).
 You can check your cluster IP using command:
 ```bash
 minikube ip
