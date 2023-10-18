@@ -1265,7 +1265,7 @@ selfManagedPlan:
                 Although our engineers successfully handle community support requests in their free time, this doesn't mean any obligation for ThingsBoard Inc.
                 We encourage you to <a href="/docs/">read documentation</a>, subscribe to our <a href="https://www.youtube.com/c/thingsboard" target ="blank">YouTube channel</a> where we host <a href="https://www.youtube.com/watch?v=M0CaascgDmg&list=PLYEKB_XwLCZJ6T8RPLTjRwMw0eoabpEKO" target="blank">the free Education course</a> and most demanded tutorials, samples and guides.
                 </p>
-                <p>Customer may also rely on answers from ThingsBoard <a href="https://github.com/thingsboard/thingsboard/issues" target="blank">community on GitHub</a> (issues page), send their queries to <a href="https://groups.google.com/forum/#!forum/thingsboard" target="blank">Q&A forum</a> and start <a href="http://stackoverflow.com/questions/tagged/thingsboard" target="blank">Stack Overflow</a> themes.   
+                <p>Customer may also rely on answers from ThingsBoard <a href="https://github.com/thingsboard/thingsboard/issues" target="blank">community on GitHub</a> (issues page), send their queries to <a href="https://groups.google.com/forum/#!forum/thingsboard" target="blank">Q&A forum</a> and start <a href="https://stackoverflow.com/questions/tagged/thingsboard" target="blank">Stack Overflow</a> themes.   
                 </p>    
             </div>    
         </div>
