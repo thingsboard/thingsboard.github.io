@@ -6,9 +6,9 @@
 </ul>
 {% endif %}
 
-<div itemscope itemtype="http://schema.org/ImageGallery/" class="images-gallery" style="justify-content: {{ include.align | default: 'start'}};">
+<div itemscope itemtype="https://schema.org/ImageGallery" class="images-gallery" style="justify-content: {{ include.align | default: 'start'}};">
     {% for image in page[include.imageCollection] %}
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject/" style="max-width: min({{ include.max-width | default: '225px'}}, 100%);
+        <figure itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject" style="max-width: min({{ include.max-width | default: '225px'}}, 100%);
                 max-height: min({{ include.max-height | default: '225px'}}, 100%);"
             {% if page[include.imageCollection].size > 1 %} class="list-item"{% endif %}>
             <a href="{{image[1].image}}" itemprop="contentUrl">
