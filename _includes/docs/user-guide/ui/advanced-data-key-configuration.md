@@ -23,7 +23,7 @@ To enter a data key configuration, you should click the pencil icon on the speci
 
 ## Advanced data key configuration
 
-As we know, tру "Alarms table" widget, “Tables”, “Entity widgets”, and “Entity admin widget” bundles have the same advanced data key configuration.
+As we know, the "Alarms table" widget, "Tables", "Entity widgets", and "Entity admin widget" bundles have the same advanced data key configuration.
 Let's go through the advanced data key configuration for these widgets using the "Entity table" widget from the "Tables" bundle as an example.
 
 Please follow these steps to start the advanced configuration of the key data.
