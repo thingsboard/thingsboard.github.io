@@ -12,12 +12,11 @@
                 max-height: min({{ include.max-height | default: '225px'}}, 100%);"
             {% if page[include.imageCollection].size > 1 %} class="list-item"{% endif %}>
             <a href="{{image[1].image}}" itemprop="contentUrl">
-                <img src={% if include.preview == "false" %}
-                            "{{image[1].image}}"
-                        {% else %}
-                            "{{image[1].image | split: "" | reverse | join: "" | replace_first: ".", ".weiverp-" | split: "" | reverse | join: ""}}"
-                        {% endif %}
-                     itemprop="thumbnail"  alt='{{image[1].title | replace: "'", "\""}}' />
+                {% if include.preview == "false" %}
+                <img src="{{image[1].image}}" itemprop="thumbnail"  alt='{{image[1].title | replace: "'", "\""}}' />
+                {% else %}
+                <img src="{{image[1].image | split: "" | reverse | join: "" | replace_first: ".", ".weiverp-" | split: "" | reverse | join: ""}}" itemprop="thumbnail"  alt='{{image[1].title | replace: "'", "\""}}' />
+                {% endif %}
             </a>
             <figcaption itemprop="caption description">{{image[1].title}}</figcaption>
         </figure>
