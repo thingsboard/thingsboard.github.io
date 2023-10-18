@@ -545,7 +545,7 @@ WriteReplace {"id": "/19_1.1/0/0","value": {"0":"00ad456797", "25":"25ad456700"}
 ### Write-Attributes Operation
 
 Only Attributes from the NOTIFICATION class MAY be changed in using the "Write-Attributes" operation.
-[Object and Resource attributes](http://localhost:4000/docs/reference/lwm2m-api/#object-and-resource-attributes) section provides explanation on the Attributes supported by the "Write-Attributes" operation: 
+[Object and Resource attributes](/docs/{{docsPrefix}}reference/lwm2m-api/#object-and-resource-attributes) section provides explanation on the Attributes supported by the "Write-Attributes" operation: 
 Minimum Period, Maximum Period, Greater Than, Less Than, Step.
 The operation permits multiple Attributes to be modified within the same operation.
 
@@ -770,7 +770,7 @@ Delete {"id":"/19/1"}
 
 The LwM2M Server initiates an observation request for changes of a specific Resource, Resources within an Object
 Instance or for all the Object Instances of an Object within the LwM2M Client.
-Related parameters for "Observe" operation are described in [Notification attributes](http://localhost:4000/docs/reference/lwm2m-api/#object-and-resource-attributes) Write-Attributes Operation and those
+Related parameters for "Observe" operation are described in [Notification attributes](/docs/{{docsPrefix}}reference/lwm2m-api/#object-and-resource-attributes) Write-Attributes Operation and those
 parameters are configured by "Write-Attributes" operation.
 
 <b> Example: Observe resource</b>

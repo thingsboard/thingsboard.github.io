@@ -57,7 +57,7 @@ or execute the below script from the project root directory:
 
     ./restart.sh
 
-Your copy of the site will then be viewable at: [http://localhost:4000](http://localhost:4000)
+Your copy of the site will then be viewable at: **http://localhost:4000**
 (or wherever Jekyll tells you).
 
 ## Integration guide pattern
