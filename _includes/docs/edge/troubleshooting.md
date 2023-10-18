@@ -166,7 +166,7 @@ Here's the list of metrics ThingsBoard pushes to Prometheus.
             <span class="phrase-heading">Q&A forum</span>
             <p>Our user forum is a great place to go for community support.</p>
         </a>
-        <a href="http://stackoverflow.com/questions/tagged/thingsboard">
+        <a href="https://stackoverflow.com/questions/tagged/thingsboard">
             <span class="phrase-heading">Stack Overflow</span>
             <p>The ThingsBoard team will also monitor posts tagged thingsboard. If there aren’t any existing questions that help, please ask a new one!</p>
         </a>

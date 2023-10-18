@@ -44,7 +44,7 @@ defaultActivePricingSection: thingsboard-pe
                                 </p>
                                 <p>So, most demanded tutorials, samples and guides are available 24/7
                                 </p>
-                                <p>Customer may also rely on answers from ThingsBoard <a href="https://github.com/thingsboard/thingsboard/issues" target="blank">community on GitHub</a> (issues page), send their queries to <a href="https://groups.google.com/forum/#!forum/thingsboard" target="blank">Q&A forum</a> and start <a href="http://stackoverflow.com/questions/tagged/thingsboard" target="blank">Stack Overflow</a> themes.
+                                <p>Customer may also rely on answers from ThingsBoard <a href="https://github.com/thingsboard/thingsboard/issues" target="blank">community on GitHub</a> (issues page), send their queries to <a href="https://groups.google.com/forum/#!forum/thingsboard" target="blank">Q&A forum</a> and start <a href="https://stackoverflow.com/questions/tagged/thingsboard" target="blank">Stack Overflow</a> themes.
                                 </p>  
                                 <div class="row justify-content-center">
                                     <a class="btn-blue btn-pricing" href="/docs/contact-us/">
