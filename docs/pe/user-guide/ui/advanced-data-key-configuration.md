@@ -101,6 +101,38 @@ column-export:
     0:
         image: /images/user-guide/widgets/advanced-data-key/column-export-1-pe.png
 
+timeseries-line-chart-example:
+    0:
+        image: /images/user-guide/widgets/advanced-data-key/timeseries-line-chart-example-1-pe.png
+        title: 'Open the dashboard and enter edit mode by clicking the button in the top right corner of the screen.;'
+    1:
+        image: /images/user-guide/widgets/advanced-data-key/timeseries-line-chart-example-2-pe.png
+        title: 'In the top right corner of the widget, click the "pencil" icon to open the widget editing window;'
+    2:
+        image: /images/user-guide/widgets/advanced-data-key/timeseries-line-chart-example-3-pe.png
+        title: 'Now, click "pencil" icon to next to the key that you want to edit;'
+    3:
+        image: /images/user-guide/widgets/advanced-data-key/timeseries-line-chart-example-4-pe.png
+        title: 'The data key configuration window has been opened. Navigate to the "Advanced" tab to open advanced data key configuration.'
+
+data-is-hidden-by-default:
+    0:
+        image: /images/user-guide/widgets/advanced-data-key/data-is-hidden-by-default-1-pe.png
+        title: 'Open the dashboard and enter edit mode by clicking the button in the top right corner of the screen.;'
+    1:
+        image: /images/user-guide/widgets/advanced-data-key/data-is-hidden-by-default-2-pe.png
+        title: 'Go to the advanced settings of the key whose data you want to hide on the chart by default, and enable "Data is hidden by default";'
+    2:
+        image: /images/user-guide/widgets/advanced-data-key/data-is-hidden-by-default-3-pe.png
+        title: 'Now, click "pencil" icon to next to the key that you want to edit;'
+    3:
+        image: /images/user-guide/widgets/advanced-data-key/data-is-hidden-by-default-4-pe.png
+        title: 'Click on the name of the key to show its value on the chart again.'
+
+  
+
+
+
 ---
 
 {% assign docsPrefix = "pe/" %}
