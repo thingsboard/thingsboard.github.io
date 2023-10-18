@@ -11,5 +11,5 @@ You can find useful links to get started below:
 
  - [Getting started guide](/docs/{{docsPrefix}}getting-started-guides/helloworld/) - covers basic steps to create a dashboard.
  - [IoT Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/) - contains tutorials about basic IoT dashboard operations.
- - [Samples](/docs/{{docsPrefix}}samples/) - contains several examples that include both client-side applications and corresponding data visualization.
+ - [Solution Templates](/docs/{{docsPrefix}}solution-templates/overview/) - contains several examples of IoT dashboards.
  - [Widget Library](/docs/{{docsPrefix}}user-guide/ui/widget-library/) - contains an overview of dashboard widget bundles.

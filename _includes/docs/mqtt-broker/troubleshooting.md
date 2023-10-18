@@ -194,7 +194,7 @@ Please note that in order to achieve maximum performance, **TBMQ uses several qu
 
 <section id="talkToUs">
     <div id="gettingHelp">
-        <a href="https://gitter.im/thingsboard/chat">
+        <a href="https://app.gitter.im/#/room/#thingsboard_chat:gitter.im">
             <span class="phrase-heading">Community chat</span>
             <p>The best way to contact our engineers and share your ideas with them is through our Gitter channel.</p>
         </a>

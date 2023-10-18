@@ -68,7 +68,7 @@ description:
 <div class="customer-block">
     <div class="customer-company">
         <img class="customer-logo" src="/images/customers/ositech.jpg" alt="Ositech Communications, Inc.">
-        <a class="outlink" href="https://www.ositech.com/"> Ositech Communications, Inc. </a>
+        <a class="outlink" href="https://ositech.com/"> Ositech Communications, Inc. </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
