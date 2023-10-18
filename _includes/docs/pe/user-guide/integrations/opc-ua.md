@@ -8,14 +8,14 @@
 * TOC
 {:toc}
 
-# Overview
+## Overview
 
 OPC UA Integration allows you to stream data from the OPC UA server to ThingsBoard and converts the device payloads to the ThingsBoard format.
 
 <object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/opc-ua-integration.svg"></object>
 
 
-# OPC-UA Integration Tutorial
+## OPC-UA Integration Tutorial
 
 In this tutorial, we will configure the integration between ThingsBoard and OPC-UA
 to get the Airconditioners data from the [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers.html)
@@ -201,7 +201,7 @@ To visualize the Airconditioners data and test RPC commands, we will create the 
 
 ![image](/images/user-guide/integrations/opc-ua/opc-ua-dashboard-5.png)
 
-# Video tutorial
+## Video tutorial
 
 See video tutorial below for step-by-step instruction how to setup OPC-UA Integration.
 
@@ -213,7 +213,8 @@ See video tutorial below for step-by-step instruction how to setup OPC-UA Integr
 </div> 
 
 <br>
-# See also
+
+## See also
 
 - [Integration Overview](/docs/{{peDocsPrefix}}user-guide/integrations/)
 - [Uplink Converters](/docs/{{peDocsPrefix}}user-guide/integrations/#uplink-data-converter)
@@ -221,6 +222,6 @@ See video tutorial below for step-by-step instruction how to setup OPC-UA Integr
 - [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/)
 
   
-# Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}
