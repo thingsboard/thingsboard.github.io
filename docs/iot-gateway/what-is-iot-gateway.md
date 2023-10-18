@@ -80,8 +80,8 @@ Gateway Service persists list of connected devices to be able to re-subscribe to
 
 #### Project Roadmap
 
-<p><a href="/docs/iot-gateway/roadmap" class="button">Gateway Roadmap</a></p>
+<p><a href="/docs/iot-gateway/roadmap/" class="button">Gateway Roadmap</a></p>
 
 #### Next Steps
 
-<p><a href="/docs/iot-gateway/getting-started" class="button">Getting Started Guide</a></p>
+<p><a href="/docs/iot-gateway/getting-started/" class="button">Getting Started Guide</a></p>

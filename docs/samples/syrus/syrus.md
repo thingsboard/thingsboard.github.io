@@ -57,7 +57,7 @@ The first step to do is make sure you have the latest version of Apex OS
 
 ### 1. Preparing your System
 
-Go to Management Tool ([http://192.168.9.2](http://192.168.9.2/) if you&#39;re over USB cable), select System and confirm that you&#39;re up to date
+Go to Management Tool (**http://192.168.9.2**) if you&#39;re over USB cable), select System and confirm that you&#39;re up to date
 
 ![image](https://img.thingsboard.io/samples/syrus/update_device.png)
 

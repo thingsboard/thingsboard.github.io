@@ -249,7 +249,7 @@ For OAuth2 configuration click [here](/docs/{{docsPrefix}}user-guide/oauth-2-sup
 
 <section id="talkToUs">
     <div id="gettingHelp">
-        <a href="https://gitter.im/thingsboard/chat">
+        <a href="https://app.gitter.im/#/room/#thingsboard_chat:gitter.im">
             <span class="phrase-heading">Community chat</span>
             <p>Our Gitter channel is the best way to contact our engineers and share your ideas with them.</p>
         </a>

@@ -154,7 +154,7 @@ Go to dashboards in Centra-IoT OSS / ThingsBoard platform and open your dashboar
 
 ## Contact Us
 
-For other concerns about the integration, please [contact with monoZ](https://monoz.io/contact-us/).
+For other concerns about the integration, please [contact with monoZ](https://monoz.io).
 
 ## Next steps
 
