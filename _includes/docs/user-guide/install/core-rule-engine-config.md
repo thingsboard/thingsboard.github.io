@@ -1,6 +1,6 @@
 
 
-####  Server common properties
+####  Server common parameters
 
 <table>
 	<thead>
@@ -13,7 +13,7 @@
 			<td>server.address</td>
 			<td>HTTP_BIND_ADDRESS</td>
 			<td>0.0.0.0</td>
-			<td> Server bind address</td>
+			<td> Server bind-address</td>
 		</tr>
 		<tr>
 			<td>server.port</td>
@@ -49,7 +49,7 @@
 			<td>server.ssl.credentials.pem.key_file</td>
 			<td>SSL_PEM_KEY</td>
 			<td>server_key.pem</td>
-			<td> Path to the server certificate private key file. Optional by default. Required if the private key is not present in server certificate file;</td>
+			<td> Path to the server certificate private key file (optional). Required if the private key is not present in the server certificate file</td>
 		</tr>
 		<tr>
 			<td>server.ssl.credentials.pem.key_password</td>
@@ -97,7 +97,7 @@
 			<td>server.log_controller_error_stack_trace</td>
 			<td>HTTP_LOG_CONTROLLER_ERROR_STACK_TRACE</td>
 			<td>false</td>
-			<td> Log errors with stacktrace when REST API throws exception with message "Please contact sysadmin"</td>
+			<td> Log errors with stacktrace when REST API throws an exception with the message "Please contact sysadmin"</td>
 		</tr>
 		<tr>
 			<td>server.ws.send_timeout</td>
@@ -109,7 +109,7 @@
 			<td>server.ws.ping_timeout</td>
 			<td>TB_SERVER_WS_PING_TIMEOUT</td>
 			<td>30000</td>
-			<td> recommended timeout >= 30 seconds. Platform will attempt to send 'ping' request 3 times within the timeout</td>
+			<td> recommended timeout >= 30 seconds. The platform will attempt to send a 'ping' request 3 times within the timeout</td>
 		</tr>
 		<tr>
 			<td>server.ws.dynamic_page_link.refresh_interval</td>
@@ -127,25 +127,25 @@
 			<td>server.ws.dynamic_page_link.max_alarm_queries_per_refresh_interval</td>
 			<td>TB_SERVER_WS_MAX_ALARM_QUERIES_PER_REFRESH_INTERVAL</td>
 			<td>10</td>
-			<td> Maximum number of dynamic queries per refresh interval. For example, no more than 10 alarm queries executed by user simultaneously in all browsers.</td>
+			<td> Maximum number of dynamic queries per refresh interval. For example, no more than 10 alarm queries are executed by the user simultaneously in all browsers.</td>
 		</tr>
 		<tr>
 			<td>server.ws.dynamic_page_link.max_per_user</td>
 			<td>TB_SERVER_WS_DYNAMIC_PAGE_LINK_MAX_PER_USER</td>
 			<td>10</td>
-			<td> Maximum number of dynamic queries per user. For example, no more than 10 alarm widgets opened by user simultaneously in all browsers<</td>
+			<td> Maximum number of dynamic queries per user. For example, no more than 10 alarm widgets opened by the user simultaneously in all browsers</td>
 		</tr>
 		<tr>
 			<td>server.ws.max_entities_per_data_subscription</td>
 			<td>TB_SERVER_WS_MAX_ENTITIES_PER_DATA_SUBSCRIPTION</td>
 			<td>10000</td>
-			<td> Maximum number of entities returned for single entity subscription. For example, no more than 10 000 entities on the map widget</td>
+			<td> Maximum number of entities returned for single entity subscription. For example, no more than 10,000 entities on the map widget</td>
 		</tr>
 		<tr>
 			<td>server.ws.max_entities_per_alarm_subscription</td>
 			<td>TB_SERVER_WS_MAX_ENTITIES_PER_ALARM_SUBSCRIPTION</td>
 			<td>10000</td>
-			<td> Maximum number of alarms returned for single alarm subscription. For example, no more than 10 000 alarms on the alarm widget</td>
+			<td> Maximum number of alarms returned for single alarm subscription. For example, no more than 10,000 alarms on the alarm widget</td>
 		</tr>
 		<tr>
 			<td>server.ws.max_queue_messages_per_session</td>
@@ -157,27 +157,27 @@
 			<td>server.rest.server_side_rpc.min_timeout</td>
 			<td>MIN_SERVER_SIDE_RPC_TIMEOUT</td>
 			<td>5000</td>
-			<td> Minimum value of the server side RPC timeout. May override value provided in the REST API call.
- Since 2.5 migration to queues, the RPC delay depends on the size of the pending messages in the queue,
- so default UI parameter of 500ms may not be sufficient for loaded environments.</td>
+			<td> Minimum value of the server-side RPC timeout. May override value provided in the REST API call.
+ Since 2.5 migration to queues, the RPC delay depends on the size of the pending messages in the queue.
+ So default UI parameter of 500ms may not be sufficient for loaded environments.</td>
 		</tr>
 		<tr>
 			<td>server.rest.server_side_rpc.default_timeout</td>
 			<td>DEFAULT_SERVER_SIDE_RPC_TIMEOUT</td>
 			<td>10000</td>
-			<td> Default value of the server side RPC timeout.</td>
+			<td> Default value of the server-side RPC timeout.</td>
 		</tr>
 		<tr>
 			<td>server.rest.rate_limits.reset_password_per_user</td>
 			<td>RESET_PASSWORD_PER_USER_RATE_LIMIT_CONFIGURATION</td>
 			<td>5:3600</td>
-			<td> Limit that prohibits resetting the password for the user too often. The value of rate limit. By default, no more than 5 requests per hour</td>
+			<td> Limit that prohibits resetting the password for the user too often. The value of the rate limit. By default, no more than 5 requests per hour</td>
 		</tr>
 	</tbody>
 </table>
 
 
-####  Application info
+####  Application info parameters
 
 <table>
 	<thead>
@@ -196,7 +196,7 @@
 </table>
 
 
-####  Zookeeper connection parameters. Used for service discovery.
+####  Zookeeper connection parameters
 
 <table>
 	<thead>
@@ -245,7 +245,7 @@
 			<td>zk.recalculate_delay</td>
 			<td>ZOOKEEPER_RECALCULATE_DELAY_MS</td>
 			<td>0</td>
-			<td> The recalculate_delay property recommended in a microservices architecture setup for rule-engine services.
+			<td> The recalculate_delay property is recommended in a microservices architecture setup for rule-engine services.
  This property provides a pause to ensure that when a rule-engine service is restarted, other nodes don't immediately attempt to recalculate their partitions.
  The delay is recommended because the initialization of rule chain actors is time-consuming. Avoiding unnecessary recalculations during a restart can enhance system performance and stability.</td>
 		</tr>
@@ -253,7 +253,7 @@
 </table>
 
 
-####  Cluster properties
+####  Cluster parameters
 
 <table>
 	<thead>
@@ -266,7 +266,7 @@
 			<td>cluster.stats.enabled</td>
 			<td>TB_CLUSTER_STATS_ENABLED</td>
 			<td>false</td>
-			<td> Enable/Disable the cluster statistics. Calculates number of messages sent between cluster nodes based on each type</td>
+			<td> Enable/Disable the cluster statistics. Calculates the number of messages sent between cluster nodes based on each type</td>
 		</tr>
 		<tr>
 			<td>cluster.stats.print_interval_ms</td>
@@ -291,7 +291,7 @@
 			<td>plugins.scan_packages</td>
 			<td>PLUGINS_SCAN_PACKAGES</td>
 			<td>org.thingsboard.server.extensions,org.thingsboard.rule.engine</td>
-			<td> Comma separated package list used during classpath scanning for plugins</td>
+			<td> Comma-separated package list used during classpath scanning for plugins</td>
 		</tr>
 	</tbody>
 </table>
@@ -346,7 +346,7 @@
 			<td>security.claim.allowClaimingByDefault</td>
 			<td>SECURITY_CLAIM_ALLOW_CLAIMING_BY_DEFAULT</td>
 			<td>true</td>
-			<td> Enable/disable claiming devices, if false -> the device's [claimingAllowed] SERVER_SCOPE attribute must be set to [true] to allow claiming specific device</td>
+			<td> Enable/disable claiming devices; if false -> the device's [claimingAllowed] SERVER_SCOPE attribute must be set to [true] to allow claiming the specific device</td>
 		</tr>
 		<tr>
 			<td>security.claim.duration</td>
@@ -384,11 +384,24 @@
 			<td>changeit</td>
 			<td> The password of the cacerts keystore file</td>
 		</tr>
+	</tbody>
+</table>
+
+
+####  Mail settings parameters
+
+<table>
+	<thead>
+		<tr>
+			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
+		</tr>
+	</thead>
+	<tbody>
 		<tr>
 			<td>mail.oauth2.refreshTokenCheckingInterval</td>
 			<td>REFRESH_TOKEN_EXPIRATION_CHECKING_INTERVAL</td>
 			<td>86400</td>
-			<td> Interval to check refresh token is going to expire in seconds(by default 1 day).</td>
+			<td> Interval for checking refresh token expiration in seconds(by default, 1 day).</td>
 		</tr>
 	</tbody>
 </table>
@@ -407,43 +420,43 @@
 			<td>usage.stats.report.enabled</td>
 			<td>USAGE_STATS_REPORT_ENABLED</td>
 			<td>true</td>
-			<td> Enable/Disable collection of statistics about API usage. Collected on a system and tenant level by default</td>
+			<td> Enable/Disable the collection of API usage statistics. Collected on a system and tenant level by default</td>
 		</tr>
 		<tr>
 			<td>usage.stats.report.enabled_per_customer</td>
 			<td>USAGE_STATS_REPORT_PER_CUSTOMER_ENABLED</td>
 			<td>false</td>
-			<td> Enable/Disable collection of statistics about API usage on a customer level</td>
+			<td> Enable/Disable the collection of API usage statistics on a customer level</td>
 		</tr>
 		<tr>
 			<td>usage.stats.report.interval</td>
 			<td>USAGE_STATS_REPORT_INTERVAL</td>
 			<td>10</td>
-			<td> Interval of reporting the statistics. By default, the summarized statistics is sent every 10 seconds</td>
+			<td> Statistics reporting interval, set to send summarized data every 10 seconds by default</td>
 		</tr>
 		<tr>
 			<td>usage.stats.check.cycle</td>
 			<td>USAGE_STATS_CHECK_CYCLE</td>
 			<td>60000</td>
-			<td> Interval of checking the start of next cycle and re-enabling the blocked tenants/customers</td>
+			<td> Interval of checking the start of the next cycle and re-enabling the blocked tenants/customers</td>
 		</tr>
 		<tr>
 			<td>usage.stats.gauge_report_interval</td>
 			<td>USAGE_STATS_GAUGE_REPORT_INTERVAL</td>
 			<td>180000</td>
-			<td> In milliseconds. Default value is 3 minutes</td>
+			<td> In milliseconds. The default value is 3 minutes</td>
 		</tr>
 		<tr>
 			<td>usage.stats.devices.report_interval</td>
 			<td>DEVICES_STATS_REPORT_INTERVAL</td>
 			<td>60</td>
-			<td> In seconds, default value is 1 minutes. When changing, in cluster mode, make sure usage.stats.gauge_report_interval is set to x2-x3 of this value</td>
+			<td> In seconds, the default value is 1 minute. When changing, in cluster mode, make sure usage.stats.gauge_report_interval is set to x2-x3 of this value</td>
 		</tr>
 	</tbody>
 </table>
 
 
-####  UI parameters
+####  UI settings parameters
 
 <table>
 	<thead>
@@ -461,8 +474,8 @@
 		<tr>
 			<td>ui.help.base-url</td>
 			<td>UI_HELP_BASE_URL</td>
-			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-3.6</td>
-			<td> Base url for UI help assets</td>
+			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-ui-help/release-3.6</td>
+			<td> Base URL for UI help assets</td>
 		</tr>
 	</tbody>
 </table>
@@ -481,7 +494,7 @@
 			<td>database.ts_max_intervals</td>
 			<td>DATABASE_TS_MAX_INTERVALS</td>
 			<td>700</td>
-			<td> Max number of DB queries generated by single API call to fetch telemetry records</td>
+			<td> Max number of DB queries generated by a single API call to fetch telemetry records</td>
 		</tr>
 		<tr>
 			<td>database.ts.type</td>
@@ -530,7 +543,7 @@
 			<td>cassandra.local_datacenter</td>
 			<td>CASSANDRA_LOCAL_DATACENTER</td>
 			<td>datacenter1</td>
-			<td> Specify local datacenter name</td>
+			<td> Specify the local data center name</td>
 		</tr>
 		<tr>
 			<td>cassandra.ssl.enabled</td>
@@ -543,13 +556,13 @@
 			<td>CASSANDRA_SSL_HOSTNAME_VALIDATION</td>
 			<td>true</td>
 			<td> Enable/disable validation of Cassandra server hostname
- If enabled, hostname of Cassandra server must match CN of server certificate</td>
+ If enabled, the hostname of the Cassandra server must match the CN of the server certificate</td>
 		</tr>
 		<tr>
 			<td>cassandra.ssl.trust_store</td>
 			<td>CASSANDRA_SSL_TRUST_STORE</td>
 			<td></td>
-			<td> Set trust store for client authentication of server (optional, uses trust store from default SSLContext if not set)</td>
+			<td> Set trust store for client authentication of the server (optional, uses trust store from default SSLContext if not set)</td>
 		</tr>
 		<tr>
 			<td>cassandra.ssl.trust_store_password</td>
@@ -561,20 +574,20 @@
 			<td>cassandra.ssl.key_store</td>
 			<td>CASSANDRA_SSL_KEY_STORE</td>
 			<td></td>
-			<td> Set key store for server authentication of client (optional, uses key store from default SSLContext if not set)
+			<td> Set key store for server authentication of the client (optional, uses key store from default SSLContext if not set)
  A key store is only needed if the Cassandra server requires client authentication</td>
 		</tr>
 		<tr>
 			<td>cassandra.ssl.key_store_password</td>
 			<td>CASSANDRA_SSL_KEY_STORE_PASSWORD</td>
 			<td></td>
-			<td> The password for Cassandra key store</td>
+			<td> The password for the Cassandra key store</td>
 		</tr>
 		<tr>
 			<td>cassandra.ssl.cipher_suites</td>
 			<td>CASSANDRA_SSL_CIPHER_SUITES</td>
 			<td></td>
-			<td> Comma separated list of cipher suites (optional, uses Java default cipher suites if not set)</td>
+			<td> Comma-separated list of cipher suites (optional, uses Java default cipher suites if not set)</td>
 		</tr>
 		<tr>
 			<td>cassandra.jmx</td>
@@ -598,13 +611,13 @@
 			<td>cassandra.init_timeout_ms</td>
 			<td>CASSANDRA_CLUSTER_INIT_TIMEOUT_MS</td>
 			<td>300000</td>
-			<td> Specify cassandra cluster initialization timeout in milliseconds (if no hosts available during startup)</td>
+			<td> Specify cassandra cluster initialization timeout in milliseconds (if no hosts are available during startup)</td>
 		</tr>
 		<tr>
 			<td>cassandra.init_retry_interval_ms</td>
 			<td>CASSANDRA_CLUSTER_INIT_RETRY_INTERVAL_MS</td>
 			<td>3000</td>
-			<td> Specify cassandra claster initialization retry interval (if no hosts available during startup)</td>
+			<td> Specify cassandra cluster initialization retry interval (if no hosts available during startup)</td>
 		</tr>
 		<tr>
 			<td>cassandra.max_requests_per_connection_local</td>
@@ -658,7 +671,7 @@
 			<td>cassandra.socket.connect_timeout</td>
 			<td>CASSANDRA_SOCKET_TIMEOUT</td>
 			<td>5000</td>
-			<td> Sets the timeout, in millisecond, of a native connection from ThingsBoard to Cassandra. The default value is 5000</td>
+			<td> Sets the timeout, in milliseconds, of a native connection from ThingsBoard to Cassandra. The default value is 5000</td>
 		</tr>
 		<tr>
 			<td>cassandra.socket.read_timeout</td>
@@ -676,7 +689,7 @@
 			<td>cassandra.socket.reuse_address</td>
 			<td>CASSANDRA_SOCKET_REUSE_ADDRESS</td>
 			<td>true</td>
-			<td> Enable/Disable reuse-address.The socket option allows for the reuse of local addresses and ports</td>
+			<td> Enable/Disable reuse-address. The socket option allows for the reuse of local addresses and ports</td>
 		</tr>
 		<tr>
 			<td>cassandra.socket.so_linger</td>
@@ -736,13 +749,13 @@
 			<td>cassandra.query.ts_key_value_partitions_max_cache_size</td>
 			<td>TS_KV_PARTITIONS_MAX_CACHE_SIZE</td>
 			<td>100000</td>
-			<td> The number of partitions that are cached in memory of each service. Useful to decrease load of re-inserting same partitions again</td>
+			<td> The number of partitions that are cached in memory of each service. It is useful to decrease the load of re-inserting the same partitions again</td>
 		</tr>
 		<tr>
 			<td>cassandra.query.ts_key_value_ttl</td>
 			<td>TS_KV_TTL</td>
 			<td>0</td>
-			<td> Timeseries Time To Live (in seconds) for Cassandra Record. 0 - record is never expired</td>
+			<td> Timeseries Time To Live (in seconds) for Cassandra Record. 0 - record has never expired</td>
 		</tr>
 		<tr>
 			<td>cassandra.query.buffer_size</td>
@@ -772,7 +785,7 @@
 			<td>cassandra.query.callback_threads</td>
 			<td>CASSANDRA_QUERY_CALLBACK_THREADS</td>
 			<td>4</td>
-			<td> Buffered rate executor (read, write), for managing I/O rate. See "nosql-*-callback" threads in JMX</td>
+			<td> Buffered rate executor (read, write) for managing I/O rate. See "nosql-*-callback" threads in JMX</td>
 		</tr>
 		<tr>
 			<td>cassandra.query.result_processing_threads</td>
@@ -796,7 +809,7 @@
 			<td>cassandra.query.set_null_values_enabled</td>
 			<td>CASSANDRA_QUERY_SET_NULL_VALUES_ENABLED</td>
 			<td>false</td>
-			<td> set all data types values except target to null for the same ts on save</td>
+			<td> set all data type values except target to null for the same ts on save</td>
 		</tr>
 		<tr>
 			<td>cassandra.query.print_queries_freq</td>
@@ -833,7 +846,7 @@
 			<td>sql.attributes.batch_max_delay</td>
 			<td>SQL_ATTRIBUTES_BATCH_MAX_DELAY_MS</td>
 			<td>50</td>
-			<td> Max timeout for attributes entries queue polling. Value set in milliseconds</td>
+			<td> Max timeout for attributes entries queue polling. The value is set in milliseconds</td>
 		</tr>
 		<tr>
 			<td>sql.attributes.stats_print_interval_ms</td>
@@ -845,7 +858,7 @@
 			<td>sql.attributes.batch_threads</td>
 			<td>SQL_ATTRIBUTES_BATCH_THREADS</td>
 			<td>3</td>
-			<td> batch thread count have to be a prime number like 3 or 5 to gain perfect hash distribution</td>
+			<td> batch thread count has to be a prime number like 3 or 5 to gain perfect hash distribution</td>
 		</tr>
 		<tr>
 			<td>sql.attributes.value_no_xss_validation</td>
@@ -863,7 +876,7 @@
 			<td>sql.ts.batch_max_delay</td>
 			<td>SQL_TS_BATCH_MAX_DELAY_MS</td>
 			<td>100</td>
-			<td> Max timeout for time-series entries queue polling. Value set in milliseconds</td>
+			<td> Max timeout for time-series entries queue polling. The value set in milliseconds</td>
 		</tr>
 		<tr>
 			<td>sql.ts.stats_print_interval_ms</td>
@@ -875,7 +888,7 @@
 			<td>sql.ts.batch_threads</td>
 			<td>SQL_TS_BATCH_THREADS</td>
 			<td>3</td>
-			<td> batch thread count have to be a prime number like 3 or 5 to gain perfect hash distribution</td>
+			<td> batch thread count has to be a prime number like 3 or 5 to gain perfect hash distribution</td>
 		</tr>
 		<tr>
 			<td>sql.ts.value_no_xss_validation</td>
@@ -905,13 +918,13 @@
 			<td>sql.ts_latest.batch_threads</td>
 			<td>SQL_TS_LATEST_BATCH_THREADS</td>
 			<td>3</td>
-			<td> batch thread count have to be a prime number like 3 or 5 to gain perfect hash distribution</td>
+			<td> batch thread count has to be a prime number like 3 or 5 to gain perfect hash distribution</td>
 		</tr>
 		<tr>
 			<td>sql.ts_latest.update_by_latest_ts</td>
 			<td>SQL_TS_UPDATE_BY_LATEST_TIMESTAMP</td>
 			<td>true</td>
-			<td> Update latest values only if the timestamp of the new record is greater or equals than timestamp of the previously saved latest value. Latest values are stored separately from historical values for fast lookup from DB. Insert of historical value happens in any case</td>
+			<td> Update latest values only if the timestamp of the new record is greater or equals the timestamp of the previously saved latest value. The latest values are stored separately from historical values for fast lookup from DB. Insert of historical value happens in any case</td>
 		</tr>
 		<tr>
 			<td>sql.events.batch_size</td>
@@ -935,7 +948,7 @@
 			<td>sql.events.batch_threads</td>
 			<td>SQL_EVENTS_BATCH_THREADS</td>
 			<td>3</td>
-			<td> batch thread count have to be a prime number like 3 or 5 to gain perfect hash distribution</td>
+			<td> batch thread count has to be a prime number like 3 or 5 to gain perfect hash distribution</td>
 		</tr>
 		<tr>
 			<td>sql.events.partition_size</td>
@@ -986,12 +999,6 @@
 			<td> Default value - 1 week</td>
 		</tr>
 		<tr>
-			<td>sql.blob_entities.partition_size</td>
-			<td>SQL_BLOB_ENTITIES_PARTITION_SIZE_HOURS</td>
-			<td>168</td>
-			<td> Default value - 1 week</td>
-		</tr>
-		<tr>
 			<td>sql.notifications.partition_size</td>
 			<td>SQL_NOTIFICATIONS_PARTITION_SIZE_HOURS</td>
 			<td>168</td>
@@ -1013,7 +1020,7 @@
 			<td>sql.log_queries</td>
 			<td>SQL_LOG_QUERIES</td>
 			<td>false</td>
-			<td> Specify whether to log database queries and their parameters generated by entity query repository</td>
+			<td> Specify whether to log database queries and their parameters generated by the entity query repository</td>
 		</tr>
 		<tr>
 			<td>sql.log_queries_threshold</td>
@@ -1031,7 +1038,7 @@
 			<td>sql.log_tenant_stats_interval_ms</td>
 			<td>SQL_LOG_TENANT_STATS_INTERVAL_MS</td>
 			<td>60000</td>
-			<td> Interval in milliseconds for printing latest statistic information about tenant</td>
+			<td> Interval in milliseconds for printing the latest statistic information about the tenant</td>
 		</tr>
 		<tr>
 			<td>sql.postgres.ts_key_value_partitioning</td>
@@ -1049,13 +1056,13 @@
 			<td>sql.timescale.batch_threads</td>
 			<td>SQL_TIMESCALE_BATCH_THREADS</td>
 			<td>3</td>
-			<td> batch thread count have to be a prime number like 3 or 5 to gain perfect hash distribution</td>
+			<td> batch thread count has to be a prime number like 3 or 5 to gain perfect hash distribution</td>
 		</tr>
 		<tr>
 			<td>sql.ttl.ts.enabled</td>
 			<td>SQL_TTL_TS_ENABLED</td>
 			<td>true</td>
-			<td> The parameter to specify whether to use TTL (Time To Live) for timeseries records</td>
+			<td> Enable/disable TTL (Time To Live) for timeseries records</td>
 		</tr>
 		<tr>
 			<td>sql.ttl.ts.execution_interval_ms</td>
@@ -1073,7 +1080,7 @@
 			<td>sql.ttl.events.enabled</td>
 			<td>SQL_TTL_EVENTS_ENABLED</td>
 			<td>true</td>
-			<td> The parameter to specify whether to use TTL (Time To Live) for event records</td>
+			<td> Enable/disable TTL (Time To Live) for event records</td>
 		</tr>
 		<tr>
 			<td>sql.ttl.events.execution_interval_ms</td>
@@ -1085,19 +1092,19 @@
 			<td>sql.ttl.events.events_ttl</td>
 			<td>SQL_TTL_EVENTS_EVENTS_TTL</td>
 			<td>0</td>
-			<td> Number of seconds. TTL is disabled by default. Accuracy of the cleanup depends on the sql.events.partition_size parameter.</td>
+			<td> Number of seconds. TTL is disabled by default. The accuracy of the cleanup depends on the sql.events.partition_size parameter.</td>
 		</tr>
 		<tr>
 			<td>sql.ttl.events.debug_events_ttl</td>
 			<td>SQL_TTL_EVENTS_DEBUG_EVENTS_TTL</td>
 			<td>604800</td>
-			<td> Number of seconds. The current value corresponds to one week. Accuracy of the cleanup depends on the sql.events.debug_partition_size parameter.</td>
+			<td> Number of seconds. The current value corresponds to one week. The accuracy of the cleanup depends on the sql.events.debug_partition_size parameter.</td>
 		</tr>
 		<tr>
 			<td>sql.ttl.edge_events.enabled</td>
 			<td>SQL_TTL_EDGE_EVENTS_ENABLED</td>
 			<td>true</td>
-			<td> The parameter to specify whether to use TTL (Time To Live) for egde event records</td>
+			<td> Enable/disable TTL (Time To Live) for edge event records</td>
 		</tr>
 		<tr>
 			<td>sql.ttl.edge_events.execution_interval_ms</td>
@@ -1127,7 +1134,7 @@
 			<td>sql.ttl.rpc.enabled</td>
 			<td>SQL_TTL_RPC_ENABLED</td>
 			<td>true</td>
-			<td> The parameter to specify whether to use TTL (Time To Live) for rpc call records</td>
+			<td> Enable/disable TTL (Time To Live) for rpc call records</td>
 		</tr>
 		<tr>
 			<td>sql.ttl.rpc.checking_interval</td>
@@ -1139,13 +1146,13 @@
 			<td>sql.ttl.audit_logs.enabled</td>
 			<td>SQL_TTL_AUDIT_LOGS_ENABLED</td>
 			<td>true</td>
-			<td> The parameter to specify whether to use TTL (Time To Live) for audit log records</td>
+			<td> Enable/disable TTL (Time To Live) for audit log records</td>
 		</tr>
 		<tr>
 			<td>sql.ttl.audit_logs.ttl</td>
 			<td>SQL_TTL_AUDIT_LOGS_SECS</td>
 			<td>0</td>
-			<td> Disabled by default. Accuracy of the cleanup depends on the sql.audit_logs.partition_size</td>
+			<td> Disabled by default. The accuracy of the cleanup depends on the sql.audit_logs.partition_size</td>
 		</tr>
 		<tr>
 			<td>sql.ttl.audit_logs.checking_interval_ms</td>
@@ -1154,28 +1161,10 @@
 			<td> Default value - 1 day</td>
 		</tr>
 		<tr>
-			<td>sql.ttl.blob_entities.enabled</td>
-			<td>SQL_TTL_BLOB_ENTITIES_ENABLED</td>
-			<td>false</td>
-			<td> The parameter to specify whether to use TTL (Time To Live) for blob entities records</td>
-		</tr>
-		<tr>
-			<td>sql.ttl.blob_entities.ttl</td>
-			<td>SQL_TTL_BLOB_ENTITIES_SECS</td>
-			<td>0</td>
-			<td> Disabled by default.</td>
-		</tr>
-		<tr>
-			<td>sql.ttl.blob_entities.checking_interval_ms</td>
-			<td>SQL_TTL_BLOB_ENTITIES_CHECKING_INTERVAL_MS</td>
-			<td>86400000</td>
-			<td> Default value - 1 day</td>
-		</tr>
-		<tr>
 			<td>sql.ttl.notifications.enabled</td>
 			<td>SQL_TTL_NOTIFICATIONS_ENABLED</td>
 			<td>true</td>
-			<td> The parameter to specify whether to use TTL (Time To Live) for notification center records</td>
+			<td> Enable/disable TTL (Time To Live) for notification center records</td>
 		</tr>
 		<tr>
 			<td>sql.ttl.notifications.ttl</td>
@@ -1193,19 +1182,19 @@
 			<td>sql.relations.max_level</td>
 			<td>SQL_RELATIONS_MAX_LEVEL</td>
 			<td>50</td>
-			<td> This value has to be reasonable small to prevent infinite recursion as early as possible</td>
+			<td> This value has to be reasonably small to prevent infinite recursion as early as possible</td>
 		</tr>
 		<tr>
 			<td>sql.relations.pool_size</td>
 			<td>SQL_RELATIONS_POOL_SIZE</td>
 			<td>4</td>
-			<td> This value has to be reasonable small to prevent relation query blocking all other DB calls</td>
+			<td> This value has to be reasonably small to prevent the relation query from blocking all other DB calls</td>
 		</tr>
 		<tr>
 			<td>sql.relations.query_timeout</td>
 			<td>SQL_RELATIONS_QUERY_TIMEOUT_SEC</td>
 			<td>20</td>
-			<td> This value has to be reasonable small to prevent relation query blocking all other DB calls</td>
+			<td> This value has to be reasonably small to prevent the relation query from blocking all other DB calls</td>
 		</tr>
 	</tbody>
 </table>
@@ -1224,7 +1213,7 @@
 			<td>actors.system.throughput</td>
 			<td>ACTORS_SYSTEM_THROUGHPUT</td>
 			<td>5</td>
-			<td> Number of messages the actor system will process per actor before switching to processing of messages for next actor</td>
+			<td> Number of messages the actor system will process per actor before switching to processing of messages for the next actor</td>
 		</tr>
 		<tr>
 			<td>actors.system.scheduler_pool_size</td>
@@ -1263,6 +1252,12 @@
 			<td> Thread pool size for actor system dispatcher that process messages for rule engine (chain/node) actors</td>
 		</tr>
 		<tr>
+			<td>actors.system.edge_dispatcher_pool_size</td>
+			<td>ACTORS_SYSTEM_EDGE_DISPATCHER_POOL_SIZE</td>
+			<td>4</td>
+			<td> Thread pool size for actor system dispatcher that process messages for edge actors</td>
+		</tr>
+		<tr>
 			<td>actors.tenant.create_components_on_init</td>
 			<td>ACTORS_TENANT_CREATE_COMPONENTS_ON_INIT</td>
 			<td>true</td>
@@ -1278,7 +1273,7 @@
 			<td>actors.session.sync.timeout</td>
 			<td>ACTORS_SESSION_SYNC_TIMEOUT</td>
 			<td>10000</td>
-			<td> Default timeout for processing request using synchronous session (HTTP, CoAP) in milliseconds</td>
+			<td> Default timeout for processing requests using synchronous session (HTTP, CoAP) in milliseconds</td>
 		</tr>
 		<tr>
 			<td>actors.rule.db_callback_thread_pool_size</td>
@@ -1326,7 +1321,7 @@
 			<td>actors.rule.chain.error_persist_frequency</td>
 			<td>ACTORS_RULE_CHAIN_ERROR_FREQUENCY</td>
 			<td>3000</td>
-			<td> Errors for particular actor are persisted once per specified amount of milliseconds</td>
+			<td> Errors for particular actors are persisted once per specified amount of milliseconds</td>
 		</tr>
 		<tr>
 			<td>actors.rule.chain.debug_mode_rate_limits_per_tenant.enabled</td>
@@ -1350,7 +1345,7 @@
 			<td>actors.rule.transaction.queue_size</td>
 			<td>ACTORS_RULE_TRANSACTION_QUEUE_SIZE</td>
 			<td>15000</td>
-			<td> Size of queues which store messages for transaction rule nodes</td>
+			<td> Size of queues that store messages for transaction rule nodes</td>
 		</tr>
 		<tr>
 			<td>actors.rule.transaction.duration</td>
@@ -1362,14 +1357,14 @@
 			<td>actors.rule.external.force_ack</td>
 			<td>ACTORS_RULE_EXTERNAL_NODE_FORCE_ACK</td>
 			<td>false</td>
-			<td> Force acknowledgement of the incoming message for external rule nodes to decrease processing latency.
+			<td> Force acknowledgment of the incoming message for external rule nodes to decrease processing latency.
  Enqueue the result of external node processing as a separate message to the rule engine.</td>
 		</tr>
 		<tr>
 			<td>actors.rpc.max_retries</td>
 			<td>ACTORS_RPC_MAX_RETRIES</td>
 			<td>5</td>
-			<td> Maximum number of persistent RPC call retries in case of failed requests delivery.</td>
+			<td> Maximum number of persistent RPC call retries in case of failed request delivery.</td>
 		</tr>
 		<tr>
 			<td>actors.rpc.submit_strategy</td>
@@ -1381,7 +1376,7 @@
 			<td>actors.rpc.response_timeout_ms</td>
 			<td>ACTORS_RPC_RESPONSE_TIMEOUT_MS</td>
 			<td>30000</td>
-			<td> Time in milliseconds for RPC to receive response after delivery. Used only for SEQUENTIAL_ON_RESPONSE_FROM_DEVICE submit strategy.</td>
+			<td> Time in milliseconds for RPC to receive a response after delivery. Used only for SEQUENTIAL_ON_RESPONSE_FROM_DEVICE submit strategy.</td>
 		</tr>
 		<tr>
 			<td>actors.statistics.enabled</td>
@@ -1405,147 +1400,7 @@
 </table>
 
 
-####  Platform integrations parameters
-
-<table>
-	<thead>
-		<tr>
-			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>integrations.statistics.enabled</td>
-			<td>INTEGRATIONS_STATISTICS_ENABLED</td>
-			<td>true</td>
-			<td> Enable/disable integrations statistics</td>
-		</tr>
-		<tr>
-			<td>integrations.statistics.persist_frequency</td>
-			<td>INTEGRATIONS_STATISTICS_PERSIST_FREQUENCY</td>
-			<td>3600000</td>
-			<td> Integration statistic persistence frequency in milliseconds</td>
-		</tr>
-		<tr>
-			<td>integrations.reinit.enabled</td>
-			<td>INTEGRATIONS_REINIT_ENABLED</td>
-			<td>true</td>
-			<td> Enable/Disable integrations hot reinitialization</td>
-		</tr>
-		<tr>
-			<td>integrations.reinit.frequency</td>
-			<td>INTEGRATIONS_REINIT_FREQUENCY</td>
-			<td>300000</td>
-			<td> Checking interval for reinit integrations</td>
-		</tr>
-		<tr>
-			<td>integrations.rate_limits.enabled</td>
-			<td>TB_INTEGRATION_RATE_LIMITS_ENABLED</td>
-			<td>false</td>
-			<td> Enable/Disable integrations rate limits</td>
-		</tr>
-		<tr>
-			<td>integrations.rate_limits.tenant</td>
-			<td>TB_INTEGRATION_RATE_LIMITS_TENANT</td>
-			<td>1000:1,20000:60</td>
-			<td> The value of integrations rate limit. By default, no more than 1000 messages per second and no more 20000 messages per hour</td>
-		</tr>
-		<tr>
-			<td>integrations.rate_limits.device</td>
-			<td>TB_INTEGRATION_RATE_LIMITS_DEVICE</td>
-			<td>10:1,300:60</td>
-			<td> The value of integrations device rate limit. By default, no more than 10 messages per second and no more 300 messages per hour</td>
-		</tr>
-		<tr>
-			<td>integrations.allow_Local_network_hosts</td>
-			<td>INTEGRATIONS_ALLOW_LOCAL_NETWORK_HOSTS</td>
-			<td>true</td>
-			<td> Enable/Disable integrations local network hosts</td>
-		</tr>
-		<tr>
-			<td>integrations.rpc.enabled</td>
-			<td>INTEGRATIONS_RPC_ENABLED</td>
-			<td>true</td>
-			<td> Enable/Disable RPC call via integrations</td>
-		</tr>
-		<tr>
-			<td>integrations.rpc.port</td>
-			<td>INTEGRATIONS_RPC_PORT</td>
-			<td>9090</td>
-			<td> Integration bind port</td>
-		</tr>
-		<tr>
-			<td>integrations.rpc.ssl.enabled</td>
-			<td>INTEGRATIONS_RPC_SSL_ENABLED</td>
-			<td>false</td>
-			<td> Enable/disable SSL support</td>
-		</tr>
-		<tr>
-			<td>integrations.rpc.ssl.cert</td>
-			<td>INTEGRATIONS_RPC_SSL_CERT</td>
-			<td>certChainFile.pem</td>
-			<td> Integration SSL certificate name</td>
-		</tr>
-		<tr>
-			<td>integrations.rpc.ssl.privateKey</td>
-			<td>INTEGRATIONS_RPC_SSL_PRIVATE_KEY</td>
-			<td>privateKeyFile.pem</td>
-			<td> Integration SSL private key</td>
-		</tr>
-		<tr>
-			<td>integrations.rpc.client_max_keep_alive_time_sec</td>
-			<td>INTEGRATIONS_RPC_CLIENT_MAX_KEEP_ALIVE_TIME_SEC</td>
-			<td>300</td>
-			<td> Disconnect a client if no keepalive ping received in the specified time</td>
-		</tr>
-	</tbody>
-</table>
-
-
-####  Reports parameters
-
-<table>
-	<thead>
-		<tr>
-			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>reports.server.endpointUrl</td>
-			<td>REPORTS_SERVER_ENDPOINT_URL</td>
-			<td>http://localhost:8383</td>
-			<td> Report server endpoint</td>
-		</tr>
-		<tr>
-			<td>reports.server.maxResponseSize</td>
-			<td>MAX_RESPONSE_SIZE</td>
-			<td>52428800</td>
-			<td> 50MB</td>
-		</tr>
-		<tr>
-			<td>reports.rate_limits.enabled</td>
-			<td>REPORTS_TENANT_RATE_LIMITS_ENABLED</td>
-			<td>false</td>
-			<td> Enable/disable reports tenant rate limits</td>
-		</tr>
-		<tr>
-			<td>reports.rate_limits.configuration</td>
-			<td>REPORTS_TENANT_RATE_LIMITS_CONFIGURATION</td>
-			<td>5:300</td>
-			<td> The value of repors rate limits. By default, no more then 5 reports per 300 second</td>
-		</tr>
-		<tr>
-			<td>reports.scheduler.min_interval</td>
-			<td>REPORTS_SCHEDULER_MIN_INTERVAL_IN_SEC</td>
-			<td>60</td>
-			<td> minimum interval between subsequent scheduler events. Applicable for timer based events.</td>
-		</tr>
-	</tbody>
-</table>
-
-
-####  Cache parameters
+####  Cache settings parameters
 
 <table>
 	<thead>
@@ -1564,19 +1419,19 @@
 			<td>cache.maximumPoolSize</td>
 			<td>CACHE_MAXIMUM_POOL_SIZE</td>
 			<td>16</td>
-			<td> max pool size to process futures that calls the external cache</td>
+			<td> max pool size to process futures that call the external cache</td>
 		</tr>
 		<tr>
 			<td>cache.attributes.enabled</td>
 			<td>CACHE_ATTRIBUTES_ENABLED</td>
 			<td>true</td>
-			<td> make sure that if cache.type is 'redis' and cache.attributes.enabled is 'true' that you change 'maxmemory-policy' Redis config property to 'allkeys-lru', 'allkeys-lfu' or 'allkeys-random'</td>
+			<td> make sure that if cache.type is 'redis' and cache.attributes.enabled is 'true' if you change 'maxmemory-policy' Redis config property to 'allkeys-lru', 'allkeys-lfu' or 'allkeys-random'</td>
 		</tr>
 		<tr>
 			<td>cache.specs.relations.timeToLiveInMinutes</td>
 			<td>CACHE_SPECS_RELATIONS_TTL</td>
 			<td>1440</td>
-			<td> Relations cache max size</td>
+			<td> Relations cache TTL</td>
 		</tr>
 		<tr>
 			<td>cache.specs.relations.maxSize</td>
@@ -1696,7 +1551,7 @@
 			<td>cache.specs.tenantsExist.timeToLiveInMinutes</td>
 			<td>CACHE_SPECS_TENANTS_TTL</td>
 			<td>1440</td>
-			<td> environment variables are intentionally the same as in 'tenants' cache to be equal.</td>
+			<td> Environment variables are intentionally the same as in 'tenants' cache to be equal.</td>
 		</tr>
 		<tr>
 			<td>cache.specs.tenantsExist.maxSize</td>
@@ -1732,7 +1587,7 @@
 			<td>cache.specs.notificationSettings.timeToLiveInMinutes</td>
 			<td>CACHE_SPECS_NOTIFICATION_SETTINGS_TTL</td>
 			<td>10</td>
-			<td> Noification settings cache TTL</td>
+			<td> Notification settings cache TTL</td>
 		</tr>
 		<tr>
 			<td>cache.specs.notificationSettings.maxSize</td>
@@ -1768,7 +1623,7 @@
 			<td>cache.specs.userSessionsInvalidation.timeToLiveInMinutes</td>
 			<td></td>
 			<td>"0"</td>
-			<td> The value of this TTL is ignored and replaced by JWT refresh token expiration time</td>
+			<td> The value of this TTL is ignored and replaced by the JWT refresh token expiration time</td>
 		</tr>
 		<tr>
 			<td>cache.specs.userSessionsInvalidation.maxSize</td>
@@ -1840,7 +1695,7 @@
 			<td>cache.specs.twoFaVerificationCodes.timeToLiveInMinutes</td>
 			<td>CACHE_SPECS_TWO_FA_VERIFICATION_CODES_TTL</td>
 			<td>60</td>
-			<td> Two fa carification codes cache TTL</td>
+			<td> Two factor verification codes cache TTL</td>
 		</tr>
 		<tr>
 			<td>cache.specs.twoFaVerificationCodes.maxSize</td>
@@ -1921,94 +1776,10 @@
 			<td> 0 means the cache is disabled</td>
 		</tr>
 		<tr>
-			<td>cache.specs.downlink.timeToLiveInMinutes</td>
-			<td>CACHE_SPECS_DOWNLINK_TTL</td>
-			<td>1440</td>
-			<td> Downlink converter cache specs TTL</td>
-		</tr>
-		<tr>
-			<td>cache.specs.downlink.maxSize</td>
-			<td>CACHE_SPECS_DOWNLINK_MAX_SIZE</td>
-			<td>100000</td>
-			<td> 0 means the cache is disabled</td>
-		</tr>
-		<tr>
-			<td>cache.specs.roles.timeToLiveInMinutes</td>
-			<td>CACHE_SPECS_ROLES_TTL</td>
-			<td>1440</td>
-			<td> roles cache TTL</td>
-		</tr>
-		<tr>
-			<td>cache.specs.roles.maxSize</td>
-			<td>CACHE_SPECS_ROLES_MAX_SIZE</td>
-			<td>10000</td>
-			<td> 0 means the cache is disabled</td>
-		</tr>
-		<tr>
-			<td>cache.specs.permissions.timeToLiveInMinutes</td>
-			<td>CACHE_SPECS_PERMISSIONS_TTL</td>
-			<td>1440</td>
-			<td> permissions cache TTL</td>
-		</tr>
-		<tr>
-			<td>cache.specs.permissions.maxSize</td>
-			<td>CACHE_SPECS_PERMISSIONS_MAX_SIZE</td>
-			<td>10000</td>
-			<td> 0 means the cache is disabled</td>
-		</tr>
-		<tr>
-			<td>cache.specs.owners.timeToLiveInMinutes</td>
-			<td>CACHE_SPECS_OWNERS_TTL</td>
-			<td>1440</td>
-			<td> owners cache TTL</td>
-		</tr>
-		<tr>
-			<td>cache.specs.owners.maxSize</td>
-			<td>CACHE_SPECS_OWNERS_MAX_SIZE</td>
-			<td>100000</td>
-			<td> 0 means the cache is disabled</td>
-		</tr>
-		<tr>
-			<td>cache.specs.remoteIntegrations.timeToLiveInMinutes</td>
-			<td>CACHE_SPECS_REMOTE_INTEGRATIONS_TTL</td>
-			<td>1440</td>
-			<td> remote integrations cache specs TTL</td>
-		</tr>
-		<tr>
-			<td>cache.specs.remoteIntegrations.maxSize</td>
-			<td>CACHE_SPECS_REMOTE_INTEGRATIONS_MAX_SIZE</td>
-			<td>10000</td>
-			<td> 0 means the cache is disabled</td>
-		</tr>
-		<tr>
-			<td>cache.specs.integrations.timeToLiveInMinutes</td>
-			<td>CACHE_SPECS_INTEGRATIONS_TTL</td>
-			<td>1440</td>
-			<td> integrations cache specs TTL</td>
-		</tr>
-		<tr>
-			<td>cache.specs.integrations.maxSize</td>
-			<td>CACHE_SPECS_INTEGRATIONS_MAX_SIZE</td>
-			<td>10000</td>
-			<td> 0 means the cache is disabled</td>
-		</tr>
-		<tr>
-			<td>cache.specs.whiteLabeling.timeToLiveInMinutes</td>
-			<td>CACHE_SPECS_WHITE_LABELING_TTL</td>
-			<td>1440</td>
-			<td> White labeling cache TTL</td>
-		</tr>
-		<tr>
-			<td>cache.specs.whiteLabeling.maxSize</td>
-			<td>CACHE_SPECS_WHITE_LABELING_MAX_SIZE</td>
-			<td>10000</td>
-			<td> 0 means the cache is disabled</td>
-		</tr>
-		<tr>
 			<td>cache.notificationRules.timeToLiveInMinutes</td>
 			<td>CACHE_SPECS_NOTIFICATION_RULES_TTL</td>
 			<td>30</td>
-			<td> notification rules cache TTL</td>
+			<td> Notification rules cache TTL</td>
 		</tr>
 		<tr>
 			<td>cache.notificationRules.maxSize</td>
@@ -2032,7 +1803,7 @@
 </table>
 
 
-####  Spring data properties
+####  Spring data parameters
 
 <table>
 	<thead>
@@ -2051,7 +1822,7 @@
 </table>
 
 
-####  Redis configuration properties
+####  Redis configuration parameters
 
 <table>
 	<thead>
@@ -2082,31 +1853,31 @@
 			<td>redis.standalone.useDefaultClientConfig</td>
 			<td>REDIS_USE_DEFAULT_CLIENT_CONFIG</td>
 			<td>true</td>
-			<td> Use default Redis configuration file</td>
+			<td> Use the default Redis configuration file</td>
 		</tr>
 		<tr>
 			<td>redis.standalone.clientName</td>
 			<td>REDIS_CLIENT_NAME</td>
 			<td>standalone</td>
-			<td> this value may be used only if you used not default ClientConfig</td>
+			<td> This value may be used only if you used not default ClientConfig</td>
 		</tr>
 		<tr>
 			<td>redis.standalone.connectTimeout</td>
 			<td>REDIS_CLIENT_CONNECT_TIMEOUT</td>
 			<td>30000</td>
-			<td> this value may be used only if you used not default ClientConfig</td>
+			<td> This value may be used only if you used not default ClientConfig</td>
 		</tr>
 		<tr>
 			<td>redis.standalone.readTimeout</td>
 			<td>REDIS_CLIENT_READ_TIMEOUT</td>
 			<td>60000</td>
-			<td> this value may be used only if you used not default ClientConfig</td>
+			<td> This value may be used only if you used not default ClientConfig</td>
 		</tr>
 		<tr>
 			<td>redis.standalone.usePoolConfig</td>
 			<td>REDIS_CLIENT_USE_POOL_CONFIG</td>
 			<td>false</td>
-			<td> this value may be used only if you used not default ClientConfig</td>
+			<td> This value may be used only if you used not default ClientConfig</td>
 		</tr>
 		<tr>
 			<td>redis.cluster.nodes</td>
@@ -2130,7 +1901,7 @@
 			<td>redis.sentinel.master</td>
 			<td>REDIS_MASTER</td>
 			<td></td>
-			<td> name of master node</td>
+			<td> name of the master node</td>
 		</tr>
 		<tr>
 			<td>redis.sentinel.sentinels</td>
@@ -2184,7 +1955,7 @@
 			<td>redis.pool_config.testOnBorrow</td>
 			<td>REDIS_POOL_CONFIG_TEST_ON_BORROW</td>
 			<td>true</td>
-			<td> Enable/Disable PING command send when a connection is borrowed</td>
+			<td> Enable/Disable PING command sent when a connection is borrowed</td>
 		</tr>
 		<tr>
 			<td>redis.pool_config.testOnReturn</td>
@@ -2202,7 +1973,7 @@
 			<td>redis.pool_config.minEvictableMs</td>
 			<td>REDIS_POOL_CONFIG_MIN_EVICTABLE_MS</td>
 			<td>60000</td>
-			<td> Minimum amount of time that an idle connection should be idle before it can be evicted from the connection pool. Value set in milliseconds</td>
+			<td> Minimum time that an idle connection should be idle before it can be evicted from the connection pool. The value is set in milliseconds</td>
 		</tr>
 		<tr>
 			<td>redis.pool_config.evictionRunsMs</td>
@@ -2226,19 +1997,19 @@
 			<td>redis.pool_config.blockWhenExhausted</td>
 			<td>REDIS_POOL_CONFIG_BLOCK_WHEN_EXHAUSTED</td>
 			<td>true</td>
-			<td> Determines the behavior when a thread requests a connection from the pool but there are no available connections and the pool cannot create more due to the maxTotal configuration</td>
+			<td> Determines the behavior when a thread requests a connection from the pool, but there are no available connections, and the pool cannot create more due to the maxTotal configuration</td>
 		</tr>
 		<tr>
 			<td>redis.evictTtlInMs</td>
 			<td>REDIS_EVICT_TTL_MS</td>
 			<td>60000</td>
-			<td> TTL for short-living SET commands that are used to replace DEL in order to enable transaction support</td>
+			<td> TTL for short-living SET commands that are used to replace DEL to enable transaction support</td>
 		</tr>
 	</tbody>
 </table>
 
 
-####  Update version properties
+####  Update version parameters
 
 <table>
 	<thead>
@@ -2251,13 +2022,13 @@
 			<td>updates.enabled</td>
 			<td>UPDATES_ENABLED</td>
 			<td>true</td>
-			<td> Enable/disable checks for new version</td>
+			<td> Enable/disable checks for the new version</td>
 		</tr>
 	</tbody>
 </table>
 
 
-####  Spring CORS configuration
+####  Spring CORS configuration parameters
 
 <table>
 	<thead>
@@ -2270,7 +2041,7 @@
 			<td>spring.mvc.cors.mappings."[/api/**]".allowed-origin-patterns</td>
 			<td></td>
 			<td>"*"</td>
-			<td>Comma-separated list of origins to allow. '*' allows all origins. When not set,CORS support is disabled.</td>
+			<td>Comma-separated list of origins to allow. '*' allows all origins. When not set, CORS support is disabled.</td>
 		</tr>
 		<tr>
 			<td>spring.mvc.cors.mappings."[/api/**]".allowed-methods</td>
@@ -2300,7 +2071,7 @@
 </table>
 
 
-####  General spring properties
+####  General spring parameters
 
 <table>
 	<thead>
@@ -2313,7 +2084,7 @@
 			<td>spring.main.allow-circular-references</td>
 			<td></td>
 			<td>"true" </td>
-			<td> Spring Boot configuration property that controls whether circular dependencies between beans are allowed or not.</td>
+			<td> Spring Boot configuration property that controls whether circular dependencies between beans are allowed.</td>
 		</tr>
 		<tr>
 			<td>spring.freemarker.checkTemplateLocation</td>
@@ -2373,7 +2144,7 @@
 </table>
 
 
-####  SQL DAO Configuration
+####  SQL DAO Configuration parameters
 
 <table>
 	<thead>
@@ -2440,7 +2211,7 @@
 			<td>spring.datasource.hikari.maximumPoolSize</td>
 			<td>SPRING_DATASOURCE_MAXIMUM_POOL_SIZE</td>
 			<td>16</td>
-			<td> This property allows the number of connections in the pool to increase as demand increases. At the same time, the property ensures that the pool doesn't grow to the point of exhausting a system's resources, which ultimately affects an application's performance and availability</td>
+			<td> This property increases the number of connections in the pool as demand increases. At the same time, the property ensures that the pool doesn't grow to the point of exhausting a system's resources, which ultimately affects an application's performance and availability</td>
 		</tr>
 		<tr>
 			<td>spring.datasource.hikari.registerMbeans</td>
@@ -2522,36 +2293,6 @@
 			<td> Alarm logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
 		</tr>
 		<tr>
-			<td>audit-log.logging-level.mask."integration"</td>
-			<td>AUDIT_LOG_MASK_INTEGRATION</td>
-			<td>W</td>
-			<td> Integration logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
-		</tr>
-		<tr>
-			<td>audit-log.logging-level.mask."converter"</td>
-			<td>AUDIT_LOG_MASK_CONVERTER</td>
-			<td>W</td>
-			<td> Converter logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
-		</tr>
-		<tr>
-			<td>audit-log.logging-level.mask."entity_group"</td>
-			<td>AUDIT_LOG_MASK_ENTITY_GROUP</td>
-			<td>W</td>
-			<td> Entity Group logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
-		</tr>
-		<tr>
-			<td>audit-log.logging-level.mask."scheduler_event"</td>
-			<td>AUDIT_LOG_MASK_SCHEDULER_EVENT</td>
-			<td>W</td>
-			<td> Scheduler Event logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
-		</tr>
-		<tr>
-			<td>audit-log.logging-level.mask."blob_entity"</td>
-			<td>AUDIT_LOG_MASK_BLOB_ENTITY</td>
-			<td>W</td>
-			<td> Blob entity logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
-		</tr>
-		<tr>
 			<td>audit-log.logging-level.mask."entity_view"</td>
 			<td>AUDIT_LOG_MASK_ENTITY_VIEW</td>
 			<td>W</td>
@@ -2588,18 +2329,6 @@
 			<td> Ota package logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operation</td>
 		</tr>
 		<tr>
-			<td>audit-log.logging-level.mask."role"</td>
-			<td>AUDIT_LOG_MASK_ROLE</td>
-			<td>W</td>
-			<td> Roles logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
-		</tr>
-		<tr>
-			<td>audit-log.logging-level.mask."group_permission"</td>
-			<td>AUDIT_LOG_MASK_GROUP_PERMISSION</td>
-			<td>W</td>
-			<td> Group permission logging levels. Allowed values: OFF (disable), W (log write operations), RW (log read and write operations)</td>
-		</tr>
-		<tr>
 			<td>audit-log.sink.type</td>
 			<td>AUDIT_LOG_SINK_TYPE</td>
 			<td>none</td>
@@ -2609,7 +2338,7 @@
 			<td>audit-log.sink.index_pattern</td>
 			<td>AUDIT_LOG_SINK_INDEX_PATTERN</td>
 			<td>@{TENANT}_AUDIT_LOG_@{DATE}</td>
-			<td> Name of the index where audit logs stored
+			<td> Name of the index where audit logs are stored
  Index name could contain next placeholders (not mandatory):
  @{TENANT} - substituted by tenant ID
  @{DATE} - substituted by current date in format provided in audit_log.sink.date_format</td>
@@ -2618,7 +2347,7 @@
 			<td>audit-log.sink.date_format</td>
 			<td>AUDIT_LOG_SINK_DATE_FORMAT</td>
 			<td>YYYY.MM.dd</td>
-			<td> Date format. Details of the pattern could be found here:
+			<td> Date format. Details of the pattern can be found here:
  https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html</td>
 		</tr>
 		<tr>
@@ -2655,7 +2384,7 @@
 </table>
 
 
-####  State properties
+####  Device state parameters
 
 <table>
 	<thead>
@@ -2674,13 +2403,13 @@
 			<td>state.defaultStateCheckIntervalInSec</td>
 			<td>DEFAULT_STATE_CHECK_INTERVAL</td>
 			<td>60</td>
-			<td> Interval for checking the device state after a specified period of time. Time in seconds</td>
+			<td> Interval for checking the device state after a specified period. Time in seconds</td>
 		</tr>
 		<tr>
 			<td>state.persistToTelemetry</td>
 			<td>PERSIST_STATE_TO_TELEMETRY</td>
 			<td>false</td>
-			<td> Controls whether we store device 'active' flag in attributes (default) or telemetry.
+			<td> Controls whether we store the device 'active' flag in attributes (default) or telemetry.
  If you device to change this parameter, you should re-create the device info view as one of the following:
  If 'persistToTelemetry' is changed from 'false' to 'true': 'CREATE OR REPLACE VIEW device_info_view AS SELECT * FROM device_info_active_ts_view;'
  If 'persistToTelemetry' is changed from 'true' to 'false': 'CREATE OR REPLACE VIEW device_info_view AS SELECT * FROM device_info_active_attribute_view;'</td>
@@ -2689,7 +2418,7 @@
 </table>
 
 
-####  Tbel properties
+####  Tbel parameters
 
 <table>
 	<thead>
@@ -2708,7 +2437,7 @@
 			<td>tbel.max_total_args_size</td>
 			<td>TBEL_MAX_TOTAL_ARGS_SIZE</td>
 			<td>100000</td>
-			<td> Limit on the number of arguments that are passed to the function to execute the script</td>
+			<td> Limit the number of arguments that are passed to the function to execute the script</td>
 		</tr>
 		<tr>
 			<td>tbel.max_result_size</td>
@@ -2720,7 +2449,7 @@
 			<td>tbel.max_script_body_size</td>
 			<td>TBEL_MAX_SCRIPT_BODY_SIZE</td>
 			<td>50000</td>
-			<td> Maximum allowed symbols in script body</td>
+			<td> Maximum allowed symbols in the script body</td>
 		</tr>
 		<tr>
 			<td>tbel.max_memory_limit_mb</td>
@@ -2774,7 +2503,7 @@
 </table>
 
 
-####  JS properties
+####  JS parameters
 
 <table>
 	<thead>
@@ -2787,13 +2516,13 @@
 			<td>js.evaluator</td>
 			<td>JS_EVALUATOR</td>
 			<td>local</td>
-			<td> local/remote</td>
+			<td> local (Nashorn Engine, deprecated) OR remote JS-Executors (NodeJS)</td>
 		</tr>
 		<tr>
 			<td>js.max_total_args_size</td>
 			<td>JS_MAX_TOTAL_ARGS_SIZE</td>
-			<td>150000</td>
-			<td> Limit on the number of arguments that are passed to the function to execute the script</td>
+			<td>100000</td>
+			<td> Limit the number of arguments that are passed to the function to execute the script</td>
 		</tr>
 		<tr>
 			<td>js.max_result_size</td>
@@ -2895,7 +2624,7 @@
 </table>
 
 
-####  Transport configuration properties
+####  Transport configuration parameters
 
 <table>
 	<thead>
@@ -2908,7 +2637,7 @@
 			<td>transport.sessions.inactivity_timeout</td>
 			<td>TB_TRANSPORT_SESSIONS_INACTIVITY_TIMEOUT</td>
 			<td>300000</td>
-			<td> Inactivity timeout for device session in transport service. The last activity time of the device session is updated if device sends any message, including keepalive messages</td>
+			<td> Inactivity timeout for device session in transport service. The last activity time of the device session is updated if the device sends any message, including keepalive messages</td>
 		</tr>
 		<tr>
 			<td>transport.sessions.report_timeout</td>
@@ -2956,7 +2685,7 @@
 			<td>transport.rate_limits.ip_limits_enabled</td>
 			<td>TB_TRANSPORT_IP_RATE_LIMITS_ENABLED</td>
 			<td>false</td>
-			<td> Enable or disable generic rate limits. Device and Tenant specific rate limits are controlled in Tenant Profile.</td>
+			<td> Enable or disable generic rate limits. Device and Tenant-specific rate limits are controlled in Tenant Profile.</td>
 		</tr>
 		<tr>
 			<td>transport.rate_limits.max_wrong_credentials_per_ip</td>
@@ -2998,7 +2727,7 @@
 			<td>transport.mqtt.bind_address</td>
 			<td>MQTT_BIND_ADDRESS</td>
 			<td>0.0.0.0</td>
-			<td> MQTT bind address</td>
+			<td> MQTT bind-address</td>
 		</tr>
 		<tr>
 			<td>transport.mqtt.bind_port</td>
@@ -3023,7 +2752,7 @@
 			<td>transport.mqtt.msg_queue_size_per_device_limit</td>
 			<td>MQTT_MSG_QUEUE_SIZE_PER_DEVICE_LIMIT</td>
 			<td>100</td>
-			<td> messages await in the queue before device connected state. This limit works on low level before TenantProfileLimits mechanism</td>
+			<td> messages await in the queue before the device connected state. This limit works on the low level before TenantProfileLimits mechanism</td>
 		</tr>
 		<tr>
 			<td>transport.mqtt.netty.leak_detector_level</td>
@@ -3065,7 +2794,7 @@
 			<td>transport.mqtt.ssl.bind_address</td>
 			<td>MQTT_SSL_BIND_ADDRESS</td>
 			<td>0.0.0.0</td>
-			<td> MQTT SSL bind address</td>
+			<td> MQTT SSL bind-address</td>
 		</tr>
 		<tr>
 			<td>transport.mqtt.ssl.bind_port</td>
@@ -3125,7 +2854,7 @@
 			<td>transport.mqtt.ssl.credentials.keystore.key_alias</td>
 			<td>MQTT_SSL_KEY_ALIAS</td>
 			<td></td>
-			<td> Optional alias of the private key; If not set, the platform will load the first private key from the keystore;</td>
+			<td> Optional alias of the private key. If not set, the platform will load the first private key from the keystore</td>
 		</tr>
 		<tr>
 			<td>transport.mqtt.ssl.credentials.keystore.key_password</td>
@@ -3143,7 +2872,19 @@
 			<td>transport.coap.enabled</td>
 			<td>COAP_ENABLED</td>
 			<td>true</td>
-			<td> Enable/disable coap transport protocol.</td>
+			<td> Enable/disable CoAP transport protocol.</td>
+		</tr>
+		<tr>
+			<td>transport.coap.bind_address</td>
+			<td>COAP_BIND_ADDRESS</td>
+			<td>0.0.0.0</td>
+			<td> CoAP bind-address</td>
+		</tr>
+		<tr>
+			<td>transport.coap.bind_port</td>
+			<td>COAP_BIND_PORT</td>
+			<td>5683</td>
+			<td> CoAP bind port</td>
 		</tr>
 		<tr>
 			<td>transport.coap.timeout</td>
@@ -3182,10 +2923,94 @@
 			<td> RFC7925_RETRANSMISSION_TIMEOUT_IN_MILLISECONDS = 9000</td>
 		</tr>
 		<tr>
+			<td>transport.coap.dtls.bind_address</td>
+			<td>COAP_DTLS_BIND_ADDRESS</td>
+			<td>0.0.0.0</td>
+			<td> CoAP DTLS bind-address</td>
+		</tr>
+		<tr>
+			<td>transport.coap.dtls.bind_port</td>
+			<td>COAP_DTLS_BIND_PORT</td>
+			<td>5684</td>
+			<td> CoAP DTLS bind port</td>
+		</tr>
+		<tr>
+			<td>transport.coap.dtls.credentials.type</td>
+			<td>COAP_DTLS_CREDENTIALS_TYPE</td>
+			<td>PEM</td>
+			<td> Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
+		</tr>
+		<tr>
+			<td>transport.coap.dtls.credentials.pem.cert_file</td>
+			<td>COAP_DTLS_PEM_CERT</td>
+			<td>coapserver.pem</td>
+			<td> Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
+		</tr>
+		<tr>
+			<td>transport.coap.dtls.credentials.pem.key_file</td>
+			<td>COAP_DTLS_PEM_KEY</td>
+			<td>coapserver_key.pem</td>
+			<td> Path to the server certificate private key file. Optional by default. Required if the private key is not present in the server certificate file;</td>
+		</tr>
+		<tr>
+			<td>transport.coap.dtls.credentials.pem.key_password</td>
+			<td>COAP_DTLS_PEM_KEY_PASSWORD</td>
+			<td>server_key_password</td>
+			<td> Server certificate private key password (optional)</td>
+		</tr>
+		<tr>
+			<td>transport.coap.dtls.credentials.keystore.type</td>
+			<td>COAP_DTLS_KEY_STORE_TYPE</td>
+			<td>JKS</td>
+			<td> Type of the key store (JKS or PKCS12)</td>
+		</tr>
+		<tr>
+			<td>transport.coap.dtls.credentials.keystore.store_file</td>
+			<td>COAP_DTLS_KEY_STORE</td>
+			<td>coapserver.jks</td>
+			<td> Path to the key store that holds the SSL certificate</td>
+		</tr>
+		<tr>
+			<td>transport.coap.dtls.credentials.keystore.store_password</td>
+			<td>COAP_DTLS_KEY_STORE_PASSWORD</td>
+			<td>server_ks_password</td>
+			<td> Password used to access the key store</td>
+		</tr>
+		<tr>
+			<td>transport.coap.dtls.credentials.keystore.key_alias</td>
+			<td>COAP_DTLS_KEY_ALIAS</td>
+			<td>serveralias</td>
+			<td> Key alias</td>
+		</tr>
+		<tr>
+			<td>transport.coap.dtls.credentials.keystore.key_password</td>
+			<td>COAP_DTLS_KEY_PASSWORD</td>
+			<td>server_key_password</td>
+			<td> Password used to access the key</td>
+		</tr>
+		<tr>
+			<td>transport.coap.dtls.x509.skip_validity_check_for_client_cert</td>
+			<td>TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
+			<td>false</td>
+			<td> Skip certificate validity check for client certificates.</td>
+		</tr>
+		<tr>
+			<td>transport.coap.dtls.x509.dtls_session_inactivity_timeout</td>
+			<td>TB_COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT</td>
+			<td>86400000</td>
+			<td> Inactivity timeout of DTLS session. Used to clean cache</td>
+		</tr>
+		<tr>
+			<td>transport.coap.dtls.x509.dtls_session_report_timeout</td>
+			<td>TB_COAP_X509_DTLS_SESSION_REPORT_TIMEOUT</td>
+			<td>1800000</td>
+			<td> Interval of periodic eviction of the timed-out DTLS sessions</td>
+		</tr>
+		<tr>
 			<td>transport.lwm2m.enabled</td>
 			<td>LWM2M_ENABLED</td>
 			<td>true</td>
-			<td> Enable/disable lvm2m transport protocol.</td>
+			<td> Enable/disable LwM2M transport protocol.</td>
 		</tr>
 		<tr>
 			<td>transport.lwm2m.dtls.retransmission_timeout</td>
@@ -3245,7 +3070,7 @@
 			<td>transport.lwm2m.server.security.credentials.pem.key_file</td>
 			<td>LWM2M_SERVER_PEM_KEY</td>
 			<td>lwm2mserver_key.pem</td>
-			<td> Path to the server certificate private key file. Optional by default. Required if the private key is not present in server certificate file;</td>
+			<td> Path to the server certificate private key file. Optional by default. Required if the private key is not present in the server certificate file;</td>
 		</tr>
 		<tr>
 			<td>transport.lwm2m.server.security.credentials.pem.key_password</td>
@@ -3299,7 +3124,7 @@
 			<td>transport.lwm2m.bootstrap.id</td>
 			<td>LWM2M_SERVER_ID_BS</td>
 			<td>111</td>
-			<td> Default value in Lwm2mClient after start in mode Bootstrap for the object : name "LWM2M Security" field: "Short Server ID" (deviceProfile: Bootstrap.BOOTSTRAP SERVER.Short ID)</td>
+			<td> Default value in LwM2M client after start in mode Bootstrap for the object : name "LWM2M Security" field: "Short Server ID" (deviceProfile: Bootstrap.BOOTSTRAP SERVER.Short ID)</td>
 		</tr>
 		<tr>
 			<td>transport.lwm2m.bootstrap.bind_address</td>
@@ -3347,7 +3172,7 @@
 			<td>transport.lwm2m.bootstrap.security.credentials.pem.key_file</td>
 			<td>LWM2M_BS_PEM_KEY</td>
 			<td>lwm2mserver_key.pem</td>
-			<td> Path to the server certificate private key file. Optional by default. Required if the private key is not present in server certificate file;</td>
+			<td> Path to the server certificate private key file. Optional by default. Required if the private key is not present in server certificate file</td>
 		</tr>
 		<tr>
 			<td>transport.lwm2m.bootstrap.security.credentials.pem.key_password</td>
@@ -3473,7 +3298,7 @@
 			<td>transport.lwm2m.psm_activity_timer</td>
 			<td>LWM2M_PSM_ACTIVITY_TIMER</td>
 			<td>10000</td>
-			<td> PSM Activity Timer if not specified in device profile</td>
+			<td> PSM Activity Timer if not specified in the device profile</td>
 		</tr>
 		<tr>
 			<td>transport.lwm2m.paging_transmission_window</td>
@@ -3509,19 +3334,19 @@
 			<td>transport.snmp.max_request_oids</td>
 			<td>SNMP_MAX_REQUEST_OIDS</td>
 			<td>100</td>
-			<td> Batch size to request OID mappings from device (useful when device profile has multiple hundreds of OID mappings)</td>
+			<td> Batch size to request OID mappings from the device (useful when the device profile has multiple hundreds of OID mappings)</td>
 		</tr>
 		<tr>
 			<td>transport.snmp.response.ignore_type_cast_errors</td>
 			<td>SNMP_RESPONSE_IGNORE_TYPE_CAST_ERRORS</td>
 			<td>false</td>
-			<td> To ignore SNMP response values that do not match data type of the configured OID mapping (by default false - will throw error if any value of the response not matches configured data types)</td>
+			<td> To ignore SNMP response values that do not match the data type of the configured OID mapping (by default false - will throw an error if any value of the response not match configured data types)</td>
 		</tr>
 		<tr>
 			<td>transport.stats.enabled</td>
 			<td>TB_TRANSPORT_STATS_ENABLED</td>
 			<td>true</td>
-			<td> Enable/Disable collection of transport statistics</td>
+			<td> Enable/Disable the collection of transport statistics</td>
 		</tr>
 		<tr>
 			<td>transport.stats.print-interval-ms</td>
@@ -3533,128 +3358,7 @@
 </table>
 
 
-####  CoAP server parameters
-
-<table>
-	<thead>
-		<tr>
-			<td style="width: 25%"><b>Parameter</b></td><td style="width: 30%"><b>Environment Variable</b></td><td style="width: 15%"><b>Default Value</b></td><td style="width: 30%"><b>Description</b></td>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td>coap.enabled</td>
-			<td>COAP_SERVER_ENABLED</td>
-			<td>true</td>
-			<td> Enable/disable coap transport protocol.</td>
-		</tr>
-		<tr>
-			<td>coap.bind_address</td>
-			<td>COAP_BIND_ADDRESS</td>
-			<td>0.0.0.0</td>
-			<td> CoAP bind address</td>
-		</tr>
-		<tr>
-			<td>coap.bind_port</td>
-			<td>COAP_BIND_PORT</td>
-			<td>5683</td>
-			<td> CoAP bind port</td>
-		</tr>
-		<tr>
-			<td>coap.dtls.enabled</td>
-			<td>COAP_DTLS_ENABLED</td>
-			<td>false</td>
-			<td> Enable/disable DTLS 1.2 support</td>
-		</tr>
-		<tr>
-			<td>coap.dtls.bind_address</td>
-			<td>COAP_DTLS_BIND_ADDRESS</td>
-			<td>0.0.0.0</td>
-			<td> CoAP DTLS bind address</td>
-		</tr>
-		<tr>
-			<td>coap.dtls.bind_port</td>
-			<td>COAP_DTLS_BIND_PORT</td>
-			<td>5684</td>
-			<td> CoAP DTLS bind port</td>
-		</tr>
-		<tr>
-			<td>coap.dtls.credentials.type</td>
-			<td>COAP_DTLS_CREDENTIALS_TYPE</td>
-			<td>PEM</td>
-			<td> Server credentials type (PEM - pem certificate file; KEYSTORE - java keystore)</td>
-		</tr>
-		<tr>
-			<td>coap.dtls.credentials.pem.cert_file</td>
-			<td>COAP_DTLS_PEM_CERT</td>
-			<td>coapserver.pem</td>
-			<td> Path to the server certificate file (holds server certificate or certificate chain, may include server private key)</td>
-		</tr>
-		<tr>
-			<td>coap.dtls.credentials.pem.key_file</td>
-			<td>COAP_DTLS_PEM_KEY</td>
-			<td>coapserver_key.pem</td>
-			<td> Path to the server certificate private key file. Optional by default. Required if the private key is not present in server certificate file;</td>
-		</tr>
-		<tr>
-			<td>coap.dtls.credentials.pem.key_password</td>
-			<td>COAP_DTLS_PEM_KEY_PASSWORD</td>
-			<td>server_key_password</td>
-			<td> Server certificate private key password (optional)</td>
-		</tr>
-		<tr>
-			<td>coap.dtls.credentials.keystore.type</td>
-			<td>COAP_DTLS_KEY_STORE_TYPE</td>
-			<td>JKS</td>
-			<td> Type of the key store (JKS or PKCS12)</td>
-		</tr>
-		<tr>
-			<td>coap.dtls.credentials.keystore.store_file</td>
-			<td>COAP_DTLS_KEY_STORE</td>
-			<td>coapserver.jks</td>
-			<td> Path to the key store that holds the SSL certificate</td>
-		</tr>
-		<tr>
-			<td>coap.dtls.credentials.keystore.store_password</td>
-			<td>COAP_DTLS_KEY_STORE_PASSWORD</td>
-			<td>server_ks_password</td>
-			<td> Password used to access the key store</td>
-		</tr>
-		<tr>
-			<td>coap.dtls.credentials.keystore.key_alias</td>
-			<td>COAP_DTLS_KEY_ALIAS</td>
-			<td>serveralias</td>
-			<td> Key alias</td>
-		</tr>
-		<tr>
-			<td>coap.dtls.credentials.keystore.key_password</td>
-			<td>COAP_DTLS_KEY_PASSWORD</td>
-			<td>server_key_password</td>
-			<td> Password used to access the key</td>
-		</tr>
-		<tr>
-			<td>coap.dtls.x509.skip_validity_check_for_client_cert</td>
-			<td>TB_COAP_X509_DTLS_SKIP_VALIDITY_CHECK_FOR_CLIENT_CERT</td>
-			<td>false</td>
-			<td> Skip certificate validity check for client certificates.</td>
-		</tr>
-		<tr>
-			<td>coap.dtls.x509.dtls_session_inactivity_timeout</td>
-			<td>TB_COAP_X509_DTLS_SESSION_INACTIVITY_TIMEOUT</td>
-			<td>86400000</td>
-			<td> Inactivity timeout of DTLS session. Used to cleanup cache</td>
-		</tr>
-		<tr>
-			<td>coap.dtls.x509.dtls_session_report_timeout</td>
-			<td>TB_COAP_X509_DTLS_SESSION_REPORT_TIMEOUT</td>
-			<td>1800000</td>
-			<td> Interval of periodic eviction of the timed-out DTLS sessions</td>
-		</tr>
-	</tbody>
-</table>
-
-
-####  Device connectivity properties to publish telemetry
+####  Device connectivity parameters
 
 <table>
 	<thead>
@@ -3673,13 +3377,13 @@
 			<td>device.connectivity.http.host</td>
 			<td>DEVICE_CONNECTIVITY_HTTP_HOST</td>
 			<td></td>
-			<td> Host of http transport service. If empty base url will be used.</td>
+			<td> Host of http transport service. If empty, the base URL will be used.</td>
 		</tr>
 		<tr>
 			<td>device.connectivity.http.port</td>
 			<td>DEVICE_CONNECTIVITY_HTTP_PORT</td>
 			<td>8080</td>
-			<td> Port of http transport service. If empty default http port will be used.</td>
+			<td> Port of http transport service. If empty, default http port will be used.</td>
 		</tr>
 		<tr>
 			<td>device.connectivity.https.enabled</td>
@@ -3691,13 +3395,13 @@
 			<td>device.connectivity.https.host</td>
 			<td>DEVICE_CONNECTIVITY_HTTPS_HOST</td>
 			<td></td>
-			<td> Host of http transport service. If empty base url will be used.</td>
+			<td> Host of http transport service. If empty, the base URL will be used.</td>
 		</tr>
 		<tr>
 			<td>device.connectivity.https.port</td>
 			<td>DEVICE_CONNECTIVITY_HTTPS_PORT</td>
 			<td>443</td>
-			<td> Port of http transport service. If empty default https port will be used.</td>
+			<td> Port of http transport service. If empty, the default https port will be used.</td>
 		</tr>
 		<tr>
 			<td>device.connectivity.mqtt.enabled</td>
@@ -3709,7 +3413,7 @@
 			<td>device.connectivity.mqtt.host</td>
 			<td>DEVICE_CONNECTIVITY_MQTT_HOST</td>
 			<td></td>
-			<td> Host of mqtt transport service. If empty base url host will be used.</td>
+			<td> Host of mqtt transport service. If empty, the base url host will be used.</td>
 		</tr>
 		<tr>
 			<td>device.connectivity.mqtt.port</td>
@@ -3721,61 +3425,61 @@
 			<td>device.connectivity.mqtts.enabled</td>
 			<td>DEVICE_CONNECTIVITY_MQTTS_ENABLED</td>
 			<td>false</td>
-			<td> If true mosquito command will be included to the list of all test commands using DEVICE_CONNECTIVITY_MQTTS_HOST and DEVICE_CONNECTIVITY_MQTTS_PORT<</td>
+			<td> If true mosquito command will be included in the list of all test commands using DEVICE_CONNECTIVITY_MQTTS_HOST and DEVICE_CONNECTIVITY_MQTTS_PORT<</td>
 		</tr>
 		<tr>
 			<td>device.connectivity.mqtts.host</td>
 			<td>DEVICE_CONNECTIVITY_MQTTS_HOST</td>
 			<td></td>
-			<td> Host of mqtt transport service. If empty base url host will be used.</td>
+			<td> Host of mqtt transport service. If empty, the base URL host will be used.</td>
 		</tr>
 		<tr>
 			<td>device.connectivity.mqtts.port</td>
 			<td>DEVICE_CONNECTIVITY_MQTTS_PORT</td>
 			<td>8883</td>
-			<td> Port of mqtt transport service. If empty default port for mqtts will be used.</td>
+			<td> Port of mqtt transport service. If empty, the default port for mqtts will be used.</td>
 		</tr>
 		<tr>
 			<td>device.connectivity.mqtts.pem_cert_file</td>
-			<td>DEVICE_CONNECTIVITY_MQTT_SSL_PEM_CERT</td>
-			<td>mqttserver.pem</td>
-			<td> Path to the server certificate file</td>
+			<td>DEVICE_CONNECTIVITY_MQTTS_CA_ROOT_CERT</td>
+			<td>cafile.pem</td>
+			<td> Path to the MQTT CA root certificate file</td>
 		</tr>
 		<tr>
 			<td>device.connectivity.coap.enabled</td>
 			<td>DEVICE_CONNECTIVITY_COAP_ENABLED</td>
 			<td>true</td>
-			<td> If true coap command will be included to the list of all test commands using DEVICE_CONNECTIVITY_COAP_HOST and DEVICE_CONNECTIVITY_COAP_PORT.</td>
+			<td> If true coap command will be included in the list of all test commands using DEVICE_CONNECTIVITY_COAP_HOST and DEVICE_CONNECTIVITY_COAP_PORT.</td>
 		</tr>
 		<tr>
 			<td>device.connectivity.coap.host</td>
 			<td>DEVICE_CONNECTIVITY_COAP_HOST</td>
 			<td></td>
-			<td> Host of coap transport service. If empty base url host will be used.</td>
+			<td> Host of coap transport service. If empty, the base URL host will be used.</td>
 		</tr>
 		<tr>
 			<td>device.connectivity.coap.port</td>
 			<td>DEVICE_CONNECTIVITY_COAP_PORT</td>
 			<td>5683</td>
-			<td> Port of coap transport service. If empty default port for coap will be used.</td>
+			<td> Port of coap transport service. If empty, the default port for coap will be used.</td>
 		</tr>
 		<tr>
 			<td>device.connectivity.coaps.enabled</td>
 			<td>DEVICE_CONNECTIVITY_COAPS_ENABLED</td>
 			<td>false</td>
-			<td> If true coap command will be included to the list of all test commands using DEVICE_CONNECTIVITY_COAPS_HOST and DEVICE_CONNECTIVITY_COAPS_PORT.</td>
+			<td> If true coap command will be included in the list of all test commands using DEVICE_CONNECTIVITY_COAPS_HOST and DEVICE_CONNECTIVITY_COAPS_PORT.</td>
 		</tr>
 		<tr>
 			<td>device.connectivity.coaps.host</td>
 			<td>DEVICE_CONNECTIVITY_COAPS_HOST</td>
 			<td></td>
-			<td> Host of coap transport service. If empty base url host will be used.</td>
+			<td> Host of coap transport service. If empty, the base URL host will be used.</td>
 		</tr>
 		<tr>
 			<td>device.connectivity.coaps.port</td>
 			<td>DEVICE_CONNECTIVITY_COAPS_PORT</td>
 			<td>5684</td>
-			<td> Port of coap transport service. If empty default port for coaps will be used.</td>
+			<td> Port of coap transport service. If empty, the default port for coaps will be used.</td>
 		</tr>
 	</tbody>
 </table>
@@ -3806,13 +3510,13 @@
 			<td>edges.rpc.client_max_keep_alive_time_sec</td>
 			<td>EDGES_RPC_CLIENT_MAX_KEEP_ALIVE_TIME_SEC</td>
 			<td>1</td>
-			<td> Maximum time of keep alive client RPC connection. Time in seconds</td>
+			<td> Maximum time of keeping alive client RPC connection. Time in seconds</td>
 		</tr>
 		<tr>
 			<td>edges.rpc.keep_alive_time_sec</td>
 			<td>EDGES_RPC_KEEP_ALIVE_TIME_SEC</td>
 			<td>10</td>
-			<td> Maximum time of keep alive connection. Time in seconds</td>
+			<td> Maximum time of keep-alive connection. Time in seconds</td>
 		</tr>
 		<tr>
 			<td>edges.rpc.keep_alive_timeout_sec</td>
@@ -3830,7 +3534,7 @@
 			<td>edges.rpc.ssl.cert</td>
 			<td>EDGES_RPC_SSL_CERT</td>
 			<td>certChainFile.pem</td>
-			<td> Cert file to be used during TLS connectivity to cloud</td>
+			<td> Cert file to be used during TLS connectivity to the cloud</td>
 		</tr>
 		<tr>
 			<td>edges.rpc.ssl.private_key</td>
@@ -3842,43 +3546,43 @@
 			<td>edges.rpc.max_inbound_message_size</td>
 			<td>EDGES_RPC_MAX_INBOUND_MESSAGE_SIZE</td>
 			<td>4194304</td>
-			<td> Maximum size (in bytes) of inbound messages that cloud can handle from edge. By default, it can handle messages up to 4 Megabytes</td>
+			<td> Maximum size (in bytes) of inbound messages the cloud can handle from the edge. By default, it can handle messages up to 4 Megabytes</td>
 		</tr>
 		<tr>
 			<td>edges.storage.max_read_records_count</td>
 			<td>EDGES_STORAGE_MAX_READ_RECORDS_COUNT</td>
 			<td>50</td>
-			<td> Max records of edge event to read from DB and sent to edge</td>
+			<td> Max records of edge event to read from DB and sent to the edge</td>
 		</tr>
 		<tr>
 			<td>edges.storage.no_read_records_sleep</td>
 			<td>EDGES_NO_READ_RECORDS_SLEEP</td>
 			<td>1000</td>
-			<td> Number of milliseconds to wait before next check of edge events in DB</td>
+			<td> Number of milliseconds to wait before the next check of edge events in DB</td>
 		</tr>
 		<tr>
 			<td>edges.storage.sleep_between_batches</td>
 			<td>EDGES_SLEEP_BETWEEN_BATCHES</td>
 			<td>10000</td>
-			<td> Number of milliseconds to wait before resend failed batch of edge events to edge</td>
+			<td> Number of milliseconds to wait before resending failed batch of edge events to edge</td>
 		</tr>
 		<tr>
 			<td>edges.scheduler_pool_size</td>
 			<td>EDGES_SCHEDULER_POOL_SIZE</td>
 			<td>1</td>
-			<td> Number of threads that used to check DB for edge events</td>
+			<td> Number of threads that are used to check DB for edge events</td>
 		</tr>
 		<tr>
 			<td>edges.send_scheduler_pool_size</td>
 			<td>EDGES_SEND_SCHEDULER_POOL_SIZE</td>
 			<td>1</td>
-			<td> Number of threads that used to send downlink messages to edge over gRPC</td>
+			<td> Number of threads that are used to send downlink messages to edge over gRPC</td>
 		</tr>
 		<tr>
 			<td>edges.grpc_callback_thread_pool_size</td>
 			<td>EDGES_GRPC_CALLBACK_POOL_SIZE</td>
 			<td>1</td>
-			<td> Number of threads that used to convert edge events from DB into downlink message and send them for delivery</td>
+			<td> Number of threads that are used to convert edge events from DB into downlink messages and send them for delivery</td>
 		</tr>
 		<tr>
 			<td>edges.state.persistToTelemetry</td>
@@ -3890,7 +3594,7 @@
 </table>
 
 
-####  Swagger common properties
+####  Swagger common parameters
 
 <table>
 	<thead>
@@ -3903,25 +3607,25 @@
 			<td>swagger.enabled</td>
 			<td>SWAGGER_ENABLED</td>
 			<td>true</td>
-			<td> If false swagger api docs will be unavailable</td>
+			<td> If false swagger API docs will be unavailable</td>
 		</tr>
 		<tr>
 			<td>swagger.api_path_regex</td>
 			<td>SWAGGER_API_PATH_REGEX</td>
 			<td>/api/.*</td>
-			<td> General swagger match pattern of swaggerUI links</td>
+			<td> General swagger match pattern of swagger UI links</td>
 		</tr>
 		<tr>
 			<td>swagger.security_path_regex</td>
 			<td>SWAGGER_SECURITY_PATH_REGEX</td>
 			<td>/api/.*</td>
-			<td> General swagger match pattern path of swaggerUI links</td>
+			<td> General swagger match pattern path of swagger UI links</td>
 		</tr>
 		<tr>
 			<td>swagger.non_security_path_regex</td>
 			<td>SWAGGER_NON_SECURITY_PATH_REGEX</td>
 			<td>/api/(?:noauth|v1)/.*</td>
-			<td> Non security API path match pattern of swaggerUI links</td>
+			<td> Nonsecurity API path match pattern of swagger UI links</td>
 		</tr>
 		<tr>
 			<td>swagger.title</td>
@@ -3932,13 +3636,13 @@
 		<tr>
 			<td>swagger.description</td>
 			<td>SWAGGER_DESCRIPTION</td>
-			<td> ThingsBoard Professional Edition IoT platform REST API documentation.</td>
+			<td> ThingsBoard open-source IoT platform REST API documentation.</td>
 			<td> The description on the API doc UI page</td>
 		</tr>
 		<tr>
 			<td>swagger.contact.name</td>
 			<td>SWAGGER_CONTACT_NAME</td>
-			<td>ThingsBoard, Inc.</td>
+			<td>ThingsBoard team</td>
 			<td> The contact name on the API doc UI page</td>
 		</tr>
 		<tr>
@@ -3994,13 +3698,13 @@
 			<td>queue.in_memory.stats.print-interval-ms</td>
 			<td>TB_QUEUE_IN_MEMORY_STATS_PRINT_INTERVAL_MS</td>
 			<td>60000</td>
-			<td> For debug lvl</td>
+			<td> For debug level</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.bootstrap.servers</td>
 			<td>TB_KAFKA_SERVERS</td>
 			<td>localhost:9092</td>
-			<td> Kafka Bootstrap Servers</td>
+			<td> Kafka Bootstrap nodes in "host:port" format</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.ssl.enabled</td>
@@ -4024,13 +3728,13 @@
 			<td>queue.kafka.ssl.keystore.location</td>
 			<td>TB_KAFKA_SSL_KEYSTORE_LOCATION</td>
 			<td></td>
-			<td> The location of the key store file. This is optional for client and can be used for two-way authentication for client</td>
+			<td> The location of the key store file. This is optional for the client and can be used for two-way authentication for the client</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.ssl.keystore.password</td>
 			<td>TB_KAFKA_SSL_KEYSTORE_PASSWORD</td>
 			<td></td>
-			<td> The store password for the key store file. This is optional for client and only needed if ‘ssl.keystore.location’ is configured. Key store password is not supported for PEM format</td>
+			<td> The store password for the key store file. This is optional for the client and only needed if ‘ssl.keystore.location’ is configured. Key store password is not supported for PEM format</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.ssl.key.password</td>
@@ -4042,7 +3746,7 @@
 			<td>queue.kafka.acks</td>
 			<td>TB_KAFKA_ACKS</td>
 			<td>all</td>
-			<td> The number of acknowledgments the producer requires the leader to have received before considering a request complete. This controls the durability of records that are sent. The following settings are allowed:0,1 and all</td>
+			<td> The number of acknowledgments the producer requires the leader to have received before considering a request complete. This controls the durability of records that are sent. The following settings are allowed:0, 1 and all</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.retries</td>
@@ -4096,13 +3800,13 @@
 			<td>queue.kafka.max_poll_interval_ms</td>
 			<td>TB_QUEUE_KAFKA_MAX_POLL_INTERVAL_MS</td>
 			<td>300000</td>
-			<td> The maximum delay between invocations of poll() when using consumer group management. This places an upper bound on the amount of time that the consumer can be idle before fetching more records</td>
+			<td> The maximum delay between invocations of poll() method when using consumer group management. This places an upper bound on the amount of time that the consumer can be idle before fetching more records</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.max_poll_records</td>
 			<td>TB_QUEUE_KAFKA_MAX_POLL_RECORDS</td>
 			<td>8192</td>
-			<td> The maximum number of records returned in a single call to poll()</td>
+			<td> The maximum number of records returned in a single call of poll() method</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.max_partition_fetch_bytes</td>
@@ -4144,13 +3848,13 @@
 			<td>queue.kafka.confluent.ssl.algorithm</td>
 			<td>TB_QUEUE_KAFKA_CONFLUENT_SSL_ALGORITHM</td>
 			<td>https</td>
-			<td> The endpoint identification algorithm used by clients to validate server host name. The default value is https</td>
+			<td> The endpoint identification algorithm used by clients to validate server hostname. The default value is https</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.confluent.sasl.mechanism</td>
 			<td>TB_QUEUE_KAFKA_CONFLUENT_SASL_MECHANISM</td>
 			<td>PLAIN</td>
-			<td> The mechanism used to authenticate Schema Registry requests. SASL/PLAIN should only be used with TLS/SSL as transport layer to ensure that clear passwords are not transmitted on the wire without encryption</td>
+			<td> The mechanism used to authenticate Schema Registry requests. SASL/PLAIN should only be used with TLS/SSL as a transport layer to ensure that clear passwords are not transmitted on the wire without encryption</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.confluent.sasl.config</td>
@@ -4237,12 +3941,6 @@
 			<td> Kafka properties for Version Control topic</td>
 		</tr>
 		<tr>
-			<td>queue.kafka.topic-properties.integration-api</td>
-			<td>TB_QUEUE_KAFKA_INTEGRATION_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
-			<td> Kafka properties for Integration Api topics</td>
-		</tr>
-		<tr>
 			<td>queue.kafka.consumer-stats.enabled</td>
 			<td>TB_QUEUE_KAFKA_CONSUMER_STATS_ENABLED</td>
 			<td>true</td>
@@ -4258,13 +3956,13 @@
 			<td>queue.kafka.consumer-stats.kafka-response-timeout-ms</td>
 			<td>TB_QUEUE_KAFKA_CONSUMER_STATS_RESPONSE_TIMEOUT_MS</td>
 			<td>1000</td>
-			<td> Time to wait for the stats-loading requests to Kafka to finis</td>
+			<td> Time to wait for the stats-loading requests to Kafka to finish</td>
 		</tr>
 		<tr>
 			<td>queue.aws_sqs.use_default_credential_provider_chain</td>
 			<td>TB_QUEUE_AWS_SQS_USE_DEFAULT_CREDENTIAL_PROVIDER_CHAIN</td>
 			<td>false</td>
-			<td> Use default credentials provider for AWS SQS</td>
+			<td> Use the default credentials provider for AWS SQS</td>
 		</tr>
 		<tr>
 			<td>queue.aws_sqs.access_key_id</td>
@@ -4333,12 +4031,6 @@
 			<td> VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
 		</tr>
 		<tr>
-			<td>queue.aws_sqs.queue-properties.integration-api</td>
-			<td>TB_QUEUE_AWS_SQS_INTEGRATION_QUEUE_PROPERTIES</td>
-			<td>VisibilityTimeout:30;MaximumMessageSize:262144;MessageRetentionPeriod:604800</td>
-			<td> VisibilityTimeout in seconds;MaximumMessageSize in bytes;MessageRetentionPeriod in seconds</td>
-		</tr>
-		<tr>
 			<td>queue.pubsub.project_id</td>
 			<td>TB_QUEUE_PUBSUB_PROJECT_ID</td>
 			<td>YOUR_PROJECT_ID</td>
@@ -4360,7 +4052,7 @@
 			<td>queue.pubsub.max_messages</td>
 			<td>TB_QUEUE_PUBSUB_MAX_MESSAGES</td>
 			<td>1000</td>
-			<td> Number of messages per a consumer</td>
+			<td> Number of messages per consumer</td>
 		</tr>
 		<tr>
 			<td>queue.pubsub.queue-properties.rule-engine</td>
@@ -4395,12 +4087,6 @@
 		<tr>
 			<td>queue.pubsub.queue-properties.version-control</td>
 			<td>TB_QUEUE_PUBSUB_VC_QUEUE_PROPERTIES</td>
-			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
-			<td> Pub/Sub properties for Transport Api subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
-		</tr>
-		<tr>
-			<td>queue.pubsub.queue-properties.integration-api</td>
-			<td>TB_QUEUE_PUBSUB_INTEGRATION_QUEUE_PROPERTIES</td>
 			<td>ackDeadlineInSec:30;messageRetentionInSec:604800</td>
 			<td> Pub/Sub properties for Transport Api subscribers, messages which will commit after ackDeadlineInSec period can be consumed again</td>
 		</tr>
@@ -4465,12 +4151,6 @@
 			<td> Azure Service Bus properties for Version Control queues</td>
 		</tr>
 		<tr>
-			<td>queue.service_bus.queue-properties.integration-api</td>
-			<td>TB_QUEUE_SERVICE_BUS_INTEGRATION_QUEUE_PROPERTIES</td>
-			<td>lockDurationInSec:30;maxSizeInMb:1024;messageTimeToLiveInSec:604800</td>
-			<td> Azure Service Bus properties for Integration Api queues</td>
-		</tr>
-		<tr>
 			<td>queue.rabbitmq.exchange_name</td>
 			<td>TB_QUEUE_RABBIT_MQ_EXCHANGE_NAME</td>
 			<td></td>
@@ -4486,7 +4166,7 @@
 			<td>queue.rabbitmq.port</td>
 			<td>TB_QUEUE_RABBIT_MQ_PORT</td>
 			<td>5672</td>
-			<td> RabbitMQ host used to establish connection</td>
+			<td> RabbitMQ host used to establish a connection</td>
 		</tr>
 		<tr>
 			<td>queue.rabbitmq.virtual_host</td>
@@ -4561,12 +4241,6 @@
 			<td> RabbitMQ properties for Version Control queues</td>
 		</tr>
 		<tr>
-			<td>queue.rabbitmq.queue-properties.integration-api</td>
-			<td>TB_QUEUE_RABBIT_MQ_INTEGRATION_QUEUE_PROPERTIES</td>
-			<td>x-max-length-bytes:1048576000;x-message-ttl:604800000</td>
-			<td> RabbitMQ properties for Integration Api queues</td>
-		</tr>
-		<tr>
 			<td>queue.partitions.hash_function_name</td>
 			<td>TB_QUEUE_PARTITIONS_HASH_FUNCTION_NAME</td>
 			<td>murmur3_128</td>
@@ -4599,7 +4273,7 @@
 		<tr>
 			<td>queue.transport_api.max_callback_threads</td>
 			<td>TB_QUEUE_TRANSPORT_MAX_CALLBACK_THREADS</td>
-			<td>10</td>
+			<td>100</td>
 			<td> Amount of threads used to invoke callbacks</td>
 		</tr>
 		<tr>
@@ -4648,7 +4322,7 @@
 			<td>queue.core.ota.pack-interval-ms</td>
 			<td>TB_QUEUE_CORE_OTA_PACK_INTERVAL_MS</td>
 			<td>60000</td>
-			<td> The interval of processing the OTA updates for devices. Used to avoid any harm to network due to many parallel OTA updates</td>
+			<td> The interval of processing the OTA updates for devices. Used to avoid any harm to the network due to many parallel OTA updates</td>
 		</tr>
 		<tr>
 			<td>queue.core.ota.pack-size</td>
@@ -4660,7 +4334,7 @@
 			<td>queue.core.usage-stats-topic</td>
 			<td>TB_QUEUE_US_TOPIC</td>
 			<td>tb_usage_stats</td>
-			<td> Default topic name for queue Kafka, RabbitMQ, etc.</td>
+			<td> Stats topic name for queue Kafka, RabbitMQ, etc.</td>
 		</tr>
 		<tr>
 			<td>queue.core.stats.enabled</td>
@@ -4696,7 +4370,7 @@
 			<td>queue.vc.pack-processing-timeout</td>
 			<td>TB_QUEUE_VC_PACK_PROCESSING_TIMEOUT_MS</td>
 			<td>180000</td>
-			<td> Timeout before retry all failed and timed-out messages from processing pack</td>
+			<td> Timeout before retrying all failed and timed-out messages from the processing pack</td>
 		</tr>
 		<tr>
 			<td>queue.vc.request-timeout</td>
@@ -4756,7 +4430,7 @@
 			<td>queue.rule-engine.topic</td>
 			<td>TB_QUEUE_RULE_ENGINE_TOPIC</td>
 			<td>tb_rule_engine</td>
-			<td> Deprecated. Will be removed in nearest releases</td>
+			<td> Deprecated. It will be removed in the nearest releases</td>
 		</tr>
 		<tr>
 			<td>queue.rule-engine.poll-interval</td>
@@ -4786,7 +4460,7 @@
 			<td>queue.rule-engine.stats.max-error-message-length</td>
 			<td>TB_QUEUE_RULE_ENGINE_MAX_ERROR_MESSAGE_LENGTH</td>
 			<td>4096</td>
-			<td> Max length of error message that is printed by statistics</td>
+			<td> Max length of the error message that is printed by statistics</td>
 		</tr>
 		<tr>
 			<td>queue.rule-engine.queues.name</td>
@@ -4852,7 +4526,7 @@
 			<td>queue.rule-engine.queues.name.processing-strategy.failure-percentage</td>
 			<td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_FAILURE_PERCENTAGE</td>
 			<td>0</td>
-			<td> Skip retry if failures or timeouts are less then X percentage of messages;</td>
+			<td> Skip retry if failures or timeouts are less than X percentage of messages;</td>
 		</tr>
 		<tr>
 			<td>queue.rule-engine.queues.name.processing-strategy.pause-between-retries</td>
@@ -4870,97 +4544,19 @@
 			<td>queue.rule-engine.topic-deletion-delay</td>
 			<td>TB_QUEUE_RULE_ENGINE_TOPIC_DELETION_DELAY_SEC</td>
 			<td>30</td>
-			<td> After a queue is deleted (or profile's isolation option was disabled), Rule Engine will continue reading related topics during this period, before deleting the actual topics</td>
+			<td> After a queue is deleted (or the profile's isolation option was disabled), Rule Engine will continue reading related topics during this period before deleting the actual topics</td>
 		</tr>
 		<tr>
 			<td>queue.transport.notifications_topic</td>
 			<td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_TOPIC</td>
 			<td>tb_transport.notifications</td>
-			<td> For high priority notifications that require minimum latency and processing time</td>
+			<td> For high-priority notifications that require minimum latency and processing time</td>
 		</tr>
 		<tr>
 			<td>queue.transport.poll_interval</td>
 			<td>TB_QUEUE_TRANSPORT_NOTIFICATIONS_POLL_INTERVAL_MS</td>
 			<td>25</td>
 			<td> Interval in milliseconds to poll messages</td>
-		</tr>
-		<tr>
-			<td>queue.integration.partitions</td>
-			<td>TB_QUEUE_INTEGRATION_PARTITIONS</td>
-			<td>3</td>
-			<td> Name of hash function used for consistent hash ring in Cluster Mode. See architecture docs for more details. Valid values - murmur3_32, murmur3_128 or sha256</td>
-		</tr>
-		<tr>
-			<td>queue.integration.notifications_topic</td>
-			<td>TB_QUEUE_INTEGRATION_NOTIFICATIONS_TOPIC</td>
-			<td>tb_ie.notifications</td>
-			<td> Default notification topic name used by queue</td>
-		</tr>
-		<tr>
-			<td>queue.integration.downlink_topic</td>
-			<td>TB_QUEUE_INTEGRATION_DOWNLINK_TOPIC</td>
-			<td>tb_ie.downlink</td>
-			<td> Default downlink topic name used by queue</td>
-		</tr>
-		<tr>
-			<td>queue.integration.uplink_topic</td>
-			<td>TB_QUEUE_INTEGRATION_UPLINK_TOPIC</td>
-			<td>tb_ie.uplink</td>
-			<td> Default uplink topic name used by queue</td>
-		</tr>
-		<tr>
-			<td>queue.integration.poll_interval</td>
-			<td>TB_QUEUE_INTEGRATION_POLL_INTERVAL_MS</td>
-			<td>25</td>
-			<td> Interval in milliseconds to poll messages by integrations</td>
-		</tr>
-		<tr>
-			<td>queue.integration.pack-processing-timeout</td>
-			<td>TB_QUEUE_INTEGRATION_PACK_PROCESSING_TIMEOUT_MS</td>
-			<td>10000</td>
-			<td> Timeout for processing a message pack by integrations</td>
-		</tr>
-		<tr>
-			<td>queue.integration_api.requests_topic</td>
-			<td>TB_QUEUE_INTEGRATION_EXECUTOR_API_REQUEST_TOPIC</td>
-			<td>tb_ie.api.requests</td>
-			<td> Default Integration Api request topic name used by queue</td>
-		</tr>
-		<tr>
-			<td>queue.integration_api.responses_topic</td>
-			<td>TB_QUEUE_INTEGRATION_EXECUTOR_API_RESPONSE_TOPIC</td>
-			<td>tb_ie.api.responses</td>
-			<td> Default Integration Api response topic name used by queue</td>
-		</tr>
-		<tr>
-			<td>queue.integration_api.max_pending_requests</td>
-			<td>TB_QUEUE_INTEGRATION_EXECUTOR_MAX_PENDING_REQUESTS</td>
-			<td>10000</td>
-			<td> Maximum pending api requests from integration executor to be handled by server<</td>
-		</tr>
-		<tr>
-			<td>queue.integration_api.max_requests_timeout</td>
-			<td>TB_QUEUE_INTEGRATION_EXECUTOR_MAX_REQUEST_TIMEOUT</td>
-			<td>10000</td>
-			<td> Maximum timeout in milliseconds to handle api request from integration executor microservice by server</td>
-		</tr>
-		<tr>
-			<td>queue.integration_api.max_callback_threads</td>
-			<td>TB_QUEUE_INTEGRATION_EXECUTOR_MAX_CALLBACK_THREADS</td>
-			<td>10</td>
-			<td> Amount of threads used to invoke callbacks</td>
-		</tr>
-		<tr>
-			<td>queue.integration_api.request_poll_interval</td>
-			<td>TB_QUEUE_INTEGRATION_EXECUTOR_REQUEST_POLL_INTERVAL_MS</td>
-			<td>25</td>
-			<td> Interval in milliseconds to poll api requests from integration executor microservices</td>
-		</tr>
-		<tr>
-			<td>queue.integration_api.response_poll_interval</td>
-			<td>TB_QUEUE_INTEGRATION_EXECUTOR_RESPONSE_POLL_INTERVAL_MS</td>
-			<td>25</td>
-			<td> Interval in milliseconds to poll api response from integration executor microservices</td>
 		</tr>
 	</tbody>
 </table>
@@ -4981,24 +4577,6 @@
 			<td>4096</td>
 			<td> Maximum number of symbols per debug event. The event content will be truncated if needed</td>
 		</tr>
-		<tr>
-			<td>event.debug.rate_limits.enabled</td>
-			<td>DEBUG_MODE_RATE_LIMITS_PER_TENANT_ENABLED</td>
-			<td>true</td>
-			<td> If true rate limits will be active</td>
-		</tr>
-		<tr>
-			<td>event.debug.rate_limits.integration</td>
-			<td>INTEGRATION_DEBUG_MODE_RATE_LIMITS_PER_TENANT</td>
-			<td>50000:3600</td>
-			<td> No more than 50000 messages per hour</td>
-		</tr>
-		<tr>
-			<td>event.debug.rate_limits.converter</td>
-			<td>CONVERTER_DEBUG_MODE_RATE_LIMITS_PER_TENANT</td>
-			<td>50000:3600</td>
-			<td> No more than 50000 messages per hour</td>
-		</tr>
 	</tbody>
 </table>
 
@@ -5016,7 +4594,7 @@
 			<td>service.type</td>
 			<td>TB_SERVICE_TYPE</td>
 			<td>monolith</td>
-			<td> Allowed values: monolith, tb-core, tb-rule-engine</td>
+			<td> monolith or tb-core or tb-rule-engine</td>
 		</tr>
 		<tr>
 			<td>service.id</td>
@@ -5025,23 +4603,11 @@
 			<td> Unique id for this service (autogenerated if empty)</td>
 		</tr>
 		<tr>
-			<td>service.integrations.supported</td>
-			<td>TB_SERVICE_INTEGRATIONS_SUPPORTED</td>
-			<td>ALL</td>
-			<td> Allow to enable integration on service/microservice integration executor. Allowed values: OCEANCONNECT, SIGFOX, THINGPARK, TPE, CHIRPSTACK, TUYA, UDP, TCP, TTN, TTI, AZURE_EVENT_HUB, OPC_UA, IBM_WATSON_IOT, AWS_IOT, AWS_SQS, LORIOT, COAP, AZURE_SERVICE_BUS, HTTP, MQTT or ALL to allow all</td>
-		</tr>
-		<tr>
-			<td>service.integrations.excluded</td>
-			<td>TB_SERVICE_INTEGRATIONS_EXCLUDED</td>
-			<td>NONE</td>
-			<td> List of integrations to exclude from processing on service/microservice integration executor. Allowed values: OCEANCONNECT, SIGFOX, THINGPARK, TPE, CHIRPSTACK, TUYA, UDP, TCP, TTN, TTI, AZURE_EVENT_HUB, OPC_UA, IBM_WATSON_IOT, AWS_IOT, AWS_SQS, LORIOT, COAP, AZURE_SERVICE_BUS, HTTP, MQTT. By default NONE</td>
-		</tr>
-		<tr>
 			<td>service.rule_engine.assigned_tenant_profiles</td>
 			<td>TB_RULE_ENGINE_ASSIGNED_TENANT_PROFILES</td>
 			<td></td>
-			<td> Comma-separated list of tenant profiles ids assigned to this Rule Engine.
- This Rule Engine will only be responsible for tenants with these profiles (in case 'isolation' option is enabled in profile).</td>
+			<td> Comma-separated list of tenant profile ids assigned to this Rule Engine.
+ This Rule Engine will only be responsible for tenants with these profiles (in case 'isolation' option is enabled in the profile).</td>
 		</tr>
 	</tbody>
 </table>
@@ -5128,7 +4694,7 @@
 			<td>notification_system.thread_pool_size</td>
 			<td>TB_NOTIFICATION_SYSTEM_THREAD_POOL_SIZE</td>
 			<td>10</td>
-			<td> Specify thread pool size for Notification System processing notification rules and notification sending. Recommend value < =10</td>
+			<td> Specify thread pool size for Notification System processing notification rules and notification sending. Recommend value <= 10</td>
 		</tr>
 		<tr>
 			<td>notification_system.rules.deduplication_durations</td>

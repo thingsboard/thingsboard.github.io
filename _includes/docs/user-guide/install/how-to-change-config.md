@@ -59,21 +59,6 @@ corresponding deployments/stateful sets.
 See [K8S documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/)
 for more details.
 
-## Configuration parameters
-
-The parameters are grouped by system components. The list contains the name (address in thingsboard.yml file),
-environment variable, default value and description.
-
-### ThingsBoard Monolithic Parameters
-
-{% if docsPrefix == null %}
-{% include docs/user-guide/install/ce-config-tables.md %}
-{% endif %}
-
-{% if docsPrefix == "pe/" %}
-{% include docs/user-guide/install/pe-config-tables.md %}
-{% endif %}
-
 ### logback.xml
 
 The configuration file for logging. Allows controlling the log level, the size of log files and the total size/volume of

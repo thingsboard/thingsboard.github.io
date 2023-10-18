@@ -112,19 +112,10 @@ def group_properties_by_table(data):
 
     return property_groups
 
-
-if __name__ == '__main__':
-    sys. setrecursionlimit(10000)
-    input_yaml_file = input("Enter the path to the YAML file: ")
-    with open(input_yaml_file) as f:
-        if 'ThingsBoard, Inc. ("COMPANY") CONFIDENTIAL' in f.read():
-            output_md_file = "_includes/docs/user-guide/install/pe-config-tables.md"
-        else:
-            output_md_file = "_includes/docs/user-guide/install/ce-config-tables.md"
-
+def update_page(input_file, output_file):
     # Parse yml file to map, where key is property key path with '.' separator
     # and value is an object (env_name_with_default_value, comment, table_name)
-    properties = extract_properties_with_comments(input_yaml_file)
+    properties = extract_properties_with_comments(input_file)
 
     # Extract property information (extract env_name, default value, comment located nearby property, table_name)
     property_info = extract_property_info(properties)
@@ -138,6 +129,43 @@ if __name__ == '__main__':
         tables += '\n\n' + generate_html_table(group, property_groups[group])
 
     # Save HTML to the output file
-    save_html_to_file(tables, output_md_file)
+    save_html_to_file(tables, output_file)
 
-    print(f"Configuration file {output_md_file} was successfully updated in accordance with {input_yaml_file}")
+    print(f"Configuration file {output_file} was successfully updated in accordance with {input_file}")
+
+
+if __name__ == '__main__':
+    sys. setrecursionlimit(10000)
+    input_yaml_file = input("Enter the path to the thingsboard repository (CE or PE): ")
+    if input_yaml_file.endswith("pe"):
+        update_page(input_yaml_file + "/application/src/main/resources/thingsboard.yml",
+                    "_includes/docs/pe/user-guide/install/core-rule-engine-config.md")
+        update_page(input_yaml_file + "/transport/http/src/main/resources/tb-http-transport.yml",
+                    "_includes/docs/pe/user-guide/install/http-transport-config.md")
+        update_page(input_yaml_file + "/transport/mqtt/src/main/resources/tb-mqtt-transport.yml",
+                    "_includes/docs/pe/user-guide/install/mqtt-transport-config.md")
+        update_page(input_yaml_file + "/transport/coap/src/main/resources/tb-coap-transport.yml",
+                    "_includes/docs/pe/user-guide/install/coap-transport-config.md")
+        update_page(input_yaml_file + "/transport/lwm2m/src/main/resources/tb-lwm2m-transport.yml",
+                    "_includes/docs/pe/user-guide/install/lwm2m-transport-config.md")
+        update_page(input_yaml_file + "/transport/snmp/src/main/resources/tb-snmp-transport.yml",
+                    "_includes/docs/pe/user-guide/install/snmp-transport-config.md")
+        update_page(input_yaml_file + "/msa/vc-executor/src/main/resources/tb-vc-executor.yml",
+                    "_includes/docs/pe/user-guide/install/vc-executor-config.md")
+        update_page(input_yaml_file + "/integration/executor/src/main/resources/tb-integration-executor.yml",
+                    "_includes/docs/pe/user-guide/install/ie-executor-config.md")
+    else:
+        update_page(input_yaml_file + "/application/src/main/resources/thingsboard.yml",
+                    "_includes/docs/user-guide/install/core-rule-engine-config.md")
+        update_page(input_yaml_file + "/transport/http/src/main/resources/tb-http-transport.yml",
+                    "_includes/docs/user-guide/install/http-transport-config.md")
+        update_page(input_yaml_file + "/transport/mqtt/src/main/resources/tb-mqtt-transport.yml",
+                    "_includes/docs/user-guide/install/mqtt-transport-config.md")
+        update_page(input_yaml_file + "/transport/coap/src/main/resources/tb-coap-transport.yml",
+                    "_includes/docs/user-guide/install/coap-transport-config.md")
+        update_page(input_yaml_file + "/transport/lwm2m/src/main/resources/tb-lwm2m-transport.yml",
+                    "_includes/docs/user-guide/install/lwm2m-transport-config.md")
+        update_page(input_yaml_file + "/transport/snmp/src/main/resources/tb-snmp-transport.yml",
+                    "_includes/docs/user-guide/install/snmp-transport-config.md")
+        update_page(input_yaml_file + "/msa/vc-executor/src/main/resources/tb-vc-executor.yml",
+                    "_includes/docs/user-guide/install/vc-executor-config.md")
