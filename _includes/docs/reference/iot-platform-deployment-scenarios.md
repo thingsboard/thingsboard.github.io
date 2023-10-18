@@ -164,7 +164,7 @@ Adding [Premium support](/docs/services/support/) package results in ~1000 USD p
 
 ThingsBoard supports Microservices architecture (MSA) to perform scalable deployments for millions of devices. See [platform architecture](/docs/{{docsPrefix}}reference/msa/) for more details, please. With MSA deployments, system administrator can flexibly tune number of transport, rule-engine, web-ui and JavaScript executor microservices to optimize the cluster according to the current load.
 
-ThingsBoard uses [Kafka](https://kafka.apache.org/) as a main message queue and streaming solution, [Redis](https://redis.io/) as a distributed cache and [Cassandra](http://cassandra.apache.org/) as a highly available, scalable and fast NoSQL database. 
+ThingsBoard uses [Kafka](https://kafka.apache.org/) as a main message queue and streaming solution, [Redis](https://redis.io/) as a distributed cache and [Cassandra](https://cassandra.apache.org/) as a highly available, scalable and fast NoSQL database. 
 Note that Cassandra usage is optional and is recommended in case of high telemetry data rate (more then 20,000 data points per second)
 In other cases PostgreSQL based deployment is sufficient.
 
