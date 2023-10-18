@@ -74,7 +74,7 @@ All ThingsBoard nodes are identical and registered as ephemeral in Zookeeper. Ap
 
 ###### Consistent Hashing
 
-ThingsBoard adopts [consistent hashing](https://dzone.com/articles/simple-magic-consistent) to ensure scalability and availability.
+ThingsBoard adopts [consistent hashing](https://en.wikipedia.org/wiki/Consistent_hashing) to ensure scalability and availability.
 Message from Device A that is received on a particular node may be forwarded to the other node based on the hash of the device ID.
 Although this introduces certain networking overhead, it allows to process all messages from a particular device using corresponding device actor on a determined server, which introduces the following advantages:
 
