@@ -73,7 +73,7 @@ The rule node applies math function and saves the result into the message and/or
 | SIGNUM    | 1 | Returns the signum function of the argument; zero if the argument is zero, 1.0 if the argument is greater than zero, -1.0 if the argument is less than zero.            |  [Math.signum](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#signum(double)) |
 | RAD       | 1 | Converts an angle measured in degrees to an approximately equivalent angle measured in radians.             |  [Math.toRadians](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#toRadians(double)) |
 | DEG       | 1 | Converts an angle measured in radians to an approximately equivalent angle measured in degrees.            |  [Math.toDegrees](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#toDegrees(double)) |
-| CUSTOM    | 1-16| Use this function to specify complex math expressions. For example, transform Fahrenheit to Celsius using (x - 32) / 1.8) | [exp4j](https://www.objecthunter.net/exp4j/)  |
+| CUSTOM    | 1-16| Use this function to specify complex math expressions. For example, transform Fahrenheit to Celsius using (x - 32) / 1.8) | [exp4j](https://github.com/fasseg/exp4j)  |
 
 You may use 5 types of arguments:
 
@@ -137,9 +137,9 @@ inside Alarm. For example you can save attribute name/value pair from Original M
  
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-config.png)
 
-- Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br/> 
-- Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br/> 
-- Message _type_ can be accessed via <code>msgType</code> property. For example <code>msgType</code><br/>
+- Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br> 
+- Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br> 
+- Message _type_ can be accessed via <code>msgType</code> property. For example <code>msgType</code><br>
 
 **Optional:** previous Alarm Details can be accessed via <code>metadata.prevAlarmDetails</code>. 
 If previous Alarm does not exist, this field will not be present in Metadata. **Note** that  <code>metadata.prevAlarmDetails</code> 
@@ -231,7 +231,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 
-<br/>
+<br>
 
 # Clear Alarm Node
 
@@ -263,9 +263,9 @@ inside Alarm. For example you can save attribute name/value pair from Original M
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm-config.png)
  
-- Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br/> 
-- Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br/> 
-- Message _type_ can be accessed via <code>msgType</code> property. For example <code>msgType</code><br/>
+- Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br> 
+- Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br> 
+- Message _type_ can be accessed via <code>msgType</code> property. For example <code>msgType</code><br>
 - Current Alarm Details can be accessed via <code>metadata.prevAlarmDetails</code>. 
 
 **Note** that  <code>metadata.prevAlarmDetails</code> 
@@ -351,9 +351,9 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 
-<br/>
+<br>
 
-# Delay Node
+# delay (deprecated)
 
 <table  style="width:250px;">
    <thead>
@@ -363,22 +363,47 @@ You can see the real life example, where this node is used, in the next tutorial
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-delay.png)
+Delays incoming messages for a configurable period. In other words, node receives a message, holds it for a set duration, and then sends it to the next rule nodes for further action.
 
-Delays incoming messages for configurable period.
+**Configuration**
 
-Configuration:
+![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/action-delay-config.png)
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-delay-config.png)
+- **Period value**: number that tells the node how long to delay. For example, if you put 5 here, it means you want the node to wait for 5 units of time.
+- **Period time unit**: time unit you're using for the delaying period. Available values are: seconds, minutes, hours. So, when paired with the **Period value**, if you chose 5 for **Period Value** and seconds for **Period time unit**, the node would wait for 5 seconds.
+- **Maximum pending messages**: limit on how many messages the node can delay at once. For example, If you set a number like 1000, it means the node can delay up to 1000 messages at a time. Once this limit is reached, any new incoming messages will be routed via **Failure** connection type until there's space available.
 
-- **Period in seconds** - specifies the value of the period during which incoming message should be suspended
-- **Maximum pending messages** - specifies the amount of maximum allowed pending messages (queue of suspended messages) 
+> **Note**: **Period value** and **Period time unit** fields support templatization.
 
-When delay period for particular incoming message will be reached it will be removed from pending queue and routed to the next nodes via **Success** chain.
-  
-Each next message will be routed via **Failure** chain if the maximum pending messages limit will be reached.  
+**Output**
+- **Success**: If message was delayed successfully.
+- **Failure**: If maximum pending messages is reached or unexpected error happened during messages processing.
 
-<br/>
+> **Note**: Incoming messages are not modified during processing.
+
+**Usage example: waiting for external long-running tasks**
+
+Consider the following scenario: we have an external API that initiates a long-running task. Upon the initial request, the API responds immediately, indicating that the task has started. However, we need to ensure the task is completed before we can proceed with further processing.
+
+Solution with delay node:
+1. **Initiate the task**: Our rule chain starts with the REST API call node, which makes a request to the external API to initiate the long-running task.
+2. **Receive immediate response**: The external API quickly returns a response, confirming the task has been launched.
+3. **Waiting for completion**: After receiving the initial response, instead of proceeding immediately, we introduce the delay node into our rule chain. This node is configured to introduce a 30-second wait, providing time for the external task to complete.
+4. **Continue processing**: Once the delay is over, processing resumes, possibly involving another REST API call to check the status or retrieve results of the long-running task, and then proceeding with the next steps in the rule chain based on the task's completion status.
+
+By using the delay node in this manner, we handle scenarios where immediate processing is not feasible due to external dependencies, ensuring smoother and more accurate message handling.
+
+![Rule chain example image](/images/user-guide/rule-engine-2-0/nodes/action-delay-chain.png)
+
+**Deprecation**
+
+Because this node temporarily stores delayed messages in memory (thus, while message is in processing it is not persistent), they may be lost if ThingsBoard is restarted or node configuration is changed: these actions trigger node initialization during which old node state (which holds currently delayed messages) is cleared and new empty one is created.
+
+**Notes**
+
+Usage with sequential processing strategy: please, be aware that this node acknowledges incoming message, which will trigger processing of the next message in the queue.
+
+<br>
 
 # Generator Node
 
@@ -425,7 +450,7 @@ JavaScript generator function can be verified using [Test JavaScript function](/
 
 This node can be used for Rule Chain debugging purposes.
 
-<br/>
+<br>
 
 # Log Node 
 
@@ -555,7 +580,7 @@ Otherwise Message will be routed via **Success** chain.
 
 For more details how RPC works in the Thingsboard, please read [RPC capabilities](/docs/{{docsPrefix}}user-guide/rpc/) article.
 
-<br/>
+<br>
 
 # Save Attributes Node
 
@@ -599,7 +624,7 @@ to the expected format and set message type to **POST_ATTRIBUTES_REQUEST**. It c
 After successful attributes saving, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
-<br/>
+<br>
 
 # Save Timeseries Node 
 
@@ -661,7 +686,7 @@ So, to make sure that all the messages will be processed correctly, one should e
 After successful timeseries data saving, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
-<br/>
+<br>
 
 # Save to Custom Table
 
@@ -693,7 +718,7 @@ If specified message field does not exist in the **data** of the message or is n
 
 **NOTE**: Please make sure that you are not using **metadata** keys in the configuration - only **data** keys are possible.  
 
-<br/>
+<br>
 
 # Assign To Customer Node 
 
@@ -730,7 +755,7 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain. 
 
-<br/>
+<br>
 
 # Unassign From Customer Node
 
@@ -764,7 +789,7 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain. 
 
-<br/>
+<br>
 
 # Create Relation Node 
 
@@ -820,7 +845,7 @@ In other cases Message will be routed via **Success** chain.
  
     ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-change-originator.png)
 
-<br/>
+<br>
 
 # Delete Relation Node
 
@@ -862,7 +887,7 @@ In other cases Message will be routed via **Success** chain.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-new-functionality.png)
 
-<br/>
+<br>
 
 # GPS Geofencing Events Node
 

@@ -24,7 +24,7 @@ For simplicity, we will provision device manually using the UI.
 
 Learn more about **notifications** and how to configure them [here](#step-6-alarm-notifications).
 
-<br/>
+<br>
 You may also use:
  * [Bulk provisioning](/docs/{{docsPrefix}}user-guide/bulk-provisioning/) to provision multiple devices from a CSV file using UI;
  * [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning/) to allow device firmware to automatically provision the device, so you don't need to configure each device manually;

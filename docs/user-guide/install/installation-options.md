@@ -18,7 +18,7 @@ notitle: "true"
                         ThingsBoard is designed to run and utilize on majority of hardware, from local Raspberry PI to powerful servers in the cloud
                     </p>
                 </div>
-            </div>            
+            </div>
             <div class="deployment-container">
                <nav id="install-navigation" class="install-navigation">
                  <ul id="menu-install-navigation-1" class="menu">
@@ -125,11 +125,11 @@ notitle: "true"
                                             </span>
                                         </a>
                                     </div>
-                               </div>                    
-                            </div>                        
+                               </div>
+                            </div>
                         </div>
                         <div class="deployment-section deployment-cloud" id="cloud">
-                            <div class="deployment-cards">                  
+                            <div class="deployment-cards">
                                 <div class="deployment-cards-container">
                                     <div class="deployment-card-block">
                                         <a href="/docs/user-guide/install/aws/">
@@ -185,11 +185,11 @@ notitle: "true"
                                             </span>
                                         </a>
                                     </div>
-                               </div>                    
-                            </div>                                                      
+                               </div>
+                            </div>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
           </div>
        </div>

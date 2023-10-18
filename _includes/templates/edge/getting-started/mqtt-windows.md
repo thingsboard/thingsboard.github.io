@@ -1,6 +1,6 @@
 
-Install [MQTTBox](http://workswithweb.com/mqttbox.html) plugin for [Chrome](https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf). Use the instructions listed below:
+Install [MQTTBox](https://chrome.google.com/webstore/detail/mqttbox/kaajoficamnjijhkeomgfljpicifbkaf) plugin for [Chrome](https://www.google.com/chrome/). Use the instructions listed below:
  
 {% include images-gallery.html imageCollection="mqttWindows" showListImageTitles="true" %}
 
-<br/>
+<br>

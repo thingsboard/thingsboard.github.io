@@ -17,9 +17,9 @@ notitle: "true"
                     </p>
                 </div>
             </div>
-            <div class="col-lg-12 deployment-container">                
+            <div class="col-lg-12 deployment-container">
                 <div class="deployment-div">
-                    <div class="container">                        
+                    <div class="container">
                         <div class="deployment-section deployment-on-premise" id="onPremise">
                            <div class="deployment-cards">
                                 <div class="deployment-cards-container">
@@ -68,18 +68,18 @@ notitle: "true"
                                             </span>
                                         </a>
                                     </div>
-                               </div>                    
-                            </div>                        
+                               </div>
+                            </div>
                         </div>
                     </div>
-                </div>    
-            </div>            
+                </div>
+            </div>
           </div>
        </div>
     </div>
 </div>
 
-<script type="text/javascript">
+<script>
 
     inViewportDefer(function() {
         $(".deployment-cards .deployment-cards-container .deployment-card-block").inViewport(function(px){
@@ -91,13 +91,13 @@ notitle: "true"
     });
 
     jqueryDefer(function () {
-    
+
         window.addEventListener('popstate', onPopStateEdgeInstallOptions);
-        
+
         onPopStateEdgeInstallOptions();
-        
+
     });
-    
+
     function onPopStateEdgeInstallOptions() {
             var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
             var targetId = params['edgeInstallType'];
@@ -106,15 +106,15 @@ notitle: "true"
             }
             selectTargetEdgeInstallOption('#'+targetId);
     }
-        
+
     function selectTargetEdgeInstallOption(targetId) {
-         $(".deployment-selector .deployment").removeClass("active");         
+         $(".deployment-selector .deployment").removeClass("active");
          $(".deployment-selector .deployment[data-toggle='"+targetId+"']").addClass("active");
          $(".deployment-selector .deployment[data-toggle='"+targetId+"'] .magic-radio").prop("checked", true);
-         
+
          $('.deployment-div .deployment-section').removeClass("active");
          $('.deployment-div .deployment-section'+targetId).addClass("active");
-         
+
          $('.deployment-div .deployment-section' + targetId + ' .deployment-card-block').addClass("animated zoomIn");
     }
 </script>

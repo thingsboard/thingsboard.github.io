@@ -6,7 +6,7 @@ chip: Google Edge TPU ML
 connectivity: WIFI, Bluetooth
 vendor: Google
 deviceImageFileName: coral-dev-board.jpg
-docsPrefix: paas
+docsPrefix: paas/
 ---
 
 

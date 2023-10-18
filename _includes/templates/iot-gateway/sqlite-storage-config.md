@@ -12,10 +12,13 @@
 
 Storage section of configuration file will look like:
 
-```yaml
-storage
-  type: sqlite
-  data_file_path: ./data/data.db
-  messages_ttl_check_in_hours: 1
-  messages_ttl_in_days: 7
+```json
+...
+"storage": {
+  "type": "memory",
+  "data_file_path": "./data/data.db",
+  "messages_ttl_check_in_hours": 1,
+  "messages_ttl_in_days": 7
+},
+...
 ```

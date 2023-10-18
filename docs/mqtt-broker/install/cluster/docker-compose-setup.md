@@ -61,7 +61,7 @@ Execute the following command to start services:
 {: .copy-code}
 
 After a while when all services will be successfully started you can make requests to `http://{your-host-ip}:8083` 
-in you browser (e.g. [http://localhost:8083](http://localhost:8083)) and connect clients using MQTT protocol on 1883 port.
+in you browser (e.g. **http://localhost:8083**) and connect clients using MQTT protocol on 1883 port.
 
 {% include templates/mqtt-broker/login.md %}
 

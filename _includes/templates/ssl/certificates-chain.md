@@ -5,10 +5,10 @@
 ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://thingsboard.cloud/signup).
 Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide to provision server certificate if you are hosting your own ThingsBoard instance.
 
-Once provisioned, you should prepare a certificate chain in pem format. This chain will be used by mqtt client to validate the server certificate.
-Save the chain to your working directory as {% if docsPrefix == 'paas/' %}"**tb-cloud-chain.pem**".{% else %}"**tb-server-chain.pem**".{% endif %}
-An example of certificate chain for *mqtt.thingsboard.cloud* is located 
-{% if docsPrefix == 'paas/' %}[here](/docs/paas/user-guide/resources/mqtt-over-ssl/tb-cloud-chain.pem).{% else %}[here](/docs/paas/user-guide/resources/mqtt-over-ssl/tb-server-chain.pem).{% endif %}
+Once provisioned, you should prepare a CA root certificate in pem format. This certificate will be used by mqtt client to validate the server certificate.
+Save the CA root certificate to your working directory as "**ca-root.pem**".
+An example of CA root certificate for *mqtt.thingsboard.cloud* is located 
+[here](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem).
 
 #### Step 2. Generate Client certificate chain
 
@@ -55,7 +55,7 @@ Common Name (e.g. server FQDN or YOUR name) []:company.com
 Email Address []:
 {% endhighlight %}
 </details>
-<br/>
+<br>
 
 **Step 2.2** Generate intermediate certificate 
 
@@ -95,7 +95,7 @@ A challenge password []:
 An optional company name []:
 {% endhighlight %}
 </details>
-<br/>
+<br>
 
 To generate the intermediate certificate, use the following command. Don't forget to put the correct CN when prompted:
 
@@ -114,7 +114,7 @@ subject=C = AU, ST = Some-State, O = Internet Widgits Pty Ltd, CN = group.compan
 Getting CA Private Key
 {% endhighlight %}
 </details>
-<br/>
+<br>
 
 
 **Step 2.3** Generate device certificate 
@@ -155,7 +155,7 @@ A challenge password []:
 An optional company name []:
 {% endhighlight %}
 </details>
-<br/>
+<br>
 
 To generate the intermediate certificate, use the following command. Don't forget to put the correct CN when prompted:
 
@@ -174,7 +174,7 @@ subject=C = AU, ST = Some-State, O = Internet Widgits Pty Ltd, CN = device.group
 Getting CA Private Key
 {% endhighlight %}
 </details>
-<br/>
+<br>
 
 
 Finally, you need to concatenate certificates into a chain starting from the device certificate till the root.
@@ -200,13 +200,13 @@ Execute the following command to upload temperature readings to ThingsBoard Clou
 
 {% if docsPrefix == 'paas/' %}
 ```bash
-mosquitto_pub --cafile tb-cloud-chain.pem -d -q 1 -h "mqtt.thingsboard.cloud" -p "8883" \
+mosquitto_pub --cafile ca-root.pem -d -q 1 -h "mqtt.thingsboard.cloud" -p "8883" \
 -t "v1/devices/me/telemetry" --key deviceKey.pem --cert chain.pem -m {"temperature":25}
 ```
 {: .copy-code}
 {% else %}
 ```bash
-mosquitto_pub --cafile tb-server-chain.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
+mosquitto_pub --cafile ca-root.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
 -t "v1/devices/me/telemetry" --key deviceKey.pem --cert chain.pem -m {"temperature":25}
 ```
 {: .copy-code}

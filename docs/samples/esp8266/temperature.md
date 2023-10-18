@@ -23,15 +23,15 @@ The application that is running on ESP8266 is written using Arduino SDK which is
 
 The video below demonstrates the final result of this tutorial.
 
-<br/>
-<br/>
+<br>
+<br>
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/S8JNPYsdT_M" frameborder="0" allowfullscreen></iframe>
     </div>
 </div>
-<br/>
-<br/>
+<br>
+<br>
 
 Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
 

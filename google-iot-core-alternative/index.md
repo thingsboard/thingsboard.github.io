@@ -9,10 +9,10 @@ notitle: "true"
     <section class="intro">
         <main>
             <h1>ThingsBoard as a Google IoT Core alternative</h1>
-            <h1 class="clari"></h1>
+            <h2 class="clari"></h2>
         </main>
     </section>
-    
+
     <section class="description">
         <main>
             <div class="features-top">
@@ -21,17 +21,17 @@ notitle: "true"
                 </div>
                 <div class="block" style="padding-top: 160px; ">
                     <div>
-                        <p>Google Cloud will shut down the IoT Core service in August 2023. You might be wondering where and how to migrate. 
+                        <p>Google Cloud shut down the IoT Core service in August 2023. You might be wondering where and how to migrate. 
                            ThingsBoard is an excellent alternative to Google IoT Cloud. 
-                           Launched in 2016 as an open source project, ThingsBoard has grown to a mature platform with 1000+ customers worldwide.</p>
+                           Launched in 2016 as an open-source project, ThingsBoard has grown to a mature platform with 1000+ customers worldwide.</p>
                         <p>ThingsBoard, Inc. provides managed services, training, support, and software development services around the platform. 
                            We may also host and manage a private platform instance in your existing Google Cloud infrastructure. </p>
-                    </div>    
+                    </div>
                 </div>
             </div>
         </main>
     </section>
-    
+
     <section class="description features-comparison">
         <main>
             <div class="features-top">
@@ -42,12 +42,12 @@ notitle: "true"
                            ThingsBoard provides an alternative implementation to Google IoT Core features with similar and, in some cases, identical APIs.
                            Our platform is much more than a <a href="/docs/reference/msa/">scalable</a> service to accept and route telemetry.
                            ThingsBoard brings full IoT application enablement capabilities. See the feature comparison table below: </p>
-                    </div>    
+                    </div>
                 </div>
             </div>
         </main>
     </section>
-    
+
     <section class="matrix">
         <main>
             <div class="backg-matrix">
@@ -58,65 +58,65 @@ notitle: "true"
                     <thead>
                         <tr>
                             <td></td>
-                            <th>Google<br/>IoT Core</th>
-                            <th>ThingsBoard<br/>Professional Edition</th>
+                            <th>Google<br>IoT Core</th>
+                            <th>ThingsBoard<br>Professional Edition</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
                             <th>Asset/Device Management and Data Collection</th>
-                            <td><img src="/images/pe/checked.svg"></td>
-                            <td><img src="/images/pe/checked.svg"></td>
+                            <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
+                            <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
                         </tr>
                         <tr>
                             <th>MQTT, HTTP transports</th>
-                            <td><img src="/images/pe/checked.svg"></td>
-                            <td><img src="/images/pe/checked.svg"></td>
+                            <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
+                            <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
                         </tr>
                         <tr>
                             <th>Pub/Sub Integration</th>
-                            <td><img src="/images/pe/checked.svg"></td>
-                            <td><img src="/images/pe/checked.svg"></td>
+                            <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
+                            <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
                         </tr>
                         <tr>
                             <th>Commands to devices</th>
-                            <td><img src="/images/pe/checked.svg"></td>
-                            <td><img src="/images/pe/checked.svg"></td>
+                            <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
+                            <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
                         </tr>
                         <tr>
                             <th>Scalability</th>
-                            <td><img src="/images/pe/checked.svg"></td>
-                            <td><img src="/images/pe/checked.svg"></td>
+                            <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                            <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/user-guide/rbac/">User management and RBAC<img src="/images/pe/help-black18.svg"></a></th>
-                            <td><img src="/images/pe/unchecked.svg"></td>
-                            <td><img src="/images/pe/checked.svg"></td>
+                            <th><a href="/docs/user-guide/rbac/">User management and RBAC<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                            <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
+                            <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/pe/user-guide/dashboards/">Real-time, customizable dashboards<img src="/images/pe/help-black18.svg"></a></th>
-                            <td><img src="/images/pe/unchecked.svg"></td>
-                            <td><img src="/images/pe/checked.svg"></td>
+                            <th><a href="/docs/pe/user-guide/dashboards/">Real-time, customizable dashboards<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                            <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
+                            <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/user-guide/white-labeling/">White-labeled branded IoT solutions<img src="/images/pe/help-black18.svg"></a></th>
-                            <td><img src="/images/pe/unchecked.svg"></td>
-                            <td><img src="/images/pe/checked.svg"></td>
+                            <th><a href="/docs/user-guide/white-labeling/">White-labeled branded IoT solutions<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                            <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
+                            <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/pe/user-guide/ota-updates/">OTA updates support<img src="/images/pe/help-black18.svg"></a></th>
-                            <td><img src="/images/pe/unchecked.svg"></td>
-                            <td><img src="/images/pe/checked.svg"></td>
+                            <th><a href="/docs/pe/user-guide/ota-updates/">OTA updates support<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                            <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
+                            <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/pe/getting-started-guides/connectivity/">Additional LWM2M and SNMP transports<img src="/images/pe/help-black18.svg"></a></th>
-                            <td><img src="/images/pe/unchecked.svg"></td>
-                            <td><img src="/images/pe/checked.svg"></td>
+                            <th><a href="/docs/pe/getting-started-guides/connectivity/">Additional LWM2M and SNMP transports<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                            <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
+                            <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/user-guide/integrations/">NB-IoT, SigFox, LoRaWAN and other integrations<img src="/images/pe/help-black18.svg"></a></th>
-                            <td><img src="/images/pe/unchecked.svg"></td>
-                            <td><img src="/images/pe/checked.svg"></td>
+                            <th><a href="/docs/user-guide/integrations/">NB-IoT, SigFox, LoRaWAN and other integrations<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                            <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
+                            <td><img src="/images/pe/checked.svg" alt="checked"></td>
                         </tr>
                     </tbody>
             </table>
@@ -132,40 +132,40 @@ notitle: "true"
             <h3>Key concepts</h3>
             <p>See mapping of the key IoT Core concepts to ThingsBoard features documentation below:</p>
             <div class="row cards">
-                <div class="col-lg-6">  
+                <div class="col-lg-6">
 					<div class="block">
 						<div>
 							<a class="title" href="/docs/pe/user-guide/ui/devices/">Device</a>
 							<p>ThingsBoard supports provisioning and management of <a href="/docs/pe/user-guide/ui/devices/">devices</a> similar to Google IoT Core. 
-                            However, IoT application is not only about devices. ThingsBoard support other <a href="/docs/pe/user-guide/entities-and-relations/">entities and relations</a> between them.
+                            However, IoT application is not only about devices. ThingsBoard supports other <a href="/docs/pe/user-guide/entities-and-relations/">entities and relations</a> between them.
                             The relations model enables advanced use cases and business logic. For example, you may configure relations between assets, devices, customers, etc.</p>
 						</div>
 					</div>
 				</div>
-                <div class="col-lg-6">  
+                <div class="col-lg-6">
 					<div class="block">
 						<div>
 							<a class="title" href="/docs/pe/user-guide/telemetry/">Telemetry</a>
 							<p>Telemetry is the event data sent from the device to the cloud. For example, measurements about the environment. 
                             ThingsBoard allows you to collect data from devices similar to IoT Core. ThingsBoard also enables data processing (including validation, alerting, etc.) and storage inside the platform.
                             See <a href="/docs/pe/user-guide/rule-engine-2-0/re-getting-started/">Rule Engine</a> for more details.
-                            You may also forward the data to external systems (e.g. PubSub) and reuse your existing data processing flow.</p>
+                            You may also forward the data to external systems (e.g., PubSub) and reuse your existing data processing flow.</p>
 						</div>
 					</div>
 				</div>
-                <div class="col-lg-6">  
+                <div class="col-lg-6">
 					<div class="block">
 						<div>
 							<a class="title" href="/docs/pe/user-guide/device-connectivity-status/">Device state</a>
 							<p>ThingsBoard monitors device <a href="/docs/pe/user-guide/device-connectivity-status/">connectivity status</a>
                             and allows devices to upload their state via the client <a href="/docs/pe/user-guide/attributes/#client-side-attributes">attributes</a> feature.
-                            You may configure platform to raise alerts when devices are offline or change state. 
+                            You can configure the platform to raise alerts when devices are offline or change state. 
                             ThingsBoard also allows you to distribute over-the-air <a href="/docs/pe/user-guide/ota-updates/">firmware and software updates</a> and monitor the update process. 
                             </p>
 						</div>
 					</div>
 				</div>
-                <div class="col-lg-6">  
+                <div class="col-lg-6">
 					<div class="block">
 						<div>
 							<a class="title" href="/docs/pe/user-guide/attributes/">Device configuration</a>
@@ -178,7 +178,7 @@ notitle: "true"
 						</div>
 					</div>
 				</div>
-                <div class="col-lg-6">  
+                <div class="col-lg-6">
 					<div class="block">
 						<div>
 							<a class="title" href="/docs/pe/user-guide/device-provisioning/">Device registry and device manager</a>
@@ -200,13 +200,13 @@ notitle: "true"
                             ThingsBoard also acts like an MQTT broker, but there are a few differences. 
                             With ThingsBoard, you are not limited by static topic name patterns and can define any wildcard topic filters for your needs.
                             The platform accepts JSON or protobuf payloads.
-                            ThingsBoard suppors <a href="/docs/pe/user-guide/access-token/">access tokens</a>,
+                            ThingsBoard supports <a href="/docs/pe/user-guide/access-token/">access tokens</a>,
                             <a href="/docs/pe/user-guide/basic-mqtt/">basic MQTT credentials</a> or
                             <a href="/docs/pe/user-guide/certificates/">X.509 certificates</a>.
-                            
+
                             In addition to MQTT and HTTP support, devices can natively communicate with the platform using other protocols like CoAP, LwM2M, and SNMP. 
                             You may also use our <a href="/docs/iot-gateway/what-is-iot-gateway/">IoT Gateway</a> to integrate devices connected to legacy and third-party systems via BLE, CAN, Modbus, OPC-UA, BACnet, ODBC, etc.
-                            
+
                             ThingsBoard also has built-in integrations with external systems like SigFox, LoRaWAN, NB IoT, etc. 
                             You may find a list of all available integrations <a href="/docs/user-guide/integrations/">here</a>.</p>
 						</div>

@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-gw
-title: ThingsBoard IoT Gateway Features
-description: ThingsBoard IoT Gateway features 
+title: Device Renaming/Removing Handling
+description: Device Renaming/Removing Handling
 
 ---
 
@@ -30,7 +30,6 @@ RPC data examples to the gateway device:
       "method": "gateway_device_renamed",
       "params": {"Old device name": "New device name"}
     }
-    
     ```
 
 - Device removal RPC:  
@@ -40,7 +39,6 @@ RPC data examples to the gateway device:
       "method": "gateway_device_deleted",
       "params": "Removed device name"
     }
-    
     ```
 
 **ThingsBoard sets 1 day as a timeout for RPC.**  

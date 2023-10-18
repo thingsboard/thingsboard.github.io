@@ -8,11 +8,12 @@ Using the following config, you can configure Gateway to use MQTT Basic provisio
 | ---                   
 
 Provisioning subsection in configuration file will look like this:
-```yaml
+```json
 ...
-  provisioning:
-    type: MQTT_BASIC
-    provisionDeviceKey: PUT_YOUR_DEVICE_KEY_HERE
-    provisionDeviceSecret: PUT_YOUR_DEVICE_SECRET_HERE
+"provisioning": {
+  "type": "MQTT_BASIC",
+  "provisionDeviceKey": "PUT_YOUR_DEVICE_KEY_HERE",
+  "provisionDeviceSecret": "PUT_YOUR_DEVICE_SECRET_HERE"
+},
 ...
 ```

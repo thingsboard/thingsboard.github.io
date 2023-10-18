@@ -13,7 +13,7 @@ notitle: "true"
 Air quality control is an important component of modern life, as high levels of pollutants can negatively affect people's health. 
 Particularly noteworthy are megacities with a large number of cars and industrial areas in which the concentration of pollutants is higher.
 
-We developed the AIR Quality Monitoring <a href="/docs/paas/solution-templates/air-quality-monitoring">template</a> which represents a solution for general air pollution monitoring and provides general recommendations in a user-friendly manner. 
+We developed the AIR Quality Monitoring <a href="/docs/paas/solution-templates/air-quality-monitoring/">template</a> which represents a solution for general air pollution monitoring and provides general recommendations in a user-friendly manner. 
 The main metric for controlling the level of air pollution is AQI.
 AQI is calculated based on the sensor readings about such pollutants: Ozone (ppm), PM2.5 (µg/m3 ), PM10 (µg/m3 ), CO (ppm), SO2 (ppb), NO2 (ppb);
 The solution supports sensors that report either all or a subset of the readings.
@@ -41,13 +41,13 @@ Save up to 90% of development time for your air monitoring solution by utilizing
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/air-quality/aq1.png" />
+        <img class="item-image" src="/images/usecases/air-quality/aq1.png" alt="air quality 1">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/air-quality/aq2.png" />
+        <img class="item-image" src="/images/usecases/air-quality/aq2.png" alt="air quality 2">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/air-quality/aq3.png" />
+        <img class="item-image" src="/images/usecases/air-quality/aq3.png" alt="air quality 3">
     </div>
 </div>
 
@@ -61,10 +61,10 @@ The **Administration Dashboard** dashboard is designed for tenant administrators
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/air-quality/aq4.png" />
+        <img class="item-image" src="/images/usecases/air-quality/aq4.png" alt="air quality 4">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/air-quality/aq5.png" />
+        <img class="item-image" src="/images/usecases/air-quality/aq5.png" alt="air quality 5">
     </div>
 </div>
 
@@ -149,14 +149,14 @@ The **Administration Dashboard** dashboard is designed for tenant administrators
     </div>
 </section>
 
-## Air Quality Monitoring solution overview 
+## Air Quality Monitoring solution overview
 
 The diagram below identifies data flow and integration points for a typical air quality monitoring solution that uses the ThingsBoard platform to collect and analyze monitoring data from air stations.
 
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
 
 You may notice plenty of connectivity options for the air monitoring stations: direct connection to the cloud, through the IoT Gateway, or an Integration with a third-party system.
-The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database. 
+The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
 ## Learn more

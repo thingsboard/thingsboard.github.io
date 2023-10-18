@@ -6,7 +6,7 @@ chip: STM32MP157C
 connectivity: Ethernet, WIFI, Bluetooth
 vendor: Seeed Studio
 deviceImageFileName: odyssey-stm32mp157c.png
-docsPrefix: pe
+docsPrefix: pe/
 ---
 
 
