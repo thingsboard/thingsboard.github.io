@@ -113,7 +113,6 @@ ENDSSH
 ```
 
 Important: to handle more than 256k (limit depends on total memory size) TCP connections, please adjust the `conntrack_max` system parameter.
-[reference](http://renbuar.blogspot.com/2019/02/netnetfilternfconntrackmax1048576.html)
 
 Run this once on `thingsboard` node to increase file descriptor and net filter limits. This is required to handle about 1M TCP connections.
 

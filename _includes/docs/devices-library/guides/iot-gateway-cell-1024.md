@@ -48,7 +48,7 @@ Here you can find some additional links, that can be useful.
 
 ### Feedback & Help
 
-For more information, visit the website at [EXXN Engineering](http://exxn.es/en/){:target="_blank"}.  
+For more information, visit the website at [EXXN Engineering](https://exxn.es/en/){:target="_blank"}.  
 If you have any problems or doubts, please do not hesitate in contact to EXXN support at: [troubleshooting@exxn.es](mailto://troubleshooting@exxn.es).  
 
 ## Conclusion
