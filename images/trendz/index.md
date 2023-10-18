@@ -166,7 +166,7 @@ description:
         <p class="text">Our analysis and prediction is your financial result and advance growth</p>
         <div class="btn-block">
             <a href="/pricing/?section=trendz-options&product=trendz-self-managed" class="button accent-btn">Start Free</a>
-            <a href="/products/trendz/trndz-request-demo" class="button try-pe">Request Demo</a>
+            <a href="/products/trendz/trndz-request-demo/" class="button try-pe">Request Demo</a>
         </div>
     </div>
 </div>

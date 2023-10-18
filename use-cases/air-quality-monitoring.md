@@ -13,7 +13,7 @@ notitle: "true"
 Air quality control is an important component of modern life, as high levels of pollutants can negatively affect people's health. 
 Particularly noteworthy are megacities with a large number of cars and industrial areas in which the concentration of pollutants is higher.
 
-We developed the AIR Quality Monitoring <a href="/docs/paas/solution-templates/air-quality-monitoring">template</a> which represents a solution for general air pollution monitoring and provides general recommendations in a user-friendly manner. 
+We developed the AIR Quality Monitoring <a href="/docs/paas/solution-templates/air-quality-monitoring/">template</a> which represents a solution for general air pollution monitoring and provides general recommendations in a user-friendly manner. 
 The main metric for controlling the level of air pollution is AQI.
 AQI is calculated based on the sensor readings about such pollutants: Ozone (ppm), PM2.5 (µg/m3 ), PM10 (µg/m3 ), CO (ppm), SO2 (ppb), NO2 (ppb);
 The solution supports sensors that report either all or a subset of the readings.

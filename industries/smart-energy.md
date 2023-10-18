@@ -169,7 +169,7 @@ description:
 <div class="customer-block">
     <div class="customer-company">
         <img class="customer-logo" src="https://img.thingsboard.io/customers/comet.gif" alt="co.met GmbH">
-        <a class="outlink" href="http://co-met.info">co.met GmbH</a>
+        <a class="outlink" href="https://www.co-met.info">co.met GmbH</a>
     </div>
     <div class="customer-content">
         <div class="person-container">

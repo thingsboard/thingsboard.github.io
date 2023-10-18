@@ -189,7 +189,7 @@ selfManagedPlan:
         <p class="text">Our analysis and prediction is your financial result and advance growth</p>
         <div class="btn-block">
             <a href="/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go" class="button accent-btn btn-open">Start Free</a>
-            <a href="/products/trendz/trndz-request-demo" class="button try-pe">Get a demo</a>
+            <a href="/products/trendz/trndz-request-demo/" class="button try-pe">Get a demo</a>
         </div>
     </div>
 </div>

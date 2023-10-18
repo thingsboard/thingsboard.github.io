@@ -10,7 +10,7 @@ notitle: "true"
 
 <h1 class="usecase-title">Smart retail solutions</h1>
 
-Smart retail [solution template](/docs/paas/solution-templates/smart-retail) represent generic smart retail solution. 
+Smart retail [solution template](/docs/paas/solution-templates/smart-retail/) represent generic smart retail solution. 
 As a solution provider, you may provision multiple Customers 
 and assign pool of IoT devices to each customer.
 

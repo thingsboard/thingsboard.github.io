@@ -81,7 +81,7 @@ It supports the following **ThingsBoard** features:
 * [**Attributes**](/docs/{{cloudDocsPrefix}}user-guide/attributes/) - Assign and manage custom attributes to your entities.
 * [**Telemetry**](/docs/{{cloudDocsPrefix}}user-guide/telemetry/) - API for collecting time-series data from your devices.
 * [**Entities and relations**](/docs/{{cloudDocsPrefix}}user-guide/entities-and-relations/) - Model physical world objects (e.g., devices and assets) and the relationships between them.
-* [**Data visualization**](/docs/{{cloudDocsPrefix}}guides#AnchorIDDataVisualization) - Develop custom dashboards and widgets.
+* [**Data visualization**](/docs/{{cloudDocsPrefix}}guides/#AnchorIDDataVisualization) - Develop custom dashboards and widgets.
 * [**Rule engine**](/docs/{{cloudDocsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) - Manage data processing & actions on incoming telemetry and events.
 * [**RPC**](/docs/{{cloudDocsPrefix}}user-guide/rpc/) - Send remote procedure calls (RPC) **from both edge and cloud sides** to devices, and vice versa.
 * [**Audit log**](/docs/{{cloudDocsPrefix}}user-guide/audit-log/) - Track user activity.

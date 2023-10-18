@@ -23,7 +23,7 @@ For example, you can extract data from devices that are connected to external **
         </a>
     </div>
     <div class="col-12 col-sm-6 col-lg col-xxl-6 col-4xl mb-4">
-        <a class="feature-card" href="/docs/iot-gateway/getting-started">
+        <a class="feature-card" href="/docs/iot-gateway/getting-started/">
             <img class="feature-logo" src="https://img.thingsboard.io/feature-logo/getting-started.svg" alt="getting started">
             <div class="feature-title">Getting started</div>
             <div class="feature-text">

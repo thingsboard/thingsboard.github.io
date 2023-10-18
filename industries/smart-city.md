@@ -37,7 +37,7 @@ description:
 <div class="customer-block">
     <div class="customer-company">
         <img class="customer-logo" src="https://img.thingsboard.io/customers/x-telia.png" alt="X-TELIA">
-        <a class="outlink" href="https://x-telia.com/"> X-TELIA </a>
+        <a class="outlink" href="https://en.x-telia.com/"> X-TELIA </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
