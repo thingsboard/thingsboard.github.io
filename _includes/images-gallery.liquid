@@ -28,10 +28,10 @@
 </ul>
 {% endif %}
 
-<div itemscope itemtype="http://schema.org/ImageGallery/" class="images-gallery"
+<div itemscope itemtype="https://schema.org/ImageGallery" class="images-gallery"
      style="justify-content: {{ include.align | default: 'start' }};">
     {% for image in images %}
-        <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject/"
+        <figure itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject"
                 style="max-width: min({{ include.max-width | default: '225px' }}, 100%);
                         max-height: min({{ include.max-height | default: '225px' }}, 100%);"
         {% if images.size > 1 %} class="list-item"{% endif %}>
