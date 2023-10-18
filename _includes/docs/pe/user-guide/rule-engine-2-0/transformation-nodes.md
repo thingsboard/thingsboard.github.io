@@ -5,7 +5,7 @@
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
-# Duplicate To Group Node
+## Duplicate To Group Node
 
 {% assign feature = "PE Transformation Nodes" %}{% include templates/pe-feature-banner.md %}
 
@@ -40,7 +40,7 @@ Otherwise original message will be forwarded via **Failure** chain.
 
 <br>
 
-# Duplicate To Related Node
+## Duplicate To Related Node
 
 {% assign feature = "PE Transformation Nodes" %}{% include templates/pe-feature-banner.md %}
 

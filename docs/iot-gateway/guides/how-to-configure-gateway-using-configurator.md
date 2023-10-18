@@ -11,7 +11,7 @@ description: How to configure ThingsBoard IoT Gateway using Configurator
 This guide will help you to configure your ThingsBoard IoT Gateway using Configurator, especially
 if you used installation via deb package.
 
-# Step 1 Starting Configurator
+## Step 1 Starting Configurator
 
 To start configuring Gateway you have to start your terminal and launch Configurator using the next command:
 ```bash
@@ -23,7 +23,7 @@ If you have correctly installed the gateway, you will see the following:
 
 ![](https://img.thingsboard.io/gateway/gateway-cli.png)
 
-# Step 2 Configuring
+## Step 2 Configuring
 
 Answering questions to be displayed in turn using your option (You can use the default value which
 displays in the input field).
@@ -33,7 +33,7 @@ CLI will be saved there.
 
 ![](https://img.thingsboard.io/gateway/gateway-cli-questions.png)
 
-# Step 3 Starting Gateway
+## Step 3 Starting Gateway
 
 Finally, you can start your ThingsBoard IoT gateway with the following command:
 ```bash

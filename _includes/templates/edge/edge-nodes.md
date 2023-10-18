@@ -1,4 +1,4 @@
-# Push to cloud 
+## Push to cloud 
 
 <table  style="width:12%">
    <thead>
@@ -36,7 +36,7 @@ Message will be routed via **Failure** chain in the following cases:
 - Unsupported originator type arrived
 - Unsupported message type arrived
 
-# Push to edge 
+## Push to edge 
 
 <table  style="width:12%">
    <thead>
