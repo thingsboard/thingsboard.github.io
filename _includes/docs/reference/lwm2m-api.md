@@ -1060,7 +1060,7 @@ actions on the LwM2M Client (e.g., Notifications).
 Attributes attached to Objects, Object Instances, Resources are respectively named O-Attribute, OI-Attribute, R-Attribute.
 
 These Attributes MAY be carried in the message payload of Registration and Discover operations; they also MAY be
-updated - when writable - through the [Write-Attributes](http://localhost:4000/docs/reference/lwm2m-api/#write-attributes-operation) operation.
+updated - when writable - through the [Write-Attributes](/docs/{{docsPrefix}}reference/lwm2m-api/#write-attributes-operation) operation.
 
 There are two types of attributes:
 
@@ -1068,7 +1068,7 @@ There are two types of attributes:
 
 The role of these Attributes is to provide metadata which may communicate helpful information to the LwM2M Server, for 
 example easing data management. Thingsboard supports Object Version attribute, which indicates the version of the 
-associated Object and is displayed in the results of [DiscoverAll](http://localhost:4000/docs/reference/lwm2m-api/#discover-all-operation) command.
+associated Object and is displayed in the results of [DiscoverAll](/docs/{{docsPrefix}}reference/lwm2m-api/#discover-all-operation) command.
 
 You can find more details about all available in LwM2M Object attributes here:  [PROPERTIES Class Attributes](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Table-512-1-lessPROPERTIESgreater-Class-Attributes)
 
