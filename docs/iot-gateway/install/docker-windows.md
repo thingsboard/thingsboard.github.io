@@ -1,7 +1,8 @@
 ---
 layout: docwithnav-gw
 title: Install ThingsBoard IoT Gateway using Docker.
-
+redirect_from: 
+ - "/docs/iot-gateway/install/windows/"
 ---
 
 * TOC
