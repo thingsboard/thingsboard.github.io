@@ -420,10 +420,12 @@ In order to export rule chain, you should navigate to the **Rule Chains** page a
 
 Similar, to import the rule chain you should navigate to the **Rules Chains** page and click on the big "+" button in the bottom-right part of the screen and then click on the import button. 
 
+{% if docsPrefix != "paas/" %}
 ## Architecture
 
 To learn more about internals of the rule engine, see [architecture](/docs/{{docsPrefix}}reference/) page.
 
+{% endif %}
 ## Custom REST API calls to Rule Engine
 
 {% assign feature = "Custom Rule Engine REST API calls" %}{% include templates/pe-feature-banner.md %}

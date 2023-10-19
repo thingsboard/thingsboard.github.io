@@ -18,7 +18,7 @@ Each ThingsBoard node is identical and can handle request from both device and s
 
 #### Device Connectivity
 
-ThingsBoard supports [**MQTT**](/docs/reference/mqtt-api/), [**LwM2M**](/docs/reference/LwM2M-api/) , [**CoAP**](/docs/reference/coap-api/) and [**HTTP**](/docs/reference/http-api/) protocols for device connectivity.
+ThingsBoard supports [**MQTT**](/docs/reference/mqtt-api/), [**LwM2M**](/docs/reference/lwm2m-api/) , [**CoAP**](/docs/reference/coap-api/) and [**HTTP**](/docs/reference/http-api/) protocols for device connectivity.
 It is possible to plugin support of different protocols or customize existing implementations.
 
 #### Rule Engine

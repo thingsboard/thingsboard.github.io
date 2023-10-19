@@ -70,7 +70,7 @@ For example, small commodity hardware cluster can support [several millions](/do
   
 ## Where does ThingsBoard store data?
 
-The data is stored in [Cassandra](http://cassandra.apache.org/) database. Cassandra suites well for storage and querying of time-series data and provides high availability and fault-tolerance.
+The data is stored in [Cassandra](https://cassandra.apache.org/) database. Cassandra suites well for storage and querying of time-series data and provides high availability and fault-tolerance.
  
 ## What license type does ThingsBoard use?
 

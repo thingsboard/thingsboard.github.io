@@ -45,7 +45,7 @@ version: '3.0'
 services:
   mytrendz:
     restart: always
-    image: "thingsboard/trendz:1.10.1"
+    image: "thingsboard/trendz:1.10.3"
     ports:
       - "8888:8888"
     environment:
@@ -55,9 +55,24 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/trendz
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
+      SCRIPT_ENGINE_PROVIDER: DOCKER_CONTAINER
+      SCRIPT_ENGINE_DOCKER_PROVIDER_URL: mypyexecutor:8080
+      SCRIPT_ENGINE_TIMEOUT: 30000
     volumes:
       - mytrendz-data:/data
       - mytrendz-logs:/var/log/trendz
+  mypyexecutor:
+    restart: always
+    image: "thingsboard/trendz-python-executor:1.10.3"
+    ports:
+      - "8080"
+    environment:
+      SCRIPT_ENGINE_RUNTIME_TIMEOUT: 30000
+      EXECUTOR_MANAGER: 1
+      EXECUTOR_SCRIPT_ENGINE: 6
+      THROTTLING_QUEUE_CAPACITY: 10
+      THROTTLING_THREAD_POOL_SIZE: 6
+      NETWORK_BUFFER_SIZE: 10485760
   postgres:
     restart: always
     image: "postgres:12"
@@ -88,7 +103,9 @@ Where:
 - `mytrendz-logs:/var/log/trendz`   - mounts the volume `mytrendz-logs` to Trendz logs directory
 - `mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.10.1`          - docker image
+- `thingsboard/trendz:1.10.3`          - Trendz docker image
+- `thingsboard/trendz-python-executor:1.10.3`          - Trendz python script executor docker image
+- `SCRIPT_ENGINE_RUNTIME_TIMEOUT`          - Python script execution timeout
     
 ##### Setup Docker volumes    
     

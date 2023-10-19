@@ -8,6 +8,10 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v3.6.0 (Sep 22, 2023) {#v36}
+
+**Major** release with everything from [TB Edge v3.6](/docs/edge/releases/#v36) and [TB PE v3.6](/docs/pe/reference/releases/#v36).
+
 ## v3.5.1.1 (Jul 4, 2023) {#v3511}
 
 **Hotfix** release to fix incorrect update of sequential id offset:

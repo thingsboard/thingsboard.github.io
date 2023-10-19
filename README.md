@@ -14,7 +14,7 @@ Any edits you make will be viewable on a lightweight webserver that runs on your
 
 Install Ruby **3.0.x**. If you're on Ubuntu, run this commands:
 
-    sudo apt-get install ruby-full build-essential zlib1g-dev
+    sudo apt-get install ruby-full build-essential zlib1g-dev git
     sudo gem install github-pages jekyll bundler
 
 
@@ -33,7 +33,7 @@ Install Ruby **3.0.x**. If you're on Ubuntu, run this commands:
 </details>
 
 * If you're on a Mac, follow [these instructions](https://gorails.com/setup/osx/) and choose a Ruby version (**3.0.x** or **2.7.6**).  
-* If you're on a Windows machine you can use the [Ruby Installer](http://rubyinstaller.org/downloads/). During the installation make sure to check the option for *Add Ruby executables to your PATH*.  
+* If you're on a Windows machine you can use the [Ruby Installer](https://rubyinstaller.org/downloads/). During the installation make sure to check the option for *Add Ruby executables to your PATH*.  
 
 Clone our site:  
 
@@ -42,7 +42,7 @@ Clone our site:
 Make any changes you want. Then, to see your changes locally:  
 
 	cd thingsboard.github.io
-	bundle install
+	sudo bundle install
 	bundle exec jekyll serve --host 0.0.0.0
 	
 In case you change the layout or website structure you might need to execute following command:
@@ -71,14 +71,25 @@ git clone https://github.com/thingsboard/thingsboard.github.io.git website
 ### Deploy the site using the docker run command
 
 Please replace the `THINGSBOARD_WEBSITE_DIR` with the full path to your local thingsboard.github.io repository.
+>To deploy a fork, you need to replace the environment variable PAGES_REPO_NWO with the name of your repository.
+As example: \
+`PAGES_REPO_NWO="your_github_nickname/thingsboard.github.io"`
 
 ```bash
-docker run --rm -d -p 4000:4000 --name thingsboard_website --volume="THINGSBOARD_WEBSITE_DIR:/website" thingsboard/website
+docker run --rm -d -p 4000:4000 --name thingsboard_website -e PAGES_REPO_NWO="thingsboard/thingsboard.github.io" --volume="THINGSBOARD_WEBSITE_DIR:/website" thingsboard/website
 ```
+
+
 
 ### Deploy the site using the docker-compose file
 
-Please replace the `THINGSBOARD_WEBSITE_DIR` with the full path to your local thingsboard.github.io repository and create docker-compose.yml file:
+Please replace the `THINGSBOARD_WEBSITE_DIR` with the full path to your local thingsboard.github.io repository.
+
+>To deploy a fork, you need to replace the environment variable PAGES_REPO_NWO with the name of your repository.
+As example:\
+`PAGES_REPO_NWO: "your_github_nickname/thingsboard.github.io"`
+
+Create docker-compose.yml file:
 
 ```bash
 cat <<EOT | sudo tee docker-compose.yml
@@ -88,6 +99,8 @@ services:
     container_name: thingsboard_website
     restart: always
     image: "thingsboard/website"
+    environment:
+      PAGES_REPO_NWO: "thingsboard/thingsboard.github.io"
     ports:
       - "4000:4000"
     volumes:

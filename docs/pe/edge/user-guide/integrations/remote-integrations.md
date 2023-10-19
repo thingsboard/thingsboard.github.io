@@ -158,11 +158,11 @@ Please use one of the next steps.
 
 
 {% capture contenttogglespec %}
-HTTP Integrations<br/><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br/> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-docker.md%br%
-MQTT Integrations<br/><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-docker.md%br%
-OPC UA<br/> Integration<br/>%,%opcua%,%templates/edge/install/integration/opcua-docker.md%br%
-TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/edge/install/integration/tcpudp-docker.md%br%
-CoAP<br/> Integration<br/>%,%coap%,%templates/edge/install/integration/coap-docker.md{% endcapture %}
+HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-docker.md%br%
+MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-docker.md%br%
+OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-docker.md%br%
+TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-docker.md%br%
+CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-docker.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="remoteintegrationdockerinstall" toggle-spec=contenttogglespec %}
 
@@ -181,11 +181,11 @@ CoAP<br/> Integration<br/>%,%coap%,%templates/edge/install/integration/coap-dock
 - **Choose Integration to install**
 
 {% capture contenttogglespecwin %}
-HTTP Integrations<br/><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br/> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-docker-windows.md%br%
-MQTT Integrations<br/><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-docker-windows.md%br%
-OPC UA<br/> Integration<br/>%,%opcua%,%templates/edge/install/integration/opcua-docker-windows.md%br%
-TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/edge/install/integration/tcpudp-docker-windows.md%br%
-CoAP<br/> Integration<br/>%,%coap%,%templates/edge/install/integration/coap-docker-windows.md{% endcapture %}
+HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-docker-windows.md%br%
+MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-docker-windows.md%br%
+OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-docker-windows.md%br%
+TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-docker-windows.md%br%
+CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-docker-windows.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="remoteintegrationdockerinstallwin" toggle-spec=contenttogglespecwin %}
 
@@ -204,11 +204,11 @@ CoAP<br/> Integration<br/>%,%coap%,%templates/edge/install/integration/coap-dock
 - **Choose Integration package to install**
  
 {% capture ubuntuinstallspec %}
-HTTP Integrations<br/><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br/> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-ubuntu.md%br%
-MQTT Integrations<br/><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-ubuntu.md%br%
-OPC UA<br/> Integration<br/>%,%opcua%,%templates/edge/install/integration/opcua-ubuntu.md%br%
-TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/edge/install/integration/tcpudp-ubuntu.md%br%
-CoAP<br/> Integration<br/>%,%coap%,%templates/edge/install/integration/coap-ubuntu.md{% endcapture %}
+HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-ubuntu.md%br%
+MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-ubuntu.md%br%
+OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-ubuntu.md%br%
+TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-ubuntu.md%br%
+CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-ubuntu.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="remoteintegrationinstallubuntu" toggle-spec=ubuntuinstallspec %} 
 
@@ -221,11 +221,11 @@ CoAP<br/> Integration<br/>%,%coap%,%templates/edge/install/integration/coap-ubun
 - **Choose Integration package to install**
  
 {% capture rhelinstallspec %}
-HTTP Integrations<br/><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br/> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-rhel.md%br%
-MQTT Integrations<br/><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-rhel.md%br%
-OPC UA<br/> Integration<br/>%,%opcua%,%templates/edge/install/integration/opcua-rhel.md%br%
-TCP/UDP<br/> Integration<br/>%,%tcpudp%,%templates/edge/install/integration/tcpudp-rhel.md%br%
-CoAP<br/> Integration<br/>%,%coap%,%templates/edge/install/integration/coap-rhel.md{% endcapture %}
+HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/edge/install/integration/http-rhel.md%br%
+MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/edge/install/integration/mqtt-rhel.md%br%
+OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-rhel.md%br%
+TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-rhel.md%br%
+CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-rhel.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="remoteintegrationinstallrhel" toggle-spec=rhelinstallspec %} 
 

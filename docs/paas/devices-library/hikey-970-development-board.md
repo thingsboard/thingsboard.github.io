@@ -6,7 +6,7 @@ chip: Kirin 970
 connectivity: Ethernet, WIFI, Bluetooth
 vendor: Huawei
 deviceImageFileName: hikey-970-development-board.jpeg
-docsPrefix: paas
+docsPrefix: paas/
 ---
 
 

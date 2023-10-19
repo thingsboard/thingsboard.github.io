@@ -104,10 +104,12 @@ calculated field created and this field would not be connected with the original
 It means that if you will update field configuration in the future, it will only update a template, 
 but real calculated fields that are added to View configuration are not affected.
 
-## Language
+## Language and script engine
 
-Calculated Fields use Javascript as a language for writing transformation function. Inner Engine provide 100% support
-of ECMAScript 5.1
+You can write calculated fields using Javascript or Python. By default, Javascript engine is selected.
+
+* **Javascript** - Calculated Fields use Javascript as a language for writing transformation function. Inner Engine provide 100% support of ECMAScript 5.1
+* **Python** - Python script engine support python 3.8 and provide full access to python standard libraries. Additionally, you can use following libraries: flask, numpy, statsmodels, pandas, scikit-learn, prophet, seaborn, pmdarima.
 
 ## Next Steps
 

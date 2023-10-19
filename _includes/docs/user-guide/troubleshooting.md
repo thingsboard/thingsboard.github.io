@@ -59,7 +59,7 @@ After this you can find the following messages in your [logs](#logs):
 **Note:** This can be used only if Redis is selected as a cache.
 
 It is possible that the data inside the cache somehow got corrupted. Regardless of the reason, it is always safe to clear cache, ThingsBoard will just refill it at the runtime.
-To clear Redis cache you need to log into the server/container/pod with Redis on it and call <code>redis-cli FLUSHALL</code> command.
+To clear Redis cache you need to log into the server/container/pod with Redis on it and call <code>redis-cli FLUSHALL</code> command. To clear the cache in Redis Sentinel mode, access the master container and execute the cache-clearing command.
 
 So if you are struggling with identifying the reason of some problem, you can safely clear Redis cache to make sure it isn't the reason of the issue.
 
@@ -249,16 +249,16 @@ For OAuth2 configuration click [here](/docs/{{docsPrefix}}user-guide/oauth-2-sup
 
 <section id="talkToUs">
     <div id="gettingHelp">
-        <a href="https://gitter.im/thingsboard/chat">
-            <h1>Community chat</h1>
+        <a href="https://app.gitter.im/#/room/#thingsboard_chat:gitter.im">
+            <span class="phrase-heading">Community chat</span>
             <p>Our Gitter channel is the best way to contact our engineers and share your ideas with them.</p>
         </a>
         <a href="https://groups.google.com/forum/#!forum/thingsboard">
-            <h1>Q&A forum</h1>
+            <span class="phrase-heading">Q&A forum</span>
             <p>Our user forum is a great place to go for community support.</p>
         </a>
-        <a href="http://stackoverflow.com/questions/tagged/thingsboard">
-            <h1>Stack Overflow</h1>
+        <a href="https://stackoverflow.com/questions/tagged/thingsboard">
+            <span class="phrase-heading">Stack Overflow</span>
             <p>The ThingsBoard team will also monitor posts tagged thingsboard. If there aren’t any existing questions that help, please ask a new one!</p>
         </a>
     </div>

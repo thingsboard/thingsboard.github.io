@@ -4,7 +4,7 @@ Transformation Nodes are used for changing incoming Message fields like Originat
 {:toc}
 
 
-# Change originator
+## Change originator
 
 <table  style="width:250px;">
    <thead>
@@ -40,9 +40,9 @@ If multiple Related Entities are found, **_only the first Entity is used_** as n
 
 Outbound Message will have new originator Id.
 
-<br/>
+<br>
 
-# Script Transformation Node
+## Script Transformation Node
 
 <table  style="width:250px;">
    <thead>
@@ -79,7 +79,7 @@ Outbound Message from this Node will be new Message that was constructed using c
 
 JavaScript transform function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
-<br/>
+<br>
 **Example**
 
 Node receives Message with **payload**:
@@ -97,7 +97,7 @@ Original **Metadata**:
 
 
 Original **Message Type** - POST_TELEMETRY_REQUEST
-<br/>
+<br>
 
 The following modifications should be performed:
 
@@ -118,7 +118,7 @@ You can see real life example, how to use this node in those tutorials:
 - [Transform incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/)
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial#add-transform-script-node)
 
-# To Email Node
+## To Email Node
 
 <table  style="width:250px;">
    <thead>
@@ -144,7 +144,7 @@ In this case value of **deviceName** can be referenced as <code>${deviceName}</c
  Device ${deviceName} has high temperature
  ```
  
-<br/>
+<br>
 
 If you like to send html or image you have to choose **HTML** or **Dynamic** in field **Mail Body type**. See [send HTML or image inside email](/docs/user-guide/rule-engine-2-0/tutorials/send-email-html)
 examples.
@@ -152,7 +152,7 @@ examples.
 Additionally, this node can prepare email attachments if incoming message metadata contains **attachments** field with reference to files stored in DataBase.
 **NOTE**: This is part of [File Storage](/docs/{{docsPrefix}}user-guide/file-storage/) feature supported by [ThingsBoard Professional Edition](/products/thingsboard-pe/).
 
-<br/>
+<br>
 
 You can see the real life example, where this node is used, in the next tutorial:
 

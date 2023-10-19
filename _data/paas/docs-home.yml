@@ -61,6 +61,8 @@ toc:
       path: /docs/paas/user-guide/ui/aliases/
     - title: Widgets
       section:
+        - title: Overview
+          path: /docs/paas/user-guide/widgets/
         - title: Widget Actions
           path: /docs/paas/user-guide/ui/widget-actions/
         - title: Widgets Library
@@ -103,6 +105,8 @@ toc:
       path: /docs/paas/user-guide/white-labeling/
     - title: Self-registration
       path: /docs/paas/user-guide/self-registration/
+    - title: Mail Templates
+      path: /docs/paas/user-guide/mail-templates/
     - title: Custom Translations
       path: /docs/paas/user-guide/custom-translation/
     - title: Custom Menu
@@ -190,8 +194,6 @@ toc:
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning
       path: /docs/paas/user-guide/bulk-provisioning/
-    - title: Entity Groups
-      path: /docs/paas/user-guide/groups/
     - title: Scheduler
       path: /docs/paas/user-guide/scheduler/
     - title: Reporting
@@ -247,6 +249,15 @@ toc:
       path: /docs/paas/user-guide/ui/rule-chains/
     - title: Dashboards
       path: /docs/paas/user-guide/ui/dashboards/
+    - title: Entity Groups
+      path: /docs/paas/user-guide/groups/
+    - title: Slack Settings
+      path: /docs/paas/user-guide/ui/slack-settings/
+    - title: Microsoft Teams Settings
+      path: /docs/paas/user-guide/ui/microsoft-teams-settings/
+      new: true
+    - title: Mail Settings
+      path: /docs/paas/user-guide/ui/mail-settings/
 - title: Subscriptions
   path: /products/paas/subscription/
 - title: Plan and billing

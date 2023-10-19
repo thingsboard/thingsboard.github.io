@@ -14,7 +14,7 @@ Everyone knows that when it comes to agriculture, the critical indicator of succ
 
 An irrigation system is usually used to solve the problem of agricultural and irrigated land, which helps farmers achieve good results in growing and harvesting products.
 
-We developed the Smart Irrigation <a href="/docs/paas/solution-templates/smart-irrigation">template</a> to represent a generic field irrigation solution.
+We developed the Smart Irrigation <a href="/docs/paas/solution-templates/smart-irrigation/">template</a> to represent a generic field irrigation solution.
 
 <h2>Solution Structure</h2>
 
@@ -37,19 +37,19 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-1.png" />
+        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-1.png" alt="smart irrigation 1">
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-2.png" />
+        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-2.png" alt="smart irrigation 2">
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-3.png" />
+        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-3.png" alt="smart irrigation 3">
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-4.png" />
+        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-4.png" alt="smart irrigation 4">
     </div>
     <div>
-        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-5.png" />
+        <img class="item-image" src="/images/solutions/smart_irrigation/smart-irrigation-5.png" alt="smart irrigation 5">
     </div>
 </div>
 
@@ -82,7 +82,7 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
             <div class="block">
                 <object data="/images/integration-icon.svg"></object>
                 <div>
-                    <a class="title" href="/integrations">LoRaWAN & SigFox Support</a>
+                    <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
                     <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
                 </div>
             </div>
@@ -135,14 +135,14 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
     </div>
 </section>
 
-## Smart Irrigation solution overview 
+## Smart Irrigation solution overview
 
 The diagram below identifies data flow and integration points for a typical smart irrigation monitoring solution that uses the ThingsBoard platform to collect and analyze monitoring data from sensors.
 
 <object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
 
 You may notice plenty of connectivity options for the soil moisture sensors: direct connection to the cloud, through the IoT Gateway, or an Integration with a third-party system.
-The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database. 
+The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
 ## Learn more

@@ -21,7 +21,7 @@ Before you add an Efento sensor to the platform you need to create a new Device 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=deviceProfileCreationPE %}
 
 Configuration of the “Alarm rules” and “Device provisioning” tabs is optional.  
-If you want to learn more about these features please refer to the [documentation](/docs/getting-started-guides/helloworld.md){:target="_blank"}.  
+If you want to learn more about these features please refer to the [documentation](/docs/getting-started-guides/helloworld/){:target="_blank"}.  
 
 ### Create a device
 

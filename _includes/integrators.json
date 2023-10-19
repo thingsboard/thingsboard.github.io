@@ -85,6 +85,18 @@
   },
   {
     "type": ["Europe"],
+    "country": ["Romania"],
+    "name": "Archibus Solution Center-Romania SRL",
+    "contact": {
+      "href": "connect@archibus.ro"
+    },
+    "site": {
+      "href": "asc-ro.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
     "country": ["France"],
     "name": "arx iT",
     "contact": {
@@ -164,6 +176,18 @@
     },
     "site": {
       "href": "bluetronics.co.in ",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Spain", "Portugal"],
+    "name": "Capgemini Engineering",
+    "contact": {
+      "href": ""
+    },
+    "site": {
+      "href": "capgemini.com",
       "target": "_blank"
     }
   },
@@ -344,6 +368,18 @@
     },
     "site": {
       "href": "eiffage.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Germany", "Austria", "Switzerland"],
+    "name": "one:solutions Engineering GmbH",
+    "contact": {
+      "href": "office@one-solutions.eu"
+    },
+    "site": {
+      "href": "one-solutions.eu",
       "target": "_blank"
     }
   },
@@ -720,6 +756,18 @@
     }
   },
   {
+    "type": ["Europe", "North America"],
+    "country": ["Canada", "United States of America"],
+    "name": "qnectd",
+    "contact": {
+      "href": "sales@qnectd.com"
+    },
+    "site": {
+      "href": "qnectd.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe"],
     "country": ["Norway"],
     "name": "RFID Solutions AS",
@@ -1000,7 +1048,7 @@
     "country": ["Israel"],
     "name": "IoT Experts",
     "contact": {
-      "href": "tom@iot-experts.net"
+      "href": ""
     },
     "site": {
       "href": "iot-experts.net",

@@ -28,12 +28,12 @@ Following its successful deployment in production environments, it was determine
 - Keep Alive & Client Takeover
 - Transmission Control Protocol (TCP) / Secure Sockets Layer (SSL) connection support
 - Username and password authentication support
-- SSL certificate authentication support
+- X.509 certificate chain authentication support
 - Wildcard subscriptions
 - MQTT Ordered Topic guarantees for QoS 1 and QoS 2
 - Session & message expiry intervals
 - Multi-server node cluster (Cluster)
-- Access control (ACL) based on client ID, username or SSL certificate
+- Access control (ACL) based on client ID, username or X.509 certificate chain
 - REST query support for clients' status and subscriptions
 - Rate limits of incoming messages per client
 - MQTT 5 [*](https://github.com/thingsboard/tbmq#tbmq)

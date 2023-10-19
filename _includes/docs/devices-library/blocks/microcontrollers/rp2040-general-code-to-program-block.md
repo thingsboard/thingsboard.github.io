@@ -296,7 +296,7 @@ void loop() {
       return;
     }
     // Sending a MAC address as an attribute
-    tb.sendAttributeString("macAddress", getMAC());
+    tb.sendAttributeData("macAddress", getMAC());
   }
 
   if (!subscribed) {
@@ -335,28 +335,28 @@ void loop() {
     if (ledMode == 0) {
       previousStateChange = millis();
     }
-    tb.sendTelemetryInt(LED_MODE_ATTR, ledMode);
-    tb.sendTelemetryBool(LED_STATE_ATTR, ledState);
-    tb.sendAttributeInt(LED_MODE_ATTR, ledMode);
-    tb.sendAttributeBool(LED_STATE_ATTR, ledState);
+    tb.sendTelemetryData(LED_MODE_ATTR, ledMode);
+    tb.sendTelemetryData(LED_STATE_ATTR, ledState);
+    tb.sendAttributeData(LED_MODE_ATTR, ledMode);
+    tb.sendAttributeData(LED_STATE_ATTR, ledState);
   }
 
   if (ledMode == 1 && millis() - previousStateChange > blinkingInterval) {
     previousStateChange = millis();
     ledState = !ledState;
     {% if boardLedCount == 3 %}setLedColor();{% elsif boardLedCount == 1 %}digitalWrite(LED_BUILTIN, ledState);{% endif %}
-    tb.sendTelemetryBool(LED_STATE_ATTR, ledState);
-    tb.sendAttributeBool(LED_STATE_ATTR, ledState);
+    tb.sendTelemetryData(LED_STATE_ATTR, ledState);
+    tb.sendAttributeData(LED_STATE_ATTR, ledState);
   }
 
   // Sending telemetry every telemetrySendInterval time
   if (millis() - previousDataSend > telemetrySendInterval) {
     previousDataSend = millis();
-    tb.sendTelemetryInt("temperature", random(10, 20));
-    tb.sendAttributeInt("rssi", WiFi.RSSI());
-    tb.sendAttributeString("ssid", WIFI_SSID);
-    tb.sendAttributeString("bssid", getBSSID());
-    tb.sendAttributeString("localIp", String(String(WiFi.localIP()[0]) + "." + String(WiFi.localIP()[1]) + "." + String(WiFi.localIP()[2]) + "." + String(WiFi.localIP()[3])).c_str());
+    tb.sendTelemetryData("temperature", random(10, 20));
+    tb.sendAttributeData("rssi", WiFi.RSSI());
+    tb.sendAttributeData("ssid", WIFI_SSID);
+    tb.sendAttributeData("bssid", getBSSID());
+    tb.sendAttributeData("localIp", String(String(WiFi.localIP()[0]) + "." + String(WiFi.localIP()[1]) + "." + String(WiFi.localIP()[2]) + "." + String(WiFi.localIP()[3])).c_str());
   }
 
   tb.loop();
@@ -365,7 +365,12 @@ void loop() {
 ```
 {:.copy-code.expandable-20}
 
-In the code, replace placeholders with your WiFi network SSID, password, ThingsBoard device access token.  
+
+{% capture replacePlaceholders %}
+Don’t forget to replace placeholders with your real WiFi network SSID, password, ThingsBoard device access token.
+{% endcapture %}
+
+{% include templates/info-banner.md content=replacePlaceholders %}
 
 Necessary variables for connection:  
 
@@ -400,11 +405,11 @@ Send data part in code (By default the example sends random value for **temperat
 
 ```cpp
 ...
-    tb.sendTelemetryInt("temperature", random(10, 20));
-    tb.sendAttributeInt("rssi", WiFi.RSSI());
-    tb.sendAttributeString("ssid", WIFI_SSID);
-    tb.sendAttributeString("bssid", getBSSID());
-    tb.sendAttributeString("localIp", String(String(WiFi.localIP()[0]) + "." + String(WiFi.localIP()[1]) + "." + String(WiFi.localIP()[2]) + "." + String(WiFi.localIP()[3])).c_str());
+    tb.sendTelemetryData("temperature", random(10, 20));
+    tb.sendAttributeData("rssi", WiFi.RSSI());
+    tb.sendAttributeData("ssid", WIFI_SSID);
+    tb.sendAttributeData("bssid", getBSSID());
+    tb.sendAttributeData("localIp", String(String(WiFi.localIP()[0]) + "." + String(WiFi.localIP()[1]) + "." + String(WiFi.localIP()[2]) + "." + String(WiFi.localIP()[3])).c_str());
 ...
 ```
 

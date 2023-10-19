@@ -42,7 +42,7 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 ## Step 2. Clone ThingsBoard PE Kubernetes scripts
 
 ```bash
-git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git
+git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-pe-k8s.git --depth 1
 cd thingsboard-pe-k8s/minikube
 ```
 {: .copy-code}
@@ -55,8 +55,6 @@ See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-Q
 
 {% capture multiple_instances_license %}
 
-**IMPORTANT NOTE:** Make sure you have purchased a license key for at least two instances of ThingsBoard PE. Otherwise you need to modify local copy of 
-[docker-compose.yml](https://github.com/thingsboard/thingsboard-pe-docker-compose/blob/master/docker-compose.yml) to use only one ThingsBoard instance. 
 We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
 
 {% endcapture %}

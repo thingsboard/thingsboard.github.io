@@ -5,7 +5,7 @@
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
-# Add To Group Node
+## Add To Group Node
 
 {% assign feature = "PE Action Nodes" %}{% include templates/pe-feature-banner.md %}
 
@@ -41,9 +41,9 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain.
 
-<br/>
+<br>
 
-# Remove From Group Node
+## Remove From Group Node
 
 {% assign feature = "PE Action Nodes" %}{% include templates/pe-feature-banner.md %}
 
@@ -77,9 +77,9 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain.
 
-<br/>
+<br>
 
-# Generate Report Node
+## Generate Report Node
 
 {% assign feature = "PE Action Nodes" %}{% include templates/pe-feature-banner.md %}
 
@@ -135,9 +135,9 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain.
 
-<br/>
+<br>
 
-# Integration Downlink Node
+## Integration Downlink Node
 
 {% assign feature = "PE Action Nodes" %}{% include templates/pe-feature-banner.md %}
 
@@ -163,9 +163,9 @@ Configuration:
 
 **Failure** chain is used if Message push to Integration will fail, otherwise **Success** chain.
 
-<br/>
+<br>
 
-# REST Call Reply Node
+## REST Call Reply Node
 
 {% assign feature = "PE Action Nodes" %}{% include templates/pe-feature-banner.md %}
 
@@ -187,9 +187,9 @@ Configuration:
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply-config.png)
 
-<br/>
+<br>
 
-# Change Owner Node
+## Change Owner Node
 
 {% assign feature = "PE Action Nodes" %}{% include templates/pe-feature-banner.md %}
 
@@ -221,4 +221,4 @@ Rule node finds target Owner by owner name pattern and then change the owner of 
 
 If an entity already belongs to this owner or entity owner is successfully changed - Message sent via **Success** chain, otherwise, **Failure** chain will be used.
 
-<br/>
+<br>

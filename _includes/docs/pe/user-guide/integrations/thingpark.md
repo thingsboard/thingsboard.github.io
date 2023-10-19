@@ -8,7 +8,7 @@ ThingPark Integration allows to stream data from Actility ThingPark servers to T
 Configuration steps:
 - Review official  ThingPark DX Dataflow API reference documentation:
     
-[documentation](https://dx-api.thingpark.com/dataflow/latest/doc/index.html#uplink-data-reception).
+[documentation](https://www.actility.com/thingpark-documentation-portal/).
 
 - Go through the procedure of your registration and registration of your device on the ThingPark Wireless OSS intelligent logger (Actility).
 

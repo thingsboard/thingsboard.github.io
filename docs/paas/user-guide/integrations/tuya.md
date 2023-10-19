@@ -72,6 +72,20 @@ tuya-add-smart-life-app:
         image: /images/user-guide/integrations/tuya/tuya-add-smart-life-app-6.png
         title: 'Navigate to the "All Devices" tab. You can see your device added to the project'
 
+tuya-enable-rules-environment:
+    0:
+        image: /images/user-guide/integrations/tuya/tuya-enable-rules-environment-1-pe.png
+        title: 'Navigate to the "Message Service" tab. Click the "Create Messaging Rules" button;'
+    1:
+        image: /images/user-guide/integrations/tuya/tuya-enable-rules-environment-2-pe.png
+        title: 'Click the "Add Message Filtering Rule" button;'
+    2:
+        image: /images/user-guide/integrations/tuya/tuya-enable-rules-environment-3-pe.png
+        title: 'Add new message filtering rule and click "Release Rule" button;'
+    3:
+        image: /images/user-guide/integrations/tuya/tuya-enable-rules-environment-5-pe.png
+        title: 'Enable the messaging rule.'
+
 ---
 {% assign docsPrefix = "paas/" %}
 {% include docs/pe/user-guide/integrations/tuya.md %}

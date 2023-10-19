@@ -6,7 +6,7 @@ The list of columns in the exported data set corresponds to the list of paramete
  
 See video tutorial below for step-by-step instruction how to use this feature.
 
-<br/> 
+<br> 
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/TzQ21MP8tNs" frameborder="0" allowfullscreen></iframe>

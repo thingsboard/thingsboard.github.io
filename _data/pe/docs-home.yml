@@ -59,6 +59,8 @@ toc:
     path: /docs/pe/user-guide/ui/aliases/
   - title: Widgets
     section:
+      - title: Overview
+        path: /docs/pe/user-guide/widgets/
       - title: Widget Actions
         path: /docs/pe/user-guide/ui/widget-actions/
       - title: Widgets Library
@@ -103,6 +105,8 @@ toc:
       path: /docs/pe/user-guide/white-labeling/
     - title: Self-registration
       path: /docs/pe/user-guide/self-registration/
+    - title: Mail Templates
+      path: /docs/pe/user-guide/mail-templates/
     - title: Custom Translations
       path: /docs/pe/user-guide/custom-translation/
     - title: Custom Menu
@@ -190,8 +194,6 @@ toc:
       path: /docs/user-guide/psm/
     - title: Bulk Provisioning
       path: /docs/pe/user-guide/bulk-provisioning/
-    - title: Entity Groups
-      path: /docs/pe/user-guide/groups/
     - title: Scheduler
       path: /docs/pe/user-guide/scheduler/
     - title: Reporting
@@ -261,10 +263,14 @@ toc:
     path: /docs/pe/user-guide/ui/rule-chains/
   - title: Dashboards
     path: /docs/pe/user-guide/ui/dashboards/
+  - title: Entity Groups
+    path: /docs/pe/user-guide/groups/
   - title: SMS Provider Settings
     path: /docs/pe/user-guide/ui/sms-provider-settings/
   - title: Slack Settings
     path: /docs/pe/user-guide/ui/slack-settings/
+  - title: Microsoft Teams Settings
+    path: /docs/pe/user-guide/ui/microsoft-teams-settings/
     new: true
   - title: Mail Settings
     path: /docs/pe/user-guide/ui/mail-settings/

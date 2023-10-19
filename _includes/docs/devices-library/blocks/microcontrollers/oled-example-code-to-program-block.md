@@ -5,6 +5,7 @@ To do this, you can use the code below. It contains all required functionality f
 
 ```cpp
 #include <WiFi.h>
+#include <Arduino_MQTT_Client.h>
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -12,6 +13,8 @@ To do this, you can use the code below. It contains all required functionality f
 
 #define THINGSBOARD_ENABLE_PSRAM 0
 #define THINGSBOARD_ENABLE_DYNAMIC 1
+
+#include <ThingsBoard.h>
 
 #ifndef LED_BUILTIN
 #define LED_BUILTIN 99
@@ -44,8 +47,10 @@ constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 
 // Initialize underlying client, used to establish a connection
 WiFiClient wifiClient;
+// Initalize the Mqtt client instance
+Arduino_MQTT_Client mqttClient(wifiClient);
 // Initialize ThingsBoard instance with the maximum needed buffer size
-ThingsBoard tb = ThingsBoard(wifiClient, MAX_MESSAGE_SIZE, false, 1024);
+ThingsBoard tb = ThingsBoard(mqttClient, MAX_MESSAGE_SIZE, false, 1024);
 
 // Attribute names for attribute request and attribute updates functionality
 
@@ -56,9 +61,6 @@ constexpr char SCREEN_TEXT_ATTR[] = "screenText";
 
 String screenText;
 volatile bool screenTextUpdated;
-
-// Statuses for subscribing to rpc
-bool subscribed = false;
 
 // handle led state and mode changes
 volatile bool attributesChanged = false;
@@ -192,9 +194,9 @@ void processClientAttributes(const Shared_Attribute_Data &data) {
   }
 }
 
-const Shared_Attribute_Callback attributes_callback(SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend(), &processSharedAttributes);
-const Attribute_Request_Callback attribute_shared_request_callback(SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend(), &processSharedAttributes);
-const Attribute_Request_Callback attribute_client_request_callback(CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend(), &processClientAttributes);
+const Shared_Attribute_Callback attributes_callback(&processSharedAttributes, SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend());
+const Attribute_Request_Callback attribute_shared_request_callback(&processSharedAttributes, SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend());
+const Attribute_Request_Callback attribute_client_request_callback(&processClientAttributes, CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend());
 
 void setup() {
   // Initalize serial connection for debugging
@@ -214,12 +216,10 @@ void loop() {
   delay(10);
 
   if (!reconnect()) {
-    subscribed = false;
     return;
   }
 
   if (!tb.connected()) {
-    subscribed = false;
     // Connect to the ThingsBoard
     Serial.print("Connecting to: ");
     Serial.print(THINGSBOARD_SERVER);
@@ -231,10 +231,8 @@ void loop() {
       return;
     }
     // Sending a MAC address as an attribute
-    tb.sendAttributeString("macAddress", WiFi.macAddress().c_str());
-  }
-
-  if (!subscribed) {
+    tb.sendAttributeData("macAddress", WiFi.macAddress().c_str());
+    
     Serial.println("Subscribing for RPC...");
     // Perform a subscription. All consequent data processing will happen in
     // processSetLedState() and processSetLedMode() functions,
@@ -250,7 +248,6 @@ void loop() {
     }
 
     Serial.println("Subscribe done");
-    subscribed = true;
 
     // Request current states of shared attributes
     if (!tb.Shared_Attributes_Request(attribute_shared_request_callback)) {
@@ -281,18 +278,18 @@ void loop() {
     if (ledMode == 0) {
       previousStateChange = millis();
     }
-    tb.sendTelemetryInt(LED_MODE_ATTR, ledMode);
-    tb.sendTelemetryBool(LED_STATE_ATTR, ledState);
-    tb.sendAttributeInt(LED_MODE_ATTR, ledMode);
-    tb.sendAttributeBool(LED_STATE_ATTR, ledState);
+    tb.sendTelemetryData(LED_MODE_ATTR, ledMode);
+    tb.sendTelemetryData(LED_STATE_ATTR, ledState);
+    tb.sendAttributeData(LED_MODE_ATTR, ledMode);
+    tb.sendAttributeData(LED_STATE_ATTR, ledState);
   }
 
   if (ledMode == 1 && millis() - previousStateChange > blinkingInterval) {
     previousStateChange = millis();
     ledState = !ledState;
     digitalWrite(LED_BUILTIN, ledState);
-    tb.sendTelemetryBool(LED_STATE_ATTR, ledState);
-    tb.sendAttributeBool(LED_STATE_ATTR, ledState);
+    tb.sendTelemetryData(LED_STATE_ATTR, ledState);
+    tb.sendAttributeData(LED_STATE_ATTR, ledState);
     if (LED_BUILTIN == 99) {
       Serial.print("LED state changed to: ");
       Serial.println(ledState);
@@ -302,12 +299,12 @@ void loop() {
   // Sending telemetry every telemetrySendInterval time
   if (millis() - previousDataSend > telemetrySendInterval) {
     previousDataSend = millis();
-    tb.sendTelemetryInt("temperature", random(10, 20));
-    tb.sendAttributeInt("rssi", WiFi.RSSI());
-    tb.sendAttributeInt("channel", WiFi.channel());
-    tb.sendAttributeString("bssid", WiFi.BSSIDstr().c_str());
-    tb.sendAttributeString("localIp", WiFi.localIP().toString().c_str());
-    tb.sendAttributeString("ssid", WiFi.SSID().c_str());
+    tb.sendTelemetryData("temperature", random(10, 20));
+    tb.sendAttributeData("rssi", WiFi.RSSI());
+    tb.sendAttributeData("channel", WiFi.channel());
+    tb.sendAttributeData("bssid", WiFi.BSSIDstr().c_str());
+    tb.sendAttributeData("localIp", WiFi.localIP().toString().c_str());
+    tb.sendAttributeData("ssid", WiFi.SSID().c_str());
   }
 
   tb.loop();
@@ -316,19 +313,24 @@ void loop() {
 ```
 {:.copy-code.expandable-20}
 
-In the code, replace placeholders with your WiFi network SSID, password, ThingsBoard device access token.  
+
+{% capture replacePlaceholders %}
+Don’t forget to replace placeholders with your real WiFi network SSID, password, ThingsBoard device access token.
+{% endcapture %}
+
+{% include templates/info-banner.md content=replacePlaceholders %}
 
 Necessary variables for connection:  
 
-| Variable name | Default value | Description | 
-|-|-|-|
-| WIFI_SSID | **YOUR_WIFI_SSID** | Your WiFi network name. | 
-| WIFI_PASSWORD | **YOUR_WIFI_PASSWORD** | Your WiFi network password. |
-| TOKEN | **YOUR_DEVICE_ACCESS_TOKEN** | Access token from device. Obtaining process described in #connect-device-to-thingsboard | 
-| THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address. |
-| THINGSBOARD_PORT | **1883U** | ThingsBoard server MQTT port. Can be default for this guide. |
-| MAX_MESSAGE_SIZE | **256U** | Maximal size of MQTT messages. Can be default for this guide. |
-| SERIAL_DEBUG_BAUD | **1883U** | Baud rate for serial port. Can be default for this guide. |  
+| Variable name      | Default value                                                                                                                | Description                                                                             | 
+|--------------------|------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------|
+| WIFI_SSID          | **YOUR_WIFI_SSID**                                                                                                           | Your WiFi network name.                                                                 | 
+| WIFI_PASSWORD      | **YOUR_WIFI_PASSWORD**                                                                                                       | Your WiFi network password.                                                             |
+| TOKEN              | **YOUR_DEVICE_ACCESS_TOKEN**                                                                                                 | Access token from device. Obtaining process described in #connect-device-to-thingsboard | 
+| THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address.                                                    |
+| THINGSBOARD_PORT   | **1883U**                                                                                                                    | ThingsBoard server MQTT port. Can be default for this guide.                            |
+| MAX_MESSAGE_SIZE   | **256U**                                                                                                                     | Maximal size of MQTT messages. Can be default for this guide.                           |
+| SERIAL_DEBUG_BAUD  | **1883U**                                                                                                                    | Baud rate for serial port. Can be default for this guide.                               |  
 
 ```cpp
 ...
@@ -350,12 +352,12 @@ constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 Send data part (By default the example sends random value for **temperature** key and some WiFi information):  
 ```cpp
 ...
-    tb.sendTelemetryInt("temperature", random(10, 20));
-    tb.sendAttributeInt("rssi", WiFi.RSSI());
-    tb.sendAttributeString("bssid", WiFi.BSSIDstr().c_str());
-    tb.sendAttributeString("localIp", WiFi.localIP().toString().c_str());
-    tb.sendAttributeString("ssid", WiFi.SSID().c_str());
-    tb.sendAttributeInt("channel", WiFi.channel());
+    tb.sendTelemetryData("temperature", random(10, 20));
+    tb.sendAttributeData("rssi", WiFi.RSSI());
+    tb.sendAttributeData("bssid", WiFi.BSSIDstr().c_str());
+    tb.sendAttributeData("localIp", WiFi.localIP().toString().c_str());
+    tb.sendAttributeData("ssid", WiFi.SSID().c_str());
+    tb.sendAttributeData("channel", WiFi.channel());
 ...
 ```
 

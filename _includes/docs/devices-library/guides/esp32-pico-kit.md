@@ -1,7 +1,7 @@
 
 {% assign boardLedCount = 0 %}
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
-{% assign arduinoBoardPath = "**ESP32** > **ESP32 Pico Kit**" %}
+{% assign arduinoBoardPath = "**ESP32** > **ESP32 Pico-D4** (Old name is ESP32 Pico Kit)" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
 - [Arduino IDE](https://www.arduino.cc/en/software)"

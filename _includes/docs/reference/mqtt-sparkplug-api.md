@@ -144,7 +144,7 @@ You may push update to Sparkplug node/device metric from ThingsBoard via shared 
 ThingsBoard [Shared Attributes](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver metric value updates to the device.
 You may change the shared attribute in multiple ways - via administration UI, dashboard widget, REST API, or rule engine node.
 
-<br/>
+<br>
 Let's manually change the values of the attributes "*Outputs/LEDs/Green*" and "*Device Control/Scan Rate*".
 
 To change the value of the attribute "Outputs/LEDs/Green", you first need to add a particular metric to the *MQTT EoN Node* device profile to store it as a shared attribute instead of telemetry.

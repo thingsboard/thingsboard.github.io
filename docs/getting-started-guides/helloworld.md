@@ -15,9 +15,15 @@ step1:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-3-ce.png 
         title: 'Input device name. For example, "My New Device". No other changes required at this time. Click "Add" to add the device;'
     3:
+        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-connectivity-1-ce.png
+        title: 'The window to check the device&#39;s connection to ThingsBoard will open. This step is optional. Select the messaging protocol and your operating system. Install the necessary client tools and copy the command;'
+    4:
+        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-connectivity-3-ce.png
+        title: 'Execute previously copied command. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings. Then, close connectivity window;'
+    5:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png 
         title: 'Your first device has been added. As long as you have one device. But as new devices are added, they will be added to the top of the table, since the table sort devices using the time of the creation by default;'
-    4:
+    6:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-5-ce.png 
         title: 'When adding a new device, you will receive a notification. You can view it by clicking on the "bell" icon in the top right corner.'
 
@@ -334,7 +340,7 @@ For simplicity, we will provision the device manually using the UI.
 
 Learn more about **notifications** and how to configure them [here](#step-6-alarm-notifications).
 
-<br/>
+<br>
 You may also use:
  * [Bulk provisioning](/docs/user-guide/bulk-provisioning/) to provision multiple devices from a CSV file using UI;
  * [Device provisioning](/docs/user-guide/device-provisioning/) to allow device firmware to automatically provision the device, so you don't need to configure each device manually; 
