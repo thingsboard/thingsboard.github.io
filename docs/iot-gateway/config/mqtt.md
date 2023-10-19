@@ -2,6 +2,9 @@
 layout: docwithnav-gw
 title: MQTT Connector Configuration
 description: MQTT protocol support for ThingsBoard IoT Gateway
+redirect_from: 
+  - "/docs/iot-gateway/mqtt/"  
+  - "/docs/iot-gateway/resources/mqtt-gui-extension-configuration.json"
 
 ---
 

@@ -10,7 +10,7 @@ description: Installing ThingsBoard PE on Azure
        <div class="install-options-hero">
           <div class="container">
             <div class="install-options-hero-content">
-                <h1>ThingsBoard Setup options on Azure</h1>
+                <span class="heading">ThingsBoard Setup options on Azure</span>
                 <div class="install-options-description">
                     <p>
                         You may deploy ThingsBoard IoT Platform with different infrastructure setup

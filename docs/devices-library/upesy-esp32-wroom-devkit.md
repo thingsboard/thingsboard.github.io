@@ -6,7 +6,6 @@ chip: ESP32
 connectivity: HTTP, MQTT, WIFI, Bluetooth
 vendor: uPesy
 deviceImageFileName: upesy-esp32-wroom-dev-kit-v2.jpg
-docsPrefix: pe/
 ---
 
 * TOC

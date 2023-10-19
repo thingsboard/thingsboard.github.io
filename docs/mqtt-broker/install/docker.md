@@ -55,7 +55,7 @@ i.e. change the `1883:1883` line in the downloaded docker-compose.yml file with,
 ```
 {: .copy-code}
 
-Once the installation process is complete you can access TBMQ UI by visiting the following URL `http://{your-host-ip}:8083` in your browser (e.g. [http://localhost:8083](http://localhost:8083)).
+Once the installation process is complete you can access TBMQ UI by visiting the following URL `http://{your-host-ip}:8083` in your browser (e.g. **http://localhost:8083**).
 
 {% include templates/mqtt-broker/login.md %}
 

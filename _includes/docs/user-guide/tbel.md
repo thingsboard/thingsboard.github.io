@@ -31,12 +31,20 @@ TBEL is lightweight and is super fast comparing to Nashorn. For example, the exe
 We have forked the TBEL codebase and added additional security improvements to ensure no CPU or memory abuse. 
 So, no need to run Nashorn with the sandbox environment.
 
-Of course, TBEL is not as powerful as JS, but most of the use cases do not need this. 
-The one who requires JS flexibility may use remote [JS Executors](/docs/{{docsPrefix}}reference/msa/#javascript-executor-microservices) as usual. 
+Of course, TBEL is not as powerful as JS, but most of the use cases do not need this.
+{% if docsPrefix == 'paas/' %}
+The one who requires JS flexibility may use remote [JS Executors](/docs/pe/reference/msa/#javascript-executor-microservices) as usual.
+{% else %}
+The one who requires JS flexibility may use remote [JS Executors](/docs/{{docsPrefix}}reference/msa/#javascript-executor-microservices) as usual.
+{% endif %}
 
 #### TBEL vs JS Executors
 
-[JS Executors](/docs/{{docsPrefix}}reference/msa/#javascript-executor-microservices) is a separate microservice based on Node.js. 
+{% if docsPrefix == 'paas/' %}
+[JS Executors](/docs/pe/reference/msa/#javascript-executor-microservices) is a separate microservice based on Node.js.
+{% else %}
+[JS Executors](/docs/{{docsPrefix}}reference/msa/#javascript-executor-microservices) is a separate microservice based on Node.js.
+{% endif %}
 It is powerful and supports the latest JS language standards. 
 However, there is a noticeable overhead to execute JS functions remotely. 
 The Rule Engine and JS executors communicate through the queue. 

@@ -178,7 +178,7 @@ environment variable, default value, and description.
           <td>listener.ssl.config.protocol</td>
           <td>LISTENER_SSL_PROTOCOL</td>
           <td>TLSv1.2</td>
-          <td>SSL protocol: see <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#SSLContext">this link</a></td>
+          <td>SSL protocol: see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#SSLContext">this link</a></td>
       </tr>
       <tr>
           <td>listener.ssl.config.credentials.type</td>
@@ -376,7 +376,7 @@ environment variable, default value, and description.
           <td>listener.wss.config.protocol</td>
           <td>LISTENER_WSS_PROTOCOL</td>
           <td>TLSv1.2</td>
-          <td>SSL protocol: see <a href="http://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#SSLContext">this link</a></td>
+          <td>SSL protocol: see <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#SSLContext">this link</a></td>
       </tr>
       <tr>
           <td>listener.wss.config.credentials.type</td>

@@ -898,7 +898,7 @@ and also the content of the data itself (a detailed description of the data).
           <summary>
               <font color="#228b22"><i><b>Screenshot of receiving messages from the device ThingPark Wireless OSS intelligent logger (Actility)</b></i></font> (<b>click to open expanded view</b>)
           </summary>
-          <img src="/images/samples/abeeway/.png" alt="receiving actility from dev">
+          <img src="/images/samples/abeeway/receiving_actility_from_dev.png" alt="receiving actility from dev">
          </details>
         <details>
           <summary>

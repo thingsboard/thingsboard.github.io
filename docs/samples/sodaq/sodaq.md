@@ -137,7 +137,7 @@ Few things to notice:
 
 - Go to **Data Converters** -> **Add new Data Converter** -> **Import Converter**
 
-- Import following json file: [**SODAQ Uplink data converter**](/sodaq/sodaq-uplink-data-converter.json) (left click on the link and then 'Ctrl+S' to download)
+- Import following json file: [**SODAQ Uplink data converter**](/docs/user-guide/resources/sodaq/sodaq-uplink-data-converter.json) (left click on the link and then 'Ctrl+S' to download)
 as described on the following screencast:
 
 <img data-gifffer="/images/samples/sodaq/import-and-test-converter.gif" alt="Import and test converter">
@@ -243,7 +243,7 @@ Download the attached json [**file**](/docs/user-guide/resources/sodaq/tracker-a
 
 ## Step 7: Demo dashboard import
 
-Download and import attached json [**file**](/sodaq/sodaq-dashboard.json) with a dashboard from this tutorial.
+Download and import attached json [**file**](/docs/user-guide/resources/sodaq/sodaq-dashboard.json) with a dashboard from this tutorial.
 
 <br>The following screencast will show how to import the dashboard:
 
@@ -303,7 +303,7 @@ In this tutorial, we modified our **Root Rule Chain** and also created Rule Chai
 
 <br>
 
-Download the attached json [**file**](/sodaq/tracker-alarms.json) for the **Tracker Alarms** chain.
+Download the attached json [**file**](/docs/user-guide/resources/sodaq/tracker-alarms.json) for the **Tracker Alarms** chain.
 <br>
 <br>
 

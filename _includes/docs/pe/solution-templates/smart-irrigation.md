@@ -71,7 +71,7 @@ You may find the exact commands to send data on behalf of created devices in the
 See [connecting devices](/docs/{{docsPrefix}}getting-started-guides/connectivity/) for various connectivity options to connect real devices.
 
 ### Alarms
-User may turn alarms on and off as well as configure the alarm thresholds via the <a href="${MAIN_DASHBOARD_URL}" target="_blank">"Smart Irrigation"</a> dashboard.
+User may turn alarms on and off as well as configure the alarm thresholds via the "Smart Irrigation" dashboard.
 
 
 

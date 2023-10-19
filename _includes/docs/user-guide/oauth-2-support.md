@@ -114,7 +114,7 @@ If you log in as the System Administrator, you will see that the Tenant name is 
 Now let's add one more provider to our list - [Auth0](https://auth0.com/).
 This time we are going to create customers for our users inside a single domain tenant.
 
-To use the Auth0 authentication platform for Login, let's create a new application of the 'Regular Web App' type following this [link](https://auth0.com/docs/{{docsPrefix}}quickstarts/).
+To use the Auth0 authentication platform for Login, let's create a new application of the 'Regular Web App' type following this [link](https://auth0.com/docs/quickstarts/).
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/14-auth0-regular-web-app.png&#41;)
 {% include images-gallery.html imageCollection="step14" preview="false" max-width="100%" %}

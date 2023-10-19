@@ -24,7 +24,7 @@ npm install coap-cli -g
 {% capture difference %}
 **NOTE**:
 <br>
-CoAP cli does not support query parameters. If you require to use query parameters, you should use [coap client](http://manpages.ubuntu.com/manpages/focal/man5/coap-client.5.html) instead. To install the coap-client please execute: <br>
+CoAP cli does not support query parameters. If you require to use query parameters, you should use [coap client](https://manpages.ubuntu.com/manpages/focal/man5/coap-client.5.html) instead. To install the coap-client please execute: <br>
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
