@@ -5,7 +5,6 @@ category: Other devices
 connectivity: HTTP, MQTT, Ethernet, WiFi
 vendor: ACE Automation
 deviceImageFileName: ace-iot-gateway.png
-docsPrefix: pe/
 ---
 
 

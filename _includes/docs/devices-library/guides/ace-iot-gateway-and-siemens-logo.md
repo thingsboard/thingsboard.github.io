@@ -4,7 +4,7 @@
 {% assign controllerVendorLink = "https://www.siemens.com/ua/uk/produkty/avtomatyzatsiya-promyslovosti/systemy-avtomatyzatsiyi/systemy-promyslovoyi-avtomatyzatsiyi-simatic/plc-kontrolery-simatic/lohichnyy-modul-logo.html" %}
 {% assign prerequisites = '
 - <a href="' | append: deviceVendorLink | append: '" target="_blank">' | append: deviceName | append: '</a>
-- Modbus Controller (in our case <a href="' | append: controllerVendorLink | append: '" target="_blank">' | append: controllerName | append: '</a>) '
+- Modbus Controller (in our case, <a href="' | append: controllerVendorLink | append: '" target="_blank">' | append: controllerName | append: '</a>) '
  %}
 {% assign thingsboardInstanceLink = "https://demo.thingsboard.io" %}
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}
@@ -24,87 +24,135 @@ harnessing real-time data. Simplify your connectivity and data management with t
 
 ## Prerequisites
 
-To continue with this guide we will need the following:  
+To continue with this guide, we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{thingsboardInstanceLink}}){: target="_blank"}  
 
 ## Import Rule chain
 
-Download [ACE Rule Chain](/docs/devices-library/resources/dashboards/ready-to-go-devices/ACE-rule-chain.json){:target="_blank" download="rule-chain.json"} and import.
+Download [ACE Rule Chain](/docs/devices-library/resources/dashboards/ready-to-go-devices/ACE-rule-chain.json){:target="_blank" download="ace-rule-chain.json"} and import.
 
 To import rule chain from а JSON file, you should:
 
-{% assign importRuleChain = '
+{% assign importRuleChainPE = '
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-1-pe.png,
-        title: Navigate to the "Rule chains" page and click on the "+" button in the upper right corner of the screen and then choose "Import rule chain" option. The toolbar import popup window will appear. Upload a JSON file and click on the "Import" button;,
+        title: Navigate to the "Rule chains" page and click on the "+" button in the upper right corner of the screen and then choose "Import rule chain" option. The toolbar import popup window will appear. Upload a JSON file and click on the "Import" button;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-2-pe.png,
-        title: The imported rule chain will open. Click on the "Apply changes" button to save the rule chain. Then, go back to the main "Rule chains" page;,
+        title: The imported rule chain will open. Click on the "Apply changes" button to save the rule chain. Then, go back to the main "Rule chains" page;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-3-pe.png,
-        title: Rule chain is imported.,
+        title: Rule chain is imported.
 '
 %}
 
-{% include images-gallery.liquid showListImageTitles="false" imageCollection=importRuleChain %}
+{% assign importRuleChainCE = '
+    ===
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-1-ce.png,
+        title: Navigate to the "Rule chains" page and click on the "+" button in the upper right corner of the screen and then choose "Import rule chain" option. The toolbar import popup window will appear. Upload a JSON file and click on the "Import" button;
+    ===
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-2-ce.png,
+        title: The imported rule chain will open. Click on the "Apply changes" button to save the rule chain. Then, go back to the main "Rule chains" page;
+    ===
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-rule-chain-import-3-ce.png,
+        title: Rule chain is imported.
+'
+%}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=importRuleChainPE %}
+{% else %}  
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=importRuleChainCE %}
+{% endif %}
 
 ## Create device profile
 
 Now, we are ready to create device profile. For this, follow steps below:
 
-1. Go to **Profiles** > **Device profiles** and click on **"Add"** button > **"Create new device profile"**;
-2. Input **Name** field with **"ACE routers"** value;
-3. Select **"ACE routers"** imported rule chain from the step above;
-4. Click on **"Transport configuration"** tab;
-5. Select **MQTT** transport type;
-6. Change **Telemetry topic filter** value from **"v1/devices/me/telemetry"** to **"siemens/+"**;
-7. Click on **"Add"** button.
-
-{% assign createDeviceProfile = '
+{% assign createDeviceProfilePE = '
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-1-pe.png,
+		title: Go to **Profiles** > **Device profiles** and click on **"Add"** button > **"Create new device profile"**;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-2-pe.png,
+		title: Input **Name** field with **"ACE routers"** value, and select **"ACE routers"** imported rule chain from the step above;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-3-pe.png,
+		title: Click on **"Transport configuration"** tab, select **MQTT** transport type and change **Telemetry topic filter** value from **"v1/devices/me/telemetry"** to **"siemens/+"**, click on **"Add"** button;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-4-pe.png,
+		title: Device Profile created.
     '
 %}
 
-{% include images-gallery.liquid showListImageTitles="false" imageCollection=createDeviceProfile %}
+{% assign createDeviceProfileCE = '
+    ===
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-1-ce.png,
+		title: Go to **Profiles** > **Device profiles** and click on **"Add"** button > **"Create new device profile"**;
+    ===
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-2-ce.png,
+		title: Input **Name** field with **"ACE routers"** value, and select **"ACE routers"** imported rule chain from the step above;
+    ===
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-3-ce.png,
+		title: Click on **"Transport configuration"** tab, select **MQTT** transport type and change **Telemetry topic filter** value from **"v1/devices/me/telemetry"** to **"siemens/+"**, click on **"Add"** button;
+    ===
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-device-profile-4-ce.png,
+		title: Device Profile created.
+    '
+%}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=createDeviceProfilePE %}
+{% else %}  
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=createDeviceProfileCE %}
+{% endif %}
 
 ## Create device
 
 For simplicity, we will provide the device manually using the UI:
 
-1. Open the **Devices** page;
-2. By default, you navigate to the device group **“All”**. Click on the **“+”** icon in the top right corner of the table and then select **“Add new device”**;
-3. Input device name. For example, **“ACE Gateway”**;
-4. Select created device profile from the step above, in our case **"ACE routers"**;
-5. Click on **"Credentials"** tab;
-6. Check **"Add credentials"** and select **"MQTT Basic"** credentials type;
-7. Click on **"Generate"** button on each field;
-8. Click **"Add"** button.
-
-{% assign provisionDevice = '
+{% assign provisionDevicePE = '
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-1-pe.png,
+		title: Open the **Devices** page. By default, you navigate to the device group **“All”**. Click on the **“+”** icon in the top right corner of the table and then select **“Add new device”**;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-2-pe.png,
+		title: Input device name. For example, **“ACE Gateway”**. Select created device profile from the step above, in our case, **"ACE routers"**;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-3-pe.png,
+		title: Click on **"Credentials"** tab. Check **"Add credentials"** and select **"MQTT Basic"** credentials type. Click on **"Generate"** button on each field. Click **"Add"** button;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-4-pe.png,
+		title: Device added.
     '
 %}
 
-{% include images-gallery.liquid showListImageTitles="false" imageCollection=provisionDevice %}
+{% assign provisionDeviceCE = '
+    ===
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-1-ce.png,
+		title: title: Open the **Devices** page. By default, you navigate to the device group **“All”**. Click on the **“+”** icon in the top right corner of the table and then select **“Add new device”**;
+    ===
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-2-ce.png,
+		title: Input device name. For example, **“ACE Gateway”**. Select created device profile from the step above, in our case, **"ACE routers"**;
+    ===
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-3-ce.png,
+		title: Click on **"Credentials"** tab. Check **"Add credentials"** and select **"MQTT Basic"** credentials type. Click on **"Generate"** button on each field. Click **"Add"** button;
+    ===
+        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-4-ce.png,
+		title: Device added.
+    '
+%}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDevicePE %}
+{% else %}  
+    {% include images-gallery.liquid showListImageTitles="true" imageCollection=provisionDeviceCE %}
+{% endif %}
 
 ## Gateway connection
 
-According to the official user manual and this guide you can connect the gateway to the network and get access to 
+According to the official user manual and this guide, you can connect the gateway to the network and get access to 
 the WebUI in two ways:
 {% capture readytogodeviceconnectionstogglespec %}
 Wireless connection%,%wirelessConnection%,%templates/device-library/ready-to-go-devices/ace-gateway-wireless-connection-block.md%br%
@@ -112,19 +160,27 @@ Wired connection%,%wiredConnection%,%templates/device-library/ready-to-go-device
 
 {% include content-toggle.liquid content-toggle-id="readytogodeviceconnectionstogglespec" toggle-spec=readytogodeviceconnectionstogglespec %}
 
-Now you have ability to configure the gateway.
+Now, you can configure the gateway.
 
 Once you are connected to the ACE-GTW-MQTT, you can change its IP address if you wish:
 * **Network** > **Interfaces**;
 * Click on **“Edit”** the LAN interface;
 * Enter a new IP address that is not already being used by another device on your network.
 
-**Also, don't forget to change default password.**
+{% capture info %}
+<body>
+  <p>
+    <b style="color:red">WARNING:</b>
+    <span style="color:black">Don't forget to change default password.</span>
+  </p>
+</body>
+{% endcapture %}
+{% include templates/warn-banner.md content=info %}
 
-Now we are ready to configure the MQTT connection, topics for data transmission and establishing the Modbus connection.
+Now we are ready to configure the MQTT connection, topics for data transmission, and establishing the Modbus connection.
 
-Let first configure Modbus Connection. As mention above we use Siemens LOGO! with AM2 RTD module 
-(used for connecting PT100) - is the perfect choice for the fast, uncomplicated and space-saving solution of simple 
+Let's first configure Modbus Connection. As mention above, we use Siemens LOGO! with AM2 RTD module 
+(used for connecting PT100) - which is the perfect choice for the fast, uncomplicated, and space-saving solution of simple 
 control and regulation tasks. LOGO! has long since established itself as an intelligent logic module in small automation 
 projects.
 
@@ -133,7 +189,7 @@ Follow the next steps:
 * Fill in all required fields with correct information about your device;
 * Click on **"Save & Apply"** button.
 
-In our case we have the following settings:
+In our case, we have the following settings:
 
 ![](/images/devices-library/ready-to-go-devices/ace-iot-gateway/modbus-tcp-settings.png)
 
@@ -243,11 +299,12 @@ config topics
 
 {% capture readytogodevicestogglespec %}
 Imported Dashboard%,%importedDashboard%,%templates/device-library/ready-to-go-devices/ace-gateway-imported-dashboard.md%br%
-New Dashboard%,%newDashboard%,%templates/device-library/single-board-computers/device-new-dashboard.md{% endcapture %}
+New Dashboard%,%newDashboard%,%templates/device-library/ready-to-go-devices/gateway-new-dashboard.md{% endcapture %}
 
 {% include content-toggle.liquid content-toggle-id="minicomputersDashboard" toggle-spec=readytogodevicestogglespec %}
 
 ## Conclusion
+
 With the knowledge in this guide, you can easily connect your ACE Automation MQTT 4G GPS Gateway and use the built-in 
 integration to retrieve data from devices connected to ACE Automation MQTT 4G GPS Gateway.
 

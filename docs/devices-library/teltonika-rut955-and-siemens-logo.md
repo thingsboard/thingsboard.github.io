@@ -5,7 +5,6 @@ category: Other devices
 connectivity: HTTP, MQTT, Ethernet, WiFi
 vendor: Teltonika
 deviceImageFileName: teltonika-rut955.jpeg
-docsPrefix: pe/
 ---
 
 

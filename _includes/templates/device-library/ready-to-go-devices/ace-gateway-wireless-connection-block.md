@@ -1,16 +1,16 @@
 1. Go to **Network** > **Wireless**, click on **"Scan"** button;
 2. Select a network you want to join;
-3. Enter the passphrase/password if exist;
+3. Enter the passphrase/password if exists;
 4. Let the name of the new network (wwan);
 5. Click on **"Save & Apply"** button on the **“Device Configuration”** page;
 6. Click on **"Save & Apply"** button on the **“Interface Configuration”** page;
 7. Check your new IP address on WWAN:
    - In **Network** > **Interfaces** check the new IP address on WWAN interface.
-8. For check your connection to Internet:
+8. To check your connection to Internet:
    - Go to **Network** > **Diagnostics** and ping the “openwrt.org” server on the Internet. As above (Via its WAN RJ45 port 
             connected to your network).
-9. With your bowser, go to the **ACE-GTW-MQTT** web interface by enter its IP address: 192.168.8.1;
-10. Enter the username(Default: **root**) and password(Default: **root**), click Login.
+9. With your browser, go to the **ACE-GTW-MQTT** web interface by entering its IP address: 192.168.8.1;
+10. Enter the username(Default: **root**) and password(Default: **root**), and click Login.
 
 {% assign wirelessConnection = '
     ===
