@@ -36,18 +36,6 @@ Then, choose a device with name My device from dropdown list and save entity ali
 
 If you did everything right, you have to see the following dashboard:
 
-{% assign aceDashboardCE = '
-    ===
-        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-dashboard-1-ce.png,
-    '
-%}
-
-{% assign aceDashboardPE = '
-    ===
-        image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-gateway-dashboard.png,
-    '
-%}
-
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
 ![imagePe](/images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-gateway-dashboard.png)
 {% else %}  

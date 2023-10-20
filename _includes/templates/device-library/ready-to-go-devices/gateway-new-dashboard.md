@@ -5,10 +5,10 @@ We will create a dashboard and add the most popular widgets. See the instruction
 {% assign creatingDashboardCE = '
     ===
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-1-ce.png,
-        title: Open the Dashboards page. Click on the "+" icon in the top right corner. Select "Create new dashboard".
+        title: Open the Dashboards page. Click on the "+" icon in the top right corner. Select "Create new dashboard";
     ===
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-2-ce.png,
-        title: Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard.
+        title: Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard;
     ===
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-3-ce.png,
         title: Your dashboard should be listed first since the table sorts dashboards using the creation time by default. Click on the "Open dashboard" icon.
@@ -18,17 +18,17 @@ We will create a dashboard and add the most popular widgets. See the instruction
 {% assign creatingDashboardPE = '
     ===
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-1-pe.png,
-        title: Open the Dashboards page. Click on the "+" icon in the top right corner. Select "Create new dashboard".
+        title: Open the Dashboards page. Click on the "+" icon in the top right corner. Select "Create new dashboard";
     ===
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-2-pe.png,
-        title: Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard.
+        title: Input dashboard name. For example, "My New Dashboard". Click "Add" to add the dashboard;
     ===
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-3-pe.png,
         title: Your dashboard should be listed first since the table sorts dashboards using the creation time by default. Click on the "Open dashboard" icon.
     '
 %}
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" or page.docsPrefix == "pe/" or page.docsPrefix == "pass/" %}
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingDashboardPE %}
 {% else %}  
     {% include images-gallery.liquid showListImageTitles="true" imageCollection=creatingDashboardCE %}

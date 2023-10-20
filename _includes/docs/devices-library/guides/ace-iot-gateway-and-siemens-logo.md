@@ -131,7 +131,7 @@ For simplicity, we will provide the device manually using the UI:
 {% assign provisionDeviceCE = '
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-1-ce.png,
-		title: title: Open the **Devices** page. By default, you navigate to the device group **“All”**. Click on the **“+”** icon in the top right corner of the table and then select **“Add new device”**;
+		title: Open the **Devices** page. By default, you navigate to the device group **“All”**. Click on the **“+”** icon in the top right corner of the table and then select **“Add new device”**;
     ===
         image: /images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-create-device-2-ce.png,
 		title: Input device name. For example, **“ACE Gateway”**. Select created device profile from the step above, in our case, **"ACE routers"**;
