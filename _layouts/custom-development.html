@@ -1,0 +1,159 @@
+<!Doctype html>
+<html id="custom-development">
+
+{% include head-header.html%}
+<!--  HERO  -->
+<section id="hero" class="light-text">
+    <div class="hero-container">
+        <div id="hero-content">
+            <div class="cdu-title">Custom development unit</div>
+            <div class="cdu-sub-title">We will create your custom IOT solution that perfectly suits your business</div>
+        </div>
+        <div class="hero-image">
+            <div class="image-wrapper">
+                <img 
+                    srcset="/images/custom-development/laptop-with-dashboard_1127x720_1x.png 1x, /images/custom-development/laptop-with-dashboard_2254x1440_2x.png 2x"
+                    src="/images/custom-development/laptop-with-dashboard_1127x720_1x.png"
+                    alt="Laptop with a dashboard" id="icon-laptop" />
+            </div>
+            <div class="image-wrapper">
+                <img 
+                    id="icon-phone" 
+                    srcset="/images/custom-development/phone-with-dashboard_459x552_1x.png 1x, /images/custom-development/phone-with-dashboard_918x1104_2x.png 2x"
+                    src="/images/custom-development/phone-with-dashboard_459x552_1x.png" 
+                    alt="Phone with a dashboard"/>
+            </div>
+            <div class="schedule-block">
+                <img
+                    id="progress"
+                    src="/images/custom-development/half-circle-progress.svg" />
+
+                <span class="result-number">100%</span>
+                <span class="result-text">We offer time-guaranteed result</span>
+                
+                <button class="button anchor-button" anchor="#get-in-touch">Schedule a call</button>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="encyclopedia">
+    <div class="noToc">
+        {{content}}
+    </div>
+</section>
+
+<section id="encyclopedia">
+    <div id="peContent" class="noToc">
+        <!-- {{ content }} -->
+    </div>
+</section>
+
+
+{% include trendz-wizard.html defaultPlan="business" %}
+
+{% include footer.html %}
+
+{% if site.data[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}
+<button class="flyout-button" onclick="tb.toggleToc()"></button>
+{% endif %}
+
+<script type="text/javascript">
+    jqueryDefer(function () {
+        vis(function() {
+            if (vis()) {
+                slideUp();
+            }
+        });
+    });
+
+    inViewportDefer(function() {
+        $(".pie-chart .sphere, .multiple-chart .right-sphere").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animation-fromTopRight animated");
+                return true;
+            }
+        })
+        $(".pie-chart .donut-chart, .multiple-chart .left-sphere").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animation-fromTopLeft animated");
+                return true;
+            }
+        })
+        $(".pie-chart .bar-chart").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animation-fromBottomRight animated");
+                return true;
+            }
+        })
+        $(".multiple-chart .bottom-sphere").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animation-fromBottomLeft animated");
+                return true;
+            }
+        })
+        $(".pe-features .main-bg:nth-child(even) main .content").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animated fadeInRight");
+                return true;
+            }
+        });
+
+        $(".pe-features .main-bg:nth-child(even) main .image-block, .pe-features .main-bg:nth-child(odd) main .content").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animated fadeInLeft");
+                return true;
+            }
+        });
+        $(".js-bounceRight").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animated fadeInRight");
+                return true;
+            }
+        });
+        $(".js-bounceLeft").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animated fadeInLeft");
+                return true;
+            }
+        });
+
+        $("#feature-comparison table th:nth-child(2), " +
+            "#feature-comparison table th:nth-child(4), " +
+            "#feature-comparison table td:nth-child(2), " +
+            "#feature-comparison table td:nth-child(4)").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animated flipInY");
+                return true;
+            }
+        });
+        $("#pricing-models-cards main, #peContent .button.try-trendz, #pe-customers .customers-container .customer-block").inViewport(function(px){
+            if(px >= 80) {
+                $(this).addClass("animated zoomIn");
+                return true;
+            }
+        });
+    });
+
+    function slideUp() {
+        var headAnimations = $('#hero-content').find('.header-animation');
+        for (var i=0;i<headAnimations.length;i++) {
+            reinsert($(headAnimations[i]));
+        }
+    }
+
+    function reinsert(el) {
+        var newone = el.clone(true);
+        el.before(newone);
+        el.remove();
+    }
+
+
+
+</script>
+
+{% include cookie-consent.html %}
+
+</body>
+</html>
