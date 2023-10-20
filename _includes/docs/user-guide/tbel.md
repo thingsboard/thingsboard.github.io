@@ -725,7 +725,7 @@ Parsed list of integer values.
 **Examples:**
 
 ```java
-return hexToBytes("BBAA"); // returns [187, 170]
+return hexToBytes("BBAA"); // returns [-69, -86]
 ```
 {: .copy-code}
 
@@ -750,7 +750,7 @@ Hex string.
 **Examples:**
 
 ```java
-return bytesToHex([187, 170]); // returns "BBAA"
+return bytesToHex([-69, -86]); // returns "BBAA"
 ```
 {: .copy-code}
 
