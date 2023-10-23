@@ -48,16 +48,16 @@ The following interactive dashboard hosted on live demo server represents smart 
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm1.png" alt="smart metering 1">
+        <img class="item-image" src="/images/usecases/smart-metering/sm1.png" alt="Smart metering dashboard with a map">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm2.png" alt="smart metering 2">
+        <img class="item-image" src="/images/usecases/smart-metering/sm2.png" alt="Smart metering dashboard with a location">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm3.png" alt="smart metering 3">
+        <img class="item-image" src="/images/usecases/smart-metering/sm3.png" alt="Smart metering dashboard with a building plan">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm4.png" alt="smart metering 4">
+        <img class="item-image" src="/images/usecases/smart-metering/sm4.png" alt="Smart metering dashbord with a thermostat controller">
     </div>
 </div>
 
