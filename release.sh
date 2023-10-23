@@ -28,4 +28,10 @@ echo "$(date +"%H:%M") Cleanup images.. done."
 
 cd -
 
+echo "$(date +"%H:%M") Update configuration pages for CE:"
+  python3 generate_config_pages.py
+
+echo "$(date +"%H:%M") Update configuration pages for PE:"
+  python3 generate_config_pages.py
+
 echo "$(date +"%H:%M") Please review changes and commit. "

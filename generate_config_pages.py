@@ -136,7 +136,7 @@ def update_page(input_file, output_file):
 
 if __name__ == '__main__':
     sys. setrecursionlimit(10000)
-    tb_repo_path = input("Enter the path to the thingsboard repository (CE or PE): ")
+    tb_repo_path = input("Enter the path to the thingsboard repository (CE/PE): ")
     if tb_repo_path.endswith("pe"):
         update_page(tb_repo_path + "/application/src/main/resources/thingsboard.yml",
                     "_includes/docs/pe/user-guide/install/core-rule-engine-config.md")
