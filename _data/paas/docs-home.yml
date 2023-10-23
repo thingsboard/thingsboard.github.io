@@ -202,6 +202,8 @@ toc:
     - title: ThingsBoard Expression Language (TBEL)
       path: /docs/paas/user-guide/tbel/
       new: true
+    - title: Templatization
+      path: /docs/paas/user-guide/templatization/
 - title: Security
   section:
     - title: Audit Log

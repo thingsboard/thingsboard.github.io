@@ -197,6 +197,8 @@ toc:
     - title: ThingsBoard Expression Language (TBEL)
       path: /docs/user-guide/tbel/
       new: true
+    - title: Templatization
+      path: /docs/user-guide/templatization/
 - title: Security
   section:
     - title: Enable HTTPS
