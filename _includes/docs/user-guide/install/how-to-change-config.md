@@ -58,8 +58,3 @@ If ThingsBoard is installed in a K8S environment, you may edit the scripts and a
 corresponding deployments/stateful sets.
 See [K8S documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/)
 for more details.
-
-### logback.xml
-
-The configuration file for logging. Allows controlling the log level, the size of log files and the total size/volume of
-logs.
