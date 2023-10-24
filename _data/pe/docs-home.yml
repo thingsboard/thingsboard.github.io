@@ -204,6 +204,7 @@ toc:
       new: true
     - title: Templatization
       path: /docs/pe/user-guide/templatization/
+      new: true
 - title: Security
   section:
   - title: Enable HTTPS
