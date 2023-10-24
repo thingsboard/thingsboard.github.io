@@ -150,6 +150,11 @@ For simplicity, we will provide the device manually using the UI:
 
 ## Gateway connection
 
+{% capture infoSettings %}
+Make sure you enable **"ADVANCED"** mode in the top right corner by clicking the button under **"Mode"**.
+{% endcapture %}
+{% include templates/info-banner.md content=infoSettings %}
+
 According to the official user manual and this guide you can connect the gateway to the network and get access to 
 the WebUI in two ways:
 
