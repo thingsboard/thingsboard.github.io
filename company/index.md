@@ -20,9 +20,9 @@ description:
     <div class="our-mission-logos">
         <div class="spacer"></div>
         <div class="about-mission-background"></div>
-        <img class="about-mission-index" src="/images/about-mission-index.svg" alt="Map dashboard example">
-        <img class="about-mission-left" src="/images/about-mission-left.svg" alt="Root dashboard example">
-        <img class="about-mission-right" src="/images/about-mission-right.svg" alt="Chart dashboard example">
+        <img class="about-mission-index" src="https://img.thingsboard.io/about-mission-index.svg" alt="Map dashboard example">
+        <img class="about-mission-left" src="https://img.thingsboard.io/about-mission-left.svg" alt="Root dashboard example">
+        <img class="about-mission-right" src="https://img.thingsboard.io/about-mission-right.svg" alt="Chart dashboard example">
     </div>
     <div class="our-mission-info">
         <span class="our-mission">Our mission</span>
