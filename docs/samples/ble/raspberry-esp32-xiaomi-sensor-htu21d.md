@@ -22,7 +22,7 @@ Data is collected by a python script that is running on [Raspberry Pi](https://e
 
 * [ESP32-PICO-KIT](https://www.espressif.com/en/products/hardware/development-boards)
 
-  <img src="https://cdn.xingosoftware.com/elektor/images/fetch/dpr_1/https%3A%2F%2Fwww.elektormagazine.com%2Fassets%2Fupload%2Fimages%2F18%2F20171221112541_esp32-pico-kit-v4-004.jpg" width="400"  alt="elektormagazine">
+  <img src="https://cdn.xingosoftware.com/elektor/images/fetch/dpr_1/https%3A%2F%2Fwww.elektormagazine.com%2Fassets%2Fupload%2Fimages%2F18%2F20171221112541_esp32-pico-kit-v4-004.jpg" width="400"  alt="Device plate">
 
 * [HTU21D Digital Relative Humidity Sensor](https://ru.aliexpress.com/item/NEW-HTU21D-Temperature-Humidity-Sensor-Breakout-Board-Module/32451061596.html?spm=a2g0v.search0104.3.8.69f56062P2BU8f&ws_ab_test=searchweb0_0,searchweb201602_3_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=c8c9941c-ea29-40e5-b74a-d1c0ae217af7-1&algo_pvid=c8c9941c-ea29-40e5-b74a-d1c0ae217af7)
 
@@ -32,7 +32,7 @@ Data is collected by a python script that is running on [Raspberry Pi](https://e
 * 4 female-to-male jumper wires
 * [Raspberry Pi with Bluetooth](https://www.raspberrypi.org/products/)
 
-  <img src="https://images-na.ssl-images-amazon.com/images/I/91zSu44%2B34L._SL1500_.jpg" width="400" alt="images amazon">
+  <img src="https://images-na.ssl-images-amazon.com/images/I/91zSu44%2B34L._SL1500_.jpg" width="400" alt="Raspberry plate from Amzon">
 
 * Xiaomi Smart Temperature & Humidity Sensor
 

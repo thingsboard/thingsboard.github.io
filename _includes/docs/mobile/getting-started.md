@@ -146,11 +146,11 @@ You should see either Android or iOS output, depending on your device.
 
 <div style="display: flex; flex-direction: row;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <img width="" src="https://img.thingsboard.io/mobile/{{docsPrefix}}android-app-login.png" title="Android login screen" alt="Android login screen">
+        <img width="" src="/images/mobile/{{docsPrefix}}android-app-login.png" title="Android login screen" alt="Android login screen example">
         <span style="margin-top: 16px; font-size: 90%; color: #6c757d;">Android</span>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <img width="" src="https://img.thingsboard.io/mobile/{{docsPrefix}}ios-app-login.png" title="iOS login screen" alt="iOS login screen">
+        <img width="" src="/images/mobile/{{docsPrefix}}ios-app-login.png" title="iOS login screen" alt="iOS login screen example">
         <span style="margin-top: 16px; font-size: 90%; color: #6c757d;">iOS</span>
     </div>
 </div>
@@ -173,10 +173,10 @@ To be familiar with common app features try out our ThingsBoard Live mobile appl
 
 <div class="mobile-market-badges">
     <a href="https://play.google.com/store/apps/details?id=org.thingsboard.demo.app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank">
-        <img src="https://img.thingsboard.io/mobile/get-it-on-google-play.png" alt="Get it on Google Play">
+        <img src="/images/mobile/get-it-on-google-play.png" alt="Get it on Google Play icon">
     </a>
     <a href="https://apps.apple.com/us/app/thingsboard-live/id1594355695?itsct=apps_box_badge&amp;itscg=30200" target="_blank">
-        <img src="https://img.thingsboard.io/mobile/download-on-the-app-store.png" alt="Download on the App Store">
+        <img src="/images/mobile/download-on-the-app-store.png" alt="Download on the App Store icon">
     </a>
 </div>
 
