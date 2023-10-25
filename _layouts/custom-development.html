@@ -3,61 +3,21 @@
 
 {% include head-header.html%}
 <!--  HERO  -->
-<section id="hero" class="light-text">
-    <div class="hero-container">
-        <div id="hero-content">
-            <div class="cdu-title">Custom development unit</div>
-            <div class="cdu-sub-title">We will create your custom IOT solution that perfectly suits your business</div>
-        </div>
-        <div class="hero-image">
-            <div class="image-wrapper">
-                <img 
-                    srcset="/images/custom-development/laptop-with-dashboard_1127x720_1x.png 1x, /images/custom-development/laptop-with-dashboard_2254x1440_2x.png 2x"
-                    src="/images/custom-development/laptop-with-dashboard_1127x720_1x.png"
-                    alt="Laptop with a dashboard" id="icon-laptop" />
-            </div>
-            <div class="image-wrapper">
-                <img 
-                    id="icon-phone" 
-                    srcset="/images/custom-development/phone-with-dashboard_459x552_1x.png 1x, /images/custom-development/phone-with-dashboard_918x1104_2x.png 2x"
-                    src="/images/custom-development/phone-with-dashboard_459x552_1x.png" 
-                    alt="Phone with a dashboard"/>
-            </div>
-            <div class="schedule-block">
-                <img
-                    id="progress"
-                    src="/images/custom-development/half-circle-progress.svg" />
 
-                <span class="result-number">100%</span>
-                <span class="result-text">We offer time-guaranteed result</span>
-                
-                <button class="button anchor-button" anchor="#get-in-touch">Schedule a call</button>
-
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="encyclopedia">
+<!-- <section id="encyclopedia"> -->
     <div class="noToc">
         {{content}}
     </div>
-</section>
-
-<section id="encyclopedia">
-    <div id="peContent" class="noToc">
-        <!-- {{ content }} -->
-    </div>
-</section>
+<!-- </section> -->
 
 
 {% include trendz-wizard.html defaultPlan="business" %}
 
 {% include footer.html %}
 
-{% if site.data[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}
+<!-- {% if site.data[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}
 <button class="flyout-button" onclick="tb.toggleToc()"></button>
-{% endif %}
+{% endif %} -->
 
 <script type="text/javascript">
     jqueryDefer(function () {

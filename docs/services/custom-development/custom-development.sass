@@ -1,22 +1,35 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap')
 
-$step05: 750px
-$step1: 960px
-$step2: 1025px
-$step3: 1250px
-$step4: 1500px
+$step1: 360px
+$step2: 672px
+$step3: 1000px
+$step4: 1280px
+$step5: 1440px
+// $step1: 360
+// $step05: 750px
+// $step1: 960px
+// $step2: 1025px
+// $step3: 1250px
+// $step4: 1500px
 
 #custom-development-reviews
     footer
-        position: unset
-    
-    section
         position: relative
-        padding: 0 130px
+
+    .content-wrapper
+        position: relative
+        z-index: 1
+
+    .full-review
+        display: flex
+        justify-content: center
+
 
     #encyclopedia
-        padding: 130px 0
+        padding: 20px 0
         position: relative
+        overflow: auto
+
         #content
             position: inherit
 
@@ -76,6 +89,7 @@ $step4: 1500px
             text-transform: uppercase
 
     #review-asg
+        padding-top: 50px
         padding-bottom: 150px
         &::before
             content: ""
@@ -83,6 +97,7 @@ $step4: 1500px
             background: rgba(62, 103, 251, 0.16)
             filter: blur(250px)
             position: absolute
+            z-index: 0
             width: 100%
             height: 100%
 
@@ -105,6 +120,9 @@ $step4: 1500px
         display: flex
         background-color: white
         padding: 150px 130px 200px 130px
+
+        .content-get-in-touch
+            display: flex
 
         .section-title
             margin-right: 94px
@@ -230,7 +248,7 @@ $step4: 1500px
         z-index: 0
 
     #rectangle1
-        top: 20%
+        top: 4%
         left: 82%
 
     #rectangle2
@@ -246,9 +264,60 @@ $step4: 1500px
         left: -10%
 
 #custom-development
+    .noToc
+        position: relative
+
+        .content-wrapper
+            width: 100%
+            display: flex
+            justify-content: center
+            flex-direction: column
+            align-items: center
+            position: relative
+            > *
+                width: 100%
+                max-width: 1920px
+                position: relative
+                z-index: 3
+
+        #content-mvp
+            z-index: 2
+            border-radius: 10px
+            background: rgba(255,255,255,0.2)
+            box-shadow: 0px 0px 10px 0px rgba(21,29,111,0.08)
+            backdrop-filter: blur(25px)
+
+        #content-market-solution
+            z-index: 1
+            background-color: white
+
+        #content-get-in-touch
+            display: flex
+            flex-direction: row
+            align-items: unset
+            padding: 0 130px
+            max-width: 1920px
+
+        // > section
+        //     display: flex
+        //     flex-direction: column
+        //     align-items: center
+        //     > div
+        //         width: 100%
+        //         > .content-wrapper
+        //             width: 100%
+        //             max-width: 1920px
+        //             display: flex
+                    
     #hero
+        padding-top: 80px
+    .hero
+        padding-top: 80px
+            
+    #first-screen
         height: 100vh //calc(100vh + 5px)
-        padding-top: 100px
+        width: 100%
+        // padding-top: 100px
         background-color: #F8F9FD
         overflow: hidden
         &::before
@@ -271,6 +340,7 @@ $step4: 1500px
             height: 100%
             display: flex
             flex-direction: column
+            align-items: center
             position: relative
             margin: 0 20px
             &::before
@@ -284,7 +354,7 @@ $step4: 1500px
                 margin: 18% 25%
 
             #hero-content
-                // height: 100%
+                width: 100%
                 display: flex
                 flex-direction: column
                 justify-content: flex-start
@@ -325,39 +395,50 @@ $step4: 1500px
                 width: 100%
                 height: 100%
                 position: relative
+                max-width: 1880px
 
-                .image-wrapper
-                    width: 100%
-                    height: 100%
+                .image-wrapper-icon-laptop
                     position: absolute
+                    top: 0%
+                    left: 50%
 
-                    #icon-laptop
-                        z-index: 1
-                        opacity: 0
-                        transform: translateY(-2%)
-                        animation-name: fadeoutCenter
-                        animation-duration: 750ms
-                        animation-timing-function: cubic-bezier(0.07, 0.43, 0.17, 0.81)
-                        animation-fill-mode: forwards
+                .image-wrapper-icon-phone
+                    position: absolute
+                    top: 18%
+                    left: 11%
+                    z-index: 2
 
-                    #icon-phone
-                        z-index: 1
-                        transform: translate(-108%, 28%)
-                        opacity: 0
-                        animation-name: fadeoutLeft
-                        animation-duration: 1500ms
-                        animation-timing-function: cubic-bezier(0.07, 0.43, 0, 1)
-                        animation-fill-mode: forwards
-                        animation-delay: 500ms
+                #icon-laptop
+                    position: relative
+                    top: 0%
+                    left: -50%
+                    z-index: 1
+                    opacity: 0
+
+                    transform: translateY(-2%)
+                    animation-name: fadeoutCenter
+                    animation-duration: 750ms
+                    animation-timing-function: cubic-bezier(0.07, 0.43, 0.17, 0.81)
+                    animation-fill-mode: forwards
+
+                #icon-phone
+                    opacity: 0
+                    animation-name: fadeoutLeft
+                    animation-duration: 1500ms
+                    animation-timing-function: cubic-bezier(0.07, 0.43, 0, 1)
+                    animation-fill-mode: forwards
+                    animation-delay: 500ms
                 
                 .schedule-block
                     position: absolute
+                    top: 17%
+                    right: 13%
+
                     background-color: white
                     width: 344px
                     height: 401px
                     box-shadow: 0px 0px 10px 0px rgba(16, 14, 111, 0.10)
                     border-radius: 20px
-                    transform: translate(300%, 0%)
                     opacity: 0
 
                     animation-name: fadeoutRight
@@ -371,6 +452,7 @@ $step4: 1500px
                     display: flex
                     flex-direction: column
                     align-items: center
+                    z-index: 1
 
                     #progress
                         position: absolute
@@ -406,7 +488,9 @@ $step4: 1500px
                         height: 60px
 
     section
-        padding: 0
+        padding-top: 0
+        padding-left: 0
+        padding-right: 0
     .absolute-image
         position: absolute
 
@@ -453,6 +537,8 @@ $step4: 1500px
             display: flex
             flex-direction: row
             align-items: flex-start
+            position: relative
+            z-index: 1
             padding: 0 120px
             opacity: 0
             transform: translate3d(0, 45px, 0)
@@ -506,10 +592,10 @@ $step4: 1500px
             align-items: center
             z-index: 2
 
-            border-radius: 10px
-            background: rgba(255, 255, 255, 0.20)
-            box-shadow: 0px 0px 10px 0px rgba(21, 29, 111, 0.08)
-            backdrop-filter: blur(25px)
+            // border-radius: 10px
+            // background: rgba(255, 255, 255, 0.20)
+            // box-shadow: 0px 0px 10px 0px rgba(21, 29, 111, 0.08)
+            // backdrop-filter: blur(25px)
 
             .left-block
                 max-width: 620px
@@ -598,11 +684,12 @@ $step4: 1500px
     .testimonials
         position: relative
         background: white
-        padding: 180px 130px 30px 130px
+        padding: 180px 0 30px 0
         display: flex
         flex-direction: column
         .upper-block
             display: flex
+            padding: 0 130px
             .side-title
                 margin-top: 20px
                 margin-right: 94px
@@ -676,8 +763,9 @@ $step4: 1500px
     .get-in-touch
         position: relative
         display: flex
+        justify-content: center
         background-color: white
-        padding: 150px 130px 200px 130px
+        padding: 150px 0 200px 0
 
         .section-title
             margin-right: 94px
@@ -689,6 +777,7 @@ $step4: 1500px
         .side-title
             margin-top: 15px
             margin-right: 94px
+            max-width: 200px
 
         .section-title
             max-width: 610px
@@ -908,6 +997,12 @@ $step4: 1500px
         &:hover
             background-color: #452CDC
             border: 1px solid #452CDC
+
+    footer
+        position: relative
+
+    .flyout-button
+        display: none
 
     // .accent-circle
     //     position: relative
@@ -1153,300 +1248,500 @@ $step4: 1500px
     //             z-index: 2
     //         .btn-block
     //             z-index: 2
-    @media screen and (min-width: $step05)
-        #hero
-            .hero-container
-                margin: 0 40px
-                #hero-content
-                    // flex: 1 1 55%
-                    // gap: 10px
-                    .pe-title
-                        font-size: 20px
-                    .pe-heading
-                        font-size: 30px
-                    .pe-subTitle
-                        margin-bottom: 40px
-                        font-size: 20px
-                    .try-pe, .accent-btn
-                        padding: 13px 15px
-                .hero-image
-                    flex: 1 1 40%
-                    position: relative
-                    .image-wrapper
-                        visibility: visible
-                #upper-icon-left
-                    width: 90px
-                    height: 90px
-                    top: 30%
-                    left: 50%
-                #upper-icon-right
-                    width: 90px
-                    height: 90px
-                    top: 25%
-                #down-icon-left
-                    display: block
-                    width: 120px
-                    height: 120px
-                    bottom: 22%
-                    right: 10%
-        .try-pe
-            font-size: 20px
-            width: auto
-            padding: 13px 50px
-        .accent-btn
-            padding: 13px 10px
-            font-size: 20px
-            width: unset
-        .btn-block
-            padding: 0
-            flex-direction: row
-            width: unset
-            div
-                width: unset
-        #encyclopedia
-            main
-                padding: 0 40px
-        .pe-features
-            main
-                .content-list
-                    display: flex
-                    flex-wrap: wrap
-                    gap: 30px
-                    padding-bottom: 60px
-                    max-width: 620px
-                    margin: auto
-                    .content-block
-                        flex: 1 1 47%
-        .trendz-features
-            .main-bg
-                &:nth-child(odd)
-                    main
-                        flex-direction: row
-                &:nth-child(even)
-                    main
-                        flex-direction: row-reverse
-        #peContent
-            .pe-features
-                main
-                    .content
-                        flex: 1 1 50%
-                        .mobile-img
-                            display: none
-                    .image-block
-                        flex: 1 1 50%
-                    .screenshot-block
-                        display: flex
-        .main-bg
-            padding: 70px 0
-        .accent-bg
-            padding: 70px 0
-            main
-                .get-started
-                    flex-direction: row
-                    gap: unset
-                    .get-started-container
-                        flex: 1 1 50%
-                        .header
-                            padding: 0 17%
-                        .text
-                            padding: 0
-        .container-center
-            .content
-                &::before
-                    width: 600px
-                    height: 600px
-                &::after
-                    height: 160px
-                    width: 160px
-                    left: -120px
-                    bottom: -143px
-                .main-title
-                    font-size: 40px
-                .text
-                    font-size: 20px
-                .accent-btn
-                    padding: 13px 72px
 
-    @media screen and (min-width: $step2)
-        #hero
-            .hero-container
-                margin: auto
-                width: calc(100% - 100px)
-                max-width: 1200px
-                #hero-content
-                    .pe-heading
-                        font-size: 40px
-                .hero-image
-                    flex: 1 1 40%
-                #upper-icon-left
-                    width: 100px
-                    height: 100px
-                    left: 25%
-                    top: 20%
-                #upper-icon-center
-                    //display: block
-                    width: 90px
-                    height: 90px
-                    top: 18%
-                    left: 54%
-                #upper-icon-right
-                    top: 25%
-                    right: -5%
-                    width: 100px
-                    height: 100px
-                #down-icon-left
-                    width: 200px
-                    height: 200px
-                    bottom: 15%
-                    left: 40%
-                #down-icon-right
-                    display: block
-                    width: 200px
-                    height: 200px
-                    bottom: 20%
-                    right: 0
-        #hero-content
-            align-items: flex-start
-        .main-bg
-            padding: 90px 0
-        #hero .hero-container #hero-content, #peContent
-            .try-pe
-                padding: 13px 41px
-            .accent-btn
-                padding: 13px 46px
-        footer
-            main
-                max-width: 1000px
 
-        main
-            width: calc(100% - 100px)
+    ///////////////
+    @media screen and (max-width: $step1)
+        // .hero-container
+        //     background-color: red
 
-        #peContent
+        #first-screen
+            height: 100vh //calc(100vh + 5px)
             width: 100%
+            // padding-top: 100px
+            background-color: #F8F9FD
+            overflow: hidden
+            &::before
+                background: url("/images/custom-development/graph-line.svg") no-repeat center / contain
+                content: ''
+                width: 100%
+                height: 100%
+                position: absolute
+                top: 0
+                left: 0
+                transform: translateY(-11%)
+                opacity: 0
+                animation-name: backgroundFadeout
+                animation-duration: 1000ms
+                animation-timing-function: cubic-bezier(0.25, 0.46, 0.4, 1)
+                animation-fill-mode: forwards
+                animation-delay: 100ms
 
-        #encyclopedia
-            main
-                padding: 0
-        #peContent
-            .pe-features
-                main
-                    gap: 60px
-                    align-items: center
-                    .content-list
-                        flex-wrap: nowrap
-                        max-width: unset
-                        gap: 25px
-                        .content-block
-                            flex: 1 1 25%
-                    .image-block
-                        min-height: 350px
-                        .image-wrapper
-                            width: 100%
-                            height: 100%
-                        .screenshot
-                            height: auto
-                    .pie-chart
-                        .sphere
-                            width: 200px
-                            height: 200px
-                            top: -60px
-                        .donut-chart
-                            width: 240px
-                            height: 240px
-                            top: -15%
-                        .bar-chart
-                            width: 240px
-                            height: 240px
-                            bottom: -50px
-                    .multiple-chart
-                        .sphere
-                            height: 160px
-                            width: 160px
-            .accent-bg
-                main
-                    flex-direction: column-reverse
-                    align-items: center
-                    gap: 120px
-                    .get-started
-                        gap: 60px
-    @media screen and (min-width: $step3)
-        #hero
-            padding-top: 80px
             .hero-container
-                .hero-image
-                    flex: 1 1 50%
-        .main-bg
-            padding: 120px 0
-        #peContent
-            .accent-bg
-                main
-                    flex-direction: row
-                    gap: 0
-                    .title-block
-                        text-align: start
-                        &::before
-                            display: block
-                    .get-started
-                        gap: 0
+                height: 100%
+                display: flex
+                flex-direction: column
+                align-items: center
+                position: relative
+                margin: 0 20px
+                &::before
+                    background: rgba(62, 103, 251, 0.30)
+                    filter: blur(250px)
+                    content: ''
+                    display: block
+                    position: absolute
+                    width: 50%
+                    height: 90%
+                    margin: 18% 25%
 
-        .try-trendz
-            line-height: 60px
-            font-size: 28px
-            padding: 0 40px
-            border-width: 3px
-    @media screen and (min-width: $step4)
-        main
-            width: calc(100% - 400px)
-        #hero
-            .hero-container
-                max-width: 1400px
                 #hero-content
-                    .pe-heading
-                        font-size: 50px
-                        padding-right: 10%
-                    .pe-subTitle
-                        font-size: 24px
-                #down-icon-left
-                    bottom: 5px
-        .accent-btn
-            font-size: 24px
-        .try-pe
-            font-size: 24px
-        section main,
-        header main,
-        footer main
-            max-width: 1400px
-            width: 1400px
-        .header
-            font-size: 24px
-        .text
-            font-size: 19px
-            line-height: 1.7
-        #peContent
-            .pe-features
-                main
-                    .content-list
-                        gap: 16px
-                        .content-block:first-child
-                            .text
-                                padding-right: 3px
-                    .image-block
-                        .screenshot
-                            top: 25%
-                            left: 7%
-        .accent-text
-            font-size: 18px
-        .accent-bg
-            main
-                .title-block
-                    .title
-                        font-size: 40px
-        .link
-            font-size: 24px
-        .container-center
-            .content
-                .main-title
-                    font-size: 50px
+                    width: 100%
+                    display: flex
+                    flex-direction: column
+                    justify-content: flex-start
+                    align-items: center
+                    text-align: initial
+                    z-index: 1
+                    padding-top: 60px
+
+                    animation-name: slideup-in
+                    animation-duration: 1000ms
+                    animation-timing-function: cubic-bezier(0.25, 0.46, 0.4, 1)
+                    animation-fill-mode: forwards
+
+                    .cdu-title
+                        color: #313251
+                        text-align: center
+                        font-family: Poppins
+                        font-size: 36px
+                        font-style: normal
+                        font-weight: 500
+                        line-height: 48px
+                        letter-spacing: -0.54px
+
+                    .cdu-sub-title
+                        color: #4F5662
+                        text-align: center
+                        font-family: Poppins
+                        font-size: 16px
+                        font-style: normal
+                        font-weight: 400
+                        line-height: 28px
+                        letter-spacing: 0.024px
+                        width: 100%
+
+                .hero-image
+                    display: flex
+                    align-items: center
+                    width: 100%
+                    height: 100%
+                    position: relative
+                    max-width: 1880px
+
+                    .image-wrapper-icon-laptop
+                        position: absolute
+                        top: 0%
+                        left: 50%
+
+                    .image-wrapper-icon-phone
+                        position: absolute
+                        top: 18%
+                        left: 11%
+                        z-index: 2
+
+                    #icon-laptop
+                        position: relative
+                        top: 0%
+                        left: -50%
+                        z-index: 1
+                        opacity: 0
+
+                        transform: translateY(-2%)
+                        animation-name: fadeoutCenter
+                        animation-duration: 750ms
+                        animation-timing-function: cubic-bezier(0.07, 0.43, 0.17, 0.81)
+                        animation-fill-mode: forwards
+
+                    #icon-phone
+                        display: none
+                        // opacity: 0
+                        // animation-name: fadeoutLeft
+                        // animation-duration: 1500ms
+                        // animation-timing-function: cubic-bezier(0.07, 0.43, 0, 1)
+                        // animation-fill-mode: forwards
+                        // animation-delay: 500ms
+                    
+                    .schedule-block
+                        display: none
+                        position: absolute
+                        top: 17%
+                        right: 13%
+
+                        background-color: white
+                        width: 344px
+                        height: 401px
+                        box-shadow: 0px 0px 10px 0px rgba(16, 14, 111, 0.10)
+                        border-radius: 20px
+                        opacity: 0
+
+                        animation-name: fadeoutRight
+                        animation-duration: 1000ms
+                        animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
+                        animation-fill-mode: forwards
+                        animation-delay: 1000ms
+
+                        padding: 60px 24px 40px 24px
+
+                        display: flex
+                        flex-direction: column
+                        align-items: center
+                        z-index: 1
+
+                        #progress
+                            position: absolute
+
+                        .result-number
+                            color: #1E1B39
+                            text-align: center
+                            font-feature-settings: 'clig' off, 'liga' off
+                            font-family: Inter
+                            font-size: 49px
+                            font-style: normal
+                            font-weight: 700
+                            line-height: 60px
+                            margin-top: 75px
+
+                        .result-text
+                            color: #1E1B39
+                            text-align: center
+                            font-feature-settings: 'clig' off, 'liga' off
+
+                            font-family: Inter
+                            font-size: 18px
+                            font-style: normal
+                            font-weight: 400
+                            line-height: 32px
+                            margin-top: 20px
+                            margin-bottom: 54px
+
+                        .button
+                            border-radius: 6px
+                            background: #3622A4
+                            width: 100%
+                            height: 60px
+        // #custom-development
+        //     #first-screen
+        //         .hero-container
+        //             #hero-content
+
+    // @media screen and (min-width: 360px)
+    //     .hero-container
+    //         background-color: red
+
+    //     #custom-development
+    //         #first-screen
+    //             .hero-container
+    //                 #hero-content
+    //                     .cdu-title
+    //                         background-color: black
+    //     .cdu-title
+    //         color: red
+    // @media screen and (min-width: $step05)
+    //     #hero
+    //         .hero-container
+    //             margin: 0 40px
+    //             #hero-content
+    //                 // flex: 1 1 55%
+    //                 // gap: 10px
+    //                 .pe-title
+    //                     font-size: 20px
+    //                 .pe-heading
+    //                     font-size: 30px
+    //                 .pe-subTitle
+    //                     margin-bottom: 40px
+    //                     font-size: 20px
+    //                 .try-pe, .accent-btn
+    //                     padding: 13px 15px
+    //             .hero-image
+    //                 flex: 1 1 40%
+    //                 position: relative
+    //                 .image-wrapper
+    //                     visibility: visible
+    //             #upper-icon-left
+    //                 width: 90px
+    //                 height: 90px
+    //                 top: 30%
+    //                 left: 50%
+    //             #upper-icon-right
+    //                 width: 90px
+    //                 height: 90px
+    //                 top: 25%
+    //             #down-icon-left
+    //                 display: block
+    //                 width: 120px
+    //                 height: 120px
+    //                 bottom: 22%
+    //                 right: 10%
+    //     .try-pe
+    //         font-size: 20px
+    //         width: auto
+    //         padding: 13px 50px
+    //     .accent-btn
+    //         padding: 13px 10px
+    //         font-size: 20px
+    //         width: unset
+    //     .btn-block
+    //         padding: 0
+    //         flex-direction: row
+    //         width: unset
+    //         div
+    //             width: unset
+    //     #encyclopedia
+    //         main
+    //             padding: 0 40px
+    //     .pe-features
+    //         main
+    //             .content-list
+    //                 display: flex
+    //                 flex-wrap: wrap
+    //                 gap: 30px
+    //                 padding-bottom: 60px
+    //                 max-width: 620px
+    //                 margin: auto
+    //                 .content-block
+    //                     flex: 1 1 47%
+    //     .trendz-features
+    //         .main-bg
+    //             &:nth-child(odd)
+    //                 main
+    //                     flex-direction: row
+    //             &:nth-child(even)
+    //                 main
+    //                     flex-direction: row-reverse
+    //     #peContent
+    //         .pe-features
+    //             main
+    //                 .content
+    //                     flex: 1 1 50%
+    //                     .mobile-img
+    //                         display: none
+    //                 .image-block
+    //                     flex: 1 1 50%
+    //                 .screenshot-block
+    //                     display: flex
+    //     .main-bg
+    //         padding: 70px 0
+    //     .accent-bg
+    //         padding: 70px 0
+    //         main
+    //             .get-started
+    //                 flex-direction: row
+    //                 gap: unset
+    //                 .get-started-container
+    //                     flex: 1 1 50%
+    //                     .header
+    //                         padding: 0 17%
+    //                     .text
+    //                         padding: 0
+    //     .container-center
+    //         .content
+    //             &::before
+    //                 width: 600px
+    //                 height: 600px
+    //             &::after
+    //                 height: 160px
+    //                 width: 160px
+    //                 left: -120px
+    //                 bottom: -143px
+    //             .main-title
+    //                 font-size: 40px
+    //             .text
+    //                 font-size: 20px
+    //             .accent-btn
+    //                 padding: 13px 72px
+
+    // @media screen and (min-width: $step2)
+    //     .hero-container
+    //         background-color: red
+    //     #hero
+    //         .hero-container
+    //             margin: auto
+    //             width: calc(100% - 100px)
+    //             max-width: 1200px
+    //             #hero-content
+    //                 .pe-heading
+    //                     font-size: 40px
+    //             .hero-image
+    //                 flex: 1 1 40%
+    //             #upper-icon-left
+    //                 width: 100px
+    //                 height: 100px
+    //                 left: 25%
+    //                 top: 20%
+    //             #upper-icon-center
+    //                 //display: block
+    //                 width: 90px
+    //                 height: 90px
+    //                 top: 18%
+    //                 left: 54%
+    //             #upper-icon-right
+    //                 top: 25%
+    //                 right: -5%
+    //                 width: 100px
+    //                 height: 100px
+    //             #down-icon-left
+    //                 width: 200px
+    //                 height: 200px
+    //                 bottom: 15%
+    //                 left: 40%
+    //             #down-icon-right
+    //                 display: block
+    //                 width: 200px
+    //                 height: 200px
+    //                 bottom: 20%
+    //                 right: 0
+    //     #hero-content
+    //         align-items: flex-start
+    //     .main-bg
+    //         padding: 90px 0
+    //     #hero .hero-container #hero-content, #peContent
+    //         .try-pe
+    //             padding: 13px 41px
+    //         .accent-btn
+    //             padding: 13px 46px
+    //     footer
+    //         main
+    //             max-width: 1000px
+
+    //     main
+    //         width: calc(100% - 100px)
+
+    //     #peContent
+    //         width: 100%
+
+    //     #encyclopedia
+    //         main
+    //             padding: 0
+    //     #peContent
+    //         .pe-features
+    //             main
+    //                 gap: 60px
+    //                 align-items: center
+    //                 .content-list
+    //                     flex-wrap: nowrap
+    //                     max-width: unset
+    //                     gap: 25px
+    //                     .content-block
+    //                         flex: 1 1 25%
+    //                 .image-block
+    //                     min-height: 350px
+    //                     .image-wrapper
+    //                         width: 100%
+    //                         height: 100%
+    //                     .screenshot
+    //                         height: auto
+    //                 .pie-chart
+    //                     .sphere
+    //                         width: 200px
+    //                         height: 200px
+    //                         top: -60px
+    //                     .donut-chart
+    //                         width: 240px
+    //                         height: 240px
+    //                         top: -15%
+    //                     .bar-chart
+    //                         width: 240px
+    //                         height: 240px
+    //                         bottom: -50px
+    //                 .multiple-chart
+    //                     .sphere
+    //                         height: 160px
+    //                         width: 160px
+    //         .accent-bg
+    //             main
+    //                 flex-direction: column-reverse
+    //                 align-items: center
+    //                 gap: 120px
+    //                 .get-started
+    //                     gap: 60px
+    // @media screen and (min-width: $step3)
+    //     #hero
+    //         padding-top: 80px
+    //         .hero-container
+    //             .hero-image
+    //                 flex: 1 1 50%
+    //     .main-bg
+    //         padding: 120px 0
+    //     #peContent
+    //         .accent-bg
+    //             main
+    //                 flex-direction: row
+    //                 gap: 0
+    //                 .title-block
+    //                     text-align: start
+    //                     &::before
+    //                         display: block
+    //                 .get-started
+    //                     gap: 0
+
+    //     .try-trendz
+    //         line-height: 60px
+    //         font-size: 28px
+    //         padding: 0 40px
+    //         border-width: 3px
+    // @media screen and (min-width: $step4)
+    //     main
+    //         width: calc(100% - 400px)
+    //     #hero
+    //         .hero-container
+    //             max-width: 1400px
+    //             #hero-content
+    //                 .pe-heading
+    //                     font-size: 50px
+    //                     padding-right: 10%
+    //                 .pe-subTitle
+    //                     font-size: 24px
+    //             #down-icon-left
+    //                 bottom: 5px
+    //     .accent-btn
+    //         font-size: 24px
+    //     .try-pe
+    //         font-size: 24px
+    //     section main,
+    //     header main,
+    //     footer main
+    //         max-width: 1400px
+    //         width: 1400px
+    //     .header
+    //         font-size: 24px
+    //     .text
+    //         font-size: 19px
+    //         line-height: 1.7
+    //     #peContent
+    //         .pe-features
+    //             main
+    //                 .content-list
+    //                     gap: 16px
+    //                     .content-block:first-child
+    //                         .text
+    //                             padding-right: 3px
+    //                 .image-block
+    //                     .screenshot
+    //                         top: 25%
+    //                         left: 7%
+    //     .accent-text
+    //         font-size: 18px
+    //     .accent-bg
+    //         main
+    //             .title-block
+    //                 .title
+    //                     font-size: 40px
+    //     .link
+    //         font-size: 24px
+    //     .container-center
+    //         .content
+    //             .main-title
+    //                 font-size: 50px
 
 @keyframes slideup-in
     from
@@ -1459,18 +1754,18 @@ $step4: 1500px
 @keyframes fadeoutRight
     from
         opacity: 0
-        transform: translate(308%, 0%) scale(80%)
+        transform: scale(80%)
     to
         opacity: 1
-        transform: translate(308%, 0%) scale(100%)
+        transform: scale(100%)
 
 @keyframes fadeoutLeft
     from
         opacity: 0
-        transform: translate(-108%, 28%) scale(80%)
+        transform: scale(80%)
     to
         opacity: 1
-        transform: translate(-108%, 28%) scale(100%)
+        transform: scale(100%)
     
 @keyframes fadeoutCenter
     from
