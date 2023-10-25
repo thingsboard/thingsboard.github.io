@@ -406,6 +406,53 @@ Usage with sequential processing strategy: please, be aware that this node ackno
 
 <br>
 
+## device state
+
+<table style="width:250px;">
+   <thead>
+     <tr>
+	   <td style="text-align: center"><strong><em>Since TB Version 3.6.1</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+Triggers configured device connectivity event. Node follows next algorithm:
+- If incoming message originator is a device - trigger configured connectivity event, then forward message with no changes using **Success** connection type.
+- If incoming message originator is not a device - forward message with no changes using **Success** connection type.
+
+**Configuration**
+
+![Device state node configuration example image](/images/user-guide/rule-engine-2-0/nodes/action-device-state-config.png)
+
+- **[Device connectivity event](/docs/{{docsPrefix}}user-guide/device-connectivity-status)** - the type of event that this node should trigger. Available options are: connect event, disconnect event, activity event, inactivity event.
+
+**Output**
+
+- **Success**: Original incoming message, if the connectivity event is successfully placed in the message queue or message originator is not a device.
+- **Failure**: Original incoming message, if an unexpected error occurs during its processing.
+
+**Usage example: pulling data from external API**
+
+Consider a scenario where you're periodically pulling device timeseries data from an external API.
+
+Solution with device state node:
+
+- **Start on schedule**: generator node sends a message every 10 minutes, with device as the originator.
+- **Fetch REST parameters**: tenant attributes node is used to enrich message with information needed to make a REST request, like base URL or access token.
+- **Pull data from REST API**: make a request to external API and receive a response with data.
+- **Parse response**: extract useful information from a response and format it for further processing.
+- **Save data**: save processed data.
+- **Register activity event**: After data is successfully saved, trigger activity event indicating to the system that device performed an activity.
+
+![Device state node rule chain example image](/images/user-guide/rule-engine-2-0/nodes/action-device-state-chain.png)
+
+**Notes**
+
+- If the message metadata contains a `ts` property, it will be used as the event timestamp. If this property is missing, message creation timestamp will be used instead.
+- Message is considered processed when connectivity event is placed in the message queue, not when event itself has been processed.
+
+<br>
+
 ## Generator Node
 
 <table  style="width:250px;">
