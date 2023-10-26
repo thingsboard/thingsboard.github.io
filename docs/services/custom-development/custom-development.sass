@@ -5,12 +5,6 @@ $step2: 672px
 $step3: 1000px
 $step4: 1280px
 $step5: 1440px
-// $step1: 360
-// $step05: 750px
-// $step1: 960px
-// $step2: 1025px
-// $step3: 1250px
-// $step4: 1500px
 
 #custom-development-reviews
     .custom-development-reviews-content
@@ -170,6 +164,7 @@ $step5: 1440px
                 margin-bottom: 28px
                 label
                     position: relative
+                    width: 100%
                     p
                         color: rgba(0, 0, 0, 0.54)
                         font-size: 12px
@@ -283,21 +278,25 @@ $step5: 1440px
             margin-bottom: 40px
 
             .title
-                color: #333
-                font-family: Poppins
                 font-size: 20px
-                font-style: normal
-                font-weight: 600
                 line-height: 30px
-                letter-spacing: 0.48px
         
         .review
             padding: 0
+            .review-header
+                font-size: 20px
+
+            .review-body
+                h6, h5
+                    font-size: 14px
+                    line-height: 30px
+                h6
+                    margin-bottom: 8px
+                
+                h5
+                    margin-bottom: 3px
 
         .get-in-touch
-            // position: relative
-            // display: flex
-            // background-color: white
             padding: 50px 20px 80px 20px
 
             .content-get-in-touch
@@ -315,71 +314,25 @@ $step5: 1440px
                 margin-right: 94px
 
             .section-title
-                // max-width: 700px
                 font-size: 25px
                 line-height: 30px
                 min-width: 300px
-                // line-height: 68px
-                // margin-right: 40px
-
-                // color: #333
-                // font-family: Poppins
-                // font-size: 20px
-                // font-style: normal
-                // font-weight: 600
-                // line-height: 30px
-                // letter-spacing: 0.48px
-                // padding-bottom: 30px
             
             .section-text
-                color: #5E5F62
-                font-family: Poppins
                 font-size: 16px
-                font-style: normal
-                font-weight: 400
                 line-height: 28px
-                letter-spacing: 0.016px
-                max-width: 470px
 
             .contact-form
                 padding-top: 30px
                 z-index: 2
                 .form-element
                     margin-bottom: 28px
+                    width: 100%
                     label
                         position: relative
                         p
-                            color: rgba(0, 0, 0, 0.54)
                             font-size: 12px
-                            font-style: normal
-                            font-weight: 400
                             line-height: 16px
-                            letter-spacing: 0.4px
-                            position: absolute
-                            top: -8px
-                            left: 10px
-                            z-index: 2
-                            padding: 0px 5px
-                            background: white
-
-            .cdu-form-control
-                width: 100%
-                color: #898B8F
-                font-size: 16px
-                font-style: normal
-                font-weight: 400
-                line-height: 24px
-                letter-spacing: 0.15px
-                border-radius: 4px
-                border: 1px solid rgba(0, 0, 0, 0.12)
-                padding: 16px 18px
-            
-            .cdu-button
-                padding: 15px
-                border-radius: 6px
-                color: white
-                background-color: #3622A4
-                width: 100%
 
         #review-asg
             padding-top: 50px
@@ -391,11 +344,11 @@ $step5: 1440px
 
         #review-kalitec
             padding: 40px 20px
-            background: #F7F9FC
             z-index: 1
 
         #review-ionatech
             padding: 40px 20px
+
         .side-title
             margin-right: 0
             margin-bottom: 10px
@@ -436,26 +389,14 @@ $step5: 1440px
             padding: 0 130px
             max-width: 1920px
 
-        // > section
-        //     display: flex
-        //     flex-direction: column
-        //     align-items: center
-        //     > div
-        //         width: 100%
-        //         > .content-wrapper
-        //             width: 100%
-        //             max-width: 1920px
-        //             display: flex
-                    
     #hero
         padding-top: 80px
     .hero
         padding-top: 80px
             
     #first-screen
-        height: 100vh //calc(100vh + 5px)
+        height: 100vh
         width: 100%
-        // padding-top: 100px
         background-color: #F8F9FD
         overflow: hidden
         &::before
@@ -510,7 +451,7 @@ $step5: 1440px
                     color: #313251
                     text-align: center
                     font-family: Poppins
-                    font-size: 56px
+                    font-size: 64px
                     font-style: normal
                     font-weight: 500
                     line-height: 76px
@@ -679,7 +620,6 @@ $step5: 1440px
         padding: 200px 0 0px 0
         background-color: white
 
-
         .header
             display: flex
             flex-direction: row
@@ -754,11 +694,6 @@ $step5: 1440px
             justify-content: space-between
             align-items: center
             z-index: 2
-
-            // border-radius: 10px
-            // background: rgba(255, 255, 255, 0.20)
-            // box-shadow: 0px 0px 10px 0px rgba(21, 29, 111, 0.08)
-            // backdrop-filter: blur(25px)
 
             .left-block
                 max-width: 620px
@@ -851,6 +786,130 @@ $step5: 1440px
         display: flex
         flex-direction: column
         z-index: 3
+
+        .carousel-wrapper
+            max-width: 1200px
+
+        .owl-carousel.owl-theme.reviews-carousel
+            margin: 64px 0 24px
+            position: relative
+            visibility: hidden
+            display: block
+            min-height: 500px
+            max-height: 500px
+            &.owl-loaded
+                visibility: visible
+                min-height: unset
+                max-height: unset
+                .owl-stage-outer
+                    .owl-stage
+                        .owl-item
+                            transition: unset
+            &.support-ukraine
+                img
+                    max-height: 600px
+                    width: auto
+                    margin: auto
+            .owl-stage-outer
+                overflow: visible
+                position: relative
+                .owl-stage
+                    .owl-item
+                        opacity: 0
+                        transition: none
+                        filter: blur(8px)
+                        transition-duration: 0.5s
+                        transform: scale(0.9)
+                        .item-image
+                            box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.04), 0px 50px 50px -20px rgba(0, 0, 0, 0.15)
+                        &.active
+                            opacity: 1
+                            filter: blur(0)
+                            transition-duration: 0.5s
+                            transform: scale(1)
+            .owl-nav
+                button.owl-prev, button.owl-next
+                    position: absolute
+                    outline: none
+                    background-image: url(/images/custom-development/slider-forward.svg)
+                    background-color: transparent
+                    width: 26px
+                    height: 40px
+                    top: calc(50% - 25px)
+                    &:hover
+                        filter: invert(81%) sepia(95%) saturate(6705%) hue-rotate(252deg) brightness(99%) contrast(87%) opacity(.5) grayscale(1)
+                    span
+                        display: none
+                button.owl-prev
+                    left: 0
+                    transform: scale(-1, 1)
+                button.owl-next
+                    right: 0
+            .owl-nav.disabled+.owl-dots
+                margin-top: 32px
+            .owl-dots
+                margin-top: 32px
+                button.owl-dot
+                    outline: none
+                    margin: 0 12px
+                    &:hover, &.active
+                        filter: invert(62%) sepia(74%) saturate(6770%) hue-rotate(202deg) brightness(99%) contrast(87%)
+                    span
+                        margin: 8px 0
+                        width: 10px
+                        height: 10px
+                        background: #E0E1E2
+                        border-radius: 4px
+
+            .review
+                display: flex
+                position: relative
+                flex-direction: column
+                width: 100%
+                z-index: 2
+
+                .logo
+                    display: flex
+                    margin-bottom: 30px
+                    > img
+                        max-width: fit-content
+                        object-fit: contain
+
+                .review-header
+                    color: #2E2F3B
+                    font-family: Poppins
+                    font-size: 28px
+                    font-style: normal
+                    font-weight: 500
+                    line-height: 40px
+                    letter-spacing: 0.028px
+                    margin-bottom: 20px
+
+                .review-body
+                    width: fit-content
+                    h6, h5
+                        color: #5E5F62
+                        font-family: Poppins
+                        font-size: 22px
+                        font-style: normal
+                        font-weight: 400
+                        line-height: 40px
+                        letter-spacing: 0.022px
+                    h6
+                        margin-bottom: 22px
+                    
+                    h5
+                        margin-bottom: 5px
+
+                .full-review-link
+                    color: #3622A4
+                    font-family: Poppins
+                    font-size: 22px
+                    font-style: normal
+                    font-weight: 600
+                    line-height: 32px
+                    letter-spacing: 0.022px
+                    margin-top: 45px
         .upper-block
             display: flex
             padding: 0 130px
@@ -860,66 +919,6 @@ $step5: 1440px
             
             .sectino-title
                 line-height: 68px
-
-        .review-slider
-            display: flex
-            justify-content: center
-
-            .reviews
-                margin: 0px 100px
-                max-width: 1000px
-                display: flex
-                overflow-x: hidden
-                scroll-behavior: smooth
-
-                .review
-                    display: flex
-                    position: relative
-                    flex-direction: column
-                    width: 100%
-                    z-index: 2
-                    min-width: 1000px
-
-                    .logo
-                        display: flex
-                        margin-bottom: 30px
-
-                    .review-header
-                        color: #2E2F3B
-                        font-family: Poppins
-                        font-size: 28px
-                        font-style: normal
-                        font-weight: 500
-                        line-height: 40px
-                        letter-spacing: 0.028px
-                        margin-bottom: 20px
-
-                    .review-body
-                        max-width: 900px
-                        h6, h5
-                            color: #5E5F62
-                            font-family: Poppins
-                            font-size: 22px
-                            font-style: normal
-                            font-weight: 400
-                            line-height: 40px
-                            letter-spacing: 0.022px
-                        h6
-                            margin-bottom: 22px
-                        
-                        h5
-                            margin-bottom: 5px
-
-                    .full-review-link
-                        color: #3622A4
-                        font-family: Poppins
-                        font-size: 22px
-                        font-style: normal
-                        font-weight: 600
-                        line-height: 32px
-                        letter-spacing: 0.022px
-                        margin-top: 45px
-                
 
     .get-in-touch
         position: relative
@@ -954,6 +953,7 @@ $step5: 1440px
                 margin-bottom: 28px
                 label
                     position: relative
+                    width: 100%
                     p
                         color: rgba(0, 0, 0, 0.54)
                         font-size: 12px
@@ -1066,7 +1066,6 @@ $step5: 1440px
         animation-duration: 500ms
         animation-timing-function: cubic-bezier(.25, .46, .4, 1)
         animation-fill-mode: forwards
-
         
     .secondary-image
         opacity: 0
@@ -1081,8 +1080,6 @@ $step5: 1440px
         &:nth-child(2)
             animation-delay: 200ms
 
-
-
     .number
         position: absolute
 
@@ -1096,8 +1093,6 @@ $step5: 1440px
         opacity: 0.3
         background: #E9EBFB
         z-index: 0
-
-
 
     #rectangle1
         top: 20%
@@ -1137,28 +1132,6 @@ $step5: 1440px
         line-height: 1.5
         color: #5555FF
         text-transform: uppercase
-    .triangle-right
-        display: inline-block
-        width: 0
-        height: 0
-        border-top: 8px solid transparent
-        border-left: 16px solid #55f
-        border-bottom: 8px solid transparent
-        margin-left: 9px
-        transition: .3s
-    .accent-btn
-        background: #5555FF
-        border-radius: 4px
-        line-height: 1.5
-        padding: 13px 0
-        font-size: 16px
-        color: #FFFFFF
-        width: 100%
-        text-align: center
-        border: 1px solid #55f
-        &:hover
-            background-color: #452CDC
-            border: 1px solid #452CDC
 
     footer
         position: relative
@@ -1166,94 +1139,27 @@ $step5: 1440px
     .flyout-button
         display: none
 
-
-    ///////////////
     @media screen and (max-width: $step2)
         #first-screen
-            height: 100vh //calc(100vh + 5px)
-            width: 100%
-            background-color: #F8F9FD
-            overflow: hidden
             &::before
-                background: url("/images/custom-development/graph-line.svg") no-repeat center / contain
-                content: ''
-                width: 100%
-                height: 100%
-                position: absolute
-                top: 0
-                left: 0
-                transform: translateY(-11%) scale(2.5)
-                opacity: 0
+                transform: translate(-56%, -5%) scale(3.5)
                 animation-name: backgroundFadeoutMobile
-                animation-duration: 1000ms
-                animation-timing-function: cubic-bezier(0.25, 0.46, 0.4, 1)
-                animation-fill-mode: forwards
-                animation-delay: 100ms
 
             .hero-container
-                height: 100%
-                display: flex
-                flex-direction: column
-                align-items: center
-                position: relative
-                margin: 0 20px
-                &::before
-                    background: rgba(62, 103, 251, 0.30)
-                    filter: blur(250px)
-                    content: ''
-                    display: block
-                    position: absolute
-                    width: 50%
-                    height: 90%
-                    margin: 18% 25%
-
                 #hero-content
-                    width: 100%
-                    display: flex
-                    flex-direction: column
-                    justify-content: flex-start
-                    align-items: center
-                    text-align: initial
-                    z-index: 1
-                    padding-top: 60px
-
-                    animation-name: slideup-in
-                    animation-duration: 1000ms
-                    animation-timing-function: cubic-bezier(0.25, 0.46, 0.4, 1)
-                    animation-fill-mode: forwards
-
                     .cdu-title
-                        color: #313251
-                        text-align: center
-                        font-family: Poppins
                         font-size: 36px
-                        font-style: normal
-                        font-weight: 500
                         line-height: 48px
-                        letter-spacing: -0.54px
 
                     .cdu-sub-title
-                        color: #4F5662
-                        text-align: center
-                        font-family: Poppins
                         font-size: 16px
-                        font-style: normal
-                        font-weight: 400
                         line-height: 28px
-                        letter-spacing: 0.024px
                         width: 100%
 
                 .hero-image
-                    display: flex
-                    align-items: center
-                    width: 100%
-                    height: 100%
-                    position: relative
-                    max-width: 1880px
-
                     .image-wrapper-icon-laptop
                         position: absolute
-                        top: 0%
+                        top: 8%
                         left: 50%
 
                         .schedule
@@ -1264,63 +1170,11 @@ $step5: 1440px
                             padding: 0 60px
                             transform: translateX(-50%)
 
-                    .image-wrapper-icon-phone
-                        position: absolute
-                        top: 18%
-                        left: 11%
-                        z-index: 2
-
-                    #icon-laptop
-                        position: relative
-                        top: 0%
-                        left: -50%
-                        z-index: 1
-                        opacity: 0
-
-                        transform: translateY(-2%)
-                        animation-name: fadeoutCenter
-                        animation-duration: 750ms
-                        animation-timing-function: cubic-bezier(0.07, 0.43, 0.17, 0.81)
-                        animation-fill-mode: forwards
-
                     #icon-phone
                         display: none
                     
                     .schedule-block
                         display: none
-
-                        #progress
-                            position: absolute
-
-                        .result-number
-                            color: #1E1B39
-                            text-align: center
-                            font-feature-settings: 'clig' off, 'liga' off
-                            font-family: Inter
-                            font-size: 49px
-                            font-style: normal
-                            font-weight: 700
-                            line-height: 60px
-                            margin-top: 75px
-
-                        .result-text
-                            color: #1E1B39
-                            text-align: center
-                            font-feature-settings: 'clig' off, 'liga' off
-
-                            font-family: Inter
-                            font-size: 18px
-                            font-style: normal
-                            font-weight: 400
-                            line-height: 32px
-                            margin-top: 20px
-                            margin-bottom: 54px
-
-                        .button
-                            border-radius: 6px
-                            background: #3622A4
-                            width: 100%
-                            height: 60px
         
         .cdu-services
             padding: 60px 0 0px 0
@@ -1376,12 +1230,10 @@ $step5: 1440px
                         top: 60%
                         left: 7%
 
-
                 .right-block
                     padding-top: 0px
                     .section-title
                         padding-bottom: 0px
-
 
             .additionally
                 padding: 40px 20px
@@ -1413,64 +1265,19 @@ $step5: 1440px
         .noToc
             position: relative
 
-            .content-wrapper
-                width: 100%
-                display: flex
-                justify-content: center
-                flex-direction: column
-                align-items: center
-                position: relative
-                > *
-                    width: 100%
-                    max-width: 1920px
-                    position: relative
-                    z-index: 3
-
-            #content-mvp
-                z-index: 5
-                border-radius: 10px
-                background: rgba(255,255,255,0.2)
-                box-shadow: 0px 0px 10px 0px rgba(21,29,111,0.08)
-                backdrop-filter: blur(25px)
-
-            #content-market-solution
-                z-index: 4
-                background-color: white
-
             #content-get-in-touch
-                display: flex
                 flex-direction: column
-                align-items: unset
                 padding: 0 20px
-                max-width: 1920px
 
         .customers
-                width: 100%
-                display: flex
-                flex-direction: column
-                align-items: center
-                z-index: 1
+            .title
+                font-size: 14px
+                line-height: 32px
+                padding: 44px 0 39px 0
 
-                border-radius: 10px
-                background: rgba(255, 255, 255, 0.20)
-                box-shadow: 0px 0px 10px 0px rgba(21, 29, 111, 0.08)
-                backdrop-filter: blur(25px)
-
-                .title
-                    color: #3D3E40
-                    text-align: center
-                    font-family: Poppins
-                    font-size: 14px
-                    font-style: normal
-                    font-weight: 400
-                    line-height: 32px
-                    letter-spacing: 0.2px
-
-                    padding: 44px 0 39px 0
-
-                .customer-logos
-                    .logo
-                        padding: 20px
+            .customer-logos
+                .logo
+                    padding: 20px
 
         .testimonials
             padding: 80px 0 30px 0
@@ -1479,111 +1286,55 @@ $step5: 1440px
                 padding: 0 20px
                 .side-title
                     margin-bottom: 10px
+                .section-title
+                    margin-bottom: 0px
+                    padding-bottom: 0px
+
+            .owl-carousel.owl-theme.reviews-carousel
+                margin: 20px 0 15px
+
+                .owl-stage-outer
+                    .owl-stage
+                        .owl-item
+                            padding: 0 45px
+
+                .review
+                    background: ping
+
+                    .review-header
+                        font-size: 20px
+                        line-height: 30px
+
+                    .review-body
+                        h6, h5
+                            font-size: 14px
+                            line-height: 20px
+
+                    .full-review-link
+                        font-size: 16px
         
         .side-title
-            z-index: 2
+            margin-bottom: 10px
             h1
-                display: inline-flex
-                flex-direction: column
-                align-items: flex-start
-                gap: 4px
-                border-radius: 6px
-                border: 2px solid #ADA3E0
-                padding: 7px 20px
-
-                color: #3622A4
-                text-align: center
-                font-family: Poppins
                 font-size: 14px
-                font-style: normal
-                font-weight: 600
-                line-height: 30px
-                letter-spacing: 0.22px
-                text-transform: uppercase
 
         .section-title
             font-size: 20px
             line-height: 30px
             margin-bottom: 10px
+            padding-bottom: 0px
         
         .section-text
-            color: #5E5F62
-            font-family: Poppins
             font-size: 14px
-            font-style: normal
-            font-weight: 400
             line-height: 28px
-            letter-spacing: 0.016px
+            padding-bottom: 10px
 
 
         .section-list
             li
-                list-style-type: disc
-                margin-left: 30px
-                color: #5E5F62
-                font-family: Poppins
                 font-size: 14px
-                font-style: normal
-                font-weight: 400
                 line-height: 32px
-                letter-spacing: 0.022px
                 padding-bottom: 10px
-                opacity: 0
-
-        .section-list-animation
-            $delay: 500ms
-            li
-                animation-name: slideup-in
-                animation-duration: 1000ms
-                animation-timing-function: cubic-bezier(.25, .46, .4, 1)
-                animation-fill-mode: forwards
-                animation-delay: $delay
-
-                @for $i from 1 through 8
-                    &:nth-child(#{$i + 1})
-                        animation-delay: calc(#{$delay} + calc(#{$i} * 200ms))
-
-        .base-image
-            opacity: 0.5
-            transform: scale(0.8)
-
-        .base-image-animation
-            animation-name: baseImageAppear
-            animation-duration: 500ms
-            animation-timing-function: cubic-bezier(.25, .46, .4, 1)
-            animation-fill-mode: forwards
-
-            
-        .secondary-image
-            opacity: 0
-            transform: scale(0)
-
-        .secondary-image-animation
-            animation-name: secondaryImageAppear
-            animation-duration: 750ms
-            animation-timing-function: cubic-bezier(.25, .46, .4, 1)
-            animation-fill-mode: forwards
-
-            &:nth-child(2)
-                animation-delay: 200ms
-
-
-
-        .number
-            position: absolute
-
-        .bg-rectangle
-            position: absolute
-            width: 692px
-            height: 659px
-            transform: rotate(36.145deg)
-            flex-shrink: 0
-            border-radius: 60px
-            opacity: 0.3
-            background: #E9EBFB
-            z-index: 0
-
-
 
         #rectangle1
             top: 20%
@@ -1617,39 +1368,13 @@ $step5: 1440px
         .header
             margin: 0 0 20px
             font-size: 20px
-            font-weight: 600
-            color: #434343
+
         .text
             font-size: 16px
-            color: #666666
+
         .accent-text
-            font-weight: 600
             font-size: 14px
             line-height: 1.5
-            color: #5555FF
-            text-transform: uppercase
-        .triangle-right
-            display: inline-block
-            width: 0
-            height: 0
-            border-top: 8px solid transparent
-            border-left: 16px solid #55f
-            border-bottom: 8px solid transparent
-            margin-left: 9px
-            transition: .3s
-        .accent-btn
-            background: #5555FF
-            border-radius: 4px
-            line-height: 1.5
-            padding: 13px 0
-            font-size: 16px
-            color: #FFFFFF
-            width: 100%
-            text-align: center
-            border: 1px solid #55f
-            &:hover
-                background-color: #452CDC
-                border: 1px solid #452CDC
         
 
 @keyframes slideup-in
@@ -1695,10 +1420,10 @@ $step5: 1440px
 @keyframes backgroundFadeoutMobile
     from
         opacity: 0
-        transform: translateY(-11%) scale(2.5)
+        transform: translate(-56%, -5%) scale(3.5)
     to
         opacity: 1
-        transform: translateY(-11%) scale(2.5)
+        transform: translate(-56%, -5%) scale(3.5)
 
 @keyframes baseImageAppear
     from

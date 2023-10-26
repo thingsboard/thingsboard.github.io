@@ -132,9 +132,6 @@ description: Custom development customers' reviews
         console.log("form", form)
         var name = $('input[name=name]', form).val();
         var email = $('input[name=email]', form).val();
-        // var company = $('input[name=company]', form).val();
-        // var subject = $('select[name=subject]', form).val();
-        // var message = $('textarea[name=message]', form).val();
         
         if (!validateValue('Name', name)) {
             return false;
@@ -165,8 +162,6 @@ description: Custom development customers' reviews
 
     var contactform =  document.getElementById('contact-form');
     
-    console.log("contactform", contactform);
-
     contactform.setAttribute('action', 'https://formspree.io/' + 'support' + '@' + 'thingsboard' + '.' + 'io');
 
     jqueryDefer(

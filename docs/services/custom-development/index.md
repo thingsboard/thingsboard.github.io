@@ -6,7 +6,6 @@ description: Custom development of solutions by the custom development team
 
 ---
 <section class="hero light-text">
-    <!-- id="hero" -->
 </section>
 <section id="first-screen">
     <div class="hero-container">
@@ -204,9 +203,8 @@ description: Custom development of solutions by the custom development team
                 What our clients say about us
             </div>
         </div>
-        <div class="review-slider">
-            <img id="sliderBackButton" src="/images/custom-development/slider-back.svg">
-            <div class="reviews">
+        <div class="carousel-wrapper">
+            <div class="reviews-carousel owl-carousel owl-theme">
                 <div class="review">
                     <div class="logo">
                         <img src="/images/custom-development/logo-asg-tech.svg" alt=""/>
@@ -248,7 +246,6 @@ description: Custom development of solutions by the custom development team
                     <a href="customers-full-reviews/#review-ionatech" class="full-review-link">Read full feedback</a>
                 </div>
             </div>
-            <img id="sliderForwardButton" src="/images/custom-development/slider-forward.svg">
         </div>
     </div>
 </section>
@@ -287,8 +284,8 @@ description: Custom development of solutions by the custom development team
         </div>
     </div>
 </section>
-<svg id="rectangle2" class="bg-rectangle"><rect/></svg>
-<svg id="rectangle3" class="bg-rectangle"><rect/></svg>
+<!-- <svg id="rectangle2" class="bg-rectangle"><rect/></svg> -->
+<!-- <svg id="rectangle3" class="bg-rectangle"><rect/></svg> -->
 
 <script type="text/javascript">
     document.querySelectorAll('.anchor-button').forEach(anchor => {
@@ -369,44 +366,37 @@ description: Custom development of solutions by the custom development team
         secondaryImagesObserver.observe(element)
     });
 
+    jqueryDefer(Owl);
 
-    let scrollContainer = document.querySelector(".reviews");
-    let forwardSliderBtn = document.getElementById("sliderForwardButton");
-    let backSliderBtn = document.getElementById("sliderBackButton");
-
-    // scrollContainer.addEventListener("scrollend", (event) => {
-    //     forwardSliderBtn.disabled = false;
-    //     console.log("scroll ended");
-    // });
-
-    let scrollAmount = 0;
-
-    let scrollDistance = 1000;
-
-    if (forwardSliderBtn && backSliderBtn) {
-        forwardSliderBtn.addEventListener("click", (enent) => {
-            // forwardSliderBtn.style.pointerEvents = "none";
-            // setTimeout(()=>{
-            //     scrollContainer.scrollBy({
-            //         left: 1000,
-            //         behavior: 'smooth'
-            //     })
-            //     // forwardSliderBtn.style.pointerEvents = "auto";
-            // }, 0)
-            scrollContainer.scrollLeft += scrollDistance;
-
-            scrollAmount += scrollDistance;
-        });
-
-        backSliderBtn.addEventListener("click", (enent) => {
-            // scrollContainer.scrollBy({
-            //     left: -1000,
-            //     behavior: 'smooth'
-            // });
-            // console.log("back", scrollContainer)
-            scrollContainer.scrollLeft -= scrollDistance;
-            scrollAmount -= scrollDistance;
-        });
+    function Owl() {
+        var scriptsList = [
+            {src: '/css/owl.carousel.min.css', type: 'css'},
+            {src: '/css/owl.theme.default.min.css', type: 'css'},
+            {src: '/js/owl.carousel.min.js', type: 'script'}
+        ];
+        loadNextScript(0, scriptsList,
+            function() {
+                $(document).ready(function(){
+                    $('.owl-carousel').owlCarousel({
+                        items:1,
+                        margin:50,
+                        stagePadding: 0,
+                        autoHeight:true,
+                        loop:true,
+                        autoplay:true,
+                        autoplayTimeout:5000,
+                        autoplayHoverPause:true,
+                        nav:true,
+                        responsive: {
+                            1000: {
+                                margin:100,
+                                stagePadding: 50,
+                            }
+                        }
+                    });
+                });
+            }
+        );
     }
 
 
@@ -414,9 +404,6 @@ description: Custom development of solutions by the custom development team
         console.log("form", form)
         var name = $('input[name=name]', form).val();
         var email = $('input[name=email]', form).val();
-        // var company = $('input[name=company]', form).val();
-        // var subject = $('select[name=subject]', form).val();
-        // var message = $('textarea[name=message]', form).val();
         
         if (!validateValue('Name', name)) {
             return false;
