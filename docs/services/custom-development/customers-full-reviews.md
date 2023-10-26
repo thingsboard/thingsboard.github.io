@@ -74,8 +74,8 @@ description: Custom development customers' reviews
             </div>
         </div>
     </div>
-    <!-- <svg id="rectangle1" class="bg-rectangle"><rect/></svg> -->
-    <!-- <svg id="rectangle2" class="bg-rectangle"><rect/></svg> -->
+    <svg id="rectangle1" class="bg-rectangle"><rect/></svg>
+    <svg id="rectangle2" class="bg-rectangle"><rect/></svg>
 </section>
 <section id="review-ionatech" class="full-review">
     <div class="content-wrapper">

@@ -18,9 +18,11 @@ description: Custom development of solutions by the custom development team
             <div class="image-wrapper-icon-laptop">
                 <img 
                     id="icon-laptop"
-                    srcset="/images/custom-development/laptop-with-dashboard_1127x720_1x.png 1x, /images/custom-development/laptop-with-dashboard_2254x1440_2x.png 2x"
+                    srcset="/images/custom-development/laptop-with-dashboard_360x230_1x.png 360w, /images/custom-development/laptop-with-dashboard_1127x720_1x.png 1000w, /images/custom-development/laptop-with-dashboard_2254x1440_2x.png 1900w"
+                    sizes="(max-width: 672px) 360px, 1000px, 1900px"
                     src="/images/custom-development/laptop-with-dashboard_1127x720_1x.png"
                     alt="Laptop with a dashboard"/>
+                <button class="button schedule anchor-button" anchor="#get-in-touch">Schedule a call</button>
             </div>
             <div class="image-wrapper-icon-phone">
                 <img  
@@ -75,14 +77,21 @@ description: Custom development of solutions by the custom development team
         <div class="poc">
             <div class="left-block">
                 <img
+                    id="solution-poc"
+                    srcset="/images/custom-development/solution-coinify_mobile.png 360w, /images/custom-development/solution-coinify.png 1900w"
+                    sizes="(max-width: 672px) 360px, 1900px"
                     src="/images/custom-development/solution-coinify.png"
                     alt="Custom solution">
                 <img 
                     id="solution-widget-1"
                     class="absolute-image secondary-image"
+                    srcset="/images/custom-development/solution-widget-1_mobile.png 360w, /images/custom-development/solution-widget-1.png 1920w"
+                    sizes="(max-width: 672px) 360px, 1920px"
                     src="/images/custom-development/solution-widget-1.png">
                 <img
                     id="solution-widget-2"
+                    srcset="/images/custom-development/solution-widget-2_mobile.png 360w, /images/custom-development/solution-widget-2.png 1920w"
+                    sizes="(max-width: 672px) 360px, 1920px"
                     class="absolute-image secondary-image"
                     src="/images/custom-development/solution-widget-2.png">
             </div>
@@ -115,10 +124,15 @@ description: Custom development of solutions by the custom development team
             </div>
             <div class="right-block">
                 <img
+                    id="solution-mvp1"
+                    srcset="/images/custom-development/solution-mvp_mobile.png 360w, /images/custom-development/solution-mvp.png 1920w"
+                    sizes="(max-width: 672px) 360px, 1920px"
                     src="/images/custom-development/solution-mvp.png"
                     alt="Custom solution">            
                 <img 
                     id="solution-widget-3"
+                    srcset="/images/custom-development/solution-widget-3_mobile.png 360w, /images/custom-development/solution-widget-3.svg 1920w"
+                    sizes="(max-width: 672px) 360px, 1920px"
                     class="absolute-image secondary-image"
                     src="/images/custom-development/solution-widget-3.svg">
             </div>
@@ -130,11 +144,15 @@ description: Custom development of solutions by the custom development team
             <div class="left-block">
                 <img
                     id="solution-market-solution1"
+                    srcset="/images/custom-development/solution-market-solution_mobile.png 360w, /images/custom-development/solution-market-solution.png 1920w"
+                    sizes="(max-width: 672px) 360px, 1920px"
                     src="/images/custom-development/solution-market-solution.png"
                     alt="Custom solution">            
                 <img 
                     id="solution-market-solution2"
                     class="absolute-image base-image"
+                    srcset="/images/custom-development/solution-market-solution2_mobile.png 360w, /images/custom-development/solution-market-solution2.png 1920w"
+                    sizes="(max-width: 672px) 360px, 1920px"
                     src="/images/custom-development/solution-market-solution2.png">
             </div>
             <div class="right-block">
@@ -170,10 +188,10 @@ description: Custom development of solutions by the custom development team
                 </div>
             </div>
             <svg id="additionally-bg1"><rect/></svg>
-            <!-- <svg id="additionally-bg2"><rect/></svg> -->
+            <svg id="additionally-bg2"><rect/></svg>
         </div>
     </div>
-    <!-- <svg id="rectangle1" class="bg-rectangle"><rect/></svg> -->
+    <svg id="rectangle1" class="bg-rectangle"><rect/></svg>
 </section>
 
 <section class="testimonials">
@@ -269,8 +287,8 @@ description: Custom development of solutions by the custom development team
         </div>
     </div>
 </section>
-<!-- <svg id="rectangle2" class="bg-rectangle"><rect/></svg> -->
-<!-- <svg id="rectangle3" class="bg-rectangle"><rect/></svg> -->
+<svg id="rectangle2" class="bg-rectangle"><rect/></svg>
+<svg id="rectangle3" class="bg-rectangle"><rect/></svg>
 
 <script type="text/javascript">
     document.querySelectorAll('.anchor-button').forEach(anchor => {
