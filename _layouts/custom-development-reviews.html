@@ -1,0 +1,14 @@
+{% if page.notitle == "true" %}{% assign notitle = "true" %}{% endif %}
+
+<!Doctype html>
+<html id="custom-development-reviews">
+
+{% include head-header.html %}
+
+<div class="custom-development-reviews-content">
+    {{ content }}
+</div>
+
+{% include footer.html %}
+
+</html>
