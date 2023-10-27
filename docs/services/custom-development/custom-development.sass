@@ -334,7 +334,62 @@ $step6: 1919px
                 .contact-form
                     grid-area: contact-form
     
+    @media screen and (max-width: $step4) and (min-width: $step3)
+        #review-kalitec
+            padding: 120px 20px
 
+        #review-ionatech
+            padding: 120px 20px
+           
+        .review
+            padding: 0 20px
+        
+        .get-in-touch
+            padding: 150px 50px 200px 50px
+            .content-get-in-touch
+                max-width: 1000px
+                display: grid
+                grid-auto-flow: column
+                grid-template-rows: 1fr 3fr
+                grid-template-columns: 1fr 1fr
+                grid-template-areas: "side-title contact-form" "info contact-form"
+
+                .info
+                    grid-area: info
+                    margin-right: 0px
+
+                    .section-title
+                        height: auto
+                        line-height: 40px
+                        min-width: 341px
+                        margin: 0px
+                        font-size: 30px
+
+                    .section-text
+                        max-width: 327px    
+
+                .side-title
+                    grid-area: side-title
+                    #get-in-touch
+                        text-wrap: nowrap
+                        width: 195px
+                        height: 44px
+
+                .contact-form
+                    grid-area: contact-form
+                    padding-right: 30px
+   
+            .info
+                grid-area: info
+                margin-right: 0px
+
+                .section-title
+                    width: 341px
+                    height: auto
+                    line-height: 40px
+
+                .section-text
+                    max-width: 327px
        
     @media screen and (max-width: $step3)
         .back-button
@@ -565,6 +620,7 @@ $step6: 1919px
             
     #first-screen
         height: 100vh
+        min-height: 750px
         width: 100%
         background-color: #F8F9FD
         overflow: hidden
@@ -1086,7 +1142,7 @@ $step6: 1919px
                 margin-top: 20px
                 margin-right: 94px
             
-            .sectino-title
+            .section-title
                 line-height: 68px
 
     .get-in-touch
@@ -1159,6 +1215,7 @@ $step6: 1919px
     
 
     .side-title
+        display: inline
         z-index: 2
         h1
             display: inline-flex
@@ -1264,6 +1321,8 @@ $step6: 1919px
         background: #E9EBFB
         z-index: 0
 
+    button:hover
+        filter: brightness(1.3) contrast(.9)
 
     #rectangle1
         top: 20%
@@ -1655,6 +1714,245 @@ $step6: 1919px
             top: 92%
             left: -28%
 
+    @media screen and (max-width: $step4)
+        .noToc
+            .content-wrapper
+                > *
+                    max-width: 1000px
+            
+            #content-get-in-touch
+                padding: 0 50px
+ 
+            #content-get-in-touch
+                max-width: 1000px
+                display: grid
+                grid-auto-flow: column
+                grid-template-rows: 1fr 3fr
+                grid-template-columns: 1fr 1fr
+                grid-template-areas: "side-title contact-form" "info contact-form"
+
+        #first-screen
+            .hero-container
+                #hero-content
+                    .cdu-title
+                        font-size: 56px
+
+                    .cdu-sub-title
+                        font-size: 24px
+                        min-width: 622px
+                        margin-top: 10px
+
+                .hero-image
+                    .image-wrapper-icon-phone
+                        top: 23%
+                        left: 16%
+
+                    #icon-laptop
+                        width: 800px
+
+                    #icon-phone
+                        width: 300px
+
+                    .schedule-block
+                        width: 284px
+                        height: 347px
+                        top: 22%
+                        right: 20%
+                        padding-top: 40px   
+
+                        #progress
+                            width: 243px
+                        
+                        .result-number
+                            font-size: 44px
+
+                        .result-text
+                            font-size: 16px
+                            margin-bottom: 10px
+        
+        .customers
+            .customer-logos
+                justify-content: space-around
+                padding-bottom: 50px
+                padding-right: 70px
+                padding-left: 70px
+
+                .logo
+                    display: flex
+                    padding: 10px                        
+
+        .cdu-services
+            padding: 100px 0 0px 0
+            .header
+                padding: 0 55px
+                display: grid
+                grid-auto-flow: column
+                grid-template-rows: 1fr 3fr
+                grid-template-columns: 1fr 1fr
+                grid-template-areas: "side-title section-text" "section-title section-text"
+                align-items: center
+
+                .section-title
+                    grid-area: section-title
+                    max-width: 420px
+                    min-width: 420px
+                    font-size: 30px
+
+                .section-text
+                    grid-area: section-text
+                    font-size: 14px
+                    margin-top: 0px
+
+            .poc
+                padding: 110px 40px
+
+                .right-block
+                    max-width: 260px
+                    max-height: 228px
+                    margin-top: 50px
+
+                #solution-poc
+                    width: 600px
+
+                #solution-widget-1
+                    width: 240px
+                    top: 35%
+                    left: 65%
+
+                #solution-widget-2
+                    width: 200px
+                    max-width: fit-content
+                    top: 80%
+                    left: 37%
+    
+            .mvp
+                padding: 100px 35px 109px 40px
+
+                #solution-mvp1
+                    width: 600px
+
+                #solution-widget-3
+                    top: 46%
+                    left: 53%
+                    width: 446px
+
+            .market-solution
+                padding: 100px 40px 285px 40px                
+                
+                .left-block
+                    padding-left: 30px
+
+                    #solution-market-solution1
+                        width: 500px
+
+                    #solution-market-solution2
+                        top: 50%
+                        left: 0%
+                        width: 500px
+
+                .right-block
+                    padding-top: 80px
+                    max-width: 352px
+                    max-height: 288px
+
+            .additionally
+                padding: 100px 50px
+
+                .info
+                    .left-block
+                        max-width: 600px
+
+                        .section-title
+                            line-height: 40px
+
+                    .right-block
+                        padding: 65px 0 0 70px
+
+                        button
+                            min-width: 224px
+                            height: 52px
+                            padding: 0px
+
+        .testimonials
+            padding: 130px 0 130px 0px
+            
+            .upper-block
+                padding: 0 50px
+                display: flex
+                flex-direction: column
+
+            #carousel-wrapper
+                max-width: 1000px
+                padding: 0 50px
+       
+            .review-slider  
+                .reviews
+                    margin: 0px 100px
+
+                    .review
+                        max-width: 800px
+                        .review-header
+                            font-size: 28px
+
+                        .review-body
+                            h6, h5
+                                font-size: 18px
+
+        .get-in-touch
+            padding: 0px 0 200px 0
+
+            .info
+                grid-area: info
+                margin-right: 0px
+
+            .side-title
+                grid-area: side-title
+                #get-in-touch
+                    text-wrap: nowrap
+                    width: 195px
+                    height: 44px
+
+            .section-title
+                max-width: 341px
+                height: auto
+                line-height: 40px
+
+            .section-text
+                max-width: 327px
+
+            .contact-form
+                grid-area: contact-form
+                padding-right: 30px
+
+        #number-one
+            top: 15%
+            left: 81%
+
+        #number-two
+            top: 17%
+            left: 20%
+
+        #number-three
+            top: 50%
+            left: 50%
+
+        .section-title
+            font-size: 30px
+            line-height: 45px
+            letter-spacing: 0.3px
+            padding-bottom: 10px
+
+        .section-text
+            margin-top: 10px
+
+        .section-list
+            li
+                font-size: 14px
+                padding: 0px
+
+        #rectangle3
+            top: 92%
+            left: -28%
 
     @media screen and (max-width: $step3)
         .noToc
