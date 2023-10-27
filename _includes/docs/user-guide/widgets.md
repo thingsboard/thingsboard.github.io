@@ -359,7 +359,7 @@ To view the values of all entities, you need to hover your mouse over the bar.
 
 {% include images-gallery.html imageCollection="appearance-stacking-mode-1" %}
 
-If you need to exclude a specific key from stacking, go to the [advanced data key configuration](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/), and check the "Exclude from stacking" checkbox.
+If you need to exclude a specific key from stacking, go to the [advanced data key configuration](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/#exclude-from-stacking), and check the "Exclude from stacking" checkbox.
 
 {% include images-gallery.html imageCollection="appearance-stacking-mode-2" %}
 
@@ -425,7 +425,7 @@ You can change the appearance of the chart grid: customize the color of the back
 **Tooltip value format function, f(value, latestData)** is used when you want to manually customize the tooltip.
 
 You can customize the values that will be displayed in the tooltip via tooltip settings or
-[Advanced Data key configuration](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/#2-charts).
+[Advanced Data key configuration](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/#tooltip-settings).
 Tooltip configuration via Settings is basic and applied to all entities at the same time. When configured in the Advanced Data key configuration,
 it is applied only to the specific time series data, and the basic tooltip function will be overwritten by this configuration.
 

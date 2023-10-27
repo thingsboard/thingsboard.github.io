@@ -2016,6 +2016,48 @@ Another and most effective method of debugging is to invoke browser debugger.
 Put [**debugger;**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) statement into the place of widget code you are interested in and then click **Run** button to restart widget code.
 Browser debugger (if enabled) will automatically pause code execution at the debugger statement and you will be able to analyze script execution using browser debugging tools.
 
+## ThingsBoard extensions
+
+[ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions) is our additional project that allows you to create your own angular components and use them in your widgets and actions.
+We highly recommend using this feature for any complex logic in your solutions, because it provides you an opportunity to reuse your code, using all functionality of TypeScript, RXJS, Angular, etc.
+In this topic, we will cover how to connect your extensions in ThingsBoard 3.6 and higher using our UI.
+
+**Important remark**: you can use **extensions** even if you use previous versions of ThingsBoard(before 3.6). For this, you will need to load the extension file manually to your server and restart it. All the necessary information can be found in the **README** file in the corresponding branches of the extensions project. [This branch](https://github.com/thingsboard/thingsboard-extensions/tree/release-3.1) is used for the ThingsBoard 3.1.0 - 3.4.1 version and [this one](https://github.com/thingsboard/thingsboard-extensions/tree/release-3.5) is for 3.5 - 3.5.1 version.
+
+First of all, you need a file with your compiled components. By default, it is called **thingsboard-extension-widgets.js**. All instructions on how to create it can be found inside the **README** file to [ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions).
+
+Once you have the file with your components, let's proceed to load them into ThingsBoard. Select **Resources library** inside **Resources** tab:
+
+![image](/images/user-guide/contribution/widgets/resources-library.png)
+
+Click the **add** button on right top corner of the window ("+" icon). In the open popup, select **JS module** in **Resource type** selector, enter **Title** for your module, and import your compiled file:
+
+![image](/images/user-guide/contribution/widgets/add-js-module.png)
+
+Congratulations, your components were added to the ThingsBoard!
+
+Now, let's use them in some widget. Go to the widget library:
+
+![image](/images/user-guide/contribution/widgets/widget-library.png)
+
+We shall create a simple static widget that will use components from our extensions (in case you have questions about how to create a new widget, you should read [this topic](#creating-new-widget-definition)). First of all, go to the **Resources** tab and choose your extensions module:
+<div class="info-banner">
+  <img src="/images/doc-info-icon.svg" alt="Doc info icon" />   
+  <div>
+    <p><strong>Important!</strong> Don’t forget about the <strong>Is module</strong> checkbox!</p>
+  </div>
+</div>
+
+![image](/images/user-guide/contribution/widgets/select-extensions-module.png)
+
+Your module is connected to your widget. Now, you can use your angular components. Let's add a custom component in the **HTML** tab. To apply the changes, click the Save button:
+
+![image](/images/user-guide/contribution/widgets/add-extensions-component.png)
+
+Now, your component is used inside your widget. In general, [ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions) allows you to create any possible widgets in the scope of ThingsBoard platforms.
+
+Good luck with your future awesome solutions!
+
 ### Next steps
 
 {% assign currentGuide = "Contribution" %}{% include templates/multi-project-guides-banner.md %}
