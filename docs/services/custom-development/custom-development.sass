@@ -67,7 +67,7 @@ $step6: 1919px
         margin-right: 91px
         z-index: 2
         h1
-            display: inline-flex
+            display: inline
             flex-direction: column
             align-items: flex-start
             gap: 4px
@@ -450,10 +450,12 @@ $step6: 1919px
                 min-width: 300px
                 margin-right: 94px
                 height: fit-content
+                max-width: fit-content
             
             .section-text
                 font-size: 16px
                 line-height: 28px
+                max-width: fit-content
 
             .contact-form
                 padding-top: 30px
@@ -470,13 +472,9 @@ $step6: 1919px
 
         #review-asg
             padding: 40px 40px
-            // padding-top: 50px
-            // padding-bottom: 40px
 
         #review-superbockgroup
             padding: 40px 40px
-            // padding-top: 40px
-            // padding-bottom: 40px
 
         #review-kalitec
             padding: 40px 40px
@@ -531,6 +529,9 @@ $step6: 1919px
             .info
                 margin-right: 70px
 
+                .section-title
+                    min-width: 300px
+
             .side-title
                 margin-top: 15px
                 margin-right: 94px
@@ -539,16 +540,19 @@ $step6: 1919px
                 margin-right: 94px
                 font-size: 25px
                 line-height: 30px
-                min-width: 300px
                 height: fit-content
+                width: fit-content
+                max-width: fit-content
             
             .section-text
                 font-size: 16px
                 line-height: 28px
+                max-width: fit-content
 
             .contact-form
                 padding-top: 30px
                 z-index: 2
+                max-width: fit-content
                 .form-element
                     margin-bottom: 28px
                     width: 100%
@@ -559,12 +563,10 @@ $step6: 1919px
                             line-height: 16px
 
         #review-asg
-            padding-top: 50px
-            padding-bottom: 40px
+            padding: 50px 20px 40px 20px
 
         #review-superbockgroup
-            padding-top: 40px
-            padding-bottom: 40px
+            padding: 40px 20px
 
         #review-kalitec
             padding: 40px 20px
@@ -1215,10 +1217,9 @@ $step6: 1919px
     
 
     .side-title
-        display: inline
         z-index: 2
         h1
-            display: inline-flex
+            display: inline
             flex-direction: column
             align-items: flex-start
             gap: 4px
@@ -1369,7 +1370,6 @@ $step6: 1919px
     .flyout-button
         display: none
 
-    ///////////////
     @media screen and (max-width: $step6)
         .noToc
             .content-wrapper
@@ -1673,6 +1673,7 @@ $step6: 1919px
                                 font-size: 18px
 
         .get-in-touch
+            padding-top: 0
             .info
                 grid-area: info
                 margin-right: 0px
@@ -2024,18 +2025,10 @@ $step6: 1919px
 
                         .schedule
                             display: none
-                            // border-radius: 6px
-                            // background: #3622A4
-                            // height: 60px
-                            // padding: 0 60px
-                            // transform: translateX(-50%)
 
                     #icon-phone
                         display: none
                     
-                    .schedule-block
-                        // display: none
-        
         .cdu-services
             padding: 60px 0 0px 0
             .header
@@ -2126,6 +2119,8 @@ $step6: 1919px
                 margin-right: 0
                 line-height: 30px
                 height: unset
+                max-width: fit-content
+
             .side-title
                 #get-in-touch
                     text-wrap: nowrap
@@ -2276,6 +2271,7 @@ $step6: 1919px
                         font-size: 16px
                         line-height: 28px
                         width: 100%
+                        min-width: unset
 
                 .hero-image
                     .image-wrapper-icon-laptop
@@ -2417,6 +2413,8 @@ $step6: 1919px
                 .section-title
                     margin-bottom: 0px
                     padding-bottom: 0px
+            #carousel-wrapper
+                padding: 0
 
             .owl-carousel.owl-theme.reviews-carousel
                 margin: 20px 0 15px

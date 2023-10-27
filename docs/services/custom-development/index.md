@@ -10,7 +10,7 @@ description: Custom development of solutions by the custom development team
 <section id="first-screen">
     <div class="hero-container">
         <div id="hero-content">
-            <div class="cdu-title">Custom development unit</div>
+            <div class="cdu-title">Development services</div>
             <div class="cdu-sub-title">We will create your custom IOT solution that perfectly suits your business</div>
         </div>
         <div class="hero-image">
