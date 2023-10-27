@@ -23,7 +23,7 @@ Save up to 90% of development time for your smart office solution by utilizing t
 
 The platform provides production-ready server infrastructure to connect your IoT water meters, store, analyze and share collected IoT data;
 
-## Water metering template
+### Water metering template
 
 Water Metering [solution template](https://thingsboard.io/docs/paas/solution-templates/water-metering/) represent generic water metering solution. 
 With this template, you get interactive dashboards that allow administrators and end-users to browse the state of the water meters and aggregated water consumption statistics. 
@@ -170,7 +170,7 @@ Some dashboard features (for example, ability to create devices) were disabled o
     </div>
 </section>
 
-## Water metering solution overview
+### Water metering solution overview
 
 The diagram below identifies data flow and integration points for a typical water metering solution that uses the ThingsBoard platform to collect and analyze data from smart water meters.
 
@@ -182,7 +182,7 @@ Most of the water metering projects today use LoRaWAN, SigFox or NB IoT to conne
 The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
-## Learn more
+### Learn more
 
 <a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
 <a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>

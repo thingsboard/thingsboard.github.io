@@ -14,7 +14,7 @@ In this tutorial, we will configure ThingsBoard Rule Engine to use queue with se
 Although this scenario is fictional, you will learn how to work with the queue to allow processing messages in sequential order
 and use this knowledge in real-life applications.
 
-## Prerequisites 
+### Prerequisites 
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
@@ -23,7 +23,7 @@ We assume you have completed the following guides and reviewed the articles list
   
 In addition, you need to have at least one device provisioned in your environment.
 
-## Step 1: Creating the Rule Chain
+### Step 1: Creating the Rule Chain
 
 ![image](/images/user-guide/rule-engine-2-5/tutorials/sync_rule_chain.png)
 
@@ -48,7 +48,7 @@ The calculations will be done using **"Counter Script"** node.
 
 The last step will be to save the new counter value using **"Save Attributes"** node.
 
-## Step 2: Validation the Rule Chain logic
+### Step 2: Validation the Rule Chain logic
 
 Let's check that our logic is correct by saving the Rule Chain. The generators will automatically produce 14 messages:
 
@@ -60,12 +60,12 @@ The final counter value that is persisted for a device is:
 
 That means that our logic works correctly.
 
-## TL;DR
+### TL;DR
 
 Download and import attached json [**file**](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/tutorials/resources/synchronization_rule_chain.json) with a rule chain from this tutorial.
 Don't forget to populate the Generator nodes with your specific device.
  
-## Next steps
+### Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/multi-project-guides-banner.md %}
 

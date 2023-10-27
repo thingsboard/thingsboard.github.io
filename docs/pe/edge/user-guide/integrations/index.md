@@ -157,7 +157,7 @@ Explore guides and video tutorials related to specific integrations:
  - [TCP](/docs/pe/edge/user-guide/integrations/tcp/)
  - [UDP](/docs/pe/edge/user-guide/integrations/udp/)
  
-## Next steps
+### Next steps
 
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/guides-banner-edge.md %}

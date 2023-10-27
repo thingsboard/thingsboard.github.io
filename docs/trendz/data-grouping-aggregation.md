@@ -39,7 +39,7 @@ After that, for all Energy Meters for each building, Trendz will load all energy
 
 It is not an exact algorithm description and there are a lot of optimizations performed in the background. But it allows to understand how much complexity handled inside Trendz, so you can focus on analytics but not on data fetching.
 
-## Grouping by time
+### Grouping by time
 
 In most cases data is grouped by time interval - by hour, day, week, month, etc. You should use **Date** field from left panel
 and drag and drop it the **X-axis** section.
@@ -73,7 +73,7 @@ You can have more control on date intervals by selecting other available Date ag
 * YEAR
 * YEARMONTH - '2020-Feb' 
 
-## Define Groups for analysis
+### Define Groups for analysis
 In this step, we want to define on what logical level we want to see our data. In the Energy Metering scenario, we can make analysis on different levels such as 
 city, region, building, apartment or concrete energy meter. The good news is that Trendz provides this grouping automatically in real-time. 
 You don't need to explicitly define aggregation rules and pre-compute value for different levels before analysis.
@@ -92,7 +92,7 @@ Finally lets deep dive and see total consumption separated by room number - add 
 ![image](/images/trendz/data-grouping-room.png)
 
 
-## Aggregate telemetry and groups
+### Aggregate telemetry and groups
 The Next important step is to define how data should be aggregated. Here are supported aggregation types:
 * AVG
 * SUM
@@ -107,7 +107,7 @@ For changing aggregation type - just click on the field and select required valu
 ![image](/images/trendz/field-aggregation.png)
 
 
-## Work with pulse output telemetry
+### Work with pulse output telemetry
 Water meter is a good example of a device with pulse output - telemetry value always growing and during analysis, we want to convert it into delta values.
 Here is an example chart for such telemetry:
  
@@ -121,6 +121,6 @@ Trendz automatically computes delta for this field for defined time ranges with 
 In case when **DELTA** aggregation applied for multiple devices - Trendz will apply **SUM** aggregation to the aggregate group - as the result, we can see total consumption on different levels (city, building, etc.)
 
 
-## Next Steps
+### Next Steps
 
 {% assign currentGuide = "GroupAndAggregateData" %}{% include templates/trndz-guides-banner.md %}

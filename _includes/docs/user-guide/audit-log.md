@@ -71,10 +71,10 @@ The configuration parameters are well documented inline.
     host: "${AUDIT_LOG_SINK_HOST:localhost}"
     port: "${AUDIT_LOG_SINK_POST:9200}"
     user_name: "${AUDIT_LOG_SINK_USER_NAME:}"
-    password: "${AUDIT_LOG_SINK_PASSWORD:}"      
+    password: "${AUDIT_LOG_SINK_PASSWORD:}"
 ```
 {% endunless %}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

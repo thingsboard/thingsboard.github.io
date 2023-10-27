@@ -156,6 +156,6 @@ service:
 
 In case that you are using custom remote integration of the older version, and plan to upgrade your custom integration to the 3.3.1 version be sure that you have that property added to the tb-remote-integration.yml file.
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

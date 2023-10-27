@@ -31,7 +31,7 @@ Possible error codes and their reasons:
 
 Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization) for more details.
 
-## Telemetry upload API
+### Telemetry upload API
 
 In order to publish telemetry data to ThingsBoard server node, send POST request to the following URL:
 
@@ -95,7 +95,7 @@ C,telemetry-data-as-array.json,json,resources/telemetry-data-as-array.json,/docs
 D,telemetry-data-with-ts.json,json,resources/telemetry-data-with-ts.json,/docs/reference/resources/telemetry-data-with-ts.json{% endcapture %}
 {% include tabs.html %}
 
-## Attributes API
+### Attributes API
 
 ThingsBoard attributes API allows devices to
 
@@ -230,13 +230,13 @@ A,Example,shell,resources/http-attributes-subscribe.sh,/docs/reference/resources
 B,Result,json,resources/attributes-response.json,/docs/reference/resources/attributes-response.json{% endcapture %}
 {% include tabs.html %}
 
-## JSON value support
+### JSON value support
 
 {% include templates/api/json.md %}
 
-## RPC API
+### RPC API
 
-### Server-side RPC
+#### Server-side RPC
 
 In order to subscribe to RPC commands from the server, send GET request with optional "timeout" request parameter to the following URL:
 
@@ -399,7 +399,7 @@ B,rpc-client-request.json,shell,resources/rpc-client-request.json,/docs/referenc
 C,Response Body,shell,resources/rpc-server-response.json,/docs/reference/resources/rpc-server-response.json{% endcapture %}  
 {% include tabs.html %}
 
-## Claiming devices
+### Claiming devices
 
 Please see the corresponding article to get more information about the [Claiming devices](/docs/{{docsPrefix}}user-guide/claiming-devices) feature.
 
@@ -449,9 +449,9 @@ In case the **durationMs** is not specified, the system parameter **device.claim
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-## Device provisioning
+### Device provisioning
 
-Please see the corresponding article to get more information about the [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning) feature.  
+Please see the corresponding article to get more information about the [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning) feature.
 
 In order to initiate device provisioning, send POST request to the following URL:
 
@@ -490,7 +490,7 @@ The supported data format is:
 }
 ```
 
-## Firmware API
+### Firmware API
 
 When ThingsBoard initiates the firmware update over HTTP it sets the fw_title, fw_version, fw_checksum, fw_checksum_algorithm shared attributes.
 To receive the shared attribute updates, the device has to GET request
@@ -530,10 +530,10 @@ Where
 
 {% endif %}
 
-## Protocol customization
+### Protocol customization
 
 HTTP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/http).
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

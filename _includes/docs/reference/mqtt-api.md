@@ -36,7 +36,7 @@ Please refer to the [MQTT transport type](/docs/{{docsPrefix}}user-guide/device-
 
 Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization) for more details.
 
-## Telemetry upload API
+### Telemetry upload API
 
 In order to publish telemetry data to ThingsBoard server node, send PUBLISH message to the following topic:
  
@@ -77,7 +77,7 @@ E,telemetry-data-with-ts.json,json,resources/telemetry-data-with-ts.json,/docs/r
 {% include tabs.html %}
 
  
-## Attributes API
+### Attributes API
 
 ThingsBoard attributes API allows devices to
 
@@ -158,13 +158,13 @@ A,Mosquitto,shell,resources/mosquitto-attributes-subscribe.sh,/docs/reference/re
 B,MQTT.js,shell,resources/mqtt-js-attributes-subscribe.sh,/docs/reference/resources/mqtt-js-attributes-subscribe.sh{% endcapture %}
 {% include tabs.html %}
 
-## JSON value support
+### JSON value support
 
 {% include templates/api/json.md %}
 
-## RPC API
+### RPC API
 
-### Server-side RPC
+#### Server-side RPC
 
 In order to subscribe to RPC commands from the server, send SUBSCRIBE message to the following topic:
 
@@ -266,10 +266,10 @@ return {msg: {time:String(new Date())}, metadata: metadata, msgType: msgType};
 
 {% capture tabspec %}mqtt-rpc-from-client
 A,example.sh,shell,resources/mqtt-js-rpc-from-client.sh,/docs/reference/resources/mqtt-js-rpc-from-client.sh
-B,mqtt-js-rpc-from-client.js,javascript,resources/mqtt-js-rpc-from-client.js,/docs/reference/resources/mqtt-js-rpc-from-client.js{% endcapture %}  
+B,mqtt-js-rpc-from-client.js,javascript,resources/mqtt-js-rpc-from-client.js,/docs/reference/resources/mqtt-js-rpc-from-client.js{% endcapture %}
 {% include tabs.html %}
 
-## Claiming devices
+### Claiming devices
 
 Please see the corresponding article to get more information about the [Claiming devices](/docs/{{docsPrefix}}user-guide/claiming-devices) feature.
 
@@ -290,15 +290,15 @@ In case the **durationMs** is not specified, the system parameter **device.claim
 
 ## Device provisioning
 
-Please see the corresponding article to get more information about the [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning) feature.  
+Please see the corresponding article to get more information about the [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning) feature.
 
 In order to initiate device provisioning, send Provisioning request to the following topic:
- 
+
 ```shell
 /provision
 ```
 
-Also, you should set **username** or **clientId** to *provision*. 
+Also, you should set **username** or **clientId** to *provision*.
 
 The supported data format is:
 
@@ -309,8 +309,8 @@ The supported data format is:
   "provisionDeviceSecret": "jpmwdn8ptlswmf4m29bw"
 }
 ```
-  
-## Firmware API 
+
+### Firmware API
 
 When ThingsBoard initiates an MQTT device firmware update, it sets the fw_title, fw_version, fw_checksum, fw_checksum_algorithm shared attributes.
 To receive the shared attribute updates, the device has to subscribe to 
@@ -348,11 +348,11 @@ Where
 
 **+** is the Wildcard character.
 
-## Protocol customization
+### Protocol customization
 
 MQTT transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt).
 
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

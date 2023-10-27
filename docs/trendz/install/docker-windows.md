@@ -17,14 +17,14 @@ This guide will help you to install and start Trendz Analytics using Docker on W
 
 - [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
 
-## Step 1. Obtain the license key 
+### Step 1. Obtain the license key 
 
 We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
 Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE guide.
 
-## Step 2. Running Trendz service
+### Step 2. Running Trendz service
 
 ##### Docker Compose setup
 
@@ -147,7 +147,7 @@ For first authentication you need to use **Tenant Administrator** credentials fr
 Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
 to validate credentials.
 
-## Detaching, stop and start commands
+### Detaching, stop and start commands
 
 {% assign serviceName = "trendz" %}
 {% assign serviceFullName = "Trendz" %}
@@ -159,6 +159,6 @@ to validate credentials.
 
 {% include templates/troubleshooting/dns-issues-windows.md %}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

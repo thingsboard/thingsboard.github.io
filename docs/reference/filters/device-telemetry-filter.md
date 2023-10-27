@@ -14,7 +14,7 @@ For example, an engine controller may periodically report its temperature.
 When engine temperature is higher than 100 degrees you may raise an alert. 
 The filter expression is written in javascript. 
 
-## Configuration
+### Configuration
 
 You are able to write boolean javascript expression using bindings that match keys of your telemetry message.
 If you are not sure that certain key is present in your message, you can add check it's type for *undefined*.
@@ -43,6 +43,6 @@ typeof temperature!== 'undefined' && typeof enabled !== 'undefined' && typeof mo
 temperature > 1000 && enabled == true && mode == 'A'
 ```
 
-## Example
+### Example
 
 As a tenant administrator, you are able to review filter example inside **Rules->Demo Alarm Rule->Filters->Device Telemetry Filter**.

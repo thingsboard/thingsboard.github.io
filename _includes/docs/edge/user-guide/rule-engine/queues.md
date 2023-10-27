@@ -20,6 +20,6 @@ Tenant administrator is able to use any Queue in the *Edge* Rule Chain, in the s
 You can use Queues in *Checkpoint* or any analytics (**PE**) rule nodes. 
 No additional configuration steps required. 
  
-## Next steps
+### Next steps
 
 {% include templates/edge/guides-banner-edge.md %}

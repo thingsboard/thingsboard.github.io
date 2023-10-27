@@ -12,7 +12,7 @@ description: A Guide to Connecting ADAM-6717 to ThingsBoard Cloud Unlocking Seam
 In this comprehensive guide, we will walk you through the process of establishing a seamless connection between the ADAM-6717 and ThingsBoard Cloud. 
 By following these step-by-step instructions, you will be able to integrate and leverage the powerful capabilities of ThingsBoard Cloud with your ADAM-6717 module
 
-## Step 1: Creating a New Device on the ThingsBoard Cloud Platform
+### Step 1: Creating a New Device on the ThingsBoard Cloud Platform
 
 To establish a connection between your ADAM-6717 module and the ThingsBoard Cloud platform, the first step is to create a new device. 
 Follow the instructions below:
@@ -38,7 +38,7 @@ This ensures that only authorized devices can establish a connection with the pl
 
 By creating a new device, you are preparing a destination where the data from your ADAM-6717 module will be sent for storage and visualization within the ThingsBoard Cloud platform.
 
-## Step 2: Configuration of ADAM-6717 Module for Connectivity
+### Step 2: Configuration of ADAM-6717 Module for Connectivity
 
 Before you start.
 
@@ -67,7 +67,7 @@ Once you have successfully signed into the Node-RED graphic programming tool, yo
 
 ![image](/images/samples/solandtec/Imagen6.png)
 
-## Step 3: Configuring NodeRED for Integration with ThingsBoard Cloud
+### Step 3: Configuring NodeRED for Integration with ThingsBoard Cloud
 
 This configuration sets up a flow where data will be injected by the inject node and sent to ThingsBoard Cloud using the MQTT out node.
  - Drag and drop an "inject" node from the Node-RED palette onto the workspace. Similarly, drag and drop an "MQTT out" node from the palette.
@@ -104,6 +104,6 @@ After configuring the inject node and MQTT out node as mentioned in the previous
 <br>
 Congratulations! You have now successfully sent the data from Node-RED to your device in ThingsBoard Cloud.
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
