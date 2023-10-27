@@ -4,7 +4,7 @@ $step1: 360px
 $step2: 672px
 $step3: 1000px
 $step4: 1280px
-$step5: 1440px
+$step5: 1439px
 $step6: 1919px
 
 #custom-development-reviews
@@ -286,13 +286,55 @@ $step6: 1919px
             .side-title
                 #get-in-touch
                     text-wrap: nowrap
-                    width: 195px
+                    width: 195px 
                     height: 44px
 
             .section-title
                 min-width: 570px
                 height: 136px
+                line-height: 60px
+
+            .section-text
+                line-height: 40px
        
+    @media screen and (max-width: $step5)
+        .review
+                padding: 0 100px
+        
+        .header
+            .title
+                font-size: 36px
+
+        .get-in-touch
+            .content-get-in-touch
+                max-width: 1280px
+                display: grid
+                grid-auto-flow: column
+                grid-template-rows: 1fr 3fr
+                grid-template-columns: 1fr 1fr
+                grid-template-areas: "side-title contact-form" "info contact-form"
+
+                .info
+                    grid-area: info
+                    margin-right: 0px
+                    .section-title
+                        width: 609px
+
+                .side-title
+                    grid-area: side-title
+                    #get-in-touch
+                        text-wrap: nowrap
+                        width: 195px
+                        height: 44px
+
+                .section-title
+                    width: 610px
+                    height: 136px
+
+                .contact-form
+                    grid-area: contact-form
+    
+
     @media screen and (max-width: $step2)
         .back-button
             margin-bottom: 10px
@@ -1324,6 +1366,192 @@ $step6: 1919px
         #rectangle3
             top: 92%
             left: -28%
+
+    @media screen and (max-width: $step5)
+        .noToc
+            .content-wrapper
+                > *
+                    max-width: 1280px
+            
+            #content-get-in-touch
+                padding: 0 50px
+
+            #content-get-in-touch
+                max-width: 1280px
+                display: grid
+                grid-auto-flow: column
+                grid-template-rows: 1fr 3fr
+                grid-template-columns: 1fr 1fr
+                grid-template-areas: "side-title contact-form" "info contact-form"
+
+        #first-screen
+            .hero-container
+                #hero-content
+                    .cdu-title
+                        font-size: 56px
+
+                    .cdu-sub-title
+                        font-size: 24px
+
+                .hero-image
+                    width: 1440px
+                    .image-wrapper-icon-phone
+                        top: 21%
+                        left: 6%
+
+                    #icon-laptop
+                        width: 1000px
+
+                    #icon-phone
+                        width: 400px
+
+                    .schedule-block
+                        top: 21%
+                        right: 8%   
+        
+        .cdu-services
+            padding: 100px 0 0px 0
+            .header
+                padding: 0 55px
+                display: grid
+                grid-auto-flow: column
+                grid-template-rows: 1fr 3fr
+                grid-template-columns: 1fr 1fr
+                grid-template-areas: "side-title section-text" "section-title section-text"
+                align-items: center
+
+                .side-title
+                    margin-right: 50px
+                    min-width: 198px
+                    margin-top: 10px
+                    grid-area: side-title
+                    h1
+                        padding: 6px 16px
+
+                .section-title
+                    grid-area: section-title
+                    max-width: 528px
+                    min-width: 528px
+                    font-size: 36px
+
+                .section-text
+                    grid-area: section-text
+
+            .poc
+                padding: 110px 40px
+
+                #solution-poc
+                    width: 700px
+
+                #solution-widget-1
+                    width: 331px
+                    top: 35%
+                    left: 65%
+
+                #solution-widget-2
+                    width: 257px
+                    max-width: fit-content
+                    top: 80%
+                    left: 37%
+    
+            .mvp
+                padding: 100px 50px 109px 50px
+
+                #solution-mvp1
+                    width: 660px
+
+                #solution-widget-3
+                    top: 43%
+                    left: 53%
+                    width: 562px
+
+            .market-solution
+                padding: 100px 65px 285px 50px
+                
+                .left-block
+                    padding-left: 50px
+
+                    #solution-market-solution1
+                        width: 600px
+
+                    #solution-market-solution2
+                        top: 32%
+                        left: 0%
+                        width: 600px
+
+                .right-block
+                    padding-top: 80px
+                    max-width: 460px
+
+            .additionally
+                padding: 100px 50px
+                .info
+                    .right-block
+                        button
+                            min-width: 290px
+                            height: 60px
+                            padding: 0px
+
+        .testimonials
+            padding: 130px 0 130px 0px
+            
+            .upper-block
+                padding: 0 50px
+       
+            .review-slider  
+                .reviews
+                    margin: 0px 100px
+
+                    .review
+                        .review-header
+                            font-size: 28px
+
+                        .review-body
+                            h6, h5
+                                font-size: 18px
+
+        .get-in-touch
+            .info
+                grid-area: info
+                margin-right: 0px
+                .section-title
+                    width: 609px
+
+            .side-title
+                grid-area: side-title
+                #get-in-touch
+                    text-wrap: nowrap
+                    width: 195px
+                    height: 44px
+
+            .section-title
+                width: 610px
+                height: 136px
+
+            .contact-form
+                grid-area: contact-form
+
+        #number-one
+            top: 15%
+            left: 60%
+
+        #number-three
+            top: 44%
+            left: 48%
+
+        .section-title
+            font-size: 36px
+            line-height: 63px
+            letter-spacing: 0.3px
+
+        .section-list
+            li
+                font-size: 18px
+
+        #rectangle3
+            top: 92%
+            left: -28%
+
 
     @media screen and (max-width: $step2)
         #first-screen
