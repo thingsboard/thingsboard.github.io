@@ -1,10 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700&display=swap')
 
 $step1: 360px
-$step2: 672px
-$step3: 1000px
-$step4: 1280px
-$step5: 1440px
+$step2: 671px
+$step3: 999px
+$step4: 1279px
+$step5: 1439px
 $step6: 1919px
 
 #custom-development-reviews
@@ -293,9 +293,107 @@ $step6: 1919px
                 min-width: 570px
                 height: 136px
        
+    @media screen and (max-width: $step3)
+        .back-button
+            margin-bottom: 10px
+
+        .side-title
+            margin-bottom: 10px
+
+        .header
+            display: flex
+            flex-direction: column
+            margin-left: 0px
+            margin-bottom: 40px
+
+            .title
+                font-size: 30px
+                line-height: 48px
+        
+        .review
+            padding: 0
+            max-width: 750px
+            .review-header
+                font-size: 30px
+                line-height: 48px
+
+            .review-body
+                h6, h5
+                    font-size: 14px
+                    line-height: 30px
+                h6
+                    margin-bottom: 8px
+                
+                h5
+                    margin-bottom: 3px
+
+        .get-in-touch
+            padding: 50px 40px 80px 40px
+
+            .content-get-in-touch
+                flex-direction: column
+                padding: 0px
+                max-width: 750px
+
+            .info
+                margin-right: 70px
+
+            .side-title
+                margin-top: 15px
+                margin-right: 94px
+
+            .section-title
+                font-size: 25px
+                line-height: 30px
+                min-width: 300px
+                margin-right: 94px
+                height: fit-content
+            
+            .section-text
+                font-size: 16px
+                line-height: 28px
+
+            .contact-form
+                padding-top: 30px
+                max-width: 400px
+                z-index: 2
+                .form-element
+                    margin-bottom: 28px
+                    width: 100%
+                    label
+                        position: relative
+                        p
+                            font-size: 12px
+                            line-height: 16px
+
+        #review-asg
+            padding: 40px 40px
+            // padding-top: 50px
+            // padding-bottom: 40px
+
+        #review-superbockgroup
+            padding: 40px 40px
+            // padding-top: 40px
+            // padding-bottom: 40px
+
+        #review-kalitec
+            padding: 40px 40px
+            z-index: 1
+
+        #review-ionatech
+            padding: 40px 40px
+
+        .side-title
+            margin-right: 0
+            margin-bottom: 10px
+
     @media screen and (max-width: $step2)
         .back-button
             margin-bottom: 10px
+
+        .side-title
+            margin-bottom: 10px
+
         .header
             display: flex
             flex-direction: column
@@ -328,9 +426,6 @@ $step6: 1919px
                 flex-direction: column
                 padding: 0px
 
-            .section-title
-                margin-right: 94px
-
             .info
                 margin-right: 70px
 
@@ -339,9 +434,11 @@ $step6: 1919px
                 margin-right: 94px
 
             .section-title
+                margin-right: 94px
                 font-size: 25px
                 line-height: 30px
                 min-width: 300px
+                height: fit-content
             
             .section-text
                 font-size: 16px
@@ -1034,6 +1131,7 @@ $step6: 1919px
             line-height: 30px
             letter-spacing: 0.22px
             text-transform: uppercase
+            text-wrap: nowrap
 
     .section-title
         color: #333
@@ -1324,6 +1422,300 @@ $step6: 1919px
         #rectangle3
             top: 92%
             left: -28%
+
+    @media screen and (max-width: $step3)
+        .noToc
+            .content-wrapper
+                > *
+                    max-width: 761px
+            
+            #content-get-in-touch
+                padding: 0 50px
+
+            #content-get-in-touch
+                max-width: 761px
+        #first-screen
+            &::before
+                transform: translate(-56%, -5%) scale(3.5)
+                animation-name: backgroundFadeoutMobile
+            .hero-container
+                .hero-image
+                    width: 671px
+                    #icon-laptop
+                        width: unset
+
+                    .schedule-block
+                        width: 212px
+                        height: 243px
+
+                        top: 28%
+                        right: 3%
+
+                        padding: 32px 20px 32px 20px
+                        animation-delay: 500ms
+
+                        #progress
+                            width: 78%
+
+                        .result-number
+                            font-size: 28px
+                            line-height: 40px
+                            margin-top: 32px
+
+                        .result-text
+                            font-size: 14px
+                            line-height: 20px
+                            margin-bottom: 17px
+
+                        .button
+                            height: fit-content
+                            font-weight: 400
+
+
+            .hero-container
+                #hero-content
+                    .cdu-title
+                        font-size: 40px
+                        line-height: 76px
+
+                    .cdu-sub-title
+                        font-size: 20px
+                        line-height: 40px
+                        width: 100%
+
+                .hero-image
+                    .image-wrapper-icon-laptop
+                        position: absolute
+                        top: 8%
+                        left: 50%
+
+                        .schedule
+                            display: none
+                            // border-radius: 6px
+                            // background: #3622A4
+                            // height: 60px
+                            // padding: 0 60px
+                            // transform: translateX(-50%)
+
+                    #icon-phone
+                        display: none
+                    
+                    .schedule-block
+                        // display: none
+        
+        .cdu-services
+            padding: 60px 0 0px 0
+            .header
+                flex-direction: column
+                padding: 0 20px
+
+            .poc
+                padding: 20px
+                padding-bottom: 180px
+                flex-direction: column-reverse
+                #solution-poc
+                    width: 100%
+                    max-width: unset
+
+                #solution-widget-1
+                    max-width: unset
+                    width: 46%
+                    top: 47%
+                    left: 56%
+
+                #solution-widget-2
+                    max-width: unset
+                    width: 38%
+                    top: 72%
+                    left: 22%
+
+            .mvp
+                padding: 40px 20px 80px 20px
+                flex-direction: column
+                align-items: flex-start
+                .right-block
+                    position: relative
+                    width: 100%
+
+                    #solution-mvp1
+                        width: 100%
+
+                    #solution-widget-3
+                        width: 70%
+                        top: 43%
+                        left: 35%
+
+            .market-solution
+                padding: 60px 20px 260px 20px
+                flex-direction: column-reverse
+                .left-block
+                    padding-left: 0px
+                    #solution-market-solution1
+                        width: 90%
+
+                    #solution-market-solution2
+                        width: 90%
+                        top: 60%
+                        left: 7%
+
+                .right-block
+                    padding-top: 0px
+                    .section-title
+                        padding-bottom: 0px
+
+            .additionally
+                padding: 40px 20px
+                .side-title
+                    margin-bottom: 10px
+
+                .info
+                    flex-direction: column
+                    .left-block
+                        max-width: 1000px
+                        .section-title
+                            line-height: 40px
+                    .right-block
+                        padding: 30px 0 0 0px
+                        button
+                            padding: 5px 50px
+
+            .header-animation
+                .section-title
+                    min-width: unset
+                    line-height: 48px
+                    font-size: 30px
+
+        .get-in-touch
+            padding: 40px 0 
+            .section-title
+                margin-right: 0
+                line-height: 30px
+                height: unset
+            .side-title
+                #get-in-touch
+                    text-wrap: nowrap
+                    height: fit-content
+                    width: fit-content
+
+            .contact-form
+                max-width: 400px
+
+        .noToc
+            position: relative
+
+            #content-get-in-touch
+                flex-direction: column
+                padding: 0 20px
+
+        .customers
+            .title
+                font-size: 14px
+                line-height: 32px
+                padding: 44px 0 39px 0
+
+            .customer-logos
+                .logo
+                    padding: 20px
+
+        .testimonials
+            padding: 80px 0 30px 0
+            .upper-block
+                flex-direction: column
+                padding: 0 20px
+                .side-title
+                    margin-bottom: 10px
+                .section-title
+                    margin-bottom: 0px
+                    padding-bottom: 0px
+
+            #carousel-wrapper
+                max-width: 761px
+
+            .owl-carousel.owl-theme.reviews-carousel
+                margin: 20px 0 15px
+
+                .owl-stage-outer
+                    .owl-stage
+                        .owl-item
+                            padding: 0 45px
+
+                .review
+                    .review-header
+                        font-size: 20px
+                        line-height: 30px
+
+                    .review-body
+                        h6, h5
+                            font-size: 14px
+                            line-height: 20px
+
+                    .full-review-link
+                        font-size: 16px
+        
+        .side-title
+            margin-bottom: 10px
+            h1
+                font-size: 14px
+                line-height: 20px
+                padding: 8px 20px
+
+        .section-title
+            font-size: 30px
+            line-height: 40px
+            margin-bottom: 10px
+            padding-bottom: 0px
+        
+        .section-text
+            font-size: 14px
+            line-height: 28px
+            padding-bottom: 10px
+
+
+        .section-list
+            li
+                font-size: 14px
+                line-height: 32px
+                padding-bottom: 10px
+
+        #rectangle1
+            top: 20%
+            left: 82%
+
+        #rectangle2
+            top: 80%
+            left: 82%
+
+        #rectangle3
+            top: 90%
+            left: -10%
+
+        #number-one
+            top: -5%
+            left: 70%
+            transform: scale(0.55)
+
+        #number-two
+            top: -5%
+            left: 65%
+            transform: scale(0.55)
+
+
+        #number-three
+            top: -1%
+            left: 61%
+            transform: scale(0.55)
+
+
+        .header
+            margin: 0 0 20px
+            font-size: 20px
+
+        .text
+            font-size: 16px
+
+        .accent-text
+            font-size: 14px
+            line-height: 1.5
 
     @media screen and (max-width: $step2)
         #first-screen
