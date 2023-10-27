@@ -114,7 +114,7 @@ At this stage, you need to set the parameters to establish a connection between 
 | **'Debug Mode' Checkbox**              | Enable during integration debugging.|
 | **Allow create devices or assets**              | If there was no device in ThingsBoard, the device will be created.|
 | **Uplink data converter**              | Select the previously created converter.|
-| **Downlink data converter**              | This option is not supported through the integration, More details about [Downlink](http://0.0.0.0:4000/docs/user-guide/integrations/kafka/?installationType=common&integrationTypes=common&uplinkTypes=common#advanced-usage-kafka-producer-downlink) below in the guide.|
+| **Downlink data converter**              | This option is not supported through the integration, More details about [Downlink](https://thingsboard.io/docs/user-guide/integrations/kafka/?installationType=common&integrationTypes=common&uplinkTypes=common#advanced-usage-kafka-producer-downlink) below in the guide.|
 | **'Execute remotely' Checkbox**              | Activate if you want to execute integration remotely from main ThingsBoard instance. For more information on remote integration follow the [link (Remote Integrations)](https://thingsboard.io/docs/user-guide/integrations/remote-integrations/).|
 | **Group ID**              | Specifies the name of the consumer group to which the Kafka consumer belongs.|
 | **Client ID**              | An Kafka consumer identifier in a consumer group.|
@@ -127,16 +127,16 @@ At this stage, you need to set the parameters to establish a connection between 
 |---
 
 {% capture integrationTypes %}
-Kafka<br/><small>Common/Docker </small>%,%common%,%templates/integration/kafka/kafka-common-and-docker-integration%br%
-Confluent Cloud<br/><small>Cloud solution</small>%,%confluent%,%/templates/integration/kafka/kafka-confluent-integration{% endcapture %}
+Kafka<br><small>Common/Docker </small>%,%common%,%templates/integration/kafka/kafka-common-and-docker-integration%br%
+Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/integration/kafka/kafka-confluent-integration{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="integrationTypes" toggle-spec=integrationTypes %}
 
 ## Send test Uplink message from
 
 {% capture uplinkTypes %}
-Kafka<br/><small>Common/Docker </small>%,%common%,%templates/integration/kafka/kafka-common-and-docker-send-msg%br%
-Confluent Cloud<br/><small>Cloud solution</small>%,%confluent%,%/templates/integration/kafka/kafka-confluent-send-msg{% endcapture %}
+Kafka<br><small>Common/Docker </small>%,%common%,%templates/integration/kafka/kafka-common-and-docker-send-msg%br%
+Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/integration/kafka/kafka-confluent-send-msg{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="uplinkTypes" toggle-spec=uplinkTypes %}
 

@@ -11,9 +11,12 @@
 
 Storage section of configuration file will look like:
 
-```yaml
-storage:
-  type: memory
-  read_records_count: 10
-  max_records_count: 1000
+```json
+...
+"storage": {
+  "type": "memory",
+  "read_records_count": 10,
+  "max_records_count": 100
+},
+...
 ```

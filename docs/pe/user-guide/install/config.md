@@ -4,7 +4,8 @@ assignees:
 - vparomskiy
 title: Configuration properties
 description: ThingsBoard configuration properties and environment variables
-
+redirect_from: 
+  - "/docs/paas/user-guide/install/config/"
 ---
 
 {% assign docsPrefix = "pe/" %}

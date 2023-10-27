@@ -111,7 +111,7 @@ ng-component::-webkit-scrollbar-thumb {
 ```
 {: .copy-code}
 
-<br/>
+<br>
 Let's also add a gradient to the left menu.
 
 {% include images-gallery.html imageCollection="advanced-css-2" showListImageTitles="true" %}
@@ -133,14 +133,14 @@ Using the functionality described in this documentation, you can customize the a
 
 Watch the detailed video tutorial with examples of how you can configure the white labeling to suit your needs.
 
-<br/>
+<br>
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/VSNZWl1NjWU" frameborder="0" allowfullscreen></iframe>
     </div>
 </div> 
 
-<br/>
+<br>
 [Contact us](/docs/contact-us/) to suggest missing feature for your use case.
 
 ## Next steps

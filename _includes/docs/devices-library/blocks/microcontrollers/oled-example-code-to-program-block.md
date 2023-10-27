@@ -5,6 +5,7 @@ To do this, you can use the code below. It contains all required functionality f
 
 ```cpp
 #include <WiFi.h>
+#include <Arduino_MQTT_Client.h>
 #include <SPI.h>
 #include <Wire.h>
 #include <Adafruit_GFX.h>
@@ -46,8 +47,10 @@ constexpr uint32_t SERIAL_DEBUG_BAUD = 115200U;
 
 // Initialize underlying client, used to establish a connection
 WiFiClient wifiClient;
+// Initalize the Mqtt client instance
+Arduino_MQTT_Client mqttClient(wifiClient);
 // Initialize ThingsBoard instance with the maximum needed buffer size
-ThingsBoard tb = ThingsBoard(wifiClient, MAX_MESSAGE_SIZE, false, 1024);
+ThingsBoard tb = ThingsBoard(mqttClient, MAX_MESSAGE_SIZE, false, 1024);
 
 // Attribute names for attribute request and attribute updates functionality
 
@@ -191,9 +194,9 @@ void processClientAttributes(const Shared_Attribute_Data &data) {
   }
 }
 
-const Shared_Attribute_Callback attributes_callback(SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend(), &processSharedAttributes);
-const Attribute_Request_Callback attribute_shared_request_callback(SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend(), &processSharedAttributes);
-const Attribute_Request_Callback attribute_client_request_callback(CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend(), &processClientAttributes);
+const Shared_Attribute_Callback attributes_callback(&processSharedAttributes, SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend());
+const Attribute_Request_Callback attribute_shared_request_callback(&processSharedAttributes, SHARED_ATTRIBUTES_LIST.cbegin(), SHARED_ATTRIBUTES_LIST.cend());
+const Attribute_Request_Callback attribute_client_request_callback(&processClientAttributes, CLIENT_ATTRIBUTES_LIST.cbegin(), CLIENT_ATTRIBUTES_LIST.cend());
 
 void setup() {
   // Initalize serial connection for debugging

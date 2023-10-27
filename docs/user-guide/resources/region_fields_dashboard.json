@@ -47,7 +47,7 @@
           "settings": {
             "showLabel": true,
             "label": "${entityName}",
-            "tooltipPattern": "<b>${entityName}</b><br/><br/><b>X Pos:</b> ${xPos:2}<br/><b>Y Pos:</b> ${yPos:2}<br/><br/><link-act name='Open Field Details'>Field details</link-act>",
+            "tooltipPattern": "<b>${entityName}</b><br><br><b>X Pos:</b> ${xPos:2}<br><b>Y Pos:</b> ${yPos:2}<br><br><link-act name='Open Field Details'>Field details</link-act>",
             "markerImageSize": 34,
             "useColorFunction": true,
             "markerImages": [
@@ -339,7 +339,7 @@
           "settings": {
             "showLabel": true,
             "label": "${entityName}",
-            "tooltipPattern": "<b>${entityName}</b><br/><br/><b>X Pos:</b> ${xPos:2}<br/><b>Y Pos:</b> ${yPos:2}<br/>",
+            "tooltipPattern": "<b>${entityName}</b><br><br><b>X Pos:</b> ${xPos:2}<br><b>Y Pos:</b> ${yPos:2}<br>",
             "markerImageSize": 34,
             "useColorFunction": true,
             "markerImages": [

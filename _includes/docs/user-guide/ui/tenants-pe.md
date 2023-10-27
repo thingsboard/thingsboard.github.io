@@ -68,7 +68,7 @@ If you need to log in as a tenant, just open the tenant group and click the icon
 {% include images-gallery.html imageCollection="tenant-login-pe" %}
 {% endif %}
 
-<br/>
+<br>
 Tenant Administrator is able to do following actions:
 
 - Provision and Manage [Devices](/docs/{{docsPrefix}}user-guide/ui/devices/).

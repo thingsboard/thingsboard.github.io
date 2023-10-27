@@ -6,7 +6,7 @@ chip: Rockchip RK3399
 connectivity: WIFI, Bluetooth, Ethernet
 vendor: 96Boards
 deviceImageFileName: rock960.jpg
-docsPrefix: paas
+docsPrefix: paas/
 ---
 
 

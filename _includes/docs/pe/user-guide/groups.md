@@ -123,7 +123,7 @@ You and your customers can also delete multiple entity groups at once.
 
 Watch the detailed video tutorial with examples of how you can configure the entity group to suit your needs.
 
-<br/>
+<br>
 <div id="video">
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/RNdaEqrGhn8" frameborder="0" allowfullscreen></iframe>

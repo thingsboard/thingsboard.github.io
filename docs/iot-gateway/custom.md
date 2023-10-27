@@ -30,7 +30,7 @@ where 48 is humidity, \r is delimiter between values 2430947595 is device serial
 
 ### Step 1. Define SerialConnector configuration
 
-At first, we need create configuration file for our serial connector. Let's create file in the config folder (In the folder with tb_gateway.yaml file.)
+At first, we need create configuration file for our serial connector. Let's create file in the config folder (In the folder with tb_gateway.json file.)
 
 ```bash
 touch custom_serial.json
@@ -87,7 +87,7 @@ In this file we write the configuration that we will use in the connector code.
 
 Parameters in the configuration:
 
-1. "name" - connector name, it should be like a connector name in the tb_gateway.yaml file. Uses by the gateway to find correct connector for saved devices.
+1. "name" - connector name, it should be like a connector name in the tb_gateway.json file. Uses by the gateway to find correct connector for saved devices.
 2. "devices" - array with devices configuration (We can provide more that one device.)
 
 In the "devices" array configuration file has devices json objects with configuration parameters for this device.
@@ -369,19 +369,20 @@ This dictionary will be converted into json and gateway will send it to ThingsBo
 
 ### Step 5. Include Connector into main Gateway configuration file
 
-To add the serial connector to the gateway, we need add following lines into section connectors tb_gateway.yaml file.
-```yaml
-  -
-    name: Custom Serial Connector
-    type: serial
-    configuration: custom_serial.json
-    class: CustomSerialConnector
+To add the serial connector to the gateway, we need add following lines into section connectors tb_gateway.json file.
+```json
+{
+  "name": "Custom Serial Connector",
+  "type": "serial",
+  "configuration": "custom_serial.json",
+  "class": "CustomSerialConnector"
+}
 ```
 
 where:
 *name* - connector name
 *type* - folder name in extensions, with connector file
-*configuration* - connector configuration file in folder with tb_gateway.yaml file
+*configuration* - connector configuration file in folder with tb_gateway.json file
 *class* - connector class name in connector file in extensions
 
 ### Step 6. Run the IoT gateway
@@ -394,14 +395,14 @@ To run the gateway you should execute following command, it depends on type of i
 sudo systemctl restart thingsboard-gateway
 ```
 {: .copy-code}
- - If you install the IoT gateway as Python module, you should run it from the folder with tb_gateway.yaml (or change path to the tb_gateway.yaml file) with the following command to apply changes to the configuration:
+ - If you install the IoT gateway as Python module, you should run it from the folder with tb_gateway.json (or change path to the tb_gateway.json file) with the following command to apply changes to the configuration:
 
 ```bash
-sudo python3 -c 'from thingsboard_gateway.gateway.tb_gateway_service import TBGatewayService; TBGatewayService("./tb_gateway.yaml")'
+sudo python3 -c 'from thingsboard_gateway.gateway.tb_gateway_service import TBGatewayService; TBGatewayService("./tb_gateway.json")'
 ```
 {: .copy-code}
 
-You can check a status of the IoT Gateway by watch the logs in a folder that you provide in logs.conf file.  
+You can check a status of the IoT Gateway by watch the logs in a folder that you provide in logs.json file.  
 Default location of logs folder for the daemon - "/var/log/thingsboard-gateway/"  
 Default location of logs folder for Python module - "./logs/"  
 

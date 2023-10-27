@@ -5,7 +5,7 @@
 {% assign peDocsPrefix = docsPrefix %}
 {% endif %}
 
-# Duplicate To Group Node
+## Duplicate To Group Node
 
 {% assign feature = "PE Transformation Nodes" %}{% include templates/pe-feature-banner.md %}
 
@@ -38,9 +38,9 @@ Configuration:
 New messages will be duplicated to group entities and forwarded via **Success** chain if target Entity Group is detected successfully and contains at least one entity.
 Otherwise original message will be forwarded via **Failure** chain.
 
-<br/>
+<br>
 
-# Duplicate To Related Node
+## Duplicate To Related Node
 
 {% assign feature = "PE Transformation Nodes" %}{% include templates/pe-feature-banner.md %}
 
@@ -70,4 +70,4 @@ Configuration:
 New messages will be duplicated to found entities and forwarded via **Success** chain if at least one entity will be found using Relations Query.
 Otherwise original message will be forwarded via **Failure** chain.
 
-<br/>
+<br>

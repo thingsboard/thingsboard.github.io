@@ -37,7 +37,7 @@ Install Ruby 2.2 or higher. If you're on Ubuntu 20.04.1 LTS, run these commands:
 	sudo gem install jekyll bundler
 
 * If you're on a Mac, follow [these instructions](https://gorails.com/setup/osx/).
-* If you're on a Windows machine you can use the [Ruby Installer](http://rubyinstaller.org/downloads/). During the installation make sure to check the option for *Add Ruby executables to your PATH*.
+* If you're on a Windows machine you can use the [Ruby Installer](https://rubyinstaller.org/downloads/). During the installation make sure to check the option for *Add Ruby executables to your PATH*.
 
 Clone our site:
 
@@ -57,7 +57,7 @@ or execute the below script from the project root directory:
 
     ./restart.sh
 
-Your copy of the site will then be viewable at: [http://localhost:4000](http://localhost:4000)
+Your copy of the site will then be viewable at: **http://localhost:4000**
 (or wherever Jekyll tells you).
 
 ## Integration guide pattern

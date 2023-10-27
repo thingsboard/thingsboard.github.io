@@ -6,7 +6,7 @@ chip: Pentium N3710
 connectivity: WIFI, Bluetooth
 vendor: UDOO
 deviceImageFileName: udoo-x86-ultra.jpg
-docsPrefix: pe
+docsPrefix: pe/
 ---
 
 

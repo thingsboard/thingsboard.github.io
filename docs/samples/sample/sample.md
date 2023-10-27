@@ -44,8 +44,8 @@ Widget/dashboard example for visualization of the data from your device. You can
 
 Choose one of the suitable methods of integration according to Connectivity diagram below
 
-<br/>
-<br/>
+<br>
+<br>
 
 <object width="80%" data="/images/connectivity.svg"></object>
 
@@ -64,7 +64,7 @@ Choose one of the suitable methods of integration according to Connectivity diag
 
 #### or IoT Gateway method
 
-* [Step 2.1] Provide detailed and clear steps for IoT Gateway integration. You can refer to [IoT Gateway](/docs/iot-gateway/getting-started) page.
+* [Step 2.1] Provide detailed and clear steps for IoT Gateway integration. You can refer to [IoT Gateway](/docs/iot-gateway/getting-started/) page.
 
 ### Block 3 Additional information
 

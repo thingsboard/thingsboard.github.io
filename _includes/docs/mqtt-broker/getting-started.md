@@ -29,7 +29,7 @@ wget https://raw.githubusercontent.com/thingsboard/tbmq/main/msa/tbmq/configs/tb
 ```
 {: .copy-code}
 
-Once the installation process is complete for local deployment, you can access TBMQ UI by visiting the following URL: [http://localhost:8083](http://localhost:8083). 
+Once the installation process is complete for local deployment, you can access TBMQ UI by visiting the following URL: **http://localhost:8083**. 
 Wait patiently until the services are up and running. To log in, utilize the following default credentials.
 
 **Username:**

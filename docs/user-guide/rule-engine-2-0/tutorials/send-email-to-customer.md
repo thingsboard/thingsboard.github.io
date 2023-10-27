@@ -85,7 +85,7 @@ In this section, we explain the purpose of each node that was added or modified 
 - Node D: **Rule Chain** node.
   - Forwards incoming Message to specified Rule Chain **Create/Clear Alarm & Send Email to Customer**.     
 
-<br/>
+<br>
 
 # Configure Rule Chains
 
@@ -93,7 +93,7 @@ In this tutorial, we used Rule Chains from [send email on alarm](/docs/user-guid
 We modified Rule Chain **Create/Clear Alarm & Send Email** by adding nodes that was described above in the section [Message flow](/docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/#message-flow)<br>
  and renamed this rule chain to: **Create/Clear Alarm & Send Email to Customer**.
 
-<br/>The following screenshots show how the above Rule Chains should look like:
+<br>The following screenshots show how the above Rule Chains should look like:
  
   - **Create/Clear Alarm & Send Email to Customer:**
 
@@ -103,13 +103,13 @@ We modified Rule Chain **Create/Clear Alarm & Send Email** by adding nodes that 
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/email/root-rule-chain.png)
 
-<br/> 
+<br> 
 
 Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/create_clear_alarm___send_email_to_customer.json) for the **Create/Clear Alarm & Send Email to Customer:** rule chain. 
 Create Node **D** as shown on the image above in the root rule chain to forward telemetry to the imported rule chain.
 
 The following section shows you how to modify this rule chain, specifically: add rule nodes [**A**](/docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/#node-a-customer-attributes) and [**B**](/docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/#node-b-originator-attributes) and modify node [**C**](/docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/#node-c-to-email).
-<br/> 
+<br> 
 
   
 ## Modify **Create & Clear Alarms with details:**
@@ -243,8 +243,8 @@ Also, you can see the more information about how to:
 
 Please refer to the links under the **See Also** section to see how to do this.
 
-<br/>
-<br/>
+<br>
+<br>
 
 # See Also
 

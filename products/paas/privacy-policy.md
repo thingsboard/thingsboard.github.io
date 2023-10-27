@@ -5,7 +5,7 @@ description: ThingsBoard Cloud Privacy Policy
 
 ---
 
-<br />
+<br>
 <p style="text-align: center; font-size: 1.5em; font-weight: bold;">PRIVACY POLICY</p>
 
 <br>

@@ -10,7 +10,7 @@ We assume you have completed the general [Getting Started](/docs/{{docsPrefix}}g
 
 [LwM2M](https://en.wikipedia.org/wiki/OMA_LWM2M) is a device management protocol designed for constrained devices and the demands of a machine-to-machine (M2M) environment.
 You can find more information about LwM2M [here](https://omaspecworks.org/what-is-oma-specworks/iot/lightweight-m2m-LWM2M/).
-Key advantage of the LwM2M protocol is a rich library of data structures that is called [LwM2M Object and Resource Registry](http://www.openmobilealliance.org/wp/OMNA/LwM2M/LwM2MRegistry.html).
+Key advantage of the LwM2M protocol is a rich library of data structures that is called [LwM2M Object and Resource Registry](https://technical.openmobilealliance.org/OMNA/LwM2M/LwM2MRegistry.html).
 The up-to-date list of available objects is available inside [this](https://github.com/OpenMobileAlliance/lwm2m-registry) Github repository.
 
 The registry allows efficient serialization/deserialization of telemetry.
@@ -147,7 +147,7 @@ Using the above configuration, we will make sure that the attribute *timezone* w
 
 #### Write LwM2M resource via ThingsBoard attributes update
 
-ThingsBoard [Shared Attributes](docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver the configuration updates to the device.
+ThingsBoard [Shared Attributes](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver the configuration updates to the device.
 You may change the shared attribute in multiple ways - via administration UI, dashboard widget, REST API, or rule engine node. 
 Once you change the shared attribute, ThingsBoard will search for the mapping between the attribute key and LwM2M resource.
 If the resource is marked as an attribute, platform will send the LwM2M Write operation to the LwM2M client device.
@@ -545,7 +545,7 @@ WriteReplace {"id": "/19_1.1/0/0","value": {"0":"00ad456797", "25":"25ad456700"}
 ### Write-Attributes Operation
 
 Only Attributes from the NOTIFICATION class MAY be changed in using the "Write-Attributes" operation.
-[Object and Resource attributes](http://localhost:4000/docs/reference/lwm2m-api/#object-and-resource-attributes) section provides explanation on the Attributes supported by the "Write-Attributes" operation: 
+[Object and Resource attributes](/docs/{{docsPrefix}}reference/lwm2m-api/#object-and-resource-attributes) section provides explanation on the Attributes supported by the "Write-Attributes" operation: 
 Minimum Period, Maximum Period, Greater Than, Less Than, Step.
 The operation permits multiple Attributes to be modified within the same operation.
 
@@ -770,7 +770,7 @@ Delete {"id":"/19/1"}
 
 The LwM2M Server initiates an observation request for changes of a specific Resource, Resources within an Object
 Instance or for all the Object Instances of an Object within the LwM2M Client.
-Related parameters for "Observe" operation are described in [Notification attributes](http://localhost:4000/docs/reference/lwm2m-api/#object-and-resource-attributes) Write-Attributes Operation and those
+Related parameters for "Observe" operation are described in [Notification attributes](/docs/{{docsPrefix}}reference/lwm2m-api/#object-and-resource-attributes) Write-Attributes Operation and those
 parameters are configured by "Write-Attributes" operation.
 
 <b> Example: Observe resource</b>
@@ -1060,7 +1060,7 @@ actions on the LwM2M Client (e.g., Notifications).
 Attributes attached to Objects, Object Instances, Resources are respectively named O-Attribute, OI-Attribute, R-Attribute.
 
 These Attributes MAY be carried in the message payload of Registration and Discover operations; they also MAY be
-updated - when writable - through the [Write-Attributes](http://localhost:4000/docs/reference/lwm2m-api/#write-attributes-operation) operation.
+updated - when writable - through the [Write-Attributes](/docs/{{docsPrefix}}reference/lwm2m-api/#write-attributes-operation) operation.
 
 There are two types of attributes:
 
@@ -1068,7 +1068,7 @@ There are two types of attributes:
 
 The role of these Attributes is to provide metadata which may communicate helpful information to the LwM2M Server, for 
 example easing data management. Thingsboard supports Object Version attribute, which indicates the version of the 
-associated Object and is displayed in the results of [DiscoverAll](http://localhost:4000/docs/reference/lwm2m-api/#discover-all-operation) command.
+associated Object and is displayed in the results of [DiscoverAll](/docs/{{docsPrefix}}reference/lwm2m-api/#discover-all-operation) command.
 
 You can find more details about all available in LwM2M Object attributes here:  [PROPERTIES Class Attributes](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Table-512-1-lessPROPERTIESgreater-Class-Attributes)
 

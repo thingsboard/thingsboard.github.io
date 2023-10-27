@@ -112,7 +112,7 @@ Once you get the license secret, you should put it to the thingsboard configurat
 
 Please use the [official Azure guide](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) on how to connect to Azure VM using SSH keys. 
 
-Note: You will need to use instance Public IP (see [Step 3](/docs/user-guide/install/pe/azure/#step-3-review-created-resource)) and the key file (see [Step 2.1](http://localhost:4000/docs/user-guide/install/pe/azure/#step-21-basics))
+Note: You will need to use instance Public IP (see [Step 3](/docs/user-guide/install/pe/cluster/azure-from-markeplace/#step-3-review-created-resource)) and the key file (see [Step 2.1](/docs/user-guide/install/pe/cluster/azure-from-markeplace/#step-21-basics))
 
 #### Step 5.2. Put License Secret to thingsboard configuration file
 

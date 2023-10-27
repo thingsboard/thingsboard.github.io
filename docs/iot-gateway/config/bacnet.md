@@ -12,15 +12,10 @@ The BACnet connector is a way to read and write some basic objects and propertie
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this connector.  
 We will describe connector configuration file below.  
 
-<br>
 
-<details>
+<b>Example of BACnet Connector config file.</b>
 
-<summary>
-<b>Example of BACnet Connector config file. Press to expand/collapse.</b>
-</summary>
-
-{% highlight json %}
+{% capture bacnetConf %}
 
 {
   "general": {
@@ -79,10 +74,8 @@ We will describe connector configuration file below.
   ]
 }
 
-{% endhighlight %}
-
-</details>
-
+{% endcapture %}
+{% include code-toggle.liquid code=bacnetConf params="conf|.copy-code.expandable-20" %}
 
 ### Section "general": description and configuration parameters
 

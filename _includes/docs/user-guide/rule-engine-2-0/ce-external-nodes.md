@@ -4,7 +4,7 @@ External Nodes used are used to interact with external systems.
 {:toc}
 
 
-# AWS SNS Node
+## AWS SNS Node
 
 <table  style="width:250px;">
    <thead>
@@ -48,9 +48,9 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 **Outbound message** from this node will contain response **messageId** and **requestId**
  in Message metadata. Original Message payload, type and originator will not be changed.
 
-<br/>
+<br>
 
-# AWS SQS Node
+## AWS SQS Node
 
 <table  style="width:250px;">
    <thead>
@@ -103,9 +103,9 @@ If **FIFO** queue is selected, then Message ID will be used as **deduplication I
 **Outbound message** from this node will contain response **messageId**, **requestId**, **messageBodyMd5**, **messageAttributesMd5** 
 and **sequenceNumber** in Message metadata. Original Message payload, type and originator will not be changed. 
 
-<br/>
+<br>
 
-# Kafka Node
+## Kafka Node
 
 <table  style="width:250px;">
    <thead>
@@ -167,9 +167,9 @@ Original Message payload, type and originator will not be changed.
 - **CLUSTER_API_KEY** - your access key from Cluster settings.
 - **CLUSTER_API_SECRET** - your access secret from Cluster settings.
 
-<br/>
+<br>
 
-# MQTT Node
+## MQTT Node
 
 <table  style="width:250px;">
    <thead>
@@ -210,7 +210,7 @@ If **PEM** credentials type is selected, the following configuration should be p
 - Private key file
 - Private key password
 
-<br/>
+<br>
 
 **Published body** - Node will send full Message payload to the MQTT topic.
 If required, Rule Chain can be configured to use chain of Transformation Nodes for sending correct Payload to the MQTT broker.
@@ -218,9 +218,9 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 In case of successful message publishing, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
-<br/>
+<br>
 
-# Azure IoT Hub Node
+## Azure IoT Hub Node
 
 <table  style="width:250px;">
    <thead>
@@ -261,7 +261,7 @@ If **PEM** credentials type is selected, the following configuration should be p
 
 [CACertificates instruction](https://github.com/Azure/azure-iot-sdk-c/tree/master/tools/CACertificates)
 
-<br/>
+<br>
 
 **Published body** - Node will send full Message payload to the Azure IoT Hub device.
 If required, Rule Chain can be configured to use chain of Transformation Nodes for sending correct Payload to the Azure IoT Hub.
@@ -269,9 +269,9 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 In case of successful message publishing, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
-<br/>
+<br>
 
-# RabbitMQ Node
+## RabbitMQ Node
 
 <table  style="width:250px;">
    <thead>
@@ -308,9 +308,9 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 In case of successful message publishing, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
-<br/>
+<br>
 
-# REST API Call Node
+## REST API Call Node
 
 <table  style="width:250px;">
    <thead>
@@ -357,7 +357,7 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 **Outbound message** from this node will contain response **status**, **statusCode**, **statusReason** and responce **headers** in the Message metadata.
 Outbound Message payload will be the same as response body. Original Message type and originator will not be changed.
 
-<br/>
+<br>
 
 To send a single file as request body, add a field **attachments** to the message **metadata** with file uuid stored in DataBase. In that case any message data will be ignored and only file content will be sent. 
 To define a request content type use the header setting like
@@ -374,14 +374,14 @@ Here an example of message **metadata** to send a single file:
 
 **NOTE**: This is part of [File Storage](/docs/{{docsPrefix}}user-guide/file-storage/) feature supported by [ThingsBoard Professional Edition](/products/thingsboard-pe/).
 
-<br/>
+<br>
 
 In case of successful request, outbound message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
-<br/>
+<br>
 
-# Send Email Node
+## Send Email Node
 
 <table  style="width:250px;">
    <thead>
@@ -414,7 +414,7 @@ Please find more details about [how to configure default System SMTP Settings.](
 
 If specific Mail Server is required for this node - disable **Use system SMTP settings** checkbox and configure Mail Server manually.
 
-<br/>
+<br>
 
 Additionally this node can create email attachments if incoming message has prepared **attachments** metadata field with reference to files stored in DataBase.
 
@@ -428,7 +428,7 @@ Multiple attachments supported. Use a comma separated no whitespace references (
 
 **NOTE**: This is part of [File Storage](/docs/{{docsPrefix}}user-guide/file-storage/) feature supported by [ThingsBoard Professional Edition](/products/thingsboard-pe/).
 
-<br/>
+<br>
 
 In case of successful mail sending, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
@@ -437,9 +437,9 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/)
 
-<br/>
+<br>
 
-# Send Notification Node
+## Send Notification Node
 
 <table  style="width:250px;">
    <thead>
@@ -461,9 +461,9 @@ Configuration:
 - **Template** - specify a notification template;
 - **Recipients** - notification recipients.
 
-<br/>
+<br>
 
-# Send SMS Node
+## Send SMS Node
 
 <table  style="width:250px;">
    <thead>
@@ -480,14 +480,17 @@ Configuration:
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/external-send-sms.png)
 
-- **Use system SMS provider settings** - if enabled default SMS Provider Server configured on System level will be used. See [SMS Provider](/docs/{{docsPrefix}}user-guide/ui/sms-provider-settings) settings for more details;
+- **Use system SMS provider settings** - if enabled default SMS Provider Server configured on System level will be used.
+{% if docsPrefix != "paas/" %} 
+See [SMS Provider](/docs/{{docsPrefix}}user-guide/ui/sms-provider-settings) settings for more details;
+{% endif %}
 - **Phone Numbers To template** - Allows to configure multiple phone numbers where the SMS will be sent to. Optionally, you may reference fields from the message metadata.  
 - **SMS message template** - Allows to configure body of the SMS message. Optionally, you may reference fields from the message metadata.
 
 This Node can work with default SMS provider configured on System level. 
 If SMS message will be sent to all recipients successfully, original Message will be passed to the next nodes via Success chain, otherwise Failure chain is used.
 
-# Twilio SMS Node
+## Twilio SMS Node
 
 <table  style="width:250px;">
    <thead>
@@ -517,9 +520,9 @@ SMS message will be sent to all recipients taken from **Phone Numbers To** list.
 
 If SMS message will be sent to all recipients successfully, original Message will be passed to the next nodes via **Success** chain, otherwise **Failure** chain is used.
 
-<br/>
+<br>
 
-# Send to Slack Node
+## Send to Slack Node
 
 <table  style="width:250px;">
    <thead>

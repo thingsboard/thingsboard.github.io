@@ -24,6 +24,10 @@ for cleanup_dir in "${cleanup_dirs[@]}"
 do
   git rm -r $cleanup_dir
 done
+
+git restore --staged images/reference/architecture-in-brief.svg
+git restore images/reference/architecture-in-brief.svg
+
 echo "$(date +"%H:%M") Cleanup images.. done."
 
 cd -

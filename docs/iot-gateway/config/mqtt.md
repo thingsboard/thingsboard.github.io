@@ -2,6 +2,9 @@
 layout: docwithnav-gw
 title: MQTT Connector Configuration
 description: MQTT protocol support for ThingsBoard IoT Gateway
+redirect_from: 
+  - "/docs/iot-gateway/mqtt/"  
+  - "/docs/iot-gateway/resources/mqtt-gui-extension-configuration.json"
 
 ---
 
@@ -23,18 +26,13 @@ Connector configuration is a JSON file that contains information about how to co
 what topics to use when subscribing to data feed and how to process the data. 
 Let's review the format of the configuration file using example below.
 
-<br>
-<details>
-
-<summary>
-<b>Example of MQTT Connector config file. Press to expand.</b>
-</summary>
+<b>Example of MQTT Connector config file.</b>
 
 Example listed below will connect to MQTT broker in a local network deployed on server with IP 192.168.1.100. 
 Connector will use basic MQTT auth using username and password. 
 Then, connector will subscribe to a list of topics using topic filters from mapping section. See more info in a description below.    
 
-{% highlight json %}
+{% capture mqttConf %}
 
 {
   "broker": {
@@ -205,9 +203,8 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
   ]
 }
 
-{% endhighlight %}
-
-</details>
+{% endcapture %}
+{% include code-toggle.liquid code=mqttConf params="conf|.copy-code.expandable-20" %}
 
 
 ### Section "broker"

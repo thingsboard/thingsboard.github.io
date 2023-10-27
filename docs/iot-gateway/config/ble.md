@@ -15,21 +15,14 @@ We will describe connector configuration file below.
 **BLE connector need some system libraries, to install them please select version of package manager in your system below and run a command to install libraries:**
 
 {% capture systemtogglespec %}
-APT-GET<br/>%,%deb%,%templates/iot-gateway/ble-requirements-deb.md%br%
-YUM<br/>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
+APT-GET<br>%,%deb%,%templates/iot-gateway/ble-requirements-deb.md%br%
+YUM<br>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="SystemLibraries" toggle-spec=systemtogglespec %}
 
+<b> Example of BLE Connector config file.</b>
 
-<br>
-
-<details>
-
-<summary>
-<b> Example of BLE Connector config file. Press to expand.</b>
-</summary>
-
-{% highlight json %}
+{% capture bleConf %}
 
 {
     "name": "BLE Connector",
@@ -87,9 +80,8 @@ YUM<br/>%,%rpm%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 }
 
 
-{% endhighlight %}
-
-</details>
+{% endcapture %}
+{% include code-toggle.liquid code=bleConf params="conf|.copy-code.expandable-20" %}
 
 <br>
 
@@ -198,25 +190,25 @@ This subsection contains general settings for the device and subsections for pro
 This part of configuration will look like:  
 
 ```json
-        {
-            "name": "Temperature and humidity sensor",
-            "MACAddress": "4C:65:A8:DF:85:C0",
-            "showMap": true,
-            "pollPeriod": 5000,
-            "timeout": 10000,
-            "telemetry": [
-                ...
-            ],
-            "attributes": [
-                ...
-            ],
-            "attributeUpdates": [
-                ...
-            ],
-            "serverSideRpc": [
-                ...
-            ]
-        }
+{
+    "name": "Temperature and humidity sensor",
+    "MACAddress": "4C:65:A8:DF:85:C0",
+    "showMap": true,
+    "pollPeriod": 5000,
+    "timeout": 10000,
+    "telemetry": [
+        ...
+    ],
+    "attributes": [
+        ...
+    ],
+    "attributeUpdates": [
+        ...
+    ],
+    "serverSideRpc": [
+        ...
+    ]
+}
 ```
 
 ##### Subsection telemetry
@@ -235,17 +227,17 @@ This subsection contains general settings for the processing data interpreted as
 This part of configuration will look like:  
 
 ```json
-                {
-                    "key": "temperature",
-                    "method": "notify",
-                    "characteristicUUID": "226CAA55-6476-4566-7562-66734470666D",
-                    "valueExpression": "[0:1]"
-                },
+{
+    "key": "temperature",
+    "method": "notify",
+    "characteristicUUID": "226CAA55-6476-4566-7562-66734470666D",
+    "valueExpression": "[0:1]"
+},
 ```
 
 **The values shown in the table above may differ in your configuration.**
 
-** -- For example response from device is bytes array like b'\x08<\x08\x00', in this case -- **8** interpreted as value of key.
+For example response from device is bytes array like b'\x08<\x08\x00', in this case -- **8** interpreted as value of key.
 
 If you need to interpreted full response as value use **"valueExpression": "[:]"**. 
 
@@ -269,18 +261,18 @@ This subsection contains general settings for the processing data interpreted as
 This part of configuration will look like:  
 
 ```json
-                {
-                    "key": "name",
-                    "characteristicUUID": "00002A00-0000-1000-8000-00805F9B34FB",
-                    "method": "read",
-                    "valueExpression": "[0:1] cm"
-                }
+{
+    "key": "name",
+    "characteristicUUID": "00002A00-0000-1000-8000-00805F9B34FB",
+    "method": "read",
+    "valueExpression": "[0:1] cm"
+}
 ```
 
 
 **The values shown in the table above may differ in your configuration.**
 
-** -- For example response from device is bytes string like b'**\x08<\x08\x00**', in this case -- **8 cm** interpreted as value of key.
+For example response from device is bytes string like b'**\x08<\x08\x00**', in this case -- **8 cm** interpreted as value of key.
 
 If you need to interpreted full response as value use **"valueExpression": "[:]"**.
 
@@ -288,7 +280,6 @@ You can find more examples of data converting in section **"Examples of data con
 <br><br>
   
 {% capture bleGATTinfo %}
-<br>
 Services and characteristics, from <a target="_blank" rel="noopener noreferrer" href="https://www.bluetooth.com/specifications/gatt/services/">GATT Specification</a> will also interpret as attributes of device and automatically loaded to ThingsBoard.
 {% endcapture %}
 {% include templates/info-banner.md content=bleGATTinfo %}
@@ -304,30 +295,22 @@ and humidity. So, data from device have the next view: **b'\x08<\x08\x00'** and 
    
    **"valueExpression": "[0]"**
    
-   Data to ThingsBoard:
-   
-   **8**
+   Data to ThingsBoard:**8**
 2. We want to read only humidity value
 
    **"valueExpression": "[1]"**
    
-   Data to ThingsBoard:
-   
-   **34**
+   Data to ThingsBoard:**34**
 3. We want to read all values
 
    "valueExpression": "[:]" or "valueExpression": "[0:2]"
    
-   Data to ThingsBoard:
-   
-   834
+   Data to ThingsBoard: **834**
 4. We want to read all values and dimensional units
 
    **"valueExpression": "[0]°C [1]%"**
    
-   Data to ThingsBoard:
-   
-   **8°C 34%**    
+   Data to ThingsBoard: **8°C 34%**    
 
 ##### Subsection attributeUpdates
 
@@ -343,14 +326,13 @@ This subsection contains settings for the processing attributeUpdate requests fr
 This part of configuration will look like:  
 
 ```json
-                {
-                    "attributeOnThingsBoard": "sharedName",
-                    "characteristicUUID": "00002A00-0000-1000-8000-00805F9B34FB"
-                }
+{
+    "attributeOnThingsBoard": "sharedName",
+    "characteristicUUID": "00002A00-0000-1000-8000-00805F9B34FB"
+}
 ```
 
 {% capture bleAttrUpdInfo %}
-<br>
 Characteristic should support method **WRITE** for processing the attributeUpdate request.
 {% endcapture %}
 {% include templates/info-banner.md content=bleAttrUpdInfo %}
@@ -372,12 +354,12 @@ This subsection contains settings for the processing RPC requests from ThingsBoa
 This part of configuration will look like:  
 
 ```json
-                {
-                    "methodRPC": "rpcMethod1",
-                    "withResponse": true,
-                    "characteristicUUID": "00002A00-0000-1000-8000-00805F9B34FB",
-                    "methodProcessing": "read"
-                }
+{
+    "methodRPC": "rpcMethod1",
+    "withResponse": true,
+    "characteristicUUID": "00002A00-0000-1000-8000-00805F9B34FB",
+    "methodProcessing": "read"
+}
 ```
 
 

@@ -6,7 +6,7 @@ chip: Rockchip RK3399
 connectivity: Ethernet, WIFI, Bluetooth
 vendor: Radxa
 deviceImageFileName: rock-pi-4-model-b.jpeg
-docsPrefix: pe
+docsPrefix: pe/
 ---
 
 

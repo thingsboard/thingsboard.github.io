@@ -28,7 +28,7 @@ Add Device entity in ThingsBoard. Its name is **Thermometer** and its type is **
   
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/add-thermometer.png)
    
-<br/>
+<br>
 
 # Message flow  
 
@@ -49,13 +49,13 @@ The following screenshots show how the above Rule Chains should look like:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/root-rule-chain.png)
 
-<br/> 
+<br> 
 
 Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/temperature_delta_validation.json) for the **Temperature delta validation** rule chain. 
 
 Create Node G as shown on the image above in the root rule chain to forward telemetry to the imported rule chain.
-<br/>
-<br/>
+<br>
+<br>
 
 The following section shows you how to create this rule chain from scratch.
  
@@ -195,7 +195,7 @@ The initial root Rule Chain has been modified by adding the following node:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/add-rule-chain-node.png)
 
-<br/>
+<br>
 
 The following screenshot shows how the final **Root Rule Chain** should look like:
 
@@ -204,8 +204,8 @@ The following screenshot shows how the final **Root Rule Chain** should look lik
 - Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/root_rule_chain_delta_calculation.json) for the rule chain indicated above and import it.
 - Don't forget to mark the new rule chain as **root**.  
 
-<br/>
-<br/>
+<br>
+<br>
 
 # How to verify the Rule Chain and Post telemetry
 
@@ -219,7 +219,7 @@ copy device access token from the device **Thermometer**.
 To validate that rule chains works as expected, we need to post telemetry twice for the same device, with an interval, not less than 5 minutes and not more than 24 hours.
 <br> Also, let's pushed debug mode button in **Create Alarm** node to verify that alarm will be created after the second post telemetry request.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/debug-mode-create-alarm.png)<br/>
+![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/debug-mode-create-alarm.png)<br>
 
 sent temperature = 20.
 
@@ -241,7 +241,7 @@ Alarm should be created:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/alarm-created.png)
 
-<br/>
+<br>
 
 Also, you can:
 
@@ -253,7 +253,7 @@ Also, you can:
 
 Please refer to the links from the second to the fourth under the **See Also** section to see how to do this.
   
-<br/>
+<br>
 
 # See Also
 

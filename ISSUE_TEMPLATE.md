@@ -14,7 +14,7 @@
 
 
 **Page to Update:**
-http://thingsboard.io/...
+https://thingsboard.io/...
 
 <!--Optional Information (remove the comment tags around information you would like to include)-->
 <!--ThingsBoard Version:-->
