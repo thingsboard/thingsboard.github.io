@@ -4,7 +4,7 @@ assignees:
 - ashvayka
 title: Advanced data key configuration
 description: ThingsBoard advanced configuration of data keys
-  
+
 entity-table-example:
     0:
         image: /images/user-guide/widgets/advanced-data-key/entity-table-example-1-pe.png
@@ -18,7 +18,7 @@ entity-table-example:
     3:
         image: /images/user-guide/widgets/advanced-data-key/entity-table-example-4-pe.png
         title: 'The data key configuration window has been opened. Navigate to the "Advanced" tab to open advanced data key configuration.'
-      
+
 custom-header-title:
     0:
         image: /images/user-guide/widgets/advanced-data-key/custom-header-title-1-pe.png
@@ -28,7 +28,7 @@ custom-header-title:
         title: 'Manually enter the desired custom header title and save all changes;'
     2:
         image: /images/user-guide/widgets/advanced-data-key/custom-header-title-4-pe.png
-        title: 'Custom header title.'
+        title: 'Example of the custom header title.'
 
 column-width:
     0:
@@ -36,7 +36,7 @@ column-width:
         title: 'Default column width;'
     1:
         image: /images/user-guide/widgets/advanced-data-key/column-width-1-pe.png
-        title: 'Manually enter the desired width and save all changes;'
+        title: 'Manually enter a desired width and save all changes;'
     2:
         image: /images/user-guide/widgets/advanced-data-key/column-width-2-pe.png
         title: 'Custom column width.'
@@ -83,19 +83,24 @@ content-function-2:
 column-visibility:
     0:
         image: /images/user-guide/widgets/advanced-data-key/column-visibility-3-pe.png
+        title: 'The "temperature" data key column is visible on the widget;'
     1:
         image: /images/user-guide/widgets/advanced-data-key/column-visibility-1-pe.png
-        title: 'Select whether the column will be shown in the visibility selection menu so that clients without permissions will not be able to hide it.'
+        title: 'Select whether the column will be shown in the visibility selection menu so that clients without permissions will not be able to hide it;'
     2:
         image: /images/user-guide/widgets/advanced-data-key/column-visibility-2-pe.png
+        title: 'The "temperature" data key column has been hidden.'
 
 column-to-display:
     0:
         image: /images/user-guide/widgets/advanced-data-key/column-to-display-1-pe.png
+        title: 'The "temperature" column is displayed in the column visibility menu;'
     1:
         image: /images/user-guide/widgets/advanced-data-key/column-to-display-2-pe.png
+        title: 'To hide the "temperature" column in the column visibility menu, select "Disabled" in the "Column selection in &#39;Column to Display&#39;" field;'
     2:
         image: /images/user-guide/widgets/advanced-data-key/column-to-display-3-pe.png
+        title: 'The "temperature" column has been excluded from the visibility selection.'
 
 column-export:
     0:
@@ -129,9 +134,80 @@ data-is-hidden-by-default:
         image: /images/user-guide/widgets/advanced-data-key/data-is-hidden-by-default-4-pe.png
         title: 'Click on the name of the key to show its value on the chart again.'
 
-  
+disable-data-hiding:
+    0:
+        image: /images/user-guide/widgets/advanced-data-key/disable-data-hiding-1-pe.png
+        title: 'Enable the "Disable data hide" option in the selected key so that you and your users cannot hide the data on the chart by clicking on the key name;'
+    1:
+        image: /images/user-guide/widgets/advanced-data-key/disable-data-hiding-2-pe.png
+        title: 'Hiding data by clicking on the key name is not possible.'
 
+remove-datakey-from-legend:
+    0:
+        image: /images/user-guide/widgets/advanced-data-key/remove-datakey-from-legend-1-pe.png
+        title: 'Enable the "Remove datakey from legend" option to prevent the selected key from being displayed in the legend;'
+    1:
+        image: /images/user-guide/widgets/advanced-data-key/remove-datakey-from-legend-2-pe.png
+        title: 'The data key from the legend has been removed.'
 
+show-line:
+    0:
+        image: /images/user-guide/widgets/advanced-data-key/show-line-1-pe.png
+        title: 'Default line width;'
+    1:
+        image: /images/user-guide/widgets/advanced-data-key/show-line-2-pe.png
+        title: 'Set the line width in pixels;'
+    2:
+        image: /images/user-guide/widgets/advanced-data-key/show-line-3-pe.png
+        title: 'Now the line width is 6 pixels.'
+
+fill-line:
+    0:
+        image: /images/user-guide/widgets/advanced-data-key/fill-line-1-pe.png
+        title: 'Enable the "Fill line" option to fill the space between the line and the bottom border of the chart. You can also specify the opacity of the fill in the range of 0 to 1.'
+    1:
+        image: /images/user-guide/widgets/advanced-data-key/fill-line-2-pe.png
+        title: ''
+
+show-points:
+    0:
+        image: /images/user-guide/widgets/advanced-data-key/show-points-1-pe.png
+        title: 'Enable the "Show Points" option to display data points on the chart. Specify the line width of points (px), radius of points (px), and point shape of the points.'
+    1:
+        image: /images/user-guide/widgets/advanced-data-key/show-points-2-pe.png
+        title: ''
+
+tooltip-settings:
+    0:
+        image: /images/user-guide/widgets/advanced-data-key/tooltip-settings-1-pe.png
+        title: 'In the "Tooltip value format function" field, enter your tooltip function;'
+    1:
+        image: /images/user-guide/widgets/advanced-data-key/tooltip-settings-2-pe.png
+        title: 'Hover the mouse pointer over a data point on the chart to see the customized tooltip content.'
+
+vertical-axis-1:
+    0:
+        image: /images/user-guide/widgets/advanced-data-key/vertical-axis-1-pe.png
+        title: 'Enable the "Show separate axis" option to display a separate axis for this data key. For this axis, you can set your own title, minimum and maximum values of the scale, specify the number of decimal places, and the step size between ticks on the vertical axis.'
+    1:
+        image: /images/user-guide/widgets/advanced-data-key/vertical-axis-2-pe.png
+        title: ''
+
+vertical-axis-2:
+    0:
+        image: /images/user-guide/widgets/advanced-data-key/vertical-axis-3-pe.png
+        title: 'In the "Tick Format Function" window, specify the function that will format the value to be displayed as Y axis tick.'
+    1:
+        image: /images/user-guide/widgets/advanced-data-key/vertical-axis-4-pe.png
+        title: '.'
+
+thresholds:
+    0:
+        image: /images/user-guide/widgets/advanced-data-key/thresholds-1-pe.png
+        title: 'Click the "Add Threshold" button, then enter your preferred threshold value and set the color and line width.'
+    1:
+        image: /images/user-guide/widgets/advanced-data-key/thresholds-2-pe.png
+        title: ''
 
 ---
 
