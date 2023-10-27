@@ -1,8 +1,9 @@
+* TOC
+{:toc}
 
 ThingsBoard support following device management features using Web UI and [REST API](/docs/{{docsPrefix}}reference/rest-api/).
 
-* TOC
-{:toc}
+
 
 ## Add and delete devices
 
