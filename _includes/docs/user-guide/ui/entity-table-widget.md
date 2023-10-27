@@ -8,7 +8,7 @@ Entity Table widget displays the latest values with list of entities that matche
 Highly customizable using [widget styles](/docs/{{docsPrefix}}user-guide/ui/entity-table-widget/#settings), [data source keys](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/), and 
 [widget actions](/docs/{{docsPrefix}}user-guide/ui/widget-actions/).
 
-## Setting up Entities Table widget
+### Setting up Entities Table widget
 
 To get started with the Entities table widget, you first need to create a dashboard and add a widget to it.
 
@@ -26,7 +26,7 @@ The next step is to visualize telemetry. To add the Entity table widget to your 
 
 Learn how to [add alias](/docs/{{docsPrefix}}user-guide/ui/aliases/) to your widget.
 
-## Settings
+### Settings
 
 To start customizing your widget, you should go to widget edit mode by clicking the pencil icon in the upper right corner of the widget while in the dashboard edit mode.
 
@@ -70,7 +70,7 @@ See the configuration and the corresponding result below.
 
 Legend settings make sense configure only in time series widgets where this option is enabled by default. You can read more about Legend settings [here](/docs/{{docsPrefix}}user-guide/dashboards/#3-legend-settings).
 
-## Advanced settings
+### Advanced settings
 
 Advanced settings of the Entities Table widget allows [adjusting the title of the widget](#1-entities-table-title), [changing visibility of objects on widget](#2-checkbox-settings), 
 [customizing the columns](#3-the-columns-settings), [setting up the pagination](#4-the-pagination),
@@ -195,7 +195,7 @@ return result;
 {% include images-gallery.html imageCollection="style-function" %}
 
 
-## Saving changes
+### Saving changes
 
 For the changes to be applied and saved, you have to click the orange checkmark in the lower right corner of the dashboard.
 

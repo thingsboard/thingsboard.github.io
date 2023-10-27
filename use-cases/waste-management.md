@@ -58,7 +58,7 @@ Save up to 90% of development time for your waste management solution by utilizi
     </div>
 </div>
 
-## ThingsBoard advantages
+### ThingsBoard advantages
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
@@ -139,7 +139,7 @@ Save up to 90% of development time for your waste management solution by utilizi
     </div>
 </section>
 
-## Waste Management solution overview
+### Waste Management solution overview
 
 The diagram below identifies data flow and integration points for a typical waste management solution that uses the ThingsBoard platform to collect and analyze monitoring data from waste sensors.
 
@@ -149,7 +149,7 @@ You may notice plenty of connectivity options for the waste sensors: direct conn
 The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
-## Learn more
+### Learn more
 
 <a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
 <a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>

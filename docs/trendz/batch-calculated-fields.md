@@ -17,7 +17,7 @@ has access to the previous telemetry value, you can filter or exclude telemetry 
 
 Once raw telemetry array was transformed and returned from the calculation function, system will apply required aggregation on that array.
 
-## Basic syntax
+### Basic syntax
 
 Let's assume that you create following variable for telemetry data:
 
@@ -53,7 +53,7 @@ if(unit.length) {
 }
 ```
 
-## Examples
+### Examples
 
 #### Filter raw telemetry 
 
@@ -142,6 +142,6 @@ for (var i = 1; i < temperatureReadings.length; i++) {
 return temperatureReadings;
 ``` 
 
-## Next Steps
+### Next Steps
 
 {% assign currentGuide = "CalculatedFields" %}{% include templates/trndz-guides-banner.md %}

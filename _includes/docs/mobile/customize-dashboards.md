@@ -12,7 +12,7 @@
 {{appPrefix}} allows configuring how dashboards list will look in mobile application home screen.
 All configuration options related to mobile app are available in dashboard details form. 
 
-## Dashboard image
+### Dashboard image
 
 You can configure dashboard image for mobile app in dashboard details form:
 
@@ -29,7 +29,7 @@ You can configure dashboard image for mobile app in dashboard details form:
 
 {% include images-gallery.html imageCollection="dashboard-image" %}
 
-## Dashboard order
+### Dashboard order
 
 You can configure dashboards order in mobile app home screen:
 
@@ -46,7 +46,7 @@ You can configure dashboards order in mobile app home screen:
 
 {% include images-gallery.html imageCollection="dashboard-order" %}
 
-## Hide dashboard in mobile app
+### Hide dashboard in mobile app
 
 You can hide particular dashboards from mobile app home screen:
 

@@ -6,7 +6,7 @@ IBM Watson IoT Integration allows to stream data from IBM Watson IoT to ThingsBo
 
  ![image](/images/user-guide/integrations/ibm-watson-integration.svg)
  
-## Video tutorial
+### Video tutorial
  
 See video tutorial below for step-by-step instruction how to setup IBM Watson IoT Integration.
 
@@ -18,6 +18,6 @@ See video tutorial below for step-by-step instruction how to setup IBM Watson Io
 </div> 
 
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

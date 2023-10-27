@@ -14,7 +14,7 @@ description: Installing ThingsBoard on Windows
 
 {% include templates/install/windows-warning-note.md %}
 
-### Prerequisites
+## Prerequisites
 
 This guide describes how to install ThingsBoard on a Windows machine.
 Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit. 
@@ -146,6 +146,6 @@ you need to create a new inbound rule with Windows Firewall with Advanced Securi
 
 
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

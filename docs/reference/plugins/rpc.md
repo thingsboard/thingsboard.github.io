@@ -20,14 +20,14 @@ By default, this plugin is configured on the system level by a system administra
 You are able to configure your own instance of the plugin on tenant level.
 Advanced users or platform developers can customize rpc plugin functionality.
 
-## Configuration
+### Configuration
 
 You can specify default RPC timeout for plugin instance in the plugin configuration.
 
-## Server-side API
+### Server-side API
 
 RPC plugin API description is available in corresponding [rpc](/docs/user-guide/rpc/#server-side-rpc-api) guides. 
 
-## Example
+### Example
 
 As a system administrator, you are able to review plugin example inside **Plugins->System RPC Plugin**.

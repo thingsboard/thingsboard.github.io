@@ -12,7 +12,7 @@ title: Kafka Plugin
 
 Kafka plugin is responsible for sending messages to Kafka brokers triggered by specific rules
 
-## Configuration
+### Configuration
 
 You can specify following configuration parameters:
 
@@ -26,11 +26,11 @@ You can specify following configuration parameters:
  - *topic value serializer* by default - org.apache.kafka.common.serialization.StringSerializer
  - any other additional properties could be provided for kafka broker connection
 
-## Server-side API
+### Server-side API
 
 This plugin does not provide any server-side API.
 
-## Example
+### Example
 
 In this example, we are going to demonstrate how you can configure this extension to be able to send a message to Kafka topic every time new telemetry message for the device arrives.
 

@@ -138,7 +138,7 @@ See video tutorial below for step-by-step instruction how to use this feature.
     </div>
 </div>
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}
 

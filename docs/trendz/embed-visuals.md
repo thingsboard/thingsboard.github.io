@@ -17,7 +17,7 @@ or external sites. In this guide, you will learn how to do this.
 
 You should [import Trendz widget bundle into ThingsBoard](/docs/trendz/trendz-bundle#Import-Trendz-bundle-into-ThingsBoard). If you are using ThingsBoard Cloud - you should already have required bundle imported into ThingsBoard.
 
-## Add visualization on ThingsBoard Dashboard
+### Add visualization on ThingsBoard Dashboard
 
 #### Add using share wizard
 
@@ -39,7 +39,7 @@ Once widgets bundle imported, and you already have saved Trendz Visualization - 
 
 ![image](/images/trendz/embed-trendz.gif) 
 
-## Use Dashboard time window
+### Use Dashboard time window
 
 By default, all Trendz visualizations use individual time range. However you can change this behavior and configure widget to toke time from ThingsBoard Dashboard.
 This option available for both, Static Trendz widget and for Trendz View with aliases.
@@ -49,7 +49,7 @@ This option available for both, Static Trendz widget and for Trendz View with al
 * Switch to **Advanced** Tab
 * Enable checkbox **Use Dashboard Time Window** 
 
-## Embed visualization on external site
+### Embed visualization on external site
 You can also embed Trendz visualization into your web site by adding iFrame that points to required visualization.
 
 Add iFrame on your site with the following URL **http://{TRENDZ_URL}/viewMode/{VIEW_ID}?jwt={JWT_TOKEN}**. Where:
@@ -57,7 +57,7 @@ Add iFrame on your site with the following URL **http://{TRENDZ_URL}/viewMode/{V
 * VIEW_ID - ID of saved visualization inside Trendz
 * JWT_TOKEN - ThingsBoard JWT token that should be used to authenticate in the ThingsBoard
 
-## Blocked View problem
+### Blocked View problem
 
 If HTTPS was not enabled for Trendz it is possible that visuals shared on 3rd party websites or on ThingsBoard Dashboard 
 would be blank. 
@@ -67,6 +67,6 @@ block requests to Trendz. You can find detailed error in browser console.
 
 For fixing this - you need to enable HTTPS for Trendz UI. Find details how to do this in Trendz installation guide.
 
-## Next Steps
+### Next Steps
 
 {% assign currentGuide = "EmbedVisualizations" %}{% include templates/trndz-guides-banner.md %}

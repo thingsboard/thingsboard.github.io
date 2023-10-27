@@ -12,7 +12,7 @@ title: SQS Plugin
 
 SQS plugin is responsible for sending messages to Amazon Web Services Simple Queue Service queues triggered by specific rules
 
-## Configuration
+### Configuration
 
 SQS Plugin has the following configuration parameters:
 
@@ -24,11 +24,11 @@ SQS Plugin has the following configuration parameters:
 
 *Region* must correspond to the one in which the SQS Queue(s) are created. Current list of AWS Regions can be found [here](http://docs.aws.amazon.com/general/latest/gr/rande.html)
  
-## Server-side API
+### Server-side API
 
 This plugin does not provide any server-side API.
 
-## Example
+### Example
 
 In this example, we are going to demonstrate how you can configure this extension to be able to send a message to both SQS Sandard and FIFO queues every time new telemetry message for the device arrives.
 

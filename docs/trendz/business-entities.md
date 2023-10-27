@@ -11,7 +11,7 @@ This guide describes how Trendz uses entities from ThingsBoard, like asset, devi
 * TOC
 {:toc}
 
-## Business Entities Topology
+### Business Entities Topology
 Let's assume that we have a Smart Building solution. Our topology contains Buildings, Apartments and different Meters that are connected with each other using relations.
 Here is how our topology will look like:
 
@@ -21,7 +21,7 @@ Here is how our topology will look like:
 In fact, Trendz operates with this topology as with the flat table that has columns for all attributes/telemetry from all Devices/Assets in this topology.
 The Relation between entities used to join fields from different Business Entities.
 
-## How it works
+### How it works
 
 Now let's check how Trendz resolves data from ThingsBoard using following report: we are using only 2 fields from Smart Building topology: 
 
@@ -40,7 +40,7 @@ Now let's check how Trendz resolves data from ThingsBoard using following report
 
 It is not an exact algorithm description and there are a lot of optimizations performed in the background. But it allows to understand how much complexity handled inside Trendz, so you can focus on analytics but not on data fetching.
 
-## Aggregate telemetry and groups
+### Aggregate telemetry and groups
 The Next important step is to define how data should be aggregated. Here are supported aggregation types:
 * AVG
 * SUM
@@ -54,7 +54,7 @@ For changing aggregation type - just click on the field and select required valu
 ![image](/images/trendz/field-aggregation.png)
 
 
-## Work with pulse output telemetry
+### Work with pulse output telemetry
 Water meter is a good example of a device with pulse output - telemetry value always growing and during analysis, we want to convert it into delta values.
 Here is an example chart for such telemetry:
 

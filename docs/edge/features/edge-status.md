@@ -14,7 +14,7 @@ edgeInfo:
 
 {% include images-gallery.html imageCollection="edgeInfo" %}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "EdgeStatus" %}
 {% assign docsPrefix = "edge/" %}
