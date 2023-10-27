@@ -17,8 +17,8 @@ description: Custom development of solutions by the custom development team
             <div class="image-wrapper-icon-laptop">
                 <img 
                     id="icon-laptop"
-                    srcset="/images/custom-development/laptop-with-dashboard_360x230_1x.png 360w, /images/custom-development/laptop-with-dashboard_1127x720_1x.png 1000w, /images/custom-development/laptop-with-dashboard_2254x1440_2x.png 1900w"
-                    sizes="(max-width: 672px) 360px, 1000px, 1900px"
+                    srcset="/images/custom-development/laptop-with-dashboard_360x230_1x.png 360w, /images/custom-development/laptop-with-dashboard_560x358_1x.png 560w, /images/custom-development/laptop-with-dashboard_1127x720_1x.png 1000w, /images/custom-development/laptop-with-dashboard_2254x1440_2x.png 1900w"
+                    sizes="(max-width: 671px) 360px, (max-width: 999px) 560px, 1000px, 1900px"
                     src="/images/custom-development/laptop-with-dashboard_1127x720_1x.png"
                     alt="Laptop with a dashboard"/>
                 <button class="button schedule anchor-button" anchor="#get-in-touch">Schedule a call</button>
