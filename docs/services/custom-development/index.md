@@ -203,7 +203,7 @@ description: Custom development of solutions by the custom development team
                 What our clients say about us
             </div>
         </div>
-        <div class="carousel-wrapper">
+        <div id="carousel-wrapper">
             <div class="reviews-carousel owl-carousel owl-theme">
                 <div class="review">
                     <div class="logo">
