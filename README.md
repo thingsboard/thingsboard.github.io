@@ -158,3 +158,11 @@ Use the following command to check the broken links.
 ```bash
 docker run -it --rm --network=host ghcr.io/linkchecker/linkchecker --check-extern http://0.0.0.0:4000/
 ```
+
+## Update pages in _includes/docs/pe/user-guide/install directory in accordance with thingsboard/thingsborad-pe repositories: 
+
+Use the following command from the project root directory to regenerate configuration pages:
+    
+    python3 generate_config_pages.py
+
+Script execution will ask you to input path to the thingsboard/thingsboard-pe repository.
