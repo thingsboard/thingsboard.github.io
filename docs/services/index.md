@@ -27,6 +27,6 @@ description: ThingsBoard support plans, services and training sessions
     <a href="/docs/services/custom-development/" class="card">
         <img src="/images/prof-icon.svg">
         <h5 class="title">Development services</h5>
-        <p>Custom development of solutions by the custom development team</p>
+        <p>Custom IOT solutions</p>
     </a>
 </div>

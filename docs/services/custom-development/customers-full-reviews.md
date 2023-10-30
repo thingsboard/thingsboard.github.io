@@ -93,8 +93,9 @@ description: Custom development customers' reviews
 </section>
 <section id="get-in-touch" class="get-in-touch full-review">
     <div class="content-wrapper content-get-in-touch">
+        <!-- <div id="get-in-touch" class="side-title"> -->
         <div class="side-title">
-            <h1>get in touch</h1>
+            <h1 id="side-title-h1">get in touch</h1>
         </div>
         <div class="info">
             <div class="section-title">Ready to launch your unique product?</div>
@@ -105,13 +106,13 @@ description: Custom development customers' reviews
                 <div class="form-section">
                     <div class="form-element">
                         <label for="name">
-                            <input class="cdu-form-control" value="" placeholder="Your Name" name="name" type="text" size="40" maxlength="50">
+                            <input id="name" class="cdu-form-control" value="" placeholder="Your Name" name="name" type="text" size="40" maxlength="50">
                             <p>Name*</p>
                         </label>
                     </div>
                     <div class="form-element">
                         <label for="email">
-                            <input class="cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                            <input id="email" class="cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
                             <p>Email Address*</p>
                         </label>
                     </div>

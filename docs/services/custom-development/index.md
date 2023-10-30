@@ -17,11 +17,11 @@ description: Custom development of solutions by the custom development team
             <div class="image-wrapper-icon-laptop">
                 <img 
                     id="icon-laptop"
-                    srcset="/images/custom-development/laptop-with-dashboard_360x230_1x.png 360w, /images/custom-development/laptop-with-dashboard_560x358_1x.png 560w, /images/custom-development/laptop-with-dashboard_1127x720_1x.png 1000w, /images/custom-development/laptop-with-dashboard_2254x1440_2x.png 1900w"
-                    sizes="(max-width: 671px) 360px, (max-width: 999px) 560px, 1000px, 1900px"
+                    srcset="/images/custom-development/laptop-with-dashboard_360x230_1x.png 360w, /images/custom-development/laptop-with-dashboard_560x358_1x.png 560w, /images/custom-development/laptop-with-dashboard_1127x720_1x.png 1127w, /images/custom-development/laptop-with-dashboard_2254x1440_2x.png 2254w"
+                    sizes="(max-width: 671px) 360px, (max-width: 999px) 560px, (min-wdith: 1920px) 2254px, 1127px"
                     src="/images/custom-development/laptop-with-dashboard_1127x720_1x.png"
                     alt="Laptop with a dashboard"/>
-                <button class="button schedule anchor-button" anchor="#get-in-touch">Schedule a call</button>
+                <button class="button schedule anchor-button" data-href="#get-in-touch">Schedule a call</button>
             </div>
             <div class="image-wrapper-icon-phone">
                 <img  
@@ -37,7 +37,7 @@ description: Custom development of solutions by the custom development team
                     alt="half cicrle progress icon"/>
                 <span class="result-number">100%</span>
                 <span class="result-text">We offer time-guaranteed result</span>
-                <button class="button anchor-button" anchor="#get-in-touch">Schedule a call</button>
+                <button class="button anchor-button" data-href="#get-in-touch">Schedule a call</button>
             </div>
         </div>
     </div>
@@ -188,7 +188,7 @@ description: Custom development of solutions by the custom development team
                     </div>
                 </div>
                 <div class="right-block">
-                    <button class="anchor-button" anchor="#get-in-touch">Schedule a call</button>
+                    <button class="anchor-button" data-href="#get-in-touch">Schedule a call</button>
                 </div>
             </div>
             <svg id="additionally-bg1"></svg>
@@ -259,7 +259,7 @@ description: Custom development of solutions by the custom development team
     <div class="content-wrapper">
         <div id="content-get-in-touch">
             <div class="side-title">
-                <h1>get in touch</h1>
+                <h1 id="side-title-h1">get in touch</h1>
             </div>
             <div class="info">
                 <div class="section-title">Ready to launch your unique product?</div>
@@ -270,13 +270,13 @@ description: Custom development of solutions by the custom development team
                     <div class="form-section">
                         <div class="form-element">
                             <label for="name">
-                                <input class="cdu-form-control" value="" placeholder="Your Name" name="name" type="text" size="40" maxlength="50">
+                                <input id="name" class="cdu-form-control" value="" placeholder="Your Name" name="name" type="text" size="40" maxlength="50">
                                 <p>Name*</p>
                             </label>
                         </div>
                         <div class="form-element">
                             <label for="email">
-                                <input class="cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                                <input id="email" class="cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
                                 <p>Email Address*</p>
                             </label>
                         </div>
@@ -297,7 +297,7 @@ description: Custom development of solutions by the custom development team
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
 
-            document.querySelector(this.getAttribute('anchor')).scrollIntoView({
+            document.querySelector(this.getAttribute('data-href')).scrollIntoView({
                 behavior: 'smooth'
             });
         });
