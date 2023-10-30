@@ -10,7 +10,7 @@ description: Installing ThingsBoard CE on Ubuntu Server
 * TOC
 {:toc}
 
-### Prerequisites
+## Prerequisites
 
 This guide describes how to install ThingsBoard on Ubuntu 18.04 LTS / Ubuntu 20.04 LTS.
 Hardware requirements depend on chosen database and amount of devices connected to the system. 
@@ -88,6 +88,6 @@ Please allow up to 90 seconds for the Web UI to start. This is applicable only f
 
 {% include templates/install/troubleshooting.md %}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

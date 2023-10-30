@@ -270,7 +270,7 @@ etc.
 
 
 
-## Next steps
+### Next steps
 
 Explore guides related to main ThingsBoard features:
 

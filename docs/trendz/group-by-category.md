@@ -24,6 +24,6 @@ Finally, lets deep dive and see total consumption separated by room number - add
 ![image](/images/trendz/data-grouping-room.png)
 
 
-## Next Steps
+### Next Steps
 
 {% assign currentGuide = "GroupAndAggregateData" %}{% include templates/trndz-guides-banner.md %}

@@ -18,7 +18,7 @@ If processor detects unique alarm, it will add following metadata:
  - *alarmId* string.
  - *alarmBody* string.
 
-## Configuration
+### Configuration
 
 Template evaluation is done using certain context. This context is populated with values based on device message and attributes.
 Attribute values are available using maps with following names:
@@ -56,6 +56,6 @@ and telemetry message
 We recommend to include the truncated date and some unique device attribute into alarm id template. 
 This will ensure that you will not generate alarms for the same device problem too often. 
 
-## Example
+### Example
 
 As a tenant administrator, you are able to review processor example inside **Rules->Demo Alarm Rule->Processors->Alarm Deduplication Processor**.

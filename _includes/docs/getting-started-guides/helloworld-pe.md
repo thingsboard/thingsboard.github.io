@@ -16,7 +16,7 @@ The goal of this tutorial is to demonstrate the basic usage of the most popular 
  
 {% include templates/prerequisites-pe.md %}
 
-## Step 1. Provision device
+### Step 1. Provision device
 
 For simplicity, we will provision device manually using the UI. 
  
@@ -30,7 +30,7 @@ You may also use:
  * [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning/) to allow device firmware to automatically provision the device, so you don't need to configure each device manually;
  * [REST API](/docs/{{docsPrefix}}api/) to provision devices and other entities programmatically;
 
-## Step 2. Connect device
+### Step 2. Connect device
 
 To connect the device you need to get the device credentials first. 
 ThingsBoard supports various device credentials. We recommend using the default auto-generated credentials which is an access token for this guide.
@@ -52,15 +52,15 @@ Once you have successfully published the "temperature" readings, you should imme
 
 {% include images-gallery.html imageCollection="step3" showListImageTitles="true" %}
 
-## Step 3. Create dashboard
+### Step 3. Create dashboard
 
 We will create a dashboard to add the most popular widgets. See instructions below. 
 
-### Step 3.1 Create an empty dashboard
+#### Step 3.1 Create an empty dashboard
 
 {% include images-gallery.html imageCollection="step31" showListImageTitles="true" %}
 
-### Step 3.2 Add entity alias
+#### Step 3.2 Add entity alias
 
 Alias is a reference to a single entity or a group of entities that are used in the widgets.
 Alias may be static or dynamic. For simplicity, we will use "Single entity" alias reference the one and only entity ("My New Device" in our case).
@@ -69,7 +69,7 @@ You may learn more about different aliases [here](/docs/{{docsPrefix}}user-guide
 
 {% include images-gallery.html imageCollection="step32" showListImageTitles="true" %}   
 
-### Step 3.3 Add table widget
+#### Step 3.3 Add table widget
 
 Entity Table widget displays the latest values with list of entities that matches selected alias and filter with ability of additional full text search and pagination options.
 
@@ -81,7 +81,7 @@ To see the latest value of our "temperature" data that we sent during step 2, we
 
 Congratulations! You have added the first widget. Now you are able to send a new telemetry reading and it will immediately appear in the table. 
 
-### Step 3.4 Add chart widget
+#### Step 3.4 Add chart widget
 
 Chart widgets allow you to display time series data with customizable line charts and bar charts.
 
@@ -93,7 +93,7 @@ We should also configure the time window to use the chart widget.
 
 Congratulations! You have added chart widget. Now you are able to send new telemetry reading and it will immediately appear in the chart. 
 
-### Step 3.5 Add alarm widget
+#### Step 3.5 Add alarm widget
 
 Alarms table widget displays alarms related to the specified entity in the certain time window.
 Alarm widget is configured by specifying an entity as the alarm source, and the corresponding alarm fields.
@@ -102,7 +102,7 @@ Alarm widget is configured by specifying an entity as the alarm source, and the 
 
 Congratulations! You have added alarm widget. Now it's time to configure alarm rules and raise some alarms. 
 
-## Step 4. Configure alarm rules
+### Step 4. Configure alarm rules
 
 We will use the [alarm rules](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules) feature to raise alarm when the temperature reading is greater than 25 degrees.
 For this purpose, we should edit the device profile and add a new alarm rule. 
@@ -111,7 +111,7 @@ We recommend creating dedicated [device profiles](/docs/{{docsPrefix}}user-guide
 
 {% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
 
-## Step 5. Create alarm
+### Step 5. Create alarm
 
 Now our alarm rule is active (see [Step 4](#step-4-configure-alarm-rules)),
 and we should send new telemetry on behalf of the device (see [Step 2](#step-2-connect-device)) to trigger the alarm.
@@ -119,7 +119,7 @@ Note that the temperature value should be 26 or higher to raise the alarm. Once 
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
 
-## Step 6. Alarm notifications
+### Step 6. Alarm notifications
 
 It's quite easy to set up notifications using the **Notification center**. ThingsBoard Notification center allows you to send notifications to the end-users.
 Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
@@ -127,7 +127,7 @@ Learn more about notifications and how to configure them [here](/docs/{{docsPref
 We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules)
 and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms).
 
-## Step 7. Share dashboard with customers
+### Step 7. Share dashboard with customers
 
 One of the most important ThingsBoard features is the ability to create end-user dashboards.
 Each Customer User should see his own devices and should not be able to see devices or any other data that belongs to a different customer. 
@@ -181,11 +181,11 @@ You may optionally configure the dashboard to appear just after the user login t
 
 {% include images-gallery.html imageCollection="step75" showListImageTitles="true" %}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "GettingStartedGuides" %}{% include templates/multi-project-guides-banner.md %}
 
-## Your feedback
+### Your feedback
 
 Don't hesitate to star ThingsBoard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
 If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.

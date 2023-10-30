@@ -29,7 +29,7 @@ We want to write **Humidity** ( relative path is **${humidity_value}** ) as the 
 
 
 
-## Step 1. Configuring the OPC-UA connector
+### Step 1. Configuring the OPC-UA connector
 
 In order to configure the connector, we must create OPC-UA setup file and put configuration there.
 You may use default opcua.json file (from /etc/thingsboard-gateway/config in case of daemon installation or from folder with tb_gateway.json file in case you use python package).  
@@ -82,7 +82,7 @@ Let's analyze our settings:
 
 Save the configuration file as opcua.json in configuration folder (the directory, that contains the general configuration file - **tb_gateway.yaml**).  
 
-## Step 3. Turn on the connector 
+### Step 3. Turn on the connector 
 
 To use the connector, we must turn it on in the main configuration file (**[tb_gateway.yaml](/docs/iot-gateway/configuration/#connectors-configuration)**)
 
@@ -95,7 +95,7 @@ In "connectors" section we should uncomment following strings:
     configuration: opcua.json
 ```
 
-## Step 4. Run the gateway
+### Step 4. Run the gateway
   
 Command for run depends on type of installation.  
 If you have installed the gateway as daemon, run the following command:  
@@ -121,7 +121,7 @@ config_file_path = "YOUR_PATH_HERE"
 TBGatewayService(config_file_path)
 ```
 
-## Step 5. Check information from device
+### Step 5. Check information from device
 
 Check data in your ThingsBoard instance.  
     - Go to the your ThingsBoard instance and login.  

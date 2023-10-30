@@ -12,7 +12,7 @@ description: Installing ThingsBoard PE on CentOS/RHEL
 * TOC
 {:toc}
 
-### Prerequisites
+## Prerequisites
 
 This guide describes how to install ThingsBoard on RHEL/CentOS 7/8. 
 Hardware requirements depend on chosen database and amount of devices connected to the system. 
@@ -201,7 +201,7 @@ sudo service tb-web-report start
 
 {% include templates/install/troubleshooting.md %}
 
-## Next steps
+### Next steps
 
 
 

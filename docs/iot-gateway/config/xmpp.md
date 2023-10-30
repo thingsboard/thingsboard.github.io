@@ -212,7 +212,7 @@ This subsection in configuration file looks like:
 ]
 ```
 
-## Next steps
+### Next steps
 
 Explore guides related to main ThingsBoard features:
 

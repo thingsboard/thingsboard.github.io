@@ -14,7 +14,7 @@ hidetoc: "true"
 7. [RTU-X configuration](#rtu_configuration)
 8. [Data visualization](#data_visualization)
 
-## Introduction <a name="introduction"></a>
+## Introduction
 
 This guide contains step-by-step instructions on how to connect your Nettra RTU device to ThingsBoard Community Edition through TCP/IP via wifi, using as sample, one of the many applications that the Nettra RTU has. At the end of this guide, you will be able to monitor data using Thingsboard web UI to display it.
 
@@ -29,7 +29,7 @@ Once you complete this sample/tutorial, you will see your sensor data on a dashb
 ![rtu_x](https://user-images.githubusercontent.com/61634031/133831823-b6e2420e-5669-433a-a3fa-54b506ab24b9.png) ![dash2](https://user-images.githubusercontent.com/61634031/134074200-5063cd05-6091-4f36-90a3-91771373bd65.png)
 
 
-## Prerequisites <a name="prerequisites"></a>
+## Prerequisites
 
 
 ### Hardware
@@ -41,13 +41,13 @@ Once you complete this sample/tutorial, you will see your sensor data on a dashb
  - [RTU-X Configuration Interface](http://wiki.nettra.tech/en/downloads).
  - You will need to have ThingsBoard server up and running. Use either [Live Demo](https://thingsboard.io/docs/user-guide/install/installation-options/?ceInstallType=liveDemo) or [Installation Guide](https://thingsboard.io/docs/user-guide/install/ubuntu/) to install ThingsBoard.
 
-## Connection diagram <a name="connection_diagram"></a>
+## Connection diagram
 
 The following picture summarizes the connections for this simple project:
 <br><br>
 ![copy_941957077](https://user-images.githubusercontent.com/61634031/133837072-8340491f-ea35-4204-91e1-7d513641d7bb.png)
 
-## ThingsBoard configuration <a name="tb_configuration"></a>
+## ThingsBoard configuration
 
 This step contains instructions that are necessary to connect your device to ThingsBoard.
 
@@ -69,7 +69,7 @@ Sign up ThingsBoard Web UI as [live-demo](https://demo.thingsboard.io/signup). S
 Download the dashboard file (.json) using this [link](/docs/samples/nettrartu-x/resources/rtu_x_dashboard.json).
 Use import/export [instructions](https://thingsboard.io/docs/user-guide/dashboards/#import-dashboard) to import the dashboard to your ThingsBoard instance.
 
-## Connect RTU-X to PC <a name="connection_pc"></a>
+## Connect RTU-X to PC
 
  - Download and install the latest version of [RTU-X Configuration Interface](http://wiki.nettra.tech/en/downloads).
 
@@ -106,7 +106,7 @@ Use import/export [instructions](https://thingsboard.io/docs/user-guide/dashboar
 
    ![rtu4_step4](https://user-images.githubusercontent.com/61634031/134022869-f1ec2a5b-dfee-4571-96a4-7fd1fcd81778.png)
 
-## RTU-X configuration <a name="rtu_configuration"></a>
+## RTU-X configuration
 
 Once you have your RTU-X connected to the PC, we can proceed with its configuration.
 
@@ -151,7 +151,7 @@ while (1)
 
 ![rtu6_step6](https://user-images.githubusercontent.com/61634031/134028433-e7412285-9f4e-4d67-9f3c-80879f99191f.png)
 
-## Data visualization <a name="data_visualization"></a>
+## Data visualization
 
 Finally, open ThingsBoard Web UI in the Live Demo server with same user and password as *ThingsBoard configuration* section.
 

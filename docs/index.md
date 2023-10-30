@@ -162,10 +162,10 @@ description: ThingsBoard documentation - learn about the platform and get your I
     </div>
 </div>
 
-<h2>Security</h2>
+<h3>Security</h3>
 
 <p>Contains description of available device authentication <b><a href="/docs/user-guide/device-credentials/">options</a></b>.</p>
 
-<h2>Samples</h2>
+<h3>Samples</h3>
 
 <p>Contains a list of hardware platform specific <b><a href="/docs/samples/">samples</a></b>.</p>

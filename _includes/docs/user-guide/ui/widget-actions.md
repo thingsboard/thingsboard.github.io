@@ -17,13 +17,13 @@ Actions are adjusted in the Edit mode of the needed widget.
 
 To fully understand how to use Actions, you have to add a State to your widget. How to do this you should [read here](/docs/{{docsPrefix}}user-guide/dashboards/#states).
 
-## Action types
+### Action types
 
 _Types of action_ define which exactly action will be taken.
 There are six action types that are the same for all widgets.
 Learn how to configure action types with the example on [Entity Cards widget](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-types-configuration) examples.
 
-## Action types configuration
+### Action types configuration
 
 Since the action types are the same for all widgets, in this tutorial will be used the [Action Cell Button action source](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#1-action-cell-button) to explain all action types,
 and they will be explained using the Entity Cards widget examples.
@@ -929,7 +929,7 @@ HTML code.
 
 Mobile action is explained in mobile application configuration. See [Mobile actions](/docs/{{mobileDocsPrefix}}mobile/mobile-actions/) for details.
 
-## Action sources 
+### Action sources 
 
 _Actions sources_ is a specific act that needs to be done to achieve a goal (like clicking a widget header button, double-clicking a row, or a map's marker). Action sources are different for all widgets. 
 Action sources will be explained for each widget type separately using an example of the most commonly used type of action "Navigate to new dashboard state". 
@@ -1223,7 +1223,7 @@ Click a map's marker for a tooltip to appear. To execute an action, click the te
 
 {% include images-gallery.html imageCollection="tooltiptag" %}
 
-## Special actions settings
+### Special actions settings
 
 #### Open right dashboard layout (mobile view)
 

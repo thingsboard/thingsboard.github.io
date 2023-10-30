@@ -13,7 +13,7 @@ Non-video tutorials are available on the [Samples](/docs/samples/) page.
 
 <br>
 
-# Data Modeling
+## Data Modeling
 
 #### Getting started guide
 
@@ -137,7 +137,7 @@ Related Links:<br>
 <a href="https://blog.thingsboard.io/2017/01/raspberry-pi-gpio-control-using-android.html">Raspberry Pi GPIO control using Android Things and Thingsboard tutorial documentation
 
 
-# Visualization
+## Visualization
 
 #### Dashboard development guide, Part 1 of 3: Visualizing Assets data using Maps and Tables
 
@@ -314,7 +314,7 @@ You will learn how to:
     </div>
 </div><br>
 
-## Integration
+### Integration
 
 
 ####  ThingsBoard PE: Data Converters Configuration Guide
@@ -425,6 +425,6 @@ You will learn how to:
     </div>
 </div><br>
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "Common State" %}{% include templates/guides-banner.md %}

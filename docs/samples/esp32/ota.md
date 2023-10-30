@@ -13,7 +13,7 @@ hidetoc: "true"
 [ESP32](https://www.espressif.com/en/products/hardware/esp32/overview) is a series of low-cost, low-power SOC microcontrollers with integrated self-contained Wi-Fi and dual-mode Bluetooth.
 This sample application allow you to deliver a new firmware images to EPS32 with using ThingsBoard and OTA.
 
-## Video tutorial
+### Video tutorial
 
 See video tutorial below for this sample with additional detailed demonstration how to install and configure [ESP-IDF](https://github.com/espressif/esp-idf) for Windows.
 
@@ -24,7 +24,7 @@ See video tutorial below for this sample with additional detailed demonstration 
     </div>
 </div>
 
-## What you need
+### What you need
 - Installed and configured [ESP-IDF](https://github.com/espressif/esp-idf), the official development framework for ESP32 chip.
   Refer to [ESP-IDF Get Started](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/) document to set up the software environment.
   Before continuing, please make sure that you can successfully build and flash some example from ESP-IDF, for instance [Hello World](https://github.com/espressif/esp-idf/tree/master/examples/get-started/hello_world).
@@ -36,7 +36,7 @@ See video tutorial below for this sample with additional detailed demonstration 
 - Account in ThingsBoard application. You can use your own instance or [ThingsBoard Cloud](https://thingsboard.cloud)
   We need to say that this sample works well with both CE and PE, but we use PE cloud since it has more features and in the next sample we will show how to do mass firmware updates for multiple devices simultaneously.
 
-## ThingsBoard configuration
+### ThingsBoard configuration
 1. Create a new device, name it as *ESP32* and set it's type as *ESP32_OTA*.
 The specified device type will be used later in the rule chains and in the dashboard.
 
@@ -75,7 +75,7 @@ User can change and update OTA config of any ESP32 form the list by clicking 'Se
 
     Because of only one device with type *EPS32_OTA* was created, the table contain only one row. If a new device with type *ESP32_OTA* is added, then it will appear in the dashboard's entity table automatically.
 
-## Configure and flash firmware for ESP32 factory partition
+### Configure and flash firmware for ESP32 factory partition
 1. Clone the sample's sources from [ESP32 OTA](https://github.com/thingsboard/esp32-ota) ThingsBoard repository.
 2. Go to the directory with the cloned project and configure MQTT broker address, Wi-Fi credentials, etc.
 Open the terminal and execute next command:
@@ -149,7 +149,7 @@ Go to the [root sample directory](https://github.com/thingsboard/esp32-ota) and 
     Because any shared attributes were not created in ThingsBoard yet (they will be created through the widget later), for now OTA procedure is skipped.
     7. The application started to execute a custom task (for example send some telemetry or attributes data to ThingsBoard) and waits for the update of the shared attributes *targetFwUrl* and *targetFwVer* to perform OTA.
 
-## Performing OTA from ThingsBoard
+### Performing OTA from ThingsBoard
 Go to the *OTA for ESP32* dashboard and press *Select OTA configuration* for the device. In opened dashboard enter the next parameters in *OTA control* widget:
   - *Target firmware version* - expected firmware version which is hardcoded in the new firmware image, *v1.2*
   - *Firmware server URL* - link to the new firmware image, *https://raw.githubusercontent.com/thingsboard/esp32-ota/master/firmware/example-v1.2.bin*
@@ -193,7 +193,7 @@ Now, just for testing, you can update *OTA control* widget with next values:
 
 After this OTA update *counter* periodically changes its value to 0 or to 1, in the same manner as and after flashing the image to *factory* partition. But the difference this time is that the image was flashed to *ota_1* partition.
 
-## See also
+### See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -208,6 +208,6 @@ If you have any questions about this sample - post it on the **[issues](https://
 
 {% include socials.html %}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

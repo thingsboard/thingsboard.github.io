@@ -141,7 +141,7 @@ There are several types available for this subsection:
 
 {% include content-toggle.html content-toggle-id="opcuaIdentityConfig" toggle-spec=identityopcuatogglespec %}
 
-## Section "mapping"
+### Section "mapping"
 This configuration section contains array of nodes that the gateway will subscribe to after connecting to the OPC-UA server and settings about processing data from these nodes.
 
 | **Parameter**                 | **Default value**                    | **Description**                                                                       |
@@ -411,7 +411,7 @@ Now go to OPC UA server and make sure the value of the deviceName node is update
 ![image](/images/gateway/gateway-opc-ua-attributes-updates-5.png)
 {: refdef}
 
-## Next steps
+### Next steps
 
 Explore guides related to main ThingsBoard features:
  - [How to connect OPC-UA server to the gateway](/docs/iot-gateway/guides/how-to-connect-opcua-server/)

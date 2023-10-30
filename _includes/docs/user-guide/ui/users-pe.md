@@ -14,7 +14,7 @@ Also, there is the "All" user group. If a user is created directly in the "All" 
 
 **Note**: outgoing email settings have to be properly configured using [system administrator](/docs/{{docsPrefix}}user-guide/ui/tenants/) account. This is required to send activation email to the new users.
 
-## User groups
+### User groups
 
 A User group is group of users of the same level with the same permissions. One user can simultaneously belong to several user groups.
 
@@ -38,7 +38,7 @@ Create a user group and add the previously created [Roles](/docs/{{docsPrefix}}u
 
 {% include images-gallery.html imageCollection="user-groups-pe" showListImageTitles='true' %}
 
-## Edit user group
+### Edit user group
 
 Like any group of entities, the user group can be easily customized and edited.
 To edit a user group, click the user group row to enter details about the user group.
@@ -49,7 +49,7 @@ Learn more about [cell style function](/docs/{{docsPrefix}}user-guide/ui/advance
 
 Learn more about [actions](/docs/{{docsPrefix}}user-guide/ui/widget-actions/).
 
-## Delete user group
+### Delete user group
 
 A user group can be deleted by the user with sufficient permissions.
 Please note that the users that belong to a group will not be deleted. A single user can be a member of multiple user groups and is always a member of the special group "All".

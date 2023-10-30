@@ -116,6 +116,6 @@ the correct ThingsBoard version.
 If ThingsBoard uses HTTPS and link to Trendz library uses http - you will see mixed content error in browser console and widget will not load. You should enable HTTPS for Trendz as well.
 
 
-## Next Steps
+### Next Steps
 
 {% assign currentGuide = "EmbedVisualizations" %}{% include templates/trndz-guides-banner.md %}

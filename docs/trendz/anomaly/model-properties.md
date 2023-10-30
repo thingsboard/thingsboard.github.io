@@ -61,6 +61,6 @@ In case of `sliding windows` user can define `Sliding step percent` property to 
 * `Max segments count` - maximum amount of segments extract for training dataset.
 * `Join clusters` - define system behavior when 2 segments that are near each other and they both have anomaly, but they belong to different clusters. 
 
-## Next Steps
+### Next Steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

@@ -95,7 +95,7 @@ Please review the integration diagram to learn more.
 
 ![image](/images/user-guide/integrations/tcp-integration.svg)
 
-## Prerequisites
+### Prerequisites
 
 In this tutorial, we will use:
 
@@ -202,7 +202,7 @@ return result;
 ```
 {: .copy-code}
 
-## Create Integration template
+### Create Integration template
 
 Now that the Uplink and Downlink converter templates have been created, it is possible to create an integration.
 Go to **Integration templates** section and click **Add new integration** button. Name it **TCP Integration**, select type **TCP**, turn the Debug mode on and from drop-down menus add recently created Uplink and Downlink converters.
@@ -234,7 +234,7 @@ Click **Add** to save the Integration.
 {% include images-gallery.html imageCollection="addIntegration" %}
 
 
-## Modify Edge Root Rule chain for Downlinks
+### Modify Edge Root Rule chain for Downlinks
 
 We can send a downlink message to the device from Rule chain using the rule node.
 To be able to send downlink over integration we need to modify **'Edge Root Rule chain'** on the cloud.
@@ -243,7 +243,7 @@ When changes are made to device attribute, the downlink message will be sent to 
 
 {% include images-gallery.html imageCollection="downlinkRule" %}
 
-## Assign Integration to Edge
+### Assign Integration to Edge
 
 Once converter and integration templates are created, we can assign Integration template to Edge.
 
@@ -255,7 +255,7 @@ Please refer to the [Remote Integration guide](/docs/pe/edge/user-guide/integrat
 
 Please use **Integration key** and **Integration secret** from the above section for your TCP Integration configuration.
 
-## Send uplink message
+### Send uplink message
 
 Once ThingsBoard TCP Integration has been created, the TCP server starts, and then it waits for data from the devices.
 
@@ -278,7 +278,7 @@ Received data can be viewed in the Uplink converter. In the **'In'** and **'Out'
 
 {% include images-gallery.html imageCollection="converterEvents" %}
 
-## Send downlink message
+### Send downlink message
 
 Now let's check downlink functionality. Let's add **firmware** shared attribute:
 
@@ -295,7 +295,7 @@ An example of sent message and a response from ThingsBoard Edge in the terminal:
 
 {% include images-gallery.html imageCollection="downlinkTerminal" %}
 
-## Next steps
+### Next steps
 
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/guides-banner-edge.md %}

@@ -12,7 +12,7 @@ This component allows filtering incoming messages by attributes of the device.
 This filter is very useful if you want to apply the rule only to the certain sub-set of your device. 
 Filter expression is a javascript expression and basically defines this sub-set. You are able to use any [attribute types](/docs/user-guide/attributes#attribute-types).
 
-## Configuration
+### Configuration
 
 You are able to write boolean javascript expression using following bindings:
 
@@ -27,7 +27,7 @@ For example, filter below will match if client-side attribute 'firmware_version'
 typeof cs.firmware_version !== 'undefined' && cs.firmware_version === '1.0.0' 
 ```
 
-## Example
+### Example
 
 Assuming following device attributes and their types
  - firmware_version - client-side 

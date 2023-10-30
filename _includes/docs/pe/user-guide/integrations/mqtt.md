@@ -362,6 +362,6 @@ For your convenience you may follow this video to configure RPC request to devic
  </div>
 </div> 
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

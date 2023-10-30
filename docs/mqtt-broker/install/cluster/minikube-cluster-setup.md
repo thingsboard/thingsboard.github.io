@@ -15,7 +15,7 @@ This guide will help you to set up TBMQ in cluster mode using Minikube.
 You need to have a Kubernetes cluster, and the `kubectl` command-line tool must be configured to communicate with your cluster.
 If you don't have Minikube installed, please follow [these instructions](https://kubernetes.io/docs/setup/learning-environment/minikube/).
 
-## Step 1. Clone TBMQ repository
+### Step 1. Clone TBMQ repository
 
 ```bash
 git clone https://github.com/thingsboard/tbmq.git
@@ -23,7 +23,7 @@ cd tbmq/k8s/minikube
 ```
 {: .copy-code}
 
-## Step 2. Installation
+### Step 2. Installation
 
 To install TBMQ execute the following command:
 
@@ -113,7 +113,7 @@ Execute the following command to delete all resources (including database):
 ```
 {: .copy-code}
 
-## Upgrading
+### Upgrading
 
 In case you would like to upgrade, please pull the latest changes from `main` branch:
 
@@ -136,6 +136,6 @@ After that execute the following commands:
 Where `FROM_VERSION` - from which version upgrade should be started.
 See [Upgrade Instructions](/docs/mqtt-broker/install/upgrade-instructions/) for valid `fromVersion` values.
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

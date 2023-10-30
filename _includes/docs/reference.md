@@ -60,7 +60,7 @@ ThingsBoard provides a lightweight component written using Express.js framework 
 Those components are completely stateless and no much configuration available. 
 The static web UI contains application bundle. Once it is loaded, the application starts using the REST API and WebSockets API provided by ThingsBoard Core.  
  
-## Message Queues are awesome!
+### Message Queues are awesome!
 
 ThingsBoard supports multiple message queue implementations: Kafka, RabbitMQ, AWS SQS, Azure Service Bus and Google Pub/Sub. We plan to extend this list in the future.
 Using durable and scalable queues allow ThingsBoard to implement back-pressure and load balancing. Back-pressure is extremely important in case of peak loads.  
@@ -86,20 +86,20 @@ Since ThingsBoard 3.4 we can configure Rule Engine queues by the UI, see the [do
 for all communication between ThingsBoard components. 
 The main idea was to sacrifice small performance/latency penalties in favor of persistent and reliable message delivery and automatic load balancing.  
 
-## On-premise vs cloud deployments
+### On-premise vs cloud deployments
 
 ThingsBoard supports both on-premise and cloud deployments. 
 With more then 5000 ThingsBoard servers running all over the world, ThingsBoard is running in production on AWS, Azure, GCE and private data centers.
 It is possible to launch ThingsBoard in the private network with no internet access at all.
 
-## Standalone vs cluster mode
+### Standalone vs cluster mode
 
 Platform is designed to be horizontally scalable and supports automatic discovery of new ThingsBoard servers (nodes). 
 All ThingsBoard nodes inside cluster are identical and are sharing the load. 
 Since all nodes are identical there is no "master" or "coordinator" processes and there is no single point of failure. 
 The load balancer of your choice may forward request from devices, applications and users to all ThingsBoard nodes.
 
-## Monolithic vs microservices architecture
+### Monolithic vs microservices architecture
 
 Starting ThingsBoard v2.2, it is possible to run the platform as a monolithic application or as a set of microservices. 
 Supporting both options requires some additional programming efforts, however, is critical due to back-ward compatibility with variety of existing installations.
@@ -121,7 +121,7 @@ Please follow the links listed below to learn more and choose the right architec
 * [**microservices**](/docs/{{docsPrefix}}reference/msa): Learn more about deployment, configuring and running ThingsBoard platform in a microservices mode.
  
 
-## SQL vs NoSQL vs Hybrid database approach
+### SQL vs NoSQL vs Hybrid database approach
 
 ThingsBoard uses database to store 
 [entities](/docs/{{docsPrefix}}user-guide/entities-and-relations/) (devices, assets, customers, dashboards, etc) and 
@@ -147,7 +147,7 @@ database:
 
 ```
 
-## Programming languages and third-party
+### Programming languages and third-party
 
 ThingsBoard back-end is written in Java, but we also have some micro-services based on Node.js. ThingsBoard front-end is a SPA based on Angular 9 framework. 
 See [monolithic](/docs/{{docsPrefix}}reference/monolithic) and [microservices](/docs/{{docsPrefix}}reference/monolithic) pages for more details about third-party components used.  
