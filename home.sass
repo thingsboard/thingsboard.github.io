@@ -80,6 +80,9 @@ $feature-box-div-margin-bottom: 40px
                     display: none
     #overflow
         overflow: hidden
+        #react
+            @media (max-width: 768px)
+            margin-top: 50px
         #intro, #manage, #react, #products, #dashboard_description, #rule-engine, #bottom-features
             color: #212529
             text-align: left
@@ -138,6 +141,8 @@ $feature-box-div-margin-bottom: 40px
 
         #intro
             margin-bottom: 178px
+            @media (max-width: 768px)
+                margin-bottom: 70px
             padding-top: 88px
             .second
                 margin-top: 48px
@@ -167,6 +172,9 @@ $feature-box-div-margin-bottom: 40px
                         order: 1
                         h2
                             margin-top: 100px
+                        &.microservices h2
+                            @media (max-width: 768px)
+                                margin-top: 60px
                     .feature-des, img, .manage, .visualize, .process
                         width: 100%
                     .manage
@@ -196,6 +204,8 @@ $feature-box-div-margin-bottom: 40px
                             right: 0
                     &.vis
                         margin: 20px 0 30px
+                        @media (max-width: 768px)
+                            margin: 60px 0 30px
                     .process
                         position: relative
                         display: inline-block
@@ -243,6 +253,9 @@ $feature-box-div-margin-bottom: 40px
             width: 100%
             padding-top: 100px
             padding-bottom: 56px
+            @media (max-width: 768px)
+                padding-top: 60px
+                padding-bottom: 20px
             .product-title
                 color: white
                 text-align: center
@@ -294,12 +307,19 @@ $feature-box-div-margin-bottom: 40px
                 font-weight: 500
                 margin-top: 56px
                 text-align: center
+                @media (max-width: 768px)
+                    margin-top: 20px
 
         #dashboard_description
             margin-top: 186px
             margin-bottom: 120px
+            @media (max-width: 768px)
+                margin-top: 20px
+                margin-bottom: 0
             .owl-carousel.owl-theme.usecase-carousel
                 margin: 78px auto
+                @media (max-width: 768px)
+                    margin: 50px auto
                 width: 100%
                 .owl-stage-outer
                     overflow: hidden
@@ -317,6 +337,9 @@ $feature-box-div-margin-bottom: 40px
                 justify-content: space-between
                 display: flex !important
                 align-items: center
+                .item-image-container .overlay
+                    @media (max-width: 768px)
+                    display: none
             .item-image-container
                 position: relative
                 width: 100%
@@ -332,6 +355,8 @@ $feature-box-div-margin-bottom: 40px
 
         #rule-engine
             margin-bottom: 148px
+            @media (max-width: 768px)
+                margin-bottom: 80px
             .rule
                 justify-content: space-between
                 display: flex
@@ -388,7 +413,7 @@ $feature-box-div-margin-bottom: 40px
             &.dash
                 outline: none
                 .arrow
-                    left: 156px
+                    right: -20px
             .arrow
                 transform: translate(0px)
                 transition-duration: 0.3s
@@ -434,7 +459,8 @@ $feature-box-div-margin-bottom: 40px
                     transition-duration: 0.3s
                     position: absolute
                     bottom: 0
-                    left: calc(50% - 60px)
+                    // left: calc(50% - 60px)
+                    left: 33%
                     display: flex
                     img
                         margin-right: 10px
@@ -479,7 +505,9 @@ $feature-box-div-margin-bottom: 40px
                     right: 814px
                     border: 2px solid #0D2743
                 &.main2
-                    top: -576px
+                    top: -700px
+                    @media (max-width: 768px)
+                        top: -576px
                     width: 2560px
                     height: 825px
                     left: -1280px
@@ -507,7 +535,7 @@ $feature-box-div-margin-bottom: 40px
                     right: 736px
                     border: 4px solid #2A7DEC
                 &.dashboards
-                    top: -700px
+                    top: -550px
                     width: 2560px
                     height: 845px
                     left: -1280px
@@ -698,3 +726,8 @@ $feature-box-div-margin-bottom: 40px
             #dashboard_description
                 .owl-carousel.owl-theme.usecase-carousel
                     width: 100%
+
+@media (max-width: 768px)
+    .read-more-button
+        .arrow
+            display: none
