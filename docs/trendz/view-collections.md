@@ -72,6 +72,6 @@ In order to delete a collection, you must first remove or move all the visualiza
 
 ![image](https://img.thingsboard.io/trendz/view_collections_9.png)
 
-## Next Steps
+### Next Steps
 
 {% assign currentGuide = "Filtering" %}{% include templates/trndz-guides-banner.md %}

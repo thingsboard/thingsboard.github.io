@@ -142,6 +142,6 @@ You can issue the following command in order to check if there are any errors on
 cat /var/log/thingsboard/thingsboard.log | grep ERROR
 ```
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

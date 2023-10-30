@@ -4,7 +4,7 @@ External Nodes used are used to interact with external systems.
 {:toc}
 
 
-## AWS SNS Node
+### AWS SNS Node
 
 <table  style="width:250px;">
    <thead>
@@ -50,7 +50,7 @@ If required, Rule Chain can be configured to use chain of Transformation Nodes f
 
 <br>
 
-## AWS SQS Node
+### AWS SQS Node
 
 <table  style="width:250px;">
    <thead>
@@ -105,7 +105,7 @@ and **sequenceNumber** in Message metadata. Original Message payload, type and o
 
 <br>
 
-## Kafka Node
+### Kafka Node
 
 <table  style="width:250px;">
    <thead>
@@ -169,7 +169,7 @@ Original Message payload, type and originator will not be changed.
 
 <br>
 
-## MQTT Node
+### MQTT Node
 
 <table  style="width:250px;">
    <thead>
@@ -220,7 +220,7 @@ otherwise **Failure** chain is used.
 
 <br>
 
-## Azure IoT Hub Node
+### Azure IoT Hub Node
 
 <table  style="width:250px;">
    <thead>
@@ -271,7 +271,7 @@ otherwise **Failure** chain is used.
 
 <br>
 
-## RabbitMQ Node
+### RabbitMQ Node
 
 <table  style="width:250px;">
    <thead>
@@ -310,7 +310,7 @@ otherwise **Failure** chain is used.
 
 <br>
 
-## REST API Call Node
+### REST API Call Node
 
 <table  style="width:250px;">
    <thead>
@@ -381,7 +381,7 @@ otherwise **Failure** chain is used.
 
 <br>
 
-## Send Email Node
+### Send Email Node
 
 <table  style="width:250px;">
    <thead>
@@ -439,7 +439,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 <br>
 
-## Send Notification Node
+### Send Notification Node
 
 <table  style="width:250px;">
    <thead>
@@ -463,7 +463,7 @@ Configuration:
 
 <br>
 
-## Send SMS Node
+### Send SMS Node
 
 <table  style="width:250px;">
    <thead>
@@ -490,7 +490,7 @@ See [SMS Provider](/docs/{{docsPrefix}}user-guide/ui/sms-provider-settings) sett
 This Node can work with default SMS provider configured on System level. 
 If SMS message will be sent to all recipients successfully, original Message will be passed to the next nodes via Success chain, otherwise Failure chain is used.
 
-## Twilio SMS Node
+### Twilio SMS Node
 
 <table  style="width:250px;">
    <thead>
@@ -522,7 +522,7 @@ If SMS message will be sent to all recipients successfully, original Message wil
 
 <br>
 
-## Send to Slack Node
+### Send to Slack Node
 
 <table  style="width:250px;">
    <thead>

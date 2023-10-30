@@ -12,7 +12,7 @@ subscribers, in our case of integration.
 
 <object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/user-guide/integrations/aws-iot-integration.svg"></object>
 
-## AWS IOT
+### AWS IOT
 
 You should already have an [AWS account](https://aws.amazon.com/iot/) prepared, on which 
 perform a few settings. To establish a correct and secure connection between the service and ThingsBoard, you need to create Policies, devices, and certificates for them.
@@ -261,6 +261,6 @@ See video tutorial below for step-by-step instruction how to setup AWS IoT Integ
  </div>
 </div>
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

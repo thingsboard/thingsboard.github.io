@@ -229,7 +229,7 @@ CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-rhel.m
 
 {% include content-toggle.html content-toggle-id="remoteintegrationinstallrhel" toggle-spec=rhelinstallspec %} 
 
-## Remote HTTP integration validation
+### Remote HTTP integration validation
 
 To send an uplink message, you need HTTP endpoint URL from the integration.  
 Let's log in to ThingsBoard **Edge** and go to the **Integrations** page. 
@@ -250,7 +250,7 @@ The created device with data can be seen in the section **Device groups -> All**
 
 {% include images-gallery.html imageCollection="device" %}
 
-## Remote integration configuration
+### Remote integration configuration
 
 Remote integration configuration is done via ThingsBoard UI and there is no specific steps.
 Explore guides and video tutorials related to specific integrations:
@@ -262,11 +262,11 @@ Explore guides and video tutorials related to specific integrations:
  - [UDP](/docs/pe/edge/user-guide/integrations/udp/)
  - [CoAP](/docs/pe/edge/user-guide/integrations/coap/)
 
-## Remote integration troubleshooting
+### Remote integration troubleshooting
 
 Please review the log files. Their location is specific to the platform and installation package you have used and is mentioned in the installation steps. 
 
-## Next steps
+### Next steps
 
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/guides-banner-edge.md %}

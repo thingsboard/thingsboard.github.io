@@ -18,17 +18,17 @@ copyEdgeCredentials:
     0:
         image: https://img.thingsboard.io/pe/edge/installation-copy-edge-credentials-item-1.png
         title: 'Click on "Copy Edge Key" and "Copy Edge Secret" in the edge details section. This will copy your edge credentials to your clipboard. Be sure to store them in a secure location, as these values will be needed in the following steps.'
-    
+
 ---
 
 * TOC
 {:toc}
 
-## Provision the edge on ThingsBoard server
+### Provision the edge on ThingsBoard server
 
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/provision/add-edge.md %}
 
-## Next steps
+### Next steps
 
 {% include templates/edge/provision/edge-installation.md %}

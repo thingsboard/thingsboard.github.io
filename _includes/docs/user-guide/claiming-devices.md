@@ -8,7 +8,7 @@ I would like my customers to claim their devices based on the QR code or similar
 
 Once device is claimed, the customer becomes its owner and customer users may access device data as well as control the device.   
 
-## Device Claiming scenarios
+### Device Claiming scenarios
  
 ThingsBoard User can claim the device if they "know" the device Name and Secret Key. 
 The Secret Key is optional, always has an expiration time, and may also change over time. 
@@ -26,7 +26,7 @@ Claiming using <b>server-side</b> key scenario%,%serverside%,%templates/claiming
 {% include content-toggle.html content-toggle-id="claimingscenario" toggle-spec=claimingscenariotogglespec %}
 
 
-## Device Claiming Permissions in PE
+### Device Claiming Permissions in PE
 
 It is important to know that in the case of the PE version the user that is trying to claim the specific device must have the necessary permissions to do so.
 In this case, the needed permission is the following:
@@ -38,11 +38,11 @@ Let's add the above permission for a custom claiming user group.
 
 {% include images-gallery.html imageCollection="device-claiming-permissions-in-pe-carousel" showListImageTitles="true" %} 
 
-## Device Claiming Widget
+### Device Claiming Widget
 
 {% include images-gallery.html imageCollection="device-claiming-widget-carousel" showListImageTitles="true" %} 
 
-## Device Claiming API Request
+### Device Claiming API Request
 
 The Claiming Request is sent as a POST request to the following URL:
 
@@ -84,7 +84,7 @@ You will receive the response like the following one:
 }
 ```
 
-## Python example scripts
+### Python example scripts
 
 In this section you may get examples of code for claiming device feature.  
 We will use **tb-mqtt-client** python module to connect and claim device.  
@@ -160,6 +160,6 @@ if __name__ == '__main__':
 
 Then we are able to use [Device Claiming Widget](#device-claiming-widget).
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/guides-banner.md %}

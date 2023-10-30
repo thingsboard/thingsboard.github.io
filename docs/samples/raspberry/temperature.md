@@ -39,7 +39,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
 {% include templates/prerequisites.md %}
 
-## List of hardware and pinouts
+### List of hardware and pinouts
 
  - [Raspberry Pi 3](https://www.aliexpress.com/item/Raspberry-Pi-Model-B-Featuring-the-ARM1176JZF-S-Running-at-700MHz-with-512MB-of-RAM-version/2008093537.html?spm=2114.01010208.3.186.mgDFUO&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10000009_10084_10083_10080_10082_10081_10060_10062_10056_503_10055_10054_10059_10099_10078_501_10079_426_10103_10073_10102_10096_10052_10053_10108_10050_10107_10051_10106,searchweb201603_3,afswitch_3&btsid=2b2a0772-e248-4fa1-a79c-941b5c410deb)
 
@@ -149,7 +149,7 @@ This simple command will launch the application:
 python mqtt-dht22.py
 ```
 
-## Data visualization
+### Data visualization
 
 Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator.
 
@@ -173,7 +173,7 @@ If all is configured correctly you should be able to see latest values of *"temp
 After, open **"Dashboards"** section then locate and open **"DHT22: Temperature & Humidity Demo Dashboard"**. 
 As a result you will see two digital gauges and two time-series charts displaying temperature and humidity level (similar to dashboard image in the introduction).
 
-## See also
+### See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -188,7 +188,7 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
 {% include socials.html %}
 
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
 

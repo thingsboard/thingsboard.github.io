@@ -8,7 +8,7 @@ During the automatic provisioning, the device may either generate unique credent
 
 From the 3.5 version, ThingsBoard allows the auto-provision of new devices on authentication over MQTT using [X.509 Certificate chain](/docs/{{docsPrefix}}user-guide/certificates/).
    
-## How it works?
+### How it works?
 
 <object width="80%" data="https://img.thingsboard.io/user-guide/device-provisioning/flow.svg"></object>
 
@@ -27,15 +27,15 @@ Provisioning request example:
 ```
 {: .copy-code}
 
-The ThingsBoard validates the Request and replies with the device provisioning response (Response). 
-The successful response contains device id, credentials type, and body. 
+The ThingsBoard validates the Request and replies with the device provisioning response (Response).
+The successful response contains device id, credentials type, and body.
 If the validation was not successful, the Response will contain only the status.
 
 Provisioning response example:
 
 ```json
 {
-  "provisionDeviceStatus":"SUCCESS",  
+  "provisionDeviceStatus":"SUCCESS",
   "credentialsType":"ACCESS_TOKEN",
   "accessToken":"sLzc0gDAZPkGMzFVTyUY"
 }
@@ -43,29 +43,29 @@ Provisioning response example:
 {: .copy-code}
 
 During the validation of the Request, ThingsBoard will first check the supplied *provisionDeviceKey* and *provisionDeviceSecret* to find the corresponding [Device Profile](/docs/{{docsPrefix}}user-guide/device-profiles/).
-Once the profile is found, the platform will use the configured provision strategy to validate the device name. 
+Once the profile is found, the platform will use the configured provision strategy to validate the device name.
 There are two provision strategies available:
 
-* **Allowing creating new devices** - checks that the device with the same name has not registered in ThingsBoard yet. 
-This strategy is useful when you don't know the list of unique device names (MAC addresses, etc.) during manufacturing, but the device itself has access to this info in the firmware. 
-It is easier to implement, but it is less secure than the second strategy.  
+* **Allowing creating new devices** - checks that the device with the same name has not registered in ThingsBoard yet.
+This strategy is useful when you don't know the list of unique device names (MAC addresses, etc.) during manufacturing, but the device itself has access to this info in the firmware.
+It is easier to implement, but it is less secure than the second strategy.
 * **Checking pre-provisioned devices** - checks that the device with the same name has been already created in ThingsBoard, but hasn't been provisioned yet.
-This strategy is useful when you want to allow provisioning only for a specific list of devices. Let's assume that you have collected a list of unique IDS (MAC addresses, etc) during the manufacturing. 
-You can use [bulk provisioning](/docs/{{docsPrefix}}user-guide/bulk-provisioning/) to upload this list to ThingsBoard. Now, devices from the list can issue provision requests, and no other devices will be able to provision themselves.  
-          
+This strategy is useful when you want to allow provisioning only for a specific list of devices. Let's assume that you have collected a list of unique IDS (MAC addresses, etc) during the manufacturing.
+You can use [bulk provisioning](/docs/{{docsPrefix}}user-guide/bulk-provisioning/) to upload this list to ThingsBoard. Now, devices from the list can issue provision requests, and no other devices will be able to provision themselves.
+
 Once the provisioning is complete, ThingsBoard will update *provisionState* server attribute of the device and will set it to *provisioned* value.
 
-## Device profile configuration
+### Device profile configuration
 
 You should configure the device profile to enable provisioning feature, collect provision device key and provision device secret.
 
 {% include images-gallery.html imageCollection="deviceProfileConfiguration" showListImageTitles="true" %}
 
-## Provision Device APIs 
+### Provision Device APIs
 
-#### MQTT Device APIs 
+#### MQTT Device APIs
 
-You can use the [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/#device-provisioning) reference to develop your device firmware that will perform the provision request.   
+You can use the [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/#device-provisioning) reference to develop your device firmware that will perform the provision request.
 As mentioned earlier, a device can request the server to generate the credentials or to provide its own credentials during the registration process.
 See request/response and code examples for each option below:
 
@@ -76,9 +76,9 @@ Devices supplies<br>Basic MQTT Credentials%,%mqtt-basic%,%templates/provisioning
 Devices supplies<br>X.509 Certificate%,%x509-certificate%,%templates/provisioning/x509-certificate-credentials-type.md{% endcapture %}
 {% include content-toggle.html content-toggle-id="mqttprovisioning" toggle-spec=mqttcredentialstogglespec %}
 
-#### HTTP Device APIs 
+#### HTTP Device APIs
 
-You may use the [HTTP API](/docs/{{docsPrefix}}reference/http-api/#device-provisioning) reference to develop your device firmware that will perform the provision request.   
+You may use the [HTTP API](/docs/{{docsPrefix}}reference/http-api/#device-provisioning) reference to develop your device firmware that will perform the provision request.
 As mentioned earlier, the device may request server to generate the credentials or provide its own credentials during the registration process.
 See request/response and code examples for each option below:
 
@@ -98,6 +98,6 @@ Credentials generated by ThingsBoard server%,%without%,%templates/provisioning/c
 Devices supplies<br>Access Token%,%access-token%,%templates/provisioning/coap-access-token-credentials-type.md%br%{% endcapture %}
 {% include content-toggle.html content-toggle-id="coapprovisioning" toggle-spec=coapcredentialstogglespec %}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

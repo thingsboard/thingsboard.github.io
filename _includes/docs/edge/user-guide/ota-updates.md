@@ -19,6 +19,6 @@ OTA Packages on the *Edge* can be used in Device or Device Profile configuration
 
 Usage of these packages on the *Edge* is the same as on *Platform*, so you can follow [*Platform* documentation](/docs/{{cloudDocsPrefix}}user-guide/ota-updates/). 
  
-## Next steps
+### Next steps
 
 {% include templates/edge/guides-banner-edge.md %}

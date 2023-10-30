@@ -2,7 +2,6 @@
 layout: docwithnav
 title: Transform incoming telemetry
 description: Transform incoming telemetry
-
 ---
 
 * TOC
@@ -19,14 +18,14 @@ In this tutorial we will configure ThingsBoard Rule Engine to modify temperature
 [°C] = ([°F] - 32) × 5/9.
 ```
 
-## Prerequisites 
+### Prerequisites
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
   * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
 
-## Step 1: Adding temperature transformation node
+### Step 1: Adding temperature transformation node
 
 We will modify default rule chain and will add [**transformation**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) rule node with temperature transformation script. 
 We will place this rule node between default "message type switch" and "save timeseries" rule nodes.
@@ -50,7 +49,7 @@ if (typeof msg.temperature !== 'undefined'){
 return {msg: msg, metadata: metadata, msgType: msgType};
 ```
 
-## Step 2: Validation script debugging
+### Step 2: Validation script debugging
 
 Let's check that our script is correct by using built-in "Test transformer function" button
 
@@ -60,15 +59,13 @@ Let's check that our script is correct by using built-in "Test transformer funct
 
 You can check few more cases, for example when temperature is not set.
 
-## TL;DR
+### TL;DR
 
 Download and import attached json [**file**](/docs/user-guide/resources/transformation-rule-chain.json) with a rule chain from this tutorial. Don't forget to mark new rule chain as "root".
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/make-root.png)
 
- 
-
-## Next steps
+### Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
 

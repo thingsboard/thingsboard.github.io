@@ -10,10 +10,10 @@ title: Telemetry Plugin Action
 
 This component allows forwarding incoming attributes and timeseries requests to telemetry plugin. 
 
-## Configuration
+### Configuration
 
 There is no specific configuration for this component.
 
-## Example
+### Example
 
 As a system administrator, you are able to review action example inside **Rules->System Telemetry Rule->Actions->Telemetry Plugin Action**.

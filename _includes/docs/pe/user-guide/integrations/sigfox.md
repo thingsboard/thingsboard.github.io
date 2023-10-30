@@ -11,7 +11,7 @@ Please review the integration diagram to learn more.
 
  ![image](https://img.thingsboard.io/user-guide/integrations/sigfox-integration.svg)
 
-## Prerequisites
+### Prerequisites
 
 In this tutorial, we will use:
 
@@ -91,7 +91,7 @@ If the "Allow create devices or assets" checkbox is unchecked, when sending a me
 
 ![image](https://img.thingsboard.io/user-guide/integrations/sigfox/sigfox-integration-setup-4-pe.png)
 
-## SigFox Configuration
+### SigFox Configuration
 
 Now we need to set up a **Sigfox account** so that data from our device is sent to the ThingsBoard platform.
 
@@ -156,7 +156,7 @@ Received data can also be viewed in the Uplink converter. In the "*In*" and "*Ou
 
 ![image](https://img.thingsboard.io/user-guide/integrations/sigfox/sigfox-uplink-converter-events-out-pe.png)
 
-## Advanced usage: Downlink
+### Advanced usage: Downlink
 
 Create another converter with the name "**SigFox Downlink Converter**" and select type **Downlink**. To see events - enable **Debug mode**.
 
@@ -192,7 +192,7 @@ Go to the **Statistics** tab. You will see a downlink message on the chart.
 
 ![image](https://img.thingsboard.io/user-guide/integrations/sigfox/sigfox-statistics-1-pe.png)
 
-## Video tutorial
+### Video tutorial
  
 See video tutorial below for step-by-step instruction how to setup SigFox Integration.
 
@@ -203,6 +203,6 @@ See video tutorial below for step-by-step instruction how to setup SigFox Integr
  </div>
 </div>
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

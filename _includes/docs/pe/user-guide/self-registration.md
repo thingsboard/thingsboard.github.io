@@ -131,6 +131,6 @@ See signup form example below:
 ![image](https://img.thingsboard.io/user-guide/self-registration/signup-form.png)
 
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

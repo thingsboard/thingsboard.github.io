@@ -201,14 +201,14 @@ Customer may still use <a href="https://thingsboard.cloud" target="blank">Things
     <li>TB License fee - see <a href="/pricing">pricing</a></li>
     <li>AWS EC2 instance price - we believe <a href="https://www.ec2instances.info/">ec2instances.info</a> is a convenient resource to compare prices.</li>
     <li>Additional EC2 costs for network traffic, disk space and other optional services (Cloud Watch or similar)</li>
-</ul>            
-<p>Example A: The price for ThingsBoard PE instance with Maker subscription plan based on t2.micro with 20 GB disk will cost approximately $20.5 per month:</p>            
+</ul>
+<p>Example A: The price for ThingsBoard PE instance with Maker subscription plan based on t2.micro with 20 GB disk will cost approximately $20.5 per month:</p>
 <ul>
     <li>$10.00 for monthly ThingsBoard PE Maker subscription fee</li>
     <li>$8.468 for 1 month of t2.micro usage</li>
     <li>$2.0 for 20 GB of EBS volume per month</li>
-</ul>             
-<p>Example B: The price for ThingsBoard PE instance with Prototype subscription plan based on t2.medium with 100 GB disk will cost approximately $142.872 per month:</p>            
+</ul>
+<p>Example B: The price for ThingsBoard PE instance with Prototype subscription plan based on t2.medium with 100 GB disk will cost approximately $142.872 per month:</p>
 <ul>
     <li>$99.00  for monthly ThingsBoard PE Prototype subscription fee</li>
     <li>$33.872 for 1 month of t2.medium usage</li>

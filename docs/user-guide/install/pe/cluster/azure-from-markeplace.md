@@ -7,12 +7,12 @@ description: Installing ThingsBoard PE from Azure Marketplace
 
 This guide describes how to install ThingsBoard Professional Edition from Azure Marketplace. 
 Using this guide you will install [BYOL](https://docs.microsoft.com/en-us/azure/marketplace/marketplace-faq-publisher-guide#pricing-and-payment) version of the product.
-Basically, you get the license directly from ThingsBoard, Inc, but purchase corresponding server instances and infrastructure from Azure.       
+Basically, you get the license directly from ThingsBoard, Inc, but purchase corresponding server instances and infrastructure from Azure.
 
 * TOC
 {:toc}
 
-### Prerequisites
+## Prerequisites
 
 - Active [Microsoft Azure](https://azure.microsoft.com){:target="_blank"} account.
 
@@ -137,9 +137,9 @@ and put your license secret. Please don't forget to uncomment the export stateme
 # License secret obtained from ThingsBoard License Portal (https://license.thingsboard.io)
 # UNCOMMENT NEXT LINE AND PUT YOUR LICENSE SECRET:
 export TB_LICENSE_SECRET=YOUR_LICENSE_SECRET_HERE
-``` 
+```
 
-### Step 6. Launch ThingsBoard service  
+### Step 6. Launch ThingsBoard service
 
 Execute the following command to start ThingsBoard:
 
@@ -185,7 +185,7 @@ Now you can proceed to the next steps.
  ```
     where **smth.yourcompany.com** is your DNS name from the second step
     and **support@yourcompany.com** is your email to get notifications from [certbot](https://certbot.eff.org/).
-      
+
 ### Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

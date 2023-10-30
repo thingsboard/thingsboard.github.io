@@ -5,14 +5,14 @@
 
 Before proceeding with this guide, it's recommended that you follow [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to become familiar with ThingsBoard dashboards and widgets. This will enhance your learning experience and understanding of the concepts presented here.
 
-## Introduction
+### Introduction
 
 All IoT dashboards are constructed using ThingsBoard widgets.
 
 A widget is an element that displays a specific type of information or functionality on a dashboard. 
 Widgets are used to display data and visualize information obtained from devices connected to the ThingsBoard platform, remote device control, alarms management, and display static custom HTML content.
 
-### Widget types
+#### Widget types
 
 There are five types of widgets:
 
@@ -29,13 +29,13 @@ Each widget typically has specific settings and parameters that allow users to c
 
 This guide covers main concepts and various widget settings.
 
-## Adding a widget to the dashboard
+### Adding a widget to the dashboard
 
 To add a new widget to a dashboard, you should:
 
 {% include images-gallery.html imageCollection="add-widget" showListImageTitles="true" %}
 
-## Widget settings
+### Widget settings
 
 Widget settings consist of one or multiple data sources, appearance settings, widget card settings, actions, and mobile appearance that you can customize and perform on the widget’s content.
 
@@ -359,7 +359,7 @@ To view the values of all entities, you need to hover your mouse over the bar.
 
 {% include images-gallery.html imageCollection="appearance-stacking-mode-1" %}
 
-If you need to exclude a specific key from stacking, go to the [advanced data key configuration](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/), and check the "Exclude from stacking" checkbox.
+If you need to exclude a specific key from stacking, go to the [advanced data key configuration](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/#exclude-from-stacking), and check the "Exclude from stacking" checkbox.
 
 {% include images-gallery.html imageCollection="appearance-stacking-mode-2" %}
 
@@ -425,7 +425,7 @@ You can change the appearance of the chart grid: customize the color of the back
 **Tooltip value format function, f(value, latestData)** is used when you want to manually customize the tooltip.
 
 You can customize the values that will be displayed in the tooltip via tooltip settings or
-[Advanced Data key configuration](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/#2-charts).
+[Advanced Data key configuration](/docs/{{docsPrefix}}user-guide/ui/advanced-data-key-configuration/#tooltip-settings).
 Tooltip configuration via Settings is basic and applied to all entities at the same time. When configured in the Advanced Data key configuration,
 it is applied only to the specific time series data, and the basic tooltip function will be overwritten by this configuration.
 
@@ -563,6 +563,6 @@ This action saves the configuration file of the JSON format with all the setting
 
 {% include images-gallery.html imageCollection="export-widget" %}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "GettingStartedGuides" %}{% include templates/multi-project-guides-banner.md %}

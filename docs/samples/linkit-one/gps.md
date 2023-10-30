@@ -97,11 +97,11 @@ Connect your LinkIt One device via USB cable and select Serial Debug COM port in
 
 After application will be uploaded and started it will try to connect to ThingsBoard node using mqtt client and upload "latitude" and "longitude" attributes once per second.
 
-## Troubleshooting
+### Troubleshooting
 
 When the application is running you can connect your device to Serial Debug COM port in Arduino IDE and open "Serial Monitor" in order to view debug information produced by serial output.
 
-## Data visualization
+### Data visualization
 
 Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator. Use
 
@@ -118,7 +118,7 @@ If all is configured correctly you should be able to see *"latitude"*, *"longitu
 After, open **"Dashboards"** section then locate and open **"LinkIt One GPS Tracking Demo Dashboard"**. 
 As a result, you will see the map widget with a pointer indicating your device location and a battery level widget (similar to dashboard image in the introduction).
 
-## See also
+### See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -132,7 +132,7 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
  
 {% include socials.html %}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
 

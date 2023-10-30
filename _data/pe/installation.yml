@@ -34,4 +34,22 @@ toc:
 - title: Upgrade instructions
   path: /docs/user-guide/install/pe/upgrade-instructions/
 - title: Configuration
-  path: /docs/pe/user-guide/install/config/
+  section:
+  - title: How to change configuration parameters?
+    path: /docs/user-guide/install/pe/how-to-change-config/
+  - title: Core/Rule engine deployment parameters
+    path: /docs/user-guide/install/pe/core-rule-engine-config/
+  - title: HTTP Transport parameters
+    path: /docs/user-guide/install/pe/http-transport-config/
+  - title: MQTT Transport parameters
+    path: /docs/user-guide/install/pe/mqtt-transport-config/
+  - title: CoAP Transport parameters
+    path: /docs/user-guide/install/pe/coap-transport-config/
+  - title: LWM2M Transport parameters
+    path: /docs/user-guide/install/pe/lwm2m-transport-config/
+  - title: SNMP Transport parameters
+    path: /docs/user-guide/install/pe/snmp-transport-config/
+  - title: Version control executor parameters
+    path: /docs/user-guide/install/pe/vc-executor-config/
+  - title: Integration executor parameters
+    path: /docs/user-guide/install/pe/ie-executor-config/

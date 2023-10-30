@@ -29,7 +29,7 @@ In this tutorial we will configure ThingsBoard Rule Engine to automatically send
  
   ![image](https://img.thingsboard.io/user-guide/integrations/mqtt-integration.svg)
 
-## Prerequisites 
+### Prerequisites 
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
@@ -45,7 +45,7 @@ automatically created in the process of integration work.
 
 ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/mqtt-downlink-device.png)
 
-## Getting started
+### Getting started
 
 ### Creating converters
 
@@ -221,7 +221,7 @@ Using a control widget (in this case, a knob) leads to value change on the dashb
 Dashboard can be found [**here**](/docs/user-guide/resources/temperature_control_dashboard.json) and
 imported like [**this**](/docs/{{docsPrefix}}user-guide/ui/dashboards/#dashboard-import).
 
-## Message Flow
+### Message Flow
 
 In this section, we explain the purpose of each node in this tutorial. 
 
@@ -252,6 +252,6 @@ You can download and [**import**](/docs/{{docsPrefix}}user-guide/ui/rule-chains/
  It should be marked as root.
  
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/multi-project-guides-banner.md %}

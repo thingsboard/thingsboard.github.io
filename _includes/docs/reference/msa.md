@@ -5,11 +5,11 @@
 Since ThingsBoard v2.2, the platform supports microservices deployment mode. 
 This article consist of high level diagram, description of data flow between various services and some architecture choices made.       
 
-## Architecture diagram
+### Architecture diagram
 
  <object width="80%" data="https://img.thingsboard.io/reference/msa-architecture.svg"></object> 
   
-## Transport Microservices
+### Transport Microservices
 
 ThingsBoard provides MQTT, HTTP and CoAP based APIs that are available for your device applications/firmware. 
 Each of the protocol APIs are provided by a separate server component and is part of ThingsBoard "Transport Layer". 
@@ -54,11 +54,11 @@ Since ThingsBoard uses very simple communication protocol between transport and 
 it is quite easy to implement support of custom transport protocol, for example: CSV over plain TCP, binary payloads over UDP, etc.
 We suggest to review existing transports [implementation](https://github.com/thingsboard/thingsboard/tree/master/common/transport/mqtt) to get started or [contact us](/docs/contact-us/) if you need any help.
 
-## Web UI Microservices
+### Web UI Microservices
 
 ThingsBoard provides a lightweight component written using Express.js framework to host static web ui content. Those components are completely stateless and no much configuration available. 
 
-## JavaScript Executor Microservices
+### JavaScript Executor Microservices
 
 ThingsBoard rule engine allows users to specify custom javascript functions to parse, filter and transform messages. 
 Since those functions are user defined, we need to execute them in an isolated context to avoid impact on main processing.
@@ -73,7 +73,7 @@ Requests for the same script are forwarded to the same JS executor using built-i
 It is possible to define max amount of pending JS execution requests and max request timeout to avoid single JS execution blocking the JS exector microservice.
 Each ThingsBoard core service has individual blacklist for JS functions and will not invoke blocked function more then 3(by default) times.
 
-## ThingsBoard Node
+### ThingsBoard Node
 
 ThingsBoard node is a core service written in Java that is responsible for handling:
  
@@ -92,19 +92,19 @@ So, messages for the same entity are processed on the same ThingsBoard node. Pla
 **Note**: ThingsBoard authors consider moving from gRPC to Kafka in the future releases for exchanging messages between ThingsBoard nodes. 
 The main idea is to sacrifice small performance/latency penalties in favor of persistent and reliable message delivery and automatic load balancing provided by Kafka consumer groups. 
 
-## Third-party  
+### Third-party  
 
-### Kafka
+#### Kafka
 
 [Apache Kafka](https://kafka.apache.org/) is an open-source stream-processing software platform. ThingsBoard uses Kafka to persist incoming telemetry from HTTP/MQTT/CoAP transpots 
 until it is processed by the rule engine. ThingsBoard also uses Kafka for some API calls between micro-services.
 
-### Redis
+#### Redis
 
 [Redis](https://redis.io/) is an open source (BSD licensed), in-memory data structure store used by ThingsBoard for caching. 
 ThingsBoard caches assets, entity views, devices, device credentials, device sessions and entity relations.
 
-### Zookeeper
+#### Zookeeper
 
 [Zookeeper](https://zookeeper.apache.org/) is an open-source server which enables highly reliable distributed coordination. 
 ThingsBoard uses Zookeeper to address requests processing from a single entity (device,asset,tenant) to a certain ThingsBoard server 
@@ -112,7 +112,7 @@ and guarantee that only one server process data from particular device at a sing
 
 **Note**: Zookeeper is also used by Kafka, so there was almost no reasons to use two different coordination services (Consul, etcd) in parallel.      
 
-### HAProxy (or other LoadBalancer)
+#### HAProxy (or other LoadBalancer)
 
 We recommend to use HAProxy for load balancing. 
 You can find the reference [haproxy.cfg](https://github.com/thingsboard/thingsboard/blob/release-2.5/docker/haproxy/config/haproxy.cfg) 
@@ -237,11 +237,11 @@ backend tb-api-backend
   http-request set-header X-Forwarded-Port %[dst_port]
 {% endhighlight %}
 
-### Databases
+#### Databases
 
 See "[SQL vs NoSQL vs Hybrid?](/docs/{{docsPrefix}}reference/#sql-vs-nosql-vs-hybrid-database-approach)" for more details. 
 
-## Deployment
+### Deployment
 
 You can find the reference [docker-compose.yml](https://github.com/thingsboard/thingsboard/blob/release-2.5/docker/docker-compose.yml)
 and corresponding [documentation](https://github.com/thingsboard/thingsboard/blob/master/docker/README.md) that will help you to run ThingsBoard containers in a cluster mode 

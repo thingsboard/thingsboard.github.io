@@ -108,6 +108,6 @@ Explore guides related to main ThingsBoard features:
  - [Working with IoT dashboards](/docs/user-guide/dashboards/) - how to work with dashboards.
 <br>
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

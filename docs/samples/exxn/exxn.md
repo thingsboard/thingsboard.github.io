@@ -19,14 +19,14 @@ An example of a dashboard developed with ThingsBoard that displays metrics captu
 
 ![image](https://img.thingsboard.io/samples/exxn/ennx-dashboard.png)
 
-## Prerequisites
+### Prerequisites
 
 In this tutorial, we will configure an EXXN IoT Gateway to integrate it with ThingsBoard via the MQTT API. In order to do this we will use:
 
  - EXXN IoT Gateway 'Cell 1024';
  - We must have connection to the device and the Device have to be connected to the Internet via Ethernet, Modem or Wifi.
 
-## Technical characteristics
+### Technical characteristics
 The technical specifications of the EXXN IoT Gateway 'Cell 1024' used in this guide are:
 * ARM Cortex-A53 Quad-Core 64-bit Processor
 * GPU Mali 470
@@ -42,7 +42,7 @@ The technical specifications of the EXXN IoT Gateway 'Cell 1024' used in this gu
    <img src="https://img.thingsboard.io/samples/exxn/cell_1024.jpg" alt="cell 1024">
 </p>
 
-## Provisioning the device for Thingsboard
+### Provisioning the device for Thingsboard
 
 Contains instructions that are necessary to connect your device to ThingsBoard.
 
@@ -98,7 +98,7 @@ If you did everything is correct, we will see client attributes like the *serial
 
 ![image](https://img.thingsboard.io/samples/exxn/exxn-client-attributes-device-1.png)
 
-## ThingsBoard configuration
+### ThingsBoard configuration
 
 The EXXN IoT Gateway will connect to ThingsBoard using the MQTT API. <br>
 We have previously covered how to configure the device to connect to ThingsBoard. Now, we will show the steps to configure the device in ThingsBoard in order to monitor data and manage the device.
@@ -146,7 +146,7 @@ It is possible to send commands to the device to execute certain tasks. The para
 
 All the commands that can be sent to the device are explained in the EXXN IoT Gateway manual.
 
-## Additional information
+### Additional information
 
 ### Troubleshooting
  - The most common problem in the integration process is not having a connection with the MQTT Broker. Make sure the device is connected to the internet and is able to communicate with the ThingsBoard Broker.
@@ -160,6 +160,6 @@ For more information, visit our website at [EXXN Engineering](http://exxn.es/en/
 <br>
 If you have any problems or doubts, please do not hesitate in contact us at: [troubleshooting@exxn.es](mailto://troubleshooting@exxn.es)
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

@@ -226,7 +226,7 @@ We will describe connector configuration file below.
               "tag": "smm",
               "type": "int",
               "objectsCount": 1,
-              "address": 2,             
+              "address": 2,
               "value": "12334"
             }
           ],
@@ -528,7 +528,7 @@ it manually. To use them, make sure you set all required parameters (in the case
 **type**, **functionCode**, **objectsCount**, **address**). 
 See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
 
-## Section "slave": description and configuration parameters
+### Section "slave": description and configuration parameters
 Starting with version 3.0, Gateway can run as a Modbus slave. In order to configure Gateway as a Modbus slave,
 specify the "slave" section in the configuration file.
 
@@ -604,7 +604,7 @@ Depending on which value the register belongs to, you must add it to the appropr
               "tag": "smm",
               "type": "int",
               "objectsCount": 1,
-              "address": 2,              
+              "address": 2,
               "value": "12334"
             }
           ],
@@ -659,7 +659,7 @@ register, but the configuration of telemetry, attributes, rps, etc. is the same 
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-## Additional information
+### Additional information
 
 Additional information about Modbus functions and supported data types.
 
@@ -701,7 +701,7 @@ A list and description of the supported data types for reading/writing data.
 
 
 
-## Next steps
+### Next steps
 
 Explore guides related to main ThingsBoard features:
 

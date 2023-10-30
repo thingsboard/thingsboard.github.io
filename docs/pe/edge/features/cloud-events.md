@@ -40,7 +40,7 @@ List of possible cloud actions:
 * Group Entities Request **PE**
 * Permissions Request **PE**
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "CloudEvents" %}
 {% assign docsPrefix = "pe/edge/" %}

@@ -162,6 +162,6 @@ The Customer user can also optionally hide the home dashboard toolbar or change 
    
    ![image](https://img.thingsboard.io/user-guide/ui/users/ce/profile-window.png)  
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

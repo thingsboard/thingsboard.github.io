@@ -236,13 +236,13 @@ details[open]
     .head-menu
       ul
         li.active
-          a, a:hover
+          a, a:hover, span.main-menu-link:hover
             color: rgba(255, 255, 255, 0.5)
 
         a
           color: #fff
 
-        a:not([href])
+        a:not([href]), span.main-menu-link
           color: #fff
 
           &:hover
@@ -568,21 +568,21 @@ header
         align-items: center
         height: calc(100% + 4px)
 
-        a
+        a, span.main-menu-link
           width: 100%
           text-align: center
 
         &:hover a
           color: #2A7DEC
 
-      a
+      a, span.main-menu-link
         display: block
         color: #212529
         font-size: 18px
         font-weight: normal
         text-decoration: none
 
-      a:not([href])
+      a:not([href]), span.main-menu-link
         color: #212529
 
         &:hover
@@ -928,11 +928,11 @@ a.feature-card
 
       .head-menu
         ul
-          li.active a
+          li.active a, li.active span.main-menu-link
             opacity: 1
             color: #2A7DEC
 
-          a
+          a, span.main-menu-link
             color: #212529
 
           .centered-sub .sub-menu
@@ -2763,7 +2763,7 @@ $header-clearance: 210px
           &.nav-docs
             width: 50px
 
-          a
+          a, span.main-menu-link
             font-size: 15px
 
 @media screen and (max-width: 1280px)
@@ -2794,10 +2794,10 @@ $header-clearance: 210px
         padding: 16px 30px 0
 
         ul
-          li:hover a
+          li:hover a, li:hover span.main-menu-link
             color: #2A7DEC!important
 
-          a, a:not([href])
+          a, a:not([href]), span.main-menu-link
             color: #212529
 
           .centered-sub
@@ -2885,7 +2885,7 @@ $header-clearance: 210px
         li
           height: unset
           width: 100%!important
-          a
+          a, span.main-menu-link
             text-align: left
             &:focus
               .centered-sub

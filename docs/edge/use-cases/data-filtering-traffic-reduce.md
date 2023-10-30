@@ -171,31 +171,31 @@ createDashboard:
 {% assign docsPrefix = "edge/" %}
 {% assign appPrefix = "ThingsBoard" %}
 
-## Use case
+### Use case
 
 {% include templates/edge/use-cases/data-filtering/use-case-description.md %}
 
-## Prerequisites
+### Prerequisites
 
 {% include templates/edge/use-cases/prerequisites.md %}
 
-## Create device
+### Create device
 
 {% include templates/edge/use-cases/data-filtering/create-device.md %}
 
-## Configure edge rule engine to push filtered data to the cloud
+### Configure edge rule engine to push filtered data to the cloud
 
 {% include templates/edge/use-cases/data-filtering/configure-edge-rule-engine.md %}
 
-## Connect device to edge and post telemetry
+### Connect device to edge and post telemetry
 
 {% include templates/edge/use-cases/data-filtering/connect-device-to-edge.md %}
 
-## Create dashboard
+### Create dashboard
 
 {% include templates/edge/use-cases/data-filtering/create-dashboard.md %}
 
-## Next Steps
+### Next Steps
 
 {% assign currentGuide = "ManageAlarmsAndRpcRequestsOnEdgeDevices" %}
 {% include templates/edge/guides-banner-edge.md %}

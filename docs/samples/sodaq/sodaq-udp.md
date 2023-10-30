@@ -25,13 +25,13 @@ We expect you have a very basic knowledge about ThingsBoard. Otherwise we do rec
 - [Getting Started](/docs/getting-started-guides/helloworld/) guide.
 - [Platform Integrations](/docs/user-guide/integrations/) guide.
 
-## Integration overview
+### Integration overview
 
 ThingsBoard Platform Integrations feature allows to push data from various platforms and connectivity solutions to ThingsBoard.
 We will use "UDP" platform integration to consume data from T-Mobile NB IoT Network and automatically register devices in ThingsBoard.
 Besides configuring the integration, we will also setup ThingsBoard to decode incoming data, store it in the database, visualize on the dashboard and generate alarms based on configurable thresholds.
 
-## Step 1. Data Converter configuration
+### Step 1. Data Converter configuration
 
 In order to create an [Integration](/docs/user-guide/integrations), we should create the [Uplink Data Converter](/docs/user-guide/integrations/#uplink-data-converter) first.
 The converter will decode incoming telemetry payload data from T-Mobile NB IoT that contains in encoded hex string to human readable, simplified ThingsBoard data format.
@@ -219,7 +219,7 @@ as described on the following screencast:
 
 <img data-gifffer="https://img.thingsboard.io/user-guide/integrations/sodaq/import-udp-converter_updated.gif" alt="import udp converter updated">
 
-## Step 2. Integration configuration
+### Step 2. Integration configuration
 
 - Create new integration based on the screencast below.
 
@@ -274,7 +274,7 @@ as described on the following screencast:
 
 - After filling all fields click the **ADD** button.
 
-## Step 3: Post telemetry and verify the Integration configuration
+### Step 3: Post telemetry and verify the Integration configuration
 
 
 
@@ -301,7 +301,7 @@ Device with name **357518080211964** should be created.
 
 <img data-gifffer="https://img.thingsboard.io/user-guide/integrations/sodaq/validate-udp-integration.gif" alt="validate udp integration">
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
 

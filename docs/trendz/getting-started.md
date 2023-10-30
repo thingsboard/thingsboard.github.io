@@ -111,14 +111,14 @@ The goal of this tutorial is to demonstrate the basic usage of Trendz Analytics.
     </div>
 </div>
 
-## Prerequisites
+### Prerequisites
 
 You will need to have Trendz Analytics server up and running.
 The easiest way is to use [Trendz Cloud](/docs/trendz/install/cloud/) SaaS.
 
 The alternative option is to install Trendz Analytics using [Installation Guide](/docs/trendz/install/installation-options/).
 
-## Step 1. Discover topology
+### Step 1. Discover topology
 Once Trendz Service is up and running you can sign-in to Trendz UI using following URL:
 
 * Trendz Cloud: [https://thingsboard.cloud/trendz](https://thingsboard.cloud/trendz).
@@ -129,7 +129,7 @@ Any Tenant Administrator or Customer User can sign in into Trendz UI using their
 
 {% include images-gallery.html imageCollection="discover-topology" showListImageTitles="true" %}
 
-## Step 2. Create table view
+### Step 2. Create table view
 Let's create a table with all buildings and apartments and calculate the amount of electricity and heat consumption per square meter in each apartment.
 
 * On the home page click the button **Create view** and select **Table**
@@ -153,7 +153,7 @@ return (energy + heat) / size;
 
 {% include images-gallery.html imageCollection="table-view" %}
 
-## Step 3. Add Table to ThingsBoard Dashboard
+### Step 3. Add Table to ThingsBoard Dashboard
 Now we can add this table on ThingsBoard dashboard.
 
 * Click on `Share to ThingsBoard` button and choose `Add on New Dashboard`
@@ -165,7 +165,7 @@ A new dashboard in Thingsboard is created and our table is there with possibilit
 
 {% include images-gallery.html imageCollection="add-on-dashboard" %}
 
-## Step 4. Predict energy usage
+### Step 4. Predict energy usage
 Next step would be to create a forecast of energy and heat usage for the next 6 months for each building using historical data.
 
 * Click the button `Create view` and select **Line chart**
@@ -190,7 +190,7 @@ Historical data for each area is visualized with a solid line and forecast is sh
 
 {% include images-gallery.html imageCollection="predict-energy-line-chart" %}
 
-## Step 5. Find anomalies in energy consumption
+### Step 5. Find anomalies in energy consumption
 Let's discuss how to build an anomaly detection model for energy consumption, track abnormal consumption behavior, and set up notifications for anomalies.
 
 * Go to the Anomalies section, and click button **Create model**
@@ -219,7 +219,7 @@ Whenever an anomaly is detected, Trendz will compute an anomaly score and store 
 
 {% include images-gallery.html imageCollection="anomaly-detection-model" %}
 
-## Step 6. Create Alarms when anomaly discovered
+### Step 6. Create Alarms when anomaly discovered
 We have an anomaly detection model that can identify anomalies, and we create a job to discover them in new incoming data from sensors. The last step is to inform the maintenance team about the anomalies we found. 
 To do this, we need to create an Alarm in ThingsBoard once an anomaly is detected.
 
@@ -250,6 +250,6 @@ This telemetry indicates the abnormality of the meter's current behavior. With t
 
 {% include images-gallery.html imageCollection="create-anomaly-alarm" %}
 
-## Next Steps
+### Next Steps
 
 {% assign currentGuide = "GettingStartedGuide" %}{% include templates/trndz-guides-banner.md %}

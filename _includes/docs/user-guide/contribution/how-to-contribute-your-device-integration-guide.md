@@ -5,7 +5,7 @@ Our website is open-sourced. You may find the code of in this [repo](https://git
 * TOC
 {:toc}
 
-## What is fork
+### What is fork
 
 If you are not familiar with GitHub, please read their documentation or ask a colleague who has an expertise before you proceed.
 If you have enough knowledge then go through further steps. Ensure that you already have a [GitHub](https://github.com/) account, and you successfully logged in.
@@ -19,7 +19,7 @@ If you have enough knowledge then go through further steps. Ensure that you alre
 
 Whe-e! Starting now you have a copy of our website in your private GitHub repository.
 
-## Local deployment of ThingsBoard documentation repo (website)
+### Local deployment of ThingsBoard documentation repo (website)
 
 Now you can launch the website on your local machine to see the up-to-date version.
 thingsboard.io uses jekyll site generator. So, in order to run the website on localhost you need a jekyll server installed.
@@ -60,7 +60,7 @@ or execute the below script from the project root directory:
 Your copy of the site will then be viewable at: **http://localhost:4000**
 (or wherever Jekyll tells you).
 
-## Integration guide pattern
+### Integration guide pattern
 
 Use this [Sample](/docs/samples/sample/sample) as a base for your guide. This page is located in a path "/docs/samples/sample/sample.md"
 
@@ -97,11 +97,11 @@ Where:
     "https://www.YOUR_SITE.com/" - Site of your company/integration.
     "/docs/samples/PATH_TO_YOUR_GUIDE-FILE_FROM_STEP_3/GUIDE-FILE/" - Full path with file name from Repository root.
 
-## Push changes & create Pull Request
+### Push changes & create Pull Request
 
 * [Step 1] [Push changes to your fork](/docs/user-guide/contribution/how-to-contribute/#push-changes-to-your-fork).
 * [Step 2] [Create pull request](/docs/user-guide/contribution/how-to-contribute/#create-pull-request).
 
-## Optional steps
+### Optional steps
 
 You may notify us about your Pull Request (with Pull Request #) via [Contact us](/docs/contact-us/) form or in any other way.

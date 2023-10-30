@@ -35,7 +35,7 @@ export TB_API_URL=http://localhost:9090
     
 For docker installations - update environment variable ``TB_API_URL`` with the correct value.   
 
-## Authentication and Security
+### Authentication and Security
 Trendz uses ThingsBoard as an authentication service. Any Tenant Administrator or Customer User can sign in into Trendz UI using their login\password that they use for authentication in the ThingsBoard.
 
 Same security restrictions that are configured on the ThingsBoard works in the Trendz Analytics. 
@@ -44,7 +44,7 @@ Same security restrictions that are configured on the ThingsBoard works in the T
 - **Customer user** has access only to those Devices/Assets that they have permissions to view
 
 
-## Topology Discovery
+### Topology Discovery
 Trendz Topology represents the business model of Devices/Assets that was created in ThingsBoard. 
 Topology defines dimensions/fields that used for building visualizations and relation between Devices/Assets.
 Here are the core components of Trendz Topology:
@@ -89,6 +89,6 @@ It may be useful in case when the same devices/assets represent different aspect
 By separating debug events from environment measurements into isolated Business Entities it becomes easier to build visualizations focused on a single aspect of your solution.
 
 
-## Next Steps
+### Next Steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

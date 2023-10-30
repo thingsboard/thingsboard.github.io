@@ -10,12 +10,12 @@
 
 
 ## Overview
-**AWS Kinesis** provides easily collect, process, and analyze video and data streams in real time, so you can get timely insights and react quickly to new information. 
+**AWS Kinesis** provides easily collect, process, and analyze video and data streams in real time, so you can get timely insights and react quickly to new information.
 After integrating **AWS Kinesis** with the **Thingsboard**, you can process and visualize data from **AWS Kinesis** streams in the **Thingsboard IoT platform**.
 
 Please make sure that you know [AWS Kinesis basics](https://docs.aws.amazon.com/streams/latest/dev/introduction.html){:target="_blank"} and what are the **AWS Kinesis streams** in general before continue with this topic.
 
-## AWS Kinesis setup
+### AWS Kinesis setup
 
 ##### Install and configure AWS CLI
 The first step is to obtain [AWS Access Keys](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys){:target="_blank"} for your AWS account. Access key to your AWS account must be able to create **AWS Kinesis** stream, put data to the stream and get data from the stream. Please go to [Managing Access Keys for Your AWS Account Root User](https://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html){:target="_blank"} to create your AWS access key.
@@ -164,7 +164,7 @@ The output should be similar to this:
 }
 {% endhighlight %}
 
-## Integration with the Thingsboard
+### Integration with the Thingsboard
 We have done all necessary steps on the AWS Kinesis side. Now we can start configuring the Thingsboard.
 
 ##### Thingsboard Uplink Data Converter
@@ -275,7 +275,7 @@ Next we will create Integration with AWS Kinesis inside the Thingsboard. Open **
 
 ![image](https://img.thingsboard.io/user-guide/integrations/aws-kinesis/aws-kinesis-add-integration_2.png)
 
-## Validation
+### Validation
 
 ##### Validate Uplink Messages
 Lets verify our integration. First, lets put message into uplink stream, so Thingsboard will fetch this message. 
@@ -357,7 +357,7 @@ As Kinesis uses **Base64** for data presentation, we need to use some [online Ba
 
 Now other application is able to listen to this downlink stream and react accordingly to your business logic.
 
-## See also
+### See also
 With this integration you can also configure Downlink converters and trigger required actions using Rule Engine nodes.
 
 - [Integration Overview](/docs/{{peDocsPrefix}}user-guide/integrations/)
@@ -366,6 +366,6 @@ With this integration you can also configure Downlink converters and trigger req
 - [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/)
 
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

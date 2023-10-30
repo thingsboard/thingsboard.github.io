@@ -19,7 +19,7 @@ We have one device per room (zone) in the building or other facility and we want
 
 We assume you have already configured email plugin that will distribute generated alarms to recipients. You can follow previous [tutorial](/docs/samples/alarms/mail/) to do this. 
 
-## How it works?
+### How it works?
 
 We will provision simple rule that filters incoming data using:
  
@@ -27,7 +27,7 @@ We will provision simple rule that filters incoming data using:
  - "Device Attributes" filter to process data from a device that has certain room type as a server side attribute.
  - "Device Telemetry" filter to detect humidity and temperature values that are out of pre-configured range.
 
-## Device provisioning
+### Device provisioning
 
 Let's create a Device and provision certain server-side attributes: ZoneId and ZoneType.
 
@@ -48,7 +48,7 @@ Click on the highlighted "+" button. Add two attributes "ZoneId" and "ZoneType" 
 ![image](https://img.thingsboard.io/samples/alarms/zone-id.png)
 ![image](https://img.thingsboard.io/samples/alarms/zone-type.png)
 
-## Rule configuration
+### Rule configuration
 
 #### Step 3. Create "Server Room Monitoring" Rule
 
@@ -130,7 +130,7 @@ Once a rule is saved successfully, don't forget to activate it by clicking on "A
 
 ![image](https://img.thingsboard.io/samples/alarms/activate-rule.png)
 
-## Dry run
+### Dry run
 
 Let's check our configuration by publishing some telemetry data. We will use access token from the device that we have created in the [first step](#step1-create-device).
  
@@ -138,7 +138,7 @@ Let's check our configuration by publishing some telemetry data. We will use acc
 mosquitto_pub -d -h "demo.thingsboard.io" -t "v1/devices/me/telemetry" -u "$YOUR_ACCESS_TOKEN" -m "{'temperature':42, 'humidity':74}"
 ```
 
-## Troubleshooting
+### Troubleshooting
 
 If you have configured something wrong, you should see errors logged on the corresponding tab:
 

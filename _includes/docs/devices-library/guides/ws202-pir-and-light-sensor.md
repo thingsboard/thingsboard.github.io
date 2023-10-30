@@ -17,7 +17,7 @@
 '
  %}
 
-## Introduction
+### Introduction
 
 ![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [WS202 PIR & Light Sensor]({{deviceVendorLink}}){: target="_blank"} is a PIR sensor based on passive infrared technology to detect a motion or occupancy.  
@@ -30,14 +30,14 @@ LoRaWAN® enables encrypted radio transmissions over long distances while consum
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 <br>
 
-## Prerequisites
+### Prerequisites
 
 To continue with this guide we will need the following:  
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
 
-## Device connection
+### Device connection
 
 According to the [official user manual]({{officialManualLink}}){: target="_blank"}, we need a smartphone with NFC enabled and the ToolBox application to connect the sensor.  
 Since this device can only be operated using a LoRaWAN® gateway, we must first connect it to a network server that has an integration configured with ThingsBoard.  
@@ -65,6 +65,6 @@ Loriot
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/ws202-pir-and-light-sensor-check-data-block.md %}
 
-## Conclusion
+### Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}

@@ -10,7 +10,7 @@ description: Installing ThingsBoard Trendz Analytics on Windows
 * TOC
 {:toc}
 
-### Prerequisites
+## Prerequisites
 
 This guide describes how to install Trendz Analytics on a Windows machine.
 Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit. 

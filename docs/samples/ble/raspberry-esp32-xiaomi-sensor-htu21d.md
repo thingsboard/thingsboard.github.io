@@ -18,7 +18,7 @@ Data is collected by a python script that is running on [Raspberry Pi](https://e
 
   ![Ble diagram](https://img.thingsboard.io/samples/ble/ble-diagram.png)
 
-## List of hardware
+### List of hardware
 
 * [ESP32-PICO-KIT](https://www.espressif.com/en/products/hardware/development-boards)
 
@@ -36,7 +36,7 @@ Data is collected by a python script that is running on [Raspberry Pi](https://e
 
 * Xiaomi Smart Temperature & Humidity Sensor
 
-## Hardware setup
+### Hardware setup
 
 ### ESP32 Wiring scheme
 
@@ -67,7 +67,7 @@ Whole setup:
 
   ![Ble diagram](https://img.thingsboard.io/samples/ble/setup.jpg)
 
-## Preparing ESP32
+### Preparing ESP32
 
 ### Application capabilities
 
@@ -172,10 +172,10 @@ I (157) GATTS_DEMO: starting ESP gatt demo
 
 ```
 
-## Preparing MI Sensor
+### Preparing MI Sensor
 Install the battery in sensor.
 
-## Preparing Raspberry Pi
+### Preparing Raspberry Pi
 Demo script scans for available BLE devices and connects to them. It can read a direct value of BLE characteristic from ESP and receive notifications from both ESP and Mi. If needed, a re-scan command can be issues from the dashboard to connect to new devices.
 
 ### Implementation details
@@ -195,7 +195,7 @@ sudo apt-get install libglib2.0-dev
 sudo pip3 install tb-ble-adapter
 ```
 
-## Device provisioning
+### Device provisioning
 Run python script **before** importing dashboard. For this you have to [**create**](/docs/iot-gateway/getting-started/) gateway device and specify it in command arguments:
 ```
 sudo tb_ble_adapter -t $GATEWAY_ACCESS_TOKEN
@@ -287,7 +287,7 @@ It creates devices:
 ![Created devices](https://img.thingsboard.io/samples/ble/created_devices.png)
 
 
-## Provision your dashboard
+### Provision your dashboard
 Download the dashboard file using this [**link**](/docs/samples/ble/resources/device_gw.json). Now you have to import it. To do this, configure aliases in such way (use gateway device from [**Device provisioning**](#device-provisioning) section):
 
   ![Configure aliases](https://img.thingsboard.io/samples/ble/configure-aliases.png)
@@ -298,7 +298,7 @@ Download the dashboard file using this [**link**](/docs/samples/ble/resources/de
 
 Also this dashboard needs a custom widget bundle. Download it with this [**link**](/docs/samples/ble/resources/custom_widget.json) and import using import/export [**instructions**](/docs/user-guide/ui/widget-library/).
 
-## Data visualization
+### Data visualization
 Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator.
 
 In case of local installation:
@@ -319,10 +319,10 @@ After, open **“Dashboards”** section and find previously imported dashboard 
 
   ![Dashboard](https://img.thingsboard.io/samples/ble/dashboard.png)
 
-## Troubleshooting
+### Troubleshooting
 In order to perform troubleshooting, you must check demo script output. It displays connection status with every device, as well as received and sent data.
 
-## See also
+### See also
 Browse other  [samples](/docs/samples)  or explore guides related to main ThingsBoard features:
 
 *   [Device attributes](/docs/user-guide/attributes/)  - how to use device attributes.
@@ -335,7 +335,7 @@ Browse other  [samples](/docs/samples)  or explore guides related to main Things
 
 {% include socials.html %}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
 
