@@ -3,12 +3,26 @@
 
 {% include head-header.html productTag="paas" %}
 <!--  HERO  -->
-<section id="hero" class="light-text"
+<section id="hero" class="light-text desktop"
          data-vide-bg="mp4: https://video.thingsboard.io/pe-cover.mp4,
                        webm: https://video.thingsboard.io/pe-cover.webm,
                        ogv: https://video.thingsboard.io/pe-cover.ogv,
                        poster: https://img.thingsboard.io/pe-cover.jpg"
-         data-vide-options="bgColor: #000000, loop: true, muted: true, posterType: jpg">
+         data-vide-options="bgColor: #000000, loop: true, muted: true, posterType: jpg"
+         style="display: block;">
+    <div class="video-cover"></div>
+    <div id="hero-content">
+        <span class="header-animation paas-title">ThingsBoard Cloud</span>
+        <div class="header-animation">
+            <a href="/pricing/" class="button try-paas">Try it now</a>
+        </div>
+        <div class="paas-arrow">
+            <a href="#intro"><i class="fa fa-chevron-down fa-2x" aria-hidden="true"></i></a>
+        </div>
+    </div>
+</section>
+
+<section id="hero" class="light-text mobile"  style="background: center no-repeat url(https://img.thingsboard.io/pe-cover.jpg); display: none;">
     <div class="video-cover"></div>
     <div id="hero-content">
         <span class="header-animation paas-title">ThingsBoard Cloud</span>
@@ -28,6 +42,29 @@
 </section>
 
 {% include footer.html %}
+
+<style>
+	.cse .gsc-control-cse, .gsc-control-cse {
+		padding: 0;
+	}
+
+	#rule-engine .rule.hidden {
+		display: none
+	}
+</style>
+
+<script>
+	var isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+	var videoElement = document.querySelector('#hero.light-text.desktop');
+	var staticImage = document.querySelector('#hero.light-text.mobile');
+	if (isMobile) {
+		videoElement.style.display = 'none';
+		staticImage.style.display = 'block';
+	} else {
+		videoElement.style.display = 'block';
+		staticImage.style.display = 'none';
+	}
+</script>
 
 <script type="text/javascript">
     jqueryDefer(function () {
