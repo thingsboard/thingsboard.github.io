@@ -1,8 +1,8 @@
 ---
-layout: custom-development-reviews
+layout: development-services-reviews
 title: Customers' full reviews
 notitle: "true"
-description: Custom development customers' reviews
+description: Development services customers' reviews
 
 ---
 
@@ -10,7 +10,7 @@ description: Custom development customers' reviews
 </section>
 <section id="review-asg" class="full-review">
     <div class="content-wrapper">
-        <button class="back-button" onclick="window.location.href='/docs/services/custom-development/';">
+        <button class="back-button" onclick="window.location.href='/docs/services/development-services/';">
             <span class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" viewBox="0 0 22 16" fill="none"><path d="M0.28545 7.23852L6.35409 0.381616C6.74482 -0.0863449 7.51712 -0.128037 7.97021 0.27929C8.42329 0.686613 8.469 1.46369 8.04903 1.90537L3.6635 6.85758H20.8621C21.4905 6.85758 22 7.36926 22 8.0004C22 8.63158 21.4905 9.14322 20.8621 9.14322H3.6635L8.04903 14.0954C8.469 14.5371 8.4122 15.3128 7.95912 15.7201C7.50603 16.1274 6.74482 16.0871 6.35409 15.6192L0.28545 8.76228C-0.110773 8.2079 -0.0791988 7.7102 0.28545 7.23852Z" fill="#727381"/></svg>
             </span>
@@ -24,7 +24,7 @@ description: Custom development customers' reviews
         </div>
         <div class="review">
             <div class="logo">
-                <img src="/images/custom-development/logo-asg-tech.svg" alt=""/>
+                <img src="/images/development-services/logo-asg-tech.svg" alt=""/>
             </div>
             <div class="review-header">Exceptional experience working with ThingsBoard's unit</div>
             <div class="review-body"><h6>We are delighted to share our exceptional experience working with ThingsBoard's development unit for custom widget development. As a company specializing in delivering innovative IoT solutions, working with ThingsBoard Professional Edition platform, we sought their expertise to reduce our time to market. From the initial estimation to the final delivery, ThingsBoard's development team demonstrated remarkable professionalism and technical prowess.</h6>
@@ -40,7 +40,7 @@ description: Custom development customers' reviews
     <div class="content-wrapper">
         <div class="review">
             <div class="logo">
-                <img src="/images/custom-development/logo-kalitec.svg" alt=""/>
+                <img src="/images/development-services/logo-kalitec.svg" alt=""/>
             </div>
             <div class="review-header">Very professional in its approach to projects</div>
             <div class="review-body">
@@ -62,7 +62,7 @@ description: Custom development customers' reviews
     <div class="content-wrapper">
         <div class="review">
             <div class="logo">
-                <img src="/images/custom-development/logo-super-bock-group.svg" alt=""/>
+                <img src="/images/development-services/logo-super-bock-group.svg" alt=""/>
             </div>
             <div class="review-header">Impressed by professionalism, knowledge, and commitment</div>
             <div class="review-body">
@@ -81,7 +81,7 @@ description: Custom development customers' reviews
     <div class="content-wrapper">
         <div class="review">
             <div class="logo">
-                <img src="/images/custom-development/logo-iona-tech.svg" alt=""/>
+                <img src="/images/development-services/logo-iona-tech.svg" alt=""/>
             </div>
             <div class="review-header">Expertise, attention to detail, and client satisfaction</div>
             <div class="review-body">

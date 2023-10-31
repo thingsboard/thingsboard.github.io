@@ -1,8 +1,8 @@
 ---
-layout: custom-development
-title: Custom development
+layout: development-services
+title: Development services
 notitle: "true"
-description: Custom development of solutions by the custom development team
+description: Custom IOT solutions
 
 ---
 <section class="hero light-text">
@@ -17,23 +17,23 @@ description: Custom development of solutions by the custom development team
             <div class="image-wrapper-icon-laptop">
                 <img 
                     id="icon-laptop"
-                    srcset="/images/custom-development/laptop-with-dashboard_360x230_1x.png 360w, /images/custom-development/laptop-with-dashboard_560x358_1x.png 560w, /images/custom-development/laptop-with-dashboard_1127x720_1x.png 1127w, /images/custom-development/laptop-with-dashboard_2254x1440_2x.png 2254w"
+                    srcset="/images/development-services/laptop-with-dashboard_360x230_1x.png 360w, /images/development-services/laptop-with-dashboard_560x358_1x.png 560w, /images/development-services/laptop-with-dashboard_1127x720_1x.png 1127w, /images/development-services/laptop-with-dashboard_2254x1440_2x.png 2254w"
                     sizes="(max-width: 671px) 360px, (max-width: 999px) 560px, (min-width: 1000px)  1127px, 2254px"
-                    src="/images/custom-development/laptop-with-dashboard_1127x720_1x.png"
+                    src="/images/development-services/laptop-with-dashboard_1127x720_1x.png"
                     alt="Laptop with a dashboard"/>
                 <button class="button schedule anchor-button" data-href="#get-in-touch">Schedule a call</button>
             </div>
             <div class="image-wrapper-icon-phone">
                 <img  
                     id="icon-phone"
-                    srcset="/images/custom-development/phone-with-dashboard_459x552_1x.png 1x, /images/custom-development/phone-with-dashboard_918x1104_2x.png 2x"
-                    src="/images/custom-development/phone-with-dashboard_459x552_1x.png" 
+                    srcset="/images/development-services/phone-with-dashboard_459x552_1x.png 1x, /images/development-services/phone-with-dashboard_918x1104_2x.png 2x"
+                    src="/images/development-services/phone-with-dashboard_459x552_1x.png" 
                     alt="Phone with a dashboard"/>
             </div>
             <div class="schedule-block">
                 <img
                     id="progress"
-                    src="/images/custom-development/half-circle-progress.svg" 
+                    src="/images/development-services/half-circle-progress.svg" 
                     alt="half cicrle progress icon"/>
                 <span class="result-number">100%</span>
                 <span class="result-text">We offer time-guaranteed result</span>
@@ -47,19 +47,19 @@ description: Custom development of solutions by the custom development team
     <h1 class="title">We created solutions for:</h1>
     <div class="customer-logos">
         <div class="logo">
-            <img src="/images/custom-development/logo-kalitec.svg" alt="logo kalitec"/>
+            <img src="/images/development-services/logo-kalitec.svg" alt="logo kalitec"/>
         </div>
         <div class="logo">
-            <img src="/images/custom-development/logo-super-bock-group.svg" alt="logo super bock group"/>
+            <img src="/images/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
         </div>
         <div class="logo">
-            <img src="/images/custom-development/logo-asg-tech.svg" alt="logo asg tech"/>
+            <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
         </div>
         <div class="logo">
-            <img src="/images/custom-development/logo-asl.svg" alt="logo asl"/>
+            <img src="/images/development-services/logo-asl.svg" alt="logo asl"/>
         </div>
         <div class="logo">
-            <img src="/images/custom-development/logo-iona-tech.svg" alt="logo iona tech"/>
+            <img src="/images/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
         </div>
     </div>
 </section>
@@ -78,23 +78,23 @@ description: Custom development of solutions by the custom development team
             <div class="left-block">
                 <img
                     id="solution-poc"
-                    srcset="/images/custom-development/solution-coinify_mobile.png 360w, /images/custom-development/solution-coinify.png 1900w"
+                    srcset="/images/development-services/solution-coinify_mobile.png 360w, /images/development-services/solution-coinify.png 1900w"
                     sizes="(max-width: 672px) 360px, 1900px"
-                    src="/images/custom-development/solution-coinify.png"
+                    src="/images/development-services/solution-coinify.png"
                     alt="Custom solution">
                 <img 
                     id="solution-widget-1"
                     class="absolute-image secondary-image"
-                    srcset="/images/custom-development/solution-widget-1_mobile.png 360w, /images/custom-development/solution-widget-1.png 1920w"
+                    srcset="/images/development-services/solution-widget-1_mobile.png 360w, /images/development-services/solution-widget-1.png 1920w"
                     sizes="(max-width: 672px) 360px, 1920px"
-                    src="/images/custom-development/solution-widget-1.png"
+                    src="/images/development-services/solution-widget-1.png"
                     alt="Custom solution widget pie chart">
                 <img
                     id="solution-widget-2"
-                    srcset="/images/custom-development/solution-widget-2_mobile.png 360w, /images/custom-development/solution-widget-2.png 1920w"
+                    srcset="/images/development-services/solution-widget-2_mobile.png 360w, /images/development-services/solution-widget-2.png 1920w"
                     sizes="(max-width: 672px) 360px, 1920px"
                     class="absolute-image secondary-image"
-                    src="/images/custom-development/solution-widget-2.png"
+                    src="/images/development-services/solution-widget-2.png"
                     alt="Custom solution widet value card with graph">
             </div>
             <div class="right-block">
@@ -108,7 +108,7 @@ description: Custom development of solutions by the custom development team
                     <li>1 type of user role</li>
                 </ul>
             </div>
-            <img id="number-one" class="absolute-image" src="/images/custom-development/number-1.svg" alt="background number one">
+            <img id="number-one" class="absolute-image" src="/images/development-services/number-1.svg" alt="background number one">
         </div>
     </div>
     <div id="content-mvp" class="content-wrapper">
@@ -127,19 +127,19 @@ description: Custom development of solutions by the custom development team
             <div class="right-block">
                 <img
                     id="solution-mvp1"
-                    srcset="/images/custom-development/solution-mvp_mobile.png 360w, /images/custom-development/solution-mvp.png 1920w"
+                    srcset="/images/development-services/solution-mvp_mobile.png 360w, /images/development-services/solution-mvp.png 1920w"
                     sizes="(max-width: 672px) 360px, 1920px"
-                    src="/images/custom-development/solution-mvp.png"
+                    src="/images/development-services/solution-mvp.png"
                     alt="Custom solution mvp">            
                 <img 
                     id="solution-widget-3"
-                    srcset="/images/custom-development/solution-widget-3_mobile.png 360w, /images/custom-development/solution-widget-3.svg 1920w"
+                    srcset="/images/development-services/solution-widget-3_mobile.png 360w, /images/development-services/solution-widget-3.svg 1920w"
                     sizes="(max-width: 672px) 360px, 1920px"
                     class="absolute-image secondary-image"
-                    src="/images/custom-development/solution-widget-3.svg"
+                    src="/images/development-services/solution-widget-3.svg"
                     alt="Custom solution widget dark card with pie chart">
             </div>
-            <img id="number-two" class="absolute-image" src="/images/custom-development/number-2.svg" alt="Background number two">
+            <img id="number-two" class="absolute-image" src="/images/development-services/number-2.svg" alt="Background number two">
         </div>
     </div>
     <div id="content-market-solution" class="content-wrapper">
@@ -147,16 +147,16 @@ description: Custom development of solutions by the custom development team
             <div class="left-block">
                 <img
                     id="solution-market-solution1"
-                    srcset="/images/custom-development/solution-market-solution_mobile.png 360w, /images/custom-development/solution-market-solution.png 1920w"
+                    srcset="/images/development-services/solution-market-solution_mobile.png 360w, /images/development-services/solution-market-solution.png 1920w"
                     sizes="(max-width: 672px) 360px, 1920px"
-                    src="/images/custom-development/solution-market-solution.png"
+                    src="/images/development-services/solution-market-solution.png"
                     alt="Custom solution market solution">            
                 <img 
                     id="solution-market-solution2"
                     class="absolute-image base-image"
-                    srcset="/images/custom-development/solution-market-solution2_mobile.png 360w, /images/custom-development/solution-market-solution2.png 1920w"
+                    srcset="/images/development-services/solution-market-solution2_mobile.png 360w, /images/development-services/solution-market-solution2.png 1920w"
                     sizes="(max-width: 672px) 360px, 1920px"
-                    src="/images/custom-development/solution-market-solution2.png"
+                    src="/images/development-services/solution-market-solution2.png"
                     alt="Custom solution market solution: dashboard with trucks">
             </div>
             <div class="right-block">
@@ -170,7 +170,7 @@ description: Custom development of solutions by the custom development team
                     <li>External system integrations (e.g. Billing system, analytic system, etc.)</li>
                 </ul>
             </div>
-            <img id="number-three" class="absolute-image" src="/images/custom-development/number-3.svg" alt="Background number three">
+            <img id="number-three" class="absolute-image" src="/images/development-services/number-3.svg" alt="Background number three">
         </div>
     </div>
     <div class="content-wrapper">
@@ -212,7 +212,7 @@ description: Custom development of solutions by the custom development team
             <div class="reviews-carousel owl-carousel owl-theme">
                 <div class="review">
                     <div class="logo">
-                        <img src="/images/custom-development/logo-asg-tech.svg" alt="logo asg tech"/>
+                        <img src="/images/development-services/logo-asg-tech.svg" alt="logo asg tech"/>
                     </div>
                     <div class="review-header">Exceptional experience working with ThingsBoard's unit</div>
                     <div class="review-body">
@@ -222,7 +222,7 @@ description: Custom development of solutions by the custom development team
                 </div>
                 <div class="review">
                     <div class="logo">
-                        <img src="/images/custom-development/logo-kalitec.svg" alt="logo kalitec"/>
+                        <img src="/images/development-services/logo-kalitec.svg" alt="logo kalitec"/>
                     </div>
                     <div class="review-header">Very professional in its approach to projects</div>
                     <div class="review-body">
@@ -232,7 +232,7 @@ description: Custom development of solutions by the custom development team
                 </div>
                 <div class="review">
                     <div class="logo">
-                        <img src="/images/custom-development/logo-super-bock-group.svg" alt="logo super bock group"/>
+                        <img src="/images/development-services/logo-super-bock-group.svg" alt="logo super bock group"/>
                     </div>
                     <div class="review-header">Impressed by professionalism, knowledge, and commitment</div>
                     <div class="review-body">
@@ -242,7 +242,7 @@ description: Custom development of solutions by the custom development team
                 </div>
                 <div class="review">
                     <div class="logo">
-                        <img src="/images/custom-development/logo-iona-tech.svg" alt="logo iona tech"/>
+                        <img src="/images/development-services/logo-iona-tech.svg" alt="logo iona tech"/>
                     </div>
                     <div class="review-header">Expertise, attention to detail, and client satisfaction</div>
                     <div class="review-body">
