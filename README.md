@@ -161,8 +161,6 @@ docker run -it --rm --network=host ghcr.io/linkchecker/linkchecker --check-exter
 
 ## Update pages in _includes/docs/pe/user-guide/install directory in accordance with thingsboard/thingsborad-pe repositories: 
 
-Use the following command from the project root directory to regenerate configuration pages:
+Use the following command from the project root directory to regenerate configuration pages (first script parameter is TB version: 'ce' or 'pe', second parameter is relative path to TB repository):
     
-    python3 generate_config_pages.py
-
-Script execution will ask you to input path to the thingsboard/thingsboard-pe repository.
+    python3 generate_config_pages.py ce ../thingsboard
