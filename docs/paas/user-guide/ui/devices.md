@@ -30,7 +30,7 @@ device-details-pe:
         title: 'Clicking the device row to open its details, then you can manage credentials of the device, delete device, copy its ID and access token, and edit the device.
                 To edit the device click the "pencil" icon in the upper right corner of the dialog.'
     1:
-        image: /images/user-guide/ui/devices/pe/device-details-1-pe.png
+        image: /images/user-guide/ui/devices/pe/device-details-1-ce.png
         title: 'Change name of the device and its profile. Also, you can input label and description, or check the Is gateway box.'
     2:
         image: /images/user-guide/ui/devices/pe/device-details-2-pe.png
@@ -74,4 +74,4 @@ device-delete-pe:
 ---
 
 {% assign docsPrefix = "paas/" %}
-{% include docs/user-guide/ui/devices-pe.md %}
+{% include docs/user-guide/ui/devices.md %}
