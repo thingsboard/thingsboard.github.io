@@ -4,17 +4,19 @@
 Templatization is the process of using predefined templates to dynamically insert or substitute values into text.
 These templates serve as placeholders for variables that can be filled in later with actual data. 
 
-In the context of rule engine, it allows for dynamic configuration of rule nodes by replacing static values in the configuration fields 
-with real-time values from the incoming message or its metadata. 
+In the context of rule engine, templates are used to extract data from incoming messages during runtime. 
+This is particularly helpful in the rule node configuration, where templatization allows for dynamic configuration by replacing static values in the configuration fields with real-time values from the incoming messages. 
 This enables more flexible and automated handling of data, making it easier to perform conditional operations based on varying inputs.
 
 ## Syntax
 
-Templates start with a dollar sign (`$`), followed by brackets. 
-Square brackets (`[]`) are used for message keys, while curly brackets (`{}`) are used for message metadata keys. Inside the brackets, specify the key name you're interested in. 
-For example, `$[messageKey]` - message template, `${metadataKey}` - metadata template. 
-`messageKey` and `metadataKey` represent any key name that may exist within the message or its metadata.
-Also, templates can be combined with regular text. For example: "Fuel tanks are filled to `$[fuelLevel]`%".
+Templates start with a dollar sign (`$`), followed by brackets with a key name inside.
+Square brackets (`[]`) are used for message keys, while curly brackets (`{}`) are used for message metadata keys.
+For example: 
+- `$[messageKey]` - will extract value of `messageKey` from incoming message.
+- `${metadataKey}` - will extract value of `metadataKey` from incoming message metadata.
+
+In the example above, `messageKey` and `metadataKey` represent any key name that may exist within the message or its metadata.
 
 ## Example
 
@@ -51,6 +53,7 @@ Templates are ideal for scenarios where the specific values aren't known at the 
 
 ## Notes
 
+- Templates can be combined with regular text. For example: "Fuel tanks are filled to `$[fuelLevel]`%".
 - You can access nested keys in JSON object using dot notation: `$[object.key]`.
 - If specified key is missing or value associated with that key is an object or an array, then template string will be returned unchanged.
 
