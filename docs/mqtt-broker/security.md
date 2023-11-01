@@ -14,7 +14,7 @@ security-authentication:
 security-authorization:
   0:
     image: /images/mqtt-broker/features/security-authorization-1.png
-    title: "'Basic' authorization rules examples."
+    title: 'Basic authorization rules examples.'
   2:
     image: /images/mqtt-broker/features/security-authorization-3.png
     title: 'TLS authorization rules examples.'
