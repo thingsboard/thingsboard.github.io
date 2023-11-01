@@ -298,9 +298,9 @@ list = new java.util.ArrayList(); // Not allowed
 To simplify migration from the JS, we have added the `JSON` class with static methods: `JSON.stringify` and `JSON.parse` that work similar to JS. For example:
 For the same purpose, we have added `Date` class that you are able to use without the package name.
 
-#### Date (prototype JavaScript Date and Java Date).
+#### Date (prototype JavaScript Date and Java Date)
 
-Date - this is formatting instant using Core Java. According to the [Java documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Instant.html), an instant is a measured timestamp from the Java epoch of 1970-01-01T00:00:00Z.
+**Date** - this is formatting instant using Core Java. According to the [Java documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Instant.html), an instant is a measured timestamp from the Java epoch of 1970-01-01T00:00:00Z.
 
 **Methods**
 
@@ -308,48 +308,105 @@ There are various methods that allow you to interact with the timestamp stored i
 
  - [An example using the JS format](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date).
 
- - [An example using the Java DateTimeFormatter](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html).
+ - [An example using the Java](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html).
 
 Let's look at some examples formatting date using Core Java:
 
-**var d = new Date(23, 9, 7, 8, 4, 5, "-04:00")**:
+Command:
 
-| **Command**                                 | **Result**                                    |
-|:--------------------------------------------|:----------------------------------------------|
-| d.toZonedDateTimeString()                   | "2023-09-07T12:04:05Z[UTC]"                   |
-| d.toZonedDateTimeString("America/New_York") | "2023-09-07T08:04:05-04:00[America/New_York]" |
-| d.toZonedDateTimeString("Europe/Berlin")    | "2023-09-07T14:04:05+02:00[Europe/Berlin]";   |
-| d.toZonedDateTimeString("Etc/GMT-14")       | "2023-09-08T02:04:05+14:00[Etc/GMT-14]";      |
-| d.toZonedDateTimeString("Etc/GMT+12")       | "2023-09-07T00:04:05-12:00[Etc/GMT+12]";      |
+```java
+var d = new Date(23, 9, 7, 8, 4, 5, "-04:00");
+```
+{: .copy-code}
+
+Example:
+
+```java
+var d = new Date(23, 9, 7, 8, 4, 5, "-04:00");
+d.toZonedDateTimeString("Europe/Berlin")
+```
+
+Result:
+
+```java
+"2023-09-07T14:04:05+02:00[Europe/Berlin]"
+```
+
+The output String format for the date "September 7 2023... for timeZone "-04:00"" with different timeZones can be found in the table.
+
+The date:
+
+```java
+var d = new Date(2023, 9, 7, 8, 4, 5, "-04:00");
+```
+{: .copy-code}
+
+Command with different timeZones:
+
+| **Command**                                   | **Result**                                      |
+|:----------------------------------------------|:------------------------------------------------|
+| d.toZonedDateTimeString()                     | "2023-09-07T12:04:05Z[UTC]"                     |
+| d.toZonedDateTimeString("`America/New_York`") | "2023-09-07T08:04:05-04:00[America/New_York]"   |
+| d.toZonedDateTimeString("`Europe/Berlin`")    | "2023-09-07T14:04:05+02:00[Europe/Berlin]"      |
+| d.toZonedDateTimeString("`Etc/GMT-14`")       | "2023-09-08T02:04:05+14:00[Etc/GMT-14]"         |
+| d.toZonedDateTimeString("`Etc/GMT+12`")       | "2023-09-07T00:04:05-12:00[Etc/GMT+12]"         |
 | ---
 
-**DateTimeFormatter.ISO_INSTANT**:
+*An example using the Pattern:*
 
-| **Command**                                                         | **Result**              |
-|:--------------------------------------------------------------------|:------------------------|
-| d.toZonedDateTimeFormatterString("ISO_INSTANT","America/New_York")  | "2023-09-07T12:04:05Z"  |
-| ---
+Command for `pattern = "h:mm:ss a"`
 
-**DateTimeFormatter.ISO_OFFSET_DATE_TIME**:
+```java
+var d = new Date(23, 9, 7, 8, 4, 5, "-04:00");
+var option = {};
+option.timeZone = "America/New_York";
+option.pattern = "h:mm:ss a";
+d.toString("en-US", JSON.stringify(option));
+```
+{: .copy-code}
 
-| **Command**                                                                 | **Result**                  |
-|:----------------------------------------------------------------------------|:----------------------------|
-| d.toZonedDateTimeFormatterString("ISO_OFFSET_DATE_TIME","America/New_York") | "2023-09-07T08:04:05-04:00" |
-| ---
+Result:
 
-**DateTimeFormatter.RFC_1123_DATE_TIME**:
+```java
+"8:04:05 AM"
+```
 
-| **Command**                                                               | **Result**                        |
-|:--------------------------------------------------------------------------|:----------------------------------|
-| d.toZonedDateTimeFormatterString("RFC_1123_DATE_TIME","America/New_York") | "Thu, 7 Sep 2023 08:04:05 -0400"  |
-| ---
+Command for `pattern = "EEEE M/d/yyyy"`
 
-**DateTimeFormatter.ISO_OFFSET_DATE_TIME**:
+```java
+var d = new Date(23, 9, 7, 8, 4, 5, "-04:00");
+var option = {};
+option.timeZone = "America/New_York";
+option.pattern = "EEEE M/d/yyyy";
+d.toString("en-US", JSON.stringify(option));
+```
+{: .copy-code}
 
-| **Command**                                                              | **Result**                  |
-|:-------------------------------------------------------------------------|:----------------------------|
-| d.toZonedDateTimeFormatterString("ISO_OFFSET_DATE_TIME","Europe/Berlin") | "2023-09-07T14:04:05+02:00" |
-| ---                                                                      
+Result:
+
+```java
+"Thursday 9/7/2023"
+```
+
+*An example using the dateStyle/timeStyle:*
+
+Command:
+
+```java
+var d = new Date(23, 9, 7, 8, 4, 5, "-04:00");
+var option = {};
+option.timeZone = "America/New_York";
+option.dateStyle = "full";
+option.timeStyle = "full";
+d.toString("en-US",, JSON.stringify(option))
+```
+{: .copy-code}
+
+Result:
+
+```java
+"Thursday, September 7, 2023 at 8:04:05 AM Eastern Daylight Time"
+```
 
 **Please note:**
 
@@ -357,29 +414,37 @@ Let's look at some examples formatting date using Core Java:
 
 **2.** If the year is entered as two digits:
 
--- year < 70 will be formatted as 2000 + year
+*-- year < 70 will be formatted as 2000 + year*
 
-```text
-Date d = new Date(22, 12, 31, 23,15,30, 560);
-d.getFullYear() => 2022
+Command:
+
+```java
+var d = new Date(22, 12, 31, 23,15,30, 560);
+d.getFullYear()
+```
+{: .copy-code}
+
+Result:
+
+```java
+2022
 ```
 
--- year >= 70 end <= 99 will be formatted as 1900 + year
+*-- year >= 70 end <= 99 will be formatted as 1900 + year*
 
-```text
-Date d = new Date(75, 12, 31, 23,15,30, 560);
-d.getFullYear() => 1975
+Command:
+
+```java
+var d = new Date(75, 12, 31, 23,15,30, 560);
+d.getFullYear()
 ```
+{: .copy-code}
 
-**3.** In the case of a change of only the month and the day of the month in which the changes occur, the date of the maximum value of the number of days in the month in which the changes occur: - the new value of the month is the next month after the month for which the changes occur, and the date is equal to the difference from the current date and the maximum value of days in the month for which the changes occur;
+Result:
 
-```text
-Date d = new Date(2023, 12, 31, 10, 15, 30, 567);
-d.toLocaleDateString("UTC", "UTC") => "2023-12-31";
-d.setMonth(2);
-d.toLocaleDateString("UTC", "UTC") => "2023-03-03";
+```java
+1975
 ```
-
 
 #### Flow Control
 
