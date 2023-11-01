@@ -13,7 +13,7 @@
 
 
 ## Introduction
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [{{deviceName}}]({{deviceVendorLink}}){: target="_blank"} offers dual-SIM cellular 
 connectivity, four Ethernet ports and Wi-Fi combined with RS232, RS485, USB interfaces and I/O for a wide variety of 
 professional application scenarios. This router is equipped with advanced RutOS software features such as Modbus, SNMP, 
@@ -34,26 +34,26 @@ To import rule chain from а JSON file, you should:
 
 {% assign importRuleChainPE = '
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/import-rule-chain-1-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/import-rule-chain-1-pe.png,
         title: Navigate to the "Rule chains" page and click on the "+" button in the upper right corner of the screen and then choose "Import rule chain" option. The toolbar import popup window will appear. Upload a JSON file and click on the "Import" button;
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/import-rule-chain-2-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/import-rule-chain-2-pe.png,
         title: The imported rule chain will open. Click on the "Apply changes" button to save the rule chain. Then, go back to the main "Rule chains" page;
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/import-rule-chain-3-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/import-rule-chain-3-pe.png,
         title: Rule chain is imported.
 '
 %}
 
 {% assign importRuleChainCE = '
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-rule-chain-import-1-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-rule-chain-import-1-ce.png,
         title: Navigate to the "Rule chains" page and click on the "+" button in the upper right corner of the screen and then choose "Import rule chain" option. The toolbar import popup window will appear. Upload a JSON file and click on the "Import" button;
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-rule-chain-import-2-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-rule-chain-import-2-ce.png,
         title: The imported rule chain will open. Click on the "Apply changes" button to save the rule chain. Then, go back to the main "Rule chains" page;
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-rule-chain-import-3-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-rule-chain-import-3-ce.png,
         title: Rule chain is imported.
 '
 %}
@@ -70,32 +70,32 @@ Now, we are ready to create device profile. For this, follow steps below:
 
 {% assign createDeviceProfilePE = '
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-1-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-1-pe.png,
         title: Go to **Profiles** > **Device profiles** and click on **"Add"** button > **"Create new device profile"**;
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-2-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-2-pe.png,
         title: Input **Name** field with **"Teltonika routers"** value. Select **"Teltonika routers"** imported rule chain from the step above;
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-3-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-3-pe.png,
         title: Click on **"Transport configuration"** tab. Select **MQTT** transport type and change **Telemetry topic filter** value from **"v1/devices/me/telemetry"** to **"RUT/"**. Click on **"Add"** button;
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-4-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/add-device-profiles-4-pe.png,
         title: Device Profile created.
     '
 %}
 
 {% assign createDeviceProfileCE = '
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-device-profile-1-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-device-profile-1-ce.png,
         title: Go to **Profiles** > **Device profiles** and click on **"Add"** button > **"Create new device profile"**;
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-device-profile-2-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-device-profile-2-ce.png,
         title: Input **Name** field with **"Teltonika routers"** value. Select **"Teltonika routers"** imported rule chain from the step above;
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-device-profile-3-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-device-profile-3-ce.png,
         title: Click on **"Transport configuration"** tab. Select **MQTT** transport type and change **Telemetry topic filter** value from **"v1/devices/me/telemetry"** to **"RUT/"**. Click on **"Add"** button;
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-device-profile-4-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-device-profile-4-ce.png,
         title: Device Profile created.
     '
 %}
@@ -112,32 +112,32 @@ For simplicity, we will provide the device manually using the UI:
 
 {% assign provisionDevicePE = '
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-1-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/add-device-1-pe.png,
         title: Open the **Devices** page. By default, you navigate to the device group **“All”**. Click on the **“+”** icon in the top right corner of the table and then select **“Add new device”**;
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-2-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/add-device-2-pe.png,
         title: Input device name. For example, **“Teltonika RUT955”**. Select created device profile from the step above, in our case **"Teltonika routers"**;
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-3-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/add-device-3-pe.png,
         title: Click on **"Credentials"** tab. Check **"Add credentials"** and select **"MQTT Basic"** credentials type. Click on **"Generate"** button on each field and click **"Add"** button;
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/add-device-4-pe.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/add-device-4-pe.png,
         title: Device added.
     '
 %}
 
 {% assign provisionDeviceCE = '
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-create-device-1-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-create-device-1-ce.png,
         title: Open the **Devices** page. By default, you navigate to the device group **“All”**. Click on the **“+”** icon in the top right corner of the table and then select **“Add new device”**;
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-create-device-2-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-create-device-2-ce.png,
         title: Input device name. For example, **“Teltonika RUT955”**. Select created device profile from the step above, in our case **"Teltonika routers"**;
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-create-device-3-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-create-device-3-ce.png,
         title: Click on **"Credentials"** tab. Check **"Add credentials"** and select **"MQTT Basic"** credentials type. Click on **"Generate"** button on each field and click **"Add"** button;
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-create-device-4-ce.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-create-device-4-ce.png,
         title: Device added.
     '
 %}
@@ -180,12 +180,12 @@ LOGO! has long since established itself as an intelligent logic module in small 
 
 In our case, the following diagram for data reading and preparation was created in LOGO! Soft Comfort:
 <br><br>
-![](/images/devices-library/ready-to-go-devices/teltonika-rut955/siemens-logo-diagram.png)
+![](https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/siemens-logo-diagram.png)
 <br><br>
 
 Don't forget to enable TCP connection.
 <br><br>
-![](/images/devices-library/ready-to-go-devices/teltonika-rut955/siemens-logo-tcp-enable.png)
+![](https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/siemens-logo-tcp-enable.png)
 <br><br>
 
 Also, we have to add Modbus slave device configuration. To do this, follow the steps below:
@@ -198,7 +198,7 @@ Also, we have to add Modbus slave device configuration. To do this, follow the s
 
 In our case, we have the following settings:
 
-![](/images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-modbus-tcp-master.png)
+![](https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-modbus-tcp-master.png)
 
 The next thing we have to do is configure the Data Sender. To do this, follow the steps below:
 1. Go to **Services** > **Data to Server**;
@@ -208,7 +208,7 @@ The next thing we have to do is configure the Data Sender. To do this, follow th
 
 In our case, we have the following settings:
 
-![](/images/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-rut-955-data-sender.png)
+![](https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/teltonika-rut-955-data-sender.png)
 
 If you did everything right, you have to receive the following MQTT message:
 ```json
