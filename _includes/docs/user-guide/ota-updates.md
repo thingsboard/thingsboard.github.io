@@ -189,8 +189,6 @@ Click the "History of the software updates" button next to the device name to le
 
 ##### Queue processing pace
 
-The system administrator can configure the Reports Server endpoint URL using [thingsboard.yml](/docs/user-guide/install/pe/config/).
-
 To set the max number of devices that will be notified in the chosen time period using the following [configuration](/docs/{{docsPrefix}}user-guide/install/config/) properties:
 
 ```bash
