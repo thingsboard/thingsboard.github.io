@@ -4,4 +4,8 @@ toc:
 - title: Architecture Overview
   path: /docs/mqtt-broker/architecture/
 - title: Performance Tests
-  path: /docs/mqtt-broker/reference/performance-tests/
+  section:
+    - title: 100M Connections Performance Test
+      path: /docs/mqtt-broker/reference/performance-tests/
+    - title: 3M Throughput Single Node Performance Test
+      path: /docs/mqtt-broker/reference/single-node-performance-test/

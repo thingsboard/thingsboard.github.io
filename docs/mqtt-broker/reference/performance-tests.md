@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: TBMQ performance tests
-description: TBMQ performance tests
+title: TBMQ 100M Connections Performance Test
+description: TBMQ cluster-mode 100M MQTT connections performance test
 
 broker-aws-monitoring:
     0:
