@@ -33,7 +33,7 @@ The Reports Server opens a web page with the target dashboard URL in the headles
 then it captures the dashboard web page into the specified format (*PDF \| PNG \| JPEG*) and sends the captured data as a response to ThingsBoard.
 
 {% if docsPrefix == 'pe/' %}
-The system administrator can configure the Reports Server endpoint URL using [thingsboard.yml](/docs/{{docsPrefix}}user-guide/install/config/).
+The system administrator can configure the Reports Server endpoint URL using [thingsboard.yml](/docs/user-guide/install/pe/config/).
 
 The following is a sample configuration:
 
