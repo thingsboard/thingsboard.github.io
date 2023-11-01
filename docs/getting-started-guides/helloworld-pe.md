@@ -8,16 +8,16 @@ redirect_from: "/docs/pe/getting-started-guides/helloworld/"
 step1:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-1-pe.png
-        title: 'Login to your ThingsBoard instance and navigate to the "Entities". Then click the "Devices" page;'
+        title: 'Login to your ThingsBoard instance and navigate to the "Entities" section. Then go to the "Devices" page;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-2-pe.png
         title: 'By default, you navigate to the device group “All”. Click on the "+" icon in the top right corner of the table and then select "Add new device";'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-3-pe.png
-        title: 'Input device name. For example, "My New Device". No other changes are required at this time. Click "Add" to add the device;'
+        title: 'Enter device name. For example, "My New Device". No other changes are required at this time. Click "Add" to add the device;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-connectivity-1-pe.png
-        title: 'The window to check the device&#39;s connection to ThingsBoard will open. This step is optional. Select the messaging protocol and your operating system. Install the necessary client tools and copy the command;'
+        title: 'The window to check the device&#39;s connection to ThingsBoard will open. This step is optional. Select the messaging protocol and your operating system. Then install the necessary client tools and copy the command;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-connectivity-3-pe.png
         title: 'Execute previously copied command. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings. Then, close connectivity window;'
@@ -50,7 +50,7 @@ step31:
         title: 'Open the "Dashboards" page. By default, you navigate to the dashboard group “All”. Click on the "+" icon in the top right corner. Select "Create new dashboard";'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-2-pe.png
-        title: 'Input dashboard name. For example, "My New Dashboard". Click "Add" to create the dashboard;'
+        title: 'Enter dashboard name. For example, "My New Dashboard". Then click "Add" to create the dashboard;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-3-pe.png
         title: 'Your first dashboard has been created. As long as you have one dashboard. But as new dashboards are added, they will be added to the top of the table, since the table sorts dashboards using the time of the creation by default. Click on the row to open the dashboard.'
@@ -58,7 +58,7 @@ step31:
 step32:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-1-pe.png
-        title: 'Enter edit mode. Click on the pencil button in the bottom right corner;'
+        title: 'Enter edit mode. Click on the "Edit mode" button in the upper right corner;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-2-pe.png
         title: 'Click the "Entity aliases" icon in the top right part of the screen;'
@@ -67,30 +67,30 @@ step32:
         title: 'You will see an empty list of Entity aliases. Click "Add alias" button;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-4-pe.png
-        title: 'Input alias name, for example "My Device". Select "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on the needed device. Click "Add";'
+        title: 'Enter alias name, for example, "My New Entity Alias". Select the "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on the needed device. Click "Add";'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-5-pe.png
         title: 'Click "Save";'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-6-pe.png
-        title: 'Finally, click "Apply changes" in the dashboard editor to save the changes.'
+        title: 'Finally, click "Save" in the dashboard editor to save the changes.'
 
 step33:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-1-pe.png
-        title: 'Enter edit mode. Click on the "Add new widget" button;'
+        title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-2-pe.png
-        title: 'Select the "Cards" widget bundle;'
+        title: 'Select the "Tables" widget bundle;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-3-pe.png
         title: 'Select the "Entities table" widget;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-4-pe.png
-        title: 'The "Add Widget" window will appear. Click "Add" to add the data source. A widget may have multiple data sources, but we will use only one in this case;'
+        title: 'The "Add Widget" window will appear. Add datasource by specifying previously created "My New Entity Alias" alias and click "Add column" to add data key;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-5-pe.png
-        title: 'Select "My Device" entity alias. Then click on the "Latest data key" field on the right. The auto-complete with available data points will appear. Select "temperature" data point and click "Add";'        
+        title: 'Specify the "temperature" data key: click on the newly appeared data key input field. The auto-complete with available data keys will appear. Select "temperature" data key and click "Add";'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-6-pe.png
         title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. Apply changes.'
@@ -98,90 +98,69 @@ step33:
 step34:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-1-pe.png
-        title: 'Enter Edit mode;'
+        title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-2-pe.png
-        title: 'Click "Add new widget" icon in the bottom right corner of the screen;'
+        title: 'Select the "Charts" widget bundle;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-3-pe.png
-        title: 'Click "Create new widget" icon.'
+        title: 'Select the "Timeseries Line Chart" widget;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-4-pe.png
-        title: 'Select the "Charts" widget bundle;'
+        title: 'Specify datasource by adding previously created "My New Entity Alias" alias and specify the "temperature" data key. Click "Add";'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-5-pe.png
-        title: 'Select the "Timeseries Line Chart" widget;'
+        title: 'Resize the widget and apply changes. Publish different telemetry values multiple times, as in Step 2. Note that the widget displays only one minute of data by default;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-6-pe.png
-        title: 'Click the "Add" datasource button;'
-    6:
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-7-pe.png
-        title: 'Select "My Device" alias. Select "temperature" key. Click "Add";'
-    7:
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-8-pe.png
-        title: 'Drag and Drop you widget to desired space. Resize the widget. Apply changes;'
-    8:
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-9-pe.png 
-        title: 'Publish different telemetry values multiple times, as in Step 2. Note that the widget displays only one minute of data by default;'
-    9:
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-10-pe.png
-        title: 'Now open time selection window. Change the interval and aggregation function. Update the time window and apply changes.'
+        title: 'Now open the time selection window. Change the interval and aggregation function. Update the time window setting by clicking the "Update" button.'
 
 step35:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-1-pe.png
-        title: 'Enter Edit mode;'
+        title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-2-pe.png
-        title: 'Click "Add new widget" icon in the bottom right corner of the screen;'
+        title: 'Select "Alarm widgets" bundle;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-3-pe.png
-        title: 'Click "Create new widget" icon;'
+        title: 'Select "Alarms table" widget;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-4-pe.png
-        title: 'Select "Alarm widgets" bundle;'
+        title: 'Specify datasource by adding previously created "My New Entity Alias" alias and select the statuses and severities of alarms you want to display in the alarm widget;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-5-pe.png
-        title: 'Select "Alarms table" widget;'
+        title: 'Drag and Drop the "Timeseries Line Chart" widget to the top right corner of the dashboard to make room for the "Alarms" widget;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-6-pe.png
-        title: 'Select "Entity" alarm source and "My Device" alias. Click "Add";'
-    6:
-        image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-7-pe.png
-        title: 'Drag and Drop the "Timeseries Line Chart" widget to the top right corner of the dashboard to make room for the "Alarms" widget;'
-    7:
-        image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-8-pe.png
         title: 'Scroll down and locate the new "Alarms" widget. Drag and Drop Alarm widget to the free space and resize it. Apply changes.'
 
 step4:
     0:
-        image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-1-pe.png
-        title: 'Navigate to the "Profiles". Then click on the "Device profiles" page;'
-    1:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-2-pe.png
-        title: 'Click on the default device profile row to open its details;'
-    2:
+        title: 'Go to the "Profiles" section, and click on the "Device profiles" page. Then click on the default device profile row to open its details;'
+    1:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-3-pe.png
-        title: 'Select the "Alarm rules" tab and click "pencil" button to enter edit mode;'
-    3:
+        title: 'Navigate to the "Alarm rules" tab and click "pencil" button to enter edit mode;'
+    2:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-4-pe.png
         title: 'Click "Add alarm rule" button;'
-    4:
+    3:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-5-pe.png
         title: 'Specify alarm type and click the "+" icon to add alarm rule condition;'
-    5:
+    4:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-6-pe.png
         title: 'Click the "Add key filter" button to specify a condition;'
-    6:
+    5:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-7-pe.png
         title: 'Select key type, input key name, select value type, and click "Add" filter;'
-    7:
+    6:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-8-pe.png
         title: 'Select operation and input threshold value. Click "Add";'
-    8:
+    7:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-9-pe.png
         title: 'Click "Save";'
-    9:
+    8:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-10-pe.png
         title: 'Finally, click "Apply changes".'        
 
@@ -198,24 +177,21 @@ step5:
         
 step71:
     0:
-        image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-1-pe.png
-        title: 'Navigate to the "Customers" page;'
-    1:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-2-pe.png
-        title: 'By default, you navigate to the customer group "All". Click the "+" sign to add a new customer;'
-    2:
+        title: 'Navigate to the "Customers" page. By default, you navigate to the customer group "All". Click the "+" sign to add a new customer;'
+    1:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-3-pe.png
         title: 'Input the customer title. Additionally, you can input personal details for the customer and assign a home dashboard. To finalize the customer creation, you can click the "Add" button. In this case, the new customer will be created and will be located in the "All" customers folder. Let`s create a separate group for our customer. To do this, click on "Next: Owner and groups" button;'
-    3:
+    2:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-4-pe.png
         title: 'If desired, you can assign a different owner for this customer. We will leave this option unchanged. Enter a name for the new group and click "Create a new one!";'
-    4:
+    3:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-5-pe.png
         title: 'Click "Add" to create a new customers group;'
-    5:
+    4:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-6-pe.png
         title: 'Now, click "Add" to create a new customer;'
-    6:
+    5:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-7-pe.png
         title: 'The customer has been created and is located in the "My Customers" group. You can navigate to this group by clicking on its name.'
 
