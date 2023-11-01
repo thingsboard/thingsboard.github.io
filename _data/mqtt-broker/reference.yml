@@ -6,6 +6,6 @@ toc:
 - title: Performance Tests
   section:
     - title: 100M Connections Performance Test
-      path: /docs/mqtt-broker/reference/performance-tests/
+      path: /docs/mqtt-broker/reference/100m-connections-performance-test/
     - title: 3M Throughput Single Node Performance Test
-      path: /docs/mqtt-broker/reference/single-node-performance-test/
+      path: /docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/

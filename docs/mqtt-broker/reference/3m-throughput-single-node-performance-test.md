@@ -6,4 +6,4 @@ description: TBMQ 3M throughput single node performance test
 
 ---
 
-{% include docs/mqtt-broker/reference/single-node-performance-test.md %}
+{% include docs/mqtt-broker/reference/3m-throughput-single-node-performance-test.md %}

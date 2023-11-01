@@ -39,4 +39,4 @@ broker-grafana-monitoring:
     title: 'Consumer lag monitoring'
 ---
 
-{% include docs/mqtt-broker/reference/performance-tests.md %}
+{% include docs/mqtt-broker/reference/100m-connections-performance-test.md %}
