@@ -14,7 +14,7 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 		 data-vide-bg="mp4: https://video.thingsboard.io/tb-cover2.mp4,
                        webm: https://video.thingsboard.io/tb-cover2.webm,
                        ogv: https://video.thingsboard.io/tb-cover2.ogv,
-                       poster: /video/tb-cover.jpg"
+                       poster: https://img.thingsboard.io/tb-cover.jpg"
 		 data-vide-options="bgColor: #000000, loop: true, muted: true, posterType: jpg"
 		 style="display: block;">
 	<div class="video-cover"></div>
@@ -31,7 +31,7 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 	</div>
 </section>
 
-<section id="hero" class="light-text mobile" style="background: center no-repeat url(/video/tb-cover.jpg); display: none;">
+<section id="hero" class="light-text mobile" style="background: center no-repeat url(https://img.thingsboard.io/tb-cover.jpg); display: none;">
 	<div class="video-cover"></div>
 	<div id="hero-content">
 		<span class="header-animation tb-title">ThingsBoard</span>
@@ -402,7 +402,7 @@ description: ThingsBoard is an open-source IoT ❰Internet of Things❱ platform
 </style>
 
 <script>
-	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+	var isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 	var videoElement = document.querySelector('#hero.light-text.desktop');
 	var staticImage = document.querySelector('#hero.light-text.mobile');
 	if (isMobile) {
