@@ -183,6 +183,8 @@ Click the "History of the software updates" button next to the device name to le
 
 {% include images-gallery.html imageCollection="sw-status-1" %}
 
+{% if docsPrefix != 'paas/' %}
+
 ### Configuration
 
 ##### Queue processing pace
@@ -198,3 +200,5 @@ export TB_QUEUE_CORE_FW_PACK_SIZE=100
 ##### Max size setting
 
 By default, the maximum size of firmware that we can save in database is 2 gb. It can not be configured.
+
+{% endif %}
