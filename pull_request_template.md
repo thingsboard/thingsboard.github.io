@@ -7,6 +7,6 @@
 Use the following command to check the broken links. 
 
 ```bash
-docker run --rm -it ghcr.io/linkchecker/linkchecker --check-extern http://172.16.1.16:4000
+docker run --rm --network=host ghcr.io/linkchecker/linkchecker http://0.0.0.0:4000/ --check-extern --no-warnings
 ```
 
