@@ -21,7 +21,7 @@ description: Custom IOT solutions
                     sizes="(max-width: 671px) 360px, (max-width: 999px) 560px, (min-width: 1000px)  1127px, 2254px"
                     src="/images/development-services/laptop-with-dashboard_1127x720_1x.png"
                     alt="Laptop with a dashboard"/>
-                <button class="button schedule anchor-button" data-href="#get-in-touch">Schedule a call</button>
+                <button class="button schedule anchor-button" data-href="#get-in-touch">Contact Us</button>
             </div>
             <div class="image-wrapper-icon-phone">
                 <img  
@@ -37,7 +37,7 @@ description: Custom IOT solutions
                     alt="half cicrle progress icon"/>
                 <span class="result-number">100%</span>
                 <span class="result-text">We offer time-guaranteed result</span>
-                <button class="button anchor-button" data-href="#get-in-touch">Schedule a call</button>
+                <button class="button anchor-button" data-href="#get-in-touch">Contact Us</button>
             </div>
         </div>
     </div>
@@ -70,7 +70,7 @@ description: Custom IOT solutions
                 <h1>OUR SERVICES</h1>
             </div>
             <div class="section-title">From complicated widgets to diverse IOT solutions</div>
-            <div class="section-text">If you are facing constraints in terms of time and resources for configuring the solution, custom development unit is equipped to handle all development and configuration tasks according to your requirements and the defined scope, ensuring seamless delivery</div>
+            <div class="section-text">If you are facing constraints in terms of time and resources for configuring the solution, custom development unit is equipped to handle all development and configuration tasks according to your requirements and the defined scope, ensuring seamless delivery.</div>
         </div>
     </div>
     <div id="content-poc" class="content-wrapper">
@@ -184,11 +184,11 @@ description: Custom IOT solutions
                         We offer architecture design session for clear vision of your product
                     </div>
                     <div class="section-text">
-                        In case you are facing uncertainty regarding your user story, topology or system design, the ThingsBoard development team offers an architecture design session. With our one-week architecture session, we assure you that you will receive a comprehensive and detailed document with a well-structured roadmap, including all the necessary steps to deliver a clarified scope of work and successfully implement your idea
+                        In case you are facing uncertainty regarding your user story, topology, or system design, the ThingsBoard development team offers an architecture design session. With our one-week architecture session, we assure you that you will receive a comprehensive and detailed document with a well-structured roadmap, including all the necessary steps to deliver a clarified scope of work and successfully implement your idea.
                     </div>
                 </div>
                 <div class="right-block">
-                    <button class="anchor-button" data-href="#get-in-touch">Schedule a call</button>
+                    <button class="anchor-button" data-href="#get-in-touch">Contact Us</button>
                 </div>
             </div>
             <svg id="additionally-bg1"></svg>
@@ -406,7 +406,6 @@ description: Custom IOT solutions
 
 
     function validateContactForm(form) {
-        console.log("form", form)
         var name = $('input[name=name]', form).val();
         var email = $('input[name=email]', form).val();
         
@@ -439,8 +438,6 @@ description: Custom IOT solutions
 
     var contactform =  document.getElementById('contact-form');
     
-    console.log("contactform", contactform);
-
     contactform.setAttribute('action', 'https://formspree.io/' + 'support' + '@' + 'thingsboard' + '.' + 'io');
 
     jqueryDefer(

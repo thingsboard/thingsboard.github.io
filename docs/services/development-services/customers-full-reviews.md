@@ -45,14 +45,14 @@ description: Development services customers' reviews
             <div class="review-header">Very professional in its approach to projects</div>
             <div class="review-body">
                 <h5>Custom Development</h5>
-                <h6>The Thingsboard team is very professional in its approach to projects. They can help you design and implement your ideas with solid attention to detail. They make sure to clearly understand your challenges so they can provide you the best scenario to get your project up and running quickly.</h6>
-                <h6>They helped us implement our IoT solutions for major transport industry clients, and all projects were completed on time and on budget. Their solutions architect also improved how we use the platform to get the most out of what Thingsboard has to give.</h6>
+                <h6>The ThingsBoard team is very professional in its approach to projects. They can help you design and implement your ideas with solid attention to detail. They make sure to clearly understand your challenges so they can provide you the best scenario to get your project up and running quickly.</h6>
+                <h6>They helped us implement our IoT solutions for major transport industry clients, and all projects were completed on time and on budget. Their solutions architect also improved how we use the platform to get the most out of what ThingsBoard has to give.</h6>
                 <h6>The communication with the team is fluid, and requests are handled quickly. Has the maker of the platform, they are the best to help you in developing and implementing your requirements.</h6>
                 <h5>Service Monitoring and Tech Support</h5>
                 <h6>I cannot remember the last time our services were unavailable. The team monitors our infrastructure closely so we can sleep tight at night. They are also very responsive when we have technical questions or need guidance when implementing a new feature in our IoT devices.</h6>
-                <h5>Thingsboard Platform</h5>
-                <h6>Thingsboard will make the development of your IoT backend a breeze. It is a robust platform that can handle anything you throw at it. A wide variety of connection options exist, and it comes with a compelling user interface that can be customized to suit any need.</h6>
-                <h6>Thingsboard will make the development of your IoT backend a breeze. It is a robust platform that can handle anything you throw at it. A wide variety of connection options exist, and it comes with a compelling user interface that can be customized to suit any need.</h6>
+                <h5>ThingsBoard Platform</h5>
+                <h6>ThingsBoard will make the development of your IoT backend a breeze. It is a robust platform that can handle anything you throw at it. A wide variety of connection options exist, and it comes with a compelling user interface that can be customized to suit any need.</h6>
+                <h6>ThingsBoard will make the development of your IoT backend a breeze. It is a robust platform that can handle anything you throw at it. A wide variety of connection options exist, and it comes with a compelling user interface that can be customized to suit any need.</h6>
                 <h6>It has a very flexible price bracket. The open-source version is free, and the Professional version has a comprehensive price bracket to let you grow as your business increases. Want to avoid managing complex IT infrastructures? You will love their hosted version thingsboard.cloud!</h6>
             </div>
         </div>
@@ -69,7 +69,7 @@ description: Development services customers' reviews
                 <h6>At Super Bock Bebidas, S.A. we pride ourselves on our ability to adapt, innovate, and stay ahead of the curve. We have been using in-house beer drive tanks and tracking systems for many years. It served us well, but as the times evolved, we realized our system had become outdated, lacking the efficiency we desired. That's when we discovered ThingsBoard.</h6>
                 <h6>Our decision to migrate our existing system to the ThingsBoard platform was not taken lightly. After all, we were entrusting our critical operational processes to a new platform. But, after interacting with the highly skilled team at ThingsBoard, we felt confident about the upcoming transformation. The development unit at ThingsBoard listened to our needs and clarified the scope of work. We were impressed by their professionalism, knowledge, and commitment to delivering a market-ready solution tailored to our needs.</h6>
                 <h6>As promised, ThingsBoard delivered an exceptional beer tank tracking solution, on-time and within budget. The platform provided us visibility into our assets, real-time tracking, and actionable insights that significantly improved our operational efficiency. It's user-friendly interface, flexibility, and robust features brought our system up to speed with modern technological advancements. The IoT integration provided by ThingsBoard has elevated our operations, offering us a competitive edge in the market.</h6>
-                <h6>ThingsBoard's support didn't stop at the delivery of the solution. They have continuously assisted us in optimizing the system, responding promptly to any queries, and addressing issues effectively. We are thoroughly impressed by their post-delivery support and commitment to ensuring our satisfaction.Today, we can proudly say that our decision to choose ThingsBoard has allowed us to operate more efficiently and effectively, improving our overall productivity and enhancing our services to our valued customers.</h6>
+                <h6>ThingsBoard's support didn't stop at the delivery of the solution. They have continuously assisted us in optimizing the system, responding promptly to any queries, and addressing issues effectively. We are thoroughly impressed by their post-delivery support and commitment to ensuring our satisfaction. Today, we can proudly say that our decision to choose ThingsBoard has allowed us to operate more efficiently and effectively, improving our overall productivity and enhancing our services to our valued customers.</h6>
                 <h6>Choosing ThingsBoard has not only been a business decision for us but a step towards the future of IoT. The team has been committed to delivering quality solutions, and we look forward to a long-lasting partnership with them. We are thrilled to endorse ThingsBoard and recommend their IoT solutions to any organization looking for a reliable and forward-thinking partner.</h6>
             </div>
         </div>
@@ -85,15 +85,14 @@ description: Development services customers' reviews
             </div>
             <div class="review-header">Expertise, attention to detail, and client satisfaction</div>
             <div class="review-body">
-                <h6>We have found the Thingsboard suite to be the best in class tool for presenting our Industrial IoT data to customers. Our distributed hardware solution is built to monitor electrostatic discharge (ESD) conditions in electronics manufacturing. The functionality of TB's software stack is extensive and the documentation makes it easy to get up and running.</h6>
-                <h6>We worked with the ThingsBoard Development Unit to unlock some additional features with custom software that helped us tailor the Thingsboard solution to our needs.<br>Throughout the development journey, the TBU exhibited professionalism, clear communication, and a genuine commitment to our success. We wholeheartedly recommend the ThingsBoard Development Unit for their expertise, attention to detail, and client satisfaction. We look forward to future collaborations.</h6>
+                <h6>We have found the ThingsBoard suite to be the best in class tool for presenting our Industrial IoT data to customers. Our distributed hardware solution is built to monitor electrostatic discharge (ESD) conditions in electronics manufacturing. The functionality of TB's software stack is extensive and the documentation makes it easy to get up and running.</h6>
+                <h6>We worked with the ThingsBoard Development Unit to unlock some additional features with custom software that helped us tailor the ThingsBoard solution to our needs.<br>Throughout the development journey, the TBU exhibited professionalism, clear communication, and a genuine commitment to our success. We wholeheartedly recommend the ThingsBoard Development Unit for their expertise, attention to detail, and client satisfaction. We look forward to future collaborations.</h6>
             </div>
         </div>
     </div>
 </section>
 <section id="get-in-touch" class="get-in-touch full-review">
     <div class="content-wrapper content-get-in-touch">
-        <!-- <div id="get-in-touch" class="side-title"> -->
         <div class="side-title">
             <h1 id="side-title-h1">get in touch</h1>
         </div>
@@ -130,7 +129,6 @@ description: Development services customers' reviews
 <script type="text/javascript">
 
     function validateContactForm(form) {
-        console.log("form", form)
         var name = $('input[name=name]', form).val();
         var email = $('input[name=email]', form).val();
         
