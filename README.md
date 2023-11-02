@@ -156,10 +156,10 @@ docker exec thingsboard_website bash -c "./generate-previews.sh images/solution-
 Use the following command to check the broken links.
 
 ```bash
-docker run -it --rm --network=host ghcr.io/linkchecker/linkchecker --check-extern http://0.0.0.0:4000/
+docker run --rm --network=host ghcr.io/linkchecker/linkchecker http://0.0.0.0:4000/ --check-extern --no-warnings
 ```
 
-## Update pages in _includes/docs/pe/user-guide/install directory in accordance with thingsboard/thingsborad-pe repositories: 
+## Update pages in _includes/docs/pe/user-guide/install directory in accordance with thingsboard/thingsboard-pe repositories: 
 
 Use the following command from the project root directory to regenerate configuration pages (first script parameter is TB version: 'ce' or 'pe', second parameter is relative path to TB repository):
     
