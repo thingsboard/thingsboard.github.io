@@ -150,6 +150,6 @@ description: Trendz configuration properties description
   </tbody>
 </table>
 
-## Next Steps
+### Next Steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

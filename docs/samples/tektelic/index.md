@@ -126,7 +126,7 @@ Smart Room Sensor has a sticker with QR code with data required by Network Serve
  <img data-gifffer="/images/samples/tektelic/import_dashboard.gif" width="1000" alt="import dashboard">
 
 
-## Next steps
+### Next steps
 
 Explore guides related to main ThingsBoard features:
 

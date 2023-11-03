@@ -248,6 +248,6 @@ If you see authentication errors while sending email (e.x. 5.7.3):
 1. Make sure SMTP settings are enabled for user. For this go to [here](https://portal.office.com/adminportal/home#/users). Then select user →  Mail → Manage email apps → Authenticate SMTP (if enabled - disable and enable again);
 2. In Azure portal make sure Security defaults are disabled.
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

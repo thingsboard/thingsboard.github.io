@@ -26,7 +26,7 @@ We walk through the following steps:
 ### Things On Edge
 Things On Edge designs an easy to use, ultra-low power Cricket Wi-Fi modules. They are designed to make fast & easy IOT end nodes such as sensors, buttons, switches etc.; power them directly on batteries for a very long time; and integrate to a huge ecosystem of software and internet services. All this without writing a single line of code.
 <br>
-<img src="/images/samples/cricket-wifi/cricket.png" width="50%" alt="cricket">
+<img src="/images/samples/cricket-wifi/cricket.png" width="50%" alt="Cricket plate">
 <br>
 ![image](/images/samples/cricket-wifi/TB-graph.png)
 
@@ -42,18 +42,18 @@ Cricket WiFi module comes with a built-in temperature sensor. In this example we
 
 In this example we simply attach batteries to the Cricket Wi-Fi module and the device is ready to go. Note: please use fresh and good quality batteries e.g. Duracel, Energizer
 
-<img src="/images/samples/cricket-wifi/asm.png" width="50%" alt="asm">
+<img src="/images/samples/cricket-wifi/asm.png" width="50%" alt="Asm plate connection">
 
 
 ### Connect Cricket to Wi-Fi network
 
-<img src="/images/samples/cricket-wifi/TOE-01.png" width="50%" alt="TOE 1">
+<img src="/images/samples/cricket-wifi/TOE-01.png" width="50%" alt="step 1 - press button on TOE">
 
-<img src="/images/samples/cricket-wifi/TOE-02.png" width="50%" alt="TOE 2">
+<img src="/images/samples/cricket-wifi/TOE-02.png" width="50%" alt="step 2 - connect device to TOE">
 
-<img src="/images/samples/cricket-wifi/TOE-03.png" width="50%" alt="TOE 3">
+<img src="/images/samples/cricket-wifi/TOE-03.png" width="50%" alt="step 3 - connect device to WiFi">
 
-<img src="/images/samples/cricket-wifi/TOE-04.png" width="50%" alt="TOE 4">
+<img src="/images/samples/cricket-wifi/TOE-04.png" width="50%" alt="step 4 - connect TOE to WiFi by device">
 
 
 
@@ -85,7 +85,7 @@ A complete Cricket's configuration can look like below:
 
 Once Cricket is configured we must exit from the Config panel by pressing the reset button in the top-right corner as shown on the image below.
 <br>
-<img src="/images/samples/cricket-wifi/TOE-last.png" width="50%" alt="TOE last">
+<img src="/images/samples/cricket-wifi/TOE-last.png" width="50%" alt="Disconnect from TOE">
 <br>
 
 
@@ -105,6 +105,6 @@ If we configured our device as shown above the device will be sending data to Th
 
 {% include socials.html %}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

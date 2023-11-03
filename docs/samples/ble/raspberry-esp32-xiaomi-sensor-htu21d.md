@@ -18,11 +18,11 @@ Data is collected by a python script that is running on [Raspberry Pi](https://e
 
   ![Ble diagram](/images/samples/ble/ble-diagram.png)
 
-## List of hardware
+### List of hardware
 
 * [ESP32-PICO-KIT](https://www.espressif.com/en/products/hardware/development-boards)
 
-  <img src="https://cdn.xingosoftware.com/elektor/images/fetch/dpr_1/https%3A%2F%2Fwww.elektormagazine.com%2Fassets%2Fupload%2Fimages%2F18%2F20171221112541_esp32-pico-kit-v4-004.jpg" width="400"  alt="elektormagazine">
+  <img src="https://cdn.xingosoftware.com/elektor/images/fetch/dpr_1/https%3A%2F%2Fwww.elektormagazine.com%2Fassets%2Fupload%2Fimages%2F18%2F20171221112541_esp32-pico-kit-v4-004.jpg" width="400"  alt="Device plate">
 
 * [HTU21D Digital Relative Humidity Sensor](https://ru.aliexpress.com/item/NEW-HTU21D-Temperature-Humidity-Sensor-Breakout-Board-Module/32451061596.html?spm=a2g0v.search0104.3.8.69f56062P2BU8f&ws_ab_test=searchweb0_0,searchweb201602_3_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=c8c9941c-ea29-40e5-b74a-d1c0ae217af7-1&algo_pvid=c8c9941c-ea29-40e5-b74a-d1c0ae217af7)
 
@@ -32,11 +32,11 @@ Data is collected by a python script that is running on [Raspberry Pi](https://e
 * 4 female-to-male jumper wires
 * [Raspberry Pi with Bluetooth](https://www.raspberrypi.org/products/)
 
-  <img src="https://images-na.ssl-images-amazon.com/images/I/91zSu44%2B34L._SL1500_.jpg" width="400" alt="images amazon">
+  <img src="https://images-na.ssl-images-amazon.com/images/I/91zSu44%2B34L._SL1500_.jpg" width="400" alt="Raspberry plate from Amzon">
 
 * Xiaomi Smart Temperature & Humidity Sensor
 
-## Hardware setup
+### Hardware setup
 
 ### ESP32 Wiring scheme
 
@@ -67,7 +67,7 @@ Whole setup:
 
   ![Ble diagram](/images/samples/ble/setup.jpg)
 
-## Preparing ESP32
+### Preparing ESP32
 
 ### Application capabilities
 
@@ -172,10 +172,10 @@ I (157) GATTS_DEMO: starting ESP gatt demo
 
 ```
 
-## Preparing MI Sensor
+### Preparing MI Sensor
 Install the battery in sensor.
 
-## Preparing Raspberry Pi
+### Preparing Raspberry Pi
 Demo script scans for available BLE devices and connects to them. It can read a direct value of BLE characteristic from ESP and receive notifications from both ESP and Mi. If needed, a re-scan command can be issues from the dashboard to connect to new devices.
 
 ### Implementation details
@@ -195,7 +195,7 @@ sudo apt-get install libglib2.0-dev
 sudo pip3 install tb-ble-adapter
 ```
 
-## Device provisioning
+### Device provisioning
 Run python script **before** importing dashboard. For this you have to [**create**](/docs/iot-gateway/getting-started/) gateway device and specify it in command arguments:
 ```
 sudo tb_ble_adapter -t $GATEWAY_ACCESS_TOKEN
@@ -287,7 +287,7 @@ It creates devices:
 ![Created devices](/images/samples/ble/created_devices.png)
 
 
-## Provision your dashboard
+### Provision your dashboard
 Download the dashboard file using this [**link**](/docs/samples/ble/resources/device_gw.json). Now you have to import it. To do this, configure aliases in such way (use gateway device from [**Device provisioning**](#device-provisioning) section):
 
   ![Configure aliases](/images/samples/ble/configure-aliases.png)
@@ -298,7 +298,7 @@ Download the dashboard file using this [**link**](/docs/samples/ble/resources/de
 
 Also this dashboard needs a custom widget bundle. Download it with this [**link**](/docs/samples/ble/resources/custom_widget.json) and import using import/export [**instructions**](/docs/user-guide/ui/widget-library/).
 
-## Data visualization
+### Data visualization
 Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator.
 
 In case of local installation:
@@ -319,10 +319,10 @@ After, open **“Dashboards”** section and find previously imported dashboard 
 
   ![Dashboard](/images/samples/ble/dashboard.png)
 
-## Troubleshooting
+### Troubleshooting
 In order to perform troubleshooting, you must check demo script output. It displays connection status with every device, as well as received and sent data.
 
-## See also
+### See also
 Browse other  [samples](/docs/samples)  or explore guides related to main ThingsBoard features:
 
 *   [Device attributes](/docs/user-guide/attributes/)  - how to use device attributes.
@@ -335,7 +335,7 @@ Browse other  [samples](/docs/samples)  or explore guides related to main Things
 
 {% include socials.html %}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
 

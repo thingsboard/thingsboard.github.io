@@ -12,7 +12,7 @@
     overflow: hidden
     background: none
     div:nth-child(1)
-      background-image: url(/video/tb-cover.jpg) !important
+      background-image: url(https://img.thingsboard.io/tb-cover.jpg) !important
     .video-cover
       position: absolute
       z-index: -2
@@ -25,7 +25,7 @@
       background-color: #000
       background-repeat: no-repeat
       background-position: 50% 50%
-      background-image: url(/video/tb-cover.jpg)
+      background-image: url(https://img.thingsboard.io/tb-cover.jpg)
     #hero-content
       height: 100%
       display: flex
@@ -123,11 +123,11 @@
       a
         font-weight: 600
         font-size: 32px
-    h2
+    h2, h3.item-heading
       font-weight: 500
       line-height: 54px
       font-size: 36px
-    h3
+    h3:not(h3.item-heading)
       font-size: 32px
       font-weight: 600
       text-align: center
@@ -213,7 +213,7 @@
 
     #local-alarms .block .feature-des
       padding-top: 200px
-      h2, a
+      h2, a, h3.item-heading
         color: #fff
       p
         color: #868686

@@ -35,19 +35,19 @@ Collected data is processed via the rule engine to raise alarms when:
 
 The following interactive dashboard presents an intelligent visualization of IoT data that you can easily integrate into your IoT solution. See more details <a href="/docs/paas/solution-templates/fleet-tracking/">here</a>.
 
-## Fleet tracking dashboard
+### Fleet tracking dashboard
 
 The following interactive dashboard hosted on live demo server represents vehicle routes and state indicators that may be embedded in your IoT fleet tracking project. 
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/fleet-tracking/ft1.png" alt="item">
+        <img class="item-image" src="/images/usecases/fleet-tracking/ft1.png" alt="Bus locations example">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/fleet-tracking/ft2.png" alt="item">
+        <img class="item-image" src="/images/usecases/fleet-tracking/ft2.png" alt="Route history example">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/fleet-tracking/ft3.png" alt="item">
+        <img class="item-image" src="/images/usecases/fleet-tracking/ft3.png" alt="Route area example">
     </div>
 </div>
 
@@ -57,7 +57,7 @@ The following interactive dashboard hosted on live demo server represents vehicl
 
 The live Fleet Tracking dashboard displays real-time data from several tracking sensors collected using ThingsBoard MQTT API. Collected data is processed via the rule engine to raise alarms on certain thresholds. You may export the dashboard from our live demo server and import it to your ThingsBoard instance.
 
-## Benefits of the Fleet Tracking template
+### Benefits of the Fleet Tracking template
 
 Save up to 90% of development time for your fleet tracking solution by utilizing the following platform benefits:
 - reliable and scalable data collection for your fleet tracking sensors;
@@ -73,7 +73,7 @@ You may export the dashboard from our live demo server and import it to your Thi
 You may edit the route area widget and enable configuration of the route area for your local copy of the dashboard. 
 
 
-## ThingsBoard advantages
+### ThingsBoard advantages
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
@@ -81,7 +81,7 @@ You may edit the route area widget and enable configuration of the route area fo
     <div class="cards row">
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/microservices-icon.svg" alt="Scalability and high availability">
+                <img src="/images/microservices-icon.svg" alt="Microservice icon">
                 <div>
                     <a class="title" href="/docs/reference/msa/">Scalability and high availability</a>
                     <p>ThingsBoard supports high-availability deployments on cloud and on-premises data centers using K8S or bare-metal deployments. 
@@ -91,7 +91,7 @@ You may edit the route area widget and enable configuration of the route area fo
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/telemetry-icon.svg" alt="Connectivity">
+                <img src="/images/telemetry-icon.svg" alt="Telemetry icon">
                 <div>
                     <a class="title" href="/docs/getting-started-guides/connectivity/">Connectivity</a>
                     <p>Connect devices directly to the platform via the following built-in protocols: HTTP, CoAP, MQTT, LwM2M, and SNMP. 
@@ -101,7 +101,7 @@ You may edit the route area widget and enable configuration of the route area fo
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/integration-icon.svg" alt="LoRaWAN & SigFox Support">
+                <img src="/images/integration-icon.svg" alt="Integration icon">
                 <div>
                     <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
                     <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
@@ -110,7 +110,7 @@ You may edit the route area widget and enable configuration of the route area fo
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/security-icon.svg" alt="Security">
+                <img src="/images/security-icon.svg" alt="Security icon">
                 <div>
                     <a class="title" href="/docs/pe/user-guide/ssl/http-over-ssl/">Security</a>
                     <p>ThingsBoard supports industry-standard encryption algorithms like RSA and ECDSA to ensure the data is secure during transfer via TLS(TCP) and DTLS (UDP).</p>
@@ -119,7 +119,7 @@ You may edit the route area widget and enable configuration of the route area fo
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/engine-icon.svg" alt="Data processing">
+                <img src="/images/engine-icon.svg" alt="Gear icon">
                 <div>
                     <a class="title" href="/docs/pe/user-guide/rule-engine-2-0/overview/">Data processing</a>
                     <p>ThingsBoard allows you to define application logic with drag-n-drop rule chain designer. The Rule Engine is a robust and scalable processing framework that leverages industry-standard message queue implementations like Apache Kafka or AWS SQS to ensure data durability and guarantee data processing. You are free to process data with the Rule engine or push it to further processing in external systems.</p>
@@ -128,7 +128,7 @@ You may edit the route area widget and enable configuration of the route area fo
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/visualization-icon.svg" alt="Data visualization">
+                <img src="/images/visualization-icon.svg" alt="Data visualization icon">
                 <div>
                     <a class="title" href="/docs/user-guide/dashboards/">Data visualization</a>
                     <p>Visualize collected data using rich interactive dashboards. Develop multi-state interactive dashboards with zero coding efforts and built-in charts, gauges, maps, tables, and control widgets. Customize every dashboard aspect using advanced widget settings or even custom widget bundles. Low latency updates are possible with embedded web-sockets support.</p>
@@ -137,7 +137,7 @@ You may edit the route area widget and enable configuration of the route area fo
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/device-icon.svg" alt="Mobile application">
+                <img src="/images/device-icon.svg" alt="Device icon">
                 <div>
                     <a class="title" href="/docs/mobile/">Mobile application</a>
                     <p>Build your own IoT mobile application with minimum coding efforts using ThingsBoard Mobile Application, an open-source project based on Flutter. Leverage a built-in set of mobile actions to take a photo, scan QR code, update location, and more directly within the dashboard.</p>
@@ -146,7 +146,7 @@ You may edit the route area widget and enable configuration of the route area fo
         </div>
         <div class="col-lg-6">
             <div class="block">
-                <img src="/images/tenancy-icon.svg" alt="Multi-tenancy">
+                <img src="/images/tenancy-icon.svg" alt="Tenancy icon">
                 <div>
                     <a class="title" href="/docs/user-guide/entities-and-relations/">Multi-tenancy</a>
                     <p>ThingsBoard provides UI and API to manage tenants, customers, users, devices, and assets. Single tenant may have multiple tenant administrators and millions of devices and customers. It also offers out-of-the-box support of OTA updates for your smart meters.</p>
@@ -156,7 +156,7 @@ You may edit the route area widget and enable configuration of the route area fo
     </div>
 </section>
 
-## Fleet tracking solution overview
+### Fleet tracking solution overview
 
 The diagram below identifies data flow and integration points for a typical fleet-tracking solution that uses the ThingsBoard platform to collect and analyze data from vehicle trackers.
 
@@ -169,8 +169,7 @@ ThingsBoard supports either plain JSON or Protobuf, which significantly optimize
 The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
-
-## Learn more
+### Learn more
 
 <a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
 <a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>

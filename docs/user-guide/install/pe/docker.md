@@ -21,14 +21,14 @@ If you are looking for a cluster installation instruction, please visit [cluster
 
 {% include templates/install/docker-install-note.md %}
 
-## Step 1. Pull ThingsBoard PE Image
+### Step 1. Pull ThingsBoard PE Image
 
 ```bash
 docker pull thingsboard/tb-pe:{{ site.release.pe_full_ver }}
 ```
 {: .copy-code}
  
-## Step 2. Obtain the license key 
+### Step 2. Obtain the license key 
 
 We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
 If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
@@ -36,7 +36,7 @@ See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-Q
 
 Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
 
-## Step 3. Choose ThingsBoard queue service
+### Step 3. Choose ThingsBoard queue service
 
 {% include templates/install/install-queue.md %}
 
@@ -49,11 +49,11 @@ Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%te
 RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/pe-docker-queue-rabbitmq.md%br%
 Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/pe-docker-queue-confluent-cloud.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}  
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}
 
-Where: 
-    
-- `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the third step;    
+Where:
+
+- `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the third step;
 - `8080:8080`            - connect local port 8080 to exposed internal HTTP port 8080;
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883;
 - `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070;
@@ -65,7 +65,7 @@ Where:
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.;
 - `thingsboard/tb-pe:{{ site.release.pe_full_ver }}`          - docker image.
 
-## Step 4. Running
+### Step 4. Running
 
 {% include templates/install/docker/docker-create-folders-sudo-explained.md %}
 
@@ -308,9 +308,9 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
 * After this you need to update docker-compose.yml as in [Step 4](#step-4-choose-thingsboard-queue-service) but with 3.1.1PE instead of 3.2.2PE:
-    
+
 * Change upgradeversion variable to your **current** ThingsBoard version.
-       
+
  ```bash
 sudo sh -c "echo '3.1.0' > ~/.mytbpe-data/.upgradeversion"
 ```
@@ -328,7 +328,7 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 <br>**docker-compose run mytbpe upgrade-tb.sh**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
-    
+
 * Start ThingsBoard:
 
 ```bash
@@ -383,7 +383,7 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) here is th
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
 * Start ThingsBoard:
-    
+
 ```bash
 docker compose up -d
 ```
@@ -405,6 +405,6 @@ docker cp tb-docker_postgres_1:/var/lib/postgresql/data/thingsboard_dump .
 
 Note: You should paste the name for your postgres container.
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

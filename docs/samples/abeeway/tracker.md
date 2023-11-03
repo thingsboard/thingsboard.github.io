@@ -28,13 +28,13 @@ Otherwise, you can register for a 30-days free demo account here: [thingsboard.c
 We expect you to have at least a basic knowledge about ThingsBoard, so we do recommend to complete the [Getting Started](/docs/getting-started-guides/helloworld) guide.
 
 
-## Integration overview
+### Integration overview
 
 ThingsBoard Platform Integrations feature allows to push data from various platforms and connectivity solutions to ThingsBoard.
 We will use platform ThingPark Wireless company Actility to consume data from LoRaWAN networks and automatically register devices in ThingsBoard.
 Besides configuring the integration, we will also set ThingsBoard up to decode incoming data, store it in the database, visualize on the dashboard and generate alarms based on configurable thresholds.
 
-## Step 1. Checking the registration for the platform ThingPark Wireless company Actility
+### Step 1. Checking the registration for the platform ThingPark Wireless company Actility
 
 - Registration and condition of devices
 
@@ -61,12 +61,12 @@ Therefore, when creating a new device, in the <b>Name</b> field, enter the value
              <summary>
                  <font color="#228b22"><b>Photo of the example of a device registered to the platform ThingPark Wireless company Actility</b></font>  (<b>click to open expanded view</b>)
              </summary>
-            <img src="/images/samples/abeeway/actility_device.png" alt="actility device">
+            <img src="/images/samples/abeeway/actility_device.png" alt="Actility device example">
         </details>
     </ul>
 </details>
 
-## Step 2. Creation UpLink and DownLink DATA Converters
+### Step 2. Creation UpLink and DownLink DATA Converters
 In order to create an [Integration](/docs/user-guide/integrations), we should create the [Uplink Data Converter](/docs/user-guide/integrations/#uplink-data-converter) and the [Downlink Data Converter](/docs/user-guide/integrations/#downlink-data-converter) first. 
 The converters will decode incoming telemetry payload data from global standard LoRaWAN that contains in encoded hex string to human readable, simplified ThingsBoard data format.
 
@@ -74,17 +74,17 @@ The converters will decode incoming telemetry payload data from global standard 
     <summary>
         <font color="#006400"><i><b>Screenshot of how to create Uplink converter</b></i></font> (<b>click to open expanded view</b>)
     </summary>
-    <img src="/images/samples/abeeway/add_uplink_decoder.png" alt="">
+    <img src="/images/samples/abeeway/add_uplink_decoder.png" alt="Add uplink decoder dialog">
 </details>
 
 <details>
     <summary>
         <font color="#006400"><i><b>Screenshot of how to create Downlink converter</b></i></font> (<b>click to open expanded view</b>)
     </summary>
-    <img src="/images/samples/abeeway/add_downlink_decoder.png" alt="add downlink decoder">
+    <img src="/images/samples/abeeway/add_downlink_decoder.png" alt="Add downlink decoder dialog">
 </details>
 
-## Step 3. Uplink Data Converter configuration
+### Step 3. Uplink Data Converter configuration
 
 When creating an Uplink Converter, a default decoder is added to the Decoder section.
 
@@ -103,7 +103,7 @@ After creating the Uplink Converter to the Decoder section, you need to update t
             <summary>
             <font color="#228b22"><b>Screenshot of editing the UpLink decoder</b></font> (<b>click to open expanded view</b>)
             </summary>
-            <img src="/images/samples/abeeway/uplink_decoder.png" alt="uplink decoder">
+            <img src="/images/samples/abeeway/uplink_decoder.png" alt="Uplink decoder properties screen">
         </details>
         <details>
             <summary>
@@ -165,7 +165,7 @@ After creating the Uplink Converter to the Decoder section, you need to update t
                  <summary>
                      <font color="#32cd32"><b>Screenshot of the input data from ThingPark Wireless OSS intelligent logger (Actility) Platform looks like this:</b></font>  <br>(<b>click to open expanded view</b>)
                  </summary>
-                 <img src="/images/samples/abeeway/uplink_decoder_input.png" alt="uplink decoder input">
+                 <img src="/images/samples/abeeway/uplink_decoder_input.png" alt="Uplink decoder input dialog">
                 </details>
             </ul>
         </details>
@@ -211,7 +211,7 @@ After creating the Uplink Converter to the Decoder section, you need to update t
                   <summary>
                   <font color="#32cd32"><b>Screenshot: output data from ThingPark Wireless OSS intelligent logger (Actility) Platform looks like this:</b></font>  <br>(<b>click to open expanded view</b>)
                   </summary>
-                  <img src="/images/samples/abeeway/uplink_decoder_output.png" alt="uplink decoder output">
+                  <img src="/images/samples/abeeway/uplink_decoder_output.png" alt="Uplink decoder output dialog">
                 </details>
                 <details>
                     <summary>
@@ -383,11 +383,11 @@ Alternatively, you can import it from this [file](/docs/user-guide/resources/act
     <summary>
         <font color="#006400"><i><b>the following way: Go to Data Converters -> Add new Data Converter -> Import Converter </b></i></font> (<b>click to open expanded view</b>)
     </summary>
-    <img src="/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png" alt="import new converter">
+    <img src="/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png" alt="Import new converter screen">
 </details>
 
 
-## Step 4. Downlink Data Converter configuration
+### Step 4. Downlink Data Converter configuration
 When creating an Downlink Converter, a default decoder is added to the Decoder section.<br>
 After creating the Downlink Converter to the Decoder section, you need to update the Decoder code to [the following code](/images/samples/abeeway/downlinkDecoder.txt). <br>
 
@@ -400,7 +400,7 @@ Open Downlink Converter, editor mode, click "test decoder function" and replace 
             <summary>
             <font color="#228b22"><b>Screenshot edit the DownLink decoder</b></font> (<b>click to open expanded view</b>)
             </summary>
-            <img src="/images/samples/abeeway/downlink_decoder.png" alt="downlink decoder">
+            <img src="/images/samples/abeeway/downlink_decoder.png" alt="Downlink decoder properties screen">
         </details>
         <details>
             <summary>
@@ -444,15 +444,15 @@ Alternatively, you can import it from this [file](/docs/user-guide/resources/act
     <summary>
         <font color="#006400"><i><b>the following way: Go to Data Converters -> Add new Data Converter -> Import Converter </b></i></font> (<b>click to open expanded view</b>)
     </summary>
-    <img src="/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png" alt="import new converter">
+    <img src="/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png" alt="Import new converter screen">
 </details>
 
-## Step 5. Integration configuration
+### Step 5. Integration configuration
 <details>
     <summary>
         <font color="#006400"><i><b>Screenshot of creating integration on the ThingsBoard platform</b></i></font> <br> (<b>click to open expanded view</b>)
     </summary> 
-    <img src="/images/samples/abeeway/create_integration.png" alt="create integration">
+    <img src="/images/samples/abeeway/create_integration.png" alt="Create integration dialog">
 </details>
 <b><font color="red">WARNING !!!</font> After creation of the Integration...</b>
 <ul>
@@ -468,33 +468,33 @@ Alternatively, you can import it from this [file](/docs/user-guide/resources/act
     <summary>
         <font color="#006400"><i><b>Screenshot of page ThingPark Wireless OSS intelligent logger (Actility),</b> where you need to copy the <b>downLink URL</b></i></font> <br> (<b>click to open expanded view</b>)
     </summary>
-    <img src="/images/samples/abeeway/actility_application.png" alt="actility application">
+    <img src="/images/samples/abeeway/actility_application.png" alt="Adding credentials in Actility application">
 </details>
 
 
-## Step 6. Verifying devices connectivity after the creation and configuration of the Integration.
+### Step 6. Verifying devices connectivity after the creation and configuration of the Integration.
 After creating and configuring the integration and connecting it to platform ThingPark Wireless company Actility, ThingsBoard will begin receiving the first reports of the telemetry from your devices.
 <details>
    <summary>
        <font color="#006400"><i><b>Screenshot of receiving the first reports of the telemetry</b></i></font> (<b>click to open expanded view</b>)
    </summary>
-   <img src="/images/samples/abeeway/after_integr_mesag.png" alt="after integr mesag">
+   <img src="/images/samples/abeeway/after_integr_mesag.png" alt="After integr mesage screen">
 </details>
 On the basis of these first messages ThingsBoard system will automatically create devices with type  and name  under which devices were registered in the ThingPark Actility Enterprise.
 <details>
    <summary>
        <font color="#006400"><i><b>Screenshot of how ThingsBoard system will automatically create devices</b></i></font> (<b>click to open expanded view</b>)
    </summary>
-   <img src="/images/samples/abeeway/after_integr_dev.png" alt="after integr dev">
+   <img src="/images/samples/abeeway/after_integr_dev.png" alt="After integr dev screen">
 </details>
 That's why after creating and configuring the integration and before starting the Dashboard setup you need to check that all your devices are detected and visible in ThingsBoard.
 
-## Step 7. Creation  and  configuration of the Dashboard
+### Step 7. Creation  and  configuration of the Dashboard
 <details>
    <summary>
        <font color="#006400"><i><b>Screenshot of the Dashboard after finishing its creation</b></i></font> (<b>click to open expanded view</b>)
    </summary>
-   <img src="/images/samples/abeeway/actility_dashboard_example.png" alt="actility dashboard example">
+   <img src="/images/samples/abeeway/actility_dashboard_example.png" alt="Actility dashboard example screen">
 </details>
 
 [Example:  Dashboard in json format](/images/samples/abeeway/actility_dashboard.json)
@@ -504,7 +504,7 @@ That's why after creating and configuring the integration and before starting th
    <summary>
        <font color="#006400"><i><b>Screenshot of the creation of the Dashboard</b></i></font> (<b>click to open expanded view</b>)
    </summary>
-   <img src="/images/samples/abeeway/dashboard_create_01.png" alt="dashboard create 01">
+   <img src="/images/samples/abeeway/dashboard_create_01.png" alt="Dashboard creating step 01 dialog">
 </details>
 <ol>
      <li>Open Dashboard and add to: <br> alias (List abeeways): filter_type: Entity_list, type: Device, device_names: DevEUI_1_, DevEUI_2_, DevEUI_3_...</li>
@@ -512,14 +512,14 @@ That's why after creating and configuring the integration and before starting th
         <summary>
             <font color="#006400"><i><b>Screenshot: open Dashboard and add to: alias (List abeeways): filter_type: Entity_list, type: Device, device_names: DevEUI_1_, DevEUI_2_, DevEUI_3_...</b></i></font> <br> (<b>click to open expanded view</b>)
         </summary>
-        <img src="/images/samples/abeeway/alias_create.png" alt="alias create">
+        <img src="/images/samples/abeeway/alias_create.png" alt="Alias creating dialog">
     </details>
     <li>Open Dashboard and add to: alias (DigEntityFrom): type: Entity from dashboard state, type: Device</li>
     <details>
         <summary>
             <font color="#006400"><i><b>Screenshot: open Dashboard and add to: alias (DigEntityFrom): type: Entity from dashboard state, type: Device</b></i></font> <br> (<b>click to open expanded view</b>)
         </summary>
-        <img src="/images/samples/abeeway/alias_create_entityFromDashboard.png" alt="alias create entityFromDashboard">
+        <img src="/images/samples/abeeway/alias_create_entityFromDashboard.png" alt="Alias create entity From Dashboard dialog">
     </details>
 </ol>
 
@@ -533,14 +533,14 @@ That's why after creating and configuring the integration and before starting th
              <summary>
                  <font color="#006400"><i><b>Screenshot of creation of the widget number 1</b></i></font> (<b>click to open expanded view</b>)
              </summary> 
-             <img src="/images/samples/abeeway/widget_create_cards.png" alt="widget create cards">
+             <img src="/images/samples/abeeway/widget_create_cards.png" alt="Widget create cards screen">
          </details>
         <li> Action: action sources: on row click, Name: ${entityName}, type: Update_current_dashboard_state, Set_entity_from_widget </li>
          <details>
               <summary>
                   <font color="#006400"><i><b>Screenshot of widget settings - action sources: on row click to widget number 1</b></i></font> (<b>click to open expanded view</b>)
               </summary> 
-              <img src="/images/samples/abeeway/widget_create_cards_action.png" alt="widget create cards action">
+              <img src="/images/samples/abeeway/widget_create_cards_action.png" alt="Widget create cards action dialog">
           </details>
     </ul>
     <li> widget number 2: </li>
@@ -550,20 +550,20 @@ That's why after creating and configuring the integration and before starting th
            <summary>
                <font color="#006400"><i><b>Screenshot of creation of the widget number 2</b></i></font> (<b>click to open expanded view</b>)
            </summary>
-           <img src="/images/samples/abeeway/widget_create_charts_timeseriesFloat.png" alt="widget create charts timeseriesFloat">
+           <img src="/images/samples/abeeway/widget_create_charts_timeseriesFloat.png" alt="Widget create charts timeseries Float screen">
         </details>
         <li>Data_Source: type: Entity, parameters: List_abeeways, key:temperature, label: ${entityLabel}</li>
         <details>
             <summary>
                 <font color="#006400"><i><b>Screenshot of adding datasource to widget number 2 (part 1)</b></i></font> (<b>click to open expanded view</b>)
             </summary>
-            <img src="/images/samples/abeeway/widget_create_charts.png" alt="widget create charts">
+            <img src="/images/samples/abeeway/widget_create_charts.png" alt="Widget create charts screen">
         </details>
         <details>
            <summary>
                <font color="#006400"><i><b>Screenshot of adding datasource to widget number 2 (part 2)</b></i></font> (<b>click to open expanded view</b>)
            </summary>
-           <img src="/images/samples/abeeway/widget_create_charts_entityLabel.png" alt="widget create charts entityLabel">
+           <img src="/images/samples/abeeway/widget_create_charts_entityLabel.png" alt="Widget create charts entity Label dialog">
         </details>  ![image](/images/samples/abeeway/Actility Dashboard_Example.png)
     </ul>
     <li> widget number 3: </li>
@@ -573,14 +573,14 @@ That's why after creating and configuring the integration and before starting th
            <summary>
                <font color="#006400"><i><b>Screenshot of creation of the widget number 3</b></i></font> (<b>click to open expanded view</b>)
            </summary>
-           <img src="/images/samples/abeeway/widget_create_difital_guages.png" alt="widget create difital guages">
+           <img src="/images/samples/abeeway/widget_create_difital_guages.png" alt="Widget create difital guages screen">
         </details>
         <li>Data_Source: type: Entity, parameters: DigEntityFrom, key:temperature, label: temperature</li>
          <details>
             <summary>
                 <font color="#006400"><i><b>Screenshot of adding datasource to widget number 3</b></i></font> <b>click to open expanded view</b>)
             </summary>
-            <img src="/images/samples/abeeway/widget_create_difital.png" alt="widget create difital">
+            <img src="/images/samples/abeeway/widget_create_difital.png" alt="Widget create difital scren">
          </details>
     </ul>
     <li> widget number 4: </li>
@@ -590,7 +590,7 @@ That's why after creating and configuring the integration and before starting th
            <summary>
                <font color="#006400"><i><b>Screenshot of creation widget number 4</b></i></font> (<b>click to open expanded view</b>)
            </summary>
-           <img src="/images/samples/abeeway/widget_create_cards_Timeseries.png" alt="widget create cards Timeseries">
+           <img src="/images/samples/abeeway/widget_create_cards_Timeseries.png" alt="Widget create cards Timeseries screen">
         </details>
         <li>Data_Source: type: Entity, parameters: DigEntityFrom</li>
             <ul>
@@ -602,7 +602,7 @@ That's why after creating and configuring the integration and before starting th
          <summary>
              <font color="#006400"><i><b>Screenshot of adding datasource to widget number 4</b></i></font> (<b>click to open expanded view</b>)
          </summary> 
-         <img src="/images/samples/abeeway/widget_create_cards_with_value.png" alt="widget create cards with value">
+         <img src="/images/samples/abeeway/widget_create_cards_with_value.png" alt="Widget create cards with value screen">
         </details>
     </ul>
     <li> widget number 5: </li>
@@ -612,7 +612,7 @@ That's why after creating and configuring the integration and before starting th
            <summary>
                <font color="#006400"><i><b>Screenshot of creation of the widget number 5</b></i></font> (<b>click to open expanded view</b>)
            </summary>
-           <img src="/images/samples/abeeway/widget_create_input.png" alt="widget create input">
+           <img src="/images/samples/abeeway/widget_create_input.png" alt="Widget create input screen">
         </details>
         <li>Data_Source: type: Entity, parameters: DigEntityFrom</li>
             <ul>
@@ -623,7 +623,7 @@ That's why after creating and configuring the integration and before starting th
          <summary>
              <font color="#006400"><i><b>Screenshot of adding datasource to the widget number 5</b></i></font> (<b>click to open expanded view</b>)
          </summary>
-         <img src="/images/samples/abeeway/widget_create_input_with_value.png" alt="widget create input with value">
+         <img src="/images/samples/abeeway/widget_create_input_with_value.png" alt="Widget create input with value dialog">
         </details>
     </ul>
 </ol>
@@ -635,29 +635,29 @@ That's why after creating and configuring the integration and before starting th
     <li>Widgets Number 3 and Number 4 with alias <b>DigEntityFrom</b>.</li>
 </ul>
 
-## Step 8: Post telemetry and verify the Integration configuration
+### Step 8: Post telemetry and verify the Integration configuration
 <details>
     <summary>
         <font color="#006400"><i><b>Screenshot of Integration settings change log see here</b></i></font> (<b>click to open expanded view</b>)
     </summary>
-    <img src="/images/samples/abeeway/integration_latest_telemetry.png" alt="integration latest telemetry">
+    <img src="/images/samples/abeeway/integration_latest_telemetry.png" alt="Integration latest telemetry screen">
 </details>
 <details>
     <summary>
         <font color="#006400"><i><b>Screenshot of a log of incoming messages from from ThingPark Wireless OSS intelligent logger (Actility) Platform:</b></i></font> <br> (<b>click to open expanded view</b>)
     </summary>
-    <img src="/images/samples/abeeway/integration_events.png" alt="integration events">
+    <img src="/images/samples/abeeway/integration_events.png" alt="Integration events dialog">
 </details>
 If your devices are active and you do everything correctly when you connect the ThingPark Wireless OSS intelligent <br> logger (Actility) Platform, then you will see incoming messages on the dashboard you created.
 <details>
     <summary>
         <font color="#006400"><i><b>Screenshot of incoming messages to the dashboard you created</b></i></font> (<b>click to open expanded view</b>)
     </summary>
-    <img src="/images/samples/abeeway/actility_dashboard_example.png" alt="actility dashboard example">
+    <img src="/images/samples/abeeway/actility_dashboard_example.png" alt="Actility dashboard example screen">
 </details>
 
 
-## Step 9: Configuration the Root Rule Chain (Root)
+### Step 9: Configuration the Root Rule Chain (Root)
 
 After adding widget number 5, it must be associated with the downlink decoder.<br>
 To do this, go to the "Rule Chain" tab and open the "Root Rule Chain".<br>
@@ -665,7 +665,7 @@ To do this, go to the "Rule Chain" tab and open the "Root Rule Chain".<br>
  <summary>
      <font color="#006400"><i><b>Screenshot of configuration of the Root Rule Chain for the  message to be sent to device</b></i></font> (<b>click to open expanded view</b>)
  </summary>
- <img src="/images/samples/abeeway/rule_chain.png" alt="rule chain">
+ <img src="/images/samples/abeeway/rule_chain.png" alt="Rule chain example screen">
 </details> <br>
 Editing the "Root Rule Chain":
 <ul>
@@ -682,7 +682,7 @@ Editing the "Root Rule Chain":
      <summary>
          <font color="#006400"><i><b>Screenshot of the created Enrichment node: "originator fields"</b></i></font> (<b>click to open expanded view</b>)
      </summary>
-     <img src="/images/samples/abeeway/create_incrichment_originator_fields.png" alt="create incrichment originator fields">
+     <img src="/images/samples/abeeway/create_incrichment_originator_fields.png" alt="Create encrichment originator fields screen">
     </details>
     <li>To receive downlink data by a decoder and transmit decoded data to "Action - rpc call request":</li>
         <ul>
@@ -693,7 +693,7 @@ Editing the "Root Rule Chain":
                      <summary>
                          <font color="#006400"><i><b>Screenshot of the created Action: "integration downlink"</b></i></font> (<b>click to open expanded view</b>)
                      </summary>
-                     <img src="/images/samples/abeeway/create_action _integration_downlink.png" alt="create action integration downlink">
+                     <img src="/images/samples/abeeway/create_action _integration_downlink.png" alt="Create action integration downlink screen">
                     </details>
             </ul>
         <li>The relationship between "Fetch Name and Type" and "Actility_DownLink":</li>
@@ -707,7 +707,7 @@ Editing the "Root Rule Chain":
         </ul>
 </ul>
 
-## Step 10: Create and Sent Downlink messages
+### Step 10: Create and Sent Downlink messages
 
 Before sending a message:
 - you must create a heading in which the type of request is determined (information about the configuration, or about the status of the device, or about the new configuration)<br>
@@ -864,7 +864,7 @@ and also the content of the data itself (a detailed description of the data).
              <summary>
                  <font color="#228b22"><i><b>Screenshot of the sent message from widget number 5</b></i></font> (<b>click to open expanded view</b>)
              </summary>
-             <img src="/images/samples/abeeway/sent_message.png" alt="sent message">
+             <img src="/images/samples/abeeway/sent_message.png" alt="Sent message screen">
         </details>
         <details>
             <summary>
@@ -892,31 +892,31 @@ and also the content of the data itself (a detailed description of the data).
           <summary>
               <font color="#228b22"><i><b>Screenshot of receiving / sending messages to the device ThingPark Wireless OSS intelligent logger (Actility)</b></i></font> (<b>click to open expanded view</b>)
           </summary>
-          <img src="/images/samples/abeeway/receiving_message_actility.png" alt="receiving message actility">
+          <img src="/images/samples/abeeway/receiving_message_actility.png" alt="Receiving message actility screen">
          </details>
         <details>
           <summary>
               <font color="#228b22"><i><b>Screenshot of receiving messages from the device ThingPark Wireless OSS intelligent logger (Actility)</b></i></font> (<b>click to open expanded view</b>)
           </summary>
-          <img src="/images/samples/abeeway/receiving_actility_from_dev.png" alt="receiving actility from dev">
+          <img src="/images/samples/abeeway/receiving_actility_from_dev.png" alt="Receiving actility from dev screen">
          </details>
         <details>
           <summary>
               <font color="#228b22"><i><b>Screenshot of receiving confirmation from the ThingPark Wireless to ThingsBoardabout sending a message to the device</b></i></font> (<b>click to open expanded view</b>)
           </summary>
-          <img src="/images/samples/abeeway/receiving_confirmation_singboard.png" alt="receiving confirmation singboard">
+          <img src="/images/samples/abeeway/receiving_confirmation_singboard.png" alt="Receiving confirmation thingboard dialog">
          </details>
         <details>
           <summary>
               <font color="#228b22"><i><b>Screenshot of decoding device response by Thingsboard  UpLink decoder</b></i></font> (<b>click to open expanded view</b>)
           </summary>
-          <img src="/images/samples/abeeway/decoding_device_response.png" alt="decoding device response">
+          <img src="/images/samples/abeeway/decoding_device_response.png" alt="Decoding device response dialog">
          </details>
     </ul>
 
 </details>
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner-pe.md %}
 

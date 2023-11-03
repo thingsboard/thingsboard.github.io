@@ -8,13 +8,13 @@ ThingsBoard support following device management features using Web UI and [REST 
 
 {% include images-gallery.html imageCollection="device-pe" showListImageTitles="true" %}
 
-## Adding a new device
+### Adding a new device
 
 Each device can belong to multiple groups simultaneously. To add a new device group, you should:
 
 {% include images-gallery.html imageCollection="device-add-pe" showListImageTitles="true" %}
 
-## Editing a device
+### Editing a device
 
 To enter device details and start editing it, you should:
 
@@ -57,7 +57,7 @@ _Documentation dedicated to Events is coming soon._
 
 {% include images-gallery.html imageCollection="device-details-8-pe" showListImageTitles="true" %}
 
-## Device deletion
+### Device deletion
 
 Tenant administrator can delete devices from ThingsBoard. To delete device, you should:
 

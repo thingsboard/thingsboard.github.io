@@ -44,7 +44,7 @@ notitle: "true"
         <p>Data analytics and Prediction</p>
     </a>
     <a href="/products/mobile/" class="card mobile">
-        <img src="/images/tb-mobile-icon.svg" alt="Mobile Application">
+        <img src="/images/tb-mobile-icon.svg" alt="Device icon">
         <h5 class="title">ThingsBoard Mobile Application</h5>
         <p>IoT mobile product</p>
     </a>

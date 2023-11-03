@@ -75,6 +75,6 @@ You can also delete multiple rule chains at once.
 
 {% include images-gallery.html imageCollection="delete-rule-chain-3" showListImageTitles="true" %}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

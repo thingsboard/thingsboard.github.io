@@ -4,24 +4,24 @@
 
 ## Overview
 
-In this tutorial, you will learn how to create custom rule nodes and add them to your ThingsBoard server instance. 
-We will review rule nodes of three different types: Filter, Enrichment and Transformation.  
+In this tutorial, you will learn how to create custom rule nodes and add them to your ThingsBoard server instance.
+We will review rule nodes of three different types: Filter, Enrichment and Transformation.
 
-## Prerequisites 
+### Prerequisites
 
 We assume you have completed the following guides and   reviewed the articles listed below:
 
   * [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide.
   * [Rule Engine Overview](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/) article.
-  
+
 We also assume you have the following third-party installed:
 
   * [OpenJDK 11](https://openjdk.java.net/install/)
   * [Maven 3.6.0+](https://maven.apache.org/install.html)
   * Any modern Java IDE, although we recommend [IntelliJ IDEA](https://www.jetbrains.com/idea/download)
   * [Optional] Install [Lombok](https://projectlombok.org/) plugin to your favorite IDE.
-  
-## Step 1. Download and build sample project
+
+### Step 1. Download and build sample project
 
 
 Clone the repository and navigate to the repo folder:
@@ -55,13 +55,13 @@ For example, the property below is set to {{ site.release.pe_full_ver }} Profess
 ...
 ```
 {: .copy-code}
-     
-  
+
+
 Finally, build the project:
 
 ```bash
 mvn clean install
-```  
+```
 
 Expected output:
 
@@ -75,18 +75,18 @@ Expected output:
 [INFO] ------------------------------------------------------------------------
 ```
 
-## Step 2. Import project to the IDE
+### Step 2. Import project to the IDE
 
 Make sure the [Lombok](https://projectlombok.org/) plugin is installed to your favorite IDE. Import project to your favorite IDE as a Maven project.
 
-## Step 3. Create your rule node
+### Step 3. Create your rule node
 
-In order to create new rule node, you should implement the 
+In order to create new rule node, you should implement the
 [TbNode](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbNode.java) interface and annotate it with the
 [RuleNode](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/RuleNode.java) annotation.
 
-As an example, you may review a very simple Rule Node that filters incoming message based on the existence of the key in the message payload. 
-This rule node is part of the project you have downloaded on the previous step.  
+As an example, you may review a very simple Rule Node that filters incoming message based on the existence of the key in the message payload.
+This rule node is part of the project you have downloaded on the previous step.
 
 
 ```java
@@ -151,7 +151,7 @@ This values should correspond to the ones that are used in [TbContext.tellNext](
 * *docUrl* - link to the documentation page of the current rule node that will be available in the Rule Chain Editor. 
 
 
-### Rule Node lifecycle 
+### Rule Node lifecycle
 
 The **"init"** method is called by the rule engine when the new rule node is created. 
 This may happen if someone adds the rule node to the rule chain or system is stopped.
@@ -212,12 +212,12 @@ void tellFailure(TbMsg msg, Throwable th);
 
 ```
 
-If the Rule Node implementation will not call any of the methods listed above, the Rule Engine will wait for a configurable timeout and **block** processing of the other messages 
-and eventually mark current message as failed. 
+If the Rule Node implementation will not call any of the methods listed above, the Rule Engine will wait for a configurable timeout and **block** processing of the other messages
+and eventually mark current message as failed.
 
 ### Using ThingsBoard services
 
-The [TbContext](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java) contains "getters" for a lot of useful services. 
+The [TbContext](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java) contains "getters" for a lot of useful services.
 Please don't forget to press "Download Sources" in your favorite IDE to simplify browsing of the interfaces of those services;
 A short list of available services getters is listed below:
 
@@ -225,7 +225,7 @@ A short list of available services getters is listed below:
 // Allows to work with entity attributes: get and save them;
 AttributesService getAttributesService();
 
-// Allows CRUD (Create, Read, Updat, Delete) operations over the customer entities;  
+// Allows CRUD (Create, Read, Updat, Delete) operations over the customer entities;
 CustomerService getCustomerService();
 
 // Allows CRUD operations over users;
@@ -310,7 +310,7 @@ void changeEntityOwner(TenantId tenantId, EntityId targetOwnerId, EntityId entit
 // Allows to push custom downlink message to the integration
 void pushToIntegration(IntegrationId integrationId, TbMsg tbMsg, FutureCallback<Void> callback);
 ```
-  
+
 
 ### Creating new messages from the rule node
 
@@ -347,7 +347,7 @@ public void onMsg(TbContext ctx, TbMsg msg) {
     }
 }
 
-```    
+```
 
 You may notice that we have used [TbContext.enqueueForTellNext](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java#L119) method to push new message to the Rule Engine.
 The message will be pushed to the related rule nodes, based on the relation type. The alternative option is to put the message to the beginning of the processing, basically to the root rule chain.
@@ -365,7 +365,6 @@ Also, you may use slightly different method that also allows you to receive conf
 void enqueueForTellNext(TbMsg msg, String queueName, String relationType, Runnable onSuccess, Consumer<Throwable> onFailure);
 
 ```
-   
 
 ### Multithreading
 
@@ -422,7 +421,7 @@ The only corner case is when the rule nodes are added or removed. In such a case
 As a rule node developer, you may override default method [TbNode.onPartitionChangeMsg](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbNode.java#L34)
 to react on the changes of cluster topology. This is useful for stateful nodes that decide to cache information based on the originator (device/asset) id of the message.
 In order to determine that the current entity id belongs to current list of assigned partitions, one may use [TbContext.isLocalEntity](https://github.com/thingsboard/thingsboard/blob/{{ site.release.branch }}/rule-engine/rule-engine-api/src/main/java/org/thingsboard/rule/engine/api/TbContext.java#L152).
-See complete example below:   
+See complete example below:
 
 ```java
 package org.thingsboard.rule.engine.node.filter;
@@ -515,19 +514,19 @@ public class TbCacheExampleNode implements TbNode {
     }
 }
 
-```  
+```
 
 
-## Step 4. Import custom rule nodes to your ThingsBoard instance
+### Step 4. Import custom rule nodes to your ThingsBoard instance
 
 Once you have finished coding of the rule node, execute the build command again:
 
 ```bash
 mvn clean install
-```  
+```
 
 Then, locate the jar-file to your ThingsBoard project as dependency library. The result of the build is located here:
- 
+
 ```bash
 target/rule-engine-1.0.0-custom-nodes.jar
 ```
@@ -535,13 +534,13 @@ target/rule-engine-1.0.0-custom-nodes.jar
 Now you are ready to add the jar-file with your rule nodes to your ThingsBoard instance:
 {% unless docsPrefix %}
 * Use Step 4.1 if your ThingsBoard is installed as a service. 
-* Use Step 4.2 if your ThingsBoard is built from sources and launched locally from your IDE  
+* Use Step 4.2 if your ThingsBoard is built from sources and launched locally from your IDE
 
-### Step 4.1 Add JAR file to ThingsBoard installed as a service
+#### Step 4.1 Add JAR file to ThingsBoard installed as a service
 {% endunless %}
 
  - first, you need to execute the following command to copy jar-file to ThingsBoard extensions:
-   
+
 ```bash
 sudo cp rule-engine-1.0.0-custom-nodes.jar /usr/share/thingsboard/extensions/
 ```
@@ -561,7 +560,7 @@ sudo service thingsboard restart
 **Once ThingsBoard was restarted you need to clear browser cache and refresh the web page to reload UI of Rule Nodes**
 
 {% unless docsPrefix %}
-### Step 4.2 Add JAR file to local ThingsBoard launched using IDE
+#### Step 4.2 Add JAR file to local ThingsBoard launched using IDE
 
  - See separate instructions for [IDEA](https://www.jetbrains.com/help/idea/library.html#add-library-to-module-dependencies) and [Eclipse](https://help.eclipse.org/luna/index.jsp?topic=%2Forg.eclipse.jst.j2ee.doc.user%2Ftopics%2Ftjimpapp.html).
  
@@ -570,7 +569,7 @@ Restart ThingsBoard server-side container. Please, refer to the following link t
 **Once ThingsBoard was restarted you need to clear browser cache and refresh the web page to reload UI of Rule Nodes**
 {% endunless %}
 
-## Step 5. Add your custom package name to thingsboard.yml
+### Step 5. Add your custom package name to thingsboard.yml
 
 **NOTE** if you have changed the package name from **org.thingsboard.rule.engine** to your company package name, e.g. **com.example.rule.engine**, 
 you need also to add your package name in **thingsboard.yml** file in plugins section:
@@ -581,36 +580,36 @@ plugins:
   # Comma separated package list used during classpath scanning for plugins
   scan_packages: "${PLUGINS_SCAN_PACKAGES:org.thingsboard.server.extensions,org.thingsboard.rule.engine,com.example.rule.engine}"
 
-```  
+```
 
-## Step 6. Troubleshoot your rule node
+### Step 6. Troubleshoot your rule node
 
 The easiest way to validate your custom rule node is to create a [generator](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#generator-node) rule node 
 and connect it to your custom rule node. This will generate configurable stream of incoming messages. 
 Once this is done, you should enable [debug](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#debugging) for your custom rule node to validate node output and check them for errors. 
 
 {% unless docsPrefix %}
-## Step 7. Rule Node UI customization (optional)
+### Step 7. Rule Node UI customization (optional)
 
 The ThingsBoard rule nodes UI is configured with another project in the official [github repo](https://github.com/thingsboard/rule-node-examples-ui-ngx). Please, refer to the following [link](https://github.com/thingsboard/rule-node-examples-ui-ngx#rule-node-examples-ui-ngx) to see build instructions.
 
 To run Rule Node UI container in hot redeploy mode:
 
  - first you need to change constant **ruleNodeUiforwardPort** from **8080** to **5000** in file **proxy.conf.js** that should be here:
-    
+
 ```
 nano ${TB_WORK_DIR}/ui-ngx/proxy.conf.js
 ```
-    
- - second, you need to run UI container in hot redeploy mode. Please, refer to the following link to see how to do this: [Running UI container in hot redeploy mode](/docs/{{docsPrefix}}user-guide/contribution/how-to-contribute/#running-ui-container-in-hot-redeploy-mode).   
-    
+
+ - second, you need to run UI container in hot redeploy mode. Please, refer to the following link to see how to do this: [Running UI container in hot redeploy mode](/docs/{{docsPrefix}}user-guide/contribution/how-to-contribute/#running-ui-container-in-hot-redeploy-mode).
+
  - last step is to execute the following command from your local directory **TB_RULE_NODE_UI_WORK_DIR**:
-    
+
     ```
     npm start
     ```
 {% endunless %}
 
-## Next steps
- 
+### Next steps
+
  {% assign currentGuide = "Contribution" %}{% include templates/multi-project-guides-banner.md %}

@@ -18,7 +18,7 @@ empty apartments and focus on apartments located on the second and third floors.
 ![image](/images/trendz/filter-example.png)
 
 
-## Filter Options
+### Filter Options
 
 You can filter by any field that is present in the ThingsBoard:
 * Asset/Device Name 
@@ -28,7 +28,7 @@ You can filter by any field that is present in the ThingsBoard:
 * Telemetry field
 
 
-## Filter types and conditions:
+### Filter types and conditions:
 
 Filter support following field types:
 * Numeric
@@ -40,7 +40,7 @@ To change filter condition - click on the filter field and select the required o
 
 ![image](/images/trendz/filter-dialog.png)
 
-## Filter by hierarchy (relation)
+### Filter by hierarchy (relation)
 
 If you have relations configured between assets/device then you can filter by hierarchy. 
 
@@ -50,6 +50,6 @@ view will contains only apartments from selected building.
 
 Same logic work if you want to filter asset/devices by customer that they belongs to.
 
-## Next Steps
+### Next Steps
 
 {% assign currentGuide = "Filtering" %}{% include templates/trndz-guides-banner.md %}

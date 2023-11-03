@@ -24,7 +24,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
 {% include templates/prerequisites.md %}
 
-## List of hardware and pinouts
+### List of hardware and pinouts
 
  - [NodeMCU V3](https://www.aliexpress.com/item/1pcs-Wireless-module-NodeMcu-Lua-WIFI-Internet-of-Things-development-board-based-ESP8266-CP2102-with-pcb/32656401198.html?spm=2114.01010208.3.1.JnJev4&ws_ab_test=searchweb0_0,searchweb201602_3_10065_10068_10000007_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10037_10054_10033_10059_10032_10099_10078_10079_10077_10073_10097_10100_10096_10070_423_10052_10050_424_10051,searchweb201603_2&btsid=22a4a35a-c3ac-4896-b8b4-8ce38945d312) - You 
  can find list of additional documentation in [NodeMCU overview](/docs/samples/nodemcu/)
@@ -37,7 +37,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
  
  - 3 female-to-female jumper wires
 
-## Wiring schema
+### Wiring schema
 
  ![image](/images/samples/nodemcu/temperature/schema.png)
 
@@ -47,7 +47,7 @@ NodeMCU 3.3V|DHT-11 VCC
 NodeMCU GND|DHT-11 GND (-)
 NodeMCU D5|DHT-11 Data (S)
 
-## Programming the NodeMCU device
+### Programming the NodeMCU device
 
 We need to download and build firmware with Lua interpreter for NodeMCU. 
 This process is described in [official documentation](https://nodemcu.readthedocs.io/) and there are multiple ways to do this.
@@ -175,7 +175,7 @@ Sometimes you are not able to upload lua files. Try to reset the device and exec
 $ sudo ./luatool.py --port /dev/ttyUSB0 -b 115200 --delete init.lua
 ```
 
-## Data visualization
+### Data visualization
 
 In order to simplify this guide, we have included "Temperature & Humidity Demo Dashboard" to the [demo data](/docs/samples/demo-account/) that is available in each ThingsBoard installation.
 You still can modify this dashboard: tune, add, delete widgets, etc.
@@ -188,7 +188,7 @@ in case of local ThingsBoard installation.
  
 Once logged in, open **Dashboards->Temperature & Humidity Demo Dashboard** page. You should observe demo dashboard with live data from your device (similar to dashboard image in the introduction).
  
-## See also
+### See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -203,7 +203,7 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
 {% include socials.html %}
 
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
 

@@ -27,7 +27,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
 {% include templates/prerequisites.md %}
 
-## List of hardware and pinouts
+### List of hardware and pinouts
 
  - Arduino UNO
 
@@ -51,7 +51,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
  - 3 male-to-male jumper wire
 
-## ESP8266 Firmware
+### ESP8266 Firmware
 
 In the current tutorial [WiFiEsp Arduino library](https://github.com/bportaluri/WiFiEsp) is used to connect Arduino board to the internet.
 This library supports ESP SDK version 1.1.1 and above (AT version 0.25 and above).
@@ -63,7 +63,7 @@ Please note that serial baud rate of ESP8266 should be set to 9600 by the follow
 AT+UART_DEF=9600,8,1,0,0
 ```
 
-## Wiring scheme
+### Wiring scheme
 
 Arduino UNO Pin| ESP8266 Pin
 -----------|-----------
@@ -164,11 +164,11 @@ Connect your Arduino UNO device via USB cable and select "Arduino/Genuino Uno" p
 
 After application will be uploaded and started it will try to connect to ThingsBoard node using mqtt client and upload "temperature" and "humidity" timeseries data once per second.
 
-## Troubleshooting
+### Troubleshooting
 
 When the application is running you can select "Arduino/Genuino Uno" port in Arduino IDE and open "Serial Monitor" in order to view debug information produced by serial output.
 
-## Data visualization
+### Data visualization
 
 Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator. Use
 
@@ -185,7 +185,7 @@ If all is configured correctly you should be able to see latest values of *"temp
 After, open **"Dashboards"** section then locate and open **"Arduino DHT22: Temperature & Humidity Demo Dashboard"**.
 As a result, you will see two time-series charts and two digital gauges displaying temperature and humidity level (similar to dashboard image in the introduction).
 
-## See also
+### See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -199,6 +199,6 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
 
 {% include socials.html %}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

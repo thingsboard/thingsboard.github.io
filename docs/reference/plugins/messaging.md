@@ -14,7 +14,7 @@ This RPC plugin enables communication between various IoT devices through the Th
 The plugin introduces basic security features: devices are able to exchange messages only if they belong to the same customer.
 The plugin implementation can be customized to cover more complex security features. 
 
-## Configuration
+### Configuration
 
 You can specify following configuration parameters:
 
@@ -22,7 +22,7 @@ You can specify following configuration parameters:
  - Default request timeout
  - Maximum request timeout 
 
-## Device RPC API
+### Device RPC API
 
 The plugin handles two rpc methods: *getDevices* and *sendMsg*.
 The examples listed below will be based on [demo account](/docs/samples/demo-account/) and [MQTT](/docs/reference/mqtt-api/#client-side-rpc) protocol. 
@@ -71,6 +71,6 @@ As a result, you should receive following response from device:
 
 **Note** that target device id, access tokens, request and response bodies are hardcoded into scripts and correspond to the [demo devices](/docs/samples/demo-account/#tenant-devices).   
 
-## Example
+### Example
 
 As a tenant administrator, you are able to review plugin example inside **Plugins->Demo Device Messaging RPC Plugin**.

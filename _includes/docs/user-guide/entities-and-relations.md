@@ -53,7 +53,7 @@ Data Converters is a part of the Platform Integrations feature. Their purpose is
 
 This guide provides an overview of the features listed above, some useful links to get more details, and real-life examples of their usage.
 
-## Relations
+### Relations
 
 Entity relation defines connection between two ThingsBoard entities that belong to the same [Tenant](/docs/{{docsPrefix}}user-guide/ui/tenants/).
 The relation has an arbitrary type: Contains, Manages, Supports, etc. The relation is also directional.
@@ -71,7 +71,7 @@ The following diagram explains how those entities are configured and stored in T
 See ["add and delete assets"](/docs/pe/user-guide/ui/assets/#add-and-delete-assets) and ["manage asset relations"](/docs/pe/user-guide/ui/assets/#manage-asset-relations)
 to learn how to configure this entities via Administration UI. You may also use [REST API](/docs/reference/rest-client/) to create entities and relations programmatically.
 
-## Next steps
+### Next steps
 
 **Assign attributes to the assets and devices**
 

@@ -1,4 +1,8 @@
+
 {% for item in guides %}
+{% if item.bigheader %}
+<h1 style="font-size: 28px; transform: translateY(40px); margin-bottom: 0;">{{item.bigheader}}</h1>
+{% endif %}
 {% if item.section %}
 {% if guidesVersion == 'paas' and item.paaspage == 'false' %}
 {% elsif guidesVersion == 'ce' and item.cepage == 'false' %}
@@ -7,9 +11,11 @@
 <div class="guides-block" id="AnchorID{{ item.id }}">
     <div class="guides-title-panel">
         <div class="guides-text">
+            {% if item.title != 'Getting started guides' %}
             <p class="guides-title">
                 {{ item.title }}
             </p>
+            {% endif %}
             <p class="guides-subtitle">
                 {{ item.subtitle }}
             </p>

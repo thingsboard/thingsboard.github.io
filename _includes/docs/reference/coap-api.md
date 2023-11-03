@@ -120,15 +120,15 @@ C,telemetry-data-as-array.json,json,resources/telemetry-data-as-array.json,/docs
 D,telemetry-data-with-ts.json,json,resources/telemetry-data-with-ts.json,/docs/reference/resources/telemetry-data-with-ts.json{% endcapture %}
 {% include tabs.html %}
 
- 
-## Attributes API
+
+### Attributes API
 
 ThingsBoard attributes API allows devices to
 
 * Upload [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes to the server.
 * Request [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) and [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
 * Subscribe to [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
- 
+
 ##### Publish attribute update to the server
 
 In order to publish client-side device attributes to ThingsBoard server node, send POST request to the following URL:
@@ -140,8 +140,8 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
 ```
 {: .copy-code}
 
-Where  
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
+Where
+- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;
 - **$ACCESS_TOKEN** - device access token.
 
 {% endif %}
@@ -262,11 +262,11 @@ A,Example,shell,resources/coap-attributes-subscribe.sh,/docs/reference/resources
 B,Result,json,resources/attributes-response.json,/docs/reference/resources/attributes-response.json{% endcapture %}
 {% include tabs.html %}
 
-## JSON value support
+### JSON value support
 
 {% include templates/api/json.md %}
 
-## RPC API
+### RPC API
 
 ##### Server-side RPC
 
@@ -278,8 +278,8 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
 ```
 {: .copy-code}
 
-Where  
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
+Where
+- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;
 - **$ACCESS_TOKEN** - device access token.
 {% endif %}
 {% if docsPrefix == null %}
@@ -313,11 +313,11 @@ Once subscribed, a client may receive rpc requests. An example of RPC request bo
 }
 ```
 
-where 
+where
 
  - **id** - request id, integer request identifier;
  - **method** - RPC method name, string;
- - **params** - RPC method params, custom json object. 
+ - **params** - RPC method params, custom json object.
 
 and can reply to them using POST request to the following URL:
 
@@ -422,8 +422,8 @@ A,Example Request,shell,resources/coap-rpc-from-client.sh,/docs/reference/resour
 B,rpc-client-request.json,shell,resources/rpc-client-request.json,/docs/reference/resources/rpc-client-request.json
 C,Response Body,shell,resources/rpc-server-response.json,/docs/reference/resources/rpc-server-response.json{% endcapture %}
 {% include tabs.html %}
-  
-## Claiming devices
+
+### Claiming devices
 
 Please see the corresponding article to get more information about the [Claiming devices](/docs/{{docsPrefix}}user-guide/claiming-devices) feature.
 
@@ -435,8 +435,8 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/claim
 ```
 {: .copy-code}
 
-Where  
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
+Where
+- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;
 - **$ACCESS_TOKEN** - device access token.
 {% endif %}
 {% if docsPrefix == null %}
@@ -471,7 +471,7 @@ In case the **durationMs** is not specified, the system parameter **device.claim
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-## Device provisioning
+### Device provisioning
 
 Please see the corresponding article to get more information about the [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning) feature.  
 
@@ -509,8 +509,8 @@ The supported data format is:
   "provisionDeviceSecret": "jpmwdn8ptlswmf4m29bw"
 }
 ```
-  
-## Firmware API
+
+### Firmware API
 
 The CoAP client has to issue the GET request to
 
@@ -520,8 +520,8 @@ coap get coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/firmware?title=$TITL
 ```
 {: .copy-code}
 
-Where  
-- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;  
+Where
+- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;
 - **$ACCESS_TOKEN** -  device access token;
 - **$TITLE** - the firmware title;
 - **$VERSION** - the version of the target firmware.
@@ -540,17 +540,17 @@ coap get coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/firmware?title=$TITL
 ```
 {: .copy-code}
 
-Where  
-- **$ACCESS_TOKEN** -  device access token;  
-- **$TITLE** - the firmware title;  
+Where
+- **$ACCESS_TOKEN** -  device access token;
+- **$TITLE** - the firmware title;
 - **$VERSION** - the version of the target firmware.
 
 {% endif %}
 
-## Protocol customization
+### Protocol customization
 
 CoAP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/coap).
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

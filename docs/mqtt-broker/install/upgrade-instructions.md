@@ -25,7 +25,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/docker/#upgrading">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker plus (Linux or Mac OS) logo">
                                                  </div>
                                             </span>
                                         </a>
@@ -34,7 +34,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/docker-compose-setup/#upgrading">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cluster/docker-compose.svg" title="Cluster setup with Docker Compose" alt="Cluster setup with Docker Compose">
+                                                    <img width="" src="/images/install/cluster/docker-compose.svg" title="Cluster setup with Docker Compose" alt="Cluster setup with Docker Compose logo">
                                                  </div>
                                             </span>
                                         </a>
@@ -43,7 +43,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/minikube-cluster-setup/#upgrading">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cluster/minikube.svg" title="Cluster setup with Minikube" alt="Cluster setup with Minikube">
+                                                    <img width="" src="/images/install/cluster/minikube.svg" title="Cluster setup with Minikube" alt="Cluster setup with Minikube logo">
                                                  </div>
                                             </span>
                                         </a>
@@ -52,7 +52,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/aws-cluster-setup/#upgrading">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/eks.svg" title="Cluster setup on EKS" alt="AWS K8S cluster">
+                                                    <img width="" src="/images/install/cloud/eks.svg" title="Cluster setup on EKS" alt="AWS K8S cluster logo">
                                                  </div>
                                             </span>
                                         </a>
@@ -61,7 +61,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/azure-cluster-setup/#upgrading">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/azure.svg" title="Cluster setup on AKS" alt="Azure K8S cluster">
+                                                    <img width="" src="/images/install/cloud/azure.svg" title="Cluster setup on AKS" alt="Azure K8S cluster logo">
                                                  </div>
                                             </span>
                                         </a>
@@ -102,6 +102,6 @@ The _fromVersion_ can be set to either **1.0.0** or **1.0.1** values.
 Navigate to the appropriate documentation to proceed with the next upgrade steps by [choosing one of the card](/docs/mqtt-broker/install/upgrade-instructions/) 
 on top of the page.
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}
