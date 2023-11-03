@@ -297,7 +297,155 @@ list = new java.util.ArrayList(); // Not allowed
 
 To simplify migration from the JS, we have added the `JSON` class with static methods: `JSON.stringify` and `JSON.parse` that work similar to JS. For example:
 For the same purpose, we have added `Date` class that you are able to use without the package name.
- 
+
+#### Date (prototype JavaScript Date and Java Date)
+
+**Date** - this is formatting instant using Core Java. According to the [Java documentation](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/time/Instant.html), an instant is a measured timestamp from the Java epoch of 1970-01-01T00:00:00Z.
+
+**Methods**
+
+There are various methods that allow you to interact with the timestamp stored in the date:
+
+- [An example using the JS format](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date).
+
+- [An example using the Java](https://docs.oracle.com/javase/8/docs/api/java/time/format/DateTimeFormatter.html).
+
+Let's look at some examples formatting date using Core Java:
+
+Command:
+
+```java
+var d = new Date(23, 9, 7, 8, 4, 5, "-04:00");
+```
+{: .copy-code}
+
+Example:
+
+```java
+var d = new Date(23, 9, 7, 8, 4, 5, "-04:00");
+d.toZonedDateTimeString("Europe/Berlin")
+```
+
+Result:
+
+```java
+"2023-09-07T14:04:05+02:00[Europe/Berlin]"
+```
+
+The output String format for the date "September 7 2023... for timeZone "-04:00"" with different timeZones can be found in the table.
+
+The date:
+
+```java
+var d = new Date(2023, 9, 7, 8, 4, 5, "-04:00");
+```
+{: .copy-code}
+
+Command with different timeZones:
+
+| **Command**                                   | **Result**                                      |
+|:----------------------------------------------|:------------------------------------------------|
+| d.toZonedDateTimeString()                     | "2023-09-07T12:04:05Z[UTC]"                     |
+| d.toZonedDateTimeString("`America/New_York`") | "2023-09-07T08:04:05-04:00[America/New_York]"   |
+| d.toZonedDateTimeString("`Europe/Berlin`")    | "2023-09-07T14:04:05+02:00[Europe/Berlin]"      |
+| d.toZonedDateTimeString("`Etc/GMT-14`")       | "2023-09-08T02:04:05+14:00[Etc/GMT-14]"         |
+| d.toZonedDateTimeString("`Etc/GMT+12`")       | "2023-09-07T00:04:05-12:00[Etc/GMT+12]"         |
+| ---
+
+*An example using the Pattern:*
+
+Command for `pattern = "h:mm:ss a"`
+
+```java
+var d = new Date(23, 9, 7, 8, 4, 5, "-04:00");
+var option = {};
+option.timeZone = "America/New_York";
+option.pattern = "h:mm:ss a";
+d.toString("en-US", JSON.stringify(option));
+```
+{: .copy-code}
+
+Result:
+
+```java
+"8:04:05 AM"
+```
+
+Command for `pattern = "EEEE M/d/yyyy"`
+
+```java
+var d = new Date(23, 9, 7, 8, 4, 5, "-04:00");
+var option = {};
+option.timeZone = "America/New_York";
+option.pattern = "EEEE M/d/yyyy";
+d.toString("en-US", JSON.stringify(option));
+```
+{: .copy-code}
+
+Result:
+
+```java
+"Thursday 9/7/2023"
+```
+
+*An example using the dateStyle/timeStyle:*
+
+Command:
+
+```java
+var d = new Date(23, 9, 7, 8, 4, 5, "-04:00");
+var option = {};
+option.timeZone = "America/New_York";
+option.dateStyle = "full";
+option.timeStyle = "full";
+d.toString("en-US",, JSON.stringify(option))
+```
+{: .copy-code}
+
+Result:
+
+```java
+"Thursday, September 7, 2023 at 8:04:05 AM Eastern Daylight Time"
+```
+
+**Please note:**
+
+**1.** The maximum timestamp representable by a Date object is slightly smaller than the maximum safe integer (Number.MAX_SAFE_INTEGER, which is 9,007,199,254,740,991). A Date object can represent a maximum of ±8,640,000,000,000,000 milliseconds, or ±100,000,000 (one hundred million) days, relative to the epoch. This is the range from April 20, 271821 BC to September 13, 275760 AD.
+
+**2.** If the year is entered as two digits:
+
+*-- year < 70 will be formatted as 2000 + year*
+
+Command:
+
+```java
+var d = new Date(22, 12, 31, 23,15,30, 560);
+d.getFullYear()
+```
+{: .copy-code}
+
+Result:
+
+```java
+2022
+```
+
+*-- year >= 70 end <= 99 will be formatted as 1900 + year*
+
+Command:
+
+```java
+var d = new Date(75, 12, 31, 23,15,30, 560);
+d.getFullYear()
+```
+{: .copy-code}
+
+Result:
+
+```java
+1975
+```
+
 #### Flow Control
 
 **If-Then-Else**
