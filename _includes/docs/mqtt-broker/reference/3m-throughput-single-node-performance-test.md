@@ -2,7 +2,7 @@
 * TOC
 {:toc}
 
-In the realm of MQTT brokers, performance under heavy workloads is paramount. 
+In the context of MQTT brokers, optimal performance during high workloads is of utmost importance. 
 This article explores a recent performance test of TBMQ, where we examined its ability to handle a staggering throughput of **3 million messages per second** with a single-digit milliseconds latency.
 With only one node, we pushed the limits of TBMQ's capabilities.
 

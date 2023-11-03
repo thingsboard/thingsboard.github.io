@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: TBMQ 3M Throughput Single Node Performance Test
-description: TBMQ 3M throughput single node performance test
+title: 3M Msg/sec Throughput with a Single TBMQ Node
+description: TBMQ 3M msg/s throughput single node performance test
 
 tbmq-3m-single-node-test-aws-instances:
   0:
