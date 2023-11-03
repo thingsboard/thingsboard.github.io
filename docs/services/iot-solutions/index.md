@@ -10,7 +10,7 @@ description: IoT solutions
     <div class="block-content">
         <div class="text-wrapper">
             <span class="read-info">11 minutes read</span>
-            <h1>Internet of Things Solutions <br class="line-break"/>and Services</h1>
+            <h1>Internet of Things Solutions <br/>and Services</h1>
             <div class="text-content">Internet of Things solutions are changing the world, one thing at a time. The IoT is a network of physical objects that are embedded with sensors, software, and other technologies to connect and exchange data with other devices and systems over the Internet. It’s still in its early stages of development, but it has the potential to revolutionize many industries and aspects of our lives.</div>
         </div>
         <img class="image" srcset="/images/iot-solutions/iot-solutions-1_1090x710.png 1090w, /images/iot-solutions/iot-solutions-1_2180x1420.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-solutions/iot-solutions-1_1090x710.png" alt="IoT solutions dashboard with widgets dark"/>
@@ -18,7 +18,7 @@ description: IoT solutions
             <h3>The main responsibilities of IoT systems — improve operational visibility, optimize efficiency, lower losses, prevent potential issues, and make better, data-driven business decisions.</h3>
             <div class="text-content">When talking about Internet of Things (IoT) solutions, it can’t be reduced to just purchasing and installing IoT sensors and connecting them to an IoT platform. Broadly, it’s about data analytics, data visualization, and integration with existing work and business processes. Let’s check what is required to build an end-to-end solution for IoT.</div>
         </div>
-        <table class="comparison-table">
+        <table class="comparison-table desktop-table">
             <thead>
                 <tr>
                     <th><span class="column-header">Newcomers vision, or Trivial IoT solutions</span></th> 
@@ -60,6 +60,60 @@ description: IoT solutions
                 </tr>
                 <tr>
                     <td></td>
+                    <td>Integration with existing business workflow and connection with external systems</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="comparison-table mobile-table first-child">
+            <thead>
+                <tr>
+                    <th><span class="column-header">Newcomers vision, or Trivial IoT solutions</span></th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Connecting devices</td>
+                </tr>
+                <tr>
+                    <td>Data visualisation</td>
+                </tr>
+                <tr>
+                    <td>Setting thresholds and sending notifications</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="comparison-table mobile-table">
+            <thead>
+                <tr>
+                    <th><span class="column-header">Experienced vision, or More complex IoT solutions</span></th> 
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Securely connect devices</td>
+                </tr>
+                <tr>
+                    <td>Collect data from sensors</td>
+                </tr>
+                <tr>
+                    <td>Pre-process incoming telemetry and calculate business metrics</td>
+                </tr>
+                <tr>
+                    <td>Data visualisation</td>
+                </tr>
+                <tr>
+                    <td>Alerts & notifications</td>
+                </tr>
+                <tr>
+                    <td>Customisation of workflows & rule engines</td>
+                </tr>
+                <tr>
+                    <td>Data analytics / ML</td>
+                </tr>
+                <tr>
+                    <td>Reporting</td>
+                </tr>
+                <tr>
                     <td>Integration with existing business workflow and connection with external systems</td>
                 </tr>
             </tbody>
@@ -205,8 +259,8 @@ description: IoT solutions
     <div class="block-content">
         <div class="contact-us-content">
             <div class="info">
-                <div class="title">Ready to launch <br class="line-break"/>your unique product?</div>
-                <div class="text">Leave us your name and email and we will get back <br class="line-break"/>to you within 2 business days</div>
+                <div class="title">Ready to launch <br/>your unique product?</div>
+                <div class="text">Leave us your name and email and we will get back <br/>to you within 2 business days</div>
             </div>
             <form id="contact-form" class="contact-form" method="post" onsubmit="return validateContactForm(this)">
                 <fieldset>
