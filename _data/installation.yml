@@ -38,7 +38,7 @@ toc:
   - title: How to change configuration parameters?
     path: /docs/user-guide/install/how-to-change-config/
   - title: Core/Rule engine deployment parameters
-    path: /docs/user-guide/install/core-rule-engine-config/
+    path: /docs/user-guide/install/config/
   - title: HTTP Transport parameters
     path: /docs/user-guide/install/http-transport-config/
   - title: MQTT Transport parameters

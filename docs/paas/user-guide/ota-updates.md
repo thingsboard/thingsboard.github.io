@@ -96,7 +96,7 @@ fw-devicegroup:
         title: 'Go to the Device profile page and open needed device profile details to edit its information.'
     1:
         image: /images/user-guide/firmware/fw-devicegroup-1-pe.png
-        title: "From the drop-down menu select firmware that you'd like to assign to this device profile."
+        title: "From the drop-down menu select firmware that you would like to assign to this device profile."
     2:
         image: /images/user-guide/firmware/fw-devicegroup-2-pe.png
         title: 'After selecting firmware, apply changes by clicking the orange check mark in the right corner of the page.'
