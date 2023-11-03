@@ -60,28 +60,28 @@ We will create a dashboard to add the most popular widgets. See instructions bel
 
 {% include images-gallery.html imageCollection="step31" showListImageTitles="true" %}
 
-### Step 3.2 Add entity alias
+### Step 3.2 Add entities table widget
 
-Alias is a reference to a single entity or a group of entities that are used in the widgets.
-Alias may be static or dynamic. For simplicity, we will use "Single entity" alias reference the one and only entity ("My New Device" in our case).
-It is possible to configure an alias that references multiple devices. For example, devices of a certain type or related to a certain asset. 
-You may learn more about different aliases [here](/docs/{{docsPrefix}}user-guide/ui/aliases/).
-
-{% include images-gallery.html imageCollection="step32" showListImageTitles="true" %}   
-
-### Step 3.3 Add table widget
-
-Entity Table widget displays the latest values with list of entities that matches selected alias and filter with ability of additional full text search and pagination options.
+The "Entities table" widget displays a list of entities and their latest values. 
+The list of entities corresponds to selected devices or other entities, and filters with the ability of additional full text search and pagination options.
 
 To add the table widget we need to select it from the widget library. Widgets are grouped into widget bundles.
 Each widget has a data source. This is how the widget "knows" what data to display.
 To see the latest value of our "temperature" data that we sent during step 2, we should configure the data source.
 
+Let's add your first widget:
+
 {% include images-gallery.html imageCollection="step33" showListImageTitles="true" %}
 
-Congratulations! You have added the first widget. Now you are able to send a new telemetry reading and it will immediately appear in the table. 
+Congratulations! You've added your first widget.
 
-### Step 3.4 Add chart widget
+In the "Entities table" widget, there are two columns. 
+The first column displays the device's name, and the second column displays the value of the "temperature" key (device telemetry). 
+So, each column corresponds to an added key.
+
+Now you are able to a send new telemetry reading (as in [Step 1](#step-1-provision-device)), and it will immediately appear in the table.
+
+### Step 3.3 Add chart widget
 
 Chart widgets allow you to display time series data with customizable line charts and bar charts.
 
@@ -91,9 +91,9 @@ We should also configure the time window to use the chart widget.
 
 {% include images-gallery.html imageCollection="step34" showListImageTitles="true" %}
 
-Congratulations! You have added chart widget. Now you are able to send new telemetry reading and it will immediately appear in the chart. 
+Congratulations! You have added chart widget. Now you are able to send new telemetry reading, and it will immediately appear in the chart. 
 
-### Step 3.5 Add alarm widget
+### Step 3.4 Add alarm widget
 
 Alarms table widget displays alarms related to the specified entity in the certain time window.
 Alarm widget is configured by specifying an entity as the alarm source, and the corresponding alarm fields.
@@ -101,6 +101,15 @@ Alarm widget is configured by specifying an entity as the alarm source, and the 
 {% include images-gallery.html imageCollection="step35" showListImageTitles="true" %}
 
 Congratulations! You have added alarm widget. Now it's time to configure alarm rules and raise some alarms. 
+
+### Step 3.5 Add entity alias
+
+Alias is a reference to a single entity or a group of entities that are used in the widgets.
+Alias may be static or dynamic. For simplicity, we will use "Single entity" alias reference the one and only entity ("My New Device" in our case).
+It is possible to configure an alias that references multiple devices. For example, devices of a certain type or related to a certain asset.
+You may learn more about different aliases [here](/docs/{{docsPrefix}}user-guide/ui/aliases/).
+
+{% include images-gallery.html imageCollection="step32" showListImageTitles="true" %}
 
 ## Step 4. Configure alarm rules
 

@@ -46,14 +46,20 @@ step3:
         
 step31:
     0:
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-1-pe.png
-        title: 'Open the "Dashboards" page. By default, you navigate to the dashboard group “All”. Click on the "+" icon in the top right corner. Select "Create new dashboard";'
+        image: /images/user-guide/dashboards/overview/create-dashboard-1-pe.png
+        title: 'Login to your ThingsBoard instance and navigate to the "Dashboards" page through the main menu on the left of the screen. By default, you navigate to the dashboard group "All";'
     1:
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-2-pe.png
-        title: 'Enter dashboard name. For example, "My New Dashboard". Then click "Add" to create the dashboard;'
+        image: /images/user-guide/dashboards/overview/create-dashboard-2-pe.png
+        title: 'Click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu;'
     2:
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-dashboard-3-pe.png
-        title: 'Your first dashboard has been created. As long as you have one dashboard. But as new dashboards are added, they will be added to the top of the table, since the table sorts dashboards using the time of the creation by default. Click on the row to open the dashboard.'
+        image: /images/helloworld/getting-started-pe/create-dashboard-3-pe.png
+        title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add";'
+    3:
+        image: /images/user-guide/dashboards/overview/create-dashboard-4-pe.png
+        title: 'Once you have created the dashboard, it will be automatically opened. Save it by clicking the "Save" button in the upper right corner.'
+    4:
+        image: /images/helloworld/getting-started-pe/create-dashboard-5-pe.png
+        title: 'Your first dashboard has been successfully created. As you continue to add new dashboards, they will appear at the top of the list. This default sort is based on the creation timestamp.'
 
 step32:
     0:
@@ -77,24 +83,30 @@ step32:
 
 step33:
     0:
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-1-pe.png
-        title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
+        image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-0-pe.png
+        title: 'Enter dashboard edit mode. Simply open the dashboard and click the "Edit mode" button found in the upper right corner of the screen;'
     1:
+        image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-1-pe.png
+        title: 'Click on the "Add new widget" button at the top of the screen;'
+    2:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-2-pe.png
         title: 'Select the "Tables" widget bundle;'
-    2:
+    3:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-3-pe.png
         title: 'Select the "Entities table" widget;'
-    3:
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-4-pe.png
-        title: 'The "Add Widget" window will appear. Add datasource by specifying previously created "My New Entity Alias" alias and click "Add column" to add data key;'
     4:
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-5-pe.png
-        title: 'Specify the "temperature" data key: click on the newly appeared data key input field. The auto-complete with available data keys will appear. Select "temperature" data key and click "Add";'
+        image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-4-pe.png
+        title: 'The "Add Widget" window will appear. Add datasource by specifying previously created "My New Device" device. The “name” key has already been added to the “Columns” section, which is responsible for the column with the device name. You need to add another column that will display the value of the "temperature" key. To do this click "Add column" to add a new field to enter the data key;'
     5:
+        image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-5-pe.png
+        title: 'Click on the newly appeared data key input field. The auto-complete with available data keys will appear. Select "temperature" data key;'
+    6:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-6-pe.png
+        title: 'Click the "Add" button in the bottom right corner of the widget to complete adding the widget.'
+    7:
+        image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-7-pe.png
         title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. Apply changes.'
-        
+
 step34:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-1-pe.png
