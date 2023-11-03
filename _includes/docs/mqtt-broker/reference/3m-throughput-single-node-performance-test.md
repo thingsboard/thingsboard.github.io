@@ -49,7 +49,6 @@ This low latency is a testament to TBMQ's capability to handle high loads while 
 |-----------------|------------------|
 | 7.4 ms          | 11 ms            |
 
-The performance test revealed resource utilization patterns, shedding light on the efficiency of TBMQ under high message loads.
 It would be advantageous to review an informative table that summarizes the key elements and outcomes of the conducted test.
 
 | Publishers | Subscribers | Msgs/sec | Throughput | QoS | Payload  | TBMQ CPU | TBMQ Memory |
@@ -109,4 +108,4 @@ This achievement underscores TBMQ's readiness for handling demanding workloads, 
 As we continue to explore TBMQ's capabilities, we remain committed to delivering improved performance and reliability. 
 We look forward to sharing more insights and performance results in the future.
 
-Your feedback is highly appreciated, and we encourage you to stay connected with our project by following us on [GitHub](https://github.com/thingsboard/tbmq) to stay updated on our latest developments.
+Your feedback is highly appreciated, and we encourage you to stay connected with our project by following us on [GitHub](https://github.com/thingsboard/tbmq) to be updated on our latest developments.
