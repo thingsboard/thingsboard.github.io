@@ -48,11 +48,11 @@ This low latency is a testament to TBMQ's capability to handle high loads while 
 |-----------------|------------------|
 | 7.4 ms          | 11 ms            |
 
-It would be advantageous to review an informative table that summarizes the key elements and outcomes of the conducted test.
+It would be helpful to review an informative table that summarizes the key elements and results of the test.
 
-| Publishers | Subscribers | Msgs/sec | Throughput | QoS | Payload  | TBMQ CPU | TBMQ Memory |
-|------------|-------------|----------|------------|-----|----------|----------|-------------|
-| 100        | 3000        | 10       | 3M/s       | 0   | 66 bytes | 54%      | 75GiB       |
+| Publishers | Subscribers | Msg/sec | Throughput | QoS | Payload  | TBMQ CPU | TBMQ Memory |
+|------------|-------------|---------|------------|-----|----------|----------|-------------|
+| 100        | 3000        | 10      | 3M msg/s   | 0   | 66 bytes | 54%      | 75GiB       |
 
 **Lessons Learned**
 
