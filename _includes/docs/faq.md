@@ -62,7 +62,7 @@ Each device has unique access token credentials that is used to setup connection
 ### How much devices can ThingsBoard support?
 
 ThingsBoard platform is horizontally scalable. Each server node in the cluster is unique.
-Scalability is achieved using [consistent-hashing](https://dzone.com/articles/simple-magic-consistent) load balancing algorithm between the cluster nodes.
+Scalability is achieved using [consistent-hashing](https://en.wikipedia.org/wiki/Consistent_hashing) load balancing algorithm between the cluster nodes.
 Actual performance depends on usage scenario of connected devices.
 {% unless docsPrefix == 'paas/' %}
 For example, small commodity hardware cluster can support [several millions](/docs/{{docsPrefix}}reference/iot-platform-deployment-scenarios/#1-million-smart-meters-tco) of devices connected over MQTT.
