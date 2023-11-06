@@ -68,7 +68,7 @@ This configuration delivered an average message latency of **14.2 ms** while mai
 These findings highlight the flexibility and potential of TBMQ to perform greatly across diverse instance types, 
 providing users with the opportunity to choose the configuration that best suits their specific requirements.
 
-### Running tests
+### Running test
 
 The test agent represents a cluster of performance test nodes (runners) and an orchestrator that supervises these runners.
 To fulfill their respective roles, we deployed 1 publisher and 6 subscriber Kubernetes pods, with a single pod designated as the orchestrator.
@@ -88,7 +88,7 @@ This finding indicates that TBMQ demonstrates substantial processing capacity, s
 
 {% include images-gallery.html imageCollection="tbmq-3m-single-node-test-monitoring" %}
 
-### How to repeat the tests
+### How to repeat the test
 
 We recommend referring to our [installation guide](/docs/mqtt-broker/install/cluster/aws-cluster-setup/), which provides step-by-step instructions on how to deploy TBMQ on AWS.
 In addition, you may explore the [branch](https://github.com/thingsboard/tbmq/tree/3M-single-node-perf-test/k8s/aws#readme) containing the scripts and parameters used for running TBMQ during this performance test,
