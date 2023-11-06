@@ -29,8 +29,8 @@ without experiencing any performance degradation or resource exhaustion.
 | Service Name              | **TBMQ**    | **AWS RDS (PostgreSQL)** | **Kafka** |
 |---------------------------|-------------|--------------------------|-----------|
 | Instance Type             | m7a.8xlarge | db.m6i.large             | m7a.large |
-| Memory (GiB)              | 128         | 8                        | 8         |
 | vCPU                      | 32          | 2                        | 2         |
+| Memory (GiB)              | 128         | 8                        | 8         |
 | Storage (GiB)             | 10          | 30                       | 50        |
 | Network bandwidth (Gibps) | 12.5        | 12.5                     | 12.5      |
 
