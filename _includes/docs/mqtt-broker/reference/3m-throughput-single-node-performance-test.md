@@ -52,7 +52,7 @@ It would be helpful to review an informative table that summarizes the key eleme
 
 | Publishers | Subscribers | Msg/sec | Throughput | QoS | Payload  | TBMQ CPU | TBMQ Memory |
 |------------|-------------|---------|------------|-----|----------|----------|-------------|
-| 100        | 3000        | 10      | 3M msg/s   | 0   | 66 bytes | 54%      | 75GiB       |
+| 100        | 3000        | 10      | 3M msg/s   | 0   | 66 bytes | 54 %     | 75 GiB      |
 
 **Lessons Learned**
 
