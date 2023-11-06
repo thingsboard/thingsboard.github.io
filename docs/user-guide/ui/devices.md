@@ -14,16 +14,16 @@ add-device:
         title: 'Click on the "+" icon in the top right corner of the table and then select "Add new device";'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-3-ce.png
-        title: 'Enter device name. For example, "My New Device". No other changes required at this time. Click "Add" to add the device;'
+        title: 'Enter the device name. For example, "My New Device". No other changes required at this time. Click "Add" to add the device;'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-connectivity-1-ce.png
-        title: 'The window to check the device&#39;s connection to ThingsBoard will open. This step is optional. Select the messaging protocol and your operating system. Install the necessary client tools and copy the command;'
+        title: 'The window to check the device&#39;s connection to ThingsBoard will open. The following step is optional. Select the messaging protocol and your operating system. Install the necessary client tools and copy the command;'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-connectivity-3-ce.png
         title: 'Execute previously copied command. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings. Then, close connectivity window;'
     5:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png
-        title: 'Your first device has been added. As long as you have one device. But as new devices are added, they will be added to the top of the table, since the table sort devices using the time of the creation by default;'
+        title: 'Your first device has been added. As new devices are added, they will be added to the top of the table, since the table sort devices using the time of the creation by default;'
     6:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-5-ce.png
         title: 'When adding a new device, you will receive a notification. You can view it by clicking on the "bell" icon in the top right corner.'
@@ -34,12 +34,12 @@ device-details:
         title: 'Clicking the device row to open its details, then click the "pencil" icon in the upper right corner of the dialog;'
     1:
         image: /images/user-guide/ui/devices/ce/device-details-2-ce.png
-        title: 'If necessary, change the device name and its profile. Also, you can input label and description, or check the Is gateway box. After editing, click the orange check mark to save all applied changes.'
+        title: 'If necessary, change the device name and its profile. Also, you can input label and description, or check the "Is gateway" box. After editing, click the orange check mark to save all applied changes.'
 
 device-delete-1:
     0:
         image: /images/user-guide/ui/devices/ce/device-delete-1-ce.png
-        title: 'Click on the “trash” icon can opposite the device&#39;s name you want to delete.'
+        title: 'Click on the “trash can” icon can opposite the device&#39;s name you want to delete.'
     1:
         image: /images/user-guide/ui/devices/ce/device-delete-2-ce.png
         title: 'Confirm deleting the device in the dialog box.'
@@ -93,7 +93,7 @@ check-connectivity:
         title: 'Open "Device details" window and click the "Check connectivity" button;'
     1:
         image: /images/user-guide/ui/devices/ce/check-connectivity-2-ce.png
-        title: 'Select messaging protocol and your operating system, then copy the command;'
+        title: 'Select the messaging protocol and your operating system, then copy the command;'
     2:
         image: /images/user-guide/ui/devices/ce/check-connectivity-3-ce.png
         title: 'Send telemetry to the ThingsBoard on behalf of the device by executing the command. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings.'

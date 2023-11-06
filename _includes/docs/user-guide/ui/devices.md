@@ -7,7 +7,7 @@ In the context of the ThingsBoard IoT platform, "devices" are basic Internet of 
 
 ThingsBoard offers the capability to manage devices through a web interface and [REST API](/docs/{{docsPrefix}}reference/rest-api/), store data from devices, and facilitate interaction between devices and other components of the platform.
 
-Devices, in this context, can refer to physical or virtual objects connected to a network, such as monitoring sensors, smart devices, machines, sensors, and more. These devices can collect data like temperature, humidity, GPS coordinates, and send this data to the ThingsBoard platform.
+Devices, in this context, can refer to physical or virtual objects connected to a network, such as monitoring sensors, smart devices, machines, sensors, and more. These devices can collect data like temperature, humidity, GPS coordinates and send this data to the ThingsBoard platform.
 
 Devices can be organized into various [groups](/docs/{{docsPrefix}}user-guide/groups/).
 
@@ -29,12 +29,12 @@ Each device can belong to multiple groups simultaneously. To add a new device gr
 
 {% include images-gallery.html imageCollection="add-device-group-pe" showListImageTitles="true" %}
 
-More about entity groups read [here](/docs/{{docsPrefix}}user-guide/groups/).
+You can read more about entity groups [here](/docs/{{docsPrefix}}user-guide/groups/).
 {% endunless %}
 
 ## Editing a device
 
-You can change the device name, its device profile, label, assig the firmware and software.
+You can change the device name, its device profile, label, assign the firmware and software.
 To edit the device, you need to:
 
 {% include images-gallery.html imageCollection="device-details" showListImageTitles="true" %}
@@ -79,7 +79,7 @@ This will allow Customer users to fetch device data using REST APIs or Web UI.
 
 Tenant administrator is able to manage device credentials. The current release supports credentials based on **Access token**, **X.509 certificates**, and **MQTT Basic**.
 
-By default, "access token" credentials are used. To change device credentials, follow this steps:
+By default, "access token" credentials are used. To change device credentials, follow these steps:
 
 {% include images-gallery.html imageCollection="manage-device-credentials" showListImageTitles="true" %}
 
@@ -99,7 +99,7 @@ Check your device's connection to the ThingsBoard platform:
 
 ### Copy device Id
 
-Copy the device id to the clipboard using the "Copy Device Id" button.
+Copy the device Id to the clipboard using the "Copy Device Id" button.
 
 {% include images-gallery.html imageCollection="copy-device-id" %}
 
@@ -123,7 +123,7 @@ This tab displays the client, server, and shared attributes of the device. For e
 ### Device telemetry
 
 This tab shows the telemetry data that the device sends in real-time, such as sensor readings, status, and other measurable variables.
-[Time-series](/docs/{{docsPrefix}}user-guide/telemetry/) data points available for storage, querying and visualization. For example temperature, humidity, battery level.
+[Time-series](/docs/{{docsPrefix}}user-guide/telemetry/) data points are available for storage, querying and visualization. For example, temperature, humidity, battery level.
 
 {% include images-gallery.html imageCollection="telemetry" %}
 
