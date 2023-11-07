@@ -3,11 +3,11 @@
 
 This guide will help you to set up TBMQ in AWS EKS.
 
-## Prerequisites
+### Prerequisites
 
 {% include templates/mqtt-broker/install/aws/eks-prerequisites.md %}
 
-## Step 1. Open TBMQ K8S scripts repository
+### Step 1. Open TBMQ K8S scripts repository
 
 ```bash
 git clone https://github.com/thingsboard/tbmq.git
@@ -15,7 +15,7 @@ cd tbmq/k8s/aws
 ```
 {: .copy-code}
 
-## Step 2. Configure and create EKS cluster
+### Step 2. Configure and create EKS cluster
 
 In the `cluster.yml` file you can find suggested cluster configuration.
 Here are the fields you can change depending on your needs:
@@ -42,7 +42,7 @@ eksctl create cluster -f cluster.yml
 ```
 {: .copy-code}
 
-## Step 3. Create AWS load-balancer controller
+### Step 3. Create AWS load-balancer controller
 
 Once the cluster is ready you'll need to create AWS load-balancer controller.
 You can do it by following [this](https://docs.aws.amazon.com/eks/latest/userguide/aws-load-balancer-controller.html) guide.
@@ -53,7 +53,7 @@ The cluster provisioning scripts will create several load balancers:
 
 Provisioning of the AWS load-balancer controller is a **very important step** that is required for those load balancers to work properly.
 
-## Step 4. Amazon PostgreSQL DB Configuration
+### Step 4. Amazon PostgreSQL DB Configuration
 
 You'll need to set up PostgreSQL on Amazon RDS.
 One of the ways to do it is by following [this](https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SettingUp.html) guide.
@@ -72,7 +72,7 @@ the database in the same VPC and subnets as TBMQ cluster and use
 
 {% include images-gallery.html imageCollection="tbmq-rds-set-up" %}
 
-## Step 5. Amazon MSK Configuration
+### Step 5. Amazon MSK Configuration
 
 You'll need to set up Amazon MSK.
 To do so you need to open AWS console, MSK submenu, press `Create cluster` button and choose `Custom create` mode.
@@ -95,7 +95,7 @@ We also recommend to use private subnets. This way it will be nearly impossible 
 
 At the end, carefully review the whole configuration of the MSK and then finish the cluster creation.
 
-## Step 6. Amazon ElastiCache (Redis) Configuration (Optional)
+### Step 6. Amazon ElastiCache (Redis) Configuration (Optional)
 
 Optionally, you can set up [ElastiCache](https://aws.amazon.com/elasticache/redis/) for Redis. TBMQ uses cache to improve performance and avoid frequent DB reads.
 
@@ -115,9 +115,9 @@ Please open AWS console and navigate to ElastiCache->Redis clusters->Create Redi
 
 {% include images-gallery.html imageCollection="tbmq-redis-set-up" %}
 
-## Step 7. Configure links to the Kafka (Amazon MSK)/Postgres/Redis
+### Step 7. Configure links to the Kafka (Amazon MSK)/Postgres/Redis
 
-### Amazon RDS PostgreSQL
+#### Amazon RDS PostgreSQL
 
 Once the database switch to the ‘Available’ state, on AWS Console get the `Endpoint` of the RDS PostgreSQL and paste it to
 `SPRING_DATASOURCE_URL` in the `tb-broker-db-configmap.yml` instead of `RDS_URL_HERE` part.
@@ -126,7 +126,7 @@ Once the database switch to the ‘Available’ state, on AWS Console get the `E
 
 Also, you'll need to set `SPRING_DATASOURCE_USERNAME` and `SPRING_DATASOURCE_PASSWORD` with PostgreSQL `username` and `password` corresponding.
 
-### Amazon MSK
+#### Amazon MSK
 
 Once the MSK cluster switch to the ‘Active’ state, to get the list of brokers execute the next command:
 ```bash
@@ -141,7 +141,7 @@ You'll need to paste data from the `BootstrapBrokerString` to the `TB_KAFKA_SERV
 
 Otherwise, click `View client information` seen on the screenshot above. Copy bootstrap server information in plaintext.
 
-### Amazon ElastiCache
+#### Amazon ElastiCache
 
 Once the Redis cluster switch to the ‘Available’ state, open the ‘Cluster details’ and copy `Primary endpoint` without ":6379" port suffix, it`s **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT**.
 
@@ -149,7 +149,7 @@ Once the Redis cluster switch to the ‘Available’ state, open the ‘Cluster 
 
 Edit `tb-broker-cache-configmap.yml` and replace **YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT**.
 
-## Step 8. Installation
+### Step 8. Installation
 
 Execute the following command to run installation:
 ```bash
@@ -170,7 +170,7 @@ Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in
 {% endcapture %}
 {% include templates/info-banner.md content=aws-rds %}
 
-## Step 9. Starting
+### Step 9. Starting
 
 Execute the following command to deploy the broker:
 
@@ -187,9 +187,9 @@ kubectl get pods
 
 If everything went fine, you should be able to see `tb-broker-0` and `tb-broker-1` pods. Every pod should be in the `READY` state.
 
-## Step 10. Configure Load Balancers
+### Step 10. Configure Load Balancers
 
-### 10.1 Configure HTTP(S) Load Balancer
+#### 10.1 Configure HTTP(S) Load Balancer
 
 Configure HTTP(S) Load Balancer to access web interface of your TBMQ instance. Basically you have 2 possible options of configuration:
 
@@ -198,7 +198,7 @@ Configure HTTP(S) Load Balancer to access web interface of your TBMQ instance. B
 
 See links/instructions below on how to configure each of the suggested options.
 
-#### HTTP Load Balancer
+##### HTTP Load Balancer
 
 Execute the following command to deploy plain http load balancer:
 
@@ -221,7 +221,7 @@ NAME                          CLASS    HOSTS   ADDRESS                          
 tb-broker-http-loadbalancer   <none>   *       k8s-thingsbo-tbbroker-000aba1305-222186756.eu-west-1.elb.amazonaws.com   80      3d1h
 ```
 
-#### HTTPS Load Balancer
+##### HTTPS Load Balancer
 
 Use [AWS Certificate Manager](https://aws.amazon.com/certificate-manager/) to create or import SSL certificate. Note your certificate ARN.
 
@@ -239,7 +239,7 @@ kubectl apply -f receipts/https-load-balancer.yml
 ```
 {: .copy-code}
 
-### 10.2 Configure MQTT Load Balancer
+#### 10.2 Configure MQTT Load Balancer
 
 Configure MQTT load balancer to be able to use MQTT protocol to connect devices.
 
@@ -252,7 +252,7 @@ kubectl apply -f receipts/mqtt-load-balancer.yml
 
 The load balancer will forward all TCP traffic for ports 1883 and 8883.
 
-#### One-way TLS
+##### One-way TLS
 
 The simplest way to configure MQTTS is to make your MQTT load balancer (AWS NLB) to act as a TLS termination point.
 This way we set up the one-way TLS connection, where the traffic between your devices and load balancers is encrypted, and the traffic between your load balancer and TBMQ is not encrypted.
@@ -278,7 +278,7 @@ kubectl apply -f receipts/mqtts-load-balancer.yml
 ```
 {: .copy-code}
 
-#### Two-way TLS
+##### Two-way TLS
 
 The more complex way to enable MQTTS is to obtain valid (signed) TLS certificate and configure it in the TBMQ. 
 The main advantage of this option is that you may use it in combination with “X.509 certificate” MQTT client credentials.
@@ -316,7 +316,7 @@ kubectl apply -f receipts/mqtt-load-balancer.yml
 ```
 {: .copy-code}
 
-## Step 11. Validate the setup
+### Step 11. Validate the setup
 
 Now you can open TBMQ web interface in your browser using DNS name of the load balancer.
 
@@ -338,7 +338,7 @@ Use `ADDRESS` field of the `tb-broker-http-loadbalancer` to connect to the clust
 
 {% include templates/mqtt-broker/login.md %}
 
-### Validate MQTT access
+#### Validate MQTT access
 
 To connect to the cluster via MQTT you will need to get corresponding service IP. You can do this with the command:
 
@@ -356,7 +356,7 @@ tb-broker-mqtt-loadbalancer   LoadBalancer   10.100.119.170   k8s-thingsbo-tbbro
 
 Use `EXTERNAL-IP` field of the load-balancer to connect to the cluster via MQTT protocol.
 
-### Troubleshooting
+#### Troubleshooting
 
 In case of any issues you can examine service logs for errors. For example to see TBMQ logs execute the following command:
 
@@ -373,7 +373,7 @@ kubectl get statefulsets
 
 See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) command reference for more details.
 
-## Upgrading
+### Upgrading
 
 In case you would like to upgrade, please pull the latest changes from `main` branch:
 
@@ -411,7 +411,7 @@ Once completed, execute deployment of the resources again. This will cause rollo
 ```
 {: .copy-code}
 
-## Cluster deletion
+### Cluster deletion
 
 Execute the following command to delete TBMQ nodes:
 
@@ -433,6 +433,6 @@ eksctl delete cluster -r us-east-1 -n tbmq -w
 ```
 {: .copy-code}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

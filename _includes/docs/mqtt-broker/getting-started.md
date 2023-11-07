@@ -2,7 +2,7 @@
 * TOC
 {:toc}
 
-## Introduction
+### Introduction
 
 The goal of this tutorial is to showcase the fundamental usage of [TBMQ](/docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/). 
 Through this tutorial, you will gain knowledge and proficiency in the following areas:
@@ -75,7 +75,7 @@ sudo apt install -y mosquitto-clients
 Please refer to the following links to learn how to [publish messages](https://mosquitto.org/man/mosquitto_pub-1.html) to a topic and
 [subscribe](https://mosquitto.org/man/mosquitto_sub-1.html) to topics in order to receive messages.
 
-### Subscribe to topic
+#### Subscribe to topic
 
 To subscribe to the **sensors/temperature** topic and start receiving messages from TBMQ, you can utilize the following command:
 
@@ -98,7 +98,7 @@ Upon successful establishment of the connection, we can proceed to examine the s
 
 {% include images-gallery.html imageCollection="broker-sessions" %}
 
-### Publish message
+#### Publish message
 
 To publish a message to TBMQ for the topic **sensors/temperature**, you can utilize the following command:
 
@@ -113,7 +113,7 @@ mosquitto_pub -d -h localhost -p 1883 -t sensors/temperature -m 32 -q 1 -u usern
 ```
 {: .copy-code}
 
-### Result
+#### Result
 
 You should receive and observe the published message for the subscribed client.
 
