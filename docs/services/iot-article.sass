@@ -122,6 +122,8 @@ $bg-color-accent: #F5F5F6
                         line-height: 38px
                         letter-spacing: 0.022px
                         margin-bottom: 60px
+                        .bold
+                            font-weight: 600
 
                     .text-content.small-margin
                         margin-bottom: 20px
@@ -261,6 +263,39 @@ $bg-color-accent: #F5F5F6
             &.medium-padding
                 padding-bottom: 50px
 
+        .details-cards-block-wrapper
+            display: flex
+            justify-content: center
+            .details-cards-block
+                display: grid
+                grid-template-columns: 1fr 1fr 1fr
+                grid-column-gap: 20px
+                max-width: 1100px
+                .details-card
+                    height: 380px
+                    display: flex
+                    flex-direction: column
+                    justify-content: flex-end
+                    border-radius: 10px
+                    background: #F5F5F6
+                    padding: 60px 28px 80px 28px
+                    .header
+                        color: #333
+                        font-family: Poppins
+                        font-size: 22px
+                        font-style: normal
+                        font-weight: 600
+                        line-height: 38px
+                        letter-spacing: 0.022px
+                    .content
+                        color: #5E5F62
+                        font-family: Poppins
+                        font-size: 18px
+                        font-style: normal
+                        font-weight: 400
+                        line-height: 38px
+                        letter-spacing: 0.018px
+
         #header-block
             &::before
                 content: ""
@@ -376,6 +411,26 @@ $bg-color-accent: #F5F5F6
         position: relative
 
     @media screen and (max-width: 1280px)
+        h1
+            font-size: 36px
+            line-height: 40px
+            padding-bottom: 12px
+        h2
+            font-size: 30px
+            line-height: 40px
+            padding-bottom: 15px
+            &.line-height-small
+                line-height: 30px
+        h3
+            font-size: 26px
+            line-height: 40px
+            padding-bottom: 36px
+            &.small-padding
+                padding-bottom: 15px
+
+        .sub-title
+            font-size: 17px
+
         .iot-article-content
             .hero
                 padding-top: 98px
@@ -386,10 +441,43 @@ $bg-color-accent: #F5F5F6
                 .block-content
                     .text-wrapper
                         padding: 0 70px
+                        .read-info
+                            font-size: 18px
+                            line-height: 36px
+
+                        .text-content
+                            font-size: 20px
+                            line-height: 32px
+                            margin-bottom: 45px
+
+                        .list
+                            padding-bottom: 32px
+                            li
+                                font-size: 20px
+                                line-height: 38px
+
                     .definitions-block
                         .definitions-list
+                            .definitions-list-item
+                                &:nth-child(odd)
+                                    background-color: #F3F4F4
+                                .term
+                                    display: list-item
+
+                                    font-size: 17px
+                                    line-height: 34px
+
+                                .definition
+                                    font-size: 17px
+
                             &.side-paddings
                                 padding: 0 32px
+
+            .details-cards-block-wrapper
+                .details-cards-block
+                    max-width: 960px
+                    .details-card
+                        padding-bottom: 60px
 
             #details-block
                 padding: 80px 70px
@@ -397,11 +485,14 @@ $bg-color-accent: #F5F5F6
             #contact-us
                 padding: 70px 70px 160px 70px
                 .block-content
-                    max-width: 1140px
+                    max-width: 1000px
                     .contact-us-content
                         .info
                             margin-left: 0px
                             padding-right: 0px
+                            .title
+                                font-size: 36px
+                                line-height: 50px
 
     @media screen and (max-width: 1000px)
         h1
@@ -423,9 +514,6 @@ $bg-color-accent: #F5F5F6
 
         .sub-title
             font-size: 17px
-
-        br
-            display: none
 
         .iot-article-content
             .hero
@@ -518,6 +606,21 @@ $bg-color-accent: #F5F5F6
                                 padding: 0
 
 
+            .details-cards-block-wrapper
+                padding: 0 20px
+                .details-cards-block
+                    grid-column-gap: 15px
+                    max-width: unset
+                    .details-card
+                        height: auto
+                        padding: 35px 20px 40px 20px
+                        .header
+                            font-size: 21px
+                            line-height: 32px
+                        .content
+                            font-size: 17px
+                            line-height: 28px
+
             #details-block
                 padding: 40px 40px
                 .block-content
@@ -574,9 +677,6 @@ $bg-color-accent: #F5F5F6
         .sub-title
             font-size: 16px
             line-height: 30px
-
-        br
-            display: none
 
         .iot-article-content
             .hero
@@ -677,6 +777,22 @@ $bg-color-accent: #F5F5F6
                                 &.one-to-one-and-half
                                     grid-template-columns: 1fr
 
+
+            .details-cards-block-wrapper
+                .details-cards-block
+                    grid-column-gap: 15px
+                    grid-row-gap: 15px
+                    max-width: unset
+                    grid-template-columns: 1fr
+                    .details-card
+                        height: auto
+                        padding: 20px
+                        .header
+                            font-size: 18px
+                            line-height: 28px
+                        .content
+                            font-size: 14px
+                            line-height: 24px
 
             #details-block
                 padding: 20px
