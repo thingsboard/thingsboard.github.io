@@ -1,7 +1,7 @@
 $bg-color-main: #FFFFFF
 $bg-color-accent: #F5F5F6
 
-#iot-solutions
+#iot-article
     h1
         color: #333
         font-family: Poppins
@@ -21,6 +21,9 @@ $bg-color-accent: #F5F5F6
         line-height: 68px
         letter-spacing: 0.36px
         padding-bottom: 20px
+        &.line-height-small
+            line-height: 50px
+
 
     h3 
         color: #2E2F3B
@@ -31,7 +34,9 @@ $bg-color-accent: #F5F5F6
         line-height: 42px
         letter-spacing: 0.028px
         padding-bottom: 60px
-    
+        &.small-padding
+            padding-bottom: 20px
+
     h4
         color: #2E2F3B
         text-align: center
@@ -41,6 +46,11 @@ $bg-color-accent: #F5F5F6
         font-weight: 600
         line-height: 32px
         letter-spacing: 0.022px
+
+    .article-link
+        text-decoration: underline
+        &::hover
+            color: #69b6ff
 
     .sub-title
         display: block
@@ -55,7 +65,7 @@ $bg-color-accent: #F5F5F6
     .center-text
         text-align: center
 
-    .iot-solutions-content
+    .iot-article-content
         width: 100%
 
         .hero
@@ -112,6 +122,8 @@ $bg-color-accent: #F5F5F6
                         line-height: 38px
                         letter-spacing: 0.022px
                         margin-bottom: 60px
+                        .bold
+                            font-weight: 600
 
                     .text-content.small-margin
                         margin-bottom: 20px
@@ -132,10 +144,15 @@ $bg-color-accent: #F5F5F6
                             list-style-type: disc
                             margin-left: 35px
                             padding-bottom: 12px
-                    
+                            .bold-text
+                                font-weight: 600
+                            .paragraph-list-item
+                                display: flex
+                                flex-direction: column
+
                     #list-tb-offers
                         padding-bottom: 68px
-     
+
                 .comparison-table
                     padding-bottom: 60px
                     thead
@@ -194,12 +211,12 @@ $bg-color-accent: #F5F5F6
                 .comparison-table.mobile-table
                     display: none
 
-                .services-block
+                .definitions-block
                     h2
                         padding-bottom: 15px
 
-                    .services-list
-                        .services-list-item
+                    .definitions-list
+                        .definitions-list-item
                             display: grid
                             grid-template-columns: 1fr 1fr
                             padding: 10px 50px
@@ -219,14 +236,65 @@ $bg-color-accent: #F5F5F6
                                 line-height: 40px
                                 letter-spacing: 0.018px
 
+                                &.bold
+                                    font-weight: 600
+
+                                &.padding-top
+                                    padding-top: 10px
+
                             .definition
                                 color: #5E5F62
                                 font-family: Poppins
                                 font-size: 18px
                                 font-style: normal
                                 font-weight: 400
-                                line-height: 26px
+                                line-height: 30px
                                 letter-spacing: 0.018px
+
+                            &.align-start
+                                align-items: start
+
+                            &.one-to-one-and-half
+                                grid-template-columns: 1fr 1.5fr
+
+                        &.side-paddings
+                            padding: 0 55px
+
+            &.medium-padding
+                padding-bottom: 50px
+
+        .details-cards-block-wrapper
+            display: flex
+            justify-content: center
+            .details-cards-block
+                display: grid
+                grid-template-columns: 1fr 1fr 1fr
+                grid-column-gap: 20px
+                max-width: 1100px
+                .details-card
+                    height: 380px
+                    display: flex
+                    flex-direction: column
+                    justify-content: flex-end
+                    border-radius: 10px
+                    background: #F5F5F6
+                    padding: 60px 28px 80px 28px
+                    .header
+                        color: #333
+                        font-family: Poppins
+                        font-size: 22px
+                        font-style: normal
+                        font-weight: 600
+                        line-height: 38px
+                        letter-spacing: 0.022px
+                    .content
+                        color: #5E5F62
+                        font-family: Poppins
+                        font-size: 18px
+                        font-style: normal
+                        font-weight: 400
+                        line-height: 38px
+                        letter-spacing: 0.018px
 
         #header-block
             &::before
@@ -237,7 +305,7 @@ $bg-color-accent: #F5F5F6
                 position: absolute
                 z-index: 1
 
-        #solutions-block
+        #details-block
             padding: 80px 0
             .block-content
                 max-width: 1160px
@@ -246,8 +314,8 @@ $bg-color-accent: #F5F5F6
                 grid-column-gap: 120px
                 grid-row-gap: 40px
 
-                .solution
-                    .solution-name
+                .detail
+                    .detail-name
                         color: #2E2F3B
                         font-family: Poppins
                         font-size: 28px
@@ -256,7 +324,7 @@ $bg-color-accent: #F5F5F6
                         line-height: 42px
                         letter-spacing: 0.028px
 
-                    .solution-description
+                    .detail-description
                         color: #5E5F62
                         font-family: Poppins
                         font-size: 18px
@@ -343,7 +411,30 @@ $bg-color-accent: #F5F5F6
         position: relative
 
     @media screen and (max-width: 1280px)
-        .iot-solutions-content
+        h1
+            font-size: 36px
+            line-height: 40px
+            padding-bottom: 12px
+        h2
+            font-size: 30px
+            line-height: 40px
+            padding-bottom: 15px
+            &.line-height-small
+                line-height: 30px
+        h3
+            font-size: 26px
+            line-height: 40px
+            padding-bottom: 36px
+            &.small-padding
+                padding-bottom: 15px
+
+        .sub-title
+            font-size: 17px
+
+        br
+            display: none
+
+        .iot-article-content
             .hero
                 padding-top: 98px
 
@@ -353,18 +444,58 @@ $bg-color-accent: #F5F5F6
                 .block-content
                     .text-wrapper
                         padding: 0 70px
+                        .read-info
+                            font-size: 18px
+                            line-height: 36px
 
-            #solutions-block
+                        .text-content
+                            font-size: 20px
+                            line-height: 32px
+                            margin-bottom: 45px
+
+                        .list
+                            padding-bottom: 32px
+                            li
+                                font-size: 20px
+                                line-height: 38px
+
+                    .definitions-block
+                        .definitions-list
+                            .definitions-list-item
+                                &:nth-child(odd)
+                                    background-color: #F3F4F4
+                                .term
+                                    display: list-item
+
+                                    font-size: 17px
+                                    line-height: 34px
+
+                                .definition
+                                    font-size: 17px
+
+                            &.side-paddings
+                                padding: 0 32px
+
+            .details-cards-block-wrapper
+                .details-cards-block
+                    max-width: 960px
+                    .details-card
+                        padding-bottom: 60px
+
+            #details-block
                 padding: 80px 70px
 
             #contact-us
                 padding: 70px 70px 160px 70px
                 .block-content
-                    max-width: 1140px
+                    max-width: 1000px
                     .contact-us-content
                         .info
                             margin-left: 0px
                             padding-right: 0px
+                            .title
+                                font-size: 36px
+                                line-height: 50px
 
     @media screen and (max-width: 1000px)
         h1
@@ -375,10 +506,14 @@ $bg-color-accent: #F5F5F6
             font-size: 26px
             line-height: 36px
             padding-bottom: 15px
+            &.line-height-small
+                line-height: 32px
         h3
             font-size: 22px
             line-height: 36px
             padding-bottom: 40px
+            &.small-padding
+                padding-bottom: 15px
 
         .sub-title
             font-size: 17px
@@ -386,7 +521,7 @@ $bg-color-accent: #F5F5F6
         br
             display: none
 
-        .iot-solutions-content
+        .iot-article-content
             .hero
                 padding-top: 98px
 
@@ -455,9 +590,9 @@ $bg-color-accent: #F5F5F6
                                     &:nth-child(2)
                                         padding-left: 10px
                                         padding-right: 60px
-                    .services-block
-                        .services-list
-                            .services-list-item
+                    .definitions-block
+                        .definitions-list
+                            .definitions-list-item
                                 padding: 10px 35px
 
                                 &:nth-child(odd)
@@ -473,19 +608,37 @@ $bg-color-accent: #F5F5F6
                                     font-size: 16px
                                     line-height: 24px
 
+                            &.side-paddings
+                                padding: 0
 
-            #solutions-block
+
+            .details-cards-block-wrapper
+                padding: 0 20px
+                .details-cards-block
+                    grid-column-gap: 15px
+                    max-width: unset
+                    .details-card
+                        height: auto
+                        padding: 35px 20px 40px 20px
+                        .header
+                            font-size: 21px
+                            line-height: 32px
+                        .content
+                            font-size: 17px
+                            line-height: 28px
+
+            #details-block
                 padding: 40px 40px
                 .block-content
                     grid-column-gap: 60px
                     grid-row-gap: 20px
 
-                    .solution
-                        .solution-name
+                    .detail
+                        .detail-name
                             font-size: 20px
                             line-height: 36px
 
-                        .solution-description
+                        .detail-description
                             font-size: 16px
                             line-height: 22px
 
@@ -518,10 +671,14 @@ $bg-color-accent: #F5F5F6
             font-size: 22px
             line-height: 30px
             padding-bottom: 10px
+            &.line-height-small
+                line-height: 30px
         h3
             font-size: 20px
             line-height: 30px
             padding-bottom: 30px
+            &.small-padding
+                padding-bottom: 10px
 
         .sub-title
             font-size: 16px
@@ -530,7 +687,7 @@ $bg-color-accent: #F5F5F6
         br
             display: none
 
-        .iot-solutions-content
+        .iot-article-content
             .hero
                 padding-top: 98px
 
@@ -565,7 +722,6 @@ $bg-color-accent: #F5F5F6
                                 font-size: 15px
                                 line-height: 24px
                                 margin-left: 22px
-
 
                         #list-tb-offers
                             padding-bottom: 40px
@@ -605,9 +761,9 @@ $bg-color-accent: #F5F5F6
                     .mobile-table.first-child
                         margin-bottom: 30px
 
-                    .services-block
-                        .services-list
-                            .services-list-item
+                    .definitions-block
+                        .definitions-list
+                            .definitions-list-item
                                 display: grid
                                 grid-template-columns: 1fr
                                 padding: 10px 35px
@@ -627,21 +783,40 @@ $bg-color-accent: #F5F5F6
                                     font-size: 14px
                                     line-height: 22px
 
+                                &.one-to-one-and-half
+                                    grid-template-columns: 1fr
 
-            #solutions-block
+
+            .details-cards-block-wrapper
+                .details-cards-block
+                    grid-column-gap: 15px
+                    grid-row-gap: 15px
+                    max-width: unset
+                    grid-template-columns: 1fr
+                    .details-card
+                        height: auto
+                        padding: 20px
+                        .header
+                            font-size: 18px
+                            line-height: 28px
+                        .content
+                            font-size: 14px
+                            line-height: 24px
+
+            #details-block
                 padding: 20px
                 .block-content
                     grid-template-columns: 1fr
                     grid-column-gap: 60px
                     grid-row-gap: 20px
 
-                    .solution
-                        .solution-name
+                    .detail
+                        .detail-name
                             font-size: 18px
                             line-height: 28px
                             margin-bottom: 5px
 
-                        .solution-description
+                        .detail-description
                             font-size: 14px
                             line-height: 22px
 
@@ -667,4 +842,3 @@ $bg-color-accent: #F5F5F6
                                 label
                                     .contact-us-form-control
                                         font-size: 15px
-

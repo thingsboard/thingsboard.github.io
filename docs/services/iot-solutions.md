@@ -1,5 +1,5 @@
 ---
-layout: iot-solutions
+layout: iot-article
 title: IoT Solutions
 notitle: "true"
 description: IoT solutions
@@ -153,42 +153,42 @@ description: IoT solutions
             </ul>
             <div class="text-content">Building an IoT ecosystem can be difficult. We have the expertise to provide you with a comprehensive set of Internet of Things services for developing and managing IoT technology solutions. Our IoT services are built-in into ThingsBoard products and can be customized to fit your specific needs.</div>
         </div>
-        <div class="services-block">
+        <div class="definitions-block">
             <h2 class="center-text">ThingsBoard IoT Services:</h2>
-            <div class="services-list">
-                <div class="services-list-item">
+            <div class="definitions-list">
+                <div class="definitions-list-item">
                     <div class="term">Asset Management</div> 
                     <div class="definition">organize your devices into logical groups called assets and manage them as a single entity.</div> 
                 </div>
-                <div class="services-list-item">
+                <div class="definitions-list-item">
                     <div class="term">Data Analytics — Historical / Real Time / Predictive / Prescriptive</div> 
                     <div class="definition">analyze your IoT data using our analytics service</div> 
                 </div>
-                <div class="services-list-item">
+                <div class="definitions-list-item">
                     <div class="term">Device Connectivity & Data Collection</div> 
                     <div class="definition">connect your devices to the ThingsBoard platform using various protocols, such as MQTT, HTTP, CoAP, or LwM2M</div> 
                 </div>
-                <div class="services-list-item">
+                <div class="definitions-list-item">
                     <div class="term">Device Management</div> 
                     <div class="definition">register, configure, monitor, and control your devices</div> 
                 </div>
-                <div class="services-list-item">
+                <div class="definitions-list-item">
                     <div class="term">Integration Solution into Company Business Workflow</div> 
                     <div class="definition">integrate your IoT solution with your IT systems and applications</div> 
                 </div>
-                <div class="services-list-item">
+                <div class="definitions-list-item">
                     <div class="term">Rule Engine for Defining Business Logic</div> 
                     <div class="definition">define your business logic and automate your workflows</div> 
                 </div>
-                <div class="services-list-item">
+                <div class="definitions-list-item">
                     <div class="term">Security</div> 
                     <div class="definition">secure your IoT solution and services</div> 
                 </div>
-                <div class="services-list-item">
+                <div class="definitions-list-item">
                     <div class="term">User Management</div> 
                     <div class="definition">manage your users and their access</div> 
                 </div>
-                <div class="services-list-item">
+                <div class="definitions-list-item">
                     <div class="term">Visualisation & Reporting</div> 
                     <div class="definition">visualize your IoT data and insights</div> 
                 </div>
@@ -200,47 +200,47 @@ description: IoT solutions
         </div>
     </div>
 </div>
-<div id="solutions-block" class="block-wrapper wrapper-accent-color">
+<div id="details-block" class="block-wrapper wrapper-accent-color">
     <div class="block-content">
-        <div class="solution">
-            <div class="solution-name">Smart Energy</div> 
-            <div class="solution-description">Measure and control the energy consumption and production of various devices and systems, such as smart meters, smart grids, solar panels, and batteries</div>
+        <div class="detail">
+            <div class="detail-name">Smart Energy</div> 
+            <div class="detail-description">Measure and control the energy consumption and production of various devices and systems, such as smart meters, smart grids, solar panels, and batteries</div>
         </div>
-        <div class="solution">
-            <div class="solution-name">Fleet Tracking</div> 
-            <div class="solution-description">Monitor and optimize the location, speed, fuel consumption, and maintenance of vehicles in a fleet</div>
+        <div class="detail">
+            <div class="detail-name">Fleet Tracking</div> 
+            <div class="detail-description">Monitor and optimize the location, speed, fuel consumption, and maintenance of vehicles in a fleet</div>
         </div>
-        <div class="solution">
-            <div class="solution-name">Smart Office</div> 
-            <div class="solution-description">Automate and personalize various aspects of office environments, such as lighting, temperature, security, and communication</div>
+        <div class="detail">
+            <div class="detail-name">Smart Office</div> 
+            <div class="detail-description">Automate and personalize various aspects of office environments, such as lighting, temperature, security, and communication</div>
         </div>
-        <div class="solution">
-            <div class="solution-name">Air Quality Monitoring</div> 
-            <div class="solution-description">Measure and improve the air quality in indoor and outdoor environments, such as homes, offices, schools, and cities</div>
+        <div class="detail">
+            <div class="detail-name">Air Quality Monitoring</div> 
+            <div class="detail-description">Measure and improve the air quality in indoor and outdoor environments, such as homes, offices, schools, and cities</div>
         </div>
-        <div class="solution">
-            <div class="solution-name">Water Metering</div> 
-            <div class="solution-description">Monitor and manage the water consumption and distribution in residential, commercial, and industrial applications</div>
+        <div class="detail">
+            <div class="detail-name">Water Metering</div> 
+            <div class="detail-description">Monitor and manage the water consumption and distribution in residential, commercial, and industrial applications</div>
         </div>
-        <div class="solution">
-            <div class="solution-name">Smart Irrigation</div> 
-            <div class="solution-description">Automate and optimize the irrigation of crops and plants by using sensors to measure soil moisture, temperature, rainfall, and other environmental factors</div>
+        <div class="detail">
+            <div class="detail-name">Smart Irrigation</div> 
+            <div class="detail-description">Automate and optimize the irrigation of crops and plants by using sensors to measure soil moisture, temperature, rainfall, and other environmental factors</div>
         </div>
-        <div class="solution">
-            <div class="solution-name">Retail Monitoring & Automation</div> 
-            <div class="solution-description">Track and analyze the behavior and preferences of customers and employees in retail stores</div>
+        <div class="detail">
+            <div class="detail-name">Retail Monitoring & Automation</div> 
+            <div class="detail-description">Track and analyze the behavior and preferences of customers and employees in retail stores</div>
         </div>
-        <div class="solution">
-            <div class="solution-name">Waste Management</div> 
-            <div class="solution-description">Reduce the amount of waste generated and improve the efficiency of waste collection and disposal</div>
+        <div class="detail">
+            <div class="detail-name">Waste Management</div> 
+            <div class="detail-description">Reduce the amount of waste generated and improve the efficiency of waste collection and disposal</div>
         </div>
-        <div class="solution">
-            <div class="solution-name">Energy Management System (BEMS)</div> 
-            <div class="solution-description">Optimize the energy performance of buildings by integrating various systems and devices, such as HVAC, lighting, security, fire safety, and renewable energy sources</div>
+        <div class="detail">
+            <div class="detail-name">Energy Management System (BEMS)</div> 
+            <div class="detail-description">Optimize the energy performance of buildings by integrating various systems and devices, such as HVAC, lighting, security, fire safety, and renewable energy sources</div>
         </div>
-        <div class="solution">
-            <div class="solution-name">Assisted Living</div> 
-            <div class="solution-description">Improve the quality of life and safety of elderly or disabled people who live independently or in care facilities</div>
+        <div class="detail">
+            <div class="detail-name">Assisted Living</div> 
+            <div class="detail-description">Improve the quality of life and safety of elderly or disabled people who live independently or in care facilities</div>
         </div>
     </div>
 </div>
@@ -287,69 +287,3 @@ description: IoT solutions
     </div>
 
 </div>
-
-
-<script type="text/javascript">
-    function validateContactForm(form) {
-        var name = $('input[name=name]', form).val();
-        var email = $('input[name=email]', form).val();
-        
-        if (!validateValue('Name', name)) {
-            return false;
-        }
-        if (!validateValue('Email Address', email)) {
-            return false;
-        }
-        
-        var emailExp = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
-        if(email.match(emailExp)==null) {
-            window.alert("Entered Email Address is not valid.");
-            return false; 
-        }
-    }
-    
-    function validateValue(name, val) {
-        if (isEmpty(val)) {
-            window.alert("Please fill '" + name + "' field.");
-            return false;
-        }
-        return true;
-    }
-    
-    function isEmpty(val) {
-        return val === undefined || val === null || val.trim().length == 0;
-    }
-
-
-    var contactform =  document.getElementById('contact-form');
-    
-    contactform.setAttribute('action', 'https://formspree.io/' + 'support' + '@' + 'thingsboard' + '.' + 'io');
-
-    jqueryDefer(
-        function () {
-            $( document ).ready(function() {
-               /*  $('html, body').animate({
-                            scrollTop: $('#contact-form').offset().top - 200
-                          }, 0);*/
-                 $('#contact-form .form-element .form-control').addClass("input--empty");
-                 $('#contact-form .form-element .form-control').on('input', function() {
-                      if( !$(this).val() ) {
-                         $(this).addClass("input--empty");
-                      } else {
-                         $(this).removeClass("input--empty");
-                      }
-                 });
-                 
-                 $.urlParam = function (name) {
-                     var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-                     return results ? results[1] : null;
-                 };
-                 var subjectValue = $.urlParam('subject');
-                 if (subjectValue != undefined && subjectValue.trim().length > 0) {                    
-                    $('#contact-form select[name=subject]').val(decodeURIComponent(subjectValue));
-                    $('#contact-form select[name=subject]').removeClass("input--empty");
-                 }
-            });
-        }
-    );
-</script>
