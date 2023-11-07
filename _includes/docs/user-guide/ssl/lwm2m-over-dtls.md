@@ -50,7 +50,7 @@ After completing the setup, start or restart the ThingsBoard server.
 
 ### Additional configuration properties
 
-You may configure following additional environment variables via [configuration](/docs/{{docsPrefix}}user-guide/install/config/) file, docker-compose or kubernetes scripts.
+You may configure following additional environment variables via [configuration](/docs/user-guide/install/{{docsPrefix}}config/) file, docker-compose or kubernetes scripts.
 
 * LWM2M_SECURITY_BIND_ADDRESS - the bind address for the secure LwM2M server. Default value *0.0.0.0* indicates all interfaces;
 * LWM2M_SECURITY_BIND_PORT - the bind port for the secure LwM2M server. Default value is *5686*;

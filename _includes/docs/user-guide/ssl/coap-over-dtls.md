@@ -14,7 +14,7 @@ See instructions below on how to configure SSL for certificates stored in PEM fi
 {% assign sinceVersion = "3.3.2" %}
 {% include templates/since.md %}
 
-Configure the following environment variables via [configuration](/docs/{{docsPrefix}}user-guide/install/config/) file, docker-compose or kubernetes scripts.
+Configure the following environment variables via [configuration](/docs/user-guide/install/{{docsPrefix}}config/) file, docker-compose or kubernetes scripts.
 We will use **thingsboard.conf** for example:
 
 ```bash
@@ -42,7 +42,7 @@ After completing the setup, start or restart the ThingsBoard server.
 
 ### Additional configuration properties
 
-You may configure following additional environment variables via [configuration](/docs/{{docsPrefix}}user-guide/install/config/) file, docker-compose or kubernetes scripts.
+You may configure following additional environment variables via [configuration](/docs/user-guide/install/{{docsPrefix}}config/) file, docker-compose or kubernetes scripts.
 
 * COAP_DTLS_BIND_ADDRESS - the bind address for the secure CoAP server. Default value *0.0.0.0* indicates all interfaces;
 * COAP_DTLS_BIND_PORT - the bind port for the secure CoAP server. Default value is *5684*;
