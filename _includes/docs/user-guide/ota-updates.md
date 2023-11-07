@@ -189,7 +189,7 @@ Click the "History of the software updates" button next to the device name to le
 
 ##### Queue processing pace
 
-To set the max number of devices that will be notified in the chosen time period using the following [configuration](/docs/{{docsPrefix}}user-guide/install/config/) properties:
+To set the max number of devices that will be notified in the chosen time period using the following [configuration](/docs/user-guide/install/{{docsPrefix}}config/) properties:
 
 ```bash
 export TB_QUEUE_CORE_FW_PACK_INTERVAL_MS=60000
