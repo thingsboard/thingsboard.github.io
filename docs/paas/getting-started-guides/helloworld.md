@@ -13,16 +13,16 @@ step1:
         title: 'By default, you navigate to the device group “All”. Click on the "+" icon in the top right corner of the table and then select "Add new device";'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-3-pe.png
-        title: 'Enter device name. For example, "My New Device". No other changes are required at this time. Click "Add" to add the device;'
+        title: 'Enter the device name. For example, "My New Device". No other changes are required at this time. Click "Add" to add the device;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-connectivity-1-pe.png
-        title: 'The window to check the device&#39;s connection to ThingsBoard will open. This step is optional. Select the messaging protocol and your operating system. Then install the necessary client tools and copy the command;'
+        title: 'The window to check the device&#39;s connection to ThingsBoard will open. The following step is optional. Select the messaging protocol and your operating system. Then, install the necessary client tools and copy the command;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-connectivity-3-pe.png
         title: 'Execute previously copied command. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings. Then, close connectivity window;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png
-        title: 'Your first device has been added. As long as you have one device. But as new devices are added, they will be added to the top of the table, since the table sorts devices using the time of the creation by default;'
+        title: 'Your first device has been added. As new devices are added, they will be added to the top of the table, since the table sorts devices using the time of the creation by default;'
     6:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-5-pe.png
         title: 'When adding a new device, you will receive a notification. You can view it by clicking on the "bell" icon in the top right corner.'
@@ -56,26 +56,6 @@ step31:
 
 step32:
     0:
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-1-pe.png
-        title: 'Enter edit mode. Click on the "Edit mode" button in the upper right corner;'
-    1:
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-2-pe.png
-        title: 'Click the "Entity aliases" icon in the top right part of the screen;'
-    2:
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-3-pe.png
-        title: 'You will see an empty list of Entity aliases. Click "Add alias" button;'
-    3:
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-4-pe.png
-        title: 'Enter alias name, for example, "My New Entity Alias". Select the "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on the needed device. Click "Add";'
-    4:
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-5-pe.png
-        title: 'Click "Save";'
-    5:
-        image: /images/helloworld/getting-started-pe/hello-world-3-1-create-empty-alias-6-pe.png
-        title: 'Finally, click "Save" in the dashboard editor to save the changes.'
-
-step33:
-    0:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-1-pe.png
         title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
     1:
@@ -94,7 +74,7 @@ step33:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-6-pe.png
         title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. Apply changes.'
 
-step34:
+step33:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-1-pe.png
         title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
@@ -114,7 +94,7 @@ step34:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-6-pe.png
         title: 'Now open the time selection window. Change the interval and aggregation function. Update the time window setting by clicking the "Update" button.'
 
-step35:
+step34:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-1-pe.png
         title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
@@ -319,7 +299,7 @@ mosquitto-windows:
         title: 'In the "System Properties" pop-up window, click "Environment Variables" button on the "Advanced" tab;'
     3:
         image: /images/helloworld/getting-started-pe/mosquitto-windows-4.png
-        title: 'In the "Environment Variables" pop-up window select the "Path", then click on the "Edit" button;'
+        title: 'In the "Environment Variables" pop-up window, select the "Path", then click on the "Edit" button;'
     4:
         image: /images/helloworld/getting-started-pe/mosquitto-windows-5.png
         title: 'In the "Edit environment variable" pop-up window click on the "New" button and add the path to the directory containing &#39;mosquitto_pub.exe&#39; and &#39;mosquitto_sub.exe&#39; (&#39;C:\Program Files\mosquitto&#39; by default). Click "OK";'
@@ -329,7 +309,7 @@ mosquitto-windows:
     6:
         image: /images/helloworld/getting-started-pe/mosquitto-windows-7.png
         title: 'Finally, click "OK" button to apply all changes in the system properties.'
-           
+
 ---
 
 {% assign docsPrefix = "paas/" %}

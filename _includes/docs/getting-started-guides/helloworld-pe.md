@@ -1,7 +1,6 @@
 * TOC
 {:toc}
 
-
 ## Introduction
 
 The goal of this tutorial is to demonstrate the basic usage of the most popular ThingsBoard features. You will learn how to:
@@ -27,17 +26,17 @@ Learn more about **notifications** and how to configure them [here](#step-6-alar
 <br>
 You may also use:
  * [Bulk provisioning](/docs/{{docsPrefix}}user-guide/bulk-provisioning/) to provision multiple devices from a CSV file using UI;
- * [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning/) to allow device firmware to automatically provision the device, so you don't need to configure each device manually;
+ * [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning/) to allow device firmware to provision the device automatically, so you don't need to configure each device manually;
  * [REST API](/docs/{{docsPrefix}}api/) to provision devices and other entities programmatically;
 
 ## Step 2. Connect device
 
 To connect the device you need to get the device credentials first. 
-ThingsBoard supports various device credentials. We recommend using the default auto-generated credentials which is an access token for this guide.
+ThingsBoard supports various device credentials. We recommend using the default auto-generated credentials, which is an access token for this guide.
 
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
 
-Now you are ready to publish telemetry data on behalf of your device. 
+Now, you are ready to publish telemetry data on behalf of your device. 
 We will use simple commands to publish data over HTTP or MQTT in this example.
 
 {% capture connectdevicetogglespec %}
@@ -54,16 +53,20 @@ Once you have successfully published the "temperature" readings, you should imme
 
 ## Step 3. Create dashboard
 
-We will create a dashboard to add the most popular widgets. See instructions below. 
+A dashboard in ThingsBoard allows users to visualize and monitor data collected from IoT devices.
+
+In this guide, we will create a dashboard and add three widgets to it in order to display a list of entities and their latest values, as well as show alarm signals related to the specified entity.
 
 ### Step 3.1 Create an empty dashboard
+
+To create a new dashboard, follow these steps:
 
 {% include images-gallery.html imageCollection="step31" showListImageTitles="true" %}
 
 ### Step 3.2 Add entities table widget
 
 The "Entities table" widget displays a list of entities and their latest values. 
-The list of entities corresponds to selected devices or other entities, and filters with the ability of additional full text search and pagination options.
+The list of entities corresponds to selected devices or other entities, and filters with the ability of additional full-text search and pagination options.
 
 To add the table widget we need to select it from the widget library. Widgets are grouped into widget bundles.
 Each widget has a data source. This is how the widget "knows" what data to display.
@@ -71,7 +74,7 @@ To see the latest value of our "temperature" data that we sent during step 2, we
 
 Let's add your first widget:
 
-{% include images-gallery.html imageCollection="step33" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="step32" showListImageTitles="true" %}
 
 Congratulations! You've added your first widget.
 
@@ -79,7 +82,7 @@ In the "Entities table" widget, there are two columns.
 The first column displays the device's name, and the second column displays the value of the "temperature" key (device telemetry). 
 So, each column corresponds to an added key.
 
-Now you are able to a send new telemetry reading (as in [Step 1](#step-1-provision-device)), and it will immediately appear in the table.
+Now you are able to send new telemetry reading (as in [Step 1](#step-1-provision-device)), and it will immediately appear in the table.
 
 ### Step 3.3 Add chart widget
 
@@ -89,27 +92,24 @@ To add the chart widget we need to select it from the widget library.
 Chart widget displays multiple historical values of the same data key ("temperature" in our case).
 We should also configure the time window to use the chart widget.
 
-{% include images-gallery.html imageCollection="step34" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="step33" showListImageTitles="true" %}
 
-Congratulations! You have added chart widget. Now you are able to send new telemetry reading, and it will immediately appear in the chart. 
+Congratulations! You have added a chart widget. Now you are able to send new telemetry reading, and it will immediately appear in the chart. 
 
-### Step 3.4 Add alarm widget
+### Step 3.4 Add alarms table widget
 
 Alarms table widget displays alarms related to the specified entity in the certain time window.
 Alarm widget is configured by specifying an entity as the alarm source, and the corresponding alarm fields.
 
-{% include images-gallery.html imageCollection="step35" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="step34" showListImageTitles="true" %}
 
 Congratulations! You have added alarm widget. Now it's time to configure alarm rules and raise some alarms. 
 
-### Step 3.5 Add entity alias
-
-Alias is a reference to a single entity or a group of entities that are used in the widgets.
-Alias may be static or dynamic. For simplicity, we will use "Single entity" alias reference the one and only entity ("My New Device" in our case).
-It is possible to configure an alias that references multiple devices. For example, devices of a certain type or related to a certain asset.
+<br>
+In this documentation, we are using a single device as a data source for the widgets. 
+To use multiple entities (for example, devices of a certain type or related to a certain asset) as data sources, you must use the alias.
+Alias is a reference to a single entity or a group of entities that are used in the widgets. 
 You may learn more about different aliases [here](/docs/{{docsPrefix}}user-guide/ui/aliases/).
-
-{% include images-gallery.html imageCollection="step32" showListImageTitles="true" %}
 
 ## Step 4. Configure alarm rules
 
