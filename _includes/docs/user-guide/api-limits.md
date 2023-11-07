@@ -1,6 +1,6 @@
 API & Rate Limits feature allows controlling API usage, by limiting number of requests from a single host/device/tenant during single time unit (Minutes, Hours, etc.).
 
-API & Rate limits are **disabled by default**. System administrator is able to configure rate limits using [thingsboard.yml](/docs/{{docsPrefix}}user-guide/install/config/).
+API & Rate limits are **disabled by default**. System administrator is able to configure rate limits using [thingsboard.yml](/docs/user-guide/install/{{docsPrefix}}config/).
 
 #### REST API limits
 
