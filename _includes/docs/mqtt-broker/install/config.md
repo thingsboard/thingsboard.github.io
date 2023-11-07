@@ -7,7 +7,7 @@ This way, you won't need to merge the configuration files when a new platform re
 
 The list of available configuration parameters and corresponding environment variables can be found [here](#configuration-parameters).
 
-## How to change configuration parameters?
+### How to change configuration parameters?
 
 #### Docker-Based deployment
 
@@ -19,7 +19,7 @@ the corresponding containers. For more details, refer to the [Docker documentati
 If TBMQ is installed in a K8S environment, you can edit the scripts and add environment variables for the 
 corresponding deployments/stateful sets. For more details, refer to the [K8S documentation](https://kubernetes.io/docs/tasks/inject-data-application/define-environment-variable-container/).
 
-## Configuration parameters
+### Configuration parameters
 
 The configuration file is written in YAML format. All configuration parameters have corresponding environment variable names and default values. 
 To change a configuration parameter, simply modify its default value. For example:
@@ -1998,7 +1998,3 @@ environment variable, default value, and description.
       </tr>
   </tbody>
 </table>
-
-#### logback.xml
-
-The configuration file for logging is **logback.xml**. It allows for controlling the log level, the size of log files, and the total size/volume of logs.
