@@ -12,7 +12,7 @@ description: Trendz Cache settings
 Trendz has many built-in optimization mechanisms for improving report generation time. Most of them work out of the box 
 and do not require any configuration. But some of those mechanisms should be enabled explicitly by the administrator.
 
-## Trendz cache levels
+### Trendz cache levels
 
 Trendz supports 2 cache levels - `View Report` cache and `Metrics long term cache`. To explain the difference between them 
 we first need to understand how reports are generated in Trendz:
@@ -29,7 +29,7 @@ Most of the time is spent on item loading and data loading (Step 3 & Step 4). By
 `Metrics long term cache` - in cases when data can be grouped by fixed intervals, like Hour or Date, we can load already computed\aggregated field 
 value from cache instead of reloading data from ThingsBoard. 
 
-## Metrics long term cache
+### Metrics long term cache
 
 For enabling this type of cache - open view settings, navigate to **Caching settings** and enable checkbox **Enable caching**.
 
@@ -76,7 +76,7 @@ You can clear long term cache if required. It may be useful if you re-import or 
 * Open Settings
 * Press **Clear cache** button in **Caching** section 
 
-## View Report cache
+### View Report cache
 
 In some cases, we can reuse the already computed View Report instead of computing it from scratch. This feature is helpful 
 when a view is added on the dashboard with multiple states and users actively navigate between them. Each time when the 

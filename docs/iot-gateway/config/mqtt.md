@@ -693,7 +693,7 @@ it manually. To use them, make sure you set all required parameters (in the case
 See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
 
 
-## Next steps
+### Next steps
 
 Explore guides related to main ThingsBoard features:
 

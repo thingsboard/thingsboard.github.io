@@ -12,7 +12,7 @@ title: Mail Plugin
 
 Mail plugin is responsible for sending email messages that are triggered by corresponding rule [actions](/docs/reference/actions/send-mail-action/).  
 
-## Configuration
+### Configuration
 
 You can specify following parameters:
  
@@ -23,11 +23,11 @@ You can specify following parameters:
  - map with other properties. 
 See [java mail sender](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/mail/javamail/JavaMailSenderImpl.html#setJavaMailProperties-java.util.Properties-) for more details. 
 
-## Server-side API
+### Server-side API
 
 This plugin does not provide any server-side API. 
 
-## Example
+### Example
 
 As a tenant administrator, you are able to review plugin example inside **Plugins->Demo Email Plugin** that is configured to Gmail server.
 You may want to update username and password to match existing account and start receiving emails.

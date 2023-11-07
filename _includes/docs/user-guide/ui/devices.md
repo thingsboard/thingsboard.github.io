@@ -29,7 +29,7 @@ Each device can belong to multiple groups simultaneously. To add a new device gr
 
 {% include images-gallery.html imageCollection="add-device-group-pe" showListImageTitles="true" %}
 
-You can read more about entity groups [here](/docs/{{docsPrefix}}user-guide/groups/).
+You can read more [about entity groups here](/docs/{{docsPrefix}}user-guide/groups/).
 {% endunless %}
 
 ## Editing a device

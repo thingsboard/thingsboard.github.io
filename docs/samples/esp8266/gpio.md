@@ -212,16 +212,16 @@ Connect USB-TTL adapter to PC and select the corresponding port in Arduino IDE. 
 
 After the application is uploaded and started it will try to connect to ThingsBoard node using mqtt client and upload current GPIOs state.
 
-## Autonomous operation
+### Autonomous operation
 
 When you have uploaded the sketch, you may remove all the wires required for uploading including USB-TTL adapter and connect your ESP8266 and LEDs directly to the power source according to the [Final wiring schema](#final-schema-battery-powered).
 
-## Troubleshooting
+### Troubleshooting
 
 In order to perform troubleshooting, you should assemble your hardware according to the [Programming/flashing scheme](#programmingflashing-schema).
 Then connect USB-TTL adapter with PC and select port of the USB-TTL adapter in Arduino IDE. Finally, open "Serial Monitor" in order to view the debug information produced by serial output.
 
-## Data visualization
+### Data visualization
 
 Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator.
 
@@ -244,7 +244,7 @@ Below is the screenshot of the "ESP8266 GPIO Demo Dashboard".
 
  ![image](/images/samples/esp8266/gpio/dashboard.png)
  
-## See also
+### See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -259,6 +259,6 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
 {% include socials.html %}
 
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

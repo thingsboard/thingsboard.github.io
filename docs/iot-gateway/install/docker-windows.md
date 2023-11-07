@@ -15,7 +15,7 @@ This guide will help you to install and start ThingsBoard Gateway using Docker o
 
 - [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
 
-## Running
+### Running
 
 Click the Docker QuickStart icon to launch a pre-configured Docker Toolbox terminal.
 
@@ -41,7 +41,7 @@ Where:
 - `$HOME`   - current user's home dir(`%HomePath%`)
 
 
-## Running (with ENV variables)
+### Running (with ENV variables)
 
 **Execute the following command to run docker container with ENV variables:**
 
@@ -62,7 +62,7 @@ Available  ENV variables:
 | cert        | Path to certificate file.      |
 |--
 
-## Detaching, stop and start commands
+### Detaching, stop and start commands
 
 You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
 
@@ -87,7 +87,7 @@ docker start tb-gateway
 ```
 {: .copy-code}
 
-## Gateway configuration
+### Gateway configuration
 
 Stop the container:
 
@@ -111,7 +111,7 @@ docker start tb-gateway
 ```
 {: .copy-code}
 
-## Upgrading
+### Upgrading
 
 In order to update to the latest image, execute the following commands:
 
@@ -122,7 +122,7 @@ $ docker rm tb-gateway
 $ docker run -it -v %HOMEPATH%\tb-gateway\config:/thingsboard-gateway/config -v %HOMEPATH%\tb-gateway\extensions:/var/lib/thingsboard_gateway/extensions -v %HOMEPATH%\tb-gateway\logs:/var/log/thingsboard-gateway --name tb-gateway --restart always thingsboard/tb-gateway
 ```
 
-## Build local docker image
+### Build local docker image
 
 In order to build local docker image, follow the next steps:
 

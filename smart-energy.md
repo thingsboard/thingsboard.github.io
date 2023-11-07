@@ -47,7 +47,7 @@ The main dashboard displays the energy meters, corresponding alarms, and real-ti
 Click on the alarm or energy meter row to open the meter details. 
 You may export the dashboard from our live demo server and import it to your ThingsBoard instance.
 
-## ThingsBoard advantages
+### ThingsBoard advantages
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
@@ -128,7 +128,7 @@ You may export the dashboard from our live demo server and import it to your Thi
     </div>
 </section>
 
-## Smart energy solution overview
+### Smart energy solution overview
 
 The diagram below identifies data flow and integration points for a typical smart-energy solution that uses the ThingsBoard platform to collect and analyze energy monitoring data from smart meters.
 
@@ -138,7 +138,7 @@ You may notice plenty of connectivity options for the smart meters: direct conne
 The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database. 
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
-## Learn more
+### Learn more
 
 <a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
 <a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>

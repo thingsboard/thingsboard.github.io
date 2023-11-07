@@ -27,7 +27,7 @@ for Ubuntu and complete the installation steps.
 
 {% include templates/install/troubleshooting.md %}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
 

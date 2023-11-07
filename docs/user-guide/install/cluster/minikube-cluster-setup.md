@@ -28,12 +28,12 @@ minikube addons enable ingress
 ```
 {: .copy-code}
 
-## Step 1. Review the architecture page
+### Step 1. Review the architecture page
 
 Starting ThingsBoard v2.2, it is possible to install ThingsBoard cluster using new microservices architecture and docker containers. 
 See [**microservices**](/docs/reference/msa/) architecture page for more details.
 
-## Step 2. Clone ThingsBoard CE Kubernetes scripts repository
+### Step 2. Clone ThingsBoard CE Kubernetes scripts repository
 
 ```bash
 git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git --depth 1
@@ -41,7 +41,7 @@ cd thingsboard-ce-k8s/minikube
 ```
 {: .copy-code}
 
-## Step 3. Configure ThingsBoard database
+### Step 3. Configure ThingsBoard database
 
 Before performing initial installation you can configure the type of database to be used with ThingsBoard.
 In order to set database type change the value of `DATABASE` variable in `.env` file to one of the following:
@@ -61,7 +61,7 @@ It is recommended to have 3 Cassandra nodes with `CASSANDRA_REPLICATION_FACTOR` 
 {% endcapture %}
 {% include templates/info-banner.md content=cassandra-replication %}
 
-## Step 4. Running
+### Step 4. Running
 
 Execute the following command to run installation:
 
@@ -157,7 +157,7 @@ Execute the following command to delete all resources (including database):
 ```
 {: .copy-code}
 
-## Upgrading
+### Upgrading
 
 In case you would like to upgrade, please pull the *latest* changes from `master` branch:
 ```
@@ -176,6 +176,6 @@ Where:
 
 - `FROM_VERSION` - from which version upgrade should be started. See [Upgrade Instructions](/docs/user-guide/install/upgrade-instructions) for valid `fromVersion` values.
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}
