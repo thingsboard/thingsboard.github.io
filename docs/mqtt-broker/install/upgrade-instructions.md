@@ -86,7 +86,7 @@ These steps are applicable for 1.0.0, and 1.0.1 TBMQ versions.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-#### Pull TBMQ image
+#### Pull TBMQ image (Optional)
 
 Pull 1.1.0 version TBMQ image depending on your current installation.
 

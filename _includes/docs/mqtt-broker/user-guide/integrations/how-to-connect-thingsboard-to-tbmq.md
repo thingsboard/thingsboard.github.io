@@ -14,7 +14,7 @@ Read more about the APPLICATION client [here](https://thingsboard.io/docs/mqtt-b
 ThingsBoard MQTT Integration acts as an MQTT client. It subscribes to topics and converts the received data into telemetry and attribute updates. 
 In case of a downlink message, MQTT integration converts it to the device-suitable format and pushes it to TBMQ. 
 Pay attention: TBMQ should be either co-located with the ThingsBoard instance or deployed in the cloud and have a valid DNS name or static IP address. 
-ThingsBoard instance that is running in the cloud can’t connect to the TBMQ deployed in the local area network.
+ThingsBoard instance that is running in the cloud can’t connect to the TBMQ deployed in the local area network with no internet connection.
 
 ### Prerequisites
 
