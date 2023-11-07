@@ -45,36 +45,45 @@ step3:
 
 step31:
     0:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-1-ce.png 
-        title: 'Open the "Dashboards" page. Click on the "+" icon in the top right corner. Select "Create new dashboard";'
+        image: /images/user-guide/dashboards/overview/create-dashboard-1-ce.png
+        title: 'Login to your ThingsBoard instance and navigate to the "Dashboards" page through the main menu on the left of the screen. Then, click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu;'
     1:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-2-ce.png
-        title: 'Enter dashboard name. For example, "My New Dashboard". Then click "Add" to add the dashboard;'
+        image: /images/user-guide/dashboards/overview/create-dashboard-2-ce.png
+        title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add";'
     2:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-3-ce.png
-        title: 'Your first dashboard has been created. As long as you have one dashboard. But as new dashboards are added, they will be added to the top of the table, since the table sort dashboards using the time of the creation by default. Click on the row to open the dashboard.'
+        image: /images/user-guide/dashboards/overview/create-dashboard-3-ce.png
+        title: 'Once you have created the dashboard, it will be automatically opened. Save it by clicking the "Save" button in the upper right corner.'
+    3:
+        image: /images/user-guide/dashboards/overview/create-dashboard-4-ce.png
+        title: 'Your first dashboard has been successfully created. As you continue to add new dashboards, they will appear at the top of the list. This default sort is based on the creation timestamp.'
 
-step33:
+step32:
     0:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-1-ce.png
-        title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-0-ce.png
+        title: 'Enter dashboard edit mode. Simply open the dashboard and click the "Edit mode" button found in the upper right corner of the screen;'
     1:
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-1-ce.png
+        title: 'Click on the "Add new widget" button at the top of the screen;'
+    2:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-2-ce.png
         title: 'Select the "Tables" widget bundle;'
-    2:
+    3:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-3-ce.png
         title: 'Select the "Entities table" widget;'
-    3:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-4-ce.png
-        title: 'The "Add Widget" window will appear. Add datasource by specifying previously created "My New Entity Alias" alias and click "Add column" to add data key;'
     4:
-        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-5-ce.png
-        title: 'Specify the "temperature" data key: click on the newly appeared data key input field. The auto-complete with available data keys will appear. Select "temperature" data key and click "Add";'
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-4-ce.png
+        title: 'The "Add Widget" window will appear. Add data source by specifying previously created "My New Device" device. The “name” key has already been added to the “Columns” section, which is responsible for the column with the device name. You need to add another column that will display the value of the "temperature" key. To do this, click "Add column" to add a new field to enter the data key;'
     5:
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-5-ce.png
+        title: 'Click on the newly appeared data key input field. The auto-complete with available data keys will appear. Select "temperature" data key;'
+    6:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-6-ce.png
+        title: 'Click the "Add" button in the bottom right corner of the widget to complete adding the widget.'
+    7:
+        image: /images/helloworld/getting-started-ce/hello-world-3-1-add-table-widget-7-ce.png
         title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. Apply changes.'
 
-step34:
+step33:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-1-ce.png
         title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
@@ -86,7 +95,7 @@ step34:
         title: 'Select the "Timeseries Line Chart" widget;'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-4-ce.png
-        title: 'Specify datasource by adding previously created "My New Entity Alias" alias and specify the "temperature" data key. Click "Add";'
+        title: 'Add data source by specifying previously created "My New Device" device and specify the "temperature" data key. Click "Add";'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-5-ce.png
         title: 'Resize the widget and apply changes. Publish different telemetry values multiple times, as in Step 2. Note that the widget displays only one minute of data by default;'
@@ -94,8 +103,7 @@ step34:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-add-chart-widget-6-ce.png
         title: 'Now open the time selection window. Change the interval and aggregation function. Update the time window setting by clicking the "Update" button.'
 
-
-step35:
+step34:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-1-ce.png
         title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
@@ -107,7 +115,7 @@ step35:
         title: 'Select "Alarms table" widget;'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-4-ce.png
-        title: 'Specify datasource by adding previously created "My New Entity Alias" alias and select the statuses and severities of alarms you want to display in the alarm widget;'
+        title: 'Specify the previously created "My New Device" device as the data source and select the statuses and severities of alarms you want to display in the alarm widget;'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-5-ce.png
         title: 'Drag and Drop the "Timeseries Line Chart" widget to the top right corner of the dashboard to make room for the "Alarms" widget;'   
@@ -274,9 +282,6 @@ mosquitto-windows:
 * TOC
 {:toc}
 
-
-## Introduction
-
 The goal of this tutorial is to demonstrate the basic usage of the most popular ThingsBoard features. You will learn how to:
 
  - Connect devices to ThingsBoard;
@@ -300,17 +305,17 @@ Learn more about **notifications** and how to configure them [here](#step-6-alar
 <br>
 You may also use:
  * [Bulk provisioning](/docs/user-guide/bulk-provisioning/) to provision multiple devices from a CSV file using UI;
- * [Device provisioning](/docs/user-guide/device-provisioning/) to allow device firmware to automatically provision the device, so you don't need to configure each device manually; 
+ * [Device provisioning](/docs/user-guide/device-provisioning/) to allow device firmware to provision the device automatically, so you don't need to configure each device manually; 
  * [REST API](/docs/api/) to provision devices and other entities programmatically;
 
 ## Step 2. Connect device
 
 To connect the device you need to get the device credentials first. 
-ThingsBoard supports various device credentials. We recommend using default auto-generated credentials which is access token for this guide.
+ThingsBoard supports various device credentials. We recommend using the default auto-generated credentials, which is an access token for this guide.
 
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
 
-Now you are ready to publish telemetry data on behalf of your device. 
+Now, you are ready to publish telemetry data on behalf of your device. 
 We will use simple commands to publish data over HTTP or MQTT in this example.
 
 {% capture connectdevicetogglespec %}
@@ -327,53 +332,62 @@ Once you have successfully published the "temperature" readings, you should imme
 
 ## Step 3. Create dashboard
 
-We will create a dashboard and add the most popular widgets. See the instructions below. 
+A dashboard in ThingsBoard allows users to visualize and monitor data collected from IoT devices.
+
+In this guide, we will create a dashboard and add three widgets to it in order to display a list of entities and their latest values, as well as show alarm signals related to the specified entity.
 
 ### Step 3.1 Create an empty dashboard
 
+To create a new dashboard, follow these steps:
+
 {% include images-gallery.html imageCollection="step31" showListImageTitles="true" %}
 
-### Step 3.2 Add entity alias
+### Step 3.2 Add table widget
 
-Alias is a reference to a single entity or group of entities that are used in the widgets.
-Alias may be static or dynamic. For simplicity, we will use "Single entity" alias references the one and only entity ("My New Device" in our case).
-It is possible to configure an alias that references multiple devices. For example, devices of a certain type or related to a certain asset. 
-You may learn more about different aliases [here](/docs/user-guide/ui/aliases/).
-
-{% include images-gallery.html imageCollection="step32" showListImageTitles="true" %}   
-
-### Step 3.3 Add table widget
-
-Entity Table widget displays the latest values with list of entities that matches selected alias and filter with ability of additional full text search and pagination options.
+The "Entities table" widget displays a list of entities and their latest values.
+The list of entities corresponds to selected devices or other entities, and filters with the ability of additional full-text search and pagination options.
 
 To add the table widget we need to select it from the widget library. Widgets are grouped into widget bundles.
 Each widget has a data source. This is how the widget "knows" what data to display.
 To see the latest value of our "temperature" data that we sent during step 2, we should configure the data source.
 
-{% include images-gallery.html imageCollection="step33" showListImageTitles="true" %}
+Let's add your first widget:
 
-Congratulations! You have added the first widget. Now you can send new telemetry reading and it will immediately appear in the table. 
+{% include images-gallery.html imageCollection="step32" showListImageTitles="true" %}
 
-### Step 3.4 Add chart widget
+Congratulations! You've added your first widget.
+
+In the "Entities table" widget, there are two columns.
+The first column displays the device's name, and the second column displays the value of the "temperature" key (device telemetry).
+So, each column corresponds to an added key.
+
+Now you are able to a send new telemetry reading (as in [Step 1](#step-1-provision-device)), and it will immediately appear in the table.
+
+### Step 3.3 Add chart widget
 
 Chart widgets allow you to display time series data with customizable line charts and bar charts.
 
-To add the chart widget we need to select it from the widget library. 
+To add the chart widget we need to select it from the widget library.
 Chart widget displays multiple historical values of the same data key ("temperature" in our case).
 We should also configure the time window to use the chart widget.
 
-{% include images-gallery.html imageCollection="step34" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="step33" showListImageTitles="true" %}
 
-Congratulations! You have added a chart widget. Now you can send new telemetry reading and it will immediately appear in the chart. 
+Congratulations! You have added the chart widget. Now you are able to send new telemetry reading, and it will immediately appear in the chart.
 
-### Step 3.5 Add alarm widget
+### Step 3.4 Add alarms table widget
 
-Alarms table widget displays alarms related to the specified entity in the certain time window (for example, “Alarms table”). 
+Alarms table widget displays alarms related to the specified entity in the certain time window.
 Alarm widget is configured by specifying an entity as the alarm source, and the corresponding alarm fields.
 
-{% include images-gallery.html imageCollection="step35" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="step34" showListImageTitles="true" %}
 
-Congratulations! You have added an alarm widget. Now it's time to configure alarm rules and raise some alarms. 
+Congratulations! You have added the alarm widget. Now it's time to configure alarm rules and raise some alarms.
+
+**Note:** in this documentation, we are using a single device as a data source for the widgets. 
+To use multiple entities (for example, devices of a certain type or related to a certain asset) as data sources, you must use the alias.
+Alias is a reference to a single entity or a group of entities that are used in the widgets. 
+You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide/ui/aliases/).
 
 ## Step 4. Configure alarm rules
 

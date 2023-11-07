@@ -1,8 +1,6 @@
 * TOC
 {:toc}
 
-## Introduction
-
 The goal of this tutorial is to demonstrate the basic usage of the most popular ThingsBoard features. You will learn how to:
 
  - Connect devices to ThingsBoard;
@@ -94,7 +92,7 @@ We should also configure the time window to use the chart widget.
 
 {% include images-gallery.html imageCollection="step33" showListImageTitles="true" %}
 
-Congratulations! You have added a chart widget. Now you are able to send new telemetry reading, and it will immediately appear in the chart. 
+Congratulations! You have added the chart widget. Now you are able to send new telemetry reading, and it will immediately appear in the chart. 
 
 ### Step 3.4 Add alarms table widget
 
@@ -103,13 +101,12 @@ Alarm widget is configured by specifying an entity as the alarm source, and the 
 
 {% include images-gallery.html imageCollection="step34" showListImageTitles="true" %}
 
-Congratulations! You have added alarm widget. Now it's time to configure alarm rules and raise some alarms. 
+Congratulations! You have added the alarm widget. Now it's time to configure alarm rules and raise some alarms. 
 
-<br>
-In this documentation, we are using a single device as a data source for the widgets. 
+**Note:** in this documentation, we are using a single device as a data source for the widgets. 
 To use multiple entities (for example, devices of a certain type or related to a certain asset) as data sources, you must use the alias.
 Alias is a reference to a single entity or a group of entities that are used in the widgets. 
-You may learn more about different aliases [here](/docs/{{docsPrefix}}user-guide/ui/aliases/).
+You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide/ui/aliases/).
 
 ## Step 4. Configure alarm rules
 

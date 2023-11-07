@@ -76,7 +76,7 @@ step32:
         title: 'Select the "Entities table" widget;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-4-pe.png
-        title: 'The "Add Widget" window will appear. Add datasource by specifying previously created "My New Device" device. The “name” key has already been added to the “Columns” section, which is responsible for the column with the device name. You need to add another column that will display the value of the "temperature" key. To do this, click "Add column" to add a new field to enter the data key;'
+        title: 'The "Add Widget" window will appear. Add data source by specifying previously created "My New Device" device. The “name” key has already been added to the “Columns” section, which is responsible for the column with the device name. You need to add another column that will display the value of the "temperature" key. To do this, click "Add column" to add a new field to enter the data key;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-5-pe.png
         title: 'Click on the newly appeared data key input field. The auto-complete with available data keys will appear. Select "temperature" data key;'
@@ -99,7 +99,7 @@ step33:
         title: 'Select the "Timeseries Line Chart" widget;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-4-pe.png
-        title: 'Specify datasource by adding a previously created "My New Entity Alias" alias and specify the "temperature" data key. Click "Add";'
+        title: 'Add data source by specifying previously created "My New Device" device and specify the "temperature" data key. Click "Add";'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-5-pe.png
         title: 'Resize the widget and apply changes. Publish different telemetry values multiple times, as in Step 2. Note that the widget displays only one minute of data by default;'
@@ -119,7 +119,7 @@ step34:
         title: 'Select "Alarms table" widget;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-4-pe.png
-        title: 'Specify datasource by adding previously created "My New Entity Alias" alias and select the statuses and severities of alarms you want to display in the alarm widget;'
+        title: 'Specify the previously created "My New Device" device as the data source and select the statuses and severities of alarms you want to display in the alarm widget;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-5-pe.png
         title: 'Drag and Drop the "Timeseries Line Chart" widget to the top right corner of the dashboard to make room for the "Alarms" widget;'
