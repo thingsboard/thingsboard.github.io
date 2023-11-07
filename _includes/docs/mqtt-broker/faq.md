@@ -2,7 +2,7 @@
 {:toc}
 
 
-## What is TBMQ?
+### What is TBMQ?
 
 TBMQ represents an open-source software product developed by ThingsBoard, designed to facilitate communication between MQTT clients. 
 This particular product is freely available for both personal and commercial purposes, with the added flexibility of being deployable in any desired location. 
