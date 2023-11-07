@@ -55,11 +55,11 @@ description: IoT monitoring dashboard
 <div class="details-cards-block-wrapper">
     <div class="details-cards-block">
         <div class="details-card">
-            <span class="header">Proactive<br/> issue resolution</span> 
+            <span class="header">Proactive issue resolution</span> 
             <span class="content">enables proactive maintenance, allowing businesses to address issues before they impact operations.</span>
         </div> 
         <div class="details-card">
-            <span class="header">Scalability and<br/> future-proofing</span>
+            <span class="header">Scalability and future-proofing</span>
             <span class="content">ensures scalability, allowing businesses to seamlessly integrate new devices and technologies as they evolve.</span> 
         </div> 
         <div class="details-card">
@@ -75,7 +75,7 @@ description: IoT monitoring dashboard
             <h2>IoT Dashboard Examples</h2>
             <div class="text-content medium-margin">IoT dashboards are versatile and can be tailored to meet the specific needs of various industries and applications. Here are some general IoT dashboard examples:</div>
             <h3 class="small-padding">Equipment Monitoring Dashboard:</h3>
-            <div class="text-content medium-margin">this type of dashboard visualizes sensor data, allowing the manufacturing and facility management department to grasp the operation status of the entire plant, the equipment of each production line, and faulty equipment in real-time.</div>
+            <div class="text-content medium-margin">This type of dashboard visualizes sensor data, allowing the manufacturing and facility management department to grasp the operation status of the entire plant, the equipment of each production line, and faulty equipment in real-time.</div>
         </div>
         <img class="image" srcset="/images/iot-articles/monitoring_dashboard_2_1090x681.png 1090w, /images/iot-articles/monitoring_dashboard_2_2180x1362.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/monitoring_dashboard_2_1090x681.png" alt="IoT energy management office monitoring"/>
         <div class="text-wrapper">
@@ -100,7 +100,7 @@ description: IoT monitoring dashboard
                 <li>Once you have added and configured all your widgets, don’t forget to save your dashboard.</li>
             </ul>
             <div class="text-content">For a more detailed guide on how to use the dashboard for IoT devices, you can refer to the official documentation <a class="article-link" href="/docs/pe/user-guide/dashboards/">here</a>.</div>
-            <h2>ThingsBoard IoT Dashboard in Action<br/> (Case Studies)</h2>
+            <h2>ThingsBoard IoT Dashboard in Action (Case Studies)</h2>
         </div>
         <div class="definitions-block">
             <div class="definitions-list">
@@ -134,8 +134,8 @@ description: IoT monitoring dashboard
     <div class="block-content">
         <div class="contact-us-content">
             <div class="info">
-                <div class="title">Ready to launch <br/>your unique product?</div>
-                <div class="text">Leave us your name and email and we will get back <br/>to you within 2 business days</div>
+                <div class="title">Ready to launch your unique product?</div>
+                <div class="text">Leave us your name and email and we will get back to you within 2 business days</div>
             </div>
             <form id="contact-form" class="contact-form" method="post" onsubmit="return validateContactForm(this)">
                 <fieldset>
