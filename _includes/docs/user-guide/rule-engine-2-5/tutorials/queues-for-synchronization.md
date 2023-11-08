@@ -34,7 +34,7 @@ Second - with the value of 10. So the result should be 777.
 ![image](/images/user-guide/rule-engine-2-5/tutorials/generator2.png)
 
 Both messages will be put into the queue with the name **"SequentialByOriginator"**. It uses the message submit strategy called **"SEQUENTIAL_WITHIN_ORIGINATOR"** 
-{% unless docsPrefix == "paas/" %}(please, refer to [**configuration guide**](/docs/{{docsPrefix}}user-guide/install/config/) for more details){% endunless %} which means that
+{% unless docsPrefix == "paas/" %}(please, refer to [**configuration guide**](/docs/user-guide/install/{{docsPrefix}}config/) for more details){% endunless %} which means that
 the subsequent message will start being processed when the preceding message is acknowledged (is processed and deleted from the queue) based on the originator.
 
 ![image](/images/user-guide/rule-engine-2-5/tutorials/checkpoint.png)

@@ -6,7 +6,7 @@ The ThingsBoard **Guides** can help you to get familiar with ThingsBoard platfor
 : Provides overview of the platform functionality and classical Hello World guide.
 
 {% unless docsPrefix == 'paas/' %}
-[**Installation guide**](/docs/{{docsPrefix}}user-guide/install/installation-options/)
+[**Installation guide**](/docs/user-guide/install/{{docsPrefix}}installation-options/)
 : Covers ThingsBoard platform installation in a single-node or cluster mode.
 {% endunless %}
 
