@@ -10,7 +10,7 @@ See instructions below on how to configure SSL for certificates stored in PEM fi
 {% assign sinceVersion = "3.3.2" %}
 {% include templates/since.md %}
 
-Configure the following environment variables via [configuration](/docs/{{docsPrefix}}user-guide/install/config/) file, docker-compose or kubernetes scripts. 
+Configure the following environment variables via [configuration](/docs/user-guide/install/{{docsPrefix}}config/) file, docker-compose or kubernetes scripts. 
 We will use **thingsboard.conf** for example:
 
 ```bash
