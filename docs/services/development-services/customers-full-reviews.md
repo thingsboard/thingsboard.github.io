@@ -10,7 +10,7 @@ description: Development services customers' reviews
 </section>
 <section id="review-asg" class="full-review">
     <div class="content-wrapper">
-        <a class="back-button" href="/docs/services/development-services/">
+        <a class="back-link" href="/docs/services/development-services/">
             <span class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" viewBox="0 0 22 16" fill="none"><path d="M0.28545 7.23852L6.35409 0.381616C6.74482 -0.0863449 7.51712 -0.128037 7.97021 0.27929C8.42329 0.686613 8.469 1.46369 8.04903 1.90537L3.6635 6.85758H20.8621C21.4905 6.85758 22 7.36926 22 8.0004C22 8.63158 21.4905 9.14322 20.8621 9.14322H3.6635L8.04903 14.0954C8.469 14.5371 8.4122 15.3128 7.95912 15.7201C7.50603 16.1274 6.74482 16.0871 6.35409 15.6192L0.28545 8.76228C-0.110773 8.2079 -0.0791988 7.7102 0.28545 7.23852Z" fill="#727381"/></svg>
             </span>
@@ -131,21 +131,21 @@ description: Development services customers' reviews
     function validateContactForm(form) {
         var name = $('input[name=name]', form).val();
         var email = $('input[name=email]', form).val();
-        
+
         if (!validateValue('Name', name)) {
             return false;
         }
         if (!validateValue('Email Address', email)) {
             return false;
         }
-        
+
         var emailExp = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
         if(email.match(emailExp)==null) {
             window.alert("Entered Email Address is not valid.");
             return false; 
         }
     }
-    
+
     function validateValue(name, val) {
         if (isEmpty(val)) {
             window.alert("Please fill '" + name + "' field.");
@@ -153,14 +153,14 @@ description: Development services customers' reviews
         }
         return true;
     }
-    
+
     function isEmpty(val) {
         return val === undefined || val === null || val.trim().length == 0;
     }
 
 
     var contactform =  document.getElementById('contact-form');
-    
+
     contactform.setAttribute('action', 'https://formspree.io/' + 'support' + '@' + 'thingsboard' + '.' + 'io');
 
     jqueryDefer(
@@ -177,13 +177,13 @@ description: Development services customers' reviews
                          $(this).removeClass("input--empty");
                       }
                  });
-                 
+
                  $.urlParam = function (name) {
                      var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
                      return results ? results[1] : null;
                  };
                  var subjectValue = $.urlParam('subject');
-                 if (subjectValue != undefined && subjectValue.trim().length > 0) {                    
+                 if (subjectValue != undefined && subjectValue.trim().length > 0) {
                     $('#contact-form select[name=subject]').val(decodeURIComponent(subjectValue));
                     $('#contact-form select[name=subject]').removeClass("input--empty");
                  }

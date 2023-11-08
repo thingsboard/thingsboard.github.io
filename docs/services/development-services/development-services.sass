@@ -30,9 +30,8 @@ $step6: 1919px
         #content
             position: inherit
 
-    .back-button
+    .back-link
         display: flex
-
         color: #727381
         font-family: Poppins
         font-size: 24px
@@ -40,9 +39,8 @@ $step6: 1919px
         font-weight: 500
         line-height: 30px
         letter-spacing: 0.024px
-
         padding: 10px
-        margin-bottom: 86px
+        margin-bottom: 25px
         align-items: center
         &:hover
             text-decoration: none
@@ -72,7 +70,6 @@ $step6: 1919px
             display: inline-block
             border-radius: 6px
             padding: 7px 0px
-
             color: #3622A4
             text-align: center
             font-family: Poppins
@@ -137,7 +134,6 @@ $step6: 1919px
             min-width: 700px
             line-height: 68px
             margin-right: 40px
-
             color: #333
             font-family: Poppins
             font-size: 48px
@@ -146,7 +142,7 @@ $step6: 1919px
             line-height: 76px
             letter-spacing: 0.48px
             padding-bottom: 30px
-        
+
         .section-text
             color: #5E5F62
             font-family: Poppins
@@ -190,7 +186,7 @@ $step6: 1919px
             border-radius: 4px
             border: 1px solid rgba(0, 0, 0, 0.12)
             padding: 16px 18px
-        
+
         .cdu-button
             padding: 15px
             border-radius: 6px
@@ -209,7 +205,7 @@ $step6: 1919px
         .logo
             display: flex
             margin-bottom: 30px
-            > img 
+            > img
                 object-fit: contain
                 width: 100%
                 height: auto
@@ -237,10 +233,10 @@ $step6: 1919px
                 letter-spacing: 0.022px
             h6
                 margin-bottom: 22px
-            
+
             h5
                 margin-bottom: 5px
-    
+
     .bg-rectangle
         position: absolute
         width: 692px
@@ -271,7 +267,7 @@ $step6: 1919px
     @media screen and (max-width: $step6)
         .review
                 padding: 0 100px
-        
+
         .header
             .title
                 font-size: 36px
@@ -285,7 +281,7 @@ $step6: 1919px
             .side-title
                 h1
                     text-wrap: nowrap
-                    width: 210px 
+                    width: 210px
                     height: 44px
 
             .section-title
@@ -295,11 +291,11 @@ $step6: 1919px
 
             .section-text
                 line-height: 40px
-       
+
     @media screen and (max-width: $step5)
         .review
                 padding: 0 100px
-        
+
         .header
             .title
                 font-size: 36px
@@ -332,17 +328,17 @@ $step6: 1919px
 
                 .contact-form
                     grid-area: contact-form
-    
+
     @media screen and (max-width: $step4) and (min-width: $step3)
         #review-kalitec
             padding: 120px 20px
 
         #review-ionatech
             padding: 120px 20px
-           
+
         .review
             padding: 0 20px
-        
+
         .get-in-touch
             padding: 150px 50px 200px 50px
             .content-get-in-touch
@@ -365,7 +361,7 @@ $step6: 1919px
                         font-size: 30px
 
                     .section-text
-                        max-width: 327px    
+                        max-width: 327px
 
                 .side-title
                     grid-area: side-title
@@ -377,7 +373,7 @@ $step6: 1919px
                 .contact-form
                     grid-area: contact-form
                     padding-right: 30px
-   
+
             .info
                 grid-area: info
                 margin-right: 0px
@@ -389,9 +385,9 @@ $step6: 1919px
 
                 .section-text
                     max-width: 327px
-       
+
     @media screen and (max-width: $step3)
-        .back-button
+        .back-link
             margin-bottom: 10px
 
         .side-title
@@ -406,7 +402,7 @@ $step6: 1919px
             .title
                 font-size: 30px
                 line-height: 48px
-        
+
         .review
             padding: 0
             max-width: 750px
@@ -420,7 +416,7 @@ $step6: 1919px
                     line-height: 30px
                 h6
                     margin-bottom: 8px
-                
+
                 h5
                     margin-bottom: 3px
 
@@ -450,7 +446,7 @@ $step6: 1919px
                 margin-right: 94px
                 height: fit-content
                 max-width: fit-content
-            
+
             .section-text
                 font-size: 16px
                 line-height: 28px
@@ -487,7 +483,7 @@ $step6: 1919px
             margin-bottom: 10px
 
     @media screen and (max-width: $step2)
-        .back-button
+        .back-link
             margin-bottom: 10px
 
         .side-title
@@ -502,7 +498,7 @@ $step6: 1919px
             .title
                 font-size: 20px
                 line-height: 30px
-        
+
         .review
             padding: 0
             .review-header
@@ -514,7 +510,7 @@ $step6: 1919px
                     line-height: 30px
                 h6
                     margin-bottom: 8px
-                
+
                 h5
                     margin-bottom: 3px
 
@@ -542,7 +538,7 @@ $step6: 1919px
                 height: fit-content
                 width: fit-content
                 max-width: fit-content
-            
+
             .section-text
                 font-size: 16px
                 line-height: 28px
@@ -613,12 +609,12 @@ $step6: 1919px
             align-items: unset
             padding: 0 130px
             max-width: 1920px
-                    
+
     #hero
         padding-top: 80px
     .hero
         padding-top: 80px
-            
+
     #first-screen
         height: 100vh
         min-height: 750px
@@ -722,7 +718,6 @@ $step6: 1919px
                     left: -50%
                     z-index: 1
                     opacity: 0
-
                     transform: translateY(-2%)
                     animation-name: fadeoutCenter
                     animation-duration: 750ms
@@ -736,27 +731,23 @@ $step6: 1919px
                     animation-timing-function: cubic-bezier(0.07, 0.43, 0, 1)
                     animation-fill-mode: forwards
                     animation-delay: 500ms
-                
+
                 .schedule-block
                     position: absolute
                     top: 17%
                     right: 13%
-
                     background-color: white
                     width: 344px
                     height: 401px
                     box-shadow: 0px 0px 10px 0px rgba(16, 14, 111, 0.10)
                     border-radius: 20px
                     opacity: 0
-
                     animation-name: fadeoutRight
                     animation-duration: 1000ms
                     animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94)
                     animation-fill-mode: forwards
                     animation-delay: 1000ms
-
                     padding: 60px 24px 40px 24px
-
                     display: flex
                     flex-direction: column
                     align-items: center
@@ -780,7 +771,6 @@ $step6: 1919px
                         color: #1E1B39
                         text-align: center
                         font-feature-settings: 'clig' off, 'liga' off
-
                         font-family: Inter
                         font-size: 18px
                         font-style: normal
@@ -799,6 +789,7 @@ $step6: 1919px
         padding-top: 0
         padding-left: 0
         padding-right: 0
+
     .absolute-image
         position: absolute
 
@@ -809,7 +800,6 @@ $step6: 1919px
         flex-direction: column
         align-items: center
         z-index: 1
-
         border-radius: 10px
         background: rgba(255, 255, 255, 0.20)
         box-shadow: 0px 0px 10px 0px rgba(21, 29, 111, 0.08)
@@ -824,7 +814,6 @@ $step6: 1919px
             font-weight: 400
             line-height: 32px
             letter-spacing: 0.2px
-
             padding: 44px 0 39px 0
 
         .customer-logos
@@ -872,10 +861,10 @@ $step6: 1919px
                 min-width: 700px
                 line-height: 68px
                 margin-right: 40px
-            
+
             .section-text
                 margin-top: 12px
-        
+
         .poc
             position: relative
             display: flex
@@ -958,7 +947,7 @@ $step6: 1919px
             display: flex
             flex-direction: column
             z-index: 0
-            
+
             .side-title
                 z-index: 1
                 margin-bottom: 40px
@@ -1127,7 +1116,7 @@ $step6: 1919px
                         letter-spacing: 0.022px
                     h6
                         margin-bottom: 22px
-                    
+
                     h5
                         margin-bottom: 5px
 
@@ -1146,7 +1135,7 @@ $step6: 1919px
             .side-title
                 margin-top: 15px
                 margin-right: 94px
-            
+
             .section-title
                 line-height: 68px
 
@@ -1172,7 +1161,7 @@ $step6: 1919px
         .section-title
             max-width: 610px
             line-height: 68px
-        
+
         .section-text
             max-width: 470px
 
@@ -1209,15 +1198,13 @@ $step6: 1919px
             border-radius: 4px
             border: 1px solid rgba(0, 0, 0, 0.12)
             padding: 16px 18px
-        
+
         .cdu-button
             padding: 15px
             border-radius: 6px
             color: white
             background-color: #3622A4
             width: 100%
-
-    
 
     .side-title
         z-index: 2
@@ -1228,7 +1215,6 @@ $step6: 1919px
             gap: 4px
             border-radius: 6px
             padding: 7px 0px
-
             color: #3622A4
             text-align: center
             font-family: Poppins
@@ -1250,7 +1236,7 @@ $step6: 1919px
         line-height: 76px
         letter-spacing: 0.48px
         padding-bottom: 30px
-    
+
     .section-text
         color: #5E5F62
         font-family: Poppins
@@ -1297,7 +1283,7 @@ $step6: 1919px
         animation-duration: 500ms
         animation-timing-function: cubic-bezier(.25, .46, .4, 1)
         animation-fill-mode: forwards
-        
+
     .secondary-image
         opacity: 0
         transform: scale(0)
@@ -1378,7 +1364,7 @@ $step6: 1919px
             .content-wrapper
                 > *
                     max-width: 1440px
-            
+
             #content-get-in-touch
                 padding: 0 50px
 
@@ -1401,8 +1387,8 @@ $step6: 1919px
 
                     .schedule-block
                         top: 21%
-                        right: 8%   
-        
+                        right: 8%
+
         .cdu-services
             padding: 100px 0 0px 0
             .header
@@ -1413,7 +1399,7 @@ $step6: 1919px
                     margin-right: 50px
                     min-width: 198px
                     margin-top: 10px
-                    
+
                     h1
                         padding: 12px 0px
 
@@ -1438,7 +1424,7 @@ $step6: 1919px
                     max-width: fit-content
                     top: 78%
                     left: 41%
-    
+
             .mvp
                 padding: 100px 120px 109px 50px
 
@@ -1452,7 +1438,7 @@ $step6: 1919px
 
             .market-solution
                 padding: 100px 102px 285px 50px
-                
+
                 .left-block
                     padding-left: 80px
 
@@ -1479,11 +1465,11 @@ $step6: 1919px
 
         .testimonials
             padding: 130px 0 130px 0px
-            
+
             .upper-block
                 padding: 0 50px
-       
-            .review-slider  
+
+            .review-slider
                 .reviews
                     margin: 0px 100px
 
@@ -1537,7 +1523,7 @@ $step6: 1919px
             .content-wrapper
                 > *
                     max-width: 1280px
-            
+
             #content-get-in-touch
                 padding: 0 50px
 
@@ -1572,8 +1558,8 @@ $step6: 1919px
 
                     .schedule-block
                         top: 21%
-                        right: 8%   
-        
+                        right: 8%
+
         .cdu-services
             padding: 100px 0 0px 0
             .header
@@ -1618,7 +1604,7 @@ $step6: 1919px
                     max-width: fit-content
                     top: 80%
                     left: 37%
-    
+
             .mvp
                 padding: 100px 50px 109px 50px
 
@@ -1632,7 +1618,7 @@ $step6: 1919px
 
             .market-solution
                 padding: 100px 65px 285px 50px
-                
+
                 .left-block
                     padding-left: 50px
 
@@ -1659,11 +1645,11 @@ $step6: 1919px
 
         .testimonials
             padding: 130px 0 130px 0px
-            
+
             .upper-block
                 padding: 0 50px
-       
-            .review-slider  
+
+            .review-slider
                 .reviews
                     margin: 0px 100px
 
@@ -1723,10 +1709,10 @@ $step6: 1919px
             .content-wrapper
                 > *
                     max-width: 1000px
-            
+
             #content-get-in-touch
                 padding: 0 50px
- 
+
             #content-get-in-touch
                 max-width: 1000px
                 display: grid
@@ -1762,18 +1748,18 @@ $step6: 1919px
                         height: 347px
                         top: 22%
                         right: 20%
-                        padding-top: 40px   
+                        padding-top: 40px
 
                         #progress
                             width: 243px
-                        
+
                         .result-number
                             font-size: 44px
 
                         .result-text
                             font-size: 16px
                             margin-bottom: 10px
-        
+
         .customers
             .customer-logos
                 justify-content: space-around
@@ -1783,7 +1769,7 @@ $step6: 1919px
 
                 .logo
                     display: flex
-                    padding: 10px                        
+                    padding: 10px
 
         .cdu-services
             padding: 100px 0 0px 0
@@ -1828,7 +1814,7 @@ $step6: 1919px
                     max-width: fit-content
                     top: 80%
                     left: 37%
-    
+
             .mvp
                 padding: 100px 35px 109px 40px
 
@@ -1841,8 +1827,8 @@ $step6: 1919px
                     width: 446px
 
             .market-solution
-                padding: 100px 40px 285px 40px                
-                
+                padding: 100px 40px 285px 40px
+
                 .left-block
                     padding-left: 30px
 
@@ -1879,7 +1865,7 @@ $step6: 1919px
 
         .testimonials
             padding: 130px 0 130px 0px
-            
+
             .upper-block
                 padding: 0 50px
                 display: flex
@@ -1888,8 +1874,8 @@ $step6: 1919px
             #carousel-wrapper
                 max-width: 1000px
                 padding: 0 50px
-       
-            .review-slider  
+
+            .review-slider
                 .reviews
                     margin: 0px 100px
 
@@ -1963,7 +1949,7 @@ $step6: 1919px
             .content-wrapper
                 > *
                     max-width: 761px
-            
+
             #content-get-in-touch
                 padding: 0 50px
 
@@ -2031,7 +2017,7 @@ $step6: 1919px
 
                     #icon-phone
                         display: none
-                    
+
         .cdu-services
             padding: 60px 0 0px 0
             .header
@@ -2117,7 +2103,7 @@ $step6: 1919px
                     font-size: 30px
 
         .get-in-touch
-            padding: 40px 0 
+            padding: 40px 0
             .section-title
                 margin-right: 0
                 line-height: 30px
@@ -2184,7 +2170,7 @@ $step6: 1919px
 
                     .full-review-link
                         font-size: 16px
-        
+
         .side-title
             margin-bottom: 10px
             h1
@@ -2197,7 +2183,7 @@ $step6: 1919px
             line-height: 40px
             margin-bottom: 10px
             padding-bottom: 0px
-        
+
         .section-text
             font-size: 14px
             line-height: 28px
@@ -2292,10 +2278,10 @@ $step6: 1919px
 
                     #icon-phone
                         display: none
-                    
+
                     .schedule-block
                         display: none
-        
+
         .cdu-services
             padding: 60px 0 0px 0
             .header
@@ -2378,7 +2364,7 @@ $step6: 1919px
                     font-size: 20px
 
         .get-in-touch
-            padding: 40px 0 
+            padding: 40px 0
             .section-title
                 margin-right: 0
                 line-height: 30px
@@ -2439,7 +2425,7 @@ $step6: 1919px
 
                     .full-review-link
                         font-size: 16px
-        
+
         .side-title
             margin-bottom: 10px
             h1
@@ -2450,7 +2436,7 @@ $step6: 1919px
             line-height: 30px
             margin-bottom: 10px
             padding-bottom: 0px
-        
+
         .section-text
             font-size: 14px
             line-height: 28px
@@ -2502,7 +2488,6 @@ $step6: 1919px
         .accent-text
             font-size: 14px
             line-height: 1.5
-        
 
 @keyframes slideup-in
     from
@@ -2527,7 +2512,7 @@ $step6: 1919px
     to
         opacity: 1
         transform: scale(100%)
-    
+
 @keyframes fadeoutCenter
     from
         opacity: 0
@@ -2543,7 +2528,7 @@ $step6: 1919px
     to
         opacity: 1
         transform: translateY(-11%)
-        
+
 @keyframes backgroundFadeoutMobile
     from
         opacity: 0
