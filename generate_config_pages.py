@@ -1,5 +1,6 @@
 import re
 import sys
+import os
 
 def extract_properties_with_comments(yaml_file_path):
     properties = {}
@@ -136,37 +137,41 @@ def update_page(input_file, output_file):
 
 if __name__ == '__main__':
     sys. setrecursionlimit(10000)
-    tb_repo_type = input("Enter the thingsboard repository type (CE/PE): ")
-    tb_repo_path = input("Enter the path to the thingsboard repository (CE/PE): ")
+    tb_repo_type = sys.argv[1]
+    tb_repo_rel_path = sys.argv[2]
+
+    script_dir = os.path.dirname(__file__)
+    tb_repo_abs_path = os.path.join(script_dir, tb_repo_rel_path)
+
     if tb_repo_type.lower() == "pe":
-        update_page(tb_repo_path + "/application/src/main/resources/thingsboard.yml",
+        update_page(tb_repo_abs_path + "/application/src/main/resources/thingsboard.yml",
                     "_includes/docs/pe/user-guide/install/core-rule-engine-config.md")
-        update_page(tb_repo_path + "/transport/http/src/main/resources/tb-http-transport.yml",
+        update_page(tb_repo_abs_path + "/transport/http/src/main/resources/tb-http-transport.yml",
                     "_includes/docs/pe/user-guide/install/http-transport-config.md")
-        update_page(tb_repo_path + "/transport/mqtt/src/main/resources/tb-mqtt-transport.yml",
+        update_page(tb_repo_abs_path + "/transport/mqtt/src/main/resources/tb-mqtt-transport.yml",
                     "_includes/docs/pe/user-guide/install/mqtt-transport-config.md")
-        update_page(tb_repo_path + "/transport/coap/src/main/resources/tb-coap-transport.yml",
+        update_page(tb_repo_abs_path + "/transport/coap/src/main/resources/tb-coap-transport.yml",
                     "_includes/docs/pe/user-guide/install/coap-transport-config.md")
-        update_page(tb_repo_path + "/transport/lwm2m/src/main/resources/tb-lwm2m-transport.yml",
+        update_page(tb_repo_abs_path + "/transport/lwm2m/src/main/resources/tb-lwm2m-transport.yml",
                     "_includes/docs/pe/user-guide/install/lwm2m-transport-config.md")
-        update_page(tb_repo_path + "/transport/snmp/src/main/resources/tb-snmp-transport.yml",
+        update_page(tb_repo_abs_path + "/transport/snmp/src/main/resources/tb-snmp-transport.yml",
                     "_includes/docs/pe/user-guide/install/snmp-transport-config.md")
-        update_page(tb_repo_path + "/msa/vc-executor/src/main/resources/tb-vc-executor.yml",
+        update_page(tb_repo_abs_path + "/msa/vc-executor/src/main/resources/tb-vc-executor.yml",
                     "_includes/docs/pe/user-guide/install/vc-executor-config.md")
-        update_page(tb_repo_path + "/integration/executor/src/main/resources/tb-integration-executor.yml",
+        update_page(tb_repo_abs_path + "/integration/executor/src/main/resources/tb-integration-executor.yml",
                     "_includes/docs/pe/user-guide/install/ie-executor-config.md")
     else:
-        update_page(tb_repo_path + "/application/src/main/resources/thingsboard.yml",
+        update_page(tb_repo_abs_path + "/application/src/main/resources/thingsboard.yml",
                     "_includes/docs/user-guide/install/core-rule-engine-config.md")
-        update_page(tb_repo_path + "/transport/http/src/main/resources/tb-http-transport.yml",
+        update_page(tb_repo_abs_path + "/transport/http/src/main/resources/tb-http-transport.yml",
                     "_includes/docs/user-guide/install/http-transport-config.md")
-        update_page(tb_repo_path + "/transport/mqtt/src/main/resources/tb-mqtt-transport.yml",
+        update_page(tb_repo_abs_path + "/transport/mqtt/src/main/resources/tb-mqtt-transport.yml",
                     "_includes/docs/user-guide/install/mqtt-transport-config.md")
-        update_page(tb_repo_path + "/transport/coap/src/main/resources/tb-coap-transport.yml",
+        update_page(tb_repo_abs_path + "/transport/coap/src/main/resources/tb-coap-transport.yml",
                     "_includes/docs/user-guide/install/coap-transport-config.md")
-        update_page(tb_repo_path + "/transport/lwm2m/src/main/resources/tb-lwm2m-transport.yml",
+        update_page(tb_repo_abs_path + "/transport/lwm2m/src/main/resources/tb-lwm2m-transport.yml",
                     "_includes/docs/user-guide/install/lwm2m-transport-config.md")
-        update_page(tb_repo_path + "/transport/snmp/src/main/resources/tb-snmp-transport.yml",
+        update_page(tb_repo_abs_path + "/transport/snmp/src/main/resources/tb-snmp-transport.yml",
                     "_includes/docs/user-guide/install/snmp-transport-config.md")
-        update_page(tb_repo_path + "/msa/vc-executor/src/main/resources/tb-vc-executor.yml",
+        update_page(tb_repo_abs_path + "/msa/vc-executor/src/main/resources/tb-vc-executor.yml",
                     "_includes/docs/user-guide/install/vc-executor-config.md")
