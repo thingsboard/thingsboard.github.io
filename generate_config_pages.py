@@ -160,7 +160,7 @@ if __name__ == '__main__':
                     "_includes/docs/pe/user-guide/install/vc-executor-config.md")
         update_page(tb_repo_abs_path + "/integration/executor/src/main/resources/tb-integration-executor.yml",
                     "_includes/docs/pe/user-guide/install/ie-executor-config.md")
-    else:
+    elif tb_repo_type.lower() == "ce":
         update_page(tb_repo_abs_path + "/application/src/main/resources/thingsboard.yml",
                     "_includes/docs/user-guide/install/core-rule-engine-config.md")
         update_page(tb_repo_abs_path + "/transport/http/src/main/resources/tb-http-transport.yml",
@@ -175,3 +175,8 @@ if __name__ == '__main__':
                     "_includes/docs/user-guide/install/snmp-transport-config.md")
         update_page(tb_repo_abs_path + "/msa/vc-executor/src/main/resources/tb-vc-executor.yml",
                     "_includes/docs/user-guide/install/vc-executor-config.md")
+    elif tb_repo_type.lower() == "tbmq":
+        update_page(tb_repo_abs_path + "/application/src/main/resources/thingsboard-mqtt-broker.yml",
+                    "_includes/docs/mqtt-broker/install/config.md")
+    else:
+        print("Invalid 'tb_repo_type'. Please provide 'ce' or `pe` or `tbmq` as the first argument.")
