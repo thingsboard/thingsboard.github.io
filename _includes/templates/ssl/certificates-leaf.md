@@ -3,7 +3,9 @@
 #### Step 1. Prepare your server and certificate chain
 
 ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://thingsboard.cloud/signup).
+{% if docsPrefix != 'paas/' %}
 Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide to provision server certificate if you are hosting your own ThingsBoard instance.
+{% endif %}
 
 Once provisioned, you should prepare a CA root certificate in pem format. This certificate will be used by mqtt client to validate the server certificate.
 Save the CA root certificate to your working directory as "**ca-root.pem**".

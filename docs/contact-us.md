@@ -128,7 +128,7 @@ notitle: "true"
 <script type="text/javascript">
 
     var contactform =  document.getElementById('contact-form');
-    contactform.setAttribute('action', 'https://formspree.io/' + 'support' + '@' + 'thingsboard' + '.' + 'io');
+    contactform.setAttribute('action', 'https://formspree.io/f/' + 'support' + '@' + 'thingsboard' + '.' + 'io');
 
     jqueryDefer(
         function () {

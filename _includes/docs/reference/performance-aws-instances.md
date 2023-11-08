@@ -86,7 +86,7 @@ Tip: Enable Unlimited mode in credit specification to get a good performance at 
 And survive extra load above the limit (additional charges may apply).
 Without unlimited mode at the first start you have 0 credits to burst CPU up and the system is throttled down to baseline 20% CPU. That will cause the first setup is quite slow without "unlimited mode".
 
-![AWS enable unlimited mode in credit specification](https://img.thingsboard.io/reference/performance-aws-instances/method/t3-medium/postgres/aws-credit-spec-unlimited-mode.png)
+![AWS enable unlimited mode in credit specification](/images/reference/performance-aws-instances/method/t3-medium/postgres/aws-credit-spec-unlimited-mode.png)
 
 </details>
 
@@ -100,7 +100,7 @@ Without unlimited mode at the first start you have 0 credits to burst CPU up and
 Setup the ThingsBoard instance on AWS EC2
 </summary>
 
-Use the Docker Compose file listed below to setup the AWS EC2 instance:  
+Use the Docker Compose file listed below to setup the AWS EC2 instance based on the [instruction](https://github.com/thingsboard/performance-tests).  
 
 ```bash
 version: '3.0'
@@ -341,7 +341,7 @@ Setup the ThingsBoard instance on AWS EC2
 </summary>
 
 Take a note that Zookeeper is required to run Kafka these days.
-Here is the docker-compose file to set up _ThingsBoard + Postgresql + Zookeeper + Kafka_ on AWS EC2 instance:
+Here is the docker-compose file to set up _ThingsBoard + Postgresql + Zookeeper + Kafka_ on AWS EC2 instance based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 ```bash
 version: '3.0'
@@ -595,7 +595,7 @@ System can be scaled up vertically up to 50-100%. For significant horizontal sca
 Setup the ThingsBoard instance on AWS EC2
 </summary>
 
-Use the Docker Compose file listed below to setup the AWS EC2 instance:
+Use the Docker Compose file listed below to setup the AWS EC2 instance based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 Here the docker-compose with ThingsBoard + Postgresql + Zookeeper + Kafka + **Cassandra**
 
@@ -759,7 +759,7 @@ We will work to reduce this number 10 times in the next release.
 Setup the ThingsBoard instance on AWS EC2
 </summary>
 
-Use the Docker Compose file listed below to setup the AWS EC2 instance:
+Use the Docker Compose file listed below to setup the AWS EC2 instance based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 Here the docker-compose with ThingsBoard + Postgresql + Zookeeper + Kafka + **Cassandra**
 
@@ -989,7 +989,7 @@ CPU usage is 93%, so there are almost no extra resources left for a peak load an
 Setup the ThingsBoard instance on AWS EC2
 </summary>
 
-Use the Docker Compose file listed below to setup the AWS EC2 instance:
+Use the Docker Compose file listed below to setup the AWS EC2 instance based on the [instruction](https://github.com/thingsboard/performance-tests).
 
 Here the docker-compose with ThingsBoard + Postgresql + Zookeeper + Kafka + **Cassandra**
 

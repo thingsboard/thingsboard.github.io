@@ -297,16 +297,16 @@ The maximum number of retries is 5 by default.
   ThingsBoard will attempt to send the RPC immediately when device becomes online or if it is already online;
   The platform will attempt to send all pending RPC calls at once by default.
   In rare cased of constrained devices and multiple messages in the queue this may lead to overload of the network or device.
-  To avoid the overload, you may enable sequential delivery of RPC calls using "ACTORS_RPC_SEQUENTIAL" [configuration](/docs/{{docsPrefix}}user-guide/install/config/) parameter.
+  To avoid the overload, you may enable sequential delivery of RPC calls using "ACTORS_RPC_SEQUENTIAL" [configuration](/docs/user-guide/install/{{docsPrefix}}config/) parameter.
 * **SENT** - ThingsBoard performed attempt to send the RPC to device.
 * **DELIVERED** - device confirmed that the RPC was delivered; This is the last step of processing for **one-way** RPC;
 * **SUCCESSFUL** - ThingsBoard received reply for the **two-way** RPC;
 * **TIMEOUT** - ThingsBoard transport layer (MQTT/CoAP/LwM2M, etc) detected timeout of the RPC delivery;
-  The timeout is controlled using one of the corresponding [configuration](/docs/{{docsPrefix}}user-guide/install/config/) parameters:
+  The timeout is controlled using one of the corresponding [configuration](/docs/user-guide/install/{{docsPrefix}}config/) parameters:
   MQTT_TIMEOUT (10 seconds by default), COAP_TIMEOUT (10 seconds by default), LWM2M_TIMEOUT (120 seconds by default)
   By default, platform will not retry delivery of the RPC, and the state will change to FAILED.
   You may configure number of retries in the RPC body.
-  The maximum number of retries is controlled by "ACTORS_RPC_MAX_RETRIES" [configuration](/docs/{{docsPrefix}}user-guide/install/config/) parameter (5 by default).
+  The maximum number of retries is controlled by "ACTORS_RPC_MAX_RETRIES" [configuration](/docs/user-guide/install/{{docsPrefix}}config/) parameter (5 by default).
 * **EXPIRED** - The RPC was not delivered or platform did not receive the reply from device within configured expiration time;
 * **FAILED** - failed to deliver the RPC during configurable number of retries or device firmware does not support such a command.
 
@@ -383,7 +383,7 @@ The time-to-live of persistent RPC depends on the subscription plan. See 'RPC TT
 
 {% else %}
 The time-to-live of persistent RPC is configured by the System Administrator in the [Tenant Profile](/docs/{{docsPrefix}}user-guide/tenant-profiles/) using **RPC TTL days configuration** parameter.
-The System administrator may completely disable the cleanup of the persistent RPC from the database using **SQL_TTL_RPC_ENABLED** [configuration](/docs/{{docsPrefix}}user-guide/install/config/) parameter.
+The System administrator may completely disable the cleanup of the persistent RPC from the database using **SQL_TTL_RPC_ENABLED** [configuration](/docs/user-guide/install/{{docsPrefix}}config/) parameter.
 The frequency of RPC cleanup procedure is controlled using **SQL_RPC_TTL_CHECKING_INTERVAL** parameters which is set to 2 hours by default.
 
 {% include images-gallery.html imageCollection="tenant-profile-rpc" %}
