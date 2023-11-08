@@ -10,12 +10,12 @@ description: Development services customers' reviews
 </section>
 <section id="review-asg" class="full-review">
     <div class="content-wrapper">
-        <button class="back-button" onclick="window.location.href='/docs/services/development-services/';">
+        <a class="back-button" href="/docs/services/development-services/">
             <span class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="22" height="16" viewBox="0 0 22 16" fill="none"><path d="M0.28545 7.23852L6.35409 0.381616C6.74482 -0.0863449 7.51712 -0.128037 7.97021 0.27929C8.42329 0.686613 8.469 1.46369 8.04903 1.90537L3.6635 6.85758H20.8621C21.4905 6.85758 22 7.36926 22 8.0004C22 8.63158 21.4905 9.14322 20.8621 9.14322H3.6635L8.04903 14.0954C8.469 14.5371 8.4122 15.3128 7.95912 15.7201C7.50603 16.1274 6.74482 16.0871 6.35409 15.6192L0.28545 8.76228C-0.110773 8.2079 -0.0791988 7.7102 0.28545 7.23852Z" fill="#727381"/></svg>
             </span>
             <span>Back</span>
-        </button>
+        </a>
         <div class="header">
             <div class="side-title">
                 <h1>Testimonials</h1>

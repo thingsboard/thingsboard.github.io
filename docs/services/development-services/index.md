@@ -15,7 +15,7 @@ description: Custom IOT solutions
         </div>
         <div class="hero-image">
             <div class="image-wrapper-icon-laptop">
-                <img 
+                <img
                     id="icon-laptop"
                     srcset="/images/development-services/laptop-with-dashboard_360x230_1x.png 360w, /images/development-services/laptop-with-dashboard_560x358_1x.png 560w, /images/development-services/laptop-with-dashboard_1127x720_1x.png 1127w, /images/development-services/laptop-with-dashboard_2254x1440_2x.png 2254w"
                     sizes="(max-width: 671px) 360px, (max-width: 999px) 560px, (min-width: 1000px)  1127px, 2254px"
@@ -24,16 +24,16 @@ description: Custom IOT solutions
                 <button class="button schedule anchor-button" data-href="#get-in-touch">Contact Us</button>
             </div>
             <div class="image-wrapper-icon-phone">
-                <img  
+                <img
                     id="icon-phone"
                     srcset="/images/development-services/phone-with-dashboard_459x552_1x.png 1x, /images/development-services/phone-with-dashboard_918x1104_2x.png 2x"
-                    src="/images/development-services/phone-with-dashboard_459x552_1x.png" 
+                    src="/images/development-services/phone-with-dashboard_459x552_1x.png"
                     alt="Phone with a dashboard"/>
             </div>
             <div class="schedule-block">
                 <img
                     id="progress"
-                    src="/images/development-services/half-circle-progress.svg" 
+                    src="/images/development-services/half-circle-progress.svg"
                     alt="half cicrle progress icon"/>
                 <span class="result-number">100%</span>
                 <span class="result-text">We offer time-guaranteed result</span>
@@ -82,7 +82,7 @@ description: Custom IOT solutions
                     sizes="(max-width: 672px) 360px, 1900px"
                     src="/images/development-services/solution-coinify.png"
                     alt="Custom solution">
-                <img 
+                <img
                     id="solution-widget-1"
                     class="absolute-image secondary-image"
                     srcset="/images/development-services/solution-widget-1_mobile.png 360w, /images/development-services/solution-widget-1.png 1920w"
@@ -130,8 +130,8 @@ description: Custom IOT solutions
                     srcset="/images/development-services/solution-mvp_mobile.png 360w, /images/development-services/solution-mvp.png 1920w"
                     sizes="(max-width: 672px) 360px, 1920px"
                     src="/images/development-services/solution-mvp.png"
-                    alt="Custom solution mvp">            
-                <img 
+                    alt="Custom solution mvp">
+                <img
                     id="solution-widget-3"
                     srcset="/images/development-services/solution-widget-3_mobile.png 360w, /images/development-services/solution-widget-3.svg 1920w"
                     sizes="(max-width: 672px) 360px, 1920px"
@@ -150,8 +150,8 @@ description: Custom IOT solutions
                     srcset="/images/development-services/solution-market-solution_mobile.png 360w, /images/development-services/solution-market-solution.png 1920w"
                     sizes="(max-width: 672px) 360px, 1920px"
                     src="/images/development-services/solution-market-solution.png"
-                    alt="Custom solution market solution">            
-                <img 
+                    alt="Custom solution market solution">
+                <img
                     id="solution-market-solution2"
                     class="absolute-image base-image"
                     srcset="/images/development-services/solution-market-solution2_mobile.png 360w, /images/development-services/solution-market-solution2.png 1920w"
@@ -218,7 +218,7 @@ description: Custom IOT solutions
                     <div class="review-body">
                         <h6>We are delighted to share our exceptional experience working with ThingsBoard's development unit for custom widget development. As a company specializing in delivering innovative IoT solutions, working with ThingsBoard Professional Edition platform, we sought their expertise to reduce our time to market. From the initial estimation to the final delivery, ThingsBoard's development team demonstrated remarkable professionalism and technical prowess.</h6>
                     </div>
-                    <a href="customers-full-reviews/#review-asg" class="full-review-link">Read full feedback</a>
+                    <a href="/docs/services/development-services/customers-full-reviews/#review-asg" class="full-review-link">Read full feedback</a>
                 </div>
                 <div class="review">
                     <div class="logo">
@@ -228,7 +228,7 @@ description: Custom IOT solutions
                     <div class="review-body">
                         <h6>The Thingsboard team is very professional in its approach to projects. They can help you design and implement your ideas with solid attention to detail. They make sure to clearly understand your challenges so they can provide you the best scenario to get your project up and running quickly.</h6>
                     </div>
-                    <a href="customers-full-reviews/#review-kalitec" class="full-review-link">Read full feedback</a>
+                    <a href="/docs/services/development-services/customers-full-reviews/#review-kalitec" class="full-review-link">Read full feedback</a>
                 </div>
                 <div class="review">
                     <div class="logo">
@@ -238,7 +238,7 @@ description: Custom IOT solutions
                     <div class="review-body">
                         <h6>At Super Bock Bebidas, S.A. we pride ourselves on our ability to adapt, innovate, and stay ahead of the curve. We have been using in-house beer drive tanks and tracking systems for many years. It served us well, but as the times evolved, we realized our system had become outdated, lacking the efficiency we desired. That's when we discovered ThingsBoard.</h6>
                     </div>
-                    <a href="customers-full-reviews/#review-superbockgroup" class="full-review-link">Read full feedback</a>
+                    <a href="/docs/services/development-services/customers-full-reviews/#review-superbockgroup" class="full-review-link">Read full feedback</a>
                 </div>
                 <div class="review">
                     <div class="logo">
@@ -248,7 +248,7 @@ description: Custom IOT solutions
                     <div class="review-body">
                         <h6>We have found the Thingsboard suite to be the best in class tool for presenting our Industrial IoT data to customers. Our distributed hardware solution is built to monitor electrostatic discharge (ESD) conditions in electronics manufacturing. The functionality of TB's software stack is extensive and the documentation makes it easy to get up and running.</h6>
                     </div>
-                    <a href="customers-full-reviews/#review-ionatech" class="full-review-link">Read full feedback</a>
+                    <a href="/docs/services/development-services/customers-full-reviews/#review-ionatech" class="full-review-link">Read full feedback</a>
                 </div>
             </div>
         </div>
