@@ -636,6 +636,18 @@
     }
   },
   {
+    "type": ["Europe"],
+    "country": ["Italy"],
+    "name": "McRegEm Srl",
+    "contact": {
+      "href": "info@mcregem.com"
+    },
+    "site": {
+      "href": "mcregem.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Middle East"],
     "country": ["Turkey"],
     "name": "Mechanica Irev Yazılım Sa. Tic. Ltd. Şti.",
@@ -1171,7 +1183,7 @@
       "href": "(905) 755-5000"
     },
     "site": {
-      "href": "https://ca.ingrammicro.com/",
+      "href": "ca.ingrammicro.com",
       "target": "_blank"
     }
    },
