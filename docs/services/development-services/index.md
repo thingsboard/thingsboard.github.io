@@ -2,7 +2,7 @@
 layout: development-services
 title: Development services
 notitle: "true"
-description: Custom IOT solutions
+description: Custom IoT solutions
 
 ---
 <section class="hero light-text">
@@ -11,7 +11,7 @@ description: Custom IOT solutions
     <div class="hero-container">
         <div id="hero-content">
             <div class="cdu-title">Development services</div>
-            <div class="cdu-sub-title">We will create your custom IOT solution that perfectly suits your business</div>
+            <div class="cdu-sub-title">We will create your custom IoT solution that perfectly suits your business</div>
         </div>
         <div class="hero-image">
             <div class="image-wrapper-icon-laptop">
@@ -69,7 +69,7 @@ description: Custom IOT solutions
             <div class="side-title">
                 <h1>OUR SERVICES</h1>
             </div>
-            <div class="section-title">From complicated widgets to diverse IOT solutions</div>
+            <div class="section-title">From complicated widgets to diverse IoT solutions</div>
             <div class="section-text">If you are facing constraints in terms of time and resources for configuring the solution, custom development unit is equipped to handle all development and configuration tasks according to your requirements and the defined scope, ensuring seamless delivery.</div>
         </div>
     </div>
