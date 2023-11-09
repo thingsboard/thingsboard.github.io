@@ -469,7 +469,7 @@ Creates a string from the list of bytes
 
 <ul>
   <li><b>bytesList:</b> <code>List of Bytes</code> - A list of bytes.</li>
-  <li><b>charsetName:</b> <code>String</code> - optional Charset name. UTF_8 by default.</li>
+  <li><b>charsetName:</b> <code>String</code> - optional Charset name. UTF-8 by default.</li>
 </ul>
 
 **Return value:**
@@ -528,7 +528,7 @@ Converts input binary string to the list of bytes.
 
 <ul>
   <li><b>input:</b> <code>Binary string</code> - string in which each character in the string is treated as a byte of binary data.</li>
-  <li><b>charsetName:</b> <code>String</code> - optional Charset name. UTF_8 by default.</li>
+  <li><b>charsetName:</b> <code>String</code> - optional Charset name. UTF-8 by default.</li>
 </ul>
 
 **Return value:**
@@ -579,6 +579,48 @@ return parseInt("2147483648", 10) throws a NumberFormatException
 return parseInt("99", 8) throws a NumberFormatException
 return parseInt("Kona", 10) throws a NumberFormatException
 return parseInt("Kona", 27) // returns 411787
+```
+{: .copy-code}
+
+#### parseLong
+
+Converts input string to long.
+
+**Syntax:**
+
+*Long parseLong(String str[, String radix])*
+
+**Parameters:**
+
+<ul>
+  <li><b>str:</b> <code>string</code> - the String containing the long representation to be parsed.</li>
+  <li><b>radix:</b> <code>String</code> - optional radix to be used while parsing string.</li>
+</ul>
+
+**Return value:**
+
+An long value.
+
+**Examples:**
+
+```java
+return parseLong("0") // returns 0L
+return parseLong("473") // returns 473L
+return parseLong("+42") // returns 42L
+return parseLong("-0", 10) // returns 0L
+return parseLong("-0xFFFF") // returns -65535L        
+return parseLong("-FFFF", 16) // returns -65535L
+return parseLong("11001101100110", 2) // returns 13158L
+return parseLong("777777777777777777777", 8) // returns 9223372036854775807L
+return parseLong("KonaLong", 27) // returns 218840926543L
+return parseLong("9223372036854775807", 10) // returns 9223372036854775807L
+return parseLong("-9223372036854775808", 10) // returns -9223372036854775808L
+return parseLong("9223372036854775808", 10) throws a NumberFormatException
+return parseLong("0xFGFFFFFF", 16) throws a NumberFormatException
+return parseLong("FFFFFFFF", 16) throws a NumberFormatException
+return parseLong("1787", 8) throws a NumberFormatException
+return parseLong("KonaLong", 10) throws a NumberFormatException
+return parseLong("KonaLong", 10) throws a NumberFormatException
 ```
 {: .copy-code}
 
