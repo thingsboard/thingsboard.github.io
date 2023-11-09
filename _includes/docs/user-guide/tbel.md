@@ -599,7 +599,7 @@ Converts input string to long.
 
 **Return value:**
 
-An long value.
+A long value.
 
 **Examples:**
 
