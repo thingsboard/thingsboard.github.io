@@ -535,19 +535,28 @@ Converts input binary string to the list of bytes.
 
 A list of bytes.
 
-**Examples:**
+**Examples with:** <code>Binary string</code>
 
 ```java
 var base64Str = "eyJoZWxsbyI6ICJ3b3JsZCJ9"; // Base 64 representation of the '{"hello": "world"}' 
 var bytesStr = atob(base64Str);
 return stringToBytes(bytesStr); // Returns [123, 34, 104, 101, 108, 108, 111, 34, 58, 32, 34, 119, 111, 114, 108, 100, 34, 125]
+
+var inputStr = "hello world";
+return stringToBytes(inputStr);  // Returns  [104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
+var charsetStr = "UTF8"
+return stringToBytes(inputStr, charsetStr);  // Returns  [104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
 ```
 {: .copy-code}
 
+**Examples with:** <code>Object from Json as String</code>
+
 ```java
-var inputStr = "hello world";
-var charsetStr = "UTF-8"
-return stringToBytes(inputStr, charsetStr);  // Returns  [104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
+var dataMap = {};
+dataMap.inputStr = "hello world";
+var dataJsonStr = JSON.stringify(dataMap);
+var dataJson = JSON.parse(dataJsonStr);
+return stringToBytes(dataJson.inputStr); // Returns  [104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
 ```
 {: .copy-code}
 
