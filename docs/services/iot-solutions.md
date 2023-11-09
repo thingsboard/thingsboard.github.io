@@ -13,7 +13,7 @@ description: IoT solutions
             <h1>Internet of Things Solutions and Services</h1>
             <div class="text-content">Internet of Things solutions are changing the world, one thing at a time. The IoT is a network of physical objects that are embedded with sensors, software, and other technologies to connect and exchange data with other devices and systems over the Internet. It’s still in its early stages of development, but it has the potential to revolutionize many industries and aspects of our lives.</div>
         </div>
-        <img class="image" srcset="/images/iot-solutions/iot-solutions-1_1090x710.png 1090w, /images/iot-solutions/iot-solutions-1_2180x1420.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-solutions/iot-solutions-1_1090x710.png" alt="IoT solutions dashboard with widgets dark"/>
+        <img class="image" srcset="/images/iot-articles/iot-solutions-1_1090x710.png 1090w, /images/iot-articles/iot-solutions-1_2180x1420.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/iot-solutions-1_1090x710.png" alt="IoT solutions dashboard with widgets dark"/>
         <div class="text-wrapper">
             <h3>The main responsibilities of IoT systems — improve operational visibility, optimize efficiency, lower losses, prevent potential issues, and make better, data-driven business decisions.</h3>
             <div class="text-content">When talking about Internet of Things (IoT) solutions, it can’t be reduced to just purchasing and installing IoT sensors and connecting them to an IoT platform. Broadly, it’s about data analytics, data visualization, and integration with existing work and business processes. Let’s check what is required to build an end-to-end solution for IoT.</div>
@@ -140,7 +140,7 @@ description: IoT solutions
                 <li>You have the data and insights you need to make better decisions, faster.</li>
             </ul>
         </div>
-        <img class="image" srcset="/images/iot-solutions/iot-solutions-2_1090x686.png 1090w, /images/iot-solutions/iot-solutions-2_2180x1372.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-solutions/iot-solutions-2_1090x686.png" alt="IoT solutions dashboard with widgets"/>
+        <img class="image" srcset="/images/iot-articles/iot-solutions-2_1090x686.png 1090w, /images/iot-articles/iot-solutions-2_2180x1372.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/iot-solutions-2_1090x686.png" alt="IoT solutions dashboard with widgets"/>
         <div class="text-wrapper">
             <span id="sub-title-iot-solutions-2" class="sub-title">IoT technology solutions are the tool that will help you achieve these results and strengthen your business workflow.</span>
             <h2>Advantages of IoT as a service for business:</h2>
