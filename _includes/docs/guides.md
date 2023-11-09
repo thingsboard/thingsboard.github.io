@@ -118,11 +118,9 @@
     {% elsif guidesVersion == 'ce' and item.cepage == 'false' %}
     {% elsif guidesVersion == 'pe' and item.pepage == 'false' %}
     {% else %}
-        {% if item.title %}
         <li>
             <a href="#AnchorID{{ item.id }}" id="markdown-toc-AnchorID{{ item.id }}">{{ item.title }}</a>
         </li>
-        {% endif %}
     {% endif %}
     {% endfor %}
 </ul>

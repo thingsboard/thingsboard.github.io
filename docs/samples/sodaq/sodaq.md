@@ -23,7 +23,7 @@ Otherwise, you can register for a 30-days free demo account here: [thingsboard.c
 
 We expect you to have a very basic knowledge about ThingsBoard, so we do recommend to complete the [Getting Started](/docs/getting-started-guides/helloworld/) guide.
 
-### Integration overview
+## Integration overview
 
 ThingsBoard Platform Integrations feature allows pushing data from various platforms and connectivity solutions to ThingsBoard.
 We will use "T-Mobile IoT CDP" platform integration to consume data from T-Mobile NB IoT Network and automatically register devices in ThingsBoard.
@@ -31,7 +31,7 @@ Besides configuring the integration, we will also set up ThingsBoard to decode i
 
 <img data-gifffer="/images/samples/sodaq/demo-dashboard.gif" alt="demo dashboard">
 
-### Step 1. Data Converter configuration
+## Step 1. Data Converter configuration
 
 In order to create an [Integration](/docs/user-guide/integrations), we should create the [Uplink Data Converter](/docs/user-guide/integrations/#uplink-data-converter) first.
 The converter will decode incoming telemetry payload data from T-Mobile NB IoT that contains in encoded hex string to human readable, simplified ThingsBoard data format.
@@ -142,7 +142,7 @@ as described on the following screencast:
 
 <img data-gifffer="/images/samples/sodaq/import-and-test-converter.gif" alt="Import and test converter">
 
-### Step 2. Integration configuration
+## Step 2. Integration configuration
 
 - Create new integration and copy-paste the HTTP Endpoint URL from the integration window based on the screencast below:
 
@@ -190,7 +190,7 @@ as described on the following screencast:
 
 - After filling all fields click the **ADD** button.
 
-### Step 3: Post telemetry and verify the Integration configuration
+## Step 3: Post telemetry and verify the Integration configuration
 
 Before we rush to T-Mobile IoT platform configuration, let's make sure ThingsBoard is properly configured using simple cURL command.
 We will be simulating message from the T-Mobile IoT platform using command below.
@@ -222,12 +222,12 @@ Use HTTP endpoint URL from Step 2 to configure T-Mobile Platform to push data to
 ![image](/images/samples/sodaq/tmobile-configration.png)
 
 
-### Step 5: Check Integration Debug Events
+## Step 5: Check Integration Debug Events
 
 Navigate to Integration Debug Events, similar to Step 3 and double check that data from real devices arrives and is processed successfully.
 Please note that it may take some time (up to 30 minutes based on our experience) for new message to start arriving.
 
-### Step 6: Rule chain import
+## Step 6: Rule chain import
 
 In this tutorial, we modified our **Root Rule Chain** and also created Rule Chain **Tracker Alarms**.
 The idea is to forward all incoming telemetry, once it is saved to the database, to **Tracker Alarms** rule chain.
@@ -241,7 +241,7 @@ Download the attached json [**file**](/docs/user-guide/resources/sodaq/tracker-a
 <img data-gifffer="/images/samples/sodaq/configure-rule-chains.gif" alt="Configure rule chains">
 <br>
 
-### Step 7: Demo dashboard import
+## Step 7: Demo dashboard import
 
 Download and import attached json [**file**](/docs/user-guide/resources/sodaq/sodaq-dashboard.json) with a dashboard from this tutorial.
 
@@ -552,7 +552,7 @@ The initial Root Rule Chain has been modified by adding the following node:
 
 ![image](/images/samples/sodaq/rule-chain-node.png)
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
 

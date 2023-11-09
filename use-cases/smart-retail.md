@@ -181,7 +181,7 @@ The platform provides production-ready server infrastructure to connect your IoT
     </div>
 </section>
 
-### Smart retail solution overview
+## Smart retail solution overview
 
 The diagram below identifies data flow and integration points for a typical supermarket monitoring solution that uses the ThingsBoard platform to collect and analyze data from multiple sources.
 
@@ -192,7 +192,7 @@ You may notice plenty of connectivity options for the IoT sensors: direct connec
 The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
-### Learn more
+## Learn more
 
 <a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
 <a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>

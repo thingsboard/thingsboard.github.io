@@ -6,8 +6,6 @@ description:
 
 ---
 
-# Stop the WAR
-
 ## ThingsBoard statement on the war in Ukraine
 
 Russia has begun a large-scale military attack on Ukraine on the orders of Russian President Vladimir Putin.
@@ -18,7 +16,7 @@ We will never forget who started this war.
 Ukrainians are a peaceful nation that never attacked anyone. 
 Don't believe the russian propaganda.
 
-### Message to our users and clients from the civilized world
+## Message to our users and clients from the civilized world
 
 Thank you for all the support and help that you have already provided.
 
@@ -30,7 +28,7 @@ We support the Ukrainian army and volunteer organizations as much as we can. We 
 
 <a style="margin: 10px 10px 10px 0;" href="https://war.ukraine.ua/support-ukraine/" class="button">Support Ukraine</a>
 
-### Message to our users and clients from Russia
+## Message to our users and clients from Russia
 
 We expect you to protest against the war!
 You are responsible for this madness because you allowed your leader to do this.

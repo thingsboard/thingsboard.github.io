@@ -143,16 +143,14 @@
     {% elsif guidesVersion == 'ce' and item.cepage == 'false' %}
     {% elsif guidesVersion == 'pe' and item.pepage == 'false' %}
     {% else %}
-        {% if category[0].category %}
         <li>
             <a href="#AnchorID{{ category[0].category | remove: " " }}" id="markdown-toc-AnchorID{{ category[0].category | remove: " " }}">{{ category[0].category }}</a>
         </li>
-        {% endif %}
     {% endif %}
     {% endfor %}
 </ul>
 
-<h1 style="font-size: 28px;">Welcome to the ThingsBoard Devices Library!</h1>
+#### Welcome to the ThingsBoard Devices Library!  
 
 The Devices Library is a collection of guides and code snippets that explain how to connect popular IoT **development boards** to the ThingsBoard platform.
 We intentionally concentrate on the code snippets for programmable devices to boost the productivity of the firmware engineers.

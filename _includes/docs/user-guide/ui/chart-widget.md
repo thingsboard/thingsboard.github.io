@@ -7,13 +7,13 @@ This guide will study Chart widgets: their functionality, features, basic and ad
 
 Chart widgets allow you to display time series data with customizable line charts and bar charts. Moreover, you can use various pie charts to display the latest values.
 
-### How to create a Chart widget
+## How to create a Chart widget
 
 To add any chart widgets to your dashboards, you should:
 
 {% include images-gallery.html imageCollection="charts-addwidget" showListImageTitles="true" %}
 
-### Chart widget types
+## Chart widget types
 
 Chart widgets are divided into Timeseries and Latest value widgets. Timeseries widgets are useful for visualizing changes in time series data over time.
 Latest values widgets are used when you need to see the latest attribute values or time series data for multiple entities.
@@ -96,7 +96,7 @@ In the example, widget is displaying the latest pressure time series data values
 
 {% include images-gallery.html imageCollection="charts-bars" %}
 
-### Chart widget settings
+## Chart widget settings
 
 ### Basic widget settings 
 

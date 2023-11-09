@@ -29,6 +29,6 @@ To do this, following steps:
 
 ![image](/images/user-guide/white-labeling/mail-templates-2.png)
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

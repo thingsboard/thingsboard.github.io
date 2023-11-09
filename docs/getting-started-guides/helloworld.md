@@ -42,7 +42,7 @@ step3:
     1:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-4-ce.png
         title: 'Close the device details tab and refresh the "Devices" table. The device state should be changed from "Inactive" to "Active".'
-
+        
 step31:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-1-ce.png 
@@ -280,7 +280,7 @@ step75:
     1:
         image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-2-ce.png
         title: 'You have logged in as a Customer User. You may browse the data and acknowledge/clear alarms.'
-
+        
 mqttWindows:
     0:
         image: /images/helloworld/hello-world-step-3-item-1.png
@@ -332,7 +332,7 @@ We will connect and visualize data from the temperature sensor to keep it simple
  
 {% include templates/prerequisites.md %}
 
-### Step 1. Provision Device
+## Step 1. Provision Device
 
 For simplicity, we will provision the device manually using the UI. 
  
@@ -346,7 +346,7 @@ You may also use:
  * [Device provisioning](/docs/user-guide/device-provisioning/) to allow device firmware to automatically provision the device, so you don't need to configure each device manually; 
  * [REST API](/docs/api/) to provision devices and other entities programmatically;
 
-### Step 2. Connect device
+## Step 2. Connect device
 
 To connect the device you need to get the device credentials first. 
 ThingsBoard supports various device credentials. We recommend using default auto-generated credentials which is access token for this guide.
@@ -368,15 +368,15 @@ Once you have successfully published the "temperature" readings, you should imme
 
 {% include images-gallery.html imageCollection="step3" showListImageTitles="true" %}
 
-### Step 3. Create Dashboard
+## Step 3. Create Dashboard
 
 We will create a dashboard and add the most popular widgets. See the instructions below. 
 
-#### Step 3.1 Create Empty Dashboard
+### Step 3.1 Create Empty Dashboard
 
 {% include images-gallery.html imageCollection="step31" showListImageTitles="true" %}
 
-#### Step 3.2 Add Entity Alias
+### Step 3.2 Add Entity Alias
 
 Alias is a reference to a single entity or group of entities that are used in the widgets.
 Alias may be static or dynamic. For simplicity, we will use "Single entity" alias references the one and only entity ("My New Device" in our case).
@@ -385,7 +385,7 @@ You may learn more about different aliases [here](/docs/user-guide/ui/aliases/).
 
 {% include images-gallery.html imageCollection="step32" showListImageTitles="true" %}   
 
-#### Step 3.3 Add Table Widget
+### Step 3.3 Add Table Widget
 
 Entity Table widget displays the latest values with list of entities that matches selected alias and filter with ability of additional full text search and pagination options.
 
@@ -397,7 +397,7 @@ To see the latest value of our "temperature" data that we sent during step 2, we
 
 Congratulations! You have added the first widget. Now you can send new telemetry reading and it will immediately appear in the table. 
 
-#### Step 3.4 Add Chart Widget
+### Step 3.4 Add Chart Widget
 
 Chart widgets allow you to display time series data with customizable line charts and bar charts.
 
@@ -409,7 +409,7 @@ We should also configure the time window to use the chart widget.
 
 Congratulations! You have added a chart widget. Now you can send new telemetry reading and it will immediately appear in the chart. 
 
-#### Step 3.5 Add Alarm Widget
+### Step 3.5 Add Alarm Widget
 
 Alarms table widget displays alarms related to the specified entity in the certain time window (for example, “Alarms table”). 
 Alarm widget is configured by specifying an entity as the alarm source, and the corresponding alarm fields.
@@ -418,7 +418,7 @@ Alarm widget is configured by specifying an entity as the alarm source, and the 
 
 Congratulations! You have added an alarm widget. Now it's time to configure alarm rules and raise some alarms. 
 
-### Step 4. Configure Alarm Rules
+## Step 4. Configure Alarm Rules
 
 We will use the [alarm rules](/docs/user-guide/device-profiles/#alarm-rules) feature to raise alarm when the temperature reading is greater than 25 degrees.
 For this purpose, we should edit the device profile and add a new alarm rule. 
@@ -427,7 +427,7 @@ We recommend creating dedicated [device profiles](/docs/user-guide/device-profil
 
 {% include images-gallery.html imageCollection="step4" showListImageTitles="true" %}
 
-### Step 5. Create Alarm
+## Step 5. Create Alarm
 
 Now our alarm rule is active (see [Step 4](/docs/getting-started-guides/helloworld/#step-4-configure-alarm-rules)), 
 and we should send new telemetry on behalf of the device (see [Step 2](/docs/getting-started-guides/helloworld/#step-2-connect-device)) to trigger the alarm.
@@ -435,7 +435,7 @@ Note that the temperature value should be 26 or higher to raise the alarm. Once 
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
 
-### Step 6. Alarm notifications
+## Step 6. Alarm notifications
 
 It's quite easy to set up notifications using the **Notification center**. ThingsBoard Notification center allows you to send notifications to the end-users.
 Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
@@ -443,7 +443,7 @@ Learn more about notifications and how to configure them [here](/docs/{{docsPref
 We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules)
 and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms).
 
-### Step 7. Assign Device and Dashboard to Customer
+## Step 7. Assign Device and Dashboard to Customer
 
 One of the most important ThingsBoard features is the ability to assign Dashboards to Customers. 
 You may assign different devices to different customers. Then, you may create a Dashboard(s) and assign it to multiple customers.
@@ -486,11 +486,11 @@ You may optionally configure the dashboard to appear just after user login to th
 
 {% include images-gallery.html imageCollection="step75" showListImageTitles="true" %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "GettingStartedGuides" %}{% include templates/guides-banner.md %}
 
-### Your feedback
+## Your feedback
 
 Don't hesitate to star ThingsBoard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
 If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.

@@ -67,7 +67,7 @@ In our case we connect following modules:
 
 <br>
 
-### Wiring scheme
+## Wiring scheme
 We use following  wiring scheme:
 <pre>
 Module                              Pinouts on Grove Base Hat
@@ -80,7 +80,7 @@ Light sensor v1.2                   A2
 Temperature&Humidity Sensor v1.2    D22
 </pre>
 
-### Programming the Raspberry Pi
+## Programming the Raspberry Pi
 
 By first we need to configure the Raspberry Pi. Please follow this [article](http://wiki.seeedstudio.com/Grove_Base_HAT/).
 
@@ -118,7 +118,7 @@ sudo python3 ./Seeed_Python_DHT/setup.py install
 ```
 {: .copy-code}
 
-### Application source code
+## Application source code
 
 Our application consists of a single python script that is well documented. You will need to modify THINGSBOARD_HOST constant to match your ThingsBoard server installation IP address or hostname.
 
@@ -275,7 +275,7 @@ if __name__ == '__main__':
 {: .copy-code}
 
 
-### Data Visualization and Control
+## Data Visualization and Control
 
 To configure dashboard you should login into ThingsBoard environment.
 
@@ -303,7 +303,7 @@ The results of script running - you can see on the dashboard.
 
 Also from dashboard you can control the servo (by rotating the knob control with name "Servo") or the led (by pressing the trigger "Button Led").
 
-### See Also
+## See Also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -317,6 +317,6 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
 
 {% include socials.html %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

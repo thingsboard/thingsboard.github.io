@@ -2,8 +2,8 @@ Action Nodes execute various actions based on incoming Message.
 
 * TOC
 {:toc}
-
-### Math Function Node
+  
+## Math Function Node
 
 <table  style="width:250px;">
    <thead>
@@ -92,7 +92,9 @@ The execution is synchronized in scope of message originator (e.g. device) and s
 The result of the function may be added to the message body or metadata. You may also save the result to the database as an attribute or time-series.
 
 
-### Create Alarm Node
+
+
+## Create Alarm Node
 
 <table  style="width:250px;">
    <thead>
@@ -231,7 +233,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 <br>
 
-### Clear Alarm Node
+## Clear Alarm Node
 
 <table  style="width:250px;">
    <thead>
@@ -351,7 +353,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 <br>
 
-### delay (deprecated)
+## delay (deprecated)
 
 
 <table  style="width:250px;">
@@ -404,7 +406,7 @@ Usage with sequential processing strategy: please, be aware that this node ackno
 
 <br>
 
-### Generator Node
+## Generator Node
 
 <table  style="width:250px;">
    <thead>
@@ -451,7 +453,7 @@ This node can be used for Rule Chain debugging purposes.
 
 <br>
 
-### Log Node 
+## Log Node 
 
 <table  style="width:250px;">
    <thead>
@@ -483,7 +485,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial#log-unknown-request)
 
-### RPC Call Reply Node
+## RPC Call Reply Node
 
 <table  style="width:250px;">
    <thead>
@@ -532,7 +534,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial)
 
-### RPC Call Request Node
+## RPC Call Request Node
 
 <table  style="width:250px;">
    <thead>
@@ -581,7 +583,7 @@ For more details how RPC works in the Thingsboard, please read [RPC capabilities
 
 <br>
 
-### Save Attributes Node
+## Save Attributes Node
 
 <table  style="width:250px;">
    <thead>
@@ -625,7 +627,7 @@ otherwise **Failure** chain is used.
 
 <br>
 
-### Save Timeseries Node 
+## Save Timeseries Node 
 
 <table  style="width:250px;">
    <thead>
@@ -687,7 +689,7 @@ otherwise **Failure** chain is used.
 
 <br>
 
-### Save to Custom Table
+## Save to Custom Table
 
 <table  style="width:250px;">
    <thead>
@@ -719,7 +721,7 @@ If specified message field does not exist in the **data** of the message or is n
 
 <br>
 
-### Assign To Customer Node 
+## Assign To Customer Node 
 
 <table  style="width:250px;">
    <thead>
@@ -756,7 +758,7 @@ In other cases Message will be routed via **Success** chain.
 
 <br>
 
-### Unassign From Customer Node
+## Unassign From Customer Node
 
 <table  style="width:250px;">
    <thead>
@@ -790,7 +792,7 @@ In other cases Message will be routed via **Success** chain.
 
 <br>
 
-### Create Relation Node 
+## Create Relation Node 
 
 <table  style="min-width:12%; max-width: 20%">
    <thead>
@@ -846,7 +848,7 @@ In other cases Message will be routed via **Success** chain.
 
 <br>
 
-### Delete Relation Node
+## Delete Relation Node
 
 <table  style="min-width:12%; max-width: 20%">
    <thead>
@@ -888,7 +890,7 @@ In other cases Message will be routed via **Success** chain.
 
 <br>
 
-### GPS Geofencing Events Node
+## GPS Geofencing Events Node
 
 <table  style="width:15%">
    <thead>

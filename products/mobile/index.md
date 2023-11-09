@@ -8,7 +8,7 @@ description:
     <main>
         <h1><a href="/docs/mobile/">ThingsBoard Mobile Application</a> is an open-source <a href="https://github.com/thingsboard/flutter_thingsboard_app">project</a> based on Flutter</h1>
         <h2 class="second">Build your own IoT mobile application with minimum coding efforts</h2>
-        <h3 class="second" style="text-align: center">Powered by ThingsBoard IoT Platform</h3>
+        <h2 class="second">Powered by ThingsBoard IoT Platform</h2>
     </main>
 </section>
 

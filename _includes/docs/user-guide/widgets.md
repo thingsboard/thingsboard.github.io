@@ -5,14 +5,14 @@
 
 Before proceeding with this guide, it's recommended that you follow [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to become familiar with ThingsBoard dashboards and widgets. This will enhance your learning experience and understanding of the concepts presented here.
 
-### Introduction
+## Introduction
 
 All IoT dashboards are constructed using ThingsBoard widgets.
 
 A widget is an element that displays a specific type of information or functionality on a dashboard. 
 Widgets are used to display data and visualize information obtained from devices connected to the ThingsBoard platform, remote device control, alarms management, and display static custom HTML content.
 
-#### Widget types
+### Widget types
 
 There are five types of widgets:
 
@@ -29,13 +29,13 @@ Each widget typically has specific settings and parameters that allow users to c
 
 This guide covers main concepts and various widget settings.
 
-### Adding a widget to the dashboard
+## Adding a widget to the dashboard
 
 To add a new widget to a dashboard, you should:
 
 {% include images-gallery.html imageCollection="add-widget" showListImageTitles="true" %}
 
-### Widget settings
+## Widget settings
 
 Widget settings consist of one or multiple data sources, appearance settings, widget card settings, actions, and mobile appearance that you can customize and perform on the widget’s content.
 
@@ -563,6 +563,6 @@ This action saves the configuration file of the JSON format with all the setting
 
 {% include images-gallery.html imageCollection="export-widget" %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "GettingStartedGuides" %}{% include templates/multi-project-guides-banner.md %}

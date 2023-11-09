@@ -30,7 +30,7 @@ description:
             </div>
 		    <div class="block">
                 <div class="feature-des">
-                <h3 class="item-heading">White-labeling</h3>
+                <h2>White-labeling</h2>
                 <p>Rebrand ThingsBoard platform web interface with your company or product logo and color scheme in 2 minutes. No coding or service restart required. Allow your customers and their sub-customers to white-label their interface as well.</p>
                 <a id="read-more-button" href="/docs/user-guide/white-labeling/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
@@ -54,7 +54,7 @@ description:
                         <img src="/images/pe/roles.svg" alt="roles">
                     </div>
                 </div>
-                <div class="feature-des"><h3 class="item-heading">Advanced RBAC for IoT</h3>
+                <div class="feature-des"><h2>Advanced RBAC for IoT</h2>
                 <p>Advanced management of user roles and permissions. Manage hierarchy of customers with multiple levels of sub-customers, independent users and devices.</p>
                 <a id="read-more-button" href="/docs/user-guide/rbac/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
@@ -73,7 +73,7 @@ description:
                 <div class="main2"></div><div class="small4"></div><div class="small5"></div>
             </div>
 		    <div class="block dark">
-                <div class="feature-des"><h3 class="item-heading ">Platform Integrations</h3>
+                <div class="feature-des"><h2>Platform Integrations</h2>
                 <p>Stream data from devices connected to existing IoT Platforms to enable real-time interactive dashboards and efficient data processing. Connect NB IoT, LoRaWAN and SigFox devices with specific payload formats using highly customizable data converters. Design and plugin your own converter as a JavaScript functions in real-time.</p>
                 <a id="read-more-button" href="/docs/user-guide/integrations/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
@@ -81,7 +81,7 @@ description:
             </div>
             <div class="block">
                 <img class="preview" src="/images/pe/entity-groups.svg" alt="entity groups">
-                <div class="feature-des"><h3 class="item-heading">Entity Groups</h3>
+                <div class="feature-des"><h2>Entity Groups</h2>
                 <p>Group your entities (device, assets, etc.) to simplify administration tasks. Customize set of columns for each group and trigger actions on entities directly from administration interface.</p>
                 <a id="read-more-button" href="/docs/user-guide/groups/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
@@ -97,12 +97,12 @@ description:
                 <div class="main3"></div><div class="small6"></div><div class="small7"></div><div class="small8"></div>
             </div>
             <div class="block double">
-                <div class="left-textblock feature-des"><h3 class="item-heading">Scheduler</h3>
+                <div class="left-textblock feature-des"><h2>Scheduler</h2>
                 <p>Schedule various types of events including report generation, commands to devices and configuration updates with flexible schedule configuration.</p>
                 <a id="read-more-button" href="/docs/user-guide/scheduler/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
                 <img class="preview" src="/images/pe/scheduler.svg" alt="scheduler">
-                <div class="right-textblock feature-des"><h3 class="item-heading">Reporting</h3>
+                <div class="right-textblock feature-des"><h2>Reporting</h2>
                 <p>Generate great looking reports using dashboards visualization capabilities. Generate reports by schedule or export by demand.</p>
                 <a id="read-more-button" href="/docs/user-guide/reporting/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
@@ -122,7 +122,7 @@ description:
             </div>
             <div class="block end">
                 <img class="preview" src="/images/pe/data-export.svg" alt="data export">
-                <div class="feature-des"><h3 class="item-heading">CSV/XLS data export</h3>
+                <div class="feature-des"><h2>CSV/XLS data export</h2>
                 <p>Export any dashboard widget data to CSV or XLS format. Allow your customers to download valuable insights from their device's data and review them in offline mode.</p>
                 <a id="read-more-button" href="/docs/user-guide/csv-xls-data-export/">Read more<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 </div>
@@ -248,13 +248,13 @@ description:
     <main>
         <div class="item">
             <img src="/images/pe/cloud-premises.svg" alt="Flexible deployment options">
-            <h3 class="item-heading">Flexible deployment options</h3>
+            <h2 class="in-the-passt-h1">Flexible deployment options</h2>
             <p>Deploy ThingsBoard platform in the cloud or on premises. Use commodity hardware to scale out horizontally by adding new nodes to your cluster. Single ThingsBoard server can support 10 000+ devices and 100M messages per hour, while simple cluster can support millions of devices and billions of messages.</p>
         </div>
         <div class="divider"></div>
         <div class="item">
             <img src="/images/pe/pricing-models.svg" alt="Simple and predictable pricing models">
-            <h3 class="item-heading">Simple and predictable pricing models</h3>
+            <h2>Simple and predictable pricing models</h2>
             <p>Say "No!" to per message or per device pricing that turns to a monster bills in production system. ThingsBoard PE supports two simple and predictable pricing models depending on your product life-cycle stage.</p>
         </div>
 	</main>

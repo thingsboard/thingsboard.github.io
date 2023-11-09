@@ -35,7 +35,7 @@ Collected data is processed via the rule engine to raise alarms when:
 
 The following interactive dashboard presents an intelligent visualization of IoT data that you can easily integrate into your IoT solution. See more details <a href="/docs/paas/solution-templates/fleet-tracking/">here</a>.
 
-### Fleet tracking dashboard
+## Fleet tracking dashboard
 
 The following interactive dashboard hosted on live demo server represents vehicle routes and state indicators that may be embedded in your IoT fleet tracking project. 
 
@@ -57,7 +57,7 @@ The following interactive dashboard hosted on live demo server represents vehicl
 
 The live Fleet Tracking dashboard displays real-time data from several tracking sensors collected using ThingsBoard MQTT API. Collected data is processed via the rule engine to raise alarms on certain thresholds. You may export the dashboard from our live demo server and import it to your ThingsBoard instance.
 
-### Benefits of the Fleet Tracking template
+## Benefits of the Fleet Tracking template
 
 Save up to 90% of development time for your fleet tracking solution by utilizing the following platform benefits:
 - reliable and scalable data collection for your fleet tracking sensors;
@@ -73,7 +73,7 @@ You may export the dashboard from our live demo server and import it to your Thi
 You may edit the route area widget and enable configuration of the route area for your local copy of the dashboard. 
 
 
-### ThingsBoard advantages
+## ThingsBoard advantages
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
@@ -156,7 +156,7 @@ You may edit the route area widget and enable configuration of the route area fo
     </div>
 </section>
 
-### Fleet tracking solution overview
+## Fleet tracking solution overview
 
 The diagram below identifies data flow and integration points for a typical fleet-tracking solution that uses the ThingsBoard platform to collect and analyze data from vehicle trackers.
 
@@ -169,7 +169,8 @@ ThingsBoard supports either plain JSON or Protobuf, which significantly optimize
 The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
-### Learn more
+
+## Learn more
 
 <a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
 <a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>

@@ -181,6 +181,8 @@ export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 ```
 {: .copy-code}
 
+
+
 ### Step 6. Run installation script
 
 Once Trendz service is installed and DB configuration is updated, you can execute the following script:

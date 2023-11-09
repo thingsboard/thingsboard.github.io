@@ -10,7 +10,7 @@ In this tutorial, we will configure ThingsBoard Rule Engine to use queue with re
 Although this scenario is fictional, you will learn how to work with the queue to allow reprocessing messages in case of failure or timeout processing errors
 and use this knowledge in real-life applications.
 
-### Prerequisites 
+## Prerequisites 
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
@@ -19,7 +19,7 @@ We assume you have completed the following guides and reviewed the articles list
   
 In addition, you need to have at least one device provisioned in your environment.
 
-### Step 1: Creating the Rule Chain
+## Step 1: Creating the Rule Chain
 
 ![image](/images/user-guide/rule-engine-2-5/tutorials/reprocessing_rule_chain.png)
 
@@ -37,7 +37,7 @@ Finally, the messages will be sent to the external server.
 
 ![image](/images/user-guide/rule-engine-2-5/tutorials/rest_api.png)
 
-### Step 2: External server configuration
+## Step 2: External server configuration
 
 Let's assume we have a server ready to receive the messages. We have created a simple Controller in the Spring Boot Application for that.
 In addition, we have simulated every third message to be failed.
@@ -54,9 +54,9 @@ public class Controller {
     @ResponseStatus(value = HttpStatus.OK)
     public DeferredResult<ResponseEntity> processRequest(@RequestBody JsonNode msg) {
         DeferredResult<ResponseEntity> deferredResult = new DeferredResult<>();
-
+        
         log.info("Received message: {}", msg);
-
+        
         long counter = atomicLong.incrementAndGet();
         if (counter % 3 == 0) {
             log.warn("Bad request: {}", msg);
@@ -71,7 +71,7 @@ public class Controller {
 }
 ```
 
-### Step 3: Validation the Rule Chain logic
+## Step 3: Validation the Rule Chain logic
 
 Let's check that our logic is correct by saving the Rule Chain and launching the external server. The generator will start to produce messages:
 
@@ -90,12 +90,12 @@ Every third message (two out of initial six) is failed.
 The last two messages are the ones that were needed to be reprocessed (the failed messages).
 That means that our logic works correctly.
 
-### TL;DR
+## TL;DR
 
 Download and import attached json [**file**](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/tutorials/resources/send_request_rule_chain.json) with a rule chain from this tutorial.
 Don't forget to populate the Generator nodes with your specific device.
  
-### Next steps
+## Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/multi-project-guides-banner.md %}
 

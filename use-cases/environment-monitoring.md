@@ -64,7 +64,7 @@ You may use the dashboard to:
 The dashboard has two states. The main state displays the list of the sensors, their location on the map as well as the list of their alarms. 
 You may drill down to the sensor details state by clicking on the table row. The sensor details state allows to browse temperature and humidity history, change sensor settings and location.
 
-### ThingsBoard advantages
+## ThingsBoard advantages
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
@@ -147,7 +147,7 @@ You may drill down to the sensor details state by clicking on the table row. The
     </div>
 </section>
 
-### Environment monitoring solution overview
+## Environment monitoring solution overview
 
 The diagram below identifies data flow and integration points for a typical environment monitoring solution that uses the ThingsBoard platform to collect and analyze data from IoT sensors.
 
@@ -163,7 +163,8 @@ Advanced environment monitoring IoT solutions may use LoRaWAN or SigFox devices 
 The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
-### Learn more
+
+## Learn more
 
 <a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
 <a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>

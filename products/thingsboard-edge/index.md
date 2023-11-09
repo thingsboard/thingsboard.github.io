@@ -17,7 +17,7 @@ description: Comprehensive software solutions for edge computing, providing data
             <div class="main1"></div><div class="small1"></div><div class="small2"></div><div class="small3"></div><div class="small4"></div>
         </div>
         <div class="block">
-            <div class="feature-des"><h3 class="item-heading">Local Deployment and Storage</h3>
+            <div class="feature-des"><h2>Local Deployment and Storage</h2>
                 <p>Process and store data from local (edge) devices independently of the cloud. Sync updates with the cloud once connectivity is restored.</p>
                 <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
@@ -35,7 +35,7 @@ description: Comprehensive software solutions for edge computing, providing data
             <div class="block-img">
                 <img src="/images/edge/data-filtering.svg" alt="data filtering">
             </div>
-            <div class="feature-des"><h3 class="item-heading">Data Filtering</h3>
+            <div class="feature-des"><h2>Data Filtering</h2>
                 <p>Use the ThingsBoard Edge service to filter data from local (edge) devices and forward only a subset of data to the cloud for further processing or storage.</p>
                 <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
@@ -50,7 +50,7 @@ description: Comprehensive software solutions for edge computing, providing data
             <div class="main2"></div><div class="small5"></div><div class="small6"></div><div class="small7"></div>
         </div>
         <div class="block">
-            <div class="feature-des"><h3 class="item-heading">Local Alarms</h3>
+            <div class="feature-des"><h2>Local Alarms</h2>
                 <p>Respond instantly to critical situations on-site, even without cloud connectivity.</p>
                 <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
@@ -68,7 +68,7 @@ description: Comprehensive software solutions for edge computing, providing data
             <div class="block-img">
                 <img src="/images/edge/batch-update.svg" alt="batch update">
             </div>
-            <div class="feature-des"><h3 class="item-heading">Batch Update and Visualization</h3>
+            <div class="feature-des"><h2>Batch Update and Visualization</h2>
                 <p>Update thousands of edge configurations with a single click. Monitor local events and timeseries data using a real-time dashboard.</p>
                 <a class="read-more-button" href="/docs/edge/getting-started-guides/what-is-edge/">Edge CE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>
                 <a class="read-more-button" style="margin-left: 60px;" href="/docs/pe/edge/getting-started-guides/what-is-edge/">Edge PE<img class="arrow first" src="/images/pe/read-more-arrow.svg" alt="arrow first"><img class="arrow second" src="/images/pe/read-more-arrow.svg" alt="arrow second"><img class="arrow third" src="/images/pe/read-more-arrow.svg" alt="arrow third"></a>

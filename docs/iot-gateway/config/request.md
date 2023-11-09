@@ -251,6 +251,7 @@ The **attributeUpdates** section will look like:
 
 ### Server side RPC section
 
+
 ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to ThingsBoard directly or via Gateway.
  
 Configuration, provided in this section uses for sending RPC requests from ThingsBoard to device.
@@ -306,7 +307,9 @@ Examples for both methods provided below.
   ]
 ```
 
-### Next steps
+
+
+## Next steps
 
 Explore guides related to main ThingsBoard features:
 

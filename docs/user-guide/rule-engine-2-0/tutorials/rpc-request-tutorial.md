@@ -8,17 +8,18 @@ description: Send RPC Request to a Device
 ThingsBoard allows you to send remote procedure calls [**RPC**](/docs/user-guide/rpc/#server-side-rpc-api) from server-side applications to devices and vice versa. <br>
 This Tutorial is to show you how to send a remote request call to a Related Device using Rule Engine.
 
+
 * TOC
 {:toc}
 
-## Use case
+# Use case
 Let’s assume the following use case:
 
-  - you have the following devices connected to ThingsBoard:
-	- Wind Direction Sensor.
-	- Rotating System.
+  - you have the following devices connected to ThingsBoard:	
+	- Wind Direction Sensor.	
+	- Rotating System.	
   - also, you have one asset:
-	- Wind Turbine.
+	- Wind Turbine. 
  - You want to initiate an RPC request to the Rotating System and change the direction of the Wind Turbine according to the direction of the wind.
  - The RPC call will have two properties:
 	- method: **spinLeft** or **spinRight**.
@@ -39,14 +40,16 @@ Let’s assume the following use case:
    </tbody>
 </table>
 
-### Prerequisites
+
+## Prerequisites
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
  * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
  * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
-
-### Model definition
+ 
+ 
+# Model definition
 The Wind Turbine has two devices installed: Wind Direction Sensor and Rotating System.
 
 - The Wind turbine is represented as an Asset. Its name is **Wind Turbine** and its type is **Wind turbine**. 
@@ -78,28 +81,29 @@ In this section, we explain the purpose of each node in this tutorial:
   - Checks if msgType of incoming message is **RPC message**.
 - Node H: [**RPC call request**](/docs/user-guide/rule-engine-2-0/action-nodes/#rpc-call-request-node) node.
   - Takes the message payload and sends it as a response to the **Rotating System**.
+  
 
 <br>
 <br>
 
-### Configuring the Rule Chain
+# Configuring the Rule Chain
 
 The following screenshot shows how the **Tutorial of RPC Call Request** Rule Chain should look like:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/chain.png)
 
 - Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/tutorial_of_rpc_call_request.json) for the rule chain indicated above and import it.
-- Don't forget to mark the new rule chain as "root".
+- Don't forget to mark the new rule chain as "root".  
 
 Also, you can create the new Rule Chain from scratch. The following section shows you how to create it.
 
 
 #### Creating a new Rule Chain (**Tutorial of RPC Call Request**)
 
-- Go to **Rule Chains** -> **Add new Rule Chain**
+- Go to **Rule Chains** -> **Add new Rule Chain** 
 - Enter the Name field as **Tutorial of RPC Call Request**, then click the **ADD** button.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/create-chain.png) ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/root-chain.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/create-chain.png) ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/root-chain.png) 
 
 - The new Rule Chain is now created. Don’t forget to mark it as “root”.
 
@@ -119,7 +123,7 @@ In this tutorial, you will create 8 nodes as it will be explained in the followi
 ######  Node B: **Save TimeSeries**
 - Add the **Save TimeSeries** node and connect it to the **Message Type Switch** node with a relation type **Post telemetry**. <br>
   This node will store TimeSeries data from incoming Message payload to the database and associate them to the Device, that is identified by the Message Originator, namely **Wind Direction Sensor** and **Rotating System**.
-
+  
 - Enter the Name field as **Save Time Series**.
 
 
@@ -128,7 +132,7 @@ In this tutorial, you will create 8 nodes as it will be explained in the followi
 ###### Node C: **Related attributes**
 - Add the **Related attributes** node and connect it to the **Save TimeSeries** node with a relation type **Success**. <br>
   This node will load the source telemetry **windDirection** from the related **Wind Direction Sensor** to **Rotating System** and save it into the Message metadata with the name **windDirection**.
-- Fill in the fields with the input data shown in the following table:
+- Fill in the fields with the input data shown in the following table: 
 
 <table style="width: 25%">
   <thead>
@@ -310,7 +314,7 @@ To run the scripts, you need to do the following steps:
 <br>
 <br>
 
-### Configuring Dashboards
+# Configuring Dashboards
 The following screenshot shows how the **Wind Turbine Dashboard** should look like:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/dashboard.png)
@@ -320,7 +324,7 @@ Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials
 - Go to **Dashboards** -> **Add new Dashboard** -> **Import Dashboard** and drop the downloaded json file.
 
 The next Step is to configure the aliases used by the imported dashboard.
-
+ 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-request/aliases.png)
 
 Click the **Edit alias** button and enter the input data shown in the following table:
@@ -409,13 +413,13 @@ Please refer to the second link under the **See Also** section to see how to do 
 <br>
 <br>
 
-### See Also
+# See Also
 
  - For more details about how RPC works in Thignsboard, please refer to the [RPC capabilities](/docs/user-guide/rpc/#server-side-rpc-api) guide.
 
  - [RPC Reply With data from Related Device](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial/) guide.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
 

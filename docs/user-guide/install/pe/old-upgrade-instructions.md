@@ -12,10 +12,10 @@ description: ThingsBoard PE IoT platform upgrade instructions
     <a href="#upgrading-to-241pe" id="markdown-toc-upgrading-to-241pe">Upgrading to 2.4.1PE</a>
     <ul>
         <li>
-            <a href="#ubuntucentos" id="markdown-toc-ubuntucentos-1">Ubuntu/CentOS</a>
+            <a href="#ubuntucentos" id="markdown-toc-ubuntucentos-1">Ubuntu/CentOS</a>        
         </li>
         <li>
-            <a href="#windows" id="markdown-toc-windows-1">Windows</a>
+            <a href="#windows" id="markdown-toc-windows-1">Windows</a>        
         </li>
     </ul>
   </li>
@@ -23,10 +23,10 @@ description: ThingsBoard PE IoT platform upgrade instructions
       <a href="#upgrading-to-2421pe" id="markdown-toc-upgrading-to-2421pe">Upgrading to 2.4.2.1PE</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-1" id="markdown-toc-ubuntucentos-2">Ubuntu/CentOS</a>
+              <a href="#ubuntucentos-1" id="markdown-toc-ubuntucentos-2">Ubuntu/CentOS</a>        
           </li>
           <li>
-              <a href="#windows-1" id="markdown-toc-windows-2">Windows</a>
+              <a href="#windows-1" id="markdown-toc-windows-2">Windows</a>        
           </li>
       </ul>
   </li>
@@ -34,7 +34,7 @@ description: ThingsBoard PE IoT platform upgrade instructions
       <a href="#upgrading-to-243pe" id="markdown-toc-upgrading-to-243pe">Upgrading to 2.4.3PE</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-2" id="markdown-toc-ubuntucentos-3">Ubuntu/CentOS</a>
+              <a href="#ubuntucentos-2" id="markdown-toc-ubuntucentos-3">Ubuntu/CentOS</a>        
           </li>
           <li>
               <a href="#windows-2" id="markdown-toc-windows-3">Windows</a>
@@ -45,7 +45,7 @@ description: ThingsBoard PE IoT platform upgrade instructions
         <a href="#upgrading-to-25pe" id="markdown-toc-upgrading-to-25pe">Upgrading to 2.5PE</a>
         <ul>
             <li>
-                <a href="#ubuntucentos-3" id="markdown-toc-ubuntucentos-4">Ubuntu/CentOS</a>
+                <a href="#ubuntucentos-3" id="markdown-toc-ubuntucentos-4">Ubuntu/CentOS</a>        
             </li>
             <li>
                 <a href="#windows-3" id="markdown-toc-windows-4">Windows</a>
@@ -56,7 +56,7 @@ description: ThingsBoard PE IoT platform upgrade instructions
         <a href="#upgrading-to-30pe" id="markdown-toc-upgrading-to-30pe">Upgrading to 3.0PE</a>
         <ul>
             <li>
-                <a href="#ubuntucentos-4" id="markdown-toc-ubuntucentos-5">Ubuntu/CentOS</a>
+                <a href="#ubuntucentos-4" id="markdown-toc-ubuntucentos-5">Ubuntu/CentOS</a>        
             </li>
             <li>
                 <a href="#windows-4" id="markdown-toc-windows-5">Windows</a>
@@ -110,7 +110,7 @@ sudo -Hiu postgres pg_dump thingsboard > thingsboard.sql.bak
 {: .copy-code}
 Check backup file being created.
 
-#### Cassandra
+#### Cassandra   
 Check Cassandra status. It is necessary to stop Cassandra for the backup.
 
 ```bash
@@ -350,7 +350,7 @@ net stop thingsboard
           type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
         ts:
           type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
-```
+```       
 
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -512,7 +512,7 @@ Please make sure that you set **database.entities.type** and **database.ts.type*
         type: "${DATABASE_ENTITIES_TYPE:sql}" # cassandra OR sql
       ts:
         type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
-
+    
     # note: timescale works only with postgreSQL database for DATABASE_ENTITIES_TYPE.
 ```
 
@@ -521,19 +521,19 @@ Please make sure that you set **database.entities.type** and **database.ts.type*
 ```bash
     # Connect to thingsboard database:
     \c thingsboard
-
+    
     # Execute the next commands:
-
+    
     # Update ts_kv table constraints:
     ALTER TABLE ts_kv DROP CONSTRAINT IF EXISTS ts_kv_unq_key;
     ALTER TABLE ts_kv DROP CONSTRAINT IF EXISTS ts_kv_pkey;
     ALTER TABLE ts_kv ADD CONSTRAINT ts_kv_pkey PRIMARY KEY (entity_type, entity_id, key, ts);
-
+    
     # Update ts_kv_latest table constraints:
     ALTER TABLE ts_kv_latest DROP CONSTRAINT IF EXISTS ts_kv_latest_unq_key;
     ALTER TABLE ts_kv_latest DROP CONSTRAINT IF EXISTS ts_kv_latest_pkey;
     ALTER TABLE ts_kv_latest ADD CONSTRAINT ts_kv_latest_pkey PRIMARY KEY (entity_type, entity_id, key);
-
+    
     # exit psql terminal 
     \q
 ```
@@ -571,7 +571,7 @@ net stop thingsboard
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please note that upgrading ThingsBoard PE from 2.4.3 to 2.5 version in case of using PostgreSQL database require to upgrade the PostgreSQL service to 11.x version.
 * Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
-
+  
 ```
     database:
       ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
@@ -579,28 +579,28 @@ net stop thingsboard
         type: "${DATABASE_ENTITIES_TYPE:sql}" # cassandra OR sql
       ts:
         type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
-
+    
     # note: timescale works only with postgreSQL database for DATABASE_ENTITIES_TYPE.
-```
+```       
 
 **NOTE:** If you are using **PostgreSql(Sql)** for time-series data storage before executing the upgrade script, you need to access the psql terminal. Once you will be logged to the psql terminal, please follow the instructions below:
 
 ```bash
     # Connect to thingsboard database:
     \c thingsboard
-
+    
     # Execute the next commands:
-
+    
     # Update ts_kv table constraints:
     ALTER TABLE ts_kv DROP CONSTRAINT IF EXISTS ts_kv_unq_key;
     ALTER TABLE ts_kv DROP CONSTRAINT IF EXISTS ts_kv_pkey;
     ALTER TABLE ts_kv ADD CONSTRAINT ts_kv_pkey PRIMARY KEY (entity_type, entity_id, key, ts);
-
+    
     # Update ts_kv_latest table constraints:
     ALTER TABLE ts_kv_latest DROP CONSTRAINT IF EXISTS ts_kv_latest_unq_key;
     ALTER TABLE ts_kv_latest DROP CONSTRAINT IF EXISTS ts_kv_latest_pkey;
     ALTER TABLE ts_kv_latest ADD CONSTRAINT ts_kv_latest_pkey PRIMARY KEY (entity_type, entity_id, key);
-
+    
     # exit psql terminal 
     \q
 ```
@@ -734,7 +734,7 @@ net stop thingsboard
       ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
       ts:
         type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
-```
+```       
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -761,6 +761,6 @@ net start thingsboard
 {: .copy-code}
 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

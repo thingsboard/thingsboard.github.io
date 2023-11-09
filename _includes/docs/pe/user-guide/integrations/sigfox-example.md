@@ -16,7 +16,7 @@ This tutorial will show how to push downlink messages to devices connected via S
 In this tutorial we will get a shared attribute of specified device using SigFox integration.
 SigFox backend will be simulated using Postman.
 
-## Prerequisites
+## Prerequisites 
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
@@ -25,7 +25,7 @@ We assume you have completed the following guides and reviewed the articles list
   * [SigFox Integration](/docs/{{peDocsPrefix}}user-guide/integrations/sigfox/).
   * [Data converters](/docs/{{peDocsPrefix}}user-guide/integrations/#data-converters).
 
-### Model definition
+## Model definition
   
 We will operate with device that has name "Thermostat A" which will be
 automatically created in the process of integration work.
@@ -105,7 +105,7 @@ Integration should look like this:
 
 ![image](/images/user-guide/integrations/sigfox/sigfox-create-integration.png)
 
-### Message flow
+## Message flow
 
 In this section, we explain the purpose of each node in this tutorial. There will be one rule chain involved:
 
@@ -219,10 +219,10 @@ The following screenshot shows how the final **Root Rule Chain** should look lik
 
 ![image](/images/user-guide/integrations/sigfox/sigfox-root-rule-chain.png)
 
-### Conclusion
+## Conclusion
 
 Now when "status" attribute is updated, integration will send downlink message.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

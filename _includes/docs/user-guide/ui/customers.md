@@ -67,6 +67,6 @@ Also, you can delete any customer user from the customer. The steps are the same
 
 {% include images-gallery.html imageCollection="delete-customer-user-1" showListImageTitles="true" %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

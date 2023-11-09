@@ -119,7 +119,7 @@ You and your customers can also delete multiple entity groups at once.
 
 {% include images-gallery.html imageCollection="delete-entity-group-3" showListImageTitles="true" %}
 
-### Video tutorial
+## Video tutorial
 
 Watch the detailed video tutorial with examples of how you can configure the entity group to suit your needs.
 
@@ -130,6 +130,6 @@ Watch the detailed video tutorial with examples of how you can configure the ent
     </div>
 </div>
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

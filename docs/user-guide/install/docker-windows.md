@@ -19,18 +19,18 @@ This guide will help you to install and start ThingsBoard using Docker on Window
 
 - [Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)
 
-### Running
+## Running
 
 Depending on the database used there are three type of ThingsBoard single instance docker images:
 
 * [thingsboard/tb-postgres](https://hub.docker.com/r/thingsboard/tb-postgres/) - single instance of ThingsBoard with PostgreSQL database.
-
+    
     Recommended option for small servers with at least 1GB of RAM and minimum load (few messages per second). 2-4GB is recommended.
 * [thingsboard/tb-cassandra](https://hub.docker.com/r/thingsboard/tb-cassandra/) - single instance of ThingsBoard with Cassandra database. 
-
+    
     The most performant and recommended option but requires at least 6GB of RAM. 8GB is recommended.  
 * [thingsboard/tb](https://hub.docker.com/r/thingsboard/tb/) - single instance of ThingsBoard with embedded HSQLDB database. 
-
+    
     **Note:** Not recommended for any evaluation or production usage and is used only for development purposes and automatic tests. 
 
 In this instruction `thingsboard/tb-postgres` image will be used. You can choose any other images with different databases (see above).
@@ -44,7 +44,7 @@ docker volume create mytb-data
 docker volume create mytb-logs
 ```
 
-### Choose ThingsBoard queue service
+## Choose ThingsBoard queue service
 
 {% include templates/install/install-queue.md %}
 
@@ -60,7 +60,7 @@ Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confl
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
 Where: 
-
+    
 - `8080:9090`            - connect local port 8080 to exposed internal HTTP port 9090
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883
 - `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070
@@ -89,9 +89,9 @@ VBoxManage controlvm "default" natpf1 "udp-port5687,udp,,5687,,5687"
 VBoxManage controlvm "default" natpf1 "udp-port5688,udp,,5688,,5688"
 ```
 {: .copy-code}
-
+    
 Where: 
-
+    
 - `C:\Program Files\Oracle\VirtualBox`            - path to your VirtualBox installation directory
 
 
@@ -104,12 +104,12 @@ Use the following default credentials:
     
 You can always change passwords for each account in account profile page.
 
-### Detaching, stop and start commands
+## Detaching, stop and start commands
 
 {% assign serviceFullName = "ThingsBoard" %}
 {% include templates/install/docker/detaching-stop-start-commands.md %}
 
-### Upgrading
+## Upgrading
 
 In order to update to the latest image, open "Docker Quickstart Terminal" and execute the following commands:
 
@@ -142,6 +142,6 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) here is th
 
 {% include templates/troubleshooting/dns-issues-windows.md %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

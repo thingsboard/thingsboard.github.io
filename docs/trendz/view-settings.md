@@ -153,12 +153,12 @@ Hide specific filters when displayed in the ThingsBoard dashboard
 An entity that will be passed on a click on a view element (table row, bar of chart, etc.) to the ThingsBoard alias. This is usually used to change filters of view in other widgets.
 [**More details you can find here**](/docs/trendz/embed-visuals/#configure-onrowclock-action)
 
-### Colors
+## Colors
 
 ##### Annotations
 Color Zones on the chart for ranges along the Y axis. [**More details you can find here**](/docs/trendz/visualizations-line/#color-zones) 
 
-### Caching
+## Caching
 
 ##### Cache report
 If the query plan is not changed will be return cached View Report without loading data from ThignsBoard.
@@ -168,7 +168,7 @@ If the query plan is not changed will be return cached View Report without loadi
 In cases when data can be grouped by fixed intervals, like Hour or Date, will be load already computed\aggregated field value from cache instead of reloading data from ThingsBoard.
 [**More details you can find here**](/docs/trendz/cache-settings/)
 
-### TB calculated telemetry save
+## TB calculated telemetry save
 It feature provides the ability to make and save (to the same item) a new telemetry that is made by a calculation field that is derived from any telemetry field that you want. 
 It is a scheduled action that will be launched every chosen time unit to keep actual values during the present time.
 [**More details you can find here**](/docs/trendz/save-telemetry-to-thingsboard/)

@@ -10,14 +10,14 @@ The Gateway also acts as a ThingsBoard device and can leverage existing [MQTT De
 
 The API listed below is used by [**ThingsBoard open-source IoT Gateway**](/docs/iot-gateway/what-is-iot-gateway/).
 
-### Basic MQTT API
+## Basic MQTT API
 
 Please refer to generic [MQTT Device API](/docs/{{docsPrefix}}reference/mqtt-api/) to get information about data format, authentication options, etc.
-
-### Device Connect API
+ 
+## Device Connect API
 
 In order to inform ThingsBoard that device is connected to the Gateway, one needs to publish following message:
-
+ 
 ```shell
 Topic: v1/gateway/connect
 Message: {"device":"Device A"}
@@ -28,10 +28,10 @@ where **Device A** is your device name.
 Once received, ThingsBoard will lookup or create a device with the name specified.
 Also, ThingsBoard will publish messages about new attribute updates and RPC commands for a particular device to this Gateway.
 
-### Device Disconnect API
+## Device Disconnect API
 
 In order to inform ThingsBoard that device is disconnected from the Gateway, one needs to publish following message:
-
+ 
 ```shell
 Topic: v1/gateway/disconnect
 Message: {"device":"Device A"}
@@ -41,14 +41,14 @@ where **Device A** is your device name.
 
 Once received, ThingsBoard will no longer publish updates for this particular device to this Gateway.
 
-### Attributes API
+## Attributes API
 
 ThingsBoard attributes API allows devices to
 
 * Upload [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes to the server.
 * Request [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) and [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
 * Subscribe to [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
-
+ 
 ##### Publish attribute update to the server
 
 In order to publish client-side device attributes to ThingsBoard server node, send PUBLISH message to the following topic:
@@ -97,7 +97,7 @@ and expect messages with result in the following format:
 Message: {"device": "Device A", "data": {"attribute1": "value1", "attribute2": 42}}
 ```
 
-### Telemetry upload API
+## Telemetry upload API
 
 In order to publish device telemetry to ThingsBoard server node, send PUBLISH message to the following topic:
 
@@ -139,9 +139,9 @@ Message:
 
 where **Device A** and **Device B** are your device names, **temperature** and **humidity** are telemetry keys and **ts** is unix timestamp in milliseconds.
 
-### RPC API
+## RPC API
 
-#### Server-side RPC
+### Server-side RPC
 
 In order to subscribe to RPC commands from the server, send SUBSCRIBE message to the following topic:
 
@@ -192,11 +192,11 @@ where **Device A** and **Device B** are your device names, **secretKey** and **d
 In case the **secretKey** is not specified, the empty string as a default value is used.
 In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
 
-### Protocol customization
+## Protocol customization
 
 MQTT transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt).
 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

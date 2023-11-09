@@ -14,7 +14,7 @@ description: Installing ThingsBoard on Windows
 
 {% include templates/install/windows-warning-note.md %}
 
-## Prerequisites
+### Prerequisites
 
 This guide describes how to install ThingsBoard on a Windows machine.
 Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit. 
@@ -141,13 +141,13 @@ Execute **install.bat** script to install ThingsBoard Web Report Server as a Win
   This means it will be automatically started on system startup. 
   Similar, **uninstall.bat** will remove ThingsBoard from Windows services.
   The output should be like:
-
+  
   ```text
     C:\Program Files (x86)\tb-web-report>install.bat
     Installing tb-web-report ...
     tb-web-report installed successfully!  
-  ```
-
+  ```    
+  
 Now let's start the ThingsBoard service!
 Open the command prompt as an Administrator and execute the following command:
 
@@ -216,6 +216,6 @@ you need to create a new inbound rule with Windows Firewall with Advanced Securi
 
 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

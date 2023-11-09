@@ -16,9 +16,7 @@ description: Trendz States
     </div>
 </div>
 
-## States
-
-### Simple state
+## Simple state
 
 ![image](/images/trendz/state-simple-view.png)
 
@@ -60,7 +58,7 @@ Our view ready and now we know how much time(in percent) machines spent in diffe
 </div>
 
 
-### State with multiple fields
+## State with multiple fields
 
 ![image](/images/trendz/state-multiple-view.png)
 
@@ -92,13 +90,13 @@ Here is a formal definition of **Critical** state:
     </div>
 </div>
 
-### State Aggregation
+## State Aggregation
 
 Here is a list of supported aggregation functions for state fields:
 * Duration - total time spent in state inside group. In hours, minutes, seconds etc.
 * Duration percent - percent of time spent in state inside group.
 
-### Get original field value
+## Get original field value
 
 Before applying transformation you need to get a reference to the original field value. Here is an example how to do this:
 
@@ -121,7 +119,7 @@ var currentState = none(machine.status);
 return "running" === currentState;
 ```
 
-### Supported Aggregation Functions
+## Supported Aggregation Functions
 
 State fields supports following aggregation functions:
 
@@ -139,7 +137,7 @@ defined state or not.
 
 Aggregation function applied to a grouped dataset. Find more details about [Grouping and Aggregation in this article](/docs/trendz/data-grouping-aggregation/)
 
-### Save and reuse state fields
+## Save and reuse state fields
 
 Once the state field created you can save it for future reuse by pressing **Save Field** button under function editor. 
 Current field label would be used as a field name. If a field with such name already exists - the system will overwrite it.
@@ -149,10 +147,10 @@ state field created and this field would not be connected with the original temp
 It means that if you will update field configuration in the future, it will only update a template, 
 but real state fields that are added to View configuration are not affected.
 
-### Language
+## Language
 
 State fields use Javascript as a language for writing transformation function. Inner Engine provide 100% support of ECMAScript 5.1
 
-### Next Steps
+## Next Steps
 
 {% assign currentGuide = "States" %}{% include templates/trndz-guides-banner.md %}
