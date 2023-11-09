@@ -36,7 +36,7 @@ step2:
         image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-2-pe.png
         title: 'Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.'
 
-step3:
+step21:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-3-pe.png
         title: 'Navigate to the "Latest telemetry" tab. You should see the previously published "temperature" readings;'
@@ -173,7 +173,7 @@ step71:
         title: 'Navigate to the "Customers" page. By default, you navigate to the customer group "All". Click the "+" sign to add a new customer;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-3-pe.png
-        title: 'Input the customer title. Additionally, you can input personal details for the customer and assign a home dashboard. To finalize the customer creation, you can click the "Add" button. In this case, the new customer will be created and will be located in the "All" customers folder. Let`s create a separate group for our customer. To do this, click on "Next: Owner and groups" button;'
+        title: 'Input the customer title. Additionally, you can input personal details for the customer and assign a home dashboard. To finalize the customer creation, you can click the "Add" button. In this case, the new customer will be created and located in the "All" customers folder. Let`s create a separate group for our customer. To do this, click on "Next: Owner and groups" button;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-4-pe.png
         title: 'If desired, you can assign a different owner for this customer. We will leave this option unchanged. Enter a name for the new group and click "Create a new one!";'
@@ -199,13 +199,13 @@ step72:
         title: 'In the "Owner" line, start typing the customer name and then select the customer;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-4-pe.png
-        title: 'Now create a device group. In the "Groups" line, input the desired device group name. Then, click "Create a new one";'
+        title: 'Now, create a device group. In the "Groups" line, input the desired device group name. Then, click "Create a new one";'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-5-pe.png
-        title: 'In the next window, click "Add" button to create device group;'
+        title: 'In the next window, click "Add" button to create a device group;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-6-pe.png
-        title: 'Click "Update" to change owner for your device. You can always change the owner back to the tenant;'
+        title: 'Click "Update" to change the owner of your device. You can always change the owner back to the tenant;'
     6:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-7-pe.png
         title: 'By default, the general device list displays both tenant devices and devices of your customers. Disable "Include customer entities" to only see tenant devices in the device list;'
@@ -219,7 +219,7 @@ step72_1:
         title: 'Navigate to "Customers" page. Find your customer in the list of customers and then click on the "Manage customer devices" icon;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-10-pe.png
-        title: 'Your device is owned by the customer and is located in the customer`s device group "My Devices".'
+        title: 'Your device is owned by the customer and is located in the customer&#39;s device group "My Devices".'
 
 step72_2:
     0:
@@ -252,7 +252,7 @@ step73_1:
         title: 'Click "Next: Share entity group" button;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-8-pe.png
-        title: 'Checkbox "Share entity group, then select the customer with whom you want to share the dashboard and specify permission. Click "Add";'
+        title: 'Tick "Share entity group" checkbox, then select the customer with whom you want to share the dashboard and specify permission. Click "Add";'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-9-pe.png
         title: 'Click "Add" dashboard;'
@@ -266,7 +266,7 @@ step74:
         title: 'Navigate to "Customers" page. Find your customer in the list of customers and then click on the "Manage customer users" icon;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-user-2-pe.png
-        title: 'Navigate to the "Group" tab and select "Customer Users" group;'
+        title: 'Navigate to the "Groups" tab and select "Customer Users" group;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-user-3-pe.png
         title: 'Click "plus" icon in the top right corner to add a new user;'
@@ -286,7 +286,7 @@ step74:
 step75:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-7-5-activate-customer-user-1-pe.png
-        title: 'Paste the previously copied link into a new browser tab and press Enter. Come up with and enter a password twice, then press "Create Password". You will automatically login as a customer user;'
+        title: 'Paste the previously copied link into a new browser tab and press Enter. Come up with and enter a password twice, then press "Create Password". You will automatically log in as a customer user;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-7-5-activate-customer-user-2-pe.png
         title: 'You have logged in as a Customer User. You may browse the data and acknowledge/clear alarms.'
