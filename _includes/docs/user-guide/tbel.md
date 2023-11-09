@@ -544,6 +544,13 @@ return stringToBytes(bytesStr); // Returns [123, 34, 104, 101, 108, 108, 111, 34
 ```
 {: .copy-code}
 
+```java
+var inputStr = "hello world";
+var charsetStr = "UTF-8"
+return stringToBytes(inputStr, charsetStr);  // Returns  [104, 101, 108, 108, 111, 32, 119, 111, 114, 108, 100]
+```
+{: .copy-code}
+
 #### parseInt
 
 Converts input string to integer.
