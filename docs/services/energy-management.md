@@ -97,12 +97,12 @@ description: IoT energy management
             <h2>ThingsBoard Benefits</h2>
             <div class="text-content medium-margin">We offer a multitude of benefits for IoT energy monitoring:</div>
             <ul class="list">
-                <li>a robust infrastructure for connecting your smart meter devices, collecting, storing, and analyzing energy monitoring data;</li>
-                <li>a powerful rule engine to process collected data, produce alarms and generate valuable insights;</li>
-                <li>advanced and flexible visualization for real-time and historical data. This allows you to embed smart-energy IoT data visualization into your IoT solution easily;</li>
-                <li>the platform integrates with third-party analytics frameworks and solutions for advanced electricity usage analytics;</li>
-                <li>our software provides remote control and OTA updates for your smart meters and other devices;</li>
-                <li>we allow customizable mobile applications with minimum coding efforts.</li>
+                <li>A robust infrastructure for connecting your smart meter devices, collecting, storing, and analyzing energy monitoring data.</li>
+                <li>A powerful rule engine to process collected data, produce alarms and generate valuable insights.</li>
+                <li>Advanced and flexible visualization for real-time and historical data. This allows you to embed smart-energy IoT data visualization into your IoT solution easily.</li>
+                <li>The platform integrates with third-party analytics frameworks and solutions for advanced electricity usage analytics.</li>
+                <li>Our software provides remote control and OTA updates for your smart meters and other devices.</li>
+                <li>We allow customizable mobile applications with minimum coding efforts.</li>
             </ul>
             <div class="text-content">With an expert team that understands these complexities, ThingsBoard is committed to providing an energy monitoring system using IoT that not only addresses these challenges but also drives efficiency and sustainability in IoT energy management.</div>
             <h3>Our cases:</h3>

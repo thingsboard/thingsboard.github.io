@@ -12,7 +12,7 @@ description: IoT monitoring dashboard
             <span class="read-info">11 minutes read</span>
             <h1>IoT Monitoring Dashboard</h1>
             <div class="text-content medium-margin">In the dynamic landscape of digitization and the Internet of Things (IoT), the importance of data management and monitoring is quite reasonable. In this regard, the IoT monitoring dashboard is a tool that not only simplifies the visualization of large amounts of data but also makes it more efficient and informative.</div>
-            <div class="text-content"><span class="bold">The ThingsBoard dashboard platform</span> is an integral part of the user interface for IoT apps, offering solutions for the rapid development, management, and scaling of IoT projects.</div>
+            <div class="text-content"><span class="bold">In the ThingsBoard platform the dashboards</span> are an integral part of the user interface for IoT apps, offering solutions for the rapid development, management, and scaling of IoT projects.</div>
         </div>
         <img class="image" srcset="/images/iot-articles/monitoring_dashboard_1_1090x742.png 1090w, /images/iot-articles/monitoring_dashboard_1_2180x1484.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/monitoring_dashboard_1_1090x742.png" alt="IoT energy management office monitoring"/>
         <div class="text-wrapper">
@@ -39,14 +39,14 @@ description: IoT monitoring dashboard
             <h2 class="line-height-small">An Indispensable IoT Control Panel: Features You Will Approve</h2>
             <div class="text-content medium-margin">ThingsBoard solution templates are a powerful feature of the ThingsBoard IoT platform that can significantly reduce the time-to-market for your IoT products. Here, we delve into the key characteristics that make it a cornerstone for IoT deployments:</div>
             <ul class="list">
-                <li>ThingsBoard's IoT control panel boasts an intuitive, user-friendly interface;</li>
-                <li>our IoT sensor dashboard empowers users with robust device management functionalities;</li>
-                <li>tailoring the dashboard to your specific needs is a breeze with ThingsBoard;</li>
-                <li>ThingsBoard's control panel incorporates a powerful rule engine that enables automated actions based on predefined conditions;</li>
-                <li>our IoT device dashboard provides comprehensive tools for data analysis and visualization;</li>
-                <li>security is paramount in IoT deployments, so we offer robust access control features, ensuring that only authorized personnel have access to sensitive information and critical functionalities.</li>
+                <li>ThingsBoard's IoT control panel boasts an intuitive, user-friendly interface.</li>
+                <li>Our IoT sensor dashboard empowers users with robust device management functionalities.</li>
+                <li>Tailoring the dashboard to your specific needs is a breeze with ThingsBoard.</li>
+                <li>ThingsBoard's control panel incorporates a powerful rule engine that enables automated actions based on predefined conditions.</li>
+                <li>Our IoT device dashboard provides comprehensive tools for data analysis and visualization.</li>
+                <li>Security is paramount in IoT deployments, so we offer robust access control features, ensuring that only authorized personnel have access to sensitive information and critical functionalities.</li>
             </ul>
-            <div class="text-content">For a detailed overview of ThingsBoard's Solution Templates, you can refer to the <a class="article-link" href="/docs/pe/solution-templates/overview/"> official documentation here</a>.</div>
+            <div class="text-content">For a detailed overview of ThingsBoard's Solution Templates, you can refer to the <a class="article-link" href="/docs/pe/solution-templates/overview/">IoT Solution templates overview</a>.</div>
             <h2>IoT Monitoring Dashboard Makes Your Business Goals Achievable</h2>
             <div class="text-content medium-margin">Achieving tangible business objectives requires a strategic approach. An IoT dashboard app serves as a linchpin in this endeavor, offering practical solutions to common challenges encountered during IoT implementation:</div>
         </div>
@@ -99,7 +99,7 @@ description: IoT monitoring dashboard
                 <li>Each widget can be configured to display data from one or more devices. You can choose the type of data to display, the format of the data, and other settings.</li>
                 <li>Once you have added and configured all your widgets, don’t forget to save your dashboard.</li>
             </ul>
-            <div class="text-content">For a more detailed guide on how to use the dashboard for IoT devices, you can refer to the <a class="article-link" href="/docs/pe/user-guide/dashboards/">official documentation here</a>.</div>
+            <div class="text-content">For a more detailed guide on how to use the dashboard for IoT devices, you can refer to our <a class="article-link" href="/docs/pe/user-guide/dashboards/">Working with IoT dashboards</a> guide.</div>
             <h2>ThingsBoard IoT Dashboard in Action (Case Studies)</h2>
         </div>
         <div class="definitions-block">

@@ -21,8 +21,8 @@ description: IoT solutions
         <table class="comparison-table desktop-table">
             <thead>
                 <tr>
-                    <th><span class="column-header">Newcomers vision, or Trivial IoT solutions</span></th> 
-                    <th><span class="column-header">Experienced vision, or More complex IoT solutions</span></th> 
+                    <th><span class="column-header">Newcomers vision, or Trivial IoT solutions</span></th>
+                    <th><span class="column-header">Experienced vision, or More complex IoT solutions</span></th>
                 </tr>
             </thead>
             <tbody>
@@ -67,7 +67,7 @@ description: IoT solutions
         <table class="comparison-table mobile-table first-child">
             <thead>
                 <tr>
-                    <th><span class="column-header">Newcomers vision, or Trivial IoT solutions</span></th> 
+                    <th><span class="column-header">Newcomers vision, or Trivial IoT solutions</span></th>
                 </tr>
             </thead>
             <tbody>
@@ -85,7 +85,7 @@ description: IoT solutions
         <table class="comparison-table mobile-table">
             <thead>
                 <tr>
-                    <th><span class="column-header">Experienced vision, or More complex IoT solutions</span></th> 
+                    <th><span class="column-header">Experienced vision, or More complex IoT solutions</span></th>
                 </tr>
             </thead>
             <tbody>
@@ -157,40 +157,40 @@ description: IoT solutions
             <h2 class="center-text">ThingsBoard IoT Services:</h2>
             <div class="definitions-list">
                 <div class="definitions-list-item">
-                    <div class="term">Asset Management</div> 
-                    <div class="definition">organize your devices into logical groups called assets and manage them as a single entity.</div> 
+                    <div class="term">Asset Management</div>
+                    <div class="definition">organize your devices into logical groups called assets and manage them as a single entity.</div>
                 </div>
                 <div class="definitions-list-item">
-                    <div class="term">Data Analytics — Historical / Real Time / Predictive / Prescriptive</div> 
-                    <div class="definition">analyze your IoT data using our analytics service</div> 
+                    <div class="term">Data Analytics — Historical / Real Time / Predictive / Prescriptive</div>
+                    <div class="definition">analyze your IoT data using our analytics service</div>
                 </div>
                 <div class="definitions-list-item">
-                    <div class="term">Device Connectivity & Data Collection</div> 
-                    <div class="definition">connect your devices to the ThingsBoard platform using various protocols, such as MQTT, HTTP, CoAP, or LwM2M</div> 
+                    <div class="term">Device Connectivity & Data Collection</div>
+                    <div class="definition">connect your devices to the ThingsBoard platform using various protocols, such as MQTT, HTTP, CoAP, or LwM2M</div>
                 </div>
                 <div class="definitions-list-item">
-                    <div class="term">Device Management</div> 
-                    <div class="definition">register, configure, monitor, and control your devices</div> 
+                    <div class="term">Device Management</div>
+                    <div class="definition">register, configure, monitor, and control your devices</div>
                 </div>
                 <div class="definitions-list-item">
-                    <div class="term">Integration Solution into Company Business Workflow</div> 
-                    <div class="definition">integrate your IoT solution with your IT systems and applications</div> 
+                    <div class="term">Integration Solution into Company Business Workflow</div>
+                    <div class="definition">integrate your IoT solution with your IT systems and applications</div>
                 </div>
                 <div class="definitions-list-item">
-                    <div class="term">Rule Engine for Defining Business Logic</div> 
-                    <div class="definition">define your business logic and automate your workflows</div> 
+                    <div class="term">Rule Engine for Defining Business Logic</div>
+                    <div class="definition">define your business logic and automate your workflows</div>
                 </div>
                 <div class="definitions-list-item">
-                    <div class="term">Security</div> 
-                    <div class="definition">secure your IoT solution and services</div> 
+                    <div class="term">Security</div>
+                    <div class="definition">secure your IoT solution and services</div>
                 </div>
                 <div class="definitions-list-item">
-                    <div class="term">User Management</div> 
-                    <div class="definition">manage your users and their access</div> 
+                    <div class="term">User Management</div>
+                    <div class="definition">manage your users and their access</div>
                 </div>
                 <div class="definitions-list-item">
-                    <div class="term">Visualisation & Reporting</div> 
-                    <div class="definition">visualize your IoT data and insights</div> 
+                    <div class="term">Visualisation & Reporting</div>
+                    <div class="definition">visualize your IoT data and insights</div>
                 </div>
             </div>
         </div>
@@ -207,39 +207,39 @@ description: IoT solutions
             <div class="detail-description">Measure and control the energy consumption and production of various devices and systems, such as smart meters, smart grids, solar panels, and batteries</div>
         </div>
         <div class="detail">
-            <div class="detail-name"><a class="header-link" href="/fleet-tracking/">Fleet Tracking</a></div> 
+            <div class="detail-name"><a class="header-link" href="/fleet-tracking/">Fleet Tracking</a></div>
             <div class="detail-description">Monitor and optimize the location, speed, fuel consumption, and maintenance of vehicles in a fleet</div>
         </div>
         <div class="detail">
-            <div class="detail-name"><a class="header-link" href="/use-cases/smart-office/">Smart Office</a></div> 
+            <div class="detail-name"><a class="header-link" href="/use-cases/smart-office/">Smart Office</a></div>
             <div class="detail-description">Automate and personalize various aspects of office environments, such as lighting, temperature, security, and communication</div>
         </div>
         <div class="detail">
-            <div class="detail-name"><a class="header-link" href="/use-cases/air-quality-monitoring/">Air Quality Monitoring</a></div> 
+            <div class="detail-name"><a class="header-link" href="/use-cases/air-quality-monitoring/">Air Quality Monitoring</a></div>
             <div class="detail-description">Measure and improve the air quality in indoor and outdoor environments, such as homes, offices, schools, and cities</div>
         </div>
         <div class="detail">
-            <div class="detail-name"><a class="header-link" href="/use-cases/water-metering/">Water Metering</a></div> 
+            <div class="detail-name"><a class="header-link" href="/use-cases/water-metering/">Water Metering</a></div>
             <div class="detail-description">Monitor and manage the water consumption and distribution in residential, commercial, and industrial applications</div>
         </div>
         <div class="detail">
-            <div class="detail-name"><a class="header-link" href="/use-cases/smart-irrigation/">Smart Irrigation</a></div> 
+            <div class="detail-name"><a class="header-link" href="/use-cases/smart-irrigation/">Smart Irrigation</a></div>
             <div class="detail-description">Automate and optimize the irrigation of crops and plants by using sensors to measure soil moisture, temperature, rainfall, and other environmental factors</div>
         </div>
         <div class="detail">
-            <div class="detail-name">Retail Monitoring & Automation</div> 
+            <div class="detail-name">Retail Monitoring & Automation</div>
             <div class="detail-description">Track and analyze the behavior and preferences of customers and employees in retail stores</div>
         </div>
         <div class="detail">
-            <div class="detail-name"><a class="header-link" href="/use-cases/waste-management/">Waste Management</a></div> 
+            <div class="detail-name"><a class="header-link" href="/use-cases/waste-management/">Waste Management</a></div>
             <div class="detail-description">Reduce the amount of waste generated and improve the efficiency of waste collection and disposal</div>
         </div>
         <div class="detail">
-            <div class="detail-name">Energy Management System (BEMS)</div> 
+            <div class="detail-name">Energy Management System (BEMS)</div>
             <div class="detail-description">Optimize the energy performance of buildings by integrating various systems and devices, such as HVAC, lighting, security, fire safety, and renewable energy sources</div>
         </div>
         <div class="detail">
-            <div class="detail-name">Assisted Living</div> 
+            <div class="detail-name">Assisted Living</div>
             <div class="detail-description">Improve the quality of life and safety of elderly or disabled people who live independently or in care facilities</div>
         </div>
     </div>
