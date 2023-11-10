@@ -7,7 +7,7 @@
  %}
 
 ## Introduction
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The Raspberry Pi 3 Model B+ is currently the best Raspberry Pi computer you can buy. While the price stays at $35, the
 new board one-ups its predecessor in several ways, most notably with a faster processor and Wi-Fi. The co-creator of
 the board Eben Upton describes it as lying somewhere between the 2016 Raspberry Pi 3 and a future Raspberry Pi 4 in

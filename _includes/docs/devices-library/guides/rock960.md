@@ -9,7 +9,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The Rock960 is a single-board computer based on the Rockchip RK3399 SoC with two ARM Cortex-A72 cores and four ARM Cortex-A53 cores, providing high-performance computing capabilities.
  It has 4GB of LPDDR4 RAM and support for various interfaces such as USB3.0, PCIe, HDMI, MIPI-CSI, and more, making it suitable for a wide range of applications such as AI, IoT, and robotics.
 

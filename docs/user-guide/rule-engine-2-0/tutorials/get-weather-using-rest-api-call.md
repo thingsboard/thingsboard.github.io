@@ -32,7 +32,7 @@ We assume you have completed the following guides and reviewed the articles list
 
 Add Asset entity in ThingsBoard. Its name is **Building A** and its type is **building**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/rest-api-weather-building.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rest-api-weather/rest-api-weather-building.png)
 
 **Note**:If you have Professional Edition, you will need to add asset to customer using Customer Hierarchy the
 following way:
@@ -40,13 +40,13 @@ following way:
 - Go to **Customers Hierarchy** -> **All** -> **(Current tenant)** -> **Customer groups** -> **(Your customer group)**
  -> **(Your customer)** -> **Asset groups** -> **(Your asset group)** -> **Add asset**
 
- ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/add-asset-pe-weather-rest-api.png)
+ ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rest-api-weather/add-asset-pe-weather-rest-api.png)
 
 ## Assigning asset to customer in Community edition
 
 - Go to **Assets** -> **Assign to customer** -> **(Your Customer)** -> **Assign**
 
- ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/assign-asset-weather-rest-api.png)
+ ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rest-api-weather/assign-asset-weather-rest-api.png)
 
 ## Registering on data-providing website
 
@@ -55,7 +55,7 @@ In order to get weather data you should register on a website which will provide
 
 After signing up there go to [this](https://home.openweathermap.org/api_keys) page to get your api key.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/openweathermap-apikey.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rest-api-weather/openweathermap-apikey.png)
 
 ## Creating attributes
 
@@ -69,7 +69,7 @@ server-side attributes.
 
  - Go to **(Assigned customer)** -> **Attributes** -> **Add**
 
- ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/add-attribute-customer.png)
+ ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rest-api-weather/add-attribute-customer.png)
 
  Add the attribute as following:
 
@@ -92,7 +92,7 @@ Asset attributes should look like this:
 
 - Go to **Building A** -> **Attributes** -> **Add**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/add-new-attribute.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rest-api-weather/add-new-attribute.png)
 
 - Fill in the attributes with the input data shown in the following table:
 
@@ -134,7 +134,7 @@ In this section, we explain the purpose of each node in this tutorial. There wil
 
 The following screenshot show how the above Rule Chain should look like:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-customer.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-customer.png)
 
 Download and [**import**](/docs/user-guide/ui/rule-chains/#rule-import) attached
 json [**file**](/docs/user-guide/resources/outside-temperature-humidity-customer.json) with a rule chain for this tutorial.
@@ -150,7 +150,7 @@ Configuration:
 
 - Name : **Outside Temperature/Humidity**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/add-weather-rest-api-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rest-api-weather/add-weather-rest-api-chain.png)
 
 New Rule Chain is created. Press **Edit** button and configure Chain.
 
@@ -195,7 +195,7 @@ In this rule chain, you will create 5 nodes as it will be explained in the follo
       </tbody>
    </table>
 
-   ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-A.png)
+   ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-A.png)
 
 ###### Node B: **Customer attributes enrichment node**
 
@@ -227,7 +227,7 @@ In this rule chain, you will create 5 nodes as it will be explained in the follo
                 </tr>
              </tbody>
    </table>
-   ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-B.png)
+   ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-B.png)
 
 ###### Node C: **Originator attributes enrichment node**
    - Add the **Originator attributes enrichment node** and connect it to **Customer attributes node** node with a
@@ -251,7 +251,7 @@ In this rule chain, you will create 5 nodes as it will be explained in the follo
              </tr>
           </tbody>
        </table>
-   ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-C.png)
+   ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-C.png)
 
 ###### Node D: **External REST API call node**
    - Add the **External REST API call node** and connect it to **Originator attributes enrichment node** with a relation
@@ -285,7 +285,7 @@ In this rule chain, you will create 5 nodes as it will be explained in the follo
    - ss_latitude, ss_longitude, ss_units, ss_APPID are server attributes fetched from metadata which were put there
    by **Originator attributes enrichment node**
 
-   ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-D.png)
+   ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-D.png)
 
 ###### Node E: **Script transformation node**
    - Add the **Script transformation node** and connect it to **External REST API call node** with a relation 
@@ -304,14 +304,14 @@ In this rule chain, you will create 5 nodes as it will be explained in the follo
 
     return {msg: newMsg, metadata: metadata, msgType: msgType};
 ```
-   ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-E.png)
+   ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-E.png)
 
 ###### Node F: **Save timeseries node**
 
    - Add the **Script transformation node** and connect it to **External REST API call node** with a relation
         type **Success**. This node will put message into telemetry.
 
-   ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-F.png)
+   ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-F.png)
  
 
 
@@ -321,7 +321,7 @@ Download and [**import**](/docs/user-guide/ui/dashboards/#dashboard-import) atta
 json [**file**](/docs/user-guide/resources/weather_dashboard.json) with a dashboard for this tutorial.
 
 The dashboard should look like this:
-![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-dashboard.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-dashboard.png)
 
 
 ## Next steps

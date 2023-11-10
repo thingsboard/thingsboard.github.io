@@ -78,7 +78,7 @@ This tutorial will explain in details the device Inactivity event and it will sh
  - Add a Device entity in ThingsBoard.
  - Enter the Device name as **Temperature device**, and the Device type as **Temperature sensor**:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/add-device.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/add-device.png)
 
 <br>
 <br>
@@ -89,7 +89,7 @@ This tutorial will explain in details the device Inactivity event and it will sh
 
  - Set **“inactivityTimeout”** attribute, for example, to a value equals 60000 milliseconds.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/add-attribute.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/add-attribute.png)
 
 <br>
 <br>
@@ -98,7 +98,7 @@ This tutorial will explain in details the device Inactivity event and it will sh
 
 The following screenshot shows the initial Root Rule Chain. Please, note that the irrelevant rule nodes have been removed from the Root Rule Chain.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/initial-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/initial-chain.png)
 
 
 The default rule chain has been modified by adding the following two action nodes:
@@ -109,7 +109,7 @@ The default rule chain has been modified by adding the following two action node
 
 The following screenshot shows how the final Rule Chain should look like:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/chain.png)
 
 - Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/tutorial_of_inactivity_event.json) for the rule chain indicated above and import it.
 
@@ -125,7 +125,7 @@ Also, you can create the new Rule Chain from scratch. The following section show
 
   - The new Rule Chain is created. Don’t forget to mark it as “root”.
 
-  ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/add-chain.png)  ![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/root-chain.png)
+  ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/add-chain.png)  ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/root-chain.png)
 
 ##### Adding the required nodes
 
@@ -146,7 +146,7 @@ This node will route the incoming messages according to the message type, namely
 
 Enter the Name field as **Message Type Switch**, then click the **ADD** button.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/message-type-switch.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/message-type-switch.png)
 
 
 ###### **Save Timeseries** node
@@ -156,7 +156,7 @@ This node will store the TimeSeries data from the incoming Message payload into 
 
 Enter the Name field as **Save Time Series**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/save-ts.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/save-ts.png)
 
 ###### **Save Server Attributes** node
 Add the **Save Attributes** node and connect it to the **Message Type Switch** node with a relationship type **Post attributes**.
@@ -165,7 +165,7 @@ This node will store attributes from the incoming Message payload into the datab
 
 Enter the Name field as **Save Server Attributes**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/save-attributes.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/save-attributes.png)
 
 ###### **Create Inactivity alarm** node
 Add the **Create alarm** node and connect it to the **Message Type Switch** node with a relationship type **Inactivity Event**.
@@ -176,7 +176,7 @@ This node tries to load the latest Alarm with the configured Alarm Type for the 
 - Enter the Name field as **Create Inactivity Alarm** and the Alarm type as **Inactivity TimeOut**.
 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/create-alarm.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/create-alarm.png)
 
 
 ###### **Clear Inactivity alarm** node
@@ -187,7 +187,7 @@ This Node loads the latest Alarm with the configured Alarm Type for the Message 
 - Enter the Name field as **Clear Inactivity Alarm** and the Alarm type as **Inactivity TimeOut**.
 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/clear-alarm.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/clear-alarm.png)
 
 <br>
 
@@ -201,7 +201,7 @@ This Rule chain is now ready and you need to save it.
 - Use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api), for posting the device telemetry. <br>
   Please, note that you will need to copy the device access token from the device, **Temperature device**, as shown in the following screenshot. 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/access-token.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/access-token.png)
 
 
 Try to post temperature = 20. Alarm should be created a minute after the telemetry post:
@@ -213,9 +213,9 @@ curl -v -X POST -d '{"temperature":20}' http://localhost:8080/api/v1/$ACCESS_TOK
 {% endhighlight %}
 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/telemetry.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/telemetry.png)
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/inactivity alarms/created-alarm.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/inactivity alarms/created-alarm.png)
 
 <br>
 

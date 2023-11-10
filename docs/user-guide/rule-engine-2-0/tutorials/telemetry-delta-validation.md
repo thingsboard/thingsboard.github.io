@@ -25,7 +25,7 @@ We assume you have completed the following guides and reviewed the articles list
 
 Add Device entity in ThingsBoard. Its name is **Thermometer** and its type is **temperature sensor**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/add-thermometer.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/add-thermometer.png)
 
 <br>
 
@@ -42,11 +42,11 @@ The following screenshots show how the above Rule Chains should look like:
 
   - **Temperature delta validation:**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/temperature-delta-validation-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/temperature-delta-validation-chain.png)
 
  - **Root Rule Chain:**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/root-rule-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/root-rule-chain.png)
 
 <br>
 
@@ -66,7 +66,7 @@ Configuration:
 
 - Name : **Temperature delta validation**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/add-temperature-delta-validation-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/add-temperature-delta-validation-chain.png)
 
 New Rule Chain is created. Press **Edit** button and configure Chain.
 
@@ -90,7 +90,7 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
 
  - Enter the Name field as **Latest five-minute old record**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/latest-five-minute-old-record.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/latest-five-minute-old-record.png)
 
 ###### Fetch Mode ALL
 
@@ -144,7 +144,7 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
 
  - Enter the Name field as **Calculate delta**.
 
- ![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/calculate-delta.png)
+ ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/calculate-delta.png)
 
 ###### Node C: **Save Timeseries**
  - Add the **Save TimeSeries** node and connect it to the **Script Transformation** node with a relationship type **Success**.
@@ -152,7 +152,7 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
 
  - Enter the Name field as **Save Time Series**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/save-timeseries.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/save-timeseries.png)
 
 ###### Node D: **Filter Script**
  - Add the **Filter Script** node and connect it to the **Save TimeSeries** node with a relation type **Success**.
@@ -163,7 +163,7 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
 
  - Enter the Name field as **Validate delta**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/validate-delta.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/validate-delta.png)
 
 
 ###### Node E: **Create alarm**
@@ -172,7 +172,7 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
 
  - Enter the Name field as **Create alarm** and the Alarm type as **General Alarm**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/create-alarm.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/create-alarm.png)
 
 ###### Node F: **Clear Alarm**
  - Add the **Clear Alarm** node and connect it to the **Filter Script** node with a relation type **False**. <br>
@@ -180,7 +180,7 @@ We will use fetch mode: **LAST**  with the time range from 24 hours ago till 5 m
 
  - Enter the Name field as **Clear Alarm** and the Alarm type as **General Alarm**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/clear-alarm.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/clear-alarm.png)
 
 #### Modify Root Rule Chain
 
@@ -192,13 +192,13 @@ The initial root Rule Chain has been modified by adding the following node:
 
 - Select the Rule Chain field: **Temperature delta validation**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/add-rule-chain-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/add-rule-chain-node.png)
 
 <br>
 
 The following screenshot shows how the final **Root Rule Chain** should look like:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/root-rule-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/root-rule-chain.png)
 
 - Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/root_rule_chain_delta_calculation.json) for the rule chain indicated above and import it.
 - Don't forget to mark the new rule chain as **root**.  
@@ -211,14 +211,14 @@ The following screenshot shows how the final **Root Rule Chain** should look lik
 For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api). For this we will need to
 copy device access token from the device **Thermometer**. 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/access-token.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/access-token.png)
 
 {% highlight bash %}**you need to replace $ACCESS_TOKEN with actual device token**{% endhighlight %}
 
 To validate that rule chains works as expected, we need to post telemetry twice for the same device, with an interval, not less than 5 minutes and not more than 24 hours.
 <br> Also, let's pushed debug mode button in **Create Alarm** node to verify that alarm will be created after the second post telemetry request.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/debug-mode-create-alarm.png)<br>
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/debug-mode-create-alarm.png)<br>
 
 sent temperature = 20.
 
@@ -226,7 +226,7 @@ sent temperature = 20.
 curl -v -X POST -d '{"temperature":20}' http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/first-post-telemetry.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/first-post-telemetry.png)
 
 After 5 minutes delay let's sent e.g temperature = 26
 
@@ -234,11 +234,11 @@ After 5 minutes delay let's sent e.g temperature = 26
 curl -v -X POST -d '{"temperature":26}' http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/second-post-telemetry.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/second-post-telemetry.png)
 
 Alarm should be created:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/alarm-created.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/alarm-created.png)
 
 <br>
 

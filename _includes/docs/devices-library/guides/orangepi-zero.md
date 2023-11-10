@@ -7,7 +7,7 @@
  %}
 
 ## Introduction
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 Orange Pi Zero is for anyone who wants to start creating with technology, not just consuming it. It's a simple, fun,
 useful tool that you can use to start taking control of the world around you.
 Orange Pi Zero is an open-source single-board computer. It is very compact with a dimension of 48X46mm. It can run

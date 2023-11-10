@@ -8,7 +8,7 @@
 
 Azure IoT Hub Integration allows to stream data from AWS IoT Backend to ThingsBoard and converts device payloads to the ThingsBoard format.
 
-  <object width="80%" data="/images/user-guide/integrations/azure/iot-hub-integration.svg"></object>
+  <object width="80%" data="https://img.thingsboard.io/user-guide/integrations/azure/iot-hub-integration.svg"></object>
 
 ## Create and configure Azure IoT Hub account
 
@@ -65,7 +65,7 @@ function decodeToJson(payload) {
 return result;
 {% endhighlight %}
 
-![image](/images/user-guide/integrations/azure/iot-hub-converter.png)
+![image](https://img.thingsboard.io/user-guide/integrations/azure/iot-hub-converter.png)
 
 ##### Azure IoT Hub Integration
 
@@ -81,7 +81,7 @@ Next we will create Integration with Azure IoT Hub inside the Thingsboard. Open 
 - SAS Key: **DEVICE_SAS_KEY**
 - Topic filter: devices/T1/messages/devicebound/#
 
-![image](/images/user-guide/integrations/azure/iot-hub-add-integration.png)
+![image](https://img.thingsboard.io/user-guide/integrations/azure/iot-hub-add-integration.png)
 
 - **Topic** - for more information about IoT Hub topic use [link](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-mqtt-support#receiving-cloud-to-device-messages).
 - **Credentials** - Azure IoT Hub connection credentials. Can be either *Shared Access Signature* or *PEM*.
@@ -115,7 +115,7 @@ Open page with your Device and go to **Message to Device**.
 
 Send test message to device.
 
-![image](/images/user-guide/integrations/azure/iot-hub-send-test-msg.png)
+![image](https://img.thingsboard.io/user-guide/integrations/azure/iot-hub-send-test-msg.png)
 
 
 Go to **Device Group** -> **All** -> **T1** - you can see that 
@@ -123,7 +123,7 @@ Go to **Device Group** -> **All** -> **T1** - you can see that
 - new device was registered in the thingsboard
 - In the **Latest Telemetry** section you will see that last submitted temperature = 42 and humidity = 77.
 
-![image](/images/user-guide/integrations/azure/iot-hub-validate-telemetry.png)
+![image](https://img.thingsboard.io/user-guide/integrations/azure/iot-hub-validate-telemetry.png)
 
 ## Next steps
 

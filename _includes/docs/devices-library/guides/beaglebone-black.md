@@ -7,7 +7,7 @@
  %}
 
 ## Introduction
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 BeagleBone Black is a low-cost, community-supported development platform suitable for both professionals and hobbyists. 
 Boot into Linux in less than 10 seconds and start developing your projects with just one USB cable.
 The BeagleBone Black is the latest addition to the BeagleBoard.org family and, like its predecessors, is aimed at the 

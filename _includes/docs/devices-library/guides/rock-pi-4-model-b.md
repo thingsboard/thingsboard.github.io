@@ -9,7 +9,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 Rock Pi 4 Model B is a powerful single-board computer with a Rockchip RK3399 processor, up to 4GB LPDDR4 RAM, and up to 128GB eMMC flash storage.
  It also features Gigabit Ethernet, WIFI, Bluetooth 5.
 0, and a variety of connectors for peripherals and expansion.

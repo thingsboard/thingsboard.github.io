@@ -9,7 +9,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The PINE A64 is a single-board computer based on the Allwinner A64 SoC, featuring a quad-core ARM Cortex-A53 CPU.
  It is designed to be a low-cost and energy-efficient alternative to other SBCs on the market, with a focus on education and maker communities.
 

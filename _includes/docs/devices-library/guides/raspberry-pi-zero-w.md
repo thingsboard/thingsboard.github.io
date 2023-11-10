@@ -9,7 +9,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The Raspberry Pi Zero W is a small, low-cost, and powerful single-board computer that is designed for DIY enthusiasts, hobbyists, and makers.
  It is a variant of the popular Raspberry Pi Zero, which is known for its tiny size and affordability.
  The "W" in the Raspberry Pi Zero W stands for "wireless", as it comes equipped with both WIFI and Bluetooth connectivity.
