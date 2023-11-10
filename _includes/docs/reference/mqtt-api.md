@@ -266,7 +266,7 @@ return {msg: {time:String(new Date())}, metadata: metadata, msgType: msgType};
 
 {% capture tabspec %}mqtt-rpc-from-client
 A,example.sh,shell,resources/mqtt-js-rpc-from-client.sh,/docs/reference/resources/mqtt-js-rpc-from-client.sh
-B,mqtt-js-rpc-from-client.js,javascript,resources/mqtt-js-rpc-from-client.js,/docs/reference/resources/mqtt-js-rpc-from-client.js{% endcapture %}  
+B,mqtt-js-rpc-from-client.js,javascript,resources/mqtt-js-rpc-from-client.js,/docs/reference/resources/mqtt-js-rpc-from-client.js{% endcapture %}
 {% include tabs.html %}
 
 ## Claiming devices
@@ -290,15 +290,15 @@ In case the **durationMs** is not specified, the system parameter **device.claim
 
 ## Device provisioning
 
-Please see the corresponding article to get more information about the [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning) feature.  
+Please see the corresponding article to get more information about the [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning) feature.
 
 In order to initiate device provisioning, send Provisioning request to the following topic:
- 
+
 ```shell
 /provision
 ```
 
-Also, you should set **username** or **clientId** to *provision*. 
+Also, you should set **username** or **clientId** to *provision*.
 
 The supported data format is:
 
@@ -309,8 +309,8 @@ The supported data format is:
   "provisionDeviceSecret": "jpmwdn8ptlswmf4m29bw"
 }
 ```
-  
-## Firmware API 
+
+## Firmware API
 
 When ThingsBoard initiates an MQTT device firmware update, it sets the fw_title, fw_version, fw_checksum, fw_checksum_algorithm shared attributes.
 To receive the shared attribute updates, the device has to subscribe to 

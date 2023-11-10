@@ -2,7 +2,7 @@ Action Nodes execute various actions based on incoming Message.
 
 * TOC
 {:toc}
-  
+
 ## Math Function Node
 
 <table  style="width:250px;">
@@ -90,8 +90,6 @@ Alternative use case is the replacement of simple JS `script` nodes with more li
 The execution is synchronized in scope of message originator (e.g. device) and server node. If you have rule nodes in different rule chains, they will process messages from the same originator synchronously in the scope of the server node.
 
 The result of the function may be added to the message body or metadata. You may also save the result to the database as an attribute or time-series.
-
-
 
 
 ## Create Alarm Node

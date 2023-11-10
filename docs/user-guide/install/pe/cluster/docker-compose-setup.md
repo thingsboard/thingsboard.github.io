@@ -14,7 +14,7 @@ redirect_from: "/docs/user-guide/install/pe/docker-cassandra/"
 {% assign docsPrefix = "pe/" %}
 
 This guide will help you to setup ThingsBoard in cluster mode with Docker Compose. 
-For this purpose, we will use docker container images available on [Docker Hub](https://hub.docker.com/search?q=thingsboard&type=image&image_filter=store).  
+For this purpose, we will use docker container images available on [Docker Hub](https://hub.docker.com/search?q=thingsboard&type=image&image_filter=store).
 
 ## Prerequisites
 

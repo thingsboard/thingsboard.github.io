@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-paas
 title: Self-registration
-description:  
+description:
 ---
 
 {% assign docsPrefix = "paas/" %}

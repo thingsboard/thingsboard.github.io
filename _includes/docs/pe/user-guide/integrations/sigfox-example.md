@@ -16,7 +16,7 @@ This tutorial will show how to push downlink messages to devices connected via S
 In this tutorial we will get a shared attribute of specified device using SigFox integration.
 SigFox backend will be simulated using Postman.
 
-## Prerequisites 
+## Prerequisites
 
 We assume you have completed the following guides and reviewed the articles listed below:
 

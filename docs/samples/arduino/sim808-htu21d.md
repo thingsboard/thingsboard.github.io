@@ -57,7 +57,7 @@ Connect HTU21D in following manner:
 * SDA - Arduino A5
 * SCL - Arduino A4
 
-# Complete wiring
+## Complete wiring
 
 Double-check that your wiring follows schematics below:
 

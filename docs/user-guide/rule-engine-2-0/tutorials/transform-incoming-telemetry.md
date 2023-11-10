@@ -2,7 +2,6 @@
 layout: docwithnav
 title: Transform incoming telemetry
 description: Transform incoming telemetry
-
 ---
 
 * TOC
@@ -19,7 +18,7 @@ In this tutorial we will configure ThingsBoard Rule Engine to modify temperature
 [°C] = ([°F] - 32) × 5/9.
 ```
 
-## Prerequisites 
+## Prerequisites
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
@@ -65,8 +64,6 @@ You can check few more cases, for example when temperature is not set.
 Download and import attached json [**file**](/docs/user-guide/resources/transformation-rule-chain.json) with a rule chain from this tutorial. Don't forget to mark new rule chain as "root".
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/make-root.png)
-
- 
 
 ## Next steps
 

@@ -226,7 +226,7 @@ We will describe connector configuration file below.
               "tag": "smm",
               "type": "int",
               "objectsCount": 1,
-              "address": 2,             
+              "address": 2,
               "value": "12334"
             }
           ],
@@ -604,7 +604,7 @@ Depending on which value the register belongs to, you must add it to the appropr
               "tag": "smm",
               "type": "int",
               "objectsCount": 1,
-              "address": 2,              
+              "address": 2,
               "value": "12334"
             }
           ],

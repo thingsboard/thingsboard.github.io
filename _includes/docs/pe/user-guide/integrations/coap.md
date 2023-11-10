@@ -190,4 +190,3 @@ Click on the device, go to the **Latest Telemetry** tab to see the “temperatur
 ## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
-    

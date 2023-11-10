@@ -7,7 +7,7 @@ description: ThingsBoard IoT platform upgrade instructions
 
 ---
 
-<h3>In order to update to new ThingsBoard releases, please follow 
+<h3>In order to update to new ThingsBoard releases, please follow
 these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-instructions/">CE</a> and 
 <a style="pointer-events: all;" href="/docs/user-guide/install/pe/upgrade-instructions/">PE</a> instructions</h3>
 
@@ -22,10 +22,10 @@ these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-ins
     <a href="#upgrading-to-120" id="markdown-toc-upgrading-to-120">Upgrading to 1.2.0</a>
     <ul>
         <li>
-            <a href="#ubuntucentos" id="markdown-toc-ubuntucentos">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos" id="markdown-toc-ubuntucentos">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows" id="markdown-toc-windows">Windows</a>        
+            <a href="#windows" id="markdown-toc-windows">Windows</a>
         </li>
     </ul>
   </li>
@@ -33,10 +33,10 @@ these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-ins
     <a href="#upgrading-to-121" id="markdown-toc-upgrading-to-121">Upgrading to 1.2.1</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-1" id="markdown-toc-ubuntucentos-1">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-1" id="markdown-toc-ubuntucentos-1">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-1" id="markdown-toc-windows-1">Windows</a>        
+            <a href="#windows-1" id="markdown-toc-windows-1">Windows</a>
         </li>
     </ul>
   </li>
@@ -44,10 +44,10 @@ these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-ins
     <a href="#upgrading-to-122" id="markdown-toc-upgrading-to-122">Upgrading to 1.2.2</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-2" id="markdown-toc-ubuntucentos-2">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-2" id="markdown-toc-ubuntucentos-2">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-2" id="markdown-toc-windows-2">Windows</a>        
+            <a href="#windows-2" id="markdown-toc-windows-2">Windows</a>
         </li>
     </ul>
   </li>
@@ -55,10 +55,10 @@ these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-ins
     <a href="#upgrading-to-123" id="markdown-toc-upgrading-to-123">Upgrading to 1.2.3</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-3" id="markdown-toc-ubuntucentos-3">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-3" id="markdown-toc-ubuntucentos-3">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-3" id="markdown-toc-windows-3">Windows</a>        
+            <a href="#windows-3" id="markdown-toc-windows-3">Windows</a>
         </li>
     </ul>
   </li>
@@ -66,10 +66,10 @@ these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-ins
     <a href="#upgrading-to-130" id="markdown-toc-upgrading-to-130">Upgrading to 1.3.0</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-4" id="markdown-toc-ubuntucentos-4">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-4" id="markdown-toc-ubuntucentos-4">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-4" id="markdown-toc-windows-4">Windows</a>        
+            <a href="#windows-4" id="markdown-toc-windows-4">Windows</a>
         </li>
     </ul>
   </li>  
@@ -77,10 +77,10 @@ these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-ins
     <a href="#upgrading-to-131" id="markdown-toc-upgrading-to-131">Upgrading to 1.3.1</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-5" id="markdown-toc-ubuntucentos-5">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-5" id="markdown-toc-ubuntucentos-5">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-5" id="markdown-toc-windows-5">Windows</a>        
+            <a href="#windows-5" id="markdown-toc-windows-5">Windows</a>
         </li>
     </ul>
   </li>  
@@ -88,10 +88,10 @@ these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-ins
     <a href="#upgrading-to-140" id="markdown-toc-upgrading-to-140">Upgrading to 1.4.0</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-6" id="markdown-toc-ubuntucentos-6">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-6" id="markdown-toc-ubuntucentos-6">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-6" id="markdown-toc-windows-6">Windows</a>        
+            <a href="#windows-6" id="markdown-toc-windows-6">Windows</a>
         </li>
     </ul>
   </li>  
@@ -99,10 +99,10 @@ these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-ins
     <a href="#upgrading-to-200" id="markdown-toc-upgrading-to-200">Upgrading to 2.0.0</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-7" id="markdown-toc-ubuntucentos-7">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-7" id="markdown-toc-ubuntucentos-7">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-7" id="markdown-toc-windows-7">Windows</a>        
+            <a href="#windows-7" id="markdown-toc-windows-7">Windows</a>
         </li>
     </ul>
   </li>  
@@ -110,10 +110,10 @@ these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-ins
     <a href="#upgrading-to-201" id="markdown-toc-upgrading-to-201">Upgrading to 2.0.1</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-8" id="markdown-toc-ubuntucentos-8">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-8" id="markdown-toc-ubuntucentos-8">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-8" id="markdown-toc-windows-8">Windows</a>        
+            <a href="#windows-8" id="markdown-toc-windows-8">Windows</a>
         </li>
     </ul>
   </li>  
@@ -121,10 +121,10 @@ these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-ins
     <a href="#upgrading-to-202" id="markdown-toc-upgrading-to-202">Upgrading to 2.0.2</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-9" id="markdown-toc-ubuntucentos-9">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-9" id="markdown-toc-ubuntucentos-9">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-9" id="markdown-toc-windows-9">Windows</a>        
+            <a href="#windows-9" id="markdown-toc-windows-9">Windows</a>
         </li>
     </ul>
   </li>  
@@ -132,10 +132,10 @@ these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-ins
     <a href="#upgrading-to-203" id="markdown-toc-upgrading-to-203">Upgrading to 2.0.3</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-10" id="markdown-toc-ubuntucentos-10">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-10" id="markdown-toc-ubuntucentos-10">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-10" id="markdown-toc-windows-10">Windows</a>        
+            <a href="#windows-10" id="markdown-toc-windows-10">Windows</a>
         </li>
     </ul>
   </li>  
@@ -143,10 +143,10 @@ these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-ins
     <a href="#upgrading-to-210" id="markdown-toc-upgrading-to-210">Upgrading to 2.1.0</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-11" id="markdown-toc-ubuntucentos-11">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-11" id="markdown-toc-ubuntucentos-11">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-11" id="markdown-toc-windows-11">Windows</a>        
+            <a href="#windows-11" id="markdown-toc-windows-11">Windows</a>
         </li>
     </ul>
   </li>  
@@ -154,10 +154,10 @@ these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-ins
     <a href="#upgrading-to-220" id="markdown-toc-upgrading-to-220">Upgrading to 2.2.0</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-12" id="markdown-toc-ubuntucentos-12">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-12" id="markdown-toc-ubuntucentos-12">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-12" id="markdown-toc-windows-12">Windows</a>        
+            <a href="#windows-12" id="markdown-toc-windows-12">Windows</a>
         </li>
     </ul>
   </li>  
@@ -165,10 +165,10 @@ these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-ins
     <a href="#upgrading-to-230" id="markdown-toc-upgrading-to-230">Upgrading to 2.3.0</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-13" id="markdown-toc-ubuntucentos-13">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-13" id="markdown-toc-ubuntucentos-13">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-13" id="markdown-toc-windows-13">Windows</a>        
+            <a href="#windows-13" id="markdown-toc-windows-13">Windows</a>
         </li>
     </ul>
   </li>  
@@ -176,10 +176,10 @@ these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-ins
     <a href="#upgrading-to-231" id="markdown-toc-upgrading-to-231">Upgrading to 2.3.1</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-14" id="markdown-toc-ubuntucentos-14">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-14" id="markdown-toc-ubuntucentos-14">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-14" id="markdown-toc-windows-14">Windows</a>        
+            <a href="#windows-14" id="markdown-toc-windows-14">Windows</a>
         </li>
     </ul>
   </li>  
@@ -648,16 +648,16 @@ thingsboard-download-1-3-0-centos,CentOS,shell,resources/1.3.0/thingsboard-cento
 
 {% capture tabspec %}thingsboard-installation-1-3-0
 thingsboard-installation-1-3-0-ubuntu,Ubuntu,shell,resources/1.3.0/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/1.3.0/thingsboard-ubuntu-installation.sh
-thingsboard-installation-1-3-0-centos,CentOS,shell,resources/1.3.0/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/1.3.0/thingsboard-centos-installation.sh{% endcapture %}  
+thingsboard-installation-1-3-0-centos,CentOS,shell,resources/1.3.0/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/1.3.0/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
-**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
+**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
 Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
 ```
 database:
     type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+```
 
 Execute upgrade script:
 ```bash
@@ -740,7 +740,7 @@ Please make sure that you set database.type parameter value (in the file **/etc/
 ```
 database:
     type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+```
 
 Execute upgrade script:
 ```bash
@@ -807,27 +807,27 @@ These steps are applicable for 1.3.1 ThingsBoard version.
 
 {% capture tabspec %}thingsboard-download-1-4-0
 thingsboard-download-1-4-0-ubuntu,Ubuntu,shell,resources/1.4.0/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/1.4.0/thingsboard-ubuntu-download.sh
-thingsboard-download-1-4-0-centos,CentOS,shell,resources/1.4.0/thingsboard-centos-download.sh,/docs/user-guide/install/resources/1.4.0/thingsboard-centos-download.sh{% endcapture %}  
+thingsboard-download-1-4-0-centos,CentOS,shell,resources/1.4.0/thingsboard-centos-download.sh,/docs/user-guide/install/resources/1.4.0/thingsboard-centos-download.sh{% endcapture %}
 {% include tabs.html %}
 
 #### ThingsBoard service upgrade
 
 {% capture tabspec %}thingsboard-installation-1-4-0
 thingsboard-installation-1-4-0-ubuntu,Ubuntu,shell,resources/1.4.0/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/1.4.0/thingsboard-ubuntu-installation.sh
-thingsboard-installation-1-4-0-centos,CentOS,shell,resources/1.4.0/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/1.4.0/thingsboard-centos-installation.sh{% endcapture %}  
+thingsboard-installation-1-4-0-centos,CentOS,shell,resources/1.4.0/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/1.4.0/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
-**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
+**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
 Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
- 
+
 ```
 database:
     type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+```
 
 Execute upgrade script:
 ```bash
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=1.3.1 
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=1.3.1
 ```
 {: .copy-code}
 
@@ -847,7 +847,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-1.4.
 #### ThingsBoard service upgrade
 
 * Stop ThingsBoard service if it is running.
- 
+
 ```text
 net stop thingsboard
 ```
@@ -858,11 +858,11 @@ net stop thingsboard
 * Unzip installation archive to ThingsBoard install dir.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set database.type parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
-  
+
 ```
   database:
       type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+```
 
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -892,23 +892,23 @@ These steps are applicable for 1.4.0 ThingsBoard version.
 
 {% capture tabspec %}thingsboard-download-2-0-0
 thingsboard-download-2-0-0-ubuntu,Ubuntu,shell,resources/2.0.0/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/2.0.0/thingsboard-ubuntu-download.sh
-thingsboard-download-2-0-0-centos,CentOS,shell,resources/2.0.0/thingsboard-centos-download.sh,/docs/user-guide/install/resources/2.0.0/thingsboard-centos-download.sh{% endcapture %}  
+thingsboard-download-2-0-0-centos,CentOS,shell,resources/2.0.0/thingsboard-centos-download.sh,/docs/user-guide/install/resources/2.0.0/thingsboard-centos-download.sh{% endcapture %}
 {% include tabs.html %}
 
 #### ThingsBoard service upgrade
 
 {% capture tabspec %}thingsboard-installation-2-0-0
 thingsboard-installation-2-0-0-ubuntu,Ubuntu,shell,resources/2.0.0/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/2.0.0/thingsboard-ubuntu-installation.sh
-thingsboard-installation-2-0-0-centos,CentOS,shell,resources/2.0.0/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/2.0.0/thingsboard-centos-installation.sh{% endcapture %}  
+thingsboard-installation-2-0-0-centos,CentOS,shell,resources/2.0.0/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/2.0.0/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
-**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
+**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
 Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
 ```
 database:
     type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+```
 
 Execute upgrade script:
 ```bash
@@ -977,23 +977,23 @@ These steps are applicable for 2.0.0 ThingsBoard version.
 
 {% capture tabspec %}thingsboard-download-2-0-1
 thingsboard-download-2-0-1-ubuntu,Ubuntu,shell,resources/2.0.1/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/2.0.1/thingsboard-ubuntu-download.sh
-thingsboard-download-2-0-1-centos,CentOS,shell,resources/2.0.1/thingsboard-centos-download.sh,/docs/user-guide/install/resources/2.0.1/thingsboard-centos-download.sh{% endcapture %}  
+thingsboard-download-2-0-1-centos,CentOS,shell,resources/2.0.1/thingsboard-centos-download.sh,/docs/user-guide/install/resources/2.0.1/thingsboard-centos-download.sh{% endcapture %}
 {% include tabs.html %}
 
 #### ThingsBoard service upgrade
 
 {% capture tabspec %}thingsboard-installation-2-0-1
 thingsboard-installation-2-0-1-ubuntu,Ubuntu,shell,resources/2.0.1/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/2.0.1/thingsboard-ubuntu-installation.sh
-thingsboard-installation-2-0-1-centos,CentOS,shell,resources/2.0.1/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/2.0.1/thingsboard-centos-installation.sh{% endcapture %}  
+thingsboard-installation-2-0-1-centos,CentOS,shell,resources/2.0.1/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/2.0.1/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
-**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
+**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
 Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
  
 ```
 database:
     type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+```
 
 #### Start the service
 
@@ -1011,7 +1011,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.0.
 #### ThingsBoard service upgrade
 
 * Stop ThingsBoard service if it is running.
- 
+
 ```text
 net stop thingsboard
 ```
@@ -1022,12 +1022,12 @@ net stop thingsboard
 * Unzip installation archive to ThingsBoard install dir.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set database.type parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
-  
+
 ```
   database:
       type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
-  
+```
+
 #### Start the service
 
 ```text
@@ -1061,7 +1061,7 @@ Please make sure that you set database.type parameter value (in the file **/etc/
 ```
 database:
     type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+```
 
 #### Start the service
 
@@ -1079,7 +1079,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.0.
 #### ThingsBoard service upgrade
 
 * Stop ThingsBoard service if it is running.
- 
+
 ```text
 net stop thingsboard
 ```
@@ -1090,12 +1090,12 @@ net stop thingsboard
 * Unzip installation archive to ThingsBoard install dir.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set database.type parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
-  
+
 ```
   database:
       type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
-  
+```
+
 #### Start the service
 
 ```text
@@ -1113,23 +1113,23 @@ These steps are applicable for 2.0.2 ThingsBoard version.
 
 {% capture tabspec %}thingsboard-download-2-0-3
 thingsboard-download-2-0-3-ubuntu,Ubuntu,shell,resources/2.0.3/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/2.0.3/thingsboard-ubuntu-download.sh
-thingsboard-download-2-0-3-centos,CentOS,shell,resources/2.0.3/thingsboard-centos-download.sh,/docs/user-guide/install/resources/2.0.3/thingsboard-centos-download.sh{% endcapture %}  
+thingsboard-download-2-0-3-centos,CentOS,shell,resources/2.0.3/thingsboard-centos-download.sh,/docs/user-guide/install/resources/2.0.3/thingsboard-centos-download.sh{% endcapture %}
 {% include tabs.html %}
 
 #### ThingsBoard service upgrade
 
 {% capture tabspec %}thingsboard-installation-2-0-3
 thingsboard-installation-2-0-3-ubuntu,Ubuntu,shell,resources/2.0.3/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/2.0.3/thingsboard-ubuntu-installation.sh
-thingsboard-installation-2-0-3-centos,CentOS,shell,resources/2.0.3/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/2.0.3/thingsboard-centos-installation.sh{% endcapture %}  
+thingsboard-installation-2-0-3-centos,CentOS,shell,resources/2.0.3/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/2.0.3/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
-**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
+**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
 Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
- 
+
 ```
 database:
     type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+```
 
 #### Start the service
 
@@ -1147,7 +1147,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.0.
 #### ThingsBoard service upgrade
 
 * Stop ThingsBoard service if it is running.
- 
+
 ```text
 net stop thingsboard
 ```
@@ -1162,8 +1162,8 @@ net stop thingsboard
 ```
   database:
       type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
-  
+```
+
 #### Start the service
 
 ```text
@@ -1181,23 +1181,23 @@ These steps are applicable for 2.0.3 ThingsBoard version.
 
 {% capture tabspec %}thingsboard-download-2-1-0
 thingsboard-download-2-1-0-ubuntu,Ubuntu,shell,resources/2.1.0/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/2.1.0/thingsboard-ubuntu-download.sh
-thingsboard-download-2-1-0-centos,CentOS,shell,resources/2.1.0/thingsboard-centos-download.sh,/docs/user-guide/install/resources/2.1.0/thingsboard-centos-download.sh{% endcapture %}  
+thingsboard-download-2-1-0-centos,CentOS,shell,resources/2.1.0/thingsboard-centos-download.sh,/docs/user-guide/install/resources/2.1.0/thingsboard-centos-download.sh{% endcapture %}
 {% include tabs.html %}
 
 #### ThingsBoard service upgrade
 
 {% capture tabspec %}thingsboard-installation-2-1-0
 thingsboard-installation-2-1-0-ubuntu,Ubuntu,shell,resources/2.1.0/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/2.1.0/thingsboard-ubuntu-installation.sh
-thingsboard-installation-2-1-0-centos,CentOS,shell,resources/2.1.0/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/2.1.0/thingsboard-centos-installation.sh{% endcapture %}  
+thingsboard-installation-2-1-0-centos,CentOS,shell,resources/2.1.0/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/2.1.0/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
-**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
+**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
 Please make sure that you set database.type parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
- 
+
 ```
 database:
     type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+```
 
 #### Start the service
 
@@ -1215,7 +1215,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.1.
 #### ThingsBoard service upgrade
 
 * Stop ThingsBoard service if it is running.
- 
+
 ```text
 net stop thingsboard
 ```
@@ -1226,11 +1226,11 @@ net stop thingsboard
 * Unzip installation archive to ThingsBoard install dir.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set database.type parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
-  
+
 ```
   database:
       type: "${DATABASE_TYPE:cassandra}" # cassandra OR sql
-```       
+```
 
 #### Start the service
 
@@ -1292,7 +1292,7 @@ Download ThingsBoard installation archive for Windows: [thingsboard-windows-2.2.
 #### ThingsBoard service upgrade
 
 * Stop ThingsBoard service if it is running.
- 
+
 ```text
 net stop thingsboard
 ```
@@ -1303,14 +1303,14 @@ net stop thingsboard
 * Unzip installation archive to ThingsBoard install dir.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
-  
+
 ```
   database:
     entities:
       type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
     ts:
       type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
-```       
+```
 
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -1392,14 +1392,14 @@ net stop thingsboard
 * Unzip installation archive to ThingsBoard install dir.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set **database.entities.type** and **database.ts.type** parameters values (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" in order to upgrade your cassandra database:
-  
+
 ```
   database:
     entities:
       type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
     ts:
       type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
-```       
+```
 
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 

@@ -1,6 +1,8 @@
 
 * TOC
 {:toc}
+## Assigning custom attributes to entities and attributes managing
+
 
 ThingsBoard provides the ability to assign custom attributes to your entities and manage these attributes.
 Those attributes are stored in the database and may be used for data visualization and data processing.

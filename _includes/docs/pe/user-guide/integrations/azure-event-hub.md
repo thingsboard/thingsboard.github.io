@@ -102,7 +102,7 @@ At this time, we have own IoT hub with Device
 For now, we ready to test our integration. So we have to go to Rule Chain (tab in Thingsboard menu), choose one of your rule chains and do next steps:
 
 1) In field Search Nodes type 'gen' and find in the menu **generator**. Drag it on the Canvas. In pop-up specify **name** of Generator, **number of messages** and generate function, you can use our example. Next click 'Add' 
-   
+
 {% include images-gallery.html imageCollection="generator" preview="false" %}
 
 ```javascript

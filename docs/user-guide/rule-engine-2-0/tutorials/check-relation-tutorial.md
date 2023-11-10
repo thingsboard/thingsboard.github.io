@@ -14,41 +14,41 @@ The purpose of this tutorial is to show how the [**Check Relation**](/docs/user-
 Let’s assume the following use case:
 
  - You have 2 devices:
- 
+
    - **Smoke Detector** with the **Smoke Sensor** which sends data to ThingsBoard when it appears.
-   
+
    - **Fire Alarm System** which provides a fire alarm, when the smoke is present.
-   
+
 However, there are different ways for the realization of this case, for example, it can be implemented using the **Switch** node that routes incoming Message to one or multiple output chains.<br>
-For more information about how to use the **Switch** node, please check the link to **The article of Switch Node** in the  [**See Also**](/docs/user-guide/rule-engine-2-0/tutorials/check-relation-tutorial/#see-also) section.   
- 
+For more information about how to use the **Switch** node, please check the link to **The article of Switch Node** in the  [**See Also**](/docs/user-guide/rule-engine-2-0/tutorials/check-relation-tutorial/#see-also) section.
+
 ## Prerequisites
 
 You need to read the following guides before you start this tutorial:
 
   * [Getting Started](/docs/getting-started-guides/helloworld/).
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
-  
-# Adding the devices and creating the relation between them
-  
+
+## Adding the devices and creating the relation between them
+
   Add two Device entity in ThingsBoard:
-  
+
    - Smoke Detector is represented as a Device. Its name is **Smoke Detector** and its type is **Smoke Sensor**.
-  
+
    - Fire Alarm System is represented as a Device. Its name is **Fire Alarm System** and its type is **Fire Alarm Device**.
-  
+
   Create a relation of the type Uses:
-  
+
    - from Smoke Detector to Fire Alarm System;
-  
+
   The following screenshots show how to do this:
-  
+
    ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/smoke-sensor.png) ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/fire-alarm-system.png) <br>
    ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/add-relation.png)
-   
+
 <br>
 
-# Message flow  
+## Message flow
 
 In this section, we explain the purpose of each node in this tutorial:
 
@@ -70,13 +70,13 @@ In this section, we explain the purpose of each node in this tutorial:
   - Forwards incoming Message to specified Rule Chain **Related Fire Alarm System**. 
 
 <br>
-  
-# Configure Rule Chains
+
+## Configure Rule Chains
 
 In this tutorial, we modified our **Root Rule Chain** and also created Rule Chain **Related Fire Alarm System**
 
 <br>The following screenshots show how the above Rule Chains should look like:
- 
+
   - **Related Fire Alarm System:**
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/fire-alarm-chain.png)
@@ -85,12 +85,12 @@ In this tutorial, we modified our **Root Rule Chain** and also created Rule Chai
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/chain.png)
 
-<br> 
+<br>
 
 Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/check-relation-tutorial.json) for the **Root Rule Chain**. Don't forget to mark this rule chain as **root**.
 
-<br> 
-  
+<br>
+
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/root-chain.png)
 
 Also, you need to create **Related Fire Alarm System** Rule Chain or you can download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/related_fire_alarm_system.json) for this Chain and import it.
@@ -101,7 +101,7 @@ Also, you need to create **Related Fire Alarm System** Rule Chain or you can dow
 
 #### Create new Rule Chain (**Related Fire Alarm System**)
 
-Go to **Rule Chains** -> **Add new Rule Chain** 
+Go to **Rule Chains** -> **Add new Rule Chain**
 
 Configuration:
 
@@ -119,11 +119,11 @@ In this rule chain, you will create 4 nodes as it will be explained in the follo
 
  - Add the **Check Relation** node and connect it to the **Input** node.<br>
 
-    This node will check the relation from the Device, **Fire Alarm System**, to the originator of the message **Smoke Detector** using the type and direction of relation. 
+    This node will check the relation from the Device, **Fire Alarm System**, to the originator of the message **Smoke Detector** using the type and direction of relation.
     If the relation exists, the message will be sent through the True chain.
 
- - Fill in the fields with the input data shown in the following table: 
- 
+ - Fill in the fields with the input data shown in the following table:
+
  <table style="width: 25%">
    <thead>
        <tr>
@@ -134,7 +134,7 @@ In this rule chain, you will create 4 nodes as it will be explained in the follo
        <tr>
            <td>Name</td>
            <td>Check Relation</td>
-       </tr>     
+       </tr>
        <tr>
            <td>Direction</td>
            <td>To</td>
@@ -153,14 +153,14 @@ In this rule chain, you will create 4 nodes as it will be explained in the follo
        </tr>
     </tbody>
  </table>
-  
+
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/check-relation.png)
 
 ###### Node B: **Change Orignator**
 
 - Add the **Change Orignator** node and connect it to the **Check Relation** node with a relation type **True**. <br>
   This node will change the originator from the Device **Smoke Detector** to the related Device **Fire Alarm System** and the submitted message will be processed as a message from another entity, namely **Fire Alarm System**.
-  
+
 - Fill in the fields with the input data shown in the following table: 
 
 <table style="width: 25%">
@@ -198,7 +198,7 @@ In this rule chain, you will create 4 nodes as it will be explained in the follo
 </table>
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/change-originator.png)
- 
+
 ###### Node C: **Script Transformation**
  - Add the **Script Transformation** node and connect it to the **Change Orignator** node with a relation type **Success**.
 
@@ -223,21 +223,21 @@ This node will transform an original message into RPC request message.
           </tr>
        </tbody>
     </table>
-	
+
  - In order to do this, add the following Script:
- 
+
   {% highlight javascript %}
     var newMsg = {};
     if(msg.smoke == 'true'){
-          newMsg.method = 'ON';  
-    } 
+        newMsg.method = 'ON';
+    }
     newMsg.params={};
     return {msg: newMsg, metadata: metadata, msgType: msgType};{% endhighlight %}
 
 
  - Enter the Name field as **New RPC message**.
-  
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/transformation-node.png)  
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/transformation-node.png)
 
 ###### Node D: **RPC call request** node
 - Add the **RPC call request** node and connect it to the **Script Transformation** node with a relation type **Success**. <br>
@@ -249,7 +249,6 @@ This node will transform an original message into RPC request message.
 
 This Rule chain is ready and we should save it.
 
-
 #### Modify Root Rule Chain
 
 The initial Rule Chain has been modified by adding the following nodes:
@@ -257,25 +256,25 @@ The initial Rule Chain has been modified by adding the following nodes:
 ###### Node E: **Filter Script**
 - Add the **Filter Script** node and connect it to the **Save Timeseries** node with a relation type **Success**. <br>
   This node will check if data of incoming message is **smoke** using the following script:
-  
+
   {% highlight javascript %}return msg.smoke== 'true';{% endhighlight %}
-  
-- Enter the Name field as **Smoke Alarm Filter**.  
-  
+
+- Enter the Name field as **Smoke Alarm Filter**.
+
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/alarm-filter.png)
- 
+
 ###### Node F: **Clear Alarm**
 - Add the **Clear Alarm** node and connect it to the **Filter Script** node with a relation type **False**. <br>
   This node loads the latest Alarm with configured Alarm Type for Message Originator **Smoke Detector** and Clears the Alarm if it exists.
-  
+
 - Enter the Name field as **Clear Smoke Alarm** and the Alarm type as **Smoke Alarm**.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/clear-alarm.png)
-  
+
 ###### Node G: **Create alarm**
 - Add the **Create alarm** node and connect it to the **Filter Script** node with a relation type **True**. <br>
-  This node tries to load the latest Alarm with configured Alarm Type for Message Originator, namely **Smoke Detector**.  
-  
+  This node tries to load the latest Alarm with configured Alarm Type for Message Originator, namely **Smoke Detector**.
+
  - Enter the Name field as **Create Smoke Alarm** and the Alarm type as **Smoke Alarm**.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/create-alarm.png)
@@ -287,8 +286,6 @@ The initial Rule Chain has been modified by adding the following nodes:
 - Enter the Name field as **Related Fire Alarm System**.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/add-alarm-chain.png)
-  
-
 
 The following screenshot shows how the final **Root Rule Chain** should look like:
 
@@ -297,17 +294,17 @@ The following screenshot shows how the final **Root Rule Chain** should look lik
 <br>
 <br>
 
-# How to verify the Rule Chain and Post telemetry
+## How to verify the Rule Chain and Post telemetry
 
 - Use the following javascript code to emulate the **Fire Alarm System** device.
 
   - [**FireAlarmEmulator.js**](/docs/user-guide/rule-engine-2-0/tutorials/resources/FireAlarmEmulator.js).
-  
+
   - To run the script, you need to do the following steps:
-  
+
   - Copy the **Fire Alarm System** device access token, then paste them in the script.  <br>
-  You can copy the access token from the Device page. <br> <br>  
-  
+  You can copy the access token from the Device page. <br> <br>
+
 
 - Use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api), for posting telemetry from the device **Smoke Detector**. <br>
 
@@ -324,14 +321,14 @@ curl -v -X POST -d '{"smoke":"true"}' http://demo.thingsboard.io/api/v1/$ACCESS_
 Also, you can:
 
   - configure the Dashboard by adding an alarm widget to visualize the alarms.
-  
+
   - define an additional logic for alarm processing, for example, sending an email.
 
 Please refer to the third and fourth links under the **See Also** section to see how to do this.
-  
+
 <br>
 
-# See Also
+## See Also
 
 - [Switch Node](/docs/user-guide/rule-engine-2-0/filter-nodes/#switch-node) guide - for more information about how to use Switch Node in Thignsboard.
 

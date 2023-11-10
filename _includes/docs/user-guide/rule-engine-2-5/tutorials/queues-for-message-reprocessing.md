@@ -54,9 +54,9 @@ public class Controller {
     @ResponseStatus(value = HttpStatus.OK)
     public DeferredResult<ResponseEntity> processRequest(@RequestBody JsonNode msg) {
         DeferredResult<ResponseEntity> deferredResult = new DeferredResult<>();
-        
+
         log.info("Received message: {}", msg);
-        
+
         long counter = atomicLong.incrementAndGet();
         if (counter % 3 == 0) {
             log.warn("Bad request: {}", msg);

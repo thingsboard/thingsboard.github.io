@@ -76,7 +76,6 @@ Fill the **AppSKey** by generation button.
 
 Press **Add end device** button.
 
-
 ## Integration with the ThingsBoard
 
 We need to create Integration on The Things Industries, to do this open **Integrations** - **MQTT** and press **Generate new API key**. 
