@@ -4,6 +4,7 @@ assignees:
 - ashvayka
 title: Getting Started with ThingsBoard
 description: Getting started with ThingsBoard open-source IoT platform and simulated IoT devices
+
 step1:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-1-ce.png 
@@ -19,7 +20,7 @@ step1:
         title: 'The window to check the device&#39;s connection to ThingsBoard will open. The following step is optional. Select the messaging protocol and your operating system. Then, install the necessary client tools and copy the command;'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-connectivity-3-ce.png
-        title: 'Execute previously copied command. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings. Then, close connectivity window;'
+        title: 'Execute previously copied command. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings. Then, close the connectivity window;'
     5:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png 
         title: 'Your first device has been added. As new devices are added, they will be added to the top of the table, since the table sort devices using the time of the creation by default;'
@@ -55,7 +56,7 @@ step31:
         title: 'Once you have created the dashboard, it will be automatically opened. Save it by clicking the "Save" button in the upper right corner.'
     3:
         image: /images/user-guide/dashboards/overview/create-dashboard-4-ce.png
-        title: 'Your first dashboard has been successfully created. As you continue to add new dashboards, they will appear at the top of the list. This default sort is based on the creation timestamp.'
+        title: 'Your first dashboard has been successfully created. As you continue to add new dashboards, they will appear at the top of the list. This default sorting is based on the creation timestamp.'
 
 step32:
     0:
@@ -141,10 +142,10 @@ step4:
         title: 'Click the "Add key filter" button to specify a condition;'
     5:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-7-ce.png
-        title: 'Select key type, input key name, select value type, and click "Add" filter;'
+        title: 'Select a key type, enter a key name, and select a value type. Then, click "Add" button in the "Filters" section;'
     6:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-8-ce.png
-        title: 'Select operation and input threshold value. Click "Add";'
+        title: 'Select an operation and enter a threshold value. Click "Add" button in the lower right corner;'
     7:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-9-ce.png
         title: 'Click "Save";'
@@ -241,7 +242,7 @@ step74:
 step75:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-1-ce.png
-        title: 'Paste the previously copied link into a new browser tab and press Enter. Come up with and enter a password twice, then press "Create Password". You will automatically login as a customer user;'
+        title: 'Paste the previously copied link into a new browser tab and press Enter. Come up with and enter a password twice, then press "Create Password". You will automatically log in as a customer user;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-2-ce.png
         title: 'You have logged in as a Customer User. You may browse the data and acknowledge/clear alarms.'
@@ -369,7 +370,7 @@ In the "Entities table" widget, there are two columns.
 The first column displays the device's name, and the second column displays the value of the "temperature" key (device telemetry).
 So, each column corresponds to an added key.
 
-Now you are able to a send new telemetry reading (as in [Step 1](#step-1-provision-device)), and it will immediately appear in the table.
+Now you are able to send a new telemetry reading (as in [Step 1](#step-1-provision-device)), and it will immediately appear in the table.
 
 ### Step 3.3 Add a Chart widget
 
@@ -381,7 +382,7 @@ We should also configure the time window to use the chart widget.
 
 {% include images-gallery.html imageCollection="step33" showListImageTitles="true" %}
 
-Congratulations! You have added the chart widget. Now you are able to send new telemetry reading, and it will immediately appear in the chart.
+Congratulations! You have added the chart widget. Now you are able to send a new telemetry reading, and it will immediately appear in the chart.
 
 ### Step 3.4 Add an Alarms table widget
 
@@ -433,7 +434,7 @@ Now it's time to create a Customer and a Customer User and make sure they will h
 
 ### Step 7.1 Create customer
 
-Let's create a customer with title "My New Customer". Please see instruction below:
+Let's create a customer with the title "My New Customer". Please see the instruction below:
 
 {% include images-gallery.html imageCollection="step71" showListImageTitles="true" %}
 

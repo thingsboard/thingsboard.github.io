@@ -5,6 +5,7 @@ assignees:
 title: Getting Started with ThingsBoard Professional Edition
 description: Getting started with ThingsBoard open-source IoT platform and simulated IoT devices
 redirect_from: "/docs/pe/getting-started-guides/helloworld/"
+
 step1:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-1-pe.png
@@ -20,7 +21,7 @@ step1:
         title: 'The window to check the device&#39;s connection to ThingsBoard will open. The following step is optional. Select the messaging protocol and your operating system. Then, install the necessary client tools and copy the command;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-connectivity-3-pe.png
-        title: 'Execute previously copied command. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings. Then, close connectivity window;'
+        title: 'Execute previously copied command. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings. Then, close the connectivity window;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png
         title: 'Your first device has been added. As new devices are added, they will be added to the top of the table, since the table sorts devices using the time of the creation by default;'
@@ -145,10 +146,10 @@ step4:
         title: 'Click the "Add key filter" button to specify a condition;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-7-pe.png
-        title: 'Select key type, input key name, select value type, and click "Add" filter;'
+        title: 'Select a key type, enter a key name, and select a value type. Then, click "Add" button in the "Filters" section;'
     6:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-8-pe.png
-        title: 'Select operation and input threshold value. Click "Add";'
+        title: 'Select an operation and enter a threshold value. Click "Add" button in the lower right corner;'
     7:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-9-pe.png
         title: 'Click "Save";'

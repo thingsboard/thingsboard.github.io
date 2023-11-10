@@ -88,7 +88,7 @@ In the "Entities table" widget, there are two columns.
 The first column displays the device's name, and the second column displays the value of the "temperature" key (device telemetry). 
 So, each column corresponds to an added key.
 
-Now you are able to send new telemetry reading (as in [Step 1](#step-1-provision-device)), and it will immediately appear in the table.
+Now you are able to send a new telemetry reading (as in [Step 1](#step-1-provision-device)), and it will immediately appear in the table.
 
 ### Step 3.3 Add a Chart widget
 
@@ -100,7 +100,7 @@ We should also configure the time window to use the chart widget.
 
 {% include images-gallery.html imageCollection="step33" showListImageTitles="true" %}
 
-Congratulations! You have added the chart widget. Now you are able to send new telemetry reading, and it will immediately appear in the chart. 
+Congratulations! You have added the chart widget. Now you are able to send a new telemetry reading, and it will immediately appear in the chart. 
 
 ### Step 3.4 Add an Alarms table widget
 
