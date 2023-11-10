@@ -36,7 +36,7 @@ description: IoT solutions
                 </tr>
                 <tr>
                     <td>Setting thresholds and sending notifications</td>
-                    <td>Pre-process incoming telemetry and calculate business metrics</td>
+                    <td>Processing incoming telemetry and calculate business metrics</td>
                 </tr>
                 <tr>
                     <td></td>
