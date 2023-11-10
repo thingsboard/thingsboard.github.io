@@ -57,6 +57,11 @@ wl:
     0:
         image: /images/user-guide/ui/widgets/widget-library/widgets-library-list-ce.png
 
+wl-air-quality:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-air-quality-bundle-ce.png
+        title: 'For visualizing air quality data.'
+
 wl-alarm-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-alarm-bundle-ce.png
@@ -142,15 +147,35 @@ wl-gateway-bundle:
         image: /images/user-guide/ui/widgets/widget-library/wl-gateway-bundle-ce.png
         title: 'For managing extensions.'
 
+wl-indoor-environment-bundle:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-indoor-environment-bundle-ce.png
+        title: 'For changing entity attributes.'
+
 wl-input-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-input-bundle-ce.png
+        title: 'For changing entity attributes.'
+        
+wl-liquid-level-bundle:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-liquid-level-bundle-ce.png
         title: 'For changing entity attributes.'
 
 wl-navigation-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-navigation-bundle-ce.png
         title: 'For defining home dashboard of the user.'
+
+wl-outdoor-environment-bundle:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-outdoor-environment-bundle-ce.png
+        title: 'For scheduling various types of events with flexible schedule configuration.'
+    
+wl-status-indicators-bundle:
+    0:
+        image: /images/user-guide/ui/widgets/widget-library/wl-status-indicators-bundle-ce.png
+        title: 'For scheduling various types of events with flexible schedule configuration.'
 
 wl-scheduling-bundle:
     0:

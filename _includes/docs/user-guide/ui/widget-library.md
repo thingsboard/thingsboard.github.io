@@ -130,13 +130,19 @@ You can also find the widget you need by its name on the "Widgets" tab. Here, al
 
 {% include images-gallery.html imageCollection="wl" %}
 
+### Air quality
+
+The Air quality widgets bundle includes widgets for visualizing air quality data.
+
+{% include images-gallery.html imageCollection="wl-air-quality" %}
+
 ### Alarm widgets
 
 The Alarm widgets bundle is useful for visualization of alarms for specific entities, both in real-time and history modes.
 
 {% include images-gallery.html imageCollection="wl-alarm-bundle" %}
 
-### Analog Gauges
+### Analog gauges
 
 The Analog Gauges bundle is useful for visualization of temperature, humidity, speed, and other integer or float values.
 
@@ -166,13 +172,13 @@ The Counter widgets bundle is useful for counting and visualizing the current nu
 
 {% include images-gallery.html imageCollection="wl-count-bundle" %}
 
-### Date widgets 
+### Date
 
 The Date widgets bundle is useful for changing the data range for other widgets on the dashboard.
 
 {% include images-gallery.html imageCollection="wl-date-bundle" %}
 
-### Digital Gauges
+### Digital gauges
 
 The Digital Gauges bundle is useful for visualization of temperature, humidity, speed and other integer or float values.
 
@@ -196,7 +202,7 @@ The Entity admin widgets display a list of entities with their data, counting en
 
 {% include images-gallery.html imageCollection="wl-entity-bundle" %}
 
-### Files widgets
+### Files
 
 {% capture difference %}
 **Available only in PE and PaaS.**
@@ -231,13 +237,25 @@ The HTML widgets bundle is useful for injecting custom HTML code. Or for display
 
 {% include images-gallery.html imageCollection="wl-html" %}
 
+### Indoor Environment
+
+The Indoor Environment widget bundle is useful for visualizing indoor environmental data.
+
+{% include images-gallery.html imageCollection="wl-indoor-environment-bundle" %}
+
 ### Input widgets
 
 The Input widgets bundle is useful for modifying the attributes of an entity.
 
 {% include images-gallery.html imageCollection="wl-input-bundle" %}
 
-### Maps widgets
+### Liquid level
+
+The Liquid level widgets bundle includes widgets for visualizing the level of liquid inside the tank.
+
+{% include images-gallery.html imageCollection="wl-liquid-level-bundle" %}
+
+### Maps
 
 The Map widgets bundle is useful for visualizing the geographic location of devices and tracking device routes in both real-time and history modes.
 
@@ -248,6 +266,18 @@ The Map widgets bundle is useful for visualizing the geographic location of devi
 The Navigation widgets bundle is useful for defining the home dashboard of the user.
 
 {% include images-gallery.html imageCollection="wl-navigation-bundle" %}
+
+### Outdoor Environment
+
+The Outdoor Environment widget bundle includes widgets for visualizing outdoor environmental data.
+
+{% include images-gallery.html imageCollection="wl-outdoor-environment-bundle" %}
+
+### Status indicators
+
+The Status indicators widget bundle includes widgets for visualizing battery level, signal strength, and progress bar.
+
+{% include images-gallery.html imageCollection="wl-status-indicators-bundle" %}
 
 ### Scheduling widgets
 
