@@ -4,43 +4,43 @@ Thingsboard support following asset management features using Web UI and [REST A
 * TOC
 {:toc}
 
-### Add and delete assets
+## Add and delete assets
 
 Tenant administrator is able to register new assets or delete them from Thingsboard.
 
 ![image](https://img.thingsboard.io/user-guide/ui/assets.png)
 
-### Get Asset Id
+## Get Asset Id
   
 Tenant administrator and customer users are able to copy asset id to clipboard using "Copy Asset Id" button.
 
  ![image](https://img.thingsboard.io/user-guide/ui/asset-id.png)
 
-### Assign assets to customers
+## Assign assets to customers
 
 Tenant administrator is able to assign assets to certain [customer](/docs/{{docsPrefix}}user-guide/ui/customers/).
 This will allow Customer users to fetch asset data using REST APIs or Web UI.
  
  ![image](https://img.thingsboard.io/user-guide/ui/assign-asset-to-customer.png)
 
-### Manage asset attributes
+## Manage asset attributes
 
 Tenant administrator and customer users are able to manage asset server-side [attributes](/docs/{{docsPrefix}}user-guide/attributes).
 
  ![image](https://img.thingsboard.io/user-guide/ui/asset-attributes.png)
 
-### Browse asset alarms
+## Browse asset alarms
 
 Tenant administrator and customer users are able to browse asset [alarms](/docs/{{docsPrefix}}user-guide/alarms).
 
  ![image](https://img.thingsboard.io/user-guide/ui/asset-alarms.png)
  
-### Browse asset events
+## Browse asset events
   
 Tenant administrator and customer users are able to browse events related to particular asset using "Events" tab.
 Lifecycle events and statistics are coming soon.
 
-### Manage asset relations
+## Manage asset relations
  
 Tenant administrator and customer users are able to manage asset [relations](/docs/{{docsPrefix}}user-guide/entities-and-relations).
 

@@ -27,7 +27,7 @@ Characteristics IDs:
 00002A00-0000-1000-8000-00805F9B34FB - identifier of standard device name characteristic ([GATT Specification](https://www.bluetooth.com/specifications/gatt/services/))  
 226CAA55-6476-4566-7562-66734470666D - identifier of a custom temperature and humidity characteristic ([How to get characteristics list from BLE device](#how-to-get-characteristics-identifiers-list-from-ble-device))    
 
-### Step 1. Required libraries
+## Step 1. Required libraries
 
 Before we start configure our BLE connector within the gateway.
 These libraries depend on type of your OS:
@@ -42,7 +42,7 @@ Red Hat based<br>%,%red-hat%,%templates/iot-gateway/ble-requirements-rpm.md{% en
 
  
 
-### Step 2. Configuring the BLE connector
+## Step 2. Configuring the BLE connector
 
 We need to create ble setup file and put configuration there. For example:
 
@@ -120,7 +120,7 @@ If you have a different device, you should provide your device characteristic id
 
 We have saved the configuration file as **ble.json** in the config folder (the directory, that contains the general configuration file - **tb_gateway.yaml**).  
 
-### Step 3. Turn on the connector 
+## Step 3. Turn on the connector 
 
 To use the connector, we must turn it on in the main configuration file (**[tb_gateway.yaml](/docs/iot-gateway/configuration/#connectors-configuration)**)
 
@@ -133,7 +133,7 @@ In "connectors" section we should uncomment following strings:
      configuration: ble.json
 ```
 
-### Step 4. Run the gateway
+## Step 4. Run the gateway
 
 To run the gateway with BLE Connector we will use root permissions.  
 Command for run depends on type of installation.  
@@ -160,7 +160,7 @@ config_file_path = "YOUR_PATH_HERE"
 TBGatewayService(config_file_path)
 ```
 
-### Step 5. Check information on ThingsBoard
+## Step 5. Check information on ThingsBoard
 
 Check data in your ThingsBoard instance, that you have been configured in the [general configuration guide](/docs/iot-gateway/configuration/).  
     - Go to the your ThingsBoard instance and login.  
@@ -173,7 +173,7 @@ Go to the device details, **ATTRIBUTES** tab, which contains all client-side att
 <br>
 ![](https://img.thingsboard.io/gateway/attribute-on-ble-device.png)
 
-### Step 6. Change the device name using shared attributes
+## Step 6. Change the device name using shared attributes
 
 Let's try to change the device name.
 We should follow several steps:

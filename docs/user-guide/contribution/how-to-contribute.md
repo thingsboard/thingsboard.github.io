@@ -197,6 +197,6 @@ Be patient, pull request may take several days to review.
 
 - [Widgets Development Guide](/docs/user-guide/contribution/widgets-development/) guide that describes how to create your own widgets.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "Contribution" %}{% include templates/guides-banner.md %}

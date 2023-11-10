@@ -24,7 +24,7 @@ ThingsBoard performance leverages three main projects:
  
 We also use [Zookeeper](https://zookeeper.apache.org/) for coordination and [gRPC](http://www.grpc.io/) in cluster mode. See [platform architecture](/docs/reference/) for more details.
 
-### Data flow and test tools
+## Data flow and test tools
  
 IoT devices connect to ThingsBoard server via MQTT and issue "publish" commands with JSON payload.
 Size of single publish message is approximately 100 bytes. 

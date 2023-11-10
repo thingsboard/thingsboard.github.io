@@ -117,6 +117,6 @@ transport:
     device: "${TB_TRANSPORT_RATE_LIMITS_DEVICE:10:1,300:60}"
 ```
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

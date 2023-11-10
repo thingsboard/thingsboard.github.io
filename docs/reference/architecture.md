@@ -44,7 +44,7 @@ System Telemetry service allows to manage attributes and fetch timeseries data u
 System RPC service provides REST API to push custom commands to devices.
 Learn more about ThingsBoard REST APIs [here](/docs/reference/rest-api/)
 
-### Actor model
+## Actor model
 
 [Actor model](https://en.wikipedia.org/wiki/Actor_model) enables high performance concurrent processing of messages from devices as long as server-side API calls.
 ThingsBoard uses own Actor System implementation (sharpened for our use cases) with following actor hierarchies.
@@ -65,7 +65,7 @@ The brief description of each actor's functionality is listed below:
  * **Rule Node Actor** - process incoming messages, and report results back to rule chain actor. 
  An instance of this actor is always present in memory.
  
-### Clustering mode
+## Clustering mode
 
 ###### Service Discovery
 
@@ -88,7 +88,7 @@ In the worst-case scenario, D1 Device Actor will be located on another server B 
 
  ![image](https://img.thingsboard.io/reference/cluster-mode-rpc-request.svg)
 
-### Security
+## Security
 
 ### Transport encryption
 
@@ -101,7 +101,7 @@ ThingsBoard is designed to support many types of device credentials.
 Current release provides support of token based credentials for all [protocols](/docs/reference/protocols/) 
 and support of X.509 certificate based credentials for MQTT protocol. See [MQTT over SSL](/docs/user-guide/mqtt-over-ssl/) guide for more details.
 
-### Third-party tools
+## Third-party tools
 
 ThingsBoard uses following main third-party projects:
  

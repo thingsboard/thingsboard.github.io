@@ -4,7 +4,7 @@ Transformation Nodes are used for changing incoming Message fields like Originat
 {:toc}
 
 
-### Change originator
+## Change originator
 
 <table  style="width:250px;">
    <thead>
@@ -42,7 +42,7 @@ Outbound Message will have new originator Id.
 
 <br>
 
-### Script Transformation Node
+## Script Transformation Node
 
 <table  style="width:250px;">
    <thead>
@@ -118,7 +118,7 @@ You can see real life example, how to use this node in those tutorials:
 - [Transform incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/)
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial#add-transform-script-node)
 
-### To Email Node
+## To Email Node
 
 <table  style="width:250px;">
    <thead>

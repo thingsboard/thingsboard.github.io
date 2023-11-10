@@ -190,39 +190,39 @@ mqttWindows:
 {% assign docsPrefix = "pe/edge/" %}
 {% assign appPrefix = "ThingsBoard PE" %}
 
-### Use case
+## Use case
 
 {% include templates/edge/use-cases/manage-alarms/use-case.md %}
 
-### Prerequisites
+## Prerequisites
 
 {% include templates/edge/use-cases/prerequisites.md %}
 
-### Configure Alarm Rules
+## Configure Alarm Rules
 
 {% include templates/edge/use-cases/manage-alarms/configure-alarm-rules.md %}
 
-### Provision devices
+## Provision devices
 
 {% include templates/edge/use-cases/manage-alarms/provision-devices.md %}
 
-### Configure edge rule engine to handle alarms and send RPC calls
+## Configure edge rule engine to handle alarms and send RPC calls
 
 {% include templates/edge/use-cases/manage-alarms/configure-edge-rule-engine.md %}
 
-### Connect "Air Conditioner" to edge and subscribe for RPC commands
+## Connect "Air Conditioner" to edge and subscribe for RPC commands
 
 {% include templates/edge/use-cases/manage-alarms/connect-air-conditioner.md %}
 
-### Post telemetry to "DHT22" sensor to create alarm
+## Post telemetry to "DHT22" sensor to create alarm
 
 {% include templates/edge/use-cases/manage-alarms/post-telemetry-to-dht22.md %}
 
-### Verify that RPC request was send to "Air Conditioner" device
+## Verify that RPC request was send to "Air Conditioner" device
 
 {% include templates/edge/use-cases/manage-alarms/verify-rpc-request.md %}
 
-### Next Steps
+## Next Steps
 
 {% assign currentGuide = "ManageAlarmsAndRpcRequestsOnEdgeDevices" %}
 {% include templates/edge/guides-banner-edge.md %}

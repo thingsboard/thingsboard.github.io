@@ -12,7 +12,7 @@ title: REST API Call Plugin
 
 Rest API plugin is responsible for sending HTTP requests to specific endpoints triggered by specific rules
 
-### Configuration
+## Configuration
 
 You can specify following configuration parameters:
 
@@ -24,11 +24,11 @@ You can specify following configuration parameters:
  - password in case *basic* auth method
  - custom request headers
 
-### Server-side API
+## Server-side API
 
 This plugin does not provide any server-side API.
 
-### Example
+## Example
 
 In this example, we are going to demonstrate how you can configure Rest API Call extension to be able to send POST or PUT request to particular REST endpoint every time new telemetry message for the device arrives.
 

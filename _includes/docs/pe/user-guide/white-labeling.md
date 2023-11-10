@@ -20,7 +20,7 @@ But only Tenant Administrator are able to set up customer email templates to int
 By default, the Customer inherits the Tenant UI configuration. But the Customer Administrator are able to set up their own White Labeling configuration.
 {% endif %}
 
-### White labeling settings
+## White labeling settings
 
 To configure your company or product logo and color scheme, go to the "White Labeling" page.
 
@@ -73,7 +73,7 @@ Final look of our customize user interface:
 
 {% include images-gallery.html imageCollection="white-labeling-custom" %}
 
-### Advanced CSS
+## Advanced CSS
 
 Using CSS, you can stylize any elements of the ThingsBoard user interface as you wish. Such elements can be background, icons, fonts, etc.
 
@@ -129,7 +129,7 @@ An example of CSS code to customize the appearance of the sidebar menu:
 
 Using the functionality described in this documentation, you can customize the appearance of the ThingsBoard UI according to your preferences.
 
-### Video tutorial
+## Video tutorial
 
 Watch the detailed video tutorial with examples of how you can configure the white labeling to suit your needs.
 
@@ -143,6 +143,6 @@ Watch the detailed video tutorial with examples of how you can configure the whi
 <br>
 [Contact us](/docs/contact-us/) to suggest missing feature for your use case.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

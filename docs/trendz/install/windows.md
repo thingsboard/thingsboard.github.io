@@ -10,7 +10,7 @@ description: Installing ThingsBoard Trendz Analytics on Windows
 * TOC
 {:toc}
 
-## Prerequisites
+### Prerequisites
 
 This guide describes how to install Trendz Analytics on a Windows machine.
 Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit. 
@@ -227,6 +227,6 @@ you need to create a new inbound rule with Windows Firewall with Advanced Securi
 
 ![image](https://img.thingsboard.io/user-guide/install/windows/windows7-firewall-8.png)
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

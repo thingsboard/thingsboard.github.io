@@ -3,12 +3,12 @@
 * TOC
 {:toc}
 
-### Introduction
+## Introduction
 
 The ThingsBoard Custom Menu feature allows you to extend ThingsBoard UI.
 You can add new and show/hide existing menu items.
 
-### Hide existing menu items
+## Hide existing menu items
 
 To hide menu items in the ThingsBoard user interface, specify the menu items you want to hide in JSON data format in the "Custom Menu" window.
 
@@ -209,6 +209,6 @@ Don't forget to replace $DASHBOARD_ID value with your dashboard id.
 ```
 {: .copy-code}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

@@ -2,7 +2,7 @@
 * TOC
 {:toc}
 
-## SNMP Basics
+### SNMP Basics
 
 Simple Network Management Protocol (SNMP) is an Internet Standard Protocol used for collecting information from managed
 devices and for sending information to modify the behavior of these devices.

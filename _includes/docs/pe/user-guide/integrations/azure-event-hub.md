@@ -14,7 +14,7 @@ Azure Event Hub Integration allows to stream data from Azure Event Hub to Things
 
  ![image](https://img.thingsboard.io/user-guide/integrations/azure-event-hub-integration.svg)
  
-### Create Azure IoT Hub
+## Create Azure IoT Hub
 
 You had registered in Azure. For now, you need to create IoT hub. Here you will create devices and do some other operations. Let's do this step by step:
 
@@ -30,7 +30,7 @@ You had registered in Azure. For now, you need to create IoT hub. Here you will 
 
 {% include images-gallery.html imageCollection="create_eventhub" preview="false" %}
 
-### Create Device in IoT Hub
+## Create Device in IoT Hub
 
 First step done and now we go to create Device
 
@@ -44,7 +44,7 @@ First step done and now we go to create Device
 
 {% include images-gallery.html imageCollection="create_device" preview="false" %}
 
-### Create Uplink Converter
+## Create Uplink Converter
 
 Before creating the integration, you need to create an Uplink converter in Data converters. Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard. Click on the “plus” and on “Create new converter”. To view the events, enable Debug. In the function decoder field, specify a script to parse and transform data.
 
@@ -81,7 +81,7 @@ return result;
 ```
 
 
-### Create Integration in Thingsboard
+## Create Integration in Thingsboard
 
 At this time, we have own IoT hub with Device
 
@@ -97,7 +97,7 @@ At this time, we have own IoT hub with Device
 
 {% include images-gallery.html imageCollection="integration" preview="false" %}
 
-### Test it up!
+## Test it up!
 
 For now, we ready to test our integration. So we have to go to Rule Chain (tab in Thingsboard menu), choose one of your rule chains and do next steps:
 
@@ -145,7 +145,7 @@ ThingsBoard has examples of several types of dashboards that you can use. You ca
 
 {% include images-gallery.html imageCollection="solution_templates" %}
 
-### Advanced usage: Create Downlink Converter
+## Advanced usage: Create Downlink Converter
 
 Downlink uses for send a message to device. For example information that message from device have been received
 
@@ -200,7 +200,7 @@ To check it in Azure IoT Hub we need to go to Azure Portal, choose **IoT devices
 
 {% include images-gallery.html imageCollection="downlink_result" preview="false" %}
 
-### Advanced usage: Check Downlink using Azure IoT Hub integration
+## Advanced usage: Check Downlink using Azure IoT Hub integration
 
 There is a simple explanation how to see your downlinks in Azure IoT Hub Integration.
 Just look this images to understand how we make simple downlink check for Azure Event Hub
@@ -209,10 +209,10 @@ Just look this images to understand how we make simple downlink check for Azure 
 
 *You can familiarize with Azure Iot Hub using next Link:* [Azure IoT Hub Integration](/docs/{{peDocsPrefix}}user-guide/integrations/azure-iot-hub)
 
-### Conclusion
+## Conclusion
 
 **That's it! Good luck in configuring of you IoT devices and dashboards!**
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

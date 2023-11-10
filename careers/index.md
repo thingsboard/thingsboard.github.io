@@ -5,7 +5,7 @@ notitle: "true"
 description: ThingsBoard Careers
 ---
 
-# Careers
+## Careers
 ## We welcome smart and communicable individuals to join our team in the Kyiv office.
 
 <hr>

@@ -11,7 +11,7 @@ Please review the integration diagram to learn more.
 
 ![image](https://img.thingsboard.io/user-guide/integrations/coap-integration.svg)
 
-### Prerequisites
+## Prerequisites
 
 In this tutorial, we will show you how CoAP integration works as part of **tb-core** service with **NO SECURE** security mode selected. In order to do this we will use: 
 
@@ -63,7 +63,7 @@ Here is the description of the bytes in this payload:
 
 You can use payload type based on your device capabilities and business cases.
 
-### Uplink Converter
+## Uplink Converter
 
 Before setting up an **CoAP integration**, you need to create an **Uplink Converter** that is a script for parsing and transforming the data received by CoAP integration to format that ThingsBoard uses. **deviceName** and **deviceType** are required, while attributes and telemetry are optional. attributes and telemetry are flat key-value objects. Nested objects are not supported.
 
@@ -108,7 +108,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/coap/coap-uplink-b
 
 {% include content-toggle.html content-toggle-id="coapuplinkbinary" toggle-spec=coapuplinkbinary %}
 
-### CoAP Integration Setup
+## CoAP Integration Setup
 
 {% include images-gallery.html imageCollection="coap-integration-setup" showListImageTitles="true" %}
 
@@ -164,7 +164,7 @@ Each of the additional path prefixes will be added to the CoAP server as CoAP re
 
 {% endif %}
 
-### Send Uplink message
+## Send Uplink message
 
 Once CoAP Integration has been created, the CoAP server register appropriate resources, and then it waits for data from the devices.
 
@@ -187,6 +187,6 @@ Click on the device, go to the **Latest Telemetry** tab to see the “temperatur
 ![image](https://img.thingsboard.io/user-guide/integrations/coap/coap-integration-test-uplink-paas.png)
 {% endif %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}

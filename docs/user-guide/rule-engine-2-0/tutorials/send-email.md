@@ -2,9 +2,7 @@
 layout: docwithnav
 title: Send email on alarm
 description: Send Email Workflow
-
 ---
-
 
 This Tutorial is to show you how to send an Email to the user using the Rule Engine. 
 
@@ -13,20 +11,19 @@ This Tutorial is to show you how to send an Email to the user using the Rule Eng
 
 ## Use case
 
-
 In this tutorial we will implement the use case from the tutorial: [create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case):
 
-Let's assume your device is using DHT22 sensor to collect and push temperature readings to ThingsBoard. 
+Let's assume your device is using DHT22 sensor to collect and push temperature readings to ThingsBoard.
 DHT22 sensor is good for -40 to 80°C temperature readings.We want to generate Alarms if temperature is out of good range and send the email when the alarm was created.
 
-In this tutorial we will configure ThingsBoard Rule Engine to: 
+In this tutorial we will configure ThingsBoard Rule Engine to:
 
 - Send an email to the user if the temperature was out of range, namely: less than -40 and more than 80 degrees.
 
 - Add current temperature to the email body using Script Transform node for saving current temperature in the Message Metadata.
 
 
-## Prerequisites 
+## Prerequisites
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
@@ -34,68 +31,68 @@ We assume you have completed the following guides and reviewed the articles list
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
   * [Create & Clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/) guide.
 
-# Message flow  
+## Message flow
 
 In this section, we explain the purpose of each node in this tutorial:
 
 - Node A: [**Transform Script**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) node.
-  - This node will use for saving current temperature in the Message Metadata.  
+  - This node will use for saving current temperature in the Message Metadata.
 - Node B: [**To Email**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#to-email-node) node.
-  - this node builds actual email from the configured template.    
+  - this node builds actual email from the configured template.
 - Node C: [**Send Email**](/docs/user-guide/rule-engine-2-0/external-nodes/#send-email-node) node.
-  - this node will actually send email from the inbound message using system SMTP settings.   
+  - this node will actually send email from the inbound message using system SMTP settings.
 
 <br>
 
-# Configure Rule Chains
+## Configure Rule Chains
 
 In this tutorial, we used Rule Chains from [create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms) tutorial.
 We modified Rule Chain **Create & Clear Alarms** by adding nodes that was described above in the section [Message flow](/docs/user-guide/rule-engine-2-0/tutorials/send-email/#message-flow)<br>
  and renamed this rule chain to: **Create/Clear Alarm & Send Email**.
 
 <br>The following screenshots show how the above Rule Chains should look like:
- 
+
   - **Create/Clear Alarm & Send Email:**
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/email v2/send-email-chain.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/send-email-chain.png)
 
  - **Root Rule Chain:**
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/email v2/root-rule-chain.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/root-rule-chain.png)
 
-<br> 
+<br>
 
 Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/create_clear_alarm___send_email.json) for the **Create/Clear Alarm & Send Email** rule chain.
 
 The following section shows you how to modify this rule chain from scratch.
-<br> 
- 
+<br>
+
 ## Modify **Create/Clear Alarm & Send Email**
 
 ### Adding the required nodes
 
 In this rule chain, you will create 3 nodes as it will be explained in the following sections:
- 
+
 #### Node A: **Transform Script**
 
 - Add the **Transform Script** node and place it after the **Filter Script** node with a relation type **True** and than connect it to **Create Alarm** node via relation **Success**.
  <br>This node will use for saving current temperature from Message Data to the Message Metadata using the following script:
- 
+
  {% highlight javascript %}
  metadata.temperature = msg.temperature;
  return {msg: msg, metadata: metadata, msgType: msgType};{% endhighlight %}
-      
-- Enter the Name field as **Add temperature to metadata**.  
-  
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/email v2/transform-script.png)
-   
+
+- Enter the Name field as **Add temperature to metadata**.
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/transform-script.png)
+
 #### Node B: **To Email**
 - Add the **To Email** node and connect it to the **Create Alarm** node with a relation type **Created**.
   <br>This node does not send actual email it only construct email from configured template.
   <br>So you can use references to any fields that exist in Message Metadata.
-  
-- Fill in the fields with the input data shown in the following table: 
-  
+
+- Fill in the fields with the input data shown in the following table:
+
   <table style="width: 25%">
     <thead>
         <tr>
@@ -125,8 +122,8 @@ In this rule chain, you will create 3 nodes as it will be explained in the follo
         </tr>
      </tbody>
   </table>
-     
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/email v2/to-email.png)
+
+![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/to-email.png)
 
 #### Node C: **Send Email**
 - Add the **Send Email** node and connect it to the **To Email** node with a relation type **Success**. <br>
@@ -134,7 +131,7 @@ In this rule chain, you will create 3 nodes as it will be explained in the follo
 
 - Enter the Name field as **SendGrid SMTP**.
 
-- If you don't have access the system administrator account you need make your own SMTP configuration for this node.  
+- If you don't have access the system administrator account you need make your own SMTP configuration for this node.
 
 - otherwise, mark a field **Use system SMTP settings**.
 
@@ -145,7 +142,7 @@ The instructions of how to configure these settings will be explained in the sec
 
 <br>
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/email v2/send-email.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/send-email.png)
 
 <br>
 
@@ -156,21 +153,20 @@ Chain configuration is finished and we need to save it.
 In this section, we explain to you how  to configure system SMTP settings and try to send the test email:
 
 - In the scope of this tutorial we will use **SendGrid** as SMTP provider and Thingsboard will send email using this provider. You can sign-up for trial using this [link](https://app.sendgrid.com/signup).
-  
+
   Once logged in into SendGrid open SMTP relay [configuration page](https://app.sendgrid.com/guide/integrate/langs/smtp).
-   
-  ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/email v2/sendgrid-config.png)
-  
+
+  ![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/sendgrid-config.png)
+
 If you have permission to log in to ThingsBoard, with using system administrator account you can customize SMTP settings and send Test Email.
  - For the default system administrator account:
 
    - login - **sysadmin@thingsboard.org**.
    - password - **sysadmin**.
-    
+
 - Go to **System Settings** -> **Outgoing Mail**  and configure **Outgoing Mail Settings** as described in the following screenshot:
 
- 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/email v2/test-email.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/test-email.png)
 
  - Verify that you configure SMTP, by press button **Send Test Email**<br>
 
@@ -182,11 +178,11 @@ If you can't access to the account of the System administrator you could configu
 
 <br>
 
-# Post telemetry and verify
+## Post telemetry and verify
 For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api). For this we will need to
-copy device access token from then device **Thermostat Home**. 
+copy device access token from then device **Thermostat Home**.
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/email v2/copy-token.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/copy-token.png)
 
 
 Lets post temperature = 180. Alarm should be created:
@@ -202,13 +198,13 @@ You should understand that message won't be sent to the email when the alarm was
 Finally we can see that email was received with correct values. (Please check your spam folder if you did not receive any email) 
 
 
-![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/email v2/mail-received.png)
+![image](/images/user-guide/rule-engine-2-0/tutorials/email v2/mail-received.png)
 
 
 Also, you can see the more information about how to:
 
  -  Send an email to the Customer of the Device.
- 
+
  -  Add additional data to the email body from the incoming message.
 
 Please refer to the first link under the **See Also** section to see how to do this.
@@ -216,7 +212,7 @@ Please refer to the first link under the **See Also** section to see how to do t
 <br>
 <br>
 
-# See Also
+## See Also
 
 - [Send email to customer](/docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/) guide.
 
@@ -224,7 +220,7 @@ Please refer to the first link under the **See Also** section to see how to do t
 
 - [Create alarm with details](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/) guide.
 
-# Next steps
+## Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
 

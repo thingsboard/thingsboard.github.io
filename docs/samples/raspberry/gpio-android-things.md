@@ -31,7 +31,7 @@ The video below demonstrates the final result of this tutorial.
 
 {% include templates/prerequisites.md %}
 
-### List of hardware and pinouts
+## List of hardware and pinouts
 
  - [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi) - we will use Raspberry Pi 3 Model B but you can use any other model.
  
@@ -39,7 +39,7 @@ The video below demonstrates the final result of this tutorial.
 
  - 13 female-to-male jumper wires
 
-### Wiring schema
+## Wiring schema
 
  Since our application will allow us to control the state of all available GPIO pins, we recommend attaching some LEDs to those pins for visibility.
  You can use this [basic instruction](https://www.raspberrypi.org/documentation/usage/gpio/) or [another one](https://projects.drogon.net/raspberry-pi/gpio-examples/tux-crossing/gpio-examples-1-a-single-led/) to wire some LEDs.
@@ -105,7 +105,7 @@ Finally you can start the application by issuing the following adb command:
 adb shell am start -n "org.thingsboard.sample.gpiocontrol/org.thingsboard.sample.gpiocontrol.GpioControlActivity" -a android.intent.action.MAIN -c android.intent.category.LAUNCHER
 ```
 
-### Data visualization
+## Data visualization
 
 In order to simplify this guide, we have included "Raspberry PI GPIO Demo Dashboard" to the [demo data](/docs/samples/demo-account/#dashboards) that is available in each ThingsBoard installation. 
 Of course, you can modify this dashboard: tune, add, delete widgets, etc.
@@ -130,7 +130,7 @@ Below is the screenshot of the "Raspberry PI GPIO Demo Dashboard".
 
  ![image](https://img.thingsboard.io/samples/raspberry/gpio/dashboard.png)
  
-### See also
+## See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -144,7 +144,7 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
   
 {% include socials.html %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
 

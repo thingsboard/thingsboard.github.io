@@ -10,7 +10,7 @@ Role-Based Access Control (RBAC) allows to create and grant advanced access by a
 RBAC roles refer to the levels of access that users may have. Access to resources can be limited to specific operations, such as viewing, creating, writing, or deleting data. 
 Similarly, you can restrict access to sensitive information, increasing business security.
 
-### ThingsBoard CE vs PE security features comparison
+## ThingsBoard CE vs PE security features comparison
 
 #### ThingsBoard Community Edition
 
@@ -47,7 +47,7 @@ The ThingsBoard Professional Edition security model support advanced RBAC for Io
 
 This document covers features that are exclusive to ThingsBoard Professional Edition. We will start with a glossary and will provide step-by-step examples of how to configure the most popular use cases.
 
-### Glossary
+## Glossary
 
 **Tenant**
 
@@ -108,7 +108,7 @@ We will explain the differences between them later in this article.
 
 Group Permissions Entity is basically a mapping between User Group, Role, and optional Entity Group. See [Generic roles](/docs/{{docsPrefix}}user-guide/rbac/#generic-roles) and [Group roles](/docs/{{docsPrefix}}user-guide/rbac/#group-roles) for more details.
 
-### Roles
+## Roles
 
 Roles represent a set of rights and permissions that determine what actions a user or group of users can perform within the system.
 Generally, roles help to simplify permission management by allowing administrators to assign and modify permissions for a group of users and for each user individually.
@@ -268,7 +268,7 @@ Since Entity Group has only one Owner, you can assign Group Role to any User Gro
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-### Solution example for smart buildings: separate user groups per facility
+## Solution example for smart buildings: separate user groups per facility
 
 Let's assume your solution manages commercial buildings. 
 Your main customer is a Building Manager that wants to monitor HVAC systems, electricity consumption, and other smart devices in the building.  
@@ -380,7 +380,7 @@ Bob is not allowed to perform any server-side API calls, only browsing the data.
 
 [//]: # (<img data-gifffer="https://img.thingsboard.io/user-guide/security/smart-buildings-read-only-user.gif">)
 
-### Video tutorial
+## Video tutorial
 
 You can watch the video tutorial for step-by-step instructions on role-based access control.
 
@@ -391,6 +391,6 @@ You can watch the video tutorial for step-by-step instructions on role-based acc
     </div>
 </div>
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

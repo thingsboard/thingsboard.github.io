@@ -384,6 +384,6 @@ Although the Debug mode is very useful for development and troubleshooting, leav
 It is highly recommended to turn the Debug mode off when done debugging. 
 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

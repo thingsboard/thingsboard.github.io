@@ -8,14 +8,14 @@ description: ROLTEK guide
 * TOC
 {:toc}
 
-### Introduction
+## Introduction
 
 This article contains instructions on how to configure ThingsBoard IoT platform and connect Roltek DC620 device. 
 [ThingsBoard IoT](https://thingsboard.io/) platform is an open-source IoT platform for data collection, processing, visualization, and device management. 
 It enables device connectivity via industry standard IoT protocols - MQTT, CoAP and HTTP and supports both cloud and on-premises deployments. 
 ThingsBoard combines scalability, fault-tolerance and performance so you will never lose your data.
 
-### Create Device On Thingsboard
+## Create Device On Thingsboard
 
 Login to your ThingsBoard platform and ppen "**Devices**" page.
 
@@ -32,7 +32,7 @@ Enable "**Add credentials**" option. Enter the desirable **Access Token** and cl
 
 ![image](https://img.thingsboard.io/samples/roltek/tb4.png)
 
-### Configuring Roltek DC620
+## Configuring Roltek DC620
 
 First connect your device to the Internet via WiFi or Ethernet as described in the user manual.
 
@@ -79,7 +79,7 @@ In new window enter values:
 
 ![image](https://img.thingsboard.io/samples/roltek/tb9.png)
 
-### Adding Widget to the Dashboard
+## Adding Widget to the Dashboard
 
 The collected data can be displayed using various widgets. To create one you should be able to see gathered data in the Latest telemetry section.
 
@@ -105,6 +105,6 @@ Now select "**Create new dashboard**". Mark "**Open dashboard**" (with this opti
 <br>
 ![image](https://img.thingsboard.io/samples/roltek/tb13.png)
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

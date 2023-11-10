@@ -214,7 +214,7 @@ Click on the device, go to **Latest Telemetry** tab to see "temperature" key and
 
 If your payload contains **humidity** telemetry, you should see "humidity" key and its value (69) there as well.
 
-### Advanced usage: Downlink Converter
+## Advanced usage: Downlink Converter
 
 In **Data converters** create **Downlink converter** with default script. To see events - enable **Debug.**
 
@@ -316,6 +316,6 @@ To learn how to send Uplink message, please [read here](/docs/{{peDocsPrefix}}us
 
 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

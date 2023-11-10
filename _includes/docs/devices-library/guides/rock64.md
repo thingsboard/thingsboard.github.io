@@ -9,14 +9,13 @@
 
 ## Introduction
 
-![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-The Rock64 is a single-board computer designed to provide a powerful and efficient computing solution in a small form factor.  
- It is built around a Rockchip RK3328 quad-core ARM Cortex-A53 processor, which offers reliable performance and energy efficiency.  
- The board features 1GB, 2GB, or 4GB of LPDDR3 RAM, as well as a microSD card slot for expandable storage.  
- The board also has a USB 3.0 port, a USB 2.0 port, and a 40-pin GPIO header, allowing it to interface with a variety of peripherals and sensors.  
-The Rock64 runs a variety of operating systems, including Debian, Ubuntu, and Android, which makes it an excellent choice for developers, hobbyists, and DIY enthusiasts looking to build anything from media centers to home automation systems.  
- Its compact form factor, powerful performance, and versatile connectivity make it a valuable addition to any project that requires a reliable and efficient computing solution.  
-
+![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+The Rock64 is a single-board computer designed to provide a powerful and efficient computing solution in a small form factor.
+ It is built around a Rockchip RK3328 quad-core ARM Cortex-A53 processor, which offers reliable performance and energy efficiency.
+ The board features 1GB, 2GB, or 4GB of LPDDR3 RAM, as well as a microSD card slot for expandable storage.
+ The board also has a USB 3.0 port, a USB 2.0 port, and a 40-pin GPIO header, allowing it to interface with a variety of peripherals and sensors.
+The Rock64 runs a variety of operating systems, including Debian, Ubuntu, and Android, which makes it an excellent choice for developers, hobbyists, and DIY enthusiasts looking to build anything from media centers to home automation systems.
+ Its compact form factor, powerful performance, and versatile connectivity make it a valuable addition to any project that requires a reliable and efficient computing solution.
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 

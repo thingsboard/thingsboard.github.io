@@ -219,7 +219,7 @@ The dashboard consists of 3 widgets:
 - RPS Logs - displays gateway logs when processing the sent RPC;
 - RPC debug terminal - widget for debugging gateway RPC.
 
-### Next steps
+## Next steps
 
 Explore guides related to main ThingsBoard features:
 

@@ -15,17 +15,17 @@ OPC UA Integration allows you to stream data from the OPC UA server to ThingsBoa
 <object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/user-guide/integrations/opc-ua-integration.svg"></object>
 
 
-### OPC-UA Integration Tutorial
+## OPC-UA Integration Tutorial
 
 In this tutorial, we will configure the integration between ThingsBoard and OPC-UA
 to get the Airconditioners data from the [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers.html)
 and allow the user to switch on/off any Airconditioner using the Integration downlink feature.
 
-### Prerequisites
+## Prerequisites
 
 {% include templates/integration/opc-ua/opc-ua-server-setup-steps.md %}
 
-### ThingsBoard setup
+## ThingsBoard setup
 
 ### Uplink Data Converter
 
@@ -201,7 +201,7 @@ To visualize the Airconditioners data and test RPC commands, we will create the 
 
 ![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-dashboard-5.png)
 
-### Video tutorial
+## Video tutorial
 
 See video tutorial below for step-by-step instruction how to setup OPC-UA Integration.
 
@@ -214,7 +214,7 @@ See video tutorial below for step-by-step instruction how to setup OPC-UA Integr
 
 <br>
 
-### See also
+## See also
 
 - [Integration Overview](/docs/{{peDocsPrefix}}user-guide/integrations/)
 - [Uplink Converters](/docs/{{peDocsPrefix}}user-guide/integrations/#uplink-data-converter)
@@ -222,6 +222,6 @@ See video tutorial below for step-by-step instruction how to setup OPC-UA Integr
 - [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/)
 
   
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

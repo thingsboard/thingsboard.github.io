@@ -23,7 +23,7 @@ This guide will cover the following sections:
 
 ![image](https://img.thingsboard.io/samples/monoz/monoZero-01.png)
 
-### Prerequisites
+## Prerequisites
 
 **Hardware Components**:
 
@@ -152,10 +152,10 @@ Go to dashboards in Centra-IoT OSS / ThingsBoard platform and open your dashboar
 
 ![image](https://img.thingsboard.io/samples/monoz/monoZero-20.png)
 
-### Contact Us
+## Contact Us
 
 For other concerns about the integration, please [contact with monoZ](https://monoz.io).
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

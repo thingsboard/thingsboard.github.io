@@ -13,10 +13,10 @@ In some scenarios, Kafka can be used instead of a message queue, in cases where 
 
 ![image](https://img.thingsboard.io/user-guide/integrations/kafka/Kafka_main.png)
 
-### Required environment
+## Required environment
 Before you start setting up the integration, you should already have a prepared Broker Kafka server. This is either a local installation or a cloud solution. If you haven't installed Kafka Broker yet, there is an example of basic installation of Kafka Broker locally on [our site](https://thingsboard.io/docs/user-guide/install/pe/ubuntu/?ubuntuThingsboardQueue=kafka#step-5-choose-thingsboard-queue-service). If you need to use a cloud solution, then you can consider [Kafka Confluent](https://www.confluent.io/), on the basis of which examples will be built in this guide.
 
-### Create Uplink Converter
+## Create Uplink Converter
 
 Before creating the integration, you need to create an Uplink converter in Data converters. Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard. Click on the **“plus”** and on **“Create new converter”**. To view the events, enable Debug. In the function decoder field, specify a script to parse and transform data.
 
@@ -101,7 +101,7 @@ return result;
 
 You can change the parameters and decoder code when creating a converter or editing. If the converter has already been created, click the pencil icon to edit it. Copy the sample converter configuration (or use your own configuration) and paste it into the decoder function. Then save the changes by clicking the checkmark icon.
 
-### Create Integration
+## Create Integration
 
 After creating the Uplink converter, it is possible to create an integration. 
 At this stage, you need to set the parameters to establish a connection between ThingsBoard and Kafka Broker. After the connection is established, the integration will be transmitting all received data to the Uplink converter for processing and subsequent transfer to Rule Chain according to the Device profile specified in the Device.
@@ -132,7 +132,7 @@ Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/integr
 
 {% include content-toggle.html content-toggle-id="integrationTypes" toggle-spec=integrationTypes %}
 
-### Send test Uplink message from
+## Send test Uplink message from
 
 {% capture uplinkTypes %}
 Kafka<br><small>Common/Docker </small>%,%common%,%templates/integration/kafka/kafka-common-and-docker-send-msg%br%
@@ -140,7 +140,7 @@ Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/integr
 
 {% include content-toggle.html content-toggle-id="uplinkTypes" toggle-spec=uplinkTypes %}
 
-### Advanced Usage: Kafka Producer (Downlink)
+## Advanced Usage: Kafka Producer (Downlink)
 
 To get functionality such as Kafka Producer, you need to use the [Kafka Rule Node](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/external-nodes/#kafka-node) in which you can specify Bootstrap servers, Topic and other parameters to connect to the Kafka broker, you can find more details in the corresponding [guide](https://thingsboard.io/docs/pe/user-guide/rule-engine-2-0/external-nodes/#kafka-node) .
 
@@ -158,6 +158,6 @@ If it is not possible to send commands directly to devices to manage from Things
 
 {% include templates/info-banner.md content=kafka_note_downnlink %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

@@ -12,7 +12,7 @@ description: Publish MI-8 data to ThingsBoard guide
 
 In this tutorial, we will configure FusionDAQ device to integrate it with ThingsBoard.
 
-### Technical characteristics
+## Technical characteristics
 
 The FDQ-99900 MI-8 is a compact, 24-bit data acquisition system (DAQ) designed to measure up to ten external sensors then log values locally to an SD card or push data to the cloud over a cellular data connection. Advanced triggering functionality allows the MI-8 to conserve storage space and network data by only transmitting events of interest. The low power consumption and wide operating temperature range are designed to allow outdoor and remote installations. The MI-8 is available with and without an enclosure to support custom packaging solutions. For example, the enclosureless (OEM) configuration is often mounted into an IP-67 rated NEMA enclosure along with supporting sensors and hardware.
 
@@ -108,10 +108,10 @@ Attributes are only sent to ThingsBoard once each time the MI-8 is powered on.
 
 ![image](https://img.thingsboard.io/samples/fusion-daq/fusion-daq-mi-8-attributes-1.png)
 
-### Contact Us
+## Contact Us
 
 For other concerns, please [contact with Fusion DAQ](https://fusiondaq.com/contact/).
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

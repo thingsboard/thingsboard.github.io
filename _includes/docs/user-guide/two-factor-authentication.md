@@ -69,6 +69,6 @@ If enabled, users on the platform can add an extra verification of their identit
 
 {% include images-gallery.html imageCollection="two-factor-authentication-backup-code" showListImageTitles="true" %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

@@ -24,11 +24,11 @@ copyEdgeCredentials:
 * TOC
 {:toc}
 
-### Provision the edge on ThingsBoard server
+## Provision the edge on ThingsBoard server
 
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/provision/add-edge.md %}
 
-### Next steps
+## Next steps
 
 {% include templates/edge/provision/edge-installation.md %}

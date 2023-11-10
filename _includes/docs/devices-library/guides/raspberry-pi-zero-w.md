@@ -9,15 +9,14 @@
 
 ## Introduction
 
-![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-The Raspberry Pi Zero W is a small, low-cost, and powerful single-board computer that is designed for DIY enthusiasts, hobbyists, and makers.  
- It is a variant of the popular Raspberry Pi Zero, which is known for its tiny size and affordability.  
- The "W" in the Raspberry Pi Zero W stands for "wireless", as it comes equipped with both WIFI and Bluetooth connectivity.  
- This allows it to easily connect to the internet, other devices, and a variety of sensors and peripherals.  
-Despite its small size (measuring just 65mm x 30mm x 5mm), the Raspberry Pi Zero W is packed with features, including a Broadcom BCM2835 processor with a clock speed of 1GHz, 512MB of RAM, a mini-HDMI port, a micro-USB port for power and data, a CSI camera connector, and a 40-pin GPIO header for interfacing with external components.  
- The Raspberry Pi Zero W runs on the popular Linux-based operating system Raspbian, and it is compatible with a wide range of software, tools, and programming languages.  
-This makes it an ideal platform for learning, prototyping, and building a wide range of projects, such as home automation systems, robots, media centers, and more.  
-
+![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+The Raspberry Pi Zero W is a small, low-cost, and powerful single-board computer that is designed for DIY enthusiasts, hobbyists, and makers.
+ It is a variant of the popular Raspberry Pi Zero, which is known for its tiny size and affordability.
+ The "W" in the Raspberry Pi Zero W stands for "wireless", as it comes equipped with both WIFI and Bluetooth connectivity.
+ This allows it to easily connect to the internet, other devices, and a variety of sensors and peripherals.
+Despite its small size (measuring just 65mm x 30mm x 5mm), the Raspberry Pi Zero W is packed with features, including a Broadcom BCM2835 processor with a clock speed of 1GHz, 512MB of RAM, a mini-HDMI port, a micro-USB port for power and data, a CSI camera connector, and a 40-pin GPIO header for interfacing with external components.
+ The Raspberry Pi Zero W runs on the popular Linux-based operating system Raspbian, and it is compatible with a wide range of software, tools, and programming languages.
+This makes it an ideal platform for learning, prototyping, and building a wide range of projects, such as home automation systems, robots, media centers, and more.
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 

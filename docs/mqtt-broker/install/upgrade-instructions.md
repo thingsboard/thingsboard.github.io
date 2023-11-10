@@ -102,6 +102,6 @@ The _fromVersion_ can be set to either **1.0.0** or **1.0.1** values.
 Navigate to the appropriate documentation to proceed with the next upgrade steps by [choosing one of the card](/docs/mqtt-broker/install/upgrade-instructions/) 
 on top of the page.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

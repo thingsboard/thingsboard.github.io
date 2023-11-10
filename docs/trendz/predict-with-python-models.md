@@ -32,7 +32,7 @@ You can import required Python libraries and use them in your code to forecast r
 Once you added required telemetry or calculated fields into Trendz view, you can tell Trendz that it should use custom prediction model for this field. 
 To do that you need to open `Field settings` dialog and select `Custom` option in the `Prediction method` dropdown:
 
-### Define input dataset
+## Define input dataset
 By default, you will have only original telemetry data in the input dataset. But you can add additional telemetries and attributes into the input dataset by selecting them in `Selected fields for prediction` section. 
 Just start typing the name of telemetry or attribute and select required field from the dropdown list.
 
@@ -148,6 +148,6 @@ print(f"result: {outputY}")
 return outputY
 ```
 
-### Next Steps
+## Next Steps
 
 {% assign currentGuide = "CalculatedFields" %}{% include templates/trndz-guides-banner.md %}

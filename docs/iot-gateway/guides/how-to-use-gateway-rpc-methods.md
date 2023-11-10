@@ -16,7 +16,7 @@ For the purpose of this tutorial, you need:
 1. Locally installed instance of ThingsBoard platform (In case you are new with ThingsBoard [use this 'how to install' documentation](/docs/user-guide/install/installation-options/)).
 2. [Installed](/docs/iot-gateway/installation/) and [configured](/docs/iot-gateway/configuration/) ThingsBoard IoT Gateway. 
 
-### Step 1. Create a dashboard to use RPC API in ThingsBoard IoT Gateway
+## Step 1. Create a dashboard to use RPC API in ThingsBoard IoT Gateway
 
 To use the debug terminal we have to add **RPC debug terminal** widget from **Control widget** bundle.<br>
 To do this we use following steps:
@@ -58,7 +58,7 @@ To do this we use following steps:
   <br><br>
   ![](https://img.thingsboard.io/gateway/service-rpc-methods-9.png)
 
-### Step 2. Gateway RPC methods 
+## Step 2. Gateway RPC methods 
 
 To send RPC requests to the gateway the one should use **RPC Debug Terminal** from **Control widgets** bundle.  
 ThingsBoard IoT gateway has several RPC methods, which called from WEB UI, available by default.  
@@ -157,7 +157,7 @@ The response is:
 
 ![Gateway RPC reboot method](https://img.thingsboard.io/gateway/gateway-rpc-reboot.png)
 
-### Next steps
+## Next steps
 
 Explore guides related to main ThingsBoard features:
 

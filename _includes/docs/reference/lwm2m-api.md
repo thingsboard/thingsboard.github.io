@@ -6,7 +6,7 @@
 
 We assume you have completed the general [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to get familiar with ThingsBoard.
 
-### LwM2M basics
+## LwM2M basics
 
 [LwM2M](https://en.wikipedia.org/wiki/OMA_LWM2M) is a device management protocol designed for constrained devices and the demands of a machine-to-machine (M2M) environment.
 You can find more information about LwM2M [here](https://omaspecworks.org/what-is-oma-specworks/iot/lightweight-m2m-LWM2M/).
@@ -28,7 +28,7 @@ Each resource has the following main properties:
 * Type - data type: String, Integer, etc.
 * Operations - R (read), RW (read-write), E (execute), etc.
 
-### Getting started
+## Getting started
 
 This part of documentation covers provisioning of your first LwM2M device in ThingsBoard. We will use [Eclipse Wakaama](https://github.com/eclipse/wakaama#test-client-example) test client to simulate LwM2M device.
 
@@ -118,7 +118,7 @@ The LwM2M transport implementation also stores the logs of communication with th
 
 {% include images-gallery.html imageCollection="wakaama-terminal" showListImageTitles="true" %}
 
-### ThingsBoard LwM2M support
+## ThingsBoard LwM2M support
 
 ThingsBoard implements both LwM2M server and bootstrap server that supports plain UDP and DTLS (secure transport over UDP).
 As a platform user, you are able to provision and define the mapping between the LwM2M resources and ThingsBoard device [attributes](/docs/{{docsPrefix}}user-guide/attributes/) and [time-series data](/docs/{{docsPrefix}}user-guide/telemetry/).
@@ -203,7 +203,7 @@ We have prepared a simple dashboard with the ability to execute commands to devi
 You may import the dashboard from [gist](https://gist.github.com/ashvayka/2374b1b6ebd8be5dca3d5252dee4c212#file-lwm2m_operations-json), once you complete the "Getting started" guide below. 
 Don't forget to change the dashboard [alias](/docs/{{docsPrefix}}user-guide/dashboards/#entity-aliases). 
 
-### RPC Commands
+## RPC Commands
 
 LwM2M transport supports [RPC](/docs/{{docsPrefix}}user-guide/rpc/) commands that reflect subset of
 [Device Management and Service Enablement Interface](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#6-3-0-63-Device-Management-and-Service-Enablement-Interface)
@@ -962,7 +962,7 @@ DiscoverAll
 ```
 {: .copy-code}
 
-### Firmware over-the-air updates
+## Firmware over-the-air updates
 
 LwM2M protocol allows you to upload and distribute over-the-air(OTA) firmware updates to devices. Please read first the 
 following article  [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/) to learn about uploading and managing
@@ -1004,7 +1004,7 @@ resource directly without transferring image to the server. After the downloadin
 be triggered using the executable resource "/5/0/2". The full process is illustrated here: [Example of a client fetching
 a firmware image](http://www.openmobilealliance.org/release/LightweightM2M/V1_1_1-20190617-A/HTML-Version/OMA-TS-LightweightM2M_Core-V1_1_1-20190617-A.html#Figure-E62-2-Example-of-a-client-fetching-a-firmware-image/)
 
-### Software over-the-air updates
+## Software over-the-air updates
 
 LwM2M protocol allows you to upload and distribute over-the-air(OTA) software updates to devices. Please read first the
 following article  [OTA updates](/docs/{{docsPrefix}}user-guide/ota-updates/) to learn about uploading and managing
@@ -1046,7 +1046,7 @@ the server generates a CoAP-URL and  sends it to the client, and the client down
 resource directly without transferring image to the server.
 
 
-### Advanced topics
+## Advanced topics
 
 ### Object and Resource attributes
 

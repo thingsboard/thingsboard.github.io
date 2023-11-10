@@ -9,13 +9,12 @@
 
 ## Introduction
 
-![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-The ODROID-XU4 is a powerful single-board computer designed for computing tasks that demand high performance and energy efficiency.  
- It features a Samsung Exynos5422 Cortex-A15 processor, 2GB of RAM, Gigabit Ethernet, and two USB 3.0 ports.  
- The board also has a microSD card slot, eMMC module socket, and 40-pin GPIO header for interfacing with a variety of peripherals and sensors.  
- The ODROID-XU4 is compatible with a variety of operating systems, including Ubuntu, Debian, and Android.  
- This makes it ideal for developers, hobbyists, and DIY enthusiasts looking to build anything from media centers to gaming consoles.  
-
+![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+The ODROID-XU4 is a powerful single-board computer designed for computing tasks that demand high performance and energy efficiency.
+ It features a Samsung Exynos5422 Cortex-A15 processor, 2GB of RAM, Gigabit Ethernet, and two USB 3.0 ports.
+ The board also has a microSD card slot, eMMC module socket, and 40-pin GPIO header for interfacing with a variety of peripherals and sensors.
+ The ODROID-XU4 is compatible with a variety of operating systems, including Ubuntu, Debian, and Android.
+ This makes it ideal for developers, hobbyists, and DIY enthusiasts looking to build anything from media centers to gaming consoles.
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 

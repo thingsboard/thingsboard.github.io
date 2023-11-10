@@ -105,6 +105,6 @@ If we configured our device as shown above the device will be sending data to Th
 
 {% include socials.html %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

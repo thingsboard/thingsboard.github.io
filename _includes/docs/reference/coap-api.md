@@ -121,7 +121,7 @@ D,telemetry-data-with-ts.json,json,resources/telemetry-data-with-ts.json,/docs/r
 {% include tabs.html %}
 
 
-### Attributes API
+## Attributes API
 
 ThingsBoard attributes API allows devices to
 
@@ -262,11 +262,11 @@ A,Example,shell,resources/coap-attributes-subscribe.sh,/docs/reference/resources
 B,Result,json,resources/attributes-response.json,/docs/reference/resources/attributes-response.json{% endcapture %}
 {% include tabs.html %}
 
-### JSON value support
+## JSON value support
 
 {% include templates/api/json.md %}
 
-### RPC API
+## RPC API
 
 ##### Server-side RPC
 
@@ -423,7 +423,7 @@ B,rpc-client-request.json,shell,resources/rpc-client-request.json,/docs/referenc
 C,Response Body,shell,resources/rpc-server-response.json,/docs/reference/resources/rpc-server-response.json{% endcapture %}
 {% include tabs.html %}
 
-### Claiming devices
+## Claiming devices
 
 Please see the corresponding article to get more information about the [Claiming devices](/docs/{{docsPrefix}}user-guide/claiming-devices) feature.
 
@@ -471,7 +471,7 @@ In case the **durationMs** is not specified, the system parameter **device.claim
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-### Device provisioning
+## Device provisioning
 
 Please see the corresponding article to get more information about the [Device provisioning](/docs/{{docsPrefix}}user-guide/device-provisioning) feature.  
 
@@ -510,7 +510,7 @@ The supported data format is:
 }
 ```
 
-### Firmware API
+## Firmware API
 
 The CoAP client has to issue the GET request to
 
@@ -547,10 +547,10 @@ Where
 
 {% endif %}
 
-### Protocol customization
+## Protocol customization
 
 CoAP transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/coap).
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

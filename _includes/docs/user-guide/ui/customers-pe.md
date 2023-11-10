@@ -15,7 +15,7 @@ to manage such options as customer groups, [user groups](/docs/{{docsPrefix}}use
 [dashboard groups](/docs/{{docsPrefix}}user-guide/dashboards/), [edges](/docs/pe/edge/), and [delete a customer](#delete-customer).
 
 
-### Create new customer
+## Create new customer
 
 The tenant administrator can add a new customer using the following steps.
 
@@ -30,13 +30,13 @@ Let's create another client and a separate customer group for it.
 
 Read more information about entity groups [here](/docs/{{docsPrefix}}user-guide/groups/).
 
-### Create customer user
+## Create customer user
 
 The tenant administrator can add a customer user to his account with limited permissions. Permissions for the new customer user can be configured later with the help of [Roles](/docs/{{docsPrefix}}user-guide/rbac/).
 
 {% include images-gallery.html imageCollection="add-customer-user" showListImageTitles="true" %}
 
-### Edit customer or customer user
+## Edit customer or customer user
 
 The Tenant administrator can edit the title, specify a home dashboard and edit the rest of the fields for the customer.
 Let’s see how to do this:
@@ -49,7 +49,7 @@ The steps are similar to how we edit the customer:
 
 {% include images-gallery.html imageCollection="edit-customer-user" showListImageTitles="true" %}
 
-### Delete customer or customer user
+## Delete customer or customer user
 
 The tenant administrator can delete a customer along with all its customer users using one of the following ways:
 

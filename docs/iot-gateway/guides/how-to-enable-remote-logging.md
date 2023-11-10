@@ -14,7 +14,7 @@ For purpose of this guide, we will use following things:
 1. Locally installed instance of ThingsBoard platform (How to install you can [read here](/docs/user-guide/install/installation-options/)).
 2. ThingsBoard IoT Gateway (How to install you can [read here](/docs/iot-gateway/installation/)).
 
-### Step 1. Remote logging activation and setting the logging level
+## Step 1. Remote logging activation and setting the logging level
 
 To activate and set logging level, please follow next steps:  
    
@@ -46,7 +46,7 @@ To activate and set logging level, please follow next steps:
   <br>
   <br>
   
-### Step 2. Display logs on a dashboard
+## Step 2. Display logs on a dashboard
 
 It may be not convenient to review logs in the Device details window. We should show them on a dashboard.  
 So we will be able to investigate all logs, not only the latest one.  
@@ -64,7 +64,7 @@ To do this we use following steps:
   - As a result now we can monitor the status of the gateway device from ThingsBoard environment.
   ![](https://img.thingsboard.io/gateway/logs-dashboard.png) 
 
-### Next steps
+## Next steps
 
 Explore guides related to main ThingsBoard features:
 

@@ -26,7 +26,7 @@ The goal of this tutorial is to demonstrate the basic setup of {{appPrefix}} Mob
 * Configure API endpoint to your {{appPrefix}} platform instance;
 * Build and run your version of {{appPrefix}} Mobile Application;
 
-### Step 1. Prepare development environment
+## Step 1. Prepare development environment
 
 Flutter {{appPrefix}} Mobile Application requires Flutter SDK starting from version 2.12.0.
 Follow [these](https://flutter.dev/docs/get-started/install) instructions in order to setup Flutter SDK.
@@ -36,7 +36,7 @@ Flutter {{appPrefix}} Mobile Application is served by {{appPrefix}} platform sta
 You will need to have {{appPrefix}} server up and running. The easiest way is to use {{cloudApp}}.
 The alternative option is to install {{appPrefix}} using [Installation Guide](/docs/user-guide/install/{{docsPrefix}}installation-options/).
 
-### Step 2. Get app source code
+## Step 2. Get app source code
 
 #### Flutter {{appPrefix}} Mobile Application compatibility table 
 
@@ -106,7 +106,7 @@ git clone -b release/{{flutterAppVer}} {{appRepo}}
 ```
 {: .copy-code}
 
-### Step 3. Configure {{appPrefix}} API endpoint
+## Step 3. Configure {{appPrefix}} API endpoint
 
 Open **{{appProject}}** project in your editor/IDE. Edit **lib/constants/app_constants.dart**.
 
@@ -129,7 +129,7 @@ You can read [Connecting Flutter application to Localhost](https://medium.com/@p
 {% endcapture %}
 {% include templates/info-banner.md content=local_endpoint_note %}
 
-### Step 4. Run the app
+## Step 4. Run the app
 
 Run the app [in the way your IDE describes](https://flutter.dev/docs/get-started/test-drive).
 
@@ -165,7 +165,7 @@ When running an app directly from the console using `flutter run`, enter `r` to 
 {% include templates/info-banner.md content=run_tip %}
 
 {% if docsPrefix != 'pe/' %}
-### Live demo app
+## Live demo app
 
 To be familiar with common app features try out our ThingsBoard Live mobile application available on Google Play and App Store.
 
@@ -182,7 +182,7 @@ To be familiar with common app features try out our ThingsBoard Live mobile appl
 
 {% endif %}
 
-### Next Steps
+## Next Steps
 
 - [Customize your app](/docs/{{docsPrefix}}mobile/customization) - Learn how to customize your {{appPrefix}} Mobile Application to meet your requirements.
 - [Publish your app](/docs/{{docsPrefix}}mobile/release) - Learn how to build release and publish your version of {{appPrefix}} Mobile Application to Google Play or App Store.

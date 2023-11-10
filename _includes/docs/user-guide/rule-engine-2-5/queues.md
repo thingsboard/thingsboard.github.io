@@ -165,6 +165,6 @@ The **SequentialByOriginator** topic is important if you would like to make sure
 Messages from the same entity will be processed with the order they arrive in the queue.
 Rule Engine will not submit a new message to the rule chain until the previous message for the same entity id is acknowledged.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/multi-project-guides-banner.md %}

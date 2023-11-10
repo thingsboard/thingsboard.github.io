@@ -75,6 +75,6 @@ The configuration parameters are well documented inline.
 ```
 {% endunless %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

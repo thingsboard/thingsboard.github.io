@@ -202,7 +202,7 @@ while(1)
 
    ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/script_running.png)
 
-### Data visualization
+## Data visualization
 
 Finally, open ThingsBoard Web UI in the Live Demo server with same user and password as *ThingsBoard configuration* section.
 
@@ -216,7 +216,7 @@ As a result, you will see a time-series chart displaying temperature level (simi
 
 ![image](https://img.thingsboard.io/samples/nettrartu+/rtu_temp_sensor/dashboard.png)
 
-### See also
+## See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -230,6 +230,6 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
 
 {% include socials.html %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

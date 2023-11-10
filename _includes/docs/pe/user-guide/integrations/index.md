@@ -398,7 +398,7 @@ Explore guides and video tutorials related to specific integrations:
 
 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}
 

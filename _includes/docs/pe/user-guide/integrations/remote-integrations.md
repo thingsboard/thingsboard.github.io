@@ -17,12 +17,12 @@ For example, we will launch MQTT integration that connects to the local MQTT Bro
 
 See [deployment options](/docs/{{peDocsPrefix}}user-guide/integrations/#deployment-options) for more general information.
 
-### Prerequisites
+## Prerequisites
 
 We assume you already have a tenant administrator account on your own ThingsBoard PE v3.3.1+ instance or
 [thingsboard.cloud](https://thingsboard.cloud/signup).  
 
-### ThingsBoard configuration steps
+## ThingsBoard configuration steps
 
 ### Step 1. Create default Uplink and Downlink Converters
 
@@ -146,7 +146,7 @@ TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/install/integration/tcpudp-rhel
 
 {% include content-toggle.html content-toggle-id="remoteintegrationinstallrhel" toggle-spec=rhelinstallspec %} 
 
-### Remote integration configuration
+## Remote integration configuration
 
 Remote integration configuration is done via ThingsBoard UI and there is no specific steps.
 Explore guides and video tutorials related to specific integrations:
@@ -167,11 +167,11 @@ Explore guides and video tutorials related to specific integrations:
  - [Custom](/docs/{{peDocsPrefix}}user-guide/integrations/custom/)
 
   
-### Remote integration troubleshooting
+## Remote integration troubleshooting
 
 Please review the log files. Their location is specific to the platform and installation package you have used and is mentioned in the installation steps. 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}
 
