@@ -229,6 +229,6 @@ The Smart Plug status indicator turns grey. Power consumption stops.
 ![image](/images/user-guide/integrations/tuya/tuya-dashboard-4-pe.png)
 {% endif %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

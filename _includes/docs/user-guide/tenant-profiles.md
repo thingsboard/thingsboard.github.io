@@ -9,7 +9,7 @@ Each Tenant has the one and only profile at a single point in time.
 
 Let's review the settings available in the tenant profile, one-by-one.
  
-### Entity Limits
+## Entity Limits
 
 This group of settings allows the System Administrator to configure a maximum number of entities that each Tenant is able to create.
 
@@ -19,7 +19,7 @@ This group of settings allows the System Administrator to configure a maximum nu
 
 {% include images-gallery.html imageCollection="entityLimits" %}
  
-### API Limits & Usage
+## API Limits & Usage
 
 This group of settings allows a System Administrator to configure a maximum number of messages, API calls, etc., per month that each Tenant would like to perform. 
 ThingsBoard constantly collects and analyzes statistics about API Usage. The typical update interval of the statistics is 1 minute
@@ -81,7 +81,7 @@ The dashboard below allows Tenant Administrators to learn more about their hourl
 
 {% include images-gallery.html imageCollection="apiLimitsDashboard" %}
 
-### Rate Limits
+## Rate Limits
 
 This group of settings allows a System Administrator to configure a maximum number of
 requests the platform should process for a specific device (device-level) or for all devices belonging to a single tenant (tenant-level).
@@ -92,7 +92,7 @@ You can define multiple intervals with ",". For example, "100:1,1000:60" means "
 
 {% include images-gallery.html imageCollection="rateLimits" %}
 
-### Processing in isolated ThingsBoard Rule Engine queues
+## Processing in isolated ThingsBoard Rule Engine queues
 
 ThingsBoard Rule Engine is the main "worker" in the cluster and is responsible for processing incoming messages.
 

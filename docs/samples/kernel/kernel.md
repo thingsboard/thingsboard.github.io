@@ -12,7 +12,7 @@ hidetoc: "true"
 
 This article contains instructions on how to configure ThingsBoard PE platform and connect KERNEL devices. ThingsBoard PE platform is an open-source IoT platform for data collection, processing, visualization, and device management. It enables device connectivity via industry standard MQTT protocol. ThingsBoard combines scalability, fault-tolerance and performance so you will never lose your data.
 
-### Note
+## Note
 
 This procedure applies to all KERNEL PLCs with the ARM microprocessor equipped with an Ethernet port.
 
@@ -143,6 +143,6 @@ Explore guides related to main ThingsBoard features:
 <br>
 <br>
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

@@ -20,7 +20,7 @@ In this tutorial we will configure ThingsBoard Rule Engine to:
 - Count number of critical temperature updates for each device and save this info in Alarm details.
 - Save latest critical temperature value in Alarm details.
 
-### Prerequisites
+## Prerequisites
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
@@ -28,7 +28,7 @@ We assume you have completed the following guides and reviewed the articles list
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
   * [Create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/) guide.
 
-### Message flow
+## Message flow
 
 In this section, we explain the purpose of each node in this tutorial:
 
@@ -41,7 +41,7 @@ In this section, we explain the purpose of each node in this tutorial:
 
 <br>
 
-### Configure Rule Chains
+## Configure Rule Chains
 
 In this tutorial, we only modified **Create & Clear Alarms** rule chain, namely configured Alarm Details function in nodes that was described above in the section [Message flow](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/#message-flow)<br> Also, we renamed this Rule Chain to **Create & Clear Alarms with details**.
 
@@ -130,7 +130,7 @@ Chain configuration is finished and we need to **save it**.
 
 <br>
 
-### Configure Dashboard 
+## Configure Dashboard 
 
 Download the attached json [**file**](/docs/user-guide/resources/thermostat_dashboard.json) for the dashboard indicated in this tutorial and import it.
 
@@ -138,7 +138,7 @@ Download the attached json [**file**](/docs/user-guide/resources/thermostat_dash
 
 Also you can Create Dashboard from scratch and the following section show you how to do this:
 
-### Creating Dashboard 
+## Creating Dashboard 
 
 We will create Dashboard for all **Thermostat** devices and add Alarm widget on it. Create new Dashboard:
 
@@ -165,7 +165,7 @@ And rename label of each field by press **edit** button on the field:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/alarm-widget-config.png)
 
-# Post telemetry and verify
+## Post telemetry and verify
 
 For posting device telemetry we will use Rest API ([link](/docs/reference/http-api/#telemetry-upload-api)). For this we will need to
 copy device access token from then device **Thermostat Home**. 
@@ -206,12 +206,12 @@ Also, you can see how to:
 
 <br>
 
-### See Also
+## See Also
 
  - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) guide.
 
  - [Notifications and Alarms on your smartphone using Telegram Bot](/docs/iot-gateway/integration-with-telegram-bot/) guide.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}

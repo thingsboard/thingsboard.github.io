@@ -24,6 +24,6 @@ Configuration steps:
 
 <br>
 
-### Next steps
+## Next steps
 
  {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

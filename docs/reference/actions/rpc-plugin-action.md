@@ -10,10 +10,10 @@ title: RPC Plugin Action
 
 This component allows forwarding incoming rpc requests to various plugins. 
 
-### Configuration
+## Configuration
 
 There is no specific configuration for this component.
 
-### Example
+## Example
 
 As a tenant administrator, you are able to review action example inside **Rules->Demo Time RPC Rule->Actions->RPC Plugin Action**.

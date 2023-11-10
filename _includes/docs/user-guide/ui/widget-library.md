@@ -6,7 +6,7 @@
 All [IoT Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/) are constructed using **ThingsBoard widgets** defined in the Widget Library.
 Widgets are used to display data and visualize information obtained from devices connected to the ThingsBoard platform, remote device control, alarms management, and display static custom HTML content.
 
-### Widget Types
+## Widget Types
 
 According to the provided features, each widget definition represents a specific type of widget.
 There are five widget types:

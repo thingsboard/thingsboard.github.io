@@ -36,7 +36,7 @@ List of possible cloud actions:
 * Relation Request
 * Credentials Request
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "CloudEvents" %}
 {% assign docsPrefix = "edge/" %}

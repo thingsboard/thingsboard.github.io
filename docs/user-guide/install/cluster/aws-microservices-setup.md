@@ -84,7 +84,7 @@ We will use Amazon RDS for managed PostgreSQL, Amazon MSK for managed Kafka and 
 
 {% include templates/install/aws/eks-prerequisites.md %}
 
-### Step 1. Clone ThingsBoard CE K8S scripts repository
+## Step 1. Clone ThingsBoard CE K8S scripts repository
 
 ```bash
 git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git
@@ -92,34 +92,34 @@ cd thingsboard-ce-k8s/aws/microservices
 ```
 {: .copy-code}
 
-### Step 2. Configure and create EKS cluster
+## Step 2. Configure and create EKS cluster
 
 {% assign eksNote = "**3** nodes of type **m5.xlarge**" %}
 {% include templates/install/aws/eks-create-cluster.md %}
 
-### Step 3. Create AWS load-balancer controller
+## Step 3. Create AWS load-balancer controller
 
 {% include templates/install/aws/eks-lb-controller.md %}
 
-### Step 4. Provision Databases
+## Step 4. Provision Databases
 
-#### Step 4.1 Amazon PostgreSQL DB Configuration
+### Step 4.1 Amazon PostgreSQL DB Configuration
 
 {% include templates/install/aws/rds-setup.md %}
 
-#### Step 4.2 Cassandra
+### Step 4.2 Cassandra
 
 {% include templates/install/aws/configure-cassandra.md %}
 
-### Step 5. Amazon MSK Configuration
+## Step 5. Amazon MSK Configuration
 
 {% include templates/install/aws/msk-setup.md %}
 
-### Step 6. Amazon ElactiCache (Redis) Configuration
+## Step 6. Amazon ElactiCache (Redis) Configuration
 
 {% include templates/install/aws/redis-setup.md %}
 
-### Step 7. CPU and Memory resources allocation
+## Step 7. CPU and Memory resources allocation
 
 The scripts have preconfigured values of resources for each service. You can change them in `.yml` files under `resources` submenu.
 
@@ -134,11 +134,11 @@ Recommended CPU/memory resources allocation:
 - JS Executor: 0.1 CPU / 100Mi memory
 - Zookeeper: 0.1 CPU / 0.5Gi memory
 
-### Step 8. Installation
+## Step 8. Installation
 
 {% include templates/install/aws/eks-installation.md %}
 
-### Step 9. Starting
+## Step 9. Starting
 
 Execute the following command to deploy ThingsBoard services:
 
@@ -159,26 +159,26 @@ Every pod should be in the `READY` state.
 
 {% include templates/install/aws/start-transports.md %}
 
-### Step 10. Configure Load Balancers
+## Step 10. Configure Load Balancers
 
-#### 10.1 Configure HTTP(S) Load Balancer
+### 10.1 Configure HTTP(S) Load Balancer
 
 {% include templates/install/aws/http-lb.md %}
 
-#### 10.2. Configure MQTT Load Balancer (Optional)
+### 10.2. Configure MQTT Load Balancer (Optional)
 
 {% assign tbServicesFile = "tb-services.yml" %}
 {% include templates/install/aws/configure-mqtt.md %}
 
-#### 10.3. Configure UDP Load Balancer (Optional)
+### 10.3. Configure UDP Load Balancer (Optional)
 
 {% include templates/install/aws/configure-udp.md %}
 
-#### 10.4. Configure Edge Load Balancer (Optional)
+### 10.4. Configure Edge Load Balancer (Optional)
 
 {% include templates/install/k8s-configure-edge-load-balancer.md %}
 
-### Step 11. Validate the setup
+## Step 11. Validate the setup
 
 {% include templates/install/aws/eks-validate.md %}
 
@@ -186,6 +186,6 @@ Every pod should be in the `READY` state.
 
 {% include templates/install/aws/eks-deletion.md %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

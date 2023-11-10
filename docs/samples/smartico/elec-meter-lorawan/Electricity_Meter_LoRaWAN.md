@@ -31,12 +31,12 @@ For example, we connected a device with the serial number 0012778. With the corr
 ![image](/images/samples/smartico/elec-meter-lorawan/Lora2.PNG)
 
 To be able to receive data via the MQTT protocol, you need to integrate the [LoRaWAN server and the Mosquitto MQTT broker](https://www.chirpstack.io/application-server/integrations/mqtt/).
-### Step 1. Creation UpLink Data Converters.
+## Step 1. Creation UpLink Data Converters.
 First, you should create the Uplink Data Converter according to the device protocol. The converter will decode incoming telemetry payload data from Electricity Meters “Smartico E307” that contains in encoded Base64 string to human readable, simplified ThingsBoard data format. Import [uplink_elec_meter.json](/docs/samples/smartico/elec-meter-lorawan/resources/uplink_elec_meter.json) file with Uplink data converter.
 
 ![image](/images/samples/smartico/elec-meter-lorawan/uplink.PNG)
 
-### Step 2. Integration configuration.
+## Step 2. Integration configuration.
 To integrate Electricity Meters “Smartico E307” into ThingsBoard platform you should create a new integration as shown on the figure.
 
 ![image](/images/samples/smartico/elec-meter-lorawan/Integration.PNG)
@@ -135,14 +135,14 @@ Before turning on the device, you can verify the functionality of programming co
 
 ![image](/images/samples/smartico/elec-meter-lorawan/verifyingUplink.PNG)
 
-### Step 4. Creation Electricity Meter Asset.
+## Step 4. Creation Electricity Meter Asset.
 To be able to display data in the dashboard, you should first create an asset and add device 0012778 in the RELATIONS, as shown in the figures.
 
 ![image](/images/samples/smartico/elec-meter-lorawan/asset1.PNG)
 
 ![image](/images/samples/smartico/elec-meter-lorawan/asset2.PNG)
 
-### Step 5. Dashboard import and configuration.
+## Step 5. Dashboard import and configuration.
 To display data to users, you need to create a dashboard that can be imported from [dashboard_elec_meter.json](/docs/samples/smartico/elec-meter-lorawan/resources/dashboard_elec_meter.json) file. 
 
 ![image](/images/samples/smartico/elec-meter-lorawan/dash1.PNG)
@@ -153,7 +153,7 @@ When importing a dashboard, it will be necessary to create an alias, as shown in
 
 If everything was done correctly, in DASHBOARD GROUPS → All you will see the new dashboard **Electricity Three Phase Smart Meter "Smartico E307"** that was provided at the beginning of the guide.
 
-### See also
+## See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -167,6 +167,6 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
 
 {% include socials.html %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

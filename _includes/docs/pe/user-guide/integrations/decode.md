@@ -10,7 +10,7 @@ This tutorial will show how to set up and integrate diverse signals from Distric
 
 
 
-### System diagram
+## System diagram
 System diagram shows some typical automation and metering elements in DHS: substation controllers or pump controllers connected to RS485 communication line, heat meters on M-Bus line and some I/O expansion to control valves and monitor level switches for example.
 
 
@@ -21,7 +21,7 @@ System diagram shows some typical automation and metering elements in DHS: subst
 
 Decode [DL28](https://decode.rs/product/dl28/) device plays role of communication and signal concentrator and provides bridge function between all control, monitoring and measuring equipment installed in DHS and ThingsBoard servers on internet. Three signal are used in this example: two relay outputs and one of temperatures from heat meter.
 
-### Prerequisites 
+## Prerequisites 
 - Demo account on ThingsBoard
 - Computer with Ethernet connection and web browser
 - Decode DL28 communication controller
@@ -30,10 +30,10 @@ Decode [DL28](https://decode.rs/product/dl28/) device plays role of communicatio
 - Heat meter with M-Bus
 - Connection to Internet
 
-### Setup of ThingsBoard
-#### Step 1. Log in
+## Setup of ThingsBoard
+### Step 1. Log in
 Go to ThingsBoard demo web page https://demo.thingsboard.io and log in with credentials obtained when account is created.
-#### Step 2. Add DL28 device
+### Step 2. Add DL28 device
 After the successful login procedure, click on the Devices entry in the left side menu and then on "+" icon. Select Add New Device option, enter Name, Device type and Label fields and click on Add button.
 
 
@@ -168,7 +168,7 @@ Click on a Save button to save changes and restart application by clicking on Re
 
 
 
-### Testing
+## Testing
 Open the DL28 dashboard. Relays are controlled by clicking on switches EXIO RL1 and GT900 RL1. Indicators show real state of output relays and some delay may be noticed on slow networks. Widget CAL_RETURN_TEMP  displays return temperature from heat meter.
 
 
@@ -177,13 +177,13 @@ Open the DL28 dashboard. Relays are controlled by clicking on switches EXIO RL1 
 
 
 
-### Conclusion
+## Conclusion
 It is shown that the ThingsBoard is ideal platform for remote monitoring and control of district heating substation facilities. The solution is very scalable in terms of increasing the number of devices, dashboards and widgets and may cover even large distribution networks for whole cities. It is also demonstrated that mixing of remote monitoring and control with meter reading is possible in a ThingsBoard system.
 
 More details about the used products are available on their pages and manuals that could be downloaded from download page.
 
 Please feel free to get in touch with Decode Team if you have any additional questions.
-### See also
+## See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -197,6 +197,6 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
 
 {% include socials.html %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/multi-project-guides-banner.md %}

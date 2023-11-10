@@ -13,14 +13,14 @@ We will connect IoT Gateway to ThingsBoard server, control it and visualize some
 We will also configure MQTT connector in order to subscribe to device data feed from external devices.  
 
 
-## Prerequisites
+### Prerequisites
 
 If you don't have access to a running ThingsBoard instance, use either [**Live Demo**](https://thingsboard.cloud/signup) or
 [**Installation Guide**](/docs/user-guide/install/installation-options/) 
 to fix this. 
 
 
-### Create new gateway device on ThingsBoard
+## Create new gateway device on ThingsBoard
 
 First, we have to add Gateway device to your ThingsBoard instance. This can be done by following these steps:
 
@@ -53,7 +53,7 @@ Manually<small>Recommended if you installed Gateway any other way except docker<
 
 {% include content-toggle.html content-toggle-id="GatewayCreating" toggle-spec=gatewaycreatingspec %}
 
-### Add new connector
+## Add new connector
 
 Let's finally add MQTT connector to the created gateway. To do this we use following steps:
 
@@ -75,7 +75,7 @@ For now, your Gateway is ready to process data through the newly remote-created 
 
 More about Gateway Dashboard you can [read here](/docs/iot-gateway/guides/how-to-enable-remote-configuration/).
  
-### Configure connectors
+## Configure connectors
 
 After successful installation you should configure the connectors to connect to different devices, please use one (or more) following articles to configure connector files:  
  - [**MQTT** connector](/docs/iot-gateway/config/mqtt/)
@@ -90,7 +90,7 @@ After successful installation you should configure the connectors to connect to 
  - [**OCPP** connector](/docs/iot-gateway/config/ocpp/)
  - [**Custom** connector](/docs/iot-gateway/custom/)
 
-### Review gateway statistics
+## Review gateway statistics
 
 To review the statistics uploaded from your gateway, navigate to the **Devices** page and click on the gateway device card. 
 Once there, open the “Latest Telemetry” tab to review parameters such as **“eventsProduced”**, **“eventsSent”**, and other 

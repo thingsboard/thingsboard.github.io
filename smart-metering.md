@@ -25,7 +25,7 @@ Another critical advantage is the cost of smart metering implementation.
 Using an IoT platform allows you to have all the necessary functionality right away and focus on building particular smart metering use cases instead, saving time and avoiding the risks associated with in-house IoT development.  
 
 
-### Building end-to-end smart metering solutions with ThingsBoard
+## Building end-to-end smart metering solutions with ThingsBoard
 
 ThingsBoard IoT platform provides out-of-the-box components and APIs to dramatically drive down effort required to create smart metering solutions, 
 resulting in highly improved time to market, reliability, and competitiveness of your solutions. 
@@ -42,7 +42,7 @@ By our estimates, companies may save up to 90% of their product development time
 
 The ThingsBoard IoT platform provides production ready server infrastructure to connect your smart meter devices, collect, store and analyze smart metering data, and share results of the analysis with your customers and end-users.
 
-### Smart metering dashboard
+## Smart metering dashboard
 
 The following interactive dashboard hosted on live demo server represents smart metering IoT data visualization that may be embedded in your IoT project or solution. See the dashboard description below.
 
@@ -71,7 +71,7 @@ The main dashboard displays multiple districts and enables user to drill down fr
 Click on the apartment level to open the statistics from multiple apartment devices. 
 You may export the dashboard from our live demo server and import it to your ThingsBoard instance.
 
-### ThingsBoard advantages
+## ThingsBoard advantages
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
@@ -152,7 +152,7 @@ You may export the dashboard from our live demo server and import it to your Thi
     </div>
 </section>
 
-### Smart energy solution overview
+## Smart energy solution overview
 
 The diagram below identifies data flow and integration points for a typical smart-metering solution that uses the ThingsBoard platform to collect and analyze energy monitoring data from smart meters.
 
@@ -162,7 +162,7 @@ You may notice plenty of connectivity options for the smart meters: direct conne
 The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database. 
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
-### Learn more
+## Learn more
 
 <a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
 <a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>

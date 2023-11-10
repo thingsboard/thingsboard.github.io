@@ -12,7 +12,7 @@ title: RabbitMQ Plugin
 
 RabbitMQ plugin is responsible for sending messages to RabbitMQ instances triggered by specific rules
 
-### Configuration
+## Configuration
 
 You can specify following configuration parameters:
 
@@ -26,11 +26,11 @@ You can specify following configuration parameters:
  - handshake timeout
  - additional client properties that could be usefull for connecting to specific rabbitmq instances
 
-### Server-side API
+## Server-side API
 
 This plugin does not provide any server-side API.
 
-### Example
+## Example
 
 In this example, we are going to demonstrate how you can configure RabbitMQ extension to be able to send messages to particular queue every time new telemetry message for the device arrives.
 

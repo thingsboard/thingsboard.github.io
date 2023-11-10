@@ -39,7 +39,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
 {% include templates/prerequisites.md %}
 
-### List of hardware and pinouts
+## List of hardware and pinouts
 
  - [ESP8266 module](https://www.aliexpress.com/item/2PCS-ESP8266-Serial-Esp-01-WIFI-Wireless-Transceiver-Module-Send-Receive-LWIP-AP-STA/32302638695.html?spm=2114.03010208.3.163.FPBlcc&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_427_10073_10103_10102_10096_10052_10050_10051,searchweb201603_3&btsid=1494d8a7-6202-4a69-a0e7-877ffa333243)
 
@@ -228,16 +228,16 @@ Connect USB-TTL adapter to PC and select the corresponding port in Arduino IDE. 
 
 After application will be uploaded and started it will try to connect to ThingsBoard node using mqtt client and upload "temperature" and "humidity" timeseries data once per second.
 
-### Autonomous operation
+## Autonomous operation
 
 When you have uploaded the sketch, you may remove all the wires required for uploading including USB-TTL adapter and connect your ESP8266 and DHT sensor directly to the power source according to the [Final wiring schema](#final-schema-battery-powered).
 
-### Troubleshooting
+## Troubleshooting
 
 In order to perform troubleshooting, you should assemble your hardware according to the [Programming/flashing schema](#programmingflashing-schema).
 Then connect USB-TTL adapter with PC and select port of the USB-TTL adapter in Arduino IDE. Finally, open "Serial Monitor" in order to view debug information produced by serial output.
 
-### Data visualization
+## Data visualization
 
 Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator. Use:
 
@@ -254,7 +254,7 @@ If all is configured correctly you should be able to see latest values of *"temp
 After, open **"Dashboards"** section then locate and open **"ESP8266 DHT22: Temperature & Humidity Demo Dashboard"**. 
 As a result, you will see two digital gauges and two time-series charts displaying temperature and humidity level (similar to dashboard image in the introduction).
 
-### See also
+## See also
 
 Browse other [samples](/docs/samples) or explore guides related to main ThingsBoard features:
 
@@ -268,7 +268,7 @@ Browse other [samples](/docs/samples) or explore guides related to main ThingsBo
  
 {% include socials.html %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}
 
