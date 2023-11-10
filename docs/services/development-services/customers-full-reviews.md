@@ -1,8 +1,8 @@
 ---
 layout: development-services-reviews
-title: Customers' full reviews
+title: ThingsBoard case studies and customers testimonials
 notitle: "true"
-description: Development services customers' reviews
+description: Real feedback from real clients. Dive into our testimonials to understand the true impact of our services.
 
 ---
 
@@ -161,7 +161,7 @@ description: Development services customers' reviews
 
     var contactform =  document.getElementById('contact-form');
 
-    contactform.setAttribute('action', 'https://formspree.io/' + 'support' + '@' + 'thingsboard' + '.' + 'io');
+    contactform.setAttribute('action', 'https://formspree.io/f/xbjvbeln');
 
     jqueryDefer(
         function () {

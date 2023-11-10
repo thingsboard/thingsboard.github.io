@@ -45,7 +45,7 @@
 
     var contactform =  document.getElementById('contact-form');
 
-    contactform.setAttribute('action', 'https://formspree.io/' + 'support' + '@' + 'thingsboard' + '.' + 'io');
+    contactform.setAttribute('action', 'https://formspree.io/f/xbjvbeln');
 
     jqueryDefer(
         function () {
@@ -67,7 +67,7 @@
                      return results ? results[1] : null;
                  };
                  var subjectValue = $.urlParam('subject');
-                 if (subjectValue != undefined && subjectValue.trim().length > 0) {                    
+                 if (subjectValue != undefined && subjectValue.trim().length > 0) {
                     $('#contact-form select[name=subject]').val(decodeURIComponent(subjectValue));
                     $('#contact-form select[name=subject]').removeClass("input--empty");
                  }

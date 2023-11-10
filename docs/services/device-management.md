@@ -1,8 +1,8 @@
 ---
 layout: iot-article
-title: Device Management
+title: ᐉ IoT Device Management Platform
 notitle: "true"
-description: IoT device management
+description: "IoT Device Management ✔ IoT Device Control ⚫ ThingsBoard ➤ Help organizations to have better control and fetch for all types of device data using REST APIs or Web UI"
 
 ---
 <section class="hero light-text"></section>

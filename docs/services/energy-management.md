@@ -1,8 +1,8 @@
 ---
 layout: iot-article
-title: Energy Management
+title: ᐉ IoT Energy Management & Monitoring
 notitle: "true"
-description: IoT energy management
+description: "IoT Energy Management ✔IoT Energy Monitoring ⚫ ThingsBoard ➤ Smart energy monitoring and data visualization with ThingsBoard IoT Platform"
 ---
 
 <section class="hero light-text"></section>

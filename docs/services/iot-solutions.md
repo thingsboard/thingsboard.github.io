@@ -1,8 +1,8 @@
 ---
 layout: iot-article
-title: IoT Solutions
+title: Internet of Things Solutions ᐉ IoT Services
 notitle: "true"
-description: IoT solutions
+description: "Internet of Things Services ✔ IoT Solutions ⚫ ThingsBoard ➤ Our products have scalability ✔ fault-tolerance ✔ performance so you will never lose your data"
 
 ---
 <section class="hero light-text"></section>
@@ -49,6 +49,10 @@ description: IoT solutions
                 <tr>
                     <td></td>
                     <td>Customisation of workflows & rule engines</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>Customer/User role based information access</td>
                 </tr>
                 <tr>
                     <td></td>
