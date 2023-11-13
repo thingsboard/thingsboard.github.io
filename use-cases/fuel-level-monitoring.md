@@ -25,7 +25,7 @@ Additionally, the dashboard is equipped with multiple states, allowing for a div
 
 **Main state** - designed to monitor the remaining fuel and control the placement of tanks, device management, and the alarm system;
 
-**Tank state** - designed to display information about a specific tank;
+**Tank state** - designed to display information about a specific tank.
 
 ## Fuel Level Monitoring dashboard
 
@@ -146,11 +146,11 @@ Save up to 90% of development time for your fuel level monitoring solution by ut
 
 The diagram below identifies data flow and integration points for a typical fuel level monitoring solution that uses the ThingsBoard platform to collect and analyze data from fuel tanks.
 
-<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/fleet-tracking.svg"></object>
+<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/smart-energy-diagram.svg"></object>
 
 You may notice plenty of connectivity options for the fuel tanks devices: direct connection to the cloud, through the IoT Gateway or integration with a third-party system.
 Most of a fuel level monitoring projects today use direct connection to the cloud using MQTT or CoAP in case of NB IoT. 
-ThingsBoard supports either plain JSON or Protobuf, which significantly optimize network traffic and increase battery life;
+ThingsBoard supports either plain JSON or Protobuf, which significantly optimize network traffic and increase battery life.
 
 The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
