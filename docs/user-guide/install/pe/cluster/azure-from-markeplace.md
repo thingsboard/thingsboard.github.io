@@ -12,7 +12,7 @@ Basically, you get the license directly from ThingsBoard, Inc, but purchase corr
 * TOC
 {:toc}
 
-## Prerequisites
+### Prerequisites
 
 - Active [Microsoft Azure](https://azure.microsoft.com){:target="_blank"} account.
 

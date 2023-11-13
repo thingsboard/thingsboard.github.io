@@ -74,7 +74,7 @@ We will describe connector configuration file below.
 {% endcapture %}
 {% include code-toggle.liquid code=odbcConf params="conf|.copy-code.expandable-20" %}
 
-### Prerequisites
+## Prerequisites
 
 To install and get ODBC connector working several additional steps need to be done:
 
@@ -82,7 +82,7 @@ To install and get ODBC connector working several additional steps need to be do
 2. Install ODBC driver(s) for database(s) the ThingsBoard gateway need to connect.
 3. Add data source in [ODBC Data source Administrator](https://docs.microsoft.com/en-us/sql/database-engine/configure-windows/open-the-odbc-data-source-administrator) on Windows or add driver information (name, library path etc.) to ODBC configuration file [odbcinst.ini](https://github.com/mkleehammer/pyodbc/wiki/Drivers-and-Driver-Managers#odbc-configuration-files-unix-only) on Unix systems. 
 
-### Section "connection"
+## Section "connection"
 This **mandatory** section provides information how to connect or reconnect to ODBC database.
 
 | **Parameter**                     | **Default value**   | **Description**                     |
@@ -110,7 +110,7 @@ This **optional** subsection provides information how to decode string data and 
 
 **Note**: More information about encoding/decoding read [there](https://github.com/mkleehammer/pyodbc/wiki/Unicode).
 
-### Section "pyodbc"
+## Section "pyodbc"
 This **optional** section provides [options](https://github.com/mkleehammer/pyodbc/wiki/The-pyodbc-Module#pyodbc-attributes) to tune *pyodbc* Python library which is working under the hood of ODBC Connector.
 
 ```json
@@ -120,14 +120,14 @@ This **optional** section provides [options](https://github.com/mkleehammer/pyod
 },
 ```
 
-### Property "converter"
+## Property "converter"
 ODBC connector is provided with built-in uplink data converter. One can specify custom converter class in this **optional** property.
 
 ```json
 "converter": "CustomOdbcUplinkConverter",
 ```
 
-### Section "polling"
+## Section "polling"
 The main idea of ODBC connector is periodically querying ODBC database whether new data is appeared. 
 
 This **mandatory** section provides information how often to query database, what data to select and which database column is used to iterate over result.
@@ -360,7 +360,7 @@ If *overrideRpcConfig* is set to *true*, [RPC params](/docs/reference/gateway-mq
 }
 ```
 
-### Next steps
+## Next steps
 
 Explore guides related to main ThingsBoard features:
 

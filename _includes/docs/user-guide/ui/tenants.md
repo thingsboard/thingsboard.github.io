@@ -2,7 +2,7 @@
 * TOC
 {:toc}
 
-## Introduction
+### Introduction
 
 ThingsBoard supports [Multitenancy](https://en.wikipedia.org/wiki/Multitenancy) out-of-the-box.
 

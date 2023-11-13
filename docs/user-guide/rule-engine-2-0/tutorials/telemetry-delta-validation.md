@@ -13,7 +13,7 @@ Let's assume we have a device that uses a temperature sensor to collect and read
 In addition, let's assume that we need to generate the alarm when the delta between the last five-minutes temperature readings and the latest temperature reading does exceed 5 degrees.
 Please note that this is just a simple theoretical use case to demonstrate the capabilities of the platform. You can use this tutorial as a basis for much more complex scenarios.
 
-### Prerequisites
+## Prerequisites
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
@@ -21,7 +21,7 @@ We assume you have completed the following guides and reviewed the articles list
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
   * [Create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/) guide.
 
-### Adding the device
+## Adding the device
 
 Add Device entity in ThingsBoard. Its name is **Thermometer** and its type is **temperature sensor**.
 
@@ -29,7 +29,7 @@ Add Device entity in ThingsBoard. Its name is **Thermometer** and its type is **
 
 <br>
 
-### Message flow
+## Message flow
 
 In this section, we explain the purpose of each node in this tutorial. There will be two rule chains involved:
 
@@ -206,7 +206,7 @@ The following screenshot shows how the final **Root Rule Chain** should look lik
 <br>
 <br>
 
-### How to verify the Rule Chain and Post telemetry
+## How to verify the Rule Chain and Post telemetry
 
 For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api). For this we will need to
 copy device access token from the device **Thermometer**. 
@@ -254,7 +254,7 @@ Please refer to the links from the second to the fourth under the **See Also** s
 
 <br>
 
-### See Also
+## See Also
 
 - [Validate incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/) tutorial - for more information about how to validate an incoming telemetry using the Script Filter node.
 
@@ -264,6 +264,6 @@ Please refer to the links from the second to the fourth under the **See Also** s
 
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) tutorial.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}

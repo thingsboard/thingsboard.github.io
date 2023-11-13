@@ -1,4 +1,4 @@
-### Instructions for Contributing to the Docs/Website
+## Instructions for Contributing to the Docs/Website
 
 * [Fork this repository](https://help.github.com/articles/fork-a-repo/)
 * [Deploy the site locally](#deployment-of-the-site-locally)
@@ -7,7 +7,7 @@
 * [Generate image preview](#image-preview-generator)
 * [Create Pull Request](https://help.github.com/articles/creating-a-pull-request/)
 
-### Deployment of the site locally
+## Deployment of the site locally
 
 The below commands set up your environment for running GitHub pages locally. 
 Any edits you make will be viewable on a lightweight webserver that runs on your local machine.
@@ -57,7 +57,7 @@ or execute the below script from the project root directory:
 Your copy of the site will then be viewable at: [http://localhost:4000](http://localhost:4000)
 (or wherever Jekyll tells you).
 
-### Deployment of the site in docker
+## Deployment of the site in docker
 
 These instructions will help to run the thingsboard/thingsboard.github.io project in the docker. You do not need to install additional dependencies and packages, everything is already built into the docker image.
 
@@ -117,7 +117,7 @@ docker compose up
 In about 2 minutes (depending on PC performance), your copy of the site will be available for viewing at http://localhost:4000
 
 
-### Image preview generator
+## Image preview generator
 
 For new *.png images preview is required along with original images.
 
@@ -151,7 +151,7 @@ docker exec thingsboard_website bash -c "./generate-previews.sh images/solution-
 ```
 > **_NOTE:_** This command must be executed with the running container
 
-### Linkchecker
+## Linkchecker
 
 Use the following command to check the broken links.
 

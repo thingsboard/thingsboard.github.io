@@ -156,6 +156,6 @@ This can be achieved by configuring list of **Custom event types** in **Advanced
 - **Display message metadata table** - whether to display metadata table in scheduler event configuration form.
 - **Configuration HTML template** - HTML code used to generate custom event configuration form used to edit event configuration object.
       
-### Next steps
+## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

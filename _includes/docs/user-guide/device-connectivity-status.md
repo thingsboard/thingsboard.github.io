@@ -24,7 +24,7 @@ Device State service is responsible for maintaining the following [server-side](
  - **lastActivityTime** - represents the last time device pushed telemetry, attribute update, or RPC command, number of milliseconds since January 1, 1970, 00:00:00 GMT;
  - **inactivityAlarmTime** - represents the last time inactivity event was triggered, number of milliseconds since January 1, 1970, 00:00:00 GMT.
 
-### Configuration
+## Configuration
 
 Device State service uses a global configuration parameter for inactivity timeout. 
 This parameter is defined in **thingsboard.yml** (state.defaultInactivityTimeoutInSec) and by default it is set to 600 seconds (10 minutes).
@@ -33,7 +33,7 @@ A user can overwrite this parameter for an individual device by setting the "ina
 Device State service uses a global configuration parameter to detect inactivity events.
 This parameter is defined in **thingsboard.yml** (state.defaultStateCheckIntervalInSec) and by default it is set to 60 seconds (1 minute).
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}
 

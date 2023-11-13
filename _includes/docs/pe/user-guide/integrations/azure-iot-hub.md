@@ -10,13 +10,13 @@ Azure IoT Hub Integration allows to stream data from AWS IoT Backend to ThingsBo
 
   <object width="80%" data="/images/user-guide/integrations/azure/iot-hub-integration.svg"></object>
 
-### Create and configure Azure IoT Hub account
+## Create and configure Azure IoT Hub account
 
 - [Create an IoT hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal#create-an-iot-hub).
 
 - [Register a new device in the IoT hub](https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal#register-a-new-device-in-the-iot-hub).
 
-### Integration with the Thingsboard
+## Integration with the Thingsboard
 We have done all necessary steps on the Azure IoT Hub side. Now we can start configuring the Thingsboard.
 
 ##### Thingsboard Uplink Data Converter
@@ -106,7 +106,7 @@ If **PEM** credentials type is selected, the following configuration should be p
 
 [CACertificates instruction](https://github.com/Azure/azure-iot-sdk-c/tree/master/tools/CACertificates)
 
-### Validation
+## Validation
 
 ##### Validate Uplink Messages
 Lets verify our integration. First, lets put message into uplink stream, so Thingsboard will fetch this message. 
@@ -125,6 +125,6 @@ Go to **Device Group** -> **All** -> **T1** - you can see that
 
 ![image](/images/user-guide/integrations/azure/iot-hub-validate-telemetry.png)
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

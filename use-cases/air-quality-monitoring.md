@@ -68,7 +68,7 @@ The **Administration Dashboard** dashboard is designed for tenant administrators
     </div>
 </div>
 
-### ThingsBoard advantages
+## ThingsBoard advantages
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
@@ -149,7 +149,7 @@ The **Administration Dashboard** dashboard is designed for tenant administrators
     </div>
 </section>
 
-### Air Quality Monitoring solution overview
+## Air Quality Monitoring solution overview
 
 The diagram below identifies data flow and integration points for a typical air quality monitoring solution that uses the ThingsBoard platform to collect and analyze monitoring data from air stations.
 
@@ -159,7 +159,7 @@ You may notice plenty of connectivity options for the air monitoring stations: d
 The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
-### Learn more
+## Learn more
 
 <a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
 <a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>

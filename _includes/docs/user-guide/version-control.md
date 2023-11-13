@@ -13,7 +13,7 @@ As a platform user, you can export single or multiple ThingsBoard Entities, brow
 This feature improves user experience when multiple engineers design the same Rule Chain or Dashboard and simplifies CI/CD. 
 It also allows you to easily clone the solution between tenants or platform instances. 
 
-### Architecture
+## Architecture
 
 #### Entity External ID
 
@@ -79,7 +79,7 @@ Every instance of the Version Control service is responsible for handling synchr
 Each "commit" API call may take some time. Concurrent "commit" API calls in scope of the same Tenant are not supported. 
 The system will cancel the "commit" API call if it is in progress and the new "commit" API call arrives.
 
-### Usage
+## Usage
 
 #### Git Settings configuration
 
@@ -119,6 +119,6 @@ Navigate to version control page. Select the commit and specify restore settings
 
 {% include images-gallery.html imageCollection="gitRestore" %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

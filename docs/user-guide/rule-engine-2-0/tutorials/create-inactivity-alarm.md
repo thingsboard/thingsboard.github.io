@@ -34,7 +34,7 @@ Therefore, in this case, you will need to configure ThingsBoard Rule Engine to:
  - clear the alarm if the device becomes active.
 
 
-### Background
+## Background
 The ThingsBoard Device State service is responsible for monitoring the device connectivity state and triggering the device connectivity events that are pushed to Rule Engine.
 
 ThingsBoard supports four types of events:
@@ -73,7 +73,7 @@ This tutorial will explain in details the device Inactivity event and it will sh
 <br>
 <br>
 
-### Adding the Device
+## Adding the Device
 
  - Add a Device entity in ThingsBoard.
  - Enter the Device name as **Temperature device**, and the Device type as **Temperature sensor**:
@@ -83,7 +83,7 @@ This tutorial will explain in details the device Inactivity event and it will sh
 <br>
 <br>
 
-# Configuring the Device
+## Configuring the Device
 
  - Go to **Devices** -> **Temperature device** -> **Attributes** -> **Server attributes** and Press **Add** button;
 
@@ -94,7 +94,7 @@ This tutorial will explain in details the device Inactivity event and it will sh
 <br>
 <br>
 
-### Configuring the Rule Chain
+## Configuring the Rule Chain
 
 The following screenshot shows the initial Root Rule Chain. Please, note that the irrelevant rule nodes have been removed from the Root Rule Chain.
 
@@ -196,7 +196,7 @@ This Rule chain is now ready and you need to save it.
 <br>
 <br>
 
-### How to verify the Rule Chain and Post telemetry
+## How to verify the Rule Chain and Post telemetry
 
 - Use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api), for posting the device telemetry. <br>
   Please, note that you will need to copy the device access token from the device, **Temperature device**, as shown in the following screenshot. 
@@ -230,7 +230,7 @@ Please refer to the first two links under the **See Also** section to see how to
 <br>
 <br>
 
-# See Also
+## See Also
 
 - [Create & Clear Alarms: configure dashboard](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#configure-device-and-dashboard) guide - to learn how to add an Alarm widget to the dashboard.
 
@@ -238,7 +238,7 @@ Please refer to the first two links under the **See Also** section to see how to
 
 - [Device Connectivity Status](/docs/user-guide/device-connectivity-status/) guide.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
 

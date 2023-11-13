@@ -38,7 +38,7 @@ Read more about solution templates [here](/docs/{{docsPrefix}}solution-templates
 
 This guide covers main concepts and various dashboard settings.
 
-### Create new dashboard
+## Create new dashboard
 
 To add a new dashboard, you should:
 
@@ -64,7 +64,7 @@ To import a dashboard, follow these steps:
 
 {% include images-gallery.html imageCollection="import-dashboard" showListImageTitles="true" %}
 
-### Managing dashboard
+## Managing dashboard
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 With your dashboards, you can perform operations such as [export dashboard in the JSON format](#export-dashboard), [share dashboard group](#share-dashboard-group), [make dashboard group public](#make-dashboard-group-public), [edit dashboard](#edit-dashboard) and [delete dashboard](#delete-dashboard) using the corresponding icon next to the dashboard.
@@ -191,7 +191,7 @@ You can also delete multiple dashboards at once.
 
 {% include images-gallery.html imageCollection="delete-dashboard-3" showListImageTitles="true" %}
 
-### Dashboard toolbar
+## Dashboard toolbar
 
 Before starting working with a dashboard, get familiar with its interface to understand which features are responsible for what actions.
 
@@ -494,7 +494,7 @@ For the state to be named after the entity, use **${entityName}** as the name of
 
 {% include images-gallery.html imageCollection="states-entity-name" %}
 
-### Next steps
+## Next steps
 
  - [Widgets](/docs/{{docsPrefix}}user-guide/widgets) - This guide contains instructions for configuring ThingsBoard widgets.
 

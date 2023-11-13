@@ -153,6 +153,6 @@ but real state fields that are added to View configuration are not affected.
 
 State fields use Javascript as a language for writing transformation function. Inner Engine provide 100% support of ECMAScript 5.1
 
-### Next Steps
+## Next Steps
 
 {% assign currentGuide = "States" %}{% include templates/trndz-guides-banner.md %}

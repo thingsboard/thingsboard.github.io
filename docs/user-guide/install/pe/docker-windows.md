@@ -140,6 +140,6 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) here is th
 
 {% include templates/troubleshooting/dns-issues-windows.md %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

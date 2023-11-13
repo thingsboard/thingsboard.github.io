@@ -27,7 +27,7 @@ In this tutorial we will configure ThingsBoard Rule Engine to:
 
 - Add additional data to the email body using Script Transform node from the incoming message.
 
-### Prerequisites
+## Prerequisites
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
@@ -36,7 +36,7 @@ We assume you have completed the following guides and reviewed the articles list
   * [Create & Clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/) guide.
   * [Send email on alarm](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) guide.
 
-### Create customer and assign device
+## Create customer and assign device
 
 First of all, we need to create Customer and assign device to customer. The following screenshots show you how to do this:
 
@@ -67,7 +67,7 @@ Go to **Devices** -> **Thermostat Home** -> **Attributes** -> **Server attribute
 
 <br>
 
-### Message flow
+## Message flow
 
 In this section, we explain the purpose of each node that was added or modified to initial rule chains in this tutorial:
 
@@ -82,7 +82,7 @@ In this section, we explain the purpose of each node that was added or modified 
 
 <br>
 
-### Configure Rule Chains
+## Configure Rule Chains
 
 In this tutorial, we used Rule Chains from [send email on alarm](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) tutorial.
 We modified Rule Chain **Create/Clear Alarm & Send Email** by adding nodes that was described above in the section [Message flow](/docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/#message-flow)<br>
@@ -204,7 +204,7 @@ In this rule chain, you will add 2 nodes and modify 1 node as it will be explain
 ![image](/images/user-guide/rule-engine-2-0/tutorials/email/modify-to-email.png)
 
 
-### Post telemetry and verify
+## Post telemetry and verify
 For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api). For this we will need to
 copy device access token from then device **Thermostat Home**.
 
@@ -240,7 +240,7 @@ Please refer to the links under the **See Also** section to see how to do this.
 <br>
 <br>
 
-### See Also
+## See Also
 
 - [Notifications and Alarms on your smartphone using Telegram Bot](/docs/iot-gateway/integration-with-telegram-bot/) guide
 
@@ -248,6 +248,6 @@ Please refer to the links under the **See Also** section to see how to do this.
 
 - [Create Alarm when the Device is offline](/docs/user-guide/rule-engine-2-0/tutorials/create-inactivity-alarm/) guide.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}

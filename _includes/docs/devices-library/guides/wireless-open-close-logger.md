@@ -8,7 +8,7 @@
 '
  %}
 
-### Introduction
+## Introduction
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 
@@ -36,18 +36,18 @@ To continue with this guide we will need the following:
 - [ThingsBoard account](https://demo.thingsboard.io)
 {% endif %}
 
-### Create device on ThingsBoard
+## Create device on ThingsBoard
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/thingsboard-create-device-efento-transport-block.md %}
 
-### Connect device to ThingsBoard 
+## Connect device to ThingsBoard 
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/wireless-open-close-logger-configuration-block.md %}
 
-### Check data on ThingsBoard
+## Check data on ThingsBoard
 
 {% include /docs/devices-library/blocks/ready-to-go-devices/wireless-open-close-logger-check-data-block.md %}
 
-### Conclusion
+## Conclusion
 
 {% include /docs/devices-library/blocks/basic/conclusion-block.md %}
