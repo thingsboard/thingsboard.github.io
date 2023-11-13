@@ -165,16 +165,16 @@ wl-tables-bundle:
 add-widget:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-widget-1-pe.png
-        title: 'Navigate to the "Widgets Library" page using the main menu on the left. Click the "+" icon in the upper right corner of the screen, and select the "Create new widgets type" option from the drop-down menu;'
+        title: 'Navigate to the "Widgets Library" page using the main menu on the left. Click the "+" icon in the upper right corner of the screen, and select the "Create new widget" option from the drop-down menu;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-widget-2-pe.png
         title: 'In the pop-up window select widget type;'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-widget-3-pe.png
-        title: 'In the pop-up window select widget type. In the dialog window that appears, enter the name of the new widget. Enter the widget JavaScript code, then click "Save" to complete the creation of widget;'
+        title: 'In the dialog window that appears, enter the name of the new widget. Enter the widget JavaScript code, then click "Save" to complete the creation of widget;'
     3:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-widget-4-pe.png
-        title: 'A new widget is created.'
+        title: 'The new widget is created.'
 
 wl-add-widgets-bundle:
     0:
@@ -185,7 +185,7 @@ wl-add-widgets-bundle:
         title: 'In the opened dialog window, enter the name of the new bundle. Adding an image and a description is optional. Click "Add";'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-3-pe.png
-        title: 'The new widgets bundle is opened. After adding the widgets bundle, you can add widgets in there. For this, click the "+ Add Widget";'
+        title: 'After creating the widgets bundle, it will be automatically opened. Now you can add widgets there. To do this, click the "+ Add Widget" button in the center of the window to add an existing widget. Alternatively, you can click the plus icon in the upper right corner to create or import a new widget;'
     3:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-4-pe.png
         title: 'Select one or multiple widgets and click "Save" to complete add widget to your widget bundle;'
@@ -226,7 +226,7 @@ import-widget:
         title: 'In the popup, you will be prompted to upload the JSON file. Drag and drop a file from your computer, then click the "Import" to add a widget to the widget bundle;'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-import-widget-3-pe.png
-        title: 'The widget is imported to the bundle.'
+        title: 'The widget is imported.'
 
 delete-widgets-bundle-1:
     0:
@@ -250,21 +250,21 @@ delete-widgets-bundle-2:
 delete-widget-1:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-1-pe.png
-        title: 'Go to the "Widgets Library" page, navigate to the "Widgets" tab, and click a "Trash" icon in the widget&#39;s type row you want to delete;'
+        title: 'Go to the "Widgets Library" page, navigate to the "Widgets" tab, and click a "Trash" icon in the widget&#39;s row you want to delete;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-2-pe.png
-        title: 'Confirm deleting the widget type in the dialog box.'
+        title: 'Confirm deleting the widget in the dialog box.'
 
 delete-widget-2:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-3-pe.png
-        title: 'Go to the "Widgets Library" page, navigate to the "Widgets" tab, and click a "Pencil" icon in the widget&#39;s type row to open widget details;'
+        title: 'Go to the "Widgets Library" page, navigate to the "Widgets" tab, and click a "Pencil" icon in the widget&#39;s row to open widget details;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-4-pe.png
-        title: 'Click on the "Delete widget type" button in the widget details;'
+        title: 'Click on the "Delete widget" button in the widget details;'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-5-pe.png
-        title: 'Confirm deleting the widget type in the dialog box.'
+        title: 'Confirm deleting the widget in the dialog box.'
 
 ---
 
