@@ -7,7 +7,7 @@ ThingsBoard allows you to provide Single Sign-On functionality for your customer
 A list of platforms that supports the OAuth 2.0 protocol: [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect), [Okta](https://www.okta.com/), [Auth0](https://auth0.com/), etc.   
 
 
-### OAuth 2.0 authentication flow
+## OAuth 2.0 authentication flow
 
 ThingsBoard supports the Authorization Code grant type to exchange an authorization code for an access token.   
 Once the user returns to the ThingsBoard client via redirect URL, the platform will get the authorization code from the URL and will use it to request an access token from the external user management platform.
@@ -15,7 +15,7 @@ Using the [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-m
 After this, the regular ThingsBoard authorization flow will happen.
 
 
-### Scenario description
+## Scenario description
 
 In this sample, we are going to use [Google](https://developers.google.com/identity/protocols/oauth2/openid-connect) the authentication. 
 The user is going to be logged into the Tenant, and the Tenant name is going to be equal to the user's email.
@@ -29,7 +29,7 @@ To map that external user info from Google and Auth0 platform, we are going to u
 
 If [basic mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#basic-mapper) functionality doesn't fit your business needs, you can configure the [custom mapper](/docs/{{docsPrefix}}user-guide/oauth-2-support/#custom-mapper),  so that you are able to add an implementation that fits your specific needs.
 
-#### Login with Google
+### Login with Google
 
 To use Google OAuth 2.0 authentication platform for Login, you need to set up a project in the Google API Console to obtain OAuth 2.0 credentials.
 
@@ -195,7 +195,7 @@ This snippet contains both providers that are used in our sample:
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/26-both-providers.png&#41;)
 {% include images-gallery.html imageCollection="step26" preview="false" max-width="100%" %}
 
-### Mapping of the external user into ThingsBoard internal user structure
+## Mapping of the external user into ThingsBoard internal user structure
 
 Mapping of the external user info object into ThingsBoard user can be achieved in two ways - using the **Basic** and **Custom** mappers. 
 The main functionality of the mapper is to map key-value attributes from the external user info object into the expected structure of the ThingsBoard OAuth 2.0 User:
@@ -357,7 +357,7 @@ Here is an example of demo configuration:
 {% include images-gallery.html imageCollection="step28" preview="false" max-width="100%" %} 
 
 
-### OAuth 2.0 configuration parameters
+## OAuth 2.0 configuration parameters
 
 | Key | Description |
 | --- | ----------- |
@@ -378,7 +378,7 @@ Here is an example of demo configuration:
 | security.oauth2.clients.default.userInfoUri | URI for the user info endpoint |
 | security.oauth2.clients.default.userNameAttributeName | Attribute name used to access the user's name from the user info response |
 
-### HaProxy configuration
+## HaProxy configuration
 
 If ThingsBoard is running under a load balancer like HAProxy please configure properly balance algorithm to make sure that the correct session is available on the ThingsBoard instance: 
 ```bash

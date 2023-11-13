@@ -27,7 +27,7 @@ Once you complete, the data will be shown on the following dashboard.
 A similar guide is also available as an [application note](https://docs.senquip.com/app_notes/APN0015%20Rev%201.0%20-%20Connecting%20Senquip%20Devices%20to%20the%20ThingsBoard.pdf) from the Senquip website.
 
 
-### List of hardware and pinouts
+## List of hardware and pinouts
 
 ORB-C1-G
 ![image](/images/samples/senquip/orb-x1-open.jpg)
@@ -80,11 +80,11 @@ The Endpoint settings should now look like this.
 
 ![image](/images/samples/senquip/mqtt.jpg)
 
-### Thingsboard configuration
+## Thingsboard configuration
 
 It will be assumed that the user has an account on the [ThingsBoard Cloud](https://thingsboard.cloud/).  All device configuration described in the steps below will be performed using the [ThingsBoard Cloud](https://thingsboard.cloud/).
 
-#### Create a new device
+### Create a new device
 
 * [Step 1] Select the Device Group to which you would like to add the Senquip device.  Open the group and use the "+" button to add a new device.
 * [Step 2] Give the new device a meaningful name, we are using the same name as chosen in step 1.1.
@@ -96,7 +96,7 @@ The new device settings should now look like this.
 
 ![image](/images/samples/senquip/add.jpg)
 
-#### Set the credentials
+### Set the credentials
 
 * [Step 1] Select "MQTT Basic" as the Credentials type.
 * [Step 2] Insert the Client ID, User Name, and Password the same as in steps 2.3, 2.5, and 2.6.
@@ -106,7 +106,7 @@ The credentials should now look like this.
 
 ![image](/images/samples/senquip/credentials.jpg)
 
-### Telemetry data
+## Telemetry data
 
 Senquip devices send data in [JSON](https://en.wikipedia.org/wiki/JSON) format as shown in the image below.
 
@@ -120,7 +120,7 @@ By selecting the device that we have just added to the ThingsBoard and pressing 
 ![image](/images/samples/senquip/telemetry.jpg)
 
 
-### Viewing the data on a dashboard
+## Viewing the data on a dashboard
 
 We will now add the telemetry data to widegets on a dashboard.
 
@@ -142,6 +142,6 @@ This is how the dashboard now looks.
 ![image](/images/samples/senquip/dash.jpg)
 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner.md %}

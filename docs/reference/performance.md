@@ -24,7 +24,7 @@ ThingsBoard performance leverages three main projects:
  
 We also use [Zookeeper](https://zookeeper.apache.org/) for coordination and [gRPC](http://www.grpc.io/) in cluster mode. See [platform architecture](/docs/reference/) for more details.
 
-### Data flow and test tools
+## Data flow and test tools
  
 IoT devices connect to ThingsBoard server via MQTT and issue "publish" commands with JSON payload.
 Size of single publish message is approximately 100 bytes. 
@@ -51,7 +51,6 @@ The results of first performance tests on the modern 4-core laptop with SSD were
 The root cause and a main performance bottle-neck were quite obvious and easy to find. 
 It appears that the processing was not 100% asynchronous and we were executing blocking API call of Cassandra driver inside the [Telemetry Service](/docs/user-guide/telemetry/) actor.
 Quick refactoring of the service implementation resulted in more than 10X performance improvement and we received approximately 2500 published messages per second from 1000 devices.
-We would like to recommend [this article](http://www.datastax.com/dev/blog/java-driver-async-queries) about async queries to Cassandra. 
 
 ### Step 2. Connection pooling
 

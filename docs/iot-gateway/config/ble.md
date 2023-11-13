@@ -363,7 +363,7 @@ This part of configuration will look like:
 ```
 
 
-### Next steps
+## Next steps
 
 Explore guides related to main ThingsBoard features:
 

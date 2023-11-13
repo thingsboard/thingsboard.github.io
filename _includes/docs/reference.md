@@ -60,7 +60,7 @@ ThingsBoard provides a lightweight component written using Express.js framework 
 Those components are completely stateless and no much configuration available. 
 The static web UI contains application bundle. Once it is loaded, the application starts using the REST API and WebSockets API provided by ThingsBoard Core.  
  
-### Message Queues are awesome!
+## Message Queues are awesome!
 
 ThingsBoard supports multiple message queue implementations: Kafka, RabbitMQ, AWS SQS, Azure Service Bus and Google Pub/Sub. We plan to extend this list in the future.
 Using durable and scalable queues allow ThingsBoard to implement back-pressure and load balancing. Back-pressure is extremely important in case of peak loads.  
@@ -79,27 +79,27 @@ ThingsBoard uses following topics:
  * **tb_core**: to push messages from Transport or Rule Engine to ThingsBoard Core. Messages include session lifecycle events, attribute and RPC subscriptions, etc.
  * **tb_rule_engine**: to push messages from Transport or ThingsBoard Core to Rule Engine. Messages include incoming telemetry, device states, entity lifecycle events, etc.
  
-**Note:** All topic properties including names and number of partitions are [configurable](/docs/{{docsPrefix}}user-guide/install/config/) via thingsboard.yml or environment variables. 
+**Note:** All topic properties including names and number of partitions are [configurable](/docs/user-guide/install/{{docsPrefix}}config/) via thingsboard.yml or environment variables. 
 Since ThingsBoard 3.4 we can configure Rule Engine queues by the UI, see the [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/).
 
 **Note:** Starting version 2.5 we have switched from using [gRPC](https://grpc.io/) to  [Message Queues](/docs/{{docsPrefix}}reference/#message-queues-are-awesome)
 for all communication between ThingsBoard components. 
 The main idea was to sacrifice small performance/latency penalties in favor of persistent and reliable message delivery and automatic load balancing.  
 
-### On-premise vs cloud deployments
+## On-premise vs cloud deployments
 
 ThingsBoard supports both on-premise and cloud deployments. 
 With more then 5000 ThingsBoard servers running all over the world, ThingsBoard is running in production on AWS, Azure, GCE and private data centers.
 It is possible to launch ThingsBoard in the private network with no internet access at all.
 
-### Standalone vs cluster mode
+## Standalone vs cluster mode
 
 Platform is designed to be horizontally scalable and supports automatic discovery of new ThingsBoard servers (nodes). 
 All ThingsBoard nodes inside cluster are identical and are sharing the load. 
 Since all nodes are identical there is no "master" or "coordinator" processes and there is no single point of failure. 
 The load balancer of your choice may forward request from devices, applications and users to all ThingsBoard nodes.
 
-### Monolithic vs microservices architecture
+## Monolithic vs microservices architecture
 
 Starting ThingsBoard v2.2, it is possible to run the platform as a monolithic application or as a set of microservices. 
 Supporting both options requires some additional programming efforts, however, is critical due to back-ward compatibility with variety of existing installations.
@@ -121,7 +121,7 @@ Please follow the links listed below to learn more and choose the right architec
 * [**microservices**](/docs/{{docsPrefix}}reference/msa): Learn more about deployment, configuring and running ThingsBoard platform in a microservices mode.
  
 
-### SQL vs NoSQL vs Hybrid database approach
+## SQL vs NoSQL vs Hybrid database approach
 
 ThingsBoard uses database to store 
 [entities](/docs/{{docsPrefix}}user-guide/entities-and-relations/) (devices, assets, customers, dashboards, etc) and 
@@ -135,7 +135,7 @@ Please note that this option is deprecated in favor of Hybrid approach due to ma
 * **Hybrid (PostgreSQL + Cassandra)** - Stores all entities in PostgreSQL database and timeseries data in Cassandra database. 
 * **Hybrid (PostgreSQL + TimescaleDB)** - Stores all entities in PostgreSQL database and timeseries data in Timescale database. 
 
-It is possible to configure this options using **thingsboard.yml** file. See database [configuration](/docs/{{docsPrefix}}user-guide/install/config/) page for more details.
+It is possible to configure this options using **thingsboard.yml** file. See database [configuration](/docs/user-guide/install/{{docsPrefix}}config/) page for more details.
 
 ```yaml
 database:
@@ -147,7 +147,7 @@ database:
 
 ```
 
-### Programming languages and third-party
+## Programming languages and third-party
 
 ThingsBoard back-end is written in Java, but we also have some micro-services based on Node.js. ThingsBoard front-end is a SPA based on Angular 9 framework. 
 See [monolithic](/docs/{{docsPrefix}}reference/monolithic) and [microservices](/docs/{{docsPrefix}}reference/monolithic) pages for more details about third-party components used.  

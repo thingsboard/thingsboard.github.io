@@ -1,0 +1,199 @@
+{
+  "title": "ACE Gateway",
+  "image": null,
+  "mobileHide": false,
+  "mobileOrder": null,
+  "configuration": {
+    "description": "",
+    "widgets": {
+      "d3129ed8-a8e3-df66-c887-1b36fd73a206": {
+        "typeFullFqn": "system.cards.markdown_card",
+        "type": "latest",
+        "sizeX": 5,
+        "sizeY": 3.5,
+        "config": {
+          "datasources": [
+            {
+              "type": "entity",
+              "name": "",
+              "entityAliasId": "f45eaf75-d8e5-4cc8-c80d-5a9223d64bf6",
+              "dataKeys": [
+                {
+                  "name": "Q1",
+                  "type": "timeseries",
+                  "label": "Q1",
+                  "color": "#2196f3",
+                  "settings": {},
+                  "_hash": 0.19442371739833453
+                },
+                {
+                  "name": "Q2",
+                  "type": "timeseries",
+                  "label": "Q2",
+                  "color": "#4caf50",
+                  "settings": {},
+                  "_hash": 0.14372388970665972
+                },
+                {
+                  "name": "Q3",
+                  "type": "timeseries",
+                  "label": "Q3",
+                  "color": "#f44336",
+                  "settings": {},
+                  "_hash": 0.3366809204424328
+                },
+                {
+                  "name": "Q4",
+                  "type": "timeseries",
+                  "label": "Q4",
+                  "color": "#ffc107",
+                  "settings": {},
+                  "_hash": 0.5871490113003304
+                }
+              ],
+              "alarmFilterConfig": {
+                "statusList": [
+                  "ACTIVE"
+                ]
+              }
+            }
+          ],
+          "timewindow": {
+            "displayValue": "",
+            "selectedTab": 0,
+            "realtime": {
+              "realtimeType": 1,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "quickInterval": "CURRENT_DAY"
+            },
+            "history": {
+              "historyType": 0,
+              "interval": 1000,
+              "timewindowMs": 60000,
+              "fixedTimewindow": {
+                "startTimeMs": 1697007397755,
+                "endTimeMs": 1697093797755
+              },
+              "quickInterval": "CURRENT_DAY"
+            },
+            "aggregation": {
+              "type": "AVG",
+              "limit": 25000
+            }
+          },
+          "showTitle": false,
+          "backgroundColor": "#fff",
+          "color": "rgba(0, 0, 0, 0.87)",
+          "padding": "0px",
+          "settings": {
+            "useMarkdownTextFunction": false,
+            "markdownTextPattern": "##### Siemens LOGO!\n\n<table>\n<thead>\n<tr>\n    <th>Inputs</th>\n    <th>Current value</th>\n  </tr>\n</thead>\n  <tr>\n    <td><b>Q1</b></td>\n    <td>\n        <p>${Q1}</p>\n    </td>\n  </tr>\n  <tr>\n    <td><b>Q2</b></td>\n    <td>\n        <p>${Q2}</p>\n    </td>\n  </tr>\n  <tr>\n    <td><b>Q3</b></td>\n    <td>\n        <p>${Q3}</p>\n    </td>\n  </tr>\n  <tr>\n    <td><b>Q4</b></td>\n    <td>\n        <p>${Q4}</p>\n    </td>\n  </tr>\n</table>",
+            "applyDefaultMarkdownStyle": true
+          },
+          "title": "Markdown/HTML Card",
+          "showTitleIcon": false,
+          "iconColor": "rgba(0, 0, 0, 0.87)",
+          "iconSize": "24px",
+          "titleTooltip": "",
+          "dropShadow": false,
+          "enableFullscreen": false,
+          "widgetStyle": {},
+          "titleStyle": {
+            "fontSize": "16px",
+            "fontWeight": 400
+          },
+          "showLegend": false,
+          "useDashboardTimewindow": true,
+          "displayTimewindow": true,
+          "enableDataExport": false,
+          "widgetCss": "",
+          "pageSize": 1024,
+          "noDataDisplayMessage": ""
+        },
+        "row": 0,
+        "col": 0,
+        "id": "d3129ed8-a8e3-df66-c887-1b36fd73a206"
+      }
+    },
+    "states": {
+      "default": {
+        "name": "ACE Gateway",
+        "root": true,
+        "layouts": {
+          "main": {
+            "widgets": {
+              "d3129ed8-a8e3-df66-c887-1b36fd73a206": {
+                "sizeX": 11,
+                "sizeY": 8,
+                "row": 0,
+                "col": 0
+              }
+            },
+            "gridSettings": {
+              "backgroundColor": "#eeeeee",
+              "columns": 24,
+              "margin": 10,
+              "outerMargin": true,
+              "backgroundSizeMode": "100%"
+            }
+          }
+        }
+      }
+    },
+    "entityAliases": {
+      "f45eaf75-d8e5-4cc8-c80d-5a9223d64bf6": {
+        "id": "f45eaf75-d8e5-4cc8-c80d-5a9223d64bf6",
+        "alias": "ACE",
+        "filter": {
+          "type": "entityName",
+          "resolveMultiple": true,
+          "entityType": "DEVICE",
+          "entityNameFilter": "ACE Gateway"
+        }
+      }
+    },
+    "filters": {},
+    "timewindow": {
+      "displayValue": "",
+      "hideInterval": false,
+      "hideLastInterval": false,
+      "hideQuickInterval": false,
+      "hideAggregation": false,
+      "hideAggInterval": false,
+      "hideTimezone": false,
+      "selectedTab": 0,
+      "realtime": {
+        "realtimeType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "quickInterval": "CURRENT_DAY"
+      },
+      "history": {
+        "historyType": 0,
+        "interval": 1000,
+        "timewindowMs": 60000,
+        "fixedTimewindow": {
+          "startTimeMs": 1697007376471,
+          "endTimeMs": 1697093776471
+        },
+        "quickInterval": "CURRENT_DAY"
+      },
+      "aggregation": {
+        "type": "AVG",
+        "limit": 25000
+      }
+    },
+    "settings": {
+      "stateControllerId": "entity",
+      "showTitle": false,
+      "showDashboardsSelect": true,
+      "showEntitiesSelect": true,
+      "showDashboardTimewindow": true,
+      "showDashboardExport": true,
+      "toolbarAlwaysOpen": true
+    }
+  },
+  "externalId": null,
+  "name": "ACE Gateway"
+}

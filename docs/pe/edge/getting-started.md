@@ -201,38 +201,38 @@ mqttWindows:
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/getting-started/prerequisites.md %}
 
-### Step 1. Provision Device
+## Step 1. Provision Device
 
 {% assign cloudDocsPrefix = "pe/" %}
 {% include templates/edge/getting-started/step-1.md %}
 
-### Step 2. Provision Device from ThingsBoard PE Edge to ThingsBoard Professional Edition server (cloud)
+## Step 2. Provision Device from ThingsBoard PE Edge to ThingsBoard Professional Edition server (cloud)
 
 {% include templates/edge/getting-started/step-2.md %}
 
-### Step 3. Connect device
+## Step 3. Connect device
 
 {% include templates/edge/getting-started/step-3.md %}
 
-### Step 4. Push data from ThingsBoard PE Edge to ThingsBoard Professional Edition server (cloud)
+## Step 4. Push data from ThingsBoard PE Edge to ThingsBoard Professional Edition server (cloud)
 
 {% include templates/edge/getting-started/step-4.md %}
 
-### Step 5. Create Dashboard
+## Step 5. Create Dashboard
 
 {% include templates/edge/getting-started/step-5.md %}
 
-### Step 6. Provision Dashboard to ThingsBoard PE Edge
+## Step 6. Provision Dashboard to ThingsBoard PE Edge
 
 {% include templates/edge/getting-started/step-6.md %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "GettingStartedGuide" %}
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/guides-banner-edge.md %}
 
-### Your feedback
+## Your feedback
 
 Don't hesitate to star ThingsBoard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
 If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.

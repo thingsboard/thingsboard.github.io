@@ -512,7 +512,7 @@ Supported methods are:
 
 
 
-### Next steps
+## Next steps
 
 Explore guides related to main ThingsBoard features:
 

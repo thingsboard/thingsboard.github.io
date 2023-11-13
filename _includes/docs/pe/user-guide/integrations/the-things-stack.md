@@ -14,7 +14,7 @@ TheThingsStack is LoRaWAN network designed for connecting your devices using LoR
 After integrating TheThingsStack with Thingsboard, you can connect, communicate, process and visualize data from devices in the Thingsboard IoT platform.
 
 
-### The Things Stack Community setup
+## The Things Stack Community setup
 
 ##### Register Application
 The first step is to create an **application** in TheThingsStack console. Go to [console](https://console.thethingsnetwork.org/){:target="_blank"}, open 
@@ -245,7 +245,7 @@ after all required configurations, click the **Check connection** button.
 
 ![image](/images/user-guide/integrations/ttn/tb-integration_1.png)
 
-### Validation
+## Validation
 
 ##### Validate Uplink Messages
 Let's verify our integration. Go to the device **thermostat-a** page in TheThingsStack. Scroll to the **Simulate Uplink** section.
@@ -281,7 +281,7 @@ Open TTS Console, navigate to **tb_platform** application, to the section **Data
 
 ![image](/images/user-guide/integrations/ttn/ttn-downlink-verified.png)
 
-### See also
+## See also
 With this integration you can also configure Downlink converters and trigger required actions using Rule Engine nodes.
 
 - [Integration Overview](/docs/{{peDocsPrefix}}user-guide/integrations/)
@@ -290,6 +290,6 @@ With this integration you can also configure Downlink converters and trigger req
 - [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/)
 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

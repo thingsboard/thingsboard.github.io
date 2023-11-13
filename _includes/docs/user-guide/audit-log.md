@@ -19,7 +19,7 @@ There are several API calls that allow to fetch entities related to particular u
 {% unless docsPrefix == "paas/" %}
 ### General configuration
 
-System administrator is able to configure audit log levels using [thingsboard.yml](/docs/{{docsPrefix}}user-guide/install/config/). You can find sample configuration below:
+System administrator is able to configure audit log levels using [thingsboard.yml](/docs/user-guide/install/{{docsPrefix}}config/). You can find sample configuration below:
 
 ```yaml
 # Audit log parameters
@@ -75,6 +75,6 @@ The configuration parameters are well documented inline.
 ```
 {% endunless %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "AdvancedFeatures" %}{% include templates/multi-project-guides-banner.md %}

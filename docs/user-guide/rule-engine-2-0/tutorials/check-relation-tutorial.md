@@ -22,14 +22,14 @@ Let’s assume the following use case:
 However, there are different ways for the realization of this case, for example, it can be implemented using the **Switch** node that routes incoming Message to one or multiple output chains.<br>
 For more information about how to use the **Switch** node, please check the link to **The article of Switch Node** in the  [**See Also**](/docs/user-guide/rule-engine-2-0/tutorials/check-relation-tutorial/#see-also) section.
 
-### Prerequisites
+## Prerequisites
 
 You need to read the following guides before you start this tutorial:
 
   * [Getting Started](/docs/getting-started-guides/helloworld/).
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
 
-### Adding the devices and creating the relation between them
+## Adding the devices and creating the relation between them
 
   Add two Device entity in ThingsBoard:
 
@@ -48,7 +48,7 @@ You need to read the following guides before you start this tutorial:
 
 <br>
 
-### Message flow
+## Message flow
 
 In this section, we explain the purpose of each node in this tutorial:
 
@@ -71,7 +71,7 @@ In this section, we explain the purpose of each node in this tutorial:
 
 <br>
 
-### Configure Rule Chains
+## Configure Rule Chains
 
 In this tutorial, we modified our **Root Rule Chain** and also created Rule Chain **Related Fire Alarm System**
 
@@ -294,7 +294,7 @@ The following screenshot shows how the final **Root Rule Chain** should look lik
 <br>
 <br>
 
-# How to verify the Rule Chain and Post telemetry
+## How to verify the Rule Chain and Post telemetry
 
 - Use the following javascript code to emulate the **Fire Alarm System** device.
 
@@ -328,7 +328,7 @@ Please refer to the third and fourth links under the **See Also** section to see
 
 <br>
 
-### See Also
+## See Also
 
 - [Switch Node](/docs/user-guide/rule-engine-2-0/filter-nodes/#switch-node) guide - for more information about how to use Switch Node in Thignsboard.
 
@@ -340,7 +340,7 @@ Please refer to the third and fourth links under the **See Also** section to see
 
 - [RPC capabilities](/docs/user-guide/rpc/#server-side-rpc-api) guide - for more information about how RPC works in Thignsboard, please refer to the RPC capabilities guide.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}
 

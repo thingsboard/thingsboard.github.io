@@ -11,7 +11,7 @@ Mobile actions is a special subtype of [widget actions](/docs/{{docsPrefix}}user
 like take photo, scan QR code, get device location, make phone call and so on. Result of mobile action can be processed by special java-script functions allowing
 you to perform further processing, for ex. save taken photo or device location to entity attributes, use scanned QR code for device claiming, etc.  
 
-### Configuration
+## Configuration
 
 You can configure  mobile actions in the dashboard widget configuration:
 
@@ -33,21 +33,21 @@ You can configure  mobile actions in the dashboard widget configuration:
 
 {% include images-gallery.html imageCollection="mobile-actions" %}
 
-### Take picture from gallery
+## Take picture from gallery
 
 The action opens image gallery picker to select the picture. It returns selected image as a URL in base64 data format.
 You can configure **processImage** function to process resulting image data. For example an image can be stored as entity attribute value, which allows it to be displayed later using widgets.
 
 See [Mobile action configuration](#configuration) to learn how to configure this action. 
 
-### Take Photo
+## Take Photo
 
 The action opens phone camera for taking photo. It returns captured photo image as a URL in base64 data format.
 You can configure **processImage** function to process resulting image data. For example an image can be stored as entity attribute value, which allows it to be displayed later using widgets.
 
 See [Mobile action configuration](#configuration) to learn how to configure this action.
 
-### Open map directions
+## Open map directions
 
 The action takes provided location in latitude/longitude format and opens available map application to display possible directions.
 You should configure **getLocation** function to prepare location data.
@@ -55,7 +55,7 @@ For example, you can extract latitude/longitude values from current entity attri
 
 See [Mobile action configuration](#configuration) to learn how to configure this action.
 
-### Open map location
+## Open map location
 
 The action takes provided location in latitude/longitude format and opens available map application to display the location on the map.
 You should configure **getLocation** function to prepare location data.
@@ -63,7 +63,7 @@ For example, you can extract latitude/longitude values from current entity attri
 
 See [Mobile action configuration](#configuration) to learn how to configure this action.
 
-### Scan QR code
+## Scan QR code
 
 The action opens QR code scanner to scan QR code. It returns scanned QR code value.
 You can configure **processQrCode** function to process resulting QR code.
@@ -74,7 +74,7 @@ See [Claiming devices](/docs/{{docsPrefix}}user-guide/claiming-devices/) for det
 
 See [Mobile action configuration](#configuration) to learn how to configure this action.
 
-### Make phone call
+## Make phone call
 
 The action takes provided phone number and opens associated application to make phone call.
 You should configure **getPhoneNumber** function to return phone number.
@@ -82,7 +82,7 @@ For example, you can extract phone number value from current entity attribute an
 
 See [Mobile action configuration](#configuration) to learn how to configure this action.
 
-### Get phone location
+## Get phone location
 
 The action takes current phone location using location services. It returns location as a pair of latitude and longitude values.
 You can configure **processLocation** function to process resulting location data.
@@ -90,7 +90,7 @@ For example location data can be stored as entity attribute values to set or upd
 
 See [Mobile action configuration](#configuration) to learn how to configure this action.
 
-### Take screenshot
+## Take screenshot
 
 The action captures current phone screen. It returns captured screen image as a URL in base64 data format.
 You can configure **processImage** function to process resulting image data. For example an image can be stored as entity attribute value, which allows it to be displayed later using widgets.

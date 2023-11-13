@@ -12,13 +12,13 @@ Basically, you get the license directly from ThingsBoard, Inc, but purchase corr
 * TOC
 {:toc}
 
-## Prerequisites
+### Prerequisites
 
 - Active [Microsoft Azure](https://azure.microsoft.com){:target="_blank"} account.
 
 ### Step 1. Subscribe to ThingsBoard PE BYOL
 
-Open [ThingsBoard Professional Edition BYOL](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/things-board.tb-pe-byol) product page from [Azure Marketplace](https://azuremarketplace.microsoft.com).
+Open [ThingsBoard Professional Edition BYOL](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/things-board.tb-pe-byol) product page from Azure Marketplace.
 
 - Click the **GET IT NOW** button
 
