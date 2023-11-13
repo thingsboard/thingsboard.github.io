@@ -12,7 +12,7 @@
         overflow: hidden
         background: none
         div:nth-child(1)
-            background-image: url(/video/pe-cover.jpg) !important
+            background-image: url(https://img.thingsboard.io/pe-cover.jpg) !important
         .video-cover
             position: absolute
             z-index: -2
@@ -25,7 +25,7 @@
             background-color: #000
             background-repeat: no-repeat
             background-position: 50% 50%
-            background-image: url(/video/pe-cover.jpg)
+            background-image: url(https://img.thingsboard.io/pe-cover.jpg)
         #hero-content
             height: 100%
             display: flex
@@ -70,7 +70,7 @@
     #intro, #matrix, #features, #integration, #scheduler, #export, #labeling
         color: #212924
         text-align: left
-        h1, main .item h2
+        h1, main .item h2, main .item h3.item-heading
             font-weight: 600
             text-align: center
             font-size: 32px
@@ -130,7 +130,7 @@
                 width: 100%
                 display: block
                 padding: 0
-                h1, h2
+                h1, h2, h3.item-heading
                     text-align: left
                     margin-top: 0
                 img
@@ -269,13 +269,17 @@
                     order: 1
                     h2
                         margin-top: 100px
+                    h3.item-heading
+                        font-weight: 500
+                        font-size: 36px
+                        margin-top: 100px
                 .feature-des, img
                     width: 100%
                 &.dark
                     margin-bottom: 10px
                     div
                         margin-top: 26px
-                        h2
+                        h2, h3.item-heading
                             color: white
                         p
                             color: #868686
@@ -285,11 +289,11 @@
                         width: 100%
                         &.left-textblock
                             margin: unset
-                            h2
+                            h2, h3.item-heading
                                 margin: unset
                         &.right-textblock
                             margin: 32px 0 0
-                            h2
+                            h2, h3.item-heading
                                 margin: unset
                     img
                         width: 100%
@@ -341,7 +345,7 @@
         img
             height: 60px
             margin-bottom: 20px
-        main
+        main, div.main-div
             display: flex
             flex-wrap: wrap
             flex-direction: row
@@ -552,7 +556,7 @@
             main
                 max-width: 100%
         footer
-            main
+            main, div.main-div
                 max-width: 100%
         #peContent
             #intro

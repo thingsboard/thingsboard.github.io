@@ -108,18 +108,13 @@ OPC UA Integration allows you to stream data from the OPC UA server to ThingsBoa
 
 <object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/opc-ua-integration.svg"></object>
 
-In this tutorial, we will configure the integration between ThingsBoard Edge and OPC-UA to get the Airconditioners data from the [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers/opc-ua-c-demo-server.html) 
+In this tutorial, we will configure the integration between ThingsBoard Edge and OPC-UA 
+to get the Airconditioners data from the [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers.html) 
 and allow the user to switch on/off any Airconditioner using the Integration downlink feature.
 
 ### Prerequisites
 
-- Download and install the [OPC UA C++ Demo Server](https://www.unified-automation.com/downloads/opc-ua-servers/opc-ua-c-demo-server.html).
-- After installation, launch the **UA Admin Dialog**.
-- Verify that the **Endpoint URL** is set correctly and remember the values of **Endpoint Host** and **Endpoint Port**. These values will be needed during the OPC-UA Integration setup.
-
-![image](/images/user-guide/integrations/opc-ua/opc-ua-server-config.png)
-
-- Launch the **UaCPPServer**. The console dialog will open showing the server endpoints URLs.
+{% include templates/integration/opc-ua/opc-ua-server-setup-steps.md %}
 
 ## Create Converter templates
 
@@ -339,7 +334,7 @@ When RPC request is going to be triggered to a device on the Edge, the downlink 
 
 To visualize the Airconditioners data and test RPC commands, we will create the **Airconditioners** dashboard and assign it to edge.
 First, please download the [**airconditioners_dashboard.json**](/docs/pe/edge/user-guide/resources/airconditioners_dashboard.json) file.
-    
+
 {% include images-gallery.html imageCollection="airconditionersDashboard" showListImageTitles="true" %}
 
 ## Assign Integration to Edge

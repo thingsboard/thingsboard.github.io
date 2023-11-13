@@ -1,6 +1,5 @@
 * TOC
 {:toc}
-  
 
 {% assign sinceVersion = "3.4" %}
 {% include templates/since.md %}
@@ -23,8 +22,8 @@ Every exportable ThingsBoard entity contains new filed "externalId".
 The field is used to identify the same Entity in case of import and export between multiple environments.
 Both "id" and "externalId" fields is of type [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier).
 
-The "externalId" is also used to automatically substitute entity ids in the rule chains (rule nodes) and dashboards (aliases and widget actions). 
-So, if you decide to import rule chain that is referencing some devices or assets, make sure you have exported/imported the corresponding devices or assets as well.   
+The "externalId" is also used to automatically substitute entity ids in the rule chains (rule nodes) and dashboards (aliases and widget actions).
+So, if you decide to import rule chain that is referencing some devices or assets, make sure you have exported/imported the corresponding devices or assets as well.
 
 #### Exportable Entities and settings
 
@@ -36,10 +35,10 @@ Initial release of this feature supports following entities: Device, Asset, Enti
 
 We intentionally omit support of the User entity, since user email is unique in scope of the platform instance. It seems wrong to export user emails and credentials to Git.
 
-While exporting the entity, we store the JSON representation of the entity in Git. It is also possible to export entity attributes, relations and credentials (device only). 
+While exporting the entity, we store the JSON representation of the entity in Git. It is also possible to export entity attributes, relations and credentials (device only).
 
 #### Repository structure
- 
+
 When you first export the entity to Git, the entity "id" is used to name the file inside git repository. 
 Then, when you import entities from Git to ThingsBoard, the "id" from the file name becomes "externalId" of the entity.
 The "externalId" is unique in scope of Tenant. So, you may import/export entities between tenants of the same platform instance, or between different instances.

@@ -42,7 +42,7 @@ step3:
     1:
         image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-4-ce.png
         title: 'Close the device details tab and refresh the "Devices" table. The device state should be changed from "Inactive" to "Active".'
-        
+
 step31:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-3-1-create-empty-dashboard-1-ce.png 
@@ -280,7 +280,7 @@ step75:
     1:
         image: /images/helloworld/getting-started-ce/hello-world-7-5-activate-customer-user-2-ce.png
         title: 'You have logged in as a Customer User. You may browse the data and acknowledge/clear alarms.'
-        
+
 mqttWindows:
     0:
         image: /images/helloworld/hello-world-step-3-item-1.png

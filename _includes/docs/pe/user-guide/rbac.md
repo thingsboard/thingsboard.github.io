@@ -44,11 +44,11 @@ The ThingsBoard Professional Edition security model support advanced RBAC for Io
   - ability to create roles with a flexible set of permissions;
   - ability to assign roles to exact user groups;
   - ability to grant specific permissions to particular user groups over precise device groups.
-   
+
 This document covers features that are exclusive to ThingsBoard Professional Edition. We will start with a glossary and will provide step-by-step examples of how to configure the most popular use cases.
 
 ## Glossary
- 
+
 **Tenant**
 
 A [Tenant](/docs/{{docsPrefix}}user-guide/ui/tenants/) is a separate business-entity: an individual, or an organization that owns or produces devices and assets. A tenant can have multiple tenant administrator users and millions of customers.

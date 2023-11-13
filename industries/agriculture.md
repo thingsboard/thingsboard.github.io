@@ -37,7 +37,7 @@ description:
 <div class="customer-block">
     <div class="customer-company">
         <img class="customer-logo" src="/images/customers/supertech-agroline.png" alt="Supertech Agroline">
-        <a class="outlink" href="http://agrolog.io" alt="Supertech Agroline">Supertech Agroline</a>
+        <a class="outlink" href="https://www.agrolog.io" alt="Supertech Agroline">Supertech Agroline</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
@@ -66,7 +66,7 @@ description:
 <div class="customer-block">
     <div class="customer-company">
         <img class="customer-logo" src="/images/customers/enviroeye.png" alt="">
-        <a class="outlink" href="https://www.enviroeye.com.au/" alt="Enviroeye">Enviroeye</a>
+        <a class="outlink" href="/industries/agriculture/" alt="Enviroeye">Enviroeye</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
@@ -90,7 +90,7 @@ description:
 <div class="customer-block">
     <div class="customer-company">
         <img class="customer-logo" src="/images/customers/Keners.png" alt="Keners">
-        <a class="outlink" href="http://www.keners.sk/" alt="Keners s.r.o.">Keners s.r.o.</a>
+        <a class="outlink" href="https://www.keners.sk/index.php/sk" alt="Keners s.r.o.">Keners s.r.o.</a>
     </div>
     <div class="customer-content">
         <div class="person-container">

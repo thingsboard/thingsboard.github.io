@@ -92,7 +92,7 @@ description:
 <div class="customer-block">
     <div class="customer-company">
         <img class="customer-logo" src="/images/customers/e2c.png" alt="Environmental Energy Controls">
-        <a class="outlink" href="http://www.e2cbms.com/" alt="Environmental Energy Controls">Environmental Energy Controls</a>
+        <a class="outlink" href="https://www.e2cbms.com/" alt="Environmental Energy Controls">Environmental Energy Controls</a>
     </div>
     <div class="customer-content">
         <div class="person-container">

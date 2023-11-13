@@ -89,7 +89,6 @@ In order for data to be transferred from LORIOT to ThingsBoard, you need to conf
 
 <div style="font-size: 20px; margin-bottom: 8px; font-weight: bold;">Configuration the Output options</div>
 
-
 We can create Output with LORIOT or in integration by enabling the **Create Loriot Application output** option or specifying the “Basic” credential.
 
 {% capture authorizationTypes %}
@@ -160,7 +159,6 @@ ThingsBoard has examples of several types of dashboards that you can use. You ca
 {% include images-gallery.html imageCollection="solution_templates" %}
 
 How to work with dashboards [read here](/docs/{{docsPrefix}}user-guide/dashboards/)
-
 
 
 ## Advanced Usage: Create Downlink Converter

@@ -1,6 +1,8 @@
 
 * TOC
 {:toc}
+## Assigning custom attributes to entities and attributes managing
+
 
 ThingsBoard provides the ability to assign custom attributes to your entities and manage these attributes.
 Those attributes are stored in the database and may be used for data visualization and data processing.
@@ -298,7 +300,7 @@ This is extremely powerful technique that allows to modify processing logic and 
 
 ## Performance enhancement
 
-You can achieve higher performance with Attributes Cache enabled (see <b>cache.attributes.enabled</b> property of the [Configuration properties](/docs/{{docsPrefix}}user-guide/install/config/#thingsboard-core-settings)) 
+You can achieve higher performance with Attributes Cache enabled (see <b>cache.attributes.enabled</b> property of the [Configuration properties](/docs/user-guide/install/{{docsPrefix}}config/#thingsboard-core-settings)) 
 
 Having attributes cache enabled ThingsBoard will load the specific attribute from the database only once, all subsequent requests to the attribute will be loaded from the faster cache connection.
 

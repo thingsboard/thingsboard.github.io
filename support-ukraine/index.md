@@ -6,6 +6,8 @@ description:
 
 ---
 
+# Stop the WAR
+
 ## ThingsBoard statement on the war in Ukraine
 
 Russia has begun a large-scale military attack on Ukraine on the orders of Russian President Vladimir Putin.

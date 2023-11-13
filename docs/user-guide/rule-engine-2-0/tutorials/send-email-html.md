@@ -94,10 +94,10 @@ We got the next message:
 
 {% include images-gallery.html imageCollection="results" %}
 
-# See Also
+## See Also
 
 - [Send email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/).
 
-# Next steps
+## Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}

@@ -2,7 +2,6 @@
 layout: docwithnav
 title: Transform telemetry using previous record
 description: Transform telemetry using previous record
-
 ---
 
 * TOC
@@ -10,8 +9,8 @@ description: Transform telemetry using previous record
 
 ## Use case
 
-Let's assume your device is reporting absolute "counter" that correspond to water consumption. 
-However, you would like to visualize not the "absolute" but "delta" values, e.g. how many water was consumer within last day, week, month.   
+Let's assume your device is reporting absolute "counter" that correspond to water consumption.
+However, you would like to visualize not the "absolute" but "delta" values, e.g. how many water was consumer within last day, week, month.
 
 In this tutorial we will calculate "delta" of the counter readings based on current and previous reading.
 
@@ -32,7 +31,7 @@ to
 }
 ```
 
-## Prerequisites 
+## Prerequisites
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
@@ -50,8 +49,8 @@ We will use the following node configuration:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/previous/node-config-step-1.png)
 
-Please note that if the "counter" value is missing, the rule node will return failure. 
-We will protect from this failure by setting the default previous counter on the next step.  
+Please note that if the "counter" value is missing, the rule node will return failure.
+We will protect from this failure by setting the default previous counter on the next step.
 
 ## Step 2: Default previous counter node
 
@@ -61,7 +60,7 @@ This [**transformation**](/docs/user-guide/rule-engine-2-0/transformation-nodes/
 
 ## Step 3: Delta transformation node
 
-This [**transformation**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) node will calculate delta based on previous counter value from the metadata and current value from the message. 
+This [**transformation**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#script-transformation-node) node will calculate delta based on previous counter value from the metadata and current value from the message.
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/previous/node-config-step-3.png)
 
@@ -77,8 +76,7 @@ Download and import attached json [**file**](/docs/user-guide/resources/previous
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/make-root.png)
 
-Download and import attached json [**file**](/docs/user-guide/resources/previous-telemetry-dashboard.json) with a dashboard from this tutorial. 
-
+Download and import attached json [**file**](/docs/user-guide/resources/previous-telemetry-dashboard.json) with a dashboard from this tutorial.
 
 ## Next steps
 

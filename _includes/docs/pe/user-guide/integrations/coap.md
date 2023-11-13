@@ -22,7 +22,7 @@ In this tutorial, we will show you how CoAP integration works as part of **tb-co
 - ThingsBoard Professional Edition instance — [thingsboard.cloud](https://thingsboard.cloud);
 {% endif %}
 
-- [coap-client](http://manpages.ubuntu.com/manpages/focal/man5/coap-client.5.html) utility which is intended to simulate CoAP client that will connect to CoAP integration;
+- [coap-client](https://manpages.ubuntu.com/manpages/focal/man5/coap-client.5.html) utility which is intended to simulate CoAP client that will connect to CoAP integration;
 
 {% if docsPrefix == "pe/" %}
 Let's assume that we have a sensor which is sending current temperature and humidity readings. Our sensor device **SN-001** publishes it's temperature and humidity readings to CoAP Integration on **coap://localhost** URL.
@@ -190,4 +190,3 @@ Click on the device, go to the **Latest Telemetry** tab to see the “temperatur
 ## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}
-    

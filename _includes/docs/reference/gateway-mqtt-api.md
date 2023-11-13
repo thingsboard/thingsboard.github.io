@@ -13,11 +13,11 @@ The API listed below is used by [**ThingsBoard open-source IoT Gateway**](/docs/
 ## Basic MQTT API
 
 Please refer to generic [MQTT Device API](/docs/{{docsPrefix}}reference/mqtt-api/) to get information about data format, authentication options, etc.
- 
+
 ## Device Connect API
 
 In order to inform ThingsBoard that device is connected to the Gateway, one needs to publish following message:
- 
+
 ```shell
 Topic: v1/gateway/connect
 Message: {"device":"Device A"}
@@ -31,7 +31,7 @@ Also, ThingsBoard will publish messages about new attribute updates and RPC comm
 ## Device Disconnect API
 
 In order to inform ThingsBoard that device is disconnected from the Gateway, one needs to publish following message:
- 
+
 ```shell
 Topic: v1/gateway/disconnect
 Message: {"device":"Device A"}
@@ -48,7 +48,7 @@ ThingsBoard attributes API allows devices to
 * Upload [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes to the server.
 * Request [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) and [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
 * Subscribe to [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
- 
+
 ##### Publish attribute update to the server
 
 In order to publish client-side device attributes to ThingsBoard server node, send PUBLISH message to the following topic:

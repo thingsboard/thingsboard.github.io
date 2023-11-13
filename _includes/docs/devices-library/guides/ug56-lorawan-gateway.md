@@ -16,16 +16,16 @@
 ## Introduction
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-[UG56 LoRaWAN® Gateway]({{deviceVendorLink}}){: target="_blank"} is a high-performance 8-channel LoRaWAN® gateway that offers reliable connectivity for industrial applications.  
-  
-Industrial-Grade Design  
-Listen Before Talk  
-Gateway Fleet  
-  
-Free Embedded Network Server  
-Multiple Backhaul Connectivities  
-Global LoRaWAN® Frequency Plans:  
-RU864/IN865/EU868/AU915/US915/KR920/AS923  
+[UG56 LoRaWAN® Gateway]({{deviceVendorLink}}){: target="_blank"} is a high-performance 8-channel LoRaWAN® gateway that offers reliable connectivity for industrial applications.
+
+Industrial-Grade Design
+Listen Before Talk
+Gateway Fleet
+
+Free Embedded Network Server
+Multiple Backhaul Connectivities
+Global LoRaWAN® Frequency Plans:
+RU864/IN865/EU868/AU915/US915/KR920/AS923
 
 {% assign feature = "Platform Integrations" %}{% include templates/pe-feature-banner.md %}
 
@@ -33,7 +33,7 @@ After doing steps described in this guide you will have a connected and configur
 
 ## Prerequisites
 
-To continue with this guide we will need the following:  
+To continue with this guide we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
@@ -45,9 +45,9 @@ According to the [official user manual](https://resource.milesight-iot.com/miles
   1. Enable Wireless Network Connection on your computer and search for access point “Gateway_******” to connect it.
   2. Open a Web browser on your PC and type in the IP address **192.168.1.1** to access the web GUI.
   3. Enter the username(Default: **admin**) and password(Default: **password**), click **Login**.
-  
+
 - Wired connection:
-  Connect PC to UG56 Ethernet port directly or through PoE injector to access the web GUI of gateway. The following steps are based on Windows 10 system for your reference.  
+  Connect PC to UG56 Ethernet port directly or through PoE injector to access the web GUI of gateway. The following steps are based on Windows 10 system for your reference.
 
   1. Go to “Control Panel” → “Network and Internet” → “Network and Sharing Center”, then click “Ethernet” (May have different names).
   2. Go to “Properties” → “Internet Protocol Version 4(TCP/IPv4)” and select “Use the following IP address”, then assign a static IP manually within the same subnet of the gateway.
@@ -65,18 +65,18 @@ According to the [official user manual](https://resource.milesight-iot.com/miles
 {% assign gatewayPacketForwarderTab = '
     ===
         image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-before.png,
-        title: Open **Packet Forwarder** in the left menu and save **Gateway EUI** and **Gateway ID**, we will need them to create a gateway on network server.  
+        title: Open **Packet Forwarder** in the left menu and save **Gateway EUI** and **Gateway ID**, we will need them to create a gateway on network server.
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=gatewayPacketForwarderTab %}
 
-By default, Gateway EUI and Gateway ID are the same.  
+By default, Gateway EUI and Gateway ID are the same.
 
-Next steps will describe how to connect the gateway to network server.  
+Next steps will describe how to connect the gateway to network server.
 
 ## Configuration
 
-To create an integration with a network server please choose first one of the supported network servers:  
+To create an integration with a network server please choose first one of the supported network servers:
 
 {% assign targetIntegrationTypes = '
 ChirpStack,

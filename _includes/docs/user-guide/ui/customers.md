@@ -22,19 +22,19 @@ The alternative option is to install ThingsBoard locally using this [installatio
 [Tenant administrators](/docs/{{docsPrefix}}user-guide/ui/tenants/) can create customer and can directly manage their [assets](/docs/{{docsPrefix}}user-guide/ui/assets/), [devices](/docs/{{docsPrefix}}user-guide/ui/devices/),
 [dashboards](/docs/{{docsPrefix}}user-guide/dashboards/), and [edges](/docs/edge/) from the customer details page by clicking the related tab.
 
-### Create new customer
+## Create new customer
 
 The tenant administrator can add a new customer using the following steps.
 
 {% include images-gallery.html imageCollection="add-new-customer" showListImageTitles="true" %}
 
-### Create customer user
+## Create customer user
 
 The tenant administrator can add a customer user using the following steps.
 
 {% include images-gallery.html imageCollection="add-customer-user" showListImageTitles="true" %}
 
-### Edit customer
+## Edit customer
 
 The tenant administrator can edit the title, specify a home dashboard and edit the rest of the fields for the customer. 
 Let’s see how to do this:
@@ -47,7 +47,7 @@ The steps are similar to how we edit the customer:
 
 {% include images-gallery.html imageCollection="edit-customer-user" showListImageTitles="true" %}
 
-### Delete customer or customer user
+## Delete customer or customer user
 
 The tenant administrator can delete a customer along with all its customer users using one of the following ways:
 

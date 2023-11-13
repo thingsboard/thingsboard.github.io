@@ -685,6 +685,18 @@ var tb = (function () {
 
 				gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
 
+				gallery.next = () => {
+					if (gallery.options.loop || gallery.getCurrentIndex() < gallery.items.length - 1) {
+						gallery.goTo(gallery.getCurrentIndex() + 1);
+					}
+				}
+
+				gallery.prev = () => {
+					if (gallery.options.loop || gallery.getCurrentIndex() > 0) { // This condition added
+						gallery.goTo(gallery.getCurrentIndex() - 1);
+					}
+				}
+
 				gallery.listen('gettingData', function(index, item) {
 					if (!item.sizeLoaded) {
 						item.sizeLoaded = true;

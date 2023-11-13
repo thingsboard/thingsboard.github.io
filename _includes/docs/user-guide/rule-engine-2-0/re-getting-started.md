@@ -196,7 +196,7 @@ We will see that telemetry was saved successfully.
 {% endif %}
 
 
-## See Also:
+## See Also
 
 You can use the next links for learning more about Thingsboard Rule Engine:
 

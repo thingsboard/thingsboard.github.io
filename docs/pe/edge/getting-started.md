@@ -1,23 +1,23 @@
 ---
 layout: docwithnav-pe-edge
 title: Getting started with ThingsBoard PE Edge
-description: Getting started with ThingsBoard PE Edge 
+description: Getting started with ThingsBoard PE Edge
 
 step1:
     0:
-        image: /images/pe/edge/getting-started/step-1-item-1.png 
+        image: /images/pe/edge/getting-started/step-1-item-1.png
         title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Device groups page.'
     1:
-        image: /images/pe/edge/getting-started/step-1-item-2.png  
+        image: /images/pe/edge/getting-started/step-1-item-2.png
         title: 'Open "All" device group.'
     2:
-        image: /images/pe/edge/getting-started/step-1-item-3.png 
+        image: /images/pe/edge/getting-started/step-1-item-3.png
         title: 'Click on the "Add Device"("+") icon in the top right corner of the table.'
     3:
-        image: /images/pe/edge/getting-started/step-1-item-4.png 
+        image: /images/pe/edge/getting-started/step-1-item-4.png
         title: 'Input device name. For example, "My New Device". No other changes required at this time. Click "Add" to add the device.'
     4:
-        image: /images/pe/edge/getting-started/step-1-item-5.png 
+        image: /images/pe/edge/getting-started/step-1-item-5.png
         title: 'Now your device should be listed first, since table sort devices using created time by default. '
 
 step2:
@@ -28,7 +28,7 @@ step2:
         image: /images/pe/edge/getting-started/step-2-item-2.png
         title: 'Click on the "Open" icon of the "All" device group to see the list of devices.'
     2:
-        image: /images/pe/edge/getting-started/step-2-item-3.png  
+        image: /images/pe/edge/getting-started/step-2-item-3.png
         title: 'Verify that "My New Device" device was created on the ThingsBoard Professional Edition cloud.'
     3:
         image: /images/pe/edge/getting-started/step-2-item-4.png
@@ -42,13 +42,13 @@ step31:
         image: /images/pe/edge/getting-started/step-1-item-1.png
         title: 'Open Device groups page in the ThingsBoard <b>PE Edge</b> instance.'
     1:
-        image: /images/pe/edge/getting-started/step-1-item-2.png  
+        image: /images/pe/edge/getting-started/step-1-item-2.png
         title: 'Open "All" device group.'
     2:
-        image: /images/pe/edge/getting-started/step-3-item-1.png  
+        image: /images/pe/edge/getting-started/step-3-item-1.png
         title: 'Click on the device row in the table to open device details.'
     3:
-        image: /images/pe/edge/getting-started/step-3-item-2.png  
+        image: /images/pe/edge/getting-started/step-3-item-2.png
         title: 'Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.'
 
 step32:
@@ -102,10 +102,10 @@ step52:
         title: 'Click "Add alias".'
     3:
         image: /images/pe/edge/getting-started/step-52-item-4.png
-        title: 'Input alias name, for example "MyDevice". Select "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on the device.'        
+        title: 'Input alias name, for example "MyDevice". Select "Single entity" Filter type. Select "Device" as Type and type "My New" to enable autocomplete. Choose your device from the auto-complete and click on the device.'
     4:
         image: /images/pe/edge/getting-started/step-52-item-5.png
-        title: 'Click "Add" and then "Save".'        
+        title: 'Click "Add" and then "Save".'
     5:
         image: /images/pe/edge/getting-started/step-52-item-6.png
         title: 'Finally, Click "Apply changes" in the dashboard editor to save the changes. Then you should enter edit mode again.'
@@ -122,7 +122,7 @@ step53:
         title: 'Click "Add" to add the data source. Widget may have multiple data sources, but we will use only one in this case.'
     3:
         image: /images/pe/edge/getting-started/step-53-item-4.png
-        title: 'Select "MyDevice" entity alias. Then click on the input field to the right. The auto-complete with available data points will appear. Select "temperature" data point and click "Add".'        
+        title: 'Select "MyDevice" entity alias. Then click on the input field to the right. The auto-complete with available data points will appear. Select "temperature" data point and click "Add".'
     4:
         image: /images/pe/edge/getting-started/step-53-item-5.png
         title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. You can also play with the advanced settings if you edit the widget.'
@@ -139,7 +139,7 @@ step54:
         title: 'Click "Create new widget" icon.'
     3:
         image: /images/pe/edge/getting-started/step-54-item-4.png
-        title: 'Select "Charts" bundle. Scroll down and click on the "Timeseries - Flot" chart widget.'        
+        title: 'Select "Charts" bundle. Scroll down and click on the "Timeseries - Flot" chart widget.'
     4:
         image: /images/pe/edge/getting-started/step-54-item-5.png
         title: 'Click "Add datasource" button.'
@@ -174,7 +174,7 @@ step6PE:
 step6Edge:
     0:
         image: /images/pe/edge/getting-started/step-6-item-5-edge.png
-        title: 'Open "Dashboard groups" page in the ThingsBoard <b>Edge</b> UI. Click on the "All" dashboard group to see "My New Dashboard" in the list. Open "My New Dashboard".'    
+        title: 'Open "Dashboard groups" page in the ThingsBoard <b>Edge</b> UI. Click on the "All" dashboard group to see "My New Dashboard" in the list. Open "My New Dashboard".'
     1:
         image: /images/pe/edge/getting-started/step-6-item-6-edge.png
         title: 'Verify that you see the same widgets that you have added on the cloud and temperature readings from the device.'
