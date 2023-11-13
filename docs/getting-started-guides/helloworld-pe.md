@@ -57,7 +57,7 @@ step31:
         title: 'In the opened dialog, it is necessary to enter a dashboard title, description is optional. Click "Add";'
     3:
         image: /images/user-guide/dashboards/overview/create-dashboard-4-pe.png
-        title: 'Once you have created the dashboard, it will be automatically opened. Save it by clicking the "Save" button in the upper right corner.'
+        title: 'After creating the dashboard, it will open automatically, and you can immediately start adding widgets to it. To save the dashboard, click "Save" button in the upper right corner;'
     4:
         image: /images/helloworld/getting-started-pe/create-dashboard-5-pe.png
         title: 'Your first dashboard has been successfully created. As you continue to add new dashboards, they will appear at the top of the list. This default sorting is based on the creation timestamp.'
@@ -68,7 +68,7 @@ step32:
         title: 'Enter dashboard edit mode. Simply open the dashboard and click the "Edit mode" button found in the upper right corner of the screen;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-1-pe.png
-        title: 'Click on the "Add new widget" button at the top of the screen;'
+        title: 'Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-2-pe.png
         title: 'Select the "Tables" widget bundle;'
@@ -77,16 +77,16 @@ step32:
         title: 'Select the "Entities table" widget;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-4-pe.png
-        title: 'The "Add Widget" window will appear. Add data source by specifying previously created "My New Device" device. The “name” key has already been added to the “Columns” section, which is responsible for the column with the device name. You need to add another column that will display the value of the "temperature" key. To do this, click "Add column" to add a new field to enter the data key;'
+        title: 'The "Add Widget" window will appear. Specify the previously created device "My New Device" in the "Device" field. The “name” key has already been added to the “Columns” section, which is responsible for the column with the device name. You need to add another column that will display the value of the "temperature" key. To do this, click "Add column" to add a new field to enter the data key;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-5-pe.png
-        title: 'Click on the newly appeared data key input field. The auto-complete with available data keys will appear. Select "temperature" data key;'
+        title: 'Click on the newly appeared data key input field. A list of available data keys will open. Select "temperature" data key;'
     6:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-6-pe.png
         title: 'Click the "Add" button in the bottom right corner of the widget to complete adding the widget.'
     7:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-7-pe.png
-        title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. Apply changes.'
+        title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. Click "Save" to apply changes.'
 
 step33:
     0:
@@ -100,10 +100,10 @@ step33:
         title: 'Select the "Timeseries Line Chart" widget;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-4-pe.png
-        title: 'Add data source by specifying previously created "My New Device" device and specify the "temperature" data key. Click "Add";'
+        title: 'Specify the previously created device "My New Device" in the "Device" field and specify the "temperature" data key in the "Series" section. Click "Add";'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-5-pe.png
-        title: 'Resize the widget and apply changes. Publish different telemetry values multiple times, as in Step 2. Note that the widget displays only one minute of data by default;'
+        title: 'Resize the widget and apply changes. Publish different telemetry values multiple times, as in Step 2. Note that the widget displays only one minute of data by default. Click "Save" to apply changes;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-6-pe.png
         title: 'Now open the time selection window. Change the interval and aggregation function. Update the time window setting by clicking the "Update" button.'
@@ -120,13 +120,13 @@ step34:
         title: 'Select "Alarms table" widget;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-4-pe.png
-        title: 'Specify the previously created "My New Device" device as the data source and select the statuses and severities of alarms you want to display in the alarm widget;'
+        title: 'Specify the previously created device "My New Device" in the "Device" field and select the statuses and severities of alarms you want to display in the alarm widget;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-5-pe.png
         title: 'Drag and Drop the "Timeseries Line Chart" widget to the top right corner of the dashboard to make room for the "Alarms" widget;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-6-pe.png
-        title: 'Scroll down and locate the new "Alarms" widget. Drag and Drop Alarm widget to the free space and resize it. Apply changes.'
+        title: 'Scroll down and locate the new "Alarms" widget. Drag and Drop Alarm widget to the free space and resize it. Click "Save" to apply changes.'
 
 step4:
     0:

@@ -5,13 +5,13 @@ This is a step-by-step tutorial aimed at familiarizing users with the ThingsBoar
 
 The guide covers:
 
- - **Connecting devices to ThingsBoard:** This section provides instructions on how to add a new device using the UI, and check its connections to the ThingsBoard platform;
- - **Push data from devices to ThingsBoard:** Details on how to send telemetry data using various protocols such as HTTP, MQTT, CoAp, and others, including command line examples for publishing data;
- - **Build real-time end-user dashboards:** The guide explains how to create a dashboard, add widgets (such as Entities table, Charts, and Alarms table) to visualize data, and configure these widgets to display specific information like temperature readings;
- - **Define thresholds and trigger alarms:** Configure alarm rules to trigger notifications when certain conditions are met (e.g., temperature exceeds a specific threshold);
- - **Alarm notifications:** This section covers the setup notifications in the ThingsBoard Notification center to inform end-users about triggered alarms over email, SMS, or other systems;
- - **Sharing dashboards with customers:** It discusses how to share dashboards with customers, ensuring they have access to their respective dashboards, devices, and data;
- - **Create customer user:** Finally, it explains the process of creating and activating a customer user, allowing them to log in and interact with the dashboards and devices they have access to.
+ - **Connecting devices to ThingsBoard.** This section provides instructions on how to add a new device using the UI, and check its connections to the ThingsBoard platform;
+ - **Push data from devices to ThingsBoard.** Details on how to send telemetry data using various protocols such as HTTP, MQTT, CoAp, and others, including command line examples for publishing data;
+ - **Build real-time end-user dashboards.** The guide explains how to create a dashboard, add widgets (such as Entities table, Charts, and Alarms table) to visualize data, and configure these widgets to display specific information like temperature readings;
+ - **Define thresholds and trigger alarms.** Configure alarm rules to trigger notifications when certain conditions are met (e.g., temperature exceeds a specific threshold);
+ - **Alarm notifications.** This section covers the setup notifications in the ThingsBoard Notification center to inform end-users about triggered alarms over email, SMS, or other systems;
+ - **Sharing dashboards with customers.** It discusses how to share dashboards with customers, ensuring they have access to their respective dashboards, devices, and data;
+ - **Create customer user.** Finally, it explains the process of creating and activating a customer user, allowing them to log in and interact with the dashboards and devices they have access to.
 
 Overall, this tutorial serves as an initial orientation to enable new users to effectively navigate and utilize the ThingsBoard Professional Edition for IoT device management and data visualization.
 
@@ -112,7 +112,7 @@ Alarm widget is configured by specifying an entity as the alarm source, and the 
 Congratulations! You have added the alarm widget. Now it's time to configure alarm rules and raise some alarms. 
 
 **Note:** in this documentation, we are using a single device as a data source for the widgets. 
-To use multiple entities (for example, devices of a certain type or related to a certain asset) as data sources, you must use the alias.
+To use multiple entities (for example, devices of a certain type or related to a certain asset) as data source, you must use the alias.
 Alias is a reference to a single entity or a group of entities that are used in the widgets. 
 You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide/ui/aliases/).
 
