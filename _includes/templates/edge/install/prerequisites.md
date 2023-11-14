@@ -1,15 +1,7 @@
-### Prerequisites
-#### ThingsBoard Cloud server 
+## Prerequisites
+### Setting Up the Server Environment for ThingsBoard Edge 
 
-{% if docsPrefix == 'pe/edge/' %}
-{% assign appPrefix = "ThingsBoard PE" %}
-{% assign provisionEdgeOnCloudLink = "/docs/pe/edge/provision-edge-on-server/" %}
-{% else %}
-{% assign appPrefix = "ThingsBoard" %}
-{% assign provisionEdgeOnCloudLink = "/docs/edge/provision-edge-on-server/" %}
-{% endif %}
-
-To begin using ThingsBoard **Edge**, you must have a {{appPrefix}} server supporting edge functionality up and running.
+To start utilizing ThingsBoard **Edge**, it is essential to have an operational {{appPrefix}} server that supports edge functionality.
 
 {% if docsPrefix == 'pe/edge/' %}
 {% include templates/edge/obtain-pe-cloud.md %}
@@ -17,8 +9,36 @@ To begin using ThingsBoard **Edge**, you must have a {{appPrefix}} server suppor
 {% include templates/edge/obtain-ce-cloud.md %}
 {% endif %}
  
-#### Edge provision on cloud
+### Provisioning a New Edge Instance on Cloud
 
-Additionally, you will need to provision ThingsBoard **Edge** on a cloud server. If you haven't done so yet, please follow the [Provision Edge on Cloud]({{provisionEdgeOnCloudLink}}) guide.
+{% if docsPrefix == 'pe/edge/' %}
+{% assign addEdge = '
+    ===
+        image: /images/pe/edge/installation-add-edge-item-1.png,
+        title: Sign in to your ThingsBoard <b>PE</b> instance and navigate to the "Edge Management" -> "Instances" page. Click the "+" icon in the top right corner and select "Add Edge".
+    ===
+        image: /images/pe/edge/installation-add-edge-item-2.png,
+        title: Enter a name for your edge. For instance, "My New Edge". If necessary, update the cloud endpoint. This URL should be accessible from the edge. If the edge is running in a Docker container, using "localhost" is <b>incorrect</b>. It must be the IP address of the machine where ThingsBoard <b>PE</b> is running and accessible by the edge container. If you are using the ThingsBoard <b>Cloud</b> server to evaluate the edge, leave this setting as it is. Click "Add" to create your new edge.
+    ===
+        image: /images/pe/edge/installation-add-edge-item-3.png,
+        title: Your new edge should now appear at the top of the list, as entries are sorted by creation time by default.
+'%}
+{% else %}
+{% assign addEdge = '
+    ===
+        image: /images/edge/installation-add-edge-item-1.png,
+        title: Sign in to your ThingsBoard <b>CE</b> instance and navigate to the "Edge Management" -> "Instances" page. Click the "+" icon in the top right corner and select "Add Edge".
+    ===
+        image: /images/edge/installation-add-edge-item-2.png,
+        title: Enter a name for your edge. For instance, "My New Edge". Click "Add" to confirm the creation of your new edge.
+    ===
+        image: /images/edge/installation-add-edge-item-3.png,
+        title: Your new edge should now appear at the top of the list, as entries are sorted by creation time by default.
+'%}
+{% endif %}
 
-Once the ThingsBoard **Edge** is provisioned on the cloud server, please follow the installation steps provided below.
+Additionally, you will need to provision ThingsBoard **Edge** on a cloud server. 
+
+{% include images-gallery.liquid imageCollection=addEdge showListImageTitles="true" %}
+
+{% include templates/edge/install/hardware-requirements.md %}

@@ -36,6 +36,8 @@ spring:
 ``` 
 ##### Configure cloud connectivity
 
+{% include templates/edge/install/copy-edge-credentials.md %}
+
 Locate "# Cloud configuration" block and replace **PUT_YOUR_EDGE_KEY_HERE** and **PUT_YOUR_EDGE_SECRET_HERE** with Edge **key and secret** respectively. 
 
 Please replace **PUT_YOUR_CLOUD_IP** with an IP address of the machine where {{appPrefix}} version is running:

@@ -1,10 +1,17 @@
 {% include templates/edge/install/prerequisites.md %}
 
-##### Edge installation
+### Edge Installation and Configuration
 
-{% include templates/edge/provision/edge-installation.md %} 
+#### Guided Installation Using ThingsBoard Server Pre-configured Instructions
 
-##### User Credentials and access URLs
+{% include templates/edge/install/tb-server-pre-configured-install-instructions.md %}
+
+#### Manual Installation and Configuration
+
+If, for any reason, you are unable to use the prepared ThingsBoard Server Instructions above, please follow the generic installation [steps](/docs/user-guide/install/{{docsPrefix}}installation-options/){:target="_blank"}.
+These steps will guide you through installing and configuring the Edge by yourself.
+
+### Accessing User Interfaces: URLs and Credentials
 
 {% if currentThingsBoardVersion == "ThingsBoard Professional Edition" %}
 {% capture contenttogglespec %}
@@ -19,6 +26,6 @@ On-premise server<br><small>Connect edge to on-premise instance</small>%,%on-pre
 {% include content-toggle.html content-toggle-id="cloudType" toggle-spec=contenttogglespec %}
 {% endif %}
 
-{% include templates/edge/bind-port-changed-banner.md %} 
+{% include templates/edge/oauth2-not-supported.md %}
 
-We are going to refer to this URL as **http://EDGE_URL** below in tutorial.
+{% include templates/edge/bind-port-changed-banner.md %}

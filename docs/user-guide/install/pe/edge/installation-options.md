@@ -42,10 +42,10 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/edge/windows/">
+                                        <a href="/docs/user-guide/install/pe/edge/docker/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/windows.svg" title="Windows" alt="Windows">
+                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
                                                  </div>
                                             </span>
                                         </a>
@@ -60,10 +60,10 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/edge/docker/">
+                                        <a href="/docs/user-guide/install/pe/edge/windows/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+                                                    <img width="" src="/images/install/platform/windows.svg" title="Windows" alt="Windows">
                                                  </div>
                                             </span>
                                         </a>

@@ -210,21 +210,17 @@ mqttWindows:
 
 {% include templates/edge/getting-started/step-2.md %}
 
-## Step 3. Connect device
+## Step 3. Push data from ThingsBoard PE Edge to ThingsBoard Professional Edition server (cloud)
 
 {% include templates/edge/getting-started/step-3.md %}
 
-## Step 4. Push data from ThingsBoard PE Edge to ThingsBoard Professional Edition server (cloud)
+## Step 4. Create Dashboard
 
 {% include templates/edge/getting-started/step-4.md %}
 
-## Step 5. Create Dashboard
+## Step 5. Provision Dashboard to ThingsBoard PE Edge
 
 {% include templates/edge/getting-started/step-5.md %}
-
-## Step 6. Provision Dashboard to ThingsBoard PE Edge
-
-{% include templates/edge/getting-started/step-6.md %}
 
 ## Next steps
 
@@ -234,6 +230,6 @@ mqttWindows:
 
 ## Your feedback
 
-Don't hesitate to star ThingsBoard on **[github](https://github.com/thingsboard/thingsboard)** to help us spread the word.
+Don't hesitate to star ThingsBoard Edge on **[github](https://github.com/thingsboard/thingsboard-edge)** to help us spread the word.
 If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.
 
