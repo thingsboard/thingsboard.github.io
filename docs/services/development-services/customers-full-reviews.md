@@ -94,7 +94,7 @@ description: Real feedback from real clients. Dive into our testimonials to unde
 <section id="get-in-touch" class="get-in-touch full-review">
     <div class="content-wrapper content-get-in-touch">
         <div class="side-title">
-            <span id="side-title-span">get in touch</span>
+            <span id="side-title-heading">get in touch</span>
         </div>
         <div class="info">
             <div class="section-title">Ready to launch your unique product?</div>

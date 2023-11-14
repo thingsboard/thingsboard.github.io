@@ -259,7 +259,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     <div class="content-wrapper">
         <div id="content-get-in-touch">
             <div class="side-title">
-                <span id="side-title-span">get in touch</span>
+                <span id="side-title-heading">get in touch</span>
             </div>
             <div class="info">
                 <div class="section-title">Ready to launch your unique product?</div>
