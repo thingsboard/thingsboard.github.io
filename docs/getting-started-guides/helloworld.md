@@ -283,22 +283,16 @@ mosquitto-windows:
 * TOC
 {:toc}
 
-This is a step-by-step tutorial aimed at familiarizing users with the ThingsBoard platform’s fundamental and most popular functionalities.
+The goal of this tutorial is to demonstrate the basic usage of the most popular ThingsBoard features. You will learn how to:
 
-The guide covers:
+- Connect devices to ThingsBoard;
+- Push data from devices to ThingsBoard;
+- Build real-time end-user dashboards;
+- Define thresholds and trigger alarms;
+- Set up push notifications about new alarms over email, SMS, or other systems.
 
-- **Connecting devices to ThingsBoard:** This section provides instructions on how to add a new device using the UI, and check its connections to the ThingsBoard platform;
-- **Push data from devices to ThingsBoard:** Details on how to send telemetry data using various protocols such as HTTP, MQTT, CoAp, and others, including command line examples for publishing data;
-- **Build real-time end-user dashboards:** The guide explains how to create a dashboard, add widgets (such as Entities table, Charts, and Alarms table) to visualize data, and configure these widgets to display specific information like temperature readings;
-- **Define thresholds and trigger alarms:** Configure alarm rules to trigger notifications when certain conditions are met (e.g., temperature exceeds a specific threshold);
-- **Alarm notifications:** This section covers the setup notifications in the ThingsBoard Notification center to inform end-users about triggered alarms over email, SMS, or other systems;
-- **Sharing dashboards with customers:** It discusses how to share dashboards with customers, ensuring they have access to their respective dashboards, devices, and data;
-- **Create customer user:** Finally, it explains the process of creating and activating a customer user, allowing them to log in and interact with the dashboards and devices they have access to.
+**In this guide, we will connect and visualize data from the temperature sensor to keep it simple.**
 
-Overall, this tutorial serves as an initial orientation to enable new users to effectively navigate and utilize the ThingsBoard Professional Edition for IoT device management and data visualization.
-
-As an example, we will connect and visualize data from the temperature sensor. Let's get started.
- 
 {% include templates/prerequisites.md %}
 
 ## Step 1. Provision device
