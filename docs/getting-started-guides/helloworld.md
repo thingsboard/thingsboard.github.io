@@ -388,7 +388,7 @@ Alarm widget is configured by specifying an entity as the alarm source, and the 
 Congratulations! You have added the alarm widget. Now it's time to configure alarm rules and raise some alarms.
 
 **Note:** in this documentation, we are using a single device as a data source for the widgets. 
-To use multiple entities (for example, devices of a certain type or related to a certain asset) as data source, you must use the alias.
+To use dynamic entities (for example, devices of a certain type or related to a certain asset) as data source, you should use the alias.
 Alias is a reference to a single entity or a group of entities that are used in the widgets. 
 You may learn more [about different aliases here](/docs/{{docsPrefix}}user-guide/ui/aliases/).
 
