@@ -17,24 +17,26 @@ step1:
         title: 'Enter the device name. For example, "My New Device". No other changes required at this time. Click "Add" to add the device;'
     3:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-connectivity-1-ce.png
-        title: 'The window to check the device&#39;s connection to ThingsBoard will open. The following step is optional. Select the messaging protocol and your operating system. Then, install the necessary client tools and copy the command;'
+        title: 'Device is created. A window will open where you can check the device&#39;s connection to ThingsBoard. This step is optional. Let&#39;s close this window for now and return to checking the connection in the next step in more detail;'
     4:
-        image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-connectivity-3-ce.png
-        title: 'Execute previously copied command. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings. Then, close the connectivity window;'
-    5:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png 
-        title: 'Your first device has been added. As new devices are added, they will be added to the top of the table, since the table sort devices using the time of the creation by default;'
-    6:
+        title: 'Your first device has been added. As new devices are added, they will be added to the top of the table, since the table sort devices using the time of the creation by default.'
+
+step11:
+    0:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-5-ce.png 
-        title: 'When adding a new device, you will receive a notification. You can view it by clicking on the "bell" icon in the top right corner.'
+        title: 'You can view notification by clicking on the "bell" icon in the top right corner.'
 
 step2:
     0:
-        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-1-ce.png
-        title: 'Click on the device row in the table to open device details. Note that the device state is "Inactive";'
+        image: /images/helloworld/getting-started-ce/check-connectivity-device-1-ce.png
+        title: 'Click on the your device, and click the "Check connectivity” button in the "Device details" window;'
     1:
-        image: /images/helloworld/getting-started-ce/hello-world-2-1-connect-device-2-ce.png
-        title: 'Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.'
+        image: /images/helloworld/getting-started-ce/check-connectivity-device-2-ce.png
+        title: 'In the opened window select the messaging protocol and your operating system. Install the necessary client tools and copy the command;'
+    2:
+        image: /images/helloworld/getting-started-ce/check-connectivity-device-3-ce.png
+        title: 'Execute previously copied command. Once you have successfully published the “temperature” readings, the device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings. Now, close the connectivity window.'
 
 step21:
     0:
@@ -303,6 +305,11 @@ To add a new device, follow these steps:
  
 {% include images-gallery.html imageCollection="step1" showListImageTitles="true" %}
 
+<br>
+When adding a new device, you will receive a notification. You can view it by clicking on the "bell" icon in the top right corner.
+
+{% include images-gallery.html imageCollection="step11" %}
+
 Learn more about **notifications** and how to configure them [here](#step-6-alarm-notifications).
 
 <br>
@@ -313,25 +320,13 @@ You may also use:
 
 ## Step 2. Connect device
 
-To connect the device you need to get the device credentials first. 
-ThingsBoard supports various device credentials. We recommend using the default auto-generated credentials, which is an access token for this guide.
+Now, let's check the connection of our device to the ThingsBoard platform.
+To do this, using the "Check connectivity" functionality to publish telemetry data (for example, temperature readings) on behalf of your device. You can do this both during while adding device and after.
 
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
 
-Now, you are ready to publish telemetry data on behalf of your device. 
-We will use simple commands to publish data over HTTP or MQTT in this example.
-
-{% capture connectdevicetogglespec %}
-HTTP<small>Linux, macOS or Windows</small>%,%http%,%templates/helloworld/http.md%br%
-MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/helloworld/mqtt-linux.md%br%
-MQTT<small>Windows</small>%,%mqtt-windows%,%templates/helloworld/mqtt-windows.md%br%
-CoAP<small>Linux or macOS</small>%,%coap%,%templates/helloworld/coap.md%br%
-Other Protocols<small>Modbus, SNMP, LoRaWAN, etc</small>%,%other%,%templates/helloworld/other.md{% endcapture %}
-{% include content-toggle.html content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec %}
-
-Once you have successfully published the "temperature" readings, you should immediately see them in the Device Telemetry Tab:
-
-{% include images-gallery.html imageCollection="step21" showListImageTitles="true" %}
+<br>
+You may also use [ThingsBoard API reference](/docs/{{docsPrefix}}api). Here, you can find more detailed information about all supported protocols for device connectivity.
 
 ## Step 3. Create dashboard
 
