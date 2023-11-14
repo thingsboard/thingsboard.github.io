@@ -15,6 +15,3 @@ See active development in progress [here](https://github.com/thingsboard/thingsb
 ### Upcoming releases
 * Edge Templates
 * CRUD operations for rule chains directly on the edge
-* CRUD operations for assets directly on the edge
-* CRUD operations for entity views directly on the edge
-* CRUD operations for dashboards directly on the edge

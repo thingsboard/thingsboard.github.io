@@ -8,6 +8,13 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v3.6.1 (Nov 14, 2023) {#v361}
+
+**Minor** release with everything from [TB CE v3.6.1](/docs/reference/releases/#v361) with the following improvements and bug fixes:
+
+* [#9226](https://github.com/thingsboard/thingsboard/pull/9226) TB Resource functionality support for Edge by @AndriiLandiak;
+* [#9515](https://github.com/thingsboard/thingsboard/pull/9515) Increased default value of EDGES_SLEEP_BETWEEN_BATCHES to handle 2G/3G connections by @volodymyr-babak;
+
 ## v3.6.0 (Sep 22, 2023) {#v36}
 
 **Major** release with everything from [TB CE v3.6](/docs/reference/releases/#v36) with the following improvements and bug fixes:
