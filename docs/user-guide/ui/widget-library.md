@@ -210,19 +210,16 @@ wl-add-widgets-bundle:
         title: 'In the opened dialog window, enter the name of the new bundle. Adding an image and a description is optional. Click "Add";'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-3-ce.png
-        title: 'After creating the widget bundle, it will be automatically opened. Now you can add widgets there. 
-        To do this, click the "+ Add existing widget" button in the center of the window to add an existing widget. 
-        Alternatively, you can create or import a new widget by clicking the "plus" icon in the upper right corner of the window. 
-        In this case, click the "+ Add Widget" button in the center of the window;'
+        title: 'After creating the widget bundle, it will be automatically opened. Now you can add widgets there. To add an existing widget, click the "+ Add existing widget" button in the center of the window. To create (or import) a new widget, click the plus icon in the top right corner of the window. Click the "+Add existing widget" button in the center of the window;'
     3:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-4-ce.png
-        title: 'Select one or multiple widgets and click "Save" to complete add widget to your widget bundle;'
+        title: 'Click on the "Widgets" row and select your widget from drop down menu;'
     4:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-5-ce.png
-        title: 'Since widgets bundles are in alphabetical order, the newly created one may be on the second page.'
+        title: 'Click "Save" to complete adding the widget to your widget bundle;'
     5:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-6-ce.png
-        title: 'Since widgets bundles are in alphabetical order, the newly created one may be on the second page.'
+        title: 'Since widgets bundles are in alphabetical order, the newly created one may be on the different page.'
 
 export-widgets-bundle:
     0:
