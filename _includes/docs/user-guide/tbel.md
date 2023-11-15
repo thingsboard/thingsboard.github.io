@@ -20,18 +20,18 @@ Many users suggested [GraalVM](https://www.graalvm.org/) for its built-in polygl
 The most important reason is security and the ability to control every aspect of the UDF execution.
 Besides, most UDFs are relatively simple functions that transform or filter data, and we want to find a more effective way to execute them.   
 
-Our search for existing Script/Expression Language (EL) implementations lead us to the [MVEL](https://github.com/mvel/mvel).
+Our search for existing Script/Expression Language (EL) implementations led us to the [MVEL](https://github.com/mvel/mvel).
 The ThingsBoard Expression Language (TBEL) is basically a [fork](https://github.com/thingsboard/tbel) of MVEL with some important security constraints, 
 built-in memory management, and frequently used helper functions that are specific to ThingsBoard.
  
 #### TBEL vs Nashorn
 
-TBEL is lightweight and is super fast comparing to Nashorn. For example, the execution of 1000 simple scripts like:
+TBEL is lightweight and is super fast compared to Nashorn. For example, the execution of 1000 simple scripts like:
 "return msg.temperature > 20" took 16 seconds for Nashorn and 12 milliseconds for MVEL. More than 1000 times faster.
 We have forked the TBEL codebase and added additional security improvements to ensure no CPU or memory abuse. 
-So, no need to run Nashorn with the sandbox environment.
+So, there is no need to run Nashorn with the sandbox environment.
 
-Of course, TBEL is not as powerful as JS, but most of the use cases do not need this. 
+Of course, TBEL is not as powerful as JS, but the majority of the use cases do not need this. 
 The one who requires JS flexibility may use remote [JS Executors](/docs/{{docsPrefix}}reference/msa/#javascript-executor-microservices) as usual. 
 
 #### TBEL vs JS Executors
@@ -43,11 +43,11 @@ The Rule Engine and JS executors communicate through the queue.
 This process consumes resources and introduces a relatively small latency (a few ms). 
 The latter may become a problem if you have multiple rule nodes chained into one rule chain.  
 
-TBEL execution consumes much less resources and has no extra latency for inter process communications.
+TBEL execution consumes much less resources and has no extra latency for inter-process communications.
 
 ## TBEL Language Guide
 
-TBEL is used to evaluate expressions written using Java syntax. Unlike Java however, TBEL is dynamically typed (with optional typing), meaning type qualification is not required in the source.
+TBEL is used to evaluate expressions written using Java syntax. Unlike Java, TBEL is dynamically typed (with optional typing), meaning that the source code does not require type qualification.
 The TBEL expression can be as simple as a single identifier, or as complicated as an expression with method calls and inline collections.
 
 #### Simple Property Expression
@@ -61,7 +61,7 @@ In this expression, we simply have a single identifier (msg.temperature), which 
 in that the only purpose of the expression is to extract a property out of a variable or context object.
 
 TBEL can even be used for evaluating a boolean expression. 
-Assuming you are using TBEL in the Rule Engine to define simple script [filter node](https://thingsboard.io/docs/user-guide/rule-engine-2-0/filter-nodes/#script-filter-node):
+Assuming you are using TBEL in the Rule Engine to define a simple script [filter node](https://thingsboard.io/docs/user-guide/rule-engine-2-0/filter-nodes/#script-filter-node):
 
 ```java
 return msg.temperature > 10;
@@ -87,7 +87,7 @@ return a + b
 ```
 {: .copy-code}
 
-Note the lack of semi-colon after 'a + b'. New lines are not substitutes for the use of the semi-colon in MVEL.
+Note the lack of a semi-colon after 'a + b'. New lines are not substitutes for the use of the semi-colon in MVEL.
 
 #### Value Coercion
 
@@ -104,8 +104,8 @@ This expression is *true* in TBEL because the type coercion system will coerce t
 
 #### Maps
 
-TBEL allows you to create Maps. We use our own implementation of the Map to control memory usage. 
-That is why, TBEL allows inline creation of the maps only. Most common operation with the map:
+TBEL allows you to create Maps. We use our own implementation of the Map to control memory usage.
+That is why TBEL allows only inline creation of maps. Most common operation with the map:
 
 ```java
 // Create new map
@@ -138,8 +138,8 @@ map.size();
 
 #### Lists
 
-TBEL allows you to create Lists. We use our own implementation of the List to control memory usage of the script. 
-That is why, TBEL allows inline creation of the lists only. For example:
+TBEL allows you to create Lists. We use our own implementation of the List to control memory usage of the script.
+That is why TBEL allows only inline creation of lists. For example:
 
 ```java
 // Create new list
@@ -174,7 +174,7 @@ for (int i =0; i < list.size; i++) {
 
 #### Arrays
 
-TBEL allows you to create Arrays. To control the memory usage, we allow arrays of primitive types only. String arrays are automatically converted to lists.
+TBEL allows you to create Arrays. To control the memory usage, we permit only arrays of primitive types. String arrays are automatically converted to lists.
 
 ```java
 // Create new array
@@ -278,7 +278,7 @@ var foo = java.lang.Math.sqrt(4);
 ```
 {: .copy-code}
 
-For the security purpose, usage of those classes is constrained. You are able to call both static and non-static methods, but you are not able to assign the instance of the class to the variable:
+For security reasons, the usage of those classes is constrained. You are able to call both static and non-static methods, but you are not able to assign the instance of the class to the variable:
 
 ```java
 var list = ["A", "B", "C"];
@@ -320,8 +320,8 @@ Nested ternary statements are also supported.
 
 **Foreach**
 
-One of the most powerful features in TBEL is it's foreach operator. It is similar to the for each operator in Java 1.5 in both syntax and functionality. 
-It accepts two parameters separated by a colon, the first is the local variable for the current element, and the second is the collection or array to be iterated.
+One of the most powerful features in TBEL is its foreach operator. It is similar to the foreach operator in Java 1.5 in both syntax and functionality. 
+It accepts two parameters separated by a colon. The first is the local variable for the current element, and the second is the collection or array to be iterated.
 
 For example:
 
@@ -333,7 +333,7 @@ for (n : numbers) {
 ```
 {: .copy-code}
 
-Since TBEL treats Strings as iterable objects you can iterate a String (character by character) with a foreach block:
+Since TBEL treats Strings as iterable objects, you can iterate a String (character by character) with a foreach block:
 
 ```java
 str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -723,7 +723,7 @@ return hexToBytes("BBAA"); // returns [187, 170]
 
 #### bytesToHex
 
-Converts the list of integer values, where each integer represents single byte, to the hex string.
+Converts the list of integer values, where each integer represents a single byte, to the hex string.
 
 **Syntax:**
 
@@ -732,7 +732,7 @@ Converts the list of integer values, where each integer represents single byte, 
 **Parameters:**
 
 <ul>
-  <li><b>bytes:</b> <code>List of integer</code> - the list of integer values, where each integer represents single byte.</li>
+  <li><b>bytes:</b> <code>List of integer</code> - the list of integer values, where each integer represents a single byte.</li>
 </ul>
 
 **Return value:**
@@ -853,7 +853,7 @@ return parseBytesToInt(new byte[]{(byte) 0xAA, (byte) 0xBB, (byte) 0xCC, (byte) 
 #### toFlatMap
 
 Iterates recursive over the given object and creates a single level json object.  
-If the incoming message contains arrays, key for transformed value will contain index of the element.  
+If the incoming message contains arrays, the key for transformed value will contain the index of the element.  
 
 **Syntax:**
 
@@ -871,7 +871,7 @@ Map<String, Object> toFlatMap(Map<String, Object> json, List<String> excludeList
  - **pathInKey** `boolean` - *optional* Add path to keys. ***Default:*** `true`.  
 
 {% capture warning %}
-If parameter **pathInKey** set to ***false*** - some keys can be overwritten by newly found values!  
+If parameter **pathInKey** is set to ***false*** - some keys can be overwritten by newly found values!  
 Recommended to use with caution with objects that contains similar keys on different levels.  
 {% endcapture %}
 {% include templates/warn-banner.md content=warning %}
@@ -990,7 +990,7 @@ return toFlatMap(json, ["key1", "key3"]);
 }
 ```
 
-As you can see, **key1** and **key3** was removed from output. Excluding works on any level with incoming keys.   
+As you can see, **key1** and **key3** were removed from the output. Excluding works on any level with incoming keys.   
   
 ##### toFlatMap(json, excludeList, pathInKey)
 
@@ -1034,7 +1034,7 @@ The *Tbel* library uses all standard JavaScript methods in the **"toLocaleString
 **Parameters:**
 Time Zone default: UTC;
 <ul>
-  <li><b>locale:</b> <code>string</code> - Language specific format to use.</li>
+  <li><b>locale:</b> <code>string</code> - Language-specific format to use.</li>
 </ul>
 
 **Return value:**
