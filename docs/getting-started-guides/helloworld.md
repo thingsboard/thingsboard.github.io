@@ -321,7 +321,7 @@ You may also use:
 ## Step 2. Connect device
 
 Now, let's check the connection of our device to the ThingsBoard platform.
-To do this, using the "Check connectivity" functionality to publish telemetry data (for example, temperature readings) on behalf of your device. You can do this both during while adding device and after.
+To accomplish this, use the "Check connectivity" functionality to publish telemetry data (for example, temperature readings) on behalf of your device. You can do this both while adding the device and after.
 
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
 
