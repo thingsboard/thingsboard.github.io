@@ -18,9 +18,9 @@ description: Real feedback from real clients. Dive into our testimonials to unde
         </a>
         <div class="header">
             <div class="side-title">
-                <h1>Testimonials</h1>
+                <span>Testimonials</span>
             </div>
-            <h1 class="title">What our clients say about us</h1>
+            <span class="title">What our clients say about us</span>
         </div>
         <div class="review">
             <div class="logo">
@@ -94,7 +94,7 @@ description: Real feedback from real clients. Dive into our testimonials to unde
 <section id="get-in-touch" class="get-in-touch full-review">
     <div class="content-wrapper content-get-in-touch">
         <div class="side-title">
-            <h1 id="side-title-h1">get in touch</h1>
+            <span id="side-title-heading">get in touch</span>
         </div>
         <div class="info">
             <div class="section-title">Ready to launch your unique product?</div>
