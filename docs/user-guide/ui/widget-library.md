@@ -210,7 +210,7 @@ wl-add-widgets-bundle:
         title: 'In the opened dialog window, enter the name of the new bundle. Adding an image and a description is optional. Click "Add";'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-3-ce.png
-        title: 'After creating the widget bundle, it will be automatically opened. Now you can add widgets there. To add an existing widget, click the "+ Add existing widget" button in the center of the window. To create (or import) a new widget, click the plus icon in the top right corner of the window. Click the "+Add existing widget" button in the center of the window;'
+        title: 'After creating the widget bundle, it will be automatically opened. Now you can add widgets there. To add an existing widget, click the "+ Add existing widget" button in the center of the window. To create (or import) a new widget, click the plus icon in the top right corner of the window. Now, click the "+Add existing widget" button in the center of the window;'
     3:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-4-ce.png
         title: 'Click on the "Widgets" row and select your widget from drop down menu;'
@@ -224,7 +224,7 @@ wl-add-widgets-bundle:
 export-widgets-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-export-bundle-1-ce.png
-        title: 'Go to the "Widgets Library" page, navigate to the "Widgets Bundle" tab, and click the export button on the specific widgets bundle row;'
+        title: 'Click the export button on the specific widgets bundle row;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-export-bundle-2-ce.png
         title: 'In the pop-up window, optionally check the "Include bundle widget types in exported data", then click "Export". The widgets bundle configuration file will be saved in JSON format on your computer.'
@@ -232,7 +232,7 @@ export-widgets-bundle:
 import-widgets-bundle:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-import-bundle-1-ce.png
-        title: 'Go to the "Widgets Library" page, and click the "+" button in the upper right corner of the "Widgets Bundles" page. Select "Import widgets bundle" from the drop-down menu;'
+        title: 'Click the "+" button in the upper right corner of the "Widgets Bundles" page. Select "Import widgets bundle" from the drop-down menu;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-import-bundle-2-ce.png
         title: 'In the popup, you will be prompted to upload the JSON file. Drag and drop a file from your computer, then click "Import" to add a widget bundle to the library;'
@@ -243,12 +243,12 @@ import-widgets-bundle:
 export-widget:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-export-widget-1-ce.png
-        title: 'Go to the "Widgets Library" page, navigate to the "Widgets" tab, and click the export button on the particular widget card. The widget configuration file will be saved in JSON format on your computer.'
+        title: 'Click the export button on the particular widget card. The widget configuration file will be saved in JSON format on your computer.'
 
 import-widget:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-import-widget-1-ce.png
-        title: 'Go to the "Widgets Library" page, navigate to the "Widgets" tab, and click the "+" button in the upper right corner of the screen. Select "Import widget" from the drop-down menu;'
+        title: 'Click the "+" button in the upper right corner of the "Widgets" page. Select "Import widget" from the drop-down menu;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-import-widget-2-ce.png
         title: 'In the popup, you will be prompted to upload the JSON file. Drag and drop a file from your computer, then click the "Import" to add a widget to the widget bundle;'
@@ -259,7 +259,7 @@ import-widget:
 delete-widgets-bundle-1:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-bundle-1-ce.png
-        title: 'Go to the "Widgets Library" page, navigate to the "Widgets Bundle" tab, and click a "Trash" icon next to the name of the widget bundle you want to delete;'
+        title: 'Click a "Trash" icon next to the name of the widgets bundle you want to delete;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-bundle-2-ce.png
         title: 'Confirm deleting the widgets bundle in the dialog box.'
@@ -267,10 +267,10 @@ delete-widgets-bundle-1:
 delete-widgets-bundle-2:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-bundle-3-ce.png
-        title: 'Go to the "Widgets Library" page, navigate to the "Widgets Bundle" tab, and click a "Pencil" icon in the widgets bundle row to open widgets bundle details;'
+        title: 'Click a "Pencil" icon in the widgets bundle row to open widgets bundle details;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-bundle-4-ce.png
-        title: 'Click on the "Delete widgets bundle" button in the widgets bundle details;'
+        title: 'Click the "Delete widgets bundle" button;'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-bundle-5-ce.png
         title: 'Confirm deleting the widgets bundle in the dialog box.'
@@ -278,7 +278,7 @@ delete-widgets-bundle-2:
 delete-widget-1:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-1-ce.png
-        title: 'Go to the "Widgets Library" page, navigate to the "Widgets" tab, and click a "Trash" icon in the widget&#39;s row you want to delete;'
+        title: 'Click a "Trash" icon in the widget&#39;s row you want to delete;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-2-ce.png
         title: 'Confirm deleting the widget in the dialog box.'
@@ -286,10 +286,10 @@ delete-widget-1:
 delete-widget-2:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-3-ce.png
-        title: 'Go to the "Widgets Library" page, navigate to the "Widgets" tab, and click a "Pencil" icon in the widget&#39;s row to open widget details;'
+        title: 'Click a "Pencil" icon in the widget&#39;s row to open widget details;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-4-ce.png
-        title: 'Click on the "Delete widget" button in the widget details;'
+        title: 'Click the "Delete widget" button;'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-delete-widget-5-ce.png
         title: 'Confirm deleting the widget in the dialog box.'

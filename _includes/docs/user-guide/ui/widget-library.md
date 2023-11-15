@@ -134,7 +134,7 @@ You can also find the widget you need by its name on the "Widgets" tab. Here, al
 
 ### Air quality
 
-The Air quality widgets bundle includes widgets for visualizing air quality data.
+This widgets bundle includes widgets for visualizing air quality data.
 
 {% include images-gallery.html imageCollection="wl-air-quality" %}
 
