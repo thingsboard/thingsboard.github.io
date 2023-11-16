@@ -21,14 +21,14 @@ If you are looking for a cluster installation instruction, please visit [cluster
 
 {% include templates/install/docker-install-note.md %}
 
-### Step 1. Pull ThingsBoard PE Image
+## Step 1. Pull ThingsBoard PE Image
 
 ```bash
 docker pull thingsboard/tb-pe:{{ site.release.pe_full_ver }}
 ```
 {: .copy-code}
  
-### Step 2. Obtain the license key 
+## Step 2. Obtain the license key 
 
 We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
 If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
@@ -36,7 +36,7 @@ See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-Q
 
 Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
 
-### Step 3. Choose ThingsBoard queue service
+## Step 3. Choose ThingsBoard queue service
 
 {% include templates/install/install-queue.md %}
 
@@ -65,7 +65,7 @@ Where:
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.;
 - `thingsboard/tb-pe:{{ site.release.pe_full_ver }}`          - docker image.
 
-### Step 4. Running
+## Step 4. Running
 
 {% include templates/install/docker/docker-create-folders-sudo-explained.md %}
 
@@ -405,6 +405,6 @@ docker cp tb-docker_postgres_1:/var/lib/postgresql/data/thingsboard_dump .
 
 Note: You should paste the name for your postgres container.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

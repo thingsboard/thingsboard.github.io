@@ -18,14 +18,14 @@ This guide will help you to install and start Trendz Analytics using Docker on L
 - [Install Docker CE](https://docs.docker.com/engine/installation/)
 - [Install Docker Compose](https://docs.docker.com/compose/install/)
 
-### Step 1. Obtain the license key 
+## Step 1. Obtain the license key 
 
 We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
 Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
 
-### Step 2. Running Trendz service
+## Step 2. Running Trendz service
 
 ##### Docker Compose setup
 
@@ -130,13 +130,13 @@ For first authentication you need to use **Tenant Administrator** credentials fr
 Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
 to validate credentials.
 
-### Detaching, stop and start commands
+## Detaching, stop and start commands
 
 {% assign serviceName = "trendz" %}
 {% assign serviceFullName = "Trendz" %}
 {% include templates/install/docker/detaching-stop-start-commands.md %}
 
-### Upgrade Trendz Service
+## Upgrade Trendz Service
 
 Below is example on how to upgrade from 1.10.2 to 1.10.3
 
@@ -204,7 +204,7 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) here is th
 
 To upgrade Trendz to the latest version those steps should be done **for each intermediate version**.
 
-### Standalone Python executor service
+## Standalone Python executor service
 You can use following docker compose file in case when you want to start Trendz python executor as a separate service. 
 It is useful when your Trendz service is installed in monolith mode, and you want to logically separate Trendz from service that executes Python scripts for prediction models. 
 Using same configuration you can scale Python executors independently of Trendz service.
@@ -265,6 +265,6 @@ Note: you need to replace `PYTHON_EXECUTOR_HOST` and `PYTHON_EXECUTOR_PORT` with
 
 {% include templates/troubleshooting/dns-issues.md %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

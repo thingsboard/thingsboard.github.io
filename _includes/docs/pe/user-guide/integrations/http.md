@@ -13,7 +13,7 @@ HTTP Integration allows converting existing protocols and payload formats to Thi
 
 <object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/http-integration.svg"></object>
 
-### Create Uplink Converter
+## Create Uplink Converter
 
 Before creating the integration, you need to create an Uplink converter in Data converters. Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard. 
 Click on the “plus” and on “Create new converter”. To view the events, enable Debug. 
@@ -37,7 +37,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/http/http-uplink-c
 
 Now that the Uplink converter has been created, it is possible to create an integration.
 
-### Create integration
+## Create integration
 
 - Go to **Integrations center** section -> **Integrations** page and click "plus" button to create new integration. Name it **HTTP Integration**, select type **HTTP**. Click "Next";
 
@@ -81,7 +81,7 @@ Now that the Uplink converter has been created, it is possible to create an inte
 ![image](/images/user-guide/integrations/http/add-integration-4-pe.png)
 {% endif %}
 
-### Send uplink message
+## Send uplink message
 
 To send an uplink message, you need the previously copied **HTTP endpoint URL** from the integration.
 
@@ -188,7 +188,7 @@ curl -v -X POST -d "{\"deviceName\":\"$DEVICEname\",\"deviceType\":\"$DEVICEtype
 ![image](/images/user-guide/integrations/http/security-2-pe.png)
 {% endif %}
 
-### Downlink Converter
+## Downlink Converter
 
 Create Downlink in Data converters. To see events enable Debug.
 
@@ -252,6 +252,6 @@ Received data and data that was sent can be viewed in the downlink converter. In
 {% include images-gallery.html imageCollection="downlink-message" %}
 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

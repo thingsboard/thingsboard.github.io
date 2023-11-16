@@ -406,7 +406,7 @@ The configuration of such RPC command is set in the way **whether user exceeds t
 So after processing the _setSpeed_ RPC command CAN payload is following: 
 `[ 0x09, 0x64, 0xAA, 0xBB ]`, where **0x64** is **100 mph** because **user exceeds the limit**.  
 
-### Next steps
+## Next steps
 
 Explore guides related to main ThingsBoard features:  
 

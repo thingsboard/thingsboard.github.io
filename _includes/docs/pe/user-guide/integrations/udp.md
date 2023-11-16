@@ -228,7 +228,7 @@ Click on the device, go to the **Latest Telemetry** tab to see the “temperatur
 ![image](/images/user-guide/integrations/udp/udp-integration-create-device-paas.png)
 {% endif %}
 
-### Advanced usage: Downlink
+## Advanced usage: Downlink
 
 Create Downlink Converter in **Data converters**. To see events - enable Debug.
 
@@ -309,6 +309,6 @@ When you use UDP integration, and your connection established for a long time, y
 {% include templates/info-banner.md content=difference %}
 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/guides-banner.md %}

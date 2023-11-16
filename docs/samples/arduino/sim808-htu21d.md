@@ -28,7 +28,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
 {% include templates/prerequisites.md %}
 
-### List of hardware
+## List of hardware
 
  - Arduino UNO
 
@@ -42,7 +42,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
    ![image](/images/samples/arduino/sim808-htu21d/sim808_shield.jpg)
 
-### Wiring
+## Wiring
 
 ### SIM808 shield connection
 
@@ -57,7 +57,7 @@ Connect HTU21D in following manner:
 * SDA - Arduino A5
 * SCL - Arduino A4
 
-# Complete wiring
+## Complete wiring
 
 Double-check that your wiring follows schematics below:
 
@@ -67,7 +67,7 @@ The complete setup will look like that:
 
    ![image](/images/samples/arduino/sim808-htu21d/arduino-uno-sim808-htu21d-photo.png)
 
-### Device provisioning
+## Device provisioning
 
 This step contains instructions that are necessary to connect your device to ThingsBoard.
 
@@ -87,12 +87,12 @@ Copy auto-generated access token from the "Access token" field. Please save this
 
 ![image](/images/samples/arduino/sim808-htu21d/credentials.png)
 
-### Provision your dashboard
+## Provision your dashboard
 
 Download the dashboard file using this [**link**](/docs/samples/arduino/resources/arduino_uno_with_sim808_shield_and_htu21d_sensor_dashboard.json).
 Use import/export [**instructions**](/docs/user-guide/ui/dashboards/#dashboard-importexport) to import the dashboard to your ThingsBoard instance.
 
-### Creating Arduino firmware
+## Creating Arduino firmware
 
 If you already familiar with basics of Arduino UNO programming using Arduino IDE you can skip the following step and proceed with step 2.
 
@@ -156,11 +156,11 @@ Connect your Arduino UNO device via USB cable and select "Arduino/Genuino Uno" p
 
 After application will be uploaded and started it will try to connect to ThingsBoard node using HTTP and upload "humidity" and "temperature" timeseries data once per second.
 
-### Troubleshooting
+## Troubleshooting
 
 When the application is running you can select "Arduino/Genuino Uno" port in Arduino IDE and open "Serial Monitor" in order to view debug information produced by serial output.
 
-### Data visualization
+## Data visualization
 
 Finally, open ThingsBoard Web UI. You can access this dashboard by logging in as a tenant administrator. Use
 

@@ -10,7 +10,7 @@ description: Installing ThingsBoard CE on CentOS/RHEL
 * TOC
 {:toc}
 
-## Prerequisites
+### Prerequisites
 
 This guide describes how to install ThingsBoard on RHEL/CentOS 7/8. 
 Hardware requirements depend on chosen database and amount of devices connected to the system. 
@@ -122,7 +122,7 @@ Please allow up to 90 seconds for the Web UI to start. This is applicable only f
 
 {% include templates/install/troubleshooting.md %}
 
-### Next steps
+## Next steps
 
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

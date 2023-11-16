@@ -73,7 +73,7 @@ You may use the dashboard to:
 The dashboard has multiple states. The main state displays the list of the devices, their location on the office map as well as the list of their alarms.
 You may drill down to the device details state by clicking on the table row. The device details are specific to the device type.
 
-### ThingsBoard advantages
+## ThingsBoard advantages
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
@@ -156,7 +156,7 @@ You may drill down to the device details state by clicking on the table row. The
     </div>
 </section>
 
-### Smart office solution overview
+## Smart office solution overview
 
 The diagram below identifies data flow and integration points for a typical smart office solution that uses the ThingsBoard platform to collect and analyze data from IoT sensors.
 
@@ -172,7 +172,7 @@ Advanced smart-office IoT solutions may use LoRaWAN or SigFox devices as well.
 The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
-### Learn more
+## Learn more
 
 <a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
 <a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>

@@ -306,7 +306,7 @@ Examples for both methods provided below.
   ]
 ```
 
-### Next steps
+## Next steps
 
 Explore guides related to main ThingsBoard features:
 

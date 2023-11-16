@@ -20,11 +20,11 @@ The obvious disadvantage is that if you overload one component with messages, li
 For example, if the limit of OS for your ThingsBoard process is 4096 file descriptors,
 you can not open more then 4096 MQTT sessions from device and websocket user sessions in parallel.
 
-### Architecture diagram
+## Architecture diagram
 
  <object width="80%" data="/images/reference/mono-architecture.svg"></object>
 
-### Transport components
+## Transport components
 
 ThingsBoard provides MQTT, HTTP and CoAP based APIs that are available for your device applications/firmware.
 Each of the protocol APIs are provided by a separate server component and is part of ThingsBoard "Transport Layer".
@@ -42,12 +42,12 @@ Since ThingsBoard uses very simple communication protocol between transport and 
 it is quite easy to implement support of custom transport protocol, for example: CSV over plain TCP, binary payloads over UDP, etc.
 We suggest to review existing transports [implementation](https://github.com/thingsboard/thingsboard/tree/master/common/transport/mqtt) to get started or [contact us](/docs/contact-us/) if you need any help.
 
-### Rule engine component
+## Rule engine component
 
 ThingsBoard rule engine is responsible for processing the incoming messages with user defined logic and flow.
 You can learn more about the rule engine using corresponding [documentation page](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/).
 
-### Core services
+## Core services
 
 Core services are responsible for handling:
 
@@ -63,7 +63,7 @@ So, messages for the same entity are processed on the same ThingsBoard node. Pla
 **Note**: ThingsBoard authors consider moving from gRPC to Kafka in the future releases for exchanging messages between ThingsBoard nodes.
 The main idea is to sacrifice small performance/latency penalties in favor of persistent and reliable message delivery and automatic load balancing provided by Kafka consumer groups.
 
-### External systems
+## External systems
 
 It is possible to push messages from ThingsBoard to external systems via the Rule Engine.
 You can push data to external system, process data and report the results of the processing back to ThingsBoard for visualization.

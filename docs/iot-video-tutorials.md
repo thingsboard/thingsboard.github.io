@@ -77,7 +77,7 @@ You will learn how to:
     </div>
 </div><br>
 
-# Device Connection Demos
+## Device Connection Demos
 
 #### Temperature upload from ESP8266 and DHT22 using Thingsboard
 
@@ -244,7 +244,7 @@ You will learn how to:
     </div>
 </div><br>
 
-# ThingsBoard Professional Edition (PE) Features 
+## ThingsBoard Professional Edition (PE) Features 
 
 #### ThingsBoard PE: White Labeling Guide
 ThingsBoard Professional Edition web interface allows you to configure your company or product logo and color scheme in 2 minutes with zero coding efforts and no service restart required. 
@@ -314,7 +314,7 @@ You will learn how to:
     </div>
 </div><br>
 
-### Integration
+## Integration
 
 
 ####  ThingsBoard PE: Data Converters Configuration Guide
@@ -425,6 +425,6 @@ You will learn how to:
     </div>
 </div><br>
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "Common State" %}{% include templates/guides-banner.md %}

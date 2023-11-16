@@ -109,6 +109,6 @@ Click on the device, go to "Latest Telemetry" tab to see "temperature" key and i
 
 {% include images-gallery.html imageCollection="tbmq-create-device" %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "TBIntegrationGuide" %}{% include templates/mqtt-broker-guides-banner.md %}

@@ -1417,6 +1417,6 @@ net start thingsboard
 ```
 {: .copy-code}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

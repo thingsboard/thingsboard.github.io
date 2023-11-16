@@ -15,14 +15,14 @@ This tutorial will show how to calculate temperature delta based on the readings
 Let's assume you have a warehouse with two thermometers: indoor and outdoor. In this tutorial, we will configure ThingsBoard Rule Engine to automatically calculate the delta of temperatures inside and outside the warehouse based on the latest readings from temperature sensors.
 Please note that this is just a simple theoretical use case to demonstrate the capabilities of the platform. You can use this tutorial as a basis for much more complex scenarios.
 
-### Prerequisites
+## Prerequisites
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
   * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
 
-### Model definition
+## Model definition
 
 We will create one asset that has name "Warehouse A" and type "warehouse".
 
@@ -214,18 +214,18 @@ In this section, we explain the purpose of each node in this tutorial. There wil
 
 <br>
 
-### Configuring the Rule Chains
+## Configuring the Rule Chains
 
 Download and [**import**](/docs/user-guide/ui/rule-chains/#rule-chains-importexport) attached emulators rule chain [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/thermometer_emulators.json) as a new "Thermometer Emulators" rule chain, 
 root rule chain [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/root_rule_chain_function_from_two_devices.json) as a new  "Root rule chain" and "Delta Temperature" [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/delta_temperature.json).
 Please note that some nodes have debug enabled.
 
-### Validating the flow
+## Validating the flow
 
 Download and [**import**](/docs/user-guide/ui/dashboards/#iot-dashboard-importexport) attached dashboard [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/warehouse_dashboard.json) as a new "Warehouse dashboard".
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/data-function/dashboard.png) 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "DataAnalytics" %}{% include templates/guides-banner.md %}
