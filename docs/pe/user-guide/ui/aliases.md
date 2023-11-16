@@ -5,93 +5,112 @@ asiconees:
 title: Aliases
 description: ThingsBoard Aliases
 
-single-alias:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-pe.png
- 1:
-  image: /images/user-guide/ui/alias/alias-2-pe.png
- 2:
-  image: /images/user-guide/ui/alias/single-entity-3-pe.png
- 3:
-  image: /images/user-guide/ui/alias/single-entity-4-pe.png
+create-alias:
+    0:
+        image: /images/user-guide/widgets/overview/add-new-dashboard-1-pe.png
+        title: 'Open your dashboard and enter edit mode;'
+    1:
+        image: /images/user-guide/ui/alias/create-alias-2-pe.png
+        title: 'Click an "Entity aliases" icon in the upper right corner of the window;'
+    2:
+        image: /images/user-guide/ui/alias/create-alias-3-pe.png
+        title: 'In the opened "Entity aliases" window click the “Add alias” button on the left side of the dialog box;'
+    3:
+        image: /images/user-guide/ui/alias/create-alias-4-pe.png
+        title: 'In the opened dialog Add alias, enter a name for the alias and select a filter type. Then, fill in all required fields and click the "Add" button in the lower right corner;'
+    4:
+        image: /images/user-guide/ui/alias/create-alias-5-pe.png
+        title: 'We can now see that a new alias has been added. In this window you can view, edit and delete your aliases. Click "Save" in the lower right corner of the dialog box.'
+
+use-alias-in-widget:
+    0:
+        image: /images/user-guide/ui/alias/create-alias-6-pe.png
+        title: 'Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);'
+    1:
+        image: /images/user-guide/ui/alias/create-alias-7-pe.png
+        title: 'Select the widget bundle. For example select "Indoor Environment" widgets bundle;'
+    2:
+        image: /images/user-guide/ui/alias/create-alias-8-pe.png
+        title: 'Now, select the "Indoor temperature card with background" widget;'
+    3:
+        image: /images/user-guide/ui/alias/create-alias-9-pe.png
+        title: 'The "Add Widget" window will appear. Navigate to the "Entity alias" tab. Specify the previously created "A new entity alias" alias in the "Entity alias" field.'
+    4:
+        image: /images/user-guide/ui/alias/create-alias-10-pe.png
+        title: 'Specify the data key(s) in the "Data key" field. In our example is the "temperature" data key. Then, click "Add";'
+    5:
+        image: /images/user-guide/ui/alias/create-alias-11-pe.png
+        title: 'You have added a widget that uses the previously configured alias as a data source.'
 
 single-alias-1:
- 4:
-  image: /images/user-guide/ui/alias/alias-5-pe.png
- 5:
-  image: /images/user-guide/ui/alias/alias-6-pe.png
- 6:
-  image: /images/user-guide/ui/alias/alias-7-pe.png
- 7:
-  image: /images/user-guide/ui/alias/single-entity-8-pe.png
- 8:
-  image: /images/user-guide/ui/alias/single-entity-9-pe.png
+    0:
+        image: /images/user-guide/ui/alias/single-entity-1-pe.png
+        title: 'In the "Add Alias" dialog box, enter the alias name, and select the "Single Entity" filter type. Then choose the entity type and specify the final entity/entities.'
 
-group-entities:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-pe.png
- 1:
-  image: /images/user-guide/ui/alias/alias-2-pe.png
- 2:
-  image: /images/user-guide/ui/alias/group-entities-3-pe.png
- 3:
-  image: /images/user-guide/ui/alias/group-entities-4-pe.png
+single-alias-2:
+    0:
+        image: /images/user-guide/ui/alias/single-entity-2-pe.png
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Single entity" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add";'
+    1:
+        image: /images/user-guide/ui/alias/single-entity-3-pe.png
+        title: 'The Entities table widget with the alias that filters one device has been added.'
+
 
 group-entities-1:
- 4:
-  image: /images/user-guide/ui/alias/alias-5-pe.png
- 5:
-  image: /images/user-guide/ui/alias/alias-6-pe.png
- 6:
-  image: /images/user-guide/ui/alias/alias-7-pe.png
- 7:
-  image: /images/user-guide/ui/alias/group-entities-8-pe.png
- 8:
-  image: /images/user-guide/ui/alias/group-entities-9-pe.png
+    0:
+        image: /images/user-guide/ui/alias/group-entities-1-pe.png
+        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and select the entity group.'
 
-entity-list:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-pe.png
- 1:
-  image: /images/user-guide/ui/alias/alias-2-pe.png
- 2:
-  image: /images/user-guide/ui/alias/entity-list-3-pe.png
- 3:
-  image: /images/user-guide/ui/alias/entity-list-4-pe.png
+group-entities-2:
+    0:
+        image: /images/user-guide/ui/alias/group-entities-2-pe.png
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Group entities" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add";'
+    1:
+        image: /images/user-guide/ui/alias/group-entities-3-pe.png
+        title: 'The Entities table widget with the alias that filters "Thermostats" device group has been added.'
+
 
 entity-list-1:
- 4:
-  image: /images/user-guide/ui/alias/alias-5-pe.png
- 5:
-  image: /images/user-guide/ui/alias/alias-6-pe.png
- 6:
-  image: /images/user-guide/ui/alias/alias-7-pe.png
- 7:
-  image: /images/user-guide/ui/alias/entity-list-8-pe.png
- 8:
-  image: /images/user-guide/ui/alias/entity-list-9-pe.png
+    0:
+        image: /images/user-guide/ui/alias/entity-list-1-pe.png
+        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and select the entity group.'
 
-entity-name:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-pe.png
- 1: 
-  image: /images/user-guide/ui/alias/alias-2-pe.png
- 2:
-  image: /images/user-guide/ui/alias/entity-name-3-pe.png
- 3:
-  image: /images/user-guide/ui/alias/entity-name-4-pe.png
+entity-list-2:
+    0:
+        image: /images/user-guide/ui/alias/entity-list-2-pe.png
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity list" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add";'
+    1:
+        image: /images/user-guide/ui/alias/entity-list-3-pe.png
+        title: 'The Entities table widget with an alias that filters a list of several devices, which in this case are Compressor BC-10, Compressor QA-32 and Thermometer A1, has been added.'
+
 
 entity-name-1:
- 4:
-  image: /images/user-guide/ui/alias/alias-5-pe.png
- 5:
-  image: /images/user-guide/ui/alias/alias-6-pe.png
- 6:
-  image: /images/user-guide/ui/alias/alias-7-pe.png
- 7:
-  image: /images/user-guide/ui/alias/entity-name-8-pe.png
- 8:
-  image: /images/user-guide/ui/alias/entity-name-9-pe.png
+    0:
+        image: /images/user-guide/ui/alias/entity-name-1-pe.png
+        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and enter an expression that will filter the names of the displayed entities - “Compressor”.'
+
+entity-name-2:
+    0:
+        image: /images/user-guide/ui/alias/entity-name-2-pe.png
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity name" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add";'
+    1:
+        image: /images/user-guide/ui/alias/entity-name-3-pe.png
+        title: 'The Entities table widget with alias that filters devices, which names start with ‘Compressor’, has been added.'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 entity-group-list:
  0:

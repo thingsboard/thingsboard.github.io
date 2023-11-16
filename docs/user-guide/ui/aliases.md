@@ -5,27 +5,63 @@ asiconees:
 title: Aliases
 description: ThingsBoard Aliases
 
-single-alias:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-ce.png
- 1:
-  image: /images/user-guide/ui/alias/alias-2-ce.png
- 2:
-  image: /images/user-guide/ui/alias/single-entity-3-ce.png
- 3:
-  image: /images/user-guide/ui/alias/single-entity-4-ce.png
+create-alias:
+    0:
+        image: /images/user-guide/widgets/overview/add-new-dashboard-1-ce.png
+        title: 'Open your dashboard and enter edit mode;'
+    1:
+        image: /images/user-guide/ui/alias/create-alias-2-ce.png
+        title: 'Click an "Entity aliases" icon in the upper right corner of the window;'
+    2:
+        image: /images/user-guide/ui/alias/create-alias-3-ce.png
+        title: 'In the opened "Entity aliases" window click the “Add alias” button on the left side of the dialog box;'
+    3:
+        image: /images/user-guide/ui/alias/create-alias-4-ce.png
+        title: 'In the opened dialog Add alias, enter a name for the alias and select a filter type. Then, fill in all required fields and click the "Add" button in the lower right corner;'
+    4:
+        image: /images/user-guide/ui/alias/create-alias-5-ce.png
+        title: 'We can now see that a new alias has been added. In this window you can view, edit and delete your aliases. Click "Save" in the lower right corner of the dialog box.'
 
-single-alias-1:
- 4:
-  image: /images/user-guide/ui/alias/alias-5-ce.png
- 5:
-  image: /images/user-guide/ui/alias/alias-6-ce.png
- 6:
-  image: /images/user-guide/ui/alias/alias-7-ce.png
- 7:
-  image: /images/user-guide/ui/alias/single-entity-8-ce.png
- 8:
-  image: /images/user-guide/ui/alias/single-entity-9-ce.png
+use-alias-in-widget:
+    0:
+        image: /images/user-guide/ui/alias/create-alias-6-ce.png
+        title: 'Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);'
+    1:
+        image: /images/user-guide/ui/alias/create-alias-7-ce.png
+        title: 'Select the widget bundle. For example select "Indoor Environment" widgets bundle;'
+    2:
+        image: /images/user-guide/ui/alias/create-alias-8-ce.png
+        title: 'Now, select the "Indoor temperature card with background" widget;'
+    3:
+        image: /images/user-guide/ui/alias/create-alias-9-ce.png
+        title: 'The "Add Widget" window will appear. Navigate to the "Entity alias" tab. Specify the previously created "A new entity alias" alias in the "Entity alias" field.'
+    4:
+        image: /images/user-guide/ui/alias/create-alias-10-ce.png
+        title: 'Specify the data key(s) in the "Data key" field. In our example is the "temperature" data key. Then, click "Add";'
+    5:
+        image: /images/user-guide/ui/alias/create-alias-11-ce.png
+        title: 'You have added a widget that uses the previously configured alias as a data source.'
+
+single-entity:
+    0:
+        image: /images/user-guide/ui/alias/single-entity-1-ce.png
+        title: 'In the "Add Alias" dialog box, enter the alias name, and select the "Single Entity" filter type. Then choose the entity type and specify the final entity/entities.'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 group-entities:
  0:

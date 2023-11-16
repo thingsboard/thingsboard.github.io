@@ -1,105 +1,100 @@
 * TOC
 {:toc}
 
-## Introduction
+Alias is a reference to a single entity or group of entities that are used in the widgets. Alias may be static or dynamic.
 
-Alias is a reference to a single entity or group of entities that are used in the widgets. Alias may be static or dynamic.  
-To create a dashboard, you first need to create aliases to define the data from which the entities will be used. 
-Aliases can be as easy as referring to a single device or as complicated as creating a complex search query for 
-specific assets from a list. 
+Aliases can be as easy as referring to a single device or as complicated as creating a complex search query for specific assets from a list. 
 
 **In this tutorial, aliases will be used on a system according to the scheme shown below and all devices have "temperature" generated values coming to them:**
 
 <object width="60%" data="/images/user-guide/ui/alias-scheme.svg"></object>
 
+## Prerequisites
+
+Before proceeding with this guide, it's recommended that you follow [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide to become familiar with ThingsBoard devices dashboards and widgets. This will enhance your learning experience and understanding of the concepts presented here.
+
+## Creating alias
+
+To create an alias, you need to define the entities from which data will be extracted.
+
+Then follow these steps:
+
+{% include images-gallery.html imageCollection="create-alias" showListImageTitles="true" %}
+
+Now, let’s use an added alias in a widget:
+
+{% include images-gallery.html imageCollection="use-alias-in-widget" showListImageTitles="true" %}
+
 ## Alias types
+
+In the ThingsBoard, there are the following types of aliases: [Single entity](#single-entity), [Group entities](#group-entities), [Entity list](#entity-list), [Entity name](#entity-name), [Entity type](#entity-type), [Entity group list](#entity-group-list), [Entities by group name](#entities-by-group-name), [Entity from dashboard state](#entity-from-dashboard-state), [Owner of entity from dashboard state](#owner-of-entity-from-dashboard-state), [Asset type](#asset-type), [Device type](#device-type), [Entity view type](#entity-view-type), [Edge type](#edge-type), [Api Usage State](#api-usage-state), [Relations query](#relations-query), [Asset search query](#asset-search-query), [Device search query](#device-search-query), [Entity view search query](#entity-view-search-query), [Edge search query](#edge-search-query) and [Scheduler events](#scheduler-events).
+
+They provide flexibility and powerful capabilities for configuring dashboards in ThingsBoard, allowing users to efficiently organize and visualize data from various sources.
+
+Let's take a look at each of them.
 
 ### Single entity
 
-This alias allows choosing a single entity. It can be a device, asset, entity view, tenant, customer, dashboard, 
-data converter, scheduler event, blob entity, or current customer.  
-In the example, an alias was created that filters one device, which in this case is Thermometer 1.  
+This alias allows choosing a single entity. It can be a device, asset, entity view, tenant, customer, dashboard, user, data converter, integration, scheduler event, blob entity, role, edge, current customer, current tenant, current user or current user owner.
 
-Let's learn how to add a Single entity alias:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select a _Single entity_ filter type.
-From the Type drop-down menu, Select the _Device_ and enter the name of the needed device (start typing it and it will be found automatically).
-5. After configuring the alias, click the "Add" button in the lower right corner. 
-6. We can now see that a new alias has been added. Click "Save" in the lower right corner of the dialog box. 
-
-{% include images-gallery.html imageCollection="single-alias" %}
-<br>
-
-Let's use an added alias in a widget:
-1. Click the "Add new widget" icon in the center of the screen.
-2. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-3. Input data source: Entity type, select alias name from the list, and add telemetry.
-4. Click the "Add" button in the lower right corner of the dialog box.
-5. Widget with alias that filters one device has been added.
-6. Don't forget to save all the changes by clicking on the big orange checkmark in the lower right corner of the screen.
+In the "Add alias" dialog box, enter the alias name, and select the "Single entity" filter type. Then choose the entity type and specify the final entity/entities.
 
 {% include images-gallery.html imageCollection="single-alias-1" %}
 
+In this example, an alias was created that filters one device - Thermometer A1. Let's use an added alias in a widget:
+
+In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Single entity" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. The Entities table widget with the alias that filters one device has been added.
+
+{% include images-gallery.html imageCollection="single-alias-2" %}
+
+### Group entities
+
+This alias allows choosing one entity group as the data source. It can be a device group, asset group, entity view group, customer group, dashboard group, user group and edge group.
+
+In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and select the entity group.
+
+{% include images-gallery.html imageCollection="group-entities-1" %}
+
+In this example, an alias was created that filters device group - Thermostats. Let's use an added alias in a widget. Let's use an added alias in a widget:
+
+In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Group entities" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. The Entities table widget with the alias that filters one device has been added.
+
+{% include images-gallery.html imageCollection="group-entities-2" %}
 
 ### Entity list
 
-This alias allows choosing several entities manually without entering a query, which can be devices, assets, entity 
-views, tenants, customers, dashboards, data converters, scheduler events, blob entities, or customers.
-In this example, an alias was created that filters a list of multiple devices.  
+This alias allows choosing several entities manually without entering a query, which can be devices, assets, entity views, tenants, customers, dashboards, user, data converters, integrations, scheduler events, blob entities, roles or edges.
 
-Let's learn how to add an Entity list alias:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select an _Entity list_ filter type.
-   From the Type drop-down menu, Select the _Device_ and input names of the individual devices (start typing it and it will be found automatically).
-5. After configuring the alias, click the "Add" button in the lower right corner.
-6. We can now see that a new alias has been added. Click "Save" in the lower right corner of the dialog box.
-
-{% include images-gallery.html imageCollection="entity-list" %}
-<br>
-
-Now let's use the added alias in a widget:
-1. Click the "Add new widget" icon in the center of the screen.
-2. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-3. Input data source: Entity type, select the name of the created alias from the list, and add telemetry.
-4. Click the "Add" button in the lower right corner of the dialog box.
-5. Widget with alias that filters a list of several devices, which in this case are Device D and Device E, has been added.
-6. Don't forget to save all the changes by clicking on the big orange checkmark in the lower right corner of the screen.
+In the "Add alias" dialog box, enter the alias name, and select the "Entity list" filter type. Then choose the entities type and choose the entities whose data you want to display on the widget.
 
 {% include images-gallery.html imageCollection="entity-list-1" %}
 
+In this example, an alias was created that filters a list of multiple devices. Let's use an added alias in a widget:
+
+In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity list" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. The Entities table widget with the alias that filters a list of several devices, which in this case are Compressor BC-10, Compressor QA-32 and Thermometer A1, has been added
+
+{% include images-gallery.html imageCollection="entity-list-2" %}
 
 ### Entity name
 
-This alias allows choosing one or more entity names that begin with an entered query, which can be devices, 
-assets, entity views, tenants, customers, dashboards, data converters, scheduler events, blob entities, or customers.  
-In this example, an alias was created to filter devices that start with "Compressor".
+This alias allows you to display entities whose names start with the entered expression.
+These objects can be devices, assets, entity views, tenants, customers, dashboards, users, data converters, integrations, scheduler events, blob entities, rales or edges.  
 
-Let's learn how to add an Entity name alias:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select the filter type _Entity name_.
-   From the Type drop-down menu, Select the _Device_ and enter a name, or just the beginning of the name, by which devices will be filtered.
-5. After configuring the alias, click the "Add" button in the lower right corner.
-6. We can now see that a new alias has been added. Click "Save" in the lower right corner of the dialog box.
-
-{% include images-gallery.html imageCollection="entity-name" %}
-<br>
-
-Now let's use the added alias in a widget:
-1. Click the "Add new widget" icon in the center of the screen.
-2. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-3. Input data source: Entity type, select the name of the created alias from the list, and add telemetry.
-4. Click the "Add" button in the lower right corner of the dialog box.
-5. Widget with alias that filters devices, which names start with ‘Device’, has been added.
-6. Don't forget to save all the changes by clicking on the big orange checkmark in the lower right corner of the screen.
+In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and enter an expression that will filter the names of the displayed entities - "Compressor".
 
 {% include images-gallery.html imageCollection="entity-name-1" %}
 
+In this example, an alias was created to filter devices whose names start with "Compressor". Let's use an added alias in a widget:
+
+In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity name" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. The Entities table widget with alias that filters devices, which names start with ‘Compressor’, has been added.
+
+{% include images-gallery.html imageCollection="entity-name-2" %}
+
+### Entity type
+
+### Entity group list
+
+### Entities by group name
 
 ### Entity from dashboard state
 
@@ -149,6 +144,13 @@ Time to add an action to a root dashboard widget and perform it using an Entity 
 By clicking a button opposite needed entity, you will be transitioned to an inner state that shows a widget with entity from dashboard's state details.
 
 {% include images-gallery.html imageCollection="entity-from-dashboard-state-2" %}
+
+
+
+
+### Owner of entity from dashboard state
+
+
 
 ### Asset type
 
@@ -211,6 +213,10 @@ Let's learn how to add an Entity view type alias and use it in a widget:
 {% include images-gallery.html imageCollection="entity-view-type" %}
 <br>
 
+### Edge type
+
+
+
 ### Api Usage State
 
 There is an API Usage layout in the main menu of the TB platform. API Usage shows full statistics on the platform.  
@@ -228,7 +234,6 @@ Let's learn how to add an Api Usage State alias and use it in a widget:
 9. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
 
 {% include images-gallery.html imageCollection="api-usage-state" %}
-
 
 ### Relations query
 
@@ -318,6 +323,6 @@ Let's learn how to add a Device search query alias and use it in a widget:
 
 {% include images-gallery.html imageCollection="entity-view-search-query" %}
 
- 
+### Edge search query
 
-
+### Scheduler events
