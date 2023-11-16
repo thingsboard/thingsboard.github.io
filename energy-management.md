@@ -110,19 +110,19 @@ description: "IoT Energy Management ✔IoT Energy Monitoring ⚫ ThingsBoard ➤
         <div class="definitions-block">
             <div class="definitions-list side-paddings">
                 <div class="definitions-list-item one-to-one-and-half align-start">
-                    <div class="term bold padding-top">Smart Metering</div>
+                    <div class="term bold"><a class="header-link" href="/smart-metering/">Smart Metering</a></div>
                     <div class="definition">Сollect, store, and aggregate data from smart meters in a reliable and fault-tolerant way. You can analyze resource consumption and raise alerts on leakage, anomaly, or fraud.</div>
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
-                    <div class="term bold">Smart Energy</div>
+                    <div class="term bold"><a class="header-link" href="/smart-energy/">Smart Energy</a></div>
                     <div class="definition">Deliver and store data from smart meters in a reliable and fault-tolerant way, visualize real-time and historical energy consumption data on customizable end-user dashboards and integrate with third-party analytics frameworks and solutions.</div>
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
-                    <div class="term bold padding-top">Environment Monitoring</div>
+                    <div class="term bold"><a class="header-link" href="/use-cases/environment-monitoring/">Environment Monitoring</a></div>
                     <div class="definition">Monitor and analyze indoor and outdoor environments using a wide range of sensors. </div>
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
-                    <div class="term bold">Smart Office</div>
+                    <div class="term bold"><a class="header-link" href="/use-cases/smart-office/">Smart Office</a></div>
                     <div class="definition">Ensure employee health and safety to boost organization productivity. Optimize resource consumption by monitoring and controlling the office's indoor climate.</div>
                 </div>
             </div>
