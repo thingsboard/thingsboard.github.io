@@ -8,7 +8,7 @@ description: ThingsBoard Distributors
 # ThingsBoard Distributors
 <p id="des">Select a region using the map or the finder</p>
 
-<div style="margin: 0px -254px;"><object id="map" data="https://img.thingsboard.io/partners/map-of-distributors.svg"></object></div>
+<div style="margin: 0px -254px;"><object id="map" data="/images/partners/map-of-distributors.svg"></object></div>
 
 <div id="distributors">Find our local re-seller</div>
 
