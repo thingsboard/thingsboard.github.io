@@ -15,7 +15,7 @@ wl-latest-values-datasource:
         title: 'This widget type uses values of entity time series as a data source;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/latest-values-datasource-2-ce.png
-        title: 'Digital Gauge displaying current power value.'
+        title: 'Digital Gauge displaying current temperature value.'
 
 wl-timeseries:
     0:
@@ -23,7 +23,7 @@ wl-timeseries:
         title: 'This kind of widgets uses only the values of entity time series as a data source;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-timeseries-2-ce.png
-        title: 'An example of timeseries widget is the "Timeseries Line Chart". It displays amperage values of devices in real-time.'
+        title: 'An example of timeseries widget is the "Timeseries Line Chart". It displays temperature values of devices in real-time.'
 
 wl-control-widget:
     0:
@@ -31,7 +31,7 @@ wl-control-widget:
         title: 'RPC widgets are configured by specifying target device as target endpoint for RPC commands;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-control-widget-2-ce.png
-        title: 'An example of RPC widget is “Basic GPIO Control”. It sends GPIO switch commands and detects current GPIOs switch status.'
+        title: 'An example of RPC widget is “Basic GPIO Control”. It sends GPIO switch commands and detects current GPIO switch status.'
 
 wl-alarms:
     0:
@@ -44,7 +44,7 @@ wl-alarms:
 wl-static:
     0:
         image: /images/user-guide/ui/widgets/widget-library/wl-static-1-ce.png
-        title: 'Static widget type is configured by specifying static HTML content and optionally CSS styles;'
+        title: 'Static widget type is configured by specifying static HTML content and, optionally, CSS styles;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-static-2-ce.png
         title: 'An example of a Static widget is the “HTML card” that displays the specified HTML content.'
@@ -196,7 +196,7 @@ add-widget:
         title: 'In the pop-up window select widget type;'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-widget-3-ce.png
-        title: 'In the dialog window that appears, enter the name of the new widget. Enter the widget JavaScript code, then click "Save" to complete the creation of widget;'
+        title: 'In the dialog window that appears, enter the name of the new widget, input the widget JavaScript code, and then click "Save" to complete the widget creation;'
     3:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-widget-4-ce.png
         title: 'The new widget is created.'
@@ -210,16 +210,16 @@ wl-add-widgets-bundle:
         title: 'In the opened dialog window, enter the name of the new bundle. Adding an image and a description is optional. Click "Add";'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-3-ce.png
-        title: 'After creating the widget bundle, it will be automatically opened. Now you can add widgets there. To add an existing widget, click the "+ Add existing widget" button in the center of the window. To create (or import) a new widget, click the plus icon in the top right corner of the window. Now, click the "+Add existing widget" button in the center of the window;'
+        title: 'After creating the widget bundle, it will be automatically opened. Now, you can add widgets there. To add an existing widget, click the "+ Add existing widget" button in the center of the window. To create (or import) a new widget, click the plus icon in the top right corner of the window. Now, click the "+Add existing widget" button in the center of the window;'
     3:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-4-ce.png
-        title: 'Click on the "Widgets" row and select your widget from drop down menu;'
+        title: 'Click on the "Widgets" row and select your widget from drop-down menu;'
     4:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-5-ce.png
         title: 'Click "Save" to complete adding the widget to your widget bundle;'
     5:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-6-ce.png
-        title: 'Since widgets bundles are in alphabetical order, the newly created one may be on the different page.'
+        title: 'Since widget bundles are alphabetically ordered, the newly created one may be on a different page.'
 
 export-widgets-bundle:
     0:
@@ -235,7 +235,7 @@ import-widgets-bundle:
         title: 'Click the "+" button in the upper right corner of the "Widgets Bundles" page. Select "Import widgets bundle" from the drop-down menu;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-import-bundle-2-ce.png
-        title: 'In the popup, you will be prompted to upload the JSON file. Drag and drop a file from your computer, then click "Import" to add a widget bundle to the library;'
+        title: 'In the pop-up, you will be prompted to upload the JSON file. Drag and drop a file from your computer, then click "Import" to add a widget bundle to the library;'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-import-bundle-3-ce.png
         title: 'The widgets bundle is imported'
@@ -251,7 +251,7 @@ import-widget:
         title: 'Click the "+" button in the upper right corner of the "Widgets" page. Select "Import widget" from the drop-down menu;'
     1:
         image: /images/user-guide/ui/widgets/widget-library/wl-import-widget-2-ce.png
-        title: 'In the popup, you will be prompted to upload the JSON file. Drag and drop a file from your computer, then click the "Import" to add a widget to the widget bundle;'
+        title: 'In the pop-up, you will be prompted to upload the JSON file. Drag and drop a file from your computer, then click the "Import" to add a widget to the widget bundle;'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-import-widget-3-ce.png
         title: 'The widget is imported.'
