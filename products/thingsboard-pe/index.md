@@ -23,7 +23,7 @@ description:
     <section id="labeling">
         <div class="main-div">
             <div id="features-top">
-                <div id="background" >
+                <div id="background-white-labeling">
                     <div class="main1"></div><div class="small1"></div><div class="small2"></div><div class="small3"></div>
                 </div>
                 <div class="block">
@@ -63,10 +63,10 @@ description:
     <section id="integration">
         <div class="main-div">
             <div id="features-top-2">
-                <div id="lists" >
+                <div id="lists-first" >
                     <img class="integrations-list" src="/images/pe/integrations-list.svg" alt="integrations list">
                 </div>
-                <div id="background" >
+                <div id="background-platform-integrations" >
                     <div class="main2"></div><div class="small4"></div><div class="small5"></div>
                 </div>
                 <div class="block dark">
@@ -89,7 +89,7 @@ description:
     <section id="scheduler">
         <div class="main-div">
             <div id="features-top-3">
-                <div id="background" >
+                <div id="background-scheduler" >
                     <div class="main3"></div><div class="small6"></div><div class="small7"></div><div class="small8"></div>
                 </div>
                 <div class="block double">
@@ -109,10 +109,10 @@ description:
     <section id="export">
         <div class="main-div">
             <div id="features-top-4">
-                <div id="lists" >
+                <div id="lists-second" >
                     <img class="export-list" src="/images/pe/export-list.svg" alt="export list">
                 </div>
-                <div id="background" >
+                <div id="background-data-export" >
                     <div class="bottom"></div><div class="small9"></div>
                 </div>
                 <div class="block end">
