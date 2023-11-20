@@ -2,7 +2,7 @@
 message publishing, and distribution among subscribers.
 
 TBMQ is a scalable, fault-tolerant broker with the capacity to handle **4M+** concurrent client connections, 
-supporting a minimum of [3M messages per second throughput](/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/) per single cluster node.
+supporting a minimum of [3M messages per second throughput](/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/) per single cluster node with low latency delivery.
 In the cluster mode, its capabilities are further enhanced, enabling it to support more than [100M concurrently connected clients](/docs/mqtt-broker/reference/100m-connections-performance-test/).
 
 You can refer to the TBMQ documentation to set up the broker and understand its primary features, including the MQTT protocol.
