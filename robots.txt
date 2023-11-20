@@ -1,6 +1,6 @@
 User-agent: *
 
-User-agent: *
+Disallow: /404.html
 Disallow: /admin
 Disallow: /signup
 Disallow: /email-protection
