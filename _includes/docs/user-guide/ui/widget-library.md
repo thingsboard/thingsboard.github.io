@@ -144,7 +144,7 @@ The Alarm widgets bundle is useful for visualization of alarms for specific enti
 
 ### Analog gauges
 
-The Analog Gauges bundle is useful for visualization of temperature, humidity, speed, and other integer or float values.
+The Analog Gauges widgets bundle is useful for visualization of temperature, humidity, speed, and other integer or float values.
 
 {% include images-gallery.html imageCollection="wl-analog-gauges-bundle" %}
 
@@ -227,7 +227,7 @@ The GPIO widgets bundle is useful for visualization and controlling GPIO state f
 
 ### Home page widgets
 
-The Home page widget bundle is useful for customizing and displaying quick links to the platform's UI components, documentation, or any other resources on the home page, displaying statistics about the number of entities and API usege, etc.
+The Home page widgets bundle is useful for customizing and displaying quick links to the platform's UI components, documentation, or any other resources on the home page, displaying statistics about the number of entities and API usege, etc.
 
 {% include images-gallery.html imageCollection="wl-home" %}
 
@@ -239,7 +239,7 @@ The HTML widgets bundle is useful for injecting custom HTML code. Or for display
 
 ### Indoor Environment
 
-The Indoor Environment widget bundle is useful for visualizing indoor environmental data.
+The Indoor Environment widgets bundle is useful for visualizing indoor environmental data.
 
 {% include images-gallery.html imageCollection="wl-indoor-environment-bundle" %}
 

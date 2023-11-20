@@ -210,7 +210,7 @@ wl-add-widgets-bundle:
         title: 'In the opened dialog window, enter the name of the new bundle. Adding an image and a description is optional. Click "Add";'
     2:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-3-ce.png
-        title: 'After creating the widget bundle, it will be automatically opened. Now, you can add widgets there. To add an existing widget, click the "+ Add existing widget" button in the center of the window. To create (or import) a new widget, click the plus icon in the top right corner of the window. Now, click the "+Add existing widget" button in the center of the window;'
+        title: 'After creating the widget bundle, it will be automatically opened. Now, you can add widgets there. To add your own existing widget, click the "+ Add existing widget" button in the center of the window. To create (or import) a new widget, click the plus icon in the top right corner of the window. Now, click the "+Add existing widget" button in the center of the window;'
     3:
         image: /images/user-guide/ui/widgets/widget-library/wl-add-new-bundle-4-ce.png
         title: 'Click on the "Widgets" row and select your widget from drop-down menu;'
