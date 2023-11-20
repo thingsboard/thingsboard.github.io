@@ -49,11 +49,11 @@ Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%te
 RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/pe-docker-queue-rabbitmq.md%br%
 Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/pe-docker-queue-confluent-cloud.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}  
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}
 
-Where: 
-    
-- `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the third step;    
+Where:
+
+- `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the third step;
 - `8080:8080`            - connect local port 8080 to exposed internal HTTP port 8080;
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883;
 - `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070;
@@ -308,9 +308,9 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
 * After this you need to update docker-compose.yml as in [Step 4](#step-4-choose-thingsboard-queue-service) but with 3.1.1PE instead of 3.2.2PE:
-    
+
 * Change upgradeversion variable to your **current** ThingsBoard version.
-       
+
  ```bash
 sudo sh -c "echo '3.1.0' > ~/.mytbpe-data/.upgradeversion"
 ```
@@ -328,7 +328,7 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 <br>**docker-compose run mytbpe upgrade-tb.sh**
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
-    
+
 * Start ThingsBoard:
 
 ```bash
@@ -383,7 +383,7 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) here is th
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
 * Start ThingsBoard:
-    
+
 ```bash
 docker compose up -d
 ```

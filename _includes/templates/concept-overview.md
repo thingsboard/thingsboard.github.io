@@ -1,6 +1,6 @@
 {% if concept %}<!-- check for this before going any further; if not present, skip to else at bottom -->
 
-# Overview of {{concept}}s
+## Overview of {{concept}}s
 
 {% if what_is %}
 

@@ -11,6 +11,17 @@ description: ThingsBoard IoT platform upgrade instructions
 
 <ul id="markdown-toc">
     <li>
+      <a href="#upgrading-to-361" id="markdown-toc-upgrading-to-361">Upgrading to 3.6.1</a>
+      <ul>
+          <li>
+              <a href="#ubuntucentos-361" id="markdown-toc-ubuntucentos-361">Ubuntu/CentOS</a>
+          </li>
+          <li>
+              <a href="#windows-361" id="markdown-toc-windows-361">Windows</a>
+          </li>
+      </ul>
+    </li>
+    <li>
       <a href="#upgrading-to-36" id="markdown-toc-upgrading-to-36">Upgrading to 3.6</a>
       <ul>
           <li>
@@ -168,10 +179,10 @@ description: ThingsBoard IoT platform upgrade instructions
       <a href="#upgrading-to-322" id="markdown-toc-upgrading-to-322">Upgrading to 3.2.2</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-322" id="markdown-toc-ubuntucentos-322">Ubuntu/CentOS</a>        
+              <a href="#ubuntucentos-322" id="markdown-toc-ubuntucentos-322">Ubuntu/CentOS</a>
           </li>
           <li>
-              <a href="#windows-322" id="markdown-toc-windows-322">Windows</a>        
+              <a href="#windows-322" id="markdown-toc-windows-322">Windows</a>
           </li>
       </ul>
     </li>
@@ -179,10 +190,10 @@ description: ThingsBoard IoT platform upgrade instructions
       <a href="#upgrading-to-321" id="markdown-toc-upgrading-to-321">Upgrading to 3.2.1</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-321" id="markdown-toc-ubuntucentos-321">Ubuntu/CentOS</a>        
+              <a href="#ubuntucentos-321" id="markdown-toc-ubuntucentos-321">Ubuntu/CentOS</a>
           </li>
           <li>
-              <a href="#windows-321" id="markdown-toc-windows-321">Windows</a>        
+              <a href="#windows-321" id="markdown-toc-windows-321">Windows</a>
           </li>
       </ul>
     </li>
@@ -190,10 +201,10 @@ description: ThingsBoard IoT platform upgrade instructions
       <a href="#upgrading-to-32" id="markdown-toc-upgrading-to-32">Upgrading to 3.2</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-32" id="markdown-toc-ubuntucentos-32">Ubuntu/CentOS</a>        
+              <a href="#ubuntucentos-32" id="markdown-toc-ubuntucentos-32">Ubuntu/CentOS</a>
           </li>
           <li>
-              <a href="#windows-32" id="markdown-toc-windows-32">Windows</a>        
+              <a href="#windows-32" id="markdown-toc-windows-32">Windows</a>
           </li>
       </ul>
     </li>
@@ -201,10 +212,10 @@ description: ThingsBoard IoT platform upgrade instructions
       <a href="#upgrading-to-311" id="markdown-toc-upgrading-to-311">Upgrading to 3.1.1</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-311" id="markdown-toc-ubuntucentos-311">Ubuntu/CentOS</a>        
+              <a href="#ubuntucentos-311" id="markdown-toc-ubuntucentos-311">Ubuntu/CentOS</a>
           </li>
           <li>
-              <a href="#windows-311" id="markdown-toc-windows-311">Windows</a>        
+              <a href="#windows-311" id="markdown-toc-windows-311">Windows</a>
           </li>
       </ul>
     </li>
@@ -212,10 +223,10 @@ description: ThingsBoard IoT platform upgrade instructions
       <a href="#upgrading-to-31" id="markdown-toc-upgrading-to-31">Upgrading to 3.1</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-31" id="markdown-toc-ubuntucentos-31">Ubuntu/CentOS</a>        
+              <a href="#ubuntucentos-31" id="markdown-toc-ubuntucentos-31">Ubuntu/CentOS</a>
           </li>
           <li>
-              <a href="#windows-31" id="markdown-toc-windows-31">Windows</a>        
+              <a href="#windows-31" id="markdown-toc-windows-31">Windows</a>
           </li>
       </ul>
     </li>
@@ -223,10 +234,10 @@ description: ThingsBoard IoT platform upgrade instructions
       <a href="#upgrading-to-301" id="markdown-toc-upgrading-to-30">Upgrading to 3.0.1</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-301" id="markdown-toc-ubuntucentos-301">Ubuntu/CentOS</a>        
+              <a href="#ubuntucentos-301" id="markdown-toc-ubuntucentos-301">Ubuntu/CentOS</a>
           </li>
           <li>
-              <a href="#windows-301" id="markdown-toc-windows-301">Windows</a>        
+              <a href="#windows-301" id="markdown-toc-windows-301">Windows</a>
           </li>
       </ul>
     </li>
@@ -234,10 +245,10 @@ description: ThingsBoard IoT platform upgrade instructions
       <a href="#upgrading-to-30" id="markdown-toc-upgrading-to-30">Upgrading to 3.0</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-30" id="markdown-toc-ubuntucentos-30">Ubuntu/CentOS</a>        
+              <a href="#ubuntucentos-30" id="markdown-toc-ubuntucentos-30">Ubuntu/CentOS</a>
           </li>
           <li>
-              <a href="#windows-30" id="markdown-toc-windows-30">Windows</a>        
+              <a href="#windows-30" id="markdown-toc-windows-30">Windows</a>
           </li>
       </ul>
     </li>
@@ -245,76 +256,76 @@ description: ThingsBoard IoT platform upgrade instructions
       <a href="#upgrading-to-256" id="markdown-toc-upgrading-to-256">Upgrading to 2.5.6</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-256" id="markdown-toc-ubuntucentos-256">Ubuntu/CentOS</a>        
+              <a href="#ubuntucentos-256" id="markdown-toc-ubuntucentos-256">Ubuntu/CentOS</a>
           </li>
           <li>
-              <a href="#windows-256" id="markdown-toc-windows-256">Windows</a>        
+              <a href="#windows-256" id="markdown-toc-windows-256">Windows</a>
           </li>
       </ul>
-    </li>      
+    </li>
     <li>
       <a href="#upgrading-to-255" id="markdown-toc-upgrading-to-255">Upgrading to 2.5.5</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-255" id="markdown-toc-ubuntucentos-255">Ubuntu/CentOS</a>        
+              <a href="#ubuntucentos-255" id="markdown-toc-ubuntucentos-255">Ubuntu/CentOS</a>
           </li>
           <li>
-              <a href="#windows-255" id="markdown-toc-windows-255">Windows</a>        
+              <a href="#windows-255" id="markdown-toc-windows-255">Windows</a>
           </li>
       </ul>
-    </li>      
+    </li>
     <li>
       <a href="#upgrading-to-254" id="markdown-toc-upgrading-to-254">Upgrading to 2.5.4</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-254" id="markdown-toc-ubuntucentos-254">Ubuntu/CentOS</a>        
+              <a href="#ubuntucentos-254" id="markdown-toc-ubuntucentos-254">Ubuntu/CentOS</a>
           </li>
           <li>
-              <a href="#windows-254" id="markdown-toc-windows-254">Windows</a>        
+              <a href="#windows-254" id="markdown-toc-windows-254">Windows</a>
           </li>
       </ul>
-    </li>      
+    </li>
     <li>
       <a href="#upgrading-to-253" id="markdown-toc-upgrading-to-253">Upgrading to 2.5.3</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-253" id="markdown-toc-ubuntucentos-253">Ubuntu/CentOS</a>        
+              <a href="#ubuntucentos-253" id="markdown-toc-ubuntucentos-253">Ubuntu/CentOS</a>
           </li>
           <li>
-              <a href="#windows-253" id="markdown-toc-windows-253">Windows</a>        
+              <a href="#windows-253" id="markdown-toc-windows-253">Windows</a>
           </li>
       </ul>
-    </li>      
+    </li>
     <li>
       <a href="#upgrading-to-252" id="markdown-toc-upgrading-to-252">Upgrading to 2.5.2</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-252" id="markdown-toc-ubuntucentos-252">Ubuntu/CentOS</a>        
+              <a href="#ubuntucentos-252" id="markdown-toc-ubuntucentos-252">Ubuntu/CentOS</a>
           </li>
           <li>
-              <a href="#windows-252" id="markdown-toc-windows-252">Windows</a>        
+              <a href="#windows-252" id="markdown-toc-windows-252">Windows</a>
           </li>
       </ul>
-    </li>      
+    </li>
     <li>
       <a href="#upgrading-to-251" id="markdown-toc-upgrading-to-251">Upgrading to 2.5.1</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-251" id="markdown-toc-ubuntucentos-20">Ubuntu/CentOS</a>        
+              <a href="#ubuntucentos-251" id="markdown-toc-ubuntucentos-20">Ubuntu/CentOS</a>
           </li>
           <li>
-              <a href="#windows-251" id="markdown-toc-windows-20">Windows</a>        
+              <a href="#windows-251" id="markdown-toc-windows-20">Windows</a>
           </li>
       </ul>
-    </li>    
+    </li>
     <li>
       <a href="#upgrading-to-25" id="markdown-toc-upgrading-to-25">Upgrading to 2.5</a>
       <ul>
           <li>
-              <a href="#ubuntucentos-19" id="markdown-toc-ubuntucentos-19">Ubuntu/CentOS</a>        
+              <a href="#ubuntucentos-19" id="markdown-toc-ubuntucentos-19">Ubuntu/CentOS</a>
           </li>
           <li>
-              <a href="#windows-19" id="markdown-toc-windows-19">Windows</a>        
+              <a href="#windows-19" id="markdown-toc-windows-19">Windows</a>
           </li>
       </ul>
     </li>
@@ -322,10 +333,10 @@ description: ThingsBoard IoT platform upgrade instructions
     <a href="#upgrading-to-243" id="markdown-toc-upgrading-to-243">Upgrading to 2.4.3</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-18" id="markdown-toc-ubuntucentos-18">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-18" id="markdown-toc-ubuntucentos-18">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-18" id="markdown-toc-windows-18">Windows</a>        
+            <a href="#windows-18" id="markdown-toc-windows-18">Windows</a>
         </li>
     </ul>
     </li>
@@ -333,10 +344,10 @@ description: ThingsBoard IoT platform upgrade instructions
     <a href="#upgrading-to-2421" id="markdown-toc-upgrading-to-2421">Upgrading to 2.4.2.1</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-17" id="markdown-toc-ubuntucentos-17">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-17" id="markdown-toc-ubuntucentos-17">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-17" id="markdown-toc-windows-17">Windows</a>        
+            <a href="#windows-17" id="markdown-toc-windows-17">Windows</a>
         </li>
     </ul>
     </li> 
@@ -344,10 +355,10 @@ description: ThingsBoard IoT platform upgrade instructions
     <a href="#upgrading-to-241" id="markdown-toc-upgrading-to-241">Upgrading to 2.4.1</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-16" id="markdown-toc-ubuntucentos-16">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-16" id="markdown-toc-ubuntucentos-16">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-16" id="markdown-toc-windows-16">Windows</a>        
+            <a href="#windows-16" id="markdown-toc-windows-16">Windows</a>
         </li>
     </ul>
     </li> 
@@ -355,17 +366,119 @@ description: ThingsBoard IoT platform upgrade instructions
     <a href="#upgrading-to-240" id="markdown-toc-upgrading-to-240">Upgrading to 2.4.0</a>
     <ul>
         <li>
-            <a href="#ubuntucentos-15" id="markdown-toc-ubuntucentos-15">Ubuntu/CentOS</a>        
+            <a href="#ubuntucentos-15" id="markdown-toc-ubuntucentos-15">Ubuntu/CentOS</a>
         </li>
         <li>
-            <a href="#windows-15" id="markdown-toc-windows-15">Windows</a>        
+            <a href="#windows-15" id="markdown-toc-windows-15">Windows</a>
         </li>
     </ul>
     </li>
     <li>
     <a href="/docs/user-guide/install/old-upgrade-instructions/" id="markdown-toc-upgrading-to-240">Older versions</a>
-    </li>       
+    </li> 
 </ul>
+
+## Upgrading to 3.6.1 {#upgrading-to-361}
+
+### Ubuntu/CentOS {#ubuntucentos-361}
+
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.6. In order to upgrade to 3.6.1 you need to [**upgrade to 3.6 first**](/docs/user-guide/install/upgrade-instructions/#ubuntucentos-36).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+#### ThingsBoard package download
+
+{% capture tabspec %}thingsboard-download-3-6-1
+thingsboard-download-3-6-1-ubuntu,Ubuntu,shell,resources/3.6.1/thingsboard-ubuntu-download.sh,/docs/user-guide/install/resources/3.6.1/thingsboard-ubuntu-download.sh
+thingsboard-download-3-6-1-centos,CentOS,shell,resources/3.6.1/thingsboard-centos-download.sh,/docs/user-guide/install/resources/3.6.1/thingsboard-centos-download.sh{% endcapture %}
+{% include tabs.html %}
+
+#### ThingsBoard service upgrade
+
+* Stop ThingsBoard service if it is running.
+
+```bash
+sudo service thingsboard stop
+```
+{: .copy-code}
+
+{% capture tabspec %}thingsboard-installation-3-6-1
+thingsboard-installation-3-6-1-ubuntu,Ubuntu,shell,resources/3.6.1/thingsboard-ubuntu-installation.sh,/docs/user-guide/install/resources/3.6.1/thingsboard-ubuntu-installation.sh
+thingsboard-installation-3-6-1-centos,CentOS,shell,resources/3.6.1/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/3.6.1/thingsboard-centos-installation.sh{% endcapture %}
+{% include tabs.html %}
+
+{% capture difference %}
+**NOTE:**
+<br>
+Package installer may ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Execute regular upgrade script:
+
+```bash
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.6.0
+```
+{: .copy-code}
+
+#### Start the service
+
+```bash
+sudo service thingsboard start
+```
+{: .copy-code}
+
+### Windows {#windows-361}
+
+{% capture difference %}
+**NOTE:**
+<br>
+These upgrade steps are applicable for ThingsBoard version 3.6. In order to upgrade to 3.6.1 you need to [**upgrade to 3.6 first**](/docs/user-guide/install/upgrade-instructions/#windows-36).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+#### ThingsBoard package download
+
+Download ThingsBoard installation archive for Windows: [thingsboard-windows-3.6.1.zip](https://github.com/thingsboard/thingsboard/releases/download/v3.6.1/thingsboard-windows-3.6.1.zip).
+
+#### ThingsBoard service upgrade
+
+* Stop ThingsBoard service if it is running.
+
+```text
+net stop thingsboard
+```
+{: .copy-code}
+
+* Make a backup of previous ThingsBoard configuration located in \<ThingsBoard install dir\>\conf (for ex. C:\thingsboard\conf).
+* Remove ThingsBoard install dir.
+* Unzip installation archive to ThingsBoard install dir.
+* Compare and merge your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
+* Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
+
+{% capture difference %}
+**NOTE:**
+<br>
+Scripts listed above should be executed using Administrator Role.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Execute regular upgrade script:
+
+```text
+C:\thingsboard>upgrade.bat --fromVersion=3.6.0
+```
+{: .copy-code}
+
+#### Start the service
+
+```text
+net start thingsboard
+```
+{: .copy-code}
 
 ## Upgrading to 3.6 {#upgrading-to-36}
 
@@ -1913,7 +2026,7 @@ net stop thingsboard
     ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
     ts:
       type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
-```       
+```
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -1961,7 +2074,7 @@ thingsboard-installation-3-2-1-ubuntu,Ubuntu,shell,resources/3.2.1/thingsboard-u
 thingsboard-installation-3-2-1-centos,CentOS,shell,resources/3.2.1/thingsboard-centos-installation.sh,/docs/user-guide/install/resources/3.2.1/thingsboard-centos-installation.sh{% endcapture %}
 {% include tabs.html %}
 
-**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.  
+**NOTE:** Package installer will ask you to merge your thingsboard configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
 Please make sure that you set **database.ts.type** parameter value (in the file **/etc/thingsboard/conf/thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
 
 ```
@@ -2018,7 +2131,7 @@ net stop thingsboard
     ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
     ts:
       type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
-```       
+```
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -2125,7 +2238,7 @@ database:
   ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
   ts:
     type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
-```       
+```
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -2232,7 +2345,7 @@ net stop thingsboard
     ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
     ts:
       type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
-```       
+```
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -2355,7 +2468,7 @@ net stop thingsboard
     ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
     ts:
       type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
-```       
+```
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -2638,13 +2751,13 @@ net stop thingsboard
 * Unzip installation archive to ThingsBoard install dir.
 * Compare your old ThingsBoard configuration files (from the backup you made in the first step) with new ones.
 * Please make sure that you set **database.ts.type** parameter value (in the file **\<ThingsBoard install dir\>\conf\thingsboard.yml**) to "cassandra" instead of "sql" if you are using Cassandra database for timeseries data:
-  
+
 ```
   database:
     ts_max_intervals: "${DATABASE_TS_MAX_INTERVALS:700}" # Max number of DB queries generated by single API call to fetch telemetry records
     ts:
       type: "${DATABASE_TS_TYPE:sql}" # cassandra, sql, or timescale (for hybrid mode, DATABASE_TS_TYPE value should be cassandra, or timescale)
-```       
+```
 
 * Finally, run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -3558,7 +3671,7 @@ net stop thingsboard
       type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
     ts:
       type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
-```       
+```
 
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 
@@ -3658,7 +3771,7 @@ net stop thingsboard
       type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
     ts:
       type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
-```       
+```
 
 * Run **upgrade.bat** script to upgrade ThingsBoard to the new version.
 

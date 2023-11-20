@@ -1,0 +1,126 @@
+{
+  "ruleChain": {
+    "additionalInfo": {
+      "description": ""
+    },
+    "name": "Teltonika routers",
+    "type": "CORE",
+    "firstRuleNodeId": null,
+    "root": false,
+    "debugMode": false,
+    "configuration": null,
+    "externalId": null
+  },
+  "metadata": {
+    "firstNodeIndex": 0,
+    "nodes": [
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 353,
+          "layoutY": 151
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbMsgTypeFilterNode",
+        "name": "Message type check",
+        "debugMode": true,
+        "singletonMode": false,
+        "configuration": {
+          "messageTypes": [
+            "POST_TELEMETRY_REQUEST",
+            "POST_ATTRIBUTES_REQUEST"
+          ]
+        },
+        "externalId": null
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 353,
+          "layoutY": 283
+        },
+        "type": "org.thingsboard.rule.engine.transform.TbTransformMsgNode",
+        "name": "Convert incoming data to required format",
+        "debugMode": true,
+        "singletonMode": false,
+        "configuration": {
+          "scriptLang": "TBEL",
+          "jsScript": "return {msg: msg, metadata: metadata, msgType: msgType};",
+          "tbelScript": "var telemetry = {};\nvar attributes = {};\n\nvar ts = (long) msg.ts * 1000;\nmetadata.ts = ts;\n\nif (msg.reg == 300003) {\n    telemetry.temperature = msg.data / 10;\n}\n\nreturn [{msg: telemetry, metadata: metadata, msgType: \"POST_TELEMETRY_REQUEST\"}, {msg: attributes, metadata: metadata, msgType: \"POST_ATTRIBUTES_REQUEST\"}];"
+        },
+        "externalId": null
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 659,
+          "layoutY": 280
+        },
+        "type": "org.thingsboard.rule.engine.filter.TbMsgTypeSwitchNode",
+        "name": "Switch message type",
+        "debugMode": false,
+        "singletonMode": false,
+        "configuration": {
+          "version": 0
+        },
+        "externalId": null
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1004,
+          "layoutY": 353
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgTimeseriesNode",
+        "name": "Save timeseries",
+        "debugMode": false,
+        "singletonMode": false,
+        "configuration": {
+          "defaultTTL": 0,
+          "skipLatestPersistence": false,
+          "useServerTs": false
+        },
+        "externalId": null
+      },
+      {
+        "additionalInfo": {
+          "description": "",
+          "layoutX": 1004,
+          "layoutY": 231
+        },
+        "type": "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode",
+        "name": "Save attributes",
+        "debugMode": false,
+        "singletonMode": false,
+        "configuration": {
+          "scope": "CLIENT_SCOPE",
+          "notifyDevice": false,
+          "sendAttributesUpdatedNotification": false
+        },
+        "externalId": null
+      }
+    ],
+    "connections": [
+      {
+        "fromIndex": 0,
+        "toIndex": 1,
+        "type": "True"
+      },
+      {
+        "fromIndex": 1,
+        "toIndex": 2,
+        "type": "Success"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 3,
+        "type": "Post telemetry"
+      },
+      {
+        "fromIndex": 2,
+        "toIndex": 4,
+        "type": "Post attributes"
+      }
+    ],
+    "ruleChainConnections": null
+  }
+}

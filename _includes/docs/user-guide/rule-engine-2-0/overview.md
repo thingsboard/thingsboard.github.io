@@ -420,10 +420,12 @@ In order to export rule chain, you should navigate to the **Rule Chains** page a
 
 Similar, to import the rule chain you should navigate to the **Rules Chains** page and click on the big "+" button in the bottom-right part of the screen and then click on the import button. 
 
+{% if docsPrefix != "paas/" %}
 ## Architecture
 
 To learn more about internals of the rule engine, see [architecture](/docs/{{docsPrefix}}reference/) page.
 
+{% endif %}
 ## Custom REST API calls to Rule Engine
 
 {% assign feature = "Custom Rule Engine REST API calls" %}{% include templates/pe-feature-banner.md %}
@@ -458,7 +460,7 @@ See more tutorials [here](/docs/{{docsPrefix}}guides/).
 ## Troubleshooting
 
 If you are using Kafka queue for processing messages, ThingsBoard provides the ability to monitor if the rate of pushing messages to the Kafka is faster than rate of consuming and processing them (in such case you will have a growing latency for message processing).
-To enable this functionality, you need to ensure that Kafka consumer-stats are enabled (see <b>queue.kafka.consumer-stats</b> section of the [Configuration properties](/docs/{{docsPrefix}}user-guide/install/config/#thingsboard-core-settings))
+To enable this functionality, you need to ensure that Kafka consumer-stats are enabled (see <b>queue.kafka.consumer-stats</b> section of the [Configuration properties](/docs/user-guide/install/{{docsPrefix}}config/#thingsboard-core-settings))
 
 Once Kafka consumer-stats are enabled, you will see logs (see [Troubleshooting](/docs/user-guide/troubleshooting/#logs)) about offset lag for consumer groups (there are consumer-group logs for tb-core, tb-rule-engine and all transport services).
 

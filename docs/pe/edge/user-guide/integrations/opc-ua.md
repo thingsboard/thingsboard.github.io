@@ -334,7 +334,7 @@ When RPC request is going to be triggered to a device on the Edge, the downlink 
 
 To visualize the Airconditioners data and test RPC commands, we will create the **Airconditioners** dashboard and assign it to edge.
 First, please download the [**airconditioners_dashboard.json**](/docs/pe/edge/user-guide/resources/airconditioners_dashboard.json) file.
-    
+
 {% include images-gallery.html imageCollection="airconditionersDashboard" showListImageTitles="true" %}
 
 ## Assign Integration to Edge

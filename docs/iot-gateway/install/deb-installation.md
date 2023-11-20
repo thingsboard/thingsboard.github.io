@@ -1,7 +1,8 @@
 ---
 layout: docwithnav-gw
 title: Install ThingsBoard IoT Gateway as package.
-
+redirect_from: 
+ - "/docs/iot-gateway/install/rpi/"
 ---
 
 ### Prerequisites

@@ -14,7 +14,7 @@ Everyone knows that when it comes to agriculture, the critical indicator of succ
 
 An irrigation system is usually used to solve the problem of agricultural and irrigated land, which helps farmers achieve good results in growing and harvesting products.
 
-We developed the Smart Irrigation <a href="/docs/paas/solution-templates/smart-irrigation">template</a> to represent a generic field irrigation solution.
+We developed the Smart Irrigation <a href="/docs/paas/solution-templates/smart-irrigation/">template</a> to represent a generic field irrigation solution.
 
 <h2>Solution Structure</h2>
 
@@ -82,7 +82,7 @@ Save up to 90% of development time for your smart irrigation solution by utilizi
             <div class="block">
                 <object data="/images/integration-icon.svg"></object>
                 <div>
-                    <a class="title" href="/docs/user-guide/integrations">LoRaWAN & SigFox Support</a>
+                    <a class="title" href="/docs/user-guide/integrations/">LoRaWAN & SigFox Support</a>
                     <p>Connect LoRaWAN devices via integrations with standard network servers like TTN, LORIOT, ChirpStack, Actility, etc. Connect SigFox devices via integrations with the SigFox backend.</p>
                 </div>
             </div>

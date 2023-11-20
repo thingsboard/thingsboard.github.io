@@ -114,13 +114,13 @@ For example, you may store "raw" data for 3 month and aggregated data for 3 year
 Data retention policy and configuration depends on the chosen [storage](#data-storage).
 
 Cassandra supports time-to-live(TTL) parameter for each inserted row.
-That is why, you may [configure](/docs/{{docsPrefix}}user-guide/install/config/) default TTL parameter on a system level, using 'TS_KV_TTL' environment variable.
+That is why, you may [configure](/docs/user-guide/install/{{docsPrefix}}config/) default TTL parameter on a system level, using 'TS_KV_TTL' environment variable.
 You may overwrite the default value in the "Save Timeseries" rule node or using "TTL" metadata field of your message.
 This allows you to optimize storage consumption. The maximum allowed value of TTL is 5 years.
 For example, you may store "raw" data for 3 month and aggregated data for 3 years.
 
 PostgreSQL and Timescale does not support time-to-live(TTL) parameter for each inserted row.
-That is why, you may only [configure](/docs/{{docsPrefix}}user-guide/install/config/) periodic time-series data cleanup routine using 'SQL_TTL_*' environment variables. 
+That is why, you may only [configure](/docs/user-guide/install/{{docsPrefix}}config/) periodic time-series data cleanup routine using 'SQL_TTL_*' environment variables. 
 {% endif %}
 
 ## Data durability
@@ -252,9 +252,9 @@ ws(s)://host:port/api/ws/plugins/telemetry?token=$JWT_TOKEN
 
 Once opened, you can send 
 
-[subscription commands](https://github.com/thingsboard/thingsboard/blob/master/application/src/main/java/org/thingsboard/server/service/telemetry/cmd/TelemetryPluginCmdsWrapper.java) 
+[subscription commands](https://github.com/thingsboard/thingsboard/blob/release-3.6/application/src/main/java/org/thingsboard/server/service/ws/telemetry/cmd/TelemetryPluginCmdsWrapper.java) 
 and receive 
-[subscription updates](https://github.com/thingsboard/thingsboard/blob/master/application/src/main/java/org/thingsboard/server/service/telemetry/sub/TelemetrySubscriptionUpdate.java):
+[subscription updates](https://github.com/thingsboard/thingsboard/blob/release-3.6/application/src/main/java/org/thingsboard/server/service/ws/telemetry/sub/TelemetrySubscriptionUpdate.java):
 
 where 
 

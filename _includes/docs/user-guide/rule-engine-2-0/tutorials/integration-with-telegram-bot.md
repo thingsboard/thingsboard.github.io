@@ -185,7 +185,7 @@ In this rule chain, you will create 2 nodes as it will be explained in the follo
         </tr>
      </tbody>
   </table>
-     
+
 ![image](/images/gateway/telegram-bot/rest-api-telegram-node.png)
 
 
@@ -222,13 +222,13 @@ Finally, we can see that the message was received with the correct values:
 Also, you can:
 
   - configure Alarm Details function in the Create and Clear Alarm nodes.
-    
+
   - configure the Dashboard by adding an alarm widget to visualize the alarms.
-  
+
   - define other additional logic for alarm processing, for example, sending an email.
 
 Please refer to the links under the **See Also** section to see how to do this.
-  
+
 <br>
 
 ## See Also

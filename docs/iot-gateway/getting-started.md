@@ -37,13 +37,13 @@ First, we have to add Gateway device to your ThingsBoard instance. This can be d
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=createNewGatewayDevice %} 
 
 {% capture info %}
-<body>
+<div>
   <p>
     <b style="color:red">WARNING:</b>
     <span style="color:black">If you've previously configured the gateway, create a backup, as the new remote configuration will overwrite existing settings files.  
     <br>For those who used a gateway version earlier than 3.4, the gateway will automatically generate a new configuration file in JSON format.</span>
   </p>
-</body>
+</div>
 {% endcapture %}
 {% include templates/warn-banner.md content=info %}
 

@@ -17,7 +17,7 @@ docker run -it -p 8080:9090 -p 7070:7070 -p 1883:1883 -p 5683-5688:5683-5688/udp
 
 These commands install ThingsBoard and load demo data and accounts.
 
-ThingsBoard UI will be available using the URL: [http://localhost:8080](http://localhost:8080).
+ThingsBoard UI will be available using the URL: **http://localhost:8080**.
 You may use username **tenant@thingsboard.org** and password **tenant**. 
 More info about demo accounts is available [here](/docs/samples/demo-account/). 
 

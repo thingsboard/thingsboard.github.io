@@ -1,17 +1,12 @@
 <!Doctype html>
-<html id="thingsboard-pe">
+<html id="thingsboard-pe" lang="en">
 
 {% include head-header.html productTag="pe" %}
 <!--  HERO  -->
-<section id="hero" class="light-text"
-         data-vide-bg="mp4: https://video.thingsboard.io/pe-cover.mp4,
-                       webm: https://video.thingsboard.io/pe-cover.webm,
-                       ogv: https://video.thingsboard.io/pe-cover.ogv,
-                       poster: /video/pe-cover.jpg"
-         data-vide-options="bgColor: #000000, loop: true, muted: true, posterType: jpg">
+<section id="hero" class="light-text">
     <div class="video-cover"></div>
     <div id="hero-content">
-        <h1 class="header-animation pe-title">ThingsBoard Professional Edition</h1>
+        <span class="header-animation pe-title">ThingsBoard Professional Edition</span>
         <div class="header-animation">
             <a href="/pricing/" class="button try-pe">Try it now</a>
         </div>
@@ -32,6 +27,31 @@
 <!--{% if site.data[foundTOC].hidetoc != "true" and page.hidetoc != "true" %}-->
 <!--<button class="flyout-button" onclick="tb.toggleToc()"></button>-->
 <!--{% endif %}-->
+
+<style>
+	.cse .gsc-control-cse, .gsc-control-cse {
+		padding: 0;
+	}
+
+	#rule-engine .rule.hidden {
+		display: none
+	}
+</style>
+
+<script>
+	var isMobile = window.innerWidth < 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+	var videoSection = document.querySelector('#hero.light-text');
+
+	if (isMobile) {
+		videoSection.setAttribute('style', 'background: center no-repeat url(https://img.thingsboard.io/tb-cover.jpg)');
+	} else {
+		videoSection.setAttribute('data-vide-bg', `mp4: https://video.thingsboard.io/pe-cover.mp4,
+                                                    webm: https://video.thingsboard.io/pe-cover.webm,
+                                                    ogv: https://video.thingsboard.io/pe-cover.ogv,
+                                                    poster: https://img.thingsboard.io/pe-cover.jpg`);
+		videoSection.setAttribute('data-vide-options', 'bgColor: #000000, loop: true, muted: true, posterType: jpg');
+	}
+</script>
 
 <script type="text/javascript">
     jqueryDefer(function () {

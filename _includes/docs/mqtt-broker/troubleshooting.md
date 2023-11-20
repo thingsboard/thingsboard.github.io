@@ -194,7 +194,7 @@ Please note that in order to achieve maximum performance, **TBMQ uses several qu
 
 <section id="talkToUs">
     <div id="gettingHelp">
-        <a href="https://gitter.im/thingsboard/chat">
+        <a href="https://app.gitter.im/#/room/#thingsboard_chat:gitter.im">
             <span class="phrase-heading">Community chat</span>
             <p>The best way to contact our engineers and share your ideas with them is through our Gitter channel.</p>
         </a>
@@ -202,7 +202,7 @@ Please note that in order to achieve maximum performance, **TBMQ uses several qu
             <span class="phrase-heading">Q&A forum</span>
             <p>For community support, we recommend visiting our user forum. It's a great place to connect with other users and find solutions to common issues.</p>
         </a>
-        <a href="http://stackoverflow.com/questions/tagged/thingsboard">
+        <a href="https://stackoverflow.com/questions/tagged/thingsboard">
             <span class="phrase-heading">Stack Overflow</span>
             <p>The ThingsBoard team actively monitors posts that are tagged with "thingsboard" on the user forum. If you can't find an existing question that addresses your issue, feel free to ask a new one. Our team will be happy to assist you.</p>
         </a>

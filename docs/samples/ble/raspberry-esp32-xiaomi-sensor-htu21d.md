@@ -12,7 +12,7 @@ hidetoc: "true"
 
 {% include templates/what-is-thingsboard.md %}
 
-This sample demo performs collection of temperature and humidity values produced by BLE broadcasting devices and further visualization on the real-time web dashboard. In this example we use [HTU21D](https://www.sparkfun.com/products/13763) connected to [ESP32](https://espressif.com/en/products/hardware/esp32/overview) and  [Xiaomi Smart Temperature & Humidity Sensor](https://www.amazon.com/Xiaomi-Bluetooth-Temperature-Sensitive-Thermometer/dp/B07B9SJJZJ). The purpose of this application is to demonstrate ThingsBoard  [data collection API](/docs/user-guide/telemetry/) , [visualization capabilities](/docs/user-guide/visualization/), [gateway API](/docs/iot-gateway/what-is-iot-gateway/) and the capabilities of [Bluetooth Low Energy](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) protocol, which you can use with both custom and mass-produce devices.
+This sample demo performs collection of temperature and humidity values produced by BLE broadcasting devices and further visualization on the real-time web dashboard. In this example we use [HTU21D](https://www.sparkfun.com/products/13763) connected to [ESP32](https://espressif.com/en/products/hardware/esp32/overview) and  "Xiaomi Smart Temperature & Humidity Sensor". The purpose of this application is to demonstrate ThingsBoard  [data collection API](/docs/user-guide/telemetry/) , [visualization capabilities](/docs/user-guide/visualization/), [gateway API](/docs/iot-gateway/what-is-iot-gateway/) and the capabilities of [Bluetooth Low Energy](https://en.wikipedia.org/wiki/Bluetooth_Low_Energy) protocol, which you can use with both custom and mass-produce devices.
 
 Data is collected by a python script that is running on [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi). It pushes data to ThingsBoard server via MQTT protocol by using  [ThingsBoard MQTT client Python SDK](https://github.com/thingsboard/thingsboard-python-client-sdk) library. Data is visualized using built-in customizable dashboard. Demo that is running on Raspberry Pi is written in Python which is quite simple and easy to understand.
 
@@ -22,7 +22,7 @@ Data is collected by a python script that is running on [Raspberry Pi](https://e
 
 * [ESP32-PICO-KIT](https://www.espressif.com/en/products/hardware/development-boards)
 
-  <img src="https://cdn.xingosoftware.com/elektor/images/fetch/dpr_1/https%3A%2F%2Fwww.elektormagazine.com%2Fassets%2Fupload%2Fimages%2F18%2F20171221112541_esp32-pico-kit-v4-004.jpg" width="400"  alt="elektormagazine">
+  <img src="https://cdn.xingosoftware.com/elektor/images/fetch/dpr_1/https%3A%2F%2Fwww.elektormagazine.com%2Fassets%2Fupload%2Fimages%2F18%2F20171221112541_esp32-pico-kit-v4-004.jpg" width="400"  alt="Device plate">
 
 * [HTU21D Digital Relative Humidity Sensor](https://ru.aliexpress.com/item/NEW-HTU21D-Temperature-Humidity-Sensor-Breakout-Board-Module/32451061596.html?spm=a2g0v.search0104.3.8.69f56062P2BU8f&ws_ab_test=searchweb0_0,searchweb201602_3_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=c8c9941c-ea29-40e5-b74a-d1c0ae217af7-1&algo_pvid=c8c9941c-ea29-40e5-b74a-d1c0ae217af7)
 
@@ -32,11 +32,9 @@ Data is collected by a python script that is running on [Raspberry Pi](https://e
 * 4 female-to-male jumper wires
 * [Raspberry Pi with Bluetooth](https://www.raspberrypi.org/products/)
 
-  <img src="https://images-na.ssl-images-amazon.com/images/I/91zSu44%2B34L._SL1500_.jpg" width="400" alt="images amazon">
+  <img src="https://images-na.ssl-images-amazon.com/images/I/91zSu44%2B34L._SL1500_.jpg" width="400" alt="Raspberry plate from Amzon">
 
 * Xiaomi Smart Temperature & Humidity Sensor
-
-  <img src="http://cdn.shopify.com/s/files/1/0011/9957/1005/products/211941-1_1200x1200.jpg?v=1527580517" width="400" alt="shopify products">
 
 ## Hardware setup
 
@@ -76,7 +74,7 @@ Whole setup:
 In this project ESP is a GATT server, which creates BLE service with two characteristics, one is read-only, and the second is for both reading and writing.
 Also it reads temperature and humidity data from connected HTU21D sensor and broadcast it as notifications to all nearby BLE devices.
 You can find the source code [**here**](https://github.com/thingsboard/gatts_demo).
-It is based on Espressif GATT demo server [**example**](https://github.com/espressif/esp-idf/tree/master/examples/bluetooth/gatt_server) and uses [**this**](https://github.com/lucadentella/esp32_htu21d) library to interact with HTU21D.
+It is based on Espressif GATT demo server [**example**](https://github.com/espressif/esp-idf/blob/master/examples/bluetooth/bluedroid/ble/gatt_server/tutorial/Gatt_Server_Example_Walkthrough.md) and uses [**this**](https://github.com/lucadentella/esp32_htu21d) library to interact with HTU21D.
 
 ### Flashing ESP32 BT firmware
 
