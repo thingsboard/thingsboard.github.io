@@ -10,7 +10,7 @@ This guide will help you to set up TBMQ in AWS EKS.
 ### Step 1. Open TBMQ K8S scripts repository
 
 ```bash
-git clone https://github.com/thingsboard/tbmq.git
+git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq.git --depth 1
 cd tbmq/k8s/aws
 ```
 {: .copy-code}
@@ -375,10 +375,10 @@ See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatshee
 
 ### Upgrading
 
-In case you would like to upgrade, please pull the latest changes from `main` branch:
+In case you would like to upgrade, please pull the recent changes from the latest release branch:
 
 ```bash
-git pull origin main
+git pull origin {{ site.release.broker_branch }}
 ```
 {: .copy-code}
 
