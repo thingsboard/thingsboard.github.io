@@ -636,6 +636,18 @@
     }
   },
   {
+    "type": ["Europe"],
+    "country": ["Italy"],
+    "name": "McRegem Srl",
+    "contact": {
+      "href": "info@mcregem.com"
+    },
+    "site": {
+      "href": "mcregem.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Middle East"],
     "country": ["Turkey"],
     "name": "Mechanica Irev Yazılım Sa. Tic. Ltd. Şti.",
