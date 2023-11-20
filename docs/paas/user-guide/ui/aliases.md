@@ -249,45 +249,6 @@ entity-from-dashboard-state-2:
  10:
   image: /images/user-guide/ui/alias/entity-from-dashboard-state-22-paas.png
 
-owner-of-entity-from-dashboard-state:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-paas.png
- 1:
-  image: /images/user-guide/ui/alias/alias-2-paas.png
- 2:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-3-paas.png
- 3:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-4-paas.png
- 4:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-5-paas.png
- 5:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-6-paas.png
- 6:
-  image: /images/user-guide/ui/alias/alias-5-paas.png
- 7:
-  image: /images/user-guide/ui/alias/alias-6-paas.png
- 8:
-  image: /images/user-guide/ui/alias/alias-7-paas.png
- 9:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-10-paas.png
- 10:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-11-paas.png
- 11:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-12-paas.png
- 12:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-13-paas.png
- 13:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-14-paas.png
- 14:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-15-paas.png
- 15:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-16-paas.png
- 16:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-17-paas.png
- 17:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-18-paas.png
- 18:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-19-paas.png
 
 asset-type-alias:
  0:

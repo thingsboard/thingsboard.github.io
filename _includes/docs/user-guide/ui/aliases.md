@@ -129,7 +129,25 @@ Time to add an action to a root dashboard widget and perform it using an Entity 
 
 ### Owner of entity from dashboard state
 
+This alias allows displaying owners of the devices, assets, entities, etc. Commonly used when there is a hierarchy of customers and it is needed to see what devices belong to whom.
 
+To add this alias, enter the alias name, and select the filter type "Owner of entity from dashboard state" in the "Add alias" dialog. Then click "Add".
+
+{% include images-gallery.html imageCollection="owner-of-entity-from-dashboard-state-1" %}
+
+Let’s learn how to use the "Owner of entity from dashboard state" alias to display device owners on the widget. Let’s start:
+
+For the next example, we will need two aliases: the previously discussed "[Entity type](#entity-type)" alias and the "Owner of entity from dashboard state" alias.
+
+Let's create an Entity table widget that will display a list of devices:
+
+- Add an Entity table widget that will display a list of devices. Use the “Entity type” alias as a data source.
+
+{% include images-gallery.html imageCollection="owner-of-entity-from-dashboard-state-2" %}
+
+Add another Entities table widget. Specify the "Owner of entity from dashboard state" alias in the "Entity alias" field. Click the "Add" button in the lower right corner;
+
+{% include images-gallery.html imageCollection="owner-of-entity-from-dashboard-state-3" %}
 
 ### Asset type
 

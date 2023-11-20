@@ -165,10 +165,50 @@ entity-from-dashboard-state-4:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-21-pe.png
         title: 'You will be transitioned to an inner state that shows a widget with entity from dashboard’s state details.'
 
+owner-of-entity-from-dashboard-state-1:
+    0:
+        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-1-pe.png
+        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
 
+owner-of-entity-from-dashboard-state-2:
+    0:
+        image: /images/user-guide/ui/alias/entity-type-1-pe.png
+        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and select the entity group;'
+    1:
+        image: /images/user-guide/ui/alias/entity-type-2-pe.png
+        title: 'Add an Entity table widget that will display a list of entities. Use the "Group entities" alias as a data source;'
+    2:
+        image: /images/user-guide/ui/alias/entity-type-3-pe.png
+        title: 'Add an Entity table widget that will display a list of devices is created.'
 
-
-
+owner-of-entity-from-dashboard-state-3:
+    0:
+        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-2-pe.png
+        title: 'Add another Entities table widget. Specify the "Owner of entity from dashboard state" alias in the "Entity alias" field. Click the "Add" button in the lower right corner;'
+    1:
+        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-3-pe.png
+        title: 'Add an Entity table widget that will display a list of entities. Use the "Group entities" alias as a data source;'
+    2:
+        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-4-pe.png
+        title: 'Add an Entity table widget that will display a list of devices is created;'
+    3:
+        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-5-pe.png
+        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and select the entity group;'
+    4:
+        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-6-pe.png
+        title: 'Add an Entity table widget that will display a list of entities. Use the "Group entities" alias as a data source;'
+    5:
+        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-7-pe.png
+        title: 'Add an Entity table widget that will display a list of devices is created.'
+    6:
+        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-8-pe.png
+        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and select the entity group;'
+    7:
+        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-9-pe.png
+        title: 'Add an Entity table widget that will display a list of entities. Use the "Group entities" alias as a data source;'
+    8:
+        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-10-pe.png
+        title: 'Add an Entity table widget that will display a list of devices is created.'
 
 
 
@@ -286,45 +326,6 @@ entities-by-group-name-1:
  4:
   image: /images/user-guide/ui/alias/entities-by-group-name-9-pe.png
 
-owner-of-entity-from-dashboard-state:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-pe.png
- 1:
-  image: /images/user-guide/ui/alias/alias-2-pe.png
- 2:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-3-pe.png
- 3:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-4-pe.png
- 4:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-5-pe.png
- 5:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-6-pe.png
- 6:
-  image: /images/user-guide/ui/alias/alias-5-pe.png
- 7:
-  image: /images/user-guide/ui/alias/alias-6-pe.png
- 8:
-  image: /images/user-guide/ui/alias/alias-7-pe.png
- 9:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-10-pe.png
- 10:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-11-pe.png
- 11:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-12-pe.png
- 12:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-13-pe.png
- 13:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-14-pe.png
- 14:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-15-pe.png
- 15:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-16-pe.png
- 16:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-17-pe.png
- 17:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-18-pe.png
- 18:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-19-pe.png
 
 asset-type-alias:
  0:

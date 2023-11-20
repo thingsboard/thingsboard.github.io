@@ -277,41 +277,6 @@ entity-from-dashboard-state-2:
  10:
   image: /images/user-guide/ui/alias/entity-from-dashboard-state-22-ce.png
 
-owner-of-entity-from-dashboard-state:
- 0:
-  image: /images/user-guide/ui/alias/1.png
- 1:
-  image: /images/user-guide/ui/alias/2.png
- 2:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-3.png
- 3:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-4.png
- 4:
-  image: /images/user-guide/ui/alias/4.png
- 5:
-  image: /images/user-guide/ui/alias/5.png
- 6:
-  image: /images/user-guide/ui/alias/6.png
- 7:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-5.png
- 8:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-6.png
- 9:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-7.png
- 10:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-8.png
- 11:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-9.png
- 12:
-  image: /images/user-guide/ui/alias/5.png
- 13:
-  image: /images/user-guide/ui/alias/6.png
- 14:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-10.png
- 15:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-11.png
- 16:
-  image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-12.png
 
 asset-type-alias:
  0:
