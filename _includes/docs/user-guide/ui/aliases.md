@@ -135,19 +135,21 @@ To add this alias, enter the alias name, and select the filter type "Owner of en
 
 {% include images-gallery.html imageCollection="owner-of-entity-from-dashboard-state-1" %}
 
-Let’s learn how to use the "Owner of entity from dashboard state" alias to display device owners on the widget. Let’s start:
+Let’s learn how to use the "Owner of entity from dashboard state" alias to display device owners on the widget.
 
 For the next example, we will need two aliases: the previously discussed "[Entity type](#entity-type)" alias and the "Owner of entity from dashboard state" alias.
 
-Let's create an Entity table widget that will display a list of devices:
-
-- Add an Entity table widget that will display a list of devices. Use the “Entity type” alias as a data source.
+First let's add an Entity table widget that will display a list of all devices. Use the “Entity type” alias as a data source.
 
 {% include images-gallery.html imageCollection="owner-of-entity-from-dashboard-state-2" %}
 
-Add another Entities table widget. Specify the "Owner of entity from dashboard state" alias in the "Entity alias" field. Click the "Add" button in the lower right corner;
+Add another Entities table widget that will display the owner of the selected device. Specify the "Owner of entity from dashboard state" alias in the "Entity alias" field. Click the "Add" button in the lower right corner;
 
 {% include images-gallery.html imageCollection="owner-of-entity-from-dashboard-state-3" %}
+
+Now we need to add an action that updates the current state of the dashboard.
+
+{% include images-gallery.html imageCollection="owner-of-entity-from-dashboard-state-4" %}
 
 ### Asset type
 

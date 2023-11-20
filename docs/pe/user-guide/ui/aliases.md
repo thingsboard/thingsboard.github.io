@@ -184,29 +184,31 @@ owner-of-entity-from-dashboard-state-2:
 owner-of-entity-from-dashboard-state-3:
     0:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-2-pe.png
-        title: 'Add another Entities table widget. Specify the "Owner of entity from dashboard state" alias in the "Entity alias" field. Click the "Add" button in the lower right corner;'
-    1:
+        title: 'Add another Entities table widget that will display the owner of the selected device. Specify the "Owner of entity from dashboard state" alias in the "Entity alias" field. Click the "Add" button in the lower right corner;'
+
+owner-of-entity-from-dashboard-state-4:
+    0:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-3-pe.png
-        title: 'Add an Entity table widget that will display a list of entities. Use the "Group entities" alias as a data source;'
-    2:
+        title: 'Enter the edit mode of first Entities table widget by clicking the “pencil” icon in the upper right corner;'
+    1:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-4-pe.png
-        title: 'Add an Entity table widget that will display a list of devices is created;'
-    3:
+        title: 'Scroll down to find "Actions" section. Click "Add action" button;'
+    2:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-5-pe.png
-        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and select the entity group;'
-    4:
+        title: 'The "Entities table: Actions" window will be opened. Click the "Add action" button in the top right corner;'
+    3:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-6-pe.png
-        title: 'Add an Entity table widget that will display a list of entities. Use the "Group entities" alias as a data source;'
-    5:
+        title: 'In the "Add action" dialog, enter the action name, and select an action source responsible for each entity separately (action cell button, on row click etc.). Then, choose the action type "Navigate to new dashboard state" and specify the new dashboard state to which the transition will be made. After, click "Add";'
+    4:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-7-pe.png
         title: 'Add an Entity table widget that will display a list of devices is created.'
-    6:
+    5:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-8-pe.png
         title: 'In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and select the entity group;'
-    7:
+    6:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-9-pe.png
         title: 'Add an Entity table widget that will display a list of entities. Use the "Group entities" alias as a data source;'
-    8:
+    7:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-10-pe.png
         title: 'Add an Entity table widget that will display a list of devices is created.'
 
