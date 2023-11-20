@@ -512,7 +512,7 @@
 		<tr>
 			<td>queue.msg-all.pack-processing-timeout</td>
 			<td>TB_MSG_ALL_PACK_PROCESSING_TIMEOUT</td>
-			<td>10000</td>
+			<td>20000</td>
 			<td> Timeout in milliseconds for processing the pack of messages from 'tbmq.msg.all' topic</td>
 		</tr>
 		<tr>
@@ -538,7 +538,7 @@
 		<tr>
 			<td>queue.application-persisted-msg.threads-count</td>
 			<td>TB_APP_PERSISTED_MSG_THREADS_COUNT</td>
-			<td>8</td>
+			<td>16</td>
 			<td> Number of threads in the pool to process Application consumers tasks</td>
 		</tr>
 		<tr>
@@ -550,7 +550,7 @@
 		<tr>
 			<td>queue.application-persisted-msg.pack-processing-timeout</td>
 			<td>TB_APP_PERSISTED_MSG_PACK_PROCESSING_TIMEOUT</td>
-			<td>10000</td>
+			<td>20000</td>
 			<td> Timeout in milliseconds for processing the pack of messages</td>
 		</tr>
 		<tr>
@@ -802,7 +802,7 @@
 		<tr>
 			<td>queue.kafka.default.consumer.max-poll-records</td>
 			<td>TB_KAFKA_DEFAULT_CONSUMER_MAX_POLL_RECORDS</td>
-			<td>8192</td>
+			<td>2000</td>
 			<td> The maximum number of records returned in a single call to poll()</td>
 		</tr>
 		<tr>
@@ -928,7 +928,7 @@
 		<tr>
 			<td>queue.kafka.application-persisted-msg.additional-consumer-config</td>
 			<td>TB_KAFKA_APP_PERSISTED_MSG_ADDITIONAL_CONSUMER_CONFIG</td>
-			<td>max.poll.records:512</td>
+			<td>max.poll.records:500</td>
 			<td> Additional Kafka consumer configs separated by semicolon for `tbmq.msg.app` topics</td>
 		</tr>
 		<tr>
@@ -946,7 +946,7 @@
 		<tr>
 			<td>queue.kafka.application-persisted-msg.shared-topic.additional-consumer-config</td>
 			<td>TB_KAFKA_APP_PERSISTED_MSG_SHARED_ADDITIONAL_CONSUMER_CONFIG</td>
-			<td>max.poll.records:512</td>
+			<td>max.poll.records:500</td>
 			<td> Additional Kafka consumer configs separated by semicolon for application shared subscription topics</td>
 		</tr>
 		<tr>
@@ -1066,7 +1066,7 @@
 		<tr>
 			<td>queue.kafka.client-session-event.additional-consumer-config</td>
 			<td>TB_KAFKA_CLIENT_SESSION_EVENT_ADDITIONAL_CONSUMER_CONFIG</td>
-			<td>max.poll.records:1024</td>
+			<td>max.poll.records:1000</td>
 			<td> Additional Kafka consumer configs separated by semicolon for ``tbmq.client.session.event.request`` topic</td>
 		</tr>
 		<tr>
@@ -1296,7 +1296,7 @@
 		<tr>
 			<td>actors.client.dispatcher-pool-size</td>
 			<td>ACTORS_SYSTEM_CLIENT_DISPATCHER_POOL_SIZE</td>
-			<td>4</td>
+			<td>8</td>
 			<td> Number of threads processing the MQTT client actors messages</td>
 		</tr>
 		<tr>
