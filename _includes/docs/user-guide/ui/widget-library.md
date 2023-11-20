@@ -1,14 +1,12 @@
 * TOC
 {:toc}
 
-## Introduction
-
 All [IoT Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/) are constructed using **ThingsBoard widgets** defined in the Widget Library.
 
 A widget is an element that displays a specific type of information or functionality on a dashboard.
 Widgets are used to display data and visualize information obtained from devices connected to the ThingsBoard platform, remote device control, alarms management, and display static custom HTML content.
 
-### Widget Types
+## Widget Types
 
 According to the provided features, each widget definition represents a specific widget type.
 There are five widget types:
@@ -271,13 +269,13 @@ The Navigation widgets bundle is useful for defining the home dashboard of the u
 
 ### Outdoor Environment
 
-The Outdoor Environment widget bundle includes widgets for visualizing outdoor environmental data.
+The Outdoor Environment widgets bundle includes widgets for visualizing outdoor environmental data.
 
 {% include images-gallery.html imageCollection="wl-outdoor-environment-bundle" %}
 
 ### Status indicators
 
-The Status indicators widget bundle includes widgets for visualizing battery level, signal strength, and progress bar.
+The Status indicators widgets bundle includes widgets for visualizing battery level, signal strength, and progress bar.
 
 {% include images-gallery.html imageCollection="wl-status-indicators-bundle" %}
 
@@ -294,7 +292,7 @@ The Scheduling widgets bundle is useful for [scheduling](/docs/{{docsPrefix}}use
 
 ### Tables Widgets
 
-The Tables widget bundle is useful when you need to display a list of entities, a list of alarm signals, and time series data for one or several entities.
+The Tables widgets bundle is useful when you need to display a list of entities, a list of alarm signals, and time series data for one or several entities.
 Additionally, this widget bundle showcases Persistent RPC requests, which are based on entity alias. 
 It can also be filtered optionally and supports pagination for enhanced usability.
 
