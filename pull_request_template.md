@@ -1,12 +1,13 @@
-## PR Checklist
+## PR description
 
-- [ ] No broken links found using link-checker.
+The documentation updated for ...
 
-## Linkchecker
+## Link checker
 
-Use the following command to check the broken links. 
+The links will be checked by the build agent automatically once you create or update your PR.
+
+You can use the following command to check the broken links locally.
 
 ```bash
-docker run --rm -it ghcr.io/linkchecker/linkchecker --check-extern http://172.16.1.16:4000
+docker run --rm -it --network=host --name=linkchecker ghcr.io/linkchecker/linkchecker --check-extern --no-warnings http://0.0.0.0:4000/
 ```
-
