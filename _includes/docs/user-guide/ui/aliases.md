@@ -55,7 +55,7 @@ In the "Add alias" dialog box, enter the alias name, and select the "Group entit
 
 {% include images-gallery.html imageCollection="group-entities-1" %}
 
-In this example, an alias was created that filters device group - Thermostats. Let's use an added alias in a widget. Let's use an added alias in a widget:
+In this example, an alias was created that filters device group - Thermostats. Let's use an added alias in a widget:
 
 In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Group entities" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. The Entities table widget with the alias that filters one device has been added.
 
@@ -94,59 +94,38 @@ In the "Tables" widgets bundle select the "Entities table" widget. Navigate to t
 
 ### Entity group list
 
+### Entity group name
+
 ### Entities by group name
 
 ### Entity from dashboard state
 
-This alias allows choosing entity(-ies) from dashboard state which can be device, asset, entity view, tenant, customer,
-dashboard, data converter, scheduler event, blob entity or current customer. It is used for filtering data for other dashboard states.  
+This alias allows choosing entity(-ies) from dashboard state which can be device, asset, entity view, tenant, customer, 
+dashboard, user, data converter, integration, scheduler event, blob entity, role, edge, current customer, current tenant, current user, current user owner.
+
+To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".
+
+{% include images-gallery.html imageCollection="entity-from-dashboard-state-1" %}
+
+It is used for filtering data for other dashboard states.
 For example, if Time series widget is created on a [root dashboard state](/docs/{{docsPrefix}}user-guide/dashboards/#states) with several entities displayed on it, and you'd like to create a dashboard state which will display
 a widget with the entity you clicked on, you need to use this alias. 
 
-**The following example uses an alias after creating an alias for group entities.**
+For the next example, we will need two aliases: the previously discussed "[Group entities](#group-entities)" alias and the "Entity from dashboard state" alias. Let's start:
 
-Let's learn how to add an _Entity from dashboard state_ alias:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon. 
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select an _Entity from dashboard state_ filter type.
-5. Click "Add" in the lower right corner of the dialog box.
-6. After adding both aliases, click "Save" in the lower right corner of the dialog box.
+First we need to create an Entity table widget that will display a list of entities:
 
-{% include images-gallery.html imageCollection="entity-from-dashboard-state" %}
-<br>
-
-Now let's use an added alias in a widget and add a [state](/docs/{{docsPrefix}}user-guide/dashboards/#states) to see how this alias works:
-1. Click the "Add new widget" icon in the center of the screen.
-2. In the opened widget bundles selection, click "Cards system". There select the Entity table widget.
-3. Input data source: Entity type, _Entity list_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
-4. After adding the widget, click layers icon in the top left corner of the dashboard to create a new state.
-In the opened dialog window, click a "+" icon to add a new state.
-5. Enter state's name and click "Add".
-6. Now you see a list with two states: root one, and the one that has been just created. Click "Save" in the lower right of the dialog.
-
-{% include images-gallery.html imageCollection="entity-from-dashboard-state-1" %}
-<br>
-
-Time to add an action to a root dashboard widget and perform it using an Entity from dashboard state alias on the widget in the created state:
-1. In the root dashboard state, enter widget Edit mode by clicking the "pencil" icon in the upper right corner of it to enter an Edit mode of the widget.
-2. Move to the Action cell and click a "+" icon to add a new action.
-3. In the Add widget dialog, select an [action source](/docs/{{docsPrefix}}user-guide/ui/widget-actions/#action-sources) which is responsible for each entity separately (action cell button, on row click etc.)
-4. Enter the name of the action.
-5. If necessary, select the icon representing the button to perform the action.
-6. Select the _Navigate to new dashboard state_ action type and set newly created state as a target dashboard state. Click "Add" to add a new action to the widget.
-7. After successfully adding the action, click big orange tick mark in the upper right of the screen to apply the changes.
-8. Then, go to the created state by selecting it from the drop-down menu by clicking layers icon in the upper right corner.
-9. Click the "Add new widget" icon in the center of the screen. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-10. Input data source: Entity type and Select the _Entity from dashboard state_ alias. Click "Add" in the lower right corner.
-11. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
-
-By clicking a button opposite needed entity, you will be transitioned to an inner state that shows a widget with entity from dashboard's state details.
+- Add an Entity table widget that will display a list of entities. Use the "Group entities" alias as a data source.
 
 {% include images-gallery.html imageCollection="entity-from-dashboard-state-2" %}
 
+After adding the widget, add a new a [state](/docs/{{docsPrefix}}user-guide/dashboards/#states):
 
+{% include images-gallery.html imageCollection="entity-from-dashboard-state-3" showListImageTitles="true" %}
 
+Time to add an action to a root dashboard widget and perform it using an Entity from dashboard state alias on the widget in the created state:
+
+{% include images-gallery.html imageCollection="entity-from-dashboard-state-4" showListImageTitles="true" %}
 
 ### Owner of entity from dashboard state
 

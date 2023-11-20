@@ -97,6 +97,74 @@ entity-name-2:
         image: /images/user-guide/ui/alias/entity-name-3-pe.png
         title: 'The Entities table widget with alias that filters devices, which names start with ‘Compressor’, has been added.'
 
+entity-from-dashboard-state-1:
+    0:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-2-pe.png
+        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
+
+entity-from-dashboard-state-2:
+    0:
+        image: /images/user-guide/ui/alias/group-entities-1-pe.png
+        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and select the entity group;'
+    1:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-4-pe.png
+        title: 'Add an Entity table widget that will display a list of entities. Use the "Group entities" alias as a data source;'
+    2:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-5-pe.png
+        title: 'Add an Entity table widget that will display a list of devices is created.'
+
+entity-from-dashboard-state-3:
+    0:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-6-pe.png
+        title: 'Click layers icon in the top left corner of the dashboard to create a new state. In the opened dialog window, click a "+" icon to add a new state;'
+    1:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-7-pe.png
+        title: 'Enter state&#39;s name and click "Add";'
+    2:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-8-pe.png
+        title: 'Now you see a list with two states: root one, and the one that has been just created. Click "Save" in the lower right of the dialog.'
+
+entity-from-dashboard-state-4:
+    0:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-9-pe.png
+        title: 'In the root dashboard state, enter widget Edit mode by clicking the “pencil” icon in the upper right corner of it;'
+    1:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-10-pe.png
+        title: 'Scroll down to find "Actions" section. Click "Add action" button;'
+    2:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-11-pe.png
+        title: 'The "Entities table: Actions" window will be opened. Click the "Add action" button in the top right corner;'
+    3:    
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-12-pe.png
+        title: 'In the "Add action" dialog, enter the action name, and select an action source responsible for each entity separately (action cell button, on row click etc.). Then, choose the action type "Navigate to new dashboard state" and specify the new dashboard state to which the transition will be made. After, click "Add";'
+    4:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-13-pe.png
+        title: 'After successfully adding the action, click "Save" to apply changes;'
+    5:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-14-pe.png
+        title: 'Then, go to the created state by selecting it from the drop-down menu by clicking layers icon in the upper right corner;'
+    6:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-15-pe.png
+        title: 'Click the “Add new widget” icon in the center of the screen;'
+    7:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-16-pe.png
+        title: 'In the opened widget bundles selection, select "Indoor Environment";'
+    8:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-17-pe.png
+        title: 'Select the "Indoor temperature card with background" widget;'
+    9:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-18-pe.png
+        title: 'Navigate to the "Entity alias" tab. Specify the "Entity from dashboard state" alias in the "Entity alias" field. Click the “Add” button in the lower right corner;'
+    10:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-19-pe.png
+        title: 'After adding the widget save all applied changes;'
+    11:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-20-pe.png
+        title: 'Now, click a action button opposite any entity;'
+    12:
+        image: /images/user-guide/ui/alias/entity-from-dashboard-state-21-pe.png
+        title: 'You will be transitioned to an inner state that shows a widget with entity from dashboard’s state details.'
+
 
 
 
@@ -217,56 +285,6 @@ entities-by-group-name-1:
   image: /images/user-guide/ui/alias/entities-by-group-name-8-pe.png
  4:
   image: /images/user-guide/ui/alias/entities-by-group-name-9-pe.png
-
-entity-from-dashboard-state:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-pe.png
- 1:
-  image: /images/user-guide/ui/alias/entity-from-dashboard-state-2-pe.png
- 2:
-  image: /images/user-guide/ui/alias/entity-from-dashboard-state-3-pe.png
- 3:
-  image: /images/user-guide/ui/alias/entity-from-dashboard-state-4-pe.png
-
-entity-from-dashboard-state-1:
- 0:
-  image: /images/user-guide/ui/alias/alias-5-pe.png
- 1:
-  image: /images/user-guide/ui/alias/alias-6-pe.png
- 2:
-  image: /images/user-guide/ui/alias/alias-7-pe.png
- 4:
-  image: /images/user-guide/ui/alias/entity-from-dashboard-state-8-pe.png
- 5:
-  image: /images/user-guide/ui/alias/entity-from-dashboard-state-9-pe.png
- 6:
-  image: /images/user-guide/ui/alias/entity-from-dashboard-state-10-pe.png
- 7:
-  image: /images/user-guide/ui/alias/entity-from-dashboard-state-11-pe.png
-
-entity-from-dashboard-state-2:
- 0:
-  image: /images/user-guide/ui/alias/entity-from-dashboard-state-12-pe.png
- 1:
-  image: /images/user-guide/ui/alias/entity-from-dashboard-state-13-pe.png
- 2:
-  image: /images/user-guide/ui/alias/entity-from-dashboard-state-14-pe.png
- 3:
-  image: /images/user-guide/ui/alias/entity-from-dashboard-state-15-pe.png
- 4:
-  image: /images/user-guide/ui/alias/alias-5-pe.png
- 5:
-  image: /images/user-guide/ui/alias/alias-6-pe.png
- 6:
-  image: /images/user-guide/ui/alias/alias-7-pe.png
- 7:
-  image: /images/user-guide/ui/alias/entity-from-dashboard-state-19-pe.png
- 8:
-  image: /images/user-guide/ui/alias/entity-from-dashboard-state-20-pe.png
- 9:
-  image: /images/user-guide/ui/alias/entity-from-dashboard-state-21-pe.png
- 10:
-  image: /images/user-guide/ui/alias/entity-from-dashboard-state-22-pe.png
 
 owner-of-entity-from-dashboard-state:
  0:
