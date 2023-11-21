@@ -27,7 +27,7 @@ az login
 ### Step 1. Open TBMQ K8S scripts repository
 
 ```bash
-git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq.git --depth 1
+git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq.git
 cd tbmq/k8s/azure
 ```
 {: .copy-code}
