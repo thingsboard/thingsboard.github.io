@@ -131,7 +131,7 @@ if(map.?nonExistingKey.smth > 10){
 
 }
 // Iterate through the map
-foreach(element : map.entrySet()){
+foreach (element : map.entrySet()){
     // Get the key
     element.key
     // Get the value
@@ -170,7 +170,7 @@ list.size();
 // Get sub list - JS style
 list.slice(1, 3);
 // Foreach 
-for (item: list) { 
+foreach (item: list) { 
     var smth = item;
 }
 // For loop 
@@ -335,7 +335,7 @@ For example:
 
 ```java
 sum = 0;
-for (n : numbers) {
+foreach (n : numbers) {
    sum+=n;
 }
 ```
@@ -345,7 +345,7 @@ Since TBEL treats Strings as iterable objects, you can iterate a String (charact
 
 ```java
 str = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-for (c : str) {
+foreach (c : str) {
    //do something 
 }
 ```
