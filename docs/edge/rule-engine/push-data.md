@@ -4,7 +4,7 @@ title: Push data from edge to cloud and vice versa
 description: Push data from edge to cloud and vice versa
 ---
 
-![image](/images/coming-soon.jpg)
+![image](https://img.thingsboard.io/coming-soon.jpg)
 
 #### Next Steps
 

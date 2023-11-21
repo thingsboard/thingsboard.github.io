@@ -9,11 +9,11 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-The DragonBoard™ 410c is the first development board based on a Qualcomm® APQ8016e application processor.
-It features advanced processing power, WIFI, Bluetooth connectivity, and GPS, all packed into a board the size of a credit card.
-Based on the 64-bit capable Qualcomm APQ8016e application processor, the DragonBoard 410c is designed to support rapid software development, education and prototyping, and is compliant with the 96Boards Consumer Edition specification.
-All this makes it ideal for enabling embedded computing and Internet of Things (IoT) products, including the next generation of robotics, cameras, medical devices, vending machines, smart buildings, digital signage, casino gaming consoles, and much more.
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+The DragonBoard™ 410c is the first development board based on a Qualcomm® APQ8016e application processor.  
+It features advanced processing power, WIFI, Bluetooth connectivity, and GPS, all packed into a board the size of a credit card.  
+Based on the 64-bit capable Qualcomm APQ8016e application processor, the DragonBoard 410c is designed to support rapid software development, education and prototyping, and is compliant with the 96Boards Consumer Edition specification.  
+All this makes it ideal for enabling embedded computing and Internet of Things (IoT) products, including the next generation of robotics, cameras, medical devices, vending machines, smart buildings, digital signage, casino gaming consoles, and much more.  
 
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}

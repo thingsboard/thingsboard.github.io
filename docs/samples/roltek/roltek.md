@@ -19,18 +19,18 @@ ThingsBoard combines scalability, fault-tolerance and performance so you will ne
 
 Login to your ThingsBoard platform and ppen "**Devices**" page.
 
-![image](/images/samples/roltek/tb1.png)
+![image](https://img.thingsboard.io/samples/roltek/tb1.png)
 
 <br>
 Click "**plus**" button then click "**Add new device**" button to add new device.
 **Enter name** for your device. Then click "**Next: Credentials**" button;
 
-![image](/images/samples/roltek/tb3.png)
+![image](https://img.thingsboard.io/samples/roltek/tb3.png)
 
 <br>
 Enable "**Add credentials**" option. Enter the desirable **Access Token** and click "**Add**" button to save changes.
 
-![image](/images/samples/roltek/tb4.png)
+![image](https://img.thingsboard.io/samples/roltek/tb4.png)
 
 ## Configuring Roltek DC620
 
@@ -42,14 +42,14 @@ On the "**MQTT Settings**" page:
  - Enter your **Access Token** to "**MQTT Broker Username**";
  - Click **Save** button.
 
-![image](/images/samples/roltek/tb5.png)
+![image](https://img.thingsboard.io/samples/roltek/tb5.png)
 
 <br>
 Users can add **Nodes** and **Tags** as described in the user manual. In this demo we will work with device’s default node and tags.
 
 On the **Rules** page navigate to the **MQTT Payloads** tab and click Add **MQTT Payload** button.
 
-![image](/images/samples/roltek/tb6.png)
+![image](https://img.thingsboard.io/samples/roltek/tb6.png)
 
 <br>
 In new window enter values:
@@ -60,12 +60,12 @@ In new window enter values:
  - Enter "**}**" to **Ending**;
  - Click **Save** button.
 
-![image](/images/samples/roltek/tb7.png)
+![image](https://img.thingsboard.io/samples/roltek/tb7.png)
 
 <br>
 On the **Rules** page navigate to the **MQTT Publishers** tab and click **Add MQTT Publisher** button.
 
-![image](/images/samples/roltek/tb8.png)
+![image](https://img.thingsboard.io/samples/roltek/tb8.png)
 
 <br>
 In new window enter values:
@@ -77,7 +77,7 @@ In new window enter values:
  - Select **tag** or **tags** you want to publish;
  - Click **Save** button.
 
-![image](/images/samples/roltek/tb9.png)
+![image](https://img.thingsboard.io/samples/roltek/tb9.png)
 
 ## Adding Widget to the Dashboard
 
@@ -90,20 +90,20 @@ To access it you should follow these steps:
  - Click on the gathered data row;
  - Press **Show on widget** button.
 
-![image](/images/samples/roltek/tb10.png)
+![image](https://img.thingsboard.io/samples/roltek/tb10.png)
 
 <br>
 Choose widget bundle accordingly to your data. Choose suitable chart for your data visualization. Click "**Add to dashboard**" button.
 
-![image](/images/samples/roltek/tb11.png)
+![image](https://img.thingsboard.io/samples/roltek/tb11.png)
 
 <br>
 Now select "**Create new dashboard**". Mark "**Open dashboard**" (with this option enabled after addition you will be redirected to newly created dashboard) and click "**Add**" to create new dashboard.
 
-![image](/images/samples/roltek/tb12.png)
+![image](https://img.thingsboard.io/samples/roltek/tb12.png)
 
 <br>
-![image](/images/samples/roltek/tb13.png)
+![image](https://img.thingsboard.io/samples/roltek/tb13.png)
 
 ## Next steps
 

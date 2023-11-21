@@ -27,19 +27,19 @@ For simplicity, we will provision device manually using the UI.
 
 ### 1. Login to your ThingsBoard instance and open Devices page.
 
-![image](/images/samples/syrus/device_page.png)
+![image](https://img.thingsboard.io/samples/syrus/device_page.png)
 
 Click on the &quot;+&quot; icon in the top right corner of the table and then select &quot;Add new device&quot;.
 
-![image](/images/samples/syrus/add_device.png)
+![image](https://img.thingsboard.io/samples/syrus/add_device.png)
 
 Input device name. For example, &quot;Syrus&quot;. No other changes are required at this time. Click &quot;Add&quot; to add the device.
 
-![image](/images/samples/syrus/name_device.png)
+![image](https://img.thingsboard.io/samples/syrus/name_device.png)
 
 Now your device should be listed first, since the table sorts the devices by using created time as default.
 
-![image](/images/samples/syrus/device_details.png)
+![image](https://img.thingsboard.io/samples/syrus/device_details.png)
 
 ### 2. Token creation
 
@@ -47,7 +47,7 @@ To connect the device you need to get the device credentials first. ThingsBoard 
 
 Click on the device row in the table to open device details
 
-![image](/images/samples/syrus/copy_token.png)
+![image](https://img.thingsboard.io/samples/syrus/copy_token.png)
 
 Click &quot;Copy access token&quot;. Token will be copied to your clipboard. Save it to a safe place.
 
@@ -59,32 +59,32 @@ The first step to do is make sure you have the latest version of Apex OS
 
 Go to Management Tool (**http://192.168.9.2**) if you&#39;re over USB cable), select System and confirm that you&#39;re up to date
 
-![image](/images/samples/syrus/update_device.png)
+![image](https://img.thingsboard.io/samples/syrus/update_device.png)
 
 Now go to Applications Manager and Check for updates and make sure you have the latest version of SyrusJS application installed:
 
-![image](/images/samples/syrus/js_latest.png)
+![image](https://img.thingsboard.io/samples/syrus/js_latest.png)
 
 ### 2. Create an instance
 
 In application manager pull down the menu of SyrusJS, this will show you all versions installed of the application, select the latest one and Create a New Instance:
 
-![image](/images/samples/syrus/new_instance.png)
+![image](https://img.thingsboard.io/samples/syrus/new_instance.png)
 
 Name your instance and select the &quot;Create Instance&quot; button:
 
-![image](/images/samples/syrus/name_instance.png)
+![image](https://img.thingsboard.io/samples/syrus/name_instance.png)
 
 
 Now you have your instance created:
 
-![image](/images/samples/syrus/instance_created.png)
+![image](https://img.thingsboard.io/samples/syrus/instance_created.png)
 
 ### 3. Creating your configuration files
 
 We need to create two files on any notepad application (notepad++, sublime, vscode, etc), you can name it as you want but the extension must be syrus.conf
 
-![image](/images/samples/syrus/configuration_files.png)
+![image](https://img.thingsboard.io/samples/syrus/configuration_files.png)
 
 One file contains the destination data, protocol, output format, MQTT URI, username and topics.
 
@@ -92,7 +92,7 @@ you may define custom MQTT topics in the MQTT transport configuration. See [tran
 
 here is an example:
 
-![image](/images/samples/syrus/example.png)
+![image](https://img.thingsboard.io/samples/syrus/example.png)
 
 Replace [YOUR\_TOKEN] with the copied access token you got from Thingsboard when you created the device.
 
@@ -158,29 +158,29 @@ If you need more information about how to configure more events please refer to 
 
 Select your created instance:
 
-![image](/images/samples/syrus/select_instance.png)
+![image](https://img.thingsboard.io/samples/syrus/select_instance.png)
 
 Go to Data Folder Tab:
 
-![image](/images/samples/syrus/data_tab.png)
+![image](https://img.thingsboard.io/samples/syrus/data_tab.png)
 
 Select Upload File:
 
-![image](/images/samples/syrus/upload_file.png)
+![image](https://img.thingsboard.io/samples/syrus/upload_file.png)
 
 And search in your local disk the previous configurations files created, and upload it one by one
 
-![image](/images/samples/syrus/upload_config.png)
+![image](https://img.thingsboard.io/samples/syrus/upload_config.png)
 
 Go to Configuration tab, pull down in Configuration and Destination File, select you previously updated items and click Save button: 
 
-![image](/images/samples/syrus/select_configuration.png)
+![image](https://img.thingsboard.io/samples/syrus/select_configuration.png)
 
 ### 5. Start your instance
 
 Finally, go back to the Information tab and click the Start button:
 
-![image](/images/samples/syrus/information_tab.png)
+![image](https://img.thingsboard.io/samples/syrus/information_tab.png)
 
 ## Check your data in Thingsboard demo account
 
@@ -188,8 +188,8 @@ The reported variables are automatically created according to the fieldset confi
 
 Go to Devices, choose Syrus 4 and click &quot;Latest telemetry&quot;
 
-![image](/images/samples/syrus/latest_telemetry.png)
+![image](https://img.thingsboard.io/samples/syrus/latest_telemetry.png)
 
 Now you can use Thingsboard&#39;s tools to design your own dashboard with Syrus 4G data:
 
-![image](/images/samples/syrus/dashboard.png)
+![image](https://img.thingsboard.io/samples/syrus/dashboard.png)

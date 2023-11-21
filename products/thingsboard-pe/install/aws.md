@@ -17,7 +17,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="/images/pe/aws_logo.svg" alt="aws logo">
+                        <img src="https://img.thingsboard.io/pe/aws_logo.svg" alt="aws logo">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Deploy using AWS marketplace. With up to 10 devices, this pricing model is ideal for makers that are getting started with ThingsBoard PE.</p>
@@ -81,7 +81,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="/images/pe/aws_logo.svg" alt="aws logo">
+                        <img src="https://img.thingsboard.io/pe/aws_logo.svg" alt="aws logo">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Deploy using AWS marketplace. With up to 100 devices and white-labeling feature enabled, this pricing model is ideal for PoCs and to be used as an ultimate selling tool for your solution.</p>
@@ -145,7 +145,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="/images/pe/aws_logo.svg" alt="aws logo">
+                        <img src="https://img.thingsboard.io/pe/aws_logo.svg" alt="aws logo">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Deploy using AWS marketplace. With up to 500 devices and white-labeling feature enabled, this pricing model is ideal for startups and field trials.</p>
@@ -209,7 +209,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="/images/pe/aws_logo.svg" alt="aws logo">
+                        <img src="https://img.thingsboard.io/pe/aws_logo.svg" alt="aws logo">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Deploy using AWS marketplace. With up to 1000 devices and white-labeling feature enabled, this pricing model is ideal for small businesses and solutions.</p>
@@ -273,7 +273,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="/images/pe/aws_logo.svg" alt="aws logo">
+                        <img src="https://img.thingsboard.io/pe/aws_logo.svg" alt="aws logo">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Deploy using AWS marketplace. This pricing model is ideal for businesses with large number of devices. No limits per device, message, data points or commands triggered.</p>

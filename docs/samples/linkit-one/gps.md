@@ -23,7 +23,7 @@ The application that is running on LinkIt ONE is written using Arduino SDK which
 
 Once you complete this sample/tutorial, you will see your device GPS and battery data on the following dashboard.
 
-![image](/images/samples/linkit-one/gps/dashboard.png)
+![image](https://img.thingsboard.io/samples/linkit-one/gps/dashboard.png)
 
 {% include templates/prerequisites.md %}
 
@@ -48,13 +48,13 @@ Open ThingsBoard Web UI (http://localhost:8080) in browser and login as tenant a
  
 Go to "Devices" section. Click "+" button and create a device with the name "LinkIt One Demo Device". 
 
-![image](/images/samples/linkit-one/gps/device.png)
+![image](https://img.thingsboard.io/samples/linkit-one/gps/device.png)
 
 Once device created, open its details and click "Manage credentials".
 
 Copy auto-generated access token from the "Access token" field. Please save this device token. It will be referred to later as **$ACCESS_TOKEN**.
 
-![image](/images/samples/linkit-one/gps/credentials.png)
+![image](https://img.thingsboard.io/samples/linkit-one/gps/credentials.png)
 
 
 Click "Copy Device ID" in device details to copy your device id to the clipboard.
@@ -113,7 +113,7 @@ in case of local ThingsBoard installation.
 Go to **"Devices"** section and locate **"LinkIt One Demo Device"**, open device details and switch to **"Attributes"** tab. 
 If all is configured correctly you should be able to see *"latitude"*, *"longitude"* and battery status attributes and their latest values in the table.
 
-![image](/images/samples/linkit-one/gps/attributes.png)
+![image](https://img.thingsboard.io/samples/linkit-one/gps/attributes.png)
 
 After, open **"Dashboards"** section then locate and open **"LinkIt One GPS Tracking Demo Dashboard"**. 
 As a result, you will see the map widget with a pointer indicating your device location and a battery level widget (similar to dashboard image in the introduction).

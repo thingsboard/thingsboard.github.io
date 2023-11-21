@@ -17,7 +17,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="/images/partners/silver-partner.svg" alt="silver partner">
+                        <img src="https://img.thingsboard.io/partners/silver-partner.svg" alt="silver partner">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Silver Partnership does not require any fees but assumes you have basic ThingsBoard knowledge and will prepare the online tutorial and demo dashboard on your own.</p>
@@ -80,7 +80,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="/images/partners/gold-partner.svg" alt="gold partner">
+                        <img src="https://img.thingsboard.io/partners/gold-partner.svg" alt="gold partner">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Gold Partnership includes our support services and help with preparing online tutorials and dashboards that will become an ultimate selling tool for your devices.</p>
@@ -148,7 +148,7 @@ notitle: "true"
                 </div>
                 <div class="cloud-provider">
                     <div class="logo-container partner">
-                        <img src="/images/partners/platinum-partner.svg" alt="Platinum Level">
+                        <img src="https://img.thingsboard.io/partners/platinum-partner.svg" alt="Platinum Level">
                     </div>
                     <div class="cloud-provider-desc">
                         <p>Platinum Partnership includes access to white-labeled partner portal, our support services and help with preparing online tutorials and dashboards that will become an ultimate selling tool for your devices.</p>

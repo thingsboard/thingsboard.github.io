@@ -1,7 +1,7 @@
 
 {% assign installESP8266='
     ===
-        image: /images/devices-library/basic/microcontrollers/esp8266-arduino-ide-board-manager.png,
+        image: https://img.thingsboard.io/devices-library/basic/microcontrollers/esp8266-arduino-ide-board-manager.png,
         title: Put ESP8266 into search field and install esp8266 by Espressif Community.
 ' %}
 

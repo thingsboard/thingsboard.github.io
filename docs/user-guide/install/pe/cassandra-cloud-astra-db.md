@@ -18,33 +18,33 @@ You need high speed and low latency Internet connection to communicate with Cass
 
 Register a new or sign in existed account. To register a new account visit [Astra DB register page](https://astra.datastax.com/register)
 
-![Register or sign in to Astra DB](/images/user-guide/install/datastax-astra-db/register_or_sign_in_astra_db.png)
+![Register or sign in to Astra DB](https://img.thingsboard.io/user-guide/install/datastax-astra-db/register_or_sign_in_astra_db.png)
 
-![Login success. Main page with no database](/images/user-guide/install/datastax-astra-db/astra_main_page.png)
+![Login success. Main page with no database](https://img.thingsboard.io/user-guide/install/datastax-astra-db/astra_main_page.png)
 
 ### Step 2. Create new Keyspace on Astra DB
 
 Create a new database `thingsboard` with keyspace `thingsboard`. Select the closest location to you and cloud provider you like. 
 
-![Click create database from the main page](/images/user-guide/install/datastax-astra-db/create_database_navigate_from_main_page.png)
+![Click create database from the main page](https://img.thingsboard.io/user-guide/install/datastax-astra-db/create_database_navigate_from_main_page.png)
 
-![Fill database and keyspace name, choose location and click create](/images/user-guide/install/datastax-astra-db/create_database.png)
+![Fill database and keyspace name, choose location and click create](https://img.thingsboard.io/user-guide/install/datastax-astra-db/create_database.png)
 
-![Database Created!](/images/user-guide/install/datastax-astra-db/create_database_success.png)
+![Database Created!](https://img.thingsboard.io/user-guide/install/datastax-astra-db/create_database_success.png)
 
 The database list will look like on the picture below:
 
-![Dashboard with new database created](/images/user-guide/install/datastax-astra-db/dashboard_with_fresh_database.png)
+![Dashboard with new database created](https://img.thingsboard.io/user-guide/install/datastax-astra-db/dashboard_with_fresh_database.png)
 
 ### Step 3. Generate Token
 
 You need a `Database administrator` role to install the Thingsboard schema. Click `Create a token` on the `thingsboard` database.
 
-![Create a token menu](/images/user-guide/install/datastax-astra-db/generate_a_token_menu.png)
+![Create a token menu](https://img.thingsboard.io/user-guide/install/datastax-astra-db/generate_a_token_menu.png)
 
-![Generate database administrator token](/images/user-guide/install/datastax-astra-db/generate_database_administrator_token.png)
+![Generate database administrator token](https://img.thingsboard.io/user-guide/install/datastax-astra-db/generate_database_administrator_token.png)
 
-![Your token has been generated](/images/user-guide/install/datastax-astra-db/generate_token_success.png)
+![Your token has been generated](https://img.thingsboard.io/user-guide/install/datastax-astra-db/generate_token_success.png)
 
 ### Step 4. Downloading secure connect bundle
 
@@ -54,11 +54,11 @@ The detail info on how to work with secure bundle you can find at [Astra DB docu
 
 Or simple do as shown on the picture below
 
-![Secure cloud bundle download page](/images/user-guide/install/datastax-astra-db/cloud_bundle_download_page.png)
+![Secure cloud bundle download page](https://img.thingsboard.io/user-guide/install/datastax-astra-db/cloud_bundle_download_page.png)
 
-![Choose region to download secure cloud bundle](/images/user-guide/install/datastax-astra-db/cloud_bundle_choose_region.png)
+![Choose region to download secure cloud bundle](https://img.thingsboard.io/user-guide/install/datastax-astra-db/cloud_bundle_choose_region.png)
 
-![Cloud bundle downloaded](/images/user-guide/install/datastax-astra-db/cloud_bundle_downloaded.png)
+![Cloud bundle downloaded](https://img.thingsboard.io/user-guide/install/datastax-astra-db/cloud_bundle_downloaded.png)
 
 The `secure-connect-thingsboard.zip` file contains the security certificates and credentials for your database
 

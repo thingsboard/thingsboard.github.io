@@ -22,7 +22,7 @@ The first step is to create an **application** in TheThingsIndustries console. G
 
 - **Application ID** - thingsboard-integration
 
-![image](/images/user-guide/integrations/tti/tti-create-app.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tti/tti-create-app.png)
 
 
 ##### Payload Decoder
@@ -51,7 +51,7 @@ Output json:
 }
 {% endhighlight %}
 
-![image](/images/user-guide/integrations/tti/tti-create-decoder.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tti/tti-create-decoder.png)
 
 Press **Save payload function**
 
@@ -64,11 +64,11 @@ Next step is a Device creation in the TTI. Open **End devices** page and press *
 
 - Press **Network layer settings** button.
 
-![image](/images/user-guide/integrations/tti/tti-create-device-1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tti/tti-create-device-1.png)
 
 - Select configuration for your device.
 
-![image](/images/user-guide/integrations/tti/tti-create-device-2.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tti/tti-create-device-2.png)
 
 - Press **Application layer settings** button.
 
@@ -81,7 +81,7 @@ Press **Add end device** button.
 We need to create Integration on The Things Industries, to do this open **Integrations** - **MQTT** and press **Generate new API key**. 
 Copy username and password we will need it later.
 
-![image](/images/user-guide/integrations/tti/tti-integration.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tti/tti-integration.png)
 
 Now we can start configuring the ThingsBoard.
 
@@ -155,7 +155,7 @@ function decodeToJson(payload) {
 return result;
 {% endhighlight %}
 
-![image](/images/user-guide/integrations/tti/tb-uplink.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tti/tb-uplink.png)
 
 
 ##### ThingsBoard Downlink Data Converter
@@ -199,7 +199,7 @@ return result;
 
 This converter will take **version** field from the incoming message and add it is a payload field in the outbound message. Destination device is a **thermostat1** device.
 
-![image](/images/user-guide/integrations/tti/tb-downlink.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tti/tb-downlink.png)
 
 ##### TTI Integration
 
@@ -214,9 +214,9 @@ Next we will create Integration with TheThingsIndustries inside the ThingsBoard.
 - **Username**: *thingsboard-integration@thingsboard* (use ***Username*** from TTI integration)
 - **Password**: use ***Password*** from TTI integration
 
-![image](/images/user-guide/integrations/tti/tb-integration-1.png)  
+![image](https://img.thingsboard.io/user-guide/integrations/tti/tb-integration-1.png)  
 
-![image](/images/user-guide/integrations/tti/tb-integration-2.png)  
+![image](https://img.thingsboard.io/user-guide/integrations/tti/tb-integration-2.png)  
 
 ## Validation
 
@@ -230,29 +230,29 @@ Go to **Device Group** -> **All** -> **thermostat1** - you can see that
 - new device was registered in the Thingsboard with name "thermostat1"
 - In the **Latest Telemetry** section you will see that last submitted temperature = 2.
 
-![image](/images/user-guide/integrations/tti/tb-device-telemetry.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tti/tb-device-telemetry.png)
 
 ##### Validate Downlink Messages
 For testing Downlink Messages, we will update our Root Rule Chain to send downlink message when device attribute is changed.
 Open and edit **Root Rule Chain**. Add **Integration Downlink** Action node and connect it with the **Message Type Switch** Node using relation 
 **Attributes Updated**
  
-![image](/images/user-guide/integrations/tti/tb-add-rule-downlink.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tti/tb-add-rule-downlink.png)
 
-![image](/images/user-guide/integrations/tti/tb-route-to-downlink.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tti/tb-route-to-downlink.png)
 
 Save Changes.
 
 Go to **Device Group** -> **All** -> **thermostat1** -> attributes section. We will add **Shared attribute** with name **version** and
 value **v.0.11** 
 
-![image](/images/user-guide/integrations/tti/tb-add-version.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tti/tb-add-version.png)
 
 By making this step, we triggered downlink message to the device **thermostat1** and this message should contains version field value.  
 Open TTI Console, navigate to **thingsboard-integration** application, to the section **Data**.  
 And we see that Downlink message was received (It is displayed as bytes **76 2E 30 2E 31 31**).  
 
-![image](/images/user-guide/integrations/tti/ttn-downlink-verified.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tti/ttn-downlink-verified.png)
 
 ## See also
 With this integration you can also configure Downlink converters and trigger required actions using Rule Engine nodes.

@@ -14,7 +14,7 @@ description: "IoT Device Management ✔ IoT Device Control ⚫ ThingsBoard ➤ H
             <div class="text-content medium-margin">In the rapidly evolving landscape of the Internet of Things (IoT), the task of managing a multitude of devices can be daunting. This is where IoT device management comes into play. It simplifies the process by providing tools to track, monitor, manage, secure and sustain the connected devices.</div>
             <div class="text-content">It provides a comprehensive view of device status, data traffic, and more. Essentially, it serves as a control centre for all your IoT devices, ensuring they operate smoothly and securely. Explore the world of IoT device management solutions and discover how they can simplify and enhance your connectivity needs.</div>
         </div>
-        <img class="image" srcset="/images/iot-articles/device_management_1_1090x672.png 1090w, /images/iot-articles/device_management_1_2180x1344.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/device_management_1_1090x672.png" alt="IoT solutions dashboard with widgets dark"/>
+        <img class="image" srcset="https://img.thingsboard.io/iot-articles/device_management_1_1090x672.png 1090w, https://img.thingsboard.io/iot-articles/device_management_1_2180x1344.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="https://img.thingsboard.io/iot-articles/device_management_1_1090x672.png" alt="IoT solutions dashboard with widgets dark"/>
         <div class="text-wrapper">
             <h2>What is IoT Device Management?</h2>
             <div class="text-content medium-margin">IoT device management is controlling all aspects of a connected device from a single location. It includes devices like CCTV cameras, sensors, portals, and processors. The services supported by the IoT device management platform include registration and identification, inventory control, and firmware upgrades.</div>
@@ -119,7 +119,7 @@ description: "IoT Device Management ✔ IoT Device Control ⚫ ThingsBoard ➤ H
             </ul>
             <div class="text-content">We provide a cross-layer graph-based view of the end-to-end path between devices and the cloud, giving you a comprehensive overview of your entire IoT ecosystem.</div>
         </div>
-        <img class="image" srcset="/images/iot-articles/device_settings_1_1090x658.png 1090w, /images/iot-articles/device_settings_1_2180x1316.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/device_settings_1_1090x658.png" alt="IoT solutions dashboard with widgets dark"/>
+        <img class="image" srcset="https://img.thingsboard.io/iot-articles/device_settings_1_1090x658.png 1090w, https://img.thingsboard.io/iot-articles/device_settings_1_2180x1316.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="https://img.thingsboard.io/iot-articles/device_settings_1_1090x658.png" alt="IoT solutions dashboard with widgets dark"/>
         <div class="text-wrapper">
             <h2 class="center-text">Our Cases</h2>
             <div class="text-content">At ThingsBoard, we have successfully implemented our IoT device management solutions in various scenarios.</div>

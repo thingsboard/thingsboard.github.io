@@ -146,13 +146,13 @@ Check data in your ThingsBoard instance.
     - Go to the your ThingsBoard instance and login.  
     - Go to the "Devices" tab. "TH_sensor" will be there.
     <br>    
-    ![](/images/gateway/gateway-modbus-device-added.png)
+    ![](https://img.thingsboard.io/gateway/gateway-modbus-device-added.png)
 <br><br>
 Go to the device details, **ATTRIBUTES** tab, there you may see the attribute **batteryLevel** with some value.  
 <br>
-![](/images/gateway/modbus-device-client-attribute.png)
+![](https://img.thingsboard.io/gateway/modbus-device-client-attribute.png)
 <br><br>
 Go to the device details, **LATEST TELEMETRY** tab, to see your telemetries data: **temperature** and **humidity**.  
 <br>
-![](/images/gateway/modbus-device-telemetry.png)
+![](https://img.thingsboard.io/gateway/modbus-device-telemetry.png)
 

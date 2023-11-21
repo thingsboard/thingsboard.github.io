@@ -1,4 +1,4 @@
-![](/images/gateway/dashboard/gateway-dashboard-other-conf.png)
+![](https://img.thingsboard.io/gateway/dashboard/gateway-dashboard-other-conf.png)
 
 Other - in this tab, you can configure additional gateway parameters:
 - Checking device activity - enables monitoring the activity of each connected device:

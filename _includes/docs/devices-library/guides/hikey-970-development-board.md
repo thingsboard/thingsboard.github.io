@@ -9,7 +9,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The Hikey 970 Development Board is a powerful single-board computer designed for AI and machine learning applications.  
  It features a HiSilicon Kirin 970 octa-core ARM Cortex-A73/A53 processor, 6GB LPDDR4 RAM, 64GB UFS 2.1 flash storage, and a Mali-G72 MP12 GPU.  
  It also includes Gigabit Ethernet, Wi-Fi 802.11a/b/g/n/ac, and Bluetooth 4.  

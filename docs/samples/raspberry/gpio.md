@@ -91,7 +91,7 @@ Now you can switch status of GPIOs using control panel. As a result, you will se
 
 Below is the screenshot of the "Raspberry PI GPIO Demo Dashboard".  
 
- ![image](/images/samples/raspberry/gpio/dashboard.png)
+ ![image](https://img.thingsboard.io/samples/raspberry/gpio/dashboard.png)
  
 ## See Also
 

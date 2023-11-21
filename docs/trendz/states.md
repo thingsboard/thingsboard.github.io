@@ -20,7 +20,7 @@ description: Trendz States
 
 ### Simple state
 
-![image](/images/trendz/state-simple-view.png)
+![image](https://img.thingsboard.io/trendz/state-simple-view.png)
 
 In this example we have **Machine** device that submit how many details where produced. We want to find what is 
 production rate of our machines. 
@@ -45,15 +45,15 @@ Here are steps required to do this:
 * Repeat last 3 operations for **Moderate Production** and **High Production** states
 * Enable stack mode, 100% stacked bar and labels in view settings
 
-![image](/images/trendz/state-simple-config-drop.png)
+![image](https://img.thingsboard.io/trendz/state-simple-config-drop.png)
 
-![image](/images/trendz/state-simple-config.png)
+![image](https://img.thingsboard.io/trendz/state-simple-config.png)
 
 Our view ready and now we know how much time(in percent) machines spent in different states.
 
 <div class="image-block">
     <div class="image-wrapper">
-       <video poster="/images/trendz/state-simple-view.png" autoplay="" loop="" preload="auto" muted="" style="width: 750px">
+       <video poster="https://img.thingsboard.io/trendz/state-simple-view.png" autoplay="" loop="" preload="auto" muted="" style="width: 750px">
             <source src="https://tb-videos.s3-us-west-1.amazonaws.com/trndz-state-duration-percent.webm" type="video/webm">                 
         </video> 
     </div>
@@ -62,7 +62,7 @@ Our view ready and now we know how much time(in percent) machines spent in diffe
 
 ### State with multiple fields
 
-![image](/images/trendz/state-multiple-view.png)
+![image](https://img.thingsboard.io/trendz/state-multiple-view.png)
 
 We can also use multiple fields from different assets\devices to calculate state. In this example we want detect how 
 much time machines spent in critical state. Such visualisation will give an understanding how machine prorforms compered to other machines 
@@ -86,7 +86,7 @@ Here is a formal definition of **Critical** state:
 
 <div class="image-block">
     <div class="image-wrapper">
-       <video poster="/images/trendz/state-multiple-view.png" autoplay="" loop="" preload="auto" muted="" style="width: 750px">
+       <video poster="https://img.thingsboard.io/trendz/state-multiple-view.png" autoplay="" loop="" preload="auto" muted="" style="width: 750px">
             <source src="https://tb-videos.s3-us-west-1.amazonaws.com/trndz-state-multiple-heatmap.webm" type="video/webm">                 
         </video> 
     </div>

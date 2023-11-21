@@ -49,19 +49,19 @@ Architecture is 1 Thingsboard server + 20 client instances each supply 25k devic
 
 500k devices connected
 
-![](/images/reference/performance-aws-instances/method/m6a-2xlarge/500k-5k-15k/500k-is-connected-watsh-ss.png)
+![](https://img.thingsboard.io/reference/performance-aws-instances/method/m6a-2xlarge/500k-5k-15k/500k-is-connected-watsh-ss.png)
 
 ### m6a.4xlarge (16 vCPUs AMD EPYC 3rd, 64 GiB, EBS GP3)- 500k devices, 10k msg, 30k tps - almost handle
 
 Almost handle, but it's hard to handle 10k mps rate with 500k devices without further optimization. Work in progress!
 
-![](/images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/queue-stats.png)
+![](https://img.thingsboard.io/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/queue-stats.png)
 
-![](/images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/api-usage.png)
+![](https://img.thingsboard.io/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/api-usage.png)
 
-![](/images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/aws-instance-monitoring.png)
+![](https://img.thingsboard.io/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/aws-instance-monitoring.png)
 
-![](/images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/aws-storage-monitoring.png)
+![](https://img.thingsboard.io/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/aws-storage-monitoring.png)
 
 ### m6a.4xlarge (16 vCPUs AMD EPYC 3rd, 64 GiB, EBS GP3) + Cassandra - 1Million devices, 5k msg/sec, 15k tps
 
@@ -300,13 +300,13 @@ scp -C tb2:/home/ubuntu/dump.hprof ~
 
 Here the results for 1M devices!
 
-![](/images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/queue-stats.png)
+![](https://img.thingsboard.io/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/queue-stats.png)
 
-![](/images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/api-usage.png)
+![](https://img.thingsboard.io/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/api-usage.png)
 
-![](/images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/aws-instance-monitoring.png)
+![](https://img.thingsboard.io/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/aws-instance-monitoring.png)
 
-![](/images/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/aws-storage-monitoring.png)
+![](https://img.thingsboard.io/reference/performance-aws-instances/method/m6a-4xlarge/500k-10k-30k/aws-storage-monitoring.png)
 
 Conclusion:
 1. We did it! Thingsboard has been demonstrated the code and design quality.

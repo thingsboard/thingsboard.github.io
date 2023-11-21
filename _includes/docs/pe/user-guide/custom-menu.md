@@ -102,13 +102,13 @@ Let's see how this works:
 
 {% assign addNewMenuItem = '
     ===
-        image: /images/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-1.png,
+        image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-1.png,
         title: Go to the "**White Labeling**" page -> "**Custom Menu**" tab. Menu items names that can be hidden are displayed in the empty "**Custom Menu**" window;
     ===
-        image: /images/user-guide/white-labeling/custom-menu/custom-menu-hide-menu-item-2.png,
+        image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/custom-menu-hide-menu-item-2.png,
         title: Please provide the menu items you want to hide in JSON data format in the "**Custom Menu**" window. Then click "**Save**";
     ===
-        image: /images/user-guide/white-labeling/custom-menu/custom-menu-hide-menu-item-3.png,
+        image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/custom-menu-hide-menu-item-3.png,
         title: Selected menu items are now hidden.
 '
 %}
@@ -138,16 +138,16 @@ The third item will link to the documentation.
 
 {% assign addNewMenuItem = '
     ===
-        image: /images/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-1.png,
+        image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-1.png,
         title: Go to the "**White Labeling**" page -> "**Custom Menu**" tab;
     ===
-        image: /images/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-2.png,
+        image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-2.png,
         title: Specify data in JSON format in the "**Custom Menu**" window. Use the JSON below as an example. Click "**Save**";
     ===
-        image: /images/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-3.png,
+        image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-3.png,
         title: New menu items are created. Click on the "My Dashboards" section -> "Waste Management Administration" page. The dashboard specified in JSON will open;
     ===
-        image: /images/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-4.png,
+        image: https://img.thingsboard.io/user-guide/white-labeling/custom-menu/custom-menu-add-new-menu-item-4.png,
         title: Go to the "Smart farming and smart agriculture solutions" page. The page will open with documentation specified in JSON.
 '
 %}

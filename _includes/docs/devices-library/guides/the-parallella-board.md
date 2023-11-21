@@ -9,7 +9,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 The Parallella Board is a single-board computer based on the Xilinx Zynq Z-7010 SoC, featuring a dual-core ARM Cortex-A9 CPU and an FPGA.
  It was designed for parallel processing and is ideal for high-performance computing applications.
 

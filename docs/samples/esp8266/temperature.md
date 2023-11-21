@@ -35,7 +35,7 @@ The video below demonstrates the final result of this tutorial.
 
 Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
 
-![image](/images/samples/esp8266/temperature/dashboard.gif)
+![image](https://img.thingsboard.io/samples/esp8266/temperature/dashboard.gif)
 
 {% include templates/prerequisites.md %}
 
@@ -43,21 +43,21 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
  - [ESP8266 module](https://www.aliexpress.com/item/2PCS-ESP8266-Serial-Esp-01-WIFI-Wireless-Transceiver-Module-Send-Receive-LWIP-AP-STA/32302638695.html?spm=2114.03010208.3.163.FPBlcc&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_427_10073_10103_10102_10096_10052_10050_10051,searchweb201603_3&btsid=1494d8a7-6202-4a69-a0e7-877ffa333243)
 
-  ![image](/images/samples/arduino/temperature/esp8266-pinout.png)
+  ![image](https://img.thingsboard.io/samples/arduino/temperature/esp8266-pinout.png)
 
  - [DHT22 sensor](https://www.aliexpress.com/item/1pcs-DHT22-digital-temperature-and-humidity-sensor-Temperature-and-humidity-module-AM2302-replace-SHT11-SHT15/32316036161.html?spm=2114.03010208.3.49.aZvfaG&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_426_10073_10103_10102_10096_10052_10050_10051,searchweb201603_6&btsid=28d9ee9a-283a-4e97-af7b-a7e530490916)
 
-  ![image](/images/samples/arduino/temperature/dht22-pinout.png)
+  ![image](https://img.thingsboard.io/samples/arduino/temperature/dht22-pinout.png)
 
  - USB to TTL
     
     - [With DTR & RTS](https://www.aliexpress.com/item/Free-shipping-1pcs-FT232RL-FTDI-USB-3-3V-5-5V-to-TTL-Serial-Adapter-Module-for/32256920717.html?spm=2114.03010208.3.11.qSXSby&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_427_10073_10103_10102_10096_10052_10050_10051,searchweb201603_3&btsid=54ef4b72-5ab0-4ce6-aa89-74726d95c099)
     
-    ![image](/images/samples/esp8266/temperature/usb-ttl-ft232rl-pinout.png)
+    ![image](https://img.thingsboard.io/samples/esp8266/temperature/usb-ttl-ft232rl-pinout.png)
 
     - Or [Without DTR & RTS](https://www.aliexpress.com/item/1pcs-lot-PL2303-USB-To-RS232-TTL-Converter-Adapter-Module-with-Dust-proof-Cover-PL2303HX/32642301991.html?spm=2114.03010208.3.50.WdAM18&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_427_10073_10103_10102_10096_10052_10050_10051,searchweb201603_3&btsid=9ac20e48-da8c-4a0f-8f33-d40c241fe5a3)
     
-    ![image](/images/samples/esp8266/temperature/usb-ttl-pl2303hx.png)
+    ![image](https://img.thingsboard.io/samples/esp8266/temperature/usb-ttl-pl2303hx.png)
 
  - Resistor (between 4.7K and 10K)
   
@@ -97,7 +97,7 @@ Finally, place a resistor (between 4.7K and 10K) between pin number 1 and 2 of t
 
 The following picture summarizes the connections for this project in programming/debug mode:
 
-![image](/images/samples/esp8266/temperature/schema-flash.png)
+![image](https://img.thingsboard.io/samples/esp8266/temperature/schema-flash.png)
 
 ### Final schema (Battery Powered)
 
@@ -118,7 +118,7 @@ DHT-22 GND (-)|VCC-
 
 The final picture:
 
-![image](/images/samples/esp8266/temperature/schema.png)
+![image](https://img.thingsboard.io/samples/esp8266/temperature/schema.png)
  
 {% include templates/thingsboard-configuration.md %}
 
@@ -133,12 +133,12 @@ Open ThingsBoard Web UI (http://localhost:8080) in browser and login as tenant a
  
 Go to "Devices" section. Click "+" button and create a device with the name "ESP8266 Demo Device". 
 
-![image](/images/samples/esp8266/temperature/device.png)
+![image](https://img.thingsboard.io/samples/esp8266/temperature/device.png)
 
 Once device created, open its details and click "Manage credentials".
 Copy auto-generated access token from the "Access token" field. Please save this device token. It will be referred to later as **$ACCESS_TOKEN**.
 
-![image](/images/samples/esp8266/temperature/credentials.png)
+![image](https://img.thingsboard.io/samples/esp8266/temperature/credentials.png)
 
 
 Click "Copy Device ID" in device details to copy your device id to the clipboard.
@@ -159,7 +159,7 @@ Download and install [Arduino IDE](https://www.arduino.cc/en/Main/Software).
 
 After starting Arduino IDE, open the preferences from the ‘file’ menu.
 
-![image](/images/samples/esp8266/temperature/arduino-preferences.png)
+![image](https://img.thingsboard.io/samples/esp8266/temperature/arduino-preferences.png)
 
 Paste the following URL to the “Additional board managers URL”:  http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
@@ -173,7 +173,7 @@ There you will find the first option “Board Manager”.
 Type in the search bar the 3 letters ESP. Locate and click on "*esp8266 by ESP8266 Community*". 
 Click on install and wait for a minute to download the board.
 
-![image](/images/samples/esp8266/temperature/arduino-board-manager.png)
+![image](https://img.thingsboard.io/samples/esp8266/temperature/arduino-board-manager.png)
 
 **Note** that this tutorial was tested with the "*esp8266 by ESP8266 Community*" version 2.3.0.
 
@@ -249,7 +249,7 @@ in case of local ThingsBoard installation.
 Go to **"Devices"** section and locate **"ESP8266 Demo Device"**, open device details and switch to **"Latest telemetry"** tab. 
 If all is configured correctly you should be able to see latest values of *"temperature"* and *"humidity"* in the table.
 
-![image](/images/samples/esp8266/temperature/attributes.png)
+![image](https://img.thingsboard.io/samples/esp8266/temperature/attributes.png)
 
 After, open **"Dashboards"** section then locate and open **"ESP8266 DHT22: Temperature & Humidity Demo Dashboard"**. 
 As a result, you will see two digital gauges and two time-series charts displaying temperature and humidity level (similar to dashboard image in the introduction).

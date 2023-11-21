@@ -50,7 +50,7 @@ Configuration:
 
 - Name : **Related thermostat temperature**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/create-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/create-chain.png)
 
 New Rule Chain is created. Press **Edit** button and configure Chain.
 
@@ -70,7 +70,7 @@ Configuration:
 - Source attribute : **temperature**
 - Target attribute : **temp**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/get-related.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/get-related.png)
 
 ##### Add **Transform Script** node 
 Add **Transform Script** node and connect it to the **Related attributes** node.
@@ -83,7 +83,7 @@ Configuration:
 - Name: **build response**
 - Script: {% highlight javascript %} msg = {"temperature" : metadata.temp} return {msg: msg, msgType: msgType}; {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/transform.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/transform.png)
 
 ##### Add **RPC call reply** node
 **RPC call reply** node takes RPC request ID from message metadata. This ID used to identify incoming RPC call. 
@@ -95,14 +95,14 @@ Configuration:
 - Name : **send response**
 - Request ID : **requestId**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/reply.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/reply.png)
 
 <br>
 <br>
 
 This Rule chain is ready and we should save it. Here is how **Related thermostat temperature** Rule Chain should look like:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/rpc-chain-view.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/rpc-chain-view.png)
 
 
 ### Connect Rule Chains
@@ -119,7 +119,7 @@ Configuration:
 - Name : filter getTemperature
 - Script: {% highlight javascript %} return msg.method === 'getTemperature'; {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/root-filter.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/root-filter.png)
 
 After this, all incoming messages with Message Type **RPC Request** will be routed to this node. 
 Inside this node, function will filter only allowed RPC requests with **method** = **getTemperature**
@@ -131,7 +131,7 @@ Configuration:
 
 - Rule Chain: **Related thermostat temperature**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/connect-Rule-Chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/connect-Rule-Chain.png)
 
 Now, all messages that satisfy configured filter will be routed to **Related thermostat temperature** Rule Chain
 
@@ -146,14 +146,14 @@ Configuration:
 - Name : log others
 - Script : {% highlight javascript %} return 'Unexpected RPC call request message:\n' + JSON.stringify(msg) + '\metadata:\n' + JSON.stringify(metadata); {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/log-unexpected.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/log-unexpected.png)
 
 <br>
 <br>
 
 Changes in the **Root Rule Chain** are finished and we should save it. Here is how **Root Rule Chain** should look like:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/root-chain-view.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/root-chain-view.png)
 
 
 ## Verify configuration
@@ -168,7 +168,7 @@ For triggering RPC request, we need to:
 
 - Take **Controller A** device API token. We can copy token from Device page. In this tutorial it is **IAkHBb9N7kKD9ieLRMFN** but it is unique and you need to copy your device token.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/rpc-reply/copy-token.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/rpc-reply/copy-token.png)
 
 - Make **POST** request to the Thingsboard URL - http://localhost:8080/api/v1/**$ACCESS_TOKEN**/rpc 
 with content type = **application/json** and payload <code>{"method": "getTemperature", "params":{}}</code>

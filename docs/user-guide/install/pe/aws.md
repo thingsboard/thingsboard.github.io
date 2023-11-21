@@ -30,7 +30,7 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                                        <a href="/docs/user-guide/install/pe/aws-marketplace/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/amazon_ec2.svg" title="Self-hosted setup using AWS Marketplace" alt="AWS Marketplace">
+                                                   <img width="" src="https://img.thingsboard.io/install/cloud/amazon_ec2.svg" title="Self-hosted setup using AWS Marketplace" alt="AWS Marketplace">
                                                 </div>
                                            </span>
                                        </a>
@@ -39,7 +39,7 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                                         <a href="/docs/user-guide/install/pe/cluster/aws-eks-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/eks.svg" title="Cluster setup with Kubernetes on AWS EKS" alt="AWS EKS K8S cluster">
+                                                    <img width="" src="https://img.thingsboard.io/install/cloud/eks.svg" title="Cluster setup with Kubernetes on AWS EKS" alt="AWS EKS K8S cluster">
                                                  </div>
                                             </span>
                                         </a>

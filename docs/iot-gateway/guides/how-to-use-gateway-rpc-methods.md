@@ -23,40 +23,40 @@ To do this we use following steps:
 
   - Open **Dashboards** tab;
   <br><br>
-  ![](/images/gateway/service-rpc-methods-1.png)
+  ![](https://img.thingsboard.io/gateway/service-rpc-methods-1.png)
 
   - Add a new dashboard;
   <br><br>
-  ![](/images/gateway/service-rpc-methods-2.png)
+  ![](https://img.thingsboard.io/gateway/service-rpc-methods-2.png)
 
   - Open created dashboard, enter edit mode by clicking **pencil** button in the bottom right corner and click "**Add new widget**" button;
   <br><br>
-  ![](/images/gateway/service-rpc-methods-3.png)
+  ![](https://img.thingsboard.io/gateway/service-rpc-methods-3.png)
 
   - Select widget bundle - "**Control widgets**";
   <br><br>
-  ![](/images/gateway/service-rpc-methods-4.png)
+  ![](https://img.thingsboard.io/gateway/service-rpc-methods-4.png)
 
   - Scroll down and select **RPC debug terminal** widget;
   <br><br>
-  ![](/images/gateway/service-rpc-methods-5.png)
+  ![](https://img.thingsboard.io/gateway/service-rpc-methods-5.png)
 
   - We haven't specify the entity type for the widget so we will **create a new one**;
   <br><br>
-  ![](/images/gateway/service-rpc-methods-6.png)
+  ![](https://img.thingsboard.io/gateway/service-rpc-methods-6.png)
 
   - Fill in required fields and same the entity. **Gateway** - is our gateway device;
   <br><br>
-  ![](/images/gateway/service-rpc-methods-7.png)
+  ![](https://img.thingsboard.io/gateway/service-rpc-methods-7.png)
 
   - Apply all changes;
   <br><br>
-  ![](/images/gateway/service-rpc-methods-8.png)
+  ![](https://img.thingsboard.io/gateway/service-rpc-methods-8.png)
 
   - The connected widget looks like (Connection setups automatically).<br>
   Now you can use Debug Terminal to send RPC requests to the gateway.
   <br><br>
-  ![](/images/gateway/service-rpc-methods-9.png)
+  ![](https://img.thingsboard.io/gateway/service-rpc-methods-9.png)
 
 ## Step 2. Gateway RPC methods 
 
@@ -84,7 +84,7 @@ The response is:
 }
 ```
 
-![Gateway RPC ping method](/images/gateway/gateway-rpc-ping.png)
+![Gateway RPC ping method](https://img.thingsboard.io/gateway/gateway-rpc-ping.png)
 
 ### gateway_devices RPC method
 
@@ -111,7 +111,7 @@ Returns object like:
 }
 ```
 
-![Gateway RPC devices method](/images/gateway/gateway-rpc-devices.png)
+![Gateway RPC devices method](https://img.thingsboard.io/gateway/gateway-rpc-devices.png)
 
 
 ### gateway_restart RPC method
@@ -134,7 +134,7 @@ The response is:
 {"success": true}
 ```
 
-![Gateway RPC restart method](/images/gateway/gateway-rpc-restart.png)
+![Gateway RPC restart method](https://img.thingsboard.io/gateway/gateway-rpc-restart.png)
 
 ### gateway_reboot RPC method
 
@@ -155,7 +155,7 @@ The response is:
 
 **Notate:** The response will be returned after adding the task to the gateway scheduler.  
 
-![Gateway RPC reboot method](/images/gateway/gateway-rpc-reboot.png)
+![Gateway RPC reboot method](https://img.thingsboard.io/gateway/gateway-rpc-reboot.png)
 
 ## Next steps
 

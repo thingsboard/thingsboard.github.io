@@ -11,8 +11,8 @@ echo -e -n '{"deviceName": "SN-001", "deviceType": "default", "temperature": 25.
 {: .copy-code}
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/coap/terminal-json-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/coap/terminal-json-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/coap/terminal-json-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/coap/terminal-json-paas.png)
 {% endif %}

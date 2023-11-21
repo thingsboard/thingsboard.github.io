@@ -43,7 +43,7 @@ Server-side attributes are the ones that you may configure via Administration UI
 The device firmware can't access the server-side attribute.
 
 {:refdef: style="text-align: center;"}
-![image](/images/user-guide/server-side-attributes.svg)
+![image](https://img.thingsboard.io/user-guide/server-side-attributes.svg)
 {: refdef}
 
 Let's assume you would like to build a building monitoring solution and review few examples:
@@ -114,7 +114,7 @@ The devices which communicate over MQTT or other bi-directional communication pr
 The devices which communicate over HTTP or other request-response communication protocols may periodically request the value of shared attribute.
 
 {:refdef: style="text-align: center;"}
-![image](/images/user-guide/shared-attributes.svg)
+![image](https://img.thingsboard.io/user-guide/shared-attributes.svg)
 {: refdef}
 
 The most common use case of shared attributes is to store device settings.
@@ -192,7 +192,7 @@ It is similar to [shared attributes](/docs/{{docsPrefix}}user-guide/attributes/#
 The device firmware/application may send the value of the attributes from device to the platform.
 
 {:refdef: style="text-align: center;"}
-![image](/images/user-guide/client-side-attributes.svg)
+![image](https://img.thingsboard.io/user-guide/client-side-attributes.svg)
 {: refdef}
 
 The most common use case of client attributes is to report device state.
@@ -254,7 +254,7 @@ Changes to the attributes initiated by the user are recorded in the [audit logs]
 
 Telemetry Controller provides the following REST API to fetch entity data:
 
-![image](/images/user-guide/telemetry-service/rest-api.png)
+![image](https://img.thingsboard.io/user-guide/telemetry-service/rest-api.png)
 
 {% capture api_note %}
 **NOTE:** The API listed above is available via Swagger UI. Please review the general [REST API](/docs/{{docsPrefix}}reference/rest-api/) documentation for more details.

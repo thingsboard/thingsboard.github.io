@@ -43,8 +43,8 @@ You need to read the following guides before you start this tutorial:
 
   The following screenshots show how to do this:
 
-   ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/smoke-sensor.png) ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/fire-alarm-system.png) <br>
-   ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/add-relation.png)
+   ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/smoke-sensor.png) ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/fire-alarm-system.png) <br>
+   ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/add-relation.png)
 
 <br>
 
@@ -79,11 +79,11 @@ In this tutorial, we modified our **Root Rule Chain** and also created Rule Chai
 
   - **Related Fire Alarm System:**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/fire-alarm-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/fire-alarm-chain.png)
 
  - **Root Rule Chain:**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/chain.png)
 
 <br>
 
@@ -91,7 +91,7 @@ Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials
 
 <br>
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/root-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/root-chain.png)
 
 Also, you need to create **Related Fire Alarm System** Rule Chain or you can download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/related_fire_alarm_system.json) for this Chain and import it.
 <br>
@@ -107,7 +107,7 @@ Configuration:
 
 - Name : **Related Fire Alarm System**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/add-fire-alarm-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/add-fire-alarm-chain.png)
 
 New Rule Chain is created. Press **Edit** button and configure Chain.
 
@@ -154,7 +154,7 @@ In this rule chain, you will create 4 nodes as it will be explained in the follo
     </tbody>
  </table>
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/check-relation.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/check-relation.png)
 
 ###### Node B: **Change Orignator**
 
@@ -197,7 +197,7 @@ In this rule chain, you will create 4 nodes as it will be explained in the follo
    </tbody>
 </table>
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/change-originator.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/change-originator.png)
 
 ###### Node C: **Script Transformation**
  - Add the **Script Transformation** node and connect it to the **Change Orignator** node with a relation type **Success**.
@@ -237,7 +237,7 @@ This node will transform an original message into RPC request message.
 
  - Enter the Name field as **New RPC message**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/transformation-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/transformation-node.png)
 
 ###### Node D: **RPC call request** node
 - Add the **RPC call request** node and connect it to the **Script Transformation** node with a relation type **Success**. <br>
@@ -245,7 +245,7 @@ This node will transform an original message into RPC request message.
 - Enter the Name field as **Fire Alarm System**.
 - Enter the Timeout value as 60 seconds.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/rpc-call-request.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/rpc-call-request.png)
 
 This Rule chain is ready and we should save it.
 
@@ -261,7 +261,7 @@ The initial Rule Chain has been modified by adding the following nodes:
 
 - Enter the Name field as **Smoke Alarm Filter**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/alarm-filter.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/alarm-filter.png)
 
 ###### Node F: **Clear Alarm**
 - Add the **Clear Alarm** node and connect it to the **Filter Script** node with a relation type **False**. <br>
@@ -269,7 +269,7 @@ The initial Rule Chain has been modified by adding the following nodes:
 
 - Enter the Name field as **Clear Smoke Alarm** and the Alarm type as **Smoke Alarm**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/clear-alarm.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/clear-alarm.png)
 
 ###### Node G: **Create alarm**
 - Add the **Create alarm** node and connect it to the **Filter Script** node with a relation type **True**. <br>
@@ -277,7 +277,7 @@ The initial Rule Chain has been modified by adding the following nodes:
 
  - Enter the Name field as **Create Smoke Alarm** and the Alarm type as **Smoke Alarm**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/create-alarm.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/create-alarm.png)
 
 ###### Node H: **Rule Chain**
 - Add the **Rule Chain** node and connect it to the **Filter Script** node with a relation type **True**. <br>
@@ -285,11 +285,11 @@ The initial Rule Chain has been modified by adding the following nodes:
 
 - Enter the Name field as **Related Fire Alarm System**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/add-alarm-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/add-alarm-chain.png)
 
 The following screenshot shows how the final **Root Rule Chain** should look like:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/view-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/view-chain.png)
 
 <br>
 <br>
@@ -315,7 +315,7 @@ curl -v -X POST -d '{"smoke":"true"}' http://demo.thingsboard.io/api/v1/$ACCESS_
 {% endhighlight %}
 <br>
 
-  ![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/smoke-telemetry.png)![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/fire-alarm-telemetry.png)
+  ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/smoke-telemetry.png)![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/fire-alarm-telemetry.png)
 
 <br>
 Also, you can:

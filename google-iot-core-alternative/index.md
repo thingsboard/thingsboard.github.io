@@ -65,58 +65,58 @@ notitle: "true"
                     <tbody>
                         <tr>
                             <th>Asset/Device Management and Data Collection</th>
-                            <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
-                            <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
+                            <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="data collection checked"></td>
+                            <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="data collection checked"></td>
                         </tr>
                         <tr>
                             <th>MQTT, HTTP transports</th>
-                            <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
-                            <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
+                            <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="data collection checked"></td>
+                            <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="data collection checked"></td>
                         </tr>
                         <tr>
                             <th>Pub/Sub Integration</th>
-                            <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
-                            <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
+                            <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="data collection checked"></td>
+                            <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="data collection checked"></td>
                         </tr>
                         <tr>
                             <th>Commands to devices</th>
-                            <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
-                            <td><img src="/images/pe/checked.svg" alt="data collection checked"></td>
+                            <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="data collection checked"></td>
+                            <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="data collection checked"></td>
                         </tr>
                         <tr>
                             <th>Scalability</th>
-                            <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                            <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                            <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                            <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/user-guide/rbac/">User management and RBAC<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                            <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
-                            <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                            <th><a href="/docs/user-guide/rbac/">User management and RBAC<img src="https://img.thingsboard.io/pe/help-black18.svg" alt="help"></a></th>
+                            <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchacked"></td>
+                            <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/pe/user-guide/dashboards/">Real-time, customizable dashboards<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                            <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
-                            <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                            <th><a href="/docs/pe/user-guide/dashboards/">Real-time, customizable dashboards<img src="https://img.thingsboard.io/pe/help-black18.svg" alt="help"></a></th>
+                            <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchacked"></td>
+                            <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/user-guide/white-labeling/">White-labeled branded IoT solutions<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                            <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
-                            <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                            <th><a href="/docs/user-guide/white-labeling/">White-labeled branded IoT solutions<img src="https://img.thingsboard.io/pe/help-black18.svg" alt="help"></a></th>
+                            <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchacked"></td>
+                            <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/pe/user-guide/ota-updates/">OTA updates support<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                            <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
-                            <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                            <th><a href="/docs/pe/user-guide/ota-updates/">OTA updates support<img src="https://img.thingsboard.io/pe/help-black18.svg" alt="help"></a></th>
+                            <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchacked"></td>
+                            <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/pe/getting-started-guides/connectivity/">Additional LWM2M and SNMP transports<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                            <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
-                            <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                            <th><a href="/docs/pe/getting-started-guides/connectivity/">Additional LWM2M and SNMP transports<img src="https://img.thingsboard.io/pe/help-black18.svg" alt="help"></a></th>
+                            <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchacked"></td>
+                            <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                         </tr>
                         <tr>
-                            <th><a href="/docs/user-guide/integrations/">NB-IoT, SigFox, LoRaWAN and other integrations<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                            <td><img src="/images/pe/unchecked.svg" alt="unchacked"></td>
-                            <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                            <th><a href="/docs/user-guide/integrations/">NB-IoT, SigFox, LoRaWAN and other integrations<img src="https://img.thingsboard.io/pe/help-black18.svg" alt="help"></a></th>
+                            <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchacked"></td>
+                            <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                         </tr>
                     </tbody>
             </table>

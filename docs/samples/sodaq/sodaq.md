@@ -29,7 +29,7 @@ ThingsBoard Platform Integrations feature allows pushing data from various platf
 We will use "T-Mobile IoT CDP" platform integration to consume data from T-Mobile NB IoT Network and automatically register devices in ThingsBoard.
 Besides configuring the integration, we will also set up ThingsBoard to decode incoming data, store it in the database, visualize on the dashboard and generate alarms based on configurable thresholds.
 
-<img data-gifffer="/images/samples/sodaq/demo-dashboard.gif" alt="demo dashboard">
+<img data-gifffer="https://img.thingsboard.io/samples/sodaq/demo-dashboard.gif" alt="demo dashboard">
 
 ## Step 1. Data Converter configuration
 
@@ -140,13 +140,13 @@ Few things to notice:
 - Import following json file: [**SODAQ Uplink data converter**](/docs/user-guide/resources/sodaq/sodaq-uplink-data-converter.json) (left click on the link and then 'Ctrl+S' to download)
 as described on the following screencast:
 
-<img data-gifffer="/images/samples/sodaq/import-and-test-converter.gif" alt="Import and test converter">
+<img data-gifffer="https://img.thingsboard.io/samples/sodaq/import-and-test-converter.gif" alt="Import and test converter">
 
 ## Step 2. Integration configuration
 
 - Create new integration and copy-paste the HTTP Endpoint URL from the integration window based on the screencast below:
 
-<img data-gifffer="/images/samples/sodaq/import-integration.gif" alt="Import integration">
+<img data-gifffer="https://img.thingsboard.io/samples/sodaq/import-integration.gif" alt="Import integration">
 
 - Fill in the fields with the input data shown in the following table:
 
@@ -198,7 +198,7 @@ Please note that we will use the HTTP Endpoint URL from a Step 2.
 
 For this we will need to copy HTTP endpoint URL from the **SODAQ** Integration.
 
-![image](/images/samples/sodaq/http-endpoint-url.png)
+![image](https://img.thingsboard.io/samples/sodaq/http-endpoint-url.png)
 
 Download the attached json [**file**](/docs/user-guide/rule-engine-2-0/tutorials/resources/telemetry-data.json) with telemetry data and execute the following command:
 
@@ -210,7 +210,7 @@ curl -v -X POST -d @telemetry-data.json $HTTP_ENDPOINT_URL --header "Content-Typ
 
 Device should be created:
 
-<img data-gifffer="/images/samples/sodaq/validate-integration.gif" alt="validate integration">
+<img data-gifffer="https://img.thingsboard.io/samples/sodaq/validate-integration.gif" alt="validate integration">
 
 Now you can delete this dummy device if needed.
 
@@ -219,7 +219,7 @@ Now you can delete this dummy device if needed.
 Use HTTP endpoint URL from Step 2 to configure T-Mobile Platform to push data to this URL. See image below for reference.
 
 
-![image](/images/samples/sodaq/tmobile-configration.png)
+![image](https://img.thingsboard.io/samples/sodaq/tmobile-configration.png)
 
 
 ## Step 5: Check Integration Debug Events
@@ -238,7 +238,7 @@ Download the attached json [**file**](/docs/user-guide/resources/sodaq/tracker-a
 <br>
 <br>The following screencast will show how to import and configure rule chains:
 
-<img data-gifffer="/images/samples/sodaq/configure-rule-chains.gif" alt="Configure rule chains">
+<img data-gifffer="https://img.thingsboard.io/samples/sodaq/configure-rule-chains.gif" alt="Configure rule chains">
 <br>
 
 ## Step 7: Demo dashboard import
@@ -247,7 +247,7 @@ Download and import attached json [**file**](/docs/user-guide/resources/sodaq/so
 
 <br>The following screencast will show how to import the dashboard:
 
-<img data-gifffer="/images/samples/sodaq/import-dashboard.gif" alt="Import dashboard">
+<img data-gifffer="https://img.thingsboard.io/samples/sodaq/import-dashboard.gif" alt="Import dashboard">
 <br>
 
 After Dashboard creation navigate to Tracker details state to sets the limit values, namely:
@@ -295,11 +295,11 @@ In this tutorial, we modified our **Root Rule Chain** and also created Rule Chai
 
   - **Tracker Alarms:**
 
-![image](/images/samples/sodaq/tracker-alarms.png)
+![image](https://img.thingsboard.io/samples/sodaq/tracker-alarms.png)
 
  - **Root Rule Chain:**
 
-![image](/images/samples/sodaq/root-rule-chain.png)
+![image](https://img.thingsboard.io/samples/sodaq/root-rule-chain.png)
 
 <br>
 
@@ -317,7 +317,7 @@ Configuration:
 
 - Name : **Tracker Alarms**
 
-![image](/images/samples/sodaq/add-chain.png)
+![image](https://img.thingsboard.io/samples/sodaq/add-chain.png)
 
 New Rule Chain is created. Press **Edit** button and to configure it.
 
@@ -372,7 +372,7 @@ If the temperature more than max value the script will return **true**, otherwis
 
 - Enter the Name field as **Validate Max temperature**.
 
-![image](/images/samples/sodaq/validate-max-temperature.png)
+![image](https://img.thingsboard.io/samples/sodaq/validate-max-temperature.png)
 
 Rule Nodes C, D, and E have the same configuration that has the above-mentioned rule node.
 <br>Paste the JS script code shown in the following table to the corresponding Rule Nodes:
@@ -415,7 +415,7 @@ if (metadata.prevAlarmDetails) {
 }
 return details;{% endhighlight %}
 
-![image](/images/samples/sodaq/create-alarm.png)
+![image](https://img.thingsboard.io/samples/sodaq/create-alarm.png)
 
 Rule Nodes H, J, and L have the same configuration that has the above-mentioned rule node.
 <br>Paste the Alarm Type shown in the following table to the corresponding Rule Nodes:
@@ -479,7 +479,7 @@ details.clearedValue = msg.temperature;
 return details;
 {% endhighlight %}
 
-![image](/images/samples/sodaq/clear-alarm.png)
+![image](https://img.thingsboard.io/samples/sodaq/clear-alarm.png)
 
 Rule Nodes I, K and M have the same configuration that has the above-mentioned rule node.
 <br>Paste the Alarm Type shown in the following table to the corresponding Rule Nodes:
@@ -542,7 +542,7 @@ The initial Root Rule Chain has been modified by adding the following node:
 
 - Enter the Name field as **Tracker filter**.
 
-![image](/images/samples/sodaq/tracker-filter.png)
+![image](https://img.thingsboard.io/samples/sodaq/tracker-filter.png)
 
 ##### Node O: **Rule Chain**
 - Add the **Rule Chain** node and connect it to the **Filter Script** node with a relation type **True**. <br>
@@ -550,7 +550,7 @@ The initial Root Rule Chain has been modified by adding the following node:
 
 - Enter the Name field as **Tracker Alarms**.
 
-![image](/images/samples/sodaq/rule-chain-node.png)
+![image](https://img.thingsboard.io/samples/sodaq/rule-chain-node.png)
 
 ## Next steps
 

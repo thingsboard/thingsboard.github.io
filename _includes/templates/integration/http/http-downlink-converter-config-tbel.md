@@ -1,8 +1,8 @@
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/http/http-create-downlink-tbel-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/http/http-create-downlink-tbel-1-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/http/downlink-tbel-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/http/downlink-tbel-1-pe.png)
 {% endif %}
 
 <br>
@@ -16,10 +16,10 @@ data: JSON.stringify(msg)
 where **msg** is the message that we receive and send back to the device.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/http/http-create-downlink-tbel-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/http/http-create-downlink-tbel-2-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/http/downlink-tbel-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/http/downlink-tbel-2-pe.png)
 {% endif %}
 
 <br>

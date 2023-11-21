@@ -14,7 +14,7 @@ description: "IoT Energy Management ✔IoT Energy Monitoring ⚫ ThingsBoard ➤
             <div class="text-content medium-margin">Energy in business is a crucial resource that influences workflows. It is also an essential component of every business strategy that leads to business scaling and growth. Companies across the globe are adopting smart energy management systems to increase sustainability.</div>
             <div class="text-content">In an era where sustainability and efficiency are not just buzzwords, the role of the Internet of Things (IoT) in energy management and monitoring cannot be overstated. Harnessing the power of IoT for energy monitoring leads to significant cost savings, improved operational efficiency, and a reduced environmental footprint.</div>
         </div>
-        <img class="image" srcset="/images/iot-articles/energy_management_1_1110x678.png 1090w, /images/iot-articles/energy_management_1_2220x1356.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/energy_management_1_1110x678.png" alt="IoT energy management office monitoring"/>
+        <img class="image" srcset="https://img.thingsboard.io/iot-articles/energy_management_1_1110x678.png 1090w, https://img.thingsboard.io/iot-articles/energy_management_1_2220x1356.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="https://img.thingsboard.io/iot-articles/energy_management_1_1110x678.png" alt="IoT energy management office monitoring"/>
         <div class="text-wrapper">
             <h2>How Does It Work?</h2>
             <div class="text-content small-margin">IoT energy management is the process that includes data collection, data transmission, data analysis, remote control, and automation.</div>
@@ -92,7 +92,7 @@ description: "IoT Energy Management ✔IoT Energy Monitoring ⚫ ThingsBoard ➤
             </ul>
             <div class="text-content">These dashboards serve as powerful tools for energy monitoring using IoT and managing energy consumption, providing valuable insights that can help drive energy efficiency efforts.</div>
         </div>
-        <img class="image" srcset="/images/iot-articles/energy_management_2_1090x804.png 1090w, /images/iot-articles/energy_management_2_2180x1608.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/energy_management_2_1090x804.png" alt="IoT energy monitoring data center monitoring"/>
+        <img class="image" srcset="https://img.thingsboard.io/iot-articles/energy_management_2_1090x804.png 1090w, https://img.thingsboard.io/iot-articles/energy_management_2_2180x1608.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="https://img.thingsboard.io/iot-articles/energy_management_2_1090x804.png" alt="IoT energy monitoring data center monitoring"/>
         <div class="text-wrapper">
             <h2>ThingsBoard Benefits</h2>
             <div class="text-content medium-margin">We offer a multitude of benefits for IoT energy monitoring:</div>

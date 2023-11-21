@@ -7,72 +7,72 @@ description: Analyze and predict occupancy of different zones, areas and spaces 
 
 building-occupancy-dashboard:
   0:
-    image: /images/trendz/guide/building_occupancy/hotel_occupancy_dashboard.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_occupancy_dashboard.png
     title: 'Real time occupancy tacking dashboard'
 
 building-occupancy-weakly-heatmap:
   0:
-    image: /images/trendz/guide/building_occupancy/hotel_hourly_occupansy_heatmap_create.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_hourly_occupansy_heatmap_create.png
     title: 'Create heatmap view in Trendz'
   1:
-    image: /images/trendz/guide/building_occupancy/hotel_hourly_occupansy_add_dates.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_hourly_occupansy_add_dates.png
     title: 'Add date fields into heatmap view to group data by hour and day'
   2:
-    image: /images/trendz/guide/building_occupancy/hotel_hourly_occupansy_calcualtion.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_hourly_occupansy_calcualtion.png
     title: 'Calculate occupancy rate for each hour of the day'
   3:
-    image: /images/trendz/guide/building_occupancy/hotel_hourly_occupansy_filtering.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_hourly_occupansy_filtering.png
     title: 'Add filtering options to focus on specific area of the hotel'
   4:
-    image: /images/trendz/guide/building_occupancy/hotel_weakly_occupansy_heatmap.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_weakly_occupansy_heatmap.png
     title: 'Hourly occupancy rate heatmap for the last 7 days'
 
 building-occupancy-forecast-configuration:
   0:
-    image: /images/trendz/guide/building_occupancy/hotel_occupancy_forecast_create.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_occupancy_forecast_create.png
     title: 'Create building occupancy line chart'
   1:
-    image: /images/trendz/guide/building_occupancy/hotel_occupancy_forecast_configuration.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_occupancy_forecast_configuration.png
     title: 'Enable prediction and configure forecast settings'
   2:
-    image: /images/trendz/guide/building_occupancy/hotel_occupancy_forecast_for_next_weak.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_occupancy_forecast_for_next_weak.png
     title: 'Building occupancy forecast for the next week'
 
 building-occupancy-top-crowded-areas:
   0:
-    image: /images/trendz/guide/building_occupancy/hotel_occupancu_top_crowded_areas_sorting.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_occupancu_top_crowded_areas_sorting.png
     title: 'Enable descending sorting by occupancy rate to find top crowded areas'
   1:
-    image: /images/trendz/guide/building_occupancy/hotel_occupancu_top_crowded_areas.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_occupancu_top_crowded_areas.png
     title: 'Top 5 overcrowded areas in the building'
 
 building-occupancy-dashboard-configuration:
   0:
-    image: /images/trendz/guide/building_occupancy/hotel_occupancy_create_dashboard.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_occupancy_create_dashboard.png
     title: 'Create dashboard for analyzing building occupancy'
   1:
-    image: /images/trendz/guide/building_occupancy/hotel_occupancy_configure_aliases.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_occupancy_configure_aliases.png
     title: 'Configure dashboard aliases to filter entities by building, floor and area'
   2:
-    image: /images/trendz/guide/building_occupancy/hotel_occupancy_configure_filter_alias.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_occupancy_configure_filter_alias.png
     title: 'Configure alias for showing all available buildings'
   3:
-    image: /images/trendz/guide/building_occupancy/hotel_occupancy_add_hierarchy_widget.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_occupancy_add_hierarchy_widget.png
     title: 'Add hierarchy widget to the dashboard'
   4:
-    image: /images/trendz/guide/building_occupancy/hotel_occupancy_configure_hierarchy.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_occupancy_configure_hierarchy.png
     title: 'Configure hierarchy widget to show all floors in the building'
   5:
-    image: /images/trendz/guide/building_occupancy/hotel_occupancy_enable_rowclick.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_occupancy_enable_rowclick.png
     title: 'Enable row click event to apply filtering by selected entity'
   6:
-    image: /images/trendz/guide/building_occupancy/hotel_occupancy_configure_filter_by_building.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_occupancy_configure_filter_by_building.png
     title: 'Configure row click event'    
   7:
-    image: /images/trendz/guide/building_occupancy/hotel_occupancy_share_view.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_occupancy_share_view.png
     title: 'Add Trendz views on the occupancy dashboard'
   8:
-    image: /images/trendz/guide/building_occupancy/hotel_occupancy_add_on_dashboard.png
+    image: https://img.thingsboard.io/trendz/guide/building_occupancy/hotel_occupancy_add_on_dashboard.png
     title: 'Configure Trendz views to show occupancy rate for the selected building'
 
 ---

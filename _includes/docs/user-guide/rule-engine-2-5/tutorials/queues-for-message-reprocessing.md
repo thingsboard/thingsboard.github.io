@@ -21,21 +21,21 @@ In addition, you need to have at least one device provisioned in your environmen
 
 ## Step 1: Creating the Rule Chain
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/reprocessing_rule_chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/reprocessing_rule_chain.png)
 
 We will add a **"Generator"** node to simulate 6 messages with a 1-second delay.
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/generator_reprocessing.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/generator_reprocessing.png)
 
 All messages will be put into the queue with the name **"HighPriority"**. It uses the message process strategy called **"RETRY_FAILED_AND_TIMED_OUT"** 
 {% unless docsPrefix == "paas/" %}(please, refer to [**configuration guide**](/docs/user-guide/install/{{docsPrefix}}config/) for more details){% endunless %} which means that
 the failed or timed out messages will be processed again.
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/checkpoint_reprocessing.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/checkpoint_reprocessing.png)
 
 Finally, the messages will be sent to the external server.
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/rest_api.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/rest_api.png)
 
 ## Step 2: External server configuration
 
@@ -77,15 +77,15 @@ Let's check that our logic is correct by saving the Rule Chain and launching the
 
 **"Checkpoint"** node received six messages:
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/checkpoint_reprocessing_events.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/checkpoint_reprocessing_events.png)
 
 We can see that the next rest api call node, **"Send Request"**, processed eight messages.
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/rest_api_events.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/rest_api_events.png)
 
 Every third message (two out of initial six) is failed.
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/error_event.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/error_event.png)
 
 The last two messages are the ones that were needed to be reprocessed (the failed messages).
 That means that our logic works correctly.

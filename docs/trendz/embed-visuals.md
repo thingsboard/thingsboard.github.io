@@ -37,7 +37,7 @@ Once widgets bundle imported, and you already have saved Trendz Visualization - 
 * Switch to **Advanced** tab of the widget and insert the copied URL from step 1
 * Save dashboard
 
-![image](/images/trendz/embed-trendz.gif) 
+![image](https://img.thingsboard.io/trendz/embed-trendz.gif) 
 
 ## Use Dashboard time window
 

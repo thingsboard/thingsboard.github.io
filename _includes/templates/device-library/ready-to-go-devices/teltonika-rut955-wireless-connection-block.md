@@ -10,15 +10,15 @@
 
 {% assign wirelessConnection = '
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/wireless-connection-1.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/wireless-connection-1.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/wireless-connection-2.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/wireless-connection-2.png,
 	===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/wireless-connection-3.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/wireless-connection-3.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/wireless-connection-4.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/wireless-connection-4.png,
     ===
-        image: /images/devices-library/ready-to-go-devices/teltonika-rut955/wireless-connection-5.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/teltonika-rut955/wireless-connection-5.png,
 '
 %}
 

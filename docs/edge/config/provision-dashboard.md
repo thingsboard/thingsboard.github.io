@@ -5,12 +5,12 @@ description: Provision Dashboard from cloud to edge
 
 edgeDashboards:
     0:
-        image: /images/edge/sync/ce-edge-dashboards-1.png
+        image: https://img.thingsboard.io/edge/sync/ce-edge-dashboards-1.png
     1:
-        image: /images/edge/sync/ce-edge-dashboards-2.png
+        image: https://img.thingsboard.io/edge/sync/ce-edge-dashboards-2.png
 ---
 
-![image](/images/coming-soon.jpg)
+![image](https://img.thingsboard.io/coming-soon.jpg)
 
 #### Dashboards management
 

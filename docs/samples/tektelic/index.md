@@ -22,7 +22,7 @@ This guide describes how to stream data from TEKTELIC KONA Core Network Server t
 
  The common scheme of the guide setup is the next:
 
- <img src="/images/samples/tektelic/setup_scheme.png" width="800" alt="setup scheme">
+ <img src="https://img.thingsboard.io/samples/tektelic/setup_scheme.png" width="800" alt="setup scheme">
 
 ### Step 1. Register hardware in Network Server
 ##### Step 1.1 Add a gateway
@@ -35,43 +35,43 @@ This guide describes how to stream data from TEKTELIC KONA Core Network Server t
  Network Server provides a predefined list of the gateways and here is using Kona Micro EU GW model.
  You also could create a new one gateway model, set a frequency band and number of channels according to a gateway specification.
 
- <img data-gifffer="/images/samples/tektelic/add_a_gateway.gif" width="1000" alt="add a gateway">
+ <img data-gifffer="https://img.thingsboard.io/samples/tektelic/add_a_gateway.gif" width="1000" alt="add a gateway">
 
  Tektelic gateways are supplied with a predefined Network Server address - [lorawan-ns-eu.tektelic.com](https://lorawan-ns-eu.tektelic.com) for EU868 gateways and [lorawan-ns-na.tektelic.com](https://lorawan-ns-na.tektelic.com) for US915 gateways.
  After a gateway was created at Network Server and connected to the Internet, its status is set to *Online*.
  The gateway's *STATISTICS* tab is updating periodically and shows how many packets were sent and received through a radio channel.
 
- <img src="/images/samples/tektelic/gateway_statistics.png" width="800" alt="gateway statistics">
+ <img src="https://img.thingsboard.io/samples/tektelic/gateway_statistics.png" width="800" alt="gateway statistics">
 
 ##### Step 1.2 Add a sensor
  - Create a new application, for example, *Local sensors*.
  - Create a new device in the application.
 Smart Room Sensor has a sticker with QR code with data required by Network Server.
 
- <img src="/images/samples/tektelic/smart_room_sensor_QR.png"width="200" alt="smart room sensor QR">
+ <img src="https://img.thingsboard.io/samples/tektelic/smart_room_sensor_QR.png"width="200" alt="smart room sensor QR">
 
  QR code contains Device EUI and Application EUI values.
 
- <img src="/images/samples/tektelic/QR_scan_result.png" width="200" alt="QR scan result">
+ <img src="https://img.thingsboard.io/samples/tektelic/QR_scan_result.png" width="200" alt="QR scan result">
 
  Where *647FDA00000042F0* is Device EUI and *647FDA8010000100* is Application EUI.
  Tektelic provides a hard copy containing commissioning information with shipment of sensors. If you don’t find it, then contact [Tektelic support](mailto:support@tektelic.com)
 
- <img data-gifffer="/images/samples/tektelic/add_a_sensor.gif" width="1000" alt="add a sensor">
+ <img data-gifffer="https://img.thingsboard.io/samples/tektelic/add_a_sensor.gif" width="1000" alt="add a sensor">
 
  After the sensor is provisioned, it is necessary to turn it on to get LoRa packets in Network Server.
  The Smart Room Sensor will turn on after pulling out a protecting film. After that operation, the sensor will be supplied from a battery installed at a factory.
  As a result, join request-accept packets will be displayed in the *REAL-TIME PACKETS* tab.
  And, later on, uplink and downlink will be displayed too.
 
- <img src="/images/samples/tektelic/sensor_packets.png" width="800" alt="sensor packets">
+ <img src="https://img.thingsboard.io/samples/tektelic/sensor_packets.png" width="800" alt="sensor packets">
 
  Smart Room Sensor sends the uplinks periodically, but you can trigger an uplink with a magnet.
  It is enough to bring closer a magnet to the sensor body.
  Network Server shows packets in encoded Base64 form. To decode a packet and see the whole LoRa packet payload, including LoRa related data and the sensor data itself, you could use a free [LoRaWAN 1.0.x packet decoder](https://lorawan-packet-decoder-0ta6puiniaut.runkit.sh/).
  The decoder requires *Application* and *Network* session keys could be found in the *ACTIVATION* tab.
 
- <img src="/images/samples/tektelic/sensor_activation_tab.png" width="800" alt="sensor activation tab">
+ <img src="https://img.thingsboard.io/samples/tektelic/sensor_activation_tab.png" width="800" alt="sensor activation tab">
 
  Be aware, *Application* and *Network* session keys are changing whenever a sensor has been rejoined.
  Smart Room Sensor is rejoining every time after the battery has been disconnected.
@@ -85,7 +85,7 @@ Smart Room Sensor has a sticker with QR code with data required by Network Serve
  Please don’t confuse gateway-device in ThingsBoard with a LoRa gateway, it’s just name matching.
  It’s necessary to copy the device access token to use it in the next step.
 
- <img src="/images/samples/tektelic/tb_gateway.png" width="800" alt="gateway">
+ <img src="https://img.thingsboard.io/samples/tektelic/tb_gateway.png" width="800" alt="gateway">
 
 ##### Step 2.2 Add an integration in Network Server
  Open *Local sensors* application in Network Server and click *MANAGE INTEGRATIONS* button.
@@ -97,7 +97,7 @@ Smart Room Sensor has a sticker with QR code with data required by Network Serve
  - *Application Address* - ThingsBoard instance address without http or https prefix.
  - *Token* - the token copied in Step 2.1.
 
- <img src="/images/samples/tektelic/ns_integration.png" width="800" alt="ns integration">
+ <img src="https://img.thingsboard.io/samples/tektelic/ns_integration.png" width="800" alt="ns integration">
 
  Leave the rest of the fields with default values.
 
@@ -107,7 +107,7 @@ Smart Room Sensor has a sticker with QR code with data required by Network Serve
  In ThingsBoard open device-gateway from step 2.1, go to the *RELATIONS* tab, and select outbound relations with a direction *From*.
  There should be present the gateway and the sensor added in Network Server at Step 1.1 and Step 1.2
 
- <img src="/images/samples/tektelic/tb_from_relations.png" width="1000" alt="from relations">
+ <img src="https://img.thingsboard.io/samples/tektelic/tb_from_relations.png" width="1000" alt="from relations">
  <br>
  These devices will be displayed with an appropriate type:
  - *CLASS_A* - the sensor from step 1.2.
@@ -123,7 +123,7 @@ Smart Room Sensor has a sticker with QR code with data required by Network Serve
  Once integration verification passed successfully, the received telemetry is available for visualization.
  You can import the predefined dashboard to see the data. <a href="./resources/network_server_dashboard.json" download>Click to download.</a>
 
- <img data-gifffer="/images/samples/tektelic/import_dashboard.gif" width="1000" alt="import dashboard">
+ <img data-gifffer="https://img.thingsboard.io/samples/tektelic/import_dashboard.gif" width="1000" alt="import dashboard">
 
 
 ## Next steps

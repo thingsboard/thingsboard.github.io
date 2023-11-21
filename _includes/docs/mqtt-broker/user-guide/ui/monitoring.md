@@ -3,7 +3,7 @@
 
 TBMQ offers user-friendly tools that enable users to monitor broker activity and conveniently access features through the **Home** and **Monitoring** pages.
 
-![image](/images/mqtt-broker/user-guide/ui/home-page.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/home-page.png)
 
 ### Charts
 
@@ -17,7 +17,7 @@ At the top of the **Home** page, you will find a set of five charts that display
 Please note that on the Monitoring page, users have the ability to delve deeper into the chart data. 
 They can zoom in on specific sections, set custom date ranges to display data, or open the charts in full-screen mode.
 
-![image](/images/mqtt-broker/user-guide/ui/monitoring-page.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/monitoring-page.png)
 
 ### Sessions
 
@@ -29,7 +29,7 @@ Users can access comprehensive information about these sessions, including their
 The system displays the number of Client Credentials categorized into two types: **Device** and **Application**. 
 For more information regarding the different types of Credentials, please refer to the [documentation](/docs/mqtt-broker/user-guide/mqtt-client-type/).
 
-![image](/images/mqtt-broker/user-guide/ui/sessions-credentials-card.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/sessions-credentials-card.png)
  
 ### Config
 
@@ -49,7 +49,7 @@ Contains information regarding some commonly used configuration parameters:
   - **WS Listener Max Payload Size.** Specifies the maximum allowed size of the payload in a WS message. The default value is `65536` bytes. To modify it, set the `WS_NETTY_MAX_PAYLOAD_SIZE` environment variable in bytes.
   - **WSS Listener Max Payload Size.** Defines the maximum allowed size of the payload in a WSS-encrypted message. The default value is `65536` bytes. To change it, set the `WSS_NETTY_MAX_PAYLOAD_SIZE` environment variable in bytes.
 
-![image](/images/mqtt-broker/user-guide/ui/config-card.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/config-card.png)
 
 ### Kafka Brokers
 
@@ -57,7 +57,7 @@ Displays basic information regarding the Kafka Brokers:
 - **Address.** Address of the Kafka broker.
 - **Size.** Size of data stored on the broker.
 
-![image](/images/mqtt-broker/user-guide/ui/kafka-brokers-card.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/kafka-brokers-card.png)
 
 ### Kafka Topics
 
@@ -67,7 +67,7 @@ Displays basic information regarding the Kafka Topics:
 - **Replicas.** Replication factor of the topic.
 - **Size.** Size of the topic.
 
-![image](/images/mqtt-broker/user-guide/ui/kafka-topics-card.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/kafka-topics-card.png)
 
 ### Kafka Consumer Groups
 
@@ -77,4 +77,4 @@ Displays basic information regarding the Kafka Consumer Groups (CG):
 - **Members.** Number of consumers in the CG.
 - **Lag.** Sum of all consumers lags within the group. Consumer lag is the delta between the consumer's last committed offset and the producer's end offset.
 
-![image](/images/mqtt-broker/user-guide/ui/kafka-consumer-groups-card.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/kafka-consumer-groups-card.png)

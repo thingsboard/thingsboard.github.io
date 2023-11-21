@@ -11,10 +11,10 @@ To go to the notification center, click on “Notification center” in the side
 On this page you see the button to send a notification and five tabs: "Inbox", "Sent", "Recipients", "Templates" and "Rules".
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/notifications/notification-center-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/notification-center-1-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/notifications/notification-center-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/notification-center-1-pe.png)
 {% endif %}
 
 Let's look at each of the key components of the notification center below.

@@ -16,7 +16,7 @@ UDP Integration allows to stream data from devices which use a UDP protocol to T
 
 Please review the integration diagram to learn more.
 
-![image](/images/user-guide/integrations/udp-integration.svg)
+![image](https://img.thingsboard.io/user-guide/integrations/udp-integration.svg)
 
 ## UDP Integration Configuration
 
@@ -145,28 +145,28 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/udp/udp-uplink-hex
 - Go to **Integrations** section and click **Add new integration** button. Name it **UDP Integration**, select type **UDP**;
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-setup-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-integration-setup-1-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-setup-1-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-integration-setup-1-paas.png)
 {% endif %}
 
 - Add recently created UDP Uplink Converter;
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-setup-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-integration-setup-2-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-setup-2-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-integration-setup-2-paas.png)
 {% endif %}
 
 - For now, leave the "Downlink Data Converter" field blank.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-setup-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-integration-setup-3-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-setup-3-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-integration-setup-3-paas.png)
 {% endif %}
 
 As you mentioned **Execute remotely** is checked and can not be modified - UDP Integration can be only **remote** type.
@@ -192,10 +192,10 @@ Hex payload<br>%,%hex%,%templates/integration/udp/udp-handler-configuration-hex.
 Click **Add** to save the Integration.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-setup-4-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-integration-setup-4-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-setup-4-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-integration-setup-4-paas.png)
 {% endif %}
 
 #### Installing and running external UDP Integration
@@ -222,10 +222,10 @@ Once you go to **Device Groups -> All** you should find a **SN-001** device prov
 Click on the device, go to the **Latest Telemetry** tab to see the “temperature” key and its value (25.7) there and also the “humidity” key and its value (69) there as well.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-create-device-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-integration-create-device-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-integration-create-device-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-integration-create-device-paas.png)
 {% endif %}
 
 ## Advanced usage: Downlink
@@ -249,10 +249,10 @@ Cache size - maximum size of messages for UDP client.
 {% include templates/info-banner.md content=difference %}
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-add-downlink-converter-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-add-downlink-converter-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-add-downlink-converter-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-add-downlink-converter-paas.png)
 {% endif %}
 
 <br>
@@ -260,20 +260,20 @@ When integration configured and ready to use, we need to go to Rule Chains, choo
 **Integration Downlink**. Input here some name, choose which integration you need to use and tap **Add**.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/rule-chain-downlink-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/rule-chain-downlink-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/rule-chain-downlink-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/rule-chain-downlink-paas.png)
 {% endif %}
 
 After this steps, we need to tap on a right grey circle of rule node **message type switch** and drag this circle to left side of 'Integration Downlink',
 here lets choose **Attribute Update**, tap 'Add' and save Rule node. That's it!
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/rule-chain-and-attributes-updated-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/rule-chain-and-attributes-updated-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/rule-chain-and-attributes-updated-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/rule-chain-and-attributes-updated-paas.png)
 {% endif %}
 
 ### Test Downlink
@@ -281,25 +281,25 @@ here lets choose **Attribute Update**, tap 'Add' and save Rule node. That's it!
 To test downlink, create some **shared attribute** on your device and send some Uplink message on this device. And you will see Downlink message.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-add-shared-add-attribute-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-add-shared-add-attribute-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-add-shared-add-attribute-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-add-shared-add-attribute-paas.png)
 {% endif %}
 
-![image](/images/user-guide/integrations/udp/terminal-add-attribute.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/terminal-add-attribute.png)
 
 Also, you can set for Uplink command option `-q`, for example 120 seconds. This option setting how long you will wait for a response.
 If time of connection is over - you will receive this message on next Uplink. See next example:
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/udp/udp-update-shared-attributes-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-update-shared-attributes-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/udp/udp-update-shared-attributes-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/udp-update-shared-attributes-paas.png)
 {% endif %}
 
-![image](/images/user-guide/integrations/udp/terminal-update-attribute.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/terminal-update-attribute.png)
 
 {% capture difference %}
 **Note**

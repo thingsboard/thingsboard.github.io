@@ -20,7 +20,7 @@ Data is visualized using built-in customizable dashboard. The application that i
 
 Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
 
-![image](/images/samples/nodemcu/temperature/dashboard.png)
+![image](https://img.thingsboard.io/samples/nodemcu/temperature/dashboard.png)
 
 {% include templates/prerequisites.md %}
 
@@ -29,17 +29,17 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
  - [NodeMCU V3](https://www.aliexpress.com/item/1pcs-Wireless-module-NodeMcu-Lua-WIFI-Internet-of-Things-development-board-based-ESP8266-CP2102-with-pcb/32656401198.html?spm=2114.01010208.3.1.JnJev4&ws_ab_test=searchweb0_0,searchweb201602_3_10065_10068_10000007_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10037_10054_10033_10059_10032_10099_10078_10079_10077_10073_10097_10100_10096_10070_423_10052_10050_424_10051,searchweb201603_2&btsid=22a4a35a-c3ac-4896-b8b4-8ce38945d312) - You 
  can find list of additional documentation in [NodeMCU overview](/docs/samples/nodemcu/)
  
- ![image](/images/samples/nodemcu/temperature/nodemcu-pinout.jpg)
+ ![image](https://img.thingsboard.io/samples/nodemcu/temperature/nodemcu-pinout.jpg)
  
  - [Keyes DHT-11](https://www.aliexpress.com/item/Smart-3pin-KEYES-KY-015-DHT-11-DHT11-Digital-Temperature-And-Relative-Humidity-Sensor-Module-PCB/32571935933.html) - DHT11 sensor with built-in resistor. 
 
- ![image](/images/samples/nodemcu/temperature/dht-pinout.jpg)
+ ![image](https://img.thingsboard.io/samples/nodemcu/temperature/dht-pinout.jpg)
  
  - 3 female-to-female jumper wires
 
 ## Wiring schema
 
- ![image](/images/samples/nodemcu/temperature/schema.png)
+ ![image](https://img.thingsboard.io/samples/nodemcu/temperature/schema.png)
 
 NodeMCU Pin| DHT-11 Pin
 -----------|-----------

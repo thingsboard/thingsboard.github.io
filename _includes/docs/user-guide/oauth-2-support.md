@@ -36,13 +36,13 @@ To use Google OAuth 2.0 authentication platform for Login, you need to set up a 
 Please, follow the instructions on the [OpenID Connect](https://developers.google.com/identity/protocols/oauth2/openid-connect) page to configure the OAuth 2.0 Client.
 After completing the instructions above, you should have a new OAuth Client with credentials consisting of a Client ID and a Client Secret.
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/1-create-credentials.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/1-create-credentials.png&#41;)
 {% include images-gallery.html imageCollection="step1" preview="false" max-width="100%" %}
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/2-pencil-google.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/2-pencil-google.png&#41;)
 {% include images-gallery.html imageCollection="step2" preview="false" max-width="100%" %}
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/3-client-id.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/3-client-id.png&#41;)
 {% include images-gallery.html imageCollection="step3" preview="false" max-width="100%" %}
 
 Please, add the ThingsBoard default redirect URI, which we are going to use in this example, to the Authorized Redirect URI section:
@@ -51,62 +51,62 @@ Please, add the ThingsBoard default redirect URI, which we are going to use in t
 http://localhost:8080/login/oauth2/code/
 ```
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/4-Authorized-redirect-uris.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/4-Authorized-redirect-uris.png&#41;)
 {% include images-gallery.html imageCollection="step4" preview="false" max-width="100%" %}
 
 #### Configuration of ThingsBoard
 
 Go to your ThingsBoard as a System Administrator (sysadmin@thingsboard.org / sysadmin). Check the General Settings -> Base URL should not contain "/" at the end (e.g. "`http://127.0.0.1:8080`" instead of "`https://127.0.0.1:8080/`"). Then in the **Home** section, find the "OAuth2" icon and click on it.
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/5-home-oauth2.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/5-home-oauth2.png&#41;)
 {% include images-gallery.html imageCollection="step5" preview="false" max-width="100%" %}
 
 Check the **Enable OAuth2 settings** and click on **+ Add**. Click on *localhost* in the window that appears, for further settings.
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/6-home-oauth2-add.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/6-home-oauth2-add.png&#41;)
 {% include images-gallery.html imageCollection="step6" preview="false" max-width="100%" %}
 
 Select the required protocol. If you decide to use the HTTP protocol, be sure to write down its port 8080 in the domain name (localhost:8080).
 In this example, we will configure the Google provider. Click on this block.
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/7-oauth2-google.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/7-oauth2-google.png&#41;)
 {% include images-gallery.html imageCollection="step7" preview="false" max-width="100%" %}
 
 Please provide information (**client ID** and **Client secret**) from your Google API console.
 Then expand the **Custom settings** menu.
  
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/8-login-provider-google.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/8-login-provider-google.png&#41;)
 {% include images-gallery.html imageCollection="step8" preview="false" max-width="100%" %}
 
 Let's make the settings for the General block. 
 Use this [link](https://developers.google.com/identity/protocols/oauth2/openid-connect#discovery) to see the list of up-to-date URLs like **accessTokenUri**, **authorizationUri**, etc.
 Select **POST** in the *Client authentication method* field. Then check the "Allow user creation" checkbox. Add to the scope field: *openid, email, profile*. And go to the **Mapper** block.
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/9-oauth2-google-general.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/9-oauth2-google-general.png&#41;)
 {% include images-gallery.html imageCollection="step9" preview="false" max-width="100%" %}
 
 Select the **Basic** type and fill in the fields, if necessary (*described in more detail below in this article in the Basic mapper part*).
 Some configurations are available only in Professional Edition. Then, **save the settings**.
 
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/10-oauth2-google-general-mapper-pe.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/10-oauth2-google-general-mapper-pe.png&#41;)
 {% include images-gallery.html imageCollection="step10" preview="false" max-width="100%" %}
 
 So that the resulted oauth2 configurations for Google will look similar to the provided below.
 
 If we navigate to the Login screen, we will see an additional Login option with Google:
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/11-login-with-google.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/11-login-with-google.png&#41;)
 {% include images-gallery.html imageCollection="step11" preview="false" max-width="100%" %}
 
 Once we click it and select one of our Google Account, we are going to be logged into ThingsBoard with our Google's email as a Tenant Administrator email:
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/12-tenant-administrator.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/12-tenant-administrator.png&#41;)
 {% include images-gallery.html imageCollection="step12" preview="false" max-width="100%" %}
 
 If you log in as the System Administrator, you will see that the Tenant name is our Google's email, according to basic mapper:
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/13-tenants-email.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/13-tenants-email.png&#41;)
 {% include images-gallery.html imageCollection="step13" preview="false" max-width="100%" %}
 
 ### Login with Auth0
@@ -116,17 +116,17 @@ This time we are going to create customers for our users inside a single domain 
 
 To use the Auth0 authentication platform for Login, let's create a new application of the 'Regular Web App' type following this [link](https://auth0.com/docs/quickstarts/).
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/14-auth0-regular-web-app.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/14-auth0-regular-web-app.png&#41;)
 {% include images-gallery.html imageCollection="step14" preview="false" max-width="100%" %}
 
 From the list of technologies please select *Java Spring Boot*:
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/15-auth0-java-spring-boot.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/15-auth0-java-spring-boot.png&#41;)
 {% include images-gallery.html imageCollection="step15" preview="false" max-width="100%" %}
 
 Once your application is created, you can navigate to application details to obtain **clientId** and **clientSecret**:
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/16-auth0-applications-settings.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/16-auth0-applications-settings.png&#41;)
 {% include images-gallery.html imageCollection="step16" preview="false" max-width="100%" %}
 
 As well, please update your allowed Callback URLs:
@@ -137,36 +137,36 @@ http://localhost:8080/login/oauth2/code/
 
 **Please, note** that it is not necessary to update the Application login URI.
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/17-auth0_allowed-callback-urls.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/17-auth0_allowed-callback-urls.png&#41;)
 {% include images-gallery.html imageCollection="step17" preview="false" max-width="100%" %}
 
 In the advanced details section you will be able to find all the required URLs (endpoints) for OAuth 2.0 configuration:
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/18-auth0-advanced-settings.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/18-auth0-advanced-settings.png&#41;)
 {% include images-gallery.html imageCollection="step18" preview="false" max-width="100%" %}
 
 #### Configuration of ThingsBoard
 
 Now we can add one more provider:
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/19-oauth2-add-provider.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/19-oauth2-add-provider.png&#41;)
 {% include images-gallery.html imageCollection="step19" preview="false" max-width="100%" %}
 
 Then select **Custom:**
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/20-oauth2-add-provider-custom.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/20-oauth2-add-provider-custom.png&#41;)
 {% include images-gallery.html imageCollection="step20" preview="false" max-width="100%" %}
 
 Please provide information (**client ID** and **Client secret**) from your application details, and you may find all the required URLs in the advanced details section.
 
 Select **POST** in the *client authentication method* field. We indicate **Auth0** in the *provider label* field. Then check the “Allow user creation” checkbox. Add to the scope field: *openid, email, profile*. And go to the **Mapper** block.
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/21-oauth2-custom-general.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/21-oauth2-custom-general.png&#41;)
 {% include images-gallery.html imageCollection="step21" preview="false" max-width="100%" %}
 
 Select the **Basic** type and, if necessary fill in the fields *(described in more detail below in this article in the Basic mapper part).* Some configurations are available only in Professional Edition. Then, **save** the settings.
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/22-oauth2-custom-mapper-pe.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/22-oauth2-custom-mapper-pe.png&#41;)
 {% include images-gallery.html imageCollection="step22" preview="false" max-width="100%" %}
 
 So that the resulted oauth2 configurations for OAuth0 will look similar to the provided below.
@@ -174,17 +174,17 @@ So that the resulted oauth2 configurations for OAuth0 will look similar to the p
 
 If we navigate to Login screen, we will see two possible Login with options - **Google** and **Auth0**:
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/23-login-with-auth0.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/23-login-with-auth0.png&#41;)
 {% include images-gallery.html imageCollection="step23" preview="false" max-width="100%" %}
 
 Once we click it and select our *Auth0* Account, we are going to be logged into ThingsBoard with our email's as Customer User:
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/24_customer.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/24_customer.png&#41;)
 {% include images-gallery.html imageCollection="step24" preview="false" max-width="100%" %}
 
 If we are logged as System Administrator, you will see that Tenant name is our *Auth0* email domain name, according to basic mapper:
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/25-tenants-emails.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/25-tenants-emails.png&#41;)
 {% include images-gallery.html imageCollection="step25" preview="false" max-width="100%" %}
 
 We have completed our sample and now your users are not required to create accounts inside ThingsBoard - they can use already exist SSO providers for this.
@@ -192,7 +192,7 @@ We have completed our sample and now your users are not required to create accou
 ### Resulted Snippet
 This snippet contains both providers that are used in our sample:
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/26-both-providers.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/26-both-providers.png&#41;)
 {% include images-gallery.html imageCollection="step26" preview="false" max-width="100%" %}
 
 ## Mapping of the external user into ThingsBoard internal user structure
@@ -224,7 +224,7 @@ public class OAuth2User {
 
 A basic mapper is able to merge an external OAuth 2.0 user info object into the ThingsBoard OAuth 2.0 user with a predefined set of rules.
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/27-oauth2-basic-mapper-pe.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/27-oauth2-basic-mapper-pe.png&#41;)
 {% include images-gallery.html imageCollection="step27" preview="false" max-width="100%" %}
 
 To use a basic mapper please set *mapperConfig.type* or *SECURITY_OAUTH2_DEFAULT_MAPPER_TYPE* environment variable to **basic**. 
@@ -353,7 +353,7 @@ Here is an example of demo configuration:
     password: pa$$word
 ```
 
-[comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/28-oauth2-google-general-mapper-custom.png&#41;)
+[comment]: <> (![image]&#40;https://img.thingsboard.io/user-guide/oauth-2-support/28-oauth2-google-general-mapper-custom.png&#41;)
 {% include images-gallery.html imageCollection="step28" preview="false" max-width="100%" %} 
 
 

@@ -363,16 +363,16 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "/sensor/data" -m '{"serialNumber": "SN-00
 {: .copy-code}
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-message-1.png)
+![image](https://img.thingsboard.io/gateway/mqtt-message-1.png)
 {: refdef}
 
 The device will be created and displayed in ThingsBoard based on the passed parameters.
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-created-device-1.png)
+![image](https://img.thingsboard.io/gateway/mqtt-created-device-1.png)
 {: refdef}
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-created-device-2.png)
+![image](https://img.thingsboard.io/gateway/mqtt-created-device-2.png)
 {: refdef}
 
 ### Section "connectRequests"
@@ -433,13 +433,13 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "/sensor/connect" -m '{"serialNumber": "SN
 {: .copy-code}
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-message-connect.png)
+![image](https://img.thingsboard.io/gateway/mqtt-message-connect.png)
 {: refdef}
 
 Your ThingsBoard instance will get information from the broker about last connecting time of the device. You can see this information on the "Server attributes" scope ("Attributes" tab).
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-connect-device.png)
+![image](https://img.thingsboard.io/gateway/mqtt-connect-device.png)
 {: refdef}
 
 ### Section "disconnectRequest"
@@ -500,13 +500,13 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "/sensor/disconnect" -m '{"serialNumber": 
 {: .copy-code}
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-message-disconnect.png)
+![image](https://img.thingsboard.io/gateway/mqtt-message-disconnect.png)
 {: refdef}
 
 Your ThingsBoard instance will get information from the broker about last disconnecting time of the device. You can see this information on the "Server attributes" scope ("Attributes" tab).
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-disconnect-device.png)
+![image](https://img.thingsboard.io/gateway/mqtt-disconnect-device.png)
 {: refdef}
 
 ### Section "attributeRequests"
@@ -599,31 +599,31 @@ mosquitto_sub -t /sensor/SN-001/FirmwareVersion
 {: .copy-code}
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-mosquitto-sub-wait-1.png)
+![image](https://img.thingsboard.io/gateway/mqtt-mosquitto-sub-wait-1.png)
 {: refdef}
 
 Update device attribute value on the ThingsBoard server. Open Devices -> click by your device -> Attributes tab -> Shared attributes scope and click on the "pencil" button next to *"FirmwareVersion"* attribute.
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-update-attribute-1.png)
+![image](https://img.thingsboard.io/gateway/mqtt-update-attribute-1.png)
 {: refdef}
 
 Change firmware version value from "1.1" to "1.2". Then click "Update" button.
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-update-attribute-2.png)
+![image](https://img.thingsboard.io/gateway/mqtt-update-attribute-2.png)
 {: refdef}
 
 The firmware version has been updated to "1.2".
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-update-attribute-3.png)
+![image](https://img.thingsboard.io/gateway/mqtt-update-attribute-3.png)
 {: refdef}
 
 Broker received new message from the ThingsBoard server about updating attribute "FirmwareVersion" to "1.2".
 
 {:refdef: style="text-align: center;"}
-![image](/images/gateway/mqtt-mosquitto-sub-get-1.png)
+![image](https://img.thingsboard.io/gateway/mqtt-mosquitto-sub-get-1.png)
 {: refdef}
 
 ### Server side RPC commands

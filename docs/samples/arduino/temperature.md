@@ -23,7 +23,7 @@ The application that is running on Arduino UNO is written using Arduino SDK whic
 
 Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
 
-![image](/images/samples/arduino/temperature/dashboard.png)
+![image](https://img.thingsboard.io/samples/arduino/temperature/dashboard.png)
 
 {% include templates/prerequisites.md %}
 
@@ -31,15 +31,15 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
  - Arduino UNO
 
-  ![image](/images/samples/arduino/temperature/arduino-uno-pinout.png)
+  ![image](https://img.thingsboard.io/samples/arduino/temperature/arduino-uno-pinout.png)
 
  - [ESP8266 module](https://www.aliexpress.com/item/Free-shipping-50pcs-lot-ESP8266-serial-WIFI-wireless-module-wireless-transceiver/32257568124.html?spm=2114.03010208.3.126.6Ir2oN&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_426_10073_10103_10102_10096_10052_10050_10051,searchweb201603_6&btsid=5ad90a6c-2282-48ee-a450-5ab29e2e5d84)
 
-  ![image](/images/samples/arduino/temperature/esp8266-pinout.png)
+  ![image](https://img.thingsboard.io/samples/arduino/temperature/esp8266-pinout.png)
 
  - [DHT22 sensor](https://www.aliexpress.com/item/1pcs-DHT22-digital-temperature-and-humidity-sensor-Temperature-and-humidity-module-AM2302-replace-SHT11-SHT15/32316036161.html?spm=2114.03010208.3.49.aZvfaG&ws_ab_test=searchweb0_0,searchweb201602_2_10065_10068_10084_10083_10080_10082_10081_10060_10061_10062_10056_10055_10054_10059_10099_10078_10079_10093_426_10073_10103_10102_10096_10052_10050_10051,searchweb201603_6&btsid=28d9ee9a-283a-4e97-af7b-a7e530490916)
 
-  ![image](/images/samples/arduino/temperature/dht22-pinout.png)
+  ![image](https://img.thingsboard.io/samples/arduino/temperature/dht22-pinout.png)
 
  - Resistor (between 4.7K and 10K)
 
@@ -83,7 +83,7 @@ Finally, place a resistor (between 4.7K and 10K) between pin number 1 and 2 of t
 
 The following picture summarizes the connections for this project:
 
-![image](/images/samples/arduino/temperature/schema.png)
+![image](https://img.thingsboard.io/samples/arduino/temperature/schema.png)
 
 {% include templates/thingsboard-configuration.md %}
 
@@ -98,13 +98,13 @@ Open ThingsBoard Web UI (http://localhost:8080) in browser and login as tenant a
 
 Go to "Devices" section. Click "+" button and create a device with the name "Arduino UNO Demo Device".
 
-![image](/images/samples/arduino/temperature/device.png)
+![image](https://img.thingsboard.io/samples/arduino/temperature/device.png)
 
 Once device created, open its details and click "Manage credentials".
 
 Copy auto-generated access token from the "Access token" field. Please save this device token. It will be referred to later as **$ACCESS_TOKEN**.
 
-![image](/images/samples/arduino/temperature/credentials.png)
+![image](https://img.thingsboard.io/samples/arduino/temperature/credentials.png)
 
 ### Provision your dashboard
 
@@ -180,7 +180,7 @@ in case of local ThingsBoard installation.
 Go to **"Devices"** section and locate **"Arduino UNO Demo Device"**, open device details and switch to **"Latest telemetry"** tab.
 If all is configured correctly you should be able to see latest values of *"temperature"* and *"humidity"* in the table.
 
-![image](/images/samples/arduino/temperature/attributes.png)
+![image](https://img.thingsboard.io/samples/arduino/temperature/attributes.png)
 
 After, open **"Dashboards"** section then locate and open **"Arduino DHT22: Temperature & Humidity Demo Dashboard"**.
 As a result, you will see two time-series charts and two digital gauges displaying temperature and humidity level (similar to dashboard image in the introduction).

@@ -12,34 +12,34 @@ the [Root Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#r
 
 <br>
 
-![image](/images/user-guide/scheduler.svg)
+![image](https://img.thingsboard.io/user-guide/scheduler.svg)
 
 ### Video tutorial
 
 See video tutorial below for step-by-step instruction how to use this feature.
 
 <br>
-<div id="video">
+<div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/RnHAao8yET4" frameborder="0" allowfullscreen></iframe>
     </div>
-</div>
+</div> 
 
 ### Scheduler Administration
 
 Tenant administrator and customer users are able to configure **Scheduler events** in ThingsBoard.
 
-![image](/images/user-guide/ui/scheduler.png)
+![image](https://img.thingsboard.io/user-guide/ui/scheduler.png)
 
 **Scheduler events** page displays current configured scheduler events.
 It allows to add, update or delete scheduler events. The page can be presented in two modes **List view** or **Calendar view**.
 The views can be switched by pressing corresponding icons in the page header.
 
-![image](/images/user-guide/ui/scheduler-view-buttons.png)
+![image](https://img.thingsboard.io/user-guide/ui/scheduler-view-buttons.png)
 
 In the calendar view mode scheduler events are presented as labels according to their schedule. 
-
-![image](/images/user-guide/ui/scheduler-calendar-view.png)
+  
+![image](https://img.thingsboard.io/user-guide/ui/scheduler-calendar-view.png)
 
 By default calendar view is presented as **Month** view type.
 **Calendar view type** dropdown allows to switch to other view types. The following view types can be selected:
@@ -52,14 +52,14 @@ New scheduler event can be created by clicking on `+` button in top right corner
 
 Scheduler event edit dialog consist of two forms **Configuration** and **Schedule**.
 
-![image](/images/user-guide/ui/scheduler-event-dialog.png)
+![image](https://img.thingsboard.io/user-guide/ui/scheduler-event-dialog.png)
 
 **Configuration** form allows to set event type and event configuration parameters according to selected event type.
 Configuration of scheduler event is described in [Scheduler Event Types](#scheduler-event-types) section.
 
 **Schedule** form allows to setup event schedule configuration.
 
-![image](/images/user-guide/ui/scheduler-event-schedule.png)
+![image](https://img.thingsboard.io/user-guide/ui/scheduler-event-schedule.png)
 
 Schedule form has the following parameters:
 
@@ -79,7 +79,7 @@ In Configuration **Event type** field can be selected existing event type or spe
 
 Custom type uses default scheduler event configuration form according to message structure.
 
-![image](/images/user-guide/ui/scheduler-custom-event-type.png)
+![image](https://img.thingsboard.io/user-guide/ui/scheduler-custom-event-type.png)
 
 - **Originator** - message originator, can be *Single entity* (ex. Device, Asset etc.) or [*Group of entities*](/docs/{{docsPrefix}}user-guide/groups/). If not specified, scheduler event entity itself will be considered as originator.
 - **Message type** - message type according to the Rule Engine message types. Can be [existing message type](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) or custom. If not specified, scheduler event type will be considered as message type. 
@@ -90,14 +90,14 @@ Custom type uses default scheduler event configuration form according to message
 
 Allows to schedule reports generation supported by [Reporting](/docs/{{docsPrefix}}user-guide/reporting/#generate-report-rule-chain) feature.
 
-![image](/images/user-guide/ui/scheduler-generate-report-event-type-report-config.png)
+![image](https://img.thingsboard.io/user-guide/ui/scheduler-generate-report-event-type-report-config.png)
 
-![image](/images/user-guide/ui/scheduler-generate-report-event-type-email-config.png)
+![image](https://img.thingsboard.io/user-guide/ui/scheduler-generate-report-event-type-email-config.png)
 
 - **Report configuration**:
     - **Base URL** - base URL of ThingsBoard UI that should be accessible by Report Server.
     - **Dashboard** - dashboard that will be used for report generation.
-    - **Dashboard state parameter value** - used to specify target dashboard state for report generation. Can be set automatically by clicking on right most button of the field and invoking **Select dashboard state** dialog.
+    - **Dashboard state parameter value** - used to specify target dashboard state for report generation. Can be set automatically by clicking on right most button of the field and invoking **Select dashboard state** dialog.       
     - **Timezone** - timezone in which target dashboard will be presented in report.
     - **Use dashboard timewindow** - if set, timewindow configured in the target dashboard will be used during report generation.
     - **Timewindow** - specific dashboard timewindow that will be used during report generation.
@@ -106,7 +106,7 @@ Allows to schedule reports generation supported by [Reporting](/docs/{{docsPrefi
     - **Use current user credentials** - if set, credentials of user created this report configuration will be used to open dashboard UI during report generation.
     - **Customer user credentials** - target customer user whose credentials will be used to open dashboard UI during report generation.
     - **Generate Test Report** button is used for testing purposes. It invokes report generation process with provided configuration. Resulting report file will be automatically downloaded if the report generation will be successful.
-
+    
 - **Send email** - if set, email message with report file in attachment will be sent.
 
 - **Email configuration**:
@@ -121,7 +121,7 @@ Allows to schedule reports generation supported by [Reporting](/docs/{{docsPrefi
 
 Allows to schedule update of attributes for entity or group of entities.
 
-![image](/images/user-guide/ui/scheduler-update-attributes-event-type.png)
+![image](https://img.thingsboard.io/user-guide/ui/scheduler-update-attributes-event-type.png)
 
 - **Target** - target entity which attributes should be updated, can be *Single entity* (ex. Device, Asset etc.) or [*Group of entities*](/docs/{{docsPrefix}}user-guide/groups/).
 - **Entity attributes scope** - [scope](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) of updated attributes. Can be selected if Device entity type is specified in **Target**. Can be either **Server attributes** or **Shared attributes**. For all other entity types **Server attributes** scope is used. 
@@ -131,7 +131,7 @@ Allows to schedule update of attributes for entity or group of entities.
 
 Allows to schedule command ([RPC call](/docs/{{docsPrefix}}user-guide/rpc/#server-side-rpc-api)) to device or group of devices.
 
-![image](/images/user-guide/ui/scheduler-send-rpc-request-event-type.png)
+![image](https://img.thingsboard.io/user-guide/ui/scheduler-send-rpc-request-event-type.png)
 
 - **Target** - target device to which command should be sent, can be *Single device* or [*Group of devices*](/docs/{{docsPrefix}}user-guide/groups/).
 - **Method** - RPC call method.
@@ -141,13 +141,13 @@ Allows to schedule command ([RPC call](/docs/{{docsPrefix}}user-guide/rpc/#serve
 
 ThingsBoard provides ability to manage scheduler events via **Scheduler events** or **Reports schedule** Widgets which is part of **Scheduling** Widgets Bundle.
 
-![image](/images/user-guide/ui/scheduler-scheduler-events-widget.png)
+![image](https://img.thingsboard.io/user-guide/ui/scheduler-scheduler-events-widget.png)
 
 **Scheduler events** widget has same capabilities as [**Scheduler events** page](#scheduler-administration).
 Additionally it can be customized with predefined forms for custom scheduler event types. 
 This can be achieved by configuring list of **Custom event types** in **Advanced** tab of widget configuration.
 
-![image](/images/user-guide/ui/scheduler-scheduler-events-widget-custom-types.png)
+![image](https://img.thingsboard.io/user-guide/ui/scheduler-scheduler-events-widget-custom-types.png)
 
 - **Display name** - display name of custom event type.
 - **Type name** - internal name of custom event.

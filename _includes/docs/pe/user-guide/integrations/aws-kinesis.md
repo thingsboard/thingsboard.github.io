@@ -210,7 +210,7 @@ function decodeToJson(payload) {
 return result;
 {% endhighlight %}
 
-![image](/images/user-guide/integrations/aws-kinesis/aws-kinesis-add-uplink-converter.png)
+![image](https://img.thingsboard.io/user-guide/integrations/aws-kinesis/aws-kinesis-add-uplink-converter.png)
 
 
 ##### Thingsboard Downlink Data Converter
@@ -253,7 +253,7 @@ return result;
 
 This converter will take **version** field from the incoming message and add it as a payload field in the outbound message. Additionally, we will put device name in the outbound message. In this way next applications in our business flow, that will consume messages from the donwlink stream, will be able to identify, that this payload belongs to **kitchen_thermostat** device.
 
-![image](/images/user-guide/integrations/aws-kinesis/aws-kinesis-add-downlink-converter.png)
+![image](https://img.thingsboard.io/user-guide/integrations/aws-kinesis/aws-kinesis-add-downlink-converter.png)
 
 ##### AWS Kinesis Integration
 
@@ -271,9 +271,9 @@ Next we will create Integration with AWS Kinesis inside the Thingsboard. Open **
 - Use credentials from the Amazon EC2 Instance Metadata Service: false (please refer to [IAM Roles for Amazon EC2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html){:target="_blank"} for more details)
 - Use Consumers with Enhanced Fan-Out: false (please refer to [Using Consumers with Enhanced Fan-Out](https://docs.aws.amazon.com/streams/latest/dev/introduction-to-enhanced-consumers.html){:target="_blank"} for more details)
 
-![image](/images/user-guide/integrations/aws-kinesis/aws-kinesis-add-integration_1.png)
+![image](https://img.thingsboard.io/user-guide/integrations/aws-kinesis/aws-kinesis-add-integration_1.png)
 
-![image](/images/user-guide/integrations/aws-kinesis/aws-kinesis-add-integration_2.png)
+![image](https://img.thingsboard.io/user-guide/integrations/aws-kinesis/aws-kinesis-add-integration_2.png)
 
 ## Validation
 
@@ -289,23 +289,23 @@ Go to **Device Group** -> **All** -> **kitchen_thermostat** - you can see that
 - new device was registered in the thingsboard
 - In the **Latest Telemetry** section you will see that last submitted temperature = 22.
 
-![image](/images/user-guide/integrations/aws-kinesis/aws-kinesis-validate-telemetry.png)
+![image](https://img.thingsboard.io/user-guide/integrations/aws-kinesis/aws-kinesis-validate-telemetry.png)
 
 ##### Validate Downlink Messages
 For testing Downlink Messages, we will update our Root Rule Chain to send downlink message when device attribute is changed.
 Open and edit **Root Rule Chain**. Add **Integration Downlink** Action node and connect it with the **Message Type Switch** Node using relation 
 **Attributes Updated**
  
-![image](/images/user-guide/integrations/aws-kinesis/aws-kinesis-downlink-node.png)
+![image](https://img.thingsboard.io/user-guide/integrations/aws-kinesis/aws-kinesis-downlink-node.png)
 
-![image](/images/user-guide/integrations/aws-kinesis/aws-kinesis-node-connected.png)
+![image](https://img.thingsboard.io/user-guide/integrations/aws-kinesis/aws-kinesis-node-connected.png)
 
 Save Changes.
 
 Go to **Device Group** -> **All** -> **kitchen_thermostat** -> attributes section. We will add **Shared attribute** with name **version** and
 value **v.0.11**
 
-![image](/images/user-guide/integrations/aws-kinesis/aws-kinesis-shared-attr-updated.png)
+![image](https://img.thingsboard.io/user-guide/integrations/aws-kinesis/aws-kinesis-shared-attr-updated.png)
 
 By making this step, we triggered downlink message to the downlink stream **tb-test-downlink** and this message should contains device name and version field value. 
 Let's use command line AWS CLI tool to validate, that we have received the massage in the downlink stream.

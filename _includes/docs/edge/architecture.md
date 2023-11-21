@@ -26,7 +26,7 @@ ThingsBoard Edge is designed to be:
 
 The diagram below depicts the key components of the edge and the interfaces they provide.
 
-<object width="80%" data="/images/reference/edge-architecture.svg"></object>
+<object width="80%" data="https://img.thingsboard.io/reference/edge-architecture.svg"></object>
 
 ## Cloud Manager Service
 

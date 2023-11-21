@@ -98,7 +98,7 @@ mosquitto_pub -h localhost -p 1883 -q 1 -t "tb/mqtt-integration-tutorial/sensors
 ```
 {: .copy-code}
 
-![image](/images/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-uplink-message-1.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/integrations/how-to-connect-tbqm-to-thingsboard/tbmq-uplink-message-1.png)
 
 After you sent uplink message, go to your integration in ThingsBoard UI and navigate to the "Events" tab. There you'll see the message consumed by the "MQTT Integration".
 

@@ -9,9 +9,9 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-The NVIDIA Jetson Xavier NX Developer Kit is a powerful, compact AI computer that delivers up to 21 TOPS of accelerated computing in a small form factor.
- It's designed for autonomous machines, industrial robots, and embedded systems that require high-performance AI at the edge.
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+The NVIDIA Jetson Xavier NX Developer Kit is a powerful, compact AI computer that delivers up to 21 TOPS of accelerated computing in a small form factor.  
+ It's designed for autonomous machines, industrial robots, and embedded systems that require high-performance AI at the edge.  
 
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}

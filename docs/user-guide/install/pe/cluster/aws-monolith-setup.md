@@ -7,27 +7,27 @@ description: ThingsBoard IoT platform monolith setup with Kubernetes in AWS EKS
 
 rdsSetup:
     0:
-        image: /images/install/cloud/aws/rds-1.png
+        image: https://img.thingsboard.io/install/cloud/aws/rds-1.png
         title: 'Make sure your PostgreSQL version is latest 12.x, not 13.x yet.'
     1:
-        image: /images/install/cloud/aws/rds-2.png
+        image: https://img.thingsboard.io/install/cloud/aws/rds-2.png  
         title: 'Keep your PostgreSQL master password in a safe place. We will refer to it later in this guide using YOUR_RDS_PASSWORD.'
     2:
-        image: /images/install/cloud/aws/rds-3.png
+        image: https://img.thingsboard.io/install/cloud/aws/rds-3.png  
         title: 'Use "Provisioned IOPS" for better performance.'
     3:
-        image: /images/install/cloud/aws/rds-4.png
+        image: https://img.thingsboard.io/install/cloud/aws/rds-4.png  
         title: 'Make sure your PostgreSQL RDS instance is accessible from the ThingsBoard cluster; The easiest way to achieve this is to deploy the PostgreSQL RDS instance in the same VPC and use "eksctl-thingsboard-cluster-ClusterSharedNodeSecurityGroup-*" security group.'
     4:
-        image: /images/install/cloud/aws/rds-5.png
+        image: https://img.thingsboard.io/install/cloud/aws/rds-5.png  
         title: 'Make sure you use "thingsboard" as initial database name.'
     5:
-        image: /images/install/cloud/aws/rds-6.png
+        image: https://img.thingsboard.io/install/cloud/aws/rds-6.png  
         title: 'Disable "auto minor version update".'
 
 rdsEndpointUrl:
     0:
-        image: /images/install/cloud/aws/rds-endpoint-url.png
+        image: https://img.thingsboard.io/install/cloud/aws/rds-endpoint-url.png  
         title: 'Once the database switch to the "Available" state, navigate to the "Connectivity and Security" and copy the endpoint value. We will refer to it later in this guide using **YOUR_RDS_ENDPOINT_URL**.'
 ---
 

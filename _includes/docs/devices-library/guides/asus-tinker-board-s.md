@@ -7,7 +7,7 @@
  %}
 
 ## Introduction
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 Tinker Board S is a single board computer (SBC) that offers greater durability, better stability and an overall improved 
 user experience for DIY enthusiasts and makers everywhere. Onboard 16GB eMMC storage to enhance performance and stability, 
 plus a microSD slot for greater flexibility. Onboard power-on pin for makers giving more freedom when bringing their ideas 

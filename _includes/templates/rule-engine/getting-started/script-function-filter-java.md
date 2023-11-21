@@ -7,8 +7,8 @@ return typeof msg.temperature === 'undefined'
 {: .copy-code}
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/script-config-java-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/script-config-java-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/script-config-java-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/script-config-java-pe.png)
 {% endif %}

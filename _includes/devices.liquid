@@ -13,7 +13,7 @@
                 {% for devicePage in devicesInCategoryList %}
                     <li class="device-guide-container">
                         <a href="{{ devicePage.url }}">
-                            <img src="/images/devices-library/{{ devicePage.deviceImageFileName }}"  alt="device Image File Name">
+                            <img src="https://img.thingsboard.io/devices-library/{{ devicePage.deviceImageFileName }}"  alt="device Image File Name">
                             <div class="device-guide-text">
                                 <p class="device-guide-title">
                                     {{ devicePage.title | remove : "How to connect " | remove: " to ThingsBoard?"}}

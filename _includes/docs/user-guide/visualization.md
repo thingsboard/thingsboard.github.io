@@ -13,5 +13,5 @@ You can find useful links to get started below:
  - [IoT Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/) - contains tutorials about basic IoT dashboard operations.
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
  - [Solution Templates](/docs/{{docsPrefix}}solution-templates/overview/) - contains several examples of IoT dashboards.
-{% endif %} 
+{% endif %}
  - [Widget Library](/docs/{{docsPrefix}}user-guide/ui/widget-library/) - contains an overview of dashboard widget bundles.

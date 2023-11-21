@@ -21,7 +21,7 @@ But most of the messages are derived from the sensor data.
 Let's assume we have temperature sensors in the room assets with profiles: "Freezer Room" and "Boiler Room". We also take that there is a relation between room asset and temperature device of type "Contains". 
 The below rule chain will change the originator of the message from the device to the related asset and route the incoming messages to the "Freezer Room" or "Boiler Room" rule chains.  
  
-![image](/images/user-guide/rule-engine-2-0/nodes/asset-profile-switch-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/asset-profile-switch-chain.png)
 
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-asset-profile-switch-example-json) and import the rule chain. 
 Note that the "rule chain" nodes will point to not existing rule chains in your environment.
@@ -50,7 +50,7 @@ For example, you may use BLE to MQTT gateway and BLE beacons. The Gateway payloa
 Let's assume you have different beacon profiles - indoor air quality ("IAQ sensor") and leak sensors ("Leak sensor"). 
 The below rule chain will change the originator of the message from gateway to device and forward the message to the corresponding rule chain:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/device-profile-switch-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/device-profile-switch-chain.png)
 
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-device-profile-switch-example-json) and import the rule chain. 
 Note that the "rule chain" nodes will point to not existing rule chains in your environment.
@@ -66,7 +66,7 @@ Checks the [Alarm](/docs/{{docsPrefix}}user-guide/alarms/) status to match one o
  * Alarm status filter - Contains list of alarms statuses. 
   Available statuses: "Active Acknowledged", "Active Unacknowledged", "Cleared Acknowledged", "Cleared Unacknowledged".
 
-![image](/images/user-guide/rule-engine-2-0/nodes/check-alarm-status-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/check-alarm-status-configuration.png)
 
 **Output**
 
@@ -76,7 +76,7 @@ Output connection types: "True" or "False".
 
 The rule chain below will check that the acknowledged alarm is still active or already cleared.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/check-alarm-status-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/check-alarm-status-chain.png)
 
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-check-alarm-status-example-json) and import the rule chain.
 
@@ -95,7 +95,7 @@ User specifies message and/or metadata field names in the configuration.
  * Metadata field names - list of field names that should be present in the metadata;
  * 'Check that all specified fields are present' checkbox - check the presence of all (if checked) or of at least one field (if unchecked). 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/check-fields-presence-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/check-fields-presence-configuration.png)
 
 **Output**
 
@@ -119,7 +119,7 @@ If 'check relation to specific entity' is selected, one must specify a related e
    See example.
  * Relation type - arbitrary relation type. Default relation types are 'Contains' and 'Manages', but you may create relation of any type. 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/check-relation-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/check-relation-configuration.png)
 
 **Output**
 
@@ -143,7 +143,7 @@ Checks that the entity type of the incoming message originator matches one of th
 
  * Originator types filter - list of entity types: Device, Asset, User, etc.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/entity-type-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/entity-type-configuration.png)
 
 **Output**
 
@@ -169,7 +169,7 @@ Let's assume you have messages from different entities processed in one rule cha
 You may want to split the message flow based on entity type.
 See below:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/entity-type-switch-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/entity-type-switch-chain.png)
 
 <br>
 
@@ -183,7 +183,7 @@ Checks that the message type of the incoming message matches one of the values s
  * Message types filter - list of [predefined](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#predefined-message-types) message types. 
    Custom message types are supported as well.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/message-type-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/message-type-configuration.png)
 
 **Output**
 
@@ -214,7 +214,7 @@ Let's assume you have messages with different types processed in one rule chain.
 You may want to split the message flow based on message type.
 See below:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/message-type-switch-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/message-type-switch-chain.png)
 
 <br>
 
@@ -231,7 +231,7 @@ TBEL/JavaScript function receive 3 input parameters:
 - <code>metadata</code> - is a message metadata. Represented as a Key-Value map. Both keys and values are strings.
 - <code>msgType</code> - is a message type, string.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/script-filter-node-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/script-filter-node-configuration.png)
 
 **Output**
 
@@ -283,7 +283,7 @@ TBEL/JavaScript function receive 3 input parameters:
 The script should return **_an array of next Relation names_** where Message should be routed.
 If returned array is empty - message will not be routed to any Node and discarded.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-switch-configuration.png)
 
 **Output**
 
@@ -318,7 +318,7 @@ return [];
 ```
 {: .copy-code}
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-switch.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-switch.png)
 
 TBEL/JavaScript condition can be verified using [test filter function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
@@ -368,7 +368,7 @@ The "Failure" connection will to be used when: a) incoming message has no config
 Let's assume you would like to check that the location of the device is within 100 meters from the Ukraine's Independence Monument, located in the center of Kyiv.
 The coordinates of the monument are the following: latitude = 50.4515652, longitude = 0.5236963. The configuration of the rule node is quite simple:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-static-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-circle-static-configuration.png)
 
 *Static polygon perimeter*
 
@@ -386,26 +386,26 @@ You may test that rule node returns 'True' if you submit the following coordinat
 { latitude: 48.198618758582384, longitude: 24.65322245153503 }
 ```
 
-![image](/images/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-perimeter-static-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/filter-gps-geofencing-perimeter-static-configuration.png)
 
 *Dynamic circle/polygon perimeter*
 
 Let's review more complex livestock location monitoring case, where you may have sheeps located in different farms.
 Let's assume we have created two farms: Farm A and Farm B. Each livestock tracker device is related either to Farm A or Farm B asset.
 
-![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-farm-relation.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-farm-relation.png)
 
 We will configure server-side attribute called "perimeter" with the JSON value: "[[48.19736726399899, 24.652353415807884], [48.19800374220741, 24.65060461551745], [48.19918370897885, 24.65317953619048], [48.19849718616351, 24.65420950445969]]";
 
-![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-farm-attribute.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-farm-attribute.png)
 
 The below rule chain will fetch the attribute from the related asset (Farm A) and use it in the geofencing node:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-example.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-example.png)
 
 Rule node configuration is fairly simple. Please note that perimeter key name is without any prefix:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/gps-geofencing-filter-dynamic-configuration.png)
 
 You may [download](https://gist.github.com/ashvayka/f67f9415c625e8a2d12340e18248111f#file-gps-geofencing-filter-example) and import the rule chain. 
 Note that the "rule chain" nodes will point to not existing device in the "Sheep Tracker Generator" node. 

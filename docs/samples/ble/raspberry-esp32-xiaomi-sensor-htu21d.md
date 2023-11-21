@@ -16,7 +16,7 @@ This sample demo performs collection of temperature and humidity values produced
 
 Data is collected by a python script that is running on [Raspberry Pi](https://en.wikipedia.org/wiki/Raspberry_Pi). It pushes data to ThingsBoard server via MQTT protocol by using  [ThingsBoard MQTT client Python SDK](https://github.com/thingsboard/thingsboard-python-client-sdk) library. Data is visualized using built-in customizable dashboard. Demo that is running on Raspberry Pi is written in Python which is quite simple and easy to understand.
 
-  ![Ble diagram](/images/samples/ble/ble-diagram.png)
+  ![Ble diagram](https://img.thingsboard.io/samples/ble/ble-diagram.png)
 
 ## List of hardware
 
@@ -49,7 +49,7 @@ Data is collected by a python script that is running on [Raspberry Pi](https://e
 
 The following picture summarizes the connection of ESP32 and HTU21D:
 
-  ![Ble diagram](/images/samples/ble/esp32-htu21d-scheme.png)
+  ![Ble diagram](https://img.thingsboard.io/samples/ble/esp32-htu21d-scheme.png)
 
 ### Raspberry Pi
 
@@ -65,7 +65,7 @@ Cambridge Silicon Radio, Ltd Bluetooth Dongle (HCI mode)
 
 Whole setup:
 
-  ![Ble diagram](/images/samples/ble/setup.jpg)
+  ![Ble diagram](https://img.thingsboard.io/samples/ble/setup.jpg)
 
 ## Preparing ESP32
 
@@ -284,17 +284,17 @@ Disconnecting from device
 
 ```
 It creates devices:
-![Created devices](/images/samples/ble/created_devices.png)
+![Created devices](https://img.thingsboard.io/samples/ble/created_devices.png)
 
 
 ## Provision your dashboard
 Download the dashboard file using this [**link**](/docs/samples/ble/resources/device_gw.json). Now you have to import it. To do this, configure aliases in such way (use gateway device from [**Device provisioning**](#device-provisioning) section):
 
-  ![Configure aliases](/images/samples/ble/configure-aliases.png)
+  ![Configure aliases](https://img.thingsboard.io/samples/ble/configure-aliases.png)
 
-  ![Edit alias gw_devices](/images/samples/ble/edit_alias_gw_devices.png)
+  ![Edit alias gw_devices](https://img.thingsboard.io/samples/ble/edit_alias_gw_devices.png)
 
-  ![Edit alias gw](/images/samples/ble/edit_alias_gw.png)
+  ![Edit alias gw](https://img.thingsboard.io/samples/ble/edit_alias_gw.png)
 
 Also this dashboard needs a custom widget bundle. Download it with this [**link**](/docs/samples/ble/resources/custom_widget.json) and import using import/export [**instructions**](/docs/user-guide/ui/widget-library/).
 
@@ -313,11 +313,11 @@ See  **[live-demo](/docs/user-guide/live-demo/)**  page for more details how to 
 
 Go to **“Devices”** section, open created devices details and switch to **“Latest telemetry”** tab. If all is configured correctly you should be able to see latest telemetry values sent via BLE in the table.
 
-  ![Latest telemetry](/images/samples/ble/latest-telemetry.png)
+  ![Latest telemetry](https://img.thingsboard.io/samples/ble/latest-telemetry.png)
 
 After, open **“Dashboards”** section and find previously imported dashboard **“Device GW”** and observe the following picture:
 
-  ![Dashboard](/images/samples/ble/dashboard.png)
+  ![Dashboard](https://img.thingsboard.io/samples/ble/dashboard.png)
 
 ## Troubleshooting
 In order to perform troubleshooting, you must check demo script output. It displays connection status with every device, as well as received and sent data.

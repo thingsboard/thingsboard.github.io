@@ -35,16 +35,16 @@ We assume you have completed the following guides and reviewed the articles list
 
 We will create one asset that has name "Warehouse A" and type "warehouse". We will add this asset to an asset group called "Warehouses".
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/aggregation-latest/add-asset.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/aggregation-latest/add-asset.png)
 
 We will create two devices that has names "Sensor A1" and "Sensor A2" and type "thermometer". We will add this devices to device group called "Thermometers".
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/aggregation-latest/add-meters.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/aggregation-latest/add-meters.png)
 
 We must also create relations between the warehouse asset and thermometers. This relation will be used in the rule chain to associate thermometer readings with the warehouse itself. 
 It is also convenient to use relations in the dashboards to provide drill-down capabilities. You may notice two outbound relations from the warehouse asset to the thermometers on the screenshot below:
  
-![image](/images/user-guide/rule-engine-2-0/tutorials/aggregation-latest/add-relations.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/aggregation-latest/add-relations.png)
 
 **Note**: Please review the following [**documentation page**](/docs/user-guide/entities-and-relations/) to learn how to create assets and relations.
 
@@ -57,13 +57,13 @@ In this section, we explain the purpose of each node in this tutorial. There wil
 
 ### Thermometer Emulators rule chain
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/aggregation-latest/emulator-rule-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/aggregation-latest/emulator-rule-chain.png)
 
   * **Nodes A and B**: Generator nodes
 
     * Two similar nodes that periodically generate a very simple message with random temperature reading.
 
-    ![image](/images/user-guide/rule-engine-2-0/tutorials/aggregation-latest/nodes-a-and-b.png)
+    ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/aggregation-latest/nodes-a-and-b.png)
 
   * **Node C**: Rule Chain node
 
@@ -71,7 +71,7 @@ In this section, we explain the purpose of each node in this tutorial. There wil
 
 ### Warehouse Temperature rule chain
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/aggregation-latest/aggregation-rule-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/aggregation-latest/aggregation-rule-chain.png)
 
   * **Node D**: Aggregate latest. Periodically (period of execution is defined as "Execution period value") executes the following:
 
@@ -79,9 +79,9 @@ In this section, we explain the purpose of each node in this tutorial. There wil
     *  Fetches latest temperature reading for each of the devices and calculates average temperature reading.
     *  Generates "POST_TELEMETRY_REQUEST" message that contains value of the average temperature.
 
-    ![image](/images/user-guide/rule-engine-2-0/tutorials/aggregation-latest/node-d-part1.png)
+    ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/aggregation-latest/node-d-part1.png)
 
-    ![image](/images/user-guide/rule-engine-2-0/tutorials/aggregation-latest/node-d-part2.png)
+    ![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/aggregation-latest/node-d-part2.png)
 
   * **Node E**: Save telemetry node
 
@@ -98,11 +98,11 @@ Please note that some nodes have debug enabled. This affects performance. Create
 
 Download and [**import**](/docs/user-guide/ui/dashboards/#iot-dashboard-importexport) attached dashboard [**file**](/docs/user-guide/rule-engine-2-0/pe/tutorials/warehouse_thermometers.json) as a new "Warehouse Temperature" dashboard.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/aggregation-latest/dashboard-part1.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/aggregation-latest/dashboard-part1.png)
 
 Note that you can drill down to the chart for particular warehouse by clicking on the corresponding row.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/aggregation-latest/dashboard-part2.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/aggregation-latest/dashboard-part2.png)
 
 ## Next steps
 

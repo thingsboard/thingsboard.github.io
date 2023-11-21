@@ -7,82 +7,82 @@ description: Building predictive maintenance system for heat pumps based on unsu
 
 heatpumps-dashboard:
   0:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_anomaly_detection_dashboard.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_anomaly_detection_dashboard.png
     title: 'Dashboard for investigating discovered anomalies in Heat Pumps operation'
 
 heatpumps-create-anomaly-model:
   0:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_create_anomaly_model.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_create_anomaly_model.png
     title: 'Click create Anomaly detection model button'
   1:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_configure_anomaly_model.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_configure_anomaly_model.png
     title: 'Set Anomaly detection model parameters'
   2:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_anomalies_summary.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_anomalies_summary.png
     title: 'Review results of anomaly detection model training for heat pumps'
   3:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_review_anomaly.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_review_anomaly.png
     title: 'Review discovered anomalies for heat pump'
 
 heatpumps-autodiscovery-anomalies:
   0:
-    image: /images/trendz/guide/heatpump_anomalies/heatpumps_autodiscover_enable.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpumps_autodiscover_enable.png
     title: 'Click Anomaly automated discovery button'
   1:
-    image: /images/trendz/guide/heatpump_anomalies/heatpumps_autodiscover_job_configuration.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpumps_autodiscover_job_configuration.png
     title: 'Configure intervals for automated anomaly discovery job'
 
 heatpumps-create-anomaly-review-widget:
   0:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_create_anomaly_widget.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_create_anomaly_widget.png
     title: 'Create anomaly review widget for heat pumps'
   1:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_anomaly_select_model.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_anomaly_select_model.png
     title: 'Select anomaly detection model for heat pumps create in Step 1'
   2:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_anomaly_review_widget.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_anomaly_review_widget.png
     title: 'Review discovered anomalies for heat pumps on a widget'
 
 heatpumps-save-anomaly-score-as-telemetry:
   0:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_anomaly_score_table_create.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_anomaly_score_table_create.png
     title: 'Create anomaly score table for heat pumps based on discovered anomalies'
   1:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_anomaly_score_table_row_click.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_anomaly_score_table_row_click.png
     title: 'Select heat pump as a row click entity for anomaly score table'
   2:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_anomaly_score_save.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_anomaly_score_save.png
     title: 'Schedule anomaly score saving job for heat pumps'
 
 heatpumps-create-anomaly-alert:
   0:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_anomaly_score_alert_create.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_anomaly_score_alert_create.png
     title: 'Create anomaly score alert for heat pumps in ThingsBoard device profile'
   1:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_anomaly_score_alert_configuration.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_anomaly_score_alert_configuration.png
     title: 'Configure anomaly score alert create and clear rules'
   2:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_anomaly_score_alert_creation_condition.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_anomaly_score_alert_creation_condition.png
     title: 'Configure anomaly score threshold for alert creation'
   3:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_anomaly_score_alert_clear_condition.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_anomaly_score_alert_clear_condition.png
     title: 'Configure anomaly score threshold for alert clearing'
 
 heatpumps-notify-about-anomalies:
   0:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_open_root_rulechain.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_open_root_rulechain.png
     title: 'Open root rule chain in ThingsBoard'
   1:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_send_email_node_configuration.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_send_email_node_configuration.png
     title: 'Add toEmail rule node to root rule chain'
   2:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_email_notification_config.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_email_notification_config.png
     title: 'Configure email properties for notification'
   3:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_add_send_email_node.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_add_send_email_node.png
     title: 'Add send email node to root rule chain'
   4:
-    image: /images/trendz/guide/heatpump_anomalies/heatpump_anomaly_send_notification_rulechain.png
+    image: https://img.thingsboard.io/trendz/guide/heatpump_anomalies/heatpump_anomaly_send_notification_rulechain.png
     title: 'Configured rule chain for sending anomaly notifications about discovered anomalies in heat pumps'
 
 ---

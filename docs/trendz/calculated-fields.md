@@ -28,7 +28,7 @@ Let's assume that sensor submit boiler temperature in Celsius and we want conver
     return fahrenheit;
 {% endhighlight %}   
 
-![image](/images/trendz/calculated-simple.png)
+![image](https://img.thingsboard.io/trendz/calculated-simple.png)
 
 ## Multiple fields for calculation
 
@@ -54,9 +54,9 @@ For implementing this we need to:
     return (energy + heat) / size;
 {% endhighlight %}   
 
-![image](/images/trendz/calculated-complex-config.png)
+![image](https://img.thingsboard.io/trendz/calculated-complex-config.png)
 
-![image](/images/trendz/calculated-complex-result.png)
+![image](https://img.thingsboard.io/trendz/calculated-complex-result.png)
 
 ## Get original field value
 

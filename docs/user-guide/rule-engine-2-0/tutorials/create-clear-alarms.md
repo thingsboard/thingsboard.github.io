@@ -29,7 +29,7 @@ We assume you have completed the following guides and reviewed the articles list
 
 Add Device entity in ThingsBoard. Its name is **Thermostat Home** and its type is **Thermostat**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/add-device.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms v2/add-device.png)
 
 <br>
 
@@ -56,11 +56,11 @@ In this tutorial, we modified our **Root Rule Chain** and also created Rule Chai
 
   - **Create & Clear Alarms:**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/create-clear-alarm-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms v2/create-clear-alarm-chain.png)
 
  - **Root Rule Chain:**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/root-rule-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms v2/root-rule-chain.png)
 
 <br>
 
@@ -79,7 +79,7 @@ Configuration:
 
 - Name : **Create & Clear Alarms**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/add-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms v2/add-chain.png)
 
 New Rule Chain is created. Press **Edit** button and configure Chain.
 
@@ -97,7 +97,7 @@ If the temperature is in the expected interval the script will return False, oth
 
 - Enter the Name field as **Under Threshold**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/filter-alarm.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms v2/filter-alarm.png)
 
 ###### Node B: **Create alarm**
 - Add the **Create alarm** node and connect it to the **Filter Script** node with a relation type **True**. <br>
@@ -105,7 +105,7 @@ If the temperature is in the expected interval the script will return False, oth
 
  - Enter the Name field as **Create alarm** and the Alarm type as **Critical Temperature**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/create-alarm.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms v2/create-alarm.png)
 
 ###### Node C: **Clear Alarm**
 - Add the **Clear Alarm** node and connect it to the **Filter Script** node with a relation type **False**. <br>
@@ -113,14 +113,14 @@ If the temperature is in the expected interval the script will return False, oth
 
 - Enter the Name field as **Clear Alarm** and the Alarm type as **Critical Temperature**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/clear-alarm.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms v2/clear-alarm.png)
 
 
 #### Modify Root Rule Chain
 
 The following screenshot shows the initial Root Rule Chain.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/check relation/initial-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/check relation/initial-chain.png)
 
 The initial Rule Chain has been modified by adding the following node:
 
@@ -130,13 +130,13 @@ The initial Rule Chain has been modified by adding the following node:
 
 - Enter the Name field as **Create & Clear Alarms**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/add-chain-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms v2/add-chain-node.png)
 
 <br>
 
 The following screenshot shows how the final **Root Rule Chain** should look like:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/root-rule-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/root-rule-chain.png)
 
 <br>
 <br>
@@ -146,14 +146,14 @@ The following screenshot shows how the final **Root Rule Chain** should look lik
 For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api). For this we will need to
 copy device access token from the device **Thermometer**.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/delta-validation/access-token.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/delta-validation/access-token.png)
 
 {% highlight bash %}**you need to replace $ACCESS_TOKEN with actual device token**{% endhighlight %}
 
 Let's pushed debug mode button in Clear Alarm and Create Alarm node to verify the results.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/debug-mode-clear-alarm.png)<br>
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/debug-mode-create-alarm.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms v2/debug-mode-clear-alarm.png)<br>
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms v2/debug-mode-create-alarm.png)
 
 sent temperature = 99. Alarm should be created:
 
@@ -161,7 +161,7 @@ sent temperature = 99. Alarm should be created:
 curl -v -X POST -d '{"temperature":99}' http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/alarm-created.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms v2/alarm-created.png)
 
 Lets post temperature = 180. Alarm should be updated:
 
@@ -169,7 +169,7 @@ Lets post temperature = 180. Alarm should be updated:
 curl -v -X POST -d '{"temperature":180}' http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/alarm-updated.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms v2/alarm-updated.png)
 
 Lets post temperature = 30. Alarm should be cleared:
 
@@ -177,7 +177,7 @@ Lets post temperature = 30. Alarm should be cleared:
 curl -v -X POST -d '{"temperature":30}' http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms v2/alarm-cleared.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms v2/alarm-cleared.png)
 
 <br>
 

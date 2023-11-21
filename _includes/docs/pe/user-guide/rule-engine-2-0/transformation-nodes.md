@@ -17,7 +17,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-group.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-group.png)
 
 Duplicates message to all entities belonging to specific [Entity Group](/docs/{{peDocsPrefix}}user-guide/groups/).
 
@@ -29,7 +29,7 @@ For each entity from group new message is created with entity as originator and 
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-group-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-group-config.png)
 
 - **Entity group is message originator** - if set, message originator will be considered as Entity Group used to fetch entities.
   In this case incoming message will be routed via **Failure** chain if message originator type is not Entity Group.
@@ -52,7 +52,7 @@ Otherwise original message will be forwarded via **Failure** chain.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-related.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-related.png)
 
 Duplicates message to related entities fetched by relation query.
 
@@ -62,7 +62,7 @@ For each found related entity new message is created with related entity as orig
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-related-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/transformation-duplicate-to-related-config.png)
 
 - **Relations query** - query used to find new entities starting from incoming message originator.
   In ‘Relations query’ configuration Administrator can select required **Direction** and **relation depth level**. Also set of **Relation filters** can be configured with required Relation type and Entity Types.

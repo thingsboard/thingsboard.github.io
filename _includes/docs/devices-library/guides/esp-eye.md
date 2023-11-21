@@ -9,7 +9,7 @@
 
 ## Introduction
 
-![ESP-EYE](/images/devices-library/esp-eye.png){: style="float: left; max-width: 150px; max-height: 150px; margin: 0px 10px 0px 10px"}
+![ESP-EYE](https://img.thingsboard.io/devices-library/esp-eye.png){: style="float: left; max-width: 150px; max-height: 150px; margin: 0px 10px 0px 10px"}
 [ESP-EYE](https://www.espressif.com/en/products/devkits/esp-eye/overview) is a development board for image recognition and audio processing, which can be used in various AIoT applications.  
 It features an ESP32 chip, a 2-Megapixel camera and a microphone. ESP-EYE offers plenty of storage, with an 8 Mbyte PSRAM and a 4 Mbyte flash.  
 It also supports image transmission via Wi-Fi and debugging through a Micro-USB port.

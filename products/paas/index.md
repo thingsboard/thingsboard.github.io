@@ -25,31 +25,31 @@ description:
 		</div>
         <div id="cards" class="row">
             <div class="col-lg-6">
-                <div><img src="/images/paas/improved-time.svg" alt="Improved time to market">
+                <div><img src="https://img.thingsboard.io/paas/improved-time.svg" alt="Improved time to market">
                 <h2>Improved time to market</h2>
                 <p>Save time on maintenance of the platform or configuration of the features.</p>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div><img src="/images/paas/advanced-features.svg" alt="Advanced features">
+                <div><img src="https://img.thingsboard.io/paas/advanced-features.svg" alt="Advanced features">
                 <h2>Advanced features</h2>
                 <p>Platform supports all <a href="/products/thingsboard-pe/">Professional Edition</a> features and advanced <a href="/products/paas/domains/">domain management</a>.</p>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div><img src="/images/paas/reduced-costs.svg" alt="Reduced costs">
+                <div><img src="https://img.thingsboard.io/paas/reduced-costs.svg" alt="Reduced costs">
                 <h2>Reduced costs</h2>
                 <p>The cost of the cluster infrastructure is shared between the users of the platform.</p>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div><img src="/images/paas/high-availability.svg" alt="High availability">
+                <div><img src="https://img.thingsboard.io/paas/high-availability.svg" alt="High availability">
                 <h2>High availability</h2>
                 <p>ThingsBoard Cloud uses microservices architecture and is deployed in multiple availability zones.</p>
                 </div>
             </div>
             <div class="col-lg-6">
-                <div><img src="/images/paas/data-durability.svg" alt="Data durability">
+                <div><img src="https://img.thingsboard.io/paas/data-durability.svg" alt="Data durability">
                 <h2>Data durability</h2>
                 <p>Platform uses data replication and backup procedures to make sure you don’t lose the data.</p>
                 </div>
@@ -77,33 +77,33 @@ description:
             <tbody>
                 <tr>
                     <th>Asset management & Data collection</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>End-user real-time dashboards</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>Customizable rule chains, widgets</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>MQTT, HTTP, CoAP, OPC-UA transport</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>Integrations with BigData systems</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>NB-IoT, SigFox, LoRaWAN support</th>
@@ -112,58 +112,58 @@ description:
                     <td>Advanced</td>
                 </tr>
                 <tr>
-                    <th><a href="/docs/user-guide/rule-engine-2-0/overview/">Rule Engine: Components<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                    <th><a href="/docs/user-guide/rule-engine-2-0/overview/">Rule Engine: Components<img src="https://img.thingsboard.io/pe/help-black18.svg" alt="help"></a></th>
                     <td>Basic</td>
                     <td>Advanced</td>
                     <td>Advanced</td>
                 </tr>
                 <tr>
-                    <th><a href="/docs/user-guide/groups/">Entity groups<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <th><a href="/docs/user-guide/groups/">Entity groups<img src="https://img.thingsboard.io/pe/help-black18.svg" alt="help"></a></th>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th><a href="/docs/user-guide/rbac/">Advanced RBAC for IoT<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <th><a href="/docs/user-guide/rbac/">Advanced RBAC for IoT<img src="https://img.thingsboard.io/pe/help-black18.svg" alt="help"></a></th>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th><a href="/docs/user-guide/scheduler/">Scheduler<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <th><a href="/docs/user-guide/scheduler/">Scheduler<img src="https://img.thingsboard.io/pe/help-black18.svg" alt="help"></a></th>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th><a href="/docs/user-guide/reporting/">Reporting<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <th><a href="/docs/user-guide/reporting/">Reporting<img src="https://img.thingsboard.io/pe/help-black18.svg" alt="help"></a></th>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th><a href="/docs/user-guide/white-labeling/">White-labeling<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <th><a href="/docs/user-guide/white-labeling/">White-labeling<img src="https://img.thingsboard.io/pe/help-black18.svg" alt="help"></a></th>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th><a href="/docs/user-guide/csv-xls-data-export/">CSV/XLS data export<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <th><a href="/docs/user-guide/csv-xls-data-export/">CSV/XLS data export<img src="https://img.thingsboard.io/pe/help-black18.svg" alt="help"></a></th>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th><a href="/docs/user-guide/integrations/">Platform Integrations<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <th><a href="/docs/user-guide/integrations/">Platform Integrations<img src="https://img.thingsboard.io/pe/help-black18.svg" alt="help"></a></th>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
-                    <th><a href="/products/paas/domains/">Domain management<img src="/images/pe/help-black18.svg" alt="help"></a></th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <th><a href="/products/paas/domains/">Domain management<img src="https://img.thingsboard.io/pe/help-black18.svg" alt="help"></a></th>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
             </tbody>
     </table>

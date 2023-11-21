@@ -27,59 +27,59 @@ description:
             <thead>
                 <tr>
                     <td></td>
-                    <th><img src="/images/partners/silver-partner.svg" alt="silver"></th>
-                    <th><img src="/images/partners/gold-partner.svg" alt="gold"></th>
-                    <th><img src="/images/partners/platinum-partner.svg" alt="platinum"></th>
+                    <th><img src="https://img.thingsboard.io/partners/silver-partner.svg" alt="silver"></th>
+                    <th><img src="https://img.thingsboard.io/partners/gold-partner.svg" alt="gold"></th>
+                    <th><img src="https://img.thingsboard.io/partners/platinum-partner.svg" alt="platinum"></th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <th>Partner name and logo on ThingsBoard website</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>Online tutorial how to connect and use your devices with ThingsBoard prepared by Partner</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>Online tutorial how to connect and use your devices with ThingsBoard prepared by ThingsBoard</th>
                     <td>optional *</td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>Ability to use ThingsBoard Connected logo on partner website</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>Joint online demo of end-to-end use case</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>Social Media Blogging</th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>Joint webinars</th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>Success stories</th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>Technical Support</th>
@@ -89,33 +89,33 @@ description:
                 </tr>
                 <tr>
                     <th>ThingsBoard Roadmap and early-access to pre-release features</th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>      
                 <tr>
                     <th>ThingsBoard Trainings</th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>    
                 <tr>
                     <th>ThingsBoard Cluster and Infrastructure planning for production workloads</th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked"></td>
                 </tr>
                 <tr>
                     <th>Demo Portal Account</th>
-                    <td><img src="/images/pe/checked.svg" alt="checked">**</td>
-                    <td><img src="/images/pe/checked.svg" alt="checked">**</td>
-                    <td><img src="/images/pe/checked.svg" alt="checked">**</td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked">**</td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked">**</td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked">**</td>
                 </tr>
                 <tr>
                     <th>White-labeling</th>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
-                    <td><img src="/images/pe/checked.svg" alt="checked">***</td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="https://img.thingsboard.io/pe/checked.svg" alt="checked">***</td>
                 </tr>
                 <tr>
                     <th>Demo dashboard development by ThingsBoard</th>

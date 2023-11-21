@@ -2,8 +2,8 @@
 - After installation, launch the **UA Admin Dialog**
 - Verify that the **Endpoint URL** is set correctly and remember the values of **Endpoint Host** and **Endpoint Port**. These values will be needed during the OPC-UA Integration setup
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-server-config.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-server-config.png)
 
 - Launch the **UaCPPServer**. The console dialog will open showing the server endpoints URLs
 
-![image](/images/user-guide/integrations/opc-ua/opc-ua-server-config-2.png)
+![image](https://img.thingsboard.io/user-guide/integrations/opc-ua/opc-ua-server-config-2.png)

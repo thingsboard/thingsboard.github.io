@@ -4,7 +4,7 @@ In case you have not found out how to connect your device using the diagram or s
 {% endcapture %}
 {% include templates/info-banner.md content=connectivityContent %}
 
-<object width="100%" style="max-width: max-content;" data="/images/connectivity.svg"></object>
+<object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/connectivity.svg"></object>
 
 {% assign peDocsPrefix = '' %}
 {% if docsPrefix == 'paas/' %}

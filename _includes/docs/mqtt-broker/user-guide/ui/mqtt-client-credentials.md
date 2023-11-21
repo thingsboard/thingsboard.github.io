@@ -18,7 +18,7 @@ Before using any of the client credential types mentioned above, please ensure t
 
 Note that on the Web UI _Home page_, you can check the current state of those parameters on the Configuration card.
 
-![image](/images/mqtt-broker/user-guide/ui/config-card.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/config-card.png)
 
 For more information on security issues, please consult this [guide](/docs/mqtt-broker/security/).
 
@@ -78,7 +78,7 @@ Broker administrators can modify the password for MQTT Basic client credentials.
 The **certificate's common name (CN)** should exactly match the client's or, if present, one of the parent's certificate CN. 
 Authentication will fail if none of the certificates in the chain has the same CN.
 
-![image](/images/mqtt-broker/user-guide/ui/ssl-credentials-1.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ssl-credentials-1.png)
 
 ##### Authorization Rules
 
@@ -93,7 +93,7 @@ Please consider the following examples:
 * If Subscribe authorization rule patterns is set to default value `.*` - client will be able to subscribe to any topic.
 * If Publish/Subscribe authorization rules has no rules (field is empty) - client will be forbidden to publish/subscribe to any topics.
 
-![image](/images/mqtt-broker/user-guide/ui/ssl-credentials-2.png)
+![image](https://img.thingsboard.io/mqtt-broker/user-guide/ui/ssl-credentials-2.png)
 
 ### Delete Client Credentials
 

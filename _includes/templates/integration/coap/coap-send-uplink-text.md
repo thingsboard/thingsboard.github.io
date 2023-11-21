@@ -11,8 +11,8 @@ echo -e 'SN-001,default,temperature,25.7,humidity,69' | coap-client -m post $YOU
 {: .copy-code}
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/coap/terminal-text-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/coap/terminal-text-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/coap/terminal-text-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/coap/terminal-text-paas.png)
 {% endif %}

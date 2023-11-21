@@ -9,7 +9,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 UDOO X86 II is the New PC: the most powerful x86 maker board ever and an Arduino™ Leonardo-compatible platform, all embedded on the same board.
 On UDOO X86 II you can run all the software available for the PC world, from gaming to video streaming, from graphical editors to professional development platforms, plus all the software or the Arduino™ Leonardo world, including all the sketches, libraries and the official Arduino™ Leonardo IDE.
 It is based on Quad Core 64-bit new-generation x86 processors made by Intel®, designed for the PC domain.

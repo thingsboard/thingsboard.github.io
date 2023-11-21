@@ -5,4 +5,4 @@ echo -e -n '{"deviceName": "SN-001", "deviceType": "default", "temperature": 25.
 ```
 {: .copy-code}
 
-![image](/images/user-guide/integrations/udp/terminal-json.png)
+![image](https://img.thingsboard.io/user-guide/integrations/udp/terminal-json.png)

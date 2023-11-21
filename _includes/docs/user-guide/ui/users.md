@@ -30,21 +30,21 @@ If you are the **System administrator,** you can create the user in [Tenant](/do
 
 1. Go to Tenants on the left-hand menu. Navigate to Tenant admins, and click plus icon to add a new user.
 
-   ![image](/images/user-guide/ui/users/ce/tenant-user-add.png)
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/tenant-user-add.png)
 
 2. Fill in the email and select the activation method in the Add User window. 
 The system administrator can also add the name and description optionally. Afterward click Add.
 
-   ![image](/images/user-guide/ui/users/ce/user-add-window.png)
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/user-add-window.png)
 
 3. If you selected the **activation link method,** click the arrow to copy this link and insert it in the browser or to any messenger used by the user. An example of an activation link is provided below.
 
-   ![image](/images/user-guide/ui/users/ce/user-activation-link.png)
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/user-activation-link.png)
 
 4. If you selected send **activation mail option,** then you need to check your email box and find the message about the Thingsboard account activation. 
 Click Activate Your Account, and follow the easy password-creating process.
 
-   ![image](/images/user-guide/ui/users/ce/account-activation-email.png)
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/account-activation-email.png)
 
 {% capture difference %}
 **NOTE:**
@@ -69,20 +69,20 @@ They are as follows:
 
 5) The System Administrator can also **delete** the Tenant administrator from the tenants' users list.
 
-   ![image](/images/user-guide/ui/users/ce/user-tenant-tabs.png)
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/user-tenant-tabs.png)
 
 When the admin clicks Disable User Account, he will see a message in the top left corner saying that the user account has been successfully disabled, and the tab will change to Enable User Account. 
 See the picture below.
 
-   ![image](/images/user-guide/ui/users/ce/user-account-disabled.png)
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/user-account-disabled.png)
 
 If the user with a disabled account tries to access the platform, he will see the following error message.
 
-   ![image](/images/user-guide/ui/users/ce/error-message.png)
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/error-message.png)
 
 Similarly, when the admin clicks Enable User Account, he will see the message in the top left corner that the user account has been successfully enabled. The tab will change to Disable User Account. See the picture below.
 
-   ![image](/images/user-guide/ui/users/ce/user-account-enabled.png)
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/user-account-enabled.png)
 
 ### Tenant administrator
 
@@ -90,12 +90,12 @@ As a **Tenant administrator**, you can add a new user using the following steps.
 
 1. Go to Customers. Navigate to Customer Users, and click the plus icon to add a new user. 
 
-   ![image](/images/user-guide/ui/users/ce/customer-user-add.png)
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/customer-user-add.png)
 
 2. Be sure to fill in the email and select the activation method in the Add User window.
 The Tenant administrator can add the name and description optionally. When done, click Add.
 
-   ![image](/images/user-guide/ui/users/ce/customer-user-add-window.png)
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/customer-user-add-window.png)
 
 3. When the user is created, the Tenant Administrator can use the action tabs on the user details page. 
 
@@ -112,17 +112,17 @@ They are as follows:
 5) The Tenant Administrator can also **delete the Customer user** from the customers’ list.
 
 
-   ![image](/images/user-guide/ui/users/ce/customer-user-account-disable.png)
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/customer-user-account-disable.png)
 
 The Tenant administrator can optionally assign the default dashboard and set the fullscreen mode, as shown in the picture below.
 
 
-   ![image](/images/user-guide/ui/users/ce/default-dashboard-assigned.png)
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/default-dashboard-assigned.png)
 
 Likewise, the Tenant administrator can optionally assign the home dashboard for the Customer user and hide the dashboard toolbar, as shown in the picture below.
 
 
-   ![image](/images/user-guide/ui/users/ce/home-dashboard-assigned.png) 
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/home-dashboard-assigned.png) 
 
 **IMPORTANT**: There is no need to assign a default dashboard and home dashboard together since the default dashboard will be the first one a user sees when he logs into his account.
 
@@ -136,13 +136,13 @@ When the Customer user logs into his account, the default dashboard is the first
 The dashboard toolbar will always be available for the user, and he can switch to another dashboard, if one is assigned, and set realtime ranges for himself.
 Additionally, there is an option to export this dashboard.
 
-   ![image](/images/user-guide/ui/users/ce/default-dashboard.png) 
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/default-dashboard.png) 
 
 
 Customer users can switch between the left-hand menu tabs to view all the assets, devices, entities, edges, and dashboards assigned by the Tenant administrator if the fullscreen mode is not check-marked.
 The dashboard example is shown below.
 
-   ![image](/images/user-guide/ui/users/ce/default-dashboard-not-fullscreen-1.png) 
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/default-dashboard-not-fullscreen-1.png) 
 
 
 #### Home dashboard as the home page
@@ -151,16 +151,16 @@ If the Tenant administrator assigns the dashboard as the home dashboard, then th
 If Hide home dashboard toolbar is selected, then the Customer user will see the home dashboard without the toolbar.
 The dashboard with the disabled toolbar is shown below.
 
-  ![image](/images/user-guide/ui/users/ce/home-dashboard-no-toolbar.png)    
+  ![image](https://img.thingsboard.io/user-guide/ui/users/ce/home-dashboard-no-toolbar.png)    
 
 The dashboard with the enabled toolbar is shown in the picture below. The user can set real-time ranges and export the dashboard.
 
 
-   ![image](/images/user-guide/ui/users/ce/home-dashboard-toolbar.png)
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/home-dashboard-toolbar.png)
 
 The Customer user can also optionally hide the home dashboard toolbar or change the home dashboard in his profile settings.
    
-   ![image](/images/user-guide/ui/users/ce/profile-window.png)  
+   ![image](https://img.thingsboard.io/user-guide/ui/users/ce/profile-window.png)  
 
 ## Next steps
 

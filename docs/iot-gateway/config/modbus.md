@@ -379,11 +379,11 @@ Optional parameters:
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-modbus-attributes-1.png)
+![image](https://img.thingsboard.io/gateway/gateway-modbus-attributes-1.png)
 {: refdef}
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-modbus-attributes-2.png)
+![image](https://img.thingsboard.io/gateway/gateway-modbus-attributes-2.png)
 {: refdef}
 
 ##### Key settings for "timeseries"
@@ -429,11 +429,11 @@ Configuration in this unit provides settings for processing data on Modbus serve
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-modbus-timeseries-1.png)
+![image](https://img.thingsboard.io/gateway/gateway-modbus-timeseries-1.png)
 {: refdef}
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-modbus-timeseries-2.png)
+![image](https://img.thingsboard.io/gateway/gateway-modbus-timeseries-2.png)
 {: refdef}
 
 ##### Key settings for "attributeUpdates"
@@ -466,17 +466,17 @@ Configuration in this unit provides settings for Attribute update requests from 
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-modbus-attributeUpdates-1.png)
+![image](https://img.thingsboard.io/gateway/gateway-modbus-attributeUpdates-1.png)
 {: refdef}
 
 For example, create a new attribute “maxTemperature” and give it a value “25”.
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-modbus-attributeUpdates-2.png)
+![image](https://img.thingsboard.io/gateway/gateway-modbus-attributeUpdates-2.png)
 {: refdef}
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-modbus-attributeUpdates-3.png)
+![image](https://img.thingsboard.io/gateway/gateway-modbus-attributeUpdates-3.png)
 {: refdef}
 
 ##### Key settings for "rpc"
@@ -509,7 +509,7 @@ Configuration in this unit provides settings for RPC requests from ThingsBoard p
 ```
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-modbus-rpc-1.png)
+![image](https://img.thingsboard.io/gateway/gateway-modbus-rpc-1.png)
 {: refdef}
 
 To send RPC requests to the gateway the one should use RPC Debug Terminal from Control widgets bundle.
@@ -519,7 +519,7 @@ Execute "maxTemperature_read" RPC request from the ThingsBoard instance to the d
 In response, you should receive the previously recorded value - "25".
 
 {:refdef: style="text-align: left;"}
-![image](/images/gateway/gateway-modbus-rpc-2.png)
+![image](https://img.thingsboard.io/gateway/gateway-modbus-rpc-2.png)
 {: refdef}
 
 

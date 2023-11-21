@@ -24,7 +24,7 @@ The application that is running on Arduino UNO is written using Arduino SDK whic
 
 Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
 
-![image](/images/samples/arduino/sim808-htu21d/dashboard.png)
+![image](https://img.thingsboard.io/samples/arduino/sim808-htu21d/dashboard.png)
 
 {% include templates/prerequisites.md %}
 
@@ -32,15 +32,15 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
  - Arduino UNO
 
-   ![image](/images/samples/arduino/sim808-htu21d/arduino-uno-pinout.png)
+   ![image](https://img.thingsboard.io/samples/arduino/sim808-htu21d/arduino-uno-pinout.png)
 
  - [HTU21D sensor](https://www.sparkfun.com/products/13763)
 
-   ![image](/images/samples/arduino/sim808-htu21d/htu21d.jpg)
+   ![image](https://img.thingsboard.io/samples/arduino/sim808-htu21d/htu21d.jpg)
 
  - [SIM808 GSM shield](https://www.elecrow.com/wiki/index.php?title=SIM808_GPRS/GSM%2BGPS_Shield_v1.1)
 
-   ![image](/images/samples/arduino/sim808-htu21d/sim808_shield.jpg)
+   ![image](https://img.thingsboard.io/samples/arduino/sim808-htu21d/sim808_shield.jpg)
 
 ## Wiring
 
@@ -61,11 +61,11 @@ Connect HTU21D in following manner:
 
 Double-check that your wiring follows schematics below:
 
-   ![image](/images/samples/arduino/sim808-htu21d/arduino-uno-sim808-htu21d.png)
+   ![image](https://img.thingsboard.io/samples/arduino/sim808-htu21d/arduino-uno-sim808-htu21d.png)
 
 The complete setup will look like that:
 
-   ![image](/images/samples/arduino/sim808-htu21d/arduino-uno-sim808-htu21d-photo.png)
+   ![image](https://img.thingsboard.io/samples/arduino/sim808-htu21d/arduino-uno-sim808-htu21d-photo.png)
 
 ## Device provisioning
 
@@ -79,13 +79,13 @@ If you loaded the demo data during TB installation, the next credentials can be 
 
 Go to "Devices" section. Click "+" button and create a device with the name "Arduino UNO Demo Device". Set "Device type" to "default".
 
-![image](/images/samples/arduino/sim808-htu21d/device.png)
+![image](https://img.thingsboard.io/samples/arduino/sim808-htu21d/device.png)
 
 Once device created, open its details and click "Manage credentials".
 
 Copy auto-generated access token from the "Access token" field. Please save this device token. It will be referred to later as **$ACCESS_TOKEN**.
 
-![image](/images/samples/arduino/sim808-htu21d/credentials.png)
+![image](https://img.thingsboard.io/samples/arduino/sim808-htu21d/credentials.png)
 
 ## Provision your dashboard
 
@@ -111,15 +111,15 @@ To simplify application development, install the ThingsBoard Arduino SDK and its
 
 1. Find and install **ThingsBoard Arduino SDK** and **PubSubClient by Nick O'Leary** libraries.
 
-   ![image](/images/samples/arduino/sim808-htu21d/install-tb-arduino.png)
+   ![image](https://img.thingsboard.io/samples/arduino/sim808-htu21d/install-tb-arduino.png)
 
 1. Install **ArduinoJSON** library **v6.9.1** or higher. <span style="color:red">Avoid installing beta releases of the ArduinoJson library</span>.
 
-   ![image](/images/samples/arduino/sim808-htu21d/do-not-use-beta-version-arduinojson.png)
+   ![image](https://img.thingsboard.io/samples/arduino/sim808-htu21d/do-not-use-beta-version-arduinojson.png)
 
 1. Install **ArduinoHttpClient** library.
 
-   ![image](/images/samples/arduino/sim808-htu21d/install-http-arduino.png)
+   ![image](https://img.thingsboard.io/samples/arduino/sim808-htu21d/install-http-arduino.png)
 
 From now on, you can use ThingsBoard SDK right from Arduino IDE.
 
@@ -127,13 +127,13 @@ From now on, you can use ThingsBoard SDK right from Arduino IDE.
 
 Use SparkFun HTU21D library, as shown in the screenshot below.
 
-![image](/images/samples/arduino/sim808-htu21d/install-htu21d.png)
+![image](https://img.thingsboard.io/samples/arduino/sim808-htu21d/install-htu21d.png)
 
 ### Step 4. Install SIM808 driver
 
 The SIM808 is support by the TinyGSM driver, which can be installed as described below.
 
-![image](/images/samples/arduino/sim808-htu21d/install-tinygsm.png)
+![image](https://img.thingsboard.io/samples/arduino/sim808-htu21d/install-tinygsm.png)
 
 ### Step 5. Prepare and upload a sketch.
 
@@ -172,7 +172,7 @@ in case of local ThingsBoard installation.
 Go to **"Devices"** section and locate **"Arduino UNO Demo Device"**, open device details and switch to **"Latest telemetry"** tab.
 If all is configured correctly you should be able to see latest values of *humidity* and *temperature* in the table.
 
-![image](/images/samples/arduino/sim808-htu21d/telemetry.png)
+![image](https://img.thingsboard.io/samples/arduino/sim808-htu21d/telemetry.png)
 
 After, open **"Dashboards"** section then locate and open **"dashboard  Arduino Uno with SIM808 Shield and HTU21D sensor"**.
 As a result, you will see two time-series charts and digital gauges displaying humidity and temperature level (similar to dashboard image in the introduction).

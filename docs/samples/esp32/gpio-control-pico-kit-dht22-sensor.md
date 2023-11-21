@@ -22,7 +22,7 @@ Current GPIO state and GPIO control widget is visualized using built-in customiz
 
 Once you complete this sample/tutorial, you will see your sensor data on the following dashboard.
 
- ![image](/images/samples/esp32/gpio-temperature/dashboard.png)
+ ![image](https://img.thingsboard.io/samples/esp32/gpio-temperature/dashboard.png)
 
 ## List of hardware
 
@@ -32,7 +32,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
  - [DHT22 sensor](https://www.aliexpress.com/item/1pcs-DHT22-digital-temperature-and-humidity-sensor-Temperature-and-humidity-module-AM2302-replace-SHT11-SHT15/32316036161.html)
 
-  ![image](/images/samples/arduino/temperature/dht22-pinout.png)
+  ![image](https://img.thingsboard.io/samples/arduino/temperature/dht22-pinout.png)
 
  - 6 LEDs
  - 6 Resistors in range between 68Ω and 100Ω
@@ -64,7 +64,7 @@ All LEDs cathodes | Pico Ground
 
 The following picture summarizes the connections for this project:
 
-![image](/images/samples/esp32/gpio-temperature/wiring.png)
+![image](https://img.thingsboard.io/samples/esp32/gpio-temperature/wiring.png)
 
 ## Device provisioning
 
@@ -78,13 +78,13 @@ If you loaded the demo data during TB installation, the next credentials can be 
 
 Go to "Devices" section. Click "+" button and create a device with the name "ESP32 Pico Device". Set "Device type" to "default".
 
-![image](/images/samples/esp32/gpio-temperature/device.png)
+![image](https://img.thingsboard.io/samples/esp32/gpio-temperature/device.png)
 
 Once device created, open its details and click "Manage credentials".
 
 Copy auto-generated access token from the "Access token" field. Please save this device token. It will be referred to later as **$ACCESS_TOKEN**.
 
-![image](/images/samples/esp32/gpio-temperature/credentials.png)
+![image](https://img.thingsboard.io/samples/esp32/gpio-temperature/credentials.png)
 
 ## Provision your dashboard
 
@@ -113,13 +113,13 @@ The Pico board support must be added to Arduino IDE before any program can be bu
 
    into **Additional Boards Manager URL** field, as shown below:
 
-   ![image](/images/samples/esp32/gpio-temperature/add-esp32-url.png)
+   ![image](https://img.thingsboard.io/samples/esp32/gpio-temperature/add-esp32-url.png)
 
 1. Select **Tools -> Board... -> Board manager** menu.
 
 1. Enter **ESP32** in the search field. Click **Install**
 
-   ![image](/images/samples/esp32/gpio-temperature/install-esp32-arduino.png)
+   ![image](https://img.thingsboard.io/samples/esp32/gpio-temperature/install-esp32-arduino.png)
 
 ### Install Arduino ThingsBoard SDK
 
@@ -129,13 +129,13 @@ To simplify application development, install the ThingsBoard Arduino SDK and its
 
 1. Find and install **ThingsBoard Arduino SDK**, **PubSubClient by Nick O'Leary** and **ArduinoHttpClient** libraries.
 
-   ![image](/images/samples/esp32/gpio-temperature/install-thingsboard-arduino.png)
-   ![image](/images/samples/esp32/gpio-temperature/install-pubsubclient-arduino.png)
-   ![image](/images/samples/esp32/gpio-temperature/install-arduinohttpclient-arduino.png)
+   ![image](https://img.thingsboard.io/samples/esp32/gpio-temperature/install-thingsboard-arduino.png)
+   ![image](https://img.thingsboard.io/samples/esp32/gpio-temperature/install-pubsubclient-arduino.png)
+   ![image](https://img.thingsboard.io/samples/esp32/gpio-temperature/install-arduinohttpclient-arduino.png)
 
 1. Install **ArduinoJSON** library **v6.9.1** or higher. <span style="color:red">Avoid installing beta releases of the ArduinoJson library</span>.
 
-   ![image](/images/samples/esp32/gpio-temperature/do-not-use-beta-version-arduinojson.png)
+   ![image](https://img.thingsboard.io/samples/esp32/gpio-temperature/do-not-use-beta-version-arduinojson.png)
 
 From now on, you can use ThingsBoard SDK right from Arduino IDE.
 
@@ -149,7 +149,7 @@ DHT22 sensor, connected to the ESP32 requires a special driver. To install it, p
 
 1. Click install on "DHT22 Sensor Library for ESPx", as shown below:
 
-   ![image](/images/samples/esp32/gpio-temperature/install-esp32-dht22-arduino.png)
+   ![image](https://img.thingsboard.io/samples/esp32/gpio-temperature/install-esp32-dht22-arduino.png)
 
 ### Connect ESP32 Pico to PC
 
@@ -193,7 +193,7 @@ See **[live-demo](/docs/user-guide/live-demo/)** page for more details how to ge
 Go to **"Devices"** section and locate **"ESP32 Pico Device"**, open device details and switch to **"Latest telemetry"** tab.
 If all is configured correctly you should be able to see latest values of *"temperature"* and *"humidity"* in the table.
 
-![image](/images/samples/esp32/gpio-temperature/telemetry.png)
+![image](https://img.thingsboard.io/samples/esp32/gpio-temperature/telemetry.png)
 
 After, open **"Dashboards"** section then locate and open **"ESP32 Pico Dashboard"**.
 As a result, you will see a time-series chart displaying temperature and humidity level (similar to dashboard image in the introduction).

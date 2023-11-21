@@ -30,7 +30,7 @@ description: Installing ThingsBoard CE on Google Cloud Platform
                                        <a href="/docs/user-guide/install/cluster/gcp-self-hosted-setup/">
                                            <span>
                                                <div class="deployment-logo">
-                                                   <img width="" src="/images/install/cloud/gcp-vm.svg" title="Self-hosted setup using GCP VM instance" alt="GCP VM">
+                                                   <img width="" src="https://img.thingsboard.io/install/cloud/gcp-vm.svg" title="Self-hosted setup using GCP VM instance" alt="GCP VM">
                                                    <h5 class="title">Google Cloud Platform</h5>
                                                </div>
                                            </span>
@@ -40,7 +40,7 @@ description: Installing ThingsBoard CE on Google Cloud Platform
                                         <a href="/docs/user-guide/install/cluster/gcp-gke-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/gke.jpeg" title="Cluster setup with Google Kubernetes Engine" alt="GCP GKE">
+                                                    <img width="" src="https://img.thingsboard.io/install/cloud/gke.jpeg" title="Cluster setup with Google Kubernetes Engine" alt="GCP GKE">
                                                     <h5 class="title">Google Kubernetes Engine</h5>
                                                 </div>
                                             </span>

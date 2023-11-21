@@ -67,11 +67,11 @@ Here is a list of supported fields:
 After the first sign-in user should perform initial Topology Discovery. During this process, Trendz will analyze all Devices/Assets available in the ThingsBoard, their attributes/telemetry and all relations between them.
 As a result, Trendz will extract and save the collection of Business Entities. You can view and modify them on the `Settings` page.
 
-![image](/images/trendz/first-discovery.png)
+![image](https://img.thingsboard.io/trendz/first-discovery.png)
 
 <br>
 
-![image](/images/trendz/discover-results.png)
+![image](https://img.thingsboard.io/trendz/discover-results.png)
  
 #### Manual Topology rediscovery
 Business Entity does not represent a single Device or Asset, but the query that used for fetching Device/Asset from the ThingsBoard. It means that you do not need to update topology if new Devices Assets with the same type were added on the ThingsBoard.

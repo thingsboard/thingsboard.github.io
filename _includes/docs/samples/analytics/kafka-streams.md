@@ -13,14 +13,14 @@ This tutorial will demonstrate how you can:
 
 The analytics in this tutorial is, of course, quite simple, but our goal is to highlight the integration steps.
 
-![image](/images/samples/analytics/kafka-streams/kafka-streams-example.svg)
+![image](https://img.thingsboard.io/samples/analytics/kafka-streams/kafka-streams-example.svg)
 
 Let's assume we have a large number of solar panels which include a number of solar modules. 
 ThingsBoard is used to collect, store and visualize anomaly telemetry from these solar modules in each panels.
 
 We calculated anomaly by comparing value produced from a solar module with the average valued produced by all modules of the same panel and standard **deviation** of the same value.
 
-![image](/images/user-guide/integrations/kafka/deviation.png)
+![image](https://img.thingsboard.io/user-guide/integrations/kafka/deviation.png)
 
 We will analyze real-time data from multiple devices using [Kafka Streams](https://kafka.apache.org/documentation/streams/) job with 30 seconds window (configurable).
 
@@ -42,34 +42,34 @@ Of course, you should replace this with real data produced by real devices. This
 
 Let's create three devices with type "solar-module". If you are using ThingsBoard PE, you cna put them to new "Solar Modules" group.
 
-![image](/images/samples/analytics/kafka-streams/solar-module-devices.png) 
+![image](https://img.thingsboard.io/samples/analytics/kafka-streams/solar-module-devices.png) 
 
 Now, let's create three device simulators to push data directly to our local Kafka broker. 
 The simulated data will be pushed to the Kafka Rule Node, which is responsible for pushing data to Kafka topic. 
 Let's configure Kafka Rule Node first. We will use local Kafka server (localhost:9092) and topic "solar-module-raw".   
 
-![image](/images/samples/analytics/kafka-streams/add-kafka-rule-node.png)
+![image](https://img.thingsboard.io/samples/analytics/kafka-streams/add-kafka-rule-node.png)
 
 Now, let's add "generator" node for the first module. We will configure generator to constantly "produce" 5 watts. 
 
-![image](/images/samples/analytics/kafka-streams/add-module1-simulator-rule-node.png)
+![image](https://img.thingsboard.io/samples/analytics/kafka-streams/add-module1-simulator-rule-node.png)
 
 Add "generator" node for the second module. We will configure generator to constantly "produce" 5 watts as well. 
 
 Now, let's add "generator" node for the third module. We will configure generator to constantly "produce" 3.5 watts which simulates module degradation. 
 
-![image](/images/samples/analytics/kafka-streams/add-module3-simulator-rule-node.png)
+![image](https://img.thingsboard.io/samples/analytics/kafka-streams/add-module3-simulator-rule-node.png)
 
 The result rule chain should look similar to this one:
 
-![image](/images/samples/analytics/kafka-streams/simulator-rule-chain.png)
+![image](https://img.thingsboard.io/samples/analytics/kafka-streams/simulator-rule-chain.png)
 
 You can also download the rule chain [JSON file](/docs/samples/analytics/resources/solar_module_simulator.json) and [import](/docs/{{docsPrefix}}user-guide/ui/rule-chains/#rule-import) it to your project.
 
 Once the rule chain is imported, you should check the debug output of the Kafka node. If your Kafka is up and running at localhost, you should see similar debug messages. 
 Notice the absence of errors in debug log:   
 
-![image](/images/samples/analytics/kafka-streams/check-no-errors.png)
+![image](https://img.thingsboard.io/samples/analytics/kafka-streams/check-no-errors.png)
 
 ### Step 2. Launch Kafka Streams application.
 
@@ -259,7 +259,7 @@ Runtime.getRuntime().addShutdownHook(new Thread(streams::close));
 
 **Calculating anomaly data**
 
-![image](/images/user-guide/integrations/kafka/latex.png)
+![image](https://img.thingsboard.io/user-guide/integrations/kafka/latex.png)
  
 ```java
 private static boolean isAnomalyModule(SolarModuleAggregatorJoiner module) {
@@ -363,13 +363,13 @@ The purpose of the decoder function is to parse the incoming data and metadata t
 **deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional.
 **Attributes** and **telemetry** are flat key-value objects. Nested objects are not supported.
 
-![image](/images/samples/analytics/kafka-streams/add-converter.png)
+![image](https://img.thingsboard.io/samples/analytics/kafka-streams/add-converter.png)
 
 #### Configure Kafka Integration
 
 Let's create kafka integration that will subscribe to “solar-module-anomalies” topic.
 
-![image](/images/samples/analytics/kafka-streams/add-integration.png)
+![image](https://img.thingsboard.io/samples/analytics/kafka-streams/add-integration.png)
 
 ### Step 4. Configure Rule Engine to raise Alarms.
 

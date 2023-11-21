@@ -6,17 +6,17 @@ should pop up, and you will be prompted to upload the JSON file and click **“I
 
 {% assign importingDashboardPE = '
     ===
-        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-pe.png,
+        image: https://img.thingsboard.io/user-guide/dashboards/managing-dashboard/import-dashboard-1-pe.png,
     ===
-        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-pe.png,
+        image: https://img.thingsboard.io/user-guide/dashboards/managing-dashboard/import-dashboard-2-pe.png,
     '
 %}
 
 {% assign importingDashboardCE = '
     ===
-        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-1-ce.png,
+        image: https://img.thingsboard.io/user-guide/dashboards/managing-dashboard/import-dashboard-1-ce.png,
     ===
-        image: /images/user-guide/dashboards/managing-dashboard/import-dashboard-2-ce.png,
+        image: https://img.thingsboard.io/user-guide/dashboards/managing-dashboard/import-dashboard-2-ce.png,
     '
 %}
 
@@ -37,7 +37,7 @@ Then, choose a device with name My device from dropdown list and save entity ali
 If you did everything right, you have to see the following dashboard:
 
 {% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
-![imagePe](/images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-gateway-dashboard.png)
+![imagePe](https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-gateway-dashboard.png)
 {% else %}  
-![imageCe](/images/devices-library/ready-to-go-devices/ace-iot-gateway/ace-dashboard-1-ce.png)
+![imageCe](https://img.thingsboard.io/devices-library/ready-to-go-devices/ace-iot-gateway/ace-dashboard-1-ce.png)
 {% endif %}

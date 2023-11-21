@@ -22,25 +22,25 @@ This procedure applies to all KERNEL PLCs with the ARM microprocessor equipped w
 
 * [Step 1.1] Login to your ThingsBoard instance.
 <br>
-<img src="/images/samples/kernel/Thingsboard 000.png" width="400" alt="Thingsboard 1">
+<img src="https://img.thingsboard.io/samples/kernel/Thingsboard 000.png" width="400" alt="Thingsboard 1">
 <br>
 <br>
 
 * [Step 1.2] Open "Device Groups" page.
 <br>
-<img src="/images/samples/kernel/Thingsboard 002.png" width="1000" alt="Thingsboard 2">
+<img src="https://img.thingsboard.io/samples/kernel/Thingsboard 002.png" width="1000" alt="Thingsboard 2">
 <br>
 <br>
 
 * [Step 1.3] Navigate to default Device group “ALL”.
 <br>
-<img src="/images/samples/kernel/Thingsboard 003.png" width="1000" alt="Thingsboard 3">
+<img src="https://img.thingsboard.io/samples/kernel/Thingsboard 003.png" width="1000" alt="Thingsboard 3">
 <br>
 <br>
 
 * [Step 1.4] Click on the "+" icon in the top right corner of the table and then select "Add Device".
 <br>
-<img src="/images/samples/kernel/Thingsboard 004.png" width="1000" alt="Thingsboard 4">
+<img src="https://img.thingsboard.io/samples/kernel/Thingsboard 004.png" width="1000" alt="Thingsboard 4">
 <br>
 <br>
 
@@ -50,7 +50,7 @@ This procedure applies to all KERNEL PLCs with the ARM microprocessor equipped w
 
 * [Step 1.5] Now your device should be listed first, since the table sorts devices using the time of the creation by default.
 <br>
-<img src="/images/samples/kernel/Thingsboard 005.png" width="1000" alt="Thingsboard ">
+<img src="https://img.thingsboard.io/samples/kernel/Thingsboard 005.png" width="1000" alt="Thingsboard ">
 <br>
 <br>
 
@@ -61,19 +61,19 @@ To connect the PLC KERNEL device you need to get the device credentials first. T
 
 * [Step 2.1] Click on the device row in the table to open device details.
 <br>
-<img src="/images/samples/kernel/Thingsboard 006.png" width="1000" alt="Thingsboard 6">
+<img src="https://img.thingsboard.io/samples/kernel/Thingsboard 006.png" width="1000" alt="Thingsboard 6">
 <br>
 <br>
 
 * [Step 2.2] Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.
 <br>
-<img src="/images/samples/kernel/Thingsboard 007.png" width="1000" alt="Thingsboard 7">
+<img src="https://img.thingsboard.io/samples/kernel/Thingsboard 007.png" width="1000" alt="Thingsboard 7">
 <br>
 <br>
 
 * [Step 2.3] Open "LogicPaint".
 <br>
-<img src="/images/samples/kernel/LogicPaint 000.jpg" width="1000" alt="LogicPaint 0">
+<img src="https://img.thingsboard.io/samples/kernel/LogicPaint 000.jpg" width="1000" alt="LogicPaint 0">
 <br>
 <br>
 
@@ -83,31 +83,31 @@ To connect the PLC KERNEL device you need to get the device credentials first. T
 
 * [Step 2.5] Open menu “File” >> “Show Ethernet Port Configuration”.
 <br>
-<img src="/images/samples/kernel/LogicPaint 001.png" width="1000" alt="LogicPaint 1">
+<img src="https://img.thingsboard.io/samples/kernel/LogicPaint 001.png" width="1000" alt="LogicPaint 1">
 <br>
 <br>
 
 * [Step 2.6] Press the button “MQTT Configuration” :
 <br>
-<img src="/images/samples/kernel/LogicPaint 002.png" width="1000" alt="LogicPaint 2">
+<img src="https://img.thingsboard.io/samples/kernel/LogicPaint 002.png" width="1000" alt="LogicPaint 2">
 <br>
 <br>
 
 * [Step 2.7] Paste the copied access token into the indicated box :
 <br>
-<img src="/images/samples/kernel/LogicPaint 003.png" width="1000" alt="LogicPaint 3">
+<img src="https://img.thingsboard.io/samples/kernel/LogicPaint 003.png" width="1000" alt="LogicPaint 3">
 <br>
 <br>
 
 * [Step 2.8] Enter the following fields :
 <br>
-<img src="/images/samples/kernel/Table 000.png" width="1000" alt="Table 0">
+<img src="https://img.thingsboard.io/samples/kernel/Table 000.png" width="1000" alt="Table 0">
 <br>
 <br>
 
 * [Step 2.9] Add a slot for each value that needs to be monitored :
 <br>
-<img src="/images/samples/kernel/Table 001.png" width="1000" alt="Table 1">
+<img src="https://img.thingsboard.io/samples/kernel/Table 001.png" width="1000" alt="Table 1">
 <br>
 <br>
 
@@ -122,13 +122,13 @@ To connect the PLC KERNEL device you need to get the device credentials first. T
 * [Step 2.12] Once you have successfully published the “temperature” readings, you should immediately see them in the Device Telemetry Tab.
 Click on the device row in the table to open device details :
 <br>
-<img src="/images/samples/kernel/Thingsboard 006.png" width="1000" alt="Thingsboard 6">
+<img src="https://img.thingsboard.io/samples/kernel/Thingsboard 006.png" width="1000" alt="Thingsboard 6">
 <br>
 <br>
 
 * [Step 2.13] Navigate to the “Latest telemetry” tab :
 <br>
-<img src="/images/samples/kernel/Thingsboard 008.png" width="1000" alt="Thingsboard 8">
+<img src="https://img.thingsboard.io/samples/kernel/Thingsboard 008.png" width="1000" alt="Thingsboard 8">
 <br>
 <br>
 

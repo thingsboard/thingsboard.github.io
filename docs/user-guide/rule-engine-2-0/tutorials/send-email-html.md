@@ -5,29 +5,29 @@ description: Tutorial to send HTML page or image inside email message
 
 to_email_node:
   0:
-    image: /images/user-guide/rule-engine-2-0/tutorials/html-in-email/add_rule_node_to_email.png
+    image: https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/html-in-email/add_rule_node_to_email.png
   1:
-    image: /images/user-guide/rule-engine-2-0/tutorials/html-in-email/mail_body_type.png
+    image: https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/html-in-email/mail_body_type.png
   2:
-    image: /images/user-guide/rule-engine-2-0/tutorials/html-in-email/dynamic_body_template.png
+    image: https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/html-in-email/dynamic_body_template.png
 
 rule_chain:
   0:
-    image: /images/user-guide/rule-engine-2-0/tutorials/html-in-email/rule_chain.png
+    image: https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/html-in-email/rule_chain.png
 
 image_generator:
   0:
-    image: /images/user-guide/rule-engine-2-0/tutorials/html-in-email/function_generate_image_to_email.png
+    image: https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/html-in-email/function_generate_image_to_email.png
 
 results:
   0:
-    image: /images/user-guide/rule-engine-2-0/tutorials/html-in-email/message_from_tb_html.png
+    image: https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/html-in-email/message_from_tb_html.png
   1:
-    image: /images/user-guide/rule-engine-2-0/tutorials/html-in-email/message_from_tb_image.png
+    image: https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/html-in-email/message_from_tb_image.png
 
 html_generator:
   0:
-    image: /images/user-guide/rule-engine-2-0/tutorials/html-in-email/html_to_email_generator.png
+    image: https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/html-in-email/html_to_email_generator.png
 
 ---
 

@@ -22,15 +22,15 @@ Open [ThingsBoard Professional Edition BYOL](https://azuremarketplace.microsoft.
 
 - Click the **GET IT NOW** button
 
-![image](/images/user-guide/install/azure-marketplace/get-it-now.png)
+![image](https://img.thingsboard.io/user-guide/install/azure-marketplace/get-it-now.png)
 
 - Review and accept terms of use and privacy policy. Click the "Continue" button.
 
-![image](/images/user-guide/install/azure-marketplace/continue.png)
+![image](https://img.thingsboard.io/user-guide/install/azure-marketplace/continue.png)
 
 - You will be redirected to Azure Portal. Click the "Create" button to deploy your instance.
 
-![image](/images/user-guide/install/azure-marketplace/create.png)
+![image](https://img.thingsboard.io/user-guide/install/azure-marketplace/create.png)
 
 ### Step 2. General configuration
 
@@ -45,14 +45,14 @@ No worries, we are going to leave most of them with default values.
 - Configure "Administrator Account" to be "SSH public key". Username **must** be ubuntu; See [official Azure Docs](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/ssh-from-windows) on how to generate the keys.
 - Click the "Next: Disks" button. 
  
-![image](/images/user-guide/install/azure-marketplace/config-basics.png)
+![image](https://img.thingsboard.io/user-guide/install/azure-marketplace/config-basics.png)
 
 ###### Step 2.2 Disks
 
 - We suggest to leave this as-is, but you can optionally add new disks here;
 - Click the "Next: Networking" button.
 
-![image](/images/user-guide/install/azure-marketplace/config-disks.png)
+![image](https://img.thingsboard.io/user-guide/install/azure-marketplace/config-disks.png)
 
 ###### Step 2.3 Networking
 
@@ -60,7 +60,7 @@ No worries, we are going to leave most of them with default values.
 - Make sure This VM uses preconfigured network security group;
 - Click the "Next: Management" button.
 
-![image](/images/user-guide/install/azure-marketplace/config-networking.png)
+![image](https://img.thingsboard.io/user-guide/install/azure-marketplace/config-networking.png)
 
 ###### Step 2.3 Management, Advanced, Tags
 
@@ -73,15 +73,15 @@ No worries, we are going to leave most of them with default values.
 - Make sure your name, email address and phone number is correct;
 - Click the "Create" button to start the deployment.
 
-![image](/images/user-guide/install/azure-marketplace/config-review.png)
+![image](https://img.thingsboard.io/user-guide/install/azure-marketplace/config-review.png)
 
 - Once deployment is started it may take up to 30 minutes (but usually less then 5 minutes) to complete;
 
-![image](/images/user-guide/install/azure-marketplace/launch-progress.png)
+![image](https://img.thingsboard.io/user-guide/install/azure-marketplace/launch-progress.png)
 
 - Once your deployment is complete, click the "Go to resource" button.
 
-![image](/images/user-guide/install/azure-marketplace/launch-completed.png)
+![image](https://img.thingsboard.io/user-guide/install/azure-marketplace/launch-completed.png)
 
 ### Step 3. Review created resource
 
@@ -92,7 +92,7 @@ We will use it in our next steps.
 
 **As an example**, on the image below, the IP address is highlighted and set to "40.121.179.240" 
 
-![image](/images/user-guide/install/azure-marketplace/resource-overview.png)
+![image](https://img.thingsboard.io/user-guide/install/azure-marketplace/resource-overview.png)
 
 ### Step 4. Obtain your license secret
 

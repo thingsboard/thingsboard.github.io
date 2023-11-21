@@ -202,12 +202,12 @@ Response in REST Connector can have 3 variants of configuration:
        |---
 
    2. Configure RuleChain in ThingsBoard:
-      ![image](/images/gateway/custom-response-rule-chain-config.png)
+      ![image](https://img.thingsboard.io/gateway/custom-response-rule-chain-config.png)
       Finally, you have to configure rule node:
       1. Yellow Rule Node
-          ![image](/images/gateway/custom-response-yellow-rule-node.png)
+          ![image](https://img.thingsboard.io/gateway/custom-response-yellow-rule-node.png)
       2. Blue Rule Node
-          ![image](/images/gateway/custom-response-blue-rule-node.png)
+          ![image](https://img.thingsboard.io/gateway/custom-response-blue-rule-node.png)
 
 ### Attribute request section
 Configuration in this section are optional.

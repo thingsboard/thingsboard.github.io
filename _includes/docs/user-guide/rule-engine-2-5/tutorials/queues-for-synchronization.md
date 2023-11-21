@@ -25,26 +25,26 @@ In addition, you need to have at least one device provisioned in your environmen
 
 ## Step 1: Creating the Rule Chain
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/sync_rule_chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/sync_rule_chain.png)
 
 We will add two generator nodes that will generate seven messages each. First generator will produce a message with the counter value of 101.
 Second - with the value of 10. So the result should be 777.
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/generator1.png)
-![image](/images/user-guide/rule-engine-2-5/tutorials/generator2.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/generator1.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/generator2.png)
 
 Both messages will be put into the queue with the name **"SequentialByOriginator"**. It uses the message submit strategy called **"SEQUENTIAL_WITHIN_ORIGINATOR"** 
 {% unless docsPrefix == "paas/" %}(please, refer to [**configuration guide**](/docs/user-guide/install/{{docsPrefix}}config/) for more details){% endunless %} which means that
 the subsequent message will start being processed when the preceding message is acknowledged (is processed and deleted from the queue) based on the originator.
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/checkpoint.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/checkpoint.png)
 
 We will get the present "counter" value using **"Originator Attributes"** node.
-![image](/images/user-guide/rule-engine-2-5/tutorials/sync_originator_attributes.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/sync_originator_attributes.png)
 
 The calculations will be done using **"Counter Script"** node. 
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/sync_counter_script.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/sync_counter_script.png)
 
 The last step will be to save the new counter value using **"Save Attributes"** node.
 
@@ -52,11 +52,11 @@ The last step will be to save the new counter value using **"Save Attributes"** 
 
 Let's check that our logic is correct by saving the Rule Chain. The generators will automatically produce 14 messages:
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/sync_events.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/sync_events.png)
 
 The final counter value that is persisted for a device is:
 
-![image](/images/user-guide/rule-engine-2-5/tutorials/sync_result.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-5/tutorials/sync_result.png)
 
 That means that our logic works correctly.
 

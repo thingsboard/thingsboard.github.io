@@ -14,7 +14,7 @@ Each ThingsBoard node is identical and can handle request from both device and s
  
 ## High-level overview
 
- ![image](/images/reference/architecture-in-brief.svg)
+ ![image](https://img.thingsboard.io/reference/architecture-in-brief.svg)
 
 #### Device Connectivity
 
@@ -49,7 +49,7 @@ Learn more about ThingsBoard REST APIs [here](/docs/reference/rest-api/)
 [Actor model](https://en.wikipedia.org/wiki/Actor_model) enables high performance concurrent processing of messages from devices as long as server-side API calls.
 ThingsBoard uses own Actor System implementation (sharpened for our use cases) with following actor hierarchies.
 
- ![image](/images/reference/actor-system-hierarchies.svg)
+ ![image](https://img.thingsboard.io/reference/actor-system-hierarchies.svg)
 
 The brief description of each actor's functionality is listed below:
 
@@ -86,7 +86,7 @@ The illustration below demonstrates how ThingsBoard handles RPC request to Devic
 In this case, the request arrives at Server A, but D1 is connected using MQTT to Server C. 
 In the worst-case scenario, D1 Device Actor will be located on another server B that obviously does not match either A or C.
 
- ![image](/images/reference/cluster-mode-rpc-request.svg)
+ ![image](https://img.thingsboard.io/reference/cluster-mode-rpc-request.svg)
 
 ## Security
 

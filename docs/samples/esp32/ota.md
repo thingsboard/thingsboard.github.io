@@ -32,7 +32,7 @@ See video tutorial below for this sample with additional detailed demonstration 
   In case of any build errors see [ESP-IDF Versions](https://docs.espressif.com/projects/esp-idf/en/latest/versions.html#esp-idf-versions) document to update the version of the installed EPS-IDF.
 - Any development board with ESP32-PICO-D4 chip.
   For this sample we were using [ESP32-PICO-KIT mini development board](https://docs.espressif.com/projects/esp-idf/en/latest/get-started/get-started-pico-kit.html#overview)
-    <img src="/images/samples/esp32/ota/esp32_board.png" width="400" alt="esp32 board">
+    <img src="https://img.thingsboard.io/samples/esp32/ota/esp32_board.png" width="400" alt="esp32 board">
 - Account in ThingsBoard application. You can use your own instance or [ThingsBoard Cloud](https://thingsboard.cloud)
   We need to say that this sample works well with both CE and PE, but we use PE cloud since it has more features and in the next sample we will show how to do mass firmware updates for multiple devices simultaneously.
 
@@ -40,13 +40,13 @@ See video tutorial below for this sample with additional detailed demonstration 
 1. Create a new device, name it as *ESP32* and set it's type as *ESP32_OTA*.
 The specified device type will be used later in the rule chains and in the dashboard.
 
-    <img src="/images/samples/esp32/ota/tb_create_device.png" width="600" alt="create device">
+    <img src="https://img.thingsboard.io/samples/esp32/ota/tb_create_device.png" width="600" alt="create device">
 
 2. Add the new rule chain that will update the device's server attribute *fwStateIsSynced*.
 The attribute type is boolean and it will be used to show on the dashboard is firmware synced or not.
 Download, import [Check is ESP32 firmware synced](/docs/samples/esp32/resources/check_is_esp32_firmware_synced.json) rule chain into ThingsBoard and save it:
 
-    <img data-gifffer="/images/samples/esp32/ota/import_rule_chain.gif" width="1000" alt="import rule chain">
+    <img data-gifffer="https://img.thingsboard.io/samples/esp32/ota/import_rule_chain.gif" width="1000" alt="import rule chain">
 
     The rule chain has 3 nodes:
     - *Add attributes to metadata* - adds client attribute *currentFwVer* and server attribute *lastTargetFwVer* to metadata
@@ -58,7 +58,7 @@ To the added node should be connected two links:
     - From *Message Type Switch* with link type *Attributes Updated*
     - From *Save Attributes* with link type *Success*
 
-    <img data-gifffer="/images/samples/esp32/ota/tb_extend_root_rule_chain.gif" width="1000" alt="extend root rule chain">
+    <img data-gifffer="https://img.thingsboard.io/samples/esp32/ota/tb_extend_root_rule_chain.gif" width="1000" alt="extend root rule chain">
 
     Such rule configuration allows to compare received firmware version after it was updated in the next cases:
     - After flashing ESP32 by a new firmware through OTA.
@@ -71,7 +71,7 @@ To the added node should be connected two links:
 It allows to show on the dashboard a list of ESP32 with OTA support and the current firmware state (synced or not synced) for every device in the list.
 User can change and update OTA config of any ESP32 form the list by clicking 'Select OTA configuration' control in the last column.
 
-    <img src="/images/samples/esp32/ota/tb_dashboard_main_state.png" width="600" alt="dashboard main state">
+    <img src="https://img.thingsboard.io/samples/esp32/ota/tb_dashboard_main_state.png" width="600" alt="dashboard main state">
 
     Because of only one device with type *EPS32_OTA* was created, the table contain only one row. If a new device with type *ESP32_OTA* is added, then it will appear in the dashboard's entity table automatically.
 
@@ -89,7 +89,7 @@ Open the terminal and execute next command:
     -  *MQTT broker port* - ThingsBoard MQTT port
     -  *MQTT access token* - device's access token in ThingsBoard
 
-    <img src="/images/samples/esp32/ota/framework_config.png" width="600" alt="framework config">
+    <img src="https://img.thingsboard.io/samples/esp32/ota/framework_config.png" width="600" alt="framework config">
 
     Save the configuration and select *Exit* to return to the main menu.
 3. Select *Serial flasher config* sub-menu and change *Default serial port*, *Default baud rate* and *Flash Size* parameters:
@@ -97,13 +97,13 @@ Open the terminal and execute next command:
     - *Default baud rate* - 921600 baud (by default *111500 baud*)
     - *Flash Size* - 4 MB (by default *1 MB*)
 
-    <img src="/images/samples/esp32/ota/serial_flasher_config.png" width="600" alt="serial flasher config">
+    <img src="https://img.thingsboard.io/samples/esp32/ota/serial_flasher_config.png" width="600" alt="serial flasher config">
 
     Save the configuration and select *Exit* to return to the main menu.
 4. Select *Partition table* sub-menu and change *Partition table* parameter:
     - *Partition table* - Factory app, two OTA definitions (by default *Single factory app, no OTA*)
 
-    <img src="/images/samples/esp32/ota/partition_table.png" width="600" alt="partition table">
+    <img src="https://img.thingsboard.io/samples/esp32/ota/partition_table.png" width="600" alt="partition table">
 
     Save the configuration and select *Exit* twice to exit from *menuconfig* utility.
 5. Any web server that supports HTTPS and returns the image files can be used for OTA. For this sample we will use the GitHub repository to download the images by ESP32 for OTA update. *[ca_cert.pem](https://raw.githubusercontent.com/thingsboard/esp32-ota/master/server_certs/ca_cert.pem)* file contains GitHub public certificate already.
@@ -126,7 +126,7 @@ Go to the [root sample directory](https://github.com/thingsboard/esp32-ota) and 
     ```
     If compilation and flashing were successful and ESP32 connected to ThingsBoard, the next log messages are printed:
 
-    <img src="/images/samples/esp32/ota/monitor_output_after_flashing.png" width="600" alt="monitor output after flashing">
+    <img src="https://img.thingsboard.io/samples/esp32/ota/monitor_output_after_flashing.png" width="600" alt="monitor output after flashing">
 
     Let's look at a log message format, for example *I (5219) tb_ota: Connected to WI-FI, IP address: 192.168.2.45*
     - *I* - info log type, can be W (warning), E (error) or D (debug)
@@ -156,7 +156,7 @@ Go to the *OTA for ESP32* dashboard and press *Select OTA configuration* for the
 
 Press *Start OTA* button to create and send the chared attributes to EPS32.
 
-<img data-gifffer="/images/samples/esp32/ota/tb_successful_ota_from_dashboard.gif" width="1000" alt="successful ota from dashboard">
+<img data-gifffer="https://img.thingsboard.io/samples/esp32/ota/tb_successful_ota_from_dashboard.gif" width="1000" alt="successful ota from dashboard">
 
 The sample's [firmware](https://github.com/thingsboard/esp32-ota/tree/master/firmware/) directory contains two images with the next differences:
   - [example-v1.1.bin](https://raw.githubusercontent.com/thingsboard/esp32-ota/master/firmware/example-v1.1.bin) - value of *FIRMWARE_VERSION* in [main.h](https://github.com/thingsboard/esp32-ota/blob/master/main/main.h) equals to *v1.1*.
@@ -168,7 +168,7 @@ After the firmware version and URL were updated on the *OTA control* widget, Thi
 Because of the ESP32 is subscribed to this MQTT topic, as soon as the update message is received it is parsed and the firmware versions are compared.
 If the value of *FIRMWARE_VERSION* defined in [main.h](https://github.com/thingsboard/esp32-ota/blob/master/main/main.h) isn't equal to the firmware version received from ThingsBoard, OTA update process will started and *monitor* utility outputs the next logs:
 
-  <img src="/images/samples/esp32/ota/shared_attributes_updated.png" width="600" alt="shared attributes updated">
+  <img src="https://img.thingsboard.io/samples/esp32/ota/shared_attributes_updated.png" width="600" alt="shared attributes updated">
 
 The application's flow is the next:
   - shows the received URL and firmware version
@@ -178,7 +178,7 @@ The application's flow is the next:
     For example, the application sends a telemetry data (in this sample it is the current value of *counter* variable) to ThingsBoard with not determined period.
     If OTA process was finished successfully, ESP32 will be rebooted and after the start the next logs will be shown:
 
-  <img src="/images/samples/esp32/ota/ota_finished_successfully.png" width="600" alt="ota finished successfully">
+  <img src="https://img.thingsboard.io/samples/esp32/ota/ota_finished_successfully.png" width="600" alt="ota finished successfully">
 
 Let's review the logs differences in comparison when the firmware was flashed to *factory* partition:
   - running partition now is *ota_0*, not *factory*

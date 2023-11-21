@@ -10,7 +10,7 @@ to the ThingsBoard format. AWS IoT will be primarily responsible for receiving a
 messaging server), filtering them, deciding who is interested, and then sending the message to all 
 subscribers, in our case of integration.
 
-<object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/aws-iot-integration.svg"></object>
+<object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/user-guide/integrations/aws-iot-integration.svg"></object>
 
 ## AWS IOT
 
@@ -161,7 +161,7 @@ has already been created, then click on the “pencil” icon to edit it.
 
 - Go to **Integrations** section and click **Add new integration** button. Name it **"AWS IoT Integration"**, select type **AWS IoT**.
 
-![image](/images/user-guide/integrations/aws-iot/aws-iot-add-integration-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/aws-iot/aws-iot-add-integration-1-pe.png)
 
 {% capture allowCreateDevice %}
 Note that if the “Allow create devices or assets” checkbox is unchecked, when sending a message to thingsboard
@@ -171,11 +171,11 @@ with any parameters of the device (or asset), if such a device (asset) does not 
 
 - The next steps is to add the recently created **Uplink** converter.
 
-![image](/images/user-guide/integrations/aws-iot/aws-iot-add-integration-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/aws-iot/aws-iot-add-integration-2-pe.png)
 
 - For now, leave the "Downlink data converter" field blank.
 
-![image](/images/user-guide/integrations/aws-iot/aws-iot-add-integration-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/aws-iot/aws-iot-add-integration-3-pe.png)
 
 - Enter AWS IoT Endpoint. You can find it in your [AWS account](https://aws.amazon.com/iot/) if you go to **Settings** - **Device data endpoint**. 
 
@@ -183,13 +183,13 @@ with any parameters of the device (or asset), if such a device (asset) does not 
 
 - Download the previously generated certificates and key.
 
-![image](/images/user-guide/integrations/aws-iot/aws-iot-add-integration-4-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/aws-iot/aws-iot-add-integration-4-pe.png)
 
 - Add a Topic Filter **tb/aws/iot/#**. You can also select QoS level. We use QoS level 0 (At most once) by default.
 
 - Click **Add** to create an integration.
 
-![image](/images/user-guide/integrations/aws-iot/aws-iot-add-integration-5-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/aws-iot/aws-iot-add-integration-5-pe.png)
 
 ### Send Uplink message
 

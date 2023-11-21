@@ -49,11 +49,11 @@ In this tutorial, we only modified **Create & Clear Alarms** rule chain, namely 
 
   - **Create & Clear Alarms with details:**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/create-clear-alarm-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms/create-clear-alarm-chain.png)
 
   - **Root Rule Chain:**
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/root-rule-chain.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms/root-rule-chain.png)
 
 <br>
 
@@ -97,7 +97,7 @@ return details;
 **Details** function create required **details** object with initial parameters. Then, in **if** statement, we verify is it a new Alarm or Alarm already exist.
 If exist - take previous **count** field and increment it.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/create-alarm.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms/create-alarm.png)
 
 If new Alarm was created in **Create Alarm** node it is passed to other nodes via relation **Created** if they exist. 
 If Alarm was updated - it is passed to other nodes via relation **Updated** if they exist. 
@@ -120,7 +120,7 @@ details.clearedTemperature = msg.temperature;
 return details;
 {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/clear-alarm.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms/clear-alarm.png)
 
 If **Clear Alarm** node could not find existing Alarm, nothing is changed and original message is passed to other nodes via relation **False** if they exist. 
 If Alarm do exist - it is cleared and passed to other nodes via relation **Cleared**.
@@ -142,11 +142,11 @@ Also you can Create Dashboard from scratch and the following section show you ho
 
 We will create Dashboard for all **Thermostat** devices and add Alarm widget on it. Create new Dashboard:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/add-dashboard.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms/add-dashboard.png)
 
 Press **Edit** dashboard and **add alias** that will be resolved to all devices with type **Thermostat**:
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/add-alias.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms/add-alias.png)
 
 Add **Alarm widget** to the Dashboard (Add new widget -> Alarm widget bundle -> Alarms). Select configured alias **entity alarm source**. 
 Also, add additional **alarm fields**.
@@ -163,14 +163,14 @@ And rename label of each field by press **edit** button on the field:
    - details.count              -> Events count.
    - details.clearedTemperature -> Clear Temperature.
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/alarm-widget-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms/alarm-widget-config.png)
 
 ## Post telemetry and verify
 
 For posting device telemetry we will use Rest API ([link](/docs/reference/http-api/#telemetry-upload-api)). For this we will need to
 copy device access token from then device **Thermostat Home**. 
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/copy-access-token.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms/copy-access-token.png)
 
 ***you need to replace $ACCESS_TOKEN with actual device token**
 
@@ -180,7 +180,7 @@ Lets post temperature = 99. Alarm should be created:
 curl -v -X POST -d '{"temperature":99}' http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/alarm-created.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms/alarm-created.png)
 
 Lets post temperature = 180. Alarm should be updated and count field incremented:
 
@@ -188,7 +188,7 @@ Lets post temperature = 180. Alarm should be updated and count field incremented
 curl -v -X POST -d '{"temperature":180}' http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/alarm-updated.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms/alarm-updated.png)
 
 Lets post temperature = 30. Alarm should be cleared and cleared temperature should be shown:
 
@@ -196,7 +196,7 @@ Lets post temperature = 30. Alarm should be cleared and cleared temperature shou
 curl -v -X POST -d '{"temperature":30}' http://localhost:8080/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 {% endhighlight %}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/alarms/alarm-cleared.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/alarms/alarm-cleared.png)
 
 Also, you can see how to:
 

@@ -18,11 +18,11 @@ Senquip devices can connect to MODBUS, CAN Bus, current, voltage, frequency and 
 
 Here is an image of a real life install using this data.
 
-![image](/images/samples/senquip/digger.jpg)
+![image](https://img.thingsboard.io/samples/senquip/digger.jpg)
 
 Once you complete, the data will be shown on the following dashboard.
 
-![image](/images/samples/senquip/dash.jpg)
+![image](https://img.thingsboard.io/samples/senquip/dash.jpg)
 
 A similar guide is also available as an [application note](https://docs.senquip.com/app_notes/APN0015%20Rev%201.0%20-%20Connecting%20Senquip%20Devices%20to%20the%20ThingsBoard.pdf) from the Senquip website.
 
@@ -30,7 +30,7 @@ A similar guide is also available as an [application note](https://docs.senquip.
 ## List of hardware and pinouts
 
 ORB-C1-G
-![image](/images/samples/senquip/orb-x1-open.jpg)
+![image](https://img.thingsboard.io/samples/senquip/orb-x1-open.jpg)
 
 
 Pin number		|Name							|Terminal block marking		 |Application
@@ -63,7 +63,7 @@ In this guide, it will be assumed that the user has an account on the [Senquip P
 
 The General settings should now look like this.
 
-![image](/images/samples/senquip/general.jpg)
+![image](https://img.thingsboard.io/samples/senquip/general.jpg)
 
 ### Configuring the ThingsBoard endpoint
 
@@ -78,7 +78,7 @@ Senquip devices can send to the Senquip Portal and a second endpoint at the same
 
 The Endpoint settings should now look like this.
 
-![image](/images/samples/senquip/mqtt.jpg)
+![image](https://img.thingsboard.io/samples/senquip/mqtt.jpg)
 
 ## Thingsboard configuration
 
@@ -94,7 +94,7 @@ It will be assumed that the user has an account on the [ThingsBoard Cloud](https
 
 The new device settings should now look like this.
 
-![image](/images/samples/senquip/add.jpg)
+![image](https://img.thingsboard.io/samples/senquip/add.jpg)
 
 ### Set the credentials
 
@@ -104,20 +104,20 @@ The new device settings should now look like this.
 
 The credentials should now look like this.
 
-![image](/images/samples/senquip/credentials.jpg)
+![image](https://img.thingsboard.io/samples/senquip/credentials.jpg)
 
 ## Telemetry data
 
 Senquip devices send data in [JSON](https://en.wikipedia.org/wiki/JSON) format as shown in the image below.
 
-![image](/images/samples/senquip/raw.jpg)
+![image](https://img.thingsboard.io/samples/senquip/raw.jpg)
 
 
 Each measurement in the JSON packet has a key and a value.  For instance, GPS latitude has the key "gps_lat" and a value of "-32.70245".  In this example, 5 CAN messages are being received, each with an identifier and value and so the CAN data in the JSON packet is nested with 5 individual CAN identifiers and values.
 
 By selecting the device that we have just added to the ThingsBoard and pressing "Latest Telemetry", we can see the telemetry arriving on the ThingsBoard.  Notice how the ThingsBoard has automatically recognised the data in the JSON packet and has converted it into a table of keys and values.  Notice also how the CAN data has been inserted as 5 rows of CAN identifiers and values.
 
-![image](/images/samples/senquip/telemetry.jpg)
+![image](https://img.thingsboard.io/samples/senquip/telemetry.jpg)
 
 
 ## Viewing the data on a dashboard
@@ -126,12 +126,12 @@ We will now add the telemetry data to widegets on a dashboard.
 
 * [Step 1] Select a key from the latest telemetry and press "Show on widget".
 
-![image](/images/samples/senquip/widget.jpg)
+![image](https://img.thingsboard.io/samples/senquip/widget.jpg)
 
 * [Step 2] Select a bundle of widgets from those available.  For temperature, we will choose analog gauges.
 * [Step 3] Press "Add to dashboard" and select an available dashboard or create a new one.  We will create a new one and call it "Senquip Demo".
 
-![image](/images/samples/senquip/add-widget.jpg)
+![image](https://img.thingsboard.io/samples/senquip/add-widget.jpg)
 
 * [Step 4] Select additional keys from the telmetry data and associate them with widgets, each time adding them to the dashboard.
 * [Step 5] For some widgets such as the map widgets, multiple key values (gps_lat and gps_lon) will be required.  Under the advanced settings, the Latitude and Longitude for the widget can be associated with the gps_lat and gps_lon keys.
@@ -139,7 +139,7 @@ We will now add the telemetry data to widegets on a dashboard.
 
 This is how the dashboard now looks.
 
-![image](/images/samples/senquip/dash.jpg)
+![image](https://img.thingsboard.io/samples/senquip/dash.jpg)
 
 
 ## Next steps

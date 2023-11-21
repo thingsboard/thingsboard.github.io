@@ -15,7 +15,7 @@ Analytics Nodes that are specific to ThingsBoard PE. Used for analysis of stream
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-latest.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-latest.png)
 
 Periodically does aggregation of child entities attributes or latest timeseries for specified set of parent entities.
 
@@ -27,7 +27,7 @@ Message of type **POST_TELEMETRY_REQUEST** is generated for each parent entity a
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-latest-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-latest-config.png)
 
 - **Execution period value/time unit** - specifies period of aggregation task.
 - **Entities** - specifies set of parent entities for which aggregation should be performed. Can be: 
@@ -41,7 +41,7 @@ In case of **Group of entities** child entities selected from the entity group i
 
 Mapping Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-latest-mapping-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-latest-mapping-config.png)
 
 - **Latest telemetry** - specifies whether value of child latest telemetry or attribute should be aggregated.
 - **Source telemetry/attribute** - child latest telemetry or attribute key name.  
@@ -73,7 +73,7 @@ with failure reason and parent entity as originator. Failure message is forwarde
 
 **Since TB Version 3.3.3** you can select the queue name:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
 <br>
 
@@ -87,7 +87,7 @@ with failure reason and parent entity as originator. Failure message is forwarde
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream.png)
 
 Calculates MIN/MAX/SUM/AVG/COUNT/UNIQUE based on the incoming data stream. 
 Groups incoming data stream based on originator id of the message (i.e. particular device, asset, customer), 
@@ -106,17 +106,17 @@ Generates 'POST_TELEMETRY_REQUEST' messages with the results of the aggregation 
 Configuration below will calculate average hourly temperature and will persist it within one minute once the hourly interval is ended. 
 In case some delayed telemetry will arrive for the particular interval, the rule node will lookup it from internal cache or from telemetry values.
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream-config.png)
     
 The results of aggregation will be persisted to the database once per minute. Alternatively you can persist the interval on each new message to avoid any data loss in case of server outage.
 In case devices for some building are not reporting any temperature readings, we can generate default value (zero) for such building on each interval by selecting "Create Intervals automatically" and 
 specifying "Buildings" entity group.    
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream-config-2.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream-config-2.png)
 
 **Since TB Version 3.3.3** you can select the queue name:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
 ## Alarms Count Node
 
@@ -128,7 +128,7 @@ specifying "Buildings" entity group.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count.png)
 
 Count alarms when receives input message about new alarm. The input message may be 'ALARM', 'ALARM_ACK', 'ALARM_CLEAR', or 'ENTITY_CREATED' and 'ENTITY_UPDATED' message about the alarm. 
 Executes count query based on the alarm count mappings and the originator of the message (device, asset, etc.) 
@@ -139,14 +139,14 @@ Message of type **POST_TELEMETRY_REQUEST** is generated for each entity and alar
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count-config-new.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count-config-new.png)
 
 - **Count alarms for propagation entities** - if enabled, will count alarms not only for originator of the alarm, but also for all propagated entities.
 - **Alarms count mappings** - table of mapping configurations specifying rules used to count alarms.
 
 Mapping Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count-mapping-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count-mapping-config.png)
 
 - **Target telemetry** - name of the target telemetry key of the entity used to store alarms count result.
 - **Status filter** - list of allowed alarm statuses used to filter alarms. If not specified alarms with any status will be selected.
@@ -161,7 +161,7 @@ with failure reason and entity as originator. Failure message is forwarded via *
 
 **Since TB Version 3.3.3** you can select the queue name:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
 <br>
 
@@ -175,7 +175,7 @@ with failure reason and entity as originator. Failure message is forwarded via *
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count.png)
 
 Periodically does count of alarms for selected set of entities.
 
@@ -187,7 +187,7 @@ Message of type **POST_TELEMETRY_REQUEST** is generated for each entity and alar
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count-config.png)
 
 - **Execution period value/time unit** - specifies period of alarms count task.
 - **Entities** - specifies set of entities for which alarms count should be performed. Can be: 
@@ -202,7 +202,7 @@ In case of **Group of entities** child entities selected from the entity group i
 
 Mapping Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count-mapping-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-alarms-count-mapping-config.png)
 
 - **Target telemetry** - name of the target telemetry key of the entity used to store alarms count result.
 - **Status filter** - list of allowed alarm statuses used to filter alarms. If not specified alarms with any status will be selected. 
@@ -217,6 +217,6 @@ with failure reason and entity as originator. Failure message is forwarded via *
 
 **Since TB Version 3.3.3** you can select the queue name:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
 
 <br>

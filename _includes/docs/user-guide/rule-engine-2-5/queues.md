@@ -32,28 +32,28 @@ To create a new queue follow these steps:
  - Click the "plus" button to create a new queue.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/queues/add-queue-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/queues/add-queue-1-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/queues/add-queue-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/queues/add-queue-1-pe.png)
 {% endif %}
 
  - Enter queue name. Select the strategy type and configure retries processing settings and polling settings. Click Add.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/queues/add-queue-2-ce.png)
+![image](https://img.thingsboard.io/user-guide/queues/add-queue-2-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/queues/add-queue-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/queues/add-queue-2-pe.png)
 {% endif %}
 
 You have created a custom queue.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/queues/add-queue-3-ce.png)
+![image](https://img.thingsboard.io/user-guide/queues/add-queue-3-ce.png)
 {% endif %}
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/queues/add-queue-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/queues/add-queue-3-pe.png)
 {% endif %}
 
 {% capture difference %}

@@ -20,17 +20,17 @@ Basically, you get the license directly from ThingsBoard, Inc, but purchase corr
 
 Open [ThingsBoard Professional Edition BYOL](https://console.cloud.google.com/marketplace/details/thingsboard-public/thingsboard-pe) product page on GCP Marketplace.
 
-![image](/images/user-guide/install/gcp-marketplace-pe/launch.png) 
+![image](https://img.thingsboard.io/user-guide/install/gcp-marketplace-pe/launch.png) 
 
 - Click the **Launch on Compute Engine** button
 
 - You can take the default settings or customize them. When complete click **Deploy** button
 
-![image](/images/user-guide/install/gcp-marketplace-pe/deploy.png) 
+![image](https://img.thingsboard.io/user-guide/install/gcp-marketplace-pe/deploy.png) 
 
 That's it! Your ThingsBoard instance is now deploying! When complete you should see:
 
-![image](/images/user-guide/install/gcp-marketplace-pe/ssh.png) 
+![image](https://img.thingsboard.io/user-guide/install/gcp-marketplace-pe/ssh.png) 
 
 - Click the **SSH** button. This will open the SSH session in the browser window. Don't close this window. We will use it in Step 3.1.
 
@@ -90,7 +90,7 @@ Please allow up to 120 seconds for the Web UI to start. This is applicable only 
 
 Now you can open this link in your browser:
 
-![image](/images/user-guide/install/gcp-marketplace-pe/admin-panel.png) 
+![image](https://img.thingsboard.io/user-guide/install/gcp-marketplace-pe/admin-panel.png) 
 
 Use this login to connect as system Administrator 
 

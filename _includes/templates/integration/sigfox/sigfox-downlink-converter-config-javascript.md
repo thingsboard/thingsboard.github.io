@@ -21,4 +21,4 @@ return result;
 ```
 {: .copy-code}
 
-![image](/images/user-guide/integrations/sigfox/sigfox-create-downlink-converter-java-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/sigfox/sigfox-create-downlink-converter-java-1-pe.png)

@@ -17,7 +17,7 @@
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-add-to-group.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-add-to-group.png)
 
 Adds Message Originator Entity to [Entity Group](/docs/{{peDocsPrefix}}user-guide/groups/).
 
@@ -28,7 +28,7 @@ Will create new Entity Group if it doesn't exist and **Create new group if not e
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-add-to-group-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-add-to-group-config.png)
 
 - **Group name pattern** - can be set direct group name or pattern can be used, that will be resolved to the real group name using Message metadata.
 - **Create new group if not exists** - if checked will create new entity group if it doesn't exist.
@@ -55,7 +55,7 @@ In other cases Message will be routed via **Success** chain.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-remove-from-group.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-remove-from-group.png)
 
 Removes Message Originator Entity from [Entity Group](/docs/{{peDocsPrefix}}user-guide/groups/).
 
@@ -65,7 +65,7 @@ Finds target Entity Group by group name pattern and then removes Originator Enti
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-remove-from-group-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-remove-from-group-config.png)
 
 - **Group name pattern** - can be set direct group name or pattern can be used, that will be resolved to the real group name using Message metadata.
 - **Groups cache expiration time** - specifies maximum time interval is seconds allowed to store found entity group records. 0 value means that records will never expire.
@@ -91,7 +91,7 @@ In other cases Message will be routed via **Success** chain.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-generate-report.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-generate-report.png)
 
 Generates report files by capturing target dashboard with specific configuration.
 
@@ -109,7 +109,7 @@ used by [**Send Email Node**](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/ext
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-generate-report-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-generate-report-config.png)
 
 - **Use system reports server** - if set, [Reports Server](/docs/{{peDocsPrefix}}user-guide/reporting/#reports-server) endpoint URL will be taken from system configuration (**thingsboard.yml**).
 - **Reports server endpoint URL** - endpoint URL of [Reports Server](/docs/{{peDocsPrefix}}user-guide/reporting/#reports-server).
@@ -149,7 +149,7 @@ In other cases Message will be routed via **Success** chain.
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-integration-downlink.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-integration-downlink.png)
 
 Forwards Message to selected [Integration](/docs/{{peDocsPrefix}}user-guide/integrations/) as downlink message.
 
@@ -157,7 +157,7 @@ Message will be pushed to the selected integration downlink queue.
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-integration-downlink-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-integration-downlink-config.png)
 
 - **Integration** - target Integration for downlink message processing.
 
@@ -177,7 +177,7 @@ Configuration:
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply.png)
 
 Sends reply to REST API call that was originally sent to rule engine.
 
@@ -185,7 +185,7 @@ Expects messages with any message type. Forwards incoming message as a reply to 
 
 Configuration:
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-rest-call-reply-config.png)
 
 <br>
 
@@ -201,17 +201,17 @@ Configuration:
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node.png)
 
 Changes Owner of the Originator entity to the selected Owner by type:
 
 - Tenant
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node-tenent-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node-tenent-config.png)
 
 - Customer
 
-![image](/images/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node-customer-config.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/pe/nodes/action-change-owner-node-customer-config.png)
 
 Rule node finds target Owner by owner name pattern and then change the owner of the originator entity.
 

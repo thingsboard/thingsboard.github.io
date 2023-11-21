@@ -4,16 +4,16 @@ To connect and send data to The Things Industries cloud we should configure the 
 To do this please follow next steps:  
 {% assign connectGatewayToNS = '
     ===
-        image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/general-settings-view.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/milesight-lorawan-gateway/general-settings-view.png,
         title: Open gateway control panel 
     ===
-        image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-before.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-before.png,
         title: Click on <b>plus</b> button, to add a new forwarder
     ===
-        image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-window.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-window.png,
         title: Put <b>Gateway Server address</b> from the network server
     ===
-        image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-after.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-after.png,
         title: Press <b>Save</b> button
 '
 %}

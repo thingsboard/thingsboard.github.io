@@ -19,7 +19,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [WS202 PIR & Light Sensor]({{deviceVendorLink}}){: target="_blank"} is a PIR sensor based on passive infrared technology to detect a motion or occupancy.  
 WS202 can detect whether there is a movement within the range of 6-8 m.  
 Besides, WS202 equips with a light sensor which can link PIR detection results to trigger scenes.  

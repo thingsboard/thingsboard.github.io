@@ -41,7 +41,7 @@ Some specific rule nodes may use completely different relation types, for exampl
 
 Some rule nodes support custom connection names. Just type your custom connection name and click the "Create a new one!" link:
 
-![image](/images/user-guide/rule-engine-2-0/nodes/custom-connection.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/nodes/custom-connection.png)
 
 
 All connection names are **case-sensitive**.
@@ -55,7 +55,7 @@ Rule Chain is a logical group of rule nodes and their relations. For example, th
   * raise "Low Temperature Alarm" if temperature field in the message will be lower then -40 degrees;
   * log failure to execute the temperature check scripts to console in case of logical or syntax error in the script. 
 
-![image](/images/user-guide/rule-engine-2-0/rule-node-relations.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/rule-node-relations.png)
 
 Tenant administrator is able to define one **Root Rule Chain** and optionally multiple other rule chains. 
 Root rule chain handles all incoming messages and may forward them to other rule chains for additional processing.
@@ -67,7 +67,7 @@ For example, the rule chain below will:
   * clear "High Temperature Alarm" if temperature field in the message will be less then 50 degrees;
   * forward events about "Created" and "Cleared" alarms to external rule chain that handles notifications to corresponding users.
  
-![image](/images/user-guide/rule-engine-2-0/rule-chain-references.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/rule-chain-references.png)
 
 #### Message Processing Result
 
@@ -79,7 +79,7 @@ The message processing attempt is marked as "Timeout" when overall time of proce
 
 See diagram below and let's review the possible scenarios:
 
-![image](/images/user-guide/rule-engine-2-0/not-a-failure.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/not-a-failure.png)
 
 If the "Transformation" script fails, the message is not marked as "Failed", because there is a "Save to DB" node connected with "Failure" relation.
 If the "Transformation" script is successful, it will be pushed to "External System" with the REST API call.
@@ -367,14 +367,14 @@ For example, "Filter - script" rule node is configurable via custom JS function 
   
 Rule Node configuration window may be opened by double-clicking on the node in the Rule Chain editor:    
   
-![image](/images/user-guide/rule-engine-2-0/rule-node-configuration.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/rule-node-configuration.png)
 
 ### Test script functions
 
 Some rule nodes have specific UI feature that allow users to test TBEL/JS functions. 
 Once you click on the **Test Filter Function** you will see the JS Editor that allows you to substitute input parameters and verify the output of the function.
     
-![image](/images/user-guide/rule-engine-2-0/rule-node-test-function.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/rule-node-test-function.png)
 
 You can define:
 
@@ -408,7 +408,7 @@ To enable debug, user need to ensure that "Debug mode" checkbox is selected in t
 Once debug is enabled, user is able to see incoming and outgoing messages info as long as corresponding relation types.
 See image below for a sample debug messages view:
   
-![image](/images/user-guide/rule-engine-2-0/rule-node-debug.png)  
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/rule-node-debug.png)  
 
 ## Import/Export
 
@@ -416,7 +416,7 @@ You are able to export your rule chain to JSON format and import it to the same 
 
 In order to export rule chain, you should navigate to the **Rule Chains** page and click on the export button located on the particular rule chain card.
  
-![image](/images/user-guide/rule-engine-2-0/rule-chain-export.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/rule-chain-export.png)
 
 Similar, to import the rule chain you should navigate to the **Rules Chains** page and click on the big "+" button in the bottom-right part of the screen and then click on the import button. 
 
@@ -439,7 +439,7 @@ This is useful for a number of use cases. For example:
  
 To execute the REST API call, you may use rule-engine-controller [REST APIs](/docs/{{docsPrefix}}reference/rest-api/): 
  
-![image](/images/user-guide/rule-engine-2-0/rest-api.png) 
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/rest-api.png) 
 
 Note: the entity id you have specified in the call will be the originator of Rule Engine message. If you do not specify the entity id parameters, your user entity will become an originator of the message.
 

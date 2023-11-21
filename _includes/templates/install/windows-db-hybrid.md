@@ -25,33 +25,33 @@ Instructions listed below will help you to install Cassandra.
     - [MSI Installer (64-bit)](http://downloads.datastax.com/community/datastax-community-64bit_3.0.9.msi)
 - Run downloaded MSI package. You are first presented with an initial welcome panel that identifies your installation package:
 
- ![image](/images/user-guide/install/windows/windows-cassandra-1.png)
+ ![image](https://img.thingsboard.io/user-guide/install/windows/windows-cassandra-1.png)
  
 - Clicking next takes you to the end user license agreement:
  
- ![image](/images/user-guide/install/windows/windows-cassandra-2.png)
+ ![image](https://img.thingsboard.io/user-guide/install/windows/windows-cassandra-2.png)
  
 - The next panel allows you to specify where the software is to be installed:
    
- ![image](/images/user-guide/install/windows/windows-cassandra-3.png)
+ ![image](https://img.thingsboard.io/user-guide/install/windows/windows-cassandra-3.png)
 
 - Once the installation directory has been set, the installer will ask how you want to handle the service that will be installed:
 
- ![image](/images/user-guide/install/windows/windows-cassandra-4.png)
+ ![image](https://img.thingsboard.io/user-guide/install/windows/windows-cassandra-4.png)
 
 - The next panel initiates the installation process:
 
- ![image](/images/user-guide/install/windows/windows-cassandra-5.png)
+ ![image](https://img.thingsboard.io/user-guide/install/windows/windows-cassandra-5.png)
  
- ![image](/images/user-guide/install/windows/windows-cassandra-6.png)
+ ![image](https://img.thingsboard.io/user-guide/install/windows/windows-cassandra-6.png)
 
 - The final panel asks if you would like to register to be updated when new versions of the software become available:
 
- ![image](/images/user-guide/install/windows/windows-cassandra-7.png)
+ ![image](https://img.thingsboard.io/user-guide/install/windows/windows-cassandra-7.png)
  
 - You can find installed interfaces in "DataStax Community Edition" program group that the installer creates for you:
 
- ![image](/images/user-guide/install/windows/windows-cassandra-8.png)
+ ![image](https://img.thingsboard.io/user-guide/install/windows/windows-cassandra-8.png)
  
 - The primary interface into Cassandra is the CQL (Cassandra Query Language) shell utility, which can be used to execute CQL commands for the new Cassandra server.
 

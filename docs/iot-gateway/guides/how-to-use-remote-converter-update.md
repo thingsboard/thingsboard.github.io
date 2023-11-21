@@ -21,7 +21,7 @@ You have to create a shared attribute on the gateway device using the following
 format `<Connector Name>:<Converter Class Name>` as a key and write converter configuration as a value.
 
 For example:
-![](/images/gateway/remote-converter-update-create-shared-attr.png)
+![](https://img.thingsboard.io/gateway/remote-converter-update-create-shared-attr.png)
 
 On the screenshot above we created shared attribute for remote updating MQTT default JSON converter configuration.
 
@@ -29,12 +29,12 @@ On the screenshot above we created shared attribute for remote updating MQTT def
 
 For getting new converter configuration update, you have to provide shared attribute with new configuration.
 For example:
-![](/images/gateway/remote-converter-update-shared-attr.png)
+![](https://img.thingsboard.io/gateway/remote-converter-update-shared-attr.png)
 
 ## Step 3 Logs
 
 If the above steps were well done, you will see the following gateway logs:
-![](/images/gateway/remote-converter-update-logs.png)
+![](https://img.thingsboard.io/gateway/remote-converter-update-logs.png)
 
 ## Next steps
 

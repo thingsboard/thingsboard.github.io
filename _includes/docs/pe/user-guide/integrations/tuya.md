@@ -88,28 +88,28 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/tuya/tuya-downlink
 Go to **Integrations** section and click Add new integration button. Name it **Tuya Integration**, select type **Tuya**;
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tuya/tuya-create-integration-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-create-integration-1-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tuya/tuya-create-integration-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-create-integration-1-pe.png)
 {% endif %}
 
 In this step, you can select the recently created **Tuya Uplink Converter** or create a new uplink data converter;
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tuya/tuya-create-integration-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-create-integration-2-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tuya/tuya-create-integration-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-create-integration-2-pe.png)
 {% endif %}
 
 Add **Tuya Downlink Converter** to the integration or create a new downlink data converter;
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tuya/tuya-create-integration-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-create-integration-3-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tuya/tuya-create-integration-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-create-integration-3-pe.png)
 {% endif %}
 
 In the last step, fill in the following fields:
@@ -123,10 +123,10 @@ In the last step, fill in the following fields:
 Click "Add" to create an integration.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tuya/tuya-create-integration-4-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-create-integration-4-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tuya/tuya-create-integration-4-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-create-integration-4-pe.png)
 {% endif %}
 
 ### Rule Chain configuration
@@ -134,19 +134,19 @@ Click "Add" to create an integration.
 When integration configured and ready to use, we need to go to **Rule Chains**, choose **"Root Rule Chain"** and here create rule node **Integration Downlink**. Input some name here, choose earlier created Tuya integration, and tap **Add**.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-rule-chain-downlink-1-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-rule-chain-downlink-1-pe.png)
 {% endif %}
 
 After these steps, we need to tap on a right grey circle of rule node **message type switch** and drag this circle to left side of **Integration Downlink**. In pop-up window add **"RPC Request to Device"** linl, and tap "Add". Save the Root Rule Chain.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-rule-chain-downlink-2-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tuya/tuya-rule-chain-downlink-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-rule-chain-downlink-2-pe.png)
 {% endif %}
 
 ### Uplink message
@@ -156,10 +156,10 @@ Once ThingsBoard **Tuya Integration** has been created, you must disconnect Smar
 Go to **Device Groups** -> **All** you should find your device  provisioned by the Integration. In my case it is - **SmartPlug268970**.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tuya/tuya-integration-create-device-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-integration-create-device-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tuya/tuya-integration-create-device-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-integration-create-device-pe.png)
 {% endif %}
 
 ### Tuya Smart Plug Dashboard
@@ -171,20 +171,20 @@ To visualize the Smart Plug data and test RPC commands, we will create the **Tuy
 - To import this JSON file, click the `import` button at the upper right corner of the dashboard group page and drag the previously downloaded file into the window. Tap **Import**.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tuya/tuya-dashboard-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-dashboard-1-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tuya/tuya-dashboard-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-dashboard-1-pe.png)
 {% endif %}
 
 - Open the **Tuya Smart Plug** dashboard
 - **Enter edit mode**, click **Entity aliases** button and add your device to **smartPlug** alias
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tuya/tuya-alias-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-alias-1-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tuya/tuya-alias-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-alias-1-pe.png)
 {% endif %}
 
 {% capture difference %}
@@ -195,38 +195,38 @@ timeseries data keys of your device may differ from those presented. If necessar
 {% include templates/info-banner.md content=difference %}
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tuya/tuya-edit-timeseries-data-keys-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-edit-timeseries-data-keys-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tuya/tuya-edit-timeseries-data-keys-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-edit-timeseries-data-keys-pe.png)
 {% endif %}
 
 <br>
 If you have everything configured correctly, you will see Smart Plug status light (on/off) and telemetry for the last hour: voltage, power, and current.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tuya/tuya-dashboard-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-dashboard-2-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tuya/tuya-dashboard-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-dashboard-2-pe.png)
 {% endif %}
 
 Smart Plug status light is green. Try to switch off the Smart Plug by clicking on the **On/Off Round switch**
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tuya/tuya-dashboard-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-dashboard-3-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tuya/tuya-dashboard-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-dashboard-3-pe.png)
 {% endif %}
 
 The Smart Plug status indicator turns grey. Power consumption stops.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tuya/tuya-dashboard-4-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-dashboard-4-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tuya/tuya-dashboard-4-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tuya/tuya-dashboard-4-pe.png)
 {% endif %}
 
 ## Next steps

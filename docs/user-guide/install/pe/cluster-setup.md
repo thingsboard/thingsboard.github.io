@@ -30,7 +30,7 @@ redirect_from: "/docs/pe/user-guide/install/cluster-setup/"
                                         <a href="/docs/user-guide/install/pe/cluster/docker-compose-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cluster/docker-compose.svg" title="Docker Compose" alt="Docker Compose">
+                                                    <img width="" src="https://img.thingsboard.io/install/cluster/docker-compose.svg" title="Docker Compose" alt="Docker Compose">
                                                  </div>
                                             </span>
                                         </a>
@@ -39,7 +39,7 @@ redirect_from: "/docs/pe/user-guide/install/cluster-setup/"
                                         <a href="/docs/user-guide/install/pe/cluster/minikube-cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cluster/minikube.svg" title="Minikube" alt="Minikube">
+                                                    <img width="" src="https://img.thingsboard.io/install/cluster/minikube.svg" title="Minikube" alt="Minikube">
                                                  </div>
                                             </span>
                                         </a>

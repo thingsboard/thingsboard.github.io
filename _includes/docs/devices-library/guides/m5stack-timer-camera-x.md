@@ -9,10 +9,10 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-[M5Stack Timer Camera X](https://shop.m5stack.com/collections/m5-cameras/products/esp32-psram-timer-camera-x-ov3660) is a camera module based on ESP32, integrated with ESP32 chip and 8M-PSRAM.
-The camera (OV3660) with 3 million pixels, DFOV 66.5° and shoot 2048x1536 resolution photo, built-in 140mAh battery and LED status indicator, featuring ultra-low power consumption design.
-There is a reset button under the LED. It is possible to realize sleep and wake-up timing through RTC (BM8563). The standby current is only 2μA.
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+[M5Stack Timer Camera X](https://shop.m5stack.com/collections/m5-cameras/products/esp32-psram-timer-camera-x-ov3660) is a camera module based on ESP32, integrated with ESP32 chip and 8M-PSRAM.  
+The camera (OV3660) with 3 million pixels, DFOV 66.5° and shoot 2048x1536 resolution photo, built-in 140mAh battery and LED status indicator, featuring ultra-low power consumption design.  
+There is a reset button under the LED. It is possible to realize sleep and wake-up timing through RTC (BM8563). The standby current is only 2μA.  
 In this guide, we will discuss how to connect the ESP32-based boards to ThingsBoard.
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
@@ -53,4 +53,4 @@ In this guide, we will discuss how to connect the ESP32-based boards to ThingsBo
 
 ## Conclusion
 
-{% include /docs/devices-library/blocks/basic/conclusion-block.md %}
+{% include /docs/devices-library/blocks/basic/conclusion-block.md %}   

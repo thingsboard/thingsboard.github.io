@@ -166,12 +166,12 @@ Check data in your ThingsBoard instance, that you have been configured in the [g
     - Go to the your ThingsBoard instance and login.  
     - Go to the "Devices" tab. "Temperature and Humidity sensor" should be there.
     <br>    
-    ![](/images/gateway/temp-hum-sensor.png)
+    ![](https://img.thingsboard.io/gateway/temp-hum-sensor.png)
 <br><br>
 Go to the device details, **ATTRIBUTES** tab, which contains all client-side attributes, including requested from our configuration file attributes.  
 **Notify:** Attributes from the GATT specification updates only on first connect to device after the gateway start.  
 <br>
-![](/images/gateway/attribute-on-ble-device.png)
+![](https://img.thingsboard.io/gateway/attribute-on-ble-device.png)
 
 ## Step 6. Change the device name using shared attributes
 
@@ -182,7 +182,7 @@ We should follow several steps:
 
 **Notify:** Some devices can reset their name to default.
 
-![](/images/gateway/changed-name-ble-tb-gateway.png)
+![](https://img.thingsboard.io/gateway/changed-name-ble-tb-gateway.png)
 
 
 

@@ -25,10 +25,10 @@ The new Rule Chain will receive all telemetry, device activity(Active/Inactive),
 This setting is available in the Device Profile wizard and in the Device Profile details.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-rule-chain-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-rule-chain-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-rule-chain-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-rule-chain-1-pe.png)
 {% endif %}
 
 ### Queue Name
@@ -52,10 +52,10 @@ if you choose to use a custom queue, you should configure it with the **system a
 {% endunless %}
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-queue-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-queue-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-queue-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-queue-1-pe.png)
 {% endif %}
 
 ### Transport configuration
@@ -63,10 +63,10 @@ if you choose to use a custom queue, you should configure it with the **system a
 The current version of the ThingsBoard platform supports the following transport types: Default, MQTT, CoAP, LWM2M and SNMP
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-1-pe.png)
 {% endif %}
 
 #### Default transport type
@@ -88,10 +88,10 @@ Now you are able to specify custom MQTT topics filters for time-series data and 
 Custom MQTT topic filters support single '**+**' and multi-level '**#**' wildcards and allow you to connect to almost any MQTT based device that sends a payload using JSON or Protobuf.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-mqtt-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-mqtt-1-pe.png)
 {% endif %}
 
 <br>
@@ -140,18 +140,18 @@ The current version of the ThingsBoard platform supports customizable proto sche
 and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server) and implemented the ability to define a schema for downlink messages (RPC calls and attribute updates). 
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-1-pe.png)
 {% endif %}
 
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-3-ce.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-3-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-3-pe.png)
 {% endif %}
 
 ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
@@ -163,10 +163,10 @@ When enabled, the platform will use a Protobuf payload format by default. If par
 The compatibility mode introduces slight performance degradation, so it is recommended to disable this mode once all devices are updated.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-2-ce.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-2-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-2-pe.png)
 {% endif %}
 
 #### CoAP transport type
@@ -174,10 +174,10 @@ The compatibility mode introduces slight performance degradation, so it is recom
 The CoAP transport type enables advanced CoAP transport settings. With the CoAP transport type, you have the ability to select the CoAP device type.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-coap-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-coap-1-pe.png)
 {% endif %}
 
 ##### CoAP device type: Default
@@ -191,18 +191,18 @@ The current version of the ThingsBoard platform supports customizable proto sche
 and [attribute upload](/docs/{{docsPrefix}}reference/coap-api/#publish-attribute-update-to-the-server) and implemented the ability to define a schema for downlink messages (RPC calls and attribute updates).
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-1-pe.png)
 {% endif %}
 
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-2-ce.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-2-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-coap-protobuf-setting-2-pe.png)
 {% endif %}
 
 ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
@@ -222,10 +222,10 @@ The current version of the ThingsBoard platform supports integration with next E
 Requires Efento devices with FW version: 06.02+. 
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-efento-nb-iot-setting-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-coap-efento-nb-iot-setting-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-efento-nb-iot-setting-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-transport-setting-coap-efento-nb-iot-setting-1-pe.png)
 {% endif %}
 
 ### Alarm Rules
@@ -343,10 +343,10 @@ By default, this is the first rule node in the chain of processing.
 The rule node processes all incoming messages and reacts to the attributes and telemetry values.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-rule-node-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-rule-node-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-rule-node-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-rule-node-1-pe.png)
 {% endif %}
 
 <br>
@@ -366,10 +366,10 @@ Assuming you have many devices that send data frequently or constantly, you can 
 The Rule Node will fetch the state from the database when the first message from a specific device arrives.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-rule-node-2-ce.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-rule-node-2-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-rule-node-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-rule-node-2-pe.png)
 {% endif %}
 
 #### Notifications about alarms
@@ -384,10 +384,10 @@ or [Telegram notifications](/docs/user-guide/rule-engine-2-0/tutorials/integrati
 There is also an additional 'Alarm Updated' relation type that should be ignored in most cases to avoid duplicate notifications.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-notifications-ce.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-notifications-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-notifications-pe.png)
+![image](https://img.thingsboard.io/user-guide/device-profile/device-profile-notifications-pe.png)
 {% endif %}
 
 ### Device provisioning

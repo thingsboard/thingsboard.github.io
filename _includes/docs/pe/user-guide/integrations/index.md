@@ -26,7 +26,7 @@ At the moment ThingsBoard supports various integration protocols. Most popular a
 Platform also support integration with specific LoRaWAN Network servers, Sigfox backend, various NB IoT devices using raw UDP and TCP integrations. 
 AWS IoT, IBM Watson and Azure Event Hub allows to subscribe to the data feed from devices via MQTT or AMQP.
 
-![image](/images/user-guide/integrations/integration.png)
+![image](https://img.thingsboard.io/user-guide/integrations/integration.png)
 
 The list of platform integrations is constantly growing, however, the general integration concepts are the same and explained below.  
 
@@ -50,7 +50,7 @@ Once message is pushed by the rule engine, ThingsBoard invokes assigned [**Downl
 
 <br>
 
-<object width="80%" data="/images/user-guide/integrations/integrations-overview.svg"></object>
+<object width="80%" data="https://img.thingsboard.io/user-guide/integrations/integrations-overview.svg"></object>
  
  
 ### Deployment options
@@ -70,7 +70,7 @@ Cons:
   * low level of isolation;
   * can't access local MQTT brokers or OPC-UA servers if ThingsBoard is deployed in the cloud.
   
-<object width="60%" data="/images/user-guide/integrations/embeded-integrations-overview.svg"></object> 
+<object width="60%" data="https://img.thingsboard.io/user-guide/integrations/embeded-integrations-overview.svg"></object> 
   
 #### Remote integrations
  
@@ -92,7 +92,7 @@ Cons:
 
 Learn how to configure integration to run remotely using [this guide](/docs/{{peDocsPrefix}}user-guide/integrations/remote-integrations).
 
-<object width="70%" data="/images/user-guide/integrations/remote-integrations-overview.svg"></object> 
+<object width="70%" data="https://img.thingsboard.io/user-guide/integrations/remote-integrations-overview.svg"></object> 
 
 ### Data Converters
 
@@ -104,7 +104,7 @@ The main function of **Uplink Data Converter** is to parse payload of the incomi
 
 To create an Uplink Converter go to Data Converters section and Click Add new data converter —> Create new converter. Enter converter name, select its type, specify a script to parse and transform data. Optional you can turn the Debug mode. Click “Add” to create converter.
 
-![image](/images/user-guide/integrations/uplink-converter-add.png)
+![image](https://img.thingsboard.io/user-guide/integrations/uplink-converter-add.png)
 
 <br>
 Uplink Converter is basically a user defined function with the following signature:
@@ -264,7 +264,7 @@ to the format that is used by corresponding Integration.
 
 To create a Downlink Converter go to Data Converters section and Click Add new data converter —> Create new converter. Enter converter name, select its type, specify a script to parse and transform data. Optional you can turn the Debug mode. Click “Add” to create converter.
 
-![image](/images/user-guide/integrations/downlink-converter-add.png)
+![image](https://img.thingsboard.io/user-guide/integrations/downlink-converter-add.png)
 
 <br>
 Downlink Converter is basically a user defined function with the following signature:
@@ -317,7 +317,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/overview/downlink-
 
 In order to invoke the downlink processing by the integration, tenant administrator should configure the rule chain similar to the one below:
 
-![image](/images/user-guide/integrations/downlink-rule-chain-example-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/downlink-rule-chain-example-pe.png)
 
 The full rule chain configuration is available [**here**](/docs/user-guide/resources/downlink-example-rule-chain.json).
 

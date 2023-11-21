@@ -34,10 +34,10 @@ In this tutorial we will configure ThingsBoard Rule Engine to store all temperat
 In Thingsboard UI go to **Rule Chains** section and open **Root Rule Chain**.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/initial-root-chain-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/initial-root-chain-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/initial-root-chain-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/initial-root-chain-pe.png)
 {% endif %}
 
 Drag and Drop **Script Filter** rule node to the chain. Node configuration window will be opened. 
@@ -57,45 +57,45 @@ Now we want that all **telemetry requests** pass through this validation script.
 relation between **Message Type Switch** node and **Save Telemetry** node:
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/remove-relation-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/remove-relation-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/remove-relation-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/remove-relation-pe.png)
 {% endif %}
 
 And connect **Message Type Switch** node with **Script Filter** node using **Post Telemetry** relation:
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/realtion-window-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/realtion-window-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/realtion-window-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/realtion-window-pe.png)
 {% endif %}
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/connect-script-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/connect-script-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/connect-script-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/connect-script-pe.png)
 {% endif %}
 
 
 Next, we need to connect **Script Filter** node with **Save Telemetry** node using **True** relation. So all valid telemetry will be saved:
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/script-to-save-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/script-to-save-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/script-to-save-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/script-to-save-pe.png)
 {% endif %}
 
 Also, we will connect **Script Filter** node with **Log Other** node using **False** relation. So that all not valid telemetry will be logged in the system log:
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/false-log-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/false-log-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/false-log-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/false-log-pe.png)
 {% endif %}
 
 Press Save button to apply changes.
@@ -104,20 +104,20 @@ Press Save button to apply changes.
 For validating results we will need to create Device and submit telemetry to the Thingsboard. So go to **Devices** section and create new Device:
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/create-device-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/create-device-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/create-device-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/create-device-pe.png)
 {% endif %}
 
 For posting device telemetry we will use [Rest API](/docs/{{docsPrefix}}reference/http-api/#telemetry-upload-api). To do this this we will need to
 copy device access token from the device **DHT22**. 
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/copy-access-token-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/copy-access-token-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/copy-access-token-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/copy-access-token-pe.png)
 {% endif %}
 
 <br>
@@ -129,7 +129,7 @@ curl -v -X POST -d '{"temperature":99}' https://demo.thingsboard.io/api/v1/$ACCE
 ```
 {: .copy-code}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/terminal-demo-2.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/terminal-demo-2.png)
 {% endif %}
 {% if docsPrefix == "pe/" %}
 ```bash
@@ -137,7 +137,7 @@ curl -v -X POST -d '{"temperature":99}' http://localhost:8080/api/v1/$ACCESS_TOK
 ```
 {: .copy-code}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/terminal-localhost-2.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/terminal-localhost-2.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
 ```bash
@@ -145,16 +145,16 @@ curl -v -X POST -d '{"temperature":99}' https://thingsboard.cloud/api/v1/$ACCESS
 ```
 {: .copy-code}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/terminal-cloud-2.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/terminal-cloud-2.png)
 {% endif %}
 
 We will see that telemetry **was not** added in Device **Latest Telemetry** section:
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/empty-telemetry-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/empty-telemetry-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/empty-telemetry-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/empty-telemetry-pe.png)
 {% endif %}
 
 <br>
@@ -167,7 +167,7 @@ curl -v -X POST -d '{"temperature":24}' https://demo.thingsboard.io/api/v1/$ACCE
 ```
 {: .copy-code}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/terminal-demo-1.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/terminal-demo-1.png)
 {% endif %}
 {% if docsPrefix == "pe/" %}
 ```bash
@@ -175,7 +175,7 @@ curl -v -X POST -d '{"temperature":24}' http://localhost:8080/api/v1/$ACCESS_TOK
 ```
 {: .copy-code}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/terminal-localhost-1.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/terminal-localhost-1.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
 ```bash
@@ -183,16 +183,16 @@ curl -v -X POST -d '{"temperature":24}' https://thingsboard.cloud/api/v1/$ACCESS
 ```
 {: .copy-code}
 
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/terminal-cloud-1.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/terminal-cloud-1.png)
 {% endif %}
 
 We will see that telemetry was saved successfully.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/saved-ok-ce.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/saved-ok-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/saved-ok-pe.png)
+![image](https://img.thingsboard.io/user-guide/rule-engine-2-0/tutorials/getting-started/saved-ok-pe.png)
 {% endif %}
 
 

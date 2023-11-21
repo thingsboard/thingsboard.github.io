@@ -44,35 +44,35 @@ Prerequisites before contining Kafka extension configuration:
 
 Let's configure Kafka plugin first. Go to *Plugins* menu and create new plugin:
 
-![image](/images/reference/plugins/kafka/kafka-plugin-config-1.png)
+![image](https://img.thingsboard.io/reference/plugins/kafka/kafka-plugin-config-1.png)
 
-![image](/images/reference/plugins/kafka/kafka-plugin-config-2.png)
+![image](https://img.thingsboard.io/reference/plugins/kafka/kafka-plugin-config-2.png)
 
 Please set correctly Kafka Bootstrap Servers URL and any other parameters located in plugin configuration section that is suitable for your case so Kafka extension is able to connect to Kafka broker.
 
 Click on *'Activate'* plugin button:
 
-![image](/images/reference/plugins/kafka/kafka-activate-plugin.png)
+![image](https://img.thingsboard.io/reference/plugins/kafka/kafka-activate-plugin.png)
 
 ### Kafka Rule Configuration
 
 Now it's time to create appropriate Rule.
 
-![image](/images/reference/plugins/kafka/kafka-rule-config.png)
+![image](https://img.thingsboard.io/reference/plugins/kafka/kafka-rule-config.png)
 
 Add filter for **POST_TELEMETRY** message type:
 
-![image](/images/reference/plugins/post-telemetry-filter.png)
+![image](https://img.thingsboard.io/reference/plugins/post-telemetry-filter.png)
 
 Click *'Add'* button to add filter.
 
 Then select *'Kafka Plugin'* in the drop-down box for the Plugin field:
 
-![image](/images/reference/plugins/kafka/kafka-plugin-selection.png)
+![image](https://img.thingsboard.io/reference/plugins/kafka/kafka-plugin-selection.png)
 
 Add action that will send temperature telemetry of device to particular kafka topic:
 
-![image](/images/reference/plugins/kafka/send-temp-telemetry.png)
+![image](https://img.thingsboard.io/reference/plugins/kafka/send-temp-telemetry.png)
 
 Click *'Add'* button and then activate Rule.
 

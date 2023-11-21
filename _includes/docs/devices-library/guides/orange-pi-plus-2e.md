@@ -9,10 +9,10 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
-The Orange Pi Plus 2E is a powerful single-board computer that boasts an Allwinner H3 Quad-core ARM Cortex-A7 processor with a clock speed of up to 1.6GHz.
- It comes with 2GB DDR3 RAM, 16GB EMMC Flash, and supports Ethernet, Wi-Fi, and Bluetooth connectivity.
- This SBC also features HDMI, AV output, and an onboard IR receiver, making it a versatile option for a wide range of projects.
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+The Orange Pi Plus 2E is a powerful single-board computer that boasts an Allwinner H3 Quad-core ARM Cortex-A7 processor with a clock speed of up to 1.6GHz.  
+ It comes with 2GB DDR3 RAM, 16GB EMMC Flash, and supports Ethernet, Wi-Fi, and Bluetooth connectivity.  
+ This SBC also features HDMI, AV output, and an onboard IR receiver, making it a versatile option for a wide range of projects.  
 
 
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}

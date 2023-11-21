@@ -9,7 +9,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 
 Following the hugely popular Raspberry Pi Pico, the new Raspberry Pi Pico W is a wireless-enabled version of the RP2040-based board, adding 2.4GHz 802.11n WiFi connectivity.
 The addition of wireless connectivity opens up the Pico W to a vast new range of projects such as remote sensor readings, remote control, home automation, mini web servers, wireless GPIO pin control and more.

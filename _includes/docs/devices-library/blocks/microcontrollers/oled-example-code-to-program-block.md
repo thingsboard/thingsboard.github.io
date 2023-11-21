@@ -364,7 +364,7 @@ Send data part (By default the example sends random value for **temperature** ke
 Then upload the code to the device by pressing Upload button or keyboard combination Ctrl+U.  
 {% assign codeByUploadButton='
     ===
-        image: /images/devices-library/basic/arduino-ide/upload.png
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/upload.png
 ' 
 %}
 {% include images-gallery.liquid imageCollection=codeByUploadButton %}
@@ -375,10 +375,10 @@ If you cannot upload the code and receive an error: `Property 'upload.tool.seria
   
 {% assign codeByUploadWithProgrammer='
     ===
-        image: /images/devices-library/basic/arduino-ide/select-esptool-programmer.png,
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/select-esptool-programmer.png,
         title: Go to "Tools" > "Programmer" and select "Esptool" as a programmer.  
     ===
-        image: /images/devices-library/basic/arduino-ide/upload-using-programmer.png,
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/upload-using-programmer.png,
         title: Go to "Sketch" > "Upload Using Programmer".  
 ' 
 %}

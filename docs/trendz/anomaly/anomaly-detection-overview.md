@@ -6,7 +6,7 @@ title: Anomaly detection overview
 description: Compleate guide for anomaly detection in timeseries data
 scoreVsIndexExample:
     0:
-        image: /images/trendz/anomaly/score_vs_index.png
+        image: https://img.thingsboard.io/trendz/anomaly/score_vs_index.png
         title: 'Pump vibration pattern during start'
        
 ---

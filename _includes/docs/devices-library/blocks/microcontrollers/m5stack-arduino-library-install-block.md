@@ -9,7 +9,7 @@ https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/arduino/package_m5stack_in
 
 Next, go to **Tools** > **Board** > **Board Manager** and install the ***M5Stack by M5Stack Official*** board.  
 
-![M5Stack Arduino IDE installation](/images/devices-library/basic/microcontrollers/m5stack-arduino-ide-board-manager.png)
+![M5Stack Arduino IDE installation](https://img.thingsboard.io/devices-library/basic/microcontrollers/m5stack-arduino-ide-board-manager.png)
 
 After the installation is complete, select the board by Board menu:  
 **Tools** > **Board** > {{ arduinoBoardPath }}.  

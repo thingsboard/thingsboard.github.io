@@ -17,7 +17,7 @@ TCP Integration allows to stream data from devices which use a TCP transport pro
 
 Please review the integration diagram to learn more.
 
-![image](/images/user-guide/integrations/tcp-integration.svg)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp-integration.svg)
 
 ## TCP Integration Configuration
 
@@ -128,28 +128,28 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-bin
 - Go to **Integrations** section and click **Add new integration** button. Name it **TCP Integration**, select type **TCP**;
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tcp/tcp-integration-setup-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-integration-setup-1-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tcp/tcp-integration-setup-1-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-integration-setup-1-paas.png)
 {% endif %}
 
 - Add recently created UDP Uplink Converter;
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tcp/tcp-integration-setup-2-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-integration-setup-2-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tcp/tcp-integration-setup-2-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-integration-setup-2-paas.png)
 {% endif %}
 
 - For now, leave the "Downlink Data Converter" field blank.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tcp/tcp-integration-setup-3-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-integration-setup-3-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tcp/tcp-integration-setup-3-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-integration-setup-3-paas.png)
 {% endif %}
 
 As you mentioned **Execute remotely** is checked and can not be modified - TCP Integration can be only **remote** type.
@@ -177,10 +177,10 @@ Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-handler-configuratio
 Click **Add** to save the Integration.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tcp/tcp-integration-setup-4-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-integration-setup-4-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tcp/tcp-integration-setup-4-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-integration-setup-4-paas.png)
 {% endif %}
 
 #### Installing and running external TCP Integration
@@ -206,10 +206,10 @@ Once you go to **Device Groups -> All** you should find a **SN-002** device prov
 Click on the device, go to **Latest Telemetry** tab to see "temperature" key and its value (25.7) there.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tcp/tcp-integration-create-device-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-integration-create-device-1-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tcp/tcp-integration-create-device-1-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-integration-create-device-1-paas.png)
 {% endif %}
 
 If your payload contains **humidity** telemetry, you should see "humidity" key and its value (69) there as well.
@@ -219,10 +219,10 @@ If your payload contains **humidity** telemetry, you should see "humidity" key a
 In **Data converters** create **Downlink converter** with default script. To see events - enable **Debug.**
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tcp/tcp-create-downlink-converter-tbel-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-create-downlink-converter-tbel-1-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tcp/tcp-create-downlink-converter-tbel-1-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-create-downlink-converter-tbel-1-paas.png)
 {% endif %}
 
 Add a converter to the integration. You can customize the downlink according to your configuration.
@@ -234,10 +234,10 @@ data: JSON.stringify(msg)
 where ***msg*** is the message that we receive and send back to the device.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tcp/tcp-edit-downlink-converter-tbel-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-edit-downlink-converter-tbel-1-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tcp/tcp-edit-downlink-converter-tbel-1-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-edit-downlink-converter-tbel-1-paas.png)
 {% endif %}
 
 Now you have to add a converter to the integration. 
@@ -251,10 +251,10 @@ Cache size - maximum size of messages for UDP client.
 {% include templates/info-banner.md content=difference %}
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tcp/tcp-add-downlink-converter-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-add-downlink-converter-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tcp/tcp-add-downlink-converter-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-add-downlink-converter-paas.png)
 {% endif %}
 
 <br>
@@ -263,19 +263,19 @@ Cache size - maximum size of messages for UDP client.
 When integration configured and ready to use, we need to go to Rule Chains, choose ‘Root Rule Chain’ and here create rule node **Integration Downlink**. Input here some name, choose which integration you need to use and tap **Add**.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tcp/tcp-rule-chain-downlink-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-rule-chain-downlink-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tcp/tcp-rule-chain-downlink-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-rule-chain-downlink-paas.png)
 {% endif %}
 
 After this steps, we need to tap on a right grey circle of rule node **message type switch** and drag this circle to left side of ‘Integration Downlink’, here lets choose **Attribute Update**, tap ‘Add’ and save Rule node.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tcp/tcp-rule-chain-and-attributes-updated-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-rule-chain-and-attributes-updated-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tcp/tcp-rule-chain-and-attributes-updated-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-rule-chain-and-attributes-updated-paas.png)
 {% endif %}
 
 ### Test Downlink
@@ -283,33 +283,33 @@ After this steps, we need to tap on a right grey circle of rule node **message t
 To test downlink, go to **"All"** folder in the **Device group** section. Create some **shared attribute** on device **SN-002** and send some Uplink message on this device.
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tcp/tcp-create-shared-add-attribute-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-create-shared-add-attribute-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tcp/tcp-create-shared-add-attribute-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-create-shared-add-attribute-paas.png)
 {% endif %}
 
 Received data and data that was sent can be viewed in the downlink converter.In the **“In”** block of the **Events** tab, we see what data entered:
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tcp/tcp-downlink-converter-events-in-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-downlink-converter-events-in-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tcp/tcp-downlink-converter-events-in-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-downlink-converter-events-in-paas.png)
 {% endif %}
 
 The **“Out”** field displays messages to device:
 
 {% if docsPrefix == "pe/" %}
-![image](/images/user-guide/integrations/tcp/tcp-downlink-converter-events-out-pe.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-downlink-converter-events-out-pe.png)
 {% endif %}
 {% if docsPrefix == "paas/" %}
-![image](/images/user-guide/integrations/tcp/tcp-downlink-converter-events-out-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-downlink-converter-events-out-paas.png)
 {% endif %}
 
 An example of a sent message and a response from ThingsBoard in the terminal:
 
-![image](/images/user-guide/integrations/tcp/tcp-terminal-send-downlink-message.png)
+![image](https://img.thingsboard.io/user-guide/integrations/tcp/tcp-terminal-send-downlink-message.png)
 
 This command will send the Uplink message to the ThingsBoard and will wait for Downlink message for 60 seconds if the message exists. 
 To learn how to send Uplink message, please [read here](/docs/{{peDocsPrefix}}user-guide/integrations/tcp/?tcpintegrationsenduplink=text&tcpintegrationhandlerconfiguration=text&tcpintegartionuplinkpayload=json#send-uplink-message)
