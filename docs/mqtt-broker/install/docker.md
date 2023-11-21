@@ -19,7 +19,7 @@ To run TBMQ on a single machine you will need at least 2Gb of RAM.
 
 {% include templates/install/docker-install-note.md %}
 
-## Installation
+### Installation
 
 Execute the following commands to download the script that will install and start TBMQ:
 
@@ -60,7 +60,7 @@ Once the installation process is complete you can access TBMQ UI by visiting the
 
 {% include templates/mqtt-broker/login.md %}
 
-## Logs, stop and start commands
+### Logs, stop and start commands
 
 In case of any issues you can examine service logs for errors.
 For example to see TBMQ logs execute the following command:
@@ -84,7 +84,7 @@ docker compose start
 ```
 {: .copy-code}
 
-## Upgrading
+### Upgrading
 
 In order to update to the latest version, execute the following commands:
 
@@ -98,6 +98,6 @@ sudo chmod +x tbmq-upgrade.sh && ./tbmq-upgrade.sh
 
 **NOTE**: replace the host’s directory `data_dir` variable with the directory used during container creation.
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}
