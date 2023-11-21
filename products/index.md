@@ -14,7 +14,7 @@ notitle: "true"
         <p>Platform as a service</p>
     </a>
     <a href="/products/thingsboard-pe/" class="card prof">
-        <img src="/images/thingsboard-p-icon.svg"> alt="Professional Edition"
+        <img src="/images/thingsboard-p-icon.svg" alt="Professional Edition">
         <h5 class="title">ThingsBoard Professional Edition</h5>
         <p>Advanced IoT platform</p>
     </a>
@@ -34,7 +34,7 @@ notitle: "true"
         <p>Connect legacy protocols</p>
     </a>
     <a href="/products/license-server/" class="card license">
-        <img src="/images/license-icon.svg" alt=""license>
+        <img src="/images/license-icon.svg" alt="license">
         <h5 class="title">ThingsBoard License Server</h5>
         <p>Billing solution</p>
     </a>
