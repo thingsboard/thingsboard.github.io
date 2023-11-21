@@ -16,7 +16,7 @@ For more comprehensive information regarding the architecture of TBMQ, navigate 
 This resource will provide you with detailed insights into the underlying structure and design principles of the broker,
 allowing you to develop a deeper understanding of its inner functionalities.
 
-## Installing TBMQ
+### Installing TBMQ
 
 To obtain detailed instructions on how to install TBMQ on different platforms, we recommend exploring the
 [**Installation options**](/docs/mqtt-broker/install/installation-options) documentation. 
@@ -45,7 +45,7 @@ sysadmin
 ```
 {: .copy-code}
 
-## Configure client authentication & authorization
+### Configure client authentication & authorization
 
 In order to secure the connection to the broker we should enable Basic or TLS authentication.
 In this tutorial, we will focus on the [Basic](/docs/mqtt-broker/security/#basic-authentication) authentication type.
@@ -63,7 +63,7 @@ Once Basic authentication is enabled, it is necessary to create MQTT Client Cred
 
 A wider range of authentication methods can be found within the [security guide](/docs/mqtt-broker/security/), offering enhanced options for ensuring secure access.
 
-## Publishing and Subscribing to Topics
+### Publishing and Subscribing to Topics
 
 Now, let's proceed with publishing messages and subscribing to topics to observe the flow of messages. In this tutorial, 
 we will utilize [Mosquitto](https://mosquitto.org/) clients for this purpose. 
@@ -120,6 +120,6 @@ You should receive and observe the published message for the subscribed client.
 
 ![image](/images/mqtt-broker/getting-started/broker-pub-sub.png)
 
-## Next Steps
+### Next Steps
 
 {% assign currentGuide = "GettingStartedGuide" %}{% include templates/mqtt-broker-guides-banner.md %}
