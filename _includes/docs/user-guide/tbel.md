@@ -328,7 +328,7 @@ Nested ternary statements are also supported.
 
 **Foreach**
 
-One of the most powerful features in TBEL is its foreach operator. It is similar to the for each operator in Java 1.5 in both syntax and functionality. 
+One of the most powerful features in TBEL is its foreach operator. It is similar to the foreach operator in Java 1.5 in both syntax and functionality. 
 It accepts two parameters separated by a colon. The first is the local variable for the current element, and the second is the collection or array to be iterated.
 
 For example:
