@@ -116,55 +116,15 @@ entity-type-2:
 entity-group-list-1:
     0:
         image: /images/user-guide/ui/alias/entity-group-list-1-pe.png
-        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
-    
+        title: 'In the “Add alias” dialog, enter the alias name, and select the “Entity group list” filter. Then select the entity type and specify entity groups that you want to display on the widget.'
+
 entity-group-list-2:
     0:
         image: /images/user-guide/ui/alias/entity-group-list-2-pe.png
-        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
-
-entity-group-list-3:
-    0:
+        title: 'In the “Tables” widgets bundle select the “Entities table” widget. Navigate to the “Entity alias” tab. Specify the “Entity group list” alias in the “Entity alias” field. Click “Add” and apply changes;'
+    1:
         image: /images/user-guide/ui/alias/entity-group-list-3-pe.png
-        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
-    1:
-        image: /images/user-guide/ui/alias/entity-group-list-4-pe.png
-        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
-
-entity-group-list-4:
-    0:
-        image: /images/user-guide/ui/alias/entity-group-list-5-pe.png
-        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
-    1:
-        image: /images/user-guide/ui/alias/entity-group-list-6-pe.png
-        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
-    
-entity-group-list-5:
-    0:
-        image: /images/user-guide/ui/alias/entity-group-list-7-pe.png
-        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
-    1:
-        image: /images/user-guide/ui/alias/entity-group-list-8-pe.png
-        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
-    2:
-        image: /images/user-guide/ui/alias/entity-group-list-9-pe.png
-        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
-    3:
-        image: /images/user-guide/ui/alias/entity-group-list-10-pe.png
-        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
-
-entity-group-list-6:
-    0:
-        image: /images/user-guide/ui/alias/entity-group-list-11-pe.png
-        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
-    1:
-        image: /images/user-guide/ui/alias/entity-group-list-12-pe.png
-        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
-    2:
-        image: /images/user-guide/ui/alias/entity-group-list-13-pe.png
-        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
-
-
+        title: 'The Entities table widget displaying a list of device groups specified in the alias has been added.'
 
 
 

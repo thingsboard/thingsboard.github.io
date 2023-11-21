@@ -111,21 +111,16 @@ In the "Tables" widgets bundle select the "Entities table" widget. Navigate to t
 This alias allows you to display multiple entity groups.
 It can be a device group device groups, asset groups, entity view groups, customer groups, dashboard groups, or user groups.
 
-In the “Add Alias” dialog, enter the alias name, select the filter as “Entity Type,” and choose the entity type.
+In the “Add alias” dialog, enter the alias name, and select the “Entity group list” filter. Then select the entity type and specify entity groups that you want to display on the widget.
 
 {% include images-gallery.html imageCollection="entity-group-list-1" %}
 
 In this example, an alias was created that filters a list of device groups, which in this case are "Compressors" and "Thermostats". Let’s use an added alias in a widget:
 
-In this example, an alias was created that filters a list of multiple device groups. Let’s use an added alias in a widget:
-
-In the “Tables” widgets bundle select the “Entities table” widget. Navigate to the “Entity alias” tab. Specify the “Entity group list” alias in the “Entity alias” field. Click “Add” and apply changes. The Entities table widget with the alias that filters a list of several device groups.
+In the “Tables” widgets bundle select the “Entities table” widget. Navigate to the “Entity alias” tab. Specify the “Entity group list” alias in the “Entity alias” field. Click “Add” and apply changes. The Entities table widget displaying a list of device groups specified in the alias has been added.
 
 {% include images-gallery.html imageCollection="entity-group-list-2" %}
 
-{% include images-gallery.html imageCollection="entity-group-list-3" showListImageTitles="true" %}
-
-{% include images-gallery.html imageCollection="entity-group-list-4" showListImageTitles="true" %}
 
 Let's learn how to add an Entity group list alias:
 1. Enter dashboard editing mode.
