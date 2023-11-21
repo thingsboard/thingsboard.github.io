@@ -10,7 +10,7 @@ from the event configuration which has a similar structure with a Rule Engine Me
 Generated message is then forwarded to [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) and processed starting from
 the [Root Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain).
 
-<br/>
+<br>
 
 ![image](/images/user-guide/scheduler.svg)
 
@@ -18,12 +18,12 @@ the [Root Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#r
 
 See video tutorial below for step-by-step instruction how to use this feature.
 
-<br/>
-<div id="video">  
+<br>
+<div id="video">
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/RnHAao8yET4" frameborder="0" allowfullscreen></iframe>
     </div>
-</div> 
+</div>
 
 ### Scheduler Administration
 
@@ -38,7 +38,7 @@ The views can be switched by pressing corresponding icons in the page header.
 ![image](/images/user-guide/ui/scheduler-view-buttons.png)
 
 In the calendar view mode scheduler events are presented as labels according to their schedule. 
-  
+
 ![image](/images/user-guide/ui/scheduler-calendar-view.png)
 
 By default calendar view is presented as **Month** view type.
@@ -97,7 +97,7 @@ Allows to schedule reports generation supported by [Reporting](/docs/{{docsPrefi
 - **Report configuration**:
     - **Base URL** - base URL of ThingsBoard UI that should be accessible by Report Server.
     - **Dashboard** - dashboard that will be used for report generation.
-    - **Dashboard state parameter value** - used to specify target dashboard state for report generation. Can be set automatically by clicking on right most button of the field and invoking **Select dashboard state** dialog.       
+    - **Dashboard state parameter value** - used to specify target dashboard state for report generation. Can be set automatically by clicking on right most button of the field and invoking **Select dashboard state** dialog.
     - **Timezone** - timezone in which target dashboard will be presented in report.
     - **Use dashboard timewindow** - if set, timewindow configured in the target dashboard will be used during report generation.
     - **Timewindow** - specific dashboard timewindow that will be used during report generation.
@@ -106,7 +106,7 @@ Allows to schedule reports generation supported by [Reporting](/docs/{{docsPrefi
     - **Use current user credentials** - if set, credentials of user created this report configuration will be used to open dashboard UI during report generation.
     - **Customer user credentials** - target customer user whose credentials will be used to open dashboard UI during report generation.
     - **Generate Test Report** button is used for testing purposes. It invokes report generation process with provided configuration. Resulting report file will be automatically downloaded if the report generation will be successful.
-    
+
 - **Send email** - if set, email message with report file in attachment will be sent.
 
 - **Email configuration**:

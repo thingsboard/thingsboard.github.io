@@ -5,7 +5,7 @@ notitle: "true"
 description: ThingsBoard Careers
 ---
 
-# Careers
+## Careers
 ## We welcome smart and communicable individuals to join our team in the Kyiv office.
 
 <hr>
@@ -45,31 +45,31 @@ description: ThingsBoard Careers
 <h2>How do we work:</h2>
 <div id="advanGrid">
     <div>
-      <img class="advanImg" src="/images/careers/schedule_icon.svg">
+      <img class="advanImg" src="/images/careers/schedule_icon.svg" alt="schedule icon">
       <h5>Comfortable and flexible working schedule</h5>
     </div>
     <div>
-      <img class="advanImg" src="/images/careers/support_icon.svg">
+      <img class="advanImg" src="/images/careers/support_icon.svg" alt="support icon">
       <h5>A high-professional team without bureaucracy</h5>
     </div>
     <div>
-      <img class="advanImg" src="/images/careers/target_icon.svg">
+      <img class="advanImg" src="/images/careers/target_icon.svg" alt="target icon">
       <h5>Career growth opportunities and regular salary review</h5>
     </div>
     <div>
-      <img class="advanImg" src="/images/careers/vacation_icon.svg">
+      <img class="advanImg" src="/images/careers/vacation_icon.svg" alt="vacation icon">
       <h5>Team buildings, corporate events, paid vacations and sick leaves</h5>
     </div>
     <div>
-      <img class="advanImg" src="/images/careers/sweet_icon.svg">
+      <img class="advanImg" src="/images/careers/sweet_icon.svg" alt="sweet icon">
       <h5>Unlimited beverages, fruits and sweets</h5>
     </div>
     <div>
-      <img class="advanImg" src="/images/careers/english_icon.svg">
+      <img class="advanImg" src="/images/careers/english_icon.svg" alt="english icon">
       <h5>Free English classes</h5>
     </div>
     <div>
-      <img class="advanImg" src="/images/careers/medical_icon.svg">
+      <img class="advanImg" src="/images/careers/medical_icon.svg" alt="medical icon">
       <h5>Medical Insurance</h5>
     </div>
 </div>

@@ -13,11 +13,14 @@
 
 Storage section of configuration file will look like:
 
-```yaml
-storage
-  type: file
-  data_folder_path: ./data/
-  max_file_count: 5
-  max_read_records_count: 6
-  max_records_per_file: 14
+```json
+...
+"storage": {
+  "type": "file",
+  "data_folder_path": "./data/",
+  "max_file_count": 5,
+  "max_read_records_count": 6,
+  "max_records_per_file": 14
+},
+...
 ```

@@ -13,7 +13,7 @@ Non-video tutorials are available on the [Samples](/docs/samples/) page.
 
 <br>
 
-# Data Modeling
+## Data Modeling
 
 #### Getting started guide
 
@@ -77,7 +77,7 @@ You will learn how to:
     </div>
 </div><br>
 
-# Device Connection Demos
+## Device Connection Demos
 
 #### Temperature upload from ESP8266 and DHT22 using Thingsboard
 
@@ -137,7 +137,7 @@ Related Links:<br>
 <a href="https://blog.thingsboard.io/2017/01/raspberry-pi-gpio-control-using-android.html">Raspberry Pi GPIO control using Android Things and Thingsboard tutorial documentation
 
 
-# Visualization
+## Visualization
 
 #### Dashboard development guide, Part 1 of 3: Visualizing Assets data using Maps and Tables
 
@@ -244,7 +244,7 @@ You will learn how to:
     </div>
 </div><br>
 
-# ThingsBoard Professional Edition (PE) Features 
+## ThingsBoard Professional Edition (PE) Features 
 
 #### ThingsBoard PE: White Labeling Guide
 ThingsBoard Professional Edition web interface allows you to configure your company or product logo and color scheme in 2 minutes with zero coding efforts and no service restart required. 

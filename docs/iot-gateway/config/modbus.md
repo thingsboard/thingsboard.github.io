@@ -18,14 +18,10 @@ generated after installing the new version and running Gateway in the new_modbus
 This guide will help you to get familiar with Modbus connector configuration for ThingsBoard IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this connector.
 We will describe connector configuration file below.  
-<br>
-<details>
 
-<summary>
-<b>Example of Modbus Connector config file. Press to expand.</b>
-</summary>
+<b>Example of Modbus Connector config file.</b>
 
-{% highlight json %}
+{% capture modbusConf %}
 
 {
   "master": {
@@ -230,7 +226,7 @@ We will describe connector configuration file below.
               "tag": "smm",
               "type": "int",
               "objectsCount": 1,
-              "address": 2,             
+              "address": 2,
               "value": "12334"
             }
           ],
@@ -276,9 +272,8 @@ We will describe connector configuration file below.
   }
 }
 
-{% endhighlight %}
-
-</details>
+{% endcapture %}
+{% include code-toggle.liquid code=modbusConf params="conf|.copy-code.expandable-20" %}
 
 ## Section "master": description and configuration parameters
 A Modbus Master is used to query data from devices. In order to configure slaves which the master must be queried, it 
@@ -609,7 +604,7 @@ Depending on which value the register belongs to, you must add it to the appropr
               "tag": "smm",
               "type": "int",
               "objectsCount": 1,
-              "address": 2,              
+              "address": 2,
               "value": "12334"
             }
           ],

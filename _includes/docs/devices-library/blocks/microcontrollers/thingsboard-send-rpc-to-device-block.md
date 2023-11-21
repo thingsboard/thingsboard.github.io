@@ -2,14 +2,14 @@
 {% assign changeStateAndMode = '
     ===
         image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-change-blinking-mode-0.png,
-        title: Change led state using switch widget to continuous lightning.
+        title: Change LED state using switch widget to continuous lightning.
     ===
         image: /images/devices-library/basic/microcontrollers/dashboard/thingsboard-example-dashboard-change-blinking-mode-1.png,
-        title: Change led state using round switch widget to blinking mode.
+        title: Change LED state using round switch widget to blinking mode.
  '
  %}
 
-You can manually change state of the led and change mode between continuous lightning and blinking.
+You can manually change state of the LED and change mode between continuous lightning and blinking.
 To do this, you can use the following parts of our dashboard:  
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=changeStateAndMode %}
@@ -121,7 +121,7 @@ Our encoded picture will be sent in the main loop:
 ```cpp
 ...
 if (sendPicture) {
-tb.sendTelemetryString(PICTURE_ATTR, imageBuffer);
+tb.sendTelemetryData(PICTURE_ATTR, imageBuffer);
 sendPicture = false;
 }
 ...

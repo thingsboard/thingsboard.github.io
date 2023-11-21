@@ -18,7 +18,7 @@ $feature-box-div-margin-bottom: 40px
         overflow: hidden
         background: none
         div:nth-child(1)
-            background-image: url(/video/tb-cover.jpg) !important
+            background-image: url(https://img.thingsboard.io/tb-cover.jpg) !important
         .video-cover
             position: absolute
             z-index: -2
@@ -31,7 +31,7 @@ $feature-box-div-margin-bottom: 40px
             background-color: #000
             background-repeat: no-repeat
             background-position: 50% 50%
-            background-image: url(/video/tb-cover.jpg)
+            background-image: url(https://img.thingsboard.io/tb-cover.jpg)
         #hero-content
             height: 100%
             display: flex
@@ -80,10 +80,13 @@ $feature-box-div-margin-bottom: 40px
                     display: none
     #overflow
         overflow: hidden
+        #react
+            @media (max-width: 768px)
+            margin-top: 50px
         #intro, #manage, #react, #products, #dashboard_description, #rule-engine, #bottom-features
             color: #212529
             text-align: left
-            h1
+            h1, h2.past-h1
                 font-weight: 600
                 text-align: center
                 font-size: 32px
@@ -91,7 +94,7 @@ $feature-box-div-margin-bottom: 40px
                 a
                     font-weight: 600
                     font-size: 32px
-            h2
+            h2, span.phrase-heading
                 font-weight: 500
                 line-height: 54px
                 font-size: 36px
@@ -122,7 +125,7 @@ $feature-box-div-margin-bottom: 40px
             img
                 height: 60px
                 margin-bottom: 20px
-            main
+            main, div.main-div
                 display: flex
                 flex-wrap: wrap
                 flex-direction: row
@@ -138,6 +141,8 @@ $feature-box-div-margin-bottom: 40px
 
         #intro
             margin-bottom: 178px
+            @media (max-width: 768px)
+                margin-bottom: 70px
             padding-top: 88px
             .second
                 margin-top: 48px
@@ -145,9 +150,12 @@ $feature-box-div-margin-bottom: 40px
                 font-size: 20px
                 line-height: 1.5em
                 font-weight: normal
+                &.in-the-past-h1
+                    font-weight: 400
+                    text-align: center
 
         #manage, #react
-            #features-top
+            #features-top, #features-top-2
                 img
                     border-radius: 6px
                     box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
@@ -164,6 +172,9 @@ $feature-box-div-margin-bottom: 40px
                         order: 1
                         h2
                             margin-top: 100px
+                        &.microservices h2
+                            @media (max-width: 768px)
+                                margin-top: 60px
                     .feature-des, img, .manage, .visualize, .process
                         width: 100%
                     .manage
@@ -193,6 +204,8 @@ $feature-box-div-margin-bottom: 40px
                             right: 0
                     &.vis
                         margin: 20px 0 30px
+                        @media (max-width: 768px)
+                            margin: 60px 0 30px
                     .process
                         position: relative
                         display: inline-block
@@ -220,7 +233,7 @@ $feature-box-div-margin-bottom: 40px
                     &.dark
                         .feature-des
                             margin-bottom: 96px
-                            h2
+                            h2, span.phrase-heading
                                 color: white
                             p
                                 color: #A6A8B2
@@ -240,6 +253,9 @@ $feature-box-div-margin-bottom: 40px
             width: 100%
             padding-top: 100px
             padding-bottom: 56px
+            @media (max-width: 768px)
+                padding-top: 60px
+                padding-bottom: 20px
             .product-title
                 color: white
                 text-align: center
@@ -258,7 +274,7 @@ $feature-box-div-margin-bottom: 40px
                     margin-bottom: 40px
                     p
                         margin: unset
-                    h2
+                    h2, span.phrase-heading
                         font-size: 28px
                         font-weight: 600
                     h3
@@ -273,7 +289,7 @@ $feature-box-div-margin-bottom: 40px
                     &.main
                         box-shadow: inset 0px -6px 0px #305680, 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.05)
                         margin: 0 30px
-                        h2
+                        h2, span.phrase-heading
                             font-size: 42px
                             font-weight: 600
                             line-height: 1.5
@@ -291,17 +307,25 @@ $feature-box-div-margin-bottom: 40px
                 font-weight: 500
                 margin-top: 56px
                 text-align: center
+                @media (max-width: 768px)
+                    margin-top: 20px
 
         #dashboard_description
             margin-top: 186px
             margin-bottom: 120px
+            @media (max-width: 768px)
+                margin-top: 20px
+                margin-bottom: 0
             .owl-carousel.owl-theme.usecase-carousel
                 margin: 78px auto
+                @media (max-width: 768px)
+                    margin: 50px auto
                 width: 100%
                 .owl-stage-outer
                     overflow: hidden
                     .owl-stage
                         .owl-item
+                            min-height: 420px
                             .item-image
                                 box-shadow: unset
                 .owl-nav
@@ -314,6 +338,9 @@ $feature-box-div-margin-bottom: 40px
                 justify-content: space-between
                 display: flex !important
                 align-items: center
+                .item-image-container .overlay
+                    @media (max-width: 768px)
+                    display: none
             .item-image-container
                 position: relative
                 width: 100%
@@ -329,6 +356,8 @@ $feature-box-div-margin-bottom: 40px
 
         #rule-engine
             margin-bottom: 148px
+            @media (max-width: 768px)
+                margin-bottom: 80px
             .rule
                 justify-content: space-between
                 display: flex
@@ -385,7 +414,7 @@ $feature-box-div-margin-bottom: 40px
             &.dash
                 outline: none
                 .arrow
-                    left: 156px
+                    right: -20px
             .arrow
                 transform: translate(0px)
                 transition-duration: 0.3s
@@ -431,7 +460,8 @@ $feature-box-div-margin-bottom: 40px
                     transition-duration: 0.3s
                     position: absolute
                     bottom: 0
-                    left: calc(50% - 60px)
+                    // left: calc(50% - 60px)
+                    left: 33%
                     display: flex
                     img
                         margin-right: 10px
@@ -476,7 +506,9 @@ $feature-box-div-margin-bottom: 40px
                     right: 814px
                     border: 2px solid #0D2743
                 &.main2
-                    top: -576px
+                    top: -700px
+                    @media (max-width: 768px)
+                        top: -576px
                     width: 2560px
                     height: 825px
                     left: -1280px
@@ -504,7 +536,7 @@ $feature-box-div-margin-bottom: 40px
                     right: 736px
                     border: 4px solid #2A7DEC
                 &.dashboards
-                    top: -700px
+                    top: -550px
                     width: 2560px
                     height: 845px
                     left: -1280px
@@ -606,7 +638,7 @@ $feature-box-div-margin-bottom: 40px
                     margin-bottom: 60px
         #overflow
             #manage, #react
-                #features-top
+                #features-top, #features-top-2
                     .block
                         .feature-des, img, .manage, .visualize, .process
                             width: 80%
@@ -630,20 +662,20 @@ $feature-box-div-margin-bottom: 40px
             #vendorStrip
                 display: block
         section, header
-            main
+            main, div.main-div
                 max-width: 1400px
         footer
-            main
+            main, div.main-div
                 max-width: 1400px
         #overflow
             #manage, #react
-                #features-top
+                #features-top, #features-top-2
                     .block
                         flex-direction: row
                         .feature-des, img, .manage, .visualize, .process
                             width: calc(50% - 80px)
                             order: unset
-                            h2
+                            h2, span.phrase-heading
                                 margin: unset
                         .preview, .manage, .visualize, .process
                             margin-top: unset
@@ -695,3 +727,8 @@ $feature-box-div-margin-bottom: 40px
             #dashboard_description
                 .owl-carousel.owl-theme.usecase-carousel
                     width: 100%
+
+@media (max-width: 768px)
+    .read-more-button
+        .arrow
+            display: none

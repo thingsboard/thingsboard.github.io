@@ -6,7 +6,7 @@ chip: TI Sitara AM3358BZCZA100
 connectivity: WIFI, Bluetooth
 vendor: BeagleBoard
 deviceImageFileName: beaglebone-green-wireless.jpg
-docsPrefix: pe
+docsPrefix: pe/
 ---
 
 

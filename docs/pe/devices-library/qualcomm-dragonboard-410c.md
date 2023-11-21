@@ -6,7 +6,7 @@ chip: Qualcomm SnapDragon 410
 connectivity: WIFI, Bluetooth, GPS
 vendor: Qualcomm
 deviceImageFileName: qualcomm-dragonboard-410c.png
-docsPrefix: pe
+docsPrefix: pe/
 ---
 
 

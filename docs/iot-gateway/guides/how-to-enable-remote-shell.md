@@ -14,19 +14,19 @@ For purpose of this guide, we will use following things:
 1. Instance of ThingsBoard platform (How to install you can [read here](/docs/user-guide/install/installation-options/)). For this guide we will use [thingsboard.cloud](https://thingsboard.cloud)
 2. Installed and configured ThingsBoard IoT Gateway (How to install you can [read here](/docs/iot-gateway/installation/)).
 
-# Step 1. Remote shell activation
+## Step 1. Remote shell activation
 
  - To activate remote shell in ThingsBoard IoT Gateway you should add or change parameter **remoteShell** to **true** in the section **thingsboard** in the general configuration file (**tb_gateway.yaml**);
 
   ![](/images/gateway/charhe-remote-shell-parameter.png)
   <br>
 {% capture info %}
-<body>
+<div>
   <p>
     <b style="color:red">WARNING:</b>
     <span style="color:black">this feature can cause security problems for your device, we strongly recommend using it with ssl encryption only and not enabling it if you don’t need it.</span>
   </p>
-</body>
+</div>
 {% endcapture %}
 {% include templates/info-banner.md content=info %}
  
@@ -34,17 +34,20 @@ For purpose of this guide, we will use following things:
  - Restart the gateway with the new configuration.
 
 Example of the **thingsboard** section in the general configuration file:
-```yaml
-thingsboard:
-  host: thingsboard.cloud
-  port: 1883
-  remoteShell: true
-  remoteConfiguration: false
-  security:
-    accessToken: PUT_YOUR_GW_ACCESS_TOKEN_HERE
+```json
+{
+  "thingsboard": {
+    "host": "thingsboard.cloud",
+    "port": 1883,
+    "security": {
+      "type": "accessToken",
+      "accessToken": "YOUR_ACCESS_TOKEN"
+    }
+  },
+}
 ```
 
-# Step 2. Create a dashboard to use the remote shell
+## Step 2. Create a dashboard to use the remote shell
 
 To use the remote shell we have to use **RPC remote shell** widget from **Control widget** bundle.<br>
 To do this we use following steps:

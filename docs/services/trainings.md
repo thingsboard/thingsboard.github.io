@@ -17,7 +17,7 @@ ThingsBoard training sessions are educational events that are delivered to your 
 
 ThingsBoard training sessions are on-demand online events for up to 8 people. On-site training sessions are also available. [Contact us](/docs/contact-us/) for more details.
 
-<br/>
+<br>
 
 <span class="heading">Training courses:</span>
 

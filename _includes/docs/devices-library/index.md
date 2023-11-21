@@ -143,14 +143,16 @@
     {% elsif guidesVersion == 'ce' and item.cepage == 'false' %}
     {% elsif guidesVersion == 'pe' and item.pepage == 'false' %}
     {% else %}
+        {% if category[0].category %}
         <li>
             <a href="#AnchorID{{ category[0].category | remove: " " }}" id="markdown-toc-AnchorID{{ category[0].category | remove: " " }}">{{ category[0].category }}</a>
         </li>
+        {% endif %}
     {% endif %}
     {% endfor %}
 </ul>
 
-#### Welcome to the ThingsBoard Devices Library!  
+<h1 style="font-size: 28px;">Welcome to the ThingsBoard Devices Library!</h1>
 
 The Devices Library is a collection of guides and code snippets that explain how to connect popular IoT **development boards** to the ThingsBoard platform.
 We intentionally concentrate on the code snippets for programmable devices to boost the productivity of the firmware engineers.
@@ -158,7 +160,7 @@ Device Library is a constantly extending resource. We encourage our community me
 
 In case you wish to integrate existing **LoRaWAN, NB IoT, or SigFox** sensors into ThingsBoard, see the [How to connect my device?](/docs/{{page.docsPrefix}}getting-started-guides/connectivity/)
 
-<br/>
+<br>
 
 <div class="device-guides">
     <div class="filter-panel">
@@ -170,6 +172,6 @@ In case you wish to integrate existing **LoRaWAN, NB IoT, or SigFox** sensors in
     {% include devices.liquid %}
 </div>
 
-<br/>
+<br>
 
 <a href="/docs/{{page.docsPrefix}}devices-library/guidelines/" class="n-button add-device">Add your device</a>

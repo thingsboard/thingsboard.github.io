@@ -12,9 +12,9 @@
     {% seo %}
     {% endif %}
     {% if description %}
-    <meta name="twitter:description" content="{{ description }}"/>
+    <meta name="twitter:description" content="{{ description }}">
     {% endif %}
-    {% if page.no_canonical != true %}<link rel="canonical" href="https://thingsboard.io{{page.url}}" />{% endif %}
+    {% if page.no_canonical != true %}<link rel="canonical" href="https://thingsboard.io{{page.url}}">{% endif %}
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
     <script type="text/javascript">
         function _gaLt(event) {
@@ -27,7 +27,7 @@
             while (el && (typeof el.tagName == 'undefined' || el.tagName.toLowerCase() != 'a' || !el.href)) {
                 el = el.parentNode;
             }
-            if (el && el.href) {
+            if (el && el.href && el.getAttribute('itemprop') !== 'contentUrl') {
                 var link = el.href;
                 if ((link.indexOf(location.host) == -1 || link.indexOf('.' + location.host) > 0) && !link.match(/^javascript\:/i)) {
                     var target = (el.target && !el.target.match(/^_(self|parent|top)$/i)) ? el.target : false;

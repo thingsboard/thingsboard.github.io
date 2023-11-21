@@ -74,7 +74,7 @@ license:
 
 {% capture contenttogglespec %}
 PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/windows-db-postgresql.md%br%
-Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/windows-db-hybrid-timescale.md{% endcapture %}
+Hybrid <br>PostgreSQL+TimescaleDB<br><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/windows-db-hybrid-timescale.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
@@ -141,13 +141,13 @@ Execute **install.bat** script to install ThingsBoard Web Report Server as a Win
   This means it will be automatically started on system startup. 
   Similar, **uninstall.bat** will remove ThingsBoard from Windows services.
   The output should be like:
-  
+
   ```text
     C:\Program Files (x86)\tb-web-report>install.bat
     Installing tb-web-report ...
     tb-web-report installed successfully!  
-  ```    
-  
+  ```
+
 Now let's start the ThingsBoard service!
 Open the command prompt as an Administrator and execute the following command:
 

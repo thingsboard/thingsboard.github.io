@@ -8,6 +8,73 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.6.1 (Nov 13, 2023) {#v361}  
+
+Everything from [TB CE v3.6.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.6.1) with the following improvements and bug fixes.
+
+**Improvements**
+
+ * Transport API performance improvement;
+ * Added ability to update WL from tenant to customer via REST API;
+
+**Bug fixes**
+
+ * Fixed add edge dialog by @deaflynx;
+ * Fixed converters component debug mode slider always on;
+ * Fixed Smart Irrigation template;
+ * Fixed incorrect recipient dialog title;
+ * Fixed for Apache Pulsar client in the 'Apache Pulsar' and 'Tuya' integrations.
+
+## v3.6.0 (Sep 21, 2023) {#v36}  
+
+Everything from [TB CE v3.6](https://github.com/thingsboard/thingsboard/releases/tag/v3.6) with the following improvements and bug fixes.
+
+**Improvements**
+
+* Core & Rule Engine
+
+  * Default converters for most Integrations with well-defined message forma;
+  * Fuel level monitoring solution template;
+  * Move integration rate limits configuration to tenant profile;
+  * Improved validation for group permissions, group owner, and resource deletion;
+  * Moved white labeling attributes from attributes_kv to white_labeling table;
+
+* UI
+
+  * UI for deleting time-series;
+  * White labeling login base URL auto-generation based on the domain name;
+  * Integration wizard layout;
+
+* Transport
+
+  * Added handling for new message types for Efento devices; 
+  
+* Edge
+
+  * Edge install instructions minor updates;
+
+**Bug fixes**
+
+* Core and Rule Engine:
+
+  * Fixed for TCP/UDP integration with binary payload;
+  * Fixed rabbitmq queue in msa;
+  * Fixed check write permission in the dashboard;
+  * Fixed get attributes and time-series keys;
+  * Fixed custom menu hierarchy;
+  * Fixed entityDataQuery with GroupList filter;
+  * Fixed validation for ClientID field in MQTT integration;
+
+* UI:
+
+  * Fixed dashboard fullscreen button;
+  * Fixed initial value for scheduler event start time when creating by clicking on calendar day;
+  * Fixed for group entities table excessive api call;
+  * Fixed for custom translation and menu json content placeholder displayed in one line on firefox;
+  * Fixed tenant administrators recipients filter in notification center;
+  * Fixed incorrect count widgets in web report when dashboard has widgets selected hide in desktop mode;
+  * Fixed customer users sort.
+
 ## v3.5.1 (May 31, 2023) {#v351}  
 
 Everything from [TB CE v3.5.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.5.1) with the following bug fixes.
@@ -350,7 +417,7 @@ Main features:
 
 * Update custom menu: Introduce dashboardId parameter to embed dashboard instead of using iframe;
 * Azure Event Hub Integration is updated to use new SDK;
-* Added new version of ["Alarms Count Node"](/docs/user-guide/rule-engine-2-0/pe/analytics-nodes/#alarms-count-node).
+* Added new version of ["Alarms Count Node"](/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/#alarms-count-node).
 * Added "Duplicate to group entities by group name" rule node;
 * Added ability to aggregate data on each message in the "Aggregate stream node".
 * Add ability to aggregate data weekly from Sunday to Saturday in the "Aggregate stream node".

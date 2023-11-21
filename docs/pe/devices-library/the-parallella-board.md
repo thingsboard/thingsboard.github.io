@@ -6,7 +6,7 @@ chip: Xilinx Zynq Z-7010
 connectivity: Ethernet
 vendor: Adapteva
 deviceImageFileName: the-parallella-board.png
-docsPrefix: pe
+docsPrefix: pe/
 ---
 
 

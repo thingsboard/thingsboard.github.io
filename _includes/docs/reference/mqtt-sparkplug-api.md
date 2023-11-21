@@ -37,9 +37,9 @@ ThingsBoard supports **Sparkplug™ B** payloads only.
 
 ## Getting started
 
-This guide will teach us how to: connect Sparkplug EoN node to ThingsBoard, 
-collect device metrics and store them as ThingsBoard time-series data, 
-and push commands back to devices.  
+This guide will teach us how to: connect Sparkplug EoN node to ThingsBoard,
+collect device metrics and store them as ThingsBoard time-series data,
+and push commands back to devices.
 
 ### Step 1. Create device profile
 
@@ -144,7 +144,7 @@ You may push update to Sparkplug node/device metric from ThingsBoard via shared 
 ThingsBoard [Shared Attributes](/docs/{{docsPrefix}}user-guide/attributes/#shared-attributes) are used to deliver metric value updates to the device.
 You may change the shared attribute in multiple ways - via administration UI, dashboard widget, REST API, or rule engine node.
 
-<br/>
+<br>
 Let's manually change the values of the attributes "*Outputs/LEDs/Green*" and "*Device Control/Scan Rate*".
 
 To change the value of the attribute "Outputs/LEDs/Green", you first need to add a particular metric to the *MQTT EoN Node* device profile to store it as a shared attribute instead of telemetry.
@@ -203,7 +203,7 @@ The *method* defines the Sparkplug operation and is one of the following:
 The *params* is a JSON that defines the metric and the value.
 
 For example, to reboot the Sparkplug EoN *Node*, you should send the following command:
-  
+
   ```json
   {
     "method": "NCMD",

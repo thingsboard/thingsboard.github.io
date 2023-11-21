@@ -14,7 +14,7 @@ https://dl.espressif.com/dl/package_esp32_index.json
 
 {% include images-gallery.liquid showListImageTitles="false" imageCollection=esp32ArduinoPreferences %}
 
-Then go to <b>Tools</b> > <b>Board</b> > <b>Board Manager</b> and install the <b><i>ESP32 by Espressif Systems</i></b> board.
+Then go to **Tools** > **Board** > **Board Manager** and install the ***ESP32 by Espressif Systems*** board.
 
 {% assign esp32ArduinoInstallation='
     ===
@@ -26,12 +26,13 @@ Then go to <b>Tools</b> > <b>Board</b> > <b>Board Manager</b> and install the <b
 After the installation is complete, select the board by Board menu:  
 **Tools** > **Board** > {{ arduinoBoardPath }}.  
 
-Also, do not forget to specify the port for the device:
+Connect the device to computer using USB cable and select the port for the device:
 
-**Tools** > **Port** > **/dev/ttyUSB0**. 
+**Tools** > **Port** > **/dev/ttyUSB0**.
 
 Port depends on operation system and may be different:
-- for Linux/MacOS it will be **/dev/ttyUSB**X
-- for Windows - **COM**X.  
+- for Linux it will be **/dev/ttyUSB**X
+- for MacOS it will be **usb.serial**X.. or **usb.modem**X..
+- for Windows - **COM**X.
 
 Where X - some number, that was assigned by your system.  

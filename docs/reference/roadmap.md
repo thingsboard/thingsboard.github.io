@@ -9,14 +9,7 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ## ThingsBoard CE
 
-### v3.5.2
-
-* Simplified widget configuration;
-* Dedicated dashboard for gateway management;  
-* New card widget  
-* Bugfixes;
-
-### v3.6
+### v3.7
 
 * Migration to JDK 17.
 * Alarm rules:
@@ -25,10 +18,9 @@ The product roadmap listed below covers only main features and does not cover sm
   * support of more complex conditions;
 * Notification system:
   Support of push notifications to mobile apps.
-* Diagnostics system.
-  Automatically detect issues in the system configuration and notify the tenant administrator.
-  For example, wrong script in the rule node or issues with external systems: sending emails, sms, etc.
-* Numerous usability improvements;
+* "Housekeeping" service to improve handling of long-running maintenance and administration tasks;
+* Optimization of the attributes table;
+* Separate entity to store queue statistics;
 * New widgets and rule nodes;
 
 See active development in progress [here](https://github.com/thingsboard/thingsboard/tree/{{ site.release.branch_major_next }}) and work on latest release bug fixes [here](https://github.com/thingsboard/thingsboard/tree/master).

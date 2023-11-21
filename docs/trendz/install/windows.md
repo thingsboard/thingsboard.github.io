@@ -29,7 +29,7 @@ In small and medium installations Trendz can be installed **on the same** server
 Download and extract the package.
 
 ```bash
-https://dist.thingsboard.io/trendz-windows-1.10.1.zip
+https://dist.thingsboard.io/trendz-windows-1.10.3.zip
 ```
 {: .copy-code}
 
@@ -227,6 +227,6 @@ you need to create a new inbound rule with Windows Firewall with Advanced Securi
 
 ![image](/images/user-guide/install/windows/windows7-firewall-8.png)
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

@@ -13,13 +13,13 @@ hidetoc: "true"
     <div class="thanks-content">
         <p class="thank-you">Thank you!</p>
         <div id="silver-form" style="display: none;">
-            <p>Thanks for applying for Silver Hardware Partner Program.<br/>Please check your email for further instructions.</p>
+            <p>Thanks for applying for Silver Hardware Partner Program.<br>Please check your email for further instructions.</p>
         </div>    
         <div id="gold-form" style="display: none;">
-            <p>Thanks for applying for Gold Hardware Partner Program.<br/>Please check your email for further instructions.</p>
+            <p>Thanks for applying for Gold Hardware Partner Program.<br>Please check your email for further instructions.</p>
         </div>    
         <div id="platinum-form" style="display: none;">
-            <p>Thanks for applying for Platinum Hardware Partner Program.<br/>Please check your email for further instructions.</p>
+            <p>Thanks for applying for Platinum Hardware Partner Program.<br>Please check your email for further instructions.</p>
         </div>   
         <a class="homepage" href="/">Homepage</a>
     </div>

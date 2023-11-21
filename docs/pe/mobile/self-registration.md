@@ -61,27 +61,27 @@ Finally, the following changes should be performed to enable activation link pro
 
     Edit **android/app/src/main/AndroidManifest.xml**, find and set scheme and host of browsable intent filter of the **MainActivity**.
     Set value of **android:scheme** to the value of **Application URL scheme** field, set value of **android:host** to the value of **Application URL hostname** field:
-    
+
     ```xml
       ...
         <activity
                 android:name=".MainActivity"
-    
+
                 ...
-    
+
                 <intent-filter>
                     <action android:name="android.intent.action.VIEW" />
                     <category android:name="android.intent.category.DEFAULT" />
                     <category android:name="android.intent.category.BROWSABLE" />
                     <data android:scheme="value of Application URL scheme field" android:host="value of Application URL hostname field"/>
                 </intent-filter>
-    
+
         </activity>
       ...
     ```
 
 2. For iOS:
-    
+
     Edit **ios/Runner/Info-Debug.plist** and **ios/Runner/Info-Release.plist** files, find **CFBundleURLTypes** array property.
     Set string value of **CFBundleURLName** property to the value of **Application URL hostname** field,
     set value of string array property **CFBundleURLSchemes** to the value of **Application URL scheme** field:
@@ -114,12 +114,12 @@ If your setup is correct you should be able to perform sign up and activate acco
     <div class="mobile-frame ios">
         <div class="phone-shadow right"></div>
         <div class="frame-image">
-            <img src="/images/mobile/pe/self-registration-frame.png">
+            <img src="/images/mobile/pe/self-registration-frame.png" alt="self registration frame">
         </div>
         <div class="frame-video">
             <video autoplay loop preload="auto" muted playsinline>
-                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/pe/self-registration.mp4" type="video/mp4">
-                 <source src="https://s3-us-west-1.amazonaws.com/tb-videos/mobile/pe/self-registration.webm" type="video/webm">
+                 <source src="https://video.thingsboard.io/mobile/pe/self-registration.mp4" type="video/mp4">
+                 <source src="https://video.thingsboard.io/mobile/pe/self-registration.webm" type="video/webm">
             </video>
         </div>
     </div>

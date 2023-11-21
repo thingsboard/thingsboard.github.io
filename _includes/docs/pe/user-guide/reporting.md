@@ -8,7 +8,7 @@ ThingsBoard allows you to generate reports using existing dashboards.
 
 Reports can be generated either from the currently opened dashboard or scheduled using the [Scheduler](/docs/{{docsPrefix}}user-guide/scheduler/#generate-report) capabilities.
 
-<br/>
+<br>
 
 ![image](/images/user-guide/reporting.svg)
 
@@ -16,7 +16,7 @@ Reports can be generated either from the currently opened dashboard or scheduled
 
 See video tutorial below for step-by-step instruction how to use this feature.
 
-<br/>
+<br>
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/QTeCoe5rUF0" frameborder="0" allowfullscreen></iframe>
@@ -33,7 +33,7 @@ The Reports Server opens a web page with the target dashboard URL in the headles
 then it captures the dashboard web page into the specified format (*PDF \| PNG \| JPEG*) and sends the captured data as a response to ThingsBoard.
 
 {% if docsPrefix == 'pe/' %}
-The system administrator can configure the Reports Server endpoint URL using [thingsboard.yml](/docs/{{docsPrefix}}user-guide/install/config/).
+The system administrator can configure the Reports Server endpoint URL using [thingsboard.yml](/docs/user-guide/install/pe/config/).
 
 The following is a sample configuration:
 

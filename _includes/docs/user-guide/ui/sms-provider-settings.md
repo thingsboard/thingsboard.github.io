@@ -14,5 +14,5 @@ To configure SMS provider settings in Thingsboard, follow these steps:
 
 {% include images-gallery.html imageCollection="smsProviderSettings" showListImageTitles="true" %}
 
-<br/>
+<br>
 Please use [AWS SNS](https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html), [Twilio](https://www.twilio.com/docs/sms) or [SMPP](https://smpp.org/) documentation to learn more how to use the corresponding system.

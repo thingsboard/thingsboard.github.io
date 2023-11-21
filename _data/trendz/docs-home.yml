@@ -67,6 +67,8 @@ toc:
   section:
     - title: Overview
       path: /docs/trendz/prediction/
+    - title: Custom Python models
+      path: /docs/trendz/predict-with-python-models/
     - title: Predict remaining time
       path: /docs/trendz/predict-remaining-time/
     - title: Save predictions into ThingsBoard
@@ -81,6 +83,10 @@ toc:
       path: /docs/trendz/widget-filter-by-alias/
     - title: Widget actions
       path: /docs/trendz/widget-actions/
+    - title: Widget autorefresh
+      path: /docs/trendz/widget-autorefresh/
+- title: External datasources
+  path: /docs/trendz/mix-sql-datasource/
 - title: Sync to ThingsBoard
   path: /docs/trendz/save-telemetry-to-thingsboard/
 - title: States
@@ -89,6 +95,8 @@ toc:
   path: /docs/trendz/cache-settings/
 - title: Processing jobs
   path: /docs/trendz/background-jobs/
+- title: White labeling
+  path: /docs/trendz/white-labeling/
 - title: Trendz REST API
   path: /docs/trendz/rest-api/
 - title: Trendz release notes

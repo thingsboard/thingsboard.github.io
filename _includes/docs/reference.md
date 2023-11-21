@@ -52,7 +52,7 @@ See [submit strategies](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#q
 for more details.
 
 ThingsBoard Rule Engine may operate in two modes: shared and isolated. In shared mode, rule engine process messages that belong to multiple tenants.
-In isolated mode Rule Engine may be configured to process messages for specific tenant only. 
+In isolated mode Rule Engine may be configured to process messages for tenants of specific tenant profile only. 
 
 **ThingsBoard Web UI**
 
@@ -79,7 +79,7 @@ ThingsBoard uses following topics:
  * **tb_core**: to push messages from Transport or Rule Engine to ThingsBoard Core. Messages include session lifecycle events, attribute and RPC subscriptions, etc.
  * **tb_rule_engine**: to push messages from Transport or ThingsBoard Core to Rule Engine. Messages include incoming telemetry, device states, entity lifecycle events, etc.
  
-**Note:** All topic properties including names and number of partitions are [configurable](/docs/{{docsPrefix}}user-guide/install/config/) via thingsboard.yml or environment variables. 
+**Note:** All topic properties including names and number of partitions are [configurable](/docs/user-guide/install/{{docsPrefix}}config/) via thingsboard.yml or environment variables. 
 Since ThingsBoard 3.4 we can configure Rule Engine queues by the UI, see the [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/).
 
 **Note:** Starting version 2.5 we have switched from using [gRPC](https://grpc.io/) to  [Message Queues](/docs/{{docsPrefix}}reference/#message-queues-are-awesome)
@@ -135,7 +135,7 @@ Please note that this option is deprecated in favor of Hybrid approach due to ma
 * **Hybrid (PostgreSQL + Cassandra)** - Stores all entities in PostgreSQL database and timeseries data in Cassandra database. 
 * **Hybrid (PostgreSQL + TimescaleDB)** - Stores all entities in PostgreSQL database and timeseries data in Timescale database. 
 
-It is possible to configure this options using **thingsboard.yml** file. See database [configuration](/docs/{{docsPrefix}}user-guide/install/config/) page for more details.
+It is possible to configure this options using **thingsboard.yml** file. See database [configuration](/docs/user-guide/install/{{docsPrefix}}config/) page for more details.
 
 ```yaml
 database:

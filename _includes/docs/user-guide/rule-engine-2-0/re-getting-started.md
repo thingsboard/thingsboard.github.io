@@ -120,7 +120,7 @@ copy device access token from the device **DHT22**.
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/copy-access-token-pe.png)
 {% endif %}
 
-<br/>
+<br>
 Use terminal for will send a message with temperature readings  = 99. Replace **$ACCESS_TOKEN** with actual device token.
 
 {% if docsPrefix == null %}
@@ -157,7 +157,7 @@ We will see that telemetry **was not** added in Device **Latest Telemetry** sect
 ![image](/images/user-guide/rule-engine-2-0/tutorials/getting-started/empty-telemetry-pe.png)
 {% endif %}
 
-<br/>
+<br>
 
 Now send a message with temperature readings = 24.
 
@@ -196,7 +196,7 @@ We will see that telemetry was saved successfully.
 {% endif %}
 
 
-## See Also:
+## See Also
 
 You can use the next links for learning more about Thingsboard Rule Engine:
 
@@ -213,8 +213,8 @@ You can use the next links for learning more about Thingsboard Rule Engine:
 - [Add & remove devices to group dynamically](/docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/)
 - [Aggregate incoming data stream](/docs/user-guide/rule-engine-2-0/tutorials/aggregate-incoming-data-stream/)
 
-<br/>
-<br/>
+<br>
+<br>
 
 ## Next steps
 

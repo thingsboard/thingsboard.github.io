@@ -28,7 +28,7 @@ cd tbmq/k8s/minikube
 To install TBMQ execute the following command:
 
 ```bash
-./k8s-install-tb-mqtt-broker.sh
+./k8s-install-tbmq.sh
 ```
 {: .copy-code}
 
@@ -37,11 +37,11 @@ To install TBMQ execute the following command:
 Execute the following command to deploy TBMQ:
 
 ```bash
-./k8s-deploy-tb-broker.sh
+./k8s-deploy-tbmq.sh
 ```
 {: .copy-code}
 
-After a while when all resources will be successfully started you can open `http://{your-cluster-ip}:30001` in your browser (e.g. [http://192.168.49.2:30001](http://192.168.49.2:30001)).
+After a while when all resources will be successfully started you can open `http://{your-cluster-ip}:30001` in your browser (e.g. **http://192.168.49.2:30001**).
 You can check your cluster IP using command:
 ```bash
 minikube ip
@@ -102,7 +102,7 @@ See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatshee
 Execute the following command to delete TBMQ nodes:
 
 ```bash
-./k8s-delete-tb-broker.sh
+./k8s-delete-tbmq.sh
 ```
 {: .copy-code}
 
@@ -112,6 +112,29 @@ Execute the following command to delete all resources (including database):
 ./k8s-delete-all.sh
 ```
 {: .copy-code}
+
+## Upgrading
+
+In case you would like to upgrade, please pull the latest changes from `main` branch:
+
+```bash
+git pull origin main
+```
+{: .copy-code}
+
+**Note**: Make sure custom changes of yours if available are not lost during the merge process.
+
+After that execute the following commands:
+
+```bash
+./k8s-delete-tbmq.sh
+./k8s-upgrade-tbmq.sh --fromVersion=FROM_VERSION
+./k8s-deploy-tbmq.sh
+```
+{: .copy-code}
+
+Where `FROM_VERSION` - from which version upgrade should be started.
+See [Upgrade Instructions](/docs/mqtt-broker/install/upgrade-instructions/) for valid `fromVersion` values.
 
 ## Next steps
 

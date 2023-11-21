@@ -19,7 +19,7 @@ There are several API calls that allow to fetch entities related to particular u
 {% unless docsPrefix == "paas/" %}
 ### General configuration
 
-System administrator is able to configure audit log levels using [thingsboard.yml](/docs/{{docsPrefix}}user-guide/install/config/). You can find sample configuration below:
+System administrator is able to configure audit log levels using [thingsboard.yml](/docs/user-guide/install/{{docsPrefix}}config/). You can find sample configuration below:
 
 ```yaml
 # Audit log parameters
@@ -71,7 +71,7 @@ The configuration parameters are well documented inline.
     host: "${AUDIT_LOG_SINK_HOST:localhost}"
     port: "${AUDIT_LOG_SINK_POST:9200}"
     user_name: "${AUDIT_LOG_SINK_USER_NAME:}"
-    password: "${AUDIT_LOG_SINK_PASSWORD:}"      
+    password: "${AUDIT_LOG_SINK_PASSWORD:}"
 ```
 {% endunless %}
 

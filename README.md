@@ -14,7 +14,7 @@ Any edits you make will be viewable on a lightweight webserver that runs on your
 
 Install Ruby **3.0.x**. If you're on Ubuntu, run this commands:
 
-    sudo apt-get install ruby-full build-essential zlib1g-dev
+    sudo apt-get install ruby-full build-essential zlib1g-dev git
     sudo gem install github-pages jekyll bundler
 
 
@@ -33,7 +33,7 @@ Install Ruby **3.0.x**. If you're on Ubuntu, run this commands:
 </details>
 
 * If you're on a Mac, follow [these instructions](https://gorails.com/setup/osx/) and choose a Ruby version (**3.0.x** or **2.7.6**).  
-* If you're on a Windows machine you can use the [Ruby Installer](http://rubyinstaller.org/downloads/). During the installation make sure to check the option for *Add Ruby executables to your PATH*.  
+* If you're on a Windows machine you can use the [Ruby Installer](https://rubyinstaller.org/downloads/). During the installation make sure to check the option for *Add Ruby executables to your PATH*.  
 
 Clone our site:  
 
@@ -42,7 +42,7 @@ Clone our site:
 Make any changes you want. Then, to see your changes locally:  
 
 	cd thingsboard.github.io
-	bundle install
+	sudo bundle install
 	bundle exec jekyll serve --host 0.0.0.0
 	
 In case you change the layout or website structure you might need to execute following command:
@@ -158,3 +158,9 @@ Use the following command to check the broken links.
 ```bash
 docker run -it --rm --network=host ghcr.io/linkchecker/linkchecker --check-extern http://0.0.0.0:4000/
 ```
+
+## Update pages in _includes/docs/pe/user-guide/install directory in accordance with thingsboard/thingsborad-pe repositories: 
+
+Use the following command from the project root directory to regenerate configuration pages (first script parameter is TB version: 'ce' or 'pe', second parameter is relative path to TB repository):
+    
+    python3 generate_config_pages.py ce ../thingsboard
