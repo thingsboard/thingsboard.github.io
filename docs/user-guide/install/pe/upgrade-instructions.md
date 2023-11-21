@@ -526,7 +526,7 @@ sudo service thingsboard start
 ```
 {: .copy-code}
 
-### Windows {#windows-36}
+### Windows {#windows-361}
 
 {% capture difference %}
 **NOTE:**

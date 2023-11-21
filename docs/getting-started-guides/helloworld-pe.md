@@ -15,36 +15,30 @@ step1:
         title: 'By default, you navigate to the device group “All”. Click on the "+" icon in the top right corner of the table and then select "Add new device";'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-3-pe.png
-        title: 'Enter the device name. For example, "My New Device". No other changes are required at this time. Click "Add" to add the device;'
+        title: 'Enter the device name. For example, "My New Device". No other changes are required at this time. Click "Add";'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-connectivity-1-pe.png
-        title: 'The window to check the device&#39;s connection to ThingsBoard will open. The following step is optional. Select the messaging protocol and your operating system. Then, install the necessary client tools and copy the command;'
+        title: 'Device is created. A window will open where you can check the device&#39;s connection to ThingsBoard. This step is optional. Let&#39;s close this window for now and return to checking the connection in the next step in more detail;'
     4:
-        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-connectivity-3-pe.png
-        title: 'Execute previously copied command. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings. Then, close the connectivity window;'
-    5:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png
-        title: 'Your first device has been added. As new devices are added, they will be added to the top of the table, since the table sorts devices using the time of the creation by default;'
-    6:
+        title: 'Your first device has been added. As new devices are added, they will be added to the top of the table, since the table sorts devices using the time of the creation by default.'
+
+step11:
+    0:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-5-pe.png
-        title: 'When adding a new device, you will receive a notification. You can view it by clicking on the "bell" icon in the top right corner.'
+        title: 'You can view notification by clicking on the "bell" icon in the top right corner.'
 
 step2:
     0:
-        image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-1-pe.png
-        title: 'Click on the device row in the table to open device details. Note that the device state is "Inactive";'
+        image: /images/helloworld/getting-started-pe/check-connectivity-device-1-pe.png
+        title: 'Click on the your device, and click the "Check connectivity” button in the "Device details" window;'
     1:
-        image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-2-pe.png
-        title: 'Click "Copy access token". Token will be copied to your clipboard. Save it to a safe place.'
+        image: /images/helloworld/getting-started-pe/check-connectivity-device-2-pe.png
+        title: 'In the opened window select the messaging protocol and your operating system. Install the necessary client tools and copy the command;'
+    2:
+        image: /images/helloworld/getting-started-pe/check-connectivity-device-3-pe.png
+        title: 'Execute previously copied command. Once you have successfully published the “temperature” readings, the device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings. Now, close the connectivity window.'
 
-step21:
-    0:
-        image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-3-pe.png
-        title: 'Navigate to the "Latest telemetry" tab. You should see the previously published "temperature" readings;'
-    1:
-        image: /images/helloworld/getting-started-pe/hello-world-2-1-connect-device-4-pe.png
-        title: 'Close the device details tab and refresh the "Devices" table. The device state should be changed from "Inactive" to "Active".'
-        
 step31:
     0:
         image: /images/user-guide/dashboards/overview/create-dashboard-1-pe.png

@@ -10,8 +10,8 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
 <section id="first-screen">
     <div class="hero-container">
         <div id="hero-content">
-            <div class="cdu-title">Development services</div>
-            <div class="cdu-sub-title">We will create your custom IoT solution that perfectly suits your business</div>
+            <h1 id="cdu-title-h1" class="cdu-title">Development services</h1>
+            <h2 class="cdu-sub-title">We will create your custom IoT solution that perfectly suits your business</h2>
         </div>
         <div class="hero-image">
             <div class="image-wrapper-icon-laptop">
@@ -44,7 +44,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
 </section>
 
 <section class="our-customers">
-    <h1 class="title">We created solutions for:</h1>
+    <span class="title">We created solutions for:</span>
     <div class="customer-logos">
         <div class="logo">
             <img src="/images/development-services/logo-kalitec.svg" alt="logo kalitec"/>
@@ -67,7 +67,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     <div class="content-wrapper">
         <div class="header">
             <div class="side-title">
-                <h1>OUR SERVICES</h1>
+                <span>OUR SERVICES</span>
             </div>
             <div class="section-title">From complicated widgets to diverse IoT solutions</div>
             <div class="section-text">If you are facing constraints in terms of time and resources for configuring the solution, custom development unit is equipped to handle all development and configuration tasks according to your requirements and the defined scope, ensuring seamless delivery.</div>
@@ -176,7 +176,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     <div class="content-wrapper">
         <div class="additionally">
             <div class="side-title">
-                <h1>additionally</h1>
+                <span>additionally</span>
             </div>
             <div class="info">
                 <div class="left-block">
@@ -191,8 +191,8 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     <button class="anchor-button" data-href="#get-in-touch">Contact Us</button>
                 </div>
             </div>
-            <svg id="additionally-bg1"></svg>
-            <svg id="additionally-bg2"></svg>
+            <span id="additionally-bg1"></span>
+            <span id="additionally-bg2"></span>
         </div>
     </div>
     <svg id="rectangle1" class="bg-rectangle"></svg>
@@ -202,7 +202,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     <div class="content-wrapper">
         <div class="upper-block">
             <div class="side-title">
-                <h1>testimonials</h1>
+                <span>testimonials</span>
             </div>
             <div class="section-title">
                 What our clients say about us
@@ -259,7 +259,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     <div class="content-wrapper">
         <div id="content-get-in-touch">
             <div class="side-title">
-                <h1 id="side-title-h1">get in touch</h1>
+                <span id="side-title-heading">get in touch</span>
             </div>
             <div class="info">
                 <div class="section-title">Ready to launch your unique product?</div>
