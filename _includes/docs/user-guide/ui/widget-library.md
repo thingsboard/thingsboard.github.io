@@ -239,7 +239,7 @@ The HTML widgets bundle is useful for injecting custom HTML code. Or for display
 
 ### Indoor Environment
 
-The Indoor Environment widgets bundle is useful for visualizing indoor environmental data.
+The Indoor Environment widget bundle is effective in visualizing data related to indoor environments.
 
 {% include images-gallery.html imageCollection="wl-indoor-environment-bundle" %}
 
@@ -269,7 +269,7 @@ The Navigation widgets bundle is useful for defining the home dashboard of the u
 
 ### Outdoor Environment
 
-The Outdoor Environment widgets bundle includes widgets for visualizing outdoor environmental data.
+The Outdoor Environment widget bundle is effective in visualizing data related to outdoor environments.
 
 {% include images-gallery.html imageCollection="wl-outdoor-environment-bundle" %}
 
