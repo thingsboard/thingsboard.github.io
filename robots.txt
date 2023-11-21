@@ -1,10 +1,9 @@
 User-agent: *
 
-Disallow: /legacy/
-Disallow: /v1.0/
-Disallow: /v1.1/
-Disallow: /404/
 Disallow: /404.html
+Disallow: /admin
+Disallow: /signup
+Disallow: /email-protection
 Disallow: *.json
 Disallow: *.sh
 Disallow: *.zip
