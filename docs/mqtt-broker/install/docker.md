@@ -11,7 +11,7 @@ description: Installing TBMQ using Docker (Linux or Mac OS)
 This guide will help you to install and start standalone TBMQ using Docker on Linux or Mac OS.
 If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/mqtt-broker/install/cluster/docker-compose-setup/).
 
-## Prerequisites
+### Prerequisites
 
 To run TBMQ on a single machine you will need at least 2Gb of RAM.
 
@@ -19,12 +19,13 @@ To run TBMQ on a single machine you will need at least 2Gb of RAM.
 
 {% include templates/install/docker-install-note.md %}
 
-## Installation
+### Installation
 
 Execute the following commands to download the script that will install and start TBMQ:
 
 ```shell
-wget https://raw.githubusercontent.com/thingsboard/tbmq/main/msa/tbmq/configs/tbmq-install-and-run.sh && sudo chmod +x tbmq-install-and-run.sh && ./tbmq-install-and-run.sh
+wget https://raw.githubusercontent.com/thingsboard/tbmq/{{ site.release.broker_branch }}/msa/tbmq/configs/tbmq-install-and-run.sh &&
+sudo chmod +x tbmq-install-and-run.sh && ./tbmq-install-and-run.sh
 ```
 {: .copy-code}
 
@@ -59,7 +60,7 @@ Once the installation process is complete you can access TBMQ UI by visiting the
 
 {% include templates/mqtt-broker/login.md %}
 
-## Logs, stop and start commands
+### Logs, stop and start commands
 
 In case of any issues you can examine service logs for errors.
 For example to see TBMQ logs execute the following command:
@@ -83,12 +84,13 @@ docker compose start
 ```
 {: .copy-code}
 
-## Upgrading
+### Upgrading
 
 In order to update to the latest version, execute the following commands:
 
 ```shell
-wget https://raw.githubusercontent.com/thingsboard/tbmq/main/msa/tbmq/configs/tbmq-upgrade.sh && sudo chmod +x tbmq-upgrade.sh && ./tbmq-upgrade.sh
+wget https://raw.githubusercontent.com/thingsboard/tbmq/{{ site.release.broker_branch }}/msa/tbmq/configs/tbmq-upgrade.sh &&
+sudo chmod +x tbmq-upgrade.sh && ./tbmq-upgrade.sh
 ```
 {: .copy-code}
 
@@ -96,6 +98,6 @@ wget https://raw.githubusercontent.com/thingsboard/tbmq/main/msa/tbmq/configs/tb
 
 **NOTE**: replace the host’s directory `data_dir` variable with the directory used during container creation.
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

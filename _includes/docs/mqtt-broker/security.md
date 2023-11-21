@@ -17,7 +17,7 @@ you can ensure secure and controlled access to the MQTT broker, protecting your 
 
 ## MQTT Listeners
 
-TBMQ provides the flexibility to configure its listening capabilities for both the TCP and SSL/TLS protocols.
+TBMQ provides the flexibility to configure its listening capabilities for both the TCP and SSL/TLS protocols as well as for MQTT over WebSockets.
 
 ### TCP Listener
 
@@ -112,7 +112,7 @@ The `credentialsId` is generated as follows:
 
 - credentialsId = `username|$CLIENT_USERNAME` when only username is present;
 - credentialsId = `client_id|$CLIENT_ID` when only client ID is present;
-- credentialsId = `mixed|$CLIENT_USERNAME|$CLIENT_ID` when both username and client ID are present;
+- credentialsId = `mixed|$CLIENT_USERNAME|$CLIENT_ID` when both username and client ID are present.
 
 Where `$CLIENT_USERNAME` refers to the specified username, `$CLIENT_ID` refers to the specified client ID from the `CONNECT` packet.
 
