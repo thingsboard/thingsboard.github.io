@@ -13,12 +13,14 @@ broker-sessions:
 
 broker-mqtt-creds-creation:
     0:
-        image: /images/mqtt-broker/getting-started/create-mqtt-creds.png
+        image: /images/mqtt-broker/getting-started/add-mqtt-creds-1.png
         title: 'Navigate to "Credentials" tab, click "+" in the top right corner of the table'
     1:
-        image: /images/mqtt-broker/getting-started/add-mqtt-creds.png
-        title: 'Input credentials name. For example, "Getting Started Credentials". Input "username" and "password" with chosen values.
-                Click "Add" to save credentials'
+        image: /images/mqtt-broker/getting-started/add-mqtt-creds-2.png
+        title: 'Input credentials name. For example, "Getting Started Credentials"'
+    2:
+        image: /images/mqtt-broker/getting-started/add-mqtt-creds-3.png
+        title: 'Input "clientID", "username" and "password" with chosen values. Click "Add" to save credentials'
 
 ---
 
