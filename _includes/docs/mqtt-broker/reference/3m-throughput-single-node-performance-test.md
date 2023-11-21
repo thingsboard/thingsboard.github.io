@@ -6,7 +6,7 @@ In the context of MQTT brokers, optimal performance during high workloads is of 
 This article explores a recent performance test of TBMQ, where we checked its ability to handle an impressive throughput of **3 million messages per second** with a single-digit milliseconds latency.
 With only one node, we pushed the limits of TBMQ's capabilities.
 
-![image](/images/mqtt-broker/reference/single-node-test/tbmq-perf-test-diagram.png)
+![image](https://img.thingsboard.io/mqtt-broker/reference/single-node-test/tbmq-perf-test-diagram.png)
 
 ### Test methodology
 

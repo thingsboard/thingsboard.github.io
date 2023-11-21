@@ -5,18 +5,18 @@ description: TBMQ 3M msg/s throughput single node performance test
 
 tbmq-3m-single-node-test-aws-instances:
   0:
-    image: /images/mqtt-broker/reference/single-node-test/aws-instances.png
+    image: https://img.thingsboard.io/mqtt-broker/reference/single-node-test/aws-instances.png
     title: 'AWS EC2 instances deployed'
 
 tbmq-3m-single-node-test-monitoring:
   0:
-    image: /images/mqtt-broker/reference/single-node-test/tbmq-aws.png
+    image: https://img.thingsboard.io/mqtt-broker/reference/single-node-test/tbmq-aws.png
     title: 'AWS EC2 TBMQ monitoring'
   1:
-    image: /images/mqtt-broker/reference/single-node-test/tbmq-jmx.png
+    image: https://img.thingsboard.io/mqtt-broker/reference/single-node-test/tbmq-jmx.png
     title: 'JMX TBMQ monitoring'
   2:
-    image: /images/mqtt-broker/reference/single-node-test/tbmq-monitoring.png
+    image: https://img.thingsboard.io/mqtt-broker/reference/single-node-test/tbmq-monitoring.png
     title: 'TBMQ graphs monitoring'
 
 ---
