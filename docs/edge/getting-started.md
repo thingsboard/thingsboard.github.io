@@ -6,7 +6,7 @@ description: Getting started with ThingsBoard Edge
 step1:
     0:
         image: /images/edge/getting-started/step-1-item-1.png 
-        title: 'Log in to your ThingsBoard <b>Edge</b> instance and click the "Add Device" button.'
+        title: 'Log in to your <b>ThingsBoard Edge</b> instance and click the "Add Device" button.'
     1:
         image: /images/edge/getting-started/step-1-item-2.png  
         title: 'Enter a name for the device, for example, "My New Device". No other changes are required at this time. Click "Add" to create the device.'
@@ -32,7 +32,7 @@ step1:
 step2:
     0:
         image: /images/edge/getting-started/step-2-item-1.png
-        title: 'Log in to your ThingsBoard <b>Community Edition</b> instance and navigate to the Devices page.'
+        title: 'Log in to your <b>ThingsBoard Community Edition</b> instance and navigate to the Devices page.'
     1:
         image: /images/edge/getting-started/step-2-item-2.png  
         title: 'Confirm that the device "My New Device" has been created on the ThingsBoard Community Edition cloud.'
@@ -41,7 +41,7 @@ step2:
         title: 'Select "My New Device" and navigate to the "Relations" tab.'
     3:
         image: /images/edge/getting-started/step-2-item-4.png
-        title: 'Switch the direction from "From" to "To" to view the relation to the edge that provisioned this device.'
+        title: 'Switch the direction from "From" to "To" to view the relation to the Edge that provisioned this device.'
 
 step3:
     0:
@@ -54,7 +54,7 @@ step3:
 step4:
     0:
         image: /images/edge/getting-started/step-4-item-1.png
-        title: 'Click the <b>Add Dashboard</b> button on the ThingsBoard <b>Community Edition</b> server.'
+        title: 'Click the <b>Add Dashboard</b> button on the <b>ThingsBoard Community Edition</b> server.'
     1:
         image: /images/edge/getting-started/step-4-item-2.png
         title: 'Input the dashboard name, for example, "My New Dashboard", and click "Add" to create the dashboard.'
@@ -95,18 +95,18 @@ step4:
         image: /images/edge/getting-started/step-4-item-14.png
         title: 'Click the "Save" button to save the Dashboard.'
 
-step5CE:
+step5Server:
     0:
         image: /images/edge/getting-started/step-5-item-1.png
-        title: 'Open the Edge instances page on the ThingsBoard <b>Community Edition</b> server. Click on the <b>Dashboards</b> button of the edge instance to view dashboards that are already assigned to this edge.'
+        title: 'Open the Edge instances page on the <b>ThingsBoard Community Edition</b> server. Click on the <b>Dashboards</b> button of the edge instance to view dashboards that are already assigned to this edge.'
     1:
         image: /images/edge/getting-started/step-5-item-2.png
-        title: 'Click on the "+" icon and select "My New Dashboard" from the list. This dashboard will now be provisioned to the edge.'
+        title: 'Click on the "+" icon and select "My New Dashboard" from the list. This dashboard will be provisioned to the edge.'
 
 step5Edge:
     0:
         image: /images/edge/getting-started/step-5-item-3.png
-        title: 'Open the "Dashboards" page in the ThingsBoard <b>Edge</b> UI. Open "My New Dashboard".'    
+        title: 'Open the "Dashboards" page in the <b>ThingsBoard Edge</b> UI. Open "My New Dashboard".'    
     1:
         image: /images/edge/getting-started/step-5-item-4.png
         title: 'Verify that you see the same widgets that you have added on the cloud and temperature readings from the device.'
@@ -129,11 +129,11 @@ step5Edge:
 
 {% include templates/edge/getting-started/step-1.md %}
 
-## Step 2. Provision Device from ThingsBoard Edge to ThingsBoard Community Edition server (cloud)
+## Step 2. Provision Device from ThingsBoard Edge to ThingsBoard Community Edition Server
 
 {% include templates/edge/getting-started/step-2.md %}
 
-## Step 3. Push data from ThingsBoard Edge to ThingsBoard Community Edition server (cloud)
+## Step 3. Push data from ThingsBoard Edge to ThingsBoard Community Edition Server
 
 {% include templates/edge/getting-started/step-3.md %}
 

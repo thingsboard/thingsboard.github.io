@@ -1,7 +1,10 @@
 ## Prerequisites
+
+{% include templates/edge/install/hardware-requirements.md %}
+
 ### Setting Up the Server Environment for ThingsBoard Edge 
 
-To start utilizing ThingsBoard **Edge**, it is essential to have an operational {{appPrefix}} server that supports edge functionality.
+To start utilizing ThingsBoard **Edge**, it is essential to have an operational {{appPrefix}} server that supports Edge functionality.
 
 {% if docsPrefix == 'pe/edge/' %}
 {% include templates/edge/obtain-pe-cloud.md %}
@@ -9,7 +12,7 @@ To start utilizing ThingsBoard **Edge**, it is essential to have an operational 
 {% include templates/edge/obtain-ce-cloud.md %}
 {% endif %}
  
-### Provisioning a New Edge Instance on Cloud
+### Provisioning a New Edge Instance on Server
 
 {% if docsPrefix == 'pe/edge/' %}
 {% assign addEdge = '
@@ -30,15 +33,13 @@ To start utilizing ThingsBoard **Edge**, it is essential to have an operational 
         title: Sign in to your ThingsBoard <b>CE</b> instance and navigate to the "Edge Management" -> "Instances" page. Click the "+" icon in the top right corner and select "Add Edge".
     ===
         image: /images/edge/installation-add-edge-item-2.png,
-        title: Enter a name for your edge. For instance, "My New Edge". Click "Add" to confirm the creation of your new edge.
+        title: Enter a name for your Edge. For instance, "My New Edge". Click "Add" to confirm the creation of your new Edge.
     ===
         image: /images/edge/installation-add-edge-item-3.png,
-        title: Your new edge should now appear at the top of the list, as entries are sorted by creation time by default.
+        title: Your new Edge should now appear at the top of the list, as entries are sorted by creation time by default.
 '%}
 {% endif %}
 
-Additionally, you will need to provision ThingsBoard **Edge** on a cloud server. 
+Additionally, you will need to provision ThingsBoard **Edge** on a server. 
 
 {% include images-gallery.liquid imageCollection=addEdge showListImageTitles="true" %}
-
-{% include templates/edge/install/hardware-requirements.md %}

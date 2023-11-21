@@ -1,4 +1,4 @@
 {% capture oauth2-not-supported %}
-Currently, Edge does not support OAuth 2.0 login. To log into Edge using your OAuth 2.0 user credentials, you must set a password for this user in the ThingsBoard server. 
+As of now, Edge does not support OAuth 2.0 for login purposes. If you wish to access Edge using your OAuth 2.0 user credentials, it is necessary to assign a password for this user on the ThingsBoard server.
 {% endcapture %}
 {% include templates/warn-banner.md content=oauth2-not-supported %}
