@@ -8,13 +8,13 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
-## v1.2.0 (November ?, 2023)
+## v1.2.0 (November 21, 2023)
 
 Minor release with the following features, improvements, and bug fixes.
 
 **Main features:**
 
-* [#73](https://github.com/thingsboard/tbmq/pull/73) Redis support;
+* [#73](https://github.com/thingsboard/tbmq/pull/73) Redis cache support;
 * [#76](https://github.com/thingsboard/tbmq/pull/76) Client sessions advanced filtering;
 * [#12aac735e7](https://github.com/thingsboard/tbmq/commit/12aac735e7) MQTT client credentials advanced filtering;
 * [#80](https://github.com/thingsboard/tbmq/pull/80) Shared subscriptions management.
