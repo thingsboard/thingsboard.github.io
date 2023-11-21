@@ -18,7 +18,7 @@ If you don't have Minikube installed, please follow [these instructions](https:/
 ### Step 1. Clone TBMQ repository
 
 ```bash
-git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq.git --depth 1
+git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq.git
 cd tbmq/k8s/minikube
 ```
 {: .copy-code}
