@@ -74,7 +74,7 @@ Now go to the "Sessions" page in the TBMQ UI. Upon successful establishment of t
 
 {% include images-gallery.html imageCollection="successful-connection-tbmq-to-thingsboard" %}
 
-And on the "Home" page, in the "Kafka Topics" window, you will see a name of Kafka topic (which corresponds to the client ID specified in the MQTT integration), number of partitions, replication factor and size of the topic.
+And on the "Topics" page of the "Kafka Management" menu section you will see a name of Kafka topic (which corresponds to the client ID specified in the MQTT integration), number of partitions, replication factor and size of the topic.
 
 {% include images-gallery.html imageCollection="tbmq-home-page" %}
 

@@ -9,7 +9,13 @@ add-client-credentials:
     title: 'Go to the Credentials page and click the Add Client Credentials button, represented by a "plus" icon.'
   1:
     image: /images/mqtt-broker/user-guide/ui/add-client-credentials-2.png
-    title: 'Fill in the Name, Credentials Type, Authentication and Authorization rules.'  
+    title: 'Fill in the Name, Credentials Type.'
+  2:
+    image: /images/mqtt-broker/user-guide/ui/add-client-credentials-3.png
+    title: 'Fill in the Authentication settings.'
+  3:
+    image: /images/mqtt-broker/user-guide/ui/add-client-credentials-4.png
+    title: 'Set Authorization rules.'
 
 change-password-basic-credentials:
   0:
