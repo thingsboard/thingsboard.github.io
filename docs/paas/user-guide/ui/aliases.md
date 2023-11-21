@@ -417,4 +417,4 @@ entity-view-search-query:
 ---
 
 {% assign docsPrefix = "paas/" %}
-{% include docs/pe/user-guide/ui/aliases.md %}
+{% include docs/user-guide/ui/aliases.md %}

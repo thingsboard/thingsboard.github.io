@@ -97,6 +97,78 @@ entity-name-2:
         image: /images/user-guide/ui/alias/entity-name-3-pe.png
         title: 'The Entities table widget with alias that filters devices, which names start with ‘Compressor’, has been added.'
 
+
+entity-type-1:
+    0:
+        image: /images/user-guide/ui/alias/entity-type-1-pe.png
+        title: 'In the "Add alias" dialog box, enter the alias name, select the "Entity type " filter type, and choose the entity type - "Device". Then, click "Add";'
+
+entity-type-2:
+    1:
+        image: /images/user-guide/ui/alias/entity-type-2-pe.png
+        title: 'Add an Entity table widget that will display a list of entities. Use the "Entity type" alias as a data source;'
+    2:
+        image: /images/user-guide/ui/alias/entity-type-3-pe.png
+        title: 'Added the Entity table widget that displays a list of devices.'
+
+
+
+entity-group-list-1:
+    0:
+        image: /images/user-guide/ui/alias/entity-group-list-1-pe.png
+        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
+    
+entity-group-list-2:
+    0:
+        image: /images/user-guide/ui/alias/entity-group-list-2-pe.png
+        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
+
+entity-group-list-3:
+    0:
+        image: /images/user-guide/ui/alias/entity-group-list-3-pe.png
+        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
+    1:
+        image: /images/user-guide/ui/alias/entity-group-list-4-pe.png
+        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
+
+entity-group-list-4:
+    0:
+        image: /images/user-guide/ui/alias/entity-group-list-5-pe.png
+        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
+    1:
+        image: /images/user-guide/ui/alias/entity-group-list-6-pe.png
+        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
+    
+entity-group-list-5:
+    0:
+        image: /images/user-guide/ui/alias/entity-group-list-7-pe.png
+        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
+    1:
+        image: /images/user-guide/ui/alias/entity-group-list-8-pe.png
+        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
+    2:
+        image: /images/user-guide/ui/alias/entity-group-list-9-pe.png
+        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
+    3:
+        image: /images/user-guide/ui/alias/entity-group-list-10-pe.png
+        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
+
+entity-group-list-6:
+    0:
+        image: /images/user-guide/ui/alias/entity-group-list-11-pe.png
+        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
+    1:
+        image: /images/user-guide/ui/alias/entity-group-list-12-pe.png
+        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
+    2:
+        image: /images/user-guide/ui/alias/entity-group-list-13-pe.png
+        title: 'To add this alias, enter the alias name, and select the filter type "Entity from dashboard state" in the "Add alias" dialog. Then click "Add".'
+
+
+
+
+
+
 entity-from-dashboard-state-1:
     0:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-2-pe.png
@@ -158,12 +230,15 @@ entity-from-dashboard-state-4:
     10:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-19-pe.png
         title: 'After adding the widget save all applied changes;'
-    11:
+
+entity-from-dashboard-state-5:
+    0:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-20-pe.png
-        title: 'Now, click a action button opposite any entity;'
-    12:
+        title: 'Now, click an action button opposite any entity;'
+    1:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-21-pe.png
         title: 'You will be transitioned to an inner state that shows a widget with entity from dashboard’s state details.'
+
 
 owner-of-entity-from-dashboard-state-1:
     0:
@@ -173,43 +248,62 @@ owner-of-entity-from-dashboard-state-1:
 owner-of-entity-from-dashboard-state-2:
     0:
         image: /images/user-guide/ui/alias/entity-type-1-pe.png
-        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and select the entity group;'
+        title: 'In the "Add alias" dialog box, enter the alias name, select the "Entity type " filter type, and choose the entity type - "Device". Then, click "Add";'
     1:
         image: /images/user-guide/ui/alias/entity-type-2-pe.png
-        title: 'Add an Entity table widget that will display a list of entities. Use the "Group entities" alias as a data source;'
+        title: 'Add an Entity table widget that will display a list of entities. Use the "Entity type" alias as a data source;'
     2:
-        image: /images/user-guide/ui/alias/entity-type-3-pe.png
-        title: 'Add an Entity table widget that will display a list of devices is created.'
+        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-0-pe.png
+        title: 'Added the Entity table widget that displays a list of devices.'
 
 owner-of-entity-from-dashboard-state-3:
     0:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-2-pe.png
-        title: 'Add another Entities table widget that will display the owner of the selected device. Specify the "Owner of entity from dashboard state" alias in the "Entity alias" field. Click the "Add" button in the lower right corner;'
-
+        title: 'Add another Entities table widget that will display the owner of the selected device. Specify the "Owner of entity from dashboard state" alias in the "Entity alias" field. Change the title of the widget to "Owner of device". Click the "Add" button in the lower right corner;'
+    1:
+        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-3-pe.png
+        title: 'Added the Entity Table widget, which will display the owner of the selected device.'
+      
 owner-of-entity-from-dashboard-state-4:
     0:
-        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-3-pe.png
-        title: 'Enter the edit mode of first Entities table widget by clicking the “pencil” icon in the upper right corner;'
-    1:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-4-pe.png
+        title: 'In the root dashboard state, enter widget Edit mode by clicking the “pencil” icon in the upper right corner of it;'
+    1:
+        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-5-pe.png
         title: 'Scroll down to find "Actions" section. Click "Add action" button;'
     2:
-        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-5-pe.png
+        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-6-pe.png
         title: 'The "Entities table: Actions" window will be opened. Click the "Add action" button in the top right corner;'
     3:
-        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-6-pe.png
-        title: 'In the "Add action" dialog, enter the action name, and select an action source responsible for each entity separately (action cell button, on row click etc.). Then, choose the action type "Navigate to new dashboard state" and specify the new dashboard state to which the transition will be made. After, click "Add";'
-    4:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-7-pe.png
-        title: 'Add an Entity table widget that will display a list of devices is created.'
-    5:
+        title: 'In the "Add action" dialog, enter the action name, select an action source - "on row click", and choose the action type "Update current dashboard state". After, click "Add";'
+    4:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-8-pe.png
-        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and select the entity group;'
-    6:
+        title: 'After successfully adding the action, click "Save" to apply changes;'
+    5:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-9-pe.png
-        title: 'Add an Entity table widget that will display a list of entities. Use the "Group entities" alias as a data source;'
-    7:
+        title: 'Save the dashboard;'
+
+owner-of-entity-from-dashboard-state-5:
+    0:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-10-pe.png
+        title: 'Click on the row with the device name in the "Entities" widget. The action will be executed, and the owner of the selected device will be displayed in the "Device Owner" widget;'
+    1:
+        image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-11-pe.png
+        title: 'Add an Entity table widget that will display a list of devices is created.'
+
+
+asset-type-1:
+    0:
+        image: /images/user-guide/ui/alias/asset-type-1-pe.png
+        title: 'Click on the row with the device name in the "Entities" widget. The action will be executed, and the owner of the selected device will be displayed in the "Device Owner" widget;'
+
+asset-type-2:
+    0:
+        image: /images/user-guide/ui/alias/asset-type-2-pe.png
+        title: 'Click on the row with the device name in the "Entities" widget. The action will be executed, and the owner of the selected device will be displayed in the "Device Owner" widget;'
+    1:
+        image: /images/user-guide/ui/alias/asset-type-3-pe.png
         title: 'Add an Entity table widget that will display a list of devices is created.'
 
 
@@ -222,47 +316,26 @@ owner-of-entity-from-dashboard-state-4:
 
 
 
-entity-group-list:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-paas.png
- 1:
-  image: /images/user-guide/ui/alias/alias-2-paas.png
- 2:
-  image: /images/user-guide/ui/alias/entity-group-list-3-paas.png
- 3:
-  image: /images/user-guide/ui/alias/entity-group-list-4-paas.png
- 4:
-  image: /images/user-guide/ui/alias/entity-group-list-5-paas.png
- 5:
-  image: /images/user-guide/ui/alias/entity-group-list-6-paas.png
 
-entity-group-list-1:
- 0:
-  image: /images/user-guide/ui/alias/alias-5-paas.png
- 1:
-  image: /images/user-guide/ui/alias/alias-6-paas.png
- 2:
-  image: /images/user-guide/ui/alias/alias-7-paas.png
- 3:
-  image: /images/user-guide/ui/alias/entity-group-list-10-paas.png
- 4:
-  image: /images/user-guide/ui/alias/entity-group-list-11-paas.png
- 5:
-  image: /images/user-guide/ui/alias/entity-group-list-12-paas.png
- 6:
-  image: /images/user-guide/ui/alias/entity-group-list-13-paas.png
- 7:
-  image: /images/user-guide/ui/alias/entity-group-list-14-paas.png
- 8:
-  image: /images/user-guide/ui/alias/entity-group-list-15-paas.png
- 9:
-  image: /images/user-guide/ui/alias/entity-group-list-16-paas.png
- 10:
-  image: /images/user-guide/ui/alias/entity-group-list-17-paas.png
- 11:
-  image: /images/user-guide/ui/alias/entity-group-list-18-paas.png
- 12:
-  image: /images/user-guide/ui/alias/entity-group-list-19-paas.png
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 entity-group-name:
  0:
@@ -496,4 +569,4 @@ entity-view-search-query:
 ---
 
 {% assign docsPrefix = "pe/" %}
-{% include docs/pe/user-guide/ui/aliases.md %}
+{% include docs/user-guide/ui/aliases.md %}
