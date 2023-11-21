@@ -186,7 +186,7 @@ This GUI provides several key features to facilitate broker management:
 * Client Session and Subscriptions Control: the GUI enables administrators to monitor and control the state of client sessions, including terminating, and managing active client connections. 
   It also provides functionality to manage client subscriptions, allowing for the addition, removal, and modification of subscriptions.
 * Shared Subscription Management: the GUI includes tools for managing shared subscriptions. 
-  Administrators can create and manage shared subscription groups, facilitating efficient message distribution to multiple subscribed clients of type APPLICATION.
+  Administrators can create and manage Application shared subscription entities, facilitating efficient message distribution to multiple subscribed clients of type APPLICATION.
 * Retained Message Management: the GUI allows administrators to manage retained messages, which are messages that are saved by the broker and delivered to new subscribers.
 
 In addition to these administrative features, the GUI provides monitoring dashboards that offer comprehensive statistics and insights into the broker's performance. 
