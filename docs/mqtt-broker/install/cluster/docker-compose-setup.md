@@ -82,7 +82,7 @@ docker compose ps
 {: .copy-code}
 Use next command to inspect the logs of all running services.
 ```bash
-docker compose logs --f
+docker compose logs -f
 ```
 {: .copy-code}
 See [docker compose logs](https://docs.docker.com/compose/reference/logs/) command reference for more details.
