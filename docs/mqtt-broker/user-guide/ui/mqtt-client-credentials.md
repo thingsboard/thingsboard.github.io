@@ -23,7 +23,7 @@ change-password-basic-credentials:
     title: 'Go to the Credentials page, click on the corresponding row and click the Edit button.'
   1:
     image: /images/mqtt-broker/user-guide/ui/change-password-2.png
-    title: "Click the Change password button."
+    title: 'Click the Change password button.'
   2:
     image: /images/mqtt-broker/user-guide/ui/change-password-3.png
     title: 'Input your current password and set a new one. Click the Change password button'
