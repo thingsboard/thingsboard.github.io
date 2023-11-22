@@ -15,8 +15,8 @@ For purpose of this guide, we will use following things:
 2. ThingsBoard IoT Gateway (How to install you can [read here](/docs/iot-gateway/installation/)).
 
 Resources (OPTIONAL):
-1. [Gateway Dashboard](/docs/iot-gateway/resources/dashboard.json){:target="_blank" download="dashboard.json"}
-2. [Gateway Widget Bundle](/docs/iot-gateway/resources/bundle.json){:target="_blank" download="bundle.json"}
+1. [Gateway Dashboard](/docs/iot-gateway/resources/thingsboard-gateways-dashboard.json){:target="_blank" download="thingsboard-gateways-dashboard.json"}
+2. [Gateway Widget Bundle](/docs/iot-gateway/resources/thingsboard-gateway-widget-bundle.json){:target="_blank" download="thingsboard-gateway-widget-bundle.json"}
 
 {% capture info %}
 <div>

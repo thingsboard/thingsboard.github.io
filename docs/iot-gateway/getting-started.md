@@ -8,12 +8,17 @@ description: Write your first IoT project using ThingsBoard IoT Gateway
 * TOC
 {:toc}
 
-This guide covers initial IoT Gateway installation and configuration.
-We will connect IoT Gateway to ThingsBoard server, connect a demo device using [**OPC-UA** connector](/docs/iot-gateway/config/opc-ua/) and check received data.
+This guide covers initial IoT Gateway installation and configuration, we will do the following things:
+- Create a new gateway device using [ThingsBoard IoT Gateways dashboard](#prerequisites);
+- Launch the gateway using Docker command;
+- Configure different connector types ([MQTT](/docs/iot-gateway/config/mqtt/), [OPC-UA](/docs/iot-gateway/config/opc-ua/), [Modbus](/docs/iot-gateway/config/modbus/)) in order to connect to a local demo servers and read data from them;
+- Check received device data on ThingsBoard.
 
-### Prerequisites
+## Prerequisites
 
 If you don't have access to a running ThingsBoard instance, you can use [**Live Demo**](https://demo.thingsboard.io) or [**ThingsBoard Cloud**](https://thingsboard.cloud) to connect your gateway. 
+
+If you don't have a dashboard installed, you can download Gateway widget bundle [here](/docs/iot-gateway/resources/thingsboard-gateway-widget-bundle.json){:target="_blank" download="thingsboard-gateway-widget-bundle.json"} and ThingsBoard IoT Gateways dashboard [here](/docs/iot-gateway/resources/thingsboard-gateways-dashboard.json){:target="_blank" download="thingsboard-gateways-dashboard.json"}.
 
 ## Create new gateway device on ThingsBoard
 
@@ -25,7 +30,7 @@ First, we have to add a gateway device to your ThingsBoard instance. You can do 
         title: Go to "**Dashboards**" tab and open "**ThingsBoard IoT Gateways**" dashboard.
     ===
         image: /images/gateway/dashboard/gateway-getting-started-2-ce.png,
-        title: Click the "**+**" button, fill in the gateway device name and select the device profile.
+        title: Click the "**+**" button, fill in the gateway device name, and select the device profile.
 '
 %}
 
@@ -41,91 +46,34 @@ First, we have to add a gateway device to your ThingsBoard instance. You can do 
 {% endcapture %}
 {% include templates/info-banner.md content=info %}
 
-{% capture gatewaycreationspec %}
-Docker<small>Recommended</small>%,%docker%,%templates/iot-gateway/remote-creating-gateway-docker.md%br%
-Manual installation<small>For package installation or for installation from sources</small>%,%manually%,%templates/iot-gateway/remote-creating-gateway-manually.md{% endcapture %}
+To launch the gateway, use the following steps:
 
-{% include content-toggle.html content-toggle-id="gatewayCreation" toggle-spec=gatewaycreationspec %}
-
-## Add new connector
-
-To see how connector works, let's add an **OPC-UA connector**, which will read some data from the public server to the 
-created gateway.  
-  
-Copy the following connector configuration (we will use it later):  
-
-```json
-{
-  "server": {
-    "name": "OPC-UA Default Server",
-    "url": "opcua.demo-this.com:51210/UA/SampleServer",
-    "timeoutInMillis": 5000,
-    "scanPeriodInMillis": 5000,
-    "disableSubscriptions": false,
-    "subCheckPeriodInMillis": 100,
-    "showMap": false,
-    "security": "Basic128Rsa15",
-    "identity": {
-      "type": "anonymous"
-    },
-    "mapping": [
-      {
-        "deviceNodePattern": "Root\\.Objects\\.Data\\.Dynamic\\.Scalar",
-        "deviceNamePattern": "Device Demo",
-        "deviceTypePattern": "default",
-        "attributes": [
-          {
-            "key": "switch",
-            "path": "${BooleanValue}"
-          },
-          {
-            "key": "text_value",
-            "path": "${StringValue}"
-          }
-        ],
-        "timeseries": [
-          {
-            "key": "humidity",
-            "path": "${NumberValue}"
-          },
-          {
-            "key": "temperature",
-            "path": "${DoubleValue}"
-          }
-        ],
-        "rpc_methods": [],
-        "attributes_updates": []
-      }
-    ]
-  }
-}
-```
-{:.copy-code}
-
-To create a connector, use the following steps:
-
-{% assign addNewConnector = '
+{% assign remoteCreateGatewayDocker = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
-        title: Click "**Connectors configuration**" button on the right panel.
+        image: /images/gateway/dashboard/gateway-getting-started-3-ce.png,
+        title: On the gateway dashboard, click on **"Launch command"** button in the top right corner.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-8-ce.png,
-        title: Fill in "Name", "Type" and "Logging level" fields, and paste your connector configuration into **Configuration** field and click on **Save** button.
-    ===
-        image: /images/gateway/dashboard/gateway-getting-started-9-ce.png,
-        title: Connector added.
-    ===
-        image: /images/gateway/dashboard/gateway-getting-started-10-ce.png,
-        title: Enable created connector.
+        image: /images/gateway/dashboard/gateway-getting-started-4-ce.png,
+        title: Copy auto-generated command and execute it in your terminal.
 '
 %}
 
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=addNewConnector %} 
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=remoteCreateGatewayDocker %}
 
-After all steps, your gateway will receive the configuration, apply it and synchronize the state with the remote 
-(you will be able to see the synchronization status of connector configuration in the **Configuration** column).
+After running gateway docker image, you can see the following logs in your terminal:
 
-For now, the gateway is ready to process data through the newly remote-created and configured OPC-UA connector.
+![](/images/gateway/dashboard/launch-gateway-docker.png)
+
+## Add new connector
+
+To see how the connector works, you can choose one of the following connectors:
+
+{% capture connectorscreationspec %}
+MQTT<small></small>%,%mqtt%,%templates/iot-gateway/remote-creating-connector-mqtt.md%br%
+Modbus<small></small>%,%modbus%,%templates/iot-gateway/remote-creating-connector-modbus.md%br%
+OPC-UA<small></small>%,%opcua%,%templates/iot-gateway/remote-creating-connector-opcua.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="connectorsCreation" toggle-spec=connectorscreationspec %}
 
 ## Check device data
 
@@ -134,7 +82,7 @@ To review the data uploaded from your gateway, use the following steps:
 {% assign checkDeviceData = '
     ===
         image: /images/gateway/dashboard/review-gateway-statistics-1-ce.png,
-        title: Navigate to the **Devices** page and click on the created device. Open the "**Attributes**" tab, and you will be able to see that attributes, configured in the connector.
+        title: Navigate to the **Devices** page and click on the created device. Open the "**Attributes**" tab, and you will be able to see that attributes configured in the connector.
     ===
         image: /images/gateway/dashboard/review-gateway-statistics-2-ce.png,
         title: Go to the "**Latest Telemetry**" tab to see parameters from device like "**humidity**", "**temperature**".
@@ -143,7 +91,7 @@ To review the data uploaded from your gateway, use the following steps:
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=checkDeviceData %}
 
-## Configure connectors
+## Configure other connectors
 
 After the successful installation and configuration of your first connector, you can configure other connectors to 
 connect to different devices. You can find more information about connectors in the following articles:  
@@ -163,7 +111,7 @@ connect to different devices. You can find more information about connectors in 
  - [**SNMP** connector](/docs/iot-gateway/config/snmp/)
  - [**Custom** connector](/docs/iot-gateway/custom/)
 
-More about *ThingsBoard IoT Gateways* Dashboard you can [read here](/docs/iot-gateway/guides/how-to-enable-remote-configuration/).
+More about *ThingsBoard IoT Gateways* Dashboard, you can [read here](/docs/iot-gateway/guides/how-to-enable-remote-configuration/).
 
 ## Next steps
 
