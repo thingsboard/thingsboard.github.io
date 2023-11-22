@@ -1,0 +1,94 @@
+
+  @media screen and (max-width: 1024px) {
+    .burger {
+      top: 21px;
+      height: 37px;
+      width: 37px;
+      background-image: url(/images/s-burger-icon.svg);
+    }
+  }
+
+  @media screen and (max-width: 1500px) {
+    header {
+      margin: unset;
+      width: 100%;
+    }
+
+    header div .n-button {
+        margin-left: 8px;
+        font-size: 17px;
+      }
+  }
+
+  @media screen and (max-width: 1280px) {
+    header {
+        padding: 9px 30px;
+        display: unset;
+        height: unset !important;
+        transition-property: height;
+      }
+  }
+
+  @media screen and (max-width: 1280px) {
+    header .burger {
+        display: block;
+      }
+      header .head-menu {
+        display: none;
+        margin-top: 80px;
+      }
+
+      header .n-button {
+        display: none;
+        margin: 40px 0 40px 8px;
+      }
+  }
+
+  @media (max-width: 768px) {
+    .read-more-button .arrow {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    footer {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    footer .deeper {
+      justify-content: flex-end !important;
+    }
+    footer .deeper .footer-logo {
+      display: none;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    footer .deeper {
+      justify-content: center !important;
+    }
+    footer .deeper nav {
+      display: block !important;
+    }
+    footer .deeper nav a {
+      width: 100%;
+      text-align: center !important;
+      margin: 18px 0 0 !important;
+    }
+    footer .deepmost {
+      display: block;
+    }
+    footer .deepmost .copyright {
+      text-align: center;
+    }
+    footer .deepmost .social {
+      justify-content: center;
+      width: 100%;
+      padding-top: 48px;
+    }
+    footer .newsletterSubsContainer {
+      justify-content: center;
+    }
+  }
+
+
