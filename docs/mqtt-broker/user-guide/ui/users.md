@@ -17,7 +17,7 @@ edit-user-broker:
         title: 'Locate the desired user in the Users table and click on the corresponding row.'
     1:
       image: /images/mqtt-broker/user-guide/ui/edit-user-broker-2.png
-      title: "Click the Toggle edit mode button to modify the first name, last name, or description."
+      title: 'Click the Toggle edit mode button to modify the first name, last name, or description.'
 
 delete-user-broker:
     0:

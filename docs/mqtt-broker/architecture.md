@@ -8,7 +8,7 @@ description: TBMQ architecture
 * TOC
 {:toc}
 
-## Introduction
+### Introduction
 
 This article elucidates the architectural structure of TBMQ, encompassing analysis of the data flow among diverse components and delineating the underlying architectural decisions.
 TBMQ is meticulously engineered to embody the following attributes:
@@ -16,7 +16,7 @@ TBMQ is meticulously engineered to embody the following attributes:
 * **scalability**: it constitutes a horizontally scalable platform constructed using cutting-edge open-source technologies.
 * **fault-tolerance**: no single point of failure, each broker (node) within the cluster is indistinguishable in terms of functionality.
 * **robustness and efficiency**: a solitary server node possesses the capability to accommodate millions of clients and process hundreds of thousands of messages per second.
-  Remarkably, TBMQ cluster can handle a staggering volume of [100M clients and 3M messages per second](/docs/mqtt-broker/reference/performance-tests/).
+  Remarkably, TBMQ cluster can handle a staggering volume of at least [100M clients and 3M incoming messages per second](/docs/mqtt-broker/reference/100m-connections-performance-test/).
 * **durability**: the preservation of data integrity is of paramount importance.
   TBMQ employs a Kafka queue implementation to furnish exceptionally high message durability, ensuring that data is never lost.
 
@@ -26,7 +26,7 @@ The subsequent diagram illustrates the pivotal constituents of the broker and th
 
 ![image](/images/mqtt-broker/architecture/tbmq-architecture.png)
 
-## Motivation
+### Motivation
 
 Within the ThingsBoard company, our extensive expertise and profound understanding of diverse IoT requirements and use cases have 
 enabled us to discern two primary scenarios in which our clients develop their solutions. 
@@ -45,7 +45,7 @@ Crucially, we sought to implement a fault-tolerant mechanism for message process
 Consideration of all these factors led us to make a strategic decision regarding the choice of the underlying system 
 that could effectively address our requirements and operate seamlessly within the MQTT layer.
 
-## How does TBMQ work in a nutshell
+### How does TBMQ work in a nutshell
 
 To ensure the fulfillment of the aforementioned requirements and prevent message loss in the event of client or broker failures,
 TBMQ leverages the powerful capabilities of [Kafka](https://kafka.apache.org/) as its underlying infrastructure.
@@ -69,7 +69,7 @@ Subscription Trie data structure to identify the intended recipients.
 Depending on the [client type](/docs/mqtt-broker/user-guide/mqtt-client-type/) (**DEVICE** or **APPLICATION**) and persistence options described below, 
 the broker either redirects the message to another specific Kafka topic or directly delivers it to the recipient.
 
-### Non-persistent client
+#### Non-persistent client
 
 A client is classified as a non-persistent one when the following conditions are met in the _CONNECT_ packet:
 
@@ -84,7 +84,7 @@ It is important to note that non-persistent clients can only be of type **DEVICE
 
 ![image](/images/mqtt-broker/architecture/tbmq-non-persistent-dev.png)
 
-### Persistent client
+#### Persistent client
 
 MQTT clients that do not meet the non-persistent conditions mentioned above are categorized as persistent clients. 
 Let's delve into the conditions for persistent clients:
@@ -96,7 +96,7 @@ For **MQTT v5 clients**:
 * `sessionExpiryInterval` is greater than _0_ (regardless of the `clean_start` flag).
 * `clean_start` flag is set to _false_ and `sessionExpiryInterval` is set to _0_ or not specified.
 
-### Client type
+#### Client type
 
 Drawing upon our extensive experience in the IoT ecosystem and the successful implementation of numerous IoT use cases, we have classified MQTT clients into two distinct categories:
 
@@ -109,7 +109,7 @@ Drawing upon our extensive experience in the IoT ecosystem and the successful im
 
 Consequently, we made a strategic decision to optimize performance by segregating the processing flow for these two types of clients.
 
-#### DEVICE client
+##### DEVICE client
 
 ![image](/images/mqtt-broker/architecture/tbmq-persistent-dev.png)
 
@@ -119,7 +119,7 @@ This approach is particularly suitable for DEVICE clients, as they typically do 
 By leveraging this method, we facilitate the seamless restoration of persisted messages upon reconnection of a DEVICE client, 
 while simultaneously ensuring satisfactory performance for scenarios involving a low incoming message rate.
 
-#### APPLICATION client
+##### APPLICATION client
 
 ![image](/images/mqtt-broker/architecture/tbmq-app.png)
 
@@ -142,7 +142,7 @@ You can refer to the following environment variables to adjust these settings:
 These options allow fine-tuning the number of messages that can be persisted per client and the time frame for which they are preserved.
 For more detailed information, please refer to the configurations provided in the following [documentation](/docs/mqtt-broker/install/config/).
 
-### Kafka Topics
+#### Kafka Topics
 
 Below is a comprehensive list of Kafka topics used within TBMQ, along with their respective descriptions.
 
@@ -161,7 +161,7 @@ Below is a comprehensive list of Kafka topics used within TBMQ, along with their
 * **tbmq.sys.app.removed** - for events to process removal of APPLICATION client topic.
 * **tbmq.sys.historical.data** - for historical data stats published from each broker in the cluster to calculate the total.
 
-### PostgreSQL database
+#### PostgreSQL database
 
 TBMQ incorporates a [PostgreSQL](https://www.postgresql.org/) database to store various entities such as users, user credentials, MQTT client credentials, and published messages for DEVICES, among others.
 
@@ -176,7 +176,7 @@ offer higher performance and scalability for scenarios requiring robust message 
 In future releases, we have plans to expand the options for third-party persistence storage for client messages, 
 aiming to incorporate more reliable and advanced solutions that can cater to a broader range of requirements.
 
-### Web UI
+#### Web UI
 
 TBMQ offers a user-friendly and lightweight graphical user interface (GUI) 
 that simplifies the administration of the broker in an intuitive and efficient manner. 
@@ -186,7 +186,7 @@ This GUI provides several key features to facilitate broker management:
 * Client Session and Subscriptions Control: the GUI enables administrators to monitor and control the state of client sessions, including terminating, and managing active client connections. 
   It also provides functionality to manage client subscriptions, allowing for the addition, removal, and modification of subscriptions.
 * Shared Subscription Management: the GUI includes tools for managing shared subscriptions. 
-  Administrators can create and manage shared subscription groups, facilitating efficient message distribution to multiple subscribed clients of type APPLICATION.
+  Administrators can create and manage Application shared subscription entities, facilitating efficient message distribution to multiple subscribed clients of type APPLICATION.
 * Retained Message Management: the GUI allows administrators to manage retained messages, which are messages that are saved by the broker and delivered to new subscribers.
 
 In addition to these administrative features, the GUI provides monitoring dashboards that offer comprehensive statistics and insights into the broker's performance. 
@@ -195,7 +195,7 @@ enabling administrators to gain a better understanding of the system's health an
 
 The combination of these features makes the GUI an invaluable tool for managing, configuring, and monitoring TBMQ in a user-friendly and efficient manner.
 
-### Subscriptions Trie
+#### Subscriptions Trie
 
 Within TBMQ, all client subscriptions are consumed from a Kafka topic and stored in a Trie data structure in the memory. 
 The Trie organizes the topic filters hierarchically, with each node representing a level in the topic filter.
@@ -209,7 +209,7 @@ However, it is worth noting that this method requires increased memory consumpti
 
 For more detailed information on the Trie data structure, you can refer to the provided [link](https://en.wikipedia.org/wiki/Trie).
 
-### Actor system
+#### Actor system
 
 TBMQ utilizes an Actor System as the underlying mechanism for implementing actors responsible for handling MQTT clients.
 The adoption of the Actor model enables efficient and concurrent processing of messages received from clients, thereby ensuring high-performance operation.
@@ -228,7 +228,7 @@ ensuring optimal performance and responsiveness in handling client interactions.
 
 For further insights into the Actor model, you can refer to the provided [link](https://en.wikipedia.org/wiki/Actor_model).
 
-## Standalone vs cluster mode
+### Standalone vs cluster mode
 
 TBMQ is designed to be horizontally scalable, allowing for the addition of new broker nodes to the cluster automatically. 
 All nodes within the cluster are identical and share the overall load, ensuring a balanced distribution of client connections and message processing.
@@ -248,6 +248,6 @@ as they can establish connections with any available node in the cluster.
 By leveraging horizontal scalability, load balancing, and automatic discovery of new nodes, 
 TBMQ provides a highly scalable and resilient architecture for handling MQTT communication in large-scale deployments.
 
-## Programming languages
+### Programming languages
 
-The back-end of TBMQ is implemented in Java 17. The front-end of ThingsBoard is developed as a SPA using the Angular 11 framework.
+The back-end of TBMQ is implemented in Java 17. The front-end of ThingsBoard is developed as a SPA using the Angular 15 framework.

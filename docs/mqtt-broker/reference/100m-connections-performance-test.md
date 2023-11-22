@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-mqtt-broker
-title: TBMQ performance tests
-description: TBMQ performance tests
+title: TBMQ Cluster Supports 100M MQTT Connections
+description: TBMQ cluster-mode 100M MQTT connections performance test
 
 broker-aws-monitoring:
     0:
@@ -39,4 +39,4 @@ broker-grafana-monitoring:
     title: 'Consumer lag monitoring'
 ---
 
-{% include docs/mqtt-broker/reference/performance-tests.md %}
+{% include docs/mqtt-broker/reference/100m-connections-performance-test.md %}
