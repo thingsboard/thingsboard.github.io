@@ -166,8 +166,6 @@ Click the "History of the firmware updates" button next to the device name to le
 
 {% include images-gallery.html imageCollection="fw-status" %}
 
-{% include images-gallery.html imageCollection="fw-status-1" %}
-
 ### Software update monitoring dashboard
 
 The dashboard is created automatically for each new tenant that you add to ThingsBoard.
@@ -176,12 +174,6 @@ You can also download the dashboard JSON [here](https://github.com/thingsboard/t
 There you can see a list of all devices with full information about their software.
 
 {% include images-gallery.html imageCollection="sw-dashboard" %}
-
-Click the "History of the software updates" button next to the device name to learn about the software update status of specific device.
-
-{% include images-gallery.html imageCollection="sw-status" %}
-
-{% include images-gallery.html imageCollection="sw-status-1" %}
 
 {% if docsPrefix != 'paas/' %}
 
