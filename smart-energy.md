@@ -25,6 +25,10 @@ Save up to 90% of development time for your smart-energy solution by utilizing t
   - Remote control and OTA updates for your smart meters and other devices;
   - Customizable mobile applications with minimum coding efforts;
 
+<div class="center">
+    <img src="/images/iot-articles/energy_management_1_1110x678.png"/>
+</div>
+
 ## How Does It Work?
 
 IoT energy management is the process that includes data collection, data transmission, data analysis, remote control, and automation.
@@ -210,7 +214,7 @@ The Rule Engine enables forwarding incoming data to various analytics systems, s
                 <div class="title">Ready to launch your unique product?</div>
                 <div class="text">Leave us your name and email and we will get back to you within 2 business days</div>
             </div>
-            <form id="contact-form" class="contact-form" method="post" onsubmit="return validateContactForm(this)">
+            <form id="contact-form" class="contact-form1" method="post" onsubmit="return validateContactForm(this)">
                 <fieldset>
                     <div class="form-section">
                         <div class="form-element">
