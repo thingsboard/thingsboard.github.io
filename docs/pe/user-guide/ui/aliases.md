@@ -87,7 +87,7 @@ entity-list-2:
 entity-name-1:
     0:
         image: /images/user-guide/ui/alias/entity-name-1-pe.png
-        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and enter an expression that will filter the names of the displayed entities - “Compressor”.'
+        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Entity name" filter type. Then choose the entities type and enter an expression that will filter the names of the displayed entities - “Compressor”.'
 
 entity-name-2:
     0:
@@ -109,7 +109,7 @@ entity-type-2:
         title: 'Add an Entity table widget that will display a list of entities. Use the "Entity type" alias as a data source;'
     2:
         image: /images/user-guide/ui/alias/entity-type-3-pe.png
-        title: 'Added the Entity table widget that displays a list of devices.'
+        title: 'The Entity table widget that displays a list of devices has been added.'
 
 
 
@@ -121,12 +121,114 @@ entity-group-list-1:
 entity-group-list-2:
     0:
         image: /images/user-guide/ui/alias/entity-group-list-2-pe.png
-        title: 'In the “Tables” widgets bundle select the “Entities table” widget. Navigate to the “Entity alias” tab. Specify the “Entity group list” alias in the “Entity alias” field. Click “Add” and apply changes;'
-    1:
+        title: 'Add the "Group entities" alias. Enter alias name, specify filter type - "Group entities", and select the "Use dashboard state entity as entity group" check box. Then, click "Add" button.'
+
+entity-group-list-3:
+    0:
         image: /images/user-guide/ui/alias/entity-group-list-3-pe.png
-        title: 'The Entities table widget displaying a list of device groups specified in the alias has been added.'
+        title: 'In the “Tables” widgets bundle select the “Entities table” widget. Navigate to the “Entity alias” tab. Specify the “Entity group list” alias in the “Entity alias” field. Click “Add”;'
+    1:
+        image: /images/user-guide/ui/alias/entity-group-list-4-pe.png
+        title: 'The Entities table widget displaying a list of device groups specified in the “Entity group list” alias has been added.'
+
+entity-group-list-4:
+    0:
+        image: /images/user-guide/ui/alias/entity-group-list-5-pe.png
+        title: 'In the “Tables” widgets bundle select the “Entities table” widget. Navigate to the “Entity alias” tab. Specify the "Group entities" alias in the “Entity alias” field. Click “Add” and apply changes;'
+    1:
+        image: /images/user-guide/ui/alias/entity-group-list-6-pe.png
+        title: 'Added Entities table widget, which will display a list of devices for the selected group of devices.'
+
+entity-group-list-5:
+    0:
+        image: /images/user-guide/ui/alias/entity-group-list-7-pe.png
+        title: 'After adding widgets, click the “pencil” icon in the upper right corner of the "Devices groups" widget to enter the widget editing mode;'
+    1:
+        image: /images/user-guide/ui/alias/entity-group-list-8-pe.png
+        title: 'Scroll down to find "Actions" section. Click "Add action" button;'
+    2:
+        image: /images/user-guide/ui/alias/entity-group-list-9-pe.png
+        title: 'The "Entities table: Actions" window will be opened. Click the "Add action" button in the top right corner;'
+    3:
+        image: /images/user-guide/ui/alias/entity-group-list-10-pe.png
+        title: 'In the "Add action" dialog, enter the action name, select an action source - "on row click", and choose the action type "Update current dashboard state". After, click "Add";'
+    4:
+        image: /images/user-guide/ui/alias/entity-group-list-11-pe.png
+        title: 'After successfully adding the action, click "Save" to apply changes;'
+    5:
+        image: /images/user-guide/ui/alias/entity-group-list-12-pe.png
+        title: 'Save the dashboard;'
+        
+entity-group-list-6:
+    0:
+        image: /images/user-guide/ui/alias/entity-group-list-13-pe.png
+        title: 'Click on the "Compressors" row in the "Device Groups" widget. The "Update current dashboard state" action will be executed, and all devices of the selected device group will be displayed in the "Devices" widget;'
+    1:
+        image: /images/user-guide/ui/alias/entity-group-list-14-pe.png
+        title: 'Now, click on the "Thermostats" row in the "Device Groups" widget. All devices of the selected device group will be displayed in the "Devices" widget;'
+        
+
+entity-group-name-1:
+    0:
+        image: /images/user-guide/ui/alias/entity-group-name-1-pe.png
+        title: 'In the “Add alias” dialog, enter the alias name, and select the “Entity group name” filter type. Then choose the entity type and enter an expression that will filter the names of the displayed entity groups. Then, click "Add" button.'
+
+entity-group-name-2:
+    0:
+        image: /images/user-guide/ui/alias/entity-group-name-2-pe.png
+        title: 'Add the "Group entities" alias. Enter alias name, specify filter type - "Group entities", and move the slider to use a dashboard state entity as an entity group. Then, click "Add" button.'
+
+entity-group-name-3:
+    0:
+        image: /images/user-guide/ui/alias/entity-group-name-3-pe.png
+        title: 'In the “Tables” widgets bundle select the “Entities table” widget. Navigate to the “Entity alias” tab. Specify the “Entity group name” alias in the “Entity alias” field. Click “Add”;'
+    1:
+        image: /images/user-guide/ui/alias/entity-group-name-4-pe.png
+        title: 'The Entities table widget displaying a list of device groups specified in the “Entity group name” alias has been added.'
+
+entity-group-name-4:
+    0:
+        image: /images/user-guide/ui/alias/entity-group-name-5-pe.png
+        title: 'After adding widgets, click the “pencil” icon in the upper right corner of the widget to enter the widget editing mode;'
+    1:
+        image: /images/user-guide/ui/alias/entity-group-name-6-pe.png
+        title: 'Scroll down to find "Actions" section. Click "Add action" button;'
+    2:
+        image: /images/user-guide/ui/alias/entity-group-name-7-pe.png
+        title: 'The "Entities table: Actions" window will be opened. Click the "Add action" button in the top right corner.'
+    3:
+        image: /images/user-guide/ui/alias/entity-group-name-8-pe.png
+        title: 'In the "Add action" dialog, enter the action name, select an action source - "Action cell button", and choose the action type "Update current dashboard state". After, click "Add";'
+    4:
+        image: /images/user-guide/ui/alias/entity-group-name-9-pe.png
+        title: 'After successfully adding the action, click "Save" to apply changes.'
+      
+entity-group-name-5:
+    0:
+        image: /images/user-guide/ui/alias/entity-group-name-10-pe.png
+        title: 'In the “Tables” widgets bundle select the “Entities table” widget. Navigate to the “Entity alias” tab. Specify the "Group entities" alias in the “Entity alias” field. Click “Add” and apply changes;'
+    1:
+        image: /images/user-guide/ui/alias/entity-group-name-11-pe.png
+        title: 'Added Entities table widget, which will display a list of devices for the selected group of devices. Save the dashboard.'
+
+entity-group-name-6:
+    0:
+        image: /images/user-guide/ui/alias/entity-group-name-12-pe.png
+        title: 'Click on the "Compressors" row in the "Device Groups" widget. The "Update current dashboard state" action will be executed, and all devices of the selected device group will be displayed in the "Devices" widget.'
 
 
+entities-by-group-name-1:
+    0:
+        image: /images/user-guide/ui/alias/entities-by-group-name-1-pe.png
+        title: 'In the “Add alias” dialog, enter the alias name, and select the “Entities by group name” filter type. Then choose the entity type and enter an expression that will filter the names of the displayed entity groups.'
+
+entities-by-group-name-2:
+    0:
+        image: /images/user-guide/ui/alias/entities-by-group-name-2-pe.png
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entities by group name" alias in the "Entity alias" field. Click "Add";'
+    1:
+        image: /images/user-guide/ui/alias/entities-by-group-name-3-pe.png
+        title: 'The Entities table widget with the alias that filters device group - Thermostats has been added.'
 
 
 entity-from-dashboard-state-1:
@@ -143,7 +245,7 @@ entity-from-dashboard-state-2:
         title: 'Add an Entity table widget that will display a list of entities. Use the "Group entities" alias as a data source;'
     2:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-5-pe.png
-        title: 'Add an Entity table widget that will display a list of devices is created.'
+        title: 'The Entity table widget that will display a list of devices has been added.'
 
 entity-from-dashboard-state-3:
     0:
@@ -250,7 +352,7 @@ owner-of-entity-from-dashboard-state-5:
         title: 'Click on the row with the device name in the "Entities" widget. The action will be executed, and the owner of the selected device will be displayed in the "Device Owner" widget;'
     1:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-11-pe.png
-        title: 'Add an Entity table widget that will display a list of devices is created.'
+        title: 'Repeat this action with another device.'
 
 
 asset-type-1:
@@ -264,7 +366,7 @@ asset-type-2:
         title: 'Click on the row with the device name in the "Entities" widget. The action will be executed, and the owner of the selected device will be displayed in the "Device Owner" widget;'
     1:
         image: /images/user-guide/ui/alias/asset-type-3-pe.png
-        title: 'Add an Entity table widget that will display a list of devices is created.'
+        title: 'The Entity table widget that will display a list of assets whose asset profile is "buildings" and whose name starts with “Build” is created.'
 
 
 
@@ -296,91 +398,6 @@ asset-type-2:
 
 
 
-
-entity-group-name:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-paas.png
- 1:
-  image: /images/user-guide/ui/alias/alias-2-paas.png
- 2:
-  image: /images/user-guide/ui/alias/entity-group-name-3-paas.png
- 3:
-  image: /images/user-guide/ui/alias/entity-group-name-4-paas.png
- 4:
-  image: /images/user-guide/ui/alias/entity-group-name-5-paas.png
- 5:
-  image: /images/user-guide/ui/alias/entity-group-name-6-paas.png
-
-entity-group-name-1:
- 0:
-  image: /images/user-guide/ui/alias/alias-5-paas.png
- 1:
-  image: /images/user-guide/ui/alias/alias-6-paas.png
- 2:
-  image: /images/user-guide/ui/alias/alias-7-paas.png
- 3:
-  image: /images/user-guide/ui/alias/entity-group-name-10-paas.png
- 4:
-  image: /images/user-guide/ui/alias/entity-group-name-11-paas.png
- 5:
-  image: /images/user-guide/ui/alias/entity-group-name-12-paas.png
- 6:
-  image: /images/user-guide/ui/alias/entity-group-name-13-paas.png
- 7:
-  image: /images/user-guide/ui/alias/entity-group-name-14-paas.png
- 8:
-  image: /images/user-guide/ui/alias/entity-group-name-15-paas.png
- 9:
-  image: /images/user-guide/ui/alias/entity-group-name-16-paas.png
- 10:
-  image: /images/user-guide/ui/alias/entity-group-name-17-paas.png
- 11:
-  image: /images/user-guide/ui/alias/entity-group-name-18-paas.png
- 12:
-  image: /images/user-guide/ui/alias/entity-group-name-19-paas.png
-
-entities-by-group-name:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-pe.png
- 1:
-  image: /images/user-guide/ui/alias/alias-2-pe.png
- 2:
-  image: /images/user-guide/ui/alias/entities-by-group-name-3-pe.png
- 3:
-  image: /images/user-guide/ui/alias/entities-by-group-name-4-pe.png
-
-entities-by-group-name-1:
- 0:
-  image: /images/user-guide/ui/alias/alias-5-pe.png
- 1:
-  image: /images/user-guide/ui/alias/alias-6-pe.png
- 2:
-  image: /images/user-guide/ui/alias/alias-7-pe.png
- 3:
-  image: /images/user-guide/ui/alias/entities-by-group-name-8-pe.png
- 4:
-  image: /images/user-guide/ui/alias/entities-by-group-name-9-pe.png
-
-
-asset-type-alias:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-pe.png
- 1:
-  image: /images/user-guide/ui/alias/alias-2-pe.png
- 2:
-  image: /images/user-guide/ui/alias/asset-type-3-pe.png 
- 3:
-  image: /images/user-guide/ui/alias/asset-type-4-pe.png
- 4:
-  image: /images/user-guide/ui/alias/alias-5-pe.png
- 5:
-  image: /images/user-guide/ui/alias/alias-6-pe.png
- 6:
-  image: /images/user-guide/ui/alias/alias-7-pe.png
- 7:
-  image: /images/user-guide/ui/alias/asset-type-8-pe.png
- 8:
-  image: /images/user-guide/ui/alias/asset-type-9-pe.png
 
 device-type-alias:
  0:
