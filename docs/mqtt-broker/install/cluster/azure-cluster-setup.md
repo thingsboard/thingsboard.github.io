@@ -10,11 +10,12 @@ description: TBMQ microservices setup with Kubernetes in AKS
 
 This guide will help you to set up TBMQ in Azure AKS.
 
-## Prerequisites
+### Prerequisites
 
-### Install and configure tools
+#### Install and configure tools
 
-To deploy TBMQ on the AKS cluster you will need to install [kubectl](https://kubernetes.io/docs/tasks/tools/), and [az](https://learn.microsoft.com/en-us/cli/azure/) tools.
+To deploy TBMQ on the AKS cluster you will need to install [kubectl](https://kubernetes.io/docs/tasks/tools/), 
+[helm](https://helm.sh/docs/intro/install/), and [az](https://learn.microsoft.com/en-us/cli/azure/) tools.
 
 After installation is done you need to log in to the cli using the next command.
 
@@ -23,15 +24,15 @@ az login
 ```
 {: .copy-code}
 
-## Step 1. Open TBMQ K8S scripts repository
+### Step 1. Open TBMQ K8S scripts repository
 
 ```bash
-git clone https://github.com/thingsboard/tbmq.git
+git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq.git
 cd tbmq/k8s/azure
 ```
 {: .copy-code}
 
-## Step 2. Define environment variables
+### Step 2. Define environment variables
 
 Define environment variables that you will use in various commands later in this guide.
 
@@ -43,6 +44,7 @@ export AKS_LOCATION=eastus
 export AKS_GATEWAY=tbmq-gateway
 export TB_CLUSTER_NAME=tbmq-cluster
 export TB_DATABASE_NAME=tbmq-db
+export TB_REDIS_NAME=tbmq-redis
 echo "You variables ready to create resource group $AKS_RESOURCE_GROUP in location $AKS_LOCATION 
 and cluster in it $TB_CLUSTER_NAME with database $TB_DATABASE_NAME"
 ```
@@ -56,7 +58,7 @@ where:
 * tbmq-cluster - cluster name. We will refer to it later in this guide using **TB_CLUSTER_NAME**;
 * tbmq-db is the name of your database server. You may input a different name. We will refer to it later in this guide using **TB_DATABASE_NAME**.
 
-## Step 3. Configure and create AKS cluster
+### Step 3. Configure and create AKS cluster
 
 Before creating the AKS cluster we need to create Azure Resource Group. We will use Azure CLI for this:
 
@@ -97,7 +99,7 @@ Full list af `az aks create` options can be found [here](https://learn.microsoft
 
 Alternatively, you may use this [guide](https://learn.microsoft.com/en-us/azure/aks/learn/quick-kubernetes-deploy-portal?tabs=azure-cli) for custom cluster setup.
 
-## Step 4. Update the context of kubectl
+### Step 4. Update the context of kubectl
 
 When the cluster is created we can connect kubectl to it using the next command:
 
@@ -115,7 +117,7 @@ kubectl get nodes
 
 You should see cluster`s nodes list.
 
-## Step 5. Provision PostgreSQL DB
+### Step 5. Provision PostgreSQL DB
 
 You’ll need to set up PostgreSQL on Azure. You may follow [this](https://learn.microsoft.com/en-us/azure/postgresql/flexible-server/quickstart-create-server-portal) guide, 
 but take into account the following requirements:
@@ -179,36 +181,99 @@ nano tb-broker-db-configmap.yml
 ```
 {: .copy-code}
 
-## Step 6. Provision Kafka
+### Step 6. Azure Cache for Redis (Optional)
 
-We recommend deploying Bitnami Kafka from Helm. For that, review the `kafka` folder.
+Optionally, you can set up Azure Cache for Redis. TBMQ uses cache to improve performance and avoid frequent DB reads.
+
+We recommend enabling this in case you have several thousand MQTT clients (devices) connected to TBMQ. It is useful when clients connect to TBMQ with the authentication enabled.
+For every connection, the request is made to find MQTT client credentials that can authenticate the client. 
+Thus, there could be an excessive amount of requests to be processed for a large number of connecting clients at once. 
+
+In order to set up the Redis, follow this [guide](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/quickstart-create-redis).
+
+Another way to do this is by using `az` tool:
 
 ```bash
-ls kafka/
+az redis create --name $TB_REDIS_NAME --location $AKS_LOCATION --resource-group $AKS_RESOURCE_GROUP --sku basic --vm-size C0 --enable-non-ssl-port
 ```
 {: .copy-code}
 
-You can find there _default-values-kafka.yml_ file - default values downloaded from [Bitnami artifactHub](https://artifacthub.io/packages/helm/bitnami/kafka). And _values-kafka.yml_ file with modified values.
-We recommend keeping the first file untouched and making changes to the second one only. This way the upgrade process to the next version will go more smoothly as it will be possible to see diff.
+`az redis create` has a lot of options and a few of them are required:
 
-To add the Bitnami helm repo:
+* **name** (or -n) - name of the Redis cache;
+* **resource-group** (or -g) - name of resource group;
+* **sku** - type of Redis cache (accepted values: Basic, Premium, Standard);
+* **vm-size** - size of Redis cache to deploy. Basic and Standard Cache sizes start with C. Premium Cache sizes start with P (accepted values: c0, c1, c2, c3, c4, c5, c6, p1, p2, p3, p4, p5);
+* **location** (or -l) - location. Values from: `az account list-locations`.
+
+To see the full list of parameters go to the following [page](https://learn.microsoft.com/en-us/cli/azure/redis?view=azure-cli-latest).
+
+Example of response:
+
+```text
+{
+  "accessKeys": null,
+  "enableNonSslPort": true,
+  "hostName": "tbmq-redis.redis.cache.windows.net",
+  "id": "/subscriptions/daff3288-1d5d-47c7-abf0-bfb7b738a18c/resourceGroups/myResourceGroup/providers/Microsoft.Cache/Redis/tbmq-redis",
+  "instances": [
+    {
+      "isMaster": false,
+      "isPrimary": false,
+      "nonSslPort": 13000,
+      "shardId": null,
+      "sslPort": 15000,
+      "zone": null
+    }
+  ],
+  "linkedServers": [],
+  "location": "East US",
+  "minimumTlsVersion": null,
+  "name": "tbmq-redis",
+  "port": 6379,
+  "privateEndpointConnections": null,
+  "provisioningState": "Creating",
+  "publicNetworkAccess": "Enabled",
+  "redisConfiguration": {
+    "maxclients": "256",
+    "maxfragmentationmemory-reserved": "12",
+    "maxmemory-delta": "2",
+    "maxmemory-reserved": "2"
+  },
+  "redisVersion": "6.0.20",
+  "replicasPerMaster": null,
+  "replicasPerPrimary": null,
+  "resourceGroup": "myResourceGroup",
+  "shardCount": null,
+  "sku": {
+    "capacity": 0,
+    "family": "C",
+    "name": "Basic"
+  },
+  "sslPort": 6380,
+  "staticIp": null,
+  "subnetId": null,
+  "tags": {},
+  "tenantSettings": {},
+  "type": "Microsoft.Cache/Redis",
+  "zones": null
+}
+```
+
+We need to take `hostName` parameter and replace `YOUR_REDIS_ENDPOINT_URL_WITHOUT_PORT` in the file _tb-broker-cache-configmap.yml_.
+
+After this we need to get redis keys for connection, for this we need to execute:
 
 ```bash
-helm repo add bitnami https://charts.bitnami.com/bitnami
-helm repo update
+az redis list-keys --name $TB_REDIS_NAME --resource-group $AKS_RESOURCE_GROUP
 ```
 {: .copy-code}
 
-To install Bitnami Kafka execute the following command:
+Take "primary" and paste into _tb-broker-cache-configmap.yml_ file replacing `YOUR_REDIS_PASSWORD`.
 
-```bash
-helm install kafka -f values-kafka.yml bitnami/kafka --version 21.4.4
-```
-{: .copy-code}
+For more information, see the following [script](https://learn.microsoft.com/en-us/azure/azure-cache-for-redis/scripts/create-manage-cache#run-the-script).
 
-Wait up to several minutes until Kafka and Zookeeper pods are up and running.
-
-## Step 7. Installation
+### Step 7. Installation
 
 Execute the following command to run the initial setup of the database. 
 This command will launch short-living TBMQ pod to provision necessary DB tables, indexes, etc.
@@ -231,7 +296,36 @@ Otherwise, please check if you set the PostgreSQL URL and PostgreSQL password in
 {% endcapture %}
 {% include templates/info-banner.md content=aws-rds %}
 
-## Step 8. Starting
+### Step 8. Provision Kafka
+
+We recommend deploying Bitnami Kafka from Helm. For that, review the `kafka` folder.
+
+```bash
+ls kafka/
+```
+{: .copy-code}
+
+You can find there _default-values-kafka.yml_ file - default values downloaded from [Bitnami artifactHub](https://artifacthub.io/packages/helm/bitnami/kafka). And _values-kafka.yml_ file with modified values.
+We recommend keeping the first file untouched and making changes to the second one only. This way the upgrade process to the next version will go more smoothly as it will be possible to see diff.
+
+To add the Bitnami helm repo:
+
+```bash
+helm repo add bitnami https://charts.bitnami.com/bitnami
+helm repo update
+```
+{: .copy-code}
+
+To install Bitnami Kafka execute the following command:
+
+```bash
+helm install kafka -f kafka/values-kafka.yml bitnami/kafka --version 21.4.4
+```
+{: .copy-code}
+
+Wait up to several minutes until Kafka and Zookeeper pods are up and running.
+
+### Step 9. Starting
 
 Execute the following command to deploy the broker:
 
@@ -249,9 +343,9 @@ kubectl get pods
 
 If everything went fine, you should be able to see `tb-broker-0` and `tb-broker-1` pods. Every pod should be in the `READY` state.
 
-## Step 9. Configure Load Balancers
+### Step 10. Configure Load Balancers
 
-### 9.1 Configure HTTP(S) Load Balancer
+#### 10.1 Configure HTTP(S) Load Balancer
 
 Configure HTTP(S) Load Balancer to access web interface of your TBMQ instance. Basically you have 2 possible options of configuration:
 
@@ -260,7 +354,7 @@ Configure HTTP(S) Load Balancer to access web interface of your TBMQ instance. B
 
 See links/instructions below on how to configure each of the suggested options.
 
-#### HTTP Load Balancer
+##### HTTP Load Balancer
 
 Execute the following command to deploy plain http load balancer:
 
@@ -283,7 +377,7 @@ NAME                          CLASS    HOSTS   ADDRESS         PORTS   AGE
 tb-broker-http-loadbalancer   <none>   *       34.111.24.134   80      3d1h
 ```
 
-#### HTTPS Load Balancer
+##### HTTPS Load Balancer
 
 For using ssl certificates we can add our certificate directly in Azure ApplicationGateway using command:
 
@@ -304,7 +398,7 @@ kubectl apply -f receipts/https-load-balancer.yml
 ```
 {: .copy-code}
 
-### 9.2 Configure MQTT Load Balancer
+#### 10.2 Configure MQTT Load Balancer
 
 Configure MQTT load balancer to be able to use MQTT protocol to connect devices.
 
@@ -317,7 +411,7 @@ kubectl apply -f receipts/mqtt-load-balancer.yml
 
 The load balancer will forward all TCP traffic for ports 1883 and 8883.
 
-#### MQTT over SSL
+##### MQTT over SSL
 
 Follow [this guide](https://thingsboard.io/docs/user-guide/mqtt-over-ssl/) to create a .pem file with the SSL certificate. Store the file as _server.pem_ in the working directory.
 
@@ -343,7 +437,7 @@ kubectl apply -f tb-broker.yml
 ```
 {: .copy-code}
 
-## Step 10. Validate the setup
+### Step 11. Validate the setup
 
 Now you can open TBMQ web interface in your browser using DNS name of the load balancer.
 
@@ -400,12 +494,12 @@ kubectl get statefulsets
 
 See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatsheet/) command reference for more details.
 
-## Upgrading
+### Upgrading
 
-In case you would like to upgrade, please pull the latest changes from `main` branch:
+In case you would like to upgrade, please pull the recent changes from the latest release branch:
 
 ```bash
-git pull origin main
+git pull origin {{ site.release.broker_branch }}
 ```
 {: .copy-code}
 
@@ -423,7 +517,7 @@ After that execute the following commands:
 Where `FROM_VERSION` - from which version upgrade should be started.
 See [Upgrade Instructions](/docs/mqtt-broker/install/upgrade-instructions/) for valid `fromVersion` values.
 
-## Cluster deletion
+### Cluster deletion
 
 Execute the following command to delete TBMQ nodes:
 
@@ -446,6 +540,6 @@ az aks delete --resource-group $AKS_RESOURCE_GROUP --name $TB_CLUSTER_NAME
 ```
 {: .copy-code}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}
