@@ -22,10 +22,10 @@ description: "IoT Monitoring Dashboard ✔ IoT control panel ⚫ ThingsBoard ➤
             <div class="text-content medium-margin">As the command center for your connected devices, providing a visual representation of data and facilitating seamless control. It is also known as an IoT control panel.</div>
             <h3 class="small-padding">The key components of an IoT platform dashboard include:</h3>
             <ul class="list">
-                <li>Widgets. These are the building blocks, representing individual pieces of information.</li>
-                <li>Data sources. IoT sensor dashboard pull data from diverse sources such as gateways and cloud services. This data is then processed and visualized through widgets.</li>
-                <li>User controls. These interactive elements allow users to interact with the dashboard, triggering actions like sending commands to devices or adjusting settings.</li>
-                <li>Alerts. A good IoT dashboard platform provides users with alerts that help in identifying any anomalies or issues in real-time.</li>
+                <li>Widgets: These are the building blocks, representing individual pieces of information.</li>
+                <li>Data sources: IoT sensor dashboard pull data from diverse sources such as gateways and cloud services. This data is then processed and visualized through widgets.</li>
+                <li>User controls: These interactive elements allow users to interact with the dashboard, triggering actions like sending commands to devices or adjusting settings.</li>
+                <li>Alerts: A good IoT dashboard platform provides users with alerts that help in identifying any anomalies or issues in real-time.</li>
             </ul>
             <div class="text-content">These components work together to ensure that the dashboard is providing valuable insights from the data. Based on the visualized data, enterprises can build their strategy and vision.</div>
             <h2>The Importance of IoT Monitoring Dashboards</h2>

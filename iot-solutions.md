@@ -11,7 +11,7 @@ description: "Internet of Things Services ✔ IoT Solutions ⚫ ThingsBoard ➤ 
         <div class="text-wrapper">
             <span class="read-info">11 minutes read</span>
             <h1>Internet of Things Solutions and Services</h1>
-            <div class="text-content">Internet of Things solutions are changing the world, one thing at a time. The IoT is a network of physical objects that are embedded with sensors, software, and other technologies to connect and exchange data with other devices and systems over the Internet. It’s still in its early stages of development, but it has the potential to revolutionize many industries and aspects of our lives.</div>
+            <div class="text-content">Internet of Things solutions are changing the world, one thing at a time. The IoT is a network of physical objects that are embedded with sensors, software, and other technologies to connect and exchange data with other devices and systems over the Internet. While it has significantly advanced from its initial stages, the IoT continues to revolutionize various industries and aspects of our daily lives."</div>
         </div>
         <img class="image" srcset="/images/iot-articles/iot-solutions-1_1090x710.png 1090w, /images/iot-articles/iot-solutions-1_2180x1420.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/iot-solutions-1_1090x710.png" alt="IoT solutions dashboard with widgets dark"/>
         <div class="text-wrapper">
@@ -21,8 +21,8 @@ description: "Internet of Things Services ✔ IoT Solutions ⚫ ThingsBoard ➤ 
         <table class="comparison-table desktop-table">
             <thead>
                 <tr>
-                    <th><span class="column-header">Newcomers vision, or Trivial IoT solutions</span></th>
-                    <th><span class="column-header">Experienced vision, or More complex IoT solutions</span></th>
+                    <th><span class="column-header">Newcomers vision / Simple IoT solution</span></th>
+                    <th><span class="column-header">Experienced vision / Complex IoT solutions</span></th>
                 </tr>
             </thead>
             <tbody>
@@ -32,14 +32,10 @@ description: "Internet of Things Services ✔ IoT Solutions ⚫ ThingsBoard ➤ 
                 </tr>
                 <tr>
                     <td>Data visualisation</td>
-                    <td>Collect data from sensors</td>
-                </tr>
-                <tr>
-                    <td>Setting thresholds and sending notifications</td>
                     <td>Processing incoming telemetry and calculate business metrics</td>
                 </tr>
                 <tr>
-                    <td></td>
+                    <td>Setting thresholds and sending notifications</td>
                     <td>Data visualisation</td>
                 </tr>
                 <tr>
@@ -48,11 +44,11 @@ description: "Internet of Things Services ✔ IoT Solutions ⚫ ThingsBoard ➤ 
                 </tr>
                 <tr>
                     <td></td>
-                    <td>Customisation of workflows & rule engines</td>
+                    <td>Customisation of workflows in rule engine</td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td>Customer/User role based information access</td>
+                    <td>Customer role based information access</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -64,7 +60,7 @@ description: "Internet of Things Services ✔ IoT Solutions ⚫ ThingsBoard ➤ 
                 </tr>
                 <tr>
                     <td></td>
-                    <td>Integration with existing business workflow and connection with external systems</td>
+                    <td>Integration with external systems</td>
                 </tr>
             </tbody>
         </table>
@@ -136,11 +132,11 @@ description: "Internet of Things Services ✔ IoT Solutions ⚫ ThingsBoard ➤ 
             <h2>Make a difference with our IoT solution and services</h2>
             <span class="sub-title">Imagine the company where:</span>
             <ul class="list">
-                <li>Your most important assets are always visible and reliable</li>
-                <li>You know exactly how your equipment is being used and how long it will last</li>
-                <li>Data flows smoothly and seamlessly between all systems</li>
-                <li>You can easily manage asset maintenance based on condition, not schedule</li>
-                <li>Business processes and workplace safety issues are identified and addressed before they cause problems</li>
+                <li>Your most important assets are always visible and reliable.</li>
+                <li>You know exactly how your equipment is being used and how long it will last.</li>
+                <li>Data flows smoothly and seamlessly between all systems.</li>
+                <li>You can easily manage asset maintenance based on condition, not schedule.</li>
+                <li>Business processes and workplace safety issues are identified and addressed before they cause problems.</li>
                 <li>You have the data and insights you need to make better decisions, faster.</li>
             </ul>
         </div>
@@ -162,39 +158,39 @@ description: "Internet of Things Services ✔ IoT Solutions ⚫ ThingsBoard ➤ 
             <div class="definitions-list">
                 <div class="definitions-list-item">
                     <div class="term">Asset Management</div>
-                    <div class="definition">organize your devices into logical groups called assets and manage them as a single entity.</div>
+                    <div class="definition">Organize your devices into logical groups called assets and manage them as a single entity</div>
                 </div>
                 <div class="definitions-list-item">
                     <div class="term">Data Analytics — Historical / Real Time / Predictive / Prescriptive</div>
-                    <div class="definition">analyze your IoT data using our analytics service</div>
+                    <div class="definition">Analyze your IoT data using our analytics service</div>
                 </div>
                 <div class="definitions-list-item">
                     <div class="term">Device Connectivity & Data Collection</div>
-                    <div class="definition">connect your devices to the ThingsBoard platform using various protocols, such as MQTT, HTTP, CoAP, or LwM2M</div>
+                    <div class="definition">Connect your devices to the ThingsBoard platform using various protocols, such as MQTT, HTTP, CoAP, or LwM2M and others</div>
                 </div>
                 <div class="definitions-list-item">
                     <div class="term">Device Management</div>
-                    <div class="definition">register, configure, monitor, and control your devices</div>
+                    <div class="definition">Register, configure, monitor, and control your devices</div>
                 </div>
                 <div class="definitions-list-item">
                     <div class="term">Integration Solution into Company Business Workflow</div>
-                    <div class="definition">integrate your IoT solution with your IT systems and applications</div>
+                    <div class="definition">Integrate your IoT solution with your IT systems and applications</div>
                 </div>
                 <div class="definitions-list-item">
                     <div class="term">Rule Engine for Defining Business Logic</div>
-                    <div class="definition">define your business logic and automate your workflows</div>
+                    <div class="definition">Define your business logic and automate your workflows</div>
                 </div>
                 <div class="definitions-list-item">
                     <div class="term">Security</div>
-                    <div class="definition">secure your IoT solution and services</div>
+                    <div class="definition">Secure your IoT solution and services</div>
                 </div>
                 <div class="definitions-list-item">
                     <div class="term">User Management</div>
-                    <div class="definition">manage your users and their access</div>
+                    <div class="definition">Manage your users and their access</div>
                 </div>
                 <div class="definitions-list-item">
                     <div class="term">Visualisation & Reporting</div>
-                    <div class="definition">visualize your IoT data and insights</div>
+                    <div class="definition">Visualize your IoT data and insights</div>
                 </div>
             </div>
         </div>
@@ -230,8 +226,8 @@ description: "Internet of Things Services ✔ IoT Solutions ⚫ ThingsBoard ➤ 
             <div class="detail-name"><a class="header-link" href="/use-cases/smart-irrigation/">Smart Irrigation</a></div>
             <div class="detail-description">Automate and optimize the irrigation of crops and plants by using sensors to measure soil moisture, temperature, rainfall, and other environmental factors</div>
         </div>
-        <div class="detail">
-            <div class="detail-name">Retail Monitoring & Automation</div>
+        <div class="detail"> 
+            <div class="detail-name"><a class="header-link" href="/use-cases/smart-retail/">Retail Monitoring & Automation</a></div>
             <div class="detail-description">Track and analyze the behavior and preferences of customers and employees in retail stores</div>
         </div>
         <div class="detail">

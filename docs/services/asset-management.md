@@ -1,8 +1,8 @@
 ---
 layout: iot-article
-title: ᐉ IoT Device Management Platform
+title: ᐉ Assets Management Software — IoT Asset Tracking System
 notitle: "true"
-description: "IoT Device Management ✔ IoT Device Control ⚫ ThingsBoard ➤ Help organizations to have better control and fetch for all types of device data using REST APIs or Web UI"
+description: "Digital asset management system ✔Asset inventory management software ⚫ ThingsBoard ➤ Helps track ✔ assets ✔ inventory ✔ tools ✔ and more"
 
 ---
 <section class="hero light-text"></section>

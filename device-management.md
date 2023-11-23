@@ -11,16 +11,15 @@ description: "IoT Device Management ✔ IoT Device Control ⚫ ThingsBoard ➤ H
         <div class="text-wrapper">
             <span class="read-info">6 minutes read</span>
             <h1>IoT Device Management</h1>
-            <div class="text-content medium-margin">In the rapidly evolving landscape of the Internet of Things (IoT), the task of managing a multitude of devices can be daunting. This is where IoT device management comes into play. It simplifies the process by providing tools to track, monitor, manage, secure and sustain the connected devices.</div>
+            <div class="text-content medium-margin">In the rapidly evolving landscape of the Internet of Things (IoT), the task of managing a multitude of devices can be daunting. This is where IoT device management comes into play. It simplifies the process by providing tools to track, monitor, control, manage, secure and sustain the connected devices.</div>
             <div class="text-content">It provides a comprehensive view of device status, data traffic, and more. Essentially, it serves as a control centre for all your IoT devices, ensuring they operate smoothly and securely. Explore the world of IoT device management solutions and discover how they can simplify and enhance your connectivity needs.</div>
         </div>
         <img class="image" srcset="/images/iot-articles/device_management_1_1090x672.png 1090w, /images/iot-articles/device_management_1_2180x1344.png 2180w" sizes="(max-width: 1920px) 1090px, (min-width: 1921px) 2180px" src="/images/iot-articles/device_management_1_1090x672.png" alt="IoT solutions dashboard with widgets dark"/>
         <div class="text-wrapper">
             <h2>What is IoT Device Management?</h2>
-            <div class="text-content medium-margin">IoT device management is controlling all aspects of a connected device from a single location. It includes devices like CCTV cameras, sensors, portals, and processors. The services supported by the IoT device management platform include registration and identification, inventory control, and firmware upgrades.</div>
+            <div class="text-content medium-margin">IoT device management is controlling all aspects of a connected device from a single location. It includes devices like sensors, meters, PLCs, connected equipment, CCTV cameras, portals, and processors. The services supported by the IoT device management platform include registration and provisioning, inventory control, remote configuration, and firmware upgrades.</div>
             <div class="text-content medium-margin">Collecting location and usage data from managed IoT devices is an essential part of device management. This data is then analyzed for maintenance, repair, optimization, or replacement. Effective cost management becomes increasingly important as more IoT devices are integrated into mission-critical processes.</div>
             <div class="text-content medium-margin">IoT device management system refers to the tasks and interconnected functions related to the setup, configuration, and maintenance of these devices. These tasks include device setup, admin and monitoring of device fleets, and managing the device through its lifecycle.</div>
-            <div class="text-content">Every major cloud provider, including Amazon Web Services (AWS), Google Cloud, and Microsoft Azure, includes IoT device management in its offerings.</div>
             <h2 class="line-height-small">Simplify Your Control with IoT Device Management Tools</h2>
             <div class="text-content medium-margin">Good device management platform IoT must provide simple instruments to monitor device state like connectivity status, packet losses, battery level, etc. Those metrics can be used to trigger alerts and notifications in case of abnormal behaviour, device failure or configured events. Also, it is important to have the possibility to monitor device data flow and analyze historical and real-time data.</div>
             <div class="text-content medium-margin">ThingsBoard device management supports a variety of direct communication <a class="article-link" href="/docs/pe/api/">protocols</a> for interaction between devices and the IoT platform — MQTT, CoAP, HTTP, LWM2M, OPC-UA, Modbus, etc. Those protocols are already industry standards. However, we do support other options — SNMP, Kafka, TCP/UDP.</div>
@@ -36,7 +35,7 @@ description: "IoT Device Management ✔ IoT Device Control ⚫ ThingsBoard ➤ H
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
                     <div class="term bold">Updating Firmware</div>
-                    <div class="definition">IoT devices often need firmware updates to add new features, fix bugs, or patch security vulnerabilities. With the IoT device management app, these updates can be pushed to the devices remotely.</div>
+                    <div class="definition">IoT devices often need firmware updates to add new features, fix bugs, or patch security vulnerabilities. With the IoT device management app, these updates can be pushed to the devices remotely using over-the-air update (OTA) mechanisms.</div>
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
                     <div class="term bold padding-top">Monitoring Connection Status</div>
@@ -44,7 +43,7 @@ description: "IoT Device Management ✔ IoT Device Control ⚫ ThingsBoard ➤ H
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
                     <div class="term bold">Managing Device Credentials</div>
-                    <div class="definition">Credentials need to be managed to ensure that only authorized devices can connect to the platform. This involves tasks such as issuing new credentials for new devices, revoking credentials for decommissioned devices, and rotating credentials periodically for security.</div>
+                    <div class="definition">Credentials need to be managed to ensure that only authorized devices can connect to the platform. This involves tasks such as issuing new certificates for new devices, revoking certificates for decommissioned devices, and rotating certificates periodically for security.</div>
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
                     <div class="term bold padding-top">Assigning Devices to Customers</div>
@@ -56,7 +55,7 @@ description: "IoT Device Management ✔ IoT Device Control ⚫ ThingsBoard ➤ H
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
                     <div class="term bold padding-top">Managing Device Relations</div>
-                    <div class="definition">In complex IoT deployments, different devices might interact with each other in various ways. These relations between devices can be managed through the IoT platform.</div>
+                    <div class="definition">In complex IoT deployments, different devices might interact with each other and other assets in various ways. These relations between devices and assets can be managed through the IoT platform.</div>
                 </div>
             </div>
         </div>
@@ -111,7 +110,7 @@ description: "IoT Device Management ✔ IoT Device Control ⚫ ThingsBoard ➤ H
             <h3 class="small-padding">Our solutions include:</h3>
             <ul class="list">
                 <li>Easily add new devices to the system with unique identifiers and credentials.</li>
-                <li>Push software and firmware updates to devices remotely.</li>
+                <li>Manage firmware and software versions for devices including automated OTA update workflows for bulk firmware rollout and push updates to devices remotely.</li>
                 <li>Keep track of the connection status of your devices in real-time.</li>
                 <li>Manage device credentials to ensure that only authorized devices can connect to your network.</li>
                 <li>Assign devices to customers or end-users who do not have administrative access to the IoT platform.</li>
@@ -128,7 +127,7 @@ description: "IoT Device Management ✔ IoT Device Control ⚫ ThingsBoard ➤ H
             <div class="definitions-list side-paddings">
                 <div class="definitions-list-item one-to-one-and-half align-start">
                     <div class="term bold padding-top">Healthcare</div>
-                    <div class="definition">Similar to how AWS IoT Core has been used to monitor the health of patients remotely, our solutions have been used in the healthcare industry to connect medical devices such as blood pressure monitors, heart rate monitors, and glucose sensors. </div>
+                    <div class="definition">Similar to fitness bands that are used to ьщтшещк users activity, our solutions have been used in the healthcare industry to monitor the health of patients remotely and to connect medical devices such as hematological analyzers, blood pressure monitors, heart rate monitors, and glucose sensors.</div>
                 </div>
                 <div class="definitions-list-item one-to-one-and-half align-start">
                     <div class="term bold">Manufacturing</div>
