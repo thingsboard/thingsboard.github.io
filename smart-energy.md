@@ -220,13 +220,13 @@ The Rule Engine enables forwarding incoming data to various analytics systems, s
                         <div class="form-element">
                             <label for="name">
                                 <input id="name" class="contact-us-form-control" value="" placeholder="Your Name" name="name" type="text" size="40" maxlength="50">
-                                <p>Name*</p>
+                                <p class="second-placeholder" style="font-size: 12px">Name*</p>
                             </label>
                         </div>
                         <div class="form-element">
                             <label for="email">
                                 <input id="email" class="contact-us-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
-                                <p>Email Address*</p>
+                                <p class="second-placeholder" style="font-size: 12px">Email Address*</p>
                             </label>
                         </div>
                     </div>

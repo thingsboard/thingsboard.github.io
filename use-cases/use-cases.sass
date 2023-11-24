@@ -306,14 +306,13 @@
 #contact-us
     padding: 70px 0 160px 0
     .block-content
-        max-width: 1258px
         .contact-us-content
             display: flex
             justify-content: space-between
             .info
                 display: flex
                 flex-direction: column
-                margin-left: 179px
+                margin-left: 50px
                 padding-right: 100px
                 max-width: 700px
 
@@ -344,7 +343,7 @@
                     label
                         position: relative
                         width: 100%
-                        p
+                        .second-placeholder
                             color: rgba(0, 0, 0, 0.54)
                             font-size: 12px
                             font-style: normal
@@ -352,7 +351,7 @@
                             line-height: 16px
                             letter-spacing: 0.4px
                             position: absolute
-                            top: -8px
+                            top: -18px
                             left: 10px
                             z-index: 2
                             padding: 0px 5px
@@ -374,7 +373,7 @@
                     padding: 15px
                     border-radius: 6px
                     color: white
-                    background-color: #3622A4
+                    background-color: #2A7DEC
                     width: 100%
 
 @media screen and (min-width: 750px)
@@ -396,7 +395,7 @@
                                 width: calc(100% - 122px)
                             img, object
                                 margin: 0 30px 0 0
-
+   
 @media screen and (min-width: 1025px)
     #usecase-list
         .list
@@ -414,3 +413,61 @@
                     order: 2
                 .item-description
                     order: 1
+
+@media screen and (max-width: 1280px)
+    #contact-us
+        padding: 70px 70px 160px 70px
+        .block-content
+            max-width: 1000px
+            .contact-us-content
+                .info
+                    margin-left: 0px
+                    padding-right: 0px
+                    .title
+                        font-size: 36px
+                        line-height: 50px
+
+@media screen and (max-width: 1000px)
+    #contact-us
+        padding: 20px 40px 120px 40px
+        .block-content
+            max-width: 1140px
+            .contact-us-content
+                flex-direction: column
+                .info
+                    margin-left: 0px
+                    padding-right: 0px
+                    .title
+                        font-size: 30px
+                        line-height: 40px
+
+                    .text
+                        font-size: 14px
+                        line-height: 20px
+
+                .contact-form
+                    max-width: 500px
+
+@media screen and (max-width: 671px)
+    #contact-us
+        padding: 20px 20px 80px 20px
+        .block-content
+            max-width: 1140px
+            .contact-us-content
+                flex-direction: column
+                .info
+                    margin-left: 0px
+                    padding-right: 0px
+                    .title
+                        font-size: 28px
+                        line-height: 40px
+
+                    .text
+                        font-size: 14px
+                        line-height: 20px
+
+                .contact-form
+                    .form-element
+                        label
+                            .contact-us-form-control
+                                font-size: 15px
