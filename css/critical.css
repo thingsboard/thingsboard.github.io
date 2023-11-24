@@ -251,8 +251,159 @@ a {
   filter: invert(100%) sepia(68%) saturate(0%) hue-rotate(350deg) brightness(113%) contrast(101%);
 }
 
+.products-selector {
+  position: fixed;
+  height: 60px;
+  top: 10px;
+  left: 20px;
+  width: calc(100% - 100px);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 10001;
+}
+@media screen and (min-width: 769px) {
+  .products-selector {
+    width: 250px;
+  }
+}
+@media screen and (min-width: 870px) {
+  .products-selector {
+    width: 348px;
+  }
+}
+@media screen and (min-width: 1281px) {
+  .products-selector {
+    width: 250px;
+    top: 80px;
+  }
+}
+@media screen and (min-width: 1601px) {
+  .products-selector {
+    width: 316px;
+  }
+}
+.products-selector img {
+  width: 54px;
+  height: 54px;
+  margin-right: 16px;
+}
+@media screen and (max-width: 1024px) {
+  .products-selector img {
+    width: 46px;
+    height: 46px;
+    margin-right: 10px;
+    margin-left: -10px;
+  }
+}
+.products-selector .product-info {
+  display: flex;
+  flex-direction: column;
+  width: 316px;
+  height: 44px;
+  padding-left: 16px;
+  flex: 1;
+  justify-content: center;
+  border-radius: 8px;
+  background: var(--tb-main-background);
+}
+.products-selector .product-info .product-title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  position: relative;
+  color: var(--tb-main-color);
+}
+@media screen and (max-width: 1024px) {
+  .products-selector .product-info .product-title {
+    font-size: 16px;
+  }
+}
+.products-selector .product-info .product-title::after {
+  content: "\f054";
+  font-family: FontAwesome;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  display: block;
+  position: absolute;
+  top: 5px;
+  right: 18px;
+  transform: rotate(90deg);
+  transition: transform 0.3s;
+  border: none;
+}
+.products-selector .product-info .product-description {
+  color: #899aab;
+  font-size: 13px;
+  font-weight: 400;
+}
+@media screen and (max-width: 1024px) {
+  .products-selector .product-info .product-description {
+    font-size: 10px;
+  }
+}
+.products-selector .products {
+  transition: visibility, opacity ease-in-out;
+  transition-duration: 0.3s;
+  border-radius: 4px;
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.3), 0 50px 100px -20px rgba(0, 0, 0, 0.25);
+  background-color: #fff;
+  position: absolute;
+  top: 60px;
+  left: 16px;
+  right: -16px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  visibility: hidden;
+  opacity: 0;
+}
+.products-selector .products a.product {
+  color: #75767C;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  padding: 8px 12px;
+}
+.products-selector .products a.product:hover, .products-selector .products a.product.active {
+  text-decoration: none;
+  color: #2a7dec;
+}
+.products-selector .products a.product.active {
+  font-weight: 500;
+  background: rgba(42, 125, 236, 0.04);
+}
+.products-selector:hover, .products-selector.active {
+  cursor: pointer;
+}
+.products-selector.active .product-title::after {
+  transform: rotate(-90deg);
+}
+.products-selector.active .products {
+  visibility: visible;
+  opacity: 1;
+}
+
+ul li.active ~ .indicator {
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+}
+ul li.active ~ .indicator .line {
+  transition-delay: 0s;
+  transition-duration: 0.3s;
+  width: 100%;
+  left: 0;
+  opacity: 1;
+}
+ul li.active ~ .indicator .head-arrow {
+  transition-delay: 0.1s;
+  transition-duration: 0s;
+  opacity: 1;
+}
+
 #home header .head-menu ul li.active a, #home header .head-menu ul li.active a:hover, #home header .head-menu ul li.active span.main-menu-link:hover, #thingsboard-paas header .head-menu ul li.active a, #thingsboard-paas header .head-menu ul li.active a:hover, #thingsboard-paas header .head-menu ul li.active span.main-menu-link:hover, #thingsboard-pe header .head-menu ul li.active a, #thingsboard-pe header .head-menu ul li.active a:hover, #thingsboard-pe header .head-menu ul li.active span.main-menu-link:hover, #thingsboard-edge header .head-menu ul li.active a, #thingsboard-edge header .head-menu ul li.active a:hover, #thingsboard-edge header .head-menu ul li.active span.main-menu-link:hover {
-  color: rgba(255, 255, 255, 0.5);
+  color: #2A7DEC;
 }
 
 #home header .head-menu ul a, #thingsboard-paas header .head-menu ul a, #thingsboard-pe header .head-menu ul a, #thingsboard-edge header .head-menu ul a {
@@ -974,6 +1125,7 @@ footer {
 footer main, footer div.main-div {
   padding: 92px 0 78px;
 }
+
 footer main hr, footer div.main-div hr {
   border-top: 2px solid white;
 }
@@ -1300,7 +1452,7 @@ section {
   overflow: hidden;
 }
 #home #overflow #react {
-  margin-top: 50px;
+  margin-top: 220px;
 }
 #home #overflow #intro, #home #overflow #manage, #home #overflow #react, #home #overflow #products, #home #overflow #dashboard_description, #home #overflow #rule-engine, #home #overflow #bottom-features {
   color: #212529;
@@ -1321,11 +1473,13 @@ section {
   line-height: 54px;
   font-size: 36px;
 }
+
 #home #overflow #intro h3, #home #overflow #manage h3, #home #overflow #react h3, #home #overflow #products h3, #home #overflow #dashboard_description h3, #home #overflow #rule-engine h3, #home #overflow #bottom-features h3 {
   font-size: 42px;
   font-weight: 600;
   line-height: 63px;
 }
+
 #home #overflow #intro p, #home #overflow #manage p, #home #overflow #react p, #home #overflow #products p, #home #overflow #dashboard_description p, #home #overflow #rule-engine p, #home #overflow #bottom-features p {
   color: #75767C;
   font-size: 18px;
@@ -1333,6 +1487,7 @@ section {
   line-height: 27px;
   margin: 4px 0 18px;
 }
+
 #home #overflow #intro a, #home #overflow #manage a, #home #overflow #react a, #home #overflow #products a, #home #overflow #dashboard_description a, #home #overflow #rule-engine a, #home #overflow #bottom-features a {
   color: #2A7DEC;
   font-weight: 500;
@@ -1455,7 +1610,7 @@ section {
   right: 0;
 }
 #home #overflow #manage #features-top .block.vis, #home #overflow #manage #features-top-2 .block.vis, #home #overflow #react #features-top .block.vis, #home #overflow #react #features-top-2 .block.vis {
-  margin: 20px 0 30px;
+  margin: 80px 0 30px;
 }
 @media (max-width: 768px) {
   #home #overflow #manage #features-top .block.vis, #home #overflow #manage #features-top-2 .block.vis, #home #overflow #react #features-top .block.vis, #home #overflow #react #features-top-2 .block.vis {
@@ -1473,7 +1628,7 @@ section {
   position: absolute;
   box-shadow: unset;
   z-index: -1;
-  right: -576px;
+  left: 0;
   top: 0;
 }
 #home #overflow #manage #features-top .block .process div, #home #overflow #manage #features-top-2 .block .process div, #home #overflow #react #features-top .block .process div, #home #overflow #react #features-top-2 .block .process div {
@@ -1599,8 +1754,8 @@ section {
   }
 }
 #home #overflow #dashboard_description {
-  margin-top: 186px;
-  margin-bottom: 120px;
+  margin-top: 20px;
+  margin-bottom: 80px;
 }
 @media (max-width: 768px) {
   #home #overflow #dashboard_description {
@@ -1609,21 +1764,10 @@ section {
   }
 }
 #home #overflow #dashboard_description .owl-carousel.owl-theme.usecase-carousel {
-  margin: 78px auto;
+  margin: 40px auto;
   width: 100%;
 }
 
-@media (max-width: 768px) {
-  #home #overflow #dashboard_description .owl-carousel.owl-theme.usecase-carousel {
-    margin: 50px auto;
-  }
-}
-#home #overflow #dashboard_description .owl-carousel.owl-theme.usecase-carousel .owl-stage-outer {
-  overflow: hidden;
-}
-#home #overflow #dashboard_description .owl-carousel.owl-theme.usecase-carousel .owl-stage-outer .owl-stage .owl-item {
-  min-height: 420px;
-}
 #home #overflow #dashboard_description .owl-carousel.owl-theme.usecase-carousel .owl-stage-outer .owl-stage .owl-item .item-image {
   box-shadow: unset;
 }
@@ -1658,7 +1802,7 @@ section {
   margin-bottom: 32px;
 }
 #home #overflow #rule-engine {
-  margin-bottom: 148px;
+  margin-bottom: 100px;
 }
 @media (max-width: 768px) {
   #home #overflow #rule-engine {
@@ -1680,6 +1824,19 @@ section {
   border-radius: 6px;
   box-shadow: 0 50px 50px -20px rgba(0, 0, 0, 0.15), 0 0 30px 0 rgba(0, 0, 0, 0.05);
 }
+
+@media screen and (min-width: 1024px) {
+  #home #overflow #rule-engine .rule a img.arrow, #home #overflow #manage #features-top .block img.arrow {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  #home #overflow #manage #features-top .block img.arrow {
+    display: none;
+  }
+}
+
 #home #overflow #rule-engine .rule .des {
   order: 1;
   width: 100%;
@@ -1746,6 +1903,7 @@ section {
   position: absolute;
   top: 7px;
 }
+
 #home #overflow .read-more-button .arrow.first {
   opacity: 0.2;
 }
@@ -1971,6 +2129,72 @@ section {
 #home .header-animation:nth-child(5) {
   animation-delay: 1200ms;
 }
+
+@media (max-width: 768px) {
+  #home #overflow #dashboard_description .owl-carousel.owl-theme.usecase-carousel {
+    margin: 50px auto;
+  }
+}
+#home #overflow #dashboard_description .owl-carousel.owl-theme.usecase-carousel .owl-stage-outer {
+  overflow: hidden;
+}
+#home #overflow #dashboard_description .owl-carousel.owl-theme.usecase-carousel .owl-stage-outer .owl-stage .owl-item {
+  height: 450px;
+}
+
+@media screen and (max-width: 1024px) {
+  #home #overflow #dashboard_description p {
+    font-size: 16px;
+  }
+
+  #home #overflow #dashboard_description .owl-carousel.owl-theme.usecase-carousel .owl-stage-outer .owl-stage .owl-item {
+    height: 570px !important;
+  }
+
+  #home #overflow #manage #features-top .block .feature-des.microservices h2, #home #overflow #manage #features-top-2 .block .feature-des.microservices h2, #home #overflow #react #features-top .block .feature-des.microservices h2, #home #overflow #react #features-top-2 .block .feature-des.microservices h2 {
+    margin-top: 90px;
+  }
+
+  footer .deeper .footer-logo {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  footer .deeper {
+    justify-content: center !important;
+  }
+  footer .deeper nav {
+    display: block !important;
+  }
+  footer .deeper nav a {
+    width: 100%;
+    text-align: center !important;
+    margin: 18px 0 0 !important;
+  }
+  footer .deepmost {
+    display: block;
+  }
+  footer .deepmost .copyright {
+    text-align: center;
+  }
+  footer .deepmost .social {
+    justify-content: center;
+    width: 100%;
+    padding-top: 48px;
+  }
+  footer .newsletterSubsContainer {
+    justify-content: center;
+  }
+  footer .newsletterSubsContainer .primary {
+    height: unset;
+  }
+  footer .newsletterSubsContainer .primary.subscribe {
+    margin-top: 8px;
+    width: 100%;
+  }
+}
+
 @keyframes slideup-in {
   from {
     opacity: 0;
@@ -1992,9 +2216,7 @@ section {
   #home #overflow #manage #features-top .block .feature-des, #home #overflow #manage #features-top .block img, #home #overflow #manage #features-top .block .manage, #home #overflow #manage #features-top .block .visualize, #home #overflow #manage #features-top .block .process, #home #overflow #manage #features-top-2 .block .feature-des, #home #overflow #manage #features-top-2 .block img, #home #overflow #manage #features-top-2 .block .manage, #home #overflow #manage #features-top-2 .block .visualize, #home #overflow #manage #features-top-2 .block .process, #home #overflow #react #features-top .block .feature-des, #home #overflow #react #features-top .block img, #home #overflow #react #features-top .block .manage, #home #overflow #react #features-top .block .visualize, #home #overflow #react #features-top .block .process, #home #overflow #react #features-top-2 .block .feature-des, #home #overflow #react #features-top-2 .block img, #home #overflow #react #features-top-2 .block .manage, #home #overflow #react #features-top-2 .block .visualize, #home #overflow #react #features-top-2 .block .process {
     width: 80%;
   }
-  #home #overflow #products .product-list {
-    margin: 0 80px;
-  }
+
   #home #overflow #bottom-features #cards div .block {
     text-align: left;
     display: flex;
@@ -2029,9 +2251,7 @@ section {
   #home #overflow #manage #features-top .block .preview, #home #overflow #manage #features-top .block .manage, #home #overflow #manage #features-top .block .visualize, #home #overflow #manage #features-top .block .process, #home #overflow #manage #features-top-2 .block .preview, #home #overflow #manage #features-top-2 .block .manage, #home #overflow #manage #features-top-2 .block .visualize, #home #overflow #manage #features-top-2 .block .process, #home #overflow #react #features-top .block .preview, #home #overflow #react #features-top .block .manage, #home #overflow #react #features-top .block .visualize, #home #overflow #react #features-top .block .process, #home #overflow #react #features-top-2 .block .preview, #home #overflow #react #features-top-2 .block .manage, #home #overflow #react #features-top-2 .block .visualize, #home #overflow #react #features-top-2 .block .process {
     margin-top: unset;
   }
-  #home #overflow #products .product-list {
-    margin: 0 60px;
-  }
+
   #home #overflow #rule-engine .rule {
     flex-direction: row;
   }
@@ -2259,7 +2479,7 @@ hr {
   border-radius: 4px;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 890px) {
   .owl-carousel.owl-theme.usecase-carousel .owl-dots button.owl-dot span {
     width: 72px;
     height: 4px;

@@ -43,7 +43,6 @@
     <link rel="shortcut icon" type="image/png" href="https://img.thingsboard.io/favicon.png">
     {% if page.url == '/' %}
     <link href="/css/critical.css" rel="stylesheet">
-    <!-- <link href="/css/styles.css" rel="stylesheet"> -->
     {% else %}
     <link href="/css/styles.css" rel="stylesheet">
     {% endif %}
@@ -205,10 +204,6 @@
             {src: '/js/photoswipe.min.js', type: 'script'},
             {src: '/js/photoswipe-ui-default.min.js', type: 'script'}
         ];
-
-        if (window.location.pathname === '/') {
-            // initialScriptsList.unshift({src: '/css/styles.css', type: 'css'});
-        }
 
         loadNextScript(0, initialScriptsList);
 
@@ -485,7 +480,7 @@
 <header>
     <div class="logo-burger">
         <a href="/support-ukraine/" class="support-ukraine">
-            <p><i class="fa fa-ban" aria-hidden="true" aria-label="Burger menu"></i>Stop the war</p>
+            <p><i class="fa fa-ban"></i>Stop the war</p>
             <img src="/images/animated-ukraine-flag.gif" alt="Stand with Ukraine flag">
             <p>Support Ukraine</p>
         </a>
