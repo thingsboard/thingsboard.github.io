@@ -1,14 +1,14 @@
 ---
 layout: use-case
-title: Smart farming and smart agriculture solutions
-description: Smart farming, future farming and smart agriculture with ThingsBoard IoT Platform
+title: ᐉ Smart Farming & Agriculture — IoT Agriculture Solutions
+description: Internet of things farming ✔ Smart agriculture ✔ IoT sensors in agriculture ⚫ ThingsBoard ➤ Save up to 90% of development time for your smart-farming & agriculture solutions
 notitle: "true"
 
 ---
 
 {% include usecase-nav.html usecase="smart-farming" %}
 
-<h1 class="usecase-title">Smart farming and smart agriculture solutions</h1>
+<h1 class="usecase-title">Smart Farming & IoT Agriculture Solutions</h1>
 
 ThingsBoard platform dramatically reduces time to market and efforts to create smart-farming solutions.
 Save up to 90% of development time for your smart-farming solution by utilizing the following platform benefits:
