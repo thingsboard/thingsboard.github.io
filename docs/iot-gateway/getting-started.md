@@ -103,7 +103,24 @@ After running gateway docker image, you can see the following logs in your termi
 
 ![](/images/gateway/dashboard/launch-gateway-docker.png)
 
-## Step 2. Add new connector
+## Step 2. Enable remote logging
+
+To view gateway and connector logs on the dashboard, you need to enable remote logging. For this purpose, 
+use the following steps:
+
+{% assign enableRemoteLogging = '
+    ===
+        image: /images/gateway/dashboard/general-configuration-1-ce.png,
+        title: On the gateway dashboard, click on **"General configuration"** button on the right panel.
+    ===
+        image: /images/gateway/dashboard/general-configuration-2-ce.png,
+        title: Navigate to the "**Logs**" tab. Enable the "**Remote logs**" toggle. Select "**DEBUG**" in the "**Log level**" row.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=enableRemoteLogging %}
+
+## Step 3. Add new connector
 
 By choosing the type of connector, you determine the specific method of connection you will use to ensure the 
 interaction of your gateway with other systems or devices.
@@ -117,7 +134,7 @@ OPC-UA<small></small>%,%opcua%,%templates/iot-gateway/remote-creating-connector-
 
 {% include content-toggle.html content-toggle-id="connectorsCreation" toggle-spec=connectorscreationspec %}
 
-## Step 3. Check device data
+## Step 4. Check device data
 
 To review the data uploaded from your gateway, use the following steps:
 

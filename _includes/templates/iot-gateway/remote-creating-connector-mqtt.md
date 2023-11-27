@@ -27,7 +27,7 @@ Copy and execute the following command in your terminal:
 {% assign containerId = "{" | append: "{" | append: ".Id" | append: "}" | append: "}" %}
 
 ```shell
-docker run -it --net=container:$(docker inspect -f '{{containerId}}' ${TB_GATEWAY_CONTAINER_NAME}) tb-demo-mqtt-broker:latest
+docker run -it --net=container:$(docker inspect -f '{{containerId}}' ${TB_GATEWAY_CONTAINER_NAME}) thingsboard/tb-gw-mqtt-broker:latest
 ```
 {:.copy-code}
 
