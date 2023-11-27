@@ -1,8 +1,9 @@
 
-**TBMQ** represents an open-source MQTT message broker with the capacity to handle up to **4M** concurrent client connections, 
-while proficiently processing a minimum of **200K messages per second** per single cluster node. 
-In the cluster mode, its capabilities are further enhanced, enabling it to effortlessly support more than **100M** 
-concurrently connected clients and handle more than [3M messages per second](/docs/mqtt-broker/reference/performance-tests/).
+**TBMQ** represents an open-source MQTT message broker. It has the capacity to handle more than **4M** concurrent client connections, 
+supporting a minimum of [3M messages per second throughput](/docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/) per single cluster node 
+with low latency delivery. 
+In the cluster mode, its capabilities are further enhanced, 
+enabling it to support more than [100M concurrently connected clients](/docs/mqtt-broker/reference/100m-connections-performance-test/).
 
 Within the ThingsBoard company, our expertise and understanding of diverse IoT requirements and use cases have enabled us to discern
 two primary scenarios in which our clients develop their solutions. 
@@ -43,9 +44,9 @@ Following its successful deployment in production environments, it was determine
 
 TBMQ is designed to be:
 
-* **scalable**: the platform is horizontally scalable and built using the leading open-source technologies.
-* **fault-tolerant**: there is no single point of failure, and every node in the cluster is identical, ensuring high availability and fault tolerance.
-* **robust and efficient**: depending on the use case, a single server node can handle millions of clients and hundreds of thousands of messages per second, making it highly efficient.
+* **scalable**: the platform is horizontally scalable and built using the leading open-source technologies;
+* **fault-tolerant**: there is no single point of failure, and every node in the cluster is identical, ensuring high availability and fault tolerance;
+* **robust and efficient**: depending on the use case, a single server node can handle millions of clients and hundreds of thousands of messages per second, making it highly efficient;
 * **durable**: the broker ensures data durability, preventing data loss.
 
 See [**TBMQ Architecture**](/docs/mqtt-broker/architecture) for more details.

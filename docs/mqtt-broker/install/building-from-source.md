@@ -64,7 +64,7 @@ Use java installation [instructions](#java) to fix this.
 You can clone source code of the project from the official [GitHub repo](https://github.com/thingsboard/tbmq).
 
 ```bash
-git clone git@github.com:thingsboard/tbmq.git
+git clone -b {{ site.release.broker_branch }} https://github.com/thingsboard/tbmq.git
 cd tbmq
 ```
 {: .copy-code}

@@ -14,7 +14,7 @@ Read more about the APPLICATION client [here](https://thingsboard.io/docs/mqtt-b
 ThingsBoard MQTT Integration acts as an MQTT client. It subscribes to topics and converts the received data into telemetry and attribute updates. 
 In case of a downlink message, MQTT integration converts it to the device-suitable format and pushes it to TBMQ. 
 Pay attention: TBMQ should be either co-located with the ThingsBoard instance or deployed in the cloud and have a valid DNS name or static IP address. 
-ThingsBoard instance that is running in the cloud can’t connect to the TBMQ deployed in the local area network.
+ThingsBoard instance that is running in the cloud can’t connect to the TBMQ deployed in the local area network with no internet connection.
 
 ### Prerequisites
 
@@ -74,7 +74,7 @@ Now go to the "Sessions" page in the TBMQ UI. Upon successful establishment of t
 
 {% include images-gallery.html imageCollection="successful-connection-tbmq-to-thingsboard" %}
 
-And on the "Home" page, in the "Kafka Topics" window, you will see a name of Kafka topic (which corresponds to the client ID specified in the MQTT integration), number of partitions, replication factor and size of the topic.
+And on the "Topics" page of the "Kafka Management" menu section you will see a name of Kafka topic (which corresponds to the client ID specified in the MQTT integration), number of partitions, replication factor and size of the topic.
 
 {% include images-gallery.html imageCollection="tbmq-home-page" %}
 
@@ -109,6 +109,6 @@ Click on the device, go to "Latest Telemetry" tab to see "temperature" key and i
 
 {% include images-gallery.html imageCollection="tbmq-create-device" %}
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "TBIntegrationGuide" %}{% include templates/mqtt-broker-guides-banner.md %}

@@ -15,11 +15,11 @@ You will learn how to assign topic authorization rules to clients to control the
 By understanding and implementing the authentication and authorization options outlined in this guide, 
 you can ensure secure and controlled access to the MQTT broker, protecting your infrastructure and data from unauthorized access or misuse.
 
-## MQTT Listeners
+### MQTT Listeners
 
-TBMQ provides the flexibility to configure its listening capabilities for both the TCP and SSL/TLS protocols.
+TBMQ provides the flexibility to configure its listening capabilities for both the TCP and SSL/TLS protocols as well as for MQTT over WebSockets.
 
-### TCP Listener
+#### TCP Listener
 
 By default, TBMQ has the TCP listener enabled on port `1883`.
 However, if you wish to disable the TCP listener, you can set the `LISTENER_TCP_ENABLED` environment variable to `false`.
@@ -30,7 +30,7 @@ This gives you the flexibility to configure the broker to listen on a specific n
 
 By adjusting these environment variables, you can customize the TCP listening behavior of TBMQ to suit your specific requirements.
 
-### TLS Listener
+#### TLS Listener
 
 To enable the SSL/TLS listener, set the `LISTENER_SSL_ENABLED` environment variable to `true`. By default, the broker is listening on the `8883` port.
 To change the host and/or port that the broker is listening to, update the `LISTENER_SSL_BIND_ADDRESS` and `LISTENER_SSL_BIND_PORT` variables, respectively.
@@ -51,7 +51,7 @@ If you choose Pem as the credentials type, you need to configure the following:
 If you require two-way TLS, you also need to configure the TrustStore by adding the trusted certificates/chains to the configured KeyStore/PEM files.
 For more information about configuration possibilities and certificate generation, please review the following ThingsBoard security [pages](/docs/user-guide/mqtt-over-ssl/).
 
-### WS Listener
+#### WS Listener
 
 By default, TBMQ has the WebSocket listener enabled on port `8084`.
 However, in case you want to disable the WS listener, you can set the `LISTENER_WS_ENABLED` environment variable to `false`.
@@ -62,7 +62,7 @@ you can modify the `LISTENER_WS_BIND_ADDRESS` and `LISTENER_WS_BIND_PORT` variab
 WS listener is configured to negotiate via all MQTT versions by default, i.e. `WS_NETTY_SUB_PROTOCOLS` is set to `mqttv3.1,mqtt`.
 The subprotocol setting `mqtt` represents MQTT 3.1.1 and MQTT 5.
 
-### WSS Listener
+#### WSS Listener
 
 To enable the WebSocket Secure listener, set the `LISTENER_WSS_ENABLED` environment variable to `true`. By default, the broker is listening on the `8085` port.
 To change the host and/or port that the broker is listening to, update the `LISTENER_WSS_BIND_ADDRESS` and `LISTENER_WSS_BIND_PORT` variables, respectively.
@@ -83,9 +83,9 @@ If you choose Pem as the credentials type, you need to configure the following:
 Do not forget to configure the TrustStore by adding the trusted certificates/chains if you require two-way TLS.
 WSS listener is set to the same negotiation subprotocols as [WS](#ws-listener) listener. If you need to change this default behavior, update `WSS_NETTY_SUB_PROTOCOLS` parameter appropriately.
 
-## Authentication
+### Authentication
 
-### Basic Authentication
+#### Basic Authentication
 
 To enable basic authentication based on a **username, password, and clientId** in your system, follow these steps:
 
@@ -93,7 +93,7 @@ To enable basic authentication based on a **username, password, and clientId** i
 2. Create MQTT client credentials of type `Basic` using either the [Web UI guide](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) or the [REST API guide](/docs/mqtt-broker/mqtt-client-credentials-management/). 
 3. Once the credentials are created, the `credentialsId` field is auto-generated. See below for more information.
 
-#### Credentials Matching
+##### Credentials Matching
 
 The following are the **possible combinations** of `Basic` credentials matchers:
 - **clientId** - checks if the connecting client has specified clientId.
@@ -103,7 +103,7 @@ The following are the **possible combinations** of `Basic` credentials matchers:
 - **clientId and password** - checks if the connecting client has specified both clientId and password.
 - **clientId, username and password** - checks if the connecting client has specified clientId, username, and password.
 
-#### Credentials ID
+##### Credentials ID
 
 When a client connects, the combination of the username, password, and clientId from the `CONNECT` packet is matched with the persisted credentials to authenticate the client.
 The matching is based on the auto-generated `credentialsId` field from the MQTT client credentials. 
@@ -112,11 +112,11 @@ The `credentialsId` is generated as follows:
 
 - credentialsId = `username|$CLIENT_USERNAME` when only username is present;
 - credentialsId = `client_id|$CLIENT_ID` when only client ID is present;
-- credentialsId = `mixed|$CLIENT_USERNAME|$CLIENT_ID` when both username and client ID are present;
+- credentialsId = `mixed|$CLIENT_USERNAME|$CLIENT_ID` when both username and client ID are present.
 
 Where `$CLIENT_USERNAME` refers to the specified username, `$CLIENT_ID` refers to the specified client ID from the `CONNECT` packet.
 
-### TLS Authentication
+#### TLS Authentication
 
 TBMQ supports authentication using TLS. 
 To enable TLS authentication, you must first [enable the TLS listener](/docs/mqtt-broker/security/#tls-listener) so that the client's certificate chain is involved in the authentication process.
@@ -127,12 +127,12 @@ After enabling the TLS listener, you need to do the following to enable TLS auth
 2. Create MQTT client credentials of type `X.509 Certificate Chain` using either the [Web UI guide](/docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/) or the [REST API guide](/docs/mqtt-broker/mqtt-client-credentials-management/).
 3. Once the credentials are created, the `credentialsId` field is auto-generated. See below for more information.
 
-#### Credentials Matching
+##### Credentials Matching
 
 When authentication is enabled, only clients connecting using certificates with common names (CN) that match the persisted common names will be authenticated. 
 This matching process is done by comparing the CN of each certificate in the chain with the common names of the persisted credentials.
 
-#### Credentials ID
+##### Credentials ID
 
 The generation of `credentialsId` is done as follows:
 
@@ -142,7 +142,7 @@ Where `$CERTIFICATE_COMMON_NAME` is the common name of the certificate from the 
 
 {% include images-gallery.html imageCollection="security-authentication" %}
 
-### Strategies
+#### Strategies
 
 TBMQ allows to set the authentication strategy by setting the environment variable `SECURITY_MQTT_AUTH_STRATEGY`, which has two possible values:
 
@@ -155,7 +155,7 @@ If one of the authentication types is disabled, the other type will be used.
 For example, if the client connects to the TCP listener, only `Basic` authentication will be used. 
 On the other hand, if the client connects to the TLS listener, only `TLS` authentication will be used.
 
-## Authorization
+### Authorization
 
 After the user has been authenticated, it is possible to restrict the client's access to topics they can publish or subscribe to for both TLS and Basic authentications.
 
@@ -163,7 +163,7 @@ To provide flexible control over authorization rules, TBMQ uses regular expressi
 
 For example, to **allow clients to publish or subscribe to all topics** that begin with **city/**, an authorization rule should be created with the value **city/.***.
 
-### Basic
+#### Basic
 
 For the Basic type, authorization is configured through the **pubAuthRulePatterns** and **subAuthRulePatterns** of the corresponding MQTT client credentials. 
 Therefore, for each Basic MQTT client credential, you can configure the authorization rules for the topics that these clients can access. 
@@ -178,7 +178,7 @@ The **pubAuthRulePatterns** and **subAuthRulePatterns** are based on regular exp
 {: .copy-code}
 The following configuration allows clients to publish messages to topics that start with **country/** and subscribe to topics that start with **city/**.
 
-### TLS
+#### TLS
 
 For TLS type, authorization is configured using the **authRulesMapping** field of the corresponding MQTT Client Credentials.
 Here is a model of the credentials value:
