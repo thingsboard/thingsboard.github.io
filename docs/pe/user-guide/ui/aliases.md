@@ -358,190 +358,156 @@ owner-of-entity-from-dashboard-state-5:
 asset-type-1:
     0:
         image: /images/user-guide/ui/alias/asset-type-1-pe.png
-        title: 'Click on the row with the device name in the "Entities" widget. The action will be executed, and the owner of the selected device will be displayed in the "Device Owner" widget;'
+        title: 'In the “Add alias” dialog, enter the alias name, and select the “Asset type” filter type. Then specify the asset profile(s) and enter an expression that will filter the names of the displayed assets;'
 
 asset-type-2:
     0:
         image: /images/user-guide/ui/alias/asset-type-2-pe.png
-        title: 'Click on the row with the device name in the "Entities" widget. The action will be executed, and the owner of the selected device will be displayed in the "Device Owner" widget;'
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Asset type" alias in the "Entity alias" field. Click "Add";'
     1:
         image: /images/user-guide/ui/alias/asset-type-3-pe.png
-        title: 'The Entity table widget that will display a list of assets whose asset profile is "buildings" and whose name starts with “Build” is created.'
+        title: 'The Entities table widget that displays assets with the asset profile "buildings" and whose names begins with "Build" has been added'
 
 
+device-type-1:
+    0:
+        image: /images/user-guide/ui/alias/asset-type-1-pe.png
+        title: 'In the “Add alias” dialog, enter the alias name, and select the “Device type” filter type. Then specify the device profile(s) and enter an expression that will filter the names of the displayed devices;'
+
+device-type-2:
+    0:
+        image: /images/user-guide/ui/alias/asset-type-2-pe.png
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Device type" alias in the "Entity alias" field. Click "Add";'
+    1:
+        image: /images/user-guide/ui/alias/asset-type-3-pe.png
+        title: 'The Entities table widget that displays assets with the asset profile "thermometers" and whose names begins with "Therm" has been added'
 
 
+entity-view-type-1:
+    0:
+        image: /images/user-guide/ui/alias/entity-view-type-1-pe.png
+        title: 'In the “Add alias” dialog, enter the alias name, and select the “Entity view type” filter type. Then specify the entity view type(s) and enter an expression that will filter the names of the displayed entity views;'
+
+entity-view-type-2:
+    0:
+        image: /images/user-guide/ui/alias/entity-view-type-2-pe.png
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity view type" alias in the "Entity alias" field. Click "Add";'
+    1:
+        image: /images/user-guide/ui/alias/entity-view-type-3-pe.png
+        title: 'The Entities table widget that displays entity views with the entity view type "Entity view type" and whose names begins with "Compressor" has been added'
 
 
+edge-type-1:
+    0:
+        image: /images/user-guide/ui/alias/edge-type-1-pe.png
+        title: 'In the “Add alias” dialog, enter the alias name, and select the “Edge type” filter type. Then specify the edge type(s) and enter an expression that will filter the names of the displayed edges;'
+
+edge-type-2:
+    0:
+        image: /images/user-guide/ui/alias/edge-type-2-pe.png
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Edge type" alias in the "Entity alias" field. Click "Add";'
+    1:
+        image: /images/user-guide/ui/alias/edge-type-3-pe.png
+        title: 'The Entities table widget that displays edges with the edge type "edge instance" and whose names begins with "Edge" has been added'
 
 
+api-usage-state-1:
+    0:
+        image: /images/user-guide/ui/alias/api-usage-state-1-pe.png
+        title: 'In the “Add alias” dialog, enter the alias name, and select the “Api Usage State” filter type.'
+
+api-usage-state-2:
+    0:
+        image: /images/user-guide/ui/alias/api-usage-state-2-pe.png
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Api Usage State" alias in the "Entity alias" field and add data key(s) in the "Columns" section that fetches statistics from an API usage. Click "Add";'
+    1:
+        image: /images/user-guide/ui/alias/api-usage-state-3-pe.png
+        title: 'The Entities table widget that displays API usage statistics has been added.'
 
 
+relations-query-1:
+    0:
+        image: /images/user-guide/ui/alias/relations-query-1-pe.png
+        title: 'In the “Add alias” dialog, enter the alias name, select the “Relations query” filter type, and select the entity type and choose an entity. Set direction to “From” and max relation level 3.'
+
+relations-query-2:
+    0:
+        image: /images/user-guide/ui/alias/relations-query-2-pe.png
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Relations query" alias in the "Entity alias" field and add data key(s) in the "Columns" section that fetches statistics from an API usage. Click "Add";'
+    1:
+        image: /images/user-guide/ui/alias/relations-query-3-pe.png
+        title: 'The Entities table widget that displays API usage statistics has been added.'
 
 
+asset-search-query-1:
+    0:
+        image: /images/user-guide/ui/alias/asset-search-query-1-pe.png
+        title: 'In the “Add alias” dialog, enter the alias name, select the “Relations query” filter type, and select the entity type and choose an entity. Set direction to “From” and max relation level 3.'
+
+asset-search-query-2:
+    0:
+        image: /images/user-guide/ui/alias/asset-search-query-2-pe.png
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Asset search query" alias in the "Entity alias" field and add "name" and "type" data keys in the "Columns" section. Click "Add";'
+    1:
+        image: /images/user-guide/ui/alias/asset-search-query-3-pe.png
+        title: 'The Entities table widget that displays assets that have any relation to device “Compressor QA-32” with relation level 2 has been added.'
 
 
+device-search-query-1:
+    0:
+        image: /images/user-guide/ui/alias/device-search-query-1-pe.png
+        title: 'In the “Add alias” dialog, enter the alias name, select the “Relations query” filter type, and select the entity type and choose an entity. Set direction to “From” and max relation level 3.'
+
+device-search-query-2:
+    0:
+        image: /images/user-guide/ui/alias/device-search-query-2-pe.png
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Device search query" alias in the "Entity alias" field and add data key(s) in the "Columns" section. Click "Add";'
+    1:
+        image: /images/user-guide/ui/alias/device-search-query-3-pe.png
+        title: 'The Entities table widget that displays devices that have any relation to asset “Building A” up to relation level 1 has been added.'
 
 
+entity-view-search-query-1:
+    0:
+        image: /images/user-guide/ui/alias/entity-view-search-query-1-pe.png
+        title: 'In the “Add alias” dialog, enter the alias name, select the “Relations query” filter type, and select the entity type and choose an entity. Set direction to “From” and max relation level 3.'
+
+entity-view-search-query-2:
+    0:
+        image: /images/user-guide/ui/alias/entity-view-search-query-2-pe.png
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity view search query" alias in the "Entity alias" field and add data key(s) in the "Columns" section. Click "Add";'
+    1:
+        image: /images/user-guide/ui/alias/entity-view-search-query-3-pe.png
+        title: 'The Entities table widget that displays entity views that have any relation to asset “Building A” up to relation level 1 has been added.'
 
 
+edge-search-query-1:
+    0:
+        image: /images/user-guide/ui/alias/edge-search-query-1-pe.png
+        title: 'In the “Add alias” dialog, enter the alias name, select the “Relations query” filter type, and select the entity type and choose an entity. Set direction to “From” and max relation level 3.'
+
+edge-search-query-2:
+    0:
+        image: /images/user-guide/ui/alias/edge-search-query-2-pe.png
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Api Usage State" alias in the "Entity alias" field and add data key(s) in the "Columns" section. Click "Add";'
+    1:
+        image: /images/user-guide/ui/alias/edge-search-query-3-pe.png
+        title: 'The Entities table widget that displays edges that have any relation to asset “Building A” up to relation level 1 has been added.'
 
 
+scheduler-events-1:
+      0:
+        image: /images/user-guide/ui/alias/scheduler-events-1-pe.png
+        title: 'In the "Add alias" dialog, enter the alias name, select the "Scheduler events" filter type, and select the entity.'
 
+scheduler-events-2:
+      0:
+        image: /images/user-guide/ui/alias/scheduler-events-2-pe.png
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Scheduler events" alias in the "Entity alias" field and add data key(s) in the "Columns" section. Click "Add";'
+      1:
+        image: /images/user-guide/ui/alias/scheduler-events-3-pe.png
+        title: 'The Entities table widget that displays scheduler events for the Compressor BC-10 device has been added.'
 
-
-
-
-
-
-
-
-
-
-
-device-type-alias:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-pe.png
- 1:
-  image: /images/user-guide/ui/alias/alias-2-pe.png
- 2:
-  image: /images/user-guide/ui/alias/device-type-3-pe.png
- 3:
-  image: /images/user-guide/ui/alias/device-type-4-pe.png
- 4:
-  image: /images/user-guide/ui/alias/alias-5-pe.png
- 5:
-  image: /images/user-guide/ui/alias/alias-6-pe.png
- 6:
-  image: /images/user-guide/ui/alias/alias-7-pe.png
- 7:
-  image: /images/user-guide/ui/alias/device-type-8-pe.png
- 8:
-  image: /images/user-guide/ui/alias/device-type-9-pe.png
-
-entity-view-type:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-paas.png
- 1:
-  image: /images/user-guide/ui/alias/alias-2-paas.png
- 2:
-  image: /images/user-guide/ui/alias/entity-view-type-3-paas.png
- 3:
-  image: /images/user-guide/ui/alias/entity-view-type-4-paas.png
- 4:
-  image: /images/user-guide/ui/alias/alias-5-paas.png
- 5:
-  image: /images/user-guide/ui/alias/alias-6-paas.png
- 6:
-  image: /images/user-guide/ui/alias/alias-7-paas.png
- 7:
-  image: /images/user-guide/ui/alias/entity-view-type-8-paas.png
- 8:
-  image: /images/user-guide/ui/alias/entity-view-type-9-paas.png
-
-api-usage-state:
- 0:
-  image: /images/user-guide/ui/alias/api-usage-state-1-pe.png
- 1:
-  image: /images/user-guide/ui/alias/alias-1-pe.png
- 2:
-  image: /images/user-guide/ui/alias/alias-2-pe.png
- 3:
-  image: /images/user-guide/ui/alias/api-usage-state-4-pe.png
- 4:
-  image: /images/user-guide/ui/alias/api-usage-state-5-pe.png
- 5:
-  image: /images/user-guide/ui/alias/alias-5-pe.png
- 6:
-  image: /images/user-guide/ui/alias/alias-6-pe.png
- 7:
-  image: /images/user-guide/ui/alias/alias-7-pe.png
- 8:
-  image: /images/user-guide/ui/alias/api-usage-state-9-pe.png
- 9:
-  image: /images/user-guide/ui/alias/api-usage-state-10-pe.png
- 10:
-  image: /images/user-guide/ui/alias/api-usage-state-11-pe.png
-
-relations-query:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-pe.png
- 1:
-  image: /images/user-guide/ui/alias/alias-2-pe.png
- 2:
-  image: /images/user-guide/ui/alias/relations-query-3-pe.png
- 3:
-  image: /images/user-guide/ui/alias/relations-query-4-pe.png
- 4:
-  image: /images/user-guide/ui/alias/alias-5-pe.png
- 5:
-  image: /images/user-guide/ui/alias/alias-6-pe.png
- 6:
-  image: /images/user-guide/ui/alias/alias-7-pe.png
- 7:
-  image: /images/user-guide/ui/alias/relations-query-8-pe.png
- 8:
-  image: /images/user-guide/ui/alias/relations-query-9-pe.png
-
-asset-search-query:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-pe.png
- 1:
-  image: /images/user-guide/ui/alias/alias-2-pe.png
- 2:
-  image: /images/user-guide/ui/alias/asset-search-query-3-pe.png
- 3:
-  image: /images/user-guide/ui/alias/asset-search-query-4-pe.png
- 4:
-  image: /images/user-guide/ui/alias/alias-5-pe.png
- 5:
-  image: /images/user-guide/ui/alias/alias-6-pe.png
- 6:
-  image: /images/user-guide/ui/alias/alias-7-pe.png
- 7:
-  image: /images/user-guide/ui/alias/asset-search-query-8-pe.png
- 8:
-  image: /images/user-guide/ui/alias/asset-search-query-9-pe.png
-
-device-search-query:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-pe.png
- 1:
-  image: /images/user-guide/ui/alias/alias-2-pe.png
- 2:
-  image: /images/user-guide/ui/alias/device-search-query-3-pe.png
- 3:
-  image: /images/user-guide/ui/alias/device-search-query-4-pe.png
- 4:
-  image: /images/user-guide/ui/alias/alias-5-pe.png
- 5:
-  image: /images/user-guide/ui/alias/alias-6-pe.png
- 6:
-  image: /images/user-guide/ui/alias/alias-7-pe.png
- 7:
-  image: /images/user-guide/ui/alias/device-search-query-8-pe.png
- 8:
-  image: /images/user-guide/ui/alias/device-search-query-9-pe.png
-
-entity-view-search-query:
- 0:
-  image: /images/user-guide/ui/alias/alias-1-paas.png
- 1:
-  image: /images/user-guide/ui/alias/alias-2-paas.png
- 2:
-  image: /images/user-guide/ui/alias/entity-view-search-query-3-paas.png
- 3:
-  image: /images/user-guide/ui/alias/entity-view-search-query-4-paas.png
- 4:
-  image: /images/user-guide/ui/alias/alias-5-paas.png
- 5:
-  image: /images/user-guide/ui/alias/alias-6-paas.png
- 6:
-  image: /images/user-guide/ui/alias/alias-7-paas.png
- 7:
-  image: /images/user-guide/ui/alias/entity-view-search-query-8-paas.png
- 8:
-  image: /images/user-guide/ui/alias/entity-view-search-query-9-paas.png
 
 ---
 

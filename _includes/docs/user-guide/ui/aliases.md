@@ -47,6 +47,7 @@ In the "Tables" widgets bundle select the "Entities table" widget. Navigate to t
 
 {% include images-gallery.html imageCollection="single-alias-2" %}
 
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ### Group entities
 
 This alias allows choosing one entity group as the data source. It can be a device group, asset group, entity view group, customer group, dashboard group, user group and edge group.
@@ -60,6 +61,7 @@ This alias filters the device group - Thermostats.
 Let's use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Group entities" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. The Entities table widget with the alias that filters one device has been added.
 
 {% include images-gallery.html imageCollection="group-entities-2" %}
+{% endif %}
 
 ### Entity list
 
@@ -106,6 +108,7 @@ Let's use an added alias in a widget. In the "Tables" widgets bundle select the 
 
 {% include images-gallery.html imageCollection="entity-type-2" %}
 
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ### Entity group list
 
 This alias allows you to display list of entity groups.
@@ -187,6 +190,7 @@ Navigate to the “Entity alias” tab. Specify the “Group entities” alias i
 Click “Add” and apply changes. The Entities table widget with the alias that filters one device has been added.
 
 {% include images-gallery.html imageCollection="entities-by-group-name-2" %}
+{% endif %}
 
 ### Entity from dashboard state
 
@@ -219,6 +223,7 @@ Now, click an action button opposite any entity. You will be transitioned to an 
 
 {% include images-gallery.html imageCollection="entity-from-dashboard-state-5" %}
 
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ### Owner of entity from dashboard state
 
 This alias allows displaying owners of the devices, assets, entities, etc. Commonly used when there is a hierarchy of customers and it is needed to see what devices belong to whom.
@@ -246,172 +251,163 @@ Now we need to add an [action](/docs/{{docsPrefix}}user-guide/ui/widget-actions)
 Click on the row with the device name in the "Entities" widget. The action will be executed, and the owner of the selected device will be displayed in the "Device Owner" widget.
 
 {% include images-gallery.html imageCollection="owner-of-entity-from-dashboard-state-5" %}
+{% endif %}
 
 ### Asset type
 
-This alias allows choosing assets of entered type (and, if needed) names of which begin with an entered query. This alias filters assets of type ‘field’ and with name starting with ‘Build’.
+This alias allows you to filter assets by the specified asset profile (and optionally by names starting with the entered query).
 
 Adding an alias: in the “Add alias” dialog, enter the alias name, and select the “Asset type” filter type. Then specify the asset profile(s) and enter an expression that will filter the names of the displayed assets.
 
 {% include images-gallery.html imageCollection="asset-type-1" %}
 
-This alias filters assets whose asset profile is "buildings" and whose name starts with “Build”.
+This alias filters assets whose asset profile is "buildings" and whose names start with “Build”.
 
-Let’s use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Single entity" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. The Entities table widget with the alias that filters one device has been added.
+Let’s use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Asset type" alias in the "Entity alias" field. Click "Add" and apply changes. The Entities table widget that displays assets with the asset profile "buildings" and whose name begins with "Build" has been added.
 
 {% include images-gallery.html imageCollection="asset-type-2" %}
  
 ### Device type
 
-This alias allows choosing devices of entered type (and, if needed) names of which begin with an entered query. This alias filters devices of type ‘Device’.
+This alias allows you to filter devices by the specified device profile (and optionally by names starting with the entered query).
 
-Let's learn how to add a Device types alias and use it in a widget:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select a _Device types_ filter type. 
-5. Choose previously created device type from the drop-down menu and click "Add" in the lower right corner of the dialog box.
-6. After the alias has been added, click "Save" in the lower right corner of the dialog box.
-7. Click the "Add new widget" icon in the center of the screen.
-8. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-9. Input data source: Entity type, _Device types_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
-10. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+Adding an alias: in the “Add alias” dialog, enter the alias name, and select the “Device type” filter type. Then specify the device profile(s) and enter an expression that will filter the names of the displayed devices.
 
-{% include images-gallery.html imageCollection="device-type-alias" %}
-<br>
- 
+{% include images-gallery.html imageCollection="device-type-1" %}
+
+This alias filters devices whose device profile is "thermometers" and whose names start with “Therm”.
+
+Let’s use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Device type" alias in the "Entity alias" field. Click "Add" and apply changes. The Entities table widget that displays devices with the device profile "thermometers" and whose name begins with "Therm" has been added.
+
+{% include images-gallery.html imageCollection="device-type-2" %}
  
 ### Entity view type
 
-This alias allows choosing entity views of entered type (and, if needed) names of which begin with an entered query. 
-An entity views called 'Compressor LK-45 Entity View' and 'Compressor ZX-77 Entity View' was created with a type 'Compressors Entity View Type' which provides access to 'Power' timeseries from Compressor LK-45 and Compressor ZX-77.
+This alias allows you to filter devices by the specified entity view type (and optionally by names starting with the entered query).
+
+Adding an alias: in the “Add alias” dialog, enter the alias name, and select the “Entity view type” filter type. Then specify the entity view type(s) and enter an expression that will filter the names of the displayed entity view.
+
+{% include images-gallery.html imageCollection="entity-view-type-1" %}
+
 This alias filters entity Views of type ‘Compressors Entity View Type’ and with name starting with ‘Compressor’.
+An entity views called 'Compressor BC-10 Entity View' and 'Compressor QA-32 Entity View' was created with a type 'Compressors Entity View Type' which provides access to 'Power' timeseries from Compressor BC-10 and Compressor QA-32.
 
-Let's learn how to add an Entity view type alias and use it in a widget:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select an _Entity view types_ filter type.
-5. Choose previously created entity view type from the drop-down menu and enter the beginning of an entity view name. Click "Add" in the lower right corner of the dialog box.
-6. After the alias has been added, click "Save" in the lower right corner of the dialog box.
-7. Click the "Add new widget" icon in the center of the screen.
-8. From the drop-down Select widget menu, select a Cards bundle. In the cell “Latest values”, pick a _Entities table_ widget.
-9. Select the _Entity view type_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
-10. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+Let’s use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity view type" alias in the "Entity alias" field. Click "Add" and apply changes. The Entities table widget that displays entity views with the entity view type "Compressors Entity View Type" and whose name begins with "Compressor" has been added.
 
-{% include images-gallery.html imageCollection="entity-view-type" %}
-<br>
+{% include images-gallery.html imageCollection="entity-view-type-2" %}
 
 ### Edge type
 
+This alias allows you to filter devices by the specified edge type (and optionally by names starting with the entered query).
 
+Adding an alias: in the “Add alias” dialog, enter the alias name, and select the “Entity view type” filter type. Then specify the entity view type(s) and enter an expression that will filter the names of the displayed entity view.
+
+{% include images-gallery.html imageCollection="edge-type-1" %}
+
+This alias filters edges whose edge type is "edge instance" and whose names start with “Edge”.
+
+Let’s use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Edge type" alias in the "Entity alias" field. Click "Add" and apply changes. The Entities table widget that displays edges with the edge type "edge instance" and whose name begins with "Edge" has been added.
+
+{% include images-gallery.html imageCollection="edge-type-2" %}
 
 ### Api Usage State
 
 There is an API Usage layout in the main menu of the TB platform. API Usage shows full statistics on the platform.  
-_Api Usage State_ alias allows fetching only the data you need from the user dashboard statistics.
+Api Usage State alias allows fetching only the data you need from the user dashboard statistics.
 
-Let's learn how to add an Api Usage State alias and use it in a widget:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select a _Api Usage State_ filter type.
-5. After the alias has been added, click "Save" in the lower right corner of the dialog box.
-6. Click the "Add new widget" icon in the center of the screen.
-7. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-8. Input data source: Entity type, _Api Usage State_ alias and add telemetry that fetches statistics from an API usage state. Click "Add" in the lower right corner to add a widget.
-9. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+{% include images-gallery.html imageCollection="api-usage-state-1" %}
 
-{% include images-gallery.html imageCollection="api-usage-state" %}
+Let's learn how to use the "Api Usage State" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Api Usage State" alias in the "Entity alias" field and add data key(s) in the "Columns" section that fetches statistics from an API usage. Click "Add" and apply changes. The Entities table widget that displays API usage statistics has been added.
+
+{% include images-gallery.html imageCollection="api-usage-state-2" %}
 
 ### Relations query
 
 This alias allows choosing entities which are related to specified originator up to specified level and in specified 
 direction.
 
-In the example alias filters entities that have any relation from Asset ‘District A’ up to relation level 2.
+Adding an alias: in the “Add alias” dialog, enter the alias name, select the “Relations query” filter type, and select the entity type and an entity. Set direction to "From" or "To" and max relation level.
 
-Let's learn how to add a Relations query alias and use it in a widget:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select a _Relations query_ filter type.
-5. Select the _Asset_ type and choose an asset. Set direction to "From" and max relation level 2.
-6. Click "Add" in the lower right corner of the dialog box.
-7. After the alias has been added, click "Save" in the lower right corner of the dialog box.
-8. Click the "Add new widget" icon in the center of the screen.
-9. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-10. Input data source: Entity type, _Relations query_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
-11. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+{% include images-gallery.html imageCollection="relations-query-1" %}
 
-{% include images-gallery.html imageCollection="relations-query" %}
+In the example alias filters entities that have any relation to Asset ‘District A’ up to relation level 3.
 
+Let's learn how to use the "Relations query" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Api Usage State" alias in the "Entity alias" field and add data key(s) in the "Columns" section that fetches statistics from an API usage. Click "Add" and apply changes. The Entities table widget that displays API usage statistics has been added.
+
+{% include images-gallery.html imageCollection="relations-query-2" %}
 
 ### Asset search query
 
-This alias allows choosing assets of specified type which are related to specified originator up to specified level and
-in specified direction.  
-This alias filters assets with types ‘field’ that have any relation to Device ‘Compressor ZX-77’ with relation level 2.
+This alias allows choosing assets of specified type which are related to specified entity up to specified level and in specified direction.  
 
-Let's learn how to add an Asset search query alias and use it in a widget:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select a _Asset search query_ filter type.
-5. Select the _Device_ type and choose a device. Set direction to "To" and max relation level 2. Input asset type.
-6. Click "Add" in the lower right corner of the dialog box.
-7. After the alias has been added, click "Save" in the lower right corner of the dialog box.
-8. Click the "Add new widget" icon in the center of the screen.
-9. In the opened widget bundles selection, click "Cards system". There select the _Entities table_ widget.
-10. Input data source: Entity type, _Asset search query_ alias and add telemetry. Click "Add" in the lower right corner to add a widget.
-11. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+Adding an alias: in the “Add alias” dialog, enter the alias name, select the "Asset search query" filter type, and select the entity type and an entity. Set direction to "From" or "To" and max relation level and specify the asset type(s) by which the assets will be filtered.
 
-{% include images-gallery.html imageCollection="asset-search-query" %}
+{% include images-gallery.html imageCollection="asset-search-query-1" %}
+
+This alias filters assets with asset profiles "buildings" and "district" that have any relation to device "Compressor QA-32" with relation level 2.
+
+Let's learn how to use the "Asset search query" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Asset search query" alias in the "Entity alias" field and add "name" and "type" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget that displays assets that have any relation to device “Compressor QA-32” with relation level 2 has been added.
+
+{% include images-gallery.html imageCollection="asset-search-query-2" %}
 
 ### Device search query
 
-This alias allows choosing devices of specified type which are related to specified originator up to specified level
-and in specified direction.  
-This alias filters devices with types ‘Device’ that have any relation from Asset ‘Building A’ up to relation level 1.
+This alias allows choosing devices of specified type which are related to specified originator up to specified level and in specified direction.  
 
-Let's learn how to add a Device search query alias and use it in a widget:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select a _Device search query_ filter type.
-5. Select the _Asset_ type and choose an asset. Set direction to "From" and max relation level 1. Input device type.
-6. Click "Add" in the lower right corner of the dialog box.
-7. After the alias has been added, click "Save" in the lower right corner of the dialog box.
-8. Click the "Add new widget" icon in the center of the screen.
-9. From the drop-down Select widget menu, select a Cards bundle. In the cell "Latest values", pick a _Entities table_ widget.
-10. Select the _Device search query_ alias and add telemetry. Click "Add" in the lower right of the dialog.
-11. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+Adding an alias: in the “Add alias” dialog, enter the alias name, select the "Device search query" filter type, and select the entity type and an entity. Set direction to "From" or "To" and max relation level and specify the device profile(s) by which devices will be filtered.
 
-{% include images-gallery.html imageCollection="device-search-query" %}
+{% include images-gallery.html imageCollection="device-search-query-1" %}
+
+This alias filters devices with device profiles "compressors" that have any relation from asset "Building A" up to relation level 1.
+
+Let's learn how to use the "Device search query alias" in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Device search query" alias in the "Entity alias" field and add "name" and "type" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget that displays devices that have any relation to asset “Building A” up to relation level 1 has been added.
+
+{% include images-gallery.html imageCollection="device-search-query-2" %}
 
 ### Entity view search query
 
 This alias allows choosing entity views of specified type which are related to specified originator up to specified level and in specified direction.  
-An entity view called 'Compressor ZX-77 Entity View' which has 'contains' relation to it from Compressor ZX-77 was created with a type 'Compressors Entity View Type
-' which provides access to 'Power' timeseries from Compressor ZX-77.  
-This alias filters entity views with types ‘Compressors Entity View Type’ that have any relation from device ‘Compressor ZX-77’ up to
-relation level 1.
+An entity view called 'Compressor BC-10 Entity View' which has 'contains' relation to it from Compressor BC-10 was created with a type 'Compressors Entity View Type' which provides access to 'Power' timeseries from Compressor BC-10.
 
-Let's learn how to add a Device search query alias and use it in a widget:
-1. Enter dashboard editing mode.
-2. In the upper right corner of the window, click the "Entity alias" icon.
-3. In the opened Entity aliases window, click the "Add alias" button on the left side of the dialog box.
-4. In the opened dialog _Add alias_, enter a name for the alias, select an _Entity view search query_ filter type.
-5. Select the _Device_ type and choose an asset. Set direction to "From" and max relation level 1. Input entity view type.
-6. Click "Add" in the lower right corner of the dialog box.
-7. After the alias has been added, click "Save" in the lower right corner of the dialog box.
-8. Click the "Add new widget" icon in the center of the screen.
-9. From the drop-down Select widget menu, select a Cards bundle. In the cell "Latest values", pick a _Entities table_ widget.
-10. Select the _Entity view search query_ alias and add telemetry. Click "Add" in the lower right of the dialog.
-11. After adding the widget, click a big tick icon in the lower right corner of the screen to save all applied changes.
+Adding an alias: in the “Add alias” dialog, enter the alias name, select the "Entity view search query" filter type, and select the entity type and an entity. Set direction to "From" or "To" and max relation level and specify the entity view type(s) by which entity views will be filtered.
 
-{% include images-gallery.html imageCollection="entity-view-search-query" %}
+{% include images-gallery.html imageCollection="entity-view-search-query-1" %}
+
+This alias filters entity views with types "Compressors Entity View Type" that have any relation from asset "Building A" up to relation level 1.
+
+Let's learn how to use the "Entity view search query" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity view search query" alias in the "Entity alias" field and add "name" and "type" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget that displays devices that have any relation to asset “Building A” up to relation level 1 has been added.
+
+{% include images-gallery.html imageCollection="entity-view-search-query-2" %}
 
 ### Edge search query
 
+This alias allows choosing entity views of specified type which are related to specified originator up to specified level and in specified direction.  
+An entity view called 'Compressor BC-10 Entity View' which has 'contains' relation to it from Compressor BC-10 was created with a type 'Compressors Entity View Type' which provides access to 'Power' timeseries from Compressor BC-10.
+
+Adding an alias: in the "Add alias" dialog, enter the alias name, select the "Entity view search query" filter type, and select the entity type and an entity. Set direction to "From" or "To" and max relation level and specify the entity view type(s) by which entity views will be filtered.
+
+{% include images-gallery.html imageCollection="edge-search-query-1" %}
+
+This alias filters devices with entity view types "Compressors Entity View Type" that have any relation from asset "Building A" up to relation level 1.
+
+Let's learn how to use the "Entity view search query" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Edge search query" alias in the "Entity alias" field and add "name" and "type" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget that displays devices that have any relation to asset “Building A” up to relation level 1 has been added.
+
+{% include images-gallery.html imageCollection="edge-search-query-2" %}
+
+
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ### Scheduler events
+
+This alias allows displaying scheduler events of specified an entity.
+
+Adding an alias: in the "Add alias" dialog, enter the alias name, select the "Scheduler events" filter type, and select the entity.
+
+{% include images-gallery.html imageCollection="scheduler-events-1" %}
+
+This alias filters scheduler events for the selected entity - Compressor BC-10.
+
+Let's learn how to use the "Scheduler events" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Scheduler events" alias in the "Entity alias" field and add "name" and "type" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget that displays scheduler events for the Compressor BC-10 device has been added.
+
+{% include images-gallery.html imageCollection="scheduler-events-2" %}
+
+{% endif %}
