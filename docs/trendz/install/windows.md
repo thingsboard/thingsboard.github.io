@@ -29,7 +29,7 @@ In small and medium installations Trendz can be installed **on the same** server
 Download and extract the package.
 
 ```bash
-https://dist.thingsboard.io/trendz-windows-1.10.3.zip
+https://dist.thingsboard.io/trendz-windows-1.10.3-HF3.zip
 ```
 {: .copy-code}
 

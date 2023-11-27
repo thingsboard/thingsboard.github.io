@@ -45,7 +45,7 @@ version: '3.0'
 services:
   mytrendz:
     restart: always
-    image: "thingsboard/trendz:1.10.3"
+    image: "thingsboard/trendz:1.10.3-HF3"
     ports:
       - "8888:8888"
     environment:
@@ -103,7 +103,7 @@ Where:
 - `mytrendz-logs:/var/log/trendz`   - mounts the volume `mytrendz-logs` to Trendz logs directory
 - `mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.10.3`          - Trendz docker image
+- `thingsboard/trendz:1.10.3-HF3`          - Trendz docker image
 - `thingsboard/trendz-python-executor:1.10.3`          - Trendz python script executor docker image
 - `SCRIPT_ENGINE_RUNTIME_TIMEOUT`          - Python script execution timeout
     
