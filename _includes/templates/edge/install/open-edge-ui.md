@@ -4,7 +4,7 @@
 {% assign cloudLink = "[**ThingsBoard Live Demo**](https://demo.thingsboard.io/signup)" %}
 {% endif %}
 
-Once started, you will be able to open **ThingsBoard Edge UI** using the following link [http://localhost:8080](http://localhost:8080){:target="_blank"}.
+Once started, you will be able to open **ThingsBoard Edge UI** using the following link `http://localhost:8080`.
 
 {% include templates/edge/bind-port-changed-banner.md %}
 
