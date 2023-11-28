@@ -20,7 +20,7 @@ add-device:
         title: 'Device is created. A window will open where you can check the device&#39;s connection to ThingsBoard. This step is optional. Let&#39;s close this window for now and return to checking the connection in the next step in more detail;'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-1-1-provision-device-4-ce.png
-        title: 'Your first device has been added. As new devices are added, they will be added to the top of the table, since the table sort devices using the time of the creation by default.'
+        title: 'Your first device has been added. As new devices are added, they will be added to the top of the table since the table sorts devices by default using the time of creation.'
 
 add-device-notification:
     0:
@@ -95,7 +95,7 @@ check-connectivity:
         title: 'Select the messaging protocol and your operating system, then copy the command;'
     2:
         image: /images/user-guide/ui/devices/ce/check-connectivity-3-ce.png
-        title: 'Send telemetry to the ThingsBoard on behalf of the device by executing the command via terminal. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings.'
+        title: 'Send telemetry to the ThingsBoard instance on behalf of the device by executing the command via terminal. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings.'
 
 copy-device-id:
     0:
@@ -110,7 +110,7 @@ copy-access-token:
 attributes:
     0:
         image: /images/user-guide/ui/devices/ce/device-attributes-1-ce.png
-        title: 'This tab displays the client, server, and shared attributes of the device. For example, serial number, model, firmware version.'
+        title: 'This tab displays the client, server, and shared attributes of the device. For example, serial number, model, and firmware version.'
 
 telemetry:
     0:

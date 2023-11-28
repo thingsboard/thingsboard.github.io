@@ -15,14 +15,12 @@ In short, devices in ThingsBoard are a central part of your IoT system, and the 
 
 ## Adding a new device
 
-Tenant administrator is able to register new devices to ThingsBoard. Let's add a new device.
-
 {% if docsPrefix == null %}
  - Login to your ThingsBoard instance and navigate to the "Entities" section. Then go to the "Devices" page;
  - Click on the "+" icon in the top right corner of the table and then select "Add new device";
  - Enter the device name. For example, "My New Device". No other changes are required at this time. Click "Add";
  - Device is created. A window will open where you can [check the device's connection to ThingsBoard](#check-connectivity). This step is optional. Let's close this window for now and return to checking the connection in the next step in more detail;
- - Your first device has been added. As new devices are added, they will be added to the top of the table, since the table sort devices using the time of the creation by default.
+ - Your first device has been added. As new devices are added, they will be added to the top of the table since the table sorts devices by default using the time of creation.
 {% endif %}
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
@@ -30,7 +28,7 @@ Tenant administrator is able to register new devices to ThingsBoard. Let's add a
  - By default, you navigate to the device group “All”. Click on the "+" icon in the top right corner of the table and then select "Add new device";
  - Enter the device name. For example, "My New Device". No other changes are required at this time. Click "Add";
  - Device is created. A window will open where you can [check the device's connection to ThingsBoard](#check-connectivity). This step is optional. Let's close this window for now and return to checking the connection in the next step in more detail;
- - Your first device has been added. As new devices are added, they will be added to the top of the table, since the table sorts devices using the time of the creation by default.
+ - Your first device has been added. As new devices are added, they will be added to the top of the table since the table sorts devices by default using the time of creation.
 {% endif %}
 
 {% include images-gallery.html imageCollection="add-device" %}
@@ -93,7 +91,7 @@ To make the device private again, follow these steps:
 
 ### Assign device to customer
 
-The tenant administrator is able to assign devices to certain [customer](/docs/{{docsPrefix}}user-guide/ui/customers/).
+You can assign devices to certain [customer](/docs/{{docsPrefix}}user-guide/ui/customers/).
 This will allow Customer users to fetch device data using REST APIs or Web UI.
 
 {% include images-gallery.html imageCollection="assign-device-to-customer" showListImageTitles="true" %}
@@ -101,7 +99,7 @@ This will allow Customer users to fetch device data using REST APIs or Web UI.
 
 ### Manage device credentials
 
-Tenant administrator is able to manage device credentials. The current release supports credentials based on **[Access token](/docs/{{docsPrefix}}user-guide/access-token/)**, **[X.509 certificates](/docs/{{docsPrefix}}user-guide/certificates/)**, and **[MQTT Basic](/docs/{{docsPrefix}}user-guide/basic-mqtt/)**.
+You can manage device credentials. The current release supports credentials based on **[Access token](/docs/{{docsPrefix}}user-guide/access-token/)**, **[X.509 certificates](/docs/{{docsPrefix}}user-guide/certificates/)**, and **[MQTT Basic](/docs/{{docsPrefix}}user-guide/basic-mqtt/)**.
 
 By default, "access token" credentials are used. To change device credentials, follow these steps:
 
@@ -139,15 +137,15 @@ The "Device details" window provides various tabs that allow you to manage and m
 
 ### Device attributes
 
-This tab displays the client, server, and shared attributes of the device. For example, serial number, model, firmware version.
+This tab displays the client, server, and shared attributes of the device. For example, serial number, model, and firmware version.
 [Attributes](/docs/{{docsPrefix}}user-guide/attributes/) are static and semi-static key-value pairs associated with devices.
 
 {% include images-gallery.html imageCollection="attributes" %}
 
 ### Device telemetry
 
-This tab shows the telemetry data that the device sends in real-time, such as sensor readings, status, and other measurable variables.
-[Time-series](/docs/{{docsPrefix}}user-guide/telemetry/) data points are available for storage, querying and visualization. For example, temperature, humidity, battery level.
+This tab shows the real-time telemetry data the device sends, such as sensor readings, status, and other measurable variables.
+[Time-series](/docs/{{docsPrefix}}user-guide/telemetry/) data points are available for storage, querying, and visualization. For example, temperature, humidity, and battery level.
 
 {% include images-gallery.html imageCollection="telemetry" %}
 
@@ -163,7 +161,7 @@ To delete telemetry, click the "trash can" icon next to the name of the telemetr
 
 ### Device alarms
 
-This tab shows events ([alarms](/docs/{{docsPrefix}}user-guide/alarms/)) that identify issues with your devices.
+This tab shows [alarms](/docs/{{docsPrefix}}user-guide/alarms/) that identify issues with your devices.
 
 {% include images-gallery.html imageCollection="alarms" %}
 

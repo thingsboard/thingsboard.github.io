@@ -20,7 +20,7 @@ add-device:
         title: 'Device is created. A window will open where you can check the device&#39;s connection to ThingsBoard. This step is optional. Let&#39;s close this window for now and return to checking the connection in the next step in more detail;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png
-        title: 'Your first device has been added. As new devices are added, they will be added to the top of the table, since the table sorts devices using the time of the creation by default;'
+        title: 'Your first device has been added. As new devices are added, they will be added to the top of the table since the table sorts devices by default using the time of creation.'
 
 add-device-notification:
     0:
@@ -36,7 +36,7 @@ add-device-group-pe:
         title: 'Enter the name of the device group and click "Add";'
     2:
         image: /images/user-guide/entity-groups/create-entity-group-3-pe.png
-        title: 'The new device group is created.'
+        title: 'Your device group has been added.'
 
 device-details:
     0:
@@ -76,7 +76,7 @@ manage-owner-and-groups-pe:
         title: 'Open "Device details" window and click the "Manage credentials" button;'
     1:
         image: /images/user-guide/ui/devices/pe/manage-owner-and-groups-2-pe.png
-        title: 'Select your preferred credential type, generate the necessary data in the fields, and click "Save";'
+        title: 'Specify the new device owner and the group you want to add the device to. Click "Update";'
     2:
         image: /images/user-guide/ui/devices/pe/manage-owner-and-groups-3-pe.png
         title: 'We have changed the device owner and added the device to a device group.'
@@ -90,7 +90,7 @@ check-connectivity:
         title: 'Select the messaging protocol and your operating system, then copy the command;'
     2:
         image: /images/user-guide/ui/devices/pe/check-connectivity-3-pe.png
-        title: 'Send telemetry to the ThingsBoard on behalf of the device by executing the command via terminal. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings.'
+        title: 'Send telemetry to the ThingsBoard instance on behalf of the device by executing the command via terminal. The device state should be changed from "Inactive" to "Active" and you should see the published "temperature" readings.'
 
 copy-device-id:
     0:
@@ -105,7 +105,7 @@ copy-access-token:
 attributes:
     0:
         image: /images/user-guide/ui/devices/pe/device-attributes-1-pe.png
-        title: 'This tab displays the client, server, and shared attributes of the device. For example, serial number, model, firmware version.'
+        title: 'This tab displays the client, server, and shared attributes of the device. For example, serial number, model, and firmware version.'
 
 telemetry:
     0:
