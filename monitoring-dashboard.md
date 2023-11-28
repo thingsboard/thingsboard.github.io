@@ -2,8 +2,8 @@
 layout: iot-article
 title: ᐉ IoT Monitoring Dashboard
 notitle: "true"
-description: "IoT Monitoring Dashboard ✔ IoT control panel ⚫ ThingsBoard ➤ Provides the ability to create and manage dashboards ✔ with a plenty of widgets
-"
+description: "IoT Monitoring Dashboard ✔ IoT control panel ⚫ ThingsBoard ➤ Provides the ability to create and manage dashboards ✔ with a plenty of widgets"
+redirect_from: "/docs/services/monitoring-dashboard/"
 ---
 
 <section class="hero light-text"></section>

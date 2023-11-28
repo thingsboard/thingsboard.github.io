@@ -3,7 +3,7 @@ layout: iot-article
 title: Internet of Things Solutions ᐉ IoT Services
 notitle: "true"
 description: "Internet of Things Services ✔ IoT Solutions ⚫ ThingsBoard ➤ Our products have scalability ✔ fault-tolerance ✔ performance so you will never lose your data"
-
+redirect_from: "/docs/services/iot-solutions/"
 ---
 <section class="hero light-text"></section>
 <div id="header-block" class="block-wrapper wrapper-main-color">
