@@ -1123,7 +1123,7 @@ footer {
   background-color: #0F161D;
 }
 footer main, footer div.main-div {
-  padding: 92px 0 78px;
+  padding: 92px 15px 78px;
 }
 
 footer main hr, footer div.main-div hr {
@@ -1203,13 +1203,13 @@ footer .newsletterSubsContainer #mlb2-7341216 .subscribe-form {
   padding: 0px;
   width: 520px !important;
 }
-@media (max-width: 768px) {
-  footer .newsletterSubsContainer #mlb2-7341216 .subscribe-form {
-    width: 100% !important;
-  }
-}
+
 footer .newsletterSubsContainer #mlb2-7341216 .subscribe-form.horizontal {
   padding-bottom: 0px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  max-width: 100%;
 }
 
 footer .newsletterSubsContainer #mlb2-7341216 .form-section p {
@@ -1219,12 +1219,9 @@ footer .newsletterSubsContainer #mlb2-7341216 .form-section p {
 }
 footer .newsletterSubsContainer #mlb2-7341216 .form-section.mb10 {
   margin-bottom: 10px;
-  float: left;
 }
 footer .newsletterSubsContainer #mlb2-7341216 .form-section.horizontal {
-  float: left;
   margin-bottom: 10px;
-  width: 70%;
 }
 @media (max-width: 768px) {
   footer .newsletterSubsContainer #mlb2-7341216 .form-section.horizontal {
@@ -1234,7 +1231,6 @@ footer .newsletterSubsContainer #mlb2-7341216 .form-section.horizontal {
   }
 }
 footer .newsletterSubsContainer #mlb2-7341216 .form-section.horizontal.ml-button-position {
-  width: 30%;
   padding: 0;
 }
 @media (max-width: 768px) {
@@ -1452,7 +1448,7 @@ section {
   overflow: hidden;
 }
 #home #overflow #react {
-  margin-top: 220px;
+  margin-top: 125px;
 }
 #home #overflow #intro, #home #overflow #manage, #home #overflow #react, #home #overflow #products, #home #overflow #dashboard_description, #home #overflow #rule-engine, #home #overflow #bottom-features {
   color: #212529;
@@ -1645,9 +1641,14 @@ section {
   width: 100%;
   margin-top: 90px;
 }
-#home #overflow #manage #features-top .block.dark .feature-des, #home #overflow #manage #features-top-2 .block.dark .feature-des, #home #overflow #react #features-top .block.dark .feature-des, #home #overflow #react #features-top-2 .block.dark .feature-des {
+#home #overflow #manage #features-top .block.dark .feature-des, #home #overflow #manage #features-top-2 .block.dark .feature-des, #home #overflow #react #features-top .block.dark .feature-des {
   margin-bottom: 96px;
 }
+
+#home #overflow #react #features-top-2 .block.dark .feature-des {
+  margin-bottom: 50px;
+}
+
 #home #overflow #manage #features-top .block.dark .feature-des h2, #home #overflow #manage #features-top .block.dark .feature-des span.phrase-heading, #home #overflow #manage #features-top-2 .block.dark .feature-des h2, #home #overflow #manage #features-top-2 .block.dark .feature-des span.phrase-heading, #home #overflow #react #features-top .block.dark .feature-des h2, #home #overflow #react #features-top .block.dark .feature-des span.phrase-heading, #home #overflow #react #features-top-2 .block.dark .feature-des h2, #home #overflow #react #features-top-2 .block.dark .feature-des span.phrase-heading {
   color: white;
 }
@@ -1660,16 +1661,26 @@ section {
 #home #overflow #manage #features-top .block.dark .feature-des a img, #home #overflow #manage #features-top-2 .block.dark .feature-des a img, #home #overflow #react #features-top .block.dark .feature-des a img, #home #overflow #react #features-top-2 .block.dark .feature-des a img {
   filter: invert(98%) sepia(19%) saturate(109%) hue-rotate(232deg) brightness(115%) contrast(100%);
 }
-#home #overflow #manage #features-top .block.micro, #home #overflow #manage #features-top-2 .block.micro, #home #overflow #react #features-top .block.micro, #home #overflow #react #features-top-2 .block.micro {
+#home #overflow #manage #features-top .block.micro, #home #overflow #manage #features-top-2 .block.micro, #home #overflow #react #features-top .block.micro {
   margin: 50px 0;
 }
+
+#home #overflow #react #features-top-2 .block.micro {
+  margin: 100px 0;
+}
+
 #home #overflow #manage #features-top .block.micro img, #home #overflow #manage #features-top-2 .block.micro img, #home #overflow #react #features-top .block.micro img, #home #overflow #react #features-top-2 .block.micro img {
   box-shadow: unset;
   max-width: 569px;
 }
-#home #overflow #manage #features-top .block.micro .feature-des, #home #overflow #manage #features-top-2 .block.micro .feature-des, #home #overflow #react #features-top .block.micro .feature-des, #home #overflow #react #features-top-2 .block.micro .feature-des {
+#home #overflow #manage #features-top .block.micro .feature-des, #home #overflow #manage #features-top-2 .block.micro .feature-des, #home #overflow #react #features-top .block.micro .feature-des {
   margin-bottom: 12px;
 }
+
+#home #overflow #react #features-top-2 .block.micro .feature-des {
+  margin-bottom: 20px;
+}
+
 #home #overflow #products {
   width: 100%;
   padding-top: 100px;
@@ -1760,7 +1771,7 @@ section {
 @media (max-width: 768px) {
   #home #overflow #dashboard_description {
     margin-top: 20px;
-    margin-bottom: 0;
+    margin-bottom: 30px;
   }
 }
 #home #overflow #dashboard_description .owl-carousel.owl-theme.usecase-carousel {
@@ -1825,14 +1836,14 @@ section {
   box-shadow: 0 50px 50px -20px rgba(0, 0, 0, 0.15), 0 0 30px 0 rgba(0, 0, 0, 0.05);
 }
 
-@media screen and (min-width: 1024px) {
+/* @media screen and (min-width: 1024px) {
   #home #overflow #rule-engine .rule a img.arrow, #home #overflow #manage #features-top .block img.arrow {
     display: none;
   }
-}
+} */
 
 @media screen and (max-width: 450px) {
-  #home #overflow #manage #features-top .block img.arrow {
+  #home #overflow #manage #features-top .block img.arrow, #home #overflow #react #features-top-2 .block img.arrow, #home #overflow #rule-engine .rule .des img.arrow {
     display: none;
   }
 }
@@ -2132,7 +2143,7 @@ section {
 
 @media (max-width: 768px) {
   #home #overflow #dashboard_description .owl-carousel.owl-theme.usecase-carousel {
-    margin: 50px auto;
+    margin: 50px auto 20px;
   }
 }
 #home #overflow #dashboard_description .owl-carousel.owl-theme.usecase-carousel .owl-stage-outer {
@@ -2151,8 +2162,12 @@ section {
     height: 570px !important;
   }
 
-  #home #overflow #manage #features-top .block .feature-des.microservices h2, #home #overflow #manage #features-top-2 .block .feature-des.microservices h2, #home #overflow #react #features-top .block .feature-des.microservices h2, #home #overflow #react #features-top-2 .block .feature-des.microservices h2 {
+  #home #overflow #manage #features-top .block .feature-des.microservices h2, #home #overflow #manage #features-top-2 .block .feature-des.microservices h2, #home #overflow #react #features-top .block .feature-des.microservices h2 {
     margin-top: 90px;
+  }
+
+  #home #overflow #react #features-top-2 .block .feature-des.microservices h2 {
+    margin-top: 50px;
   }
 
   footer .deeper .footer-logo {
@@ -2506,5 +2521,3 @@ hr {
 .fa-chevron-down:before {
   content: "\f078";
 }
-
-
