@@ -29,7 +29,7 @@ assignIntegration:
         title: 'Assign Integration to the Edge'
     3:
         image: /images/pe/edge/integrations/remote/assign-integration-step-4.png
-        title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
+        title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
 
 copyCredentials:
     0:
@@ -60,11 +60,11 @@ See [deployment options](/docs/pe/edge/user-guide/integrations/#deployment-optio
 
 ## Prerequisites
 
-We assume you already have a ThingsBoard PE Edge instance up and running, and connected to the **Cloud**.   
+We assume you already have a ThingsBoard Edge instance up and running, and connected to the **Server**.   
 
-## ThingsBoard cloud configuration steps
+## ThingsBoard Server configuration steps
 
-Converter and Integration templates are created on the **Cloud**, so please log in as Tenant administrator to cloud instance.
+Converter and Integration templates are created on the **Server**, so please log in as Tenant administrator to the Server instance.
 
 ### Step 1. Create Uplink Converter
 

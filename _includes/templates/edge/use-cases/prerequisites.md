@@ -12,8 +12,6 @@ Please make sure that you have **{{appPrefix}}** server up and running. Addition
 
 If you have these prerequisites in place let's go to next steps.
 
-In other case please visit this link to provision edge on server [Provision Edge on {{appPrefix}} server](/docs/{{docsPrefix}}provision-edge-on-server/).
-
-Once Edge provisioned on a server, please install it and connect to server using this [guide](/docs/user-guide/install/{{docsPrefix}}installation-options/).
+In other case please visit this link to provision, install and connect Edge to Server [guide](/docs/user-guide/install/{{docsPrefix}}installation-options/){:target="_blank"}.
 
 {% include templates/edge/ui-url-aliases-banner.md %} 

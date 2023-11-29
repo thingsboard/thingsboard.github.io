@@ -1,6 +1,6 @@
-For simplicity, we will provision device manually using the UI.
+For simplicity, we will provision the device manually using the UI.
 
-We are going to provision device on the Edge. Please open ThingsBoard **Edge** UI using the URL **http://EDGE_URL**.
+We are going to provision a device on the Edge. Please open the ThingsBoard **Edge** UI using the URL **EDGE_URL**.
 
 {% include images-gallery.html imageCollection="step1" showListImageTitles="true" %}
 

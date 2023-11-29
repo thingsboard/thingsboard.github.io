@@ -1,23 +1,19 @@
 bigheader: "Installation"
-abstract: "Documentation for installation and configuration of ThingsBoard PE Edge."
+abstract: "Guides for installing and configuring ThingsBoard PE Edge."
 toc:
-- title: Installation options
+- title: Installation Options
   path: /docs/user-guide/install/pe/edge/installation-options/
-- title: Step 1 - Provision Edge on Cloud
-  path: /docs/pe/edge/provision-edge-on-server/
-- title: Step 2 - Install instructions
-  section:
-  - title: Ubuntu (DEB)
-    path: /docs/user-guide/install/pe/edge/deb-installation/
-  - title: CentOS/RHEL (RPM)
-    path: /docs/user-guide/install/pe/edge/rhel/
-  - title: Windows
-    path: /docs/user-guide/install/pe/edge/windows/
-  - title: Docker (Windows)
-    path: /docs/user-guide/install/pe/edge/docker-windows/
-  - title: Docker (Linux or Mac OS)
-    path: /docs/user-guide/install/pe/edge/docker/
-- title: Upgrade instructions
+- title: Installing Edge on Ubuntu (DEB)
+  path: /docs/user-guide/install/pe/edge/deb-installation/
+- title: Installing Edge on CentOS/RHEL (RPM)
+  path: /docs/user-guide/install/pe/edge/rhel/
+- title: Installing Edge with Docker (Linux or Mac OS)
+  path: /docs/user-guide/install/pe/edge/docker/
+- title: Installing Edge with Docker (Windows)
+  path: /docs/user-guide/install/pe/edge/docker-windows/
+- title: Installing Edge on Windows
+  path: /docs/user-guide/install/pe/edge/windows/
+- title: Upgrade Instructions
   path: /docs/user-guide/install/pe/edge/upgrade-instructions/
 - title: Configuration
   path: /docs/pe/edge/user-guide/install/config/
