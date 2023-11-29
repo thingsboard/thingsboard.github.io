@@ -1,14 +1,14 @@
 ---
 layout: use-case
-title: IoT smart metering solutions and smart meter data visualization with ThingsBoard
-description: IoT smart metering solutions and smart meter data visualization with ThingsBoard
+title: ᐉ IoT Smart Metering Solutions — Smart Meter Solution
+description: IoT smart metering solutions ✔ Smart meter data visualization ⚫ ThingsBoard ➤ Remote monitoring and recording of energy consumption
 notitle: "true"
 
 ---
 
 {% include usecase-nav.html usecase="smart-metering" %}
 
-<h1 class="usecase-title">IoT smart metering solutions and smart meter data visualization with ThingsBoard</h1>
+<h1 class="usecase-title">IoT Smart Metering Solutions</h1>
 
 ## IoT and smart meters
 
