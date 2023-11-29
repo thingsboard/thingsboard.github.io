@@ -7,122 +7,122 @@ description: IoT device firmware updates
  
 createFirmware:
     0:
-        image: /images/user-guide/firmware/add-firmware-pe.png  
+        image: https://img.thingsboard.io/user-guide/firmware/add-firmware-pe.png  
         title: 'You have to enter title and version; select type and device profile (this field we define what type of device this firmware will be available; 
                 choose file contains firmware. Optionally add checksum algorithm and checksum.'
 
 listFirmware:
     0:
-        image: /images/user-guide/firmware/list-firmware-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/list-firmware-pe.png
         title: ''
     1:
-        image: /images/user-guide/firmware/list-firmware-1-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/list-firmware-1-pe.png
         title: ''
     2:
-        image: /images/user-guide/firmware/list-firmware-2-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/list-firmware-2-pe.png
         title: ''
     3:
-        image: /images/user-guide/firmware/list-firmware-3-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/list-firmware-3-pe.png
         title: ''     
 
 
 fw-deviceprofile:
     0:
-        image: /images/user-guide/firmware/fw-deviceprofile-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-deviceprofile-pe.png
         title: '.'
     1:
-        image: /images/user-guide/firmware/fw-deviceprofile-1-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-deviceprofile-1-pe.png
         title: '.'
     2:
-        image: /images/user-guide/firmware/fw-deviceprofile-2-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-deviceprofile-2-pe.png
         title: '.'
     3:
-        image: /images/user-guide/firmware/fw-deviceprofile-3-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-deviceprofile-3-pe.png
         title: '.'
 
 deviceFirmware:
     0:
-        image: /images/user-guide/firmware/device-firmware-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/device-firmware-pe.png
         title: 'Go to the Device page and open needed device details to edit its information.'
     1:
-        image: /images/user-guide/firmware/device-firmware-1-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/device-firmware-1-pe.png
         title: "From the drop-down menu select firmware that you&#39;d like to assign to this device."
     3:
-        image: /images/user-guide/firmware/device-firmware-2-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/device-firmware-2-pe.png
         title: 'After selecting firmware, apply changes by clicking the orange check mark in the right corner of the page.'
     4:
-        image: /images/user-guide/firmware/device-firmware-3-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/device-firmware-3-pe.png
         title: '.'
 
 fw-attributes:
     0:
-        image: /images/user-guide/firmware/fw-attributes-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-attributes-pe.png
         title: ''
 
 fw-dashboard:
     0:
-        image: /images/user-guide/firmware/fw-dashboard-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-dashboard-pe.png
         title: 'Monitor and track the firmware status of your device in the Firmware dashboard.'
     1:
-        image: /images/user-guide/firmware/fw-dashboard-1-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-dashboard-1-pe.png
         title: 'Find out more about the firmware status of specific devices by clicking the buttons next to the device names.'
 
 fw-status:
     0:
-        image: /images/user-guide/firmware/fw-status-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-status-pe.png
         title: ''
     1:
-        image: /images/user-guide/firmware/fw-status-1-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-status-1-pe.png
         title: ''
 
 sw-dashboard:
     0:
-        image: /images/user-guide/firmware/sw-dashboard-1-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/sw-dashboard-1-pe.png
         title: 'Monitor and track the software status of your device in the Software dashboard.'
     1:
-        image: /images/user-guide/firmware/sw-dashboard-2-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/sw-dashboard-2-pe.png
         title: 'Find out more about the software status of specific devices by clicking the buttons next to the device names.'
 
 fw-http-updated:
     0:
-        image: /images/user-guide/firmware/fw-http-updated.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-http-updated.png
         title: ''
 
 fw-mqtt-updated:
     0:
-        image: /images/user-guide/firmware/fw-mqtt-updated.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-mqtt-updated.png
         title: ''
 
 fw-coap-updated:
     0:
-        image: /images/user-guide/firmware/fw-coap-updated.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-coap-updated.png
         title: ''
 
 fw-devicegroup:
     0:
-        image: /images/user-guide/firmware/fw-devicegroup-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-devicegroup-pe.png
         title: 'Go to the Device profile page and open needed device profile details to edit its information.'
     1:
-        image: /images/user-guide/firmware/fw-devicegroup-1-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-devicegroup-1-pe.png
         title: "From the drop-down menu select firmware that you would like to assign to this device profile."
     2:
-        image: /images/user-guide/firmware/fw-devicegroup-2-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-devicegroup-2-pe.png
         title: 'After selecting firmware, apply changes by clicking the orange check mark in the right corner of the page.'
     3:
-        image: /images/user-guide/firmware/fw-devicegroup-3-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-devicegroup-3-pe.png
         title: ''
 
 fw-scheduler:
     0:
-        image: /images/user-guide/firmware/fw-scheduler-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-scheduler-pe.png
     1:
-        image: /images/user-guide/firmware/fw-scheduler-1-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-scheduler-1-pe.png
     2:
-        image: /images/user-guide/firmware/fw-scheduler-2-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-scheduler-2-pe.png
 
 fw-calendar:
     0:
-        image: /images/user-guide/firmware/fw-scheduler-3-pe.png
+        image: https://img.thingsboard.io/user-guide/firmware/fw-scheduler-3-pe.png
 
 
 ---

@@ -4,75 +4,75 @@ title: MQTT Integration
 description: MQTT Integration guide
 addConverter:
     0:
-        image: /images/pe/edge/integrations/mqtt/add-converter-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/add-converter-step-1.png
     1:
-        image: /images/pe/edge/integrations/mqtt/add-converter-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/add-converter-step-2.png
 
 modifyConverter:
     0:
-        image: /images/pe/edge/integrations/mqtt/modify-converter-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/modify-converter-step-1.png
     1:
-        image: /images/pe/edge/integrations/mqtt/modify-converter-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/modify-converter-step-2.png
 
 addIntegration:
     0:
-        image: /images/pe/edge/integrations/mqtt/add-integration-template-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/add-integration-template-step-1.png
     1:
-        image: /images/pe/edge/integrations/mqtt/add-integration-template-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/add-integration-template-step-2.png
     2:
-        image: /images/pe/edge/integrations/mqtt/add-integration-template-step-3.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/add-integration-template-step-3.png
 
 assignIntegration:
     0:
-        image: /images/pe/edge/integrations/mqtt/assign-integration-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/assign-integration-step-1.png
         title: 'Add <b>brokerIp</b> attribute to Edge and set value as your Edge <b>broker.hivemq.com</b>'
     1:
-        image: /images/pe/edge/integrations/mqtt/assign-integration-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/assign-integration-step-2.png
         title: 'Click <b>Manage Integrations</b> button of Edge entity'
     2:
-        image: /images/pe/edge/integrations/mqtt/assign-integration-step-3.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/assign-integration-step-3.png
         title: 'Assign Integration to the Edge'
     3:
-        image: /images/pe/edge/integrations/mqtt/assign-integration-step-4.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/assign-integration-step-4.png
         title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
 
 device:
     0:
-        image: /images/pe/edge/integrations/mqtt/device.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/device.png
 
 converterEvents:
     0:
-        image: /images/pe/edge/integrations/mqtt/converter-events-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/converter-events-step-1.png
     1:
-        image: /images/pe/edge/integrations/mqtt/converter-events-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/converter-events-step-2.png
     2:
-        image: /images/pe/edge/integrations/mqtt/converter-events-step-3.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/converter-events-step-3.png
 
 addDownlink:
     0:
-        image: /images/pe/edge/integrations/mqtt/add-downlink-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/add-downlink-step-1.png
     1:
-        image: /images/pe/edge/integrations/mqtt/add-downlink-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/add-downlink-step-2.png
 
 downlinkRule:
     0:
-        image: /images/pe/edge/integrations/mqtt/downlink-rule-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/downlink-rule-step-1.png
     1:
-        image: /images/pe/edge/integrations/mqtt/downlink-rule-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/downlink-rule-step-2.png
     2:
-        image: /images/pe/edge/integrations/mqtt/downlink-rule-step-3.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/downlink-rule-step-3.png
 
 addSharedAttribute:
     0:
-        image: /images/pe/edge/integrations/mqtt/add-shared-attribute.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/add-shared-attribute.png
 
 downlinkMessage:
     0:
-        image: /images/pe/edge/integrations/mqtt/downlink-message.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/downlink-message.png
 
 downlinkTerminal:
     0:
-        image: /images/pe/edge/integrations/mqtt/downlink-terminal.png
+        image: https://img.thingsboard.io/pe/edge/integrations/mqtt/downlink-terminal.png
 ---
 
 * TOC
@@ -89,7 +89,7 @@ Its typical use is whenever your devices are already connected to external MQTT 
 
 Please review the integration diagram to learn more.
 
-<object width="100%" style="max-width: max-content;" data="/images/user-guide/integrations/mqtt-integration.svg"></object>
+<object width="100%" style="max-width: max-content;" data="https://img.thingsboard.io/user-guide/integrations/mqtt-integration.svg"></object>
 
 ThingsBoard Edge MQTT Integration acts as an MQTT client. 
 It subscribes to topics and converts the data into telemetry and attribute updates. 

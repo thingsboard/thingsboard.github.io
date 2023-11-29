@@ -5,17 +5,17 @@ description: Step-by-step guide on configuring a job to autonomously detect anom
 
 anomaly-autodiscovery:
   0:
-    image: /images/trendz/anomaly/anomalies-autodiscovery-schedule.png
+    image: https://img.thingsboard.io/trendz/anomaly/anomalies-autodiscovery-schedule.png
     title: 'Calendar heatmap of auto discovered anomalies'   
 
 configuration:
   0:
-    image: /images/trendz/anomaly/anomalies-autodiscovery-configuration.png 
+    image: https://img.thingsboard.io/trendz/anomaly/anomalies-autodiscovery-configuration.png 
     title: 'Anomaly autodiscovery job configuration'
 
 anomaly-configuration-history:
   0:
-    image: /images/trendz/anomaly/anomalies-autodiscovery-history.png
+    image: https://img.thingsboard.io/trendz/anomaly/anomalies-autodiscovery-history.png
     title: 'Anomaly autodiscovery job historical executions'
 ---
 

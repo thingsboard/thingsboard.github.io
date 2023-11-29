@@ -7,17 +7,17 @@ description: Anomaly view
 
 create-Anomaly-View:
   0:
-    image: /images/trendz/anomaly/anomaly-view-model-selection-on-create.png
+    image: https://img.thingsboard.io/trendz/anomaly/anomaly-view-model-selection-on-create.png
     title: 'Create Anomaly View'
 
 Default-Anomaly-Selection:
   0:
-    image: /images/trendz/anomaly/anomaly-view-default-model.png
+    image: https://img.thingsboard.io/trendz/anomaly/anomaly-view-default-model.png
     title: 'Default Anomaly Selection'
 
 Hide-anomalies:
   0:
-    image: /images/trendz/anomaly/anomaly-view-hide-options.png
+    image: https://img.thingsboard.io/trendz/anomaly/anomaly-view-hide-options.png
     title: 'Hide anomalies list or chart'
 ---
 
@@ -32,7 +32,7 @@ View Anomaly widget shows anomalies that anomaly model detected. It consists of 
 * List with all detected anomalies that allows you to select a specific anomaly to see its information in the chart.
 * Line chart displaying selected anomaly information.
 
-![image](/images/trendz/anomaly/anomaly-view-sampl.png)
+![image](https://img.thingsboard.io/trendz/anomaly/anomaly-view-sampl.png)
 
 To create Anomaly View, you can choose an already created anomaly model from the list or create a new one.
 

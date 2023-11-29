@@ -27,7 +27,7 @@ notitle: "true"
                                         <a href="/docs/user-guide/install/edge/deb-installation/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/ubuntu.svg" title="Ubuntu" alt="Ubuntu">
+                                                    <img width="" src="https://img.thingsboard.io/install/platform/ubuntu.svg" title="Ubuntu" alt="Ubuntu">
                                                  </div>
                                             </span>
                                         </a>
@@ -36,7 +36,7 @@ notitle: "true"
                                         <a href="/docs/user-guide/install/edge/rhel/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/centos-redhat.svg" title="CentOS/RHEL" alt="CentOS/RHEL">
+                                                    <img width="" src="https://img.thingsboard.io/install/platform/centos-redhat.svg" title="CentOS/RHEL" alt="CentOS/RHEL">
                                                  </div>
                                             </span>
                                         </a>
@@ -45,7 +45,7 @@ notitle: "true"
                                         <a href="/docs/user-guide/install/edge/docker/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+                                                    <img width="" src="https://img.thingsboard.io/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
                                                  </div>
                                             </span>
                                         </a>
@@ -54,7 +54,7 @@ notitle: "true"
                                         <a href="/docs/user-guide/install/edge/docker-windows/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
+                                                    <img width="" src="https://img.thingsboard.io/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
                                                  </div>
                                             </span>
                                         </a>
@@ -63,7 +63,7 @@ notitle: "true"
                                         <a href="/docs/user-guide/install/edge/windows/">
                                             <span>
                                                 <div class="deployment-logo" style="height:134px">
-                                                    <img width="" src="/images/install/platform/windows.svg" title="Windows" alt="Windows">
+                                                    <img width="" src="https://img.thingsboard.io/install/platform/windows.svg" title="Windows" alt="Windows">
                                                  </div>
                                             </span>
                                         </a>
@@ -72,7 +72,7 @@ notitle: "true"
                                         <a href="/docs/user-guide/install/edge/building-from-source/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/sources.svg" title="Building from source" alt="Building from source">
+                                                    <img width="" src="https://img.thingsboard.io/install/platform/sources.svg" title="Building from source" alt="Building from source">
                                                  </div>
                                             </span>
                                         </a>

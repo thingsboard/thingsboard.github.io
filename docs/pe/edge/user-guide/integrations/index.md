@@ -4,40 +4,40 @@ title: Edge Integrations
 description: Edge Integrations Documentation
 converterTemplateCreation:
     0:
-        image: /images/pe/edge/integrations/create-converter-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/create-converter-step-1.png
         title: 'Create Converter template'
     1:
-        image: /images/pe/edge/integrations/create-converter-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/create-converter-step-2.png
         title: 'Converter template configuration'
 
 integrationTemplateCreation:
     0:
-        image: /images/pe/edge/integrations/create-integration-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/create-integration-step-1.png
         title: 'Create Integration template'
     1:
-        image: /images/pe/edge/integrations/create-integration-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/create-integration-step-2.png
         title: 'Integration template configuration'
 
 placeholderFeature:
     0:
-        image: /images/pe/edge/integrations/placeholder-feature-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/placeholder-feature-step-1.png
         title: 'Add <b>ipAddress</b> attribute to Edge'
     1:
-        image: /images/pe/edge/integrations/placeholder-feature-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/placeholder-feature-step-2.png
         title: 'Add placeholder <b>${{ipAddress}}</b> to Integration configuration'
     2:
-        image: /images/pe/edge/integrations/placeholder-feature-step-3.png
+        image: https://img.thingsboard.io/pe/edge/integrations/placeholder-feature-step-3.png
         title: 'Click <b>Manage Integrations</b> button of Edge entity'
     3:
-        image: /images/pe/edge/integrations/placeholder-feature-step-4.png
+        image: https://img.thingsboard.io/pe/edge/integrations/placeholder-feature-step-4.png
         title: 'Assign Integration to the Edge'
     4:
-        image: /images/pe/edge/integrations/placeholder-feature-step-5.png
+        image: https://img.thingsboard.io/pe/edge/integrations/placeholder-feature-step-5.png
         title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
 
 missingPlaceholder:
     0:
-        image: /images/pe/edge/integrations/missing-placeholder.png
+        image: https://img.thingsboard.io/pe/edge/integrations/missing-placeholder.png
         title: 'Add ipAddress attribute to Edge'
 
 ---
@@ -80,7 +80,7 @@ Cons:
 * consume resources allocated to main ThingsBoard Edge process: network connections, OS threads and CPU cycles;
 * low level of isolation;
 
-<object width="60%" data="/images/user-guide/integrations/embeded-integrations-overview.svg"></object>
+<object width="60%" data="https://img.thingsboard.io/user-guide/integrations/embeded-integrations-overview.svg"></object>
 
 #### Remote integrations
 
@@ -101,7 +101,7 @@ Cons:
 
 Learn how to configure integration to run remotely using [this guide](/docs/pe/edge/user-guide/integrations/remote-integrations).
 
-<object width="70%" data="/images/user-guide/integrations/remote-integrations-overview.svg"></object>
+<object width="70%" data="https://img.thingsboard.io/user-guide/integrations/remote-integrations-overview.svg"></object>
 
 ### Converter templates
 

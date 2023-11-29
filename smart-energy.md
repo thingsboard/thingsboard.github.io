@@ -26,7 +26,7 @@ Save up to 90% of development time for your smart-energy solution by utilizing t
   - Customizable mobile applications with minimum coding efforts;
 
 <div class="center">
-    <img src="/images/iot-articles/energy_management_1_1110x678.png"/>
+    <img src="https://img.thingsboard.io/iot-articles/energy_management_1_1110x678.png"/>
 </div>
 
 ## How Does It Work?

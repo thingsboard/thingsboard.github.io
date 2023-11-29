@@ -12,7 +12,7 @@ docker ps
 
 Find your gateway container name as you can see on the following image and copy it:
 
-![](/images/gateway/dashboard/copy-gateway-docker-container-name.png)
+![](https://img.thingsboard.io/gateway/dashboard/copy-gateway-docker-container-name.png)
 
 Create an environment variable using the following command, replace `YOUR_TB_GATEWAY_CONTAINER_NAME` with the copied 
 gateway container name. Copy and run the provided command in your terminal:
@@ -33,7 +33,7 @@ docker run -it --net=container:$(docker inspect -f '{{containerId}}' ${TB_GATEWA
 
 After running docker image, you can see the following logs in your terminal:
 
-![](/images/gateway/dashboard/run-demo-mqtt-broker-image.png)
+![](https://img.thingsboard.io/gateway/dashboard/run-demo-mqtt-broker-image.png)
 
 ### Setup connector
 
@@ -121,16 +121,16 @@ To create a connector, use the following steps:
 
 {% assign addNewConnector = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-7-ce.png,
         title: Click "**Connectors configuration**" button on the right panel.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-8-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-mqtt-8-ce.png,
         title: Click the "**+**" button, fill in "**Name**", "**Type**" and "**Logging level**" fields, paste your connector configuration into **Configuration** field and click on **Save** button.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-9-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-mqtt-9-ce.png,
         title: Connector has been successfully added.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-10-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-mqtt-10-ce.png,
         title: Toggle the switch to enable the connector.
 '
 %}
@@ -145,10 +145,10 @@ the remote settings.
 Also, you can see the connector logs to make sure that connector works, for this purpose, use the following steps:
 {% assign seeConnectorLogs = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-logs-11-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-mqtt-logs-11-ce.png,
         title: Click on logs icon to open connector logs page.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-logs-12-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-mqtt-logs-12-ce.png,
         title: You can see the "**Logs**" table that consists of "**Created time**", "**Status**" and "**Message**" columns.
 '
 %}

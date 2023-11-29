@@ -5,12 +5,12 @@ Be sure to store them in a secure location, as these values will be needed in th
 {% if docsPrefix == 'pe/edge/' %}
 {% assign copyEdgeCredentials = '
     ===
-        image: /images/pe/edge/installation-copy-edge-credentials-item-1.png
+        image: https://img.thingsboard.io/pe/edge/installation-copy-edge-credentials-item-1.png
 '%}
 {% else %}
 {% assign copyEdgeCredentials = '
     ===
-        image: /images/edge/installation-copy-edge-credentials-item-1.png
+        image: https://img.thingsboard.io/edge/installation-copy-edge-credentials-item-1.png
 '%}
 {% endif %}
 

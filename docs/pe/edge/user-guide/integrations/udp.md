@@ -5,76 +5,76 @@ description: UDP Integration Guide
 
 addConverter:
     0:
-        image: /images/pe/edge/integrations/udp/add-converter-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/add-converter-step-1.png
     1:
-        image: /images/pe/edge/integrations/udp/add-converter-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/add-converter-step-2.png
 
 modifyConverter:
     0:
-        image: /images/pe/edge/integrations/udp/modify-converter-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/modify-converter-step-1.png
     1:
-        image: /images/pe/edge/integrations/udp/modify-converter-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/modify-converter-step-2.png
 
 addDownlink:
     0:
-        image: /images/pe/edge/integrations/udp/add-downlink-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/add-downlink-step-1.png
     1:
-        image: /images/pe/edge/integrations/udp/add-downlink-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/add-downlink-step-2.png
 
 addIntegration:
     0:
-        image: /images/pe/edge/integrations/udp/add-integration-template-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/add-integration-template-step-1.png
     1:
-        image: /images/pe/edge/integrations/udp/add-integration-template-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/add-integration-template-step-2.png
     2:
-        image: /images/pe/edge/integrations/udp/add-integration-template-step-3.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/add-integration-template-step-3.png
 
 downlinkRule:
     0:
-        image: /images/pe/edge/integrations/udp/downlink-rule-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/downlink-rule-step-1.png
     1:
-        image: /images/pe/edge/integrations/udp/downlink-rule-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/downlink-rule-step-2.png
 
 assignIntegration:
     0:
-        image: /images/pe/edge/integrations/udp/assign-integration-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/assign-integration-step-1.png
         title: 'Click <b>Manage Integrations</b> button of Edge entity'
     1:
-        image: /images/pe/edge/integrations/udp/assign-integration-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/assign-integration-step-2.png
         title: 'Assign Integration to the Edge'
     2:
-        image: /images/pe/edge/integrations/udp/assign-integration-step-3.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/assign-integration-step-3.png
         title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page'
 
 sendUplink:
     0:
-        image: /images/pe/edge/integrations/udp/send-uplink-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/send-uplink-step-1.png
     1:
-        image: /images/pe/edge/integrations/udp/send-uplink-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/send-uplink-step-2.png
 
 device:
     0:
-        image: /images/pe/edge/integrations/udp/device.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/device.png
 
 converterEvents:
     0:
-        image: /images/pe/edge/integrations/udp/converter-events-step-1.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/converter-events-step-1.png
     1:
-        image: /images/pe/edge/integrations/udp/converter-events-step-2.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/converter-events-step-2.png
     2:
-        image: /images/pe/edge/integrations/udp/converter-events-step-3.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/converter-events-step-3.png
 
 addSharedAttribute:
     0:
-        image: /images/pe/edge/integrations/udp/add-shared-attribute.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/add-shared-attribute.png
 
 downlinkMessage:
     0:
-        image: /images/pe/edge/integrations/udp/downlink-message.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/downlink-message.png
 
 downlinkTerminal:
     0:
-        image: /images/pe/edge/integrations/udp/downlink-terminal.png
+        image: https://img.thingsboard.io/pe/edge/integrations/udp/downlink-terminal.png
 
 ---
 
@@ -93,7 +93,7 @@ downlinkTerminal:
 
 Please review the integration diagram to learn more.
 
-![image](/images/user-guide/integrations/udp-integration.svg)
+![image](https://img.thingsboard.io/user-guide/integrations/udp-integration.svg)
 
 ## Prerequisites
 

@@ -695,7 +695,7 @@ header .logo {
   top: 0;
   left: 0;
   transform: none;
-  background-image: url(/images/thingsboard_logo_b.svg);
+  background-image: url(https://img.thingsboard.io/thingsboard_logo_b.svg);
   background-size: contain;
   background-position: center center;
   background-repeat: no-repeat;
@@ -880,12 +880,12 @@ ul .indicator .line {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1), 0 0 40px rgba(0, 0, 0, 0.1);
   }
   #home .opened-burger .burger, #docs .opened-burger .burger, #common .opened-burger .burger, #thingsboard-paas .opened-burger .burger, #thingsboard-pe .opened-burger .burger, #trendz .opened-burger .burger, #thingsboard-edge .opened-burger .burger {
-    background-image: url(/images/close-icon.svg);
+    background-image: url(https://img.thingsboard.io/close-icon.svg);
   }
 }
 @media screen and (max-width: 1280px) and (max-width: 1024px) {
   #home .opened-burger .burger, #docs .opened-burger .burger, #common .opened-burger .burger, #thingsboard-paas .opened-burger .burger, #thingsboard-pe .opened-burger .burger, #trendz .opened-burger .burger, #thingsboard-edge .opened-burger .burger {
-    background-image: url(/images/s-close-icon.svg);
+    background-image: url(https://img.thingsboard.io/s-close-icon.svg);
   }
 }
 @media screen and (max-width: 1280px) {
@@ -961,12 +961,12 @@ ul .indicator .line {
     padding: 9px 30px;
   }
   header.opened-burger .burger {
-    background-image: url(/images/close-icon.svg);
+    background-image: url(https://img.thingsboard.io/close-icon.svg);
   }
 }
 @media screen and (max-width: 1280px) and (max-width: 1024px) {
   header.opened-burger .burger {
-    background-image: url(/images/s-close-icon.svg);
+    background-image: url(https://img.thingsboard.io/s-close-icon.svg);
   }
 }
 @media screen and (max-width: 1280px) {
@@ -1082,7 +1082,7 @@ ul .indicator .line {
   right: 22px;
   display: none;
   filter: unset;
-  background-image: url(/images/burger-icon.svg);
+  background-image: url(https://img.thingsboard.io/burger-icon.svg);
   height: 47px;
   width: 47px;
   background-size: cover;
@@ -1092,7 +1092,7 @@ ul .indicator .line {
     top: 21px;
     height: 37px;
     width: 37px;
-    background-image: url(/images/s-burger-icon.svg);
+    background-image: url(https://img.thingsboard.io/s-burger-icon.svg);
   }
 }
 .burger:focus {
@@ -1135,7 +1135,7 @@ footer main .deeper, footer div.main-div .deeper {
   justify-content: space-between;
 }
 footer main .deeper .footer-logo, footer div.main-div .deeper .footer-logo {
-  background-image: url(/images/thingsboard_logo_b.svg);
+  background-image: url(https://img.thingsboard.io/thingsboard_logo_b.svg);
   filter: invert(100%) sepia(68%) saturate(0%) hue-rotate(350deg) brightness(113%) contrast(101%);
   width: 180px;
   height: 60px;
@@ -1330,25 +1330,25 @@ footer .newsletterSubsContainer .subscribe {
 }
 
 footer .deepmost .social a.github {
-  background-image: url(/images/social-git-icon.svg);
+  background-image: url(https://img.thingsboard.io/social-git-icon.svg);
 }
 footer .deepmost .social a.gitter {
-  background-image: url(/images/social-gitter-icon.svg);
+  background-image: url(https://img.thingsboard.io/social-gitter-icon.svg);
 }
 footer .deepmost .social a.youtube {
-  background-image: url(/images/social-youtube-icon.svg);
+  background-image: url(https://img.thingsboard.io/social-youtube-icon.svg);
 }
 footer .deepmost .social a.stack-overflow {
-  background-image: url(/images/social-stack-icon.svg);
+  background-image: url(https://img.thingsboard.io/social-stack-icon.svg);
 }
 footer .deepmost .social a.mailing-list {
-  background-image: url(/images/social-google-icon.svg);
+  background-image: url(https://img.thingsboard.io/social-google-icon.svg);
 }
 footer .deepmost .social a.facebook {
-  background-image: url(/images/social-face-icon.svg);
+  background-image: url(https://img.thingsboard.io/social-face-icon.svg);
 }
 footer .deepmost .social a.twitter {
-  background-image: url(/images/social-twitt-icon.svg);
+  background-image: url(https://img.thingsboard.io/social-twitt-icon.svg);
 }
 footer .deepmost .social a:hover {
   filter: brightness(200%);
@@ -2458,7 +2458,7 @@ hr {
   position: absolute;
   filter: invert(100%) sepia(74%) saturate(108%) hue-rotate(175deg) brightness(90%) contrast(96%);
   outline: none;
-  background-image: url(/images/slider-arrow.svg);
+  background-image: url(https://img.thingsboard.io/slider-arrow.svg);
   background-color: transparent;
   width: 17px;
   height: 50px;
