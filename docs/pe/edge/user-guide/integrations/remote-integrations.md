@@ -5,45 +5,45 @@ description: Remote Integrations Documentation
 
 addConverter:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-converter-step-1.png
+        image: /images/pe/edge/integrations/remote/add-converter-step-1.png
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-converter-step-2.png
+        image: /images/pe/edge/integrations/remote/add-converter-step-2.png
 
 addIntegration:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-integration-template-step-1.png
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-1.png
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-integration-template-step-2.png
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-2.png
     2:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/add-integration-template-step-3.png
+        image: /images/pe/edge/integrations/remote/add-integration-template-step-3.png
 
 assignIntegration:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-1.png
+        image: /images/pe/edge/integrations/remote/assign-integration-step-1.png
         title: 'Add <b>remoteHttpIntegrationUrl</b> attribute to Edge and set value as your remote HTTP integration <b>http://IP:port</b>'
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-2.png
+        image: /images/pe/edge/integrations/remote/assign-integration-step-2.png
         title: 'Click <b>Manage Integrations</b> button of Edge entity'
     2:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-3.png
+        image: /images/pe/edge/integrations/remote/assign-integration-step-3.png
         title: 'Assign Integration to the Edge'
     3:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/assign-integration-step-4.png
-        title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
+        image: /images/pe/edge/integrations/remote/assign-integration-step-4.png
+        title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
 
 copyCredentials:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/copy-credentials.png
+        image: /images/pe/edge/integrations/remote/copy-credentials.png
 
 sendUplink:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/send-uplink-step-1.png
+        image: /images/pe/edge/integrations/remote/send-uplink-step-1.png
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/remote/send-uplink-step-2.png
+        image: /images/pe/edge/integrations/remote/send-uplink-step-2.png
 
 device:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/device.png
+        image: /images/pe/edge/integrations/http/device.png
 
 ---
 
@@ -60,11 +60,11 @@ See [deployment options](/docs/pe/edge/user-guide/integrations/#deployment-optio
 
 ## Prerequisites
 
-We assume you already have a ThingsBoard PE Edge instance up and running, and connected to the **Cloud**.   
+We assume you already have a ThingsBoard Edge instance up and running, and connected to the **Server**.   
 
-## ThingsBoard cloud configuration steps
+## ThingsBoard Server configuration steps
 
-Converter and Integration templates are created on the **Cloud**, so please log in as Tenant administrator to cloud instance.
+Converter and Integration templates are created on the **Server**, so please log in as Tenant administrator to the Server instance.
 
 ### Step 1. Create Uplink Converter
 

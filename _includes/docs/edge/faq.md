@@ -17,27 +17,25 @@ We recommend [installing](/docs/user-guide/install/{{docsPrefix}}installation-op
 
 No, ThingsBoard Edge doesn't require an internet connection. 
 You can operate it without one. 
-The only necessary connection is to the ThingsBoard cloud platform via gRPC.
+The only necessary connection is to the ThingsBoard server via gRPC.
 
 {% if docsPrefix == 'pe/edge/' %}
-However, ThingsBoard Edge does utilize an HTTP(s) connection to the ThingsBoard cloud platform to verify the license. 
+However, ThingsBoard Edge does utilize an HTTP(s) connection to the ThingsBoard server to verify the license. 
 The URL set in the **Cloud Endpoint** configuration is used for this validation. 
-Please ensure that the HTTP(s) connection to the cloud platform is not blocked by any firewall settings. 
-The ThingsBoard cloud platform acts as a proxy for ThingsBoard Edge to connect to the ThingsBoard license server.
+Please ensure that the HTTP(s) connection to the server is not blocked by any firewall settings. 
+The ThingsBoard server acts as a proxy for ThingsBoard Edge to connect to the ThingsBoard License Portal.
 {% endif %}
 
 {% if docsPrefix == 'pe/edge/' %}
-## What happens if the connection to the ThingsBoard cloud platform is temporarily unavailable? How will the license check be carried out in this case?
+## What happens if the connection to the ThingsBoard server is temporarily unavailable? How will the license check be carried out in this case?
 
-ThingsBoard Edge can operate offline, without a connection to the ThingsBoard cloud platform, for up to **7 days**. 
-During this time, ThingsBoard Edge should **not be restarted** as a restart necessitates an initial license check which requires a connection to the ThingsBoard cloud platform. 
-Therefore, ensure that ThingsBoard Edge is not restarted during the offline period.
+ThingsBoard Edge can operate offline, without a connection to the ThingsBoard server, for up to **7 days**.
 {% endif %}
 
 ## Can multiple tenants or customers access a single ThingsBoard Edge in a remote location?
 
 {% if docsPrefix == 'pe/edge/' %}
-ThingsBoard Edge PE supports a **single** tenant and **multiple** customers (partial support of multiple customers).
+ThingsBoard Edge PE supports a **single** tenant and partial support of **multiple** customers.
 If the owner of the Edge is a sub-customer, all the parent entities of that sub-customer up to the tenant level will be provisioned to the Edge.
 This means customers from the same hierarchy path can access the same ThingsBoard Edge PE instance.
 However, you cannot share a ThingsBoard Edge between multiple tenants, and devices from multiple tenants cannot connect to a single ThingsBoard Edge.
@@ -56,14 +54,14 @@ In such cases, you'll need to provision multiple ThingsBoard Edge instances for 
 
 ## What can I do with ThingsBoard Edge?
 
-ThingsBoard Edge allows you to connect your on-site devices to a local ThingsBoard Edge instead of directly connecting them to the ThingsBoard cloud. 
+ThingsBoard Edge allows you to connect your on-site devices to a local ThingsBoard Edge instead of directly connecting them to the ThingsBoard server. 
 This setup offers the following benefits:
 - **Local Deployment and Storage**<br>
-*Process and store data from local devices without a cloud connection. You can push updates to the cloud once the connection is restored.*
+*Process and store data from local devices without a server connection. You can push updates to the server once the connection is restored.*
 - **Traffic Filtering**<br>
-*Filter data from local devices at the ThingsBoard Edge level and only push a subset of data to the cloud for further processing or storage.*
+*Filter data from local devices at the ThingsBoard Edge level and only push a subset of data to the server for further processing or storage.*
 - **Local Alarms**<br>
-*Respond immediately to critical situations on-site without relying on cloud connectivity.*
+*Respond immediately to critical situations on-site without relying on server connectivity.*
 - **Batch Update and Visualization**<br>
 *Update thousands of edge configurations in a single click. Monitor local events and time-series data with a real-time dashboard.*
 

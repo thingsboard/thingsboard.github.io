@@ -2,8 +2,8 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Time series data prediction
-description: How to build time series prediction models in Trendz based on data collected fom IoT sensors
+title: Build prediction model for time series data
+description: How to build accurate prediction of time series data. Explore available ML models for forecasting and visualizing predicted data.
 
 trendz-prediction-overview-simple:
   0:

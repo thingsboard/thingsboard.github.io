@@ -5,77 +5,77 @@ description: HTTP integration guide
 
 addConverter:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/add-converter-step-1.png
+        image: /images/pe/edge/integrations/http/add-converter-step-1.png
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/add-converter-step-2.png
+        image: /images/pe/edge/integrations/http/add-converter-step-2.png
 
 modifyConverter:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/modify-converter-step-1.png
+        image: /images/pe/edge/integrations/http/modify-converter-step-1.png
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/modify-converter-step-2.png
+        image: /images/pe/edge/integrations/http/modify-converter-step-2.png
 
 addIntegration:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/add-integration-template-step-1.png
+        image: /images/pe/edge/integrations/http/add-integration-template-step-1.png
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/add-integration-template-step-2.png
+        image: /images/pe/edge/integrations/http/add-integration-template-step-2.png
 
 assignIntegration:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/assign-integration-step-1.png
+        image: /images/pe/edge/integrations/http/assign-integration-step-1.png
         title: 'Add <b>edgeBaseUrl</b> attribute to Edge and set value as your Edge <b>IP:port</b>'
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/assign-integration-step-2.png
+        image: /images/pe/edge/integrations/http/assign-integration-step-2.png
         title: 'Click <b>Manage Integrations</b> button of Edge entity'
     2:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/assign-integration-step-3.png
+        image: /images/pe/edge/integrations/http/assign-integration-step-3.png
         title: 'Assign Integration to the Edge'
     3:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/assign-integration-step-4.png
-        title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
+        image: /images/pe/edge/integrations/http/assign-integration-step-4.png
+        title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
 
 sendUplink:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/send-uplink-step-1.png
+        image: /images/pe/edge/integrations/http/send-uplink-step-1.png
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/send-uplink-step-2.png
+        image: /images/pe/edge/integrations/http/send-uplink-step-2.png
 
 device:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/device.png
+        image: /images/pe/edge/integrations/http/device.png
 
 converterEvents:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/converter-events-step-1.png
+        image: /images/pe/edge/integrations/http/converter-events-step-1.png
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/converter-events-step-2.png
+        image: /images/pe/edge/integrations/http/converter-events-step-2.png
     2:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/converter-events-step-3.png
+        image: /images/pe/edge/integrations/http/converter-events-step-3.png
 
 addDownlink:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/add-converter-step-1.png
+        image: /images/pe/edge/integrations/http/add-converter-step-1.png
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/add-downlink-step-2.png
+        image: /images/pe/edge/integrations/http/add-downlink-step-2.png
 
 downlinkRule:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/downlink-rule-step-1.png
+        image: /images/pe/edge/integrations/http/downlink-rule-step-1.png
     1:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/downlink-rule-step-2.png
+        image: /images/pe/edge/integrations/http/downlink-rule-step-2.png
 
 addSharedAttribute:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/add-shared-attribute.png
+        image: /images/pe/edge/integrations/http/add-shared-attribute.png
 
 downlinkMessage:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/downlink-message.png
+        image: /images/pe/edge/integrations/http/downlink-message.png
 
 downlinkTerminal:
     0:
-        image: https://img.thingsboard.io/pe/edge/integrations/http/downlink-terminal.png
+        image: /images/pe/edge/integrations/http/downlink-terminal.png
 
 ---
 

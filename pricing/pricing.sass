@@ -36,6 +36,39 @@ html#pricing
     width: 100%
     margin: auto
 
+    #thingsboard-edge
+      .pricing-content-header
+        @media (max-width: 686px)
+          .col.d-flex.justify-content-end
+            justify-content: center !important
+            .solution-selector
+              width: 100%
+              .solution
+                &#edge-community, &#edge-pay-as-you-go, &#edge-perpetual
+                  padding-left: 14px
+                  padding-right: 14px
+                  h3
+                    width: 100%
+                    text-align: center
+                    font-size: 14px
+                    line-height: 18px
+    #trendz-self-managed
+      .pricing-content-header
+        @media (max-width: 415px)
+          .col.d-flex.justify-content-end
+            justify-content: center !important
+            .solution-selector
+              width: 100%
+              .solution
+                &#trendz-pay-as-you-go, &#trendz-perpetual
+                  padding-left: 14px
+                  padding-right: 14px
+                  h3
+                    width: 100%
+                    text-align: center
+                    font-size: 14px
+                    line-height: 18px
+
     .faq-content
       padding: 60px 0 80px
       * + h2, * + h3, * + h4, * + h5, * + h6
@@ -247,6 +280,20 @@ html#pricing
       display: flex
       border: 1px solid rgba(0, 0, 0, 0.08)
       .solution
+        @media (max-width: 415px)
+          &#trendz-pay-as-you-go, &#trendz-perpetual
+            flex: 1
+            &::before
+              display: none !important
+        @media (max-width: 686px)
+          &#edge-community, &#edge-pay-as-you-go, &#edge-perpetual
+            flex: 1
+            &::before
+              display: none !important
+        @media (max-width: 1450px) and (min-width: 1200px)
+          &#edge-community, &#edge-pay-as-you-go, &#edge-perpetual
+            &::before
+              display: none !important
         position: relative
         color: #707275
         cursor: pointer
@@ -261,6 +308,17 @@ html#pricing
           a.faq-link
             &:after
               margin-left: 2px
+        &#trendz-pay-as-you-go, &#trendz-perpetual
+          @media (max-width: 415px)
+            a
+              display: none
+        &#edge-community, &#edge-pay-as-you-go, &#edge-perpetual
+          @media (max-width: 686px)
+            a
+              display: none
+          @media (max-width: 1450px) and (min-width: 1200px)
+            a
+              display: none
         &.pay-as-you-go
           &:before
             content: ""
@@ -479,10 +537,14 @@ html#pricing
         list-style-type: none
         display: flex
         flex-wrap: wrap
-        justify-content: space-around
+        justify-content: center
         align-items: center
         margin: 0
         padding: 0
+        @media screen and (max-width: 426px)
+          justify-content: center
+          li a::before
+            display: none !important
         li
           position: relative
           display: table
