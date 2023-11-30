@@ -91,7 +91,7 @@ mkdir -p ~/.mytbpe-logs && sudo chown -R 799:799 ~/.mytbpe-logs
 
 {% include templates/troubleshooting/dns-issues.md %}
 
-### Upgrade starting from 3.1.0PE
+### Upgrade from 3.1.0PE
 
 Below is example on how to upgrade from 3.1.0 to 3.1.1
 
@@ -121,7 +121,7 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* After this you need to update docker-compose.yml as in [Step 4](#step-4-choose-thingsboard-queue-service) but with 3.1.1PE instead of 3.2.2PE:
+* After this you need to update docker-compose.yml as in [Step 3](#step-3-choose-thingsboard-queue-service) but with 3.1.1PE instead of 3.2.2PE:
 
 * Change upgradeversion variable to your **current** ThingsBoard version.
 
