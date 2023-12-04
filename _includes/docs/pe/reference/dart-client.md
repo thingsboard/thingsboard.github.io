@@ -33,7 +33,7 @@ This will add a line like this to your package's pubspec.yaml (and run an implic
 
 ```yaml
 dependencies:
-  thingsboard_pe_client: ^1.0.7
+  thingsboard_pe_client: ^1.0.8
 ```
 {: .copy-code}
 
