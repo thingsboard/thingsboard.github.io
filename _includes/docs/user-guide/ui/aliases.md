@@ -5,9 +5,10 @@ Alias is a reference to a single entity or group of entities that are used in th
 
 Aliases can be as easy as referring to a single device or as complicated as creating a complex search query for specific assets from a list. 
 
-**In this tutorial, aliases will be used on a system according to the scheme shown below and all devices have "temperature" generated values coming to them:**
+<br>
+In this tutorial, aliases will be used in the system according to the scheme shown below. And all devices transmit telemetry values - "temperature".
 
-<object width="60%" data="/images/user-guide/ui/alias-scheme.svg"></object>
+![image](/images/user-guide/ui/alias/alias-scheme.png)
 
 ## Prerequisites
 
@@ -37,13 +38,14 @@ Let's take a look at each of them.
 
 This alias allows choosing a single entity. It can be a device, asset, entity view, tenant, customer, dashboard, user, data converter, integration, scheduler event, blob entity, role, edge, current customer, current tenant, current user or current user owner.
 
-Adding an alias: in the "Add alias" dialog, enter the alias name, and select the "Single entity" filter type. Then choose the entity type and specify the final entity/entities.
+Adding an alias: in the "Add alias" dialog, enter the alias name, and select the "Single entity" filter type. Then choose the entity type and specify the final entity.
 
 {% include images-gallery.html imageCollection="single-alias-1" %}
 
-In this example, an alias was created that filters one device - Thermometer A1. Let's use an added alias in a widget:
+In this example, an alias has been created that filters one device - Thermometer A1. 
 
-In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Single entity" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. The Entities table widget with the alias that filters one device has been added.
+Let's use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Single entity" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. 
+The Entities table widget with the alias that displays one device - Thermometer A1 has been added.
 
 {% include images-gallery.html imageCollection="single-alias-2" %}
 
@@ -56,9 +58,10 @@ Adding an alias: in the "Add alias" dialog, enter the alias name, and select the
 
 {% include images-gallery.html imageCollection="group-entities-1" %}
 
-This alias filters the device group - Thermostats. 
+In this example, an alias has been created that displays all devices that belong to the "Thermostats" device group.
 
-Let's use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Group entities" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. The Entities table widget with the alias that filters one device has been added.
+Let's use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Group entities" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. 
+The Entities table widget with the alias that displays all devices that belong to the “Thermostats” device group has been added.
 
 {% include images-gallery.html imageCollection="group-entities-2" %}
 {% endif %}
@@ -68,13 +71,14 @@ Let's use an added alias in a widget. In the "Tables" widgets bundle select the 
 This alias allows you to display multiple entities.
 It can be devices, assets, entity views, tenants, customers, dashboards, user, data converters, integrations, scheduler events, blob entities, roles or edges.
 
-Adding an alias: in the "Add alias" dialog, enter the alias name, and select the "Entity list" filter type. Then choose the entities type and choose the entities whose data you want to display on the widget.
+Adding an alias: in the "Add alias" dialog, enter the alias name, and select the "Entity list" filter type. Then choose the entities type and specify entities whose data you want to display on the widget.
 
 {% include images-gallery.html imageCollection="entity-list-1" %}
 
-This alias filters a list of several devices: Thermometer A1, Compressor BC-10, Compressor QA-32.
+This alias filters a list from specified devices: Thermometer A1, Compressor BC-10, and Compressor QA-32.
 
-Let's use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity list" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. The Entities table widget with the alias that filters a list of several devices, which in this case are Compressor BC-10, Compressor QA-32 and Thermometer A1, has been added
+Let's use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity list" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. 
+The Entities table widget with the alias that displays a list of several devices, which in this case are Compressor BC-10, Compressor QA-32, and Thermometer A1 has been added.
 
 {% include images-gallery.html imageCollection="entity-list-2" %}
 
@@ -83,13 +87,14 @@ Let's use an added alias in a widget. In the "Tables" widgets bundle select the 
 This alias allows you to display entities whose names start with the entered expression.
 These objects can be devices, assets, entity views, tenants, customers, dashboards, users, data converters, integrations, scheduler events, blob entities, rales or edges.  
 
-Adding an alias: in the "Add alias" dialog, enter the alias name, and select the "Entity name" filter type. Then choose the entities type and enter an expression that will filter the names of the displayed entities - "Compressor".
+Adding an alias: in the "Add alias" dialog, enter the alias name, and select the "Entity name" filter type. Then choose the entities type and enter an expression that will filter the names of the displayed entities.
 
 {% include images-gallery.html imageCollection="entity-name-1" %}
 
 This alias filters devices whose names start with "Compressor". 
 
-Let's use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity name" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. The Entities table widget with alias that filters devices, which names start with ‘Compressor’, has been added.
+Let's use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity name" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. 
+The Entities table widget with alias that filters devices, which names start with ‘Compressor’, has been added.
 
 {% include images-gallery.html imageCollection="entity-name-2" %}
 
@@ -104,114 +109,86 @@ Adding an alias: in the "Add Alias" dialog, enter the alias name, select the fil
 
 This alias displays all your and your customers' devices. 
 
-Let's use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity type" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. The Entities table widget displaying all your devices and your customers' devices has been added.
+Let's use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity type" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. 
+The Entities table widget displaying all your devices and your customers' devices has been added.
 
 {% include images-gallery.html imageCollection="entity-type-2" %}
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ### Entity group list
 
-This alias allows you to display list of entity groups.
+This alias allows you to display a list of entity groups.
 It can be a device group(s), asset group(s), entity view group(s), customer group(s), dashboard group(s), user group(s) or edge group(s).
 
-Adding an alias: in the “Add alias” dialog, enter the alias name, and select the “Entity group list” filter. Then select the entity type and specify entity groups you want to display on the widget.
+Adding an alias: in the “Add alias” dialog, enter the alias name, and select the "Entity group list" filter. Then select the entity type and specify entity groups you want to display on the widget.
 
 {% include images-gallery.html imageCollection="entity-group-list-1" %}
 
-This alias filters a list of device groups, which in this case are "Compressors" and "Thermostats". 
+This alias displays a list of device groups, which in this case are "Compressors" and "Thermostats". 
 
-Let’s use an added alias in a widget. In this example, we will need two aliases: created "Entity group list" alias and the previously discussed "[Group entities](#group-entities)" alias.
+Let's use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity group list" alias in the "Entity alias" field. Click "Add" and apply changes.
+The Entities table widget displaying a list of device groups has been added.
 
 {% include images-gallery.html imageCollection="entity-group-list-2" %}
 
-First we need to create widget that will display a list of device groups. Add an Entities table widget. Use the "Entity group list" alias as a data source.
-
-{% include images-gallery.html imageCollection="entity-group-list-3" %}
-
-Now we need to create another Entities table widget to display devices. This time, use the "Group entities" alias as the data source.
-
-{% include images-gallery.html imageCollection="entity-group-list-4" %}
-
-Finally, we need to add an [action](/docs/{{docsPrefix}}user-guide/ui/widget-actions) that updates the current state of the dashboard.
-
-{% include images-gallery.html imageCollection="entity-group-list-5" showListImageTitles="true" %}
-
-Click on the row with the device group name in the “Device groups” widget. The action will be executed, and the devices of the selected devices group will be displayed in the “Devices” widget.
-
-{% include images-gallery.html imageCollection="entity-group-list-6" %}
-
 ### Entity group name
 
-This alias allows choosing multiple entity name groups that begin with an entered query, which can be device group(s),
-asset group(s), entity view group(s), customer group(s), dashboard group(s) user group(s) or edge group(s).
+This alias allows you to display multiple entity name groups that begin with an entered query.
+It can be a device group(s), asset group(s), entity view group(s), customer group(s), dashboard group(s) user group(s) or edge group(s).
 
 Adding an alias: in the “Add alias” dialog, enter the alias name, and select the "Entity group name" filter type. Then choose the entity type and enter an expression that will filter the names of the displayed entity groups.
 
 {% include images-gallery.html imageCollection="entity-group-name-1" %}
 
-This alias filters device groups whose names start with "Compressor".
+This alias displays device groups whose names start with "Compressor".
 
-Let’s use an added alias in a widget. In this example, we will need two aliases: created "Entity group name" alias and the previously discussed "[Group entities](#group-entities)" alias.
+Let’s use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity group name" alias in the “Entity alias” field. Click "Add" and apply changes.
+The Entities table widget, which displays device groups whose name begins with the entered query has been added.
 
 {% include images-gallery.html imageCollection="entity-group-name-2" %}
 
-First we need to create widget that will display a list of device groups whose names start with "Compressor". Add an Entities table widget. Use the “Entity group name” alias as a data source.
-
-{% include images-gallery.html imageCollection="entity-group-name-3" %}
-
-Add an [action](/docs/{{docsPrefix}}user-guide/ui/widget-actions) that updates the current state of the dashboard.
-
-{% include images-gallery.html imageCollection="entity-group-name-4" showListImageTitles="true" %}
-
-Now we need to create another Entities table widget to display devices. This time, use the “Group entities” alias as the data source.
-
-{% include images-gallery.html imageCollection="entity-group-name-5" %}
-
-Click on the row with the device group name in the “Device groups” widget. 
-The action will be executed, and the devices of the selected devices group will be displayed in the “Devices” widget.
-
-{% include images-gallery.html imageCollection="entity-group-name-6" %}
-
 ### Entities by group name
 
-This alias allows choosing entities by entering the exact full name of an entity group. This entity can be device group(s), asset group(s), entity view group(s), customer group(s), dashboard group(s), user group(s), or edge group(s).
-The difference between Entities by group name and Group entities is that the first one resolved the group by the specified name while the second one uses hard-coded group ID.
-More important, during the lookup of entities, this alias will use information about the current user. So, if you share the dashboard with multiple customers,
-and would like each customer to see devices that belong to him, you should use this alias instead of "Group entities".
+This alias allows filtering entities by entering the exact full name of a group whose entities you want to display in the widget.
+This entity can be device group(s), asset group(s), entity view group(s), customer group(s), dashboard group(s), user group(s), or edge group(s).
 
-Adding an alias: in the "Add alias" dialog, enter the alias name, and select the "Entities by group name" filter type. Then choose the entity type and enter an expression that will filter the names of the displayed entity groups.
+The difference between the "Entities by group name" alias and the "[Group entities](#group-entities)" alias is that the first one resolved the group by the specified name while the second one uses hard-coded group ID.
+More important, during the lookup of entities, this alias will use information about the current user. 
+So, if you share the dashboard with multiple customers, and would like each customer to see devices that belong to him, you should use this alias instead of "Group entities".
+
+Adding an alias: in the "Add alias" dialog, enter the alias name, and select the "Entities by group name" filter type. Then select an entity type and enter the exact full name of a group whose entities you want to display.
 
 {% include images-gallery.html imageCollection="entities-by-group-name-1" %}
 
-This alias filters device group - Thermostats. 
+This alias filters device group by name - "Compressors". 
 
-Let’s use an added alias in a widget. In the “Tables” widgets bundle select the “Entities table” widget. 
-Navigate to the “Entity alias” tab. Specify the “Group entities” alias in the “Entity alias” field and “temperature” data key in the “Columns” section. 
-Click “Add” and apply changes. The Entities table widget with the alias that filters one device has been added.
+Let’s use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. 
+Navigate to the "Entity alias" tab. Specify the "Entities by group name" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes.
+The Entities table widget that displays entities filtered by the exact full name of the entity group entered has been added.
 
 {% include images-gallery.html imageCollection="entities-by-group-name-2" %}
 {% endif %}
 
 ### Entity from dashboard state
 
-This alias allows choosing entity(-ies) from dashboard state which can be device, asset, entity view, tenant, customer, 
-dashboard, user, data converter, integration, scheduler event, blob entity, role, edge, current customer, current tenant, current user, current user owner.
+This alias allows choosing entity(-ies) from dashboard state.
+This entity(-ies) can be device, asset, entity view, tenant, customer, dashboard, user, data converter, integration, scheduler event, blob entity, role, edge, current customer, current tenant, current user, current user owner.
 
-Adding an alias: in the “Add alias” dialog, enter the alias name, and select the filter type "Entity from dashboard state". Then click "Add".
+For example, if Entities table widget is created on a [root dashboard state](/docs/{{docsPrefix}}user-guide/dashboards/#states) with several entities displayed on it, and you'd like to create a dashboard state which will display a widget with the entity you clicked on, you need to use this alias.
+
+Adding an alias: in the "Add alias" dialog, enter the alias name, and select the filter type "Entity from dashboard state". Then click "Add".
 
 {% include images-gallery.html imageCollection="entity-from-dashboard-state-1" %}
 
-It is used for filtering data for other dashboard states.
-For example, if Time series widget is created on a [root dashboard state](/docs/{{docsPrefix}}user-guide/dashboards/#states) with several entities displayed on it, and you'd like to create a dashboard state which will display
-a widget with the entity you clicked on, you need to use this alias. 
+This alias used for filtering data for other dashboard states.
 
 For the next example, we will need two aliases: the previously discussed "[Group entities](#group-entities)" alias and the "Entity from dashboard state" alias. Let's start:
 
-First we need to create an Entity table widget that will display a list of entities: add an Entity table widget that will display a list of entities. Use the "Group entities" alias as a data source.
+First we need to create an Entity table widget that will display a list of entities: add an Entities table widget that will display a list of entities. Use the "Group entities" alias as a data source.
 
 {% include images-gallery.html imageCollection="entity-from-dashboard-state-2" %}
 
-After adding the widget, add a new a [state](/docs/{{docsPrefix}}user-guide/dashboards/#states):
+After adding the Entities table widget, add a new a [state](/docs/{{docsPrefix}}user-guide/dashboards/#states):
 
 {% include images-gallery.html imageCollection="entity-from-dashboard-state-3" showListImageTitles="true" %}
 
@@ -219,7 +196,7 @@ Time to add an [action](/docs/{{docsPrefix}}user-guide/ui/widget-actions) to a r
 
 {% include images-gallery.html imageCollection="entity-from-dashboard-state-4" showListImageTitles="true" %}
 
-Now, click an action button opposite any entity. You will be transitioned to an inner state that shows a widget with entity from dashboard’s state details
+Now, click an action button opposite any entity. You will be transitioned to an inner state, which contains a widget with the details of the selected entity.
 
 {% include images-gallery.html imageCollection="entity-from-dashboard-state-5" %}
 
@@ -255,7 +232,7 @@ Click on the row with the device name in the "Entities" widget. The action will 
 
 ### Asset type
 
-This alias allows you to filter assets by the specified asset profile (and optionally by names starting with the entered query).
+This alias allows you to filter assets by the specified asset profile(s) (and optionally by names starting with the entered query).
 
 Adding an alias: in the “Add alias” dialog, enter the alias name, and select the “Asset type” filter type. Then specify the asset profile(s) and enter an expression that will filter the names of the displayed assets.
 
@@ -269,7 +246,7 @@ Let’s use an added alias in a widget. In the "Tables" widgets bundle select th
  
 ### Device type
 
-This alias allows you to filter devices by the specified device profile (and optionally by names starting with the entered query).
+This alias allows you to filter devices by the specified device profile(s) (and optionally by names starting with the entered query).
 
 Adding an alias: in the “Add alias” dialog, enter the alias name, and select the “Device type” filter type. Then specify the device profile(s) and enter an expression that will filter the names of the displayed devices.
 
@@ -283,14 +260,15 @@ Let’s use an added alias in a widget. In the "Tables" widgets bundle select th
  
 ### Entity view type
 
-This alias allows you to filter devices by the specified entity view type (and optionally by names starting with the entered query).
+This alias allows you to filter devices by the specified entity view type(s) (and optionally by names starting with the entered query).
 
-Adding an alias: in the “Add alias” dialog, enter the alias name, and select the “Entity view type” filter type. Then specify the entity view type(s) and enter an expression that will filter the names of the displayed entity view.
+Adding an alias: in the “Add alias” dialog, enter the alias name, and select the "Entity view type" filter type. Then specify the entity view type(s) and enter an expression that will filter the names of the displayed entity views.
 
 {% include images-gallery.html imageCollection="entity-view-type-1" %}
 
-This alias filters entity Views of type ‘Compressors Entity View Type’ and with name starting with ‘Compressor’.
-An entity views called 'Compressor BC-10 Entity View' and 'Compressor QA-32 Entity View' was created with a type 'Compressors Entity View Type' which provides access to 'Power' timeseries from Compressor BC-10 and Compressor QA-32.
+This alias filters entity Views of type ‘Compressors Entity View Type’ and with name starting with "Compressor".
+
+Let's see an example. Entity views called "Compressor BC-10 Entity View" and "Compressor QA-32 Entity View" was created with a type "Compressors Entity View Type" which provides access to 'Power' timeseries from Compressor BC-10 and Compressor QA-32.
 
 Let’s use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity view type" alias in the "Entity alias" field. Click "Add" and apply changes. The Entities table widget that displays entity views with the entity view type "Compressors Entity View Type" and whose name begins with "Compressor" has been added.
 
@@ -298,7 +276,7 @@ Let’s use an added alias in a widget. In the "Tables" widgets bundle select th
 
 ### Edge type
 
-This alias allows you to filter devices by the specified edge type (and optionally by names starting with the entered query).
+This alias allows you to filter devices by the specified edge type(s) (and optionally by names starting with the entered query).
 
 Adding an alias: in the “Add alias” dialog, enter the alias name, and select the “Entity view type” filter type. Then specify the entity view type(s) and enter an expression that will filter the names of the displayed entity view.
 
@@ -323,90 +301,89 @@ Let's learn how to use the "Api Usage State" alias in a widget. In the "Tables" 
 
 ### Relations query
 
-This alias allows choosing entities which are related to specified originator up to specified level and in specified 
-direction.
+This alias allows displaying entities that are related to a specified originator up to a specified level and in a specified direction.
 
-Adding an alias: in the “Add alias” dialog, enter the alias name, select the “Relations query” filter type, and select the entity type and an entity. Set direction to "From" or "To" and max relation level.
+Adding an alias: in the "Add alias" dialog, enter the alias name, specify the "Relations query" filter type. 
+Then, select the type of entity and the entity itself, the relationship with which you want to display. Set direction to "From" or "To" and max relation level.
 
 {% include images-gallery.html imageCollection="relations-query-1" %}
 
-In the example alias filters entities that have any relation to Asset ‘District A’ up to relation level 3.
+In the example alias displays entities that have any relation to asset ‘District A’ up to relation level 3.
 
-Let's learn how to use the "Relations query" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Api Usage State" alias in the "Entity alias" field and add data key(s) in the "Columns" section that fetches statistics from an API usage. Click "Add" and apply changes. The Entities table widget that displays API usage statistics has been added.
+Let's learn how to use the "Relations query" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Relations query" alias in the "Entity alias" field and add the "entityType" data key in the "Columns" section. Click "Add" and apply changes. The Entities table widget displays entities and their type that have any relation to the asset "District A" up to relation level 3.
 
 {% include images-gallery.html imageCollection="relations-query-2" %}
 
 ### Asset search query
 
-This alias allows choosing assets of specified type which are related to specified entity up to specified level and in specified direction.  
+This alias allows displaying assets of the specified asset profile(s) that are related to a specified entity up to a specified level and in a specified direction.  
 
-Adding an alias: in the “Add alias” dialog, enter the alias name, select the "Asset search query" filter type, and select the entity type and an entity. Set direction to "From" or "To" and max relation level and specify the asset type(s) by which the assets will be filtered.
+Adding an alias: in the "Add alias" dialog, enter the alias name, select the "Asset search query" filter type, and select the entity type and an entity itself, the relationship with which you want to display. Set direction to "From" or "To" and max relation level and specify the asset profile(s) by which the assets will be filtered.
 
 {% include images-gallery.html imageCollection="asset-search-query-1" %}
 
-This alias filters assets with asset profiles "buildings" and "district" that have any relation to device "Compressor QA-32" with relation level 2.
+This alias displays assets with "buildings" and "district" asset profiles that has any relation to the device "Compressor QA-32" with direction "From" and relation level 2.
 
-Let's learn how to use the "Asset search query" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Asset search query" alias in the "Entity alias" field and add "name" and "type" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget that displays assets that have any relation to device “Compressor QA-32” with relation level 2 has been added.
+Let's learn how to use the "Asset search query" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Asset search query" alias in the "Entity alias" field, and add "name" and "type" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget that displays assets that have any relation to the device "Compressor QA-32" with relation level 2 has been added.
 
 {% include images-gallery.html imageCollection="asset-search-query-2" %}
 
 ### Device search query
 
-This alias allows choosing devices of specified type which are related to specified originator up to specified level and in specified direction.  
+This alias allows displaying devices of specified device profile(s) that are related to a specified originator up to a specified level and in a specified direction.  
 
-Adding an alias: in the “Add alias” dialog, enter the alias name, select the "Device search query" filter type, and select the entity type and an entity. Set direction to "From" or "To" and max relation level and specify the device profile(s) by which devices will be filtered.
+Adding an alias: in the "Add alias" dialog, enter the alias name, select the "Device search query" filter type, and select the entity type and an entity itself, the relationship with which you want to display. Set direction to "From" or "To" and max relation level and specify the device profile(s) by which the devices will be filtered.
 
 {% include images-gallery.html imageCollection="device-search-query-1" %}
 
-This alias filters devices with device profiles "compressors" that have any relation from asset "Building A" up to relation level 1.
+This alias displays devices with the "compressors" device profile that have any relation to the asset "Building A" with direction "From" and relation level 1.
 
-Let's learn how to use the "Device search query alias" in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Device search query" alias in the "Entity alias" field and add "name" and "type" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget that displays devices that have any relation to asset “Building A” up to relation level 1 has been added.
+Let's learn how to use the "Device search query alias" in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Device search query" alias in the "Entity alias" field and add "name", "type" and "temperature" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget that displays devices that have any relation to the asset "Building A" up to relation level 1 has been added.
 
 {% include images-gallery.html imageCollection="device-search-query-2" %}
 
 ### Entity view search query
 
-This alias allows choosing entity views of specified type which are related to specified originator up to specified level and in specified direction.  
-An entity view called 'Compressor BC-10 Entity View' which has 'contains' relation to it from Compressor BC-10 was created with a type 'Compressors Entity View Type' which provides access to 'Power' timeseries from Compressor BC-10.
+This alias allows displaying entity views of the specified type that are related to a specified originator up to a specified level and in a specified direction.
 
-Adding an alias: in the “Add alias” dialog, enter the alias name, select the "Entity view search query" filter type, and select the entity type and an entity. Set direction to "From" or "To" and max relation level and specify the entity view type(s) by which entity views will be filtered.
+A "Compressor BC-10 Entity View" entity view which has a relation to the "Compressor BC-10" device was created with a type "compressors entity view type" which provides access to “temperature” timeseries from Compressor BC-10.
+
+Adding an alias: in the “Add alias” dialog, enter the alias name, select the "Entity view search query" filter type, and select the entity type and an entity itself, the relationship with which you want to display. Set direction to "From" or "To" and max relation level and specify the entity view type(s) by which entity views will be filtered.
 
 {% include images-gallery.html imageCollection="entity-view-search-query-1" %}
 
-This alias filters entity views with types "Compressors Entity View Type" that have any relation from asset "Building A" up to relation level 1.
+This alias filters entity views with the "compressors entity view type" type that have any relation to the asset "Building A" with direction "From" and relation level 1.
 
-Let's learn how to use the "Entity view search query" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity view search query" alias in the "Entity alias" field and add "name" and "type" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget that displays devices that have any relation to asset “Building A” up to relation level 1 has been added.
+Let's learn how to use the "Entity view search query" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity view search query" alias in the "Entity alias" field and add "name", "type" and "temperature" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget that displays entity views that have any relation to the asset "Building A" up to relation level 1 has been added.
 
 {% include images-gallery.html imageCollection="entity-view-search-query-2" %}
 
 ### Edge search query
 
-This alias allows choosing entity views of specified type which are related to specified originator up to specified level and in specified direction.  
-An entity view called 'Compressor BC-10 Entity View' which has 'contains' relation to it from Compressor BC-10 was created with a type 'Compressors Entity View Type' which provides access to 'Power' timeseries from Compressor BC-10.
+This alias allows displaying edges of the specified type that are related to a specified originator up to a specified level and in a specified direction.
 
-Adding an alias: in the "Add alias" dialog, enter the alias name, select the "Entity view search query" filter type, and select the entity type and an entity. Set direction to "From" or "To" and max relation level and specify the entity view type(s) by which entity views will be filtered.
+Adding an alias: in the "Add alias" dialog, enter the alias name, select the "Edge search query" filter type, and select the entity type and an entity itself, the relationship with which you want to display. Set direction to "From" or "To" and max relation level and specify the edge type(s) by which the edges will be filtered.
 
 {% include images-gallery.html imageCollection="edge-search-query-1" %}
 
-This alias filters devices with entity view types "Compressors Entity View Type" that have any relation from asset "Building A" up to relation level 1.
+This alias filters edges with the "edge instance" type that have any relation to the asset "Building A" with direction "From" and relation level 1.
 
-Let's learn how to use the "Entity view search query" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Edge search query" alias in the "Entity alias" field and add "name" and "type" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget that displays devices that have any relation to asset “Building A” up to relation level 1 has been added.
+Let's learn how to use the "Entity view search query" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Edge search query" alias in the "Entity alias" field and add "name" and "type" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget that displays edges that have any relation to the asset "Building A" up to relation level 1 has been added.
 
 {% include images-gallery.html imageCollection="edge-search-query-2" %}
-
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ### Scheduler events
 
 This alias allows displaying scheduler events of specified an entity.
 
-Adding an alias: in the "Add alias" dialog, enter the alias name, select the "Scheduler events" filter type, and select the entity.
+Adding an alias: in the "Add alias" dialog, enter the alias name, select the "Scheduler events" filter type, and select the entity for which scheduler events will be displayed.
 
 {% include images-gallery.html imageCollection="scheduler-events-1" %}
 
-This alias filters scheduler events for the selected entity - Compressor BC-10.
+This alias displays scheduler events for the "Compressor BC-10" device.
 
-Let's learn how to use the "Scheduler events" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Scheduler events" alias in the "Entity alias" field and add "name" and "type" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget that displays scheduler events for the Compressor BC-10 device has been added.
+Let's learn how to use the "Scheduler events" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Scheduler events" alias in the "Entity alias" field and add "name", "type" and "schedule" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget that displays scheduler events for the "Compressor BC-10" device has been added.
 
 {% include images-gallery.html imageCollection="scheduler-events-2" %}
 

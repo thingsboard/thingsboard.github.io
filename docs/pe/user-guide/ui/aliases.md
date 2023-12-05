@@ -53,7 +53,7 @@ single-alias-2:
         title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Single entity" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add";'
     1:
         image: /images/user-guide/ui/alias/single-entity-3-pe.png
-        title: 'The Entities table widget with the alias that filters one device has been added.'
+        title: 'The Entities table widget with the alias that filters one device - Thermometer A1 has been added.'
 
 
 group-entities-1:
@@ -67,7 +67,7 @@ group-entities-2:
         title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Group entities" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add";'
     1:
         image: /images/user-guide/ui/alias/group-entities-3-pe.png
-        title: 'The Entities table widget with the alias that filters "Thermostats" device group has been added.'
+        title: 'The Entities table widget with the alias that displays all devices that belong to the "Thermostats" device group has been added.'
 
 
 entity-list-1:
@@ -81,13 +81,13 @@ entity-list-2:
         title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity list" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add";'
     1:
         image: /images/user-guide/ui/alias/entity-list-3-pe.png
-        title: 'The Entities table widget with an alias that filters a list of several devices, which in this case are Compressor BC-10, Compressor QA-32 and Thermometer A1, has been added.'
+        title: 'The Entities table widget with the alias that displays a list of several devices, which in this case are Compressor BC-10, Compressor QA-32, and Thermometer A1 has been added.'
 
 
 entity-name-1:
     0:
         image: /images/user-guide/ui/alias/entity-name-1-pe.png
-        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Entity name" filter type. Then choose the entities type and enter an expression that will filter the names of the displayed entities - “Compressor”.'
+        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Entity name" filter type. Then choose the entities type and enter an expression that will filter the names of the displayed entities.'
 
 entity-name-2:
     0:
@@ -116,119 +116,43 @@ entity-type-2:
 entity-group-list-1:
     0:
         image: /images/user-guide/ui/alias/entity-group-list-1-pe.png
-        title: 'In the “Add alias” dialog, enter the alias name, and select the “Entity group list” filter. Then select the entity type and specify entity groups that you want to display on the widget.'
+        title: 'In the “Add alias” dialog, enter the alias name, and select the "Entity group list" filter. Then select the entity type and specify entity groups you want to display on the widget.'
 
 entity-group-list-2:
     0:
-        image: /images/user-guide/ui/alias/entity-group-list-2-pe.png
-        title: 'Add the "Group entities" alias. Enter alias name, specify filter type - "Group entities", and select the "Use dashboard state entity as entity group" check box. Then, click "Add" button.'
-
-entity-group-list-3:
-    0:
         image: /images/user-guide/ui/alias/entity-group-list-3-pe.png
-        title: 'In the “Tables” widgets bundle select the “Entities table” widget. Navigate to the “Entity alias” tab. Specify the “Entity group list” alias in the “Entity alias” field. Click “Add”;'
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity group list" alias in the "Entity alias" field. Click "Add";'
     1:
         image: /images/user-guide/ui/alias/entity-group-list-4-pe.png
-        title: 'The Entities table widget displaying a list of device groups specified in the “Entity group list” alias has been added.'
+        title: 'The Entities table widget displaying a list of device groups has been added.'
 
-entity-group-list-4:
-    0:
-        image: /images/user-guide/ui/alias/entity-group-list-5-pe.png
-        title: 'In the “Tables” widgets bundle select the “Entities table” widget. Navigate to the “Entity alias” tab. Specify the "Group entities" alias in the “Entity alias” field. Click “Add” and apply changes;'
-    1:
-        image: /images/user-guide/ui/alias/entity-group-list-6-pe.png
-        title: 'Added Entities table widget, which will display a list of devices for the selected group of devices.'
-
-entity-group-list-5:
-    0:
-        image: /images/user-guide/ui/alias/entity-group-list-7-pe.png
-        title: 'After adding widgets, click the “pencil” icon in the upper right corner of the "Devices groups" widget to enter the widget editing mode;'
-    1:
-        image: /images/user-guide/ui/alias/entity-group-list-8-pe.png
-        title: 'Scroll down to find "Actions" section. Click "Add action" button;'
-    2:
-        image: /images/user-guide/ui/alias/entity-group-list-9-pe.png
-        title: 'The "Entities table: Actions" window will be opened. Click the "Add action" button in the top right corner;'
-    3:
-        image: /images/user-guide/ui/alias/entity-group-list-10-pe.png
-        title: 'In the "Add action" dialog, enter the action name, select an action source - "on row click", and choose the action type "Update current dashboard state". After, click "Add";'
-    4:
-        image: /images/user-guide/ui/alias/entity-group-list-11-pe.png
-        title: 'After successfully adding the action, click "Save" to apply changes;'
-    5:
-        image: /images/user-guide/ui/alias/entity-group-list-12-pe.png
-        title: 'Save the dashboard;'
-        
-entity-group-list-6:
-    0:
-        image: /images/user-guide/ui/alias/entity-group-list-13-pe.png
-        title: 'Click on the "Compressors" row in the "Device Groups" widget. The "Update current dashboard state" action will be executed, and all devices of the selected device group will be displayed in the "Devices" widget;'
-    1:
-        image: /images/user-guide/ui/alias/entity-group-list-14-pe.png
-        title: 'Now, click on the "Thermostats" row in the "Device Groups" widget. All devices of the selected device group will be displayed in the "Devices" widget;'
-        
 
 entity-group-name-1:
     0:
         image: /images/user-guide/ui/alias/entity-group-name-1-pe.png
-        title: 'In the “Add alias” dialog, enter the alias name, and select the “Entity group name” filter type. Then choose the entity type and enter an expression that will filter the names of the displayed entity groups. Then, click "Add" button.'
+        title: 'In the "Add alias" dialog, enter the alias name, and select the “Entity group name” filter type. Then choose the entity type and enter an expression that will filter the names of the displayed entity groups. Then, click "Add" button.'
 
 entity-group-name-2:
     0:
         image: /images/user-guide/ui/alias/entity-group-name-2-pe.png
-        title: 'Add the "Group entities" alias. Enter alias name, specify filter type - "Group entities", and move the slider to use a dashboard state entity as an entity group. Then, click "Add" button.'
-
-entity-group-name-3:
-    0:
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity group name" alias in the “Entity alias” field. Click "Add" and apply changes;'
+    1:
         image: /images/user-guide/ui/alias/entity-group-name-3-pe.png
-        title: 'In the “Tables” widgets bundle select the “Entities table” widget. Navigate to the “Entity alias” tab. Specify the “Entity group name” alias in the “Entity alias” field. Click “Add”;'
-    1:
-        image: /images/user-guide/ui/alias/entity-group-name-4-pe.png
-        title: 'The Entities table widget displaying a list of device groups specified in the “Entity group name” alias has been added.'
-
-entity-group-name-4:
-    0:
-        image: /images/user-guide/ui/alias/entity-group-name-5-pe.png
-        title: 'After adding widgets, click the “pencil” icon in the upper right corner of the widget to enter the widget editing mode;'
-    1:
-        image: /images/user-guide/ui/alias/entity-group-name-6-pe.png
-        title: 'Scroll down to find "Actions" section. Click "Add action" button;'
-    2:
-        image: /images/user-guide/ui/alias/entity-group-name-7-pe.png
-        title: 'The "Entities table: Actions" window will be opened. Click the "Add action" button in the top right corner.'
-    3:
-        image: /images/user-guide/ui/alias/entity-group-name-8-pe.png
-        title: 'In the "Add action" dialog, enter the action name, select an action source - "Action cell button", and choose the action type "Update current dashboard state". After, click "Add";'
-    4:
-        image: /images/user-guide/ui/alias/entity-group-name-9-pe.png
-        title: 'After successfully adding the action, click "Save" to apply changes.'
-      
-entity-group-name-5:
-    0:
-        image: /images/user-guide/ui/alias/entity-group-name-10-pe.png
-        title: 'In the “Tables” widgets bundle select the “Entities table” widget. Navigate to the “Entity alias” tab. Specify the "Group entities" alias in the “Entity alias” field. Click “Add” and apply changes;'
-    1:
-        image: /images/user-guide/ui/alias/entity-group-name-11-pe.png
-        title: 'Added Entities table widget, which will display a list of devices for the selected group of devices. Save the dashboard.'
-
-entity-group-name-6:
-    0:
-        image: /images/user-guide/ui/alias/entity-group-name-12-pe.png
-        title: 'Click on the "Compressors" row in the "Device Groups" widget. The "Update current dashboard state" action will be executed, and all devices of the selected device group will be displayed in the "Devices" widget.'
+        title: 'The Entities table widget, which displays device groups whose name begins with the entered query has been added.'
 
 
 entities-by-group-name-1:
     0:
         image: /images/user-guide/ui/alias/entities-by-group-name-1-pe.png
-        title: 'In the “Add alias” dialog, enter the alias name, and select the “Entities by group name” filter type. Then choose the entity type and enter an expression that will filter the names of the displayed entity groups.'
+        title: 'In the "Add alias" dialog, enter the alias name, and select the "Entities by group name" filter type. Then select an entity type and enter the exact full name of a group whose entities you want to display.'
 
 entities-by-group-name-2:
     0:
         image: /images/user-guide/ui/alias/entities-by-group-name-2-pe.png
-        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entities by group name" alias in the "Entity alias" field. Click "Add";'
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entities by group name" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add";'
     1:
         image: /images/user-guide/ui/alias/entities-by-group-name-3-pe.png
-        title: 'The Entities table widget with the alias that filters device group - Thermostats has been added.'
+        title: 'The Entities table widget that displays entities filtered by the exact full name of the entity group entered has been added.'
 
 
 entity-from-dashboard-state-1:
@@ -241,7 +165,7 @@ entity-from-dashboard-state-2:
         image: /images/user-guide/ui/alias/group-entities-1-pe.png
         title: 'In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and select the entity group;'
     1:
-        image: /images/user-guide/ui/alias/entity-from-dashboard-state-4-pe.png
+        image: /images/user-guide/ui/alias/group-entities-2-pe.png
         title: 'Add an Entity table widget that will display a list of entities. Use the "Group entities" alias as a data source;'
     2:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-5-pe.png
@@ -253,7 +177,7 @@ entity-from-dashboard-state-3:
         title: 'Click layers icon in the top left corner of the dashboard to create a new state. In the opened dialog window, click a "+" icon to add a new state;'
     1:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-7-pe.png
-        title: 'Enter state&#39;s name and click "Add";'
+        title: 'Enter state&#39;s name. For the state to be named after the entity, use ${entityName} as the name of the state. Thus during the action, you will be transitioned to a state that is called the same as the entity that took part in the action. Click "Add";'
     2:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-8-pe.png
         title: 'Now you see a list with two states: root one, and the one that has been just created. Click "Save" in the lower right of the dialog.'
@@ -273,10 +197,10 @@ entity-from-dashboard-state-4:
         title: 'In the "Add action" dialog, enter the action name, and select an action source responsible for each entity separately (action cell button, on row click etc.). Then, choose the action type "Navigate to new dashboard state" and specify the new dashboard state to which the transition will be made. After, click "Add";'
     4:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-13-pe.png
-        title: 'After successfully adding the action, click "Save" to apply changes;'
+        title: 'After successfully adding the action, click the "Save" button. Then, click the "Apply" button;'
     5:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-14-pe.png
-        title: 'Then, go to the created state by selecting it from the drop-down menu by clicking layers icon in the upper right corner;'
+        title: 'Now, go to the created state by selecting it from the drop-down menu by clicking layers icon in the upper left corner;'
     6:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-15-pe.png
         title: 'Click the “Add new widget” icon in the center of the screen;'
@@ -288,7 +212,7 @@ entity-from-dashboard-state-4:
         title: 'Select the "Indoor temperature card with background" widget;'
     9:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-18-pe.png
-        title: 'Navigate to the "Entity alias" tab. Specify the "Entity from dashboard state" alias in the "Entity alias" field. Click the “Add” button in the lower right corner;'
+        title: 'In the add widget window, navigate to the "Entity alias" tab. Specify the "Entity from dashboard state" alias in the "Entity alias" field and "temperature" data key in the “Columns” section. Click the "Add" button in the lower right corner;'
     10:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-19-pe.png
         title: 'After adding the widget save all applied changes;'
@@ -299,7 +223,7 @@ entity-from-dashboard-state-5:
         title: 'Now, click an action button opposite any entity;'
     1:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-21-pe.png
-        title: 'You will be transitioned to an inner state that shows a widget with entity from dashboard’s state details.'
+        title: 'You will be transitioned to an inner state, which contains a widget with the details of the selected entity.'
 
 
 owner-of-entity-from-dashboard-state-1:
@@ -316,7 +240,7 @@ owner-of-entity-from-dashboard-state-2:
         title: 'Add an Entity table widget that will display a list of entities. Use the "Entity type" alias as a data source;'
     2:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-0-pe.png
-        title: 'Added the Entity table widget that displays a list of devices.'
+        title: 'Added the Entity table widget that displays a list of all devices.'
 
 owner-of-entity-from-dashboard-state-3:
     0:
@@ -341,7 +265,7 @@ owner-of-entity-from-dashboard-state-4:
         title: 'In the "Add action" dialog, enter the action name, select an action source - "on row click", and choose the action type "Update current dashboard state". After, click "Add";'
     4:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-8-pe.png
-        title: 'After successfully adding the action, click "Save" to apply changes;'
+        title: 'After successfully adding the action, click the "Save" button. Then, click the "Apply" button;'
     5:
         image: /images/user-guide/ui/alias/owner-of-entity-from-dashboard-state-9-pe.png
         title: 'Save the dashboard;'
@@ -358,7 +282,7 @@ owner-of-entity-from-dashboard-state-5:
 asset-type-1:
     0:
         image: /images/user-guide/ui/alias/asset-type-1-pe.png
-        title: 'In the “Add alias” dialog, enter the alias name, and select the “Asset type” filter type. Then specify the asset profile(s) and enter an expression that will filter the names of the displayed assets;'
+        title: 'In the "Add alias" dialog, enter the alias name, and select the “Asset type” filter type. Next, specify the asset profile(s) and optionally enter an expression to filter the names of the displayed assets;'
 
 asset-type-2:
     0:
@@ -371,22 +295,22 @@ asset-type-2:
 
 device-type-1:
     0:
-        image: /images/user-guide/ui/alias/asset-type-1-pe.png
-        title: 'In the “Add alias” dialog, enter the alias name, and select the “Device type” filter type. Then specify the device profile(s) and enter an expression that will filter the names of the displayed devices;'
+        image: /images/user-guide/ui/alias/device-type-1-pe.png
+        title: 'In the "Add alias" dialog, enter the alias name, and select the "Device type" filter type. Then specify the device profile(s) and optionally enter an expression to filter the names of the displayed devices;'
 
 device-type-2:
     0:
-        image: /images/user-guide/ui/alias/asset-type-2-pe.png
+        image: /images/user-guide/ui/alias/device-type-2-pe.png
         title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Device type" alias in the "Entity alias" field. Click "Add";'
     1:
-        image: /images/user-guide/ui/alias/asset-type-3-pe.png
+        image: /images/user-guide/ui/alias/device-type-3-pe.png
         title: 'The Entities table widget that displays assets with the asset profile "thermometers" and whose names begins with "Therm" has been added'
 
 
 entity-view-type-1:
     0:
         image: /images/user-guide/ui/alias/entity-view-type-1-pe.png
-        title: 'In the “Add alias” dialog, enter the alias name, and select the “Entity view type” filter type. Then specify the entity view type(s) and enter an expression that will filter the names of the displayed entity views;'
+        title: 'In the "Add alias" dialog, enter the alias name, and select the "Entity view type" filter type. Then specify the entity view type(s) and optionally enter an expression to filter the names of the displayed entity views;'
 
 entity-view-type-2:
     0:
@@ -400,7 +324,7 @@ entity-view-type-2:
 edge-type-1:
     0:
         image: /images/user-guide/ui/alias/edge-type-1-pe.png
-        title: 'In the “Add alias” dialog, enter the alias name, and select the “Edge type” filter type. Then specify the edge type(s) and enter an expression that will filter the names of the displayed edges;'
+        title: 'In the "Add alias" dialog, enter the alias name, and select the "Edge type" filter type. Then specify the edge type(s) and enter an expression that will filter the names of the displayed edges;'
 
 edge-type-2:
     0:
@@ -414,7 +338,7 @@ edge-type-2:
 api-usage-state-1:
     0:
         image: /images/user-guide/ui/alias/api-usage-state-1-pe.png
-        title: 'In the “Add alias” dialog, enter the alias name, and select the “Api Usage State” filter type.'
+        title: 'In the "Add alias" dialog, enter the alias name, and select the "Api Usage State" filter type.'
 
 api-usage-state-2:
     0:
@@ -428,21 +352,21 @@ api-usage-state-2:
 relations-query-1:
     0:
         image: /images/user-guide/ui/alias/relations-query-1-pe.png
-        title: 'In the “Add alias” dialog, enter the alias name, select the “Relations query” filter type, and select the entity type and choose an entity. Set direction to “From” and max relation level 3.'
+        title: 'In the "Add alias" dialog, enter the alias name, specify the "Relations query" filter type. Then, select the type of entity and the entity itself, the relationship with which you want to display. Set direction to "From" or "To" and max relation level.'
 
 relations-query-2:
     0:
         image: /images/user-guide/ui/alias/relations-query-2-pe.png
-        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Relations query" alias in the "Entity alias" field and add data key(s) in the "Columns" section that fetches statistics from an API usage. Click "Add";'
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Relations query" alias in the "Entity alias" field and add the "entityType" data key in the "Columns" section. Click "Add";'
     1:
         image: /images/user-guide/ui/alias/relations-query-3-pe.png
-        title: 'The Entities table widget that displays API usage statistics has been added.'
+        title: 'The Entities table widget displays entities and their type that have any relation to the asset "District A" up to relation level 3.'
 
 
 asset-search-query-1:
     0:
         image: /images/user-guide/ui/alias/asset-search-query-1-pe.png
-        title: 'In the “Add alias” dialog, enter the alias name, select the “Relations query” filter type, and select the entity type and choose an entity. Set direction to “From” and max relation level 3.'
+        title: 'in the "Add alias" dialog, enter the alias name, select the "Asset search query" filter type, and select the entity type and an entity itself, the relationship with which you want to display. Set direction to "From" or "To" and max relation level and specify the asset profile(s) by which the assets will be filtered.'
 
 asset-search-query-2:
     0:
@@ -450,63 +374,63 @@ asset-search-query-2:
         title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Asset search query" alias in the "Entity alias" field and add "name" and "type" data keys in the "Columns" section. Click "Add";'
     1:
         image: /images/user-guide/ui/alias/asset-search-query-3-pe.png
-        title: 'The Entities table widget that displays assets that have any relation to device “Compressor QA-32” with relation level 2 has been added.'
+        title: 'The Entities table widget that displays assets that have any relation to the device "Compressor QA-32" with relation level 2 has been added.'
 
 
 device-search-query-1:
     0:
         image: /images/user-guide/ui/alias/device-search-query-1-pe.png
-        title: 'In the “Add alias” dialog, enter the alias name, select the “Relations query” filter type, and select the entity type and choose an entity. Set direction to “From” and max relation level 3.'
+        title: 'In the "Add alias" dialog, enter the alias name, select the "Device search query" filter type, and select the entity type and choose an entity itself, the relationship with which you want to display. Set direction to "From" or "To" and max relation level and specify the device profile(s) by which the devices will be filtered.'
 
 device-search-query-2:
     0:
         image: /images/user-guide/ui/alias/device-search-query-2-pe.png
-        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Device search query" alias in the "Entity alias" field and add data key(s) in the "Columns" section. Click "Add";'
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Device search query" alias in the "Entity alias" field and add "name", "type" and "temperature" data keys in the "Columns" section. Click "Add";'
     1:
         image: /images/user-guide/ui/alias/device-search-query-3-pe.png
-        title: 'The Entities table widget that displays devices that have any relation to asset “Building A” up to relation level 1 has been added.'
+        title: 'The Entities table widget that displays devices that have any relation to the asset “Building A” up to relation level 1 has been added.'
 
 
 entity-view-search-query-1:
     0:
         image: /images/user-guide/ui/alias/entity-view-search-query-1-pe.png
-        title: 'In the “Add alias” dialog, enter the alias name, select the “Relations query” filter type, and select the entity type and choose an entity. Set direction to “From” and max relation level 3.'
+        title: 'In the “Add alias” dialog, enter the alias name, select the "Entity view search query" filter type, and select the entity type and choose an entity itself, the relationship with which you want to display. Set direction to "From" or "To" and max relation level and specify the entity view type(s) by which entity views will be filtered'
 
 entity-view-search-query-2:
     0:
         image: /images/user-guide/ui/alias/entity-view-search-query-2-pe.png
-        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity view search query" alias in the "Entity alias" field and add data key(s) in the "Columns" section. Click "Add";'
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity view search query" alias in the "Entity alias" field and add "name", "type" and "temperature" data keys in the "Columns" section. Click "Add";'
     1:
         image: /images/user-guide/ui/alias/entity-view-search-query-3-pe.png
-        title: 'The Entities table widget that displays entity views that have any relation to asset “Building A” up to relation level 1 has been added.'
+        title: 'The Entities table widget that displays entity views that have any relation to the asset "Building A" up to relation level 1 has been added.'
 
 
 edge-search-query-1:
     0:
         image: /images/user-guide/ui/alias/edge-search-query-1-pe.png
-        title: 'In the “Add alias” dialog, enter the alias name, select the “Relations query” filter type, and select the entity type and choose an entity. Set direction to “From” and max relation level 3.'
+        title: 'In the "Add alias" dialog, enter the alias name, select the "Edge search query" filter type, and select the entity type and an entity itself, the relationship with which you want to display. Set direction to "From" or "To" and max relation level and specify the edge type(s) by which the edges will be filtered.'
 
 edge-search-query-2:
     0:
         image: /images/user-guide/ui/alias/edge-search-query-2-pe.png
-        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Api Usage State" alias in the "Entity alias" field and add data key(s) in the "Columns" section. Click "Add";'
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Edge search query" alias in the "Entity alias" field and add "name" and "type" data keys in the "Columns" section. Click "Add";'
     1:
         image: /images/user-guide/ui/alias/edge-search-query-3-pe.png
-        title: 'The Entities table widget that displays edges that have any relation to asset “Building A” up to relation level 1 has been added.'
+        title: 'The Entities table widget that displays edges that have any relation to the asset "Building A" up to relation level 1 has been added.'
 
 
 scheduler-events-1:
-      0:
+    0:
         image: /images/user-guide/ui/alias/scheduler-events-1-pe.png
-        title: 'In the "Add alias" dialog, enter the alias name, select the "Scheduler events" filter type, and select the entity.'
+        title: 'In the "Add alias" dialog, enter the alias name, select the "Scheduler events" filter type, and select the entity for which scheduler events will be displayed.'
 
 scheduler-events-2:
-      0:
+    0:
         image: /images/user-guide/ui/alias/scheduler-events-2-pe.png
-        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Scheduler events" alias in the "Entity alias" field and add data key(s) in the "Columns" section. Click "Add";'
-      1:
+        title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Scheduler events" alias in the "Entity alias" field and add "name", "type" and "schedule" data keys in the "Columns" section. Click "Add";'
+    1:
         image: /images/user-guide/ui/alias/scheduler-events-3-pe.png
-        title: 'The Entities table widget that displays scheduler events for the Compressor BC-10 device has been added.'
+        title: 'The Entities table widget that displays scheduler events for the "Compressor BC-10" device has been added.'
 
 
 ---
