@@ -24,9 +24,9 @@ Data is collected by a python script that is running on [Raspberry Pi](https://e
 
   <img src="https://cdn.xingosoftware.com/elektor/images/fetch/dpr_1/https%3A%2F%2Fwww.elektormagazine.com%2Fassets%2Fupload%2Fimages%2F18%2F20171221112541_esp32-pico-kit-v4-004.jpg" width="400"  alt="Device plate">
 
-* [HTU21D Digital Relative Humidity Sensor](https://ru.aliexpress.com/item/NEW-HTU21D-Temperature-Humidity-Sensor-Breakout-Board-Module/32451061596.html?spm=a2g0v.search0104.3.8.69f56062P2BU8f&ws_ab_test=searchweb0_0,searchweb201602_3_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=c8c9941c-ea29-40e5-b74a-d1c0ae217af7-1&algo_pvid=c8c9941c-ea29-40e5-b74a-d1c0ae217af7)
+* [HTU21D Digital Relative Humidity Sensor](https://aliexpress.com/item/NEW-HTU21D-Temperature-Humidity-Sensor-Breakout-Board-Module/32451061596.html?spm=a2g0v.search0104.3.8.69f56062P2BU8f&ws_ab_test=searchweb0_0,searchweb201602_3_10065_10068_319_10059_10884_317_10887_10696_321_322_10084_453_10083_454_10103_10618_10307_537_536,searchweb201603_52,ppcSwitch_0&algo_expid=c8c9941c-ea29-40e5-b74a-d1c0ae217af7-1&algo_pvid=c8c9941c-ea29-40e5-b74a-d1c0ae217af7)
 
-  <img src="https://http2.mlstatic.com/htu21d-gy-21-sht21-sensor-humedad-precision-i2c-itytarg-D_NQ_NP_729642-MLA25959905493_092017-F.jpg" width="400" alt="humedad precision">
+  <img src="https://1wire.com.ua/image/cache/data/shop/Sensor/HTU21D_1-317x317.jpg" width="400" alt="humedad precision">
 
 * Breadboard
 * 4 female-to-male jumper wires
