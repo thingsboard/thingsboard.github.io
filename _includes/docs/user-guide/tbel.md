@@ -282,7 +282,57 @@ The null literal is denoted by the reserved keywords `null` or `nil`.
 The TBEL implementation allows usage of **some** Java classes from the `java.util` and `java.lang` packages. For example:
 
 ```java
-var foo = java.lang.Math.sqrt(4);
+var foo = Math.sqrt(4);
+```
+{: .copy-code}
+
+
+##### Convert Number to Hexadecimal/Octal/Binary String
+- Byte
+
+```java
+var b16 = Integer.toString(0x1A, 16); // Hexadecimal "1a"
+var b10 = Integer.toString(0x1A, 10); // Decimal     "26"
+var b8 = Integer.toString(0x1A, 8);   // Octal       "32"
+var b2 = Integer.toString(0x1A, 2);   // Binary     "11010"
+```
+{: .copy-code}
+
+- Integer
+
+```java
+var i16 = Integer.toString(-255, 16); // Hexadecimal "-ff"
+var i10 = Integer.toString(-255, 10); // Decimal     "-255"
+var i8 = Integer.toString(-255, 8);   // Octal       "-377"
+var i2 = Integer.toString(-255, 2);   // Binary      "-11111111"
+```
+{: .copy-code}
+
+- Float
+
+```java
+var f0 =7823764.8374;  
+var f16 = Float.toHexString(f0);           // Hexadecimal "0x1.dd8654p22" 
+var f10 = f0.toString();                   // Decimal     "7823764.8374"
+```
+{: .copy-code}
+
+- Long
+
+```java
+var l16 = Long.toString(9223372036854775807, 16); // Hexadecimal "7fffffffffffffff"
+var l10 = Long.toString(9223372036854775807, 10); // Decimal     "9223372036854775807"
+var l8 = Long.toString(9223372036854775807, 8);   // Octal       "777777777777777777777"
+var l2 = Long.toString(9223372036854775807, 2);   // Binary      "111111111111111111111111111111111111111111111111111111111111111"
+```
+{: .copy-code}
+
+- Double
+
+```java
+var dd0 = 99993219.156013e-002;
+var dd16 = Double.toHexString(dd0);              // Hexadecimal ""0x1.e83f862142b5bp19"
+var dd10 = String.format("%.8f",dd0);            // Decimal     "999932,19156013"
 ```
 {: .copy-code}
 
@@ -479,7 +529,7 @@ A string constructed from the specified byte list.
 **Examples:**
 
 ```java
-var bytes = [(byte)0x48,(byte)0x45,(byte)0x4C,(byte)0x4C,(byte)0x4F];
+var bytes = [0x48,0x45,0x4C,0x4C,0x4F];
 return bytesToString(bytes); // Returns "HELLO"
 ```
 {: .copy-code}
@@ -1087,26 +1137,157 @@ return toFlatMap(json, ["key2", "key4"], false);
 
 As you can see, **key2** and **key4** was excluded from the output and **key_to_overwrite** is **second_level_value**.  
 
-####  tbDate: toLocaleString
+####  tbDate: 
 
-The *Tbel* library uses all standard JavaScript methods in the **"toLocaleString"** method [JavaScript Date toLocaleString](https://www.w3schools.com/jsref/jsref_tolocalestring.asp);
+The *Tbel* library uses all standard JavaScript methods in the [JavaScript Date](https://www.w3schools.com/jsref/jsref_getdate.asp), such as **"toLocaleString"**,  **"toISOString"** and other methods;
 
-##### default
-*String toLocaleString()*
+##### Input format data:
+- String with Optional: pattern, locale, time zone
+- ints (year, month and etc) with Optional: pattern, locale, time zone
 
 Locale default: *UTC*;
 
 Time zone Id default: *ZoneId.systemDefault()*;
 
-*Return value:**
+**Return value:**
 
 a Date object as a string, using locale default: "UTC", time zone Id default: ZoneId.systemDefault().
 
+###### String with Optional: pattern, locale, time zone 
+
 **Examples:**
+- Input data format: Only one - String (Variable the Time Zone in the input parameter), without pattern:
+
+```ruby
+assuming: "2007-12-03T10:15:30.00Z"           TZ = UTC
+           "2007-12-03T10:15:30.00"           TZ = ZoneId.systemDefault() instant
+           "2007-12-03T10:15:30.00-04"        TZ = "-04"
+           "2007-12-03T10:15:30.00+02:00"     TZ = "+02"
+           "2007-12-03T10:15:30.00+03:00:00"  TZ = "+03"
+```
 
 ```java
+var d = new Date("2023-08-06T04:04:05.123Z");        // TZ => "UTC"
+var iso = d.toISOString()                            //  return "2023-08-06T04:04:05.123Z"   ZoneId "UTC"
+```
+{: .copy-code}
+
+```java
+var d = new Date("2023-08-06T04:04:05.123");        // TZ => Default, ZoneId "Europe/Kiev" = "+03:00"
+var iso = d.toISOString()                            //  return "2023-08-06T01:04:05.123Z"   ZoneId  "Europe/Kiev" = "+03:00"
+```
+{: .copy-code}
+
+```java
+var d = new Date("2023-08-06T04:04:05.00-04");      //  TZ => "-04"
+var iso = d.toISOString()                            //  return "2023-08-06T08:04:05Z"   ZoneId "America/New_York" = "-04:00"
+```
+{: .copy-code}
+
+```java
+var d = new Date("2023-08-06T04:04:05.00+02:00");   //  TZ => "+02:00"
+var iso = d.toISOString()                            //  return "2023-08-06T02:04:05Z"   ZoneId "Europe/Berlin" = "+02:00"
+```
+{: .copy-code}
+
+```java
+var d = new Date("2023-08-06T04:04:05.00+03:00:00");   //  TZ => "+03:00:00"
+var iso = d.toISOString()                               //  return "2023-08-06T01:04:05Z"   ZoneId  "Europe/Kiev" = "+03:00"
+```
+{: .copy-code}
+
+```ruby
+assuming RFC-1123 value: "Tue, 3 Jun 2008 11:05:30 GMT"
+                         "Tue, 3 Jun 2008 11:05:30 +043056"
+                         "Tue, 3 Jun 2008 11:05:30 -0200"
+                         "Tue, 3 Jun 2008 11:05:30 -03"
+                         "Tue, 3 Jun 2008 11:05:30"
+```
+
+```java
+var d = new Date("Tue, 3 Jun 2008 11:05:30 GMT");   //  TZ => "GMT"
+var iso = d.toISOString()                            //  return "2008-06-03T11:05:30Z"   ZoneId  "GMT" = "0"
+```
+{: .copy-code}
+
+```java
+var d = new Date("Tue, 3 Jun 2008 11:05:30 +043056");   //  TZ => "+043056"
+var iso = d.toISOString()                                //  return "2008-06-03T06:34:34Z"   ZoneId  "????" = "+04:30:56"
+```
+{: .copy-code}
+
+```java
+var d = new Date("Tue, 3 Jun 2008 11:05:30");           //  TZ => Default, ZoneId "Europe/Kiev" = "+03:00"
+var iso = d.toISOString()                                //  return "2008-06-03T06:34:34Z"   ZoneId  "Europe/Kiev" = "+03:00"
+msg.dLocal = d.toLocaleString();                        //  return "2008-06-03 11:05:30"   
+```
+{: .copy-code}
+
+- Input data format: String + Pattern:
+
+```java
+var pattern = "yyyy-MM-dd HH:mm:ss.SSSXXX";
+var d = new Date("2023-08-06 04:04:05.000Z", pattern);        //  Pattern without TZ => "UTC"
+var iso = d.toISOString()                                      //  return "2008-06-03T08:05:30Z"    ZoneId "UTC" = "00:00"
+```
+{: .copy-code}
+
+
+```java
+var pattern = "yyyy-MM-dd HH:mm:ss.SSSXXX";
+var d = new Date("2023-08-06 04:04:05.000-04:00", pattern);   // Pattern with TZ => "-04:00"
+var iso = d.toISOString()                                      //  return "2023-08-06T08:04:05Z"    ZoneId "America/New_York" = "-04:00"
+```
+{: .copy-code}
+
+```java
+var pattern = "yyyy-MM-dd HH:mm:ss.SSS";
+var d = new Date("2023-08-06 04:04:05.000", pattern);         //  Pattern without TZ, TZ => Default, ZoneId "Europe/Kiev" = "+03:00"
+var iso = d.toISOString()                                      //  return "2023-08-06T08:04:05Z"    ZoneId  "Europe/Kiev" = "+03:00"
+```
+{: .copy-code}
+
+- Input data format: String + Pattern + Locale:
+
+```java
+var pattern = "hh:mm:ss a, EEE M/d/uuuu"
+var d = new Date("09:15:30 nachm., So. 10/09/2022", pattern, "de");         //  Pattern without TZ, TZ => Default, ZoneId "Europe/Kiev" = "+03:00"
+var iso = d.toISOString()                                                    //  return "2022-10-09T18:15:30Z"    ZoneId  "Europe/Kiev" = "+03:00"
+var local= d.toLocaleString("de")                                           //  return "09.10.22, 21:15:30"      
+```
+{: .copy-code}
+
+```java
+var pattern = "hh:mm:ss a, EEE M/d/uuuu"
+var d = new Date("02:15:30 PM, Sun 10/09/2022", pattern, "en-US");         //  Pattern without TZ, TZ => Default, ZoneId "Europe/Kiev" = "+03:00"
+var iso = d.toISOString()                                                   //  return "2022-10-09T11:15:30Z"    ZoneId  "Europe/Kiev" = "+03:00"
+var local = d.toLocaleString("en-US")                                      //  return "10/9/22, 2:15:30 PM"      
+```
+{: .copy-code}
+
+```java
+var pattern = "hh:mm:ss a, EEE M/d/uuuu"
+var d = new Date("02:15:30 PM, Sun 10/09/2022", pattern, "de");             //  return: error. The pattern with input parameter of date does not match the locale
+  
+```
+{: .copy-code}
+- Input data format: String + Pattern + Locale + Time Zone:
+
+```java
+var pattern = "hh:mm:ss a, EEE M/d/uuuu"
+var d = new Date("2023-08-06 04:04:05.000-04:00", pattern, "de", "Europe/Kiev");    // Pattern with TZ => "-04:00" but `Time Zone` as parameter = "Europe/Kiev" = "+03:00"
+var iso = d.toISOString()                                                            // return "2023-08-06T01:04:05Z"    ZoneId  "Europe/Kiev" = "+03:00"
+var local_de = d.toLocaleString("de")                                               // return "06.08.23, 04:04:05"     
+var local_us = d.toLocaleString("en-US")                                            // return "8/6/23, 4:04:05 AM"      
+```
+{: .copy-code}
+
+###### Ints (year, month and etc) with Optional: pattern, locale, time zone
+```java
 var d = new Date(2023, 8, 6, 4, 4, 5);
-var us = d.toLocaleString();     //  return "2023-08-06 04:04:05" (Locale: "UTC", ZoneId "Europe/Kiev")
+msg.dLocal = d.toLocaleString();        //  return "2023-08-06 04:04:05" (Locale: "UTC", ZoneId "Europe/Kiev")
+msg.dIso = d.toISOString();             //  return 2023-08-06T01:04:05Z"
+msg.dDate = d;                          //  return "неділя, 6 серпня 2023 р. о 04:04:05 за східноєвропейським літнім часом"
 ```
 {: .copy-code}
 
@@ -1128,12 +1309,30 @@ Time zone Id default: *ZoneId.systemDefault()*;
 a Date object as a string, using locale settings, time zone Id default: ZoneId.systemDefault().
 
 **Examples:**
-
+_Without TZ (TZ Default = ZoneId.systemDefault())_
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5);
-var us = d.toLocaleString("en-US");     //  return "8/6/23, 4:04:05 AM" (Locale: "en-US", ZoneId "Europe/Kiev")
+msg.dLocal = d.toLocaleString("en-US");         //  return "8/6/23, 4:04:05 AM" (Locale: "en-US", ZoneId "Europe/Kiev" = "+03:00")
+msg.dIso = d.toISOString();                     //  return "2023-08-06T01:04:05Z"
+msg.dDate = d;                                  //  return "неділя, 6 серпня 2023 р. о 04:04:05 за східноєвропейським літнім часом"
 ```
 {: .copy-code}
+        
+```java
+var d = new Date("2023-08-06T04:04:05.00");          //  Parameter (String 'yyyy-MM-ddThh:mm:ss.ms') => TZ Default = ZoneId.systemDefault():
+var iso = d.toISOString()                            //  return "2023-08-06T01:04:05Z"
+var local = d.toLocaleString("en-US");              //  return "8/6/23, 4:04:05 AM" (Locale: "en-US", ZoneId "Europe/Kiev" = "+03:00")
+```
+{: .copy-code}
+
+_With TZ (TZ = parameter TZ or 'Z' equals 'UTC')_
+```java
+var d = new Date(2023, 8, 6, 4, 4, 5. "Europe/Berlin"); //  Parameters (int year, int month, int dayOfMonth, int hours, int minutes, int seconds) => TZ Default = ZoneId.systemDefault()
+var iso = d.toISOString()                                //  return "2023-08-06T01:04:05Z"
+var local = d.toLocaleString("en-US");                  //  return "8/6/23, 4:04:05 AM" (Locale: "en-US", ZoneId "Europe/Kiev" = "+03:00")
+```
+{: .copy-code}
+
 
 ##### locale, time zone
 
@@ -1155,8 +1354,8 @@ a Date object as a string, using locale settings and Id time zone.
 
 ```java
 var d = new Date(2023, 8, 6, 4, 4, 5);
-var us = d.toLocaleDateString("UTC", "UTC");    // return "06.09.2023, 01:04:05" (Locale: "UTC", ZoneId: "UTC" (ZoneId "Europe/Kiev" = +03:00 (summer time zone id))
-var us = d.toLocaleDateString("en-US", "America/New_York");    // return "8/5/23, 9:04:05 PM" (Locale: "en-US", ZoneId: "America/New_York" (ZoneId "Europe/Kiev" +03:00, ZoneId "America/New_York" -04:00))
+var us = d.toLocaleString("UTC", "UTC");                   // return "2023-08-06 01:04:05" (Locale: "UTC", ZoneId: "UTC" (ZoneId "Europe/Kiev" = +03:00 (summer time zone id))
+var us = d.toLocaleString("en-US", "America/New_York");    // return "8/5/23, 9:04:05 PM" (Locale: "en-US", ZoneId: "America/New_York" (ZoneId "Europe/Kiev" +03:00, ZoneId "America/New_York" -04:00))
 ```
 {: .copy-code}
 
@@ -1182,7 +1381,17 @@ a Date object as a string, using locale settings, {"timeZone": "Id time zone",
 **Examples:**
 
 ```java
-var d = new Date(2023, 8, 6, 4, 4, 5);
+var d = new Date("2023-08-06T04:04:05.00Z");
+var options = {"timeZone":"America/New_York"};  // TZ = "-04:00"
+var optionsStr = JSON.stringify(options);
+msg.dLocal = d.toLocaleString("en-US", optionsStr);
+d.toISOString();                              // return "8/6/23, 12:04:05 AM" == "8/6/23, 00:04:05 AM"
+d.toISOString()                                // return "2023-08-06T04:04:05Z"
+```
+{: .copy-code}
+
+```java
+var d = new Date("2023-08-06T04:04:05.00Z");
 var options = {"timeZone":"America/New_York"};
 var optionsStr = JSON.stringify(options);
 d.toLocaleString("en-US", optionsStr);    // return "8/5/23, 9:04:05 PM"
