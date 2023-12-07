@@ -279,7 +279,7 @@ The null literal is denoted by the reserved keywords `null` or `nil`.
 
 #### Using Java Classes
 
-The TBEL implementation allows usage of **some** Java classes from the `java.util` and `java.lang` packages. For example:
+The TBEL implementation allows the usage of **some** Java classes from the `java.util` and `java.lang` packages. For example:
 
 ```java
 var foo = Math.sqrt(4);
@@ -345,7 +345,7 @@ list = new java.util.ArrayList(); // Not allowed
 ```
 {: .copy-code}
 
-To simplify migration from the JS, we have added the `JSON` class with static methods: `JSON.stringify` and `JSON.parse` that work similar to JS. For example:
+To simplify migration from the JS, we have added the `JSON` class with static methods: `JSON.stringify` and `JSON.parse` that work similarly to JS. For example:
 For the same purpose, we have added `Date` class that you are able to use without the package name.
  
 #### Flow Control
