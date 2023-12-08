@@ -4,7 +4,7 @@ title: Send email on alarm
 description: Send Email Workflow
 ---
 
-This Tutorial is to show you how to send an Email to the user using the Rule Engine. 
+This tutorial is to show you how to send an email to the user using the Rule Engine. 
 
 * TOC
 {:toc}
