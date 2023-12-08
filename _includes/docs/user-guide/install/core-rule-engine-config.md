@@ -3740,7 +3740,7 @@
 			<td>queue.prefix</td>
 			<td>TB_QUEUE_PREFIX</td>
 			<td></td>
-			<td> Global queue prefix. If specified, prefix is added before default topic name: 'prefix.default_topic_name'. Prefix is applied to all topics (and consumer groups for kafka) except of js executor topics (please use REMOTE_JS_EVAL_REQUEST_TOPIC and REMOTE_JS_EVAL_RESPONSE_TOPIC to specify custom topic names)</td>
+			<td> Global queue prefix. If specified, prefix is added before default topic name: 'prefix.default_topic_name'. Prefix is applied to all topics (and consumer groups for kafka).</td>
 		</tr>
 		<tr>
 			<td>queue.in_memory.stats.print-interval-ms</td>
