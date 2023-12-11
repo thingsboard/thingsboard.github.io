@@ -1,14 +1,14 @@
 ---
 layout: docwithnav-mqtt-broker
-title: Installing TBMQ using Docker (Linux or Mac OS)
-description: Installing TBMQ using Docker (Linux or Mac OS)
+title: Installing TBMQ using Docker (Windows)
+description: Installing TBMQ using Docker (Windows)
 
 ---
 
 * TOC
 {:toc}
 
-This guide will help you to install and start standalone TBMQ using Docker on Linux or Mac OS.
+This guide will help you to install and start standalone TBMQ using Docker on Windows.
 If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/mqtt-broker/install/cluster/docker-compose-setup/).
 
 ### Prerequisites
@@ -17,30 +17,24 @@ To run TBMQ on a single machine you will need at least 2Gb of RAM.
 
 - [Install Docker](https://docs.docker.com/engine/installation/)
 
-{% include templates/install/docker-install-note.md %}
-
 ### Installation
 
-Execute the following commands to download the script that will install and start TBMQ:
+Execute the following commands to download the script that will install and start TBMQ.
 
-```shell
-wget https://raw.githubusercontent.com/thingsboard/tbmq/{{ site.release.broker_branch }}/msa/tbmq/configs/tbmq-install-and-run.sh &&
-sudo chmod +x tbmq-install-and-run.sh && ./tbmq-install-and-run.sh
-```
-{: .copy-code}
+{% include templates/mqtt-broker/install/windows/windows-install.md %}
 
-The script downloads the _docker-compose.yml_ file, creates mounted directories, installs the database for TBMQ, and starts TBMQ.
+The script downloads the _docker-compose.yml_ file, creates necessary docker volumes, installs the database for TBMQ, and starts TBMQ.
 Key configuration points for TBMQ in docker-compose file:
 
 - `8083:8083` - connect local port 8083 to exposed internal HTTP port 8083
 - `1883:1883` - connect local port 1883 to exposed internal MQTT port 1883
-- `~/.tb-mqtt-broker-data/postgres:/var/lib/postgresql/data` - mounts the host's dir `~/.tb-mqtt-broker-data/postgres` to TBMQ DataBase data directory
-- `~/.tb-mqtt-broker-data/kafka:/kafka` - mounts the host's dir `~/.tb-mqtt-broker-data/kafka` to Kafka data directory
-- `~/.tb-mqtt-broker-data/log:/var/log/thingsboard-mqtt-broker` - mounts the host's dir `~/.tb-mqtt-broker-data/log` to TBMQ logs directory
-- `~/.tb-mqtt-broker-data/data:/data` - mounts the host's dir `~/.tb-mqtt-broker-data/data` to TBMQ data directory that contains _.firstlaunch_ file after the DB is installed
+- `tbmq-postgres-data:/var/lib/postgresql/data` - mounts the `tbmq-postgres-data` volume to TBMQ DataBase data directory
+- `tbmq-kafka-data:/bitnami/kafka` - mounts the `tbmq-kafka-data` volume to Kafka data directory
+- `tbmq-logs:/var/log/thingsboard-mqtt-broker` - mounts the `tbmq-logs` volume to TBMQ logs directory
+- `tbmq-data:/data` - mounts the `tbmq-data` volume to TBMQ data directory that contains _.firstlaunch_ file after the DB is installed
 - `tbmq` - friendly local name of this machine
 - `restart: always` - automatically start TBMQ in case of system reboot and restart in case of failure
-- `SECURITY_MQTT_BASIC_ENABLED: true` - enables MQTT basic security. **Note**: by default security is disabled
+- `SECURITY_MQTT_BASIC_ENABLED: "true"` - enables MQTT basic security. **Note**: by default security is disabled
 
 **Note**: In case the TBMQ is being installed on the same host where ThingsBoard is already running, the following issue can be seen:
 
@@ -52,7 +46,7 @@ In order to fix this, you need to expose another host's port for the TBMQ contai
 i.e. change the `1883:1883` line in the downloaded docker-compose.yml file with, for example, `1889:1883`. After that re-run the script.
 
 ```shell
-./tbmq-install-and-run.sh
+.\tbmq-install-and-run.ps1
 ```
 {: .copy-code}
 
@@ -89,14 +83,12 @@ docker compose start
 In order to update to the latest version, execute the following commands:
 
 ```shell
-wget https://raw.githubusercontent.com/thingsboard/tbmq/{{ site.release.broker_branch }}/msa/tbmq/configs/tbmq-upgrade.sh &&
-sudo chmod +x tbmq-upgrade.sh && ./tbmq-upgrade.sh
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/thingsboard/tbmq/main/msa/tbmq/configs/windows/tbmq-upgrade.ps1" `
+-OutFile ".\tbmq-upgrade.ps1"; .\tbmq-upgrade.ps1
 ```
 {: .copy-code}
 
 **NOTE**: replace `db_url`, `db_username`, and `db_password` variables in the script with the corresponding values used during DB initialization.
-
-**NOTE**: replace the host’s directory `data_dir` variable with the directory used during container creation.
 
 ### Next steps
 
