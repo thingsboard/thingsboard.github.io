@@ -26,15 +26,15 @@ Execute the following commands to download the script that will install and star
 The script downloads the _docker-compose.yml_ file, creates necessary docker volumes, installs the database for TBMQ, and starts TBMQ.
 Key configuration points for TBMQ in docker-compose file:
 
-- `8083:8083` - connect local port 8083 to exposed internal HTTP port 8083
-- `1883:1883` - connect local port 1883 to exposed internal MQTT port 1883
-- `tbmq-postgres-data:/var/lib/postgresql/data` - mounts the `tbmq-postgres-data` volume to TBMQ DataBase data directory
-- `tbmq-kafka-data:/bitnami/kafka` - mounts the `tbmq-kafka-data` volume to Kafka data directory
-- `tbmq-logs:/var/log/thingsboard-mqtt-broker` - mounts the `tbmq-logs` volume to TBMQ logs directory
-- `tbmq-data:/data` - mounts the `tbmq-data` volume to TBMQ data directory that contains _.firstlaunch_ file after the DB is installed
-- `tbmq` - friendly local name of this machine
-- `restart: always` - automatically start TBMQ in case of system reboot and restart in case of failure
-- `SECURITY_MQTT_BASIC_ENABLED: "true"` - enables MQTT basic security. **Note**: by default security is disabled
+- `8083:8083` - connect local port 8083 to exposed internal HTTP port 8083;
+- `1883:1883` - connect local port 1883 to exposed internal MQTT port 1883;
+- `tbmq-postgres-data:/var/lib/postgresql/data` - maps the `tbmq-postgres-data` volume to TBMQ DataBase data directory;
+- `tbmq-kafka-data:/bitnami/kafka` - maps the `tbmq-kafka-data` volume to Kafka data directory;
+- `tbmq-logs:/var/log/thingsboard-mqtt-broker` - maps the `tbmq-logs` volume to TBMQ logs directory;
+- `tbmq-data:/data` - maps the `tbmq-data` volume to TBMQ data directory that contains _.firstlaunch_ file after the DB is installed;
+- `tbmq` - friendly local name of this machine;
+- `restart: always` - automatically start TBMQ in case of system reboot and restart in case of failure;
+- `SECURITY_MQTT_BASIC_ENABLED: "true"` - enables MQTT basic security. **Note**: by default security is disabled.
 
 **Note**: In case the TBMQ is being installed on the same host where ThingsBoard is already running, the following issue can be seen:
 
