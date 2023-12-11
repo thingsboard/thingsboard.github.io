@@ -12,7 +12,7 @@ Create your own image gallery to use them for widget design and as images for da
 
 Get familiar with the image gallery interface to understand which features are responsible for what actions.
 
-The Image Gallery toolbar allows you to [upload image](#upload-image), [change the image viewing mode (list or grid)](#change-the-image-view-format), [include/exclude system images](#system-images), search images by name, and refresh window using the corresponding icons in the toolbar.
+The Image Gallery toolbar allows you to [upload image](#upload-image), [change the image viewing mode (list or grid)](#change-the-image-view-mode), [include/exclude system images](#system-images), search images by name, and refresh window using the corresponding icons in the toolbar.
 
 ### Upload image
 
@@ -70,21 +70,21 @@ The image in image file format will be saved to your PC.
 
 To edit an image, do the following:
 
-In the list view, click the "Edit Image" icon next to the name of the image you want to edit. In the grid view, hover your mouse cursor over the image you want to edit and click the "Export Image" button.
+ - In the list view, click the "Edit Image" icon next to the name of the image you want to edit. In the grid view, hover your mouse cursor over the image you want to edit and click the "Export Image" button.
  
-{% include images-gallery.html imageCollection="edit-image-1" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="edit-image-1"%}
 
-In the "Edit image" window, you can change the image's name, copy the image link, download, export, or update the image.
+ - In the "Edit image" window, you can change the image's name, copy the image link, download, export, or update the image.
 
-{% include images-gallery.html imageCollection="edit-image-2" showListImageTitles="true" %}
+{% include images-gallery.html imageCollection="edit-image-2"%}
 
 ### Delete image
 
-To delete an image in the image list view, do the following:
+To delete an image from the image list, follow these steps:
 
 {% include images-gallery.html imageCollection="delete-image-1" showListImageTitles="true" %}
 
-To delete an image in the image grid view, do the following:
+To delete an image that are displayed as an image grid, follow these steps:
 
 {% include images-gallery.html imageCollection="delete-image-2" showListImageTitles="true" %}
 
