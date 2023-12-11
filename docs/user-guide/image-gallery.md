@@ -60,16 +60,13 @@ export-image-1:
 edit-image-1:
     0:
         image: /images/user-guide/image-gallery/edit-image-1-pe.png
-        title: 'Click the "Edit image" icon opposite the image&#39;s name you want to edit;'
+        title: 'To edit an image in the list view, click the "Edit image" icon next to the name of the image you want to edit.'
     1:
-        image: /images/user-guide/image-gallery/edit-image-2-pe.png
-        title: 'In the "Edit Image" window, you can change the image&#39;s name, copy the image link, download, export, or update the image.'
+        image: /images/user-guide/image-gallery/edit-image-3-pe.png
+        title: 'In grid view, hover your mouse cursor over the image you want to edit and click the "Edit Image" button.'
 
 edit-image-2:
     0:
-        image: /images/user-guide/image-gallery/edit-image-3-pe.png
-        title: 'Hover your mouse over the image you want to edit and click the "Edit image" icon.'
-    1:
         image: /images/user-guide/image-gallery/edit-image-2-pe.png
         title: 'In the "Edit image" window, you can change the image&#39;s name, copy the image link, download, export, or update the image.'
 

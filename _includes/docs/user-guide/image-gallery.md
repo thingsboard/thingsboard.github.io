@@ -16,13 +16,13 @@ The Image Gallery toolbar allows you to [upload image](#upload-image), [change t
 
 ### Upload image
 
-You can upload your image in image file format (PNG, JPEG, GIF, etc.) and JSON format.
+You can upload your image in image file format (PNG, JPEG, GIF, etc.) and JSON file format.
 
-To upload your images in image file format, follow these steps:
+To upload your images in **image file format**, follow these steps:
 
 {% include images-gallery.html imageCollection="upload-image-1" showListImageTitles="true" %}
 
-To import your images in JSON file format, follow these steps:
+To import your images in **JSON file format**, follow these steps:
 
 {% include images-gallery.html imageCollection="upload-image-2" showListImageTitles="true" %}
 
@@ -70,25 +70,21 @@ The image in image file format will be saved to your PC.
 
 To edit an image, do the following:
 
- - If you're using the list view of images, click the "Edit image" icon opposite the image&#39;s name you want to edit.
-Or, if you're using the grid view, hover your mouse pointer over the image you want to edit and click the "Export image" button.
-- In the "Edit image" window, you can change the image's name, copy the image link, download, export, or update the image.
-- 
+In the list view, click the "Edit Image" icon next to the name of the image you want to edit. In the grid view, hover your mouse cursor over the image you want to edit and click the "Export Image" button.
+ 
 {% include images-gallery.html imageCollection="edit-image-1" showListImageTitles="true" %}
 
-In the image grid view:
+In the "Edit image" window, you can change the image's name, copy the image link, download, export, or update the image.
 
 {% include images-gallery.html imageCollection="edit-image-2" showListImageTitles="true" %}
 
 ### Delete image
 
-You can delete an image using one of the following ways.
-
-In the image list view:
+To delete an image in the image list view, do the following:
 
 {% include images-gallery.html imageCollection="delete-image-1" showListImageTitles="true" %}
 
-In the image grid view:
+To delete an image in the image grid view, do the following:
 
 {% include images-gallery.html imageCollection="delete-image-2" showListImageTitles="true" %}
 
