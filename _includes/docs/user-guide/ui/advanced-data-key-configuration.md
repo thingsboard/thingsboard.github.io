@@ -107,7 +107,7 @@ if (value == "true") {
 ```
 {: .copy-code}
 
-### Default column visibility 
+### Default column visibility
 
 The _"Default column visibility"_ function for the column allows you to choose whether the data key column will be visible on the widget or hidden.
 This is especially helpful when exporting a widget when you need to exclude a specific data key.
