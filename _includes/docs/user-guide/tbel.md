@@ -117,18 +117,17 @@ That is why TBEL allows only inline creation of maps. Most common operation with
 
 ```java
 // Create new map
-var map = { "temperature": 42, "nested" : {"rssi": 130}};
+var map = {"temperature": 42, "nested" : {"rssi": 130}};
 // Change value of the key
 map.temperature = 0;
-// Add new key
-map.humidity = 73;
+
 // Check existance of the key
 if(map.temperature != null){
-
+    // <you code>
 }
 // Null-Safe expressions using ?
 if(map.?nonExistingKey.smth > 10){
-
+        // <you code>
 }
 // Iterate through the map
 foreach(element : map.entrySet()){
@@ -137,12 +136,53 @@ foreach(element : map.entrySet()){
     // Get the value
     element.value;
 }
-// remove value from the map
-map.remove("temperature");
-// get map size
-map.size();
+
+// get Info
+var size = map.size()                           // return  2 
+var memorySize = map.memorySize()               // return 29 
+
+// add new Entry/(new key/mew value)
+var mapAdd = {"test": 12, "input" : {"http": 130}};       
+map.humidity = 73;                              // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}, "humidity": 73}
+map.put("humidity", 73);                        // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}, "humidity": 73}
+map.putIfAbsent("temperature1", 73);            // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}, "temperature1": 73}
+map.putAll(mapAdd);                             // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}, {"test": 12, "input" : {"http": 130}}}
+
+// change Value   
+map.temperature = 73;                                  // return nothing => map = {"temperature": 73, "nested" : {"rssi": 130}}        
+var put1 = map.put("temperature", 73)                  // return 42      => map = {"temperature": 73, "nested" : {"rssi": 130}}         
+var putIfAbsent1 = map.putIfAbsent("temperature", 73); // return 42      => map = {"temperature": 42, "nested" : {"rssi": 130}}       
+var replace = map.replace("temperature", 56);          // return 42      => map = {"temperature": 56, "nested" : {"rssi": 130}}       
+var replace1 = map.replace("temperature", 42, 56);     // return true    => map = {"temperature": 56, "nested" : {"rssi": 130}}       
+var replace3 = map.replace("temperature", 48, 56);     // return false   => map = {"temperature": 42, "nested" : {"rssi": 130}}       
+        
+// remove Entry from the map by key
+map.remove("temperature");                             // return nothing => map = {"nested" : {"rssi": 130}}
+
+// get Keys/Values  
+var keys = map.keys();                                 // return ["temperature", "nested"]       
+var values = map.values();                             // return [42, {"rssi": 130}]       
+        
+// sort
+var sortByKey = map.sortByKey();                       // return nothing => map = {"nested": {"rssi": 130}, "temperature": 42}                                       
+var sortByValue = map.sortByValue();                   // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}}
 ```
 {: .copy-code}
+
+In development: in our own Maps implementation, the *Tbel* library is planned to use additional methods:
+
+```java
+- slice()
+- slice(int start)
+- slice(int start, int end)
+- toSortedByValue()
+- toSortedByValue(asc)
+- toSortedByKey()
+- toSortedByKey(asc)
+- invert()
+- toInverted()
+- reverse()
+```
 
 #### Lists
 
@@ -154,21 +194,8 @@ That is why TBEL allows only inline creation of lists. For example:
 var list = ["A", "B", "C"];
 // List elelement access
 list[0];
-// Add element
-list.add("F");
-// Add element using index
-list.add(3, "D");
-// Remove element by index
-list.remove(4);
-// Remove element by value
-list.remove("D");
-// Set element using index
-list[2] = "C";
-list.set(2, "C");
 // Size of the list
 list.size();
-// Get sub list - JS style
-list.slice(1, 3);
 // Foreach 
 foreach (item: list) { 
     var smth = item;
@@ -179,6 +206,73 @@ for (int i =0; i < list.size; i++) {
 }
 ```
 {: .copy-code}
+
+In our own list implementation The *Tbel* library uses most of the standard JavaScript methods from the [JavaScript Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/concat).
+
+**Examples:**
+
+```java
+var list = ["A", "B", "C", "B", "C", "hello", 34567];
+var listAdd = [ "thigsboard", 4, 67];
+
+    // add/push
+var addAll = list.addAll(listAdd);         // return true    => list = ["A", "B", "C", "B", "C", "hello", 34567, "thigsboard", 4, 67]
+var addAllI = list.addAll(2, listAdd);     // return true    => list = ["A", "B", "thigsboard", 4, 67, "C", "B", "C", "hello", 34567]
+var add = list.add(3, "thigsboard");       // return true    => list = ["A", "B", "C", "thigsboard", "B", "C", "hello", 34567]
+var push = list.push("thigsboard");        // return true    => list = ["A", "B", "C", "B", "C", "hello", 34567, "thigsboard"]
+var unshift = list.unshift("Q", 4);        // return nothing => list = ["Q" "4", "A", "B", "C", "B", "C", "hello", 34567]
+
+    // delete  
+var removeI = list.remove(2);              // return "C"                           => list = ["A", "B", "B", "C", "hello", 34567]    
+var removeO = list.remove("C");            // return true                          => list = ["A", "B", "B", "C", "hello", 34567] 
+var shift = list.shift();                  // return "A"                           => list = ["B", "C", "B", "C", "hello", 34567]
+var pop = list.pop();                      // return "34567"                       => list = ["A", "B", "C", "B", "C", "hello"]
+var splice1 = list.splice(3)               // return ["B", "C", "hello", 34567]    => list = ["A", "B", "C"]
+var splice2 = list.splice(2, 2)            // return ["C", "B"]                    => list = ["A", "B", "C", "hello", 34567]
+var splice3 = list.splice(1, 4, "start", 5, "end") // return ["B", "C", "B", "C"]  => list = ["A", "start", 5, "end", "hello", 34567]
+        
+    // change
+var set = list.set(5, "thigs");            // return "hello" => list = ["A", "B", "C", "B", "C", "thigs", 34567]
+list[5] = "thigs";                         // return nothing => list = ["A", "B", "C", "B", "C", "thigs", 34567]          
+list.sort();                               // return nothing => list = [34567, "A", "B", "B", "C", "C", "hello"] (sort Asc)
+list.sort(true);                           // return nothing => list = [34567, "A", "B", "B", "C", "C", "hello"] (sort Asc)
+list.sort(false);                          // return nothing => list = ["hello", "C", "C", "B", "B", "A", 34567] (sort Desc)
+list.reverse();                            // return nothing => list = [34567, "hello", "C", "B", "C", "B", "A"]
+var fill = list.fill(67);                  // return new List [67, 67, 67, 67, 67, 67, 67] => list = [67, 67, 67, 67, 67, 67, 67]
+var fill = list.fill(67, 4);               // return new List ["A", "B", "C", "B", 67, 67, 67] => list = ["A", "B", "C", "B", 67, 67, 67]
+var fill = list.fill(67, 4, 6);            // return new List ["A", "B", "C", "B", 67, 67, 34567] => list = ["A", "B", "C", "B", 67, 67, 34567]
+        
+    // return new List/new String 
+var toSorted = list.toSorted();            // return new List [34567, "A", "B", "B", "C", "C", "hello"] (sort Asc) 
+var toSorted_true = list.toSorted(true);   // return new List [34567, "A", "B", "B", "C", "C", "hello"] (sort Asc)  
+var toSorted_false = list.toSorted(false); // return new List ["hello", "C", "C", "B", "B", "A", 34567] (sort Desc)
+var toReversed = list.toReversed();        // return new List [34567, "hello", "C", "B", "C", "B", "A"] 
+var slice = list.slice();                  // return new List ["A", "B", "C", "B", "C", "hello", 34567]  
+var slice4 = list.slice(4);                // return new List ["C", "hello", 34567]    
+var slice1_5 = list.slice(1,5);            // return new List ["B", "C", "B", "C"]   
+var with = list.with(1, 67);               // return new List ["A", 67, "B", "C", "B", "C", "hello", 34567] 
+var concat = list.concat(listAdd);         // return new List ["A", "B", "C", "B", "C", "hello", 34567, "thigsboard", 4, 67] 
+var join = list.join() ;                   // return new String "A,B,C,B,C,hello,34567"        
+var toSpliced1 = list.toSpliced(2)                       // return new List ["A", "B",]  
+var toSpliced2 = list.toSpliced(2, 4)                    // return new List ["A", "B", 34567]  
+var toSpliced3 = list.toSpliced(2, 4, "start", 5, "end") // return new List ["A", "B", "start", 5, "end", 34567] 
+
+    // get Info        
+var length = list.length()                  // return  7 
+var memorySize = list.memorySize()          // return 42 
+var indOf1 = list.indexOf("B", 1);          // return 1  
+var indOf2 = list.indexOf("B", 2);          // return 3  
+```
+{: .copy-code}
+
+{% capture difference %}
+**Note**:
+<br>
+*sort/toSorted* operations:
+- If the list consists only of a numeric value (12234 or a string in the form of a numeric value "12234") - the sort/toSorted... operation is used as a type of numeric value;
+- If the list consists of one or more non-numeric values ("123K45" or "FEB" or {345: "re56"}) - the sort/toSorted... operation is interpreted as sorting the String;
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 #### Arrays
 
