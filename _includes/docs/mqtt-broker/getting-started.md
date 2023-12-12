@@ -22,13 +22,13 @@ To obtain detailed instructions on how to install TBMQ on different platforms, w
 [**Installation options**](/docs/mqtt-broker/install/installation-options) documentation. 
 This resource will provide you with step-by-step guidance tailored to various deployment scenarios.
 
-For Linux users who have Docker installed, the execution of the following commands is recommended:
+Follow the below instructions depending on your system for quick TBMQ installation.
 
-```shell
-wget https://raw.githubusercontent.com/thingsboard/tbmq/{{ site.release.broker_branch }}/msa/tbmq/configs/tbmq-install-and-run.sh &&
-sudo chmod +x tbmq-install-and-run.sh && ./tbmq-install-and-run.sh
-```
-{: .copy-code}
+{% capture contenttogglespec %}
+Linux & Mac OS%,%linuxmacos%,%templates/mqtt-broker/install/linux-macos/linux-macos.md%br%
+Windows%,%windows%,%templates/mqtt-broker/install/windows/windows.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="tbmqGettingStartedInstallation" toggle-spec=contenttogglespec %}
 
 Once the installation process is complete for local deployment, you can access TBMQ UI by visiting the following URL: **http://localhost:8083**. 
 Wait patiently until the services are up and running. To log in, utilize the following default credentials.
@@ -68,20 +68,15 @@ A wider range of authentication methods can be found within the [security guide]
 Now, let's proceed with publishing messages and subscribing to topics to observe the flow of messages. In this tutorial, 
 we will utilize [Mosquitto](https://mosquitto.org/) clients for this purpose. 
 
-```bash
-sudo apt install -y mosquitto-clients
-```
-{: .copy-code}
-
 Please refer to the following links to learn how to [publish messages](https://mosquitto.org/man/mosquitto_pub-1.html) to a topic and
-[subscribe](https://mosquitto.org/man/mosquitto_sub-1.html) to topics in order to receive messages.
+[subscribe](https://mosquitto.org/man/mosquitto_sub-1.html) to topic filters in order to receive messages.
 
 #### Subscribe to topic
 
 To subscribe to the **sensors/temperature** topic and start receiving messages from TBMQ, you can utilize the following command:
 
 ```bash
-mosquitto_sub -d -h $THINGSBOARD_MQTT_BROKER_HOST_NAME -p 1883 -t sensors/temperature -q 1 -u username -P password
+mosquitto_sub -d -h $THINGSBOARD_MQTT_BROKER_HOST_NAME -p 1883 -t sensors/temperature -q 1 -u username -P password -i tbmq_dev
 ```
 {: .copy-code}
 
@@ -91,7 +86,7 @@ Kindly replicate the aforementioned process for publishing the message below.
 
 Use the following command for local deployment:
 ```bash
-mosquitto_sub -d -h localhost -p 1883 -t sensors/temperature -q 1 -u username -P password
+mosquitto_sub -d -h localhost -p 1883 -t sensors/temperature -q 1 -u username -P password -i tbmq_dev
 ```
 {: .copy-code}
 
