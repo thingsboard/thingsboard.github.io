@@ -12,7 +12,7 @@ Let’s setup our project:
 2. Install packages:
 
    ```bash
-   pip install tb-mqtt-client
+   pip3 install tb-mqtt-client
    ```
    {:.copy-code}
 
