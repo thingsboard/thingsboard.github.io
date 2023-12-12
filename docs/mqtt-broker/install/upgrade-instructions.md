@@ -25,7 +25,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/docker/#upgrading">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+                                                    <img width="" src="https://img.thingsboard.io/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
                                                  </div>
                                             </span>
                                         </a>
@@ -34,7 +34,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/docker-windows/#upgrading">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
+                                                    <img width="" src="https://img.thingsboard.io/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
                                                  </div>
                                             </span>
                                         </a>
@@ -43,7 +43,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/docker-compose-setup/#upgrading">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cluster/docker-compose.svg" title="Cluster setup with Docker Compose" alt="Cluster setup with Docker Compose">
+                                                    <img width="" src="https://img.thingsboard.io/install/cluster/docker-compose.svg" title="Cluster setup with Docker Compose" alt="Cluster setup with Docker Compose">
                                                  </div>
                                             </span>
                                         </a>
@@ -52,7 +52,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/minikube-cluster-setup/#upgrading">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cluster/minikube.svg" title="Cluster setup with Minikube" alt="Cluster setup with Minikube">
+                                                    <img width="" src="https://img.thingsboard.io/install/cluster/minikube.svg" title="Cluster setup with Minikube" alt="Cluster setup with Minikube">
                                                  </div>
                                             </span>
                                         </a>
@@ -61,7 +61,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/aws-cluster-setup/#upgrading">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/eks.svg" title="Cluster setup on EKS" alt="AWS K8S cluster">
+                                                    <img width="" src="https://img.thingsboard.io/install/cloud/eks.svg" title="Cluster setup on EKS" alt="AWS K8S cluster">
                                                  </div>
                                             </span>
                                         </a>
@@ -70,7 +70,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/azure-cluster-setup/#upgrading">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/azure.svg" title="Cluster setup on AKS" alt="Azure K8S cluster">
+                                                    <img width="" src="https://img.thingsboard.io/install/cloud/azure.svg" title="Cluster setup on AKS" alt="Azure K8S cluster">
                                                  </div>
                                             </span>
                                         </a>
