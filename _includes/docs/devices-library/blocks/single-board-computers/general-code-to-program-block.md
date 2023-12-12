@@ -136,7 +136,7 @@ Let’s setup our project:
    | THINGSBOARD_SERVER | **{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" %}thingsboard.cloud{% else %}demo.thingsboard.io{% endif %}** | Your ThingsBoard host or ip address. |
    | THINGSBOARD_PORT | **1883** | ThingsBoard server MQTT port. Can be default for this guide. |
 
-5. Click **Ctrl+X** and **Ctrl+O** keys to save the file.
+5. Click **Ctrl+O** and **Ctrl+X** keys to save the file.
 6. And finally, let’s start our script:
 
    ```bash
