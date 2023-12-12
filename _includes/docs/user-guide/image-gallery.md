@@ -4,23 +4,33 @@
 {% assign sinceVersion = "3.6.2" %}
 {% include templates/since.md %}
 
-Create your own image gallery to use them for widget design and as images for dashboard, device and asset profiles in the mobile application.
+The Image gallery serves as a centralized repository for storing and managing images. This is an important resource for improving the visual appeal and functionality of widgets, dashboards, devices, and asset profiles in a mobile application. 
+Users can easily upload, organize, and select images to customize their interface and user experience, ensuring an integrity and branded look across the platform.
 
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ![image](/images/user-guide/image-gallery/image-gallery-pe.png)
+{% endif %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/image-gallery/image-gallery-ce.png)
+{% endif %}
 
 ## Managing image gallery
 
-Get familiar with the image gallery interface to understand which features are responsible for what actions.
+Learn about the image gallery interface to identify the functionalities of various features.
 
-The Image Gallery toolbar allows you to [upload image](#upload-image), [change the image viewing mode (list or grid)](#change-the-image-view-mode), [include/exclude system images](#system-images), search images by name, and refresh window using the corresponding icons in the toolbar.
+The toolbar in the Image Gallery provides options to [upload images](#upload-image), [toggle between list and grid viewing modes](#change-the-image-view-mode), [filter system images](#system-images), search for images by name, and refresh the display, all accessible through specific icons on the toolbar.
 
-### Upload image
+### Add image
 
-You can upload your image in image file format (PNG, JPEG, GIF, etc.) and JSON file format.
+You can add your images to the Image gallery serves in [image file format](#upload-image) (PNG, JPEG, GIF, etc.) or [JSON file format](#import-image).
+
+#### Upload image
 
 To upload your images in **image file format**, follow these steps:
 
 {% include images-gallery.html imageCollection="upload-image-1" showListImageTitles="true" %}
+
+#### Import image
 
 To import your images in **JSON file format**, follow these steps:
 
@@ -58,7 +68,7 @@ The image in JSON format will be saved to your PC.
 
 ### Export image
 
-You can export an image as an image file format.
+You can export an image in an image file format.
 
 If you're using the list view of images, click the "Export image" icon next to the image name that you want to export.
 Or, if you're using the grid view, hover your mouse pointer over the image you want to export and click the "Export image" icon.
@@ -70,7 +80,7 @@ The image in image file format will be saved to your PC.
 
 To edit an image, do the following:
 
- - In the list view, click the "Edit Image" icon next to the name of the image you want to edit. In the grid view, hover your mouse cursor over the image you want to edit and click the "Export Image" button.
+ - In the list view, click the "Edit Image" icon next to the image name you want to edit. In the grid view, hover your mouse cursor over the image you want to edit and click the "Export Image" button.
  
 {% include images-gallery.html imageCollection="edit-image-1"%}
 
@@ -84,7 +94,7 @@ To delete an image from the image list, follow these steps:
 
 {% include images-gallery.html imageCollection="delete-image-1" showListImageTitles="true" %}
 
-To delete an image that are displayed as an image grid, follow these steps:
+To delete an image that is displayed as an image grid, follow these steps:
 
 {% include images-gallery.html imageCollection="delete-image-2" showListImageTitles="true" %}
 
