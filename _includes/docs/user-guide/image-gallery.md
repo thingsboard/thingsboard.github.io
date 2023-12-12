@@ -18,7 +18,7 @@ Users can easily upload, organize, and select images to customize their interfac
 
 Learn about the image gallery interface to identify the functionalities of various features.
 
-The toolbar in the Image Gallery provides options to [upload images](#upload-image), [toggle between list and grid viewing modes](#change-the-image-view-mode), [filter system images](#system-images), search for images by name, and refresh the display, all accessible through specific icons on the toolbar.
+The toolbar in the Image Gallery provides options to [upload images](#upload-image), [toggle between list and grid viewing modes](#change-the-image-view-mode), [filter system images](#system-images), search for images by name, and refresh the display. All accessible through specific icons on the toolbar.
 
 ### Add image
 
@@ -52,7 +52,7 @@ To view your and system images, enable the "Include system images" option.
 
 ## Image operations
 
-You can perform operations with images such as [downloading in a JSON format](#download-image), [exporting in an image file format](#export-image), and [editing](#edit-image) and [deleting](#delete-image) an image using the corresponding icon opposite the image's name.
+You can perform operations with images such as [downloading in a JSON format](#download-image), [exporting in an image file format](#export-image), as well as [editing](#edit-image) and [deleting](#delete-image) an image using the corresponding icon opposite the image's name.
 
 Let’s look at each operation.
 
@@ -80,7 +80,7 @@ The image in image file format will be saved to your PC.
 
 To edit an image, do the following:
 
- - In the list view, click the "Edit Image" icon next to the image name you want to edit. In the grid view, hover your mouse cursor over the image you want to edit and click the "Export Image" button.
+ - In the list view, click the "Edit image" icon next to the image name you want to edit. In the grid view, hover your mouse cursor over the image you want to edit and click the "Edit image" button.
  
 {% include images-gallery.html imageCollection="edit-image-1"%}
 
@@ -98,7 +98,7 @@ To delete an image that is displayed as an image grid, follow these steps:
 
 {% include images-gallery.html imageCollection="delete-image-2" showListImageTitles="true" %}
 
-You can also delete multiple images (only the image list view) at once:
+You can also delete multiple images (only via the image list view) at once:
 
 {% include images-gallery.html imageCollection="delete-image-3" showListImageTitles="true" %}
 

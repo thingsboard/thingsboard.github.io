@@ -9,7 +9,7 @@ upload-image-1:
         title: 'Go to the "Image gallery" page in the "Resources" section. Then, click the “Upload image” button in the top right corner of the screen;'
     1:
         image: /images/user-guide/image-gallery/upload-image-2-pe.png
-        title: 'In the upload window, upload an image and click "Upload";'
+        title: 'Select or drop image in the "Upload image" window and then click "Upload";'
     2:
         image: /images/user-guide/image-gallery/upload-image-3-pe.png
         title: 'The image has been uploaded.'
@@ -20,7 +20,7 @@ upload-image-2:
         title: 'Go to the "Image gallery" page in the "Resources" section. Then, click the "Import image" icon in the top right corner of the screen;'
     1:
         image: /images/user-guide/image-gallery/upload-image-5-pe.png
-        title: 'In the import window, upload an image JSON file and click "Import";'
+        title: 'In the "Import image" window, upload a JSON image file and click "Import";'
     2:
         image: /images/user-guide/image-gallery/upload-image-6-pe.png
         title: 'The image has been imported.'
