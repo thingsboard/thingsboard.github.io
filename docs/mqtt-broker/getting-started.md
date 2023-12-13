@@ -20,7 +20,7 @@ broker-mqtt-creds-creation:
         title: 'Input credentials name. For example, "Getting Started Credentials"'
     2:
         image: /images/mqtt-broker/getting-started/add-mqtt-creds-3.png
-        title: 'Input "clientID", "username" and "password" with chosen values. Click "Add" to save credentials'
+        title: 'Input "username" and "password" with chosen values. Click "Add" to save credentials'
 
 ---
 

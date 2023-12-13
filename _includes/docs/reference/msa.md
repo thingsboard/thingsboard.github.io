@@ -25,7 +25,7 @@ Each of the transport servers listed above communicates with the main ThingsBoar
 [Apache Kafka](https://kafka.apache.org) is a distributed, reliable and scalable persistent message queue and streaming platform.
 
 The messages that are sent to Kafka are serialized using [protocol buffers](https://developers.google.com/protocol-buffers/) 
-with the messages definition available [here](https://github.com/thingsboard/thingsboard/blob/master/common/transport/transport-api/src/main/proto/transport.proto).
+with the messages definition available [here](https://github.com/thingsboard/thingsboard/blob/master/common/proto/src/main/proto/transport.proto).
 
 **Note**: Starting v2.5, ThingsBoard PE is going to support alternative queue implementation: Amazon DynamoDB. See [roadmap](/docs/{{docsPrefix}}reference/roadmap) for more details.
  
