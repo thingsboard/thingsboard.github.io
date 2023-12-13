@@ -56,7 +56,10 @@ or
 [{"key1":"value1"}, {"key2":"value2"}]
 ```
 
+{% capture difference %}
 **Please note** that in this case, the server-side timestamp will be assigned to uploaded data!
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 In case your device is able to get the client-side timestamp, you can use following format:
 
@@ -68,13 +71,27 @@ In case your device is able to get the client-side timestamp, you can use follow
 In the example above, we assume that "1451649600512" is a [unix timestamp](https://en.wikipedia.org/wiki/Unix_time) with milliseconds precision.
 For example, the value '1451649600512' corresponds to 'Fri, 01 Jan 2016 12:00:00.512 GMT'
 
+<br>
+Let's see examples. 
+
+Use one of the files below:
+
 {% capture tabspec %}mqtt-telemetry-upload
-A,Mosquitto,shell,resources/mosquitto-telemetry.sh,/docs/reference/resources/mosquitto-telemetry.sh
-B,MQTT.js,shell,resources/mqtt-js-telemetry.sh,/docs/reference/resources/mqtt-js-telemetry.sh
-C,telemetry-data-as-object.json,json,resources/telemetry-data-as-object.json,/docs/reference/resources/telemetry-data-as-object.json
-D,telemetry-data-as-array.json,json,resources/telemetry-data-as-array.json,/docs/reference/resources/telemetry-data-as-array.json
-E,telemetry-data-with-ts.json,json,resources/telemetry-data-with-ts.json,/docs/reference/resources/telemetry-data-with-ts.json{% endcapture %}
+A,telemetry-data-as-object.json,json,resources/telemetry-data-as-object.json,/docs/reference/resources/telemetry-data-as-object.json
+B,telemetry-data-as-array.json,json,resources/telemetry-data-as-array.json,/docs/reference/resources/telemetry-data-as-array.json
+C,telemetry-data-with-ts.json,json,resources/telemetry-data-with-ts.json,/docs/reference/resources/telemetry-data-with-ts.json{% endcapture %}
 {% include tabs.html %}
+
+Now, send PUBLISH message to run the appropriate command.
+Don't forget replace **demo.thingsboard.io** with your host and **$ACCESS_TOKEN** with your device's access token. In this example, hostname reference live demo server.
+
+{% capture tabspec %}mqtt-telemetry-upload-api
+A,Mosquitto,shell,resources/mosquitto-telemetry.sh,/docs/reference/resources/mosquitto-telemetry.sh
+B,MQTT.js,shell,resources/mqtt-js-telemetry.sh,/docs/reference/resources/mqtt-js-telemetry.sh{% endcapture %}
+{% include tabs.html %}
+
+
+
 
  
 ## Attributes API
@@ -136,8 +153,11 @@ B,mqtt-js-attributes-request.js,javascript,resources/mqtt-js-attributes-request.
 C,Result,json,resources/attributes-response.json,/docs/reference/resources/attributes-response.json{% endcapture %}
 {% include tabs.html %}
 
+{% capture difference %}
 **Please note**, the intersection of client-side and shared device attribute keys is a bad practice! 
 However, it is still possible to have same keys for client, shared or even server-side attributes.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ##### Subscribe to attribute updates from the server
 
@@ -285,8 +305,11 @@ The supported data format is:
 {"secretKey":"value", "durationMs":60000}
 ```
 
+{% capture difference %}
 **Please note** that the above fields are optional. In case the **secretKey** is not specified, the empty string as a default value is used.
 In case the **durationMs** is not specified, the system parameter **device.claim.duration** is used (in the file **/etc/thingsboard/conf/thingsboard.yml**).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ## Device provisioning
 
