@@ -27,7 +27,7 @@ Also, for boards, based on ESP8266 chip we should install the "mbedtls" library.
 {% assign mbedtlsInstallation='
     ===
         image: /images/devices-library/basic/arduino-ide/install-mbedtls.png,
-        title: Put into library search field "**mbetls**" and install the library - "***Seeed_Arduino_mbedtls by Peter Yang***"
+        title: Put into library search field "**mbedtls**" and install the library - "***Seeed_Arduino_mbedtls by Peter Yang***"
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=mbedtlsInstallation %}
