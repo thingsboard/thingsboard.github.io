@@ -319,7 +319,7 @@ helm repo update
 To install Bitnami Kafka execute the following command:
 
 ```bash
-helm install kafka -f kafka/values-kafka.yml bitnami/kafka --version 21.4.4
+helm install kafka -f kafka/values-kafka.yml bitnami/kafka --version 25.3.3
 ```
 {: .copy-code}
 
@@ -504,6 +504,8 @@ git pull origin {{ site.release.broker_branch }}
 {: .copy-code}
 
 **Note**: Make sure custom changes of yours if available are not lost during the merge process.
+
+{% include templates/mqtt-broker/install/upgrade-hint.md %}
 
 After that execute the following commands:
 

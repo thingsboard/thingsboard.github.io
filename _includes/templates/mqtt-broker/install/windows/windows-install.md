@@ -21,7 +21,7 @@ Set-ExecutionPolicy Unrestricted
 * **Install TBMQ**
 
 ```bash
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/thingsboard/tbmq/main/msa/tbmq/configs/windows/tbmq-install-and-run.ps1" `
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/thingsboard/tbmq/{{ site.release.broker_branch }}/msa/tbmq/configs/windows/tbmq-install-and-run.ps1" `
 -OutFile ".\tbmq-install-and-run.ps1"; .\tbmq-install-and-run.ps1
 ```
 {: .copy-code}
