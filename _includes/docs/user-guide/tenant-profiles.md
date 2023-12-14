@@ -102,7 +102,7 @@ The dashboard below allows Tenant Administrators to learn more about their hourl
 
 ### Files limits
 
-The System Administrator can configure the maximum size of an individual file, the maximum total size of image files in the "[Image gallery](/docs/{{docsPrefix}}user-guide/image-gallery/) and resource files in the "Resource Library," as well as the maximum total size of [OTA package files](/docs/{{docsPrefix}}user-guide/ota-updates/) that the platform can store in the database.
+The System Administrator can configure the maximum size of an individual file, the maximum total size of image files in the "[Image gallery](/docs/{{docsPrefix}}user-guide/image-gallery/)" and resource files in the "Resource Library," as well as the maximum total size of [OTA package files](/docs/{{docsPrefix}}user-guide/ota-updates/) that the platform can store in the database.
 
 Values are specified in **bytes**.
 
