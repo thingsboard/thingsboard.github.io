@@ -159,6 +159,7 @@ var replace3 = map.replace("temperature", 48, 56);     // return false   => map 
 // remove Entry from the map by key
 map.remove("temperature");                             // return nothing => map = {"nested" : {"rssi": 130}}
 
+        
 // get Keys/Values  
 var keys = map.keys();                                 // return ["temperature", "nested"]       
 var values = map.values();                             // return [42, {"rssi": 130}]       
