@@ -30,7 +30,7 @@ Possible return codes, and their reasons during connect sequence:
 The alternative authentication option is to use [X.509 Certificates](/docs/{{docsPrefix}}user-guide/certificates/) or [Basic MQTT Credentials](/docs/{{docsPrefix}}user-guide/basic-mqtt/) - combination of client id, username and password.
 
 Now you are ready to publish telemetry data on behalf of your device.
-We will use simple commands to publish data over HTTP or MQTT in this example.
+We will use simple commands to publish data over MQTT in this example. Select your OS:
 
 {% capture connectdevicetogglespec %}
 MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/helloworld-pe/mqtt-linux.md%br%
