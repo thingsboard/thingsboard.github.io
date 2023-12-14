@@ -14,6 +14,15 @@ Users can easily upload, organize, and select images to customize their interfac
 ![image](/images/user-guide/image-gallery/image-gallery-ce.png)
 {% endif %}
 
+## Configuration
+
+Images are cached in the browser, and by default browser will make a request to ThingsBoard for each loaded image to verify that the cached version is up to date.
+If your images are not updated frequently, you might configure cache control for system or/and tenant images for faster image loading.
+To do so, specify CACHE_SPECS_IMAGE_SYSTEM_BROWSER_TTL and CACHE_SPECS_IMAGE_TENANT_BROWSER_TTL environment variables (+ link to yml config description).
+This parameters are defined in **thingsboard.yml** (CACHE_SPECS_IMAGE_SYSTEM_BROWSER_TTL and CACHE_SPECS_IMAGE_TENANT_BROWSER_TTL)
+
+The system administrator can also set limits on the maximum size of an individual file and the total size of image files by configuring the [Tenant profiles](/docs/{{docsPrefix}}user-guide/tenant-profiles/).
+
 ## Managing image gallery
 
 Learn about the image gallery interface to identify the functionalities of various features.
