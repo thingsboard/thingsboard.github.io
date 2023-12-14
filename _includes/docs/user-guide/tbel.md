@@ -141,7 +141,7 @@ foreach(element : map.entrySet()){
 var size = map.size()                           // return  2 
 var memorySize = map.memorySize()               // return 29 
 
-// add new Entry/(new key/mew value)
+// add new Entry/(new key/new value)
 var mapAdd = {"test": 12, "input" : {"http": 130}};       
 map.humidity = 73;                              // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}, "humidity": 73}
 map.put("humidity", 73);                        // return nothing => map = {"temperature": 42, "nested" : {"rssi": 130}, "humidity": 73}
@@ -158,7 +158,6 @@ var replace3 = map.replace("temperature", 48, 56);     // return false   => map 
         
 // remove Entry from the map by key
 map.remove("temperature");                             // return nothing => map = {"nested" : {"rssi": 130}}
-
         
 // get Keys/Values  
 var keys = map.keys();                                 // return ["temperature", "nested"]       
