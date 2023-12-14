@@ -8,6 +8,21 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
+## v1.2.1 (December 13, 2023)
+
+Minor release with the following features and improvements.
+
+**Main features:**
+
+* [#84](https://github.com/thingsboard/tbmq/pull/84) MQTT 5: Payload format and Content types;
+* [#86](https://github.com/thingsboard/tbmq/pull/86) Client sessions limits.
+
+**Improvements:**
+
+* Core and install scripts:
+
+  * [#87](https://github.com/thingsboard/tbmq/pull/87) Installation scripts enhancements.
+
 ## v1.2.0 (November 21, 2023)
 
 Minor release with the following features, improvements, and bug fixes.
