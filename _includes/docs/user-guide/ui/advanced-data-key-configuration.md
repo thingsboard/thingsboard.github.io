@@ -15,10 +15,10 @@ All other widget bundles have only [basic data key configuration](/docs/{{docsPr
 To enter a data key configuration, click the pencil icon on the specific data key you want to adjust.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/widgets/advanced-data-key/enter-data-key-configuration-ce.png)
+![image](https://img.thingsboard.io/user-guide/widgets/advanced-data-key/enter-data-key-configuration-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/widgets/advanced-data-key/enter-data-key-configuration-pe.png)
+![image](https://img.thingsboard.io/user-guide/widgets/advanced-data-key/enter-data-key-configuration-pe.png)
 {% endif %}
 
 ## Advanced data key configuration
