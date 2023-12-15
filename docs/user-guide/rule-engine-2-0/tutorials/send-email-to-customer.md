@@ -1,18 +1,19 @@
 ---
 layout: docwithnav
-title: Send Email to Customer
+title: Send email to Customer
 description: Send Email Workflow
 
 ---
 
-This Tutorial is to show you how to send an Email to the customer using the Rule Engine.
+This tutorial is to show you how to send an email to the customer using the Rule Engine.
 
 * TOC
 {:toc}
 
-#### **Note:**
- This tutorial is based on the [send email on alarm](/docs/user-guide/rule-engine-2-0/tutorials/send-email/#use-case) tutorial and it's use case. We will reuse the rule chains from the above-mentioned tutorial and will add a few more rule nodes to send email to the customer of the assigned device.
-<br>
+{% capture difference %}
+**Note:** this tutorial is based on the [send email on alarm](/docs/user-guide/rule-engine-2-0/tutorials/send-email/#use-case) tutorial and it's use case. We will reuse the rule chains from the above-mentioned tutorial and will add a few more rule nodes to send email to the customer of the assigned device.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ## Use case
 
@@ -77,7 +78,7 @@ In this section, we explain the purpose of each node that was added or modified 
   - This node will be used for taking address server scope attribute of the originator (device is an originator of the incoming message) and save it in the Message Metadata.
 - Node C: [**To Email**](/docs/user-guide/rule-engine-2-0/transformation-nodes/#to-email-node) node.
   - This node builds actual email from the configured template.
-- Node D: **Rule Chain** node.
+- Node D: [**Rule Chain**](/docs/user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node) node.
   - Forwards incoming Message to specified Rule Chain **Create/Clear Alarm & Send Email to Customer**.
 
 <br>

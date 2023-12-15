@@ -1,7 +1,7 @@
 {% assign boardLedCount = 1 %}
 {% assign hasCamera = "true" %}
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
-{% assign arduinoBoardPath = "**M5Stack** > **M5Stack-Timer-CAM**" %}
+{% assign arduinoBoardPath = "**M5Stack** > **M5TimerCAM** (Or M5Stack-Timer-CAM in older ESP-IDF versions)" %}
 {% assign prerequisites = "
 - [" | append: deviceName | append: "](https://shop.m5stack.com/collections/m5-cameras/products/esp32-psram-timer-camera-x-ov3660)
 - [Arduino IDE](https://www.arduino.cc/en/software)"

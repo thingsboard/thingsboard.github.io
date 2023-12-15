@@ -83,7 +83,7 @@ docker compose start
 In order to update to the latest version, execute the following commands:
 
 ```shell
-Invoke-WebRequest -Uri "https://raw.githubusercontent.com/thingsboard/tbmq/main/msa/tbmq/configs/windows/tbmq-upgrade.ps1" `
+Invoke-WebRequest -Uri "https://raw.githubusercontent.com/thingsboard/tbmq/{{ site.release.broker_branch }}/msa/tbmq/configs/windows/tbmq-upgrade.ps1" `
 -OutFile ".\tbmq-upgrade.ps1"; .\tbmq-upgrade.ps1
 ```
 {: .copy-code}

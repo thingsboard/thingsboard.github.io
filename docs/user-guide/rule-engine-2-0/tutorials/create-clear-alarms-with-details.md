@@ -36,7 +36,7 @@ In this section, we explain the purpose of each node in this tutorial:
   - Creates or Updates an  alarm if the published temperature is not at expected time range (filter script node returns True).
 - Node B: [**Clear alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) node.
   - Clears alarm if it exists in case if the published temperature is in expected time range (script node returns False).
-- Node C: **Rule Chain** node.
+- Node C: [**Rule Chain**](/docs/user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node) node.
   - Forwards incoming Message to specified Rule Chain **Create & Clear Alarms with details**.
 
 <br>
