@@ -30,9 +30,9 @@ The following diagram shows the pivotal parts of the broker and the route of mes
 
 Within the ThingsBoard company, our extensive expertise and clear understanding of diverse IoT requirements and use cases have 
 helped us to identify two main scenarios in which our clients develop their solutions. 
-The first scenario describes numerous devices generating a substantial volume of messages that are consumed by specific applications, resulting in a fan-in pattern. 
+In the first scenario, numerous devices are generating a substantial volume of messages that are consumed by specific applications, resulting in a fan-in pattern. 
 On the other hand, the second scenario involves numerous devices subscribing to specific updates or notifications.
-This leads to a few incoming requests that require a high volume of outgoing data, known as a fan-out pattern. 
+This leads to a few incoming requests that cause a high volume of outgoing data. This case is known as a fan-out pattern. 
 Acknowledging these scenarios, we intentionally designed TBMQ to be exceptionally well-suited for both.
 
 Our design principles focused on ensuring the broker's fault tolerance and high availability.
