@@ -498,7 +498,7 @@ services:
     entrypoint: upgrade-tb-edge.sh
   postgres:
     restart: always
-    image: "postgres:12"
+    image: "postgres:15"
     ports:
       - "5432"
     environment:
@@ -793,7 +793,7 @@ services:
     entrypoint: upgrade-tb-edge.sh
   postgres:
     restart: always
-    image: "postgres:12"
+    image: "postgres:15"
     ports:
       - "5432"
     environment:
@@ -975,7 +975,7 @@ services:
     entrypoint: upgrade-tb-edge.sh
   postgres:
     restart: always
-    image: "postgres:12"
+    image: "postgres:15"
     ports:
       - "5432"
     environment:
@@ -1157,7 +1157,7 @@ services:
     entrypoint: upgrade-tb-edge.sh
   postgres:
     restart: always
-    image: "postgres:12"
+    image: "postgres:15"
     ports:
       - "5432"
     environment:
@@ -1338,7 +1338,7 @@ services:
     entrypoint: upgrade-tb-edge.sh
   postgres:
     restart: always
-    image: "postgres:12"
+    image: "postgres:15"
     ports:
       - "5432"
     environment:
@@ -1518,7 +1518,7 @@ services:
     entrypoint: upgrade-tb-edge.sh
   postgres:
     restart: always
-    image: "postgres:12"
+    image: "postgres:15"
     ports:
       - "5432"
     environment:
@@ -1698,7 +1698,7 @@ services:
     entrypoint: upgrade-tb-edge.sh
   postgres:
     restart: always
-    image: "postgres:12"
+    image: "postgres:15"
     ports:
       - "5432"
     environment:
