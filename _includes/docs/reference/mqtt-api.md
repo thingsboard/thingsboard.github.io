@@ -29,6 +29,14 @@ Possible return codes, and their reasons during connect sequence:
 
 The alternative authentication option is to use [X.509 Certificates](/docs/{{docsPrefix}}user-guide/certificates/) or [Basic MQTT Credentials](/docs/{{docsPrefix}}user-guide/basic-mqtt/) - combination of client id, username and password.
 
+Now you are ready to publish telemetry data on behalf of your device.
+We will use simple commands to publish data over MQTT in this example. Select your OS:
+
+{% capture connectdevicetogglespec %}
+MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/helloworld-pe/mqtt-linux.md%br%
+MQTT<small>Windows</small>%,%mqtt-windows%,%templates/helloworld-pe/mqtt-windows.md{% endcapture %}
+{% include content-toggle.html content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec %}
+
 {% include templates/api/key-value-format.md %}
 
 However, it is also possible to send data via [Protocol Buffers](https://developers.google.com/protocol-buffers).
@@ -68,32 +76,109 @@ In case your device is able to get the client-side timestamp, you can use follow
 {"ts":1451649600512, "values":{"key1":"value1", "key2":"value2"}}
 ```
 
-In the example above, we assume that "1451649600512" is a [unix timestamp](https://en.wikipedia.org/wiki/Unix_time) with milliseconds precision.
-For example, the value '1451649600512' corresponds to 'Fri, 01 Jan 2016 12:00:00.512 GMT'
+Where **1451649600512** is a [unix timestamp](https://en.wikipedia.org/wiki/Unix_time) with milliseconds precision. For example, the value '1451649600512' corresponds to 'Fri, 01 Jan 2016 12:00:00.512 GMT'
 
 <br>
-Let's see examples. 
+Below are examples of commands for publishing different types of telemetry data.
 
-Use one of the files below:
+{% if docsPrefix == null %}
+Don't forget replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
+{% endif %}
+{% if docsPrefix == "paas/" %}
+Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token.
+{% endif %}
+{% if docsPrefix == "edge/" %}
+Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
+{% endif %}
 
-{% capture tabspec %}mqtt-telemetry-upload
-A,telemetry-data-as-object.json,json,resources/telemetry-data-as-object.json,/docs/reference/resources/telemetry-data-as-object.json
-B,telemetry-data-as-array.json,json,resources/telemetry-data-as-array.json,/docs/reference/resources/telemetry-data-as-array.json
-C,telemetry-data-with-ts.json,json,resources/telemetry-data-with-ts.json,/docs/reference/resources/telemetry-data-with-ts.json{% endcapture %}
-{% include tabs.html %}
+**Example 1**. Publish data as an object without timestamp (server-side timestamp will be used). 
 
-Now, send PUBLISH message to run the appropriate command.
-Don't forget replace **demo.thingsboard.io** with your host and **$ACCESS_TOKEN** with your device's access token. In this example, hostname reference live demo server.
+Execute the command:
 
 {% capture tabspec %}mqtt-telemetry-upload-api
 A,Mosquitto,shell,resources/mosquitto-telemetry.sh,/docs/reference/resources/mosquitto-telemetry.sh
 B,MQTT.js,shell,resources/mqtt-js-telemetry.sh,/docs/reference/resources/mqtt-js-telemetry.sh{% endcapture %}
 {% include tabs.html %}
 
+Telemetry data:
 
+```json
+{"temperature":42}
+```
 
+**Example 2**. Publish data as an object without timestamp (server-side timestamp will be used) using data from [**telemetry-data-as-object.json**](/docs/reference/resources/telemetry-data-as-object.json) file.
 
- 
+Execute the command:
+
+{% capture tabspec %}mqtt-telemetry-upload-api-data-as-object
+A,Mosquitto,shell,resources/mosquitto-telemetry-data-as-object.sh,/docs/reference/resources/mosquitto-telemetry-data-as-object.sh
+B,MQTT.js,shell,resources/mqtt-js-telemetry-data-as-object.sh,/docs/reference/resources/mqtt-js-telemetry-data-as-object.sh{% endcapture %}
+{% include tabs.html %}
+
+The content of the JSON file:
+
+```json
+{
+  "stringKey": "value1",
+  "booleanKey": true,
+  "doubleKey": 42.0,
+  "longKey": 73,
+  "jsonKey": {
+    "someNumber": 42,
+    "someArray": [1,2,3],
+    "someNestedObject": {"key": "value"}
+  }
+}
+```
+
+**Example 3**. Publish data as an array of objects without timestamp (server-side timestamp will be used) using data from [**telemetry-data-as-array.json**](/docs/reference/resources/telemetry-data-as-array.json) file.
+
+Execute the command:
+
+{% capture tabspec %}mqtt-telemetry-upload-api-data-as-array
+A,Mosquitto,shell,resources/mosquitto-telemetry-data-as-array.sh,/docs/reference/resources/mosquitto-telemetry-data-as-array.sh
+B,MQTT.js,shell,resources/mqtt-js-telemetry-data-as-array.sh,/docs/reference/resources/mqtt-js-telemetry-data-as-array.sh{% endcapture %}
+{% include tabs.html %}
+
+The content of the JSON file:
+
+```json
+[{"key1":"value1"}, {"key2":true}]
+```
+
+**Example 4**. Publish data as an object with timestamp (telemetry timestamp will be used) using data from [**telemetry-data-with-ts.json**](/docs/reference/resources/telemetry-data-with-ts.json) file.
+
+Execute the command:
+
+{% capture tabspec %}mqtt-telemetry-upload-api-data-with-ts
+A,Mosquitto,shell,resources/mosquitto-telemetry-data-with-ts.sh,/docs/reference/resources/mosquitto-telemetry-data-with-ts.sh
+B,MQTT.js,shell,resources/mqtt-js-telemetry-data-with-ts.sh,/docs/reference/resources/mqtt-js-telemetry-data-with-ts.sh{% endcapture %}
+{% include tabs.html %}
+
+The content of the JSON file:
+
+```json
+{
+  "ts": 1451649600512,
+  "values": {
+    "stringKey": "value1",
+    "booleanKey": true,
+    "doubleKey": 42.0,
+    "longKey": 73,
+    "jsonKey": {
+      "someNumber": 42,
+      "someArray": [1, 2, 3],
+      "someNestedObject": {
+        "key": "value"
+      }
+    }
+  }
+}
+```
+
 ## Attributes API
 
 ThingsBoard attributes API allows devices to
@@ -111,11 +196,87 @@ v1/devices/me/attributes
 ```
 {: .copy-code}
 
+Below are examples to publish client-side device attributes.
+
+{% if docsPrefix == null %}
+Don't forget replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
+
+**Example 1**. Publish client-side attributes update.
+
+Execute the command:
+
+```shell
+mosquitto_pub -d -h "demo.thingsboard.io" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "pe/" %}
+Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
+
+**Example 1**. Publish client-side attributes update.
+
+Execute the command:
+
+```shell
+mosquitto_pub -d -h "$THINGSBOARD_HOST_NAME" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "paas/" %}
+Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token.
+
+**Example 1**. Publish client-side attributes update.
+
+Execute the command:
+
+```shell
+mosquitto_pub -d -h "mqtt.thingsboard.cloud" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "edge/" %}
+Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
+
+**Example 1**. Publish client-side attributes update.
+
+Execute the command:
+
+```shell
+mosquitto_pub -d -h "$THINGSBOARD_EDGE_HOST_NAME" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
+```
+{: .copy-code}
+{% endif %}
+
+Telemetry data:
+
+```json
+{"attribute1": "value1", "attribute2": true}
+```
+
+**Example 2**. Publish client-side attributes update using data from [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json) file.
+
+Execute the command:
+
 {% capture tabspec %}mqtt-attributes-upload
 A,Mosquitto,shell,resources/mosquitto-attributes-publish.sh,/docs/reference/resources/mosquitto-attributes-publish.sh
-B,MQTT.js,shell,resources/mqtt-js-attributes-publish.sh,/docs/reference/resources/mqtt-js-attributes-publish.sh
-C,new-attributes-values.json,json,resources/new-attributes-values.json,/docs/reference/resources/new-attributes-values.json{% endcapture %}
+B,MQTT.js,shell,resources/mqtt-js-attributes-publish.sh,/docs/reference/resources/mqtt-js-attributes-publish.sh{% endcapture %}
 {% include tabs.html %}
+
+The content of the JSON file:
+
+```json
+{
+  "attribute1": "value1",
+  "attribute2": true,
+  "attribute3": 42.0,
+  "attribute4": 73,
+  "attribute5": {
+    "someNumber": 42,
+    "someArray": [1,2,3],
+    "someNestedObject": {"key": "value"}
+  }
+}
+```
 
 ##### Request attribute values from the server
 
@@ -136,15 +297,19 @@ The following example is written in javascript and is based on mqtt.js.
 Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
 
 {% if docsPrefix == null %}
-Replace $ACCESS_TOKEN with your device's access token. And don't forget to replace hostname "demo.thingsboard.io" to your host in the "mqtt-js-attributes-request.js" file.
+Replace $ACCESS_TOKEN with your device's access token. And don't forget to replace hostname "demo.thingsboard.io" to your host in the "[mqtt-js-attributes-request.js](/docs/reference/resources/mqtt-js-attributes-request.js)" file.
 In this example, hostname reference live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Replace $ACCESS_TOKEN with your device's access token. And don't forget to replace hostname "127.0.0.1" to your host in the "mqtt-js-attributes-request.js" file.
+Replace $ACCESS_TOKEN with your device's access token. And don't forget to replace hostname "127.0.0.1" to your host in the "[mqtt-js-attributes-request.js](/docs/reference/resources/mqtt-js-attributes-request.js)" file.
 In this example, hostname reference your local installation.
 {% endif %}
 {% if docsPrefix == 'paas/' %}
 Replace $ACCESS_TOKEN with your device's access token.
+{% endif %}
+{% if docsPrefix == "edge/" %}
+Replace $ACCESS_TOKEN with your device's access token. And don't forget to replace hostname "127.0.0.1" to your host in the "[mqtt-js-attributes-request.js](/docs/reference/resources/mqtt-js-attributes-request.js)" file.
+In this example, hostname reference your local installation.
 {% endif %}
 
 {% capture tabspec %}mqtt-attributes-request
@@ -152,6 +317,43 @@ A,MQTT.js,shell,resources/mqtt-js-attributes-request.sh,/docs/reference/resource
 B,mqtt-js-attributes-request.js,javascript,resources/mqtt-js-attributes-request.js,/docs/reference/resources/mqtt-js-attributes-request.js
 C,Result,json,resources/attributes-response.json,/docs/reference/resources/attributes-response.json{% endcapture %}
 {% include tabs.html %}
+
+Execute the command:
+
+```shell
+export TOKEN=$ACCESS_TOKEN
+node mqtt-js-attributes-request.js
+```
+{: .copy-code}
+
+The content of the "mqtt-js-attributes-request.js" file:
+
+```js
+var mqtt = require('mqtt')
+var client  = mqtt.connect('mqtt://demo.thingsboard.io',{
+    username: process.env.TOKEN
+})
+
+client.on('connect', function () {
+    console.log('connected')
+    client.subscribe('v1/devices/me/attributes/response/+')
+    client.publish('v1/devices/me/attributes/request/1', '{"clientKeys":"attribute1,attribute2", "sharedKeys":"shared1,shared2"}')
+})
+
+client.on('message', function (topic, message) {
+    console.log('response.topic: ' + topic)
+    console.log('response.body: ' + message.toString())
+    client.end()
+})
+```
+{: .copy-code}
+
+Result:
+
+```text
+{"client":{"attribute1":"value1","attribute2":true}}
+```
+
 
 {% capture difference %}
 **Please note**, the intersection of client-side and shared device attribute keys is a bad practice! 
