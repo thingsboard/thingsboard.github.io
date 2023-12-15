@@ -66,7 +66,7 @@ In this section, we explain the purpose of each node in this tutorial:
   - Loads the latest Alarm with configured Alarm Type for Message Originator **Smoke Detector** and Clears the Alarm if it exists.  
 - Node G: [**Create alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) node.
   - Tries to load the latest Alarm with configured Alarm Type for Message Originator, namely **Smoke Detector**.  
-- Node H: **Rule Chain** node.
+- Node H: [**Rule Chain**](/docs/user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node) node.
   - Forwards incoming Message to specified Rule Chain **Related Fire Alarm System**. 
 
 <br>
