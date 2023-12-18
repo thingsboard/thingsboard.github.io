@@ -211,7 +211,7 @@ mosquitto_pub -d -h "demo.thingsboard.io" -t "v1/devices/me/attributes" -u "$ACC
 {: .copy-code}
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
+Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 
 **Example 1**. Publish client-side attributes update.
 
@@ -235,9 +235,15 @@ mosquitto_pub -d -h "mqtt.thingsboard.cloud" -t "v1/devices/me/attributes" -u "$
 {: .copy-code}
 {% endif %}
 {% if docsPrefix == "edge/" %}
-Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
+Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 
 **Example 1**. Publish client-side attributes update.
+
+Telemetry data:
+
+```json
+{"attribute1": "value1", "attribute2": true}
+```
 
 Execute the command:
 
@@ -247,22 +253,9 @@ mosquitto_pub -d -h "$THINGSBOARD_EDGE_HOST_NAME" -t "v1/devices/me/attributes" 
 {: .copy-code}
 {% endif %}
 
-Telemetry data:
-
-```json
-{"attribute1": "value1", "attribute2": true}
-```
-
 **Example 2**. Publish client-side attributes update using data from [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json) file.
 
-Execute the command:
-
-{% capture tabspec %}mqtt-attributes-upload
-A,Mosquitto,shell,resources/mosquitto-attributes-publish.sh,/docs/reference/resources/mosquitto-attributes-publish.sh
-B,MQTT.js,shell,resources/mqtt-js-attributes-publish.sh,/docs/reference/resources/mqtt-js-attributes-publish.sh{% endcapture %}
-{% include tabs.html %}
-
-The content of the JSON file:
+The content of the **"new-attributes-values.json"** file:
 
 ```json
 {
@@ -278,6 +271,13 @@ The content of the JSON file:
 }
 ```
 
+Execute the command:
+
+{% capture tabspec %}mqtt-attributes-upload
+A,Mosquitto,shell,resources/mosquitto-attributes-publish.sh,/docs/reference/resources/mosquitto-attributes-publish.sh
+B,MQTT.js,shell,resources/mqtt-js-attributes-publish.sh,/docs/reference/resources/mqtt-js-attributes-publish.sh{% endcapture %}
+{% include tabs.html %}
+
 ##### Request attribute values from the server
 
 In order to request client-side or shared device attributes to ThingsBoard server node, send PUBLISH message to the following topic:
@@ -285,6 +285,7 @@ In order to request client-side or shared device attributes to ThingsBoard serve
 ```shell
 v1/devices/me/attributes/request/$request_id
 ```
+{: .copy-code}
 
 where **$request_id** is your integer request identifier.
 Before sending PUBLISH message with the request, client need to subscribe to 
@@ -297,54 +298,27 @@ The following example is written in javascript and is based on mqtt.js.
 Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
 
 {% if docsPrefix == null %}
-Replace $ACCESS_TOKEN with your device's access token. And don't forget to replace hostname "demo.thingsboard.io" to your host in the "[mqtt-js-attributes-request.js](/docs/reference/resources/mqtt-js-attributes-request.js)" file.
-In this example, hostname reference live demo server.
+Save the "[mqtt-js-attributes-request.js](/docs/reference/resources/mqtt-js-attributes-request.js)" file to your PC. Don't forget to replace hostname "<code>demo.thingsboard.io</code>" to your host. In this example, hostname reference live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Replace $ACCESS_TOKEN with your device's access token. And don't forget to replace hostname "127.0.0.1" to your host in the "[mqtt-js-attributes-request.js](/docs/reference/resources/mqtt-js-attributes-request.js)" file.
-In this example, hostname reference your local installation.
+Save the "[mqtt-js-attributes-request.js](/docs/pe/reference/resources/mqtt-js-attributes-request.js)" file to your PC. Don't forget to replace hostname "<code>127.0.0.1</code>" to your host. In this example, hostname reference your local installation.
 {% endif %}
 {% if docsPrefix == 'paas/' %}
-Replace $ACCESS_TOKEN with your device's access token.
+Save the "[mqtt-js-attributes-request.js](/docs/paas/reference/resources/mqtt-js-attributes-request.js)" file to your PC.
 {% endif %}
 {% if docsPrefix == "edge/" %}
-Replace $ACCESS_TOKEN with your device's access token. And don't forget to replace hostname "127.0.0.1" to your host in the "[mqtt-js-attributes-request.js](/docs/reference/resources/mqtt-js-attributes-request.js)" file.
-In this example, hostname reference your local installation.
+Save the "[mqtt-js-attributes-request.js](/docs/edge/reference/resources/mqtt-js-attributes-request.js)" file to your PC. Don't forget to replace hostname "<code>localhost</code>" to your host. In this example, hostname reference your local installation.
 {% endif %}
 
 {% capture tabspec %}mqtt-attributes-request
-A,MQTT.js,shell,resources/mqtt-js-attributes-request.sh,/docs/reference/resources/mqtt-js-attributes-request.sh
-B,mqtt-js-attributes-request.js,javascript,resources/mqtt-js-attributes-request.js,/docs/reference/resources/mqtt-js-attributes-request.js
-C,Result,json,resources/attributes-response.json,/docs/reference/resources/attributes-response.json{% endcapture %}
+A,The content of the "mqtt-js-attributes-request.js" file:,javascript,resources/mqtt-js-attributes-request.js,/docs/reference/resources/mqtt-js-attributes-request.js{% endcapture %}
 {% include tabs.html %}
 
-Execute the command:
+Execute the command. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 
 ```shell
 export TOKEN=$ACCESS_TOKEN
 node mqtt-js-attributes-request.js
-```
-{: .copy-code}
-
-The content of the "mqtt-js-attributes-request.js" file:
-
-```js
-var mqtt = require('mqtt')
-var client  = mqtt.connect('mqtt://demo.thingsboard.io',{
-    username: process.env.TOKEN
-})
-
-client.on('connect', function () {
-    console.log('connected')
-    client.subscribe('v1/devices/me/attributes/response/+')
-    client.publish('v1/devices/me/attributes/request/1', '{"clientKeys":"attribute1,attribute2", "sharedKeys":"shared1,shared2"}')
-})
-
-client.on('message', function (topic, message) {
-    console.log('response.topic: ' + topic)
-    console.log('response.body: ' + message.toString())
-    client.end()
-})
 ```
 {: .copy-code}
 
@@ -353,7 +327,6 @@ Result:
 ```text
 {"client":{"attribute1":"value1","attribute2":true}}
 ```
-
 
 {% capture difference %}
 **Please note**, the intersection of client-side and shared device attribute keys is a bad practice! 
@@ -368,12 +341,28 @@ In order to subscribe to shared device attribute changes, send SUBSCRIBE message
 ```shell
 v1/devices/me/attributes
 ```
+{: .copy-code}
 
 When a shared attribute is changed by one of the server-side components (such as the REST API or the Rule Chain), the client will receive the following update: 
 
 ```json
 {"key1":"value1"}
 ```
+
+{% if docsPrefix == null %}
+For the following example, don't forget replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+For the following example, don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
+{% endif %}
+{% if docsPrefix == "paas/" %}
+For the following example, don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token.
+{% endif %}
+{% if docsPrefix == "edge/" %}
+For the following example, don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
+{% endif %}
+
+Execute the command:
 
 {% capture tabspec %}mqtt-attributes-subscribe
 A,Mosquitto,shell,resources/mosquitto-attributes-subscribe.sh,/docs/reference/resources/mosquitto-attributes-subscribe.sh
@@ -393,6 +382,7 @@ In order to subscribe to RPC commands from the server, send SUBSCRIBE message to
 ```shell
 v1/devices/me/rpc/request/+
 ```
+{: .copy-code}
 
 Once subscribed, the client will receive individual commands as a PUBLISH message to the corresponding topic:
 
@@ -412,31 +402,40 @@ The following example is written in javascript and is based on mqtt.js.
 Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
 
 {% if docsPrefix == null %}
-Don't forget to replace $ACCESS_TOKEN with your device's access token. And replace hostname "demo.thingsboard.io" to your host in the "mqtt-js-rpc-from-server.js" file.
+Save the "[mqtt-js-rpc-from-server.js](/docs/reference/resources/mqtt-js-rpc-from-server.js)" file to your PC. Don't forget to replace hostname "<code>demo.thingsboard.io</code>" to your host.
 In this example, hostname reference live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Don't forget to replace $ACCESS_TOKEN with your device's access token. And replace hostname "127.0.0.1" to your host in the "mqtt-js-rpc-from-server.js" file.
+Save the "[mqtt-js-rpc-from-server.js](/docs/pe/reference/resources/mqtt-js-rpc-from-server.js)" file to your PC. Don't forget to replace hostname "<code>127.0.0.1</code>" to your host.
 In this example, hostname reference your local installation.
 {% endif %}
-{% if docsPrefix == 'paas/' %}
-Replace $ACCESS_TOKEN with your device's access token.
+{% if docsPrefix == "paas/" %}
+Save the "[mqtt-js-rpc-from-server.js](/docs/paas/reference/resources/mqtt-js-rpc-from-server.js)" file to your PC.
+{% endif %}
+{% if docsPrefix == "edge/" %}
+Save the "[mqtt-js-rpc-from-server.js](/docs/edge/reference/resources/mqtt-js-rpc-from-server.js)" file to your PC. Don't forget to replace hostname "<code>localhost</code>" to your host.
+In this example, hostname reference your local installation.
 {% endif %}
 
-- Use **RPC debug terminal** dashboard;
+{% capture tabspec %}mqtt-rpc-from-server
+A,The content of the "mqtt-js-rpc-from-server.js" file,javascript,resources/mqtt-js-rpc-from-server.js,/docs/reference/resources/mqtt-js-rpc-from-server.js{% endcapture %}  
+{% include tabs.html %}
 
-- Subscribe to RPC commands from the server;
+Now, follow these steps:
+
+- Use **RPC debug terminal** dashboard;
+- Execute the command to subscribe to RPC commands from the server. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
+
+```shell
+export TOKEN=$ACCESS_TOKEN
+node mqtt-js-rpc-from-server.js
+```
+{: .copy-code}
 
 - Send an RPC request "connect" to the device;
-
 - You should receive a response from the device.
 
 {% include images-gallery.html imageCollection="server-side-rpc" %}
-
-{% capture tabspec %}mqtt-rpc-from-server
-A,MQTT.js,shell,resources/mqtt-js-rpc-from-server.sh,/docs/reference/resources/mqtt-js-rpc-from-server.sh
-B,mqtt-js-rpc-from-server.js,javascript,resources/mqtt-js-rpc-from-server.js,/docs/reference/resources/mqtt-js-rpc-from-server.js{% endcapture %}  
-{% include tabs.html %}
 
 In case your MQTT device is a gateway, ThingsBoard will send a server-side RPC (notification) about changes on provisioned device entities.  
 Your MQTT gateway device will receive a service RPC about removal or renaming of device to [properly resolve such events](/docs/iot-gateway/how-device-removing-renaming-works/). 
@@ -448,6 +447,7 @@ In order to send RPC commands to server, send PUBLISH message to the following t
 ```shell
 v1/devices/me/rpc/request/$request_id
 ```
+{: .copy-code}
 
 where **$request_id** is an integer request identifier.
 The response from server will be published to the following topic:
@@ -460,19 +460,28 @@ The following example is written in javascript and is based on mqtt.js.
 Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
 
 {% if docsPrefix == null %}
-Don't forget to replace $ACCESS_TOKEN with your device's access token. And replace hostname "demo.thingsboard.io" to your host in the "mqtt-js-rpc-from-server.js" file.
+Save the "[mqtt-js-rpc-from-client.js](/docs/reference/resources/mqtt-js-rpc-from-client.js)" file to your PC. Don't forget to replace hostname "<code>demo.thingsboard.io</code>" to your host.
 In this example, hostname reference live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Don't forget to replace $ACCESS_TOKEN with your device's access token. And replace hostname "127.0.0.1" to your host in the "mqtt-js-rpc-from-server.js" file.
+Save the "[mqtt-js-rpc-from-client.js](/docs/pe/reference/resources/mqtt-js-rpc-from-client.js)" file to your PC. Don't forget to replace hostname "<code>127.0.0.1</code>" to your host.
 In this example, hostname reference your local installation.
 {% endif %}
-{% if docsPrefix == 'paas/' %}
-Don't forget to replace $ACCESS_TOKEN with your device's access token.
+{% if docsPrefix == "paas/" %}
+Save the "[mqtt-js-rpc-from-client.js](/docs/paas/reference/resources/mqtt-js-rpc-from-client.js)" file to your PC.
+{% endif %}
+{% if docsPrefix == "edge/" %}
+Save the "[mqtt-js-rpc-from-client.js](/docs/edge/reference/resources/mqtt-js-rpc-from-client.js)" file to your PC. Don't forget to replace hostname "<code>localhost</code>" to your host.
+In this example, hostname reference your local installation.
 {% endif %}
 
-- Add two nodes to the Rule Chain: "script" and "rpc call reply";
+{% capture tabspec %}mqtt-rpc-from-client
+A,The content of the "mqtt-js-rpc-from-client.js" file,javascript,resources/mqtt-js-rpc-from-client.js,/docs/reference/resources/mqtt-js-rpc-from-client.js{% endcapture %}
+{% include tabs.html %}
 
+Now, follow these steps:
+
+- Add two nodes to the Rule Chain: "script" and "rpc call reply";
 - In the **script** node enter the function:
 
 ```shell
@@ -480,16 +489,18 @@ return {msg: {time:String(new Date())}, metadata: metadata, msgType: msgType};
 ```
 {: .copy-code}
 
-- Send request to the server;
+- Send request to the server. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
+
+```shell
+export TOKEN=$ACCESS_TOKEN
+node mqtt-js-rpc-from-client.js
+```
+{: .copy-code}
 
 - You should receive a response from the server.
 
 {% include images-gallery.html imageCollection="client-side-rpc" %}
 
-{% capture tabspec %}mqtt-rpc-from-client
-A,example.sh,shell,resources/mqtt-js-rpc-from-client.sh,/docs/reference/resources/mqtt-js-rpc-from-client.sh
-B,mqtt-js-rpc-from-client.js,javascript,resources/mqtt-js-rpc-from-client.js,/docs/reference/resources/mqtt-js-rpc-from-client.js{% endcapture %}
-{% include tabs.html %}
 
 ## Claiming devices
 
@@ -500,6 +511,7 @@ In order to initiate claiming device, send PUBLISH message to the following topi
 ```shell
 v1/devices/me/claim
 ```
+{: .copy-code}
 
 The supported data format is:
 
@@ -522,6 +534,7 @@ In order to initiate device provisioning, send Provisioning request to the follo
 ```shell
 /provision
 ```
+{: .copy-code}
 
 Also, you should set **username** or **clientId** to *provision*.
 
