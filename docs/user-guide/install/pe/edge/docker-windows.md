@@ -21,11 +21,7 @@ This guide will help you to install and start ThingsBoard Edge using Docker on W
 
 ## Installation and Configuration
 
-### Step 1. Pull ThingsBoard Edge Images
-
-{% include templates/edge/install/pull-images.md %}
-
-### Step 2. Running ThingsBoard Edge
+### Step 1. Running ThingsBoard Edge
 
 {% include templates/edge/install/docker-images-location.md %}
 
@@ -50,7 +46,7 @@ docker-compose.yml
 {: .copy-code}
 
 ```yml
-version: '3.0'
+version: '3.8'
 services:
   mytbedge:
     restart: always
@@ -64,14 +60,14 @@ services:
       EDGE_LICENSE_INSTANCE_DATA_FILE: /data/instance-edge-license.data
       CLOUD_ROUTING_KEY: PUT_YOUR_EDGE_KEY_HERE # e.g. 19ea7ee8-5e6d-e642-4f32-05440a529015
       CLOUD_ROUTING_SECRET: PUT_YOUR_EDGE_SECRET_HERE # e.g. bztvkvfqsye7omv9uxlp
-      CLOUD_RPC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.250 or thingsboard.cloud
+      CLOUD_RPC_HOST: PUT_YOUR_CLOUD_IP # e.g. 192.168.1.1 or thingsboard.cloud
       CLOUD_RPC_SSL_ENABLED: 'false' # set it to 'true' if you are connecting edge to thingsboard.cloud
     volumes:
       - mytb-edge-data:/data
       - mytb-edge-logs:/var/log/tb-edge
   postgres:
     restart: always
-    image: "postgres:12"
+    image: "postgres:15"
     ports:
       - "5432"
     environment:
@@ -106,11 +102,11 @@ VBoxManage controlvm "default" natpf1 "tcp-port5683,tcp,,5683,,5683"
 Where:
 - `C:\Program Files\Oracle\VirtualBox` - path to your VirtualBox installation directory
 
-### Step 3. Open ThingsBoard Edge UI
+### Step 2. Open ThingsBoard Edge UI
 
 {% include templates/edge/install/open-edge-ui.md %}
 
-### Step 4. Detaching, stop and start commands
+### Step 3. Detaching, stop and start commands
 
 {% assign serviceName = "tbedge" %}
 {% assign serviceFullName = "ThingsBoard Edge" %}
