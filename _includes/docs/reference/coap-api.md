@@ -54,7 +54,7 @@ Using custom binary format or some serialization framework is also possible. See
 
 In order to publish telemetry data to ThingsBoard server node, send POST request to the following URL:
 
-{% if docsPrefix == null or docsPrefix == "pe/" %}
+{% if (docsPrefix == null) or (docsPrefix == "pe/") %}
 ```shell
 coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry
 ```
@@ -73,7 +73,6 @@ coap://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry
 {: .copy-code}
 
 {% endif %}
-
 {% if docsPrefix == "paas/" %}
 
 ```shell
@@ -110,16 +109,87 @@ In case your device is able to get the client-side timestamp, you can use follow
 {"ts":1451649600512, "values":{"key1":"value1", "key2":"value2"}}
 ```
 
-In the example above, we assume that "1451649600512" is a [unix timestamp](https://en.wikipedia.org/wiki/Unix_time) with milliseconds precision.
-For example, the value '1451649600512' corresponds to 'Fri, 01 Jan 2016 12:00:00.512 GMT'
+Where **1451649600512** is a [unix timestamp](https://en.wikipedia.org/wiki/Unix_time) with milliseconds precision. For example, the value '1451649600512' corresponds to 'Fri, 01 Jan 2016 12:00:00.512 GMT'.
+
+<br>
+Below are examples of commands for publishing different types of telemetry data.
+
+{% if docsPrefix == null %}
+Don't forget replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
+{% endif %}
+{% if docsPrefix == "pe/" %}
+Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
+{% endif %}
+{% if docsPrefix == "paas/" %}
+Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token.
+{% endif %}
+{% if docsPrefix == "edge/" %}
+Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
+{% endif %}
+
+**Example 1**. Publish data as an object without timestamp (server-side timestamp will be used) using data from [**telemetry-data-as-object.json**](/docs/reference/resources/telemetry-data-as-object.json) file.
 
 {% capture tabspec %}coap-telemetry-upload
-A,Example,shell,resources/coap-telemetry.sh,/docs/reference/resources/coap-telemetry.sh
-B,telemetry-data-as-object.json,json,resources/telemetry-data-as-object.json,/docs/reference/resources/telemetry-data-as-object.json
-C,telemetry-data-as-array.json,json,resources/telemetry-data-as-array.json,/docs/reference/resources/telemetry-data-as-array.json
-D,telemetry-data-with-ts.json,json,resources/telemetry-data-with-ts.json,/docs/reference/resources/telemetry-data-with-ts.json{% endcapture %}
+A,Execute the command:,shell,resources/coap-telemetry.sh,/docs/reference/resources/coap-telemetry.sh{% endcapture %}
 {% include tabs.html %}
 
+The content of the JSON file:
+
+```json
+{
+  "stringKey": "value1",
+  "booleanKey": true,
+  "doubleKey": 42.0,
+  "longKey": 73,
+  "jsonKey": {
+    "someNumber": 42,
+    "someArray": [1,2,3],
+    "someNestedObject": {"key": "value"}
+  }
+}
+```
+{: .copy-code}
+
+**Example 2**. Publish data as an array of objects without timestamp (server-side timestamp will be used) using data from [**telemetry-data-as-array.json**](/docs/reference/resources/telemetry-data-as-array.json) file.
+
+{% capture tabspec %}coap-telemetry-upload-data-as-array
+A,Execute the command:,shell,resources/coap-telemetry-data-as-array.sh,/docs/reference/resources/coap-telemetry-data-as-array.sh{% endcapture %}
+{% include tabs.html %}
+
+The content of the JSON file:
+
+```json
+[{"key1":"value1"}, {"key2":true}]
+```
+{: .copy-code}
+
+**Example 3**. Publish data as an object with timestamp (telemetry timestamp will be used) using data from [**telemetry-data-with-ts.json**](/docs/reference/resources/telemetry-data-with-ts.json) file.
+
+{% capture tabspec %}coap-telemetry-upload-data-with-ts
+A,Execute the command:,shell,resources/coap-telemetry-data-with-ts.sh,/docs/reference/resources/coap-telemetry-data-with-ts.sh{% endcapture %}
+{% include tabs.html %}
+
+The content of the JSON file:
+
+```json
+{
+  "ts": 1451649600512,
+  "values": {
+    "stringKey": "value1",
+    "booleanKey": true,
+    "doubleKey": 42.0,
+    "longKey": 73,
+    "jsonKey": {
+      "someNumber": 42,
+      "someArray": [1, 2, 3],
+      "someNestedObject": {
+        "key": "value"
+      }
+    }
+  }
+}
+```
+{: .copy-code}
 
 ## Attributes API
 
@@ -165,9 +235,26 @@ Where **$ACCESS_TOKEN** - device access token.
 
 {% endif %}
 
+Publish client-side attributes update using data from [**new-attributes-values.json**](/docs/reference/resources/new-attributes-values.json) file.
+
+The content of the **"new-attributes-values.json"** file:
+
+```json
+{
+  "attribute1": "value1",
+  "attribute2": true,
+  "attribute3": 42.0,
+  "attribute4": 73,
+  "attribute5": {
+    "someNumber": 42,
+    "someArray": [1,2,3],
+    "someNestedObject": {"key": "value"}
+  }
+}
+```
+
 {% capture tabspec %}coap-attributes-upload
-A,Example,shell,resources/coap-attributes-publish.sh,/docs/reference/resources/coap-attributes-publish.sh
-B,new-attributes-values.json,json,resources/new-attributes-values.json,/docs/reference/resources/new-attributes-values.json{% endcapture %}
+A,Execute the command:,shell,resources/coap-attributes-publish.sh,/docs/reference/resources/coap-attributes-publish.sh{% endcapture %}
 {% include tabs.html %}
 
 ##### Request attribute values from the server
@@ -200,7 +287,6 @@ coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribu
 {: .copy-code}
 
 Where **$ACCESS_TOKEN** - device access token.
-
 {% endif %}
 
 {% capture difference %}
@@ -211,9 +297,14 @@ This example shown with the coap-client instead of CoAP cli since CoAP cli does 
 {% include templates/info-banner.md content=difference %}
 
 {% capture tabspec %}coap-attributes-request
-A,Example,shell,resources/coap-attributes-request.sh,/docs/reference/resources/coap-attributes-request.sh
-B,Result,json,resources/attributes-response.json,/docs/reference/resources/attributes-response.json{% endcapture %}
+A,Execute the command:,shell,resources/coap-attributes-request.sh,/docs/reference/resources/coap-attributes-request.sh{% endcapture %}
 {% include tabs.html %}
+
+Result:
+
+```shell
+{"client":{"attribute1":"value1","attribute2":true}}
+```
 
 {% capture difference %}
 **Please note:**
@@ -258,9 +349,14 @@ Where **$ACCESS_TOKEN** - device access token.
 Once shared attribute will be changed by one of the server-side components (REST API or Rule Chain) the client will receive the following update: 
 
 {% capture tabspec %}coap-attributes-subscribe
-A,Example,shell,resources/coap-attributes-subscribe.sh,/docs/reference/resources/coap-attributes-subscribe.sh
-B,Result,json,resources/attributes-response.json,/docs/reference/resources/attributes-response.json{% endcapture %}
+A,Execute the command:,shell,resources/coap-attributes-subscribe.sh,/docs/reference/resources/coap-attributes-subscribe.sh{% endcapture %}
 {% include tabs.html %}
+
+Result:
+
+```shell
+{"client":{"attribute1":"value1","attribute2":true}}
+```
 
 ## JSON value support
 
@@ -313,7 +409,7 @@ Once subscribed, a client may receive rpc requests. An example of RPC request bo
 }
 ```
 
-where
+Where
 
  - **id** - request id, integer request identifier;
  - **method** - RPC method name, string;
@@ -343,28 +439,78 @@ coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc/{$id}
 
 {% endif %}
 
-Where **$id** is an integer request identifier.
+Where 
+ - **$id** is an integer request identifier.
+
 <br>
-<br>
-**Let’s look at an example:**
+**Let's look at an example**:
 
-- Use **RPC debug terminal** dashboard;
+- Use **RPC debug terminal** widget in your ThingsBoard instance;
 
-- Subscribe to RPC commands from the server. To do this, in the first terminal window send GET request with observe flag;
+{% if docsPrefix == null or docsPrefix == "pe/" %}
+- Subscribe to RPC commands from the server using the command below. To do this, in the first terminal window send GET request with observe flag. Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
 
-- Send an RPC request "connect" to the device;
+```shell
+coap-client -m get coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc -s 100 -B 100
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "paas/" %}
+- Subscribe to RPC commands from the server using the command below. Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token:
 
-- In the second terminal window simulate send a response from the device to the server;
+```shell
+coap-client -m get coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc -s 100 -B 100
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "edge/" %}
+- Subscribe to RPC commands from the server using the command below. Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
 
-- You should receive a response from the device: {"result":"ok"}
+```shell
+coap-client -m get coap://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc -s 100 -B 100
+```
+{: .copy-code}
+{% endif %}
+
+{% capture difference %}
+The "`s`" option stands for subscribe and the value has to be specified in seconds.
+
+The "`B`" options stands for break (the operation will be break after desired timeout) and the value has to be specified in seconds
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+- Send an RPC request "connect" to the device using **RPC debug terminal** widget;
+
+- Save the "[rpc-response.json](/docs/reference/resources/rpc-response.json)" file to your PC;
+
+- In the second terminal window simulate send a response from the device to the server:
+
+{% if docsPrefix == null or docsPrefix == "pe/" %}
+```shell
+coap-client -f rpc-response.json -m post coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc/1
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "paas/" %}
+```shell
+cat rpc-response.json | coap post coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc/1
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "edge/" %}
+```shell
+coap-client -f rpc-response.json -m post coap://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc/1
+```
+{: .copy-code}
+{% endif %}
+
+- You should receive a response from the device:
+
+```shell
+{"result":"ok"}
+```
 
 {% include images-gallery.html imageCollection="server-side-rpc" %}
-
-{% capture tabspec %}coap-rpc-command
-A,Example Subscribe,shell,resources/coap-rpc-subscribe.sh,/docs/reference/resources/coap-rpc-subscribe.sh
-B,Example Reply,shell,resources/coap-rpc-reply.sh,/docs/reference/resources/coap-rpc-reply.sh
-C,rpc-response.json,shell,resources/rpc-response.json,/docs/reference/resources/rpc-response.json{% endcapture %}
-{% include tabs.html %}
 
 ##### Client-side RPC
 
@@ -399,11 +545,11 @@ Where **$ACCESS_TOKEN** - device access token.
 {% endif %}
 
 Both request and response body should be valid JSON documents. The content of the documents is specific to the rule node that will handle your request.
-<br>
-<br>
-**Let's look at an example:**
 
-- Add two nodes to the Rule Chain: "script" and "rpc call reply";
+<br>
+**Let's look at an example**:
+
+- Add two nodes to the Rule Chain: "**script**" and "**rpc call reply**";
 
 - In the **script** node enter the function:
 
@@ -411,17 +557,41 @@ Both request and response body should be valid JSON documents. The content of th
 return {msg: {time:String(new Date())}, metadata: metadata, msgType: msgType};
 ```
 {: .copy-code}
-- Send request to the server;
 
-- You should receive a response from the server.
+- Save the "[rpc-client-request.json](/docs/reference/resources/rpc-client-request.json)" file to your PC;
+
+{% if docsPrefix == null or docsPrefix == "pe/" %}
+- Now, send request to the server using the command below. Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
+
+```shell
+cat rpc-client-request.json | coap post coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "paas/" %}
+- Now, send request to the server using the command below. Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token:
+
+```shell
+cat rpc-client-request.json | coap post coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "edge/" %}
+- Now, send request to the server using the command below. Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
+
+```shell
+cat rpc-client-request.json | coap post coap://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
+```
+{: .copy-code}
+{% endif %}
+
+- You should receive a response from the server:
+
+```shell
+{"time":"2016 11 21 12:54:44.287"}
+```
 
 {% include images-gallery.html imageCollection="client-side-rpc" %}
-
-{% capture tabspec %}coap-rpc-from-client
-A,Example Request,shell,resources/coap-rpc-from-client.sh,/docs/reference/resources/coap-rpc-from-client.sh
-B,rpc-client-request.json,shell,resources/rpc-client-request.json,/docs/reference/resources/rpc-client-request.json
-C,Response Body,shell,resources/rpc-server-response.json,/docs/reference/resources/rpc-server-response.json{% endcapture %}
-{% include tabs.html %}
 
 ## Claiming devices
 
