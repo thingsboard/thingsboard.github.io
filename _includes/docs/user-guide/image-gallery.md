@@ -17,11 +17,24 @@ Users can easily upload, organize, and select images to customize their interfac
 {% unless docsPrefix == 'paas/' %}
 ## Configuration
 
-Images are cached in the browser, and by default browser will make a request to ThingsBoard for each loaded image to verify that the cached version is up to date.
-If your images are not updated frequently, you might configure cache control for system or/and tenant images for faster image loading.
-To do so, specify *CACHE_SPECS_IMAGE_SYSTEM_BROWSER_TTL* and *CACHE_SPECS_IMAGE_TENANT_BROWSER_TTL* environment variables.
-Read here [how to change the environment variables in the 'thingsboard.conf' file](/docs/user-guide/install/{{docsPrefix}}how-to-change-config/).
 
+Our image API uses *ETags* to optimize caching, ensuring images are only downloaded when they have changed, thus saving bandwidth.
+By default, we do not apply Cache-Control headers, relying on the efficiency of ETags.
+However, you can customize caching behavior through environment variables: 
+
+- *CACHE_SPECS_IMAGE_ETAGS_TTL* - image ETags cache TTL. The default value is 44640 minutes, after which the cache will be deleted;
+
+- *CACHE_SPECS_IMAGE_ETAGS_MAX_SIZE* - maximum cache size, in bytes. 0 means the cache is disabled;
+
+- *CACHE_SPECS_IMAGE_SYSTEM_BROWSER_TTL* - browser cache TTL for system images, in minutes. Default value is 0 minutes - the cache is disabled;
+
+- *CACHE_SPECS_IMAGE_TENANT_BROWSER_TTL* - browser cache TTL for tenant images, in minutes. Default value is 0 minutes - the cache is disabled.
+
+These configurations control the Time To Live (TTL) for your system and tenant images in a user's browser cache.
+Setting a longer TTL improves load time for repeated visits and reduces server load, while a shorter TTL ensures users receive more frequent content updates.
+Adjust these settings based on the update frequency of your images. How to do it, read [here](/docs/user-guide/install/{{docsPrefix}}how-to-change-config/).
+
+<br>
 Additionally, the system administrator can set restrictions on the maximum size of a single image and the total size of images by configuring [tenant profiles](/docs/{{docsPrefix}}user-guide/tenant-profiles/#files-limits).
 Values are specified in bytes.
 {% endunless %}
