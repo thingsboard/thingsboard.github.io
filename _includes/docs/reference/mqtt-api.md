@@ -4,19 +4,19 @@
 
 ## Getting started
 
-##### MQTT basics
+### MQTT basics
 
 [MQTT](https://en.wikipedia.org/wiki/MQTT) is a lightweight publish-subscribe messaging protocol which probably makes it the most suitable for various IoT devices. 
 You can find more information about MQTT [here](https://mqtt.org/).
 
 ThingsBoard server nodes act as an MQTT Broker that supports QoS levels 0 (at most once) and 1 (at least once) and a set of [configurable](/docs/{{docsPrefix}}user-guide/device-profiles/#mqtt-device-topic-filters) topics.
 
-##### Client libraries setup
+### Client libraries setup
 
 You can find a large number of MQTT client libraries on the web. Examples in this article will be based on Mosquitto and MQTT.js.
 In order to setup one of those tools, you can use instructions in our [Hello World](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide.
 
-##### MQTT Connect
+### MQTT Connect
 
 We will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
 The application needs to send MQTT CONNECT message with username that contains **$ACCESS_TOKEN**. 
@@ -71,7 +71,6 @@ or
 
 In case your device is able to get the client-side timestamp, you can use following format:
 
-
 ```json
 {"ts":1451649600512, "values":{"key1":"value1", "key2":"value2"}}
 ```
@@ -85,13 +84,13 @@ Below are examples of commands for publishing different types of telemetry data.
 Don't forget replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
+Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "paas/" %}
 Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
-Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
+Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 
 **Example 1**. Publish data as an object without timestamp (server-side timestamp will be used). 
@@ -187,7 +186,7 @@ ThingsBoard attributes API allows devices to
 * Request [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) and [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
 * Subscribe to [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
  
-##### Publish attribute update to the server
+### Publish attribute update to the server
 
 In order to publish client-side device attributes to ThingsBoard server node, send PUBLISH message to the following topic:
 
@@ -200,42 +199,16 @@ Below are examples to publish client-side device attributes.
 
 {% if docsPrefix == null %}
 Don't forget replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
-
-**Example 1**. Publish client-side attributes update.
-
-Execute the command:
-
-```shell
-mosquitto_pub -d -h "demo.thingsboard.io" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
-```
-{: .copy-code}
 {% endif %}
 {% if docsPrefix == "pe/" %}
 Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
-
-**Example 1**. Publish client-side attributes update.
-
-Execute the command:
-
-```shell
-mosquitto_pub -d -h "$THINGSBOARD_HOST_NAME" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
-```
-{: .copy-code}
 {% endif %}
 {% if docsPrefix == "paas/" %}
 Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token.
-
-**Example 1**. Publish client-side attributes update.
-
-Execute the command:
-
-```shell
-mosquitto_pub -d -h "mqtt.thingsboard.cloud" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
-```
-{: .copy-code}
 {% endif %}
 {% if docsPrefix == "edge/" %}
 Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
+{% endif %}
 
 **Example 1**. Publish client-side attributes update.
 
@@ -244,9 +217,29 @@ Telemetry data:
 ```json
 {"attribute1": "value1", "attribute2": true}
 ```
+{: .copy-code}
 
 Execute the command:
 
+{% if docsPrefix == null %}
+```shell
+mosquitto_pub -d -h "demo.thingsboard.io" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "pe/" %}
+```shell
+mosquitto_pub -d -h "$THINGSBOARD_HOST_NAME" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "paas/" %}
+```shell
+mosquitto_pub -d -h "mqtt.thingsboard.cloud" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "edge/" %}
 ```shell
 mosquitto_pub -d -h "$THINGSBOARD_EDGE_HOST_NAME" -t "v1/devices/me/attributes" -u "$ACCESS_TOKEN" -m "{"attribute1": "value1", "attribute2": true}"
 ```
@@ -278,7 +271,7 @@ A,Mosquitto,shell,resources/mosquitto-attributes-publish.sh,/docs/reference/reso
 B,MQTT.js,shell,resources/mqtt-js-attributes-publish.sh,/docs/reference/resources/mqtt-js-attributes-publish.sh{% endcapture %}
 {% include tabs.html %}
 
-##### Request attribute values from the server
+### Request attribute values from the server
 
 In order to request client-side or shared device attributes to ThingsBoard server node, send PUBLISH message to the following topic:
 
@@ -334,7 +327,7 @@ However, it is still possible to have same keys for client, shared or even serve
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-##### Subscribe to attribute updates from the server
+### Subscribe to attribute updates from the server
 
 In order to subscribe to shared device attribute changes, send SUBSCRIBE message to the following topic:
 
@@ -423,8 +416,8 @@ A,The content of the "mqtt-js-rpc-from-server.js" file,javascript,resources/mqtt
 
 Now, follow these steps:
 
-- Use **RPC debug terminal** dashboard;
-- Execute the command to subscribe to RPC commands from the server. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
+- Use **RPC debug terminal** widget in your ThingsBoard instance;
+- Execute the command to subscribe to RPC commands from the server using the command below. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 
 ```shell
 export TOKEN=$ACCESS_TOKEN
@@ -432,7 +425,7 @@ node mqtt-js-rpc-from-server.js
 ```
 {: .copy-code}
 
-- Send an RPC request "connect" to the device;
+- Send an RPC request "connect" to the device using **RPC debug terminal** widget;
 - You should receive a response from the device.
 
 {% include images-gallery.html imageCollection="server-side-rpc" %}
@@ -500,7 +493,6 @@ node mqtt-js-rpc-from-client.js
 - You should receive a response from the server.
 
 {% include images-gallery.html imageCollection="client-side-rpc" %}
-
 
 ## Claiming devices
 

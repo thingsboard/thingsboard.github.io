@@ -3,7 +3,7 @@
 
 ## Getting started
 
-##### CoAP basics
+### CoAP basics
 
 [CoAP](https://en.wikipedia.org/wiki/Constrained_Application_Protocol) is a light-weight IoT protocol for constrained devices. You can find more information about CoAP [here](https://tools.ietf.org/html/rfc7252).
 CoAP protocol is UDP based, but similar to HTTP it uses request-response model. 
@@ -11,7 +11,7 @@ CoAP observes [option](https://tools.ietf.org/html/rfc7641) allows to subscribe 
 
 ThingsBoard server nodes act as a CoAP Server that supports both regular and observe requests.
 
-##### Client libraries setup
+### Client libraries setup
 
 You can find CoAP client libraries for different programming languages on the web. Examples in this article will be based on [CoAP cli](https://www.npmjs.com/package/coap-cli).
 In order to setup this tool on Linux or macOS, you can use the following command:
@@ -31,7 +31,7 @@ CoAP cli does not support query parameters. If you require to use query paramete
 * **Ubuntu 20.04:** ```sudo apt install libcoap2-bin```
 * **Ubuntu 18.04:** ```sudo apt install libcoap1-bin```
 
-##### CoAP Authentication and error codes
+### CoAP Authentication and error codes
 
 We will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
 The application needs to include **$ACCESS_TOKEN** as a path parameter into each CoAP request.
@@ -199,12 +199,11 @@ ThingsBoard attributes API allows devices to
 * Request [client-side](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) and [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
 * Subscribe to [shared](/docs/{{docsPrefix}}user-guide/attributes/#attribute-types) device attributes from the server.
 
-##### Publish attribute update to the server
+### Publish attribute update to the server
 
 In order to publish client-side device attributes to ThingsBoard server node, send POST request to the following URL:
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
-
 ```shell
 coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
 ```
@@ -213,7 +212,6 @@ coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes
 Where
 - **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;
 - **$ACCESS_TOKEN** - device access token.
-
 {% endif %}
 {% if docsPrefix == null %}
 If you use live demo server, the command will look like this:
@@ -257,7 +255,7 @@ The content of the **"new-attributes-values.json"** file:
 A,Execute the command:,shell,resources/coap-attributes-publish.sh,/docs/reference/resources/coap-attributes-publish.sh{% endcapture %}
 {% include tabs.html %}
 
-##### Request attribute values from the server
+### Request attribute values from the server
 
 In order to request client-side or shared device attributes to ThingsBoard server node, send GET request to the following URL:
 
@@ -314,7 +312,7 @@ However, it is still possible to have same keys for client, shared or even serve
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-##### Subscribe to attribute updates from the server
+### Subscribe to attribute updates from the server
 
 In order to subscribe to shared device attribute changes, send GET request with Observe option to the following URL:
 
@@ -364,7 +362,7 @@ Result:
 
 ## RPC API
 
-##### Server-side RPC
+### Server-side RPC
 
 In order to subscribe to RPC commands from the server, send GET request with observe flag to the following URL:
 
@@ -512,7 +510,7 @@ coap-client -f rpc-response.json -m post coap://$THINGSBOARD_EDGE_HOST_NAME/api/
 
 {% include images-gallery.html imageCollection="server-side-rpc" %}
 
-##### Client-side RPC
+### Client-side RPC
 
 In order to send RPC commands to the server, send POST request to the following URL:
 
