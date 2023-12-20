@@ -164,6 +164,8 @@ toc:
     path: /docs/samples/analytics/kafka-streams/
 - title: Other Features
   section:
+    - title: Edge Computing
+      path: /docs/user-guide/edge-computing/
     - title: Device Connectivity Status
       path: /docs/user-guide/device-connectivity-status/
     - title: Claiming Devices
