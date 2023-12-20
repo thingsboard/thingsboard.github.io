@@ -366,7 +366,7 @@ Adding an alias: in the "Add alias" dialog, enter the alias name, select the "Ed
 
 This alias filters edges with the "edge instance" type that have any relation to the asset "Building A" with a direction "From" and relation level of 1.
 
-Let's learn how to use the "Entity view search query" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Edge search query" alias in the "Entity alias" field and add "name" and "type" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget displaying edges with any relation to the asset "Building A" up to relation level of 1 has been added.
+Let's learn how to use the "Edge search query" alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Edge search query" alias in the "Entity alias" field and add "name" and "type" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget displaying edges with any relation to the asset "Building A" up to relation level of 1 has been added.
 
 {% include images-gallery.html imageCollection="edge-search-query-2" %}
 
