@@ -11,13 +11,13 @@ create-alias:
         title: 'Open your dashboard and enter edit mode;'
     1:
         image: /images/user-guide/ui/alias/create-alias-2-ce.png
-        title: 'Click an "Entity aliases" icon in the upper right corner of the window;'
+        title: 'Click the "Entity aliases" icon in the upper right corner of the window;'
     2:
         image: /images/user-guide/ui/alias/create-alias-3-ce.png
         title: 'In the opened "Entity aliases" window click the “Add alias” button on the left side of the dialog box;'
     3:
         image: /images/user-guide/ui/alias/create-alias-4-ce.png
-        title: 'In the opened dialog Add alias, enter a name for the alias and select a filter type. Then, fill in all required fields and click the "Add" button in the lower right corner;'
+        title: 'In the opened "Add alias" dialog, enter a name for the alias and select a filter type. Then, fill in all required fields and click the "Add" button in the lower right corner;'
     4:
         image: /images/user-guide/ui/alias/create-alias-5-ce.png
         title: 'We can now see that a new alias has been added. In this window you can view, edit and delete your aliases. Click "Save" in the lower right corner of the dialog box.'
@@ -34,7 +34,7 @@ use-alias-in-widget:
         title: 'Now, select the "Indoor temperature card with background" widget;'
     3:
         image: /images/user-guide/ui/alias/create-alias-9-ce.png
-        title: 'The "Add Widget" window will appear. Navigate to the "Entity alias" tab. Specify the previously created "A new entity alias" alias in the "Entity alias" field.'
+        title: 'The "Add Widget" window will appear. Navigate to the "Entity alias" tab. Specify the previously created "A new entity alias" in the "Entity alias" field.'
     4:
         image: /images/user-guide/ui/alias/create-alias-10-ce.png
         title: 'Specify the data key(s) in the "Data key" field. In our example is the "temperature" data key. Then, click "Add";'

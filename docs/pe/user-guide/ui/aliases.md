@@ -11,13 +11,13 @@ create-alias:
         title: 'Open your dashboard and enter edit mode;'
     1:
         image: /images/user-guide/ui/alias/create-alias-2-pe.png
-        title: 'Click an "Entity aliases" icon in the upper right corner of the window;'
+        title: 'Click the "Entity aliases" icon in the upper right corner of the window;'
     2:
         image: /images/user-guide/ui/alias/create-alias-3-pe.png
         title: 'In the opened "Entity aliases" window click the “Add alias” button on the left side of the dialog box;'
     3:
         image: /images/user-guide/ui/alias/create-alias-4-pe.png
-        title: 'In the opened dialog Add alias, enter a name for the alias and select a filter type. Then, fill in all required fields and click the "Add" button in the lower right corner;'
+        title: 'In the opened "Add alias" dialog, enter a name for the alias and select a filter type. Then, fill in all required fields and click the "Add" button in the lower right corner;'
     4:
         image: /images/user-guide/ui/alias/create-alias-5-pe.png
         title: 'We can now see that a new alias has been added. In this window you can view, edit and delete your aliases. Click "Save" in the lower right corner of the dialog box.'
@@ -34,10 +34,10 @@ use-alias-in-widget:
         title: 'Now, select the "Indoor temperature card with background" widget;'
     3:
         image: /images/user-guide/ui/alias/create-alias-9-pe.png
-        title: 'The "Add Widget" window will appear. Navigate to the "Entity alias" tab. Specify the previously created "A new entity alias" alias in the "Entity alias" field.'
+        title: 'The "Add Widget" window will appear. Navigate to the "Entity alias" tab. Specify the previously created "A new entity alias" in the "Entity alias" field.'
     4:
         image: /images/user-guide/ui/alias/create-alias-10-pe.png
-        title: 'Specify the data key(s) in the "Data key" field. In our example is the "temperature" data key. Then, click "Add";'
+        title: 'Specify the data key(s) in the "Data key" field. In our example, it&#39;s the "temperature" data key. Then, click "Add";'
     5:
         image: /images/user-guide/ui/alias/create-alias-11-pe.png
         title: 'You have added a widget that uses the previously configured alias as a data source.'
@@ -174,18 +174,18 @@ entity-from-dashboard-state-2:
 entity-from-dashboard-state-3:
     0:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-6-pe.png
-        title: 'Click layers icon in the top left corner of the dashboard to create a new state. In the opened dialog window, click a "+" icon to add a new state;'
+        title: 'Click the layers icon in the top left corner of the dashboard to create a new state. In the opened dialog window, click a "+" icon to add a new state;'
     1:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-7-pe.png
-        title: 'Enter state&#39;s name. For the state to be named after the entity, use ${entityName} as the name of the state. Thus during the action, you will be transitioned to a state that is called the same as the entity that took part in the action. Click "Add";'
+        title: 'Enter state&#39;s name. For the state to be named after the entity, use ${entityName} as the name of the state. Thus, during the action, you will be transitioned to a state named after the entity that took part in the action. Click "Add";'
     2:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-8-pe.png
-        title: 'Now you see a list with two states: root one, and the one that has been just created. Click "Save" in the lower right of the dialog.'
+        title: 'Now you see a list with two states: the root one, and the one that has just been created. Click "Save" in the lower right corner of the dialog.'
 
 entity-from-dashboard-state-4:
     0:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-9-pe.png
-        title: 'In the root dashboard state, enter widget Edit mode by clicking the “pencil” icon in the upper right corner of it;'
+        title: 'In the root dashboard state, enter widget Edit mode by clicking the “pencil” icon in the upper right corner;'
     1:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-10-pe.png
         title: 'Scroll down to find "Actions" section. Click "Add action" button;'
@@ -200,7 +200,7 @@ entity-from-dashboard-state-4:
         title: 'After successfully adding the action, click the "Save" button. Then, click the "Apply" button;'
     5:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-14-pe.png
-        title: 'Now, go to the created state by selecting it from the drop-down menu by clicking layers icon in the upper left corner;'
+        title: 'Now, go to the created state by selecting it from the drop-down menu accessed through the layers icon in the upper left corner;'
     6:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-15-pe.png
         title: 'Click the “Add new widget” icon in the center of the screen;'
@@ -408,7 +408,7 @@ entity-view-search-query-2:
 edge-search-query-1:
     0:
         image: /images/user-guide/ui/alias/edge-search-query-1-pe.png
-        title: 'In the "Add alias" dialog, enter the alias name, select the "Edge search query" filter type, and select the entity type and an entity itself, the relationship with which you want to display. Set direction to "From" or "To" and max relation level and specify the edge type(s) by which the edges will be filtered.'
+        title: 'In the "Add alias" dialog, enter the alias name, select the "Edge search query" filter type, and select the entity type and an entity itself, the relationship with which you want to display. Set the direction to "From" or "To", max relation level and specify the edge type(s) by which the edges will be filtered.'
 
 edge-search-query-2:
     0:
