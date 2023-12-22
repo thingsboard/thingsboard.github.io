@@ -3,30 +3,10 @@ created gateway.
 
 ### Setup demo server
 
-As a demo simulation slave, we will use docker image, that can be installed and run using the following commands:
-```shell
-docker ps
-```
-{:.copy-code}
-
-Find your gateway container name as you can see on the following image and copy it:
-
-![](/images/gateway/dashboard/copy-gateway-docker-container-name.png)
-
-Create an environment variable using the following command, replace `YOUR_TB_GATEWAY_CONTAINER_NAME` with the copied 
-gateway container name. Copy and run the provided command in your terminal:
+As a demo simulation slave, we will use docker image, that can be installed and run using the following command:
 
 ```shell
-export TB_GATEWAY_CONTAINER_NAME=YOUR_TB_GATEWAY_CONTAINER_NAME
-```
-{:.copy-code}
-
-Copy and execute the following command in your terminal:
-
-{% assign containerId = "{" | append: "{" | append: ".Id" | append: "}" | append: "}" %}
-
-```shell
-docker run -it --net=container:$(docker inspect -f '{{containerId}}' ${TB_GATEWAY_CONTAINER_NAME}) thingsboard/tb-gw-modbus-server:latest
+docker run -it -p 5021:5021 thingsboard/tb-gw-modbus-server:latest
 ```
 {:.copy-code}
 
@@ -43,7 +23,7 @@ Copy the following connector configuration (we will use it later):
   "master": {
     "slaves": [
       {
-        "host": "localhost",
+        "host": "host.docker.internal",
         "port": 5021,
         "type": "tcp",
         "method": "socket",
@@ -55,7 +35,7 @@ Copy the following connector configuration (we will use it later):
         "retryOnInvalid": true,
         "pollPeriod": 5000,
         "unitId": 1,
-        "deviceName": "Device Demo",
+        "deviceName": "Demo Device",
         "deviceType": "default",
         "sendDataOnlyOnChange": false,
         "connectAttemptTimeMs": 5000,
@@ -102,6 +82,13 @@ Copy the following connector configuration (we will use it later):
 ```
 {:.copy-code.expandable-20}
 
+This Modbus connector configuration sets up a master to communicate with a slave device located at 
+**"host.docker.internal"** on port 5021 using TCP. The configuration includes specifications for data retrieval such as 
+byte and word order, timeout, and polling period. The slave device, named **"Demo Device"** is configured to handle 
+Modbus function code 4 requests. Attribute and timeseries mappings are defined for parameters like **frequency**, **power**, 
+**humidity**, and **temperature**. Additionally, settings for connection attempts, retries, and wait times after failed 
+attempts are provided.
+
 To create a connector, use the following steps:
 
 {% assign addNewConnector = '
@@ -130,7 +117,7 @@ the remote settings.
 Also, you can see the connector logs to make sure that connector works, for this purpose, use the following steps:
 {% assign seeConnectorLogs = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-modbus-logs-11-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-modbus-11-ce.png,
         title: Click on logs icon to open connector logs page.
     ===
         image: /images/gateway/dashboard/gateway-getting-started-modbus-logs-12-ce.png,
