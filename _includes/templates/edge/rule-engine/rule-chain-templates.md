@@ -10,7 +10,7 @@ The actual rule chain, derived from this template, begins functioning and proces
 {% assign createRuleChainTemplatePE = '
     ===
         image: /images/pe/edge/rule-engine/create-rule-chain-template-step-1.png,
-        title: Sign in to your ThingsBoard <b>PE</b> instance and navigate to the "Edge Management" -> "Rule chain templates" page. Click the "+" icon in the top right corner and choose "Create new rule chain".
+        title: Sign in to your <b>ThingsBoard PE</b> instance and navigate to the "Edge Management" -> "Rule chain templates" page. Click the "+" icon in the top right corner and choose "Create new rule chain".
     ===
         image: /images/pe/edge/rule-engine/create-rule-chain-template-step-2.png,
         title: Enter a name for your rule chain, such as "Remote Farm". Click "Add" to confirm the creation of your new rule chain template.
@@ -25,7 +25,7 @@ The actual rule chain, derived from this template, begins functioning and proces
 {% assign createRuleChainTemplateCE = '
     ===
         image: /images/edge/rule-engine/create-rule-chain-template-step-1.png,
-        title: Sign in to your ThingsBoard <b>CE</b> instance and navigate to the "Edge Management" -> "Rule chain templates" page. Click the "+" icon in the top right corner and choose "Create new rule chain".
+        title: Sign in to your <b>ThingsBoard CE</b> instance and navigate to the "Edge Management" -> "Rule chain templates" page. Click the "+" icon in the top right corner and choose "Create new rule chain".
     ===
         image: /images/edge/rule-engine/create-rule-chain-template-step-2.png,
         title: Enter a name for your rule chain, such as "Remote Farm". Click "Add" to confirm the creation of your new rule chain template.

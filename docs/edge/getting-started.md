@@ -118,6 +118,8 @@ step5Edge:
 
 {% assign currentThingsBoardVersion = "ThingsBoard Community Edition" %}
 
+<h3>Interested in the Professional Edition? Explore the ThingsBoard PE Edge Documentation <a style="pointer-events: all;" href="/docs/pe/edge/getting-started/">Here</a>.</h3>
+
 ## Introduction
 
 {% include templates/edge/getting-started/introduction.md %}

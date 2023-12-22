@@ -77,7 +77,6 @@ description: Comprehensive software solutions for edge computing, providing data
     </main>
 </section>
 
-
 <section id="bottom-features">
     <main>
         <div id="background">
@@ -120,6 +119,90 @@ description: Comprehensive software solutions for edge computing, providing data
             </div>
         </div>
     </main>
+</section>
+
+<section id="matrix">
+    <div id="backg-matrix">
+        <div class="edge"><div class="coln"><div class="head"></div></div></div>
+        <div class="gateway"><div class="coln"><div class="head"></div></div></div>
+    </div>
+    <h3>Feature Comparison Matrix</h3>
+    <table>
+            <thead>
+                <tr>
+                    <td></td>
+                    <th>ThingsBoard<br>Edge</th>
+                    <th>IoT<br>Gateway</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>ThingsBoard Server required (CE, PE or Cloud)</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                </tr>
+                <tr>
+                    <th>Data collection</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                </tr>
+                <tr>
+                    <th>Data processing</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                </tr>
+                <tr>
+                    <th>Asset management</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                </tr>
+                <tr>
+                    <th>End-user real-time dashboards</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                </tr>
+                <tr>
+                    <th><a href="/docs/user-guide/rule-engine-2-0/overview/">Rule Engine<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                </tr>
+                <tr>
+                    <th>Real-time Analytics</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                </tr>
+                <tr>
+                    <th><a href="/docs/user-guide/integrations/">Platform Integrations<img src="/images/pe/help-black18.svg" alt="help"></a></th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                </tr>
+                <tr>
+                    <th>Multi-tenancy Support</th>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                </tr>
+                <tr>
+                    <th>Offline Operation on edge</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/checked.svg" alt="checked"> (Limited to Data Collection)</td>
+                </tr>
+                <tr>
+                    <th>Traffic Filtering on edge</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                </tr>
+                <tr>
+                    <th>Local Alarms on edge</th>
+                    <td><img src="/images/pe/checked.svg" alt="checked"></td>
+                    <td><img src="/images/pe/unchecked.svg" alt="unchecked"></td>
+                </tr>
+                <tr>
+                    <th>Hardware Resources Usage</th>
+                    <td>Medium to Low</td>
+                    <td>Low</td>
+                </tr>
+            </tbody>
+    </table>
 </section>
 
 <section id="bottom">
