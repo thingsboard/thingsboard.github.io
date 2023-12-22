@@ -164,6 +164,9 @@ toc:
     path: /docs/user-guide/integrations/ttn/
   - title: TheThingsIndustries
     path: /docs/user-guide/integrations/tti/
+  - title: KPN Things
+    path: /docs/user-guide/integrations/kpn-things/
+    new: true
   - title: LORIOT
     path: /docs/user-guide/integrations/loriot/
   - title: ChirpStack
