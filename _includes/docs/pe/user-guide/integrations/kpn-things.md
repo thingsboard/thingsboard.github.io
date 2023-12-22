@@ -13,31 +13,16 @@ After integrating KPN Things with the ThingsBoard, you can connect, manage, comm
 
 ## Create integration
 
-- Go to **Integrations center** section -> **Integrations** page and click "plus" button to create new integration. Select type **KPN**. Click "Next";
+Follow the steps below to add the KPN Things integration:
 
-![image](/images/user-guide/integrations/kpn/kpn-add-integration-1-pe.png)
-
-- At this step, choose "Create new" uplink converter. The new converter will contain necessary code to convert incoming data and click "Next";
-
-![image](/images/user-guide/integrations/kpn/kpn-add-integration-2-pe.png)
-
-- At the step of adding a downlink converter, you can also select a previously created or create a new downlink converter. But for now, leave the "Downlink data converter" field empty. Click "Skip";
-
-![image](/images/user-guide/integrations/kpn/kpn-add-integration-3-pe.png)
-
-- At this step, specify your **Base URL**;
-
-- Please note down **HTTP endpoint URL** we will use this value later;
-
-- Click **Add** button to save the Integration.
-
-![image](/images/user-guide/integrations/kpn/kpn-add-integration-4-pe.png)
+{% include images-gallery.html imageCollection="kpn-create-integration" showListImageTitles="true" %}
 
 We have pre-configured integration on ThingsBoard, but we need to configure KPN Things to send data to ThingsBoard.
 
 ## Configure KPN Things
 
 To configure KPN Things, you need to open [KPN Things Portal](https://portal.kpnthings.com/) and log in to your account.
+
 *The KPN Things Portal interface may change in the future.*
 
 **Add new device**:
@@ -85,24 +70,29 @@ To configure KPN Things, you need to open [KPN Things Portal](https://portal.kpn
 
 {% include images-gallery.html imageCollection="kpn-things-configure-5" %}
 
-
-
 ## Update integration
 
 In order to validate the sender we can add a token to integration on ThingsBoard. To do this, please follow the steps below:
-- Go to Integrations center section -> Integrations page and click on the integration you created earlier. Click on "Edit" button to enter edit mode.
 
-![image](/images/user-guide/integrations/kpn/kpn-add-integration-5-pe.png)
-
-- Switch "Enable security (Headers filter)" toggle to enabled state and click "Add" button in "Headers filter" section.
-
-![image](/images/user-guide/integrations/kpn/kpn-add-integration-6-pe.png)
-
-- Put "X-Things-Secret" to "Header" field and generated token to "Value" field. Finally, apply changes.
-
-![image](/images/user-guide/integrations/kpn/kpn-add-integration-7-pe.png)
+{% include images-gallery.html imageCollection="kpn-update-integration" showListImageTitles="true" %}
 
 That's all that is needed to configured integration between KPN Things and ThingsBoard. Now we can send data from KPN Things to ThingsBoard.
+
+## Send Uplink message
+
+Now let’s use the "KPN Things Device simulator" app to send a message with the data to the ThingsBoard. Click the "Send data now" button in the app. 
+
+{% include images-gallery.html imageCollection="kpn-send-data-now" %}
+
+After you sent message a new device was created in your ThingsBoard instance.
+
+Go to the ThingsBoard instance, then navigate to the "Devices" page. Here you will find a new KPN Device and information about it as well as the telemetry that we sent to the device.
+
+{% include images-gallery.html imageCollection="kpn-things-device" %}
+
+Go to the "Integrations" page, select "KPN Things integration" and navigate to the "Events" tab. There you’ll see the message consumed by the KPN Things integration.
+
+{% include images-gallery.html imageCollection="kpn-things-uplink" %}
 
 ## Next steps
 

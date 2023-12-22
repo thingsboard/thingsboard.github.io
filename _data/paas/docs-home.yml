@@ -177,7 +177,7 @@ toc:
     - title: TheThingsIndustries
       path: /docs/paas/user-guide/integrations/tti/
     - title: KPN Things
-      path: /docs/user-guide/integrations/kpn-things/
+      path: /docs/paas/user-guide/integrations/kpn-things/
       new: true
     - title: LORIOT
       path: /docs/paas/user-guide/integrations/loriot/
@@ -193,7 +193,6 @@ toc:
       path: /docs/paas/user-guide/integrations/azure-event-hub/
     - title: Azure Service Bus
       path: /docs/paas/user-guide/integrations/azure-service-bus/
-      new: true
     - title: Azure IoT Hub
       path: /docs/paas/user-guide/integrations/azure-iot-hub/
     - title: TCP
@@ -206,7 +205,6 @@ toc:
       path: /docs/paas/user-guide/integrations/ocean-connect/
     - title: Tuya
       path: /docs/paas/user-guide/integrations/tuya/
-      new: true
     - title: Custom Integration development guide
       path: /docs/paas/user-guide/integrations/custom/
     - title: Notifications and Alarms on your smartphone using Telegram Bot

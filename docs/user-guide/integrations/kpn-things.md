@@ -3,6 +3,21 @@ layout: docwithnav-pe
 title: KPN Things Integration
 description: KPN Things integration guide
 
+kpn-create-integration:
+    0:
+        image: /images/user-guide/integrations/kpn/kpn-add-integration-1-pe.png
+        title: 'Go to "Integrations center" section -> "Integrations" page and click "plus" button to create new integration. Select type "KPN Things". Click "Next";'
+    1:
+        image: /images/user-guide/integrations/kpn/kpn-add-integration-2-pe.png
+        title: 'At this step, choose "Create new" uplink converter. The new converter will contain necessary code to convert incoming data and click "Next";'
+    2:
+        image: /images/user-guide/integrations/kpn/kpn-add-integration-3-pe.png
+        title: 'At the step of adding a downlink converter, you can also select a previously created or create a new downlink converter. But for now, leave the "Downlink data converter" field empty. Click "Skip";'
+    3:
+        image: /images/user-guide/integrations/kpn/kpn-add-integration-4-pe.png
+        title: 'Specify your base URL. Please note down "HTTP endpoint URL" we will use this value later. Then, click the "Add" button. KPN Things integration is created.'
+
+
 kpn-things-configure-1:
     0:
         image: /images/user-guide/integrations/kpn/kpn-things-configure-1-pe.png
@@ -69,6 +84,32 @@ kpn-things-configure-5:
     2:
         image: /images/user-guide/integrations/kpn/kpn-things-configure-19-pe.png
         title: 'The "Destination" has been successfully linked to the Flow.'
+
+kpn-update-integration:
+    0:
+        image: /images/user-guide/integrations/kpn/kpn-add-integration-5-pe.png
+        title: 'Go to "Integrations center" section -> "Integrations" page and click on the integration you created earlier. Click on "Edit" button to enter edit mode.'
+    1:
+        image: /images/user-guide/integrations/kpn/kpn-add-integration-6-pe.png
+        title: 'Switch "Enable security (Headers filter)" toggle to enabled state and click "Add" button in "Headers filter" section.'
+    2:
+        image: /images/user-guide/integrations/kpn/kpn-add-integration-7-pe.png
+        title: 'Put "X-Things-Secret" to "Header" field and generated token to "Value" field. Finally, apply changes.'
+
+kpn-send-data-now:
+    0:
+        image: /images/user-guide/integrations/kpn/kpn-send-data-now.png
+        title: 'Use the "KPN Things Device simulator" app to send a message with the data to the ThingsBoard. Click the "Send data now" button.'
+    
+kpn-things-device:
+    0:
+        image: /images/user-guide/integrations/kpn/kpn-things-device-1-pe.png
+        title: 'Go to the "Devices" page. Here you will find a new KPN Device and information about it as well as the telemetry that we sent to the device.'
+
+kpn-things-uplink:
+  0:
+    image: /images/user-guide/integrations/kpn/kpn-things-uplink-1-pe.png
+    title: 'Go to the "Integrations" page, select "KPN Things integration" and navigate to the "Events" tab. There you&#39;ll see the message consumed by the KPN Things integration.'
 
 ---
 {% assign docsPrefix = "pe/" %}

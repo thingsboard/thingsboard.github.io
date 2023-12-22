@@ -193,7 +193,6 @@ toc:
     path: /docs/user-guide/integrations/azure-event-hub/
   - title: Azure Service Bus
     path: /docs/user-guide/integrations/azure-service-bus/
-    new: true
   - title: Azure IoT Hub
     path: /docs/user-guide/integrations/azure-iot-hub/
   - title: TCP
@@ -206,7 +205,6 @@ toc:
     path: /docs/user-guide/integrations/ocean-connect/
   - title: Tuya
     path: /docs/user-guide/integrations/tuya/
-    new: true
   - title: Custom Integration development guide
     path: /docs/user-guide/integrations/custom/
   - title: Notifications and Alarms on your smartphone using Telegram Bot
