@@ -66,6 +66,34 @@
     "blurb": "Whether you are a developer, technical supplier, or industry player, we provide products and services for your IoT needs."
   },
   {
+    "type": ["main", "lora"],
+    "program": "",
+    "name": "Milesight",
+    "logo": "milesight-logo.png",
+    "links": {
+      "Site": {
+        "href": "https://www.milesight.com/",
+        "target": "_blank"
+      },
+      "Connect UG56 LoRaWAN® Gateway to ThingsBoard": {
+        "href": "/docs/pe/devices-library/ug56-lorawan-gateway/"
+      },
+      "Connect UG65 LoRaWAN® Semi-Industrial Gateway to ThingsBoard": {
+        "href": "/docs/pe/devices-library/ug65-lorawan-gateway/"
+      },
+      "Connect UG67 LoRaWAN® Gateway to ThingsBoard": {
+        "href": "/docs/pe/devices-library/ug67-lorawan-gateway/"
+      },
+      "Connect WS101 LoRaWAN® Smart Button to ThingsBoard": {
+        "href": "/docs/pe/devices-library/ws101-smart-button/"
+      },
+      "Connect WS202 PIR & Light LoRaWAN® Sensor to ThingsBoard": {
+        "href": "/docs/pe/devices-library/ws202-pir-and-light-sensor/"
+      }
+    },
+    "blurb": "Milesight, a leading innovator in IoT technologies such as sensing, LoRaWAN®, AI, and 5G, has emerged as a frontrunner by unveiling a diverse array of advanced products, like dependable gateways, indoor air quality sensors, occupancy trackers, water leak detectors, and more."
+  },
+  {
     "type": ["main", "nbiot", "lora"],
     "program": "",
     "name": "Smartico",
