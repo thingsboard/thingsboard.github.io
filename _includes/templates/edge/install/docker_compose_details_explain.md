@@ -9,9 +9,6 @@ Where:
 - `8080:8080` - connect local port 8080 to exposed internal HTTP port 8080;
 - `1883:1883` - connect local port 1883 to exposed internal MQTT port 1883;
 - `5683-5688:5683-5688/udp` - connect local UDP ports 5683-5688 to exposed internal COAP and LwM2M ports;
-- `mytb-edge-data:/data` - mounts the host's dir `mytb-edge-data` to ThingsBoard Edge DataBase data directory;
-- `mytb-edge-logs:/var/log/tb-edge` - mounts the host's dir `mytb-edge-logs` to ThingsBoard Edge logs directory;
-- `mytb-edge-data/db:/var/lib/postgresql/data` - mounts the host's dir `mytb-edge-data/db` to Postgres data directory;
 {% if docsPrefix == 'pe/edge/' %}
 - `thingsboard/tb-edge-pe:{{ site.release.pe_edge_full_ver }}` - docker image;
 {% else %}

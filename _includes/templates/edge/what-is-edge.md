@@ -5,7 +5,7 @@
 {% assign appPrefix = "ThingsBoard CE" %}
 {% endif %}
 
-{% if docsPrefix != 'pe/' %}
+{% if docsPrefix != 'pe/edge/' %}
 <h3>Interested in the Professional Edition? Explore the ThingsBoard PE Edge Documentation <a style="pointer-events: all;" href="/docs/pe/edge/">Here</a>.</h3>
 {% endif %}
 
