@@ -8,7 +8,7 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
-## v3.6.2 (Dec XX, 2023) {#v362}
+## v3.6.2 (Dec 28, 2023) {#v362}
 
 **Minor** release with everything from [TB Edge v3.6.2](/docs/edge/releases/#v362) and [TB PE v3.6.2](/docs/pe/reference/releases/#v362).
 

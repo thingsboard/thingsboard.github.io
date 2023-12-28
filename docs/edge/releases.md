@@ -8,9 +8,13 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
-## v3.6.2 (Dec XX, 2023) {#v362}
+## v3.6.2 (Dec 28, 2023) {#v362}
 
-**Minor** release with everything from [TB CE v3.6.2](/docs/reference/releases/#v362).
+**Minor** release with everything from [TB CE v3.6.2](/docs/reference/releases/#v362):
+
+* [#9688](https://github.com/thingsboard/thingsboard/pull/9688) Edge upgrade instructions in TB Server by @AndriiLandiak and @deaflynx;
+* [#9617](https://github.com/thingsboard/thingsboard/pull/9617) Edge - JSON converter for proto by @AndriiLandiak;
+* [#9712](https://github.com/thingsboard/thingsboard/pull/9712) Edge Requests Service - fetch only first level of relation from cloud by @volodymyr-babak; 
 
 ## v3.6.1 (Nov 14, 2023) {#v361}
 
