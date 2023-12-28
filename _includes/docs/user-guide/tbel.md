@@ -170,7 +170,7 @@ list.size();
 // Get sub list - JS style
 list.slice(1, 3);
 // Foreach 
-foreach (item: list) { 
+foreach (item : list) { 
     var smth = item;
 }
 // For loop 
