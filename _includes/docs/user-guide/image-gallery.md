@@ -8,10 +8,10 @@ The Image gallery serves as a centralized repository for storing and managing im
 Users can easily upload, organize, and select images to customize their interface and user experience, ensuring an integrity and branded look across the platform.
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/image-gallery/image-gallery-pe.png)
+![image](https://img.thingsboard.io/user-guide/image-gallery/image-gallery-pe.png)
 {% endif %}
 {% if docsPrefix == null %}
-![image](/images/user-guide/image-gallery/image-gallery-ce.png)
+![image](https://img.thingsboard.io/user-guide/image-gallery/image-gallery-ce.png)
 {% endif %}
 
 {% unless docsPrefix == 'paas/' %}
