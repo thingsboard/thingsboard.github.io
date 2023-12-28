@@ -164,6 +164,9 @@ toc:
     path: /docs/user-guide/integrations/ttn/
   - title: TheThingsIndustries
     path: /docs/user-guide/integrations/tti/
+  - title: KPN Things
+    path: /docs/user-guide/integrations/kpn-things/
+    new: true
   - title: LORIOT
     path: /docs/user-guide/integrations/loriot/
   - title: ChirpStack
@@ -178,7 +181,6 @@ toc:
     path: /docs/user-guide/integrations/azure-event-hub/
   - title: Azure Service Bus
     path: /docs/user-guide/integrations/azure-service-bus/
-    new: true
   - title: Azure IoT Hub
     path: /docs/user-guide/integrations/azure-iot-hub/
   - title: TCP
@@ -191,7 +193,6 @@ toc:
     path: /docs/user-guide/integrations/ocean-connect/
   - title: Tuya
     path: /docs/user-guide/integrations/tuya/
-    new: true
   - title: Custom Integration development guide
     path: /docs/user-guide/integrations/custom/
   - title: Notifications and Alarms on your smartphone using Telegram Bot
@@ -210,6 +211,9 @@ toc:
       path: /docs/user-guide/claiming-devices/
     - title: Device provisioning
       path: /docs/user-guide/device-provisioning/
+    - title: Image gallery
+      path: /docs/user-guide/image-gallery/
+      new: true
     - title: Entity Views
       path: /docs/user-guide/entity-views/
     - title: API Limits

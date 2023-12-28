@@ -46,6 +46,18 @@
 			<td>"true" </td>
 			<td> Spring Boot configuration property that controls whether circular dependencies between beans are allowed.</td>
 		</tr>
+		<tr>
+			<td>spring.servlet.multipart.max-file-size</td>
+			<td>SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE</td>
+			<td>50MB</td>
+			<td> Total file size cannot exceed 50MB when configuring file uploads</td>
+		</tr>
+		<tr>
+			<td>spring.servlet.multipart.max-request-size</td>
+			<td>SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE</td>
+			<td>50MB</td>
+			<td> Total request size for a multipart/form-data cannot exceed 50MB</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -182,6 +194,12 @@
 			<td>TB_QUEUE_TYPE</td>
 			<td>kafka</td>
 			<td> kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+		</tr>
+		<tr>
+			<td>queue.prefix</td>
+			<td>TB_QUEUE_PREFIX</td>
+			<td></td>
+			<td> Global queue prefix. If specified, prefix is added before default topic name: 'prefix.default_topic_name'. Prefix is applied to all topics (and consumer groups for kafka).</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.bootstrap.servers</td>
@@ -506,6 +524,12 @@
 			<td>TB_QUEUE_PUBSUB_MAX_MESSAGES</td>
 			<td>1000</td>
 			<td> Number of messages per consumer</td>
+		</tr>
+		<tr>
+			<td>queue.pubsub.executor_thread_pool_size</td>
+			<td>TB_QUEUE_PUBSUB_EXECUTOR_THREAD_POOL_SIZE</td>
+			<td>0</td>
+			<td> Thread pool size for pubsub queue executor provider. If set to 0 - default pubsub executor provider value will be used (5 * number of available processors)</td>
 		</tr>
 		<tr>
 			<td>queue.pubsub.queue-properties.rule-engine</td>
