@@ -8,7 +8,7 @@ description: Installing TBMQ using Docker (Linux or Mac OS)
 * TOC
 {:toc}
 
-This guide will help you to install and start standalone TBMQ using Docker on Linux or Mac OS.
+This guide will help you to install and start standalone TBMQ using Docker on Linux or macOS.
 If you are looking for a cluster installation instruction, please visit [cluster setup page](/docs/mqtt-broker/install/cluster/docker-compose-setup/).
 
 ### Prerequisites
@@ -29,18 +29,18 @@ sudo chmod +x tbmq-install-and-run.sh && ./tbmq-install-and-run.sh
 ```
 {: .copy-code}
 
-The script downloads the _docker-compose.yml_ file, creates mounted directories, installs the database for TBMQ, and starts TBMQ.
+The script downloads the _docker-compose.yml_ file, creates necessary docker volumes, installs the database for TBMQ, and starts TBMQ.
 Key configuration points for TBMQ in docker-compose file:
 
-- `8083:8083` - connect local port 8083 to exposed internal HTTP port 8083
-- `1883:1883` - connect local port 1883 to exposed internal MQTT port 1883
-- `~/.tb-mqtt-broker-data/postgres:/var/lib/postgresql/data` - mounts the host's dir `~/.tb-mqtt-broker-data/postgres` to TBMQ DataBase data directory
-- `~/.tb-mqtt-broker-data/kafka:/kafka` - mounts the host's dir `~/.tb-mqtt-broker-data/kafka` to Kafka data directory
-- `~/.tb-mqtt-broker-data/log:/var/log/thingsboard-mqtt-broker` - mounts the host's dir `~/.tb-mqtt-broker-data/log` to TBMQ logs directory
-- `~/.tb-mqtt-broker-data/data:/data` - mounts the host's dir `~/.tb-mqtt-broker-data/data` to TBMQ data directory that contains _.firstlaunch_ file after the DB is installed
-- `tbmq` - friendly local name of this machine
-- `restart: always` - automatically start TBMQ in case of system reboot and restart in case of failure
-- `SECURITY_MQTT_BASIC_ENABLED: true` - enables MQTT basic security. **Note**: by default security is disabled
+- `8083:8083` - connect local port 8083 to exposed internal HTTP port 8083;
+- `1883:1883` - connect local port 1883 to exposed internal MQTT port 1883;
+- `tbmq-postgres-data:/var/lib/postgresql/data` - maps the `tbmq-postgres-data` volume to TBMQ DataBase data directory;
+- `tbmq-kafka-data:/bitnami/kafka` - maps the `tbmq-kafka-data` volume to Kafka data directory;
+- `tbmq-logs:/var/log/thingsboard-mqtt-broker` - maps the `tbmq-logs` volume to TBMQ logs directory;
+- `tbmq-data:/data` - maps the `tbmq-data` volume to TBMQ data directory that contains _.firstlaunch_ file after the DB is installed;
+- `tbmq` - friendly local name of this machine;
+- `restart: always` - automatically start TBMQ in case of system reboot and restart in case of failure;
+- `SECURITY_MQTT_BASIC_ENABLED: "true"` - enables MQTT basic security. **Note**: by default security is disabled.
 
 **Note**: In case the TBMQ is being installed on the same host where ThingsBoard is already running, the following issue can be seen:
 
@@ -86,6 +86,8 @@ docker compose start
 
 ### Upgrading
 
+{% include templates/mqtt-broker/install/migration.md %}
+
 In order to update to the latest version, execute the following commands:
 
 ```shell
@@ -95,8 +97,6 @@ sudo chmod +x tbmq-upgrade.sh && ./tbmq-upgrade.sh
 {: .copy-code}
 
 **NOTE**: replace `db_url`, `db_username`, and `db_password` variables in the script with the corresponding values used during DB initialization.
-
-**NOTE**: replace the host’s directory `data_dir` variable with the directory used during container creation.
 
 ### Next steps
 

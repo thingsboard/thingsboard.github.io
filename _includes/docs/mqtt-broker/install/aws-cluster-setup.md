@@ -22,9 +22,9 @@ Here are the fields you can change depending on your needs:
 - `region` - should be the AWS region where you want your cluster to be located (the default value is `us-east-1`)
 - `availabilityZones` - should specify the exact IDs of the region's availability zones
   (the default value is `[us-east-1a,us-east-1b,us-east-1c]`)
-- `instanceType` - the type of the instance with TBMQ node (the default value is `m6a.large`)
+- `instanceType` - the type of the instance with TBMQ node (the default value is `m7a.large`)
 
-**Note**: If you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy 2 nodes of type m6a.large.
+**Note**: If you don't make any changes to `instanceType` and `desiredCapacity` fields, the EKS will deploy 2 nodes of type m7a.large.
 
 {% capture aws-eks-security %}
 In case you want to secure access to the PostgreSQL and MSK, you'll need to configure the existing VPC or create a new one,
@@ -82,7 +82,7 @@ You should see the similar image:
 
 **Note**: Some recommendations:
 
-* Apache Kafka version can be safely set to the latest 3.4.0 version as TBMQ is fully tested on it;
+* Apache Kafka version can be safely set to the 3.5.1 version as TBMQ is fully tested on it;
 * Use m5.large or similar instance types;
 * Consider creation of custom cluster configuration for your MSK. It will make change of Kafka parameters easier;
 * Use default 'Monitoring' settings or enable 'Enhanced topic-level monitoring'.
@@ -383,6 +383,8 @@ git pull origin {{ site.release.broker_branch }}
 {: .copy-code}
 
 **Note**: Make sure custom changes of yours if available are not lost during the merge process.
+
+{% include templates/mqtt-broker/install/upgrade-hint.md %}
 
 After that execute the following command:
 

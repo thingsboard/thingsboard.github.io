@@ -176,14 +176,28 @@ To check if everything works click "Send test email" button. Keep in mind that e
 
 Starting from Thingsboard 3.5.2 it is possible to use OAuth2 authorization for Office 365 SMTP server. 
 
+{% capture difference %}
+**Please note:**
+<br>
+Take a note that OAuth 2.0 is supported for Microsoft 365 accounts, but NOT for personal Outlook accounts (e.g. @outlook.com or @hotmail.com accounts). 
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+First, go to the "Azure directory" to save user principal name of user you want to use for mail sending (if not exists, please create or invite from external services):
+
+ - Sign in to the [Azure portal](https://portal.azure.com/) and select Microsoft Entra ID;
+ - Select microsoft user and copy user principal name.
+
+{% include images-gallery.html imageCollection="microsoft-azure-with-oauth2" %}
+
 To use Office 365 OAuth2 you need to register an application in the Azure portal but first let’s set up Thingsboard mail server settings.
 
-**ㅤ1. Setup ThingsBoard mail server settings**
+**ㅤ1. Setup ThingsBoard mail server settings**:
 
  - In your ThingsBoard instance, go to the "Settings" page -> "Mail Server" tab;
- - Fill in the "mail From" field;
+ - Enter previously copied Microsoft user principal name (e.g. app_user@onmicrosoft.com);
  - Select SMTP provider - "**Office 365**";
- - In the "Authentication" block, fill in username with email address you are going to use for sending mail from;
+ - In the "Authentication" block, fill in username with microsoft user principal name (the same as you used for mail from);
  - Toggle the authentication type to **OAuth2**;
  - Copy and save the "**Redirect URI template**". It will be needed while set up the Azure portal credentials.
 
@@ -195,22 +209,22 @@ To use Office 365 OAuth2 you need to register an application in the Azure portal
 {% endif %}
 
 <br>
-**ㅤ2. Now let's register an application in the [Azure portal](https://portal.azure.com/)**
+**ㅤ2. Now let's register an application in the Azure portal**:
 
 {% include images-gallery.html imageCollection="azure-portal" showListImageTitles="true" %}
 
 <br>
-**ㅤ3. Then you need to create a "Client secret"**
+**ㅤ3. Then you need to create a "Client secret"**:
 
 {% include images-gallery.html imageCollection="azure-portal-2" showListImageTitles="true" %}
 
 <br>
-**ㅤ4. To finish the authentication set up you need add API permissions for SMTP**
+**ㅤ4. To finish the authentication set up you need add API permissions for SMTP**:
 
 {% include images-gallery.html imageCollection="add-api-permissions" showListImageTitles="true" %}
 
 <br>
-**ㅤ5. Complete ThingsBoard settings setup**
+**ㅤ5. Complete ThingsBoard settings setup**:
 
 Back to the ThingsBoard portal and paste **Client ID**, **Client secret** and **Directory (tenant) ID** from the previous steps into the appropriate fields. Click "Save".
 
@@ -222,7 +236,7 @@ Back to the ThingsBoard portal and paste **Client ID**, **Client secret** and **
 {% endif %}
 
 <br>
-**ㅤ6. Generate access token**
+**ㅤ6. Generate access token**:
 
 Finally, we can get access token. For this click on the "Generate access token" button and your browser will redirect you to provider login page. Please follow the steps
 in your browser and after acceptance we will automatically save Refresh Token and Access Token and redirect you back to ThingsBoard portal. 
@@ -236,7 +250,7 @@ If access token was successfully generated you will see status "generated".
 {% endif %}
 
 <br>
-**ㅤ7. Send test email**
+**ㅤ7. Send test email**:
 
 To check if everything works click "Send test email" button. Keep in mind that each time you change provider info system will drop refresh and access token and you will need to generate it again.
 

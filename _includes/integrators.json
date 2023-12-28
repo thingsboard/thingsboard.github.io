@@ -888,6 +888,18 @@
     }
   },
   {
+    "type": ["Europe"],
+    "country": ["Greece"],
+    "name": "Scientific Enterprises Ltd",
+    "contact": {
+      "href": "george@scienter.gr"
+    },
+    "site": {
+      "href": "scienter.gr",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["North America"],
     "country": ["United States of America"],
     "name": "Senzary LLC",
