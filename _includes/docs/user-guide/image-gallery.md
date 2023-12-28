@@ -14,6 +14,31 @@ Users can easily upload, organize, and select images to customize their interfac
 ![image](/images/user-guide/image-gallery/image-gallery-ce.png)
 {% endif %}
 
+{% unless docsPrefix == 'paas/' %}
+## Configuration
+
+
+Our image API uses *ETags* to optimize caching, ensuring images are only downloaded when they have changed, thus saving bandwidth.
+By default, we do not apply Cache-Control headers, relying on the efficiency of ETags.
+However, you can customize caching behavior through environment variables: 
+
+- *CACHE_SPECS_IMAGE_ETAGS_TTL* - image ETags cache TTL. The default value is 44640 minutes, after which the cache will be deleted;
+
+- *CACHE_SPECS_IMAGE_ETAGS_MAX_SIZE* - maximum cache size, in bytes. 0 means the cache is disabled;
+
+- *CACHE_SPECS_IMAGE_SYSTEM_BROWSER_TTL* - browser cache TTL for system images, in minutes. Default value is 0 minutes - the cache is disabled;
+
+- *CACHE_SPECS_IMAGE_TENANT_BROWSER_TTL* - browser cache TTL for tenant images, in minutes. Default value is 0 minutes - the cache is disabled.
+
+These configurations control the Time To Live (TTL) for your system and tenant images in a user's browser cache.
+Setting a longer TTL improves load time for repeated visits and reduces server load, while a shorter TTL ensures users receive more frequent content updates.
+Adjust these settings based on the update frequency of your images. How to do it, read [here](/docs/user-guide/install/{{docsPrefix}}how-to-change-config/).
+
+<br>
+Additionally, the system administrator can set restrictions on the maximum size of a single image and the total size of images by configuring [tenant profiles](/docs/{{docsPrefix}}user-guide/tenant-profiles/#files-limits).
+Values are specified in bytes.
+{% endunless %}
+
 ## Managing image gallery
 
 Learn about the image gallery interface to identify the functionalities of various features.
