@@ -31,12 +31,10 @@ toc:
 #      path: /docs/pe/edge/config/provision-customer/
 - title: Rule Engine
   section:
+    - title: Rule Chain Templates
+      path: /docs/pe/edge/rule-engine/rule-chain-templates/
     - title: Queues
       path: /docs/pe/edge/rule-engine/queues/
-#    - title: Rule Chain Templates
-#      path: /docs/pe/edge/rule-engine/rule-chain-templates/
-#    - title: Provision Rule Chains from cloud to edge
-#      path: /docs/pe/edge/rule-engine/provision-rule-chains/
 #    - title: Push data from edge to cloud and vice versa
 #      path: /docs/pe/edge/rule-engine/push-data/
 - title: Integrations
