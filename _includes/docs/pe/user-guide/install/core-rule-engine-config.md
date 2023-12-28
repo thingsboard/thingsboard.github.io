@@ -154,6 +154,12 @@
 			<td> Maximum queue size of the websocket updates per session. This restriction prevents infinite updates of WS</td>
 		</tr>
 		<tr>
+			<td>server.ws.auth_timeout_ms</td>
+			<td>TB_SERVER_WS_AUTH_TIMEOUT_MS</td>
+			<td>10000</td>
+			<td> Maximum time between WS session opening and sending auth command</td>
+		</tr>
+		<tr>
 			<td>server.rest.server_side_rpc.min_timeout</td>
 			<td>MIN_SERVER_SIDE_RPC_TIMEOUT</td>
 			<td>5000</td>
@@ -474,7 +480,7 @@
 		<tr>
 			<td>ui.help.base-url</td>
 			<td>UI_HELP_BASE_URL</td>
-			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-3.6.1</td>
+			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-3.6.2</td>
 			<td> Base URL for UI help assets</td>
 		</tr>
 	</tbody>
@@ -2402,14 +2408,14 @@
 		</tr>
 		<tr>
 			<td>spring.servlet.multipart.max-file-size</td>
-			<td></td>
-			<td>"50MB" </td>
+			<td>SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE</td>
+			<td>50MB</td>
 			<td> Total file size cannot exceed 50MB when configuring file uploads</td>
 		</tr>
 		<tr>
 			<td>spring.servlet.multipart.max-request-size</td>
-			<td></td>
-			<td>"50MB" </td>
+			<td>SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE</td>
+			<td>50MB</td>
 			<td> Total request size for a multipart/form-data cannot exceed 50MB</td>
 		</tr>
 		<tr>
@@ -4300,7 +4306,7 @@
 		<tr>
 			<td>queue.kafka.topic-properties.version-control</td>
 			<td>TB_QUEUE_KAFKA_VC_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Version Control topic</td>
 		</tr>
 		<tr>
@@ -5187,7 +5193,7 @@
 		<tr>
 			<td>vc.thread_pool_size</td>
 			<td>TB_VC_POOL_SIZE</td>
-			<td>2</td>
+			<td>6</td>
 			<td> Pool size for handling export tasks</td>
 		</tr>
 		<tr>

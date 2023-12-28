@@ -46,6 +46,18 @@
 			<td>"true" </td>
 			<td> Spring Boot configuration property that controls whether circular dependencies between beans are allowed.</td>
 		</tr>
+		<tr>
+			<td>spring.servlet.multipart.max-file-size</td>
+			<td>SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE</td>
+			<td>50MB</td>
+			<td> Total file size cannot exceed 50MB when configuring file uploads</td>
+		</tr>
+		<tr>
+			<td>spring.servlet.multipart.max-request-size</td>
+			<td>SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE</td>
+			<td>50MB</td>
+			<td> Total request size for a multipart/form-data cannot exceed 50MB</td>
+		</tr>
 	</tbody>
 </table>
 

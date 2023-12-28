@@ -352,7 +352,7 @@
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.version-control</td>
-			<td>TB_QUEUE_KAFKA_CORE_TOPIC_PROPERTIES</td>
+			<td>TB_QUEUE_KAFKA_VC_TOPIC_PROPERTIES</td>
 			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Core topics</td>
 		</tr>
@@ -696,7 +696,7 @@
 		<tr>
 			<td>vc.thread_pool_size</td>
 			<td>TB_VC_POOL_SIZE</td>
-			<td>2</td>
+			<td>6</td>
 			<td> Pool size for handling export tasks</td>
 		</tr>
 		<tr>
