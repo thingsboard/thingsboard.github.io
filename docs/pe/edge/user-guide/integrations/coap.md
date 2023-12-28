@@ -35,7 +35,7 @@ assignIntegration:
         title: 'Assign Integration to the Edge'
     3:
         image: /images/pe/edge/integrations/coap/assign-integration-step-4.png
-        title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
+        title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
 
 sendUplink:
     0:
@@ -72,7 +72,7 @@ Please review the integration diagram to learn more.
 
 ![image](/images/user-guide/integrations/coap-integration.svg)
 
-### Prerequisites
+## Prerequisites
 
 In this tutorial, we will show you how configure CoAP integration with **NO SECURE** security mode selected. 
 
@@ -134,13 +134,13 @@ Save changes by clicking on the 'checkmark' icon.
 
 {% include images-gallery.html imageCollection="modifyConverter" %}
 
-### Create Integration template
+## Create Integration template
 
 Now that the Uplink converter template has been created, it is possible to create an integration.
 
 {% include images-gallery.html imageCollection="addIntegration" showListImageTitles="true" %}
 
-### Assign Integration to Edge
+## Assign Integration to Edge
 
 Once converter and integration templates are created, we can assign Integration template to Edge.
 Because we are using placeholder **$\{\{edgeIP\}\}** in the integration configuration, we need to add attribute **edgeIP** to edge first.
@@ -149,7 +149,7 @@ Once attribute added, we are ready to assign integration and verify that it's ad
 
 {% include images-gallery.html imageCollection="assignIntegration" showListImageTitles="true" %}
 
-### Send uplink message
+## Send uplink message
 
 Once CoAP Integration has been created, the CoAP server register appropriate resources, and then it waits for data from the devices.
 Let's log in to ThingsBoard **Edge** and go to the **Integrations** page. Find your CoAP integration and click on it. There you can find the CoAP endpoint URL. Click on the icon to copy the url.
@@ -173,7 +173,7 @@ Received data can be viewed in the Uplink converter. In the **'In'** and **'Out'
 
 {% include images-gallery.html imageCollection="converterEvents" %}
 
-### Next steps
+## Next steps
 
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/guides-banner-edge.md %}

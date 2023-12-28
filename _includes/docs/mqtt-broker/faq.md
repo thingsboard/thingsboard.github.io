@@ -2,7 +2,7 @@
 {:toc}
 
 
-## What is TBMQ?
+### What is TBMQ?
 
 TBMQ represents an open-source software product developed by ThingsBoard, designed to facilitate communication between MQTT clients. 
 This particular product is freely available for both personal and commercial purposes, with the added flexibility of being deployable in any desired location. 
@@ -41,7 +41,7 @@ Each broker, or node, within the cluster possesses identical capabilities and ha
 It's worth noting that the actual performance of the system is contingent upon the specific usage scenario, 
 with factors such as payload size and message rate playing crucial roles in determining the overall efficiency and throughput of the system.
 For a comprehensive understanding of the performance capabilities of TBMQ, we recommend referring to the dedicated 
-[performance test page](/docs/mqtt-broker/reference/performance-tests/).
+[performance test page](/docs/mqtt-broker/reference/100m-connections-performance-test/).
   
 ### Where does TBMQ store data?
 

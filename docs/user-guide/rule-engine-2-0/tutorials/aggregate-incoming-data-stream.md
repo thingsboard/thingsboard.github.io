@@ -104,13 +104,13 @@ In this section, we explain the purpose of each node in this tutorial. There wil
     * Simple node that stores incoming message to the database and dispatches updates to the subscribers.
 
 
-### Configuring the Rule Chains
+## Configuring the Rule Chains
 
 Download and [**import**](/docs/user-guide/ui/rule-chains/#rule-chains-importexport) attached emulators rule chain [**file**](/docs/user-guide/rule-engine-2-0/pe/tutorials/aggregation_emulators.json) as a new "Emulators" rule chain and 
 attached water consumption rule chain [**file**](/docs/user-guide/rule-engine-2-0/pe/tutorials/aggregation_water_consumption.json) as a new "Water Consumption" rule chain. 
 Please note that some nodes have debug enabled. This affects performance. Create Node C and Node D as shown on the image above in the root rule chain to forward telemetry to new rule chain.
 
-### Validating the flow
+## Validating the flow
 
 Download and [**import**](/docs/user-guide/ui/dashboards/#iot-dashboard-importexport) attached dashboard [**file**](/docs/user-guide/rule-engine-2-0/pe/tutorials/building_water_meters.json) as a new "Building Water Meters" dashboard.
 
@@ -120,7 +120,7 @@ Note that you can drill down to the chart for particular warehouse by clicking o
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/aggregation/dashboard-part2.png)
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "DataAnalytics" %}{% include templates/guides-banner.md %}
 

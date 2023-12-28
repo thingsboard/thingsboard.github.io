@@ -29,6 +29,14 @@ Possible return codes, and their reasons during connect sequence:
 
 The alternative authentication option is to use [X.509 Certificates](/docs/{{docsPrefix}}user-guide/certificates/) or [Basic MQTT Credentials](/docs/{{docsPrefix}}user-guide/basic-mqtt/) - combination of client id, username and password.
 
+Now you are ready to publish telemetry data on behalf of your device.
+We will use simple commands to publish data over MQTT in this example. Select your OS:
+
+{% capture connectdevicetogglespec %}
+MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/helloworld-pe/mqtt-linux.md%br%
+MQTT<small>Windows</small>%,%mqtt-windows%,%templates/helloworld-pe/mqtt-windows.md{% endcapture %}
+{% include content-toggle.html content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec %}
+
 {% include templates/api/key-value-format.md %}
 
 However, it is also possible to send data via [Protocol Buffers](https://developers.google.com/protocol-buffers).
@@ -36,7 +44,7 @@ Please refer to the [MQTT transport type](/docs/{{docsPrefix}}user-guide/device-
 
 Using custom binary format or some serialization framework is also possible. See [protocol customization](#protocol-customization) for more details.
 
-### Telemetry upload API
+## Telemetry upload API
 
 In order to publish telemetry data to ThingsBoard server node, send PUBLISH message to the following topic:
  
@@ -77,7 +85,7 @@ E,telemetry-data-with-ts.json,json,resources/telemetry-data-with-ts.json,/docs/r
 {% include tabs.html %}
 
  
-### Attributes API
+## Attributes API
 
 ThingsBoard attributes API allows devices to
 
@@ -158,13 +166,13 @@ A,Mosquitto,shell,resources/mosquitto-attributes-subscribe.sh,/docs/reference/re
 B,MQTT.js,shell,resources/mqtt-js-attributes-subscribe.sh,/docs/reference/resources/mqtt-js-attributes-subscribe.sh{% endcapture %}
 {% include tabs.html %}
 
-### JSON value support
+## JSON value support
 
 {% include templates/api/json.md %}
 
-### RPC API
+## RPC API
 
-#### Server-side RPC
+### Server-side RPC
 
 In order to subscribe to RPC commands from the server, send SUBSCRIBE message to the following topic:
 
@@ -269,7 +277,7 @@ A,example.sh,shell,resources/mqtt-js-rpc-from-client.sh,/docs/reference/resource
 B,mqtt-js-rpc-from-client.js,javascript,resources/mqtt-js-rpc-from-client.js,/docs/reference/resources/mqtt-js-rpc-from-client.js{% endcapture %}
 {% include tabs.html %}
 
-### Claiming devices
+## Claiming devices
 
 Please see the corresponding article to get more information about the [Claiming devices](/docs/{{docsPrefix}}user-guide/claiming-devices) feature.
 
@@ -310,7 +318,7 @@ The supported data format is:
 }
 ```
 
-### Firmware API
+## Firmware API
 
 When ThingsBoard initiates an MQTT device firmware update, it sets the fw_title, fw_version, fw_checksum, fw_checksum_algorithm shared attributes.
 To receive the shared attribute updates, the device has to subscribe to 
@@ -348,11 +356,11 @@ Where
 
 **+** is the Wildcard character.
 
-### Protocol customization
+## Protocol customization
 
 MQTT transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt).
 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

@@ -26,6 +26,8 @@
     <meta charset="utf-8">
     <meta name="cf-2fa-verify" content="a08672380de15e9">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     {% if customTitle %}
     <title>{{ customTitle }}</title>
     {% seo title=false %}
@@ -38,23 +40,22 @@
     {% if !page.no_canonical %}
     <link rel="canonical" href="https://thingsboard.io{{page.url}}">
     {% endif %}
-    <link rel="shortcut icon" type="image/png" href="/images/favicon.png">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="shortcut icon" type="image/png" href="https://img.thingsboard.io/favicon.png">
+    {% if page.url == '/' %}
+    <link href="/css/critical.css" rel="stylesheet">
+    {% else %}
+    <link href="/css/styles.css" rel="stylesheet">
+    {% endif %}
     <script async defer src="https://buttons.github.io/buttons.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gifffer/1.5.0/gifffer.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
-    <script>
+    <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
+    <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/gifffer/1.5.0/gifffer.min.js"></script>
+    <script async defer src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
+    <script async defer>
         window.onload = function() {
             Gifffer();
         }
     </script>
-    <script>
+    <script async defer>
         /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
         !function (a) {
             "use strict";
@@ -190,6 +191,9 @@
         }
 
         var initialScriptsList = [
+            {src: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', type: 'css'},
+            {src: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', type: 'css'},
+            {src: 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700', type: 'css'},
             {src: '/js/jquery-2.2.0.min.js', type: 'script'},
             {src: '/css/jquery-ui.min.css', type: 'css'},
             {src: '/js/jquery-ui.min.js', type: 'script'},
@@ -234,7 +238,7 @@
         }
 
     </script>
-    <script>
+    <script async defer>
         function _gaLt(event) {
             /* If GA is blocked or not loaded, or not main|middle|touch click then don't track */
             if (!ga.hasOwnProperty("loaded") || ga.loaded != true || (event.which != 1 && event.which != 2)) {
@@ -289,7 +293,7 @@
             document.body.attachEvent("on" + _gaLtEvt, _gaLt)
         });
     </script>
-    <script>
+    <script async defer>
         (function (i, s, o, g, r, a, m) {
             i['GoogleAnalyticsObject'] = r;
             i[r] = i[r] || function () {
@@ -305,7 +309,7 @@
         ga('create', 'UA-88383331-1', 'auto');
         ga('send', 'pageview');
     </script>
-    <script>
+    <script async defer>
         function Burger() {
             var header = $('header');
             var body = $('body');
@@ -320,7 +324,7 @@
             }
         }
     </script>
-    <script>
+    <script async defer>
 
         jqueryDefer(function () {
             let menuElement = $('nav.head-menu > ul');
@@ -476,12 +480,12 @@
 <header>
     <div class="logo-burger">
         <a href="/support-ukraine/" class="support-ukraine">
-            <p><i class="fa fa-ban" aria-hidden="true"></i>&nbsp;Stop the war</p>
+            <p><i class="fa fa-ban"></i>Stop the war</p>
             <img src="/images/animated-ukraine-flag.gif" alt="Stand with Ukraine flag">
             <p>Support Ukraine</p>
         </a>
-        <a href="/" class="logo"></a>
-        <button onclick="Burger()" class="burger"></button>
+        <a href="/" class="logo" aria-label="Link to homepage"></a>
+        <button onclick="Burger()" class="burger"  aria-label="Burger menu"></button>
         <div id="githubButtonContainer">
             <a class="github-button" href="{{ githubLink }}" data-show-count="true"
                aria-label="{{ githubLabel }}">Star</a>
@@ -496,7 +500,7 @@
                 <span class="main-menu-link" onclick="listburg('nav-services')">Services</span>
             </li>
             <li class="nav-cases" data-submenu-id="nav-cases">
-                <span class="main-menu-link" id="use-cases-link" href="/iot-use-cases/" style="cursor: pointer;">Use Cases</span>
+                <a class="main-menu-link" id="use-cases-link" href="/iot-use-cases/" style="cursor: pointer;">Use Cases</a>
             </li>
             <li class="nav-customers" data-submenu-id="nav-customers">
                 <span class="main-menu-link" onclick="listburg('nav-customers')">Customers</span>
@@ -593,32 +597,60 @@
             </div>
             <div id="nav-services" class="centered-sub">
                 <ul class="sub-menu services">
-                    <li>
-                        <a href="/docs/services/support/">
-                            <img src="/images/support-icon.svg" alt="Support icon">
-                            <div class="sub-text">
-                                <span class="item-heading">Support</span>
-                                <p>Support packages</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/docs/services/trainings/">
-                            <img src="/images/train-icon.svg" alt="Trainings icon">
-                            <div class="sub-text">
-                                <span class="item-heading">Trainings</span>
-                                <p>ThingsBoard education courses</p>
-                            </div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/docs/services/consulting/">
-                            <img src="/images/prof-icon.svg" alt="Professional services icon">
-                            <div class="sub-text">
-                                <span class="item-heading">Professional services</span>
-                                <p>Development of solutions by the ThingsBoard team</p>
-                            </div>
-                        </a>
+                    <li class="sub-groups">
+                        <div class="group">
+                            <a href="/docs/services/development-services/">
+                                <img src="/images/development-services.svg" alt="Development services icon">
+                                <div class="sub-text">
+                                    <span class="item-heading">Development services</span>
+                                    <p>Customization and complete IoT Solutions development</p>
+                                </div>
+                            </a>
+                            <a href="/docs/services/support/">
+                                <img src="/images/support-icon.svg" alt="Support icon">
+                                <div class="sub-text">
+                                    <span class="item-heading">Support</span>
+                                    <p>Support packages</p>
+                                </div>
+                            </a>
+                            <a href="/docs/services/trainings/">
+                                <img src="/images/train-icon.svg" alt="Trainings icon">
+                                <div class="sub-text">
+                                    <span class="item-heading">Trainings</span>
+                                    <p>ThingsBoard education courses</p>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="group">
+                            <a href="/iot-solutions/">
+                                <img src="/images/iot-solutions.svg" alt="IoT solutions icon">
+                                <div class="sub-text">
+                                    <span class="item-heading">IoT Solutions</span>
+                                    <p>Overview of IoT Solutions and Applications</p>
+                                </div>
+                            </a>
+                            <a href="/device-management/">
+                                <img src="/images/device-management.svg" alt="Device management icon">
+                                <div class="sub-text">
+                                    <span class="item-heading">Device management</span>
+                                    <p>Streamline Your IoT Device Operations</p>
+                                </div>
+                            </a>
+                            <a href="/monitoring-dashboard/">
+                                <img src="/images/monitoring-dashboard.svg" alt="Monitoring dashboard icon">
+                                <div class="sub-text">
+                                    <span class="item-heading">Monitoring dashboard</span>
+                                    <p>Visualizing IoT Data on Live Dashboards</p>
+                                </div>
+                            </a>
+                            <a href="/asset-management">
+                                <img src="/images/asset-management.svg" alt="Asset management icon">
+                                <div class="sub-text">
+                                    <span class="item-heading">Asset Management</span>
+                                    <p>IoT Asset Tracking and inventory management</p>
+                                </div>
+                            </a>
+                        </div>
                     </li>
                 </ul>
             </div>

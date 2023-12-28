@@ -7,7 +7,7 @@
 We assume you have completed the general [Getting Started](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide
 to get familiar with ThingsBoard. We also recommend to review the [Device Profiles](/docs/{{docsPrefix}}user-guide/device-profiles/) documentation first.
 
-### Sparkplug basics
+## Sparkplug basics
 
 [Sparkplug](https://sparkplug.eclipse.org/) is an open source software specification that provides MQTT clients the framework 
 to seamlessly integrate data from their applications, sensors, devices, and gateways within the MQTT Infrastructure.
@@ -35,7 +35,7 @@ ThingsBoard supports **Sparkplug™ B** payloads only.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-### Getting started
+## Getting started
 
 This guide will teach us how to: connect Sparkplug EoN node to ThingsBoard,
 collect device metrics and store them as ThingsBoard time-series data,
@@ -248,6 +248,6 @@ In the *Terminal* where the emulator is running, you should see the following me
 
 The *Sparkplug EoN Node 1* has been rebooted.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

@@ -16,18 +16,24 @@ This guide will help you to install and start ThingsBoard Edge using Docker on L
 
 {% include templates/edge/install/prerequisites.md %}
 
-#### Docker installation
+### Docker installation
 
 - [Install Docker CE](https://docs.docker.com/engine/install/){:target="_blank"}
 - [Install Docker Compose](https://docs.docker.com/compose/install/){:target="_blank"}
 
 {% include templates/install/docker-install-note.md %}
 
-{% include templates/edge/install/hardware-requirements.md %}
+## Guided Installation Using ThingsBoard Server Pre-configured Instructions
+
+{% include templates/edge/install/tb-server-pre-configured-install-instructions.md %}
+
+{% include templates/edge/install/manual-install-instructions-intro.md %}
 
 ### Step 1. Running ThingsBoard Edge
 
 {% include templates/edge/install/docker-images-location.md %}
+
+{% include templates/edge/install/copy-edge-credentials.md %}
 
 Create docker compose file for ThingsBoard Edge service:
 

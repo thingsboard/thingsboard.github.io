@@ -13,7 +13,7 @@ As a platform user, you may monitor the update process using the dashboard.
 <object data="/images/user-guide/firmware/firmware-anim3.svg"></object>
 <br>
 
-### Provision OTA package to ThingsBoard repository
+## Provision OTA package to ThingsBoard repository
 
 Navigate to the "OTA Updates" menu item to list and upload OTA update packages. Each package consist of:
 
@@ -37,12 +37,12 @@ Also, [Audit logs](/docs/{{docsPrefix}}user-guide/audit-log/) track information 
 
 All actions listed are also available via [REST API](/docs/{{docsPrefix}}reference/rest-api/).
 
-### Firmware vs Software
+## Firmware vs Software
 
 There is a very minor difference between FOTA and SOTA implementation inside ThingsBoard core. Many use-cases and applications will need to use FOTA only. 
 However, [LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) devices process FOTA and SOTA updates differently. 
 
-### Assign OTA package to device profile
+## Assign OTA package to device profile
 
 You may assign firmware/software to the device profile to automatically distribute the package to all devices that share the same profile. See screenshots below.
 
@@ -52,7 +52,7 @@ The device profile details will let you choose only compatible OTA update packag
 Device profile may be used by thousands of devices. Assignment of the firmware/software triggers the [update process](#update-process).
 
 
-### Assign OTA package to device
+## Assign OTA package to device
 
 You may also assign firmware/software to specific device. See screenshots below.
 
@@ -75,7 +75,7 @@ Deletion of the firmware packages that is assigned to at least one device or dev
 {% endcapture %}
 {% include templates/info-banner.md content=delete_restrictions %}
 
-### Update process
+## Update process
 
 Assignment of the firmware/software to the device or device profile triggers the update process.
 ThingsBoard tracks the progress of the update and persists it to the device attributes.
@@ -149,7 +149,7 @@ MQTT<br>%,%mqtt%,%templates/install/mqtt-firmware.md%br%
 CoAP<br>%,%aws%,%templates/install/coap-firmware.md%br%{% endcapture %}
 {% include content-toggle.html content-toggle-id="remoteintegrationdockerinstall" toggle-spec=contenttogglespec %}
 
-### Dashboard
+## Dashboard
 
 ThingsBoard provides the summary of the firmware/software update to monitor and track the firmware/software update status of your device, such as which devices are updating right now, any boot issues, and which ones have already been updated.
 
@@ -166,8 +166,6 @@ Click the "History of the firmware updates" button next to the device name to le
 
 {% include images-gallery.html imageCollection="fw-status" %}
 
-{% include images-gallery.html imageCollection="fw-status-1" %}
-
 ### Software update monitoring dashboard
 
 The dashboard is created automatically for each new tenant that you add to ThingsBoard.
@@ -177,19 +175,13 @@ There you can see a list of all devices with full information about their softwa
 
 {% include images-gallery.html imageCollection="sw-dashboard" %}
 
-Click the "History of the software updates" button next to the device name to learn about the software update status of specific device.
-
-{% include images-gallery.html imageCollection="sw-status" %}
-
-{% include images-gallery.html imageCollection="sw-status-1" %}
-
 {% if docsPrefix != 'paas/' %}
 
 ### Configuration
 
 ##### Queue processing pace
 
-To set the max number of devices that will be notified in the chosen time period using the following [configuration](/docs/{{docsPrefix}}user-guide/install/config/) properties:
+To set the max number of devices that will be notified in the chosen time period using the following [configuration](/docs/user-guide/install/{{docsPrefix}}config/) properties:
 
 ```bash
 export TB_QUEUE_CORE_FW_PACK_INTERVAL_MS=60000

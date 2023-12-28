@@ -40,7 +40,7 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
   "mapping":[
     {
       "endpoint": "/test_device",
-      "HTTPMethod": [
+      "HTTPMethods": [
         "POST"
       ],
       "security":
@@ -77,7 +77,7 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
     },
     {
       "endpoint": "/test",
-      "HTTPMethod": [
+      "HTTPMethods": [
         "GET",
         "POST"
       ],
@@ -134,11 +134,11 @@ By default, the gateway uses Json converter, but it is possible to provide custo
 
 **Note**: You can specify multiple mapping objects inside the array.
 
-| **Parameter**     | **Default value**                     | **Description**                                               |
-|:-|:-|-
-| endpoint          | **/test_device**                      | Url address of the endpoint.                                  |
-| HTTPMethod        | **GET**                               | HTTP method allowed for endpoint (**GET**, **POST** etc.).    |
-|---
+| **Parameter** | **Default value**                     | **Description**                                             |
+|:--------------|:-|-------------------------------------------------------------
+| endpoint      | **/test_device**                      | Url address of the endpoint.                                |
+| HTTPMethods   | **GET**                               | HTTP methods allowed for endpoint (**GET**, **POST** etc.). |
+| ---           
 
 #### Security section
 
@@ -391,7 +391,7 @@ it manually. To use them, make sure you set all required parameters (in the case
 **requestUrlExpression**, **responseTimeout**, **HTTPMethod**, **valueExpression**). 
 See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
 
-### Next steps
+## Next steps
 
 Explore guides related to main ThingsBoard features:
 

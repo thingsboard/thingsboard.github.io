@@ -33,7 +33,7 @@ assignIntegration:
         title: 'Assign Integration to the Edge'
     3:
         image: /images/pe/edge/integrations/http/assign-integration-step-4.png
-        title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
+        title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
 
 sendUplink:
     0:
@@ -94,7 +94,7 @@ HTTP Integration allows converting existing protocols and payload formats to Thi
  - stream device and/or asset data from your custom application running in the cloud.
  - connect the existing device with custom HTTP based protocol to ThingsBoard Edge.
 
-### Create Converter templates
+## Create Converter templates
 
 Converter and Integration templates are created on the **Cloud**, so please log in as Tenant administrator to cloud instance.
 
@@ -189,14 +189,14 @@ return result;
 ```
 {: .copy-code}
 
-### Create Integration template 
+## Create Integration template 
 
 Now that the Uplink and Downlink converter templates have been created, it is possible to create an integration.
 
 {% include images-gallery.html imageCollection="addIntegration" %}
 
 
-### Modify Edge Root Rule chain for Downlinks
+## Modify Edge Root Rule chain for Downlinks
 
 We can send a downlink message to the device from Rule chain using the rule node.
 To be able to send downlink over integration we need to modify **'Edge Root Rule chain'** on the cloud.
@@ -205,7 +205,7 @@ When changes are made to device attribute, the downlink message will be sent to 
 
 {% include images-gallery.html imageCollection="downlinkRule" %}
 
-### Assign Integration to Edge
+## Assign Integration to Edge
 
 Once converter and integration templates are created, we can assign Integration template to Edge. 
 Because we are using placeholder **$\{\{edgeBaseUrl\}\}** in the integration configuration, we need to add attribute **edgeBaseUrl** to edge first.
@@ -214,7 +214,7 @@ Once attribute added, we are ready to assign integration and verify that it's ad
 
 {% include images-gallery.html imageCollection="assignIntegration" showListImageTitles="true" %}
 
-### Send uplink message
+## Send uplink message
 
 To send an uplink message, you need HTTP endpoint URL from the integration.  
 Let's log in to ThingsBoard **Edge** and go to the **Integrations** page. Find your HTTP integration and click on it. There you can find the HTTP endpoint URL. Click on the icon to copy the url.
@@ -236,7 +236,7 @@ Received data can be viewed in the Uplink converter. In the **'In'** and **'Out'
 
 {% include images-gallery.html imageCollection="converterEvents" %}
 
-### Send downlink message
+## Send downlink message
 
 Now let's check downlink functionality. Let's add **firmware** shared attribute:
 
@@ -258,7 +258,7 @@ An example of sent message and a response from ThingsBoard Edge in the terminal:
 
 {% include images-gallery.html imageCollection="downlinkTerminal" %}
 
-### Next steps
+## Next steps
 
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/guides-banner-edge.md %}

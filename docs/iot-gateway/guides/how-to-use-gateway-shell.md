@@ -69,7 +69,7 @@ To retrieve the status of the gateway, use the following command:
 $ tb-gateway-shell gateway -s
 ```
 
-### Next steps
+## Next steps
 
 Explore guides related to main ThingsBoard features:
 

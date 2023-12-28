@@ -20,7 +20,7 @@ processing logic or just to track history and enable visualization of this info 
 In this tutorial we will configure ThingsBoard Rule Engine to automatically get weather information using REST API.
  You can use this tutorial as a basis for more complex tasks.
 
-### Prerequisites
+## Prerequisites
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
@@ -28,7 +28,7 @@ We assume you have completed the following guides and reviewed the articles list
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
   * [External rule nodes](/docs/user-guide/rule-engine-2-0/external-nodes/).
 
-### Adding the asset
+## Adding the asset
 
 Add Asset entity in ThingsBoard. Its name is **Building A** and its type is **building**.
 
@@ -42,13 +42,13 @@ following way:
 
  ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/add-asset-pe-weather-rest-api.png)
 
-### Assigning asset to customer in Community edition
+## Assigning asset to customer in Community edition
 
 - Go to **Assets** -> **Assign to customer** -> **(Your Customer)** -> **Assign**
 
  ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/assign-asset-weather-rest-api.png)
 
-### Registering on data-providing website
+## Registering on data-providing website
 
 In order to get weather data you should register on a website which will provide it. In this case
  [OpenWeatherMap](https://openweathermap.org/) will be used.
@@ -57,7 +57,7 @@ After signing up there go to [this](https://home.openweathermap.org/api_keys) pa
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/openweathermap-apikey.png)
 
-### Creating attributes
+## Creating attributes
 
 To perform REST API call we need the following URL parameters:
 API key, longitude, latitude, and units of measurement.
@@ -94,7 +94,7 @@ Asset attributes should look like this:
 
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/add-new-attribute.png)
 
-- Fill in the attributes with the input data shown in the following table: 
+- Fill in the attributes with the input data shown in the following table:
 
 <table style="width: 50%">
   <thead>
@@ -122,9 +122,10 @@ Asset attributes should look like this:
    </tbody>
 </table>
 
+
 In this example the coordinates of New York City and metric units will be used.
 
-### Message flow
+## Message flow
 
 In this section, we explain the purpose of each node in this tutorial. There will be one rule chain involved:
 
@@ -311,8 +312,8 @@ In this rule chain, you will create 5 nodes as it will be explained in the follo
         type **Success**. This node will put message into telemetry.
 
    ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-rule-chain-node-F.png)
-
  
+
 
 ## Setting up dashboard
 
@@ -323,6 +324,6 @@ The dashboard should look like this:
 ![image](/images/user-guide/rule-engine-2-0/tutorials/rest-api-weather/weather-dashboard.png)
 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}

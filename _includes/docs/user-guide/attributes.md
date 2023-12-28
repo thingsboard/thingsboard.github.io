@@ -26,13 +26,13 @@ For example:
 ```
 {: .copy-code}
 
-### Attribute names
+## Attribute names
 
 As a platform user, you can define any attribute name. 
 However, we recommend to use [camelCase](https://en.wikipedia.org/wiki/Camel_case).
 This make it easy to write custom JS functions for data processing and visualization.
 
-### Attribute types
+## Attribute types
 
 There are three types of attributes. Let's review them with examples:
 
@@ -245,12 +245,12 @@ As an alternative to curl, you may use [Java](/docs/{{docsPrefix}}reference/rest
 - publish *client-side* attributes to the server: [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server), [CoAP API](/docs/{{docsPrefix}}reference/coap-api/#publish-attribute-update-to-the-server), [HTTP API](/docs/{{docsPrefix}}reference/http-api/#publish-attribute-update-to-the-server);
 - request *client-side* attributes from the server: [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/#request-attribute-values-from-the-server), [CoAP API](/docs/{{docsPrefix}}reference/coap-api/#request-attribute-values-from-the-server), [HTTP API](/docs/{{docsPrefix}}reference/http-api/#request-attribute-values-from-the-server).
 
-### Attributes persistence
+## Attributes persistence
 
 ThingsBoard stores latest value of the attribute and last modification time in the SQL database. This enables use of [entity filters](/docs/{{docsPrefix}}user-guide/dashboards/#entity-filters) in the dashboards.
 Changes to the attributes initiated by the user are recorded in the [audit logs](/docs/{{docsPrefix}}user-guide/audit-log/).
   
-### Data Query API
+## Data Query API
 
 Telemetry Controller provides the following REST API to fetch entity data:
 
@@ -262,7 +262,7 @@ The API is backward compatible with TB v1.0+ and this is the main reason why API
 {% endcapture %}
 {% include templates/info-banner.md content=api_note %}
 
-### Data visualization
+## Data visualization
 
 We assume you have already provisioned device attributes. Now you may use them in your dashboards. We recommend [dashboards overview](/docs/{{docsPrefix}}user-guide/dashboards/) to get started.
 Once you are familiar how to create dashboards and configure data sources, 
@@ -271,7 +271,7 @@ temperature, speed, pressure or other numeric values. You may also use [cards](/
 
 You may also use [input widgets](/docs/{{docsPrefix}}user-guide/ui/widget-library/#input-widgets) to allow dashboard users to change the values of the attributes on the dashboards.
 
-### Rule engine
+## Rule engine
 
 The [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) is responsible for processing all sorts of incoming data and event.
 You may find most popular scenarios of using attributes within rule engine below:
@@ -298,9 +298,9 @@ This is extremely powerful technique that allows to modify processing logic and 
 
 {% unless docsPrefix == "paas/" %}
 
-### Performance enhancement
+## Performance enhancement
 
-You can achieve higher performance with Attributes Cache enabled (see <b>cache.attributes.enabled</b> property of the [Configuration properties](/docs/{{docsPrefix}}user-guide/install/config/#thingsboard-core-settings)) 
+You can achieve higher performance with Attributes Cache enabled (see <b>cache.attributes.enabled</b> property of the [Configuration properties](/docs/user-guide/install/{{docsPrefix}}config/#thingsboard-core-settings)) 
 
 Having attributes cache enabled ThingsBoard will load the specific attribute from the database only once, all subsequent requests to the attribute will be loaded from the faster cache connection.
 
@@ -308,7 +308,7 @@ Having attributes cache enabled ThingsBoard will load the specific attribute fro
 
 {% endunless %}
 
-### Old video Tutorial
+## Old video Tutorial
 
 <div id="video">
   <div id="video_wrapper">

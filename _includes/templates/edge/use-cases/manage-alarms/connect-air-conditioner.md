@@ -1,7 +1,7 @@
 To subscribe to RPC commands from edge for the **Air Conditioner** device you need to get the **Air Conditioner** device credentials first.
 ThingsBoard supports different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
 
-Please open ThingsBoard **Edge** UI using the URL: **http://EDGE_URL**.
+Please open ThingsBoard **Edge** UI using the URL: **EDGE_URL**.
 
 {% include images-gallery.html imageCollection="copyAccessTokenAirConditioner" showListImageTitles="true" %}
 

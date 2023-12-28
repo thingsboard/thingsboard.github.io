@@ -6,7 +6,7 @@
 **ThingsBoard widgets** are additional UI modules that easily integrate into any [IoT Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/).  They provide end-user functions such as data visualization, remote device control, alarms management and display of static custom html content.
 According to the provided features, each widget definition represents a specific [Widget Type](/docs/{{docsPrefix}}user-guide/ui/widget-library/#widget-types).
 
-### Creating new widget definition
+## Creating new widget definition
 
 In order to create a new widget definition, navigate to "Widget Library" and open existing "Widgets Bundle" or create a new one.  In the "Widgets Bundle" view, click the big “+” button at the bottom-right part of the screen and then click the "Create new widget type" button.
 
@@ -2006,7 +2006,7 @@ import { TimeseriesTableWidgetComponent } from '@home/components/widget/lib/time
 export class WidgetComponentsModule { }
 ```
 
-### Widget code debugging tips
+## Widget code debugging tips
 
 The most simple method of debugging is Web console output.
 Just place [**console.log(...)**](https://developer.mozilla.org/en-US/docs/Web/API/Console/log) function inside any part of widget JavaScript code.

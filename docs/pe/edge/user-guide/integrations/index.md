@@ -33,7 +33,7 @@ placeholderFeature:
         title: 'Assign Integration to the Edge'
     4:
         image: /images/pe/edge/integrations/placeholder-feature-step-5.png
-        title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
+        title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
 
 missingPlaceholder:
     0:
@@ -157,7 +157,7 @@ Explore guides and video tutorials related to specific integrations:
  - [TCP](/docs/pe/edge/user-guide/integrations/tcp/)
  - [UDP](/docs/pe/edge/user-guide/integrations/udp/)
  
-### Next steps
+## Next steps
 
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/guides-banner-edge.md %}

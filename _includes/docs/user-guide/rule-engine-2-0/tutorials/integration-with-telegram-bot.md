@@ -7,7 +7,7 @@ Telegram provides a possibility to create Telegram Bots, which are considered as
 So, In this tutorial, we are going to demonstrate how you can create a Telegram Bot<br>
 and configure your ThingsBoard rule engine to be able to send notifications to Telegram App using Rest API Call extension.
 
-### Use case
+## Use case
 
 This tutorial is based on the [create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/#use-case) tutorial and it's use case. 
 We will reuse the rule chains from above mentioned tutorial and will add few more rule nodes to integrate with Telegram   
@@ -21,7 +21,7 @@ In this tutorial we will configure ThingsBoard Rule Engine to:
 
 - Add current alarm type and it originator to the message body using Script Transform node.
 
-### Prerequisites 
+## Prerequisites 
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
@@ -29,7 +29,7 @@ We assume you have completed the following guides and reviewed the articles list
   * [Rule Engine Overview](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/).
   * [Create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/) guide.
 
-### Message flow  
+## Message flow  
 
 In this section, we explain the purpose of each node in this tutorial:
 
@@ -92,7 +92,7 @@ From the outcoming data you can find field **'id'**. This is the so-called chat_
 
 After that, you can start to configure Rule engine to use Rest API Call extension.
 
-### Configure Rule Chains
+## Configure Rule Chains
 
 In this tutorial, we used Rule Chains from [create & clear alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/) tutorial.
 We modified Rule Chain **Create & Clear Alarms** by adding nodes that was described above in the section [Message flow](#message-flow)<br>
@@ -189,7 +189,7 @@ In this rule chain, you will create 2 nodes as it will be explained in the follo
 ![image](/images/gateway/telegram-bot/rest-api-telegram-node.png)
 
 
-### Post telemetry and verify
+## Post telemetry and verify
 
 For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/{{docsPrefix}}reference/http-api/#telemetry-upload-api). For this we will need to
 copy device access token from then device **Thermostat Home**. 
@@ -231,7 +231,7 @@ Please refer to the links under the **See Also** section to see how to do this.
 
 <br>
 
-### See Also
+## See Also
 
 - [Create & Clear Alarms: alarm details:](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/#step-2-createupdate-alarm) guide - to learn how to configure Alarm Details function in Alarm nodes.
 
@@ -239,6 +239,6 @@ Please refer to the links under the **See Also** section to see how to do this.
 
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) tutorial.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/multi-project-guides-banner.md %}

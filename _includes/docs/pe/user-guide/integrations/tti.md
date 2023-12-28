@@ -14,7 +14,7 @@ TheThingsIndustries is LoRaWAN network designed for connecting your devices usin
 After integrating TheThingsIndustries with the ThingsBoard, you can connect, communicate, process and visualize data from devices in the ThingsBoard IoT platform.
 
 
-### The Things Stack
+## The Things Stack
 
 ##### Register Application
 The first step is to create an **application** in TheThingsIndustries console. Go to console by , open 
@@ -76,7 +76,7 @@ Fill the **AppSKey** by generation button.
 
 Press **Add end device** button.
 
-### Integration with the ThingsBoard
+## Integration with the ThingsBoard
 
 We need to create Integration on The Things Industries, to do this open **Integrations** - **MQTT** and press **Generate new API key**. 
 Copy username and password we will need it later.
@@ -218,7 +218,7 @@ Next we will create Integration with TheThingsIndustries inside the ThingsBoard.
 
 ![image](/images/user-guide/integrations/tti/tb-integration-2.png)  
 
-### Validation
+## Validation
 
 ##### Validate Uplink Messages
 Lets verify our integration. 
@@ -254,7 +254,7 @@ And we see that Downlink message was received (It is displayed as bytes **76 2E 
 
 ![image](/images/user-guide/integrations/tti/ttn-downlink-verified.png)
 
-### See also
+## See also
 With this integration you can also configure Downlink converters and trigger required actions using Rule Engine nodes.
 
 - [Integration Overview](/docs/{{peDocsPrefix}}user-guide/integrations/)
@@ -263,6 +263,6 @@ With this integration you can also configure Downlink converters and trigger req
 - [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/)
 
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}

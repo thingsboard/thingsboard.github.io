@@ -29,7 +29,7 @@ assignIntegration:
         title: 'Assign Integration to the Edge'
     3:
         image: /images/pe/edge/integrations/remote/assign-integration-step-4.png
-        title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
+        title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
 
 copyCredentials:
     0:
@@ -60,11 +60,11 @@ See [deployment options](/docs/pe/edge/user-guide/integrations/#deployment-optio
 
 ## Prerequisites
 
-We assume you already have a ThingsBoard PE Edge instance up and running, and connected to the **Cloud**.   
+We assume you already have a ThingsBoard Edge instance up and running, and connected to the **Server**.   
 
-## ThingsBoard cloud configuration steps
+## ThingsBoard Server configuration steps
 
-Converter and Integration templates are created on the **Cloud**, so please log in as Tenant administrator to cloud instance.
+Converter and Integration templates are created on the **Server**, so please log in as Tenant administrator to the Server instance.
 
 ### Step 1. Create Uplink Converter
 
@@ -229,7 +229,7 @@ CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-rhel.m
 
 {% include content-toggle.html content-toggle-id="remoteintegrationinstallrhel" toggle-spec=rhelinstallspec %} 
 
-### Remote HTTP integration validation
+## Remote HTTP integration validation
 
 To send an uplink message, you need HTTP endpoint URL from the integration.  
 Let's log in to ThingsBoard **Edge** and go to the **Integrations** page. 
@@ -250,7 +250,7 @@ The created device with data can be seen in the section **Device groups -> All**
 
 {% include images-gallery.html imageCollection="device" %}
 
-### Remote integration configuration
+## Remote integration configuration
 
 Remote integration configuration is done via ThingsBoard UI and there is no specific steps.
 Explore guides and video tutorials related to specific integrations:
@@ -262,11 +262,11 @@ Explore guides and video tutorials related to specific integrations:
  - [UDP](/docs/pe/edge/user-guide/integrations/udp/)
  - [CoAP](/docs/pe/edge/user-guide/integrations/coap/)
 
-### Remote integration troubleshooting
+## Remote integration troubleshooting
 
 Please review the log files. Their location is specific to the platform and installation package you have used and is mentioned in the installation steps. 
 
-### Next steps
+## Next steps
 
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/guides-banner-edge.md %}

@@ -2,7 +2,7 @@
 * TOC
 {:toc}
 
-## ThingsBoard provides a rich set of features related to time-series data:
+ThingsBoard provides a rich set of features related to time-series data:
 
  - **Collect** data from devices using various [protocols and integrations](/docs/{{docsPrefix}}getting-started-guides/connectivity/);
  - **Store** time series data in SQL (PostgreSQL) or NoSQL (Cassandra or Timescale) databases;
@@ -15,7 +15,7 @@
 
 This guide provides an overview of the features listed above, and some useful links to get more details.
 
-### Data points
+## Data points
 
 ThingsBoard internally treats time-series data as timestamped key-value pairs. We call single timestamped key-value pair a **data point**. 
 Flexibility and simplicity of the key-value format allow easy and seamless integration with almost any IoT device on the market. 
@@ -60,7 +60,7 @@ However, you may include timestamp information into the message. See example bel
 {: .copy-code}
 
 
-### Time-series data upload API
+## Time-series data upload API
 
 You may use built-in transport protocol implementations:
 
@@ -71,7 +71,7 @@ You may use built-in transport protocol implementations:
 
 Most of the protocols above support JSON, Protobuf or own data format. For other protocols, please review ["How to connect your device?"](/docs/{{docsPrefix}}getting-started-guides/connectivity/) guide.
 
-### Data visualization
+## Data visualization
 
 We assume you have already pushed time-series data to ThingsBoard. Now you may use it in your dashboards. 
 We recommend [dashboards overview](/docs/{{docsPrefix}}user-guide/dashboards/) to get started.
@@ -82,7 +82,7 @@ Good examples of widgets that visualize latest values are [digital](/docs/{{docs
 
 You may also use [input widgets](/docs/{{docsPrefix}}user-guide/ui/widget-library/#input-widgets) to allow dashboard users to input new time-series values using the dashboards.
 
-### Data storage
+## Data storage
 
 {% if docsPrefix == "paas/" %}
 
@@ -99,7 +99,7 @@ See [SQL vs NoSQL vs Hybrid](/docs/{{docsPrefix}}reference/#sql-vs-nosql-vs-hybr
 
 {% endif %}
 
-### Data retention
+## Data retention
 
 {% if docsPrefix == "paas/" %}
 
@@ -114,16 +114,16 @@ For example, you may store "raw" data for 3 month and aggregated data for 3 year
 Data retention policy and configuration depends on the chosen [storage](#data-storage).
 
 Cassandra supports time-to-live(TTL) parameter for each inserted row.
-That is why, you may [configure](/docs/{{docsPrefix}}user-guide/install/config/) default TTL parameter on a system level, using 'TS_KV_TTL' environment variable.
+That is why, you may [configure](/docs/user-guide/install/{{docsPrefix}}config/) default TTL parameter on a system level, using 'TS_KV_TTL' environment variable.
 You may overwrite the default value in the "Save Timeseries" rule node or using "TTL" metadata field of your message.
 This allows you to optimize storage consumption. The maximum allowed value of TTL is 5 years.
 For example, you may store "raw" data for 3 month and aggregated data for 3 years.
 
 PostgreSQL and Timescale does not support time-to-live(TTL) parameter for each inserted row.
-That is why, you may only [configure](/docs/{{docsPrefix}}user-guide/install/config/) periodic time-series data cleanup routine using 'SQL_TTL_*' environment variables. 
+That is why, you may only [configure](/docs/user-guide/install/{{docsPrefix}}config/) periodic time-series data cleanup routine using 'SQL_TTL_*' environment variables. 
 {% endif %}
 
-### Data durability
+## Data durability
 
 The device that sends message with time-series data to ThingsBoard will receive confirmation 
 once the message is successfully stored into the Rule Engine [Queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/) 
@@ -133,7 +133,7 @@ As a tenant administrator, you may configure [processing strategy](/docs/{{docsP
 You may configure the queue either to reprocess or ignore the failures of the message processing. 
 This allows granular control on the level of durability for the time-series data and all other messages processed by the rule engine. 
 
-### Rule engine
+## Rule engine
 
 The [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) is responsible for processing all sorts of incoming data and event.
 You may find most popular scenarios of using attributes within rule engine below:
@@ -171,7 +171,7 @@ Use [analytics](/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/) rule nodes
 
 Useful to calculate total water consumption for the building/district based on data from multiple water meters.     
 
-### Data Query REST API
+## Data Query REST API
 
 ThingsBoard provides following REST API to fetch entity data:
 
@@ -240,7 +240,7 @@ B,get-telemetry-values-result.json,json,resources/get-telemetry-values-result.js
 
 Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, ALARM, ENTITY_VIEW
 
-### WebSocket API
+## WebSocket API
 
 WebSockets are actively used by Thingsboard Web UI. WebSocket API duplicates REST API functionality and provides the ability to subscribe to device data changes.
 You can open a WebSocket connection to a telemetry service using the following URL

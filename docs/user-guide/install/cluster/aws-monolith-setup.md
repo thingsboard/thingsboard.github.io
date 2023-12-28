@@ -44,37 +44,37 @@ K8S will restart the service on another instance. We will use Amazon RDS for man
 
 {% include templates/install/aws/eks-prerequisites.md %}
 
-### Step 1. Clone ThingsBoard CE K8S scripts repository
+## Step 1. Clone ThingsBoard CE K8S scripts repository
 
 ```bash
 git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git
 cd thingsboard-ce-k8s/aws/monolith
 ```
 
-### Step 2. Configure and create EKS cluster
+## Step 2. Configure and create EKS cluster
 
 {% assign eksNote = "**1** node of type **m5.xlarge**" %}
 {% include templates/install/aws/eks-create-cluster.md %}
 
-### Step 3. Create AWS load-balancer controller
+## Step 3. Create AWS load-balancer controller
 
 {% include templates/install/aws/eks-lb-controller.md %}
 
-### Step 4. Provision Databases
+## Step 4. Provision Databases
 
-#### Step 4.1 Amazon PostgreSQL DB Configuration
+### Step 4.1 Amazon PostgreSQL DB Configuration
 
 {% include templates/install/aws/rds-setup.md %}
 
-#### Step 4.2 Cassandra (optional)
+### Step 4.2 Cassandra (optional)
 
 {% include templates/install/aws/configure-cassandra.md %}
 
-### Step 5. Installation
+## Step 5. Installation
 
 {% include templates/install/aws/eks-installation.md %}
 
-### Step 6. Starting
+## Step 6. Starting
 
 Execute the following command to deploy resources:
 
@@ -86,25 +86,25 @@ Execute the following command to deploy resources:
 After few minutes you may call `kubectl get pods`. If everything went fine, you should be able to 
 see `tb-node-0` pod in the `READY` state.
 
-### Step 7. Configure Load Balancers
+## Step 7. Configure Load Balancers
 
-#### 7.1 Configure HTTP(S) Load Balancer
+### 7.1 Configure HTTP(S) Load Balancer
 
 {% include templates/install/aws/http-lb.md %}
 
-#### 7.2. Configure MQTT Load Balancer (Optional)
+### 7.2. Configure MQTT Load Balancer (Optional)
 
 {% include templates/install/aws/configure-mqtt.md %}
 
-#### 7.3. Configure UDP Load Balancer (Optional)
+### 7.3. Configure UDP Load Balancer (Optional)
 
 {% include templates/install/aws/configure-udp.md %}
 
-#### 7.4. Configure Edge Load Balancer (Optional)
+### 7.4. Configure Edge Load Balancer (Optional)
 
 {% include templates/install/k8s-configure-edge-load-balancer.md %}
 
-### Step 8. Validate the setup
+## Step 8. Validate the setup
 
 {% include templates/install/aws/eks-validate.md %}
 
@@ -112,6 +112,6 @@ see `tb-node-0` pod in the `READY` state.
 
 {% include templates/install/aws/eks-deletion.md %}
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/guides-banner.md %}

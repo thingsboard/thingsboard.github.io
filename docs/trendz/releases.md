@@ -8,6 +8,28 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
+## v1.10.3-HF3 (November, 2023)
+
+**Improvements:**
+
+* Improve query planner based on relation graph
+* Add transactional topology refresh
+* Add load balancing option for data queries
+* Improve calculated scripts error logging
+* Re-use time zone from browser time window
+* Optional multi-root items loading
+* Apply selected sorting for exported data
+* Add trend line for line charts
+
+**Bug fixes:**
+
+* Fix tooltips and units in views
+* Fix field load ordering process
+* Fix heatmap export for multiple fields
+* Fix time synchronization between ThingsBoard dashboard and Trendz view
+* Fix Business Entities sorting after topology discovery
+* Fix chart background color when exporting as image
+
 ## v1.10.3 (September, 2023)
 
 **Improvements:**

@@ -22,7 +22,16 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/docker/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker plus (Linux or Mac OS) logo">
+                                                    <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="deployment-card-block">
+                                        <a href="/docs/mqtt-broker/install/docker-windows/">
+                                            <span>
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
                                                  </div>
                                             </span>
                                         </a>
@@ -31,7 +40,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/docker-compose-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cluster/docker-compose.svg" title="Cluster setup with Docker Compose" alt="Cluster setup with Docker Compose logo">
+                                                    <img width="" src="/images/install/cluster/docker-compose.svg" title="Cluster setup with Docker Compose" alt="Cluster setup with Docker Compose">
                                                  </div>
                                             </span>
                                         </a>
@@ -40,7 +49,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/minikube-cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cluster/minikube.svg" title="Cluster setup with Minikube" alt="Cluster setup with Minikube logo">
+                                                    <img width="" src="/images/install/cluster/minikube.svg" title="Cluster setup with Minikube" alt="Cluster setup with Minikube">
                                                  </div>
                                             </span>
                                         </a>
@@ -49,7 +58,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/aws-cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/eks.svg" title="Cluster setup on EKS" alt="AWS K8S cluster logo">
+                                                    <img width="" src="/images/install/cloud/eks.svg" title="Cluster setup on EKS" alt="AWS K8S cluster">
                                                  </div>
                                             </span>
                                         </a>
@@ -58,7 +67,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/cluster/azure-cluster-setup/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/azure.svg" title="Cluster setup on AKS" alt="Azure K8S cluster logo">
+                                                    <img width="" src="/images/install/cloud/azure.svg" title="Cluster setup on AKS" alt="Azure K8S cluster">
                                                  </div>
                                             </span>
                                         </a>
@@ -67,7 +76,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/building-from-source/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/sources.svg" title="Building from sources" alt="Github Maven Building from sources logo">
+                                                    <img width="" src="/images/install/platform/sources.svg" title="Building from sources" alt="Github Maven Building from sources">
                                                  </div>
                                             </span>
                                         </a>

@@ -1,7 +1,7 @@
-Server UI will be available using the URL: **http://localhost:8080**.
-You may use username **tenant@thingsboard.org** and password **tenant**.
+The Server UI can be accessed through the following URL: `http://localhost:8080`.
+Log in using the username **tenant@thingsboard.org** and password **tenant**.
+Throughout this tutorial, we will refer to this URL as **SERVER_URL**.
 
-We are going to refer to this URL as **http://SERVER_URL** below in tutorial.
-
-ThingsBoard **Edge** UI will be available using the URL: **http://localhost:18080**.
-You can use the same username **tenant@thingsboard.org** and password **tenant** to login.
+The ThingsBoard **Edge** UI is accessible at `http://localhost:18080`.
+Use the same credentials: username **tenant@thingsboard.org** and password **tenant**.
+This URL will be referred to as **EDGE_URL** in the subsequent sections of the tutorial.

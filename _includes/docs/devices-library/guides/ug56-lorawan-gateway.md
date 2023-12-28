@@ -13,7 +13,7 @@
 '
  %}
 
-### Introduction
+## Introduction
 
 ![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [UG56 LoRaWAN® Gateway]({{deviceVendorLink}}){: target="_blank"} is a high-performance 8-channel LoRaWAN® gateway that offers reliable connectivity for industrial applications.
@@ -31,13 +31,13 @@ RU864/IN865/EU868/AU915/US915/KR920/AS923
 
 After doing steps described in this guide you will have a connected and configured gateway on a network server and integration on ThingsBoard, it will allow you to add devices, receive data from them and process a data.
 
-### Prerequisites
+## Prerequisites
 
 To continue with this guide we will need the following:
 {{ prerequisites }}
 - [ThingsBoard account]({{ thingsboardHost }}){: target="_blank"}
 
-### Gateway connection
+## Gateway connection
 
 According to the [official user manual](https://resource.milesight-iot.com/milesight/document/ug56-user-guide-en.pdf){: target="_blank"} and [this guide](https://support.milesight-iot.com/support/solutions/articles/73000514278-how-to-connect-milesight-gateway-to-the-internet){: target="_blank"} you can connect the gateway to the network and get access to the WebUI in two ways:
 
@@ -74,7 +74,7 @@ By default, Gateway EUI and Gateway ID are the same.
 
 Next steps will describe how to connect the gateway to network server.
 
-### Configuration
+## Configuration
 
 To create an integration with a network server please choose first one of the supported network servers:
 
@@ -90,6 +90,6 @@ Loriot
 {% include /docs/devices-library/blocks/basic/thingsboard-check-integration-connection.md %}
 
 
-### Conclusion
+## Conclusion
 
 {% include /docs/devices-library/blocks/basic/lora-gateway-conclusion-block.md %}

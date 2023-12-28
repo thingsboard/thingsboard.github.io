@@ -18,14 +18,14 @@ In this tutorial we will configure ThingsBoard Rule Engine to
 - Create or Update existing Alarm if temperature > 80°C or temperature < -40°C
 - Clear Alarm if temperature > -40°C and < 80°C
 
-### Prerequisites
+## Prerequisites
 
 We assume you have completed the following guides and reviewed the articles listed below:
 
   * [Getting Started](/docs/getting-started-guides/helloworld/) guide.
   * [Rule Engine Overview](/docs/user-guide/rule-engine-2-0/overview/).
 
-# Adding the device
+## Adding the device
 
 Add Device entity in ThingsBoard. Its name is **Thermostat Home** and its type is **Thermostat**.
 
@@ -33,7 +33,7 @@ Add Device entity in ThingsBoard. Its name is **Thermostat Home** and its type i
 
 <br>
 
-### Message flow
+## Message flow
 
 In this section, we explain the purpose of each node in this tutorial:
 
@@ -43,12 +43,12 @@ In this section, we explain the purpose of each node in this tutorial:
   - Creates or Updates an  alarm if the published temperature is not at expected time range (filter script node returns True).
 - Node C: [**Clear alarm**](/docs/user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) node.
   - Clears alarm if it exists in case if the published temperature is in expected time range (script node returns False).
-- Node D: **Rule Chain** node.
+- Node D: [**Rule Chain**](/docs/user-guide/rule-engine-2-0/flow-nodes/#rule-chain-node) node.
   - Forwards incoming Message to specified Rule Chain **Create & Clear Alarms**.
 
 <br>
 
-### Configure Rule Chains
+## Configure Rule Chains
 
 In this tutorial, we modified our **Root Rule Chain** and also created Rule Chain **Create & Clear Alarms**
 
@@ -141,7 +141,7 @@ The following screenshot shows how the final **Root Rule Chain** should look lik
 <br>
 <br>
 
-### How to verify the Rule Chain and Post telemetry
+## How to verify the Rule Chain and Post telemetry
 
 For posting device telemetry we will use the Rest APIs, [Telemetry upload APIs](/docs/reference/http-api/#telemetry-upload-api). For this we will need to
 copy device access token from the device **Thermometer**.
@@ -193,7 +193,7 @@ Please refer to the links from the second to the fourth under the **See Also** s
 
 <br>
 
-### See Also
+## See Also
 
 - [Validate incoming telemetry](/docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/) tutorial - for more information about how to validate an incoming telemetry using the Script Filter node.
 
@@ -203,6 +203,6 @@ Please refer to the links from the second to the fourth under the **See Also** s
 
 - [Send Email](/docs/user-guide/rule-engine-2-0/tutorials/send-email/) tutorial.
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "DataProcessing" %}{% include templates/guides-banner.md %}

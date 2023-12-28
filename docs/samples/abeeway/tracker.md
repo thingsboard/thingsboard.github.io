@@ -28,13 +28,13 @@ Otherwise, you can register for a 30-days free demo account here: [thingsboard.c
 We expect you to have at least a basic knowledge about ThingsBoard, so we do recommend to complete the [Getting Started](/docs/getting-started-guides/helloworld) guide.
 
 
-### Integration overview
+## Integration overview
 
 ThingsBoard Platform Integrations feature allows to push data from various platforms and connectivity solutions to ThingsBoard.
 We will use platform ThingPark Wireless company Actility to consume data from LoRaWAN networks and automatically register devices in ThingsBoard.
 Besides configuring the integration, we will also set ThingsBoard up to decode incoming data, store it in the database, visualize on the dashboard and generate alarms based on configurable thresholds.
 
-### Step 1. Checking the registration for the platform ThingPark Wireless company Actility
+## Step 1. Checking the registration for the platform ThingPark Wireless company Actility
 
 - Registration and condition of devices
 
@@ -66,7 +66,7 @@ Therefore, when creating a new device, in the <b>Name</b> field, enter the value
     </ul>
 </details>
 
-### Step 2. Creation UpLink and DownLink DATA Converters
+## Step 2. Creation UpLink and DownLink DATA Converters
 In order to create an [Integration](/docs/user-guide/integrations), we should create the [Uplink Data Converter](/docs/user-guide/integrations/#uplink-data-converter) and the [Downlink Data Converter](/docs/user-guide/integrations/#downlink-data-converter) first. 
 The converters will decode incoming telemetry payload data from global standard LoRaWAN that contains in encoded hex string to human readable, simplified ThingsBoard data format.
 
@@ -84,7 +84,7 @@ The converters will decode incoming telemetry payload data from global standard 
     <img src="/images/samples/abeeway/add_downlink_decoder.png" alt="Add downlink decoder dialog">
 </details>
 
-### Step 3. Uplink Data Converter configuration
+## Step 3. Uplink Data Converter configuration
 
 When creating an Uplink Converter, a default decoder is added to the Decoder section.
 
@@ -387,7 +387,7 @@ Alternatively, you can import it from this [file](/docs/user-guide/resources/act
 </details>
 
 
-### Step 4. Downlink Data Converter configuration
+## Step 4. Downlink Data Converter configuration
 When creating an Downlink Converter, a default decoder is added to the Decoder section.<br>
 After creating the Downlink Converter to the Decoder section, you need to update the Decoder code to [the following code](/images/samples/abeeway/downlinkDecoder.txt). <br>
 
@@ -447,7 +447,7 @@ Alternatively, you can import it from this [file](/docs/user-guide/resources/act
     <img src="/images/user-guide/rule-engine-2-0/tutorials/mqtt-downlink/import_new_converter.png" alt="Import new converter screen">
 </details>
 
-### Step 5. Integration configuration
+## Step 5. Integration configuration
 <details>
     <summary>
         <font color="#006400"><i><b>Screenshot of creating integration on the ThingsBoard platform</b></i></font> <br> (<b>click to open expanded view</b>)
@@ -472,7 +472,7 @@ Alternatively, you can import it from this [file](/docs/user-guide/resources/act
 </details>
 
 
-### Step 6. Verifying devices connectivity after the creation and configuration of the Integration.
+## Step 6. Verifying devices connectivity after the creation and configuration of the Integration.
 After creating and configuring the integration and connecting it to platform ThingPark Wireless company Actility, ThingsBoard will begin receiving the first reports of the telemetry from your devices.
 <details>
    <summary>
@@ -489,7 +489,7 @@ On the basis of these first messages ThingsBoard system will automatically creat
 </details>
 That's why after creating and configuring the integration and before starting the Dashboard setup you need to check that all your devices are detected and visible in ThingsBoard.
 
-### Step 7. Creation  and  configuration of the Dashboard
+## Step 7. Creation  and  configuration of the Dashboard
 <details>
    <summary>
        <font color="#006400"><i><b>Screenshot of the Dashboard after finishing its creation</b></i></font> (<b>click to open expanded view</b>)
@@ -635,7 +635,7 @@ That's why after creating and configuring the integration and before starting th
     <li>Widgets Number 3 and Number 4 with alias <b>DigEntityFrom</b>.</li>
 </ul>
 
-### Step 8: Post telemetry and verify the Integration configuration
+## Step 8: Post telemetry and verify the Integration configuration
 <details>
     <summary>
         <font color="#006400"><i><b>Screenshot of Integration settings change log see here</b></i></font> (<b>click to open expanded view</b>)
@@ -657,7 +657,7 @@ If your devices are active and you do everything correctly when you connect the 
 </details>
 
 
-### Step 9: Configuration the Root Rule Chain (Root)
+## Step 9: Configuration the Root Rule Chain (Root)
 
 After adding widget number 5, it must be associated with the downlink decoder.<br>
 To do this, go to the "Rule Chain" tab and open the "Root Rule Chain".<br>
@@ -707,7 +707,7 @@ Editing the "Root Rule Chain":
         </ul>
 </ul>
 
-### Step 10: Create and Sent Downlink messages
+## Step 10: Create and Sent Downlink messages
 
 Before sending a message:
 - you must create a heading in which the type of request is determined (information about the configuration, or about the status of the device, or about the new configuration)<br>
@@ -916,7 +916,7 @@ and also the content of the data itself (a detailed description of the data).
 
 </details>
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "HardwareSamples" %}{% include templates/guides-banner-pe.md %}
 

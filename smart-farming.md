@@ -1,14 +1,14 @@
 ---
 layout: use-case
-title: Smart farming and smart agriculture solutions
-description: Smart farming, future farming and smart agriculture with ThingsBoard IoT Platform
+title: ᐉ Smart Farming & Agriculture — IoT Agriculture Solutions
+description: Internet of things farming ✔ Smart agriculture ✔ IoT sensors in agriculture ⚫ ThingsBoard ➤ Save up to 90% of development time for your smart-farming & agriculture solutions
 notitle: "true"
 
 ---
 
 {% include usecase-nav.html usecase="smart-farming" %}
 
-<h1 class="usecase-title">Smart farming and smart agriculture solutions</h1>
+<h1 class="usecase-title">Smart Farming & IoT Agriculture Solutions</h1>
 
 ThingsBoard platform dramatically reduces time to market and efforts to create smart-farming solutions.
 Save up to 90% of development time for your smart-farming solution by utilizing the following platform benefits:
@@ -52,7 +52,7 @@ The main dashboard displays the silo asset's location, corresponding alarms, and
 Click on the alarm or silo row to open the asset details and access the aeration controls.
 You may export the dashboard from our live demo server and import it to your ThingsBoard instance.
 
-### ThingsBoard advantages
+## ThingsBoard advantages
 <section class="usecase-advantages">
     <div class="usecase-background">
         <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
@@ -135,7 +135,7 @@ You may export the dashboard from our live demo server and import it to your Thi
     </div>
 </section>
 
-### Smart farming solution overview
+## Smart farming solution overview
 
 The diagram below identifies data flow and integration points for a typical smart-farming solution that uses the ThingsBoard platform to collect and analyze data from IoT sensors.
 
@@ -152,11 +152,13 @@ The Edge computing solution is especially useful in case of poor or frequent net
 The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
-### Learn more
+## Learn more
+<div class="usecases-bottom-nav">
+    <a href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
+    <a href="/industries/smart-energy/" class="button">Customers feedback</a>
+    <a href="/docs/#platform-features" class="button">Platform features</a>
+    <a href="/docs/reference/" class="button">Architecture</a>
+    <a href="/docs/contact-us/" class="button">Contact us</a>
+</div>
 
-<a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-<a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>
-<a style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
-<a style="margin: 10px;" href="/docs/reference/" class="button">Architecture</a>
-<a style="margin: 10px;" href="/docs/contact-us/" class="button">Contact us</a>
 
