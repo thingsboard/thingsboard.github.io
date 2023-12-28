@@ -22,7 +22,7 @@ gcloud services vpc-peerings connect \
 
 #### 5.2 Create database server instance
 
-Create the PostgreSQL instance with database version "**PostgreSQL 12**" and the following recommendations:
+Create the PostgreSQL instance with database version "**PostgreSQL 15**" and the following recommendations:
 
 * use the same region where your K8S cluster **GCP_REGION** is located;
 * use the same VPC network where your K8S cluster **GCP_REGION** is located;
@@ -35,7 +35,7 @@ Execute the following command:
 ```bash
 
 gcloud beta sql instances create $TB_DATABASE_NAME \
---database-version=POSTGRES_12 \
+--database-version=POSTGRES_15 \
 --region=$GCP_REGION --availability-type=regional \
 --no-assign-ip --network=projects/$GCP_PROJECT/global/networks/$GCP_NETWORK \
 --cpu=2 --memory=7680MB

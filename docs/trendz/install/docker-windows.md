@@ -75,7 +75,7 @@ services:
       NETWORK_BUFFER_SIZE: 10485760
   postgres:
     restart: always
-    image: "postgres:12"
+    image: "postgres:15"
     ports:
       - "5432"
     environment:

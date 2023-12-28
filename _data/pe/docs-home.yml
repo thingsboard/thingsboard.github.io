@@ -223,6 +223,9 @@ toc:
       path: /docs/pe/user-guide/claiming-devices/
     - title: Device provisioning
       path: /docs/pe/user-guide/device-provisioning/
+    - title: Image gallery
+      path: /docs/pe/user-guide/image-gallery/
+      new: true
     - title: Entity Views
       path: /docs/pe/user-guide/entity-views/
     - title: API Limits
