@@ -15,7 +15,7 @@ if you used installation via deb package.
 
 To start configuring Gateway you have to start your terminal and launch Configurator using the next command:
 ```bash
-tb-gateway-configurator
+sudo tb-gateway-configurator
 ```
 {: .copy-code}
 

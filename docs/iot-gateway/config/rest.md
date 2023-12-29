@@ -31,7 +31,7 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
 {% capture restConf %}
 {
   "host": "127.0.0.1",
-  "port": "5000",
+  "port": 5000,
   "SSL": false,
   "security": {
     "cert": "~/ssl/cert.pem",

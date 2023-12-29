@@ -24,7 +24,7 @@ Make sure your have [logged in](https://docs.docker.com/engine/reference/command
 **Execute the following command to run this docker directly:**
 
 ```
-docker run -it -v %HOMEPATH%\tb-gateway\config:/thingsboard_gateway/config -v %HOMEPATH%\tb-gateway\extensions:/thingsboard_gateway/extensions -v %HOMEPATH%\tb-gateway\logs:/thingsboard_gateway/logs --name tb-gateway --restart always thingsboard/tb-gateway
+docker run -it -v %HOMEDRIVE%%HOMEPATH%\tb-gateway\logs:/thingsboard_gateway/logs -v %HOMEDRIVE%%HOMEPATH%\tb-gateway\extensions:/thingsboard_gateway/extensions -v %HOMEDRIVE%%HOMEPATH%\tb-gateway\config:/thingsboard_gateway/config --name tb-gateway -p 60000-61000:60000-61000 --restart always thingsboard/tb-gateway
 ```
 {: .copy-code}
 
@@ -32,25 +32,35 @@ Where:
     
 - `docker run`              - run this container
 - `-it`                     - attach a terminal session with current Gateway process output
-- `-v %HOMEPATH%\tb-gateway\config:/thingsboard_gateway/config`   - mounts the host's dir `%HOMEPATH%\tb-gateway\config` to Gateway config  directory
-- `-v %HOMEPATH%\tb-gateway\extensions:/thingsboard_gateway/extensions`   - mounts the host's dir `%HOMEPATH%\tb-gateway\extensions` to Gateway extensions  directory
-- `-v %HOMEPATH%\tb-gateway\logs:/thingsboard_gateway/logs`   - mounts the host's dir `%HOMEPATH%\tb-gateway\logs` to Gateway logs  directory
+- `%HOMEPATH%`   - current user's home dir
+- `%HOMEDRIVE%` - current user's home drive
+- `-v %HOMEDRIVE%%HOMEPATH%\tb-gateway\config:/thingsboard_gateway/config`   - mounts the host's dir `%HOMEDRIVE%%HOMEPATH%\tb-gateway\config` to Gateway config  directory
+- `-v %HOMEDRIVE%%HOMEPATH%\tb-gateway\extensions:/thingsboard_gateway/extensions`   - mounts the host's dir `%HOMEDRIVE%%HOMEPATH%\tb-gateway\extensions` to Gateway extensions  directory
+- `-v %HOMEDRIVE%%HOMEPATH%\tb-gateway\logs:/thingsboard_gateway/logs`   - mounts the host's dir `%HOMEDRIVE%%HOMEPATH%\tb-gateway\logs` to Gateway logs  directory
 - `--name tb-gateway`             - friendly local name of this machine
+- `-p 60000-61000:60000-61000` - publish range of ports from 60000 to 61000
 - `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
 - `thingsboard/tb-gateway`          - docker image
-- `$HOME`   - current user's home dir(`%HomePath%`)
 
+## Running (with environmental variables)
 
-## Running (with ENV variables)
-
-**Execute the following command to run docker container with ENV variables:**
+**Execute the following command to run docker container with environmental variables:**
 
 ```
-docker run -it -e host=thingsboard.cloud -e port=1883 -e accessToken=ACCESS_TOKEN -v %HOMEPATH%\tb-gateway\config:/thingsboard_gateway/config -v %HOMEPATH%\tb-gateway\extensions:/thingsboard_gateway/extensions -v %HOMEPATH%\tb-gateway\logs:/thingsboard_gateway/logs --name tb-gateway --restart always thingsboard/tb-gateway
+docker run -it -v %HOMEDRIVE%%HOMEPATH%\tb-gateway\logs:/thingsboard_gateway/logs -v %HOMEDRIVE%%HOMEPATH%\tb-gateway\extensions:/thingsboard_gateway/extensions -v %HOMEDRIVE%%HOMEPATH%\tb-gateway\config:/thingsboard_gateway/config --name tb-gateway -p 60000-61000:60000-61000 -e host=thingsboard.cloud -e port=1883 -e accessToken=ACCESS_TOKEN --restart always thingsboard/tb-gateway
 ```
 {: .copy-code}
 
-Available  ENV variables:
+{% capture info %}
+<div>
+  <p>
+    <span style="color:black">Environmental variables will override configuration parameters.</span>
+  </p>
+</div>
+{% endcapture %}
+{% include templates/info-banner.md content=info %}
+
+Available environmental variables:
 
 | **ENV**     | **Description**                |
 |:-|-
@@ -98,7 +108,7 @@ docker stop tb-gateway
 
 Open the directory with configuration files:
 
-`%HOMEPATH%\tb-gateway\config`
+`%HOMEDRIVE%%HOMEPATH%\tb-gateway\config`
 
 
 **Configure gateway to work with your instance of ThingsBoard, using [this guide](/docs/iot-gateway/configuration/):**
@@ -119,25 +129,20 @@ In order to update to the latest image, execute the following commands:
 $ docker pull thingsboard/tb-gateway
 $ docker stop tb-gateway
 $ docker rm tb-gateway
-$ docker run -it -v %HOMEPATH%\tb-gateway\config:/thingsboard-gateway/config -v %HOMEPATH%\tb-gateway\extensions:/var/lib/thingsboard_gateway/extensions -v %HOMEPATH%\tb-gateway\logs:/var/log/thingsboard-gateway --name tb-gateway --restart always thingsboard/tb-gateway
+$ docker run -it -v %HOMEDRIVE%%HOMEPATH%\tb-gateway\logs:/thingsboard_gateway/logs -v %HOMEDRIVE%%HOMEPATH%\tb-gateway\extensions:/thingsboard_gateway/extensions -v %HOMEDRIVE%%HOMEPATH%\tb-gateway\config:/thingsboard_gateway/config --name tb-gateway -p 60000-61000:60000-61000 --restart always thingsboard/tb-gateway
 ```
 
 ## Build local docker image
 
 In order to build local docker image, follow the next steps:
 
-1. Copy **thingsboard_gateway/** folder to **docker/** folder, so the final view of the directory structure will look like:
-    ```text
-    /thingsboard-gateway/docker
-            thingsboard_gateway/
-            docker-compose.yml
-            Dockerfile
-            LICENSE
-            setup.py
-            requirements.txt
+1. Copy **Dockerfile** to **root** folder, using the following command:
+    ```powershell
+    copy docker\Dockerfile .
     ```
+   {: .copy-code}
 2. From project root folder execute the following command:
     ```bash
-    docker build -t local-gateway docker
+    docker build -t local-gateway .
     ```
     {: .copy-code}

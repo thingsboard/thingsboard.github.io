@@ -3,37 +3,16 @@ created gateway.
 
 ### Setup demo server
 
-As a demo simulation server, we will use docker image, that can be installed and run using the following commands:
+As a demo simulation server, we will use docker image, that can be installed and run using the following command:
 
 ```shell
-docker ps
-```
-{:.copy-code}
-
-Find your gateway container name as you can see on the following image and copy it:
-
-![](https://img.thingsboard.io/gateway/dashboard/copy-gateway-docker-container-name.png)
-
-Create an environment variable using the following command, replace `YOUR_TB_GATEWAY_CONTAINER_NAME` with the copied 
-gateway container name. Copy and run the provided command in your terminal:
-
-```shell
-export TB_GATEWAY_CONTAINER_NAME=YOUR_TB_GATEWAY_CONTAINER_NAME
-```
-{:.copy-code}
-
-Copy and execute the following command in your terminal:
-
-{% assign containerId = "{" | append: "{" | append: ".Id" | append: "}" | append: "}" %}
-
-```shell
-docker run -it --net=container:$(docker inspect -f '{{containerId}}' ${TB_GATEWAY_CONTAINER_NAME}) thingsboard/tb-gw-opcua-server:latest
+docker run -it -p 4840:4840 thingsboard/tb-gw-opcua-server:latest
 ```
 {:.copy-code}
 
 After running docker image, you can see the following logs in your terminal:
 
-![](https://img.thingsboard.io/gateway/dashboard/run-demo-opcua-server.png)
+![](/images/gateway/dashboard/run-demo-opcua-server.png)
 
 ### Setup connector
 
@@ -43,7 +22,7 @@ Copy the following connector configuration (we will use it later):
 {
   "server": {
     "name": "OPC-UA Demo Server",
-    "url": "opc.tcp://localhost:4840/freeopcua/server/",
+    "url": "opc.tcp://host.docker.internal:4840/freeopcua/server/",
     "timeoutInMillis": 5000,
     "scanPeriodInMillis": 5000,
     "disableSubscriptions": false,
@@ -56,7 +35,7 @@ Copy the following connector configuration (we will use it later):
     "mapping": [
       {
         "deviceNodePattern": "Root\\.Objects\\.MyObject",
-        "deviceNamePattern": "Device Demo",
+        "deviceNamePattern": "Demo Device",
         "deviceTypePattern": "default",
         "attributes": [
           {
@@ -87,20 +66,30 @@ Copy the following connector configuration (we will use it later):
 ```
 {:.copy-code.expandable-20}
 
+This OPC-UA connector configuration establishes a connection to a server named **"OPC-UA Demo Server"** at 
+**"opc.tcp://host.docker.internal:4840/freeopcua/server/"**. The configuration specifies various settings, including 
+timeouts, scan periods, and security mechanisms such as **"Basic128Rsa15"** with anonymous identity.
+
+The mapping section defines how OPC-UA nodes are mapped to devices and their attributes and timeseries. In this case, 
+a device with the name **"Demo Device"** and type **"default"** is mapped to nodes under **"Root.Objects.MyObject"**. 
+Attributes such as **frequency** and **power**, as well as timeseries like **temperature** and **humidity**, 
+are mapped to specific paths in the OPC-UA server. Additionally, the configuration supports RPC methods and 
+attribute updates.
+
 To create a connector, use the following steps:
 
 {% assign addNewConnector = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-7-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
         title: Click "**Connectors configuration**" button on the right panel.
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-8-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-8-ce.png,
         title: Click the "**+**" button, fill in "**Name**", "**Type**" and "**Logging level**" fields, paste your connector configuration into **Configuration** field and click on **Save** button.
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-9-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-9-ce.png,
         title: Connector has been successfully added.
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-10-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-10-ce.png,
         title: Toggle the switch to enable the connector.
 '
 %}
@@ -115,10 +104,10 @@ the remote settings.
 Also, you can see the connector logs to make sure that connector works, for this purpose, use the following steps:
 {% assign seeConnectorLogs = '
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-11-logs-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-11-ce.png,
         title: Click on logs icon to open connector logs page.
     ===
-        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-opc-ua-logs-12-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-opc-ua-logs-12-ce.png,
         title: You can see the "**Logs**" table that consists of "**Created time**", "**Status**" and "**Message**" columns.
 '
 %}

@@ -14,7 +14,7 @@ This guide describes how to install ThingsBoard IoT Gateway on CentOS or RHEL.
 Download installation package.
 
 ```bash
-wget https://github.com/thingsboard/thingsboard-gateway/releases/download/2.0/python3-thingsboard-gateway.rpm
+wget https://github.com/thingsboard/thingsboard-gateway/releases/latest/download/python3-thingsboard-gateway.rpm
 ```
 {: .copy-code}
 

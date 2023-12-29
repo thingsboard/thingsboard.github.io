@@ -19,7 +19,7 @@ This guide will help you to install and start ThingsBoard Gateway using Docker o
 **Execute the following command to run this docker directly:**
 
 ```
-docker run -it -v ~/.tb-gateway/logs:/thingsboard_gateway/logs -v ~/.tb-gateway/extensions:/thingsboard_gateway/extensions -v ~/.tb-gateway/config:/thingsboard_gateway/config --name tb-gateway --restart always thingsboard/tb-gateway
+docker run -it -v ~/.tb-gateway/logs:/thingsboard_gateway/logs -v ~/.tb-gateway/extensions:/thingsboard_gateway/extensions -v ~/.tb-gateway/config:/thingsboard_gateway/config --name tb-gateway -p 60000-61000:60000-61000 --restart always thingsboard/tb-gateway
 ```
 {: .copy-code}
 
@@ -31,19 +31,29 @@ Where:
 - `-v ~/.tb-gateway/extensions:/thingsboard_gateway/extensions`   - mounts the host's dir `~/.tb-gateway/extensions` to Gateway extensions  directory
 - `-v ~/.tb-gateway/logs:/thingsboard_gateway/logs`   - mounts the host's dir `~/.tb-gateway/logs` to Gateway logs  directory
 - `--name tb-gateway`             - friendly local name of this machine
+- `-p 60000-61000:60000-61000` - publish range of ports from 60000 to 61000
 - `--restart always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.
 - `thingsboard/tb-gateway`          - docker image
 
-## Running (with ENV variables)
+## Running (with environmental variables)
 
-**Execute the following command to run docker container with ENV variables:**
+**Execute the following command to run docker container with environmental variables:**
 
 ```
-docker run -it -e host=thingsboard.cloud -e port=1883 -e accessToken=ACCESS_TOKEN -v ~/.tb-gateway/logs:/thingsboard_gateway/logs -v ~/.tb-gateway/extensions:/thingsboard_gateway/extensions -v ~/.tb-gateway/config:/thingsboard_gateway/config --name tb-gateway --restart always thingsboard/tb-gateway
+docker run -it -e host=thingsboard.cloud -e port=1883 -e accessToken=ACCESS_TOKEN -v ~/.tb-gateway/logs:/thingsboard_gateway/logs -v ~/.tb-gateway/extensions:/thingsboard_gateway/extensions -v ~/.tb-gateway/config:/thingsboard_gateway/config --name tb-gateway -p 60000-61000:60000-61000 --restart always thingsboard/tb-gateway
 ```
 {: .copy-code}
 
-Available  ENV variables:
+{% capture info %}
+<div>
+  <p>
+    <span style="color:black">Environmental variables will override configuration parameters.</span>
+  </p>
+</div>
+{% endcapture %}
+{% include templates/info-banner.md content=info %}
+
+Available environmental variables:
 
 | **ENV**     | **Description**                |
 |:-|-
@@ -114,18 +124,13 @@ docker run -it -v ~/.tb-gateway/logs:/var/log/thingsboard-gateway -v ~/.tb-gatew
 
 In order to build local docker image, follow the next steps:
 
-1. Copy **thingsboard_gateway/** folder to **docker/** folder, so the final view of the directory structure will look like:
-    ```text
-    /thingsboard-gateway/docker
-            thingsboard_gateway/
-            docker-compose.yml
-            Dockerfile
-            LICENSE
-            setup.py
-            requirements.txt
+1. Copy **Dockerfile** to **root** folder, using the following command:
+    ```bash
+    cp docker/Dockerfile .
     ```
+   {: .copy-code}
 2. From project root folder execute the following command:
     ```bash
-    docker build -t local-gateway docker
+    docker build -t local-gateway .
     ```
     {: .copy-code}
