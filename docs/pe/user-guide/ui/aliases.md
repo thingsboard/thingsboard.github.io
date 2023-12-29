@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
-asiconees:
-- yefimov-andrey
+assignees:
+- stitenko
 title: Aliases
 description: ThingsBoard Aliases
 
@@ -110,7 +110,6 @@ entity-type-2:
     2:
         image: /images/user-guide/ui/alias/entity-type-3-pe.png
         title: 'The Entity table widget that displays a list of devices has been added.'
-
 
 
 entity-group-list-1:

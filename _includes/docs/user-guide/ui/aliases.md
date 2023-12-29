@@ -5,7 +5,6 @@ Alias is a reference to a single entity or group of entities that are used in th
 
 They can range from a simple reference to a single device to a complex search query for specific assets from a list.
 
-<br>
 In this tutorial, aliases will be used in the system according to the scheme shown below. And all devices transmit telemetry values - "temperature".
 
 ![image](/images/user-guide/ui/alias/alias-scheme.png)
@@ -28,7 +27,12 @@ Now, let’s use the added alias in a widget:
 
 ## Alias types
 
-In the ThingsBoard, there are various types of aliases, each offering different capabilities for configuring widgets: [Single entity](#single-entity), [Group entities](#group-entities), [Entity list](#entity-list), [Entity name](#entity-name), [Entity type](#entity-type), [Entity group list](#entity-group-list), [Entities by group name](#entities-by-group-name), [Entity from dashboard state](#entity-from-dashboard-state), [Owner of entity from dashboard state](#owner-of-entity-from-dashboard-state), [Asset type](#asset-type), [Device type](#device-type), [Entity view type](#entity-view-type), [Edge type](#edge-type), [Api Usage State](#api-usage-state), [Relations query](#relations-query), [Asset search query](#asset-search-query), [Device search query](#device-search-query), [Entity view search query](#entity-view-search-query), [Edge search query](#edge-search-query) and [Scheduler events](#scheduler-events).
+{% if docsPrefix == null %}
+In the ThingsBoard, there are various types of aliases, each offering different capabilities for configuring widgets: [Single entity](#single-entity), [Entity list](#entity-list), [Entity name](#entity-name), [Entity type](#entity-type), [Entity from dashboard state](#entity-from-dashboard-state), [Asset type](#asset-type), [Device type](#device-type), [Entity view type](#entity-view-type), [Edge type](#edge-type), [Api Usage State](#api-usage-state), [Relations query](#relations-query), [Asset search query](#asset-search-query), [Device search query](#device-search-query), [Entity view search query](#entity-view-search-query), and [Edge search query](#edge-search-query).
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+In the ThingsBoard, there are various types of aliases, each offering different capabilities for configuring widgets: [Single entity](#single-entity), [Group entities](#group-entities), [Entity list](#entity-list), [Entity name](#entity-name), [Entity type](#entity-type), [Entity group list](#entity-group-list), [Entities by group name](#entities-by-group-name), [Entity from dashboard state](#entity-from-dashboard-state), [Owner of entity from dashboard state](#owner-of-entity-from-dashboard-state), [Asset type](#asset-type), [Device type](#device-type), [Entity view type](#entity-view-type), [Edge type](#edge-type), [Api Usage State](#api-usage-state), [Relations query](#relations-query), [Asset search query](#asset-search-query), [Device search query](#device-search-query), [Entity view search query](#entity-view-search-query), [Edge search query](#edge-search-query), and [Scheduler events](#scheduler-events).
+{% endif %}
 
 They provide flexibility and powerful capabilities for configuring dashboards in ThingsBoard, allowing users to efficiently organize and visualize data from various sources.
 
@@ -75,10 +79,22 @@ Adding an alias: in the "Add alias" dialog, enter the alias name, and select the
 
 {% include images-gallery.html imageCollection="entity-list-1" %}
 
+{% if docsPrefix == null %}
+This alias filters a list from specified devices: Thermometer A1, Thermometer A2, and Thermometer A3.
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 This alias filters a list from specified devices: Thermometer A1, Compressor BC-10, and Compressor QA-32.
+{% endif %}
 
 Let's use an added alias in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity list" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add" and apply changes. 
+
+{% if docsPrefix == null %}
+The Entities table widget with the alias that displays a list of several devices, which in this case are Thermometer A1, Thermometer A2, and Thermometer A3 has been added.
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 The Entities table widget with the alias that displays a list of several devices, which in this case are Compressor BC-10, Compressor QA-32, and Thermometer A1 has been added.
+{% endif %}
+
 
 {% include images-gallery.html imageCollection="entity-list-2" %}
 
@@ -180,9 +196,16 @@ Adding an alias: in the "Add alias" dialog, enter the alias name, and select the
 
 This alias is used for filtering data for other dashboard states.
 
+{% if docsPrefix == null %}
+For the next example, we will need two aliases: the previously discussed "[Entity type](#entity-type)" alias and the "Entity from dashboard state" alias. Let's start:
+
+First we need to create an Entity table widget that will display a list of entities: add an Entities table widget that will display a list of entities. Use the "Entity type" alias as a data source.
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 For the next example, we will need two aliases: the previously discussed "[Group entities](#group-entities)" alias and the "Entity from dashboard state" alias. Let's start:
 
 First we need to create an Entity table widget that will display a list of entities: add an Entities table widget that will display a list of entities. Use the "Group entities" alias as a data source.
+{% endif %}
 
 {% include images-gallery.html imageCollection="entity-from-dashboard-state-2" %}
 
@@ -334,7 +357,12 @@ Adding an alias: in the "Add alias" dialog, enter the alias name, select the "De
 
 {% include images-gallery.html imageCollection="device-search-query-1" %}
 
+{% if docsPrefix == null %}
+This alias displays devices with the "thermometers" device profile that have any relation to the asset "Building A" with direction "From" and relation level of 1.
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 This alias displays devices with the "compressors" device profile that have any relation to the asset "Building A" with direction "From" and relation level of 1.
+{% endif %}
 
 Let's learn how to use the "Device search query alias" in a widget. In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Device search query" alias in the "Entity alias" field and add "name", "type" and "temperature" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget that displays devices that have any relation to the asset "Building A" up to relation level of 1 has been added.
 
@@ -350,7 +378,12 @@ Adding an alias: in the "Add alias" dialog, enter the alias name, select the "En
 
 {% include images-gallery.html imageCollection="entity-view-search-query-1" %}
 
+{% if docsPrefix == null %}
 This alias filters entity views with the "compressors entity view type" type that have any relation to the asset "Building A" with direction "From" and relation level of 1.
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+This alias filters entity views with the "Compressors Entity View Type" type that have any relation to the asset "Building A" with direction "From" and relation level of 1.
+{% endif %}
 
 Let's learn how to use the "Entity view search query" alias in a widget. In the "Tables" widgets bundle, select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity view search query" alias in the "Entity alias" field and add "name", "type" and "temperature" data keys in the "Columns" section. Click "Add" and apply changes. The Entities table widget displaying entity views that have any relation to the asset "Building A" up to relation level of 1 has been added.
 
