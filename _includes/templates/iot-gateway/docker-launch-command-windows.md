@@ -2,10 +2,10 @@ To launch the gateway on Windows, use the following steps:
 
 {% assign remoteCreateGatewayDocker = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-3-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-3-ce.png,
         title: On the gateway dashboard, click on **"Launch command"** button in the top right corner.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-4-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-4-ce.png,
         title: Copy auto-generated command and execute it in your terminal.
 '
 %}
@@ -14,7 +14,7 @@ To launch the gateway on Windows, use the following steps:
 
 After running gateway docker image, you can see the following logs in your terminal:
 
-![](/images/gateway/dashboard/launch-gateway-docker.png)
+![](https://img.thingsboard.io/gateway/dashboard/launch-gateway-docker.png)
 
 Let's see in more details on docker launch command and explain it:
 ```bash

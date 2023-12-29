@@ -12,7 +12,7 @@ docker run -it -p 1884:1884 thingsboard/tb-gw-mqtt-broker:latest
 
 After running docker image, you can see the following logs in your terminal:
 
-![](/images/gateway/dashboard/run-demo-mqtt-broker-image.png)
+![](https://img.thingsboard.io/gateway/dashboard/run-demo-mqtt-broker-image.png)
 
 ### Setup connector
 
@@ -105,16 +105,16 @@ To create a connector, use the following steps:
 
 {% assign addNewConnector = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-7-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-7-ce.png,
         title: Click "**Connectors configuration**" button on the right panel.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-8-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-mqtt-8-ce.png,
         title: Click the "**+**" button, fill in "**Name**", "**Type**" and "**Logging level**" fields, paste your connector configuration into **Configuration** field and click on **Save** button.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-9-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-mqtt-9-ce.png,
         title: Connector has been successfully added.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-10-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-mqtt-10-ce.png,
         title: Toggle the switch to enable the connector.
 '
 %}
@@ -129,10 +129,10 @@ the remote settings.
 Also, you can see the connector logs to make sure that connector works, for this purpose, use the following steps:
 {% assign seeConnectorLogs = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-11-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-mqtt-11-ce.png,
         title: Click on logs icon to open connector logs page.
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-logs-12-ce.png,
+        image: https://img.thingsboard.io/gateway/dashboard/gateway-getting-started-mqtt-logs-12-ce.png,
         title: You can see the "**Logs**" table that consists of "**Created time**", "**Status**" and "**Message**" columns.
 '
 %}
