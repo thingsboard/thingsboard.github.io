@@ -92,16 +92,16 @@ For example, the value '1451649600512' corresponds to 'Fri, 01 Jan 2016 12:00:00
 Below are examples of commands for publishing different types of telemetry data.
 
 {% if docsPrefix == null %}
-Don't forget replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
+Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
+Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
 {% endif %}
 {% if docsPrefix == "paas/" %}
-Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token.
+Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
-Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
+Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
 {% endif %}
 
 **Example 1**. Publish data as an object without timestamp (server-side timestamp will be used).
@@ -110,7 +110,7 @@ Execute the command:
 
 {% if docsPrefix == null %}
 ```shell
-curl -v -X POST --data "{"temperature":42,"humidity":73}" http://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST --data "{"temperature":42,"humidity":73}" https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 {% endif %}
@@ -145,7 +145,7 @@ Execute the command:
 
 {% if docsPrefix == null %}
 ```shell
-curl -v -X POST -d @telemetry-data-as-object.json http://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d @telemetry-data-as-object.json https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 {% endif %}
@@ -190,7 +190,7 @@ Execute the command:
 
 {% if docsPrefix == null %}
 ```shell
-curl -v -X POST -d @telemetry-data-as-array.json http://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d @telemetry-data-as-array.json https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 {% endif %}
@@ -225,7 +225,7 @@ Execute the command:
 
 {% if docsPrefix == null %}
 ```shell
-curl -v -X POST -d @telemetry-data-with-ts.json http://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
+curl -v -X POST -d @telemetry-data-with-ts.json https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/telemetry --header "Content-Type:application/json"
 ```
 {: .copy-code}
 {% endif %}
@@ -311,27 +311,26 @@ Where **$ACCESS_TOKEN** - device access token.
 
 {% endif %}
 
-<br>
 Below are examples of commands for publishing different types of telemetry data.
 
 {% if docsPrefix == null %}
-Don't forget replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
+Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
+Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "paas/" %}
-Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token.
+Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
-Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
+Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 
 **Example 1**. Publish client-side attributes update
 
 {% if docsPrefix == null %}
 ```shell
-curl -v -X POST --data "{"attribute1": "value1", "attribute2":true, "attribute3": 43.0}" http://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
+curl -v -X POST --data "{"attribute1": "value1", "attribute2":true, "attribute3": 43.0}" https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
 ```
 {: .copy-code}
 {% endif %}
@@ -359,7 +358,7 @@ curl -v -X POST --data "{"attribute1": "value1", "attribute2":true, "attribute3"
 
 {% if docsPrefix == null %}
 ```shell
-curl -v -X POST -d @new-attributes-values.json http://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
+curl -v -X POST -d @new-attributes-values.json https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes --header "Content-Type:application/json"
 ```
 {: .copy-code}
 {% endif %}
@@ -432,23 +431,22 @@ https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,
 Where **$ACCESS_TOKEN** - device access token.
 {% endif %}
 
-<br>
 {% if docsPrefix == null %}
-Execute the command. Don't forget replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
+Execute the command. Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Execute the command. Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
+Execute the command. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "paas/" %}
-Execute the command. Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token.
+Execute the command. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
-Execute the command. Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
+Execute the command. Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 
 {% if docsPrefix == null %}
 ```shell
-curl -v -X GET "http://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2"
+curl -v -X GET "https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes?clientKeys=attribute1,attribute2&sharedKeys=shared1,shared2"
 ```
 {: .copy-code}
 {% endif %}
@@ -520,23 +518,22 @@ Where **$ACCESS_TOKEN** - device access token.
 
 Once shared attribute will be changed by one of the server-side components (REST API or Rule Chain) the client will receive the following update: 
 
-<br>
 {% if docsPrefix == null %}
-Execute the command. Don't forget replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
+Execute the command. Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Execute the command. Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
+Execute the command. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "paas/" %}
-Execute the command. Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token.
+Execute the command. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
-Execute the command. Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
+Execute the command. Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 
 {% if docsPrefix == null %}
 ```shell
-curl -v -X GET http://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes/updates?timeout=20000
+curl -v -X GET https://demo.thingsboard.io/api/v1/$ACCESS_TOKEN/attributes/updates?timeout=20000
 ```
 {: .copy-code}
 {% endif %}

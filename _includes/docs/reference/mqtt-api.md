@@ -6,7 +6,7 @@
 
 ### MQTT basics
 
-[MQTT](https://en.wikipedia.org/wiki/MQTT) is a lightweight publish-subscribe messaging protocol which probably makes it the most suitable for various IoT devices. 
+[MQTT](https://en.wikipedia.org/wiki/MQTT) is a lightweight publish-subscribe messaging protocol,probably making it the most suitable for various IoT devices. 
 You can find more information about MQTT [here](https://mqtt.org/).
 
 ThingsBoard server nodes act as an MQTT Broker that supports QoS levels 0 (at most once) and 1 (at least once) and a set of [configurable](/docs/{{docsPrefix}}user-guide/device-profiles/#mqtt-device-topic-filters) topics.
@@ -14,14 +14,14 @@ ThingsBoard server nodes act as an MQTT Broker that supports QoS levels 0 (at mo
 ### Client libraries setup
 
 You can find a large number of MQTT client libraries on the web. Examples in this article will be based on Mosquitto and MQTT.js.
-In order to setup one of those tools, you can use instructions in our [Hello World](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide.
+In order to set up one of those tools, you can use the instructions in our [Hello World](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide.
 
 ### MQTT Connect
 
-We will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
+In this article, we will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
 The application needs to send MQTT CONNECT message with username that contains **$ACCESS_TOKEN**. 
 
-Possible return codes, and their reasons during connect sequence:
+Possible return codes, and their reasons during the connect sequence:
 
 * **0x00 Connected** - Successfully connected to ThingsBoard MQTT server.
 * **0x04 Connection Refused, bad username or password** - Username is empty.
@@ -78,19 +78,19 @@ In case your device is able to get the client-side timestamp, you can use follow
 Where **1451649600512** is a [unix timestamp](https://en.wikipedia.org/wiki/Unix_time) with milliseconds precision. For example, the value '1451649600512' corresponds to 'Fri, 01 Jan 2016 12:00:00.512 GMT'
 
 <br>
-Below are examples of commands for publishing different types of telemetry data.
+Below are the examples of commands for publishing different types of telemetry data.
 
 {% if docsPrefix == null %}
-Don't forget replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
+Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
+Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "paas/" %}
-Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token.
+Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
-Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
+Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 
 **Example 1**. Publish data as an object without timestamp (server-side timestamp will be used). 
@@ -195,19 +195,19 @@ v1/devices/me/attributes
 ```
 {: .copy-code}
 
-Below are examples to publish client-side device attributes.
+Below are the examples of how to publish client-side device attributes.
 
 {% if docsPrefix == null %}
-Don't forget replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
+Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
+Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "paas/" %}
-Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token.
+Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
-Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
+Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 
 **Example 1**. Publish client-side attributes update.
@@ -281,7 +281,7 @@ v1/devices/me/attributes/request/$request_id
 {: .copy-code}
 
 where **$request_id** is your integer request identifier.
-Before sending PUBLISH message with the request, client need to subscribe to 
+Before sending PUBLISH message with the request, client needs to subscribe to 
 
 ```shell
 v1/devices/me/attributes/response/+
@@ -291,16 +291,16 @@ The following example is written in javascript and is based on mqtt.js.
 Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
 
 {% if docsPrefix == null %}
-Save the "[mqtt-js-attributes-request.js](/docs/reference/resources/mqtt-js-attributes-request.js)" file to your PC. Don't forget to replace hostname "<code>demo.thingsboard.io</code>" to your host. In this example, hostname reference live demo server.
+Save the "[mqtt-js-attributes-request.js](/docs/reference/resources/mqtt-js-attributes-request.js)" file to your PC. Don't forget to replace the hostname "<code>demo.thingsboard.io</code>" to your host. In this example, the hostname references live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Save the "[mqtt-js-attributes-request.js](/docs/pe/reference/resources/mqtt-js-attributes-request.js)" file to your PC. Don't forget to replace hostname "<code>127.0.0.1</code>" to your host. In this example, hostname reference your local installation.
+Save the "[mqtt-js-attributes-request.js](/docs/pe/reference/resources/mqtt-js-attributes-request.js)" file to your PC. Don't forget to replace the hostname "<code>127.0.0.1</code>" to your host. In this example, the hostname reference your local installation.
 {% endif %}
 {% if docsPrefix == 'paas/' %}
 Save the "[mqtt-js-attributes-request.js](/docs/paas/reference/resources/mqtt-js-attributes-request.js)" file to your PC.
 {% endif %}
 {% if docsPrefix == "edge/" %}
-Save the "[mqtt-js-attributes-request.js](/docs/edge/reference/resources/mqtt-js-attributes-request.js)" file to your PC. Don't forget to replace hostname "<code>localhost</code>" to your host. In this example, hostname reference your local installation.
+Save the "[mqtt-js-attributes-request.js](/docs/edge/reference/resources/mqtt-js-attributes-request.js)" file to your PC. Don't forget to replace the hostname "<code>localhost</code>" to your host. In this example, the hostname reference your local installation.
 {% endif %}
 
 {% capture tabspec %}mqtt-attributes-request
@@ -343,16 +343,16 @@ When a shared attribute is changed by one of the server-side components (such as
 ```
 
 {% if docsPrefix == null %}
-For the following example, don't forget replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
+For the following example, don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-For the following example, don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
+For the following example, don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "paas/" %}
-For the following example, don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token.
+For the following example, don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
-For the following example, don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
+For the following example, don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 
 Execute the command:
@@ -395,19 +395,19 @@ The following example is written in javascript and is based on mqtt.js.
 Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
 
 {% if docsPrefix == null %}
-Save the "[mqtt-js-rpc-from-server.js](/docs/reference/resources/mqtt-js-rpc-from-server.js)" file to your PC. Don't forget to replace hostname "<code>demo.thingsboard.io</code>" to your host.
-In this example, hostname reference live demo server.
+Save the "[mqtt-js-rpc-from-server.js](/docs/reference/resources/mqtt-js-rpc-from-server.js)" file to your PC. Don't forget to replace the hostname "<code>demo.thingsboard.io</code>" with your host.
+In this example, the hostname references live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Save the "[mqtt-js-rpc-from-server.js](/docs/pe/reference/resources/mqtt-js-rpc-from-server.js)" file to your PC. Don't forget to replace hostname "<code>127.0.0.1</code>" to your host.
-In this example, hostname reference your local installation.
+Save the "[mqtt-js-rpc-from-server.js](/docs/pe/reference/resources/mqtt-js-rpc-from-server.js)" file to your PC. Don't forget to replace the hostname "<code>127.0.0.1</code>" with your host.
+In this example, the hostname reference your local installation.
 {% endif %}
 {% if docsPrefix == "paas/" %}
 Save the "[mqtt-js-rpc-from-server.js](/docs/paas/reference/resources/mqtt-js-rpc-from-server.js)" file to your PC.
 {% endif %}
 {% if docsPrefix == "edge/" %}
-Save the "[mqtt-js-rpc-from-server.js](/docs/edge/reference/resources/mqtt-js-rpc-from-server.js)" file to your PC. Don't forget to replace hostname "<code>localhost</code>" to your host.
-In this example, hostname reference your local installation.
+Save the "[mqtt-js-rpc-from-server.js](/docs/edge/reference/resources/mqtt-js-rpc-from-server.js)" file to your PC. Don't forget to replace the hostname "<code>localhost</code>" with your host.
+In this example, the hostname reference your local installation.
 {% endif %}
 
 {% capture tabspec %}mqtt-rpc-from-server
@@ -453,19 +453,19 @@ The following example is written in javascript and is based on mqtt.js.
 Pure command-line examples are not available because subscribe and publish need to happen in the same mqtt session.
 
 {% if docsPrefix == null %}
-Save the "[mqtt-js-rpc-from-client.js](/docs/reference/resources/mqtt-js-rpc-from-client.js)" file to your PC. Don't forget to replace hostname "<code>demo.thingsboard.io</code>" to your host.
-In this example, hostname reference live demo server.
+Save the "[mqtt-js-rpc-from-client.js](/docs/reference/resources/mqtt-js-rpc-from-client.js)" file to your PC. Don't forget to replace the hostname "<code>demo.thingsboard.io</code>" to your host.
+In this example, the hostname references live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Save the "[mqtt-js-rpc-from-client.js](/docs/pe/reference/resources/mqtt-js-rpc-from-client.js)" file to your PC. Don't forget to replace hostname "<code>127.0.0.1</code>" to your host.
-In this example, hostname reference your local installation.
+Save the "[mqtt-js-rpc-from-client.js](/docs/pe/reference/resources/mqtt-js-rpc-from-client.js)" file to your PC. Don't forget to replace the hostname "<code>127.0.0.1</code>" to your host.
+In this example, the hostname reference your local installation.
 {% endif %}
 {% if docsPrefix == "paas/" %}
 Save the "[mqtt-js-rpc-from-client.js](/docs/paas/reference/resources/mqtt-js-rpc-from-client.js)" file to your PC.
 {% endif %}
 {% if docsPrefix == "edge/" %}
-Save the "[mqtt-js-rpc-from-client.js](/docs/edge/reference/resources/mqtt-js-rpc-from-client.js)" file to your PC. Don't forget to replace hostname "<code>localhost</code>" to your host.
-In this example, hostname reference your local installation.
+Save the "[mqtt-js-rpc-from-client.js](/docs/edge/reference/resources/mqtt-js-rpc-from-client.js)" file to your PC. Don't forget to replace the hostname "<code>localhost</code>" to your host.
+In this example, the hostname reference your local installation.
 {% endif %}
 
 {% capture tabspec %}mqtt-rpc-from-client
