@@ -128,6 +128,18 @@
 			<td>redis</td>
 			<td> caffeine or redis</td>
 		</tr>
+		<tr>
+			<td>cache.entityLimits.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_ENTITY_LIMITS_TTL</td>
+			<td>5</td>
+			<td> Entity limits cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.entityLimits.maxSize</td>
+			<td>CACHE_SPECS_ENTITY_LIMITS_MAX_SIZE</td>
+			<td>100000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -547,6 +559,12 @@
 			<td> kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
 		</tr>
 		<tr>
+			<td>queue.prefix</td>
+			<td>TB_QUEUE_PREFIX</td>
+			<td></td>
+			<td> Global queue prefix. If specified, prefix is added before default topic name: 'prefix.default_topic_name'. Prefix is applied to all topics (and consumer groups for kafka).</td>
+		</tr>
+		<tr>
 			<td>queue.kafka.bootstrap.servers</td>
 			<td>TB_KAFKA_SERVERS</td>
 			<td>localhost:9092</td>
@@ -821,6 +839,12 @@
 			<td>TB_QUEUE_PUBSUB_MAX_MESSAGES</td>
 			<td>1000</td>
 			<td> Number of messages per consumer</td>
+		</tr>
+		<tr>
+			<td>queue.pubsub.executor_thread_pool_size</td>
+			<td>TB_QUEUE_PUBSUB_EXECUTOR_THREAD_POOL_SIZE</td>
+			<td>0</td>
+			<td> Thread pool size for pubsub queue executor provider. If not set - default pubsub executor provider value will be used (5 * number of available processors)</td>
 		</tr>
 		<tr>
 			<td>queue.pubsub.queue-properties.rule-engine</td>

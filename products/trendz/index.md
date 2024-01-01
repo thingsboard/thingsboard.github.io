@@ -1,7 +1,7 @@
 ---
 layout: trendz
-title: Trendz BI & Analytics Platform
-description:
+title: IoT Anomaly Detection & Predictive Maintenance using AI
+description: IoT solution for real-time data analysis, anomaly detection, predictive maintenance, and forecasting. Predict asset RUL & time to failure and find root causes.
 
 cloudPlan:
     0:

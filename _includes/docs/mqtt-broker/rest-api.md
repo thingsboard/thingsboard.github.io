@@ -2,7 +2,7 @@
 * TOC
 {:toc}
 
-## Swagger UI
+### Swagger UI
 
 After installing TBMQ, you can explore the REST API using the Swagger UI.
 
@@ -32,7 +32,7 @@ By utilizing the "Authorize" button, you have the flexibility to authenticate as
 
 {% include images-gallery.html imageCollection="broker-swagger-ui" %}
 
-## JWT Tokens
+### JWT Tokens
 
 TBMQ leverages [JWT](https://jwt.io/) (JSON Web Tokens) for securely representing claims between the API client (such as browsers and scripts) and the platform. 
 JWT tokens are used as a mechanism to exchange information securely.
@@ -55,7 +55,7 @@ B,response.json,json,reference/resources/get-token-response.json,/docs/mqtt-brok
 
 - Now, you should set ‘X-Authorization’ header to “Bearer $YOUR_JWT_TOKEN”. **Make sure** you use main JWT token and not the refresh token.
 
-## Controllers Overview
+### Controllers Overview
 
 - **Admin Controller**: can be used to view, create or delete admin users.
 - **App Controller**: can be used for advanced monitoring and control of the state of the broker.

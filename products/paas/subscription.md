@@ -258,26 +258,26 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
       </tr>            
       <tr>
           <td>All Transport messages (Device)</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
+          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
+          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
+          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
+          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
           <td>Total number of messages received by any of the transport microservices for each device separately</td>
       </tr>
       <tr>
           <td>Telemetry Transport messages (Device)</td>
-          <td>10/sec<br>but no more then 300/min<br>but no more then 7K/hour</td>
-          <td>10/sec<br>but no more then 300/min<br>but no more then 7K/hour</td>
-          <td>10/sec<br>but no more then 300/min<br>but no more then 7K/hour</td>
-          <td>10/sec<br>but no more then 300/min<br>but no more then 7K/hour</td>
+          <td>100/sec<br>but no more then 3K/min<br>but no more then 7K/hour</td>
+          <td>100/sec<br>but no more then 3K/min<br>but no more then 7K/hour</td>
+          <td>100/sec<br>but no more then 3K/min<br>but no more then 7K/hour</td>
+          <td>100/sec<br>but no more then 3K/min<br>but no more then 7K/hour</td>
           <td>Total number of telemetry messages received by any of the transport microservices for each device separately</td>
       </tr>
       <tr>
           <td>Telemetry Transport data points (Device)</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
+          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
+          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
+          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
+          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
           <td>Total number of telemetry data points received by any of the transport microservices for each device separately</td>
       </tr>
       <tr>

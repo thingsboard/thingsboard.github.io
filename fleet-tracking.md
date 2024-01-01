@@ -1,7 +1,7 @@
 ---
 layout: use-case
 title: ᐉ IoT Fleet Tracking System — Fleet Monitoring
-description: IoT fleet management solutions ✔ Fleet monitoring ⚫ ThingsBoard ➤ Manage your company’s fleet and assets using convenient and efficient IoT solutions
+description: IoT fleet management solutions ✔ Fleet monitoring ⚫ ThingsBoard ➤ Manage your company's fleet and assets using convenient and efficient IoT solutions
 notitle: "true"
 
 ---
@@ -10,22 +10,102 @@ notitle: "true"
 
 <h1 class="usecase-title">IoT Fleet Tracking System</h1>
 
-Manage your company's fleet and assets with ThingsBoard using convenient and efficient IoT solutions. 
-Fleet tracking systems allow businesses to easily control and monitor their assets, routes, fuel consumption, etc. Having the necessary information about the state of assets affairs, responsible persons can make appropriate strategic decisions and improve the work of the links that need it.
+ThingsBoard's IoT Fleet Tracking System is a comprehensive solution for managing and optimizing your fleet and assets. Our advanced fleet tracking software empowers businesses to oversee assets, monitor routes, and optimize fuel consumption seamlessly. By providing essential insights into asset conditions, this system enables decision-makers to strategize effectively and enhance the efficiency of key operational aspects.
 
-Installing a fleet tracking <a href="/docs/paas/solution-templates/fleet-tracking/">template</a> allows drivers, managers, and staff to improve communication, increase efficiency, and maintain a high level of safety.
+<div class="center">
+    <img src="/images/solution-templates/fleet-tracking.png">
+</div>
+<br>
 
-Therefore, use IoT solutions in your enterprise and get the benefits now.
+Implementing the IoT fleet tracking template fosters improved communication among drivers, managers, and staff, fostering increased efficiency and heightened safety. 
 
-## Fleet Tracking Structure
+Here are the benefits of using the IoT Fleet Tracking Software:
 
-As part of this solution, we have created a dashboard that displays data from tracking sensors.
-This dashboard helps to monitor and control location, speed, and fuel level in real time.
-Our dashboard has multiple states - **Main state** and  **Bus state**.
+<ul class="sub-menus-block">
+    <div>
+        <li class="sub-menu">Remote condition monitoring.</li>
+        <li class="sub-menu">Improved visibility.</li>
+        <li class="sub-menu">Automation of tasks.</li>
+    </div>
+    <div style="margin-left: 100px">
+        <li class="sub-menu">Optimized routes.</li>
+        <li class="sub-menu">Enhanced safety.</li>
+        <li class="sub-menu">Cost savings.</li>
+    </div>
+</ul>
 
-**Main state** contains an interactive map for monitoring the movement of transport, a list of existing buses with detailed information about them, and a table of Alarms.
+IoT fleet management software offers a unified view of data, making decision-making faster and more effective for fleet managers.
 
-**Bus state** contains an interactive map of the history of the route, the current route area, detailed information about the bus, and corresponding alarms.
+Take a step towards improved enterprise running — integrate IoT solutions for fleet management into your business framework and reap the rewards today.
+
+## Inside IoT Fleet Tracking
+
+
+Main components of the IoT fleet management system:
+
+
+<div class="definitions-block">
+    <div class="definitions-list">
+        <div class="definitions-list-item">
+            <div class="term">Fleet Connectivity</div>
+            <div class="definition">The backbone of our system relies on robust fleet connectivity. Through GPS trackers, OBD-II dongles, and other devices, we gather comprehensive data on vehicle location, speed, odometer readings, fuel levels, engine health, and overall vehicle status.</div>
+        </div>
+        <div class="definitions-list-item">
+            <div class="term">Remote Fleet Configuration and Control (RPC)</div>
+            <div class="definition">ThingsBoard ensures secure data exchange and implements role-based access control to protect confidential information and comply with industry standards.</div>
+        </div>
+        <div class="definitions-list-item">
+            <div class="term">Geo-fencing</div>
+            <div class="definition">Define virtual boundaries with Geo-fencing, setting zones, speed limits, or duration parameters. Actions are triggered when a vehicle enters or exits a geo-fence, such as sending SMS alerts, raising alarms, or initiating workflows.</div>
+        </div>
+        <div class="definitions-list-item">
+            <div class="term">IoT for Fleet Management</div>
+            <div class="definition">Organize your fleet into custom groups with hierarchical structures. Manage drivers, vehicles, and configurations at different levels, offering tailored control at the fleet, group, or individual vehicle level.</div>
+        </div>
+        <div class="definitions-list-item">
+            <div class="term">Driver Management</div>
+            <div class="definition">Manage drivers and assign them to vehicles as needed. This feature ensures a cohesive coordination of personnel.</div>
+        </div>
+        <div class="definitions-list-item">
+            <div class="term">Real-time Monitoring</div>
+            <div class="definition">Access real-time insights through a dashboard. Monitor fleet status, locations, alerts, and events, with the ability to swiftly drill down to specific vehicles or drivers.</div>
+        </div>
+        <div class="definitions-list-item">
+            <div class="term">Reporting</div>
+            <div class="definition">Generate detailed reports on fleet, group, vehicle, and driver levels. Reports, including:
+                <span>vehicle historical data,</span>
+                <span>driver behavior analysis,</span>
+                <span>incident reports,</span>
+                <span>document reports,</span>
+                <span>fleet utilization reports,</span>
+                <span>driver reports.</span>
+            </div>
+        </div>
+        <div class="definitions-list-item">
+            <div class="term">Integration Module</div>
+            <div class="definition">Our system integrates with 3rd party apps via REST APIs, webhooks, queues, etc. This enables the configuration of end-to-end business workflows. For example, in the event of a safety incident, the system can send notifications to managers and create tickets in the ticketing system.</div>
+        </div>
+    </div>
+</div>
+
+
+Additional Features of Complete Fleet Management using IoT:
+
+
+<span class="bold-text">Document Management</span> — manage crucial documents such as driver licenses, insurance, registration documents, and maintenance records. Trigger notifications when these documents are nearing expiration, enabling proactive actions.
+
+<span class="bold-text">Automated Driver Assignment</span> — streamline operations by using RFID cards for driver identification, allowing automatic assignment to vehicles at the beginning of each day.
+
+<span class="bold-text">Fleet Safety Notifications</span> — receive timely notifications about safety incidents, allowing fleet managers to respond promptly or triggering emergency response services.
+
+## Fleet Tracking Dashboard Examples
+
+
+As part of this solution, we have created a dashboard that displays data from tracking fleet management sensors. This dashboard helps to monitor and control location, speed, and fuel level in real-time. Our dashboard has multiple states — Main state and Bus state.
+
+<span class="bold-text">Main state</span> contains an interactive map for monitoring the movement of transport, a list of existing buses with detailed information about them, and a table of Alarms.
+
+<span class="bold-text">Bus</span> contains an interactive map of the history of the route, the current route area, detailed information about the bus, and corresponding alarms.
 
 Collected data is processed via the rule engine to raise alarms when:
 - vehicle leaves configurable route perimeter;
@@ -57,27 +137,24 @@ The following interactive dashboard hosted on live demo server represents vehicl
 
 The live Fleet Tracking dashboard displays real-time data from several tracking sensors collected using ThingsBoard MQTT API. Collected data is processed via the rule engine to raise alarms on certain thresholds. You may export the dashboard from our live demo server and import it to your ThingsBoard instance.
 
-## Benefits of the Fleet Tracking template
+## Explore Our Fleet Management IoT Solutions
 
-Save up to 90% of development time for your fleet tracking solution by utilizing the following platform benefits:
-- reliable and scalable data collection for your fleet tracking sensors;
-- powerful rule engine to process collected data and produce alarms and valuable insights;
-- advanced and flexible visualization for real-time and historical data;
-- customizable end-user dashboards to analyze and share the results of fleet tracking;
-- integration with third-party analytics frameworks and solutions for advanced analytics;
-- remote control and OTA updates for your tracking sensors and other devices;
-- customizable mobile applications with minimum coding efforts.
+ThingsBoard’s fleet management IoT solutions are meticulously crafted to offer unparalleled insights, efficiency, and adaptability.
 
-Of course, you may extend the list of alarms and completely customize the dashboard. 
-You may export the dashboard from our live demo server and import it to your ThingsBoard instance.
-You may edit the route area widget and enable configuration of the route area for your local copy of the dashboard. 
+<span class="bold-text">Fleet Tracking Solution Overview.</span> At the core of our offerings is the fleet management system using IoT, illustrated below in a comprehensive diagram.
 
+<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/fleet-tracking.svg"></object>
 
-## ThingsBoard advantages
+You may notice plenty of connectivity options for the vehicle trackers: direct connection to the cloud, through the IoT Gateway, or integration with a third-party system. Most of vehicle-tracking projects today use a direct connection to the cloud using MQTT or CoAP in the case of NB IoT. ThingsBoard supports either plain JSON or Protobuf, which significantly optimize network traffic and increase battery life.
+
+<span class="bold-text">Robust Security Measures.</span> Ensuring the utmost security, ThingsBoard incorporates industry-standard encryption algorithms and supports various device credential types. Data is stored in the fault-tolerant and reliable Cassandra database, assuring the integrity and resilience of your IoT fleet monitoring data.
+
+<span class="bold-text">Rule Engine for Advanced Analytics.</span> A standout feature of our solutions is the Rule Engine, facilitating the forwarding of incoming data to various analytics systems. This includes but is not limited to Apache Spark or Hadoop, achieved through integration with Kafka or other Message buses. 
+
+In essence, ThingsBoard's fleet management tracking solutions transcend the ordinary, offering a versatile and adaptive framework for businesses seeking to optimize their fleet tracking endeavors.
+
+## ThingsBoard benefits:
 <section class="usecase-advantages">
-    <div class="usecase-background">
-        <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
-    </div>
     <div class="cards row">
         <div class="col-lg-6">
             <div class="block">
@@ -156,23 +233,78 @@ You may edit the route area widget and enable configuration of the route area fo
     </div>
 </section>
 
-## Fleet tracking solution overview
+## Our cases:
+<section class="usecase-advantages">
+    <div class="usecase-background">
+        <div class="bottom-features1"></div><div class="bottom-features2"></div><div class="small11"></div><div class="small12"></div>
+    </div>
+    <div class="cards row">
+        <div class="col-lg-6">
+            <div class="block">
+                <div>
+                    <a class="title">Efficient logistics optimization</a>
+                    <p>Streamlined fleet operations with real-time tracking, leading to optimized routes, reduced fuel consumption, and enhanced delivery precision.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="block">
+                <div>
+                    <a class="title">Enhanced vehicle maintenance</a>
+                    <p>Implemented predictive maintenance protocols, leveraging ThingsBoard's analytics, resulting in decreased downtime and extended vehicle lifespan.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="block">
+                <div>
+                    <a class="title">Smart driver performance monitoring</a>
+                    <p>Implemented predictive maintenance protocols, leveraging ThingsBoard's analytics, resulting in decreased downtime and extended vehicle lifespan.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <div class="block">
+                <div>
+                    <a class="title">Enhanced vehicle maintenance</a>
+                    <p>Successfully built and managed complex multi-tenant fleet solutions, demonstrating ThingsBoard's adaptability for diverse customer needs.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-The diagram below identifies data flow and integration points for a typical fleet-tracking solution that uses the ThingsBoard platform to collect and analyze data from vehicle trackers.
+Experience the power of transformative IoT fleet management with ThingsBoard's IoT fleet management open-source platform. From optimizing logistics to predictive maintenance, safety enhancements, and multi-tenant solutions, our software is poised to revolutionize your fleet operations. Empower your fleet, empower your business.
 
-<object width="100%" style="max-width: max-content; margin: 32px 0" data="/images/iot-use-cases/fleet-tracking.svg"></object>
 
-You may notice plenty of connectivity options for the vehicle trackers: direct connection to the cloud, through the IoT Gateway or integration with a third-party system.
-Most of vehicle-tracking projects today use direct connection to the cloud using MQTT or CoAP in case of NB IoT. 
-ThingsBoard supports either plain JSON or Protobuf, which significantly optimize network traffic and increase battery life;
-
-The platform supports industry-standard encryption algorithms and device credentials types. ThingsBoard stores data in the fault-tolerant and reliable Cassandra database.
-The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
-
-## Learn more
-
-<a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-<a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>
-<a style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
-<a style="margin: 10px;" href="/docs/reference/" class="button">Architecture</a>
-<a style="margin: 10px;" href="/docs/contact-us/" class="button">Contact us</a>
+<div id="contact-us" class="block-wrapper wrapper-main-color">
+    <div class="block-content">
+        <div class="contact-us-content">
+            <div class="info">
+                <div class="title">Ready to launch your unique product?</div>
+                <div class="text">Leave us your name and email and we will get back to you within 2 business days</div>
+            </div>
+            <form id="contact-form" class="contact-form1" method="post" onsubmit="return validateContactForm(this)">
+                <fieldset>
+                    <div class="form-section">
+                        <div class="form-element">
+                            <label for="name">
+                                <input id="name" class="contact-us-form-control" value="" placeholder="Your Name" name="name" type="text" size="40" maxlength="50">
+                                <p class="second-placeholder" style="font-size: 12px">Name*</p>
+                            </label>
+                        </div>
+                        <div class="form-element">
+                            <label for="email">
+                                <input id="email" class="contact-us-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                                <p class="second-placeholder" style="font-size: 12px">Email Address*</p>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="submit-button-container">
+                        <input class="contact-us-button" value="Submit" type="submit">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>

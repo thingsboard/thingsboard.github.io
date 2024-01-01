@@ -36,6 +36,8 @@ spring:
 ``` 
 ##### Configure cloud connectivity
 
+{% include templates/edge/install/copy-edge-credentials.md %}
+
 Locate "# Cloud configuration" block and replace **PUT_YOUR_EDGE_KEY_HERE** and **PUT_YOUR_EDGE_SECRET_HERE** with Edge **key and secret** respectively. 
 
 Please replace **PUT_YOUR_CLOUD_IP** with an IP address of the machine where {{appPrefix}} version is running:
@@ -50,6 +52,7 @@ Please change **CLOUD_RPC_SSL_ENABLED** to **true** as well.
 * Use **localhost** in case edge is running on the same machine where cloud instance is running. 
 * Use **X.X.X.X** IP address in case edge is connecting to the cloud instance in the same network or in the docker.
 
+{% if docsPrefix == 'pe/edge/' %}
 ```yml
 # Cloud configuration
 cloud:
@@ -57,11 +60,20 @@ cloud:
     secret: "${CLOUD_ROUTING_SECRET:PUT_YOUR_EDGE_SECRET_HERE}"
     rpc:
       host: "${CLOUD_RPC_HOST:PUT_YOUR_CLOUD_IP}"
-{% if docsPrefix == 'pe/edge/' %}
       ssl:
-        enabled: "${CLOUD_RPC_SSL_ENABLED:true}"
-{% endif %}
+        # Set to 'true' if using thingsboard.cloud or if you have configured a TLS connection on your Server; set to 'false' otherwise.
+        enabled: "${CLOUD_RPC_SSL_ENABLED:true/false}" 
 ```
+{% else %}
+```yml
+# Cloud configuration
+cloud:
+    routingKey: "${CLOUD_ROUTING_KEY:PUT_YOUR_EDGE_KEY_HERE}"
+    secret: "${CLOUD_ROUTING_SECRET:PUT_YOUR_EDGE_SECRET_HERE}"
+    rpc:
+      host: "${CLOUD_RPC_HOST:PUT_YOUR_CLOUD_IP}"
+```
+{% endif %}
 
 {% capture local-deployment %}
 If ThingsBoard Edge is set to run on the same machine where the **{{appPrefix}}** server is operating, you need to update additional configuration parameters to prevent port collision between the ThingsBoard server and ThingsBoard Edge.

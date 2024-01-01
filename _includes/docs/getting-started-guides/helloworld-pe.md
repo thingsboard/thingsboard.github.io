@@ -21,6 +21,11 @@ To add a new device, follow these steps:
  
 {% include images-gallery.html imageCollection="step1" showListImageTitles="true" %} 
 
+<br>
+When adding a new device, you will receive a notification. You can view it by clicking on the "bell" icon in the top right corner.
+
+{% include images-gallery.html imageCollection="step11" %}
+
 Learn more about **notifications** and how to configure them [here](#step-6-alarm-notifications).
 
 <br>
@@ -31,25 +36,13 @@ You may also use:
 
 ## Step 2. Connect device
 
-To connect the device you need to get the device credentials first. 
-ThingsBoard supports various device credentials. We recommend using the default auto-generated credentials, which is an access token for this guide.
+Now, let's check the connection of our device to the ThingsBoard platform.
+To accomplish this, use the "Check connectivity" functionality to publish telemetry data (for example, temperature readings) on behalf of your device. You can do this both while adding the device and after.
 
 {% include images-gallery.html imageCollection="step2" showListImageTitles="true" %}
 
-Now, you are ready to publish telemetry data on behalf of your device. 
-We will use simple commands to publish data over HTTP or MQTT in this example.
-
-{% capture connectdevicetogglespec %}
-HTTP<small>Linux, macOS or Windows</small>%,%http%,%templates/helloworld-pe/http.md%br%
-MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/helloworld-pe/mqtt-linux.md%br%
-MQTT<small>Windows</small>%,%mqtt-windows%,%templates/helloworld-pe/mqtt-windows.md%br%
-CoAP<small>Linux or macOS</small>%,%coap%,%templates/helloworld-pe/coap.md%br%
-Other Protocols<small>Modbus, SNMP, LoRaWAN, etc</small>%,%other%,%templates/helloworld/other.md{% endcapture %}
-{% include content-toggle.html content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec %}
-
-Once you have successfully published the "temperature" readings, you should immediately see them in the Device Telemetry Tab:
-
-{% include images-gallery.html imageCollection="step21" showListImageTitles="true" %}
+<br>
+You may also use [ThingsBoard API reference](/docs/{{docsPrefix}}api). Here, you can find more detailed information about all supported protocols for device connectivity.
 
 ## Step 3. Create dashboard
 

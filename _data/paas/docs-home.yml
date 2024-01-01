@@ -99,6 +99,46 @@ toc:
           path: /docs/paas/user-guide/rule-engine-2-0/analytics-nodes/
         - title: Flow Nodes
           path: /docs/paas/user-guide/rule-engine-2-0/flow-nodes/
+    - title: Data processing & actions
+      section:
+        - title: Validate incoming telemetry
+          path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
+        - title: Telemetry delta calculation
+          path: /docs/user-guide/rule-engine-2-0/tutorials/telemetry-delta-validation/
+        - title: Data function based on telemetry from 2 devices
+          path: /docs/user-guide/rule-engine-2-0/tutorials/function-based-on-telemetry-from-two-devices/
+        - title: Transform incoming telemetry
+          path: /docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/
+        - title: Transform telemetry using previous record
+          path: /docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/
+        - title: Create and Clear Alarms
+          path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/
+        - title: Working with Alarm details
+          path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/
+        - title: Send email on alarm
+          path: /docs/user-guide/rule-engine-2-0/tutorials/send-email/
+        - title: Send email to Customer
+          path: /docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/
+        - title: Notifications and Alarms on your smartphone using Telegram Bot
+          path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
+        - title: Create Alarm when the Device is offline
+          path: /docs/user-guide/rule-engine-2-0/tutorials/create-inactivity-alarm/
+        - title: Check Relation between Entities
+          path: /docs/user-guide/rule-engine-2-0/tutorials/check-relation-tutorial/
+        - title: Send RPC Request to the Related Device
+          path: /docs/user-guide/rule-engine-2-0/tutorials/rpc-request-tutorial/
+        - title: Weather reading using REST API calls
+          path: /docs/user-guide/rule-engine-2-0/tutorials/get-weather-using-rest-api-call/
+        - title: Add & remove devices to group dynamically
+          path: /docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/
+          pe: true
+        - title: Send data to external MQTT brokers
+          path: /docs/user-guide/integrations/send-data-external-mqtt-brokers/
+          pe: true
+        - title: Using queues for synchronization
+          path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/
+        - title: Using queues for message reprocessing
+          path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/
     - title: Templatization
       path: /docs/paas/user-guide/templatization/
       new: true
@@ -136,6 +176,9 @@ toc:
       path: /docs/paas/user-guide/integrations/ttn/
     - title: TheThingsIndustries
       path: /docs/paas/user-guide/integrations/tti/
+    - title: KPN Things
+      path: /docs/paas/user-guide/integrations/kpn-things/
+      new: true
     - title: LORIOT
       path: /docs/paas/user-guide/integrations/loriot/
     - title: ChirpStack
@@ -150,7 +193,6 @@ toc:
       path: /docs/paas/user-guide/integrations/azure-event-hub/
     - title: Azure Service Bus
       path: /docs/paas/user-guide/integrations/azure-service-bus/
-      new: true
     - title: Azure IoT Hub
       path: /docs/paas/user-guide/integrations/azure-iot-hub/
     - title: TCP
@@ -163,7 +205,6 @@ toc:
       path: /docs/paas/user-guide/integrations/ocean-connect/
     - title: Tuya
       path: /docs/paas/user-guide/integrations/tuya/
-      new: true
     - title: Custom Integration development guide
       path: /docs/paas/user-guide/integrations/custom/
     - title: Notifications and Alarms on your smartphone using Telegram Bot
@@ -182,6 +223,9 @@ toc:
       path: /docs/paas/user-guide/claiming-devices/
     - title: Device provisioning
       path: /docs/paas/user-guide/device-provisioning/
+    - title: Image gallery
+      path: /docs/paas/user-guide/image-gallery/
+      new: true
     - title: Entity Views
       path: /docs/paas/user-guide/entity-views/
     - title: API Limits

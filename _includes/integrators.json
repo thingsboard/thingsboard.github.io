@@ -636,6 +636,18 @@
     }
   },
   {
+    "type": ["Europe"],
+    "country": ["Italy"],
+    "name": "McRegem Srl",
+    "contact": {
+      "href": "info@mcregem.com"
+    },
+    "site": {
+      "href": "mcregem.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Middle East"],
     "country": ["Turkey"],
     "name": "Mechanica Irev Yazılım Sa. Tic. Ltd. Şti.",
@@ -872,6 +884,18 @@
     },
     "site": {
       "href": "sawtraxltd.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Greece"],
+    "name": "Scientific Enterprises Ltd",
+    "contact": {
+      "href": "george@scienter.gr"
+    },
+    "site": {
+      "href": "scienter.gr",
       "target": "_blank"
     }
   },

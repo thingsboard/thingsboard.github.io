@@ -29,6 +29,14 @@ Possible return codes, and their reasons during connect sequence:
 
 The alternative authentication option is to use [X.509 Certificates](/docs/{{docsPrefix}}user-guide/certificates/) or [Basic MQTT Credentials](/docs/{{docsPrefix}}user-guide/basic-mqtt/) - combination of client id, username and password.
 
+Now you are ready to publish telemetry data on behalf of your device.
+We will use simple commands to publish data over MQTT in this example. Select your OS:
+
+{% capture connectdevicetogglespec %}
+MQTT<small>Linux or macOS</small>%,%mqtt-linux%,%templates/helloworld-pe/mqtt-linux.md%br%
+MQTT<small>Windows</small>%,%mqtt-windows%,%templates/helloworld-pe/mqtt-windows.md{% endcapture %}
+{% include content-toggle.html content-toggle-id="connectdevice" toggle-spec=connectdevicetogglespec %}
+
 {% include templates/api/key-value-format.md %}
 
 However, it is also possible to send data via [Protocol Buffers](https://developers.google.com/protocol-buffers).

@@ -1,14 +1,14 @@
 ---
 layout: use-case
-title: Smart farming and smart agriculture solutions
-description: Smart farming, future farming and smart agriculture with ThingsBoard IoT Platform
+title: ᐉ Smart Farming & Agriculture — IoT Agriculture Solutions
+description: Internet of things farming ✔ Smart agriculture ✔ IoT sensors in agriculture ⚫ ThingsBoard ➤ Save up to 90% of development time for your smart-farming & agriculture solutions
 notitle: "true"
 
 ---
 
 {% include usecase-nav.html usecase="smart-farming" %}
 
-<h1 class="usecase-title">Smart farming and smart agriculture solutions</h1>
+<h1 class="usecase-title">Smart Farming & IoT Agriculture Solutions</h1>
 
 ThingsBoard platform dramatically reduces time to market and efforts to create smart-farming solutions.
 Save up to 90% of development time for your smart-farming solution by utilizing the following platform benefits:
@@ -153,10 +153,12 @@ The platform supports industry-standard encryption algorithms and device credent
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
 ## Learn more
+<div class="usecases-bottom-nav">
+    <a href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
+    <a href="/industries/smart-energy/" class="button">Customers feedback</a>
+    <a href="/docs/#platform-features" class="button">Platform features</a>
+    <a href="/docs/reference/" class="button">Architecture</a>
+    <a href="/docs/contact-us/" class="button">Contact us</a>
+</div>
 
-<a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-<a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>
-<a style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
-<a style="margin: 10px;" href="/docs/reference/" class="button">Architecture</a>
-<a style="margin: 10px;" href="/docs/contact-us/" class="button">Contact us</a>
 

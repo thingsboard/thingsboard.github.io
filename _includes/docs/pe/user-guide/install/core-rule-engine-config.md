@@ -154,6 +154,12 @@
 			<td> Maximum queue size of the websocket updates per session. This restriction prevents infinite updates of WS</td>
 		</tr>
 		<tr>
+			<td>server.ws.auth_timeout_ms</td>
+			<td>TB_SERVER_WS_AUTH_TIMEOUT_MS</td>
+			<td>10000</td>
+			<td> Maximum time between WS session opening and sending auth command</td>
+		</tr>
+		<tr>
 			<td>server.rest.server_side_rpc.min_timeout</td>
 			<td>MIN_SERVER_SIDE_RPC_TIMEOUT</td>
 			<td>5000</td>
@@ -474,7 +480,7 @@
 		<tr>
 			<td>ui.help.base-url</td>
 			<td>UI_HELP_BASE_URL</td>
-			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-3.6</td>
+			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-3.6.2</td>
 			<td> Base URL for UI help assets</td>
 		</tr>
 	</tbody>
@@ -2047,6 +2053,42 @@
 			<td>200000</td>
 			<td> 0 means the cache is disabled</td>
 		</tr>
+		<tr>
+			<td>cache.entityLimits.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_ENTITY_LIMITS_TTL</td>
+			<td>5</td>
+			<td> Entity limits cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.entityLimits.maxSize</td>
+			<td>CACHE_SPECS_ENTITY_LIMITS_MAX_SIZE</td>
+			<td>100000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.image.etag.timeToLiveInMinutes</td>
+			<td>CACHE_SPECS_IMAGE_ETAGS_TTL</td>
+			<td>44640</td>
+			<td> Image ETags cache TTL</td>
+		</tr>
+		<tr>
+			<td>cache.image.etag.maxSize</td>
+			<td>CACHE_SPECS_IMAGE_ETAGS_MAX_SIZE</td>
+			<td>10000</td>
+			<td> 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.image.systemImagesBrowserTtlInMinutes</td>
+			<td>CACHE_SPECS_IMAGE_SYSTEM_BROWSER_TTL</td>
+			<td>0</td>
+			<td> Browser cache TTL for system images in minutes. 0 means the cache is disabled</td>
+		</tr>
+		<tr>
+			<td>cache.image.tenantImagesBrowserTtlInMinutes</td>
+			<td>CACHE_SPECS_IMAGE_TENANT_BROWSER_TTL</td>
+			<td>0</td>
+			<td> Browser cache TTL for tenant images in minutes. 0 means the cache is disabled</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -2366,14 +2408,14 @@
 		</tr>
 		<tr>
 			<td>spring.servlet.multipart.max-file-size</td>
-			<td></td>
-			<td>"50MB" </td>
+			<td>SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE</td>
+			<td>50MB</td>
 			<td> Total file size cannot exceed 50MB when configuring file uploads</td>
 		</tr>
 		<tr>
 			<td>spring.servlet.multipart.max-request-size</td>
-			<td></td>
-			<td>"50MB" </td>
+			<td>SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE</td>
+			<td>50MB</td>
 			<td> Total request size for a multipart/form-data cannot exceed 50MB</td>
 		</tr>
 		<tr>
@@ -2387,6 +2429,12 @@
 			<td>SPRING_JPA_PROPERTIES_HIBERNATE_ORDER_BY_DEFAULT_NULL_ORDERING</td>
 			<td>last</td>
 			<td> Note: as for current Spring JPA version, custom NullHandling for the Sort.Order is ignored and this parameter is used</td>
+		</tr>
+		<tr>
+			<td>spring.jpa.properties.hibernate.dialect</td>
+			<td>SPRING_JPA_DIALECT</td>
+			<td>org.thingsboard.server.dao.ThingsboardPostgreSQLDialect</td>
+			<td> we use custom dialect that contains ilike(arg1, arg2) function (is interpreted to postgres ILIKE operator)</td>
 		</tr>
 	</tbody>
 </table>
@@ -2987,7 +3035,7 @@
 			<td>transport.rate_limits.ip_block_timeout</td>
 			<td>TB_TRANSPORT_IP_BLOCK_TIMEOUT</td>
 			<td>60000</td>
-			<td> Timeout to expire block IP addresses</td>
+			<td> Timeout (in milliseconds) to expire block IP addresses</td>
 		</tr>
 		<tr>
 			<td>transport.http.enabled</td>
@@ -3878,7 +3926,7 @@
 		<tr>
 			<td>edges.storage.sleep_between_batches</td>
 			<td>EDGES_SLEEP_BETWEEN_BATCHES</td>
-			<td>10000</td>
+			<td>60000</td>
 			<td> Number of milliseconds to wait before resending failed batch of edge events to edge</td>
 		</tr>
 		<tr>
@@ -4008,6 +4056,12 @@
 			<td>TB_QUEUE_TYPE</td>
 			<td>in-memory</td>
 			<td> in-memory or kafka (Apache Kafka) or aws-sqs (AWS SQS) or pubsub (PubSub) or service-bus (Azure Service Bus) or rabbitmq (RabbitMQ)</td>
+		</tr>
+		<tr>
+			<td>queue.prefix</td>
+			<td>TB_QUEUE_PREFIX</td>
+			<td></td>
+			<td> Global queue prefix. If specified, prefix is added before default topic name: 'prefix.default_topic_name'. Prefix is applied to all topics (and consumer groups for kafka).</td>
 		</tr>
 		<tr>
 			<td>queue.in_memory.stats.print-interval-ms</td>
@@ -4252,7 +4306,7 @@
 		<tr>
 			<td>queue.kafka.topic-properties.version-control</td>
 			<td>TB_QUEUE_KAFKA_VC_TOPIC_PROPERTIES</td>
-			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:10;min.insync.replicas:1</td>
+			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Version Control topic</td>
 		</tr>
 		<tr>
@@ -4380,6 +4434,12 @@
 			<td>TB_QUEUE_PUBSUB_MAX_MESSAGES</td>
 			<td>1000</td>
 			<td> Number of messages per consumer</td>
+		</tr>
+		<tr>
+			<td>queue.pubsub.executor_thread_pool_size</td>
+			<td>TB_QUEUE_PUBSUB_EXECUTOR_THREAD_POOL_SIZE</td>
+			<td>0</td>
+			<td> Thread pool size for pubsub queue executor provider. If set to 0 - default pubsub executor provider value will be used (5 * number of available processors)</td>
 		</tr>
 		<tr>
 			<td>queue.pubsub.queue-properties.rule-engine</td>
@@ -4618,8 +4678,14 @@
 		<tr>
 			<td>queue.transport_api.max_callback_threads</td>
 			<td>TB_QUEUE_TRANSPORT_MAX_CALLBACK_THREADS</td>
-			<td>10</td>
+			<td>100</td>
 			<td> Amount of threads used to invoke callbacks</td>
+		</tr>
+		<tr>
+			<td>queue.transport_api.max_core_handler_threads</td>
+			<td>TB_QUEUE_TRANSPORT_MAX_CORE_HANDLER_THREADS</td>
+			<td>16</td>
+			<td> Amount of threads used for transport API requests</td>
 		</tr>
 		<tr>
 			<td>queue.transport_api.request_poll_interval</td>
@@ -4888,8 +4954,14 @@
 		<tr>
 			<td>queue.rule-engine.topic-deletion-delay</td>
 			<td>TB_QUEUE_RULE_ENGINE_TOPIC_DELETION_DELAY_SEC</td>
-			<td>30</td>
+			<td>15</td>
 			<td> After a queue is deleted (or the profile's isolation option was disabled), Rule Engine will continue reading related topics during this period before deleting the actual topics</td>
+		</tr>
+		<tr>
+			<td>queue.rule-engine.management-thread-pool-size</td>
+			<td>TB_QUEUE_RULE_ENGINE_MGMT_THREAD_POOL_SIZE</td>
+			<td>12</td>
+			<td> Size of the thread pool that handles such operations as partition changes, config updates, queue deletion</td>
 		</tr>
 		<tr>
 			<td>queue.transport.notifications_topic</td>
@@ -5062,6 +5134,12 @@
 			<td> Comma-separated list of tenant profile ids assigned to this Rule Engine.
  This Rule Engine will only be responsible for tenants with these profiles (in case 'isolation' option is enabled in the profile).</td>
 		</tr>
+		<tr>
+			<td>service.rule_engine.pubsub.executor_thread_pool_size</td>
+			<td>TB_RULE_ENGINE_PUBSUB_EXECUTOR_THREAD_POOL_SIZE</td>
+			<td>0</td>
+			<td> Thread pool size for pubsub rule node executor provider. If not set - default pubsub executor provider value will be used (5 * number of available processors)</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -5115,7 +5193,7 @@
 		<tr>
 			<td>vc.thread_pool_size</td>
 			<td>TB_VC_POOL_SIZE</td>
-			<td>2</td>
+			<td>6</td>
 			<td> Pool size for handling export tasks</td>
 		</tr>
 		<tr>
