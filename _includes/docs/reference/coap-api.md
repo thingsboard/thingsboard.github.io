@@ -7,13 +7,13 @@
 
 [CoAP](https://en.wikipedia.org/wiki/Constrained_Application_Protocol) is a light-weight IoT protocol for constrained devices. You can find more information about CoAP [here](https://tools.ietf.org/html/rfc7252).
 CoAP protocol is UDP based, but similar to HTTP it uses request-response model. 
-CoAP observes [option](https://tools.ietf.org/html/rfc7641) allows to subscribe to resources and receive notifications on resource change.
+CoAP Observe [Option](https://tools.ietf.org/html/rfc7641) allows subscription to resources and receiving notifications on resource change.
 
 ThingsBoard server nodes act as a CoAP Server that supports both regular and observe requests.
 
 ### Client libraries setup
 
-You can find CoAP client libraries for different programming languages on the web. Examples in this article will be based on [CoAP cli](https://www.npmjs.com/package/coap-cli).
+You can find CoAP client libraries for different programming languages on the web. The examples in this article will be based on [CoAP cli](https://www.npmjs.com/package/coap-cli).
 In order to setup this tool on Linux or macOS, you can use the following command:
 
 ```bash
@@ -33,7 +33,7 @@ CoAP cli does not support query parameters. If you require to use query paramete
 
 ### CoAP Authentication and error codes
 
-We will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
+In this article, we will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
 The application needs to include **$ACCESS_TOKEN** as a path parameter into each CoAP request.
 Possible error codes and their reasons:
 
@@ -115,16 +115,16 @@ Where **1451649600512** is a [unix timestamp](https://en.wikipedia.org/wiki/Unix
 Below are examples of commands for publishing different types of telemetry data.
 
 {% if docsPrefix == null %}
-Don't forget replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
+Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
+Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references your local installation.
 {% endif %}
 {% if docsPrefix == "paas/" %}
-Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token.
+Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
-Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
+Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references your local installation.
 {% endif %}
 
 **Example 1**. Publish data as an object without timestamp (server-side timestamp will be used) using data from [**telemetry-data-as-object.json**](/docs/reference/resources/telemetry-data-as-object.json) file.
@@ -481,7 +481,7 @@ The "`B`" options stands for break (the operation will be break after desired ti
 
 - Save the "[rpc-response.json](/docs/reference/resources/rpc-response.json)" file to your PC;
 
-- In the second terminal window simulate send a response from the device to the server:
+- In the second terminal window simulate sending a response from the device to the server:
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
