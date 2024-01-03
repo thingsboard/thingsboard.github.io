@@ -76,7 +76,7 @@ Attributes such as **frequency** and **power**, as well as timeseries like **tem
 are mapped to specific paths in the OPC-UA server. Additionally, the configuration supports RPC methods and 
 attribute updates.
 
-To create a connector, use the following steps:
+To create a connector, follow these steps:
 
 {% assign addNewConnector = '
     ===
@@ -101,7 +101,7 @@ its state with the remote server. You can view the synchronization status of the
 in the "**Configuration**" column, which will indicate whether the gateway is successfully aligned with 
 the remote settings.
 
-Also, you can see the connector logs to make sure that connector works, for this purpose, use the following steps:
+Also, you can see the connector logs to make sure that the connector works, for this purpose, follow these steps:
 {% assign seeConnectorLogs = '
     ===
         image: /images/gateway/dashboard/gateway-getting-started-opc-ua-11-ce.png,

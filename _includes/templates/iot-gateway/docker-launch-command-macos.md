@@ -24,7 +24,7 @@ docker run -it -v ~/.tb-gateway/logs:/thingsboard_gateway/logs -v ~/.tb-gateway/
 
 Where:
 - `docker run` - run this container;
-- `-it` - attach a terminal session with current Gateway process output;
+- `-it` - attach a terminal session with the current Gateway process output;
 - `-v ~/.tb-gateway/config:/thingsboard_gateway/config` - mounts the host's dir `~/.tb-gateway/config` to Gateway config  directory;
 - `-v ~/.tb-gateway/extensions:/thingsboard_gateway/extensions` - mounts the host's dir `~/.tb-gateway/extensions` to Gateway extensions  directory;
 - `-v ~/.tb-gateway/logs:/thingsboard_gateway/logs` - mounts the host's dir `~/.tb-gateway/logs` to Gateway logs  directory;

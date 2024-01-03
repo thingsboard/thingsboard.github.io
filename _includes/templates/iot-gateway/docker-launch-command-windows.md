@@ -24,7 +24,7 @@ docker run -it -v %HOMEDRIVE%%HOMEPATH%\tb-gateway\logs:/thingsboard_gateway/log
 
 Where:
 - `docker run` - run this container;
-- `-it` - attach a terminal session with current Gateway process output;
+- `-it` - attach a terminal session with the current Gateway process output;
 - `%HOMEPATH%`   - current user's home dir;
 - `%HOMEDRIVE%` - current user's home drive;
 - `-v %HOMEDRIVE%%HOMEPATH%\tb-gateway\config:/thingsboard_gateway/config`   - mounts the host's dir `%HOMEDRIVE%%HOMEPATH%\tb-gateway\config` to Gateway config  directory;

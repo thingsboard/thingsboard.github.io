@@ -89,7 +89,7 @@ Modbus function code 4 requests. Attribute and timeseries mappings are defined f
 **humidity**, and **temperature**. Additionally, settings for connection attempts, retries, and wait times after failed 
 attempts are provided.
 
-To create a connector, use the following steps:
+To create a connector, follow these steps:
 
 {% assign addNewConnector = '
     ===
@@ -114,7 +114,7 @@ its state with the remote server. You can view the synchronization status of the
 in the "**Configuration**" column, which will indicate whether the gateway is successfully aligned with 
 the remote settings.
 
-Also, you can see the connector logs to make sure that connector works, for this purpose, use the following steps:
+Also, you can see the connector logs to make sure that the connector works, for this purpose, follow these steps:
 {% assign seeConnectorLogs = '
     ===
         image: /images/gateway/dashboard/gateway-getting-started-modbus-11-ce.png,

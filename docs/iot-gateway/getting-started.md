@@ -25,7 +25,7 @@ This guide covers initial IoT Gateway installation and configuration, we will do
 
 ## Step 1. Create new gateway device on ThingsBoard
 
-First, we have to add a gateway device to your ThingsBoard instance. You can do this using following steps:
+First, add a gateway device to your ThingsBoard instance by following these steps:
 
 {% assign createNewGatewayDevice = '
     ===
@@ -78,7 +78,7 @@ use the following steps:
         title: On the gateway dashboard, click on **"General configuration"** button on the right panel.
     ===
         image: /images/gateway/dashboard/general-configuration-2-ce.png,
-        title: Navigate to the "**Logs**" tab. Enable the "**Remote logs**" toggle. Select "**DEBUG**" in the "**Log level**" row.
+        title: Navigate to the "**Logs**" tab. Enable the "**Remote logs**" toggle. Select "**DEBUG**" in the "**Log level**" drop-down menu.
 '
 %}
 
@@ -146,7 +146,7 @@ First, we have to import gateway widgets bundle, for this purpose, use the follo
         title: Go to the "**Widgets Library**" page, and click the "**+**" button in the upper right corner of the "**Widgets Bundles**" page. Select "**Import widgets bundle**" from the drop-down menu.
     ===
         image: /images/gateway/dashboard/wl-import-bundle-gateway-2-ce.png,
-        title: In the popup, you will be prompted to upload the downloaded gateway widgets bundle JSON file. Drag and drop a file from your computer, then click "**Import**" to add a widget bundle to the library.
+        title: You will be prompted to upload the downloaded gateway widgets bundle JSON file in the pop-up. Drag and drop a file from your computer, then click "**Import**" to add a widget bundle to the library.
     ===
         image: /images/gateway/dashboard/wl-import-bundle-gateway-3-ce.png,
         title: The widgets bundle is imported.
@@ -163,10 +163,10 @@ To import ThingsBoard IoT Gateways dashboard, follow these steps:
         title: Go to the "**Dashboards**" page and click on the "**+**" button in the upper right corner of the page and select "**Import dashboard**" from the drop-down menu;
     ===
         image: /images/gateway/dashboard/import-dashboard-gateway-2-ce.png,
-        title: In the import dashboard window, upload downloaded the gateway dashboard JSON file and click "**Import**".
+        title: In the import dashboard window, upload the downloaded gateway dashboard JSON file and click "**Import**".
     ===
         image: /images/gateway/dashboard/import-dashboard-gateway-3-ce.png,
-        title: Dashboard imported. Click on the row with the name of the dashboard to open it.
+        title: Dashboard imported. Click on the row with the dashboard name to open it.
 '
 %}
 
