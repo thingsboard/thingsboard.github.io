@@ -13,10 +13,10 @@ redirect_from:
 
 This guide will help you to get familiar with MQTT Connector configuration for ThingsBoard IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this Connector. 
-The purpose of this Connector is to connect to external MQTT broker and subscribe to data feed from devices. 
-Connector is also able to push data to MQTT brokers based on the updates/commands from ThingsBoard. 
+The purpose of this Connector is to connect to an external MQTT broker and subscribe to data feed from devices. 
+The connector is also able to push data to MQTT brokers based on the updates/commands from ThingsBoard. 
 
-This Connector is useful when you have local MQTT broker in your facility or corporate network and you would like to push data from this broker to ThingsBoard.
+This connector is useful when you have local MQTT broker in your facility or corporate network and you would like to push data from this broker to ThingsBoard.
 
 We will describe connector configuration file below.
 
@@ -24,13 +24,13 @@ We will describe connector configuration file below.
 
 Connector configuration is a JSON file that contains information about how to connect to external MQTT broker, 
 what topics to use when subscribing to data feed and how to process the data. 
-Let's review the format of the configuration file using example below.
+Let's review the format of the configuration file using the example below.
 
 <b>Example of MQTT Connector config file.</b>
 
-Example listed below will connect to MQTT broker in a local network deployed on server with IP 192.168.1.100. 
+The example listed below will connect to MQTT broker in a local network deployed on server with IP 192.168.1.100. 
 Connector will use basic MQTT auth using username and password. 
-Then, connector will subscribe to a list of topics using topic filters from mapping section. See more info in a description below.    
+Then, connector will subscribe to a list of topics using topic filters from the mapping section. See more info in the description below.    
 
 {% capture mqttConf %}
 
@@ -209,14 +209,14 @@ Then, connector will subscribe to a list of topics using topic filters from mapp
 
 ### Section "broker"
 
-| **Parameter**        | **Default value**        | **Description**                                                                         |
-|:---------------------|:-------------------------|-----------------------------------------------------------------------------------------
-| name                 | **Default Local Broker** | Broker name for logs and saving to persistent devices.                                  |
-| host                 | **localhost**            | Mqtt broker hostname or ip address.                                                     |
-| port                 | **1883**                 | Mqtt port on the broker.                                                                |
-| clientId             | **ThingsBoard_gateway**  | This is the client ID. It must be unique for each session.                              |
-| version              | **5**                    | MQTT protocol version.                                                                  |
-| sendDataOnlyOnChange | **false**                | Sending only if data changed from last check, if no – data will send after every check. |
+| **Parameter**        | **Default value**        | **Description**                                                                             |
+|:---------------------|:-------------------------|---------------------------------------------------------------------------------------------
+| name                 | **Default Local Broker** | Broker name for logs and saving to persistent devices.                                      |
+| host                 | **localhost**            | Mqtt broker hostname or ip address.                                                         |
+| port                 | **1883**                 | Mqtt port on the broker.                                                                    |
+| clientId             | **ThingsBoard_gateway**  | This is the client ID. It must be unique for each session.                                  |
+| version              | **5**                    | MQTT protocol version.                                                                      |
+| sendDataOnlyOnChange | **false**                | Sending only if data changed from last check, if not – data will be sent after every check. |
 | ---                  
 
 #### Subsection "security"
@@ -232,7 +232,7 @@ Certificates<small>For advanced security</small>%,%tls%,%templates/iot-gateway/m
 
 ### Section "mapping"
 
-This configuration section contains array of topics that the gateway will subscribe to after connecting to the broker and settings about processing incoming messages (converter).
+This configuration section contains an array of topics that the gateway will subscribe to after connecting to the broker, along with settings about processing incoming messages (converter)..
 
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|-
@@ -240,13 +240,13 @@ This configuration section contains array of topics that the gateway will subscr
 |---
 
 
-The **topicFilter** supports special symbols: '#' and '+' to allow to subscribe to multiple topics.
+The **topicFilter** supports special symbols: '#' and '+', allowing to subscribe to multiple topics.
 
 Also, MQTT connector supports shared subscriptions. 
 To create shared subscription you need to add "**$share/**" as a prefix for topic filter and shared subscription group name.
 For example to subscribe to the *my-shared-topic* in group ***my-group-name*** you can set the topic filter to "$share/***my-group-name***/*my-shared-topic*".
 
-Let's assume we would like to subscribe and process following data from Thermometer devices:
+Let's assume we would like to subscribe and process the following data from Thermometer devices:
 
 <table>
   <thead>
@@ -272,7 +272,7 @@ Let's assume we would like to subscribe and process following data from Thermome
   </tbody>
 </table>
 
-In this case following messages are valid:
+In this case the following messages are valid:
 
 Example 1:
 
@@ -292,12 +292,12 @@ mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "/sensor/SN-0
 Now let's review how we can configure JSON converter to parse this data
 
 #### Subsection "converter"
-This subsection contains configuration for processing incoming messages.  
+This subsection contains configurations for processing incoming messages. 
 
-Types of mqtt converters:  
+The types of MQTT converters are as follows:
 1. json -- Default converter
 2. raw -- Raw default converter
-3. custom -- Custom converter (You can write it by yourself, and it will use to convert incoming data from the broker.) 
+3. custom -- Custom converter (You can write it yourself, and it will be used to convert incoming data from the broker.) 
 
 {% capture mqttconvertertypespec %}
 json<small>Recommended if json will be received in response</small>%,%json%,%templates/iot-gateway/mqtt-converter-json-config.md%br%
@@ -348,7 +348,7 @@ By default, gateway uses Json converter, but it is possible to provide custom co
 
 {% capture difference %}
 <br>
-**Connector won't pass the None value from the converter**  
+**Connector won't pass the '**None**' value from the converter**  
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -412,7 +412,7 @@ This section in configuration looks like:
   ]
 ```
 
-In this case following messages are valid:
+In this case the following messages are valid:
 
 ```bash
 mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "/sensor/connect" -m '{"serialNumber":"SN-001"}'
@@ -436,7 +436,7 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "/sensor/connect" -m '{"serialNumber": "SN
 ![image](/images/gateway/mqtt-message-connect.png)
 {: refdef}
 
-Your ThingsBoard instance will get information from the broker about last connecting time of the device. You can see this information on the "Server attributes" scope ("Attributes" tab).
+Your ThingsBoard instance will get information from the broker about last connecting time of the device. You can see this information under the "Server attributes" scope in the "Attributes" tab.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/mqtt-connect-device.png)
@@ -446,7 +446,7 @@ Your ThingsBoard instance will get information from the broker about last connec
 
 This configuration section is optional.  
 Configuration, provided in this section will be used to get information from the broker about disconnecting device.  
-If your device just disconnects from MQTT broker and waits for commands/updates, you need to send a message to the Gateway and inform that device is disconnected from the broker.
+If your device just disconnects from MQTT broker and waits for commands/updates, you need to send a message to the Gateway and inform it that device is disconnected from the broker.
  
 **1. Name in a message from broker:**
 
@@ -479,7 +479,7 @@ This section in configuration file looks like:
   ]
 ```
 
-In this case following messages are valid:
+In this case the following messages are valid:
 
 ```bash
 mosquitto_pub -h YOUR_MQTT_BROKER_HOST -p YOUR_MQTT_BROKER_PORT -t "/sensor/disconnect" -m '{"serialNumber":"SN-001"}'
@@ -503,7 +503,7 @@ mosquitto_pub -h 127.0.0.1 -p 1883 -t "/sensor/disconnect" -m '{"serialNumber": 
 ![image](/images/gateway/mqtt-message-disconnect.png)
 {: refdef}
 
-Your ThingsBoard instance will get information from the broker about last disconnecting time of the device. You can see this information on the "Server attributes" scope ("Attributes" tab).
+Your ThingsBoard instance will get information from the broker about last disconnecting time of the device. You can see this information under the "Server attributes" scope in the "Attributes" tab.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/mqtt-disconnect-device.png)
@@ -511,7 +511,7 @@ Your ThingsBoard instance will get information from the broker about last discon
 
 ### Section "attributeRequests"
 
-Configuration in this section are optional.
+This configuration section is optional.
 
 In order to request client-side or shared device attributes to ThingsBoard server node, Gateway allows sending 
 attribute requests.
@@ -565,13 +565,13 @@ See [user guide](/docs/user-guide/attributes/) for more details.
 
 The "**attributeRequests**" configuration allows configuring the format of the corresponding attribute request and response messages. 
 
-| **Parameter**                 | **Default value**                                     | **Description**                                                                                    |
-|:-|:-|-
-| retain                        | **false**                                             | If set to true, the message will be set as the "last known good"/retained message for the topic    |
-| deviceNameFilter              | **SN.\***                                     | Regular expression device name filter, uses to determine, which function to execute.               |
-| attributeFilter               | **uploadFrequency**                                   | Regular expression attribute name filter, uses to determine, which function to execute.            |
-| topicExpression               | **/sensor/${deviceName}/${attributeKey}**              | JSON-path expression uses for creating topic address to send a message.                            |
-| valueExpression               | **{\\"${attributeKey}\\":\\"${attributeValue}\\"}**   | JSON-path expression uses for creating the message data that will send to topic.                   |
+| **Parameter**                 | **Default value**                                   | **Description**                                                                                  |
+|:-|:----------------------------------------------------|--------------------------------------------------------------------------------------------------
+| retain                        | **false**                                           | If set to true, the message will be set as the "last known good"/retained message for the topic. |
+| deviceNameFilter              | **SN.\***                                           | Regular expression device name filter, used to determine, which function to execute.             |
+| attributeFilter               | **uploadFrequency**                                 | Regular expression attribute name filter, used to determine, which function to execute.          |
+| topicExpression               | **/sensor/${deviceName}/${attributeKey}**           | JSON-path expression used for creating topic address to send a message.                          |
+| valueExpression               | **{\\"${attributeKey}\\":\\"${attributeValue}\\"}** | JSON-path expression used for creating the message data that will send to topic.                 |
 |---
 
 
@@ -591,7 +591,7 @@ This section in configuration file looks like:
 
 **Let's look at an example.**
 
-Run the command below. You will start the *mosquitto_sub* client that subscribes to the topic “/sensor/SN-001/FirmwareVersion” of the local broker and start waiting for new messages from ThingsBoard server to broker.
+Run the command below to start the *mosquitto_sub* client, subscribing to the topic “/sensor/SN-001/FirmwareVersion” of the local broker. Start waiting for new messages from ThingsBoard server to broker.
 
 ```bash
 mosquitto_sub -t /sensor/SN-001/FirmwareVersion
@@ -602,7 +602,7 @@ mosquitto_sub -t /sensor/SN-001/FirmwareVersion
 ![image](/images/gateway/mqtt-mosquitto-sub-wait-1.png)
 {: refdef}
 
-Update device attribute value on the ThingsBoard server. Open Devices -> click by your device -> Attributes tab -> Shared attributes scope and click on the "pencil" button next to *"FirmwareVersion"* attribute.
+Update device attribute value on the ThingsBoard server. Follow these steps "Open Devices -> click by your device -> Attributes tab -> Shared attributes scope" and click on the "pencil" button next to *"FirmwareVersion"* attribute.
 
 {:refdef: style="text-align: center;"}
 ![image](/images/gateway/mqtt-update-attribute-1.png)
@@ -630,22 +630,22 @@ Broker received new message from the ThingsBoard server about updating attribute
 
 ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to ThingsBoard directly or via Gateway.
  
-Configuration, provided in this section uses for sending RPC requests from ThingsBoard to device.
+Configuration, provided in this section is used for sending RPC requests from ThingsBoard to device.
 
-| **Parameter**                 | **Default value**                                                 | **Description**                                                                                                                                                                  |
-|:-|:-|-
-| deviceNameFilter              | **SN.\***                                                         | Regular expression device name filter, uses to determine, which function to execute. In the example configuration, we are using a filter for device name that starts with “SN”.  |
-| methodFilter                  | **echo**                                                          | Regular expression method name filter, uses to determine, which function to execute.                                                                                             |
-| requestTopicExpression        | **/sensor/${deviceName}/request/${methodName}/${requestId}**      | JSON-path expression, uses for creating topic address to send RPC request.                                                                                                       |
-| responseTopicExpression       | **/sensor/${deviceName}/response/${methodName}/${requestId}**     | JSON-path expression, uses for creating topic address to subscribe for response message.                                                                                         |
-| responseTimeout               | **10000**                                                         | Value in milliseconds, if no response in this period after sending request, gateway will unsubscribe from response topic.                                                        |
-| valueExpression               | **${params}**                                                     | JSON-path expression, uses for creating data for sending to broker.                                                                                                              |
+| **Parameter**                 | **Default value**                                                 | **Description**                                                                                                                                                                    |
+|:-|:-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| deviceNameFilter              | **SN.\***                                                         | Regular expression device name filter, is used to determine, which function to execute. In the example configuration, we are using a filter for device name that starts with “SN”. |
+| methodFilter                  | **echo**                                                          | Regular expression method name filter, is used to determine, which function to execute.                                                                                            |
+| requestTopicExpression        | **/sensor/${deviceName}/request/${methodName}/${requestId}**      | JSON-path expression, is used for creating topic address to send RPC request.                                                                                                      |
+| responseTopicExpression       | **/sensor/${deviceName}/response/${methodName}/${requestId}**     | JSON-path expression, is used for creating topic address to subscribe for response message.                                                                                        |
+| responseTimeout               | **10000**                                                         | Value in milliseconds. If there is no response within this period after sending the request, gateway will unsubscribe from the response topic.                                     |
+| valueExpression               | **${params}**                                                     | JSON-path expression, is used for creating data for sending to broker.                                                                                                             |
 |---
 
 {% capture methodFilterOptions %}
 There are 2 options for RPC request:  
-1. **With response** -- If in the configuration exists responseTopicExpression, gateway will try to subscribe on it and wait for response.
-2. **Without response** -- If in the configuration not exists responseTopicExpression, gateway have just send message and won't wait for response.
+1. **With a response** -- If the configuration includes a responseTopicExpression, the gateway will attempt to subscribe to it and wait for a response.
+2. **Without a response** -- If the configuration does not include a responseTopicExpression, the gateway will simply send the message without waiting for a response.
 {% endcapture %}
 {% include templates/info-banner.md content=methodFilterOptions %}
 
@@ -670,12 +670,12 @@ This section in configuration file looks like:
   ]
 ```
 
-As you can use **deviceNameFilter** and **methodFilter** to apply different mapping rules for different devices/methods.
+You can use **deviceNameFilter** and **methodFilter** to apply different mapping rules for various devices/methods.
 Once Gateway receives RPC request from the server to the device, it will publish the corresponding message based on **requestTopicExpression** and **valueExpression**.
-In case you expect the reply to the request from device, you should also specify **responseTopicExpression** and **responseTimeout**. 
-The Gateway will subscribe to the "response" topic and wait for device reply until "responseTimeout" is detected (in milliseconds).
+In case you expect a reply to the request from the device, you should also specify **responseTopicExpression** and **responseTimeout**. 
+The Gateway will subscribe to the "response" topic and wait for a device reply until "responseTimeout" is reached (in milliseconds).
 
-Example of RPC request (rpc-request.json) that need to be sent from the server:
+Here is an example of an RPC request (rpc-request.json) that needs to be sent from the server:
 
 ```json
 {
@@ -688,7 +688,7 @@ Example of RPC request (rpc-request.json) that need to be sent from the server:
 
 
 Also, every telemetry and attribute parameter has built-in GET and SET RPC methods out of the box, so you don’t need to configure
-it manually. To use them, make sure you set all required parameters (in the case of MQTT Connector, these are the following:
+it manually. To use them, make sure you set all the required parameters (in the case of MQTT Connector, these are the following:
 **requestTopicExpression**, **responseTopicExpression**, **responseTimeout**, **valueExpression**). 
 See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
 
