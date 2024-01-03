@@ -8,46 +8,47 @@
 * TOC
 {:toc}
 
-## Introduction
-
-It is possible to execute any ThingsBoard Integration remotely from main ThingsBoard instance.
-This guide contains step-by-step instructions how to launch ThingsBoard integration remotely.
-For example, we will launch MQTT integration that connects to the local MQTT Broker and pushes data to 
-[thingsboard.cloud](https://thingsboard.cloud/signup).  
-
+It is possible to execute any ThingsBoard Integration remotely from main ThingsBoard instance. This guide contains step-by-step instructions how to launch ThingsBoard integration remotely.
 See [deployment options](/docs/{{peDocsPrefix}}user-guide/integrations/#deployment-options) for more general information.
 
-## Prerequisites
+In this tutorial, we will launch MQTT integration that connects to the local MQTT Broker and pushes data to the [ThingsBoard Cloud](https://thingsboard.cloud/signup).
 
-We assume you already have a tenant administrator account on your own ThingsBoard PE v3.3.1+ instance or
-[thingsboard.cloud](https://thingsboard.cloud/signup).  
+## ThingsBoard configuration
 
-## ThingsBoard configuration steps
+We assume you already have a tenant administrator account on your own [ThingsBoard PE instance](/docs/{{docsPrefix}}user-guide/install/pe/installation-options/) or [ThingsBoard Cloud](https://thingsboard.cloud/signup).
 
-### Step 1. Create default Uplink and Downlink Converters
+### Create remote integration in ThingsBoard
 
-Let's create dummy uplink and downlink converters and will set them to work in debug mode.
-While running in debug mode, those converters will record all incoming events. 
-This will help us to tune the converters once we start receiving the data.
+Let's create remote integration in ThingsBoard that will connect to the local broker using port 1883 and subscribe to all topics.
 
-![image](/images/user-guide/integrations/remote/default-converters.gif)  
+- Go to the "**Integrations center**" section -> "**Integrations**" page and click "plus" icon to add a new integration. Name it "**MQTT remote integration**", select type "**MQTT**";
 
-### Step 2. Create Remote Integration 
+![image](/images/user-guide/integrations/remote/remote-integration-1-paas.png)
 
-Let's create remote integration that will connect to the local broker using port 1883 and subscribe to all topics. 
-Notice that we enable "Debug" and "Execute remotely".   
+- The next step is to add a default uplink converter. The new converter will contain necessary code to convert incoming data. Click "**Next**";
 
-![image](/images/user-guide/integrations/remote/mqtt-integration.gif)
+![image](/images/user-guide/integrations/remote/remote-integration-2-paas.png)
 
-### Step 3. Save Remote Integration credentials.
+- You can create a new downlink converter at the step of adding a downlink converter. But for now, leave the "Downlink data converter" field empty. Click "**Skip**";
 
-Let's copy-paste the integration key and secret from the integration details.
+![image](/images/user-guide/integrations/remote/remote-integration-3-paas.png)
 
-![image](/images/user-guide/integrations/remote/copy-integration-credentials.gif)
+- Specify **host**: "**thingsboard.cloud**" and **port**: "**1883**" at the connection step;
+- Subscribe to all **topics**;
+- You can also select an MQTT **QoS** level. We use MQTT QoS level 0 (At most once) by default;
+- Copy and save the "**Integration key**" and "**Integration secret**". We will use this values later;
 
-## Remote integration installation steps
+![image](/images/user-guide/integrations/remote/remote-integration-4-paas.png)
 
-### Choose your platform and install
+- Go to the **advanced settings**. It is better to uncheck the "**Clean session**" parameter. Many brokers do not support sticky sessions, so will silently close the connection if you try to connect with this option enabled;
+- Click the "**Add**" button to create the integration.
+
+![image](/images/user-guide/integrations/remote/remote-integration-5-paas.png)
+
+<br>
+Now let's proceed to the steps for installation remote integration.
+
+## Choose your platform and install
 
 One can install ThingsBoard Integration via Docker, Debian or RPM packages.
 Please use one of the next steps.
@@ -63,7 +64,6 @@ Please use one of the next steps.
 
 - **Choose Integration to install**
 
-
 {% capture contenttogglespec %}
 HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/install/integration/http-docker.md%br%
 MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</small>%,%mqtt%,%templates/install/integration/mqtt-docker.md%br%
@@ -75,9 +75,7 @@ CoAP<br> Integration<br>%,%coap%,%templates/install/integration/coap-docker.md{%
 
 {% include content-toggle.html content-toggle-id="remoteintegrationdockerinstall" toggle-spec=contenttogglespec %}
 
-
 {% include templates/install/integration/advanced-config-docker.md %} 
-
 
 - **Troubleshooting**
 
@@ -88,7 +86,6 @@ CoAP<br> Integration<br>%,%coap%,%templates/install/integration/coap-docker.md{%
 - **[Install Docker Toolbox for Windows](https://docs.docker.com/toolbox/toolbox_install_windows/)**
 
 - **Choose Integration to install**
-
 
 {% capture contenttogglespecwin %}
 HTTP Integrations<br><small>(HTTP, Sigfox, ThingPark, OceanConnect and <br> T-Mobile IoT CDP)</small>%,%http%,%templates/install/integration/http-docker-windows.md%br%
@@ -101,9 +98,7 @@ CoAP<br> Integration<br>%,%coap%,%templates/install/integration/coap-docker-wind
 
 {% include content-toggle.html content-toggle-id="remoteintegrationdockerinstallwin" toggle-spec=contenttogglespecwin %}
 
-
 {% include templates/install/integration/advanced-config-docker.md %} 
-
 
 - **Troubleshooting**
 
@@ -153,19 +148,27 @@ Explore guides and video tutorials related to specific integrations:
 
  - [HTTP](/docs/{{peDocsPrefix}}user-guide/integrations/http/)
  - [MQTT](/docs/{{peDocsPrefix}}user-guide/integrations/mqtt/)
+ - [CoAP](/docs/{{peDocsPrefix}}user-guide/integrations/coap/)
+ - [Kafka](/docs/{{peDocsPrefix}}user-guide/integrations/kafka/)
+ - [OPC-UA](/docs/{{peDocsPrefix}}user-guide/integrations/opc-ua/)
+ - [Actility ThingPark](/docs/{{peDocsPrefix}}user-guide/integrations/thingpark/)
+ - [TheThingsStack](/docs/{{peDocsPrefix}}user-guide/integrations/ttn/)
+ - [TheThingsIndustries](/docs/{{peDocsPrefix}}user-guide/integrations/tti/)
+ - [KPN Things](/docs/{{peDocsPrefix}}user-guide/integrations/kpn-things/)
+ - [LORIOT](/docs/{{peDocsPrefix}}user-guide/integrations/loriot/)
+ - [ChirpStack](/docs/{{peDocsPrefix}}user-guide/integrations/chirpstack/)
  - [AWS IoT](/docs/{{peDocsPrefix}}user-guide/integrations/aws-iot/)
+ - [AWS Kinesis](/docs/{{peDocsPrefix}}user-guide/integrations/aws-kinesis/)
  - [IBM Watson IoT](/docs/{{peDocsPrefix}}user-guide/integrations/ibm-watson-iot/)
  - [Azure Event Hub](/docs/{{peDocsPrefix}}user-guide/integrations/azure-event-hub/)
- - [Actility ThingPark](/docs/{{peDocsPrefix}}user-guide/integrations/thingpark/)
+ - [Azure Service Bus](/docs/{{peDocsPrefix}}user-guide/integrations/azure-service-bus/)
+ - [Azure IoT Hub](/docs/{{peDocsPrefix}}user-guide/integrations/azure-iot-hub/)
  - [SigFox](/docs/{{peDocsPrefix}}user-guide/integrations/sigfox/)
  - [OceanConnect](/docs/{{peDocsPrefix}}user-guide/integrations/ocean-connect/)
- - [TheThingsStack](/docs/{{peDocsPrefix}}user-guide/integrations/ttn/)
- - [OPC-UA](/docs/{{peDocsPrefix}}user-guide/integrations/opc-ua/)
  - [TCP](/docs/{{peDocsPrefix}}user-guide/integrations/tcp/)
  - [UDP](/docs/{{peDocsPrefix}}user-guide/integrations/udp/)
- - [CoAP](/docs/{{peDocsPrefix}}user-guide/integrations/coap/)
+ - [Tuya](/docs/{{peDocsPrefix}}user-guide/integrations/tuya/)
  - [Custom](/docs/{{peDocsPrefix}}user-guide/integrations/custom/)
-
   
 ## Remote integration troubleshooting
 
@@ -174,7 +177,3 @@ Please review the log files. Their location is specific to the platform and inst
 ## Next steps
 
 {% assign currentGuide = "ConnectYourDevice" %}{% include templates/multi-project-guides-banner.md %}
-
-
-
-
