@@ -15,7 +15,7 @@ In this tutorial, we will launch MQTT integration that connects to the local MQT
 
 ## ThingsBoard configuration
 
-We assume you already have a tenant administrator account on your own [ThingsBoard PE instance](/docs/{{docsPrefix}}user-guide/install/pe/installation-options/) or [ThingsBoard Cloud](https://thingsboard.cloud/signup).
+We assume you already have a tenant administrator account on your own [ThingsBoard PE instance](/docs/user-guide/install/pe/installation-options/) or [ThingsBoard Cloud](https://thingsboard.cloud/signup).
 
 ### Create remote integration in ThingsBoard
 
