@@ -1,4 +1,4 @@
-This option for identity is safest.
+This option of identity subsection is the safest.
 
 | **Parameter** | **Default value**                             | **Description**                                                           |
 |:-|:-|-
