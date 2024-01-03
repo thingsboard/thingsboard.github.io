@@ -100,13 +100,13 @@ Using the configuration from the image below will allow you to publish time-seri
 
 {% if docsPrefix == null %}
 ```bash
-mosquitto_pub -h 'demo.thingsboard.io' -i 'c1' -u 't1' -P 'secret' -t '/telemetry' -m '{"humidity": 10.3}'
+mosquitto_pub -h 'demo.thingsboard.io' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/telemetry' -m '{"humidity": 10.3}'
 ```
 {: .copy-code}
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ```bash
-mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t '/telemetry' -m '{"humidity": 10.3}'
+mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/telemetry' -m '{"humidity": 10.3}'
 ```
 {: .copy-code}
 {% endif %}
@@ -115,13 +115,13 @@ and attribute updates with the following command:
 
 {% if docsPrefix == null %}
 ```bash
-mosquitto_pub -h 'demo.thingsboard.io' -i 'c1' -u 't1' -P 'secret' -t '/attributes' -m '{"firmwareVersion": "1.3"}'
+mosquitto_pub -h 'demo.thingsboard.io' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/attributes' -m '{"firmwareVersion": "1.3"}'
 ```
 {: .copy-code}
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ```bash
-mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t '/attributes' -m '{"firmwareVersion": "1.3"}'
+mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/attributes' -m '{"firmwareVersion": "1.3"}'
 ```
 {: .copy-code}
 {% endif %}
