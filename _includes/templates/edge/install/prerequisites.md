@@ -1,17 +1,15 @@
 ## Prerequisites
 
-{% include templates/edge/install/hardware-requirements.md %}
-
-### Setting Up the Server Environment for ThingsBoard Edge 
-
-To start utilizing ThingsBoard **Edge**, it is essential to have an operational {{appPrefix}} server that supports Edge functionality.
+To start utilizing the ThingsBoard **Edge**, it is essential to have an operational ThingsBoard {{appPrefix}} server that supports Edge functionality.
 
 {% if docsPrefix == 'pe/edge/' %}
 {% include templates/edge/obtain-pe-cloud.md %}
 {% else %}
 {% include templates/edge/obtain-ce-cloud.md %}
 {% endif %}
- 
+
+{% include templates/edge/install/hardware-requirements.md %}
+
 ### Provisioning a New Edge Instance on Server
 
 {% if docsPrefix == 'pe/edge/' %}

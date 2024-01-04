@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-edge
-title: Getting started with ThingsBoard Edge
-description: Getting started with ThingsBoard Edge 
+title: Getting Started with ThingsBoard Edge
+description: Getting Started with ThingsBoard Edge 
 
 step1:
     0:
@@ -118,9 +118,10 @@ step5Edge:
 
 {% assign currentThingsBoardVersion = "ThingsBoard Community Edition" %}
 
-<h3>Interested in the Professional Edition? Explore the ThingsBoard PE Edge Documentation <a style="pointer-events: all;" href="/docs/pe/edge/getting-started/">Here</a>.</h3>
-
-## Introduction
+{% capture difference %}
+Interested in the **Edge Professional Edition**? Explore the ThingsBoard PE Edge documentation [here](/docs/pe/edge/getting-started/).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 {% include templates/edge/getting-started/introduction.md %}
 
