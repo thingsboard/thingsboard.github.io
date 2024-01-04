@@ -281,7 +281,7 @@ Where:
 {% endif %}
 {% if docsPrefix == "paas/" %}
 ```bash
-mosquitto_pub )-d -h 'mqtt.thingsboard.cloud' -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temperature": 5.3}'
+mosquitto_pub -d -h 'mqtt.thingsboard.cloud' -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temperature": 5.3}'
 ```
 {: .copy-code}
 Where **$ACCESS_TOKEN** is your device access token.
