@@ -96,39 +96,58 @@ Custom MQTT topic filters support single '**+**' and multi-level '**#**' wildcar
 
 <br>
 
-Using the configuration from the image below will allow you to publish time-series data with the following command:
+Using the standard configuration (as shown in the image above), you will be able to publish time-series and attributes.  
+For examples, please see the commands below. {% if (docsPrefix == null) or (docsPrefix == "pe/") %}**$THINGSBOARD_HOST_NAME** should be replaced with your localhost or the platform address.{% endif %}
 
-{% if docsPrefix == null %}
+- Publish timeseries with the following command:
+{% if (docsPrefix == null) or (docsPrefix == "pe/") %}
 ```bash
-mosquitto_pub -h 'demo.thingsboard.io' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/telemetry' -m '{"humidity": 10.3}'
+mosquitto_pub -h '$THINGSBOARD_HOST_NAME' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/telemetry' -m '{"humidity": 10.3}'
 ```
 {: .copy-code}
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if docsPrefix == "paas/" %}
 ```bash
 mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/telemetry' -m '{"humidity": 10.3}'
 ```
 {: .copy-code}
 {% endif %}
 
-and attribute updates with the following command:
-
-{% if docsPrefix == null %}
+- Update attributes with the following command:
+{% if (docsPrefix == null) or (docsPrefix == "pe/") %}
 ```bash
-mosquitto_pub -h 'demo.thingsboard.io' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/attributes' -m '{"firmwareVersion": "1.3"}'
+mosquitto_pub -h '$THINGSBOARD_HOST_NAME' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/attributes' -m '{"firmwareVersion": "1.3"}'
 ```
 {: .copy-code}
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if docsPrefix == "paas/" %}
 ```bash
 mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/attributes' -m '{"firmwareVersion": "1.3"}'
 ```
 {: .copy-code}
 {% endif %}
 
+
 Let's look at an example:
 
-{% include images-gallery.html imageCollection="mqttTransportSettingExample" showListImageTitles="true" %}
+- Step 1. Specify MQTT device topic filter in the Device profile;
+- Step 2. Provide basic MQTT credentials for your device with the client id ‘c1’, username ‘t1’ and password ‘secret’;
+- Step 3. Use Terminal to publish time-series data;
+{% if (docsPrefix == null) or (docsPrefix == "pe/") %}
+```bash
+mosquitto_pub -h '$THINGSBOARD_HOST_NAME' -i 'c1' -u 't1' -P 'secret' -t '/telemetry' -m '{"humidity": 10.3}'
+```
+{: .copy-code}
+{% endif %}
+{% if docsPrefix == "paas/" %}
+```bash
+mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t '/telemetry' -m '{"humidity": 10.3}'
+```
+{: .copy-code}
+{% endif %}
+- Step 4. Transmitted data will be displayed in the "Last telemetry" tab of the device.
+
+{% include images-gallery.html imageCollection="mqttTransportSettingExample" %}
 
 ##### MQTT device payload
 
@@ -249,20 +268,23 @@ Alarm Rule consists of the following properties:
  * **Advanced settings** - defines alarm propagation to related assets, customers, tenant, or other entities.    
 
 Let's learn how to use the Alarm Rules with an example. Let's assume we would like to keep track of the temperature inside of the fridge with valuable goods.  
-We also assume that we have already created a device profile called "Temperature Sensors", and provisioned our device with the temperature sensor and with access token - "ACCESS_TOKEN".
-The command listed below upload the temperature readings to {{YOUR_HOST}}.  
+We also assume that we have already created a device profile called "Temperature Sensors", and provisioned our device with a temperature sensor and an access token. Using the command as in the example below, you can upload the temperature readings.
 
-{% if docsPrefix == null %}
+{% if (docsPrefix == null) or (docsPrefix == "pe/") %}
 ```bash
-mosquitto_pub -d -h 'demo.thingsboard.io' -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temperature": 5.3}'
+mosquitto_pub -d -h '$THINGSBOARD_HOST_NAME' -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temperature": 5.3}'
 ```
 {: .copy-code}
+Where:
+- **$THINGSBOARD_HOST_NAME** - your localhost, or the platform address;
+- **$ACCESS_TOKEN** - device access token.
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+{% if docsPrefix == "paas/" %}
 ```bash
-mosquitto_pub -d -h 'mqtt.thingsboard.cloud' -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temperature": 5.3}'
+mosquitto_pub )-d -h 'mqtt.thingsboard.cloud' -t "v1/devices/me/telemetry" -u "$ACCESS_TOKEN" -m '{"temperature": 5.3}'
 ```
 {: .copy-code}
+Where **$ACCESS_TOKEN** is your device access token.
 {% endif %}
 
 #### Example 1. Simple alarm conditions 
