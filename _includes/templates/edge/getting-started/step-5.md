@@ -5,7 +5,7 @@ Please open **{{currentThingsBoardVersion}}** using the URL **SERVER_URL**.
 
 {% include images-gallery.html imageCollection="step5Server" showListImageTitles="true" %}
 
-Let's open ThingsBoard **Edge** UI using the URL **EDGE_URL** to verify that dashboard was provisioned.
+Now, open ThingsBoard **Edge** UI using the URL **EDGE_URL** to verify that dashboard was provisioned.
 
 {% include images-gallery.html imageCollection="step5Edge" showListImageTitles="true" %}
 
