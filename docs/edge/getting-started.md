@@ -78,7 +78,7 @@ step4:
         title: 'The "Timeseries Line Chart" widget has been added to the dashboard. Drag and Drop the "Timeseries Line Chart" widget to the top right corner of the dashboard;'
     13:
         image: /images/edge/getting-started/step-4-item-14-ce.png
-        title: 'Resize the "Timeseries Line Chart" widget;'
+        title: 'Resize the "Timeseries Line Chart" widget. Just drag the bottom right corner of the widget;'
     14:
         image: /images/edge/getting-started/step-4-item-15-ce.png
         title: 'Click the "Edit timewindow" icon. Specify "1 hour" as the time period and "None" as the "Data aggregation function". Click "Update" button. Apply all changes by clicking "Save" button in the upper right corner of the screen.'
@@ -139,13 +139,13 @@ Interested in the **Edge Professional Edition**? Explore the ThingsBoard PE Edge
 
 {% include templates/edge/getting-started/step-5.md %}
 
+## Your feedback
+
+Don't hesitate to star ThingsBoard Edge on **[github](https://github.com/thingsboard/thingsboard-edge)** to help us spread the word.
+If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.
+
 ## Next steps
 
 {% assign currentGuide = "GettingStartedGuide" %}
 {% assign docsPrefix = "edge/" %}
 {% include templates/edge/guides-banner-edge.md %}
-
-## Your feedback
-
-Don't hesitate to star ThingsBoard Edge on **[github](https://github.com/thingsboard/thingsboard-edge)** to help us spread the word.
-If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.

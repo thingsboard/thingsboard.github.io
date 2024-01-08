@@ -78,7 +78,7 @@ step4:
         title: 'The "Timeseries Line Chart" widget has been added to the dashboard. Drag and Drop the "Timeseries Line Chart" widget to the top right corner of the dashboard;'
     13:
         image: /images/pe/edge/getting-started/step-4-item-14-pe.png
-        title: 'Resize the "Timeseries Line Chart" widget;'
+        title: 'Resize the "Timeseries Line Chart" widget. Just drag the bottom right corner of the widget;'
     14:
         image: /images/pe/edge/getting-started/step-4-item-15-pe.png
         title: 'Click the "Edit timewindow" icon. Specify "1 hour" as the time period and "None" as the "Data aggregation function". Click "Update" button. Apply all changes by clicking "Save" button in the upper right corner of the screen.'
@@ -95,10 +95,10 @@ step5Server:
         title: 'Click on the "Manage owner and groups" button;'
     2:
         image: /images/pe/edge/getting-started/step-5-item-3-pe.png
-        title: 'Enter the group name (for example, "Edge Dashboard Group") in the "Groups" fields and click "Create a new one!" blue link;'
+        title: 'Now we need to create a new dashboard group and add the previously created dashboard to it. Enter a name for the new dashboard group (for example, "Edge Dashboard Group") in the "Groups" fields and click "Create a new one!" blue link;'
     3:
         image: /images/pe/edge/getting-started/step-5-item-4-pe.png
-        title: 'Click the "Add" button to create new dashboard group;'
+        title: 'In the "Add entity group" window, click the "Add" button to create new dashboard group;'
     4:
         image: /images/pe/edge/getting-started/step-5-item-5-pe.png
         title: 'Newly created "Edge Dashboard Group" appeared in the "Groups" field. Click the "Update" button;'
@@ -107,7 +107,7 @@ step5Server:
         title: 'Verify that "Edge Dashboard Group" is available in the "Groups" field;'
     6:
         image: /images/pe/edge/getting-started/step-5-item-7-pe.png
-        title: 'Open the "Edge management" section -> "Instances" page on the <b>ThingsBoard Professional Edition</b> server. Click on the "Manage edge dashboard groups" icon of the edge instance to view dashboards that are already assigned to this Edge;'
+        title: 'Now, open the "Edge management" section -> "Instances" page. Click on the "Manage edge dashboard groups" icon of the edge instance to view dashboards that are already assigned to this Edge;'
     7:
         image: /images/pe/edge/getting-started/step-5-item-8-pe.png
         title: 'To assign dashboard groups to the Edge, click on the "+" icon and select "Edge Dashboard Group" from the list, and click "Assign" button. This dashboard group will be provisioned to the edge.'
@@ -153,14 +153,12 @@ step5Edge:
 
 {% include templates/edge/getting-started/step-5.md %}
 
+## Your feedback
+
+Don't hesitate to star ThingsBoard Edge on **[github](https://github.com/thingsboard/thingsboard-edge)** to help us spread the word.
+If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.
 ## Next steps
 
 {% assign currentGuide = "GettingStartedGuide" %}
 {% assign docsPrefix = "pe/edge/" %}
 {% include templates/edge/guides-banner-edge.md %}
-
-## Your feedback
-
-Don't hesitate to star ThingsBoard Edge on **[github](https://github.com/thingsboard/thingsboard-edge)** to help us spread the word.
-If you have some questions about this sample - post it on the **[forum](https://groups.google.com/forum/#!forum/thingsboard)**.
-
