@@ -14,12 +14,12 @@ ThingsBoard server nodes act as an HTTP Server that supports both HTTP and HTTPS
 
 ##### Client libraries setup
 
-You can find HTTP client libraries for different programming languages on the web. Examples in this article will be based on [curl](https://en.wikipedia.org/wiki/CURL).
+You can find HTTP client libraries for different programming languages on the web. The examples in this article will be based on [curl](https://en.wikipedia.org/wiki/CURL).
 In order to setup this tool, you can use instructions in our [Hello World](/docs/{{docsPrefix}}getting-started-guides/helloworld/) guide.
 
 ##### HTTP Authentication and error codes
 
-We will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
+In this article, we will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
 The application needs to include **$ACCESS_TOKEN** as a path parameter in each HTTP request.
 Possible error codes and their reasons:
 
@@ -92,16 +92,16 @@ For example, the value '1451649600512' corresponds to 'Fri, 01 Jan 2016 12:00:00
 Below are examples of commands for publishing different types of telemetry data.
 
 {% if docsPrefix == null %}
-Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
+Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
-Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
+Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references your local installation.
 {% endif %}
 {% if docsPrefix == "paas/" %}
 Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token.
 {% endif %}
 {% if docsPrefix == "edge/" %}
-Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference your local installation.
+Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references your local installation.
 {% endif %}
 
 **Example 1**. Publish data as an object without timestamp (server-side timestamp will be used).
@@ -311,10 +311,10 @@ Where **$ACCESS_TOKEN** - device access token.
 
 {% endif %}
 
-Below are examples of commands for publishing different types of telemetry data.
+Below are the examples of commands for publishing different types of telemetry data.
 
 {% if docsPrefix == null %}
-Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
+Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
 Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
@@ -432,7 +432,7 @@ Where **$ACCESS_TOKEN** - device access token.
 {% endif %}
 
 {% if docsPrefix == null %}
-Execute the command. Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
+Execute the command. Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
 Execute the command. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
@@ -519,7 +519,7 @@ Where **$ACCESS_TOKEN** - device access token.
 Once shared attribute will be changed by one of the server-side components (REST API or Rule Chain) the client will receive the following update: 
 
 {% if docsPrefix == null %}
-Execute the command. Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, hostname reference live demo server.
+Execute the command. Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
 {% endif %}
 {% if docsPrefix == "pe/" %}
 Execute the command. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and port and <code>$ACCESS_TOKEN</code> with your device's access token.
@@ -621,7 +621,7 @@ where
  - **method** - RPC method name, string
  - **params** - RPC method params, custom json object 
 
-and can reply to them using POST request to the following URL:
+It is possible to reply to them using POST request to the following URL:
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -657,7 +657,7 @@ Where
 - Use **RPC debug terminal** widget in your ThingsBoard instance;
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
-- Subscribe to RPC commands from the server using the command below. To do this, in the first terminal window send GET request with observe flag. Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
+- Subscribe to RPC commands from the server using the command below. To do this, in the first terminal window send GET request with observe flag. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
 curl -v -X GET http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc?timeout=20000
@@ -665,7 +665,7 @@ curl -v -X GET http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc?timeout=20
 {: .copy-code}
 {% endif %}
 {% if docsPrefix == "paas/" %}
-- Subscribe to RPC commands from the server using the command below. Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token:
+- Subscribe to RPC commands from the server using the command below. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
 curl -v -X GET https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc?timeout=20000
@@ -673,7 +673,7 @@ curl -v -X GET https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc?timeout=20000
 {: .copy-code}
 {% endif %}
 {% if docsPrefix == "edge/" %}
-- Subscribe to RPC commands from the server using the command below. Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
+- Subscribe to RPC commands from the server using the command below. Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
 curl -v -X GET http://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc?timeout=20000
@@ -685,7 +685,7 @@ curl -v -X GET http://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc?timeo
 
 - Save the "[rpc-response.json](/docs/reference/resources/rpc-response.json)" file to your PC;
 
-- In the second terminal window simulate send a response from the device to the server:
+- In the second terminal window simulate sending a response from the device to the server:
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
 ```shell
@@ -765,7 +765,7 @@ return {msg: {time:String(new Date())}, metadata: metadata, msgType: msgType};
 - Save the "[rpc-client-request.json](/docs/reference/resources/rpc-client-request.json)" file to your PC;
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
-- Now, send request to the server using the command below. Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
+- Now, send request to the server using the command below. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
 curl -X POST -d @rpc-client-request.json http://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc --header "Content-Type:application/json"
@@ -773,7 +773,7 @@ curl -X POST -d @rpc-client-request.json http://$THINGSBOARD_HOST_NAME/api/v1/$A
 {: .copy-code}
 {% endif %}
 {% if docsPrefix == "paas/" %}
-- Now, send request to the server using the command below. Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token:
+- Now, send request to the server using the command below. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
 curl -X POST -d @rpc-client-request.json https://thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc --header "Content-Type:application/json"
@@ -781,7 +781,7 @@ curl -X POST -d @rpc-client-request.json https://thingsboard.cloud/api/v1/$ACCES
 {: .copy-code}
 {% endif %}
 {% if docsPrefix == "edge/" %}
-- Now, send request to the server using the command below. Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
+- Now, send request to the server using the command below. Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
 curl -X POST -d @rpc-client-request.json http://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc --header "Content-Type:application/json"
