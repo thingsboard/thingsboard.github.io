@@ -40,7 +40,12 @@ Let's take a look at each of them.
 
 ### Single entity
 
+{% if docsPrefix == null %}
+This alias allows choosing a single entity. It can be a device, asset, entity view, tenant, customer, user, dashboard, edge, current customer, current tenant, current user or current user owner.
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 This alias allows choosing a single entity. It can be a device, asset, entity view, tenant, customer, dashboard, user, data converter, integration, scheduler event, blob entity, role, edge, current customer, current tenant, current user or current user owner.
+{% endif %}
 
 Adding an alias: in the "Add alias" dialog, enter the alias name, and select the "Single entity" filter type. Then choose the entity type and specify the final entity.
 
@@ -72,8 +77,12 @@ The Entities table widget with the alias that displays all devices that belong t
 
 ### Entity list
 
-This alias allows you to display multiple entities.
-It can be devices, assets, entity views, tenants, customers, dashboards, users, data converters, integrations, scheduler events, blob entities, roles or edges.
+{% if docsPrefix == null %}
+This alias allows you to display multiple entities. It can be devices, assets, entity views, tenants, customers, dashboards, users or edges.
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+This alias allows you to display multiple entities. It can be devices, assets, entity views, tenants, customers, dashboards, users, data converters, integrations, scheduler events, blob entities, roles or edges.
+{% endif %}
 
 Adding an alias: in the "Add alias" dialog, enter the alias name, and select the "Entity list" filter type. Then choose the entities type and specify entities whose data you want to display on the widget.
 
@@ -100,8 +109,12 @@ The Entities table widget with the alias that displays a list of several devices
 
 ### Entity name
 
-This alias allows you to display entities whose names start with the entered expression.
-These objects can be devices, assets, entity views, tenants, customers, dashboards, users, data converters, integrations, scheduler events, blob entities, rales or edges.  
+{% if docsPrefix == null %}
+This alias allows you to display entities whose names start with the entered expression. These objects can be devices, assets, entity views, tenants, customers, users, dashboards or edges.
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+This alias allows you to display entities whose names start with the entered expression. These objects can be devices, assets, entity views, tenants, customers, dashboards, users, data converters, integrations, scheduler events, blob entities, rales or edges.
+{% endif %}
 
 Adding an alias: in the "Add alias" dialog, enter the alias name, and select the "Entity name" filter type. Then choose the entities type and enter an expression that will filter the names of the displayed entities.
 
@@ -116,10 +129,14 @@ The Entities table widget with alias that filters devices, which names start wit
 
 ### Entity type
 
-This alias allows you to display all your entities and your customers' entities of the specified type.
-These objects can be devices, assets, entity views, tenants, customers, dashboards, users, data converters, integrations, scheduler events, blob entities, rales or edges.
+{% if docsPrefix == null %}
+This alias allows you to display all your entities and your customers' entities of the specified type. These objects can be devices, assets, entity views, tenants, customers, users, dashboards or edges.
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+This alias allows you to display all your entities and your customers' entities of the specified type. These objects can be devices, assets, entity views, tenants, customers, dashboards, users, data converters, integrations, scheduler events, blob entities, rales or edges.
+{% endif %}
 
-Adding an alias: in the "Add Alias" dialog, enter the alias name, select the filter as "Entity Type," and choose the entity type.
+Adding an alias: in the "Add Alias" dialog, enter the alias name, select the filter as "Entity Type", and choose the entity type.
 
 {% include images-gallery.html imageCollection="entity-type-1" %}
 
@@ -186,7 +203,12 @@ The Entities table widget that displays entities filtered by the exact full name
 
 ### Entity from dashboard state
 
+{% if docsPrefix == null %}
+This alias allows choosing one or more entities from the dashboard state. The entities can be a device, asset, entity view, tenant, customer, user, dashboard, edge, current customer, current tenant, current user, or current user owner.
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 This alias allows choosing one or more entities from the dashboard state. The entities can be a device, asset, entity view, tenant, customer, dashboard, user, data converter, integration, scheduler event, blob entity, role, edge, current customer, current tenant, current user, or current user owner.
+{% endif %}
 
 For example, if Entities table widget is created on a [root dashboard state](/docs/{{docsPrefix}}user-guide/dashboards/#states) with several entities displayed on it, and you'd like to create a dashboard state which will display a widget with the entity you clicked on, you need to use this alias.
 
@@ -279,7 +301,7 @@ Let’s use an added alias in a widget. In the "Tables" widgets bundle select th
 
 {% include images-gallery.html imageCollection="device-type-2" %}
  
-### Entity view type
+### Entity View type
 
 This alias allows you to filter devices by the specified entity view type(s) (and optionally by names starting with the entered query).
 
@@ -287,7 +309,7 @@ Adding an alias: in the “Add alias” dialog, enter the alias name, and select
 
 {% include images-gallery.html imageCollection="entity-view-type-1" %}
 
-This alias filters entity Views of type ‘Compressors Entity View Type’ and with name starting with "Compressor".
+This alias filters entity views of type "Compressors Entity View Type" and with name starting with "Compressor".
 
 Let's see an example. Entity views named "Compressor BC-10 Entity View" and "Compressor QA-32 Entity View" have been created with the type "Compressors Entity View Type," providing access to the 'Power' timeseries from Compressor BC-10 and Compressor QA-32.
 

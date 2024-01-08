@@ -28,7 +28,7 @@ use-alias-in-widget:
         title: 'Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);'
     1:
         image: /images/user-guide/ui/alias/create-alias-7-ce.png
-        title: 'Select the widget bundle. For example select "Indoor Environment" widgets bundle;'
+        title: 'Select the widget bundle. For example, select "Indoor Environment" widgets bundle;'
     2:
         image: /images/user-guide/ui/alias/create-alias-8-ce.png
         title: 'Now, select the "Indoor temperature card with background" widget;'
@@ -59,7 +59,7 @@ single-alias-2:
 entity-list-1:
     0:
         image: /images/user-guide/ui/alias/entity-list-1-ce.png
-        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and select the entity group.'
+        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Entity list" filter type. Then choose the entities type and select the entity group.'
 
 entity-list-2:
     0:
@@ -67,7 +67,7 @@ entity-list-2:
         title: 'In the "Tables" widgets bundle select the "Entities table" widget. Navigate to the "Entity alias" tab. Specify the "Entity list" alias in the "Entity alias" field and "temperature" data key in the "Columns" section. Click "Add";'
     1:
         image: /images/user-guide/ui/alias/entity-list-3-ce.png
-        title: 'The Entities table widget with the alias that displays a list of several devices, which in this case are Compressor BC-10, Compressor QA-32, and Thermometer A1 has been added.'
+        title: 'The Entities table widget with the alias that displays a list of several devices, which in this case are Thermometer A1, Thermometer A2, and Thermometer A3 has been added.'
 
 
 entity-name-1:
@@ -106,10 +106,10 @@ entity-from-dashboard-state-1:
 entity-from-dashboard-state-2:
     0:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-3-ce.png
-        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and select the entity group;'
+        title: 'In the "Add alias" dialog box, enter the alias name, select the "Entity type" filter type and choose the entity type;'
     1:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-4-ce.png
-        title: 'Add an Entity table widget that will display a list of entities. Use the "Group entities" alias as a data source;'
+        title: 'Add an Entity table widget that will display a list of entities. Use the "Entity type" alias as a data source;'
     2:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-5-ce.png
         title: 'The Entity table widget that will display a list of devices has been added.'
@@ -120,7 +120,7 @@ entity-from-dashboard-state-3:
         title: 'Click the layers icon in the top left corner of the dashboard to create a new state. In the opened dialog window, click a "+" icon to add a new state;'
     1:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-7-ce.png
-        title: 'Enter state&#39;s name. For the state to be named after the entity, use ${entityName} as the name of the state. Thus, during the action, you will be transitioned to a state named after the entity that took part in the action. Click "Add";'
+        title: 'Enter state&#39;s name. For the state to be named after the entity, use <b>${entityName}</b> as the name of the state. Thus, during the action, you will be transitioned to a state named after the entity that took part in the action. Click "Add";'
     2:
         image: /images/user-guide/ui/alias/entity-from-dashboard-state-8-ce.png
         title: 'Now you see a list with two states: the root one, and the one that has just been created. Click "Save" in the lower right corner of the dialog.'

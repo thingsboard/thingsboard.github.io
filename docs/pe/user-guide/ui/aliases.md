@@ -28,7 +28,7 @@ use-alias-in-widget:
         title: 'Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);'
     1:
         image: /images/user-guide/ui/alias/create-alias-7-pe.png
-        title: 'Select the widget bundle. For example select "Indoor Environment" widgets bundle;'
+        title: 'Select the widget bundle. For example, select "Indoor Environment" widgets bundle;'
     2:
         image: /images/user-guide/ui/alias/create-alias-8-pe.png
         title: 'Now, select the "Indoor temperature card with background" widget;'
@@ -73,7 +73,7 @@ group-entities-2:
 entity-list-1:
     0:
         image: /images/user-guide/ui/alias/entity-list-1-pe.png
-        title: 'In the "Add alias" dialog box, enter the alias name, and select the "Group entities" filter type. Then choose the entities type and select the entity group.'
+        title: 'In the "Add alias" dialog, enter the alias name, and select the "Entity list" filter type. Then choose the entities type and specify entities whose data you want to display on the widget.'
 
 entity-list-2:
     0:
