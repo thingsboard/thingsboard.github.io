@@ -75,7 +75,7 @@ Message: {"id": $request_id, "device": "Device A", "client": true, "key": "attri
 
 where **$request_id** is your integer request identifier, **Device A** is your device name, **client** identifies a client or shared attribute scope and **key** is the attribute key.
 
-Before sending PUBLISH message with the request, client need to subscribe to 
+Before sending PUBLISH message with the request, client needs to subscribe to 
 
 ```shell
 Topic: v1/gateway/attributes/response

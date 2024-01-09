@@ -33,7 +33,7 @@ CoAP cli does not support query parameters. If you require to use query paramete
 
 ### CoAP Authentication and error codes
 
-In this article, we will use *access token* device credentials in this article and they will be referred to later as **$ACCESS_TOKEN**.
+In this article, we will use *access token* device credentials and they will be referred to later as **$ACCESS_TOKEN**.
 The application needs to include **$ACCESS_TOKEN** as a path parameter into each CoAP request.
 Possible error codes and their reasons:
 
@@ -446,7 +446,7 @@ Where
 - Use **RPC debug terminal** widget in your ThingsBoard instance;
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
-- Subscribe to RPC commands from the server using the command below. To do this, in the first terminal window send GET request with observe flag. Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
+- Subscribe to RPC commands from the server using the command below. To do this, in the first terminal window send GET request with observe flag. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
 coap-client -m get coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc -s 100 -B 100
@@ -454,7 +454,7 @@ coap-client -m get coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc -s 100
 {: .copy-code}
 {% endif %}
 {% if docsPrefix == "paas/" %}
-- Subscribe to RPC commands from the server using the command below. Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token:
+- Subscribe to RPC commands from the server using the command below. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
 coap-client -m get coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc -s 100 -B 100
@@ -462,7 +462,7 @@ coap-client -m get coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc -s 100
 {: .copy-code}
 {% endif %}
 {% if docsPrefix == "edge/" %}
-- Subscribe to RPC commands from the server using the command below. Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
+- Subscribe to RPC commands from the server using the command below. Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
 coap-client -m get coap://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc -s 100 -B 100
@@ -559,7 +559,7 @@ return {msg: {time:String(new Date())}, metadata: metadata, msgType: msgType};
 - Save the "[rpc-client-request.json](/docs/reference/resources/rpc-client-request.json)" file to your PC;
 
 {% if docsPrefix == null or docsPrefix == "pe/" %}
-- Now, send request to the server using the command below. Don't forget replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
+- Now, send request to the server using the command below. Don't forget to replace <code>$THINGSBOARD_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
 cat rpc-client-request.json | coap post coap://$THINGSBOARD_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc
@@ -567,7 +567,7 @@ cat rpc-client-request.json | coap post coap://$THINGSBOARD_HOST_NAME/api/v1/$AC
 {: .copy-code}
 {% endif %}
 {% if docsPrefix == "paas/" %}
-- Now, send request to the server using the command below. Don't forget replace <code>$ACCESS_TOKEN</code> with your device's access token:
+- Now, send request to the server using the command below. Don't forget to replace <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
 cat rpc-client-request.json | coap post coap://coap.thingsboard.cloud/api/v1/$ACCESS_TOKEN/rpc
@@ -575,7 +575,7 @@ cat rpc-client-request.json | coap post coap://coap.thingsboard.cloud/api/v1/$AC
 {: .copy-code}
 {% endif %}
 {% if docsPrefix == "edge/" %}
-- Now, send request to the server using the command below. Don't forget replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
+- Now, send request to the server using the command below. Don't forget to replace <code>$THINGSBOARD_EDGE_HOST_NAME</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token:
 
 ```shell
 cat rpc-client-request.json | coap post coap://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/rpc

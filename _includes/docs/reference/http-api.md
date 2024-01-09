@@ -89,7 +89,7 @@ Where **1451649600512** is a [unix timestamp](https://en.wikipedia.org/wiki/Unix
 For example, the value '1451649600512' corresponds to 'Fri, 01 Jan 2016 12:00:00.512 GMT'
 
 <br>
-Below are examples of commands for publishing different types of telemetry data.
+Below are the examples of commands for publishing different types of telemetry data.
 
 {% if docsPrefix == null %}
 Don't forget to replace <code>demo.thingsboard.io</code> with your host and <code>$ACCESS_TOKEN</code> with your device's access token. In this example, the hostname references live demo server.
