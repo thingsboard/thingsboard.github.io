@@ -22,6 +22,7 @@ In order to inform ThingsBoard that device is connected to the Gateway, one need
 Topic: v1/gateway/connect
 Message: {"device":"Device A"}
 ```
+{: .copy-code}
 
 where **Device A** is your device name.
 
@@ -36,6 +37,7 @@ In order to inform ThingsBoard that device is disconnected from the Gateway, one
 Topic: v1/gateway/disconnect
 Message: {"device":"Device A"}
 ```
+{: .copy-code}
 
 where **Device A** is your device name.
 
@@ -57,6 +59,7 @@ In order to publish client-side device attributes to ThingsBoard server node, se
 Topic: v1/gateway/attributes
 Message: {"Device A":{"attribute1":"value1", "attribute2": 42}, "Device B":{"attribute1":"value1", "attribute2": 42}}
 ```
+{: .copy-code}
 
 where **Device A** and **Device B** are your device names, **attribute1** and **attribute2** are attribute keys.
 
@@ -68,14 +71,16 @@ In order to request client-side or shared device attributes to ThingsBoard serve
 Topic: v1/gateway/attributes/request
 Message: {"id": $request_id, "device": "Device A", "client": true, "key": "attribute1"}
 ```
+{: .copy-code}
 
 where **$request_id** is your integer request identifier, **Device A** is your device name, **client** identifies a client or shared attribute scope and **key** is the attribute key.
 
-Before sending PUBLISH message with the request, client need to subscribe to 
+Before sending PUBLISH message with the request, client needs to subscribe to 
 
 ```shell
 Topic: v1/gateway/attributes/response
 ```
+{: .copy-code}
 
 and expect messages with result in the following format:
 
@@ -90,6 +95,7 @@ In order to subscribe to shared device attribute changes, send SUBSCRIBE message
 ```shell
 v1/gateway/attributes
 ```
+{: .copy-code}
 
 and expect messages with result in the following format:
 
@@ -104,6 +110,7 @@ In order to publish device telemetry to ThingsBoard server node, send PUBLISH me
 ```shell
 Topic: v1/gateway/telemetry
 ```
+{: .copy-code}
 
 Message:
 
@@ -136,6 +143,7 @@ Message:
   ]
 }
 ```
+{: .copy-code}
 
 where **Device A** and **Device B** are your device names, **temperature** and **humidity** are telemetry keys and **ts** is unix timestamp in milliseconds.
 
@@ -148,6 +156,7 @@ In order to subscribe to RPC commands from the server, send SUBSCRIBE message to
 ```shell
 v1/gateway/rpc
 ```
+{: .copy-code}
 
 and expect messages with individual commands in the following format:
 
@@ -160,6 +169,7 @@ Once command is processed by device, gateway can send commands back using follow
 ```shell
 {"device": "Device A", "id": $request_id, "data": {"success": true}}
 ```
+{: .copy-code}
 
 where **$request_id** is your integer request identifier, **Device A** is your device name and **method** is your RPC method name. 
 
@@ -172,6 +182,7 @@ In order to initiate claiming device, send PUBLISH message to the following topi
 ```shell
 Topic: v1/gateway/claim
 ```
+{: .copy-code}
 
 Message:
 
@@ -187,6 +198,7 @@ Message:
   }
 }
 ```
+{: .copy-code}
 
 where **Device A** and **Device B** are your device names, **secretKey** and **durationMs** are optional keys.
 In case the **secretKey** is not specified, the empty string as a default value is used.
@@ -195,7 +207,6 @@ In case the **durationMs** is not specified, the system parameter **device.claim
 ## Protocol customization
 
 MQTT transport can be fully customized for specific use-case by changing the corresponding [module](https://github.com/thingsboard/thingsboard/tree/master/transport/mqtt).
-
 
 ## Next steps
 

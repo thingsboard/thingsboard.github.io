@@ -9,13 +9,13 @@ redirect_from: "/docs/reference/coap-api"
 server-side-rpc:
     0:
         image: /images/reference/device-connectivity-apis/server-side-rpc-coap-1-ce.png
-        title: 'Use RPC debug terminal dashboard'
+        title: 'Use RPC debug terminal widget in your ThingsBoard instance'
     1:
         image: /images/reference/device-connectivity-apis/server-side-rpc-coap-2-ce.png
         title: 'Subscribe to RPC commands from the server. To do this, in the first terminal window send GET request with observe flag'
     2:
         image: /images/reference/device-connectivity-apis/server-side-rpc-coap-3-ce.png
-        title: 'Send an RPC request "connect" to the device'
+        title: 'Send an RPC request "connect" to the device using RPC debug terminal widget'
     3:
         image: /images/reference/device-connectivity-apis/server-side-rpc-coap-4-ce.png
         title: 'In the second terminal window simulate send a response from the device to the server'

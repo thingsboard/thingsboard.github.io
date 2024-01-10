@@ -45,7 +45,7 @@ Client mosqpub|xxx sending DISCONNECT
 ```
 
 {% capture difference %}
-**Note:** Since ThingsBoard 3.2, you are able to use basic MQTT credentials (combination of client id, username and password) 
+**Note:** Since ThingsBoard 3.2, you are able to use basic MQTT credentials (combination of client id, username and password)
 and customize **topic names** and **payload type** using Device Profile. See more info [here](/docs/user-guide/device-profiles/#mqtt-transport-type).
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
