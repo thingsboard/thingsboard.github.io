@@ -85,10 +85,10 @@ Now that the Uplink converter has been created, it is possible to create an inte
 
 To send an uplink message, you need the previously copied **HTTP endpoint URL** from the integration.
 
-Use this command to send the message. Replace $DEVICEname, $DEVICEtype and $YOUR_HTTP_ENDPOINT_URL with corresponding values.
+Use this command to send the message. Don't forget to replace `$DEVICE_NAME`, `$DEVICE_TYPE` and `$YOUR_HTTP_ENDPOINT_URL` with corresponding values.
 
 ```ruby
-curl -v -X POST -d "{\"deviceName\":\"$DEVICEname\",\"deviceType\":\"$DEVICEtype\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json"
+curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"deviceType\":\"$DEVICE_TYPE\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json"
 ```
 {: .copy-code}
 
@@ -100,7 +100,7 @@ curl -v -X POST -d "{\"deviceName\":\"$DEVICEname\",\"deviceType\":\"$DEVICEtype
 {% endif %}
 
 <br>
-Go to the **Events** tab in your HTTP integration. If you have done everything correctly, you should see one event with the status "OK."
+Go to the **Events** tab in your HTTP integration. If you have done everything correctly, you should see one event with the status 'OK'.
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-send-uplink-message-3-pe.png)
@@ -117,7 +117,7 @@ The notification will contain an action button by clicking which you can go to t
 ![image](/images/user-guide/integrations/http/http-device-2-pe.png)
 
 <br>
-Here you will see information about the new device. As well as the telemetry which we sent to the device.
+Here you will see information about the new device. As well as the telemetry which we sent from the device to the ThingsBoard.
 
 ![image](/images/user-guide/integrations/http/http-device-1-pe.png)
 
@@ -137,11 +137,11 @@ The created device with data can be seen in the section **Device groups -> All**
 {% capture difference %}
 **NOTE**
 <br>
-If the "Allow create devices or assets" checkbox is unchecked, when sending a message to thingsboard with any parameters of the device (or asset), if such a device (asset) does not exist, then device (asset) will not be created.
+If the "Allow create devices or assets" checkbox is unchecked, when sending a message to the ThingsBoard with any parameters of the device (or asset), if such a device (asset) does not exist, then device (asset) will not be created.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-Also, sent and received data can be viewed in the Uplink converter. In the **"In"** and **"Out"** blocks of the Events tab
+Also, sent and received data can be viewed in the Uplink converter. In the **'In'** and **'Out'** blocks of the "**Events**" tab.
 
 {% include images-gallery.html imageCollection="send-uplink-1" %}
 
@@ -174,10 +174,10 @@ Once the Headers filter has been configured, it will also need to be specified i
 -H "test-header:secret"
 ```
 
-Use this command to send the message with enable security option. Replace $DEVICEname, $DEVICEtype, $YOUR_HTTP_ENDPOINT_URL and $VALUE with corresponding values.
+Use this command to send the message with enable security option. Don't forget to replace `$DEVICE_NAME`, `$DEVICE_TYPE`, `$YOUR_HTTP_ENDPOINT_URL` and `$VALUE` with corresponding values.
 
 ```ruby
-curl -v -X POST -d "{\"deviceName\":\"$DEVICEname\",\"deviceType\":\"$DEVICEtype\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json" -H "$VALUE"
+curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"deviceType\":\"$DEVICE_TYPE\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json" -H "$VALUE"
 ```
 {: .copy-code}
 
@@ -233,7 +233,7 @@ When the attribute is created or changes are made to the attribute, the downlink
 
 <br>
 To see this with an example, we go to the **Devices** page. Select your device and navigate to the **Attributes** tab. Select **Shared attributes** and click on the "plus" icon to create new attribute.
-Then set the attribute name, its value (for example, the key name is firmware, value: 01052020.v1.1) and save the data.
+Then set the attribute name, its value (for example, the key name is 'firmware', value: '01052020.v1.1') and save the data.
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-downlink-add-attribute-1-pe.png)
