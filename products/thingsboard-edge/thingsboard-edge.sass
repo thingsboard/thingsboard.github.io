@@ -160,31 +160,95 @@
         font-weight: normal
         padding: 0
 
-    #tb-customers
-      margin: -50px -100% 0
-      padding: 50px 100%
-      text-align: justify
-      -moz-text-align-last: justify
-      text-align-last: justify
-      display: none
-      @media(min-width: 992px)
-        display: block
-      img
-        height: 60px
-        margin-bottom: 20px
-      main, div.main-div
-        display: flex
-        flex-wrap: wrap
-        flex-direction: row
-        justify-content: space-around
-        align-items: center
-        padding: 0 50px
-        a
-          display: block
-          padding: 10px
-          object
-            pointer-events: none
-            filter: invert(95%) sepia(6%) saturate(1404%) hue-rotate(115deg) brightness(253%) contrast(93%)
+    #matrix
+      margin: 60px -100% 0
+      padding: 0px 100% 48px
+      h3
+        color: #212529
+        font-weight: 600
+        text-align: left
+        font-size: 22px
+        line-height: 40px
+      #backg-matrix
+        position: relative
+        margin-left: -20px
+        margin-right: -20px
+        width: calc(100% + 40px)
+        .edge, .gateway
+          padding: 0 20px
+          width: 30%
+          position: absolute
+          z-index: -1
+          top: 127px
+        .coln
+          height: 1006px
+          border-radius: 6px
+        .gateway
+          right: 0
+          .coln
+            border: 2px solid #EB5757
+            .head
+              height: 106px
+              box-shadow: 0 2px 0 0 rgba(235, 87, 87, 0.08)
+        .edge
+          right: 30%
+          .coln
+            border: 2px solid #009688
+            box-shadow: 0 50px 50px -20px rgba(0,0,0,0.15), 0 0 30px 0 rgba(0,0,0,0.10)
+            .head
+              height: 106px
+              background-color: #009688
+      table
+        width: calc(100% + 40px)
+        margin: 160px -20px 16px
+        td, th
+          margin: 0 2px
+          &:nth-child(3n-1)
+            color: #009688
+            img
+              filter: invert(40%) sepia(88%) saturate(245%) hue-rotate(129deg) brightness(91%) contrast(103%)
+          &:nth-child(3n)
+            color: #EB5757
+            img
+              filter: invert(40%) sepia(77%) saturate(728%) hue-rotate(311deg) brightness(104%) contrast(106%)
+        border: none
+        margin-top: 64px
+        top: 40px
+        thead
+          color: #212529
+          font-size: 12px
+          line-height: 30px
+          background-color: unset
+          tr
+            height: 152px
+            th
+              width: 30%
+              text-align: center
+              vertical-align: center
+              font-weight: 600
+              font-size: 11px
+              padding: 40px 0 40px
+              &:nth-child(2n)
+                color: white
+            td
+              width: 40%
+        tbody
+          tr
+            background-color: unset
+            height: 64px
+            th, a
+              font-weight: 600
+              font-size: 12px
+              padding-right: 12px
+              color: #212529
+              img
+                vertical-align: top
+            td
+              text-align: center
+              font-weight: 600
+              font-size: 11px
+              img
+                width: 32px
 
     #local-deployment, #data-filtering, #local-alarms, #batch-update
       .block
@@ -387,6 +451,29 @@
         .block
           .feature-des, .block-img
             width: 80%
+      #matrix
+        h3
+          font-size: 42px
+          line-height: 63px
+        table
+          thead
+            font-size: 20px
+            tr
+              th
+                width: 30%
+                padding: 0 0 40px
+                font-size: 20px
+              td
+                width: 40%
+          tbody
+            tr
+              th, a
+                padding-right: 48px
+                font-size: 18px
+              td
+                font-size: 20px
+                img
+                  width: unset
       #bottom-features .cards .col-lg-6 .block
         text-align: left
         display: flex
@@ -435,7 +522,7 @@
           margin: 0 4px
           border-width: 3px
     #edgeContent
-      max-width: 1200px
+      max-width: 1400px
       #intro
         .intro_title
           padding: 0 7%

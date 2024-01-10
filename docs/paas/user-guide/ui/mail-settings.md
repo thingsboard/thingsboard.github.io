@@ -52,17 +52,22 @@ create-gmail-credentials:
         image: /images/user-guide/ui/mail/gmail-with-oauth2-5-pe.png
         title: 'Save created client ID and client secret for future steps.'
 
+microsoft-azure-with-oauth2:
+    0:
+        image: /images/user-guide/ui/mail/azure-create-application-1.png
+        title: 'Sign in to the Azure portal and select Microsoft Entra ID;'
+    1:
+        image: /images/user-guide/ui/mail/microsoft-azure-copy-user-principal-name-1-pe.png
+        title: 'Select microsoft user and copy user principal name.'
+
 azure-portal:
     0:
-        image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-1-pe.png
-        title: 'Sign in to the Azure portal and select Azure Active Directory;'
+        image: /images/user-guide/ui/mail/azure-create-application-2.png
+        title: 'Under the "Manage" section select the "App registrations" page, and click the "New registration" button;'
     1:
-        image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-2-pe.png
-        title: 'Under "Manage" select "App registrations" then click "New registration";'
+        image: /images/user-guide/ui/mail/azure-create-application-3.png
+        title: 'Enter a name for your application and paste the previously copied "Redirect URI template". Click the "Register" button;'
     2:
-        image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-3-pe.png
-        title: 'Input a name for your application and enter the previously copied "Redirect URI template". Click "Register";'
-    3:
         image: /images/user-guide/ui/mail/microsoft-azure-with-oauth2-4-pe.png
         title: 'After application is created you can find "Client ID" and "Directory (tenant) ID" on "Overview" page. Save them for future steps.'
 

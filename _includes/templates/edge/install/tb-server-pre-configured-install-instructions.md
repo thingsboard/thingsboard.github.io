@@ -7,28 +7,28 @@ Please follow the steps below to use these prepared instructions:
 
 {% assign preparedInstructionsInstall = '
     ===
-        image: /images/pe/edge/installation/prepared-instructions-install-item-1.png,
-        title: Open the Edge Entity Details Page by Clicking on the Edge Row;
+        image: /images/pe/edge/installation/prepared-instructions-install-item-1-pe.png,
+        title: Click an Edge entity row to open it&#39;s details;
     ===
-        image: /images/pe/edge/installation/prepared-instructions-install-item-2.png,
-        title: Click on Install & Connection instructions;
+        image: /images/pe/edge/installation/prepared-instructions-install-item-2-pe.png,
+        title: Click on the "Install & Connection Instructions" button;
     ===
-        image: /images/pe/edge/installation/prepared-instructions-install-item-3.png,
-        title: Follow instructions to install Edge and connect to Server.
+        image: /images/pe/edge/installation/prepared-instructions-install-item-3-pe.png,
+        title: Follow instructions to install Edge and connect to the server.
 '%}
 
 {% else %}
 
 {% assign preparedInstructionsInstall = '
     ===
-        image: /images/edge/installation/prepared-instructions-install-item-1.png,
-        title: Open the Edge Entity Details Page by Clicking on the Edge Row;
+        image: /images/edge/installation/prepared-instructions-install-item-1-ce.png,
+        title: Click an Edge entity row to open it&#39;s details;
     ===
-        image: /images/edge/installation/prepared-instructions-install-item-2.png,
-        title: Click on Install & Connection instructions;
+        image: /images/edge/installation/prepared-instructions-install-item-2-ce.png,
+        title: Click on the "Install & Connection Instructions" button;
     ===
-        image: /images/edge/installation/prepared-instructions-install-item-3.png,
-        title: Follow instructions to install Edge and connect to Server.
+        image: /images/edge/installation/prepared-instructions-install-item-3-ce.png,
+        title: Follow instructions to install Edge and connect to the server.
 '%}
 
 {% endif %}

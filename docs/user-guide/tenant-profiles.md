@@ -9,13 +9,21 @@ entityLimits:
     0:
         image: /images/user-guide/tenant-profile/thingsboard-ce-tenant-profiles-entity-limits.png
 
+api-limits:
+    0:
+        image: /images/user-guide/tenant-profile/thingsboard-ce-api-limits.png
+
 apiLimitsDashboard:
     0:
-        image: /images/user-guide/tenant-profile/thingsboard-tenant-profiles-api-limits-dashboard.png  
+        image: /images/user-guide/tenant-profile/thingsboard-ce-tenant-profiles-api-limits-dashboard.png  
 
 rateLimits:
     0:
         image: /images/user-guide/tenant-profile/thingsboard-ce-rate-limits.png  
+
+files-limits:
+    0:
+        image: /images/user-guide/tenant-profile/thingsboard-ce-files.png
 
 isolatedQueueConfiguration:
     0:

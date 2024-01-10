@@ -21,43 +21,7 @@ This guide covers initial IoT Gateway installation and configuration, we will do
 
 - Before initiating the Gateway setup, ensure that the ThingsBoard server is up and running. The simplest approach is to utilize the [Live Demo](https://demo.thingsboard.io) or [ThingsBoard Cloud](https://thingsboard.cloud). Alternatively, you can install ThingsBoard manually by following the steps outlined in the [Installation Guide](/docs/user-guide/install/installation-options/).
 - Before moving forward, ensure Docker is installed and properly configured on your machine. If you haven't installed Docker yet, you can download it from the [official Docker website](https://docs.docker.com/engine/install/) and follow their installation guide for your specific operating system. 
-- If you don't have a dashboard installed, you can download Gateway widget bundle [JSON file here](/docs/iot-gateway/resources/thingsboard-gateway-widget-bundle.json){:target="_blank" download="thingsboard-gateway-widget-bundle.json"} and ThingsBoard IoT Gateways dashboard [JSON file here](/docs/iot-gateway/resources/thingsboard-gateways-dashboard.json){:target="_blank" download="thingsboard-gateways-dashboard.json"}. You can do this using the section below:
-
-### (Optional) Import gateway widgets bundle and dashboard
-
-First, we have to import gateway widgets bundle, for this purpose, use the following steps:
-
-{% assign importWidgetsBundle = '
-    ===
-        image: /images/gateway/dashboard/wl-import-bundle-gateway-1-ce.png,
-        title: Go to the "**Widgets Library**" page, and click the "**+**" button in the upper right corner of the "**Widgets Bundles**" page. Select "**Import widgets bundle**" from the drop-down menu.
-    ===
-        image: /images/gateway/dashboard/wl-import-bundle-gateway-2-ce.png,
-        title: In the popup, you will be prompted to upload the downloaded gateway widgets bundle JSON file. Drag and drop a file from your computer, then click "**Import**" to add a widget bundle to the library.
-    ===
-        image: /images/gateway/dashboard/wl-import-bundle-gateway-3-ce.png,
-        title: The widgets bundle is imported.
-'
-%}
-
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=importWidgetsBundle %} 
-
-To import ThingsBoard IoT Gateways dashboard, follow these steps:
-
-{% assign importGatewayDashboard = '
-    ===
-        image: /images/gateway/dashboard/import-dashboard-gateway-1-ce.png,
-        title: Go to the "**Dashboards**" page and click on the "**+**" button in the upper right corner of the page and select "**Import dashboard**" from the drop-down menu;
-    ===
-        image: /images/gateway/dashboard/import-dashboard-gateway-2-ce.png,
-        title: In the import dashboard window, upload downloaded the gateway dashboard JSON file and click "**Import**".
-    ===
-        image: /images/gateway/dashboard/import-dashboard-gateway-3-ce.png,
-        title: Dashboard imported. Click on the row with the name of the dashboard to open it.
-'
-%}
-
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=importGatewayDashboard %} 
+- If you don't have a dashboard installed, you can download Gateway widget bundle [JSON file here](/docs/iot-gateway/resources/thingsboard-gateway-widget-bundle.json){:target="_blank" download="thingsboard-gateway-widget-bundle.json"} and ThingsBoard IoT Gateways dashboard [JSON file here](/docs/iot-gateway/resources/thingsboard-gateways-dashboard.json){:target="_blank" download="thingsboard-gateways-dashboard.json"}. Use this [guide](#optional-import-gateway-widgets-bundle-and-dashboard) to import gateway widgets bundle and dashboard.
 
 ## Step 1. Create new gateway device on ThingsBoard
 
@@ -69,7 +33,7 @@ First, we have to add a gateway device to your ThingsBoard instance. You can do 
         title: Go to "**Dashboards**" tab and open "**ThingsBoard IoT Gateways**" dashboard.
     ===
         image: /images/gateway/dashboard/gateway-getting-started-2-ce.png,
-        title: Click the "**+**" button, enter the gateway device name (e.g., "My New Gateway"), and select the device profile.
+        title: Click the "**+**" button, enter the gateway device name (e.g., "My Gateway"), and select the device profile.
 '
 %}
 
@@ -93,7 +57,7 @@ To launch the gateway, use the following steps:
         title: On the gateway dashboard, click on **"Launch command"** button in the top right corner.
     ===
         image: /images/gateway/dashboard/gateway-getting-started-4-ce.png,
-        title: Copy auto-generated command and execute it in your terminal.
+        title: Click to download docker-compose.yml file to your PC, copy command and execute it in your terminal.
 '
 %}
 
@@ -171,6 +135,42 @@ connect to different devices. You can find more information about connectors in 
  - [**Custom** connector](/docs/iot-gateway/custom/)
 
 More about *ThingsBoard IoT Gateways* Dashboard, you can [read here](/docs/iot-gateway/guides/how-to-enable-remote-configuration/).
+
+## (Optional) Import gateway widgets bundle and dashboard
+
+First, we have to import gateway widgets bundle, for this purpose, use the following steps:
+
+{% assign importWidgetsBundle = '
+    ===
+        image: /images/gateway/dashboard/wl-import-bundle-gateway-1-ce.png,
+        title: Go to the "**Widgets Library**" page, and click the "**+**" button in the upper right corner of the "**Widgets Bundles**" page. Select "**Import widgets bundle**" from the drop-down menu.
+    ===
+        image: /images/gateway/dashboard/wl-import-bundle-gateway-2-ce.png,
+        title: In the popup, you will be prompted to upload the downloaded gateway widgets bundle JSON file. Drag and drop a file from your computer, then click "**Import**" to add a widget bundle to the library.
+    ===
+        image: /images/gateway/dashboard/wl-import-bundle-gateway-3-ce.png,
+        title: The widgets bundle is imported.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=importWidgetsBundle %} 
+
+To import ThingsBoard IoT Gateways dashboard, follow these steps:
+
+{% assign importGatewayDashboard = '
+    ===
+        image: /images/gateway/dashboard/import-dashboard-gateway-1-ce.png,
+        title: Go to the "**Dashboards**" page and click on the "**+**" button in the upper right corner of the page and select "**Import dashboard**" from the drop-down menu;
+    ===
+        image: /images/gateway/dashboard/import-dashboard-gateway-2-ce.png,
+        title: In the import dashboard window, upload downloaded the gateway dashboard JSON file and click "**Import**".
+    ===
+        image: /images/gateway/dashboard/import-dashboard-gateway-3-ce.png,
+        title: Dashboard imported. Click on the row with the name of the dashboard to open it.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=importGatewayDashboard %} 
 
 ## Next steps
 

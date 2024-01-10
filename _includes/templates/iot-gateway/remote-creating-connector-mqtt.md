@@ -3,31 +3,10 @@ demo broker with a built-in data generator and send data to the gateway.
 
 ### Setup demo MQTT broker
 
-As a demo MQTT broker, we will use docker image, that can be installed and run using the following commands:
+As a demo MQTT broker, we will use docker image, that can be installed and run using the following command:
 
 ```shell
-docker ps
-```
-{:.copy-code}
-
-Find your gateway container name as you can see on the following image and copy it:
-
-![](/images/gateway/dashboard/copy-gateway-docker-container-name.png)
-
-Create an environment variable using the following command, replace `YOUR_TB_GATEWAY_CONTAINER_NAME` with the copied 
-gateway container name. Copy and run the provided command in your terminal:
-
-```shell
-export TB_GATEWAY_CONTAINER_NAME=YOUR_TB_GATEWAY_CONTAINER_NAME
-```
-{:.copy-code}
-
-Copy and execute the following command in your terminal:
-
-{% assign containerId = "{" | append: "{" | append: ".Id" | append: "}" | append: "}" %}
-
-```shell
-docker run -it --net=container:$(docker inspect -f '{{containerId}}' ${TB_GATEWAY_CONTAINER_NAME}) thingsboard/tb-gw-mqtt-broker:latest
+docker run -it -p 1884:1884 thingsboard/tb-gw-mqtt-broker:latest
 ```
 {:.copy-code}
 
@@ -43,7 +22,7 @@ Copy the following connector configuration (we will use it later):
 {
   "broker": {
     "name": "Demo Broker",
-    "host": "localhost",
+    "host": "host.docker.internal",
     "port": 1884,
     "clientId": "ThingsBoard_gateway",
     "version": 5,
@@ -59,7 +38,7 @@ Copy the following connector configuration (we will use it later):
       "topicFilter": "data/",
       "converter": {
         "type": "json",
-        "deviceNameJsonExpression": "Device Demo",
+        "deviceNameJsonExpression": "Demo Device",
         "deviceTypeJsonExpression": "default",
         "sendDataOnlyOnChange": false,
         "timeout": 60000,
@@ -117,6 +96,11 @@ Copy the following connector configuration (we will use it later):
 ```
 {:.copy-code.expandable-20}
 
+This MQTT connector configuration establishes a connection to a broker named **"Demo Broker"** at **"host.docker.internal"** on 
+port **1884**, using an anonymous security type. It includes a mapping for the **"data/"** topic, specifying a JSON converter 
+and defining attribute and timeseries mappings for device data. Additionally, it handles connect and disconnect 
+requests for sensors with expressions to extract device names from topic filters.
+
 To create a connector, use the following steps:
 
 {% assign addNewConnector = '
@@ -145,7 +129,7 @@ the remote settings.
 Also, you can see the connector logs to make sure that connector works, for this purpose, use the following steps:
 {% assign seeConnectorLogs = '
     ===
-        image: /images/gateway/dashboard/gateway-getting-started-mqtt-logs-11-ce.png,
+        image: /images/gateway/dashboard/gateway-getting-started-mqtt-11-ce.png,
         title: Click on logs icon to open connector logs page.
     ===
         image: /images/gateway/dashboard/gateway-getting-started-mqtt-logs-12-ce.png,
@@ -156,3 +140,40 @@ Also, you can see the connector logs to make sure that connector works, for this
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=seeConnectorLogs %}
 
 For now, the gateway is ready to process data through the newly created and configured MQTT connector.
+
+Let's publish data to the MQTT Broker defined in the configuration above, you can follow these steps using a tool like 
+**mosquitto_pub** or an MQTT client library in your preferred programming language. In this example, we'll use the 
+**mosquitto_pub** command-line tool.
+
+1.Ensure that the Mosquitto MQTT clients are installed on your system. You can typically install them using the package 
+manager of your operating system:
+- For Ubuntu:
+    ```bash
+    sudo apt-get install mosquitto-clients
+    ```
+    {:.copy-code}
+
+- For Windows:
+
+    Download the Mosquitto client tools from [the official website](https://mosquitto.org/download/).
+
+    Install the tools, ensuring that the installation directory is added to the system's PATH.
+- For MacOS:
+    ```bash
+    brew install mosquitto
+    ```
+    {:.copy-code}
+
+2.Use the mosquitto_pub command to publish data to a specific MQTT topic. In this case, we'll use the "data/" topic as defined in the configuration:
+```bash
+mosquitto_pub -h host.docker.internal -p 1884 -t data/ -m '{"frequency": 50, "power": 100, "temperature": 25, "humidity": 60}'
+```
+{:.copy-code}
+
+Where:
+- `-h` - specifies the MQTT broker's host address;
+- `-p` - specifies the MQTT broker's port;
+- `-t` - specifies the MQTT topic to publish to ("data/" in our case);
+- `-m` - specifies the payload or message to publish. It should be in JSON format, following the structure defined in the mapping section of your configuration.
+
+Adjust the payload values as needed.

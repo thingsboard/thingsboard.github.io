@@ -5,4 +5,4 @@ The aim of this tutorial is to guide you through the fundamental usage of the mo
 - Transmit data from sensors to ThingsBoard Edge and further propagate this data to the {{currentThingsBoardVersion}} server;
 - Construct real-time end-user dashboards in the cloud and provision them to the Edge.
 
-To maintain simplicity, we will connect and visualize data from a temperature sensor.
+To maintain simplicity, in this guide we will connect and visualize data from a temperature sensor.
