@@ -39,7 +39,7 @@ Now that the Uplink converter has been created, it is possible to create an inte
 
 ## Create integration
 
-- Go to **Integrations center** section -> **Integrations** page and click "plus" button to create new integration. Name it **HTTP Integration**, select type **HTTP**. Click "Next";
+- Go to the "**Integrations center**" section -> "**Integrations**" page and click "plus" button to create new integration. Name it "**HTTP Integration**", select type '**HTTP**'. Click "Next";
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-add-integration-1-pe.png)
@@ -48,7 +48,7 @@ Now that the Uplink converter has been created, it is possible to create an inte
 ![image](/images/user-guide/integrations/http/add-integration-1-pe.png)
 {% endif %}
 
-- At this step, you can select a previously created or create a new upnlink converter right in this window. Select the previously created **HTTP Uplink Converter**. Click "Next";
+- At this step, you can select a previously created or create a new upnlink converter right in this window. Select the previously created "**HTTP Uplink Converter**". Click "Next";
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-add-integration-2-pe.png)
@@ -66,13 +66,13 @@ Now that the Uplink converter has been created, it is possible to create an inte
 ![image](/images/user-guide/integrations/http/add-integration-3-pe.png)
 {% endif %}
 
- - At this step, specify your **Base URL**;
+ - At this step, specify your '**Base URL**';
 
- - Please note down **HTTP endpoint URL** we will use this value later;
+ - Please note down '**HTTP endpoint URL**' we will use this value later;
 
- - In **Advanced settings** enable "**Replace response status from 'No-Content' to 'OK'**";
+ - In '**Advanced settings**' enable "**Replace response status from 'No-Content' to 'OK'**";
 
- - Click **Add** button to save the Integration.
+ - Click "Add" button to save the Integration.
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-add-integration-4-pe.png)
@@ -83,7 +83,7 @@ Now that the Uplink converter has been created, it is possible to create an inte
 
 ## Send uplink message
 
-To send an uplink message, you need the previously copied **HTTP endpoint URL** from the integration.
+To send an uplink message, you need the previously copied '**HTTP endpoint URL**' from the integration.
 
 Use this command to send the message. Don't forget to replace `$DEVICE_NAME`, `$DEVICE_TYPE` and `$YOUR_HTTP_ENDPOINT_URL` with corresponding values.
 
@@ -100,7 +100,7 @@ curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"deviceType\":\"$DEVICE_TY
 {% endif %}
 
 <br>
-Go to the **Events** tab in your HTTP integration. If you have done everything correctly, you should see one event with the status 'OK'.
+Go to the "**Events**" tab in your HTTP integration. If you have done everything correctly, you should see one event with the status 'OK'.
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-send-uplink-message-3-pe.png)
@@ -128,7 +128,7 @@ Learn more about **notifications** and how to configure them [here](/docs/{{docs
 
 {% if docsPrefix == "paas/" %}
 <br>
-The created device with data can be seen in the section **Device groups -> All**.
+The created device with data can be seen in the section "**Device groups**" -> "**All**".
 
 ![image](/images/user-guide/integrations/http/device-1-pe.png)
 
@@ -141,7 +141,7 @@ If the "Allow create devices or assets" checkbox is unchecked, when sending a me
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-Also, sent and received data can be viewed in the Uplink converter. In the **'In'** and **'Out'** blocks of the "**Events**" tab.
+Also, sent and received data can be viewed in the Uplink converter. In the 'In' and 'Out' blocks of the "**Events**" tab.
 
 {% include images-gallery.html imageCollection="send-uplink-1" %}
 
@@ -190,14 +190,13 @@ curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"deviceType\":\"$DEVICE_TY
 
 ## Downlink Converter
 
-Create Downlink in Data converters. To see events enable Debug.
+Create downlink converter in the "**Data converters**" page. To see events enable 'Debug mode'.
 
 {% include templates/tbel-vs-js.md %}
 
 {% capture httpdownlinkconverterconfig %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/http/http-downlink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/http/http-downlink-converter-config-javascript.md{% endcapture %}
-
 {% include content-toggle.html content-toggle-id="httpdownlinkconverterconfig" toggle-spec=httpdownlinkconverterconfig %}
 
 Now you need to add the created downlink converter to the integration.
@@ -210,8 +209,10 @@ Now you need to add the created downlink converter to the integration.
 {% endif %}
 
 <br>
-When integration configured and ready to use, we can send a message to the device from Rule chain using the rule node. 
-Create an **integration downlink** node.
+To be able to send downlink over integration we need to modify a "**Root Rule chain**":
+
+- Go to the "**Rule chains**" page and click on the "**Root Rule Chain**" to open it;
+- Create an '**integration downlink**' node. Specify your integration in its settings;
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-downlink-rule-chain-1-pe.png)
@@ -220,9 +221,7 @@ Create an **integration downlink** node.
 ![image](/images/user-guide/integrations/http/downlink-rule-chain-1-pe.png)
 {% endif %}
 
-<br>
-Set the "**Attributes updated**" and "**Post attributes**" links to it. 
-When the attribute is created or changes are made to the attribute, the downlink message will be sent to the integration.
+- Set the "**Attributes updated**" and "**Post attributes**" links from the '**message type switch**' node to the '**integration downlink**' node. Apply changes.
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/http/http-downlink-rule-chain-2-pe.png)
@@ -232,7 +231,9 @@ When the attribute is created or changes are made to the attribute, the downlink
 {% endif %}
 
 <br>
-To see this with an example, we go to the **Devices** page. Select your device and navigate to the **Attributes** tab. Select **Shared attributes** and click on the "plus" icon to create new attribute.
+When the attribute is created or changes are made to the attribute, the downlink message will be sent to the integration.
+
+To see this with an example, we go to the "**Devices**" page. Select your device and navigate to the "**Attributes**" tab. Select **Shared attributes** and click on the "plus" icon to create new attribute.
 Then set the attribute name, its value (for example, the key name is 'firmware', value: '01052020.v1.1') and save the data.
 
 {% if docsPrefix == "pe/" %}

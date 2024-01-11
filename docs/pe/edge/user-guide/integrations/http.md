@@ -6,24 +6,24 @@ description: HTTP integration guide
 downlink-rule:
     0:
         image: /images/pe/edge/integrations/http/downlink-rule-1-edge.png
-        title: 'Go to the "<b>Edge management</b>" section -> "<b>Rule chain templates</b>" page and click on the "<b>Edge Root Rule Chain</b>";'
+        title: 'Go to the "<b>Edge management</b>" section -> "<b>Rule chain templates</b>" page and click on the "<b>Edge Root Rule Chain</b>" to open it;'
     1:
         image: /images/pe/edge/integrations/http/downlink-rule-2-edge.png
-        title: 'Create an &#39;<b>integration downlink</b>&#39; node;'
+        title: 'Create an &#39;<b>integration downlink</b>&#39; node. Specify your integration in its settings;'
     2:
         image: /images/pe/edge/integrations/http/downlink-rule-3-edge.png
-        title: 'Set the "<b>Attributes Updated</b>" and "<b>Post attributes</b>" links to it. When the attribute is created or changes are made to the attribute, the downlink message will be sent to the integration. Apply changes.'
+        title: 'Set the "<b>Attributes Updated</b>" and "<b>Post attributes</b>" links from the &#39;<b>message type switch</b>&#39; node to the &#39;<b>integration downlink</b>&#39; node. When the attribute is created or changes are made to the attribute, the downlink message will be sent to the integration. Apply changes.'
 
 assign-integration:
     0:
         image: /images/pe/edge/integrations/http/assign-integration-1-edge.png
-        title: 'Go to the "<b>Edge management</b>" section -> "<b>Instances</b>" page, click on your edge instance to open "Edge details" window, and navigate to the "Attributes" tab. Click "plus" icon to add new <b>server attribute</b> to Edge;'
+        title: 'Go to the "<b>Edge management</b>" section -> "<b>Instances</b>" page, click on your edge instance to open "Edge details" window, and navigate to the "<b>Attributes</b>" tab. Click "plus" icon to add new <b>server attribute</b> to Edge;'
     1:
         image: /images/pe/edge/integrations/http/assign-integration-2-edge.png
         title: 'Named <b>baseUrl</b> and set value as your Edge <b>IP:port</b>. After, click "Add" button;'
     2:
         image: /images/pe/edge/integrations/http/assign-integration-3-edge.png
-        title: 'Added the server attribute <b>&#39;baseUrl&#39;</b> to the edge;'
+        title: 'Added the server attribute &#39;<b>&#39;baseUrl&#39;</b>&#39; to the edge;'
     3:
         image: /images/pe/edge/integrations/http/assign-integration-4-edge.png
         title: 'Now, click "<b>Manage edge integrations</b>" icon of Edge entity;'
@@ -32,7 +32,7 @@ assign-integration:
         title: 'Click the "+" icon at the top right of the corner. Specify your integration and click "Assign" button to assign it to the Edge;'
     5:
         image: /images/pe/edge/integrations/http/assign-integration-6-edge.png
-        title: 'Login to your <b>ThingsBoard Edge</b> instance and open "<b>Integration center</b>" section -> "<b>Integrations</b>" page. You should see your integration. Click on it;'
+        title: 'Login to your <b>ThingsBoard Edge</b> instance and open "<b>Integrations center</b>" section -> "<b>Integrations</b>" page. You should see your integration. Click on it;'
     6:
         image: /images/pe/edge/integrations/http/assign-integration-7-edge.png
         title: 'In the "<b>Integration details</b>" window placeholder <b>${{baseURL}}</b> will be replaced with the value of the attribute.'
@@ -104,7 +104,7 @@ So please use [**ThingsBoard Cloud**](https://thingsboard.cloud/signup) or [**in
 
 Follow the steps below to add the **HTTP integration**:
 
-- Go to "**Edge management**" section -> "**Integration templates**" page and click "plus" button to add new integration. Select type "**HTTP**". Name it "Edge HTTP integration". Click "Next";
+- Go to "**Edge management**" section -> "**Integration templates**" page and click "plus" button to add new integration. Select type '**HTTP**'. Name it "Edge HTTP integration". Then, click "Next";
 
 {% include templates/edge/integrations/debug-mode-info.md %}
 
@@ -112,7 +112,7 @@ Follow the steps below to add the **HTTP integration**:
 
 - The next step is create an **Uplink data converter**. 
 
-Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard. For this example, use the following code:
+Uplink is necessary in order to convert the incoming data from the device into the required format for displaying them in ThingsBoard. For this example, use the code below.
 
 {% include templates/tbel-vs-js.md %}
 
@@ -127,7 +127,7 @@ JavaScript<small></small>%,%anonymous%,%templates/edge/integrations/http/http-up
 
 The Downlink converter transforms outgoing RPC message and then the integration sends it to your device.
 You can customize a downlink according to your configuration.
-Let’s consider an example where we send an attribute update message. For this example, use the following code:
+Let’s consider an example where we send an attribute update message. For this example, use the code below.
 
 {% include templates/tbel-vs-js.md %}
 
@@ -141,7 +141,7 @@ JavaScript<small></small>%,%anonymous%,%templates/edge/integrations/http/http-do
 - Finally, we go to the "**Connection**" page.
 
 You can use placeholder **$\{\{ATTRIBUTE_KEY\}\}** to substitute integration field with attribute value from specific Edge entity. 
-In this example, we will use the placeholder **$\{\{baseURL\}\}** for "**Base URL**".
+In this example, we will use the placeholder **$\{\{baseURL\}\}** for '**Base URL**'.
 Then, click the "Add" button.
 
 ![image](/images/pe/edge/integrations/http/add-http-integration-template-4-edge.png)
@@ -159,8 +159,8 @@ To be able to send downlink over integration we need to modify **"Edge Root Rule
 ## Assign Integration to Edge
 
 Once converter and integration templates are created, we can assign Integration template to **Edge**. 
-Because we are using placeholder **$\{\{baseUrl\}\}** in the integration configuration, we need to add attribute **baseUrl** to edge first.
-You need to provide **IP address** and **port** of your *Edge* instance as **baseUrl** attribute.
+Because we are using placeholder **$\{\{baseUrl\}\}** in the integration configuration, we need to add attribute '**baseUrl**' to edge first.
+You need to provide **IP address** and **port** of your **Edge** instance as '**baseUrl**' attribute.
 Once attribute added, we are ready to assign integration and verify that it's added.
 
 {% include images-gallery.html imageCollection="assign-integration" showListImageTitles="true" %}
@@ -168,9 +168,9 @@ Once attribute added, we are ready to assign integration and verify that it's ad
 ## Send uplink message
 
 To send an uplink message, you need '**HTTP endpoint URL**' from the integration. 
-Log in to ThingsBoard **Edge** and go to the "**Integration center**" section -> "**Integrations**" page. Find your HTTP integration and click on it. Find and copy the 'HTTP endpoint URL'.
+Log in to ThingsBoard **Edge** and go to the "**Integrations center**" section -> "**Integrations**" page. Find your HTTP integration and click on it. Find and copy the 'HTTP endpoint URL'.
 
-Use this command to send the message. Don't forget to replace `$DEVICE_NAME` and `$YOUR_HTTP_ENDPOINT_URL` with corresponding values.
+Use the command below to send a message. Don't forget to replace `$DEVICE_NAME` and `$YOUR_HTTP_ENDPOINT_URL` with corresponding values.
 
 ```ruby
 curl -v -X POST -d "{\"deviceName\":\"$DEVICE_NAME\",\"temperature\":33,\"model\":\"test\"}" $YOUR_HTTP_ENDPOINT_URL -H "Content-Type:application/json"
@@ -187,7 +187,7 @@ When you sent the message, a new device was created. The created device with dat
 
 ![image](/images/pe/edge/integrations/http/device-1-edge.png)
 
-Also, received data can be viewed in the uplink converter. In the '**In**' and '**Out**' blocks of the "**Events**" tab:
+Also, received data can be viewed in the uplink converter. In the 'In' and 'Out' blocks of the "**Events**" tab:
 
 {% include images-gallery.html imageCollection="converter-events" %}
 
@@ -199,7 +199,7 @@ Then set the attribute name, its value (for example, the key name is 'firmware',
 
 ![image](/images/pe/edge/integrations/http/add-shared-attribute-1-edge.png)
 
-To make sure that downlink message sent to integration you can check "**Events**" tab of integration:
+To make sure that downlink message sent to integration you can check "**Events**" tab of the integration:
 
 ![image](/images/pe/edge/integrations/http/downlink-message-1-edge.png)
 
