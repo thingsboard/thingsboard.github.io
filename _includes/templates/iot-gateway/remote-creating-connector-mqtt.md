@@ -101,7 +101,7 @@ port **1884**, using an anonymous security type. It includes a mapping for the *
 and defining attribute and timeseries mappings for device data. Additionally, it handles connect and disconnect 
 requests for sensors with expressions to extract device names from topic filters.
 
-To create a connector, use the following steps:
+To create a connector, follow these steps:
 
 {% assign addNewConnector = '
     ===
@@ -126,7 +126,7 @@ its state with the remote server. You can view the synchronization status of the
 in the "**Configuration**" column, which will indicate whether the gateway is successfully aligned with 
 the remote settings.
 
-Also, you can see the connector logs to make sure that connector works, for this purpose, use the following steps:
+Also, you can see the connector logs to make sure that the connector works, for this purpose, follow these steps:
 {% assign seeConnectorLogs = '
     ===
         image: /images/gateway/dashboard/gateway-getting-started-mqtt-11-ce.png,
@@ -145,8 +145,8 @@ Let's publish data to the MQTT Broker defined in the configuration above, you ca
 **mosquitto_pub** or an MQTT client library in your preferred programming language. In this example, we'll use the 
 **mosquitto_pub** command-line tool.
 
-1.Ensure that the Mosquitto MQTT clients are installed on your system. You can typically install them using the package 
-manager of your operating system:
+1.Ensure that the Mosquitto MQTT clients are installed on your system. Typically, you can install them using the 
+package manager of your operating system:
 - For Ubuntu:
     ```bash
     sudo apt-get install mosquitto-clients
@@ -166,7 +166,7 @@ manager of your operating system:
 
 2.Use the mosquitto_pub command to publish data to a specific MQTT topic. In this case, we'll use the "data/" topic as defined in the configuration:
 ```bash
-mosquitto_pub -h host.docker.internal -p 1884 -t data/ -m '{"frequency": 50, "power": 100, "temperature": 25, "humidity": 60}'
+mosquitto_pub -h locahost -p 1884 -t data/ -m '{"frequency": 50, "power": 100, "temperature": 25, "humidity": 60}'
 ```
 {:.copy-code}
 
