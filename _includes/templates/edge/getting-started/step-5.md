@@ -1,11 +1,9 @@
-To provision dashboard to Edge we need to open Edge dashboards on **{{currentThingsBoardVersion}}** Server and assign the newly created dashboard. 
+To provision dashboard to Edge we need to open Edge dashboards on **{{currentThingsBoardVersion}}** server and assign the newly created dashboard. 
 Once this dashboard is assigned we are going to open ThingsBoard **Edge** UI to see the same dashboard on the Edge.
-
-Please open **{{currentThingsBoardVersion}}** using the URL **SERVER_URL**.
 
 {% include images-gallery.html imageCollection="step5Server" showListImageTitles="true" %}
 
-Let's open ThingsBoard **Edge** UI using the URL **EDGE_URL** to verify that dashboard was provisioned.
+Now, open ThingsBoard **Edge** UI using the URL **EDGE_URL** to verify that dashboard is accessible.
 
 {% include images-gallery.html imageCollection="step5Edge" showListImageTitles="true" %}
 

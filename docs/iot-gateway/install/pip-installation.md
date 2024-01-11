@@ -66,7 +66,7 @@ sudo chown YOUR_USER:YOUR_USER -R /etc/thingsboard-gateway
 
 - For tmp folder:
 ```bash
-sudo chown YOUR_USER:YOUR_USER /tmp/gateway
+sudo chown YOUR_USER:YOUR_USER /tmp
 ```
 {: .copy-code}
 

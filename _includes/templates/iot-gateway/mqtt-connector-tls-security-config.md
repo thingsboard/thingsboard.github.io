@@ -1,4 +1,4 @@
-In table below described parameters to configure authorization on mqtt broker .  
+The table below describes the parameters required to configure authorization on MQTT broker.
 
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|-

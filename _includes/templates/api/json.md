@@ -1,5 +1,5 @@
-We added support of JSON data structures to telemetry and attributes API to simplify work with device configuration.
-JSON support allows you to both upload from the device, and push to device nested objects.
+We have added support of JSON data structures to telemetry and attributes API to simplify work with device configuration.
+JSON support allows you to both upload from the device, and push nested objects to the device.
 You can store one configuration JSON as a shared attribute and push it to the device. You can also process the JSON data in the rule engine and raise alarms, etc.
 
 Therefore, this improvement minimizes the number of Database operations when ThingsBoard stores the data.
