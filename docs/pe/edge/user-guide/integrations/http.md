@@ -35,7 +35,7 @@ assign-integration:
         title: 'Login to your <b>ThingsBoard Edge</b> instance and open "<b>Integrations center</b>" section -> "<b>Integrations</b>" page. You should see your integration. Click on it;'
     6:
         image: /images/pe/edge/integrations/http/assign-integration-7-edge.png
-        title: 'In the "<b>Integration details</b>" window placeholder <b>${{baseURL}}</b> will be replaced with the value of the attribute.'
+        title: 'In the "<b>Integration details</b>" window placeholder <b>${{baseUrl}}</b> will be replaced with the value of the attribute.'
 
 send-uplink:
     0:
@@ -116,8 +116,6 @@ Uplink is necessary in order to convert the incoming data from the device into t
 
 {% include templates/tbel-vs-js.md %}
 
-Copy the Uplink converter code:
-
 {% capture httpuplinkconverteredgeconfig %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/edge/integrations/http/http-uplink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/edge/integrations/http/http-uplink-converter-config-javascript.md{% endcapture %}
@@ -131,8 +129,6 @@ Let’s consider an example where we send an attribute update message. For this 
 
 {% include templates/tbel-vs-js.md %}
 
-Copy the Downlink converter code:
-
 {% capture httpdownlinkconveredgeterconfig %}
 TBEL<small>Recommended</small>%,%accessToken%,%templates/edge/integrations/http/http-downlink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/edge/integrations/http/http-downlink-converter-config-javascript.md{% endcapture %}
@@ -141,7 +137,7 @@ JavaScript<small></small>%,%anonymous%,%templates/edge/integrations/http/http-do
 - Finally, we go to the "**Connection**" page.
 
 You can use placeholder **$\{\{ATTRIBUTE_KEY\}\}** to substitute integration field with attribute value from specific Edge entity. 
-In this example, we will use the placeholder **$\{\{baseURL\}\}** for '**Base URL**'.
+In this example, we will use the placeholder **$\{\{baseUrl\}\}** for '**Base URL**'.
 Then, click the "Add" button.
 
 ![image](/images/pe/edge/integrations/http/add-http-integration-template-4-edge.png)

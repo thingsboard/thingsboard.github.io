@@ -1,4 +1,4 @@
-Copy the Uplink converter code:
+Copy the following script:
 
 ```ruby
 // Decode an uplink message from a buffer
@@ -46,6 +46,6 @@ return result;
 ```
 {: .copy-code}
 
-Choose "Create new" and paste previously copied code to the decoder function and click "Next";
+Choose "Create new" and paste copied code to the Decoder function section. Click "Next";
 
 ![image](/images/pe/edge/integrations/http/add-http-integration-template-2-java-edge.png)

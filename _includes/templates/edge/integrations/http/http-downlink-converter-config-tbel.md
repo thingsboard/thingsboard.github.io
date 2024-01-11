@@ -1,4 +1,4 @@
-Copy the Uplink converter code:
+Copy the following script:
 
 ```ruby
 // Encode downlink data from incoming Rule Engine message
@@ -25,6 +25,6 @@ return result;
 ```
 {: .copy-code}
 
-Choose "Create new" and paste previously copied code to the encoder function and click "Next";
+Choose "Create new" and paste copied code to the Encoder function section. Click "Next";
 
 ![image](/images/pe/edge/integrations/http/add-http-integration-template-3-edge.png)
