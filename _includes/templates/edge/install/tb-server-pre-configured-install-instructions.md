@@ -7,13 +7,13 @@ Please follow the steps below to use these prepared instructions:
 
 {% assign preparedInstructionsInstall = '
     ===
-        image: /images/pe/edge/installation/prepared-instructions-install-item-1-pe.png,
+        image: https://img.thingsboard.io/pe/edge/installation/prepared-instructions-install-item-1-pe.png,
         title: Click an Edge entity row to open it&#39;s details;
     ===
-        image: /images/pe/edge/installation/prepared-instructions-install-item-2-pe.png,
+        image: https://img.thingsboard.io/pe/edge/installation/prepared-instructions-install-item-2-pe.png,
         title: Click on the "Install & Connection Instructions" button;
     ===
-        image: /images/pe/edge/installation/prepared-instructions-install-item-3-pe.png,
+        image: https://img.thingsboard.io/pe/edge/installation/prepared-instructions-install-item-3-pe.png,
         title: Follow instructions to install Edge and connect to the server.
 '%}
 
@@ -21,13 +21,13 @@ Please follow the steps below to use these prepared instructions:
 
 {% assign preparedInstructionsInstall = '
     ===
-        image: /images/edge/installation/prepared-instructions-install-item-1-ce.png,
+        image: https://img.thingsboard.io/edge/installation/prepared-instructions-install-item-1-ce.png,
         title: Click an Edge entity row to open it&#39;s details;
     ===
-        image: /images/edge/installation/prepared-instructions-install-item-2-ce.png,
+        image: https://img.thingsboard.io/edge/installation/prepared-instructions-install-item-2-ce.png,
         title: Click on the "Install & Connection Instructions" button;
     ===
-        image: /images/edge/installation/prepared-instructions-install-item-3-ce.png,
+        image: https://img.thingsboard.io/edge/installation/prepared-instructions-install-item-3-ce.png,
         title: Follow instructions to install Edge and connect to the server.
 '%}
 

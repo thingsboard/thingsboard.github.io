@@ -36,12 +36,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/iotsquad-tech-logo.png" alt="IoT Squad">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/iotsquad-tech-logo.png" alt="IoT Squad">
         <a class="outlink" href="https://iotsquad.tech/"> IoT Squad </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/iotsquad-tech-person.jpeg" alt="Eric Bourbeau">
+            <img class="person-logo" src="https://img.thingsboard.io/customers/iotsquad-tech-person.jpeg" alt="Eric Bourbeau">
             <div class="person-title">
                 <p class="person-name"> Pawel Ostropolski </p>
                 <p class="person-position"> Founder & Managing Director </p>
@@ -58,12 +58,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/x-telia.png" alt="X-TELIA">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/x-telia.png" alt="X-TELIA">
         <a class="outlink" href="https://en.x-telia.com/"> X-TELIA </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/x-telia-person.jpg" alt="Eric Bourbeau">
+            <img class="person-logo" src="https://img.thingsboard.io/customers/x-telia-person.jpg" alt="Eric Bourbeau">
             <div class="person-title">
                 <p class="person-name"> Eric Bourbeau </p>
                 <p class="person-position"> Président fondateur / Founder and CEO </p>
@@ -89,7 +89,7 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/ositech.jpg" alt="Ositech Communications, Inc.">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/ositech.jpg" alt="Ositech Communications, Inc.">
         <a class="outlink" href="https://ositech.com/"> Ositech Communications, Inc. </a>
     </div>
     <div class="customer-content">
@@ -110,7 +110,7 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/conbee.svg" alt="Michael Nickolai">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/conbee.svg" alt="Michael Nickolai">
     </div>
     <div class="customer-content">
         <div class="person-container">
@@ -133,12 +133,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/iioote.png" alt="iiOOTE AB">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/iioote.png" alt="iiOOTE AB">
         <a class="outlink" href="https://www.iioote.com/"> iiOOTE AB </a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/bertil.png" alt="Bertil Moberg">
+            <img class="person-logo" src="https://img.thingsboard.io/customers/bertil.png" alt="Bertil Moberg">
             <div class="person-title">
                 <p class="person-name"> Bertil Moberg </p>
                 <p class="person-position"> Co-Founder & Head of IoT Solutions </p>
@@ -158,7 +158,7 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/makerssro.jpg" alt="MAKERS s. r. o.">
+        <img class="customer-logo" src="https://img.thingsboard.io/customers/makerssro.jpg" alt="MAKERS s. r. o.">
         <a class="outlink" href="https://www.makers.sk/"> MAKERS s. r. o. </a>
     </div>
     <div class="customer-content">
