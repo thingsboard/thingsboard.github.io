@@ -73,7 +73,7 @@ OPC UA<br> Integration<br>%,%opcua%,%templates/install/integration/opcua-docker.
 TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/install/integration/tcpudp-docker.md%br%
 CoAP<br> Integration<br>%,%coap%,%templates/install/integration/coap-docker.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="remoteintegrationdockerinstall" toggle-spec=contenttogglespec %}
+{% include content-toggle.liquid content-toggle-id="remoteintegrationdockerinstall" toggle-spec=contenttogglespec %}
 
 
 {% include templates/install/integration/advanced-config-docker.md %} 
@@ -99,7 +99,7 @@ OPC UA<br> Integration<br>%,%opcua%,%templates/install/integration/opcua-docker-
 TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/install/integration/tcpudp-docker-windows.md%br%
 CoAP<br> Integration<br>%,%coap%,%templates/install/integration/coap-docker-windows.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="remoteintegrationdockerinstallwin" toggle-spec=contenttogglespecwin %}
+{% include content-toggle.liquid content-toggle-id="remoteintegrationdockerinstallwin" toggle-spec=contenttogglespecwin %}
 
 
 {% include templates/install/integration/advanced-config-docker.md %} 
@@ -126,7 +126,7 @@ OPC UA<br> Integration<br>%,%opcua%,%templates/install/integration/opcua-ubuntu.
 TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/install/integration/tcpudp-ubuntu.md%br%
 CoAP<br> Integration<br>%,%coap%,%templates/install/integration/coap-ubuntu.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="remoteintegrationinstallubuntu" toggle-spec=ubuntuinstallspec %} 
+{% include content-toggle.liquid content-toggle-id="remoteintegrationinstallubuntu" toggle-spec=ubuntuinstallspec %} 
 
 ### CentOS/RHEL Server
 
@@ -144,7 +144,7 @@ Azure Event Hub<br>Integration<br>%,%azure%,%templates/install/integration/azure
 OPC UA<br> Integration<br>%,%opcua%,%templates/install/integration/opcua-rhel.md%br%
 TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/install/integration/tcpudp-rhel.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="remoteintegrationinstallrhel" toggle-spec=rhelinstallspec %} 
+{% include content-toggle.liquid content-toggle-id="remoteintegrationinstallrhel" toggle-spec=rhelinstallspec %} 
 
 ## Remote integration configuration
 

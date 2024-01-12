@@ -116,7 +116,7 @@ Subsection "security" provides configuration for client authorization at FTP Ser
 Basic<small>Recommended</small>%,%accessToken%,%templates/iot-gateway/ftp-connector-basic-security-config.md%br%
 Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/ftp-connector-anonymous-security-config.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="mqttConnectorCredentialsConfig" toggle-spec=mqttconnectorsecuritytogglespec %}  
+{% include content-toggle.liquid content-toggle-id="mqttConnectorCredentialsConfig" toggle-spec=mqttconnectorsecuritytogglespec %}  
 
 ### Section "paths"
 

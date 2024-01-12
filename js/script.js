@@ -848,3 +848,173 @@ var pushmenu = (function(){
 		show: show
 	};
 })();
+
+(function () {
+	let toggleBlocksIdsToTocsIds = {};
+	jqueryDefer(function() {
+		$(document).ready(function() {
+			const blocks = [];
+			$('.tb-content-toggle').each(function(index, contentToggleItem) {
+				blocks.push(contentToggleItem);
+			});
+
+			blocks.forEach(function(contentToggleItem) {
+				toggleBlocksIdsToTocsIds[contentToggleItem.id] = {};
+				initContentToggleHandler(contentToggleItem)
+			});
+
+			const expandableCodeBlocks = [];
+			$('.copy-code').each(function (index, codeBlocksItem) {
+				if (codeBlocksItem.classList) {
+					for (var i = 0; i < codeBlocksItem.classList.length; i++) {
+						if (codeBlocksItem.classList[i].startsWith("expandable-")) {
+							expandableCodeBlocks.push(codeBlocksItem);
+						}
+					}
+				}
+			});
+			expandableCodeBlocks.forEach(codeBlock => addExpandButton(codeBlock));
+		})
+	});
+
+	function onPopStateHandler(contentToggleItem) {
+		var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+		var targetId = params[contentToggleItem.id];
+		if (!targetId) {
+			const activeLinkItem = $(contentToggleItem).find('a.content-toggle-button.active')
+			if (activeLinkItem && activeLinkItem.attr("data-target")) {
+				targetId = $(activeLinkItem).attr("data-target").substring(1);
+			} else {
+				targetId = $(contentToggleItem).find('a.content-toggle-button').first().attr("data-target").substring(1);
+			}
+		}
+		selectTargetHandler(contentToggleItem, targetId);
+	}
+
+	function selectTargetHandler(contentToggleItem, targetId) {
+		for (let toggleBlockId in toggleBlocksIdsToTocsIds[contentToggleItem.id]) {
+			for (let tocid of toggleBlocksIdsToTocsIds[contentToggleItem.id][toggleBlockId]) {
+				let tocItem = $('#' + tocid);
+				if(tocItem && tocItem.parentNode) {
+					if (contentToggleItem.id === targetId) {
+						tocItem.parent().removeClass('hide');
+						continue;
+					}
+					tocItem.parent().addClass('hide');
+				}
+			}
+		}
+
+		$(".tb-content-toggle#" + contentToggleItem.id + " ." + contentToggleItem.id + " > a.content-toggle-button").removeClass("active");
+		$(".tb-content-toggle#" + contentToggleItem.id + " ." + contentToggleItem.id + " > a.content-toggle-button[data-target='#" + targetId + "']").addClass("active");
+		$(".tb-content-toggle#" + contentToggleItem.id +  " > .panel > .panel-collapse").removeClass("show");
+		$(".tb-content-toggle#" + contentToggleItem.id +  " > .panel > .panel-collapse#" + targetId).addClass("show");
+	}
+
+	function replaceHashWithHeading(id) {
+		const headers = $('#' + id).find(":header");
+		const filteredHeaders = $('#' + id).find('p');
+		const siblingParagraphs = $(filteredHeaders).map(function(idx, el) {
+			return $(el).nextAll('p:first');
+		});
+
+		$(siblingParagraphs).each(function() {
+			if ($(this).text().startsWith('##')) {
+				const paragraph = $(this);
+				const headerLevel = paragraph.text().split(' ')[0].length;
+				const newHeader = $("<h" + headerLevel + ">").text(paragraph.text().replace(/^#+/, ''));
+				newHeader.attr("id", newHeader.text().trim().split(' ').join('-').trim().toLowerCase());
+				paragraph.replaceWith(newHeader);
+			}
+		});
+	}
+
+	function initContentToggleHandler(contentToggleItem) {
+		let toggleBlocksIds = [];
+		$('.panel-heading.' + contentToggleItem.id + ' > a').each(function() {
+			toggleBlocksIds.push($(this).attr("data-target").substring(1));
+		});
+		let i = 0;
+		for (let id of toggleBlocksIds) {
+			toggleBlocksIdsToTocsIds[contentToggleItem.id][id] = [];
+			$('#' + id).find(":header").each(function() {
+				let heading = $(this);
+				heading.attr("id", heading.attr("id") + i++);
+				toggleBlocksIdsToTocsIds[contentToggleItem.id][id].push('markdown-toc-' + $(this).attr('id'));
+			});
+			replaceHashWithHeading(id);
+		}
+
+		window.addEventListener('popstate', function() {
+			onPopStateHandler(contentToggleItem);
+		});
+
+		onPopStateHandler(contentToggleItem);
+
+		$('.tb-content-toggle#' + contentToggleItem.id + ' .' + contentToggleItem.id + ' > a.content-toggle-button')
+			.each((idx,element) => parseButtons(element, contentToggleItem));
+
+		const firstId = Object.keys(toggleBlocksIdsToTocsIds[contentToggleItem.id])[0];
+
+		$('.tb-content-toggle#' + contentToggleItem.id + " ." + contentToggleItem.id + " >  a.content-toggle-button").removeClass("active");
+		$('.tb-content-toggle#' + contentToggleItem.id + " ." + contentToggleItem.id + " > a.content-toggle-button[data-target='#" + firstId + "']").addClass("active");
+
+		$(".tb-content-toggle#" + contentToggleItem.id + " > .panel > .panel-collapse").removeClass("show");
+		$(".tb-content-toggle#" + contentToggleItem.id + " > .panel > .panel-collapse#" + firstId).addClass("show");
+	}
+
+	function parseButtons(element, contentToggleItem) {
+		element.addEventListener('click', function(event) {
+			event.preventDefault();
+			var id = element.getAttribute("data-target").substring(1);
+			var param = contentToggleItem.id;
+			var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+			params[param] = id;
+
+			var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
+			if (window.location.hash) {
+				newurl += window.location.hash;
+			}
+			window.history.pushState({ path: newurl }, '', newurl);
+			selectTargetHandler(contentToggleItem, id);
+		});
+	}
+
+	function addExpandButton(codeBlock) {
+		const pre = $(codeBlock).find('pre').first();
+		const classes = $(codeBlock).attr('class').split(' ');
+
+		const expandableClass = classes.find(className => className.startsWith('expandable'));
+
+		if (expandableClass) {
+			let rows = parseInt(expandableClass.split('-')[1]);
+			let collapsedHeight = rows * 28 + 5;
+			pre.css('height', collapsedHeight + 'px');
+			$(codeBlock).find('.highlight').first().css("margin-bottom", "45px");
+
+			let button = $('<button class="expand-code-btn"><div class="collapsed"></div><p>expand</p></button>');
+
+			button.on('click', function () {
+				if (button.attr('data-expanded') === 'true') {
+					pre.css('height', collapsedHeight + 'px');
+					button.attr('data-expanded', 'false');
+					button.find('p').text('expand');
+					button.get(0).scrollIntoView({ block: "center" });
+					button.find('div').removeClass('expanded');
+					button.find('div').addClass('collapsed');
+				} else {
+					if (pre.prop('scrollHeight') > 2775) {
+						$(codeBlock).find('.rouge-gutter').css("width", "60px");
+					}
+					pre.css('height', pre.prop('scrollHeight') + 'px');
+					button.attr('data-expanded', 'true');
+					button.find('p').text('collapse');
+					button.find('div').removeClass('collapsed');
+					button.find('div').addClass('expanded');
+				}
+			});
+
+			$(codeBlock).append(button);
+		}
+	}
+})();

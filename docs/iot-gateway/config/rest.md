@@ -123,7 +123,7 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
 With SSL<small>Recommended</small>%,%accessToken%,%templates/iot-gateway/rest-connector-ssl-security-config.md%br%
 Without SSL<small>No security</small>%,%anonymous%,%templates/iot-gateway/rest-connector-no-ssl-security-config.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="restConnectorCredentialsConfig" toggle-spec=restconnectorsecuritytogglespec %}  
+{% include content-toggle.liquid content-toggle-id="restConnectorCredentialsConfig" toggle-spec=restconnectorsecuritytogglespec %}  
 
 ### Mapping section
 
@@ -144,11 +144,11 @@ By default, the gateway uses Json converter, but it is possible to provide custo
 
 This section provides configuration for client authorization at the gateway for every endpoint.
  
-{% capture restconnectorsecuritytogglespec %}
+{% capture restconnectorsecuritytogglespec2 %}
 Basic<small>Recommended</small>%,%username%,%templates/iot-gateway/rest-connector-basic-security-config.md%br%
 Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/rest-connector-anonymous-security-config.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="restConnectorCredentialsConfig" toggle-spec=restconnectorsecuritytogglespec %}
+{% include content-toggle.liquid content-toggle-id="restConnectorCredentialsConfig" toggle-spec=restconnectorsecuritytogglespec2 %}
 
 
 #### Converter subsection
@@ -169,7 +169,7 @@ Types of request converters:
 json<small>Recommended if json will be received in the request</small>%,%json%,%templates/iot-gateway/rest-converter-json-config.md%br%
 custom<small>Recommended if bytes or anything else will be received in the request</small>%,%custom%,%templates/iot-gateway/rest-converter-custom-config.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="restConverterTypeConfig" toggle-spec=restconvertertypespec %}
+{% include content-toggle.liquid content-toggle-id="restConverterTypeConfig" toggle-spec=restconvertertypespec %}
 
 {% capture difference %}
 <br>

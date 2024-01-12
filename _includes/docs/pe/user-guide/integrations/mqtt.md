@@ -63,7 +63,7 @@ Although the Debug mode is very useful for development and troubleshooting, leav
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-uplink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-uplink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="mqttuplinkconverterconfig" toggle-spec=mqttuplinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="mqttuplinkconverterconfig" toggle-spec=mqttuplinkconverterconfig %}
 
 #### Downlink Converter
 
@@ -84,7 +84,7 @@ Create another converter with the name "**MQTT Downlink Converter**" and type **
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-downlink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-downlink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="mqttdownlinkconverterconfig" toggle-spec=mqttdownlinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="mqttdownlinkconverterconfig" toggle-spec=mqttdownlinkconverterconfig %}
 
 
 #### MQTT Integration Setup
@@ -223,7 +223,7 @@ Go to the **Data converters** page, open your "**MQTT Downlink Converter**" and 
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-downlink-converter-config-tbel-2.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-downlink-converter-config-javascript-2.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="mqttdownlinkconverterconfig2" toggle-spec=mqttdownlinkconverterconfig2 %}
+{% include content-toggle.liquid content-toggle-id="mqttdownlinkconverterconfig2" toggle-spec=mqttdownlinkconverterconfig2 %}
 
 The script above removes quotes from *msg.params* value, which comes as quoted string, and parses it to integer. Then it builds a result object which is passed to the Integration.
 The result object structure should be followed: the data (the message payload sent to the external MQTT broker as-is) and the metadata (is used by Integrationin). As mentioned: the Integration downlink topic is configured to **${topic}**, which means that the integration will take the metadata.topic and use it as the downlink topic.
@@ -274,7 +274,7 @@ Or just paste the following code in the encoder window:
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-downlink-converter-config-tbel-3.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-downlink-converter-config-javascript-3.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="mqttdownlinkconverterconfig3" toggle-spec=mqttdownlinkconverterconfig3 %}
+{% include content-toggle.liquid content-toggle-id="mqttdownlinkconverterconfig3" toggle-spec=mqttdownlinkconverterconfig3 %}
 
 Then prepare the uplink converter to receive the response messages. Go to the "**MQTT Uplink Converter**" and paste the following code in the decoder window:
 
@@ -282,7 +282,7 @@ Then prepare the uplink converter to receive the response messages. Go to the "*
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/mqtt/mqtt-uplink-converter-config-tbel-2.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/mqtt/mqtt-uplink-converter-config-javascript-2.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="mqttuplinkconverterconfig2" toggle-spec=mqttuplinkconverterconfig2 %}
+{% include content-toggle.liquid content-toggle-id="mqttuplinkconverterconfig2" toggle-spec=mqttuplinkconverterconfig2 %}
 
 The script above is slightly different from what we had initially. It distinguishes between Post Telemetry requests and RPC call Responses, thus publishing different kind of output to Rule Engine.
 

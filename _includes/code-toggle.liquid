@@ -1,16 +1,3 @@
-<!-- {% comment %}
-
- params - should contains language and tarted modifiers for code snippet, separated by "|"
- Allowed modifiers:
- .copy-code - add copy button to code snippet
- .expandable-X - Code snippet will show only X lines of code and will have an array to expand the code
-
- Example:
- {% capture targetCode %}
- var someVariable = "Some variable";
- {% endcapture %}
- {% include code-toggle.liquid code=targetCode params="javascript|.copy-code.expandable-20" %}
-{% endcomment %} -->
 {% assign params = include.params | split: "|" %}
 {% capture codeBlock %}
 ```{{ params[0] }}

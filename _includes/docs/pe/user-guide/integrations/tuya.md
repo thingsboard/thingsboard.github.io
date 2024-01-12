@@ -69,7 +69,7 @@ Although the Debug mode is very useful for development and troubleshooting, leav
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/tuya/tuya-uplink-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/tuya/tuya-uplink-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="tuyauplink" toggle-spec=tuyauplink %}
+{% include content-toggle.liquid content-toggle-id="tuyauplink" toggle-spec=tuyauplink %}
 
 ### Downlink Converter
 
@@ -81,7 +81,7 @@ Create another converter with the name **"Tuya Downlink Converter"** and type **
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/tuya/tuya-downlink-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/tuya/tuya-downlink-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="tuyadownlink" toggle-spec=tuyadownlink %}
+{% include content-toggle.liquid content-toggle-id="tuyadownlink" toggle-spec=tuyadownlink %}
 
 ### Tuya Integration Setup
 

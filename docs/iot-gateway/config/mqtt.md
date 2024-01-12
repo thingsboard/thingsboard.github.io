@@ -228,7 +228,7 @@ Basic<small>Recommended</small>%,%accessToken%,%templates/iot-gateway/mqtt-conne
 Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/mqtt-connector-anonymous-security-config.md%br%
 Certificates<small>For advanced security</small>%,%tls%,%templates/iot-gateway/mqtt-connector-tls-security-config.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="mqttConnectorCredentialsConfig" toggle-spec=mqttconnectorsecuritytogglespec %}  
+{% include content-toggle.liquid content-toggle-id="mqttConnectorCredentialsConfig" toggle-spec=mqttconnectorsecuritytogglespec %}  
 
 ### Section "mapping"
 
@@ -304,7 +304,7 @@ json<small>Recommended if json will be received in response</small>%,%json%,%tem
 bytes<small>Recommended if bytes will be received in response</small>%,%raw%,%templates/iot-gateway/mqtt-converter-bytes-config.md%br%
 custom<small>Recommended if bytes or anything else will be received in response</small>%,%custom%,%templates/iot-gateway/mqtt-converter-custom-config.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="MqttConverterTypeConfig" toggle-spec=mqttconvertertypespec %}
+{% include content-toggle.liquid content-toggle-id="MqttConverterTypeConfig" toggle-spec=mqttconvertertypespec %}
 
 
 **Note**: You can specify multiple mapping objects inside the array.

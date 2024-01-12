@@ -33,7 +33,7 @@ While Debug mode is very useful for development and troubleshooting, leaving it 
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/http/http-uplink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/http/http-uplink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="httpuplinkconverterconfig" toggle-spec=httpuplinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="httpuplinkconverterconfig" toggle-spec=httpuplinkconverterconfig %}
 
 Now that the Uplink converter has been created, it is possible to create an integration.
 
@@ -198,7 +198,7 @@ Create Downlink in Data converters. To see events enable Debug.
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/http/http-downlink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/http/http-downlink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="httpdownlinkconverterconfig" toggle-spec=httpdownlinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="httpdownlinkconverterconfig" toggle-spec=httpdownlinkconverterconfig %}
 
 Now you need to add the created downlink converter to the integration.
 

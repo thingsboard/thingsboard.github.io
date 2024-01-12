@@ -27,7 +27,7 @@
     <meta name="cf-2fa-verify" content="a08672380de15e9">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     {% if customTitle %}
     <title>{{ customTitle }}</title>
     {% seo title=false %}
@@ -51,7 +51,7 @@
     <script async defer src="https://cdnjs.cloudflare.com/ajax/libs/gifffer/1.5.0/gifffer.min.js"></script>
     <script async defer src="https://cdn.jsdelivr.net/npm/clipboard@1/dist/clipboard.min.js"></script>
     <script async defer>
-        window.onload = function() {
+        window.onload = function () {
             Gifffer();
         }
     </script>
@@ -191,18 +191,18 @@
         }
 
         var initialScriptsList = [
-            {src: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', type: 'css'},
-            {src: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', type: 'css'},
-            {src: 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700', type: 'css'},
-            {src: '/js/jquery-2.2.0.min.js', type: 'script'},
-            {src: '/css/jquery-ui.min.css', type: 'css'},
-            {src: '/js/jquery-ui.min.js', type: 'script'},
-            {src: '/js/jquery.vide.js', type: 'script'},
-            {src: '/js/script.js', type: 'script'},
-            {src: '/css/photoswipe.css', type: 'css'},
-            {src: '/css/default-skin/default-skin.css', type: 'css'},
-            {src: '/js/photoswipe.min.js', type: 'script'},
-            {src: '/js/photoswipe-ui-default.min.js', type: 'script'}
+            { src: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', type: 'css' },
+            { src: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', type: 'css' },
+            { src: 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700', type: 'css' },
+            { src: '/js/jquery-2.2.0.min.js', type: 'script' },
+            { src: '/css/jquery-ui.min.css', type: 'css' },
+            { src: '/js/jquery-ui.min.js', type: 'script' },
+            { src: '/js/jquery.vide.js', type: 'script' },
+            { src: '/js/script.js', type: 'script' },
+            { src: '/css/photoswipe.css', type: 'css' },
+            { src: '/css/default-skin/default-skin.css', type: 'css' },
+            { src: '/js/photoswipe.min.js', type: 'script' },
+            { src: '/js/photoswipe-ui-default.min.js', type: 'script' }
         ];
 
         loadNextScript(0, initialScriptsList);
@@ -274,8 +274,8 @@
                         ga(
                             "send", "event", "Outgoing Links", link,
                             document.location.pathname + document.location.search, {
-                                "hitCallback": hitBack
-                            }
+                            "hitCallback": hitBack
+                        }
                         );
 
                         setTimeout(hitBack, 1000);
@@ -287,11 +287,11 @@
         var _w = window;
         var _gaLtEvt = ("ontouchstart" in _w) ? "click" : "mousedown";
         _w.addEventListener ? _w.addEventListener("load", function () {
-                document.body.addEventListener(_gaLtEvt, _gaLt, !1)
-            }, !1)
+            document.body.addEventListener(_gaLtEvt, _gaLt, !1)
+        }, !1)
             : _w.attachEvent && _w.attachEvent("onload", function () {
-            document.body.attachEvent("on" + _gaLtEvt, _gaLt)
-        });
+                document.body.attachEvent("on" + _gaLtEvt, _gaLt)
+            });
     </script>
     <script async defer>
         (function (i, s, o, g, r, a, m) {
@@ -334,7 +334,7 @@
             let subMenuActive = false;
             menuElement.on('mouseleave', function (event) {
                 if (!$(event.relatedTarget).parents('div.sub-menu-container').length) {
-                    setTimeout(function() {
+                    setTimeout(function () {
                         if (!submenuContainer.is(':hover')) {
                             subMenuActive = false;
                             submenuContainer.removeClass('active bounds-transition');
@@ -352,17 +352,17 @@
                     indicator.removeClass('left-transition');
                 }
             });
-            menuItems.each(function() {
-                let item = $( this );
+            menuItems.each(function () {
+                let item = $(this);
                 let subMenuId = item.attr('data-submenu-id');
                 item.on('mouseenter', function () {
-                    setTimeout(function() {
+                    setTimeout(function () {
                         if (item.is(':hover')) {
                             let submenus = $('nav.head-menu > div.sub-menu-container > div');
                             submenus.css('display', 'none');
                             menuItems.removeClass('active');
                             item.addClass('active');
-                            let targetSubMenu = $('nav.head-menu > div.sub-menu-container > div#'+subMenuId);
+                            let targetSubMenu = $('nav.head-menu > div.sub-menu-container > div#' + subMenuId);
                             targetSubMenu.css('display', 'block');
                             submenuContainer.css('overflow', 'visible');
                             let offset = (item.outerWidth() - targetSubMenu.outerWidth()) / 2;
@@ -394,7 +394,7 @@
                 initMobileSubmenu();
             }
 
-            $(window).resize(function(){
+            $(window).resize(function () {
                 let newIsMobile = $('button.burger').css('display') === 'block';
                 if (isMobile !== newIsMobile) {
                     isMobile = newIsMobile;
@@ -406,15 +406,15 @@
                 }
             });
 
-            $( document ).ready(function() {
+            $(document).ready(function () {
                 // Rogue line numbers fix (don't show line numbers for 1 row)
-                $('.rouge-gutter.gl').each(function() {
+                $('.rouge-gutter.gl').each(function () {
                     var lineNumbers = $(this).children('.lineno');
                     if (lineNumbers.text() === '1\n') {
                         $(this).css('display', 'none');
                     }
                 });
-                $('a#use-cases-link').click(function(e) {
+                $('a#use-cases-link').click(function (e) {
                     let isMobile = $('button.burger').css('display') === 'block';
                     if (isMobile) {
                         e.preventDefault();
@@ -439,10 +439,10 @@
             submenuContainer.removeClass('active');
             submenuContainer.css('display', 'none');
 
-            targetSubMenus.each(function() {
-                let subMenu = $( this );
+            targetSubMenus.each(function () {
+                let subMenu = $(this);
                 let subMenuId = subMenu.attr('id');
-                let parent = $('nav.head-menu > ul > li.'+subMenuId);
+                let parent = $('nav.head-menu > ul > li.' + subMenuId);
                 parent.append(subMenu);
             });
         }
@@ -456,8 +456,8 @@
             submenuContainer.css('display', 'block');
             let menuItems = $('nav.head-menu > ul > li');
             menuItems.removeClass('active');
-            targetSubMenus.each(function() {
-                let subMenu = $( this );
+            targetSubMenus.each(function () {
+                let subMenu = $(this);
                 submenuContainer.append(subMenu);
             });
         }
@@ -465,7 +465,7 @@
         function listburg(subMenuId) {
             let isMobile = $('button.burger').css('display') === 'block';
             if (isMobile) {
-                let targetSubMenu = $('nav.head-menu > ul > li > div.centered-sub#'+subMenuId+' > ul.sub-menu');
+                let targetSubMenu = $('nav.head-menu > ul > li > div.centered-sub#' + subMenuId + ' > ul.sub-menu');
                 let isOpen = targetSubMenu.hasClass('open-sub');
                 let subMenus = $('nav.head-menu > ul > li > div.centered-sub > ul.sub-menu');
                 subMenus.removeClass('open-sub');
@@ -488,7 +488,7 @@
         <button onclick="Burger()" class="burger"  aria-label="Burger menu"></button>
         <div id="githubButtonContainer">
             <a class="github-button" href="{{ githubLink }}" data-show-count="true"
-               aria-label="{{ githubLabel }}">Star</a>
+                aria-label="{{ githubLabel }}">Star</a>
         </div>
     </div>
     <nav class="head-menu">

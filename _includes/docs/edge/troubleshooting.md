@@ -42,7 +42,7 @@ Different deployment tools provide different ways to view logs:
 Standalone Deployment%,%standalone%,%templates/edge/troubleshooting/logs/view-logs/standalone-view-logs.md%br%
 Docker-Compose Deployment%,%docker-compose%,%templates/edge/troubleshooting/logs/view-logs/docker-compose-view-logs.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype %}
+{% include content-toggle.liquid content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype %}
 
 
 ### Enable certain logs
@@ -85,6 +85,7 @@ Here's an example of the <b>logback.xml</b> configuration:
     </root>
 </configuration>
 ```
+{: .copy-code .expandable-10 }
 
 The most useful for the troubleshooting parts of the config files are <i>loggers</i>.
 They allow you to enable/disable logging for the certain class or group of classes.
@@ -95,11 +96,11 @@ To enable/disable logging for some part of the system you need to add proper <co
 
 Different deployment tools provide different ways to update logs:
 
-{% capture contenttogglespecdeploymenttype %}
+{% capture contenttogglespecdeploymenttype2 %}
 Standalone Deployment%,%standalone%,%templates/edge/troubleshooting/logs/enable-logs/standalone-enable-logs.md%br%
 Docker-Compose Deployment%,%docker-compose%,%templates/edge/troubleshooting/logs/enable-logs/docker-compose-enable-logs.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype %}
+{% include content-toggle.liquid content-toggle-id="deploymentType2" toggle-spec=contenttogglespecdeploymenttype2 %}
 
 ## Metrics
 

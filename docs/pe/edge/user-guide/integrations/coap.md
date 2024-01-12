@@ -125,7 +125,7 @@ Text payload<br>%,%text%,%templates/integration/coap/coap-uplink-converter-text.
 JSON payload<br>%,%json%,%templates/integration/coap/coap-uplink-converter-json.md%br%
 Binary payload<br>%,%binary%,%templates/integration/coap/coap-uplink-converter-binary.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="coapintegartionuplinkpayload" toggle-spec=uplinkpayload %}
+{% include content-toggle.liquid content-toggle-id="coapintegartionuplinkpayload" toggle-spec=uplinkpayload %}
 
 You can change the decoder function while creating the converter or after creating it.
 If the converter has already been created, then click on the 'pencil' icon to edit it.
@@ -161,7 +161,7 @@ Text payload<br>%,%text%,%templates/edge/integrations/coap/coap-send-uplink-text
 JSON payload<br>%,%json%,%templates/edge/integrations/coap/coap-send-uplink-json.md%br%
 Binary payload<br>%,%binary%,%templates/edge/integrations/coap/coap-send-uplink-binary.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="coapintegrationsenduplink" toggle-spec=senduplink %}
+{% include content-toggle.liquid content-toggle-id="coapintegrationsenduplink" toggle-spec=senduplink %}
 
 {% include images-gallery.html imageCollection="sendUplink" %}
 

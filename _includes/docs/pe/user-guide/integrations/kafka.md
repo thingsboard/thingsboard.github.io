@@ -130,7 +130,7 @@ At this stage, you need to set the parameters to establish a connection between 
 Kafka<br><small>Common/Docker </small>%,%common%,%templates/integration/kafka/kafka-common-and-docker-integration%br%
 Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/integration/kafka/kafka-confluent-integration{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="integrationTypes" toggle-spec=integrationTypes %}
+{% include content-toggle.liquid content-toggle-id="integrationTypes" toggle-spec=integrationTypes %}
 
 ## Send test Uplink message from
 
@@ -138,7 +138,7 @@ Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/integr
 Kafka<br><small>Common/Docker </small>%,%common%,%templates/integration/kafka/kafka-common-and-docker-send-msg%br%
 Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/integration/kafka/kafka-confluent-send-msg{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="uplinkTypes" toggle-spec=uplinkTypes %}
+{% include content-toggle.liquid content-toggle-id="uplinkTypes" toggle-spec=uplinkTypes %}
 
 ## Advanced Usage: Kafka Producer (Downlink)
 
