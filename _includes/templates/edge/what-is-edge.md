@@ -5,6 +5,10 @@
 {% assign appPrefix = "ThingsBoard CE" %}
 {% endif %}
 
+{% if docsPrefix != 'pe/edge/' %}
+<h3>Interested in the Professional Edition? Explore the ThingsBoard PE Edge Documentation <a style="pointer-events: all;" href="/docs/pe/edge/">Here</a>.</h3>
+{% endif %}
+
 {% capture tb-open-source %}
 ThingsBoard is an open-source IoT platform that provides a robust suite of features for data collection, processing, visualization, and device management.
 If you are a new platform user, we suggest reading [**What is ThingsBoard?**](/docs/getting-started-guides/what-is-thingsboard/) before proceeding with ThingsBoard Edge.  

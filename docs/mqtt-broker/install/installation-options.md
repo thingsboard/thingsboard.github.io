@@ -28,6 +28,15 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
+                                        <a href="/docs/mqtt-broker/install/docker-windows/">
+                                            <span>
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="deployment-card-block">
                                         <a href="/docs/mqtt-broker/install/cluster/docker-compose-setup/">
                                             <span>
                                                 <div class="deployment-logo">
@@ -67,7 +76,7 @@ notitle: "true"
                                         <a href="/docs/mqtt-broker/install/building-from-source/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/sources.svg" title="Building from sources" alt="Building from sources">
+                                                    <img width="" src="/images/install/platform/sources.svg" title="Building from sources" alt="Github Maven Building from sources">
                                                  </div>
                                             </span>
                                         </a>

@@ -1,14 +1,14 @@
 * TOC
 {:toc}
 
-## Introduction
-
 All [IoT Dashboards](/docs/{{docsPrefix}}user-guide/dashboards/) are constructed using **ThingsBoard widgets** defined in the Widget Library.
+
+A widget is an element that displays a specific type of information or functionality on a dashboard.
 Widgets are used to display data and visualize information obtained from devices connected to the ThingsBoard platform, remote device control, alarms management, and display static custom HTML content.
 
 ## Widget Types
 
-According to the provided features, each widget definition represents a specific type of widget.
+According to the provided features, each widget definition represents a specific widget type.
 There are five widget types:
 
  - [Latest values;](#latest-values)
@@ -19,7 +19,7 @@ There are five widget types:
 
 {% include images-gallery.html imageCollection="wl-dashboard-widgets" preview="false" %}
  
-Each widget type has its own specific data source configuration to visualize data. Types of available data source depend on widget type:
+Each widget type has its own specific data source configuration to visualize data. Types of available data sources depend on widget type:
 
  - **Alarm source** - this data source type, used primarily in Alarm widgets, requires a source entity to display related alarms and their corresponding fields;
  - **Alarms count** - this data source type is used in latest values widgets. You need to specify the target entity;
@@ -32,7 +32,7 @@ Each widget type has its own specific data source configuration to visualize dat
 
 The Latest values widget type is designed to showcase the latest values of a specific entity attribute or time series data point (e.g., any Gauge Widget or Entities Table widget).
 This type of widget uses values of entity attribute(s) or time series as a data source.
-Digital Gauge in example is displaying current temperature value.
+Digital Gauge in the example is displays the current temperature value.
  
 {% include images-gallery.html imageCollection="wl-latest-values-datasource" %}
 
@@ -41,38 +41,38 @@ Digital Gauge in example is displaying current temperature value.
 The Time series widget type displays historical values for the selected period of time, or the latest values in the certain time window (e.g., Timeseries Line Chart or Timeseries Bar Chart).
 This widget type uses only the values of entity time series as a data source.
 In order to specify the time frame of displayed values, _Timewindow_ settings are used.
-The timewindow can be specified on the dashboard page or in the widget details. It can be either _Realtime_ - the dynamically changed time frame for a certain latest interval, or _History_ - a fixed historical time frame.
+The timewindow can be specified on the dashboard page or via widget details. It can be either _Realtime_ - the dynamically changed time frame for a certain latest interval, or _History_ - a fixed historical time frame.
 All these settings are part of Timeseries widget configuration.
-In the example, the "Timeseries Line Chart" displays the speed value of device in realtime.
+In the example, the "Timeseries Line Chart" displays the speed value of the device in real-time.
 
 {% include images-gallery.html imageCollection="wl-timeseries" %}
 
 ### Control widget
 
-The Control widget allows sending RPC commands to devices, it handles and visualizes reply from the device (e.g., Raspberry Pi GPIO Control)
+The Control widget allows sending RPC commands to devices, it handles and visualizes replies from the device (e.g., Raspberry Pi GPIO Control).
 The RPC widgets are configured by specifying the target device as the target endpoint for RPC commands.
-In the example, the “Basic GPIO Control” widget sends GPIO switch commands and detects the current GPIOs switch status.
+In the example, the “Basic GPIO Control” widget sends GPIO switch commands and detects the current GPIO switch status.
 
 {% include images-gallery.html imageCollection="wl-control-widget" %}
 
 ### Alarm Widget
 
 The Alarm Widget type displays alarms related to the specified entity in the certain time window (e.g., Alarms table).
-The Alarm widget is configured by specifying an entity as the alarm source, and the corresponding alarm fields.
+To configure the Alarm widget, you designate an entity as the alarm source and define the corresponding alarm fields.
 As the _Timeseries widgets_, Alarm widgets have the _timewindow_ configuration to specify the time frame of the displayed alarms.
 Additionally, the configuration includes parameters such as "Alarm status", "Alarm severity", and "Alarm type".
-The "Alarm status" parameter is used to show the status of the alarms being fetched.
+The “Alarm status” parameter shows the status of the alarms being fetched.
 The "Alarm severity" parameter shows the frequency of alarm fetches in seconds.
 The "Alarm Type" parameter helps identify the primary source of the alarm.
 For instance, "HighTemperature" and "LowHumidity" represent two different alarms.
-In this context, the "Alarms table" widget displays the latest alarm for the device in real time.
+In this context, the "Alarms table" widget displays the latest alarm for the device in real-time.
 
 {% include images-gallery.html imageCollection="wl-alarms" %}
 
 ### Static
 
 The Static widget type displays static customizable HTML content (e.g., HTML card).
-Static widgets don’t use any data sources and are usually configured by specifying static HTML content and optionally CSS styles.
+Static widgets don’t use any data sources and are usually configured by specifying static HTML content and, optionally, CSS styles.
 An example of a Static widget is the “HTML card” that displays the specified HTML content.
 
 {% include images-gallery.html imageCollection="wl-static" %}
@@ -114,9 +114,9 @@ justify-content: center;
 ## Widgets Library (Bundles)
 
 Widgets are grouped into widget bundles according to their purposes.
-Some widgets can be found in multiple packages simultaneously. For example, the Alarm Count widget can be found in the Alarm widgets bundle and the Count widgets bundle.
+Some widgets can be found in multiple packages simultaneously. For example, the Alarm Count widget can be both found in the Alarm widgets bundle and the Count widgets bundle.
 
-There are system-level and tenant-level widgets bundles. Initial ThingsBoard installation comes with a basic set of system-level widgets bundles.
+There are system-level and tenant-level widget bundles. Initial ThingsBoard installation comes with a basic set of system-level widget bundles.
 
 The system-level bundles can be managed by a **System administrator** and are available for use by any tenant in the system.
 The tenant-level bundles can be managed by a **Tenant administrator** and are available for use only by this tenant and his customers.
@@ -130,15 +130,21 @@ You can also find the widget you need by its name on the "Widgets" tab. Here, al
 
 {% include images-gallery.html imageCollection="wl" %}
 
+### Air quality
+
+This widgets bundle includes widgets for visualizing air quality data.
+
+{% include images-gallery.html imageCollection="wl-air-quality" %}
+
 ### Alarm widgets
 
 The Alarm widgets bundle is useful for visualization of alarms for specific entities, both in real-time and history modes.
 
 {% include images-gallery.html imageCollection="wl-alarm-bundle" %}
 
-### Analog Gauges
+### Analog gauges
 
-The Analog Gauges bundle is useful for visualization of temperature, humidity, speed, and other integer or float values.
+The Analog Gauges widgets bundle is useful for visualization of temperature, humidity, speed, and other integer or float values.
 
 {% include images-gallery.html imageCollection="wl-analog-gauges-bundle" %}
 
@@ -166,13 +172,13 @@ The Counter widgets bundle is useful for counting and visualizing the current nu
 
 {% include images-gallery.html imageCollection="wl-count-bundle" %}
 
-### Date widgets 
+### Date
 
 The Date widgets bundle is useful for changing the data range for other widgets on the dashboard.
 
 {% include images-gallery.html imageCollection="wl-date-bundle" %}
 
-### Digital Gauges
+### Digital gauges
 
 The Digital Gauges bundle is useful for visualization of temperature, humidity, speed and other integer or float values.
 
@@ -196,7 +202,7 @@ The Entity admin widgets display a list of entities with their data, counting en
 
 {% include images-gallery.html imageCollection="wl-entity-bundle" %}
 
-### Files widgets
+### Files
 
 {% capture difference %}
 **Available only in PE and PaaS.**
@@ -221,7 +227,7 @@ The GPIO widgets bundle is useful for visualization and controlling GPIO state f
 
 ### Home page widgets
 
-The Home page widget bundle is useful for customizing and displaying quick links to the platform's UI components, documentation, or any other resources on the home page, displaying statistics about the number of entities and API usege, etc.
+The Home page widgets bundle is useful for customizing and displaying quick links to the platform's UI components, documentation, or any other resources on the home page, displaying statistics about the number of entities and API usege, etc.
 
 {% include images-gallery.html imageCollection="wl-home" %}
 
@@ -231,13 +237,25 @@ The HTML widgets bundle is useful for injecting custom HTML code. Or for display
 
 {% include images-gallery.html imageCollection="wl-html" %}
 
+### Indoor Environment
+
+The Indoor Environment widget bundle is effective in visualizing data related to indoor environments.
+
+{% include images-gallery.html imageCollection="wl-indoor-environment-bundle" %}
+
 ### Input widgets
 
 The Input widgets bundle is useful for modifying the attributes of an entity.
 
 {% include images-gallery.html imageCollection="wl-input-bundle" %}
 
-### Maps widgets
+### Liquid level
+
+The Liquid level widgets bundle includes widgets for visualizing the level of liquid inside the tank.
+
+{% include images-gallery.html imageCollection="wl-liquid-level-bundle" %}
+
+### Maps
 
 The Map widgets bundle is useful for visualizing the geographic location of devices and tracking device routes in both real-time and history modes.
 
@@ -248,6 +266,18 @@ The Map widgets bundle is useful for visualizing the geographic location of devi
 The Navigation widgets bundle is useful for defining the home dashboard of the user.
 
 {% include images-gallery.html imageCollection="wl-navigation-bundle" %}
+
+### Outdoor Environment
+
+The Outdoor Environment widget bundle is effective in visualizing data related to outdoor environments.
+
+{% include images-gallery.html imageCollection="wl-outdoor-environment-bundle" %}
+
+### Status indicators
+
+The Status indicators widgets bundle includes widgets for visualizing battery level, signal strength, and progress bar.
+
+{% include images-gallery.html imageCollection="wl-status-indicators-bundle" %}
 
 ### Scheduling widgets
 
@@ -262,7 +292,7 @@ The Scheduling widgets bundle is useful for [scheduling](/docs/{{docsPrefix}}use
 
 ### Tables Widgets
 
-The Tables widget bundle is useful when you need to display a list of entities, a list of alarm signals, and time series data for one or several entities.
+The Tables widgets bundle is useful when you need to display a list of entities, a list of alarm signals, and time series data for one or several entities.
 Additionally, this widget bundle showcases Persistent RPC requests, which are based on entity alias. 
 It can also be filtered optionally and supports pagination for enhanced usability.
 
@@ -272,9 +302,9 @@ It can also be filtered optionally and supports pagination for enhanced usabilit
 
 ### Adding Widget
 
-If the system administrator adds a new widget, it automatically becomes a system one. 
-This means that only the administrator has the privilege to modify, or delete the widget. 
-Tenant administrators can also create widgets. But they have permission to modify only the widgets they created.
+When a system administrator adds a new widget, it automatically becomes a system widget.
+This means that only the administrator has the privilege to modify, or delete the widget.
+Tenant administrators can also create widgets, but they are granted permission to modify only the widgets they have created.
 You can always implement and add your widgets by following this [guide](/docs/{{docsPrefix}}user-guide/contribution/widgets-development/).
 
 To add a new widget, you should:
@@ -291,7 +321,7 @@ In order to export a widget type, you should go to the Widgets Library page, nav
 
 ### Importing Widget
 
-Please note that only system administrators can modify system (default) widgets. This means that only they can edit and delete widgets inside the bundle, add or import new widgets into the bundle.
+Please note that only system administrators can modify system (default) widgets. This includes the ability to edit, delete, add, or import widgets within the bundle.
 When a system administrator creates a new widget bundle, it's set as a system-level item for tenants, preventing them from modifying it.
 Nevertheless, tenants can add their own widgets. In this case, they have full rights to manage created widget types inside the bundle.
 
@@ -315,9 +345,9 @@ Second way:
 
 ### Adding Widgets Bundle
 
-If the system administrator adds a new widgets bundle, it automatically becomes a system one. 
-It means that only he can delete, edit, and add widget into the bundle. 
-Tenant administrators can create widgets bundles as well. In this case, they have permissions to modify created bundles.
+When a system administrator adds a new widgets bundle, it automatically becomes a system widgets bundle.
+It means that only they can delete, edit, and add widget to the bundle. 
+Tenant administrators can create widget bundles as well. In this case, they have permission to modify already created bundles.
 You can always implement and add your widgets by following this [guide](/docs/{{docsPrefix}}user-guide/contribution/widgets-development/).
 
 To add a new widgets bundle, you should:
@@ -334,7 +364,7 @@ In order to export widgets bundle, you should:
 
 ### Importing Widgets Bundle
 
-To import widgets bundle, you should: 
+To import a widgets bundle, you should: 
 
 {% include images-gallery.html imageCollection="import-widgets-bundle" showListImageTitles="true" %}
 

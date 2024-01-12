@@ -1,0 +1,837 @@
+$bg-color-main: #FFFFFF
+$bg-color-accent: #F5F5F6
+
+#iot-article
+    h1
+        color: #333
+        font-family: Poppins
+        font-size: 48px
+        font-style: normal
+        font-weight: 600
+        line-height: 68px
+        letter-spacing: 0.48px
+        padding-bottom: 20px
+
+    h2
+        color: #333
+        font-family: Poppins
+        font-size: 36px
+        font-style: normal
+        font-weight: 600
+        line-height: 68px
+        letter-spacing: 0.36px
+        padding-bottom: 20px
+        &.line-height-small
+            line-height: 50px
+
+
+    h3
+        color: #2E2F3B
+        font-family: Poppins
+        font-size: 28px
+        font-style: normal
+        font-weight: 500
+        line-height: 42px
+        letter-spacing: 0.028px
+        padding-bottom: 60px
+        &.small-padding
+            padding-bottom: 20px
+
+    h4
+        color: #2E2F3B
+        text-align: center
+        font-family: Poppins
+        font-size: 22px
+        font-style: normal
+        font-weight: 600
+        line-height: 32px
+        letter-spacing: 0.022px
+
+    .h4-left
+        font-family: Poppins
+        font-size: 24px
+        font-weight: 600
+        line-height: 40px
+        letter-spacing: 0.01em
+        text-align: left
+
+    .article-link
+        text-decoration: underline
+        &::hover
+            color: #69b6ff
+
+    .header-link
+        color: unset
+
+    .sub-title
+        display: block
+        color: #5E5F62
+        font-family: Poppins
+        font-size: 22px
+        font-style: normal
+        font-weight: 400
+        line-height: 40px
+        letter-spacing: 0.022px
+
+    .center-text
+        text-align: center
+
+    .iot-article-content
+        width: 100%
+
+        .hero
+            padding-top: 80px
+
+        .wrapper-main-color
+            background-color: $bg-color-main
+
+        .wrapper-accent-color
+            background-color: $bg-color-accent
+
+        .block-wrapper
+            width: 100%
+            display: flex
+            flex-direction: column
+            align-items: center
+
+            .block-content
+                width: 100%
+                max-width: 1090px
+                display: flex
+                position: relative
+                z-index: 2
+                flex-direction: column
+
+                .image
+                    width: 100%
+                    object-fit: contain
+
+                .text-wrapper
+                    width: 100%
+                    margin-top: 60px
+                    padding: 0 95px
+
+                    #sub-title-iot-solutions-2
+                        margin-bottom: 60px
+
+                    .read-info
+                        color: #5E5F62
+                        font-family: Poppins
+                        font-size: 18px
+                        font-style: normal
+                        font-weight: 600
+                        line-height: 40px
+                        letter-spacing: 0.018px
+
+                    .text-content
+                        width: 100%
+                        color: #5E5F62
+                        font-family: Poppins
+                        font-size: 22px
+                        font-style: normal
+                        font-weight: 400
+                        line-height: 38px
+                        letter-spacing: 0.022px
+                        margin-bottom: 60px
+                        .bold
+                            font-weight: 600
+
+                    .text-content.small-margin
+                        margin-bottom: 20px
+
+                    .text-content.medium-margin
+                        margin-bottom: 40px
+
+                    .list
+                        padding-bottom: 48px
+                        li
+                            color: #5E5F62
+                            font-family: Poppins
+                            font-size: 22px
+                            font-style: normal
+                            font-weight: 400
+                            line-height: 40px
+                            letter-spacing: 0.022px
+                            list-style-type: disc
+                            margin-left: 35px
+                            padding-bottom: 12px
+                            .bold-text
+                                font-weight: 600
+                            .paragraph-list-item
+                                display: flex
+                                flex-direction: column
+
+                    #list-tb-offers
+                        padding-bottom: 68px
+
+                .comparison-table
+                    padding-bottom: 60px
+                    thead
+                        tr
+                            th
+                                padding-bottom: 20px
+                                &:nth-child(1)
+                                    padding-left: 130px
+                                    padding-right: 32px
+
+                                &:nth-child(2)
+                                    padding-left: 32px
+                                    padding-right: 130px
+
+                                .column-header
+                                    display: block
+                                    color: #2E2F3B
+                                    text-align: center
+                                    font-family: Poppins
+                                    font-size: 22px
+                                    font-style: normal
+                                    font-weight: 600
+                                    line-height: 32px
+                                    letter-spacing: 0.022px
+
+                    tbody
+                        tr
+                            &:nth-child(1)
+                                padding: 10px
+
+                            &:nth-child(odd)
+                                background-color: #F3F4F4
+
+                            td
+                                width: 50%
+                                color: #5E5F62
+                                font-family: Poppins
+                                font-size: 18px
+                                font-style: normal
+                                font-weight: 400
+                                line-height: 40px
+                                letter-spacing: 0.018px
+                                padding-top: 5px
+                                padding-bottom: 5px
+                                text-align: center
+
+
+                                &:nth-child(1)
+                                    padding-left: 130px
+                                    padding-right: 32px
+
+                                &:nth-child(2)
+                                    padding-left: 32px
+                                    padding-right: 130px
+
+                .comparison-table.mobile-table
+                    display: none
+
+                .definitions-block
+                    h2
+                        padding-bottom: 15px
+
+                    .definitions-list
+                        .definitions-list-item
+                            display: grid
+                            grid-template-columns: 1fr 1fr
+                            padding: 10px 50px
+                            align-items: center
+
+                            &:nth-child(odd)
+                                background-color: #F3F4F4
+
+                            .term
+                                display: list-item
+
+                                color: #5E5F62
+                                font-family: Poppins
+                                font-size: 18px
+                                font-style: normal
+                                font-weight: 400
+                                line-height: 40px
+                                letter-spacing: 0.018px
+
+                                &.bold
+                                    font-weight: 600
+
+                                &.padding-top
+                                    padding-top: 10px
+
+                            .definition
+                                color: #5E5F62
+                                font-family: Poppins
+                                font-size: 18px
+                                font-style: normal
+                                font-weight: 400
+                                line-height: 30px
+                                letter-spacing: 0.018px
+
+                            &.align-start
+                                align-items: start
+
+                            &.one-to-one-and-half
+                                grid-template-columns: 1fr 1.5fr
+
+                        &.side-paddings
+                            padding: 0 55px
+
+            &.medium-padding
+                padding-bottom: 50px
+
+        .details-cards-block-wrapper
+            display: flex
+            justify-content: center
+            .details-cards-block
+                display: grid
+                grid-template-columns: 1fr 1fr 1fr
+                grid-column-gap: 20px
+                max-width: 1100px
+                .details-card
+                    height: 380px
+                    display: flex
+                    flex-direction: column
+                    justify-content: flex-end
+                    border-radius: 10px
+                    background: #F5F5F6
+                    padding: 60px 28px 80px 28px
+                    .header
+                        color: #333
+                        font-family: Poppins
+                        font-size: 22px
+                        font-style: normal
+                        font-weight: 600
+                        line-height: 38px
+                        letter-spacing: 0.022px
+                    .content
+                        color: #5E5F62
+                        font-family: Poppins
+                        font-size: 18px
+                        font-style: normal
+                        font-weight: 400
+                        line-height: 38px
+                        letter-spacing: 0.018px
+
+        #details-block
+            padding: 80px 0
+            .block-content
+                max-width: 1160px
+                display: grid
+                grid-template-columns: 1fr 1fr
+                grid-column-gap: 120px
+                grid-row-gap: 40px
+
+                .detail
+                    .detail-name
+                        color: #2E2F3B
+                        font-family: Poppins
+                        font-size: 28px
+                        font-style: normal
+                        font-weight: 500
+                        line-height: 42px
+                        letter-spacing: 0.028px
+
+                    .detail-description
+                        color: #5E5F62
+                        font-family: Poppins
+                        font-size: 18px
+                        font-style: normal
+                        font-weight: 400
+                        line-height: 26px
+                        letter-spacing: 0.018px
+
+        #contact-us
+            padding: 70px 0 160px 0
+            .block-content
+                max-width: 1258px
+                .contact-us-content
+                    display: flex
+                    justify-content: space-between
+                    .info
+                        display: flex
+                        flex-direction: column
+                        margin-left: 179px
+                        padding-right: 100px
+                        max-width: 700px
+
+                        .title
+                            color: #333
+                            font-family: Poppins
+                            font-size: 48px
+                            font-style: normal
+                            font-weight: 600
+                            line-height: 68px
+                            letter-spacing: 0.48px
+                            margin-bottom: 12px
+
+                        .text
+                            color: #5E5F62
+                            font-family: Poppins
+                            font-size: 16px
+                            font-style: normal
+                            font-weight: 400
+                            line-height: 28px
+                            letter-spacing: 0.016px
+
+                    .contact-form
+                        padding-top: 30px
+                        z-index: 2
+                        .form-element
+                            margin-bottom: 28px
+                            label
+                                position: relative
+                                width: 100%
+                                p
+                                    color: rgba(0, 0, 0, 0.54)
+                                    font-size: 12px
+                                    font-style: normal
+                                    font-weight: 400
+                                    line-height: 16px
+                                    letter-spacing: 0.4px
+                                    position: absolute
+                                    top: -8px
+                                    left: 10px
+                                    z-index: 2
+                                    padding: 0px 5px
+                                    background: white
+
+                                .contact-us-form-control
+                                    width: 100%
+                                    color: #898B8F
+                                    font-size: 16px
+                                    font-style: normal
+                                    font-weight: 400
+                                    line-height: 24px
+                                    letter-spacing: 0.15px
+                                    border-radius: 4px
+                                    border: 1px solid rgba(0, 0, 0, 0.12)
+                                    padding: 16px 18px
+
+                        .contact-us-button
+                            padding: 15px
+                            border-radius: 6px
+                            color: white
+                            background-color: #2A7DEC
+                            width: 100%
+
+    footer
+        position: relative
+
+    @media screen and (max-width: 1280px)
+        h1
+            font-size: 36px
+            line-height: 40px
+            padding-bottom: 12px
+        h2
+            font-size: 30px
+            line-height: 40px
+            padding-bottom: 15px
+            &.line-height-small
+                line-height: 30px
+        h3
+            font-size: 26px
+            line-height: 40px
+            padding-bottom: 36px
+            &.small-padding
+                padding-bottom: 15px
+
+        .sub-title
+            font-size: 17px
+
+        .iot-article-content
+            .hero
+                padding-top: 98px
+
+            .block-wrapper
+                padding: 0 80px
+
+                .block-content
+                    .text-wrapper
+                        padding: 0 70px
+                        .read-info
+                            font-size: 18px
+                            line-height: 36px
+
+                        .text-content
+                            font-size: 20px
+                            line-height: 32px
+                            margin-bottom: 45px
+
+                        .list
+                            padding-bottom: 32px
+                            li
+                                font-size: 20px
+                                line-height: 38px
+
+                    .definitions-block
+                        .definitions-list
+                            .definitions-list-item
+                                &:nth-child(odd)
+                                    background-color: #F3F4F4
+                                .term
+                                    display: list-item
+
+                                    font-size: 17px
+                                    line-height: 34px
+
+                                .definition
+                                    font-size: 17px
+
+                            &.side-paddings
+                                padding: 0 32px
+
+            .details-cards-block-wrapper
+                .details-cards-block
+                    max-width: 960px
+                    .details-card
+                        padding-bottom: 60px
+
+            #details-block
+                padding: 80px 70px
+
+            #contact-us
+                padding: 70px 70px 160px 70px
+                .block-content
+                    max-width: 1000px
+                    .contact-us-content
+                        .info
+                            margin-left: 0px
+                            padding-right: 0px
+                            .title
+                                font-size: 36px
+                                line-height: 50px
+
+    @media screen and (max-width: 1000px)
+        h1
+            font-size: 30px
+            line-height: 40px
+            padding-bottom: 12px
+        h2
+            font-size: 26px
+            line-height: 36px
+            padding-bottom: 15px
+            &.line-height-small
+                line-height: 32px
+        h3
+            font-size: 22px
+            line-height: 36px
+            padding-bottom: 40px
+            &.small-padding
+                padding-bottom: 15px
+
+        .sub-title
+            font-size: 17px
+
+        .iot-article-content
+            .hero
+                padding-top: 98px
+
+            .block-wrapper
+                padding: 0 40px
+
+                .block-content
+                    .text-wrapper
+                        padding: 0 30px
+                        margin-top: 40px
+                        .read-info
+                            font-size: 16px
+                            line-height: 36px
+
+                        .text-content
+                            font-size: 16px
+                            line-height: 28px
+
+                        .text-content.small-margin
+                            margin-bottom: 10px
+
+                        .text-content.medium-margin
+                            margin-bottom: 25px
+
+                        #sub-title-iot-solutions-2
+                            margin-bottom: 45px
+
+                        .list
+                            padding-bottom: 28px
+                            li
+                                font-size: 17px
+                                line-height: 28px
+
+
+                        #list-tb-offers
+                            padding-bottom: 40px
+
+                    .comparison-table
+                        padding-bottom: 60px
+                        thead
+                            tr
+                                th
+                                    padding-bottom: 20px
+                                    &:nth-child(1)
+                                        padding-left: 60px
+                                        padding-right: 10px
+
+                                    &:nth-child(2)
+                                        padding-left: 10px
+                                        padding-right: 60px
+
+                                    .column-header
+                                        font-size: 20px
+                                        line-height: 30px
+
+                        tbody
+                            tr
+                                td
+                                    font-size: 16px
+                                    line-height: 28px
+
+                                    &:nth-child(1)
+                                        padding-left: 60px
+                                        padding-right: 10px
+
+                                    &:nth-child(2)
+                                        padding-left: 10px
+                                        padding-right: 60px
+                    .definitions-block
+                        .definitions-list
+                            .definitions-list-item
+                                padding: 10px 35px
+
+                                &:nth-child(odd)
+                                    background-color: #F3F4F4
+
+                                .term
+                                    display: list-item
+
+                                    font-size: 16px
+                                    line-height: 32px
+
+                                .definition
+                                    font-size: 16px
+                                    line-height: 24px
+
+                            &.side-paddings
+                                padding: 0
+
+
+            .details-cards-block-wrapper
+                padding: 0 20px
+                .details-cards-block
+                    grid-column-gap: 15px
+                    max-width: unset
+                    .details-card
+                        height: auto
+                        padding: 35px 20px 40px 20px
+                        .header
+                            font-size: 21px
+                            line-height: 32px
+                        .content
+                            font-size: 17px
+                            line-height: 28px
+
+            #details-block
+                padding: 40px 40px
+                .block-content
+                    grid-column-gap: 60px
+                    grid-row-gap: 20px
+
+                    .detail
+                        .detail-name
+                            font-size: 20px
+                            line-height: 36px
+
+                        .detail-description
+                            font-size: 16px
+                            line-height: 22px
+
+            #contact-us
+                padding: 20px 40px 120px 40px
+                .block-content
+                    max-width: 1140px
+                    .contact-us-content
+                        flex-direction: column
+                        .info
+                            margin-left: 0px
+                            padding-right: 0px
+                            .title
+                                font-size: 30px
+                                line-height: 40px
+
+                            .text
+                                font-size: 14px
+                                line-height: 20px
+
+                        .contact-form
+                            max-width: 500px
+
+    @media screen and (max-width: 671px)
+        h1
+            font-size: 28px
+            line-height: 40px
+            padding-bottom: 12px
+        h2
+            font-size: 22px
+            line-height: 30px
+            padding-bottom: 10px
+            &.line-height-small
+                line-height: 30px
+        h3
+            font-size: 20px
+            line-height: 30px
+            padding-bottom: 30px
+            &.small-padding
+                padding-bottom: 10px
+
+        .sub-title
+            font-size: 16px
+            line-height: 30px
+
+        .iot-article-content
+            .hero
+                padding-top: 98px
+
+            .block-wrapper
+                padding: 0 20px
+
+                .block-content
+                    .text-wrapper
+                        padding: 0px
+                        margin-top: 40px
+                        .read-info
+                            font-size: 16px
+                            line-height: 36px
+
+                        .text-content
+                            font-size: 14px
+                            line-height: 26px
+                            margin-bottom: 30px
+
+                        .text-content.small-margin
+                            margin-bottom: 10px
+
+                        .text-content.medium-margin
+                            margin-bottom: 25px
+
+                        #sub-title-iot-solutions-2
+                            margin-bottom: 45px
+
+                        .list
+                            padding-bottom: 28px
+                            li
+                                font-size: 15px
+                                line-height: 24px
+                                margin-left: 22px
+
+                        #list-tb-offers
+                            padding-bottom: 40px
+
+                    .comparison-table
+                        padding-bottom: 60px
+                        thead
+                            tr
+                                th
+                                    padding-bottom: 20px
+                                    &:nth-child(1)
+                                        padding-left: 10px
+                                        padding-right: 10px
+
+                                    .column-header
+                                        font-size: 18px
+                                        line-height: 24px
+                                        text-align: left
+
+                        tbody
+                            tr
+                                td
+                                    font-size: 15px
+                                    line-height: 24px
+                                    text-align: left
+
+                                    &:nth-child(1)
+                                        padding-left: 20px
+                                        padding-right: 10px
+
+                    .comparison-table.desktop-table
+                        display: none
+
+                    .comparison-table.mobile-table
+                        display: table
+
+                    .mobile-table.first-child
+                        margin-bottom: 30px
+
+                    .definitions-block
+                        .definitions-list
+                            .definitions-list-item
+                                display: grid
+                                grid-template-columns: 1fr
+                                padding: 10px 35px
+                                align-items: center
+
+                                &:nth-child(odd)
+                                    background-color: #F3F4F4
+
+                                .term
+                                    display: list-item
+
+                                    font-size: 16px
+                                    line-height: 24px
+                                    margin-bottom: 10px
+
+                                .definition
+                                    font-size: 14px
+                                    line-height: 22px
+
+                                &.one-to-one-and-half
+                                    grid-template-columns: 1fr
+
+
+            .details-cards-block-wrapper
+                .details-cards-block
+                    grid-column-gap: 15px
+                    grid-row-gap: 15px
+                    max-width: unset
+                    grid-template-columns: 1fr
+                    .details-card
+                        height: auto
+                        padding: 20px
+                        .header
+                            font-size: 18px
+                            line-height: 28px
+                        .content
+                            font-size: 14px
+                            line-height: 24px
+
+            #details-block
+                padding: 20px
+                .block-content
+                    grid-template-columns: 1fr
+                    grid-column-gap: 60px
+                    grid-row-gap: 20px
+
+                    .detail
+                        .detail-name
+                            font-size: 18px
+                            line-height: 28px
+                            margin-bottom: 5px
+
+                        .detail-description
+                            font-size: 14px
+                            line-height: 22px
+
+            #contact-us
+                padding: 20px 20px 80px 20px
+                .block-content
+                    max-width: 1140px
+                    .contact-us-content
+                        flex-direction: column
+                        .info
+                            margin-left: 0px
+                            padding-right: 0px
+                            .title
+                                font-size: 28px
+                                line-height: 40px
+
+                            .text
+                                font-size: 14px
+                                line-height: 20px
+
+                        .contact-form
+                            .form-element
+                                label
+                                    .contact-us-form-control
+                                        font-size: 15px

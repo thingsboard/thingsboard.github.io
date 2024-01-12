@@ -356,7 +356,7 @@ function decodeToJson(payload) {
 }
 
 return result;
-``` 
+```
 {: .copy-code}
 
 The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard can consume. 
@@ -366,8 +366,8 @@ The purpose of the decoder function is to parse the incoming data and metadata t
 ![image](/images/samples/analytics/kafka-streams/add-converter.png)
 
 #### Configure Kafka Integration
- 
-Let's create kafka integration that will subscribe to “solar-module-anomalies” topic. 
+
+Let's create kafka integration that will subscribe to “solar-module-anomalies” topic.
 
 ![image](/images/samples/analytics/kafka-streams/add-integration.png)
 

@@ -2,24 +2,37 @@
 * TOC
 {:toc}
 
-## Overview
+{% assign sinceVersion = "3.2" %}
+{% include templates/since.md %}
 
-Since ThingsBoard 3.2, a System Administrator is able to configure common settings for multiple tenants using Tenant Profiles. 
+A System Administrator is able to configure common settings for multiple tenants using Tenant Profiles. 
 Each Tenant has the one and only profile at a single point in time.
 
 Let's review the settings available in the tenant profile, one-by-one.
- 
-## Entity Limits
+
+## Profile configuration
+
+These settings allow the system administrator to configure limitations on the number of entities created by a tenant, set limits on the maximum number of messages, API calls, per month, configure the maximum number of requests the platform should process for a specific device (device-level) or for all devices belonging to a single tenant (tenant-level), etc.
+
+Let's consider more about these settings below.
+
+### Entities limits
 
 This group of settings allows the System Administrator to configure a maximum number of entities that each Tenant is able to create.
 
-**ThingsBoard Community** edition supports limits for the following entities: devices, assets, customers, users, dashboards, and rule chains.
+{% if docsPrefix == null %}
+**[ThingsBoard Community Edition](/docs/user-guide/install/installation-options/)** supports limits for the following entities: devices, dashboards, assets, users, customers, and rule chains.
 
-**ThingsBoard Professional** edition supports limits for everything listed above and as well additional constraint support for the following entities: integrations, converters, and scheduler events.
+**[ThingsBoard Professional Edition](/docs/user-guide/install/pe/installation-options/)** supports limits for everything listed above and as well additional constraint support for the following entities: integrations, converters, and scheduler events.
+{% endif %}
+
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+**[ThingsBoard Professional Edition](/docs/user-guide/install/pe/installation-options/)** supports limits for the following entities: devices, dashboards, assets, users, integrations, scheduler events, customers, rule chains, and converters.
+{% endif %}
 
 {% include images-gallery.html imageCollection="entityLimits" %}
  
-## API Limits & Usage
+### API Limits & Usage
 
 This group of settings allows a System Administrator to configure a maximum number of messages, API calls, etc., per month that each Tenant would like to perform. 
 ThingsBoard constantly collects and analyzes statistics about API Usage. The typical update interval of the statistics is 1 minute
@@ -29,6 +42,10 @@ For example, if Tenant devices produce more than 100M messages per a month, the 
 When the API usage is disabled or reaches a certain threshold (typically 80%) ThingsBoard will notify the Tenant Administrator via email.  
 
 Let's review each limit separately:
+
+**Rule Engine executions** mean any execution of the rule node that belongs to the current Tenant. Processing of a single telemetry message may cause multiple Rule Engine executions.
+The platform will also count periodic messages produced by Generator nodes, etc.
+
 
 **Transport Messages** means any message that your device sends to the server. This may be telemetry, attribute update, RPC call, etc.
 
@@ -49,10 +66,10 @@ For example, the message listed below contains 5 data points, because the “jso
 }
 ```
 
-**Note**: If the value of a String or JSON key is larger than 512 characters, the platform will count it as multiple data points. 
-  
-**Rule Engine executions** mean any execution of the rule node that belongs to the current Tenant. Processing of a single telemetry message may cause multiple Rule Engine executions. 
-The platform will also count periodic messages produced by Generator nodes, etc.
+{% capture difference %}
+**Note**: If the value of a String or JSON key is larger than 512 characters, the platform will count it as multiple data points.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 **JavaScript executions** mean any execution of the custom function defined by Tenant Administrators. For example, processing of the “Script” filter or a transformation node, an invocation of the data converter, etc.       
 
@@ -74,14 +91,24 @@ Emails sent with custom SMTP settings do not affect API limits.
 Please note that the Tenant Administrator is able to define custom SMS provider settings in both Community and Professional Editions of the platform. 
 SMS sent with custom SMTP settings do not affect API limits.
 
-### API Usage dashboard
+{% include images-gallery.html imageCollection="api-limits" %}
+
+#### API Usage dashboard
 
 As a Tenant Administrator, you can review the API Usage dashboard. 
 The dashboard below allows Tenant Administrators to learn more about their hourly/daily/monthly API usage and instantly review the status of the API limits. 
 
 {% include images-gallery.html imageCollection="apiLimitsDashboard" %}
 
-## Rate Limits
+### Files limits
+
+The System Administrator can configure the maximum size of an individual file, the maximum total size of image files in the "[Image gallery](/docs/{{docsPrefix}}user-guide/image-gallery/)" and resource files in the "Resource Library," as well as the maximum total size of [OTA package files](/docs/{{docsPrefix}}user-guide/ota-updates/) that the platform can store in the database.
+
+Values are specified in **bytes**.
+
+{% include images-gallery.html imageCollection="files-limits" %}
+
+### Rate Limits
 
 This group of settings allows a System Administrator to configure a maximum number of
 requests the platform should process for a specific device (device-level) or for all devices belonging to a single tenant (tenant-level).

@@ -99,7 +99,7 @@ The built-in variable **self** that is a reference to the widget instance is als
 Each widget function should be defined as a property of the **self** variable.
 **self** variable has property **ctx** of type [WidgetContext](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/modules/home/models/widget-component.models.ts#L83) - a reference to widget context that has all necessary API and data used by widget instance.
 Below is brief description of widget context properties:
- 
+
 | **Property**                     | **Type**           | **Description**                                                                                                                                                                                                                                                                                                  |
 |----------------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | $container                       | jQuery Object      | Container element of the widget. Can be used to dynamically access or modify widget DOM using jQuery API.                                                                                                                                                                                                        |
@@ -127,7 +127,7 @@ Below is brief description of widget context properties:
 | stateController                  | [IStateController](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L121)             | Reference to Dashboard state controller, providing API to manage current dashboard state. See [State Controller](#state-controller).                                                                                                                                                                             |
 
 In order to implement a new widget, the following JavaScript functions should be defined *(Note: each function is optional and can be implemented according to  widget specific behaviour):*
-   
+
 | **Function**                                                       | **Description**                                                                                                                                                                                                                                    |
 |--------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | ``` onInit() ```                                                   | The first function which is called when widget is ready for initialization. Should be used to prepare widget DOM, process widget settings and initial subscription information.                                                                    |
@@ -138,7 +138,7 @@ In order to implement a new widget, the following JavaScript functions should be
 | ``` onDestroy() ```                                                | Called when widget element is destroyed. Should be used to cleanup all resources if necessary.                                                                                                                                                     |
 | ``` getSettingsSchema() ```                                        | Optional function returning widget settings schema json as alternative to **Settings tab** of [Settings schema section](#settings-schema-section).                                                                                                                      |
 | ``` getDataKeySettingsSchema() ```                                 | Optional function returning particular data key settings schema json as alternative to **Data key settings schema** tab of [Settings schema section](#settings-schema-section).                                                                                         |
-| ``` typeParameters() ```                                           | Returns [WidgetTypeParameters](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L146) object describing widget datasource parameters. See [Type parameters object](#type-parameters-object).                                                                                                                             |            
+| ``` typeParameters() ```                                           | Returns [WidgetTypeParameters](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L146) object describing widget datasource parameters. See [Type parameters object](#type-parameters-object).                                                                                                                             |
 | ``` actionSources() ```                                            | Returns map describing available widget action sources ([WidgetActionSource](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L118)) used to define user actions. See [Action sources object](#action-sources-object).                                                                                                  |
 
 
@@ -174,9 +174,9 @@ For [Latest values](/docs/{{docsPrefix}}user-guide/ui/widget-library/#latest-val
         //...
     ]
 ```
-    
+
   - **data** - array of latest data (Array<[DatasourceData](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L275)>) received in scope of this subscription, using the following structure:
-  
+
 ```javascript
     data = [
         {
@@ -185,13 +185,13 @@ For [Latest values](/docs/{{docsPrefix}}user-guide/ui/widget-library/#latest-val
             data: [ // array of data points
                 [   // data point
                     1498150092317, // unix timestamp of datapoint in milliseconds
-                    1, // value, can be either string, numeric or boolean  
+                    1, // value, can be either string, numeric or boolean
                 ],
                 //...
-            ]  
+            ]
         },
         //...
-    ]     
+    ]
 ```
 
 For [Alarm widget](/docs/{{docsPrefix}}user-guide/ui/widget-library/#alarm-widget) type it provides the following properties:
@@ -238,7 +238,7 @@ For [Alarm widget](/docs/{{docsPrefix}}user-guide/ui/widget-library/#alarm-widge
                 id: "ceb16a30-4142-11e7-8b30-d5d66714ea5a"
             },
             originatorName: "Originator Name", // Name of originator entity
-            type: "Temperature", // Type of the alarm            
+            type: "Temperature", // Type of the alarm
             severity: "CRITICAL", // Severity of the alarm ("CRITICAL", "MAJOR", "MINOR", "WARNING", "INDETERMINATE") 
             status: "ACTIVE_UNACK", // Status of the alarm 
                                     // ("ACTIVE_UNACK" - active unacknowledged, 
@@ -247,7 +247,7 @@ For [Alarm widget](/docs/{{docsPrefix}}user-guide/ui/widget-library/#alarm-widge
                                     // "CLEARED_ACK" - cleared acknowledged)
             details: {} // Alarm details object derived from alarm details json.
         }
-    ]               
+    ]
 ```
 
 For [RPC](/docs/{{docsPrefix}}user-guide/ui/widget-library/#rpc-control-widget) or [Static](/docs/{{docsPrefix}}user-guide/ui/widget-library/#static) widget types, subscription object is optional and does not contain necessary information.    
@@ -329,7 +329,7 @@ For example, consider sending data from Widget 1 to Widget 2.
 ![image](/images/user-guide/contribution/widgets/broadcast-service-start.png) 
 
 In Widget 1 you must send data using broadcast(...) function:
-```  
+```
 self.onInit = function() {
     ...
     let $scope = self.ctx.$scope;
@@ -342,7 +342,7 @@ self.onInit = function() {
 ```
 
 In Widget 2 you must subscribe on data using on(...) function:
-```  
+```
 self.onInit = function() {
     ...
     let $scope = self.ctx.$scope;
@@ -382,10 +382,10 @@ Map describing available widget action sources ([WidgetActionSource](https://git
            name: 'Header button', // Display name of action source, used in widget settings ('Actions' tab).
            multiple: true // Boolean property indicating if this action source supports multiple action definitions (for ex. multiple buttons in one cell, or only one action can by assigned on table row click.)
         }
-    };   
+    };
 ```
 
-### Creating simple widgets 
+### Creating simple widgets
 
 The tutorials below show how to create minimal widgets of each type.
 In order to minimize the amount of code, the Angular framework will be used, on which ThingsBoard UI is actually based.
@@ -399,7 +399,7 @@ The **Widget Editor** will open, pre-populated with the content of the default *
 
  - Clear content of the CSS tab of "Resources" section.
  - Put the following HTML code inside the HTML tab of "Resources" section:
-  
+
 ```html
   {% raw  %}<div fxFlex fxLayout="column" style="height: 100%;" fxLayoutAlign="center stretch">
     <div>My first latest values widget.</div>
@@ -417,7 +417,7 @@ The **Widget Editor** will open, pre-populated with the content of the default *
     self.onInit = function() {
        self.ctx.$scope.data = self.ctx.defaultSubscription.data;
     }
-        
+
     self.onDataUpdated = function() {
         self.ctx.detectChanges();
     }
@@ -454,40 +454,40 @@ The **Widget Editor** will open, pre-populated with default **Time-Series** temp
                   <tr>
                       <th>Timestamp</th>
                       <th *ngFor="let dataKeyData of datasourceData[$dsIndex]">{{dataKeyData.dataKey.label}}</th>
-                  <tr>          
+                  <tr>
               </thead>
               <tbody>
                   <tr *ngFor="let data of datasourceData[$dsIndex][0].data; let $dataIndex = index">
                       <td>{{data[0] | date : 'yyyy-MM-dd HH:mm:ss'}}</td>
                       <td *ngFor="let dataKeyData of datasourceData[$dsIndex]">{{dataKeyData.data[$dataIndex] && dataKeyData.data[$dataIndex][1]}}</td>
-                  </tr>      
-              </tbody>          
-          </table>          
-      </mat-tab>       
+                  </tr>
+              </tbody>
+          </table>
+      </mat-tab>
   </mat-tab-group>{% endraw %}
 ```
 
  - Put the following JavaScript code inside the "JavaScript" section:
- 
+
 ```javascript
 self.onInit = function() {
     self.ctx.widgetTitle = 'My first Time-Series widget';
     self.ctx.$scope.datasources = self.ctx.defaultSubscription.datasources;
     self.ctx.$scope.data = self.ctx.defaultSubscription.data;
-    
+
     self.ctx.$scope.datasourceData = [];
-    
+
     var currentDatasource = null;
     var currentDatasourceIndex = -1;
-    
+
     for (var i=0;i<self.ctx.$scope.data.length;i++) {
         var dataKeyData = self.ctx.$scope.data[i];
         if (dataKeyData.datasource != currentDatasource) {
             currentDatasource = dataKeyData.datasource
             currentDatasourceIndex++;
             self.ctx.$scope.datasourceData[currentDatasourceIndex] = [];
-            
-        } 
+
+        }
         self.ctx.$scope.datasourceData[currentDatasourceIndex].push(dataKeyData);
     }
     self.ctx.updateWidgetParams();
@@ -508,7 +508,7 @@ The **$scope.datasourceData** property is introduced to map datasource specific 
 Inside the HTML, a special [***ngFor**](https://angular.io/api/common/NgForOf) structural angular directive is used in order to iterate over available datasources and render corresponding tabs.
 Inside each tab, the table is rendered using dataKeys obtained from **datasourceData** scope property accessed by datasource index.
 Each table renders columns by iterating over all **dataKeyData** objects and renders all available datapoints by iterating over **data** array of each **dataKeyData** to render timestamps and values.
-Note that in this code, **onDataUpdated** function is implemented with a call to **detectChanges** function necessary to perform new change detection cycle when new data is received.   
+Note that in this code, **onDataUpdated** function is implemented with a call to **detectChanges** function necessary to perform new change detection cycle when new data is received.
 
 #### RPC (Control) widget
 
@@ -549,7 +549,7 @@ The **Widget Editor** will open, pre-populated with default **Control** template
 ```
 
  - Put the following JSON content inside the "Settings schema" tab of **Settings schema section**:
- 
+
 ```json
 {
     "schema": {
@@ -573,14 +573,14 @@ The **Widget Editor** will open, pre-populated with default **Control** template
         "oneWayElseTwoWay",
         "requestTimeout"
     ]
-} 
+}
 ```
 
  - Put the following JavaScript code inside the "JavaScript" section:
- 
+
 ```javascript
 self.onInit = function() {
-    
+
     self.ctx.$scope.sendCommand = function() {
         var rpcMethod = self.ctx.$scope.rpcMethod;
         var rpcParams = self.ctx.$scope.rpcParams;
@@ -598,7 +598,7 @@ self.onInit = function() {
                 if (oneWayElseTwoWay) {
                     self.ctx.$scope.rpcCommandResponse = "Command was successfully received by device.<br> No response body because of one way command mode.";
                 } else {
-                    self.ctx.$scope.rpcCommandResponse = "Response from device:<br>";                    
+                    self.ctx.$scope.rpcCommandResponse = "Response from device:<br>";
                     self.ctx.$scope.rpcCommandResponse += JSON.stringify(response, undefined, 2);
                 }
                 self.ctx.detectChanges();
@@ -609,23 +609,23 @@ self.onInit = function() {
                 self.ctx.$scope.rpcCommandResponse += "Status text: '" + rejection.statusText + "'";
                 self.ctx.detectChanges();
             }
-            
+
         );
     }
-    
+
 }
 ```
 
- - Fill **Widget title** field with widget type name, for ex. "My first control widget".  
+ - Fill **Widget title** field with widget type name, for ex. "My first control widget".
  - Click the **Run** button on the **Widget Editor Toolbar** in order to see the result in **Widget preview** section. 
  - Click dashboard edit button on the preview section to change the size of the resulting widget. Then click dashboard apply button. The final widget should look like the image below.
- 
+
 ![image](/images/user-guide/contribution/widgets/control-widget-sample.png)
-   
+
  - Click the **Save** button on the **Widget Editor Toolbar** to save widget type.
-   
+
 To test how this widget performs RPC commands, we will need to place it in a dashboard then bind it to a device working with RPC commands. To do this, perform the following steps:
- 
+
  - Login as Tenant administrator.
  - Navigate to **Devices** and create new device with some name, for ex. "My RPC Device".
  - Open device details and click "Copy Access Token" button to copy device access token to clipboard.
@@ -636,17 +636,17 @@ To test how this widget performs RPC commands, we will need to place it in a das
  - Click dashboard "edit" button. In the dashboard edit mode, click the "Entity aliases" button located on the dashboard toolbar.
 
 ![image](/images/user-guide/contribution/widgets/dashboard-toolbar-entity-aliases.png)
- 
- - Inside **Entity aliases** popup click "Add alias". 
+
+ - Inside **Entity aliases** popup click "Add alias".
  - Fill "Alias name" field, for ex. "My RPC Device Alias".
  - Select "Entity list" in "Filter type" field.
  - Choose "Device" in "Type" field.
  - Select your device in "Entity list" field. In this example "My RPC Device".
- 
+
 ![image](/images/user-guide/contribution/widgets/add-rpc-device-alias.png)
 
  - Click "Add" and then "Save" in **Entity aliases**.
- - Click dashboard "+" button then click "Create new widget" button.   
+ - Click dashboard "+" button then click "Create new widget" button.
 
 ![image](/images/user-guide/contribution/widgets/dashboard-create-new-widget-button.png)
 
@@ -657,12 +657,12 @@ To test how this widget performs RPC commands, we will need to place it in a das
  - Fill **RPC method** field with RPC method name. For ex. "TestMethod".
  - Fill **RPC params** field with RPC params. For ex. "{ param1: "value1" }".
  - Click **Send RPC command** button. You should see the following response in the widget.
- 
-![image](/images/user-guide/contribution/widgets/control-widget-sample-response-one-way.png)  
-  
+
+![image](/images/user-guide/contribution/widgets/control-widget-sample-response-one-way.png)
+
   The following output should be printed in the device console:
-  
-```bash   
+
+```bash
   request.topic: v1/devices/me/rpc/request/0
   request.body: {"method":"TestMethod","params":"{ param1: \"value1\" }"}
 ```
@@ -670,23 +670,23 @@ To test how this widget performs RPC commands, we will need to place it in a das
 In order to test "Two way" RPC command mode, we need to change the corresponding widget settings property. To do this, perform the following steps:
 
  - Click dashboard "edit" button. In dashboard edit mode, click **Edit widget** button located in the header of Control widget.
- - In the widget details, view select "Advanced" tab and uncheck "Is One Way Command" checkbox.  
+ - In the widget details, view select "Advanced" tab and uncheck "Is One Way Command" checkbox.
 
-![image](/images/user-guide/contribution/widgets/control-widget-sample-settings.png)   
+![image](/images/user-guide/contribution/widgets/control-widget-sample-settings.png)
 
  - Click **Apply changes** button on the widget details header. Close details and click dashboard **Apply changes** button.
- - Fill widget fields with RPC method name and params like in previous steps. 
+ - Fill widget fields with RPC method name and params like in previous steps.
  Click **Send RPC command** button. You should see the following response in the widget.
- 
+
 ![image](/images/user-guide/contribution/widgets/control-widget-sample-response-two-way.png)
-  
+
   - stop **mqtt-js-rpc-from-server.sh** script.
  Click **Send RPC command** button. You should see the following response in the widget.
-  
-![image](/images/user-guide/contribution/widgets/control-widget-sample-response-timeout.png)  
-  
+
+![image](/images/user-guide/contribution/widgets/control-widget-sample-response-timeout.png)
+
 In this example, **controlApi** is used to send RPC commands. Additionally, custom widget settings were introduced in order to configure RPC command mode and RPC request timeout.
-The response from the device is handled by **commandObservable**.  It has success and failed callbacks with corresponding response, or rejection objects containing information about request execution result.     
+The response from the device is handled by **commandObservable**.  It has success and failed callbacks with corresponding response, or rejection objects containing information about request execution result.
 
 #### Alarm widget
 
@@ -710,18 +710,18 @@ The **Widget Editor** will be opened, pre-populated with the content of the defa
       <table class="my-alarm-table" style="width: 100%;">
           <thead>
               <tr>
-                  <th *ngFor="let dataKey of alarmSource?.dataKeys">{{dataKey.label}}</th> 
-              <tr>          
+                  <th *ngFor="let dataKey of alarmSource?.dataKeys">{{dataKey.label}}</th>
+              <tr>
           </thead>
           <tbody>
               <tr *ngFor="let alarm of alarms">
-                  <td *ngFor="let dataKey of alarmSource?.dataKeys" 
+                  <td *ngFor="let dataKey of alarmSource?.dataKeys"
                       [ngStyle]="getAlarmCellStyle(alarm, dataKey)">
                       {{getAlarmValue(alarm, dataKey)}}
                   </td>
-              </tr>      
-          </tbody>          
-      </table>          
+              </tr>
+          </tbody>
+      </table>
   </div>{% endraw %}
 ```
 
@@ -763,12 +763,12 @@ self.onInit = function() {
 
     self.ctx.defaultSubscription.subscribeForAlarms(pageLink, null);
     self.ctx.$scope.alarmSource = self.ctx.defaultSubscription.alarmSource;
-    
+
     var alarmSeverityColorFunctionBody = self.ctx.settings.alarmSeverityColorFunction;
     if (typeof alarmSeverityColorFunctionBody === 'undefined' || !alarmSeverityColorFunctionBody.length) {
         alarmSeverityColorFunctionBody = "if(severity == 'CRITICAL') {return 'red';} else if (severity == 'MAJOR') {return 'orange';} else return 'green';";
     }
-    
+
     var alarmSeverityColorFunction = null;
     try {
         alarmSeverityColorFunction = new Function('severity', alarmSeverityColorFunctionBody);
@@ -788,7 +788,7 @@ self.onInit = function() {
             return value;
         }
     }
-    
+
     self.ctx.$scope.getAlarmCellStyle = function(alarm, dataKey) {
         var alarmKey = dataKey.name;
         if (alarmKey === 'severity' && alarmSeverityColorFunction) {
@@ -1299,7 +1299,7 @@ Complex predicate example, to check **value < 10 or value > 20**:
                 dynamicValue: null
             },
             type: "NUMERIC"
-        }     
+        }
     ]
 }
 ```
@@ -1337,7 +1337,7 @@ More complex predicate example, to check **value < 10 or (value > 50 && value < 
                         dynamicValue: null
                     },
                         type: "NUMERIC"
-                }      
+                }
             ]
         }
     ]
@@ -1440,7 +1440,7 @@ self.onInit = function() {
             }
         }
     };
-    
+
     self.ctx.subscriptionApi.createSubscription(subscriptionOptions, true).subscribe(
         (subscription) => {
             self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
@@ -1509,7 +1509,7 @@ self.onInit = function() {
             ]
         }
     ];
-    
+
     const options = {
         type: 'latest', //Subscription type
         datasources: datasources, //Describes what data you want to subscribe
@@ -1520,7 +1520,7 @@ self.onInit = function() {
             }
         }
     };
-    
+
     self.ctx.subscriptionApi.createSubscription(options, true).subscribe(
         (subscription) => {
             self.ctx.defaultSubscription = subscription; //Saving subscription information into widget context
@@ -1528,7 +1528,7 @@ self.onInit = function() {
             self.ctx.datasources = subscription.datasources; //Saving datasource into widget context
             ...
         }
-    );      
+    );
     ...
 }
 ...
@@ -1665,7 +1665,7 @@ self.onInit = function() {
             }
         }
     ];
-    
+
     self.ctx.$scope.pageLink = {
         page: 0, //Page Number
         pageSize: 2  //Number of entities per page
@@ -1763,8 +1763,8 @@ self.onInit = function() {
             },
             direction: "DESC"
         }
-    }; 
-    
+    };
+
     const subscriptionOptions = {
         type: 'alarm', //Subscription type
         alarmSource: alarmSource, //Describes what alarms data you want to subscribe
@@ -1785,17 +1785,17 @@ self.onInit = function() {
         }
     );
     ...
-}   
+}
 ...
 ```
 As a result, a subscription to the thermostat's alarms will be created (**the widget is illustrative**):
 
 ![image](/images/user-guide/contribution/widgets/alarm-subscription.png)
 
-## Integrating existing code to create widget definition 
+## Integrating existing code to create widget definition
 
 Below are some examples demonstrating how external JavaScript libraries or existing code can be reused/integrated to create new widgets.
- 
+
 ### Using external JavaScript library
 
 #### Latest Values Example
@@ -1808,8 +1808,8 @@ The **Widget Editor** will be opened, pre-populated with the content of default 
 
  - Open **Resources** tab and click "Add" then insert the following link:
 
-```  
-https://bernii.github.io/gauge.js/dist/gauge.min.js  
+```
+https://bernii.github.io/gauge.js/dist/gauge.min.js
 ```
 
  - Clear content of the CSS tab of "Resources" section.
@@ -1872,18 +1872,18 @@ https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js
 
  - Clear content of the CSS tab of "Resources" section.
  - Put the following HTML code inside the HTML tab of "Resources" section:
- 
+
 ```html
   {% raw  %}<canvas id="myChart"></canvas>{% endraw %}
 ```
 
  - Put the following JavaScript code inside the "JavaScript" section:
- 
+
 ```javascript
 var myChart;
 
 self.onInit = function() {
-    
+
     var chartData = {
         datasets: []
     };
@@ -1898,7 +1898,7 @@ self.onInit = function() {
         };
         chartData.datasets.push(dataset);
     }
-    
+
     var options = {
         maintainAspectRatio: false,
         legend: {
@@ -1914,7 +1914,7 @@ self.onInit = function() {
         }]
     }
     };
-    
+
     var canvasElement = $('#myChart', self.ctx.$container)[0];
     var canvasCtx = canvasElement.getContext('2d');
     myChart = new Chart(canvasCtx, {
@@ -2001,7 +2001,7 @@ import { TimeseriesTableWidgetComponent } from '@home/components/widget/lib/time
       TimeseriesTableWidgetComponent,
 ...
   ],
-...    
+...
 })
 export class WidgetComponentsModule { }
 ```
@@ -2016,6 +2016,66 @@ Another and most effective method of debugging is to invoke browser debugger.
 Put [**debugger;**](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/debugger) statement into the place of widget code you are interested in and then click **Run** button to restart widget code.
 Browser debugger (if enabled) will automatically pause code execution at the debugger statement and you will be able to analyze script execution using browser debugging tools.
 
-## Next steps
+## ThingsBoard extensions
+
+[ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions) is our additional project that allows you to create your own angular components and use them in your widgets and actions.
+We highly recommend using this feature for any complex logic in your solutions, because it provides you an opportunity to reuse your code, using all functionality of TypeScript, RXJS, Angular, etc.
+In this topic, we will cover how to connect your extensions in ThingsBoard 3.6 and higher using our UI.
+
+{% capture difference %}
+**Important remark**: you can use **extensions** even if you use previous versions of ThingsBoard(before 3.6). For this, you will need to load the extension file manually to your server and restart it. All the necessary information can be found in the **README** file in the corresponding branches of the extensions project. [This branch](https://github.com/thingsboard/thingsboard-extensions/tree/release-3.1) is used for the ThingsBoard 3.1.0 - 3.4.1 version and [this one](https://github.com/thingsboard/thingsboard-extensions/tree/release-3.5) is for 3.5 - 3.5.1 version.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+First of all, you need a file with your compiled components. By default, it is called **thingsboard-extension-widgets.js**. All instructions on how to create it can be found inside the **README** file to [ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions).
+
+Once you have the file with your components, let's proceed to load them into ThingsBoard. 
+
+Go to the "**Resources library**" page inside "**Resources**" section, and click the **add** button on right top corner of the window ("+" icon). 
+In the open popup, select **JS module** in **Resource type** selector, enter **Title** for your module, and import your compiled file:
+
+![image](/images/user-guide/contribution/widgets/add-js-module.png)
+
+Congratulations, your components were added to the ThingsBoard!
+
+Now, let's use them in some widget. 
+
+Go to the "**Widgets library**" page inside "**Resources**" section. We shall create a simple static widget that will use components from our extensions (in case you have questions about how to create a new widget, you should read [this topic](#creating-new-widget-definition)).
+
+![image](/images/user-guide/contribution/widgets/add-static-widget.png)
+
+<br>
+First of all, go to the **Resources** tab and choose your extensions module.
+
+<div class="info-banner">
+  <img src="/images/doc-info-icon.svg" alt="Doc info icon" />   
+  <div>
+    <p><strong>Important!</strong> Don’t forget about the <strong>Is module</strong> checkbox!</p>
+  </div>
+</div>
+
+![image](/images/user-guide/contribution/widgets/select-extensions-module-2.png)
+
+Your module is connected to your widget. Now, you can use your angular components. Let's add a custom component in the **HTML** tab. To apply the changes, click the Save button.
+
+<div class="info-banner">
+  <img src="/images/doc-info-icon.svg" alt="Doc info icon" />   
+  <div>
+    <p><strong>Important!</strong> Don’t forget to clean the default <strong>self.onInit</strong> function!</p>
+  </div>
+</div>
+
+![image](/images/user-guide/contribution/widgets/select-extensions-module-3.png)
+
+Now, your component is used inside your widget. 
+
+![image](/images/user-guide/contribution/widgets/select-extensions-module-4.png)
+
+<br>
+In general, [ThingsBoard extensions](https://github.com/thingsboard/thingsboard-extensions) allows you to create any possible widgets in the scope of ThingsBoard platforms.
+
+Good luck with your future awesome solutions!
+
+### Next steps
 
 {% assign currentGuide = "Contribution" %}{% include templates/multi-project-guides-banner.md %}

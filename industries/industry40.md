@@ -109,7 +109,7 @@ description:
 <div class="customer-block">
     <div class="customer-company">
         <img class="customer-logo" src="/images/customers/insystec.jpg" alt="INSYS">
-        <a class="outlink" href="https://www.insys-tec.de/" alt="INSYS icom"> INSYS icom </a>
+        <a class="outlink" href="https://www.insys-icom.com/" alt="INSYS icom"> INSYS icom </a>
     </div>
     <div class="customer-content">
         <div class="person-container">

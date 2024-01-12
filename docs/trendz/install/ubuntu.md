@@ -28,14 +28,14 @@ In small and medium installations Trendz can be installed **on the same** server
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/trendz-1.10.3.deb
+wget https://dist.thingsboard.io/trendz-1.10.3-HF3.deb
 ```
 {: .copy-code}
 
 Install Trendz Analytics as a service
 
 ```bash
-sudo dpkg -i trendz-1.10.3.deb
+sudo dpkg -i trendz-1.10.3-HF3.deb
 ```
 {: .copy-code}
 

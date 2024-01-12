@@ -1,0 +1,1 @@
+sudo dpkg -i trendz-1.10.3-HF3.deb

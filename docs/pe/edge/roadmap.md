@@ -11,5 +11,8 @@ description: Upcoming releases
 ## ThingsBoard Edge PE
 
 ### Upcoming releases
-* Edge Templates
-* Full RBAC support
+* Edge Profiles Functionality (Templates)
+* Functionality to Create or Update Rule Chains Directly on the Edge
+* Full Role-Based Access Control (RBAC) Support
+* OAuth2 Functionality
+* Two-Factor Authentication Functionality

@@ -21,12 +21,12 @@ For purpose of this guide, we will use following things:
   ![](/images/gateway/charhe-remote-shell-parameter.png)
   <br>
 {% capture info %}
-<body>
+<div>
   <p>
     <b style="color:red">WARNING:</b>
     <span style="color:black">this feature can cause security problems for your device, we strongly recommend using it with ssl encryption only and not enabling it if you don’t need it.</span>
   </p>
-</body>
+</div>
 {% endcapture %}
 {% include templates/info-banner.md content=info %}
  

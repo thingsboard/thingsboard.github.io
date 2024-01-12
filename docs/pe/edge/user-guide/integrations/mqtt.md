@@ -34,7 +34,7 @@ assignIntegration:
         title: 'Assign Integration to the Edge'
     3:
         image: /images/pe/edge/integrations/mqtt/assign-integration-step-4.png
-        title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
+        title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page - placeholder is going to be replaced by attribute value'
 
 device:
     0:

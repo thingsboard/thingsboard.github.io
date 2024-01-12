@@ -15,17 +15,17 @@ For purpose of this guide, we will use following things:
 2. ThingsBoard IoT Gateway (How to install you can [read here](/docs/iot-gateway/installation/)).
 
 Resources (OPTIONAL):
-1. [Gateway Dashboard](/docs/iot-gateway/resources/dashboard.json){:target="_blank" download="dashboard.json"}
-2. [Gateway Widget Bundle](/docs/iot-gateway/resources/bundle.json){:target="_blank" download="bundle.json"}
+1. [Gateway Dashboard](/docs/iot-gateway/resources/thingsboard-gateways-dashboard.json){:target="_blank" download="thingsboard-gateways-dashboard.json"}
+2. [Gateway Widget Bundle](/docs/iot-gateway/resources/thingsboard-gateway-widget-bundle.json){:target="_blank" download="thingsboard-gateway-widget-bundle.json"}
 
 {% capture info %}
-<body>
+<div>
   <p>
     <b style="color:red">WARNING:</b>
     <span style="color:black">If you've previously configured the gateway, create a backup, as the new remote configuration will overwrite existing settings files.  
     <br>For those who used a gateway version earlier than 3.4, the gateway will automatically generate a new configuration file in JSON format.</span>
   </p>
-</body>
+</div>
 {% endcapture %}
 {% include templates/warn-banner.md content=info %}
 

@@ -37,9 +37,9 @@ ThingsBoard supports **Sparkplug™ B** payloads only.
 
 ## Getting started
 
-This guide will teach us how to: connect Sparkplug EoN node to ThingsBoard, 
-collect device metrics and store them as ThingsBoard time-series data, 
-and push commands back to devices.  
+This guide will teach us how to: connect Sparkplug EoN node to ThingsBoard,
+collect device metrics and store them as ThingsBoard time-series data,
+and push commands back to devices.
 
 ### Step 1. Create device profile
 
@@ -203,7 +203,7 @@ The *method* defines the Sparkplug operation and is one of the following:
 The *params* is a JSON that defines the metric and the value.
 
 For example, to reboot the Sparkplug EoN *Node*, you should send the following command:
-  
+
   ```json
   {
     "method": "NCMD",

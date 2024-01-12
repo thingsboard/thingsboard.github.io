@@ -8,6 +8,199 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+
+## v3.6.2 (Dec 28, 2023) {#v362}
+
+Minor release with the following improvements and bug fixes:
+
+**Improvements**
+
+* Core & Rule Engine
+
+  * [#9542](https://github.com/thingsboard/thingsboard/pull/9542) Image gallery by @ViacheslavKlimov
+  * [#9284](https://github.com/thingsboard/thingsboard/pull/9284) Transformation rule node enhancements by @ShvaykaD
+  * [#9784](https://github.com/thingsboard/thingsboard/pull/9784) Support for 'Users of the entity owner' recipients group TbNotificationNode by @ViacheslavKlimov
+  * [#9776](https://github.com/thingsboard/thingsboard/pull/9776) Added new APIs to get entity profile names (AssetProfile & DeviceProfile) by @ShvaykaD
+  * [#9717](https://github.com/thingsboard/thingsboard/pull/9717) WebSocket session deduplication and API improvements by @ViacheslavKlimov
+  * [#9900](https://github.com/thingsboard/thingsboard/pull/9900) Version control performance improvements by @ViacheslavKlimov
+  * [#9632](https://github.com/thingsboard/thingsboard/pull/9632) Save rule chain metadata: validate node configuration only after upgrade by @ShvaykaD
+  
+* UI
+
+  * Industrial widgets: Flow rate, Pressure, Vibration, Power consumption, Rotational speed, Efficiency by @rusikv
+  * [#9771](https://github.com/thingsboard/thingsboard/pull/9771) Air quality widgets: Individual Allergy Index (IAI), O3, NO2, SO2, CO by @Dmitriymush
+  * [#9901](https://github.com/thingsboard/thingsboard/pull/9901) Set max allow resource size from tenant profile by @vvlladd28
+  * [#9307](https://github.com/thingsboard/thingsboard/pull/9307) Timewindow configuration on tab switch by @rusikv
+  * [#9553](https://github.com/thingsboard/thingsboard/pull/9553) Add dashboard dialog redesign by @Dmitriymush
+  * [#9579](https://github.com/thingsboard/thingsboard/pull/9579) Save the last status of the checkbox on widget bundle export by @ArtemDzhereleiko
+  * [#9642](https://github.com/thingsboard/thingsboard/pull/9642) Added query.models to public-api by @kalutkaz
+  * [#9649](https://github.com/thingsboard/thingsboard/pull/9649) Added links to the auto-complete elements that are used the entity details page by @ArtemDzhereleiko
+  * [#9650](https://github.com/thingsboard/thingsboard/pull/9650) Added links to the originator column the 'Alarms' page by @rusikv
+  * [#9690](https://github.com/thingsboard/thingsboard/pull/9690) Added settings to change the time format the timeseries table widget by @ArtemDzhereleiko
+  * [#9713](https://github.com/thingsboard/thingsboard/pull/9713) Added custom translation label to the Entity count widget by @deaflynx
+  * [#9735](https://github.com/thingsboard/thingsboard/pull/9735) Added button to copy dashboard state by @ArtemDzhereleiko
+  * [#9709](https://github.com/thingsboard/thingsboard/pull/9709) Added nl_BE locale by @ArtemDzhereleiko
+  * [#9742](https://github.com/thingsboard/thingsboard/pull/9742) Improved German locale by @Backdraft007
+  * [#9763](https://github.com/thingsboard/thingsboard/pull/9763) Improved Chinese locale by @Fliner
+  * [#9884](https://github.com/thingsboard/thingsboard/pull/9884) Improved Spanish locale by @ArtemDzhereleiko
+  * [#9885](https://github.com/thingsboard/thingsboard/pull/9885) Improved Ukrainian locale by @xalt7x
+  * [#9637](https://github.com/thingsboard/thingsboard/pull/9637) Improved Gateway dashboard by @MrKartoshka
+  * [#9807](https://github.com/thingsboard/thingsboard/pull/9807) Added 'milligram per cubic meter' unit by @Dmitriymush
+  * [#9791](https://github.com/thingsboard/thingsboard/pull/9791) Improvement for security settings by @ArtemDzhereleiko
+  * [#9848](https://github.com/thingsboard/thingsboard/pull/9848) Redesign gateway launch commands dialog by @vvlladd28
+  * [#9872](https://github.com/thingsboard/thingsboard/pull/9872) Rename default state controller to static by @vvlladd28
+  * [#9685](https://github.com/thingsboard/thingsboard/pull/9685) Update settings configuration for location widgets by @ArtemDzhereleiko
+  
+* Edge
+  * [#9617](https://github.com/thingsboard/thingsboard/pull/9617) Edge - JSON converter for proto by @AndriiLandiak
+
+
+**Bug Fixes**
+
+* Core & Rule Engine
+
+  * [#9630](https://github.com/thingsboard/thingsboard/pull/9630) Fixed version control message text display behaviour by @Dmitriymush
+  * [#9612](https://github.com/thingsboard/thingsboard/pull/9612) Save timeseries without latest: removed callback for entity view by @ShvaykaD
+  * [#9600](https://github.com/thingsboard/thingsboard/pull/9600) Improved afterTest method by @dashevchenko
+  * [#9687](https://github.com/thingsboard/thingsboard/pull/9687) Fixed widgetTypes access to customer user authority by @dashevchenko
+  * [#9712](https://github.com/thingsboard/thingsboard/pull/9712) Edge Requests Service - fetch only first level of relation from cloud by @volodymyr-babak
+  * [#9616](https://github.com/thingsboard/thingsboard/pull/9616) Fixed assign device to tenant by @YevhenBondarenko
+  * [#9727](https://github.com/thingsboard/thingsboard/pull/9727) Fixed rule-engine stats by @YevhenBondarenko
+  * [#9696](https://github.com/thingsboard/thingsboard/pull/9696) Fixed stringToBytes method by @nickAS21
+  * [#9751](https://github.com/thingsboard/thingsboard/pull/9751) Fixed getOrSaveKeyId transaction by @YevhenBondarenko
+  * [#9764](https://github.com/thingsboard/thingsboard/pull/9764) Fixed mqtt/coap docker connectivity commands (localhost case) by @dashevchenko
+  * [#9652](https://github.com/thingsboard/thingsboard/pull/9652) Fixed save attributes node by @ShvaykaD
+  * [#9665](https://github.com/thingsboard/thingsboard/pull/9665) Force update of version for nodes with valid config and old configuration version by @ShvaykaD
+  * [#9768](https://github.com/thingsboard/thingsboard/pull/9768) Fixed TbDate methods by @nickAS21
+  * [#9638](https://github.com/thingsboard/thingsboard/pull/9638) Fixed copy string values from msg to md TbCopyKeysNode by @ShvaykaD
+  * [#9827](https://github.com/thingsboard/thingsboard/pull/9827) Fixed VC support for notification recipients by @ViacheslavKlimov
+
+* UI
+
+  * [#9629](https://github.com/thingsboard/thingsboard/pull/9629) Fixed dashboard alias edit window by @ArtemDzhereleiko
+  * [#9643](https://github.com/thingsboard/thingsboard/pull/9643) Fixed focus alarm type filter by @ArtemDzhereleiko
+  * [#9620](https://github.com/thingsboard/thingsboard/pull/9620) Fixedfinity alarm loading on unresolved data sources by @ArtemDzhereleiko
+  * [#9644](https://github.com/thingsboard/thingsboard/pull/9644) Fixed 'Add alias' dialog when 'Entity list' filter is selected by @vvlladd28
+  * [#9658](https://github.com/thingsboard/thingsboard/pull/9658) Fixed border radius for basic settings for analog gauge widgets by @ArtemDzhereleiko
+  * [#9660](https://github.com/thingsboard/thingsboard/pull/9660) Fixed units for analog gauge widgets by @ArtemDzhereleiko
+  * [#9663](https://github.com/thingsboard/thingsboard/pull/9663) Fixed translation key for error of rule engine TTL exceptions days field by @ArtemDzhereleiko
+  * [#9671](https://github.com/thingsboard/thingsboard/pull/9671) Fixed padding for multipleput widget with group setings by @ArtemDzhereleiko
+  * [#9677](https://github.com/thingsboard/thingsboard/pull/9677) Fixed card widget to display textual values by @vvlladd28
+  * [#9715](https://github.com/thingsboard/thingsboard/pull/9715) Fixed overflowing toolbar buttons by @ArtemDzhereleiko
+  * [#9729](https://github.com/thingsboard/thingsboard/pull/9729) Fixed JSON type attribute multipleput widget by @Dmitriymush
+  * [#9747](https://github.com/thingsboard/thingsboard/pull/9747) Fixed appearance of mdi and other icons by @Dmitriymush
+  * [#9793](https://github.com/thingsboard/thingsboard/pull/9793) Increased number of displayed rule chains rule chain select to 1024 by @rusikv
+  * [#9814](https://github.com/thingsboard/thingsboard/pull/9814) Color picker centering 'Copy color to clipboard' by @ArtemDzhereleiko
+  * [#9813](https://github.com/thingsboard/thingsboard/pull/9813) Fixed default color for level and shape elements the battery widget by @ArtemDzhereleiko
+  * [#9857](https://github.com/thingsboard/thingsboard/pull/9857) Fixed externalId field value for entity import/export by @vvlladd28
+  * [#9847](https://github.com/thingsboard/thingsboard/pull/9847) Changed placeholder for the 'Enter asset profile' field by @iraznatovskyi
+  * [#9840](https://github.com/thingsboard/thingsboard/pull/9840) Fixed error overlay the name field of widget action dialog  by @ArtemDzhereleiko
+  * [#9839](https://github.com/thingsboard/thingsboard/pull/9839) Removed percent symbol from n/a value the liquid level widget by @ArtemDzhereleiko
+  * [#9836](https://github.com/thingsboard/thingsboard/pull/9836) Fixed display of values that are less then 0 or more then 100 battery level widget by @ArtemDzhereleiko
+  * [#9825](https://github.com/thingsboard/thingsboard/pull/9825) Fixed backward compatibility for notification settings by @ArtemDzhereleiko
+  * [#9860](https://github.com/thingsboard/thingsboard/pull/9860) Fixedfinite loop for major ticks the 'Analog Gauge' widget by @ArtemDzhereleiko
+  * [#9868](https://github.com/thingsboard/thingsboard/pull/9868) Fixedcorrect link tostall necessary tools for MQTT conenctivity dialog by @vvlladd28
+  * [#9889](https://github.com/thingsboard/thingsboard/pull/9889) Fixed disappearing of  disabledputs values the device connectivity sysadmin settings by @rusikv
+  * [#9883](https://github.com/thingsboard/thingsboard/pull/9883) Fixed custom legend the 'Flot' widget by @ArtemDzhereleiko
+  * [#9748](https://github.com/thingsboard/thingsboard/pull/9748) Fixed Chinese translations of 'inactive' and 'active' by @yuyihan666
+
+
+## v3.6.1 (Nov 13, 2023) {#v361}
+
+Minor release with the following improvements and bug fixes:
+
+**Improvements**
+
+* Core & Rule Engine:
+
+  * Performance improvement of WebSocket subscriptions in cluster mode by @ashvayka
+  * [#9306](https://github.com/thingsboard/thingsboard/pull/9306) Added API rate limits for TBEL by @dashevchenko
+  * [#9381](https://github.com/thingsboard/thingsboard/pull/9381) Alarm service improvements (removed deprecated methods) by @YevhenBondarenko
+  * [#9446](https://github.com/thingsboard/thingsboard/pull/9446) Support of PKCS8 and other private key formats by @YevhenBondarenko
+  * [#9457](https://github.com/thingsboard/thingsboard/pull/9457) Device connectivity settings moved to UI by @YevhenBondarenko
+  * [#9437](https://github.com/thingsboard/thingsboard/pull/9437) Ability to add a global prefix for all topics by @dashevchenko
+
+* UI:
+
+  * Added **'Doughnut'**, **'Progress bar'**, **Signal strength'**, **'Wind speed and direction'**, and **'Simple value and chart card'** widget;
+  * Added **229** new widgets to the 'Air quality', 'Indoor Environment' and 'Outdoor Environment' widget bundles by @ikulikov
+  * [#9337](https://github.com/thingsboard/thingsboard/pull/9337) Implement widget types / bundles pagination and full text search. Add widget types tags. by @ikulikov
+  * [#9398](https://github.com/thingsboard/thingsboard/pull/9398) Improved of alarm additionalfo usability by @rusikv
+  * [#9391](https://github.com/thingsboard/thingsboard/pull/9391) Enabled all delete strategies for multiple delete timeseries UI by @rusikv
+  * [#9382](https://github.com/thingsboard/thingsboard/pull/9382) Hide notification settings for providers that are disabled on the system level by @ArtemDzhereleiko
+  * [#9372](https://github.com/thingsboard/thingsboard/pull/9372) Alarm table settings improvement by @ArtemDzhereleiko
+  * [#9351](https://github.com/thingsboard/thingsboard/pull/9351) Update es_ES locale to 3.6 by @JavierNR
+  * [#9335](https://github.com/thingsboard/thingsboard/pull/9335) Update locale.constant-de_DE.json by @Mr-Mime
+  * [#9322](https://github.com/thingsboard/thingsboard/pull/9322) Updated screenshots for rulenode examples by @kalutkaz
+  * [#9277](https://github.com/thingsboard/thingsboard/pull/9277) Make entity list required the 'Entity list' alias by @ArtemDzhereleiko
+  * [#9265](https://github.com/thingsboard/thingsboard/pull/9265) Added client/server/shared attribute to key filter by @ArtemDzhereleiko
+  * [#9318](https://github.com/thingsboard/thingsboard/pull/9318) API rate limits for TBEL UI by @rusikv
+  * [#9427](https://github.com/thingsboard/thingsboard/pull/9427) Added breadcrumbs when navigate to editing widgets from the widget bundle by @vvlladd28
+  * [#9435](https://github.com/thingsboard/thingsboard/pull/9435) Improvement default widget bundle attributes/timeseries tables by @vvlladd28
+  * [#9445](https://github.com/thingsboard/thingsboard/pull/9445) Rename widget type to widget by @vvlladd28
+  * [#9472](https://github.com/thingsboard/thingsboard/pull/9472) Improved change detection login the widget editor by @vvlladd28
+  * [#9442](https://github.com/thingsboard/thingsboard/pull/9442) Improvement for font settings panel added settings to disabled and hide line height by @ArtemDzhereleiko
+  * [#9467](https://github.com/thingsboard/thingsboard/pull/9467) Ability to add or import new widgets directly to the widget bundle by @vvlladd28
+  * [#9468](https://github.com/thingsboard/thingsboard/pull/9468) Ability to select widget bundle when widget is created by @vvlladd28
+  * [#9449](https://github.com/thingsboard/thingsboard/pull/9449) Added decibel-milliwatts unit to dictionary by @rusikv
+  * [#9469](https://github.com/thingsboard/thingsboard/pull/9469) Changed 'Java Script' to 'JavaScript' by @iraznatovskyi
+  * [#9456](https://github.com/thingsboard/thingsboard/pull/9456) Added 'Liquid level' widgets bundle by @Dmitriymush
+  * [#9484](https://github.com/thingsboard/thingsboard/pull/9484) Color range setting refactored to a separate component by @ArtemDzhereleiko
+  * [#9485](https://github.com/thingsboard/thingsboard/pull/9485) Improved gauge widgets settings by @ArtemDzhereleiko
+  * [#9500](https://github.com/thingsboard/thingsboard/pull/9500) Improved translations component by @iraznatovskyi
+  * [#9501](https://github.com/thingsboard/thingsboard/pull/9501) Added basic settigs for admin table widgets by @ArtemDzhereleiko
+  * [#9556](https://github.com/thingsboard/thingsboard/pull/9556) Refactoring event filter panel by @ArtemDzhereleiko
+  * [#9569](https://github.com/thingsboard/thingsboard/pull/9569) Improved usability of bulk operations alarm widget table by @rusikv
+  * [#9581](https://github.com/thingsboard/thingsboard/pull/9581) Added support basic settings form for custom widgets by @kalutkaz
+
+* Edge:
+  
+  * [#9185](https://github.com/thingsboard/thingsboard/pull/9185) Edge Synchronization improvement using EdgeId by @AndriiLandiak
+  * [#9226](https://github.com/thingsboard/thingsboard/pull/9226) TB Resource functionality support for Edge by @AndriiLandiak
+
+**Bug fixes**
+
+* Core & Rule Engine:
+
+  * [#9419](https://github.com/thingsboard/thingsboard/pull/9419) Tenant publish event fix: tenant_idstead sys_tenant_id to avoid br… by @volodymyr-babak
+  * [#9494](https://github.com/thingsboard/thingsboard/pull/9494) Version control: fix edgeRuleChainId substitution for asset and device profiles by @ViacheslavKlimov
+  * [#9410](https://github.com/thingsboard/thingsboard/pull/9410) Fixed device active/inactive widgets home-page by @YevhenBondarenko
+  * [#9558](https://github.com/thingsboard/thingsboard/pull/9558) Fixed getUsersForAssign if originator was removed by @YevhenBondarenko
+  * [#9441](https://github.com/thingsboard/thingsboard/pull/9441) Fixed rule nodes upgrade script by @ShvaykaD
+
+* UI:
+
+  * Fixed default latest data keys units for value and chart card by @ikulikov
+  * Fixed data keys chips validation by @ikulikov
+  * [#9389](https://github.com/thingsboard/thingsboard/pull/9389) Fixed tenant profile dialog by @ArtemDzhereleiko
+  * [#9387](https://github.com/thingsboard/thingsboard/pull/9387) Fixed tenant profile autocomplete hide edit button and add create new button by @ArtemDzhereleiko
+  * [#9502](https://github.com/thingsboard/thingsboard/pull/9502) Fixed missing or bad German translations by @megla-tlanghorst
+  * [#9511](https://github.com/thingsboard/thingsboard/pull/9511) Fixed alarm type list width and empty option by @ArtemDzhereleiko
+  * [#9517](https://github.com/thingsboard/thingsboard/pull/9517) Fixed width of alarm rule for device profile dialog by @ArtemDzhereleiko
+  * [#9522](https://github.com/thingsboard/thingsboard/pull/9522) Fixed display column panel table widgets for scrolling long list columns by @ArtemDzhereleiko
+  * [#9298](https://github.com/thingsboard/thingsboard/pull/9298) Fixed entity table fields overlaying by @ArtemDzhereleiko
+  * [#9393](https://github.com/thingsboard/thingsboard/pull/9393) Command whitespaces hotfix by @MrKartoshka
+  * [#9405](https://github.com/thingsboard/thingsboard/pull/9405) Flot key settings: axisMin, axisMax allow negative values by @deaflynx
+  * [#9402](https://github.com/thingsboard/thingsboard/pull/9402) Fixed chart widgets color transparency not working hex and hsla formats by @rusikv
+  * [#9343](https://github.com/thingsboard/thingsboard/pull/9343) Use translation placeholder for closing button embed dialog. by @devaskim
+  * [#9332](https://github.com/thingsboard/thingsboard/pull/9332) Fixed dashboard detail button by @ArtemDzhereleiko
+  * [#9331](https://github.com/thingsboard/thingsboard/pull/9331) Fixed translation on change lang by @ArtemDzhereleiko
+  * [#9447](https://github.com/thingsboard/thingsboard/pull/9447) Fixed message 'No data to display on widget' not displayed by @rusikv
+  * [#9448](https://github.com/thingsboard/thingsboard/pull/9448) Fixed position of help icon custom date config of card widgets by @rusikv
+  * [#9459](https://github.com/thingsboard/thingsboard/pull/9459) Fixed advanced widget setting boarder radius property by @ArtemDzhereleiko
+  * [#9460](https://github.com/thingsboard/thingsboard/pull/9460) Fixed state chart default legend position not set by @rusikv
+  * [#9491](https://github.com/thingsboard/thingsboard/pull/9491) Fixed 'Device created' notification when creating alarm using REST API by @ViacheslavKlimov
+  * [#9473](https://github.com/thingsboard/thingsboard/pull/9473) HTML/markdown changes detection on parsingvalid html string by @Dmitriymush
+  * [#9487](https://github.com/thingsboard/thingsboard/pull/9487) Fixed reflected htmljection via login error by @vvlladd28
+  * [#9489](https://github.com/thingsboard/thingsboard/pull/9489) Fixed rule chain selector padding by @ArtemDzhereleiko
+  * [#9251](https://github.com/thingsboard/thingsboard/pull/9251) Fixed of error not displaying dashboard force fullscreen mode by @rusikv
+  * [#9510](https://github.com/thingsboard/thingsboard/pull/9510) Fixed for timeseries charts validation blocks widget adding by @rusikv
+  * [#9533](https://github.com/thingsboard/thingsboard/pull/9533) Fixed alarm table basic settings columns error appearense and anomaly with changeDetection by @Dmitriymush
+  * [#9567](https://github.com/thingsboard/thingsboard/pull/9567) Fixed updated value markdownput component and refactoring this component by @vvlladd28
+  * [#9503](https://github.com/thingsboard/thingsboard/pull/9503) Fixed version control Widgets/Widget bundles entity list by @ArtemDzhereleiko
+  * [#9583](https://github.com/thingsboard/thingsboard/pull/9583) Hide display buttons activation link and resend activation when user activated by @vvlladd28
+
+
 ## v3.6.0 (Sep 21, 2023) {#v36}
 
 Major release with the following features and bug fixes:

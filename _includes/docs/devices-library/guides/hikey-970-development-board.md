@@ -16,7 +16,6 @@ The Hikey 970 Development Board is a powerful single-board computer designed for
 1 for connectivity, as well as a variety of ports for peripherals and expansion.  
  The Hikey 970 is compatible with multiple AI frameworks, including TensorFlow, Caffe, and PyTorch.  
 
-
 {% include /docs/devices-library/blocks/basic/introduction-block.md %}
 
 ## Create device on ThingsBoard

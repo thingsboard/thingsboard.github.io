@@ -74,7 +74,7 @@ After few minutes you may call `kubectl get pods`. If everything went fine, you 
 {% include templates/install/azure/configure-mqtt.md %}
 
 ### 8.3. Configure UDP Load Balancer (Optional)
-         
+
 {% include templates/install/azure/configure-udp.md %}
 
 ### 8.4. Configure Edge Load Balancer (Optional)

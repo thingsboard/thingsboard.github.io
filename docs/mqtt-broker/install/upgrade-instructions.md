@@ -31,6 +31,15 @@ notitle: "true"
                                         </a>
                                     </div>
                                     <div class="deployment-card-block">
+                                        <a href="/docs/mqtt-broker/install/docker-windows/#upgrading">
+                                            <span>
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="deployment-card-block">
                                         <a href="/docs/mqtt-broker/install/cluster/docker-compose-setup/#upgrading">
                                             <span>
                                                 <div class="deployment-logo">
@@ -77,7 +86,57 @@ notitle: "true"
     </div>
 </div>
 
-## Upgrading to 1.1.0
+### Upgrading to 1.2.1
+
+{% capture difference %}
+**NOTE**:
+<br>
+These steps are applicable for 1.2.0 TBMQ version. In order to upgrade to 1.2.1 you need to [upgrade to 1.2.0 first](#upgrading-to-120).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+#### Pull TBMQ image (Optional)
+
+Pull 1.2.1 version TBMQ image depending on your current installation.
+
+{% capture tabspec %}tbmq-pull-1-2-1
+tbmq-pull-1-2-1-single,Single node,shell,resources/1.2.1/tbmq-single-node-pull.sh,/docs/mqtt-broker/install/resources/1.2.1/tbmq-single-node-pull.sh
+tbmq-pull-1-2-1-cluster,Cluster mode,shell,resources/1.2.1/tbmq-cluster-mode-pull.sh,/docs/mqtt-broker/install/resources/1.2.1/tbmq-cluster-mode-pull.sh{% endcapture %}
+{% include tabs.html %}
+
+#### From version
+
+The _fromVersion_ should be set to **1.2.0**.
+
+Navigate to the appropriate documentation to proceed with the next upgrade steps by [choosing one of the card](/docs/mqtt-broker/install/upgrade-instructions/)
+on top of the page.
+
+### Upgrading to 1.2.0
+
+{% capture difference %}
+**NOTE**:
+<br>
+These steps are applicable for 1.1.0 TBMQ version. In order to upgrade to 1.2.0 you need to [upgrade to 1.1.0 first](#upgrading-to-110).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+#### Pull TBMQ image (Optional)
+
+Pull 1.2.0 version TBMQ image depending on your current installation.
+
+{% capture tabspec %}tbmq-pull-1-2-0
+tbmq-pull-1-2-0-single,Single node,shell,resources/1.2.0/tbmq-single-node-pull.sh,/docs/mqtt-broker/install/resources/1.2.0/tbmq-single-node-pull.sh
+tbmq-pull-1-2-0-cluster,Cluster mode,shell,resources/1.2.0/tbmq-cluster-mode-pull.sh,/docs/mqtt-broker/install/resources/1.2.0/tbmq-cluster-mode-pull.sh{% endcapture %}
+{% include tabs.html %}
+
+#### From version
+
+The _fromVersion_ should be set to **1.1.0**.
+
+Navigate to the appropriate documentation to proceed with the next upgrade steps by [choosing one of the card](/docs/mqtt-broker/install/upgrade-instructions/)
+on top of the page.
+
+### Upgrading to 1.1.0
 
 {% capture difference %}
 **NOTE**:
@@ -86,12 +145,12 @@ These steps are applicable for 1.0.0, and 1.0.1 TBMQ versions.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-#### Pull TBMQ image
+#### Pull TBMQ image (Optional)
 
 Pull 1.1.0 version TBMQ image depending on your current installation.
 
 {% capture tabspec %}tbmq-pull-1-1-0
-tbmq-pull-1-1-0-single,Single-node,shell,resources/1.1.0/tbmq-single-node-pull.sh,/docs/mqtt-broker/install/resources/1.1.0/tbmq-single-node-pull.sh
+tbmq-pull-1-1-0-single,Single node,shell,resources/1.1.0/tbmq-single-node-pull.sh,/docs/mqtt-broker/install/resources/1.1.0/tbmq-single-node-pull.sh
 tbmq-pull-1-1-0-cluster,Cluster mode,shell,resources/1.1.0/tbmq-cluster-mode-pull.sh,/docs/mqtt-broker/install/resources/1.1.0/tbmq-cluster-mode-pull.sh{% endcapture %}
 {% include tabs.html %}
 
@@ -102,6 +161,6 @@ The _fromVersion_ can be set to either **1.0.0** or **1.0.1** values.
 Navigate to the appropriate documentation to proceed with the next upgrade steps by [choosing one of the card](/docs/mqtt-broker/install/upgrade-instructions/) 
 on top of the page.
 
-## Next steps
+### Next steps
 
 {% assign currentGuide = "InstallationGuides" %}{% include templates/mqtt-broker-guides-banner.md %}

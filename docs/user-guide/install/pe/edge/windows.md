@@ -18,7 +18,7 @@ Instructions below are provided for Windows 10/8.1/8/7 32-bit/64-bit.
 
 {% include templates/edge/install/prerequisites.md %}
 
-{% include templates/edge/install/hardware-requirements.md %}
+## Installation and Configuration
 
 ### Step 1. Install Java 11 (OpenJDK) 
 
@@ -55,7 +55,7 @@ https://dist.thingsboard.io/tb-edge-windows-{{ site.release.pe_edge_ver }}.zip
 
 {% include templates/edge/install/open-edge-ui.md %} 
 
-### Troubleshooting
+## Troubleshooting
 
 The log files are located in **logs** folder ("C:\Program Files (x86)\tb-edge\logs" in our case).
 
@@ -67,7 +67,7 @@ YYYY-MM-DD HH:mm:ss,sss [main] INFO  o.t.server.TbEdgeApplication - Started TbEd
 
 In case of any unclear errors, use general [troubleshooting guide](/docs/user-guide/troubleshooting/#getting-help) or [contact us](/docs/contact-us/).
 
-### Windows firewall settings
+## Windows firewall settings
 
 In order to have external access to ThingsBoard Web UI and device connectivity (HTTP, MQTT, CoAP)
 you need to create a new inbound rule with Windows Firewall with Advanced Security.
@@ -105,6 +105,6 @@ you need to create a new inbound rule with Windows Firewall with Advanced Securi
 ![image](/images/user-guide/install/windows/windows7-firewall-8.png)
 
 
-### Next Steps
+## Next Steps
 
 {% include templates/edge/install/next-steps.md %}

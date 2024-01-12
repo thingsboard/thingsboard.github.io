@@ -1,14 +1,14 @@
 ---
 layout: use-case
-title: IoT smart metering solutions and smart meter data visualization with ThingsBoard
-description: IoT smart metering solutions and smart meter data visualization with ThingsBoard
+title: ᐉ IoT Smart Metering Solutions — Smart Meter Solution
+description: IoT smart metering solutions ✔ Smart meter data visualization ⚫ ThingsBoard ➤ Remote monitoring and recording of energy consumption
 notitle: "true"
 
 ---
 
 {% include usecase-nav.html usecase="smart-metering" %}
 
-<h1 class="usecase-title">IoT smart metering solutions and smart meter data visualization with ThingsBoard</h1>
+<h1 class="usecase-title">IoT Smart Metering Solutions</h1>
 
 ## IoT and smart meters
 
@@ -48,16 +48,16 @@ The following interactive dashboard hosted on live demo server represents smart 
 
 <div class="usecase-carousel owl-carousel owl-theme">
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm1.png" alt="smart metering 1">
+        <img class="item-image" src="/images/usecases/smart-metering/sm1.png" alt="Smart metering dashboard with a map">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm2.png" alt="smart metering 2">
+        <img class="item-image" src="/images/usecases/smart-metering/sm2.png" alt="Smart metering dashboard with a location">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm3.png" alt="smart metering 3">
+        <img class="item-image" src="/images/usecases/smart-metering/sm3.png" alt="Smart metering dashboard with a building plan">
     </div>
     <div>
-        <img class="item-image" src="/images/usecases/smart-metering/sm4.png" alt="smart metering 4">
+        <img class="item-image" src="/images/usecases/smart-metering/sm4.png" alt="Smart metering dashbord with a thermostat controller">
     </div>
 </div>
 
@@ -163,9 +163,10 @@ The platform supports industry-standard encryption algorithms and device credent
 The Rule Engine enables forwarding incoming data to various analytics systems, such as Apache Spark or Hadoop, using Kafka or other Message buses.
 
 ## Learn more
-
-<a style="margin-right: 10px;" href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
-<a style="margin: 10px;" href="/industries/smart-energy/" class="button">Customers feedback</a>
-<a style="margin: 10px;" href="/docs/#platform-features" class="button">Platform features</a>
-<a style="margin: 10px;" href="/docs/reference/" class="button">Architecture</a>
-<a style="margin: 10px;" href="/docs/contact-us/" class="button">Contact us</a>
+<div class="usecases-bottom-nav">
+    <a href="/docs/getting-started-guides/helloworld/" class="button">Getting started</a>
+    <a href="/industries/smart-energy/" class="button">Customers feedback</a>
+    <a href="/docs/#platform-features" class="button">Platform features</a>
+    <a href="/docs/reference/" class="button">Architecture</a>
+    <a href="/docs/contact-us/" class="button">Contact us</a>
+</div>

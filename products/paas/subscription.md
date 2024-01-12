@@ -167,8 +167,8 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>Data point storage days</td>
           <td>300M</td>
           <td>10B</td>
-          <td>50B</td>
           <td>100B</td>
+          <td>200B</td>
           <td>Data points storage days are calculated for all time-series data points that are stored to the database.<br>
           Platform multiplies number of data points by the number of days those data points will be stored.<br> 
           The TTL parameter is used to extract amount of days to store the data. For example, if you store 1M data points for 30 days, this is 30M storage data point days. </td>
@@ -258,26 +258,26 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
       </tr>            
       <tr>
           <td>All Transport messages (Device)</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
+          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
+          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
+          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
+          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
           <td>Total number of messages received by any of the transport microservices for each device separately</td>
       </tr>
       <tr>
           <td>Telemetry Transport messages (Device)</td>
-          <td>10/sec<br>but no more then 300/min<br>but no more then 7K/hour</td>
-          <td>10/sec<br>but no more then 300/min<br>but no more then 7K/hour</td>
-          <td>10/sec<br>but no more then 300/min<br>but no more then 7K/hour</td>
-          <td>10/sec<br>but no more then 300/min<br>but no more then 7K/hour</td>
+          <td>100/sec<br>but no more then 3K/min<br>but no more then 7K/hour</td>
+          <td>100/sec<br>but no more then 3K/min<br>but no more then 7K/hour</td>
+          <td>100/sec<br>but no more then 3K/min<br>but no more then 7K/hour</td>
+          <td>100/sec<br>but no more then 3K/min<br>but no more then 7K/hour</td>
           <td>Total number of telemetry messages received by any of the transport microservices for each device separately</td>
       </tr>
       <tr>
           <td>Telemetry Transport data points (Device)</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
-          <td>20/sec<br>but no more then 600/min<br>but no more then 14K/hour</td>
+          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
+          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
+          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
+          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
           <td>Total number of telemetry data points received by any of the transport microservices for each device separately</td>
       </tr>
       <tr>

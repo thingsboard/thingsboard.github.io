@@ -29,7 +29,7 @@ In small and medium installations Trendz can be installed **on the same** server
 Download and extract the package.
 
 ```bash
-https://dist.thingsboard.io/trendz-windows-1.10.3.zip
+https://dist.thingsboard.io/trendz-windows-1.10.3-HF3.zip
 ```
 {: .copy-code}
 
@@ -82,7 +82,7 @@ service from your cloud vendor.
 
 #### PostgreSQL Installation
 
-Download the installation file (PostgreSQL 11.7 or newer releases) [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows) and follow the installation instructions.
+Download the installation file (PostgreSQL 12.17 or newer releases) [here](https://www.enterprisedb.com/downloads/postgres-postgresql-downloads#windows) and follow the installation instructions.
 
 During PostgreSQL installation, you will be prompted for superuser (postgres) password.
 Don't forget this password. It will be used later. For simplicity, we will substitute it with "postgres".
@@ -227,6 +227,6 @@ you need to create a new inbound rule with Windows Firewall with Advanced Securi
 
 ![image](/images/user-guide/install/windows/windows7-firewall-8.png)
 
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

@@ -44,7 +44,7 @@ assignIntegration:
         title: 'Assign Integration to the Edge'
     2:
         image: /images/pe/edge/integrations/udp/assign-integration-step-3.png
-        title: 'Login to your ThingsBoard <b>PE Edge</b> instance and open Integrations page'
+        title: 'Login to your <b>ThingsBoard Edge</b> instance and open Integrations page'
 
 sendUplink:
     0:

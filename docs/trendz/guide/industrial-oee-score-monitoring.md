@@ -3,7 +3,7 @@ layout: docwithnav-trendz
 assignees:
 - vparomskiy
 title: Track Overall Equipment Effectiveness (OEE) on industrial plant
-description: How to track Overall Equipment Effectiveness (OEE) on industrial plant and perform machine downtime analysis using ThingsBoard and Trendz. 
+description: How to track real-time OEE scores for manufacturing plants using data from IoT sensors. Dive into Availability, Performance, and Quality metrics to optimize assembly lines and tackle downtime causes.  
 
 oee-score-dashboard:
   0:
@@ -24,7 +24,7 @@ oee-score-availability-calculation:
     image: /images/trendz/guide/oee_score/OEE_final_view_St1_4.png
     title: 'Dynamic of amount of time machines were operational'
 
-oee-score-downtime-reasons:
+oee-score-downtime-reasons: 
   0:
     image: /images/trendz/guide/oee_score/OEE_add_fields_St2_1.png
     title: 'Create bar chart with top 5 downtime reasons for each assembly line'

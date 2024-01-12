@@ -3,8 +3,10 @@ abstract: "Documentation for installation and configuration of TBMQ."
 toc:
   - title: Installation options
     path: /docs/mqtt-broker/install/installation-options/
-  - title: Installing TBMQ using Docker
+  - title: Installing TBMQ using Docker (Linux or Mac OS)
     path: /docs/mqtt-broker/install/docker/
+  - title: Installing TBMQ using Docker (Windows)
+    path: /docs/mqtt-broker/install/docker-windows/
   - title: Cluster setup with Docker Compose
     path: /docs/mqtt-broker/install/cluster/docker-compose-setup/
   - title: Cluster setup with Kubernetes on Minikube

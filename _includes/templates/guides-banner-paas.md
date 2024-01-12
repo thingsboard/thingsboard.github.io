@@ -5,7 +5,7 @@
 - [Connect your device](/docs/paas/guides/#AnchorIDConnectYourDevice) - Learn how to connect devices based on your connectivity technology or solution.
 {% endif %}
 {% if currentGuide != "DataVisualization" %}
-- [Data visualization](/docs/paas/guides/#AnchorIDDataVisualization) - These guides contain instructions how to configure complex ThingsBoard dashboards.
+- [Data visualization](/docs/paas/guides/#AnchorIDDataVisualization) - These guides contain instructions on how to configure complex ThingsBoard dashboards.
 {% endif %}
 {% if currentGuide != "DataProcessing" %}
 - [Data processing & actions](/docs/paas/guides/#AnchorIDDataProcessing) - Learn how to use ThingsBoard Rule Engine.

@@ -240,8 +240,8 @@ For more information about widgets, how to create them, and their settings, clic
 ### Timewindow
 
 Dashboard timewindow represents the time interval and aggregation function that will be used to fetch the time series or alarm data.
-Timewindow is used by all the time series and alarm widgets unless they are explicitly [configured](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window) to overwrite its execution.  
-In the case of a time series widget, ThingsBoard fetches telemetry with a timestamp that matches the timewindow.  
+Timewindow is used by all the time series and alarm widgets unless they are explicitly [configured](/docs/{{docsPrefix}}user-guide/widgets/#widget-time-window) to overwrite its execution.
+In the case of a time series widget, ThingsBoard fetches telemetry with a timestamp that matches the timewindow.
 In the case of an alarm widget, ThingsBoard fetches alarms with the created time that matches the timewindow.
 
 The timewindow can work in two modes:
@@ -250,7 +250,7 @@ The timewindow can work in two modes:
 
 {% include images-gallery.html imageCollection="time-window" %}
 
-**The data aggregation function** is applicable for time series data and is not applicable for alarms.  
+**The data aggregation function** is applicable for time series data and is not applicable for alarms.
 There are five aggregation functions available at the moment: Min, Max, Average, Sum and Count. The special function called None is used to disable the aggregation.
 Data aggregation is useful when you don't want to fetch all time-series data to UI, and you would like to pre-aggregate it on the database level.
 Using the aggregation functions saves network bandwidth and computation power of the client browser.
@@ -270,8 +270,8 @@ All other intervals are distinguished in the same way.
 
 {% include images-gallery.html imageCollection="time-window-interval" %}
 
-There are times when the time intervals are long, and you'd like to see the data closer without changing timestamps, therefore, you need to zoom in. 
-Zoom in by holding the right mouse key and move it on the chart to the place where you need to get a closer look. 
+There are times when the time intervals are long, and you'd like to see the data closer without changing timestamps, therefore, you need to zoom in.
+Zoom in by holding the right mouse key and move it on the chart to the place where you need to get a closer look.
 To zoom out to the original size of the chart, double-click on the widget.
 
 {% include images-gallery.html imageCollection="time-window-zoom-in" %}
@@ -283,11 +283,11 @@ Now it is possible to set the time of your browser or a specific country. To qui
 
 ### Filters
 
-Entity filters allow you to specify a filter for the list of entities resolved by the entity alias. 
+Entity filters allow you to specify a filter for the list of entities resolved by the entity alias.
 
 Let's look at an example. Suppose you have thousands of "Thermometer" devices, and you would like to display thermometers of a specific model and with certain battery levels.
 Let's also assume that thermometer model is stored as an attribute, and the battery level is stored as a time series data.
-We will define a filter that checks if the sensor model is "DHT22" and the battery level is less than 20 percent. 
+We will define a filter that checks if the sensor model is "DHT22" and the battery level is less than 20 percent.
 
 {% capture difference %}
 **Please note:**
@@ -300,8 +300,8 @@ while adding the filter, you can configure the ability to edit it for users by m
 
 Filters are applied only to the "latest" value of the attribute or time series key. Don't use this feature to "filter out" historical time series values.
 
-You can combine different logical expressions over one key using "complex" filters. For example: "(A > 0 and A < 20) or (A > 50 and A < 100)".   
-Also, you can combine two expressions for different keys using the "and" relation. For example: "(A > 0 and A < 20) and (B > 50 and B < 100)".  
+You can combine different logical expressions over one key using "complex" filters. For example: "(A > 0 and A < 20) or (A > 50 and A < 100)".
+Also, you can combine two expressions for different keys using the "and" relation. For example: "(A > 0 and A < 20) and (B > 50 and B < 100)".
 It's not possible to use "or" in relation to combining different keys yet. For example: "(A > 0 and A < 20) or (B > 50 and B < 100)".
 
 See more examples of how to use filters in this video:

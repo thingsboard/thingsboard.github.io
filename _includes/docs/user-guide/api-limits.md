@@ -1,10 +1,10 @@
-API & Rate Limits feature allows controlling API usage, by limiting number of requests from a single host/device/tenant during single time unit (Minutes, Hours, etc.). 
+API & Rate Limits feature allows controlling API usage, by limiting number of requests from a single host/device/tenant during single time unit (Minutes, Hours, etc.).
 
-API & Rate limits are **disabled by default**. System administrator is able to configure rate limits using [thingsboard.yml](/docs/{{docsPrefix}}user-guide/install/config/).  
+API & Rate limits are **disabled by default**. System administrator is able to configure rate limits using [thingsboard.yml](/docs/user-guide/install/{{docsPrefix}}config/).
 
 #### REST API limits
 
-REST API calls are used by all sorts of UI components and possibly some automatic scripts launched on behalf of customer user or tenant user. 
+REST API calls are used by all sorts of UI components and possibly some automatic scripts launched on behalf of customer user or tenant user.
 It is critical to limit amount of API calls by tenant or by customer to avoid overloading the server due to mistakes in a custom widget or script.
 
 The *rest.limits.tenant.enabled* parameter or *TB_SERVER_REST_LIMITS_TENANT_ENABLED* environment property enables/disables tenant level limits.
@@ -32,7 +32,7 @@ Websockets are used to deliver real-time notifications about new telemetry value
 The *ws.send_timeout* parameter or *TB_SERVER_WS_SEND_TIMEOUT* environment property controls maximum time for a successful websocket message delivery to the client. If client is too slow, the session will be closed.
 
 The *ws.limits.max_queue_per_ws_session* parameter or *TB_SERVER_WS_TENANT_RATE_LIMITS_MAX_QUEUE_PER_WS_SESSION*  environment property controls max messages that are awaiting delivery to the client. If client is too slow, the session will be closed.
-   
+
 The *ws.limits.max_sessions_per_\** parameter or *TB_SERVER_WS_TENANT_RATE_LIMITS_MAX_SESSIONS_PER_\** environment property controls maximum amount of active connections per certain entity: tenant, customer, public or regular user.
 If there is too much sessions per certain criteria, new connections will be dropped. 
 

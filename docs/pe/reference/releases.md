@@ -8,6 +8,45 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.6.2 (Dec 28, 2023) {#v362}  
+
+Everything from [TB CE v3.6.2](https://github.com/thingsboard/thingsboard/releases/tag/v3.6.2) with the following improvements and bug fixes.
+
+**Improvements**
+
+ * Automatic 'Read' permissions for widgets if user has 'Read' permissions for the dashboards;
+ * Updated sendRpcRequest scheduler event configuration with new parameters: is_one_way, persistent and timeout;
+ * Enhancements for fuel level monitoring dashboard;
+
+**Bug fixes**
+
+ * Domain name is now always in lowercase;
+ * Dashboard report generation error handling;
+ * Fixed validation of Customer permissions for OTA Package entity;
+ * Fixed 'Count Unique' aggregation node initialization from DB;
+ * Fixed change of mail provider in the mail settings form;
+ * Fixed entity-group-autocomplete component;
+ * Fixed custom translation of widget data export with filename;
+ * Fixed dashboard link in the Smart Retail solution template;
+ * Fixed color-picker not allowing to select chosen color.
+
+## v3.6.1 (Nov 13, 2023) {#v361}  
+
+Everything from [TB CE v3.6.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.6.1) with the following improvements and bug fixes.
+
+**Improvements**
+
+ * Transport API performance improvement;
+ * Added ability to update WL from tenant to customer via REST API;
+
+**Bug fixes**
+
+ * Fixed add edge dialog by @deaflynx;
+ * Fixed converters component debug mode slider always on;
+ * Fixed Smart Irrigation template;
+ * Fixed incorrect recipient dialog title;
+ * Fixed for Apache Pulsar client in the 'Apache Pulsar' and 'Tuya' integrations.
+
 ## v3.6.0 (Sep 21, 2023) {#v36}  
 
 Everything from [TB CE v3.6](https://github.com/thingsboard/thingsboard/releases/tag/v3.6) with the following improvements and bug fixes.

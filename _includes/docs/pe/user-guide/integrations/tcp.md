@@ -46,7 +46,7 @@ SN-002,default,temperature,25.7\n\rSN-002,default,humidity,69
 ```
 
  - **JSON** - in this case payload is:
- 
+
 ```json
 [
   {
@@ -70,7 +70,7 @@ Here is the description of the bytes in this payload:
  - **11-17** bytes - **\x64\x65\x66\x61\x75\x6c\x74** - device type. If we convert it to text - **default**;
  - **18-21** bytes - **\x32\x35\x2e\x37** - temperature telemetry. If we convert it to text - **25.7**;
  - **22-24** bytes - **\x00\x00\x00** - dummy bytes. We are going to ignore them, because payload size is **17** bytes - from **5** till **21** byte. These bytes are included for sample purposes;
-    
+
 You can select payload type based on your device capabilities and business cases.
 
 {% capture difference %}

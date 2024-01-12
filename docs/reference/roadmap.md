@@ -9,19 +9,6 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ## ThingsBoard CE
 
-### v3.6.1
-
-* New set of widgets: 
-  * Liquid level (Tank level); 
-  * Wind speed and direction;
-  * New Doughnut;
-  * Signal level;
-  * RPC switch;
-  * Progress bar;
-  * Notification;
-* Improvement to "add widget" page.
-* Bugfixes;
-
 ### v3.7
 
 * Migration to JDK 17.
