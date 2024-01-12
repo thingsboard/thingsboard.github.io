@@ -1,4 +1,4 @@
-Copy the Uplink converter code and paste into the function decoder:
+Now copy & paste the following script to the Decoder function section:
 
 ```javascript
 /** Decoder **/

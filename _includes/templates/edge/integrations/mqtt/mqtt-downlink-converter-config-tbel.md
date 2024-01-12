@@ -1,4 +1,4 @@
-Copy the Downlink converter code and paste into the function encoder:
+Now copy & paste the following script to the Encoder function section:
 
 ```javascript
 /** Encoder **/

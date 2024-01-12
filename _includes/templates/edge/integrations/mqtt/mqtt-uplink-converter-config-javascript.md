@@ -1,4 +1,4 @@
-Copy the Uplink converter code and paste into the function decoder:
+Now copy & paste the following script to the Decoder function section:
 
 ```javascript
 /** Decoder **/
@@ -42,4 +42,4 @@ return result;
 ``` 
 {: .copy-code}
 
-![image](/images/pe/edge/integrations/mqtt/add-mqtt-integration-template-java-2-edge.png)
+![image](/images/pe/edge/integrations/mqtt/add-mqtt-integration-template-2-java-edge.png)
