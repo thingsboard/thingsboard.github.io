@@ -189,8 +189,7 @@ Also, received data can be viewed in the uplink converter. In the 'In' and 'Out'
 
 ## Send downlink message
 
-Now let's check downlink functionality. Let's add 'firmware' shared attribute.
-go to the Devices page. Select your device and navigate to the Attributes tab. Select "Shared attributes"  scope and click on the "plus" icon to create new attribute. 
+Now let's check downlink functionality. Let's add a 'firmware' shared attribute. Go to the "**Devices**" page, select your device, and navigate to the "**Attributes**" tab on the **ThingsBoard Edge**. Select the "**Shared attributes**" scope and click on the "plus" icon to create new attribute.
 Then set the attribute name, its value (for example, the key name is 'firmware', value: '01052020.v1.1') and save the data.
 
 ![image](/images/pe/edge/integrations/http/add-shared-attribute-1-edge.png)
