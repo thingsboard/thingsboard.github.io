@@ -205,6 +205,9 @@ toc:
       path: /docs/paas/user-guide/integrations/ocean-connect/
     - title: Tuya
       path: /docs/paas/user-guide/integrations/tuya/
+    - title: Particle
+      path: /docs/paas/user-guide/integrations/particle/
+      new: true
     - title: Custom Integration development guide
       path: /docs/paas/user-guide/integrations/custom/
     - title: Notifications and Alarms on your smartphone using Telegram Bot
