@@ -134,11 +134,11 @@ TBEL<small>Recommended</small>%,%accessToken%,%templates/edge/integrations/http/
 JavaScript<small></small>%,%anonymous%,%templates/edge/integrations/http/http-downlink-converter-config-javascript.md{% endcapture %}
 {% include content-toggle.html content-toggle-id="httpdownlinkconverteredgeconfig" toggle-spec=httpdownlinkconveredgeterconfig %}
 
-- Finally, we go to the "**Connection**" page.
+- Finally, we go to the "**Connection**" page:
 
-You can use placeholder **$\{\{ATTRIBUTE_KEY\}\}** to substitute integration field with attribute value from specific Edge entity. 
-In this example, we will use the placeholder **$\{\{baseUrl\}\}** for '**Base URL**'.
-Then, click the "Add" button.
+  - Enter **IP address and port of your Edge instance** in the format: 'host:port' as '**Base URL**'. Or, you can use placeholder **$\{\{ATTRIBUTE_KEY\}\}** to substitute integration field with attribute value from specific Edge entity. 
+  In this example, we will use the placeholder **$\{\{baseUrl\}\}** for '**Base URL**'.
+  - Then, click the "Add" button.
 
 ![image](/images/pe/edge/integrations/http/add-http-integration-template-4-edge.png)
 
