@@ -3,7 +3,7 @@
 
 <div class="tb-content-toggle" id="{{contentToggleId}}">
     <div class="panel panel-default">
-        <div class="panel-heading {{contentToggleId}}">
+        <div class="panel-heading">
             {% for content in toggleraw %}
             {% assign thisContent = content | split: '%,%' %}
             {% assign buttonText=thisContent[0] | strip %}
