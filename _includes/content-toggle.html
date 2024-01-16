@@ -8,7 +8,6 @@
             {% assign thisContent = content | split: '%,%' %}
             {% assign buttonText=thisContent[0] | strip %}
             {% assign toggleName=thisContent[1] %}
-            {% if forloop.first == true %}{% assign firstTargetId=thisContent[1] %}{% endif %}
             <a class="content-toggle-button" data-target="#{{toggleName}}">
                 <div class="content-toggle-button-text">
                     {{buttonText}}

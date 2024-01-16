@@ -905,8 +905,8 @@ var pushmenu = (function(){
 			}
 		}
 
-		$(".tb-content-toggle#" + contentToggleItem.id + " ." + contentToggleItem.id + " > a.content-toggle-button").removeClass("active");
-		$(".tb-content-toggle#" + contentToggleItem.id + " ." + contentToggleItem.id + " > a.content-toggle-button[data-target='#" + targetId + "']").addClass("active");
+		$('.tb-content-toggle#' + contentToggleItem.id + ' > .panel > .panel-heading > a.content-toggle-button').removeClass("active");
+		$(".tb-content-toggle#" + contentToggleItem.id + " > .panel > .panel-heading > a.content-toggle-button[data-target='#" + targetId + "']").addClass("active");
 		$(".tb-content-toggle#" + contentToggleItem.id +  " > .panel > .panel-collapse").removeClass("show");
 		$(".tb-content-toggle#" + contentToggleItem.id +  " > .panel > .panel-collapse#" + targetId).addClass("show");
 	}
@@ -931,7 +931,7 @@ var pushmenu = (function(){
 
 	function initContentToggleHandler(contentToggleItem) {
 		let toggleBlocksIds = [];
-		$('.panel-heading.' + contentToggleItem.id + ' > a').each(function() {
+		$('#' + contentToggleItem.id + ' > .panel .panel-heading > a.content-toggle-button').each(function() {
 			toggleBlocksIds.push($(this).attr("data-target").substring(1));
 		});
 		let i = 0;
@@ -951,13 +951,13 @@ var pushmenu = (function(){
 
 		onPopStateHandler(contentToggleItem);
 
-		$('.tb-content-toggle#' + contentToggleItem.id + ' .' + contentToggleItem.id + ' > a.content-toggle-button')
+		$('.tb-content-toggle#' + contentToggleItem.id + ' > .panel > .panel-heading > a.content-toggle-button')
 			.each((idx,element) => parseButtons(element, contentToggleItem));
 
 		const firstId = Object.keys(toggleBlocksIdsToTocsIds[contentToggleItem.id])[0];
 
-		$('.tb-content-toggle#' + contentToggleItem.id + " ." + contentToggleItem.id + " >  a.content-toggle-button").removeClass("active");
-		$('.tb-content-toggle#' + contentToggleItem.id + " ." + contentToggleItem.id + " > a.content-toggle-button[data-target='#" + firstId + "']").addClass("active");
+		$('.tb-content-toggle#' + contentToggleItem.id + ' > .panel > .panel-heading > a.content-toggle-button').removeClass("active");
+		$(".tb-content-toggle#" + contentToggleItem.id + " > .panel > .panel-heading > a.content-toggle-button[data-target='#" + firstId + "']").addClass("active");
 
 		$(".tb-content-toggle#" + contentToggleItem.id + " > .panel > .panel-collapse").removeClass("show");
 		$(".tb-content-toggle#" + contentToggleItem.id + " > .panel > .panel-collapse#" + firstId).addClass("show");
