@@ -14,29 +14,16 @@ var deviceType = payloadStr.substring(6,13);
 
 // Result object with device/asset attributes/telemetry data
 var result = {
-   deviceName: deviceName,
-   deviceType: deviceType,
-   attributes: {},
-   telemetry: {
-       temperature: parseFloat(payloadStr.substring(13,17)),
-       humidity: parseFloat(payloadStr.substring(17,19))
-   }
+    deviceName: deviceName,
+    deviceType: deviceType,
+    attributes: {},
+    telemetry: {
+        temperature: parseFloat(payloadStr.substring(13,17)),
+        humidity: parseFloat(payloadStr.substring(17,19))
+    }
 };
 
-/** Helper functions **/
-
-function decodeToString(payload) {
-   return String.fromCharCode.apply(String, payload);
-}
-
-function decodeToJson(payload) {
-   // covert payload to string.
-   var str = decodeToString(payload);
-
-   // parse string to JSON
-   var data = JSON.parse(str);
-   return data;
-}
+/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/
 
 return result;
 ``` 

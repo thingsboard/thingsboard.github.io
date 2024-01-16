@@ -11,29 +11,16 @@ var data = decodeToJson(payload);
 var deviceName = data.deviceName;
 var deviceType = data.deviceType;
 var result = {
-   deviceName: deviceName,
-   deviceType: deviceType,
-   attributes: {},
-   telemetry: {
-       temperature: data.temperature,
-       humidity: data.humidity
-   }
+    deviceName: deviceName,
+    deviceType: deviceType,
+    attributes: {},
+    telemetry: {
+        temperature: data.temperature,
+        humidity: data.humidity
+    }
 };
 
-/** Helper functions **/
-
-function decodeToString(payload) {
-   return String.fromCharCode.apply(String, payload);
-}
-
-function decodeToJson(payload) {
-   // covert payload to string.
-   var str = decodeToString(payload);
-
-   // parse string to JSON
-   var data = JSON.parse(str);
-   return data;
-}
+/** Helper functions 'decodeToString' and 'decodeToJson' are already built-in **/
 
 return result;
 ``` 
