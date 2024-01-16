@@ -881,7 +881,7 @@ var pushmenu = (function(){
 		var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
 		var targetId = params[contentToggleItem.id];
 		if (!targetId) {
-			const activeLinkItem = $(contentToggleItem).find('a.content-toggle-button.active')
+			const activeLinkItem = $(contentToggleItem).find('a.content-toggle-button.active:first')
 			if (activeLinkItem && activeLinkItem.attr("data-target")) {
 				targetId = $(activeLinkItem).attr("data-target").substring(1);
 			} else {
