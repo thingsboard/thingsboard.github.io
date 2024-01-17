@@ -44,4 +44,4 @@ if (data.coreid != "api") {
 ```
 {: .copy-code.expandable-10}
 
-![image](/images/user-guide/integrations/particle/particle-create-uplink-converter-tbel.png)
+![image](https://img.thingsboard.io/user-guide/integrations/particle/particle-create-uplink-converter-tbel.png)

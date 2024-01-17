@@ -28,6 +28,6 @@ return result;
 ``` 
 {: .copy-code}
 
-![image](/images/pe/edge/integrations/coap/add-coap-integration-template-text-payload-edge-2.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/coap/add-coap-integration-template-text-payload-edge-2.png)
 
 If you want to use JavaScript to develop functions, please use [the text payload script for JS](/docs/pe/edge/user-guide/resources/text-payload-converter.json){:target="_blank"}.

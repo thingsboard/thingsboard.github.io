@@ -35,7 +35,7 @@ To do this, we need to the following steps from [official guide](https://docs.pa
 
 After connecting the device, it will become visible on the Particle console. This will allow you to create an integration to receive data on ThingsBoard.  
 
-![Devices list](/images/user-guide/integrations/particle/particle-console-device-list.png)
+![Devices list](https://img.thingsboard.io/user-guide/integrations/particle/particle-console-device-list.png)
 
 ## ThingsBoard Integration Configuration
 
@@ -91,7 +91,7 @@ particle login
 ```
 {:.copy-code}
 
-![Login](/images/user-guide/integrations/particle/cli-login.png)
+![Login](https://img.thingsboard.io/user-guide/integrations/particle/cli-login.png)
 
 After logging in, you will need to [create an access token](https://docs.particle.io/reference/developer-tools/cli/#particle-token-create).  
 You can do this using one of the following commands:  
@@ -105,7 +105,7 @@ You can do this using one of the following commands:
    particle token create
    ```
    {:.copy-code}
-![Login](/images/user-guide/integrations/particle/cli-token-created.png)
+![Login](https://img.thingsboard.io/user-guide/integrations/particle/cli-token-created.png)
 
 Save created token, we will need it in the next step.  
 
@@ -113,16 +113,16 @@ Save created token, we will need it in the next step.
 
 {% assign createIntegrationUsingWizard = '
    ===
-      image: /images/user-guide/integrations/particle/tb-create-integration.png,
+      image: https://img.thingsboard.io/user-guide/integrations/particle/tb-create-integration.png,
       title: Go to **Integrations** section and click Add new integration button. Name it **Particle Integration**, and select type **Particle**.
    ===
-      image: /images/user-guide/integrations/particle/tb-select-uplink.png,
+      image: https://img.thingsboard.io/user-guide/integrations/particle/tb-select-uplink.png,
       title: Now, you can select the recently created **Uplink data Converter for Particle Integration**. Click **Next**.
    ===
-      image: /images/user-guide/integrations/particle/tb-select-downlink.png,
+      image: https://img.thingsboard.io/user-guide/integrations/particle/tb-select-downlink.png,
       title: If you added a downlink converter, select it. Click **Next**.
    ===
-      image: /images/user-guide/integrations/particle/tb-create-integration-configuration.png,
+      image: https://img.thingsboard.io/user-guide/integrations/particle/tb-create-integration-configuration.png,
       title: If you added a downlink converter and created a token - toggle **Allow downlink** and paste your access token. Click **Add** to create integration. 
 '
 %}
@@ -138,16 +138,16 @@ To do this, please follow next steps:
 
 {% assign createParticleCloudIntegration = '
    ===
-      image: /images/user-guide/integrations/particle/particle-console-integrations-2.png,
+      image: https://img.thingsboard.io/user-guide/integrations/particle/particle-console-integrations-2.png,
       title: Go to **Integrations** section and click "**Add new integration**" button.
    ===
-      image: /images/user-guide/integrations/particle/particle-console-integrations-3.png,
+      image: https://img.thingsboard.io/user-guide/integrations/particle/particle-console-integrations-3.png,
       title: Click on the **Webhook**.
    ===
-      image: /images/user-guide/integrations/particle/particle-console-integrations-4.png,
+      image: https://img.thingsboard.io/user-guide/integrations/particle/particle-console-integrations-4.png,
       title: Fill in all required fields. Then click **Create webhook**.
    ===
-      image: /images/user-guide/integrations/particle/particle-console-integrations-5.png,
+      image: https://img.thingsboard.io/user-guide/integrations/particle/particle-console-integrations-5.png,
       title: Your integration was created successfully.
 '
 %}
@@ -158,17 +158,17 @@ To do this, please follow next steps:
 
 Once integration is created and any message arrives to it - you will be able to see a new device in your **Devices**.
 
-![image](/images/user-guide/integrations/particle/tb-new-device-created.png)
+![image](https://img.thingsboard.io/user-guide/integrations/particle/tb-new-device-created.png)
 
 ### Rule Chain configuration
 
 When integration is configured and ready to use, we need to go to **Rule Chains**, choose **"Root Rule Chain"** and create rule node **Integration Downlink**. Input some name here, choose earlier created Particle integration, and tap **Add**.
 
-![image](/images/user-guide/integrations/particle/tb-create-downlink-rule-node.png)
+![image](https://img.thingsboard.io/user-guide/integrations/particle/tb-create-downlink-rule-node.png)
 
 After these steps, we need to tap on a right grey square of rule node **message type switch** and drag this square to left side of **Integration Downlink**. In pop-up window, add **"RPC Request to Device"** relation and tap "Add".
 
-![image](/images/user-guide/integrations/particle/tb-root-rule-chain.png)
+![image](https://img.thingsboard.io/user-guide/integrations/particle/tb-root-rule-chain.png)
 
 Click on check mark in bottom right corner of the screen to save the Root Rule Chain.
 
@@ -176,7 +176,7 @@ Click on check mark in bottom right corner of the screen to save the Root Rule C
 
 To process command on device, we will use an example app **Web-Connected LED** from [Particle WebIDE](https://build.particle.io/build).  
 
-![Particle WebIDE](/images/user-guide/integrations/particle/particle-webide-example.png)  
+![Particle WebIDE](https://img.thingsboard.io/user-guide/integrations/particle/particle-webide-example.png)  
 
 Click on **Use this example** and thunder icon to flash it to the device.  
 
@@ -204,16 +204,16 @@ If no - check that your device is connected to Particle and connection is stable
 
 {% assign createParticleDashboard = '
    ===
-      image: /images/user-guide/integrations/particle/particle-add-widget-1.png,
+      image: https://img.thingsboard.io/user-guide/integrations/particle/particle-add-widget-1.png,
       title: Go to the "**Dashboards**" page, create a new dashboard and select "**Switch Control**" widget from the "**Control Widgets**" bundle.
    ===
-      image: /images/user-guide/integrations/particle/particle-add-widget-2.png,
+      image: https://img.thingsboard.io/user-guide/integrations/particle/particle-add-widget-2.png,
       title: Add new alias with previously created device. Then navigate to the "**Appearance**" tab.
    ===
-      image: /images/user-guide/integrations/particle/particle-add-widget-3.png,
+      image: https://img.thingsboard.io/user-guide/integrations/particle/particle-add-widget-3.png,
       title: Change retrieve value to "**Don&#39;t retrieve**" and change "***RPC set value method***" to "**led**". Then paste the convert value function copied from the documentation. Click "**Add**", then save dashboard.
    ===
-      image: /images/user-guide/integrations/particle/particle-add-widget-5.png,
+      image: https://img.thingsboard.io/user-guide/integrations/particle/particle-add-widget-5.png,
       title: Now toggle the button and LED on your Photon should change it&#39;s led state.
 '
 %}

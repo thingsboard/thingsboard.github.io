@@ -29,6 +29,6 @@ return result;
 ``` 
 {: .copy-code}
 
-![image](/images/pe/edge/integrations/coap/add-coap-integration-template-binary-payload-2-edge.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/coap/add-coap-integration-template-binary-payload-2-edge.png)
 
 If you want to use JavaScript to develop functions, please use [the binary payload script for JS](/docs/pe/edge/user-guide/resources/binary-payload-converter.json){:target="_blank"}.

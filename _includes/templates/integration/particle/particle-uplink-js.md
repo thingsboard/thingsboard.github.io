@@ -57,4 +57,4 @@ function decodeToJson(payload) {
 ```
 {: .copy-code.expandable-10}
 
-![image](/images/user-guide/integrations/particle/particle-create-uplink-converter-js.png)
+![image](https://img.thingsboard.io/user-guide/integrations/particle/particle-create-uplink-converter-js.png)

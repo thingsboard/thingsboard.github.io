@@ -5,58 +5,58 @@ description: CoAP Integration Guide
 
 assign-integration:
     0:
-        image: /images/pe/edge/integrations/coap/assign-coap-integration-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/assign-coap-integration-1-edge.png
         title: 'Go to the "<b>Edge management</b>" section -> "<b>Instances</b>" page, click on your edge instance to open "Edge details" window, and navigate to the "<b>Attributes</b>" tab. Click "plus" icon to add new <b>server attribute</b> to Edge;'
     1:
-        image: /images/pe/edge/integrations/coap/assign-coap-integration-2-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/assign-coap-integration-2-edge.png
         title: 'Name it &#39;<b>edgeIp</b>&#39; and use <b>Edge IP address</b> and <b>CoAP bind port</b> in following format: &#39;host:port&#39;. After, click "Add" button;'
     2:
-        image: /images/pe/edge/integrations/coap/assign-coap-integration-3-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/assign-coap-integration-3-edge.png
         title: 'Added the server attribute &#39;<b>&#39;edgeIP&#39;</b>&#39; to the edge;'
     3:
-        image: /images/pe/edge/integrations/coap/assign-coap-integration-4-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/assign-coap-integration-4-edge.png
         title: 'Now, click "<b>Manage edge integrations</b>" icon of Edge entity;'
     4:
-        image: /images/pe/edge/integrations/coap/assign-coap-integration-5-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/assign-coap-integration-5-edge.png
         title: 'Click the "+" icon at the top right of the corner. Specify your integration and click "Assign" button to assign it to the Edge;'
     5:
-        image: /images/pe/edge/integrations/coap/assign-coap-integration-6-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/assign-coap-integration-6-edge.png
         title: 'Login to your <b>ThingsBoard Edge</b> instance and open "<b>Integrations center</b>" section -> "<b>Integrations</b>" page. You should see your integration. Click on it;'
     6:
-        image: /images/pe/edge/integrations/coap/assign-coap-integration-7-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/assign-coap-integration-7-edge.png
         title: 'In the "<b>Integration details</b>" window placeholder <b>${{edgeIP}}</b> will be replaced with the value of the attribute.'
 
 coap-converter-binary-events:
     0:
-        image: /images/pe/edge/integrations/coap/converter-events-coap-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/converter-events-coap-1-edge.png
         title: 'Go to the "<b>Integrations center</b>" section -> "<b>Data converters</b>" page, click on the uplink converter to open "Data converter details" window, and navigate to the "<b>Events</b>" tab. There you will find an uplink message;'
     1:
-        image: /images/pe/edge/integrations/coap/converter-events-coap-binary-payload-2-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/converter-events-coap-binary-payload-2-edge.png
         title: 'To see the incoming message to the converter, click the three dots in the &#39;In&#39; column;'
     2:
-        image: /images/pe/edge/integrations/coap/converter-events-coap-3-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/converter-events-coap-3-edge.png
         title: 'To see the outgoing message from the converter, click the three dots in the &#39;Out&#39; column.'
 
 coap-converter-json-events:
     0:
-        image: /images/pe/edge/integrations/coap/converter-events-coap-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/converter-events-coap-1-edge.png
         title: 'Go to the "<b>Integrations center</b>" section -> "<b>Data converters</b>" page, click on the uplink converter to open "Data converter details" window, and navigate to the "<b>Events</b>" tab. There you will find an uplink message;'
     1:
-        image: /images/pe/edge/integrations/coap/converter-events-coap-json-payload-2-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/converter-events-coap-json-payload-2-edge.png
         title: 'To see the incoming message to the converter, click the three dots in the &#39;In&#39; column;'
     2:
-        image: /images/pe/edge/integrations/coap/converter-events-coap-3-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/converter-events-coap-3-edge.png
         title: 'To see the outgoing message from the converter, click the three dots in the &#39;Out&#39; column.'
     
 coap-converter-text-events:
     0:
-        image: /images/pe/edge/integrations/coap/converter-events-coap-1-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/converter-events-coap-1-edge.png
         title: 'Go to the "<b>Integrations center</b>" section -> "<b>Data converters</b>" page, click on the uplink converter to open "Data converter details" window, and navigate to the "<b>Events</b>" tab. There you will find an uplink message;'
     1:
-        image: /images/pe/edge/integrations/coap/converter-events-coap-text-payload-2-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/converter-events-coap-text-payload-2-edge.png
         title: 'To see the incoming message to the converter, click the three dots in the &#39;In&#39; column;'
     2:
-        image: /images/pe/edge/integrations/coap/converter-events-coap-3-edge.png
+        image: https://img.thingsboard.io/pe/edge/integrations/coap/converter-events-coap-3-edge.png
         title: 'To see the outgoing message from the converter, click the three dots in the &#39;Out&#39; column.'
 
 ---
@@ -72,7 +72,7 @@ CoAP Integration allows to stream data from devices that use a CoAP protocol to 
 
 Please review the integration diagram to learn more.
 
-![image](/images/user-guide/integrations/coap-integration.svg)
+![image](https://img.thingsboard.io/user-guide/integrations/coap-integration.svg)
 
 ## Prerequisites
 
@@ -122,7 +122,7 @@ Follow the steps below to add the **MQTT integration**:
 
 {% include templates/edge/integrations/debug-mode-info.md %}
 
-![image](/images/pe/edge/integrations/coap/add-coap-integration-template-1-edge.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/coap/add-coap-integration-template-1-edge.png)
 
 - The next step is to create an **Uplink data converter**.
 
@@ -150,7 +150,7 @@ After adding the uplink converter, click "Next".
   In this example, we will use the placeholder **$\{\{edgeIp\}\}** for '**Base URL**';
   - Click "Add" button to create the integration.
 
-![image](/images/pe/edge/integrations/coap/add-coap-integration-template-3-edge.png)
+![image](https://img.thingsboard.io/pe/edge/integrations/coap/add-coap-integration-template-3-edge.png)
 
 ## Assign Integration to Edge
 
