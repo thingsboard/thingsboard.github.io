@@ -124,7 +124,7 @@ The root part of the CAN connector configuration provides basic information on h
 | **devices**                   |                    | List of devices.                                                                                           |
 |---
 
-You can find the list of supported CAN interfaces one can [find](https://python-can.readthedocs.io/en/stable/configuration.html#interface-names) in the documentation of the Python CAN library.  
+You can [find](https://python-can.readthedocs.io/en/stable/configuration.html#interface-names) the list of supported CAN interfaces in the documentation of the Python CAN library.  
 
 ### Section "backend"
 This section is optional and it provides configuration for specific CAN interface. Each option has a default value. To get a list of available options, [see](https://python-can.readthedocs.io/en/stable/configuration.html#interface-names) the documentation for specific interface type.  
