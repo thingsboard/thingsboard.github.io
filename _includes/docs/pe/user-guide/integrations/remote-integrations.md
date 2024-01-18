@@ -8,11 +8,15 @@
 * TOC
 {:toc}
 
-Remote Integrations in ThingsBoard allow for a new deployment scenario where remote integration can be installed in a local network and stream data to the ThingsBoard instance.
-It is helpful if you have, for example, a local MQTT broker or OPC-UA server that doesn't have an external IP address for direct connection to ThingsBoard.
-The remote integration provides connection to these local servers, pulls the data, stores it locally, and then streams it to the ThingsBoard instance.
+Remote Integrations allow reliable data streaming from multiple devices in the local area network (LAN) to the ThingsBoard platform in the cloud. 
+They are helpful if you have, for example, a local MQTT broker or OPC-UA server with no external IP address and is not reachable from where your ThingsBoard platform is installed. 
+The remote integration initiates a connection to these servers, pulls the data, stores it locally, and then streams it to the ThingsBoard instance.
 
-Although this approach requires some additional steps in the deployment process, it provides integration with servers in the local network, giving you flexibility in managing performance by isolating the integration process from the main ThingsBoard process.
+Although this approach requires some additional steps in the deployment process, it allows integration with servers and devices deployed in the LAN. A separate integration process improves isolation level and performance.
+
+The remote integration approach enables tenants to launch plain [TCP](/docs/user-guide/integrations/tcp/) and [UDP](/docs/user-guide/integrations/udp/) integrations. Those two integrations are unique because they start a server that binds to a specific port. 
+Since ThingsBoard is a multi-tenant environment, we can't launch TCP and UDP integrations as part of the core service due to possible port collisions between tenants. 
+That is why we propose each tenant to launch a TCP/UDP integration as a remote one. The same applies to any custom integration that the tenant creates.
 
 ![image](/images/user-guide/integrations/remote/remote-integrations-overview.png)
 
