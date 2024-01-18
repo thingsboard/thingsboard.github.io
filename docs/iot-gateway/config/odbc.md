@@ -94,7 +94,7 @@ This **mandatory** section provides information on how to connect or reconnect t
 | reconnect                         | **true**          | Whether to reconnect after catching database error.                                                   |
 | reconnectPeriod                   | **60.0**          | Period in seconds between reconnect attempts. Floating point means more precise time than seconds.    |
 
-**Note**: For more information about encoding/decoding, read [there](https://github.com/mkleehammer/pyodbc/wiki/Unicode).
+**Note**: For more information about encoding/decoding, refer to [the documentation](https://github.com/mkleehammer/pyodbc/wiki/Unicode).
 
 ### Subsection "attributes"
 This **optional** subsection provides [several options](https://github.com/mkleehammer/pyodbc/wiki/Connection#connection-attributes) to tune the connection procedure.
