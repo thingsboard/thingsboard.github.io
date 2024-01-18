@@ -10,7 +10,7 @@ description: BACnet protocol support for ThingsBoard IoT Gateway
 
 The BACnet connector is a way to read and write some basic objects and properties in BACnet IP device.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this connector.  
-We will describe connector configuration file below.  
+We will describe the connector configuration file below.  
 
 
 <b>Example of BACnet Connector config file.</b>
@@ -79,7 +79,7 @@ We will describe connector configuration file below.
 
 ### Section "general": description and configuration parameters
 
-Configuration in this section uses to configure the gateway in the BACnet network.  
+Configuration in this section is used to configure the gateway in the BACnet network.  
 
 | **Parameter**             | **Default value**        | **Description**                                       |
 |:-|:-|-
@@ -127,7 +127,7 @@ Example:
 
 ###### Key settings for "attributes"
 
-Configuration in this sub-section units provides settings for processing data from BACnet device as attribute of device on ThingsBoard platform instance.
+Configuration in this unit sub-section provides settings for processing data from BACnet device as an attribute of the device on ThingsBoard platform instance.
 
 | **Parameter**  | **Default value**  | **Description**                                     |
 |:-|:-|-
@@ -149,7 +149,7 @@ Example:
 
 ###### Key settings for "timeseries"
 
-Configuration in this sub-section units provides settings for processing data from BACnet device as a telemetry of device on ThingsBoard platform instance. 
+Configuration in this unit sub-section provides settings for processing data from BACnet device as telemetry of the device on ThingsBoard platform instance. 
 
 | **Parameter**  | **Default value** | **Description**                                     |
 |:-|:-|-
@@ -170,7 +170,7 @@ Example:
 ```
 
 ###### Key settings for "attributeUpdates"
-Configuration in this sub-section units provides settings for processing data from shared attributes on ThingsBoard platform instance to the BACnet device.
+Configuration in this unit sub-section provides settings for processing data from shared attributes on ThingsBoard platform instance to the BACnet device.
 
 | **Parameter**  | **Default value**  | **Description**                                                   |
 |:-|:-|-
@@ -193,7 +193,7 @@ Example:
 ```
 
 ###### Key settings for "serverSideRpc"
-Configuration in this sub-section units provides settings for processing RPC from ThingsBoard instance to the BACnet device.
+Configuration in this unit sub-section provides settings for processing RPC from ThingsBoard instance to the BACnet device.
 
 | **Parameter**         | **Default value**  | **Description**                                                           |
 |:-|:-|-
@@ -226,7 +226,7 @@ Examples:
 
 ##### Object identifiers
 
-The BACnet connector Object identifiers consist of two parts separated by colon (“:”) symbol:  
+The BACnet connector Object identifiers consist of two parts separated by a colon (“:”) symbol:  
 the name of object and the number of this object on the device.  
 
 Tested and supported objects:  
