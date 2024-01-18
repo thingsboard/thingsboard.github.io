@@ -26,6 +26,8 @@ At the moment ThingsBoard supports various integration protocols. Most popular a
 Platform also support integration with specific LoRaWAN Network servers, Sigfox backend, various NB IoT devices using raw UDP and TCP integrations. 
 AWS IoT, IBM Watson and Azure Event Hub allows to subscribe to the data feed from devices via MQTT or AMQP.
 
+![image](/images/user-guide/integrations/integration.png)
+
 The list of platform integrations is constantly growing, however, the general integration concepts are the same and explained below.  
 
 Once message arrives from External Platform to ThingsBoard it passes validation according to platform specific payload format and security rules. 
@@ -46,7 +48,7 @@ The most common use cases are:
  
 Once message is pushed by the rule engine, ThingsBoard invokes assigned [**Downlink Data Converter**](/docs/{{peDocsPrefix}}user-guide/integrations/#downlink-data-converter) and transforms the rule engine message to the specific data format that is used by the Integration.
 
-<br/>
+<br>
 
 <object width="80%" data="/images/user-guide/integrations/integrations-overview.svg"></object>
  
@@ -94,12 +96,17 @@ Learn how to configure integration to run remotely using [this guide](/docs/{{pe
 
 ### Data Converters
 
-Data Converters is a part of the Platform Integrations feature. There are Uplink and Downlink data converters.
+Data Converters is a part of the Platform Integrations feature. There are **Uplink** and **Downlink** data converters.
  
 #### Uplink Data Converter
 
-The main function of Uplink Data Converter is to parse payload of the incoming message and transform it to format that ThingsBoard uses.
-  
+The main function of **Uplink Data Converter** is to parse payload of the incoming message and transform it to format that ThingsBoard uses.
+
+To create an Uplink Converter go to Data Converters section and Click Add new data converter —> Create new converter. Enter converter name, select its type, specify a script to parse and transform data. Optional you can turn the Debug mode. Click “Add” to create converter.
+
+![image](/images/user-guide/integrations/uplink-converter-add.png)
+
+<br>
 Uplink Converter is basically a user defined function with the following signature:
 
 ```javascript
@@ -154,11 +161,21 @@ Converter output should be a valid JSON document with the following structure:
 }
 ```
 
-**NOTE**: The only mandatory parameters in the output JSON are **deviceName** and **deviceType**. 
+{% capture difference %}
+**NOTE**:
+<br>
+The only mandatory parameters in the output JSON are **deviceName** and **deviceType**.
 Starting version 2.4.2, ThingsBoard also supports **assetName** and **assetType** instead of deviceName and deviceType.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
-**NOTE**: Starting version 2.4.2, ThingsBoard also support optional **customerName** and **groupName**. 
-Those parameters will cause ThingsBoard to automatically create customer and/or entity group and assign those entities to the customer and/or group.     
+{% capture difference %}
+**NOTE**:
+<br>
+Starting version 2.4.2, ThingsBoard also support optional **customerName** and **groupName**.
+Those parameters will cause ThingsBoard to automatically create customer and/or entity group and assign those entities to the customer and/or group.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 Converter may also output array of device values and/or contain timestamps in the telemetry values. For example:
 
@@ -203,20 +220,37 @@ Converter may also output array of device values and/or contain timestamps in th
     }
 ]
 ```
- 
+
+##### Update only keys field
+
+To avoid constant updates for telemetry attributes or keys, you can use the "Update only keys list" field.  
+Any keys provided in this field that exist in the telemetry or attribute arrays in the message after conversion will not be updated if the values associated with those keys have not changed from their previous values.
+
+{% capture update-only-keys-cluster-mode %}
+Please note that in a cluster setup, values, associated with keys specified in the "Update only keys list" field may be updated more than once if a message is received by a different integration executor nodes.  
+The same behavior is expected if the converter configuration has been updated.  
+{% endcapture %}
+{% include templates/warn-banner.md content=update-only-keys-cluster-mode %}
+
 ##### Example
 
 Let's assume a complex example where payload is encoded in hex "value" field and there is a timestamp associated with each record. 
-First two bytes of "value" field contain battery and second two bytes contain temperature. See payload example and metadata on a screen shoot below:
+First two bytes of "value" field contain battery and second two bytes contain temperature. See payload example and metadata on a screen shoot below.
 
-![image](/images/user-guide/integrations/uplink-converter-example.png) 
+{% include templates/tbel-vs-js.md %}
+
+{% capture uplinkdataconverterexample1 %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/overview/uplink-data-converter-example-tbel.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/overview/uplink-data-converter-example-java.md{% endcapture %}
+
+{% include content-toggle.html content-toggle-id="uplinkdataconverterexample1" toggle-spec=uplinkdataconverterexample1 %}
 
 
-The full source code of javascript function used in converter is available [**here**](/docs/user-guide/resources/uplink-data-converter-example.js). 
+
 
 See video tutorial below for step-by-step instruction how to setup Uplink Data Converter.
 
-<br/>
+<br>
 <div id="video">  
     <div id="video_wrapper">
         <iframe src="https://www.youtube.com/embed/CojStpYCTGI" frameborder="0" allowfullscreen></iframe>
@@ -225,13 +259,18 @@ See video tutorial below for step-by-step instruction how to setup Uplink Data C
 
 #### Downlink Data Converter
  
-The main function of Downlink Data Converter is to transform the incoming rule engine message and its metadata 
-to the format that is used by corresponding Integration. 
+The main function of **Downlink Data Converter** is to transform the incoming rule engine message and its metadata 
+to the format that is used by corresponding Integration.
 
+To create a Downlink Converter go to Data Converters section and Click Add new data converter —> Create new converter. Enter converter name, select its type, specify a script to parse and transform data. Optional you can turn the Debug mode. Click “Add” to create converter.
+
+![image](/images/user-guide/integrations/downlink-converter-add.png)
+
+<br>
 Downlink Converter is basically a user defined function with the following signature:
 
 ```javascript
-function Decoder(msg, metadata, msgType, integrationMetadata);
+function Encoder(msg, metadata, msgType, integrationMetadata);
 ```
 
 Where
@@ -268,16 +307,19 @@ you would like to push this update to an external MQTT broker (TTN, Mosquitto, A
 You may also want to include the "firmwareVersion" attribute value that was configured long time ago and is not present in this particular request.
 The topic to push the update should contain the device name.
 
-![image](/images/user-guide/integrations/downlink-converter-example.png) 
+{% include templates/tbel-vs-js.md %}
 
+{% capture downlinkdataconverterexample1 %}
+TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/overview/downlink-data-converter-example-tbel.md%br%
+JavaScript<small></small>%,%anonymous%,%templates/integration/overview/downlink-data-converter-example-java.md{% endcapture %}
 
-The full source code of javascript function used in converter is available [**here**](/docs/user-guide/resources/downlink-data-converter-example.js). 
+{% include content-toggle.html content-toggle-id="downlinkdataconverterexample1" toggle-spec=downlinkdataconverterexample1 %}
 
 In order to invoke the downlink processing by the integration, tenant administrator should configure the rule chain similar to the one below:
 
-![image](/images/user-guide/integrations/downlink-rule-chain-example.png)
+![image](/images/user-guide/integrations/downlink-rule-chain-example-pe.png)
 
-The full rule chain configuration is available [**here**](/docs/user-guide/resources/downlink_example_rule_chain.json).
+The full rule chain configuration is available [**here**](/docs/user-guide/resources/downlink-example-rule-chain.json).
 
 ##### Synchronous vs Asynchronous Downlinks 
 
@@ -341,13 +383,18 @@ Explore guides and video tutorials related to specific integrations:
  - [Azure Event Hub](/docs/{{peDocsPrefix}}user-guide/integrations/azure-event-hub/)
  - [Azure IoT Hub](/docs/{{peDocsPrefix}}user-guide/integrations/azure-iot-hub/)
  - [Actility ThingPark](/docs/{{peDocsPrefix}}user-guide/integrations/thingpark/)
+ - [TheThingsIndustries](/docs/{{peDocsPrefix}}user-guide/integrations/tti/)
  - [SigFox](/docs/{{peDocsPrefix}}user-guide/integrations/sigfox/)
  - [OceanConnect](/docs/{{peDocsPrefix}}user-guide/integrations/ocean-connect/)
- - [TheThingsNetwork](/docs/{{peDocsPrefix}}user-guide/integrations/ttn/)
+ - [TheThingsStack](/docs/{{peDocsPrefix}}user-guide/integrations/ttn/)
  - [OPC-UA](/docs/{{peDocsPrefix}}user-guide/integrations/opc-ua/)
  - [TCP](/docs/{{peDocsPrefix}}user-guide/integrations/tcp/)
  - [UDP](/docs/{{peDocsPrefix}}user-guide/integrations/udp/)
  - [Custom](/docs/{{peDocsPrefix}}user-guide/integrations/custom/)
+ - [LORIOT](/docs/{{peDocsPrefix}}user-guide/integrations/loriot/)
+ - [Kafka](/docs/{{peDocsPrefix}}user-guide/integrations/kafka/)
+ - [ChirpStack](/docs/{{peDocsPrefix}}user-guide/integrations/chirpstack/)
+ - [CoAP](/docs/{{peDocsPrefix}}user-guide/integrations/coap/)
 
 
 

@@ -20,7 +20,7 @@ Before we continue we need to discuss important topic to understand how data res
 Let's assume that we have a Smart Building solution. Our topology contains Buildings, Apartments and different Meters that are connected with each other using relations.
 Here is how our topology will look like:
 
-![image](/images/reference/pe-demo/smart-metering-model.png)
+![image](/images/reference/pe-demo/smart-metering-model.svg)
 
 
 In fact, Trendz operates with this topology as with the flat table that has columns for all attributes/telemetry from all Devices/Assets in this topology.

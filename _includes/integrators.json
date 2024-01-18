@@ -24,18 +24,6 @@
     }
   },
   {
-    "type": ["Asia"],
-    "country": ["India"],
-    "name": "Advance Mechanical Services Pvt. Ltd.",
-    "contact": {
-      "href": "contact@ams-india.co.in"
-    },
-    "site": {
-      "href": "ams-india.co.in",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Middle East"],
     "country": ["United Arab Emirates"],
     "name": "Agreefy FZE",
@@ -97,6 +85,18 @@
   },
   {
     "type": ["Europe"],
+    "country": ["Romania"],
+    "name": "Archibus Solution Center-Romania SRL",
+    "contact": {
+      "href": "connect@archibus.ro"
+    },
+    "site": {
+      "href": "asc-ro.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
     "country": ["France"],
     "name": "arx iT",
     "contact": {
@@ -116,6 +116,30 @@
     },
     "site": {
       "href": "augesmart.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe", "Africa", "Asia", "Middle East"],
+    "country": ["Turkey", "Georgia", "Kazakhstan", "Azerbaijan", "Tajikistan", "Turkmenistan", "Uzbekistan", "Kyrgyzstan", "Tunisia", "Libya", "Iraq", "Albania", "Montenegro", "Bosnia and Herzegovina"],
+    "name": "Basari Muhendislik",
+    "contact": {
+      "href": "sales@basarimuhendislik.com"
+    },
+    "site": {
+      "href": "basarimuhendislik.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Thailand"],
+    "name": "Bizforte Co., Ltd.",
+    "contact": {
+      "href": "info@bizforte.co.th"
+    },
+    "site": {
+      "href": "bizforte.co.th",
       "target": "_blank"
     }
   },
@@ -156,6 +180,18 @@
     }
   },
   {
+    "type": ["Europe"],
+    "country": ["Spain", "Portugal"],
+    "name": "Capgemini Engineering",
+    "contact": {
+      "href": ""
+    },
+    "site": {
+      "href": "capgemini.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Africa"],
     "country": ["Senegal"],
     "name": "Cimyco",
@@ -180,6 +216,18 @@
     }
   },
   {
+    "type": ["Europe"],
+    "country": ["Switzerland"],
+    "name": "Clavis IT",
+    "contact": {
+      "href": "info@clavisit.com"
+    },
+    "site": {
+      "href": "clavisit.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Middle East", "Asia"],
     "country": ["Saudi Arabia"],
     "name": "Clever Platform",
@@ -188,18 +236,6 @@
     },
     "site": {
       "href": "",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["Russia"],
-    "name": "Clover Group LLC",
-    "contact": {
-      "href": "v.kuznetsov@ctrl2go.com"
-    },
-    "site": {
-      "href": "ctrl2go.com",
       "target": "_blank"
     }
   },
@@ -224,18 +260,6 @@
     },
     "site": {
       "href": "dareesoft.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["Russia"],
-    "name": "Datastreams AI",
-    "contact": {
-      "href": "contact@dstreams.ai"
-    },
-    "site": {
-      "href": "",
       "target": "_blank"
     }
   },
@@ -349,6 +373,30 @@
   },
   {
     "type": ["Europe"],
+    "country": ["Germany", "Austria", "Switzerland"],
+    "name": "one:solutions Engineering GmbH",
+    "contact": {
+      "href": "office@one-solutions.eu"
+    },
+    "site": {
+      "href": "one-solutions.eu",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Thailand"],
+    "name": "Epithos Co., Ltd",
+    "contact": {
+      "href": "pnt@epithos.com"
+    },
+    "site": {
+      "href": "epithos.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
     "country": ["Ukraine"],
     "name": "Euristiq",
     "contact": {
@@ -356,18 +404,6 @@
     },
     "site": {
       "href": "euristiq.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["India"],
-    "name": "Factorie Intelligent Operations Pvt. Ltd.",
-    "contact": {
-      "href": "naresh.yerrabachu@factorie.io"
-    },
-    "site": {
-      "href": "factorie.io",
       "target": "_blank"
     }
   },
@@ -380,6 +416,30 @@
     },
     "site": {
       "href": "feelvirtualreality.com.au",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Africa"],
+    "country": ["South Africa"],
+    "name": "Fourier",
+    "contact": {
+      "href": "vrensburge@fourier.co.za"
+    },
+    "site": {
+      "href": "fourierit.co.za",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["France"],
+    "name": "Jems Group",
+    "contact": {
+      "href": "https://www.jems-group.com/fr/contact/"
+    },
+    "site": {
+      "href": "https://www.jems-group.com/",
       "target": "_blank"
     }
   },
@@ -456,18 +516,6 @@
     }
   },
   {
-    "type": ["Asia"],
-    "country": ["Russia", "Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan"],
-    "name": "ICBcom",
-    "contact": {
-      "href": "sales@icbcom.ru"
-    },
-    "site": {
-      "href": "icbcom.ru",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Middle East"],
     "country": ["Turkey"],
     "name": "Inovatink",
@@ -504,6 +552,18 @@
     }
   },
   {
+    "type": ["Europe", "North America"],
+    "country": ["Åland Islands", "Albania", "Andorra", "Austria", "Belarus", "Belgium", "Bosnia and Herzegovina", "Bulgaria", "Croatia", "Cyprus", "Czech Republic", "Denmark", "Estonia", "Faroe Islands", "Finland", "France", "Germany", "Gibraltar", "Greece", "Hungary", "Iceland", "Ireland", "Isle of Man", "Italy", "Jersey", "Kingdom of the Netherlands", "Kosovo", "Latvia", "Liechtenstein", "Lietuvos Respublika", "Lithuania", "Luxembourg", "Malta", "Moldova", "Monaco", "Montenegro", "Netherlands", "North Macedonia", "Norway", "Poland", "Portugal", "Romania", "San Marino", "Serbia", "Slovakia", "Slovenia", "Spain", "Svalbard and Jan Mayen", "Sweden", "Switzerland", "Ukraine", "United Kingdom", "Vatican City", "Anguilla", "Antigua and Barbuda", "Barbados", "Belize", "British Virgin Islands", "Canada", "Cayman Islands", "Costa Rica", "Cuba", "Dominica", "Dominican Republic", "El Salvador", "Greenland", "Grenada", "Guadeloupe", "Guatemala", "Haiti", "Honduras", "Jamaica", "Martinique", "Mexico", "Montserrat", "Nicaragua", "Panama", "Puerto Rico", "Saint Barthélemy", "Saint Kitts and Nevis", "Saint Lucia", "Saint Martin", "Saint Pierre and Miquelon", "Saint Vincent and the Grenadines", "Sint Maarten", "The Bahamas", "Turks and Caicos Islands", "U.S. Virgin Islands", "United States of America", "United States Minor Outlying Islands"],
+    "name": "IoT Squad P.S.A.",
+    "contact": {
+      "href": "info@iotsquad.tech"
+    },
+    "site": {
+      "href": "iotsquad.tech",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Europe"],
     "country": ["Germany", "Austria", "Switzerland"],
     "name": "it-novum GmbH",
@@ -511,7 +571,7 @@
       "href": "info@it-novum.com"
     },
     "site": {
-      "href": "it-novum.com",
+      "href": "data.it-novum.com",
       "target": "_blank"
     }
   },
@@ -584,6 +644,18 @@
     },
     "site": {
       "href": "masterchips.be",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Italy"],
+    "name": "McRegem Srl",
+    "contact": {
+      "href": "info@mcregem.com"
+    },
+    "site": {
+      "href": "mcregem.com",
       "target": "_blank"
     }
   },
@@ -672,18 +744,6 @@
     }
   },
   {
-    "type": ["North America"],
-    "country": ["United States of America"],
-    "name": "Petrichor Science Group LLC",
-    "contact": {
-      "href": "miles@petrichorsciencegroup.com"
-    },
-    "site": {
-      "href": "petrichorsciencegroup.com",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["Europe"],
     "country": ["Romania"],
     "name": "Polisea S.A.",
@@ -716,6 +776,18 @@
     },
     "site": {
       "href": "protoconvert.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe", "North America"],
+    "country": ["Canada", "United States of America"],
+    "name": "qnectd",
+    "contact": {
+      "href": "sales@qnectd.com"
+    },
+    "site": {
+      "href": "qnectd.com",
       "target": "_blank"
     }
   },
@@ -818,24 +890,24 @@
   {
     "type": ["Africa"],
     "country": ["Nigeria"],
-    "name": "Sawtel Technologies Ltd.",
-    "contact": {
-      "href": "info@sawtelnigeria.com"
-    },
-    "site": {
-      "href": "sawtelnigeria.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Africa"],
-    "country": ["Nigeria"],
     "name": "Sawtrax ltd.",
     "contact": {
       "href": "silviato@sawtraxltd.com"
     },
     "site": {
       "href": "sawtraxltd.com",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Greece"],
+    "name": "Scientific Enterprises Ltd",
+    "contact": {
+      "href": "george@scienter.gr"
+    },
+    "site": {
+      "href": "scienter.gr",
       "target": "_blank"
     }
   },
@@ -961,13 +1033,13 @@
   },
   {
     "type": ["Asia", "Europe", "Middle East"],
-    "country": ["Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan", "Armenia", "Azerbaijan", "Moldova", "Russia", "Belarus"],
-    "name": "Syssoft LLC",
+    "country": ["Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan", "Armenia", "Azerbaijan", "Moldova", "Belarus"],
+    "name": "Kar-Tel LLP",
     "contact": {
-      "href": "info@syssoft.ru"
+      "href": "SUrazayev@beeline.kz"
     },
     "site": {
-      "href": "syssoft.ru",
+      "href": "beeline.kz",
       "target": "_blank"
     }
   },
@@ -980,6 +1052,18 @@
     },
     "site": {
       "href": "techyugadi.com ",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["Lietuvos Respublika"],
+    "name": "Techno Pynė",
+    "contact": {
+      "href": "mail@technopyne.lt"
+    },
+    "site": {
+      "href": "technopyne.lt",
       "target": "_blank"
     }
   },
@@ -998,9 +1082,9 @@
   {
     "type": ["Asia", "Middle East"],
     "country": ["Israel"],
-    "name": "Tom Zamir",
+    "name": "IoT Experts",
     "contact": {
-      "href": "tom@iot-experts.net"
+      "href": ""
     },
     "site": {
       "href": "iot-experts.net",
@@ -1032,30 +1116,6 @@
     }
   },
   {
-    "type": ["Europe", "Africa", "Asia", "Middle East"],
-    "country": ["Turkey", "Georgia", "Kazakhstan", "Azerbaijan", "Tajikistan", "Turkmenistan", "Uzbekistan", "Kyrgyzstan", "Tunisia", "Libya", "Iraq", "Albania", "Montenegro", "Bosnia and Herzegovina"],
-    "name": "Basari Muhendislik",
-    "contact": {
-      "href": "sales@basarimuhendislik.com"
-    },
-    "site": {
-      "href": "basarimuhendislik.com",
-      "target": "_blank"
-    }
-  },
-  {
-    "type": ["Asia"],
-    "country": ["Thailand"],
-    "name": "Bizforte Co., Ltd.",
-    "contact": {
-      "href": "info@bizforte.co.th"
-    },
-    "site": {
-      "href": "bizforte.co.th",
-      "target": "_blank"
-    }
-  },
-  {
     "type": ["North America", "South America"],
     "country": ["United States of America", "Belize", "Panama", "Peru", "Colombia", "Argentina"],
     "name": "Voxney PLSC, Inc.",
@@ -1068,6 +1128,18 @@
     }
   },
   {
+    "type": ["North America", "South America"],
+    "country": ["United States of America", "Belize", "Panama", "Peru", "Colombia", "Argentina"],
+    "name": "Vypin LLC",
+    "contact": {
+      "href": "sales@vypin.com"
+    },
+    "site": {
+      "href": "vypin.com",
+      "target": "_blank"
+    }
+  },
+  {
     "type": ["Asia"],
     "country": ["Thailand"],
     "name": "Wireless Solution Asia Co.,Ltd.",
@@ -1076,6 +1148,18 @@
     },
     "site": {
       "href": "wirelesssolution.asia",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Europe"],
+    "country": ["France"],
+    "name": "Wiifor",
+    "contact": {
+      "href": "contact@wiifor.com"
+    },
+    "site": {
+      "href": "wiifor.com",
       "target": "_blank"
     }
   },
@@ -1114,5 +1198,101 @@
       "href": "7id.com",
       "target": "_blank"
     }
-  }
+  },
+   {
+    "type": ["North America", "South America"],
+    "country": ["United States of America", "Canada", "Panama", "Peru", "Colombia", "Argentina"],
+    "name": "Ingram Micro Canada",
+    "contact": {
+      "href": "(905) 755-5000"
+    },
+    "site": {
+      "href": "https://ca.ingrammicro.com/",
+      "target": "_blank"
+    }
+   },
+    {
+    "type": ["Asia"],
+    "country": ["Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan", "Armenia", "Azerbaijan", "Moldova", "Belarus"],
+    "name": "Vehi.kz LLP",
+    "contact": {
+      "href": "partner@vehi.kz"
+    },
+    "site": {
+      "href": "vehi.kz",
+      "target": "_blank"
+    }
+   },
+   {
+    "type": ["Europe"],
+    "country": ["Ukraine"],
+    "name": "CodeExit, Inc.",
+    "contact": {
+      "href": "benjamin@codeexit.com"
+    },
+    "site": {
+      "href": "",
+      "target": "_blank"
+    }
+   },  
+   {
+    "type": ["Europe"],
+    "country": ["Ukraine"],
+    "name": "SVIT LLC",
+    "contact": {
+      "href": "svitexcom@gmail.com"
+    },
+    "site": {
+      "href": "",
+      "target": "_blank"
+    }
+   },
+  {
+    "type": ["Asia"],
+    "country": ["Malaysia"],
+    "name": "RODA TECHNOLOGIES SDN BHD",
+    "contact": {
+      "href": "hakim@rodatech.com.my"
+    },
+    "site": {
+      "href": "rodatech.com.my",
+      "target": "_blank"
+    }
+   },
+   {
+    "type": ["Asia"],
+    "country": ["India"],
+    "name": "Ariprus Digicon Pvt Ltd",
+    "contact": {
+      "href": "praful.satasia@ariprus.com"
+    },
+    "site": {
+      "href": "ariprus.com",
+      "target": "_blank"
+    }
+   },
+    {
+    "type": ["South America"],
+    "country": ["Chile"],
+    "name": "MindLabs, SpA",
+    "contact": {
+      "href": "ricardo.valdes@mindlabs.cl"
+    },
+    "site": {
+      "href": "mindlabs.cl",
+      "target": "_blank"
+    }
+   },
+     {
+    "type": ["Asia"],
+    "country": ["Turkey"],
+    "name": "Dvm Technology Inc.",
+    "contact": {
+      "href": "tunc.sirinyildiz@dvm.com.tr"
+    },
+    "site": {
+      "href": "dvm.com.tr",
+      "target": "_blank"
+    }
+   }
 ]

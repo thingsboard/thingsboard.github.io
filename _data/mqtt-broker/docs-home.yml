@@ -1,0 +1,41 @@
+bigheader: "MQTT Broker Documentation"
+abstract: "TBMQ."
+toc:
+- title: TBMQ
+  path: /docs/mqtt-broker/
+- title: What is TBMQ?
+  path: /docs/mqtt-broker/getting-started-guides/what-is-thingsboard-mqtt-broker/
+- title: Configuration
+  path: /docs/mqtt-broker/install/config/
+- title: Security
+  path: /docs/mqtt-broker/security/
+- title: Integration with ThingsBoard
+  path: /docs/mqtt-broker/user-guide/integrations/how-to-connect-thingsboard-to-tbmq/
+- title: Features
+  section:
+    - title: MQTT client type
+      path: /docs/mqtt-broker/user-guide/mqtt-client-type/
+    - title: Shared Subscriptions
+      path: /docs/mqtt-broker/user-guide/shared-subscriptions/
+    - title: Retained Messages
+      path: /docs/mqtt-broker/user-guide/retained-messages/
+- title: Administration UI
+  section:
+    - title: Monitoring
+      path: /docs/mqtt-broker/user-guide/ui/monitoring/
+    - title: Users
+      path: /docs/mqtt-broker/user-guide/ui/users/
+    - title: MQTT Client Credentials
+      path: /docs/mqtt-broker/user-guide/ui/mqtt-client-credentials/
+    - title: Sessions
+      path: /docs/mqtt-broker/user-guide/ui/sessions/
+    - title: Application Shared Subscriptions
+      path: /docs/mqtt-broker/user-guide/ui/shared-subscriptions/
+    - title: Mail Server
+      path: /docs/mqtt-broker/user-guide/ui/mail-server/
+- title: Troubleshooting
+  path: /docs/mqtt-broker/troubleshooting/
+- title: Release Notes
+  path: /docs/mqtt-broker/releases/
+- title: Roadmap
+  path: /docs/mqtt-broker/roadmap/

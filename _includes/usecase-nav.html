@@ -1,0 +1,37 @@
+<nav class="usecase-nav">
+    <div class="crop-nav">
+        <ul>
+            {% for usecase in site.data.use-cases %}
+                <li><a href="{{usecase.link}}" class="{% if usecase.id == include.usecase %}active{% endif %}"><img src="{{usecase.icon}}" alt="Usecase icon">{{usecase.title}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</nav>
+<script>
+    document.querySelector('.crop-nav ul li a.active').parentElement.scrollIntoView();
+    jqueryDefer(function () {
+        $( document ).ready(function() {
+            var x,left,down;
+
+            $('.crop-nav').mousedown(function(e){
+                e.preventDefault();
+                down = true;
+                x = e.pageX;
+                left = $(this).scrollLeft();
+                $('.crop-nav').css('cursor', 'grabbing');
+            });
+
+            $('body').mousemove(function(e){
+                if(down){
+                    var newX = e.pageX;
+                    $('.crop-nav').scrollLeft(left - newX + x);
+                }
+            });
+
+            $('body').mouseup(function(e){
+                down = false;
+                $('.crop-nav').css('cursor', 'grab');
+            });
+        });
+    });
+</script>

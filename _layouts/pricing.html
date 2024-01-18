@@ -12,6 +12,8 @@
     </div>
 </section>
 
+{% include trendz-wizard.html %}
+
 {% include footer.html %}
 
 <script type="text/javascript">
@@ -34,46 +36,85 @@
     });
 
     jqueryDefer(function () {
-        $('.solution-selector .solution').click(function(event) {
-            event.preventDefault();
-            var id = $(this).attr("data-toggle");
-            var headerId = $(this).attr("data-description-toggle");
-            $('.solution-selector .solution').removeClass("active");
-            $(this).addClass("active");
-            $('.pricing-div .pricing-section:not(.pricing-community):not(.pricing-cloud)').removeClass("active");
-            $('.pricing-div .pricing-section'+id).addClass("active");
-            $('.pricing-content-header .pricing-content-description:not(.pricing-cloud)').removeClass("active");
-            $('.pricing-content-header .pricing-content-description'+headerId).addClass("active");
-        });
-
-        $.urlParam = function (name) {
-            var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
-            return results ? results[1] : null;
-        };
-
-        var activeTab = $.urlParam('active');
-        if (activeTab && activeTab === 'trendz') {
-            activatePricingSection('trendz');
-        } else if (activeTab && activeTab === 'thingsboard-edge') {
-            activatePricingSection('thingsboard-edge');
-        } else {
-            activatePricingSection('{{page.defaultActivePricingSection}}', {{page.defaultActivateSelectProduct}});
-        }
+        initPricingState();
     });
 
-    function activatePricingSection(sectionId, activateSelectProduct) {
+    function initPricingState() {
+        $(function(){
+            window.addEventListener('popstate', onPopPricingState);
+            onPopPricingState();
+        });
+    }
+
+    function onPopPricingState() {
+        var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+        var sectionId = params['section'] || params['active'];
+        if (!sectionId) {
+            sectionId = '{{page.defaultActivePricingSection}}';
+        }
+        setActivePricingSection(sectionId);
+        var productId = params['product'];
+        if (productId) {
+            setActiveProductSection(productId);
+        }
+        var solutionId = params['solution'];
+        if (solutionId) {
+            setActiveSolutionSection(solutionId);
+        }
+    }
+
+    function activatePricingSection(sectionId) {
+        updateQueryParam({section: sectionId, product: null, solution: null});
+        setActivePricingSection(sectionId);
+    }
+
+    function activateProductSection(productId) {
+        updateQueryParam({product: productId, solution: null});
+        setActiveProductSection(productId);
+    }
+
+    function activateSolutionSection(solutionId) {
+        updateQueryParam({solution: solutionId});
+        setActiveSolutionSection(solutionId);
+    }
+
+    function updateQueryParam(setParams) {
+        var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+        for (var paramName of Object.keys(setParams)) {
+            var paramValue = setParams[paramName];
+            if (paramValue) {
+                params[paramName] = setParams[paramName];
+            } else {
+                params[paramName] = undefined;
+            }
+        }
+        var newurl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?' + Qs.stringify(params);
+        if (window.location.hash) {
+            newurl += window.location.hash;
+        }
+        window.history.pushState({ path: newurl }, '', newurl);
+    }
+
+    function setActivePricingSection(sectionId) {
+        var activateSelectProduct = sectionId === 'thingsboard-pe-options' || sectionId === 'trendz-options';
         $("li.menu-item").removeClass("active");
         $("li.menu-item#menu-item-"+sectionId).addClass("active");
         $("div.pricing-content").css("display", "none");
+        $("div.select-product-content").css("display", "none");
         if (activateSelectProduct) {
             $("div.select-product-content#" + sectionId).css("display", "flex");
             $('div.pricing-header-divider').addClass("no-margin");
-            $('#' + sectionId + ' .product-selector .solution.defaultselection').click();
+            var productId = $('#' + sectionId + ' .product-selector .solution.defaultselection').attr("data-product-id");
+            if (productId) {
+                setActiveProductSection(productId);
+            }
         } else {
-            $("div.select-product-content").css("display", "none");
             $('div.pricing-header-divider').removeClass("no-margin");
             $("div.pricing-content#" + sectionId).css("display", "block");
-            $('#' + sectionId + ' .solution-selector .solution.defaultselection').click();
+            var solutionId = $('#' + sectionId + ' .solution-selector .solution.defaultselection').attr('id');
+            if (solutionId) {
+                setActiveSolutionSection(solutionId);
+            }
         }
 
         if(sectionId) {
@@ -81,16 +122,29 @@
         }
     }
 
-    function activateProductSection(sectionId) {
+    function setActiveProductSection(sectionId) {
         $('.product-selector .solution').removeClass("active");
-        $('.product-selector .solution.'+sectionId).addClass("active");
-
         $("div.pricing-content").css("display", "none");
-        $("div.pricing-content#"+sectionId).css("display", "block");
-
-        $('#' + sectionId + ' .solution-selector .solution.defaultselection').click();
-        if(sectionId) {
+        if (sectionId) {
+            $('.product-selector .solution.' + sectionId).addClass("active");
+            $("div.pricing-content#" + sectionId).css("display", "block");
+            var solutionId = $('#' + sectionId + ' .solution-selector .solution.defaultselection').attr('id');
+            setActiveSolutionSection(solutionId);
             reportPriceOpen(sectionId);
+        }
+    }
+
+    function setActiveSolutionSection(sectionId) {
+        $('.solution-selector .solution').removeClass("active");
+        $('.pricing-div .pricing-section:not(.pricing-community):not(.pricing-cloud)').removeClass("active");
+        $('.pricing-content-header .pricing-content-description:not(.pricing-cloud)').removeClass("active");
+        if (sectionId) {
+            var solution = $('.solution-selector .solution#' + sectionId);
+            solution.addClass("active");
+            var id = solution.attr("data-toggle");
+            var headerId = solution.attr("data-description-toggle");
+            $('.pricing-div .pricing-section'+id).addClass("active");
+            $('.pricing-content-header .pricing-content-description'+headerId).addClass("active");
         }
     }
 
@@ -155,8 +209,9 @@
         }
         ga("send", "event", "PriceOpen", solutionId);
     }
-
 </script>
+
+{% include cookie-consent.html %}
 
 </body>
 </html>

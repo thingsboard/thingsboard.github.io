@@ -4,6 +4,7 @@ Open the command prompt as an Administrator and execute the following command:
 ```shell
 net start thingsboard
 ```
+{: .copy-code}
 
 Expected output:
 
@@ -18,12 +19,14 @@ In order to restart the ThingsBoard service you can execute following commands:
 net stop thingsboard
 net start thingsboard
 ```
+{: .copy-code}
 
 Once started, you will be able to open Web UI using the following link:
 
 ```bash
 http://localhost:8080/
 ```
+{: .copy-code}
 
 The following default credentials are available if you have specified *--loadDemo* during execution of the installation script:
 

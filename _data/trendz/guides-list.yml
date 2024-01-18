@@ -1,0 +1,17 @@
+- section:
+    - path: /docs/trendz/guide/detect-anomalies-in-heat-pumps/
+      title: Anomaly detection in Heat Pumps
+      subtitle: Enhance heat pump performance and prevent costly repairs by implementing real-time anomaly detection. Detect unusual patterns, notify the maintenance team, and ensure efficient operation through a comprehensive dashboard.
+    - path: /docs/trendz/guide/analyze-building-energy-usage-and-carbon-emissions/
+      title: Analyze building energy usage and emissions tracking
+      subtitle: Enhance cost savings by analyzing building energy usage and tracking carbon emissions. Create a comprehensive analytic dashboard to identify consumption patterns, highlight areas for improvement, and drive energy-efficient practices.
+    - path: /docs/trendz/guide/predict-next-maintenance-date-of-equipment/
+      title: Predict remaining time to next maintenance of the equipment
+      subtitle: Optimize maintenance scheduling for industrial assembly equipment with predictive analytics, reducing unplanned downtime. Learn how Trendz Analytics streamlines maintenance processes and maximizes efficiency.
+#      keywords: mqtt http coap visualization helloworld
+    - path: /docs/trendz/guide/industrial-oee-score-monitoring/
+      title: Track Overall Equipment Effectiveness (OEE) on industrial plant
+      subtitle: Gain insights into Overall Equipment Efficiency (OEE) through real-time monitoring, identifying downtime causes, performance gaps, and quality issues for enhanced manufacturing productivity
+    - path: /docs/trendz/guide/occupancy-analysis-of-the-building/
+      title: Predictive occupancy monitoring for hotels
+      subtitle: Improve guest experience and operational efficiency by analyzing and predicting occupancy rates for different areas within a hotel. Enhance resource allocation, reduce costs, and boost guest satisfaction.

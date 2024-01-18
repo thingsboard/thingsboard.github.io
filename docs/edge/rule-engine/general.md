@@ -5,8 +5,10 @@ description: ThingsBoard Edge Rule Engine
 
 ---
 
-Coming soon…
+![image](/images/coming-soon.jpg)
 
 ### Next Steps
 
-{% assign currentGuide = "EdgeRuleEngineOverview" %}{% include templates/edge/guides-banner-edge.md %}
+{% assign currentGuide = "EdgeRuleEngineOverview" %}
+{% assign docsPrefix = "edge/" %}
+{% include templates/edge/guides-banner-edge.md %}

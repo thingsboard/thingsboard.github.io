@@ -18,7 +18,12 @@ With ThingsBoard, you are able to:
  
 See [**ThingsBoard features list**](/docs/{{docsPrefix}}#features) for more features and useful links to the specific feature documentation. 
 
-<object width="80%" data="/images/reference/thingsboard-architecture.svg"></object>
+{% if docsPrefix == null %}
+<object width="100%" data="/images/reference/thingsboard-architecture.svg"></object>
+{% endif %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
+<object width="100%" data="/images/reference/thingsboard-architecture-pe.svg"></object>
+{% endif %}
 
 #### Architecture
 
@@ -40,3 +45,10 @@ See [**ThingsBoard Architecture**](/docs/{{docsPrefix}}reference) for more detai
 #### Ready to get started?
 
 <p><a href="/docs/{{docsPrefix}}getting-started-guides/helloworld" class="button">Hello World Application</a></p>
+
+{% if (docsPrefix == "pe/") %}
+#### ThingsBoard as a Google IoT Core alternative
+
+<p><a href="/google-iot-core-alternative" class="button">Learn more</a></p>
+
+{% endif %}

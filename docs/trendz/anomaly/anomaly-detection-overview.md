@@ -2,8 +2,9 @@
 layout: docwithnav-trendz
 assignees:
 - vparomskiy
-title: Anomaly detection overview
-description: Compleate guide for anomaly detection in timeseries data
+title: Anomaly Detection System — Concept and Examples
+description: What is anomaly detection system?✔ Anomaly detection examples ⚫ ThingsBoard ➤ Complete guide for anomaly detection in timeseries data
+
 scoreVsIndexExample:
     0:
         image: /images/trendz/anomaly/score_vs_index.png
@@ -20,14 +21,21 @@ but it is useless in scenarios where hidden correlations between multiple teleme
 define thresholds because we just don't know them. For such use cases, Trendz Analytics provides automated anomaly detection instruments that are based on 
 built-in machine learning algorithms.   
 
-The purpose of this article is to give a general overview of what is anomaly detection, how it works and how to implement it.
+You can find details how to use Trendz Analytics to create anomaly detection models here:
+&nbsp;
+<div id="video">  
+    <div id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/pbjXGDJ-SI0" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
 
+The purpose of this article is to give a general overview of what is anomaly detection, how it works and how to implement it.
 
 ## What is an anomaly
 In the beginning, we need to define what [**Anomaly**](https://en.wikipedia.org/wiki/Anomaly_detection){:target="_blank"} - 
 **it is a time interval when a device or process behaves differently from others**. 
 
-Let’s assume that we monitoring diesel engines and collect telemetry like rotation speed, temperature, vibration, etc. 
+Let’s assume that we monitor diesel engines and collect telemetry like rotation speed, temperature, vibration, etc. 
 We can analyze how engine behavior changes under different conditions and we can compare the behavior of different engines.
 We know that when the rotation speed is between 1000-1500 rpm, the temperature should be 270-290°C. We know that because such 
 behavior was observed 1000 times. And now, if we see that under the same conditions, the temperature is greater than 350°C - 

@@ -52,20 +52,20 @@ sudo yum install -y https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.
 Download installation package.
 
 ```bash
-wget https://dist.thingsboard.io/trendz-1.8.0.rpm
+wget https://dist.thingsboard.io/trendz-1.10.3-HF3.rpm
 ```
 {: .copy-code}
 
 Install Trendz Analytics as a service
 
 ```bash
-sudo rpm -Uvh trendz-1.8.0.rpm
+sudo rpm -Uvh trendz-1.10.3-HF3.rpm
 ```
 {: .copy-code}
 
 ### Step 3. Obtain and configure license key 
 
-We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
+We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
 Once you get the license secret, you should put it to the trendz configuration file. 
@@ -117,7 +117,7 @@ After configuring the password, edit the pg_hba.conf to use MD5 authentication w
 Edit pg_hba.conf file: 
 
 ```bash
-sudo nano /var/lib/pgsql/12/data/pg_hba.conf
+sudo nano /var/lib/pgsql/15/data/pg_hba.conf
 
 ```
 {: .copy-code}
@@ -138,7 +138,7 @@ host    all             all             127.0.0.1/32            md5
 Finally, you should restart the PostgreSQL service to initialize the new configuration:
 
 ```bash
-sudo systemctl restart postgresql-12.service
+sudo systemctl restart postgresql-15.service
 
 ```
 {: .copy-code}
@@ -181,8 +181,6 @@ export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
 ```
 {: .copy-code}
 
-
-
 ### Step 6. Run installation script
 
 Once Trendz service is installed and DB configuration is updated, you can execute the following script:
@@ -203,7 +201,7 @@ sudo service trendz start
 Once started, you will be able to open Web UI using the following link:
 
 ```bash
-http://localhost:8888/
+http://localhost:8888/trendz
 ```
 
 **Note**:  If Trendz installed on a remote server, you have to replace localhost with the public IP address of 
@@ -216,7 +214,35 @@ For first authentication you need to use **Tenant Administrator** credentials fr
 Trendz uses ThingsBoard as an authentication service. During first sign in ThingsBoard service should be also available 
 to validate credentials.
 
-### Step 8. HTTPS configuration
+### Step 8. Install Trendz Python executor
+For writing custom Python models and transformation script you need to install Python libraries on the server where Trendz is installed.
+Alternative option is to run executor as a docker container, you can find how to do that in [install instructions for Docker](/docs/trendz/install/docker/#standalone-python-executor-service).
+But in this section we will write how to install Python libraries directly on the server with Trendz.
+
+* Install Python3
+```bash
+sudo apt update
+sudo apt install python3
+sudo apt install python3-pip
+```
+{: .copy-code}
+
+* Install required python packages
+```bash
+echo "flask == 2.3.2" > requirements.txt
+echo "numpy == 1.24.1" >> requirements.txt
+echo "statsmodels == 0.13.5" >> requirements.txt
+echo "pandas == 1.5.3" >> requirements.txt
+echo "scikit-learn == 1.2.2" >> requirements.txt
+echo "prophet == 1.1.3" >> requirements.txt
+echo "seaborn == 0.12.2" >> requirements.txt
+echo "pmdarima == 2.0.3" >> requirements.txt
+sudo -u trendz pip3 install --user --no-cache-dir -r requirements.txt
+```
+{: .copy-code}
+
+
+### Step 9. HTTPS configuration
 
 You may want to configure HTTPS access using HAProxy. 
 This is possible in case you are hosting Trendz in the cloud and have a valid DNS name assigned to your instance.
@@ -264,6 +290,35 @@ https://new-trendz-domain.com
 **Fresh installation on new server**
 
 Please follow this [guide](/docs/user-guide/install/pe/add-haproxy-ubuntu) to install HAProxy and generate valid SSL certificate using Let's Encrypt.
+
+### Step 10. Host ThingsBoard and Trendz on the same domain
+ThingsBoard and Trendz can share same domain name. In this case ThingsBoard web page would be loaded using following link:
+
+```bash
+https://{my-domain}/
+```
+
+and Trendz web page would be loaded using following link
+
+```bash
+https://{my-domain}/trendz
+```
+
+For enabling such configuration we have to update HAProxy config to route specific requests to Trendz service. 
+Open HAProxy configuration file
+```bash
+sudo nano /etc/haproxy/haproxy.cfg
+```
+{: .copy-code}
+
+Locate **frontend https_in** section, add new access list that will match traffic by URL path and redirect this traffic to Trendz backend:
+
+```bash
+...
+acl trendz_acl path_beg /trendz path_beg /apiTrendz
+....
+use_backend tb-trendz if trendz_acl
+```
 
 ### Troubleshooting
 

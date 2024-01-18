@@ -109,8 +109,6 @@ Locate and set database type configuration parameters to 'cassandra'.
  
 ```text
 database:
-  entities:
-    type: "${DATABASE_ENTITIES_TYPE:cassandra}" # cassandra OR sql
   ts:
     type: "${DATABASE_TS_TYPE:cassandra}" # cassandra OR sql (for hybrid mode, only this value should be cassandra)
 ```

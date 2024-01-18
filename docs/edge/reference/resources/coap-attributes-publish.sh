@@ -1,0 +1,1 @@
+cat new-attributes-values.json | coap post coap://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/attributes

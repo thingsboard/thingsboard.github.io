@@ -3,7 +3,96 @@ Action Nodes execute various actions based on incoming Message.
 * TOC
 {:toc}
 
-# Create Alarm Node
+## Math Function Node
+
+<table  style="width:250px;">
+   <thead>
+     <tr>
+	 <td style="text-align: center"><strong><em>Since TB Version 3.4.2</em></strong></td>
+     </tr>
+   </thead>
+</table> 
+
+The rule node applies math function and saves the result into the message and/or database. See table of supported functions below:
+
+<style>
+
+  div.mathFunctionsTable + table tr th:nth-child(1) {
+     width: 10%
+  }
+
+  div.mathFunctionsTable + table tr th:nth-child(2) {
+     width: 10%
+  }
+
+  div.mathFunctionsTable + table tr th:nth-child(3) {
+     width: 65%
+  }
+
+  div.mathFunctionsTable + table tr th:nth-child(4) {
+     width: 15%
+  }
+
+</style>
+
+<div class="mathFunctionsTable"></div>
+
+| Function | Number of arguments | Description   | Reference
+|-----------|---|-------------|--------|
+| ADD       | 2 | x + y       | |
+| SUB       | 2 | x - y       | |
+| MULT      | 2 | x * y       | |
+| DIV       | 2 | x / y       | |
+| SIN       | 1 | Returns the trigonometric sine of an angle.      | [Math.sin](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#sin(double))|
+| SINH      | 1 | Returns the hyperbolic sine of a double value. The hyperbolic sine of x is defined to be (*e*<sup>x</sup> - *e*<sup>-x</sup>)/2 where *e* is Euler's number.     | [Math.sinh](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#sinh(double))|
+| COS       | 1 | Returns the trigonometric cosine of an angle.       | [Math.cos](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#cos(double))|
+| COSH      | 1 | Returns the hyperbolic cosine of a double value. The hyperbolic cosine of x is defined to be (*e*<sup>x</sup> + *e*<sup>-x</sup>)/2 where *e* is Euler's number.     | [Math.cosh](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#cosh(double))|
+| TAN       | 1 | Returns the trigonometric tangent of an angle.      | [Math.tan](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#tan(double))|
+| TANH      | 1 | Returns the hyperbolic tangent of a double value.      | [Math.tanh](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#tanh(double))|
+| ACOS      | 1 | Returns the arc cosine of a value; the returned angle is in the range *0.0* through *pi*.     | [Math.acos](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#acos(double))|
+| ASIN      | 1 | Returns the arc sine of a value; the returned angle is in the range *-pi/2* through *pi/2*.     | [Math.asin](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#asin(double))|
+| ATAN      | 1 | Returns the arc tangent of a value; the returned angle is in the range -pi/2 through pi/2.     | [Math.atan](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#atan(double))|
+| ATAN2     | 2 | Returns the angle theta from the conversion of rectangular coordinates (x, y) to polar coordinates (r, theta). | [Math.atan2](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#atan2(double,double))|
+| EXP       | 1 | Returns the value *e*<sup>x</sup>, where *e* is the base of the natural logarithms.         |  [Math.exp](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#exp(double))|
+| EXPM1     | 1 | Returns *e*<sup>x</sup>-1. Note that for values of x near 0, the exact sum of expm1(x) + 1 is much closer to the true result of *e*<sup>x</sup> than exp(x).            |  [Math.expm1](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#expm1(double)) |
+| SQRT      | 1 | Returns the correctly rounded positive square root of a double value. | [Math.sqrt](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#sqrt(double))|
+| CBRT      | 1 | Returns the cube root of a double value. | [Math.cbrt](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#cbrt(double))| 
+| GET_EXP   | 1 | Returns the unbiased exponent used in the representation of a double.            |  [Math.getExponent](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#getExponent(double))|
+| HYPOT     | 2 | Returns sqrt(x2 +y2) without intermediate overflow or underflow.   | [Math.getExponent](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#hypot(double,double)) |
+| LOG       | 1 | Returns the natural logarithm (base e) of a double value. | [Math.log](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#log(double))|
+| LOG10     | 1 | Returns the base 10 logarithm of a double value. |  [Math.log10](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#log10(double))  |
+| LOG1P     | 1 | Returns the natural logarithm of the sum of the argument and 1. Note that for small values x, the result of log1p(x) is much closer to the true result of ln(1 + x) than the floating-point evaluation of log(1.0+x).            |  [Math.log1p](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#log1p(double))|
+| CEIL      | 1 | Returns the smallest (closest to negative infinity) double value that is greater than or equal to the argument and is equal to a mathematical integer. |  [Math.ceil](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#ceil(double)) |
+| FLOOR     | 1 | Returns the largest (closest to positive infinity) double value that is less than or equal to the argument and is equal to a mathematical integer. |  [Math.floor](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#floor(double)) |
+| FLOOR_DIV | 2 | Returns the largest (closest to positive infinity) long value that is less than or equal to the algebraic quotient. |  [Math.floorDiv](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#floorDiv(long,long)) |
+| FLOOR_MOD | 2 | Returns the floor modulus of the long arguments. |  [Math.floorMod](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#floorMod(long,long)) |
+| ABS       | 1 | Returns the absolute value of a double value.             |  [Math.abs](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#abs(double)) |
+| MIN       | 2 | Returns the smaller of two double values.            |  [Math.min](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#min(double,double)) |
+| MAX       | 2 | Returns the greater of two double values.             |  [Math.max](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#max(double,double)) |
+| POW       | 2 | Returns the value of the first argument raised to the power of the second argument.             |  [Math.pow](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#pow(double,double)) |
+| SIGNUM    | 1 | Returns the signum function of the argument; zero if the argument is zero, 1.0 if the argument is greater than zero, -1.0 if the argument is less than zero.            |  [Math.signum](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#signum(double)) |
+| RAD       | 1 | Converts an angle measured in degrees to an approximately equivalent angle measured in radians.             |  [Math.toRadians](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#toRadians(double)) |
+| DEG       | 1 | Converts an angle measured in radians to an approximately equivalent angle measured in degrees.            |  [Math.toDegrees](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Math.html#toDegrees(double)) |
+| CUSTOM    | 1-16| Use this function to specify complex math expressions. For example, transform Fahrenheit to Celsius using (x - 32) / 1.8) | [exp4j](https://github.com/fasseg/exp4j)  |
+
+You may use 5 types of arguments:
+
+ * Constant;
+ * Value from the message body;
+ * Value from the message meta data;
+ * Value of the attribute that belongs to the message originator (device, asset, etc). Value should be of Numeric type or string that is convertible to float;
+ * Value of the latest time-series that belongs to the message originator (device, asset, etc). Value should be of Numeric type or string that is convertible to float;
+
+Primary use case for this rule node is to take one or more values from the database and modify them based on data from the message. For example, you may increase `totalWaterConsumption` based on the `deltaWaterConsumption` reported by device.
+
+Alternative use case is the replacement of simple JS `script` nodes with more light-weight and performant implementation. For example, you may transform Fahrenheit to Celsius (*C = (F - 32) / 1.8*) using CUSTOM operation and expression: *(x - 32) / 1.8)*.
+
+The execution is synchronized in scope of message originator (e.g. device) and server node. If you have rule nodes in different rule chains, they will process messages from the same originator synchronously in the scope of the server node.
+
+The result of the function may be added to the message body or metadata. You may also save the result to the database as an attribute or time-series.
+
+
+## Create Alarm Node
 
 <table  style="width:250px;">
    <thead>
@@ -15,7 +104,7 @@ Action Nodes execute various actions based on incoming Message.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm.png)
 
-This Node tries to load latest Alarm with configured **Alarm Type** for Message Originator.
+This Node tries to load the latest Alarm with configured **Alarm Type** for Message Originator.
 If **Uncleared** Alarm exist, then this Alarm will be updated, otherwise a new Alarm will be created.
 
 Node Configuration:
@@ -46,9 +135,9 @@ inside Alarm. For example you can save attribute name/value pair from Original M
  
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-alarm-config.png)
 
-- Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br/> 
-- Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br/> 
-- Message _type_ can be accessed via <code>msgType</code> property. For example <code>msgType</code><br/>
+- Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br> 
+- Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br> 
+- Message _type_ can be accessed via <code>msgType</code> property. For example <code>msgType</code><br>
 
 **Optional:** previous Alarm Details can be accessed via <code>metadata.prevAlarmDetails</code>. 
 If previous Alarm does not exist, this field will not be present in Metadata. **Note** that  <code>metadata.prevAlarmDetails</code> 
@@ -60,7 +149,8 @@ if (metadata.prevAlarmDetails) {
 }
 {% endhighlight %}
 
-**Alarm Details Builder** script function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-javascript-functions).
+
+**Alarm Details Builder** script function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
  
 **Example of Details Builder Function**
 
@@ -139,9 +229,9 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 
-<br/>
+<br>
 
-# Clear Alarm Node
+## Clear Alarm Node
 
 <table  style="width:250px;">
    <thead>
@@ -171,9 +261,9 @@ inside Alarm. For example you can save attribute name/value pair from Original M
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-clear-alarm-config.png)
  
-- Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br/> 
-- Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br/> 
-- Message _type_ can be accessed via <code>msgType</code> property. For example <code>msgType</code><br/>
+- Message _payload_ can be accessed via <code>msg</code> property. For example <code>msg.temperature</code><br> 
+- Message _metadata_ can be accessed via <code>metadata</code> property. For example <code>metadata.customerName</code><br> 
+- Message _type_ can be accessed via <code>msgType</code> property. For example <code>msgType</code><br>
 - Current Alarm Details can be accessed via <code>metadata.prevAlarmDetails</code>. 
 
 **Note** that  <code>metadata.prevAlarmDetails</code> 
@@ -185,7 +275,7 @@ if (metadata.prevAlarmDetails) {
 }
 {% endhighlight %}
 
-**Alarm Details Builder** script function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-javascript-functions).
+**Alarm Details Builder** script function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
 **Example of Details Builder Function**
 
@@ -259,9 +349,10 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Create and Clear Alarms](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/)
 
-<br/>
+<br>
 
-# Delay Node
+## delay (deprecated)
+
 
 <table  style="width:250px;">
    <thead>
@@ -271,24 +362,49 @@ You can see the real life example, where this node is used, in the next tutorial
    </thead>
 </table> 
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-delay.png)
+Delays incoming messages for a configurable period. In other words, node receives a message, holds it for a set duration, and then sends it to the next rule nodes for further action.
 
-Delays incoming messages for configurable period.
+**Configuration**
 
-Configuration:
+![Configuration example image](/images/user-guide/rule-engine-2-0/nodes/action-delay-config.png)
 
-![image](/images/user-guide/rule-engine-2-0/nodes/action-delay-config.png)
+- **Period value**: number that tells the node how long to delay. For example, if you put 5 here, it means you want the node to wait for 5 units of time.
+- **Period time unit**: time unit you're using for the delaying period. Available values are: seconds, minutes, hours. So, when paired with the **Period value**, if you chose 5 for **Period Value** and seconds for **Period time unit**, the node would wait for 5 seconds.
+- **Maximum pending messages**: limit on how many messages the node can delay at once. For example, If you set a number like 1000, it means the node can delay up to 1000 messages at a time. Once this limit is reached, any new incoming messages will be routed via **Failure** connection type until there's space available.
 
-- **Period in seconds** - specifies the value of the period during which incoming message should be suspended
-- **Maximum pending messages** - specifies the amount of maximum allowed pending messages (queue of suspended messages) 
+> **Note**: **Period value** and **Period time unit** fields support templatization.
 
-When delay period for particular incoming message will be reached it will be removed from pending queue and routed to the next nodes via **Success** chain.
-  
-Each next message will be routed via **Failure** chain if the maximum pending messages limit will be reached.  
+**Output**
+- **Success**: If message was delayed successfully.
+- **Failure**: If maximum pending messages is reached or unexpected error happened during messages processing.
 
-<br/>
+> **Note**: Incoming messages are not modified during processing.
 
-# Generator Node
+**Usage example: waiting for external long-running tasks**
+
+Consider the following scenario: we have an external API that initiates a long-running task. Upon the initial request, the API responds immediately, indicating that the task has started. However, we need to ensure the task is completed before we can proceed with further processing.
+
+Solution with delay node:
+1. **Initiate the task**: Our rule chain starts with the REST API call node, which makes a request to the external API to initiate the long-running task.
+2. **Receive immediate response**: The external API quickly returns a response, confirming the task has been launched.
+3. **Waiting for completion**: After receiving the initial response, instead of proceeding immediately, we introduce the delay node into our rule chain. This node is configured to introduce a 30-second wait, providing time for the external task to complete.
+4. **Continue processing**: Once the delay is over, processing resumes, possibly involving another REST API call to check the status or retrieve results of the long-running task, and then proceeding with the next steps in the rule chain based on the task's completion status.
+
+By using the delay node in this manner, we handle scenarios where immediate processing is not feasible due to external dependencies, ensuring smoother and more accurate message handling.
+
+![Rule chain example image](/images/user-guide/rule-engine-2-0/nodes/action-delay-chain.png)
+
+**Deprecation**
+
+Because this node temporarily stores delayed messages in memory (thus, while message is in processing it is not persistent), they may be lost if ThingsBoard is restarted or node configuration is changed: these actions trigger node initialization during which old node state (which holds currently delayed messages) is cleared and new empty one is created.
+
+**Notes**
+
+Usage with sequential processing strategy: please, be aware that this node acknowledges incoming message, which will trigger processing of the next message in the queue.
+
+<br>
+
+## Generator Node
 
 <table  style="width:250px;">
    <thead>
@@ -329,13 +445,13 @@ All fields in resulting object are optional and will be taken from previously ge
 
 Outbound Message from this Node will be new Message that was constructed using configured JavaScript function.
 
-JavaScript generator function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-javascript-functions).
+JavaScript generator function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
 This node can be used for Rule Chain debugging purposes.
 
-<br/>
+<br>
 
-# Log Node 
+## Log Node 
 
 <table  style="width:250px;">
    <thead>
@@ -361,13 +477,13 @@ Script should return String value.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-log-config.png)
 
-JavaScript transform function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-javascript-functions).
+JavaScript transform function can be verified using [Test JavaScript function](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#test-script-functions).
 
 You can see the real life example, where this node is used, in the next tutorial:
 
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial#log-unknown-request)
 
-# RPC Call Reply Node
+## RPC Call Reply Node
 
 <table  style="width:250px;">
    <thead>
@@ -416,7 +532,7 @@ You can see the real life example, where this node is used, in the next tutorial
 
 - [Reply to RPC Calls](/docs/user-guide/rule-engine-2-0/tutorials/rpc-reply-tutorial)
 
-# RPC Call Request Node
+## RPC Call Request Node
 
 <table  style="width:250px;">
    <thead>
@@ -463,9 +579,9 @@ Otherwise Message will be routed via **Success** chain.
 
 For more details how RPC works in the Thingsboard, please read [RPC capabilities](/docs/{{docsPrefix}}user-guide/rpc/) article.
 
-<br/>
+<br>
 
-# Save Attributes Node
+## Save Attributes Node
 
 <table  style="width:250px;">
    <thead>
@@ -507,9 +623,9 @@ to the expected format and set message type to **POST_ATTRIBUTES_REQUEST**. It c
 After successful attributes saving, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
-<br/>
+<br>
 
-# Save Timeseries Node 
+## Save Timeseries Node 
 
 <table  style="width:250px;">
    <thead>
@@ -526,6 +642,13 @@ Configured **TTL** seconds is used for timeseries data expiration. **0** value m
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-config.png)
 
+Additionally, you could disable updating values for incoming keys for the latest timeseries data (ts_kv_latest table) if **'Skip latest persistence'** flag is set to **true**.
+This could be helpful for highly loaded use-cases to decrease the pressure on the DB. 
+Please note, this feature could be enabled when the use-case does not require advanced filtering on the Dashboards. 
+For getting the latest value, the historical data could be fetched with limit 1 and DESC order.
+
+![image](/images/user-guide/rule-engine-2-0/nodes/action-save-timeseries-config-latest.png)
+
 Expects messages with **POST_TELEMETRY_REQUEST** message type. 
 If message Type is not **POST_TELEMETRY_REQUEST**, Message will be routed via **Failure** chain.
  
@@ -538,6 +661,16 @@ Message Metadata must contain **ts** field. This field identifies timestamp in m
 
 Also, if Message Metadata contains **TTL** field, its value is used for timeseries data expiration, otherwise **TTL** 
 from Node Configuration is used.
+
+**Since TB Version 3.3.3** you can enable 'useServerTs' param to use the timestamp of the message processing instead of the timestamp from the message. 
+Useful for all sorts of sequential processing if you merge messages from multiple sources (devices, assets, etc).
+
+In the case of sequential processing, the platform guarantees that the messages are processed in the order of their submission to the queue. 
+However, the timestamp of the messages originated by multiple devices/servers may be unsynchronized long before they are pushed to the queue. 
+The DB layer has certain optimizations to ignore the updates of the "attributes" and "latest values" tables if the new record has a timestamp that is older than the previous record. 
+
+So, to make sure that all the messages will be processed correctly, one should enable this parameter for sequential message processing scenarios.
+
 
 **Expected Message Payload example:**
 {% highlight json %}
@@ -552,9 +685,9 @@ from Node Configuration is used.
 After successful timeseries data saving, original Message will be passed to the next nodes via **Success** chain, 
 otherwise **Failure** chain is used.
 
-<br/>
+<br>
 
-# Save to Custom Table
+## Save to Custom Table
 
 <table  style="width:250px;">
    <thead>
@@ -576,15 +709,17 @@ Administrator should set the custom table name without prefix: **cs_tb_**.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table-name-config.png)
 
-Administrator can configure the mapping between the Message field names and Table columns name. If the mapping key is **entityId**, that is identified by the Message Originator, then to the appropriate column name(mapping value) will be write the message originator id.
+Administrator can configure the mapping between the Message field names and Table columns name. If the mapping key is **$entityId**, that is identified by the Message Originator, then to the appropriate column name(mapping value) will be write the message originator id.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-save-to-custom-cassandra-table-config.png)
 
-If specified message field does not exist or is not a JSON Primitive, the outbound message will be routed via **Failure** chain, otherwise, the message will be routed via **Success** chain.
+If specified message field does not exist in the **data** of the message or is not a JSON Primitive, the outbound message will be routed via **Failure** chain, otherwise, the message will be routed via **Success** chain.
 
-<br/>
+**NOTE**: Please make sure that you are not using **metadata** keys in the configuration - only **data** keys are possible.  
 
-# Assign To Customer Node 
+<br>
+
+## Assign To Customer Node 
 
 <table  style="width:250px;">
    <thead>
@@ -619,9 +754,9 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain. 
 
-<br/>
+<br>
 
-# Unassign From Customer Node
+## Unassign From Customer Node
 
 <table  style="width:250px;">
    <thead>
@@ -653,9 +788,9 @@ Message will be routed via **Failure** chain in the following cases:
 
 In other cases Message will be routed via **Success** chain. 
 
-<br/>
+<br>
 
-# Create Relation Node 
+## Create Relation Node 
 
 <table  style="min-width:12%; max-width: 20%">
    <thead>
@@ -709,9 +844,9 @@ In other cases Message will be routed via **Success** chain.
  
     ![image](/images/user-guide/rule-engine-2-0/nodes/action-create-relation-node-change-originator.png)
 
-<br/>
+<br>
 
-# Delete Relation Node
+## Delete Relation Node
 
 <table  style="min-width:12%; max-width: 20%">
    <thead>
@@ -751,9 +886,9 @@ In other cases Message will be routed via **Success** chain.
 
 ![image](/images/user-guide/rule-engine-2-0/nodes/action-delete-relation-node-new-functionality.png)
 
-<br/>
+<br>
 
-# GPS Geofencing Events Node
+## GPS Geofencing Events Node
 
 <table  style="width:15%">
    <thead>
@@ -775,22 +910,27 @@ The rule node fetches perimeter information from message metadata by default. If
 
 ###### Fetch perimeter information from message metadata
 
-There are two options of area definition based on the perimeter type:
+There are two options of area definition based on the perimeter type: **Polygon** and **Circle**
 
-- Polygon 
-           
-    Metadata of the incoming message must include key with name **perimeter** and following data structure:
-     
-{% highlight java %}[[lat1,lon1],[lat2,lon2], ... ,[latN,lonN]]{% endhighlight %}
- 
+Metadata of the incoming message must include key with name **perimeter** and following data structure:
+
+- Polygon
+
+{% highlight java %}[[latitude1,longitude1],[latitude2,longitude2], ... ,[latitudeN,longitudeN]]{% endhighlight %}
+
 - Circle
-                 
-{% highlight java %}"centerLatitude": "value1", "centerLongitude": "value2", "range": "value3"
+
+{% highlight java %}
+{"latitude":"value1","longitude":"value2","radius":"value3","radiusUnit":"KILOMETER"}
+{% endhighlight %}
+
+Keys **"latitude"** and **"longitude"** it's coordinates of the point.
+
+The **"radius"** key - it's the distance from the coordinate point to the circle.
 
 All values for these keys are in double-precision floating-point data type.
 
-The "rangeUnit" key requires specific value from a list of METER, KILOMETER, FOOT, MILE, NAUTICAL_MILE (capital letters obligatory).
-{% endhighlight %}
+The **"radiusUnit"** key requires specific value from a list of **METER**, **KILOMETER**, **FOOT**, **MILE**, **NAUTICAL_MILE** (capital letters obligatory).
 
 ###### Fetch perimeter information from node configuration
  

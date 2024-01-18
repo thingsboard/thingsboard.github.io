@@ -5,8 +5,6 @@ toc:
   path: /docs/iot-gateway/
 - title: What is ThingsBoard IoT Gateway?
   path: /docs/iot-gateway/what-is-iot-gateway/
-- title: Getting Started
-  path: /docs/iot-gateway/getting-started/
 - title: Configuration guides
   section:
     - title: General configuration
@@ -33,17 +31,33 @@ toc:
       path: /docs/iot-gateway/config/snmp/
     - title: FTP Connector
       path: /docs/iot-gateway/config/ftp/
+    - title: Socket Connector
+      path: /docs/iot-gateway/config/socket/
+    - title: XMPP Connector
+      path: /docs/iot-gateway/config/xmpp/
+    - title: OCPP Connector
+      path: /docs/iot-gateway/config/ocpp/
 - title: IoT Gateway features
   path: /docs/iot-gateway/features/
   section:
+    - title: Remote configuration
+      path: /docs/iot-gateway/guides/how-to-enable-remote-configuration/
     - title: Remote logging
       path: /docs/iot-gateway/guides/how-to-enable-remote-logging/
     - title: Service RPC methods
       path: /docs/iot-gateway/guides/how-to-use-gateway-rpc-methods/
     - title: Remote shell
       path: /docs/iot-gateway/guides/how-to-enable-remote-shell/
+    - title: Device renaming/removing handling
+      path: /docs/iot-gateway/how-device-removing-renaming-works/
     - title: Gateway Configurator
       path: /docs/iot-gateway/guides/how-to-configure-gateway-using-configurator/
+    - title: GET/SET RPC methods
+      path: /docs/iot-gateway/guides/how-to-use-get-set-rpc-methods/
+    - title: Remote converter update
+      path: /docs/iot-gateway/guides/how-to-use-remote-converter-update/
+    - title: Gateway Shell
+      path: /docs/iot-gateway/guides/how-to-use-gateway-shell/
 - title: IoT Gateway Roadmap
   path: /docs/iot-gateway/roadmap/
 - title: Customization guide

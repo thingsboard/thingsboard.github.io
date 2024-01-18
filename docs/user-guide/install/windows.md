@@ -12,6 +12,8 @@ description: Installing ThingsBoard on Windows
 * TOC
 {:toc}
 
+{% include templates/install/windows-warning-note.md %}
+
 ### Prerequisites
 
 This guide describes how to install ThingsBoard on a Windows machine.
@@ -41,8 +43,7 @@ https://github.com/thingsboard/thingsboard/releases/download/{{ site.release.ce_
 
 {% capture contenttogglespec %}
 PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/windows-db-postgresql.md%br%
-Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/windows-db-hybrid.md%br%
-Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/windows-db-hybrid-timescale.md{% endcapture %}
+Hybrid <br>PostgreSQL+TimescaleDB<br><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/windows-db-hybrid-timescale.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 

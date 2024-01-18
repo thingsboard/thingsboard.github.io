@@ -47,6 +47,8 @@ Number of requests per second = **44 * 1000 / 25 = 1760** requests
 
 Based on the use case, you can compromise latency and decrease number of partitions/requests to the queue, if the message load is low.
 
+By UI set the parameters - interval (1000) and partitions (1) for Rule Engine queues.
+
 Sample parameters to fit into **10** requests per second on a "monolith" deployment:
 
 ```yml
@@ -59,6 +61,10 @@ queue:
   core:
     poll-interval: "${TB_QUEUE_CORE_POLL_INTERVAL_MS:1000}"
     partitions: "${TB_QUEUE_CORE_PARTITIONS:2}"
+...    
+  vc:
+    partitions: "${TB_QUEUE_VC_PARTITIONS:1}"
+    poll-interval: "${TB_QUEUE_VC_INTERVAL_MS:1000}"
 ...
   js:
     response_poll_interval: "${REMOTE_JS_RESPONSE_POLL_INTERVAL_MS:1000}"
@@ -66,16 +72,8 @@ queue:
   rule-engine:
     poll-interval: "${TB_QUEUE_RULE_ENGINE_POLL_INTERVAL_MS:1000}"
 ...
-    queues:
-        poll-interval: "${TB_QUEUE_RE_MAIN_POLL_INTERVAL_MS:1000}"
-        partitions: "${TB_QUEUE_RE_MAIN_PARTITIONS:2}"
-...
-        poll-interval: "${TB_QUEUE_RE_HP_POLL_INTERVAL_MS:1000}"
-        partitions: "${TB_QUEUE_RE_HP_PARTITIONS:1}"
-...
-        poll-interval: "${TB_QUEUE_RE_SQ_POLL_INTERVAL_MS:1000}"
-        partitions: "${TB_QUEUE_RE_SQ_PARTITIONS:1}"
-...
   transport:
     poll_interval: "${TB_QUEUE_TRANSPORT_NOTIFICATIONS_POLL_INTERVAL_MS:1000}"
 ```
+
+You can update default Rule Engine queues configuration using UI. More about ThingsBoard Rule Engine queues see in [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/).

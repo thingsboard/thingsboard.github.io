@@ -1,0 +1,23 @@
+bigheader: "ThingsBoard Mobile Application Documentation"
+abstract: "ThingsBoard Mobile Application - starting point for your IoT mobile product."
+toc:
+  - title: Mobile Application
+    path: /docs/mobile/
+  - title: Customize your app
+    section:
+      - title: Overview
+        path: /docs/mobile/customization/
+      - title: Home screen
+        path: /docs/mobile/customize-dashboards/
+      - title: Device icons
+        path: /docs/mobile/customize-devices/
+      - title: Device details dashboard
+        path: /docs/mobile/device-dashboard/
+      - title: Alarm details dashboard
+        path: /docs/mobile/alarm-dashboard/
+      - title: Mobile actions
+        path: /docs/mobile/mobile-actions/
+      - title: OAuth 2.0
+        path: /docs/mobile/oauth2/
+  - title: Publish your app
+    path: /docs/mobile/release/

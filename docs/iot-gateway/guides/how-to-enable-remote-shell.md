@@ -14,12 +14,19 @@ For purpose of this guide, we will use following things:
 1. Instance of ThingsBoard platform (How to install you can [read here](/docs/user-guide/install/installation-options/)). For this guide we will use [thingsboard.cloud](https://thingsboard.cloud)
 2. Installed and configured ThingsBoard IoT Gateway (How to install you can [read here](/docs/iot-gateway/installation/)).
 
-# Step 1. Remote shell activation
+## Step 1. Remote shell activation
 
- - To activate remote shell in ThingsBoard IoT Gateway you should add or change parameter **remoteShell** to **true** in the section **thingsboard** in the general configuration file (**tb_gateway.yaml**).
- {% capture info %}
-<br>
-**{: style="color:red" } WARNING: This feature can cause security problems for your device, we strongly recommend using it with ssl encryption only and not enabling it if you don't need it.**  
+ - To activate remote shell in ThingsBoard IoT Gateway you should add or change parameter **remoteShell** to **true** in the section **thingsboard** in the general configuration file (**tb_gateway.yaml**);
+
+  ![](/images/gateway/charhe-remote-shell-parameter.png)
+  <br>
+{% capture info %}
+<div>
+  <p>
+    <b style="color:red">WARNING:</b>
+    <span style="color:black">this feature can cause security problems for your device, we strongly recommend using it with ssl encryption only and not enabling it if you don’t need it.</span>
+  </p>
+</div>
 {% endcapture %}
 {% include templates/info-banner.md content=info %}
  
@@ -27,54 +34,57 @@ For purpose of this guide, we will use following things:
  - Restart the gateway with the new configuration.
 
 Example of the **thingsboard** section in the general configuration file:
-```yaml
-thingsboard:
-  host: thingsboard.cloud
-  port: 1883
-  remoteShell: true
-  remoteConfiguration: false
-  security:
-    accessToken: PUT_YOUR_GW_ACCESS_TOKEN_HERE
+```json
+{
+  "thingsboard": {
+    "host": "thingsboard.cloud",
+    "port": 1883,
+    "security": {
+      "type": "accessToken",
+      "accessToken": "YOUR_ACCESS_TOKEN"
+    }
+  },
+}
 ```
-  
-# Step 2. Create a dashboard to use the remote shell
 
-To use the remote shell we have to use the widget **RPC remote shell** from **Control widget bundle**.
+## Step 2. Create a dashboard to use the remote shell
+
+To use the remote shell we have to use **RPC remote shell** widget from **Control widget** bundle.<br>
 To do this we use following steps:
   
-  - Open **Dashboards** tab:
+  - Open **Dashboards** tab;
   <br><br>
   ![](/images/gateway/remote-shell-1.png)
  
-  - We will add a new dashboard:  
+  - Add a new dashboard;
   <br><br>
   ![](/images/gateway/remote-shell-2.png)
   
-  - Open created dashboard, open edit mode by **pencil** button and add new widget:
+  - Open created dashboard, enter edit mode by clicking **pencil** button in the bottom right corner and click "**Add new widget**" button;
   <br><br>
   ![](/images/gateway/remote-shell-3.png)
   
-  - Select widget budle "**Control widgets**":
+  - Select widget bundle - "**Control widgets**";
   <br><br>
   ![](/images/gateway/remote-shell-4.png)
   
-  - Scroll down and select **RPC remote shell** widget:
+  - Scroll down and select **RPC remote shell** widget;
   <br><br>
   ![](/images/gateway/remote-shell-5.png)
   
-  - We haven't specify the entity type for the widget so we will **Create a new one**:
+  - We haven't specify the entity type for the widget so we will **create a new one**;
   <br><br>
   ![](/images/gateway/remote-shell-6.png)
   
-  - We have to fill required fields and same the entity. **Gateway** - is our gateway device:
+  - Fill in required fields and same the entity. **Gateway** - is our gateway device;
   <br><br>
   ![](/images/gateway/remote-shell-7.png)
   
-  - To prevent TimeoutException, we will increase the default RPC command timeout to 5000 milliseconds in the **advanced** settings tab and press **ADD** and check mark icon to save the dashboard:
+  - To prevent TimeoutException, increase the default RPC command timeout to 5000 milliseconds in the **advanced** settings tab and press **Add**. Then apply all changes;
   <br><br>
   ![](/images/gateway/remote-shell-8.png)
   
-  - The connected widget looks like (Connection setups automatically):
+  - The connected widget looks like (Connection setups automatically);
   <br><br>
   ![](/images/gateway/remote-shell-9.png)
   

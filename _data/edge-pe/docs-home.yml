@@ -1,0 +1,81 @@
+bigheader: "ThingsBoard Edge Documentation"
+abstract: "Distribute data processing and analysis using edge computing."
+toc:
+- title: ThingsBoard PE Edge
+  path: /docs/pe/edge/
+- title: What is ThingsBoard PE Edge?
+  path: /docs/pe/edge/getting-started-guides/what-is-edge/
+- title: Key concepts
+  section:
+    - title: OTA updates
+      path: /docs/pe/edge/user-guide/ota-updates/
+#- title: Configuration guides
+#  section:
+#    - title: Edges
+#      path: /docs/pe/user-guide/ui/edges/
+#    - title: Edge Management Overview
+#      path: /docs/pe/edge/config/management/
+#    - title: Create Device on edge and provision to cloud
+#      path: /docs/pe/edge/config/create-device/
+#    - title: Provision Device from cloud to edge
+#      path: /docs/pe/edge/config/provision-device/
+#    - title: Provision Asset from cloud to edge
+#      path: /docs/pe/edge/config/provision-asset/
+#    - title: Provision Entity View from cloud to edge
+#      path: /docs/pe/edge/config/provision-entity-view/
+#    - title: Provision Dashboard from cloud to edge
+#      path: /docs/pe/edge/config/provision-dashboard/
+#    - title: Provision User from cloud to edge
+#      path: /docs/pe/edge/config/provision-user/
+#    - title: Provision Customer from cloud to edge
+#      path: /docs/pe/edge/config/provision-customer/
+- title: Rule Engine
+  section:
+    - title: Rule Chain Templates
+      path: /docs/pe/edge/rule-engine/rule-chain-templates/
+    - title: Queues
+      path: /docs/pe/edge/rule-engine/queues/
+#    - title: Push data from edge to cloud and vice versa
+#      path: /docs/pe/edge/rule-engine/push-data/
+- title: Integrations
+  section:
+  - title: Overview
+    path: /docs/pe/edge/user-guide/integrations/
+  - title: Remote Integrations
+    path: /docs/pe/edge/user-guide/integrations/remote-integrations/
+  - title: HTTP
+    path: /docs/pe/edge/user-guide/integrations/http/
+  - title: MQTT
+    path: /docs/pe/edge/user-guide/integrations/mqtt/
+  - title: CoAP
+    path: /docs/pe/edge/user-guide/integrations/coap/
+  - title: OPC-UA
+    path: /docs/pe/edge/user-guide/integrations/opc-ua/
+  - title: TCP
+    path: /docs/pe/edge/user-guide/integrations/tcp/
+  - title: UDP
+    path: /docs/pe/edge/user-guide/integrations/udp/
+- title: Security
+  section:
+    - title: Enable gRPC over SSL/TLS for edge communication
+      path: /docs/pe/edge/user-guide/grpc-over-ssl/
+#- title: Features
+#  section:
+#    - title: Edge status
+#      path: /docs/pe/edge/features/edge-status/
+#    - title: Cloud Events
+#      path: /docs/pe/edge/features/cloud-events/
+- title: Use Cases
+  section:
+    - title: Overview
+      path: /docs/pe/edge/use-cases/overview/
+    - title: Manage alarms and RPC requests on edge devices
+      path: /docs/pe/edge/use-cases/manage-alarms-rpc-requests/
+    - title: Data filtering and traffic reduce
+      path: /docs/pe/edge/use-cases/data-filtering-traffic-reduce/
+- title: Troubleshooting
+  path: /docs/pe/edge/user-guide/troubleshooting/
+- title: Release Notes
+  path: /docs/pe/edge/releases/
+- title: Roadmap
+  path: /docs/pe/edge/roadmap/

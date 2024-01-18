@@ -36,6 +36,39 @@ html#pricing
     width: 100%
     margin: auto
 
+    #thingsboard-edge
+      .pricing-content-header
+        @media (max-width: 686px)
+          .col.d-flex.justify-content-end
+            justify-content: center !important
+            .solution-selector
+              width: 100%
+              .solution
+                &#edge-community, &#edge-pay-as-you-go, &#edge-perpetual
+                  padding-left: 14px
+                  padding-right: 14px
+                  h3
+                    width: 100%
+                    text-align: center
+                    font-size: 14px
+                    line-height: 18px
+    #trendz-self-managed
+      .pricing-content-header
+        @media (max-width: 415px)
+          .col.d-flex.justify-content-end
+            justify-content: center !important
+            .solution-selector
+              width: 100%
+              .solution
+                &#trendz-pay-as-you-go, &#trendz-perpetual
+                  padding-left: 14px
+                  padding-right: 14px
+                  h3
+                    width: 100%
+                    text-align: center
+                    font-size: 14px
+                    line-height: 18px
+
     .faq-content
       padding: 60px 0 80px
       * + h2, * + h3, * + h4, * + h5, * + h6
@@ -127,7 +160,7 @@ html#pricing
       &.btn-blue
         background-color: #2A7DEC
         color: #fff
-        padding: 8px 39px
+        padding: 8px 24px
         text-align: center
         font-size: 18px
         font-weight: 500
@@ -170,7 +203,7 @@ html#pricing
           margin-bottom: 1rem
       .pricing-square-price
         font-weight: 700
-        font-size: 40px
+        font-size: 32px
         line-height: 60px
         text-align: center
         letter-spacing: -.01em
@@ -247,6 +280,20 @@ html#pricing
       display: flex
       border: 1px solid rgba(0, 0, 0, 0.08)
       .solution
+        @media (max-width: 415px)
+          &#trendz-pay-as-you-go, &#trendz-perpetual
+            flex: 1
+            &::before
+              display: none !important
+        @media (max-width: 686px)
+          &#edge-community, &#edge-pay-as-you-go, &#edge-perpetual
+            flex: 1
+            &::before
+              display: none !important
+        @media (max-width: 1450px) and (min-width: 1200px)
+          &#edge-community, &#edge-pay-as-you-go, &#edge-perpetual
+            &::before
+              display: none !important
         position: relative
         color: #707275
         cursor: pointer
@@ -261,6 +308,17 @@ html#pricing
           a.faq-link
             &:after
               margin-left: 2px
+        &#trendz-pay-as-you-go, &#trendz-perpetual
+          @media (max-width: 415px)
+            a
+              display: none
+        &#edge-community, &#edge-pay-as-you-go, &#edge-perpetual
+          @media (max-width: 686px)
+            a
+              display: none
+          @media (max-width: 1450px) and (min-width: 1200px)
+            a
+              display: none
         &.pay-as-you-go
           &:before
             content: ""
@@ -284,7 +342,19 @@ html#pricing
             width: 28px
             height: 28px
             margin-right: 10px
-        &.thingsboard-cloud
+        &.community-edition
+          &:before
+            content: ""
+            display: inline-block
+            vertical-align: middle
+            background-size: contain
+            background: url("/images/pricing/source-code-icon.svg") no-repeat
+            filter: invert(53%) sepia(8%) saturate(130%) hue-rotate(145deg) brightness(93%) contrast(91%)
+            width: 28px
+            height: 28px
+            margin-right: 5px
+            margin-top: 5px
+        &.thingsboard-cloud, &.trendz-cloud
           &:before
             content: ""
             display: inline-block
@@ -295,7 +365,7 @@ html#pricing
             width: 28px
             height: 28px
             margin-right: 10px
-        &.thingsboard-pe
+        &.thingsboard-pe, &.trendz-self-managed
           &:before
             content: ""
             display: inline-block
@@ -381,7 +451,7 @@ html#pricing
           margin-bottom: 54px
           min-width: 200px
 
-      &#trendz
+      &#trendz-cloud
         .pricing-div
 
           .ml-form-embedWrapper
@@ -467,10 +537,14 @@ html#pricing
         list-style-type: none
         display: flex
         flex-wrap: wrap
-        justify-content: space-around
+        justify-content: center
         align-items: center
         margin: 0
         padding: 0
+        @media screen and (max-width: 426px)
+          justify-content: center
+          li a::before
+            display: none !important
         li
           position: relative
           display: table

@@ -3,6 +3,8 @@ abstract: "Documentation for installation and configuration of Trendz Analytics.
 toc:
 - title: Installation options
   path: /docs/trendz/install/installation-options/
+- title: Trendz Cloud
+  path: /docs/trendz/install/cloud/
 - title: On premise
   section:
   - title: Ubuntu Server
@@ -19,3 +21,5 @@ toc:
   path: /docs/trendz/install/trndz-upgrade-instructions/
 - title: Connect Trendz to Thingsboard
   path: /docs/trendz/connect-thingsboard/
+- title: Configuration properties
+  path: /docs/trendz/configuration-properties/

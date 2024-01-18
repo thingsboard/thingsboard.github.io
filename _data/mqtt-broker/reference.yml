@@ -1,0 +1,12 @@
+bigheader: "Architecture"
+abstract: "Design docs, deployment scenarios and performance"
+toc:
+- title: Architecture Overview
+  path: /docs/mqtt-broker/architecture/
+- title: Performance Tests
+  section:
+    - title: 100M MQTT Connections Performance Test
+      path: /docs/mqtt-broker/reference/100m-connections-performance-test/
+    - title: 3M Msg/sec Throughput Performance Test
+      path: /docs/mqtt-broker/reference/3m-throughput-single-node-performance-test/
+      new: true

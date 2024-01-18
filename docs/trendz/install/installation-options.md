@@ -16,10 +16,19 @@ notitle: "true"
             </div>
             <div class="deployment-container one-line-deployment-container">
                 <div class="deployment-div">
-                    <div class="container">                        
+                    <div class="container">
                         <div class="deployment-section deployment-on-premise active" id="onPremise">
                            <div class="deployment-cards">
                                 <div class="deployment-cards-container">
+                                    <div class="deployment-card-block">
+                                        <a href="/docs/trendz/install/cloud/">
+                                            <span>
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/platform/trendz-cloud.svg" title="Trendz Cloud" alt="Trendz Cloud">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
                                     <div class="deployment-card-block">
                                         <a href="/docs/trendz/install/ubuntu/">
                                             <span>
@@ -65,12 +74,12 @@ notitle: "true"
                                             </span>
                                         </a>
                                     </div>
-                               </div>                    
-                            </div>                        
+                               </div>
+                            </div>
                         </div>
                     </div>
-                </div>    
-            </div>            
+                </div>
+            </div>
           </div>
        </div>
     </div>

@@ -1,7 +1,7 @@
-{% capture containerId %}{{include.containerId}}{% endcapture %}
-{% capture integratorsType %}{{include.type}}{% endcapture %}
-{% capture integrators %}{% include integrators.json %}{% endcapture %}
-{% capture rgn %}{% include rgn.json %}{% endcapture %}
+// {% capture containerId %}{{include.containerId}}{% endcapture %}
+// {% capture integratorsType %}{{include.type}}{% endcapture %}
+// {% capture integrators %}{% include integrators.json %}{% endcapture %}
+// {% capture rgn %}{% include rgn.json %}{% endcapture %}
 
 function selectType(type, country) {
   var containerId = "{{ containerId }}";
@@ -64,8 +64,9 @@ function createBox(integrator) {
      textSite.textContent = 'Visit us at: ';
 
      var linkSite = document.createElement('a');
-     linkSite.href = 'http://www.' + integrator.site.href;
-     linkSite.textContent = integrator.site.href;
+     var link = integrator.site.href.replace('https://', '').replace('http://', '').replace('www.', '').replace('/', '');
+     linkSite.href = 'https://' + link;
+     linkSite.textContent = link;
      linkSite.target = integrator.site.target;
      linkSite.className = 'links';
      box.appendChild(Site);
@@ -112,7 +113,7 @@ ajax().then(function(data) {
   }).change();
 });
 
-function Map(m)
+function mapSelect(m)
 {
     if (document.getElementById('integratorsContainerEmpty') != null) {
     document.getElementById('integratorsContainerEmpty').id = 'integratorsContainer';

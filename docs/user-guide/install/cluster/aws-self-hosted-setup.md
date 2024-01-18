@@ -26,4 +26,3 @@ You need to open TCP 22,80,443,1883 and UDP 5683 ports in inbound rules.
 
 
 After that, you can start installation from this [guide](/docs/user-guide/install/ubuntu/).
-

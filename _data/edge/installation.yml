@@ -1,15 +1,21 @@
 bigheader: "Installation"
-abstract: "Documentation for installation and configuration of ThingsBoard Edge."
+abstract: "Guides for installing and configuring ThingsBoard Edge."
 toc:
-- title: Installation options
-  path: /docs/edge/install/installation-options/
-- title: Ubuntu (DEB)
-  path: /docs/edge/install/deb-installation/
-- title: CentOS/RHEL (RPM)
-  path: /docs/edge/install/rhel/
-- title: Windows
-  path: /docs/edge/install/windows/
-- title: Docker (Windows)
-  path: /docs/edge/install/docker-windows/
-- title: Docker (Linux or Mac OS)
-  path: /docs/edge/install/docker/
+- title: Installation Options
+  path: /docs/user-guide/install/edge/installation-options/
+- title: Installing Edge on Ubuntu (DEB)
+  path: /docs/user-guide/install/edge/deb-installation/
+- title: Installing Edge on CentOS/RHEL (RPM)
+  path: /docs/user-guide/install/edge/rhel/
+- title: Installing Edge with Docker (Linux or Mac OS)
+  path: /docs/user-guide/install/edge/docker/
+- title: Installing Edge with Docker (Windows)
+  path: /docs/user-guide/install/edge/docker-windows/
+- title: Installing Edge on Windows
+  path: /docs/user-guide/install/edge/windows/
+- title: Building Edge from Sources
+  path: /docs/user-guide/install/edge/building-from-source/
+- title: Upgrade Instructions
+  path: /docs/user-guide/install/edge/upgrade-instructions/
+- title: Configuration
+  path: /docs/edge/user-guide/install/config/

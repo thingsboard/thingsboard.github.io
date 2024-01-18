@@ -11,12 +11,17 @@ toc:
     path: /docs/pe/reference/mqtt-api/
   - title: MQTT Gateway API Reference
     path: /docs/pe/reference/gateway-mqtt-api/
+  - title: MQTT Sparkplug API
+    path: /docs/pe/reference/mqtt-sparkplug-api/
+    new: true
   - title: CoAP Device API
     path: /docs/pe/reference/coap-api/
   - title: HTTP Device API
     path: /docs/pe/reference/http-api/
-  - title: LWM2M Device API
+  - title: LWM2M Transport API
     path: /docs/pe/reference/lwm2m-api/
+  - title: SNMP Transport API
+    path: /docs/pe/reference/snmp-api/
     new: true
 - title: REST APIs and clients
   section:
@@ -32,4 +37,4 @@ toc:
   new: true
   section:
     - title: Python Client SDK
-      path: /docs/reference/python-client-sdk
+      path: /docs/pe/reference/python-client-sdk/

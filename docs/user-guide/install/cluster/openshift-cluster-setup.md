@@ -22,18 +22,20 @@ Please follow [these instructions](https://www.techrepublic.com/article/how-to-i
 
 To access OpenShift cluster you'll have to login first. By default, you may login as the `developer` user:
 
-`
-$  oc login -u developer -p developer
-` 
+```
+oc login -u developer -p developer
+``` 
+{: .copy-code}
 
 ### Create project
 
 On the first start-up you should create the `thingsboard` project.
 To create it, please execute next command:
 
-`
-$ oc new-project thingsboard
-` 
+```
+oc new-project thingsboard
+``` 
+{: .copy-code}
 
 
 ## Step 1. Review the architecture page
@@ -44,10 +46,10 @@ See [**microservices**](/docs/reference/msa/) architecture page for more details
 ## Step 2. Clone ThingsBoard CE Kubernetes scripts repository
 
 ```bash
-git clone https://github.com/thingsboard/thingsboard-ce-k8s.git
+git clone -b release-{{ site.release.ver }} https://github.com/thingsboard/thingsboard-ce-k8s.git --depth 1
+cd thingsboard-ce-k8s/openshift
 ```
-
-In `.env` file set the value of `PLATFORM` field to `openshift`.
+{: .copy-code}
 
 ## Step 3. Configure ThingsBoard database
 
@@ -57,32 +59,26 @@ In order to set database type change the value of `DATABASE` variable in `.env` 
 - `postgres` - use PostgreSQL database;
 - `hybrid` - use PostgreSQL for entities database and Cassandra for timeseries database;
 
-**NOTE**: According to the database type corresponding kubernetes resources will be deployed (see `basic/postgres.yml` or `high-availability/postgres-ha.yaml` for postgres with replication, `common/cassandra.yml` for details).
+**NOTE**: According to the database type corresponding kubernetes resources will be deployed (see `postgres.yml` and `cassandra.yml` for details).
 
-## Step 4. Choose deployment type
+{% capture cassandra-replication %}
 
-Before performing initial installation you can configure the type of ThingsBoard deployment.
-In order to set deployment type change the value of `DEPLOYMENT_TYPE` variable in `.env` file to one of the following:
+If you selected `cassandra` as `DATABASE` you can also configure the number of Cassandra nodes (`StatefulSet.spec.replicas` property in `cassandra.yml` config file) and the `CASSANDRA_REPLICATION_FACTOR` in `.env` file. 
+If you want to configure `CASSANDRA_REPLICATION_FACTOR` please read Cassandra documentation first.  
 
-- `basic` - startup with a single instance of Zookeeper, Kafka and Redis;
-- `high-availability` - startup with Zookeeper, Kafka, and Redis in cluster modes;
+It is recommended to have 3 Cassandra nodes with `CASSANDRA_REPLICATION_FACTOR` equal to 2.
 
-**NOTE**: According to the deployment type corresponding kubernetes resources will be deployed (see the content of the directories `basic` and `high-availability` for details).
-
-If you selected `cassandra` as `DATABASE` you can also configure the number of Cassandra nodes (`StatefulSet.spec.replicas` property in `common/cassandra.yml` config file) and the `CASSANDRA_REPLICATION_FACTOR` in `.env` file. 
-It is recommended to have 3 Cassandra nodes with `CASSANDRA_REPLICATION_FACTOR` equal to 1.
-
-**NOTE**: If you want to configure `CASSANDRA_REPLICATION_FACTOR` please read Cassandra documentation first.  
-
-Also, to run PostgreSQL in `high-availability` deployment mode you'll need to  [install](https://helm.sh/docs/intro/install/) `helm`.
+{% endcapture %}
+{% include templates/info-banner.md content=cassandra-replication %}
 
 ## Step 5. Running
 
 Execute the following command to run installation:
 
-`
-$ ./k8s-install-tb.sh --loadDemo
-`
+```
+./k8s-install-tb.sh --loadDemo
+```
+{: .copy-code}
 
 Where:
 
@@ -90,18 +86,20 @@ Where:
 
 Execute the following command to deploy third-party resources:
 
-`
-$ ./k8s-deploy-thirdparty.sh
-`
+```
+./k8s-deploy-thirdparty.sh
+```
+{: .copy-code}
 
 Type **'yes'** when prompted, if you are running ThingsBoard in `high-availability` `DEPLOYMENT_TYPE` for the first time or don't have configured Redis cluster.
 
 
 Execute the following command to deploy ThingsBoard resources:
 
-`
-$ ./k8s-deploy-resources.sh
-`
+```
+./k8s-deploy-resources.sh
+```
+{: .copy-code}
 
 To see how to reach your ThingsBoard application on cluster, login as ***developer*** user (default password is ***developer*** too), open `thingsboard` project, then go to `Application -> Routes` menu and you'll see all your configured routes.
 The *root* route should look like `https://tb-route-node-root-thingsboard.127.0.0.1.nip.io/`.
@@ -122,15 +120,17 @@ For example to see ThingsBoard node logs execute the following command:
 
 1) Get the list of the running tb-node pods:
 
-`
-$ oc get pods -l app=tb-node
-`
+```
+oc get pods -l app=tb-node
+```
+{: .copy-code}
 
 2) Fetch logs of the tb-node pod:
 
-`
-$ oc logs -f [tb-node-pod-name]
-`
+```
+oc logs -f [tb-node-pod-name]
+```
+{: .copy-code}
 
 Where:
 
@@ -143,31 +143,35 @@ See [oc Cheat Sheet](https://design.jboss.org/redhatdeveloper/marketing/openshif
 
 Execute the following command to delete all ThingsBoard microservices:
 
-`
-$ ./k8s-delete-resources.sh
-`
+```
+./k8s-delete-resources.sh
+```
+{: .copy-code}
 
 Execute the following command to delete all third-party microservices:
 
-`
-$ ./k8s-delete-thirdparty.sh
-`
+```
+./k8s-delete-thirdparty.sh
+```
+{: .copy-code}
 
 Execute the following command to delete all resources (including database):
 
-`
-$ ./k8s-delete-all.sh
-`
+```
+./k8s-delete-all.sh
+```
+{: .copy-code}
 
 ## Upgrading
 
 In case when database upgrade is needed, execute the following commands:
 
 ```
-$ ./k8s-delete-resources.sh
-$ ./k8s-upgrade-tb.sh --fromVersion=[FROM_VERSION]
-$ ./k8s-deploy-resources.sh
+./k8s-delete-resources.sh
+./k8s-upgrade-tb.sh --fromVersion=[FROM_VERSION]
+./k8s-deploy-resources.sh
 ```
+{: .copy-code}
 
 Where:
 

@@ -8,12 +8,14 @@
 {% else %}
    {% assign docsTag = "ce" %}
 {% endif %}
+{% assign foundProduct = site.data.products | where: "tag", docsTag %}
+{% assign productInfo = foundProduct[0] %}
 {% for thistoc in siteData.globals.tocs %}{% if foundTOC %}{% break %}{% else %}{% assign tree = siteData[thistoc].toc %}{% include tocsearch.html %}{% endif %}{% endfor %}
 {% for override in siteData.overrides.overrides %}{% if page.path contains override.path %}{% assign notitle = "true" %}{% endif %}{% endfor %}
 {% if siteData[foundTOC].notitle == "true" or page.notitle == "true" %}{% assign notitle = "true" %}{% endif %}
 
 <!Doctype html>
-<html id="docs" class="{{siteData[foundTOC].bigheader}}">
+<html id="docs" class="{{siteData[foundTOC].bigheader}} {{productInfo.tag}}">
 
 {% include head-header.html docsTag=docsTag %}
 
@@ -22,6 +24,19 @@
     <button class="searchButton"></button>
 </div>
 
+<div class="products-selector">
+    <div class="product-info">
+        <div class="product-title">
+            {{productInfo.title}}
+        </div>
+    </div>
+    <div class="products">
+        {% for product in site.data.products %}
+        {% include find-product-url.html %}
+        <a href="{{productUrl}}" class="product{% if product.tag == docsTag %} active{% endif %}">{{product.title}}</a>
+        {% endfor %}
+    </div>
+</div>
 <!--  HERO  -->
 <section id="hero">
   <div id="hero-content">
@@ -116,7 +131,7 @@
   <div id="docsContent" class="{{ docContentClassList }}">
       <div id="table-of-contents">
           {% if hasTocContent == "true" %}
-              <h4>On this page</h4>
+            <span>On this page</span>
           {% endif %}
       </div>
       <div id="top-spacer"></div>
@@ -166,6 +181,22 @@
 <script>
     jqueryDefer(function () {
         $(document).ready(function () {
+
+            // Products selector
+
+            let productsSelector = $('.products-selector');
+            $(window).click(function(e) {
+                if (productsSelector[0].contains(e.target)) {
+                    if (productsSelector.hasClass('active')) {
+                        productsSelector.removeClass('active');
+                    } else {
+                        productsSelector.addClass('active');
+                    }
+                } else {
+                    productsSelector.removeClass('active');
+                }
+            });
+
             var allCodeBlocksElements = $(".copy-code");
             allCodeBlocksElements.each(function (i) {
                 var codeBlock = $(this);
@@ -255,31 +286,39 @@
         var firstAnchor = null;
         var lastAnchor = null;
 
-        function updatePositions() {
-            contentAnchors = [];
-            markdownTocs.each(function (i) {
-                var tocAnchor = $(this).children('a');
-                var href = tocAnchor.attr('href');
-                var contentAnchor = $('div#content ' + href);
-                var top = Math.floor(contentAnchor.offset().top);
-                var bottom;
-                if (i < markdownTocs.length - 1) {
-                    var nextHref = $(markdownTocs[i + 1]).children('a').attr('href');
-                    var nextContentAnchor = $('div#content ' + nextHref);
-                    bottom = Math.floor(nextContentAnchor.offset().top);
-                } else {
-                    bottom = $('div#content').offset().top + $('div#content').innerHeight();
-                }
-                var contentAnchorInfo = {anchor: contentAnchor, toc: $(this), top: top, bottom: bottom, href: href};
-                contentAnchors.push(contentAnchorInfo);
-                if (i === 0) {
-                    firstAnchor = contentAnchorInfo;
-                }
-                if (i === markdownTocs.length - 1) {
-                    lastAnchor = contentAnchorInfo;
-                }
-            });
-        }
+            function updatePositions() {
+                contentAnchors = [];
+                markdownTocs.each(function (i) {
+                    if (!$(this).hasClass('hide')) {
+                        var tocAnchor = $(this).children('a');
+                        var href = tocAnchor.attr('href');
+                        var contentAnchor = $('div#content ' + href);
+                        var top = Math.floor(contentAnchor.offset().top);
+                        var bottom;
+                        if (i < markdownTocs.length - 1) {
+                            var nextHref = null;
+                            for (let j = 1; j < markdownTocs.length; j++) {
+                                if (!$(markdownTocs[i + j]).hasClass('hide')) {
+                                    nextHref = $(markdownTocs[i + j]).children('a').attr('href');
+                                    break;
+                                }
+                            }
+                            var nextContentAnchor = $('div#content ' + nextHref);
+                            bottom = Math.floor(nextContentAnchor.offset().top);
+                        } else {
+                            bottom = $('div#content').offset().top + $('div#content').innerHeight();
+                        }
+                        var contentAnchorInfo = {anchor: contentAnchor, toc: $(this), top: top, bottom: bottom, href: href};
+                        contentAnchors.push(contentAnchorInfo);
+                        if (i === 0) {
+                            firstAnchor = contentAnchorInfo;
+                        }
+                        if (i === markdownTocs.length - 1) {
+                            lastAnchor = contentAnchorInfo;
+                        }
+                    }
+                });
+            }
 
         function findActiveContentToc() {
             var top = $(window).scrollTop();
@@ -319,11 +358,12 @@
                 }
             }
         }
-        $( document ).ready(function() {
+        $(document).ready(function () {
             var tocs = $('#content > ul#markdown-toc');
             var tableOfContents = $('#table-of-contents');
             tableOfContents.append(tocs);
-            markdownTocs = $('#table-of-contents ul#markdown-toc li').filter(function() {
+
+            markdownTocs = $('#table-of-contents ul#markdown-toc li').filter(function () {
                 var tocAnchor = $(this).children('a');
                 var href = tocAnchor.attr('href');
                 if (!href.startsWith('#')) {
@@ -334,6 +374,15 @@
                 }
             });
             updateActiveToc(true);
+            $('#table-of-contents ul#markdown-toc > li > ul').each(function() {
+                let i = 0;
+                $(this).find('li').each(function() {
+                    var tocAnchor = $(this).children('a');
+                    if (!$(tocAnchor.attr('href')).parent().hasClass('panel-body')) return true;
+                    tocAnchor.attr('href', tocAnchor.attr('href') + i);
+                    tocAnchor.attr('id', tocAnchor.attr('id') + i++);
+                })
+            })
         });
 
         $(document).on("scroll", function() {
@@ -342,6 +391,10 @@
 
     });
 </script>
+
 {% endif %}
+
+{% include cookie-consent.html %}
+
 </body>
 </html>

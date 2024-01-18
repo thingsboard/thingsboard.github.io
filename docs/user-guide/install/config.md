@@ -2,9 +2,9 @@
 layout: docwithnav
 assignees:
 - vparomskiy
-title: Configuration properties
-description: ThingsBoard configuration properties and environment variables
+title: Core/rule engine deployment parameters
+description: ThingsBoard configuration parameters and environment variables
 
 ---
 
-{% include docs/user-guide/install/config.md %}
+{% include docs/user-guide/install/core-rule-engine-config.md %}

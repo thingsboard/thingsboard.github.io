@@ -11,7 +11,7 @@ hidetoc: "true"
 <div id="contact-us-thanks" class="center">
     <div class="thanks-content">
         <p class="thank-you">Thank you for getting in touch!</p>
-        <p>We appreciate you contacting us and will try to respond as soon as possible.<br/>Have a great day!</p>
+        <p>We appreciate you contacting us and will try to respond as soon as possible.<br>Have a great day!</p>
         <a class="homepage" href="/">Homepage</a>
     </div>
 </div>

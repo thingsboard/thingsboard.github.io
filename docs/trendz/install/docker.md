@@ -20,19 +20,12 @@ This guide will help you to install and start Trendz Analytics using Docker on L
 
 ## Step 1. Obtain the license key 
 
-We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
+We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
 Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
 
-## Step 2. Checkout Trendz Analytics image on Docker Hub
-
-Open official [Trendz Analytics](https://hub.docker.com/_/trndz) Docker Hub page and proceed to checkout.
-
-Populate basic information about yourself and click "Get Content"
- 
-
-## Step 3. Running Trendz service
+## Step 2. Running Trendz service
 
 ##### Docker Compose setup
 
@@ -49,11 +42,11 @@ Add the following line to the yml file. Don't forget to replace “PUT_YOUR_LICE
 
 ```yml
 
-version: '2.2'
+version: '3.0'
 services:
   mytrendz:
     restart: always
-    image: "thingsboard/trendz:1.8.0-SNAPSHOT"
+    image: "thingsboard/trendz:1.10.3-HF3"
     ports:
       - "8888:8888"
     environment:
@@ -63,12 +56,28 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/trendz
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
+      SCRIPT_ENGINE_PROVIDER: DOCKER_CONTAINER
+      SCRIPT_ENGINE_DOCKER_PROVIDER_URL: mypyexecutor:8080
+      SCRIPT_ENGINE_TIMEOUT: 30000
     volumes:
       - ~/.mytrendz-data:/data
       - ~/.mytrendz-logs:/var/log/trendz
+  mypyexecutor:
+    restart: always
+    image: "thingsboard/trendz-python-executor:1.10.3"
+    ports:
+      - "8080"
+    environment:
+      MAX_HEAP_SIZE: 750M
+      SCRIPT_ENGINE_RUNTIME_TIMEOUT: 30000
+      EXECUTOR_MANAGER: 1
+      EXECUTOR_SCRIPT_ENGINE: 6
+      THROTTLING_QUEUE_CAPACITY: 10
+      THROTTLING_THREAD_POOL_SIZE: 6
+      NETWORK_BUFFER_SIZE: 5242880
   postgres:
     restart: always
-    image: "postgres:12"
+    image: "postgres:15"
     ports:
       - "5432"
     environment:
@@ -76,7 +85,6 @@ services:
       POSTGRES_PASSWORD: postgres
     volumes:
       - ~/.mytrendz-data/db:/var/lib/postgresql/data
-
 ```
 {: .copy-code}
 
@@ -90,13 +98,16 @@ Where:
 - `~/.mytrendz-logs:/var/log/thingsboard`   - mounts the volume `~/.mytrendz-logs` to Trendz logs directory
 - `mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.8.0-SNAPSHOT`          - docker image
-    
-Before starting Docker container run following commands to create a directory for storing data and logs and then change 
-its owner to docker container user, to be able to change user, chown command is used, which requires sudo permissions 
-(command will request password for a sudo access):
+- `thingsboard/trendz:1.10.3-HF3`          - Trendz docker image
+- `thingsboard/trendz-python-executor:1.10.3`          - Trendz python script executor docker image
+- `SCRIPT_ENGINE_RUNTIME_TIMEOUT`          - Python script execution timeout
 
-```yml
+
+Run following commands, before starting docker container(s), to create folders for storing data and logs.
+These commands additionally will change owner of newly created folders to docker container user.
+To do this (to change user) **chown** command is used, and this command requires *sudo* permissions (command will request password for a *sudo* access):
+
+```bash
 mkdir -p ~/.mytrendz-data && sudo chown -R 799:799 ~/.mytrendz-data
 mkdir -p ~/.mytrendz-logs && sudo chown -R 799:799 ~/.mytrendz-logs
 ```
@@ -105,16 +116,9 @@ mkdir -p ~/.mytrendz-logs && sudo chown -R 799:799 ~/.mytrendz-logs
 **NOTE**: replace directory ~/.mytrendz-data and ~/.mytrendz-logs with directories you’re planning to used in docker-compose.yml.
 
 ##### Running service
- 
-Execute the following command to up this docker compose directly:
 
-**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file.    
-    
-```yml
-docker-compose up -d
-docker-compose logs -f mytrendz
-```
-{: .copy-code}    
+{% assign serviceName = "trendz" %}
+{% include templates/install/docker/docker-compose-up.md %}
     
 After executing this command you can open `http://{your-host-ip}:8888` in you browser (for ex. `http://localhost:8888`). 
 You should see Trendz login page.
@@ -128,82 +132,139 @@ to validate credentials.
 
 ## Detaching, stop and start commands
 
-You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
-
-In case of any issues you can examine service logs for errors. For example to see Trendz logs execute the following command:
-
-```
-docker-compose logs -f mytrendz
-```
-
-To stop the container:
-
-```
-docker-compose stop mytrendz
-```
-
-To start the container:
-
-```
-docker-compose start mytrendz
-```
+{% assign serviceName = "trendz" %}
+{% assign serviceFullName = "Trendz" %}
+{% include templates/install/docker/detaching-stop-start-commands.md %}
 
 ## Upgrade Trendz Service
 
-Below is example on how to upgrade from 1.6.0 to 1.7.0
+Below is example on how to upgrade from 1.10.2 to 1.10.3-HF3
 
-1. Stop mytrendz container
+**Note:** starting from version 1.10.2 we add support of Python script execution. During an upgrade you need to add Python executor image into your docker compose file. 
+Full content of docker compose file you can find at the beginning of this article. Here is an example of the python executor service
+```yml
+  mypyexecutor:
+    restart: always
+    image: "thingsboard/trendz-python-executor:1.10.3"
+    ports:
+      - "8080"
+    environment:
+      MAX_HEAP_SIZE: 750M
+      SCRIPT_ENGINE_RUNTIME_TIMEOUT: 30000
+      EXECUTOR_MANAGER: 1
+      EXECUTOR_SCRIPT_ENGINE: 6
+      THROTTLING_QUEUE_CAPACITY: 10
+      THROTTLING_THREAD_POOL_SIZE: 6
+      NETWORK_BUFFER_SIZE: 5242880
+```
+{: .copy-code}
 
-    ```text
-    docker-compose stop mytrendz
-    ```
-    {: .copy-code}
+* Create a dump of your database:
 
+```bash
+docker compose exec postgres sh -c "pg_dump -U postgres trendz > /var/lib/postgresql/data/trendz_dump"
+```
+{: .copy-code}
 
-2. Create a dump of your database:
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+<br>**docker-compose exec postgres sh -c "pg_dump -U postgres trendz > /var/lib/postgresql/data/trendz_dump"**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
 
-    ```text
-    docker-compose exec postgres sh -c "pg_dump -U postgres trendz > /var/lib/postgresql/data/trendz_dump"
-    ```
-    {: .copy-code}
+* Set upgradeversion variable to your **previous** Trendz version.
 
-3. After this you need to update docker-compose.yml as in [Step 3](#step-3-running) but with 1.8.0-SNAPSHOT instead of 1.7.0-SNAPSHOT:
-    
-4. Change upgradeversion version to your **current** ThingsBoard version.
-       
-    ```text
-    sudo sh -c "echo '1.7.0' > ~/.mytrendz-data/.upgradeversion"
-    ```
-    {: .copy-code}
+```bash
+docker compose exec mytrendz sh -c "echo '1.10.1' > /data/.upgradeversion" 
+```
+{: .copy-code}
 
-5. Then execute the following commands:
-    ```text
-    docker-compose run mytrendz upgrade-trendz.sh
-    ```
-    {: .copy-code}
-    
-6. Start Trendz:
-    
-    ```text
-    docker-compose up -d
-    ```
-    {: .copy-code}
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+<br>**docker-compose exec mytrendz sh -c "echo '1.10.1' > /data/.upgradeversion"**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
 
-To upgrade Trendz to latest version those steps should be done **for each intermediate version**.
+* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with 1.10.3-HF3 instead of 1.10.2:
+
+* Restart Trendz container
+
+```bash
+docker compose stop mytrendz
+docker compose up -d
+```
+{: .copy-code}
+
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
+<br>**docker-compose stop mytrendz**
+<br>**docker-compose up -d**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
+
+To upgrade Trendz to the latest version those steps should be done **for each intermediate version**.
+
+## Standalone Python executor service
+You can use following docker compose file in case when you want to start Trendz python executor as a separate service. 
+It is useful when your Trendz service is installed in monolith mode, and you want to logically separate Trendz from service that executes Python scripts for prediction models. 
+Using same configuration you can scale Python executors independently of Trendz service.
+
+Create docker compose file:
+
+```text
+sudo nano docker-compose.yml
+```
+{: .copy-code}
+
+Add following configuration:
+
+```yml
+version: '3.0'
+services:
+  mypyexecutor:
+    restart: always
+    image: "thingsboard/trendz-python-executor:1.10.3"
+    ports:
+      - "8080"
+    environment:
+      SCRIPT_ENGINE_RUNTIME_TIMEOUT: 30000
+      EXECUTOR_MANAGER: 1
+      EXECUTOR_SCRIPT_ENGINE: 6
+      THROTTLING_QUEUE_CAPACITY: 10
+      THROTTLING_THREAD_POOL_SIZE: 6
+      NETWORK_BUFFER_SIZE: 10485760
+```
+{: .copy-code}
+
+Where:
+
+- `8080`            - Python executor port for communication with Trendz service
+- `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
+- `thingsboard/trendz-python-executor:1.10.3`          - Trendz python script executor docker image
+- `SCRIPT_ENGINE_RUNTIME_TIMEOUT`          - Python script execution timeout
+
+```text
+docker compose up -d
+docker compose logs -f mypyexecutor
+```
+
+* Final step is to tell Trendz service how to communicate with Python executor service. You can do that by changing following environment variables in `/usr/share/trendz/conf/trendz.conf` file:
+
+```bash
+export SCRIPT_ENGINE_TIMEOUT=30000
+export SCRIPT_ENGINE_PROVIDER=DOCKER_CONTAINER
+export SCRIPT_ENGINE_DOCKER_PROVIDER_URL=PYTHON_EXECUTOR_HOST:PYTHON_EXECUTOR_PORT
+```
+{: .copy-code}
+
+Note: you need to replace `PYTHON_EXECUTOR_HOST` and `PYTHON_EXECUTOR_PORT` with actual values of your Python executor service and ensure that Trendz is able to send network traffic to that destination.
 
 ## Troubleshooting
 
 ### DNS issues
 
-**Note** If you observe errors related to DNS issues, for example
+{% include templates/troubleshooting/dns-issues.md %}
 
-```bash
-127.0.1.1:53: cannot unmarshal DNS message
-```
-
-You may configure your system to use Google public DNS servers. 
-See corresponding [Linux](https://developers.google.com/speed/public-dns/docs/using#linux) and [Mac OS](https://developers.google.com/speed/public-dns/docs/using#mac_os) instructions.
-
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

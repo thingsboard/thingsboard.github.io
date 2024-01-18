@@ -27,14 +27,10 @@ Add the following lines to the configuration file. Don't forget **to replace** "
 
 ```bash
 # DB Configuration 
-export DATABASE_ENTITIES_TYPE=sql
 export DATABASE_TS_TYPE=timescale
-export SPRING_JPA_DATABASE_PLATFORM=org.hibernate.dialect.PostgreSQLDialect
-export SPRING_DRIVER_CLASS_NAME=org.postgresql.Driver
 export SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/thingsboard
 export SPRING_DATASOURCE_USERNAME=postgres
 export SPRING_DATASOURCE_PASSWORD=PUT_YOUR_POSTGRESQL_PASSWORD_HERE
-export SPRING_DATASOURCE_MAXIMUM_POOL_SIZE=5
 # Specify Interval size for data chunks storage. Please note that this value can be set only once.
 export SQL_TIMESCALE_CHUNK_TIME_INTERVAL=604800000 # Number of miliseconds. The current value corresponds to one week.
 ```

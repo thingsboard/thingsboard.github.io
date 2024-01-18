@@ -24,12 +24,12 @@
         $(window).scroll(function() {
             var height = $(window).scrollTop();
             var navPosition = $('.mainTitle').height() + 50;
-            if(height > navPosition){
-            $('nav.customers-nav').addClass('nav-fixed');
-            $('h1.mainTitle').addClass('customer-spacer');
-            } else{
-            $('nav.customers-nav').removeClass('nav-fixed');
-            $('h1.mainTitle').removeClass('customer-spacer');
+            if(height > navPosition) {
+                $('nav.customers-nav').addClass('nav-fixed');
+                $('h1.mainTitle').addClass('customer-spacer');
+            } else {
+                $('nav.customers-nav').removeClass('nav-fixed');
+                $('h1.mainTitle').removeClass('customer-spacer');
             }
         });
     });
@@ -50,6 +50,8 @@
         }
     }
 </script>
+
+{% include cookie-consent.html %}
 
 </body>
 </html>

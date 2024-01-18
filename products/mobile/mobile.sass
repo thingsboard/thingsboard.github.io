@@ -1,0 +1,326 @@
+.mobile-frame
+  position: relative
+  width: 320px
+  &:before
+    content: ""
+    display: block
+  &:after
+    content: ""
+    display: block
+    z-index: 1
+    background-repeat: no-repeat
+    background-size: contain
+    position: absolute
+    top: 0
+    left: 0
+    bottom: 0
+    right: 0
+  .phone-bg
+    position: absolute
+    z-index: -1
+    left: -10%
+    top: 11%
+    &.points
+      left: -90%
+      top: 11%
+      &.right
+        left: 53%
+    &.web
+      border-radius: 6px
+      box-shadow: -20px 20px 40px -20px rgba(0,0,0,.15), -30px 30px 60px rgba(0,0,0,.15)
+      &.right
+        box-shadow: 20px 20px 40px -20px rgba(0,0,0,.15), 30px 30px 60px rgba(0,0,0,.15)
+    &.flexible
+      top: 15%
+      left: -70%
+      width: 140%
+    &.alarms-m
+      top: 25%
+      left: 25%
+      width: 140%
+    &.devices-nav
+      top: 15%
+      left: -60%
+      width: 140%
+    &.mobile-act
+      top: 20%
+      left: -70%
+      width: 140%
+    &.w-label
+      top: 11%
+      left: 25%
+      width: 140%
+    &.self-reg
+      top: 13%
+      left: -60%
+      width: 140%
+  .phone-shadow
+    position: absolute
+    z-index: -1
+    right: 1.9%
+    left: 1.9%
+    top: 0.3%
+    bottom: 0.9%
+    border-radius: 50px
+    box-shadow: -20px 20px 20px rgba(0,0,0,.15), -30px 30px 40px rgba(0,0,0,.15)
+    &.right
+      box-shadow: 20px 20px 20px rgba(0,0,0,.15), 30px 30px 40px rgba(0,0,0,.15)
+  .frame-video, .frame-image
+    position: absolute
+    img, video
+      width: 100%
+      position: absolute
+      top: 0
+      left: 0
+      bottom: 0
+      right: 0
+  .frame-image
+    z-index: -1
+  &.android
+    &:before
+      padding-top: 207.8%
+    &:after
+      background-image: url(/images/mobile/pixel2-frame620.png)
+    .frame-image, .frame-video
+      top: 23.2%
+      left: 5.2%
+      right: 4.3%
+      bottom: 23.6%
+  &.ios
+    &:before
+      padding-top: 202%
+    &:after
+      background-image: url(/images/mobile/iphone12promax-frame.png)
+    .frame-image, .frame-video
+      top: 2.15%
+      left: 5.25%
+      right: 5.15%
+      bottom: 2.15%
+      img, video
+        border-radius: 4%
+
+.mobile-market-badges
+  display: flex
+  flex-direction: column
+  a
+    img
+      width: 200px
+      height: auto
+      margin: 16px
+
+@media screen and (min-width: 750px)
+  .mobile-market-badges
+    flex-direction: row
+    a
+      img
+        height: 70px
+        width: auto
+        margin: 24px
+
+#mobile-app
+  section
+    background: none
+  &:not(.open-nav):not(.flip-nav)
+    header
+      &::after
+        opacity: 0
+  #overflow
+    overflow: hidden
+    #intro, .features
+      color: #212529
+      text-align: left
+      h1
+        font-weight: 600
+        text-align: center
+        font-size: 32px
+        line-height: 52px
+        a
+          font-weight: 600
+          font-size: 32px
+      h2
+        font-weight: 500
+        line-height: 54px
+        font-size: 36px
+      h3
+        font-size: 42px
+        font-weight: 600
+        line-height: 63px
+      p
+        color: #75767C
+        font-size: 18px
+        font-weight: normal
+        line-height: 27px
+        margin: 4px 0 18px
+      a
+        font-weight: 500
+        font-size: 18px
+
+    #intro
+      margin-bottom: 178px
+      padding-top: 200px
+      h1:not(.second)
+        margin-bottom: 48px
+      h2.second
+        text-align: center
+      .second
+        color: #899AAB
+        font-size: 20px
+        line-height: 1.5em
+        font-weight: normal
+
+    .features
+      .features-top
+        .block
+          justify-content: space-between
+          display: flex
+          align-items: center
+          flex-direction: column
+          .feature-des
+            order: 1
+            h2
+              margin-top: 100px
+          .preview
+            display: flex
+            justify-content: center
+            position: relative
+            margin-top: 32px
+            order: 2
+          .feature-des, .preview
+            width: 100%
+          &.vis
+            margin: 70px 0 80px
+          &.dark
+            .feature-des
+              h2
+                color: white
+              p
+                color: #A6A8B2
+              a
+                color: white
+                img
+                  filter: invert(98%) sepia(19%) saturate(109%) hue-rotate(232deg) brightness(115%) contrast(100%)
+          &.micro
+            margin: 80px 0
+            img
+              max-width: 569px
+            .feature-des
+              margin-bottom: 12px
+    #bottom
+      margin-top: 340px
+      padding: 82px 0 124px
+      text-align: center
+      .getting-started
+        font-size: 24px
+        font-weight: 400
+        text-align: center
+        color: white
+        border-radius: 4px
+        text-decoration: none
+        padding: 15px 68px
+        height: 127px
+        box-shadow: 0 28px 16px -20px rgba(13,39,67,0.25)
+        &:hover
+          text-decoration: none
+          color: #fff
+        &:active
+          transition-duration: 0s
+    .read-more-button
+      position: relative
+      transition-duration: 0.3s
+      &.dash
+        outline: none
+        .arrow
+          left: 156px
+      .arrow
+        transform: translate(0px)
+        transition-duration: 0.3s
+        box-shadow: none !important
+        width: 12px !important
+        margin-left: 12px
+        position: absolute
+        top: 7px
+        &.first
+          opacity: 0.2
+        &.second
+          opacity: 0.5
+      &:hover
+        transition-duration: 0.3s
+        .first
+          transform: translate(10px)
+        .second
+          transform: translate(20px)
+        .third
+          transform: translate(30px)
+    .background
+      z-index: -1
+      position: absolute
+      left: 50%
+      &:not(.bottom)
+        top: 524px
+      &.bottom
+        bottom: 1617px
+      img
+        position: absolute
+        top: -650px
+        left: 134px
+        box-shadow: none !important
+      div
+        position: absolute
+        -ms-transform: skewY(-6deg)
+        transform: skewY(-6deg)
+        width: 436px
+        height: 90px
+        &.main1
+          top: -572px
+          width: 2560px
+          height: 825px
+          left: -1280px
+        &.main2
+          top: -576px
+          width: 2560px
+          height: 825px
+          left: -1280px
+        &.bottom
+          bottom: -1780px
+          width: 2560px
+          height: 130px
+          left: -1280px
+          background-color: #262C28
+
+@media screen and (min-width: 750px)
+  #mobile-app
+    #overflow
+      .features
+        .features-top
+          .block
+            .feature-des, .preview
+              width: 80%
+            .preview.act
+              margin-left: 100px
+
+@media screen and (min-width: 1025px)
+  #mobile-app
+    section, header
+      main
+        max-width: 1400px
+    footer
+      main, div.main-div
+        max-width: 1400px
+    #overflow
+      .features
+        .features-top
+          .block
+            flex-direction: row
+            .feature-des, .preview
+              width: calc(50% - 80px)
+              order: unset
+              h2
+                margin: unset
+            .preview
+              margin-top: unset
+      .background
+        div.main1, div.main2
+          height: 625px
+      #bottom
+        .getting-started
+          padding: 15px 128px

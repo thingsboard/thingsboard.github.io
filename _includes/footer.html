@@ -1,7 +1,7 @@
 <footer>
-	<main class="light-text">
+	<div class="light-text main-div">
 		<div class="newsletterSubsContainer">
-            <script type="text/javascript">
+            <script>
                 function subscribeForNewsletter(event) {
                     event.stopPropagation();
                     var script_tag = document.createElement('script');
@@ -13,12 +13,12 @@
                 }
             </script>
             <button class="n-button price subscribe" onClick="subscribeForNewsletter(event)">Sign up for ThingsBoard news</button>
-            <div id="mlb2-7341216" class="ml-subscribe-form ml-subscribe-form-7341216" style="display: none;">
+            <div id="mlb2-7341216" class="ml-subscribe-form ml-subscribe-form-7341216" style="display: none; max-width: 100%;">
 <!--            <div id="mlb2-7341216" class="ml-subscribe-form ml-subscribe-form-7341216" style="display: block;">-->
                 <div class="ml-vertical-align-center">
                     <div class="subscribe-form ml-block-success" style="display: none;">
                         <div class="form-section">
-                            <p>Thank you for your interest in ThingsBoard!<br/>Have a great day!</p>
+                            <p>Thank you for your interest in ThingsBoard!<br>Have a great day!</p>
                         </div>
                     </div>
                     <form class="ml-block-form" action="https://static.mailerlite.com/webforms/submit/r9r9x7" data-id="708170" data-code="r9r9x7" method="POST" target="_blank">
@@ -34,7 +34,7 @@
                                     Subscribe
                                 </button>
                                 <button disabled="disabled" style="display: none;" type="button" class="n-button loading">
-                                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;">
+                                    <img src="https://static.mailerlite.com/images/rolling@2x.gif" width="20" height="20" style="width: 20px; height: 20px;" alt="Loading in progress">
                                 </button>
                             </div>
                             <p>By subscribing you agree to receive newsletters from ThingsBoard, Inc.</p>
@@ -47,7 +47,7 @@
         <hr>
 
         <div class="deeper">
-            <a href="/" class="footer-logo"></a>
+            <a href="/" class="footer-logo" aria-label="Link to homepage"></a>
             <nav>
                 <a href="/docs/getting-started-guides/helloworld/">Get Started</a>
                 <a href="/docs/">Documentation</a>
@@ -61,14 +61,14 @@
         <div class="deepmost">
             <div class="copyright">&copy; {{ 'now' | date: "%Y" }} The ThingsBoard Authors</div>
             <div class="social">
-                <a href="https://github.com/thingsboard/thingsboard" class="github"></a>
-                <a href="https://gitter.im/thingsboard/chat" class="gitter"></a>
-                <a href="https://www.youtube.com/thingsboard" class="youtube"></a>
-                <a href="http://stackoverflow.com/questions/tagged/thingsboard" class="stack-overflow"></a>
-                <a href="https://groups.google.com/forum/#!forum/thingsboard" class="mailing-list"></a>
-                <a href="https://www.facebook.com/thingsboard" class="facebook"></a>
-                <a href="https://twitter.com/thingsboard" class="twitter"></a>
+                <a href="https://github.com/thingsboard/thingsboard" class="github" aria-label="Link to our Github"></a>
+                <a href="https://app.gitter.im/#/room/#thingsboard_chat:gitter.im" class="gitter" aria-label="Link to our Gitter"></a>
+                <a href="https://www.youtube.com/thingsboard" class="youtube" aria-label="Link to our Youtube channel"></a>
+                <a href="https://stackoverflow.com/questions/tagged/thingsboard" class="stack-overflow" aria-label="Link to our Stack Overflow page"></a>
+                <a href="https://groups.google.com/forum/#!forum/thingsboard" class="mailing-list" aria-label="Link to our Google Group"></a>
+                <a href="https://www.facebook.com/thingsboard" class="facebook" aria-label="Link to our Facebook"></a>
+                <a href="https://twitter.com/thingsboard" class="twitter" aria-label="Link to our Twitter"></a>
             </div>
         </div>
-	</main>
+	</div>
 </footer>

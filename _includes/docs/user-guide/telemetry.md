@@ -114,22 +114,22 @@ For example, you may store "raw" data for 3 month and aggregated data for 3 year
 Data retention policy and configuration depends on the chosen [storage](#data-storage).
 
 Cassandra supports time-to-live(TTL) parameter for each inserted row.
-That is why, you may [configure](/docs/{{docsPrefix}}user-guide/install/config/) default TTL parameter on a system level, using 'TS_KV_TTL' environment variable.
+That is why, you may [configure](/docs/user-guide/install/{{docsPrefix}}config/) default TTL parameter on a system level, using 'TS_KV_TTL' environment variable.
 You may overwrite the default value in the "Save Timeseries" rule node or using "TTL" metadata field of your message.
 This allows you to optimize storage consumption. The maximum allowed value of TTL is 5 years.
 For example, you may store "raw" data for 3 month and aggregated data for 3 years.
 
 PostgreSQL and Timescale does not support time-to-live(TTL) parameter for each inserted row.
-That is why, you may only [configure](/docs/{{docsPrefix}}user-guide/install/config/) periodic time-series data cleanup routine using 'SQL_TTL_*' environment variables. 
+That is why, you may only [configure](/docs/user-guide/install/{{docsPrefix}}config/) periodic time-series data cleanup routine using 'SQL_TTL_*' environment variables. 
 {% endif %}
 
 ## Data durability
 
 The device that sends message with time-series data to ThingsBoard will receive confirmation 
-once the message is successfully stored into the Rule Engine [Queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-queue) 
+once the message is successfully stored into the Rule Engine [Queue](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/) 
 that is configured for particular device [profile](/docs/{{docsPrefix}}user-guide/device-profiles/#queue-name).
 
-As a tenant administrator, you may configure [processing strategy](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#queue-processing-strategy) for the queue.
+As a tenant administrator, you may configure [processing strategy](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy) for the queue.
 You may configure the queue either to reprocess or ignore the failures of the message processing. 
 This allows granular control on the level of durability for the time-series data and all other messages processed by the rule engine. 
 
@@ -242,19 +242,28 @@ Supported entity types are: TENANT, CUSTOMER, USER, DASHBOARD, ASSET, DEVICE, AL
 
 ## WebSocket API
 
-WebSockets are actively used by Thingsobard Web UI. WebSocket API duplicates REST API functionality and provides the ability to subscribe to device data changes.
+WebSockets are actively used by Thingsboard Web UI. WebSocket API duplicates REST API functionality and provides the ability to subscribe to device data changes.
 You can open a WebSocket connection to a telemetry service using the following URL
 
 ```shell
-ws(s)://host:port/api/ws/plugins/telemetry?token=$JWT_TOKEN
+ws(s)://host:port/api/ws
 ```
 {: .copy-code}
 
-Once opened, you can send 
+Once opened, you need to authenticate the session within 10 seconds with auth command:
+```json
+{
+  "authCmd": {
+    "cmdId": 0,
+    "token": "$JWT_TOKEN"
+  }
+}
+```
+{: .copy-code}
 
-[subscription commands](https://github.com/thingsboard/thingsboard/blob/master/application/src/main/java/org/thingsboard/server/service/telemetry/cmd/TelemetryPluginCmdsWrapper.java) 
+Then you can send [subscription commands](https://github.com/thingsboard/thingsboard/blob/release-3.6/application/src/main/java/org/thingsboard/server/service/ws/WsCommandsWrapper.java) 
 and receive 
-[subscription updates](https://github.com/thingsboard/thingsboard/blob/master/application/src/main/java/org/thingsboard/server/service/telemetry/sub/TelemetrySubscriptionUpdate.java):
+[subscription updates](https://github.com/thingsboard/thingsboard/blob/release-3.6/application/src/main/java/org/thingsboard/server/service/ws/telemetry/sub/TelemetrySubscriptionUpdate.java):
 
 where 
 
@@ -276,7 +285,7 @@ Change values of the following variables :
  
  In case of live-demo server : 
  
- - replace **host:port** with **demo-thingsboard.io** and choose secure connection - **wss://**
+ - replace **host:port** with **demo.thingsboard.io** and choose secure connection - **wss://**
  
  In case of local installation :
  

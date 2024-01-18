@@ -1,7 +1,7 @@
 ---
 layout: docwithnav
 assignees:
-- vsosliuk
+- ashvayka
 title: Device authentication options
 description: ThingsBoard IoT Device authentication options.
 

@@ -31,7 +31,7 @@ deviceFirmware:
         title: 'Go to the Device page and open needed device details to edit its information.'
     1:
         image: /images/user-guide/firmware/device-firmware-1-ce.png
-        title: "From the drop-down menu select firmware that you'd like to assign to this device."
+        title: "From the drop-down menu select firmware that you&#39;d like to assign to this device."
     3:
         image: /images/user-guide/firmware/device-firmware-2-ce.png
         title: 'After selecting firmware, apply changes by clicking the orange check mark in the right corner of the page.'
@@ -45,7 +45,7 @@ fw-deviceprofile:
         title: 'Go to the Device profile page and open needed device profile details to edit its information.'
     1:
         image: /images/user-guide/firmware/fw-deviceprofile-1-ce.png
-        title: "From the drop-down menu select firmware that you'd like to assign to this device profile."
+        title: "From the drop-down menu select firmware that you&#39;d like to assign to this device profile."
     2:
         image: /images/user-guide/firmware/fw-deviceprofile-2-ce.png
         title: 'After selecting firmware, apply changes by clicking the orange check mark in the right corner of the page.'
@@ -72,6 +72,14 @@ fw-status:
         image: /images/user-guide/firmware/fw-status-1-ce.png
         title: ''
 
+sw-dashboard:
+    0:
+        image: /images/user-guide/firmware/sw-dashboard-1-ce.png
+        title: 'Monitor and track the software status of your device in the Software dashboard.'
+    1:
+        image: /images/user-guide/firmware/sw-dashboard-2-ce.png
+        title: 'Find out more about the software status of specific devices by clicking the buttons next to the device names.'
+
 fw-http-updated:
     0:
         image: /images/user-guide/firmware/fw-http-updated.png
@@ -93,7 +101,7 @@ fw-devicegroup:
         title: 'Go to the Device group page and open preferred device group details to edit its information.'
     1:
         image: /images/user-guide/firmware/fw-devicegroup-1-pe.png
-        title: "From the drop-down menu select OTA package that you'd like to assign to this device."
+        title: "From the drop-down menu select OTA package that you would like to assign to this device."
     3:
         image: /images/user-guide/firmware/fw-devicegroup-2-pe.png
         title: 'After selecting firmware, apply changes by clicking the orange check mark in the right corner of the page.'

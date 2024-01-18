@@ -7,23 +7,33 @@ YELLOW='\033[1;33m'
 BROWN='\033[0;33m'
 NC='\033[0m'
 [ $# -eq 0 ] && { echo "Usage: $0 path_to_folder filter"; exit 1; }
- 
+[ -z "$2" ] && { echo "Filter not provided and was set to default *.png"; filter="*.png"; }
+
+# Check if mogrify installed
+if ! command -v mogrify &> /dev/null
+then
+    echo "'mogrify' not found"
+    echo "To install it use the command:"
+    echo "sudo apt install graphicsmagick-imagemagick-compat"
+    exit 1
+fi
+
 if [ -d "$dir" -a ! -h "$dir" ]
 then
    echo -e "${YELLOW}$dir${GREEN} found. Processing...${NC}"
-    for file in $dir/*.png; do
-        if [ "$(basename $file)" == "*.png" ]; then
-            echo -e "${RED}Can not find files with PNG extension in ${YELLOW}$dir${NC}"
+    for file in $dir/$filter; do
+        if [ "$(basename $file)" == $filter ]; then
+            echo -e "${RED}Can not find files with $filter extension in ${YELLOW}$dir${NC}"
             exit 0
         fi
         echo
         echo -e "${BROWN}###################################################################${NC}"
-        if file "$file" | grep -vE 'preview' | grep -E $filter | grep -qE 'png'; then
+        if file "$file" | grep -vE 'preview' | grep -E $filter; then
             echo -e "${GREEN}File ${BLUE}$(basename $file)${GREEN} is PNG image. Perform creating preview...${NC}"
             oldFilePath="$(dirname $file)/$(basename $file)"
-            previewFilePath="$(dirname $file)/$(basename $file .png)-preview.png"
+            previewFilePath="$(dirname $file)/$(basename $file ${filter#\*})-preview${filter#\*}"
             # Perform the copying and make the preview file, if copying successful
-            cp $oldFilePath $previewFilePath && mogrify -resize 10% $previewFilePath
+            cp $oldFilePath $previewFilePath && mogrify -resize 'x115' $previewFilePath
             if file $previewFilePath | grep -qE 'PNG'; then
                 echo -e "${GREEN}Preview  image ${BLUE}$previewFilePath${GREEN} created.${NC}"
             else

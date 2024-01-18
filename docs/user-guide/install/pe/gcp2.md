@@ -111,5 +111,7 @@ Now you can proceed to the next steps.
  sudo certbot-certonly --domain smth.yourcompany.com --email support@yourcompany.com
  sudo haproxy-refresh
  ```
+{: .copy-code}
+
     where **smth.yourcompany.com** is your DNS name from the second step
     and **support@yourcompany.com** is your email to get notifications from [certbot](https://certbot.eff.org/). 

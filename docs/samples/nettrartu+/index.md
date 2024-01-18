@@ -14,5 +14,4 @@ description: ThingsBoard IoT Platform hardware samples for Nettra RTU devices.
 
 ## Documentation
 
- - [Official site](http://nettra.tech/rtu.html)
- - [Nettra RTU user manual](http://docs.nettra.tech)
+ - [Official site](https://nettra.tech)

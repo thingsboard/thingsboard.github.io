@@ -1,7 +1,4 @@
 {% capture local-deployment %}
-If during installation process you have changed edge **HTTP_BIND_PORT** please use that port instead for **Edge** UI URL:
-
-**[http://localhost:HTTP_BIND_PORT](http://localhost:HTTP_BIND_PORT)**
-
+If you changed the Edge HTTP bind port to 18080 during Edge installation, use the following **ThingsBoard Edge UI** link: `http://localhost:18080`.
 {% endcapture %}
 {% include templates/info-banner.md content=local-deployment %}

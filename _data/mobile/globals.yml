@@ -1,0 +1,8 @@
+tocs:
+  - docs-home
+  - getting-started
+docs-header:
+  - toc: getting-started
+    title: Getting Started
+  - toc: docs-home
+    title: Documentation

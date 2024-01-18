@@ -1,0 +1,15 @@
+bigheader: "TBMQ API reference"
+abstract: "Clients connectivity and server-side APIs."
+toc:
+- title: TBMQ API reference
+  path: /docs/mqtt-broker/api/
+- title: REST APIs
+  section:
+    - title: Administration REST API
+      path: /docs/mqtt-broker/rest-api/
+    - title: User Management
+      path: /docs/mqtt-broker/user-management/
+    - title: MQTT Client Credentials Management
+      path: /docs/mqtt-broker/mqtt-client-credentials-management/
+    - title: Application Shared Subscriptions Management
+      path: /docs/mqtt-broker/application-shared-subscription/

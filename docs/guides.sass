@@ -99,7 +99,7 @@
             &:hover
               text-decoration: none
               padding: 21px
-              border: 4px solid #2A7DEC
+              border: 4px solid var(--tb-main-color)
             .guide-text
               flex: 1
               .guide-title
@@ -107,7 +107,7 @@
                 font-weight: 600
                 font-size: 18px
                 line-height: 28px
-                color: #2A7DEC
+                color: var(--tb-main-color)
               .guide-subtitle
                 margin-top: 12px
                 font-weight: 300
@@ -132,6 +132,7 @@
                   right: 0
                   &:after
                     content: url('/images/guide-video.svg')
+                    filter: var(--tb-main-color-filter)
                     width: 24px
                     height: 24px
                 &.pe
@@ -142,7 +143,7 @@
                     font-size: 16px
                     font-weight: bold
                     line-height: 24px
-                    color: #2A7DEC
+                    color: var(--tb-main-color)
 
 @media screen and (min-width: 750px)
   #docsContent
@@ -166,3 +167,5 @@
         ul.guides-list
           li.guide-container
             width: calc(100% / 3 - 20px)
+          li.guide-container.wide
+            width: calc(50% - 20px)

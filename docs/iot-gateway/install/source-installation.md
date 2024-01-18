@@ -14,9 +14,9 @@ sudo apt install python3-dev python3-pip libglib2.0-dev git
 ```
 {: .copy-code}
 
-**2. Download repository from Github:**
+**2. Download repository from GitHub:**
 ```bash
-git clone https://github.com/thingsboard/thingsboard-gateway.git
+git clone --recurse-submodules https://github.com/thingsboard/thingsboard-gateway.git --depth 1
 ```
 {: .copy-code}
 
@@ -26,9 +26,9 @@ cd thingsboard-gateway
 ```
 {: .copy-code}
 
-**4. Install python module with setup.py script:**  
+**4. Install python requirements:**  
 ```bash
-python3 setup.py install
+pip3 install -r requirements.txt
 ```
 {: .copy-code}
 
@@ -43,5 +43,16 @@ mkdir logs
 **7. Run gateway, to check installation result:**
 ```bash
 python3 ./thingsboard_gateway/tb_gateway.py
+```
+{: .copy-code}
+
+### Hot Reloader
+
+If you are using Gateway for development, you can enable Hot Reloader to restart Gateway every time when you edit any
+project file.
+
+To run Gateway with Hot Reloader, use the following command:
+```bash
+python3 ./thingsboard_gateway/tb_gateway.py true
 ```
 {: .copy-code}

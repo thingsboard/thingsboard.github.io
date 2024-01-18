@@ -1,49 +1,44 @@
-Access Token Based Authentication is the default device authentication type. Once the device is created in ThingsBoard, the default access token is generated. It can be changed afterwards.
-In order to connect the device to a server using Access Token based authentication, the client must specify the access token as part of request URL (for HTTP and CoAP) or as a user name in MQTT connect message. 
-See [supported protocols](/docs/{{docsPrefix}}reference/protocols/) API for more details.
+* TOC
+{:toc}
+  
+Access Token based authentication is the default device authentication type.
+The unique access token is generated once the device is created in ThingsBoard. It can be changed afterwards.
+The client must specify the access token as a username in MQTT connect message.
 
-### One-Way MQTT SSL
- 
+#### Plain MQTT (without SSL)
+
+Let's review a simple command to upload temperature readings using Access Token *YOUR_ACCESS_TOKEN* to ThingsBoard Cloud.
+See [MQTT API](/docs/{{docsPrefix}}reference/mqtt-api/) for more details. The command is using plain MQTT without TLS:
+
+```bash
+mosquitto_pub -d -q 1 -h "YOUR_TB_HOST" -p "1883" \ 
+-t "v1/devices/me/telemetry" -u "YOUR_ACCESS_TOKEN" -m {"temperature":25}
+```
+{: .copy-code}
+
+The above command requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**.
+Don't forget to replace **YOUR_TB_HOST** with the host of your ThingsBoard instance and **YOUR_ACCESS_TOKEN** with the access token of your device.
+
+#### MQTTS (MQTT over SSL)
+
 One-way SSL authentication is a standard authentication mode, where your client device verifies the identity of a server using server certificate.
-In order to run one-way MQTT SSL, the server certificate chain should be signed by authorized CA or client must import the self-signed server certificate (.cer or .pem) to its trust store. 
-Otherwise, a connection will fail with the 'Unknown CA' error.
+ThingsBoard Team has already provisioned a valid certificate for [ThingsBoard Cloud](https://thingsboard.cloud/signup).
+{% if docsPrefix != 'paas/' %}
+Follow the [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) guide to provision server certificate if you are hosting your own ThingsBoard instance.
+{% endif %}
 
-The python based client example below demonstrates how to connect to [ThingsBoard Cloud](https://thingsboard.cloud/signup) or to any other ThingsBoard MQTT server.
-Assuming you plan to use ThingsBoard Cloud, you should download the certificate chain using this [link](/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ssl/tb-cloud-chain.pem) (certificate expires on 15.09.25) 
-and store it to your working directory as "tb-cloud-chain.pem".
+Once provisioned, you should prepare a CA root certificate in pem format. This certificate will be used by mqtt client to validate the server certificate.
+Save the CA root certificate to your working directory as "**ca-root.pem**".
+An example of CA root certificate for *mqtt.thingsboard.cloud* is located [here](/docs/paas/user-guide/resources/mqtt-over-ssl/ca-root.pem).
+
+Now you may use the *ca-root.pem* to setup secure connection to your ThingsBoard instance (*YOUR_TB_HOST*) and Access Token (*YOUR_ACCESS_TOKEN*) to authenticate the device to upload telemetry:
 
 ```bash
-wget https://thingsboard.io/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ssl/tb-cloud-chain.pem
+mosquitto_pub --cafile ca-root.pem -d -q 1 -h "YOUR_TB_HOST" -p "8883" \
+-t "v1/devices/me/telemetry" -u "YOUR_ACCESS_TOKEN" -m {"temperature":25}
 ```
 {: .copy-code}
 
-Assuming you plan to use your own server with self-signed certificate, you will need to have the public key of server certificate in PEM format. 
-See [following instructions](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/#self-signed-certificate-generation) for more details on server-side configuration.
+The above command requires mosquitto clients library that you can install using the following command: **apt-get install mosquitto-clients**.
+Don't forget to replace **YOUR_TB_HOST** with the host of your ThingsBoard instance and **YOUR_ACCESS_TOKEN** with the access token of your device.
 
-### Run One-Way MQTT SSL Python Client
-
-Download Python client example [**one-way-ssl-mqtt-client.py**](/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ssl/one-way-ssl-mqtt-client.py) to the same working directory where you store the certificates.
-
-```bash
-wget https://thingsboard.io/docs/{{docsPrefix}}user-guide/resources/mqtt-over-ssl/one-way-ssl-mqtt-client.py
-```
-{: .copy-code}
-
-Put certificate(s) that you have downloaded/created into the same folder with the example script. The script will automatically use "tb-cloud-chain.pem" if you use default ThingsBoard host (thingsboard.cloud) 
-
-**Note** Script uses **8883** mqtt port and requires paho mqtt library that you can install using the following command: **pip3 install paho-mqtt**
- 
-Run the script and follow steps in console:
-
-```bash
-python3 one-way-ssl-mqtt-client.py
-```
-{: .copy-code}
-
-If everything was configured correctly, the output should be like:
-
-```bash
-Connected with result code 0
-Topic: v1/devices/me/attributes/response/1
-Message: {}
-```

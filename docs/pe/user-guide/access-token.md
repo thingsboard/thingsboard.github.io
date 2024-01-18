@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
 assignees:
-- vsosliuk
+- ashvayka
 title: Access Token based authentication
 description: ThingsBoard Access Token based authentication.
 

@@ -22,13 +22,22 @@ toc:
       path: /docs/paas/solution-templates/fleet-tracking/
     - title: Water metering
       path: /docs/paas/solution-templates/water-metering/
+    - title: Smart retail
+      path: /docs/paas/solution-templates/smart-retail/
+    - title: Air quality monitoring
+      path: /docs/paas/solution-templates/air-quality-monitoring/
+    - title: Smart Irrigation
+      path: /docs/paas/solution-templates/smart-irrigation/
+    - title: Waste management
+      path: /docs/paas/solution-templates/waste-management/
 - title: Key concepts
   section:
     - title: Entities and Relations
       path: /docs/paas/user-guide/entities-and-relations/
     - title: Device Profiles
       path: /docs/paas/user-guide/device-profiles/
-      new: true
+    - title: Asset Profiles
+      path: /docs/paas/user-guide/asset-profiles/
     - title: Attributes
       path: /docs/paas/user-guide/attributes/
     - title: Time-series data
@@ -37,26 +46,43 @@ toc:
       path: /docs/paas/user-guide/alarms/
     - title: Remote commands to devices
       path: /docs/paas/user-guide/rpc/
+    - title: OTA updates
+      path: /docs/paas/user-guide/ota-updates/
+    - title: Notification center
+      path: /docs/paas/user-guide/notifications/
+      new: true
+    - title: Domains
+      path: /products/paas/domains/
 - title: Dashboards
   section:
     - title: Overview
       path: /docs/paas/user-guide/dashboards/
     - title: Aliases
       path: /docs/paas/user-guide/ui/aliases/
-    - title: Widget Actions
-      path: /docs/paas/user-guide/ui/widget-actions/
-    - title: Widgets Library
-      path: /docs/paas/user-guide/ui/widget-library/
-    - title: Widgets development
-      path: /docs/paas/user-guide/contribution/widgets-development/
+    - title: Widgets
+      section:
+        - title: Overview
+          path: /docs/paas/user-guide/widgets/
+        - title: Widget Actions
+          path: /docs/paas/user-guide/ui/widget-actions/
+        - title: Widgets Library
+          path: /docs/paas/user-guide/ui/widget-library/
+        - title: Widgets development
+          path: /docs/paas/user-guide/contribution/widgets-development/
+        - title: Chart widgets
+          path: /docs/pe/user-guide/ui/chart-widget/
+        - title: Entities Table widget
+          path: /docs/paas/user-guide/ui/entity-table-widget/
+        - title: Trip Animation Widget
+          path: /docs/paas/user-guide/ui/trip-animation-widget/
+        - title: Advanced data key configuration
+          path: /docs/paas/user-guide/ui/advanced-data-key-configuration/
 - title: Rule engine
   section:
     - title: Getting Started
       path: /docs/paas/user-guide/rule-engine-2-0/re-getting-started/
     - title: Overview
       path: /docs/paas/user-guide/rule-engine-2-0/overview/
-    - title: Architecture
-      path: /docs/paas/user-guide/rule-engine-2-0/architecture/
     - title: Nodes
       section:
         - title: Filter Nodes
@@ -71,18 +97,63 @@ toc:
           path: /docs/paas/user-guide/rule-engine-2-0/external-nodes/
         - title: Analytics Nodes
           path: /docs/paas/user-guide/rule-engine-2-0/analytics-nodes/
-- title: White-labeling
+        - title: Flow Nodes
+          path: /docs/paas/user-guide/rule-engine-2-0/flow-nodes/
+    - title: Data processing & actions
+      section:
+        - title: Validate incoming telemetry
+          path: /docs/user-guide/rule-engine-2-0/tutorials/validate-incoming-telemetry/
+        - title: Telemetry delta calculation
+          path: /docs/user-guide/rule-engine-2-0/tutorials/telemetry-delta-validation/
+        - title: Data function based on telemetry from 2 devices
+          path: /docs/user-guide/rule-engine-2-0/tutorials/function-based-on-telemetry-from-two-devices/
+        - title: Transform incoming telemetry
+          path: /docs/user-guide/rule-engine-2-0/tutorials/transform-incoming-telemetry/
+        - title: Transform telemetry using previous record
+          path: /docs/user-guide/rule-engine-2-0/tutorials/transform-telemetry-using-previous-record/
+        - title: Create and Clear Alarms
+          path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/
+        - title: Working with Alarm details
+          path: /docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms-with-details/
+        - title: Send email on alarm
+          path: /docs/user-guide/rule-engine-2-0/tutorials/send-email/
+        - title: Send email to Customer
+          path: /docs/user-guide/rule-engine-2-0/tutorials/send-email-to-customer/
+        - title: Notifications and Alarms on your smartphone using Telegram Bot
+          path: /docs/user-guide/rule-engine-2-0/tutorials/integration-with-telegram-bot/
+        - title: Create Alarm when the Device is offline
+          path: /docs/user-guide/rule-engine-2-0/tutorials/create-inactivity-alarm/
+        - title: Check Relation between Entities
+          path: /docs/user-guide/rule-engine-2-0/tutorials/check-relation-tutorial/
+        - title: Send RPC Request to the Related Device
+          path: /docs/user-guide/rule-engine-2-0/tutorials/rpc-request-tutorial/
+        - title: Weather reading using REST API calls
+          path: /docs/user-guide/rule-engine-2-0/tutorials/get-weather-using-rest-api-call/
+        - title: Add & remove devices to group dynamically
+          path: /docs/user-guide/rule-engine-2-0/tutorials/add-devices-to-group/
+          pe: true
+        - title: Send data to external MQTT brokers
+          path: /docs/user-guide/integrations/send-data-external-mqtt-brokers/
+          pe: true
+        - title: Using queues for synchronization
+          path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/
+        - title: Using queues for message reprocessing
+          path: /docs/user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/
+    - title: Templatization
+      path: /docs/paas/user-guide/templatization/
+      new: true
+- title: White Labeling
   section:
     - title: Overview
       path: /docs/paas/user-guide/white-labeling/
     - title: Self-registration
       path: /docs/paas/user-guide/self-registration/
+    - title: Mail Templates
+      path: /docs/paas/user-guide/mail-templates/
     - title: Custom Translations
       path: /docs/paas/user-guide/custom-translation/
     - title: Custom Menu
       path: /docs/paas/user-guide/custom-menu/
-    - title: Domains
-      path: /products/paas/domains/
 - title: Integrations
   section:
     - title: Overview
@@ -93,16 +164,25 @@ toc:
       path: /docs/paas/user-guide/integrations/http/
     - title: MQTT
       path: /docs/paas/user-guide/integrations/mqtt/
+    - title: CoAP
+      path: /docs/paas/user-guide/integrations/coap/
+    - title: Kafka
+      path: /docs/paas/user-guide/integrations/kafka/
     - title: OPC-UA
       path: /docs/paas/user-guide/integrations/opc-ua/
     - title: Actility ThingPark
       path: /docs/paas/user-guide/integrations/thingpark/
-    - title: TheThingsNetwork
+    - title: TheThingsStack
       path: /docs/paas/user-guide/integrations/ttn/
     - title: TheThingsIndustries
       path: /docs/paas/user-guide/integrations/tti/
+    - title: KPN Things
+      path: /docs/paas/user-guide/integrations/kpn-things/
+      new: true
     - title: LORIOT
       path: /docs/paas/user-guide/integrations/loriot/
+    - title: ChirpStack
+      path: /docs/paas/user-guide/integrations/chirpstack/
     - title: AWS IoT
       path: /docs/paas/user-guide/integrations/aws-iot/
     - title: AWS Kinesis
@@ -111,6 +191,8 @@ toc:
       path: /docs/paas/user-guide/integrations/ibm-watson-iot/
     - title: Azure Event Hub
       path: /docs/paas/user-guide/integrations/azure-event-hub/
+    - title: Azure Service Bus
+      path: /docs/paas/user-guide/integrations/azure-service-bus/
     - title: Azure IoT Hub
       path: /docs/paas/user-guide/integrations/azure-iot-hub/
     - title: TCP
@@ -121,6 +203,11 @@ toc:
       path: /docs/paas/user-guide/integrations/sigfox/
     - title: Ocean Connect
       path: /docs/paas/user-guide/integrations/ocean-connect/
+    - title: Tuya
+      path: /docs/paas/user-guide/integrations/tuya/
+    - title: Particle
+      path: /docs/paas/user-guide/integrations/particle/
+      new: true
     - title: Custom Integration development guide
       path: /docs/paas/user-guide/integrations/custom/
     - title: Notifications and Alarms on your smartphone using Telegram Bot
@@ -139,14 +226,21 @@ toc:
       path: /docs/paas/user-guide/claiming-devices/
     - title: Device provisioning
       path: /docs/paas/user-guide/device-provisioning/
+    - title: Image gallery
+      path: /docs/paas/user-guide/image-gallery/
+      new: true
     - title: Entity Views
       path: /docs/paas/user-guide/entity-views/
     - title: API Limits
       path: /docs/paas/user-guide/api-limits/
+    - title: Advanced filters
+      path: /docs/paas/user-guide/advanced-filters/
+    - title: Version Control
+      path: /docs/paas/user-guide/version-control/
+    - title: PSM and eDRX Support
+      path: /docs/user-guide/psm/
     - title: Bulk Provisioning
       path: /docs/paas/user-guide/bulk-provisioning/
-    - title: Entity Groups
-      path: /docs/paas/user-guide/groups/
     - title: Scheduler
       path: /docs/paas/user-guide/scheduler/
     - title: Reporting
@@ -155,6 +249,9 @@ toc:
       path: /docs/paas/user-guide/csv-xls-data-export/
     - title: File Storage
       path: /docs/paas/user-guide/file-storage/
+    - title: ThingsBoard Expression Language (TBEL)
+      path: /docs/paas/user-guide/tbel/
+      new: true
 - title: Security
   section:
     - title: Audit Log
@@ -163,16 +260,26 @@ toc:
       path: /docs/paas/user-guide/rbac/
     - title: OAuth 2 Support
       path: /docs/paas/user-guide/oauth-2-support/
-    - title: MQTT over SSL
-      path: /docs/paas/user-guide/mqtt-over-ssl/
-    - title: Device authentication options
-      path: /docs/paas/user-guide/device-credentials/
-    - title: Access Token based authentication
-      path: /docs/paas/user-guide/access-token/
-    - title: Basic MQTT Credentials
-      path: /docs/paas/user-guide/basic-mqtt/
-    - title: X.509 Certificate based authentication
-      path: /docs/paas/user-guide/certificates/
+    - title: HTTP Transport
+      section:
+        - title: Access Token based authentication
+          path: /docs/paas/user-guide/ssl/http-access-token/
+    - title: MQTT Transport
+      section:
+        - title: Device authentication options
+          path: /docs/paas/user-guide/device-credentials/
+        - title: Access Token based authentication
+          path: /docs/paas/user-guide/access-token/
+        - title: Basic MQTT Credentials
+          path: /docs/paas/user-guide/basic-mqtt/
+        - title: X.509 Certificate based authentication
+          path: /docs/paas/user-guide/certificates/
+    - title: CoAP Transport
+      section:
+        - title: Access Token based authentication
+          path: /docs/paas/user-guide/ssl/coap-access-token/
+        - title: X.509 Certificate based authentication
+          path: /docs/paas/user-guide/ssl/coap-x509-certificates/
 - title: Administration UI
   section:
     - title: Tenants
@@ -189,14 +296,15 @@ toc:
       path: /docs/paas/user-guide/ui/rule-chains/
     - title: Dashboards
       path: /docs/paas/user-guide/ui/dashboards/
-    - title: Widgets
-      section:
-        - title: Trip Animation Widget
-          path: /docs/paas/user-guide/ui/trip-animation-widget/
-        - title: Advanced Settings of the Entity Table widget
-          path: /docs/paas/user-guide/ui/entity-table-widget/
-        - title: Advanced data key configuration
-          path: /docs/paas/user-guide/ui/advanced-data-key-configuration/
+    - title: Entity Groups
+      path: /docs/paas/user-guide/groups/
+    - title: Slack Settings
+      path: /docs/paas/user-guide/ui/slack-settings/
+    - title: Microsoft Teams Settings
+      path: /docs/paas/user-guide/ui/microsoft-teams-settings/
+      new: true
+    - title: Mail Settings
+      path: /docs/paas/user-guide/ui/mail-settings/
 - title: Subscriptions
   path: /products/paas/subscription/
 - title: Plan and billing

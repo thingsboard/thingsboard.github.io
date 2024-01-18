@@ -80,7 +80,7 @@ See diagram below.
 
 **Pros**:
 
-* Very simple setup, literally: 10 minutes to deploy using [our installation guides](/docs/{{docsPrefix}}user-guide/install/installation-options/).
+* Very simple setup, literally: 10 minutes to deploy using [our installation guides](/docs/user-guide/install/{{docsPrefix}}installation-options/).
 * Easy to maintain and update the software instance.
 
 **Cons**:
@@ -122,7 +122,7 @@ If you would like to minimize resources spent for the database maintenance, we r
 
 This deployment scenario rather similar to scenario A, but requires fully-managed database deployed on a separate server(s). 
 ThingsBoard customers successfully utilize [AWS RDS](https://aws.amazon.com/rds/postgresql/), [Azure Database for PostgreSQL](https://azure.microsoft.com/en-us/services/postgresql/) and
-[Google Cloud SQL](https://cloud.google.com/sql/docs/{{docsPrefix}}postgres/) to minimize efforts on database setup, backups and support.
+[Google Cloud SQL](https://cloud.google.com/sql/docs/postgres/) to minimize efforts on database setup, backups and support.
 See diagram below.
 
 <object width="80%" data="/images/reference/deployment/standalone.svg"></object>
@@ -164,7 +164,7 @@ Adding [Premium support](/docs/services/support/) package results in ~1000 USD p
 
 ThingsBoard supports Microservices architecture (MSA) to perform scalable deployments for millions of devices. See [platform architecture](/docs/{{docsPrefix}}reference/msa/) for more details, please. With MSA deployments, system administrator can flexibly tune number of transport, rule-engine, web-ui and JavaScript executor microservices to optimize the cluster according to the current load.
 
-ThingsBoard uses [Kafka](https://kafka.apache.org/) as a main message queue and streaming solution, [Redis](https://redis.io/) as a distributed cache and [Cassandra](http://cassandra.apache.org/) as a highly available, scalable and fast NoSQL database. 
+ThingsBoard uses [Kafka](https://kafka.apache.org/) as a main message queue and streaming solution, [Redis](https://redis.io/) as a distributed cache and [Cassandra](https://cassandra.apache.org/) as a highly available, scalable and fast NoSQL database. 
 Note that Cassandra usage is optional and is recommended in case of high telemetry data rate (more then 20,000 data points per second)
 In other cases PostgreSQL based deployment is sufficient.
 

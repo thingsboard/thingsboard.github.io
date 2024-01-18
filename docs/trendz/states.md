@@ -9,8 +9,16 @@ description: Trendz States
 * TOC
 {:toc}
 
+&nbsp;
+<div id="video">  
+    <div  id="video_wrapper">
+        <iframe src="https://www.youtube.com/embed/FrubZ-odF1s" frameborder="0" allowfullscreen></iframe>
+    </div>
+</div>
 
-## Simple state
+## States
+
+### Simple state
 
 ![image](/images/trendz/state-simple-view.png)
 
@@ -24,11 +32,11 @@ Let's define our states:
 
 Here is condition that chack does machine in **Low Production** state or not:
 {% highlight javascript %}
-    double okRate = none(Machine.okDetails);
+    var okRate = none(Machine.okDetails);
     return okRate < 75;
 {% endhighlight %}  
 
-Here steps required to do this:
+Here are steps required to do this:
 * Create **Bar** chart
 * Add **Date(RAW)** to **X-axis**
 * Add **State** field and change title to **Low Production**
@@ -52,7 +60,7 @@ Our view ready and now we know how much time(in percent) machines spent in diffe
 </div>
 
 
-## State with multiple fields
+### State with multiple fields
 
 ![image](/images/trendz/state-multiple-view.png)
 
@@ -65,8 +73,8 @@ much time spent in critical state.
 
 Here is a formal definition of **Critical** state:
 {% highlight javascript %}
-    double pressure = none(Machine.pressure);
-    double speed = none(Machine.rotationSpeed);
+    var pressure = none(Machine.pressure);
+    var speed = none(Machine.rotationSpeed);
     return pressure > 700 && speed < 35;
 {% endhighlight %}  
 
@@ -84,21 +92,21 @@ Here is a formal definition of **Critical** state:
     </div>
 </div>
 
-## State Aggregation
+### State Aggregation
 
 Here is a list of supported aggregation functions for state fields:
 * Duration - total time spent in state inside group. In hours, minutes, seconds etc.
 * Duration percent - percent of time spent in state inside group.
 
-## Get original field value
+### Get original field value
 
 Before applying transformation you need to get a reference to the original field value. Here is an example how to do this:
 
 ```
-double temp = avg(Machine.temperature);
+var temp = none(Machine.temperature);
 ```
 
-* avg() - aggregation function
+* none() - aggregation function
 * Machine - Entity Name (it can be Asset Type or Device Type)
 * temperature - Field Name
 
@@ -109,23 +117,15 @@ If original field value is an attribute, entity name or owner name - you should 
 This template can be used for comparing text fields:
 
 ```
-String currentState = none(machine.status);
-return "running".equals(currentState);
+var currentState = none(machine.status);
+return "running" === currentState;
 ```
 
-## Supported Aggregation Functions
+### Supported Aggregation Functions
 
 State fields supports following aggregation functions:
 
 * none()
-* avg()
-* sum()
-* min()
-* max()
-* count()
-* latest()
-* uniq()
-* delta() 
 
 Each function allows only 1 argument - reference to the filed on format EntityName.fieldName. For example:
 
@@ -139,10 +139,19 @@ defined state or not.
 
 Aggregation function applied to a grouped dataset. Find more details about [Grouping and Aggregation in this article](/docs/trendz/data-grouping-aggregation/)
 
-## Language
+### Save and reuse state fields
 
-In most cases amount of data analysed during state calculation is big enough. To guarantee performance function should be defined 
-using Java language (Java 8).
+Once the state field created you can save it for future reuse by pressing **Save Field** button under function editor. 
+Current field label would be used as a field name. If a field with such name already exists - the system will overwrite it.
+
+Saved state field is only a template. Once it is dropped from the left navigation tree into some axis, a new 
+state field created and this field would not be connected with the original template.
+It means that if you will update field configuration in the future, it will only update a template, 
+but real state fields that are added to View configuration are not affected.
+
+### Language
+
+State fields use Javascript as a language for writing transformation function. Inner Engine provide 100% support of ECMAScript 5.1
 
 ## Next Steps
 

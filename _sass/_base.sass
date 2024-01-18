@@ -65,6 +65,57 @@ $quickstart-button-padding: 0 50px
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
+\:root
+  --tb-main-color: #2A7DEC
+  --tb-main-background: rgba(48, 86, 128, 0.08)
+  --tb-main-color-filter: invert(37%) sepia(84%) saturate(891%) hue-rotate(184deg) brightness(105%) contrast(88%)
+
+#docs
+  &.ce
+    --tb-main-color: #305680
+    --tb-main-background: rgba(48, 86, 128, 0.08)
+    --tb-main-color-filter: invert(29%) sepia(61%) saturate(478%) hue-rotate(171deg) brightness(94%) contrast(93%)
+  &.pe
+    --tb-main-color: #1F8B4D
+    --tb-main-background: rgba(31, 139, 77, 0.08)
+    --tb-main-color-filter: invert(25%) sepia(43%) saturate(5965%) hue-rotate(143deg) brightness(97%) contrast(76%)
+  &.paas
+    --tb-main-color: #2A7DEC
+    --tb-main-background: rgba(42, 125, 236, 0.08)
+    --tb-main-color-filter: invert(37%) sepia(84%) saturate(891%) hue-rotate(184deg) brightness(105%) contrast(88%)
+  &.edge
+    --tb-main-color: #2260a7
+    --tb-main-background: rgba(34, 96, 167, 0.08)
+    --tb-main-color-filter: invert(27%) sepia(97%) saturate(823%) hue-rotate(184deg) brightness(95%) contrast(90%)
+  &.edge-pe
+    --tb-main-color: #009688
+    --tb-main-background: rgba(0, 150, 136, 0.08)
+    --tb-main-color-filter: invert(42%) sepia(85%) saturate(4933%) hue-rotate(156deg) brightness(96%) contrast(102%)
+  &.gw
+    --tb-main-color: #EB5757
+    --tb-main-background: rgba(235, 87, 87, 0.08)
+    --tb-main-color-filter: invert(39%) sepia(14%) saturate(6952%) hue-rotate(331deg) brightness(113%) contrast(84%)
+  &.license
+    --tb-main-color: #1F8B4D
+    --tb-main-background: rgba(31, 139, 77, 0.08)
+    --tb-main-color-filter: invert(25%) sepia(43%) saturate(5965%) hue-rotate(143deg) brightness(97%) contrast(76%)
+  &.trendz
+    --tb-main-color: #2696F3
+    --tb-main-background: rgba(42, 125, 236, 0.08)
+    --tb-main-color-filter: invert(62%) sepia(61%) saturate(4424%) hue-rotate(184deg) brightness(94%) contrast(102%)
+  &.mobile
+    --tb-main-color: #305680
+    --tb-main-background: rgba(48, 86, 128, 0.08)
+    --tb-main-color-filter: invert(29%) sepia(61%) saturate(478%) hue-rotate(171deg) brightness(94%) contrast(93%)
+  &.mobile-pe
+    --tb-main-color: #1F8B4D
+    --tb-main-background: rgba(31, 139, 77, 0.08)
+    --tb-main-color-filter: invert(25%) sepia(43%) saturate(5965%) hue-rotate(143deg) brightness(97%) contrast(76%)
+  &.mqtt-broker
+    --tb-main-color: #1F8B4D
+    --tb-main-background: rgba(31, 139, 77, 0.08)
+    --tb-main-color-filter: invert(25%) sepia(43%) saturate(5965%) hue-rotate(143deg) brightness(97%) contrast(76%)
+
 body
   background-color: white
   line-height: 1.32
@@ -74,7 +125,7 @@ section
   background-color: white
 
 section, header, footer
-  main
+  main, div.main-div
     position: relative
     margin: auto
     display: block
@@ -97,19 +148,22 @@ a
   padding: 10px 20px
   line-height: 24px
   color: white
-  background-color: #2a7dec
+  background-color: var(--tb-main-color)
   text-decoration: none
   font-size: 16px
   font-weight: 500
-  transition: background-color .4s cubic-bezier(.25, .8, .25, 1)
+  transition-duration: .4s
+  transition-timing-function: cubic-bezier(.25, .8, .25, 1)
+  transition-property: background-color, filter
 
   &:hover
-    background-color: #4f97f8
+    // background-color: #4f97f8
+    filter: brightness(1.3) contrast(0.9)
     color: white
     text-decoration: none
 
   &:focus
-    background-color: #4f97f8
+    filter: brightness(1.3) contrast(0.9)
 
   &.accent
     background-color: $orange
@@ -167,10 +221,14 @@ details[open]
     &.opened-burger
       background-color: #fff
 
-#home, #thingsboard-paas, #thingsboard-pe, #trendz, #thingsboard-edge
+#home, #thingsboard-paas, #thingsboard-pe, #thingsboard-edge
   header
     background-color: unset
     box-shadow: unset
+
+    .support-ukraine
+      p
+        color: #fff
 
     .logo, .burger
       filter: invert(100%) sepia(68%) saturate(0%) hue-rotate(350deg) brightness(113%) contrast(101%)
@@ -178,13 +236,13 @@ details[open]
     .head-menu
       ul
         li.active
-          a, a:hover
+          a, a:hover, span.main-menu-link:hover
             color: rgba(255, 255, 255, 0.5)
 
         a
           color: #fff
 
-        a:not([href])
+        a:not([href]), span.main-menu-link
           color: #fff
 
           &:hover
@@ -200,8 +258,6 @@ details[open]
                 color: #2A7DEC
 
     .n-button
-      padding: 11px 20px
-
       &.try
         color: #fff
         transition-duration: 0s
@@ -220,17 +276,23 @@ details[open]
 
 .products-selector
   position: fixed
-  height: 80px
-  top: 0
-  left: 30px
-  width: 342px
-  border-right: 1px solid #ebebeb
+  height: 60px
+  top: 10px
+  left: 20px
+  width: calc(100% - 100px)
   display: flex
   flex-direction: row
   align-items: center
   z-index: 10001
-  @media screen and (max-width: 1024px)
+  @media screen and (min-width: 769px)
     width: 250px
+  @media screen and (min-width: 870px)
+    width: 348px
+  @media screen and (min-width: 1281px)
+    width: 250px
+    top: 80px
+  @media screen and (min-width: 1601px)
+    width: 316px
   img
     width: 54px
     height: 54px
@@ -243,27 +305,31 @@ details[open]
   .product-info
     display: flex
     flex-direction: column
-    height: 100%
+    width: 316px
+    height: 44px
+    padding-left: 16px
     flex: 1
     justify-content: center
+    border-radius: 8px
+    background: var(--tb-main-background)
     .product-title
-      color: #212529
-      font-size: 16px
-      font-weight: 600
+      font-size: 18px
+      font-weight: 500
       line-height: 24px
       position: relative
+      color: var(--tb-main-color)
       @media screen and (max-width: 1024px)
-        font-size: 14px
+        font-size: 16px
       &::after
-        content: ""
-        background-image: url(/images/pe/read-more-arrow.svg)
-        background-size: contain
+        content: "\f054"
+        font-family: FontAwesome
+        font-size: 14px
+        font-weight: 500
+        line-height: 1
         display: block
         position: absolute
-        top: 4px
-        right: 26px
-        width: 14px
-        height: 14px
+        top: 5px
+        right: 18px
         transform: rotate(90deg)
         transition: transform .3s
         border: none
@@ -281,32 +347,28 @@ details[open]
     box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .3), 0 50px 100px -20px rgba(0, 0, 0, 0.25)
     background-color: #fff
     position: absolute
-    top: 81px
-    left: -17px
-    right: 0
+    top: 60px
+    left: 16px
+    right: -16px
     padding: 8px
     display: flex
     flex-direction: column
     visibility: hidden
     opacity: 0
     a.product
-      color: #212529
+      color: #75767C
       font-size: 16px
-      font-weight: normal
-      padding: 8px 14px
+      font-weight: 400
+      line-height: 24px
+      padding: 8px 12px
       &:hover, &.active
         text-decoration: none
         color: #2a7dec
       &.active
         font-weight: 500
-        border-radius: 4px
-        background: #f9fbff
+        background: rgba(42, 125, 236, 0.04)
   &:hover, &.active
     cursor: pointer
-    .product-title
-      color: #2a7dec
-      &::after
-        filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
   &.active
     .product-title
       &::after
@@ -377,8 +439,19 @@ header
           display: block
           z-index: 1
 
+          &.products
+            @media screen and (min-width: 1281px)
+              .sub-groups
+                .group
+                  &:first-child
+                    padding-right: 35px
+                  &:nth-child(2)
+                    padding-left: 35px
+                    border-left: 1px solid #d7d7d7
+
           .sub-groups
             display: flex
+            align-items: flex-start
             .group
               padding-right: 70px
               &:last-child
@@ -405,27 +478,36 @@ header
 
             &:hover
               .sub-text
-                h1
+                h1, span.item-heading
                   color: #2A7DEC
                 p
                   color: #212529
 
             &.prof-lnk:hover, &.license-lnk:hover
               .sub-text
-                h1
+                h1, span.product-name
                   color: #1F8B4D
 
-            &.com-lnk:hover .sub-text h1
+            &.com-lnk:hover .sub-text h1, &.com-lnk:hover .sub-text span.item-heading
               color: #305680
 
-            &.edge-lnk:hover .sub-text h1
+            &.edge-lnk:hover .sub-text h1, &.edge-lnk:hover .sub-text span.item-heading
               color: #009688
 
-            &.gateway-lnk:hover .sub-text h1
+            &.gateway-lnk:hover .sub-text h1, &.gateway-lnk:hover .sub-text span.item-heading
               color: #EB5757
 
-            &.trendz-lnk:hover .sub-text h1
+            &.trendz-lnk:hover .sub-text h1, &.trendz-lnk:hover .sub-text span.item-heading
               color: #2696F3
+
+            &.mobile-lnk:hover .sub-text h1, &.mobile-lnk:hover .sub-text span.item-heading
+              color: #305680
+
+            &.mobile-pe-lnk:hover .sub-text h1, &.mobile-pe-lnk:hover .sub-text span.item-heading
+              color: #1F8B4D
+
+            &.mqtt-broker-lnk:hover .sub-text h1, &.mqtt-broker-lnk:hover .sub-text span.item-heading
+              color: #1F8B4D
 
             &:last-child
               margin-bottom: 0
@@ -433,7 +515,7 @@ header
             .sub-text
               padding-top: 4px
               max-width: 300px
-              h1
+              h1, span.item-heading
                 color: #212529
                 font-size: 16px
                 font-weight: 600
@@ -451,7 +533,7 @@ header
               margin-bottom: 15px
               .sub-text
                 padding: 0
-                h1
+                h1, span.item-heading
                   font-weight: 500
               &:last-child
                 margin-bottom: 0
@@ -465,9 +547,6 @@ header
       .nav-services
         width: 103px
 
-      .nav-developers
-        width: 129px
-
       .nav-cases
         width: 122px
 
@@ -477,6 +556,12 @@ header
       .nav-company
         width: 118px
 
+      .nav-partners
+        width: 104px
+
+      .nav-docs
+        width: 74px
+
       li
         cursor: default
         display: flex
@@ -484,26 +569,36 @@ header
         align-items: center
         height: calc(100% + 4px)
 
-        a
+        a, span.main-menu-link
           width: 100%
           text-align: center
 
         &:hover a
           color: #2A7DEC
 
-      a
+      a, span.main-menu-link
         display: block
         color: #212529
         font-size: 18px
         font-weight: normal
         text-decoration: none
 
-      a:not([href])
+      a:not([href]), span.main-menu-link
         color: #212529
 
         &:hover
           color: #2A7DEC
 
+  .support-ukraine
+    position: relative
+    display: block
+    height: 80px
+    padding-right: 20px
+    img
+      height: 32px
+    p
+      color: #000
+      font-size: 12px
   .logo
     position: relative
     float: left
@@ -551,7 +646,9 @@ ul
 
     .head-arrow
       position: absolute
-      background-image: url(/images/head-arrow.svg)
+      border-left: 4px solid transparent
+      border-right: 4px solid transparent
+      border-bottom: 4px solid #2A7DEC
       width: 8px
       height: 100%
       left: calc(50% - 4px)
@@ -582,19 +679,20 @@ ul
 
   &.try
     border: solid 1px #EBEBEB
-    padding: 10px 19px
+    padding: 10px 11px
     color: #212529
     transition-duration: 0s
     background-color: unset
 
     &:hover
       border: solid 2px #212529
-      padding: 9px 18px
+      padding: 9px 10px
       text-decoration: none
 
   &.price
     background-color: #2A7DEC
     color: white
+    padding: 11px 14px
 
     &:hover
       transition-duration: 0.3s
@@ -637,12 +735,6 @@ ul
   align-content: center
 
 #docs
-  header
-    @media screen and (min-width: 1281px)
-      padding-left: 372px
-      z-index: 10000
-    @media screen and (min-width: 1500px)
-      padding-left: 450px
   #githubButtonContainer
     @media screen and (max-width: 1280px)
       position: fixed
@@ -706,6 +798,120 @@ ul
   #viewPricing.center-button
     display: inline-block
 
+// DOCS FEATURES CARDS
+
+.doc-features
+  max-width: 1200px
+
+a.feature-card, .feature-card
+  display: block
+  padding: 24px
+  border: 1px solid rgba(0, 0, 0, 0.08)
+  border-radius: 8px
+  width: 100%
+  height: 100%
+  &.inner
+    padding: 16px
+    .feature-title
+      font-size: 16px
+      line-height: 150%
+      padding-bottom: 0
+  img.feature-logo
+    width: 36px
+    height: 36px
+    margin-bottom: 20px
+    filter: var(--tb-main-color-filter)
+  img.integration-logo
+    width: 28px
+    height: 28px
+    margin-right: 7px
+  .feature-title
+    color: #212529
+    font-size: 18px
+    font-weight: 500
+    line-height: 28px
+    padding-bottom: 8px
+    span
+      vertical-align: middle
+  .feature-text
+    color: #75767C
+    font-size: 14px
+    font-weight: 400
+    line-height: 24px
+    ul
+      margin: 0
+      li
+        margin-bottom: 0
+
+a.feature-card
+  &:hover
+    text-decoration: none
+    transition-duration: 0.3s
+    box-shadow: 0 7px 32px rgba(0, 0, 0, 0.06)
+
+#docsContent
+  a.feature-card, .feature-card
+    .feature-text
+      ul
+        margin: 0
+        li
+          margin-bottom: 0
+
+// GRID ADDITIONS
+@media screen and (min-width: 1281px)
+  .col-xxl
+    flex-basis: 0
+    flex-grow: 1
+    max-width: 100%
+  .col-xxl-8
+    flex: 0 0 66.6%
+    max-width: 66.6%
+  .col-xxl-6
+    flex: 0 0 50%
+    max-width: 50%
+  .col-xxl-4
+    flex: 0 0 33.3%
+    max-width: 33.3%
+  .col-xxl-3
+    flex: 0 0 25%
+    max-width: 25%
+
+@media screen and (min-width: 1600px)
+  .col-3xl
+    flex-basis: 0
+    flex-grow: 1
+    max-width: 100%
+  .col-3xl-8
+    flex: 0 0 66.6%
+    max-width: 66.6%
+  .col-3xl-6
+    flex: 0 0 50%
+    max-width: 50%
+  .col-3xl-4
+    flex: 0 0 33.3%
+    max-width: 33.3%
+  .col-3xl-3
+    flex: 0 0 25%
+    max-width: 25%
+
+@media screen and (min-width: 1750px)
+  .col-4xl
+    flex-basis: 0
+    flex-grow: 1
+    max-width: 100%
+  .col-4xl-8
+    flex: 0 0 66.6%
+    max-width: 66.6%
+  .col-4xl-6
+    flex: 0 0 50%
+    max-width: 50%
+  .col-4xl-4
+    flex: 0 0 33.3%
+    max-width: 33.3%
+  .col-4xl-3
+    flex: 0 0 25%
+    max-width: 25%
+
 // FLIP NAV
 #home, #thingsboard-paas, #thingsboard-pe, #trendz, #partners, #thingsboard-edge
   &.flip-nav
@@ -714,16 +920,20 @@ ul
       background-color: white
       box-shadow: 0 0 20px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .1)
 
+      .support-ukraine
+        p
+          color: #000
+
       .logo, .burger
         filter: unset
 
       .head-menu
         ul
-          li.active a
+          li.active a, li.active span.main-menu-link
             opacity: 1
             color: #2A7DEC
 
-          a
+          a, span.main-menu-link
             color: #212529
 
           .centered-sub .sub-menu
@@ -735,17 +945,15 @@ ul
                 color: #2A7DEC
 
       .n-button
-        padding: 11px 20px
 
         &.try
           border: solid 1px #EBEBEB
-          padding: 10px 19px
           color: #212529
           background-color: unset
 
           &:hover
             border: solid 2px #212529
-            padding: 9px 18px
+            padding: 9px 10px
 
         &.price:hover
           color: #fff
@@ -794,7 +1002,7 @@ footer
   width: 100%
   background-color: #0F161D
 
-  main
+  main, div.main-div
     padding: 92px 0 78px
 
     hr
@@ -976,8 +1184,8 @@ footer
     display: flex
     justify-content: space-between
     .copyright
-        color: #847989
-        font-size: 16px
+      color: #847989
+      font-size: 16px
     .social
       width: fit-content
       display: flex
@@ -1037,7 +1245,11 @@ section
 
 #docs
   header
-    box-shadow: 0 1px 0 #ebebeb
+    box-shadow: none
+    .logo-burger
+      .support-ukraine, .logo
+        @media screen and (max-width: 1280px)
+          display: none
   #hero
     background: white
     position: fixed
@@ -1046,11 +1258,19 @@ section
     left: 0
     right: 0
     z-index: 7888
-    height: 74px
+    height: 60px
     box-shadow: 0 0 20px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .1)
     #hero-content
       height: 100%
-
+    @media screen and (min-width: 1281px)
+      box-shadow: none
+      padding-left: 296px
+    @media screen and (min-width: 1600px)
+      padding-left: 362px
+  &.flip-nav
+    #hero
+      transition-duration: 0.3s
+      box-shadow: 0 0 20px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .1)
   #pe-docs-banner
     font-size: 18px
     display: none
@@ -1174,16 +1394,19 @@ section
     display: block
     z-index: 9999
     position: fixed
-    top: 96px
+    top: 89px
     right: 22px
-    width: 350px
     height: 44px
     line-height: 44px
+    @media screen and (min-width: 1281px)
+      width: 240px
+    @media screen and (min-width: 1600px)
+      width: 350px
     @media screen and (max-width: 1280px)
-      top: 19px
+      top: 18px
       right: 91px
     @media screen and (max-width: 768px)
-      top: 178px
+      top: 164px
       left: 22px
       right: 22px
       width: calc( 100% - 44px )
@@ -1247,8 +1470,8 @@ section
     background: #fff
     transition: 0.3s
     position: fixed
-    top: 154px
-    bottom: calc( 100vh - 154px )
+    top: 140px
+    bottom: calc( 100vh - 140px )
     left: 0
     right: 0
     @media screen and (max-width: 1280px)
@@ -1298,6 +1521,12 @@ section
       display: flex
       height: 100%
       width: 100%
+      ul
+        .indicator
+          .head-arrow
+            border-bottom-color: var(--tb-main-color)
+          .line
+            background-color: var(--tb-main-color)
       #docsBreadcrumbs
         position: relative
         display: none
@@ -1313,7 +1542,7 @@ section
           background-size: contain
           display: block
           position: absolute
-          top: 30px
+          top: 23px
           right: 26px
           width: 14px
           height: 14px
@@ -1337,6 +1566,9 @@ section
             &:last-child
               font-weight: 500
               color: #212529
+              white-space: normal
+              text-align: start
+              font-size: 15px
           &.divider
             padding-left: 6px
             padding-right: 6px
@@ -1394,7 +1626,7 @@ section
 
 #docsToc
   position: fixed
-  background-color: white
+  background-color: #F9F9F9
   top: 0
   left: 0
   width: 0
@@ -1413,10 +1645,10 @@ section
       top: 4px
       margin-top: 4px
       content: ""
-      border-left: 4px solid #2a7dec
+      border-left: 4px solid var(--tb-main-color)
     .yah
       & > .title
-        color: #2a7dec
+        color: var(--tb-main-color)
         font-weight: 500
     & > .container:first-child > .item.yah:first-child > .title
       padding-left: 0
@@ -1427,7 +1659,8 @@ section
       position: relative
       overflow: visible
     .title
-      color: #212529
+      color: #75767C
+      line-height: 24px
       &:hover
         color: #2a7dec
     a.item > .title
@@ -1436,29 +1669,117 @@ section
     div.item > .title
       padding-left: 38px
       &:before
-        content: ""
-        background-image: url("/images/pe/read-more-arrow.svg")
-        background-size: contain
+        content: "\f054"
+        font-family: FontAwesome
+        font-size: 14px
+        font-weight: 400
         display: block
         position: absolute
         left: 18px
-        top: 12px
-        width: 12px
-        height: 12px
+        top: 7.5px
         transform: rotate(0deg)
         transition: transform 0.3s
-        filter: invert(84%) sepia(0%) saturate(7494%) hue-rotate(88deg) brightness(94%) contrast(89%)
         border: none
-      &:hover
-        &:before
-          filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
     .item.on
       overflow: visible
       & > .title
         font-weight: 500
+        color: #212529
+        &:hover
+          color: #2a7dec
         &:before
-          filter: none
           transform: rotate(90deg)
+
+#device-filters
+  display: none
+  position: relative
+  z-index: 1
+  margin-top: 130px
+  overflow: hidden
+  .header
+    display: none
+    .indicator
+      position: absolute
+      left: -20px
+      bottom: 4px
+      top: 4px
+      margin-top: 4px
+      content: ""
+      border-left: 4px solid var(--tb-main-color)
+    .title
+      position: relative
+      padding: 7.5px 10px 7.5px 0px
+      cursor: pointer
+      transition: .3s
+      color: var(--tb-main-color)
+      font-size: 1.2em
+      font-weight: 600
+      line-height: 24px
+  .group
+    padding-left: 20px
+    .title
+      color: #75767C
+      line-height: 24px
+      padding-left: 15px
+      cursor: pointer
+      &:hover
+        color: var(--tb-main-color)
+      &:before
+        content: "\f054"
+        font-family: FontAwesome
+        font-size: 14px
+        font-weight: 400
+        display: block
+        width: 10px
+        position: relative
+        left: -25px
+        top: 23.5px
+        transform: rotate(90deg)
+        transition: transform 0.3s
+        border: none
+        cursor: pointer
+      &.collapsed
+        &:before
+          transform: rotate(0deg)
+
+    .filters-wrapper
+      overflow: hidden
+      transition: height 0.3s
+      height: auto
+      padding-top: 10px
+      .filter
+        margin-left: 5px
+        .filter-label
+          cursor: pointer
+          color: #75767C
+          line-height: 24px
+        input[type=checkbox]
+          -webkit-appearance: none
+          appearance: none
+          background-color: #fff
+          margin: 0
+          font: inherit
+          color: var(--tb-main-color)
+          width: 1.15em
+          height: 1.15em
+          border: 0.15em solid var(--tb-main-color)
+          border-radius: 0.15em
+          transform: translateY(-0.075em)
+          display: inline-flex
+          justify-content: center
+          align-items: center
+          cursor: pointer
+        input[type="checkbox"]::before
+          content: ""
+          width: 0.65em
+          height: 0.65em
+          transform: scale(0)
+          transition: 120ms transform ease-in-out
+          box-shadow: inset 1em 1em var(--tb-main-color)
+          transform-origin: bottom left
+          clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%)
+        input[type="checkbox"]:checked::before
+          transform: scale(1)
 
 .faq-link
   position: relative
@@ -1473,6 +1794,15 @@ section
     content: "\f059"
     position: absolute
     transform: translate(15%, -100%)
+
+td.item.item-pe, p.item.item-pe
+  &::after
+    content: "PE"
+    font-size: 12px
+    font-weight: bold
+    color: var(--tb-main-color)
+    transform: translate(5px, -10px)
+    display: inline-block
 
 .pi-accordion
   .container
@@ -1523,7 +1853,7 @@ section
       content: "NEW"
       font-size: 12px
       font-weight: bold
-      color: $green
+      color: var(--tb-main-color)
       transform: translate(5px, -10px)
       display: inline-block
 
@@ -1544,7 +1874,7 @@ section
       content: "PE"
       font-size: 12px
       font-weight: bold
-      color: $blue
+      color: var(--tb-main-color)
       transform: translate(5px, -10px)
       display: inline-block
 
@@ -1553,7 +1883,7 @@ section
       content: "NEW"
       font-size: 12px
       font-weight: bold
-      color: $green
+      color: var(--tb-main-color)
       transform: translate(5px, -10px)
       display: inline-block
 
@@ -1706,7 +2036,7 @@ $header-clearance: 210px
   footer
     background: none
     padding: 0
-    main
+    main, div.main-div
       padding-top: 20px
       &.light-text
         color: #212529
@@ -1729,7 +2059,7 @@ $header-clearance: 210px
             filter: invert(35%) sepia(99%) saturate(1401%) hue-rotate(200deg) brightness(90%) contrast(100%)
 
   #top-spacer
-    height: 154px
+    height: 124px
   h1:first-of-type
     margin-bottom: 40px
   #content
@@ -1975,6 +2305,9 @@ $header-clearance: 210px
 
       &.trendz
         background: #5555FF
+
+      &.mqtt-broker
+        background: #00695c
 
       .card-img
         position: absolute
@@ -2376,13 +2709,10 @@ $header-clearance: 210px
           padding: 10px 10px 14px
 
           &.nav-products
-            width: 95px
+            width: 94px
 
           &.nav-services
             width: 91px
-
-          &.nav-developers
-            width: 115px
 
           &.nav-cases
             width: 109px
@@ -2393,6 +2723,12 @@ $header-clearance: 210px
           &.nav-company
             width: 105px
 
+          &.nav-partners
+            width: 90px
+
+          &.nav-docs
+            width: 61px
+
           a
             font-size: 17px
 
@@ -2402,6 +2738,37 @@ $header-clearance: 210px
     div .n-button
       margin-left: 8px
       font-size: 17px
+
+@media screen and (min-width: 1281px) and (max-width: 1400px)
+  header
+    .head-menu
+      ul
+        li
+          padding: 10px 6px 14px
+
+          &.nav-products
+            width: 78px
+
+          &.nav-services
+            width: 74px
+
+          &.nav-cases
+            width: 92px
+
+          &.nav-customers
+            width: 96px
+
+          &.nav-company
+            width: 88px
+
+          &.nav-partners
+            width: 73px
+
+          &.nav-docs
+            width: 50px
+
+          a, span.main-menu-link
+            font-size: 15px
 
 @media screen and (max-width: 1280px)
   #docs
@@ -2418,6 +2785,10 @@ $header-clearance: 210px
       background-color: white
       box-shadow: 0 0 20px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .1)
 
+      .support-ukraine
+        p
+          color: #000
+
       .logo, .burger
         filter: unset
 
@@ -2427,10 +2798,10 @@ $header-clearance: 210px
         padding: 16px 30px 0
 
         ul
-          li:hover a
+          li:hover a, li:hover span.main-menu-link
             color: #2A7DEC!important
 
-          a, a:not([href])
+          a, a:not([href]), span.main-menu-link
             color: #212529
 
           .centered-sub
@@ -2449,18 +2820,16 @@ $header-clearance: 210px
 
 
       .n-button
-        padding: 11px 20px
         display: inline-block
 
         &.try
           border: solid 1px #EBEBEB
-          padding: 10px 19px
           color: #212529
           background-color: unset
 
           &:hover
             border: solid 2px #212529
-            padding: 9px 18px
+            padding: 9px 10px
 
         &.price:hover
           color: #fff
@@ -2520,7 +2889,7 @@ $header-clearance: 210px
         li
           height: unset
           width: 100%!important
-          a
+          a, span.main-menu-link
             text-align: left
             &:focus
               .centered-sub
@@ -2563,7 +2932,7 @@ $header-clearance: 210px
       display: none
       margin: 40px 0 40px 8px
   #docsToc
-      display: none
+    display: none
   #docsContent
     #table-of-contents
       display: none
@@ -2645,7 +3014,7 @@ $ocean-nodes-h3-margin-bottom: 30px
   a
     color: $blue
 
-  main
+  main, div.main-div
     margin-bottom: $ocean-nodes-padding-Y
     min-height: 160px
 
@@ -2817,7 +3186,7 @@ $ocean-nodes-h3-margin-bottom: 30px
             &:after
               right: 11px
               top: 11px
-          h1
+          h1, h2, span.phrase-heading, h5.social-heading
             color: #2A7DEC
             font-weight: 500
             font-size: 18px
@@ -2884,3 +3253,13 @@ $ocean-nodes-h3-margin-bottom: 30px
 
 .jssocials-share-link
   border-radius: 50% !important
+
+@media (max-width: 992px)
+  #pricingContent .container
+    max-width: unset
+    width: 100%
+
+.usecases-bottom-nav a
+  margin: 10px 20px 10px 0
+  &:last-of-type
+    margin-right: 0

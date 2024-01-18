@@ -18,7 +18,7 @@ Let's assume:
 
 For the purpose of this tutorial, you need:  
 1. Locally installed instance of ThingsBoard platform (In case you are new with ThingsBoard [use this 'how to install' documentation](/docs/user-guide/install/installation-options/)).
-2. [Installed](/docs/iot-gateway/installation/) and [configured](/docs/iot-gateway/configuration/) ThingsBoard IoT Gateway and [Modbus connector](docs/iot-gateway/config/modbus/). 
+2. [Installed](/docs/iot-gateway/installation/) and [configured](/docs/iot-gateway/configuration/) ThingsBoard IoT Gateway and [Modbus connector](/docs/iot-gateway/config/modbus/). 
 
 ## Modbus connector RPC configuration
   

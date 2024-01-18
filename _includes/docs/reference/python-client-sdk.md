@@ -6,8 +6,8 @@ SDK supports:
 - Unencrypted and encrypted (TLS v1.2) connection;
 - QoS 0 and 1;
 - Automatic reconnect;
-- All [**Device MQTT APIs**](/docs/reference/mqtt-api/)
-- All [**Gateway MQTT APIs**](/docs/reference/gateway-mqtt-api/)
+- All [**Device MQTT APIs**](/docs/{{docsPrefix}}reference/mqtt-api/)
+- All [**Gateway MQTT APIs**](/docs/{{docsPrefix}}reference/gateway-mqtt-api/)
 
 SDK is based on Paho MQTT library. 
 
@@ -44,7 +44,7 @@ client.disconnect()
 
 ### Connection using TLS
 
-TLS connection to localhost. See [MQTT over SSL](/docs/user-guide/mqtt-over-ssl/) for more information about client and ThingsBoard configuration.
+TLS connection to localhost. {% if docsPrefix != 'paas/' %}See [MQTT over SSL](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/) for more information about client and ThingsBoard configuration.{% endif %}
 To connect to ThingsBoard with MQTT over SSL, first, you should generate a certificate and have a code like the following one:
 
 ```python

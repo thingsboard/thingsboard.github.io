@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe
 assignees:
-- vsosliuk
+- ashvayka
 title: Basic MQTT authentication
 description: ThingsBoard MQTT based authentication.
 options:

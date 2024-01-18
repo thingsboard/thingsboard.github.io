@@ -22,25 +22,25 @@ We will describe connector configuration file below.
 Connector configuration is a JSON file that contains information about how to create API endpoints and how to process the data.  
 Let's review the format of the configuration file using example below.    
 
-<br>
-<details>
-
-<summary>
-<b>Example of REST Connector config file. Press to expand.</b>
-</summary>
+<b>Example of REST Connector config file.</b>
 
 Example listed below will create a server on a localhost using 5000 port.  
 Connector will use basic HTTP authorization using username and password.  
 Then, connector will create endpoints from a list of endpoints using endpoints from mapping section. See more info in a description below.  
 
-{% highlight json %}
+{% capture restConf %}
 {
   "host": "127.0.0.1",
-  "port": "5000",
+  "port": 5000,
+  "SSL": false,
+  "security": {
+    "cert": "~/ssl/cert.pem",
+    "key": "~/ssl/key.pem"
+  },
   "mapping":[
     {
       "endpoint": "/test_device",
-      "HTTPMethod": [
+      "HTTPMethods": [
         "POST"
       ],
       "security":
@@ -77,7 +77,7 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
     },
     {
       "endpoint": "/test",
-      "HTTPMethod": [
+      "HTTPMethods": [
         "GET",
         "POST"
       ],
@@ -114,18 +114,16 @@ Then, connector will create endpoints from a list of endpoints using endpoints f
   ]
 }
 
-{% endhighlight %}
-
-</details>
+{% endcapture %}
+{% include code-toggle.liquid code=restConf params="conf|.copy-code.expandable-20" %}
 
 
 ### General section
+{% capture restconnectorsecuritytogglespec %}
+With SSL<small>Recommended</small>%,%accessToken%,%templates/iot-gateway/rest-connector-ssl-security-config.md%br%
+Without SSL<small>No security</small>%,%anonymous%,%templates/iot-gateway/rest-connector-no-ssl-security-config.md{% endcapture %}
 
-| **Parameter** | **Default value**                 | **Description**                                           |
-|:-|:-|-
-| host          | **http://127.0.0.1:5000**         | Domain address or ip of the server.                       |
-| SSLVerify     | **true**                          | Verify or no SSL certificate on the server if available.  |
-|---
+{% include content-toggle.html content-toggle-id="restConnectorCredentialsConfig" toggle-spec=restconnectorsecuritytogglespec %}  
 
 ### Mapping section
 
@@ -136,11 +134,11 @@ By default, the gateway uses Json converter, but it is possible to provide custo
 
 **Note**: You can specify multiple mapping objects inside the array.
 
-| **Parameter**     | **Default value**                     | **Description**                                               |
-|:-|:-|-
-| endpoint          | **/test_device**                      | Url address of the endpoint.                                  |
-| HTTPMethod        | **GET**                               | HTTP method allowed for endpoint (**GET**, **POST** etc.).    |
-|---
+| **Parameter** | **Default value**                     | **Description**                                             |
+|:--------------|:-|-------------------------------------------------------------
+| endpoint      | **/test_device**                      | Url address of the endpoint.                                |
+| HTTPMethods   | **GET**                               | HTTP methods allowed for endpoint (**GET**, **POST** etc.). |
+| ---           
 
 #### Security section
 
@@ -161,12 +159,115 @@ Types of request converters:
 1. json -- Default converter  
 2. custom -- Custom converter (You can write it by yourself, and it will use to convert incoming data.)  
 
+{% capture difference %}
+<br>
+**Connector won't pass the None value from the converter**  
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
 {% capture restconvertertypespec %}
 json<small>Recommended if json will be received in the request</small>%,%json%,%templates/iot-gateway/rest-converter-json-config.md%br%
 custom<small>Recommended if bytes or anything else will be received in the request</small>%,%custom%,%templates/iot-gateway/rest-converter-custom-config.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="restConverterTypeConfig" toggle-spec=restconvertertypespec %}
 
+{% capture difference %}
+<br>
+**It is also may to parse query parameters from the URL if you are using a GET request.**  
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+##### Response
+
+Response in REST Connector can have 3 variants of configuration:
+1. Default response (without extra configuration, return only HTTP Status Code);
+2. Hardcoded response body, for this option you have to specify a new section and 2 new optional parameters as in the example below:
+
+    | **Parameter**                 | **Default value**                                     | **Description**                                                       |
+    |:-|:-|-
+    | response                      |                                                       | The response that will be returned on every request to the server     |
+    | ... successResponse           | **OK**                                                | Only if the response status is 200                                    |
+    | ... unsuccessfulResponse      | **Error**                                             | Only if the response status different from 200                        |
+    |---
+
+3. **ADVANCED** the remote response that will return by ThingsBoard.
+   1. To configure that variant you have to specify a new section in the config file as in the example below:
+
+       | **Parameter**                 | **Default value**                                     | **Description**                                                       |
+       |:-|:-|-
+       | response                      |                                                       | Boolean value for on/off returning a response                         |
+       | ... responseExpected          | **true**                                              | Timeout for request.                                                  |
+       | ... timeout                   | **120**                                               | Only if the response status different from 200                        |
+       | ... responseAttribute         | **result**                                            | Shared attribute name which response will be return                   |
+       |---
+
+   2. Configure RuleChain in ThingsBoard:
+      ![image](/images/gateway/custom-response-rule-chain-config.png)
+      Finally, you have to configure rule node:
+      1. Yellow Rule Node
+          ![image](/images/gateway/custom-response-yellow-rule-node.png)
+      2. Blue Rule Node
+          ![image](/images/gateway/custom-response-blue-rule-node.png)
+
+### Attribute request section
+Configuration in this section are optional.
+
+In order to request client-side or shared device attributes to ThingsBoard server node, Gateway allows sending 
+attribute requests.
+
+| **Parameter**                 | **Default value**                                     | **Description**                                                       |
+|:-|:-|-
+| endpoint                      | **/sharedAttributes**                                 | Url address of the endpoint.                                          |
+| type                          | **shared**                                            | The type of requested attribute can be “shared” or “client”.          |
+| HTTPMethods                   | **[”POST”]**                                          | Allowed methods                                                       |
+| security                      |                                                       | Security for request:                                                 |
+| ... type                      | **basic**                                             | Security type for request to the server (**basic** or **anonymous**). |
+| ... username                  | **user**                                              | Username for basic type of the security.                              |
+| ... password                  | **passwd**                                            | Password for basic type of the security.                              |
+| timeout                       | **10.0**                                              | Timeout for request.                                                  |
+| deviceNameExpression          | **${deviceName}**                                     | JSON-path expression, for looking the device name.                    |
+| attributeNameExpression       | **${attribute}**                                      | JSON-path expression, for looking the attribute name.                 |
+|---
+
+The **attributeRequests** section will look like:
+```json
+"attributeRequests": [
+  {
+    "endpoint": "/sharedAttributes",
+    "type": "shared",
+    "HTTPMethods": [
+      "POST"
+    ],
+    "security": {
+      "type": "anonymous"
+    },
+    "timeout": 10.0,
+    "deviceNameExpression": "${deviceName}",
+    "attributeNameExpression": "${attribute}"
+  }
+]
+```
+
+Also, you can request multiple attributes at once. Simply add one more JSON-path to 
+attributeNameExpression parameter. For example, we want to request two shared attributes in one request, our config 
+will look like:
+```json
+"attributeRequests": [
+  {
+    "endpoint": "/sharedAttributes",
+    "type": "shared",
+    "HTTPMethods": [
+      "POST"
+    ],
+    "security": {
+      "type": "anonymous"
+    },
+    "timeout": 10.0,
+    "deviceNameExpression": "${deviceName}",
+    "attributeNameExpression": "${pduAttribute}, ${versionAttribute}"
+  }
+]
+```
 
 ### Attribute update section
 
@@ -277,7 +378,7 @@ Examples for both methods provided below.
       "methodFilter": "no-reply",
       "requestUrlExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
       "HTTPMethod": "POST",
-      "valueExpression": "${params}",
+      "valueExpression": "${params.hum}",
       "httpHeaders": {
         "Content-Type": "application/json"
       }
@@ -285,7 +386,10 @@ Examples for both methods provided below.
   ]
 ```
 
-
+Also, every telemetry and attribute parameter has built-in GET and SET RPC methods out of the box, so you don’t need to configure
+it manually. To use them, make sure you set all required parameters (in the case of REST Connector, these are the following:
+**requestUrlExpression**, **responseTimeout**, **HTTPMethod**, **valueExpression**). 
+See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
 
 ## Next steps
 

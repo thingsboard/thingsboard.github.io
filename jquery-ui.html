@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<title>jQuery UI Example Page</title>
-	<link href="/css/jquery-ui.min.css" rel="stylesheet">
+	<link rel="preload" href="/css/jquery-ui.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 	<style>
 	body{
 		font: 62.5% "Trebuchet MS", sans-serif;
@@ -56,7 +56,7 @@
 	<p>This page demonstrates the widgets and theme you selected in Download Builder. Please make sure you are using them with a compatible jQuery version.</p>
 </div>
 
-<h1>YOUR COMPONENTS:</h1>
+<h2>YOUR COMPONENTS:</h2>
 
 
 <!-- Accordion -->
@@ -391,9 +391,9 @@ the element with your mouse, the title attribute is displayed in a little box ne
 	</div>
 </div>
 
-<script src="/js/jquery-2.2.0.min.js"></script>
-<script src="/js/jquery-ui.min.js"></script>
-<script>
+<script async defer src="/js/jquery-2.2.0.min.js"></script>
+<script async defer src="/js/jquery-ui.min.js"></script>
+<script defer>
 
 $( "#accordion" ).accordion();
 

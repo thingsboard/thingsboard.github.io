@@ -1,8 +1,12 @@
- {% capture info %}
+ 
+{% if docsPrefix != 'paas/' %}
+{% capture info %}
 <br>
 **INFO: To use this feature, you should configure [MQTT over SSL in ThingsBoard](/docs/{{docsPrefix}}user-guide/mqtt-over-ssl/)**  
 {% endcapture %}
 {% include templates/info-banner.md content=info %}
+{% endif %}
+
 
 |---
 | **Parameter**             | **Example value**                            | **Description**                                                                |
@@ -71,7 +75,7 @@ def collect_required_data():
     print(" "*10, "\033[1m\033[94mThingsBoard device provisioning with X509 certificate authorization example script. MQTT API\033[0m", sep="")
     print("="*80, "\n\n", sep="")
     host = input("Please write your ThingsBoard \033[93mhost\033[0m or leave it blank to use default (thingsboard.cloud): ")
-    config["host"] = host if host else "thingsboard.cloud"
+    config["host"] = host if host else "mqtt.thingsboard.cloud"
     port = input("Please write your ThingsBoard \033[93mSSL port\033[0m or leave it blank to use default (8883): ")
     config["port"] = int(port) if port else 8883
     config["provision_device_key"] = input("Please write \033[93mprovision device key\033[0m: ")

@@ -1,0 +1,69 @@
+#docsContent
+  .usecase-nav
+    margin-bottom: 56px
+    z-index: 3
+    position: fixed
+    top: 78px
+    left: 0
+    width: 100%
+    justify-content: center
+    background-color: rgba(255, 255, 255, 0.95)
+    backdrop-filter: blur(7px)
+    &.nav-fixed
+      border-bottom: solid 1px #ebebeb
+    .crop-nav
+      overflow-x: auto
+      display: flex
+      margin: 0 30px
+      cursor: grab
+      +tiny-scrollbar(4px)
+      ul
+        flex-wrap: unset
+        display: flex
+        flex-direction: row
+        padding: 0
+        li
+          position: relative
+          display: block
+          align-items: center
+          padding: 8px 36px 8px 0
+          margin: 0
+          float: left
+          width: max-content
+          a
+            color: 	rgba(33,37,41, 0.6)
+            text-decoration: none
+            font-size: 18px
+            font-weight: 400
+            img
+              padding-right: 10px
+              width: 40px
+              height: 40px
+              filter: grayscale(1)
+            &:hover
+              color: #212529
+              img
+                filter: grayscale(1) brightness(0.75) contrast(2)
+            &.active
+              color: #2A7DEC
+              font-weight: 500
+              img
+                filter: unset
+          &:last-child
+            padding: 8px 0
+
+@media screen and (min-width: 1025px)
+  #docsContent
+    .usecase-nav
+      .crop-nav
+        max-width: 1200px
+        margin: auto
+        ul
+          flex-wrap: unset
+
+@media screen and (min-width: 1500px)
+  #docsContent
+    .usecase-nav
+      .crop-nav
+        width: calc(100% - 520px)
+        max-width: 1400px

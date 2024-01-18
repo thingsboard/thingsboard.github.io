@@ -29,14 +29,22 @@ Rule Engine Message contains the following information:
 Rule Node is a basic component of Rule Engine that process single incoming message at a time and produce one or more outgoing messages. 
 Rule Node is a main logical unit of the Rule Engine. Rule Node can filter, enrich, transform incoming messages, perform action or communicate with external systems.
 
-#### Rule Node Relation
+#### Rule Node Connection
 
-Rule Nodes may be related to other rule nodes. Each relation has relation type, a label used to identify logical meaning of the relation. 
+Rule Nodes may be connected to other rule nodes. Each relation has relation type, a label used to identify logical meaning of the relation. 
 When rule node produces the outgoing message it always specifies the relation type which is used to route message to next nodes.
  
 Typical rule node relations are "Success" and "Failure". 
 Rule nodes that represent logical operations may use "True" or "False". 
-Some specific rule nodes may use completely different relation types, for example: "Post Telemetry", "Attributes Updated", "Entity Created", etc. 
+Some specific rule nodes may use completely different relation types, for example: "Post Telemetry", "Attributes Updated", "Entity Created", etc.
+
+
+Some rule nodes support custom connection names. Just type your custom connection name and click the "Create a new one!" link:
+
+![image](/images/user-guide/rule-engine-2-0/nodes/custom-connection.png)
+
+
+All connection names are **case-sensitive**.
 
 #### Rule Chain
 
@@ -84,80 +92,19 @@ Similar, if "Save to DB" call will fail, the message will be marked as failed.
 
 #### Rule Engine Queue
 
-Rule Engine subscribe to queues on startup and polls for new messages. 
-There is always "Main" topic that is used as a main entry point for new incoming messages. 
-You may configure multiple queues using thingsboard.yml or environment variables.
-Once configured, you may put message to the other topic using "Checkpoint" node. 
-This automatically acknowledges corresponding message in the current topic.
+See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/)
 
-The definition of the queue consists of the following parameters:
-
- * name - used for statistics and logging;
- * topic - used by Queue implementations to produce and consume messages;
- * poll-interval - duration in milliseconds between polling of the messages if no new messages arrive;
- * partitions - number of partitions to associate with this queue. Used for scaling the number of messages that can be processed in parallel;
- * pack-processing-timeout - interval in milliseconds for processing of the particular pack of messages returned by consumer;
- * submit-strategy - defines logic and order of submitting messages to rule engine. See separate paragraph below.
- * processing-strategy - defines logic of acknowledgement of the messages. See separate paragraph below.
-  
 ##### Queue submit strategy
 
-Rule Engine service constantly polls messages for specific topic and once the Consumer returns a list of messages it creates the TbMsgPackProcessingContext object.
-Queue submit strategy controls how messages from TbMsgPackProcessingContext are submitted to rule chains. There are 5 available strategies:
-
- * BURST - all messages are submitted to the rule chains in the order they arrive.  
- * BATCH - messages are grouped to batches using "queue.rule-engine.queues\[queue index\].batch-size" configuration parameter. 
- New batch is not submitted until previous batch is acknowledged.
- * SEQUENTIAL_BY_ORIGINATOR - messages are submitted sequentially within particular entity (originator of the message). 
- New message for e.g. device A is not submitted until previous message for device A is acknowledged. 
- * SEQUENTIAL_BY_TENANT - messages are submitted sequentially within tenant (owner of the originator of the message). 
- New message for e.g tenant A is not submitted until previous message for tenant A is acknowledged.
- * SEQUENTIAL  - messages are submitted sequentially. New message is not submitted until previous message is acknowledged. This makes processing quite slow.
- 
-See this [guide](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/tutorials/queues-for-synchronization/) for an example of submit strategy use case.
+See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-submit-strategy)
 
 ##### Queue processing strategy
-  
-Processing Strategy controls how failed or timed out messages are re-processed. There are 5 available strategies:
 
- * SKIP_ALL_FAILURES - simply ignore all failures and timeouts. Will cause messages to be "lost". 
- For example, if DB is down, the messages will not be persisted but will be still marked as "acknowledged" and deleted from queue.
- This strategy is created mostly for backward-compatibility with previous releases and development/demo environments.
- * RETRY_ALL - retry all messages from processing pack. 
- If 1 out of 100 messages will fail, strategy will still reprocess (resubmit to Rule Engine) 100 messages. 
- * RETRY_FAILED - retry all failed messages from processing pack. 
- If 1 out of 100 messages will fail, strategy will reprocess(resubmit to Rule Engine) only 1 message. 
- Timed-out messages will not be reprocessed.
- * RETRY_TIMED_OUT - retry all timed-out messages from processing pack. 
- If 1 out of 100 messages will timeout, strategy will reprocess(resubmit to Rule Engine) only 1 message.
- Failed messages will not be reprocessed.
- * RETRY_FAILED_AND_TIMED_OUT - retry all failed and timed-out messages from processing pack.
- 
-All "RETRY*" strategies support important configuration parameters:  
- 
- * retries - Number of retries, 0 is unlimited
- * failure-percentage - Skip retry if failures or timeouts are less then X percentage of messages;
- * pause-between-retries - Time in seconds to wait in consumer thread before retries;
- 
- See this [guide](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/tutorials/queues-for-message-reprocessing/) for an example of processing strategy use case.
+See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#queue-processing-strategy)
 
 ##### Default queues
 
-There are three default queues configured: Main, HighPriority and SequentialByOriginator.
-They differ based on submit and processing strategy.
-Basically, rule engine process messages from Main topic and may optionally put them to other topics using "Checkpoint" rule node. 
-Main topic simply ignores failed messages by default. This is done for backward compatibility with previous releases. 
-However, you may reconfigure this at your own risk. 
-Note that if one message is not processed due to some failure in your rule node script, it may prevent next messages from being processed.
-We have designed specific [dashboard](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-engine-statistics) to monitor Rule Engine processing and failures. 
-
-The HighPriority topic may be used for delivery of alarms or other critical processing steps. 
-The messages in HighPriority topic are constantly reprocessed in case of failure until the message processing succeeds. 
-This is useful if you have an outage of the SMTP server or external system. The Rule Engine will retry sending the message until it is processed.   
-
-The SequentialByOriginator topic is important if you would like to make sure that messages are processed in correct order.
-Messages from the same entity will be processed with the order they arrive to the queue. 
-Rule Engine will not submit new message to the rule chain until the previous message for the same entity id is acknowledged. 
+See new [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/#default-queues)
 
 ## Predefined Message Types
 
@@ -327,6 +274,72 @@ List of the predefined Message Types is presented in the following table:
         </td>
       </tr>
       <tr>
+        <td>ALARM_ASSIGNED</td>
+        <td><b>Alarm Assigned</b></td>
+        <td>Event produced when an alarm was assigned to some user</td>
+        <td> 
+            All fields from original Message Metadata
+            <br><b>entityName</b> - name of alarm
+            <br><b>entityType</b> - ALARM
+            <br><b>userEmail</b> - user email
+            <br><b>userFirstName</b> - user first name
+            <br><b>userId</b> - user id
+            <br><b>userLastName</b> - user last name
+            <br><b>userName</b> - user name
+        </td>
+        <td>json containing alarm details, see Alarm event<br>        
+        </td>
+      </tr>
+      <tr>
+        <td>ALARM_UNASSIGNED</td>
+        <td><b>Alarm Unassigned</b></td>
+        <td>Event produced when an alarm was unassigned from user</td>
+        <td> 
+            All fields from original Message Metadata
+            <br><b>entityName</b> - name of alarm
+            <br><b>entityType</b> - ALARM
+            <br><b>userEmail</b> - user email
+            <br><b>userFirstName</b> - user first name
+            <br><b>userId</b> - user id
+            <br><b>userLastName</b> - user last name
+            <br><b>userName</b> - user name
+        </td>
+        <td>json containing alarm details, see Alarm event<br>        
+        </td>
+      </tr>
+      <tr>
+        <td>COMMENT_CREATED</td>
+        <td><b>Comment Created</b></td>
+        <td>Event produced when an alarm comment was created</td>
+        <td> 
+            All fields from original Message Metadata
+            <br><b>userId</b> - user id
+            <br><b>userName</b> - user name
+            <br><b>userFirstName</b> - first name of user
+            <br><b>userLastName</b> - last name of user
+            <br><b>userEmail</b> - email of user
+            <br><b>comment</b> - json object containing comment details and text of comment
+        </td>
+        <td>json containing alarm details, see Alarm event
+        </td>
+      </tr>
+      <tr>
+        <td>COMMENT_UPDATED</td>
+        <td><b>Comment Updated</b></td>
+        <td>Event produced when an alarm comment was updated</td>
+        <td> 
+            All fields from original Message Metadata
+            <br><b>userId</b> - user id
+            <br><b>userName</b> - user name
+            <br><b>userFirstName</b> - first name of user
+            <br><b>userLastName</b> - last name of user
+            <br><b>userEmail</b> - email of user
+            <br><b>comment</b> - json object containing comment details and text of comment
+        </td>
+        <td>json containing alarm details, see Alarm event
+        </td>
+      </tr>
+      <tr>
           <td>REST_API_REQUEST</td>
           <td><b>REST API Request to Rule Engine</b></td>
           <td>Event produced when user executes REST API call</td>
@@ -356,9 +369,9 @@ Rule Node configuration window may be opened by double-clicking on the node in t
   
 ![image](/images/user-guide/rule-engine-2-0/rule-node-configuration.png)
 
-### Test JavaScript functions
+### Test script functions
 
-Some rule nodes have specific UI feature that allow users to test JS functions. 
+Some rule nodes have specific UI feature that allow users to test TBEL/JS functions. 
 Once you click on the **Test Filter Function** you will see the JS Editor that allows you to substitute input parameters and verify the output of the function.
     
 ![image](/images/user-guide/rule-engine-2-0/rule-node-test-function.png)
@@ -368,7 +381,7 @@ You can define:
 - **Message Type** in the top left field.
 - **Message payload** in the left Message section.
 - **Metadata** in right Metadata section.
-- Actual **JS script** in Filter section.
+- Actual **TBEL/JS script** in Filter section.
 
 After pressing **Test** output will be returned in right **Output** section.
 
@@ -407,10 +420,12 @@ In order to export rule chain, you should navigate to the **Rule Chains** page a
 
 Similar, to import the rule chain you should navigate to the **Rules Chains** page and click on the big "+" button in the bottom-right part of the screen and then click on the import button. 
 
+{% if docsPrefix != "paas/" %}
 ## Architecture
 
-To learn more about internals of the rule engine, see [architecture](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/architecture/) page.
+To learn more about internals of the rule engine, see [architecture](/docs/{{docsPrefix}}reference/) page.
 
+{% endif %}
 ## Custom REST API calls to Rule Engine
 
 {% assign feature = "Custom Rule Engine REST API calls" %}{% include templates/pe-feature-banner.md %}
@@ -445,7 +460,7 @@ See more tutorials [here](/docs/{{docsPrefix}}guides/).
 ## Troubleshooting
 
 If you are using Kafka queue for processing messages, ThingsBoard provides the ability to monitor if the rate of pushing messages to the Kafka is faster than rate of consuming and processing them (in such case you will have a growing latency for message processing).
-To enable this functionality, you need to ensure that Kafka consumer-stats are enabled (see <b>queue.kafka.consumer-stats</b> section of the [Configuration properties](/docs/{{docsPrefix}}user-guide/install/config/#thingsboard-core-settings))
+To enable this functionality, you need to ensure that Kafka consumer-stats are enabled (see <b>queue.kafka.consumer-stats</b> section of the [Configuration properties](/docs/user-guide/install/{{docsPrefix}}config/#thingsboard-core-settings))
 
 Once Kafka consumer-stats are enabled, you will see logs (see [Troubleshooting](/docs/user-guide/troubleshooting/#logs)) about offset lag for consumer groups (there are consumer-group logs for tb-core, tb-rule-engine and all transport services).
 

@@ -1,0 +1,27 @@
+bigheader: "ThingsBoard PE Mobile Application Documentation"
+abstract: "ThingsBoard PE Mobile Application - starting point for your IoT mobile product."
+toc:
+  - title: PE Mobile Application
+    path: /docs/pe/mobile/
+  - title: Customize your app
+    section:
+      - title: Overview
+        path: /docs/pe/mobile/customization/
+      - title: Home screen
+        path: /docs/pe/mobile/customize-dashboards/
+      - title: Device icons
+        path: /docs/pe/mobile/customize-devices/
+      - title: Device details dashboard
+        path: /docs/pe/mobile/device-dashboard/
+      - title: Alarm details dashboard
+        path: /docs/pe/mobile/alarm-dashboard/
+      - title: Mobile actions
+        path: /docs/pe/mobile/mobile-actions/
+      - title: OAuth 2.0
+        path: /docs/pe/mobile/oauth2/
+      - title: White-labeling
+        path: /docs/pe/mobile/white-labeling/
+      - title: Self-registration
+        path: /docs/pe/mobile/self-registration/
+  - title: Publish your app
+    path: /docs/pe/mobile/release/

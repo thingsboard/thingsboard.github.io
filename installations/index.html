@@ -3,7 +3,7 @@ title: ThingsBoard Installations
 customTitle: "true"
 description: ThingsBoard is an open-source IoT platform for device management, data collection, processing and visualization for your IoT projects
 ---
-
+<!Doctype html>
 <html id="installations">
 
 {% include head-header.html %}
@@ -19,13 +19,16 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-cloud')">Cloud</a>
 				</li>
 				<li id="menu-item-thingsboard-ce" class="menu-item tb-logo">
-					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-ce')">Community Edition</a>
+					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-ce')">Community <span class="hidden-title">Edition</span></a>
 				</li>
 				<li id="menu-item-thingsboard-pe" class="menu-item tb-logo">
-					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe')">Professional Edition</a>
+					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-pe')">Professional <span class="hidden-title">Edition</span></a>
 				</li>
 				<li id="menu-item-thingsboard-edge" class="menu-item tb-logo">
 					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-edge')">Edge</a>
+				</li>
+				<li id="menu-item-thingsboard-trendz" class="menu-item tb-logo">
+					<a href="javascript:void(0);" onClick="activatePricingSection('thingsboard-trendz')">Trendz</a>
 				</li>
 			</ul>
 		</nav>
@@ -404,13 +407,16 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 			<div class="install-content-description col-lg-7">
 				<h1>ThingsBoard Edge</h1>
 				<div class="install-content-details">
-					<p>It allows bringing data analysis and management to the edge, while seamlessly synchronizing with the cloud (ThingsBoard CE/PE). <a href="/products/thingsboard-edge/">Read More</a>.</p>
+					<p>It allows bringing data analysis and management to the edge, where the data is created. At the same time ThingsBoard Edge seamlessly synchronizing with the ThingsBoard cloud (ThingsBoard Cloud, ThingsBoard Demo, ThingsBoard PE or ThingsBoard CE) according to your business needs. <a href="/products/thingsboard-edge/">Read More</a>.</p>
 				</div>
 				<div class="row container button-container">
-					<a class="btn-blue" href="/docs/edge/install/installation-options/">
-						Install
+					<a class="btn-blue" href="/docs/user-guide/install/edge/installation-options/">
+						Install Edge CE
 					</a>
-					<a class="btn-blue" href="/pricing/">
+					<a class="btn-blue" href="/docs/user-guide/install/pe/edge/installation-options/">
+						Install Edge PE
+					</a>
+					<a class="btn-blue" href="/pricing/?active=thingsboard-edge">
 						Pricing
 					</a>
 				</div>
@@ -426,17 +432,17 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 			<div class="column">
 				<div class="item-row">
 					<div class="item-text">
-						<a class="item-title" href="/docs/edge/what-is-edge/">Local deployment and storage</a>
+						<a class="item-title" href="/docs/edge/getting-started-guides/what-is-edge/">Local deployment and storage</a>
 						<p>
-							Operate with and store data from local devices without internet connection. Push updates to the cloud once connection restored.
+							Process and store data from edge (local) devices without connection to the cloud. Push updates to the cloud once connection restored.
 						</p>
 					</div>
 				</div>
 				<div class="item-row">
 					<div class="item-text">
-						<a class="item-title" href="/docs/edge/what-is-edge/">Traffic filtering</a>
+						<a class="item-title" href="/docs/edge/getting-started-guides/what-is-edge/">Traffic filtering</a>
 						<p>
-							Filter data from devices on the ThingsBoard Edge service and push to cloud only subset of the data.
+							Filter data from edge (local) devices on the ThingsBoard Edge service and push to cloud only subset of the data for further processing or storage.
 						</p>
 					</div>
 				</div>
@@ -444,15 +450,15 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 			<div class="column">
 				<div class="item-row">
 					<div class="item-text">
-						<a class="item-title" href="/docs/edge/what-is-edge/">Local alarms</a>
+						<a class="item-title" href="/docs/edge/getting-started-guides/what-is-edge/">Local alarms</a>
 						<p>
-							React instantly to critical situations on site without internet connection to cloud.
+							React instantly to critical situations on site without connectivity to cloud.
 						</p>
 					</div>
 				</div>
 				<div class="item-row">
 					<div class="item-text">
-						<a class="item-title" href="/docs/edge/what-is-edge/">Batch update and visualization</a>
+						<a class="item-title" href="/docs/edge/getting-started-guides/what-is-edge/">Batch update and visualization</a>
 						<p>
 							Update thousands of edge configurations in a single click. Monitor local events and timeseries data with a real-time dashboard.
 						</p>
@@ -466,27 +472,131 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 				<div class="column">
 					<div class="deployment-cards">
 						<div class="deployment-card-block">
-							<a href="/docs/edge/install/deb-installation/" class="deployment-logo">
+							<a href="/docs/user-guide/install/edge/deb-installation/" class="deployment-logo">
 								<img src="/images/install/platform/ubuntu.svg" title="Ubuntu" alt="Ubuntu">
 							</a>
 						</div>
 						<div class="deployment-card-block">
-							<a href="/docs/edge/install/rhel/" class="deployment-logo">
+							<a href="/docs/user-guide/install/edge/rhel/" class="deployment-logo">
 								<img width="" src="/images/install/platform/centos-redhat.svg" title="CentOS/RHEL" alt="CentOS/RHEL">
 							</a>
 						</div>
 						<div class="deployment-card-block">
-							<a href="/docs/edge/install/windows/" class="deployment-logo">
+							<a href="/docs/user-guide/install/edge/windows/" class="deployment-logo">
 								<img width="" src="/images/install/platform/windows.svg" title="Windows" alt="Windows">
 							</a>
 						</div>
 						<div class="deployment-card-block">
-							<a href="/docs/edge/install/docker-windows/" class="deployment-logo">
+							<a href="/docs/user-guide/install/edge/docker-windows/" class="deployment-logo">
 								<img src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
 							</a>
 						</div>
 						<div class="deployment-card-block">
-							<a href="/docs/edge/install/docker/" class="deployment-logo">
+							<a href="/docs/user-guide/install/edge/docker/" class="deployment-logo">
+								<img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div id="thingsboard-trendz" class="install-content" style="display: none">
+	<div class="container">
+		<div class="install-content-header row">
+			<div class="install-content-description col-lg-7">
+				<h1>Trendz Analytics</h1>
+				<div class="install-content-details">
+					<p>The ThingsBoard Trendz is an Analytics Platform that converts the IoT dataset into insights and simplifies the decision-making process. <a href="/products/trendz/">Read More</a>.</p>
+				</div>
+				<div class="row container button-container">
+					<a class="btn-blue" href="/docs/trendz/">
+						Documentation
+					</a>
+					<a class="btn-blue" href="/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go">
+						Pricing
+					</a>
+				</div>
+			</div>
+			<div class="col d-flex justify-content-start">
+				<div class="image-content">
+					<img src="/images/trendz/predict-screen.png" alt="ThingsBoard Trendz timeseries prediction" class="bg">
+					<img src="/images/trendz/dashboard-screen.png" alt="ThingsBoard Trendz Greenhouse Dashboard" class="main">
+				</div>
+			</div>
+		</div>
+		<div class="feature">
+			<div class="column">
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/trendz/prediction/">Predict failures and forecast utilization</a>
+						<p>
+							Plan and optimize operations with insights into future events and system behavior.
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/trendz/anomaly/anomaly-detection-overview/">Detection Anomalies</a>
+						<p>
+							Detect anomalies with automated tools based on built-in machine learning algorithms. Prioritise them and focus on real problems with anomaly scoring.
+						</p>
+					</div>
+				</div>
+			</div>
+			<div class="column">
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/trendz/calculated-fields/">KPI monitoring</a>
+						<p>
+							Based on the input data, calculated fields allow you to run statistical functions and create new data items by applying calculations.
+						</p>
+					</div>
+				</div>
+				<div class="item-row">
+					<div class="item-text">
+						<a class="item-title" href="/docs/trendz/getting-started/">Self-service Analytics</a>
+						<p>
+							Give users simple instrument for answering their own questions in minutes.
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="deploy">
+			<h2>Deployment options</h2>
+			<div class="wrapper">
+				<div class="column">
+					<div class="deployment-cards">
+						<div class="deployment-card-block">
+							<a href="/docs/trendz/install/cloud/" class="deployment-logo">
+								<img src="/images/install/platform/trendz-cloud.svg" title="Trendz Cloud" alt="Trendz Cloud">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/trendz/install/ubuntu/" class="deployment-logo">
+								<img src="/images/install/platform/ubuntu.svg" title="Ubuntu" alt="Ubuntu">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/trendz/install/rhel/" class="deployment-logo">
+								<img width="" src="/images/install/platform/centos-redhat.svg" title="CentOS/RHEL" alt="CentOS/RHEL">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/trendz/install/windows/" class="deployment-logo">
+								<img width="" src="/images/install/platform/windows.svg" title="Windows" alt="Windows">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="/docs/trendz/install/docker-windows/" class="deployment-logo">
+								<img src="/images/install/platform/docker-windows.svg" title="Docker (Windows)" alt="Docker (Windows)">
+							</a>
+						</div>
+						<div class="deployment-card-block">
+							<a href="https://thingsboard.io/docs/trendz/install/docker/" class="deployment-logo">
 								<img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
 							</a>
 						</div>
@@ -499,7 +609,7 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 
 {% include footer.html %}
 
-<script type="text/javascript">
+<script>
 	inViewportDefer(function() {
 		$("#install-cards main").inViewport(function(px){
 			if(px >= 80) {
@@ -520,6 +630,8 @@ description: ThingsBoard is an open-source IoT platform for device management, d
 		$("div.install-content#"+sectionId).css("display", "block");
 	}
 </script>
+
+{% include cookie-consent.html %}
 
 </body>
 </html>

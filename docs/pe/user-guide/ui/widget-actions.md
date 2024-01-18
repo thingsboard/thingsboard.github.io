@@ -102,19 +102,35 @@ onhtml-title:
 
 navigate-new-state-cards:
     0:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-pe.png
-    1:
         image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-1-pe.png
-    2:
+    1:
         image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-2-pe.png
-    3:
+    2:
         image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-3-pe.png
-    4:
+    3:
         image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-4-pe.png
-    5:
+    4:
         image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-5-pe.png
-    6:
+    5:
         image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-6-pe.png
+    6:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-7-pe.png
+
+navigate-new-state-cards2:
+    0:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-8-pe.png
+    1:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-6-pe.png
+    2:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-9-pe.png
+
+navigate-new-state-cards3:
+    0:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-10-pe.png
+    1:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-11-pe.png
+    2:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-12-pe.png
 
 update-current-dash-state:
     0:

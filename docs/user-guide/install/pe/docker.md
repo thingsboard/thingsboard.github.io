@@ -17,38 +17,18 @@ If you are looking for a cluster installation instruction, please visit [cluster
 
 ## Prerequisites
 
-- [Install Docker CE](https://docs.docker.com/engine/installation/)
-- [Install Docker Compose](https://docs.docker.com/compose/install/)
+{% include templates/install/docker-install.md %}
 
 {% include templates/install/docker-install-note.md %}
-## Step 1. Checkout all ThingsBoard PE Image
 
-Please checkout ThingsBoard PE Image from Docker Hub.
-You will need to open all [verified images](https://hub.docker.com/search?q=thingsboard&type=image&image_filter=store) and click on "Proceed to checkout" to accept ThingsBoard PE license agreement.
-
-Listing all images **mandatory** for checkout for your convenience below:
-
- - [ThingsBoard PE Standalone](https://hub.docker.com/_/thingsboard-pe)
- 
-
-![image](/images/user-guide/install/docker-pe/checkout-pe-node.png)
-
-
-Populate basic information about yourself and click "Get Content"
-
-
-![image](/images/user-guide/install/docker-pe/details.png)
- 
- 
-## Step 2. Pull ThingsBoard PE Image
-
-Make sure your have [logged in](https://docs.docker.com/engine/reference/commandline/login/) to docker hub using command line.
+## Step 1. Pull ThingsBoard PE Image
 
 ```bash
-docker pull store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}
+docker pull thingsboard/tb-pe:{{ site.release.pe_full_ver }}
 ```
+{: .copy-code}
  
-## Step 3. Obtain the license key 
+## Step 2. Obtain the license key 
 
 We assume you have already chosen your subscription plan or decided to purchase a perpetual license. 
 If not, please navigate to [pricing](/pricing/) page to select the best license option for your case and get your license. 
@@ -56,7 +36,7 @@ See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-Q
 
 Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
 
-## Step 4. Choose ThingsBoard queue service
+## Step 3. Choose ThingsBoard queue service
 
 {% include templates/install/install-queue.md %}
 
@@ -69,11 +49,11 @@ Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%te
 RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/pe-docker-queue-rabbitmq.md%br%
 Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/pe-docker-queue-confluent-cloud.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}  
+{% include content-toggle.html content-toggle-id="ubuntuThingsboardQueue" toggle-spec=contenttogglespecqueue %}
 
-Where: 
-    
-- `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the third step;    
+Where:
+
+- `PUT_YOUR_LICENSE_SECRET_HERE` - placeholder for your license secret obtained on the third step;
 - `8080:8080`            - connect local port 8080 to exposed internal HTTP port 8080;
 - `1883:1883`            - connect local port 1883 to exposed internal MQTT port 1883;
 - `7070:7070`            - connect local port 7070 to exposed internal Edge RPC port 7070;
@@ -83,12 +63,11 @@ Where:
 - `~/.mytbpe-logs:/var/log/thingsboard`   - mounts the host's dir `~/.mytbpe-logs` to ThingsBoard logs directory;
 - `mytbpe`             - friendly local name of this machine;
 - `restart: always`        - automatically start ThingsBoard in case of system reboot and restart in case of failure.;
-- `store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}`          - docker image.
+- `thingsboard/tb-pe:{{ site.release.pe_full_ver }}`          - docker image.
 
-## Step 5. Running
+## Step 4. Running
 
-Before starting Docker container run following commands to create a directory for storing data and logs and then change its owner to docker container user,
-to be able to change user, **chown** command is used, which requires sudo permissions (command will request password for a sudo access):
+{% include templates/install/docker/docker-create-folders-sudo-explained.md %}
 
 ```
 mkdir -p ~/.mytbpe-data && sudo chown -R 799:799 ~/.mytbpe-data
@@ -98,277 +77,137 @@ mkdir -p ~/.mytbpe-logs && sudo chown -R 799:799 ~/.mytbpe-logs
 
 **NOTE**: replace directory `~/.mytbpe-data` and `~/.mytbpe-logs` with directories you're planning to used in `docker-compose.yml`. 
 
-Execute the following command to up this docker compose directly:
-
-**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file. 
-
-``` 
-docker-compose up -d
-docker-compose logs -f mytbpe
-```
-{: .copy-code}
-    
-After executing this command you can open `http://{your-host-ip}:8080` in you browser (for ex. `http://localhost:8080`). You should see ThingsBoard login page.
-Use the following default credentials:
-
-- **System Administrator**: sysadmin@thingsboard.org / sysadmin
-- **Tenant Administrator**: tenant@thingsboard.org / tenant
-- **Customer User**: customer@thingsboard.org / customer
-    
-You can always change passwords for each account in account profile page.
+{% assign serviceName = "tbpe" %}
+{% include templates/install/docker/docker-compose-up-and-ui-credentials.md %}
 
 ## Detaching, stop and start commands
 
-You can close logs `Ctrl-c` - the container will keep running in the background.
-
-In case of any issues you can examine service logs for errors.
-For example to see ThingsBoard node logs execute the following command:
-
-```
-docker-compose logs -f mytbpe
-```
-{: .copy-code}
-
-To stop the container:
-
-```
-docker-compose stop
-```
-{: .copy-code}
-
-To start the container:
-
-```
-docker-compose start
-```
-{: .copy-code}
+{% assign serviceFullName = "ThingsBoard PE" %}
+{% include templates/install/docker/detaching-stop-start-commands.md %}
 
 ## Troubleshooting
 
 ### DNS issues
 
-**Note** If you observe errors related to DNS issues, for example
+{% include templates/troubleshooting/dns-issues.md %}
 
-```bash
-127.0.1.1:53: cannot unmarshal DNS message
-```
-
-You may configure your system to use Google public DNS servers. 
-See corresponding [Linux](https://developers.google.com/speed/public-dns/docs/using#linux) and [Mac OS](https://developers.google.com/speed/public-dns/docs/using#mac_os) instructions.
-
-
-### Upgrading from old PostgreSQL 9.6 to PostgreSQL 11 and ThingsBoard 3.0.1PE
-
-In this example we'll show steps to upgrade ThingsBoard from 2.4.3PE to 3.0.1PE.
-
-Make a backup of your data:
-
-```
-sudo cp -r ~/.mytbpe-data ./.mytbpe-data-2-4-3-backup
-```
-{: .copy-code}
-
-Stop currently running docker container:
-
-```
-docker stop [container_id]
-```
-
-Upgrade old postgres to the new one:
-
-```
-docker run --rm -v ~/.mytbpe-data/db/:/var/lib/postgresql/9.6/data -v ~/.mytbpe-data-temp/db/:/var/lib/postgresql/11/data --env LANG=C.UTF-8 tianon/postgres-upgrade:9.6-to-11
-sudo rm -rf ~/.mytbpe-data/db
-sudo mv ~/.mytbpe-data-temp/db ~/.mytbpe-data/db
-```
-{: .copy-code}
-
-Start the new version of TB with following command:
-
-```
-docker run -it -v ~/.mytbpe-data:/data --rm store/thingsboard/tb-pe:3.0.1PE bash
-```
-{: .copy-code}
-
-Then please follow these steps:
-
-```
-apt update
-apt install sudo
-chown -R postgres. /data/db/
-chmod 750 -R /data/db/
-sudo -i -u postgres
-cd /usr/lib/postgresql/11/
-./bin/pg_ctl -D /data/db start
-logout
-/usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=2.4.1
-exit
-```
-{: .copy-code}
-
-After this create your docker-compose.yml and insert (we used in-memory queue as an example):
-
-```yml
-version: '2.2'
-services:
-  mytbpe:
-    restart: always
-    image: "store/thingsboard/tb-pe:3.0.1PE"
-    ports:
-      - "8080:9090"
-      - "1883:1883"
-      - "7070:7070"
-      - "5683-5688:5683-5688/udp"
-    environment:
-      TB_QUEUE_TYPE: in-memory
-      TB_LICENSE_SECRET: YOUR_SECRET_KEY
-      TB_LICENSE_INSTANCE_DATA_FILE: /data/license.data
-      INTEGRATIONS_RPC_PORT: 50052
-      PGDATA: /data/db
-    volumes:
-      - ~/.mytbpe-data:/data
-      - ~/.mytbpe-logs:/var/log/thingsboard
-```
-{: .copy-code}
-
-Start ThingsBoard:
-
-```
-docker-compose up
-```
-{: .copy-code}
-
-### Upgrading from 3.0.1PE to 3.1.0PE
-
-After 3.0.1PE PostgreSQL service was separated from ThingsBoard image and upgrading to 3.1.0PE version is not trivial.
-
-First of all you need to create a dump of your database:
-
-```
-docker-compose exec mytbpe sh -c "pg_dump -U postgres thingsboard > /data/thingsboard_dump"
-```
-{: .copy-code}
-
-**Note** You have to use your valid username for connecting to PostgreSQL
-
-Then you need to stop service, create a new directory for the database and set permissions:
-
-```
-sudo cp -r ~/.mytbpe-data ./.mytbpe-data-backup
-docker-compose down
-sudo rm -rf ~/.mytbpe-data/db
-sudo chown -R 799:799 ~/.mytbpe-data
-sudo chown -R 799:799 ~/.mytbpe-logs
-```
-{: .copy-code}
-
-After this you need to update docker-compose.yml as in [Step 4](#step-4-choose-thingsboard-queue-service) but with **3.1.0PE** instead of **{{ site.release.pe_full_ver }}**:
-
-Start PostgreSQL:
-
-```
-docker-compose up postgres
-```
-{: .copy-code}
-
-Restore backup:
-
-```
-sudo cp ~/.mytbpe-data/thingsboard_dump ~/.mytbpe-data/db/thingsboard_dump
-docker-compose exec postgres sh -c "psql -U postgres thingsboard < /var/lib/postgresql/data/thingsboard_dump"
-```
-{: .copy-code}
-
-Upgrade ThingsBoard:
-
-```
-docker-compose run mytbpe upgrade-tb.sh
-```
-{: .copy-code}
-
-Start ThingsBoard:
-
-```
-docker-compose up mytbpe
-```
-{: .copy-code}
-
-### Upgrade starting from 3.1.0PE
-
-Please refer to the [troubleshooting](/docs/user-guide/install/pe/docker/#troubleshooting) section in case you are upgrading from 3.0.0 or 3.0.1.
+### Upgrade from 3.1.0PE
 
 Below is example on how to upgrade from 3.1.0 to 3.1.1
 
-1. Stop mytbpe container
+* Stop mytbpe container
 
-    ```text
-    docker-compose stop mytbpe
-    ```
-    {: .copy-code}
+```bash
+docker compose stop mytbpe
+```
+ {: .copy-code}
 
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+<br>**docker-compose stop mytbpe**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
 
-2. Create a dump of your database:
+* Create a dump of your database:
 
-    ```text
-    docker-compose exec postgres sh -c "pg_dump -U postgres thingsboard > /var/lib/postgresql/data/thingsboard_dump"
-    ```
-    {: .copy-code}
+```bash
+docker compose exec postgres sh -c "pg_dump -U postgres thingsboard > /var/lib/postgresql/data/thingsboard_dump"
+```
+{: .copy-code}
 
-3. After this you need to update docker-compose.yml as in [Step 4](#step-4-choose-thingsboard-queue-service) but with 3.1.1PE instead of 3.2.2PE:
-    
-4. Change upgradeversion version to your **current** ThingsBoard version.
-       
-    ```text
-    sudo sh -c "echo '3.1.0' > ~/.mytbpe-data/.upgradeversion"
-    ```
-    {: .copy-code}
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+<br>**docker-compose exec postgres sh -c "pg_dump -U postgres thingsboard > /var/lib/postgresql/data/thingsboard_dump"**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
 
-5. Then execute the following commands:
-    ```text
-    docker-compose run mytbpe upgrade-tb.sh
-    ```
-    {: .copy-code}
-    
-6. Start ThingsBoard:
-    
-    ```text
-    docker-compose up -d
-    ```
-    {: .copy-code}
+* After this you need to update docker-compose.yml as in [Step 3](#step-3-choose-thingsboard-queue-service) but with 3.1.1PE instead of 3.2.2PE:
 
-To upgrade ThingsBoard to latest version those steps should be done **for each intermediate version**.
+* Change upgradeversion variable to your **current** ThingsBoard version.
+
+ ```bash
+echo '3.1.0' | sudo tee ~/.mytbpe-data/.upgradeversion
+```
+{: .copy-code}
+
+* Then execute the following commands:
+
+```bash
+docker compose run mytbpe upgrade-tb.sh
+```
+{: .copy-code}
+
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+<br>**docker-compose run mytbpe upgrade-tb.sh**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
+
+* Start ThingsBoard:
+
+```bash
+docker compose up -d
+```
+{: .copy-code}
+
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+<br>**docker-compose up -d**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
+
+To upgrade ThingsBoard to the latest version those steps should be done **for each intermediate version**.
 
 Please note that upgrades are not cumulative.
-Refer to [upgrade instruction](/docs/user-guide/install/pe/upgrade-instructions/) to know the right order of upgrades (f.e. if you are upgrading from 3.1.0 to 3.2.1, you need to do that in the following order: 3.1.0 -> 3.1.1 -> 3.2.0 -> 3.2.1, e.g. current version -> next release version -> etc)
+Refer to [upgrade instruction](/docs/user-guide/install/pe/upgrade-instructions/) to know the right order of upgrades (e.g. if you are upgrading from 3.1.0 to 3.2.1, you need to do that in the following order: 3.1.0 -> 3.1.1 -> 3.2.0 -> 3.2.1, e.g. current version -> next release version -> etc)
 
 
 In case you need to **restore from the backup**:
 
-1. Stop mytbpe container
+* Stop mytbpe container
 
-    ```text
-    docker-compose stop mytbpe
-    ```
-    {: .copy-code}
+```bash
+docker compose stop mytbpe
+```
+{: .copy-code}
 
-2. Update docker-compose.yml to the initial version.
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+<br>**docker-compose stop mytbpe**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
 
-3. Execute
+* Update docker-compose.yml to the initial version.
 
-    ```text
-    docker-compose exec postgres sh -c "psql -U postgres -c 'drop database thingsboard'"
-    docker-compose exec postgres sh -c "psql -U postgres -c 'create database thingsboard'"
-    docker-compose exec postgres sh -c "psql -U postgres thingsboard < /var/lib/postgresql/data/thingsboard_dump"
-    ```
-    {: .copy-code}
+* Execute
 
+```bash
+docker compose exec postgres sh -c "psql -U postgres -c 'drop database thingsboard'"
+docker compose exec postgres sh -c "psql -U postgres -c 'create database thingsboard'"
+docker compose exec postgres sh -c "psql -U postgres thingsboard < /var/lib/postgresql/data/thingsboard_dump"
+```
+{: .copy-code}
 
-4. Start ThingsBoard:
-    
-    ```text
-    docker-compose up -d
-    ```
-    {: .copy-code}
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) here is the list of the above commands:
+<br>**docker-compose exec postgres sh -c "psql -U postgres -c 'drop database thingsboard'"**
+<br>**docker-compose exec postgres sh -c "psql -U postgres -c 'create database thingsboard'"**
+<br>**docker-compose exec postgres sh -c "psql -U postgres thingsboard < /var/lib/postgresql/data/thingsboard_dump"**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
+
+* Start ThingsBoard:
+
+```bash
+docker compose up -d
+```
+{: .copy-code}
+
+{% capture dockerComposeStandalone %}
+If you still rely on Docker Compose as docker-compose (with a hyphen) execute next command:
+<br>**docker-compose up -d**
+{% endcapture %}
+{% include templates/info-banner.md content=dockerComposeStandalone %}
 
 If you need to **copy backup to local directory** in case restoring it on another server:
 

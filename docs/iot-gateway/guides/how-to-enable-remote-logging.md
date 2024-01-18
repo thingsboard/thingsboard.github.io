@@ -14,20 +14,19 @@ For purpose of this guide, we will use following things:
 1. Locally installed instance of ThingsBoard platform (How to install you can [read here](/docs/user-guide/install/installation-options/)).
 2. ThingsBoard IoT Gateway (How to install you can [read here](/docs/iot-gateway/installation/)).
 
-# Step 1. Remote logging activation and setting the logging level
+## Step 1. Remote logging activation and setting the logging level
 
 To activate and set logging level, please follow next steps:  
    
- - Open the gateway device in the WEB UI.  
- - Go to a tab "ATTRIBUTES".  
- - Select **Shared Attributes** from an **Entity attribute scope** list.  
- - Click **+** button.  
+ - Open the gateway device details in the WEB UI.  
+ - Go to a tab "**Attributes**".  
+ - Select **Shared Attributes** from an **Entity attribute** scope list.  
+ - Click "**+**" button (add new attribute).  
  <br>
   ![](/images/gateway/add-shared-attributes-gateway.png)
- - Fill a name field as **RemoteLoggingLevel** and set a value field one of the following logging levels:
- - Fill fields with the following values: 
-     - The **name** field must be **RemoteLoggingLevel**
-     - The **value** field sets the logging level, the values can be as follows:
+ - In "Add attribute" window fill fields with the following values: 
+    - The **name** field must be **RemoteLoggingLevel**
+    - The **value** field sets the logging level, the values can be as follows:
  ```
  DEBUG
  INFO
@@ -36,37 +35,33 @@ To activate and set logging level, please follow next steps:
  CRITICAL
  NONE
 ```
-
-  ![](/images/gateway/add-remote-logging-level-attribute.png)
-
-  - Click **ADD**  
-  - **[Optional]** Launch your gateway in case it is not running.  
-  - Open the **LATEST TELEMETRY** tab of your gateway device, and you will see the new telemetry key -- **LOGS**.  
+  
+  ![](/images/gateway/add-remote-logging-level-attribute-1.png)
+ - Click **Add**
+  ![](/images/gateway/add-remote-logging-level-attribute-2.png)
+ - Launch your gateway in case it is not running **[Optional]**.  
+ - Open the **Latest telemetry** tab of your gateway device, and you will see the new telemetry key -- **LOGS**.  
   <br><br>
   ![](/images/gateway/logs-telemetry.png)
   <br>
   <br>
   
-# Step 2. Display logs on a dashboard
+## Step 2. Display logs on a dashboard
 
 It may be not convenient to review logs in the Device details window. We should show them on a dashboard.  
 So we will be able to investigate all logs, not only the latest one.  
 To do this we use following steps:
-  
-  - Check **LOGS** key and click **SHOW IN WIDGET** button:  
-  <br><br>
+
+  - Check **LOGS** key and click "**Show on widget**" button:
   ![](/images/gateway/show-logs-on-widget.png)
- 
-  - We will use the default **Cards** widget:  
-  <br><br>
+
+  - We will use the default **Cards** widget:
   ![](/images/gateway/add-logs-to-dashboard.png)
-    
-  - Choose Timeseries table Card widget and add it to the Dashboard. It can be either the new one or the existing dashboard.
-  <br><br>
+
+  - Choose **Timeseries table** Card widget and add it to the Dashboard. It can be either the new one or the existing dashboard.
   ![](/images/gateway/create-new-dashboard-for-logs.png)
-  
+
   - As a result now we can monitor the status of the gateway device from ThingsBoard environment.
-  <br><br>
   ![](/images/gateway/logs-dashboard.png) 
 
 ## Next steps

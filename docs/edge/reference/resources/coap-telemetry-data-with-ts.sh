@@ -1,0 +1,1 @@
+cat telemetry-data-with-ts.json | coap post coap://$THINGSBOARD_EDGE_HOST_NAME/api/v1/$ACCESS_TOKEN/telemetry

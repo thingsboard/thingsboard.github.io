@@ -27,7 +27,7 @@ sudo pip3 install thingsboard-gateway
  - Downloading configs example:  
 
 ```bash
-wget https://github.com/thingsboard/thingsboard-gateway/releases/download/2.0/configs.tar.gz
+wget https://github.com/thingsboard/thingsboard-gateway/releases/latest/download/configs.tar.gz
 ```
 {: .copy-code}
 
@@ -50,7 +50,29 @@ sudo tar -xvzf configs.tar.gz -C /etc/thingsboard-gateway
 {: .copy-code}
 
 
-**4. Check installation you can with command** (You will get errors about connection, because you don't configure gateway for yourself. *For configuration please use [Configuration guide](/docs/iot-gateway/configuration/)):*
+**4. Set permission to the folders:**
+
+- For logs folder:
+```bash
+sudo chown YOUR_USER:YOUR_USER -R /var/log/thingsboard-gateway
+```
+{: .copy-code}
+
+- For configs folder:
+```bash
+sudo chown YOUR_USER:YOUR_USER -R /etc/thingsboard-gateway
+```
+{: .copy-code}
+
+- For tmp folder:
+```bash
+sudo chown YOUR_USER:YOUR_USER /tmp
+```
+{: .copy-code}
+
+Where `YOUR_USER` is a user who will run the gateway.
+
+**5. Check installation you can with command** (You will get errors about connection, because you don't configure gateway for yourself. *For configuration please use [Configuration guide](/docs/iot-gateway/configuration/)):*
 
 ```bash
 thingsboard-gateway

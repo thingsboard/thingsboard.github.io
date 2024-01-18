@@ -1,14 +1,14 @@
 To connect "In-vehicle monitoring system" to the ThingsBoard Edge you need to get device credentials first.
 ThingsBoard supports different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
 
-Please open ThingsBoard **Edge** UI using the URL: **http://EDGE_URL**.
+Please open ThingsBoard **Edge** UI using the URL: **EDGE_URL**.
 
 {% include images-gallery.html imageCollection="copyAccessTokenDevice" showListImageTitles="true" %}
 
 We will use simple commands to generate random telemetry for the device **In-vehicle monitoring system** and publish to the ThingsBoard **Edge** by the MQTT protocol.
 
 Please download following script to your local folder:
-- [**mqtt-generator.py**](/docs/edge/use-cases/resources/data-filtering-traffic-reduce/mqtt_generator.py)
+- [**mqtt-generator.py**](/docs/{{docsPrefix}}use-cases/resources/data-filtering-traffic-reduce/mqtt-generator.py)
 
 Before running the scripts, please modify **mqtt-generator.py** accordingly:
 
@@ -33,6 +33,6 @@ Open ThingsBoard **Edge** UI and verify that device successfully receives teleme
 
 {% include images-gallery.html imageCollection="verifyDeviceTelemetryEdge" showListImageTitles="true" %}
 
-Open ThingsBoard **{{currentThingsBoardVersion}}** UI and verify that edge successfully pushes data to the cloud:
+Open **{{appPrefix}}** UI and verify that edge successfully pushes data to the cloud:
 
 {% include images-gallery.html imageCollection="verifyDeviceTelemetry" showListImageTitles="true" %}

@@ -1,0 +1,50 @@
+{% assign images = "" | split: "," %}
+{% assign imageTitles = "" | split: "," %}
+
+{% if page[include.imageCollection].first %}
+    {% for image in page[include.imageCollection] %}
+        {% assign imageTitles = imageTitles | push: image[1].title %}
+        {% assign images = images | push: image[1].image %}
+    {% endfor %}
+{% else %}
+    {% assign imagePathTitleStringArray = include.imageCollection | strip | replace: "  ", "" | replace: "===", "№" | split: "№" %}
+    {% for imagePathTitleString in imagePathTitleStringArray %}
+        {% if imagePathTitleString.size > 0 %}
+            {% assign parameterArray = imagePathTitleString | replace: "title: ", "№" | strip | split: "№" %}
+            {% assign imagePath = parameterArray[0] | strip | remove: "image: " | remove: ',' %}
+            {% if parameterArray.size > 1 %}
+                {% assign imageTitles = imageTitles | push: parameterArray[1] %}
+            {% endif %}
+            {% assign images = images | push: imagePath %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+{% if include.showListImageTitles %}
+<ul>
+    {% for title in imageTitles %}
+        <li> {{ title | markdownify }} </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<div itemscope itemtype="https://schema.org/ImageGallery" class="images-gallery"
+     style="justify-content: {{ include.align | default: 'start' }};">
+    {% for image in images %}
+        <figure itemprop="associatedMedia" itemscope itemtype="https://schema.org/ImageObject"
+                style="max-width: min({{ include.max-width | default: '225px' }}, 100%);
+                        max-height: min({{ include.max-height | default: '225px' }}, 100%);"
+        {% if images.size > 1 %} class="list-item"{% endif %}>
+            {% assign modifiedString = imageTitles[forloop.index0] | replace: "'", "&#39;" %}
+            <a href="{{ image }}" itemprop="contentUrl">
+                {% if include.preview == "false" %}
+                <img src="{{ image }}" itemprop="thumbnail" alt='{{ modifiedString | remove: "*" }}'>
+                {% else %}
+                <img src="{{ image | split: "" | reverse | join: "" | replace_first: ".", ".weiverp-" | split: "" | reverse | join: "" }}" itemprop="thumbnail" alt='{{modifiedString | remove: "*"}}'>
+                {% endif %}
+            </a>
+            <figcaption itemprop="caption description">{{ modifiedString | markdownify }}</figcaption>
+        </figure>
+    {% endfor %}
+</div>
+

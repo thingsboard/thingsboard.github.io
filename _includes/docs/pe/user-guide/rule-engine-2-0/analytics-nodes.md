@@ -5,7 +5,7 @@ Analytics Nodes that are specific to ThingsBoard PE. Used for analysis of stream
 * TOC
 {:toc}
 
-# Aggregate Latest Node
+## Aggregate Latest Node
 
 <table  style="width:250px;">
    <thead>
@@ -71,9 +71,13 @@ parent entity itself as originator and json body containing target telemetry wit
 In case when aggregation of some child attributes will fail node will generate failure message
 with failure reason and parent entity as originator. Failure message is forwarded via **Failure** chain.
 
-<br/>
+**Since TB Version 3.3.3** you can select the queue name:
 
-# Aggregate Stream Node
+![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
+
+<br>
+
+## Aggregate Stream Node
 
 <table  style="width:250px;">
    <thead>
@@ -110,7 +114,11 @@ specifying "Buildings" entity group.
 
 ![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-aggregate-stream-config-2.png)
 
-# Alarms Count Node
+**Since TB Version 3.3.3** you can select the queue name:
+
+![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
+
+## Alarms Count Node
 
 <table  style="width:250px;">
    <thead>
@@ -151,9 +159,13 @@ and json body containing target telemetry with alarms count value.
 In case when alarms count for some entity will fail node will generate failure message
 with failure reason and entity as originator. Failure message is forwarded via **Failure** chain.
 
-<br/>
+**Since TB Version 3.3.3** you can select the queue name:
 
-# Alarms Count Node (deprecated)
+![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
+
+<br>
+
+## Alarms Count Node (deprecated)
 
 <table  style="width:250px;">
    <thead>
@@ -203,4 +215,8 @@ and json body containing target telemetry with alarms count value.
 In case when alarms count for some entity will fail node will generate failure message
 with failure reason and entity as originator. Failure message is forwarded via **Failure** chain.
 
-<br/>
+**Since TB Version 3.3.3** you can select the queue name:
+
+![image](/images/user-guide/rule-engine-2-0/pe/nodes/analytics-queue-name.png)
+
+<br>

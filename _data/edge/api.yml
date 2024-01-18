@@ -1,0 +1,22 @@
+bigheader: "ThingsBoard API reference"
+abstract: "Device connectivity and server-side APIs."
+toc:
+- title: ThingsBoard API reference
+  path: /docs/edge/api/
+- title: Device Connectivity Protocols
+  path: /docs/edge/reference/protocols/
+- title: Device Connectivity APIs
+  section:
+  - title: MQTT Device API
+    path: /docs/edge/reference/mqtt-api/
+  - title: MQTT Gateway API Reference
+    path: /docs/edge/reference/gateway-mqtt-api/
+  - title: CoAP Device API
+    path: /docs/edge/reference/coap-api/
+  - title: HTTP Device API
+    path: /docs/edge/reference/http-api/
+  - title: LWM2M Device API
+    path: /docs/edge/reference/lwm2m-api/
+  - title: SNMP Transport API
+    path: /docs/edge/reference/snmp-api/
+    new: true

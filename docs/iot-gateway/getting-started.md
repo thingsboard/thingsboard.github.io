@@ -1,121 +1,183 @@
 ---
 layout: docwithnav-gw
 title: Getting started with ThingsBoard IoT Gateway
-description: Write your first IoT project using ThingsBoard IoT Gateway
+description: Configure MQTT, OPC-UA, and Modbus connectors to establish connections with their respective demo servers in the Docker container and retrieve data.
 
 ---
 
 * TOC
 {:toc}
 
-This guide covers initial IoT Gateway installation and configuration.
-We will connect IoT Gateway to ThingsBoard server and visualize some basic gateway statistics: the amount of devices connected and messages processed.
-We will also configure MQTT and OPC-UA extension in order to subscribe to device data feed from external devices or applications.  
+The ThingsBoard IoT Gateway is an open-source solution, designed to serve as a bridge between IoT devices connected to 
+legacy and third-party systems with ThingsBoard.
 
+This guide covers initial IoT Gateway installation and configuration, we will do the following things:
+- Create a new gateway device using [ThingsBoard IoT Gateways dashboard](#prerequisites);
+- Launch the gateway using Docker command;
+- Configure different connector types ([MQTT](/docs/iot-gateway/config/mqtt/), [OPC-UA](/docs/iot-gateway/config/opc-ua/), [Modbus](/docs/iot-gateway/config/modbus/)) in order to connect to a local demo servers and read data from them;
+- Check received device data on ThingsBoard.
 
-### Prerequisites
+## Prerequisites
 
-If you don't have access to a running ThingsBoard instance, use either [**Live Demo**](https://thingsboard.cloud/signup) or
-[**Installation Guide**](/docs/user-guide/install/installation-options/) 
-to fix this. 
+- Before initiating the Gateway setup, ensure that the ThingsBoard server is up and running. The simplest approach is to utilize the [Live Demo](https://demo.thingsboard.io) or [ThingsBoard Cloud](https://thingsboard.cloud). Alternatively, you can install ThingsBoard manually by following the steps outlined in the [Installation Guide](/docs/user-guide/install/installation-options/).
+- Before moving forward, ensure Docker is installed and properly configured on your machine. If you haven't installed Docker yet, you can download it from the [official Docker website](https://docs.docker.com/engine/install/) and follow their installation guide for your specific operating system. 
+- If you don't have a dashboard installed, you can download Gateway widget bundle [JSON file here](/docs/iot-gateway/resources/thingsboard-gateway-widget-bundle.json){:target="_blank" download="thingsboard-gateway-widget-bundle.json"} and ThingsBoard IoT Gateways dashboard [JSON file here](/docs/iot-gateway/resources/thingsboard-gateways-dashboard.json){:target="_blank" download="thingsboard-gateways-dashboard.json"}. Use this [guide](#optional-import-gateway-widgets-bundle-and-dashboard) to import gateway widgets bundle and dashboard.
 
+## Step 1. Create new gateway device on ThingsBoard
 
-## Step 1: Provision the gateway
+First, add a gateway device to your ThingsBoard instance by following these steps:
 
-In order to connect your IoT gateway to ThingsBoard server, you need to provision gateway credentials first. We will use access token credentials as the most simple one.
-See [device authentication options](/docs/user-guide/device-credentials/) for more details.
+{% assign createNewGatewayDevice = '
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-1-ce.png,
+        title: Go to "**Dashboards**" tab and open "**ThingsBoard IoT Gateways**" dashboard.
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-2-ce.png,
+        title: Click the "**+**" button, enter the gateway device name (e.g., "My Gateway"), and select the device profile.
+'
+%}
 
-Login as tenant administrator. Use [default credentials](/docs/samples/demo-account/#demo-tenant) in case of local ThingsBoard server.
-Open **Devices** and click on big red "+" button in the bottom right corner.
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=createNewGatewayDevice %} 
 
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/device-page.png)
-{: refdef} 
+{% capture info %}
+<div>
+  <p>
+    <span style="color:black">If you've previously configured the gateway, create a backup, as the new remote configuration will overwrite existing settings files.  
+    <br>For those who used a gateway version earlier than 3.4, the gateway will automatically generate a new configuration file in JSON format.</span>
+  </p>
+</div>
+{% endcapture %}
+{% include templates/info-banner.md content=info %}
 
-Populate your gateway name and select "Is gateway" checkbox.
+To launch the gateway, use the following steps:
 
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/device-add.png)
-{: refdef} 
+{% assign remoteCreateGatewayDocker = '
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-3-ce.png,
+        title: On the gateway dashboard, click on **"Launch command"** button in the top right corner.
+    ===
+        image: /images/gateway/dashboard/gateway-getting-started-4-ce.png,
+        title: Click to download docker-compose.yml file to your PC, copy command and execute it in your terminal.
+'
+%}
 
-**NOTE:** Gateway and device names should be unique in the scope of a tenant.
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=remoteCreateGatewayDocker %}
 
-Open your new device card and click on "Copy Access Token" button. 
-Paste the token to a safe place. We will use it for ThingsBoard configuration in the next steps.
+After running gateway docker image, you can see the following logs in your terminal:
 
-{:refdef: style="text-align: center;"}
-![image](/images/gateway/device-token.png)
-{: refdef} 
+![](/images/gateway/dashboard/launch-gateway-docker.png)
 
-## Step 2: Install the gateway
+## Step 2. Enable remote logging
 
-Browse available gateway [**installation options**](/docs/iot-gateway/installation/) and choose the most suitable installation guide.
-Follow steps in chosen gateway installation guide. The Gateway configuration steps are covered below.
+To view gateway and connector logs on the dashboard, you need to enable remote logging. For this purpose, 
+use the following steps:
 
-## Step 3: Gateway configuration
+{% assign enableRemoteLogging = '
+    ===
+        image: /images/gateway/dashboard/general-configuration-1-ce.png,
+        title: On the gateway dashboard, click on **"General configuration"** button on the right panel.
+    ===
+        image: /images/gateway/dashboard/general-configuration-2-ce.png,
+        title: Navigate to the "**Logs**" tab. Enable the "**Remote logs**" toggle. Select "**DEBUG**" in the "**Log level**" drop-down menu.
+'
+%}
 
-Navigate to the gateway configuration folder and edit **tb-gateway.yaml** file.
-```bash
-/etc/thingsboard-gateway/config/tb_gateway.yaml
-```
-  
-Change **host** and **port** properties in the section *"thingsboard"* to your ThingsBoard host.
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=enableRemoteLogging %}
 
-Change **accessToken** property in the section *"security"* to your access token that was copied during step 3.
+## Step 3. Add new connector
 
-You gateway configuration should look similar to this file:
+By choosing the type of connector, you determine the specific method of connection you will use to ensure the 
+interaction of your gateway with other systems or devices.
 
-```yaml
+To see how the connector works, you can choose one of the following connectors:
 
-thingsboard:
-  host: thingsboard.cloud
-  port: 1883
-  security:
-    accessToken: FUH2Fonov6eajSHi0Zyw
-storage:
-  type: memory
-  read_records_count: 10
-  max_records_count: 1000
-connectors:
+{% capture connectorscreationspec %}
+MQTT<small></small>%,%mqtt%,%templates/iot-gateway/remote-creating-connector-mqtt.md%br%
+Modbus<small></small>%,%modbus%,%templates/iot-gateway/remote-creating-connector-modbus.md%br%
+OPC-UA<small></small>%,%opcua%,%templates/iot-gateway/remote-creating-connector-opcua.md{% endcapture %}
 
-  -
-    name: MQTT Broker Connector
-    type: mqtt
-    configuration: mqtt.json
+{% include content-toggle.html content-toggle-id="connectorsCreation" toggle-spec=connectorscreationspec %}
 
-```
+## Step 4. Check device data
 
-**You can read more in [this article](/docs/iot-gateway/configuration/) about configuration files and their properties.**  
+To review the data uploaded from your gateway, use the following steps:
 
-## Step 4: Restart gateway to accept new configuration
+{% assign checkDeviceData = '
+    ===
+        image: /images/gateway/dashboard/review-gateway-statistics-1-ce.png,
+        title: Navigate to the **Devices** page and click on the created device. This will open the device details page. From there, switch to the **"Attributes"** tab to view the attributes that were configured in the connector.
+    ===
+        image: /images/gateway/dashboard/review-gateway-statistics-2-ce.png,
+        title: To view real-time telemetry data from the device, navigate to the "**Latest Telemetry**" tab. Here, you will find the telemetry data being sent by the device, including metrics like "**humidity**" and "**temperature**". This tab provides real-time device telemetry updates.
+'
+%}
 
-This step depends on chosen type of installation. If you install thingsboard-gateway as daemon - you should use following command:  
-```bash
-systemctl restart thingsboard-gateway.service
-```
-In other case, if you have installed the gateway as python module - you should just rerun gateway process.   
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=checkDeviceData %}
 
-## Step 5: Review gateway statistics
+## Configure other connectors
 
-Open the web UI of your ThingsBoard server and review statistics that is uploaded from your thingsboard gateway.  
-Login as Tenant Administrator and open **Devices** page. Click on the gateway device card.   
-Open "Latest Telemetry" tab and review following statistics: "**SummaryReceived**", "**SummarySent**" and parameters that provide information about every connector.  
-All values should be set to "0".  
-
-## Step 6: Add connectors to the main configuration file 
- 
-For connection to some devices we use connectors, they are connect to different devices and servers to collect data.  
-To provide for gateway information about connectors that you need - you should write a configuration to section "connectors" in tb_gateway.yaml (At least one connector needed for correct work).  
-For correct configuration please use [this article](/docs/iot-gateway/configuration/#section-connectors).  
- 
-## Step 7: Configure connectors
-
-After successful installation you should configure the connectors to connect to different devices, please use one (or more) following articles to configure connector files:  
+After the successful installation and configuration of your first connector, you can configure other connectors to 
+connect to different devices. You can find more information about connectors in the following articles:  
  - [**MQTT** connector](/docs/iot-gateway/config/mqtt/)
  - [**OPC-UA** connector](/docs/iot-gateway/config/opc-ua/)
  - [**Modbus** connector](/docs/iot-gateway/config/modbus/)
  - [**BLE** connector](/docs/iot-gateway/config/ble/)
  - [**Request** connector](/docs/iot-gateway/config/request/)
+ - [**REST** connector](/docs/iot-gateway/config/rest/)
  - [**CAN** connector](/docs/iot-gateway/config/can/)
  - [**FTP** connector](/docs/iot-gateway/config/ftp/)
+ - [**Socket** connector](/docs/iot-gateway/config/socket/)
+ - [**XMPP** connector](/docs/iot-gateway/config/xmpp/)
+ - [**BACnet** connector](/docs/iot-gateway/config/bacnet/)
+ - [**OCPP** connector](/docs/iot-gateway/config/ocpp/)
+ - [**ODBC** connector](/docs/iot-gateway/config/odbc/)
+ - [**SNMP** connector](/docs/iot-gateway/config/snmp/)
  - [**Custom** connector](/docs/iot-gateway/custom/)
+
+More about *ThingsBoard IoT Gateways* Dashboard, you can [read here](/docs/iot-gateway/guides/how-to-enable-remote-configuration/).
+
+## (Optional) Import gateway widgets bundle and dashboard
+
+First, we have to import gateway widgets bundle, for this purpose, use the following steps:
+
+{% assign importWidgetsBundle = '
+    ===
+        image: /images/gateway/dashboard/wl-import-bundle-gateway-1-ce.png,
+        title: Go to the "**Widgets Library**" page, and click the "**+**" button in the upper right corner of the "**Widgets Bundles**" page. Select "**Import widgets bundle**" from the drop-down menu.
+    ===
+        image: /images/gateway/dashboard/wl-import-bundle-gateway-2-ce.png,
+        title: You will be prompted to upload the downloaded gateway widgets bundle JSON file in the pop-up. Drag and drop a file from your computer, then click "**Import**" to add a widget bundle to the library.
+    ===
+        image: /images/gateway/dashboard/wl-import-bundle-gateway-3-ce.png,
+        title: The widgets bundle is imported.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=importWidgetsBundle %} 
+
+To import ThingsBoard IoT Gateways dashboard, follow these steps:
+
+{% assign importGatewayDashboard = '
+    ===
+        image: /images/gateway/dashboard/import-dashboard-gateway-1-ce.png,
+        title: Go to the "**Dashboards**" page and click on the "**+**" button in the upper right corner of the page and select "**Import dashboard**" from the drop-down menu;
+    ===
+        image: /images/gateway/dashboard/import-dashboard-gateway-2-ce.png,
+        title: In the import dashboard window, upload the downloaded gateway dashboard JSON file and click "**Import**".
+    ===
+        image: /images/gateway/dashboard/import-dashboard-gateway-3-ce.png,
+        title: Dashboard imported. Click on the row with the dashboard name to open it.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=importGatewayDashboard %} 
+
+## Next steps
+
+Explore guides related to main ThingsBoard features:
+
+ - [Data Visualization](/docs/user-guide/visualization/) - how to visualize collected data.
+ - [Device attributes](/docs/user-guide/attributes/) - how to use device attributes.
+ - [Telemetry data collection](/docs/user-guide/telemetry/) - how to collect telemetry data.
+ - [Using RPC capabilities](/docs/user-guide/rpc/) - how to send commands to/from devices.
+ - [Rule Engine](/docs/user-guide/rule-engine/) - how to use rule engine to analyze data from devices.

@@ -102,19 +102,35 @@ onhtml-title:
 
 navigate-new-state-cards:
     0:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-pe.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-1-paas.png
     1:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-1-pe.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-2-paas.png
     2:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-2-pe.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-3-paas.png
     3:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-3-pe.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-4-paas.png
     4:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-4-pe.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-5-paas.png
     5:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-5-pe.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-6-paas.png
     6:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-6-pe.png
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-7-paas.png
+
+navigate-new-state-cards2:
+    0:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-8-paas.png
+    1:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-6-paas.png
+    2:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-9-paas.png
+
+navigate-new-state-cards3:
+    0:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-10-paas.png
+    1:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-11-paas.png
+    2:
+        image: /images/user-guide/ui/widgets/actions/entity-cards/navigate-new-state-entity-12-paas.png
 
 update-current-dash-state:
     0:

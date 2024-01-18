@@ -1,10 +1,5 @@
 #docsContent
 	#content
-		h1.mainTitle, h2
-			position: relative
-			padding: 0
-			&:before
-				content: none
 		.mainTitle
 			&.agriculture, &.industry-4, &.smart-buildings, &.smart-city, &.smart-energy, &.telecom
 				margin: 0
@@ -59,7 +54,11 @@
 			justify-content: space-between
 			&:last-child
 				border-bottom: none
-
+			h2
+				position: relative
+				padding: 0
+				&:before
+					content: none
 			.customer-company
 				width: 100%
 				position: relative

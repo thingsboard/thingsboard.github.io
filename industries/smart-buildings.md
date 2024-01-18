@@ -28,17 +28,20 @@ description:
         <li>
             <a href="/industries/industry40/">Industry 4.0</a>
         </li>
+        <li>
+            <a href="/industries/warehouse-monitoring/">Warehouse monitoring</a>
+        </li>
     </ul>
 </nav>
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/sensolyze.png">
+        <img class="customer-logo" src="/images/customers/sensolyze.png" alt="Sensolyze">
         <a class="outlink" href="https://www.sensolyze.com/" alt="Sensolyze GmbH">Sensolyze GmbH</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/sensolyze-person.png"/>
+            <img class="person-logo" src="/images/customers/sensolyze-person.png" alt="Andreas Brandl">
             <div class="person-title">
                 <p class="person-name"> Andreas Brandl </p>
                 <p class="person-position"> Founder & CEO </p>
@@ -63,12 +66,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/mdeg.png">
-        <a class="outlink" href="https://www.mdeg-digital.com/" alt="mdeg GmbH">mdeg GmbH</a>
+        <img class="customer-logo" src="/images/customers/mdeg.png" alt="mdeg GmbH">
+        <a class="outlink" href="https://www.mdeg-digital.com/">mdeg GmbH</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/mdeg-cbeck.jpg"/>
+            <img class="person-logo" src="/images/customers/mdeg-cbeck.jpg" alt="Christoph Beck">
             <div class="person-title">
                 <p class="person-name"> Christoph Beck </p>
                 <p class="person-position"> Founder and CEO </p>
@@ -88,8 +91,8 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/e2c.png">
-        <a class="outlink" href="http://www.e2cbms.com/" alt="Environmental Energy Controls">Environmental Energy Controls</a>
+        <img class="customer-logo" src="/images/customers/e2c.png" alt="Environmental Energy Controls">
+        <a class="outlink" href="https://www.e2cbms.com/" alt="Environmental Energy Controls">Environmental Energy Controls</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
@@ -121,12 +124,12 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/beaconzone.png">
-        <a class="outlink" href="https://www.beaconzone.co.uk/" alt="BeaconZone">BeaconZone</a>
+        <img class="customer-logo" src="/images/customers/beaconzone.png" alt="BeaconZone">
+        <a class="outlink" href="https://www.beaconzone.co.uk/">BeaconZone</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/beaconzone-person.jpg"/>
+            <img class="person-logo" src="/images/customers/beaconzone-person.jpg" alt="BeaconZone">
             <div class="person-title">
                 <p class="person-name"> Simon Judge </p>
                 <p class="person-position"> Co-founder at BeaconZone </p>
@@ -143,7 +146,7 @@ description:
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/conbee.svg">
+        <img class="customer-logo" src="/images/customers/conbee.svg" alt="Michael Nickolai">
     </div>
     <div class="customer-content">
         <div class="person-container">
@@ -160,18 +163,18 @@ description:
         </p>
         <p>
             ThingsBoard is the platform which fulfilled our requirements and It is easy to adapt, flexible and have the ability to present data on different widgets in an attractive way with easy access. In addition, we are thankful to the ThingsBoard team for their tremendous service and we are looking forward to making more IOT solutions with ThingsBoard in future.
-        </p> 
+        </p>
     </div>
 </div>
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/oneserve.svg">
-        <a class="outlink" href="https://www.oneserve.co.uk/" alt="Oneserve Limited">Oneserve Limited</a>
+        <img class="customer-logo" src="/images/customers/oneserve.svg" alt="Oneserve Limited">
+        <a class="outlink" href="https://www.oneserve.co.uk/">Oneserve Limited</a>
     </div>
     <div class="customer-content">
         <div class="person-container">
-            <img class="person-logo" src="/images/customers/oneserve-person.png"/>
+            <img class="person-logo" src="/images/customers/oneserve-person.png" alt="Mark Hunt">
             <div class="person-title">
                 <p class="person-name"> Mark Hunt </p>
                 <p class="person-position"> CTO </p>
@@ -182,20 +185,20 @@ description:
         </h2>
         <p>
             We operate in highly competitive markets; from housing management to utilities and manufacturing sectors. Technology innovation is at the heart of our product strategy and service delivery approach. As we grow and extend our field service management solution, we recognised that we needed a flexible IoT platform that enables our delivery needs with lower complexity and cost without sacrificing functionality and extensibility. 
-        </p> 
+        </p>
         <p>
             The ThingsBoard platform has, within a short space of time, easily fulfilled our requirements. It is easy to adapt, has highly flexible implementation options and includes a broad suite of integration and visualization capabilities out of the box.
-        </p> 
+        </p>
         <p>
             The platform is continually being extended and improved, with the ThingsBoard Team both accessible and supportive to all of our needs. We now have a robust industrial platform that unlocks our IoT service goals.
-        </p> 
+        </p>
     </div>
 </div>
 
 <div class="customer-block">
     <div class="customer-company">
-        <img class="customer-logo" src="/images/customers/tpssystems.png">
-        <a class="outlink" href="https://tpsystems.it/" alt="TOURISTIC PLATFORM SYSTEMS SRL">TOURISTIC PLATFORM SYSTEMS SRL</a>
+        <img class="customer-logo" src="/images/customers/tpssystems.png" alt="TOURISTIC PLATFORM SYSTEMS SRL">
+        <a class="outlink" href="https://tpsystems.it/">TOURISTIC PLATFORM SYSTEMS SRL</a>
     </div>
     <div class="customer-content">
         <div class="person-container">

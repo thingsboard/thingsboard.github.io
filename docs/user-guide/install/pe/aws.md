@@ -19,7 +19,7 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                         You may deploy ThingsBoard IoT Platform using different tools and platforms
                     </p>
                 </div>
-            </div>            
+            </div>
             <div class="deployment-container one-line-deployment-container">
                 <div class="deployment-div">
                     <div class="container">
@@ -36,7 +36,7 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                                        </a>
                                    </div>
                                     <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/cluster/aws-eks-cluster-setup/">
+                                        <a href="/docs/user-guide/install/pe/cluster/aws-eks-setup/">
                                             <span>
                                                 <div class="deployment-logo">
                                                     <img width="" src="/images/install/cloud/eks.svg" title="Cluster setup with Kubernetes on AWS EKS" alt="AWS EKS K8S cluster">
@@ -44,20 +44,11 @@ description: ThingsBoard IoT platform  AWS cluster setup guide
                                             </span>
                                         </a>
                                     </div>
-                                    <div class="deployment-card-block">
-                                        <a href="/docs/user-guide/install/pe/cluster/aws-cluster-setup/">
-                                            <span>
-                                                <div class="deployment-logo">
-                                                    <img width="" src="/images/install/cloud/kubeone.png" title="Cluster setup with Kubernetes and KubeOne on AWS" alt="AWS K8S cluster">
-                                                 </div>
-                                            </span>
-                                        </a>
-                                    </div>
-                              </div>                     
-                            </div>                        
+                              </div>
+                            </div>
                         </div>
                     </div>
-                </div>    
+                </div>
             </div>
           </div>
        </div>

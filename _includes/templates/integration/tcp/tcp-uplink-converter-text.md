@@ -28,8 +28,9 @@ function decodeToString(payload) {
 }
 
 return result;
+```
+{: .copy-code}
 
-``` 
 
 The purpose of the decoder function is to parse the incoming data and metadata to a format that ThingsBoard can consume. 
 **deviceName** and **deviceType** are required, while **attributes** and **telemetry** are optional.

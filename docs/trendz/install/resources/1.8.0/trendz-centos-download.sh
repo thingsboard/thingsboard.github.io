@@ -1,1 +1,1 @@
-wget https://dist.thingsboard.io/trendz-1.8.0.rpm
+wget https://dist.thingsboard.io/trendz-1.8.2.rpm

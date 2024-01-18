@@ -15,7 +15,7 @@ $install-color: #506dad
           text-align: center
           padding-top: 0
           padding-bottom: 0
-          h1
+          h1, span.heading
             padding-right: 0
             color: #000
             border: none
@@ -93,6 +93,26 @@ $install-color: #506dad
                         background-size: contain
                         opacity: 0.5
                         background-color: #fff
+                  &.text
+                    a
+                      height: 200px
+                      width: 240px
+                      text-align: center
+                      .deployment-logo
+                        display: table-row
+                        h5
+                          margin-top: unset
+                          color: #212529
+                          display: flex
+                          padding-left: 20px
+                          padding-right: 20px
+                        img
+                          height: 120px
+                          width: 152px
+                          padding: 20px
+                      &:hover
+                        .deployment-logo h5
+                          color: #2a7dec
         .one-line-deployment-container
           padding-top: 0
         .install-navigation

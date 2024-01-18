@@ -85,7 +85,6 @@ JSEditor for calculated fields supports following aggregation functions:
 * count()
 * latest()
 * uniq()
-* delta() 
 
 Each function allows only 1 argument - reference to the filed on format EntityName.fieldName. For example:
 
@@ -95,10 +94,22 @@ sum(Machine.temperature)
 
 Aggregation function applied to a grouped dataset. Find more details about [Grouping and Aggregation in this article](/docs/trendz/data-grouping-aggregation/)
 
-## Language
+## Save and reuse calculated fields
 
-Calculated Fields use Javascript as a language for writing transformation function. Inner Engine provide 100% support
-of ECMAScript 5.1
+Once the calculated field is created you can save it for future reuse by pressing **Save Field** button under function editor. 
+Current field label would be used as a field name. If a field with such name already exists - the system will overwrite it.
+
+Saved calculated field is only a template. Once it is dropped from the left navigation tree into some axis, a new 
+calculated field created and this field would not be connected with the original template.
+It means that if you will update field configuration in the future, it will only update a template, 
+but real calculated fields that are added to View configuration are not affected.
+
+## Language and script engine
+
+You can write calculated fields using Javascript or Python. By default, Javascript engine is selected.
+
+* **Javascript** - Calculated Fields use Javascript as a language for writing transformation function. Inner Engine provide 100% support of ECMAScript 5.1
+* **Python** - Python script engine support python 3.8 and provide full access to python standard libraries. Additionally, you can use following libraries: flask, numpy, statsmodels, pandas, scikit-learn, prophet, seaborn, pmdarima.
 
 ## Next Steps
 

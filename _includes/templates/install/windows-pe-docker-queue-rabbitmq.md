@@ -11,11 +11,11 @@ docker-compose.yml
 Add the following line to the yml file. Don't forget to replace "YOUR_USERNAME" and "YOUR_PASSWORD" with your **real user credentials**, "localhost" and "5672" with your **real RabbitMQ host and port**, and "PUT_YOUR_LICENSE_SECRET_HERE" with your **license secret obtained on the first step**:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbpe:
     restart: always
-    image: "store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}"
+    image: "thingsboard/tb-pe:{{ site.release.pe_full_ver }}"
     ports:
       - "8080:8080"
       - "1883:1883"
@@ -35,7 +35,7 @@ services:
       - mytbpe-logs:/var/log/thingsboard
   postgres:
     restart: always
-    image: "postgres:12"
+    image: "postgres:15"
     ports:
     - "5432"
     environment:

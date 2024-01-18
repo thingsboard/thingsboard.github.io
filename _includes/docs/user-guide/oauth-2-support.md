@@ -56,7 +56,7 @@ http://localhost:8080/login/oauth2/code/
 
 #### Configuration of ThingsBoard
 
-Go to your ThingsBoard as a System Administrator (sysadmin@thingsboard.org / sysadmin). Check the General Settings -> Base URL should not contain "/" at the end (f.e. "`http://127.0.0.1:8080`" instead of "`https://127.0.0.1:8080/`"). Then in the **Home** section, find the "OAuth2" icon and click on it.
+Go to your ThingsBoard as a System Administrator (sysadmin@thingsboard.org / sysadmin). Check the General Settings -> Base URL should not contain "/" at the end (e.g. "`http://127.0.0.1:8080`" instead of "`https://127.0.0.1:8080/`"). Then in the **Home** section, find the "OAuth2" icon and click on it.
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/5-home-oauth2.png&#41;)
 {% include images-gallery.html imageCollection="step5" preview="false" max-width="100%" %}
@@ -114,7 +114,7 @@ If you log in as the System Administrator, you will see that the Tenant name is 
 Now let's add one more provider to our list - [Auth0](https://auth0.com/).
 This time we are going to create customers for our users inside a single domain tenant.
 
-To use the Auth0 authentication platform for Login, let's create a new application of the 'Regular Web App' type following this [link](https://auth0.com/docs/{{docsPrefix}}quickstarts/).
+To use the Auth0 authentication platform for Login, let's create a new application of the 'Regular Web App' type following this [link](https://auth0.com/docs/quickstarts/).
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/14-auth0-regular-web-app.png&#41;)
 {% include images-gallery.html imageCollection="step14" preview="false" max-width="100%" %}
@@ -189,15 +189,15 @@ If we are logged as System Administrator, you will see that Tenant name is our *
 
 We have completed our sample and now your users are not required to create accounts inside ThingsBoard - they can use already exist SSO providers for this.
 
-### Resulted Snipped
+### Resulted Snippet
 This snippet contains both providers that are used in our sample:
 
 [comment]: <> (![image]&#40;/images/user-guide/oauth-2-support/26-both-providers.png&#41;)
 {% include images-gallery.html imageCollection="step26" preview="false" max-width="100%" %}
 
-## Mapping of the external user into ThingBoard internal user structure
+## Mapping of the external user into ThingsBoard internal user structure
 
-Mapping of the external user info object into ThingBoard user can be achieved in two ways - using the **Basic** and **Custom** mappers. 
+Mapping of the external user info object into ThingsBoard user can be achieved in two ways - using the **Basic** and **Custom** mappers. 
 The main functionality of the mapper is to map key-value attributes from the external user info object into the expected structure of the ThingsBoard OAuth 2.0 User:
 
 ```java

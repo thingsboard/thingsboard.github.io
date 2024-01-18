@@ -30,7 +30,7 @@ Once you complete this sample/tutorial, you will see your sensor data on the fol
 
 ## List of hardware
 
- - [Arduino UNO](https://store.arduino.cc/product/GBX00066)
+ - Arduino UNO
 
    ![image](/images/samples/arduino/sim808-htu21d/arduino-uno-pinout.png)
 
@@ -57,7 +57,7 @@ Connect HTU21D in following manner:
 * SDA - Arduino A5
 * SCL - Arduino A4
 
-# Complete wiring
+## Complete wiring
 
 Double-check that your wiring follows schematics below:
 

@@ -1,31 +1,31 @@
-{% include templates/edge/prerequisites.md %}
+{% include templates/edge/install/prerequisites.md %}
 
-##### Provisioning edge on cloud and installation
+### Edge Installation and Configuration
 
-Additionally, you will need to have ThingsBoard **Edge** up and running and connected to the {{currentThingsBoardVersion}} server.
+#### Guided Installation Using ThingsBoard Server Pre-configured Instructions
 
-{% if currentThingsBoardVersion == "ThingsBoard Professional Edition" %}
-To provision ThingsBoard **Edge** on {{currentThingsBoardVersion}} server please visit this guide [Provision ThingsBoard Edge on {{currentThingsBoardVersion}} server](/docs/edge/provision-edge-on-server-pe/).
-{% endif %}
-{% if currentThingsBoardVersion == "ThingsBoard Community Edition" %}
-To provision ThingsBoard **Edge** on {{currentThingsBoardVersion}} server please visit this guide [Provision ThingsBoard Edge on {{currentThingsBoardVersion}} server](/docs/edge/provision-edge-on-server-ce/).
-{% endif %}
+{% include templates/edge/install/tb-server-pre-configured-install-instructions.md %}
 
-Once ThingsBoard **Edge** provisioned on {{currentThingsBoardVersion}} server please follow [Installation Guide](/docs/edge/install/installation-options/) - this guide will help you to install ThingsBoard **Edge** and connect it to {{currentThingsBoardVersion}} server.
+#### Manual Installation and Configuration
+
+If, for any reason, you are unable to use the prepared ThingsBoard Server Instructions above, please follow the generic installation [steps](/docs/user-guide/install/{{docsPrefix}}installation-options/){:target="_blank"}.
+These steps will guide you through installing and configuring the Edge by yourself.
+
+### Accessing User Interfaces: URLs and Credentials
 
 {% if currentThingsBoardVersion == "ThingsBoard Professional Edition" %}
 {% capture contenttogglespec %}
-Cloud<br/><small>Connect edge to https://thingsboard.cloud</small>%,%ce%,%templates/edge/pe-cloud.md%br%
-On-premise server<br/><small>Connect edge to on-premise instance</small>%,%pe%,%templates/edge/on-premise-cloud.md{% endcapture %}
+Cloud<br><small>Connect Edge to https://thingsboard.cloud</small>%,%cloud%,%templates/edge/pe-cloud.md%br%
+On-premise server<br><small>Connect Edge to on-premise instance</small>%,%on-premise%,%templates/edge/on-premise-cloud.md{% endcapture %}
 {% include content-toggle.html content-toggle-id="cloudType" toggle-spec=contenttogglespec %}
 {% endif %}
 {% if currentThingsBoardVersion == "ThingsBoard Community Edition" %}
 {% capture contenttogglespec %}
-Live Demo<br/><small>Connect edge to https://demo.thingsboard.io</small>%,%ce%,%templates/edge/ce-cloud.md%br%
-On-premise server<br/><small>Connect edge to on-premise instance</small>%,%pe%,%templates/edge/on-premise-cloud.md{% endcapture %}
+Live Demo<br><small>Connect Edge to https://demo.thingsboard.io</small>%,%cloud%,%templates/edge/ce-cloud.md%br%
+On-premise server<br><small>Connect Edge to on-premise instance</small>%,%on-premise%,%templates/edge/on-premise-cloud.md{% endcapture %}
 {% include content-toggle.html content-toggle-id="cloudType" toggle-spec=contenttogglespec %}
 {% endif %}
 
-{% include templates/edge/bind-port-changed-banner.md %} 
+{% include templates/edge/oauth2-not-supported.md %}
 
-We are going to refer to this URL as **http://EDGE_URL** below in tutorial.
+{% include templates/edge/bind-port-changed-banner.md %}

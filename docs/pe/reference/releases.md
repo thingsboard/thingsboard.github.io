@@ -8,6 +8,388 @@ description: ThingsBoard architecture
 * TOC
 {:toc}
 
+## v3.6.2 (Dec 28, 2023) {#v362}  
+
+Everything from [TB CE v3.6.2](https://github.com/thingsboard/thingsboard/releases/tag/v3.6.2) with the following improvements and bug fixes.
+
+**Improvements**
+
+ * Automatic 'Read' permissions for widgets if user has 'Read' permissions for the dashboards;
+ * Updated sendRpcRequest scheduler event configuration with new parameters: is_one_way, persistent and timeout;
+ * Enhancements for fuel level monitoring dashboard;
+
+**Bug fixes**
+
+ * Domain name is now always in lowercase;
+ * Dashboard report generation error handling;
+ * Fixed validation of Customer permissions for OTA Package entity;
+ * Fixed 'Count Unique' aggregation node initialization from DB;
+ * Fixed change of mail provider in the mail settings form;
+ * Fixed entity-group-autocomplete component;
+ * Fixed custom translation of widget data export with filename;
+ * Fixed dashboard link in the Smart Retail solution template;
+ * Fixed color-picker not allowing to select chosen color.
+
+## v3.6.1 (Nov 13, 2023) {#v361}  
+
+Everything from [TB CE v3.6.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.6.1) with the following improvements and bug fixes.
+
+**Improvements**
+
+ * Transport API performance improvement;
+ * Added ability to update WL from tenant to customer via REST API;
+
+**Bug fixes**
+
+ * Fixed add edge dialog by @deaflynx;
+ * Fixed converters component debug mode slider always on;
+ * Fixed Smart Irrigation template;
+ * Fixed incorrect recipient dialog title;
+ * Fixed for Apache Pulsar client in the 'Apache Pulsar' and 'Tuya' integrations.
+
+## v3.6.0 (Sep 21, 2023) {#v36}  
+
+Everything from [TB CE v3.6](https://github.com/thingsboard/thingsboard/releases/tag/v3.6) with the following improvements and bug fixes.
+
+**Improvements**
+
+* Core & Rule Engine
+
+  * Default converters for most Integrations with well-defined message forma;
+  * Fuel level monitoring solution template;
+  * Move integration rate limits configuration to tenant profile;
+  * Improved validation for group permissions, group owner, and resource deletion;
+  * Moved white labeling attributes from attributes_kv to white_labeling table;
+
+* UI
+
+  * UI for deleting time-series;
+  * White labeling login base URL auto-generation based on the domain name;
+  * Integration wizard layout;
+
+* Transport
+
+  * Added handling for new message types for Efento devices; 
+  
+* Edge
+
+  * Edge install instructions minor updates;
+
+**Bug fixes**
+
+* Core and Rule Engine:
+
+  * Fixed for TCP/UDP integration with binary payload;
+  * Fixed rabbitmq queue in msa;
+  * Fixed check write permission in the dashboard;
+  * Fixed get attributes and time-series keys;
+  * Fixed custom menu hierarchy;
+  * Fixed entityDataQuery with GroupList filter;
+  * Fixed validation for ClientID field in MQTT integration;
+
+* UI:
+
+  * Fixed dashboard fullscreen button;
+  * Fixed initial value for scheduler event start time when creating by clicking on calendar day;
+  * Fixed for group entities table excessive api call;
+  * Fixed for custom translation and menu json content placeholder displayed in one line on firefox;
+  * Fixed tenant administrators recipients filter in notification center;
+  * Fixed incorrect count widgets in web report when dashboard has widgets selected hide in desktop mode;
+  * Fixed customer users sort.
+
+## v3.5.1 (May 31, 2023) {#v351}  
+
+Everything from [TB CE v3.5.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.5.1) with the following bug fixes.
+
+**Bug fixes**
+
+* UI:
+  
+  * Fixed missing query params when redirecting old dashboard URL by @vvlladd28
+  * Fixed dashboard link resent dashboard widget by @vvlladd28
+  * Fixed buttons trigger by enter press fortegrations by @ArtemDzhereleiko
+  * Fixed TCP integration handler configuration by @ArtemDzhereleiko
+  * Fixed customer hierarchy update for entity group by @ArtemDzhereleiko
+  * Fixed solution template documentation links by @ArtemDzhereleiko
+  * Removed change owner action for system administrator by @ArtemDzhereleiko
+  
+## v3.5.0 (May 9, 2023) {#v35}
+
+Everything from [TB CE v3.5](https://github.com/thingsboard/thingsboard/releases/tag/v3.5) with the following features and bug fixes.
+
+**Improvements**
+
+* Core & Rule Engine
+
+  * Azure Service bus integration;
+  * Tuya integration;
+  * Ability to create relation between DEVICE and DATA CONVERTER;
+
+* UI
+  
+  * New solution template "Waste Monitoring";
+  * Support of new menu and entity tables;
+  
+* Edge
+  
+  * Edge computing support for solution templates;
+
+**Bug fixes**
+
+* Fixed relation query for customer level;
+* Fixed error flood after reboot of disabled integration;
+* Fixed deletion of solution template entities;
+* Fixed solution template scheduler event creation;
+* Fixed column key mapping for asset_profile;
+* Fixed search for entity views by customer;
+* fixed opc integration host configuration;
+* Fixed no outgoing message issue when doCalculate fails in Aggregate Latest node;
+* Fixed telemetry/attribute update while device bulk import;
+* Fixed incorrect validation credentials in Azure Iot Hub integration;
+  
+## v3.4.4 (February 7, 2023)
+  
+Everything from [TB CE v3.4.4](https://github.com/thingsboard/thingsboard/releases/tag/v3.4.4) with the following bug fixes.
+
+**Bug fixes**
+
+* Core & Rule Engine:
+  
+  * Fixed check alarm permissions by originator;
+  * Fixed TBEL to MVEL in air quality monitoring template;
+  * Fixed SI attribute filtering;
+  * Fixed 'twilio voice' node;
+
+* UI:
+  
+  * Fixed search in entity group tables;
+  * Fixed applying custom translations on loading with slow network;
+  * Fixed some browsers don't open integration statistics when clicking 'Daily activity' column in Integration table;
+  
+## v3.4.3 (December 21, 2022)
+
+Everything from [TB CE v3.4.3](https://github.com/thingsboard/thingsboard/releases/tag/v3.4.3) with the following improvements and bug fixes.
+
+* Core & Rule Engine:
+  * Air Quality Monitoring solution template;
+  
+* UI:
+  * MQTT integration credentials password is optional;
+
+**Bug fixes**
+
+* Core & Rule Engine:
+  
+  * Fixed device bulk import with empty credentials;
+  * Fixed upgrade from CE;
+  * Fixed remote integrations update;
+  * Fixed NPE on WS subscription for sysadmin;
+
+* UI:
+  
+  * Fixed Things Park integration validation;
+  * Fixed validation in bulk import and improvement bulk import for Edge;
+  * Fixed scheduler update configuration;
+  * Fixed Azure IoT Hub integration validation;
+  
+* Edge:
+
+  * Fixed NPE during sync process in case edge owner is customer;
+
+## v3.4.2 (December 1, 2022)
+
+Everything from [TB CE v3.4.2](https://github.com/thingsboard/thingsboard/releases/tag/v3.4.2) with the following improvements and bug fixes.
+
+* Core:
+  * Real-time sync WhiteLabeling, LoginWhiteLabeling and CustomTranslation to edge;
+  * Smart irrigation solution template;  
+  * Integration Monitoring via Prometheus;
+  * Improved 'alarms count v2' rule node;
+  * Partitioning and TTL for BLOB entities;
+
+* UI:
+  * Improved the design of the integrations UI: added creation dialog, statistics and states to the integration table;
+
+**Bug Fixes**
+
+* Core:
+  * [#7415](https://github.com/thingsboard/thingsboard/issues/7415) Fixed Entity Group Name filter;
+  * [#7225](https://github.com/thingsboard/thingsboard/issues/7225) Fixed Scheduler timezone gap;
+  * Fixed Scheduler bug with incorrect "Start time";  
+  * Fixed binary uplink data converter;
+  * Fixed issue with overwrite of the WL settings ;
+
+* UI:
+  * Fixed display of the host field value for TTN/TTI integrations;
+
+  
+  
+## v3.4.1 (August 18, 2022)
+
+Everything from [TB CE v3.4.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.4.1) with the following improvements and bug fixes.
+
+* Core:
+  * Fixed startup issues and connection leaks in OPC-UA integration;
+  * Fixed Azure IoT Hub integration;
+* UI:
+  * Added support Login WL advanced CSS in 2FA login form;
+  * Fixed filtering by error text in Integrations and Data Converters event tables;
+  * Fixed entity group autocomplete;  
+  * Upgraded ExcelJS and fixed style in empty cell data;
+* Web Report:
+  * Added widget cache clearing before starting web-report generation;
+  * Fixed report generation issue while widget's state updates.
+  
+## v3.4 (July 19, 2022)
+
+Everything from [TB CE v3.4](https://github.com/thingsboard/thingsboard/releases/tag/v3.4) with the following improvements and bug fixes.
+
+**Major Improvements:**
+
+* Core & Rule Engine:
+  * Integration Executor - scalable microservice that hosts all integrations to separate them from the core services;
+  * Version Control support for Entity Groups;  
+  * Handling large and small numbers in the Aggregate stream node;
+* UI:
+  * Web report and UI performance improvement;
+* Edge:
+  * Integrations and converters support.
+  
+  
+**Bug Fixes**
+
+* Core & Rule Engine:
+  * Fix NPE in TbSimpleAggMsgNode;
+  * Fix daily repeat in scheduler on daylight saving time adjustment;  
+  * Added proper handle of exceptions from Twilio API;
+* UI:
+  * Custom translation load and updates;
+  * Incorrect routing in "open dashboard" widget action;
+  * Scheduler error msg on attribute update;  
+  * Check referencing integrations when deleting downlink converter.  
+
+
+## v3.3.4.1 (March 18, 2022)
+
+**Bug Fixes**
+
+* Core:
+  * Critical alarm security checker fix related to customer users;
+  * Ability to load corrupted scheduler events;
+
+## v3.3.4 (March 11, 2022)
+
+Everything from [TB CE v3.3.4](https://github.com/thingsboard/thingsboard/releases/tag/v3.3.4) with the following improvements and bug fixes.
+
+**Bug Fixes**
+
+* Core & Rule Engine:
+  * Origin Service ID is not present in RPC requests triggered by scheduler events;
+  * Jenkins Repository url fix;
+* UI:
+  * Fixed scheduler dialog;
+  * Fixed switching from local to remote HTTP integration;
+  * Fixed originator select component required for validation and entity group load flow.
+* Integrations:
+  * Remove Redis dependency from remote integration;
+  * Workaround for KAFKA-4090 for PE Kafka Integration;
+  * Hotfix for OPC-UA rescanning and reconnecting;
+* Build Scripts:
+  * Restrict tb-pe docker image to linux/amd64 platform due to tb-web-report package compatibility limits
+  
+## v3.3.3 (January 27, 2022)
+
+Everything from [TB CE v3.3.3](https://github.com/thingsboard/thingsboard/releases/tag/v3.3.3) with the following improvements.
+
+Main features:
+
+
+* Core & Rule Engine:
+  * Added 'Propagation Entity Types' parameter to 'Alarm Count' rule node;
+  * Added 'Queue Name' parameter to aggregation rule nodes;
+  * Added REST_API_RULE_ENGINE_CALL to the audit logs;
+  * Additional alarm read permission checks;
+* UI:
+  * Added entity details page support;
+  * Added persistent page link for scheduler events page;
+  * CSS variables support for the white-labeling feature;
+  * Added ability for tenant administrators to ignore the white-labeling settings configured on a system level;
+  * Validation to maximum length of the group names;
+  * "Delete" button in Self-registration form;
+* Integrations:
+  * Additional automatic tests for remote integrations;
+  * Custom domain support for LORIOT integration;
+  * API Version to TTI integration;
+* Build scripts:
+  * Docker images check for ARM64;
+  * K8S scripts moved to separate repository;
+  * Log4j -> Slf4j annotation due to typo;
+* Edge:
+  * Added missing labels for assigned-to-edge/unassigned-from-edge;
+  * Send notification event in case change owner of edge to edge session;
+  * Improved integration tests;
+
+Bug fixes:
+
+* Core & Rule Engine:
+  * Fix in deprecated alarm count query;
+  * Fix sending RPC response from integration downlink rule node
+  * Use correct service id in rest api call reply method to send messages to correct services;
+* Integrations:
+  * Fix reconnect for OPC UA integration;
+  * Update converter details autocomplete;
+* UI:
+  * Multiple fixes to self-registration form;
+  * Fixed ability to create entity groups with white spaces instead of names;
+  * Fixed show edit button in default dashboard without fullscreen mode;
+  * Fixed close details after create/update/delete permission;
+  * Fixed display of Audit Logs for Device Profile;
+
+## v3.3.2 (November 11, 2021)
+
+Everything from [TB CE v3.3.2](https://github.com/thingsboard/thingsboard/releases/tag/v3.3.2) with the following improvements.
+
+Main features:
+
+* Core:
+  * Entity search API for system administrator; 
+* REST API documentation: 
+  * Describe PE entities and methods;
+* Help pages for user-defined JS functions:
+  * Uplink and Downlink converter documentation;
+  * Ability to configure the external help url using white-labeling parameters;
+* Rule Engine:
+  * Added ability to get parent customer details in customer details node
+  * Ignore emails api usage when using external mail sender;
+* UI: 
+  * Added "Terms Of Use" for Self Registration;
+  * Added the ability to set the background for login page by Advanced CSS 
+  * Added Role, Integration, Converter, Group and Scheduler max length fields validation;
+  * Added disable export (for notification) in Api Usage dashboard; 
+* Integrations: 
+  * Support binary data consumption for HTTP/CoAP/MQTT integrations;
+  * UDP integration improvements. Support PUT in HTTP/CoAP integrations;  
+  * Support of device and asset labels;
+  * Optimize error logging; 
+
+Bug fixes:
+
+* Core:
+  * Fixed RBAC for Resource and OTA updates;
+* Integrations:
+  * Service bus Queue: 'maxMessages' fix;
+  * Fixed incorrectly displayed Downlink URL after save in the LORIOT integration;
+* UI: 
+  * Fixed RBAC to create/write edges;
+  * Fixed entity-group-autocomplete;
+  * Fixed custom css dialog close button;
+  * Fixed customersHierarchy after updated entity group didn't save new settings group in jsTree;
+  * Fixed noDataDisplayMessage in scheduler/blob widgets;
+  * Fixed RBAC disabled select on relations and permissions tabs
+  * Fixed RBAC for rule chains details tabs;
+  * Fixed missing icon, after update icon package;  
+  * Minor fixes to Edge Downlinks table;
+
 ## v3.3.1 (September 3, 2021)
 
 Everything from [TB CE v3.3.1](https://github.com/thingsboard/thingsboard/releases/tag/v3.3.1) with the following improvements.
@@ -57,7 +439,7 @@ Main features:
 
 * Update custom menu: Introduce dashboardId parameter to embed dashboard instead of using iframe;
 * Azure Event Hub Integration is updated to use new SDK;
-* Added new version of ["Alarms Count Node"](/docs/user-guide/rule-engine-2-0/pe/analytics-nodes/#alarms-count-node).
+* Added new version of ["Alarms Count Node"](/docs/pe/user-guide/rule-engine-2-0/analytics-nodes/#alarms-count-node).
 * Added "Duplicate to group entities by group name" rule node;
 * Added ability to aggregate data on each message in the "Aggregate stream node".
 * Add ability to aggregate data weekly from Sunday to Saturday in the "Aggregate stream node".

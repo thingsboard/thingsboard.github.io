@@ -1,7 +1,7 @@
 To post temperature telemetry to the **DHT22** sensor you need to get the **DHT22** sensor credentials first.
 ThingsBoard support different device credentials. We recommend to use default auto-generated credentials which is access token for this guide.
 
-Please open ThingsBoard **Edge** UI using the URL: **http://EDGE_URL**.
+Please open ThingsBoard **Edge** UI using the URL: **EDGE_URL**.
 
 {% include images-gallery.html imageCollection="copyAccessTokenDht22" showListImageTitles="true" %}
 

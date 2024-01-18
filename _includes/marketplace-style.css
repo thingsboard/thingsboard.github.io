@@ -1,0 +1,106 @@
+p, h1, h3, h5 {
+	color: #212529;
+}
+
+body {
+	background-color: #F7F9FC;
+}
+
+.background {
+	position: relative;
+	z-index: -1;
+	top: -260px;
+	height: 100%;
+}
+
+.background img {
+	content: "";
+	background-image: url(/images/partners/hardware-map.svg);
+	background-size: contain;
+	display: block;
+	position: fixed;
+	right: calc(50% - 800px);
+	top: 220px;
+	width: 1600px;
+	height: 800px;
+	filter: opacity(0.1);
+}
+
+.background .fill {
+	position: absolute;
+	width: 100%;
+	height: 460px;
+	bottom: -260px;
+	/*transform: skewY(-6deg);*/
+	background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0.6) 40%, rgba(255,255,255,0.4) 60%, rgba(255,255,255,0) 100%);
+}
+
+/*#hardwareContainer:after*/
+#users main h1 {
+	font-size: 36px;
+	font-weight: 500;
+	line-height: 54px;
+	margin: 10px 0 32px;
+	text-align: center;
+}
+
+#users main h3 {
+	font-size: 30px;
+	font-weight: 500;
+	line-height: 54px;
+	margin: 10px 0 32px;
+	text-align: center;
+}
+
+#users main h5 {
+	text-align: center;
+	font-size: 20px;
+	line-height: 1.5em;
+	font-weight: normal;
+	margin-bottom: 60px;
+}
+
+p.button-section {
+	padding-bottom: 48px;
+}
+
+.button {
+	font-size: 18px;
+	padding: 12px 20px;
+}
+
+section > main, footer > main {
+	width: 100%;
+}
+
+section {
+	background-color: unset;
+	padding: 50px 30px 20px;
+}
+
+@media screen and (min-width: 1500px) {
+	section > main, footer > main {
+		max-width: 1400px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	#users {
+		padding: 30px 20px 0;
+	}
+
+	#users main h1 {
+		font-size: 32px;
+		line-height: 50px;
+	}
+
+	#users main h3 {
+		font-size: 26px;
+		line-height: 50px;
+	}
+
+	#users main h5 {
+		font-size: 16px;
+	}
+
+}

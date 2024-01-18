@@ -44,14 +44,14 @@ Widget/dashboard example for visualization of the data from your device. You can
 
 Choose one of the suitable methods of integration according to Connectivity diagram below
 
-<br/>
-<br/>
+<br>
+<br>
 
 <object width="80%" data="/images/connectivity.svg"></object>
 
 #### Integration method
 
-* [Step 2.1] ThingsBoard Prerequisites (f.e. versions/components/etc. - optional).
+* [Step 2.1] ThingsBoard Prerequisites (e.g. versions/components/etc. - optional).
 * [Step 2.2] Uplink/Downlink (may be created basic Up/Down -link).
 * [Step 2.3] Integration.
 * [Step 2.4] Uplink/Downlink configuration.
@@ -64,7 +64,7 @@ Choose one of the suitable methods of integration according to Connectivity diag
 
 #### or IoT Gateway method
 
-* [Step 2.1] Provide detailed and clear steps for IoT Gateway integration. You can refer to [IoT Gateway](/docs/iot-gateway/getting-started) page.
+* [Step 2.1] Provide detailed and clear steps for IoT Gateway integration. You can refer to [IoT Gateway](/docs/iot-gateway/getting-started/) page.
 
 ### Block 3 Additional information
 

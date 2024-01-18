@@ -1,9 +1,19 @@
 User-agent: *
 
-Disallow: /legacy/
-Disallow: /v1.0/
-Disallow: /v1.1/
-Disallow: /404/
-Disallow: 404.html
+Disallow: /404.html
+Disallow: /admin
+Disallow: /signup
+Disallow: /email-protection
+Disallow: *.json
+Disallow: *.sh
+Disallow: *.zip
+Disallow: *.py
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.svg
+Allow: /*.jpeg
+Allow: /*.gif
 
 SITEMAP: https://thingsboard.io/sitemap.xml

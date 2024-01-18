@@ -10,11 +10,11 @@ docker-compose.yml
 Add the following line to the yml file. Don’t forget to replace "CLUSTER_API_KEY", "CLUSTER_API_SECRET" and "confluent.cloud:9092" with your real Confluent Cloud bootstrap servers:
 
 ```yml
-version: '2.2'
+version: '3.0'
 services:
   mytbpe:
     restart: always
-    image: "store/thingsboard/tb-pe:{{ site.release.pe_full_ver }}"
+    image: "thingsboard/tb-pe:{{ site.release.pe_full_ver }}"
     ports:
       - "8080:8080"
       - "1883:1883"
@@ -55,25 +55,22 @@ services:
       # Number of requests per second = 44 * 1000 / 25 = 1760 requests
       # 
       # Based on the use case, you can compromise latency and decrease number of partitions/requests to the queue, if the message load is low.
+      # By UI set the parameters - interval (1000) and partitions (1) for Rule Engine queues.
       # Sample parameters to fit into 10 requests per second on a "monolith" deployment: 
       TB_QUEUE_CORE_POLL_INTERVAL_MS: 1000
       TB_QUEUE_CORE_PARTITIONS: 2
       TB_QUEUE_RULE_ENGINE_POLL_INTERVAL_MS: 1000
-      TB_QUEUE_RE_MAIN_POLL_INTERVAL_MS: 1000
-      TB_QUEUE_RE_MAIN_PARTITIONS: 2
-      TB_QUEUE_RE_HP_POLL_INTERVAL_MS: 1000
-      TB_QUEUE_RE_HP_PARTITIONS: 1
-      TB_QUEUE_RE_SQ_POLL_INTERVAL_MS: 1000
-      TB_QUEUE_RE_SQ_PARTITIONS: 1
       TB_QUEUE_TRANSPORT_REQUEST_POLL_INTERVAL_MS: 1000
       TB_QUEUE_TRANSPORT_RESPONSE_POLL_INTERVAL_MS: 1000
       TB_QUEUE_TRANSPORT_NOTIFICATIONS_POLL_INTERVAL_MS: 1000
+      TB_QUEUE_VC_INTERVAL_MS: 1000
+      TB_QUEUE_VC_PARTITIONS: 1
     volumes:
       - mytbpe-data:/data
       - mytbpe-logs:/var/log/thingsboard
   postgres:
     restart: always
-    image: "postgres:12"
+    image: "postgres:15"
     ports:
     - "5432"
     environment:
@@ -90,3 +87,5 @@ volumes:
     external: true
 ```
 {: .copy-code}
+
+You can update default Rule Engine queues configuration using UI. More about ThingsBoard Rule Engine queues see in [documentation](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/).F

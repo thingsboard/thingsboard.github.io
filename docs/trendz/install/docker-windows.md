@@ -19,18 +19,12 @@ This guide will help you to install and start Trendz Analytics using Docker on W
 
 ## Step 1. Obtain the license key 
 
-We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?active=trendz) before you proceed.
+We assume you have already chosen subscription plan for Trendz and have license key. If not, please get your [Free Trial license](/pricing/?section=trendz-options&product=trendz-self-managed&solution=trendz-pay-as-you-go) before you proceed.
 See [How-to get pay-as-you-go subscription](https://www.youtube.com/watch?v=dK-QDFGxWek){:target="_blank"} for more details.
 
-Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE later in this guide.
+Note: We will reference the license key you have obtained during this step as PUT_YOUR_LICENSE_SECRET_HERE guide.
 
-## Step 2. Checkout Trendz Analytics image on Docker Hub
-
-Open official [Trendz Analytics](https://hub.docker.com/_/trndz) Docker Hub page and proceed to checkout.
-Populate basic information about yourself and click "Get Content"
-
-
-## Step 3. Running Trendz service
+## Step 2. Running Trendz service
 
 ##### Docker Compose setup
 
@@ -47,11 +41,11 @@ Add the following line to the yml file. Don't forget to replace “PUT_YOUR_LICE
 
 ```yml
 
-version: '2.2'
+version: '3.0'
 services:
   mytrendz:
     restart: always
-    image: "thingsboard/trendz:1.8.0-SNAPSHOT"
+    image: "thingsboard/trendz:1.10.3-HF3"
     ports:
       - "8888:8888"
     environment:
@@ -61,12 +55,27 @@ services:
       SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/trendz
       SPRING_DATASOURCE_USERNAME: postgres
       SPRING_DATASOURCE_PASSWORD: postgres
+      SCRIPT_ENGINE_PROVIDER: DOCKER_CONTAINER
+      SCRIPT_ENGINE_DOCKER_PROVIDER_URL: mypyexecutor:8080
+      SCRIPT_ENGINE_TIMEOUT: 30000
     volumes:
       - mytrendz-data:/data
       - mytrendz-logs:/var/log/trendz
+  mypyexecutor:
+    restart: always
+    image: "thingsboard/trendz-python-executor:1.10.3"
+    ports:
+      - "8080"
+    environment:
+      SCRIPT_ENGINE_RUNTIME_TIMEOUT: 30000
+      EXECUTOR_MANAGER: 1
+      EXECUTOR_SCRIPT_ENGINE: 6
+      THROTTLING_QUEUE_CAPACITY: 10
+      THROTTLING_THREAD_POOL_SIZE: 6
+      NETWORK_BUFFER_SIZE: 10485760
   postgres:
     restart: always
-    image: "postgres:12"
+    image: "postgres:15"
     ports:
       - "5432"
     environment:
@@ -94,7 +103,9 @@ Where:
 - `mytrendz-logs:/var/log/trendz`   - mounts the volume `mytrendz-logs` to Trendz logs directory
 - `mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.8.0-SNAPSHOT`          - docker image
+- `thingsboard/trendz:1.10.3-HF3`          - Trendz docker image
+- `thingsboard/trendz-python-executor:1.10.3`          - Trendz python script executor docker image
+- `SCRIPT_ENGINE_RUNTIME_TIMEOUT`          - Python script execution timeout
     
 ##### Setup Docker volumes    
     
@@ -111,17 +122,10 @@ docker volume create mytrendz-logs
 **NOTE**: replace directory ~/.mytrendz-data and ~/.mytrendz-logs with directories you’re planning to used in docker-compose.yml.
 
 ##### Running service
- 
-Execute the following command to up this docker compose directly:
 
-**NOTE**: For running docker compose commands you have to be in a directory with docker-compose.yml file.    
-    
-```yml
-docker-compose up -d
-docker-compose logs -f mytrendz
-```
-{: .copy-code}    
-    
+{% assign serviceName = "trendz" %}
+{% include templates/install/docker/docker-compose-up.md %}
+
 In order to get access to necessary resources from external IP/Host on Windows machine, please execute the following commands:
 
 ```yml
@@ -145,38 +149,16 @@ to validate credentials.
 
 ## Detaching, stop and start commands
 
-You can detach from session terminal with `Ctrl-p` `Ctrl-q` - the container will keep running in the background.
-
-In case of any issues you can examine service logs for errors. For example to see Trendz node logs execute the following command:
-
-```
-docker-compose logs -f mytrendz
-```
-
-To stop the container:
-
-```
-docker-compose stop
-```
-
-To start the container:
-
-```
-docker-compose start
-```
+{% assign serviceName = "trendz" %}
+{% assign serviceFullName = "Trendz" %}
+{% include templates/install/docker/detaching-stop-start-commands.md %}
 
 ## Troubleshooting
 
 ### DNS issues
 
-**Note** If you observe errors related to DNS issues, for example
+{% include templates/troubleshooting/dns-issues-windows.md %}
 
-```bash
-127.0.1.1:53: cannot unmarshal DNS message
-```
-
-You may configure your system to use [Google public DNS servers](https://developers.google.com/speed/public-dns/docs/using#windows)
-
-### Next steps
+## Next steps
 
 {% assign currentGuide = "InstallationOptions" %}{% include templates/trndz-guides-banner.md %}

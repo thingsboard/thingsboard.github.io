@@ -17,5 +17,18 @@ toc:
 #      path: /docs/reference/20k-devices-test/
 #    - title: 1M IoT devices on ThingsBoard cluster with Kubernetes and Amazon EC2
 #      path: /docs/reference/1m-devices-test/
-    - title: Single instance performance on different AWS instances
-      path: /docs/reference/performance-aws-instances/
+- title: Performance on AWS EC2
+  path: /docs/reference/performance-aws-instances/
+  new: true
+#    - title: Performance test methodology
+#      path: /docs/reference/performance/performance-test-methodology/
+#    - title: Setup AWS instances
+#      path: /docs/reference/performance/setup-aws-instances/
+#- title: Performance tools
+#  section:
+#    - title: VisualVM for Java JMX
+#      path: /docs/reference/performance/tools/java-jmx-monitoring/
+#    - title: PgAdmin for Postgres
+#      path: /docs/reference/performance/tools/postgres-pgadmin-monitoring/
+#    - title: Thingsboard performance charts
+#      path: /docs/reference/performance/tools/thingsboard-performance-charts/

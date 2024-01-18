@@ -12,6 +12,8 @@ description: Installing ThingsBoard on Windows
 * TOC
 {:toc}
 
+{% include templates/install/windows-warning-note.md %}
+
 ### Prerequisites
 
 This guide describes how to install ThingsBoard on a Windows machine.
@@ -32,6 +34,7 @@ Download and run the installation package.
 https://dist.thingsboard.io/thingsboard-windows-setup-{{ site.release.pe_ver }}.exe
 ```
 {: .copy-code}
+
 
 **Note:** We assume you have installed ThingsBoard to default location: *C:\Program Files (x86)\thingsboard*  
 
@@ -71,8 +74,7 @@ license:
 
 {% capture contenttogglespec %}
 PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/windows-db-postgresql.md%br%
-Hybrid <br/>PostgreSQL+Cassandra<br/><small>(recommended for > 5K msg/sec)</small>%,%hybrid%,%templates/install/windows-db-hybrid.md%br%
-Hybrid <br/>PostgreSQL+TimescaleDB<br/><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/windows-db-hybrid-timescale.md{% endcapture %}
+Hybrid <br>PostgreSQL+TimescaleDB<br><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/windows-db-hybrid-timescale.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
@@ -139,19 +141,20 @@ Execute **install.bat** script to install ThingsBoard Web Report Server as a Win
   This means it will be automatically started on system startup. 
   Similar, **uninstall.bat** will remove ThingsBoard from Windows services.
   The output should be like:
-  
+
   ```text
     C:\Program Files (x86)\tb-web-report>install.bat
     Installing tb-web-report ...
     tb-web-report installed successfully!  
-  ```    
-  
+  ```
+
 Now let's start the ThingsBoard service!
 Open the command prompt as an Administrator and execute the following command:
 
 ```shell
 net start tb-web-report
 ```
+{: .copy-code}
 
 Expected output:
 
