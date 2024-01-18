@@ -16,7 +16,7 @@ Although this approach requires some additional steps in the deployment process,
 
 ![image](/images/user-guide/integrations/remote/remote-integrations-overview.png)
 
-It is possible to execute any ThingsBoard Integration remotely from main ThingsBoard instance. 
+It is possible to execute any ThingsBoard Integration separately from the ThingsBoard instance.
 
 This guide contains step-by-step instructions on how to launch MQTT remote integration that connects to the local MQTT Broker and pushes data to the [ThingsBoard Cloud](https://thingsboard.cloud/signup).
 
