@@ -110,24 +110,24 @@ We will describe connector configuration file below.
 {% include code-toggle.liquid code=canConf params="conf|.copy-code.expandable-20" %}
 
 ## Root section
-The root part of the CAN connector configuration provides basic information to connect/reconnect to a CAN bus and the list of device configurations.  
+The root part of the CAN connector configuration provides basic information on how to connect/reconnect to a Can bus and  includes the list of device configurations.
 
-| **Parameter**                 | **Default value**   | **Description**                                                                                    |
-|:-|:-|-
-| name                          | **CAN Connector**   | Name of connector.                                                                                 |
-| **interface**                 | **socketcan**       | Type of CAN interface.                                                                             |
-| **channel**                   | **vcan0**           | Channel name of CAN interface.                                                                     |
-| backend                       |                     | Interface specific configuration.                                                                  |
-| reconnect                     | **true**            | Whether to reconnect after bus error while sending/receiving CAN messages.                         |
-| reconnectPeriod               | **30.0**            | Period in seconds between reconnect attempts. Floating point means more precise time than seconds. |
-| reconnectCount                |                     | Number of reconnect attempts after bus error. If not specified means infinite number of attempts.  |
-| **devices**                   |                     | List of devices.                                                                       |
+| **Parameter**                 | **Default value**  | **Description**                                                                                            |
+|:-|:-------------------|------------------------------------------------------------------------------------------------------------
+| name                          | **CAN Connector**  | Name of connector.                                                                                         |
+| **interface**                 | **socketcan**      | Type of CAN interface.                                                                                     |
+| **channel**                   | **vcan0**          | Channel name of CAN interface.                                                                             |
+| backend                       |                    | Interface specific configuration.                                                                          |
+| reconnect                     | **true**           | Determines whether to reconnect after bus error while sending/receiving CAN messages.                      |
+| reconnectPeriod               | **30.0**           | The period, in seconds, between reconnect attempts. Floating point means more precise time than seconds.   |
+| reconnectCount                |                    | Number of reconnect attempts after a bus error. If not specified, it means an infinite number of attempts. |
+| **devices**                   |                    | List of devices.                                                                                           |
 |---
 
-The list of supported CAN interfaces one can [find](https://python-can.readthedocs.io/en/stable/configuration.html#interface-names) in the documentation of the Python CAN library.  
+You can [find](https://python-can.readthedocs.io/en/stable/configuration.html#interface-names) the list of supported CAN interfaces in the documentation of the Python CAN library.  
 
 ### Section "backend"
-This section is optional and it provides configuration for specific CAN interface. Each option has default value. To get available list of options [see](https://python-can.readthedocs.io/en/stable/configuration.html#interface-names) the documentation for specific interface type.  
+This section is optional and it provides configuration for specific CAN interface. Each option has a default value. To get a list of available options, [see](https://python-can.readthedocs.io/en/stable/configuration.html#interface-names) the documentation for specific interface type.  
 
 For example, the SocketCAN interface [supports](https://python-can.readthedocs.io/en/stable/interfaces/socketcan.html#bus) the following configuration options:  
 * *receive_own_messages*
@@ -140,32 +140,32 @@ For example, the SocketCAN interface [supports](https://python-can.readthedocs.i
   "fd": true
 }
 ```
-This means that transmitted messages should also be received and CAN-FD frames should be supported. By default these options are disabled.  
+This means that transmitted messages should also be received and CAN-FD frames should be supported. By default, these options are disabled.  
 
 ### Section "devices"
-This section provides array of configurations for devices, which connected through the CAN bus.  
+This section provides an array of configurations for devices connected through the CAN bus.  
 
-| **Parameter**                 | **Default value**   | **Description**                                                                                                |
-|:-|:-|-
-| **name**                      |                     | Name of device.                                                                                                |
-| type                          | **can**             | Type of device.                                                                                                |
-| sendDataOnlyOnChange          | **false**           | Sending only if data changed from last check, if not specified data will send after each received CAN message. |
-| strictEval                    | **true**            | Restricted mode of Python [eval()](https://docs.python.org/3/library/functions.html#eval) API.                 |
-| enableUnknownRpc              | **false**           | Allow processing RPC commands not listed in [serverSideRpc](/docs/iot-gateway/config/can/#subsection-serversiderpc) subsection. |
-| overrideRpcConfig             | **false**           | Allow overriding RPC command configuration (all or some of options) by data received from server.              |
-| converters                    |                     | Custom converters.                                                                                             |
-| attributes                    |                     | List of device attributes.                                                                                     |
-| timeseries                    |                     | List of time series keys.                                                                                      |
-| attributeUpdates              |                     | List of shared attributes to be subscribed for.                                                                |
-| serverSideRpc                 |                     | List of RPC commands.                                                                                          |
+| **Parameter**                 | **Default value** | **Description**                                                                                                                 |
+|:-|:------------------|--------------------------------------------------------------------------------------------------------------------------------- 
+| **name**                      |                   | Name of device.                                                                                                                 |
+| type                          | **can**           | Type of device.                                                                                                                 |
+| sendDataOnlyOnChange          | **false**         | Sends data only if it has changed from the last check, if not specified data will be sent after each received CAN message.      |
+| strictEval                    | **true**          | Restricted mode of Python [eval()](https://docs.python.org/3/library/functions.html#eval) API.                                  |
+| enableUnknownRpc              | **false**         | Allow processing RPC commands not listed in [serverSideRpc](/docs/iot-gateway/config/can/#subsection-serversiderpc) subsection. |
+| overrideRpcConfig             | **false**         | Allow overriding RPC command configuration (all or some of options) by data received from server.                               |
+| converters                    |                   | Custom converters.                                                                                                              |
+| attributes                    |                   | List of device attributes.                                                                                                      |
+| timeseries                    |                   | List of time series keys.                                                                                                       |
+| attributeUpdates              |                   | List of shared attributes to be subscribed for.                                                                                 |
+| serverSideRpc                 |                   | List of RPC commands.                                                                                                           |
 |---
 
 If *enableUnknownRpc* is set to *true*, *overrideRpcConfig* is forcibly set to *true* as well.  
 
-**Note**, despite [attributes](/docs/iot-gateway/config/can/#subsection-attributes-or-timeseries), [timeseries](/docs/iot-gateway/config/can/#subsection-attributes-or-timeseries), [attributeUpdates](/docs/iot-gateway/config/can/#subsection-attributeupdates) and [serverSideRpc](/docs/iot-gateway/config/can/#subsection-serversiderpc) are optional subsections, at least one of them must be set to get in use the device configuration.
+**Note** that despite [attributes](/docs/iot-gateway/config/can/#subsection-attributes-or-timeseries), [timeseries](/docs/iot-gateway/config/can/#subsection-attributes-or-timeseries), [attributeUpdates](/docs/iot-gateway/config/can/#subsection-attributeupdates) and [serverSideRpc](/docs/iot-gateway/config/can/#subsection-serversiderpc) being optional subsections, at least one of them must be set to utilize the device configuration.
 
 #### Subsection "converters"
-CAN connector is provided with built-in uplink/downlink data converters. One can specify custom converter for both uplink and downlink data or for one of them.
+CAN connector is provided with built-in uplink/downlink data converters. One can specify a custom converter for either uplink, downlink, or both.
 
 | **Parameter**                     | **Default value**   | **Description**                     |
 |:-|:-|-
@@ -187,7 +187,7 @@ CAN connector is provided with built-in uplink/downlink data converters. One can
 *As output data* **the downlink converter** returns CAN payload (array of bytes) for the further sending.  
 
 #### Subsection "attributes" or "timeseries"
-This subsection provides the list of configuration each of them describes which bytes to get from CAN payload (array of bytes) and how to convert these bytes to a Thingsboard attribute or a time series key.  
+This subsection provides the list of configurations, each of them describes which bytes to get from CAN payload (array of bytes) and how to convert these bytes to a Thingsboard attribute or a time series key.  
 
 | **Parameter** | **Default value**   | **Description**                                                         |
 |:-|:-|-
@@ -234,13 +234,13 @@ where:
 Example:
 
 
-1. Read 2 bytes starting from 0th position as the *little* byte ordered and trigger processing of the following bytes only if the command value is 12345.
+1. Read 2 bytes starting from 0th position as the *little* byte order and trigger processing of the following bytes only if the command value is 12345.
 ```json
 "command": "0:2:little:12345"
 ```
 
 ##### "value"
-The option *value* describes how many bytes to get from CAN payload and what primitive type to be converted to. 
+The option *value* describes how many bytes to get from CAN payload and the corresponding primitive type for conversion. 
 <br>
 <br>
 The option _value_ supports the following formats:
@@ -272,19 +272,19 @@ By types **bool**, **int** and **float** it is meant Thingsboard **boolean**, **
 
 Examples:
 
- - Read 1 byte starting from 2d position as the *big* byte ordered and cast to the value of the *unsigned int* type.
+ - Read 1 byte starting from 2d position as the *big* byte order and cast to the value of the *unsigned int* type.
 ```json 
 "value": "2:1:int" 
 ``` 
- - Read 8 bytes starting from 0th position as the big byte ordered and cast to the value of the *double* type. 
+ - Read 8 bytes starting from 0th position as the big byte order and cast to the value of the *double* type. 
 ```json
 "value": "0:7:double"
 ```
- - Read 4 bytes starting from 0th position as the *little* byte ordered and cast to the value of the *float* type. 
+ - Read 4 bytes starting from 0th position as the *little* byte order and cast to the value of the *float* type. 
 ```json
 "value": "0:4:little:float"
 ```
- - Read 2 bytes starting from 4th position as the *little* byte ordered and cast to the value the *signed int* type. The value is used in Python [eval()](https://docs.python.org/3/library/functions.html#eval) expression to
+ - Read 2 bytes starting from 4th position as the *little* byte order and cast to the value the *signed int* type. The value is used in Python [eval()](https://docs.python.org/3/library/functions.html#eval) expression to
 get the final value. 
 ```json
 "value": "4:2:little:int:signed",
@@ -292,42 +292,42 @@ get the final value.
 ```
 
 ##### "expression"
-The option _expression_ is evaluated via Python [eval()](https://docs.python.org/3/library/functions.html#eval) API. There are available the following variables in the [eval()](https://docs.python.org/3/library/functions.html#eval) context:
+The option _expression_ is evaluated via Python [eval()](https://docs.python.org/3/library/functions.html#eval) API. The following variables are available in the [eval()](https://docs.python.org/3/library/functions.html#eval) context:
 
 1. *value* - the result of applying the [value configuration](/docs/iot-gateway/config/can/#value) to the CAN payload
 2. *can_data* - the CAN payload (array of bytes)
 
-**Note**, by default Python [eval()](https://docs.python.org/3/library/functions.html#eval) API is working in some kind of a restricted mode by denying the explicit access to [\_\_builtins\_\_ API](https://docs.python.org/3/library/builtins.html), to
-disable the restricted mode [set](/docs/iot-gateway/config/can/#section-devices) the option *strictEval* to _False_.
+**Note**, by default Python [eval()](https://docs.python.org/3/library/functions.html#eval) API is working in some kind of a restricted mode by denying the explicit access to [\_\_builtins\_\_ API](https://docs.python.org/3/library/builtins.html). To
+disable the restricted mode, [set](/docs/iot-gateway/config/can/#section-devices) the option *strictEval* to _False_.
 
 ##### "polling"
-If a polling configuration is not specified the CAN connector receive only that data what CAN node decides to send on its own.
+If a polling configuration is not specified the CAN connector receives only the data that CAN node decides to send on its own.
 
-On demand sending activates after CAN node receives specific data which is specified in the polling configuration. Depending on the type of polling the CAN connector can send that data once or periodically.   
+On-demand sending is activated after CAN node receives specific data, as specified in the polling configuration. Depending on the type of polling, the CAN connector can send that data either once or periodically.   
 
-| **Parameter** | **Default value**     | **Description**                                                         |
-|:-|:-|-
-| type          | **always**            | Type *always* means sending CAN message periodically, *once* means single time sending. |
-| period        | **1.0**               | Period of polling in seconds. Floating point means more precise time than seconds.      |
-| **dataInHex** |                       | CAN message payload in the hexadecimal format.                                          |
+| **Parameter** | **Default value**      | **Description**                                                                                   |
+|:-|:-----------------------|---------------------------------------------------------------------------------------------------
+| type          | **always**             | Type *always* implies sending CAN message periodically, while *once* implies single-time sending. |
+| period        | **1.0**                | Period of polling in seconds. Floating point means more precise time than seconds.                |
+| **dataInHex** |                        | CAN message payload in the hexadecimal format.                                                    |
 
 #### Subsection "attributeUpdates"
 This subsection provides the list of configurations to subscribe for changes of Thingsboard shared attributes.
 
-| **Parameter**              | **Default value**     | **Description**                                                         |
-|:-|:-|-
-| **attribute**              |                       | Name of shared attribute.                                               |
-| **nodeId**                 |                       | CAN node (arbitration) id.                                           |
-| isExtendedId               | **false**             | If True means extended CAN node (arbitration) id.                                                 |
-| isFd                       | **false**             | If True means using CAN FD mode.                                  |
-| bitrateSwitch              | **false**             | **Only for CAN FD mode** If True means a higher bitrate is used for the data transmission.                                         |
-| dataLength                 | **1**                 | **Only for integer values** Number of bytes to pack **integer** value.   |
-| dataByteorder              | **big**               | **Only for integer and float values** Order of bytes to pack **numeric** value. |
-| dataSigned                 | **false**             | **Only for int/long types** indicates whether integer is signed value or not. |
-| dataExpression             |                       | Python [eval()](https://docs.python.org/3/library/functions.html#eval) expression to modify attribute value in some way before packing it to array of bytes. |
-| dataEncoding               | **ascii**             | **Only for string values** [Encoding](https://docs.python.org/3/library/codecs.html#standard-encodings) of string packing. |
-| dataBefore                 |                       | Hexadecimal string of bytes that are preceded value bytes. |
-| dataAfter                  |                       | Hexadecimal string of bytes that are followed by value bytes. |
+| **Parameter**              | **Default value**     | **Description**                                                                                                                                                |
+|:-|:-|----------------------------------------------------------------------------------------------------------------------------------------------------------------
+| **attribute**              |                       | Name of the shared attribute.                                                                                                                                  |
+| **nodeId**                 |                       | CAN node (arbitration) id.                                                                                                                                     |
+| isExtendedId               | **false**             | If True means extended CAN node (arbitration) id.                                                                                                              |
+| isFd                       | **false**             | If True means using CAN FD mode.                                                                                                                               |
+| bitrateSwitch              | **false**             | **Only for CAN FD mode** If True means a higher bitrate is used for the data transmission.                                                                     |
+| dataLength                 | **1**                 | **Only for integer values** Number of bytes to pack **integer** value.                                                                                         |
+| dataByteorder              | **big**               | **Only for integer and float values** Order of bytes to pack **numeric** value.                                                                                |
+| dataSigned                 | **false**             | **Only for int/long types** indicates whether integer is signed value or not.                                                                                  |
+| dataExpression             |                       | Python [eval()](https://docs.python.org/3/library/functions.html#eval) expression to modify attribute value in some way before packing it to array of bytes.   |
+| dataEncoding               | **ascii**             | **Only for string values** [Encoding](https://docs.python.org/3/library/codecs.html#standard-encodings) of string packing.                                     |
+| dataBefore                 |                       | Hexadecimal string of bytes that are preceded value bytes.                                                                                                     |
+| dataAfter                  |                       | Hexadecimal string of bytes that are followed by value bytes.                                                                                                  |
 |---
 
 The steps of processing an attribute update are the following:
@@ -377,7 +377,7 @@ The *with parameters* RPC type is based on all *data\** options except *dataInHe
 }
 ```
 - if *dataExpression* is **set**, no specific JSON property is required and [all RPC params](/docs/reference/gateway-mqtt-api/#server-side-rpc) are available in *dataExpression*.  
-<br><br>For example, **user** want to pick up a car speed to **150 mph**, but a car control system has its own **limit** that is set to **100 mph**.  
+<br><br>For example, **user** wants to increase a car speed to **150 mph**, but a car control system has its own **limit** that is set to **100 mph**.  
 ```json
 {
   "device": "Car", 
@@ -391,7 +391,7 @@ The *with parameters* RPC type is based on all *data\** options except *dataInHe
   }
 }
 ```
-The configuration of such RPC command is set in the way **whether user exceeds the limit** the speed of a car is **forcibly set to this limit**:  
+The configuration of such RPC command is set up in a way **that if user exceeds the limit** the car speed is **forcibly set to this limit**:  
 ```json
 "serverSideRpc": [
 {
@@ -403,8 +403,8 @@ The configuration of such RPC command is set in the way **whether user exceeds t
 }
 ]
 ```
-So after processing the _setSpeed_ RPC command CAN payload is following: 
-`[ 0x09, 0x64, 0xAA, 0xBB ]`, where **0x64** is **100 mph** because **user exceeds the limit**.  
+So after processing the _setSpeed_ RPC command, CAN payload is as follows: 
+`[ 0x09, 0x64, 0xAA, 0xBB ]`, where **0x64** is **100 mph** because **user exceeded the limit**.  
 
 ## Next steps
 
