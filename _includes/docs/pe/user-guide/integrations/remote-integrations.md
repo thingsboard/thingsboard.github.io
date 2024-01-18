@@ -8,10 +8,19 @@
 * TOC
 {:toc}
 
-It is possible to execute any ThingsBoard Integration remotely from main ThingsBoard instance. This guide contains step-by-step instructions how to launch ThingsBoard integration remotely.
-See [deployment options](/docs/{{peDocsPrefix}}user-guide/integrations/#deployment-options) for more general information.
+Remote Integrations in ThingsBoard allow for a new deployment scenario where remote integration can be installed in a local network and stream data to the ThingsBoard instance.
+It is helpful if you have, for example, a local MQTT broker or OPC-UA server that doesn't have an external IP address for direct connection to ThingsBoard.
+The remote integration provides connection to these local servers, pulls the data, stores it locally, and then streams it to the ThingsBoard instance.
 
-In this tutorial, we will launch MQTT integration that connects to the local MQTT Broker and pushes data to the [ThingsBoard Cloud](https://thingsboard.cloud/signup).
+Although this approach requires some additional steps in the deployment process, it provides integration with servers in the local network, giving you flexibility in managing performance by isolating the integration process from the main ThingsBoard process.
+
+![image](/images/user-guide/integrations/remote/remote-integrations-overview.png)
+
+It is possible to execute any ThingsBoard Integration remotely from main ThingsBoard instance. 
+
+This guide contains step-by-step instructions on how to launch MQTT remote integration that connects to the local MQTT Broker and pushes data to the [ThingsBoard Cloud](https://thingsboard.cloud/signup).
+
+You can find additional information about the ThingsBoard Platform integrations feature [here](/docs/{{peDocsPrefix}}user-guide/integrations/).
 
 ## ThingsBoard configuration
 
