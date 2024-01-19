@@ -18,7 +18,7 @@ The remote integration approach enables tenants to launch plain [TCP](/docs/user
 Since ThingsBoard is a multi-tenant environment, we can't launch TCP and UDP integrations as part of the core service due to possible port collisions between tenants. 
 That is why we propose each tenant to launch a TCP/UDP integration as a remote one. The same applies to any custom integration that the tenant creates.
 
-![image](/images/user-guide/integrations/remote/remote-integrations-overview.png)
+![image](https://img.thingsboard.io/user-guide/integrations/remote/remote-integrations-overview.png)
 
 It is possible to execute any ThingsBoard Integration separately from the ThingsBoard instance.
 
@@ -36,27 +36,27 @@ Let's create remote integration in ThingsBoard that will connect to the local br
 
 - Go to the "**Integrations center**" section -> "**Integrations**" page and click "plus" icon to add a new integration. Name it "**MQTT remote integration**", select type "**MQTT**";
 
-![image](/images/user-guide/integrations/remote/remote-integration-1-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/remote/remote-integration-1-paas.png)
 
 - The next step is to add a default uplink converter. The new converter will contain necessary code to convert incoming data. Click "**Next**";
 
-![image](/images/user-guide/integrations/remote/remote-integration-2-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/remote/remote-integration-2-paas.png)
 
 - You can create a new downlink converter at the step of adding a downlink converter. But for now, leave the "Downlink data converter" field empty. Click "**Skip**";
 
-![image](/images/user-guide/integrations/remote/remote-integration-3-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/remote/remote-integration-3-paas.png)
 
 - Specify **host**: "**thingsboard.cloud**" and **port**: "**1883**" at the connection step;
 - Subscribe to all **topics**;
 - You can also select an MQTT **QoS** level. We use MQTT QoS level 0 (At most once) by default;
 - Copy and save the "**Integration key**" and "**Integration secret**". We will use this values later;
 
-![image](/images/user-guide/integrations/remote/remote-integration-4-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/remote/remote-integration-4-paas.png)
 
 - Go to the **advanced settings**. It is better to uncheck the "**Clean session**" parameter. Many brokers do not support sticky sessions, so will silently close the connection if you try to connect with this option enabled;
 - Click the "**Add**" button to create the integration.
 
-![image](/images/user-guide/integrations/remote/remote-integration-5-paas.png)
+![image](https://img.thingsboard.io/user-guide/integrations/remote/remote-integration-5-paas.png)
 
 <br>
 Now let's proceed to the steps for installation remote integration.
