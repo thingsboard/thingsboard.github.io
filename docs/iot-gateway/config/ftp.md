@@ -10,23 +10,23 @@ description: FTP protocol support for ThingsBoard IoT Gateway
 
 This guide will help you to get familiar with FTP Connector configuration for ThingsBoard IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this Connector. 
-The purpose of this Connector is to connect to external FTP server and get data from files from specific paths. 
-Connector is also able to push data to FTP server files based on the updates/commands from ThingsBoard.
+The purpose of this Connector is to connect to an external FTP server and get data from files from specific paths. 
+The connector is also able to push data to FTP server files based on the updates/commands from ThingsBoard.
 
-This connector is useful when you have some FTP server in your device or some data in external resource and you would like to push this data to the ThingsBoard.    
+This connector is useful when you have some FTP server in your device or some data in an external resource and you would like to push this data to the ThingsBoard.    
 
-We will describe connector configuration file below. 
+We will describe the connector configuration file below. 
 
 ## Connector configuration: ftp.json
 
-Connector configuration is a JSON file that contains information about how to connect to external FTP server, what paths to use when reading data and how to process the data.  
-Let's review the format of the configuration file using example below.
+Connector configuration is a JSON file that contains information about how to connect to an external FTP server, what paths to use when reading data, and how to process the data.  
+Let's review the format of the configuration file using the example below.
 
 <b>Example of FTP Connector config file.</b>
 
-Example listed below will connect to FTP server in a local network deployed on server with IP 0.0.0.0. 
-Connector will use basic FTP auth using username and password. 
-Then, connector will subscribe to a list of paths from mapping section. See more info in a description below.
+The example listed below will connect to FTP server in a local network deployed on server with IP 0.0.0.0. 
+The connector will utilize basic FTP auth using username and password. 
+Then, connector will subscribe to a list of paths from the mapping section. See more info in the description below.
 
 {% capture ftpConf %}
 
@@ -101,11 +101,11 @@ Then, connector will subscribe to a list of paths from mapping section. See more
 
 ### General section
 
-| **Parameter** | **Default value**                    | **Description**                                           |
-|:-|:-|-
-| host          | **localhost**                        | Domain address or ip of the server.                       |
-| port          | **21**                               | Port of the server                                        |
-| TLSSupport    | **true**                             | Verify or no TLS support on the server if available.      |
+| **Parameter** | **Default value**                    | **Description**                                        |
+|:-|:-|--------------------------------------------------------
+| host          | **localhost**                        | Domain address or ip of the server.                    |
+| port          | **21**                               | Port of the server.                                    |
+| TLSSupport    | **true**                             | Verify whether TLS support is available on the server. |
 |---
 
 #### Subsection "security"
@@ -120,42 +120,42 @@ Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/ftp-conn
 
 ### Section "paths"
 
-This configuration section contains array of objects with paths that the gateway will try to read after connecting to the server.  
-Also this section contains settings about processing incoming messages (converter).  
+This configuration section contains an array of objects with paths that the gateway will try to read after connecting to the server.  
+Also, this section contains settings for processing incoming messages (converter).  
 
 |**Parameter**|**Default value**|**Description**|
 |:-|:-|-
 | path | **data/log.txt** | Path to file for reading data. |
 |---
 
-**Note** Make sure that your file extension is one of the supporting extensions by FTP connector (.txt, .json, .csv)
+**Note** Make sure that your file extension is one of the supported extensions by FTP connector (.txt, .json, .csv)
 
-The **path** supports special symbols: '*' to allow to subscribe to multiple paths and files.
-Let's look to another example of using **path** parameter:
+The **path** supports special symbols, such as '*' to allow subscription to multiple paths and files.
+Let's look at another example of using **path** parameter:
 
 |**Example Name**|**Path**|**Comments**|
 |:-|:-|:-|-
 | Example 1 | data/log.txt | Read data from one file (if it exists) |
-| Example 2 | data/*/log.txt | Read all log.txt files from all folders that contained data folder |
-| Example 3 | data/\*/\*_log.txt | Read all files that name contain _log.txt from all folders that contained data folder |
-| Example 3 | data/\*.\* | Read all files with all supporting extensions that included in data folder |
+| Example 2 | data/*/log.txt | Read all log.txt files from all folders that contain data folder |
+| Example 3 | data/\*/\*_log.txt | Read all files that name containing _log.txt from all folders that contain data folder |
+| Example 3 | data/\*.\* | Read all files with all supported extensions that are included in data folder |
 |---
 
 Now let's review another required parameter in path section.
 
 |**Parameter**|**Available value**|**Description**|
 |:-|:-|:-|-
-| delimiter | , | Symbol that will use to split the data in file |
-| readMode | FULL/PARTIAL | If parameter is equal to FULL, file will be reading from the start to the end. If parameter is equal to PARTIAL, file will be read from the line that was reading at the previous time |
-| maxFileSize | 5 | The max file size in MB that will be reading (if file size is more than 5 MB, it will be passed) |
-| pollPeriod | 60 | The period of time (in seconds) that files in the path will be reading |
+| delimiter | , | Symbol that will be used to split the data in the file |
+| readMode | FULL/PARTIAL | If parameter is equal to FULL, the file will be read from the start to the end. If parameter is equal to PARTIAL, the file will be read from the line that was previously being read |
+| maxFileSize | 5 | The max file size in MB that will be read (if file size is more than 5 MB, it will be skipped) |
+| pollPeriod | 60 | The period of time (in seconds) during which files in the path will be read |
 | txtFileDataView | TABLE/SLICED | The txtFileDataView parameter is used only for .txt files |
-| withSortingFiles | true/false | Is how the found files in path will append to array |
+| withSortingFiles | true/false | This is how the found files in path will be appended to the array |
 | attributes |  | This subsection contains parameters of the incoming message, that will be interpreted as attributes for the device. |
 | timeseries |  | This subsection contains parameters of the incoming message, that will be interpreted as telemetry for the device. |
 |---
 
-Let's look how we can configure this section for different file extensions:
+Let's look at how we can configure this section for different file extensions:
 
 
 1. For .txt with TABLE data view and .csv files
@@ -194,7 +194,7 @@ Let's look how we can configure this section for different file extensions:
       ]
     ```
     
-    That mean that FTP converter will look for the next file structure:
+    That means that FTP converter will look for the following file structure:
     ```txt
     temp,hum
     1,2
@@ -278,7 +278,7 @@ Let's look how we can configure this section for different file extensions:
         }
       ]
     ```
-4. Combine attributes, telemetry and serverSideRpc section, for example .json file:
+4. Combine attributes, telemetry, and serverSideRpc section, for example, in a .json file:
   ```json
   "paths": [
           {
@@ -316,19 +316,19 @@ Let's look how we can configure this section for different file extensions:
 
 
 This configuration section is optional.
-ThingsBoard allows to provision device attributes and fetch some of them from the device application. You can treat this as a remote configuration for devices. Your devices are able to request shared attributes from ThingsBoard. See user guide for more details.
+ThingsBoard allows the provisioning of device attributes and fetches some of them from the device application. You can treat this as a remote configuration for devices, enabling them to request shared attributes from ThingsBoard. See [user guide](/docs/user-guide/attributes/) for more details.
 
-The “attributeRequests” configuration allows configuring the format of the corresponding attribute data that will be written to the specific files.
+The “attributeRequests” configuration allows you to configure the format of the corresponding attribute data that will be written to the specific files.
 
-| **Parameter**                 | **Default value**                                     | **Description**                                                                                    |
-|:-|:-|-
-| path                          | **fol/${attributeKey}/${attributeValue}.txt**         | JSON-path expression that uses for finding specific files               |
-| deviceNameFilter              | **.\***                                               | Regular expression device name filter, uses to determine, which function to execute.            |
-| writingMode                   | **OVERRIDE/WRITE**                                    | If writingMode is equal to OVERRIDE, the found files will we overwrite. If writingMode is equal to WRITE, a new data will be appended at the end of found files                |
-| valueExpression               | **,,,,${attributeKey},,,${attributeValue}**           | Expression uses for creating the message data that will send to FTP server. In this case ',' has a role as the delimiter and before him, you can insert your data.                   |
+| **Parameter**                 | **Default value**                                     | **Description**                                                                                                                                                        |
+|:-|:-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| path                          | **fol/${attributeKey}/${attributeValue}.txt**         | JSON-path expression that is used for finding specific files                                                                                                           |
+| deviceNameFilter              | **.\***                                               | Regular expression device name filter, used to determine, which function to execute.                                                                                   |
+| writingMode                   | **OVERRIDE/WRITE**                                    | If writingMode is equal to OVERRIDE, the found files will be overwritten. If writingMode is equal to WRITE, new data will be appended at the end of the found files.   |
+| valueExpression               | **,,,,${attributeKey},,,${attributeValue}**           | Expression is used for creating the message data that will be sent to FTP server. In this case, ',' serves as the delimiter and you can insert your data before it. |
 |---
 
-This section in configuration file looks like:
+This section in configuration file looks like this:
 
 ```json
   "attributeUpdates": [
@@ -343,18 +343,18 @@ This section in configuration file looks like:
 
 ### Server side RPC commands
 
-ThingsBoard allows sending RPC commands to the device that is connected to ThingsBoard directly or via Gateway.
+ThingsBoard allows for sending RPC commands to devices connected directly to ThingsBoard or via Gateway.
 
 Configuration, provided in this section uses for sending RPC requests from ThingsBoard to device.
 
-| **Parameter**                 | **Default value**                                     | **Description**                                                                                    |
-|:-|:-|-
-| deviceNameFilter              | **.\***                                               | Regular expression device name filter, uses to determine, which function to execute.            |
-| methodFilter                  | **read/write**                                        | Mode for opening file                |
-| valueExpression               | **,,,,${attributeKey},,,${attributeValue}**           | JSON-path expression, uses for creating data for sending to FTP server, if methodFilter equal to write. If methodFilter is equal to read, this field will be passing.                 |
+| **Parameter**                 | **Default value**                                     | **Description**                                                                                                                                                          |
+|:-|:-|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| deviceNameFilter              | **.\***                                               | Regular expression device name filter, used to determine, which function to execute.                                                                                     |
+| methodFilter                  | **read/write**                                        | Mode for opening file                                                                                                                                                    |
+| valueExpression               | **,,,,${attributeKey},,,${attributeValue}**           | JSON-path expression, is used to create data for sending to FTP server, if methodFilter is equal to write. If methodFilter is equal to read, this field will be passing. |
 |---
 
-This section in configuration file looks like:
+This section in configuration file looks like this:
 
 ```json
 "serverSideRpc": [

@@ -1,6 +1,6 @@
 
-One type of security configuration is basic, 
-For authorization will be used combination of username/password, provided in this section in config. 
+One type of security configuration is basic. 
+For authorization, a combination of username and password provided in this section's config will be used.
 
 
 |**Parameter**|**Default value**|**Description**|

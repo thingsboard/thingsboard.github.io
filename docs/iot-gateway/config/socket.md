@@ -12,15 +12,15 @@ This guide will help you to get familiar with Socket Connector configuration for
 Use [general configuration guide](/docs/iot-gateway/configuration/) to enable this Connector. The purpose of this 
 Connector is to connect to your server using TCP or UDP connection type.
 
-This Connector is useful when you have local server in your facility or corporate network, and you would like to push
+This Connector is useful when you have a local server in your facility or corporate network and want to push
 data from the server to ThingsBoard.
 
-We will describe connector configuration file below.
+We will describe the connector configuration file below.
 
 ## Connector configuration: socket.json
 
-Connector configuration is a JSON file that contains information about how to connect to external server, how to process
-the data and other service features. Let’s review the format of the configuration file using example below.
+Connector configuration is a JSON file that contains information about how to connect to an external server, how to process
+the data and other service features. Let’s review the format of the configuration file using the example below.
 
 <b>Example of Socket Connector config file.</b>
 
@@ -99,7 +99,7 @@ the data and other service features. Let’s review the format of the configurat
 | bufferSize        | **1024**                              | Size of received data block buffer                       |
 |---
 
-Configuration section will look like:
+Configuration section will look like this:
 
 ```json
 {
@@ -115,7 +115,7 @@ Configuration section will look like:
 ### General section
 
 This configuration section contains an array of objects that contains clients that can be connected to the connector and
-send the data. It is mean that connector reject all connection, which is not included in this array.
+send the data. This means that connector rejects all connections not included in this array.
 
 #### Device subsection
 
@@ -173,7 +173,7 @@ Example:
 
 #### Attribute request subsection
 
-In order to request client-side or shared device attributes to ThingsBoard server node, Gateway allows sending attribute
+In order to request client-side or shared device attributes from ThingsBoard server node, Gateway allows sending attribute
 requests.
 
 | **Parameter**           | **Default value**                     | **Description**                                                                                   |
@@ -214,12 +214,12 @@ That means that we have to send the next message for requesting two shared attri
 
 #### Attribute update subsection
 
-This configuration section is optional. ThingsBoard allows provisioning device attributes and fetch some of them from 
-the device application. You can treat this as a remote configuration for devices. Your devices are able to request 
-shared attributes from ThingsBoard. See user guide for more details.
+This configuration section is optional. ThingsBoard allows the provisioning of device attributes and fetches some of them from 
+the device application. You can treat this as a remote configuration for devices, enabling them to request 
+shared attributes from ThingsBoard. See [user guide](/docs/user-guide/attributes/) for more details.
 
-The “attributeRequests” configuration allows configuring the format of the corresponding attribute data that will be 
-sending to the server.
+The “attributeRequests” configuration allows you to configure the format of the corresponding attribute data that will be 
+sent to the server.
 
 | **Parameter**           | **Default value**                     | **Description**                                             |
 |:-|:-|-
@@ -240,16 +240,16 @@ This subsection in configuration file looks like:
 
 #### Server side RPC subsection
 
-ThingsBoard allows sending RPC commands to the device that is connected to ThingsBoard directly or via Gateway.
+ThingsBoard allows for sending RPC commands to devices connected directly to ThingsBoard or via Gateway.
 
-Configuration, provided in this section uses for sending RPC requests from ThingsBoard to device.
+Configuration, provided in this section is used for sending RPC requests from ThingsBoard to the device.
 
-| **Parameter**           | **Default value**                     | **Description**                                                       |
-|:-|:-|-
-| methodRPC               | **rpcMethod1**                        | RPC method name.                                                      |
-| withResponse            | **true**                              | Boolean value that means as send or not response back to ThingsBoard. |
-| methodProcessing        | **write**                             | Type of operation.                                                    |
-| encoding                | **utf-8**                             | Encoding used when writing received string data to storage.           |
+| **Parameter**           | **Default value**                     | **Description**                                                             |
+|:-|:-|-----------------------------------------------------------------------------
+| methodRPC               | **rpcMethod1**                        | RPC method name.                                                            |
+| withResponse            | **true**                              | Boolean value that determines whether to send response back to ThingsBoard. |
+| methodProcessing        | **write**                             | Type of operation.                                                          |
+| encoding                | **utf-8**                             | Encoding used when writing received string data to storage.                 |
 |---
 
 This subsection in configuration file looks like:
@@ -265,8 +265,9 @@ This subsection in configuration file looks like:
 ]
 ```
 
-Also, every telemetry and attribute parameter has built-in SET RPC method out of the box, so you don’t need to configure
-it manually. To use them, make sure you set all required parameters (in the case of Socket Connector, these are the following:
+Also, every telemetry and attribute parameter has a built-in SET RPC method out of the box, eliminating the need for 
+manual configuration. To use them, make sure you set all the required parameters (in the case of Socket Connector, 
+these are the following:
 **withResponse**, **methodProcessing**, **encoding**). 
 See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-methods).
 
