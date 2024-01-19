@@ -10,16 +10,16 @@ notitle: "true"
 
 <h1 class="usecase-title">Fuel level monitoring solution</h1>
 
-Efficient fuel level monitoring is indispensable for businesses, particularly gas stations, focusing on optimizing fuel inventory and preventing shortages or surplus. Inaccurate fuel level monitoring can lead to operational inefficiencies, loss of revenue, and, in severe cases, safety hazards due to fuel spillage.
+Efficient fuel level monitoring is indispensable for businesses, particularly gas stations, focusing on optimizing fuel inventory and preventing shortages or surpluses. Inaccurate fuel level monitoring can lead to operational inefficiencies, loss of revenue, and, in severe cases, safety hazards due to fuel spillage.
 
-Our Fuel Level Monitoring <a href="/docs/paas/solution-templates/fuel-level-monitoring/">template</a> offers real-time insight into fuel levels, facilitating proactive management of fuel stocks and refining operational workflows. The solution employs advanced technology, including adaptable sensors and robust communication protocols, to accurately track fuel levels in tanks. With our intuitive dashboard, users can effortlessly monitor tank state, configure measurement details and custom alerts, and track fuel consumption. By mastering your fuel management processes, you can diminish operational disruptions and ensure continuous fuel availability, leading to streamlined operations and enhanced customer satisfaction.
+Our Fuel Level Monitoring <a href="/docs/paas/solution-templates/fuel-level-monitoring/">template</a> offers real-time insight into fuel levels, facilitating proactive management of fuel stocks and refining operational workflows. The solution employs advanced technology, including adaptable sensors and robust communication protocols, to accurately track tank fuel levels. With our intuitive dashboard, users can effortlessly monitor tank state, configure measurement details and custom alerts, and track fuel consumption. Mastering your fuel management processes can diminish operational disruptions and ensure continuous fuel availability, leading to streamlined operations and enhanced customer satisfaction.
 
-Moreover, our solution is entirely customisable to accommodate the unique requirements of your business, whether you operate within the retail, industrial, or any other sector requiring meticulous fuel level monitoring. By leveraging our Fuel Level Monitoring solution, you can secure a competitive edge and attain superior operational efficiency. Revolutionize fuel management and propel your business to new heights with our Fuel Level Monitoring solution.
+Moreover, our solution is entirely customizable to accommodate the unique requirements of your business, whether you operate within the retail, industrial, or any other sector requiring meticulous fuel level monitoring. By leveraging our Fuel Level Monitoring solution, you can secure a competitive edge and attain superior operational efficiency. Revolutionize fuel management and propel your business to new heights with our Fuel Level Monitoring solution.
 
 ## Fuel Level Monitoring Solution Structure
 
-Within this solution, we have developed a Fuel Level Monitoring dashboard that amalgamates data from various sensors. 
-This dashboard empowers you to scrutinize fuel levels meticulously and react promptly to alterations in the tank state. 
+We have developed a Fuel Level Monitoring solution template that allows you to provision tanks and monitor the fuel level.
+This dashboard empowers you to check fuel levels meticulously and react promptly to alterations in the tank state.  
 It features components that can be effortlessly integrated into your IoT solution, enhancing the adaptability and user-friendliness of the system. 
 Additionally, the dashboard is equipped with multiple states, allowing for a diverse range of interactions and data presentations to accommodate varying user needs and preferences:
 
