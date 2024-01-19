@@ -219,7 +219,7 @@ the device application. You can treat this as a remote configuration for devices
 shared attributes from ThingsBoard. See [user guide](/docs/user-guide/attributes/) for more details.
 
 The “attributeRequests” configuration allows you to configure the format of the corresponding attribute data that will be 
-sending to the server.
+sent to the server.
 
 | **Parameter**           | **Default value**                     | **Description**                                             |
 |:-|:-|-
@@ -240,7 +240,7 @@ This subsection in configuration file looks like:
 
 #### Server side RPC subsection
 
-ThingsBoard allows for sending RPC commands to devices connected directly to ThingsBoard directly or via Gateway.
+ThingsBoard allows for sending RPC commands to devices connected directly to ThingsBoard or via Gateway.
 
 Configuration, provided in this section is used for sending RPC requests from ThingsBoard to the device.
 

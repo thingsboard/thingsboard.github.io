@@ -320,15 +320,15 @@ ThingsBoard allows the provisioning of device attributes and fetches some of the
 
 The “attributeRequests” configuration allows you to configure the format of the corresponding attribute data that will be written to the specific files.
 
-| **Parameter**                 | **Default value**                                     | **Description**                                                                                                                                                                 |
-|:-|:-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-| path                          | **fol/${attributeKey}/${attributeValue}.txt**         | JSON-path expression that is used for finding specific files                                                                                                                    |
-| deviceNameFilter              | **.\***                                               | Regular expression device name filter, uses to determine, which function to execute.                                                                                            |
-| writingMode                   | **OVERRIDE/WRITE**                                    | If writingMode is equal to OVERRIDE, the found files will be overwritten. If writingMode is equal to WRITE, new data will be appended at the end of the found files.            |
-| valueExpression               | **,,,,${attributeKey},,,${attributeValue}**           | Expression is used for creating the message data that will be sent to FTP server. In this case, ',' serves as the delimiter and before him, you can insert your data before it. |
+| **Parameter**                 | **Default value**                                     | **Description**                                                                                                                                                        |
+|:-|:-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| path                          | **fol/${attributeKey}/${attributeValue}.txt**         | JSON-path expression that is used for finding specific files                                                                                                           |
+| deviceNameFilter              | **.\***                                               | Regular expression device name filter, used to determine, which function to execute.                                                                                   |
+| writingMode                   | **OVERRIDE/WRITE**                                    | If writingMode is equal to OVERRIDE, the found files will be overwritten. If writingMode is equal to WRITE, new data will be appended at the end of the found files.   |
+| valueExpression               | **,,,,${attributeKey},,,${attributeValue}**           | Expression is used for creating the message data that will be sent to FTP server. In this case, ',' serves as the delimiter and you can insert your data before it. |
 |---
 
-This section in configuration file looks like:
+This section in configuration file looks like this:
 
 ```json
   "attributeUpdates": [
@@ -343,7 +343,7 @@ This section in configuration file looks like:
 
 ### Server side RPC commands
 
-ThingsBoard allows for sending RPC commands to devices connected directly to ThingsBoard directly or via Gateway.
+ThingsBoard allows for sending RPC commands to devices connected directly to ThingsBoard or via Gateway.
 
 Configuration, provided in this section uses for sending RPC requests from ThingsBoard to device.
 
