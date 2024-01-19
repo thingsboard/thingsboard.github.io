@@ -10,9 +10,9 @@
   title: Fleet Tracking
   link: /fleet-tracking/
   icon: /images/case-trk-icon.svg
-- id: fuel-level-monitoring
-  title: Fuel Level Monitoring
-  link: /use-cases/fuel-level-monitoring/
+- id: tank-level-monitoring
+  title: Tank Level Monitoring
+  link: /use-cases/tank-level-monitoring/
   icon: /images/case-level-icon.svg
 - id: smart-metering
   title: Smart Metering
