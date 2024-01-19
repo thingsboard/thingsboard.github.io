@@ -166,7 +166,7 @@ package manager of your operating system:
 
 2.Use the mosquitto_pub command to publish data to a specific MQTT topic. In this case, we'll use the "data/" topic as defined in the configuration:
 ```bash
-mosquitto_pub -h locahost -p 1884 -t data/ -m '{"frequency": 50, "power": 100, "temperature": 25, "humidity": 60}'
+mosquitto_pub -h localhost -p 1884 -t data/ -m '{"frequency": 50, "power": 100, "temperature": 25, "humidity": 60}'
 ```
 {:.copy-code}
 
