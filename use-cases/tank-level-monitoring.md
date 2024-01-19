@@ -1,22 +1,22 @@
 ---
 layout: use-case
-title: Fuel Level Monitoring
-description: Fuel Level Monitoring with ThingsBoard IoT Platform
+title: Tank Level Monitoring
+description: Tank Level Monitoring with ThingsBoard IoT Platform
 notitle: "true"
 
 ---
 
-{% include usecase-nav.html usecase="fuel-level-monitoring" %}
+{% include usecase-nav.html usecase="tank-level-monitoring" %}
 
-<h1 class="usecase-title">Fuel level monitoring solution</h1>
+<h1 class="usecase-title">Tank level monitoring solution</h1>
 
-Efficient fuel level monitoring is indispensable for businesses, particularly gas stations, focusing on optimizing fuel inventory and preventing shortages or surpluses. Inaccurate fuel level monitoring can lead to operational inefficiencies, loss of revenue, and, in severe cases, safety hazards due to fuel spillage.
+Efficient tank level monitoring is indispensable for businesses, particularly gas stations, focusing on optimizing fuel inventory and preventing shortages or surpluses. Inaccurate fuel level monitoring can lead to operational inefficiencies, loss of revenue, and, in severe cases, safety hazards due to fuel spillage.
 
 Our Fuel Level Monitoring <a href="/docs/paas/solution-templates/fuel-level-monitoring/">template</a> offers real-time insight into fuel levels, facilitating proactive management of fuel stocks and refining operational workflows. The solution employs advanced technology, including adaptable sensors and robust communication protocols, to accurately track tank fuel levels. With our intuitive dashboard, users can effortlessly monitor tank state, configure measurement details and custom alerts, and track fuel consumption. Mastering your fuel management processes can diminish operational disruptions and ensure continuous fuel availability, leading to streamlined operations and enhanced customer satisfaction.
 
 Moreover, our solution is entirely customizable to accommodate the unique requirements of your business, whether you operate within the retail, industrial, or any other sector requiring meticulous fuel level monitoring. By leveraging our Fuel Level Monitoring solution, you can secure a competitive edge and attain superior operational efficiency. Revolutionize fuel management and propel your business to new heights with our Fuel Level Monitoring solution.
 
-## Fuel Level Monitoring Solution Structure
+## Tank Level Monitoring Solution Structure
 
 We have developed a Fuel Level Monitoring solution template that allows you to provision tanks and monitor the fuel level.
 This dashboard empowers you to check fuel levels meticulously and react promptly to alterations in the tank state.  
@@ -27,7 +27,7 @@ Additionally, the dashboard is equipped with multiple states, allowing for a div
 
 **Tank state** - designed to display information about a specific tank.
 
-## Fuel Level Monitoring dashboard
+## Tank Level Monitoring dashboard
 
 The Fuel Level Monitoring interactive dashboard contains 2 states that are specialised for monitoring fuel levels in tanks, observing consumption statistics, managing devices.
 
@@ -48,7 +48,7 @@ The Fuel Level Monitoring interactive dashboard contains 2 states that are speci
 
 The incorporation of tanks and units selection further personalises the user interface, enabling more precise monitoring and management, while the streamlined interface ensures swift navigation and enhanced user experience, catering to various monitoring and management needs related to fuel level in tanks.
 
-## Benefits of the Fuel Level Monitoring template
+## Benefits of the Tank Level Monitoring template
 
 Save up to 90% of development time for your fuel level monitoring solution by utilising the following platform benefits:
  - reliable and scalable data collection for your tanks sensors;
@@ -142,7 +142,7 @@ Save up to 90% of development time for your fuel level monitoring solution by ut
     </div>
 </section>
 
-## Fuel level monitoring solution overview
+## Tank level monitoring solution overview
 
 The diagram below identifies data flow and integration points for a typical fuel level monitoring solution that uses the ThingsBoard platform to collect and analyze data from fuel tanks.
 

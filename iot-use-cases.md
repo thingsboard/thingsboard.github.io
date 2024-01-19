@@ -312,12 +312,12 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
         </div>
         <div class="dashboard-item">
             <div class="item-description">
-                <h2>Fuel Level Monitoring</h2>
-                <p>The ThingsBoard platform simplifies fuel management for your business. Control the placement of fuel tanks, monitor information about a specific tank, and control all alarms related to the remaining fuel level, temperature, and battery level.</p>
-                <a class="read-more-button" href="/use-cases/fuel-level-monitoring/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+                <h2>Tank Level Monitoring</h2>
+                <p>The ThingsBoard platform simplifies tank level management for your business. Control the placement of fuel tanks, monitor information about a specific tank, and control all alarms related to the remaining fuel level, temperature, and battery level.</p>
+                <a class="read-more-button" href="/use-cases/tank-level-monitoring/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
             </div>
             <div class="item-image-container">
-                <a class="img-button" href="/use-cases/fuel-level-monitoring/">
+                <a class="img-button" href="/use-cases/tank-level-monitoring/">
                     <div class="overlay">
                         <div class="eye">
                             <img src="/images/eye-icon.svg" alt="See more">See more
