@@ -8,7 +8,7 @@ According to the provided features, each widget definition represents a specific
 
 ## Creating new widget definition
 
-In order to create a new widget definition, navigate to "Widget Library" and open existing "Widgets Bundle" or create a new one.  In the "Widgets Bundle" view, click the big “+” button at the bottom-right part of the screen and then click the "Create new widget type" button.
+In order to create a new widget definition, navigate to "Widget Library" and open existing "Widgets Bundle" or create a new one.  In the "Widgets Bundle" view, click the “+” button at the top-right part of the screen and then click the "Create new widget" button.
 
 ![image](/images/user-guide/contribution/widgets/create-new-widget-type.png)
 
@@ -71,7 +71,7 @@ This section contains all widget related JavaScript code according to the [Widge
 This section consists of two tabs:
 
 The first tab, **Settings schema**, is used to specify the json schema of widget settings for UI form auto-generation using react-schema-form [builder](http://networknt.github.io/react-schema-form/). 
-This generated UI form is displayed in the **Advanced** tab of widget settings. 
+This generated UI form is displayed in the **Advanced** mode in the **Appearance** tab of widget settings. 
 The Settings Object serialized by this schema is used to store specific widget settings and is accessible from widget JavaScript code.
 
 ![image](/images/user-guide/contribution/widgets/widget-editor-settings-schema.png)
@@ -82,6 +82,188 @@ The Settings Object serialized by this schema is used to store specific settings
 These settings are accessible from widget JavaScript code.
 
 ![image](/images/user-guide/contribution/widgets/widget-editor-datakey-settings-schema.png)
+
+The third tab, **Latest data key settings schema**, is used to specify json schema of the latest data key for UI form auto-generation using react-schema-form [builder](http://networknt.github.io/react-schema-form/).
+The **Latest data key settings schema** is available only for **Time series** widgets.
+This generated UI form is displayed in **Advanced** tab of the **Data key configuration** dialog of the Latest keys.
+The Settings Object serialized by this schema is used to store specific settings for each data key of the datasource defined in the widget.
+These settings are accessible from widget JavaScript code.
+
+![image](/images/user-guide/contribution/widgets/widget-editor-latest-datakey-setting-schema.png)
+
+After v3.4 auto-generated advanced widget settings JSON forms are replaced with [Angular components](https://github.com/thingsboard/thingsboard/pull/6545).
+For creating new settings schemas for custom widgets don't forget to remove components from **Widget Settings** tab.
+
+![image](/images/user-guide/contribution/widgets/widget-editor-widget-settings-selectors.png)
+
+The basic example of the **settings schema**:
+
+```
+   {
+      "schema": {
+         "type": "object",
+         "title": "Settings",
+         "properties": {
+             "cardType": {
+                "title": "Card type",
+                "type": "string",
+                "default": "Average"
+             },
+             "cardTitle": {
+                "title": "Card title",
+                "type": "string",
+                "default": "Gateways online"
+             }
+          },
+          "required": ["cardType"]
+         },
+      "form": [
+      {
+         "key": "cardType",
+         "type": "rc-select",
+         "multiple": false,
+         "items": [
+         {
+           "value": "avg",
+           "label": "Average"
+         },
+         {
+           "value": "max",
+           "label": "Maximum"
+         },
+         {
+           "value": "min",
+           "label": "Minimum"
+         }]
+      },
+      "cardTitle"
+      ]
+   }
+```
+
+The result of applying settings schema, which will be visible in **Appearance** tab of the widget settings:
+
+![image](/images/user-guide/contribution/widgets/widget-editor-schema-example.png)
+
+
+The **schema** property has types like **Number**, **Boolean**, **String** and **Object**.
+In the **form** array every property can be specified as an **input**, **slider**, **dropdown**, **functional field**(JS, HTML, CSS), **image selection**, **color picker** and **array of properties objects**. 
+Fields can be displayed conditionally and can be grouped in logical blocks.
+
+The complex example of the custom **settings schema**:
+
+```
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "button": {
+                "title": "Button settings",
+                "type": "object",
+                "properties": {
+                    "color": {
+                        "title": "Primary color",
+                        "type": "string",
+                        "default": "#545454"
+                    },
+                    "backgroundColor": {
+                        "title": "Background color",
+                        "type": "string",
+                        "default": null
+                    }
+                }
+            },
+            "markerImage": {
+                "title": "Custom marker image",
+                "type": "string"
+            },
+            "markerImageSize": {
+                "title": "Custom marker image size (px)",
+                "type": "number",
+                "default": 34
+            },
+            "useMarkerImageFunction": {
+                "title": "Use marker image function",
+                "type": "boolean",
+                "default": false
+            },
+            "markerImageFunction": {
+                "title": "Marker image function: f(data, images, dsData, dsIndex)",
+                "type": "string"
+            },
+            "markerImages": {
+                "title": "Marker images",
+                "type": "array",
+                "items": {
+                    "title": "Marker image",
+                    "type": "string"
+                }
+            }
+        },
+        "required": []
+    },
+    "form": [
+        [
+            {
+                "key": "button",
+                "items": [
+                    {
+                        "key": "button.color",
+                        "type": "color"
+                    },
+                    {
+                        "key": "button.backgroundColor",
+                        "type": "color"
+                    }
+			    ]
+        	}
+        ],
+        [
+            "useMarkerImageFunction",
+            {
+                "key": "markerImage",
+                "type": "image",
+                "condition": "model.useMarkerImageFunction !== true"
+            },
+            {
+                "key": "markerImageSize",
+                "condition": "model.useMarkerImageFunction !== true"
+            },
+            {
+                "key": "markerImageFunction",
+                "type": "javascript",
+                "helpId": "widget/lib/map/marker_image_fn",
+                "condition": "model.useMarkerImageFunction === true"
+            },
+            {
+                "key": "markerImages",
+                "items": [
+                    {
+                        "key": "markerImages[]",
+                        "type": "image"
+                    }
+                ],
+                "condition": "model.useMarkerImageFunction === true"
+            }
+        ]
+    ],
+    "groupInfoes": [
+        {
+            "formIndex": 0,
+            "GroupTitle": "Button Style Settings"
+        },
+        {
+            "formIndex": 1,
+            "GroupTitle": "Marker Settings"
+        }
+    ]
+}
+```
+
+The result of applying custom **settings schema** to the widget:
+
+![image](/images/user-guide/contribution/widgets/widget-editor-appearence-example.png)
+
 
 #### Widget preview section
 
