@@ -141,13 +141,13 @@ The basic example of the **settings schema**:
    }
 ```
 
-The result of applying settings schema, which will be visible in **Appearance** tab of the widget settings:
+The result of applying **settings schema**, which will be visible in **Appearance** tab of the widget settings:
 
 ![image](/images/user-guide/contribution/widgets/widget-editor-schema-example.png)
 
 
 The **schema** property has types like **Number**, **Boolean**, **String** and **Object**.
-In the **form** array every property can be specified as an **input**, **slider**, **dropdown**, **functional field**(JS, HTML, CSS), **image selection**, **color picker** and **array of properties objects**. 
+In the **form** array every property can be specified as an **input**, **checkbox**, **dropdown**, **functional field**(JS, HTML, CSS), **image selection**, **color picker** and **array of properties**. 
 Fields can be displayed conditionally and can be grouped in logical blocks.
 
 The complex example of the custom **settings schema**:
