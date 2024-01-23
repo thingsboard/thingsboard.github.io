@@ -125,7 +125,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>50M</td>
           <td>250M</td>
           <td>500M</td>
-          <td>Total number of messages received by any of the Transports (MQTT, HTTP, CoAP, etc) or Integrations.</td>
+          <td>Total number of messages received by any of the Transports (MQTT, HTTP, CoAP, etc) or Integrations</td>
       </tr>
       <tr>
           <td>Transport data points</td>
@@ -133,7 +133,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>100M</td>
           <td>500M</td>
           <td>1B</td>
-          <td>Total number of key-value pairs that your telemetry or attribute transport messages contain.</td>
+          <td>Total number of key-value pairs that your telemetry or attribute transport messages contain</td>
       </tr>
       <tr>
           <td>Rule Engine executions</td>
@@ -160,7 +160,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>Default value of the "time to live" parameter that is used to store time-series data.<br>
           You may overwrite the default value in the "Save Timeseries" rule node or using "TTL" metadata field of your message.<br>
           This allows you to optimize storage consumption. The maximum allowed value of TTL is 5 years. <br>
-          For example, you may store "raw" data for 3 month and aggregated data for 3 years.
+          For example, you may store "raw" data for 3 month and aggregated data for 3 years
           </td>
       </tr>      
       <tr>
@@ -171,7 +171,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>200B</td>
           <td>Data points storage days are calculated for all time-series data points that are stored to the database.<br>
           Platform multiplies number of data points by the number of days those data points will be stored.<br> 
-          The TTL parameter is used to extract amount of days to store the data. For example, if you store 1M data points for 30 days, this is 30M storage data point days. </td>
+          The TTL parameter is used to extract amount of days to store the data. For example, if you store 1M data points for 30 days, this is 30M storage data point days</td>
       </tr>
       <tr>
           <td>Alarms TTL</td>
@@ -179,7 +179,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>180 days</td>
           <td>365 days</td>
           <td>365 days</td>
-          <td>How many days to store alarms in the database.</td>
+          <td>How many days to store alarms in the database</td>
       </tr>
       <tr>
           <td>RPC TTL</td>
@@ -187,7 +187,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>180 days</td>
           <td>365 days</td>
           <td>365 days</td>
-          <td>How many days to store persistent RPC in the database.</td>
+          <td>How many days to store persistent RPC in the database</td>
       </tr>
       <tr>
           <td>Alarms</td>
@@ -195,7 +195,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>4K</td>
           <td>20K</td>
           <td>40K</td>
-          <td>Total number of alarms created per month.</td>
+          <td>Total number of alarms created per month</td>
       </tr>
       <tr>
           <td>Emails</td>
@@ -203,7 +203,7 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>2K</td>
           <td>10K</td>
           <td>40K</td>
-          <td>Total number of emails sent.</td>
+          <td>Total number of emails sent</td>
       </tr>
       <tr>
           <td>SMS</td>
@@ -211,8 +211,128 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>100</td>
           <td>500</td>
           <td>1000</td>
-          <td>Total number of SMS sent.</td>
-      </tr>          
+          <td>Total number of SMS sent</td>
+      </tr>
+      <tr>
+          <td>Integration messages (Tenant)</td>
+          <td>100 messages per 1 sec,<br>but less than 3000 messages per 60 sec,<br>but less than 70000 messages per 3600 sec</td>
+          <td>1002 messages per 1 sec,<br>but less than 30000 messages per 60 sec,<br>but less than 700000 messages per 3600 sec</td>
+          <td>5000 messages per 1 sec,<br>but less than 150000 messages per 60 sec,<br>but less than 3500000 messages per 3600 sec</td>
+          <td>10000 messages per 1 sec,<br>but less than 300000 messages per 60 sec,<br>but less than 7000000 messages per 3600 sec</td>
+          <td>Total number of messages received by any of the transport microservices for all devices that belong to the tenant</td>
+      </tr>
+      <tr>
+          <td>Integration messages (Device)</td>
+          <td>100 messages per 1 sec,<br>but less than 3000 messages per 60 sec,<br>but less than 70000 messages per 3600 sec</td>
+          <td>102 messages per 1 sec,<br>but less than 3000 messages per 60 sec,<br>but less than 7000 messages per 3600 sec</td>
+          <td>100 messages per 1 sec,<br>but less than 3000 messages per 60 sec,<br>but less than 7000 messages per 3600 sec</td>
+          <td>100 messages per 1 sec,<br>but less than 3000 messages per 60 sec,<br>but less than 7000 messages per 3600 sec</td>
+          <td>Total number of telemetry messages received by any of the transport microservices for all devices</td>
+      </tr>
+      <tr>
+          <td>REST requests (Tenant)</td>
+          <td>100 messages per 1 sec,<br>but less than 2000 messages per 60 sec</td>
+          <td>100 messages per 1 sec,<br>but less than 2000 messages per 60 sec</td>
+          <td>100 messages per 1 sec,<br>but less than 2000 messages per 60 sec</td>
+          <td>100 messages per 1 sec,<br>but less than 2000 messages per 60 sec</td>
+          <td>Total number of telemetry data points received by any of the transport microservices for all devices that belong to the tenant</td>
+      </tr>
+      <tr>
+          <td>REST requests (Customer)</td>
+          <td>50 messages per 1 sec,<br>but less than 1000 messages per 60 sec</td>
+          <td>50 messages per 1 sec,<br>but less than 1000 messages per 60 sec</td>
+          <td>50 messages per 1 sec,<br>but less than 1000 messages per 60 sec</td>
+          <td>50 messages per 1 sec,<br>but less than 1000 messages per 60 sec</td>
+          <td>Total number of messages received by any of the transport microservices for each device separately</td>
+      </tr>
+      <tr>
+          <td>WS updatesper session</td>
+          <td>1000 messages per 1 sec,<br>but less than 10000 messages per 60 sec</td>
+          <td>1000 messages per 1 sec,<br>but less than 10000 messages per 60 sec</td>
+          <td>1000 messages per 1 sec,<br>but less than 10000 messages per 60 sec</td>
+          <td>1000 messages per 1 sec,<br>but less than 10000 messages per 60 sec</td>
+          <td>Total number of telemetry messages received by any of the transport microservices for each device separately</td>
+      </tr>
+      <tr>
+          <td>Rule Engine executions per message</td>
+          <td>20</td>
+          <td>30</td>
+          <td>40</td>
+          <td>50</td>
+          <td>Maximum number of rule node executions to process particular message</td>
+      </tr>
+      <tr>
+          <td>WS Sessions (Tenant)</td>
+          <td>1000</td>
+          <td>1000</td>
+          <td>1000</td>
+          <td>1000</td>
+          <td>Maximum number of Web socket sessions for the tenant</td>
+      </tr>
+      <tr>
+          <td>WS Subscriptions (Tenant)</td>
+          <td>20000</td>
+          <td>20000</td>
+          <td>20000</td>
+          <td>20000</td>
+          <td>Maximum number of Web socket subscription for the tenant</td>
+      </tr>
+      <tr>
+          <td>WS Sessions (Customer)</td>
+          <td>500</td>
+          <td>500</td>
+          <td>500</td>
+          <td>500</td>
+          <td>Maximum number of Web socket sessions for the сustomer</td>
+      </tr>
+      <tr>
+          <td>WS Subscriptions (Customer)</td>
+          <td>10000</td>
+          <td>10000</td>
+          <td>10000</td>
+          <td>10000</td>
+          <td>Maximum number of Web socket subscription for the сustomer</td>
+      </tr>
+      <tr>
+          <td>WS Sessions (Public user)</td>
+          <td>250</td>
+          <td>250</td>
+          <td>250</td>
+          <td>250</td>
+          <td>Maximum number of Sessions per public user</td>
+      </tr>
+      <tr>
+          <td>WS Subscriptions (Public user)</td>
+          <td>5000</td>
+          <td>5000</td>
+          <td>5000</td>
+          <td>5000</td>
+          <td>Maximum number of subscriptions per public user</td>
+      </tr> 
+      <tr>
+          <td>WS Sessions (Regular user)</td>
+          <td>100</td>
+          <td>100</td>
+          <td>100</td>
+          <td>100</td>
+          <td>Maximum number of Sessions per regular user</td>
+      </tr>
+      <tr>
+          <td>WS Subscriptions (Regular user)</td>
+          <td>2000</td>
+          <td>2000</td>
+          <td>2000</td>
+          <td>2000</td>
+          <td>Maximum number of subscriptions per regular user</td>
+      </tr>
+      <tr>
+          <td>WS queue message (Session)</td>
+          <td>500</td>
+          <td>500</td>
+          <td>500</td>
+          <td>500</td>
+          <td>Maximum size of queue message per session</td>
+      </tr>
   </tbody>
 </table>
 
@@ -280,14 +400,6 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
           <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
           <td>Total number of telemetry data points received by any of the transport microservices for each device separately</td>
       </tr>
-      <tr>
-          <td>Rule Engine executions per message</td>
-          <td>20</td>
-          <td>30</td>
-          <td>40</td>
-          <td>50</td>
-          <td>Maximum number of rule node executions to process particular message</td>
-      </tr>      
   </tbody>
 </table>
 
