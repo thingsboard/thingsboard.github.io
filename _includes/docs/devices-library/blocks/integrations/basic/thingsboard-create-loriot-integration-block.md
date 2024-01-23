@@ -1,6 +1,7 @@
 ### Add a gateway on the Loriot
 
 We need to add a gateway on the [Loriot](https://loriot.io){: target="_blank"}.   
+
 To add a gateway, you can follow next steps:
 
 {% assign addGatewaySteps = '
@@ -9,16 +10,16 @@ To add a gateway, you can follow next steps:
         title: Login to Loriot server. We use **eu2.loriot.io**, but it depends on chosen region during registration.
     ===
         image: /images/devices-library/basic/integrations/loriot/sample-network.png,
-        title: Go to **Networks** and open **Sample network** or create a new one.
+        title: Go to the "**Networks**" and open the "**Sample network**" or create a new one.
     ===
         image: /images/devices-library/basic/integrations/loriot/register-gateway.png,
-        title: Scroll down and choose **Packet Forwarder Semtech** option.
+        title: Scroll down and select "**Packet Forwarder Semtech**".
     ===
         image: /images/devices-library/basic/integrations/loriot/add-gateway.png,
         title: Scroll up and put information about the gateway **MAC Address** (Just remove **FFFF** or **FFFE** in the middle of ***gateway EUI***) into **eth0 MAC address** and gateway EUI to **Custom EUI** field.
     ===
         image: /images/devices-library/basic/integrations/loriot/gateway-added-disconnected.png,
-        title: The gateway is added. 
+        title: The gateway is added. You can see its status - disconnected.
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addGatewaySteps %}
@@ -31,9 +32,11 @@ To add a gateway, you can follow next steps:
 
 {% endif %}
 
-### Create uplink converter
+### Create integration in ThingsBoard
 
-At first, copy the code for uplink converter, we will need it for integration:
+Next we will create an integration with Loriot inside the ThingsBoard.  
+
+At first, copy the code, we will need it to create the uplink converter:
 
 {% capture converterCode %}
 var data = decodeToJson(payload);
@@ -41,8 +44,8 @@ var deviceName = data.EUI;
 var deviceType = "LoraDevices";
 
 // If you want to parse incoming data somehow, you can add your code to this function.
-// input: bytes 
-// expected output: 
+// input: bytes
+// expected output:
 //  {
 //    "attributes": {"attributeKey": "attributeValue"},
 //    "telemetry": {"telemetryKey": "telemetryValue"}
@@ -52,7 +55,7 @@ var deviceType = "LoraDevices";
 function decodePayload(input) {
     var output = { attributes:{}, telemetry: {} };
     // --- Decoding code --- //
-    
+
     output.telemetry.HEX_bytes = bytesToHex(input);
     
     // --- Decoding code --- //
@@ -101,13 +104,13 @@ telemetry.putAll(telemetryData);
 attributes.putAll(attributesData);
 
 var deviceInfo = {
-    deviceName: deviceName,
-    deviceType: deviceType,
-    telemetry: {
-        ts: timestamp, 
-        values: telemetry
-    },
-    attributes: attributes
+deviceName: deviceName,
+deviceType: deviceType,
+telemetry: {
+ts: timestamp,
+values: telemetry
+},
+attributes: attributes
 };
 
 uplinkDataList.add(deviceInfo);
@@ -132,29 +135,28 @@ return uplinkDataList;
 
 {% include code-toggle.liquid code=converterCode params="javascript|.copy-code.expandable-20" %}
 
-### Create integration
-
-Next we will create an integration with Loriot inside the ThingsBoard.  
-
-
 {% assign createLoriotIntegration = '
     ===
         image: /images/devices-library/basic/integrations/loriot/1-create-integration-name-type.png,
-        title: Go to **Integrations**, press **plus** button and choose **Loriot** as a type, put some name.
+        title: Click "**plus**" button to add new integration. Select type "**Loriot**". Then, click "**Next**".
     ===
         image: /images/devices-library/basic/integrations/loriot/2-create-integration-uplink.png,
-        title: Check **Create new uplink data converter** and replace a code or create the existing one.
+        title: Paste the previously copied script to the Decoder function section. Click "**Next**".
+    ===
+        image: /images/devices-library/basic/integrations/loriot/3-create-integration-downlink.png,
+        title: Leave the "**Downlink data converter**" field empty. Click on "**Skip**" button.
     ===
         image: /images/devices-library/basic/integrations/loriot/sample-application.png,
-        title: Go to **Applications** in the left menu and choose **SampleApp** or create a new one. Copy **Application ID**.
+        title: Go to te "**Applications**" in the left menu and choose "**SampleApp**" or create a new one. Copy "**Application ID**".
     ===
         image: /images/devices-library/basic/integrations/loriot/4-create-integration-configuration.png,
-        title: Fill the field with your parameters, 
+        title: Next, fill in the fields with your parameters. After, press "**Add**" button.
 '
 %}
 
-To add integration click on '**+**' button and follow the next steps:  
+<br>
+Now, open the "**Integration center**" section -> "**Integrations**" page and follow this steps:  
 
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=createLoriotIntegration %} 
-
-Press **Add** button and integration will be added.  
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=createLoriotIntegration %}
+<br>
+Integration is created.
