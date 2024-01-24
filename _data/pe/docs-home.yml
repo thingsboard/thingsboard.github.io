@@ -18,6 +18,9 @@ toc:
     path: /docs/pe/solution-templates/smart-office/
   - title: Fleet tracking
     path: /docs/pe/solution-templates/fleet-tracking/
+  - title: Fuel Level Monitoring
+    path: /docs/pe/solution-templates/fuel-level-monitoring/
+    new: true
   - title: Water metering
     path: /docs/pe/solution-templates/water-metering/
   - title: Smart retail
@@ -176,6 +179,9 @@ toc:
     path: /docs/user-guide/integrations/ttn/
   - title: TheThingsIndustries
     path: /docs/user-guide/integrations/tti/
+  - title: KPN Things
+    path: /docs/user-guide/integrations/kpn-things/
+    new: true
   - title: LORIOT
     path: /docs/user-guide/integrations/loriot/
   - title: ChirpStack
@@ -190,7 +196,6 @@ toc:
     path: /docs/user-guide/integrations/azure-event-hub/
   - title: Azure Service Bus
     path: /docs/user-guide/integrations/azure-service-bus/
-    new: true
   - title: Azure IoT Hub
     path: /docs/user-guide/integrations/azure-iot-hub/
   - title: TCP
@@ -203,6 +208,8 @@ toc:
     path: /docs/user-guide/integrations/ocean-connect/
   - title: Tuya
     path: /docs/user-guide/integrations/tuya/
+  - title: Particle
+    path: /docs/user-guide/integrations/particle/
     new: true
   - title: Custom Integration development guide
     path: /docs/user-guide/integrations/custom/
@@ -216,12 +223,17 @@ toc:
     path: /docs/pe/samples/analytics/kafka-streams/
 - title: Other Features
   section:
+    - title: Edge Computing
+      path: /docs/pe/user-guide/edge-computing/
     - title: Device Connectivity Status
       path: /docs/pe/user-guide/device-connectivity-status/
     - title: Claiming Devices
       path: /docs/pe/user-guide/claiming-devices/
     - title: Device provisioning
       path: /docs/pe/user-guide/device-provisioning/
+    - title: Image gallery
+      path: /docs/pe/user-guide/image-gallery/
+      new: true
     - title: Entity Views
       path: /docs/pe/user-guide/entity-views/
     - title: API Limits

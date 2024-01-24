@@ -11,16 +11,16 @@ description: OPC-UA protocol support for ThingsBoard IoT Gateway
 {:toc}
 
 {% capture difference %}
-**From Gateway version 3.1 we added a new OPC-UA connector based on the AsyncIO library. 
-Note that the connector is in the early beta, so it can have bugs. 
+**Starting from Gateway version 3.1, we added a new OPC-UA connector based on the AsyncIO library. 
+Please note that the connector is in the early beta stage and may contain bugs. 
 Also, it is not recommended to use it in production mode for now.
-For enabling it, use the type of connector "opcua_asyncio".**
+To enable it, use the type of connector "opcua_asyncio".**
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
 This guide will help you to get familiar with OPC-UA connector configuration for ThingsBoard IoT Gateway.
 Use [general configuration](/docs/iot-gateway/configuration/) to enable this extension.
-We will describe connector configuration file below.
+The connector configuration file will be described below.
 
 <b>Example of OPC-UA Connector config file.</b>
 
@@ -81,24 +81,24 @@ We will describe connector configuration file below.
 
 ## Section "server"
 
-Configuration in this section uses for connecting to OPC-UA server.  
+The configuration in this section is used to connect to the OPC-UA server.  
 
-| **Parameter**                 | **Default value**                    | **Description**                                                                                                                                                        |
-|:-|:-|-
-| name                          | **OPC-UA Default Server**            | Name of connector to server.                                                                                                                                           |
-| host                          | **localhost:4840/freeopcua/server/** | Hostname or ip address of OPC-UA server.                                                                                                                               |
-| timeoutInMillis               | **5000**                             | Timeout in seconds for connecting to OPC-UA server.                                                                                                                    |
-| scanPeriodInMillis            | **5000**                             | Period to rescan the server.                                                                                                                                           |
-| disableSubscriptions          | **false**                            | If true - the gateway will subscribe to interesting nodes and wait for data update and if false - the gateway will rescan OPC-UA server every **scanPeriodInMillis**   |
-| subCheckPeriodInMillis        | **100**                              | Period to check the subscriptions in the OPC-UA server.                                                                                                                |
-| showMap                       | **true**                             | Show nodes on scanning **true** or **false**.                                                                                                                          |
-| security                      | **Basic128Rsa15**                    | Security policy (**Basic128Rsa15**, **Basic256**, **Basic256Sha256**)                                                                                                  |
+| **Parameter**                 | **Default value**                    | **Description**                                                                                                                                                      |
+|:-|:-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| name                          | **OPC-UA Default Server**            | Name of the connector to server.                                                                                                                                     |
+| host                          | **localhost:4840/freeopcua/server/** | Hostname or ip address of OPC-UA server.                                                                                                                             |
+| timeoutInMillis               | **5000**                             | Timeout in seconds for connecting to OPC-UA server.                                                                                                                  |
+| scanPeriodInMillis            | **5000**                             | Period in milliseconds to rescan the server.                                                                                                                         |
+| disableSubscriptions          | **false**                            | If true - the gateway will subscribe to interesting nodes and wait for data update and if false - the gateway will rescan OPC-UA server every **scanPeriodInMillis** |
+| subCheckPeriodInMillis        | **100**                              | Period to check the subscriptions in the OPC-UA server.                                                                                                              |
+| showMap                       | **true**                             | Show nodes on scanning **true** or **false**.                                                                                                                        |
+| security                      | **Basic128Rsa15**                    | Security policy (**Basic128Rsa15**, **Basic256**, **Basic256Sha256**)                                                                                                |
 |---
 
 <br>
-**Let's look an example.**
+**Let's look at an example.**
 <br>
-In this example uses the Prosys OPC UA Simulation Server to demonstrate how to configure the OPC-UA connector.
+This example uses the Prosys OPC-UA Simulation Server to demonstrate how to configure the OPC-UA connector.
 <br>
 
 {:refdef: style="text-align: left;"}
@@ -108,7 +108,7 @@ In this example uses the Prosys OPC UA Simulation Server to demonstrate how to c
 
 On the main **"Status"** tab, copy connection address (UA TCP).
 
-To connect your OPC UA server to ThingsBoard, in the OPC-UA Connector configuration file (opcua.json), replace the "url" value with the copied connection address.
+To connect your OPC-UA server to ThingsBoard, open the OPC-UA Connector configuration file (opcua.json) and replace the "url" value with the copied connection address.
 
 Our **server** section would look like this:
 
@@ -135,19 +135,19 @@ There are several types available for this subsection:
 3. cert.PEM  
 
 {% capture identityopcuatogglespec %}
-<b>anonymous</b><br> <small>(recommended if all servers in the local network)</small>%,%anonymous%,%templates/iot-gateway/opcua-identity-anonymous-config.md%br%
-<b>username</b><br> <small>(recommended as basic level of security)</small>%,%username%,%templates/iot-gateway/opcua-identity-username-config.md%br%
-<b>cert.PEM</b><br> <small>(recommended as better level of security)</small>%,%certpem%,%templates/iot-gateway/opcua-identity-certpem-config.md%br%{% endcapture %}
+<b>anonymous</b><br> <small>(recommended if all servers are in the local network)</small>%,%anonymous%,%templates/iot-gateway/opcua-identity-anonymous-config.md%br%
+<b>username</b><br> <small>(recommended for a basic level of security)</small>%,%username%,%templates/iot-gateway/opcua-identity-username-config.md%br%
+<b>cert.PEM</b><br> <small>(recommended for a higher level of security)</small>%,%certpem%,%templates/iot-gateway/opcua-identity-certpem-config.md%br%{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="opcuaIdentityConfig" toggle-spec=identityopcuatogglespec %}
 
 ## Section "mapping"
-This configuration section contains array of nodes that the gateway will subscribe to after connecting to the OPC-UA server and settings about processing data from these nodes.
+This configuration section contains an array of nodes that the gateway will subscribe to after connecting to the OPC-UA server, along with settings for processing data from these nodes.
 
-| **Parameter**                 | **Default value**                    | **Description**                                                                       |
-|:-|:-|-
-| deviceNodePattern             | **Root\\.Objects\\.Device1**                     | Regular expression, uses for looking the node for a current device.                   |
-| deviceNamePattern             | **Device ${Root\\.Objects\\.Device1\\.serialNumber}**           | Path to variable with device name, uses for looking the device name in some variable.              |
+| **Parameter**                 | **Default value**                                     | **Description**                                                                            |
+|:-|:-|----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| deviceNodePattern             | **Root\\.Objects\\.Device1**                          | Regular expression, is used for looking the node for a current device.                     |
+| deviceNamePattern             | **Device ${Root\\.Objects\\.Device1\\.serialNumber}** | Path to a variable with device name, is used for looking the device name in some variable. |
 |---
 
 This part of configuration will look like:  
@@ -157,14 +157,14 @@ This part of configuration will look like:
         "deviceNamePattern": "Device ${Root\\.Objects\\.Device1\\.serialNumber}",
 ```
 
-***Optionally, you can add in this section parameter "converter" for using custom converter.***
+***Optionally, in this section, you can add the "converter" parameter to use a custom converter.***
 <br>
 <br><br>
 **Let's look an example.**
 
 Specify **deviceNodePattern** as on our test server. In this example it is **"Root\\.Objects\\.Simulation"**.
 
-**deviceNamePattern** specify as **"Device OPC-UA"**.
+**deviceNamePattern** should be specified as **"Device OPC-UA"**.
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/opc-ua-simulation-server-2.png)
@@ -182,7 +182,7 @@ In this example, the **mapping** section would look like this:
 ![image](/images/gateway/opc-ua-configuration-2.png)
 {: refdef}
 
-After running **ThingsBoard IoT gateway**, you see the new device **Device OPC-UA** in your ThingsBoard instance.
+After running **ThingsBoard IoT gateway**, you will see the new **Device OPC-UA** device in your ThingsBoard instance.
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/gateway-opc-ua-attributes-1.png)
@@ -191,19 +191,19 @@ After running **ThingsBoard IoT gateway**, you see the new device **Device OPC-U
 ### Subsection "attributes"
 This subsection contains configurations for variables of the object, that will be interpreted as attributes for the device.
 
-| **Parameter**   | **Default value**           | **Description**                                                                                      |
-|:-|:-|-
-| key             | **CertificateNumber**       | Tag, that will interpreted as attribute for ThingsBoard platform instance.                           |
-| path            | **${ns=2;i=5}**             | Name of the variable in the OPC-UA object, uses for looking the value in some variable. ** \* **     |
+| **Parameter**   | **Default value**           | **Description**                                                                                       |
+|:-|:-|-------------------------------------------------------------------------------------------------------
+| key             | **CertificateNumber**       | Tag, that will be interpreted as attribute for the ThingsBoard platform instance.                     |
+| path            | **${ns=2;i=5}**             | Name of the variable in the OPC-UA object is used for looking up the value within a specific variable. ** \* ** |
 |---
 
 {% capture difference %}
 <br>
-**If you don't specify the "key" parameter, the node name will use instead**  
+**If you don't specify the "key" parameter, the node name will be used instead**  
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
-** \* ** You can put here some expression for search like:
+** \* ** You can put here some expressions for search here, like:
 1. Full path to node - **${Root\\.Objects\\.Device1\\.TemperatureAndHumiditySensor\\.CertificateNumber}**
 2. Relative path from device object - **${TemperatureAndHumiditySensor\\.CertificateNumber}** 
 3. Some regular expression to search - **${Root\\.Objects\\.Device\\d\*\\.TemperatureAndHumiditySensor\\.CertificateNumber}**
@@ -284,7 +284,7 @@ This part of configuration will look like:
 <br>
 **Let's look an example.**
 
-Replace "path" value to the "NodeId" value, relative path from device object or Display Name identifier, taken from our test server.
+Replace "path" value with the "NodeId" value, relative path from device object or Display Name identifier, taken from our test server.
 <br>
 
 {:refdef: style="text-align: left;"}
@@ -314,7 +314,7 @@ In this example, the **timeseries** section would look like this:
 ![image](/images/gateway/opc-ua-configuration-4.png)
 {: refdef}
 
-You must see the telemetry you sent to ThingsBoard in the **Latest telemetry** section of your device:
+You should be able to see the telemetry you have sent to ThingsBoard in the **Latest telemetry** section of your device:
 
 {:refdef: style="text-align: left;"}
 ![image](/images/gateway/gateway-opc-ua-attributes-3.png)
@@ -323,10 +323,10 @@ You must see the telemetry you sent to ThingsBoard in the **Latest telemetry** s
 ### Subsection "rpc_methods"
 This subsection contains configuration for RPC request from ThingsBoard platform instance.
 
-| **Parameter**         | **Default value**                 | **Description**                                                                                    |
-|:-|:-|-
-| method                | **multiply**                      | Name of method on OPC-UA server.                                                                   |
-| arguments             | **[2,4]**                         | Arguments for the method (if this parameter doesn't exist, arguments will take from rpc request).  |
+| **Parameter**         | **Default value**                 | **Description**                                                                                       |
+|:-|:-|-------------------------------------------------------------------------------------------------------
+| method                | **multiply**                      | Name of method on OPC-UA server.                                                                      |
+| arguments             | **[2,4]**                         | Arguments for the method (if this parameter doesn't exist, arguments will be taken from RPC request). |
 |---
 
 This part of configuration will look like:  
@@ -349,10 +349,10 @@ it manually. See [the guide](/docs/iot-gateway/guides/how-to-use-get-set-rpc-met
 ### Subsection "attributes_updates"
 This subsection contains configuration for attribute updates request from ThingsBoard platform instance.
 
-| **Parameter**             | **Default value**                                            | **Description**                                                                               |
-|:-|:-|-
-| attributeOnThingsBoard    | **deviceName**                                               | Name of server side argument.                                                                 |
-| attributeOnDevice         | **Root\\.Objects\\.Device1\\.serialNumber**                     | Name of variable that will change itself value with a value from attribute update request.    |
+| **Parameter**             | **Default value**                                           | **Description**                                                                              |
+|:-|:------------------------------------------------------------|----------------------------------------------------------------------------------------------
+| attributeOnThingsBoard    | **deviceName**                                              | Name of a server side argument.                                                              |
+| attributeOnDevice         | **Root\\.Objects\\.Device1\\.serialNumber**                 | Name of a variable that will change its own value with a value from attribute update request. |
 |---
 
 This part of configuration will look like:  
@@ -368,9 +368,9 @@ This part of configuration will look like:
 
 **Let’s look an example.**
 
-Suppose you want to set the value of the **"deviceName"** attribute. Currently, the attribute hasn't any value.
+Suppose you want to set the value of the **"deviceName"** attribute. Currently, the attribute doesn't have any value.
 
-In the OPC-UA Connector configuration file (opcua.json) change **"attributeOnDevice"** value to the full path to the node "deviceName".
+In the OPC-UA Connector configuration file (opcua.json) change **"attributeOnDevice"** value to the full path to the "deviceName" node.
 
 In this example it is **"Root\\.Objects\\.Simulation\\.deviceName"**.
 

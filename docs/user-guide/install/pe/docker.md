@@ -126,7 +126,7 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 * Change upgradeversion variable to your **current** ThingsBoard version.
 
  ```bash
-sudo sh -c "echo '3.1.0' > ~/.mytbpe-data/.upgradeversion"
+echo '3.1.0' | sudo tee ~/.mytbpe-data/.upgradeversion
 ```
 {: .copy-code}
 

@@ -246,13 +246,22 @@ WebSockets are actively used by Thingsboard Web UI. WebSocket API duplicates RES
 You can open a WebSocket connection to a telemetry service using the following URL
 
 ```shell
-ws(s)://host:port/api/ws/plugins/telemetry?token=$JWT_TOKEN
+ws(s)://host:port/api/ws
 ```
 {: .copy-code}
 
-Once opened, you can send 
+Once opened, you need to authenticate the session within 10 seconds with auth command:
+```json
+{
+  "authCmd": {
+    "cmdId": 0,
+    "token": "$JWT_TOKEN"
+  }
+}
+```
+{: .copy-code}
 
-[subscription commands](https://github.com/thingsboard/thingsboard/blob/release-3.6/application/src/main/java/org/thingsboard/server/service/ws/telemetry/cmd/TelemetryPluginCmdsWrapper.java) 
+Then you can send [subscription commands](https://github.com/thingsboard/thingsboard/blob/release-3.6/application/src/main/java/org/thingsboard/server/service/ws/WsCommandsWrapper.java) 
 and receive 
 [subscription updates](https://github.com/thingsboard/thingsboard/blob/release-3.6/application/src/main/java/org/thingsboard/server/service/ws/telemetry/sub/TelemetrySubscriptionUpdate.java):
 
@@ -276,7 +285,7 @@ Change values of the following variables :
  
  In case of live-demo server : 
  
- - replace **host:port** with **demo-thingsboard.io** and choose secure connection - **wss://**
+ - replace **host:port** with **demo.thingsboard.io** and choose secure connection - **wss://**
  
  In case of local installation :
  

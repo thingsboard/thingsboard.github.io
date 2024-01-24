@@ -43,7 +43,8 @@ sendUplink:
 
 device:
     0:
-        image: /images/pe/edge/integrations/http/device.png
+        image: /images/pe/edge/integrations/http/device-1-edge.png
+        title: 'Go to the "<b>Entities</b>" section -> "<b>Devices</b>" page on the Edge to see the created device with data.'
 
 ---
 

@@ -37,6 +37,4 @@
 {% endif %}
 {% if currentGuide != "EdgeRoadmap" %}
 - [Roadmap](/docs/{{docsPrefix}}roadmap) - ThingsBoard Edge roadmap. 
-{% endif %}    
-<br>
-
+{% endif %}

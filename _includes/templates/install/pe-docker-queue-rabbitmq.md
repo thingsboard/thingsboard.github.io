@@ -35,7 +35,7 @@ services:
       - ~/.mytbpe-logs:/var/log/thingsboard
   postgres:
     restart: always
-    image: "postgres:12"
+    image: "postgres:15"
     ports:
     - "5432"
     environment:

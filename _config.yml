@@ -76,21 +76,21 @@ collections:
 release:
   branch: release-3.6
   branch_major_next: develop/3.7
-  ver: 3.6.1
-  ce_ver: 3.6.1
-  ce_tag: v3.6.1
-  ce_full_ver: 3.6.1
-  pe_ver: 3.6.1pe
-  pe_full_ver: 3.6.1PE
-  wd_examples_commit: v3.6.1
+  ver: 3.6.2
+  ce_ver: 3.6.2
+  ce_tag: v3.6.2
+  ce_full_ver: 3.6.2
+  pe_ver: 3.6.2pe
+  pe_full_ver: 3.6.2PE
+  wd_examples_commit: v3.6.2
   # >>> EDGE
-  edge_ver: 3.6.1 # use X.X.X to be in sync with demo/cloud
-  edge_tag: v3.6.1 # use vX.X.X to be in sync with demo/cloud
-  edge_full_ver: 3.6.1EDGE
-  pe_edge_ver: 3.6.1pe # use X.X.Xpe to be in sync with demo/cloud
-  pe_edge_full_ver: 3.6.1EDGEPE
+  edge_ver: 3.6.2 # use X.X.X to be in sync with demo/cloud
+  edge_tag: v3.6.2 # use vX.X.X to be in sync with demo/cloud
+  edge_full_ver: 3.6.2EDGE
+  pe_edge_ver: 3.6.2pe # use X.X.Xpe to be in sync with demo/cloud
+  pe_edge_full_ver: 3.6.2EDGEPE
   # <<< EDGE
-  ce_flutter_app_ver: 1.0.7
-  pe_flutter_app_ver: 1.0.8
+  ce_flutter_app_ver: 1.0.8
+  pe_flutter_app_ver: 1.0.9
   broker_full_ver: 1.2.1
   broker_branch: release-1.2.1

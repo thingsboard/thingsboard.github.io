@@ -20,6 +20,9 @@ toc:
       path: /docs/paas/solution-templates/smart-office/
     - title: Fleet tracking
       path: /docs/paas/solution-templates/fleet-tracking/
+    - title: Fuel Level Monitoring
+      path: /docs/paas/solution-templates/fuel-level-monitoring/
+      new: true
     - title: Water metering
       path: /docs/paas/solution-templates/water-metering/
     - title: Smart retail
@@ -176,6 +179,9 @@ toc:
       path: /docs/paas/user-guide/integrations/ttn/
     - title: TheThingsIndustries
       path: /docs/paas/user-guide/integrations/tti/
+    - title: KPN Things
+      path: /docs/paas/user-guide/integrations/kpn-things/
+      new: true
     - title: LORIOT
       path: /docs/paas/user-guide/integrations/loriot/
     - title: ChirpStack
@@ -190,7 +196,6 @@ toc:
       path: /docs/paas/user-guide/integrations/azure-event-hub/
     - title: Azure Service Bus
       path: /docs/paas/user-guide/integrations/azure-service-bus/
-      new: true
     - title: Azure IoT Hub
       path: /docs/paas/user-guide/integrations/azure-iot-hub/
     - title: TCP
@@ -203,6 +208,8 @@ toc:
       path: /docs/paas/user-guide/integrations/ocean-connect/
     - title: Tuya
       path: /docs/paas/user-guide/integrations/tuya/
+    - title: Particle
+      path: /docs/paas/user-guide/integrations/particle/
       new: true
     - title: Custom Integration development guide
       path: /docs/paas/user-guide/integrations/custom/
@@ -222,6 +229,9 @@ toc:
       path: /docs/paas/user-guide/claiming-devices/
     - title: Device provisioning
       path: /docs/paas/user-guide/device-provisioning/
+    - title: Image gallery
+      path: /docs/paas/user-guide/image-gallery/
+      new: true
     - title: Entity Views
       path: /docs/paas/user-guide/entity-views/
     - title: API Limits

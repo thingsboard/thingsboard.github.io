@@ -11,17 +11,6 @@ sudo apt-get install zookeeper
 ```
 {: .copy-code}
 
-##### Install Kafka
-
-```text
-wget https://archive.apache.org/dist/kafka/2.6.0/kafka_2.13-2.6.0.tgz
-
-tar xzf kafka_2.13-2.6.0.tgz
-
-sudo mv kafka_2.13-2.6.0 /usr/local/kafka
-```
-{: .copy-code}
-
 ##### Setup ZooKeeper Systemd Unit file
 
 Create systemd unit file for Zookeeper:
@@ -30,7 +19,7 @@ sudo nano /etc/systemd/system/zookeeper.service
 ```
 {: .copy-code}
 
-Add below contnet:
+Add below content:
 ```bash
 [Unit]
 Description=Apache Zookeeper server
@@ -46,6 +35,24 @@ Restart=on-abnormal
 
 [Install]
 WantedBy=multi-user.target
+```
+{: .copy-code}
+
+##### Enable and start ZooKeeper:
+
+```text
+sudo systemctl enable --now zookeeper
+```
+{: .copy-code}
+
+##### Install Kafka
+
+```text
+wget https://downloads.apache.org/kafka/3.6.1/kafka_2.13-3.6.1.tgz
+
+tar xzf kafka_2.13-3.6.1.tgz
+
+sudo mv kafka_2.13-3.6.1.tgz /usr/local/kafka
 ```
 {: .copy-code}
 
@@ -74,12 +81,11 @@ ExecStop=/usr/local/kafka/bin/kafka-server-stop.sh
 WantedBy=multi-user.target
 ```
 {: .copy-code}
-##### Start ZooKeeper and Kafka:
+
+##### Enable and start Kafka:
 
 ```text
-sudo systemctl start zookeeper
-
-sudo systemctl start kafka
+sudo systemctl enable --now kafka
 ```
 {: .copy-code}
 

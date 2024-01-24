@@ -392,8 +392,8 @@ wget https://raw.githubusercontent.com/thingsboard/thingsboard.github.io/master/
 
 Launch main script:
 ```bash
-chmod +x upgrade_1.2.0_1.2.1.sh
-./upgrade_1.2.0_1.2.1.sh
+chmod +x upgrade_1.2.0_1.2.mqtt-js-telemetry-data-as-object.sh
+./upgrade_1.2.0_1.2.mqtt-js-telemetry-data-as-object.sh
 ```
 {: .copy-code}
 
