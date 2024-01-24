@@ -175,5 +175,5 @@ return uplinkDataList;
 Now, open the "**Integration center**" section -> "**Integrations**" page and follow this steps:  
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=createLoriotIntegration %}
-<br>
+
 Integration is created.

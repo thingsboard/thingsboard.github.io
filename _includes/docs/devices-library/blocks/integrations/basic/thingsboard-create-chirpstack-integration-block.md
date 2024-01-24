@@ -181,5 +181,5 @@ return uplinkDataList;
 To add integration follow the next steps:  
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=createChirpstackIntegration %} 
-<br>
+
 Integration is created.

@@ -174,5 +174,4 @@ Now, open the "**Integration center**" section -> "**Integrations**" page and fo
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=createTTSIntegration %} 
 
-<br>
 Integration is created.

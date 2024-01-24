@@ -166,5 +166,5 @@ In the "**Connect**" step, you will need the following parameters:
 Now, open the "**Integration center**" section -> "**Integrations**" page and follow this steps:  
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=createTTIIntegration %}
-<br>
+
 Integration is created.
