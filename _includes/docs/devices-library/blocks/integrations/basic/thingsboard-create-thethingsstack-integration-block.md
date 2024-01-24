@@ -56,7 +56,7 @@ Now we need to configure application on The Things Stack. To do this please foll
 
 Now we can move to ThingsBoard to configure integration.  
 
-### Create integration
+### Create integration in ThingsBoard
 
 Next we will create "**The Things Stack**" (TTS) integration inside the ThingsBoard.
 
@@ -156,7 +156,7 @@ In the "**Connect**" step, you will need the following parameters:
 {% assign createTTSIntegration = '
     ===
         image: /images/devices-library/basic/integrations/thethingsstack/1-create-tts-integration.png,
-        title: Click "**plus**" icon in the upper right corner to add new integration. Select type **The Things Stack Community**. Then, click "**Next**".
+        title: Click "**plus**" icon in the upper right corner to add new integration. Select type "**The Things Stack Community**". Then, click "**Next**".
     ===
         image: /images/devices-library/basic/integrations/thethingsstack/2-create-tts-integration-uplink.png,
         title: Paste the previously copied script to the Decoder function section. Click “Next”.

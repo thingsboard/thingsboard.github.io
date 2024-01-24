@@ -6,11 +6,11 @@ To add a gateway, you can follow next steps:
 
 {% assign addGatewaySteps = '
     ===
-        image: /images/devices-library/basic/integrations/loriot/main-page.png,
-        title: Login to Loriot server. We use **eu2.loriot.io**, but it depends on chosen region during registration.
+        image: /images/devices-library/basic/integrations/loriot/main-page-network.png,
+        title: Login to Loriot server. Open the "**Sample network**" or create a new one in the "**Networks**" section
     ===
         image: /images/devices-library/basic/integrations/loriot/sample-network.png,
-        title: Go to the "**Networks**" and open the "**Sample network**" or create a new one.
+        title: Click on the "**Add Gateway**" button.
     ===
         image: /images/devices-library/basic/integrations/loriot/register-gateway.png,
         title: Scroll down and select "**Packet Forwarder Semtech**".
@@ -31,6 +31,26 @@ To add a gateway, you can follow next steps:
 {% include {{ guideFilePath }} %}
 
 {% endif %}
+
+### Configure application on the Loriot
+
+Now we need to copy the "**Application ID**" in the Loriot. It is required for configuring the integration in ThingsBoard. 
+
+To do this please follow next steps:
+
+{% assign copyLoriotApplicationId = '
+    ===
+        image: /images/devices-library/basic/integrations/loriot/main-page-application.png,
+        title: Go to te "**Applications**" in the left menu and choose "**SampleApp**" or create a new one.
+    ===
+        image: /images/devices-library/basic/integrations/loriot/sample-application.png,
+        title: Copy "**Application ID**" value and save it.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=copyLoriotApplicationId %}
+
+Now we can move to ThingsBoard to configure integration.
 
 ### Create integration in ThingsBoard
 
@@ -133,7 +153,7 @@ if (data.cmd == "gw") {
 return uplinkDataList;
 {% endcapture %}
 
-{% include code-toggle.liquid code=converterCode params="javascript|.copy-code.expandable-20" %}
+{% include code-toggle.liquid code=converterCode params="javascript|.copy-code.expandable-15" %}
 
 {% assign createLoriotIntegration = '
     ===
@@ -145,9 +165,6 @@ return uplinkDataList;
     ===
         image: /images/devices-library/basic/integrations/loriot/3-create-integration-downlink.png,
         title: Leave the "**Downlink data converter**" field empty. Click on "**Skip**" button.
-    ===
-        image: /images/devices-library/basic/integrations/loriot/sample-application.png,
-        title: Go to te "**Applications**" in the left menu and choose "**SampleApp**" or create a new one. Copy "**Application ID**".
     ===
         image: /images/devices-library/basic/integrations/loriot/4-create-integration-configuration.png,
         title: Next, fill in the fields with your parameters. After, press "**Add**" button.

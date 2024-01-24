@@ -143,7 +143,7 @@ return result;
 {% assign createTTIIntegration = '
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/1-create-tti-integration.png,
-        title: Click "**plus**" icon in the upper right corner to add new integration. Select type **The Things Industries Integration**. Then, click "**Next**".
+        title: Click "**plus**" icon in the upper right corner to add new integration. Select type "**The Things Industries Integration**". Then, click "**Next**".
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/2-create-tti-integration-uplink.png,
         title: Paste the previously copied script to the Decoder function section. Click "**Next**".
