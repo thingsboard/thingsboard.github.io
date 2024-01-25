@@ -306,6 +306,27 @@ Should you have any comments or questions please feel free to [Contact Us](/docs
                         <div class="frame-image">
                             <img src="/images/solutions/waste_monitoring/waste-monitoring-1.png" alt="Waste monitoring dashboard">
                         </div>
+                    </div>                
+                </a>
+            </div>
+        </div>
+        <div class="dashboard-item">
+            <div class="item-description">
+                <h2>Tank Level Monitoring</h2>
+                <p>The ThingsBoard platform simplifies tank level management for your business. Control the placement of fuel tanks, monitor information about a specific tank, and control all alarms related to the remaining fuel level, temperature, and battery level.</p>
+                <a class="read-more-button" href="/use-cases/tank-level-monitoring/">More information<img class="arrow first" src="/images/pe/read-more-arrow.svg"><img class="arrow second" src="/images/pe/read-more-arrow.svg"><img class="arrow third" src="/images/pe/read-more-arrow.svg"></a>
+            </div>
+            <div class="item-image-container">
+                <a class="img-button" href="/use-cases/tank-level-monitoring/">
+                    <div class="overlay">
+                        <div class="eye">
+                            <img src="/images/eye-icon.svg" alt="See more">See more
+                        </div>
+                    </div>
+                    <div class="dashboard-frame">
+                        <div class="frame-image">
+                            <img src="/images/solutions/fuel_level_monitoring/fuel-monitoring-1.png" alt="fuel level monitoring">
+                        </div>
                     </div>
                 </a>
             </div>

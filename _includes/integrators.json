@@ -1199,7 +1199,7 @@
       "target": "_blank"
     }
   },
-   {
+  {
     "type": ["North America", "South America"],
     "country": ["United States of America", "Canada", "Panama", "Peru", "Colombia", "Argentina"],
     "name": "Ingram Micro Canada",
@@ -1210,8 +1210,8 @@
       "href": "https://ca.ingrammicro.com/",
       "target": "_blank"
     }
-   },
-    {
+  },
+  {
     "type": ["Asia"],
     "country": ["Kazakhstan", "Uzbekistan", "Turkmenistan", "Tajikistan", "Kyrgyzstan", "Armenia", "Azerbaijan", "Moldova", "Belarus"],
     "name": "Vehi.kz LLP",
@@ -1222,8 +1222,8 @@
       "href": "vehi.kz",
       "target": "_blank"
     }
-   },
-   {
+  },
+  {
     "type": ["Europe"],
     "country": ["Ukraine"],
     "name": "CodeExit, Inc.",
@@ -1246,7 +1246,7 @@
       "href": "",
       "target": "_blank"
     }
-   },
+  },
   {
     "type": ["Asia"],
     "country": ["Malaysia"],
@@ -1258,8 +1258,8 @@
       "href": "rodatech.com.my",
       "target": "_blank"
     }
-   },
-   {
+  },
+  {
     "type": ["Asia"],
     "country": ["India"],
     "name": "Ariprus Digicon Pvt Ltd",
@@ -1270,8 +1270,8 @@
       "href": "ariprus.com",
       "target": "_blank"
     }
-   },
-    {
+  },
+  {
     "type": ["South America"],
     "country": ["Chile"],
     "name": "MindLabs, SpA",
@@ -1282,8 +1282,8 @@
       "href": "mindlabs.cl",
       "target": "_blank"
     }
-   },
-     {
+  },
+  {
     "type": ["Asia"],
     "country": ["Turkey"],
     "name": "Dvm Technology Inc.",
@@ -1294,5 +1294,17 @@
       "href": "dvm.com.tr",
       "target": "_blank"
     }
-   }
+  },
+  {
+    "type": ["Asia"],
+    "country": ["Kazakhstan"],
+    "name": "3D Alem",
+    "contact": {
+      "href": "d.tovma@3dalem.kz"
+    },
+    "site": {
+      "href": "vehi.kz",
+      "target": "_blank"
+    }
+  }
 ]

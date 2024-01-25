@@ -10,21 +10,21 @@ description: SNMP monitoring support for ThingsBoard IoT Gateway
 
 This guide will help you to get familiar with SNMP Connector configuration for ThingsBoard IoT Gateway.  
 Use [general configuration guide](/docs/iot-gateway/configuration/) to enable this Connector.  
-The purpose of this Connector is to get data from SNMP managers objects and write some data there.  
+The purpose of this Connector is to get data from SNMP manager objects and write some data to them.  
 
-This connector is useful when you have SNMP manager in your network and you would like to push this data to the ThingsBoard.    
+This connector is useful when you have SNMP manager in your network and you would like to push the data to the ThingsBoard.    
 
 We will describe connector configuration file below.  
 
 ## Connector configuration: snmp.json
 
 Connector configuration is a JSON file that contains information about SNMP managers and how to process the data.  
-Let's review the format of the configuration file using example below.    
+Let's review the format of the configuration file using the example below.    
 
 <b>Example of SNMP Connector config file.</b>
 
 Example listed below will connect to a manager on **snmp.live.gambitcommunications.com**.  
-Then, connector will try to read the data from objects using configuration from attributes, telemetry section. See more info in a description below.  
+Then, connector will try to read the data from objects using configuration from attributes, and telemetry section. See more info in a description below.  
 
 {% capture snmpConf %}
 {
@@ -187,19 +187,18 @@ Main configuration for the device item should contain the following parameters:
 
 #### Attributes section
 
-This configuration section contains array of objects with configuration for data processing, objects configured there will be processed as device attributes.  
-By default, the gateway uses uplink converter which sends received data from SNMP manager to the ThingsBoard, but it is possible to provide custom converter.  
+This configuration section contains an array of objects with configuration for data processing. Objects configured here will be processed as device attributes.  
+By default, the gateway uses an uplink converter to send received data from SNMP manager to ThingsBoard, but it is also possible to use a custom converter.  
 
-**Note**: Some configuration parameters in configuration objects depend on used method. You can read more about specific configuration parameters for methods [here](#supported-methods-and-their-configuration)
+**Note**: Some configuration parameters in the configuration objects depend on the method being used. You can read more about specific configuration parameters for methods [here](#supported-methods-and-their-configuration)
 
 General configuration parameters are:
 
-| **Parameter**     | **Default value**                     | **Description**                                                                                         |
-|:-|:-|-
-
-| key               | **ReceivedFromGet**                   | Attribute key in device on ThingsBoard.                                                                 |
-| method            | **get**                               | Method for data processing. Supported methods are [here](#supported-methods-and-their-configuration).   |
-| oid               | **1.3.6.1.2.1.1.1.0**                 | Manager object identifier.                                                                              |
+| **Parameter**     | **Default value**              | **Description**                                                                                         |
+|:-|:-------------------------------|-
+| key               | **ReceivedFromGet**            | Attribute key in device on ThingsBoard.                                                                 |
+| method            | **get**                        | Method for data processing. Supported methods are [here](#supported-methods-and-their-configuration).   |
+| oid               | **1.3.6.1.2.1.1.1.0**          | Manager object identifier.                                                                              |
 |---
 
 Configuration section item example:  
@@ -214,19 +213,18 @@ Configuration section item example:
 
 #### Telemetry section
 
-This configuration section contains array of objects with configuration for data processing, objects configured there will be processed as device telemetry.  
-By default, the gateway uses uplink converter which sends received data from SNMP manager to the ThingsBoard, but it is possible to provide custom converter.  
+This configuration section contains an array of objects with configuration for data processing. Objects configured here will be processed as device telemetry.  
+By default, the gateway uses an uplink converter to send received data from SNMP manager to ThingsBoard, but it is also possible to use a custom converter.  
 
 **Note**: Some configuration parameters in configuration objects depend on used method. You can read more about specific configuration parameters for methods [here](#supported-methods-and-their-configuration)
 
 General configuration parameters are:
 
-| **Parameter**     | **Default value**                     | **Description**                                                                                         |
-|:-|:-|-
-
-| key               | **ReceivedFromTable**                 | Telemetry key in device on ThingsBoard.                                                                 |
-| method            | **table**                             | Method for data processing. Supported methods are [here](#supported-methods-and-their-configuration).   |
-| oid               | **1.3.6.1.2.1.1**                     | Manager object identifier.                                                                              |
+| **Parameter**     | **Default value**             | **Description**                                                                                         |
+|:-|:------------------------------|---------------------------------------------------------------------------------------------------------
+| key               | **ReceivedFromTable**         | Telemetry key in device on ThingsBoard.                                                                 |
+| method            | **table**                     | Method for data processing. Supported methods are [here](#supported-methods-and-their-configuration).   |
+| oid               | **1.3.6.1.2.1.1**             | Manager object identifier.                                                                              |
 |---
 
 Configuration section item example:  
@@ -242,8 +240,8 @@ Configuration section item example:
 
 #### Attribute update requests section
 
-Configuration in this section are optional.  
-ThingsBoard allows to provision device attributes and fetch some of them from the device application.
+Configurations in this section are optional.  
+ThingsBoard allows the provision of device attributes and fetches some of them from the device application.
 You can treat this as a remote configuration for devices. Your devices are able to request shared attributes from ThingsBoard.
 See [user guide](/docs/user-guide/attributes/) for more details.
 
@@ -282,16 +280,16 @@ The **attributeUpdates** section will look like:
 #### Server side RPC section
 
 
-ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to ThingsBoard directly or via Gateway.
+ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device connected to ThingsBoard directly or via Gateway.
  
-Configuration, provided in this section uses for sending RPC requests from ThingsBoard to device through the gateway.
+Configuration, provided in this section is used for sending RPC requests from ThingsBoard to the device through the gateway.
 
 {% capture rpc_variants %}
 **There are 2 types of the RPC calls:**  
-1. With reply, after sending request the gateway will wait for response and send it to ThingsBoard.
-2. With no reply, after sending request the gateway will not wait for response.
+1. With reply, after sending request the gateway will wait for a response and send it to ThingsBoard.
+2. With no reply, after sending request the gateway will not wait for a response.
 
-Examples for both methods provided below.
+Examples for both methods are provided below.
 
 {% endcapture %}
 {% include templates/info-banner.md content=rpc_variants %}
@@ -493,7 +491,7 @@ Supported methods are:
     ```
  
  - **multiset**
-    This method is used to write data into multiply object by their's identifiers.
+    This method is used to write data into multiple objects by their identifiers.
  
    Specific configuration parameters:  
    **mapping** - Contains pair of **object identifier** and **value**.    

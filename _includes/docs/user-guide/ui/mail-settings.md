@@ -174,7 +174,7 @@ To check if everything works click "Send test email" button. Keep in mind that e
 
 ### Office 365 configuration with OAuth2 authentication example
 
-Starting from Thingsboard 3.5.2 it is possible to use OAuth2 authorization for Office 365 SMTP server. 
+Starting from ThingsBoard 3.6 it is possible to use OAuth2 authorization for Office 365 SMTP server. 
 
 {% capture difference %}
 **Please note:**
@@ -190,7 +190,7 @@ First, go to the "Azure directory" to save user principal name of user you want 
 
 {% include images-gallery.html imageCollection="microsoft-azure-with-oauth2" %}
 
-To use Office 365 OAuth2 you need to register an application in the Azure portal but first let’s set up Thingsboard mail server settings.
+To use Office 365 OAuth2 you need to register an application in the Azure portal but first let’s set up ThingsBoard mail server settings.
 
 **ㅤ1. Setup ThingsBoard mail server settings**:
 

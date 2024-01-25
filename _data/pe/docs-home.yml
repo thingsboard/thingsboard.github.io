@@ -18,6 +18,9 @@ toc:
     path: /docs/pe/solution-templates/smart-office/
   - title: Fleet tracking
     path: /docs/pe/solution-templates/fleet-tracking/
+  - title: Fuel Level Monitoring
+    path: /docs/pe/solution-templates/fuel-level-monitoring/
+    new: true
   - title: Water metering
     path: /docs/pe/solution-templates/water-metering/
   - title: Smart retail
@@ -205,6 +208,9 @@ toc:
     path: /docs/user-guide/integrations/ocean-connect/
   - title: Tuya
     path: /docs/user-guide/integrations/tuya/
+  - title: Particle
+    path: /docs/user-guide/integrations/particle/
+    new: true
   - title: Custom Integration development guide
     path: /docs/user-guide/integrations/custom/
   - title: Notifications and Alarms on your smartphone using Telegram Bot
