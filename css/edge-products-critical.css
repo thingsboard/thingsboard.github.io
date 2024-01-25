@@ -701,3 +701,206 @@
         height: 485px;
     }
 }
+
+#thingsboard-edge #edgeContent #matrix {
+    margin: 60px -100% 0;
+    padding: 0 100% 48px
+}
+
+#thingsboard-edge #edgeContent #matrix h3 {
+    color: #212529;
+    font-weight: 600;
+    text-align: left;
+    font-size: 22px;
+    line-height: 40px
+}
+
+#thingsboard-edge #edgeContent #matrix #backg-matrix {
+    position: relative;
+    margin-left: -20px;
+    margin-right: -20px;
+    width: calc(100% + 40px)
+}
+
+#thingsboard-edge #edgeContent #matrix #backg-matrix .edge,#thingsboard-edge #edgeContent #matrix #backg-matrix .gateway {
+    padding: 0 20px;
+    width: 30%;
+    position: absolute;
+    z-index: -1;
+    top: 127px
+}
+
+#thingsboard-edge #edgeContent #matrix #backg-matrix .coln {
+    height: 1006px;
+    border-radius: 6px
+}
+
+#thingsboard-edge #edgeContent #matrix #backg-matrix .gateway {
+    right: 0
+}
+
+#thingsboard-edge #edgeContent #matrix #backg-matrix .gateway .coln {
+    border: 2px solid #eb5757
+}
+
+#thingsboard-edge #edgeContent #matrix #backg-matrix .gateway .coln .head {
+    height: 106px;
+    box-shadow: 0 2px 0 0 rgba(235,87,87,.08)
+}
+
+#thingsboard-edge #edgeContent #matrix #backg-matrix .edge {
+    right: 30%
+}
+
+#thingsboard-edge #edgeContent #matrix #backg-matrix .edge .coln {
+    border: 2px solid #009688;
+    box-shadow: 0 50px 50px -20px rgba(0,0,0,.15),0 0 30px 0 rgba(0,0,0,.1)
+}
+
+#thingsboard-edge #edgeContent #matrix #backg-matrix .edge .coln .head {
+    height: 106px;
+    background-color: #009688
+}
+
+#thingsboard-edge #edgeContent #matrix table {
+    width: calc(100% + 40px);
+    margin: 160px -20px 16px;
+    border: none;
+    margin-top: 64px;
+    top: 40px
+}
+
+#thingsboard-edge #edgeContent #matrix table td,#thingsboard-edge #edgeContent #matrix table th {
+    margin: 0 2px
+}
+
+#thingsboard-edge #edgeContent #matrix table td:nth-child(3n-1),#thingsboard-edge #edgeContent #matrix table th:nth-child(3n-1) {
+    color: #009688
+}
+
+#thingsboard-edge #edgeContent #matrix table td:nth-child(3n-1) img,#thingsboard-edge #edgeContent #matrix table th:nth-child(3n-1) img {
+    filter: invert(40%) sepia(88%) saturate(245%) hue-rotate(129deg) brightness(91%) contrast(103%)
+}
+
+#thingsboard-edge #edgeContent #matrix table td:nth-child(3n),#thingsboard-edge #edgeContent #matrix table th:nth-child(3n) {
+    color: #eb5757
+}
+
+#thingsboard-edge #edgeContent #matrix table td:nth-child(3n) img,#thingsboard-edge #edgeContent #matrix table th:nth-child(3n) img {
+    filter: invert(40%) sepia(77%) saturate(728%) hue-rotate(311deg) brightness(104%) contrast(106%)
+}
+
+#thingsboard-edge #edgeContent #matrix table thead {
+    color: #212529;
+    font-size: 12px;
+    line-height: 30px;
+    background-color: unset
+}
+
+#thingsboard-edge #edgeContent #matrix table thead tr {
+    height: 152px
+}
+
+#thingsboard-edge #edgeContent #matrix table thead tr th {
+    width: 30%;
+    text-align: center;
+    vertical-align: center;
+    font-weight: 600;
+    font-size: 11px;
+    padding: 40px 0
+}
+
+#thingsboard-edge #edgeContent #matrix table thead tr th:nth-child(2n) {
+    color: #fff
+}
+
+#thingsboard-edge #edgeContent #matrix table thead tr td {
+    width: 40%
+}
+
+#thingsboard-edge #edgeContent #matrix table tbody tr {
+    background-color: unset;
+    height: 64px
+}
+
+#thingsboard-edge #edgeContent #matrix table tbody tr th,#thingsboard-edge #edgeContent #matrix table tbody tr a {
+    font-weight: 600;
+    font-size: 12px;
+    padding-right: 12px;
+    color: #212529
+}
+
+#thingsboard-edge #edgeContent #matrix table tbody tr th img,#thingsboard-edge #edgeContent #matrix table tbody tr a img {
+    vertical-align: top
+}
+
+#thingsboard-edge #edgeContent #matrix table tbody tr td {
+    text-align: center;
+    font-weight: 600;
+    font-size: 11px
+}
+
+#thingsboard-edge #edgeContent #matrix table tbody tr td img {
+    width: 32px
+}
+
+@media screen and (min-width: 750px) {
+    #thingsboard-edge #hero #hero-content .edge-title {
+        font-size:36px
+    }
+
+    #thingsboard-edge #hero #hero-content .edge-description {
+        font-size: 20px;
+        margin-bottom: 60px
+    }
+
+    #thingsboard-edge #edgeContent #local-deployment .block .feature-des,#thingsboard-edge #edgeContent #local-deployment .block .block-img,#thingsboard-edge #edgeContent #data-filtering .block .feature-des,#thingsboard-edge #edgeContent #data-filtering .block .block-img,#thingsboard-edge #edgeContent #local-alarms .block .feature-des,#thingsboard-edge #edgeContent #local-alarms .block .block-img,#thingsboard-edge #edgeContent #batch-update .block .feature-des,#thingsboard-edge #edgeContent #batch-update .block .block-img {
+        width: 80%
+    }
+
+    #thingsboard-edge #edgeContent #matrix h3 {
+        font-size: 42px;
+        line-height: 63px
+    }
+
+    #thingsboard-edge #edgeContent #matrix table thead {
+        font-size: 20px
+    }
+
+    #thingsboard-edge #edgeContent #matrix table thead tr th {
+        width: 30%;
+        padding: 0 0 40px;
+        font-size: 20px
+    }
+
+    #thingsboard-edge #edgeContent #matrix table thead tr td {
+        width: 40%
+    }
+
+    #thingsboard-edge #edgeContent #matrix table tbody tr th,#thingsboard-edge #edgeContent #matrix table tbody tr a {
+        padding-right: 48px;
+        font-size: 18px
+    }
+
+    #thingsboard-edge #edgeContent #matrix table tbody tr td {
+        font-size: 20px
+    }
+
+    #thingsboard-edge #edgeContent #matrix table tbody tr td img {
+        width: unset
+    }
+
+    #thingsboard-edge #edgeContent #bottom-features .cards .col-lg-6 .block {
+        text-align: left;
+        display: flex
+    }
+
+    #thingsboard-edge #edgeContent #bottom-features .cards .col-lg-6 .block div {
+        width: calc(100% - 122px)
+    }
+
+    #thingsboard-edge #edgeContent #bottom-features .cards .col-lg-6 .block img {
+        margin: 0 30px 0 0
+    }
+}
+

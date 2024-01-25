@@ -45,6 +45,8 @@
     <link href="/css/docs-content-critical.css" rel="stylesheet">
     {% if page.url == '/' %}
     <link href="/css/critical.css" rel="stylesheet">
+    {% elsif  page.url == '/products/' %}
+    <link href="/css/products-critical.css" rel="stylesheet">
     {% elsif  page.url contains '/products/thingsboard-pe/' %}
     <link href="/css/pe-products-critical.css" rel="stylesheet">
     {% elsif  page.url contains '/products/paas/' %}

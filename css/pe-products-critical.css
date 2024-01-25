@@ -1210,6 +1210,22 @@
     right: -240px;
 }
 
+@media screen and (max-width: 530px) {
+    #thingsboard-pe #lists-first img.export-list,
+    #thingsboard-pe #lists-second img.export-list {
+        top: 400px;
+        right: -245px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    #thingsboard-pe #lists-first img.export-list,
+    #thingsboard-pe #lists-second img.export-list {
+        top: 475px;
+        right: -144px;
+    }
+}
+
 #thingsboard-pe #background-white-labeling,
 #thingsboard-pe #background-platform-integrations,
 #thingsboard-pe #background-scheduler,
@@ -2130,6 +2146,31 @@
     #thingsboard-pe #peContent #export #features-top-4 #lists-second img.export-list {
         top: 100px;
         right: 40px;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    #thingsboard-pe #peContent #integration #features-top-2 #lists-first img.integrations-list {
+        left: 440px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    #thingsboard-pe #peContent #integration #features-top-2 #lists-first img.integrations-list {
+        left: 300px;
+    }
+}
+
+@media screen and (min-width: 621px) and (max-width: 1025px) {
+    #thingsboard-pe #peContent #integration #features-top-2 #lists-first img.integrations-list {
+        left: 45px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    #thingsboard-pe #peContent #integration #features-top-2 #lists-first img.integrations-list {
+        left: 0;
+        top: 678px;
     }
 }
 

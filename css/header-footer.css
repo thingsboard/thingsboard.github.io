@@ -2350,6 +2350,12 @@ footer .deepmost {
     justify-content: space-between;
 }
 
+@media screen and (max-width: 380px) {
+    footer .deepmost {
+        display: block;
+    }
+}
+
 footer .deepmost .copyright {
     color: #847989;
     font-size: 16px;

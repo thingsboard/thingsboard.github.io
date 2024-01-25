@@ -363,6 +363,7 @@
 #trendz .accent-btn:hover {
     background-color: #452CDC;
     border: 1px solid #452CDC;
+    text-decoration: none;
 }
 
 #trendz .accent-circle {
@@ -491,6 +492,7 @@
     background: #5555FF;
     color: #FFFFFF;
     filter: unset;
+    text-decoration: none;
 }
 
 #trendz .link-container {
