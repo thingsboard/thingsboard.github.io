@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-pe-edge
-title: Edge over TLS\SSL 
-description: Edge over TLS\SSL 
+title: Edge over TLS/SSL 
+description: Edge over TLS/SSL 
 ---
 
 {% include docs/edge/user-guide/grpc-over-ssl.md %}

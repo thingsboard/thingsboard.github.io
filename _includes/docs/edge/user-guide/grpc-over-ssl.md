@@ -1,4 +1,4 @@
-This guide provides instructions on how to secure connections between ThingsBoard and edge instances using gRPC connections over TLS/SSL. 
+This guide provides instructions on how to secure connections between ThingsBoard and Edge instances using gRPC connections over TLS/SSL. 
 
 It is divided into two parts: configuring the server side (the platform) and the client side (the edge).
 

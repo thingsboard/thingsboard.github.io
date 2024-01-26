@@ -55,7 +55,7 @@ toc:
     path: /docs/pe/edge/user-guide/integrations/udp/
 - title: Security
   section:
-    - title: Edge over TLS\SSL 
+    - title: Edge over TLS/SSL 
       path: /docs/pe/edge/user-guide/grpc-over-ssl/
 #- title: Features
 #  section:
