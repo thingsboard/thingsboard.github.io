@@ -1,0 +1,1 @@
+Ensure that you have configured Edge TLS communication in HAProxy for the CentOS/RHEL Server by following these [Post-installation steps](/docs/user-guide/install/pe/add-haproxy-rhel/#step-6-configure-edge-tls-communication-optional){: target="_blank"}.
