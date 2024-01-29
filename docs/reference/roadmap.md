@@ -19,7 +19,11 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ### v3.7
 * Migration to JDK 17;
-* Redesign Rule nodes;
+* Redesign Rule nodes:
+  * Add visualization if Node has error;
+  * Add new navigation on Rule node;
+  * Add new grid type;
+  * Add new option to export rule chain;
 * Global entities Search;
 * Notification widget;
 * Alarm rules:
