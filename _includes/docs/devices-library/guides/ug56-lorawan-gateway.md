@@ -15,7 +15,7 @@
 
 ## Introduction
 
-![{{deviceName}}](/images/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
+![{{deviceName}}](https://img.thingsboard.io/devices-library/{{page.deviceImageFileName}}){: style="float: left; max-width: 200px; max-height: 200px; margin: 0px 10px 0px 0px"}
 [UG56 LoRaWAN® Gateway]({{deviceVendorLink}}){: target="_blank"} is a high-performance 8-channel LoRaWAN® gateway that offers reliable connectivity for industrial applications.
 
 Industrial-Grade Design
@@ -56,7 +56,7 @@ According to the [official user manual](https://resource.milesight-iot.com/miles
 
 {% assign gatewayGeneralSettings = '
     ===
-        image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/general-settings-view.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/milesight-lorawan-gateway/general-settings-view.png,
         title: Now you have ability to configure the gateway.
 '%}
 
@@ -68,7 +68,7 @@ Go to the "**Packet Forwarder**" page in the left menu and save '**Gateway EUI**
 
 {% assign gatewayPacketForwarderTab = '
     ===
-        image: /images/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-before.png,
+        image: https://img.thingsboard.io/devices-library/ready-to-go-devices/milesight-lorawan-gateway/ns-configuration-before.png,
         title: Open "**Packet Forwarder**" in the left menu and save '**Gateway EUI**' and '**Gateway ID**', we will need them to create a gateway on network server.
 '%}
 

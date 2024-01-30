@@ -5,16 +5,16 @@ To add a device, you can follow next steps:
 
 {% assign addDeviceSteps = '
     ===
-        image: /images/devices-library/basic/integrations/loriot/main-page.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/loriot/main-page.png,
         title: Login to Loriot server. We use **eu2.loriot.io**, but it depends on chosen region during registration.
     ===
-        image: /images/devices-library/basic/integrations/loriot/create-device-step-0.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/loriot/create-device-step-0.png,
         title: Go to the "**Applications**" page in left menu.
     ===
-        image: /images/devices-library/basic/integrations/loriot/create-device-step-1.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/loriot/create-device-step-1.png,
         title: Open your application, in our case it is "**SampleApp**".
     ===
-        image: /images/devices-library/basic/integrations/loriot/create-device-step-2.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/loriot/create-device-step-2.png,
         title: Go to the "**Enroll Device**" page. Fill in the fields, with a configuration from your device. Then click the "**Enroll**" button.
 '%}
 

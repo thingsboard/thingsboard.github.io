@@ -6,13 +6,13 @@ To add a gateway, follow next steps:
 
 {% assign addGatewaySteps = '
     ===
-        image: /images/devices-library/basic/integrations/chirpstack/gateways.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/chirpstack/gateways.png,
         title: Login to Chirpstack server. Go to the "**Gateways**" page and click on the "**Add gateway**" button.
     ===
-        image: /images/devices-library/basic/integrations/chirpstack/add-gateway.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/chirpstack/add-gateway.png,
         title: Fill **name**, **gateway EUI** (It will be different, you can find it on the gateway control panel) with your data, scroll down and click on the "**Submit**" button.
     ===
-        image: /images/devices-library/basic/integrations/chirpstack/gateway-added-offline.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/chirpstack/gateway-added-offline.png,
         title: The gateway is added. In gateways tab you can see its status.
 '%}
 
@@ -32,19 +32,19 @@ Now we need to configure application on the Chirpstack. To do this please follow
 
 {% assign addIntegrationSteps = '
     ===
-        image: /images/devices-library/basic/integrations/chirpstack/applications.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/chirpstack/applications.png,
         title: Go to the "**Applications**" page in the left menu and click on the "**Add application**" button.
     ===
-        image: /images/devices-library/basic/integrations/chirpstack/create-application.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/chirpstack/create-application.png,
         title: Fill application name and click on the "**Submit**" button.
     ===
-        image: /images/devices-library/basic/integrations/chirpstack/api-keys.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/chirpstack/api-keys.png,
         title: Go to the **API keys** page in the left menu and click on the "**Add API key**" button.
     ===
-        image: /images/devices-library/basic/integrations/chirpstack/create-api-key.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/chirpstack/create-api-key.png,
         title: Put some name for the API key and click on the "**Submit**" button.
     ===
-        image: /images/devices-library/basic/integrations/chirpstack/api-key-created.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/chirpstack/api-key-created.png,
         title: Copy the created API key and save it, we will need it for integration on ThingsBoard.
 '%}
 
@@ -158,22 +158,22 @@ return uplinkDataList;
 
 {% assign createChirpstackIntegration = '
     ===
-        image: /images/devices-library/basic/integrations/chirpstack/1-create-integration.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/chirpstack/1-create-integration.png,
         title: Go to the "**Integration center**" section, "**Integrations**" page and click "**plus**" button to add new integration. Select type "**Chirpstack**". Then, click "**Next**".
     ===
-        image: /images/devices-library/basic/integrations/chirpstack/2-create-integration-uplink.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/chirpstack/2-create-integration-uplink.png,
         title: Paste the previously copied script to the Decoder function section. Click "**Next**".
     ===
-        image: /images/devices-library/basic/integrations/chirpstack/3-create-integration-downlink.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/chirpstack/3-create-integration-downlink.png,
         title: Leave the "**Downlink data converter**" field empty. Click on "**Skip**" button.
     ===
-        image: /images/devices-library/basic/integrations/chirpstack/4-create-integration-configuration.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/chirpstack/4-create-integration-configuration.png,
         title: Put your "**Application server URL**" and "**API Key**" from Chirpstack and copy "**HTTP endpoint URL**", Click on "**Add**" button.
     ===
-        image: /images/devices-library/basic/integrations/chirpstack/application-integrations.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/chirpstack/application-integrations.png,
         title: Now, open your Chirpstack, go to the "**Applications**" page -> Your application -> "**Integrations**" tab, Find and click on the **HTTP** tile.
     ===
-        image: /images/devices-library/basic/integrations/chirpstack/create-application-integration.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/chirpstack/create-application-integration.png,
         title: Put "**HTTP URL endpoint**" into "**Event Endpoint URL(s)**" field and click on "**Submit**" button.
 '
 %}

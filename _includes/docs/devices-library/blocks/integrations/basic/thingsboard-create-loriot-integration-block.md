@@ -6,19 +6,19 @@ To add a gateway, you can follow next steps:
 
 {% assign addGatewaySteps = '
     ===
-        image: /images/devices-library/basic/integrations/loriot/main-page-network.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/loriot/main-page-network.png,
         title: Login to Loriot server. Open the "**Sample network**" or create a new one in the "**Networks**" section
     ===
-        image: /images/devices-library/basic/integrations/loriot/sample-network.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/loriot/sample-network.png,
         title: Click on the "**Add Gateway**" button.
     ===
-        image: /images/devices-library/basic/integrations/loriot/register-gateway.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/loriot/register-gateway.png,
         title: Scroll down and select "**Packet Forwarder Semtech**".
     ===
-        image: /images/devices-library/basic/integrations/loriot/add-gateway.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/loriot/add-gateway.png,
         title: Scroll up and put information about the gateway **MAC Address** (Just remove **FFFF** or **FFFE** in the middle of ***gateway EUI***) into **eth0 MAC address** and gateway EUI to **Custom EUI** field.
     ===
-        image: /images/devices-library/basic/integrations/loriot/gateway-added-disconnected.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/loriot/gateway-added-disconnected.png,
         title: The gateway is added. You can see its status - disconnected.
 '%}
 
@@ -40,10 +40,10 @@ To do this please follow next steps:
 
 {% assign copyLoriotApplicationId = '
     ===
-        image: /images/devices-library/basic/integrations/loriot/main-page-application.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/loriot/main-page-application.png,
         title: Go to te "**Applications**" in the left menu and choose "**SampleApp**" or create a new one.
     ===
-        image: /images/devices-library/basic/integrations/loriot/sample-application.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/loriot/sample-application.png,
         title: Copy "**Application ID**" value and save it.
 '
 %}
@@ -157,16 +157,16 @@ return uplinkDataList;
 
 {% assign createLoriotIntegration = '
     ===
-        image: /images/devices-library/basic/integrations/loriot/1-create-integration-name-type.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/loriot/1-create-integration-name-type.png,
         title: Click "**plus**" button to add new integration. Select type "**Loriot**". Then, click "**Next**".
     ===
-        image: /images/devices-library/basic/integrations/loriot/2-create-integration-uplink.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/loriot/2-create-integration-uplink.png,
         title: Paste the previously copied script to the Decoder function section. Click "**Next**".
     ===
-        image: /images/devices-library/basic/integrations/loriot/3-create-integration-downlink.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/loriot/3-create-integration-downlink.png,
         title: Leave the "**Downlink data converter**" field empty. Click on "**Skip**" button.
     ===
-        image: /images/devices-library/basic/integrations/loriot/4-create-integration-configuration.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/loriot/4-create-integration-configuration.png,
         title: Next, fill in the fields with your parameters. After, press "**Add**" button.
 '
 %}

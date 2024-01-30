@@ -16,7 +16,7 @@ http://arduino.esp8266.com/stable/package_esp8266com_index.json
 
 {% assign esp8266ArduinoPreferences='
     ===
-        image: /images/devices-library/basic/arduino-ide/preferences.png
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/preferences.png
 '%}
 
 {% include images-gallery.liquid showListImageTitles="false" imageCollection=esp8266ArduinoPreferences %}
