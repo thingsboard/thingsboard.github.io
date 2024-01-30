@@ -4,7 +4,7 @@
 This guide will help you to get familiar with ThingsBoard configuration files and parameters. We **recommend** to
 configure ThingsBoard using environment variables. This way you do not need to merge the configuration files when new
 platform release arrives. List of available configuration parameters and corresponding environment variables is
-located [here](#configuration-parameters).
+located {% if docsPrefix == null %}[here](/docs/user-guide/install/config/){% endif %}{% if docsPrefix == "pe/" %}[here](/docs/user-guide/install/pe/config/){% endif %}.
 
 ## How to change configuration parameters?
 

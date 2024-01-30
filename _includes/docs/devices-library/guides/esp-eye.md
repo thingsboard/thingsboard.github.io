@@ -1,7 +1,7 @@
 {% assign boardLedCount = 1 %}
 {% assign hasCamera = "true" %}
 {% assign deviceName = page.title | remove: "How to connect " | remove: "to ThingsBoard?" %}
-{% assign arduinoBoardPath = "**M5Stack** > **M5Stack-Timer-CAM**" %}
+{% assign arduinoBoardPath = "**M5Stack** > **M5TimerCAM**" %}
 {% assign prerequisites = "
 - " | append: deviceName | append: "
 - [Arduino IDE](https://www.arduino.cc/en/software)"
