@@ -1,6 +1,7 @@
 ### Add a gateway on The Things Industries
 
-We need to add a gateway on The Things Industries cloud.  
+We need to add a gateway on [The Things Industries cloud](https://accounts.thethingsindustries.com/login){:target="_blank"}.
+
 To add a gateway, you can follow next steps:  
 
 {% assign addGatewaySteps = '
@@ -9,16 +10,16 @@ To add a gateway, you can follow next steps:
         title: Login to the cloud and open your console.
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/2-cloud-console.png,
-        title: Choose **Gateways**.
+        title: Select the "**Go to gateways**".
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/3-gateway-list.png,
-        title: Press **Add gateway** button.
+        title: Press the "**Register gateway**" button.
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/4-register-gateway.png,
-        title: Put information about the gateway (gateway EUI).
+        title: Put information about the gateway (gateway EUI) and click the "Register gateway" button.
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/5-gateway-info.png,
-        title: The gateway is added, copy and save **Gateway Server address**, we will need it later. 
+        title: The gateway is added. Copy and save "**Gateway Server address**", we will need it later. 
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addGatewaySteps %}
@@ -37,22 +38,22 @@ Now we need to configure integration on The Things Industries. to do this please
 
 {% assign addIntegrationSteps = '
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/application-integration-mqtt.png,
-        title: Open <b>Integrations</b> -> <b>MQTT</b> in the menu.
-    ===
         image: /images/devices-library/basic/integrations/thethingsindustries/integration-mqtt-new-key.png,
-        title: Click on <b>Generate new API key</b> button.
+        title: Navigate to the "<b>Integrations</b>" -> open the "<b>MQTT</b>" page in the left menu. Then, click on the "<b>Generate new API key</b>" button.
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/integration-mqtt.png,
-        title: Press on copy icon to copy a key and save it (After leaving the page it won't be displayed).
+        title: Press on copy icon to copy a key and save it (After leaving the page it won&#39;t be displayed).
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addIntegrationSteps %}
 
+Now we can move to ThingsBoard to configure integration.
 
-### Create uplink converter
+### Create integration in ThingsBoard
 
-At first, we will create an uplink converter to process the incoming data:
+Next, we will create the "**TheThingsIndustries**" integration inside the **ThingsBoard**.
+
+At first, copy the code, we will need it to create the uplink converter:
 
 {% capture converterCode %}
 var data = decodeToJson(payload);
@@ -109,7 +110,7 @@ var attributesData = toFlatMap(data, excludeFromAttributesList, false);
 // Passing incoming bytes to decodeFrmPayload function, to get custom decoding
 var customDecoding = {};
 if (data.uplink_message.get("frm_payload") != null) {
-  customDecoding = decodeFrmPayload(base64ToBytes(data.uplink_message.frm_payload));
+    customDecoding = decodeFrmPayload(base64ToBytes(data.uplink_message.frm_payload));
 }
 
 // Collecting data to result
@@ -137,33 +138,33 @@ var result = {
 return result;
 {% endcapture %}
 
-{% include code-toggle.liquid code=converterCode params="javascript|.copy-code.expandable-20" %}
-
-### Create integration
-
-Next we will create an integration with The Things Industries inside the ThingsBoard.  
+{% include code-toggle.liquid code=converterCode params="javascript|.copy-code.expandable-15" %}
 
 {% assign createTTIIntegration = '
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/1-create-tti-integration.png,
-        title: Go to **Integrations**, press **plus** button and choose **The Things Industries Integration** as a type, put some name.
+        title: Click "**plus**" icon in the upper right corner to add new integration. Select type "**The Things Industries Integration**". Then, click "**Next**".
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/2-create-tti-integration-uplink.png,
-        title: Check **Create new uplink data converter** and replace a code or create the existing one.
+        title: Paste the previously copied script to the Decoder function section. Click "**Next**".
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/3-create-tti-integration-configuration.png,
-        title: Fill the field with your parameters, 
+        image: /images/devices-library/basic/integrations/thethingsindustries/3-create-tti-integration-downlink.png,
+        title: Leave the "**Downlink data converter**" field empty. Click on "**Skip**" button.
+    ===
+        image: /images/devices-library/basic/integrations/thethingsindustries/4-create-tti-integration-configuration.png,
+        title: Next, fill in the fields with your parameters. After, press "**Add**" button.  
 '
 %}
 
-Open **Integrations** section and add new Integration with the following parameters:  
+In the "**Connect**" step, you will need the following parameters:
 
-- **Region**: *eu1* (region where your application was registered inside The Things Industries Console)
-- **Username**: *thingsboard-data-integration@thingsboard* (use ***Username*** from integration on The Things Stack Industries)
-- **Password**: use ***Password*** from integration on The Things Industries
+- **Region**: *eu1* (region where your application was registered inside The Things Industries Console);
+- **Username**: *thingsboard-data-integration@thingsboard* (use ***Username*** from integration on The Things Stack Industries);
+- **Password**: use ***Password*** from integration on The Things Industries.
 
-To add integration click on '**+**' button and follow the next steps:  
+<br>
+Now, open the "**Integration center**" section -> "**Integrations**" page and follow this steps:  
 
-{% include images-gallery.liquid showListImageTitles="true" imageCollection=createTTIIntegration %} 
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=createTTIIntegration %}
 
-Press **Add** button and integration will be added.  
+Integration is created.
