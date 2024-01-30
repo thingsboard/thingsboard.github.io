@@ -150,7 +150,8 @@ MQTT Integrations<br><small>(MQTT, AWS IoT, IBM Watson, The Things Network)</sma
 AWS SQS<br> Integration<br>%,%aws%,%templates/install/integration/aws-rhel.md%br%
 Azure Event Hub<br>Integration<br>%,%azure%,%templates/install/integration/azure-rhel.md%br%
 OPC UA<br> Integration<br>%,%opcua%,%templates/install/integration/opcua-rhel.md%br%
-TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/install/integration/tcpudp-rhel.md{% endcapture %}
+TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/install/integration/tcpudp-rhel.md%br%
+CoAP<br> Integration<br>%,%coap%,%templates/install/integration/coap-rhel.md{% endcapture %}
 
 {% include content-toggle.html content-toggle-id="remoteintegrationinstallrhel" toggle-spec=rhelinstallspec %} 
 
