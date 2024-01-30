@@ -2,19 +2,20 @@
 * TOC
 {:toc}
 
-## Overview
-
 Since ThingsBoard 3.2, the Tenant administrator is able to configure common settings for multiple devices using Device Profiles. 
 Each Device has one and only profile at a single point in time. 
 
 Experienced ThingsBoard users can notice that the device type has been deprecated in favor of the Device Profile. 
 The update script will automatically create Device Profiles based on unique Device Types and assign them to the appropriate devices.
 
-Let's take a look at the settings available in the device profile one by one.
- 
+
 ## Device Profile settings
 
-### Rule Chain
+Let's take a look at the settings available in the device profile one by one.
+
+### Device profile details
+
+#### Rule Chain
 
 By default, the [Root Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain) processes all incoming messages and events for any device. 
 However, the more different device types you have, the more complex your Root Rule Chain may become. 
@@ -31,7 +32,7 @@ This setting is available in the Device Profile wizard and in the Device Profile
 ![image](/images/user-guide/device-profile/device-profile-rule-chain-1-pe.png)
 {% endif %}
 
-### Queue Name
+#### Queue Name
 
 By default, the [Main](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/) queue will be used to store all incoming messages and events from any device.
 The transport layer will submit messages to this queue and Rule Engine will poll the queue for new messages.
@@ -60,7 +61,7 @@ if you choose to use a custom queue, you should configure it with the **system a
 
 ### Transport configuration
 
-The current version of the ThingsBoard platform supports the following transport types: Default, MQTT, CoAP, LWM2M and SNMP
+The current version of the ThingsBoard platform supports the following transport types: [Default](#default-transport-type), [MQTT](#mqtt-transport-type), [CoAP](#coap-transport-type), LWM2M and SNMP
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-1-ce.png)
@@ -72,7 +73,7 @@ The current version of the ThingsBoard platform supports the following transport
 #### Default transport type
 
 The Default transport type is intended for backward compatibility with previous releases. 
-With the Default transport type, you can continue to use the platform's default [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/), [HTTP](/docs/{{docsPrefix}}reference/http-api/), [CoAP](/docs/{{docsPrefix}}reference/mqtt-api/) and [LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) APIs to connect your devices.
+With the Default transport type, you can continue to use the platform's default [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/), [HTTP](/docs/{{docsPrefix}}reference/http-api/), [CoAP](/docs/{{docsPrefix}}reference/coap-api/) and [LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) APIs to connect your devices.
 There is no specific configuration setting for the default transport type. 
 
 #### MQTT transport type
@@ -81,25 +82,41 @@ The MQTT transport type enables advanced MQTT transport settings.
 Now you are able to specify custom MQTT topics filters for time-series data and attribute updates that correspond to the
 [telemetry upload API](/docs/{{docsPrefix}}reference/mqtt-api/#telemetry-upload-api) and [attribute update API](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute-update-to-the-server), respectively.
 
-**The MQTT transport type has the following settings:**
+The MQTT transport type has the following settings:
 
-##### MQTT device topic filters
+- **MQTT device topic filters**
 
 Custom MQTT topic filters support single '**+**' and multi-level '**#**' wildcards and allow you to connect to almost any MQTT based device that sends a payload using JSON or Protobuf.
 
-{% if docsPrefix == null %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-1-ce.png)
+Let's look at an example where we use a custom MQTT device topic filters to publish time series data using "MQTT Basic" device credentials:
+
+- Specify custom MQTT device topic filter for the Device profile, for example:
+  - Telemetry topic filter: `\telemetry`;
+  - Attributes topic filter: `\attributes`;
+- Provide basic MQTT credentials for your device with the client id ‘`c1`’, username ‘`t1`’ and password ‘`secret`’;
+- Use the command below to publish time-series data. {% if (docsPrefix == null) or (docsPrefix == "pe/") %}Don't forget to replace `$THINGSBOARD_HOST_NAME` with your host.{% endif %}
+  {% if (docsPrefix == null) or (docsPrefix == "pe/") %}
+```bash
+mosquitto_pub -h '$THINGSBOARD_HOST_NAME' -i 'c1' -u 't1' -P 'secret' -t '/telemetry' -m '{"humidity": 10.3}'
+```
+{: .copy-code}
 {% endif %}
-{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-1-pe.png)
+{% if docsPrefix == "paas/" %}
+```bash
+mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t '/telemetry' -m '{"humidity": 10.3}'
+```
+{: .copy-code}
 {% endif %}
+- Transmitted data will be displayed in the "Latest telemetry" tab of the device.
+
+{% include images-gallery.html imageCollection="mqttTransportSettingExample" %}
 
 <br>
+If you use the standard MQTT device topic filters configuration, you can publish time series and attributes using the commands below.
 
-Using the standard configuration (as shown in the image above), you will be able to publish time-series and attributes.  
-For examples, please see the commands below. {% if (docsPrefix == null) or (docsPrefix == "pe/") %}**$THINGSBOARD_HOST_NAME** should be replaced with your localhost or the platform address.{% endif %}
+{% if (docsPrefix == null) or (docsPrefix == "pe/") %}Don't forget to replace `$THINGSBOARD_HOST_NAME` with your host.{% endif %}
 
-- Publish timeseries with the following command:
+- Command for publish timeseries data:
 {% if (docsPrefix == null) or (docsPrefix == "pe/") %}
 ```bash
 mosquitto_pub -h '$THINGSBOARD_HOST_NAME' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/telemetry' -m '{"humidity": 10.3}'
@@ -113,7 +130,7 @@ mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t 'v1/dev
 {: .copy-code}
 {% endif %}
 
-- Update attributes with the following command:
+- Command for update attributes:
 {% if (docsPrefix == null) or (docsPrefix == "pe/") %}
 ```bash
 mosquitto_pub -h '$THINGSBOARD_HOST_NAME' -i 'c1' -u 't1' -P 'secret' -t 'v1/devices/me/attributes' -m '{"firmwareVersion": "1.3"}'
@@ -127,29 +144,9 @@ mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t 'v1/dev
 {: .copy-code}
 {% endif %}
 
+{% include images-gallery.html imageCollection="mqttTransportSettingDefault" %}
 
-Let's look at an example:
-
-- Step 1. Specify MQTT device topic filter in the Device profile;
-- Step 2. Provide basic MQTT credentials for your device with the client id ‘c1’, username ‘t1’ and password ‘secret’;
-- Step 3. Use Terminal to publish time-series data;
-{% if (docsPrefix == null) or (docsPrefix == "pe/") %}
-```bash
-mosquitto_pub -h '$THINGSBOARD_HOST_NAME' -i 'c1' -u 't1' -P 'secret' -t '/telemetry' -m '{"humidity": 10.3}'
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "paas/" %}
-```bash
-mosquitto_pub -h 'mqtt.thingsboard.cloud' -i 'c1' -u 't1' -P 'secret' -t '/telemetry' -m '{"humidity": 10.3}'
-```
-{: .copy-code}
-{% endif %}
-- Step 4. Transmitted data will be displayed in the "Last telemetry" tab of the device.
-
-{% include images-gallery.html imageCollection="mqttTransportSettingExample" %}
-
-##### MQTT device payload
+- **MQTT device payload**
 
 By default, the platform expects devices to send data via JSON. However, it is also possible to send data via [Protocol Buffers](https://developers.google.com/protocol-buffers)
 
@@ -175,7 +172,7 @@ and [attribute upload](/docs/{{docsPrefix}}reference/mqtt-api/#publish-attribute
 
 ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
 
-###### Compatibility with other payload formats
+- **Compatibility with other payload formats**
 
 When enabled, the platform will use a Protobuf payload format by default. If parsing fails, the platform will attempt to use JSON payload format. Useful for backward compatibility during firmware updates. For example, the initial release of the firmware uses Json, while the new release uses Protobuf. During the process of firmware update for the fleet of devices, it is required to support both Protobuf and JSON simultaneously.
 
@@ -199,7 +196,10 @@ The CoAP transport type enables advanced CoAP transport settings. With the CoAP 
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-1-pe.png)
 {% endif %}
 
-##### CoAP device type: Default
+<br>
+The CoAP device type has the following settings:
+
+- **Default**
 
 By default CoAP device type Default have CoAP device payload set to JSON that supports basic [CoAP API](/docs/{{docsPrefix}}reference/coap-api/) same as for [Default transport type](#default-transport-type).
 However, it is also possible to send data via [Protocol Buffers](https://developers.google.com/protocol-buffers) by changing the parameter CoAP device payload to Protobuf.
@@ -226,7 +226,7 @@ and [attribute upload](/docs/{{docsPrefix}}reference/coap-api/#publish-attribute
 
 ThingsBoard parses the protobuf structures dynamically, that is why, it does not support some protobuf features like OneOf, extensions and maps, yet.
 
-##### CoAP device type: Efento NB-IoT
+- **Efento NB-IoT**
 
 The current version of the ThingsBoard platform supports integration with next Efento NB-IoT sensors: 
 
