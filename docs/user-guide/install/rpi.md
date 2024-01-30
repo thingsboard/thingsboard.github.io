@@ -38,7 +38,7 @@ sudo dpkg -i thingsboard-{{ site.release.ce_ver }}.deb
 
 ### Step 3. Configure ThingsBoard database
 
-{% include templates/install/rpi-db-postgresql.md %}
+{% include templates/install/ubuntu-db-postgresql.md %}
 
 ### Step 4. Choose ThingsBoard queue service
 
