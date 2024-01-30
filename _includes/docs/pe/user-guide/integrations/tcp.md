@@ -134,7 +134,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-bin
 ![image](/images/user-guide/integrations/tcp/tcp-integration-setup-1-paas.png)
 {% endif %}
 
-- Add recently created UDP Uplink Converter;
+- Add recently created TCP Uplink Converter;
 
 {% if docsPrefix == "pe/" %}
 ![image](/images/user-guide/integrations/tcp/tcp-integration-setup-2-pe.png)
@@ -241,12 +241,12 @@ where ***msg*** is the message that we receive and send back to the device.
 {% endif %}
 
 Now you have to add a converter to the integration. 
-Optionally configure Cache Size and Cache time to live in minutes (able just for UDP Downlink).
+Optionally configure Cache Size and Cache time to live in minutes (able just for TCP Downlink).
 
 {% capture difference %}
 Cache size and Time to live - features, that helps to avoid memory leak when we are storing connections.<br>
 Cache time to live - time to storage messages.<br>
-Cache size - maximum size of messages for UDP client.
+Cache size - maximum size of messages for TCP client.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
