@@ -42,7 +42,7 @@ safe: false
 lsi: false
 
 sass:
-  style: expanded
+  style: compressed
 
 defaults:
   -
