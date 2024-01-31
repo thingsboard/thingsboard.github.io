@@ -213,14 +213,6 @@ Please see table below to compare the API limits of the subscription plans. The 
           <td>1000</td>
           <td>Total number of SMS sent</td>
       </tr>
-      <tr>
-          <td>Rule Engine executions per message</td>
-          <td>20</td>
-          <td>30</td>
-          <td>40</td>
-          <td>50</td>
-          <td>Maximum number of rule node executions to process particular message</td>
-      </tr>
   </tbody>
 </table>
 
@@ -242,106 +234,106 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
   <tbody>
       <tr>
           <td>All Transport messages (Tenant)</td>
-          <td>200/sec<br>but no more then 6K/min<br>but no more then 140K/hour</td>
-          <td>2K/sec<br>but no more then 60K/min<br>but no more then 1.4M/hour</td>
-          <td>10K/sec<br>but no more then 300K/min<br>but no more then 6M/hour</td>
-          <td>20K/sec<br>but no more then 600K/min<br>but no more then 12M/hour</td>
+          <td>200/sec,<br>but less than 6K/min,<br>but less than 140K/hour</td>
+          <td>2K/sec,<br>but less than 60K/min,<br>but less than 1.4M/hour</td>
+          <td>10K/sec,<br>but less than 300K/min,<br>but less than 6M/hour</td>
+          <td>20K/sec,<br>but less than 600K/min,<br>but less than 12M/hour</td>
           <td>Total number of messages received by any of the transport microservices for all devices that belong to the tenant</td>
       </tr>
       <tr>
           <td>Telemetry Transport messages (Tenant)</td>
-          <td>100/sec<br>but no more then 3K/min<br>but no more then 70K/hour</td>
-          <td>1K/sec<br>but no more then 30K/min<br>but no more then 700K/hour</td>
-          <td>5K/sec<br>but no more then 150K/min<br>but no more then 3.5M/hour</td>
-          <td>10K/sec<br>but no more then 300K/min<br>but no more then 7M/hour</td>
+          <td>100/sec,<br>but less than 3K/min,<br>but less than 70K/hour</td>
+          <td>1K/sec,<br>but less than 30K/min,<br>but less than 700K/hour</td>
+          <td>5K/sec,<br>but less than 150K/min,<br>but less than 3.5M/hour</td>
+          <td>10K/sec,<br>but less than 300K/min,<br>but less than 7M/hour</td>
           <td>Total number of telemetry messages received by any of the transport microservices for all devices that belong to the tenant</td>
       </tr>
       <tr>
           <td>Telemetry Transport data points (Tenant)</td>
-          <td>200/sec<br>but no more then 6K/min<br>but no more then 140K/hour</td>
-          <td>2K/sec<br>but no more then 60K/min<br>but no more then 1.4M/hour</td>
-          <td>10K/sec<br>but no more then 300K/min<br>but no more then 7M/hour</td>
-          <td>20K/sec<br>but no more then 600K/min<br>but no more then 14M/hour</td>
+          <td>200/sec,<br>but less than 6K/min,<br>but less than 140K/hour</td>
+          <td>2K/sec,<br>but less than 60K/min,<br>but less than 1.4M/hour</td>
+          <td>10K/sec,<br>but less than 300K/min,<br>but less than 7M/hour</td>
+          <td>20K/sec,<br>but less than 600K/min,<br>but less than 14M/hour</td>
           <td>Total number of telemetry data points received by any of the transport microservices for all devices that belong to the tenant</td>
       </tr>            
       <tr>
           <td>All Transport messages (Device)</td>
-          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
-          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
-          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
-          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
+          <td>200/sec,<br>but less than 6K/min,<br>but less than 14K/hour</td>
+          <td>200/sec,<br>but less than 6K/min,<br>but less than 14K/hour</td>
+          <td>200/sec,<br>but less than 6K/min,<br>but less than 14K/hour</td>
+          <td>200/sec,<br>but less than 6K/min,<br>but less than 14K/hour</td>
           <td>Total number of messages received by any of the transport microservices for each device separately</td>
       </tr>
       <tr>
           <td>Telemetry Transport messages (Device)</td>
-          <td>100/sec<br>but no more then 3K/min<br>but no more then 7K/hour</td>
-          <td>100/sec<br>but no more then 3K/min<br>but no more then 7K/hour</td>
-          <td>100/sec<br>but no more then 3K/min<br>but no more then 7K/hour</td>
-          <td>100/sec<br>but no more then 3K/min<br>but no more then 7K/hour</td>
+          <td>100/sec,<br>but less than 3K/min,<br>but less than 7K/hour</td>
+          <td>100/sec,<br>but less than 3K/min,<br>but less than 7K/hour</td>
+          <td>100/sec,<br>but less than 3K/min,<br>but less than 7K/hour</td>
+          <td>100/sec,<br>but less than 3K/min,<br>but less than 7K/hour</td>
           <td>Total number of telemetry messages received by any of the transport microservices for each device separately</td>
       </tr>
       <tr>
           <td>Telemetry Transport data points (Device)</td>
-          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
-          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
-          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
-          <td>200/sec<br>but no more then 6K/min<br>but no more then 14K/hour</td>
+          <td>200/sec,<br>but less than 6K/min,<br>but less than 14K/hour</td>
+          <td>200/sec,<br>but less than 6K/min,<br>but less than 14K/hour</td>
+          <td>200/sec,<br>but less than 6K/min,<br>but less than 14K/hour</td>
+          <td>200/sec,<br>but less than 6K/min,<br>but less than 14K/hour</td>
           <td>Total number of telemetry data points received by any of the transport microservices for each device separately</td>
       </tr>
       <tr>
           <td>Integration messages (Tenant)</td>
-          <td>100 messages per 1 sec,<br>but less than 3000 messages per 60 sec,<br>but less than 70000 messages per 3600 sec</td>
-          <td>1002 messages per 1 sec,<br>but less than 30000 messages per 60 sec,<br>but less than 700000 messages per 3600 sec</td>
-          <td>5000 messages per 1 sec,<br>but less than 150000 messages per 60 sec,<br>but less than 3500000 messages per 3600 sec</td>
-          <td>10000 messages per 1 sec,<br>but less than 300000 messages per 60 sec,<br>but less than 7000000 messages per 3600 sec</td>
+          <td>100/sec,<br>but less than 3K/min,<br>but less than 70K/hour</td>
+          <td>1K/sec,<br>but less than 30K/min,<br>but less than 700K/hour</td>
+          <td>5K/sec,<br>but less than 150K/min,<br>but less than 3500K/hour</td>
+          <td>10K/sec,<br>but less than 300K/min,<br>but less than 7000K/hour</td>
           <td>Total number of messages received by any of the transport microservices for all devices that belong to the tenant</td>
       </tr>
       <tr>
           <td>Integration messages (Device)</td>
-          <td>100 messages per 1 sec,<br>but less than 3000 messages per 60 sec,<br>but less than 70000 messages per 3600 sec</td>
-          <td>102 messages per 1 sec,<br>but less than 3000 messages per 60 sec,<br>but less than 7000 messages per 3600 sec</td>
-          <td>100 messages per 1 sec,<br>but less than 3000 messages per 60 sec,<br>but less than 7000 messages per 3600 sec</td>
-          <td>100 messages per 1 sec,<br>but less than 3000 messages per 60 sec,<br>but less than 7000 messages per 3600 sec</td>
+          <td>100/sec,<br>but less than 3K/min,<br>but less than 7K/hour</td>
+          <td>100/sec,<br>but less than 3K/min,<br>but less than 7K/hour</td>
+          <td>100/sec,<br>but less than 3K/min,<br>but less than 7K/hour</td>
+          <td>100/sec,<br>but less than 3K/min,<br>but less than 7K/hour</td>
           <td>Total number of telemetry messages received by any of the transport microservices for all devices</td>
       </tr>
       <tr>
           <td>REST requests (Tenant)</td>
-          <td>100 messages per 1 sec,<br>but less than 2000 messages per 60 sec</td>
-          <td>100 messages per 1 sec,<br>but less than 2000 messages per 60 sec</td>
-          <td>100 messages per 1 sec,<br>but less than 2000 messages per 60 sec</td>
-          <td>100 messages per 1 sec,<br>but less than 2000 messages per 60 sec</td>
+          <td>100/sec,<br>but less than 2K/min</td>
+          <td>100/sec,<br>but less than 2K/min</td>
+          <td>100/sec,<br>but less than 2K/min</td>
+          <td>100/sec,<br>but less than 2K/min</td>
           <td>Total number of telemetry data points received by any of the transport microservices for all devices that belong to the tenant</td>
       </tr>
       <tr>
           <td>REST requests (Customer)</td>
-          <td>50 messages per 1 sec,<br>but less than 1000 messages per 60 sec</td>
-          <td>50 messages per 1 sec,<br>but less than 1000 messages per 60 sec</td>
-          <td>50 messages per 1 sec,<br>but less than 1000 messages per 60 sec</td>
-          <td>50 messages per 1 sec,<br>but less than 1000 messages per 60 sec</td>
+          <td>50/sec,<br>but less than 1K/min</td>
+          <td>50/sec,<br>but less than 1K/min</td>
+          <td>50/sec,<br>but less than 1K/min</td>
+          <td>50/sec,<br>but less than 1K/min</td>
           <td>Total number of messages received by any of the transport microservices for each device separately</td>
       </tr>
       <tr>
-          <td>WS updatesper session</td>
-          <td>1000 messages per 1 sec,<br>but less than 10000 messages per 60 sec</td>
-          <td>1000 messages per 1 sec,<br>but less than 10000 messages per 60 sec</td>
-          <td>1000 messages per 1 sec,<br>but less than 10000 messages per 60 sec</td>
-          <td>1000 messages per 1 sec,<br>but less than 10000 messages per 60 sec</td>
+          <td>WS updates per session</td>
+          <td>1K/sec,<br>but less than 10K/min</td>
+          <td>1K/sec,<br>but less than 10K/min</td>
+          <td>1K/sec,<br>but less than 10K/min</td>
+          <td>1K/sec,<br>but less than 10K/min</td>
           <td>Total number of telemetry messages received by any of the transport microservices for each device separately</td>
       </tr>
       <tr>
           <td>WS Sessions (Tenant)</td>
-          <td>1000</td>
-          <td>1000</td>
-          <td>1000</td>
-          <td>1000</td>
+          <td>1K</td>
+          <td>1K</td>
+          <td>1K</td>
+          <td>1K</td>
           <td>Maximum number of Web socket sessions for the tenant</td>
       </tr>
       <tr>
           <td>WS Subscriptions (Tenant)</td>
-          <td>20000</td>
-          <td>20000</td>
-          <td>20000</td>
-          <td>20000</td>
+          <td>20K</td>
+          <td>20K</td>
+          <td>20K</td>
+          <td>20K</td>
           <td>Maximum number of Web socket subscription for the tenant</td>
       </tr>
       <tr>
@@ -354,10 +346,10 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
       </tr>
       <tr>
           <td>WS Subscriptions (Customer)</td>
-          <td>10000</td>
-          <td>10000</td>
-          <td>10000</td>
-          <td>10000</td>
+          <td>10K</td>
+          <td>10K</td>
+          <td>10K</td>
+          <td>10K</td>
           <td>Maximum number of Web socket subscription for the сustomer</td>
       </tr>
       <tr>
@@ -370,10 +362,10 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
       </tr>
       <tr>
           <td>WS Subscriptions (Public user)</td>
-          <td>5000</td>
-          <td>5000</td>
-          <td>5000</td>
-          <td>5000</td>
+          <td>5K</td>
+          <td>5K</td>
+          <td>5K</td>
+          <td>5K</td>
           <td>Maximum number of subscriptions per public user</td>
       </tr> 
       <tr>
@@ -386,10 +378,10 @@ where "**K**" means 1 thousand, "**M**" means 1 million, "**B**" means 1 billion
       </tr>
       <tr>
           <td>WS Subscriptions (Regular user)</td>
-          <td>2000</td>
-          <td>2000</td>
-          <td>2000</td>
-          <td>2000</td>
+          <td>2K</td>
+          <td>2K</td>
+          <td>2K</td>
+          <td>2K</td>
           <td>Maximum number of subscriptions per regular user</td>
       </tr>
       <tr>
