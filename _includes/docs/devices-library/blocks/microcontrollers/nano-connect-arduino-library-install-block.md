@@ -10,12 +10,9 @@ Install the board for Arduino IDE:
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=raspberryPiPicoInstallation %}
 
-After the installation is complete, select the board by Board menu:  
-**Tools** > **Board** > {{ arduinoBoardPath }}.  
+After the installation is complete, select the board by Board menu: **Tools** > **Board** > {{ arduinoBoardPath }}.  
 
-Connect the device to computer using USB cable and select the port for the device:  
-
-**Tools** > **Port** > **/dev/ttyUSB0**.  
+Connect the device to computer using USB cable and select the port for the device: **Tools** > **Port** > **/dev/ttyUSB0**.  
 
 Port depends on operation system and may be different:  
 - for Linux it will be **/dev/ttyUSB**X  

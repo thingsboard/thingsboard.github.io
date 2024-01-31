@@ -1,10 +1,10 @@
 ---
 layout: docwithnav-pe-edge
-title: Enable gRPC over SSL/TLS for edge communication
-description: Enable gRPC over SSL/TLS for edge communication
+title: Edge over TLS/SSL 
+description: Edge over TLS/SSL 
 ---
 
-![image](/images/coming-soon.jpg)
+{% include docs/edge/user-guide/grpc-over-ssl.md %}
 
 #### Next Steps
 

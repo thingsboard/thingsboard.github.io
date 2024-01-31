@@ -3,12 +3,12 @@
 
 ## Introduction
 
-**ThingsBoard widgets** are additional UI modules that easily integrate into any [IoT Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/).  They provide end-user functions such as data visualization, remote device control, alarms management and display of static custom html content.
-According to the provided features, each widget definition represents a specific [Widget Type](/docs/{{docsPrefix}}user-guide/ui/widget-library/#widget-types).
+**ThingsBoard widgets** are additional UI modules that seamlessly integrate into any [IoT Dashboard](/docs/{{docsPrefix}}user-guide/dashboards/).  They provide end-user functions such as data visualization, remote device control, alarms management, and display of static custom HTML content.
+Each widget definition represents a specific [Widget Type](/docs/{{docsPrefix}}user-guide/ui/widget-library/#widget-types)  based on the provided features.
 
 ## Creating new widget definition
 
-In order to create a new widget definition, navigate to "Widget Library" and open existing "Widgets Bundle" or create a new one.  In the "Widgets Bundle" view, click the big “+” button at the bottom-right part of the screen and then click the "Create new widget type" button.
+In order to create a new widget definition, navigate to "Widget Library" and open existing "Widgets Bundle" or create a new one.  In the "Widgets Bundle" view, click the “+” button at the top-right part of the screen and then click the "Create new widget" button.
 
 ![image](/images/user-guide/contribution/widgets/create-new-widget-type.png)
 
@@ -52,7 +52,7 @@ The first **Resources** tab is used to specify external JavaScript/CSS resources
 
 ![image](/images/user-guide/contribution/widgets/widget-editor-resources.png)
 
-Second **HTML** tab contains widget html code *(Note: some widgets create html content dynamically, thus their initial html content can be empty).*
+Second **HTML** tab contains the widget's HTML code *(Note: some widgets create HTML content dynamically, thus their initial HTML content can be empty).*
 
 ![image](/images/user-guide/contribution/widgets/widget-editor-html.png)
 
@@ -70,76 +70,258 @@ This section contains all widget related JavaScript code according to the [Widge
 
 This section consists of two tabs:
 
-The first tab, **Settings schema**, is used to specify the json schema of widget settings for UI form auto-generation using react-schema-form [builder](http://networknt.github.io/react-schema-form/). 
-This generated UI form is displayed in the **Advanced** tab of widget settings. 
-The Settings Object serialized by this schema is used to store specific widget settings and is accessible from widget JavaScript code.
+The first tab, **Settings schema**, is used to specify the JSON schema of widget settings for automatically generating a UI form using the react-schema-form [builder](http://networknt.github.io/react-schema-form/). 
+This generated UI form is displayed in the **Advanced** mode in the **Appearance** tab of widget settings. 
+The Settings Object serialized by this schema, is used to store specific widget settings and is accessible from the widget's JavaScript code.
 
 ![image](/images/user-guide/contribution/widgets/widget-editor-settings-schema.png)
  
-The second tab, **Data key settings schema**, is used to specify json schema of data key settings for UI form auto-generation using react-schema-form [builder](http://networknt.github.io/react-schema-form/). 
+The second tab, **Data key settings schema**, is used to specify JSON schema of data key settings for automatically generating a UI form using the react-schema-form [builder](http://networknt.github.io/react-schema-form/). 
 This generated UI form is displayed in **Advanced** tab of the **Data key configuration** dialog.
 The Settings Object serialized by this schema is used to store specific settings for each data key of the datasource defined in the widget. 
-These settings are accessible from widget JavaScript code.
+These settings are accessible from widget's JavaScript code.
 
 ![image](/images/user-guide/contribution/widgets/widget-editor-datakey-settings-schema.png)
+
+The third tab, **Latest data key settings schema**, is used to specify JSON schema of the latest data key for automatically generating a UI form using the react-schema-form [builder](http://networknt.github.io/react-schema-form/).
+The **Latest data key settings schema** is available only for **Time series** widgets.
+This generated UI form is displayed in **Advanced** tab of the **Data key configuration** dialog of the Latest keys.
+The Settings Object serialized by this schema is used to store specific settings for each data key of the datasource defined in the widget.
+These settings are accessible from widget JavaScript code.
+
+![image](/images/user-guide/contribution/widgets/widget-editor-latest-datakey-setting-schema.png)
+
+Starting from v3.4, auto-generated advanced widget settings JSON forms are replaced with [Angular components](https://github.com/thingsboard/thingsboard/pull/6545).
+When creating new settings schemas for custom widgets, don't forget to remove components from **Widget Settings** tab.
+
+![image](/images/user-guide/contribution/widgets/widget-editor-widget-settings-selectors.png)
+
+Here is the basic example of the **settings schema**:
+
+```
+   {
+      "schema": {
+         "type": "object",
+         "title": "Settings",
+         "properties": {
+             "cardType": {
+                "title": "Card type",
+                "type": "string",
+                "default": "Average"
+             },
+             "cardTitle": {
+                "title": "Card title",
+                "type": "string",
+                "default": "Gateways online"
+             }
+          },
+          "required": ["cardType"]
+         },
+      "form": [
+      {
+         "key": "cardType",
+         "type": "rc-select",
+         "multiple": false,
+         "items": [
+         {
+           "value": "avg",
+           "label": "Average"
+         },
+         {
+           "value": "max",
+           "label": "Maximum"
+         },
+         {
+           "value": "min",
+           "label": "Minimum"
+         }]
+      },
+      "cardTitle"
+      ]
+   }
+```
+
+Here is the result of applying **settings schema**, will be visible in **Appearance** tab of the widget settings:
+
+![image](/images/user-guide/contribution/widgets/widget-editor-schema-example.png)
+
+
+The **schema** property supports types such as **Number**, **Boolean**, **String** and **Object**.
+In the **form** array, every property can be specified as an **input**, **checkbox**, **dropdown**, **functional field**(JS, HTML, CSS), **image selection**, **color picker**, or an **array of properties**. 
+Fields can be displayed conditionally and grouped in logical blocks.
+
+Here is the complex example of the custom **settings schema**:
+
+```
+{
+    "schema": {
+        "type": "object",
+        "properties": {
+            "button": {
+                "title": "Button settings",
+                "type": "object",
+                "properties": {
+                    "color": {
+                        "title": "Primary color",
+                        "type": "string",
+                        "default": "#545454"
+                    },
+                    "backgroundColor": {
+                        "title": "Background color",
+                        "type": "string",
+                        "default": null
+                    }
+                }
+            },
+            "markerImage": {
+                "title": "Custom marker image",
+                "type": "string"
+            },
+            "markerImageSize": {
+                "title": "Custom marker image size (px)",
+                "type": "number",
+                "default": 34
+            },
+            "useMarkerImageFunction": {
+                "title": "Use marker image function",
+                "type": "boolean",
+                "default": false
+            },
+            "markerImageFunction": {
+                "title": "Marker image function: f(data, images, dsData, dsIndex)",
+                "type": "string"
+            },
+            "markerImages": {
+                "title": "Marker images",
+                "type": "array",
+                "items": {
+                    "title": "Marker image",
+                    "type": "string"
+                }
+            }
+        },
+        "required": []
+    },
+    "form": [
+        [
+            {
+                "key": "button",
+                "items": [
+                    {
+                        "key": "button.color",
+                        "type": "color"
+                    },
+                    {
+                        "key": "button.backgroundColor",
+                        "type": "color"
+                    }
+			    ]
+        	}
+        ],
+        [
+            "useMarkerImageFunction",
+            {
+                "key": "markerImage",
+                "type": "image",
+                "condition": "model.useMarkerImageFunction !== true"
+            },
+            {
+                "key": "markerImageSize",
+                "condition": "model.useMarkerImageFunction !== true"
+            },
+            {
+                "key": "markerImageFunction",
+                "type": "javascript",
+                "helpId": "widget/lib/map/marker_image_fn",
+                "condition": "model.useMarkerImageFunction === true"
+            },
+            {
+                "key": "markerImages",
+                "items": [
+                    {
+                        "key": "markerImages[]",
+                        "type": "image"
+                    }
+                ],
+                "condition": "model.useMarkerImageFunction === true"
+            }
+        ]
+    ],
+    "groupInfoes": [
+        {
+            "formIndex": 0,
+            "GroupTitle": "Button Style Settings"
+        },
+        {
+            "formIndex": 1,
+            "GroupTitle": "Marker Settings"
+        }
+    ]
+}
+```
+
+The result of applying custom **settings schema** to the widget:
+
+![image](/images/user-guide/contribution/widgets/widget-editor-appearence-example.png)
+
 
 #### Widget preview section
 
 This section is used to preview and test widget definitions.
 It is presented as a mini dashboard containing one widget instantiated from the current widget definition.
-It has mostly all functionality provided by usual ThingsBoard dashboard, with some limitations.
+It has most of the functionality provided by a typical ThingsBoard dashboard, with some limitations.
 For example, "Function" can only be selected as datasource type in widget datasources section for debugging purposes.    
 
 ![image](/images/user-guide/contribution/widgets/widget-editor-preview.png)
 
 ### Basic widget API
 
-All widget related code is located in the [JavaScript section](#javascript-section).
+All widget-related code is located in the [JavaScript section](#javascript-section).
 The built-in variable **self** that is a reference to the widget instance is also available.
 Each widget function should be defined as a property of the **self** variable.
-**self** variable has property **ctx** of type [WidgetContext](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/modules/home/models/widget-component.models.ts#L83) - a reference to widget context that has all necessary API and data used by widget instance.
-Below is brief description of widget context properties:
+The **self** variable has a property **ctx** of type [WidgetContext](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/modules/home/models/widget-component.models.ts#L83), which is a reference to the widget context that contains all the necessary API and data used by widget instance.
+Below is a brief description of widget context properties:
 
-| **Property**                     | **Type**           | **Description**                                                                                                                                                                                                                                                                                                  |
-|----------------------------------|--------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| $container                       | jQuery Object      | Container element of the widget. Can be used to dynamically access or modify widget DOM using jQuery API.                                                                                                                                                                                                        |
-| $scope                           | [IDynamicWidgetComponent](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/modules/home/models/widget-component.models.ts#L274")             | Reference to the current widget component. Can be used to access/modify component properties when widget is built using Angular approach.                                                                                                                                                                        |
-| width                            | Number             | Current width of widget container in pixels.                                                                                                                                                                                                                                                                     |
-| height                           | Number             | Current height of widget container in pixels.                                                                                                                                                                                                                                                                    |
-| isEdit                           | Boolean            | Indicates whether the dashboard is in in the view or editing state.                                                                                                                                                                                                                                              |
-| isMobile                         | Boolean            | Indicates whether the dashboard view is less then 960px width (default mobile breakpoint).                                                                                                                                                                                                                       |
-| widgetConfig                     | [WidgetConfig](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L341)             | Common widget configuration containing properties such as **color** (text color), **backgroundColor** (widget background color), etc.                                                                                                                                                                            |
-| settings                         | Object             | Widget settings containing widget specific properties according to the defined [settings json schema](#settings-schema-section).                                                                                                                                                                                 |
-| datasources                      | Array<[Datasource](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L250)>  | Array of resolved widget datasources. See [Subscription object](#subscription-object).                                                                                                                                                                                                                           |
-| data                             | Array<[DatasourceData](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L275)>  | Array of latest datasources data. See [Subscription object](#subscription-object).                                                                                                                                                                                                                               |
-| timeWindow                       | [WidgetTimewindow](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/time/time.models.ts#L104)   | Current widget timewindow (applicable for timeseries widgets). Holds information about current timewindow bounds. **minTime** - minimum time in UTC milliseconds, **maxTime** - maximum time in UTC milliseconds, **interval** - current aggregation interval in milliseconds.                                   |
-| units                            | String             | Optional property defining units text of values displayed by widget. Useful for simple widgets like cards or gauges.                                                                                                                                                                                             |
-| decimals                         | Number             | Optional property defining how many positions should be used to display decimal part of the value number.                                                                                                                                                                                                        |
-| hideTitlePanel                   | Boolean            | Manages visibility of widget title panel. Useful for widget with custom title panels or different states. **updateWidgetParams()** function must be called after this property change.                                                                                                                           |
-| widgetTitle                      | String             | If set, will override configured widget title text. **updateWidgetParams()** function must be called after this property change.                                                                                                                                                                                 |
-| detectChanges()                  | Function           | Trigger change detection for current widget. Must be invoked when widget HTML template bindings should be updated due to widget data changes.                                                                                                                                                                    |
-| updateWidgetParams()             | Function           | Updates widget with runtime set properties such as **widgetTitle**, **hideTitlePanel**, etc. Must be invoked in order these properties changes take effect.                                                                                                                                                      |
-| pageLink(pageSize, page, textSearch, sortOrder) | [PageLink](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/page/page-link.ts#L98) | Using to create sorting configuration for GET requests. **pageSize** - determines the number of entities displayed on a page, **page** - specifies which page should be displayed, **textSearch** - filters entities based on the included text, **sortOrder** - sets the order in which entities are displayed. |
-| defaultSubscription              | [IWidgetSubscription](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L220")             | Default widget subscription object contains all subscription information, including current data, according to the widget type. See [Subscription object](#subscription-object).                                                                                                                                 |
-| timewindowFunctions              | [TimewindowFunctions](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L45)             | Object with timewindow functions used to manage widget data time frame. Can by used by Time-series or Alarm widgets. See [Timewindow functions](#timewindow-functions).                                                                                                                                          |
-| controlApi                       | [RpcApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L58)             | Object that provides API functions for RPC (Control) widgets. See [Control API](#control-api).                                                                                                                                                                                                                   | 
-| actionsApi                       | [WidgetActionsApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L67)             | Set of API functions to work with user defined actions. See [Actions API](#actions-api).                                                                                                                                                                                                                         |
-| stateController                  | [IStateController](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L121)             | Reference to Dashboard state controller, providing API to manage current dashboard state. See [State Controller](#state-controller).                                                                                                                                                                             |
+| **Property**                     | **Type**           | **Description**                                                                                                                                                                                                                                                                                                    |
+|----------------------------------|--------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| $container                       | jQuery Object      | Container element of the widget. Can be used to dynamically access or modify widget DOM using jQuery API.                                                                                                                                                                                                          |
+| $scope                           | [IDynamicWidgetComponent](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/modules/home/models/widget-component.models.ts#L274")             | Reference to the current widget component. Can be used to access/modify component properties when widget is built using Angular approach.                                                                                                                                                                          |
+| width                            | Number             | Current width of widget container in pixels.                                                                                                                                                                                                                                                                       |
+| height                           | Number             | Current height of widget container in pixels.                                                                                                                                                                                                                                                                      |
+| isEdit                           | Boolean            | Indicates whether the dashboard is in in the view or editing state.                                                                                                                                                                                                                                                |
+| isMobile                         | Boolean            | Indicates whether the dashboard view is less then 960px width (default mobile breakpoint).                                                                                                                                                                                                                         |
+| widgetConfig                     | [WidgetConfig](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L341)             | Common widget configuration containing properties such as **color** (text color), **backgroundColor** (widget background color), etc.                                                                                                                                                                              |
+| settings                         | Object             | Widget settings containing widget specific properties according to the defined [settings json schema](#settings-schema-section).                                                                                                                                                                                   |
+| datasources                      | Array<[Datasource](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L250)>  | Array of resolved widget datasources. See [Subscription object](#subscription-object).                                                                                                                                                                                                                             |
+| data                             | Array<[DatasourceData](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L275)>  | Array of latest datasources data. See [Subscription object](#subscription-object).                                                                                                                                                                                                                                 |
+| timeWindow                       | [WidgetTimewindow](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/time/time.models.ts#L104)   | Current widget timewindow (applicable for timeseries widgets). Holds information about current timewindow bounds. **minTime** - minimum time in UTC milliseconds, **maxTime** - maximum time in UTC milliseconds, **interval** - current aggregation interval in milliseconds.                                     |
+| units                            | String             | Optional property defining units text of values displayed by widget. Useful for simple widgets like cards or gauges.                                                                                                                                                                                               |
+| decimals                         | Number             | Optional property defining how many positions should be used to display decimal part of the value number.                                                                                                                                                                                                          |
+| hideTitlePanel                   | Boolean            | Manages visibility of widget title panel. Useful for widget with custom title panels or different states. **updateWidgetParams()** function must be called after this property change.                                                                                                                             |
+| widgetTitle                      | String             | If set, will override configured widget title text. **updateWidgetParams()** function must be called after this property change.                                                                                                                                                                                   |
+| detectChanges()                  | Function           | Trigger change detection for current widget. Must be invoked when widget HTML template bindings should be updated due to widget data changes.                                                                                                                                                                      |
+| updateWidgetParams()             | Function           | Updates widget with runtime set properties such as **widgetTitle**, **hideTitlePanel**, etc. Must be invoked in order these properties changes take effect.                                                                                                                                                        |
+| pageLink(pageSize, page, textSearch, sortOrder) | [PageLink](https://github.com/thingsboard/thingsboard/blob/{{ site.release.wd_examples_commit }}/ui-ngx/src/app/shared/models/page/page-link.ts#L98) | Is used to create sorting configuration for GET requests. **pageSize** - determines the number of entities displayed on a page, **page** - specifies which page should be displayed, **textSearch** - filters entities based on the included text, **sortOrder** - sets the order in which entities are displayed. |
+| defaultSubscription              | [IWidgetSubscription](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L220")             | Default widget subscription object contains all subscription information, including current data, according to the widget type. See [Subscription object](#subscription-object).                                                                                                                                   |
+| timewindowFunctions              | [TimewindowFunctions](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L45)             | Object with timewindow functions used to manage widget data time frame. Can be used by Time-series or Alarm widgets. See [Timewindow functions](#timewindow-functions).                                                                                                                                            |
+| controlApi                       | [RpcApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L58)             | Object that provides API functions for RPC (Control) widgets. See [Control API](#control-api).                                                                                                                                                                                                                     | 
+| actionsApi                       | [WidgetActionsApi](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L67)             | Set of API functions to work with user defined actions. See [Actions API](#actions-api).                                                                                                                                                                                                                           |
+| stateController                  | [IStateController](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/core/api/widget-api.models.ts#L121)             | Reference to Dashboard state controller, providing API to manage current dashboard state. See [State Controller](#state-controller).                                                                                                                                                                               |
 
 In order to implement a new widget, the following JavaScript functions should be defined *(Note: each function is optional and can be implemented according to  widget specific behaviour):*
 
-| **Function**                                                       | **Description**                                                                                                                                                                                                                                    |
-|--------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| ``` onInit() ```                                                   | The first function which is called when widget is ready for initialization. Should be used to prepare widget DOM, process widget settings and initial subscription information.                                                                    |
-| ``` onDataUpdated() ```                                            | Called when the new data is available from the widget subscription. Latest data can be accessed from the [**defaultSubscription** object](#subscription-object) of widget context (**ctx**).                                                                        |
-| ``` onResize() ```                                                 | Called when widget container is resized. Latest width and height can be obtained from widget context (**ctx**).                                                                                                                                    |
-| ``` onEditModeChanged() ```                                        | Called when dashboard editing mode is changed. Latest mode is handled by isEdit property of **ctx**.                                                                                                                                               |
-| ``` onMobileModeChanged() ```                                      | Called when dashboard view width crosses mobile breakpoint. Latest state is handled by isMobile property of **ctx**.                                                                                                                               |
-| ``` onDestroy() ```                                                | Called when widget element is destroyed. Should be used to cleanup all resources if necessary.                                                                                                                                                     |
-| ``` getSettingsSchema() ```                                        | Optional function returning widget settings schema json as alternative to **Settings tab** of [Settings schema section](#settings-schema-section).                                                                                                                      |
-| ``` getDataKeySettingsSchema() ```                                 | Optional function returning particular data key settings schema json as alternative to **Data key settings schema** tab of [Settings schema section](#settings-schema-section).                                                                                         |
-| ``` typeParameters() ```                                           | Returns [WidgetTypeParameters](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L146) object describing widget datasource parameters. See [Type parameters object](#type-parameters-object).                                                                                                                             |
-| ``` actionSources() ```                                            | Returns map describing available widget action sources ([WidgetActionSource](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L118)) used to define user actions. See [Action sources object](#action-sources-object).                                                                                                  |
+| **Function**                                                       | **Description**                                                                                                                                                                                                                                                                                              |
+|--------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| ``` onInit() ```                                                   | The first function that is called when the widget is ready for initialization. It should be used to prepare widget DOM, process widget settings and handle initial subscription information.                                                                                                                 |
+| ``` onDataUpdated() ```                                            | Called when the new data is available from the widget subscription. Latest data can be accessed from the [**defaultSubscription** object](#subscription-object) of widget context (**ctx**).                                                                                                                 |
+| ``` onResize() ```                                                 | Called when widget container is resized. Latest width and height can be obtained from widget context (**ctx**).                                                                                                                                                                                              |
+| ``` onEditModeChanged() ```                                        | Called when dashboard editing mode is changed. Latest mode is handled by isEdit property of **ctx**.                                                                                                                                                                                                         |
+| ``` onMobileModeChanged() ```                                      | Called when dashboard view width crosses mobile breakpoint. Latest state is handled by isMobile property of **ctx**.                                                                                                                                                                                         |
+| ``` onDestroy() ```                                                | Called when widget element is destroyed. Should be used to cleanup all resources if necessary.                                                                                                                                                                                                               |
+| ``` getSettingsSchema() ```                                        | Optional function returning widget settings schema json as alternative to **Settings tab** of [Settings schema section](#settings-schema-section).                                                                                                                                                           |
+| ``` getDataKeySettingsSchema() ```                                 | Optional function returning particular data key settings schema json as alternative to **Data key settings schema** tab of [Settings schema section](#settings-schema-section).                                                                                                                              |
+| ``` typeParameters() ```                                           | Returns [WidgetTypeParameters](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L146) object describing widget datasource parameters. See [Type parameters object](#type-parameters-object).                           |
+| ``` actionSources() ```                                            | Returns map describing available widget action sources ([WidgetActionSource](https://github.com/thingsboard/thingsboard/blob/13e6b10b7ab830e64d31b99614a9d95a1a25928a/ui-ngx/src/app/shared/models/widget.models.ts#L118)) used to define user actions. See [Action sources object](#action-sources-object). |
 
 
 #### Subscription object

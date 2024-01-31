@@ -1,0 +1,1 @@
+Ensure that you have configured Edge TLS communication in HAProxy for the Ubuntu Server by following these [Post-installation steps](/docs/user-guide/install/pe/add-haproxy-ubuntu/#step-6-configure-edge-tls-communication-optional){: target="_blank"}.
