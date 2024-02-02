@@ -715,3 +715,56 @@
         margin-bottom: 160px
     }
 }
+
+@media screen and (max-width: 365px) {
+    #thingsboard-paas #paasContent {
+        #matrix #backg-matrix {
+            & .community, & .prof, & .cloud {
+                top: 156px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 407px) and (max-width: 425px) {
+    #thingsboard-paas #matrix table thead tr td {
+        width: 33%;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 375px) {
+    #thingsboard-paas #matrix table thead tr td {
+        width: 44%;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 407px) {
+    #thingsboard-paas #matrix table thead tr td {
+        width: 40%;
+    }
+}
+
+// @media screen and (max-width: 425px) {
+//     #thingsboard-paas #paasContent {
+//         #matrix table thead tr th {
+//             width: 10%;
+//             font-size: 8px;
+
+//             &:nth-child(3n) {
+//                 transform: translateX(8px);
+//             }
+//         }
+
+//         #matrix table tbody tr td {
+//             &:nth-child(4n-1) {
+//                 transform: translateX(8px);
+//             }
+//         }
+//     }
+// }
+
+@media screen and (max-width: 320px) {
+    #thingsboard-paas #matrix {
+        display: none;
+    }
+}

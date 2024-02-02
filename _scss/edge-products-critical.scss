@@ -199,6 +199,7 @@
     font-weight: 500;
     line-height: 54px;
     font-size: 36px;
+    margin-top: 50px;
 }
 
 #thingsboard-edge #edgeContent h3:not(.item-heading) {
@@ -731,7 +732,7 @@
 }
 
 #thingsboard-edge #edgeContent #matrix #backg-matrix .coln {
-    height: 1006px;
+    height: 1064px;
     border-radius: 6px
 }
 
@@ -901,6 +902,56 @@
 
     #thingsboard-edge #edgeContent #bottom-features .cards .col-lg-6 .block img {
         margin: 0 30px 0 0
+    }
+}
+
+@media screen and (max-width: 365px) {
+    #thingsboard-edge #edgeContent.noToc {
+        #matrix #backg-matrix {
+            & .edge, & .gateway {
+                top: 156px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 366px) and (max-width: 430px) {
+    #thingsboard-edge #edgeContent.noToc {
+        #matrix #backg-matrix {
+            & .edge, & .gateway {
+                top: 127px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 430px) {
+    #thingsboard-edge #edgeContent.noToc {
+        #matrix #backg-matrix {
+             .edge {
+                right: 26%;
+                width: 38%;
+             }
+
+             .gateway {
+                right: -4%;
+                width: 38%;
+             }
+        }
+
+        #matrix table thead tr th {
+            font-size: 11px;
+        }
+
+        #matrix table tbody tr td {
+            font-size: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #thingsboard-edge #matrix {
+        display: none;
     }
 }
 

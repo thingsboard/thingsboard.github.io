@@ -2197,3 +2197,37 @@
         max-width: 1400px;
     }
 }
+
+@media screen and (max-width: 365px) {
+    #thingsboard-pe #peContent {
+        #matrix #backg-matrix {
+            & .community, & .prof, & .cloud {
+                top: 156px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 407px) and (max-width: 425px) {
+    #thingsboard-pe #matrix table thead tr td {
+        width: 33%;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 375px) {
+    #thingsboard-pe #matrix table thead tr td {
+        width: 44%;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 407px) {
+    #thingsboard-pe #matrix table thead tr td {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #thingsboard-pe #matrix {
+        display: none;
+    }
+}

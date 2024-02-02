@@ -2433,3 +2433,65 @@ footer .deepmost .social a:hover {
 .hidden {
     display: none;
 }
+
+@media screen and (max-width: 365px) {
+    #thingsboard-edge #edgeContent.noToc {
+        #matrix #backg-matrix {
+            & .edge, & .gateway {
+                top: 156px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 366px) and (max-width: 425px) {
+    #thingsboard-edge #edgeContent.noToc {
+        #matrix #backg-matrix {
+            & .edge, & .gateway {
+                top: 127px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 425px) {
+    #thingsboard-pe #peContent ,
+    #thingsboard-paas #paasContent {
+        #matrix table thead tr th {
+            width: 10%;
+            font-size: 8px;
+
+            &:nth-child(3n) {
+                transform: translateX(8px);
+            }
+        }
+
+        #matrix table tbody tr td {
+            &:nth-child(4n-1) {
+                transform: translateX(8px);
+            }
+        }
+    }
+
+    #thingsboard-edge #edgeContent.noToc {
+        #matrix #backg-matrix {
+             .edge {
+                right: 26%;
+                width: 38%;
+             }
+
+             .gateway {
+                right: -4%;
+                width: 38%;
+             }
+        }
+
+        #matrix table thead tr th {
+            font-size: 11px;
+        }
+
+        #matrix table tbody tr td {
+            font-size: 10px;
+        }
+    }
+}
