@@ -2623,7 +2623,7 @@ and execute the following migration script:
 
 ```bash
 # Execute script to migrate latest timeseries data from Cassandra to PostgreSQL
-sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=3.0.1-cassandra
+sudo /usr/share/thingsboard/bin/install/upgrade.sh --fromVersion=cassandra-latest-to-postgres
 ```
 {: .copy-code}
 
@@ -2679,7 +2679,7 @@ database:
 **NOTE**: If you were using **Cassandra** database for entities data execute the following migration script: 
 
 ```text
-C:\thingsboard>upgrade.bat --fromVersion=3.0.1-cassandra
+C:\thingsboard>upgrade.bat --fromVersion=cassandra-latest-to-postgres
 ```
 {: .copy-code}
 
