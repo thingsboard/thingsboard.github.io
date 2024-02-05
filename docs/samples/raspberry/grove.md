@@ -120,7 +120,7 @@ sudo python3 ./Seeed_Python_DHT/setup.py install
 
 ## Application source code
 
-Our application consists of a single python script that is well documented. You will need to modify THINGSBOARD_HOST constant to match your ThingsBoard server installation IP address or hostname.
+Our application consists of a [single python script](/docs/samples/raspberry/resources/tb_grove.py) that is well documented. You will need to modify THINGSBOARD_HOST constant to match your ThingsBoard server installation IP address or hostname.
 
 Also we need say to ThingsBoard that we want to connect this device and get the device ACCESS_TOKEN, which will be used in the script.
 <b>Log in to your environment</b> — <b>Device groups</b> — <b>Add device group</b>  — <b>Add new device</b> (e.g. Device 1 with type grove) — <b>Open device details</b> — <b>Copy access token</b>.
@@ -157,8 +157,9 @@ logging.basicConfig(level=logging.INFO,
 
 log = logging.getLogger(__name__)
 
-thingsboard_server = 'THINGSBOARD_HOST'
-access_token = 'ACCESS_TOKEN'
+THINGSBOARD_SERVER = 'THINGSBOARD_HOST'
+THINGSBOARD_PORT = 1883
+ACCESS_TOKEN = 'ACCESS_TOKEN'
 
 
 def main():
@@ -201,7 +202,7 @@ def main():
             client.send_rpc_reply(request_id, servo_angle)
 
     # Connecting to ThingsBoard
-    client = TBDeviceMqttClient(thingsboard_server, access_token)
+    client = TBDeviceMqttClient(THINGSBOARD_SERVER, THINGSBOARD_PORT, ACCESS_TOKEN)
     client.set_server_side_rpc_request_handler(on_server_side_rpc_request)
     client.connect()
 
