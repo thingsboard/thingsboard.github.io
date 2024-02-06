@@ -23,8 +23,6 @@ def collect_required_data():
     print("="*80, "\n\n", sep="")
     host = input("Please write your ThingsBoard server hostname or leave it blank to use default (thingsboard.cloud): ")
     config["host"] = host if host else "mqtt.thingsboard.cloud"
-    port = input("Please write your ThingsBoard server MQTT port or leave it blank to use default (1883): ")
-    config["port"] = port if port else 1883
     token = ""
     while not token:
         token = input("Please write accessToken for device: ")
@@ -42,7 +40,7 @@ def collect_required_data():
 
 if __name__ == '__main__':
     config = collect_required_data()
-    client = TBDeviceMqttClient(config["host"], config["port"], config["token"])
+    client = TBDeviceMqttClient(config["host"], username=config["token"])
     client.connect()
     rc = client.claim(secret_key=config["secret_key"], duration=config["duration_ms"]).get()
     if rc == 0:

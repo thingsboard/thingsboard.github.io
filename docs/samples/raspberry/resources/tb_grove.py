@@ -34,7 +34,6 @@ logging.basicConfig(level=logging.INFO,
 log = logging.getLogger(__name__)
 
 THINGSBOARD_SERVER = 'THINGSBOARD_HOST'
-THINGSBOARD_PORT = 1883
 ACCESS_TOKEN = 'ACCESS_TOKEN'
 
 
@@ -78,7 +77,7 @@ def main():
             client.send_rpc_reply(request_id, servo_angle)
 
     # Connecting to ThingsBoard
-    client = TBDeviceMqttClient(THINGSBOARD_SERVER, THINGSBOARD_PORT, ACCESS_TOKEN)
+    client = TBDeviceMqttClient(THINGSBOARD_SERVER, username=ACCESS_TOKEN)
     client.set_server_side_rpc_request_handler(on_server_side_rpc_request)
     client.connect()
 

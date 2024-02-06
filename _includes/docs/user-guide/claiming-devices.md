@@ -113,6 +113,22 @@ The device has access token credentials - **Eypdinl1gUF5fSerOPJF**.
 We should [download the script](/docs/user-guide/resources/claiming-device/basic_claiming_example.py) below and run it to send claiming request to the server.  
 
 ```python
+#
+# Copyright © 2016-2024 The Thingsboard Authors
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+#
+
 from tb_device_mqtt import TBDeviceMqttClient
 
 def collect_required_data():
@@ -122,8 +138,6 @@ def collect_required_data():
     print("="*80, "\n\n", sep="")
     host = input("Please write your ThingsBoard server hostname or leave it blank to use default (thingsboard.cloud): ")
     config["host"] = host if host else "mqtt.thingsboard.cloud"
-    port = input("Please write your ThingsBoard server MQTT port or leave it blank to use default (1883): ")
-    config["port"] = port if port else 1883
     token = ""
     while not token:
         token = input("Please write accessToken for device: ")
@@ -141,13 +155,14 @@ def collect_required_data():
 
 if __name__ == '__main__':
     config = collect_required_data()
-    client = TBDeviceMqttClient(config["host"], config["port"], config["token"])
+    client = TBDeviceMqttClient(config["host"], username=config["token"])
     client.connect()
     rc = client.claim(secret_key=config["secret_key"], duration=config["duration_ms"]).get()
     if rc == 0:
         print("Claiming request was sent, now you should use claiming device widget to finish the claiming process.")
+
 ```
-{:.copy-code}
+{:.copy-code.expandable-20}
 
 Then we are able to use [Device Claiming Widget](#device-claiming-widget).
 

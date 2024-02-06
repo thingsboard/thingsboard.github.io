@@ -29,7 +29,7 @@ from tb_device_mqtt import TBDeviceMqttClient, TBPublishInfo
 
 
 telemetry = {"temperature": 41.9, "enabled": False, "currentFirmwareVersion": "v1.2.2"}
-client = TBDeviceMqttClient("127.0.0.1", 1883, "A1_TEST_TOKEN")
+client = TBDeviceMqttClient("127.0.0.1", username="A1_TEST_TOKEN")
 # Connect to ThingsBoard
 client.connect()
 # Sending telemetry without checking the delivery status
@@ -80,7 +80,7 @@ from tb_device_mqtt import TBDeviceMqttClient
 def callback(result):
     print(result)
 
-client = TBDeviceMqttClient("127.0.0.1", 1883, "A1_TEST_TOKEN")
+client = TBDeviceMqttClient("127.0.0.1", username="A1_TEST_TOKEN")
 client.connect()
 client.subscribe_to_attribute("uploadFrequency", callback)
 client.subscribe_to_all_attributes(callback)
@@ -100,7 +100,7 @@ from tb_device_mqtt import TBDeviceMqttClient, TBPublishInfo
 
 
 telemetry_with_ts = {"ts": int(round(time() * 1000)), "values": {"temperature": 42.1, "humidity": 70}}
-client = TBDeviceMqttClient("127.0.0.1", 1883, "A1_TEST_TOKEN")
+client = TBDeviceMqttClient("127.0.0.1", username="A1_TEST_TOKEN")
 # we set maximum amount of messages sent to send them at the same time. it may stress memory but increases performance
 client.max_inflight_messages_set(100)
 client.connect()
@@ -131,7 +131,7 @@ def on_attributes_change(result, exception):
     else:
         print(result)
 
-client = TBDeviceMqttClient("127.0.0.1", 1883, "A1_TEST_TOKEN")
+client = TBDeviceMqttClient("127.0.0.1", username="A1_TEST_TOKEN")
 client.connect()
 client.request_attributes(["configuration","targetFirmwareVersion"], callback=on_attributes_change)
 
@@ -162,7 +162,7 @@ def on_server_side_rpc_request(client, request_id, request_body):
     elif request_body["method"] == "getMemoryUsage":
         client.send_rpc_reply(request_id, {"Memory": virtual_memory().percent})
 
-client = TBDeviceMqttClient("127.0.0.1", 1883, "A1_TEST_TOKEN")
+client = TBDeviceMqttClient("127.0.0.1", username="A1_TEST_TOKEN")
 client.set_server_side_rpc_request_handler(on_server_side_rpc_request)
 client.connect()
 
@@ -187,7 +187,7 @@ from time import time
 from tb_gateway_mqtt import TBGatewayMqttClient
 
 
-gateway = TBGatewayMqttClient("127.0.0.1", 1883, "TEST_GATEWAY_TOKEN")
+gateway = TBGatewayMqttClient("127.0.0.1", username="TEST_GATEWAY_TOKEN")
 gateway.connect()
 gateway.gw_connect_device("Test Device A1")
 
@@ -215,7 +215,7 @@ def callback(result, exception):
     else:
         print(result)
 
-gateway = TBGatewayMqttClient("127.0.0.1", 1883, "TEST_GATEWAY_TOKEN")
+gateway = TBGatewayMqttClient("127.0.0.1", username="TEST_GATEWAY_TOKEN")
 gateway.connect()
 gateway.gw_request_shared_attributes("Test Device A1", ["temperature"], callback)
 
@@ -251,7 +251,7 @@ def rpc_request_response(client, request_id, request_body):
     else:
         print('Unknown method: ' + method)
 
-gateway = TBGatewayMqttClient("127.0.0.1", 1883, "TEST_GATEWAY_TOKEN")
+gateway = TBGatewayMqttClient("127.0.0.1", username="TEST_GATEWAY_TOKEN")
 gateway.connect()
 # now rpc_request_response will process rpc requests from servers
 gateway.gw_set_server_side_rpc_request_handler(rpc_request_response)
