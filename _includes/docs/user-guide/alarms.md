@@ -109,7 +109,7 @@ Learn more about notifications and how to configure them [here](/docs/{{docsPref
 {% include images-gallery.html imageCollection="notification-about-alarm" %}
 
 Alternatively, you can configure your custom logic in the [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/), using the [Send Email](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#send-email-node) and [Send SMS](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#send-sms-node) rule nodes or others from the [External Nodes](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/) to configure.
-You can find an example, of how to send an email user using the rules engine [here](/docs/user-guide/rule-engine-2-0/tutorials/send-email/).
+You can find an example of how to send an email to a user using the rules engine [here](/docs/user-guide/rule-engine-2-0/tutorials/send-email/).
 
 ## Operations with alarms
 
@@ -117,9 +117,9 @@ Operations with alarms are possible via "Alarms" page, "Alarms table" widget, or
 
 ### Assign alarm to user
 
-To assign an alarm to a user, navigate to the "Alarms" tab of the entity details window and specify the user in the "Assignee" column.
+You can assign an alarm to a specific user so that, for example, he can respond to the elevated temperature in the room and take appropriate action.
 
-When an alarm is assigned to the user, they will receive a notification about it.
+You can assign an alarm to the user on the "Alarms" page, in the "Alarm Table" widget, or on the "Alarms" tab in the details window of the selected entity.
 
 {% include images-gallery.html imageCollection="assignee-alarm-1" %}
 
@@ -128,11 +128,15 @@ When an alarm is assigned to the user, they will receive a notification about it
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
+Once the alarm is assigned, the user will receive a notification about it.
+
+{% include images-gallery.html imageCollection="assignee-alarm-2" %}
+
 ### Acknowledge and/or clear alarm
 
 Alarms have four statuses: acknowledged/unacknowledged/active/clear.
 
-To acknowledge the alarm, click on the "acknowledge" icon in the Alarms table widget or click on the "acknowledge" button in the alarm details window.
+To acknowledge the alarm, click on the "Acknowledge" icon in the Alarms table widget or click on the "Acknowledge" button in the alarm details window on the "Alarms" page, or on the "Alarms" tab of the entity details window.
 
 {% include images-gallery.html imageCollection="acknowledge-alarm" %}
 

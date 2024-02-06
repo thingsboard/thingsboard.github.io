@@ -5,13 +5,157 @@ assignees:
 title: Working with alarms
 description: IoT device alarm management using ThingsBoard alarms feature
 
-alarmComments:
+configure-alarm-rule:
     0:
-        image: /images/user-guide/alarms/alarm-comments-ce.png
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-2-ce.png
+        title: 'Go to the "Profiles" section, and click on the "Device profiles" page. Then click on the default device profile row to open its details;'
+    1:
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-3-ce.png
+        title: 'Select the "Alarm rules" tab and click "pencil" button to enter edit mode;'
+    2:
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-4-ce.png
+        title: 'Click "Add alarm rule" button;'
+    3:
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-5-ce.png
+        title: 'Specify alarm type and click the "+" icon to add alarm rule condition;'
+    4:
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-6-ce.png
+        title: 'Click the "Add key filter" button to specify a condition;'
+    5:
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-7-ce.png
+        title: 'Select a key type, enter a key name, and select a value type. Then, click "Add" button in the "Filters" section;'
+    6:
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-8-ce.png
+        title: 'Select an operation and enter a threshold value. Click "Add" button in the lower right corner;'
+    7:
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-9-ce.png
+        title: 'Click "Save";'
+    8:
+        image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-10-ce.png
+        title: 'Finally, click "Apply changes".'
 
-assignee-alarm:
+publish-telemetry-data:
     0:
-        image: /images/user-guide/alarms/alarm-assignee-CE.png
+        image: /images/helloworld/getting-started-ce/check-connectivity-device-1-ce.png
+        title: 'Click on the your device, and click the "Check connectivity” button in the "Device details" window;'
+    1:
+        image: /images/helloworld/getting-started-ce/check-connectivity-device-2-ce.png
+        title: 'In the opened window select the messaging protocol and your operating system. Install the necessary client tools and copy the command;'
+    2:
+        image: /images/helloworld/getting-started-ce/check-connectivity-device-3-ce.png
+        title: 'Execute previously copied command. You should see the published "temperature" readings. Now, close the connectivity window.'
+
+alarm-created:
+    0:
+        image: /images/user-guide/alarms/alarm-created-ce.png
+        title: 'When the device receives a temperature value greater than 25, an alarm will be created.'
+
+find-alarms:
+    0:
+        image: /images/user-guide/alarms/find-alarms-1-ce.png
+        title: 'To view alarms use the "Alarms" page in the left menu. Here you will see all reminders in list form, as well as the following information: creation time, source, alarm type, severity, to whom assigned, and status of the alarm.'
+    1:
+        image: /images/user-guide/alarms/find-alarms-2-ce.png
+        title: 'To view alarm details, click on the ellipsis (...) in the "Details" column of the alarm you want to view.'
+
+find-alarm-for-specific-device:
+    0:
+        image: /images/user-guide/alarms/find-alarm-for-specific-device-ce.png
+        title: 'Go to the relevant entity&#39;s page to find reminders for a specific entity. In our case, these are the "Devices" page. Click on the needed entity (device) to open its details. Navigate to the "Alarms" tab.'
+    
+notification-about-alarm:
+    0:
+        image: /images/user-guide/alarms/notification-about-alarm-ce.png
+
+assignee-alarm-1:
+    0:
+        image: /images/user-guide/alarms/assign-alarm-to-user-3-ce.png
+        title: 'Go to the "Alarms" page and specify the user in the "Assignee" column of the desired alarm.'
+    1:
+        image: /images/user-guide/alarms/assign-alarm-to-user-4-ce.png
+        title: 'Go to the "Dashboards" page with Alarms table widget. Specify the user in the "Assignee" column of the desired alarm;'
+    2:
+        image: /images/user-guide/alarms/assign-alarm-to-user-1-ce.png
+        title: 'Navigate to the "Alarms" tab of the entity details window selected entity and specify the user in the "Assignee" column.'
+
+assignee-alarm-2:
+    0:
+        image: /images/user-guide/alarms/assign-alarm-to-user-2-ce.png
+        title: 'When an alarm is assigned to the user, they will receive a notification about it.'
+
+acknowledge-alarm:
+    0:
+        image: /images/user-guide/alarms/acknowledge-alarm-1-ce.png
+        title: 'Click on the "Acknowledge" icon in the Alarm table widget.'
+    1:
+        image: /images/user-guide/alarms/acknowledge-alarm-2-ce.png
+        title: 'Click on the "Acknowledge" button in the alarm details window.'
+
+clear-alarm:
+    0:
+        image: /images/user-guide/alarms/clear-alarm-1-ce.png
+        title: 'Click on the "Clear" icon in the Alarms table widget.'
+    1:
+        image: /images/user-guide/alarms/clear-alarm-2-ce.png
+        title: 'Click on the "Clear" button in the alarms details window.'
+
+alarm-comments-1:
+    0:
+        image: /images/user-guide/alarms/alarm-comments-1-ce.png
+        title: 'To find alarm comments and leave your own, open the details of the selected alarm.'
+    1:
+        image: /images/user-guide/alarms/alarm-comments-2-ce.png
+        title: 'Here you can view system comments, comments from other users, and leave your own.'
+
+visualize-alarms-on-dashboard-1:
+    0:
+        image: /images/user-guide/alarms/visualize-alarms-on-dashboard-1-ce.png
+        title: 'The "Alarms table" widget allows you to conveniently display alarms for selected entities based on a defined time window and filters.'
+
+visualize-alarms-on-dashboard-2:
+    0:
+        image: /images/user-guide/alarms/visualize-alarms-on-dashboard-2-ce.png
+        title: 'The "Alarm count" widget displays the number of alarms based on the selected filters. In this case, the number of active alarms is displayed.'
+
+propagation-settings:
+    0:
+        image: /images/user-guide/alarms/propagation-settings-ce.png
+    
+relations-to-asset:
+    0:
+        image: /images/user-guide/alarms/propagation-1-ce.png
+        title: 'To find devices related to Office A, go to the "Assets" page, click on the needed asset and navigate to the "Relations" tab in the asset details window. The following devices relations to the Office A: Thermometer A1, Thermometer B1, Thermometer B2, and Thermometer C3.'
+    
+propagate-alarm-to-related-entities:
+    0:
+        image: /images/user-guide/alarms/propagation-5-ce.png
+        title: 'In the alarm rule settings of the device profile, tick "Propagate alarm to related entities".'
+    
+propagate-alias:
+    0:
+        image: /images/user-guide/alarms/propagation-2-ce.png
+        title: 'Create an alias that will filter the selected asset - "Office A".'
+
+add-alarms-widget:
+    0:
+        image: /images/user-guide/alarms/propagation-3-ce.png
+        title: 'Add the Alarms table widget. Specify the previously created alias as the alarm source. Be sure to activate the "Search propagated alarms" option to search for propagated alarms.'
+    1:
+        image: /images/user-guide/alarms/propagation-4-ce.png
+        title: 'The alarm Table widget has been added.'
+
+propagate-send-telemetry:
+    0:
+        image: /images/user-guide/alarms/propagation-6-ce.png
+        title: 'Send telemetry to one of the devices that exceeds the threshold value specified in the alarm rule to trigger an alarm.'
+
+propagate-alarm-created:
+    0:
+        image: /images/user-guide/alarms/propagation-7-ce.png
+        title: 'An alarm has been created on the device, and thanks to our settings, the alarm has propagated to the related asset.'
+    1:
+        image: /images/user-guide/alarms/propagation-8-ce.png
+        title: 'You can also see the created alarm on the "Alarms" tab in the asset details window.'
 
 ---
 

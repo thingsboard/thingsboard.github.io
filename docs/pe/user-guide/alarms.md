@@ -34,6 +34,22 @@ configure-alarm-rule:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-10-pe.png
         title: 'Finally, click "Apply changes".'
 
+publish-telemetry-data:
+    0:
+        image: /images/helloworld/getting-started-pe/check-connectivity-device-1-pe.png
+        title: 'Click on the your device, and click the "Check connectivity” button in the "Device details" window;'
+    1:
+        image: /images/helloworld/getting-started-pe/check-connectivity-device-2-pe.png
+        title: 'In the opened window select the messaging protocol and your operating system. Install the necessary client tools and copy the command;'
+    2:
+        image: /images/helloworld/getting-started-pe/check-connectivity-device-3-pe.png
+        title: 'Execute previously copied command. You should see the published "temperature" readings. Now, close the connectivity window.'
+
+alarm-created:
+    0:
+        image: /images/user-guide/alarms/alarm-created-pe.png
+        title: 'When the device receives a temperature value greater than 25, an alarm will be created.'
+
 relations-to-asset:
     0:
         image: /images/user-guide/alarms/propagation-1-pe.png
@@ -70,7 +86,6 @@ propagate-alarm-created:
         image: /images/user-guide/alarms/propagation-8-pe.png
         title: 'You can also see the created alarm on the "Alarms" tab in the asset details window.'
 
-
 find-alarms:
     0:
         image: /images/user-guide/alarms/find-alarms-1-pe.png
@@ -86,9 +101,17 @@ find-alarm-for-specific-device:
 
 assignee-alarm-1:
     0:
-        image: /images/user-guide/alarms/assign-alarm-to-user-1-pe.png
-        title: 'To assign an alarm to a user, navigate to the "Alarms" tab of the entity details window and specify the user in the "Assignee" column;'
+        image: /images/user-guide/alarms/assign-alarm-to-user-3-pe.png
+        title: 'Go to the "Alarms" page and specify the user in the "Assignee" column of the desired alarm.'
     1:
+        image: /images/user-guide/alarms/assign-alarm-to-user-4-pe.png
+        title: 'Go to the "Dashboards" page with Alarms table widget. Specify the user in the "Assignee" column of the desired alarm;'
+    2:
+        image: /images/user-guide/alarms/assign-alarm-to-user-1-pe.png
+        title: 'Navigate to the "Alarms" tab of the entity details window selected entity and specify the user in the "Assignee" column.'
+
+assignee-alarm-2:
+    0:
         image: /images/user-guide/alarms/assign-alarm-to-user-2-pe.png
         title: 'When an alarm is assigned to the user, they will receive a notification about it.'
 
@@ -133,22 +156,6 @@ notification-about-alarm:
 propagation-settings:
     0:
         image: /images/user-guide/alarms/propagation-settings-pe.png
-
-publish-telemetry-data:
-    0:
-        image: /images/helloworld/getting-started-pe/check-connectivity-device-1-pe.png
-        title: 'Click on the your device, and click the "Check connectivity” button in the "Device details" window;'
-    1:
-        image: /images/helloworld/getting-started-pe/check-connectivity-device-2-pe.png
-        title: 'In the opened window select the messaging protocol and your operating system. Install the necessary client tools and copy the command;'
-    2:
-        image: /images/helloworld/getting-started-pe/check-connectivity-device-3-pe.png
-        title: 'Execute previously copied command. Once you have successfully published you should see the published "temperature" readings. Now, close the connectivity window.'
-
-alarm-created:
-    0:
-        image: /images/user-guide/alarms/alarm-created-pe.png
-        title: 'When the device receives a temperature value greater than 25, an alarm will be created.'
 
 ---
 
