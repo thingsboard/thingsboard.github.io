@@ -5,5 +5,5 @@ description: Supported MQTT API Reference for IoT Devices
 redirect_from: "/docs/pe/edge/reference/mqtt-api"
 ---
 
-{% assign docsPrefix = "edge/" %}
+{% assign docsPrefix = "pe/" %}
 {% include docs/reference/mqtt-api.md %}
