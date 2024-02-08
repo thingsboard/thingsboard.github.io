@@ -28,7 +28,7 @@ message from the broker, following the rules described in this subsection:
 Mapping subsection will look like:
 ```json
     {
-      "topicFilter": "/sensor/raw_data",
+      "topicFilter": "sensor/raw_data",
       "converter": {
         "type": "bytes",
         "deviceNameExpression": "[0:4]",

@@ -160,7 +160,6 @@ Types of request converters:
 2. custom -- Custom converter (You can write it by yourself, and it will use to convert incoming data.)  
 
 {% capture difference %}
-<br>
 **Connector won't pass the None value from the converter**  
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
