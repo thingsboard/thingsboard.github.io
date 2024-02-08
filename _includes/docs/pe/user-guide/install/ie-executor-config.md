@@ -141,6 +141,18 @@
 			<td> Integration statistic persistence frequency in milliseconds</td>
 		</tr>
 		<tr>
+			<td>integrations.init.connection_timeout_sec</td>
+			<td>INTEGRATIONS_INIT_CONNECTION_TIMEOUT_SEC</td>
+			<td>10</td>
+			<td> Maximum connection timeout allowed for integrations in seconds. Any greater user defined timeout will be reduced down to this limit.</td>
+		</tr>
+		<tr>
+			<td>integrations.init.connection_check_api_request_timeout_sec</td>
+			<td>INTEGRATIONS_INIT_CONNECTION_CHECK_API_REQUEST_TIMEOUT_SEC</td>
+			<td>20</td>
+			<td> Connection check timeout for API request in seconds</td>
+		</tr>
+		<tr>
 			<td>integrations.reinit.enabled</td>
 			<td>INTEGRATIONS_REINIT_ENABLED</td>
 			<td>true</td>
@@ -151,24 +163,6 @@
 			<td>INTEGRATIONS_REINIT_FREQUENCY</td>
 			<td>300000</td>
 			<td> Checking interval for reinit integrations</td>
-		</tr>
-		<tr>
-			<td>integrations.rate_limits.enabled</td>
-			<td>TB_INTEGRATION_RATE_LIMITS_ENABLED</td>
-			<td>false</td>
-			<td> Enable/Disable integrations rate limits</td>
-		</tr>
-		<tr>
-			<td>integrations.rate_limits.tenant</td>
-			<td>TB_INTEGRATION_RATE_LIMITS_TENANT</td>
-			<td>1000:1,20000:60</td>
-			<td> The value of integrations rate limit. By default, no more than 1000 messages per second and no more 20000 messages per hour</td>
-		</tr>
-		<tr>
-			<td>integrations.rate_limits.device</td>
-			<td>TB_INTEGRATION_RATE_LIMITS_DEVICE</td>
-			<td>10:1,300:60</td>
-			<td> The value of integrations device rate limit. By default, no more than 10 messages per second and no more 300 messages per hour</td>
 		</tr>
 		<tr>
 			<td>integrations.allow_Local_network_hosts</td>
@@ -464,6 +458,12 @@
 			<td>TB_QUEUE_AWS_SQS_THREADS_PER_TOPIC</td>
 			<td>1</td>
 			<td> Number of threads per each AWS SQS queue in consumer</td>
+		</tr>
+		<tr>
+			<td>queue.aws_sqs.producer_thread_pool_size</td>
+			<td>TB_QUEUE_AWS_SQS_EXECUTOR_THREAD_POOL_SIZE</td>
+			<td>50</td>
+			<td> Thread pool size for aws_sqs queue producer executor provider. Default value equals to AmazonSQSAsyncClient.DEFAULT_THREAD_POOL_SIZE</td>
 		</tr>
 		<tr>
 			<td>queue.aws_sqs.queue-properties.rule-engine</td>

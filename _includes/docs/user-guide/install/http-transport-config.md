@@ -106,6 +106,18 @@
 			<td>"true" </td>
 			<td> Spring Boot configuration property that controls whether circular dependencies between beans are allowed.</td>
 		</tr>
+		<tr>
+			<td>spring.servlet.multipart.max-file-size</td>
+			<td>SPRING_SERVLET_MULTIPART_MAX_FILE_SIZE</td>
+			<td>50MB</td>
+			<td> Total file size cannot exceed 50MB when configuring file uploads</td>
+		</tr>
+		<tr>
+			<td>spring.servlet.multipart.max-request-size</td>
+			<td>SPRING_SERVLET_MULTIPART_MAX_REQUEST_SIZE</td>
+			<td>50MB</td>
+			<td> Total request size for a multipart/form-data cannot exceed 50MB</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -403,8 +415,15 @@
 		<tr>
 			<td>transport.sessions.inactivity_timeout</td>
 			<td>TB_TRANSPORT_SESSIONS_INACTIVITY_TIMEOUT</td>
-			<td>300000</td>
-			<td> Inactivity timeout for device session in transport service. The last activity time of the device session is updated if device sends any message, including keepalive messages</td>
+			<td>600000</td>
+			<td> Session inactivity timeout is a global configuration parameter that defines how long the device transport session will be opened after the last message arrives from the device.
+ The parameter value is in milliseconds.
+ The last activity time of the device session is updated if the device sends any message, including keepalive messages
+ If there is no activity, the session will be closed, and all subscriptions will be deleted.
+ We recommend this parameter to be in sync with device inactivity timeout ("state.defaultInactivityTimeoutInSec" or DEFAULT_INACTIVITY_TIMEOUT) parameter
+ which is responsible for detection of the device connectivity status in the core service of the platform.
+ The value of the session inactivity timeout parameter should be greater or equal to the device inactivity timeout.
+ Note that the session inactivity timeout is set in milliseconds while device inactivity timeout is in seconds.</td>
 		</tr>
 		<tr>
 			<td>transport.sessions.report_timeout</td>
@@ -471,7 +490,7 @@
 			<td>queue.prefix</td>
 			<td>TB_QUEUE_PREFIX</td>
 			<td></td>
-			<td> Global queue prefix. If specified, prefix is added before default topic name: 'prefix.default_topic_name'. Prefix is applied to all topics (and consumer groups for kafka) except of js executor topics (please use REMOTE_JS_EVAL_REQUEST_TOPIC and REMOTE_JS_EVAL_RESPONSE_TOPIC to specify custom topic names)</td>
+			<td> Global queue prefix. If specified, prefix is added before default topic name: 'prefix.default_topic_name'. Prefix is applied to all topics (and consumer groups for kafka) .</td>
 		</tr>
 		<tr>
 			<td>queue.kafka.bootstrap.servers</td>
@@ -700,6 +719,12 @@
 			<td>TB_QUEUE_AWS_SQS_THREADS_PER_TOPIC</td>
 			<td>1</td>
 			<td> Number of threads per each AWS SQS queue in consumer</td>
+		</tr>
+		<tr>
+			<td>queue.aws_sqs.producer_thread_pool_size</td>
+			<td>TB_QUEUE_AWS_SQS_EXECUTOR_THREAD_POOL_SIZE</td>
+			<td>50</td>
+			<td> Thread pool size for aws_sqs queue producer executor provider. Default value equals to AmazonSQSAsyncClient.DEFAULT_THREAD_POOL_SIZE</td>
 		</tr>
 		<tr>
 			<td>queue.aws_sqs.queue-properties.rule-engine</td>

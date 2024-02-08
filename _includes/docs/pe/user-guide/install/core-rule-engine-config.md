@@ -1452,6 +1452,18 @@
 			<td> Integration statistic persistence frequency in milliseconds</td>
 		</tr>
 		<tr>
+			<td>integrations.init.connection_timeout_sec</td>
+			<td>INTEGRATIONS_INIT_CONNECTION_TIMEOUT_SEC</td>
+			<td>10</td>
+			<td> Maximum connection timeout allowed for integrations in seconds. Any greater user defined timeout will be reduced down to this limit.</td>
+		</tr>
+		<tr>
+			<td>integrations.init.connection_check_api_request_timeout_sec</td>
+			<td>INTEGRATIONS_INIT_CONNECTION_CHECK_API_REQUEST_TIMEOUT_SEC</td>
+			<td>20</td>
+			<td> Connection check timeout for API request in seconds</td>
+		</tr>
+		<tr>
 			<td>integrations.reinit.enabled</td>
 			<td>INTEGRATIONS_REINIT_ENABLED</td>
 			<td>true</td>
@@ -1462,24 +1474,6 @@
 			<td>INTEGRATIONS_REINIT_FREQUENCY</td>
 			<td>300000</td>
 			<td> Checking interval for reinit integrations</td>
-		</tr>
-		<tr>
-			<td>integrations.rate_limits.enabled</td>
-			<td>TB_INTEGRATION_RATE_LIMITS_ENABLED</td>
-			<td>false</td>
-			<td> Enable/Disable integrations rate limits</td>
-		</tr>
-		<tr>
-			<td>integrations.rate_limits.tenant</td>
-			<td>TB_INTEGRATION_RATE_LIMITS_TENANT</td>
-			<td>1000:1,20000:60</td>
-			<td> The value of integrations rate limit. By default, no more than 1000 messages per second and no more 20000 messages per hour</td>
-		</tr>
-		<tr>
-			<td>integrations.rate_limits.device</td>
-			<td>TB_INTEGRATION_RATE_LIMITS_DEVICE</td>
-			<td>10:1,300:60</td>
-			<td> The value of integrations device rate limit. By default, no more than 10 messages per second and no more 300 messages per hour</td>
 		</tr>
 		<tr>
 			<td>integrations.allow_Local_network_hosts</td>
@@ -1523,6 +1517,25 @@
 			<td>300</td>
 			<td> Disconnect a client if no keepalive ping received in the specified time</td>
 		</tr>
+		<tr>
+			<td>integrations.activity.reporting_period</td>
+			<td>INTEGRATIONS_ACTIVITY_REPORTING_PERIOD</td>
+			<td>3000</td>
+			<td> This property defines the time interval, in milliseconds, for reporting activity events like post telemetry or post attributes.
+ The value set here determines how frequently the system will report on activities.
+ For instance, a value of 3000 means the system will gather and potentially report activities every 3 seconds.</td>
+		</tr>
+		<tr>
+			<td>integrations.activity.reporting_strategy</td>
+			<td>INTEGRATIONS_ACTIVITY_REPORTING_STRATEGY</td>
+			<td>ALL</td>
+			<td> This property specifies the strategy for reporting activity events within each reporting period.
+ The accepted values are 'FIRST', 'LAST', 'FIRST_AND_LAST' and 'ALL'.
+ - 'FIRST': Only the first activity event in each reporting period is reported.
+ - 'LAST': Only the last activity event in the reporting period is reported.
+ - 'FIRST_AND_LAST': Both the first and last activity events in the reporting period are reported.
+ - 'ALL': All activity events in the reporting period are reported.</td>
+		</tr>
 	</tbody>
 </table>
 
@@ -1558,7 +1571,7 @@
 			<td>reports.rate_limits.configuration</td>
 			<td>REPORTS_TENANT_RATE_LIMITS_CONFIGURATION</td>
 			<td>5:300</td>
-			<td> The value of repors rate limits. By default, no more then 5 reports per 300 second</td>
+			<td> The value of reports rate limits. By default, no more than 5 reports per 300 second</td>
 		</tr>
 		<tr>
 			<td>reports.scheduler.min_interval</td>
@@ -2735,7 +2748,12 @@
 			<td>state.defaultInactivityTimeoutInSec</td>
 			<td>DEFAULT_INACTIVITY_TIMEOUT</td>
 			<td>600</td>
-			<td> Should be greater than transport.sessions.report_timeout</td>
+			<td> Device inactivity timeout is a global configuration parameter that defines when the device will be marked as "inactive" by the server.
+ The parameter value is in seconds. A user can overwrite this parameter for an individual device by setting the “inactivityTimeout” server-side attribute (NOTE: expects value in milliseconds).
+ We recommend this parameter to be in sync with session inactivity timeout ("transport.sessions.inactivity_timeout" or TB_TRANSPORT_SESSIONS_INACTIVITY_TIMEOUT) parameter
+ which is responsible for detection of the stale device connection sessions.
+ The value of the session inactivity timeout parameter should be greater or equal to the device inactivity timeout.
+ Note that the session inactivity timeout is set in milliseconds while device inactivity timeout is in seconds.</td>
 		</tr>
 		<tr>
 			<td>state.defaultStateCheckIntervalInSec</td>
@@ -2751,6 +2769,14 @@
  If you device to change this parameter, you should re-create the device info view as one of the following:
  If 'persistToTelemetry' is changed from 'false' to 'true': 'CREATE OR REPLACE VIEW device_info_view AS SELECT * FROM device_info_active_ts_view;'
  If 'persistToTelemetry' is changed from 'true' to 'false': 'CREATE OR REPLACE VIEW device_info_view AS SELECT * FROM device_info_active_attribute_view;'</td>
+		</tr>
+		<tr>
+			<td>state.telemetryTtl</td>
+			<td>STATE_TELEMETRY_TTL</td>
+			<td>0</td>
+			<td> Millisecond value defining time-to-live for device state telemetry data (e.g. 'active', 'lastActivityTime').
+ Used only when state.persistToTelemetry is set to 'true' and Cassandra is used for timeseries data.
+ 0 means time-to-live mechanism is disabled.</td>
 		</tr>
 	</tbody>
 </table>
@@ -2974,14 +3000,32 @@
 		<tr>
 			<td>transport.sessions.inactivity_timeout</td>
 			<td>TB_TRANSPORT_SESSIONS_INACTIVITY_TIMEOUT</td>
-			<td>300000</td>
-			<td> Inactivity timeout for device session in transport service. The last activity time of the device session is updated if the device sends any message, including keepalive messages</td>
+			<td>600000</td>
+			<td> Session inactivity timeout is a global configuration parameter that defines how long the device transport session will be opened after the last message arrives from the device.
+ The parameter value is in milliseconds.
+ The last activity time of the device session is updated if the device sends any message, including keepalive messages
+ If there is no activity, the session will be closed, and all subscriptions will be deleted.
+ We recommend this parameter to be in sync with device inactivity timeout ("state.defaultInactivityTimeoutInSec" or DEFAULT_INACTIVITY_TIMEOUT) parameter
+ which is responsible for detection of the device connectivity status in the core service of the platform.
+ The value of the session inactivity timeout parameter should be greater or equal to the device inactivity timeout.
+ Note that the session inactivity timeout is set in milliseconds while device inactivity timeout is in seconds.</td>
 		</tr>
 		<tr>
 			<td>transport.sessions.report_timeout</td>
 			<td>TB_TRANSPORT_SESSIONS_REPORT_TIMEOUT</td>
 			<td>3000</td>
 			<td> Interval of periodic check for expired sessions and report of the changes to session last activity time</td>
+		</tr>
+		<tr>
+			<td>transport.activity.reporting_strategy</td>
+			<td>TB_TRANSPORT_ACTIVITY_REPORTING_STRATEGY</td>
+			<td>LAST</td>
+			<td> This property specifies the strategy for reporting activity events within each reporting period.
+ The accepted values are 'FIRST', 'LAST', 'FIRST_AND_LAST' and 'ALL'.
+ - 'FIRST': Only the first activity event in each reporting period is reported.
+ - 'LAST': Only the last activity event in the reporting period is reported.
+ - 'FIRST_AND_LAST': Both the first and last activity events in the reporting period are reported.
+ - 'ALL': All activity events in the reporting period are reported.</td>
 		</tr>
 		<tr>
 			<td>transport.json.type_cast_enabled</td>
@@ -3979,6 +4023,12 @@
 			<td> General swagger match pattern of swagger UI links</td>
 		</tr>
 		<tr>
+			<td>swagger.exclude_api_path_regex</td>
+			<td>SWAGGER_API_PATH_REGEX</td>
+			<td>/api/v1/integrations/.*</td>
+			<td> Excluded API path match pattern of swagger UI links</td>
+		</tr>
+		<tr>
 			<td>swagger.security_path_regex</td>
 			<td>SWAGGER_SECURITY_PATH_REGEX</td>
 			<td>/api/.*</td>
@@ -4362,6 +4412,12 @@
 			<td>TB_QUEUE_AWS_SQS_THREADS_PER_TOPIC</td>
 			<td>1</td>
 			<td> Number of threads per each AWS SQS queue in consumer</td>
+		</tr>
+		<tr>
+			<td>queue.aws_sqs.producer_thread_pool_size</td>
+			<td>TB_QUEUE_AWS_SQS_EXECUTOR_THREAD_POOL_SIZE</td>
+			<td>50</td>
+			<td> Thread pool size for aws_sqs queue producer executor provider. Default value equals to AmazonSQSAsyncClient.DEFAULT_THREAD_POOL_SIZE</td>
 		</tr>
 		<tr>
 			<td>queue.aws_sqs.queue-properties.rule-engine</td>
@@ -4872,84 +4928,6 @@
 			<td>TB_QUEUE_RULE_ENGINE_MAX_ERROR_MESSAGE_LENGTH</td>
 			<td>4096</td>
 			<td> Max length of the error message that is printed by statistics</td>
-		</tr>
-		<tr>
-			<td>queue.rule-engine.queues.name</td>
-			<td>TB_QUEUE_RE_SQ_QUEUE_NAME</td>
-			<td>SequentialByOriginator</td>
-			<td> queue name</td>
-		</tr>
-		<tr>
-			<td>queue.rule-engine.queues.name.topic</td>
-			<td>TB_QUEUE_RE_SQ_TOPIC</td>
-			<td>tb_rule_engine.sq</td>
-			<td> queue topic</td>
-		</tr>
-		<tr>
-			<td>queue.rule-engine.queues.name.poll-interval</td>
-			<td>TB_QUEUE_RE_SQ_POLL_INTERVAL_MS</td>
-			<td>25</td>
-			<td> poll interval</td>
-		</tr>
-		<tr>
-			<td>queue.rule-engine.queues.name.partitions</td>
-			<td>TB_QUEUE_RE_SQ_PARTITIONS</td>
-			<td>10</td>
-			<td> number queue partitions</td>
-		</tr>
-		<tr>
-			<td>queue.rule-engine.queues.name.consumer-per-partition</td>
-			<td>TB_QUEUE_RE_SQ_CONSUMER_PER_PARTITION</td>
-			<td>true</td>
-			<td> if true - use for each customer different partition</td>
-		</tr>
-		<tr>
-			<td>queue.rule-engine.queues.name.pack-processing-timeout</td>
-			<td>TB_QUEUE_RE_SQ_PACK_PROCESSING_TIMEOUT_MS</td>
-			<td>2000</td>
-			<td> Timeout for processing a message pack</td>
-		</tr>
-		<tr>
-			<td>queue.rule-engine.queues.name.submit-strategy.type</td>
-			<td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_TYPE</td>
-			<td>SEQUENTIAL_BY_ORIGINATOR</td>
-			<td> BURST, BATCH, SEQUENTIAL_BY_ORIGINATOR, SEQUENTIAL_BY_TENANT, SEQUENTIAL</td>
-		</tr>
-		<tr>
-			<td>queue.rule-engine.queues.name.submit-strategy.batch-size</td>
-			<td>TB_QUEUE_RE_SQ_SUBMIT_STRATEGY_BATCH_SIZE</td>
-			<td>100</td>
-			<td> Maximum number of messages in batch</td>
-		</tr>
-		<tr>
-			<td>queue.rule-engine.queues.name.processing-strategy.type</td>
-			<td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_TYPE</td>
-			<td>RETRY_FAILED_AND_TIMED_OUT</td>
-			<td> SKIP_ALL_FAILURES, SKIP_ALL_FAILURES_AND_TIMED_OUT, RETRY_ALL, RETRY_FAILED, RETRY_TIMED_OUT, RETRY_FAILED_AND_TIMED_OUT</td>
-		</tr>
-		<tr>
-			<td>queue.rule-engine.queues.name.processing-strategy.retries</td>
-			<td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRIES</td>
-			<td>3</td>
-			<td> Number of retries, 0 is unlimited</td>
-		</tr>
-		<tr>
-			<td>queue.rule-engine.queues.name.processing-strategy.failure-percentage</td>
-			<td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_FAILURE_PERCENTAGE</td>
-			<td>0</td>
-			<td> Skip retry if failures or timeouts are less than X percentage of messages;</td>
-		</tr>
-		<tr>
-			<td>queue.rule-engine.queues.name.processing-strategy.pause-between-retries</td>
-			<td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_RETRY_PAUSE</td>
-			<td>5</td>
-			<td> Time in seconds to wait in consumer thread before retries;</td>
-		</tr>
-		<tr>
-			<td>queue.rule-engine.queues.name.processing-strategy.max-pause-between-retries</td>
-			<td>TB_QUEUE_RE_SQ_PROCESSING_STRATEGY_MAX_RETRY_PAUSE</td>
-			<td>5</td>
-			<td> Max allowed time in seconds for pause between retries.</td>
 		</tr>
 		<tr>
 			<td>queue.rule-engine.topic-deletion-delay</td>

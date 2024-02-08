@@ -132,7 +132,7 @@
 			<td>queue.prefix</td>
 			<td>TB_QUEUE_PREFIX</td>
 			<td></td>
-			<td> Global queue prefix. If specified, prefix is added before default topic name: 'prefix.default_topic_name'. Prefix is applied to all topics (and consumer groups for kafka) except of js executor topics (please use REMOTE_JS_EVAL_REQUEST_TOPIC and REMOTE_JS_EVAL_RESPONSE_TOPIC to specify custom topic names)</td>
+			<td> Global queue prefix. If specified, prefix is added before default topic name: 'prefix.default_topic_name'. Prefix is applied to all topics (and consumer groups for kafka).</td>
 		</tr>
 		<tr>
 			<td>queue.in_memory.stats.print-interval-ms</td>
@@ -352,7 +352,7 @@
 		</tr>
 		<tr>
 			<td>queue.kafka.topic-properties.version-control</td>
-			<td>TB_QUEUE_KAFKA_CORE_TOPIC_PROPERTIES</td>
+			<td>TB_QUEUE_KAFKA_VC_TOPIC_PROPERTIES</td>
 			<td>retention.ms:604800000;segment.bytes:26214400;retention.bytes:1048576000;partitions:1;min.insync.replicas:1</td>
 			<td> Kafka properties for Core topics</td>
 		</tr>
@@ -403,6 +403,12 @@
 			<td>TB_QUEUE_AWS_SQS_THREADS_PER_TOPIC</td>
 			<td>1</td>
 			<td> Number of threads per each AWS SQS queue in consumer</td>
+		</tr>
+		<tr>
+			<td>queue.aws_sqs.producer_thread_pool_size</td>
+			<td>TB_QUEUE_AWS_SQS_EXECUTOR_THREAD_POOL_SIZE</td>
+			<td>50</td>
+			<td> Thread pool size for aws_sqs queue producer executor provider. Default value equals to AmazonSQSAsyncClient.DEFAULT_THREAD_POOL_SIZE</td>
 		</tr>
 		<tr>
 			<td>queue.aws_sqs.queue-properties.core</td>
@@ -696,7 +702,7 @@
 		<tr>
 			<td>vc.thread_pool_size</td>
 			<td>TB_VC_POOL_SIZE</td>
-			<td>2</td>
+			<td>6</td>
 			<td> Pool size for handling export tasks</td>
 		</tr>
 		<tr>
