@@ -1,0 +1,3 @@
+/blog/* https://website.tbqa.cloud/blog/:splat 200
+/wp-includes/* https://website.tbqa.cloud/wp-includes/:splat 200
+/wp-content/* https://website.tbqa.cloud/wp-content/:splat 200
