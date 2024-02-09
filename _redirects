@@ -1,4 +1,4 @@
-/blog/* https://website.tbqa.cloud/blog/:splat
-/wp-includes/* https://website.tbqa.cloud/wp-includes/:splat
-/wp-content/* https://website.tbqa.cloud/wp-content/:splat
-/wp-admin/* https://website.tbqa.cloud/wp-admin/:splat
+/blog/* https://website.tbqa.cloud/blog/:splat 200
+/wp-includes/* https://website.tbqa.cloud/wp-includes/:splat 200
+/wp-content/* https://website.tbqa.cloud/wp-content/:splat 200
+/wp-admin/* https://website.tbqa.cloud/wp-admin/:splat 200
