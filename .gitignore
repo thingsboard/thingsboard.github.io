@@ -6,5 +6,3 @@ _site/**
 CNAME
 .idea/**
 **/*.iml
-!_site/_headers
-!_site/_redirects
