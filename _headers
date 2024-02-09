@@ -1,3 +1,9 @@
-https://:project.pages.dev/*
+https://:any.pages.dev/*
   X-Robots-Tag: noindex
-  X-TB: custom header
+  X-TB: custom header for *.pages.dev
+https://:any.tbqa.cloud/*
+  X-Robots-Tag: noindex
+  X-TB: custom header for *.tbqa.cloud
+https://:subdomain.thingsboard.:zone/*
+  X-Robots-Tag: noindex
+  X-TB: custom header for *.thingsboard.*
