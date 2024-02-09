@@ -1,6 +1,9 @@
 https://:any.pages.dev/*
   X-Robots-Tag: noindex
   X-TB: custom header for *.pages.dev
+https://:any.:subdomain.pages.dev/*
+  X-Robots-Tag: noindex
+  X-TB: custom header for *.*.pages.dev
 https://:any.tbqa.cloud/*
   X-Robots-Tag: noindex
   X-TB: custom header for *.tbqa.cloud
