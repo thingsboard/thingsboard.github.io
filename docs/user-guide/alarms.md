@@ -5,6 +5,14 @@ assignees:
 title: Working with alarms
 description: IoT device alarm management using ThingsBoard alarms feature
 
+alarm-type:
+    0:
+        image: /images/user-guide/alarms/alarms-type-ce.png
+
+alarm-severity:
+    0:
+        image: /images/user-guide/alarms/alarms-severity-ce.png
+      
 configure-alarm-rule:
     0:
         image: /images/helloworld/getting-started-ce/hello-world-4-configure-alarm-rules-2-ce.png
@@ -125,7 +133,22 @@ relations-to-asset:
     0:
         image: /images/user-guide/alarms/propagation-1-ce.png
         title: 'To find devices related to Office A, go to the "Assets" page, click on the needed asset and navigate to the "Relations" tab in the asset details window. The following devices relations to the Office A: Thermometer A1, Thermometer B1, Thermometer B2, and Thermometer C3.'
-    
+
+alarm-creation-time-simple:
+    0:
+        image: /images/user-guide/alarms/alarm-creation-time-simple-ce.png
+        title: 'If the threshold value is exceeded, an alarm is created immediately.'
+
+alarm-creation-time-duration:
+    0:
+        image: /images/user-guide/alarms/alarm-creation-time-duration-ce.png
+        title: 'An alarm will be created if the duration of exceeding the threshold value exceeds the specified value.'
+
+alarm-creation-time-repeating:
+    0:
+        image: /images/user-guide/alarms/alarm-creation-time-repeating-ce.png
+        title: 'An alarm will be created if the threshold value is exceeded the specified number of times.'
+
 propagate-alarm-to-related-entities:
     0:
         image: /images/user-guide/alarms/propagation-5-ce.png
