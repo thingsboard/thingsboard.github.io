@@ -26,12 +26,18 @@ do
   git rm -r $cleanup_dir
 done
 
-echo "$(date +"%H:%M") Cleanup images.. done."
-
 cd -
 
 git restore --staged images/reference/architecture-in-brief.svg
 git restore images/reference/architecture-in-brief.svg
+
+echo "$(date +"%H:%M") Cleanup images.. done."
+
+echo "$(date +"%H:%M") Uploading static resources to s3.."
+cd js
+aws s3 sync . s3://tb-website-static/js --size-only --quiet
+cd -
+echo "$(date +"%H:%M") Uploading static to s3.. done."
 
 #echo "$(date +"%H:%M") Update configuration pages for CE:"
 #  python3 generate_config_pages.py ce ../ce3

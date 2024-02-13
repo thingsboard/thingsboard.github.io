@@ -377,7 +377,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         var scriptsList = [
             {src: '/css/owl.carousel.min.css', type: 'css'},
             {src: '/css/owl.theme.default.min.css', type: 'css'},
-            {src: '/js/owl.carousel.min.js', type: 'script'}
+            {src: 'https://static.thingsboard.io/js/owl.carousel.min.js', type: 'script'}
         ];
         loadNextScript(0, scriptsList,
             function() {
