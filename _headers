@@ -10,3 +10,9 @@ https://:any.tbqa.cloud/*
 https://:subdomain.thingsboard.:zone/*
   X-Robots-Tag: noindex
   X-TB: custom header for *.thingsboard.*
+https://:subdomain.hajs.:zone/*
+  X-Robots-Tag: noindex
+  X-TB: custom header for *.hajs.*
+https://hajs.:zone/*
+  X-Robots-Tag: noindex
+  X-TB: custom header for hajs.*
