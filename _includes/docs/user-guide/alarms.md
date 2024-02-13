@@ -62,7 +62,7 @@ So, a single "High Temperature" alarm will be generated with start time = 12:30 
 
 #### Alarm timing details
 
-The alarm also has a **start time** and a **creation time**.
+The alarm has a **start time** and a **creation time**.
 The alarm start time is determined by the moment the set threshold is exceeded, while the alarm creation time corresponds to the moment it is created.
 By default, they are the same.  However, within the alarm's rule settings, you can define specific conditions under which the alarm is created:
 
