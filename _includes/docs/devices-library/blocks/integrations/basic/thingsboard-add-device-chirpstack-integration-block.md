@@ -1,6 +1,7 @@
 ### Add a device on the Chirpstack
 
-We need to add a device on the [Chirpstack](https://chirpstack.io){: target="_blank"}.   
+We need to add a device on the [Chirpstack](https://chirpstack.io){: target="_blank"}.
+
 To add a device, you can follow next steps:
 
 {% assign addDeviceSteps = '

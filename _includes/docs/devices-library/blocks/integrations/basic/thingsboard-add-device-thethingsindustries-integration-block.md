@@ -1,24 +1,25 @@
 ### Add a device on The Things Industries
 
-We need to add a device on The Things Industries cloud.  
+We need to add a device on [The Things Industries cloud](https://thingsboard.eu1.cloud.thethings.industries/oauth/login){:target="_blank"}.
+
 To add a device, you can follow next steps:  
 
 {% assign addDeviceSteps = '
     ===
-        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/1-login-page.png,
+        image: /images/devices-library/basic/integrations/thethingsindustries/1-login-page.png,
         title: Login to the cloud and open your console.
     ===
-        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/2-cloud-console.png,
-        title: Choose **Gateways**.
+        image: /images/devices-library/basic/integrations/thethingsindustries/the-things-industries-create-device-1.png,
+        title: Go to the **Applications** page. Then select your application and click on its name.
     ===
-        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/3-gateway-list.png,
-        title: Press the **+ Register gateway** button.
+        image: /images/devices-library/basic/integrations/thethingsindustries/the-things-industries-create-device-2.png,
+        title: Click on the **Register end device** button.
     ===
-        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/4-register-gateway.png,
-        title: Put information about the gateway (gateway EUI). Then click the **Register gateway** button.
+        image: /images/devices-library/basic/integrations/thethingsindustries/the-things-industries-create-device-3.png,
+        title: Put the **APP EUI** value to the **JoinEUI** field. Press the **Confirm** button.
     ===
-        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsindustries/5-gateway-info.png,
-        title: The gateway is added, copy and save **Gateway Server address**, we will need it later. 
+        image: /images/devices-library/basic/integrations/thethingsindustries/the-things-industries-create-device-4.png,
+        title: Fill the rest parameters and press **Register end device** button.
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addDeviceSteps %}
