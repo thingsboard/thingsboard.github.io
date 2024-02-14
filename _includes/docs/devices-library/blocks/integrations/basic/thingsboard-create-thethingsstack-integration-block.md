@@ -159,13 +159,13 @@ In the "**Connect**" step, you will need the following parameters:
         title: Click "**plus**" icon in the upper right corner to add new integration. Select type "**The Things Stack Community**". Then, click "**Next**".
     ===
         image: /images/devices-library/basic/integrations/thethingsstack/2-create-tts-integration-uplink.png,
-        title: Paste the previously copied script to the Decoder function section. Click “Next”.
+        title: Paste the previously copied script to the Decoder function section. Click "**Next**".
     ===
         image: /images/devices-library/basic/integrations/thethingsstack/3-create-tts-integration-downlink.png,
-        title: Leave the “Downlink data converter” field empty. Click on “Skip” button.
+        title: Leave the "**Downlink data converter**" field empty. Click on "**Skip**" button.
     ===
         image: /images/devices-library/basic/integrations/thethingsstack/4-create-tts-integration-configuration.png,
-        title: Next, fill in the fields with your parameters. After, press “Add” button.
+        title: Next, fill in the fields with your parameters. After, press "**Add**" button.
 '
 %}
 
