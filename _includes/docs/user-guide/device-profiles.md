@@ -8,14 +8,11 @@ Each Device has one and only profile at a single point in time.
 Experienced ThingsBoard users can notice that the device type has been deprecated in favor of the Device Profile. 
 The update script will automatically create Device Profiles based on unique Device Types and assign them to the appropriate devices.
 
-
-## Device Profile settings
-
 Let's take a look at the settings available in the device profile one by one.
 
-### Device profile details
+## Device profile details
 
-#### Rule Chain
+### Rule Chain
 
 By default, the [Root Rule Chain](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/overview/#rule-chain) processes all incoming messages and events for any device. 
 However, the more different device types you have, the more complex your Root Rule Chain may become. 
@@ -32,7 +29,7 @@ This setting is available in the Device Profile wizard and in the Device Profile
 ![image](/images/user-guide/device-profile/device-profile-rule-chain-1-pe.png)
 {% endif %}
 
-#### Queue Name
+### Queue Name
 
 By default, the [Main](/docs/{{docsPrefix}}user-guide/rule-engine-2-5/queues/) queue will be used to store all incoming messages and events from any device.
 The transport layer will submit messages to this queue and Rule Engine will poll the queue for new messages.
@@ -59,9 +56,9 @@ if you choose to use a custom queue, you should configure it with the **system a
 ![image](/images/user-guide/device-profile/device-profile-queue-1-pe.png)
 {% endif %}
 
-### Transport configuration
+## Transport configuration
 
-The current version of the ThingsBoard platform supports the following transport types: [Default](#default-transport-type), [MQTT](#mqtt-transport-type), [CoAP](#coap-transport-type), LWM2M and SNMP
+The current version of the ThingsBoard platform supports the following transport types: [Default](#default-transport-type), [MQTT](#mqtt-transport-type), [CoAP](#coap-transport-type), [LWM2M](/docs/{{docsPrefix}}reference/lwm2m-api/#step-2-define-lwm2m-device-profile) and [SNMP](/docs/{{docsPrefix}}reference/snmp-api/#device-profile-configuring).
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-1-ce.png)
@@ -70,13 +67,13 @@ The current version of the ThingsBoard platform supports the following transport
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-1-pe.png)
 {% endif %}
 
-#### Default transport type
+### Default transport type
 
 The Default transport type is intended for backward compatibility with previous releases. 
 With the Default transport type, you can continue to use the platform's default [MQTT](/docs/{{docsPrefix}}reference/mqtt-api/), [HTTP](/docs/{{docsPrefix}}reference/http-api/), [CoAP](/docs/{{docsPrefix}}reference/coap-api/) and [LwM2M](/docs/{{docsPrefix}}reference/lwm2m-api/) APIs to connect your devices.
 There is no specific configuration setting for the default transport type. 
 
-#### MQTT transport type
+### MQTT transport type
 
 The MQTT transport type enables advanced MQTT transport settings. 
 Now you are able to specify custom MQTT topics filters for time-series data and attribute updates that correspond to the
@@ -91,8 +88,8 @@ Custom MQTT topic filters support single '**+**' and multi-level '**#**' wildcar
 Let's look at an example where we use a custom MQTT device topic filters to publish time series data using "MQTT Basic" device credentials:
 
 - Specify custom MQTT device topic filter for the Device profile, for example:
-  - Telemetry topic filter: `\telemetry`;
-  - Attributes topic filter: `\attributes`;
+  - Telemetry topic filter: `/telemetry`;
+  - Attributes topic filter: `/attributes`;
 - Provide basic MQTT credentials for your device with the client id ‘`c1`’, username ‘`t1`’ and password ‘`secret`’;
 - Use the command below to publish time-series data. {% if (docsPrefix == null) or (docsPrefix == "pe/") %}Don't forget to replace `$THINGSBOARD_HOST_NAME` with your host.{% endif %}
   {% if (docsPrefix == null) or (docsPrefix == "pe/") %}
@@ -185,7 +182,7 @@ The compatibility mode introduces slight performance degradation, so it is recom
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-mqtt-protobuf-setting-2-pe.png)
 {% endif %}
 
-#### CoAP transport type
+### CoAP transport type
 
 The CoAP transport type enables advanced CoAP transport settings. With the CoAP transport type, you have the ability to select the CoAP device type.
 
@@ -247,7 +244,7 @@ Requires Efento devices with FW version: 06.02+.
 ![image](/images/user-guide/device-profile/device-profile-transport-setting-coap-efento-nb-iot-setting-1-pe.png)
 {% endif %}
 
-### Alarm Rules
+## Alarm Rules
 
 Platform users can use Rule Engine to configure alarms. Rule Engine is a quite powerful feature, but it requires some programming skills.
 Since ThingsBoard 3.2, we have introduced Alarm Rules to simplify the process of configuring the most popular alarm types.
@@ -287,13 +284,13 @@ mosquitto_pub -d -h 'mqtt.thingsboard.cloud' -t "v1/devices/me/telemetry" -u "$A
 Where **$ACCESS_TOKEN** is your device access token.
 {% endif %}
 
-#### Example 1. Simple alarm conditions 
+### Example 1. Simple alarm conditions 
  
 We would like to create a **Critical** alarm when the temperature is greater than 10 degrees.
 
 {% include images-gallery.html imageCollection="alarmСonditions" showListImageTitles="true" %} 
 
-#### Example 2. Alarm condition with a duration
+### Example 2. Alarm condition with a duration
 
 Let's assume that we would like to modify Example 1 and raise alarms only if the temperature exceeds a certain threshold for 1 minute. 
 
@@ -309,7 +306,7 @@ Please create a server-side attribute *“highTemperatureDurationThreshold”* w
 
 {% include images-gallery.html imageCollection="alarmСonditionsWithDuration2" showListImageTitles="true" %}
 
-#### Example 3. Repeating alarm condition
+### Example 3. Repeating alarm condition
 
 Let's assume we would like to modify Example 1 and raise alarms only if the sensor reports a temperature that exceeds the threshold 3 times in a row.
 
@@ -325,19 +322,19 @@ Please create a server-side attribute *“highTemperatureRepeatingThreshold”*,
 
 {% include images-gallery.html imageCollection="alarmСonditionsWithRepeating2" showListImageTitles="true" %}
 
-#### Example 4. Clear alarm rule
+### Example 4. Clear alarm rule
 
 Let's assume we would like to automatically clear the alarm if the temperature in the fridge goes back to normal.
 
 {% include images-gallery.html imageCollection="alarmСonditionsClear" showListImageTitles="true" %}
 
-#### Example 5. Define alarm rule schedule
+### Example 5. Define alarm rule schedule
 
 Let's assume we would like an alarm rule to evaluate alarms only during working hours.
 
 {% include images-gallery.html imageCollection="alarmСonditionsSchedule" showListImageTitles="true" %}
 
-#### Example 6. Advanced thresholds
+### Example 6. Advanced thresholds
 
 Let's assume we would like our users to be able to overwrite the thresholds from Dashboard UI. 
 We can also add the flag to enable or disable certain alarms for each device. 
@@ -347,7 +344,7 @@ Our goal is to trigger an alarm creation when "*temperatureAlarmFlag* = True AND
 
 {% include images-gallery.html imageCollection="alarmСonditionsAdvanced" showListImageTitles="true" %}
 
-#### Example 7. Dynamic thresholds based on the tenant or customer attributes
+### Example 7. Dynamic thresholds based on the tenant or customer attributes
 
 Example 6 demonstrates how to enable or disable rule based on the value of "temperatureAlarmFlag" attribute of the device. 
 But what if you would like to enable or disable certain rule for all devices that belong to a tenant or customer?
@@ -358,7 +355,7 @@ For this purpose, you should use "Constant" key type and compare it with dynamic
 
 The technique mentioned above may be used to enable or disable rules or combine filters on device telemetry/attributes with filters on tenant or customer attributes.
 
-#### Device profile rule node
+### Device profile rule node
 
 Device Profile rule node creates and clears alarms based on the alarm rules defined in the device profile. 
 By default, this is the first rule node in the chain of processing. 
@@ -394,7 +391,7 @@ The Rule Node will fetch the state from the database when the first message from
 ![image](/images/user-guide/device-profile/device-profile-rule-node-2-pe.png)
 {% endif %}
 
-#### Notifications about alarms
+### Notifications about alarms
 
 Assuming you have configured alarm rules you may also want to receive a notification when ThingsBoard creates or updates the alarm.
 The device profile rule node has three main outbound relation types that you can use: 'Alarm Created', 'Alarm Severity Updated', and 'Alarm Cleared'.
@@ -412,13 +409,7 @@ There is also an additional 'Alarm Updated' relation type that should be ignored
 ![image](/images/user-guide/device-profile/device-profile-notifications-pe.png)
 {% endif %}
 
-### Device provisioning
+## Device provisioning
 
 Device provisioning allows a device to automatically register in ThingsBoard either during or after manufacturing. 
 **See separate documentation [page](/docs/{{docsPrefix}}user-guide/device-provisioning/) for more details.**
-
-
-
-
- 
-    
