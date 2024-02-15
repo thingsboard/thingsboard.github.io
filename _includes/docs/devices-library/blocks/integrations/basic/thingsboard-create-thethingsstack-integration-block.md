@@ -46,7 +46,7 @@ Now we need to configure application on The Things Stack. To do this please foll
         title: Fill in the required fields about the application. Then click "**Create application**" button.
     ===
         image: /images/devices-library/basic/integrations/thethingsstack/5-generate-new-api-key.png,
-        title: Open "<b>Integrations</b>" -> "<b>MQTT</b>" page in the left menu. Click on the "<b>Generate new API key</b>" button.
+        title: Go to the "<b>Integrations</b>" -> open the "<b>MQTT</b>" page in the left menu. Then, click on the "<b>Generate new API key</b>" button.
     ===
         image: /images/devices-library/basic/integrations/thethingsstack/6-copy-access-key.png,
         title: Press on copy icon to copy a key and save it.
