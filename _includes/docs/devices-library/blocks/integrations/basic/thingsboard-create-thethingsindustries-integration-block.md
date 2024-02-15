@@ -1,6 +1,6 @@
 ### Add a gateway on The Things Industries
 
-We need to add a gateway on [The Things Industries cloud](https://thingsboard.eu1.cloud.thethings.industries/oauth/login){:target="_blank"}.
+We need to add a gateway on [The Things Industries cloud](https://www.thethingsindustries.com/){:target="_blank"}.
 
 To add a gateway, you can follow next steps:  
 
