@@ -13,51 +13,6 @@ alarm-severity:
     0:
         image: /images/user-guide/alarms/alarms-severity-pe.png
 
-configure-alarm-rule:
-    0:
-        image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-2-pe.png
-        title: 'Go to the "Profiles" section, and click on the "Device profiles" page. Then click on the default device profile row to open its details;'
-    1:
-        image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-3-pe.png
-        title: 'Navigate to the "Alarm rules" tab and click "pencil" button to enter edit mode;'
-    2:
-        image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-4-pe.png
-        title: 'Click "Add alarm rule" button;'
-    3:
-        image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-5-pe.png
-        title: 'Specify alarm type and click the "+" icon to add alarm rule condition;'
-    4:
-        image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-6-pe.png
-        title: 'Click the "Add key filter" button to specify a condition;'
-    5:
-        image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-7-pe.png
-        title: 'Select a key type, enter a key name, and select a value type. Then, click "Add" button in the "Filters" section;'
-    6:
-        image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-8-pe.png
-        title: 'Select an operation and enter a threshold value. Click "Add" button in the lower right corner;'
-    7:
-        image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-9-pe.png
-        title: 'Click "Save";'
-    8:
-        image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-10-pe.png
-        title: 'Finally, click "Apply changes".'
-
-publish-telemetry-data:
-    0:
-        image: /images/helloworld/getting-started-pe/check-connectivity-device-1-pe.png
-        title: 'Click on the your device, and click the "Check connectivity” button in the "Device details" window;'
-    1:
-        image: /images/helloworld/getting-started-pe/check-connectivity-device-2-pe.png
-        title: 'In the opened window select the messaging protocol and your operating system. Install the necessary client tools and copy the command;'
-    2:
-        image: /images/helloworld/getting-started-pe/check-connectivity-device-3-pe.png
-        title: 'Execute previously copied command. You should see the published "temperature" readings. Now, close the connectivity window.'
-
-alarm-created:
-    0:
-        image: /images/user-guide/alarms/alarm-created-pe.png
-        title: 'When the device receives a temperature value greater than 25, an alarm will be created.'
-
 relations-to-asset:
     0:
         image: /images/user-guide/alarms/propagation-1-pe.png

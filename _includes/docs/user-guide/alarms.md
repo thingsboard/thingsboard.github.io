@@ -18,13 +18,13 @@ The alarm originator is an entity that causes the alarm. For example, "Device A"
 
 #### Type
 
-Alarm type helps to identify the root cause of the alarm. It is set when creating an alarm rule. For example, "High Temperature" and "Low Humidity" are two different alarms.
+Alarm type helps to identify the root cause of the alarm. It is set when [creating an alarm rule](#how-to-create-the-alarm). For example, "High Temperature" and "Low Humidity" are two different alarms.
 
 {% include images-gallery.html imageCollection="alarm-type" %}
 
 #### Severity
 
-Each alarm has severity which is either **Critical**, **Major**, **Minor**, **Warning**, or **Indeterminate** (sorted by priority in descending order). Also, set when creating an alarm rule.
+Each alarm has severity which is either **Critical**, **Major**, **Minor**, **Warning**, or **Indeterminate** (sorted by priority in descending order). Also, set when [creating an alarm rule](#how-to-create-the-alarm).
 
 {% include images-gallery.html imageCollection="alarm-severity" %}
 
@@ -81,6 +81,23 @@ By default, they are the same.  However, within the alarm's rule settings, you c
 When ThingsBoard creates an alarm, in addition to the creation and start time, it also stores the **end time** of the alarm. By default, the start time and the end time are the same. 
 If the alarm trigger condition repeats, the platform updates the end time.
 
+#### Assignee
+
+You can assign an alarm to a specific user so that, for example, he can respond to the elevated temperature in the room and take appropriate action.
+
+You can assign an alarm to the user on the "Alarms" page, in the "Alarm Table" widget, or on the "Alarms" tab in the details window of the selected entity.
+
+{% include images-gallery.html imageCollection="assignee-alarm-1" %}
+
+{% capture difference %}
+**Note**. To assign an alarm to a specific user, this user must be the owner of the device from which the alarm came.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Once the alarm is assigned, the user will receive a notification about it.
+
+{% include images-gallery.html imageCollection="assignee-alarm-2" %}
+
 #### Propagation of alarms
 
 Suppose you have a topology where one Tenant has 1000 Customers and each Customer has 1000 Devices.
@@ -127,31 +144,19 @@ An alarm has been created on the device, and thanks to our settings, the alarm h
 
 Now that you know the theory, let's proceed to practical tutorials.
 
-## Create alarm rules
+## How to create the alarm?
 
 You must define parameters and rules according to which the alarm will be triggered.
 
-The easiest way to create an alarm is to use the **alarm rules** in the [Device profile](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules).
+The easiest way to create an alarm is to use the **alarm rules** in the **Device profile**. By following [this guide](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules), you can easily configure the rules for creating alarms for most of your tasks.
 
-Let's create a rule when the temperature is greater than 25, an alarm with the type "High Temperature" and "Critical" severity will be triggered:
-
-{% include images-gallery.html imageCollection="configure-alarm-rule" showListImageTitles="true" %}
-
-Now, publish telemetry data:
-
-{% include images-gallery.html imageCollection="publish-telemetry-data" showListImageTitles="true" %}
-
-When the device receives a temperature value greater than 25, an alarm will be created.
-
-{% include images-gallery.html imageCollection="alarm-created" %}
-
-The alternative option is to configure your custom logic in the [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/) and use 
-[Create Alarm](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) and [Clear Alarm](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) rule nodes. 
+If you need more complex logic for creating alarms, use the alternative option - use [Create Alarm](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#create-alarm-node) and [Clear Alarm](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/action-nodes/#clear-alarm-node) rule nodes in the [Rule Engine](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/re-getting-started/).
 You can find a corresponding example [here](/docs/user-guide/rule-engine-2-0/tutorials/create-clear-alarms/).
+This is a more advanced option as it requires certain programming skills.
 
-### Notification about created or cleared an alarm
+## Notification about created or cleared an alarm
 
-To send notifications, including alarms, there is the ThingsBoard **Notification Center**.
+To send notifications, including alarms, there is the ThingsBoard [Notification Center](/docs/{{docsPrefix}}user-guide/notifications).
 By default, you will receive notifications about all your alarms and alarms of your customers.
 The Notification Center allows you to flexibly configure rules for sending notifications about alarms to end users through the ThingsBoard web interface, email, Slack, Microsoft Teams, or SMS.
 Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications).
@@ -166,7 +171,7 @@ You can find an example of how to send an email to a user using the rules engine
 **Alarms page**
 
 To view and manage alarms, use the "Alarms" page in the left menu.
-Here you will see all your alarms and alarms of your customers and users in the form of a list form, as well as the following information: creation time, source, alarm type, severity, [to whom assigned](#assign-alarm-to-user), and status of the alarm.
+Here you will see all alarms related to your entities: devices, assets, customers, etc., and alarms of your customers and users in the form of a list form, as well as the following information: creation time, source, alarm type, severity, [to whom assigned](#assign-alarm-to-user), and status of the alarm.
 By default, only active alarms for all time are displayed here. If necessary, apply a filter and time interval to see other results.
 To view more information about an alarm, click on the ellipsis (...) in the "Details" column of the alarm you want to view.
 
@@ -208,23 +213,6 @@ Here you will see all alarms related to this entity. Optionally, apply a filter 
 {% include images-gallery.html imageCollection="find-alarm-for-specific-device" %}
 
 Now let's consider what operations you can perform on alarms.
-
-### Assign alarm to user
-
-You can assign an alarm to a specific user so that, for example, he can respond to the elevated temperature in the room and take appropriate action.
-
-You can assign an alarm to the user on the "Alarms" page, in the "Alarm Table" widget, or on the "Alarms" tab in the details window of the selected entity.
-
-{% include images-gallery.html imageCollection="assignee-alarm-1" %}
-
-{% capture difference %}
-**Note**. To assign an alarm to a specific user, this user must be the owner of the device from which the alarm came.
-{% endcapture %}
-{% include templates/info-banner.md content=difference %}
-
-Once the alarm is assigned, the user will receive a notification about it.
-
-{% include images-gallery.html imageCollection="assignee-alarm-2" %}
 
 ### Acknowledge and/or clear alarm
 
