@@ -85,7 +85,6 @@ Here's an example of the <b>logback.xml</b> configuration:
     </root>
 </configuration>
 ```
-{: .copy-code .expandable-10 }
 
 The most useful for the troubleshooting parts of the config files are <i>loggers</i>.
 They allow you to enable/disable logging for the certain class or group of classes.
