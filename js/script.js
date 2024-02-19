@@ -848,3 +848,61 @@ var pushmenu = (function(){
 		show: show
 	};
 })();
+
+// expand-code-blocks-button
+
+(function () {
+	jqueryDefer(function() {
+		$(document).ready(function() {
+			const expandableCodeBlocks = [];
+			$('.copy-code').each(function (index, codeBlocksItem) {
+				if (codeBlocksItem.classList) {
+					for (var i = 0; i < codeBlocksItem.classList.length; i++) {
+						if (codeBlocksItem.classList[i].startsWith("expandable-")) {
+							expandableCodeBlocks.push(codeBlocksItem);
+						}
+					}
+				}
+			});
+			expandableCodeBlocks.forEach(codeBlock => addExpandButton(codeBlock));
+		})
+	});
+
+	function addExpandButton(codeBlock) {
+		const pre = $(codeBlock).find('pre').first();
+		const classes = $(codeBlock).attr('class').split(' ');
+
+		const expandableClass = classes.find(className => className.startsWith('expandable'));
+
+		if (expandableClass) {
+			let rows = parseInt(expandableClass.split('-')[1]);
+			let collapsedHeight = rows * 28 + 5;
+			pre.css('height', collapsedHeight + 'px');
+			$(codeBlock).find('.highlight').first().css("margin-bottom", "45px");
+
+			let button = $('<button class="expand-code-btn"><div class="collapsed"></div><p>expand</p></button>');
+
+			button.on('click', function () {
+				if (button.attr('data-expanded') === 'true') {
+					pre.css('height', collapsedHeight + 'px');
+					button.attr('data-expanded', 'false');
+					button.find('p').text('expand');
+					button.get(0).scrollIntoView({ block: "center" });
+					button.find('div').removeClass('expanded');
+					button.find('div').addClass('collapsed');
+				} else {
+					if (pre.prop('scrollHeight') > 2775) {
+						$(codeBlock).find('.rouge-gutter').css("width", "60px");
+					}
+					pre.css('height', pre.prop('scrollHeight') + 'px');
+					button.attr('data-expanded', 'true');
+					button.find('p').text('collapse');
+					button.find('div').removeClass('collapsed');
+					button.find('div').addClass('expanded');
+				}
+			});
+
+			$(codeBlock).append(button);
+		}
+	}
+})();
