@@ -62,9 +62,22 @@ So, a single "High Temperature" alarm will be generated with start time = 12:30 
 
 #### Alarm timing details
 
-The alarm has a **start time** and a **creation time**.
-The alarm start time is determined by the moment the set threshold is exceeded, while the alarm creation time corresponds to the moment it is created.
-By default, they are the same.  However, within the alarm's rule settings, you can define specific conditions under which the alarm is created:
+The alarm has a start time and a creation time. The alarm start time is determined by the moment the set threshold is exceeded (i.e., when the conditions for triggering the alarm first occurred), while the alarm creation time refers to the moment when the ThingsBoard system received telemetry from the device and processed it.
+By default, start time and creation time are the same.
+
+However, a device may send telemetry with a timestamp from the past, for example, if it was offline or if it's transmitting data for a specific time period with a delay.
+And if the processing of this telemetry reveals that a threshold has been exceeded, ThingsBoard will generate an alarm. The alarm start time will be the timestamp of the message with the threshold value exceeded, and the alarm creation time will be the time ThingsBoard processed messages from the device.
+In this case, the start time and alarm creation time will be different.
+
+Imagine we have an air quality monitoring system that tracks pollution levels. The threshold for triggering an alarm is set at 100 pollution units.
+- At 12:00, the sensor measures the pollution level, and it is 95 units — the alarm threshold is not exceeded.
+- At 12:05, the next measurement shows 105 pollution units -  the alarm threshold is exceeded.
+- At 12:08, the ThingsBoard receives data from the device, analyzes it, and registers the alarm. The alarm created time is 12:08, as that is the moment when the ThingsBoard system received and processed the device message.
+The alarm start time is 12:05 because that is the exact moment when the conditions for triggering the alarm were first met.
+ 
+Thus, the alarm start time and the alarm creation time can differ, which is important to consider when analyzing the system's response to emerging events.
+
+Also, within the alarm's rule settings, you can define specific conditions under which the alarm is created:
 
 - **Simple** - if the threshold value is exceeded, an alarm is created immediately;
 
