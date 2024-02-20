@@ -865,7 +865,7 @@ var pushmenu = (function(){
 			const expandableCodeBlocks = [];
 			$('.copy-code').each(function (index, codeBlocksItem) {
 				if (codeBlocksItem.classList) {
-					for (var i = 0; i < codeBlocksItem.classList.length; i++) {
+					for (let i = 0; i < codeBlocksItem.classList.length; i++) {
 						if (codeBlocksItem.classList[i].startsWith("expandable-")) {
 							expandableCodeBlocks.push(codeBlocksItem);
 						}
@@ -891,7 +891,6 @@ var pushmenu = (function(){
 			.find('pre.highlight').first().css({"margin-bottom": "45px"})
 			.find('.rouge-code pre').first().css("width", "max-content");
 
-
 			let button = $('<button class="expand-code-btn"><div class="collapsed"></div><p>expand</p></button>');
 
 			button.on('click', function () {
@@ -916,7 +915,7 @@ var pushmenu = (function(){
 					button.find('div').addClass('expanded');
 					scrolableBlock.css('overflow-y', 'hidden');
 				}
-				clipboardButton.css('right', getCopyButtonRightGap(scrolableBlock));
+				clipboardButton.css('right', getCopyButtonRightGap(codeBlock));
 			});
 
 			$(codeBlock).append(button);
@@ -936,7 +935,11 @@ var pushmenu = (function(){
 	});
 
 	function getCopyButtonRightGap(scrolableBlock) {
-		return scrolableBlock.height() < $(scrolableBlock).find('.rouge-code').height() ? '15px' : '0';
+		const scrolableElement = $(scrolableBlock).find('pre.highlight');
+		let scrollbarWidth = scrolableElement.prop('offsetWidth') - scrolableElement.prop('clientWidth');
+		return $(scrolableBlock).height() < $(scrolableBlock).find('.rouge-code').height()
+			? scrollbarWidth >= 10 ? '12px' : '7px'
+			: '0';
 	}
 
 	function clearTooltip(e) {
@@ -952,7 +955,7 @@ var pushmenu = (function(){
 	}
 
 	function getSelectedText() {
-        var text;
+        let text;
         if (window.getSelection) {
             text = window.getSelection().toString();
         } else if (document.getSelection) {
