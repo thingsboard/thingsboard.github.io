@@ -8,31 +8,28 @@ description: IoT alarm notifications
 notification-center-send-notification:
     0:
         image: /images/user-guide/notifications/notification-center-send-notification-1-pe.png
-        title: 'To send a notification click the “Send notification” button in the upper right corner of the notification page;'
+        title: 'Click the "Send notification" button in the upper right corner of the "Notification center" page to open the new notification wizard;'
     1:
         image: /images/user-guide/notifications/notification-center-send-notification-2-pe.png
-        title: 'In new window, select recipients and one or more delivery methods. In this example, let`s consider the Web delivery method;'
+        title: 'Select recipients and one or more delivery methods. In this example, let&#39;s consider the Web delivery method;'
     2:
         image: /images/user-guide/notifications/notification-center-send-notification-3-pe.png
         title: 'If necessary, use the scheduler. Click "Next";'
     3:
         image: /images/user-guide/notifications/notification-center-send-notification-4-pe.png
-        title: 'Enter the subject of the message and the text of the message;'
+        title: 'Enter subject and text of the message;'
     4:
         image: /images/user-guide/notifications/notification-center-send-notification-5-pe.png
-        title: 'You can use the Action button in the notification. Enter the button text, select the action type ("Open dashboard" or "Open URL link") and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon in the notification and set its color. Click "Next";'
+        title: 'You can use the action button in the notification. Enter the button text, select the action type ("Open dashboard" or "Open URL link") and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon in the notification and set its color. Click "Next";'
     5:
         image: /images/user-guide/notifications/notification-center-send-notification-6-pe.png
         title: 'In this window, you can see how the notification will look and also view the list of notification recipients. Click "Send";'
     6:
         image: /images/user-guide/notifications/notification-center-send-notification-7-pe.png
-        title: 'User received a new notification. The user can view it by clicking on the bell icon in the upper right corner of the screen or in the Notification center page;'
+        title: 'The user received a new notification and can view it on the Notification center page or by clicking on the bell icon in the upper right corner of the screen;'
     7:
-        image: /images/user-guide/notifications/notification-center-send-notification-9-pe.png
+        image: /images/user-guide/notifications/notification-center-send-notification-8-pe.png
         title: 'By clicking on the "Open this dashboard" button in the message, the user will open the dashboard window.'
-    8:
-        image: /images/user-guide/notifications/notification-center-send-notification-10-pe.png
-        title: ''
 
 notification-center-inbox:
     0:
@@ -63,7 +60,7 @@ notification-center-recipients:
 notification-center-recipients-1:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-2-pe.png
-        title: 'Click the "Add recipients" button. Enter the name of the notification recipients. Next, select one of the three types of recipients: platform users, Microsoft Teams and Slack entities. From the "User filter" list, select who you want to send messages or notifications to. Click "Add";'
+        title: 'Click the "Add recipients" button in the upper right corner of the "Recipients" tab. In the new window, enter the name of the notification recipients. Next, select one of the three types of recipients: platform users, Microsoft Teams, or Slack entities. In the "User Filter" list, select who you want to send notifications to. Than, click "Add";'
     1:
         image: /images/user-guide/notifications/notification-center-recipients-3-pe.png
         title: 'The new recipient is added.'
@@ -71,10 +68,10 @@ notification-center-recipients-1:
 notification-center-recipients-2:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-4-pe.png
-        title: 'Click the “Send notification” button. Then click the "Create new" button;'
+        title: 'Click the "Send notification" button. Then click the "Create new" button;'
     1:
         image: /images/user-guide/notifications/notification-center-recipients-5-pe.png
-        title: 'Enter the name of the notification recipients. Next, select one of the three types of recipients: platform users, Microsoft Teams and Slack entities. From the "User filter" list, select who you want to send messages or notifications to. Click "Add";'
+        title: 'Enter the name of the notification recipients. Next, select one of the three types of recipients: platform users, Microsoft Teams, or Slack entities. In the "User Filter" list, select who you want to send notifications to. Click "Add";'
     2:
         image: /images/user-guide/notifications/notification-center-recipients-6-pe.png
         title: 'The new recipient is added.'

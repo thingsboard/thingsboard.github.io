@@ -1,14 +1,11 @@
 * TOC 
 {:toc}
 
-## Overview
+The ThingsBoard Notification Center is a comprehensive tool for sending, managing, and automating notifications within the platform. It allows for a variety of notification methods, including web, email, mobile app, SMS, and integrations with Slack and Microsoft Teams. 
+Users can manually send notifications, automate them through REST API, or set triggers based on events within the system.
+Users may also schedule delivery of the notification for a particular time.
 
-ThingsBoard Notification Center allows you to send notifications to the end-users. 
-You may send notifications manually, via REST API, or based on a specific trigger event.
-You may also schedule delivery of the notification for a particular time. 
-
-To go to the notification center, click on “Notification center” in the sidebar menu.
-On this page you see the button to send a notification and five tabs: "Inbox", "Sent", "Recipients", "Templates" and "Rules".
+The Notification Center is accessible through the sidebar menu and includes options for sending notifications, viewing inbox and sent items, managing recipients, creating templates, and setting up rules for automated notifications
 
 {% if docsPrefix == null %}
 ![image](/images/user-guide/notifications/notification-center-1-ce.png)
@@ -19,31 +16,24 @@ On this page you see the button to send a notification and five tabs: "Inbox", "
 
 Let's look at each of the key components of the notification center below.
 
-### Notification options available in ThingsBoard
+## Notification options available in ThingsBoard
 
-Each notification may be delivered using multiple delivery methods: Web, SMS, Email, [Slack](https://slack.com/) or [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software/).
+Each notification may be delivered using multiple delivery methods: Web, Mobile app, SMS, Email, [Slack](https://slack.com/) or [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software/).
 
 - **Web**. The notification will be sent to the Web UI in Thingsboard;
+- **Mobile app**. The notification will be sent to the [ThingsBoard Mobile Application](/docs/{{docsPrefix}}mobile/);
 - **SMS**. The notification is sent to the user's phone. To send notifications via SMS, a system administrator should set up the [SMS provider](/docs/user-guide/ui/sms-provider-settings/) properly;
 - **Email**. With this approach, the user receives a notification by Email. To send notifications via Email, a tenant administrator [outgoing mail server](/docs/user-guide/ui/mail-settings/) should be configured;
 - **Slack**. Notifications will send as a Slack message to the list of Users or Channels. To send notifications via Slack, a tenant administrator must configure a Slack API [token](https://api.slack.com/authentication/token-types) in the *Settings* -> *Notifications* tab. Learn more about how to configure Slack settings in Thingsboard [here](/docs/{{docsPrefix}}user-guide/ui/slack-settings/).
 - **Microsoft Teams**. Notifications will send as a Microsoft Teams message to the list of channels. To send notifications via Microsoft Teams, a tenant administrator must get **webhook URL** for a needed channel using this [guide](/docs/{{docsPrefix}}user-guide/ui/microsoft-teams-settings/).
 
-### Send notification
+## Send notification
 
 To send a notification manually, follow these steps:
 
- - Сlick the “Send notification” button in the upper right corner of the "Notification center" page to open the new notification wizard;
- - Select recipients and one or more delivery methods. In this example, let's consider the Web delivery method. Click "Next";
- - Enter the subject and text of the message;
- - Also you can use the Action button in the notification. Enter the button text, select the action type ("Open dashboard" or "Open URL link") and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon and set its color. Click "Next";
- - In this window, you can see how the notification will look and also view the list of notification recipients. Click "Send";
- - User received a new notification. The user can view it by clicking on the bell icon in the upper right corner of the screen or in the Notification center page;
- - By clicking on the "Open this dashboard" button in the message, the user will open the dashboard window.
+{% include images-gallery.html imageCollection="notification-center-send-notification" showListImageTitles="true" %}
 
-{% include images-gallery.html imageCollection="notification-center-send-notification" %}
-
-### Inbox
+## Inbox
 
 The "Inbox" tab displays unread notifications by default. 
 You may use the inbox table to browse the notifications and mark them as read. 
@@ -57,7 +47,7 @@ Here you can read the notification, mark it as read, or take action by clicking 
 
 {% include images-gallery.html imageCollection="notification-center-inbox-bell-icon" %}
 
-### Sent 
+## Sent 
 
 The "Sent" tab displays the status of sent notifications. 
 You may use the "Notify again" button to copy an existing notification and send it again. 
@@ -70,19 +60,21 @@ This typically happens when the email address is wrong, or the phone number is n
 
 If you decide to delete an outgoing message, it will also be deleted for all recipients. This only applies to the Web delivery method.
 
-### Recipients
+## Recipients
 
 The "Recipients" tab displays the list of notification recipient groups. You may create and delete notification recipient groups here.
 
 {% include images-gallery.html imageCollection="notification-center-recipients" %}
 
+##### Add new recipient
+
 To add notification recipients, follow these steps:
 
- - Click the "Add recipients" button in the upper right corner of the Recipients tab;
+ - Click the "Add recipients" button in the upper right corner of the "Recipients" tab;
  - In the new window, enter the name of the notification recipients;
- - Next, select one of the three types of recipients: platform users, Microsoft Teams and Slack entities;
- - From the "User filter" list, select who you want to send messages or notifications to;
- - Click "Add".
+ - Select one of the three types of recipients: platform users, Microsoft Teams, or Slack entities;
+ - In the "User Filter" list, select who you want to send notifications to;
+ - Click "Add";
 
 {% include images-gallery.html imageCollection="notification-center-recipients-1" %}
 
@@ -90,13 +82,13 @@ You can also add a new recipient at the stage of creating a new notification:
 
  - Start creating a new notification. In the "New notification" window (in the "Recipients" field) click the "Create new" button;
  - Enter the name of the notification recipients;
- - Next, select one of the three types of recipients: platform users, Microsoft Teams and Slack entities;
- - From the "User filter" list, select who you want to send messages or notifications to;
+ - Select one of the three types of recipients: platform users, Microsoft Teams or Slack entities;
+ - In the "User Filter" list, select who you want to send notifications to;
  - Click "Add".
 
 {% include images-gallery.html imageCollection="notification-center-recipients-2" %}
 
-###### Platform users
+##### Platform users
 
 There are several user filters that help you to define a recipient group. The scope of the filter depends on the role of the user that creates the recipient group.
 
@@ -134,13 +126,13 @@ For **Tenant Administrator**:
 
  * *Affected user* - The user that is affected by the notification trigger event. For example, the person that is assigned to investigate the alarm event.
 
-###### Slack entities
+##### Slack entities
 
 As a platform user, you may send notifications as a Slack message to a list of Users or Channels. Both public and private channels and direct messages are supported.
 
 {% include images-gallery.html imageCollection="notification-center-recipients-slack" %}
 
-###### Microsoft Teams
+##### Microsoft Teams
 
 As a platform user, you may send notifications as a Microsoft Teams message to a list of сhannels.
 
@@ -150,7 +142,7 @@ Then add new notification recipients group.
 
 {% include images-gallery.html imageCollection="notification-center-recipients-microsoft-teams" %}
 
-### Templates
+## Templates
 
 The "Templates" tab displays the list of notification templates. You may create, copy and delete notification templates here.
 
@@ -182,7 +174,7 @@ To create a new template, follow these steps:
 {% include images-gallery.html imageCollection="notification-center-add-templates" %}
 
 
-##### General
+#### General
 
 The general template is used to send generic notifications. For example, system maintenance or important announcement. 
 Available template parameters:
@@ -192,7 +184,7 @@ Available template parameters:
   * *recipientFirstName* - first name of the recipient;
   * *recipientLastName* - last name of the recipient.
 
-##### Alarm
+#### Alarm
 
 The alarm template is used to send notification about alarms. For example, alarm creation or acknowledgment. 
 Available template parameters contain all parameters available for the [General](#general) template, plus:
@@ -206,7 +198,7 @@ Available template parameters contain all parameters available for the [General]
   * *alarmOriginatorName* - the name of the alarm originator, e.g. 'Sensor T1';
   * *alarmOriginatorId* - the alarm originator entity id as uuid string.
 
-##### Device activity
+#### Device activity
 
 The device activity template is used to send notification about inactive devices.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
@@ -217,7 +209,7 @@ Available template parameters contain all parameters available for the [General]
 * *deviceType* - the device type;
 * *eventType* - one of: 'inactive', 'active'.
 
-##### Entity action
+#### Entity action
 
 The entity action template is used to send notification about entity action: creation, update or deletion.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
@@ -231,7 +223,7 @@ Available template parameters contain all parameters available for the [General]
 * *userFirstName* - first name of the user who made the action;
 * *userLastName* - last name of the user who made the action.
 
-##### Alarm comment
+#### Alarm comment
 
 The alarm comment template is used to send notification about comments on alarms.
 Available template parameters contain all parameters available for the [Alarm](#alarm) template, plus:
@@ -242,7 +234,7 @@ Available template parameters contain all parameters available for the [Alarm](#
 * *userFirstName* - first name of the user who made the action;
 * *userLastName* - last name of the user who made the action.
 
-##### Alarm assignment
+#### Alarm assignment
 
 The alarm assignment template is used to send notification when alarm is assigned or unassigned. 
 Available template parameters contain all parameters available for the [Alarm](#alarm) template, plus:
@@ -256,7 +248,7 @@ Available template parameters contain all parameters available for the [Alarm](#
   * *userLastName* - last name of the user who made the action;
   * *action* - one of: 'assigned', 'unassigned'.
 
-##### Rule engine lifecycle event
+#### Rule engine lifecycle event
 
 The rule engine lifecycle event template is used to send notification about rule chain or rule node lifecycle events. 
 For example, notify when new rule node fails to start. 
@@ -271,7 +263,7 @@ Available template parameters contain all parameters available for the [General]
   * *action* - one of: 'start', 'update', 'stop';    
   * *error* - the error text.
 
-##### Rule node
+#### Rule node
 
 The rule node template is used to send notifications from the 'send notification' rule node.
 You may use data or metadata from the incoming message to build the notification subject and body.
@@ -287,7 +279,7 @@ Available template parameters contain all parameters available for the [General]
   * *recipientLastName* - last name of the recipient.
 
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
-##### Integration lifecycle event
+#### Integration lifecycle event
 
 The integration lifecycle event template is used to send notification about integration lifecycle events. For example, notify when new integration fails to start.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
@@ -301,7 +293,7 @@ Available template parameters contain all parameters available for the [General]
 {% endif %}
 
 {% unless docsPrefix == 'paas/' %}
-##### Entities limit
+#### Entities limit
 
 The system administrator uses the entities limit template to notify tenants that they will reach the limit on the number of entities (devices, assets, etc.).
 Available template parameters contain all parameters available for the [General](#general) template, plus:
@@ -313,7 +305,7 @@ Available template parameters contain all parameters available for the [General]
   * *tenantId* - id of the tenant;
   * *tenantName* - name of the tenant.
 
-##### API usage limit
+#### API usage limit
 
 The system administrator uses the API usage limit template to notify tenants when they hit a specific API limit.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
@@ -326,7 +318,7 @@ Available template parameters contain all parameters available for the [General]
   * *tenantId* - id of the tenant;
   * *tenantName* - name of the tenant.
 
-##### New platform version
+#### New platform version
 
 The system administrator uses the new platform version template to notify tenants of the release of a new version of the Thingsboard platform.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
@@ -338,13 +330,13 @@ Available template parameters contain all parameters available for the [General]
   * *currentVersionReleaseNotesUrl* - release notes link for current version.
 {% endunless %}
 
-### Rules
+## Rules
 
 Notification rules allow you to automate the delivery of notifications on a particular trigger event. 
 For example, rule automatically sends a notification when a new alarm is created.
 The trigger event types are tightly coupled to the notification template types. Let's review them below:
 
-##### Alarm
+#### Alarm
 
 The alarm rule sends notifications on specific events: alarm is created, acknowledged, cleared, severity updated, or alarm deleted.
 
@@ -381,7 +373,7 @@ Template message: `${alarmOriginatorEntityType:capitalize} '${alarmOriginatorNam
 
 See [Alarm](#alarm) template for a list of the available template parameters.
 
-##### Device activity
+#### Device activity
 
 The device inactivity rule sends notifications when device becomes inactive or active.
 
@@ -407,7 +399,7 @@ Template message: `Device '${deviceName}' with type '${deviceType}' became inact
 
 See [Device activity](#device-activity) template for a list of the available template parameters.
 
-##### Entity action
+#### Entity action
 
 The entity action rule sends notifications when entity is created, updated or deleted.
 
@@ -433,7 +425,7 @@ Template message: `${entityType} '${entityName}' was ${actionType} by user ${ori
 
 See [Entity action](#entity-action) template for a list of the available template parameters.
 
-##### Alarm comment
+#### Alarm comment
 
 The alarm comment rule sends notifications when alarm is commented.
 
@@ -459,7 +451,7 @@ Template message: `${userName} ${action} comment: ${comment}`
 
 See [Alarm comment](#alarm-comment) template for a list of the available template parameters.
 
-##### Alarm assignment
+#### Alarm assignment
 
 The alarm assignment rule sends notifications when alarm is assigned or unassigned.
 
@@ -485,7 +477,7 @@ Template message: `${userName} assigned alarm on ${alarmOriginatorEntityType} '$
 
 See [Alarm assignment](#alarm-assignment) template for a list of the available template parameters.
 
-##### Rule engine lifecycle event
+#### Rule engine lifecycle event
 
 The rule engine lifecycle event rule sends notifications about the rule chain or rule node lifecycle events. 
 For example, notify when a new rule node fails to start (typically due to misconfiguration).
@@ -517,7 +509,7 @@ Template message: `Rule chain '${ruleChainName}' - ${action} failure:<br>${error
 See [Rule engine lifecycle event](#rule-engine-lifecycle-event) template for a list of the available template parameters.
 
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
-##### Integration lifecycle event
+#### Integration lifecycle event
 
 The integration lifecycle event rule sends notifications about the integration lifecycle events.
 For example, notify when a integration fails to start (typically due to misconfiguration).
@@ -550,7 +542,7 @@ See [Integration lifecycle event](#integration-lifecycle-event) template for a l
 {% endif %}
 
 {% unless docsPrefix == 'paas/' %}
-##### Entities limit
+#### Entities limit
 
 The system administrator uses the entities limit rule to notify tenants that they will reach the limit on the number of entities (devices or assets). 
 For example, notify when tenant has reached 80% of the 100 devices allowed. The max number of devices is extracted from the tenant profile. 
@@ -576,7 +568,7 @@ Template message: `${entityType}s usage: ${currentCount}/${limit} (${percents}%)
 
 See [Entities limit](#entities-limit) template for a list of the available template parameters.
 
-##### API usage limit
+#### API usage limit
 
 The system administrator uses the API usage limit rule to notify tenants that they have reached the limit of used units.
 
@@ -604,7 +596,7 @@ Template message: `${feature} feature - ${status:upperCase} (usage: ${currentVal
 
 See [API usage limit](#api-usage-limit) template for a list of the available template parameters.
 
-##### New platform version
+#### New platform version
 
 The system administrator uses the "New platform version" rule to notify tenants about the release of a new version of the Thingsboard platform.
 
