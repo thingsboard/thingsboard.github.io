@@ -158,7 +158,7 @@ Text payload<br>%,%text%,%templates/integration/tcp/tcp-uplink-converter-text.md
 JSON payload<br>%,%json%,%templates/integration/tcp/tcp-uplink-converter-json.md%br%
 Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-uplink-converter-binary.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="tcpintegartionuplinkpayload" toggle-spec=uplinkpayload %}
+{% include content-toggle.liquid content-toggle-id="tcpintegartionuplinkpayload" toggle-spec=uplinkpayload %}
 
 You can change the decoder function while creating the converter or after creating it.
 If the converter has already been created, then click on the 'pencil' icon to edit it.
@@ -227,7 +227,7 @@ Text payload<br>%,%text%,%templates/integration/tcp/tcp-handler-configuration-te
 JSON payload<br>%,%json%,%templates/integration/tcp/tcp-handler-configuration-json.md%br%
 Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-handler-configuration-binary.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="tcpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
+{% include content-toggle.liquid content-toggle-id="tcpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
 
 Click **Add** to save the Integration.
 
@@ -266,7 +266,7 @@ Text payload<br>%,%text%,%templates/integration/tcp/tcp-send-uplink-text.md%br%
 JSON payload<br>%,%json%,%templates/integration/tcp/tcp-send-uplink-json.md%br%
 Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-send-uplink-binary.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="tcpintegrationsenduplink" toggle-spec=senduplink %}
+{% include content-toggle.liquid content-toggle-id="tcpintegrationsenduplink" toggle-spec=senduplink %}
 
 {% include images-gallery.html imageCollection="sendUplink" %}
 
