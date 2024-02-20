@@ -1329,27 +1329,6 @@ footer .newsletterSubsContainer .subscribe {
   transition-duration: unset;
 }
 
-footer .deepmost .social a.github {
-  background-image: url(/images/social-git-icon.svg);
-}
-footer .deepmost .social a.gitter {
-  background-image: url(/images/social-gitter-icon.svg);
-}
-footer .deepmost .social a.youtube {
-  background-image: url(/images/social-youtube-icon.svg);
-}
-footer .deepmost .social a.stack-overflow {
-  background-image: url(/images/social-stack-icon.svg);
-}
-footer .deepmost .social a.mailing-list {
-  background-image: url(/images/social-google-icon.svg);
-}
-footer .deepmost .social a.facebook {
-  background-image: url(/images/social-face-icon.svg);
-}
-footer .deepmost .social a.twitter {
-  background-image: url(/images/social-twitt-icon.svg);
-}
 footer .deepmost .social a:hover {
   filter: brightness(200%);
 }
