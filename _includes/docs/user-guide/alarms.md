@@ -1,8 +1,7 @@
 * TOC
 {:toc}
 
-ThingsBoard offers features for creating and managing alarms through customizable rules.
-Alarm rules can be configured to monitor various situations in your devices, assets, etc., such as exceeding threshold values, equipment malfunctions, or other important events requiring attention. 
+ThingsBoard provides the ability to create and manage alarms related to your entities: devices, assets, customers, etc.
 Alarms assist in promptly addressing issues, preventing potential negative consequences, and ensuring efficient system operation. 
 
 For example, you may configure ThingsBoard to automatically create an alarm when the temperature sensor reading is above a certain threshold.
