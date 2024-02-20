@@ -849,10 +849,18 @@ var pushmenu = (function(){
 	};
 })();
 
-// expand-code-blocks-button
+// expand-code-blocks button AND copy-code button
 
 (function () {
 	jqueryDefer(function() {
+		$(document).on('selectionchange', function() {
+			$('.clipboard-btn').removeClass('noChars');
+            const selectedChars = getSelectedText();
+			if (selectedChars == 0) {
+                $('.clipboard-btn').addClass('noChars');
+            }
+		});
+
 		$(document).ready(function() {
 			const expandableCodeBlocks = [];
 			$('.copy-code').each(function (index, codeBlocksItem) {
@@ -865,6 +873,7 @@ var pushmenu = (function(){
 				}
 			});
 			expandableCodeBlocks.forEach(codeBlock => addExpandButton(codeBlock));
+			parseAllCodeBlocks();
 		})
 	});
 
@@ -878,11 +887,16 @@ var pushmenu = (function(){
 			let rows = parseInt(expandableClass.split('-')[1]);
 			let collapsedHeight = rows * 28 + 5;
 			pre.css('height', collapsedHeight + 'px');
-			$(codeBlock).find('.highlight').first().css("margin-bottom", "45px");
+			$(codeBlock)
+			.find('pre.highlight').first().css({"margin-bottom": "45px"})
+			.find('.rouge-code pre').first().css("width", "max-content");
+
 
 			let button = $('<button class="expand-code-btn"><div class="collapsed"></div><p>expand</p></button>');
 
 			button.on('click', function () {
+				const scrolableBlock = $(button).prev().first().find('pre.highlight');
+				const clipboardButton = $(button).next('button');
 				if (button.attr('data-expanded') === 'true') {
 					pre.css('height', collapsedHeight + 'px');
 					button.attr('data-expanded', 'false');
@@ -890,6 +904,7 @@ var pushmenu = (function(){
 					button.get(0).scrollIntoView({ block: "center" });
 					button.find('div').removeClass('expanded');
 					button.find('div').addClass('collapsed');
+					scrolableBlock.css('overflow-y', 'auto');
 				} else {
 					if (pre.prop('scrollHeight') > 2775) {
 						$(codeBlock).find('.rouge-gutter').css("width", "60px");
@@ -899,10 +914,84 @@ var pushmenu = (function(){
 					button.find('p').text('collapse');
 					button.find('div').removeClass('collapsed');
 					button.find('div').addClass('expanded');
+					scrolableBlock.css('overflow-y', 'hidden');
 				}
+				clipboardButton.css('right', getCopyButtonRightGap(scrolableBlock));
 			});
 
 			$(codeBlock).append(button);
 		}
+	}
+
+	const clipboard = new Clipboard('.noChars');
+	clipboard.on('success', function (e) {
+		$('.clipboard-btn').removeClass('noChars');
+		e.clearSelection();
+		const trigger = e.trigger;
+		if (!$(trigger).attr('data-skip-tooltip')) {
+			showTooltip(e.trigger, 'Copied!');
+		} else {
+			$(trigger).removeAttr('data-skip-tooltip');
+		}
+	});
+
+	function getCopyButtonRightGap(scrolableBlock) {
+		return scrolableBlock.height() < $(scrolableBlock).find('.rouge-code').height() ? '15px' : '0';
+	}
+
+	function clearTooltip(e) {
+		const el = $(e.currentTarget);
+		el.removeClass('showTool');
+		el.attr('aria-label', null);
+	}
+
+	function showTooltip(elem, msg) {
+		const el = $(elem);
+		el.addClass('showTool');
+		el.attr('aria-label', msg);
+	}
+
+	function getSelectedText() {
+        var text;
+        if (window.getSelection) {
+            text = window.getSelection().toString();
+        } else if (document.getSelection) {
+            text = document.getSelection();
+        } else if (document.selection) {
+            text = document.selection.createRange().text;
+        }
+        return text;
+    }
+
+	function parseAllCodeBlocks() {
+		const allCodeBlocksElements = $(".highlighter-rouge");
+		allCodeBlocksElements.each(function (i) {
+			const codeBlock = $(this);
+			if (codeBlock.hasClass('copy-code')) {
+				codeBlock.each(function () {
+					const block = codeBlock.find('pre.highlight > code .rouge-code');
+					const currentId = "codeblock" + (i + 1);
+					block.attr('id', currentId);
+					const clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><p>Copy to clipboard</p><div><img src="/images/copy-code-icon.svg" alt="Copy to clipboard"></div></button>');
+					const scrolableBlock = $(codeBlock).find('div.highlight');
+					clipButton.css('right', getCopyButtonRightGap(scrolableBlock));
+					$(this).append(clipButton);
+					const troyan = codeBlock.find('pre.highlight');
+					const Tooltip = $('<div class="customTooltip"><div class="tooltipText">Copied!</div></div>');
+					troyan.append(Tooltip);
+					troyan.addClass('clipboard-btn');
+					troyan.attr('data-clipboard-target', "#" + currentId);
+					troyan.on('mouseleave', clearTooltip);
+					troyan.on('blur', clearTooltip);
+					troyan.on('click', function (e) {
+						const el = $(e.currentTarget);
+						if (el.hasClass('showTool')) {
+							clearTooltip(e);
+							troyan.attr('data-skip-tooltip', "true");
+						}
+					});
+				});
+			}
+		});
 	}
 })();

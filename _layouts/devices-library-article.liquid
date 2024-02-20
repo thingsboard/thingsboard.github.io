@@ -181,31 +181,6 @@
     }
 </style>
 <script>
-    jqueryDefer(function () {
-        $(document).on('selectionchange', function () {
-            // $(document).mouseup(function () {
-            $('.clipboard-btn').removeClass('noChars');
-            var selectedChars = getSelectedText();
-            // $('#numberChars').html(selectedChars.length);
-            if (selectedChars == 0) {
-                $('.clipboard-btn').addClass('noChars');
-            }
-        });
-    });
-
-    function getSelectedText() {
-        var text;
-        if (window.getSelection) {
-            text = window.getSelection().toString();
-        } else if (document.getSelection) {
-            text = document.getSelection();
-        } else if (document.selection) {
-            text = document.selection.createRange().text;
-        }
-        return text;
-    }
-</script>
-<script>
     jqueryUiDefer(function () {
         $(document).ready(function () {
 
@@ -221,18 +196,6 @@
                     }
                 } else {
                     productsSelector.removeClass('active');
-                }
-            });
-
-            var clipboard = new Clipboard('.noChars');
-            clipboard.on('success', function (e) {
-                $('.clipboard-btn').removeClass('noChars');
-                e.clearSelection();
-                var trigger = e.trigger;
-                if (!$(trigger).attr('data-skip-tooltip')) {
-                    showTooltip(e.trigger, 'Copied!');
-                } else {
-                    $(trigger).removeAttr('data-skip-tooltip');
                 }
             });
 
@@ -261,18 +224,6 @@
                 }
             });
         });
-
-        function clearTooltip(e) {
-            var el = $(e.currentTarget);
-            el.removeClass('showTool');
-            el.attr('aria-label', null);
-        }
-
-        function showTooltip(elem, msg) {
-            var el = $(elem);
-            el.addClass('showTool');
-            el.attr('aria-label', msg);
-        }
     });
 </script>
 {% if hasTocContent == "true" %}
