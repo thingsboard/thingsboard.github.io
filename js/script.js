@@ -863,6 +863,9 @@ var pushmenu = (function(){
 
 		$(document).ready(function() {
 			const expandableCodeBlocks = [];
+			$('.content-toggle-button').on('click', function(i, button) {
+				checkCopyCodeButtonsGap();
+			})
 			$('.copy-code').each(function (index, codeBlocksItem) {
 				if (codeBlocksItem.classList) {
 					for (let i = 0; i < codeBlocksItem.classList.length; i++) {
@@ -889,7 +892,6 @@ var pushmenu = (function(){
 			pre.css('height', collapsedHeight + 'px');
 			$(codeBlock)
 			.find('pre.highlight').first().css({"margin-bottom": "45px"})
-			.find('.rouge-code pre').first().css("width", "max-content");
 
 			let button = $('<button class="expand-code-btn"><div class="collapsed"></div><p>expand</p></button>');
 
@@ -908,7 +910,7 @@ var pushmenu = (function(){
 					if (pre.prop('scrollHeight') > 2775) {
 						$(codeBlock).find('.rouge-gutter').css("width", "60px");
 					}
-					pre.css('height', pre.prop('scrollHeight') + 'px');
+					pre.css('height', 'max-content');
 					button.attr('data-expanded', 'true');
 					button.find('p').text('collapse');
 					button.find('div').removeClass('collapsed');
@@ -965,6 +967,15 @@ var pushmenu = (function(){
         }
         return text;
     }
+
+	function checkCopyCodeButtonsGap() {
+		$('.copy-code').closest('.panel-collapse.collapse.show').each(function(i, toggledContent) {
+			if (!toggledContent) { return };
+			const scrollableBlock = $(toggledContent).find('.copy-code.highlighter-rouge');
+			const copyCodeButton = $(scrollableBlock).find('button.clipboard-btn');
+			copyCodeButton.css('right', getCopyButtonRightGap($(scrollableBlock)));
+		})
+	}
 
 	function parseAllCodeBlocks() {
 		const allCodeBlocksElements = $(".highlighter-rouge");
