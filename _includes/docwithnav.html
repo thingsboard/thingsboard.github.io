@@ -198,18 +198,6 @@
                 }
             });
         });
-
-        function clearTooltip(e) {
-            var el = $(e.currentTarget);
-            el.removeClass('showTool');
-            el.attr('aria-label', null);
-        }
-
-        function showTooltip(elem, msg) {
-            var el = $(elem);
-            el.addClass('showTool');
-            el.attr('aria-label', msg);
-        }
     });
 </script>
 {% if hasTocContent == "true" %}
