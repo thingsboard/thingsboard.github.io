@@ -10,7 +10,7 @@ The Notification center is accessible through the sidebar menu and includes opti
 {% if docsPrefix == null %}
 ![image](/images/user-guide/notifications/notification-center-1-ce.png)
 {% endif %}
-{% if docsPrefix == "pe/" %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ![image](/images/user-guide/notifications/notification-center-1-pe.png)
 {% endif %}
 
@@ -170,10 +170,10 @@ To add a new template, follow these steps:
 - Select a template type from the drop-down list;
 - Next, select one or more delivery methods. In this example, let’s consider the Web delivery method. Click "Next";
 - Enter the subject and text of the message;
-- Optionally, you can display the icon in the notification and set its color. Also, you can use the action button in the notification. Click "Add".
+- Optionally, you can display the icon in the notification and set its color. Also, you can use the action button in the notification; 
+- Click "Add".
 
 {% include images-gallery.html imageCollection="notification-center-add-templates" %}
-
 
 #### General
 
@@ -393,7 +393,7 @@ The default rule 'New alarm' will notify tenant administrators when an alarm is 
 
 Template subject: `New alarm '${alarmType}'`
 
-Template message: `Severity: ${alarmSeverity}, originator: ${alarmOriginatorType} '${alarmOriginatorName}'`
+Template message: `Severity: ${alarmSeverity}, originator: ${alarmOriginatorEntityType} '${alarmOriginatorName}'`
 
 See [Alarm](#alarm) template for a list of the available template parameters.
 

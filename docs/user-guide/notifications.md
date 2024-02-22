@@ -181,6 +181,28 @@ notification-center-add-rule-engine-lifecycle-event:
         image: /images/user-guide/notifications/notification-center-add-rule-engine-lifecycle-event-3-ce.png
         title: 'The new rule is created.'
 
+notification-center-add-rule-edge-connection:
+    0:
+        image: /images/user-guide/notifications/notification-center-add-rule-edge-connection-1-ce.png
+        title: 'Click the "Add rule" button. Then enter rule name. Select trigger - Edge connection. Then, select template from the list and specify recipient. Click "Next";'
+    1:
+        image: /images/user-guide/notifications/notification-center-add-rule-edge-connection-2-ce.png
+        title: 'The trigger filter allows you to filter notifications by Edge instances. You may also select the event types that will trigger notification: connected, disconnected. Click "Add".;'
+    2:
+        image: /images/user-guide/notifications/notification-center-add-rule-edge-connection-3-ce.png
+        title: 'The new rule is created.'
+
+notification-center-add-rule-edge-communication-failure:
+    0:
+        image: /images/user-guide/notifications/notification-center-add-rule-edge-communication-failure-1-ce.png
+        title: 'Click the "Add rule" button. Then enter rule name. Select trigger - Edge communication failure. Then, select template from the list and specify recipient. Click "Next";'
+    1:
+        image: /images/user-guide/notifications/notification-center-add-rule-edge-communication-failure-2-ce.png
+        title: 'The trigger filter allows you to filter notifications by Edge instances. If the field is empty, the trigger will be applied to all edge instances. Click "Add";'
+    2:
+        image: /images/user-guide/notifications/notification-center-add-rule-edge-communication-failure-3-ce.png
+        title: 'The new rule is created.'
+
 notification-center-add-rule-entities-limit:
     0:
         image: /images/user-guide/notifications/notification-center-add-rule-entities-count-limit-1-ce.png
