@@ -28,6 +28,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     {% if customTitle %}
     <title>{{ customTitle }}</title>
     {% seo title=false %}
@@ -191,9 +193,7 @@
         }
 
         var initialScriptsList = [
-            {src: 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css', type: 'css'},
             {src: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css', type: 'css'},
-            {src: 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700', type: 'css'},
             {src: '/js/jquery-2.2.0.min.js', type: 'script'},
             {src: '/css/jquery-ui.min.css', type: 'css'},
             {src: '/js/jquery-ui.min.js', type: 'script'},
@@ -486,7 +486,7 @@
         </a>
         <a href="/" class="logo" aria-label="Link to homepage"></a>
         <button onclick="Burger()" class="burger"  aria-label="Burger menu"></button>
-        <div id="githubButtonContainer">
+        <div id="githubButtonContainer" style="width: 110px;">
             <a class="github-button" href="{{ githubLink }}" data-show-count="true"
                aria-label="{{ githubLabel }}">Star</a>
         </div>
