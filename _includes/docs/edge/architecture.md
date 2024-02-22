@@ -56,8 +56,9 @@ Each transport component pushes data to the rule engine, and some may also utili
 ## Rule Engine Component
 
 The ThingsBoard Edge rule engine is responsible for processing incoming messages according to user-defined logic and flow. 
-The rule engine leverages an Actor System to create actors for primary entities, such as rule chains and rule nodes. 
-You can learn more about the edge rule engine in the corresponding [documentation page](/docs/{{docsPrefix}}rule-engine/general/).
+The rule engine leverages an Actor System to create actors for primary entities, such as rule chains and rule nodes.
+The architecture of the ThingsBoard Edge engine mirrors that of the Server rule engine, though the configuration differs slightly - Edge utilizes rule chain templates in place of standard rule chains. 
+For more detailed information on Edge rule chain templates, please refer to the [documentation page](/docs/{{docsPrefix}}rule-engine/rule-chain-templates/).
 
 ## Core Services
 
