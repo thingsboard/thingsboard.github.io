@@ -45,22 +45,22 @@ notification-center-inbox:
 notification-center-inbox-bell-icon:
     0:
         image: /images/user-guide/notifications/notification-inbox-bell-icon-1-pe.png
-        title: 'Click on the bell icon to view incoming notifications.'
+        title: 'Click on the "bell" icon to view incoming notifications.'
 
 notification-center-sent:
     0:
         image: /images/user-guide/notifications/notification-center-sent-1-pe.png
-        title: 'The “Sent” tab displays the status of sent notifications. You may use the "Notify again" button to copy an existing notification and send it again.'
+        title: 'The "Sent" tab displays sent notifications and their status. You may use the "Notify again" button to send it again.'
 
 notification-center-recipients:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-1-pe.png
-        title: 'Click the "Add recipients" button;'
+        title: 'The "Recipients" tab displays the list of notification recipients. Here you can create and delete notification recipients here.'
 
 notification-center-recipients-1:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-2-pe.png
-        title: 'Click the "Add recipients" button in the upper right corner of the "Recipients" tab. In the new window, enter the name of the notification recipients. Next, select one of the three types of recipients: platform users, Microsoft Teams, or Slack entities. In the "User Filter" list, select who you want to send notifications to. Than, click "Add";'
+        title: 'Click the "Add recipients" button in the upper right corner of the "Recipients" tab. In the new window, enter the name of the notification recipients. Next, select one of the three types of recipients: platform users, Microsoft Teams, or Slack entities. In the "User Filter" list, select who you want to send notifications to. Than, click "Add".'
     1:
         image: /images/user-guide/notifications/notification-center-recipients-3-pe.png
         title: 'The new recipient is added.'
@@ -94,21 +94,23 @@ notification-center-recipients-microsoft-teams:
 notification-center-templates:
     0:
         image: /images/user-guide/notifications/notification-center-templates-1-pe.png
-        title: 'Use "User filter" to define notification recipients.'
+        title: 'The "Templates" tab displays the list of notification templates. You may create, copy and delete notification templates here.'
 
 notification-center-add-templates:
     0:
         image: /images/user-guide/notifications/notification-center-add-templates-1-pe.png
-        title: 'Click the "Add template" button. Then enter notification template name and type. Select one or more delivery methods. In this example, let’s consider the Web delivery method. Click "Next";'
+        title: 'Click the "Add template" button in the upper right corner of the "Templates" tab. In the new window, enter the notification template name. Select a template type from the drop-down list. Select one or more delivery methods. In this example, let’s consider the Web delivery method. Click "Next";'
     1:
         image: /images/user-guide/notifications/notification-center-add-templates-2-pe.png
-        title: 'Enter the subject of the message and the text of the message;'
+        title: 'Enter the subject of the message and the text of the message. Optionally, you can display the icon in the notification and set its color. Also, you can use the action button in the notification. Then, click "Add".'
     2:
         image: /images/user-guide/notifications/notification-center-add-templates-3-pe.png
-        title: 'You can use the "Action button" in the notification. Enter the button text, select the action type ("Open dashboard" or "Open URL link") and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon in the notification and set its color. Click "Next";'
-    3:
-        image: /images/user-guide/notifications/notification-center-add-templates-4-pe.png
         title: 'The new template is added.'
+
+notification-center-rules:
+    0:
+        image: /images/user-guide/notifications/notification-center-rules-1-pe.png
+        title: 'The "Rules" tab displays the list of notifications rules. You may create, copy and delete notification rules here.'
 
 notification-center-add-rule-alarm:
     0:
