@@ -6,7 +6,7 @@ We assume you have completed the following guides and reviewed the articles list
 * [Getting Started](/docs/getting-started-guides/helloworld/) guide.{% endif %}
 * [Rule Engine Overview](/docs/{{cloudDocsPrefix}}user-guide/rule-engine-2-0/overview/) article.
 * [ThingsBoard Edge Getting Started](/docs/{{docsPrefix}}getting-started/) article.
-* [Edge Rule Engine Overview](/docs/{{docsPrefix}}rule-engine/general/) guide.
+* [Edge Rule Chain Templates](/docs/{{docsPrefix}}rule-engine/rule-chain-templates/) guide.
 
 Please make sure that you have **{{appPrefix}}** server up and running. Additionally, ThingsBoard **Edge** must be up, running and connected to the cloud.
 
