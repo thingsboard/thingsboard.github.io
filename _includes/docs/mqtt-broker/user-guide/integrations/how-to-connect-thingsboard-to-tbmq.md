@@ -62,7 +62,7 @@ In our example, use the following script for the decoder function section:
 TBEL<small>Recommended</small>%,%accessToken%,%templates/mqtt-broker/user-guide/integrations/mqtt/tbmq-uplink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/mqtt-broker/user-guide/integrations/mqtt/tbmq-uplink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="mqttuplinkconverterconfig" toggle-spec=mqttuplinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="mqttuplinkconverterconfig" toggle-spec=mqttuplinkconverterconfig %}
 
 #### MQTT Integration Setup
 

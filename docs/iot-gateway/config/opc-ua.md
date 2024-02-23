@@ -139,7 +139,7 @@ There are several types available for this subsection:
 <b>username</b><br> <small>(recommended for a basic level of security)</small>%,%username%,%templates/iot-gateway/opcua-identity-username-config.md%br%
 <b>cert.PEM</b><br> <small>(recommended for a higher level of security)</small>%,%certpem%,%templates/iot-gateway/opcua-identity-certpem-config.md%br%{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="opcuaIdentityConfig" toggle-spec=identityopcuatogglespec %}
+{% include content-toggle.liquid content-toggle-id="opcuaIdentityConfig" toggle-spec=identityopcuatogglespec %}
 
 ## Section "mapping"
 This configuration section contains an array of nodes that the gateway will subscribe to after connecting to the OPC-UA server, along with settings for processing data from these nodes.

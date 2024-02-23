@@ -61,7 +61,7 @@ Let’s review sample uplink message from SigFox device:
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/sigfox/sigfox-uplink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/sigfox/sigfox-uplink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="sigfoxuplinkconverterconfig" toggle-spec=sigfoxuplinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="sigfoxuplinkconverterconfig" toggle-spec=sigfoxuplinkconverterconfig %}
 
 ### SigFox Integration Setup
 
@@ -164,7 +164,7 @@ Create another converter with the name "**SigFox Downlink Converter**" and selec
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/sigfox/sigfox-downlink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/sigfox/sigfox-downlink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="sigfoxdownlinkconverterconfig" toggle-spec=sigfoxdownlinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="sigfoxdownlinkconverterconfig" toggle-spec=sigfoxdownlinkconverterconfig %}
 
 Now you have to add downlink converter to the integration.
 

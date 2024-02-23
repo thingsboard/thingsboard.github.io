@@ -167,7 +167,7 @@ This section provides configuration for client authorization at the external ser
 Basic<small>Recommended</small>%,%username%,%templates/iot-gateway/request-connector-basic-security-config.md%br%
 Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/request-connector-anonymous-security-config.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="requestConnectorCredentialsConfig" toggle-spec=requestconnectorsecuritytogglespec %}
+{% include content-toggle.liquid content-toggle-id="requestConnectorCredentialsConfig" toggle-spec=requestconnectorsecuritytogglespec %}
 
 
 ### Mapping section
@@ -202,7 +202,7 @@ Types of request converters:
 json<small>Recommended if json will be received in response</small>%,%json%,%templates/iot-gateway/request-converter-json-config.md%br%
 custom<small>Recommended if bytes or anything else will be received in response</small>%,%custom%,%templates/iot-gateway/request-converter-custom-config.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="RequestConverterTypeConfig" toggle-spec=requestconvertertypespec %}
+{% include content-toggle.liquid content-toggle-id="RequestConverterTypeConfig" toggle-spec=requestconvertertypespec %}
 
 
 ### Attribute update section

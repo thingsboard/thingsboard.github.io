@@ -87,7 +87,7 @@ Although the Debug mode is very useful for development and troubleshooting, leav
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/coap/coap-uplink-text-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/coap/coap-uplink-text-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="coapuplinktext" toggle-spec=coapuplinktext %}
+{% include content-toggle.liquid content-toggle-id="coapuplinktext" toggle-spec=coapuplinktext %}
 
 - **JSON payload**
 
@@ -97,7 +97,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/coap/coap-uplink-t
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/coap/coap-uplink-json-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/coap/coap-uplink-json-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="coapuplinkjson" toggle-spec=coapuplinkjson %}
+{% include content-toggle.liquid content-toggle-id="coapuplinkjson" toggle-spec=coapuplinkjson %}
 
 
 - **Binary payload**
@@ -106,7 +106,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/coap/coap-uplink-j
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/coap/coap-uplink-binary-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/coap/coap-uplink-binary-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="coapuplinkbinary" toggle-spec=coapuplinkbinary %}
+{% include content-toggle.liquid content-toggle-id="coapuplinkbinary" toggle-spec=coapuplinkbinary %}
 
 ## CoAP Integration Setup
 
@@ -175,7 +175,7 @@ Text payload<br>%,%text%,%templates/integration/coap/coap-send-uplink-text.md%br
 JSON payload<br>%,%json%,%templates/integration/coap/coap-send-uplink-json.md%br%
 Binary payload<br>%,%binary%,%templates/integration/coap/coap-send-uplink-binary.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="coapintegrationsenduplink" toggle-spec=senduplink %}
+{% include content-toggle.liquid content-toggle-id="coapintegrationsenduplink" toggle-spec=senduplink %}
 
 Once the command will send you can go to **Device groups** -> **All** you should find an **SN-001** device provisioned by the Integration. 
 Click on the device, go to the **Latest Telemetry** tab to see the “temperature” key and its value (25.7) there and also the “humidity” key and its value (69) there as well.

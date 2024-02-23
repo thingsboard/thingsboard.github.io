@@ -177,3 +177,43 @@ Now, open the "**Integration center**" section -> "**Integrations**" page and fo
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=createLoriotIntegration %}
 
 Integration is created.
+
+<br>
+To check integration connection you can do the following:
+
+- Click on integration row in the list;
+- Go to the "**Events**" tab;
+- Select "**Lifecycle events**" from **Event type** dropdown list.
+
+If you see event **STARTED** and status **Success** it means that integration is successfully started and ready to receive messages.
+
+![Check integration connection](/images/devices-library/basic/integrations/check-integration-started.png)
+
+### Troubleshooting
+
+If you see the next error message, that means the output was not created automatically.
+
+![Check integration connection](/images/devices-library/basic/integrations/loriot/loriot-integration-error-pe.png)
+
+You can configure it manually:
+
+{% assign loriotTroubleshooting = '
+    ===
+        image: /images/devices-library/basic/integrations/loriot/loriot-troubleshootin-1-pe.png,
+        title: Go to edit mode ThingsBoard Loriot integration, switch off **"Create Loriot Application output"** slider and copy **"HTTP endpoint URL"**. Then, apply changes;
+    ===
+        image: /images/devices-library/basic/integrations/loriot/loriot-troubleshootin-2-pe.png,
+        title: Now, go to **eu2.loriot.io** than navigate to the **"Output"** page in left panel. Click on **"Add new output"** button;
+    ===
+        image: /images/devices-library/basic/integrations/loriot/loriot-troubleshootin-3-pe.png,
+        title: Select **"HTTP Push"**. Paste **"HTTP endpoint URL"** in **"Target URL for POSTs"** field. Press **"Add Output"** button;
+    ===
+        image: /images/devices-library/basic/integrations/loriot/loriot-troubleshootin-4-pe.png,
+        title: Delete default output;
+    ===
+        image: /images/devices-library/basic/integrations/loriot/loriot-troubleshootin-5-pe.png,
+        title: Go to the cloud and check the connection.
+'
+%}
+
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=loriotTroubleshooting %}

@@ -105,7 +105,7 @@ Although the Debug mode is very useful for development and troubleshooting, leav
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/tcp/tcp-uplink-text-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-text-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="tcpuplinktext" toggle-spec=tcpuplinktext %}
+{% include content-toggle.liquid content-toggle-id="tcpuplinktext" toggle-spec=tcpuplinktext %}
 
 - **JSON payload**
 
@@ -113,7 +113,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-tex
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/tcp/tcp-uplink-json-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-json-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="tcpuplinkjson" toggle-spec=tcpuplinkjson %}
+{% include content-toggle.liquid content-toggle-id="tcpuplinkjson" toggle-spec=tcpuplinkjson %}
 
 - **Binary payload**
 
@@ -121,7 +121,7 @@ JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-jso
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/tcp/tcp-uplink-binary-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/tcp/tcp-uplink-binary-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="tcpuplinkbinary" toggle-spec=tcpuplinkbinary %}
+{% include content-toggle.liquid content-toggle-id="tcpuplinkbinary" toggle-spec=tcpuplinkbinary %}
 
 ### TCP Integration Setup
 
@@ -172,7 +172,7 @@ Text payload<br>%,%text%,%templates/integration/tcp/tcp-handler-configuration-te
 JSON payload<br>%,%json%,%templates/integration/tcp/tcp-handler-configuration-json.md%br%
 Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-handler-configuration-binary.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="tcpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
+{% include content-toggle.liquid content-toggle-id="tcpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
 
 Click **Add** to save the Integration.
 
@@ -200,7 +200,7 @@ Text payload<br>%,%text%,%templates/integration/tcp/tcp-send-uplink-text.md%br%
 JSON payload<br>%,%json%,%templates/integration/tcp/tcp-send-uplink-json.md%br%
 Binary payload<br>%,%binary%,%templates/integration/tcp/tcp-send-uplink-binary.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="tcpintegrationsenduplink" toggle-spec=senduplink %}
+{% include content-toggle.liquid content-toggle-id="tcpintegrationsenduplink" toggle-spec=senduplink %}
 
 Once you go to **Device Groups -> All** you should find a **SN-002** device provisioned by the Integration.
 Click on the device, go to **Latest Telemetry** tab to see "temperature" key and its value (25.7) there.

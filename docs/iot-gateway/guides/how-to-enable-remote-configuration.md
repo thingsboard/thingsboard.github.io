@@ -129,7 +129,7 @@ GRPC%,%grpc-toggle%,%templates/iot-gateway/gateway-dashboard-grpc-conf.md%br%
 Statistics%,%statistics-toggle%,%templates/iot-gateway/gateway-dashboard-statistics-conf.md%br%
 Other%,%other-toggle%,%templates/iot-gateway/gateway-dashboard-other-conf.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="GatewayConfiguration" toggle-spec=gatewayconfigurationspec %}
+{% include content-toggle.liquid content-toggle-id="GatewayConfiguration" toggle-spec=gatewayconfigurationspec %}
 
 ### Connector Configuration
 
