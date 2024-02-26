@@ -321,7 +321,7 @@ TLS + Private Key<small>Advanced security</small>%,%tls%,%templates/iot-gateway/
 
 There are 3 variants of security subsection:
 
-{% include content-toggle.html content-toggle-id="securityConfig" toggle-spec=securitytogglespec %}
+{% include content-toggle.liquid content-toggle-id="securityConfig" toggle-spec=securitytogglespec %}
 
 ###### Subsection "provisioning"
 
@@ -332,7 +332,7 @@ Basic MQTT<small>Basic MQTT Credentials</small>%,%basicmqtt%,%templates/iot-gate
 X.509 Certificate<small></small>%,%x509%,%templates/iot-gateway/provisioning-x-509-config.md%br%{% endcapture %}
 
 There are 4 options of provisioning configuration (you can read more about provisioning in [the official documentation](/docs/user-guide/device-provisioning/)):
-{% include content-toggle.html content-toggle-id="provisioningConfig" toggle-spec=provisioningtogglespec %}
+{% include content-toggle.liquid content-toggle-id="provisioningConfig" toggle-spec=provisioningtogglespec %}
 
 #### Storage configuration
 
@@ -348,7 +348,7 @@ Memory storage<br> <small>(recommended if there is not enough disk space)</small
 File storage<br> <small>(recommended for more persistent)</small>%,%file%,%templates/iot-gateway/storage-file-config.md%br%
 SQLite storage<br> <small>(recommended for more speed)</small>%,%sqlite%,%templates/iot-gateway/sqlite-storage-config.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="storageConfig" toggle-spec=storagetogglespec %}
+{% include content-toggle.liquid content-toggle-id="storageConfig" toggle-spec=storagetogglespec %}
 
 #### Connectors configuration
 

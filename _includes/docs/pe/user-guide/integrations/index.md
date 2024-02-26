@@ -243,7 +243,7 @@ First two bytes of "value" field contain battery and second two bytes contain te
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/overview/uplink-data-converter-example-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/overview/uplink-data-converter-example-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="uplinkdataconverterexample1" toggle-spec=uplinkdataconverterexample1 %}
+{% include content-toggle.liquid content-toggle-id="uplinkdataconverterexample1" toggle-spec=uplinkdataconverterexample1 %}
 
 
 
@@ -313,7 +313,7 @@ The topic to push the update should contain the device name.
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/overview/downlink-data-converter-example-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/overview/downlink-data-converter-example-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="downlinkdataconverterexample1" toggle-spec=downlinkdataconverterexample1 %}
+{% include content-toggle.liquid content-toggle-id="downlinkdataconverterexample1" toggle-spec=downlinkdataconverterexample1 %}
 
 In order to invoke the downlink processing by the integration, tenant administrator should configure the rule chain similar to the one below:
 

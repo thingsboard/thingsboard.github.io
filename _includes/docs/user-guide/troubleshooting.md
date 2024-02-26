@@ -9,7 +9,7 @@ Here we will describe different possible scenarios of what may go wrong.
 No Message Processing%,%no-message-processing%,%templates/troubleshooting/scenarios/no-message-processing.md%br%
 Growing Latency For Messages%,%growing-latency%,%templates/troubleshooting/scenarios/growing-latency.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="scenario" toggle-spec=contenttogglespecscenario %}
+{% include content-toggle.liquid content-toggle-id="scenario" toggle-spec=contenttogglespecscenario %}
 
 ## Troubleshooting instruments and tips
 
@@ -81,7 +81,7 @@ Standalone Deployment%,%standalone%,%templates/troubleshooting/logs/view-logs/st
 Docker-Compose Deployment%,%docker-compose%,%templates/troubleshooting/logs/view-logs/docker-compose-view-logs.md%br%
 Kubernetes Deployment%,%kubernetes%,%templates/troubleshooting/logs/view-logs/kubernetes-view-logs.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype %}
+{% include content-toggle.liquid content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype %}
 
 
 ### Enable certain logs
@@ -134,12 +134,12 @@ To enable/disable logging for some part of the system you need to add proper <co
 
 Different deployment tools provide different ways to update logs:
 
-{% capture contenttogglespecdeploymenttype %}
+{% capture contenttogglespecdeploymenttype2 %}
 Standalone Deployment%,%standalone%,%templates/troubleshooting/logs/enable-logs/standalone-enable-logs.md%br%
 Docker-Compose Deployment%,%docker-compose%,%templates/troubleshooting/logs/enable-logs/docker-compose-enable-logs.md%br%
 Kubernetes Deployment%,%kubernetes%,%templates/troubleshooting/logs/enable-logs/kubernetes-enable-logs.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype %}
+{% include content-toggle.liquid content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype2 %}
 
 
 ## Metrics

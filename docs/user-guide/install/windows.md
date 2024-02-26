@@ -45,7 +45,7 @@ https://github.com/thingsboard/thingsboard/releases/download/{{ site.release.ce_
 PostgreSQL <small>(recommended for < 5K msg/sec)</small>%,%postgresql%,%templates/install/windows-db-postgresql.md%br%
 Hybrid <br>PostgreSQL+TimescaleDB<br><small>(for TimescaleDB professionals)</small>%,%timescale%,%templates/install/windows-db-hybrid-timescale.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
+{% include content-toggle.liquid content-toggle-id="ubuntuThingsboardDatabase" toggle-spec=contenttogglespec %} 
 
 ### Step 4. Choose ThingsBoard queue service
 
@@ -60,7 +60,7 @@ Azure Service Bus <small>(managed service from Azure)</small>%,%service-bus%,%te
 RabbitMQ <small>(for small on-prem installations)</small>%,%rabbitmq%,%templates/install/windows-queue-rabbitmq.md%br%
 Confluent Cloud <small>(Event Streaming Platform based on Kafka)</small>%,%confluent-cloud%,%templates/install/windows-queue-confluent-cloud.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="windowsThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
+{% include content-toggle.liquid content-toggle-id="windowsThingsboardQueue" toggle-spec=contenttogglespecqueue %} 
 
 ### Step 5. [Optional] Memory update for slow machines (1GB of RAM) 
 

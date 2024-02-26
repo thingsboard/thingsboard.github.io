@@ -23,7 +23,7 @@ See below for more details.
 {% capture claimingscenariotogglespec %}
 Claiming using <b>device-side</b> key scenario%,%deviceside%,%templates/claiming/device-key-scenario.md%br%
 Claiming using <b>server-side</b> key scenario%,%serverside%,%templates/claiming/server-key-scenario.md%br%{%endcapture%}
-{% include content-toggle.html content-toggle-id="claimingscenario" toggle-spec=claimingscenariotogglespec %}
+{% include content-toggle.liquid content-toggle-id="claimingscenario" toggle-spec=claimingscenariotogglespec %}
 
 
 ## Device Claiming Permissions in PE

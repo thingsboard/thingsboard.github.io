@@ -1329,27 +1329,6 @@ footer .newsletterSubsContainer .subscribe {
   transition-duration: unset;
 }
 
-footer .deepmost .social a.github {
-  background-image: url(/images/social-git-icon.svg);
-}
-footer .deepmost .social a.gitter {
-  background-image: url(/images/social-gitter-icon.svg);
-}
-footer .deepmost .social a.youtube {
-  background-image: url(/images/social-youtube-icon.svg);
-}
-footer .deepmost .social a.stack-overflow {
-  background-image: url(/images/social-stack-icon.svg);
-}
-footer .deepmost .social a.mailing-list {
-  background-image: url(/images/social-google-icon.svg);
-}
-footer .deepmost .social a.facebook {
-  background-image: url(/images/social-face-icon.svg);
-}
-footer .deepmost .social a.twitter {
-  background-image: url(/images/social-twitt-icon.svg);
-}
 footer .deepmost .social a:hover {
   filter: brightness(200%);
 }
@@ -1899,6 +1878,7 @@ section {
   transition-duration: 0.3s;
 }
 #home #overflow .read-more-button.dash {
+  transition: none;
   outline: none;
 }
 #home #overflow .read-more-button.dash .arrow {
@@ -1906,7 +1886,7 @@ section {
 }
 #home #overflow .read-more-button .arrow {
   transform: translate(0px);
-  transition-duration: 0.3s;
+  transition: transform 0.3s;
   filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%);
   box-shadow: none !important;
   width: 12px !important;
@@ -2441,9 +2421,8 @@ hr {
   position: relative;
 }
 .owl-carousel.owl-theme.usecase-carousel .owl-stage-outer .owl-stage .owl-item {
-  transition: none;
+  transition: none 0.5s;
   filter: blur(8px);
-  transition-duration: 0.5s;
   transform: scale(0.9);
 }
 .owl-carousel.owl-theme.usecase-carousel .owl-stage-outer .owl-stage .owl-item .item-image {
@@ -2451,8 +2430,8 @@ hr {
 }
 .owl-carousel.owl-theme.usecase-carousel .owl-stage-outer .owl-stage .owl-item.active {
   filter: blur(0);
-  transition-duration: 0.5s;
   transform: scale(1);
+  transition: transform 0.5s;
 }
 .owl-carousel.owl-theme.usecase-carousel .owl-nav button.owl-prev, .owl-carousel.owl-theme.usecase-carousel .owl-nav button.owl-next {
   position: absolute;

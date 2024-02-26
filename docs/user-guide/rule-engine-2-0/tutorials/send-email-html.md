@@ -80,7 +80,7 @@ At the second stage, let's configure the "generator" node:
 JS code for HTML page%,%html-page%,%templates/rule-nodes/to-email-node/generator-code-for-html.md%br%
 JS code for image%,%image%,%templates/rule-nodes/to-email-node/generator-code-for-image.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="generatorCode" toggle-spec=generatorCode %}
+{% include content-toggle.liquid content-toggle-id="generatorCode" toggle-spec=generatorCode %}
 
 #### Send email and finishing
 Find and configure new **send email** node and connect all nodes between themselves, like on the screen shoot.

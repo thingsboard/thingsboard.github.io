@@ -48,7 +48,7 @@ Let’s review sample uplink message from Service Bus topic:
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/service-bus/service-bus-uplink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/service-bus/service-bus-uplink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="servicebusuplinkconverterconfig" toggle-spec=servicebusuplinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="servicebusuplinkconverterconfig" toggle-spec=servicebusuplinkconverterconfig %}
 
 ## Create Integration in Thingsboard
 
@@ -128,7 +128,7 @@ Now, create **downlink converter** (You need to do same steps like when was crea
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/service-bus/service-bus-downlink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/service-bus/service-bus-downlink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="servicebusdownlinkconverterconfig" toggle-spec=servicebusdownlinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="servicebusdownlinkconverterconfig" toggle-spec=servicebusdownlinkconverterconfig %}
 
 {% capture difference %}
 **NOTE**

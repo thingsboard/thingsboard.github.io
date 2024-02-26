@@ -28,4 +28,4 @@ Instructions below will describe how to connect MQTT client using X.509 Certific
 X.509 Certificate chain <small>(recommended)</small>%,%x509Chain%,%templates/ssl/certificates-chain.md%br%
 X.509 Certificate%,%X509Leaf%,%templates/ssl/certificates-leaf.md%br%{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="ubuntuThingsboardX509" toggle-spec=contenttogglespecx509 %}
+{% include content-toggle.liquid content-toggle-id="ubuntuThingsboardX509" toggle-spec=contenttogglespecx509 %}

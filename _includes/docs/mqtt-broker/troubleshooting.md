@@ -63,7 +63,7 @@ Different deployment tools provide different ways to view logs:
 Docker-Compose Deployment%,%docker-compose%,%templates/mqtt-broker/troubleshooting/logs/view-logs/docker-compose-view-logs.md%br%
 Kubernetes Deployment%,%kubernetes%,%templates/mqtt-broker/troubleshooting/logs/view-logs/kubernetes-view-logs.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype %}
+{% include content-toggle.liquid content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype %}
 
 #### Enabling Certain Logs
 
@@ -116,11 +116,11 @@ To enable or disable logging for a certain part of the system, you need to add t
 
 Different deployment tools have different ways to update logs:
 
-{% capture contenttogglespecdeploymenttype %}
+{% capture contenttogglespecdeploymenttype2 %}
 Docker-Compose Deployment%,%docker-compose%,%templates/mqtt-broker/troubleshooting/logs/enable-logs/docker-compose-enable-logs.md%br%
 Kubernetes Deployment%,%kubernetes%,%templates/mqtt-broker/troubleshooting/logs/enable-logs/kubernetes-enable-logs.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype %}
+{% include content-toggle.liquid content-toggle-id="deploymentType" toggle-spec=contenttogglespecdeploymenttype2 %}
 
 ### Metrics
 

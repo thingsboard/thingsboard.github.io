@@ -163,7 +163,7 @@ JSON payload<br>%,%json%,%templates/integration/udp/udp-uplink-converter-json.md
 Binary payload<br>%,%binary%,%templates/integration/udp/udp-uplink-converter-binary.md%br%
 Hex payload<br>%,%hex%,%templates/integration/udp/udp-uplink-converter-hex.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="udpintegartionuplinkpayload" toggle-spec=uplinkpayload %}
+{% include content-toggle.liquid content-toggle-id="udpintegartionuplinkpayload" toggle-spec=uplinkpayload %}
 
 You can change the decoder function while creating the converter or after creating it.
 If the converter has already been created, then click on the 'pencil' icon to edit it.
@@ -230,7 +230,7 @@ JSON payload<br>%,%json%,%templates/integration/udp/udp-handler-configuration-js
 Binary payload<br>%,%binary%,%templates/integration/udp/udp-handler-configuration-binary.md%br%
 Hex payload<br>%,%hex%,%templates/integration/udp/udp-handler-configuration-hex.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="udpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
+{% include content-toggle.liquid content-toggle-id="udpintegrationhandlerconfiguration" toggle-spec=handlerconfiguration %}
 
 Click **Add** to save the Integration.
 
@@ -270,7 +270,7 @@ JSON payload<br>%,%json%,%templates/integration/udp/udp-send-uplink-json.md%br%
 Binary payload<br>%,%binary%,%templates/integration/udp/udp-send-uplink-binary.md%br%
 Hex payload<br>%,%hex%,%templates/integration/udp/udp-send-uplink-hex.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="udpintegrationsenduplink" toggle-spec=senduplink %}
+{% include content-toggle.liquid content-toggle-id="udpintegrationsenduplink" toggle-spec=senduplink %}
 
 {% include images-gallery.html imageCollection="sendUplink" %}
 
