@@ -977,10 +977,10 @@ var pushmenu = (function(){
 	jqueryDefer(function() {
 		$(document).on('selectionchange', function() {
 			$('.clipboard-btn').removeClass('noChars');
-            const selectedChars = getSelectedText();
+        const selectedChars = getSelectedText();
 			if (selectedChars == 0) {
-                $('.clipboard-btn').addClass('noChars');
-            }
+        $('.clipboard-btn').addClass('noChars');
+      }
 		});
 
 		$(document).ready(function() {
@@ -1079,16 +1079,16 @@ var pushmenu = (function(){
 	}
 
 	function getSelectedText() {
-        let text;
-        if (window.getSelection) {
-            text = window.getSelection().toString();
-        } else if (document.getSelection) {
-            text = document.getSelection();
-        } else if (document.selection) {
-            text = document.selection.createRange().text;
-        }
-        return text;
+    let text;
+    if (window.getSelection) {
+      text = window.getSelection().toString();
+    } else if (document.getSelection) {
+      text = document.getSelection();
+    } else if (document.selection) {
+      text = document.selection.createRange().text;
     }
+    return text;
+  }
 
 	function checkCopyCodeButtonsGap() {
 		$('.copy-code').closest('.panel-collapse.collapse.show').each(function(i, toggledContent) {
