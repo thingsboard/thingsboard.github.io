@@ -971,7 +971,7 @@ var pushmenu = (function(){
 	}
 })();
 
-// expand-code-blocks button AND copy-code button
+// expand-code-blocks-button AND copy-code button
 
 (function () {
 	jqueryDefer(function() {
