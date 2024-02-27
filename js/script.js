@@ -1039,7 +1039,6 @@ var pushmenu = (function(){
 					button.find('div').addClass('expanded');
 					scrolableBlock.css('overflow-y', 'hidden');
 				}
-				clipboardButton.css('right', getCopyButtonRightGap(codeBlock));
 			});
 
 			$(codeBlock).append(button);
@@ -1057,14 +1056,6 @@ var pushmenu = (function(){
 			$(trigger).removeAttr('data-skip-tooltip');
 		}
 	});
-
-	function getCopyButtonRightGap(scrolableBlock) {
-		const scrolableElement = $(scrolableBlock).find('pre.highlight');
-		let scrollbarWidth = scrolableElement.prop('offsetWidth') - scrolableElement.prop('clientWidth');
-		return $(scrolableBlock).height() < $(scrolableBlock).find('.rouge-code').height()
-			? scrollbarWidth >= 10 ? '12px' : '7px'
-			: '0';
-	}
 
 	function clearTooltip(e) {
 		const el = $(e.currentTarget);
@@ -1090,15 +1081,6 @@ var pushmenu = (function(){
     return text;
   }
 
-	function checkCopyCodeButtonsGap() {
-		$('.copy-code').closest('.panel-collapse.collapse.show').each(function(i, toggledContent) {
-			if (!toggledContent) { return };
-			const scrollableBlock = $(toggledContent).find('.copy-code.highlighter-rouge');
-			const copyCodeButton = $(scrollableBlock).find('button.clipboard-btn');
-			copyCodeButton.css('right', getCopyButtonRightGap($(scrollableBlock)));
-		})
-	}
-
 	function parseAllCodeBlocks() {
 		const allCodeBlocksElements = $(".highlighter-rouge");
 		allCodeBlocksElements.each(function (i) {
@@ -1109,9 +1091,9 @@ var pushmenu = (function(){
 					const currentId = "codeblock" + (i + 1);
 					block.attr('id', currentId);
 					const clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><p>Copy to clipboard</p><div><img src="/images/copy-code-icon.svg" alt="Copy to clipboard"></div></button>');
-					const scrolableBlock = $(codeBlock).find('div.highlight');
-					clipButton.css('right', getCopyButtonRightGap(scrolableBlock));
-					$(this).append(clipButton);
+          const copyCodeButtonContainer = $(this).find('.highlight pre.highlight');
+          copyCodeButtonContainer.css('position', 'relative');
+					copyCodeButtonContainer.append(clipButton);
 					const troyan = codeBlock.find('pre.highlight');
 					const Tooltip = $('<div class="customTooltip"><div class="tooltipText">Copied!</div></div>');
 					troyan.append(Tooltip);
