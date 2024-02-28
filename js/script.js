@@ -1086,29 +1086,28 @@ var pushmenu = (function(){
 		allCodeBlocksElements.each(function (i) {
 			const codeBlock = $(this);
 			if (codeBlock.hasClass('copy-code')) {
-				codeBlock.each(function () {
-					const block = codeBlock.find('pre.highlight > code .rouge-code');
-					const currentId = "codeblock" + (i + 1);
-					block.attr('id', currentId);
-					const clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><p>Copy to clipboard</p><div><img src="/images/copy-code-icon.svg" alt="Copy to clipboard"></div></button>');
+        codeBlock.each(function () {
+          const block = codeBlock.find('pre.highlight > code .rouge-code');
+          const currentId = "codeblock" + (i + 1);
+          block.attr('id', currentId);
+          const clipButton = $('<div class="copy-btn-container"><button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><p>Copy to clipboard</p><div><img src="/images/copy-code-icon.svg" alt="Copy to clipboard"></div></button></div>');
           const copyCodeButtonContainer = $(this).find('.highlight pre.highlight');
-          copyCodeButtonContainer.css('position', 'relative');
-					copyCodeButtonContainer.append(clipButton);
-					const troyan = codeBlock.find('pre.highlight');
-					const Tooltip = $('<div class="customTooltip"><div class="tooltipText">Copied!</div></div>');
-					troyan.append(Tooltip);
-					troyan.addClass('clipboard-btn');
-					troyan.attr('data-clipboard-target', "#" + currentId);
-					troyan.on('mouseleave', clearTooltip);
-					troyan.on('blur', clearTooltip);
-					troyan.on('click', function (e) {
-						const el = $(e.currentTarget);
-						if (el.hasClass('showTool')) {
-							clearTooltip(e);
-							troyan.attr('data-skip-tooltip', "true");
-						}
-					});
-				});
+          copyCodeButtonContainer.prepend(clipButton);
+          const troyan = codeBlock.find('pre.highlight');
+          const Tooltip = $('<div class="customTooltip"><div class="tooltipText">Copied!</div></div>');
+          troyan.append(Tooltip);
+          troyan.addClass('clipboard-btn');
+          troyan.attr('data-clipboard-target', "#" + currentId);
+          troyan.on('mouseleave', clearTooltip);
+          troyan.on('blur', clearTooltip);
+          troyan.on('click', function (e) {
+            const el = $(e.currentTarget);
+            if (el.hasClass('showTool')) {
+              clearTooltip(e);
+              troyan.attr('data-skip-tooltip', "true");
+            }
+          });
+        });
 			}
 		});
 	}
