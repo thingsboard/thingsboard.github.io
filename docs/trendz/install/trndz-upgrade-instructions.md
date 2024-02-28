@@ -8,13 +8,13 @@ description: ThingsBoard Trendz Analytics upgrade instructions
 
 <ul id="markdown-toc">
         <li>
-          <a href="#upgrading-to-1103-hf3" id="markdown-toc-upgrading-to-1103-hf3">Upgrading to 1.10.3-HF3</a>
+          <a href="#upgrading-to-1103-hf7" id="markdown-toc-upgrading-to-1103-hf7">Upgrading to 1.10.3-HF7</a>
           <ul>
               <li>
-                  <a href="#ubuntucentos-1103-hf3" id="markdown-toc-ubuntucentos-1103-hf3">Ubuntu/CentOS</a>        
+                  <a href="#ubuntucentos-1103-hf7" id="markdown-toc-ubuntucentos-1103-hf7">Ubuntu/CentOS</a>        
               </li>
               <li>
-                  <a href="#windows-1103-hf3" id="markdown-toc-windows-1103-hf3">Windows</a>        
+                  <a href="#windows-1103-hf7" id="markdown-toc-windows-1103-hf7">Windows</a>        
               </li>
           </ul>
         </li>
@@ -172,17 +172,17 @@ description: ThingsBoard Trendz Analytics upgrade instructions
   </li>  
 </ul>
 
-## Upgrading to 1.10.3-HF3
+## Upgrading to 1.10.3-HF7
 
 These steps are applicable for 1.10.3 Trendz Analytics version.
 
-### Ubuntu/CentOS {#ubuntucentos-1103-hf3}
+### Ubuntu/CentOS {#ubuntucentos-1103-hf7}
 
 #### Trendz Analytics package download
 
 {% capture tabspec %}trendz-download-1-10-3
-trendz-download-1-8-0-ubuntu,Ubuntu,shell,resources/1.10.3-HF3/trendz-ubuntu-download.sh,/docs/user-guide/install/resources/1.10.3-HF3/trendz-ubuntu-download.sh
-trendz-download-1-8-0-centos,CentOS,shell,resources/1.10.3-HF3/trendz-centos-download.sh,/docs/user-guide/install/resources/1.10.3-HF3/trendz-centos-download.sh{% endcapture %}  
+trendz-download-1-8-0-ubuntu,Ubuntu,shell,resources/1.10.3-HF7/trendz-ubuntu-download.sh,/docs/user-guide/install/resources/1.10.3-HF7/trendz-ubuntu-download.sh
+trendz-download-1-8-0-centos,CentOS,shell,resources/1.10.3-HF7/trendz-centos-download.sh,/docs/user-guide/install/resources/1.10.3-HF7/trendz-centos-download.sh{% endcapture %}  
 {% include tabs.html %}
 
 #### Trendz Analytics service upgrade
@@ -197,8 +197,8 @@ sudo service trendz stop
 * Install latest Trendz Analytics service
 
 {% capture tabspec %}trendz-installation-1-10-3
-trendz-installation-1-8-0-ubuntu,Ubuntu,shell,resources/1.10.3-HF3/trendz-ubuntu-installation.sh,/docs/user-guide/install/resources/1.10.3/trendz-ubuntu-installation.sh
-trendz-installation-1-8-0-centos,CentOS,shell,resources/1.10.3-HF3/trendz-centos-installation.sh,/docs/user-guide/install/resources/1.10.3/trendz-centos-installation.sh{% endcapture %}  
+trendz-installation-1-8-0-ubuntu,Ubuntu,shell,resources/1.10.3-HF7/trendz-ubuntu-installation.sh,/docs/user-guide/install/resources/1.10.3/trendz-ubuntu-installation.sh
+trendz-installation-1-8-0-centos,CentOS,shell,resources/1.10.3-HF7/trendz-centos-installation.sh,/docs/user-guide/install/resources/1.10.3/trendz-centos-installation.sh{% endcapture %}  
 {% include tabs.html %}
 
 **NOTE:** Package installer will ask you to merge your trendz configuration. It is preferred to use **merge option** to make sure that all your previous parameters will not be overwritten.
@@ -216,11 +216,11 @@ sudo service trendz start
 ```
 {: .copy-code}
 
-### Windows {#windows-1103-hf3}
+### Windows {#windows-1103-hf7}
 
 #### Trendz Analytics package download
 
-Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.10.3-HF3.zip](https://dist.thingsboard.io/trendz-windows-1.10.3-HF3.zip).
+Download ThingsBoard Trendz Analytics installation package for Windows: [trendz-windows-1.10.3-HF7.zip](https://dist.thingsboard.io/trendz-windows-1.10.3-HF7.zip).
 
 #### Trendz Analytics service upgrade
 
