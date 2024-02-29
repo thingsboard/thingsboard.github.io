@@ -852,6 +852,7 @@ var pushmenu = (function(){
 // toc-toggle
 
 (function () {
+  let params;
 	let toggleBlocksIdsToTocsIds = {};
 	jqueryDefer(function() {
 		$(document).ready(function() {
@@ -859,13 +860,25 @@ var pushmenu = (function(){
 			$('.tb-content-toggle').each(function(index, contentToggleItem) {
 				blocks.push(contentToggleItem);
 			});
+      params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+      checkParamsOnInit();
 
 			blocks.forEach(function(contentToggleItem) {
 				toggleBlocksIdsToTocsIds[contentToggleItem.id] = {};
-				initContentToggleHandler(contentToggleItem)
+				initContentToggleHandler(contentToggleItem);
 			});
 		})
 	});
+
+  function checkParamsOnInit() {
+    const hash = window.location.hash.split('#')[1];
+    if (hash) { $('#' + hash).scrollIntoView };
+    if (params) {
+      for (const [activeContentId, value] of Object.entries(params)) {
+        applyCurrentToggleContent(activeContentId, value);
+      };
+    }
+  }
 
 	function onPopStateHandler(contentToggleItem) {
 		var params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
@@ -894,11 +907,7 @@ var pushmenu = (function(){
 				}
 			}
 		}
-
-		$('.tb-content-toggle#' + contentToggleItem.id + ' > .panel > .panel-heading > a.content-toggle-button').removeClass("active");
-		$(".tb-content-toggle#" + contentToggleItem.id + " > .panel > .panel-heading > a.content-toggle-button[data-target='#" + targetId + "']").addClass("active");
-		$(".tb-content-toggle#" + contentToggleItem.id +  " > .panel > .panel-collapse").removeClass("show");
-		$(".tb-content-toggle#" + contentToggleItem.id +  " > .panel > .panel-collapse#" + targetId).addClass("show");
+    applyCurrentToggleContent(contentToggleItem.id, targetId);
 	}
 
 	function replaceHashWithHeading(id) {
@@ -944,14 +953,17 @@ var pushmenu = (function(){
 		$('.tb-content-toggle#' + contentToggleItem.id + ' > .panel > .panel-heading > a.content-toggle-button')
 			.each((idx,element) => parseButtons(element, contentToggleItem));
 
-		const firstId = Object.keys(toggleBlocksIdsToTocsIds[contentToggleItem.id])[0];
-
-		$('.tb-content-toggle#' + contentToggleItem.id + ' > .panel > .panel-heading > a.content-toggle-button').removeClass("active");
-		$(".tb-content-toggle#" + contentToggleItem.id + " > .panel > .panel-heading > a.content-toggle-button[data-target='#" + firstId + "']").addClass("active");
-
-		$(".tb-content-toggle#" + contentToggleItem.id + " > .panel > .panel-collapse").removeClass("show");
-		$(".tb-content-toggle#" + contentToggleItem.id + " > .panel > .panel-collapse#" + firstId).addClass("show");
+		const firstId = params.hasOwnProperty(contentToggleItem.id) ? params[contentToggleItem.id] : Object.keys(toggleBlocksIdsToTocsIds[contentToggleItem.id])[0];
+    applyCurrentToggleContent(contentToggleItem.id, firstId);
 	}
+
+  function applyCurrentToggleContent(contentToggleItemId, targetId) {
+    console.log('applyCurrentToggleContent', contentToggleItemId, targetId)
+    $('.tb-content-toggle#' + contentToggleItemId + ' > .panel > .panel-heading > a.content-toggle-button').removeClass("active");
+		$(".tb-content-toggle#" + contentToggleItemId + " > .panel > .panel-heading > a.content-toggle-button[data-target='#" + targetId + "']").addClass("active");
+		$(".tb-content-toggle#" + contentToggleItemId + " > .panel > .panel-collapse").removeClass("show");
+		$(".tb-content-toggle#" + contentToggleItemId + " > .panel > .panel-collapse#" + targetId).addClass("show");
+  }
 
 	function parseButtons(element, contentToggleItem) {
 		element.addEventListener('click', function(event) {
