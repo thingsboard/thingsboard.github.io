@@ -181,7 +181,6 @@ dart firebase_initialization_script.dart —root=$ABSOLUTE_PATH_TO_THE_THINGSBOA
 {% endif %}
 
 ## Step 5. Run the app
-
 Run the app [in the way your IDE describes](https://flutter.dev/docs/get-started/test-drive).
 
 When using terminal run the app with the following command:
@@ -214,6 +213,10 @@ Afterward, you can use hot reload for quick updates.
 When running an app directly from the console using `flutter run`, enter `r` to perform hot reload.
 {% endcapture %}
 {% include templates/info-banner.md content=run_tip %}
+
+## Step 6. Build and release the app
+
+Follow instructions for [iOS app](https://docs.flutter.dev/deployment/ios) or [Android app](https://docs.flutter.dev/deployment/android) in order to build and release Flutter ThingsBoard Mobile Application.
 
 {% if docsPrefix != 'pe/' %}
 ## Live demo app
