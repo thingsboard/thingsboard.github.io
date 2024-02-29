@@ -214,9 +214,9 @@ When running an app directly from the console using `flutter run`, enter `r` to 
 {% endcapture %}
 {% include templates/info-banner.md content=run_tip %}
 
-## Step 6. Build and release the app
+## Step 6. [Optional] Build and release mobile application
 
-Follow instructions for [iOS app](https://docs.flutter.dev/deployment/ios) or [Android app](https://docs.flutter.dev/deployment/android) in order to build and release Flutter ThingsBoard Mobile Application.
+If you need to build and release ThingsBoard Mobile Application for iOS or Android, please refer to [this guide](/docs/{{docsPrefix}}mobile/release/){:target="_blank"}.
 
 {% if docsPrefix != 'pe/' %}
 ## Live demo app
