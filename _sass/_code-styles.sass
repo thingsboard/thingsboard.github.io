@@ -10,6 +10,11 @@ code
 
 .highlighter-rouge
 	position: relative
+	&[class*="expandable"]
+		pre.highlight
+			margin-bottom: 45px
+			&.expanded
+				height: max-content !important
 	button.expand-code-btn
 		position: absolute
 		bottom: -33px
@@ -36,6 +41,16 @@ code
 			border-left: 20px solid transparent
 			border-right: 20px solid transparent
 			border-bottom: 13px solid #2a7dec
+		&[data-expanded="true"]
+			.btn-text.collapse
+				display: block
+			.btn-text.expand
+				display: none
+		&[data-expanded="false"]
+			.btn-text.collapse
+				display: none
+			.btn-text.expand
+				display: block
 
 div.highlight
 	margin-top: 12px
@@ -62,6 +77,8 @@ div.highlight
 					color: rgba(33, 37, 41, 0.6)
 			td.rouge-code
 				padding: 8px 16px
+				pre
+					width: max-content
 
 .highlight code span, code, pre code, pre
 	font-family: $mono-font

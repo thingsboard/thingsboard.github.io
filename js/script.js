@@ -984,20 +984,12 @@ var pushmenu = (function(){
 		});
 
 		$(document).ready(function() {
-			const expandableCodeBlocks = [];
-			$('.content-toggle-button').on('click', function(i, button) {
-				checkCopyCodeButtonsGap();
-			})
 			$('.copy-code').each(function (index, codeBlocksItem) {
-				if (codeBlocksItem.classList) {
-					for (let i = 0; i < codeBlocksItem.classList.length; i++) {
-						if (codeBlocksItem.classList[i].startsWith("expandable-")) {
-							expandableCodeBlocks.push(codeBlocksItem);
-						}
-					}
+        const classes = $(codeBlocksItem).attr('class').split(' ');
+				if (classes && classes.find(className => className.startsWith('expandable'))) {
+          addExpandButton(codeBlocksItem);
 				}
 			});
-			expandableCodeBlocks.forEach(codeBlock => addExpandButton(codeBlock));
 			parseAllCodeBlocks();
 		})
 	});
@@ -1012,32 +1004,25 @@ var pushmenu = (function(){
 			let rows = parseInt(expandableClass.split('-')[1]);
 			let collapsedHeight = rows * 28 + 5;
 			pre.css('height', collapsedHeight + 'px');
-			$(codeBlock)
-			.find('pre.highlight').first().css({"margin-bottom": "45px"})
 
-			let button = $('<button class="expand-code-btn"><div class="collapsed"></div><p>expand</p></button>');
+			let button = $('<button class="expand-code-btn"><div class="collapsed"></div><p class="btn-text expand">expand</p><p class="btn-text collapse">collapse</p></button>');
 
 			button.on('click', function () {
-				const scrolableBlock = $(button).prev().first().find('pre.highlight');
-				const clipboardButton = $(button).next('button');
 				if (button.attr('data-expanded') === 'true') {
 					pre.css('height', collapsedHeight + 'px');
+          pre.removeClass('expanded');
 					button.attr('data-expanded', 'false');
-					button.find('p').text('expand');
-					button.get(0).scrollIntoView({ block: "center" });
+					codeBlock.scrollIntoView({ block: "start" });
 					button.find('div').removeClass('expanded');
 					button.find('div').addClass('collapsed');
-					scrolableBlock.css('overflow-y', 'auto');
 				} else {
 					if (pre.prop('scrollHeight') > 2775) {
 						$(codeBlock).find('.rouge-gutter').css("width", "60px");
 					}
-					pre.css('height', 'max-content');
+          pre.addClass('expanded');
 					button.attr('data-expanded', 'true');
-					button.find('p').text('collapse');
 					button.find('div').removeClass('collapsed');
 					button.find('div').addClass('expanded');
-					scrolableBlock.css('overflow-y', 'hidden');
 				}
 			});
 
