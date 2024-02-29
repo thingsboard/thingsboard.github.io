@@ -48,7 +48,7 @@ Now we need to configure integration on The Things Industries. to do this please
         title: Go to the "<b>Integrations</b>" -> open the "<b>MQTT</b>" page in the left menu. Then, click on the "<b>Generate new API key</b>" button.
     ===
         image: /images/devices-library/basic/integrations/thethingsindustries/the-things-industries-integration-mqtt-4.png,
-        title: Press on copy icon to copy a key and save it (After leaving the page it won&#39;t be displayed).
+        title: Copy and save the <b>password</b> (API key) (after leaving the page it won&#39;t be displayed).
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addIntegrationSteps %}
