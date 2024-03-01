@@ -986,45 +986,33 @@ var pushmenu = (function(){
 		$(document).ready(function () {
 			$('.copy-code').each(function (index, codeBlocksItem) {
 				const classes = $(codeBlocksItem).attr('class').split(' ');
-				if (classes && classes.find(className => className.startsWith('expandable'))) {
-					addExpandButton(codeBlocksItem);
+				const expandableClass = classes.find(className => className.startsWith('expandable'));
+				if (classes && expandableClass) {
+					const rows = parseInt(expandableClass.split('-')[1]);
+					addExpandButton(codeBlocksItem, rows);
 				}
 			});
 			parseAllCodeBlocks();
 		})
 	});
 
-	function addExpandButton(codeBlock) {
+	function addExpandButton(codeBlock, rows) {
 		const pre = $(codeBlock).find('pre').first();
-		const classes = $(codeBlock).attr('class').split(' ');
+		let collapsedHeight = rows * 28 + 5;
+		pre.css('height', collapsedHeight + 'px');
 
-		const expandableClass = classes.find(className => className.startsWith('expandable'));
+		let button = $('<button class="expand-code-btn"><div class="collapsed"></div><p class="btn-text expand">expand</p><p class="btn-text collapse">collapse</p></button>');
 
-		if (expandableClass) {
-			let rows = parseInt(expandableClass.split('-')[1]);
-			let collapsedHeight = rows * 28 + 5;
-			pre.css('height', collapsedHeight + 'px');
+		button.on('click', function () {
+			if ($(codeBlock).attr('data-expanded') === 'true') {
+				$(codeBlock).attr('data-expanded', 'false');
+				codeBlock.scrollIntoView({ block: "start" });
+			} else {
+				$(codeBlock).attr('data-expanded', 'true');
+			}
+		});
 
-			let button = $('<button class="expand-code-btn"><div class="collapsed"></div><p class="btn-text expand">expand</p><p class="btn-text collapse">collapse</p></button>');
-
-			button.on('click', function () {
-				if (button.attr('data-expanded') === 'true') {
-					pre.css('height', collapsedHeight + 'px');
-					pre.removeClass('expanded');
-					button.attr('data-expanded', 'false');
-					codeBlock.scrollIntoView({ block: "start" });
-					button.find('div').removeClass('expanded');
-					button.find('div').addClass('collapsed');
-				} else {
-					pre.addClass('expanded');
-					button.attr('data-expanded', 'true');
-					button.find('div').removeClass('collapsed');
-					button.find('div').addClass('expanded');
-				}
-			});
-
-			$(codeBlock).append(button);
-		}
+		$(codeBlock).append(button);
 	}
 
 	const clipboard = new Clipboard('.noChars');

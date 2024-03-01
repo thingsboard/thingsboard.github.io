@@ -30,28 +30,6 @@ code
 		width: 130px
 		height: 30px
 		outline: none
-		div
-			width: 0
-			height: 0
-		div.collapsed
-			border-left: 20px solid transparent
-			border-right: 20px solid transparent
-			border-top: 13px solid #2a7dec
-		div.expanded
-			border-left: 20px solid transparent
-			border-right: 20px solid transparent
-			border-bottom: 13px solid #2a7dec
-		&[data-expanded="true"]
-			.btn-text.collapse
-				display: block
-				margin-top: 0 !important
-			.btn-text.expand
-				display: none
-		&[data-expanded="false"]
-			.btn-text.collapse
-				display: none
-			.btn-text.expand
-				display: block
 
 div.highlight
 	margin-top: 12px
@@ -85,6 +63,36 @@ div.highlight
 .highlight code span, code, pre code, pre
 	font-family: $mono-font
 	font-size: 16px
+
+.copy-code
+	button.expand-code-btn div
+		width: 0
+		height: 0
+		border-left: 20px solid transparent
+		border-right: 20px solid transparent
+		border-top: 13px solid #2a7dec
+	&[data-expanded="true"]
+		pre.highlight
+			height: max-content !important
+		button.expand-code-btn
+			div
+				border-top: none
+				border-bottom: 13px solid #2a7dec
+			p.collapse
+				display: block
+				margin-top: 0 !important
+			p.expand
+				display: none
+
+	&[data-expanded="false"]
+		button.expand-code-btn
+			div
+				border-top: 13px solid #2a7dec
+				border-bottom: none
+			p.collapse
+				display: none
+			p.expand
+				display: block
 
 .highlight .c
 	color: #999988
