@@ -974,20 +974,20 @@ var pushmenu = (function(){
 // expand-code-blocks-button AND copy-code button
 
 (function () {
-	jqueryDefer(function() {
-		$(document).on('selectionchange', function() {
+	jqueryDefer(function () {
+		$(document).on('selectionchange', function () {
 			$('.clipboard-btn').removeClass('noChars');
-        const selectedChars = getSelectedText();
+			const selectedChars = getSelectedText();
 			if (selectedChars == 0) {
-        $('.clipboard-btn').addClass('noChars');
-      }
+				$('.clipboard-btn').addClass('noChars');
+			}
 		});
 
-		$(document).ready(function() {
+		$(document).ready(function () {
 			$('.copy-code').each(function (index, codeBlocksItem) {
-        const classes = $(codeBlocksItem).attr('class').split(' ');
+				const classes = $(codeBlocksItem).attr('class').split(' ');
 				if (classes && classes.find(className => className.startsWith('expandable'))) {
-          addExpandButton(codeBlocksItem);
+					addExpandButton(codeBlocksItem);
 				}
 			});
 			parseAllCodeBlocks();
@@ -1010,13 +1010,13 @@ var pushmenu = (function(){
 			button.on('click', function () {
 				if (button.attr('data-expanded') === 'true') {
 					pre.css('height', collapsedHeight + 'px');
-          pre.removeClass('expanded');
+					pre.removeClass('expanded');
 					button.attr('data-expanded', 'false');
 					codeBlock.scrollIntoView({ block: "start" });
 					button.find('div').removeClass('expanded');
 					button.find('div').addClass('collapsed');
 				} else {
-          pre.addClass('expanded');
+					pre.addClass('expanded');
 					button.attr('data-expanded', 'true');
 					button.find('div').removeClass('collapsed');
 					button.find('div').addClass('expanded');
@@ -1052,44 +1052,44 @@ var pushmenu = (function(){
 	}
 
 	function getSelectedText() {
-    let text;
-    if (window.getSelection) {
-      text = window.getSelection().toString();
-    } else if (document.getSelection) {
-      text = document.getSelection();
-    } else if (document.selection) {
-      text = document.selection.createRange().text;
-    }
-    return text;
-  }
+		let text;
+		if (window.getSelection) {
+			text = window.getSelection().toString();
+		} else if (document.getSelection) {
+			text = document.getSelection();
+		} else if (document.selection) {
+			text = document.selection.createRange().text;
+		}
+		return text;
+	}
 
 	function parseAllCodeBlocks() {
 		const allCodeBlocksElements = $(".highlighter-rouge");
 		allCodeBlocksElements.each(function (i) {
 			const codeBlock = $(this);
 			if (codeBlock.hasClass('copy-code')) {
-        codeBlock.each(function () {
-          const block = codeBlock.find('pre.highlight > code .rouge-code');
-          const currentId = "codeblock" + (i + 1);
-          block.attr('id', currentId);
-          const clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><p>Copy to clipboard</p><div><img src="/images/copy-code-icon.svg" alt="Copy to clipboard"></div></button>');
-          const copyCodeButtonContainer = $(this).find('.highlight pre.highlight');
-          copyCodeButtonContainer.prepend(clipButton);
-          copyCodeButtonContainer.find('table').css('transform', 'translateY(-46px)');
-          const Tooltip = $('<div class="customTooltip"><div class="tooltipText">Copied!</div></div>');
-          copyCodeButtonContainer.append(Tooltip);
-          copyCodeButtonContainer.addClass('clipboard-btn');
-          copyCodeButtonContainer.attr('data-clipboard-target', "#" + currentId);
-          copyCodeButtonContainer.on('mouseleave', clearTooltip);
-          copyCodeButtonContainer.on('blur', clearTooltip);
-          copyCodeButtonContainer.on('click', function (e) {
-            const el = $(e.currentTarget);
-            if (el.hasClass('showTool')) {
-              clearTooltip(e);
-              copyCodeButtonContainer.attr('data-skip-tooltip', "true");
-            }
-          });
-        });
+				codeBlock.each(function () {
+					const block = codeBlock.find('pre.highlight > code .rouge-code');
+					const currentId = "codeblock" + (i + 1);
+					block.attr('id', currentId);
+					const clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><p>Copy to clipboard</p><div><img src="/images/copy-code-icon.svg" alt="Copy to clipboard"></div></button>');
+					const copyCodeButtonContainer = $(this).find('.highlight pre.highlight');
+					copyCodeButtonContainer.prepend(clipButton);
+					copyCodeButtonContainer.find('table').css('transform', 'translateY(-46px)');
+					const Tooltip = $('<div class="customTooltip"><div class="tooltipText">Copied!</div></div>');
+					copyCodeButtonContainer.append(Tooltip);
+					copyCodeButtonContainer.addClass('clipboard-btn');
+					copyCodeButtonContainer.attr('data-clipboard-target', "#" + currentId);
+					copyCodeButtonContainer.on('mouseleave', clearTooltip);
+					copyCodeButtonContainer.on('blur', clearTooltip);
+					copyCodeButtonContainer.on('click', function (e) {
+						const el = $(e.currentTarget);
+						if (el.hasClass('showTool')) {
+							clearTooltip(e);
+							copyCodeButtonContainer.attr('data-skip-tooltip', "true");
+						}
+					});
+				});
 			}
 		});
 	}
