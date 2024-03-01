@@ -44,6 +44,7 @@ code
 		&[data-expanded="true"]
 			.btn-text.collapse
 				display: block
+				margin-top: 0 !important
 			.btn-text.expand
 				display: none
 		&[data-expanded="false"]
@@ -64,12 +65,13 @@ div.highlight
 			border: none
 			border-spacing: 0
 			width: 100%
-			table-layout: fixed
+			table-layout: auto
 			td
 				line-height: 28px
 				vertical-align: top
 			td.rouge-gutter
-				width: 50px
+				position: sticky
+				left: 0
 				padding: 8px 12px 8px 18px
 				text-align: right
 				background: #f9fbff

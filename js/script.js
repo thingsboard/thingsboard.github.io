@@ -1016,9 +1016,6 @@ var pushmenu = (function(){
 					button.find('div').removeClass('expanded');
 					button.find('div').addClass('collapsed');
 				} else {
-					if (pre.prop('scrollHeight') > 2775) {
-						$(codeBlock).find('.rouge-gutter').css("width", "60px");
-					}
           pre.addClass('expanded');
 					button.attr('data-expanded', 'true');
 					button.find('div').removeClass('collapsed');
