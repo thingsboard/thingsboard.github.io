@@ -1001,7 +1001,7 @@ var pushmenu = (function(){
 		let collapsedHeight = rows * 28 + 5;
 		pre.css('height', collapsedHeight + 'px');
 
-		let button = $('<button class="expand-code-btn"><div class="collapsed"></div><p class="btn-text expand">expand</p><p class="btn-text collapse">collapse</p></button>');
+		let button = $('<button class="expand-code-btn"><div class="arrow"></div><p class="btn-text expand">expand</p><p class="btn-text collapse">collapse</p></button>');
 
 		button.on('click', function () {
 			if ($(codeBlock).attr('data-expanded') === 'true') {
