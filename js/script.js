@@ -852,14 +852,12 @@ var pushmenu = (function(){
 // toc-toggle
 
 (function () {
-  let params;
 	let toggleBlocksIdsToTocsIds = {};
 	jqueryDefer(function() {
 		$(document).ready(function() {
-			params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
+			const params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
 			$('.tb-content-toggle').each(function(index, contentToggleItem) {
-        		toggleBlocksIdsToTocsIds[contentToggleItem.id] = {};
-				initContentToggleHandler(contentToggleItem);
+				initContentToggleHandler(contentToggleItem, params[contentToggleItem.id]);
 			});
 		})
 	});
@@ -891,7 +889,7 @@ var pushmenu = (function(){
 				}
 			}
 		}
-    applyCurrentToggleContent(contentToggleItem.id, targetId);
+		applyCurrentToggleContent(contentToggleItem, targetId);
 	}
 
 	function replaceHashWithHeading(id) {
@@ -911,41 +909,39 @@ var pushmenu = (function(){
 		});
 	}
 
-	function initContentToggleHandler(contentToggleItem) {
-		let toggleBlocksIds = [];
-		$('#' + contentToggleItem.id + ' > .panel .panel-heading > a.content-toggle-button').each(function() {
-			toggleBlocksIds.push($(this).attr("data-target").substring(1));
-		});
-		let i = 0;
-		for (let id of toggleBlocksIds) {
+	function initContentToggleHandler(contentToggleItem, targetId) {
+        toggleBlocksIdsToTocsIds[contentToggleItem.id] = {};
+		$(contentToggleItem).find('> .panel > .panel-heading > a.content-toggle-button').each(function() {
+			const id = $(this).attr("data-target").substring(1);
 			toggleBlocksIdsToTocsIds[contentToggleItem.id][id] = [];
-			$('#' + id).find(":header").each(function() {
+			let i = 0;
+			$(contentToggleItem).find('#' + id).find(':header').each(function() {
 				let heading = $(this);
-				heading.attr("id", heading.attr("id") + i++);
+				heading.attr('id', heading.attr("id") + i++);
 				toggleBlocksIdsToTocsIds[contentToggleItem.id][id].push('markdown-toc-' + $(this).attr('id'));
 			});
 			replaceHashWithHeading(id);
-		}
+		});
 
 		window.addEventListener('popstate', function() {
 			onPopStateHandler(contentToggleItem);
 		});
 
-		onPopStateHandler(contentToggleItem);
+		if (!targetId) {
+			targetId = Object.keys(toggleBlocksIdsToTocsIds[contentToggleItem.id])[0];
+		}
+		applyCurrentToggleContent(contentToggleItem, targetId);
 
-		$('.tb-content-toggle#' + contentToggleItem.id + ' > .panel > .panel-heading > a.content-toggle-button')
+		$(contentToggleItem).find('> .panel > .panel-heading > a.content-toggle-button')
 			.each((idx,element) => parseButtons(element, contentToggleItem));
-
-		const firstId = params.hasOwnProperty(contentToggleItem.id) ? params[contentToggleItem.id] : Object.keys(toggleBlocksIdsToTocsIds[contentToggleItem.id])[0];
-    	applyCurrentToggleContent(contentToggleItem.id, firstId);
 	}
 
-  function applyCurrentToggleContent(contentToggleItemId, targetId) {
-    $('.tb-content-toggle#' + contentToggleItemId + ' > .panel > .panel-heading > a.content-toggle-button').removeClass("active");
-		$(".tb-content-toggle#" + contentToggleItemId + " > .panel > .panel-heading > a.content-toggle-button[data-target='#" + targetId + "']").addClass("active");
-		$(".tb-content-toggle#" + contentToggleItemId + " > .panel > .panel-collapse").removeClass("show");
-		$(".tb-content-toggle#" + contentToggleItemId + " > .panel > .panel-collapse#" + targetId).addClass("show");
-  }
+	function applyCurrentToggleContent(contentToggleItem, targetId) {
+		$(contentToggleItem).find('> .panel > .panel-heading > a.content-toggle-button').removeClass('active');
+		$(contentToggleItem).find('> .panel > .panel-heading > a.content-toggle-button[data-target="#' + targetId + '\"]').addClass('active');
+		$(contentToggleItem).find('> .panel > .panel-collapse').removeClass('show');
+		$(contentToggleItem).find('> .panel > .panel-collapse#' + targetId).addClass('show');
+	}
 
 	function parseButtons(element, contentToggleItem) {
 		element.addEventListener('click', function(event) {
