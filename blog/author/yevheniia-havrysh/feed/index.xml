@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Yevheniia Havrysh &#8211; ThingsBoard&#039;s blog</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../../../index.html</link>
+	<description></description>
+	<lastBuildDate>Fri, 16 Feb 2024 15:29:28 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.3</generator>
+
+<image>
+	<url>./../../../wp-content/uploads/2024/02/cropped-favicon-1-32x32.png</url>
+	<title>Yevheniia Havrysh &#8211; ThingsBoard&#039;s blog</title>
+	<link>./../../../index.html</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Hello world! How to get started with ThingsBoard</title>
+		<link>./../../../hello-world/index.html</link>
+		
+		<dc:creator><![CDATA[Yevheniia Havrysh]]></dc:creator>
+		<pubDate>Tue, 13 Feb 2024 14:42:42 +0000</pubDate>
+				<category><![CDATA[Community]]></category>
+		<guid isPermaLink="false">http://127.0.0.1/?p=1</guid>
+
+					<description><![CDATA[Getting started with ThingsBoard cloud: a comprehensive IoT guide In the rapidly evolving world of Internet of Things&#8230;]]></description>
+										<content:encoded><![CDATA[
+<h3 class="wp-block-heading">Getting started with ThingsBoard cloud: a comprehensive IoT guide</h3>
+
+
+
+<p>In the rapidly evolving world of Internet of Things (IoT), ThingsBoard Cloud emerges as a beacon for those embarking on IoT projects. This tutorial is your comprehensive guide to navigating the robust features of ThingsBoard Cloud, aimed at demystifying the process from device connection to dashboard creation and beyond. Whether you&#8217;re a seasoned IoT professional or a newcomer, this guide serves as your roadmap to leveraging ThingsBoard Cloud for your IoT solutions.</p>
+
+
+
+<h3 class="wp-block-heading">Introduction to ThingsBoard cloud</h3>
+
+
+
+<p>ThingsBoard Cloud is a cutting-edge platform designed to streamline the integration, management, and analysis of IoT devices. It offers a suite of tools to connect devices, process device data, and present this data in real-time dashboards, enabling users to make informed decisions based on live data feeds. The platform supports a variety of use cases, from smart buildings to industrial monitoring, making it a versatile choice for IoT projects.</p>
+
+
+
+<h3 class="wp-block-heading">Prerequisites for using ThingsBoard cloud</h3>
+
+
+
+<p>Before diving into the practical steps, ensure you have access to ThingsBoard Professional Edition. The most straightforward method is to utilize the ThingsBoard Cloud server, although you can also opt for a local installation following the provided Installation Guide.</p>
+
+
+
+<h3 class="wp-block-heading">Step 1: Device provisioning</h3>
+
+
+
+<p>The journey begins with adding a device to the ThingsBoard platform. This device will serve as your data source, transmitting key metrics like temperature readings to the platform. Adding a new device involves navigating to the &#8220;Entities&#8221; section, selecting &#8220;Devices,&#8221; and using the intuitive UI to create your device instance, named for example, &#8220;My New Device.&#8221;</p>
+
+
+
+<h3 class="wp-block-heading">Step 2: Establishing device connectivity</h3>
+
+
+
+<p>Once your device is provisioned, the next critical step is to verify its connectivity to ThingsBoard. This is achieved through the &#8220;Check connectivity&#8221; feature, which allows you to publish telemetry data on behalf of your device. Successful data publication marks your device as active, a vital step in ensuring reliable data flow to the platform.</p>
+
+
+
+<h3 class="wp-block-heading">Step 3: Dashboard creation and widget configuration</h3>
+
+
+
+<p>With your device connected, the focus shifts to data visualization. ThingsBoard dashboards offer a dynamic canvas to monitor and analyze IoT data. The process involves creating a new dashboard and populating it with widgets, each tailored to display specific data types, such as temperature readings or alarm signals. This section will guide you through creating an empty dashboard, adding an &#8220;Entities table&#8221; widget, and further enhancing your dashboard with chart widgets and alarms tables, providing a holistic view of your IoT ecosystem.</p>
+
+
+
+<h3 class="wp-block-heading">Step 4: Alarm rules configuration</h3>
+
+
+
+<p>An integral part of managing IoT devices is monitoring for specific conditions and triggering alarms. This tutorial will walk you through setting up alarm rules that, for instance, raise an alert when temperature readings exceed a defined threshold. This proactive monitoring is crucial for maintaining the integrity and performance of your IoT devices.</p>
+
+
+
+<h3 class="wp-block-heading">Step 5: Alarm generation and notification</h3>
+
+
+
+<p>Following the configuration of alarm rules, this section delves into generating alarms based on real-time data. It also covers the notification process within ThingsBoard, ensuring that users are promptly alerted to any issues detected by the alarm rules.</p>
+
+
+
+<h3 class="wp-block-heading">Step 6: Notification setup</h3>
+
+
+
+<p>Timely notifications are key to an effective IoT system. ThingsBoard&#8217;s Notification center facilitates this, allowing for customizable notifications through various channels such as email and SMS. This tutorial provides insights into setting up and managing notifications, ensuring that you stay informed of critical events within your IoT infrastructure.</p>
+
+
+
+<h3 class="wp-block-heading">Step 7: Sharing dashboards and managing access</h3>
+
+
+
+<p>A unique aspect of ThingsBoard is its ability to share dashboards with different users or customer groups, ensuring that relevant stakeholders have access to the necessary data. This section covers the creation of customers and customer users, assigning device ownership, and sharing dashboards, providing a comprehensive overview of managing access to IoT data within ThingsBoard.</p>
+
+
+
+<h3 class="wp-block-heading">Conclusion</h3>
+
+
+
+<p>This guide is designed to empower you to leverage the full potential of ThingsBoard Cloud for your IoT projects. From device provisioning to dashboard sharing, each step is meticulously detailed to provide a clear path to successful IoT implementation. Whether you&#8217;re monitoring a single device or managing a complex network of IoT sensors, ThingsBoard Cloud offers the tools and flexibility needed to achieve your objectives.</p>
+
+
+
+<p>As you embark on your IoT journey with ThingsBoard Cloud, remember that this guide is just the beginning. The platform&#8217;s extensive features and customization options open up a world of possibilities for IoT innovation and efficiency. Happy exploring!</p>
+]]></content:encoded>
+					
+		
+		
+			</item>
+	</channel>
+</rss>
