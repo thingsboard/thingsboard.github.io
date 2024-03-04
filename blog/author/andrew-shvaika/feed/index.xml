@@ -12,7 +12,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Tue, 13 Feb 2024 16:11:21 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 04 Mar 2024 12:20:04 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -28,83 +28,907 @@
 	<height>32</height>
 </image> 
 	<item>
-		<title>Andrew&#8217;s blog post test</title>
-		<link>./../../../andrews-blog-post-test/index.html</link>
+		<title>IoT Widgets for enhanced dashboards: introducing the  action, command, toggle, and power buttons #Design</title>
+		<link>./../../../iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons-2-2/index.html</link>
+					<comments>./../../../iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons-2-2/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
-		<pubDate>Tue, 13 Feb 2024 16:07:47 +0000</pubDate>
-				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=30</guid>
+		<pubDate>Mon, 26 Feb 2024 11:54:34 +0000</pubDate>
+				<category><![CDATA[Engineering]]></category>
+		<category><![CDATA[New features]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=2970</guid>
 
-					<description><![CDATA[Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#8217;s standard&#8230;]]></description>
+					<description><![CDATA[Welcome to the latest update from the ThingsBoard team! Our ongoing mission to improve the platform&#8217;s functionality and&#8230;]]></description>
 										<content:encoded><![CDATA[
-<p><strong>Lorem Ipsum</strong> is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry&#8217;s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+<p style="font-size:16px">Welcome to the latest update from the ThingsBoard team! Our ongoing mission to improve the platform&#8217;s functionality and user experience brings us to the introduction of four innovative IoT widgets: the &#8220;Action button,&#8221; &#8220;Command button,&#8221; &#8220;Toggle button,&#8221; and &#8220;Power button.&#8221; Designed with a focus on usability, these new buttons are tailored for the most common IoT use cases, offering users enhanced control and flexibility in managing their IoT devices and dashboards. Let&#8217;s dive into their capabilities.</p>
+
+
+
+<h4 class="wp-block-heading">Action button widget</h4>
+
+
+
+<p style="font-size:16px">This button facilitates single-click navigation to other dashboards, states, or custom actions. You may choose one of the common <a href="https://thingsboard.io/docs/user-guide/ui/widget-actions">widget actions</a> to be triggered when the user clicks the button. You may also choose whether the button is in default, activated, or disabled state. </p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Buttons.svg" alt="" class="wp-image-3106"/></figure>
+
+
+
+<p style="font-size:16px">More importantly, the button may dynamically change its state based on the value of the attribute or time-series subscription. You may find an example of the button that changes its state when the user attribute is updated below: </p>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a" href="./../../../wp-content/uploads/2024/02/tb-dynamic_button_states.json">tb_dynamic_button_states.json</a><a href="./../../../wp-content/uploads/2024/02/tb-dynamic_button_states.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a">Download</a></div>
+
+
+
+<p style="font-size:16px">The behavior configuration is available in the basic widget settings:</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Add-widget-2.svg" alt="" class="wp-image-3126"/></figure>
+
+
+
+<p style="font-size:16px">The button appearance is highly customizable. You may choose one of four available layouts, configure icons, and label appearance. The colors of the buttons are configured via main and background color palettes. By default, the button uses a palette configured in the <a href="https://thingsboard.io/docs/pe/user-guide/white-labeling/">white-labeling settings</a>.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Appearance-3.svg" alt="" class="wp-image-3108"/></figure>
+
+
+
+<p style="font-size:16px">Although the button supports all common <a href="https://thingsboard.io/docs/user-guide/ui/widget-actions">widget actions</a>, we will highlight only the most popular in this article. To demonstrate them, we have prepared the dashboard that you may <a href="https://thingsboard.io/docs/user-guide/dashboards/#import-dashboard">import</a> to your platform instance.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Button-use-cases.svg" alt="" class="wp-image-3109"/></figure>
+
+
+
+<p style="font-size:16px">You may find the sample dashboard JSON below: </p>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-fd741ad2-e692-4a03-9a23-812a9f191991" href="./../../../wp-content/uploads/2024/02/button_use_cases.json">button_use_cases.json</a></div>
+
+
+
+<p style="font-size:16px">The dashboard has two states: &#8220;default&#8221; and &#8220;other&#8221;. The default state contains 5 showcase buttons. The &#8220;other&#8221; state contains a line chart widget with random data. Let&#8217;s review each button below:</p>
+
+
+
+<p style="font-size:16px"><strong>•</strong> <strong>Open dialog</strong> button uses &#8220;Navigate to new dashboard state&#8221; with the &#8220;Open in separate dialog&#8221; display option. So, the user will see the line chart opened in a modal window.</p>
+
+
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-6 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1666" height="856" data-id="3048" src="./../../../wp-content/uploads/2024/02/Open-dialog-1.gif" alt="" class="wp-image-3048"/></figure>
+</figure>
+
+
+
+<p style="font-size:16px"><strong>•</strong> <strong>Open popup</strong> button is similar, but the &#8220;Open in popover&#8221; display option is used. You may also explore various options for the &#8220;Preferred popover placement&#8221; option. </p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="565" src="./../../../wp-content/uploads/2024/02/Open-popup-1024x565.gif" alt="" class="wp-image-3062" srcset="./../../../wp-content/uploads/2024/02/Open-popup-1024x565.gif 1024w, ./../../../wp-content/uploads/2024/02/Open-popup-300x165.gif 300w, ./../../../wp-content/uploads/2024/02/Open-popup-768x424.gif 768w, ./../../../wp-content/uploads/2024/02/Open-popup-1536x847.gif 1536w, ./../../../wp-content/uploads/2024/02/Open-popup-512x282.gif 512w, ./../../../wp-content/uploads/2024/02/Open-popup-920x507.gif 920w, ./../../../wp-content/uploads/2024/02/Open-popup-1600x882.gif 1600w, ./../../../wp-content/uploads/2024/02/Open-popup-1320x728.gif 1320w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p style="font-size:16px"><strong>•</strong> <strong>Change state</strong> button simply update the current dashboard state to the new one. </p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="1666" height="860" src="./../../../wp-content/uploads/2024/02/Change-state.gif" alt="" class="wp-image-3063"/></figure>
+
+
+
+<p style="font-size:16px"><strong>•</strong> <strong>Drill down</strong> button is similar, but instead of changing the dashboard state, it leaves the old one in the stack. </p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1670" height="860" src="./../../../wp-content/uploads/2024/02/Drill-Down.gif" alt="" class="wp-image-3064"/></figure>
+
+
+
+<p style="font-size:16px"><strong>•</strong> <strong>Open URL</strong> provides the ability to open external or relative URLs in the same or separate browser tab. </p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="527" src="./../../../wp-content/uploads/2024/02/Open-URL-1024x527.gif" alt="" class="wp-image-3066" srcset="./../../../wp-content/uploads/2024/02/Open-URL-1024x527.gif 1024w, ./../../../wp-content/uploads/2024/02/Open-URL-300x154.gif 300w, ./../../../wp-content/uploads/2024/02/Open-URL-768x395.gif 768w, ./../../../wp-content/uploads/2024/02/Open-URL-1536x791.gif 1536w, ./../../../wp-content/uploads/2024/02/Open-URL-512x264.gif 512w, ./../../../wp-content/uploads/2024/02/Open-URL-920x474.gif 920w, ./../../../wp-content/uploads/2024/02/Open-URL-1600x824.gif 1600w, ./../../../wp-content/uploads/2024/02/Open-URL-1320x680.gif 1320w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h4 class="wp-block-heading">Command button widget</h4>
+
+
+
+<p style="font-size:16px">The Command button widget is designed to perform three key actions: sending <a href="https://thingsboard.io/docs/user-guide/rpc/">commands</a> to devices, updating <a href="https://thingsboard.io/docs/user-guide/attributes/">attributes</a>, or appending <a href="https://thingsboard.io/docs/user-guide/telemetry/">time-series</a> data. </p>
+
+
+
+<p style="font-size:16px">You can specify a single device to carry out your chosen action, such as receiving a command. For those familiar with the platform, there&#8217;s an option to use <a href="https://thingsboard.io/docs/user-guide/ui/aliases/">entity aliases</a> for targeting. This means you&#8217;re not limited to devices; you can target assets, users, or other entities capable of supporting attribute updates or time-series data additions. </p>
+
+
+
+<p style="font-size:16px">Behavior settings enable the definition of the on-click action and condition when the button is disabled. More importantly, the button may dynamically become enabled or disabled based on attribute or time-series subscription. </p>
+
+
+
+<p style="font-size:16px"><strong>Execute RPC action</strong> allows you to send the command to the device. You may configure the command (method) name and parameters of the command. The parameter value may be configured as a constant or result of function execution. You may send the command without parameters by choosing the &#8220;None&#8221; option.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Execute-RPC-action-7.svg" alt="" class="wp-image-3110"/></figure></div>
+
+
+<p style="font-size:16px">By default, we use an un-persisted command with 5 seconds timeout. You may change the command parameters in the advanced settings of the action.</p>
+
+
+
+<p style="font-size:16px"><strong>Set attribute action</strong> allows you to set or update the value of the particular entity attribute. The action configuration form allows you to configure the scope, key, and value of the attribute. The attribute value may be configured as a constant or result of function execution. Please note that only devices support &#8220;shared&#8221; attribute scope. You must choose the &#8220;server&#8221; scope for all other entities. </p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Set-attribute-action-8.svg" alt="" class="wp-image-3111"/></figure></div>
+
+
+<p style="font-size:16px"><strong>Add time-series action</strong> allows you to add the new time-series value for the particular entity. The action configuration form allows you to configure the time-series data key and value. The value may be configured as a constant or result of function execution. </p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Add-time-series-action-9.svg" alt="" class="wp-image-3112"/></figure></div>
+
+
+<p style="font-size:16px">You may dynamically disable the button based on certain values of the attribute or time-series key. For example, the dashboard attached below contains two buttons that switch the state of the user&#8217;s attribute &#8220;state&#8221;. When the user presses button A, it becomes disabled, and vice versa.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Disabled-state-10.svg" alt="" class="wp-image-3113" style="width:822px;height:auto"/></figure></div>
+
+
+<p style="font-size:16px">You may find the sample dashboard JSON below: </p>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae" href="./../../../wp-content/uploads/2024/02/command_buttons.json">command_buttons.json</a><a href="./../../../wp-content/uploads/2024/02/command_buttons.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae">Download</a></div>
+
+
+
+<p style="font-size:16px">Alternatively, you may disable the button that sends the command to the device, if the device is offline. For this purpose, you may just use the value of the &#8220;active&#8221; attribute or time-series key. </p>
+
+
+
+<p style="font-size:16px">The appearance settings for the Command button are identical to those of the Action button. The primary applications of the Command button are straightforward, focusing on managing devices and assets. This involves either issuing commands or updating attributes to control their operation.</p>
+
+
+
+<h4 class="wp-block-heading">Toggle button widget</h4>
+
+
+
+<p style="font-size:16px">The Toggle button widget shares many similarities with the Command button widget, but with a crucial distinction: it features two distinct states, &#8220;checked&#8221; and &#8220;unchecked&#8221;. This design allows it to perform two specific actions, &#8220;Check&#8221; and &#8220;Uncheck&#8221;, depending on its state. Users have the flexibility to fully customize the appearance of the button for both states, enhancing its visual and functional integration into their dashboards.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Toggle-button-widget-1.svg" alt="" class="wp-image-3115"/></figure>
+
+
+
+<p style="font-size:16px">The default behavior will change the state of the device using the &#8220;setState&#8221; command:</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Behavior-1.svg" alt="" class="wp-image-3121"/></figure>
+
+
+
+<p style="font-size:16px">You may easily change this button to operate with the &#8220;state&#8221; attribute instead of sending commands to devices:</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Behavior123-1.svg" alt="" class="wp-image-3122"/></figure>
+
+
+
+<p style="font-size:16px">The Toggle button shares appearance settings with the Command button but allows separate configurations for its &#8220;Checked&#8221; and &#8220;Unchecked&#8221; states:</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Button-appearance-1.svg" alt="" class="wp-image-3123"/></figure>
+
+
+
+<p style="font-size:16px">Adjusting the border radius, background colors, and other appearance settings can significantly alter the button&#8217;s style:</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="208" src="./../../../wp-content/uploads/2024/02/Buttons123.png" alt="" class="wp-image-3120" srcset="./../../../wp-content/uploads/2024/02/Buttons123.png 803w, ./../../../wp-content/uploads/2024/02/Buttons123-300x78.png 300w, ./../../../wp-content/uploads/2024/02/Buttons123-768x199.png 768w, ./../../../wp-content/uploads/2024/02/Buttons123-512x133.png 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
+
+
+
+<h4 class="wp-block-heading">Power button widget</h4>
+
+
+
+<p style="font-size:16px">The Power button widget, similar to the Toggle button, differs in appearance and has three states: &#8216;On&#8217;, &#8216;Off&#8217; and disabled, with six customizable layouts:</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Power-button-widget.svg" alt="" class="wp-image-3124"/></figure>
+
+
+
+<p style="font-size:16px">The appearance settings are simplified compared to the Command button. Basically, you are able to configure main and background colors for every state.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Button-appearance-2.svg" alt="" class="wp-image-3125"/></figure></div>
+
+
+<p style="font-size:16px">The Power button widget enables remote control of devices across sectors: turning smart home appliances on/off, managing industrial equipment, controlling servers, adjusting energy sources, operating irrigation systems, managing healthcare devices, retail displays, and public lighting, showcasing its versatility in simplifying power management in IoT applications.</p>
+
+
+
+<h4 class="wp-block-heading">Summary</h4>
+
+
+
+<p style="font-size:16px">In our overview of the newest widgets for the ThingsBoard IoT Platform—Action button, Command button, Toggle button, and Power button—we&#8217;ve highlighted how these tools enhance IoT dashboard interaction and device management. Each widget offers specific functionalities to improve the user experience, from executing commands to providing clear status indicators.</p>
+
+
+
+<p style="font-size:16px">We encourage you to explore these widgets&#8217; capabilities within your projects. If you have ideas for improvements or additional features, we welcome you to submit feature requests on <a href="https://github.com/thingsboard/thingsboard">GitHub</a>. For any other feedback, please leave your comments below. Your feedback is essential for us to keep improving and growing the platform.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>./../../../iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons-2-2/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Optimizing dashboard performance with enhanced image management #Design</title>
+		<link>./../../../optimizing-dashboard-performance-with-enhanced-image-management-3/index.html</link>
+					<comments>./../../../optimizing-dashboard-performance-with-enhanced-image-management-3/index.html#respond</comments>
+		
+		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
+		<pubDate>Mon, 26 Feb 2024 11:52:07 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=2971</guid>
+
+					<description><![CDATA[At ThingsBoard, we&#8217;ve always been committed to enhancing user experience and system performance. Our latest update, version 3.6.2,&#8230;]]></description>
+										<content:encoded><![CDATA[
+<p style="font-size:16px">At ThingsBoard, we&#8217;ve always been committed to enhancing user experience and system performance. Our latest update, version <a href="https://thingsboard.io/docs/reference/releases/#v362">3.6.2</a>, introduces significant improvements in how images are managed within dashboards, widgets, and more. This update is a key enhancement designed to tackle inefficiencies identified as our user base expanded.</p>
+
+
+
+<h4 class="wp-block-heading">The challenge with large images</h4>
+
+
+
+<p style="font-size:16px">Since the earliest releases, our platform has permitted the embedding of images in dashboards and widgets via external links or Base64 encoded data URLs. While flexible, this approach presented a significant challenge. Users occasionally embedded images up to 50MB in size directly into dashboards. Editing or exporting these dashboards meant transferring massive JSON files to and from the server, a highly inefficient process. This not only affected loading times but also the responsiveness of the dashboard editing experience.</p>
+
+
+
+<h4 class="wp-block-heading">The solution</h4>
+
+
+
+<p style="font-size:16px">To address this issue, we&#8217;ve introduced a major update in how images are handled within the platform. A central aspect of this update is the introduction of the <a href="https://thingsboard.io/docs/user-guide/image-gallery/">Image Gallery</a>. By moving dashboards to a separate entity and utilizing our internal, relative links for storing image references, we&#8217;ve significantly improved efficiency. This change minimizes the size of dashboard JSON files, streamlining both loading and editing processes. The Image Gallery simplifies the process of uploading, organizing, and selecting images.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/9-1.svg" alt="" class="wp-image-3130"/></figure>
+
+
+
+<h4 class="wp-block-heading">Backward compatibility</h4>
+
+
+
+<p style="font-size:16px">The platform&#8217;s upgrade script automatically converts all existing dashboards to the new format. Users can still upload dashboards in the old format to a new platform instance. These dashboards will automatically be converted to the new format during the upload process.</p>
+
+
+
+<p style="font-size:16px">For example, consider a “Sensors” dashboard with its background image stored in the old format:</p>
+
+
+
+<pre class="wp-block-code has-black-color has-text-color has-link-color wp-elements-240688aa6d231c0cb4116ec18afee3f6"><code lang="" class="">{
+...
+"backgroundImageUrl": "data:image/webp;base64,iVBORw...JRU5ErkJggg=="
+...
+}</code></pre>
+
+
+
+<p style="font-size:16px">After the upgrade, a new image will be created in the image gallery:</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Edit-image.svg" alt="" class="wp-image-3131"/></figure>
+
+
+
+<p style="font-size:16px">The image name is auto-generated based on the dashboard name and the dashboard element where the image is used. This same behavior applies to images used in widget configuration: markers, backgrounds, etc. The dashboard now references the image using the following link:</p>
+
+
+
+<pre class="wp-block-code"><code lang="json" class="language-json">{
+...
+"backgroundImageUrl": "/api/images/tenant/sensors_dashboard_default_background.webp"
+...
+}</code></pre>
+
+
+
+<h4 class="wp-block-heading">Private and public image links</h4>
+
+
+
+<p style="font-size:16px">Images can be provisioned at the system and tenant levels. System-level widgets are accessible to all platform users, while tenant images are available to authorized users of specific tenants.</p>
+
+
+
+<p style="font-size:16px">To embed an image into an Angular HTML template, such as the Markdown widget, HTML section in the widget editor, custom actions, etc., use the following code snippet:</p>
+
+
+
+<pre class="wp-block-code"><code class="">&lt;img [src]="'/api/images/tenant/sensors_dashboard_default_background.webp' | image | async" /&gt;</code></pre>
+
+
+
+<p style="font-size:16px">The <code>image</code> pipe automatically adds the necessary authentication headers to the image request, allowing the same relative image URL to return different content for users from different tenants.</p>
+
+
+
+<p style="font-size:16px">However, custom widgets or static HTML blocks that do not support Angular HTML syntax cannot add authentication headers to requests. Therefore, every platform image also has a unique URL for downloading the image without authentication. Using the following code snippet, you may embed an image into the components based on the plain HTML. Such components include HTML card widgets, cell content functions, etc.</p>
+
+
+
+<pre class="wp-block-code"><code class="">&lt;img src="/api/images/public/ZA4biARtpnl970l0j8MMolRKM56fbpK1" alt="&amp;quot;Sensors&amp;quot; dashboard default background" /&gt;</code></pre>
+
+
+
+<p style="font-size:16px">Each code snippet is unique to its image, and you can find the corresponding snippets in the Embed image window.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Embed-image.svg" alt="" class="wp-image-3132"/></figure>
+
+
+
+<h4 class="wp-block-heading">Caching</h4>
+
+
+
+<p style="font-size:16px">Our image API now utilizes ETags to optimize caching, ensuring that images are only re-downloaded when they have changed. This approach significantly saves bandwidth and improves load times. While we don&#8217;t apply Cache-Control headers by default, users have the flexibility to customize caching behavior through environment variables, including settings for image ETags cache TTL, maximum cache size, and browser cache TTL for both system and tenant images. These settings are crucial for balancing between reducing server load and ensuring content freshness.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/ThingsBoard.svg" alt="" class="wp-image-3133"/></figure>
+
+
+
+<p style="font-size:16px">The platform offers environment variables to control caching behavior:</p>
+
+
+
+<ul>
+<li style="font-size:16px">CACHE_SPECS_IMAGE_ETAGS_TTL<strong>:</strong> Controls the cache TTL for image ETags. The default is set to 44640 minutes (31 days), after which the cache is cleared.<br></li>
+
+
+
+<li style="font-size:16px">CACHE_SPECS_IMAGE_ETAGS_MAX_SIZE<strong>:</strong> Determines the maximum ETags cache size on the server. The default is 10000. Setting this to 0 disables the cache. <br></li>
+
+
+
+<li style="font-size:16px">CACHE_SPECS_IMAGE_SYSTEM_BROWSER_TTL and CACHE_SPECS_IMAGE_TENANT_BROWSER_TTL<strong>:</strong> These settings manage the browser cache TTL for system and tenant images, respectively, with a default of 0 minutes, meaning caching is disabled by default.</li>
+</ul>
+
+
+
+<p style="font-size:16px">These settings allow administrators to adjust the balance between performance and content freshness as needed.</p>
+
+
+
+<h4 class="wp-block-heading">Improvement Summary</h4>
+
+
+
+<p style="font-size:16px">By tackling the challenge of image management within dashboards, we aim to offer a more efficient, robust, and user-friendly platform. Following the upgrade of <a href="https://thingsboard.cloud/">thingsboard.cloud</a>, we&#8217;ve observed an 86% reduction in the size of the dashboards, and some dashboards now load more than twice as fast.</p>
+
+
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-7 is-layout-flex wp-block-gallery-is-layout-flex"></figure>
+
+
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-8 is-layout-flex wp-block-gallery-is-layout-flex"></figure>
+]]></content:encoded>
+					
+					<wfw:commentRss>./../../../optimizing-dashboard-performance-with-enhanced-image-management-3/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>IoT Widgets for Enhanced Dashboards: Introducing the  Action, Command, Toggle, and Power buttons</title>
+		<link>./../../../iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons-2/index.html</link>
+		
+		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
+		<pubDate>Fri, 23 Feb 2024 15:15:49 +0000</pubDate>
+				<category><![CDATA[Engineering]]></category>
+		<category><![CDATA[New features]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=2915</guid>
+
+					<description><![CDATA[Welcome to the latest update from the ThingsBoard team! Our ongoing mission to improve the platform&#8217;s functionality and&#8230;]]></description>
+										<content:encoded><![CDATA[
+<p></p>
+
+
+
+<p>Welcome to the latest update from the ThingsBoard team! Our ongoing mission to improve the platform&#8217;s functionality and user experience brings us to the introduction of four innovative IoT widgets: the &#8220;Action Button,&#8221; &#8220;Command Button,&#8221; &#8220;Toggle Button,&#8221; and &#8220;Power Button.&#8221; Designed with a focus on usability, these new buttons are tailored for the most common IoT use cases, offering users enhanced control and flexibility in managing their IoT devices and dashboards. Let&#8217;s dive into their capabilities.</p>
+
+
+
+<h3 class="wp-block-heading">Action Button widget</h3>
+
+
+
+<p>This button facilitates single-click navigation to other dashboards, states, or custom actions. You may choose one of the common <a href="https://thingsboard.io/docs/user-guide/ui/widget-actions">widget actions</a> to be triggered when the user clicks the button. You may also choose whether the button is in default, activated, or disabled state. </p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="872" height="103" src="./../../../wp-content/uploads/2024/02/image-10.png" alt="" class="wp-image-2760" srcset="./../../../wp-content/uploads/2024/02/image-10.png 872w, ./../../../wp-content/uploads/2024/02/image-10-300x35.png 300w, ./../../../wp-content/uploads/2024/02/image-10-768x91.png 768w, ./../../../wp-content/uploads/2024/02/image-10-512x60.png 512w" sizes="(max-width: 872px) 100vw, 872px" /></figure>
+
+
+
+<p>More importantly, the button may dynamically change its state based on the value of the attribute or time-series subscription. You may find an example of the button that changes its state when the user attribute is updated below: </p>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a" href="./../../../wp-content/uploads/2024/02/tb-dynamic_button_states.json">tb_dynamic_button_states.json</a><a href="./../../../wp-content/uploads/2024/02/tb-dynamic_button_states.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a"></a></div>
+
+
+
+<p>The behavior configuration is available in the basic widget settings:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="533" src="./../../../wp-content/uploads/2024/02/image-11-1024x533.png" alt="" class="wp-image-2761" srcset="./../../../wp-content/uploads/2024/02/image-11-1024x533.png 1024w, ./../../../wp-content/uploads/2024/02/image-11-300x156.png 300w, ./../../../wp-content/uploads/2024/02/image-11-768x400.png 768w, ./../../../wp-content/uploads/2024/02/image-11-512x266.png 512w, ./../../../wp-content/uploads/2024/02/image-11-920x479.png 920w, ./../../../wp-content/uploads/2024/02/image-11.png 1186w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>The button appearance is highly customizable. You may choose one of four available layouts, configure icons, and label appearance. The colors of the buttons are configured via main and background color palettes. By default, the button uses a palette configured in the <a href="https://thingsboard.io/docs/pe/user-guide/white-labeling/">white-labeling settings</a>.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="793" src="./../../../wp-content/uploads/2024/02/image-13-1024x793.png" alt="" class="wp-image-2765" srcset="./../../../wp-content/uploads/2024/02/image-13-1024x793.png 1024w, ./../../../wp-content/uploads/2024/02/image-13-300x232.png 300w, ./../../../wp-content/uploads/2024/02/image-13-768x595.png 768w, ./../../../wp-content/uploads/2024/02/image-13-512x397.png 512w, ./../../../wp-content/uploads/2024/02/image-13-920x712.png 920w, ./../../../wp-content/uploads/2024/02/image-13.png 1157w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Although the button supports all common <a href="https://thingsboard.io/docs/user-guide/ui/widget-actions">widget actions</a>, we will highlight only the most popular in this article. To demonstrate them, we have prepared the dashboard that you may <a href="https://thingsboard.io/docs/user-guide/dashboards/#import-dashboard">import</a> to your platform instance.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="264" src="./../../../wp-content/uploads/2024/02/image-14-1024x264.png" alt="" class="wp-image-2769" srcset="./../../../wp-content/uploads/2024/02/image-14-1024x264.png 1024w, ./../../../wp-content/uploads/2024/02/image-14-300x77.png 300w, ./../../../wp-content/uploads/2024/02/image-14-768x198.png 768w, ./../../../wp-content/uploads/2024/02/image-14-512x132.png 512w, ./../../../wp-content/uploads/2024/02/image-14-920x237.png 920w, ./../../../wp-content/uploads/2024/02/image-14.png 1027w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>You may find the sample dashboard JSON below: </p>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-fd741ad2-e692-4a03-9a23-812a9f191991" href="./../../../wp-content/uploads/2024/02/button_use_cases.json">button_use_cases.json</a><a href="./../../../wp-content/uploads/2024/02/button_use_cases.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-fd741ad2-e692-4a03-9a23-812a9f191991">Download</a></div>
+
+
+
+<p>The dashboard has two states: &#8220;default&#8221; and &#8220;other&#8221;. The default state contains 5 showcase buttons. The &#8220;other&#8221; state contains a line chart widget with random data. Let&#8217;s review each button below:</p>
+
+
+
+<p><strong>Open dialog</strong> button uses &#8220;Navigate to new dashboard state&#8221; with the &#8220;Open in separate dialog&#8221; display option. So, the user will see the line chart opened in a modal window.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="583" src="./../../../wp-content/uploads/2024/02/image-16-1024x583.png" alt="" class="wp-image-2773" srcset="./../../../wp-content/uploads/2024/02/image-16-1024x583.png 1024w, ./../../../wp-content/uploads/2024/02/image-16-300x171.png 300w, ./../../../wp-content/uploads/2024/02/image-16-768x437.png 768w, ./../../../wp-content/uploads/2024/02/image-16-1536x875.png 1536w, ./../../../wp-content/uploads/2024/02/image-16-2048x1167.png 2048w, ./../../../wp-content/uploads/2024/02/image-16-512x292.png 512w, ./../../../wp-content/uploads/2024/02/image-16-920x524.png 920w, ./../../../wp-content/uploads/2024/02/image-16-1600x911.png 1600w, ./../../../wp-content/uploads/2024/02/image-16-1920x1094.png 1920w, ./../../../wp-content/uploads/2024/02/image-16.png 2177w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p><strong>Open popup</strong> button is similar, but the &#8220;Open in popover&#8221; display option is used. You may also explore various options for the &#8220;Preferred popover placement&#8221; option. </p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="568" src="./../../../wp-content/uploads/2024/02/image-17-1024x568.png" alt="" class="wp-image-2774" srcset="./../../../wp-content/uploads/2024/02/image-17-1024x568.png 1024w, ./../../../wp-content/uploads/2024/02/image-17-300x166.png 300w, ./../../../wp-content/uploads/2024/02/image-17-768x426.png 768w, ./../../../wp-content/uploads/2024/02/image-17-512x284.png 512w, ./../../../wp-content/uploads/2024/02/image-17-920x510.png 920w, ./../../../wp-content/uploads/2024/02/image-17.png 1062w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p><strong>Change state</strong> button simply update the current dashboard state to the new one. </p>
+
+
+
+<p><strong>Drill down</strong> button is similar, but instead of changing the dashboard state, it leaves the old one in the stack. </p>
+
+
+
+<p><strong>Open URL</strong> provides the ability to open external or relative URLs in the same or separate browser tab. </p>
+
+
+
+<h3 class="wp-block-heading">Command Button widget</h3>
+
+
+
+<p>The Command Button widget is designed to perform three key actions: sending <a href="https://thingsboard.io/docs/user-guide/rpc/">commands</a> to devices, updating <a href="https://thingsboard.io/docs/user-guide/attributes/">attributes</a>, or appending <a href="https://thingsboard.io/docs/user-guide/telemetry/">time-series</a> data. </p>
+
+
+
+<p>You can specify a single device to carry out your chosen action, such as receiving a command. For those familiar with the platform, there&#8217;s an option to use <a href="https://thingsboard.io/docs/user-guide/ui/aliases/">entity aliases</a> for targeting. This means you&#8217;re not limited to devices; you can target assets, users, or other entities capable of supporting attribute updates or time-series data additions. </p>
+
+
+
+<p>Behavior settings enable the definition of the on-click action and condition when the button is disabled. More importantly, the button may dynamically become enabled or disabled based on attribute or time-series subscription. </p>
+
+
+
+<p><strong>Execute RPC action</strong> allows you to send the command to the device. You may configure the command (method) name and parameters of the command. The parameter value may be configured as a constant or result of function execution. You may send the command without parameters by choosing the &#8220;None&#8221; option.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="556" height="421" src="./../../../wp-content/uploads/2024/02/image-25.png" alt="" class="wp-image-2785" srcset="./../../../wp-content/uploads/2024/02/image-25.png 556w, ./../../../wp-content/uploads/2024/02/image-25-300x227.png 300w, ./../../../wp-content/uploads/2024/02/image-25-512x388.png 512w" sizes="(max-width: 556px) 100vw, 556px" /></figure></div>
+
+
+<p>By default, we use an un-persisted command with 5 seconds timeout. You may change the command parameters in the advanced settings of the action.</p>
+
+
+
+<p><strong>Set attribute action</strong> allows you to set or update the value of the particular entity attribute. The action configuration form allows you to configure the scope, key, and value of the attribute. The attribute value may be configured as a constant or result of function execution. Please note that only devices support &#8220;shared&#8221; attribute scope. You must choose the &#8220;server&#8221; scope for all other entities. </p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="553" height="449" src="./../../../wp-content/uploads/2024/02/image-26.png" alt="" class="wp-image-2786" srcset="./../../../wp-content/uploads/2024/02/image-26.png 553w, ./../../../wp-content/uploads/2024/02/image-26-300x244.png 300w, ./../../../wp-content/uploads/2024/02/image-26-512x416.png 512w" sizes="(max-width: 553px) 100vw, 553px" /></figure></div>
+
+
+<p><strong>Add time-series action</strong> allows you to add the new time-series value for the particular entity. The action configuration form allows you to configure the time-series data key and value. The value may be configured as a constant or result of function execution. </p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="554" height="378" src="./../../../wp-content/uploads/2024/02/image-27.png" alt="" class="wp-image-2788" srcset="./../../../wp-content/uploads/2024/02/image-27.png 554w, ./../../../wp-content/uploads/2024/02/image-27-300x205.png 300w, ./../../../wp-content/uploads/2024/02/image-27-512x349.png 512w" sizes="(max-width: 554px) 100vw, 554px" /></figure></div>
+
+
+<p>You may dynamically disable the button based on certain values of the attribute or time-series key. For example, the dashboard attached below contains two buttons that switch the state of the user&#8217;s attribute &#8220;state&#8221;. When the user presses button A, it becomes disabled, and vice versa.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full is-resized"><img loading="lazy" decoding="async" width="582" height="434" src="./../../../wp-content/uploads/2024/02/image-29.png" alt="" class="wp-image-2796" style="width:582px;height:auto" srcset="./../../../wp-content/uploads/2024/02/image-29.png 582w, ./../../../wp-content/uploads/2024/02/image-29-300x224.png 300w, ./../../../wp-content/uploads/2024/02/image-29-512x382.png 512w" sizes="(max-width: 582px) 100vw, 582px" /></figure></div>
+
+
+<p>You may find the sample dashboard JSON below: </p>
+
+
+
+<div class="wp-block-file"><a id="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae" href="./../../../wp-content/uploads/2024/02/command_buttons.json">command_buttons.json</a><a href="./../../../wp-content/uploads/2024/02/command_buttons.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae">Download</a></div>
+
+
+
+<p>Alternatively, you may disable the button that sends the command to the device, if the device is offline. For this purpose, you may just use the value of the &#8220;active&#8221; attribute or time-series key. </p>
+
+
+
+<p>The appearance settings for the Command Button are identical to those of the Action Button. The primary applications of the Command Button are straightforward, focusing on managing devices and assets. This involves either issuing commands or updating attributes to control their operation.</p>
+
+
+
+<h3 class="wp-block-heading">Toggle Button widget</h3>
+
+
+
+<p>The Toggle Button widget shares many similarities with the Command Button widget, but with a crucial distinction: it features two distinct states, &#8220;checked&#8221; and &#8220;unchecked&#8221;. This design allows it to perform two specific actions, &#8220;Check&#8221; and &#8220;Uncheck&#8221;, depending on its state. Users have the flexibility to fully customize the appearance of the button for both states, enhancing its visual and functional integration into their dashboards.</p>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="780" height="196" src="./../../../wp-content/uploads/2024/02/image-32.png" alt="" class="wp-image-2829" srcset="./../../../wp-content/uploads/2024/02/image-32.png 780w, ./../../../wp-content/uploads/2024/02/image-32-300x75.png 300w, ./../../../wp-content/uploads/2024/02/image-32-768x193.png 768w, ./../../../wp-content/uploads/2024/02/image-32-512x129.png 512w" sizes="(max-width: 780px) 100vw, 780px" /></figure>
+
+
+
+<p>The default behavior will change the state of the device using the &#8220;setState&#8221; command:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="279" src="./../../../wp-content/uploads/2024/02/image-30-1024x279.png" alt="" class="wp-image-2825" srcset="./../../../wp-content/uploads/2024/02/image-30-1024x279.png 1024w, ./../../../wp-content/uploads/2024/02/image-30-300x82.png 300w, ./../../../wp-content/uploads/2024/02/image-30-768x209.png 768w, ./../../../wp-content/uploads/2024/02/image-30-512x139.png 512w, ./../../../wp-content/uploads/2024/02/image-30-920x250.png 920w, ./../../../wp-content/uploads/2024/02/image-30.png 1147w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>You may easily change this button to operate with the &#8220;state&#8221; attribute instead of sending commands to devices:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="282" src="./../../../wp-content/uploads/2024/02/image-31-1024x282.png" alt="" class="wp-image-2827" srcset="./../../../wp-content/uploads/2024/02/image-31-1024x282.png 1024w, ./../../../wp-content/uploads/2024/02/image-31-300x83.png 300w, ./../../../wp-content/uploads/2024/02/image-31-768x212.png 768w, ./../../../wp-content/uploads/2024/02/image-31-512x141.png 512w, ./../../../wp-content/uploads/2024/02/image-31-920x254.png 920w, ./../../../wp-content/uploads/2024/02/image-31.png 1150w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>The Toggle Button shares appearance settings with the Command Button but allows separate configurations for its &#8220;Checked&#8221; and &#8220;Unchecked&#8221; states:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="441" src="./../../../wp-content/uploads/2024/02/image-33-1024x441.png" alt="" class="wp-image-2830" srcset="./../../../wp-content/uploads/2024/02/image-33-1024x441.png 1024w, ./../../../wp-content/uploads/2024/02/image-33-300x129.png 300w, ./../../../wp-content/uploads/2024/02/image-33-768x331.png 768w, ./../../../wp-content/uploads/2024/02/image-33-512x221.png 512w, ./../../../wp-content/uploads/2024/02/image-33-920x397.png 920w, ./../../../wp-content/uploads/2024/02/image-33.png 1146w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>Adjusting the border radius, background colors, and other appearance settings can significantly alter the button&#8217;s style:</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-full"><img loading="lazy" decoding="async" width="367" height="190" src="./../../../wp-content/uploads/2024/02/image-34.png" alt="" class="wp-image-2831" srcset="./../../../wp-content/uploads/2024/02/image-34.png 367w, ./../../../wp-content/uploads/2024/02/image-34-300x155.png 300w" sizes="(max-width: 367px) 100vw, 367px" /></figure></div>
+
+
+<h3 class="wp-block-heading">Power Button widget</h3>
+
+
+
+<p>The Power Button widget, similar to the Toggle Button, differs in appearance and has three states: &#8216;On&#8217;, &#8216;Off&#8217; and disabled, with six customizable layouts:</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="396" src="./../../../wp-content/uploads/2024/02/image-36-1024x396.png" alt="" class="wp-image-2888" srcset="./../../../wp-content/uploads/2024/02/image-36-1024x396.png 1024w, ./../../../wp-content/uploads/2024/02/image-36-300x116.png 300w, ./../../../wp-content/uploads/2024/02/image-36-768x297.png 768w, ./../../../wp-content/uploads/2024/02/image-36-512x198.png 512w, ./../../../wp-content/uploads/2024/02/image-36-920x356.png 920w, ./../../../wp-content/uploads/2024/02/image-36.png 1151w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>The appearance settings are simplified compared to the Command Button. Basically, you are able to configure main and background colors for every state.</p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-large"><img loading="lazy" decoding="async" width="1024" height="442" src="./../../../wp-content/uploads/2024/02/image-38-1024x442.png" alt="" class="wp-image-2894" srcset="./../../../wp-content/uploads/2024/02/image-38-1024x442.png 1024w, ./../../../wp-content/uploads/2024/02/image-38-300x129.png 300w, ./../../../wp-content/uploads/2024/02/image-38-768x331.png 768w, ./../../../wp-content/uploads/2024/02/image-38-512x221.png 512w, ./../../../wp-content/uploads/2024/02/image-38-920x397.png 920w, ./../../../wp-content/uploads/2024/02/image-38.png 1168w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+<p>The Power Button widget enables remote control of devices across sectors: turning smart home appliances on/off, managing industrial equipment, controlling servers, adjusting energy sources, operating irrigation systems, managing healthcare devices, retail displays, and public lighting, showcasing its versatility in simplifying power management in IoT applications.</p>
+
+
+
+<h3 class="wp-block-heading">Summary</h3>
+
+
+
+<p>In our overview of the newest widgets for the ThingsBoard IoT Platform—Action Button, Command Button, Toggle Button, and Power Button—we&#8217;ve highlighted how these tools enhance IoT dashboard interaction and device management. Each widget offers specific functionalities to improve the user experience, from executing commands to providing clear status indicators.</p>
+
+
+
+<p>We encourage you to explore these widgets&#8217; capabilities within your projects. If you have ideas for improvements or additional features, we welcome you to submit feature requests on <a href="https://github.com/thingsboard/thingsboard">GitHub</a>. For any other feedback, please leave your comments below. Your feedback is essential for us to keep improving and growing the platform.</p>
 ]]></content:encoded>
 					
 		
 		
 			</item>
 		<item>
-		<title>Reviving Retro: Vintage Trends Making a Modern Comeback</title>
-		<link>./../../../reviving-retro-vintage-trends-making-a-modern-comeback/index.html</link>
-					<comments>./../../../reviving-retro-vintage-trends-making-a-modern-comeback/index.html#comments</comments>
+		<title>Optimizing Dashboard Performance with Enhanced Image Management</title>
+		<link>./../../../optimizing-dashboard-performance-with-enhanced-image-management/index.html</link>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
-		<pubDate>Wed, 11 Oct 2023 06:26:00 +0000</pubDate>
-				<category><![CDATA[Trends]]></category>
-		<guid isPermaLink="false">https://swyft.codesupply.co/lifestyle/?p=2098</guid>
+		<pubDate>Tue, 20 Feb 2024 15:54:43 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=2541</guid>
 
-					<description><![CDATA[The fusion of business, lifestyle, and technology is creating a harmonized existence, offering both personal and professional growth opportunities.]]></description>
+					<description><![CDATA[At ThingsBoard, we&#8217;ve always been committed to enhancing user experience and system performance. Our latest update, version 3.6.2,&#8230;]]></description>
 										<content:encoded><![CDATA[
-<p>2023 unfurls as a captivating tapestry of change and rejuvenation, weaving together threads of the past’s lessons with the possibilities of the future. As we traverse this unique juncture, it’s evident that our world is not merely changing—it’s evolving.</p>
+<p>At ThingsBoard, we&#8217;ve always been committed to enhancing user experience and system performance. Our latest update, version <a href="https://thingsboard.io/docs/reference/releases/#v362">3.6.2</a>, introduces significant improvements in how images are managed within dashboards, widgets, and more. This update is a key enhancement designed to tackle inefficiencies identified as our user base expanded.</p>
 
 
 
-<p>Our lifestyle choices, influenced by the rapid technological advances, global challenges, and internal reflections of recent years, are increasingly harmonizing with deeper values, desires, and aspirations. Travel, once a luxury, has transformed into a multidimensional experience—shaped by not just destinations, but the stories and memories we curate. This year, a sense of discovery permeates the air, whether it’s in the realm of daily living or the vast, exhilarating world of travel. As we step deeper into 2023, let’s embark on an exploration of the nuances, narratives, and novelties that will define our times.</p>
+<h5 class="wp-block-heading">The Challenge with Large Images</h5>
 
 
 
-<h2 class="wp-block-heading">Crafting Meaningful Journeys</h2>
+<p>Since the earliest releases, our platform has permitted the embedding of images in dashboards and widgets via external links or Base64 encoded data URLs. While flexible, this approach presented a significant challenge. Users occasionally embedded images up to 50MB in size directly into dashboards. Editing or exporting these dashboards meant transferring massive JSON files to and from the server, a highly inefficient process. This not only affected loading times but also the responsiveness of the dashboard editing experience.</p>
 
 
 
-<p>Whether it’s the aesthetics of daily living or the wanderlust-inspired journeys we embark on, there’s a vibrant fusion of tradition with innovation, and sustainability with style. The global canvas is filled with new hues, and lifestyle enthusiasts and globe-trotters alike find themselves amidst a renaissance of experiences. As we delve deeper, let’s uncover the mosaic of trends and transformations setting the tone for the year.</p>
+<h5 class="wp-block-heading">The Solution</h5>
 
 
 
-<h3 class="wp-block-heading">Sustainability: Beyond Buzzwords to Daily Practice</h3>
+<p>To address this issue, we&#8217;ve introduced a major update in how images are handled within the platform. A central aspect of this update is the introduction of the <a href="https://thingsboard.io/docs/user-guide/image-gallery/">Image Gallery</a>. By moving dashboards to a separate entity and utilizing our internal, relative links for storing image references, we&#8217;ve significantly improved efficiency. This change minimizes the size of dashboard JSON files, streamlining both loading and editing processes. The Image Gallery simplifies the process of uploading, organizing, and selecting images.</p>
 
 
 
-<p>However, embrace extends far beyond our wardrobes. Homes in 2023 reflect a renewed commitment to the environment, with interiors adorned with sustainable decor, energy-efficient appliances ruling the roost, and a rise in organic home gardens. Furthermore, the modern traveler’s journey is painted with shades of green. Eco-resorts, carbon-neutral travel options, and destinations rooted in environmental conservation are becoming the go-to choices, echoing a global desire to tread lightly on the planet.</p>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="576" src="./../../../wp-content/uploads/2024/02/image-viewing-mode-1-ce-1024x576.png" alt="" class="wp-image-2545" srcset="./../../../wp-content/uploads/2024/02/image-viewing-mode-1-ce-1024x576.png 1024w, ./../../../wp-content/uploads/2024/02/image-viewing-mode-1-ce-300x169.png 300w, ./../../../wp-content/uploads/2024/02/image-viewing-mode-1-ce-768x432.png 768w, ./../../../wp-content/uploads/2024/02/image-viewing-mode-1-ce-1536x864.png 1536w, ./../../../wp-content/uploads/2024/02/image-viewing-mode-1-ce-512x288.png 512w, ./../../../wp-content/uploads/2024/02/image-viewing-mode-1-ce-920x518.png 920w, ./../../../wp-content/uploads/2024/02/image-viewing-mode-1-ce-1600x900.png 1600w, ./../../../wp-content/uploads/2024/02/image-viewing-mode-1-ce.png 1920w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
-<h3 class="wp-block-heading">Connecting with Nature: A Return to the Outdoors</h3>
+<h5 class="wp-block-heading">Backward Сompatibility</h5>
 
 
 
-<p>In the midst of our evolving world, a notable trend in 2023 is the rekindling of our relationship with the great outdoors. People are rediscovering the beauty and serenity of natural landscapes, seeking solace in the embrace of forests, mountains, and beaches. This year, the call of the wild is stronger than ever.</p>
+<p>The platform&#8217;s upgrade script automatically converts all existing dashboards to the new format. Users can still upload dashboards in the old format to a new platform instance. These dashboards will automatically be converted to the new format during the upload process.</p>
 
 
 
-<p>Amidst bustling cityscapes and the daily hustle, there’s a growing desire to escape to places where smartphones lose signal and concrete jungles are replaced by actual ones. Nature retreats, camping adventures, and wilderness hikes have surged in popularity, allowing individuals to disconnect from the digital realm and reconnect with the earth.</p>
+<p>For example, consider a “Sensors” dashboard with its background image stored in the old format:</p>
 
 
 
-<h3 class="wp-block-heading">Digital Nomadism and Experiential Travel: Redefining Boundaries</h3>
+<pre class="wp-block-code has-black-color has-gray-200-background-color has-text-color has-background has-link-color wp-elements-9c14c93de2b5354a60fa0427a189ffb7"><code lang="json" class="language-json">{
+...
+"backgroundImageUrl": "data:image/webp;base64,iVBORw...JRU5ErkJggg=="
+...
+}</code></pre>
 
 
 
-<p>The very essence of work and workplace has been reimagined this year. With the advent of remote working technologies and a globalized workforce, professionals aren’t chained to a desk or a city. Beaches, quaint cafes in historic towns, and serene mountain retreats are becoming the new “office” for many. But it’s not just work that’s breaking boundaries; it’s also how we choose to spend our leisure time.</p>
+<p>After the upgrade, a new image will be created in the image gallery:</p>
 
 
 
-<p>Travel in 2023 is less about sightseeing and more about experiencing. Tourists today are keen on immersing themselves fully, be it by living with local communities or participating in native traditions. This search for authenticity in travel is further enhanced by technological innovations. Augmented reality tours, AI-driven travel suggestions, and virtual explorations are bridging the gap between the real and virtual, ensuring travelers get the best of both worlds.</p>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="633" src="./../../../wp-content/uploads/2024/02/image-1-1024x633.png" alt="" class="wp-image-2570" srcset="./../../../wp-content/uploads/2024/02/image-1-1024x633.png 1024w, ./../../../wp-content/uploads/2024/02/image-1-300x185.png 300w, ./../../../wp-content/uploads/2024/02/image-1-768x474.png 768w, ./../../../wp-content/uploads/2024/02/image-1-1536x949.png 1536w, ./../../../wp-content/uploads/2024/02/image-1-512x316.png 512w, ./../../../wp-content/uploads/2024/02/image-1-920x568.png 920w, ./../../../wp-content/uploads/2024/02/image-1-1600x988.png 1600w, ./../../../wp-content/uploads/2024/02/image-1.png 1753w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>The image name is auto-generated based on the dashboard name and the dashboard element where the image is used. This same behavior applies to images used in widget configuration: markers, backgrounds, etc. The dashboard now references the image using the following link:</p>
+
+
+
+<pre class="wp-block-code"><code lang="json" class="language-json">{
+...
+"backgroundImageUrl": "/api/images/tenant/sensors_dashboard_default_background.webp"
+...
+}</code></pre>
+
+
+
+<h5 class="wp-block-heading">Private and Public image links</h5>
+
+
+
+<p>Images can be provisioned at the system and tenant levels. System-level widgets are accessible to all platform users, while tenant images are available to authorized users of specific tenants.</p>
+
+
+
+<p>To embed an image into an Angular HTML template, such as the Markdown widget, HTML section in the widget editor, custom actions, etc., use the following code snippet:</p>
+
+
+
+<pre class="wp-block-code has-primary-color has-text-color has-link-color wp-elements-226ef63534aca3594fe97c62579749c9"><code lang="javascript" class="language-javascript">&lt;img [src]="'/api/images/tenant/sensors_dashboard_default_background.webp' | image | async" /&gt;</code></pre>
+
+
+
+<p>The <code>image</code> pipe automatically adds the necessary authentication headers to the image request, allowing the same relative image URL to return different content for users from different tenants.</p>
+
+
+
+<p>However, custom widgets or static HTML blocks that do not support Angular HTML syntax cannot add authentication headers to requests. Therefore, every platform image also has a unique URL for downloading the image without authentication. Using the following code snippet, you may embed an image into the components based on the plain HTML. Such components include HTML card widgets, cell content functions, etc.</p>
+
+
+
+<pre class="wp-block-code"><code lang="javascript" class="language-javascript">&lt;img src="/api/images/public/ZA4biARtpnl970l0j8MMolRKM56fbpK1" alt="&amp;quot;Sensors&amp;quot; dashboard default background" /&gt;</code></pre>
+
+
+
+<p>Each code snippet is unique to its image, and you can find the corresponding snippets in the Embed image window.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="643" src="./../../../wp-content/uploads/2024/02/image-2-1024x643.png" alt="" class="wp-image-2573" srcset="./../../../wp-content/uploads/2024/02/image-2-1024x643.png 1024w, ./../../../wp-content/uploads/2024/02/image-2-300x188.png 300w, ./../../../wp-content/uploads/2024/02/image-2-768x482.png 768w, ./../../../wp-content/uploads/2024/02/image-2-512x322.png 512w, ./../../../wp-content/uploads/2024/02/image-2-920x578.png 920w, ./../../../wp-content/uploads/2024/02/image-2.png 1186w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<h5 class="wp-block-heading">Caching</h5>
+
+
+
+<p>Our image API now utilizes ETags to optimize caching, ensuring that images are only re-downloaded when they have changed. This approach significantly saves bandwidth and improves load times. While we don&#8217;t apply Cache-Control headers by default, users have the flexibility to customize caching behavior through environment variables, including settings for image ETags cache TTL, maximum cache size, and browser cache TTL for both system and tenant images. These settings are crucial for balancing between reducing server load and ensuring content freshness.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="806" src="./../../../wp-content/uploads/2024/02/image-6-1024x806.png" alt="" class="wp-image-2613" srcset="./../../../wp-content/uploads/2024/02/image-6-1024x806.png 1024w, ./../../../wp-content/uploads/2024/02/image-6-300x236.png 300w, ./../../../wp-content/uploads/2024/02/image-6-768x605.png 768w, ./../../../wp-content/uploads/2024/02/image-6-512x403.png 512w, ./../../../wp-content/uploads/2024/02/image-6-920x724.png 920w, ./../../../wp-content/uploads/2024/02/image-6.png 1500w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>The platform offers environment variables to control caching behavior:</p>
+
+
+
+<ul>
+<li><strong>CACHE_SPECS_IMAGE_ETAGS_TTL:</strong> Controls the cache TTL for image ETags. The default is set to 44640 minutes (31 days), after which the cache is cleared.</li>
+
+
+
+<li><strong>CACHE_SPECS_IMAGE_ETAGS_MAX_SIZE:</strong> Determines the maximum ETags cache size on the server. The default is 10000. Setting this to 0 disables the cache. </li>
+
+
+
+<li><strong>CACHE_SPECS_IMAGE_SYSTEM_BROWSER_TTL and CACHE_SPECS_IMAGE_TENANT_BROWSER_TTL:</strong> These settings manage the browser cache TTL for system and tenant images, respectively, with a default of 0 minutes, meaning caching is disabled by default.</li>
+</ul>
+
+
+
+<p>These settings allow administrators to adjust the balance between performance and content freshness as needed.</p>
+
+
+
+<h5 class="wp-block-heading">Improvement Summary</h5>
+
+
+
+<p>By tackling the challenge of image management within dashboards, we aim to offer a more efficient, robust, and user-friendly platform. Following the upgrade of <a href="https://thingsboard.cloud/">thingsboard.cloud</a>, we&#8217;ve observed an 86% reduction in the size of the dashboards, and some dashboards now load more than twice as fast.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>./../../../reviving-retro-vintage-trends-making-a-modern-comeback/feed/index.html</wfw:commentRss>
-			<slash:comments>4</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Invitation to the online event: discover the latest updates from ThingsBoard platform!</title>
+		<link>./../../../andrews-blog-post-test/index.html</link>
+		
+		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
+		<pubDate>Tue, 13 Feb 2024 16:07:47 +0000</pubDate>
+				<category><![CDATA[Community]]></category>
+		<category><![CDATA[Company]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=30</guid>
+
+					<description><![CDATA[Greetings, dear users! We are excited to announce an upcoming online event where we will provide a detailed&#8230;]]></description>
+										<content:encoded><![CDATA[
+<p>Greetings, dear users!</p>
+
+
+
+<p>We are excited to announce an upcoming online event where we will provide a detailed overview of all the exciting innovations and updates on our ThingsBoard platform. This event will be a unique opportunity for you to be the first to learn about the enhancements awaiting you in your favorite IoT project management tool.</p>
+
+
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-9 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="2560" height="1486" data-id="2460" src="./../../../wp-content/uploads/2024/02/2201_w037_n003_155b_p1_155-3-scaled.jpg" alt="" class="wp-image-2460" srcset="./../../../wp-content/uploads/2024/02/2201_w037_n003_155b_p1_155-3-scaled.jpg 2560w, ./../../../wp-content/uploads/2024/02/2201_w037_n003_155b_p1_155-3-300x174.jpg 300w" sizes="(max-width: 2560px) 100vw, 2560px" /></figure>
+</figure>
+
+
+
+<h2 class="wp-block-heading">Date and Time</h2>
+
+
+
+<p>Date: 12 of March<br>Time: 16:00 <br>Location: Online (Event link will be provided after registration)</p>
+
+
+
+<h2 class="wp-block-heading">What to Expect</h2>
+
+
+
+<ul>
+<li><strong>New features overview:</strong> Learn about the latest platform updates and how they can enhance your experience working with ThingsBoard.</li>
+
+
+
+<li><strong>Process demonstrations:</strong> See live examples of how to use the new features and capabilities to manage your projects more effectively.</li>
+
+
+
+<li><strong>Questions and answers:</strong> Ask your questions to our experts directly during the event and receive real-time answers.</li>
+</ul>
+
+
+
+<h2 class="wp-block-heading">Registration</h2>
+
+
+
+<p>To participate in this exciting event, please register using the following link: [Registration Link]</p>
+
+
+
+<p>Don&#8217;t miss the chance to be the first to learn about all the new features and improvements on our platform! Join us at our online event and stay updated on all the changes.</p>
+
+
+
+<p>We look forward to meeting you!</p>
+
+
+
+<p>Best regards, The ThingsBoard Team</p>
+]]></content:encoded>
+					
 		
 		
 			</item>
@@ -115,7 +939,7 @@
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Wed, 11 Oct 2023 06:25:03 +0000</pubDate>
-				<category><![CDATA[Technology]]></category>
+				<category><![CDATA[Uncategorized]]></category>
 		<guid isPermaLink="false">https://swyft.codesupply.co/lifestyle/?p=2096</guid>
 
 					<description><![CDATA[The blog explores the rapidly evolving convergence of work, travel, and technology, ushering in an era of digital nomads.
@@ -174,449 +998,145 @@
 		
 			</item>
 		<item>
-		<title>Road Tripping Across New Zealand: A Guide to the Island’s Best Kept Secrets</title>
+		<title>Enhancing IoT solutions with edge computing</title>
 		<link>./../../../road-tripping-across-new-zealand-a-guide-to-the-islands-best-kept-secrets/index.html</link>
-					<comments>./../../../road-tripping-across-new-zealand-a-guide-to-the-islands-best-kept-secrets/index.html#respond</comments>
+					<comments>./../../../road-tripping-across-new-zealand-a-guide-to-the-islands-best-kept-secrets/index.html#comments</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Wed, 11 Oct 2023 06:24:02 +0000</pubDate>
-				<category><![CDATA[Travel]]></category>
+				<category><![CDATA[Community]]></category>
 		<guid isPermaLink="false">https://swyft.codesupply.co/lifestyle/?p=2094</guid>
 
 					<description><![CDATA[Leveraging technology in daily routines and work, individuals can now experience a seamless blend of business, work, and leisure.]]></description>
 										<content:encoded><![CDATA[
-<p>2023 unfurls as a captivating tapestry of change and rejuvenation, weaving together threads of the past’s lessons with the possibilities of the future. As we traverse this unique juncture, it’s evident that our world is not merely changing—it’s evolving.</p>
+<p>Hey IoT enthusiasts!</p>
 
 
 
-<p>Our lifestyle choices, influenced by the rapid technological advances, global challenges, and internal reflections of recent years, are increasingly harmonizing with deeper values, desires, and aspirations. Travel, once a luxury, has transformed into a multidimensional experience—shaped by not just destinations, but the stories and memories we curate. This year, a sense of discovery permeates the air, whether it’s in the realm of daily living or the vast, exhilarating world of travel. As we step deeper into 2023, let’s embark on an exploration of the nuances, narratives, and novelties that will define our times.</p>
+<p>Are you looking to take your IoT projects to the next level? If so, you&#8217;ve come to the right place. Today, we&#8217;re diving deep into the world of edge computing and exploring how it can revolutionize the way we approach IoT solutions.</p>
 
 
 
-<h2 class="wp-block-heading">Crafting Meaningful Journeys</h2>
+<h3 class="wp-block-heading"><a href="https://www.wikipedia.com.ua/">What</a> is Edge Computing?</h3>
 
 
 
-<p>Whether it’s the aesthetics of daily living or the wanderlust-inspired journeys we embark on, there’s a vibrant fusion of tradition with innovation, and sustainability with style. The global canvas is filled with new hues, and lifestyle enthusiasts and globe-trotters alike find themselves amidst a renaissance of experiences. As we delve deeper, let’s uncover the mosaic of trends and transformations setting the tone for the year.</p>
+<p>Edge computing is a distributed computing paradigm that brings computation and data storage closer to the location where it is needed, improving response times and saving bandwidth. In the context of IoT, edge computing enables devices to process data locally, reducing latency and ensuring real-time decision-making capabilities.</p>
 
 
 
-<h3 class="wp-block-heading">Sustainability: Beyond Buzzwords to Daily Practice</h3>
+<h3 class="wp-block-heading">Benefits of Edge Computing in IoT:</h3>
 
 
 
-<p>However, embrace extends far beyond our wardrobes. Homes in 2023 reflect a renewed commitment to the environment, with interiors adorned with sustainable decor, energy-efficient appliances ruling the roost, and a rise in organic home gardens. Furthermore, the modern traveler’s journey is painted with shades of green. Eco-resorts, carbon-neutral travel options, and destinations rooted in environmental conservation are becoming the go-to choices, echoing a global desire to tread lightly on the planet.</p>
+<ol>
+<li><strong>Reduced Latency</strong>: By processing data closer to its source, edge computing minimizes the time it takes for data to travel from devices to the cloud and back, resulting in lower latency and faster response times.</li>
 
 
 
-<h3 class="wp-block-heading">Connecting with Nature: A Return to the Outdoors</h3>
+<li><strong>Improved Reliability</strong>: Edge computing reduces reliance on cloud connectivity, making IoT solutions more resilient to network outages and ensuring continuous operation even in remote or offline environments.</li>
 
 
 
-<p>In the midst of our evolving world, a notable trend in 2023 is the rekindling of our relationship with the great outdoors. People are rediscovering the beauty and serenity of natural landscapes, seeking solace in the embrace of forests, mountains, and beaches. This year, the call of the wild is stronger than ever.</p>
+<li><strong>Enhanced Security</strong>: Edge computing enables data to be processed and analyzed locally, reducing the risk of data breaches and ensuring sensitive information remains secure.</li>
 
 
 
-<p>Amidst bustling cityscapes and the daily hustle, there’s a growing desire to escape to places where smartphones lose signal and concrete jungles are replaced by actual ones. Nature retreats, camping adventures, and wilderness hikes have surged in popularity, allowing individuals to disconnect from the digital realm and reconnect with the earth.</p>
+<li><strong>Scalability</strong>: Edge computing allows for distributed processing of data across a network of edge devices, enabling IoT solutions to scale more effectively to accommodate growing data volumes and device deployments.</li>
+</ol>
 
 
 
-<h3 class="wp-block-heading">Digital Nomadism and Experiential Travel: Redefining Boundaries</h3>
+<h3 class="wp-block-heading">Real-World Applications:</h3>
 
 
 
-<p>The very essence of work and workplace has been reimagined this year. With the advent of remote working technologies and a globalized workforce, professionals aren’t chained to a desk or a city. Beaches, quaint cafes in historic towns, and serene mountain retreats are becoming the new “office” for many. But it’s not just work that’s breaking boundaries; it’s also how we choose to spend our leisure time.</p>
+<ul>
+<li><strong>Smart Manufacturing</strong>: Edge computing enables predictive maintenance, real-time monitoring, and process optimization in manufacturing environments, improving efficiency and reducing downtime.</li>
 
 
 
-<p>Travel in 2023 is less about sightseeing and more about experiencing. Tourists today are keen on immersing themselves fully, be it by living with local communities or participating in native traditions. This search for authenticity in travel is further enhanced by technological innovations. Augmented reality tours, AI-driven travel suggestions, and virtual explorations are bridging the gap between the real and virtual, ensuring travelers get the best of both worlds.</p>
+<li><strong>Smart Cities</strong>: Edge computing supports real-time analysis of data from sensors deployed throughout the city, enabling faster response to emergencies, optimized traffic management, and improved public services.</li>
+
+
+
+<li><strong>Healthcare</strong>: Edge computing facilitates remote patient monitoring, real-time analysis of medical data, and personalized healthcare delivery, improving patient outcomes and reducing healthcare costs.</li>
+</ul>
+
+
+
+<h3 class="wp-block-heading">Getting Started with Edge Computing:</h3>
+
+
+
+<p>Ready to harness the power of edge computing for your IoT projects? Check out our comprehensive guide on getting started with edge computing on the ThingsBoard platform, where we&#8217;ll walk you through the process of setting up edge devices, deploying edge analytics, and integrating with cloud services.</p>
+
+
+
+<h3 class="wp-block-heading">Conclusion:</h3>
+
+
+
+<p>Edge computing is revolutionizing the way we approach IoT solutions, enabling faster response times, improved reliability, and enhanced security. By leveraging the power of edge computing, you can unlock new possibilities for your IoT projects and take them to new heights.</p>
+
+
+
+<p>Stay tuned for more insights, tutorials, and case studies on edge computing and IoT from ThingsBoard!</p>
 ]]></content:encoded>
 					
 					<wfw:commentRss>./../../../road-tripping-across-new-zealand-a-guide-to-the-islands-best-kept-secrets/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
+			<slash:comments>2</slash:comments>
 		
 		
 			</item>
 		<item>
-		<title>Digital Detox: Unplugging to Reconnect with What Matters</title>
+		<title>Top 3 widgets in ThingsBoard</title>
 		<link>./../../../digital-detox-unplugging-to-reconnect-with-what-matters/index.html</link>
 					<comments>./../../../digital-detox-unplugging-to-reconnect-with-what-matters/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Wed, 11 Oct 2023 06:23:00 +0000</pubDate>
-				<category><![CDATA[Lifestyle]]></category>
+				<category><![CDATA[Uncategorized]]></category>
 		<guid isPermaLink="false">https://swyft.codesupply.co/lifestyle/?p=2092</guid>
 
 					<description><![CDATA[The fusion of business, lifestyle, and technology is creating a harmonized existence, offering both personal and professional growth opportunities.]]></description>
 										<content:encoded><![CDATA[
-<p>2023 unfurls as a captivating tapestry of change and rejuvenation, weaving together threads of the past’s lessons with the possibilities of the future. As we traverse this unique juncture, it’s evident that our world is not merely changing—it’s evolving.</p>
+<p>In the world of IoT platforms, ThingsBoard stands out for its flexibility, scalability, and feature-rich environment. Among its most compelling features are its widgets, which allow users to visualize data, control devices, and create custom dashboards for monitoring and analysis. Let&#8217;s dive into the top 3 widgets that are revolutionizing how we interact with IoT data in ThingsBoard.</p>
 
 
 
-<p>Our lifestyle choices, influenced by the rapid technological advances, global challenges, and internal reflections of recent years, are increasingly harmonizing with deeper values, desires, and aspirations. Travel, once a luxury, has transformed into a multidimensional experience—shaped by not just destinations, but the stories and memories we curate. This year, a sense of discovery permeates the air, whether it’s in the realm of daily living or the vast, exhilarating world of travel. As we step deeper into 2023, let’s embark on an exploration of the nuances, narratives, and novelties that will define our times.</p>
+<h3 class="wp-block-heading">1. <strong>Charts Widget</strong></h3>
 
 
 
-<h2 class="wp-block-heading">Crafting Meaningful Journeys</h2>
+<p>The Charts widget is a powerful tool for visualizing time-series data. It supports various chart types, including line, bar, pie, and area charts, making it incredibly versatile for different use cases. Users can customize the appearance, add multiple data sources, and apply aggregation functions to simplify complex datasets. Whether you&#8217;re monitoring temperature changes, energy consumption, or device activity, the Charts widget provides a clear and interactive way to analyze trends over time.</p>
 
 
 
-<p>Whether it’s the aesthetics of daily living or the wanderlust-inspired journeys we embark on, there’s a vibrant fusion of tradition with innovation, and sustainability with style. The global canvas is filled with new hues, and lifestyle enthusiasts and globe-trotters alike find themselves amidst a renaissance of experiences. As we delve deeper, let’s uncover the mosaic of trends and transformations setting the tone for the year.</p>
+<h3 class="wp-block-heading">2. <strong>Maps Widget</strong></h3>
 
 
 
-<h3 class="wp-block-heading">Sustainability: Beyond Buzzwords to Daily Practice</h3>
+<p>For IoT applications that involve location tracking, the Maps widget is indispensable. It integrates seamlessly with popular map services like Google Maps and OpenStreetMap, allowing for real-time tracking of devices. Users can customize markers, add tooltips, and even create geofences for location-based alerts. The Maps widget not only enhances the visualization of spatial data but also adds a layer of interaction by enabling users to zoom, pan, and click on devices for more detailed information.</p>
 
 
 
-<p>However, embrace extends far beyond our wardrobes. Homes in 2023 reflect a renewed commitment to the environment, with interiors adorned with sustainable decor, energy-efficient appliances ruling the roost, and a rise in organic home gardens. Furthermore, the modern traveler’s journey is painted with shades of green. Eco-resorts, carbon-neutral travel options, and destinations rooted in environmental conservation are becoming the go-to choices, echoing a global desire to tread lightly on the planet.</p>
+<h3 class="wp-block-heading">3. <strong>Knobs and Gauges Widget</strong></h3>
 
 
 
-<h3 class="wp-block-heading">Connecting with Nature: A Return to the Outdoors</h3>
+<p>When it comes to immediate feedback and control, the Knobs and Gauges widget shines. It&#8217;s perfect for displaying real-time data like speed, temperature, or pressure, with customizable scales, colors, and thresholds to signify different states. This widget allows users to quickly grasp the status of a device or process at a glance, making it an essential tool for operational dashboards and control panels.</p>
 
 
 
-<p>In the midst of our evolving world, a notable trend in 2023 is the rekindling of our relationship with the great outdoors. People are rediscovering the beauty and serenity of natural landscapes, seeking solace in the embrace of forests, mountains, and beaches. This year, the call of the wild is stronger than ever.</p>
+<h3 class="wp-block-heading"><strong>Conclusion</strong></h3>
 
 
 
-<p>Amidst bustling cityscapes and the daily hustle, there’s a growing desire to escape to places where smartphones lose signal and concrete jungles are replaced by actual ones. Nature retreats, camping adventures, and wilderness hikes have surged in popularity, allowing individuals to disconnect from the digital realm and reconnect with the earth.</p>
-
-
-
-<h3 class="wp-block-heading">Digital Nomadism and Experiential Travel: Redefining Boundaries</h3>
-
-
-
-<p>The very essence of work and workplace has been reimagined this year. With the advent of remote working technologies and a globalized workforce, professionals aren’t chained to a desk or a city. Beaches, quaint cafes in historic towns, and serene mountain retreats are becoming the new “office” for many. But it’s not just work that’s breaking boundaries; it’s also how we choose to spend our leisure time.</p>
-
-
-
-<p>Travel in 2023 is less about sightseeing and more about experiencing. Tourists today are keen on immersing themselves fully, be it by living with local communities or participating in native traditions. This search for authenticity in travel is further enhanced by technological innovations. Augmented reality tours, AI-driven travel suggestions, and virtual explorations are bridging the gap between the real and virtual, ensuring travelers get the best of both worlds.</p>
+<p>These top 3 widgets in ThingsBoard illustrate the platform&#8217;s strength in providing flexible, customizable tools for IoT data visualization and interaction. By leveraging these widgets, developers and system integrators can create intuitive and effective dashboards that enhance decision-making and operational efficiency in IoT projects.</p>
 ]]></content:encoded>
 					
 					<wfw:commentRss>./../../../digital-detox-unplugging-to-reconnect-with-what-matters/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>From Athleisure to Workleisure: Response to Remote Work</title>
-		<link>./../../../from-athleisure-to-workleisure-fashions-response-to-remote-work/index.html</link>
-					<comments>./../../../from-athleisure-to-workleisure-fashions-response-to-remote-work/index.html#respond</comments>
-		
-		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
-		<pubDate>Wed, 11 Oct 2023 06:21:31 +0000</pubDate>
-				<category><![CDATA[Trends]]></category>
-		<guid isPermaLink="false">https://swyft.codesupply.co/lifestyle/?p=2090</guid>
-
-					<description><![CDATA[The blog explores the rapidly evolving convergence of work, travel, and technology, ushering in an era of digital nomads.]]></description>
-										<content:encoded><![CDATA[
-<p>2023 unfurls as a captivating tapestry of change and rejuvenation, weaving together threads of the past’s lessons with the possibilities of the future. As we traverse this unique juncture, it’s evident that our world is not merely changing—it’s evolving.</p>
-
-
-
-<p>Our lifestyle choices, influenced by the rapid technological advances, global challenges, and internal reflections of recent years, are increasingly harmonizing with deeper values, desires, and aspirations. Travel, once a luxury, has transformed into a multidimensional experience—shaped by not just destinations, but the stories and memories we curate. This year, a sense of discovery permeates the air, whether it’s in the realm of daily living or the vast, exhilarating world of travel. As we step deeper into 2023, let’s embark on an exploration of the nuances, narratives, and novelties that will define our times.</p>
-
-
-
-<h2 class="wp-block-heading">Crafting Meaningful Journeys</h2>
-
-
-
-<p>Whether it’s the aesthetics of daily living or the wanderlust-inspired journeys we embark on, there’s a vibrant fusion of tradition with innovation, and sustainability with style. The global canvas is filled with new hues, and lifestyle enthusiasts and globe-trotters alike find themselves amidst a renaissance of experiences. As we delve deeper, let’s uncover the mosaic of trends and transformations setting the tone for the year.</p>
-
-
-
-<h3 class="wp-block-heading">Sustainability: Beyond Buzzwords to Daily Practice</h3>
-
-
-
-<p>However, embrace extends far beyond our wardrobes. Homes in 2023 reflect a renewed commitment to the environment, with interiors adorned with sustainable decor, energy-efficient appliances ruling the roost, and a rise in organic home gardens. Furthermore, the modern traveler’s journey is painted with shades of green. Eco-resorts, carbon-neutral travel options, and destinations rooted in environmental conservation are becoming the go-to choices, echoing a global desire to tread lightly on the planet.</p>
-
-
-
-<h3 class="wp-block-heading">Connecting with Nature: A Return to the Outdoors</h3>
-
-
-
-<p>In the midst of our evolving world, a notable trend in 2023 is the rekindling of our relationship with the great outdoors. People are rediscovering the beauty and serenity of natural landscapes, seeking solace in the embrace of forests, mountains, and beaches. This year, the call of the wild is stronger than ever.</p>
-
-
-
-<p>Amidst bustling cityscapes and the daily hustle, there’s a growing desire to escape to places where smartphones lose signal and concrete jungles are replaced by actual ones. Nature retreats, camping adventures, and wilderness hikes have surged in popularity, allowing individuals to disconnect from the digital realm and reconnect with the earth.</p>
-
-
-
-<h3 class="wp-block-heading">Digital Nomadism and Experiential Travel: Redefining Boundaries</h3>
-
-
-
-<p>The very essence of work and workplace has been reimagined this year. With the advent of remote working technologies and a globalized workforce, professionals aren’t chained to a desk or a city. Beaches, quaint cafes in historic towns, and serene mountain retreats are becoming the new “office” for many. But it’s not just work that’s breaking boundaries; it’s also how we choose to spend our leisure time.</p>
-
-
-
-<p>Travel in 2023 is less about sightseeing and more about experiencing. Tourists today are keen on immersing themselves fully, be it by living with local communities or participating in native traditions. This search for authenticity in travel is further enhanced by technological innovations. Augmented reality tours, AI-driven travel suggestions, and virtual explorations are bridging the gap between the real and virtual, ensuring travelers get the best of both worlds.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>./../../../from-athleisure-to-workleisure-fashions-response-to-remote-work/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Blockchain Unchained: How Distributed Ledger Technology is Transforming Industries</title>
-		<link>./../../../blockchain-unchained-how-distributed-ledger-technology-is-transforming-industries/index.html</link>
-					<comments>./../../../blockchain-unchained-how-distributed-ledger-technology-is-transforming-industries/index.html#respond</comments>
-		
-		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
-		<pubDate>Wed, 11 Oct 2023 06:20:17 +0000</pubDate>
-				<category><![CDATA[Technology]]></category>
-		<guid isPermaLink="false">https://swyft.codesupply.co/lifestyle/?p=2088</guid>
-
-					<description><![CDATA[The blog explores the rapidly evolving convergence of work, travel, and technology, ushering in an era of digital nomads.]]></description>
-										<content:encoded><![CDATA[
-<p>2023 unfurls as a captivating tapestry of change and rejuvenation, weaving together threads of the past’s lessons with the possibilities of the future. As we traverse this unique juncture, it’s evident that our world is not merely changing—it’s evolving.</p>
-
-
-
-<p>Our lifestyle choices, influenced by the rapid technological advances, global challenges, and internal reflections of recent years, are increasingly harmonizing with deeper values, desires, and aspirations. Travel, once a luxury, has transformed into a multidimensional experience—shaped by not just destinations, but the stories and memories we curate. This year, a sense of discovery permeates the air, whether it’s in the realm of daily living or the vast, exhilarating world of travel. As we step deeper into 2023, let’s embark on an exploration of the nuances, narratives, and novelties that will define our times.</p>
-
-
-
-<h2 class="wp-block-heading">Crafting Meaningful Journeys</h2>
-
-
-
-<p>Whether it’s the aesthetics of daily living or the wanderlust-inspired journeys we embark on, there’s a vibrant fusion of tradition with innovation, and sustainability with style. The global canvas is filled with new hues, and lifestyle enthusiasts and globe-trotters alike find themselves amidst a renaissance of experiences. As we delve deeper, let’s uncover the mosaic of trends and transformations setting the tone for the year.</p>
-
-
-
-<h3 class="wp-block-heading">Sustainability: Beyond Buzzwords to Daily Practice</h3>
-
-
-
-<p>However, embrace extends far beyond our wardrobes. Homes in 2023 reflect a renewed commitment to the environment, with interiors adorned with sustainable decor, energy-efficient appliances ruling the roost, and a rise in organic home gardens. Furthermore, the modern traveler’s journey is painted with shades of green. Eco-resorts, carbon-neutral travel options, and destinations rooted in environmental conservation are becoming the go-to choices, echoing a global desire to tread lightly on the planet.</p>
-
-
-
-<h3 class="wp-block-heading">Connecting with Nature: A Return to the Outdoors</h3>
-
-
-
-<p>In the midst of our evolving world, a notable trend in 2023 is the rekindling of our relationship with the great outdoors. People are rediscovering the beauty and serenity of natural landscapes, seeking solace in the embrace of forests, mountains, and beaches. This year, the call of the wild is stronger than ever.</p>
-
-
-
-<p>Amidst bustling cityscapes and the daily hustle, there’s a growing desire to escape to places where smartphones lose signal and concrete jungles are replaced by actual ones. Nature retreats, camping adventures, and wilderness hikes have surged in popularity, allowing individuals to disconnect from the digital realm and reconnect with the earth.</p>
-
-
-
-<h3 class="wp-block-heading">Digital Nomadism and Experiential Travel: Redefining Boundaries</h3>
-
-
-
-<p>The very essence of work and workplace has been reimagined this year. With the advent of remote working technologies and a globalized workforce, professionals aren’t chained to a desk or a city. Beaches, quaint cafes in historic towns, and serene mountain retreats are becoming the new “office” for many. But it’s not just work that’s breaking boundaries; it’s also how we choose to spend our leisure time.</p>
-
-
-
-<p>Travel in 2023 is less about sightseeing and more about experiencing. Tourists today are keen on immersing themselves fully, be it by living with local communities or participating in native traditions. This search for authenticity in travel is further enhanced by technological innovations. Augmented reality tours, AI-driven travel suggestions, and virtual explorations are bridging the gap between the real and virtual, ensuring travelers get the best of both worlds.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>./../../../blockchain-unchained-how-distributed-ledger-technology-is-transforming-industries/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Eco-friendly Travel: How to Explore the World Sustainably</title>
-		<link>./../../../eco-friendly-travel-how-to-explore-the-world-sustainably/index.html</link>
-					<comments>./../../../eco-friendly-travel-how-to-explore-the-world-sustainably/index.html#respond</comments>
-		
-		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
-		<pubDate>Wed, 11 Oct 2023 06:18:59 +0000</pubDate>
-				<category><![CDATA[Travel]]></category>
-		<guid isPermaLink="false">https://swyft.codesupply.co/lifestyle/?p=2086</guid>
-
-					<description><![CDATA[The blog explores the rapidly evolving convergence of work, travel, and technology, ushering in an era of digital nomads.]]></description>
-										<content:encoded><![CDATA[
-<p>2023 unfurls as a captivating tapestry of change and rejuvenation, weaving together threads of the past’s lessons with the possibilities of the future. As we traverse this unique juncture, it’s evident that our world is not merely changing—it’s evolving.</p>
-
-
-
-<p>Our lifestyle choices, influenced by the rapid technological advances, global challenges, and internal reflections of recent years, are increasingly harmonizing with deeper values, desires, and aspirations. Travel, once a luxury, has transformed into a multidimensional experience—shaped by not just destinations, but the stories and memories we curate. This year, a sense of discovery permeates the air, whether it’s in the realm of daily living or the vast, exhilarating world of travel. As we step deeper into 2023, let’s embark on an exploration of the nuances, narratives, and novelties that will define our times.</p>
-
-
-
-<h2 class="wp-block-heading">Crafting Meaningful Journeys</h2>
-
-
-
-<p>Whether it’s the aesthetics of daily living or the wanderlust-inspired journeys we embark on, there’s a vibrant fusion of tradition with innovation, and sustainability with style. The global canvas is filled with new hues, and lifestyle enthusiasts and globe-trotters alike find themselves amidst a renaissance of experiences. As we delve deeper, let’s uncover the mosaic of trends and transformations setting the tone for the year.</p>
-
-
-
-<h3 class="wp-block-heading">Sustainability: Beyond Buzzwords to Daily Practice</h3>
-
-
-
-<p>However, embrace extends far beyond our wardrobes. Homes in 2023 reflect a renewed commitment to the environment, with interiors adorned with sustainable decor, energy-efficient appliances ruling the roost, and a rise in organic home gardens. Furthermore, the modern traveler’s journey is painted with shades of green. Eco-resorts, carbon-neutral travel options, and destinations rooted in environmental conservation are becoming the go-to choices, echoing a global desire to tread lightly on the planet.</p>
-
-
-
-<h3 class="wp-block-heading">Connecting with Nature: A Return to the Outdoors</h3>
-
-
-
-<p>In the midst of our evolving world, a notable trend in 2023 is the rekindling of our relationship with the great outdoors. People are rediscovering the beauty and serenity of natural landscapes, seeking solace in the embrace of forests, mountains, and beaches. This year, the call of the wild is stronger than ever.</p>
-
-
-
-<p>Amidst bustling cityscapes and the daily hustle, there’s a growing desire to escape to places where smartphones lose signal and concrete jungles are replaced by actual ones. Nature retreats, camping adventures, and wilderness hikes have surged in popularity, allowing individuals to disconnect from the digital realm and reconnect with the earth.</p>
-
-
-
-<h3 class="wp-block-heading">Digital Nomadism and Experiential Travel: Redefining Boundaries</h3>
-
-
-
-<p>The very essence of work and workplace has been reimagined this year. With the advent of remote working technologies and a globalized workforce, professionals aren’t chained to a desk or a city. Beaches, quaint cafes in historic towns, and serene mountain retreats are becoming the new “office” for many. But it’s not just work that’s breaking boundaries; it’s also how we choose to spend our leisure time.</p>
-
-
-
-<p>Travel in 2023 is less about sightseeing and more about experiencing. Tourists today are keen on immersing themselves fully, be it by living with local communities or participating in native traditions. This search for authenticity in travel is further enhanced by technological innovations. Augmented reality tours, AI-driven travel suggestions, and virtual explorations are bridging the gap between the real and virtual, ensuring travelers get the best of both worlds.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>./../../../eco-friendly-travel-how-to-explore-the-world-sustainably/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Sustainable Fashion: Making Conscious Choices for Your Wardrobe</title>
-		<link>./../../../sustainable-fashion-making-conscious-choices-for-your-wardrobe/index.html</link>
-					<comments>./../../../sustainable-fashion-making-conscious-choices-for-your-wardrobe/index.html#respond</comments>
-		
-		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
-		<pubDate>Wed, 11 Oct 2023 06:17:36 +0000</pubDate>
-				<category><![CDATA[Lifestyle]]></category>
-		<guid isPermaLink="false">https://swyft.codesupply.co/lifestyle/?p=2084</guid>
-
-					<description><![CDATA[Leveraging technology in daily routines and work, individuals can now experience a seamless blend of business, work, and leisure.]]></description>
-										<content:encoded><![CDATA[
-<p>2023 unfurls as a captivating tapestry of change and rejuvenation, weaving together threads of the past’s lessons with the possibilities of the future. As we traverse this unique juncture, it’s evident that our world is not merely changing—it’s evolving.</p>
-
-
-
-<p>Our lifestyle choices, influenced by the rapid technological advances, global challenges, and internal reflections of recent years, are increasingly harmonizing with deeper values, desires, and aspirations. Travel, once a luxury, has transformed into a multidimensional experience—shaped by not just destinations, but the stories and memories we curate. This year, a sense of discovery permeates the air, whether it’s in the realm of daily living or the vast, exhilarating world of travel. As we step deeper into 2023, let’s embark on an exploration of the nuances, narratives, and novelties that will define our times.</p>
-
-
-
-<h2 class="wp-block-heading">Crafting Meaningful Journeys</h2>
-
-
-
-<p>Whether it’s the aesthetics of daily living or the wanderlust-inspired journeys we embark on, there’s a vibrant fusion of tradition with innovation, and sustainability with style. The global canvas is filled with new hues, and lifestyle enthusiasts and globe-trotters alike find themselves amidst a renaissance of experiences. As we delve deeper, let’s uncover the mosaic of trends and transformations setting the tone for the year.</p>
-
-
-
-<h3 class="wp-block-heading">Sustainability: Beyond Buzzwords to Daily Practice</h3>
-
-
-
-<p>However, embrace extends far beyond our wardrobes. Homes in 2023 reflect a renewed commitment to the environment, with interiors adorned with sustainable decor, energy-efficient appliances ruling the roost, and a rise in organic home gardens. Furthermore, the modern traveler’s journey is painted with shades of green. Eco-resorts, carbon-neutral travel options, and destinations rooted in environmental conservation are becoming the go-to choices, echoing a global desire to tread lightly on the planet.</p>
-
-
-
-<h3 class="wp-block-heading">Connecting with Nature: A Return to the Outdoors</h3>
-
-
-
-<p>In the midst of our evolving world, a notable trend in 2023 is the rekindling of our relationship with the great outdoors. People are rediscovering the beauty and serenity of natural landscapes, seeking solace in the embrace of forests, mountains, and beaches. This year, the call of the wild is stronger than ever.</p>
-
-
-
-<p>Amidst bustling cityscapes and the daily hustle, there’s a growing desire to escape to places where smartphones lose signal and concrete jungles are replaced by actual ones. Nature retreats, camping adventures, and wilderness hikes have surged in popularity, allowing individuals to disconnect from the digital realm and reconnect with the earth.</p>
-
-
-
-<h3 class="wp-block-heading">Digital Nomadism and Experiential Travel: Redefining Boundaries</h3>
-
-
-
-<p>The very essence of work and workplace has been reimagined this year. With the advent of remote working technologies and a globalized workforce, professionals aren’t chained to a desk or a city. Beaches, quaint cafes in historic towns, and serene mountain retreats are becoming the new “office” for many. But it’s not just work that’s breaking boundaries; it’s also how we choose to spend our leisure time.</p>
-
-
-
-<p>Travel in 2023 is less about sightseeing and more about experiencing. Tourists today are keen on immersing themselves fully, be it by living with local communities or participating in native traditions. This search for authenticity in travel is further enhanced by technological innovations. Augmented reality tours, AI-driven travel suggestions, and virtual explorations are bridging the gap between the real and virtual, ensuring travelers get the best of both worlds.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>./../../../sustainable-fashion-making-conscious-choices-for-your-wardrobe/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Gen Z’s Digital Landscape: Social Media Trends and Their Societal Impact</title>
-		<link>./../../../gen-zs-digital-landscape-social-media-trends-and-their-societal-impact/index.html</link>
-					<comments>./../../../gen-zs-digital-landscape-social-media-trends-and-their-societal-impact/index.html#respond</comments>
-		
-		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
-		<pubDate>Wed, 11 Oct 2023 06:16:24 +0000</pubDate>
-				<category><![CDATA[Trends]]></category>
-		<guid isPermaLink="false">https://swyft.codesupply.co/lifestyle/?p=2082</guid>
-
-					<description><![CDATA[Leveraging technology in daily routines and work, individuals can now experience a seamless blend of business, work, and leisure.]]></description>
-										<content:encoded><![CDATA[
-<p>2023 unfurls as a captivating tapestry of change and rejuvenation, weaving together threads of the past’s lessons with the possibilities of the future. As we traverse this unique juncture, it’s evident that our world is not merely changing—it’s evolving.</p>
-
-
-
-<p>Our lifestyle choices, influenced by the rapid technological advances, global challenges, and internal reflections of recent years, are increasingly harmonizing with deeper values, desires, and aspirations. Travel, once a luxury, has transformed into a multidimensional experience—shaped by not just destinations, but the stories and memories we curate. This year, a sense of discovery permeates the air, whether it’s in the realm of daily living or the vast, exhilarating world of travel. As we step deeper into 2023, let’s embark on an exploration of the nuances, narratives, and novelties that will define our times.</p>
-
-
-
-<h2 class="wp-block-heading">Crafting Meaningful Journeys</h2>
-
-
-
-<p>Whether it’s the aesthetics of daily living or the wanderlust-inspired journeys we embark on, there’s a vibrant fusion of tradition with innovation, and sustainability with style. The global canvas is filled with new hues, and lifestyle enthusiasts and globe-trotters alike find themselves amidst a renaissance of experiences. As we delve deeper, let’s uncover the mosaic of trends and transformations setting the tone for the year.</p>
-
-
-
-<h3 class="wp-block-heading">Sustainability: Beyond Buzzwords to Daily Practice</h3>
-
-
-
-<p>However, embrace extends far beyond our wardrobes. Homes in 2023 reflect a renewed commitment to the environment, with interiors adorned with sustainable decor, energy-efficient appliances ruling the roost, and a rise in organic home gardens. Furthermore, the modern traveler’s journey is painted with shades of green. Eco-resorts, carbon-neutral travel options, and destinations rooted in environmental conservation are becoming the go-to choices, echoing a global desire to tread lightly on the planet.</p>
-
-
-
-<h3 class="wp-block-heading">Connecting with Nature: A Return to the Outdoors</h3>
-
-
-
-<p>In the midst of our evolving world, a notable trend in 2023 is the rekindling of our relationship with the great outdoors. People are rediscovering the beauty and serenity of natural landscapes, seeking solace in the embrace of forests, mountains, and beaches. This year, the call of the wild is stronger than ever.</p>
-
-
-
-<p>Amidst bustling cityscapes and the daily hustle, there’s a growing desire to escape to places where smartphones lose signal and concrete jungles are replaced by actual ones. Nature retreats, camping adventures, and wilderness hikes have surged in popularity, allowing individuals to disconnect from the digital realm and reconnect with the earth.</p>
-
-
-
-<h3 class="wp-block-heading">Digital Nomadism and Experiential Travel: Redefining Boundaries</h3>
-
-
-
-<p>The very essence of work and workplace has been reimagined this year. With the advent of remote working technologies and a globalized workforce, professionals aren’t chained to a desk or a city. Beaches, quaint cafes in historic towns, and serene mountain retreats are becoming the new “office” for many. But it’s not just work that’s breaking boundaries; it’s also how we choose to spend our leisure time.</p>
-
-
-
-<p>Travel in 2023 is less about sightseeing and more about experiencing. Tourists today are keen on immersing themselves fully, be it by living with local communities or participating in native traditions. This search for authenticity in travel is further enhanced by technological innovations. Augmented reality tours, AI-driven travel suggestions, and virtual explorations are bridging the gap between the real and virtual, ensuring travelers get the best of both worlds.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>./../../../gen-zs-digital-landscape-social-media-trends-and-their-societal-impact/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		

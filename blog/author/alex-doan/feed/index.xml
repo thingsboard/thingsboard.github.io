@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Alex Doan &#8211; ThingsBoard&#039;s blog</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../../../index.html</link>
+	<description></description>
+	<lastBuildDate>Mon, 04 Mar 2024 10:58:37 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.3</generator>
+
+<image>
+	<url>./../../../wp-content/uploads/2024/02/cropped-favicon-1-32x32.png</url>
+	<title>Alex Doan &#8211; ThingsBoard&#039;s blog</title>
+	<link>./../../../index.html</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>Why does migration from self-service to PaaS rock? #Design</title>
+		<link>./../../../why-does-migration-from-self-service-to-paas-rock-2/index.html</link>
+					<comments>./../../../why-does-migration-from-self-service-to-paas-rock-2/index.html#respond</comments>
+		
+		<dc:creator><![CDATA[Alex Doan]]></dc:creator>
+		<pubDate>Thu, 29 Feb 2024 11:03:00 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=3239</guid>
+
+					<description><![CDATA[A few examples of why and how the managed service solution hits the self-hosted platform versions nowadays ]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="1280" height="720" src="./../../../wp-content/uploads/2024/02/Migration-1-1.gif" alt="" class="wp-image-3268"/></figure>
+
+
+
+<p style="font-size:16px">Company ${name}, a provider of secure smart metering solutions, initially managed its monitoring with a self-hosted ThingsBoard instance serving as a data processing and visualization layer. However, as the company expanded, the team faced challenges with respect to the infrastructure and services administration.</p>
+
+
+
+<h4 class="wp-block-heading">The problem</h4>
+
+
+
+<p style="font-size:16px">The product owner at Company ${name} at that time described key blockers that prevented their market expansion strategy execution. Among others:  </p>
+
+
+
+<ol>
+<li style="font-size:16px">In-house DevOps resources hiring is expensive budget-wise</li>
+
+
+
+<li style="font-size:16px">Customer deadlines did not introduce room for waiting</li>
+
+
+
+<li style="font-size:16px">Focus on server-side issues instead of application development    </li>
+</ol>
+
+
+
+<blockquote class="wp-block-quote">
+<p style="font-size:14px">&#8220;Anything requiring constant attention besides the product is a lost opportunity cost for us. We wanted to focus on our solutions rather than the way how to support dev-prod environment&#8221;</p>
+<cite>John doe, Product owner</cite></blockquote>
+
+
+
+<p style="font-size:16px">To overcome these challenges, the reliability team has reached out to us to request the migration to the ThingsBoard Cloud Enterprise plan subscription. Articulating the above show-stoppers, the Company ${name} aimed to redirect its focus to strategic projects without being encumbered by the complexities of system maintenance and upgrades.</p>
+
+
+
+<p style="font-size:16px">Company ${name}, a leading Telco/Mobile network provider during the RFP (request for proposal) period, changed the requirement from a self-service IoT Hub to a managed service proposal as previous experience ended up as less marginal. The goal was to enter the technical partnership instead of reinventing the wheel.</p>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="798" src="./../../../wp-content/uploads/2024/02/Magenta-1-1024x798.png" alt="" class="wp-image-3263" srcset="./../../../wp-content/uploads/2024/02/Magenta-1-1024x798.png 1024w, ./../../../wp-content/uploads/2024/02/Magenta-1-300x234.png 300w, ./../../../wp-content/uploads/2024/02/Magenta-1-768x599.png 768w, ./../../../wp-content/uploads/2024/02/Magenta-1-1536x1197.png 1536w, ./../../../wp-content/uploads/2024/02/Magenta-1-2048x1597.png 2048w, ./../../../wp-content/uploads/2024/02/Magenta-1-512x399.png 512w, ./../../../wp-content/uploads/2024/02/Magenta-1-920x717.png 920w, ./../../../wp-content/uploads/2024/02/Magenta-1-1600x1247.png 1600w, ./../../../wp-content/uploads/2024/02/Magenta-1-1920x1497.png 1920w, ./../../../wp-content/uploads/2024/02/Magenta-1-1320x1029.png 1320w, ./../../../wp-content/uploads/2024/02/Magenta-1.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p style="font-size:16px">Magenta Telekom is a technology company whose SaaS platform helps business and governmental customers manage and optimize operations using an IoT tech stack. The company operates at an incredibly high scale in terms of its global telco infrastructure. Before moving to ThingsBoard Cloud, the Company hosted their own data provisioning solution, but that layer was difficult to scale, support, and, in the end, not always reliable.</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p style="font-size:14px">“Developers and people at the company were just exasperated and annoyed with the unreliability of getting queries to complete or with missing metrics.”</p>
+<cite>Senior Director, Production Engineering at magenta telekom</cite></blockquote>
+
+
+
+<p style="font-size:16px">The Company is using the ITSM system, and members of the SRE team knew ThingsBoard offers backend logging and monitoring through ThingsBoard Cloud services. After a successful POC and trial run, the customer launched the Business IoTHub powered by ThingsBoard. The shift resulted in win-win technical cooperation where the client has a ready-to-market product and implements their IoT expansion plus access to custom features development resources.  </p>
+]]></content:encoded>
+					
+					<wfw:commentRss>./../../../why-does-migration-from-self-service-to-paas-rock-2/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Reliable T&#038;H monitoring with WhereView &#038; ThingsBoard #Design</title>
+		<link>./../../../reliable-th-monitoring-with-whereview-thingsboard-2/index.html</link>
+					<comments>./../../../reliable-th-monitoring-with-whereview-thingsboard-2/index.html#respond</comments>
+		
+		<dc:creator><![CDATA[Alex Doan]]></dc:creator>
+		<pubDate>Wed, 28 Feb 2024 12:48:44 +0000</pubDate>
+				<category><![CDATA[Business]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=3188</guid>
+
+					<description><![CDATA[Reliable and high-quality control of temperature and humidity with constant access to monitoring data is an important condition for the storage of thermosensitive drugs and raw materials for medicines. The ThingsBoard partner — Vypin together with our team has implemented a solution for a global pharmaceutical company. The IoT application has helped to optimize processes and costs.]]></description>
+										<content:encoded><![CDATA[
+<p style="font-size:16px">Reliable and high-quality control of temperature and humidity with constant access to monitoring data is an important condition for the storage of thermosensitive drugs and raw materials for medicines. The ThingsBoard partner — <a href="http://vypin.com/" target="_blank" rel="noreferrer noopener">Vypin</a> together with our team has implemented a solution for a global pharmaceutical company. The IoT application has helped to optimize processes and costs.</p>
+
+
+
+<div style="height:16px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/5.svg" alt="" class="wp-image-3225"/></figure>
+
+
+
+<h4 class="wp-block-heading">The problem</h4>
+
+
+
+<p style="font-size:16px">The FDA (The Food &amp; Drug Administration) has strict requirements and recommendations for pharmaceutical manufacturers, in particular regarding storage conditions and the control system to comply with these conditions (more about regulation can be found here). The customer asked&nbsp; Vypin to replace the current system. The previous one didn’t meet the FDA standards, which was the reason for the fines and the potential risk of drug or component damage.</p>
+
+
+
+<p style="font-size:16px">The patient, as they say in the medical field, had specific complaints. First of all, data loss. Existing devices could go offline for various reasons (from network outages to power loss), but the transmission or recording of telemetry did not take place. But the client couldn’t find out about these or those losses, which was the second complaint. The current system does not provide a notification mechanism. In addition, monitoring data was not available remotely.</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p class="is-style-cs-about" style="font-size:16px">Round-the-clock rotation of operators to control the temperature and humidity in the warehouse indeed is not the best solution. Therefore, in the regular automatic reports related to the storage environment state there were gaps in the tables and graphs. The FDA fines for such violations.</p>
+<cite>Customer officer says</cite></blockquote>
+
+
+
+<h4 class="wp-block-heading has-text-align-left">Solution</h4>
+
+
+
+<p style="font-size:16px">To solve the problem, the Vypin team proposed an integrated Vypin-Whereview system (powered by ThingsBoard). The company built a wireless network, installed sensors and gateways</p>
+
+
+
+<p style="font-size:16px">If we mention one of the first problems (data loss), the new sensors now had a memory module and could record telemetry locally. When the gateway connection was lost, data loss (!) didn’t and doesn’t occur. When the online gateway returns, it picks up the accumulated telemetry and sends it to Whereview.</p>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="2409" height="1353" src="./../../../wp-content/uploads/2024/02/4-8.png" alt="" class="wp-image-3223" srcset="./../../../wp-content/uploads/2024/02/4-8.png 2409w, ./../../../wp-content/uploads/2024/02/4-8-300x168.png 300w, ./../../../wp-content/uploads/2024/02/4-8-1024x575.png 1024w, ./../../../wp-content/uploads/2024/02/4-8-768x431.png 768w, ./../../../wp-content/uploads/2024/02/4-8-1536x863.png 1536w, ./../../../wp-content/uploads/2024/02/4-8-2048x1150.png 2048w, ./../../../wp-content/uploads/2024/02/4-8-512x288.png 512w, ./../../../wp-content/uploads/2024/02/4-8-920x517.png 920w, ./../../../wp-content/uploads/2024/02/4-8-1600x899.png 1600w, ./../../../wp-content/uploads/2024/02/4-8-1920x1078.png 1920w, ./../../../wp-content/uploads/2024/02/4-8-1320x741.png 1320w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+
+
+
+<p style="font-size:16px">The application, built on TB, solved the rest of the customer&#8217;s problems. First of all, the client&#8217;s responsible employee gets access to the monitoring data at any time. Managers also received access.</p>
+
+
+
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="587" src="./../../../wp-content/uploads/2024/02/6-6-1024x587.png" alt="" class="wp-image-3228" srcset="./../../../wp-content/uploads/2024/02/6-6-1024x587.png 1024w, ./../../../wp-content/uploads/2024/02/6-6-300x172.png 300w, ./../../../wp-content/uploads/2024/02/6-6-768x440.png 768w, ./../../../wp-content/uploads/2024/02/6-6-1536x880.png 1536w, ./../../../wp-content/uploads/2024/02/6-6-2048x1173.png 2048w, ./../../../wp-content/uploads/2024/02/6-6-512x293.png 512w, ./../../../wp-content/uploads/2024/02/6-6-920x527.png 920w, ./../../../wp-content/uploads/2024/02/6-6-1600x917.png 1600w, ./../../../wp-content/uploads/2024/02/6-6-1920x1100.png 1920w, ./../../../wp-content/uploads/2024/02/6-6-1320x756.png 1320w, ./../../../wp-content/uploads/2024/02/6-6.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p style="font-size:16px">To see the Dashboard with graphs and tables, it is enough just to open the corresponding tab in your own browser and log in.</p>
+
+
+
+<p style="font-size:16px">It makes sense to highlight that based on the rule engine and device profiles, Vypin set up a notification system. In case of violations of the specified conditions (for example, exceeding the temperature thresholds), notifications are received by those who should be aware of this recorded violation. This allows you to respond instantly and even take preventive measures.</p>
+
+
+
+<h4 class="wp-block-heading has-text-align-left">Result </h4>
+
+
+
+<p style="font-size:16px">Everyone understands that it is better (easier, cheaper, less time-consuming) to prevent a disease than to treat it. With the new warehouse monitoring system, the client (patient) has the opportunity for prevention.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>./../../../reliable-th-monitoring-with-whereview-thingsboard-2/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Why does migration from self-service to PaaS rock?</title>
+		<link>./../../../why-does-migration-from-self-service-to-paas-rock/index.html</link>
+					<comments>./../../../why-does-migration-from-self-service-to-paas-rock/index.html#respond</comments>
+		
+		<dc:creator><![CDATA[Alex Doan]]></dc:creator>
+		<pubDate>Mon, 26 Feb 2024 11:02:51 +0000</pubDate>
+				<category><![CDATA[Uncategorized]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=2922</guid>
+
+					<description><![CDATA[A few examples of why and how the managed service solution hits the self-hosted platform versions nowadays ]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1280" height="720" src="./../../../wp-content/uploads/2024/02/Migration-1.gif" alt="" class="wp-image-2927" /></figure>
+
+
+
+<p class="is-style-cs-about has-background" style="background-color:#a2c2dd;font-size:16px">Company ${name}, a provider of secure smart metering solutions, initially managed its monitoring with a self-hosted ThingsBoard instance serving as a data processing and visualization layer. However, as the company expanded, the team faced challenges with respect to the infrastructure and services administration.</p>
+
+
+
+<h2 class="wp-block-heading">The problem</h2>
+
+
+
+<p style="font-size:16px">The product owner at Company ${name} at that time described key blockers that prevented their market expansion strategy execution. Among others:  </p>
+
+
+
+<ol>
+<li style="font-size:14px">In-house DevOps resources hiring is expensive budget-wise</li>
+
+
+
+<li style="font-size:14px">Customer deadlines did not introduce room for waiting</li>
+
+
+
+<li style="font-size:14px">Focus on server-side issues instead of application development    </li>
+</ol>
+
+
+
+<blockquote class="wp-block-quote">
+<p style="font-size:14px">&#8220;Anything requiring constant attention besides the product is a lost opportunity cost for us. We wanted to focus on our solutions rather than the way how to support dev-prod environment&#8221;</p>
+<cite>John doe, Product owner</cite></blockquote>
+
+
+
+<p style="font-size:16px">To overcome these challenges, the reliability team has reached out to us to request the migration to the ThingsBoard Cloud Enterprise plan subscription. Articulating the above show-stoppers, the Company ${name} aimed to redirect its focus to strategic projects without being encumbered by the complexities of system maintenance and upgrades.</p>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity" />
+
+
+
+<p class="is-style-cs-about has-background" style="background-color:#a2c2dd;font-size:16px">Company ${name}, a leading Telco/Mobile network provider during the RFP (request for proposal) period changed the requirement from a self-service IoT Hub to a managed service proposals as previous experience ended up as less marginal. The goal was to enter the technical partnership instead of reinventing the wheel.  </p>
+
+
+<div class="wp-block-image">
+<figure class="aligncenter size-large is-resized"><img loading="lazy" decoding="async" width="1130" height="635" src="./../../../wp-content/uploads/2024/02/Magenta-edited.jpeg" alt="" class="wp-image-2948" style="aspect-ratio:16/9;object-fit:cover;width:653px;height:auto" srcset="./../../../wp-content/uploads/2024/02/Magenta-edited.jpeg 1130w, ./../../../wp-content/uploads/2024/02/Magenta-edited-300x169.jpeg 300w, ./../../../wp-content/uploads/2024/02/Magenta-edited-1024x575.jpeg 1024w, ./../../../wp-content/uploads/2024/02/Magenta-edited-768x432.jpeg 768w, ./../../../wp-content/uploads/2024/02/Magenta-edited-512x288.jpeg 512w, ./../../../wp-content/uploads/2024/02/Magenta-edited-920x517.jpeg 920w" sizes="(max-width: 1130px) 100vw, 1130px" /></figure></div>
+
+
+<p style="font-size:16px">Magenta Telekom, a technology company whose SaaS platform helps business and governmental customers manage and optimize operations using IoT tech stack. The company operates at incredibly high scale, in terms of its global telco infrastructure. Before moving to ThingsBoard Cloud, Company hosted their own data provisioning solution, but that layer was difficult to scale, to support, and, in the end, not always reliable.</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p style="font-size:14px">“Developers and people at the company were just exasperated and annoyed with the unreliability of getting queries to complete or with missing metrics.”</p>
+<cite>Senior Director, Production Engineering at magenta telekom</cite></blockquote>
+
+
+
+<p style="font-size:16px">The Company is using ITSM system, and members of the SRE team knew ThingsBoard offers backend logging and monitoring through ThingsBoard Cloud services. After a successful POC and trial run, the customer launched the Business IoTHub powered by ThingsBoard. The shift resulted in win-win technical cooperation where the client has a ready-to-market product and implements their IoT expansion plus access to custom features development resources.  </p>
+]]></content:encoded>
+					
+					<wfw:commentRss>./../../../why-does-migration-from-self-service-to-paas-rock/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
+		<title>Reliable T&#038;H monitoring with WhereView (ThingsBoard)</title>
+		<link>./../../../reliable-th-monitoring-with-whereview-thingsboard/index.html</link>
+					<comments>./../../../reliable-th-monitoring-with-whereview-thingsboard/index.html#respond</comments>
+		
+		<dc:creator><![CDATA[Alex Doan]]></dc:creator>
+		<pubDate>Fri, 23 Feb 2024 11:26:17 +0000</pubDate>
+				<category><![CDATA[Business]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=2776</guid>
+
+					<description><![CDATA[Reliable and high-quality control of temperature and humidity with constant access to monitoring data is an important condition for the storage of thermosensitive drugs and raw materials for medicines. The ThingsBoard partner — Vypin together with our team has implemented a solution for a global pharmaceutical company. The IoT application has helped to optimize processes and costs.]]></description>
+										<content:encoded><![CDATA[
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="577" src="./../../../wp-content/uploads/2024/02/Header-1024x577.jpeg" alt="" class="wp-image-2845" srcset="./../../../wp-content/uploads/2024/02/Header-1024x577.jpeg 1024w, ./../../../wp-content/uploads/2024/02/Header-300x169.jpeg 300w, ./../../../wp-content/uploads/2024/02/Header-768x433.jpeg 768w, ./../../../wp-content/uploads/2024/02/Header-512x288.jpeg 512w, ./../../../wp-content/uploads/2024/02/Header-920x518.jpeg 920w, ./../../../wp-content/uploads/2024/02/Header.jpeg 1413w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p class="has-text-align-center is-style-cs-about has-orange-background-color has-text-color has-background has-link-color wp-elements-b311b7bf8bea0db78ea5a62725b058bd" style="color:#111163;padding-right:var(--wp--preset--spacing--70);padding-left:var(--wp--preset--spacing--70);font-size:16px">Reliable and high-quality control of temperature and humidity with constant access to monitoring data is an important condition for the storage of thermosensitive drugs and raw materials for medicines. The ThingsBoard partner — <a href="http://vypin.com/" target="_blank" rel="noreferrer noopener">Vypin</a> together with our team has implemented a solution for a global pharmaceutical company. The IoT application has helped to optimize processes and costs.</p>
+
+
+
+<div style="height:16px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<div class="wp-block-media-text has-media-on-the-right is-stacked-on-mobile is-vertically-aligned-center cs-entry__thumbnail" style="grid-template-columns:auto 52%"><div class="wp-block-media-text__content">
+<table style="width: 80%" align="left">
+<tbody>
+<tr>
+<td>
+<code><p class="has-text-color has-link-color has-small-font-size" style="color:#915c01"> Client:</p> </code> <p style="font-size:10pt">PHARMACEUTICAL COMPANY</p> 
+<code><p class="has-text-color has-link-color has-small-font-size" style="color:#915c01">Initial request:</p></code><p style="font-size:10pt">ACCESS TO THE MONITORING DATA 24/7; NOTIFICATIONS</p> 
+<code><p class="has-text-color has-link-color has-small-font-size" style="color:#915c01"> Must-have requirements:</p> </code> <p style="font-size:10pt">DATA LOSS IS INACCEPTABLE, CRITICAL </p>
+</td>
+</tr>
+</tbody>
+</table>
+</div><figure class="wp-block-media-text__media"><img loading="lazy" decoding="async" width="1024" height="635" src="./../../../wp-content/uploads/2024/02/Device2-1-1024x635.jpeg" alt="" class="wp-image-2891 size-full" srcset="./../../../wp-content/uploads/2024/02/Device2-1-1024x635.jpeg 1024w, ./../../../wp-content/uploads/2024/02/Device2-1-300x186.jpeg 300w, ./../../../wp-content/uploads/2024/02/Device2-1-768x476.jpeg 768w, ./../../../wp-content/uploads/2024/02/Device2-1-512x318.jpeg 512w, ./../../../wp-content/uploads/2024/02/Device2-1-920x571.jpeg 920w, ./../../../wp-content/uploads/2024/02/Device2-1.jpeg 1222w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure></div>
+
+
+
+<div style="height:16px" aria-hidden="true" class="wp-block-spacer"></div>
+
+
+
+<h4 class="wp-block-heading">The problem</h4>
+
+
+
+<p style="font-size:16px">The FDA (The Food &amp; Drug Administration) has strict requirements and recommendations for pharmaceutical manufacturers, in particular regarding storage conditions and the control system to comply with these conditions (more about regulation can be found here). The customer asked&nbsp; Vypin to replace the current system. The previous one didn’t meet the FDA standards, which was the reason for the fines and the potential risk of drug or component damage.</p>
+
+
+
+<p style="font-size:16px">The patient, as they say in the medical field, had specific complaints. First of all, data loss. Existing devices could go offline for various reasons (from network outages to power loss), but the transmission or recording of telemetry did not take place. But the client couldn’t find out about these or those losses, which was the second complaint. The current system does not provide a notification mechanism. In addition, monitoring data was not available remotely.</p>
+
+
+
+<blockquote class="wp-block-quote">
+<p class="is-style-cs-about has-small-font-size">Round-the-clock rotation of operators to control the temperature and humidity in the warehouse indeed is not the best solution. Therefore, in the regular automatic reports related to the storage environment state there were gaps in the tables and graphs. The FDA fines for such violations.</p>
+<cite>Customer complaint</cite></blockquote>
+
+
+
+<h4 class="wp-block-heading has-text-align-left">Solution</h4>
+
+
+
+<div class="wp-block-media-text is-stacked-on-mobile"><figure class="wp-block-media-text__media"><img loading="lazy" decoding="async" width="725" height="418" src="./../../../wp-content/uploads/2024/02/Device1.jpg" alt="" class="wp-image-2872 size-full" srcset="./../../../wp-content/uploads/2024/02/Device1.jpg 725w, ./../../../wp-content/uploads/2024/02/Device1-300x173.jpg 300w, ./../../../wp-content/uploads/2024/02/Device1-512x295.jpg 512w" sizes="(max-width: 725px) 100vw, 725px" /></figure><div class="wp-block-media-text__content">
+<p style="font-size:16px">To solve the problem, the Vypin team proposed an integrated Vypin-Whereview system (powered by ThingsBoard). The company built a wireless network, installed sensors and gateways</p>
+
+
+
+<p style="font-size:16px">If we mention one of the first problems (data loss), the new sensors now had a memory module and could record telemetry locally. When the gateway connection was lost, data loss (!) didn’t and doesn’t occur. When the online gateway returns, it picks up the accumulated telemetry and sends it to Whereview.</p>
+</div></div>
+
+
+
+<p style="font-size:16px">The application, built on TB, solved the rest of the customer&#8217;s problems. First of all, the client&#8217;s responsible employee gets access to the monitoring data at any time. Managers also received access.</p>
+
+
+
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-6 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="635" data-id="2875" src="./../../../wp-content/uploads/2024/02/Dash-1024x635.jpeg" alt="" class="wp-image-2875" srcset="./../../../wp-content/uploads/2024/02/Dash-1024x635.jpeg 1024w, ./../../../wp-content/uploads/2024/02/Dash-300x186.jpeg 300w, ./../../../wp-content/uploads/2024/02/Dash-768x476.jpeg 768w, ./../../../wp-content/uploads/2024/02/Dash-512x318.jpeg 512w, ./../../../wp-content/uploads/2024/02/Dash-920x571.jpeg 920w, ./../../../wp-content/uploads/2024/02/Dash.jpeg 1222w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<figure class="wp-block-image size-large is-style-rounded"><img loading="lazy" decoding="async" width="1024" height="635" data-id="2876" src="./../../../wp-content/uploads/2024/02/Dash2-1024x635.jpeg" alt="" class="wp-image-2876" srcset="./../../../wp-content/uploads/2024/02/Dash2-1024x635.jpeg 1024w, ./../../../wp-content/uploads/2024/02/Dash2-300x186.jpeg 300w, ./../../../wp-content/uploads/2024/02/Dash2-768x476.jpeg 768w, ./../../../wp-content/uploads/2024/02/Dash2-512x318.jpeg 512w, ./../../../wp-content/uploads/2024/02/Dash2-920x571.jpeg 920w, ./../../../wp-content/uploads/2024/02/Dash2.jpeg 1222w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+</figure>
+
+
+
+<p class="has-text-align-center" style="font-size:14px">To see the Dashboard with graphs and tables, it is enough just to open the corresponding tab in your own browser and log in.</p>
+
+
+
+<p style="font-size:16px">It makes sense to highlight that based on the rule engine and device profiles, Vypin set up a notification system. In case of violations of the specified conditions (for example, exceeding the temperature thresholds), notifications are received by those who should be aware of this recorded violation. This allows you to respond instantly and even take preventive measures.</p>
+
+
+
+<h4 class="wp-block-heading has-text-align-left">Result </h4>
+
+
+
+<p style="font-size:16px">Everyone understands that it is better (easier, cheaper, less time-consuming) to prevent a disease than to treat it. With the new warehouse monitoring system, the client (patient) has the opportunity for prevention.</p>
+]]></content:encoded>
+					
+					<wfw:commentRss>./../../../reliable-th-monitoring-with-whereview-thingsboard/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>
