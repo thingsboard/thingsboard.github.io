@@ -13,8 +13,6 @@ code
 	&[class*="expandable"]
 		pre.highlight
 			margin-bottom: 45px
-			&.expanded
-				height: max-content !important
 		button.expand-code-btn
 			position: absolute
 			bottom: -33px
@@ -31,37 +29,35 @@ code
 			height: 30px
 			outline: none
 
-			div.arrow
+			.arrow
 				width: 0
 				height: 0
 				border-left: 20px solid transparent
 				border-right: 20px solid transparent
 				border-top: 13px solid #2a7dec
 
-			p.collapse
+			.collapse
+				display: none
 				margin-top: 0 !important
 
 		&[data-expanded="true"]
 			pre.highlight
 				height: max-content !important
 			button.expand-code-btn
-				div.arrow
+				.arrow
 					border-top: none
 					border-bottom: 13px solid #2a7dec
-				p.collapse
+				.collapse
 					display: block
-				p.expand
+				.expand
 					display: none
+
 
 		&[data-expanded="false"]
 			button.expand-code-btn
-				div.arrow
-					border-top: 13px solid #2a7dec
+				.arrow
 					border-bottom: none
-				p.collapse
-					display: none
-				p.expand
-					display: block
+					border-top: 13px solid #2a7dec
 
 div.highlight
 	margin-top: 12px
