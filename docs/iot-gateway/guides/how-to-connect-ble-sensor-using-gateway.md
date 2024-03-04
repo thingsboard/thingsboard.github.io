@@ -37,7 +37,7 @@ These libraries depend on type of your OS:
 Debian based<br>%,%deb%,%templates/iot-gateway/ble-requirements-deb.md%br%
 Red Hat based<br>%,%red-hat%,%templates/iot-gateway/ble-requirements-rpm.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="SystemLibraries" toggle-spec=systemtogglespec %}
+{% include content-toggle.liquid content-toggle-id="SystemLibraries" toggle-spec=systemtogglespec %}
 
 
  

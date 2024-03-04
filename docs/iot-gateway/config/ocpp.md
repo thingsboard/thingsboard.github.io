@@ -110,7 +110,7 @@ You can choose the next connection type:
 {% capture ocppconnectorconnectiontogglespec %}
 Insecure<small>No security</small>%,%insecure%,%templates/iot-gateway/ocpp-connector-insecure-connection-config.md%br%
 TLS<small>Recommended</small>%,%tls%,%templates/iot-gateway/ocpp-connector-tls-connection-config.md{% endcapture %}
-{% include content-toggle.html content-toggle-id="ocppConnectorConnectionConfig" toggle-spec=ocppconnectorconnectiontogglespec %} 
+{% include content-toggle.liquid content-toggle-id="ocppConnectorConnectionConfig" toggle-spec=ocppconnectorconnectiontogglespec %} 
 
 #### Security subsection
 
@@ -122,7 +122,7 @@ Anonymous<small>No security</small>%,%anonymous%,%templates/iot-gateway/ocpp-con
 Basic<small>Recommended</small>%,%basic%,%templates/iot-gateway/ocpp-connector-basic-security-config.md%br%
 Token<small>Recommended</small>%,%token%,%templates/iot-gateway/ocpp-connector-token-security-config.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="ocppConnectorSecurityConfig" toggle-spec=ocppconnectorsecuritytogglespec %}
+{% include content-toggle.liquid content-toggle-id="ocppConnectorSecurityConfig" toggle-spec=ocppconnectorsecuritytogglespec %}
 
 **Note** You can combine _basic_ and _token_ security types. Security subsection in configuration file will look like this:
 

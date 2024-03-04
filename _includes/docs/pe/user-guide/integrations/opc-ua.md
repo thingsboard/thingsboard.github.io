@@ -66,7 +66,7 @@ Go to the **Integrations center** section -> **Data converters** page and create
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/opc-ua/opc-ua-uplink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/opc-ua/opc-ua-uplink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="opcuauplinkconverterconfig" toggle-spec=opcuauplinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="opcuauplinkconverterconfig" toggle-spec=opcuauplinkconverterconfig %}
 
 ### Downlink Data Converter
 
@@ -103,7 +103,7 @@ Go to the **Integrations center** section -> **Data converters** page and create
 TBEL<small>Recommended</small>%,%accessToken%,%templates/integration/opc-ua/opc-ua-downlink-converter-config-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/integration/opc-ua/opc-ua-downlink-converter-config-javascript.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="opcuadownlinkconverterconfig" toggle-spec=opcuadownlinkconverterconfig %}
+{% include content-toggle.liquid content-toggle-id="opcuadownlinkconverterconfig" toggle-spec=opcuadownlinkconverterconfig %}
 
 This converter will process the RPC command to the device using the method *setState*
 and a boolean *params* value to call the 'Start' or 'Stop' method of the airconditioner.

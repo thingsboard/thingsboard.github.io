@@ -9,7 +9,7 @@ redirect_from: "/docs/user-guide/ui/device-profiles"
 mqttTransportSettingExample:
     0:
         image: /images/user-guide/device-profile/device-profile-transport-setting-mqtt-example-1-ce.png
-        title: 'Step 1. Specify MQTT device topic filter in the Device profile.'
+        title: 'Step 1. Specify custom MQTT device topic filter for the Device profile.'
     1:
         image: /images/user-guide/device-profile/device-profile-transport-setting-mqtt-example-2-ce.png
         title: 'Step 2. Provide basic MQTT credentials for your device with the client id ‘c1’, username ‘t1’ and password ‘secret’.'
@@ -18,7 +18,11 @@ mqttTransportSettingExample:
         title: 'Step 3. Use Terminal to publish time-series data.'
     3:
         image: /images/user-guide/device-profile/device-profile-transport-setting-mqtt-example-4-ce.png
-        title: 'Step 4. Transmitted data will be displayed in the "Last telemetry" tab of the device.'
+        title: 'Transmitted data will be displayed in the "Latest telemetry" tab of the device.'
+
+mqttTransportSettingDefault:
+    0:
+        image: /images/user-guide/device-profile/device-profile-transport-setting-mqtt-1-ce.png
 
 alarmСonditions:
     0:

@@ -165,7 +165,7 @@ OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-do
 TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-docker.md%br%
 CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-docker.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="remoteintegrationdockerinstall" toggle-spec=contenttogglespec %}
+{% include content-toggle.liquid content-toggle-id="remoteintegrationdockerinstall" toggle-spec=contenttogglespec %}
 
 
 {% include templates/edge/install/integration/advanced-config-docker.md %} 
@@ -188,7 +188,7 @@ OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-do
 TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-docker-windows.md%br%
 CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-docker-windows.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="remoteintegrationdockerinstallwin" toggle-spec=contenttogglespecwin %}
+{% include content-toggle.liquid content-toggle-id="remoteintegrationdockerinstallwin" toggle-spec=contenttogglespecwin %}
 
 {% include templates/edge/install/integration/advanced-config-docker.md %} 
 
@@ -211,7 +211,7 @@ OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-ub
 TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-ubuntu.md%br%
 CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-ubuntu.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="remoteintegrationinstallubuntu" toggle-spec=ubuntuinstallspec %} 
+{% include content-toggle.liquid content-toggle-id="remoteintegrationinstallubuntu" toggle-spec=ubuntuinstallspec %} 
 
 ### CentOS/RHEL Server
 
@@ -228,7 +228,7 @@ OPC UA<br> Integration<br>%,%opcua%,%templates/edge/install/integration/opcua-rh
 TCP/UDP<br> Integration<br>%,%tcpudp%,%templates/edge/install/integration/tcpudp-rhel.md%br%
 CoAP<br> Integration<br>%,%coap%,%templates/edge/install/integration/coap-rhel.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="remoteintegrationinstallrhel" toggle-spec=rhelinstallspec %} 
+{% include content-toggle.liquid content-toggle-id="remoteintegrationinstallrhel" toggle-spec=rhelinstallspec %} 
 
 ## Remote HTTP integration validation
 

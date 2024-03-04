@@ -48,7 +48,7 @@ Drag and Drop **Script Filter** rule node to the chain. Node configuration windo
 TBEL<small>Recommended</small>%,%accessToken%,%templates/rule-engine/getting-started/script-function-filter-tbel.md%br%
 JavaScript<small></small>%,%anonymous%,%templates/rule-engine/getting-started/script-function-filter-java.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="scriptfunctionfilterconfig" toggle-spec=scriptfunctionfilterconfig %}
+{% include content-toggle.liquid content-toggle-id="scriptfunctionfilterconfig" toggle-spec=scriptfunctionfilterconfig %}
 
 If temperature property not defined or temperature is valid - script will return **True**, otherwise it will return **False**.
 If script returns **True** incoming message will be routed to the next nodes that are connected with **True** relation.
