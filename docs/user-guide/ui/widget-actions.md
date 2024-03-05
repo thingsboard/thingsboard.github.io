@@ -4,6 +4,26 @@ assignees:
 - ashvayka
 title: Widget Actions
 description: ThingsBoard Dashboard Widget Actions
+
+add-new-action-1:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-1-ce.png
+        title: 'Enter the widget editing mode, scroll down and find the "Actions" menu item;'
+    1:
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-2-ce.png
+        title: 'Click the "Add action" button (later, when you have created one or more actions, the "Add actions" button will change to the "plus" icon). The "Actions" window will open. Right now, it’s empty, but later it will display all created actions;'
+    2:
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-3-ce.png
+        title: 'Click the "plus" icon in the top right corner of the screen to open a new "Add action" window.'
+
+add-new-action-2:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-4-ce.png
+        title: 'Enter the widget editing mode, scroll down and find the "Actions" menu item;'
+    1:
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-5-ce.png
+        title: 'Click the "Add action" button (later, when you have created one or more actions, the "Add actions" button will change to the "plus" icon). The "Actions" window will open. Right now, it’s empty, but later it will display all created actions;'
+
 entity-sources:
     0:
         image: /images/user-guide/ui/widgets/actions/entity-cards/entity-sources.png
