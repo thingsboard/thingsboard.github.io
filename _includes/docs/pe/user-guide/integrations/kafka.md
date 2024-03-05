@@ -132,7 +132,7 @@ Confluent Cloud<br><small>Cloud solution</small>%,%confluent%,%/templates/integr
 
 {% include content-toggle.liquid content-toggle-id="integrationTypes" toggle-spec=integrationTypes %}
 
-## Send test Uplink message from
+## Send Uplink message
 
 {% capture uplinkTypes %}
 Kafka<br><small>Common/Docker </small>%,%common%,%templates/integration/kafka/kafka-common-and-docker-send-msg%br%
