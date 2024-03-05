@@ -293,7 +293,7 @@ Serial<small>Connection over serial port</small>%,%serial%,%templates/iot-gatewa
 
 There are 2 variants of server section:
 
-{% include content-toggle.html content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType %}
+{% include content-toggle.liquid content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType %}
 
 The next part of slave section contains common connection parameters and settings for data processing. 
 Available parameters are as follows:
@@ -534,11 +534,11 @@ specify the "slave" section in the configuration file.
 
 There are 2 variants of Gateway slave section:
 
-{% capture modbusConnectionType %}
+{% capture modbusConnectionType2 %}
 TCP/UDP<small>Connection over TCP/UDP protocol</small>%,%tcpUdp%,%templates/iot-gateway/gateway-as-modbus-slave-tcpudp-connection.md%br%
 Serial<small>Connection over serial port</small>%,%serial%,%templates/iot-gateway/gateway-as-modbus-slave-serial-connection.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType %}
+{% include content-toggle.liquid content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType2 %}
 
 {% capture difference %}
 <br>

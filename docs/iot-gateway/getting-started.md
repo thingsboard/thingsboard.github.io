@@ -96,7 +96,7 @@ MQTT<small></small>%,%mqtt%,%templates/iot-gateway/remote-creating-connector-mqt
 Modbus<small></small>%,%modbus%,%templates/iot-gateway/remote-creating-connector-modbus.md%br%
 OPC-UA<small></small>%,%opcua%,%templates/iot-gateway/remote-creating-connector-opcua.md{% endcapture %}
 
-{% include content-toggle.html content-toggle-id="connectorsCreation" toggle-spec=connectorscreationspec %}
+{% include content-toggle.liquid content-toggle-id="connectorsCreation" toggle-spec=connectorscreationspec %}
 
 ## Step 4. Check device data
 

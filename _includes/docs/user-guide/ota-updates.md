@@ -147,7 +147,7 @@ for software:
 HTTP<br>%,%http%,%templates/install/http-firmware.md%br%
 MQTT<br>%,%mqtt%,%templates/install/mqtt-firmware.md%br%
 CoAP<br>%,%aws%,%templates/install/coap-firmware.md%br%{% endcapture %}
-{% include content-toggle.html content-toggle-id="remoteintegrationdockerinstall" toggle-spec=contenttogglespec %}
+{% include content-toggle.liquid content-toggle-id="remoteintegrationdockerinstall" toggle-spec=contenttogglespec %}
 
 ## Dashboard
 

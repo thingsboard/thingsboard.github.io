@@ -1,6 +1,6 @@
 ### Add a gateway on The Things Industries
 
-We need to add a gateway on [The Things Industries cloud](https://accounts.thethingsindustries.com/login){:target="_blank"}.
+We need to add a gateway on [The Things Industries cloud](https://www.thethingsindustries.com/){:target="_blank"}.
 
 To add a gateway, you can follow next steps:  
 
@@ -38,11 +38,17 @@ Now we need to configure integration on The Things Industries. to do this please
 
 {% assign addIntegrationSteps = '
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/integration-mqtt-new-key.png,
-        title: Navigate to the "<b>Integrations</b>" -> open the "<b>MQTT</b>" page in the left menu. Then, click on the "<b>Generate new API key</b>" button.
+        image: /images/devices-library/basic/integrations/thethingsindustries/the-things-industries-integration-mqtt-1.png,
+        title: Open your console and click on the "<b>Create an application</b>".
     ===
-        image: /images/devices-library/basic/integrations/thethingsindustries/integration-mqtt.png,
-        title: Press on copy icon to copy a key and save it (After leaving the page it won&#39;t be displayed).
+        image: /images/devices-library/basic/integrations/thethingsindustries/the-things-industries-integration-mqtt-2.png,
+        title: Fill in the required fields about the application. Then click "**Create application**" button.
+    ===
+        image: /images/devices-library/basic/integrations/thethingsindustries/the-things-industries-integration-mqtt-3.png,
+        title: Go to the "<b>Integrations</b>" -> open the "<b>MQTT</b>" page in the left menu. Then, click on the "<b>Generate new API key</b>" button.
+    ===
+        image: /images/devices-library/basic/integrations/thethingsindustries/the-things-industries-integration-mqtt-4.png,
+        title: Copy and save the <b>password</b> (API key) (after leaving the page it won&#39;t be displayed).
 '%}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=addIntegrationSteps %}
@@ -168,3 +174,14 @@ Now, open the "**Integration center**" section -> "**Integrations**" page and fo
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=createTTIIntegration %}
 
 Integration is created.
+
+<br>
+To check integration connection you can do the following:
+
+- Click on integration row in the list;
+- Go to the "**Events**" tab;
+- Select "**Lifecycle events**" from **Event type** dropdown list.
+
+If you see event **STARTED** and status **Success** it means that integration is successfully started and ready to receive messages.
+
+![Check integration connection](/images/devices-library/basic/integrations/check-integration-started.png)
