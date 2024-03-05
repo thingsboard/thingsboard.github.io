@@ -53,7 +53,6 @@ toc:
       path: /docs/paas/user-guide/ota-updates/
     - title: Notification center
       path: /docs/paas/user-guide/notifications/
-      new: true
     - title: Domains
       path: /products/paas/domains/
 - title: Dashboards
