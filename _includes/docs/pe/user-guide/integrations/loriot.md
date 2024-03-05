@@ -116,7 +116,7 @@ Once the Headers filter has been configured, it will also need to be specified i
 
 {% include images-gallery.html imageCollection="uplink-message" %}
 
-## Send test Uplink message
+## Send Uplink message
 
 It may be useful to "emulate" the message from device using console instead of the LORIOT server. To send an uplink message, you need a **HTTP endpoint URL** from the integration, **port** and **EUI** from LORIOT. 
 

@@ -6,14 +6,21 @@
 '
 %}
 
+{% assign esp32ArduinoPreferences='
+    ===
+        image: /images/devices-library/basic/arduino-ide/preferences.png
+'%}
+
 Install the board for Arduino IDE:
 
-Go to **File** > **Preferences** and add the following URL to the Additional Boards Manager URLs field.  
+Go to **File** > **Preferences** and add the following URL to the **Additional Boards Manager URLs** field.  
 
 ```bash
 https://github.com/earlephilhower/arduino-pico/releases/download/global/package_rp2040_index.json
 ```
 {:.copy-code}
+
+{% include images-gallery.liquid showListImageTitles="false" imageCollection=esp32ArduinoPreferences %}
 
 {% include images-gallery.liquid showListImageTitles="true" imageCollection=raspberryPiPicoInstallation %}
 

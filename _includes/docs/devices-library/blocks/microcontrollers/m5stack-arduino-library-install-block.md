@@ -8,6 +8,13 @@ https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/arduino/package_m5stack_in
 ```
 {:.copy-code}
 
+{% assign esp32ArduinoPreferences='
+    ===
+        image: /images/devices-library/basic/arduino-ide/preferences.png
+'%}
+
+{% include images-gallery.liquid showListImageTitles="false" imageCollection=esp32ArduinoPreferences %}
+
 Next, go to **Tools** > **Board** > **Board Manager** and install the ***M5Stack by M5Stack Official*** board.  
 
 {% assign m5StackBoardManager='
