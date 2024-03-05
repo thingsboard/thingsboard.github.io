@@ -24,7 +24,7 @@ After implementing the Image Gallery, we gained several advantages:
 {% endif %}
 
 {% unless docsPrefix == 'paas/' %}
-## Configuration
+## Cache configuration
 
 
 Our image API uses *ETags* to optimize caching, ensuring images are only downloaded when they have changed, thus saving bandwidth.
@@ -85,7 +85,7 @@ To change the image viewing mode, simply select the mode that suits you in the t
 
 ## Image operations
 
-You can [delete](#delete-image), [edit](#edit-image), [embed](#embed-image), [download](#download-image) and [export image to JSON](#export-image-to-json) using the corresponding icon opposite the image's name.
+You can [download](#download-image), [export to JSON](#export-image-to-json), [edit](#edit-image), [embed](#embed-image), and [delete](#delete-image) image using the corresponding icon opposite the image's name.
 Let's take a closer look at each operation.
 
 ### Download image
