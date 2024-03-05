@@ -1,0 +1,2233 @@
+#thingsboard-pe #hero #hero-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+
+#thingsboard-pe section {
+    background: none;
+}
+
+#thingsboard-pe:not(.open-nav):not(.flip-nav) header::after {
+    opacity: 0;
+}
+
+#thingsboard-pe #hero {
+    height: 100vh;
+    padding-top: 0px;
+    position: relative;
+    overflow: hidden;
+    background: none;
+}
+
+#thingsboard-pe #hero div:nth-child(1) {
+    background-image: url(https://img.thingsboard.io/pe-cover.jpg) !important;
+}
+
+#thingsboard-pe #hero .video-cover {
+    position: absolute;
+    z-index: -2;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    overflow: hidden;
+    background-size: cover;
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url(https://img.thingsboard.io/pe-cover.jpg);
+}
+
+#thingsboard-pe #hero #hero-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#thingsboard-pe #hero #hero-content .pe-title {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 400;
+    text-shadow: 0 0 18px rgba(0, 0, 0, 0.66);
+}
+
+#thingsboard-pe #hero #hero-content .try-pe {
+    cursor: pointer;
+    line-height: 40px;
+    font-size: 16px;
+    padding: 0 15px;
+    border: 1px solid white;
+    background-color: transparent;
+    transition: 0.6s;
+    text-shadow: 0 0 18px rgba(0, 0, 0, 0.66);
+}
+
+#thingsboard-pe #hero #hero-content .try-pe:hover {
+    background-color: white;
+    color: #1f3a52;
+}
+
+#thingsboard-pe #hero #hero-content .pe-arrow {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+    z-index: 24;
+    color: #fff;
+}
+
+#thingsboard-pe #hero #hero-content .pe-arrow a {
+    color: #fff;
+}
+
+#thingsboard-pe #hero #hero-content.arrow-hidden .pe-arrow {
+    display: none;
+}
+
+#thingsboard-pe #intro,
+#thingsboard-pe #matrix,
+#thingsboard-pe #features,
+#thingsboard-pe #integration,
+#thingsboard-pe #scheduler,
+#thingsboard-pe #export,
+#thingsboard-pe #labeling {
+    color: #212924;
+    text-align: left;
+}
+
+#thingsboard-pe #intro h1,
+#thingsboard-pe #intro main .item h2,
+#thingsboard-pe #intro main .item h3.item-heading,
+#thingsboard-pe #intro div.main-div .item h2,
+#thingsboard-pe #intro div.main-div .item h3.item-heading,
+#thingsboard-pe #matrix h1,
+#thingsboard-pe #matrix main .item h2,
+#thingsboard-pe #matrix main .item h3.item-heading,
+#thingsboard-pe #matrix div.main-div .item h2,
+#thingsboard-pe #matrix div.main-div .item h3.item-heading,
+#thingsboard-pe #features h1,
+#thingsboard-pe #features main .item h2,
+#thingsboard-pe #features main .item h3.item-heading,
+#thingsboard-pe #features div.main-div .item h2,
+#thingsboard-pe #features div.main-div .item h3.item-heading,
+#thingsboard-pe #integration h1,
+#thingsboard-pe #integration main .item h2,
+#thingsboard-pe #integration main .item h3.item-heading,
+#thingsboard-pe #integration div.main-div .item h2,
+#thingsboard-pe #integration div.main-div .item h3.item-heading,
+#thingsboard-pe #scheduler h1,
+#thingsboard-pe #scheduler main .item h2,
+#thingsboard-pe #scheduler main .item h3.item-heading,
+#thingsboard-pe #scheduler div.main-div .item h2,
+#thingsboard-pe #scheduler div.main-div .item h3.item-heading,
+#thingsboard-pe #export h1,
+#thingsboard-pe #export main .item h2,
+#thingsboard-pe #export main .item h3.item-heading,
+#thingsboard-pe #export div.main-div .item h2,
+#thingsboard-pe #export div.main-div .item h3.item-heading,
+#thingsboard-pe #labeling h1,
+#thingsboard-pe #labeling main .item h2,
+#thingsboard-pe #labeling main .item h3.item-heading,
+#thingsboard-pe #labeling div.main-div .item h2,
+#thingsboard-pe #labeling div.main-div .item h3.item-heading {
+    font-weight: 600;
+    text-align: center;
+    font-size: 32px;
+    line-height: 52px;
+}
+
+#thingsboard-pe #intro h2,
+#thingsboard-pe #matrix h2,
+#thingsboard-pe #features h2,
+#thingsboard-pe #integration h2,
+#thingsboard-pe #scheduler h2,
+#thingsboard-pe #export h2,
+#thingsboard-pe #labeling h2 {
+    font-weight: 500;
+    font-size: 36px;
+}
+
+#thingsboard-pe #intro h3,
+#thingsboard-pe #matrix h3,
+#thingsboard-pe #features h3,
+#thingsboard-pe #integration h3,
+#thingsboard-pe #scheduler h3,
+#thingsboard-pe #export h3,
+#thingsboard-pe #labeling h3 {
+    font-size: 42px;
+    font-weight: 600;
+    line-height: 63px;
+}
+
+#thingsboard-pe #intro div.main-div h1,
+#thingsboard-pe #matrix div.main-div h1,
+#thingsboard-pe #features div.main-div h1,
+#thingsboard-pe #integration div.main-div h1,
+#thingsboard-pe #scheduler div.main-div h1,
+#thingsboard-pe #export div.main-div h1,
+#thingsboard-pe #labeling div.main-div h1 {
+    font-size: 38px;
+}
+
+#thingsboard-pe #intro p,
+#thingsboard-pe #matrix p,
+#thingsboard-pe #features p,
+#thingsboard-pe #integration p,
+#thingsboard-pe #scheduler p,
+#thingsboard-pe #export p,
+#thingsboard-pe #labeling p {
+    color: #757C76;
+    font-size: 18px;
+    font-weight: normal;
+    line-height: 27px;
+    margin: 4px 0 18px;
+}
+
+#thingsboard-pe #intro a,
+#thingsboard-pe #matrix a,
+#thingsboard-pe #features a,
+#thingsboard-pe #integration a,
+#thingsboard-pe #scheduler a,
+#thingsboard-pe #export a,
+#thingsboard-pe #labeling a {
+    color: #17BB52;
+    font-weight: 500;
+    font-size: 18px;
+}
+
+#thingsboard-pe #bottom {
+    margin: -20px -100%;
+    padding: 82px 0 124px;
+    text-align: center;
+}
+
+#thingsboard-pe #bottom .try-pe {
+    background-color: #17BB52;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 15px 128px;
+    height: 127px;
+    box-shadow: 0 28px 16px -20px rgba(13, 39, 67, 0.25);
+}
+
+#thingsboard-pe #bottom .try-pe:hover {
+    background-color: #35C86A;
+    text-decoration: none;
+    color: #fff;
+}
+
+#thingsboard-pe #bottom .try-pe:active {
+    background-color: #1F8B4D;
+    transition-duration: 0s;
+}
+
+#thingsboard-pe #features {
+    background-color: #FAFAFA;
+    margin: -50px -100% 0;
+    padding: 72px 100%;
+}
+
+@media(min-width: 992px) {
+    #thingsboard-pe #features {
+        display: block;
+    }
+}
+
+#thingsboard-pe #features main,
+#thingsboard-pe #features div.main-div {
+    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+}
+
+#thingsboard-pe #features main .item,
+#thingsboard-pe #features div.main-div .item {
+    width: 100%;
+    display: block;
+    padding: 0;
+}
+
+#thingsboard-pe #features main .item h1,
+#thingsboard-pe #features main .item h2,
+#thingsboard-pe #features main .item h3.item-heading,
+#thingsboard-pe #features div.main-div .item h1,
+#thingsboard-pe #features div.main-div .item h2,
+#thingsboard-pe #features div.main-div .item h3.item-heading {
+    text-align: left;
+    margin-top: 0;
+}
+
+#thingsboard-pe #features main .item img,
+#thingsboard-pe #features div.main-div .item img {
+    margin-bottom: 40px;
+}
+
+#thingsboard-pe #features main .divider,
+#thingsboard-pe #features div.main-div .divider {
+    background-color: #DADBDA;
+    width: 2px;
+    display: block;
+    margin: 20px;
+}
+
+#thingsboard-pe #matrix {
+    margin: 60px -100% 0;
+    padding: 72px 100% 168px;
+}
+
+#thingsboard-pe #matrix h3 {
+    color: #212529;
+    font-weight: 600;
+    text-align: left;
+    font-size: 22px;
+    line-height: 40px;
+}
+
+#thingsboard-pe #matrix #backg-matrix {
+    position: relative;
+    margin-left: -20px;
+    margin-right: -20px;
+    width: calc(100% + 40px);
+}
+
+#thingsboard-pe #matrix #backg-matrix .cloud,
+#thingsboard-pe #matrix #backg-matrix .prof,
+#thingsboard-pe #matrix #backg-matrix .community {
+    padding: 0 2px;
+    width: 20%;
+    position: absolute;
+    z-index: -1;
+    top: 127px;
+}
+
+#thingsboard-pe #matrix #backg-matrix .coln {
+    height: 1156px;
+    border-radius: 6px;
+}
+
+#thingsboard-pe #matrix #backg-matrix .cloud {
+    right: 0%;
+}
+
+#thingsboard-pe #matrix #backg-matrix .cloud .coln {
+    border: 2px solid #AACBF7;
+}
+
+#thingsboard-pe #matrix #backg-matrix .cloud .coln .head {
+    height: 106px;
+    box-shadow: 0 2px 0 0 #aacbf7;
+}
+
+#thingsboard-pe #matrix #backg-matrix .prof {
+    right: 20%;
+}
+
+#thingsboard-pe #matrix #backg-matrix .prof .coln {
+    border: 2px solid #27AE60;
+    box-shadow: 0 50px 50px -20px rgba(0, 0, 0, 0.15), 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+#thingsboard-pe #matrix #backg-matrix .prof .coln .head {
+    height: 106px;
+    background-color: #27AE60;
+}
+
+#thingsboard-pe #matrix #backg-matrix .community {
+    right: 40%;
+}
+
+#thingsboard-pe #matrix #backg-matrix .community .coln {
+    border: 2px solid #ACBBCC;
+}
+
+#thingsboard-pe #matrix #backg-matrix .community .coln .head {
+    height: 106px;
+    box-shadow: 0 2px 0 0 #acbbcc;
+}
+
+#thingsboard-pe #matrix table {
+    width: calc(100% + 40px);
+    margin: 160px -20px 16px;
+    border: none;
+    margin-top: 64px;
+    top: 40px;
+}
+
+#thingsboard-pe #matrix table td,
+#thingsboard-pe #matrix table th {
+    margin: 0 2px;
+}
+
+#thingsboard-pe #matrix table td:nth-child(4n-2),
+#thingsboard-pe #matrix table th:nth-child(4n-2) {
+    color: #305680;
+}
+
+#thingsboard-pe #matrix table td:nth-child(4n-2) img,
+#thingsboard-pe #matrix table th:nth-child(4n-2) img {
+    filter: invert(27%) sepia(56%) saturate(585%) hue-rotate(171deg) brightness(96%) contrast(86%);
+}
+
+#thingsboard-pe #matrix table td:nth-child(4n-1),
+#thingsboard-pe #matrix table th:nth-child(4n-1) {
+    color: #27AE60;
+}
+
+#thingsboard-pe #matrix table td:nth-child(4n-1) img,
+#thingsboard-pe #matrix table th:nth-child(4n-1) img {
+    filter: invert(52%) sepia(84%) saturate(381%) hue-rotate(93deg) brightness(89%) contrast(93%);
+}
+
+#thingsboard-pe #matrix table td:nth-child(4n),
+#thingsboard-pe #matrix table th:nth-child(4n) {
+    color: #2A7DEC;
+}
+
+#thingsboard-pe #matrix table td:nth-child(4n) img,
+#thingsboard-pe #matrix table th:nth-child(4n) img {
+    filter: invert(36%) sepia(77%) saturate(728%) hue-rotate(181deg) brightness(104%) contrast(106%);
+}
+
+#thingsboard-pe #matrix table thead {
+    color: #212529;
+    font-size: 12px;
+    line-height: 30px;
+    background-color: unset;
+}
+
+#thingsboard-pe #matrix table thead tr {
+    height: 152px;
+}
+
+#thingsboard-pe #matrix table thead tr th {
+    width: 20%;
+    text-align: center;
+    vertical-align: center;
+    font-weight: 600;
+    font-size: 11px;
+    padding: 40px 0 40px;
+}
+
+#thingsboard-pe #matrix table thead tr th:nth-child(3n) {
+    color: white;
+}
+
+#thingsboard-pe #matrix table thead tr td {
+    width: 40%;
+}
+
+#thingsboard-pe #matrix table tbody tr {
+    background-color: unset;
+    height: 64px;
+}
+
+#thingsboard-pe #matrix table tbody tr th,
+#thingsboard-pe #matrix table tbody tr a {
+    font-weight: 600;
+    font-size: 12px;
+    padding-right: 12px;
+    color: #212529;
+}
+
+#thingsboard-pe #matrix table tbody tr th img,
+#thingsboard-pe #matrix table tbody tr a img {
+    vertical-align: top;
+}
+
+#thingsboard-pe #matrix table tbody tr td {
+    text-align: center;
+    font-weight: 600;
+    font-size: 11px;
+}
+
+#thingsboard-pe #matrix table tbody tr td img {
+    width: 32px;
+}
+
+#thingsboard-pe #intro {
+    padding-top: 28px;
+}
+
+#thingsboard-pe #intro .clari {
+    color: #92A198;
+    font-weight: normal;
+    text-transform: none;
+    margin-bottom: 100px;
+}
+
+#thingsboard-pe #labeling #features-top img,
+#thingsboard-pe #labeling #features-top-2 img,
+#thingsboard-pe #labeling #features-top-3 img,
+#thingsboard-pe #labeling #features-top-4 img,
+#thingsboard-pe #integration #features-top img,
+#thingsboard-pe #integration #features-top-2 img,
+#thingsboard-pe #integration #features-top-3 img,
+#thingsboard-pe #integration #features-top-4 img,
+#thingsboard-pe #scheduler #features-top img,
+#thingsboard-pe #scheduler #features-top-2 img,
+#thingsboard-pe #scheduler #features-top-3 img,
+#thingsboard-pe #scheduler #features-top-4 img,
+#thingsboard-pe #export #features-top img,
+#thingsboard-pe #export #features-top-2 img,
+#thingsboard-pe #export #features-top-3 img,
+#thingsboard-pe #export #features-top-4 img {
+    border-radius: 6px;
+    box-shadow: 0 50px 50px -20px rgba(0, 0, 0, 0.15), 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+#thingsboard-pe #labeling #features-top .block,
+#thingsboard-pe #labeling #features-top-2 .block,
+#thingsboard-pe #labeling #features-top-3 .block,
+#thingsboard-pe #labeling #features-top-4 .block,
+#thingsboard-pe #integration #features-top .block,
+#thingsboard-pe #integration #features-top-2 .block,
+#thingsboard-pe #integration #features-top-3 .block,
+#thingsboard-pe #integration #features-top-4 .block,
+#thingsboard-pe #scheduler #features-top .block,
+#thingsboard-pe #scheduler #features-top-2 .block,
+#thingsboard-pe #scheduler #features-top-3 .block,
+#thingsboard-pe #scheduler #features-top-4 .block,
+#thingsboard-pe #export #features-top .block,
+#thingsboard-pe #export #features-top-2 .block,
+#thingsboard-pe #export #features-top-3 .block,
+#thingsboard-pe #export #features-top-4 .block {
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#thingsboard-pe #labeling #features-top .block .preview,
+#thingsboard-pe #labeling #features-top-2 .block .preview,
+#thingsboard-pe #labeling #features-top-3 .block .preview,
+#thingsboard-pe #labeling #features-top-4 .block .preview,
+#thingsboard-pe #integration #features-top .block .preview,
+#thingsboard-pe #integration #features-top-2 .block .preview,
+#thingsboard-pe #integration #features-top-3 .block .preview,
+#thingsboard-pe #integration #features-top-4 .block .preview,
+#thingsboard-pe #scheduler #features-top .block .preview,
+#thingsboard-pe #scheduler #features-top-2 .block .preview,
+#thingsboard-pe #scheduler #features-top-3 .block .preview,
+#thingsboard-pe #scheduler #features-top-4 .block .preview,
+#thingsboard-pe #export #features-top .block .preview,
+#thingsboard-pe #export #features-top-2 .block .preview,
+#thingsboard-pe #export #features-top-3 .block .preview,
+#thingsboard-pe #export #features-top-4 .block .preview {
+    margin-top: 32px;
+}
+
+#thingsboard-pe #labeling #features-top .block img,
+#thingsboard-pe #labeling #features-top-2 .block img,
+#thingsboard-pe #labeling #features-top-3 .block img,
+#thingsboard-pe #labeling #features-top-4 .block img,
+#thingsboard-pe #integration #features-top .block img,
+#thingsboard-pe #integration #features-top-2 .block img,
+#thingsboard-pe #integration #features-top-3 .block img,
+#thingsboard-pe #integration #features-top-4 .block img,
+#thingsboard-pe #scheduler #features-top .block img,
+#thingsboard-pe #scheduler #features-top-2 .block img,
+#thingsboard-pe #scheduler #features-top-3 .block img,
+#thingsboard-pe #scheduler #features-top-4 .block img,
+#thingsboard-pe #export #features-top .block img,
+#thingsboard-pe #export #features-top-2 .block img,
+#thingsboard-pe #export #features-top-3 .block img,
+#thingsboard-pe #export #features-top-4 .block img {
+    order: 2;
+}
+
+#thingsboard-pe #labeling #features-top .block .feature-des,
+#thingsboard-pe #labeling #features-top-2 .block .feature-des,
+#thingsboard-pe #labeling #features-top-3 .block .feature-des,
+#thingsboard-pe #labeling #features-top-4 .block .feature-des,
+#thingsboard-pe #integration #features-top .block .feature-des,
+#thingsboard-pe #integration #features-top-2 .block .feature-des,
+#thingsboard-pe #integration #features-top-3 .block .feature-des,
+#thingsboard-pe #integration #features-top-4 .block .feature-des,
+#thingsboard-pe #scheduler #features-top .block .feature-des,
+#thingsboard-pe #scheduler #features-top-2 .block .feature-des,
+#thingsboard-pe #scheduler #features-top-3 .block .feature-des,
+#thingsboard-pe #scheduler #features-top-4 .block .feature-des,
+#thingsboard-pe #export #features-top .block .feature-des,
+#thingsboard-pe #export #features-top-2 .block .feature-des,
+#thingsboard-pe #export #features-top-3 .block .feature-des,
+#thingsboard-pe #export #features-top-4 .block .feature-des {
+    order: 1;
+}
+
+#thingsboard-pe #labeling #features-top .block .feature-des h2,
+#thingsboard-pe #labeling #features-top-2 .block .feature-des h2,
+#thingsboard-pe #labeling #features-top-3 .block .feature-des h2,
+#thingsboard-pe #labeling #features-top-4 .block .feature-des h2,
+#thingsboard-pe #integration #features-top .block .feature-des h2,
+#thingsboard-pe #integration #features-top-2 .block .feature-des h2,
+#thingsboard-pe #integration #features-top-3 .block .feature-des h2,
+#thingsboard-pe #integration #features-top-4 .block .feature-des h2,
+#thingsboard-pe #scheduler #features-top .block .feature-des h2,
+#thingsboard-pe #scheduler #features-top-2 .block .feature-des h2,
+#thingsboard-pe #scheduler #features-top-3 .block .feature-des h2,
+#thingsboard-pe #scheduler #features-top-4 .block .feature-des h2,
+#thingsboard-pe #export #features-top .block .feature-des h2,
+#thingsboard-pe #export #features-top-2 .block .feature-des h2,
+#thingsboard-pe #export #features-top-3 .block .feature-des h2,
+#thingsboard-pe #export #features-top-4 .block .feature-des h2 {
+    margin-top: 100px;
+}
+
+#thingsboard-pe #labeling #features-top .block .feature-des h3.item-heading,
+#thingsboard-pe #labeling #features-top-2 .block .feature-des h3.item-heading,
+#thingsboard-pe #labeling #features-top-3 .block .feature-des h3.item-heading,
+#thingsboard-pe #labeling #features-top-4 .block .feature-des h3.item-heading,
+#thingsboard-pe #integration #features-top .block .feature-des h3.item-heading,
+#thingsboard-pe #integration #features-top-2 .block .feature-des h3.item-heading,
+#thingsboard-pe #integration #features-top-3 .block .feature-des h3.item-heading,
+#thingsboard-pe #integration #features-top-4 .block .feature-des h3.item-heading,
+#thingsboard-pe #scheduler #features-top .block .feature-des h3.item-heading,
+#thingsboard-pe #scheduler #features-top-2 .block .feature-des h3.item-heading,
+#thingsboard-pe #scheduler #features-top-3 .block .feature-des h3.item-heading,
+#thingsboard-pe #scheduler #features-top-4 .block .feature-des h3.item-heading,
+#thingsboard-pe #export #features-top .block .feature-des h3.item-heading,
+#thingsboard-pe #export #features-top-2 .block .feature-des h3.item-heading,
+#thingsboard-pe #export #features-top-3 .block .feature-des h3.item-heading,
+#thingsboard-pe #export #features-top-4 .block .feature-des h3.item-heading {
+    font-weight: 500;
+    font-size: 36px;
+    margin-top: 100px;
+}
+
+#thingsboard-pe #labeling #features-top .block .feature-des,
+#thingsboard-pe #labeling #features-top .block img,
+#thingsboard-pe #labeling #features-top-2 .block .feature-des,
+#thingsboard-pe #labeling #features-top-2 .block img,
+#thingsboard-pe #labeling #features-top-3 .block .feature-des,
+#thingsboard-pe #labeling #features-top-3 .block img,
+#thingsboard-pe #labeling #features-top-4 .block .feature-des,
+#thingsboard-pe #labeling #features-top-4 .block img,
+#thingsboard-pe #integration #features-top .block .feature-des,
+#thingsboard-pe #integration #features-top .block img,
+#thingsboard-pe #integration #features-top-2 .block .feature-des,
+#thingsboard-pe #integration #features-top-2 .block img,
+#thingsboard-pe #integration #features-top-3 .block .feature-des,
+#thingsboard-pe #integration #features-top-3 .block img,
+#thingsboard-pe #integration #features-top-4 .block .feature-des,
+#thingsboard-pe #integration #features-top-4 .block img,
+#thingsboard-pe #scheduler #features-top .block .feature-des,
+#thingsboard-pe #scheduler #features-top .block img,
+#thingsboard-pe #scheduler #features-top-2 .block .feature-des,
+#thingsboard-pe #scheduler #features-top-2 .block img,
+#thingsboard-pe #scheduler #features-top-3 .block .feature-des,
+#thingsboard-pe #scheduler #features-top-3 .block img,
+#thingsboard-pe #scheduler #features-top-4 .block .feature-des,
+#thingsboard-pe #scheduler #features-top-4 .block img,
+#thingsboard-pe #export #features-top .block .feature-des,
+#thingsboard-pe #export #features-top .block img,
+#thingsboard-pe #export #features-top-2 .block .feature-des,
+#thingsboard-pe #export #features-top-2 .block img,
+#thingsboard-pe #export #features-top-3 .block .feature-des,
+#thingsboard-pe #export #features-top-3 .block img,
+#thingsboard-pe #export #features-top-4 .block .feature-des,
+#thingsboard-pe #export #features-top-4 .block img {
+    width: 100%;
+}
+
+#thingsboard-pe #labeling #features-top .block.dark,
+#thingsboard-pe #labeling #features-top-2 .block.dark,
+#thingsboard-pe #labeling #features-top-3 .block.dark,
+#thingsboard-pe #labeling #features-top-4 .block.dark,
+#thingsboard-pe #integration #features-top .block.dark,
+#thingsboard-pe #integration #features-top-2 .block.dark,
+#thingsboard-pe #integration #features-top-3 .block.dark,
+#thingsboard-pe #integration #features-top-4 .block.dark,
+#thingsboard-pe #scheduler #features-top .block.dark,
+#thingsboard-pe #scheduler #features-top-2 .block.dark,
+#thingsboard-pe #scheduler #features-top-3 .block.dark,
+#thingsboard-pe #scheduler #features-top-4 .block.dark,
+#thingsboard-pe #export #features-top .block.dark,
+#thingsboard-pe #export #features-top-2 .block.dark,
+#thingsboard-pe #export #features-top-3 .block.dark,
+#thingsboard-pe #export #features-top-4 .block.dark {
+    margin-bottom: 10px;
+}
+
+#thingsboard-pe #labeling #features-top .block.dark div,
+#thingsboard-pe #labeling #features-top-2 .block.dark div,
+#thingsboard-pe #labeling #features-top-3 .block.dark div,
+#thingsboard-pe #labeling #features-top-4 .block.dark div,
+#thingsboard-pe #integration #features-top .block.dark div,
+#thingsboard-pe #integration #features-top-2 .block.dark div,
+#thingsboard-pe #integration #features-top-3 .block.dark div,
+#thingsboard-pe #integration #features-top-4 .block.dark div,
+#thingsboard-pe #scheduler #features-top .block.dark div,
+#thingsboard-pe #scheduler #features-top-2 .block.dark div,
+#thingsboard-pe #scheduler #features-top-3 .block.dark div,
+#thingsboard-pe #scheduler #features-top-4 .block.dark div,
+#thingsboard-pe #export #features-top .block.dark div,
+#thingsboard-pe #export #features-top-2 .block.dark div,
+#thingsboard-pe #export #features-top-3 .block.dark div,
+#thingsboard-pe #export #features-top-4 .block.dark div {
+    margin-top: 26px;
+}
+
+#thingsboard-pe #labeling #features-top .block.dark div h2,
+#thingsboard-pe #labeling #features-top .block.dark div h3.item-heading,
+#thingsboard-pe #labeling #features-top-2 .block.dark div h2,
+#thingsboard-pe #labeling #features-top-2 .block.dark div h3.item-heading,
+#thingsboard-pe #labeling #features-top-3 .block.dark div h2,
+#thingsboard-pe #labeling #features-top-3 .block.dark div h3.item-heading,
+#thingsboard-pe #labeling #features-top-4 .block.dark div h2,
+#thingsboard-pe #labeling #features-top-4 .block.dark div h3.item-heading,
+#thingsboard-pe #integration #features-top .block.dark div h2,
+#thingsboard-pe #integration #features-top .block.dark div h3.item-heading,
+#thingsboard-pe #integration #features-top-2 .block.dark div h2,
+#thingsboard-pe #integration #features-top-2 .block.dark div h3.item-heading,
+#thingsboard-pe #integration #features-top-3 .block.dark div h2,
+#thingsboard-pe #integration #features-top-3 .block.dark div h3.item-heading,
+#thingsboard-pe #integration #features-top-4 .block.dark div h2,
+#thingsboard-pe #integration #features-top-4 .block.dark div h3.item-heading,
+#thingsboard-pe #scheduler #features-top .block.dark div h2,
+#thingsboard-pe #scheduler #features-top .block.dark div h3.item-heading,
+#thingsboard-pe #scheduler #features-top-2 .block.dark div h2,
+#thingsboard-pe #scheduler #features-top-2 .block.dark div h3.item-heading,
+#thingsboard-pe #scheduler #features-top-3 .block.dark div h2,
+#thingsboard-pe #scheduler #features-top-3 .block.dark div h3.item-heading,
+#thingsboard-pe #scheduler #features-top-4 .block.dark div h2,
+#thingsboard-pe #scheduler #features-top-4 .block.dark div h3.item-heading,
+#thingsboard-pe #export #features-top .block.dark div h2,
+#thingsboard-pe #export #features-top .block.dark div h3.item-heading,
+#thingsboard-pe #export #features-top-2 .block.dark div h2,
+#thingsboard-pe #export #features-top-2 .block.dark div h3.item-heading,
+#thingsboard-pe #export #features-top-3 .block.dark div h2,
+#thingsboard-pe #export #features-top-3 .block.dark div h3.item-heading,
+#thingsboard-pe #export #features-top-4 .block.dark div h2,
+#thingsboard-pe #export #features-top-4 .block.dark div h3.item-heading {
+    color: white;
+}
+
+#thingsboard-pe #labeling #features-top .block.dark div p,
+#thingsboard-pe #labeling #features-top-2 .block.dark div p,
+#thingsboard-pe #labeling #features-top-3 .block.dark div p,
+#thingsboard-pe #labeling #features-top-4 .block.dark div p,
+#thingsboard-pe #integration #features-top .block.dark div p,
+#thingsboard-pe #integration #features-top-2 .block.dark div p,
+#thingsboard-pe #integration #features-top-3 .block.dark div p,
+#thingsboard-pe #integration #features-top-4 .block.dark div p,
+#thingsboard-pe #scheduler #features-top .block.dark div p,
+#thingsboard-pe #scheduler #features-top-2 .block.dark div p,
+#thingsboard-pe #scheduler #features-top-3 .block.dark div p,
+#thingsboard-pe #scheduler #features-top-4 .block.dark div p,
+#thingsboard-pe #export #features-top .block.dark div p,
+#thingsboard-pe #export #features-top-2 .block.dark div p,
+#thingsboard-pe #export #features-top-3 .block.dark div p,
+#thingsboard-pe #export #features-top-4 .block.dark div p {
+    color: #868686;
+}
+
+#thingsboard-pe #labeling #features-top .block.double,
+#thingsboard-pe #labeling #features-top-2 .block.double,
+#thingsboard-pe #labeling #features-top-3 .block.double,
+#thingsboard-pe #labeling #features-top-4 .block.double,
+#thingsboard-pe #integration #features-top .block.double,
+#thingsboard-pe #integration #features-top-2 .block.double,
+#thingsboard-pe #integration #features-top-3 .block.double,
+#thingsboard-pe #integration #features-top-4 .block.double,
+#thingsboard-pe #scheduler #features-top .block.double,
+#thingsboard-pe #scheduler #features-top-2 .block.double,
+#thingsboard-pe #scheduler #features-top-3 .block.double,
+#thingsboard-pe #scheduler #features-top-4 .block.double,
+#thingsboard-pe #export #features-top .block.double,
+#thingsboard-pe #export #features-top-2 .block.double,
+#thingsboard-pe #export #features-top-3 .block.double,
+#thingsboard-pe #export #features-top-4 .block.double {
+    margin-top: 100px;
+}
+
+#thingsboard-pe #labeling #features-top .block.double div,
+#thingsboard-pe #labeling #features-top-2 .block.double div,
+#thingsboard-pe #labeling #features-top-3 .block.double div,
+#thingsboard-pe #labeling #features-top-4 .block.double div,
+#thingsboard-pe #integration #features-top .block.double div,
+#thingsboard-pe #integration #features-top-2 .block.double div,
+#thingsboard-pe #integration #features-top-3 .block.double div,
+#thingsboard-pe #integration #features-top-4 .block.double div,
+#thingsboard-pe #scheduler #features-top .block.double div,
+#thingsboard-pe #scheduler #features-top-2 .block.double div,
+#thingsboard-pe #scheduler #features-top-3 .block.double div,
+#thingsboard-pe #scheduler #features-top-4 .block.double div,
+#thingsboard-pe #export #features-top .block.double div,
+#thingsboard-pe #export #features-top-2 .block.double div,
+#thingsboard-pe #export #features-top-3 .block.double div,
+#thingsboard-pe #export #features-top-4 .block.double div {
+    width: 100%;
+}
+
+#thingsboard-pe #labeling #features-top .block.double div.left-textblock,
+#thingsboard-pe #labeling #features-top-2 .block.double div.left-textblock,
+#thingsboard-pe #labeling #features-top-3 .block.double div.left-textblock,
+#thingsboard-pe #labeling #features-top-4 .block.double div.left-textblock,
+#thingsboard-pe #integration #features-top .block.double div.left-textblock,
+#thingsboard-pe #integration #features-top-2 .block.double div.left-textblock,
+#thingsboard-pe #integration #features-top-3 .block.double div.left-textblock,
+#thingsboard-pe #integration #features-top-4 .block.double div.left-textblock,
+#thingsboard-pe #scheduler #features-top .block.double div.left-textblock,
+#thingsboard-pe #scheduler #features-top-2 .block.double div.left-textblock,
+#thingsboard-pe #scheduler #features-top-3 .block.double div.left-textblock,
+#thingsboard-pe #scheduler #features-top-4 .block.double div.left-textblock,
+#thingsboard-pe #export #features-top .block.double div.left-textblock,
+#thingsboard-pe #export #features-top-2 .block.double div.left-textblock,
+#thingsboard-pe #export #features-top-3 .block.double div.left-textblock,
+#thingsboard-pe #export #features-top-4 .block.double div.left-textblock {
+    margin: unset;
+}
+
+#thingsboard-pe #labeling #features-top .block.double div.left-textblock h2,
+#thingsboard-pe #labeling #features-top .block.double div.left-textblock h3.item-heading,
+#thingsboard-pe #labeling #features-top-2 .block.double div.left-textblock h2,
+#thingsboard-pe #labeling #features-top-2 .block.double div.left-textblock h3.item-heading,
+#thingsboard-pe #labeling #features-top-3 .block.double div.left-textblock h2,
+#thingsboard-pe #labeling #features-top-3 .block.double div.left-textblock h3.item-heading,
+#thingsboard-pe #labeling #features-top-4 .block.double div.left-textblock h2,
+#thingsboard-pe #labeling #features-top-4 .block.double div.left-textblock h3.item-heading,
+#thingsboard-pe #integration #features-top .block.double div.left-textblock h2,
+#thingsboard-pe #integration #features-top .block.double div.left-textblock h3.item-heading,
+#thingsboard-pe #integration #features-top-2 .block.double div.left-textblock h2,
+#thingsboard-pe #integration #features-top-2 .block.double div.left-textblock h3.item-heading,
+#thingsboard-pe #integration #features-top-3 .block.double div.left-textblock h2,
+#thingsboard-pe #integration #features-top-3 .block.double div.left-textblock h3.item-heading,
+#thingsboard-pe #integration #features-top-4 .block.double div.left-textblock h2,
+#thingsboard-pe #integration #features-top-4 .block.double div.left-textblock h3.item-heading,
+#thingsboard-pe #scheduler #features-top .block.double div.left-textblock h2,
+#thingsboard-pe #scheduler #features-top .block.double div.left-textblock h3.item-heading,
+#thingsboard-pe #scheduler #features-top-2 .block.double div.left-textblock h2,
+#thingsboard-pe #scheduler #features-top-2 .block.double div.left-textblock h3.item-heading,
+#thingsboard-pe #scheduler #features-top-3 .block.double div.left-textblock h2,
+#thingsboard-pe #scheduler #features-top-3 .block.double div.left-textblock h3.item-heading,
+#thingsboard-pe #scheduler #features-top-4 .block.double div.left-textblock h2,
+#thingsboard-pe #scheduler #features-top-4 .block.double div.left-textblock h3.item-heading,
+#thingsboard-pe #export #features-top .block.double div.left-textblock h2,
+#thingsboard-pe #export #features-top .block.double div.left-textblock h3.item-heading,
+#thingsboard-pe #export #features-top-2 .block.double div.left-textblock h2,
+#thingsboard-pe #export #features-top-2 .block.double div.left-textblock h3.item-heading,
+#thingsboard-pe #export #features-top-3 .block.double div.left-textblock h2,
+#thingsboard-pe #export #features-top-3 .block.double div.left-textblock h3.item-heading,
+#thingsboard-pe #export #features-top-4 .block.double div.left-textblock h2,
+#thingsboard-pe #export #features-top-4 .block.double div.left-textblock h3.item-heading {
+    margin: unset;
+}
+
+#thingsboard-pe #labeling #features-top .block.double div.right-textblock,
+#thingsboard-pe #labeling #features-top-2 .block.double div.right-textblock,
+#thingsboard-pe #labeling #features-top-3 .block.double div.right-textblock,
+#thingsboard-pe #labeling #features-top-4 .block.double div.right-textblock,
+#thingsboard-pe #integration #features-top .block.double div.right-textblock,
+#thingsboard-pe #integration #features-top-2 .block.double div.right-textblock,
+#thingsboard-pe #integration #features-top-3 .block.double div.right-textblock,
+#thingsboard-pe #integration #features-top-4 .block.double div.right-textblock,
+#thingsboard-pe #scheduler #features-top .block.double div.right-textblock,
+#thingsboard-pe #scheduler #features-top-2 .block.double div.right-textblock,
+#thingsboard-pe #scheduler #features-top-3 .block.double div.right-textblock,
+#thingsboard-pe #scheduler #features-top-4 .block.double div.right-textblock,
+#thingsboard-pe #export #features-top .block.double div.right-textblock,
+#thingsboard-pe #export #features-top-2 .block.double div.right-textblock,
+#thingsboard-pe #export #features-top-3 .block.double div.right-textblock,
+#thingsboard-pe #export #features-top-4 .block.double div.right-textblock {
+    margin: 32px 0 0;
+}
+
+#thingsboard-pe #labeling #features-top .block.double div.right-textblock h2,
+#thingsboard-pe #labeling #features-top .block.double div.right-textblock h3.item-heading,
+#thingsboard-pe #labeling #features-top-2 .block.double div.right-textblock h2,
+#thingsboard-pe #labeling #features-top-2 .block.double div.right-textblock h3.item-heading,
+#thingsboard-pe #labeling #features-top-3 .block.double div.right-textblock h2,
+#thingsboard-pe #labeling #features-top-3 .block.double div.right-textblock h3.item-heading,
+#thingsboard-pe #labeling #features-top-4 .block.double div.right-textblock h2,
+#thingsboard-pe #labeling #features-top-4 .block.double div.right-textblock h3.item-heading,
+#thingsboard-pe #integration #features-top .block.double div.right-textblock h2,
+#thingsboard-pe #integration #features-top .block.double div.right-textblock h3.item-heading,
+#thingsboard-pe #integration #features-top-2 .block.double div.right-textblock h2,
+#thingsboard-pe #integration #features-top-2 .block.double div.right-textblock h3.item-heading,
+#thingsboard-pe #integration #features-top-3 .block.double div.right-textblock h2,
+#thingsboard-pe #integration #features-top-3 .block.double div.right-textblock h3.item-heading,
+#thingsboard-pe #integration #features-top-4 .block.double div.right-textblock h2,
+#thingsboard-pe #integration #features-top-4 .block.double div.right-textblock h3.item-heading,
+#thingsboard-pe #scheduler #features-top .block.double div.right-textblock h2,
+#thingsboard-pe #scheduler #features-top .block.double div.right-textblock h3.item-heading,
+#thingsboard-pe #scheduler #features-top-2 .block.double div.right-textblock h2,
+#thingsboard-pe #scheduler #features-top-2 .block.double div.right-textblock h3.item-heading,
+#thingsboard-pe #scheduler #features-top-3 .block.double div.right-textblock h2,
+#thingsboard-pe #scheduler #features-top-3 .block.double div.right-textblock h3.item-heading,
+#thingsboard-pe #scheduler #features-top-4 .block.double div.right-textblock h2,
+#thingsboard-pe #scheduler #features-top-4 .block.double div.right-textblock h3.item-heading,
+#thingsboard-pe #export #features-top .block.double div.right-textblock h2,
+#thingsboard-pe #export #features-top .block.double div.right-textblock h3.item-heading,
+#thingsboard-pe #export #features-top-2 .block.double div.right-textblock h2,
+#thingsboard-pe #export #features-top-2 .block.double div.right-textblock h3.item-heading,
+#thingsboard-pe #export #features-top-3 .block.double div.right-textblock h2,
+#thingsboard-pe #export #features-top-3 .block.double div.right-textblock h3.item-heading,
+#thingsboard-pe #export #features-top-4 .block.double div.right-textblock h2,
+#thingsboard-pe #export #features-top-4 .block.double div.right-textblock h3.item-heading {
+    margin: unset;
+}
+
+#thingsboard-pe #labeling #features-top .block.double img,
+#thingsboard-pe #labeling #features-top-2 .block.double img,
+#thingsboard-pe #labeling #features-top-3 .block.double img,
+#thingsboard-pe #labeling #features-top-4 .block.double img,
+#thingsboard-pe #integration #features-top .block.double img,
+#thingsboard-pe #integration #features-top-2 .block.double img,
+#thingsboard-pe #integration #features-top-3 .block.double img,
+#thingsboard-pe #integration #features-top-4 .block.double img,
+#thingsboard-pe #scheduler #features-top .block.double img,
+#thingsboard-pe #scheduler #features-top-2 .block.double img,
+#thingsboard-pe #scheduler #features-top-3 .block.double img,
+#thingsboard-pe #scheduler #features-top-4 .block.double img,
+#thingsboard-pe #export #features-top .block.double img,
+#thingsboard-pe #export #features-top-2 .block.double img,
+#thingsboard-pe #export #features-top-3 .block.double img,
+#thingsboard-pe #export #features-top-4 .block.double img {
+    width: 100%;
+}
+
+#thingsboard-pe #labeling #features-top .block.end,
+#thingsboard-pe #labeling #features-top-2 .block.end,
+#thingsboard-pe #labeling #features-top-3 .block.end,
+#thingsboard-pe #labeling #features-top-4 .block.end,
+#thingsboard-pe #integration #features-top .block.end,
+#thingsboard-pe #integration #features-top-2 .block.end,
+#thingsboard-pe #integration #features-top-3 .block.end,
+#thingsboard-pe #integration #features-top-4 .block.end,
+#thingsboard-pe #scheduler #features-top .block.end,
+#thingsboard-pe #scheduler #features-top-2 .block.end,
+#thingsboard-pe #scheduler #features-top-3 .block.end,
+#thingsboard-pe #scheduler #features-top-4 .block.end,
+#thingsboard-pe #export #features-top .block.end,
+#thingsboard-pe #export #features-top-2 .block.end,
+#thingsboard-pe #export #features-top-3 .block.end,
+#thingsboard-pe #export #features-top-4 .block.end {
+    margin: unset;
+}
+
+#thingsboard-pe #labeling #features-top .block.end div,
+#thingsboard-pe #labeling #features-top-2 .block.end div,
+#thingsboard-pe #labeling #features-top-3 .block.end div,
+#thingsboard-pe #labeling #features-top-4 .block.end div,
+#thingsboard-pe #integration #features-top .block.end div,
+#thingsboard-pe #integration #features-top-2 .block.end div,
+#thingsboard-pe #integration #features-top-3 .block.end div,
+#thingsboard-pe #integration #features-top-4 .block.end div,
+#thingsboard-pe #scheduler #features-top .block.end div,
+#thingsboard-pe #scheduler #features-top-2 .block.end div,
+#thingsboard-pe #scheduler #features-top-3 .block.end div,
+#thingsboard-pe #scheduler #features-top-4 .block.end div,
+#thingsboard-pe #export #features-top .block.end div,
+#thingsboard-pe #export #features-top-2 .block.end div,
+#thingsboard-pe #export #features-top-3 .block.end div,
+#thingsboard-pe #export #features-top-4 .block.end div {
+    margin-bottom: unset;
+}
+
+#thingsboard-pe #labeling #features-top .block #diagram,
+#thingsboard-pe #labeling #features-top-2 .block #diagram,
+#thingsboard-pe #labeling #features-top-3 .block #diagram,
+#thingsboard-pe #labeling #features-top-4 .block #diagram,
+#thingsboard-pe #integration #features-top .block #diagram,
+#thingsboard-pe #integration #features-top-2 .block #diagram,
+#thingsboard-pe #integration #features-top-3 .block #diagram,
+#thingsboard-pe #integration #features-top-4 .block #diagram,
+#thingsboard-pe #scheduler #features-top .block #diagram,
+#thingsboard-pe #scheduler #features-top-2 .block #diagram,
+#thingsboard-pe #scheduler #features-top-3 .block #diagram,
+#thingsboard-pe #scheduler #features-top-4 .block #diagram,
+#thingsboard-pe #export #features-top .block #diagram,
+#thingsboard-pe #export #features-top-2 .block #diagram,
+#thingsboard-pe #export #features-top-3 .block #diagram,
+#thingsboard-pe #export #features-top-4 .block #diagram {
+    order: 2;
+    margin-top: 32px;
+}
+
+#thingsboard-pe #labeling #features-top .block #diagram ul,
+#thingsboard-pe #labeling #features-top-2 .block #diagram ul,
+#thingsboard-pe #labeling #features-top-3 .block #diagram ul,
+#thingsboard-pe #labeling #features-top-4 .block #diagram ul,
+#thingsboard-pe #integration #features-top .block #diagram ul,
+#thingsboard-pe #integration #features-top-2 .block #diagram ul,
+#thingsboard-pe #integration #features-top-3 .block #diagram ul,
+#thingsboard-pe #integration #features-top-4 .block #diagram ul,
+#thingsboard-pe #scheduler #features-top .block #diagram ul,
+#thingsboard-pe #scheduler #features-top-2 .block #diagram ul,
+#thingsboard-pe #scheduler #features-top-3 .block #diagram ul,
+#thingsboard-pe #scheduler #features-top-4 .block #diagram ul,
+#thingsboard-pe #export #features-top .block #diagram ul,
+#thingsboard-pe #export #features-top-2 .block #diagram ul,
+#thingsboard-pe #export #features-top-3 .block #diagram ul,
+#thingsboard-pe #export #features-top-4 .block #diagram ul {
+    padding-bottom: 12px;
+    display: -webkit-box;
+}
+
+#thingsboard-pe #labeling #features-top .block #diagram ul li,
+#thingsboard-pe #labeling #features-top-2 .block #diagram ul li,
+#thingsboard-pe #labeling #features-top-3 .block #diagram ul li,
+#thingsboard-pe #labeling #features-top-4 .block #diagram ul li,
+#thingsboard-pe #integration #features-top .block #diagram ul li,
+#thingsboard-pe #integration #features-top-2 .block #diagram ul li,
+#thingsboard-pe #integration #features-top-3 .block #diagram ul li,
+#thingsboard-pe #integration #features-top-4 .block #diagram ul li,
+#thingsboard-pe #scheduler #features-top .block #diagram ul li,
+#thingsboard-pe #scheduler #features-top-2 .block #diagram ul li,
+#thingsboard-pe #scheduler #features-top-3 .block #diagram ul li,
+#thingsboard-pe #scheduler #features-top-4 .block #diagram ul li,
+#thingsboard-pe #export #features-top .block #diagram ul li,
+#thingsboard-pe #export #features-top-2 .block #diagram ul li,
+#thingsboard-pe #export #features-top-3 .block #diagram ul li,
+#thingsboard-pe #export #features-top-4 .block #diagram ul li {
+    padding: 6px 0;
+    margin-right: 22px;
+}
+
+#thingsboard-pe #labeling #features-top .block #diagram ul li a,
+#thingsboard-pe #labeling #features-top-2 .block #diagram ul li a,
+#thingsboard-pe #labeling #features-top-3 .block #diagram ul li a,
+#thingsboard-pe #labeling #features-top-4 .block #diagram ul li a,
+#thingsboard-pe #integration #features-top .block #diagram ul li a,
+#thingsboard-pe #integration #features-top-2 .block #diagram ul li a,
+#thingsboard-pe #integration #features-top-3 .block #diagram ul li a,
+#thingsboard-pe #integration #features-top-4 .block #diagram ul li a,
+#thingsboard-pe #scheduler #features-top .block #diagram ul li a,
+#thingsboard-pe #scheduler #features-top-2 .block #diagram ul li a,
+#thingsboard-pe #scheduler #features-top-3 .block #diagram ul li a,
+#thingsboard-pe #scheduler #features-top-4 .block #diagram ul li a,
+#thingsboard-pe #export #features-top .block #diagram ul li a,
+#thingsboard-pe #export #features-top-2 .block #diagram ul li a,
+#thingsboard-pe #export #features-top-3 .block #diagram ul li a,
+#thingsboard-pe #export #features-top-4 .block #diagram ul li a {
+    color: #757C76;
+    font-weight: normal;
+    font-size: 16px;
+}
+
+#thingsboard-pe #labeling #features-top .block #diagram ul li.active,
+#thingsboard-pe #labeling #features-top-2 .block #diagram ul li.active,
+#thingsboard-pe #labeling #features-top-3 .block #diagram ul li.active,
+#thingsboard-pe #labeling #features-top-4 .block #diagram ul li.active,
+#thingsboard-pe #integration #features-top .block #diagram ul li.active,
+#thingsboard-pe #integration #features-top-2 .block #diagram ul li.active,
+#thingsboard-pe #integration #features-top-3 .block #diagram ul li.active,
+#thingsboard-pe #integration #features-top-4 .block #diagram ul li.active,
+#thingsboard-pe #scheduler #features-top .block #diagram ul li.active,
+#thingsboard-pe #scheduler #features-top-2 .block #diagram ul li.active,
+#thingsboard-pe #scheduler #features-top-3 .block #diagram ul li.active,
+#thingsboard-pe #scheduler #features-top-4 .block #diagram ul li.active,
+#thingsboard-pe #export #features-top .block #diagram ul li.active,
+#thingsboard-pe #export #features-top-2 .block #diagram ul li.active,
+#thingsboard-pe #export #features-top-3 .block #diagram ul li.active,
+#thingsboard-pe #export #features-top-4 .block #diagram ul li.active {
+    padding: 6px 14px;
+    background-color: #17BB52;
+    border-radius: 6px;
+}
+
+#thingsboard-pe #labeling #features-top .block #diagram ul li.active a,
+#thingsboard-pe #labeling #features-top-2 .block #diagram ul li.active a,
+#thingsboard-pe #labeling #features-top-3 .block #diagram ul li.active a,
+#thingsboard-pe #labeling #features-top-4 .block #diagram ul li.active a,
+#thingsboard-pe #integration #features-top .block #diagram ul li.active a,
+#thingsboard-pe #integration #features-top-2 .block #diagram ul li.active a,
+#thingsboard-pe #integration #features-top-3 .block #diagram ul li.active a,
+#thingsboard-pe #integration #features-top-4 .block #diagram ul li.active a,
+#thingsboard-pe #scheduler #features-top .block #diagram ul li.active a,
+#thingsboard-pe #scheduler #features-top-2 .block #diagram ul li.active a,
+#thingsboard-pe #scheduler #features-top-3 .block #diagram ul li.active a,
+#thingsboard-pe #scheduler #features-top-4 .block #diagram ul li.active a,
+#thingsboard-pe #export #features-top .block #diagram ul li.active a,
+#thingsboard-pe #export #features-top-2 .block #diagram ul li.active a,
+#thingsboard-pe #export #features-top-3 .block #diagram ul li.active a,
+#thingsboard-pe #export #features-top-4 .block #diagram ul li.active a {
+    color: white;
+    text-decoration: none;
+}
+
+#thingsboard-pe #labeling #features-top .block #diagram img,
+#thingsboard-pe #labeling #features-top-2 .block #diagram img,
+#thingsboard-pe #labeling #features-top-3 .block #diagram img,
+#thingsboard-pe #labeling #features-top-4 .block #diagram img,
+#thingsboard-pe #integration #features-top .block #diagram img,
+#thingsboard-pe #integration #features-top-2 .block #diagram img,
+#thingsboard-pe #integration #features-top-3 .block #diagram img,
+#thingsboard-pe #integration #features-top-4 .block #diagram img,
+#thingsboard-pe #scheduler #features-top .block #diagram img,
+#thingsboard-pe #scheduler #features-top-2 .block #diagram img,
+#thingsboard-pe #scheduler #features-top-3 .block #diagram img,
+#thingsboard-pe #scheduler #features-top-4 .block #diagram img,
+#thingsboard-pe #export #features-top .block #diagram img,
+#thingsboard-pe #export #features-top-2 .block #diagram img,
+#thingsboard-pe #export #features-top-3 .block #diagram img,
+#thingsboard-pe #export #features-top-4 .block #diagram img {
+    box-shadow: none;
+}
+
+#thingsboard-pe #labeling #features-top .block #diagram .diagram-border,
+#thingsboard-pe #labeling #features-top-2 .block #diagram .diagram-border,
+#thingsboard-pe #labeling #features-top-3 .block #diagram .diagram-border,
+#thingsboard-pe #labeling #features-top-4 .block #diagram .diagram-border,
+#thingsboard-pe #integration #features-top .block #diagram .diagram-border,
+#thingsboard-pe #integration #features-top-2 .block #diagram .diagram-border,
+#thingsboard-pe #integration #features-top-3 .block #diagram .diagram-border,
+#thingsboard-pe #integration #features-top-4 .block #diagram .diagram-border,
+#thingsboard-pe #scheduler #features-top .block #diagram .diagram-border,
+#thingsboard-pe #scheduler #features-top-2 .block #diagram .diagram-border,
+#thingsboard-pe #scheduler #features-top-3 .block #diagram .diagram-border,
+#thingsboard-pe #scheduler #features-top-4 .block #diagram .diagram-border,
+#thingsboard-pe #export #features-top .block #diagram .diagram-border,
+#thingsboard-pe #export #features-top-2 .block #diagram .diagram-border,
+#thingsboard-pe #export #features-top-3 .block #diagram .diagram-border,
+#thingsboard-pe #export #features-top-4 .block #diagram .diagram-border {
+    display: none;
+    position: absolute;
+}
+
+#thingsboard-pe #labeling #features-top .block #diagram .diagram-content,
+#thingsboard-pe #labeling #features-top-2 .block #diagram .diagram-content,
+#thingsboard-pe #labeling #features-top-3 .block #diagram .diagram-content,
+#thingsboard-pe #labeling #features-top-4 .block #diagram .diagram-content,
+#thingsboard-pe #integration #features-top .block #diagram .diagram-content,
+#thingsboard-pe #integration #features-top-2 .block #diagram .diagram-content,
+#thingsboard-pe #integration #features-top-3 .block #diagram .diagram-content,
+#thingsboard-pe #integration #features-top-4 .block #diagram .diagram-content,
+#thingsboard-pe #scheduler #features-top .block #diagram .diagram-content,
+#thingsboard-pe #scheduler #features-top-2 .block #diagram .diagram-content,
+#thingsboard-pe #scheduler #features-top-3 .block #diagram .diagram-content,
+#thingsboard-pe #scheduler #features-top-4 .block #diagram .diagram-content,
+#thingsboard-pe #export #features-top .block #diagram .diagram-content,
+#thingsboard-pe #export #features-top-2 .block #diagram .diagram-content,
+#thingsboard-pe #export #features-top-3 .block #diagram .diagram-content,
+#thingsboard-pe #export #features-top-4 .block #diagram .diagram-content {
+    border: solid 1px #212924;
+    padding: 6% 8%;
+    width: 100%;
+}
+
+#thingsboard-pe #labeling #features-top .block #diagram .diagram-content img,
+#thingsboard-pe #labeling #features-top-2 .block #diagram .diagram-content img,
+#thingsboard-pe #labeling #features-top-3 .block #diagram .diagram-content img,
+#thingsboard-pe #labeling #features-top-4 .block #diagram .diagram-content img,
+#thingsboard-pe #integration #features-top .block #diagram .diagram-content img,
+#thingsboard-pe #integration #features-top-2 .block #diagram .diagram-content img,
+#thingsboard-pe #integration #features-top-3 .block #diagram .diagram-content img,
+#thingsboard-pe #integration #features-top-4 .block #diagram .diagram-content img,
+#thingsboard-pe #scheduler #features-top .block #diagram .diagram-content img,
+#thingsboard-pe #scheduler #features-top-2 .block #diagram .diagram-content img,
+#thingsboard-pe #scheduler #features-top-3 .block #diagram .diagram-content img,
+#thingsboard-pe #scheduler #features-top-4 .block #diagram .diagram-content img,
+#thingsboard-pe #export #features-top .block #diagram .diagram-content img,
+#thingsboard-pe #export #features-top-2 .block #diagram .diagram-content img,
+#thingsboard-pe #export #features-top-3 .block #diagram .diagram-content img,
+#thingsboard-pe #export #features-top-4 .block #diagram .diagram-content img {
+    width: inherit;
+}
+
+#thingsboard-pe #tb-customers {
+    margin: -50px -100% 0;
+    padding: 50px 100%;
+    text-align: justify;
+    -moz-text-align-last: justify;
+    text-align-last: justify;
+    display: none;
+}
+
+@media(min-width: 992px) {
+    #thingsboard-pe #tb-customers {
+        display: block;
+    }
+}
+
+#thingsboard-pe #tb-customers img {
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+#thingsboard-pe #tb-customers main,
+#thingsboard-pe #tb-customers div.main-div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 50px;
+}
+
+#thingsboard-pe #tb-customers main a,
+#thingsboard-pe #tb-customers div.main-div a {
+    display: block;
+    padding: 10px;
+}
+
+#thingsboard-pe #tb-customers main a object,
+#thingsboard-pe #tb-customers div.main-div a object {
+    pointer-events: none;
+    filter: invert(79%) sepia(25%) saturate(246%) hue-rotate(93deg) brightness(185%) contrast(82%);
+}
+
+#thingsboard-pe #lists-first,
+#thingsboard-pe #lists-second {
+    position: absolute;
+    left: 50%;
+}
+
+#thingsboard-pe #lists-first img,
+#thingsboard-pe #lists-second img {
+    position: absolute;
+    border-radius: 6px;
+    box-shadow: 0 50px 50px -20px rgba(0, 0, 0, 0.15), 0 0 30px 0 rgba(0, 0, 0, 0.1);
+}
+
+#thingsboard-pe #lists-first img.integrations-list,
+#thingsboard-pe #lists-second img.integrations-list {
+    width: 260px;
+    top: 560px;
+    left: 60px;
+}
+
+#thingsboard-pe #lists-first img.export-list,
+#thingsboard-pe #lists-second img.export-list {
+    width: 200px;
+    top: 380px;
+    right: -240px;
+}
+
+@media screen and (max-width: 530px) {
+    #thingsboard-pe #lists-first img.export-list,
+    #thingsboard-pe #lists-second img.export-list {
+        top: 400px;
+        right: -245px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    #thingsboard-pe #lists-first img.export-list,
+    #thingsboard-pe #lists-second img.export-list {
+        top: 475px;
+        right: -144px;
+    }
+}
+
+#thingsboard-pe #background-white-labeling,
+#thingsboard-pe #background-platform-integrations,
+#thingsboard-pe #background-scheduler,
+#thingsboard-pe #background-data-export {
+    z-index: -1;
+    position: absolute;
+    top: 524px;
+    left: 50%;
+}
+
+#thingsboard-pe #background-white-labeling div,
+#thingsboard-pe #background-platform-integrations div,
+#thingsboard-pe #background-scheduler div,
+#thingsboard-pe #background-data-export div {
+    position: absolute;
+    -ms-transform: skewY(-6deg);
+    transform: skewY(-6deg);
+    width: 436px;
+    height: 90px;
+}
+
+#thingsboard-pe #background-white-labeling div.main1,
+#thingsboard-pe #background-platform-integrations div.main1,
+#thingsboard-pe #background-scheduler div.main1,
+#thingsboard-pe #background-data-export div.main1 {
+    top: -558px;
+    width: 2560px;
+    height: 525px;
+    left: -1280px;
+    background-color: #F4F4F4;
+}
+
+#thingsboard-pe #background-white-labeling div.small1,
+#thingsboard-pe #background-platform-integrations div.small1,
+#thingsboard-pe #background-scheduler div.small1,
+#thingsboard-pe #background-data-export div.small1 {
+    top: -542px;
+    right: 524px;
+    background-color: #27AE60;
+}
+
+#thingsboard-pe #background-white-labeling div.small2,
+#thingsboard-pe #background-platform-integrations div.small2,
+#thingsboard-pe #background-scheduler div.small2,
+#thingsboard-pe #background-data-export div.small2 {
+    top: -532px;
+    right: 270px;
+    border: 2px solid #234732;
+}
+
+#thingsboard-pe #background-white-labeling div.small3,
+#thingsboard-pe #background-platform-integrations div.small3,
+#thingsboard-pe #background-scheduler div.small3,
+#thingsboard-pe #background-data-export div.small3 {
+    top: -686px;
+    left: 524px;
+    background-color: #1F8B4D;
+}
+
+#thingsboard-pe #background-white-labeling div.main2,
+#thingsboard-pe #background-platform-integrations div.main2,
+#thingsboard-pe #background-scheduler div.main2,
+#thingsboard-pe #background-data-export div.main2 {
+    top: -500px;
+    width: 2560px;
+    height: 725px;
+    left: -1280px;
+    background-color: #262C28;
+}
+
+#thingsboard-pe #background-white-labeling div.small4,
+#thingsboard-pe #background-platform-integrations div.small4,
+#thingsboard-pe #background-scheduler div.small4,
+#thingsboard-pe #background-data-export div.small4 {
+    top: -660px;
+    left: 836px;
+    background-color: #27AE60;
+}
+
+#thingsboard-pe #background-white-labeling div.small5,
+#thingsboard-pe #background-platform-integrations div.small5,
+#thingsboard-pe #background-scheduler div.small5,
+#thingsboard-pe #background-data-export div.small5 {
+    top: 66px;
+    right: 528px;
+    border: 4px solid #27AE60;
+}
+
+#thingsboard-pe #background-white-labeling div.main3,
+#thingsboard-pe #background-platform-integrations div.main3,
+#thingsboard-pe #background-scheduler div.main3,
+#thingsboard-pe #background-data-export div.main3 {
+    top: -503px;
+    width: 2560px;
+    height: 525px;
+    left: -1280px;
+    background-color: #F4F4F4;
+}
+
+#thingsboard-pe #background-white-labeling div.small6,
+#thingsboard-pe #background-platform-integrations div.small6,
+#thingsboard-pe #background-scheduler div.small6,
+#thingsboard-pe #background-data-export div.small6 {
+    top: -467px;
+    right: 804px;
+    background-color: #1F8B4D;
+}
+
+#thingsboard-pe #background-white-labeling div.small7,
+#thingsboard-pe #background-platform-integrations div.small7,
+#thingsboard-pe #background-scheduler div.small7,
+#thingsboard-pe #background-data-export div.small7 {
+    top: -644px;
+    left: 566px;
+    background-color: #27AE60;
+}
+
+#thingsboard-pe #background-white-labeling div.small8,
+#thingsboard-pe #background-platform-integrations div.small8,
+#thingsboard-pe #background-scheduler div.small8,
+#thingsboard-pe #background-data-export div.small8 {
+    top: -114px;
+    left: 804px;
+    border: 2px solid #234732;
+}
+
+#thingsboard-pe #background-white-labeling div.bottom,
+#thingsboard-pe #background-platform-integrations div.bottom,
+#thingsboard-pe #background-scheduler div.bottom,
+#thingsboard-pe #background-data-export div.bottom {
+    top: -70px;
+    width: 2560px;
+    height: 130px;
+    left: -1280px;
+    background-color: #262C28;
+}
+
+#thingsboard-pe #background-white-labeling div.small9,
+#thingsboard-pe #background-platform-integrations div.small9,
+#thingsboard-pe #background-scheduler div.small9,
+#thingsboard-pe #background-data-export div.small9 {
+    top: -10px;
+    left: 565px;
+    background-color: #1F8B4D;
+}
+
+#thingsboard-pe #read-more-button,
+#thingsboard-pe .read-more-button {
+    position: relative;
+    transition-duration: 0.3s;
+}
+
+#thingsboard-pe #read-more-button .arrow,
+#thingsboard-pe .read-more-button .arrow {
+    transform: translate(0px);
+    transition-duration: 0.3s;
+    filter: invert(60%) sepia(22%) saturate(7500%) hue-rotate(102deg) brightness(98%) contrast(82%);
+    box-shadow: none !important;
+    width: 12px !important;
+    margin-left: 12px;
+    position: absolute;
+    top: 7px;
+}
+
+#thingsboard-pe #read-more-button .arrow.first,
+#thingsboard-pe .read-more-button .arrow.first {
+    opacity: 0.2;
+}
+
+#thingsboard-pe #read-more-button .arrow.second,
+#thingsboard-pe .read-more-button .arrow.second {
+    opacity: 0.5;
+}
+
+#thingsboard-pe #read-more-button:hover,
+#thingsboard-pe .read-more-button:hover {
+    transition-duration: 0.3s;
+}
+
+#thingsboard-pe #read-more-button:hover .first,
+#thingsboard-pe .read-more-button:hover .first {
+    transform: translate(10px);
+}
+
+#thingsboard-pe #read-more-button:hover .second,
+#thingsboard-pe .read-more-button:hover .second {
+    transform: translate(20px);
+}
+
+#thingsboard-pe #read-more-button:hover .third,
+#thingsboard-pe .read-more-button:hover .third {
+    transform: translate(30px);
+}
+
+#thingsboard-pe .header-animation {
+    max-width: 100%;
+    opacity: 0;
+    transform: translate3d(0, 45px, 0);
+    animation-name: slideup-in;
+    animation-duration: 600ms;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation-fill-mode: forwards;
+}
+
+#thingsboard-pe .header-animation:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+#thingsboard-pe .header-animation:nth-child(2) {
+    animation-delay: 300ms;
+}
+
+#thingsboard-pe .header-animation:nth-child(3) {
+    animation-delay: 600ms;
+}
+
+#thingsboard-pe .header-animation:nth-child(4) {
+    animation-delay: 900ms;
+}
+
+#thingsboard-pe .header-animation:nth-child(5) {
+    animation-delay: 1200ms;
+}
+
+@media screen and (min-width: 750px) {
+    #thingsboard-pe #hero #hero-content .pe-title {
+        font-size: 36px;
+    }
+
+    #thingsboard-pe #peContent #features main .item,
+    #thingsboard-pe #peContent #features div.main-div .item {
+        padding: 0 10%;
+    }
+
+    #thingsboard-pe #peContent #matrix h3 {
+        font-size: 42px;
+        line-height: 63px;
+    }
+
+    #thingsboard-pe #peContent #matrix table thead {
+        font-size: 20px;
+    }
+
+    #thingsboard-pe #peContent #matrix table thead tr th {
+        width: 20%;
+        padding: 0 0 40px;
+        font-size: 20px;
+    }
+
+    #thingsboard-pe #peContent #matrix table thead tr td {
+        width: 40%;
+    }
+
+    #thingsboard-pe #peContent #matrix table tbody tr th,
+    #thingsboard-pe #peContent #matrix table tbody tr a {
+        padding-right: 48px;
+        font-size: 18px;
+    }
+
+    #thingsboard-pe #peContent #matrix table tbody tr td {
+        font-size: 20px;
+    }
+
+    #thingsboard-pe #peContent #matrix table tbody tr td img {
+        width: unset;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top .block .feature-des,
+    #thingsboard-pe #peContent #labeling #features-top .block img,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block .feature-des,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block img,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block .feature-des,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block img,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block .feature-des,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block img,
+    #thingsboard-pe #peContent #integration #features-top .block .feature-des,
+    #thingsboard-pe #peContent #integration #features-top .block img,
+    #thingsboard-pe #peContent #integration #features-top-2 .block .feature-des,
+    #thingsboard-pe #peContent #integration #features-top-2 .block img,
+    #thingsboard-pe #peContent #integration #features-top-3 .block .feature-des,
+    #thingsboard-pe #peContent #integration #features-top-3 .block img,
+    #thingsboard-pe #peContent #integration #features-top-4 .block .feature-des,
+    #thingsboard-pe #peContent #integration #features-top-4 .block img,
+    #thingsboard-pe #peContent #scheduler #features-top .block .feature-des,
+    #thingsboard-pe #peContent #scheduler #features-top .block img,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block .feature-des,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block img,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block .feature-des,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block img,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block .feature-des,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block img,
+    #thingsboard-pe #peContent #export #features-top .block .feature-des,
+    #thingsboard-pe #peContent #export #features-top .block img,
+    #thingsboard-pe #peContent #export #features-top-2 .block .feature-des,
+    #thingsboard-pe #peContent #export #features-top-2 .block img,
+    #thingsboard-pe #peContent #export #features-top-3 .block .feature-des,
+    #thingsboard-pe #peContent #export #features-top-3 .block img,
+    #thingsboard-pe #peContent #export #features-top-4 .block .feature-des,
+    #thingsboard-pe #peContent #export #features-top-4 .block img {
+        width: 80%;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top .block.double img,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block.double img,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block.double img,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block.double img,
+    #thingsboard-pe #peContent #integration #features-top .block.double img,
+    #thingsboard-pe #peContent #integration #features-top-2 .block.double img,
+    #thingsboard-pe #peContent #integration #features-top-3 .block.double img,
+    #thingsboard-pe #peContent #integration #features-top-4 .block.double img,
+    #thingsboard-pe #peContent #scheduler #features-top .block.double img,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block.double img,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block.double img,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block.double img,
+    #thingsboard-pe #peContent #export #features-top .block.double img,
+    #thingsboard-pe #peContent #export #features-top-2 .block.double img,
+    #thingsboard-pe #peContent #export #features-top-3 .block.double img,
+    #thingsboard-pe #peContent #export #features-top-4 .block.double img {
+        width: 80%;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top #lists-first img,
+    #thingsboard-pe #peContent #labeling #features-top #lists-second img,
+    #thingsboard-pe #peContent #labeling #features-top-2 #lists-first img,
+    #thingsboard-pe #peContent #labeling #features-top-2 #lists-second img,
+    #thingsboard-pe #peContent #labeling #features-top-3 #lists-first img,
+    #thingsboard-pe #peContent #labeling #features-top-3 #lists-second img,
+    #thingsboard-pe #peContent #labeling #features-top-4 #lists-first img,
+    #thingsboard-pe #peContent #labeling #features-top-4 #lists-second img,
+    #thingsboard-pe #peContent #integration #features-top #lists-first img,
+    #thingsboard-pe #peContent #integration #features-top #lists-second img,
+    #thingsboard-pe #peContent #integration #features-top-2 #lists-first img,
+    #thingsboard-pe #peContent #integration #features-top-2 #lists-second img,
+    #thingsboard-pe #peContent #integration #features-top-3 #lists-first img,
+    #thingsboard-pe #peContent #integration #features-top-3 #lists-second img,
+    #thingsboard-pe #peContent #integration #features-top-4 #lists-first img,
+    #thingsboard-pe #peContent #integration #features-top-4 #lists-second img,
+    #thingsboard-pe #peContent #scheduler #features-top #lists-first img,
+    #thingsboard-pe #peContent #scheduler #features-top #lists-second img,
+    #thingsboard-pe #peContent #scheduler #features-top-2 #lists-first img,
+    #thingsboard-pe #peContent #scheduler #features-top-2 #lists-second img,
+    #thingsboard-pe #peContent #scheduler #features-top-3 #lists-first img,
+    #thingsboard-pe #peContent #scheduler #features-top-3 #lists-second img,
+    #thingsboard-pe #peContent #scheduler #features-top-4 #lists-first img,
+    #thingsboard-pe #peContent #scheduler #features-top-4 #lists-second img,
+    #thingsboard-pe #peContent #export #features-top #lists-first img,
+    #thingsboard-pe #peContent #export #features-top #lists-second img,
+    #thingsboard-pe #peContent #export #features-top-2 #lists-first img,
+    #thingsboard-pe #peContent #export #features-top-2 #lists-second img,
+    #thingsboard-pe #peContent #export #features-top-3 #lists-first img,
+    #thingsboard-pe #peContent #export #features-top-3 #lists-second img,
+    #thingsboard-pe #peContent #export #features-top-4 #lists-first img,
+    #thingsboard-pe #peContent #export #features-top-4 #lists-second img {
+        width: unset;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+
+    #thingsboard-pe section main,
+    #thingsboard-pe section div.main-div,
+    #thingsboard-pe header main,
+    #thingsboard-pe header div.main-div {
+        max-width: 100%;
+    }
+
+    #thingsboard-pe footer main,
+    #thingsboard-pe footer div.main-div {
+        max-width: 100%;
+    }
+
+    #thingsboard-pe #peContent {
+        max-width: 100%;
+    }
+
+    #thingsboard-pe #peContent #intro {
+        padding-top: 50px;
+    }
+
+    #thingsboard-pe #peContent #intro .sub-title {
+        text-align: center;
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    #thingsboard-pe #peContent #intro .clari {
+        margin-bottom: 200px;
+    }
+
+    #thingsboard-pe #peContent #features main,
+    #thingsboard-pe #peContent #features div.main-div {
+        flex-direction: unset;
+    }
+
+    #thingsboard-pe #peContent #features main .item,
+    #thingsboard-pe #peContent #features div.main-div .item {
+        width: calc(50% - 162px);
+        padding: 0;
+    }
+
+    #thingsboard-pe #peContent #features main .divider,
+    #thingsboard-pe #peContent #features div.main-div .divider {
+        margin: unset;
+    }
+
+    #thingsboard-pe #peContent #matrix .cloud,
+    #thingsboard-pe #peContent #matrix .prof,
+    #thingsboard-pe #peContent #matrix .community {
+        padding: 0 14px;
+    }
+
+    #thingsboard-pe #peContent #matrix table td,
+    #thingsboard-pe #peContent #matrix table th {
+        margin: 0 14px;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top .block,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block,
+    #thingsboard-pe #peContent #integration #features-top .block,
+    #thingsboard-pe #peContent #integration #features-top-2 .block,
+    #thingsboard-pe #peContent #integration #features-top-3 .block,
+    #thingsboard-pe #peContent #integration #features-top-4 .block,
+    #thingsboard-pe #peContent #scheduler #features-top .block,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block,
+    #thingsboard-pe #peContent #export #features-top .block,
+    #thingsboard-pe #peContent #export #features-top-2 .block,
+    #thingsboard-pe #peContent #export #features-top-3 .block,
+    #thingsboard-pe #peContent #export #features-top-4 .block {
+        flex-direction: row;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top .block .feature-des,
+    #thingsboard-pe #peContent #labeling #features-top .block img,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block .feature-des,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block img,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block .feature-des,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block img,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block .feature-des,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block img,
+    #thingsboard-pe #peContent #integration #features-top .block .feature-des,
+    #thingsboard-pe #peContent #integration #features-top .block img,
+    #thingsboard-pe #peContent #integration #features-top-2 .block .feature-des,
+    #thingsboard-pe #peContent #integration #features-top-2 .block img,
+    #thingsboard-pe #peContent #integration #features-top-3 .block .feature-des,
+    #thingsboard-pe #peContent #integration #features-top-3 .block img,
+    #thingsboard-pe #peContent #integration #features-top-4 .block .feature-des,
+    #thingsboard-pe #peContent #integration #features-top-4 .block img,
+    #thingsboard-pe #peContent #scheduler #features-top .block .feature-des,
+    #thingsboard-pe #peContent #scheduler #features-top .block img,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block .feature-des,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block img,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block .feature-des,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block img,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block .feature-des,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block img,
+    #thingsboard-pe #peContent #export #features-top .block .feature-des,
+    #thingsboard-pe #peContent #export #features-top .block img,
+    #thingsboard-pe #peContent #export #features-top-2 .block .feature-des,
+    #thingsboard-pe #peContent #export #features-top-2 .block img,
+    #thingsboard-pe #peContent #export #features-top-3 .block .feature-des,
+    #thingsboard-pe #peContent #export #features-top-3 .block img,
+    #thingsboard-pe #peContent #export #features-top-4 .block .feature-des,
+    #thingsboard-pe #peContent #export #features-top-4 .block img {
+        width: calc(50% - 80px);
+        order: unset;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top .block .feature-des h2,
+    #thingsboard-pe #peContent #labeling #features-top .block img h2,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block .feature-des h2,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block img h2,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block .feature-des h2,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block img h2,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block .feature-des h2,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block img h2,
+    #thingsboard-pe #peContent #integration #features-top .block .feature-des h2,
+    #thingsboard-pe #peContent #integration #features-top .block img h2,
+    #thingsboard-pe #peContent #integration #features-top-2 .block .feature-des h2,
+    #thingsboard-pe #peContent #integration #features-top-2 .block img h2,
+    #thingsboard-pe #peContent #integration #features-top-3 .block .feature-des h2,
+    #thingsboard-pe #peContent #integration #features-top-3 .block img h2,
+    #thingsboard-pe #peContent #integration #features-top-4 .block .feature-des h2,
+    #thingsboard-pe #peContent #integration #features-top-4 .block img h2,
+    #thingsboard-pe #peContent #scheduler #features-top .block .feature-des h2,
+    #thingsboard-pe #peContent #scheduler #features-top .block img h2,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block .feature-des h2,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block img h2,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block .feature-des h2,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block img h2,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block .feature-des h2,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block img h2,
+    #thingsboard-pe #peContent #export #features-top .block .feature-des h2,
+    #thingsboard-pe #peContent #export #features-top .block img h2,
+    #thingsboard-pe #peContent #export #features-top-2 .block .feature-des h2,
+    #thingsboard-pe #peContent #export #features-top-2 .block img h2,
+    #thingsboard-pe #peContent #export #features-top-3 .block .feature-des h2,
+    #thingsboard-pe #peContent #export #features-top-3 .block img h2,
+    #thingsboard-pe #peContent #export #features-top-4 .block .feature-des h2,
+    #thingsboard-pe #peContent #export #features-top-4 .block img h2 {
+        margin: unset;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top .block .preview,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block .preview,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block .preview,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block .preview,
+    #thingsboard-pe #peContent #integration #features-top .block .preview,
+    #thingsboard-pe #peContent #integration #features-top-2 .block .preview,
+    #thingsboard-pe #peContent #integration #features-top-3 .block .preview,
+    #thingsboard-pe #peContent #integration #features-top-4 .block .preview,
+    #thingsboard-pe #peContent #scheduler #features-top .block .preview,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block .preview,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block .preview,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block .preview,
+    #thingsboard-pe #peContent #export #features-top .block .preview,
+    #thingsboard-pe #peContent #export #features-top-2 .block .preview,
+    #thingsboard-pe #peContent #export #features-top-3 .block .preview,
+    #thingsboard-pe #peContent #export #features-top-4 .block .preview {
+        margin-top: unset;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top .block #diagram,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block #diagram,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block #diagram,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block #diagram,
+    #thingsboard-pe #peContent #integration #features-top .block #diagram,
+    #thingsboard-pe #peContent #integration #features-top-2 .block #diagram,
+    #thingsboard-pe #peContent #integration #features-top-3 .block #diagram,
+    #thingsboard-pe #peContent #integration #features-top-4 .block #diagram,
+    #thingsboard-pe #peContent #scheduler #features-top .block #diagram,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block #diagram,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block #diagram,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block #diagram,
+    #thingsboard-pe #peContent #export #features-top .block #diagram,
+    #thingsboard-pe #peContent #export #features-top-2 .block #diagram,
+    #thingsboard-pe #peContent #export #features-top-3 .block #diagram,
+    #thingsboard-pe #peContent #export #features-top-4 .block #diagram {
+        margin: 29px 0;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top .block #diagram .diagram-border,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block #diagram .diagram-border,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block #diagram .diagram-border,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block #diagram .diagram-border,
+    #thingsboard-pe #peContent #integration #features-top .block #diagram .diagram-border,
+    #thingsboard-pe #peContent #integration #features-top-2 .block #diagram .diagram-border,
+    #thingsboard-pe #peContent #integration #features-top-3 .block #diagram .diagram-border,
+    #thingsboard-pe #peContent #integration #features-top-4 .block #diagram .diagram-border,
+    #thingsboard-pe #peContent #scheduler #features-top .block #diagram .diagram-border,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block #diagram .diagram-border,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block #diagram .diagram-border,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block #diagram .diagram-border,
+    #thingsboard-pe #peContent #export #features-top .block #diagram .diagram-border,
+    #thingsboard-pe #peContent #export #features-top-2 .block #diagram .diagram-border,
+    #thingsboard-pe #peContent #export #features-top-3 .block #diagram .diagram-border,
+    #thingsboard-pe #peContent #export #features-top-4 .block #diagram .diagram-border {
+        display: block;
+        width: calc(50% - 80px);
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top .block #diagram .diagram-content,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block #diagram .diagram-content,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block #diagram .diagram-content,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block #diagram .diagram-content,
+    #thingsboard-pe #peContent #integration #features-top .block #diagram .diagram-content,
+    #thingsboard-pe #peContent #integration #features-top-2 .block #diagram .diagram-content,
+    #thingsboard-pe #peContent #integration #features-top-3 .block #diagram .diagram-content,
+    #thingsboard-pe #peContent #integration #features-top-4 .block #diagram .diagram-content,
+    #thingsboard-pe #peContent #scheduler #features-top .block #diagram .diagram-content,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block #diagram .diagram-content,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block #diagram .diagram-content,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block #diagram .diagram-content,
+    #thingsboard-pe #peContent #export #features-top .block #diagram .diagram-content,
+    #thingsboard-pe #peContent #export #features-top-2 .block #diagram .diagram-content,
+    #thingsboard-pe #peContent #export #features-top-3 .block #diagram .diagram-content,
+    #thingsboard-pe #peContent #export #features-top-4 .block #diagram .diagram-content {
+        border: unset;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top .block #diagram .diagram-content img,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block #diagram .diagram-content img,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block #diagram .diagram-content img,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block #diagram .diagram-content img,
+    #thingsboard-pe #peContent #integration #features-top .block #diagram .diagram-content img,
+    #thingsboard-pe #peContent #integration #features-top-2 .block #diagram .diagram-content img,
+    #thingsboard-pe #peContent #integration #features-top-3 .block #diagram .diagram-content img,
+    #thingsboard-pe #peContent #integration #features-top-4 .block #diagram .diagram-content img,
+    #thingsboard-pe #peContent #scheduler #features-top .block #diagram .diagram-content img,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block #diagram .diagram-content img,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block #diagram .diagram-content img,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block #diagram .diagram-content img,
+    #thingsboard-pe #peContent #export #features-top .block #diagram .diagram-content img,
+    #thingsboard-pe #peContent #export #features-top-2 .block #diagram .diagram-content img,
+    #thingsboard-pe #peContent #export #features-top-3 .block #diagram .diagram-content img,
+    #thingsboard-pe #peContent #export #features-top-4 .block #diagram .diagram-content img {
+        max-width: 500px;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top .block.double,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block.double,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block.double,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block.double,
+    #thingsboard-pe #peContent #integration #features-top .block.double,
+    #thingsboard-pe #peContent #integration #features-top-2 .block.double,
+    #thingsboard-pe #peContent #integration #features-top-3 .block.double,
+    #thingsboard-pe #peContent #integration #features-top-4 .block.double,
+    #thingsboard-pe #peContent #scheduler #features-top .block.double,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block.double,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block.double,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block.double,
+    #thingsboard-pe #peContent #export #features-top .block.double,
+    #thingsboard-pe #peContent #export #features-top-2 .block.double,
+    #thingsboard-pe #peContent #export #features-top-3 .block.double,
+    #thingsboard-pe #peContent #export #features-top-4 .block.double {
+        margin: 100px 0 120px;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top .block.double div,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block.double div,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block.double div,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block.double div,
+    #thingsboard-pe #peContent #integration #features-top .block.double div,
+    #thingsboard-pe #peContent #integration #features-top-2 .block.double div,
+    #thingsboard-pe #peContent #integration #features-top-3 .block.double div,
+    #thingsboard-pe #peContent #integration #features-top-4 .block.double div,
+    #thingsboard-pe #peContent #scheduler #features-top .block.double div,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block.double div,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block.double div,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block.double div,
+    #thingsboard-pe #peContent #export #features-top .block.double div,
+    #thingsboard-pe #peContent #export #features-top-2 .block.double div,
+    #thingsboard-pe #peContent #export #features-top-3 .block.double div,
+    #thingsboard-pe #peContent #export #features-top-4 .block.double div {
+        width: calc(25% - 75px);
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top .block.double div.left-textblock,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block.double div.left-textblock,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block.double div.left-textblock,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block.double div.left-textblock,
+    #thingsboard-pe #peContent #integration #features-top .block.double div.left-textblock,
+    #thingsboard-pe #peContent #integration #features-top-2 .block.double div.left-textblock,
+    #thingsboard-pe #peContent #integration #features-top-3 .block.double div.left-textblock,
+    #thingsboard-pe #peContent #integration #features-top-4 .block.double div.left-textblock,
+    #thingsboard-pe #peContent #scheduler #features-top .block.double div.left-textblock,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block.double div.left-textblock,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block.double div.left-textblock,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block.double div.left-textblock,
+    #thingsboard-pe #peContent #export #features-top .block.double div.left-textblock,
+    #thingsboard-pe #peContent #export #features-top-2 .block.double div.left-textblock,
+    #thingsboard-pe #peContent #export #features-top-3 .block.double div.left-textblock,
+    #thingsboard-pe #peContent #export #features-top-4 .block.double div.left-textblock {
+        margin-top: 100px;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top .block.double div.right-textblock,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block.double div.right-textblock,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block.double div.right-textblock,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block.double div.right-textblock,
+    #thingsboard-pe #peContent #integration #features-top .block.double div.right-textblock,
+    #thingsboard-pe #peContent #integration #features-top-2 .block.double div.right-textblock,
+    #thingsboard-pe #peContent #integration #features-top-3 .block.double div.right-textblock,
+    #thingsboard-pe #peContent #integration #features-top-4 .block.double div.right-textblock,
+    #thingsboard-pe #peContent #scheduler #features-top .block.double div.right-textblock,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block.double div.right-textblock,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block.double div.right-textblock,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block.double div.right-textblock,
+    #thingsboard-pe #peContent #export #features-top .block.double div.right-textblock,
+    #thingsboard-pe #peContent #export #features-top-2 .block.double div.right-textblock,
+    #thingsboard-pe #peContent #export #features-top-3 .block.double div.right-textblock,
+    #thingsboard-pe #peContent #export #features-top-4 .block.double div.right-textblock {
+        margin-bottom: 100px;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top .block.double img,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block.double img,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block.double img,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block.double img,
+    #thingsboard-pe #peContent #integration #features-top .block.double img,
+    #thingsboard-pe #peContent #integration #features-top-2 .block.double img,
+    #thingsboard-pe #peContent #integration #features-top-3 .block.double img,
+    #thingsboard-pe #peContent #integration #features-top-4 .block.double img,
+    #thingsboard-pe #peContent #scheduler #features-top .block.double img,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block.double img,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block.double img,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block.double img,
+    #thingsboard-pe #peContent #export #features-top .block.double img,
+    #thingsboard-pe #peContent #export #features-top-2 .block.double img,
+    #thingsboard-pe #peContent #export #features-top-3 .block.double img,
+    #thingsboard-pe #peContent #export #features-top-4 .block.double img {
+        width: calc(50% - 170px);
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top .block.end,
+    #thingsboard-pe #peContent #labeling #features-top-2 .block.end,
+    #thingsboard-pe #peContent #labeling #features-top-3 .block.end,
+    #thingsboard-pe #peContent #labeling #features-top-4 .block.end,
+    #thingsboard-pe #peContent #integration #features-top .block.end,
+    #thingsboard-pe #peContent #integration #features-top-2 .block.end,
+    #thingsboard-pe #peContent #integration #features-top-3 .block.end,
+    #thingsboard-pe #peContent #integration #features-top-4 .block.end,
+    #thingsboard-pe #peContent #scheduler #features-top .block.end,
+    #thingsboard-pe #peContent #scheduler #features-top-2 .block.end,
+    #thingsboard-pe #peContent #scheduler #features-top-3 .block.end,
+    #thingsboard-pe #peContent #scheduler #features-top-4 .block.end,
+    #thingsboard-pe #peContent #export #features-top .block.end,
+    #thingsboard-pe #peContent #export #features-top-2 .block.end,
+    #thingsboard-pe #peContent #export #features-top-3 .block.end,
+    #thingsboard-pe #peContent #export #features-top-4 .block.end {
+        margin-bottom: 178px;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top #background-white-labeling .main2,
+    #thingsboard-pe #peContent #labeling #features-top #background-platform-integrations .main2,
+    #thingsboard-pe #peContent #labeling #features-top #background-scheduler .main2,
+    #thingsboard-pe #peContent #labeling #features-top #background-data-export .main2,
+    #thingsboard-pe #peContent #labeling #features-top-2 #background-white-labeling .main2,
+    #thingsboard-pe #peContent #labeling #features-top-2 #background-platform-integrations .main2,
+    #thingsboard-pe #peContent #labeling #features-top-2 #background-scheduler .main2,
+    #thingsboard-pe #peContent #labeling #features-top-2 #background-data-export .main2,
+    #thingsboard-pe #peContent #labeling #features-top-3 #background-white-labeling .main2,
+    #thingsboard-pe #peContent #labeling #features-top-3 #background-platform-integrations .main2,
+    #thingsboard-pe #peContent #labeling #features-top-3 #background-scheduler .main2,
+    #thingsboard-pe #peContent #labeling #features-top-3 #background-data-export .main2,
+    #thingsboard-pe #peContent #labeling #features-top-4 #background-white-labeling .main2,
+    #thingsboard-pe #peContent #labeling #features-top-4 #background-platform-integrations .main2,
+    #thingsboard-pe #peContent #labeling #features-top-4 #background-scheduler .main2,
+    #thingsboard-pe #peContent #labeling #features-top-4 #background-data-export .main2,
+    #thingsboard-pe #peContent #integration #features-top #background-white-labeling .main2,
+    #thingsboard-pe #peContent #integration #features-top #background-platform-integrations .main2,
+    #thingsboard-pe #peContent #integration #features-top #background-scheduler .main2,
+    #thingsboard-pe #peContent #integration #features-top #background-data-export .main2,
+    #thingsboard-pe #peContent #integration #features-top-2 #background-white-labeling .main2,
+    #thingsboard-pe #peContent #integration #features-top-2 #background-platform-integrations .main2,
+    #thingsboard-pe #peContent #integration #features-top-2 #background-scheduler .main2,
+    #thingsboard-pe #peContent #integration #features-top-2 #background-data-export .main2,
+    #thingsboard-pe #peContent #integration #features-top-3 #background-white-labeling .main2,
+    #thingsboard-pe #peContent #integration #features-top-3 #background-platform-integrations .main2,
+    #thingsboard-pe #peContent #integration #features-top-3 #background-scheduler .main2,
+    #thingsboard-pe #peContent #integration #features-top-3 #background-data-export .main2,
+    #thingsboard-pe #peContent #integration #features-top-4 #background-white-labeling .main2,
+    #thingsboard-pe #peContent #integration #features-top-4 #background-platform-integrations .main2,
+    #thingsboard-pe #peContent #integration #features-top-4 #background-scheduler .main2,
+    #thingsboard-pe #peContent #integration #features-top-4 #background-data-export .main2,
+    #thingsboard-pe #peContent #scheduler #features-top #background-white-labeling .main2,
+    #thingsboard-pe #peContent #scheduler #features-top #background-platform-integrations .main2,
+    #thingsboard-pe #peContent #scheduler #features-top #background-scheduler .main2,
+    #thingsboard-pe #peContent #scheduler #features-top #background-data-export .main2,
+    #thingsboard-pe #peContent #scheduler #features-top-2 #background-white-labeling .main2,
+    #thingsboard-pe #peContent #scheduler #features-top-2 #background-platform-integrations .main2,
+    #thingsboard-pe #peContent #scheduler #features-top-2 #background-scheduler .main2,
+    #thingsboard-pe #peContent #scheduler #features-top-2 #background-data-export .main2,
+    #thingsboard-pe #peContent #scheduler #features-top-3 #background-white-labeling .main2,
+    #thingsboard-pe #peContent #scheduler #features-top-3 #background-platform-integrations .main2,
+    #thingsboard-pe #peContent #scheduler #features-top-3 #background-scheduler .main2,
+    #thingsboard-pe #peContent #scheduler #features-top-3 #background-data-export .main2,
+    #thingsboard-pe #peContent #scheduler #features-top-4 #background-white-labeling .main2,
+    #thingsboard-pe #peContent #scheduler #features-top-4 #background-platform-integrations .main2,
+    #thingsboard-pe #peContent #scheduler #features-top-4 #background-scheduler .main2,
+    #thingsboard-pe #peContent #scheduler #features-top-4 #background-data-export .main2,
+    #thingsboard-pe #peContent #export #features-top #background-white-labeling .main2,
+    #thingsboard-pe #peContent #export #features-top #background-platform-integrations .main2,
+    #thingsboard-pe #peContent #export #features-top #background-scheduler .main2,
+    #thingsboard-pe #peContent #export #features-top #background-data-export .main2,
+    #thingsboard-pe #peContent #export #features-top-2 #background-white-labeling .main2,
+    #thingsboard-pe #peContent #export #features-top-2 #background-platform-integrations .main2,
+    #thingsboard-pe #peContent #export #features-top-2 #background-scheduler .main2,
+    #thingsboard-pe #peContent #export #features-top-2 #background-data-export .main2,
+    #thingsboard-pe #peContent #export #features-top-3 #background-white-labeling .main2,
+    #thingsboard-pe #peContent #export #features-top-3 #background-platform-integrations .main2,
+    #thingsboard-pe #peContent #export #features-top-3 #background-scheduler .main2,
+    #thingsboard-pe #peContent #export #features-top-3 #background-data-export .main2,
+    #thingsboard-pe #peContent #export #features-top-4 #background-white-labeling .main2,
+    #thingsboard-pe #peContent #export #features-top-4 #background-platform-integrations .main2,
+    #thingsboard-pe #peContent #export #features-top-4 #background-scheduler .main2,
+    #thingsboard-pe #peContent #export #features-top-4 #background-data-export .main2 {
+        height: 525px;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top #background-white-labeling .bottom,
+    #thingsboard-pe #peContent #labeling #features-top #background-platform-integrations .bottom,
+    #thingsboard-pe #peContent #labeling #features-top #background-scheduler .bottom,
+    #thingsboard-pe #peContent #labeling #features-top #background-data-export .bottom,
+    #thingsboard-pe #peContent #labeling #features-top-2 #background-white-labeling .bottom,
+    #thingsboard-pe #peContent #labeling #features-top-2 #background-platform-integrations .bottom,
+    #thingsboard-pe #peContent #labeling #features-top-2 #background-scheduler .bottom,
+    #thingsboard-pe #peContent #labeling #features-top-2 #background-data-export .bottom,
+    #thingsboard-pe #peContent #labeling #features-top-3 #background-white-labeling .bottom,
+    #thingsboard-pe #peContent #labeling #features-top-3 #background-platform-integrations .bottom,
+    #thingsboard-pe #peContent #labeling #features-top-3 #background-scheduler .bottom,
+    #thingsboard-pe #peContent #labeling #features-top-3 #background-data-export .bottom,
+    #thingsboard-pe #peContent #labeling #features-top-4 #background-white-labeling .bottom,
+    #thingsboard-pe #peContent #labeling #features-top-4 #background-platform-integrations .bottom,
+    #thingsboard-pe #peContent #labeling #features-top-4 #background-scheduler .bottom,
+    #thingsboard-pe #peContent #labeling #features-top-4 #background-data-export .bottom,
+    #thingsboard-pe #peContent #integration #features-top #background-white-labeling .bottom,
+    #thingsboard-pe #peContent #integration #features-top #background-platform-integrations .bottom,
+    #thingsboard-pe #peContent #integration #features-top #background-scheduler .bottom,
+    #thingsboard-pe #peContent #integration #features-top #background-data-export .bottom,
+    #thingsboard-pe #peContent #integration #features-top-2 #background-white-labeling .bottom,
+    #thingsboard-pe #peContent #integration #features-top-2 #background-platform-integrations .bottom,
+    #thingsboard-pe #peContent #integration #features-top-2 #background-scheduler .bottom,
+    #thingsboard-pe #peContent #integration #features-top-2 #background-data-export .bottom,
+    #thingsboard-pe #peContent #integration #features-top-3 #background-white-labeling .bottom,
+    #thingsboard-pe #peContent #integration #features-top-3 #background-platform-integrations .bottom,
+    #thingsboard-pe #peContent #integration #features-top-3 #background-scheduler .bottom,
+    #thingsboard-pe #peContent #integration #features-top-3 #background-data-export .bottom,
+    #thingsboard-pe #peContent #integration #features-top-4 #background-white-labeling .bottom,
+    #thingsboard-pe #peContent #integration #features-top-4 #background-platform-integrations .bottom,
+    #thingsboard-pe #peContent #integration #features-top-4 #background-scheduler .bottom,
+    #thingsboard-pe #peContent #integration #features-top-4 #background-data-export .bottom,
+    #thingsboard-pe #peContent #scheduler #features-top #background-white-labeling .bottom,
+    #thingsboard-pe #peContent #scheduler #features-top #background-platform-integrations .bottom,
+    #thingsboard-pe #peContent #scheduler #features-top #background-scheduler .bottom,
+    #thingsboard-pe #peContent #scheduler #features-top #background-data-export .bottom,
+    #thingsboard-pe #peContent #scheduler #features-top-2 #background-white-labeling .bottom,
+    #thingsboard-pe #peContent #scheduler #features-top-2 #background-platform-integrations .bottom,
+    #thingsboard-pe #peContent #scheduler #features-top-2 #background-scheduler .bottom,
+    #thingsboard-pe #peContent #scheduler #features-top-2 #background-data-export .bottom,
+    #thingsboard-pe #peContent #scheduler #features-top-3 #background-white-labeling .bottom,
+    #thingsboard-pe #peContent #scheduler #features-top-3 #background-platform-integrations .bottom,
+    #thingsboard-pe #peContent #scheduler #features-top-3 #background-scheduler .bottom,
+    #thingsboard-pe #peContent #scheduler #features-top-3 #background-data-export .bottom,
+    #thingsboard-pe #peContent #scheduler #features-top-4 #background-white-labeling .bottom,
+    #thingsboard-pe #peContent #scheduler #features-top-4 #background-platform-integrations .bottom,
+    #thingsboard-pe #peContent #scheduler #features-top-4 #background-scheduler .bottom,
+    #thingsboard-pe #peContent #scheduler #features-top-4 #background-data-export .bottom,
+    #thingsboard-pe #peContent #export #features-top #background-white-labeling .bottom,
+    #thingsboard-pe #peContent #export #features-top #background-platform-integrations .bottom,
+    #thingsboard-pe #peContent #export #features-top #background-scheduler .bottom,
+    #thingsboard-pe #peContent #export #features-top #background-data-export .bottom,
+    #thingsboard-pe #peContent #export #features-top-2 #background-white-labeling .bottom,
+    #thingsboard-pe #peContent #export #features-top-2 #background-platform-integrations .bottom,
+    #thingsboard-pe #peContent #export #features-top-2 #background-scheduler .bottom,
+    #thingsboard-pe #peContent #export #features-top-2 #background-data-export .bottom,
+    #thingsboard-pe #peContent #export #features-top-3 #background-white-labeling .bottom,
+    #thingsboard-pe #peContent #export #features-top-3 #background-platform-integrations .bottom,
+    #thingsboard-pe #peContent #export #features-top-3 #background-scheduler .bottom,
+    #thingsboard-pe #peContent #export #features-top-3 #background-data-export .bottom,
+    #thingsboard-pe #peContent #export #features-top-4 #background-white-labeling .bottom,
+    #thingsboard-pe #peContent #export #features-top-4 #background-platform-integrations .bottom,
+    #thingsboard-pe #peContent #export #features-top-4 #background-scheduler .bottom,
+    #thingsboard-pe #peContent #export #features-top-4 #background-data-export .bottom {
+        top: -17px;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top #lists-first img.integrations-list,
+    #thingsboard-pe #peContent #labeling #features-top #lists-second img.integrations-list,
+    #thingsboard-pe #peContent #labeling #features-top-2 #lists-first img.integrations-list,
+    #thingsboard-pe #peContent #labeling #features-top-2 #lists-second img.integrations-list,
+    #thingsboard-pe #peContent #labeling #features-top-3 #lists-first img.integrations-list,
+    #thingsboard-pe #peContent #labeling #features-top-3 #lists-second img.integrations-list,
+    #thingsboard-pe #peContent #labeling #features-top-4 #lists-first img.integrations-list,
+    #thingsboard-pe #peContent #labeling #features-top-4 #lists-second img.integrations-list,
+    #thingsboard-pe #peContent #integration #features-top #lists-first img.integrations-list,
+    #thingsboard-pe #peContent #integration #features-top #lists-second img.integrations-list,
+    #thingsboard-pe #peContent #integration #features-top-2 #lists-first img.integrations-list,
+    #thingsboard-pe #peContent #integration #features-top-2 #lists-second img.integrations-list,
+    #thingsboard-pe #peContent #integration #features-top-3 #lists-first img.integrations-list,
+    #thingsboard-pe #peContent #integration #features-top-3 #lists-second img.integrations-list,
+    #thingsboard-pe #peContent #integration #features-top-4 #lists-first img.integrations-list,
+    #thingsboard-pe #peContent #integration #features-top-4 #lists-second img.integrations-list,
+    #thingsboard-pe #peContent #scheduler #features-top #lists-first img.integrations-list,
+    #thingsboard-pe #peContent #scheduler #features-top #lists-second img.integrations-list,
+    #thingsboard-pe #peContent #scheduler #features-top-2 #lists-first img.integrations-list,
+    #thingsboard-pe #peContent #scheduler #features-top-2 #lists-second img.integrations-list,
+    #thingsboard-pe #peContent #scheduler #features-top-3 #lists-first img.integrations-list,
+    #thingsboard-pe #peContent #scheduler #features-top-3 #lists-second img.integrations-list,
+    #thingsboard-pe #peContent #scheduler #features-top-4 #lists-first img.integrations-list,
+    #thingsboard-pe #peContent #scheduler #features-top-4 #lists-second img.integrations-list,
+    #thingsboard-pe #peContent #export #features-top #lists-first img.integrations-list,
+    #thingsboard-pe #peContent #export #features-top #lists-second img.integrations-list,
+    #thingsboard-pe #peContent #export #features-top-2 #lists-first img.integrations-list,
+    #thingsboard-pe #peContent #export #features-top-2 #lists-second img.integrations-list,
+    #thingsboard-pe #peContent #export #features-top-3 #lists-first img.integrations-list,
+    #thingsboard-pe #peContent #export #features-top-3 #lists-second img.integrations-list,
+    #thingsboard-pe #peContent #export #features-top-4 #lists-first img.integrations-list,
+    #thingsboard-pe #peContent #export #features-top-4 #lists-second img.integrations-list {
+        top: 180px;
+        left: 460px;
+    }
+
+    #thingsboard-pe #peContent #labeling #features-top #lists-first img.export-list,
+    #thingsboard-pe #peContent #labeling #features-top #lists-second img.export-list,
+    #thingsboard-pe #peContent #labeling #features-top-2 #lists-first img.export-list,
+    #thingsboard-pe #peContent #labeling #features-top-2 #lists-second img.export-list,
+    #thingsboard-pe #peContent #labeling #features-top-3 #lists-first img.export-list,
+    #thingsboard-pe #peContent #labeling #features-top-3 #lists-second img.export-list,
+    #thingsboard-pe #peContent #labeling #features-top-4 #lists-first img.export-list,
+    #thingsboard-pe #peContent #labeling #features-top-4 #lists-second img.export-list,
+    #thingsboard-pe #peContent #integration #features-top #lists-first img.export-list,
+    #thingsboard-pe #peContent #integration #features-top #lists-second img.export-list,
+    #thingsboard-pe #peContent #integration #features-top-2 #lists-first img.export-list,
+    #thingsboard-pe #peContent #integration #features-top-2 #lists-second img.export-list,
+    #thingsboard-pe #peContent #integration #features-top-3 #lists-first img.export-list,
+    #thingsboard-pe #peContent #integration #features-top-3 #lists-second img.export-list,
+    #thingsboard-pe #peContent #integration #features-top-4 #lists-first img.export-list,
+    #thingsboard-pe #peContent #integration #features-top-4 #lists-second img.export-list,
+    #thingsboard-pe #peContent #scheduler #features-top #lists-first img.export-list,
+    #thingsboard-pe #peContent #scheduler #features-top #lists-second img.export-list,
+    #thingsboard-pe #peContent #scheduler #features-top-2 #lists-first img.export-list,
+    #thingsboard-pe #peContent #scheduler #features-top-2 #lists-second img.export-list,
+    #thingsboard-pe #peContent #scheduler #features-top-3 #lists-first img.export-list,
+    #thingsboard-pe #peContent #scheduler #features-top-3 #lists-second img.export-list,
+    #thingsboard-pe #peContent #scheduler #features-top-4 #lists-first img.export-list,
+    #thingsboard-pe #peContent #scheduler #features-top-4 #lists-second img.export-list,
+    #thingsboard-pe #peContent #export #features-top #lists-first img.export-list,
+    #thingsboard-pe #peContent #export #features-top #lists-second img.export-list,
+    #thingsboard-pe #peContent #export #features-top-2 #lists-first img.export-list,
+    #thingsboard-pe #peContent #export #features-top-2 #lists-second img.export-list,
+    #thingsboard-pe #peContent #export #features-top-3 #lists-first img.export-list,
+    #thingsboard-pe #peContent #export #features-top-3 #lists-second img.export-list,
+    #thingsboard-pe #peContent #export #features-top-4 #lists-first img.export-list,
+    #thingsboard-pe #peContent #export #features-top-4 #lists-second img.export-list {
+        top: 100px;
+        right: 40px;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    #thingsboard-pe #peContent #integration #features-top-2 #lists-first img.integrations-list {
+        left: 440px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    #thingsboard-pe #peContent #integration #features-top-2 #lists-first img.integrations-list {
+        left: 300px;
+    }
+}
+
+@media screen and (min-width: 621px) and (max-width: 1025px) {
+    #thingsboard-pe #peContent #integration #features-top-2 #lists-first img.integrations-list {
+        left: 45px;
+    }
+}
+
+@media screen and (max-width: 430px) {
+    #thingsboard-pe #peContent #integration #features-top-2 #lists-first img.integrations-list {
+        left: 0;
+        top: 678px;
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    #thingsboard-pe #hero #hero-content .pe-title {
+        margin-bottom: 60px;
+        font-size: 64px;
+    }
+
+    #thingsboard-pe #hero #hero-content .try-pe {
+        line-height: 60px;
+        font-size: 28px;
+        padding: 0 40px;
+        border-width: 3px;
+    }
+
+    #thingsboard-pe #peContent {
+        max-width: 1200px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    #thingsboard-pe #peContent {
+        max-width: 1400px;
+    }
+}
+
+@media screen and (max-width: 365px) {
+    #thingsboard-pe #peContent {
+        #matrix #backg-matrix {
+            & .community, & .prof, & .cloud {
+                top: 156px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 407px) and (max-width: 425px) {
+    #thingsboard-pe #matrix table thead tr td {
+        width: 33%;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 375px) {
+    #thingsboard-pe #matrix table thead tr td {
+        width: 44%;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 407px) {
+    #thingsboard-pe #matrix table thead tr td {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    #thingsboard-pe #matrix {
+        display: none;
+    }
+}

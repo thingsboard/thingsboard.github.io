@@ -1,0 +1,770 @@
+#thingsboard-paas section {
+    background: 0 0
+}
+
+#thingsboard-paas:not(.open-nav):not(.flip-nav) header::after {
+    opacity: 0
+}
+
+#thingsboard-paas #hero {
+    height: 100vh;
+    padding-top: 0;
+    position: relative;
+    overflow: hidden;
+    background: 0 0
+}
+
+#thingsboard-paas #hero div:nth-child(1) {
+    background-image: url(https://img.thingsboard.io/tb-cover.jpg) !important
+}
+
+#thingsboard-paas #hero .video-cover {
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+    background-size: cover;
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-image: url(https://img.thingsboard.io/tb-cover.jpg)
+}
+
+#thingsboard-paas #hero #hero-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: rgba(0, 0, 0, .72)
+}
+
+#thingsboard-paas #hero #hero-content .paas-title {
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 400;
+    text-shadow: 0 0 18px rgba(0, 0, 0, .66)
+}
+
+#thingsboard-paas #hero #hero-content .try-paas {
+    cursor: pointer;
+    line-height: 40px;
+    font-size: 16px;
+    padding: 0 15px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    transition: .6s;
+    text-shadow: 0 0 18px rgba(0, 0, 0, .66)
+}
+
+#thingsboard-paas #hero #hero-content .try-paas:hover {
+    background-color: #fff;
+    color: #1f3a52
+}
+
+#thingsboard-paas #hero #hero-content .learn-tb {
+    cursor: pointer;
+    line-height: 40px;
+    font-size: 16px;
+    padding: 0 15px;
+    border: 1px solid #fff;
+    background-color: transparent;
+    transition: .6s;
+    text-shadow: 0 0 18px rgba(0, 0, 0, .66)
+}
+
+#thingsboard-paas #hero #hero-content .learn-tb:hover {
+    background-color: #fff;
+    color: #1f3a52;
+    text-shadow: none
+}
+
+#thingsboard-paas #hero #hero-content .paas-arrow {
+    position: fixed;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    opacity: 1;
+    z-index: 24;
+    color: #fff
+}
+
+#thingsboard-paas #hero #hero-content .paas-arrow a {
+    color: #fff
+}
+
+#thingsboard-paas #hero #hero-content.arrow-hidden .paas-arrow {
+    display: none
+}
+
+#thingsboard-paas #intro {
+    color: #212529
+}
+
+#thingsboard-paas #intro h1 {
+    color: #212529;
+    font-weight: 600;
+    text-align: center;
+    font-size: 32px;
+    line-height: 48px
+}
+
+#thingsboard-paas #intro h1 a {
+    color: #2a7dec
+}
+
+#thingsboard-paas #intro h2 {
+    color: #212529;
+    font-weight: 600;
+    text-align: left;
+    font-size: 42px;
+    line-height: 63px
+}
+
+#thingsboard-paas #intro h3 {
+    border: none;
+    font-weight: 400
+}
+
+#thingsboard-paas #intro p {
+    color: #696c6e;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    margin-block-start: 9px
+}
+
+#thingsboard-paas #bottom {
+    background-color: #f9fbfe;
+    margin: -20px -100%;
+    padding: 66px 0;
+    text-align: center
+}
+
+#thingsboard-paas #bottom .try-paas {
+    background-color: #2a7dec;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    padding: 15px 128px;
+    height: 127px;
+    box-shadow: 0 28px 16px -20px rgba(12, 29, 51, .25)
+}
+
+#thingsboard-paas #bottom .try-paas:hover {
+    background-color: #4f97f8;
+    text-decoration: none;
+    color: #fff
+}
+
+#thingsboard-paas #bottom .try-paas:active {
+    background-color: #2a7dec;
+    transition-duration: 0s
+}
+
+#thingsboard-paas #bottom a {
+    color: #899aab
+}
+
+#thingsboard-paas #matrix {
+    margin: 60px -100% 0;
+    padding: 72px 100% 112px
+}
+
+#thingsboard-paas #matrix h2 {
+    color: #212529;
+    font-weight: 600;
+    text-align: left;
+    font-size: 22px;
+    line-height: 40px
+}
+
+#thingsboard-paas #matrix #backg-matrix {
+    position: relative;
+    margin-left: -20px;
+    margin-right: -20px;
+    width: calc(100% + 40px)
+}
+
+#thingsboard-paas #matrix #backg-matrix .cloud,
+#thingsboard-paas #matrix #backg-matrix .prof,
+#thingsboard-paas #matrix #backg-matrix .community {
+    padding: 0 2px;
+    width: 20%;
+    position: absolute;
+    z-index: -1;
+    top: 127px
+}
+
+#thingsboard-paas #matrix #backg-matrix .coln {
+    height: 1156px;
+    border-radius: 6px
+}
+
+#thingsboard-paas #matrix #backg-matrix .cloud {
+    right: 0%
+}
+
+#thingsboard-paas #matrix #backg-matrix .cloud .coln {
+    border: 2px solid #2a7dec;
+    box-shadow: 0 50px 50px -20px rgba(0, 0, 0, .15), 0 0 30px 0 rgba(0, 0, 0, .1)
+}
+
+#thingsboard-paas #matrix #backg-matrix .cloud .coln .head {
+    height: 106px;
+    background-color: #2a7dec
+}
+
+#thingsboard-paas #matrix #backg-matrix .prof {
+    right: 20%
+}
+
+#thingsboard-paas #matrix #backg-matrix .prof .coln {
+    border: 2px solid #a9dfbf
+}
+
+#thingsboard-paas #matrix #backg-matrix .prof .coln .head {
+    height: 106px;
+    box-shadow: 0 2px 0 0 #a9dfbf
+}
+
+#thingsboard-paas #matrix #backg-matrix .community {
+    right: 40%
+}
+
+#thingsboard-paas #matrix #backg-matrix .community .coln {
+    border: 2px solid #acbbcc
+}
+
+#thingsboard-paas #matrix #backg-matrix .community .coln .head {
+    height: 106px;
+    box-shadow: 0 2px 0 0 #acbbcc
+}
+
+#thingsboard-paas #matrix table {
+    width: calc(100% + 40px);
+    margin: 160px -20px 16px;
+    border: none;
+    margin-top: 64px;
+    top: 40px
+}
+
+#thingsboard-paas #matrix table td,
+#thingsboard-paas #matrix table th {
+    margin: 0 2px
+}
+
+#thingsboard-paas #matrix table td:nth-child(4n-2),
+#thingsboard-paas #matrix table th:nth-child(4n-2) {
+    color: #305680
+}
+
+#thingsboard-paas #matrix table td:nth-child(4n-2) img,
+#thingsboard-paas #matrix table th:nth-child(4n-2) img {
+    filter: invert(27%) sepia(56%) saturate(585%) hue-rotate(171deg) brightness(96%) contrast(86%)
+}
+
+#thingsboard-paas #matrix table td:nth-child(4n-1),
+#thingsboard-paas #matrix table th:nth-child(4n-1) {
+    color: #27ae60
+}
+
+#thingsboard-paas #matrix table td:nth-child(4n-1) img,
+#thingsboard-paas #matrix table th:nth-child(4n-1) img {
+    filter: invert(52%) sepia(84%) saturate(381%) hue-rotate(93deg) brightness(89%) contrast(93%)
+}
+
+#thingsboard-paas #matrix table td:nth-child(4n),
+#thingsboard-paas #matrix table th:nth-child(4n) {
+    color: #2a7dec
+}
+
+#thingsboard-paas #matrix table td:nth-child(4n) img,
+#thingsboard-paas #matrix table th:nth-child(4n) img {
+    filter: invert(36%) sepia(77%) saturate(728%) hue-rotate(181deg) brightness(104%) contrast(106%)
+}
+
+#thingsboard-paas #matrix table thead {
+    color: #212529;
+    font-size: 12px;
+    line-height: 30px;
+    background-color: unset
+}
+
+#thingsboard-paas #matrix table thead tr {
+    height: 152px
+}
+
+#thingsboard-paas #matrix table thead tr th {
+    width: 20%;
+    text-align: center;
+    vertical-align: center;
+    font-weight: 600;
+    font-size: 11px;
+    padding: 40px 0
+}
+
+#thingsboard-paas #matrix table thead tr th:nth-child(4n) {
+    color: #fff
+}
+
+#thingsboard-paas #matrix table thead tr td {
+    width: 40%
+}
+
+#thingsboard-paas #matrix table tbody tr {
+    background-color: unset;
+    height: 64px
+}
+
+#thingsboard-paas #matrix table tbody tr th {
+    font-weight: 600;
+    font-size: 12px;
+    padding-right: 12px
+}
+
+#thingsboard-paas #matrix table tbody tr th a {
+    color: #212529
+}
+
+#thingsboard-paas #matrix table tbody tr th img {
+    vertical-align: top
+}
+
+#thingsboard-paas #matrix table tbody tr td {
+    text-align: center;
+    font-weight: 600;
+    font-size: 11px
+}
+
+#thingsboard-paas #matrix table tbody tr td img {
+    width: 32px
+}
+
+#thingsboard-paas #intro {
+    margin-bottom: 80px;
+    padding-top: 88px
+}
+
+#thingsboard-paas #intro #cards {
+    padding-top: 50px;
+    justify-content: center
+}
+
+#thingsboard-paas #intro #cards>div {
+    margin-bottom: 36px;
+    text-align: center
+}
+
+#thingsboard-paas #intro #cards>div.col-lg-6 {
+    padding: 0 18px;
+    max-width: 100%
+}
+
+#thingsboard-paas #intro #cards>div div {
+    padding: 56px 48px;
+    float: left;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 50px 50px -20px rgba(0, 0, 0, .15)
+}
+
+#thingsboard-paas #intro #cards>div div h1,
+#thingsboard-paas #intro #cards>div div h2 {
+    font-size: 24px;
+    line-height: normal
+}
+
+#thingsboard-paas #intro #cards>div div h2 {
+    text-align: center;
+    margin-top: 0
+}
+
+#thingsboard-paas #intro #cards>div div a {
+    color: #2a7dec;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 27px;
+    margin-block-start: 15px
+}
+
+#thingsboard-paas #intro #cards>div div img {
+    margin-bottom: 28px
+}
+
+#thingsboard-paas #labeling {
+    margin: 48px 0 112px;
+    text-align: center
+}
+
+#thingsboard-paas #labeling div {
+    display: flex;
+    padding: 0 18%
+}
+
+#thingsboard-paas #labeling p {
+    color: #899aab;
+    font-size: 20px;
+    line-height: 1.5em;
+    font-weight: 400
+}
+
+#thingsboard-paas #tb-customers {
+    margin: -50px -100% 0;
+    padding: 50px 100%;
+    text-align: justify;
+    -moz-text-align-last: justify;
+    text-align-last: justify;
+    display: none
+}
+
+@media(min-width: 992px) {
+    #thingsboard-paas #tb-customers {
+        display: block
+    }
+}
+
+#thingsboard-paas #tb-customers img {
+    height: 60px;
+    margin-bottom: 20px
+}
+
+#thingsboard-paas #tb-customers main,
+#thingsboard-paas #tb-customers div.main-div {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 50px
+}
+
+#thingsboard-paas #tb-customers main a,
+#thingsboard-paas #tb-customers div.main-div a {
+    display: block;
+    padding: 10px
+}
+
+#thingsboard-paas #tb-customers main a object,
+#thingsboard-paas #tb-customers div.main-div a object {
+    pointer-events: none;
+    filter: invert(87%) sepia(3%) saturate(664%) hue-rotate(176deg) brightness(237%) contrast(82%)
+}
+
+#thingsboard-paas #background {
+    position: absolute;
+    top: 570px;
+    left: 50%
+}
+
+#thingsboard-paas #background .main {
+    position: absolute;
+    width: 2560px;
+    height: 525px;
+    left: -1280px;
+    background-color: #f8fafe;
+    -ms-transform: skewY(-6deg);
+    transform: skewY(-6deg)
+}
+
+#thingsboard-paas #background .small1 {
+    position: absolute;
+    top: 16px;
+    right: 524px;
+    width: 436px;
+    height: 90px;
+    background-color: #2a7dec;
+    -ms-transform: skewY(-6deg);
+    transform: skewY(-6deg)
+}
+
+#thingsboard-paas #background .small2 {
+    position: absolute;
+    top: -140px;
+    left: 810px;
+    width: 436px;
+    height: 90px;
+    border: 2px solid #29384b;
+    -ms-transform: skewY(-6deg);
+    transform: skewY(-6deg)
+}
+
+#thingsboard-paas #background .small3 {
+    position: absolute;
+    top: 592px;
+    right: 706px;
+    width: 436px;
+    height: 90px;
+    border: 2px solid #29384b;
+    -ms-transform: skewY(-6deg);
+    transform: skewY(-6deg)
+}
+
+#thingsboard-paas #background .small4 {
+    position: absolute;
+    top: 390px;
+    left: 568px;
+    width: 436px;
+    height: 90px;
+    background-color: #366cb4;
+    -ms-transform: skewY(-6deg);
+    transform: skewY(-6deg)
+}
+
+#thingsboard-paas #background .bottom {
+    position: absolute;
+    top: 849px;
+    width: 2560px;
+    height: 130px;
+    left: -1280px;
+    background-color: #2c4362;
+    -ms-transform: skewY(-6deg);
+    transform: skewY(-6deg)
+}
+
+#thingsboard-paas #background .small5 {
+    position: absolute;
+    top: 849px;
+    left: 773px;
+    width: 436px;
+    height: 90px;
+    background-color: #2a7dec;
+    -ms-transform: skewY(-6deg);
+    transform: skewY(-6deg)
+}
+
+#thingsboard-paas .header-animation {
+    max-width: 100%;
+    opacity: 0;
+    transform: translate3d(0, 45px, 0);
+    animation-name: slideup-in;
+    animation-duration: 600ms;
+    animation-timing-function: cubic-bezier(.25, .46, .45, .94);
+    animation-fill-mode: forwards
+}
+
+#thingsboard-paas .header-animation:nth-child(1) {
+    animation-delay: 0ms
+}
+
+#thingsboard-paas .header-animation:nth-child(2) {
+    animation-delay: 300ms
+}
+
+#thingsboard-paas .header-animation:nth-child(3) {
+    animation-delay: 600ms
+}
+
+#thingsboard-paas .header-animation:nth-child(4) {
+    animation-delay: 900ms
+}
+
+#thingsboard-paas .header-animation:nth-child(5) {
+    animation-delay: 1200ms
+}
+
+@media screen and (min-width: 750px) {
+    #thingsboard-paas #hero #hero-content .paas-title {
+        font-size: 36px
+    }
+
+    #thingsboard-paas #paasContent #intro #cards {
+        justify-content: center
+    }
+
+    #thingsboard-paas #paasContent #intro #cards>div.col-lg-6 {
+        max-width: 50%
+    }
+
+    #thingsboard-paas #paasContent .intro_title {
+        padding: 0
+    }
+
+    #thingsboard-paas #paasContent #labeling p {
+        padding: 0
+    }
+
+    #thingsboard-paas #paasContent #matrix h2 {
+        font-size: 42px;
+        line-height: 63px
+    }
+
+    #thingsboard-paas #paasContent #matrix table thead {
+        font-size: 20px
+    }
+
+    #thingsboard-paas #paasContent #matrix table thead tr th {
+        width: 20%;
+        padding: 0 0 40px;
+        font-size: 20px
+    }
+
+    #thingsboard-paas #paasContent #matrix table thead tr td {
+        width: 40%
+    }
+
+    #thingsboard-paas #paasContent #matrix table tbody tr th {
+        padding-right: 48px;
+        font-size: 18px
+    }
+
+    #thingsboard-paas #paasContent #matrix table tbody tr td {
+        font-size: 20px
+    }
+
+    #thingsboard-paas #paasContent #matrix table tbody tr td img {
+        width: unset
+    }
+}
+
+@media screen and (min-width: 1025px) {
+
+    #thingsboard-paas section main,
+    #thingsboard-paas header main {
+        max-width: 100%
+    }
+
+    #thingsboard-paas footer main,
+    #thingsboard-paas footer div.main-div {
+        max-width: 100%
+    }
+
+    #thingsboard-paas #paasContent {
+        max-width: 100%
+    }
+
+    #thingsboard-paas #paasContent .intro_title {
+        padding: 0 5%
+    }
+
+    #thingsboard-paas #paasContent #labeling p {
+        padding: 0 8%
+    }
+
+    #thingsboard-paas #paasContent #matrix .cloud,
+    #thingsboard-paas #paasContent #matrix .prof,
+    #thingsboard-paas #paasContent #matrix .community {
+        padding: 0 14px
+    }
+
+    #thingsboard-paas #paasContent #matrix table td,
+    #thingsboard-paas #paasContent #matrix table th {
+        margin: 0 14px
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    #thingsboard-paas #hero #hero-content .paas-title {
+        margin-bottom: 60px;
+        font-size: 64px
+    }
+
+    #thingsboard-paas #hero #hero-content .try-paas {
+        line-height: 60px;
+        font-size: 28px;
+        padding: 0 40px;
+        border-width: 3px
+    }
+
+    #thingsboard-paas #paasContent {
+        max-width: 1200px
+    }
+
+    #thingsboard-paas #paasContent #intro #cards {
+        justify-content: center
+    }
+
+    #thingsboard-paas #paasContent #intro #cards>div.col-lg-6 {
+        max-width: 33%
+    }
+
+    #thingsboard-paas #paasContent .intro_title {
+        padding: 0 7%
+    }
+
+    #thingsboard-paas #paasContent #labeling p {
+        padding: 0 13%
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    #thingsboard-paas #paasContent {
+        max-width: 1400px
+    }
+
+    #thingsboard-paas #paasContent .intro_title {
+        padding: 0 10%
+    }
+
+    #thingsboard-paas #paasContent #labeling p {
+        padding: 0 18%
+    }
+
+    #thingsboard-paas #paasContent #intro {
+        margin-bottom: 160px
+    }
+}
+
+@media screen and (max-width: 365px) {
+    #thingsboard-paas #paasContent {
+        #matrix #backg-matrix {
+            & .community, & .prof, & .cloud {
+                top: 156px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 407px) and (max-width: 425px) {
+    #thingsboard-paas #matrix table thead tr td {
+        width: 33%;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 375px) {
+    #thingsboard-paas #matrix table thead tr td {
+        width: 44%;
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 407px) {
+    #thingsboard-paas #matrix table thead tr td {
+        width: 40%;
+    }
+}
+
+// @media screen and (max-width: 425px) {
+//     #thingsboard-paas #paasContent {
+//         #matrix table thead tr th {
+//             width: 10%;
+//             font-size: 8px;
+
+//             &:nth-child(3n) {
+//                 transform: translateX(8px);
+//             }
+//         }
+
+//         #matrix table tbody tr td {
+//             &:nth-child(4n-1) {
+//                 transform: translateX(8px);
+//             }
+//         }
+//     }
+// }
+
+@media screen and (max-width: 320px) {
+    #thingsboard-paas #matrix {
+        display: none;
+    }
+}

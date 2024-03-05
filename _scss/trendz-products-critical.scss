@@ -1,0 +1,1171 @@
+#trendz #hero {
+    height: 100vh;
+    padding-top: 100px;
+    background-color: #F8F9FD;
+    overflow: hidden;
+}
+
+#trendz #hero .hero-container {
+    height: 100%;
+    display: flex;
+    position: relative;
+    margin: 0 20px;
+}
+
+#trendz #hero .hero-container #hero-content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: initial;
+    flex: 1;
+    z-index: 1;
+}
+
+#trendz #hero .hero-container #hero-content .pe-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #5555FF;
+    text-transform: uppercase;
+}
+
+#trendz #hero .hero-container #hero-content .pe-heading {
+    font-size: 24px;
+    line-height: 1.5;
+    font-weight: 600;
+    color: #434343;
+    margin-bottom: 10px;
+}
+
+#trendz #hero .hero-container #hero-content .pe-subTitle {
+    color: #666666;
+    font-size: 16px;
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+#trendz #hero .hero-container .hero-image {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+#trendz #hero .hero-container .hero-image::before {
+    background-color: rgba(85, 85, 255, 0.1);
+    filter: blur(50px);
+    display: block;
+    content: "";
+    position: absolute;
+    height: 400px;
+    width: 400px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#trendz #hero .hero-container .hero-image .image-wrapper {
+    background: url("/images/trendz/hero-img.png") no-repeat center/contain;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+}
+
+#trendz #hero .hero-container .icon {
+    position: absolute;
+    animation-duration: 1.2s;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation-fill-mode: forwards;
+    background: url(/images/trendz/sphere.png) no-repeat center/contain;
+}
+
+#trendz #hero .hero-container .icon img {
+    width: 100%;
+}
+
+#trendz #hero .hero-container #upper-icon-left {
+    display: block;
+    width: 100px;
+    height: 100px;
+    top: 50%;
+    left: -70px;
+    animation-name: fromRight;
+}
+
+#trendz #hero .hero-container #upper-icon-center {
+    display: block;
+    animation-name: fromTopLeft;
+}
+
+#trendz #hero .hero-container #upper-icon-right {
+    display: block;
+    width: 100px;
+    height: 100px;
+    right: 0;
+    top: 10%;
+    animation-name: fromBottomRight;
+}
+
+#trendz #hero .hero-container #down-icon-left {
+    display: none;
+    animation-name: fromBottomLeft;
+}
+
+#trendz #hero .hero-container #down-icon-right {
+    display: none;
+    animation-name: fromBottomRight;
+}
+
+#trendz #encyclopedia {
+    padding: 0;
+    background-color: #F8F9FD;
+    position: relative;
+}
+
+#trendz #encyclopedia main {
+    display: flex;
+    padding: 0 20px;
+}
+
+#trendz #peContent {
+    color: #434343;
+}
+
+#trendz #peContent .try-button {
+    box-shadow: none;
+    border: 2px solid #305680;
+    box-sizing: border-box;
+    border-radius: 4px;
+    font-size: 14px;
+    color: rgba(48, 86, 128, 0.87);
+    font-weight: 400;
+}
+
+#trendz #peContent .text {
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+#trendz #peContent .text:last-child {
+    margin-bottom: 0;
+}
+
+#trendz #peContent ul,
+#trendz #peContent li {
+    list-style: inside;
+}
+
+#trendz #peContent .pe-features main {
+    padding-top: 0;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+}
+
+#trendz #peContent .pe-features main .content-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-bottom: 60px;
+}
+
+#trendz #peContent .pe-features main .content-list .content-block {
+    width: 100%;
+}
+
+#trendz #peContent .pe-features main .content {
+    opacity: 0;
+    animation-duration: 1s;
+    flex: 1 1 50%;
+    line-height: 1.5;
+}
+
+#trendz #peContent .pe-features main .content.animated {
+    opacity: 1;
+}
+
+#trendz #peContent .pe-features main .content .accent-text {
+    margin-bottom: 20px;
+}
+
+#trendz #peContent .pe-features main .content .mobile-img {
+    margin-bottom: 20px;
+}
+
+#trendz #peContent .pe-features main .content .mobile-img img {
+    width: 100%;
+}
+
+#trendz #peContent .pe-features main .image-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+}
+
+#trendz #peContent .pe-features main .screenshot-block {
+    display: none;
+    opacity: 0;
+}
+
+#trendz #peContent .pe-features main .screenshot-block.animated {
+    opacity: 1;
+}
+
+#trendz #peContent .pe-features main .image-wrapper {
+    position: relative;
+    width: 90%;
+}
+
+#trendz #peContent .pe-features main .image-wrapper img {
+    width: 90%;
+    height: auto;
+}
+
+#trendz #peContent .pe-features main .chart-wrapper {
+    width: 90%;
+    height: 90%;
+}
+
+#trendz #peContent .pe-features main .chart-wrapper .chart-icon {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    opacity: 0;
+    animation-duration: 1.2s;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation-fill-mode: forwards;
+}
+
+#trendz #peContent .pe-features main .chart-wrapper .chart-icon.animated {
+    opacity: 1;
+}
+
+#trendz #peContent .pe-features main .pie-chart {
+    background: url(/images/trendz/pie-chart.png) no-repeat center/contain;
+}
+
+#trendz #peContent .pe-features main .pie-chart .sphere {
+    width: 100px;
+    height: 100px;
+    background: url(/images/trendz/sphere.png) no-repeat center/contain;
+    top: -35px;
+    right: 15px;
+}
+
+#trendz #peContent .pe-features main .pie-chart .donut-chart {
+    background: url(/images/trendz/donut-chart.png) no-repeat center/contain;
+    left: -25px;
+}
+
+#trendz #peContent .pe-features main .pie-chart .bar-chart {
+    background: url(/images/trendz/bars.png) no-repeat center/contain;
+    right: 17px;
+    bottom: -5px;
+}
+
+#trendz #peContent .pe-features main .multiple-chart {
+    background: url(/images/trendz/multiple-donut.png) no-repeat center/contain;
+}
+
+#trendz #peContent .pe-features main .multiple-chart .sphere {
+    width: 80px;
+    height: 80px;
+    background: url(/images/trendz/sphere.png) no-repeat center/contain;
+}
+
+#trendz #peContent .pe-features main .multiple-chart .right-sphere {
+    width: 60px;
+    height: 60px;
+    right: 0;
+}
+
+#trendz #peContent .pe-features main .multiple-chart .left-sphere {
+    left: -30px;
+}
+
+#trendz #peContent .pe-features main .multiple-chart .bottom-sphere {
+    bottom: -25px;
+}
+
+#trendz #peContent .pe-features main .line-chart {
+    background: url(/images/trendz/line-chart.png) no-repeat center/contain;
+}
+
+#trendz #peContent .pe-features main .screenshot::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: -25%;
+    left: -7%;
+    z-index: -1;
+}
+
+#trendz #peContent .pe-features main #prediction::before {
+    background: url("/images/trendz/predict-screen.png") no-repeat left/contain;
+}
+
+#trendz #peContent .pe-features main #anomalies::before {
+    background: url("/images/trendz/anomalies-screen.png") no-repeat left/contain;
+}
+
+#trendz #peContent .pe-features main #dashboard::before {
+    background: url("/images/trendz/dashboard-screen.png") no-repeat left/contain;
+}
+
+#trendz .header {
+    margin: 0 0 20px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #434343;
+}
+
+#trendz .text {
+    font-size: 16px;
+    color: #666666;
+}
+
+#trendz .accent-text {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #5555FF;
+    text-transform: uppercase;
+}
+
+#trendz .triangle-right {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-left: 16px solid #55f;
+    border-bottom: 8px solid transparent;
+    margin-left: 9px;
+    transition: 0.3s;
+}
+
+#trendz .accent-btn {
+    background: #5555FF;
+    border-radius: 4px;
+    line-height: 1.5;
+    padding: 13px 0;
+    font-size: 16px;
+    color: #FFFFFF;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #55f;
+}
+
+#trendz .accent-btn:hover {
+    background-color: #452CDC;
+    border: 1px solid #452CDC;
+    text-decoration: none;
+}
+
+#trendz .accent-circle {
+    position: relative;
+}
+
+#trendz .accent-circle::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background: rgba(85, 85, 255, 0.06);
+    filter: blur(50px);
+}
+
+#trendz .accent-circle-center::before {
+    left: 50%;
+    top: 50%;
+}
+
+#trendz .main-bg {
+    padding: 20px 0;
+}
+
+#trendz .trendz-features {
+    margin: 0 0 60px;
+}
+
+#trendz .trendz-features .main-bg:nth-child(odd) main {
+    flex-direction: column-reverse;
+}
+
+#trendz .trendz-features .main-bg:nth-child(even) main {
+    flex-direction: column-reverse;
+}
+
+#trendz .trendz-features .pricing-prompt {
+    display: flex;
+    flex-direction: row;
+    background: #30557f;
+    color: #fff;
+    padding: 16px;
+    margin: 15px -15px;
+}
+
+#trendz .trendz-features .pricing-prompt .prompt-image-container {
+    margin-right: 15px;
+}
+
+#trendz .trendz-features .pricing-prompt .pricing-prompt-title {
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+#trendz .trendz-features .pricing-prompt p {
+    font-size: 18px;
+    text-align: center;
+}
+
+#trendz .flyout-button {
+    display: none;
+}
+
+#trendz .header-animation {
+    max-width: 100%;
+    opacity: 0;
+    transform: translate3d(0, 45px, 0);
+    animation-name: slideup-in;
+    animation-duration: 600ms;
+    animation-timing-function: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    animation-fill-mode: forwards;
+}
+
+#trendz .header-animation:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+#trendz .header-animation:nth-child(2) {
+    animation-delay: 300ms;
+}
+
+#trendz .header-animation:nth-child(3) {
+    animation-delay: 600ms;
+}
+
+#trendz .header-animation:nth-child(4) {
+    animation-delay: 900ms;
+}
+
+#trendz .header-animation:nth-child(5) {
+    animation-delay: 1200ms;
+}
+
+#trendz .btn-block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0 20px;
+    width: 100%;
+    flex-direction: column;
+}
+
+#trendz .btn-block div {
+    width: 100%;
+}
+
+#trendz .try-pe {
+    font-size: 16px;
+    line-height: 1.5;
+    width: 100%;
+    padding: 13px 0;
+    text-align: center;
+    cursor: pointer;
+    border: 1px solid #5555FF;
+    background-color: transparent;
+    transition: 0.6s;
+    color: #5555FF;
+}
+
+#trendz .try-pe:hover {
+    background: #5555FF;
+    color: #FFFFFF;
+    filter: unset;
+    text-decoration: none;
+}
+
+#trendz .link-container {
+    margin-left: 20px;
+}
+
+#trendz .link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    text-decoration-line: underline;
+    color: #5555FF;
+    position: relative;
+    transition: 0.6s;
+}
+
+#trendz .link::after {
+    content: "";
+    display: block;
+    height: 16px;
+    width: 16px;
+    mask: url("/images/trendz/arrow-right.svg") no-repeat 50% 50%;
+    -webkit-mask: url("/images/trendz/arrow-right.svg") no-repeat 50% 50%;
+    mask-size: cover;
+    -webkit-mask-size: cover;
+    background-color: #5555FF;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.3s;
+    right: -25px;
+}
+
+#trendz .link:hover {
+    color: #452CDC;
+}
+
+#trendz .link:hover:after {
+    right: -35px;
+    background-color: #452CDC;
+}
+
+#trendz .try-button-block {
+    padding: 0 0 64px;
+    text-align: center;
+}
+
+#trendz .accent-bg {
+    background: #F3F3FF;
+    padding: 60px 0;
+}
+
+#trendz .accent-bg main {
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+#trendz .accent-bg main .title-block {
+    flex: 1 1 45%;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+#trendz .accent-bg main .title-block::before {
+    content: "";
+    display: none;
+    width: 200px;
+    height: 200px;
+    background: #ECECFC;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    top: -80px;
+    left: -100px;
+}
+
+#trendz .accent-bg main .title-block .title {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.5;
+    color: #434343;
+    margin: 0 0 10px;
+    text-transform: capitalize;
+}
+
+#trendz .accent-bg main .title-block .btn-container {
+    background: #F3F3FF;
+    width: fit-content;
+}
+
+#trendz .accent-bg main .title-block .btn-container:hover .triangle-right {
+    border-left: 16px solid #fff;
+}
+
+#trendz .accent-bg main .title-block .btn-container .button {
+    padding: 13px 40px;
+}
+
+#trendz .accent-bg main .get-started {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    flex-direction: column;
+    margin-bottom: 60px;
+}
+
+#trendz .accent-bg main .get-started .get-started-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    height: 300px;
+}
+
+#trendz .accent-bg main .get-started .get-started-container::before {
+    content: "";
+    display: block;
+    width: 300px;
+    height: 100%;
+    background: #ECECFC;
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+#trendz .accent-bg main .get-started .get-started-container .header {
+    padding: 0 20%;
+    line-height: 1.5;
+}
+
+#trendz .accent-bg main .get-started .get-started-container .text {
+    padding: 0 10%;
+}
+
+#trendz .container-center {
+    display: flex;
+    justify-content: center;
+    padding: 80px 20px;
+}
+
+#trendz .container-center .content {
+    max-width: 510px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    position: relative;
+}
+
+#trendz .container-center .content::before {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -25%);
+    width: 300px;
+    height: 300px;
+    z-index: 0;
+}
+
+#trendz .container-center .content::after {
+    content: "";
+    display: block;
+    height: 100px;
+    width: 100px;
+    background: url(/images/trendz/sphere.png) no-repeat center/contain;
+    position: absolute;
+    left: -30px;
+    bottom: -135px;
+}
+
+#trendz .container-center .content .main-title {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.25;
+    color: #434343;
+    text-transform: uppercase;
+    z-index: 2;
+}
+
+#trendz .container-center .content .text {
+    text-align: center;
+    padding: 0 5%;
+    z-index: 2;
+}
+
+#trendz .container-center .content .btn-block {
+    z-index: 2;
+}
+
+@media screen and (min-width: 750px) {
+    #trendz #hero .hero-container {
+        margin: 0 40px;
+    }
+
+    #trendz #hero .hero-container #hero-content {
+        flex: 1 1 55%;
+        gap: 10px;
+    }
+
+    #trendz #hero .hero-container #hero-content .pe-title {
+        font-size: 20px;
+    }
+
+    #trendz #hero .hero-container #hero-content .pe-heading {
+        font-size: 30px;
+    }
+
+    #trendz #hero .hero-container #hero-content .pe-subTitle {
+        margin-bottom: 40px;
+        font-size: 20px;
+    }
+
+    #trendz #hero .hero-container #hero-content .try-pe,
+    #trendz #hero .hero-container #hero-content .accent-btn {
+        padding: 13px 15px;
+    }
+
+    #trendz #hero .hero-container .hero-image {
+        flex: 1 1 40%;
+        position: relative;
+    }
+
+    #trendz #hero .hero-container .hero-image .image-wrapper {
+        visibility: visible;
+    }
+
+    #trendz #hero .hero-container #upper-icon-left {
+        width: 90px;
+        height: 90px;
+        top: 30%;
+        left: 50%;
+    }
+
+    #trendz #hero .hero-container #upper-icon-right {
+        width: 90px;
+        height: 90px;
+        top: 25%;
+    }
+
+    #trendz #hero .hero-container #down-icon-left {
+        display: block;
+        width: 120px;
+        height: 120px;
+        bottom: 22%;
+        right: 10%;
+    }
+
+    #trendz .try-pe {
+        font-size: 20px;
+        width: auto;
+        padding: 13px 50px;
+    }
+
+    #trendz .accent-btn {
+        padding: 13px 10px;
+        font-size: 20px;
+        width: unset;
+    }
+
+    #trendz .btn-block {
+        padding: 0;
+        flex-direction: row;
+        width: unset;
+    }
+
+    #trendz .btn-block div {
+        width: unset;
+    }
+
+    #trendz #encyclopedia main {
+        padding: 0 40px;
+    }
+
+    #trendz .pe-features main .content-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        padding-bottom: 60px;
+        max-width: 620px;
+        margin: auto;
+    }
+
+    #trendz .pe-features main .content-list .content-block {
+        flex: 1 1 47%;
+    }
+
+    #trendz .trendz-features .main-bg:nth-child(odd) main {
+        flex-direction: row;
+    }
+
+    #trendz .trendz-features .main-bg:nth-child(even) main {
+        flex-direction: row-reverse;
+    }
+
+    #trendz #peContent .pe-features main .content {
+        flex: 1 1 50%;
+    }
+
+    #trendz #peContent .pe-features main .content .mobile-img {
+        display: none;
+    }
+
+    #trendz #peContent .pe-features main .image-block {
+        flex: 1 1 50%;
+    }
+
+    #trendz #peContent .pe-features main .screenshot-block {
+        display: flex;
+    }
+
+    #trendz .main-bg {
+        padding: 70px 0;
+    }
+
+    #trendz .accent-bg {
+        padding: 70px 0;
+    }
+
+    #trendz .accent-bg main .get-started {
+        flex-direction: row;
+        gap: unset;
+    }
+
+    #trendz .accent-bg main .get-started .get-started-container {
+        flex: 1 1 50%;
+    }
+
+    #trendz .accent-bg main .get-started .get-started-container .header {
+        padding: 0 17%;
+    }
+
+    #trendz .accent-bg main .get-started .get-started-container .text {
+        padding: 0;
+    }
+
+    #trendz .container-center .content::before {
+        width: 600px;
+        height: 600px;
+    }
+
+    #trendz .container-center .content::after {
+        height: 160px;
+        width: 160px;
+        left: -120px;
+        bottom: -143px;
+    }
+
+    #trendz .container-center .content .main-title {
+        font-size: 40px;
+    }
+
+    #trendz .container-center .content .text {
+        font-size: 20px;
+    }
+
+    #trendz .container-center .content .accent-btn {
+        padding: 13px 72px;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    #trendz #hero .hero-container {
+        margin: auto;
+        width: calc(100% - 100px);
+        max-width: 1200px;
+    }
+
+    #trendz #hero .hero-container #hero-content .pe-heading {
+        font-size: 40px;
+    }
+
+    #trendz #hero .hero-container .hero-image {
+        flex: 1 1 40%;
+    }
+
+    #trendz #hero .hero-container #upper-icon-left {
+        width: 100px;
+        height: 100px;
+        left: 25%;
+        top: 20%;
+    }
+
+    #trendz #hero .hero-container #upper-icon-center {
+        width: 90px;
+        height: 90px;
+        top: 18%;
+        left: 54%;
+    }
+
+    #trendz #hero .hero-container #upper-icon-right {
+        top: 25%;
+        right: -5%;
+        width: 100px;
+        height: 100px;
+    }
+
+    #trendz #hero .hero-container #down-icon-left {
+        width: 200px;
+        height: 200px;
+        bottom: 15%;
+        left: 40%;
+    }
+
+    #trendz #hero .hero-container #down-icon-right {
+        display: block;
+        width: 200px;
+        height: 200px;
+        bottom: 20%;
+        right: 0;
+    }
+
+    #trendz #hero-content {
+        align-items: flex-start;
+    }
+
+    #trendz .main-bg {
+        padding: 90px 0;
+    }
+
+    #trendz #hero .hero-container #hero-content .try-pe,
+    #trendz #peContent .try-pe {
+        padding: 13px 41px;
+    }
+
+    #trendz #hero .hero-container #hero-content .accent-btn,
+    #trendz #peContent .accent-btn {
+        padding: 13px 46px;
+    }
+
+    #trendz footer main,
+    #trendz footer div.main-div {
+        max-width: 1000px;
+    }
+
+    #trendz main {
+        width: calc(100% - 100px);
+    }
+
+    #trendz #peContent {
+        width: 100%;
+    }
+
+    #trendz #encyclopedia main {
+        padding: 0;
+    }
+
+    #trendz #peContent .pe-features main {
+        gap: 60px;
+        align-items: center;
+    }
+
+    #trendz #peContent .pe-features main .content-list {
+        flex-wrap: nowrap;
+        max-width: unset;
+        gap: 25px;
+    }
+
+    #trendz #peContent .pe-features main .content-list .content-block {
+        flex: 1 1 25%;
+    }
+
+    #trendz #peContent .pe-features main .image-block {
+        min-height: 350px;
+    }
+
+    #trendz #peContent .pe-features main .image-block .image-wrapper {
+        width: 100%;
+        height: 100%;
+    }
+
+    #trendz #peContent .pe-features main .image-block .screenshot {
+        height: auto;
+    }
+
+    #trendz #peContent .pe-features main .pie-chart .sphere {
+        width: 200px;
+        height: 200px;
+        top: -60px;
+    }
+
+    #trendz #peContent .pe-features main .pie-chart .donut-chart {
+        width: 240px;
+        height: 240px;
+        top: -15%;
+    }
+
+    #trendz #peContent .pe-features main .pie-chart .bar-chart {
+        width: 240px;
+        height: 240px;
+        bottom: -50px;
+    }
+
+    #trendz #peContent .pe-features main .multiple-chart .sphere {
+        height: 160px;
+        width: 160px;
+    }
+
+    #trendz #peContent .accent-bg main {
+        flex-direction: column-reverse;
+        align-items: center;
+        gap: 120px;
+    }
+
+    #trendz #peContent .accent-bg main .get-started {
+        gap: 60px;
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    #trendz #hero {
+        padding-top: 80px;
+    }
+
+    #trendz #hero .hero-container .hero-image {
+        flex: 1 1 50%;
+    }
+
+    #trendz .main-bg {
+        padding: 120px 0;
+    }
+
+    #trendz #peContent .accent-bg main {
+        flex-direction: row;
+        gap: 0;
+    }
+
+    #trendz #peContent .accent-bg main .title-block {
+        text-align: start;
+    }
+
+    #trendz #peContent .accent-bg main .title-block::before {
+        display: block;
+    }
+
+    #trendz #peContent .accent-bg main .get-started {
+        gap: 0;
+    }
+
+    #trendz .try-trendz {
+        line-height: 60px;
+        font-size: 28px;
+        padding: 0 40px;
+        border-width: 3px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    #trendz main {
+        width: calc(100% - 400px);
+    }
+
+    #trendz #hero .hero-container {
+        max-width: 1400px;
+    }
+
+    #trendz #hero .hero-container #hero-content .pe-heading {
+        font-size: 50px;
+        padding-right: 10%;
+    }
+
+    #trendz #hero .hero-container #hero-content .pe-subTitle {
+        font-size: 24px;
+    }
+
+    #trendz #hero .hero-container #down-icon-left {
+        bottom: 5px;
+    }
+
+    #trendz .accent-btn {
+        font-size: 24px;
+    }
+
+    #trendz .try-pe {
+        font-size: 24px;
+    }
+
+    #trendz section main,
+    #trendz header main,
+    #trendz footer main {
+        max-width: 1400px;
+        width: 1400px;
+    }
+
+    #trendz .header {
+        font-size: 24px;
+    }
+
+    #trendz .text {
+        font-size: 19px;
+        line-height: 1.7;
+    }
+
+    #trendz #peContent .pe-features main .content-list {
+        gap: 16px;
+    }
+
+    #trendz #peContent .pe-features main .content-list .content-block:first-child .text {
+        padding-right: 3px;
+    }
+
+    #trendz #peContent .pe-features main .image-block .screenshot {
+        top: 25%;
+        left: 7%;
+    }
+
+    #trendz .accent-text {
+        font-size: 18px;
+    }
+
+    #trendz .accent-bg main .title-block .title {
+        font-size: 40px;
+    }
+
+    #trendz .link {
+        font-size: 24px;
+    }
+
+    #trendz .container-center .content .main-title {
+        font-size: 50px;
+    }
+}
+
+@media (max-width: 415px) {
+    html#pricing #pricingContent #trendz-self-managed .pricing-content-header .col.d-flex.justify-content-end {
+        justify-content: center !important;
+    }
+
+    html#pricing #pricingContent #trendz-self-managed .pricing-content-header .col.d-flex.justify-content-end .solution-selector {
+        width: 100%;
+    }
+
+    html#pricing #pricingContent #trendz-self-managed .pricing-content-header .col.d-flex.justify-content-end .solution-selector .solution#trendz-pay-as-you-go,
+    html#pricing #pricingContent #trendz-self-managed .pricing-content-header .col.d-flex.justify-content-end .solution-selector .solution#trendz-perpetual {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    html#pricing #pricingContent #trendz-self-managed .pricing-content-header .col.d-flex.justify-content-end .solution-selector .solution#trendz-pay-as-you-go h3,
+    html#pricing #pricingContent #trendz-self-managed .pricing-content-header .col.d-flex.justify-content-end .solution-selector .solution#trendz-perpetual h3 {
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
+
+@media (max-width: 415px) {
+
+    html#pricing #pricingContent .solution-selector .solution#trendz-pay-as-you-go,
+    html#pricing #pricingContent .solution-selector .solution#trendz-perpetual,
+    html#pricing #pricingContent .product-selector .solution#trendz-pay-as-you-go,
+    html#pricing #pricingContent .product-selector .solution#trendz-perpetual {
+        flex: 1;
+    }
+
+    html#pricing #pricingContent .solution-selector .solution#trendz-pay-as-you-go::before,
+    html#pricing #pricingContent .solution-selector .solution#trendz-perpetual::before,
+    html#pricing #pricingContent .product-selector .solution#trendz-pay-as-you-go::before,
+    html#pricing #pricingContent .product-selector .solution#trendz-perpetual::before {
+        display: none !important;
+    }
+}
+
+@media (max-width: 415px) {
+
+    html#pricing #pricingContent .solution-selector .solution#trendz-pay-as-you-go a,
+    html#pricing #pricingContent .solution-selector .solution#trendz-perpetual a,
+    html#pricing #pricingContent .product-selector .solution#trendz-pay-as-you-go a,
+    html#pricing #pricingContent .product-selector .solution#trendz-perpetual a {
+        display: none;
+    }
+}
