@@ -960,3 +960,115 @@ var pushmenu = (function(){
 		});
 	}
 })();
+
+// expand-code-blocks-button AND copy-code button
+
+(function () {
+	jqueryDefer(function () {
+		$(document).on('selectionchange', function () {
+			$('.clipboard-btn').removeClass('noChars');
+			const selectedChars = getSelectedText();
+			if (selectedChars == 0) {
+				$('.clipboard-btn').addClass('noChars');
+			}
+		});
+
+		$(document).ready(function () {
+			$('.copy-code').each(function (index, codeBlocksItem) {
+				const classes = $(codeBlocksItem).attr('class').split(' ');
+				const expandableClass = classes.find(className => className.startsWith('expandable'));
+				if (classes && expandableClass) {
+					const rows = parseInt(expandableClass.split('-')[1]);
+					addExpandButton(codeBlocksItem, rows);
+				}
+			});
+			parseAllCodeBlocks();
+		})
+	});
+
+	function addExpandButton(codeBlock, rows) {
+		const pre = $(codeBlock).find('pre').first();
+		let collapsedHeight = rows * 28 + 5;
+		pre.css('height', collapsedHeight + 'px');
+
+		let button = $('<button class="expand-code-btn"><div class="arrow"></div><p class="btn-text expand">expand</p><p class="btn-text collapse">collapse</p></button>');
+
+		button.on('click', function () {
+			if ($(codeBlock).attr('data-expanded') === 'true') {
+				$(codeBlock).attr('data-expanded', 'false');
+				codeBlock.scrollIntoView({ block: "start" });
+			} else {
+				$(codeBlock).attr('data-expanded', 'true');
+			}
+		});
+
+		$(codeBlock).append(button);
+	}
+
+	const clipboard = new Clipboard('.noChars');
+	clipboard.on('success', function (e) {
+		$('.clipboard-btn').removeClass('noChars');
+		e.clearSelection();
+		const trigger = e.trigger;
+		if (!$(trigger).attr('data-skip-tooltip')) {
+			showTooltip(e.trigger, 'Copied!');
+		} else {
+			$(trigger).removeAttr('data-skip-tooltip');
+		}
+	});
+
+	function clearTooltip(e) {
+		const el = $(e.currentTarget);
+		el.removeClass('showTool');
+		el.attr('aria-label', null);
+	}
+
+	function showTooltip(elem, msg) {
+		const el = $(elem);
+		el.addClass('showTool');
+		el.attr('aria-label', msg);
+	}
+
+	function getSelectedText() {
+		let text;
+		if (window.getSelection) {
+			text = window.getSelection().toString();
+		} else if (document.getSelection) {
+			text = document.getSelection();
+		} else if (document.selection) {
+			text = document.selection.createRange().text;
+		}
+		return text;
+	}
+
+	function parseAllCodeBlocks() {
+		const allCodeBlocksElements = $(".highlighter-rouge");
+		allCodeBlocksElements.each(function (i) {
+			const codeBlock = $(this);
+			if (codeBlock.hasClass('copy-code')) {
+				codeBlock.each(function () {
+					const block = codeBlock.find('pre.highlight > code .rouge-code');
+					const currentId = "codeblock" + (i + 1);
+					block.attr('id', currentId);
+					const clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><p>Copy to clipboard</p><div><img src="/images/copy-code-icon.svg" alt="Copy to clipboard"></div></button>');
+					const copyCodeButtonContainer = $(this).find('.highlight pre.highlight');
+					copyCodeButtonContainer.prepend(clipButton);
+					copyCodeButtonContainer.find('table').css('transform', 'translateY(-46px)');
+					const Tooltip = $('<div class="customTooltip"><div class="tooltipText">Copied!</div></div>');
+					copyCodeButtonContainer.append(Tooltip);
+					copyCodeButtonContainer.addClass('clipboard-btn');
+					copyCodeButtonContainer.attr('data-clipboard-target', "#" + currentId);
+					copyCodeButtonContainer.on('mouseleave', clearTooltip);
+					copyCodeButtonContainer.on('blur', clearTooltip);
+					copyCodeButtonContainer.on('click', function (e) {
+						const el = $(e.currentTarget);
+						if (el.hasClass('showTool')) {
+							clearTooltip(e);
+							copyCodeButtonContainer.attr('data-skip-tooltip', "true");
+						}
+					});
+				});
+			}
+		});
+	}
+})();
