@@ -1050,7 +1050,7 @@ var pushmenu = (function(){
 					const block = codeBlock.find('pre.highlight > code .rouge-code');
 					const currentId = "codeblock" + (i + 1);
 					block.attr('id', currentId);
-					const clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><p>Copy to clipboard</p><div><img src="/images/copy-code-icon.svg" alt="Copy to clipboard"></div></button>');
+					const clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><p>Copy to clipboard</p><div><img src="https://img.thingsboard.io/copy-code-icon.svg" alt="Copy to clipboard"></div></button>');
 					const copyCodeButtonContainer = $(this).find('.highlight pre.highlight');
 					copyCodeButtonContainer.prepend(clipButton);
 					copyCodeButtonContainer.find('table').css('transform', 'translateY(-46px)');
