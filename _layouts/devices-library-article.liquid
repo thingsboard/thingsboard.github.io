@@ -35,7 +35,7 @@
 <html id="docs" class="{{ siteData[foundTOC].bigheader }} {{ productInfo.tag }}">
 
 {% include head-header.html docsTag=docsTag %}
-
+<body>
 <div id="searchBox">
     <input type="text" id="search" placeholder="Search"
            onkeydown="if (event.keyCode==13) window.location.replace('{{ searchPath }}' + this.value)">
@@ -181,31 +181,6 @@
     }
 </style>
 <script>
-    jqueryDefer(function () {
-        $(document).on('selectionchange', function () {
-            // $(document).mouseup(function () {
-            $('.clipboard-btn').removeClass('noChars');
-            var selectedChars = getSelectedText();
-            // $('#numberChars').html(selectedChars.length);
-            if (selectedChars == 0) {
-                $('.clipboard-btn').addClass('noChars');
-            }
-        });
-    });
-
-    function getSelectedText() {
-        var text;
-        if (window.getSelection) {
-            text = window.getSelection().toString();
-        } else if (document.getSelection) {
-            text = document.getSelection();
-        } else if (document.selection) {
-            text = document.selection.createRange().text;
-        }
-        return text;
-    }
-</script>
-<script>
     jqueryUiDefer(function () {
         $(document).ready(function () {
 
@@ -221,78 +196,6 @@
                     }
                 } else {
                     productsSelector.removeClass('active');
-                }
-            });
-
-            var allCodeBlocksElements = $(".highlighter-rouge");
-            allCodeBlocksElements.each(function (i) {
-                var codeBlock = $(this);
-                var pre = codeBlock.find('pre').first();
-                for (let className of codeBlock.attr('class').split(' ')) {
-                    let match = className.startsWith('expandable') ? className : null;
-                    if (match) {
-                        let rows = parseInt(match.split('-')[1]);
-                        let collapsedHeight = rows * 28 + 5;
-                        pre.css('height', collapsedHeight + 'px');
-                        codeBlock.find('.highlight').first().css("margin-bottom", "45px");
-                        let button = $('<button class="expand-code-btn"><div class="collapsed"></div><p>expand</p></button>');
-                        button.on('click', function() {
-                            if (button.attr('data-expanded') === 'true') {
-                                pre.css('height', collapsedHeight + 'px');
-                                button.attr('data-expanded', 'false');
-                                button.find('p').text('expand');
-                                button.get(0).scrollIntoView({block: "center"});
-                                button.find('div').removeClass('expanded');
-                                button.find('div').addClass('collapsed');
-                            } else {
-                                if (pre.prop('scrollHeight') > 2775) {
-                                    codeBlock.find('.rouge-gutter').css("width", "60px");
-                                }
-                                pre.css('height', pre.prop('scrollHeight') + 'px');
-                                button.attr('data-expanded', 'true');
-                                button.find('p').text('collapse');
-                                button.find('div').removeClass('collapsed');
-                                button.find('div').addClass('expanded');
-                            }
-                        })
-                        codeBlock.append(button);
-                        break;
-                    }
-                }
-                if (codeBlock.hasClass('copy-code')) {
-                    codeBlock.each(function () {
-                        var block = codeBlock.find('pre.highlight > code .rouge-code');
-                        var currentId = "codeblock" + (i + 1);
-                        block.attr('id', currentId);
-                        var clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><p>Copy to clipboard</p><div><img src="https://img.thingsboard.io/copy-code-icon.svg" alt="Copy to clipboard"></div></button>');
-                        $(this).append(clipButton);
-                        var troyan = codeBlock.find('pre.highlight');
-                        var Tooltip = $('<div class="customTooltip"><div class="tooltipText">Copied!</div></div>');
-                        troyan.append(Tooltip);
-                        troyan.addClass('clipboard-btn');
-                        troyan.attr('data-clipboard-target', "#" + currentId);
-                        troyan.on('mouseleave', clearTooltip);
-                        troyan.on('blur', clearTooltip);
-                        troyan.on('click', function (e) {
-                            var el = $(e.currentTarget);
-                            if (el.hasClass('showTool')) {
-                                clearTooltip(e);
-                                troyan.attr('data-skip-tooltip', "true");
-                            }
-                        });
-                    });
-                }
-            });
-
-            var clipboard = new Clipboard('.noChars');
-            clipboard.on('success', function (e) {
-                $('.clipboard-btn').removeClass('noChars');
-                e.clearSelection();
-                var trigger = e.trigger;
-                if (!$(trigger).attr('data-skip-tooltip')) {
-                    showTooltip(e.trigger, 'Copied!');
-                } else {
-                    $(trigger).removeAttr('data-skip-tooltip');
                 }
             });
 
@@ -321,18 +224,6 @@
                 }
             });
         });
-
-        function clearTooltip(e) {
-            var el = $(e.currentTarget);
-            el.removeClass('showTool');
-            el.attr('aria-label', null);
-        }
-
-        function showTooltip(elem, msg) {
-            var el = $(elem);
-            el.addClass('showTool');
-            el.attr('aria-label', msg);
-        }
     });
 </script>
 {% if hasTocContent == "true" %}
