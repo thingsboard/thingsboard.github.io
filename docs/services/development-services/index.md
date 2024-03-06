@@ -341,7 +341,6 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
 </div>
 
 <script type="text/javascript">
-
     var modal = document.getElementById("myModal");
 
     var btn = document.getElementById("myBtn");
