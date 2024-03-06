@@ -9,7 +9,7 @@ upload-image-1:
         title: 'Go to the "Image gallery" page in the "Resources" section. Then, click the “Upload image” button in the top right corner of the screen;'
     1:
         image: /images/user-guide/image-gallery/upload-image-2-pe.png
-        title: 'Select or drop image in the "Upload image" window and then click "Upload";'
+        title: 'Select an image or simply drag it to the "Upload image" window and click "Upload";'
     2:
         image: /images/user-guide/image-gallery/upload-image-3-pe.png
         title: 'The image has been uploaded.'
@@ -28,47 +28,69 @@ upload-image-2:
 image-viewing-mode:
     0:
         image: /images/user-guide/image-gallery/image-viewing-mode-1-pe.png
-        title: 'The image list view;'
+        title: 'The image list view.'
     1:
         image: /images/user-guide/image-gallery/image-viewing-mode-2-pe.png
-        title: 'The image grid view;'
+        title: 'The image grid view.'
 
 include-system-images:
     0:
         image: /images/user-guide/image-gallery/include-system-images-1-pe.png
-        title: 'The list of images displays only your images.'
+        title: 'By default, in the Image gallery displays only your images. Enable the "Include system images" option to view your and the system&#39;s images'
     1:
         image: /images/user-guide/image-gallery/include-system-images-2-pe.png
-        title: 'The list of images displays your and system images.'
+        title: 'Now, in the Image gallery displays your and system images.'
 
 download-image-1:
     0:
         image: /images/user-guide/image-gallery/download-image-1-pe.png
-        title: 'The image list view: click the "Download image" icon opposite the image&#39;s name you want to download.'
+        title: 'If you&#39;re using the list view of images, click the "Download image" icon next to the image name that you want to export. The image in image file format will be saved to your PC.'
     1:
         image: /images/user-guide/image-gallery/download-image-2-pe.png
-        title: 'The image grid view: hover your mouse over the image you want to download and click the "Download image" icon.'
+        title: 'If you&#39;re using the grid view, hover your mouse pointer over the image you want to export and click the "Download image" icon. The image in image file format will be saved to your PC.'
 
 export-image-1:
     0:
         image: /images/user-guide/image-gallery/export-image-1-pe.png
-        title: 'The image list view: click the "Export image" icon opposite the image&#39;s name you want to export.'
+        title: 'If you&#39;re using the list view of images, click the "Export image to JSON" icon next to the image name that you want to download. The image in JSON format will be saved to your PC.'
     1:
         image: /images/user-guide/image-gallery/export-image-2-pe.png
-        title: 'The image grid view: hover your mouse over the image you want to export and click the "Export image" icon.'
+        title: 'If you&#39;re using the grid view, hover your mouse pointer over the image you want to download and click the "Export image to JSON" icon. The image in JSON format will be saved to your PC.'
+
+embed-image:
+    0:
+        image: /images/user-guide/image-gallery/embed-image-1-pe.png
+        title: 'Go to the "Image gallery" page in the "Resources" section. Click the "Embed image" icon of the corresponding image that you want to embed;'
+    1:
+        image: /images/user-guide/image-gallery/embed-image-2-pe.png
+        title: 'Select the code snippet for the Angular HTML template or for the components based on plain HTML, and copy the corresponding unique link for this image.'
 
 edit-image-1:
     0:
         image: /images/user-guide/image-gallery/edit-image-1-pe.png
-        title: 'To edit an image in the list view, click the "Edit image" icon next to the name of the image you want to edit.'
+        title: 'To open editing an image window, click the "Edit image" icon next to the image name that you want to edit;'
     1:
-        image: /images/user-guide/image-gallery/edit-image-3-pe.png
-        title: 'In grid view, hover your mouse cursor over the image you want to edit and click the "Edit Image" button.'
+        image: /images/user-guide/image-gallery/edit-image-2-pe.png
+        title: 'In this window, you can rename, download, export to JSON, embed, and update image.'
 
 edit-image-2:
     0:
-        image: /images/user-guide/image-gallery/edit-image-2-pe.png
-        title: 'In the "Edit image" window, you can change the image&#39;s name, copy the image link, download, export, or update the image.'
+        image: /images/user-guide/image-gallery/edit-image-3-pe.png
+        title: 'Enter a new name and click the "Save" icon to change the image name;'
+    1:
+        image: /images/user-guide/image-gallery/edit-image-4-pe.png
+        title: 'The image name has been changed.'
+
+update-image-1:
+    0:
+        image: /images/user-guide/image-gallery/update-image-1-pe.png
+        title: 'To update the image, click the "Update image" button in the image editing window;'
+    1:
+        image: /images/user-guide/image-gallery/update-image-2-pe.png
+        title: 'Select a new image or simply drag it here and click the "Update" button;'
+    2:
+        image: /images/user-guide/image-gallery/update-image-3-pe.png
+        title: 'The image has been updated.'
 
 delete-image-1:
     0:

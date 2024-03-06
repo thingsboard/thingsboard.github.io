@@ -4,7 +4,8 @@
 {% assign sinceVersion = "3.6.2" %}
 {% include templates/since.md %}
 
-The Image gallery serves as a centralized repository for storing and managing images. This is an important resource for improving the visual appeal and functionality of widgets, dashboards, devices, and asset profiles in a mobile application. 
+The Image gallery serves as a centralized repository for storing and managing images. 
+This is an important resource for improving the visual appeal and functionality of widgets, dashboards, devices, and asset profiles in a mobile application. 
 Users can easily upload, organize, and select images to customize their interface and user experience, ensuring an integrity and branded look across the platform.
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
@@ -15,8 +16,7 @@ Users can easily upload, organize, and select images to customize their interfac
 {% endif %}
 
 {% unless docsPrefix == 'paas/' %}
-## Configuration
-
+## Cache configuration
 
 Our image API uses *ETags* to optimize caching, ensuring images are only downloaded when they have changed, thus saving bandwidth.
 By default, we do not apply Cache-Control headers, relying on the efficiency of ETags.
@@ -34,84 +34,122 @@ These configurations control the Time To Live (TTL) for your system and tenant i
 Setting a longer TTL improves load time for repeated visits and reduces server load, while a shorter TTL ensures users receive more frequent content updates.
 Adjust these settings based on the update frequency of your images. How to do it, read [here](/docs/user-guide/install/{{docsPrefix}}how-to-change-config/).
 
-<br>
 Additionally, the system administrator can set restrictions on the maximum size of a single image and the total size of images by configuring [tenant profiles](/docs/{{docsPrefix}}user-guide/tenant-profiles/#files-limits).
 Values are specified in bytes.
 {% endunless %}
 
-## Managing image gallery
+## Add image
 
-Learn about the image gallery interface to identify the functionalities of various features.
+Add your images to the Image gallery serves in [image file format](#upload-image) (PNG, JPEG, GIF, etc.) or [JSON file format](#import-image-from-json).
 
-The toolbar in the Image Gallery provides options to [upload images](#upload-image), [toggle between list and grid viewing modes](#change-the-image-view-mode), [filter system images](#system-images), search for images by name, and refresh the display. All accessible through specific icons on the toolbar.
+### Upload image
 
-### Add image
-
-You can add your images to the Image gallery serves in [image file format](#upload-image) (PNG, JPEG, GIF, etc.) or [JSON file format](#import-image).
-
-#### Upload image
-
-To upload your images in **image file format**, follow these steps:
+To upload new image in **image file format**, follow these steps:
 
 {% include images-gallery.html imageCollection="upload-image-1" showListImageTitles="true" %}
 
-#### Import image
+### Import image from JSON
 
 To import your images in **JSON file format**, follow these steps:
 
 {% include images-gallery.html imageCollection="upload-image-2" showListImageTitles="true" %}
 
-### Change the image view mode
+## System images
 
-To change the image viewing mode, simply select one of the two modes in the top left corner of the Image gallery window: an image list or an image grid.
-
-{% include images-gallery.html imageCollection="image-viewing-mode" %}
-
-### System images
-
-By default, the list of images displays only your images.
-
-To view your and system images, enable the "Include system images" option.
+The image gallery contains system images that you can also use to design your dashboards, widgets, etc. By default, only your images are displayed in the image list.
+To display your and system images, enable the Enable System Images option.
 
 {% include images-gallery.html imageCollection="include-system-images" %}
 
+{% capture difference %}
+**Please note:**
+Only the system administrator can delete, rename or update system images.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+## Change the image view mode
+
+You can view images in one of two modes: list or grid.
+To change the image viewing mode, simply select the mode that suits you in the top left corner of the Image gallery window.
+
+{% include images-gallery.html imageCollection="image-viewing-mode" %}
+
 ## Image operations
 
-You can perform operations with images such as [downloading in a JSON format](#download-image), [exporting in an image file format](#export-image), as well as [editing](#edit-image) and [deleting](#delete-image) an image using the corresponding icon opposite the image's name.
-
-Let’s look at each operation.
+You can [download](#download-image), [export to JSON](#export-image-to-json), [edit](#edit-image), [embed](#embed-image), and [delete](#delete-image) image using the corresponding icon opposite the image's name.
+Let's take a closer look at each operation.
 
 ### Download image
 
-You can download an image as a JSON file.
+Downloading an image in image file format can be done in two ways, depending on the selected image viewing format:
 
-If you're using the list view of images, click the "Download image" icon next to the image name that you want to download. 
-Or, if you're using the grid view, hover your mouse pointer over the image you want to download and click the "Download image" icon.
-The image in JSON format will be saved to your PC.
+- If you're using the list view of images, click the "Download image" icon next to the image name that you want to export.
+- If you're using the grid view, hover your mouse pointer over the image you want to export and click the "Download image" icon.
+
+The image in image file format will be saved to your PC.
 
 {% include images-gallery.html imageCollection="download-image-1" %}
 
-### Export image
+### Export image to JSON
 
-You can export an image in an image file format.
+Exporting an image to JSON can be done in two ways, depending on the selected image viewing format:
 
-If you're using the list view of images, click the "Export image" icon next to the image name that you want to export.
-Or, if you're using the grid view, hover your mouse pointer over the image you want to export and click the "Export image" icon.
-The image in image file format will be saved to your PC.
+- If you're using the list view of images, click the "Export image to JSON" icon next to the image name that you want to download.
+- If you're using the grid view, hover your mouse pointer over the image you want to download and click the "Export image to JSON" icon.
+
+The image in JSON format will be saved to your PC.
 
 {% include images-gallery.html imageCollection="export-image-1" %}
 
+### Embed image
+
+After you've added an image to the Image gallery, you can embed this image into HTML card widgets, in HTML section in the widget editor, in cell content functions, in custom actions, etc.
+
+Images provided at the system level are available to all users using the platform, while tenant images may only be available to specific tenants.
+Each image on the ThingsBoard platform has a unique URL that allows you to download the image both with and without authentication.
+
+Using the code snippet provided below, you can embed the image into components that operate based on plain HTML, without authentication. For example, in *HTML Card* widget, cell content functions, etc.
+
+```java
+<img src="relative link to the image" alt="text description of the image" />
+```
+
+To embed your image into an Angular HTML template, for example in the *Markdown/HTML Card* widget or HTML section in the widget editor, use the following code snippet:
+
+```java
+<img [src]="'image URL' | image | async" />
+```
+
+This specific method ensures that the authentication headers is automatically adds in the image request, allowing the same image URL to return different images for different users.
+
+<br>
+To obtain a link to the image for further embedding, follow these steps.
+
+- Go to the "Image gallery" page in the "Resources" section;
+- Click the "Embed image" of the corresponding image that you want to embed (if you’re using the grid view, hover your mouse pointer over the image you want to embed and click the "Embed image" icon);
+- Select the code snippet for the Angular HTML template or for the components based on plain HTML, and copy the corresponding unique link for this image.
+
+{% include images-gallery.html imageCollection="embed-image" %}
+
 ### Edit image
 
-To edit an image, do the following:
+To open editing an image window, click the "Edit image" icon next to the image name that you want to edit (if you're using the grid view, hover your mouse pointer over the image you want to edit and click the "Edit image" icon).
+An editing window will open. In this window you can change the name, download, export it to JSON, embed, and also [update the image](#update-image).
 
- - In the list view, click the "Edit image" icon next to the image name you want to edit. In the grid view, hover your mouse cursor over the image you want to edit and click the "Edit image" button.
- 
-{% include images-gallery.html imageCollection="edit-image-1"%}
+{% include images-gallery.html imageCollection="edit-image-1" %}
 
- - In the "Edit image" window, you can change the image's name, copy the image link, download, export, or update the image.
+To change the name of the image, enter a new name and click the "Save" icon in the "Edit image" window.
 
-{% include images-gallery.html imageCollection="edit-image-2"%}
+{% include images-gallery.html imageCollection="edit-image-2" %}
+
+#### Update image
+
+Updating the image can be useful, for example, when one picture serves as the background for multiple dashboards. 
+This allows you to make changes just once, and all dashboards using that image will automatically receive the updated version, saving you the effort of editing each dashboard individually.
+
+To update the image, click the "Update image" button in the editing window. Select a new image or simply drag it to the "Update image" window and click "Update". 
+
+{% include images-gallery.html imageCollection="update-image-1" %}
 
 ### Delete image
 
