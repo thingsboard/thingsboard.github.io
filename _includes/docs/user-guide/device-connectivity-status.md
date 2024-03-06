@@ -1,6 +1,38 @@
 * TOC
 {:toc}
 
+## Activity reporting strategies
+
+# General
+- What are activity reporting strategies?
+- What is their purpose? What is the design goal behind them? What is their intended usage?
+- Main concepts: strategies itself and reporting period
+- What does it mean to "report" an activity?
+- What is an "activity"?
+
+TODO: activity events in existing doc and activity events in the new doc are different things but have same names.
+This will create confusion.
+
+# Concepts
+
+- **Activity reporting period**: time is divided into a chunks of a configurable (link to configuration section?) duration. 
+Each chunk is called activity reporting period. For brevity, we will call it just reporting period.
+(Picture with timeline and a "marks" showing that time is split into chunks)
+- **First event**: first activity event received during reporting period.
+- **Last event**: last activity event received during reporting period.
+(Picture with reporting period marks and three events: first event, middle event (or several) and last event)
+
+# Activity reporting strategies
+
+- **ALL**: all events are reported to Device State service immediately.
+- **FIRST**: only first event is reported to Device State service. Event is reported immediately after it happens (arrives?).
+- **LAST**: only last event is reported to Device State service. Event is reported when reporting period ends.
+- **FIRST_AND_LAST**: both first event and last event are reported to Device State service. 
+First event is reported immediately, last event is reported when reporting period ends.
+
+# Configuration
+- thingsboard.yml config
+
 ## Feature Overview
 
 ThingsBoard Device State service is responsible for monitoring the device connectivity state and triggering the device connectivity events 
