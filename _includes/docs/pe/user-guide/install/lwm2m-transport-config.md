@@ -1,4 +1,5 @@
-
+* TOC
+{:toc}
 
 ####  Spring common parameters
 
@@ -400,6 +401,12 @@
 			<td>LWM2M_DTLS_RETRANSMISSION_TIMEOUT_MS</td>
 			<td>9000</td>
 			<td> RFC7925_RETRANSMISSION_TIMEOUT_IN_MILLISECONDS = 9000</td>
+		</tr>
+		<tr>
+			<td>transport.lwm2m.dtls.connection_id_length</td>
+			<td>LWM2M_DTLS_CONNECTION_ID_LENGTH</td>
+			<td>6</td>
+			<td> "" disables connection id support, 0 enables support but not for incoming traffic, any value greater than 0 set the connection id size in bytes</td>
 		</tr>
 		<tr>
 			<td>transport.lwm2m.server.id</td>
