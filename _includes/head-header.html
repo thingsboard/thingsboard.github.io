@@ -345,7 +345,7 @@
             let menuElement = $('nav.head-menu > ul');
             let submenuContainer = $('nav.head-menu > div.sub-menu-container');
             let menuItems = $('nav.head-menu > ul > li');
-            let indicator = $('nav.head-menu > ul > div.indicator');
+            let indicator = $('nav.head-menu > ul + div.indicator');
             let subMenuActive = false;
             menuElement.on('mouseleave', function (event) {
                 if (!$(event.relatedTarget).parents('div.sub-menu-container').length) {
@@ -354,7 +354,7 @@
                             subMenuActive = false;
                             submenuContainer.removeClass('active bounds-transition');
                             menuItems.removeClass('active');
-                            indicator.removeClass('left-transition');
+                            indicator.removeClass('left-transition active');
                         }
                     }, 200)
                 }
@@ -364,7 +364,7 @@
                     subMenuActive = false;
                     submenuContainer.removeClass('active bounds-transition');
                     menuItems.removeClass('active');
-                    indicator.removeClass('left-transition');
+                    indicator.removeClass('left-transition active');
                 }
             });
             menuItems.each(function() {
@@ -389,10 +389,11 @@
                             submenuContainer.css('left', left + 'px');
                             if (!subMenuActive) {
                                 submenuContainer.addClass('active');
+                                indicator.addClass('active');
                                 subMenuActive = true;
                             } else {
                                 submenuContainer.addClass('bounds-transition');
-                                indicator.addClass('left-transition');
+                                indicator.addClass('left-transition active');
                             }
                             indicator.css('left', item.position().left);
                             indicator.css('width', item.outerWidth());
@@ -529,8 +530,8 @@
             <li class="nav-docs" data-submenu-id="nav-docs">
                 <span class="main-menu-link" onclick="listburg('nav-docs')">Docs</span>
             </li>
-            <div class="indicator"><div class="head-arrow"></div><div class="line"></div><div class="sub-background"></div></div>
         </ul>
+        <div class="indicator"><div class="head-arrow"></div><div class="line"></div><div class="sub-background"></div></div>
         <div class="sub-menu-container">
             <div id="nav-products" class="centered-sub">
                 <ul class="sub-menu products">
