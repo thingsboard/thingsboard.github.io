@@ -4,17 +4,9 @@
 {% assign sinceVersion = "3.6.2" %}
 {% include templates/since.md %}
 
-With the introduction of the Image Gallery, we significantly improved the efficiency of working with images in the ThingsBoard system.
-Previously, ThingsBoard allowed the addition of images to widgets and dashboards through external image links or Base64 encoded images. 
-Often, these images were large, leading to increased internet traffic and longer loading times for the dashboard where these images were used.
-Additionally, large images led to increased JSON file sizes during the export/import of dashboards, which was very inefficient.
-
-After implementing the Image Gallery, we gained several advantages:
-
-- Your images are stored in a single location, simplifying the processes of uploading, viewing, editing, and using them;
-- Using internal image links within the ThingsBoard system has greatly improved the efficiency and speed of your system;
-- You can now use the same image across multiple dashboards, significantly saving disk space. Moreover, updating or replacing an image automatically applies to all dashboards (widgets) where it is used, eliminating the need to manually update each one;
-- The use of ETags for image caching optimization in browsers ensures images are only reloaded if they have changed, reducing image loading times and thereby enhancing the efficiency and speed of your system.
+The Image gallery serves as a centralized repository for storing and managing images. 
+This is an important resource for improving the visual appeal and functionality of widgets, dashboards, devices, and asset profiles in a mobile application. 
+Users can easily upload, organize, and select images to customize their interface and user experience, ensuring an integrity and branded look across the platform.
 
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 ![image](/images/user-guide/image-gallery/image-gallery-pe.png)
@@ -25,7 +17,6 @@ After implementing the Image Gallery, we gained several advantages:
 
 {% unless docsPrefix == 'paas/' %}
 ## Cache configuration
-
 
 Our image API uses *ETags* to optimize caching, ensuring images are only downloaded when they have changed, thus saving bandwidth.
 By default, we do not apply Cache-Control headers, relying on the efficiency of ETags.
