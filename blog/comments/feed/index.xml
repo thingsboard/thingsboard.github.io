@@ -11,42 +11,11 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../index.html</link>
 	<description></description>
-	<lastBuildDate>Fri, 01 Mar 2024 11:39:10 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 06 Mar 2024 12:42:33 +0000</lastBuildDate>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=6.4.3</generator>
-	<item>
-		<title>
-		Comment on Enhancing IoT solutions with edge computing by Hanna Firsova		</title>
-		<link>./../../road-tripping-across-new-zealand-a-guide-to-the-islands-best-kept-secrets/index.html#comment-21</link>
-
-		<dc:creator><![CDATA[Hanna Firsova]]></dc:creator>
-		<pubDate>Wed, 21 Feb 2024 15:20:34 +0000</pubDate>
-		<guid isPermaLink="false">https://swyft.codesupply.co/lifestyle/?p=2094#comment-21</guid>
-
-					<description><![CDATA[In reply to &lt;a href=&quot;./../../road-tripping-across-new-zealand-a-guide-to-the-islands-best-kept-secrets/index.html#comment-20&quot;&gt;Hanna Firsova&lt;/a&gt;.
-
-йцвйцвйцвйцв]]></description>
-			<content:encoded><![CDATA[<p>In reply to <a href="./../../road-tripping-across-new-zealand-a-guide-to-the-islands-best-kept-secrets/index.html#comment-20">Hanna Firsova</a>.</p>
-<p>йцвйцвйцвйцв</p>
-]]></content:encoded>
-		
-			</item>
-		<item>
-		<title>
-		Comment on Enhancing IoT solutions with edge computing by Hanna Firsova		</title>
-		<link>./../../road-tripping-across-new-zealand-a-guide-to-the-islands-best-kept-secrets/index.html#comment-20</link>
-
-		<dc:creator><![CDATA[Hanna Firsova]]></dc:creator>
-		<pubDate>Wed, 21 Feb 2024 15:20:24 +0000</pubDate>
-		<guid isPermaLink="false">https://swyft.codesupply.co/lifestyle/?p=2094#comment-20</guid>
-
-					<description><![CDATA[йцвйцвйцв]]></description>
-			<content:encoded><![CDATA[<p>йцвйцвйцв</p>
-]]></content:encoded>
-		
-			</item>
-	</channel>
+</channel>
 </rss>

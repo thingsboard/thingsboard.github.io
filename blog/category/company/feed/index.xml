@@ -12,7 +12,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Fri, 01 Mar 2024 10:58:55 +0000</lastBuildDate>
+	<lastBuildDate>Wed, 06 Mar 2024 12:42:33 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -27,79 +27,5 @@
 	<width>32</width>
 	<height>32</height>
 </image> 
-	<item>
-		<title>Invitation to the online event: discover the latest updates from ThingsBoard platform!</title>
-		<link>./../../../andrews-blog-post-test/index.html</link>
-		
-		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
-		<pubDate>Tue, 13 Feb 2024 16:07:47 +0000</pubDate>
-				<category><![CDATA[Community]]></category>
-		<category><![CDATA[Company]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=30</guid>
-
-					<description><![CDATA[Greetings, dear users! We are excited to announce an upcoming online event where we will provide a detailed&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p>Greetings, dear users!</p>
-
-
-
-<p>We are excited to announce an upcoming online event where we will provide a detailed overview of all the exciting innovations and updates on our ThingsBoard platform. This event will be a unique opportunity for you to be the first to learn about the enhancements awaiting you in your favorite IoT project management tool.</p>
-
-
-
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-6 is-layout-flex wp-block-gallery-is-layout-flex">
-<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="2560" height="1486" data-id="2460" src="./../../../wp-content/uploads/2024/02/2201_w037_n003_155b_p1_155-3-scaled.jpg" alt="" class="wp-image-2460" srcset="./../../../wp-content/uploads/2024/02/2201_w037_n003_155b_p1_155-3-scaled.jpg 2560w, ./../../../wp-content/uploads/2024/02/2201_w037_n003_155b_p1_155-3-300x174.jpg 300w" sizes="(max-width: 2560px) 100vw, 2560px" /></figure>
-</figure>
-
-
-
-<h2 class="wp-block-heading">Date and Time</h2>
-
-
-
-<p>Date: 12 of March<br>Time: 16:00 <br>Location: Online (Event link will be provided after registration)</p>
-
-
-
-<h2 class="wp-block-heading">What to Expect</h2>
-
-
-
-<ul>
-<li><strong>New features overview:</strong> Learn about the latest platform updates and how they can enhance your experience working with ThingsBoard.</li>
-
-
-
-<li><strong>Process demonstrations:</strong> See live examples of how to use the new features and capabilities to manage your projects more effectively.</li>
-
-
-
-<li><strong>Questions and answers:</strong> Ask your questions to our experts directly during the event and receive real-time answers.</li>
-</ul>
-
-
-
-<h2 class="wp-block-heading">Registration</h2>
-
-
-
-<p>To participate in this exciting event, please register using the following link: [Registration Link]</p>
-
-
-
-<p>Don&#8217;t miss the chance to be the first to learn about all the new features and improvements on our platform! Join us at our online event and stay updated on all the changes.</p>
-
-
-
-<p>We look forward to meeting you!</p>
-
-
-
-<p>Best regards, The ThingsBoard Team</p>
-]]></content:encoded>
-					
-		
-		
-			</item>
-	</channel>
+</channel>
 </rss>
