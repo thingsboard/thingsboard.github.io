@@ -154,61 +154,58 @@ custom-action-2:
 custom-action-html-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-1-pe.png
-        title: 'The device has been removed.'
+        title: 'As an example for this manual, choose "Widget header button" action source. Input a name for the action and choose an icon that will represent a button. With this icon, action will be performed. Choose a "Custom action (with HTML template)" action type from the "Action" drop-down menu. In the tabs that appear, select "JavaScript" tab;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-2-pe.png
-        title: 'The device has been removed.'
+        title: 'Enter a JavaScript function for your custom action;'
     2:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-3-pe.png
-        title: 'The device has been removed.'
+        title: 'In "HTML" tab, enter an HTML code for your custom action. After input functions, click the "Add" button;'
     3:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-4-pe.png
-        title: 'The device has been removed.'
+        title: 'The first action button for adding a new entity has been added.'
 
 custom-action-html-2:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-5-pe.png
-        title: 'The device has been removed.'
+        title: 'Click the "plus" icon in the top right corner of the screen again to open a new "Add action" window;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-6-pe.png
-        title: 'The device has been removed.'
+        title: 'Choose the "Action cell button" action source. Input a name for the action and choose an icon that will represent a button. With this icon, action will be performed. Choose an "Custom action (with HTML template)" action type from the "Action" drop-down menu. In the tabs that appear, select "JavaScript" tab;'
     2:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-7-pe.png
-        title: 'The device has been removed.'
+        title: 'Enter a JavaScript function for your custom action;'
     3:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-8-pe.png
-        title: 'The device has been removed.'
+        title: 'In "HTML" tab, enter an HTML code for your custom action. After input functions, click the "Add" button;'
     4:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-9-pe.png
-        title: 'The device has been removed.'
+        title: 'Now in the “Actions” window, you can see the configured actions, so you can double-check the action source, icon, and action type. Click "Save";'
     5:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-10-pe.png
-        title: 'The device has been removed.'
+        title: 'Click "Apply" to save the widget settings;'
     6:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-11-pe.png
-        title: 'The device has been removed.'
+        title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page;'
 
 custom-action-html-3:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-12-pe.png
-        title: 'The device has been removed.'
+        title: 'Perform the actions of adding a new device by clicking the "Add device" action button at the top of the widget;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-13-pe.png
-        title: 'The device has been removed.'
+        title: 'In the "Add entity" window that opens, select the type of new entity - "Device" and enter its name;'
     2:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-14-pe.png
-        title: 'The device has been removed.'
+        title: 'The new device has been added.'
         
 custom-action-html-4:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-15-pe.png
-        title: 'The device has been removed.'
+        title: 'Click on the "pencil" icon next to the name of the device you want to edit;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-16-pe.png
-        title: 'The device has been removed.'
-    2:
-        image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-17-pe.png
-        title: 'The device has been removed.'
+        title: 'After clicking the action button, the device editing window will open. Make the necessary changes and click "Save".'
 
 entity-sources:
     0:
