@@ -15,6 +15,12 @@ add-new-action-1:
     2:
         image: /images/user-guide/ui/widgets/actions/guide/add-action-3-pe.png
         title: 'Click the "plus" icon in the top right corner of the screen to open a new "Add action" window.'
+    3:
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-7-pe.png
+        title: ''
+    4:
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-8-pe.png
+        title: ''
 
 add-new-action-2:
     0:
@@ -23,12 +29,14 @@ add-new-action-2:
     1:
         image: /images/user-guide/ui/widgets/actions/guide/add-action-5-pe.png
         title: 'Click the "Add action" button (later, when you have created one or more actions, the "Add actions" button will change to the "plus" icon). The "Actions" window will open. Right now, it’s empty, but later it will display all created actions;'
-
+    2:
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-6-pe.png
+        title: ''
 
 navigate-to-new-dashboard-state-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/navigate-to-new-dashboard-state-1-pe.png
-        title: 'As an example for this manual, choose "Widget header button" action source. Input a name for the action and choose an icon that will represent a button. With this icon, action will be performed. Choose a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+        title: 'As an example for this manual, select "Widget header button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/navigate-to-new-dashboard-state-2-pe.png
         title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";'
@@ -76,7 +84,7 @@ update-current-dashboard-state-1:
         title: 'Navigate to the Entity alias tab in the "Datasource" section. Enter the name of the future alias in the "Entity alias" field and click the "Create a new one!";'
     4:
         image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-5-pe.png
-        title: 'Choose the "Entity from dashboard state" from the "Filter type" field and click "Add";'
+        title: 'Select the "Entity from dashboard state" from the "Filter type" field and click "Add";'
     6:
         image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-6-pe.png
         title: 'Replace the label of the "temperature" key with <b>${entityName}</b>. Then, click "Add" to add new widget on the dashboard;'
@@ -87,7 +95,7 @@ update-current-dashboard-state-1:
 update-current-dashboard-state-2:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-8-pe.png
-        title: 'Choose the "Action cell button" action source. Input a name for the action and choose an icon that will represent a button. With this icon, action will be performed. Choose an "Update current dashboard state" action type from the "Action" drop-down menu. Then, click the "Add" button;'
+        title: 'select the "Action cell button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select an "Update current dashboard state" action type from the "Action" drop-down menu. Then, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-9-pe.png
         title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";'
@@ -100,16 +108,16 @@ update-current-dashboard-state-2:
 
 update-current-dashboard-state-3:
     0:
-        image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-12-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-13-pe.png
         title: 'After saving changes, you will see icons opposite the entity names in the "Entities table" widget. Clicking on any of these icons will update the entity details, and they will be shown on the "Timeseries Line Chart" widget on the current dashboard.'
     1:
-        image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-13-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-12-pe.png
         title: ''
 
 navigate-to-other-dashboard:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/navigate-to-other-dashboard-1-pe.png
-        title: 'As an example for this manual, choose "Widget header button" action source. Input a name for the action and choose an icon that will represent a button. With this icon, action will be performed. Choose a "Navigate to other dashboard" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard" appears. Select a dashboard you&#39;d like to be transitioned to. Note that you can also navigate to an existing state of the selected dashboard. When the desired dashboard has been selected, click the "Add" button;'
+        title: 'As an example for this manual, select "Widget header button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select a "Navigate to other dashboard" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard" appears. Select a dashboard you&#39;d like to be transitioned to. Note that you can also navigate to an existing state of the selected dashboard. When the desired dashboard has been selected, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/navigate-to-other-dashboard-2-pe.png
         title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";'
@@ -129,7 +137,7 @@ navigate-to-other-dashboard:
 custom-action-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-1-pe.png
-        title: 'Choose the "Action cell button" action source. Input a name for the action and choose an icon that will represent a button. With this icon, action will be performed. Choose an "Custom action" action type from the "Action" drop-down menu. After choosing a "Custom action" type, a field for inputting a function will appear. Enter your custom function there. Then, click the "Add" button;'
+        title: 'select the "Action cell button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select an "Custom action" action type from the "Action" drop-down menu. After choosing a "Custom action" type, a field for inputting a function will appear. Enter your custom function there. Then, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-2-pe.png
         title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";'
@@ -154,7 +162,7 @@ custom-action-2:
 custom-action-html-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-1-pe.png
-        title: 'As an example for this manual, choose "Widget header button" action source. Input a name for the action and choose an icon that will represent a button. With this icon, action will be performed. Choose a "Custom action (with HTML template)" action type from the "Action" drop-down menu. In the tabs that appear, select "JavaScript" tab;'
+        title: 'As an example for this manual, select "Widget header button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select a "Custom action (with HTML template)" action type from the "Action" drop-down menu. In the tabs that appear, select "JavaScript" tab;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-2-pe.png
         title: 'Enter a JavaScript function for your custom action;'
@@ -171,7 +179,7 @@ custom-action-html-2:
         title: 'Click the "plus" icon in the top right corner of the screen again to open a new "Add action" window;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-6-pe.png
-        title: 'Choose the "Action cell button" action source. Input a name for the action and choose an icon that will represent a button. With this icon, action will be performed. Choose an "Custom action (with HTML template)" action type from the "Action" drop-down menu. In the tabs that appear, select "JavaScript" tab;'
+        title: 'select the "Action cell button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select an "Custom action (with HTML template)" action type from the "Action" drop-down menu. In the tabs that appear, select "JavaScript" tab;'
     2:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-7-pe.png
         title: 'Enter a JavaScript function for your custom action;'
@@ -194,7 +202,7 @@ custom-action-html-3:
         title: 'Perform the actions of adding a new device by clicking the "Add device" action button at the top of the widget;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-13-pe.png
-        title: 'In the "Add entity" window that opens, select the type of new entity - "Device" and enter its name;'
+        title: 'In the "Add entity" window that opens, select the type of new entity - "Device" and enter its name. Enter the required data and click "Create";'
     2:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-14-pe.png
         title: 'The new device has been added.'
@@ -207,6 +215,76 @@ custom-action-html-4:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-16-pe.png
         title: 'After clicking the action button, the device editing window will open. Make the necessary changes and click "Save".'
 
+action-cell-button-1:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/action-cell-button-1-pe.png
+        title: 'As an example for this manual, select "Widget header button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+    1:
+        image: /images/user-guide/ui/widgets/actions/guide/action-cell-button-2-pe.png
+        title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";'
+    2:
+        image: /images/user-guide/ui/widgets/actions/guide/action-cell-button-3-pe.png
+        title: 'Click "Apply" to save the widget settings;'
+    3:
+        image: /images/user-guide/ui/widgets/actions/guide/action-cell-button-4-pe.png
+        title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.'
+
+action-cell-button-2:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/action-cell-button-5-pe.png
+        title: 'After saving the changes, you can see the action button next to the device name to open the device details. Click this icon;'
+    1:
+        image: /images/user-guide/ui/widgets/actions/guide/action-cell-button-6-pe.png
+        title: 'You will be transferred to the state specified in the action.'
+
+widget-header-button-1:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/widget-header-button-1-pe.png
+        title: 'As an example for this manual, select "Widget header button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+    1:
+        image: /images/user-guide/ui/widgets/actions/guide/widget-header-button-2-pe.png
+        title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";'
+    2:
+        image: /images/user-guide/ui/widgets/actions/guide/widget-header-button-3-pe.png
+        title: 'Click "Apply" to save the widget settings;'
+    3:
+        image: /images/user-guide/ui/widgets/actions/guide/widget-header-button-4-pe.png
+        title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.'
+
+widget-header-button-2:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/widget-header-button-5-pe.png
+        title: 'After saving the changes, you can see the action button next to the device name to open the device details. Click this icon;'
+    1:
+        image: /images/user-guide/ui/widgets/actions/guide/widget-header-button-6-pe.png
+        title: 'You will be transferred to the state specified in the action.'
+
+on-row-click-1:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/on-row-click-1-pe.png
+        title: 'As an example for this manual, select "Widget header button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+    1:
+        image: /images/user-guide/ui/widgets/actions/guide/on-row-click-2-pe.png
+        title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";'
+    2:
+        image: /images/user-guide/ui/widgets/actions/guide/on-row-click-3-pe.png
+        title: 'Click "Apply" to save the widget settings;'
+    3:
+        image: /images/user-guide/ui/widgets/actions/guide/on-row-click-4-pe.png
+        title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.'
+
+on-row-click-2:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/on-row-click-5-pe.png
+        title: 'After saving the changes, you can see the action button next to the device name to open the device details. Click this icon;'
+    1:
+        image: /images/user-guide/ui/widgets/actions/guide/on-row-click-6-pe.png
+        title: 'You will be transferred to the state specified in the action.'
+
+
+
+
+
 entity-sources:
     0:
         image: /images/user-guide/ui/widgets/actions/entity-cards/entity-sources-1-pe.png
@@ -215,47 +293,8 @@ entity-sources:
     2:
         image: /images/user-guide/ui/widgets/actions/entity-cards/entity-sources-3-pe.png
 
-entity-cellbutton:
-    0:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-action-cellbutton-1-pe.png
-    1:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-action-cellbutton-2-pe.png
-    2:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-action-cellbutton-3-pe.png
-    3:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-action-cellbutton-4-pe.png
-    4:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-action-cellbutton-5-pe.png
-    5:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-action-cellbutton-6-pe.png
 
-entity-widgetheaderbutton:
-    0:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-widgetheaderbutton-1-pe.png
-    1:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-widgetheaderbutton-2-pe.png
-    2:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-widgetheaderbutton-3-pe.png
-    3:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-widgetheaderbutton-4-pe.png
-    4:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-widgetheaderbutton-5-pe.png
-    5:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-widgetheaderbutton-6-pe.png
 
-entity-onrowclick:
-    0:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-onrowclick-1-pe.png
-    1:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-onrowclick-2-pe.png
-    2:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-onrowclick-3-pe.png
-    3:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-onrowclick-4-pe.png
-    4:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-onrowclick-5-pe.png
-    5:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/entity-onrowclick-6-pe.png
 
 entity-onrowdoubleclick:
     0:
