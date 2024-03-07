@@ -615,21 +615,20 @@ header
     filter: unset
 
 ul
-  li
-    &.active~.indicator
+  &~.indicator.active
+    transition-delay: 0s
+    transition-duration: 0.3s
+    .line
       transition-delay: 0s
       transition-duration: 0.3s
-      .line
-        transition-delay: 0s
-        transition-duration: 0.3s
-        width: 100%
-        left: 0
-        opacity: 1
-      .head-arrow
-        transition-delay: 0.1s
-        transition-duration: 0s
-        opacity: 1
-  .indicator
+      width: 100%
+      left: 0
+      opacity: 1
+    .head-arrow
+      transition-delay: 0.1s
+      transition-duration: 0.3s
+      opacity: 1
+  &~.indicator
     width: 0
     left: 0
     border-radius: 2px
@@ -1522,7 +1521,7 @@ section
       height: 100%
       width: 100%
       ul
-        .indicator
+        &~.indicator
           .head-arrow
             border-bottom-color: var(--tb-main-color)
           .line
@@ -1577,7 +1576,7 @@ section
         height: 100%
         @media screen and (max-width: 1280px)
           display: none
-        .indicator
+        &~.indicator
           width: 100%
           transition: none
           padding: 0
