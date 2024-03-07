@@ -21,7 +21,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     sizes="(max-width: 671px) 360px, (max-width: 999px) 560px, (min-width: 1000px)  1127px, 2254px"
                     src="/images/development-services/laptop-with-dashboard_1127x720_1x.png"
                     alt="Laptop with a dashboard"/>
-                <button class="button schedule anchor-button" data-href="#get-in-touch">Contact Us</button>
+                <button class="button schedule anchor-button">Contact Us</button>
             </div>
             <div class="image-wrapper-icon-phone">
                 <img
@@ -37,7 +37,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     alt="half cicrle progress icon"/>
                 <span class="result-number">100%</span>
                 <span class="result-text">We offer time-guaranteed result</span>
-                <button class="button anchor-button" data-href="#get-in-touch">Contact Us</button>
+                <button class="button anchor-button">Contact Us</button>
             </div>
         </div>
     </div>
@@ -188,7 +188,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
                     </div>
                 </div>
                 <div class="right-block">
-                    <button class="anchor-button" data-href="#get-in-touch">Contact Us</button>
+                    <button class="anchor-button">Contact Us</button>
                 </div>
             </div>
             <span id="additionally-bg1"></span>
@@ -268,7 +268,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
             <form class="contact-form">
                 <fieldset>
                     <div class="submit-button-container">
-                        <input class="cdu-button" value="Get in touch" type="button" id="myBtn">
+                        <input class="cdu-button anchor-button" value="Get in touch" type="button" id="myBtn">
                     </div>
                 </fieldset>
             </form>
@@ -279,7 +279,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
 <div id="myModal" class="modal">
   <div class="modal-content">
     <div class="close-button">
-        <img class="close" src="/images/development-services/close.png" alt="Close"/>
+        <img class="close" src="/images/close-icon.svg" alt="Close"/>
     </div>
     <div class="title">
         <span>CONTACT US TODAY</span>
@@ -291,7 +291,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         <span>Please fill out the form below and we will get back to you within 1-2 business days. 
         We are looking forward to hearing from you!</span>
     </div>
-    <form id="contact-form" class="contact-form" method="post" onsubmit="return validateContactForm(this)">
+    <form id="contact-form" method="post" onsubmit="return validateContactForm(this)">
         <div class="form-section">
             <div class="form-element">
                 <label for="first-name">
@@ -328,7 +328,7 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         <div class="form-section" style="padding-top: 0px;">
             <div class="form-element" style="width: 98%">
                 <label for="msg">
-                    <textarea id="msg" class="cdu-form-control-text-area" value="" placeholder="Enter here..." name="message" type="text" size="40" maxlength="800"></textarea>
+                    <textarea id="msg" class="cdu-form-control cdu-text-area" value="" placeholder="Enter here..." name="message" type="text" size="40" maxlength="800"></textarea>
                     <p>Your message*</p>
                 </label>
             </div>
@@ -343,34 +343,25 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
 <script type="text/javascript">
     var modal = document.getElementById("myModal");
 
-    var btn = document.getElementById("myBtn");
-
-    var span = document.getElementsByClassName("close")[0];
-
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
-
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    window.onclick = function(event) {
+    modal.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
     }
 
+    var span = document.getElementsByClassName("close")[0];
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
     document.querySelectorAll('.anchor-button').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-
-            document.querySelector(this.getAttribute('data-href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            modal.style.display = "flex";
+            modal.style.alignItems = "center";
+            modal.style.justifyContent = "center";
         });
     });
-
 
     let cduHeader = document.querySelector(".cdu-services .header");
 
@@ -386,7 +377,6 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     });
 
     headerObserver.observe(cduHeader);
-
 
     const sectionLists = document.querySelectorAll(".section-list");
 
@@ -472,7 +462,6 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
         );
     }
 
-
     function validateContactForm(form) {
         var name = $('input[name=first-name]', form).val();
         var email = $('input[name=email]', form).val();
@@ -502,7 +491,6 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     function isEmpty(val) {
         return val === undefined || val === null || val.trim().length == 0;
     }
-
 
     var contactform =  document.getElementById('contact-form');
 

@@ -113,7 +113,7 @@ description: Real feedback from real clients. Dive into our testimonials to unde
 <div id="myModal" class="modal">
   <div class="modal-content">
     <div class="close-button">
-        <img class="close" src="/images/development-services/close.png" alt="Close"/>
+        <img class="close" src="/images/close-icon.svg" alt="Close"/>
     </div>
     <div class="title">
         <span>CONTACT US TODAY</span>
@@ -125,7 +125,7 @@ description: Real feedback from real clients. Dive into our testimonials to unde
         <span>Please fill out the form below and we will get back to you within 1-2 business days. 
         We are looking forward to hearing from you!</span>
     </div>
-    <form id="contact-form" class="contact-form" method="post" onsubmit="return validateContactForm(this)">
+    <form id="contact-form" method="post" onsubmit="return validateContactForm(this)">
         <div class="form-section">
             <div class="form-element">
                 <label for="first-name">
@@ -162,7 +162,7 @@ description: Real feedback from real clients. Dive into our testimonials to unde
         <div class="form-section" style="padding-top: 0px;">
             <div class="form-element" style="width: 98%">
                 <label for="msg">
-                    <textarea id="msg" class="cdu-form-control-text-area" value="" placeholder="Enter here..." name="message" type="text" size="40" maxlength="800"></textarea>
+                    <textarea id="msg" class="cdu-form-control cdu-text-area" value="" placeholder="Enter here..." name="message" type="text" size="40" maxlength="800"></textarea>
                     <p>Your message*</p>
                 </label>
             </div>
@@ -176,20 +176,21 @@ description: Real feedback from real clients. Dive into our testimonials to unde
 
 <script type="text/javascript">
     var modal = document.getElementById("myModal");
-
     var btn = document.getElementById("myBtn");
-
     var span = document.getElementsByClassName("close")[0];
 
     btn.onclick = function() {
-        modal.style.display = "block";
+        modal.style.display = "flex";
+        modal.style.alignItems = "center";
+        modal.style.justifyContent = "center";
     }
 
     span.onclick = function() {
         modal.style.display = "none";
     }
 
-    window.onclick = function(event) {
+
+    modal.onclick = function (event) {
         if (event.target == modal) {
             modal.style.display = "none";
         }
