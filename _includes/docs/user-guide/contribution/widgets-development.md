@@ -530,8 +530,8 @@ self.onInit = function() {
     let $scope = self.ctx.$scope;
     $scope.widgetText = 'Ready to get data';
     self.ctx.broadcastService = $scope.$injector.get(self.ctx.servicesMap.get('broadcastService'));
-    self.ctx.broadcastService.on('ID', (data) => {
-        $scope.widgetText = data[0];
+    self.ctx.broadcastService.on('ID', (event, args) => {
+        $scope.widgetText = args[0];
         self.ctx.detectChanges();
     });
     ...
