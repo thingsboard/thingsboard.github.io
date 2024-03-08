@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+	>
+
+<channel>
+	<title>Updates &#8211; ThingsBoard&#039;s blog</title>
+	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
+	<link>./../../../index.html</link>
+	<description></description>
+	<lastBuildDate>Fri, 08 Mar 2024 10:57:54 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=6.4.3</generator>
+
+<image>
+	<url>./../../../wp-content/uploads/2024/02/cropped-favicon-1-32x32.png</url>
+	<title>Updates &#8211; ThingsBoard&#039;s blog</title>
+	<link>./../../../index.html</link>
+	<width>32</width>
+	<height>32</height>
+</image> 
+	<item>
+		<title>ThingsBoard 3.6.3 release: push notifications, new charts, buttons, and more</title>
+		<link>./../../../thingsboard-release-3-6-3-announcement/index.html</link>
+					<comments>./../../../thingsboard-release-3-6-3-announcement/index.html#respond</comments>
+		
+		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
+		<pubDate>Thu, 07 Mar 2024 16:19:40 +0000</pubDate>
+				<category><![CDATA[Updates]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=3625</guid>
+
+					<description><![CDATA[We&#8217;re thrilled to announce ThingsBoard version 3.6.3! This latest update focuses on enhancing our widgets and notification system.&#8230;]]></description>
+										<content:encoded><![CDATA[
+<p>We&#8217;re thrilled to announce ThingsBoard version 3.6.3! This latest update focuses on enhancing our widgets and notification system. Here’s a look at what’s new.</p>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained"><div class="wp-block-group__inner-container">
+<h2 class="wp-block-heading">Push notifications to mobile apps</h2>
+</div></div>
+
+
+
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="2409" height="933" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Notifications-to-app-3.png" alt="Your IoT application. Available on the Google Play and App Store" class="wp-image-3590" srcset="./../../../wp-content/uploads/2024/03/Notifications-to-app-3.png 2409w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-300x116.png 300w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-1024x397.png 1024w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-768x297.png 768w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-1536x595.png 1536w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-2048x793.png 2048w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-512x198.png 512w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-920x356.png 920w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-1600x620.png 1600w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-1920x744.png 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+
+
+
+<p>We have added support for sending push notifications to mobile applications. Transform your mobile app&#8217;s communication with our enhanced push notifications feature. This feature allows users to receive immediate alerts and notifications directly on their mobile devices, ensuring they are promptly informed about critical events, status updates, or any anomalies detected within their IoT ecosystem. Please make sure you have updated to the latest versions of our <a href="https://thingsboard.io/docs/mobile/getting-started/" data-type="link" data-id="https://thingsboard.io/docs/mobile/getting-started/" target="_blank" rel="noreferrer noopener">CE</a> and <a href="https://thingsboard.io/docs/pe/mobile/getting-started/" data-type="link" data-id="https://thingsboard.io/docs/pe/mobile/getting-started/" target="_blank" rel="noreferrer noopener">PE</a> mobile applications to start receiving the push notifications.</p>
+
+
+
+<h2 class="wp-block-heading">New chart widgets</h2>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="2406" height="1290" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Chart-widgets.png" alt="The picture shows how charts can be displayed on a dashboard" class="wp-image-3522" srcset="./../../../wp-content/uploads/2024/03/Chart-widgets.png 2406w, ./../../../wp-content/uploads/2024/03/Chart-widgets-300x161.png 300w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1024x549.png 1024w, ./../../../wp-content/uploads/2024/03/Chart-widgets-768x412.png 768w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1536x824.png 1536w, ./../../../wp-content/uploads/2024/03/Chart-widgets-2048x1098.png 2048w, ./../../../wp-content/uploads/2024/03/Chart-widgets-512x275.png 512w, ./../../../wp-content/uploads/2024/03/Chart-widgets-920x493.png 920w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1600x858.png 1600w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1920x1029.png 1920w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1320x708.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+
+
+
+<p>We&#8217;re excited to introduce a suite of advanced visualization widgets powered by <a href="https://echarts.apache.org/en/index.html">Apache ECharts</a> to enhance your data analysis and presentation capabilities. This includes the new <strong>Time Series </strong>chart that now may combine lines and bars on the same widget. We have also added two new <strong>Bar </strong>charts to display data via bars with or without labels. Our priority was not only to deliver powerful and pretty charts but also to simplify the widget configuration experience. We hope you enjoy new data visualization capabilities!</p>
+
+
+
+<h2 class="wp-block-heading">New grouping intervals: Week (Sun-Sat), Week (Mon-Sun), Month, Quarter</h2>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="1014" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1024x1014.png" alt="Widget show new grouping intervals: Week (Sun-Sat), Week (Mon-Sun), Month, and Quarter for ThingsBoard Dashboards." class="wp-image-3542" srcset="./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1024x1014.png 1024w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-300x297.png 300w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-150x150.png 150w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-768x760.png 768w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1536x1521.png 1536w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-2048x2028.png 2048w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-148x148.png 148w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-512x507.png 512w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-920x911.png 920w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1600x1584.png 1600w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1920x1901.png 1920w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1320x1307.png 1320w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals.png 2406w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>The update introduces new grouping intervals for dashboard <a href="https://thingsboard.io/docs/pe/user-guide/dashboards/#timewindow" data-type="link" data-id="https://thingsboard.io/docs/pe/user-guide/dashboards/#timewindow" target="_blank" rel="noreferrer noopener">time window</a> configurations: <strong>Week (Sun-Sat)</strong>, <strong>Week (Mon-Sun)</strong>, <strong>Month</strong>, and <strong>Quarter</strong>. The intervals adjust to the browser&#8217;s time zone by default, but there&#8217;s also the option to set a custom time zone for further customization. These additions allow for more flexible and granular data visualization and analysis.</p>
+
+
+
+<h2 class="wp-block-heading">Button widgets</h2>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="789" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Button-widgets.png" alt="Widget buttons: Action button, command button, toggle button, power button" class="wp-image-3521" srcset="./../../../wp-content/uploads/2024/03/Button-widgets.png 2406w, ./../../../wp-content/uploads/2024/03/Button-widgets-300x98.png 300w, ./../../../wp-content/uploads/2024/03/Button-widgets-1024x336.png 1024w, ./../../../wp-content/uploads/2024/03/Button-widgets-768x252.png 768w, ./../../../wp-content/uploads/2024/03/Button-widgets-1536x504.png 1536w, ./../../../wp-content/uploads/2024/03/Button-widgets-2048x672.png 2048w, ./../../../wp-content/uploads/2024/03/Button-widgets-512x168.png 512w, ./../../../wp-content/uploads/2024/03/Button-widgets-920x302.png 920w, ./../../../wp-content/uploads/2024/03/Button-widgets-1600x525.png 1600w, ./../../../wp-content/uploads/2024/03/Button-widgets-1920x630.png 1920w, ./../../../wp-content/uploads/2024/03/Button-widgets-1320x433.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+
+
+
+<p>We&#8217;ve improved our platform with the new button widgets: the <strong>Action Button</strong> <strong>widget </strong>for navigation to other dashboards, states, or custom actions; the <strong>Command Button</strong> <strong>widget</strong> for sending commands to devices, updating attributes, or appending time-series data; the <strong>Toggle Button</strong> <strong>widget</strong> for switching between two device states; the <strong>Power Button</strong> <strong>widget</strong> for toggling the device on and off. Each widget is designed to offer users more control and interactivity within the platform, improving the overall experience. Explore the full potential of the new button widgets in the dedicated <a href="https://wp.thingsboard.io/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" data-type="link" data-id="https://wp.thingsboard.io/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" target="_blank" rel="noreferrer noopener">post</a>.</p>
+
+
+
+<h2 class="wp-block-heading">Control widgets</h2>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="915" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Control-widgets.png" alt="Samples of control widgets: switch on and slider 48%" class="wp-image-3523" srcset="./../../../wp-content/uploads/2024/03/Control-widgets.png 2406w, ./../../../wp-content/uploads/2024/03/Control-widgets-300x114.png 300w, ./../../../wp-content/uploads/2024/03/Control-widgets-1024x389.png 1024w, ./../../../wp-content/uploads/2024/03/Control-widgets-768x292.png 768w, ./../../../wp-content/uploads/2024/03/Control-widgets-1536x584.png 1536w, ./../../../wp-content/uploads/2024/03/Control-widgets-2048x779.png 2048w, ./../../../wp-content/uploads/2024/03/Control-widgets-512x195.png 512w, ./../../../wp-content/uploads/2024/03/Control-widgets-920x350.png 920w, ./../../../wp-content/uploads/2024/03/Control-widgets-1600x608.png 1600w, ./../../../wp-content/uploads/2024/03/Control-widgets-1920x730.png 1920w, ./../../../wp-content/uploads/2024/03/Control-widgets-1320x502.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+
+
+
+<p>We&#8217;re introducing Control widgets: the <strong>Slider Widget</strong> and the <strong>Toggle Button Widget</strong>. Both widgets have a simple configuration interface and allow users to trigger commands to devices, update attributes, or append time-series data for the target entity.</p>
+
+
+
+<h2 class="wp-block-heading">Alarm comment support for edge instances</h2>
+
+
+
+<p>This feature enables bidirectional synchronization of comments on alarms between edge and cloud instances. With this update, users can seamlessly add comments to alarms directly within the Edge environment, and these comments are synchronized with the ThingsBoard cloud instance in real time, ensuring consistency and transparency throughout the entire system. Additionally, comments added or modified in the cloud instance are automatically propagated to the Edge environment, ensuring that all operators have access to the latest information regardless of their location or the system they are using.</p>
+
+
+
+<p></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>./../../../thingsboard-release-3-6-3-announcement/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+	</channel>
+</rss>

@@ -12,7 +12,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Wed, 06 Mar 2024 10:39:21 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Mar 2024 10:57:54 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -28,15 +28,109 @@
 	<height>32</height>
 </image> 
 	<item>
+		<title>ThingsBoard 3.6.3 release: push notifications, new charts, buttons, and more</title>
+		<link>./../../../thingsboard-release-3-6-3-announcement/index.html</link>
+					<comments>./../../../thingsboard-release-3-6-3-announcement/index.html#respond</comments>
+		
+		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
+		<pubDate>Thu, 07 Mar 2024 16:19:40 +0000</pubDate>
+				<category><![CDATA[Updates]]></category>
+		<guid isPermaLink="false">./../../../index.html?p=3625</guid>
+
+					<description><![CDATA[We&#8217;re thrilled to announce ThingsBoard version 3.6.3! This latest update focuses on enhancing our widgets and notification system.&#8230;]]></description>
+										<content:encoded><![CDATA[
+<p>We&#8217;re thrilled to announce ThingsBoard version 3.6.3! This latest update focuses on enhancing our widgets and notification system. Here’s a look at what’s new.</p>
+
+
+
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained"><div class="wp-block-group__inner-container">
+<h2 class="wp-block-heading">Push notifications to mobile apps</h2>
+</div></div>
+
+
+
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="2409" height="933" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Notifications-to-app-3.png" alt="Your IoT application. Available on the Google Play and App Store" class="wp-image-3590" srcset="./../../../wp-content/uploads/2024/03/Notifications-to-app-3.png 2409w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-300x116.png 300w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-1024x397.png 1024w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-768x297.png 768w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-1536x595.png 1536w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-2048x793.png 2048w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-512x198.png 512w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-920x356.png 920w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-1600x620.png 1600w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-1920x744.png 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+
+
+
+<p>We have added support for sending push notifications to mobile applications. Transform your mobile app&#8217;s communication with our enhanced push notifications feature. This feature allows users to receive immediate alerts and notifications directly on their mobile devices, ensuring they are promptly informed about critical events, status updates, or any anomalies detected within their IoT ecosystem. Please make sure you have updated to the latest versions of our <a href="https://thingsboard.io/docs/mobile/getting-started/" data-type="link" data-id="https://thingsboard.io/docs/mobile/getting-started/" target="_blank" rel="noreferrer noopener">CE</a> and <a href="https://thingsboard.io/docs/pe/mobile/getting-started/" data-type="link" data-id="https://thingsboard.io/docs/pe/mobile/getting-started/" target="_blank" rel="noreferrer noopener">PE</a> mobile applications to start receiving the push notifications.</p>
+
+
+
+<h2 class="wp-block-heading">New chart widgets</h2>
+
+
+
+<figure class="wp-block-image size-full"><img decoding="async" width="2406" height="1290" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Chart-widgets.png" alt="The picture shows how charts can be displayed on a dashboard" class="wp-image-3522" srcset="./../../../wp-content/uploads/2024/03/Chart-widgets.png 2406w, ./../../../wp-content/uploads/2024/03/Chart-widgets-300x161.png 300w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1024x549.png 1024w, ./../../../wp-content/uploads/2024/03/Chart-widgets-768x412.png 768w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1536x824.png 1536w, ./../../../wp-content/uploads/2024/03/Chart-widgets-2048x1098.png 2048w, ./../../../wp-content/uploads/2024/03/Chart-widgets-512x275.png 512w, ./../../../wp-content/uploads/2024/03/Chart-widgets-920x493.png 920w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1600x858.png 1600w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1920x1029.png 1920w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1320x708.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+
+
+
+<p>We&#8217;re excited to introduce a suite of advanced visualization widgets powered by <a href="https://echarts.apache.org/en/index.html">Apache ECharts</a> to enhance your data analysis and presentation capabilities. This includes the new <strong>Time Series </strong>chart that now may combine lines and bars on the same widget. We have also added two new <strong>Bar </strong>charts to display data via bars with or without labels. Our priority was not only to deliver powerful and pretty charts but also to simplify the widget configuration experience. We hope you enjoy new data visualization capabilities!</p>
+
+
+
+<h2 class="wp-block-heading">New grouping intervals: Week (Sun-Sat), Week (Mon-Sun), Month, Quarter</h2>
+
+
+
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="1014" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1024x1014.png" alt="Widget show new grouping intervals: Week (Sun-Sat), Week (Mon-Sun), Month, and Quarter for ThingsBoard Dashboards." class="wp-image-3542" srcset="./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1024x1014.png 1024w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-300x297.png 300w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-150x150.png 150w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-768x760.png 768w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1536x1521.png 1536w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-2048x2028.png 2048w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-148x148.png 148w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-512x507.png 512w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-920x911.png 920w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1600x1584.png 1600w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1920x1901.png 1920w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1320x1307.png 1320w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals.png 2406w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+
+<p>The update introduces new grouping intervals for dashboard <a href="https://thingsboard.io/docs/pe/user-guide/dashboards/#timewindow" data-type="link" data-id="https://thingsboard.io/docs/pe/user-guide/dashboards/#timewindow" target="_blank" rel="noreferrer noopener">time window</a> configurations: <strong>Week (Sun-Sat)</strong>, <strong>Week (Mon-Sun)</strong>, <strong>Month</strong>, and <strong>Quarter</strong>. The intervals adjust to the browser&#8217;s time zone by default, but there&#8217;s also the option to set a custom time zone for further customization. These additions allow for more flexible and granular data visualization and analysis.</p>
+
+
+
+<h2 class="wp-block-heading">Button widgets</h2>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="789" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Button-widgets.png" alt="Widget buttons: Action button, command button, toggle button, power button" class="wp-image-3521" srcset="./../../../wp-content/uploads/2024/03/Button-widgets.png 2406w, ./../../../wp-content/uploads/2024/03/Button-widgets-300x98.png 300w, ./../../../wp-content/uploads/2024/03/Button-widgets-1024x336.png 1024w, ./../../../wp-content/uploads/2024/03/Button-widgets-768x252.png 768w, ./../../../wp-content/uploads/2024/03/Button-widgets-1536x504.png 1536w, ./../../../wp-content/uploads/2024/03/Button-widgets-2048x672.png 2048w, ./../../../wp-content/uploads/2024/03/Button-widgets-512x168.png 512w, ./../../../wp-content/uploads/2024/03/Button-widgets-920x302.png 920w, ./../../../wp-content/uploads/2024/03/Button-widgets-1600x525.png 1600w, ./../../../wp-content/uploads/2024/03/Button-widgets-1920x630.png 1920w, ./../../../wp-content/uploads/2024/03/Button-widgets-1320x433.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+
+
+
+<p>We&#8217;ve improved our platform with the new button widgets: the <strong>Action Button</strong> <strong>widget </strong>for navigation to other dashboards, states, or custom actions; the <strong>Command Button</strong> <strong>widget</strong> for sending commands to devices, updating attributes, or appending time-series data; the <strong>Toggle Button</strong> <strong>widget</strong> for switching between two device states; the <strong>Power Button</strong> <strong>widget</strong> for toggling the device on and off. Each widget is designed to offer users more control and interactivity within the platform, improving the overall experience. Explore the full potential of the new button widgets in the dedicated <a href="https://wp.thingsboard.io/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" data-type="link" data-id="https://wp.thingsboard.io/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" target="_blank" rel="noreferrer noopener">post</a>.</p>
+
+
+
+<h2 class="wp-block-heading">Control widgets</h2>
+
+
+
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="915" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Control-widgets.png" alt="Samples of control widgets: switch on and slider 48%" class="wp-image-3523" srcset="./../../../wp-content/uploads/2024/03/Control-widgets.png 2406w, ./../../../wp-content/uploads/2024/03/Control-widgets-300x114.png 300w, ./../../../wp-content/uploads/2024/03/Control-widgets-1024x389.png 1024w, ./../../../wp-content/uploads/2024/03/Control-widgets-768x292.png 768w, ./../../../wp-content/uploads/2024/03/Control-widgets-1536x584.png 1536w, ./../../../wp-content/uploads/2024/03/Control-widgets-2048x779.png 2048w, ./../../../wp-content/uploads/2024/03/Control-widgets-512x195.png 512w, ./../../../wp-content/uploads/2024/03/Control-widgets-920x350.png 920w, ./../../../wp-content/uploads/2024/03/Control-widgets-1600x608.png 1600w, ./../../../wp-content/uploads/2024/03/Control-widgets-1920x730.png 1920w, ./../../../wp-content/uploads/2024/03/Control-widgets-1320x502.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+
+
+
+<p>We&#8217;re introducing Control widgets: the <strong>Slider Widget</strong> and the <strong>Toggle Button Widget</strong>. Both widgets have a simple configuration interface and allow users to trigger commands to devices, update attributes, or append time-series data for the target entity.</p>
+
+
+
+<h2 class="wp-block-heading">Alarm comment support for edge instances</h2>
+
+
+
+<p>This feature enables bidirectional synchronization of comments on alarms between edge and cloud instances. With this update, users can seamlessly add comments to alarms directly within the Edge environment, and these comments are synchronized with the ThingsBoard cloud instance in real time, ensuring consistency and transparency throughout the entire system. Additionally, comments added or modified in the cloud instance are automatically propagated to the Edge environment, ensuring that all operators have access to the latest information regardless of their location or the system they are using.</p>
+
+
+
+<p></p>
+]]></content:encoded>
+					
+					<wfw:commentRss>./../../../thingsboard-release-3-6-3-announcement/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+		
+		
+			</item>
+		<item>
 		<title>IoT Widgets for enhanced dashboards: introducing the  action, command, toggle, and power buttons</title>
-		<link>./../../../iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons-2-2/index.html</link>
-					<comments>./../../../iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons-2-2/index.html#respond</comments>
+		<link>./../../../iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/index.html</link>
+					<comments>./../../../iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Mon, 26 Feb 2024 11:54:34 +0000</pubDate>
-				<category><![CDATA[Engineering]]></category>
-		<category><![CDATA[New features]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=2970</guid>
+				<category><![CDATA[Solutions]]></category>
+		<category><![CDATA[Tech]]></category>
+		<guid isPermaLink="false">http://wp.thingsboard.io/?p=2970</guid>
 
 					<description><![CDATA[Welcome to the latest update from the ThingsBoard team! Our ongoing mission to improve the platform&#8217;s functionality and&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -52,7 +146,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Buttons.svg" alt="" class="wp-image-3106"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Buttons.svg" alt="" class="wp-image-3106"/></figure>
 
 
 
@@ -60,7 +154,7 @@
 
 
 
-<div class="wp-block-file"><a id="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a" href="./../../../wp-content/uploads/2024/02/tb-dynamic_button_states.json">tb_dynamic_button_states.json</a><a href="./../../../wp-content/uploads/2024/02/tb-dynamic_button_states.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a">Download</a></div>
+<div class="wp-block-file"><a id="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a" href="http://wp.thingsboard.io/wp-content/uploads/2024/02/tb-dynamic_button_states.json">tb_dynamic_button_states.json</a><a href="http://wp.thingsboard.io/wp-content/uploads/2024/02/tb-dynamic_button_states.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a">Download</a></div>
 
 
 
@@ -68,7 +162,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Add-widget-2.svg" alt="" class="wp-image-3126"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Add-widget-2.svg" alt="" class="wp-image-3126"/></figure>
 
 
 
@@ -76,7 +170,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Appearance-3.svg" alt="" class="wp-image-3108"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Appearance-3.svg" alt="" class="wp-image-3108"/></figure>
 
 
 
@@ -84,7 +178,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Button-use-cases.svg" alt="" class="wp-image-3109"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Button-use-cases.svg" alt="" class="wp-image-3109"/></figure>
 
 
 
@@ -92,7 +186,7 @@
 
 
 
-<div class="wp-block-file"><a id="wp-block-file--media-fd741ad2-e692-4a03-9a23-812a9f191991" href="./../../../wp-content/uploads/2024/02/button_use_cases.json">button_use_cases.json</a></div>
+<div class="wp-block-file"><a id="wp-block-file--media-fd741ad2-e692-4a03-9a23-812a9f191991" href="http://wp.thingsboard.io/wp-content/uploads/2024/02/button_use_cases.json">button_use_cases.json</a></div>
 
 
 
@@ -105,7 +199,7 @@
 
 
 <figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-6 is-layout-flex wp-block-gallery-is-layout-flex">
-<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1666" height="856" data-id="3048" src="./../../../wp-content/uploads/2024/02/Open-dialog-1.gif" alt="" class="wp-image-3048"/></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="722" height="372" data-id="3566" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Open_dialog-2.gif" alt="" class="wp-image-3566"/></figure>
 </figure>
 
 
@@ -114,7 +208,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="565" src="./../../../wp-content/uploads/2024/02/Open-popup-1024x565.gif" alt="" class="wp-image-3062" srcset="./../../../wp-content/uploads/2024/02/Open-popup-1024x565.gif 1024w, ./../../../wp-content/uploads/2024/02/Open-popup-300x165.gif 300w, ./../../../wp-content/uploads/2024/02/Open-popup-768x424.gif 768w, ./../../../wp-content/uploads/2024/02/Open-popup-1536x847.gif 1536w, ./../../../wp-content/uploads/2024/02/Open-popup-512x282.gif 512w, ./../../../wp-content/uploads/2024/02/Open-popup-920x507.gif 920w, ./../../../wp-content/uploads/2024/02/Open-popup-1600x882.gif 1600w, ./../../../wp-content/uploads/2024/02/Open-popup-1320x728.gif 1320w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="720" height="372" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Open_pop-up-1.gif" alt="" class="wp-image-3567" style="width:802px;height:auto"/></figure>
 
 
 
@@ -122,7 +216,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" width="1666" height="860" src="./../../../wp-content/uploads/2024/02/Change-state.gif" alt="" class="wp-image-3063"/></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="722" height="372" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Change_state.gif" alt="" class="wp-image-3570"/></figure>
 
 
 
@@ -130,7 +224,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1670" height="860" src="./../../../wp-content/uploads/2024/02/Drill-Down.gif" alt="" class="wp-image-3064"/></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="722" height="372" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Drill_down.gif" alt="" class="wp-image-3571"/></figure>
 
 
 
@@ -138,7 +232,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="527" src="./../../../wp-content/uploads/2024/02/Open-URL-1024x527.gif" alt="" class="wp-image-3066" srcset="./../../../wp-content/uploads/2024/02/Open-URL-1024x527.gif 1024w, ./../../../wp-content/uploads/2024/02/Open-URL-300x154.gif 300w, ./../../../wp-content/uploads/2024/02/Open-URL-768x395.gif 768w, ./../../../wp-content/uploads/2024/02/Open-URL-1536x791.gif 1536w, ./../../../wp-content/uploads/2024/02/Open-URL-512x264.gif 512w, ./../../../wp-content/uploads/2024/02/Open-URL-920x474.gif 920w, ./../../../wp-content/uploads/2024/02/Open-URL-1600x824.gif 1600w, ./../../../wp-content/uploads/2024/02/Open-URL-1320x680.gif 1320w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="722" height="372" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Open_url.gif" alt="" class="wp-image-3572"/></figure>
 
 
 
@@ -162,7 +256,7 @@
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Execute-RPC-action-7.svg" alt="" class="wp-image-3110"/></figure></div>
+<figure class="aligncenter size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Execute-RPC-action-7.svg" alt="" class="wp-image-3110"/></figure></div>
 
 
 <p style="font-size:16px">By default, we use an un-persisted command with 5 seconds timeout. You may change the command parameters in the advanced settings of the action.</p>
@@ -173,28 +267,28 @@
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Set-attribute-action-8.svg" alt="" class="wp-image-3111"/></figure></div>
+<figure class="aligncenter size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Set-attribute-action-8.svg" alt="" class="wp-image-3111"/></figure></div>
 
 
 <p style="font-size:16px"><strong>Add time-series action</strong> allows you to add the new time-series value for the particular entity. The action configuration form allows you to configure the time-series data key and value. The value may be configured as a constant or result of function execution. </p>
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Add-time-series-action-9.svg" alt="" class="wp-image-3112"/></figure></div>
+<figure class="aligncenter size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Add-time-series-action-9.svg" alt="" class="wp-image-3112"/></figure></div>
 
 
 <p style="font-size:16px">You may dynamically disable the button based on certain values of the attribute or time-series key. For example, the dashboard attached below contains two buttons that switch the state of the user&#8217;s attribute &#8220;state&#8221;. When the user presses button A, it becomes disabled, and vice versa.</p>
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full is-resized"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Disabled-state-10.svg" alt="" class="wp-image-3113" style="width:822px;height:auto"/></figure></div>
+<figure class="aligncenter size-full is-resized"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Disabled-state-10.svg" alt="" class="wp-image-3113" style="width:822px;height:auto"/></figure></div>
 
 
 <p style="font-size:16px">You may find the sample dashboard JSON below: </p>
 
 
 
-<div class="wp-block-file"><a id="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae" href="./../../../wp-content/uploads/2024/02/command_buttons.json">command_buttons.json</a><a href="./../../../wp-content/uploads/2024/02/command_buttons.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae">Download</a></div>
+<div class="wp-block-file"><a id="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae" href="http://wp.thingsboard.io/wp-content/uploads/2024/02/command_buttons.json">command_buttons.json</a><a href="http://wp.thingsboard.io/wp-content/uploads/2024/02/command_buttons.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae">Download</a></div>
 
 
 
@@ -214,7 +308,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Toggle-button-widget-1.svg" alt="" class="wp-image-3115"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Toggle-button-widget-1.svg" alt="" class="wp-image-3115"/></figure>
 
 
 
@@ -222,7 +316,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Behavior-1.svg" alt="" class="wp-image-3121"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Behavior-1.svg" alt="" class="wp-image-3121"/></figure>
 
 
 
@@ -230,7 +324,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Behavior123-1.svg" alt="" class="wp-image-3122"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Behavior123-1.svg" alt="" class="wp-image-3122"/></figure>
 
 
 
@@ -238,7 +332,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Button-appearance-1.svg" alt="" class="wp-image-3123"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Button-appearance-1.svg" alt="" class="wp-image-3123"/></figure>
 
 
 
@@ -246,7 +340,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="208" src="./../../../wp-content/uploads/2024/02/Buttons123.png" alt="" class="wp-image-3120" srcset="./../../../wp-content/uploads/2024/02/Buttons123.png 803w, ./../../../wp-content/uploads/2024/02/Buttons123-300x78.png 300w, ./../../../wp-content/uploads/2024/02/Buttons123-768x199.png 768w, ./../../../wp-content/uploads/2024/02/Buttons123-512x133.png 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="208" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Buttons123.png" alt="" class="wp-image-3120" srcset="./../../../wp-content/uploads/2024/02/Buttons123.png 803w, ./../../../wp-content/uploads/2024/02/Buttons123-300x78.png 300w, ./../../../wp-content/uploads/2024/02/Buttons123-768x199.png 768w, ./../../../wp-content/uploads/2024/02/Buttons123-512x133.png 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
 
 
 
@@ -258,7 +352,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Power-button-widget.svg" alt="" class="wp-image-3124"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Power-button-widget.svg" alt="" class="wp-image-3124"/></figure>
 
 
 
@@ -266,7 +360,7 @@
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Button-appearance-2.svg" alt="" class="wp-image-3125"/></figure></div>
+<figure class="aligncenter size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Button-appearance-2.svg" alt="" class="wp-image-3125"/></figure></div>
 
 
 <p style="font-size:16px">The Power button widget enables remote control of devices across sectors: turning smart home appliances on/off, managing industrial equipment, controlling servers, adjusting energy sources, operating irrigation systems, managing healthcare devices, retail displays, and public lighting, showcasing its versatility in simplifying power management in IoT applications.</p>
@@ -284,20 +378,20 @@
 <p style="font-size:16px">We encourage you to explore these widgets&#8217; capabilities within your projects. If you have ideas for improvements or additional features, we welcome you to submit feature requests on <a href="https://github.com/thingsboard/thingsboard">GitHub</a>. For any other feedback, please leave your comments below. Your feedback is essential for us to keep improving and growing the platform.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>./../../../iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons-2-2/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>./../../../iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Optimizing dashboard performance with enhanced image management</title>
-		<link>./../../../optimizing-dashboard-performance-with-enhanced-image-management-3/index.html</link>
-					<comments>./../../../optimizing-dashboard-performance-with-enhanced-image-management-3/index.html#respond</comments>
+		<link>./../../../optimizing-dashboard-performance-with-enhanced-image-management/index.html</link>
+					<comments>./../../../optimizing-dashboard-performance-with-enhanced-image-management/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Mon, 26 Feb 2024 11:52:07 +0000</pubDate>
-				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=2971</guid>
+				<category><![CDATA[Solutions]]></category>
+		<guid isPermaLink="false">http://wp.thingsboard.io/?p=2971</guid>
 
 					<description><![CDATA[At ThingsBoard, we&#8217;ve always been committed to enhancing user experience and system performance. Our latest update, version 3.6.2,&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -321,7 +415,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="902" src="./../../../wp-content/uploads/2024/03/Image-gallery.png" alt="" class="wp-image-3348" srcset="./../../../wp-content/uploads/2024/03/Image-gallery.png 1604w, ./../../../wp-content/uploads/2024/03/Image-gallery-300x169.png 300w, ./../../../wp-content/uploads/2024/03/Image-gallery-1024x576.png 1024w, ./../../../wp-content/uploads/2024/03/Image-gallery-768x432.png 768w, ./../../../wp-content/uploads/2024/03/Image-gallery-1536x864.png 1536w, ./../../../wp-content/uploads/2024/03/Image-gallery-512x288.png 512w, ./../../../wp-content/uploads/2024/03/Image-gallery-920x517.png 920w, ./../../../wp-content/uploads/2024/03/Image-gallery-1600x900.png 1600w, ./../../../wp-content/uploads/2024/03/Image-gallery-1320x742.png 1320w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="902" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Image-gallery.png" alt="" class="wp-image-3348" srcset="./../../../wp-content/uploads/2024/03/Image-gallery.png 1604w, ./../../../wp-content/uploads/2024/03/Image-gallery-300x169.png 300w, ./../../../wp-content/uploads/2024/03/Image-gallery-1024x576.png 1024w, ./../../../wp-content/uploads/2024/03/Image-gallery-768x432.png 768w, ./../../../wp-content/uploads/2024/03/Image-gallery-1536x864.png 1536w, ./../../../wp-content/uploads/2024/03/Image-gallery-512x288.png 512w, ./../../../wp-content/uploads/2024/03/Image-gallery-920x517.png 920w, ./../../../wp-content/uploads/2024/03/Image-gallery-1600x900.png 1600w, ./../../../wp-content/uploads/2024/03/Image-gallery-1320x742.png 1320w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
 
 
 
@@ -349,7 +443,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="902" src="./../../../wp-content/uploads/2024/03/Edit-image.png" alt="" class="wp-image-3345" srcset="./../../../wp-content/uploads/2024/03/Edit-image.png 1604w, ./../../../wp-content/uploads/2024/03/Edit-image-300x169.png 300w, ./../../../wp-content/uploads/2024/03/Edit-image-1024x576.png 1024w, ./../../../wp-content/uploads/2024/03/Edit-image-768x432.png 768w, ./../../../wp-content/uploads/2024/03/Edit-image-1536x864.png 1536w, ./../../../wp-content/uploads/2024/03/Edit-image-512x288.png 512w, ./../../../wp-content/uploads/2024/03/Edit-image-920x517.png 920w, ./../../../wp-content/uploads/2024/03/Edit-image-1600x900.png 1600w, ./../../../wp-content/uploads/2024/03/Edit-image-1320x742.png 1320w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="902" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Edit-image.png" alt="" class="wp-image-3345" srcset="./../../../wp-content/uploads/2024/03/Edit-image.png 1604w, ./../../../wp-content/uploads/2024/03/Edit-image-300x169.png 300w, ./../../../wp-content/uploads/2024/03/Edit-image-1024x576.png 1024w, ./../../../wp-content/uploads/2024/03/Edit-image-768x432.png 768w, ./../../../wp-content/uploads/2024/03/Edit-image-1536x864.png 1536w, ./../../../wp-content/uploads/2024/03/Edit-image-512x288.png 512w, ./../../../wp-content/uploads/2024/03/Edit-image-920x517.png 920w, ./../../../wp-content/uploads/2024/03/Edit-image-1600x900.png 1600w, ./../../../wp-content/uploads/2024/03/Edit-image-1320x742.png 1320w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
 
 
 
@@ -397,7 +491,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/Embed-image.svg" alt="" class="wp-image-3132"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Embed-image.svg" alt="" class="wp-image-3132"/></figure>
 
 
 
@@ -409,7 +503,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/ThingsBoard.svg" alt="" class="wp-image-3133"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/ThingsBoard.svg" alt="" class="wp-image-3133"/></figure>
 
 
 
@@ -440,17 +534,9 @@
 
 
 <p style="font-size:16px">By tackling the challenge of image management within dashboards, we aim to offer a more efficient, robust, and user-friendly platform. Following the upgrade of <a href="https://thingsboard.cloud/">thingsboard.cloud</a>, we&#8217;ve observed an 86% reduction in the size of the dashboards, and some dashboards now load more than twice as fast.</p>
-
-
-
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-7 is-layout-flex wp-block-gallery-is-layout-flex"></figure>
-
-
-
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-8 is-layout-flex wp-block-gallery-is-layout-flex"></figure>
 ]]></content:encoded>
 					
-					<wfw:commentRss>./../../../optimizing-dashboard-performance-with-enhanced-image-management-3/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>./../../../optimizing-dashboard-performance-with-enhanced-image-management/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		

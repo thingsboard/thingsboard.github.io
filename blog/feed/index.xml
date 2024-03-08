@@ -12,7 +12,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../index.html</link>
 	<description></description>
-	<lastBuildDate>Wed, 06 Mar 2024 12:42:33 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 08 Mar 2024 10:57:54 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -28,107 +28,108 @@
 	<height>32</height>
 </image> 
 	<item>
-		<title>ThingsBoard unpacked: Community edition, Professional, or Cloud?</title>
-		<link>./../thingsboard-unpacked-community-edition-professional-or-cloud/index.html</link>
+		<title>ThingsBoard 3.6.3 release: push notifications, new charts, buttons, and more</title>
+		<link>./../thingsboard-release-3-6-3-announcement/index.html</link>
+					<comments>./../thingsboard-release-3-6-3-announcement/index.html#respond</comments>
 		
-		<dc:creator><![CDATA[Anastasia Antoniuk]]></dc:creator>
-		<pubDate>Wed, 06 Mar 2024 12:38:04 +0000</pubDate>
-				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">./../index.html?p=3340</guid>
+		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
+		<pubDate>Thu, 07 Mar 2024 16:19:40 +0000</pubDate>
+				<category><![CDATA[Updates]]></category>
+		<guid isPermaLink="false">./../index.html?p=3625</guid>
 
-					<description><![CDATA[In the world of IoT platforms, ThingsBoard stands out with its flexible offerings tailored to various needs and&#8230;]]></description>
+					<description><![CDATA[We&#8217;re thrilled to announce ThingsBoard version 3.6.3! This latest update focuses on enhancing our widgets and notification system.&#8230;]]></description>
 										<content:encoded><![CDATA[
-<p>In the world of IoT platforms, ThingsBoard stands out with its flexible offerings tailored to various needs and budgets. Today, we&#8217;re diving into the different flavors of ThingsBoard to help you pick the one that fits your project like a glove. Let&#8217;s break it down, shall we?</p>
+<p>We&#8217;re thrilled to announce ThingsBoard version 3.6.3! This latest update focuses on enhancing our widgets and notification system. Here’s a look at what’s new.</p>
 
 
 
-<h3 class="wp-block-heading">Community Edition (CE)</h3>
+<div class="wp-block-group is-layout-constrained wp-block-group-is-layout-constrained"><div class="wp-block-group__inner-container">
+<h2 class="wp-block-heading">Push notifications to mobile apps</h2>
+</div></div>
 
 
 
-<p>Starting with the Community Edition it&#8217;s the open-source hero of the lineup. The CE is totally free and offers a solid foundation with limited features. You&#8217;re looking at basic asset management, real-time dashboards, and customizable goodies. It&#8217;s a DIY enthusiast&#8217;s dream, with system admin access and the freedom to play around with the code. Check out the live demo <a previewlistener="true" href="https://demo.thingsboard.io/" target="_blank" rel="noreferrer noopener">here</a> before you dive in.</p>
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="2409" height="933" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Notifications-to-app-3.png" alt="Your IoT application. Available on the Google Play and App Store" class="wp-image-3590" srcset="./../wp-content/uploads/2024/03/Notifications-to-app-3.png 2409w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-300x116.png 300w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-1024x397.png 1024w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-768x297.png 768w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-1536x595.png 1536w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-2048x793.png 2048w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-512x198.png 512w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-920x356.png 920w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-1600x620.png 1600w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-1920x744.png 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
-<h3 class="wp-block-heading">Professional Edition (PE) Self-Managed</h3>
+<p>We have added support for sending push notifications to mobile applications. Transform your mobile app&#8217;s communication with our enhanced push notifications feature. This feature allows users to receive immediate alerts and notifications directly on their mobile devices, ensuring they are promptly informed about critical events, status updates, or any anomalies detected within their IoT ecosystem. Please make sure you have updated to the latest versions of our <a href="https://thingsboard.io/docs/mobile/getting-started/" data-type="link" data-id="https://thingsboard.io/docs/mobile/getting-started/" target="_blank" rel="noreferrer noopener">CE</a> and <a href="https://thingsboard.io/docs/pe/mobile/getting-started/" data-type="link" data-id="https://thingsboard.io/docs/pe/mobile/getting-started/" target="_blank" rel="noreferrer noopener">PE</a> mobile applications to start receiving the push notifications.</p>
 
 
 
-<p>Next up, the Professional Edition steps it up a notch. It&#8217;s the premium, closed-source variant for those who mean business. Unlimited features? Check. Various integration options out-of-the-box? You got it. This edition is self-managed, meaning you&#8217;re in charge of deployment and management, but with the added perks of advanced rule engine, entity groups, and white-labeling options. For the power users out there, it&#8217;s worth every penny. Check out the pricing options <a href="https://thingsboard.io/pricing/?product=thingsboard-pe" target="_blank" rel="noreferrer noopener">here</a>. </p>
+<h2 class="wp-block-heading">New chart widgets</h2>
 
 
 
-<h3 class="wp-block-heading">Professional Edition Cloud (PE PaaS)</h3>
+<figure class="wp-block-image size-full"><img decoding="async" width="2406" height="1290" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Chart-widgets.png" alt="The picture shows how charts can be displayed on a dashboard" class="wp-image-3522" srcset="./../wp-content/uploads/2024/03/Chart-widgets.png 2406w, ./../wp-content/uploads/2024/03/Chart-widgets-300x161.png 300w, ./../wp-content/uploads/2024/03/Chart-widgets-1024x549.png 1024w, ./../wp-content/uploads/2024/03/Chart-widgets-768x412.png 768w, ./../wp-content/uploads/2024/03/Chart-widgets-1536x824.png 1536w, ./../wp-content/uploads/2024/03/Chart-widgets-2048x1098.png 2048w, ./../wp-content/uploads/2024/03/Chart-widgets-512x275.png 512w, ./../wp-content/uploads/2024/03/Chart-widgets-920x493.png 920w, ./../wp-content/uploads/2024/03/Chart-widgets-1600x858.png 1600w, ./../wp-content/uploads/2024/03/Chart-widgets-1920x1029.png 1920w, ./../wp-content/uploads/2024/03/Chart-widgets-1320x708.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
 
 
 
-<p>Last but not least, the PE Cloud version takes the hassle out of hosting. It&#8217;s the same closed-source, feature-packed PE but managed by the ThingsBoard team. You get everything from the self-managed PE plus the convenience of cloud hosting. It&#8217;s subscription-based and covers hosting costs, making it a breeze to get started. Fancy a trial? Sign up <a href="https://thingsboard.cloud/" target="_blank" rel="noreferrer noopener">here</a> and take it for a spin.</p>
+<p>We&#8217;re excited to introduce a suite of advanced visualization widgets powered by <a href="https://echarts.apache.org/en/index.html">Apache ECharts</a> to enhance your data analysis and presentation capabilities. This includes the new <strong>Time Series </strong>chart that now may combine lines and bars on the same widget. We have also added two new <strong>Bar </strong>charts to display data via bars with or without labels. Our priority was not only to deliver powerful and pretty charts but also to simplify the widget configuration experience. We hope you enjoy new data visualization capabilities!</p>
 
 
 
-<p>The Professional Editions (both Self-managed and Cloud) come packed with advanced features that set them apart from the Community Edition. Here are some of them:</p>
+<h2 class="wp-block-heading">New grouping intervals: Week (Sun-Sat), Week (Mon-Sun), Month, Quarter</h2>
 
 
 
-<ul>
-<li><a href="https://thingsboard.io/docs/pe/user-guide/white-labeling/" target="_blank" rel="noreferrer noopener"><strong>Advanced White-Labeling</strong>:</a> Customize the look and feel of your platform to reflect your brand.</li>
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="1014" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1024x1014.png" alt="Widget show new grouping intervals: Week (Sun-Sat), Week (Mon-Sun), Month, and Quarter for ThingsBoard Dashboards." class="wp-image-3542" srcset="./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1024x1014.png 1024w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-300x297.png 300w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-150x150.png 150w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-768x760.png 768w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1536x1521.png 1536w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-2048x2028.png 2048w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-148x148.png 148w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-512x507.png 512w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-920x911.png 920w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1600x1584.png 1600w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1920x1901.png 1920w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1320x1307.png 1320w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals.png 2406w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
-<li><a previewlistener="true" href="https://thingsboard.io/docs/pe/user-guide/rbac/" target="_blank" rel="noreferrer noopener"><strong>Advanced RBAC</strong>:</a> Implement sophisticated role-based access control strategies to ensure enhanced security across your IoT ecosystem. </li>
+<p>The update introduces new grouping intervals for dashboard <a href="https://thingsboard.io/docs/pe/user-guide/dashboards/#timewindow" data-type="link" data-id="https://thingsboard.io/docs/pe/user-guide/dashboards/#timewindow" target="_blank" rel="noreferrer noopener">time window</a> configurations: <strong>Week (Sun-Sat)</strong>, <strong>Week (Mon-Sun)</strong>, <strong>Month</strong>, and <strong>Quarter</strong>. The intervals adjust to the browser&#8217;s time zone by default, but there&#8217;s also the option to set a custom time zone for further customization. These additions allow for more flexible and granular data visualization and analysis.</p>
 
 
 
-<li><a href="https://thingsboard.io/docs/user-guide/integrations/" target="_blank" rel="noreferrer noopener"><strong>Platform Integrations</strong>:</a> Seamlessly connect with external systems and services, enabling an interconnected IoT solution. </li>
-</ul>
+<h2 class="wp-block-heading">Button widgets</h2>
 
 
 
-<p>To make things crystal clear, here&#8217;s a nifty chart showing the main differences between each edition:</p>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="789" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Button-widgets.png" alt="Widget buttons: Action button, command button, toggle button, power button" class="wp-image-3521" srcset="./../wp-content/uploads/2024/03/Button-widgets.png 2406w, ./../wp-content/uploads/2024/03/Button-widgets-300x98.png 300w, ./../wp-content/uploads/2024/03/Button-widgets-1024x336.png 1024w, ./../wp-content/uploads/2024/03/Button-widgets-768x252.png 768w, ./../wp-content/uploads/2024/03/Button-widgets-1536x504.png 1536w, ./../wp-content/uploads/2024/03/Button-widgets-2048x672.png 2048w, ./../wp-content/uploads/2024/03/Button-widgets-512x168.png 512w, ./../wp-content/uploads/2024/03/Button-widgets-920x302.png 920w, ./../wp-content/uploads/2024/03/Button-widgets-1600x525.png 1600w, ./../wp-content/uploads/2024/03/Button-widgets-1920x630.png 1920w, ./../wp-content/uploads/2024/03/Button-widgets-1320x433.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
 
 
 
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-6 is-layout-flex wp-block-gallery-is-layout-flex">
-<figure class="wp-block-image size-large"><img fetchpriority="high" decoding="async" width="1005" height="1024" data-id="3370" src="./../wp-content/uploads/2024/03/Difference-CE-PE-Cloud-1-1005x1024.png" alt="" class="wp-image-3370" srcset="./../wp-content/uploads/2024/03/Difference-CE-PE-Cloud-1-1005x1024.png 1005w, ./../wp-content/uploads/2024/03/Difference-CE-PE-Cloud-1-294x300.png 294w, ./../wp-content/uploads/2024/03/Difference-CE-PE-Cloud-1-768x783.png 768w, ./../wp-content/uploads/2024/03/Difference-CE-PE-Cloud-1-1507x1536.png 1507w, ./../wp-content/uploads/2024/03/Difference-CE-PE-Cloud-1-2010x2048.png 2010w, ./../wp-content/uploads/2024/03/Difference-CE-PE-Cloud-1-512x522.png 512w, ./../wp-content/uploads/2024/03/Difference-CE-PE-Cloud-1-1024x1044.png 1024w, ./../wp-content/uploads/2024/03/Difference-CE-PE-Cloud-1-920x938.png 920w, ./../wp-content/uploads/2024/03/Difference-CE-PE-Cloud-1-1600x1631.png 1600w, ./../wp-content/uploads/2024/03/Difference-CE-PE-Cloud-1-1920x1957.png 1920w, ./../wp-content/uploads/2024/03/Difference-CE-PE-Cloud-1-1320x1345.png 1320w, ./../wp-content/uploads/2024/03/Difference-CE-PE-Cloud-1.png 2355w" sizes="(max-width: 1005px) 100vw, 1005px" /></figure>
-</figure>
+<p>We&#8217;ve improved our platform with the new button widgets: the <strong>Action Button</strong> <strong>widget </strong>for navigation to other dashboards, states, or custom actions; the <strong>Command Button</strong> <strong>widget</strong> for sending commands to devices, updating attributes, or appending time-series data; the <strong>Toggle Button</strong> <strong>widget</strong> for switching between two device states; the <strong>Power Button</strong> <strong>widget</strong> for toggling the device on and off. Each widget is designed to offer users more control and interactivity within the platform, improving the overall experience. Explore the full potential of the new button widgets in the dedicated <a href="https://wp.thingsboard.io/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" data-type="link" data-id="https://wp.thingsboard.io/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" target="_blank" rel="noreferrer noopener">post</a>.</p>
 
 
 
-<h3 class="wp-block-heading">Kickstarting Projects with Solution Templates <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f680.png" alt="🚀" class="wp-smiley" style="height: 1em; max-height: 1em;" /></h3>
+<h2 class="wp-block-heading">Control widgets</h2>
 
 
 
-<p>PE users gain out-of-the-box <a previewlistener="true" href="https://thingsboard.io/docs/pe/solution-templates/overview/" target="_blank" rel="noreferrer noopener">solution templates</a> designed to charge the implementation of common IoT scenarios. These templates provide a structured starting point, significantly reducing development time and effort.</p>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="915" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Control-widgets.png" alt="Samples of control widgets: switch on and slider 48%" class="wp-image-3523" srcset="./../wp-content/uploads/2024/03/Control-widgets.png 2406w, ./../wp-content/uploads/2024/03/Control-widgets-300x114.png 300w, ./../wp-content/uploads/2024/03/Control-widgets-1024x389.png 1024w, ./../wp-content/uploads/2024/03/Control-widgets-768x292.png 768w, ./../wp-content/uploads/2024/03/Control-widgets-1536x584.png 1536w, ./../wp-content/uploads/2024/03/Control-widgets-2048x779.png 2048w, ./../wp-content/uploads/2024/03/Control-widgets-512x195.png 512w, ./../wp-content/uploads/2024/03/Control-widgets-920x350.png 920w, ./../wp-content/uploads/2024/03/Control-widgets-1600x608.png 1600w, ./../wp-content/uploads/2024/03/Control-widgets-1920x730.png 1920w, ./../wp-content/uploads/2024/03/Control-widgets-1320x502.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
 
 
 
-<h3 class="wp-block-heading">Complementary Open Source Offerings <img src="https://s.w.org/images/core/emoji/14.0.0/72x72/1f381.png" alt="🎁" class="wp-smiley" style="height: 1em; max-height: 1em;" /></h3>
+<p>We&#8217;re introducing Control widgets: the <strong>Slider Widget</strong> and the <strong>Toggle Button Widget</strong>. Both widgets have a simple configuration interface and allow users to trigger commands to devices, update attributes, or append time-series data for the target entity.</p>
 
 
 
-<p>Both Community and Professional Edition users can take advantage of mobile applications developed on Flutter that keep you connected to your IoT platform anytime, anywhere. In addition to the core platform editions, ThingsBoard proudly offers other open-source products like the <a previewlistener="true" href="https://thingsboard.io/docs/iot-gateway/what-is-iot-gateway/">IoT Gateway</a> and <a previewlistener="true" href="https://thingsboard.io/docs/mqtt-broker/" target="_blank" rel="noreferrer noopener">TBMQ</a>, further extending the capabilities of your IoT solutions.</p>
+<h2 class="wp-block-heading">Alarm comment support for edge instances</h2>
 
 
 
-<h3 class="wp-block-heading">Wrapping Up </h3>
+<p>This feature enables bidirectional synchronization of comments on alarms between edge and cloud instances. With this update, users can seamlessly add comments to alarms directly within the Edge environment, and these comments are synchronized with the ThingsBoard cloud instance in real time, ensuring consistency and transparency throughout the entire system. Additionally, comments added or modified in the cloud instance are automatically propagated to the Edge environment, ensuring that all operators have access to the latest information regardless of their location or the system they are using.</p>
 
 
 
-<p>Whether you&#8217;re just dabbling in IoT or running a full-scale operation, ThingsBoard has an edition tailored for you. From the open-source Community Edition to the all-inclusive Professional Editions, the choice is yours. Still unsure? <a href="https://thingsboard.io/docs/contact-us/">Reach out</a>, and we&#8217;ll help steer you in the right direction. Let&#8217;s make your IoT projects shine with ThingsBoard! ​</p>
+<p></p>
 ]]></content:encoded>
 					
+					<wfw:commentRss>./../thingsboard-release-3-6-3-announcement/feed/index.html</wfw:commentRss>
+			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Solving energy generation issues in solar farms using advanced analytics</title>
-		<link>./../solving-energy-generation-issues-in-solar-farms-using-advanced-analytics-2-2/index.html</link>
-					<comments>./../solving-energy-generation-issues-in-solar-farms-using-advanced-analytics-2-2/index.html#respond</comments>
+		<link>./../solving-energy-generation-issues-in-solar-farms-using-advanced-analytics/index.html</link>
+					<comments>./../solving-energy-generation-issues-in-solar-farms-using-advanced-analytics/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
 		<pubDate>Tue, 05 Mar 2024 14:10:35 +0000</pubDate>
-				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">./../index.html?p=3442</guid>
+				<category><![CDATA[Use cases]]></category>
+		<guid isPermaLink="false">http://wp.thingsboard.io/?p=3442</guid>
 
 					<description><![CDATA[Description of the problem While working with many cases of our clients, we faced unusual problems in solar&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -156,7 +157,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="596" src="./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-1024x596.png" alt="" class="wp-image-3447" srcset="./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-1024x596.png 1024w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-300x174.png 300w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-768x447.png 768w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-1536x893.png 1536w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-2048x1191.png 2048w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-512x298.png 512w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-920x535.png 920w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-1600x931.png 1600w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-1920x1117.png 1920w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-1320x768.png 1320w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="596" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-1024x596.png" alt="Dashboard Solar Farm Optimization: Advanced Analytics Solution" class="wp-image-3447" srcset="./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-1024x596.png 1024w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-300x174.png 300w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-768x447.png 768w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-1536x893.png 1536w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-2048x1191.png 2048w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-512x298.png 512w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-920x535.png 920w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-1600x931.png 1600w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-1920x1117.png 1920w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2-1320x768.png 1320w, ./../wp-content/uploads/2024/03/Energy-generating-issues-diagnostics-2.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -194,8 +195,8 @@
 
 
 
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-7 is-layout-flex wp-block-gallery-is-layout-flex">
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="617" data-id="3448" src="./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-1024x617.png" alt="" class="wp-image-3448" srcset="./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-1024x617.png 1024w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-300x181.png 300w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-768x463.png 768w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-1536x926.png 1536w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-2048x1234.png 2048w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-512x309.png 512w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-920x555.png 920w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-1600x964.png 1600w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-1920x1157.png 1920w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-1320x796.png 1320w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-6 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="617" data-id="3448" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-1024x617.png" alt="Compare past energy production with current for inverter" class="wp-image-3448" srcset="./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-1024x617.png 1024w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-300x181.png 300w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-768x463.png 768w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-1536x926.png 1536w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-2048x1234.png 2048w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-512x309.png 512w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-920x555.png 920w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-1600x964.png 1600w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-1920x1157.png 1920w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter-1320x796.png 1320w, ./../wp-content/uploads/2024/03/Current-vs-Avg-hourly-inverter.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 </figure>
 
 
@@ -216,8 +217,8 @@
 
 
 
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-8 is-layout-flex wp-block-gallery-is-layout-flex">
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" data-id="3449" src="./../wp-content/uploads/2024/03/Test-calculation-simple-1024x574.png" alt="" class="wp-image-3449" srcset="./../wp-content/uploads/2024/03/Test-calculation-simple-1024x574.png 1024w, ./../wp-content/uploads/2024/03/Test-calculation-simple-300x168.png 300w, ./../wp-content/uploads/2024/03/Test-calculation-simple-768x430.png 768w, ./../wp-content/uploads/2024/03/Test-calculation-simple-1536x861.png 1536w, ./../wp-content/uploads/2024/03/Test-calculation-simple-2048x1148.png 2048w, ./../wp-content/uploads/2024/03/Test-calculation-simple-512x287.png 512w, ./../wp-content/uploads/2024/03/Test-calculation-simple-920x516.png 920w, ./../wp-content/uploads/2024/03/Test-calculation-simple-1600x897.png 1600w, ./../wp-content/uploads/2024/03/Test-calculation-simple-1920x1076.png 1920w, ./../wp-content/uploads/2024/03/Test-calculation-simple-1320x740.png 1320w, ./../wp-content/uploads/2024/03/Test-calculation-simple.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-7 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" data-id="3449" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Test-calculation-simple-1024x574.png" alt="Example Calculated Field to find how much energy we lose" class="wp-image-3449" srcset="./../wp-content/uploads/2024/03/Test-calculation-simple-1024x574.png 1024w, ./../wp-content/uploads/2024/03/Test-calculation-simple-300x168.png 300w, ./../wp-content/uploads/2024/03/Test-calculation-simple-768x430.png 768w, ./../wp-content/uploads/2024/03/Test-calculation-simple-1536x861.png 1536w, ./../wp-content/uploads/2024/03/Test-calculation-simple-2048x1148.png 2048w, ./../wp-content/uploads/2024/03/Test-calculation-simple-512x287.png 512w, ./../wp-content/uploads/2024/03/Test-calculation-simple-920x516.png 920w, ./../wp-content/uploads/2024/03/Test-calculation-simple-1600x897.png 1600w, ./../wp-content/uploads/2024/03/Test-calculation-simple-1920x1076.png 1920w, ./../wp-content/uploads/2024/03/Test-calculation-simple-1320x740.png 1320w, ./../wp-content/uploads/2024/03/Test-calculation-simple.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 </figure>
 
 
@@ -263,140 +264,20 @@
 <p style="font-size:16px">Proper use of Calculated Fields, prediction capabilities, and anomaly diagnostics together will provide you with a flexible and very versatile tool that will help you customize most of the business aspects of your business.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>./../solving-energy-generation-issues-in-solar-farms-using-advanced-analytics-2-2/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>New Release 3.6.3 Announcement</title>
-		<link>./../new-release-3-6-3-announcement/index.html</link>
-					<comments>./../new-release-3-6-3-announcement/index.html#respond</comments>
-		
-		<dc:creator><![CDATA[Dmytro Andriichenko]]></dc:creator>
-		<pubDate>Tue, 05 Mar 2024 11:29:06 +0000</pubDate>
-				<category><![CDATA[Release]]></category>
-		<guid isPermaLink="false">./../index.html?p=3392</guid>
-
-					<description><![CDATA[Inspired by the valuable feedback from our dedicated community and users, we are excited to announce the launch&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p>Inspired by the valuable feedback from our dedicated community and users, we are excited to announce the launch of Thingsboard version 3.6.3. This latest release is packed with innovations and enhancements that promise to enrich your IoT platform experience. Version 3.6.3 introduces new functionalities and focuses on streamlining existing processes, ensuring a seamless, more efficient operation for all ThingsBoard users. Embrace the advancements in IoT management and deployment that Version 3.6.3 brings to your toolkit.</p>
-
-
-
-<p>This article will briefly describe the most interesting updates to our new features. You can find the full list of updates here.</p>
-
-
-
-<h2 class="wp-block-heading">Notifications to mobile application</h2>
-
-
-
-<p>We are adding support for sending push notifications to mobile applications. This enhancement includes the ability to load Firebase service account credentials, revamp the dialog for creating notification templates and sending notifications, and allow for the customization of the push notification&#8217;s &#8220;subject&#8221; and &#8220;message&#8221;. This update aims to enhance mobile application interaction by directly providing timely and relevant notifications to users&#8217; devices.</p>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/03/Notifications-to-app.svg" alt="" class="wp-image-3486"/></figure>
-
-
-
-<h2 class="wp-block-heading">Slider widget</h2>
-
-
-
-<p>Added a &#8220;Slider widget&#8221; to ThingsBoard, offering a new UI element that allows for easy adjustment of values through a sliding mechanism. This enhancement is designed to improve user experience by providing a straightforward and intuitive way to input values, making it particularly useful for settings requiring precise control over various options.</p>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/03/Slider-widget.svg" alt="" class="wp-image-3464"/></figure>
-
-
-
-<h2 class="wp-block-heading">Toggle button widget</h2>
-
-
-
-<p>Added a &#8220;Toggle button widget&#8221; to ThingsBoard. This feature provides a graphical UI element that can be toggled on or off, enhancing user interaction and control within the dashboard. The implementation ensures that the widget is seamlessly integrated into the platform, offering a user-friendly option for managing binary states of devices or parameters. More information about this widget can be read here.</p>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/03/Toggle-button-widget.svg" alt="" class="wp-image-3465"/></figure>
-
-
-
-<h2 class="wp-block-heading">Action button widget</h2>
-
-
-
-<p>Added the &#8220;Action button widget&#8221; to ThingsBoard, enhancing the platform&#8217;s interactivity with a new user interface element that enables the execution of actions directly from the dashboard. This update aims to improve user engagement and operational efficiency by providing a straightforward mechanism for users to interact with devices or data processes. More information about this widget can be read here.</p>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/03/Action-button-widget.svg" alt="" class="wp-image-3466"/></figure>
-
-
-
-<h2 class="wp-block-heading">Power button widget</h2>
-
-
-
-<p>Added a &#8220;Power button widget&#8221; to ThingsBoard, further enhancing user interface customization options. This widget allows users to easily control the power states of devices directly from the dashboard, offering a practical and visually appealing method for device management. More information about this widget can be read here.</p>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/03/Power-button-widget.svg" alt="" class="wp-image-3467"/></figure>
-
-
-
-<h2 class="wp-block-heading">Command button widget</h2>
-
-
-
-<p>Added a &#8220;Command button widget&#8221; to ThingsBoard, which is aimed at enhancing the dashboard&#8217;s functionality by allowing users to execute specific commands directly from the UI. This addition is designed to streamline operations and improve the user experience by providing more interactive and dynamic widget options. More information about this widget can be read here.</p>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/03/Command-button-widget.svg" alt="" class="wp-image-3468"/></figure>
-
-
-
-<h2 class="wp-block-heading">Single Switch control widget</h2>
-
-
-
-<p>ThingsBoard introduces a Single &#8220;Switch control widget&#8221; designed to enhance user interaction by allowing straightforward control over device functionalities. This widget simplifies the process of toggling device states, offering an intuitive interface for users.</p>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/03/Single-Switch-control-widget.svg" alt="" class="wp-image-3469"/></figure>
-
-
-
-<h2 class="wp-block-heading">Bar chart with labels</h2>
-
-
-
-<p>We are implementing a new &#8220;Bar chart with labels&#8221; chart widget for ThingsBoard. This addition enriches the visualization options available on the platform, allowing for displaying bar charts accompanied by labels for clearer data presentation and analysis.</p>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/03/Bar-chart-with-labels-1.svg" alt="" class="wp-image-3472"/></figure>
-]]></content:encoded>
-					
-					<wfw:commentRss>./../new-release-3-6-3-announcement/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>./../solving-energy-generation-issues-in-solar-farms-using-advanced-analytics/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Solving solar power plant problems using advanced analytics</title>
-		<link>./../solving-solar-power-plant-problems-using-advanced-analytics-2/index.html</link>
-					<comments>./../solving-solar-power-plant-problems-using-advanced-analytics-2/index.html#respond</comments>
+		<link>./../solving-solar-power-plant-problems-using-advanced-analytics/index.html</link>
+					<comments>./../solving-solar-power-plant-problems-using-advanced-analytics/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
 		<pubDate>Tue, 05 Mar 2024 10:33:41 +0000</pubDate>
-				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">./../index.html?p=3387</guid>
+				<category><![CDATA[Use cases]]></category>
+		<guid isPermaLink="false">http://wp.thingsboard.io/?p=3387</guid>
 
 					<description><![CDATA[Solar energy is becoming increasingly popular as the world looks to resolve the climate emergency and move toward&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -424,7 +305,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" src="./../wp-content/uploads/2024/03/Solar-Farm-Structure-2-1024x574.png" alt="" class="wp-image-3389" srcset="./../wp-content/uploads/2024/03/Solar-Farm-Structure-2-1024x574.png 1024w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure-2-300x168.png 300w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure-2-768x430.png 768w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure-2-1536x861.png 1536w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure-2-2048x1148.png 2048w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure-2-512x287.png 512w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure-2-920x516.png 920w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure-2-1600x897.png 1600w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure-2-1920x1076.png 1920w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure-2-1320x740.png 1320w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure-2.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Solar-Farm-Structure_-1024x574.png" alt="Solar Farm Structure: solar panels, wires, inverters, batteries, utility meter" class="wp-image-3551" srcset="./../wp-content/uploads/2024/03/Solar-Farm-Structure_-1024x574.png 1024w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure_-300x168.png 300w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure_-768x430.png 768w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure_-1536x861.png 1536w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure_-2048x1148.png 2048w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure_-512x287.png 512w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure_-920x516.png 920w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure_-1600x897.png 1600w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure_-1920x1076.png 1920w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure_-1320x740.png 1320w, ./../wp-content/uploads/2024/03/Solar-Farm-Structure_.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -456,13 +337,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="561" src="./../wp-content/uploads/2024/03/scheme-1-1024x561.png" alt="" class="wp-image-3434" srcset="./../wp-content/uploads/2024/03/scheme-1-1024x561.png 1024w, ./../wp-content/uploads/2024/03/scheme-1-300x164.png 300w, ./../wp-content/uploads/2024/03/scheme-1-768x421.png 768w, ./../wp-content/uploads/2024/03/scheme-1-1536x842.png 1536w, ./../wp-content/uploads/2024/03/scheme-1-2048x1122.png 2048w, ./../wp-content/uploads/2024/03/scheme-1-512x281.png 512w, ./../wp-content/uploads/2024/03/scheme-1-920x504.png 920w, ./../wp-content/uploads/2024/03/scheme-1-1600x877.png 1600w, ./../wp-content/uploads/2024/03/scheme-1-1920x1052.png 1920w, ./../wp-content/uploads/2024/03/scheme-1-1320x723.png 1320w, ./../wp-content/uploads/2024/03/scheme-1.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<ul>
-<li></li>
-</ul>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="561" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/scheme-1-1024x561.png" alt="Built-in instruments advanced analytics system " class="wp-image-3434" srcset="./../wp-content/uploads/2024/03/scheme-1-1024x561.png 1024w, ./../wp-content/uploads/2024/03/scheme-1-300x164.png 300w, ./../wp-content/uploads/2024/03/scheme-1-768x421.png 768w, ./../wp-content/uploads/2024/03/scheme-1-1536x842.png 1536w, ./../wp-content/uploads/2024/03/scheme-1-2048x1122.png 2048w, ./../wp-content/uploads/2024/03/scheme-1-512x281.png 512w, ./../wp-content/uploads/2024/03/scheme-1-920x504.png 920w, ./../wp-content/uploads/2024/03/scheme-1-1600x877.png 1600w, ./../wp-content/uploads/2024/03/scheme-1-1920x1052.png 1920w, ./../wp-content/uploads/2024/03/scheme-1-1320x723.png 1320w, ./../wp-content/uploads/2024/03/scheme-1.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -512,7 +387,7 @@
 
 
 
-<p style="font-size:16px">If you want to learn more about this topic, see a full description of the problems and their solutions using anomaly detection, and check out the detailed step-by-step&nbsp;<a href="./../optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/index.html">guide here</a>.</p>
+<p style="font-size:16px">If you want to learn more about this topic, see a full description of the problems and their solutions using anomaly detection, and check out the detailed step-by-step&nbsp;<a href="http://wp.thingsboard.io/optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/">guide here</a>.</p>
 
 
 
@@ -544,7 +419,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="573" src="./../wp-content/uploads/2024/03/Anomaly-tasks-1024x573.png" alt="" class="wp-image-3451" srcset="./../wp-content/uploads/2024/03/Anomaly-tasks-1024x573.png 1024w, ./../wp-content/uploads/2024/03/Anomaly-tasks-300x168.png 300w, ./../wp-content/uploads/2024/03/Anomaly-tasks-768x429.png 768w, ./../wp-content/uploads/2024/03/Anomaly-tasks-1536x859.png 1536w, ./../wp-content/uploads/2024/03/Anomaly-tasks-2048x1145.png 2048w, ./../wp-content/uploads/2024/03/Anomaly-tasks-512x286.png 512w, ./../wp-content/uploads/2024/03/Anomaly-tasks-920x514.png 920w, ./../wp-content/uploads/2024/03/Anomaly-tasks-1600x895.png 1600w, ./../wp-content/uploads/2024/03/Anomaly-tasks-1920x1074.png 1920w, ./../wp-content/uploads/2024/03/Anomaly-tasks-1320x738.png 1320w, ./../wp-content/uploads/2024/03/Anomaly-tasks.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="573" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Anomaly-tasks-1024x573.png" alt="Overview anomaly detection of the solar farm’s condition" class="wp-image-3451" srcset="./../wp-content/uploads/2024/03/Anomaly-tasks-1024x573.png 1024w, ./../wp-content/uploads/2024/03/Anomaly-tasks-300x168.png 300w, ./../wp-content/uploads/2024/03/Anomaly-tasks-768x429.png 768w, ./../wp-content/uploads/2024/03/Anomaly-tasks-1536x859.png 1536w, ./../wp-content/uploads/2024/03/Anomaly-tasks-2048x1145.png 2048w, ./../wp-content/uploads/2024/03/Anomaly-tasks-512x286.png 512w, ./../wp-content/uploads/2024/03/Anomaly-tasks-920x514.png 920w, ./../wp-content/uploads/2024/03/Anomaly-tasks-1600x895.png 1600w, ./../wp-content/uploads/2024/03/Anomaly-tasks-1920x1074.png 1920w, ./../wp-content/uploads/2024/03/Anomaly-tasks-1320x738.png 1320w, ./../wp-content/uploads/2024/03/Anomaly-tasks.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -552,7 +427,7 @@
 
 
 
-<p style="font-size:16px">If you want to learn more about the topic, check out the detailed step-by-step guide covering the topic of “Soiling” in Solar Farms. To read it,&nbsp;<a previewlistener="true" href="./../reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/index.html">click here</a>.</p>
+<p style="font-size:16px">If you want to learn more about the topic, check out the detailed step-by-step guide covering the topic of “Soiling” in Solar Farms. To read it,&nbsp;<a href="http://wp.thingsboard.io/reducing-costs-of-solar-farms-by-optimizing-the-cleaning-process/">click here</a>.</p>
 
 
 
@@ -572,7 +447,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="643" src="./../wp-content/uploads/2024/03/Heart-map-1024x643.png" alt="" class="wp-image-3438" srcset="./../wp-content/uploads/2024/03/Heart-map-1024x643.png 1024w, ./../wp-content/uploads/2024/03/Heart-map-300x188.png 300w, ./../wp-content/uploads/2024/03/Heart-map-768x482.png 768w, ./../wp-content/uploads/2024/03/Heart-map-1536x964.png 1536w, ./../wp-content/uploads/2024/03/Heart-map-2048x1285.png 2048w, ./../wp-content/uploads/2024/03/Heart-map-512x321.png 512w, ./../wp-content/uploads/2024/03/Heart-map-920x577.png 920w, ./../wp-content/uploads/2024/03/Heart-map-1600x1004.png 1600w, ./../wp-content/uploads/2024/03/Heart-map-1920x1205.png 1920w, ./../wp-content/uploads/2024/03/Heart-map-1320x828.png 1320w, ./../wp-content/uploads/2024/03/Heart-map.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="643" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Heart-map-1024x643.png" alt="Damaged areas of solar panels on the heatmap" class="wp-image-3438" srcset="./../wp-content/uploads/2024/03/Heart-map-1024x643.png 1024w, ./../wp-content/uploads/2024/03/Heart-map-300x188.png 300w, ./../wp-content/uploads/2024/03/Heart-map-768x482.png 768w, ./../wp-content/uploads/2024/03/Heart-map-1536x964.png 1536w, ./../wp-content/uploads/2024/03/Heart-map-2048x1285.png 2048w, ./../wp-content/uploads/2024/03/Heart-map-512x321.png 512w, ./../wp-content/uploads/2024/03/Heart-map-920x577.png 920w, ./../wp-content/uploads/2024/03/Heart-map-1600x1004.png 1600w, ./../wp-content/uploads/2024/03/Heart-map-1920x1205.png 1920w, ./../wp-content/uploads/2024/03/Heart-map-1320x828.png 1320w, ./../wp-content/uploads/2024/03/Heart-map.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -628,7 +503,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="640" src="./../wp-content/uploads/2024/03/Consumption-forecast-1-1024x640.png" alt="" class="wp-image-3440" srcset="./../wp-content/uploads/2024/03/Consumption-forecast-1-1024x640.png 1024w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-300x188.png 300w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-768x480.png 768w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-1536x960.png 1536w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-2048x1280.png 2048w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-512x320.png 512w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-920x575.png 920w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-1600x1000.png 1600w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-1920x1200.png 1920w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-1320x825.png 1320w, ./../wp-content/uploads/2024/03/Consumption-forecast-1.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="640" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Consumption-forecast-1-1024x640.png" alt="Forecasting electricity generation in solar panels with advanced analitycs" class="wp-image-3440" srcset="./../wp-content/uploads/2024/03/Consumption-forecast-1-1024x640.png 1024w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-300x188.png 300w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-768x480.png 768w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-1536x960.png 1536w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-2048x1280.png 2048w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-512x320.png 512w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-920x575.png 920w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-1600x1000.png 1600w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-1920x1200.png 1920w, ./../wp-content/uploads/2024/03/Consumption-forecast-1-1320x825.png 1320w, ./../wp-content/uploads/2024/03/Consumption-forecast-1.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -636,7 +511,7 @@
 
 
 
-<p style="font-size:16px">If you want to learn more about how to solve non-standard tasks and complex calculations using advanced analytics,&nbsp;<a href="./../solving-energy-generation-issues-in-solar-farms-using-advanced-analytics/index.html">click here</a>.</p>
+<p style="font-size:16px">If you want to learn more about how to solve non-standard tasks and complex calculations using advanced analytics,&nbsp;<a href="http://wp.thingsboard.io/solving-energy-generation-issues-in-solar-farms-using-advanced-analytics/">click here</a>.</p>
 
 
 
@@ -666,7 +541,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1704" src="./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems.png" alt="" class="wp-image-3390" srcset="./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems.png 2409w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-300x212.png 300w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1024x724.png 1024w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-768x543.png 768w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1536x1086.png 1536w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-2048x1449.png 2048w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-512x362.png 512w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-920x651.png 920w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1600x1132.png 1600w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1920x1358.png 1920w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1320x934.png 1320w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1704" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems.png" alt="3 types of system connection to the grid: distributed systems, centralized energy, and hybrid systems." class="wp-image-3390" srcset="./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems.png 2409w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-300x212.png 300w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1024x724.png 1024w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-768x543.png 768w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1536x1086.png 1536w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-2048x1449.png 2048w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-512x362.png 512w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-920x651.png 920w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1600x1132.png 1600w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1920x1358.png 1920w, ./../wp-content/uploads/2024/03/On-Grid-Off-Grid-and-Hybrid-Solar-Systems-1320x934.png 1320w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
@@ -759,20 +634,20 @@
 
 ]]></content:encoded>
 					
-					<wfw:commentRss>./../solving-solar-power-plant-problems-using-advanced-analytics-2/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>./../solving-solar-power-plant-problems-using-advanced-analytics/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Optimizing solar parks efficiency &#8211; advanced anomaly detection solutions</title>
-		<link>./../optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions-2/index.html</link>
-					<comments>./../optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions-2/index.html#respond</comments>
+		<link>./../optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/index.html</link>
+					<comments>./../optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
 		<pubDate>Fri, 01 Mar 2024 15:57:16 +0000</pubDate>
-				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">./../index.html?p=3316</guid>
+				<category><![CDATA[Use cases]]></category>
+		<guid isPermaLink="false">https://wp.thingsboard.io/?p=3316</guid>
 
 					<description><![CDATA[Solar power plants face issues due to temperature and environmental factors, which lead to reduced efficiency and potential&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -788,7 +663,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" src="./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.png" alt="" class="wp-image-3367" srcset="./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.png 1024w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-300x168.png 300w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-768x430.png 768w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1536x861.png 1536w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-2048x1148.png 2048w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-512x287.png 512w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-920x516.png 920w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1600x897.png 1600w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1920x1076.png 1920w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1320x740.png 1320w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.png" alt="Dashboard Enhancing Solar Parks Efficiency: Anomaly Detection" class="wp-image-3367" srcset="./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1024x574.png 1024w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-300x168.png 300w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-768x430.png 768w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1536x861.png 1536w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-2048x1148.png 2048w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-512x287.png 512w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-920x516.png 920w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1600x897.png 1600w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1920x1076.png 1920w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems-1320x740.png 1320w, ./../wp-content/uploads/2024/03/The-ability-to-quickly-respond-to-problems.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -858,7 +733,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="1024" src="./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-1024x1024.png" alt="" class="wp-image-3404" srcset="./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-1024x1024.png 1024w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-300x300.png 300w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-150x150.png 150w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-768x768.png 768w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-1536x1536.png 1536w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-2048x2048.png 2048w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-148x148.png 148w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-296x296.png 296w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-512x512.png 512w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-920x920.png 920w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-1600x1600.png 1600w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-1920x1920.png 1920w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-1320x1320.png 1320w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="803" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-1.png" alt="Anomalies in photovoltaic modules solar farms" class="wp-image-3557" srcset="./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-1.png 803w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-1-300x300.png 300w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-1-150x150.png 150w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-1-768x768.png 768w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-1-148x148.png 148w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-1-296x296.png 296w, ./../wp-content/uploads/2024/03/Anomalies-in-photovoltaic-modules-1-512x512.png 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
 
 
 
@@ -892,7 +767,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="561" src="./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-1024x561.png" alt="" class="wp-image-3412" srcset="./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-1024x561.png 1024w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-300x164.png 300w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-768x421.png 768w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-1536x842.png 1536w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-2048x1122.png 2048w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-512x281.png 512w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-920x504.png 920w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-1600x877.png 1600w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-1920x1052.png 1920w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-1320x723.png 1320w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="561" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Anomalies-in-Inverters-1-1024x561.png" alt="Anomaly detection in inverters with advanced analytics" class="wp-image-3412" srcset="./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-1024x561.png 1024w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-300x164.png 300w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-768x421.png 768w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-1536x842.png 1536w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-2048x1122.png 2048w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-512x281.png 512w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-920x504.png 920w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-1600x877.png 1600w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-1920x1052.png 1920w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1-1320x723.png 1320w, ./../wp-content/uploads/2024/03/Anomalies-in-Inverters-1.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -908,16 +783,10 @@
 
 
 
-<ul>
-<li></li>
-</ul>
-
-
-
 <p style="font-size:16px">And this is only part of how advanced analytics and machine learning can improve the efficiency of solar farms. With help, you can find solutions to your solar farm problems, including Soiling, Battery Health Diagnostics, and more.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>./../optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions-2/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>./../optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
@@ -929,8 +798,8 @@
 		
 		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
 		<pubDate>Thu, 29 Feb 2024 15:09:55 +0000</pubDate>
-				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">./../index.html?p=2957</guid>
+				<category><![CDATA[Use cases]]></category>
+		<guid isPermaLink="false">http://wp.thingsboard.io/?p=2957</guid>
 
 					<description><![CDATA[Introduction For solar farms, dirty panels can mean thousands of dollars of lost revenue annually. Panels washed too&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -946,7 +815,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" src="./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-1024x574.png" alt="" class="wp-image-3420" srcset="./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-1024x574.png 1024w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-300x168.png 300w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-768x430.png 768w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-1536x861.png 1536w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-2048x1148.png 2048w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-512x287.png 512w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-920x516.png 920w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-1600x897.png 1600w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-1920x1076.png 1920w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-1320x740.png 1320w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="574" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-1024x574.png" alt="Dashboard Optimizing Solar Farm Cleaning Processes" class="wp-image-3420" srcset="./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-1024x574.png 1024w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-300x168.png 300w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-768x430.png 768w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-1536x861.png 1536w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-2048x1148.png 2048w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-512x287.png 512w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-920x516.png 920w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-1600x897.png 1600w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-1920x1076.png 1920w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2-1320x740.png 1320w, ./../wp-content/uploads/2024/03/Reducing-costs-of-Solar-Farms-2.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -1018,8 +887,8 @@
 
 
 
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-9 is-layout-flex wp-block-gallery-is-layout-flex">
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="669" data-id="3423" src="./../wp-content/uploads/2024/03/Soiling-cost-calculation-1024x669.png" alt="" class="wp-image-3423" srcset="./../wp-content/uploads/2024/03/Soiling-cost-calculation-1024x669.png 1024w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-300x196.png 300w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-768x502.png 768w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-1536x1004.png 1536w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-2048x1339.png 2048w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-512x335.png 512w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-920x601.png 920w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-1600x1046.png 1600w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-1920x1255.png 1920w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-1320x863.png 1320w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-8 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="669" data-id="3423" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Soiling-cost-calculation-1024x669.png" alt="Cleaning schedule solar plant based on predictive time to maintenance" class="wp-image-3423" srcset="./../wp-content/uploads/2024/03/Soiling-cost-calculation-1024x669.png 1024w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-300x196.png 300w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-768x502.png 768w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-1536x1004.png 1536w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-2048x1339.png 2048w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-512x335.png 512w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-920x601.png 920w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-1600x1046.png 1600w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-1920x1255.png 1920w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation-1320x863.png 1320w, ./../wp-content/uploads/2024/03/Soiling-cost-calculation.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 </figure>
 
 
@@ -1045,18 +914,18 @@
 		
 			</item>
 		<item>
-		<title>Reliable T&#038;H monitoring with WhereView &#038; ThingsBoard</title>
-		<link>./../reliable-th-monitoring-with-whereview-thingsboard-2/index.html</link>
-					<comments>./../reliable-th-monitoring-with-whereview-thingsboard-2/index.html#respond</comments>
+		<title>Warehouse monitoring with ThingsBoard</title>
+		<link>./../warehouse-monitoring-with-thingsboard/index.html</link>
+					<comments>./../warehouse-monitoring-with-thingsboard/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Alex Doan]]></dc:creator>
 		<pubDate>Wed, 28 Feb 2024 12:48:44 +0000</pubDate>
-				<category><![CDATA[Business]]></category>
-		<guid isPermaLink="false">./../index.html?p=3188</guid>
+				<category><![CDATA[Solutions]]></category>
+		<guid isPermaLink="false">http://wp.thingsboard.io/?p=3188</guid>
 
 					<description><![CDATA[Reliable and high-quality control of temperature and humidity with constant access to monitoring data is an important condition for the storage of thermosensitive drugs and raw materials for medicines. The ThingsBoard partner — Vypin together with our team has implemented a solution for a global pharmaceutical company. The IoT application has helped to optimize processes and costs.]]></description>
 										<content:encoded><![CDATA[
-<p style="font-size:16px">Reliable and high-quality control of temperature and humidity with constant access to monitoring data is an important condition for the storage of thermosensitive drugs and raw materials for medicines. The ThingsBoard partner — <a href="http://vypin.com/" target="_blank" rel="noreferrer noopener">Vypin</a>, together with our team, has implemented a solution for a global pharmaceutical company. The IoT application has helped to optimize processes and costs.</p>
+<p style="font-size:16px">Ensuring reliable and consistent monitoring of temperature and humidity is crucial for the proper storage of temperature-sensitive medications and perishable food products. Our partner, <a href="https://www.vypin.com/" target="_blank" rel="noreferrer noopener">Vypin</a>, has successfully deployed WhereView, a solution powered by ThingsBoard, for a leading global pharmaceutical corporation. This IoT application has significantly enhanced operational efficiency and cost-effectiveness.</p>
 
 
 
@@ -1064,19 +933,19 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/02/5.svg" alt="" class="wp-image-3225"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/5.svg" alt="" class="wp-image-3225"/></figure>
 
 
 
-<h4 class="wp-block-heading">The problem</h4>
+<h4 class="wp-block-heading">The challenge</h4>
 
 
 
-<p style="font-size:16px">The FDA (The Food &amp; Drug Administration) has strict requirements and recommendations for pharmaceutical manufacturers, particularly regarding storage conditions and the control system to comply with these conditions (more about regulation can be found here). The customer asked  Vypin to replace the current system. The previous one didn’t meet the FDA standards, which was the reason for the fines and the potential risk of drug or component damage.</p>
+<p style="font-size:16px">The Food and Drug Administration (FDA) imposes stringent guidelines on pharmaceutical manufacturers concerning storage conditions and the regulatory compliance of control systems. The client approached Vypin with a request to overhaul their existing system, which failed to meet FDA standards, leading to penalties and the potential for product or ingredient spoilage.</p>
 
 
 
-<p style="font-size:16px">As they say in the medical field, the patient had specific complaints. First of all, data loss. Existing devices could go offline for various reasons (from network outages to power loss), but the transmission or recording of telemetry did not take place. But the client couldn’t find out about these or those losses, which was the second complaint. The current system does not provide a notification mechanism. In addition, monitoring data was not available remotely.</p>
+<p style="font-size:16px">The client&#8217;s primary concerns revolved around data loss. The then-existing devices were prone to disconnections due to various issues, such as network or power failures, leading to lapses in telemetry transmission or recording. Furthermore, the system lacked a mechanism for notifying the client about these disruptions. Additionally, there was no provision for remote access to monitoring data.</p>
 
 
 
@@ -1086,58 +955,62 @@
 
 
 
-<h4 class="wp-block-heading has-text-align-left">Solution</h4>
+<h4 class="wp-block-heading has-text-align-left">The solution</h4>
 
 
 
-<p style="font-size:16px">To solve the problem, the Vypin team proposed an integrated Vypin-Whereview system (powered by ThingsBoard). The company built a wireless network, installed sensors and gateways</p>
+<p style="font-size:16px">In response, Vypin proposed the Vypin-WhereView system, leveraging ThingsBoard&#8217;s capabilities. The solution involved establishing a wireless network, along with the installation of sensors and gateways.</p>
 
 
 
-<p style="font-size:16px">If we mention one of the first problems (data loss), the new sensors now had a memory module and could record telemetry locally. When the gateway connection was lost, data loss (!) didn’t and doesn’t occur. When the online gateway returns, it picks up the accumulated telemetry and sends it to Whereview.</p>
+<p style="font-size:16px">Addressing the initial concern of data loss, the newly installed sensors were equipped with memory modules to store telemetry data locally. Thus, even in the event of a gateway disconnection, data integrity was maintained. Upon restoration of the gateway&#8217;s online status, it would retrieve and transmit the stored telemetry to WhereView.</p>
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1353" src="./../wp-content/uploads/2024/02/4-8.png" alt="" class="wp-image-3223" srcset="./../wp-content/uploads/2024/02/4-8.png 2409w, ./../wp-content/uploads/2024/02/4-8-300x168.png 300w, ./../wp-content/uploads/2024/02/4-8-1024x575.png 1024w, ./../wp-content/uploads/2024/02/4-8-768x431.png 768w, ./../wp-content/uploads/2024/02/4-8-1536x863.png 1536w, ./../wp-content/uploads/2024/02/4-8-2048x1150.png 2048w, ./../wp-content/uploads/2024/02/4-8-512x288.png 512w, ./../wp-content/uploads/2024/02/4-8-920x517.png 920w, ./../wp-content/uploads/2024/02/4-8-1600x899.png 1600w, ./../wp-content/uploads/2024/02/4-8-1920x1078.png 1920w, ./../wp-content/uploads/2024/02/4-8-1320x741.png 1320w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1353" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/4-8.png" alt="" class="wp-image-3223" srcset="./../wp-content/uploads/2024/02/4-8.png 2409w, ./../wp-content/uploads/2024/02/4-8-300x168.png 300w, ./../wp-content/uploads/2024/02/4-8-1024x575.png 1024w, ./../wp-content/uploads/2024/02/4-8-768x431.png 768w, ./../wp-content/uploads/2024/02/4-8-1536x863.png 1536w, ./../wp-content/uploads/2024/02/4-8-2048x1150.png 2048w, ./../wp-content/uploads/2024/02/4-8-512x288.png 512w, ./../wp-content/uploads/2024/02/4-8-920x517.png 920w, ./../wp-content/uploads/2024/02/4-8-1600x899.png 1600w, ./../wp-content/uploads/2024/02/4-8-1920x1078.png 1920w, ./../wp-content/uploads/2024/02/4-8-1320x741.png 1320w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
-<p style="font-size:16px">The application, built on TB, solved the rest of the customer&#8217;s problems. First, the client&#8217;s responsible employee gets access to the monitoring data at any time. Managers also received access.</p>
+<p style="font-size:16px">The WareView application, powered by ThingsBoard, resolved the outstanding concerns of reliable data processing and storage and enabled differentiated access levels. Designated personnel were granted comprehensive access, allowing them to monitor data from all warehouses at any time and location. In contrast, warehouse managers were provided with tailored access rights, enabling them to oversee only their specific warehouses.</p>
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="587" src="./../wp-content/uploads/2024/02/6-6-1024x587.png" alt="" class="wp-image-3228" srcset="./../wp-content/uploads/2024/02/6-6-1024x587.png 1024w, ./../wp-content/uploads/2024/02/6-6-300x172.png 300w, ./../wp-content/uploads/2024/02/6-6-768x440.png 768w, ./../wp-content/uploads/2024/02/6-6-1536x880.png 1536w, ./../wp-content/uploads/2024/02/6-6-2048x1173.png 2048w, ./../wp-content/uploads/2024/02/6-6-512x293.png 512w, ./../wp-content/uploads/2024/02/6-6-920x527.png 920w, ./../wp-content/uploads/2024/02/6-6-1600x917.png 1600w, ./../wp-content/uploads/2024/02/6-6-1920x1100.png 1920w, ./../wp-content/uploads/2024/02/6-6-1320x756.png 1320w, ./../wp-content/uploads/2024/02/6-6.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="587" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/6-6-1024x587.png" alt="" class="wp-image-3228" srcset="./../wp-content/uploads/2024/02/6-6-1024x587.png 1024w, ./../wp-content/uploads/2024/02/6-6-300x172.png 300w, ./../wp-content/uploads/2024/02/6-6-768x440.png 768w, ./../wp-content/uploads/2024/02/6-6-1536x880.png 1536w, ./../wp-content/uploads/2024/02/6-6-2048x1173.png 2048w, ./../wp-content/uploads/2024/02/6-6-512x293.png 512w, ./../wp-content/uploads/2024/02/6-6-920x527.png 920w, ./../wp-content/uploads/2024/02/6-6-1600x917.png 1600w, ./../wp-content/uploads/2024/02/6-6-1920x1100.png 1920w, ./../wp-content/uploads/2024/02/6-6-1320x756.png 1320w, ./../wp-content/uploads/2024/02/6-6.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
-<p style="font-size:16px">To see the Dashboard with graphs and tables, it is enough to open the corresponding tab in your own browser and log in.</p>
+<p style="font-size:16px">Accessing the dashboard, which displays various graphs and tables, simply requires logging into the system from a web browser.</p>
 
 
 
-<p style="font-size:16px">It makes sense to highlight that based on the rule engine and device profiles, Vypin set up a notification system. In case of violations of the specified conditions (for example, exceeding the temperature thresholds), notifications are received by those who should be aware of this recorded violation. This allows you to respond instantly and even take preventive measures.</p>
+<p style="font-size:16px">A noteworthy feature is the customized notification system, established through ThingsBoard&#8217;s rule engine and device profiles. This system alerts the relevant individuals in case of deviations from preset conditions, such as temperature threshold breaches. This feature facilitates immediate response and the implementation of preventive measures.</p>
 
 
 
-<h4 class="wp-block-heading has-text-align-left">Result </h4>
+<h4 class="wp-block-heading has-text-align-left">The outcome</h4>
 
 
 
-<p style="font-size:16px">Everyone understands that it is better (easier, cheaper, less time-consuming) to prevent a disease than to treat it. With the new warehouse monitoring system, the client (patient) has the opportunity for prevention.</p>
+<p style="font-size:16px">Prevention is universally acknowledged as more efficient, cost-effective, and less time-consuming than cure. With the newly installed warehouse monitoring system, the client now has the capability to proactively prevent issues before they arise, ensuring the safety and integrity of their sensitive products.</p>
+
+
+
+<p style="font-size:16px">This case study exemplifies the power of IoT in enhancing regulatory compliance and operational efficiency in critical industries such as pharmaceuticals. The Vypin-WhereView solution, backed by ThingsBoard, demonstrates our commitment to delivering innovative and reliable monitoring solutions.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>./../reliable-th-monitoring-with-whereview-thingsboard-2/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>./../warehouse-monitoring-with-thingsboard/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Increasing equipment utilization KPIs with the help of advanced analytics</title>
-		<link>./../increasing-equipment-utilization-kpis-with-the-help-of-advanced-analytics-2/index.html</link>
+		<link>./../increasing-equipment-utilization-kpis-with-the-help-of-advanced-analytics/index.html</link>
 		
 		<dc:creator><![CDATA[Iryna Kheroim]]></dc:creator>
 		<pubDate>Wed, 28 Feb 2024 11:02:41 +0000</pubDate>
-				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">./../index.html?p=3147</guid>
+				<category><![CDATA[Tech]]></category>
+		<guid isPermaLink="false">http://wp.thingsboard.io/?p=3147</guid>
 
 					<description><![CDATA[Introduction&#160; Equipment in production plays an important role in achieving maximum efficiency, quality, and payback. The issues that&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -1201,7 +1074,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1515" src="./../wp-content/uploads/2024/02/Eu-production-output-1.png" alt="" class="wp-image-3192" srcset="./../wp-content/uploads/2024/02/Eu-production-output-1.png 2409w, ./../wp-content/uploads/2024/02/Eu-production-output-1-300x189.png 300w, ./../wp-content/uploads/2024/02/Eu-production-output-1-1024x644.png 1024w, ./../wp-content/uploads/2024/02/Eu-production-output-1-768x483.png 768w, ./../wp-content/uploads/2024/02/Eu-production-output-1-1536x966.png 1536w, ./../wp-content/uploads/2024/02/Eu-production-output-1-2048x1288.png 2048w, ./../wp-content/uploads/2024/02/Eu-production-output-1-512x322.png 512w, ./../wp-content/uploads/2024/02/Eu-production-output-1-920x579.png 920w, ./../wp-content/uploads/2024/02/Eu-production-output-1-1600x1006.png 1600w, ./../wp-content/uploads/2024/02/Eu-production-output-1-1920x1207.png 1920w, ./../wp-content/uploads/2024/02/Eu-production-output-1-1320x830.png 1320w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1515" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Eu-production-output-1.png" alt="Line chart for view Production Output" class="wp-image-3192" srcset="./../wp-content/uploads/2024/02/Eu-production-output-1.png 2409w, ./../wp-content/uploads/2024/02/Eu-production-output-1-300x189.png 300w, ./../wp-content/uploads/2024/02/Eu-production-output-1-1024x644.png 1024w, ./../wp-content/uploads/2024/02/Eu-production-output-1-768x483.png 768w, ./../wp-content/uploads/2024/02/Eu-production-output-1-1536x966.png 1536w, ./../wp-content/uploads/2024/02/Eu-production-output-1-2048x1288.png 2048w, ./../wp-content/uploads/2024/02/Eu-production-output-1-512x322.png 512w, ./../wp-content/uploads/2024/02/Eu-production-output-1-920x579.png 920w, ./../wp-content/uploads/2024/02/Eu-production-output-1-1600x1006.png 1600w, ./../wp-content/uploads/2024/02/Eu-production-output-1-1920x1207.png 1920w, ./../wp-content/uploads/2024/02/Eu-production-output-1-1320x830.png 1320w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
@@ -1211,7 +1084,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="3212" height="1980" src="./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3.png" alt="" class="wp-image-3197" srcset="./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3.png 3212w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-300x185.png 300w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-1024x631.png 1024w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-768x473.png 768w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-1536x947.png 1536w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-2048x1262.png 2048w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-512x316.png 512w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-920x567.png 920w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-1600x986.png 1600w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-3200x1973.png 3200w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-1920x1184.png 1920w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-1320x814.png 1320w" sizes="(max-width: 3212px) 100vw, 3212px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="3212" height="1980" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3.png" alt="Equipment Utilization Rate calculated by advanced analytics" class="wp-image-3197" srcset="./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3.png 3212w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-300x185.png 300w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-1024x631.png 1024w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-768x473.png 768w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-1536x947.png 1536w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-2048x1262.png 2048w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-512x316.png 512w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-920x567.png 920w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-1600x986.png 1600w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-3200x1973.png 3200w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-1920x1184.png 1920w, ./../wp-content/uploads/2024/02/Eu-Equipment-Utilization-Rate-3-1320x814.png 1320w" sizes="(max-width: 3212px) 100vw, 3212px" /></figure>
 
 
 
@@ -1221,7 +1094,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="638" src="./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-1024x638.png" alt="" class="wp-image-3200" srcset="./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-1024x638.png 1024w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-300x187.png 300w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-768x478.png 768w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-1536x956.png 1536w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-2048x1275.png 2048w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-512x319.png 512w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-920x573.png 920w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-1600x996.png 1600w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-1920x1196.png 1920w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-1320x822.png 1320w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="638" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-1024x638.png" alt="Advanced analytics system calculates Percentage of defects in real-time " class="wp-image-3200" srcset="./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-1024x638.png 1024w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-300x187.png 300w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-768x478.png 768w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-1536x956.png 1536w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-2048x1275.png 2048w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-512x319.png 512w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-920x573.png 920w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-1600x996.png 1600w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-1920x1196.png 1920w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2-1320x822.png 1320w, ./../wp-content/uploads/2024/02/Eu-Precentage-of-Defects-2.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -1235,7 +1108,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1791" src="./../wp-content/uploads/2024/02/Eu-Throughput-1.png" alt="" class="wp-image-3206" srcset="./../wp-content/uploads/2024/02/Eu-Throughput-1.png 2409w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-300x223.png 300w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-1024x761.png 1024w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-768x571.png 768w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-1536x1142.png 1536w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-2048x1523.png 2048w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-512x381.png 512w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-920x684.png 920w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-1600x1190.png 1600w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-1920x1427.png 1920w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-1320x981.png 1320w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1791" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Eu-Throughput-1.png" alt="Calculated throughput for production line" class="wp-image-3206" srcset="./../wp-content/uploads/2024/02/Eu-Throughput-1.png 2409w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-300x223.png 300w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-1024x761.png 1024w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-768x571.png 768w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-1536x1142.png 1536w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-2048x1523.png 2048w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-512x381.png 512w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-920x684.png 920w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-1600x1190.png 1600w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-1920x1427.png 1920w, ./../wp-content/uploads/2024/02/Eu-Throughput-1-1320x981.png 1320w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
@@ -1245,7 +1118,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="641" src="./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-1024x641.png" alt="" class="wp-image-3207" srcset="./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-1024x641.png 1024w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-300x188.png 300w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-768x481.png 768w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-1536x962.png 1536w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-2048x1283.png 2048w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-512x321.png 512w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-920x576.png 920w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-1600x1002.png 1600w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-1920x1203.png 1920w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-1320x827.png 1320w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="641" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Eu-Time-Based-Measurement-1024x641.png" alt="Time-Based Measurement collected using IoT devices " class="wp-image-3207" srcset="./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-1024x641.png 1024w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-300x188.png 300w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-768x481.png 768w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-1536x962.png 1536w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-2048x1283.png 2048w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-512x321.png 512w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-920x576.png 920w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-1600x1002.png 1600w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-1920x1203.png 1920w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement-1320x827.png 1320w, ./../wp-content/uploads/2024/02/Eu-Time-Based-Measurement.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -1265,7 +1138,7 @@
 
 <div class="wp-block-columns is-layout-flex wp-container-core-columns-layout-1 wp-block-columns-is-layout-flex">
 <div class="wp-block-column is-layout-flow wp-block-column-is-layout-flow" style="flex-basis:100%">
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="639" src="./../wp-content/uploads/2024/02/Eu-MTTR-1024x639.png" alt="" class="wp-image-3208" srcset="./../wp-content/uploads/2024/02/Eu-MTTR-1024x639.png 1024w, ./../wp-content/uploads/2024/02/Eu-MTTR-300x187.png 300w, ./../wp-content/uploads/2024/02/Eu-MTTR-768x479.png 768w, ./../wp-content/uploads/2024/02/Eu-MTTR-1536x958.png 1536w, ./../wp-content/uploads/2024/02/Eu-MTTR-2048x1278.png 2048w, ./../wp-content/uploads/2024/02/Eu-MTTR-512x319.png 512w, ./../wp-content/uploads/2024/02/Eu-MTTR-920x574.png 920w, ./../wp-content/uploads/2024/02/Eu-MTTR-1600x998.png 1600w, ./../wp-content/uploads/2024/02/Eu-MTTR-1920x1198.png 1920w, ./../wp-content/uploads/2024/02/Eu-MTTR-1320x824.png 1320w, ./../wp-content/uploads/2024/02/Eu-MTTR.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="639" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Eu-MTTR-1024x639.png" alt="Mean Time To Repair (MTTR) Optimizing Equipment Performance with Analytics" class="wp-image-3208" srcset="./../wp-content/uploads/2024/02/Eu-MTTR-1024x639.png 1024w, ./../wp-content/uploads/2024/02/Eu-MTTR-300x187.png 300w, ./../wp-content/uploads/2024/02/Eu-MTTR-768x479.png 768w, ./../wp-content/uploads/2024/02/Eu-MTTR-1536x958.png 1536w, ./../wp-content/uploads/2024/02/Eu-MTTR-2048x1278.png 2048w, ./../wp-content/uploads/2024/02/Eu-MTTR-512x319.png 512w, ./../wp-content/uploads/2024/02/Eu-MTTR-920x574.png 920w, ./../wp-content/uploads/2024/02/Eu-MTTR-1600x998.png 1600w, ./../wp-content/uploads/2024/02/Eu-MTTR-1920x1198.png 1920w, ./../wp-content/uploads/2024/02/Eu-MTTR-1320x824.png 1320w, ./../wp-content/uploads/2024/02/Eu-MTTR.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 </div>
 </div>
 
@@ -1331,14 +1204,14 @@
 			</item>
 		<item>
 		<title>IoT Widgets for enhanced dashboards: introducing the  action, command, toggle, and power buttons</title>
-		<link>./../iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons-2-2/index.html</link>
-					<comments>./../iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons-2-2/index.html#respond</comments>
+		<link>./../iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/index.html</link>
+					<comments>./../iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Mon, 26 Feb 2024 11:54:34 +0000</pubDate>
-				<category><![CDATA[Engineering]]></category>
-		<category><![CDATA[New features]]></category>
-		<guid isPermaLink="false">./../index.html?p=2970</guid>
+				<category><![CDATA[Solutions]]></category>
+		<category><![CDATA[Tech]]></category>
+		<guid isPermaLink="false">http://wp.thingsboard.io/?p=2970</guid>
 
 					<description><![CDATA[Welcome to the latest update from the ThingsBoard team! Our ongoing mission to improve the platform&#8217;s functionality and&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -1354,7 +1227,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/02/Buttons.svg" alt="" class="wp-image-3106"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Buttons.svg" alt="" class="wp-image-3106"/></figure>
 
 
 
@@ -1362,7 +1235,7 @@
 
 
 
-<div class="wp-block-file"><a id="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a" href="./../wp-content/uploads/2024/02/tb-dynamic_button_states.json">tb_dynamic_button_states.json</a><a href="./../wp-content/uploads/2024/02/tb-dynamic_button_states.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a">Download</a></div>
+<div class="wp-block-file"><a id="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a" href="http://wp.thingsboard.io/wp-content/uploads/2024/02/tb-dynamic_button_states.json">tb_dynamic_button_states.json</a><a href="http://wp.thingsboard.io/wp-content/uploads/2024/02/tb-dynamic_button_states.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a">Download</a></div>
 
 
 
@@ -1370,7 +1243,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/02/Add-widget-2.svg" alt="" class="wp-image-3126"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Add-widget-2.svg" alt="" class="wp-image-3126"/></figure>
 
 
 
@@ -1378,7 +1251,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/02/Appearance-3.svg" alt="" class="wp-image-3108"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Appearance-3.svg" alt="" class="wp-image-3108"/></figure>
 
 
 
@@ -1386,7 +1259,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/02/Button-use-cases.svg" alt="" class="wp-image-3109"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Button-use-cases.svg" alt="" class="wp-image-3109"/></figure>
 
 
 
@@ -1394,7 +1267,7 @@
 
 
 
-<div class="wp-block-file"><a id="wp-block-file--media-fd741ad2-e692-4a03-9a23-812a9f191991" href="./../wp-content/uploads/2024/02/button_use_cases.json">button_use_cases.json</a></div>
+<div class="wp-block-file"><a id="wp-block-file--media-fd741ad2-e692-4a03-9a23-812a9f191991" href="http://wp.thingsboard.io/wp-content/uploads/2024/02/button_use_cases.json">button_use_cases.json</a></div>
 
 
 
@@ -1406,8 +1279,8 @@
 
 
 
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-10 is-layout-flex wp-block-gallery-is-layout-flex">
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1666" height="856" data-id="3048" src="./../wp-content/uploads/2024/02/Open-dialog-1.gif" alt="" class="wp-image-3048"/></figure>
+<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-9 is-layout-flex wp-block-gallery-is-layout-flex">
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="722" height="372" data-id="3566" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Open_dialog-2.gif" alt="" class="wp-image-3566"/></figure>
 </figure>
 
 
@@ -1416,7 +1289,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="565" src="./../wp-content/uploads/2024/02/Open-popup-1024x565.gif" alt="" class="wp-image-3062" srcset="./../wp-content/uploads/2024/02/Open-popup-1024x565.gif 1024w, ./../wp-content/uploads/2024/02/Open-popup-300x165.gif 300w, ./../wp-content/uploads/2024/02/Open-popup-768x424.gif 768w, ./../wp-content/uploads/2024/02/Open-popup-1536x847.gif 1536w, ./../wp-content/uploads/2024/02/Open-popup-512x282.gif 512w, ./../wp-content/uploads/2024/02/Open-popup-920x507.gif 920w, ./../wp-content/uploads/2024/02/Open-popup-1600x882.gif 1600w, ./../wp-content/uploads/2024/02/Open-popup-1320x728.gif 1320w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-full is-resized"><img loading="lazy" decoding="async" width="720" height="372" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Open_pop-up-1.gif" alt="" class="wp-image-3567" style="width:802px;height:auto"/></figure>
 
 
 
@@ -1424,7 +1297,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1666" height="860" src="./../wp-content/uploads/2024/02/Change-state.gif" alt="" class="wp-image-3063"/></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="722" height="372" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Change_state.gif" alt="" class="wp-image-3570"/></figure>
 
 
 
@@ -1432,7 +1305,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1670" height="860" src="./../wp-content/uploads/2024/02/Drill-Down.gif" alt="" class="wp-image-3064"/></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="722" height="372" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Drill_down.gif" alt="" class="wp-image-3571"/></figure>
 
 
 
@@ -1440,7 +1313,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="527" src="./../wp-content/uploads/2024/02/Open-URL-1024x527.gif" alt="" class="wp-image-3066" srcset="./../wp-content/uploads/2024/02/Open-URL-1024x527.gif 1024w, ./../wp-content/uploads/2024/02/Open-URL-300x154.gif 300w, ./../wp-content/uploads/2024/02/Open-URL-768x395.gif 768w, ./../wp-content/uploads/2024/02/Open-URL-1536x791.gif 1536w, ./../wp-content/uploads/2024/02/Open-URL-512x264.gif 512w, ./../wp-content/uploads/2024/02/Open-URL-920x474.gif 920w, ./../wp-content/uploads/2024/02/Open-URL-1600x824.gif 1600w, ./../wp-content/uploads/2024/02/Open-URL-1320x680.gif 1320w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="722" height="372" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Open_url.gif" alt="" class="wp-image-3572"/></figure>
 
 
 
@@ -1464,7 +1337,7 @@
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full"><img decoding="async" src="./../wp-content/uploads/2024/02/Execute-RPC-action-7.svg" alt="" class="wp-image-3110"/></figure></div>
+<figure class="aligncenter size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Execute-RPC-action-7.svg" alt="" class="wp-image-3110"/></figure></div>
 
 
 <p style="font-size:16px">By default, we use an un-persisted command with 5 seconds timeout. You may change the command parameters in the advanced settings of the action.</p>
@@ -1475,28 +1348,28 @@
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full"><img decoding="async" src="./../wp-content/uploads/2024/02/Set-attribute-action-8.svg" alt="" class="wp-image-3111"/></figure></div>
+<figure class="aligncenter size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Set-attribute-action-8.svg" alt="" class="wp-image-3111"/></figure></div>
 
 
 <p style="font-size:16px"><strong>Add time-series action</strong> allows you to add the new time-series value for the particular entity. The action configuration form allows you to configure the time-series data key and value. The value may be configured as a constant or result of function execution. </p>
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full"><img decoding="async" src="./../wp-content/uploads/2024/02/Add-time-series-action-9.svg" alt="" class="wp-image-3112"/></figure></div>
+<figure class="aligncenter size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Add-time-series-action-9.svg" alt="" class="wp-image-3112"/></figure></div>
 
 
 <p style="font-size:16px">You may dynamically disable the button based on certain values of the attribute or time-series key. For example, the dashboard attached below contains two buttons that switch the state of the user&#8217;s attribute &#8220;state&#8221;. When the user presses button A, it becomes disabled, and vice versa.</p>
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full is-resized"><img decoding="async" src="./../wp-content/uploads/2024/02/Disabled-state-10.svg" alt="" class="wp-image-3113" style="width:822px;height:auto"/></figure></div>
+<figure class="aligncenter size-full is-resized"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Disabled-state-10.svg" alt="" class="wp-image-3113" style="width:822px;height:auto"/></figure></div>
 
 
 <p style="font-size:16px">You may find the sample dashboard JSON below: </p>
 
 
 
-<div class="wp-block-file"><a id="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae" href="./../wp-content/uploads/2024/02/command_buttons.json">command_buttons.json</a><a href="./../wp-content/uploads/2024/02/command_buttons.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae">Download</a></div>
+<div class="wp-block-file"><a id="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae" href="http://wp.thingsboard.io/wp-content/uploads/2024/02/command_buttons.json">command_buttons.json</a><a href="http://wp.thingsboard.io/wp-content/uploads/2024/02/command_buttons.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae">Download</a></div>
 
 
 
@@ -1516,7 +1389,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/02/Toggle-button-widget-1.svg" alt="" class="wp-image-3115"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Toggle-button-widget-1.svg" alt="" class="wp-image-3115"/></figure>
 
 
 
@@ -1524,7 +1397,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/02/Behavior-1.svg" alt="" class="wp-image-3121"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Behavior-1.svg" alt="" class="wp-image-3121"/></figure>
 
 
 
@@ -1532,7 +1405,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/02/Behavior123-1.svg" alt="" class="wp-image-3122"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Behavior123-1.svg" alt="" class="wp-image-3122"/></figure>
 
 
 
@@ -1540,7 +1413,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/02/Button-appearance-1.svg" alt="" class="wp-image-3123"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Button-appearance-1.svg" alt="" class="wp-image-3123"/></figure>
 
 
 
@@ -1548,7 +1421,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="208" src="./../wp-content/uploads/2024/02/Buttons123.png" alt="" class="wp-image-3120" srcset="./../wp-content/uploads/2024/02/Buttons123.png 803w, ./../wp-content/uploads/2024/02/Buttons123-300x78.png 300w, ./../wp-content/uploads/2024/02/Buttons123-768x199.png 768w, ./../wp-content/uploads/2024/02/Buttons123-512x133.png 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="208" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Buttons123.png" alt="" class="wp-image-3120" srcset="./../wp-content/uploads/2024/02/Buttons123.png 803w, ./../wp-content/uploads/2024/02/Buttons123-300x78.png 300w, ./../wp-content/uploads/2024/02/Buttons123-768x199.png 768w, ./../wp-content/uploads/2024/02/Buttons123-512x133.png 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
 
 
 
@@ -1560,7 +1433,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/02/Power-button-widget.svg" alt="" class="wp-image-3124"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Power-button-widget.svg" alt="" class="wp-image-3124"/></figure>
 
 
 
@@ -1568,7 +1441,7 @@
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full"><img decoding="async" src="./../wp-content/uploads/2024/02/Button-appearance-2.svg" alt="" class="wp-image-3125"/></figure></div>
+<figure class="aligncenter size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Button-appearance-2.svg" alt="" class="wp-image-3125"/></figure></div>
 
 
 <p style="font-size:16px">The Power button widget enables remote control of devices across sectors: turning smart home appliances on/off, managing industrial equipment, controlling servers, adjusting energy sources, operating irrigation systems, managing healthcare devices, retail displays, and public lighting, showcasing its versatility in simplifying power management in IoT applications.</p>
@@ -1586,20 +1459,20 @@
 <p style="font-size:16px">We encourage you to explore these widgets&#8217; capabilities within your projects. If you have ideas for improvements or additional features, we welcome you to submit feature requests on <a href="https://github.com/thingsboard/thingsboard">GitHub</a>. For any other feedback, please leave your comments below. Your feedback is essential for us to keep improving and growing the platform.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>./../iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons-2-2/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>./../iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
 			</item>
 		<item>
 		<title>Optimizing dashboard performance with enhanced image management</title>
-		<link>./../optimizing-dashboard-performance-with-enhanced-image-management-3/index.html</link>
-					<comments>./../optimizing-dashboard-performance-with-enhanced-image-management-3/index.html#respond</comments>
+		<link>./../optimizing-dashboard-performance-with-enhanced-image-management/index.html</link>
+					<comments>./../optimizing-dashboard-performance-with-enhanced-image-management/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Mon, 26 Feb 2024 11:52:07 +0000</pubDate>
-				<category><![CDATA[Uncategorized]]></category>
-		<guid isPermaLink="false">./../index.html?p=2971</guid>
+				<category><![CDATA[Solutions]]></category>
+		<guid isPermaLink="false">http://wp.thingsboard.io/?p=2971</guid>
 
 					<description><![CDATA[At ThingsBoard, we&#8217;ve always been committed to enhancing user experience and system performance. Our latest update, version 3.6.2,&#8230;]]></description>
 										<content:encoded><![CDATA[
@@ -1623,7 +1496,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="902" src="./../wp-content/uploads/2024/03/Image-gallery.png" alt="" class="wp-image-3348" srcset="./../wp-content/uploads/2024/03/Image-gallery.png 1604w, ./../wp-content/uploads/2024/03/Image-gallery-300x169.png 300w, ./../wp-content/uploads/2024/03/Image-gallery-1024x576.png 1024w, ./../wp-content/uploads/2024/03/Image-gallery-768x432.png 768w, ./../wp-content/uploads/2024/03/Image-gallery-1536x864.png 1536w, ./../wp-content/uploads/2024/03/Image-gallery-512x288.png 512w, ./../wp-content/uploads/2024/03/Image-gallery-920x517.png 920w, ./../wp-content/uploads/2024/03/Image-gallery-1600x900.png 1600w, ./../wp-content/uploads/2024/03/Image-gallery-1320x742.png 1320w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="902" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Image-gallery.png" alt="" class="wp-image-3348" srcset="./../wp-content/uploads/2024/03/Image-gallery.png 1604w, ./../wp-content/uploads/2024/03/Image-gallery-300x169.png 300w, ./../wp-content/uploads/2024/03/Image-gallery-1024x576.png 1024w, ./../wp-content/uploads/2024/03/Image-gallery-768x432.png 768w, ./../wp-content/uploads/2024/03/Image-gallery-1536x864.png 1536w, ./../wp-content/uploads/2024/03/Image-gallery-512x288.png 512w, ./../wp-content/uploads/2024/03/Image-gallery-920x517.png 920w, ./../wp-content/uploads/2024/03/Image-gallery-1600x900.png 1600w, ./../wp-content/uploads/2024/03/Image-gallery-1320x742.png 1320w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
 
 
 
@@ -1651,7 +1524,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="902" src="./../wp-content/uploads/2024/03/Edit-image.png" alt="" class="wp-image-3345" srcset="./../wp-content/uploads/2024/03/Edit-image.png 1604w, ./../wp-content/uploads/2024/03/Edit-image-300x169.png 300w, ./../wp-content/uploads/2024/03/Edit-image-1024x576.png 1024w, ./../wp-content/uploads/2024/03/Edit-image-768x432.png 768w, ./../wp-content/uploads/2024/03/Edit-image-1536x864.png 1536w, ./../wp-content/uploads/2024/03/Edit-image-512x288.png 512w, ./../wp-content/uploads/2024/03/Edit-image-920x517.png 920w, ./../wp-content/uploads/2024/03/Edit-image-1600x900.png 1600w, ./../wp-content/uploads/2024/03/Edit-image-1320x742.png 1320w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="902" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Edit-image.png" alt="" class="wp-image-3345" srcset="./../wp-content/uploads/2024/03/Edit-image.png 1604w, ./../wp-content/uploads/2024/03/Edit-image-300x169.png 300w, ./../wp-content/uploads/2024/03/Edit-image-1024x576.png 1024w, ./../wp-content/uploads/2024/03/Edit-image-768x432.png 768w, ./../wp-content/uploads/2024/03/Edit-image-1536x864.png 1536w, ./../wp-content/uploads/2024/03/Edit-image-512x288.png 512w, ./../wp-content/uploads/2024/03/Edit-image-920x517.png 920w, ./../wp-content/uploads/2024/03/Edit-image-1600x900.png 1600w, ./../wp-content/uploads/2024/03/Edit-image-1320x742.png 1320w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
 
 
 
@@ -1699,7 +1572,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/02/Embed-image.svg" alt="" class="wp-image-3132"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Embed-image.svg" alt="" class="wp-image-3132"/></figure>
 
 
 
@@ -1711,7 +1584,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../wp-content/uploads/2024/02/ThingsBoard.svg" alt="" class="wp-image-3133"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/ThingsBoard.svg" alt="" class="wp-image-3133"/></figure>
 
 
 
@@ -1742,17 +1615,9 @@
 
 
 <p style="font-size:16px">By tackling the challenge of image management within dashboards, we aim to offer a more efficient, robust, and user-friendly platform. Following the upgrade of <a href="https://thingsboard.cloud/">thingsboard.cloud</a>, we&#8217;ve observed an 86% reduction in the size of the dashboards, and some dashboards now load more than twice as fast.</p>
-
-
-
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-11 is-layout-flex wp-block-gallery-is-layout-flex"></figure>
-
-
-
-<figure class="wp-block-gallery has-nested-images columns-default is-cropped wp-block-gallery-12 is-layout-flex wp-block-gallery-is-layout-flex"></figure>
 ]]></content:encoded>
 					
-					<wfw:commentRss>./../optimizing-dashboard-performance-with-enhanced-image-management-3/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>./../optimizing-dashboard-performance-with-enhanced-image-management/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		

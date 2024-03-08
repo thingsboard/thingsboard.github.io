@@ -12,7 +12,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Wed, 06 Mar 2024 10:41:10 +0000</lastBuildDate>
+	<lastBuildDate>Thu, 07 Mar 2024 17:24:21 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -28,18 +28,18 @@
 	<height>32</height>
 </image> 
 	<item>
-		<title>Reliable T&#038;H monitoring with WhereView &#038; ThingsBoard</title>
-		<link>./../../../reliable-th-monitoring-with-whereview-thingsboard-2/index.html</link>
-					<comments>./../../../reliable-th-monitoring-with-whereview-thingsboard-2/index.html#respond</comments>
+		<title>Warehouse monitoring with ThingsBoard</title>
+		<link>./../../../warehouse-monitoring-with-thingsboard/index.html</link>
+					<comments>./../../../warehouse-monitoring-with-thingsboard/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Alex Doan]]></dc:creator>
 		<pubDate>Wed, 28 Feb 2024 12:48:44 +0000</pubDate>
-				<category><![CDATA[Business]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=3188</guid>
+				<category><![CDATA[Solutions]]></category>
+		<guid isPermaLink="false">http://wp.thingsboard.io/?p=3188</guid>
 
 					<description><![CDATA[Reliable and high-quality control of temperature and humidity with constant access to monitoring data is an important condition for the storage of thermosensitive drugs and raw materials for medicines. The ThingsBoard partner — Vypin together with our team has implemented a solution for a global pharmaceutical company. The IoT application has helped to optimize processes and costs.]]></description>
 										<content:encoded><![CDATA[
-<p style="font-size:16px">Reliable and high-quality control of temperature and humidity with constant access to monitoring data is an important condition for the storage of thermosensitive drugs and raw materials for medicines. The ThingsBoard partner — <a href="http://vypin.com/" target="_blank" rel="noreferrer noopener">Vypin</a>, together with our team, has implemented a solution for a global pharmaceutical company. The IoT application has helped to optimize processes and costs.</p>
+<p style="font-size:16px">Ensuring reliable and consistent monitoring of temperature and humidity is crucial for the proper storage of temperature-sensitive medications and perishable food products. Our partner, <a href="https://www.vypin.com/" target="_blank" rel="noreferrer noopener">Vypin</a>, has successfully deployed WhereView, a solution powered by ThingsBoard, for a leading global pharmaceutical corporation. This IoT application has significantly enhanced operational efficiency and cost-effectiveness.</p>
 
 
 
@@ -47,19 +47,19 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="./../../../wp-content/uploads/2024/02/5.svg" alt="" class="wp-image-3225"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/5.svg" alt="" class="wp-image-3225"/></figure>
 
 
 
-<h4 class="wp-block-heading">The problem</h4>
+<h4 class="wp-block-heading">The challenge</h4>
 
 
 
-<p style="font-size:16px">The FDA (The Food &amp; Drug Administration) has strict requirements and recommendations for pharmaceutical manufacturers, particularly regarding storage conditions and the control system to comply with these conditions (more about regulation can be found here). The customer asked  Vypin to replace the current system. The previous one didn’t meet the FDA standards, which was the reason for the fines and the potential risk of drug or component damage.</p>
+<p style="font-size:16px">The Food and Drug Administration (FDA) imposes stringent guidelines on pharmaceutical manufacturers concerning storage conditions and the regulatory compliance of control systems. The client approached Vypin with a request to overhaul their existing system, which failed to meet FDA standards, leading to penalties and the potential for product or ingredient spoilage.</p>
 
 
 
-<p style="font-size:16px">As they say in the medical field, the patient had specific complaints. First of all, data loss. Existing devices could go offline for various reasons (from network outages to power loss), but the transmission or recording of telemetry did not take place. But the client couldn’t find out about these or those losses, which was the second complaint. The current system does not provide a notification mechanism. In addition, monitoring data was not available remotely.</p>
+<p style="font-size:16px">The client&#8217;s primary concerns revolved around data loss. The then-existing devices were prone to disconnections due to various issues, such as network or power failures, leading to lapses in telemetry transmission or recording. Furthermore, the system lacked a mechanism for notifying the client about these disruptions. Additionally, there was no provision for remote access to monitoring data.</p>
 
 
 
@@ -69,46 +69,50 @@
 
 
 
-<h4 class="wp-block-heading has-text-align-left">Solution</h4>
+<h4 class="wp-block-heading has-text-align-left">The solution</h4>
 
 
 
-<p style="font-size:16px">To solve the problem, the Vypin team proposed an integrated Vypin-Whereview system (powered by ThingsBoard). The company built a wireless network, installed sensors and gateways</p>
+<p style="font-size:16px">In response, Vypin proposed the Vypin-WhereView system, leveraging ThingsBoard&#8217;s capabilities. The solution involved establishing a wireless network, along with the installation of sensors and gateways.</p>
 
 
 
-<p style="font-size:16px">If we mention one of the first problems (data loss), the new sensors now had a memory module and could record telemetry locally. When the gateway connection was lost, data loss (!) didn’t and doesn’t occur. When the online gateway returns, it picks up the accumulated telemetry and sends it to Whereview.</p>
+<p style="font-size:16px">Addressing the initial concern of data loss, the newly installed sensors were equipped with memory modules to store telemetry data locally. Thus, even in the event of a gateway disconnection, data integrity was maintained. Upon restoration of the gateway&#8217;s online status, it would retrieve and transmit the stored telemetry to WhereView.</p>
 
 
 
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="2409" height="1353" src="./../../../wp-content/uploads/2024/02/4-8.png" alt="" class="wp-image-3223" srcset="./../../../wp-content/uploads/2024/02/4-8.png 2409w, ./../../../wp-content/uploads/2024/02/4-8-300x168.png 300w, ./../../../wp-content/uploads/2024/02/4-8-1024x575.png 1024w, ./../../../wp-content/uploads/2024/02/4-8-768x431.png 768w, ./../../../wp-content/uploads/2024/02/4-8-1536x863.png 1536w, ./../../../wp-content/uploads/2024/02/4-8-2048x1150.png 2048w, ./../../../wp-content/uploads/2024/02/4-8-512x288.png 512w, ./../../../wp-content/uploads/2024/02/4-8-920x517.png 920w, ./../../../wp-content/uploads/2024/02/4-8-1600x899.png 1600w, ./../../../wp-content/uploads/2024/02/4-8-1920x1078.png 1920w, ./../../../wp-content/uploads/2024/02/4-8-1320x741.png 1320w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="2409" height="1353" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/4-8.png" alt="" class="wp-image-3223" srcset="./../../../wp-content/uploads/2024/02/4-8.png 2409w, ./../../../wp-content/uploads/2024/02/4-8-300x168.png 300w, ./../../../wp-content/uploads/2024/02/4-8-1024x575.png 1024w, ./../../../wp-content/uploads/2024/02/4-8-768x431.png 768w, ./../../../wp-content/uploads/2024/02/4-8-1536x863.png 1536w, ./../../../wp-content/uploads/2024/02/4-8-2048x1150.png 2048w, ./../../../wp-content/uploads/2024/02/4-8-512x288.png 512w, ./../../../wp-content/uploads/2024/02/4-8-920x517.png 920w, ./../../../wp-content/uploads/2024/02/4-8-1600x899.png 1600w, ./../../../wp-content/uploads/2024/02/4-8-1920x1078.png 1920w, ./../../../wp-content/uploads/2024/02/4-8-1320x741.png 1320w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
-<p style="font-size:16px">The application, built on TB, solved the rest of the customer&#8217;s problems. First, the client&#8217;s responsible employee gets access to the monitoring data at any time. Managers also received access.</p>
+<p style="font-size:16px">The WareView application, powered by ThingsBoard, resolved the outstanding concerns of reliable data processing and storage and enabled differentiated access levels. Designated personnel were granted comprehensive access, allowing them to monitor data from all warehouses at any time and location. In contrast, warehouse managers were provided with tailored access rights, enabling them to oversee only their specific warehouses.</p>
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="587" src="./../../../wp-content/uploads/2024/02/6-6-1024x587.png" alt="" class="wp-image-3228" srcset="./../../../wp-content/uploads/2024/02/6-6-1024x587.png 1024w, ./../../../wp-content/uploads/2024/02/6-6-300x172.png 300w, ./../../../wp-content/uploads/2024/02/6-6-768x440.png 768w, ./../../../wp-content/uploads/2024/02/6-6-1536x880.png 1536w, ./../../../wp-content/uploads/2024/02/6-6-2048x1173.png 2048w, ./../../../wp-content/uploads/2024/02/6-6-512x293.png 512w, ./../../../wp-content/uploads/2024/02/6-6-920x527.png 920w, ./../../../wp-content/uploads/2024/02/6-6-1600x917.png 1600w, ./../../../wp-content/uploads/2024/02/6-6-1920x1100.png 1920w, ./../../../wp-content/uploads/2024/02/6-6-1320x756.png 1320w, ./../../../wp-content/uploads/2024/02/6-6.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="587" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/6-6-1024x587.png" alt="" class="wp-image-3228" srcset="./../../../wp-content/uploads/2024/02/6-6-1024x587.png 1024w, ./../../../wp-content/uploads/2024/02/6-6-300x172.png 300w, ./../../../wp-content/uploads/2024/02/6-6-768x440.png 768w, ./../../../wp-content/uploads/2024/02/6-6-1536x880.png 1536w, ./../../../wp-content/uploads/2024/02/6-6-2048x1173.png 2048w, ./../../../wp-content/uploads/2024/02/6-6-512x293.png 512w, ./../../../wp-content/uploads/2024/02/6-6-920x527.png 920w, ./../../../wp-content/uploads/2024/02/6-6-1600x917.png 1600w, ./../../../wp-content/uploads/2024/02/6-6-1920x1100.png 1920w, ./../../../wp-content/uploads/2024/02/6-6-1320x756.png 1320w, ./../../../wp-content/uploads/2024/02/6-6.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
-<p style="font-size:16px">To see the Dashboard with graphs and tables, it is enough to open the corresponding tab in your own browser and log in.</p>
+<p style="font-size:16px">Accessing the dashboard, which displays various graphs and tables, simply requires logging into the system from a web browser.</p>
 
 
 
-<p style="font-size:16px">It makes sense to highlight that based on the rule engine and device profiles, Vypin set up a notification system. In case of violations of the specified conditions (for example, exceeding the temperature thresholds), notifications are received by those who should be aware of this recorded violation. This allows you to respond instantly and even take preventive measures.</p>
+<p style="font-size:16px">A noteworthy feature is the customized notification system, established through ThingsBoard&#8217;s rule engine and device profiles. This system alerts the relevant individuals in case of deviations from preset conditions, such as temperature threshold breaches. This feature facilitates immediate response and the implementation of preventive measures.</p>
 
 
 
-<h4 class="wp-block-heading has-text-align-left">Result </h4>
+<h4 class="wp-block-heading has-text-align-left">The outcome</h4>
 
 
 
-<p style="font-size:16px">Everyone understands that it is better (easier, cheaper, less time-consuming) to prevent a disease than to treat it. With the new warehouse monitoring system, the client (patient) has the opportunity for prevention.</p>
+<p style="font-size:16px">Prevention is universally acknowledged as more efficient, cost-effective, and less time-consuming than cure. With the newly installed warehouse monitoring system, the client now has the capability to proactively prevent issues before they arise, ensuring the safety and integrity of their sensitive products.</p>
+
+
+
+<p style="font-size:16px">This case study exemplifies the power of IoT in enhancing regulatory compliance and operational efficiency in critical industries such as pharmaceuticals. The Vypin-WhereView solution, backed by ThingsBoard, demonstrates our commitment to delivering innovative and reliable monitoring solutions.</p>
 ]]></content:encoded>
 					
-					<wfw:commentRss>./../../../reliable-th-monitoring-with-whereview-thingsboard-2/feed/index.html</wfw:commentRss>
+					<wfw:commentRss>./../../../warehouse-monitoring-with-thingsboard/feed/index.html</wfw:commentRss>
 			<slash:comments>0</slash:comments>
 		
 		
