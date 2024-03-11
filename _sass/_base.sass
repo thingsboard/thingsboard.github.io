@@ -1308,6 +1308,12 @@ section
           transition: 0ms
 
   .copy-code
+    pre.highlight
+      position: relative
+      display: grid
+      & > button.clipboard-btn, & > code
+        grid-row: 1
+        grid-column: 1
     .highlight
       background: none!important
       .customTooltip
@@ -1368,8 +1374,8 @@ section
         position: absolute
         width: 38px
         height: 38px
-        top: 3px
-        right: 3px
+        top: 0
+        right: 0
         padding: 10px
         img
           position: initial
