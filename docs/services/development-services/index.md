@@ -281,62 +281,64 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     <div class="close-button">
         <img class="close" src="/images/close-icon.svg" alt="Close"/>
     </div>
-    <div class="title">
-        <span>CONTACT US TODAY</span>
-    </div> 
-    <div class="sub-title">
-        <span>We are ready to develop your ideas</span>
+    <div class="sub-content">
+        <div class="title">
+            <span>CONTACT US TODAY</span>
+        </div> 
+        <div class="sub-title">
+            <span>We are ready to develop your ideas</span>
+        </div>
+        <div class="sub-sub-title">
+            <span>Please fill out the form below and we will get back to you within 1-2 business days. 
+            We are looking forward to hearing from you!</span>
+        </div>
+        <form id="contact-form" method="post" onsubmit="return validateContactForm(this)">
+            <div class="form-section">
+                <div class="form-element">
+                    <label for="first-name">
+                        <input id="first-name" class="cdu-form-control" value="" placeholder="Your Name" name="first-name" type="text" size="40" maxlength="50">
+                        <p>Name*</p>
+                    </label>
+                </div>
+                <div class="form-element">
+                    <label for="email">
+                        <input id="email" class="cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                        <p>Email Address*</p>
+                    </label>
+                </div>
+            </div>
+            <div class="form-section secondary">
+                <div class="form-element next">
+                    <label for="subject" class="label-select">
+                        <select class="cdu-form-control" name="subject">
+                            <option value="Custom Development" selected>Custom Development</option>
+                            <option value="Technical Support">Technical Support</option>
+                            <option value="ThingsBoard Products">ThingsBoard Products</option>
+                            <option value="Deployment Options">Deployment Options</option>
+                            <option value="Training">Training</option>
+                            <option value="Professional Services">Professional Services</option>
+                            <option value="Partnership">Partnership</option>
+                            <option value="Press or Analyst Inquiry">Press or Analyst Inquiry</option>
+                            <option value="General Feedback">General Feedback</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <p>Subject*</p>
+                    </label>
+                </div>
+            </div>
+            <div class="form-section secondary">
+                <div class="form-element next">
+                    <label for="msg">
+                        <textarea id="msg" class="cdu-form-control cdu-text-area" value="" placeholder="Enter here..." name="message" type="text" size="40" maxlength="800"></textarea>
+                        <p>Your message*</p>
+                    </label>
+                </div>
+            </div>
+            <div class="submit-button-container">
+                <input class="cdu-button" value="Submit message" type="submit"/>
+            </div>
+        </form>
     </div>
-    <div class="sub-sub-title">
-        <span>Please fill out the form below and we will get back to you within 1-2 business days. 
-        We are looking forward to hearing from you!</span>
-    </div>
-    <form id="contact-form" method="post" onsubmit="return validateContactForm(this)">
-        <div class="form-section">
-            <div class="form-element">
-                <label for="first-name">
-                    <input id="first-name" class="cdu-form-control" value="" placeholder="Your Name" name="first-name" type="text" size="40" maxlength="50">
-                    <p>Name*</p>
-                </label>
-            </div>
-            <div class="form-element">
-                <label for="email">
-                    <input id="email" class="cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
-                    <p>Email Address*</p>
-                </label>
-            </div>
-        </div>
-        <div class="form-section" style="padding-top: 0px;">
-            <div class="form-element" style="width: 98%">
-                <label for="subject">
-                    <select class="cdu-form-control" name="subject" style="width: 100%">
-                        <option value="Custom Development" selected>Custom Development</option>
-                        <option value="Technical Support">Technical Support</option>
-                        <option value="ThingsBoard Products">ThingsBoard Products</option>
-                        <option value="Deployment Options">Deployment Options</option>
-                        <option value="Training">Training</option>
-                        <option value="Professional Services">Professional Services</option>
-                        <option value="Partnership">Partnership</option>
-                        <option value="Press or Analyst Inquiry">Press or Analyst Inquiry</option>
-                        <option value="General Feedback">General Feedback</option>
-                        <option value="Other">Other</option>
-                    </select>
-                    <p>Subject*</p>
-                </label>
-            </div>
-        </div>
-        <div class="form-section" style="padding-top: 0px;">
-            <div class="form-element" style="width: 98%">
-                <label for="msg">
-                    <textarea id="msg" class="cdu-form-control cdu-text-area" value="" placeholder="Enter here..." name="message" type="text" size="40" maxlength="800"></textarea>
-                    <p>Your message*</p>
-                </label>
-            </div>
-        </div>
-        <div class="submit-button-container">
-            <input class="cdu-button" value="Submit message" type="submit"/>
-        </div>
-    </form>
   </div>
 </div>
 
