@@ -10,7 +10,7 @@ https://m5stack.oss-cn-shenzhen.aliyuncs.com/resource/arduino/package_m5stack_in
 
 {% assign esp32ArduinoPreferences='
     ===
-        image: /images/devices-library/basic/arduino-ide/preferences.png
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/preferences.png
 '%}
 
 {% include images-gallery.liquid showListImageTitles="false" imageCollection=esp32ArduinoPreferences %}

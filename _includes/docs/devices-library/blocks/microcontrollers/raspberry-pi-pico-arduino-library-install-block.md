@@ -8,7 +8,7 @@
 
 {% assign esp32ArduinoPreferences='
     ===
-        image: /images/devices-library/basic/arduino-ide/preferences.png
+        image: https://img.thingsboard.io/devices-library/basic/arduino-ide/preferences.png
 '%}
 
 Install the board for Arduino IDE:

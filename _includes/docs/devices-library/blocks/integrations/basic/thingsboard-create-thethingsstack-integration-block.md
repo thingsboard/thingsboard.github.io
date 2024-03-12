@@ -6,19 +6,19 @@ To add a gateway, you can follow next steps:
 
 {% assign addGatewaySteps = '
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/1-tts-login.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/1-tts-login.png,
         title: Login to the cloud and open your console.
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/2-welcome-screen.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/2-welcome-screen.png,
         title: Select the "**Register a gateway**".
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/3-gateway-list.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/3-gateway-list.png,
         title: Press the "**Register gateway**" button.
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/4-register-gateway.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/4-register-gateway.png,
         title: Put information about the gateway (gateway EUI) and click the "**Register gateway**" button.
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/5-gateway-info.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/5-gateway-info.png,
         title: The gateway is added. You can see its status - disconnected.
 '%}
 
@@ -39,16 +39,16 @@ Now we need to configure application on The Things Stack. To do this please foll
 
 {% assign addIntegrationSteps = '
     === 
-        image: /images/devices-library/basic/integrations/thethingsstack/2-welcome-screen-application.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/2-welcome-screen-application.png,
         title: Open your console and click on the "<b>Create an application</b>".
     === 
-        image: /images/devices-library/basic/integrations/thethingsstack/3-create-application.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/3-create-application.png,
         title: Fill in the required fields about the application. Then click "**Create application**" button.
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/5-generate-new-api-key.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/5-generate-new-api-key.png,
         title: Go to the "<b>Integrations</b>" -> open the "<b>MQTT</b>" page in the left menu. Then, click on the "<b>Generate new API key</b>" button.
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/6-copy-access-key.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/6-copy-access-key.png,
         title: Copy and save the <b>password</b> (API key) (after leaving the page it won&#39;t be displayed).
 '%}
 
@@ -155,16 +155,16 @@ In the "**Connect**" step, you will need the following parameters:
 
 {% assign createTTSIntegration = '
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/1-create-tts-integration.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/1-create-tts-integration.png,
         title: Click "**plus**" icon in the upper right corner to add new integration. Select type "**The Things Stack Community**". Then, click "**Next**".
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/2-create-tts-integration-uplink.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/2-create-tts-integration-uplink.png,
         title: Paste the previously copied script to the Decoder function section. Click "**Next**".
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/3-create-tts-integration-downlink.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/3-create-tts-integration-downlink.png,
         title: Leave the "**Downlink data converter**" field empty. Click on "**Skip**" button.
     ===
-        image: /images/devices-library/basic/integrations/thethingsstack/4-create-tts-integration-configuration.png,
+        image: https://img.thingsboard.io/devices-library/basic/integrations/thethingsstack/4-create-tts-integration-configuration.png,
         title: Next, fill in the fields with your parameters. After, press "**Add**" button.
 '
 %}
@@ -185,4 +185,4 @@ To check integration connection you can do the following:
 
 If you see event **STARTED** and status **Success** it means that integration is successfully started and ready to receive messages.
 
-![Check integration connection](/images/devices-library/basic/integrations/check-integration-started.png)
+![Check integration connection](https://img.thingsboard.io/devices-library/basic/integrations/check-integration-started.png)
