@@ -10,32 +10,54 @@ code
 
 .highlighter-rouge
 	position: relative
-	button.expand-code-btn
-		position: absolute
-		bottom: -33px
-		right: 0
-		left: 0
-		margin-right: auto
-		margin-left: auto
-		display: flex
-		flex-direction: column
-		justify-content: center
-		align-items: center
-		color: #2a7dec
-		width: 130px
-		height: 30px
-		outline: none
-		div
-			width: 0
-			height: 0
-		div.collapsed
-			border-left: 20px solid transparent
-			border-right: 20px solid transparent
-			border-top: 13px solid #2a7dec
-		div.expanded
-			border-left: 20px solid transparent
-			border-right: 20px solid transparent
-			border-bottom: 13px solid #2a7dec
+	&[class*="expandable"]
+		pre.highlight
+			margin-bottom: 45px
+		button.expand-code-btn
+			position: absolute
+			bottom: -33px
+			right: 0
+			left: 0
+			margin-right: auto
+			margin-left: auto
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: center
+			color: #2a7dec
+			width: 130px
+			height: 30px
+			outline: none
+
+			.arrow
+				width: 0
+				height: 0
+				border-left: 20px solid transparent
+				border-right: 20px solid transparent
+				border-top: 13px solid #2a7dec
+
+			.collapse
+				display: none
+				margin-top: 0 !important
+
+		&[data-expanded="true"]
+			pre.highlight
+				height: max-content !important
+			button.expand-code-btn
+				.arrow
+					border-top: none
+					border-bottom: 13px solid #2a7dec
+				.collapse
+					display: block
+				.expand
+					display: none
+
+
+		&[data-expanded="false"]
+			button.expand-code-btn
+				.arrow
+					border-bottom: none
+					border-top: 13px solid #2a7dec
 
 div.highlight
 	margin-top: 12px
@@ -49,12 +71,13 @@ div.highlight
 			border: none
 			border-spacing: 0
 			width: 100%
-			table-layout: fixed
+			table-layout: auto
 			td
 				line-height: 28px
 				vertical-align: top
 			td.rouge-gutter
-				width: 50px
+				position: sticky
+				left: 0
 				padding: 8px 12px 8px 18px
 				text-align: right
 				background: #f9fbff
@@ -62,6 +85,8 @@ div.highlight
 					color: rgba(33, 37, 41, 0.6)
 			td.rouge-code
 				padding: 8px 16px
+				pre
+					width: max-content
 
 .highlight code span, code, pre code, pre
 	font-family: $mono-font

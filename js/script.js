@@ -855,14 +855,9 @@ var pushmenu = (function(){
 	let toggleBlocksIdsToTocsIds = {};
 	jqueryDefer(function() {
 		$(document).ready(function() {
-			const blocks = [];
+			const params = Qs.parse(window.location.search, { ignoreQueryPrefix: true });
 			$('.tb-content-toggle').each(function(index, contentToggleItem) {
-				blocks.push(contentToggleItem);
-			});
-
-			blocks.forEach(function(contentToggleItem) {
-				toggleBlocksIdsToTocsIds[contentToggleItem.id] = {};
-				initContentToggleHandler(contentToggleItem)
+				initContentToggleHandler(contentToggleItem, params[contentToggleItem.id]);
 			});
 		})
 	});
@@ -894,15 +889,10 @@ var pushmenu = (function(){
 				}
 			}
 		}
-
-		$('.tb-content-toggle#' + contentToggleItem.id + ' > .panel > .panel-heading > a.content-toggle-button').removeClass("active");
-		$(".tb-content-toggle#" + contentToggleItem.id + " > .panel > .panel-heading > a.content-toggle-button[data-target='#" + targetId + "']").addClass("active");
-		$(".tb-content-toggle#" + contentToggleItem.id +  " > .panel > .panel-collapse").removeClass("show");
-		$(".tb-content-toggle#" + contentToggleItem.id +  " > .panel > .panel-collapse#" + targetId).addClass("show");
+		applyCurrentToggleContent(contentToggleItem, targetId);
 	}
 
 	function replaceHashWithHeading(id) {
-		const headers = $('#' + id).find(":header");
 		const filteredHeaders = $('#' + id).find('p');
 		const siblingParagraphs = $(filteredHeaders).map(function(idx, el) {
 			return $(el).nextAll('p:first');
@@ -919,38 +909,38 @@ var pushmenu = (function(){
 		});
 	}
 
-	function initContentToggleHandler(contentToggleItem) {
-		let toggleBlocksIds = [];
-		$('#' + contentToggleItem.id + ' > .panel .panel-heading > a.content-toggle-button').each(function() {
-			toggleBlocksIds.push($(this).attr("data-target").substring(1));
-		});
-		let i = 0;
-		for (let id of toggleBlocksIds) {
+	function initContentToggleHandler(contentToggleItem, targetId) {
+        toggleBlocksIdsToTocsIds[contentToggleItem.id] = {};
+		$(contentToggleItem).find('> .panel > .panel-heading > a.content-toggle-button').each(function() {
+			const id = $(this).attr("data-target").substring(1);
 			toggleBlocksIdsToTocsIds[contentToggleItem.id][id] = [];
-			$('#' + id).find(":header").each(function() {
+			let i = 0;
+			$(contentToggleItem).find('#' + id).find(':header').each(function() {
 				let heading = $(this);
-				heading.attr("id", heading.attr("id") + i++);
+				heading.attr('id', heading.attr("id") + i++);
 				toggleBlocksIdsToTocsIds[contentToggleItem.id][id].push('markdown-toc-' + $(this).attr('id'));
 			});
 			replaceHashWithHeading(id);
-		}
+		});
 
 		window.addEventListener('popstate', function() {
 			onPopStateHandler(contentToggleItem);
 		});
 
-		onPopStateHandler(contentToggleItem);
+		if (!targetId) {
+			targetId = Object.keys(toggleBlocksIdsToTocsIds[contentToggleItem.id])[0];
+		}
+		applyCurrentToggleContent(contentToggleItem, targetId);
 
-		$('.tb-content-toggle#' + contentToggleItem.id + ' > .panel > .panel-heading > a.content-toggle-button')
+		$(contentToggleItem).find('> .panel > .panel-heading > a.content-toggle-button')
 			.each((idx,element) => parseButtons(element, contentToggleItem));
+	}
 
-		const firstId = Object.keys(toggleBlocksIdsToTocsIds[contentToggleItem.id])[0];
-
-		$('.tb-content-toggle#' + contentToggleItem.id + ' > .panel > .panel-heading > a.content-toggle-button').removeClass("active");
-		$(".tb-content-toggle#" + contentToggleItem.id + " > .panel > .panel-heading > a.content-toggle-button[data-target='#" + firstId + "']").addClass("active");
-
-		$(".tb-content-toggle#" + contentToggleItem.id + " > .panel > .panel-collapse").removeClass("show");
-		$(".tb-content-toggle#" + contentToggleItem.id + " > .panel > .panel-collapse#" + firstId).addClass("show");
+	function applyCurrentToggleContent(contentToggleItem, targetId) {
+		$(contentToggleItem).find('> .panel > .panel-heading > a.content-toggle-button').removeClass('active');
+		$(contentToggleItem).find('> .panel > .panel-heading > a.content-toggle-button[data-target="#' + targetId + '\"]').addClass('active');
+		$(contentToggleItem).find('> .panel > .panel-collapse').removeClass('show');
+		$(contentToggleItem).find('> .panel > .panel-collapse#' + targetId).addClass('show');
 	}
 
 	function parseButtons(element, contentToggleItem) {
@@ -967,6 +957,118 @@ var pushmenu = (function(){
 			}
 			window.history.pushState({ path: newurl }, '', newurl);
 			selectTargetHandler(contentToggleItem, id);
+		});
+	}
+})();
+
+// expand-code-blocks-button AND copy-code button
+
+(function () {
+	jqueryDefer(function () {
+		$(document).on('selectionchange', function () {
+			$('.clipboard-btn').removeClass('noChars');
+			const selectedChars = getSelectedText();
+			if (selectedChars == 0) {
+				$('.clipboard-btn').addClass('noChars');
+			}
+		});
+
+		$(document).ready(function () {
+			$('.copy-code').each(function (index, codeBlocksItem) {
+				const classes = $(codeBlocksItem).attr('class').split(' ');
+				const expandableClass = classes.find(className => className.startsWith('expandable'));
+				if (classes && expandableClass) {
+					const rows = parseInt(expandableClass.split('-')[1]);
+					addExpandButton(codeBlocksItem, rows);
+				}
+			});
+			parseAllCodeBlocks();
+		})
+	});
+
+	function addExpandButton(codeBlock, rows) {
+		const pre = $(codeBlock).find('pre').first();
+		let collapsedHeight = rows * 28 + 5;
+		pre.css('height', collapsedHeight + 'px');
+
+		let button = $('<button class="expand-code-btn"><div class="arrow"></div><p class="btn-text expand">expand</p><p class="btn-text collapse">collapse</p></button>');
+
+		button.on('click', function () {
+			if ($(codeBlock).attr('data-expanded') === 'true') {
+				$(codeBlock).attr('data-expanded', 'false');
+				codeBlock.scrollIntoView({ block: "start" });
+			} else {
+				$(codeBlock).attr('data-expanded', 'true');
+			}
+		});
+
+		$(codeBlock).append(button);
+	}
+
+	const clipboard = new Clipboard('.noChars');
+	clipboard.on('success', function (e) {
+		$('.clipboard-btn').removeClass('noChars');
+		e.clearSelection();
+		const trigger = e.trigger;
+		if (!$(trigger).attr('data-skip-tooltip')) {
+			showTooltip(e.trigger, 'Copied!');
+		} else {
+			$(trigger).removeAttr('data-skip-tooltip');
+		}
+	});
+
+	function clearTooltip(e) {
+		const el = $(e.currentTarget);
+		el.removeClass('showTool');
+		el.attr('aria-label', null);
+	}
+
+	function showTooltip(elem, msg) {
+		const el = $(elem);
+		el.addClass('showTool');
+		el.attr('aria-label', msg);
+	}
+
+	function getSelectedText() {
+		let text;
+		if (window.getSelection) {
+			text = window.getSelection().toString();
+		} else if (document.getSelection) {
+			text = document.getSelection();
+		} else if (document.selection) {
+			text = document.selection.createRange().text;
+		}
+		return text;
+	}
+
+	function parseAllCodeBlocks() {
+		const allCodeBlocksElements = $(".highlighter-rouge");
+		allCodeBlocksElements.each(function (i) {
+			const codeBlock = $(this);
+			if (codeBlock.hasClass('copy-code')) {
+				codeBlock.each(function () {
+					const block = codeBlock.find('pre.highlight > code .rouge-code');
+					const currentId = "codeblock" + (i + 1);
+					block.attr('id', currentId);
+					const clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><p>Copy to clipboard</p><div><img src="/images/copy-code-icon.svg" alt="Copy to clipboard"></div></button>');
+					const copyCodeButtonContainer = $(this).find('.highlight pre.highlight');
+					copyCodeButtonContainer.prepend(clipButton);
+					copyCodeButtonContainer.find('table').css('transform', 'translateY(-46px)');
+					const Tooltip = $('<div class="customTooltip"><div class="tooltipText">Copied!</div></div>');
+					copyCodeButtonContainer.append(Tooltip);
+					copyCodeButtonContainer.addClass('clipboard-btn');
+					copyCodeButtonContainer.attr('data-clipboard-target', "#" + currentId);
+					copyCodeButtonContainer.on('mouseleave', clearTooltip);
+					copyCodeButtonContainer.on('blur', clearTooltip);
+					copyCodeButtonContainer.on('click', function (e) {
+						const el = $(e.currentTarget);
+						if (el.hasClass('showTool')) {
+							clearTooltip(e);
+							copyCodeButtonContainer.attr('data-skip-tooltip', "true");
+						}
+					});
+				});
+			}
 		});
 	}
 })();

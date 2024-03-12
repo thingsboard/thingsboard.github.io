@@ -1,7 +1,7 @@
 
 Install the board for Arduino IDE: 
 
-Go to **File** > **Preferences** and add the following URL to the Additional Boards Manager URLs field:
+Go to **File** > **Preferences** and add the following URL to the **Additional Boards Manager URLs** field.  
 
 ```bash 
 https://dl.espressif.com/dl/package_esp32_index.json
