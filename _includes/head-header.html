@@ -364,28 +364,37 @@
                             submenus.css('display', 'none');
                             menuItems.removeClass('active');
                             item.addClass('active');
-                            let targetSubMenu = $('nav.head-menu > div.sub-menu-container > div#'+subMenuId);
-                            targetSubMenu.css('display', 'block');
-                            submenuContainer.css('overflow', 'visible');
-                            let offset = (item.outerWidth() - targetSubMenu.outerWidth()) / 2;
-                            let left = item.position().left + offset;
-                            let windowOverflow = window.innerWidth - (item.offset().left + offset + targetSubMenu.outerWidth());
-                            if (windowOverflow < 0) {
-                                left += windowOverflow;
-                            }
-                            submenuContainer.css('left', left + 'px');
-                            if (!subMenuActive) {
-                                submenuContainer.addClass('active');
-                                subMenuActive = true;
+                            if (subMenuId) {
+                                let targetSubMenu = $('nav.head-menu > div.sub-menu-container > div#'+subMenuId);
+                                targetSubMenu.css('display', 'block');
+                                submenuContainer.css('overflow', 'visible');
+                                let offset = (item.outerWidth() - targetSubMenu.outerWidth()) / 2;
+                                let left = item.position().left + offset;
+                                let windowOverflow = window.innerWidth - (item.offset().left + offset + targetSubMenu.outerWidth());
+                                indicator.css('opacity', 1);
+                                if (windowOverflow < 0) {
+                                    left += windowOverflow;
+                                }
+                                submenuContainer.css('left', left + 'px');
+                                if (!subMenuActive) {
+                                    submenuContainer.addClass('active');
+                                    subMenuActive = true;
+                                } else {
+                                    submenuContainer.addClass('bounds-transition');
+                                    indicator.addClass('left-transition');
+                                }
+                                indicator.css('left', item.position().left);
+                                indicator.css('width', item.outerWidth());
+                                submenuContainer.css('height', targetSubMenu.outerHeight() + 'px');
+                                submenuContainer.css('width', targetSubMenu.outerWidth() + 'px');
+                                submenuContainer.css('overflow', 'hidden');
                             } else {
-                                submenuContainer.addClass('bounds-transition');
-                                indicator.addClass('left-transition');
+                                if (subMenuActive) {
+                                    submenuContainer.removeClass('active');
+                                    subMenuActive = false;
+                                }
+                                indicator.css('opacity', 0);
                             }
-                            indicator.css('left', item.position().left);
-                            indicator.css('width', item.outerWidth());
-                            submenuContainer.css('height', targetSubMenu.outerHeight() + 'px');
-                            submenuContainer.css('width', targetSubMenu.outerWidth() + 'px');
-                            submenuContainer.css('overflow', 'hidden');
                         }
                     }, 100)
                 });
@@ -515,6 +524,9 @@
             </li>
             <li class="nav-docs" data-submenu-id="nav-docs">
                 <span class="main-menu-link" onclick="listburg('nav-docs')">Docs</span>
+            </li>
+            <li class="nav-blog">
+                <a class="main-menu-link" id="blog-link" href="/blog/" style="cursor: pointer;">Blog</a>
             </li>
             <div class="indicator"><div class="head-arrow"></div><div class="line"></div><div class="sub-background"></div></div>
         </ul>
@@ -910,7 +922,7 @@
                                     <span class="item-heading">Media Kit</span>
                                 </div>
                             </a>
-                            <a class="small-link" href="https://blog.thingsboard.io/">
+                            <a class="small-link" href="/blog/">
                                 <img src="/images/blog-s-icon.svg" alt="Blog icon" width="24" height="24" loading="lazy">
                                 <div class="sub-text">
                                     <span class="item-heading">Blog</span>
