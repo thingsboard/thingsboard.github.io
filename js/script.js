@@ -1053,7 +1053,6 @@ var pushmenu = (function(){
 					const clipButton = $('<button class="clipboard-btn" data-clipboard-target="#' + currentId + '"><p>Copy to clipboard</p><div><img src="/images/copy-code-icon.svg" alt="Copy to clipboard"></div></button>');
 					const copyCodeButtonContainer = $(this).find('.highlight pre.highlight');
 					copyCodeButtonContainer.prepend(clipButton);
-					copyCodeButtonContainer.find('table').css('transform', 'translateY(-46px)');
 					const Tooltip = $('<div class="customTooltip"><div class="tooltipText">Copied!</div></div>');
 					copyCodeButtonContainer.append(Tooltip);
 					copyCodeButtonContainer.addClass('clipboard-btn');
