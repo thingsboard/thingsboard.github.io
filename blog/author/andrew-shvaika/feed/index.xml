@@ -12,7 +12,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Fri, 08 Mar 2024 10:57:54 +0000</lastBuildDate>
+	<lastBuildDate>Tue, 12 Mar 2024 10:37:26 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -49,7 +49,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="2409" height="933" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Notifications-to-app-3.png" alt="Your IoT application. Available on the Google Play and App Store" class="wp-image-3590" srcset="./../../../wp-content/uploads/2024/03/Notifications-to-app-3.png 2409w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-300x116.png 300w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-1024x397.png 1024w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-768x297.png 768w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-1536x595.png 1536w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-2048x793.png 2048w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-512x198.png 512w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-920x356.png 920w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-1600x620.png 1600w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-3-1920x744.png 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="2409" height="933" src="./../../../wp-content/uploads/2024/03/Notifications-to-app-4.png" alt="" class="wp-image-3639" srcset="./../../../wp-content/uploads/2024/03/Notifications-to-app-4.png 2409w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-4-300x116.png 300w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-4-1024x397.png 1024w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-4-768x297.png 768w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-4-1536x595.png 1536w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-4-2048x793.png 2048w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-4-512x198.png 512w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-4-920x356.png 920w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-4-1600x620.png 1600w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-4-1920x744.png 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
@@ -61,11 +61,11 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" width="2406" height="1290" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Chart-widgets.png" alt="The picture shows how charts can be displayed on a dashboard" class="wp-image-3522" srcset="./../../../wp-content/uploads/2024/03/Chart-widgets.png 2406w, ./../../../wp-content/uploads/2024/03/Chart-widgets-300x161.png 300w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1024x549.png 1024w, ./../../../wp-content/uploads/2024/03/Chart-widgets-768x412.png 768w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1536x824.png 1536w, ./../../../wp-content/uploads/2024/03/Chart-widgets-2048x1098.png 2048w, ./../../../wp-content/uploads/2024/03/Chart-widgets-512x275.png 512w, ./../../../wp-content/uploads/2024/03/Chart-widgets-920x493.png 920w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1600x858.png 1600w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1920x1029.png 1920w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1320x708.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+<figure class="wp-block-image size-full"><img decoding="async" width="2406" height="1290" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Chart-widgets.png" alt="The picture shows how charts can be displayed on a dashboard" class="wp-image-3522" srcset="./../../../wp-content/uploads/2024/03/Chart-widgets.png 2406w, ./../../../wp-content/uploads/2024/03/Chart-widgets-300x161.png 300w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1024x549.png 1024w, ./../../../wp-content/uploads/2024/03/Chart-widgets-768x412.png 768w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1536x824.png 1536w, ./../../../wp-content/uploads/2024/03/Chart-widgets-2048x1098.png 2048w, ./../../../wp-content/uploads/2024/03/Chart-widgets-512x275.png 512w, ./../../../wp-content/uploads/2024/03/Chart-widgets-920x493.png 920w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1600x858.png 1600w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1920x1029.png 1920w, ./../../../wp-content/uploads/2024/03/Chart-widgets-1320x708.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
 
 
 
-<p>We&#8217;re excited to introduce a suite of advanced visualization widgets powered by <a href="https://echarts.apache.org/en/index.html">Apache ECharts</a> to enhance your data analysis and presentation capabilities. This includes the new <strong>Time Series </strong>chart that now may combine lines and bars on the same widget. We have also added two new <strong>Bar </strong>charts to display data via bars with or without labels. Our priority was not only to deliver powerful and pretty charts but also to simplify the widget configuration experience. We hope you enjoy new data visualization capabilities!</p>
+<p>We&#8217;re excited to introduce a suite of advanced visualization widgets powered by <a href="https://echarts.apache.org/en/index.html">Apache ECharts</a> to enhance your data analysis and presentation capabilities. This includes the new <strong>Time Series </strong>chart that now may combine lines and bars on the same widget. We have also added two new <strong>Bar </strong>charts to display data via bars with or without labels. Our priority was not only to deliver powerful and pretty charts but also to simplify the widget configuration experience. We hope you enjoy new data visualization capabilities! </p>
 
 
 
@@ -73,7 +73,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="1014" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1024x1014.png" alt="Widget show new grouping intervals: Week (Sun-Sat), Week (Mon-Sun), Month, and Quarter for ThingsBoard Dashboards." class="wp-image-3542" srcset="./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1024x1014.png 1024w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-300x297.png 300w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-150x150.png 150w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-768x760.png 768w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1536x1521.png 1536w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-2048x2028.png 2048w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-148x148.png 148w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-512x507.png 512w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-920x911.png 920w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1600x1584.png 1600w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1920x1901.png 1920w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1320x1307.png 1320w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals.png 2406w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="755" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-1024x755.png" alt="" class="wp-image-3665" srcset="./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-1024x755.png 1024w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-300x221.png 300w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-768x566.png 768w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-1536x1132.png 1536w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-2048x1509.png 2048w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-512x377.png 512w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-920x678.png 920w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-1600x1179.png 1600w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-1920x1415.png 1920w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4.png 2406w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
 
 
 
@@ -85,7 +85,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="789" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Button-widgets.png" alt="Widget buttons: Action button, command button, toggle button, power button" class="wp-image-3521" srcset="./../../../wp-content/uploads/2024/03/Button-widgets.png 2406w, ./../../../wp-content/uploads/2024/03/Button-widgets-300x98.png 300w, ./../../../wp-content/uploads/2024/03/Button-widgets-1024x336.png 1024w, ./../../../wp-content/uploads/2024/03/Button-widgets-768x252.png 768w, ./../../../wp-content/uploads/2024/03/Button-widgets-1536x504.png 1536w, ./../../../wp-content/uploads/2024/03/Button-widgets-2048x672.png 2048w, ./../../../wp-content/uploads/2024/03/Button-widgets-512x168.png 512w, ./../../../wp-content/uploads/2024/03/Button-widgets-920x302.png 920w, ./../../../wp-content/uploads/2024/03/Button-widgets-1600x525.png 1600w, ./../../../wp-content/uploads/2024/03/Button-widgets-1920x630.png 1920w, ./../../../wp-content/uploads/2024/03/Button-widgets-1320x433.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="789" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Button-widgets.png" alt="Widget buttons: Action button, command button, toggle button, power button" class="wp-image-3521" srcset="./../../../wp-content/uploads/2024/03/Button-widgets.png 2406w, ./../../../wp-content/uploads/2024/03/Button-widgets-300x98.png 300w, ./../../../wp-content/uploads/2024/03/Button-widgets-1024x336.png 1024w, ./../../../wp-content/uploads/2024/03/Button-widgets-768x252.png 768w, ./../../../wp-content/uploads/2024/03/Button-widgets-1536x504.png 1536w, ./../../../wp-content/uploads/2024/03/Button-widgets-2048x672.png 2048w, ./../../../wp-content/uploads/2024/03/Button-widgets-512x168.png 512w, ./../../../wp-content/uploads/2024/03/Button-widgets-920x302.png 920w, ./../../../wp-content/uploads/2024/03/Button-widgets-1600x525.png 1600w, ./../../../wp-content/uploads/2024/03/Button-widgets-1920x630.png 1920w, ./../../../wp-content/uploads/2024/03/Button-widgets-1320x433.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
 
 
 
@@ -97,7 +97,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="915" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Control-widgets.png" alt="Samples of control widgets: switch on and slider 48%" class="wp-image-3523" srcset="./../../../wp-content/uploads/2024/03/Control-widgets.png 2406w, ./../../../wp-content/uploads/2024/03/Control-widgets-300x114.png 300w, ./../../../wp-content/uploads/2024/03/Control-widgets-1024x389.png 1024w, ./../../../wp-content/uploads/2024/03/Control-widgets-768x292.png 768w, ./../../../wp-content/uploads/2024/03/Control-widgets-1536x584.png 1536w, ./../../../wp-content/uploads/2024/03/Control-widgets-2048x779.png 2048w, ./../../../wp-content/uploads/2024/03/Control-widgets-512x195.png 512w, ./../../../wp-content/uploads/2024/03/Control-widgets-920x350.png 920w, ./../../../wp-content/uploads/2024/03/Control-widgets-1600x608.png 1600w, ./../../../wp-content/uploads/2024/03/Control-widgets-1920x730.png 1920w, ./../../../wp-content/uploads/2024/03/Control-widgets-1320x502.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="915" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Control-widgets.png" alt="Samples of control widgets: switch on and slider 48%" class="wp-image-3523" srcset="./../../../wp-content/uploads/2024/03/Control-widgets.png 2406w, ./../../../wp-content/uploads/2024/03/Control-widgets-300x114.png 300w, ./../../../wp-content/uploads/2024/03/Control-widgets-1024x389.png 1024w, ./../../../wp-content/uploads/2024/03/Control-widgets-768x292.png 768w, ./../../../wp-content/uploads/2024/03/Control-widgets-1536x584.png 1536w, ./../../../wp-content/uploads/2024/03/Control-widgets-2048x779.png 2048w, ./../../../wp-content/uploads/2024/03/Control-widgets-512x195.png 512w, ./../../../wp-content/uploads/2024/03/Control-widgets-920x350.png 920w, ./../../../wp-content/uploads/2024/03/Control-widgets-1600x608.png 1600w, ./../../../wp-content/uploads/2024/03/Control-widgets-1920x730.png 1920w, ./../../../wp-content/uploads/2024/03/Control-widgets-1320x502.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
 
 
 
@@ -128,8 +128,7 @@
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
 		<pubDate>Mon, 26 Feb 2024 11:54:34 +0000</pubDate>
-				<category><![CDATA[Solutions]]></category>
-		<category><![CDATA[Tech]]></category>
+				<category><![CDATA[Tech]]></category>
 		<guid isPermaLink="false">http://wp.thingsboard.io/?p=2970</guid>
 
 					<description><![CDATA[Welcome to the latest update from the ThingsBoard team! Our ongoing mission to improve the platform&#8217;s functionality and&#8230;]]></description>
@@ -146,7 +145,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Buttons.svg" alt="" class="wp-image-3106"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Buttons.svg" alt="" class="wp-image-3106"/></figure>
 
 
 
@@ -154,7 +153,7 @@
 
 
 
-<div class="wp-block-file"><a id="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a" href="http://wp.thingsboard.io/wp-content/uploads/2024/02/tb-dynamic_button_states.json">tb_dynamic_button_states.json</a><a href="http://wp.thingsboard.io/wp-content/uploads/2024/02/tb-dynamic_button_states.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a">Download</a></div>
+<div class="wp-block-file"><a id="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a" href="https://wp.thingsboard.io/wp-content/uploads/2024/02/tb-dynamic_button_states.json">tb_dynamic_button_states.json</a><a href="https://wp.thingsboard.io/wp-content/uploads/2024/02/tb-dynamic_button_states.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-2b8b2412-a70d-486d-bfd5-d21e65230e9a">Download</a></div>
 
 
 
@@ -162,7 +161,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Add-widget-2.svg" alt="" class="wp-image-3126"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Add-widget-2.svg" alt="" class="wp-image-3126"/></figure>
 
 
 
@@ -170,7 +169,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Appearance-3.svg" alt="" class="wp-image-3108"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Appearance-3.svg" alt="" class="wp-image-3108"/></figure>
 
 
 
@@ -178,7 +177,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Button-use-cases.svg" alt="" class="wp-image-3109"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Button-use-cases.svg" alt="" class="wp-image-3109"/></figure>
 
 
 
@@ -186,7 +185,7 @@
 
 
 
-<div class="wp-block-file"><a id="wp-block-file--media-fd741ad2-e692-4a03-9a23-812a9f191991" href="http://wp.thingsboard.io/wp-content/uploads/2024/02/button_use_cases.json">button_use_cases.json</a></div>
+<div class="wp-block-file"><a id="wp-block-file--media-fd741ad2-e692-4a03-9a23-812a9f191991" href="https://wp.thingsboard.io/wp-content/uploads/2024/02/button_use_cases.json">button_use_cases.json</a></div>
 
 
 
@@ -256,7 +255,7 @@
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Execute-RPC-action-7.svg" alt="" class="wp-image-3110"/></figure></div>
+<figure class="aligncenter size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Execute-RPC-action-7.svg" alt="" class="wp-image-3110"/></figure></div>
 
 
 <p style="font-size:16px">By default, we use an un-persisted command with 5 seconds timeout. You may change the command parameters in the advanced settings of the action.</p>
@@ -267,28 +266,28 @@
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Set-attribute-action-8.svg" alt="" class="wp-image-3111"/></figure></div>
+<figure class="aligncenter size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Set-attribute-action-8.svg" alt="" class="wp-image-3111"/></figure></div>
 
 
 <p style="font-size:16px"><strong>Add time-series action</strong> allows you to add the new time-series value for the particular entity. The action configuration form allows you to configure the time-series data key and value. The value may be configured as a constant or result of function execution. </p>
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Add-time-series-action-9.svg" alt="" class="wp-image-3112"/></figure></div>
+<figure class="aligncenter size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Add-time-series-action-9.svg" alt="" class="wp-image-3112"/></figure></div>
 
 
 <p style="font-size:16px">You may dynamically disable the button based on certain values of the attribute or time-series key. For example, the dashboard attached below contains two buttons that switch the state of the user&#8217;s attribute &#8220;state&#8221;. When the user presses button A, it becomes disabled, and vice versa.</p>
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full is-resized"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Disabled-state-10.svg" alt="" class="wp-image-3113" style="width:822px;height:auto"/></figure></div>
+<figure class="aligncenter size-full is-resized"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Disabled-state-10.svg" alt="" class="wp-image-3113" style="width:822px;height:auto"/></figure></div>
 
 
 <p style="font-size:16px">You may find the sample dashboard JSON below: </p>
 
 
 
-<div class="wp-block-file"><a id="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae" href="http://wp.thingsboard.io/wp-content/uploads/2024/02/command_buttons.json">command_buttons.json</a><a href="http://wp.thingsboard.io/wp-content/uploads/2024/02/command_buttons.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae">Download</a></div>
+<div class="wp-block-file"><a id="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae" href="https://wp.thingsboard.io/wp-content/uploads/2024/02/command_buttons.json">command_buttons.json</a><a href="https://wp.thingsboard.io/wp-content/uploads/2024/02/command_buttons.json" class="wp-block-file__button wp-element-button" download aria-describedby="wp-block-file--media-8508d6eb-4fb5-4e33-b266-136f058048ae">Download</a></div>
 
 
 
@@ -308,7 +307,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Toggle-button-widget-1.svg" alt="" class="wp-image-3115"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Toggle-button-widget-1.svg" alt="" class="wp-image-3115"/></figure>
 
 
 
@@ -316,7 +315,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Behavior-1.svg" alt="" class="wp-image-3121"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Behavior-1.svg" alt="" class="wp-image-3121"/></figure>
 
 
 
@@ -324,7 +323,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Behavior123-1.svg" alt="" class="wp-image-3122"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Behavior123-1.svg" alt="" class="wp-image-3122"/></figure>
 
 
 
@@ -332,7 +331,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Button-appearance-1.svg" alt="" class="wp-image-3123"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Button-appearance-1.svg" alt="" class="wp-image-3123"/></figure>
 
 
 
@@ -340,7 +339,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="208" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Buttons123.png" alt="" class="wp-image-3120" srcset="./../../../wp-content/uploads/2024/02/Buttons123.png 803w, ./../../../wp-content/uploads/2024/02/Buttons123-300x78.png 300w, ./../../../wp-content/uploads/2024/02/Buttons123-768x199.png 768w, ./../../../wp-content/uploads/2024/02/Buttons123-512x133.png 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="208" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Buttons123.png" alt="" class="wp-image-3120" srcset="./../../../wp-content/uploads/2024/02/Buttons123.png 803w, ./../../../wp-content/uploads/2024/02/Buttons123-300x78.png 300w, ./../../../wp-content/uploads/2024/02/Buttons123-768x199.png 768w, ./../../../wp-content/uploads/2024/02/Buttons123-512x133.png 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
 
 
 
@@ -352,7 +351,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Power-button-widget.svg" alt="" class="wp-image-3124"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Power-button-widget.svg" alt="" class="wp-image-3124"/></figure>
 
 
 
@@ -360,7 +359,7 @@
 
 
 <div class="wp-block-image">
-<figure class="aligncenter size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Button-appearance-2.svg" alt="" class="wp-image-3125"/></figure></div>
+<figure class="aligncenter size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Button-appearance-2.svg" alt="" class="wp-image-3125"/></figure></div>
 
 
 <p style="font-size:16px">The Power button widget enables remote control of devices across sectors: turning smart home appliances on/off, managing industrial equipment, controlling servers, adjusting energy sources, operating irrigation systems, managing healthcare devices, retail displays, and public lighting, showcasing its versatility in simplifying power management in IoT applications.</p>
@@ -415,7 +414,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="902" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Image-gallery.png" alt="" class="wp-image-3348" srcset="./../../../wp-content/uploads/2024/03/Image-gallery.png 1604w, ./../../../wp-content/uploads/2024/03/Image-gallery-300x169.png 300w, ./../../../wp-content/uploads/2024/03/Image-gallery-1024x576.png 1024w, ./../../../wp-content/uploads/2024/03/Image-gallery-768x432.png 768w, ./../../../wp-content/uploads/2024/03/Image-gallery-1536x864.png 1536w, ./../../../wp-content/uploads/2024/03/Image-gallery-512x288.png 512w, ./../../../wp-content/uploads/2024/03/Image-gallery-920x517.png 920w, ./../../../wp-content/uploads/2024/03/Image-gallery-1600x900.png 1600w, ./../../../wp-content/uploads/2024/03/Image-gallery-1320x742.png 1320w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="902" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Image-gallery.png" alt="" class="wp-image-3348" srcset="./../../../wp-content/uploads/2024/03/Image-gallery.png 1604w, ./../../../wp-content/uploads/2024/03/Image-gallery-300x169.png 300w, ./../../../wp-content/uploads/2024/03/Image-gallery-1024x576.png 1024w, ./../../../wp-content/uploads/2024/03/Image-gallery-768x432.png 768w, ./../../../wp-content/uploads/2024/03/Image-gallery-1536x864.png 1536w, ./../../../wp-content/uploads/2024/03/Image-gallery-512x288.png 512w, ./../../../wp-content/uploads/2024/03/Image-gallery-920x517.png 920w, ./../../../wp-content/uploads/2024/03/Image-gallery-1600x900.png 1600w, ./../../../wp-content/uploads/2024/03/Image-gallery-1320x742.png 1320w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
 
 
 
@@ -443,7 +442,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="902" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Edit-image.png" alt="" class="wp-image-3345" srcset="./../../../wp-content/uploads/2024/03/Edit-image.png 1604w, ./../../../wp-content/uploads/2024/03/Edit-image-300x169.png 300w, ./../../../wp-content/uploads/2024/03/Edit-image-1024x576.png 1024w, ./../../../wp-content/uploads/2024/03/Edit-image-768x432.png 768w, ./../../../wp-content/uploads/2024/03/Edit-image-1536x864.png 1536w, ./../../../wp-content/uploads/2024/03/Edit-image-512x288.png 512w, ./../../../wp-content/uploads/2024/03/Edit-image-920x517.png 920w, ./../../../wp-content/uploads/2024/03/Edit-image-1600x900.png 1600w, ./../../../wp-content/uploads/2024/03/Edit-image-1320x742.png 1320w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="902" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Edit-image.png" alt="" class="wp-image-3345" srcset="./../../../wp-content/uploads/2024/03/Edit-image.png 1604w, ./../../../wp-content/uploads/2024/03/Edit-image-300x169.png 300w, ./../../../wp-content/uploads/2024/03/Edit-image-1024x576.png 1024w, ./../../../wp-content/uploads/2024/03/Edit-image-768x432.png 768w, ./../../../wp-content/uploads/2024/03/Edit-image-1536x864.png 1536w, ./../../../wp-content/uploads/2024/03/Edit-image-512x288.png 512w, ./../../../wp-content/uploads/2024/03/Edit-image-920x517.png 920w, ./../../../wp-content/uploads/2024/03/Edit-image-1600x900.png 1600w, ./../../../wp-content/uploads/2024/03/Edit-image-1320x742.png 1320w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
 
 
 
@@ -491,7 +490,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/Embed-image.svg" alt="" class="wp-image-3132"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Embed-image.svg" alt="" class="wp-image-3132"/></figure>
 
 
 
@@ -503,7 +502,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="http://wp.thingsboard.io/wp-content/uploads/2024/02/ThingsBoard.svg" alt="" class="wp-image-3133"/></figure>
+<figure class="wp-block-image size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/ThingsBoard.svg" alt="" class="wp-image-3133"/></figure>
 
 
 

@@ -44,7 +44,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
             /* <![CDATA[ */
             var rcewpp = {
                 "ajax_url":".//wp-admin/admin-ajax.php",
-                "nonce": "cd7768561b",
+                "nonce": "92432f34ac",
                 "home_url": ".//",
                 "settings_icon": './/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings.png',
                 "settings_hover_icon": './/wp-content/plugins/export-wp-page-to-static-html/admin/images/settings_hover.png'
@@ -374,7 +374,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
     <div class="header-wrapper">
         <nav class="header-container">
             <div class="header_img_side">
-                <a href="https://thingsboard.io/blog"><img src="./../wp-content/uploads/2024/02/main-logo.png" class="main-logo"></a>
+                <a class="logo-link"><img src="./../wp-content/uploads/2024/02/main-logo.png" class="main-logo"></a>
 				<!-- Place this tag where you want the button to render. -->
 <a class="github-button" href="https://github.com/thingsboard/thingsboard" data-color-scheme="no-preference: light; light: light; dark: dark;" data-size="large" data-show-count="true" aria-label="Star thingsboard/thingsboard on GitHub">Star</a>
             </div>
@@ -386,7 +386,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
                     <li><a href="https://thingsboard.io/company/">Company</a></li>
                     <li><a href="https://thingsboard.io/partners/hardware/">Partners</a></li>
                     <li><a href="https://thingsboard.io/docs/">Docs</a></li>
-                    <li><a>Blog</a></li>
+                    <li><a href="https://thingsboard.io/blog/">Blog</a></li>
                 </ul>
             </div>
             <div class="cs-header__col cs-col-right">
@@ -450,13 +450,16 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 </div>
         </nav>
     </div>
-	<script async defer src="https://buttons.github.io/buttons.js">//adding menu burger on the some size, removing header navigation links to the menu burger</script>
-	<script>if(document.querySelector(".burger")){
+	<script async defer src="https://buttons.github.io/buttons.js"></script>
+	<script>//adding menu burger on the some size, removing header navigation links to the menu burger		
+		if(document.querySelector(".burger")){
 			document.querySelector('.burger').addEventListener('click', function() {
         		this.classList.toggle('active');
         		document.querySelector('.nav_side').classList.toggle('open');
       		});
-		};</script>
+		};
+	//domain url
+		document.querySelector('.logo-link').setAttribute("href", 'https://' + window.location.hostname + '/blog');</script>
 </header>
 
 		
@@ -517,7 +520,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" width="2409" height="933" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Notifications-to-app-3.png" alt="Your IoT application. Available on the Google Play and App Store" class="wp-image-3590" srcset="./../wp-content/uploads/2024/03/Notifications-to-app-3.png 2409w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-300x116.png 300w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-1024x397.png 1024w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-768x297.png 768w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-1536x595.png 1536w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-2048x793.png 2048w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-512x198.png 512w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-920x356.png 920w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-1600x620.png 1600w, ./../wp-content/uploads/2024/03/Notifications-to-app-3-1920x744.png 1920w" sizes="(max-width: 2409px) 100vw, 2409px"></figure>
+<figure class="wp-block-image size-full"><img decoding="async" width="2409" height="933" src="./../wp-content/uploads/2024/03/Notifications-to-app-4.png" alt="" class="wp-image-3639" srcset="./../wp-content/uploads/2024/03/Notifications-to-app-4.png 2409w, ./../wp-content/uploads/2024/03/Notifications-to-app-4-300x116.png 300w, ./../wp-content/uploads/2024/03/Notifications-to-app-4-1024x397.png 1024w, ./../wp-content/uploads/2024/03/Notifications-to-app-4-768x297.png 768w, ./../wp-content/uploads/2024/03/Notifications-to-app-4-1536x595.png 1536w, ./../wp-content/uploads/2024/03/Notifications-to-app-4-2048x793.png 2048w, ./../wp-content/uploads/2024/03/Notifications-to-app-4-512x198.png 512w, ./../wp-content/uploads/2024/03/Notifications-to-app-4-920x356.png 920w, ./../wp-content/uploads/2024/03/Notifications-to-app-4-1600x620.png 1600w, ./../wp-content/uploads/2024/03/Notifications-to-app-4-1920x744.png 1920w" sizes="(max-width: 2409px) 100vw, 2409px"></figure>
 
 
 
@@ -529,11 +532,11 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1290" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Chart-widgets.png" alt="The picture shows how charts can be displayed on a dashboard" class="wp-image-3522" srcset="./../wp-content/uploads/2024/03/Chart-widgets.png 2406w, ./../wp-content/uploads/2024/03/Chart-widgets-300x161.png 300w, ./../wp-content/uploads/2024/03/Chart-widgets-1024x549.png 1024w, ./../wp-content/uploads/2024/03/Chart-widgets-768x412.png 768w, ./../wp-content/uploads/2024/03/Chart-widgets-1536x824.png 1536w, ./../wp-content/uploads/2024/03/Chart-widgets-2048x1098.png 2048w, ./../wp-content/uploads/2024/03/Chart-widgets-512x275.png 512w, ./../wp-content/uploads/2024/03/Chart-widgets-920x493.png 920w, ./../wp-content/uploads/2024/03/Chart-widgets-1600x858.png 1600w, ./../wp-content/uploads/2024/03/Chart-widgets-1920x1029.png 1920w, ./../wp-content/uploads/2024/03/Chart-widgets-1320x708.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px"></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1290" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Chart-widgets.png" alt="The picture shows how charts can be displayed on a dashboard" class="wp-image-3522" srcset="./../wp-content/uploads/2024/03/Chart-widgets.png 2406w, ./../wp-content/uploads/2024/03/Chart-widgets-300x161.png 300w, ./../wp-content/uploads/2024/03/Chart-widgets-1024x549.png 1024w, ./../wp-content/uploads/2024/03/Chart-widgets-768x412.png 768w, ./../wp-content/uploads/2024/03/Chart-widgets-1536x824.png 1536w, ./../wp-content/uploads/2024/03/Chart-widgets-2048x1098.png 2048w, ./../wp-content/uploads/2024/03/Chart-widgets-512x275.png 512w, ./../wp-content/uploads/2024/03/Chart-widgets-920x493.png 920w, ./../wp-content/uploads/2024/03/Chart-widgets-1600x858.png 1600w, ./../wp-content/uploads/2024/03/Chart-widgets-1920x1029.png 1920w, ./../wp-content/uploads/2024/03/Chart-widgets-1320x708.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px"></figure>
 
 
 
-<p>We&#8217;re excited to introduce a suite of advanced visualization widgets powered by <a href="https://echarts.apache.org/en/index.html">Apache ECharts</a> to enhance your data analysis and presentation capabilities. This includes the new <strong>Time Series </strong>chart that now may combine lines and bars on the same widget. We have also added two new <strong>Bar </strong>charts to display data via bars with or without labels. Our priority was not only to deliver powerful and pretty charts but also to simplify the widget configuration experience. We hope you enjoy new data visualization capabilities!</p>
+<p>We&#8217;re excited to introduce a suite of advanced visualization widgets powered by <a href="https://echarts.apache.org/en/index.html">Apache ECharts</a> to enhance your data analysis and presentation capabilities. This includes the new <strong>Time Series </strong>chart that now may combine lines and bars on the same widget. We have also added two new <strong>Bar </strong>charts to display data via bars with or without labels. Our priority was not only to deliver powerful and pretty charts but also to simplify the widget configuration experience. We hope you enjoy new data visualization capabilities! </p>
 
 
 
@@ -541,7 +544,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 
 
 
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="1014" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1024x1014.png" alt="Widget show new grouping intervals: Week (Sun-Sat), Week (Mon-Sun), Month, and Quarter for ThingsBoard Dashboards." class="wp-image-3542" srcset="./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1024x1014.png 1024w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-300x297.png 300w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-150x150.png 150w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-768x760.png 768w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1536x1521.png 1536w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-2048x2028.png 2048w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-148x148.png 148w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-512x507.png 512w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-920x911.png 920w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1600x1584.png 1600w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1920x1901.png 1920w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1320x1307.png 1320w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals.png 2406w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
+<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="755" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-1024x755.png" alt="" class="wp-image-3665" srcset="./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-1024x755.png 1024w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-300x221.png 300w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-768x566.png 768w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-1536x1132.png 1536w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-2048x1509.png 2048w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-512x377.png 512w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-920x678.png 920w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-1600x1179.png 1600w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4-1920x1415.png 1920w, ./../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-4.png 2406w" sizes="(max-width: 1024px) 100vw, 1024px"></figure>
 
 
 
@@ -553,7 +556,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="789" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Button-widgets.png" alt="Widget buttons: Action button, command button, toggle button, power button" class="wp-image-3521" srcset="./../wp-content/uploads/2024/03/Button-widgets.png 2406w, ./../wp-content/uploads/2024/03/Button-widgets-300x98.png 300w, ./../wp-content/uploads/2024/03/Button-widgets-1024x336.png 1024w, ./../wp-content/uploads/2024/03/Button-widgets-768x252.png 768w, ./../wp-content/uploads/2024/03/Button-widgets-1536x504.png 1536w, ./../wp-content/uploads/2024/03/Button-widgets-2048x672.png 2048w, ./../wp-content/uploads/2024/03/Button-widgets-512x168.png 512w, ./../wp-content/uploads/2024/03/Button-widgets-920x302.png 920w, ./../wp-content/uploads/2024/03/Button-widgets-1600x525.png 1600w, ./../wp-content/uploads/2024/03/Button-widgets-1920x630.png 1920w, ./../wp-content/uploads/2024/03/Button-widgets-1320x433.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px"></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="789" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Button-widgets.png" alt="Widget buttons: Action button, command button, toggle button, power button" class="wp-image-3521" srcset="./../wp-content/uploads/2024/03/Button-widgets.png 2406w, ./../wp-content/uploads/2024/03/Button-widgets-300x98.png 300w, ./../wp-content/uploads/2024/03/Button-widgets-1024x336.png 1024w, ./../wp-content/uploads/2024/03/Button-widgets-768x252.png 768w, ./../wp-content/uploads/2024/03/Button-widgets-1536x504.png 1536w, ./../wp-content/uploads/2024/03/Button-widgets-2048x672.png 2048w, ./../wp-content/uploads/2024/03/Button-widgets-512x168.png 512w, ./../wp-content/uploads/2024/03/Button-widgets-920x302.png 920w, ./../wp-content/uploads/2024/03/Button-widgets-1600x525.png 1600w, ./../wp-content/uploads/2024/03/Button-widgets-1920x630.png 1920w, ./../wp-content/uploads/2024/03/Button-widgets-1320x433.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px"></figure>
 
 
 
@@ -565,7 +568,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="915" src="http://wp.thingsboard.io/wp-content/uploads/2024/03/Control-widgets.png" alt="Samples of control widgets: switch on and slider 48%" class="wp-image-3523" srcset="./../wp-content/uploads/2024/03/Control-widgets.png 2406w, ./../wp-content/uploads/2024/03/Control-widgets-300x114.png 300w, ./../wp-content/uploads/2024/03/Control-widgets-1024x389.png 1024w, ./../wp-content/uploads/2024/03/Control-widgets-768x292.png 768w, ./../wp-content/uploads/2024/03/Control-widgets-1536x584.png 1536w, ./../wp-content/uploads/2024/03/Control-widgets-2048x779.png 2048w, ./../wp-content/uploads/2024/03/Control-widgets-512x195.png 512w, ./../wp-content/uploads/2024/03/Control-widgets-920x350.png 920w, ./../wp-content/uploads/2024/03/Control-widgets-1600x608.png 1600w, ./../wp-content/uploads/2024/03/Control-widgets-1920x730.png 1920w, ./../wp-content/uploads/2024/03/Control-widgets-1320x502.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px"></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="915" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Control-widgets.png" alt="Samples of control widgets: switch on and slider 48%" class="wp-image-3523" srcset="./../wp-content/uploads/2024/03/Control-widgets.png 2406w, ./../wp-content/uploads/2024/03/Control-widgets-300x114.png 300w, ./../wp-content/uploads/2024/03/Control-widgets-1024x389.png 1024w, ./../wp-content/uploads/2024/03/Control-widgets-768x292.png 768w, ./../wp-content/uploads/2024/03/Control-widgets-1536x584.png 1536w, ./../wp-content/uploads/2024/03/Control-widgets-2048x779.png 2048w, ./../wp-content/uploads/2024/03/Control-widgets-512x195.png 512w, ./../wp-content/uploads/2024/03/Control-widgets-920x350.png 920w, ./../wp-content/uploads/2024/03/Control-widgets-1600x608.png 1600w, ./../wp-content/uploads/2024/03/Control-widgets-1920x730.png 1920w, ./../wp-content/uploads/2024/03/Control-widgets-1320x502.png 1320w" sizes="(max-width: 2406px) 100vw, 2406px"></figure>
 
 
 
@@ -598,7 +601,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 </div></div>			<div class="cs-entry__footer-date">
 				<div class="cs-entry__footer-date-inner">
 					<span class="cs-entry__footer-title">Updated on</span>
-					<time class="cs-entry__footer-value">March 08, 2024</time>
+					<time class="cs-entry__footer-value">March 12, 2024</time>
 				</div>
 			</div>
 		</div>
@@ -609,22 +612,26 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 	</div>
 </div>
 		<div style="order: 4">
-			<form class="ml-block-form-post" id="subscription-form" action="https://static.mailerlite.com/webforms/submit/r9r9x7" data-id="708170" data-code="r9r9x7" method="POST" target="_blank">
-            	<div class="subscribe-form-post horizontal">
-					<p class="subscribe_title heading1">Join ThingsBoard community</p>
-					<p class="subscribe_subtitle paragraph1">Subscribe to our blogs to stay updated with the latest news and trends. Get exclusive content delivered straight to your inbox!</p>
-                	<div class="form-section horizontal">
-                    	<div class="form-group ml-field-email ml-validate-required ml-validate-email">
-                        	<input id="email-input" type="email" name="fields[email]" class="form-control paragraph2" placeholder="Email address*" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off" oninput="validateEmail()">
-                        </div>
-					    <div class="">
-                    		<button id="subscribe-button" onclick="subscribeForNewsletter(event)" class="primary n-button price subscribe" type="button" disabled>
-                        		Subscribe
-                        	</button>
-                    	</div>	
-                  	</div>
-                    <input type="hidden" name="ml-submit" value="1">
-				</div>
+			<form class="ml-block-form-post" id="subscription-form" action="https://static.mailerlite.com/webforms/submit/r9r9x7" data-id="708170" data-code="r9r9x7" method="POST">
+    			<div class="subscribe-form-post">
+        			<p class="subscribe_title heading1">Join ThingsBoard community</p>
+        			<p class="subscribe_subtitle paragraph1">Subscribe to our blogs to stay updated with the latest news and trends.  Get exclusive content delivered straight to your inbox!</p>
+        			<div class="form-section">
+            			<div class="form-group">
+                			<input id="email-input" type="email" name="fields[email]" class="form-control paragraph2" placeholder="Email address*" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off" oninput="validateEmailPost()">
+							<div id="email-error" class="error-message" style="display:none;">Please enter a valid email address.</div>
+            			</div>
+            		<div class="form-section" style="width: 152px; margin: 0px auto;">
+                		<button id="subscribe-button" onclick="subscribeForNewsletterPost(event)" class="primary n-button price subscribe" type="button" disabled>
+                    	Subscribe
+                		</button>
+            		</div>
+        			</div>
+        			<input type="hidden" name="ml-submit" value="1">
+    			</div>
+				<div id="thank-you-message" style="display:none; text-align: center;" class="heading1">
+           		 	<p>Thank you for subscribing!</p>
+        		</div>
 			</form>
 		</div>
 		<section class="cs-read-next">
@@ -636,6 +643,37 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 
 			<div class="cs-posts-area__read-next cs-posts-area__list">
 				
+					<article class="cs-entry">
+						<div class="cs-entry__outer">
+															<div class="cs-entry__inner cs-entry__thumbnail cs-entry__overlay cs-overlay-ratio cs-ratio-landscape-16-9" data-scheme="inverse">
+
+									<div class="cs-overlay-background">
+										<img width="512" height="227" src="./../wp-content/uploads/2024/02/Reliable-TH-monitoring-with-WhereView-ThingsBoard.svg" class="attachment-csco-thumbnail-16x9 size-csco-thumbnail-16x9 wp-post-image" alt="" decoding="async">									</div>
+
+									
+									<a class="cs-overlay-link" href="./../warehouse-monitoring-with-thingsboard/index.html" title="Warehouse monitoring with ThingsBoard"></a>
+								</div>
+							
+							<div class="cs-entry__inner cs-entry__content">
+								<div class="cs-entry__post-meta">
+<div class="cs-meta-category"><ul class="post-categories">
+	<li><a href="./../category/solutions/index.html" rel="category tag">Solutions</a></li>
+</ul></div>
+<div class="cs-meta-author">
+<span class="cs-meta-author-by">By</span><a class="cs-meta-author-link url fn n" href="./../author/alex-doan/index.html"><span class="cs-meta-author-name">PR team</span></a>
+</div>
+<div class="cs-meta-date">March 12, 2024</div>
+</div>								
+								<h3 class="cs-entry__title heading3"><a href="./../warehouse-monitoring-with-thingsboard/index.html"><span>Warehouse monitoring with ThingsBoard</span></a></h3>
+																	<div class="cs-entry__excerpt">
+										Reliable and high-quality control of temperature and humidity with constant access to monitoring data is an important condition for the storage of thermosensitive drugs and raw materials for medicines. The ThingsBoard partner — Vypin together with our team has implemented a solution for a global pharmaceutical company. The IoT application has helped to optimize processes and costs.									</div>
+								
+								
+							</div>
+						</div>
+					</article>
+
+					
 					<article class="cs-entry">
 						<div class="cs-entry__outer">
 															<div class="cs-entry__inner cs-entry__thumbnail cs-entry__overlay cs-overlay-ratio cs-ratio-landscape-16-9" data-scheme="inverse">
@@ -672,56 +710,25 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 															<div class="cs-entry__inner cs-entry__thumbnail cs-entry__overlay cs-overlay-ratio cs-ratio-landscape-16-9" data-scheme="inverse">
 
 									<div class="cs-overlay-background">
-										<img width="512" height="288" src="./../wp-content/uploads/2024/03/Solving-solar-power-plant-problems-using-advanced-analytics-2-512x288.png" class="attachment-csco-thumbnail-16x9 size-csco-thumbnail-16x9 wp-post-image" alt="" decoding="async" srcset="./../wp-content/uploads/2024/03/Solving-solar-power-plant-problems-using-advanced-analytics-2-512x288.png 512w, ./../wp-content/uploads/2024/03/Solving-solar-power-plant-problems-using-advanced-analytics-2-1024x576.png 1024w" sizes="(max-width: 512px) 100vw, 512px">									</div>
+										<img width="512" height="288" src="./../wp-content/uploads/2024/02/Increasing-equipment-utilization-KPIs-with-the-help-of-advanced-analytics-1-512x288.png" class="attachment-csco-thumbnail-16x9 size-csco-thumbnail-16x9 wp-post-image" alt="" decoding="async">									</div>
 
 									
-									<a class="cs-overlay-link" href="./../solving-solar-power-plant-problems-using-advanced-analytics/index.html" title="Solving solar power plant problems using advanced analytics"></a>
+									<a class="cs-overlay-link" href="./../increasing-equipment-utilization-kpis-with-the-help-of-advanced-analytics/index.html" title="Increasing equipment utilization KPIs with the help of advanced analytics"></a>
 								</div>
 							
 							<div class="cs-entry__inner cs-entry__content">
 								<div class="cs-entry__post-meta">
 <div class="cs-meta-category"><ul class="post-categories">
-	<li><a href="./../category/use-cases/index.html" rel="category tag">Use cases</a></li>
+	<li><a href="./../category/tech/index.html" rel="category tag">Tech</a></li>
 </ul></div>
 <div class="cs-meta-author">
 <span class="cs-meta-author-by">By</span><a class="cs-meta-author-link url fn n" href="./../author/iryna-kheroim/index.html"><span class="cs-meta-author-name">Iryna Kheroim</span></a>
 </div>
-<div class="cs-meta-date">March 5, 2024</div>
+<div class="cs-meta-date">March 4, 2024</div>
 </div>								
-								<h3 class="cs-entry__title heading3"><a href="./../solving-solar-power-plant-problems-using-advanced-analytics/index.html"><span>Solving solar power plant problems using advanced analytics</span></a></h3>
+								<h3 class="cs-entry__title heading3"><a href="./../increasing-equipment-utilization-kpis-with-the-help-of-advanced-analytics/index.html"><span>Increasing equipment utilization KPIs with the help of advanced analytics</span></a></h3>
 																	<div class="cs-entry__excerpt">
-										Solar energy is becoming increasingly popular as the world looks to resolve the climate emergency and move toward&hellip;									</div>
-								
-								
-							</div>
-						</div>
-					</article>
-
-					
-					<article class="cs-entry">
-						<div class="cs-entry__outer">
-															<div class="cs-entry__inner cs-entry__thumbnail cs-entry__overlay cs-overlay-ratio cs-ratio-landscape-16-9" data-scheme="inverse">
-
-									<div class="cs-overlay-background">
-										<img width="512" height="288" src="./../wp-content/uploads/2024/03/Optimizing-Solar-Parks-Efficiency-Advanced-Anomaly-Detection-Solutions-2-512x288.png" class="attachment-csco-thumbnail-16x9 size-csco-thumbnail-16x9 wp-post-image" alt="" decoding="async" srcset="./../wp-content/uploads/2024/03/Optimizing-Solar-Parks-Efficiency-Advanced-Anomaly-Detection-Solutions-2-512x288.png 512w, ./../wp-content/uploads/2024/03/Optimizing-Solar-Parks-Efficiency-Advanced-Anomaly-Detection-Solutions-2-1024x576.png 1024w" sizes="(max-width: 512px) 100vw, 512px">									</div>
-
-									
-									<a class="cs-overlay-link" href="./../optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/index.html" title="Optimizing solar parks efficiency &#8211; advanced anomaly detection solutions"></a>
-								</div>
-							
-							<div class="cs-entry__inner cs-entry__content">
-								<div class="cs-entry__post-meta">
-<div class="cs-meta-category"><ul class="post-categories">
-	<li><a href="./../category/use-cases/index.html" rel="category tag">Use cases</a></li>
-</ul></div>
-<div class="cs-meta-author">
-<span class="cs-meta-author-by">By</span><a class="cs-meta-author-link url fn n" href="./../author/iryna-kheroim/index.html"><span class="cs-meta-author-name">Iryna Kheroim</span></a>
-</div>
-<div class="cs-meta-date">March 1, 2024</div>
-</div>								
-								<h3 class="cs-entry__title heading3"><a href="./../optimizing-solar-parks-efficiency-advanced-anomaly-detection-solutions/index.html"><span>Optimizing solar parks efficiency &#8211; advanced anomaly detection solutions</span></a></h3>
-																	<div class="cs-entry__excerpt">
-										Solar power plants face issues due to temperature and environmental factors, which lead to reduced efficiency and potential&hellip;									</div>
+										Introduction&nbsp; Equipment in production plays an important role in achieving maximum efficiency, quality, and payback. The issues that&hellip;									</div>
 								
 								
 							</div>
@@ -730,35 +737,82 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 
 								</div>
 			</div>
-			<script>function validateEmail() {
-        		var emailInput = document.getElementById('email-input');
-       			var subscribeButton = document.getElementById('subscribe-button');
-        		if (emailInput.value.trim() !== '') {
-            		subscribeButton.disabled = false;
-        		} else {
-            	subscribeButton.disabled = true;
-        		}
-    		}
-    		function subscribeForNewsletter(event) {
+			<script>function validateEmailPost() {
+				var emailInput = document.getElementById('email-input');
+				var subscribeButton = document.getElementById('subscribe-button');
+				var emailError = document.getElementById('email-error');
+				if (emailInput.value.trim() !== '') {
+					if (emailInput.validity.valid) {
+						subscribeButton.disabled = false;
+						emailError.style.display = 'none';
+					} else {
+						subscribeButton.disabled = true;
+						emailError.style.display = 'block';
+					}
+				} else {
+					subscribeButton.disabled = true;
+					emailError.style.display = 'none';
+				}
+			}
+    		function subscribeForNewsletterPost(event) {
+				event.preventDefault();
         		event.stopPropagation();
         		var emailInput = document.getElementById('email-input');
+				var thankYouMessage = document.getElementById('thank-you-message');
         		if (emailInput.validity.valid) {
             		var scriptTag = document.createElement('script');
             		scriptTag.setAttribute("type", "text/javascript");
             		scriptTag.setAttribute("src", "https://static.mailerlite.com/js/w/webforms.min.js?v28bf44f740701752bfc6767bc7e171d4");
             		document.getElementsByTagName("head")[0].appendChild(scriptTag);
-            		document.getElementById('subscription-form').submit();
+				    document.querySelectorAll('.subscribe-form-post').forEach(function(element) {
+    					element.style.display = 'none';
+					});
+                    thankYouMessage.style.display = 'block';	
         		}
     		}
-				document.querySelectorAll('.cs-entry__excerpt').forEach(function(element){
-					element.classList.add('paragraph1');
-					if(element.textContent.split(" ").length > 18){
-						element.textContent = element.textContent.split(' ').slice(0, 18).join(' ').concat("...");
-					}
-				});</script>
+			document.querySelectorAll('.cs-entry__excerpt').forEach(function(element){
+				element.classList.add('paragraph1');
+				if(element.textContent.split(" ").length > 18){
+					element.textContent = element.textContent.split(' ').slice(0, 18).join(' ').concat("...");
+				}
+			});</script>
 		</section>
 		
 <div id="disqus_thread"></div>
+<script>var embedVars = {"disqusConfig":{"integration":"wordpress 3.0.24.1"},"disqusIdentifier":"3625 .\/\/?p=3625","disqusShortname":"thingsboard","disqusTitle":"ThingsBoard 3.6.3 release: push notifications, new charts, buttons, and more","disqusUrl":".\/\/thingsboard-release-3-6-3-announcement\/","postId":3625};
+    var disqus_url = embedVars.disqusUrl;
+var disqus_identifier = embedVars.disqusIdentifier;
+var disqus_container_id = 'disqus_thread';
+var disqus_shortname = embedVars.disqusShortname;
+var disqus_title = embedVars.disqusTitle;
+var disqus_config_custom = window.disqus_config;
+var disqus_config = function () {
+    /*
+    All currently supported events:
+    onReady: fires when everything is ready,
+    onNewComment: fires when a new comment is posted,
+    onIdentify: fires when user is authenticated
+    */
+    var dsqConfig = embedVars.disqusConfig;
+    this.page.integration = dsqConfig.integration;
+    this.page.remote_auth_s3 = dsqConfig.remote_auth_s3;
+    this.page.api_key = dsqConfig.api_key;
+    this.sso = dsqConfig.sso;
+    this.language = dsqConfig.language;
+
+    if (disqus_config_custom)
+        disqus_config_custom.call(this);
+};
+
+(function() {
+    if (document.getElementById(disqus_container_id)) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }
+})();</script>
 </div>
 				<script>
 // 	adding the copy icon, to the codeblock, with the next config: after click the icon changes by 3 seconds on the check mark, and then returns to the default view
@@ -824,6 +878,9 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 	if(document.querySelector('.cs-entry__subtitle')){
     	document.querySelector('.cs-entry__subtitle').style.display = 'none';
 	};
+
+
+
 </script>
 </div>
 
@@ -834,12 +891,12 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 					Explore categories
 				</h3>
 				<ul class="categories">
-					<li><a href="https://wp.thingsboard.io/category/events/" class="category-link">Events</a></li>
-					<li><a href="https://wp.thingsboard.io/category/guides/" class="category-link">Guides</a></li>
-					<li><a href="https://wp.thingsboard.io/category/tech/" class="category-link">Tech</a></li>
-					<li><a href="https://wp.thingsboard.io/category/solutions/" class="category-link">Solutions</a></li>
-					<li><a href="https://wp.thingsboard.io/category/updates/" class="category-link">Updates</a></li>
-					<li><a href="https://wp.thingsboard.io/category/use-cases/" class="category-link">Use cases</a></li>
+<!-- 					<li><a href="https://wp.thingsboard.io/category/events/" class="category-link category-link-domain-url">Events</a></li>
+					<li><a href="https://wp.thingsboard.io/category/guides/" class="category-link category-link-domain-url">Guides</a></li> -->
+					<li><a href="https://wp.thingsboard.io/category/tech/" class="category-link category-link-domain-url">Tech</a></li>
+					<li><a href="https://wp.thingsboard.io/category/solutions/" class="category-link category-link-domain-url">Solutions</a></li>
+					<li><a href="https://wp.thingsboard.io/category/updates/" class="category-link category-link-domain-url">Updates</a></li>
+					<li><a href="https://wp.thingsboard.io/category/use-cases/" class="category-link category-link-domain-url">Use cases</a></li>
 				</ul>
 			</div>
 			<div class="thingsboard-media-banner-wrapper">
@@ -894,13 +951,14 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
             	</ul>
 			</div>
 			</div>
-			<form class="ml-block-form" id="subscription-form" action="https://static.mailerlite.com/webforms/submit/r9r9x7" data-id="708170" data-code="r9r9x7" method="POST" target="_blank">
+			<form class="ml-block-form" id="subscription-form" action="https://static.mailerlite.com/webforms/submit/r9r9x7" data-id="708170" data-code="r9r9x7" method="POST">
     			<div class="subscribe-form">
         			<p class="subscribe_title heading2">Join ThingsBoard community</p>
         			<p class="subscribe_subtitle paragraph1">Stay tuned and get first-hand updates and access to insights.</p>
         			<div class="form-section">
             			<div class="form-group">
                 			<input id="email-input" type="email" name="fields[email]" class="form-control paragraph2" placeholder="Email address*" value="" autocomplete="email" x-autocompletetype="email" spellcheck="false" autocapitalize="off" autocorrect="off" oninput="validateEmail()">
+							<div id="email-error" class="error-message" style="display:none;">Please enter a valid email address.</div>
             			</div>
             		<div class="form-section">
                 		<button id="subscribe-button" onclick="subscribeForNewsletter(event)" class="primary n-button price subscribe" type="button" disabled>
@@ -910,6 +968,9 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
         			</div>
         			<input type="hidden" name="ml-submit" value="1">
     			</div>
+				<div id="thank-you-message" class="heading2" style="display:none;">
+           		 	<p>Thank you for subscribing!</p>
+        		</div>
 			</form>
 		</div>
 		<script>//adding the styles to the category links on the whole page
@@ -921,26 +982,63 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 			document.querySelectorAll('.cs-overlay-content .post-categories a').forEach(function(element) {
 				element.classList.remove('category-link');
 			});
- 			function validateEmail() {
-        		var emailInput = document.getElementById('email-input');
-       			var subscribeButton = document.getElementById('subscribe-button');
-        		if (emailInput.value.trim() !== '') {
-            		subscribeButton.disabled = false;
-        		} else {
-            	subscribeButton.disabled = true;
-        		}
-    		}
+			function validateEmail() {
+				var emailInput = document.getElementById('email-input');
+				var subscribeButton = document.getElementById('subscribe-button');
+				var emailError = document.getElementById('email-error');
+				if (emailInput.value.trim() !== '') {
+					if (emailInput.validity.valid) {
+						subscribeButton.disabled = false;
+						emailError.style.display = 'none';
+					} else {
+						subscribeButton.disabled = true;
+						emailError.style.display = 'block';
+					}
+				} else {
+					subscribeButton.disabled = true;
+					emailError.style.display = 'none';
+				}
+			}
     		function subscribeForNewsletter(event) {
+				event.preventDefault();
         		event.stopPropagation();
         		var emailInput = document.getElementById('email-input');
+				var thankYouMessage = document.getElementById('thank-you-message');
         		if (emailInput.validity.valid) {
             		var scriptTag = document.createElement('script');
             		scriptTag.setAttribute("type", "text/javascript");
             		scriptTag.setAttribute("src", "https://static.mailerlite.com/js/w/webforms.min.js?v28bf44f740701752bfc6767bc7e171d4");
             		document.getElementsByTagName("head")[0].appendChild(scriptTag);
-            		document.getElementById('subscription-form').submit();
+				    document.querySelector('.subscribe-form').style.display = 'none';
+                    thankYouMessage.style.display = 'block';	
         		}
-    		}</script>
+    		}
+			document.querySelectorAll('.category-link-domain-url').forEach(function(element){
+				element.href = element.href.replace('wp.thingsboard.io', window.location.hostname)
+			})
+// 		//
+// var links = document.querySelectorAll('.category-link');
+// Promise.all(Array.from(links).map(link => {
+//     return fetch(link.href)
+//         .then(response => {
+//             if (!response.ok) {
+//                 throw new Error('Network response was not ok.');
+//             }
+//             return response.text();
+//         })
+//         .then(html => {
+//             var tempElement = document.createElement('div');
+//             tempElement.innerHTML = html;
+//             var articleExists = tempElement.querySelector('article') !== null;
+//             if (!articleExists) {
+//                 link.classList.remove('category-link');
+//                 link.style.display = 'none';
+//             }
+//         })
+//         .catch(error => {
+//             console.error('There has been a problem with your fetch operation:', error);
+//         });
+// }));</script>
 	</aside>
 	
 							
@@ -968,8 +1066,8 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
                <li><a href="https://thingsboard.io/industries/">Customers</a></li>
                <li><a href="https://thingsboard.io/company/">Company</a></li>
                <li><a href="https://thingsboard.io/partners/hardware/">Partners</a></li>
-               <li><a>Docs</a></li>
-               <li><a>Blog</a></li>
+               <li><a href="https://thingsboard.io/docs/">Docs</a></li>
+               <li><a href="https://thingsboard.io/blog/">Blog</a></li>>
             </ul>
          </div>
          <div class="footer-bottom">
@@ -978,28 +1076,28 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
             </p>
             <ul class="social-networks-footer">
                <li class="social-network">
-                  <a class="social-network-link" href="#!">
+                  <a class="social-network-link" href="https://github.com/thingsboard">
                      <svg width="28" height="29" viewbox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path class="svg-icon-color" fill-rule="evenodd" clip-rule="evenodd" d="M13.996 0.945312C6.319 0.945312 0.09375 7.16925 0.09375 14.8475C0.09375 20.9898 4.0772 26.201 9.60096 28.0393C10.2957 28.1679 10.5508 27.7376 10.5508 27.3705C10.5508 27.0391 10.5381 25.9438 10.532 24.7821C6.66441 25.6232 5.84829 23.1418 5.84829 23.1418C5.21583 21.535 4.30475 21.1076 4.30475 21.1076C3.04328 20.2448 4.39984 20.2626 4.39984 20.2626C5.79571 20.3606 6.5309 21.6954 6.5309 21.6954C7.77081 23.8206 9.7831 23.2061 10.5765 22.8509C10.7013 21.9525 11.0615 21.339 11.4592 20.9919C8.37127 20.6405 5.1251 19.4483 5.1251 14.1213C5.1251 12.6037 5.66824 11.3634 6.55763 10.3898C6.41331 10.0395 5.93739 8.62565 6.69234 6.7106C6.69234 6.7106 7.85981 6.33718 10.5163 8.13584C11.6253 7.82776 12.8146 7.67329 13.9961 7.66792C15.1774 7.67329 16.3676 7.82776 17.4786 8.13584C20.1322 6.33718 21.298 6.7106 21.298 6.7106C22.0547 8.62565 21.5788 10.0395 21.4344 10.3898C22.3259 11.3634 22.8652 12.6036 22.8652 14.1213C22.8652 19.4611 19.6129 20.6366 16.5171 20.9809C17.0157 21.4123 17.46 22.2583 17.46 23.5553C17.46 25.4154 17.4441 26.9125 17.4441 27.3705C17.4441 27.7405 17.6942 28.1741 18.3988 28.0376C23.9198 26.1972 27.8982 20.9878 27.8982 14.8475C27.8982 7.16925 21.6738 0.945312 13.996 0.945312Z" fill="black"></path>
                      </svg>
                   </a>
                </li>
                <li class="social-network">
-                  <a class="social-network-link" href="#!">
+                  <a class="social-network-link" href="https://www.youtube.com/@ThingsBoard">
                      <svg width="29" height="20" viewbox="0 0 29 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path class="svg-icon-color" d="M27.7471 3.58086C27.4251 2.43346 26.4764 1.52997 25.2717 1.22331C23.0879 0.666015 14.3321 0.666016 14.3321 0.666016C14.3321 0.666016 5.57619 0.666015 3.3924 1.22331C2.18786 1.52997 1.23897 2.43346 0.917025 3.58086C0.332031 5.66044 0.332031 9.9995 0.332031 9.9995C0.332031 9.9995 0.332031 14.3385 0.917025 16.4178C1.23897 17.5652 2.18786 18.469 3.3924 18.7756C5.57619 19.3327 14.3321 19.3327 14.3321 19.3327C14.3321 19.3327 23.0879 19.3327 25.2717 18.7756C26.4764 18.469 27.4251 17.5652 27.7471 16.4178C28.332 14.3385 28.332 9.9995 28.332 9.9995C28.332 9.9995 28.332 5.66044 27.7471 3.58086ZM11.5319 13.9996V5.9994L18.8064 9.9995L11.5319 13.9996Z" fill="black"></path>
                      </svg>
                   </a>
                </li>
                <li class="social-network">
-                  <a class="social-network-link" href="#!">
+                  <a class="social-network-link" href="https://www.facebook.com/thingsboard/">
                      <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path class="svg-icon-color" d="M27.3346 14.0808C27.3346 6.67203 21.3651 0.666016 14.0013 0.666016C6.6375 0.666016 0.667969 6.67203 0.667969 14.0808C0.667969 20.7766 5.5438 26.3263 11.918 27.3327V17.9586H8.53255V14.0808H11.918V11.1254C11.918 7.76329 13.9085 5.90618 16.9542 5.90618C18.413 5.90618 19.9388 6.16819 19.9388 6.16819V9.46949H18.2575C16.6012 9.46949 16.0846 10.5035 16.0846 11.5644V14.0808H19.7826L19.1914 17.9586H16.0846V27.3327C22.4589 26.3263 27.3346 20.7766 27.3346 14.0808Z" fill="black"></path>
                      </svg>
                   </a>
                </li>
                <li class="social-network">
-                  <a class="social-network-link" href="#!">
+                  <a class="social-network-link" href="https://www.instagram.com/thingsboard_iot/?hl=am-et">
                      <svg width="26" height="26" viewbox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path class="svg-icon-color" d="M16.72 12.6667C16.72 13.4683 16.4823 14.252 16.0369 14.9186C15.5915 15.5851 14.9585 16.1047 14.2178 16.4115C13.4772 16.7182 12.6622 16.7985 11.8759 16.6421C11.0896 16.4857 10.3674 16.0997 9.80053 15.5328C9.23366 14.9659 8.84762 14.2437 8.69122 13.4574C8.53482 12.6712 8.61509 11.8562 8.92187 11.1155C9.22866 10.3749 9.74819 9.74183 10.4148 9.29644C11.0813 8.85106 11.865 8.61333 12.6667 8.61333C13.7413 8.61456 14.7716 9.042 15.5314 9.80188C16.2913 10.5618 16.7188 11.592 16.72 12.6667ZM25.3333 7.09333V18.24C25.3312 20.1206 24.5832 21.9236 23.2534 23.2534C21.9236 24.5832 20.1206 25.3312 18.24 25.3333H7.09333C5.21272 25.3312 3.40974 24.5832 2.07994 23.2534C0.750145 21.9236 0.00212987 20.1206 0 18.24V7.09333C0.00212987 5.21272 0.750145 3.40974 2.07994 2.07994C3.40974 0.750145 5.21272 0.00212987 7.09333 0H18.24C20.1206 0.00212987 21.9236 0.750145 23.2534 2.07994C24.5832 3.40974 25.3312 5.21272 25.3333 7.09333ZM18.7467 12.6667C18.7467 11.4642 18.3901 10.2887 17.722 9.2888C17.0539 8.28895 16.1044 7.50966 14.9934 7.04948C13.8824 6.5893 12.6599 6.46889 11.4805 6.70349C10.3011 6.93809 9.21776 7.51715 8.36746 8.36746C7.51715 9.21776 6.93809 10.3011 6.70349 11.4805C6.46889 12.6599 6.5893 13.8824 7.04948 14.9934C7.50966 16.1044 8.28895 17.0539 9.2888 17.722C10.2887 18.3901 11.4642 18.7467 12.6667 18.7467C14.2786 18.7448 15.824 18.1037 16.9639 16.9639C18.1037 15.824 18.7448 14.2786 18.7467 12.6667ZM20.7733 6.08C20.7733 5.77937 20.6842 5.4855 20.5172 5.23553C20.3501 4.98557 20.1128 4.79075 19.835 4.6757C19.5573 4.56066 19.2516 4.53056 18.9568 4.58921C18.6619 4.64786 18.3911 4.79262 18.1785 5.0052C17.966 5.21777 17.8212 5.48861 17.7625 5.78346C17.7039 6.07831 17.734 6.38393 17.849 6.66168C17.9641 6.93942 18.1589 7.17681 18.4089 7.34383C18.6588 7.51085 18.9527 7.6 19.2533 7.6C19.6565 7.6 20.0431 7.43986 20.3281 7.1548C20.6132 6.86975 20.7733 6.48313 20.7733 6.08Z" fill="black"></path>
                      </svg>
@@ -1013,7 +1111,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
                   		</a>
                		</li>
                <li class="social-network">
-                  <a class="social-network-link" href="#!">
+                  <a class="social-network-link" href="https://twitter.com/thingsboard">
                      <svg width="28" height="28" viewbox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path class="svg-icon-color" d="M16.5445 11.9575L26.4768 0.666016H24.1232L15.4989 10.4703L8.61072 0.666016H0.666016L11.0823 15.4918L0.666016 27.3327H3.0198L12.1273 16.979L19.4017 27.3327H27.3464L16.5439 11.9575H16.5445ZM13.3206 15.6224L12.2652 14.1461L3.8679 2.39892H7.48318L14.2599 11.8793L15.3153 13.3556L24.1243 25.6786H20.509L13.3206 15.623V15.6224Z" fill="black"></path>
                      </svg>
@@ -1048,8 +1146,6 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 
 <script id="disqus_count-js-extra">var countVars = {"disqusShortname":"thingsboard"};</script>
 <script src="./../wp-content/plugins/disqus-comment-system/public/js/comment_count.js?ver=3.0.24.1" id="disqus_count-js"></script>
-<script id="disqus_embed-js-extra">var embedVars = {"disqusConfig":{"integration":"wordpress 3.0.24.1"},"disqusIdentifier":"3625 .\/\/?p=3625","disqusShortname":"thingsboard","disqusTitle":"ThingsBoard 3.6.3 release: push notifications, new charts, buttons, and more","disqusUrl":".\/\/thingsboard-release-3-6-3-announcement\/","postId":"3625"};</script>
-<script src="./../wp-content/plugins/disqus-comment-system/public/js/comment_embed.js?ver=3.0.24.1" id="disqus_embed-js"></script>
 <script id="csco-scripts-js-extra">var csLocalize = {"siteSchemeMode":"light","siteSchemeToogle":""};</script>
 <script src="./../wp-content/themes/swyft/assets/js/scripts.js?ver=1.0.2" id="csco-scripts-js"></script>
 <script src="./../wp-content/themes/swyft/assets/static/js/comment-reply.js?ver=1.0.2" id="csco-comment-reply-js"></script>

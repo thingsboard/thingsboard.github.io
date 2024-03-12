@@ -64,6 +64,7 @@ body{
 }
 
 .subscribe{
+	height: 50px;
 	font-family: Poppins;
 	font-size: 18px;
 	font-weight: 500;
@@ -629,7 +630,13 @@ blockquote p{
 .nav_list li a {
 	text-decoration:none;
 	color: inherit;
+	transition: ease-in-out 0.2s;
 }
+
+.nav_list li a:hover {
+	color: #007bff;
+}
+
 
 .cs-header__col {
 	flex: none;
@@ -782,15 +789,20 @@ blockquote p{
 }
 
 .cs-read-next-wrapper{
-	max-width: 1540px;
+	max-width: 1600px;
 	padding: 0px 20px;
 	margin: 0px auto;
 }
 
 .cs-read-next .cs-posts-area__read-next{
-	display: flex;
-	justify-content: space-between;
-	gap: 30px;
+	display: grid;
+ 	justify-content: space-between; 
+	grid-template-columns: repeat(3, 1fr);
+ 	gap: 30px; 
+}
+
+.cs-read-next article{
+	max-width: 485px;
 }
 
 .post-template-default .cs-posts-area__list .cs-entry:not(:first-child){
@@ -805,13 +817,14 @@ blockquote p{
 	row-gap: 0;
 	max-width: 485px;
 	height: 528px !important;
-	height: auto;
 	background: #FFFFFF;
 	border-radius: 12px;
 	margin-bottom: 0px;
 }
 
 .cs-entry__content{
+/* 	max-width: 485px !important; */
+	width: 100%;
 	padding-top: 20px;
 	padding-bottom: 20px; 
 	padding-left: 20px;
@@ -945,6 +958,11 @@ blockquote p{
 .footer_nav_list li a {
 	text-decoration:none;
 	color: inherit;
+	transition: ease-in-out 0.2s;
+}
+
+.footer_nav_list li a:hover {
+	color: #007bff;
 }
 
 .footer-bottom{
@@ -1105,6 +1123,13 @@ blockquote p{
 	}
 	.subscribe{
 		width: 100%;
+	}
+	.cs-read-next .cs-posts-area__read-next{
+		grid-template-columns: 1fr;
+	}
+	.cs-read-next article{
+		width: 485px;
+		justify-self: center;
 	}
 }
 @media(max-width: 1200px){
@@ -1335,6 +1360,7 @@ blockquote p{
 	}
 	.cs-read-next article{
 		margin-top: 24px !important;
+		width: 400px;
 	}
 	.cs-meta-author-avatar{
 		display: none;
@@ -1363,12 +1389,27 @@ blockquote p{
 	.wp-block-file .wp-block-file__button{
 		margin-left: 0px;
 	}
+	.cs-read-next article{
+		width: 300px;
+	}
 }
 @media(max-width: 375px){
 	.main-wrapper{
 		padding: 0px 20px;
 	}
 }
+@media(max-width: 375px){
+	.cs-read-next article{
+		width: 250px;
+	}
+}
+@media(max-width: 350px){
+	.main-logo{
+		width: 150px !important;
+		height: 22px;
+	}
+}
+
 @keyframes burgerAnimation {
     from {opacity: 0}
     to {opacity: 1}
