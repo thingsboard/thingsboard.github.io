@@ -11,12 +11,9 @@ $modal-z-index: 13000
 $modal-background-color: rgba(0, 0, 0, 0.4)
 $modal-content-background-color: #fefefe
 $modal-content-border: 1px solid #888
-$title-font: 16px
-$title-height: 30px
-$sub-title-font: 30px
-$sub-title-height: 44px
-$sub-sub-title-font: 16px
-$sub-sub-title-height: 28px
+$title-font: 600 16px/30px Popins
+$sub-title-font: 600 30px/44px Popins
+$sub-sub-title-font: 400 16px/28px Popins
 $form-element-label-color: rgba(0, 0, 0, 0.54)
 $form-control-border: 1px solid rgba(0, 0, 0, 0.12)
 $button-background-color: #2A7DEC
@@ -306,7 +303,6 @@ $font-style-normal: normal
                 cursor: pointer
 
             .title, .sub-title, .sub-sub-title 
-                font-weight: 600
                 letter-spacing: 0.01em
                 text-align: center
                 display: flex
@@ -314,21 +310,17 @@ $font-style-normal: normal
                 font-style: $font-style-normal
 
             .title
-                font-size: $title-font
-                line-height: $title-height
+                font: $title-font
                 color: #3622A4
 
             .sub-title
-                font-size: $sub-title-font
-                line-height: $sub-title-height
+                font: $sub-title-font
                 color: #333333
 
             .sub-sub-title
-                font-size: $sub-sub-title-font
-                line-height: $sub-sub-title-height
+                font: $sub-sub-title-font
                 color: #5E5F62
                 letter-spacing: .001em
-                font-weight: 400
                 margin-top: 15px
                 span
                     width: 556px
@@ -389,9 +381,7 @@ $font-style-normal: normal
                             right: 10px
                             width: 16px
                             height: 16px
-                            background-image: url(/images/pe/read-more-arrow.svg)
-                            background-repeat: no-repeat
-                            background-position: center
+                            background-image: url(/images/pe/read-more-arrow.svg) no-repeat center
                             transform: rotate(90deg)
                             transform-origin: center center
 
@@ -1786,7 +1776,6 @@ $font-style-normal: normal
                 cursor: pointer
 
             .title, .sub-title, .sub-sub-title 
-                font-weight: 600
                 letter-spacing: 0.01em
                 text-align: center
                 display: flex
@@ -1794,21 +1783,17 @@ $font-style-normal: normal
                 font-style: $font-style-normal
 
             .title
-                font-size: $title-font
-                line-height: $title-height
+                font: $title-font
                 color: #3622A4
 
             .sub-title
-                font-size: $sub-title-font
-                line-height: $sub-title-height
+                font: $sub-title-font
                 color: #333333
 
             .sub-sub-title
-                font-size: $sub-sub-title-font
-                line-height: $sub-sub-title-height
+                font: $sub-sub-title-font
                 color: #5E5F62
                 letter-spacing: .001em
-                font-weight: 400
                 margin-top: 15px
                 span    
                     width: 556px
@@ -1870,8 +1855,6 @@ $font-style-normal: normal
                             width: 16px
                             height: 16px
                             background: url(/images/pe/read-more-arrow.svg) no-repeat center
-                            // background-repeat: no-repeat
-                            // background-position: center
                             transform: rotate(90deg)
                             transform-origin: center center
 
