@@ -275,6 +275,8 @@ $font-style-normal: normal
     .modal 
         display: none
         position: fixed
+        align-items: center
+        justify-content: center
         z-index: $modal-z-index
         left: 0
         top: 0
@@ -837,9 +839,7 @@ $font-style-normal: normal
                         height: 84px
 
                 .form-section
-                    padding-top: 40px
-                    padding-left: 15px
-                    padding-right: 15px
+                    padding-top: 40px 15px 0
                     flex-direction: column
                     .form-element
                         margin-bottom: 15px
@@ -963,9 +963,7 @@ $font-style-normal: normal
                         height: 84px
 
                 .form-section
-                    padding-top: 40px
-                    padding-left: 15px
-                    padding-right: 15px
+                    padding: 40px 15px 0
                     flex-direction: column
                     .form-element
                         margin-bottom: 15px
@@ -1597,7 +1595,6 @@ $font-style-normal: normal
 
         .cdu-button
             padding: 11px 14px
-            border-radius: 6px
             color: white
             background-color: #2A7DEC
             width: 100%
@@ -1758,6 +1755,8 @@ $font-style-normal: normal
     .modal 
         display: none
         position: fixed
+        align-items: center
+        justify-content: center
         z-index: $modal-z-index
         left: 0
         top: 0
@@ -1870,9 +1869,9 @@ $font-style-normal: normal
                             right: 10px
                             width: 16px
                             height: 16px
-                            background-image: url(/images/pe/read-more-arrow.svg)
-                            background-repeat: no-repeat
-                            background-position: center
+                            background: url(/images/pe/read-more-arrow.svg) no-repeat center
+                            // background-repeat: no-repeat
+                            // background-position: center
                             transform: rotate(90deg)
                             transform-origin: center center
 

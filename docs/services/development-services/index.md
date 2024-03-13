@@ -360,8 +360,6 @@ description: "Discover ThingsBoard's premier IoT services:  ✔ From widgets to 
     document.querySelectorAll('.anchor-button').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             modal.style.display = "flex";
-            modal.style.alignItems = "center";
-            modal.style.justifyContent = "center";
         });
     });
 

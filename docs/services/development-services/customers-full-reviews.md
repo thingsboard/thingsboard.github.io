@@ -183,8 +183,6 @@ description: Real feedback from real clients. Dive into our testimonials to unde
 
     btn.onclick = function() {
         modal.style.display = "flex";
-        modal.style.alignItems = "center";
-        modal.style.justifyContent = "center";
     }
 
     span.onclick = function() {
