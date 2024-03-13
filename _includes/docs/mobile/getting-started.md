@@ -149,7 +149,25 @@ You can read [Connecting Flutter application to Localhost](https://medium.com/@p
 {% endcapture %}
 {% include templates/info-banner.md content=local_endpoint_note %}
 
-## Step 4. Run the app
+## Step 4. Configure push notifications [Optional]
+
+Push notifications are based on Firebase..
+
+### Step 4.1
+
+Sign in to the https://console.firebase.google.com/ and create a new project.
+
+### Step 4.2
+
+To integrate Firebase into the mobile application, you'll need to complete the initial two steps outlined in the ["Add Firebase to your Flutter app"](https://firebase.google.com/docs/flutter/setup) guide available at Firebase's official documentation.
+
+Upon successful completion of these steps, verify that your project's "lib" folder now contains an updated "firebase_options.dart" file. This is a crucial step as it ensures Firebase is correctly configured in your app.
+
+To confirm that Firebase has been integrated properly, run your application ([Step 5](#step-5-run-the-app)) . If configured correctly, you'll notice that the notifications feature within your app is now active. 
+This change can be verified by looking at the notifications menu item, which should be enabled as depicted in the provided screenshot.
+
+
+## Step 5. Run the app
 
 Run the app [in the way your IDE describes](https://flutter.dev/docs/get-started/test-drive).
 
