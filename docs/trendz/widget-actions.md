@@ -33,7 +33,7 @@ If you want to use 'onRowClick' action - you need to define what item is selecte
 If you use the Anomaly Table on your dashboard and want to create an action that not only sets the selected entity but also updates the time window, follow these straightforward steps:
 1. **Configure Row Click Entity.** Head to the chart settings in Trendz and set the "Row click entity."
 
-![image](/images/trendz/row-click-anomaly.png)
+![image](https://img.thingsboard.io/trendz/row-click-anomaly.png)
 
 2. **Create Row Click Action.** Go to the Actions tab in your Anomaly view settings on the dashboard and create a new action. Choose "On Row click" as the Action source and set the type to "Custom action."  
    Then you have to add some custom code to define the chosen entity as the selected entity on your dashboard. Begin by obtaining the state ID and parameters for the new state entity. In our example, we used "selectedDevice,"
