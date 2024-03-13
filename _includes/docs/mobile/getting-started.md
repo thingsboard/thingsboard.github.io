@@ -151,7 +151,8 @@ You can read [Connecting Flutter application to Localhost](https://medium.com/@p
 
 ## Step 4. Configure push notifications [Optional]
 
-Push notifications are based on Firebase..
+Our system leverages Firebase to send notifications from ThingsBoard instances directly to mobile applications. 
+This setup requires each platform tenant to configure Firebase specifically for their account to begin the distribution of notifications to their mobile apps.
 
 ### Step 4.1
 
