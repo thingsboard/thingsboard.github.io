@@ -151,34 +151,7 @@ You can read [Connecting Flutter application to Localhost](https://medium.com/@p
 
 ## Step 4. [Optional] Configure notifications
 
-Perform the following steps if you want your ThingsBoard server instance to send notifications to mobile application. Learn more about Flutter ThingsBoard Mobile Application notifications [here](https://firebase.flutter.dev/docs/messaging/notifications/){:target="_blank"}.
-
-1. Add Firebase to your app by following [this guide](https://firebase.google.com/docs/flutter/setup){:target="_blank"}.
-
-2. Next, uncomment the source code related to notifications.
-
-You can do this manually. Simply search for "`TODO: firebase_init:`", and remove this line along with the subsequent commented one.
-You'll find these lines in the following files:
-- lib/main.dart
-- lib/utils/services/notification_service.dart
-- lib/core/context/tb_context.dart
-
-Alternatively, you can run a dart script that does it automatically for you. To do this, follow the steps below:
-- Download this [dart script](/docs/mobile/scripts/firebase_initialization_script.dart);
-- Run the downloaded dart script using the command below. Don't forget to replace `$ABSOLUTE_PATH_TO_THE_THINGSBOARD_PROJECT` with the root directory of the ThingsBoard project!
-
-{% if docsPrefix == null %}
-```text
-dart firebase_initialization_script.dart —root=$ABSOLUTE_PATH_TO_THE_THINGSBOARD_PROJECT/thingsboard/flutter_thingsboard_app
-```
-{: .copy-code}
-{% endif %}
-{% if docsPrefix == "pe/" %}
-```text
-dart firebase_initialization_script.dart —root=$ABSOLUTE_PATH_TO_THE_THINGSBOARD_PROJECT/thingsboard/flutter_thingsboard_pe_app
-```
-{: .copy-code}
-{% endif %}
+To have your ThingsBoard server instance send notifications to mobile application, you need to add Firebase to your mobile application using the Firebase CLI by following [this guide](https://firebase.google.com/docs/flutter/setup){:target="_blank"}.
 
 ## Step 5. Run the app
 Run the app [in the way your IDE describes](https://flutter.dev/docs/get-started/test-drive).
