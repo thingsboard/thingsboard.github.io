@@ -46,7 +46,7 @@ version: '3.0'
 services:
   mytrendz:
     restart: always
-    image: "thingsboard/trendz:1.10.3-HF3"
+    image: "thingsboard/trendz:{{ site.release.trendz_ver }}"
     ports:
       - "8888:8888"
     environment:
@@ -64,7 +64,7 @@ services:
       - ~/.mytrendz-logs:/var/log/trendz
   mypyexecutor:
     restart: always
-    image: "thingsboard/trendz-python-executor:1.10.3"
+    image: "thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}"
     ports:
       - "8080"
     environment:
@@ -98,8 +98,8 @@ Where:
 - `~/.mytrendz-logs:/var/log/thingsboard`   - mounts the volume `~/.mytrendz-logs` to Trendz logs directory
 - `mytrendz`             - friendly local name of this machine
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz:1.10.3-HF3`          - Trendz docker image
-- `thingsboard/trendz-python-executor:1.10.3`          - Trendz python script executor docker image
+- `thingsboard/trendz:{{ site.release.trendz_ver }}`          - Trendz docker image
+- `thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}`          - Trendz python script executor docker image
 - `SCRIPT_ENGINE_RUNTIME_TIMEOUT`          - Python script execution timeout
 
 
@@ -138,14 +138,14 @@ to validate credentials.
 
 ## Upgrade Trendz Service
 
-Below is example on how to upgrade from 1.10.2 to 1.10.3-HF3
+Below is example on how to upgrade from 1.10.2 to {{ site.release.trendz_ver }}
 
 **Note:** starting from version 1.10.2 we add support of Python script execution. During an upgrade you need to add Python executor image into your docker compose file. 
 Full content of docker compose file you can find at the beginning of this article. Here is an example of the python executor service
 ```yml
   mypyexecutor:
     restart: always
-    image: "thingsboard/trendz-python-executor:1.10.3"
+    image: "thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}"
     ports:
       - "8080"
     environment:
@@ -185,7 +185,7 @@ If you still rely on Docker Compose as docker-compose (with a hyphen) execute ne
 {% endcapture %}
 {% include templates/info-banner.md content=dockerComposeStandalone %}
 
-* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with 1.10.3-HF3 instead of 1.10.2:
+* After this you need to update docker-compose.yml as in [Step 3](#step-3-running-trendz-service) but with {{ site.release.trendz_ver }} instead of 1.10.2:
 
 * Restart Trendz container
 
@@ -223,7 +223,7 @@ version: '3.0'
 services:
   mypyexecutor:
     restart: always
-    image: "thingsboard/trendz-python-executor:1.10.3"
+    image: "thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}"
     ports:
       - "8080"
     environment:
@@ -240,7 +240,7 @@ Where:
 
 - `8080`            - Python executor port for communication with Trendz service
 - `--restart always`        - automatically start Trendz in case of system reboot and restart in case of failure.
-- `thingsboard/trendz-python-executor:1.10.3`          - Trendz python script executor docker image
+- `thingsboard/trendz-python-executor:{{ site.release.trendz_ver }}`          - Trendz python script executor docker image
 - `SCRIPT_ENGINE_RUNTIME_TIMEOUT`          - Python script execution timeout
 
 ```text
