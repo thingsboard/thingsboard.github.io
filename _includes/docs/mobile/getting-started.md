@@ -52,6 +52,11 @@ Determine the Flutter {{appPrefix}} Mobile Application version according to the 
     </thead>
     <tbody>
         <tr>
+            <td>3.6.3+</td>
+            <td>1.1.0</td>
+            <td>1.1.0</td>
+        </tr>
+        <tr>
             <td>3.6.2+</td>
             <td>1.0.8</td>
             <td>1.0.8</td>
@@ -88,6 +93,11 @@ Determine the Flutter {{appPrefix}} Mobile Application version according to the 
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td>3.6.3PE+</td>
+            <td>1.1.0</td>
+            <td>1.1.0</td>
+        </tr>
         <tr>
             <td>3.6.2PE+</td>
             <td>1.0.9</td>
@@ -151,8 +161,8 @@ You can read [Connecting Flutter application to Localhost](https://medium.com/@p
 
 ## Step 4. [Optional] Configure push notifications
 
-Our system leverages Firebase to send notifications from ThingsBoard instances directly to mobile applications.
-This setup requires each platform tenant to configure Firebase specifically for their account to begin the distribution of notifications to their mobile apps.
+Our system leverages Firebase to send notifications from ThingsBoard instance directly to mobile application.
+This setup requires each platform tenant to configure Firebase specifically for their account to begin the distribution of notifications to their mobile app.
 
 ### Step 4.1 Create Firebase project
 
@@ -242,7 +252,7 @@ So let's get started:
 
 ### Step 4.2 Add Firebase to your mobile application
 
-To integrate Firebase into the mobile application, you'll need to complete the initial two steps outlined in the ["Add Firebase to your Flutter app"](https://firebase.google.com/docs/flutter/setup) guide available at Firebase's official documentation.
+To integrate Firebase into the mobile application, you'll need to complete the **initial two steps** outlined in the ["Add Firebase to your Flutter app"](https://firebase.google.com/docs/flutter/setup) guide available at Firebase's official documentation.
 
 After successfully completing these steps, make sure that your project contains the following file:
 
@@ -259,8 +269,7 @@ android/app/google-services.json
 ```
 {% capture difference %}
 **Please note:**
-<br>
-If the **{{appProject}}** project is currently running, please stop it and proceed with a rebuild.
+if the **{{appProject}}** project is currently running, please stop it and proceed with a rebuild.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
