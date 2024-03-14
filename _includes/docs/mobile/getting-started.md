@@ -227,7 +227,7 @@ So let's get started:
         title: Head over to the "Service accounts" tab next. Within the "Admin SDK configuration snippet", select the "Java" section. Then, click on the "Generate new private key" button. This action will generate a private key for your service account - crucial for secure server communication;
     ===
         image: /images/mobile/pe/firebase-new-project-9-pe.png,
-        title: Confirm the generation of your private key by clicking on the "“Generate key" button. Keep this key safe, as you&#39;ll need it for the ThingsBoard server-side operations;
+        title: Confirm the generation of your private key by clicking on the "Generate key" button. Keep this key safe, as you&#39;ll need it for the ThingsBoard server-side operations;
     ===
         image: /images/mobile/pe/firebase-new-project-10-pe.png,
         title: Sign in to your ThingsBoard instance and open the "Settings" page. Navigate to the “Notifications” tab, and in the "Mobile settings" section, uncheck the "Use system mobile settings" box (if you log in as a tenant). Here, upload the private key file you generated in Firebase project and click "Save" to finalize the configuration.
@@ -257,6 +257,12 @@ ios/Runner/GoogleService-Info.plist
 ```text
 android/app/google-services.json
 ```
+{% capture difference %}
+**Please note:**
+<br>
+If the **{{appProject}}** project is currently running, please stop it and proceed with a rebuild.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 To confirm that Firebase has been integrated properly, run your application ([Step 5](#step-5-run-the-app)). If everything is configured correctly, the notifications menu in your mobile application should be active, as shown in the screenshot below.
 
