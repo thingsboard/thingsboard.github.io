@@ -1,37 +1,67 @@
-
 * TOC
-  {:toc}
+{:toc}
 
-The TBMQ WebSocket Client is a handy tool accessible through your browser, designed to streamline the debugging process or test MQTT connections for different use cases. 
-Built with the principles of simplicity and ease of use, it introduces an effortless way to manage MQTT client connections, subscribe to topics, receive messages or publish messages.
-TBMQ WebSocket Client leverages the MQTT.js library to facilitate communication between client and broker. 
+The TBMQ WebSocket Client is a handy tool accessible through your browser, designed to streamline the debugging process or test MQTT clients for different use cases. 
+Built with the principles of simplicity and ease of use, it introduces an effortless way to manage MQTT clients, subscribe to topics, receive or publish messages.
 
-## WebSocket Connections
-TBMQ WebSocket Client allows managing multiple MQTT client connections simultaneously. 
-It provides an interface where you can conveniently initiate, monitor and terminate multiple MQTT connections.
+TBMQ WebSocket Client leverages the [MQTT.js](https://github.com/mqttjs/MQTT.js) library to facilitate communication between client and broker.
 
 ![image](/images/mqtt-broker/user-guide/ui/ws-overview.png)
 
-### Add
+### Connections
+
+TBMQ WebSocket Client allows managing multiple MQTT client connections simultaneously.
+It provides an interface where you can conveniently initiate, monitor and terminate multiple MQTT clients.
+
+#### Add connection
 
 To add a new Connection, please follow these steps:
 
-1. Navigate to the left-hand menu and click on ‘WebSocket Client’.
-2. In the top-left corner click on the icon to open popover UI element, then click on the button 'Add new connection'.
+1. Go to the _WebSocket Client_ page and click the _Select Connection_, represented by the _expand more_ icon.
+2. Click on the button _Add new connection_. To create connection and connect MQTT client fill the required fields and click _Connect_.
 
-{% include images-gallery.html imageCollection="add-ws-client" %}
+{% include images-gallery.html imageCollection="ws-connection-add" %}
 
-#### Connection details
-1. **Name**. Name of the WebSocket Client connection, must be unique.
-2. **URL**. Typically contains the protocol (like 'mqtt', 'mqtts', 'tcp', 'tls', 'ws', 'wss'), followed by the hostname and port number of your MQTT broker. Example: 'ws://localhost:8084/mqtt'.
-3. **Credentials**. TBQM allows to create websocket connection with different types of handling credentials details like clinentID (required), username, password:
-   * **Auto-generated.** Adding connection with auto-generated credentials will create resposive mqtt client credentials in the TBMQ.
-   * **Custom**. User can enter any possible combination
-   * **Use existing.** User have to select existing credentials of the Basic type and, if required, password.
+#### Edit connection
 
-![image](/images/mqtt-broker/user-guide/ui/ws-connection-details.png)
+TBMQ allows to modify your WebSocket Client connection parameters post connection establishment. 
+It is important to understand that changes made to the connection parameters will have immediate effect.
 
-#### Advanced settings
+If the client is connected at the time of modifications, TBMQ will gracefully disconnect the current session first. 
+Post disconnection, TBMQ will initiate a new session with the updated settings.
+This ensures that the changes you make are applied instantly, providing seamless adaptability while maintaining the integrity of the client's ongoing activities.
+
+In order to modify your WebSocket Client connection, please follow these steps:
+1. Go to the _WebSocket Client_ page and click on the arrow icon to expand the list of connections.
+2. Click on the pencil icon of the connection you wish to edit.
+3. Make changes and click Connect to save changes.
+
+{% include images-gallery.html imageCollection="ws-connection-edit" %}
+
+#### Delete connection
+
+In order to delete the WebSocket Client connection, please follow these steps:
+1. Go to the _WebSocket Client_ page and click on the arrow icon to expand the list of connections.
+2. Click on the trash icon of the connection you wish to delete.
+3. A confirmation prompt will appear. Click _Yes_ to finalize the deletion.
+
+{% include images-gallery.html imageCollection="ws-connection-delete" %}
+
+#### Connection settings
+
+WebSocket connections allow users to establish and manipulate various parameters, such as client credentials, session and last will settings.
+
+##### Connection details
+* **Name**. Name of the WebSocket Client connection, must be unique.
+* **URL**. Typically, contains the protocol (like 'mqtt', 'mqtts', 'tcp', 'tls', 'ws', 'wss'), followed by the hostname and port number of your MQTT broker. Example: 'ws://localhost:8084/mqtt'.
+* **Credentials**. TBQM allows to create websocket connection with different types of handling credentials details like clinentID (required), username, password:
+  * **Auto-generated credentials**. Credentials with random Client ID, random Username and empty Password. Please note that responsive Credentials will be created.
+  * **Custom authentication**. Credentials with custom Client ID, Username, Password.
+  * **Use existing credentials**. User selects existing credentials of the [Basic](/docs/mqtt-broker/security/#basic-authentication) type and, if required, input Password.
+
+{% include images-gallery.html imageCollection="ws-connection-details" %}
+
+##### Advanced settings
 
 * **Clean start**. When enabled (true), the broker will discard any previous session and will start a new one. This means that all subscriptions will be removed and all undelivered messages will be lost.
 * **Keep alive**.  This is the idle time the MQTT client is willing to wait between control packets (PUBLISH, PINGREQ, etc.) sent to the server. It allows you to keep the connection alive during periods of inactivity.
@@ -39,16 +69,16 @@ To add a new Connection, please follow these steps:
 * **Reconnect period**. This is the interval between two reconnection attempts when the MQTT client gets disconnected from the broker.
 * **MQTT version**.  Determines which version of MQTT protocol to be used - MQTT 3.1 (3), MQTT 3.1.1 (4), or MQTT 5.0 (5).
 
-If you choose MQTT Version 5, there are additional features:
+If you choose MQTT Version 5, there are additional parameters:
 * **Session Expiry Interval**. Sets the time (in seconds) the broker should keep the session alive after a client disconnects.
 * **Max Packet Size**. The maximum payload size (in bytes) that the client is willing to accept from the broker.
 * **Topic Alias Maximum**. The highest value that the client will accept as a Topic Alias sent by the broker.
 * **Receive Maximum**. The maximum number of QoS 1 and QoS 2 messages that can be processed concurrently.
 * **Request Response Information**. When set to true, MQTT broker will return additional information about the publish operations in the response.
 
-![image](/images/mqtt-broker/user-guide/ui/ws-connection-advanced.png)
+{% include images-gallery.html imageCollection="ws-connection-advanced" %}
 
-#### Last will
+##### Last will
 
 The Last Will is an optional feature in MQTT that lets user specify a message to be sent by the MQTT broker, in the event of an ungraceful disconnection of the client.
 Here's a closer look at the Last will properties:
@@ -66,48 +96,56 @@ If you choose MQTT Version 5, there are additional features:
 * **Correlation Data**. Binary data used to match the response message from the broker after it broadcasts the will message.
 * **User Properties**. It allows the client to include additional customized metadata to the Will message, in the form of an object of key-value pairs.
 
-![image](/images/mqtt-broker/user-guide/ui/ws-connection-will.png)
+{% include images-gallery.html imageCollection="ws-connection-will" %}
 
-### Edit
+#### Connection status
 
-TBMQ empowers you with the flexibility to alter your WebSocket Client connection parameters post connection establishment.
-This means you can modify settings to better adapt to the changing needs of your application, even during active sessions.
+In TBMQ, we provide a feature to store the temporary logs of the WebSocket Client statuses for your convenience. This allows you to monitor and troubleshoot the behavior of your client connections more effectively.
+To access these logs simply hover your cursor over the current status label. This action brings up a detailed status update history, providing vital insight into the sequence of connection-related events.
 
-It is important to understand that changes made to the connection parameters will have immediate effect and are not delayed until the next session.
-If the client is active and connected at the time of modifications, TBMQ will gracefully disconnect the current session first. Post disconnection, TBMQ will initiate a new session with the updated settings.
-This ensures that the changes you make are applied instantly, providing seamless adaptability while maintaining the integrity of the client's ongoing activities.
+The status of the WebSocket Client may be one of the following:
+1. **Connected**. Shows successfully established connection to the broker.
+2. **Disconnected**. Indicated the WebSocket client has closed the connection with the broker.
+3. **Reconnecting** This status is displayed when the client is in the process of re-establishing a connection with the broker. The reconnecting can be cancelled clicking on the button Cancel in the top right corner.
+4. **Connection failed**. Indicates that the client was unable to establish a connection with the broker. This status may also include additional information such as the cause of the failure - for instance, authentication issues, session taken over, among others.
 
-In order to modify your WebSocket Client connection, please follow these steps:
-1. Navigate to the 'WebSocket Client' page in your TBMQ interface.
-2. Click on the arrow icon to expand the list of connections.
-3. Click on the Edit icon in the corresponding row of the connection details you wish to edit.
-4. Click Connect to save changes.
+![image](/images/mqtt-broker/user-guide/ui/ws-logs.png)
 
-{% include images-gallery.html imageCollection="edit-ws-client" %}
+### Subscriptions
 
-### Delete
+MQTT subscriptions are an integral part of the MQTT publish-subscribe messaging protocol that allow client to subscribe to one or more topics.
+Users can manage subscriptions by creating new, modifying existing, or deleting unnecessary.
 
-In order to delete the WebSocket Client connection, please follow these steps:
-1. Navigate to the 'WebSocket Client' page in your TBMQ interface.
-2. Click on the arrow icon to expand the list of connections.
-3. Look for the Delete icon in the row corresponding to the connection you intend to remove and click on it.
-4. A confirmation prompt will appear. Click Yes to finalize the deletion.
-
-{% include images-gallery.html imageCollection="delete-ws-client" %}
-
-## WebSocket Subscriptions
-
-the MQTT client has the ability to subscribe to one or more topics. 
-There, you can also manage your MQTT subscriptions by creating new ones, modifying existing ones, or deleting unnecessary subscriptions.
-
-### Add
+#### Adding subscription
 
 In order to add Subscription please follow next steps:
-1. Navigate to the page 'WebSocket Client'.
-2. Click on the icon 'Add' to open dialog.
+1. Go to the _WebSocket Client_ page and click on the button _Add Subscription_, represented by the _plus_ icon.
+2. Make changes and click _Add_ to save them.
+
+{% include images-gallery.html imageCollection="ws-subscription-add" %}
+
+#### Edit subscription
+
+To modify a subscription, select the Pencil icon located in the respective row to open the dialog _Edit subscription_.
+After making essential changes, don't forget to confirm by clicking on the _Save_ button.
+
+Be aware that if you modify an existing subscription while the client is connected, TBMQ will first unsubscribe from the existing topic before subscribing to the updated one.
+Upon successful re-subscription, the client will then start receiving messages published to the new topic.
+
+{% include images-gallery.html imageCollection="ws-subscription-edit" %}
+
+#### Delete subscription
+
+Here are the steps to remove a subscription:
+1. Identify the specific subscription in the Subscriptions list. Click on the delete icon situated in the corresponding row.
+2. A confirmation prompt will appear. To complete the deletion process, click 'Yes'.
+   
+{% include images-gallery.html imageCollection="ws-subscription-delete" %}
+
+#### Subscription settings
 
 Here's a brief explanation of Subscription settings:
-* **Topic**. The MQTT topic that you want to subscribe to. Must be unique per connection.
+* **Topic**. The MQTT topic that you want to subscribe to. **Must be unique per connection.**
 * **QoS**. Quality of Service is the subscription.
 * **Retain as Published**. When true, MQTT broker will send retained messages at the subscription time.
 * **Retain Handling** This option determines how the broker should handle retained messages when the client subscribes to a topic.
@@ -117,25 +155,43 @@ Here's a brief explanation of Subscription settings:
 * **No local**. When set to true, the broker will not forward messages from this client back to the connection on which this subscription was made.
 * **Color**. Color is used for easier differentiation of the messages in the messages table. Can be changed.
 
-### Edit
+### Messages
 
-To modify a subscription, select the Pencil icon located in the respective row to open the dialog. 
-After making essential changes, don't forget to confirm by clicking on the Save button.
+The Messages table serves as a message log, cataloguing the most recent messages for your review.
 
-Be aware that if you modify an existing subscription while the client is connected, TBMQ will first unsubscribe from the existing topic before subscribing to the updated one.
-Upon successful re-subscription, the client will then start receiving messages published to the new topic.
+#### Messages table
+Each row in this table corresponds to a single published or received message and provides a snapshot of key message attributes:
+1. **Type**. Identifies whether a message was Received or Published.
+2. **Topic Filter**. Lists the topic or topics associated with the message.
+3. **QoS**. Displays the Quality of Service level associated with the message.
+4. **Retain**. Shows whether the message has been marked as "Retain" by the sender.
+5. **Payload**. Lays out the preview of the content embedded within the message.
+   If your message contains a payload, you can inspect it in detail by clicking on the Info icon button. This action will open a dialog that will not only allow you to read the payload but also gives you the option to copy it to your clipboard if needed.
+6. **Properties** icon button extends access to further settings contained within a message, such as User properties, Content type, Topic alias and other.
 
-### Delete
+{% include images-gallery.html imageCollection="ws-table-msg" %}
 
-Here are the steps to remove a subscription:
-1. Identify the specific subscription in the Subscriptions list. Click on the delete icon situated in the corresponding row.
-2. A confirmation prompt will appear. To complete the deletion process, click 'Yes'.
+#### Messages filtering
+Users of TBMQ have the ability to apply filters to messages using several parameters. To filter messages by:
+* **Type All/Received/Published** - click on the type label in the header of the Messages table.
+* **Topic/QoS/Retain** - click on the _filter_ icon next to _Clear messages_ button.
 
-## Publish message
+![image](/images/mqtt-broker/user-guide/ui/ws-table-filter.png)
 
-The WebSocket Client page includes a user-friendly interface feature that allows users to publish messages using the WebSocket MQTT protocol. 
-It provides the ability to set parameters such as:
+### Publish a message
 
+The WebSocket Client page includes a user-friendly interface features that allow users to publish messages using the WebSocket MQTT protocol.
+In order to successfully publish a message using TBMQ, please make sure that:
+* **Client is connected**.
+* **Topic is specified**. The topic might not be specified in case the topic alias feature is used.
+* **Message is valid**, if selected JSON format.
+
+After filling out the necessary information and settings, locate and **click on the Send icon** to publish your message. 
+The message will now be dispatched to the broker and relayed to all clients who are subscribed to the given topic.
+
+![image](/images/mqtt-broker/user-guide/ui/ws-publish-msg.png)
+
+Here is a list of basic options for publishing a message, along with brief explanations of their usage:
 * **Topic**. The MQTT topic to which your message will be published.
 * **QoS**. Quality of Service level guaranteeing the delivery of your message:
     * 0 - At most once (the message may or may not be delivered)
@@ -147,12 +203,12 @@ It provides the ability to set parameters such as:
     * JSON. Has validation of the JSON format of the message content.
     * String. Has no validation.
 
-### MQTT 5 publish message properties
+![image](/images/mqtt-broker/user-guide/ui/ws-publish-basic-params.png)
 
-For MQTT clients utilizing MQTT Version 5, there are also additional parameters available to further customize your message publishing experience. 
+For MQTT clients utilizing **MQTT Version 5**, there are also additional parameters available to further customize your message publishing experience. 
 The combination of these features provides a comprehensive and flexible environment for MQTT message handling.
 
-To set the published message properties please click on the button Properties in the bottom left corner to open dialog Properties. 
+To set the published message properties please click on the button _Properties_ in the bottom left corner to open dialog. 
 Here's a brief explanation of each setting:
 * **Payload Format Indicator**. When set to true, indicates that the payload is UTF-8 encoded character data. The default false signifies binary data.
 * **Content Type**. Describes the format of the application message’s data.
@@ -162,31 +218,4 @@ Here's a brief explanation of each setting:
 * **Response Topic**. String which is used as the Topic Name for a response message.
 * **User Properties**. Allows user-defined metadata in form of key-value pairs.
 
-### Send message
-In order to successfully publish a message using TBMQ, follow these steps:
-1. **Verify Client Connection**. Prior to publishing a message, ensure that your client is successfully connected to the MQTT broker. The connection status can typically be found on your client's dashboard.
-2. **Specify the Topic**. Enter the desired topic into the topic field. The topic is a string that the broker uses to filter messages for each connected client. If you do not specify a topic, make sure to set a Topic Alias as per MQTT 5 specifications.
-3. **Set Properties** (Optional, MQTT 5 features only). Properties allow to adjust various message properties according to your needs. This could include settings such as QoS, retain, payload format, content type etc. This step is optional and properties can be left to their default values if no specific settings are needed.
-4. **Click on the Send Icon**. After filling out the necessary information and settings, locate and click on the Send icon to publish your message. The message will now be dispatched to the broker and relayed to all clients who are subscribed to the given topic.
-
-## Messages table
-The Messages Table in TBMQ serves as a message log, cataloguing the most recent 50 messages for your review.
-Each row in this table corresponds to a single message and provides a snapshot of key message attributes:
-1. **Type**. Identifies whether a message was Received or Published.
-2. **Topic Filter**. Lists the topic or topics associated with the message.
-3. **QoS**. Displays the Quality of Service level associated with the message.
-4. **Retain**. Shows whether the message has been marked as "Retain" by the sender.
-5. **Payload**. Lays out the preview of the content embedded within the message. 
-If your message contains a payload, you can inspect it in detail by clicking on the Info icon button. This action will open a dialog that will not only allow you to read the payload but also gives you the option to copy it to your clipboard if needed.
-6. **Properties** icon button extends access to further settings contained within a message, such as User properties, Content type, Topic alias and other.
-
-## Connection log
-
-In TBMQ, we provide a feature to store the temporary logs of the WebSocket Client statuses for your convenience. This allows you to monitor and troubleshoot the behavior of your client connections more effectively.
-To access these logs simply hover your cursor over the current status label. This action brings up a detailed status update history, providing vital insight into the sequence of connection-related events.
-
-The status of the WebSocket Client may be one of the following:
-1. **Connected**. Shows successfully established connection to the broker.
-2. **Disconnected**. Indicated the WebSocket client has closed the connection with the broker.
-3. **Reconnecting** This status is displayed when the client is in the process of re-establishing a connection with the broker. The reconnecting can be cancelled clicking on the button Cancel in the top right corner.
-4. **Connection Failed**. Indicates that the WebSocket client was unable to establish a connection with the broker. This status may also include additional information such as the cause of the failure - for instance, authentication issues, session taken over, among others.
+![image](/images/mqtt-broker/user-guide/ui/ws-publish-advanced-params.png)

@@ -21,6 +21,8 @@ toc:
       path: /docs/mqtt-broker/user-guide/retained-messages/
 - title: Administration UI
   section:
+    - title: WebSocket Client
+      path: /docs/mqtt-broker/user-guide/ui/websocket-client/
     - title: Monitoring
       path: /docs/mqtt-broker/user-guide/ui/monitoring/
     - title: Users
