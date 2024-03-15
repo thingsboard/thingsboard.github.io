@@ -7,31 +7,43 @@ description: ThingsBoard Dashboard Widget Actions
 
 add-new-action-1:
     0:
-        image: /images/user-guide/ui/widgets/actions/guide/add-action-1-pe.png
-        title: 'Enter the widget editing mode, scroll down and find the "Actions" menu item;'
-    1:
         image: /images/user-guide/ui/widgets/actions/guide/add-action-2-pe.png
-        title: 'Click the "Add action" button (later, when you have created one or more actions, the "Add actions" button will change to the "plus" icon). The "Actions" window will open. Right now, it’s empty, but later it will display all created actions;'
-    2:
+        title: 'Enter dashboard edit mode and click "Edit widget" icon to enter the editing mode of the widget;'
+    1:
         image: /images/user-guide/ui/widgets/actions/guide/add-action-3-pe.png
-        title: 'Click the "plus" icon in the top right corner of the screen to open a new "Add action" window.'
+        title: 'Scroll down and find the "Actions" menu item. Click the "Add action" button (later, when you have created one or more actions, the "Add actions" button will change to the "plus" icon);'
+    2:
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-4-pe.png
+        title: 'The "Actions" window will open. Right now, it&#39;s empty, but later it will display all created actions. Click the "plus" icon in the top right corner of the screen to open a new "Add action" window.'
     3:
-        image: /images/user-guide/ui/widgets/actions/guide/add-action-7-pe.png
-        title: ''
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-5-pe.png
+        title: 'Click the `+` icon in the top right corner of the screen to open a new "Add action" window. In this window, you must configure a new action. You need to enter a name, specify the action source, and action type. Further action configuration will depend on the selected action type. Then, click "Add";'
     4:
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-6-pe.png
+        title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";'
+    5:
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-7-pe.png
+        title: 'Click "Apply" to save the widget settings;'
+    6:
         image: /images/user-guide/ui/widgets/actions/guide/add-action-8-pe.png
-        title: ''
+        title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.'
 
 add-new-action-2:
     0:
-        image: /images/user-guide/ui/widgets/actions/guide/add-action-4-pe.png
-        title: 'Enter the widget editing mode, scroll down and find the "Actions" menu item;'
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-2-pe.png
+        title: 'Enter dashboard edit mode and click "Edit widget" icon to enter the editing mode of the widget;'
     1:
-        image: /images/user-guide/ui/widgets/actions/guide/add-action-5-pe.png
-        title: 'Click the "Add action" button (later, when you have created one or more actions, the "Add actions" button will change to the "plus" icon). The "Actions" window will open. Right now, it’s empty, but later it will display all created actions;'
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-9-pe.png
+        title: 'Go to the "Actions" tab. Right now, this tab is empty, but later it will display all created actions. Click "plus" icon to open an "Add action" window;'
     2:
-        image: /images/user-guide/ui/widgets/actions/guide/add-action-6-pe.png
-        title: ''
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-10-pe.png
+        title: 'In this window, you must configure a new action. You need to enter a name, specify the action source, and action type. Further action configuration will depend on the selected action type. Then, click "Add";'
+    3:
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-11-pe.png
+        title: 'Click "Apply" to save the widget settings;'
+    4:
+        image: /images/user-guide/ui/widgets/actions/guide/add-action-12-pe.png
+        title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.'
 
 navigate-to-new-dashboard-state-1:
     0:

@@ -10,45 +10,51 @@
 Actions feature can be treated as navigation among [dashboard's states](/docs/{{docsPrefix}}user-guide/dashboards/#states) or between different [dashboards](/docs/{{docsPrefix}}user-guide/dashboards/).
 Actions allow quickly and easily configuring the transition to created state, transferring to other dashboards, or even updating the dashboard you are in. 
 Depending on the widget, the action sources differ. However, the type of action you are able to choose will be the same for all widgets.
+Actions can be configured both when editing and creating the needed widget.
 
-Actions are adjusted in the Edit mode of the needed widget.
+In this guide, we will configure actions in the editing mode using the Entities table widget as an example. Please, [learn here](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget) how to add an Entity table widget to your dashboard.
 
 To fully understand how to use Actions, you have to add a State to your dashboard. How to do this you should [read here](/docs/{{docsPrefix}}user-guide/dashboards/#states).
 
 ## Add action
 
-You can add a new action both when adding a widget and when editing it.
+Let's add your first action. In this step, we will outline only the general steps without going into the details of each setting. Later in the guide, we will cover examples of using each [type of action](#action-types) and [action source](#action-sources) for better understanding. Let's get started.
 
-To add a new action, follow these steps:
+Most widgets offer two configuration options: *basic* and *advanced*. Accordingly, the process of adding actions differs slightly between these modes. Let's explore both:
 
-If using the **basic** widget setting:
+If you're using the *basic* widget configuration:
+
 - Enter the editing mode of the widget to which you want to add an action, scroll down and find the "Actions" menu item;
 - Click the "Add action" button (later, when you have created one or more actions, the "Add actions" button will change to the `+` icon).
-The "Actions" window will open. Right now, it's empty, but later it will display all created actions;
-- Click the `+` icon in the top right corner of the screen to open a new "Add action" window.
-In this window, you must configure a new action. You need to enter a name, specify the action source, and action type. Further action configuration will depend on the selected action type. Then, click "Add".
+  The "Actions" window will open. Right now, it's empty, but later it will display all created actions;
+- Click the `+` icon in the top right corner of the screen to open a new "Add action" window. In this window, you must configure a new action. You need to enter a name, specify the action source, and action type. Further action configuration will depend on the selected action type. Then, click "Add";
+- Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";
+- Click "Apply" to save the widget settings;
+- Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="add-new-action-1" %}
 
-If using **advanced** widget settings: 
+If you're using the *advanced* widget settings:
+
 - Enter the widget editing mode, and navigate to the "Actions" tab. Right now, here is empty, but later all created actions will be displayed here;
-- Click the `+` icon in the top right corner of the screen to open a new "Add action" window.
-In this window, you must configure a new action. You need to enter a name, specify the action source, and action type. Further action configuration will depend on the selected action type. Then, click "Add".
+- Click the `+` icon in the top right corner of the screen to open a new "Add action" window. In this window, you must configure a new action. You need to enter a name, specify the action source, and action type. Further action configuration will depend on the selected action type. Then, click "Add";
+- Now, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";
+- Click "Apply" to save the widget settings;
+- Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.
 
 {% include images-gallery.html imageCollection="add-new-action-2" %}
 
-Next, we will go through how to use each [action source](#action-sources) and [action type](#action-types) using the "*Entities table*" widget as an example.
-Please, [learn here](/docs/getting-started-guides/helloworld-pe/#step-32-add-an-entities-table-widget) how to add an Entity table widget to your dashboard.
+Now you can use the action. This can be clicking on a separate button, the widget title, an individual row of entity, etc.
 
 ## Action types
 
 Types of action define which exactly action will be taken.
-There are six action types that are the same for all widgets:
+There are seven action types that are the same for all widgets:
 - **Navigate to new dashboard state** - you will be transferred to the specified state;
 - **Update current dashboard state** - updating a dashboard that you are currently on;
 - **Navigate to other dashboard** - transfers you to a specified dashboard;
 - **Custom action** - allows manually configuring a function that can be used to add an individual action to your widget;
-- **Custom action** (with HTML template) - action with an HTML template allows manually entering a function in an existing HTML template;
+- **Custom action (with HTML template)** - action with an HTML template allows manually entering a function in an existing HTML template;
 - **Mobile action** - allows the use of various mobile device functions like take photo, scanning QR codes, getting device location, make phone call and so on;
 - **Open URL** - allows you to go to any resource represented by a URL.
 
