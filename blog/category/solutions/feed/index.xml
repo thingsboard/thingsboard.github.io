@@ -12,21 +12,13 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Tue, 12 Mar 2024 15:25:43 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 15 Mar 2024 13:37:39 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=6.4.3</generator>
-
-<image>
-	<url>./../../../wp-content/uploads/2024/02/cropped-favicon-1-32x32.png</url>
-	<title>Solutions &#8211; ThingsBoard&#039;s blog</title>
-	<link>./../../../index.html</link>
-	<width>32</width>
-	<height>32</height>
-</image> 
 	<item>
 		<title>Warehouse monitoring with ThingsBoard</title>
 		<link>./../../../warehouse-monitoring-with-thingsboard/index.html</link>
@@ -47,7 +39,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/5.svg" alt="" class="wp-image-3225"/></figure>
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="803" height="451" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/5.webp" alt="Working conditions on the left side and device on the right side" class="wp-image-3797" srcset="./../../../wp-content/uploads/2024/03/5.webp 803w, ./../../../wp-content/uploads/2024/03/5-300x168.webp 300w, ./../../../wp-content/uploads/2024/03/5-768x431.webp 768w, ./../../../wp-content/uploads/2024/03/5-512x288.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
 
 
 
@@ -81,7 +73,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="2409" height="1353" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/4-8.png" alt="" class="wp-image-3223" srcset="./../../../wp-content/uploads/2024/02/4-8.png 2409w, ./../../../wp-content/uploads/2024/02/4-8-300x168.png 300w, ./../../../wp-content/uploads/2024/02/4-8-1024x575.png 1024w, ./../../../wp-content/uploads/2024/02/4-8-768x431.png 768w, ./../../../wp-content/uploads/2024/02/4-8-1536x863.png 1536w, ./../../../wp-content/uploads/2024/02/4-8-2048x1150.png 2048w, ./../../../wp-content/uploads/2024/02/4-8-512x288.png 512w, ./../../../wp-content/uploads/2024/02/4-8-920x517.png 920w, ./../../../wp-content/uploads/2024/02/4-8-1600x899.png 1600w, ./../../../wp-content/uploads/2024/02/4-8-1920x1078.png 1920w, ./../../../wp-content/uploads/2024/02/4-8-1320x741.png 1320w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img decoding="async" width="893" height="407" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/temp_hum_dashboard210923.webp" alt="Screen with opened dashboard and devices in front" class="wp-image-3800" srcset="./../../../wp-content/uploads/2024/03/temp_hum_dashboard210923.webp 893w, ./../../../wp-content/uploads/2024/03/temp_hum_dashboard210923-300x137.webp 300w, ./../../../wp-content/uploads/2024/03/temp_hum_dashboard210923-768x350.webp 768w, ./../../../wp-content/uploads/2024/03/temp_hum_dashboard210923-512x233.webp 512w" sizes="(max-width: 893px) 100vw, 893px" /></figure>
 
 
 
@@ -89,7 +81,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="587" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/6-6-1024x587.png" alt="" class="wp-image-3228" srcset="./../../../wp-content/uploads/2024/02/6-6-1024x587.png 1024w, ./../../../wp-content/uploads/2024/02/6-6-300x172.png 300w, ./../../../wp-content/uploads/2024/02/6-6-768x440.png 768w, ./../../../wp-content/uploads/2024/02/6-6-1536x880.png 1536w, ./../../../wp-content/uploads/2024/02/6-6-2048x1173.png 2048w, ./../../../wp-content/uploads/2024/02/6-6-512x293.png 512w, ./../../../wp-content/uploads/2024/02/6-6-920x527.png 920w, ./../../../wp-content/uploads/2024/02/6-6-1600x917.png 1600w, ./../../../wp-content/uploads/2024/02/6-6-1920x1100.png 1920w, ./../../../wp-content/uploads/2024/02/6-6-1320x756.png 1320w, ./../../../wp-content/uploads/2024/02/6-6.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-full"><img decoding="async" width="803" height="460" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/6.webp" alt="Two windows with alarms information  and dashboard" class="wp-image-3799" srcset="./../../../wp-content/uploads/2024/03/6.webp 803w, ./../../../wp-content/uploads/2024/03/6-300x172.webp 300w, ./../../../wp-content/uploads/2024/03/6-768x440.webp 768w, ./../../../wp-content/uploads/2024/03/6-512x293.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
 
 
 
@@ -123,7 +115,7 @@
 					<comments>./../../../optimizing-dashboard-performance-with-enhanced-image-management/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
-		<pubDate>Mon, 26 Feb 2024 11:52:07 +0000</pubDate>
+		<pubDate>Thu, 29 Feb 2024 11:52:07 +0000</pubDate>
 				<category><![CDATA[Solutions]]></category>
 		<guid isPermaLink="false">http://wp.thingsboard.io/?p=2971</guid>
 
@@ -149,7 +141,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" width="1604" height="902" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Image-gallery.png" alt="" class="wp-image-3348" srcset="./../../../wp-content/uploads/2024/03/Image-gallery.png 1604w, ./../../../wp-content/uploads/2024/03/Image-gallery-300x169.png 300w, ./../../../wp-content/uploads/2024/03/Image-gallery-1024x576.png 1024w, ./../../../wp-content/uploads/2024/03/Image-gallery-768x432.png 768w, ./../../../wp-content/uploads/2024/03/Image-gallery-1536x864.png 1536w, ./../../../wp-content/uploads/2024/03/Image-gallery-512x288.png 512w, ./../../../wp-content/uploads/2024/03/Image-gallery-920x517.png 920w, ./../../../wp-content/uploads/2024/03/Image-gallery-1600x900.png 1600w, ./../../../wp-content/uploads/2024/03/Image-gallery-1320x742.png 1320w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="902" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/9.webp" alt="Thingsboard image gallery with created time and resolution information" class="wp-image-3704" srcset="./../../../wp-content/uploads/2024/03/9.webp 1604w, ./../../../wp-content/uploads/2024/03/9-300x169.webp 300w, ./../../../wp-content/uploads/2024/03/9-1024x576.webp 1024w, ./../../../wp-content/uploads/2024/03/9-768x432.webp 768w, ./../../../wp-content/uploads/2024/03/9-1536x864.webp 1536w, ./../../../wp-content/uploads/2024/03/9-512x288.webp 512w, ./../../../wp-content/uploads/2024/03/9-920x517.webp 920w, ./../../../wp-content/uploads/2024/03/9-1600x900.webp 1600w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
 
 
 
@@ -177,7 +169,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="1604" height="902" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Edit-image.png" alt="" class="wp-image-3345" srcset="./../../../wp-content/uploads/2024/03/Edit-image.png 1604w, ./../../../wp-content/uploads/2024/03/Edit-image-300x169.png 300w, ./../../../wp-content/uploads/2024/03/Edit-image-1024x576.png 1024w, ./../../../wp-content/uploads/2024/03/Edit-image-768x432.png 768w, ./../../../wp-content/uploads/2024/03/Edit-image-1536x864.png 1536w, ./../../../wp-content/uploads/2024/03/Edit-image-512x288.png 512w, ./../../../wp-content/uploads/2024/03/Edit-image-920x517.png 920w, ./../../../wp-content/uploads/2024/03/Edit-image-1600x900.png 1600w, ./../../../wp-content/uploads/2024/03/Edit-image-1320x742.png 1320w" sizes="(max-width: 1604px) 100vw, 1604px" /></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1353" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Edit-image.webp" alt="Thingsboard edit image form with option to change name and loaded photo" class="wp-image-3708" srcset="./../../../wp-content/uploads/2024/03/Edit-image.webp 2406w, ./../../../wp-content/uploads/2024/03/Edit-image-300x169.webp 300w, ./../../../wp-content/uploads/2024/03/Edit-image-1024x576.webp 1024w, ./../../../wp-content/uploads/2024/03/Edit-image-768x432.webp 768w, ./../../../wp-content/uploads/2024/03/Edit-image-1536x864.webp 1536w, ./../../../wp-content/uploads/2024/03/Edit-image-2048x1152.webp 2048w, ./../../../wp-content/uploads/2024/03/Edit-image-512x288.webp 512w, ./../../../wp-content/uploads/2024/03/Edit-image-920x517.webp 920w, ./../../../wp-content/uploads/2024/03/Edit-image-1600x900.webp 1600w, ./../../../wp-content/uploads/2024/03/Edit-image-1920x1080.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
 
 
 
@@ -225,7 +217,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/Embed-image.svg" alt="" class="wp-image-3132"/></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1446" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Embed-image-1.webp" alt="Two blocks with text and code blocks with capabilities to copy code" class="wp-image-3886" srcset="./../../../wp-content/uploads/2024/03/Embed-image-1.webp 2406w, ./../../../wp-content/uploads/2024/03/Embed-image-1-300x180.webp 300w, ./../../../wp-content/uploads/2024/03/Embed-image-1-1024x615.webp 1024w, ./../../../wp-content/uploads/2024/03/Embed-image-1-768x462.webp 768w, ./../../../wp-content/uploads/2024/03/Embed-image-1-1536x923.webp 1536w, ./../../../wp-content/uploads/2024/03/Embed-image-1-2048x1231.webp 2048w, ./../../../wp-content/uploads/2024/03/Embed-image-1-512x308.webp 512w, ./../../../wp-content/uploads/2024/03/Embed-image-1-920x553.webp 920w, ./../../../wp-content/uploads/2024/03/Embed-image-1-1600x962.webp 1600w, ./../../../wp-content/uploads/2024/03/Embed-image-1-1920x1154.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
 
 
 
@@ -237,7 +229,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/ThingsBoard.svg" alt="" class="wp-image-3133"/></figure>
+<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1353" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/ThingsBoard.webp" alt="Demonstration photo of relations between Client and Server" class="wp-image-3713" srcset="./../../../wp-content/uploads/2024/03/ThingsBoard.webp 2406w, ./../../../wp-content/uploads/2024/03/ThingsBoard-300x169.webp 300w, ./../../../wp-content/uploads/2024/03/ThingsBoard-1024x576.webp 1024w, ./../../../wp-content/uploads/2024/03/ThingsBoard-768x432.webp 768w, ./../../../wp-content/uploads/2024/03/ThingsBoard-1536x864.webp 1536w, ./../../../wp-content/uploads/2024/03/ThingsBoard-2048x1152.webp 2048w, ./../../../wp-content/uploads/2024/03/ThingsBoard-512x288.webp 512w, ./../../../wp-content/uploads/2024/03/ThingsBoard-920x517.webp 920w, ./../../../wp-content/uploads/2024/03/ThingsBoard-1600x900.webp 1600w, ./../../../wp-content/uploads/2024/03/ThingsBoard-1920x1080.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
 
 
 

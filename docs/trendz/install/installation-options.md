@@ -78,7 +78,7 @@ notitle: "true"
                                         <a href="/docs/trendz/install/kubernetes/">
                                             <span>
                                                 <div class="deployment-logo">
-                                                    <img width="" src="/images/install/platform/kubernetes.png" title="Kubernetes" alt="Kubernetes">
+                                                    <img width="" src="https://img.thingsboard.io/install/platform/kubernetes.png" title="Kubernetes" alt="Kubernetes">
                                                  </div>
                                             </span>
                                         </a>

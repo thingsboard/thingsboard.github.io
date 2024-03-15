@@ -12,21 +12,13 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Tue, 12 Mar 2024 15:25:43 +0000</lastBuildDate>
+	<lastBuildDate>Fri, 15 Mar 2024 13:37:39 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
 	<sy:updateFrequency>
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=6.4.3</generator>
-
-<image>
-	<url>./../../../wp-content/uploads/2024/02/cropped-favicon-1-32x32.png</url>
-	<title>PR team &#8211; ThingsBoard&#039;s blog</title>
-	<link>./../../../index.html</link>
-	<width>32</width>
-	<height>32</height>
-</image> 
 	<item>
 		<title>Warehouse monitoring with ThingsBoard</title>
 		<link>./../../../warehouse-monitoring-with-thingsboard/index.html</link>
@@ -47,7 +39,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img decoding="async" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/5.svg" alt="" class="wp-image-3225"/></figure>
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="803" height="451" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/5.webp" alt="Working conditions on the left side and device on the right side" class="wp-image-3797" srcset="./../../../wp-content/uploads/2024/03/5.webp 803w, ./../../../wp-content/uploads/2024/03/5-300x168.webp 300w, ./../../../wp-content/uploads/2024/03/5-768x431.webp 768w, ./../../../wp-content/uploads/2024/03/5-512x288.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
 
 
 
@@ -81,7 +73,7 @@
 
 
 
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="2409" height="1353" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/4-8.png" alt="" class="wp-image-3223" srcset="./../../../wp-content/uploads/2024/02/4-8.png 2409w, ./../../../wp-content/uploads/2024/02/4-8-300x168.png 300w, ./../../../wp-content/uploads/2024/02/4-8-1024x575.png 1024w, ./../../../wp-content/uploads/2024/02/4-8-768x431.png 768w, ./../../../wp-content/uploads/2024/02/4-8-1536x863.png 1536w, ./../../../wp-content/uploads/2024/02/4-8-2048x1150.png 2048w, ./../../../wp-content/uploads/2024/02/4-8-512x288.png 512w, ./../../../wp-content/uploads/2024/02/4-8-920x517.png 920w, ./../../../wp-content/uploads/2024/02/4-8-1600x899.png 1600w, ./../../../wp-content/uploads/2024/02/4-8-1920x1078.png 1920w, ./../../../wp-content/uploads/2024/02/4-8-1320x741.png 1320w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
+<figure class="wp-block-image size-full"><img decoding="async" width="893" height="407" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/temp_hum_dashboard210923.webp" alt="Screen with opened dashboard and devices in front" class="wp-image-3800" srcset="./../../../wp-content/uploads/2024/03/temp_hum_dashboard210923.webp 893w, ./../../../wp-content/uploads/2024/03/temp_hum_dashboard210923-300x137.webp 300w, ./../../../wp-content/uploads/2024/03/temp_hum_dashboard210923-768x350.webp 768w, ./../../../wp-content/uploads/2024/03/temp_hum_dashboard210923-512x233.webp 512w" sizes="(max-width: 893px) 100vw, 893px" /></figure>
 
 
 
@@ -89,7 +81,7 @@
 
 
 
-<figure class="wp-block-image size-large"><img decoding="async" width="1024" height="587" src="https://wp.thingsboard.io/wp-content/uploads/2024/02/6-6-1024x587.png" alt="" class="wp-image-3228" srcset="./../../../wp-content/uploads/2024/02/6-6-1024x587.png 1024w, ./../../../wp-content/uploads/2024/02/6-6-300x172.png 300w, ./../../../wp-content/uploads/2024/02/6-6-768x440.png 768w, ./../../../wp-content/uploads/2024/02/6-6-1536x880.png 1536w, ./../../../wp-content/uploads/2024/02/6-6-2048x1173.png 2048w, ./../../../wp-content/uploads/2024/02/6-6-512x293.png 512w, ./../../../wp-content/uploads/2024/02/6-6-920x527.png 920w, ./../../../wp-content/uploads/2024/02/6-6-1600x917.png 1600w, ./../../../wp-content/uploads/2024/02/6-6-1920x1100.png 1920w, ./../../../wp-content/uploads/2024/02/6-6-1320x756.png 1320w, ./../../../wp-content/uploads/2024/02/6-6.png 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+<figure class="wp-block-image size-full"><img decoding="async" width="803" height="460" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/6.webp" alt="Two windows with alarms information  and dashboard" class="wp-image-3799" srcset="./../../../wp-content/uploads/2024/03/6.webp 803w, ./../../../wp-content/uploads/2024/03/6-300x172.webp 300w, ./../../../wp-content/uploads/2024/03/6-768x440.webp 768w, ./../../../wp-content/uploads/2024/03/6-512x293.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
 
 
 
