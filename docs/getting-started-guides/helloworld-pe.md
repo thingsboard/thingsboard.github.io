@@ -9,10 +9,10 @@ redirect_from: "/docs/pe/getting-started-guides/helloworld/"
 step1:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-1-pe.png
-        title: 'Login to your ThingsBoard instance and navigate to the "Entities" section. Then go to the "Devices" page;'
+        title: 'Login to your ThingsBoard instance and go to the "Devices" page of the "Entities" section;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-2-pe.png
-        title: 'By default, you navigate to the device group “All”. Click on the "+" icon in the top right corner of the table and then select "Add new device";'
+        title: 'By default, you navigate to the device group “All”. Click on the "+" icon in the top right corner of the table and then select "Add new device" from drop-down menu;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-3-pe.png
         title: 'Enter the device name. For example, "My New Device". No other changes are required at this time. Click "Add";'
@@ -42,7 +42,7 @@ step2:
 step31:
     0:
         image: /images/user-guide/dashboards/overview/create-dashboard-1-pe.png
-        title: 'Login to your ThingsBoard instance and navigate to the "Dashboards" page through the main menu on the left of the screen. By default, you navigate to the dashboard group "All";'
+        title: 'Navigate to the "Dashboards" page through the main menu on the left of the screen. By default, you navigate to the dashboard group "All";'
     1:
         image: /images/user-guide/dashboards/overview/create-dashboard-2-pe.png
         title: 'Click the "+" sign in the upper right corner of the screen, and select "Create new dashboard" from the drop-down menu;'
@@ -71,7 +71,7 @@ step32:
         title: 'Select the "Entities table" widget;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-4-pe.png
-        title: 'The "Add Widget" window will appear. Specify the previously created device "My New Device" in the "Device" field. The “name” key has already been added to the “Columns” section, which is responsible for the column with the device name. You need to add another column that will display the value of the "temperature" key. To do this, click "Add column" to add a new field to enter the data key;'
+        title: 'The "Add Widget" window will appear. Specify the previously created device "My New Device" as the data source in the "Device" field. The “name” key has already been added to the “Columns” section, which is responsible for the column with the device name. You need to add another column that will display the value of the "temperature" key. To do this, click "Add column" to add a new field to enter the data key;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-5-pe.png
         title: 'Click on the newly appeared data key input field. A list of available data keys will open. Select "temperature" data key;'
@@ -80,7 +80,7 @@ step32:
         title: 'Click the "Add" button in the bottom right corner of the widget to complete adding the widget;.'
     7:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-7-pe.png
-        title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. Click "Save" to apply changes.'
+        title: 'To make the widget slightly larger, simply grab the bottom right corner and drag it. Once you&#39;re happy with the new size, don&#39;t forget to click "Save" to save your changes to the dashboard.'
 
 step33:
     0:
@@ -94,7 +94,7 @@ step33:
         title: 'Select the "Time series сhart" widget;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-4-pe.png
-        title: 'Specify the previously created device "My New Device" in the "Device" field and specify the "temperature" data key in the "Series" section. Click "Add";'
+        title: 'Specify the previously created device "My New Device" as the data source in the "Device" field. In the "Series" section, specify the data key "temperature" to start monitoring the temperature values of the device. Then, click "Add";'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-5-pe.png
         title: 'Resize the widget and apply changes. Publish different telemetry values multiple times, as in Step 2. Note that the widget displays only one minute of data by default. Click "Save" to apply changes;'
@@ -116,18 +116,18 @@ step34:
         title: 'Select "Alarms table" widget;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-4-pe.png
-        title: 'Specify the previously created device "My New Device" in the "Device" field and select the statuses and severities of alarms you want to display in the alarm widget;'
+        title: 'Specify the previously created device "My New Device" as the data source in the "Device" field and select the statuses and severities of alarms you want to display in the alarm widget;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-5-pe.png
         title: 'Congratulations! You have added the alarm widget. By default, new widgets are added one below the other, stacking downwards. Let&#39;s organize our widgets a bit to tidy up their arrangement. Drag the "Time series chart" widget to the top right corner of the dashboard to make room for the "Alarms table" widget;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-6-pe.png
-        title: 'Scroll down to find the "Alarms table" widget. Then, drag the "Alarms table" widget to a free spot and adjust its size to fit your needs. Click "Save" to apply changes.'
+        title: 'Scroll down to find the "Alarms table" widget. Once you find it, click and drag it over to a free spot. Adjust its size to fit your needs. After you&#39;re done tweaking, click "Save" to save the dashboard.'
 
 step4:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-2-pe.png
-        title: 'Go to the "Profiles" section, and click on the "Device profiles" page. Then click on the default device profile row to open its details;'
+        title: 'Go to the "Device profiles" page of the "Profiles" section. Then click on the default device profile row to open its details;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-4-configure-alarm-rules-3-pe.png
         title: 'Navigate to the "Alarm rules" tab and click "pencil" button to enter edit mode;'
@@ -221,7 +221,7 @@ step72_1:
 step72_2:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-11-pe.png
-        title: 'Click on the "+" icon in the top right corner of the table;'
+        title: 'Click on the "+" icon in the top right corner of the table and then select "Add new device" from drop-down menu;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-12-pe.png
         title: 'Input device name (for example, "Thermostat") and select the new owner in the "Owner" field. Then, click "Add";'
@@ -284,7 +284,7 @@ step74:
         title: 'Click on the created user to open details. Click "pencil" icon to enter edit mode;'
     6:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-user-7-pe.png
-        title: 'Select the default dashboard and enable "Always fullscreen" mode. Apply changes.'
+        title: 'Select your "My New Dashboard" as default dashboard and check "Always fullscreen". Apply changes.'
 
 step75:
     0:

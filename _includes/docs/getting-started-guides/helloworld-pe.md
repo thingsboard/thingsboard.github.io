@@ -89,7 +89,9 @@ We should also configure the time window to use the chart widget.
 
 Congratulations! You have added the chart widget. Now you are able to send a new telemetry reading, and it will immediately appear in the chart. 
 
-{% include images-gallery.html imageCollection="step33_2" showListImageTitles="true" %}
+Also, you can open the timewindow and change the interval and aggregation function. Update the time window setting by clicking the "Update" button.
+
+{% include images-gallery.html imageCollection="step33_2" %}
 
 ### Step 3.4 Add an Alarms table widget
 
