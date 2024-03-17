@@ -416,13 +416,16 @@ Note that the temperature value should be 26 or higher to raise the alarm. Once 
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
 
-## Step 6. Alarm notifications
-
-It's quite easy to set up notifications using the **Notification center**. ThingsBoard Notification center allows you to send notifications to the end-users.
-Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
-
 We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules)
 and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms).
+
+## Step 6. Alarm notifications
+
+The ThingsBoard [Notification center](/docs/{{docsPrefix}}user-guide/notifications/) allows sending personalized notifications to end-users. These can include notifications about device activity, changes in temperature within your environment, or other events detected in your IoT ecosystem.
+Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
+
+Additionally, the [ThingsBoard Mobile Application](/docs/mobile/) allows users to receive instant push notifications directly on their smartphone. This ensures that you will always be timely informed about any events in your IoT solution, no matter where you are.
+Follow [this guide](/docs/mobile/getting-started/) to learn how to install the ThingsBoard PE Mobile Application and set up push notifications delivery directly from ThingsBoard instance to your smartphone.
 
 ## Step 7. Assign device and dashboard to customer
 
