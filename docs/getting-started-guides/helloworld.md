@@ -121,10 +121,10 @@ step34:
         title: 'Specify the previously created device "My New Device" in the "Device" field and select the statuses and severities of alarms you want to display in the alarm widget;'
     4:
         image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-5-ce.png
-        title: 'Drag and Drop the "Timeseries Line Chart" widget to the top right corner of the dashboard to make room for the "Alarms" widget;'   
+        title: 'Drag and Drop the "Time series chart" widget to the top right corner of the dashboard to make room for the "Alarms table" widget;'   
     5:
         image: /images/helloworld/getting-started-ce/hello-world-3-4-add-alarm-widget-6-ce.png
-        title: 'Scroll down and locate the new "Alarms" widget. Drag and Drop Alarm widget to the free space and resize it. Click "Save" to apply changes.'
+        title: 'Scroll down to find the "Alarms table" widget. Then, drag the "Alarms table" widget to a free spot and adjust its size to fit your needs. Click "Save" to apply changes.'
 
 step4:
     0:
@@ -161,7 +161,7 @@ step5:
         title: 'Notice that the new temperature telemetry causes a new active alarm;'
     1:
         image: /images/helloworld/getting-started-ce/hello-world-5-create-alarm-2-ce.png
-        title: 'You may acknowledge and clear the alarms;'
+        title: 'You may acknowledge and clear alarms using the "Alarms table" widget;'
     2:
         image: /images/helloworld/getting-started-ce/hello-world-5-create-alarm-3-ce.png
         title: 'When you receive a new alarm, you will receive a message in the notification center. You can view the message by clicking on the bell icon in the upper right corner.'   

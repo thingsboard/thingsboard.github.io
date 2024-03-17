@@ -89,6 +89,8 @@ We should also configure the time window to use the chart widget.
 
 Congratulations! You have added the chart widget. Now you are able to send a new telemetry reading, and it will immediately appear in the chart. 
 
+{% include images-gallery.html imageCollection="step33_2" showListImageTitles="true" %}
+
 ### Step 3.4 Add an Alarms table widget
 
 The alarms table widget displays alarms related to the specified entity in the certain time window.
@@ -96,7 +98,7 @@ Alarm widget is configured by specifying an entity as the alarm source, and the 
 
 {% include images-gallery.html imageCollection="step34" showListImageTitles="true" %}
 
-Congratulations! You have added the alarm widget. Now it's time to configure alarm rules and raise some alarms. 
+Now it's time to configure alarm rules and raise some alarms. 
 
 **Note:** in this documentation, we are using a single device as a data source for the widgets. 
 To use dynamic entities (for example, devices of a certain type or related to a certain asset) as data source, you should use the alias.
@@ -133,7 +135,7 @@ and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/dev
 One of the most important ThingsBoard features is the ability to create end-user dashboards.
 Each Customer User should see his own devices and should not be able to see devices or any other data that belongs to a different customer. 
 
-We have already created a Device (see [Step 1](#step-1-provision-device)), and a Dashboard (see [Step 3](#step-3-create-dashboard)).
+We have already created the Device (see [Step 1](#step-1-provision-device)), the Dashboard and added widgets to it (see [Step 3](#step-3-create-dashboard)).
 Now it's time to create a Customer and a Customer User and make sure they will have access to the device's data and the dashboard.
 There are two options for how Tenant Administrator can give access to a certain Entity (Device, Dashboard, Asset, etc.) for a Customer:
 
@@ -162,8 +164,9 @@ You can make the customer the owner of the device during its creation stage.
 
 ### Step 7.3 Share the dashboard
 
-Let's share our dashboard with the customer. 
-Our dashboard is in the group "All". Ideally, we should create another dashboard group, but to simplify the guide, we will use the group "All". 
+Let's share our dashboard with the customer.
+But нou can't share an individual dashboard directly; you can only share a dashboard group that includes the desired dashboard.
+Our dashboard is in the group "All". Ideally, we should create a new dashboard group and move our dashboard into it, but to simplify this guide, we'll use the "All" group.
 
 {% include images-gallery.html imageCollection="step73" showListImageTitles="true" %}
 

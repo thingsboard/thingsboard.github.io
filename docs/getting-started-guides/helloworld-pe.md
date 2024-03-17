@@ -17,16 +17,16 @@ step1:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-3-pe.png
         title: 'Enter the device name. For example, "My New Device". No other changes are required at this time. Click "Add";'
     3:
-        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-connectivity-1-pe.png
-        title: 'Device is created. A window will open where you can check the device&#39;s connection to ThingsBoard. This step is optional. Let&#39;s close this window for now and return to checking the connection in the next step in more detail;'
-    4:
         image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-4-pe.png
-        title: 'Your first device has been added. As new devices are added, they will be added to the top of the table, since the table sorts devices using the time of the creation by default.'
+        title: 'A window will open where you can check the device&#39;s connection to ThingsBoard. This step is optional. Let&#39;s close this window for now and return to checking the connection in the next step in more detail;'
+    4:
+        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-5-pe.png
+        title: 'Congratulations on adding your first device! As you add more devices, the will be added at the top of the table, since the table automatically sorts devices by their creation time, with the newest ones first.'
 
 step11:
     0:
-        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-5-pe.png
-        title: 'You can view notification by clicking on the "bell" icon in the top right corner.'
+        image: /images/helloworld/getting-started-pe/hello-world-1-1-provision-device-6-pe.png
+        title: 'You can view notification about adding a new device by clicking on the "bell" icon in the top right corner.'
 
 step2:
     0:
@@ -65,7 +65,7 @@ step32:
         title: 'Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-2-pe.png
-        title: 'Select the "Tables" widget bundle;'
+        title: 'Find the "Tables" widget bundle and click on it;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-3-pe.png
         title: 'Select the "Entities table" widget;'
@@ -77,7 +77,7 @@ step32:
         title: 'Click on the newly appeared data key input field. A list of available data keys will open. Select "temperature" data key;'
     6:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-6-pe.png
-        title: 'Click the "Add" button in the bottom right corner of the widget to complete adding the widget.'
+        title: 'Click the "Add" button in the bottom right corner of the widget to complete adding the widget;.'
     7:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-table-widget-7-pe.png
         title: 'Resize the widget to make it a little bigger. Just drag the bottom right corner of the widget. Click "Save" to apply changes.'
@@ -88,19 +88,21 @@ step33:
         title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-2-pe.png
-        title: 'Select the "Charts" widget bundle;'
+        title: 'Find the "Charts" widget bundle and click on it;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-3-pe.png
-        title: 'Select the "Timeseries Line Chart" widget;'
+        title: 'Select the "Time series сhart" widget;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-4-pe.png
         title: 'Specify the previously created device "My New Device" in the "Device" field and specify the "temperature" data key in the "Series" section. Click "Add";'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-5-pe.png
         title: 'Resize the widget and apply changes. Publish different telemetry values multiple times, as in Step 2. Note that the widget displays only one minute of data by default. Click "Save" to apply changes;'
-    5:
+
+step33_2:
+    0:
         image: /images/helloworld/getting-started-pe/hello-world-3-1-add-chart-widget-6-pe.png
-        title: 'Now open the time selection window. Change the interval and aggregation function. Update the time window setting by clicking the "Update" button.'
+        title: 'You can open the time selection window and change the interval and aggregation function. Update the time window setting by clicking the "Update" button.'
 
 step34:
     0:
@@ -108,7 +110,7 @@ step34:
         title: 'Enter edit mode and click the "Add new widget" button at the top of the screen;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-2-pe.png
-        title: 'Select "Alarm widgets" bundle;'
+        title: 'Find the "Alarm widgets" bundle and click on it;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-3-pe.png
         title: 'Select "Alarms table" widget;'
@@ -117,10 +119,10 @@ step34:
         title: 'Specify the previously created device "My New Device" in the "Device" field and select the statuses and severities of alarms you want to display in the alarm widget;'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-5-pe.png
-        title: 'Drag and Drop the "Timeseries Line Chart" widget to the top right corner of the dashboard to make room for the "Alarms" widget;'
+        title: 'Congratulations! You have added the alarm widget. By default, new widgets are added one below the other, stacking downwards. Let&#39;s organize our widgets a bit to tidy up their arrangement. Drag the "Time series chart" widget to the top right corner of the dashboard to make room for the "Alarms table" widget;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-3-4-add-alarm-widget-6-pe.png
-        title: 'Scroll down and locate the new "Alarms" widget. Drag and Drop Alarm widget to the free space and resize it. Click "Save" to apply changes.'
+        title: 'Scroll down to find the "Alarms table" widget. Then, drag the "Alarms table" widget to a free spot and adjust its size to fit your needs. Click "Save" to apply changes.'
 
 step4:
     0:
@@ -157,35 +159,35 @@ step5:
         title: 'Notice that the new temperature telemetry causes a new active alarm;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-5-create-alarm-2-pe.png
-        title: 'You may acknowledge and clear the alarms;'
+        title: 'You may acknowledge and clear alarms using the "Alarms table" widget;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-5-create-alarm-3-pe.png
         title: 'When you receive a new alarm, you will receive a message in the notification center. You can view the message by clicking on the bell icon in the upper right corner.'
         
 step71:
     0:
-        image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-2-pe.png
+        image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-1-pe.png
         title: 'Navigate to the "Customers" page. By default, you navigate to the customer group "All". Click the "+" sign to add a new customer;'
     1:
-        image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-3-pe.png
+        image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-2-pe.png
         title: 'Input the customer title. Additionally, you can input personal details for the customer and assign a home dashboard. To finalize the customer creation, you can click the "Add" button. In this case, the new customer will be created and located in the "All" customers folder. Let`s create a separate group for our customer. To do this, click on "Next: Owner and groups" button;'
     2:
-        image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-4-pe.png
+        image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-3-pe.png
         title: 'If desired, you can assign a different owner for this customer. We will leave this option unchanged. Enter a name for the new group and click "Create a new one!";'
     3:
-        image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-5-pe.png
+        image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-4-pe.png
         title: 'Click "Add" to create a new customers group;'
     4:
-        image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-6-pe.png
+        image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-5-pe.png
         title: 'Now, click "Add" to create a new customer;'
     5:
-        image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-7-pe.png
-        title: 'The customer has been created and is located in the "My Customers" group. You can navigate to this group by clicking on its name.'
+        image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-6-pe.png
+        title: 'The customer has been created and is located in the "My Customers" group.'
 
 step72:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-1-pe.png
-        title: 'Open "Devices" page. Select your device to open its details;'
+        title: 'Open "Devices" page. Click on your device to open its details;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-2-pe.png
         title: 'Click "Manage owner and groups" button;'
@@ -194,13 +196,13 @@ step72:
         title: 'In the "Owner" line, start typing the customer name and then select the customer;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-4-pe.png
-        title: 'Now, create a device group. In the "Groups" line, input the desired device group name. Then, click "Create a new one";'
+        title: 'Now, create a device group. In the "Groups" line, input the desired device group name. Then, click "Create a new one!";'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-5-pe.png
         title: 'In the next window, click "Add" button to create a device group;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-6-pe.png
-        title: 'Click "Update" to change the owner of your device. You can always change the owner back to the tenant;'
+        title: 'Click "Update" to add to the group and change the owner of your device. You can always change the owner back to the tenant;'
     6:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-7-pe.png
         title: 'By default, the general device list displays both tenant devices and devices of your customers. Disable "Include customer entities" to only see tenant devices in the device list;'
@@ -219,40 +221,46 @@ step72_1:
 step72_2:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-11-pe.png
-        title: 'Click on the "+" icon in the top right corner of the table. Input device name (for example, "Thermostat") and navigate to the "Owner and groups" tab;'
+        title: 'Click on the "+" icon in the top right corner of the table;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-12-pe.png
-        title: 'Select new owner and click "Add";'
+        title: 'Input device name (for example, "Thermostat") and select the new owner in the "Owner" field. Then, click "Add";'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-13-pe.png
+        title: 'Close check connectivity window;'
+    3:
+        image: /images/helloworld/getting-started-pe/hello-world-71-assign-device-to-customer-14-pe.png
         title: 'The device has been created, and it immediately belongs to your customer.'
 
 step73:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-3-pe.png
-        title: 'Open "Dashboard" page, go to the "Groups" tab and click the "Share" icon for the "All" dashboard group;'
+        title: 'Open the "Dashboard" page, and navigate to the "Groups" tab. Click the "Share" icon for the "All" dashboard group;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-4-pe.png
-        title: 'Select the customer and specify permission - "Read". Click "Share".'
+        title: 'Select the customer you wish to share our dashboard with and specify the permission level. In our case, choose "Read". Then click "Share".'
 
 step73_1:
     0:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-5-pe.png
-        title: 'Click on the "+" icon in the top right corner of the table. Input dashboard name (for example, "Thermostats") and navigate to the "Owner and groups" tab;'
+        title: 'On the "All" tab of the "Dashboards" page, click on the "+" icon in the top right corner of the table and select "Create new dashboard" from the drop-down menu;'
     1:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-6-pe.png
-        title: 'Let`s create a separate group for them. Input a name (for example, "Thermostats group") for the new group and click "Create a new one!";'
+        title: 'Input dashboard name (for example, "Thermostats"). In the "Groups" field of the "Owner and groups" section, select an existing group or enter a name for a new dashboard group (for example, "Thermostats group") and click "Create a new one!";'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-7-pe.png
-        title: 'Click "Next: Share entity group" button;'
+        title: 'In the opened "Add entity group" window, click "Next: Share entity group" button;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-8-pe.png
-        title: 'Tick "Share entity group" checkbox, then select the customer with whom you want to share the dashboard and specify permission. Click "Add";'
+        title: 'Tick the "Share entity group" checkbox, then select the customer you want to share the dashboard group with and specify permissions. Then, click "Add";'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-9-pe.png
-        title: 'Click "Add" dashboard;'
+        title: 'Click "Add" to confirm created new dashboard;'
     5:
         image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-10-pe.png
+        title: 'After creating the dashboard, it will open automatically. Click "Save" button in the upper right corner;'
+    6:
+        image: /images/helloworld/getting-started-pe/hello-world-71-share-the-dashboard-11-pe.png
         title: 'The dashboard has been created and is located in the "Thermostats group" group. You can navigate to this group by clicking on its name.'
 
 step74:
@@ -264,10 +272,10 @@ step74:
         title: 'Navigate to the "Groups" tab and select "Customer Users" group;'
     2:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-user-3-pe.png
-        title: 'Click "plus" icon in the top right corner to add a new user;'
+        title: 'Click "plus" icon in the top right corner;'
     3:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-user-4-pe.png
-        title: 'Specify email, first and last name. Click "Add";'
+        title: 'Enter the user&#39;s email. Additionally, specify the first and last name. Click "Add";'
     4:
         image: /images/helloworld/getting-started-pe/hello-world-7-create-customer-user-5-pe.png
         title: 'Copy the activation link and save it to a safe place. Then click "OK";'
