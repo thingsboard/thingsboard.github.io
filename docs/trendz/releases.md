@@ -8,7 +8,7 @@ description: ThingsBoard Trendz Analytics Release Notes
 * TOC
 {:toc}
 
-## v1.10.3-HF3 (November, 2023)
+## v1.10.3-HF7 (January, 2024)
 
 **Improvements:**
 
@@ -20,6 +20,8 @@ description: ThingsBoard Trendz Analytics Release Notes
 * Optional multi-root items loading
 * Apply selected sorting for exported data
 * Add trend line for line charts
+* Add pre-aggregation configuration for prediction models
+* Add row click event for pie charts
 
 **Bug fixes:**
 
@@ -29,6 +31,9 @@ description: ThingsBoard Trendz Analytics Release Notes
 * Fix time synchronization between ThingsBoard dashboard and Trendz view
 * Fix Business Entities sorting after topology discovery
 * Fix chart background color when exporting as image
+* Fix view update in safari
+* Fix trendz bundle update in widget library
+* Fix duplicated bars on chart for predicted timeseries
 
 ## v1.10.3 (September, 2023)
 
