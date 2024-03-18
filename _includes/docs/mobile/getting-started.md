@@ -178,68 +178,68 @@ So let's get started:
 
 {% assign firebaseProjectCE = '
     ===
-        image: /images/mobile/pe/firebase-new-project-1-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-1-pe.png,
         title: Sign in to your [Firebase](https://console.firebase.google.com/){:target="_blank"} account. Once you&#39;re in, click the "Create a project" button;
     ===
-        image: /images/mobile/pe/firebase-new-project-2-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-2-pe.png,
         title: Enter your desired project name in the field provided, then click "Continue";
     ===
-        image: /images/mobile/pe/firebase-new-project-3-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-3-pe.png,
         title: Next up is deciding on Google Analytics for your project. You have the option to keep it enabled or disable it if you prefer not to use it. Once you&#39;ve made your choice, click "Continue";
     ===
-        image: /images/mobile/pe/firebase-new-project-4-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-4-pe.png,
         title: After setting up Google Analytics, confirm your project creation by clicking the "Create project" button;
     ===
-        image: /images/mobile/pe/firebase-new-project-5-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-5-pe.png,
         title: Your Firebase project is now ready. Click "Continue" to open the Firebase project control panel;
     ===
-        image: /images/mobile/pe/firebase-new-project-6-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-6-pe.png,
         title: In the menu on the left, go to "Project Overview" -> "Project settings" page;
     ===
-        image: /images/mobile/pe/firebase-new-project-7-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-7-pe.png,
         title: In the "Project settings" page, switch over to the "Cloud Messaging" tab. Here, ensure the Firebase Cloud Messaging API is enabled to use messaging features;
     ===
-        image: /images/mobile/pe/firebase-new-project-8-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-8-pe.png,
         title: Head over to the "Service accounts" tab next. Within the "Admin SDK configuration snippet", select the "Java" section. Then, click on the "Generate new private key" button. This action will generate a private key for your service account - crucial for secure server communication;
     ===
-        image: /images/mobile/pe/firebase-new-project-9-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-9-pe.png,
         title: Confirm the generation of your private key by clicking on the "Generate key" button. Keep this key safe, as you&#39;ll need it for the ThingsBoard server-side operations;
     ===
-        image: /images/mobile/pe/firebase-new-project-10-ce.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-10-ce.png,
         title: Sign in to your ThingsBoard instance and open the "Settings" page. Navigate to the "Notifications" tab, and in the "Mobile settings" section, uncheck the "Use system mobile settings" box. Here, upload the private key file you generated in Firebase project and click "Save" to finalize the configuration.
 '
 %}
 
 {% assign firebaseProjectPE = '
     ===
-        image: /images/mobile/pe/firebase-new-project-1-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-1-pe.png,
         title: Sign in to your [Firebase](https://console.firebase.google.com/){:target="_blank"} account. Once you&#39;re in, click the "Create a project" button;
     ===
-        image: /images/mobile/pe/firebase-new-project-2-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-2-pe.png,
         title: Enter your desired project name in the field provided, then click "Continue";
     ===
-        image: /images/mobile/pe/firebase-new-project-3-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-3-pe.png,
         title: Next up is deciding on Google Analytics for your project. You have the option to keep it enabled or disable it if you prefer not to use it. Once you&#39;ve made your choice, click "Continue";
     ===
-        image: /images/mobile/pe/firebase-new-project-4-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-4-pe.png,
         title: After setting up Google Analytics, confirm your project creation by clicking the "Create project" button;
     ===
-        image: /images/mobile/pe/firebase-new-project-5-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-5-pe.png,
         title: Your Firebase project is now ready. Click "Continue" to open the Firebase project control panel;
     ===
-        image: /images/mobile/pe/firebase-new-project-6-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-6-pe.png,
         title: In the menu on the left, go to "Project Overview" -> "Project settings" page;
     ===
-        image: /images/mobile/pe/firebase-new-project-7-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-7-pe.png,
         title: In the "Project settings" page, switch over to the "Cloud Messaging" tab. Here, ensure the Firebase Cloud Messaging API is enabled to use messaging features;
     ===
-        image: /images/mobile/pe/firebase-new-project-8-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-8-pe.png,
         title: Head over to the "Service accounts" tab next. Within the "Admin SDK configuration snippet", select the "Java" section. Then, click on the "Generate new private key" button. This action will generate a private key for your service account - crucial for secure server communication;
     ===
-        image: /images/mobile/pe/firebase-new-project-9-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-9-pe.png,
         title: Confirm the generation of your private key by clicking on the "Generate key" button. Keep this key safe, as you&#39;ll need it for the ThingsBoard server-side operations;
     ===
-        image: /images/mobile/pe/firebase-new-project-10-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-10-pe.png,
         title: Sign in to your ThingsBoard instance and open the "Settings" page. Navigate to the “Notifications” tab, and in the "Mobile settings" section, uncheck the "Use system mobile settings" box (if you log in as a tenant). Here, upload the private key file you generated in Firebase project and click "Save" to finalize the configuration.
 '
 %}
@@ -277,13 +277,13 @@ To confirm that Firebase has been integrated properly, run your application ([St
 
 {% assign mobileNotificationsPE = '
     ===
-        image: /images/mobile/pe/mobile-notifications-pe.png,
+        image: https://img.thingsboard.io/mobile/pe/mobile-notifications-pe.png,
 '
 %}
 
 {% assign mobileNotificationsCE = '
     ===
-        image: /images/mobile/mobile-notifications-ce.png,
+        image: https://img.thingsboard.io/mobile/mobile-notifications-ce.png,
 '
 %}
 

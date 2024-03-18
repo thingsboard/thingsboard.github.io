@@ -8,10 +8,10 @@ Users may also schedule delivery of the notification for a particular time.
 The Notification center is accessible through the sidebar menu and includes options for [sending notifications](#send-notification), viewing [inbox](#inbox) and [sent](#sent) messages, [managing recipients](#recipients), [creating templates](#templates), and [setting up rules](#rules) for automated notifications.
 
 {% if docsPrefix == null %}
-![image](/images/user-guide/notifications/notification-center-1-ce.png)
+![image](https://img.thingsboard.io/user-guide/notifications/notification-center-1-ce.png)
 {% endif %}
 {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
-![image](/images/user-guide/notifications/notification-center-1-pe.png)
+![image](https://img.thingsboard.io/user-guide/notifications/notification-center-1-pe.png)
 {% endif %}
 
 Let's look at each of the key components of the notification center below.

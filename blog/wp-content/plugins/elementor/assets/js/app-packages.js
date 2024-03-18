@@ -5377,7 +5377,7 @@ var SiteEditor = /*#__PURE__*/function () {
         icon: 'eicon-header',
         title: __('Header', 'elementor'),
         urls: {
-          thumbnail: elementorAppConfig.assets_url + '/images/app/site-editor/header.svg'
+          thumbnail: elementorAppConfig.assets_url + 'https://img.thingsboard.io/app/site-editor/header.svg'
         },
         tooltip_data: {
           title: __('What is a Header Template?', 'elementor'),
@@ -5391,7 +5391,7 @@ var SiteEditor = /*#__PURE__*/function () {
         icon: 'eicon-footer',
         title: __('Footer', 'elementor'),
         urls: {
-          thumbnail: elementorAppConfig.assets_url + '/images/app/site-editor/footer.svg'
+          thumbnail: elementorAppConfig.assets_url + 'https://img.thingsboard.io/app/site-editor/footer.svg'
         },
         tooltip_data: {
           title: __('What is a Footer Template?', 'elementor'),
@@ -5405,7 +5405,7 @@ var SiteEditor = /*#__PURE__*/function () {
         icon: 'eicon-single-page',
         title: __('Single Page', 'elementor'),
         urls: {
-          thumbnail: elementorAppConfig.assets_url + '/images/app/site-editor/single-page.svg'
+          thumbnail: elementorAppConfig.assets_url + 'https://img.thingsboard.io/app/site-editor/single-page.svg'
         },
         tooltip_data: {
           title: __('What is a Single Page Template?', 'elementor'),
@@ -5419,7 +5419,7 @@ var SiteEditor = /*#__PURE__*/function () {
         icon: 'eicon-single-post',
         title: __('Single Post', 'elementor'),
         urls: {
-          thumbnail: elementorAppConfig.assets_url + '/images/app/site-editor/single-post.svg'
+          thumbnail: elementorAppConfig.assets_url + 'https://img.thingsboard.io/app/site-editor/single-post.svg'
         },
         tooltip_data: {
           title: __('What is a Single Post Template?', 'elementor'),
@@ -5433,7 +5433,7 @@ var SiteEditor = /*#__PURE__*/function () {
         icon: 'eicon-archive',
         title: __('Archive', 'elementor'),
         urls: {
-          thumbnail: elementorAppConfig.assets_url + '/images/app/site-editor/archive.svg'
+          thumbnail: elementorAppConfig.assets_url + 'https://img.thingsboard.io/app/site-editor/archive.svg'
         },
         tooltip_data: {
           title: __('What is an Archive Template?', 'elementor'),
@@ -5447,7 +5447,7 @@ var SiteEditor = /*#__PURE__*/function () {
         icon: 'eicon-search-results',
         title: __('search results page', 'elementor'),
         urls: {
-          thumbnail: elementorAppConfig.assets_url + '/images/app/site-editor/search-results.svg'
+          thumbnail: elementorAppConfig.assets_url + 'https://img.thingsboard.io/app/site-editor/search-results.svg'
         },
         tooltip_data: {
           title: __('What is a Search Results Template?', 'elementor'),
@@ -5461,7 +5461,7 @@ var SiteEditor = /*#__PURE__*/function () {
         icon: 'eicon-single-product',
         title: __('Product', 'elementor'),
         urls: {
-          thumbnail: elementorAppConfig.assets_url + '/images/app/site-editor/product.svg'
+          thumbnail: elementorAppConfig.assets_url + 'https://img.thingsboard.io/app/site-editor/product.svg'
         },
         tooltip_data: {
           title: __('What is a Single Product Template?', 'elementor'),
@@ -5475,7 +5475,7 @@ var SiteEditor = /*#__PURE__*/function () {
         icon: 'eicon-products',
         title: __('Products Archive', 'elementor'),
         urls: {
-          thumbnail: elementorAppConfig.assets_url + '/images/app/site-editor/products.svg'
+          thumbnail: elementorAppConfig.assets_url + 'https://img.thingsboard.io/app/site-editor/products.svg'
         },
         tooltip_data: {
           title: __('What is a Products Archive Template?', 'elementor'),
@@ -5489,7 +5489,7 @@ var SiteEditor = /*#__PURE__*/function () {
         icon: 'eicon-error-404',
         title: __('404 page', 'elementor'),
         urls: {
-          thumbnail: elementorAppConfig.assets_url + '/images/app/site-editor/error-404.svg'
+          thumbnail: elementorAppConfig.assets_url + 'https://img.thingsboard.io/app/site-editor/error-404.svg'
         },
         tooltip_data: {
           title: __('What is a 404 Page Template?', 'elementor'),

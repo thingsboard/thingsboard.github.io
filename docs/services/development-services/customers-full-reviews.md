@@ -113,7 +113,7 @@ description: Real feedback from real clients. Dive into our testimonials to unde
 <div id="myModal" class="modal">
   <div class="modal-content">
     <div class="close-button">
-        <img class="close" src="/images/close-icon.svg" alt="Close"/>
+        <img class="close" src="https://img.thingsboard.io/close-icon.svg" alt="Close"/>
     </div>
     <div class="sub-content">
         <div class="title">

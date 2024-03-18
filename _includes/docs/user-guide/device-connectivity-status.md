@@ -62,41 +62,41 @@ For example, if the system launches at the 15-second mark, that's also when the 
 If period duration is set to 15 seconds, this period will end at 30 seconds and the next one would start.
 This pattern repeats in a cycle while ThingsBoard is running.
 
-![image](/images/user-guide/activity-reporting-periods.png)
+![image](https://img.thingsboard.io/user-guide/activity-reporting-periods.png)
 
 ### First and last activity events
 
 - **First event**: first activity received during a reporting period.
 - **Last event**: last activity received during a reporting period.
 
-![image](/images/user-guide/first-and-last-activity-events.png)
+![image](https://img.thingsboard.io/user-guide/first-and-last-activity-events.png)
 
 > **Note**: If there is only one activity, then it is considered to be both first and last at the same time.
 
-![image](/images/user-guide/one-event-both-first-and-last.png)
+![image](https://img.thingsboard.io/user-guide/one-event-both-first-and-last.png)
 
 ### Activity reporting strategies
 
 - **ALL**: all activities are reported to Device State service immediately.
 
-![image](/images/user-guide/activity-strategy-all.png)
+![image](https://img.thingsboard.io/user-guide/activity-strategy-all.png)
 
 - **FIRST**: only first activity is reported immediately to Device State service.
 
-![image](/images/user-guide/activity-strategy-first.png)
+![image](https://img.thingsboard.io/user-guide/activity-strategy-first.png)
 
 > **Note**: Last activity will still be reported if there were no activities for a reporting period.
 
-![image](/images/user-guide/first-strategy-reporting-last-event.png)
+![image](https://img.thingsboard.io/user-guide/first-strategy-reporting-last-event.png)
 
 - **LAST**: only last activity is reported to Device State service. Activity is reported when reporting period ends.
 
-![image](/images/user-guide/activity-strategy-last.png)
+![image](https://img.thingsboard.io/user-guide/activity-strategy-last.png)
 
 - **FIRST_AND_LAST**: both first and last activities are reported to Device State service.
   First activity is reported immediately, last activity is reported when reporting period ends.
 
-![image](/images/user-guide/activity-strategy-first-and-last.png)
+![image](https://img.thingsboard.io/user-guide/activity-strategy-first-and-last.png)
 
 ## Configuration
 
