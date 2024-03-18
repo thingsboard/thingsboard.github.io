@@ -481,7 +481,7 @@
 		<tr>
 			<td>ui.help.base-url</td>
 			<td>UI_HELP_BASE_URL</td>
-			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-ui-help/release-3.6.2</td>
+			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-ui-help/release-3.6.3</td>
 			<td> Base URL for UI help assets</td>
 		</tr>
 	</tbody>
