@@ -90,8 +90,8 @@ release:
   pe_edge_ver: 3.6.2pe # use X.X.Xpe to be in sync with demo/cloud
   pe_edge_full_ver: 3.6.2EDGEPE
   # <<< EDGE
-  ce_flutter_app_ver: 1.0.8
-  pe_flutter_app_ver: 1.0.9
+  ce_flutter_app_ver: 1.1.0
+  pe_flutter_app_ver: 1.1.0
   broker_full_ver: 1.2.1
   broker_branch: release-1.2.1
   trendz_ver: 1.10.3-HF7
