@@ -375,13 +375,13 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
             </div>
             <div class="nav_side">
                 <ul class="nav_list fs18">
-                    <li><a href="./../../products/index.html">Products</a></li>
-                    <li><a href="./../../docs/services/index.html">Services</a></li>
-                    <li><a href="./../../industries/index.html">Customers</a></li>
-                    <li><a href="./../../company/index.html">Company</a></li>
-                    <li><a href="./../../partners/hardware/index.html">Partners</a></li>
-                    <li><a href="./../../docs/index.html">Docs</a></li>
-                    <li><a href="./../../blog/index.html">Blog</a></li>
+                    <li><a href="https://thingsboard.io/products/">Products</a></li>
+                    <li><a href="https://thingsboard.io/docs/services/">Services</a></li>
+                    <li><a href="https://thingsboard.io/industries/">Customers</a></li>
+                    <li><a href="https://thingsboard.io/company/">Company</a></li>
+                    <li><a href="https://thingsboard.io/partners/hardware/">Partners</a></li>
+                    <li><a href="https://thingsboard.io/docs/">Docs</a></li>
+                    <li><a href="https://thingsboard.io/blog/">Blog</a></li>
                 </ul>
             </div>
             <div class="cs-header__col cs-col-right">
@@ -698,7 +698,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 	document.querySelectorAll('.cs-entry__excerpt').forEach(function(element){
 		element.classList.add('paragraph1');
 		if(element.textContent.split(" ").length > 18){
-			element.textContent = element.textContent.split(' ').slice(0, 18).join(' ').concat("...");
+			element.textContent = element.textContent.split(' ').slice(0, 14).join(' ').concat("...");
 		}
 	});	
 // adding styles to the list of publications, which were added with "Load More" button
@@ -745,6 +745,7 @@ window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14
 							});
 							node.querySelectorAll('.cs-entry__excerpt').forEach(function(element) {
 								element.classList.add('paragraph1');
+								element.textContent = element.textContent.split(' ').slice(0, 14).join(' ').concat("...");
 							});
 							node.querySelectorAll('.post-categories a').forEach(function(element) {
 								element.classList.add('category-link');

@@ -12,7 +12,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Mon, 18 Mar 2024 15:01:56 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 18 Mar 2024 15:45:41 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -45,7 +45,7 @@
 
 
 
-<p>We have added support for sending push notifications to mobile applications. Transform your mobile app&#8217;s communication with our enhanced push notifications feature. This feature allows users to receive immediate alerts and notifications directly on their mobile devices, ensuring they are promptly informed about critical events, status updates, or any anomalies detected within their IoT ecosystem. Learn more about push notifications in <a href="/blog/push-notifications-to-thingsboard-mobile-apps/" data-type="page" data-id="3907" target="_blank" rel="noreferrer noopener">this post</a>.</p>
+<p>We have added support for sending push notifications to mobile applications. Transform your mobile app&#8217;s communication with our enhanced push notifications feature. This feature allows users to receive immediate alerts and notifications directly on their mobile devices, ensuring they are promptly informed about critical events, status updates, or any anomalies detected within their IoT ecosystem. Learn more about push notifications in <a href="https://thingsboard.io/blog/push-notifications-to-thingsboard-mobile-apps/" data-type="page" data-id="3907" target="_blank" rel="noreferrer noopener">this post</a>.</p>
 
 
 
@@ -57,7 +57,7 @@
 
 
 
-<p>We&#8217;re excited to introduce a suite of advanced visualization widgets powered by <a href="https://echarts.apache.org/en/index.html">Apache ECharts</a> to enhance your data analysis and presentation capabilities. This includes the new <strong>Time Series </strong>chart that now may combine lines and bars on the same widget. We have also added two new <strong>Bar </strong>charts to display data via bars with or without labels. Our priority was not only to deliver powerful and pretty charts but also to simplify the widget configuration experience. We hope you enjoy new data visualization capabilities! Learn more about new time-series chart widgets in <a href="/blog/enhancing-iot-data-visualization-introducing-new-time-series-charts/" data-type="page" data-id="3907" target="_blank" rel="noreferrer noopener">this post</a>.</p>
+<p>We&#8217;re excited to introduce a suite of advanced visualization widgets powered by <a href="https://echarts.apache.org/en/index.html">Apache ECharts</a> to enhance your data analysis and presentation capabilities. This includes the new <strong>Time Series </strong>chart that now may combine lines and bars on the same widget. We have also added two new <strong>Bar </strong>charts to display data via bars with or without labels. Our priority was not only to deliver powerful and pretty charts but also to simplify the widget configuration experience. We hope you enjoy new data visualization capabilities! Learn more about new time-series chart widgets in <a href="https://thingsboard.io/blog/enhancing-iot-data-visualization-introducing-new-time-series-charts/" data-type="page" data-id="3907" target="_blank" rel="noreferrer noopener">this post</a>.</p>
 
 
 
@@ -81,7 +81,7 @@
 
 
 
-<p>We&#8217;ve improved our platform with the new button widgets: the <strong>Action Button</strong> <strong>widget </strong>for navigation to other dashboards, states, or custom actions; the <strong>Command Button</strong> <strong>widget</strong> for sending commands to devices, updating attributes, or appending time-series data; the <strong>Toggle Button</strong> <strong>widget</strong> for switching between two device states; the <strong>Power Button</strong> <strong>widget</strong> for toggling the device on and off. Each widget is designed to offer users more control and interactivity within the platform, improving the overall experience. Explore the full potential of the new button widgets in the dedicated <a href="/blog/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" data-type="link" data-id="https://wp.thingsboard.io/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" target="_blank" rel="noreferrer noopener">post</a>.</p>
+<p>We&#8217;ve improved our platform with the new button widgets: the <strong>Action Button</strong> <strong>widget </strong>for navigation to other dashboards, states, or custom actions; the <strong>Command Button</strong> <strong>widget</strong> for sending commands to devices, updating attributes, or appending time-series data; the <strong>Toggle Button</strong> <strong>widget</strong> for switching between two device states; the <strong>Power Button</strong> <strong>widget</strong> for toggling the device on and off. Each widget is designed to offer users more control and interactivity within the platform, improving the overall experience. Explore the full potential of the new button widgets in the dedicated <a href="https://thingsboard.io/blog/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" data-type="link" data-id="https://wp.thingsboard.io/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" target="_blank" rel="noreferrer noopener">post</a>.</p>
 
 
 
@@ -133,7 +133,7 @@
 
 
 
-<p>To deliver notifications from ThingsBoard instances to mobile apps, we utilize <a href="https://firebase.google.com/" target="_blank" rel="noreferrer noopener">Firebase</a>. To set up push notifications, create a Firebase project and provide the necessary Firebase credentials to both the platform instance and the mobile application. For setup instructions, community edition users should follow this community edition <a href="/docs/mobile/getting-started/#step-4-optional-configure-push-notifications" target="_blank" rel="noreferrer noopener">guide</a>, while professional edition users can refer to the professional edition <a href="/docs/pe/mobile/getting-started/#step-4-optional-configure-push-notifications" target="_blank" rel="noreferrer noopener">guide</a>.</p>
+<p>To deliver notifications from ThingsBoard instances to mobile apps, we utilize <a href="https://firebase.google.com/" target="_blank" rel="noreferrer noopener">Firebase</a>. To set up push notifications, create a Firebase project and provide the necessary Firebase credentials to both the platform instance and the mobile application. For setup instructions, community edition users should follow this community edition <a href="https://thingsboard.io/docs/mobile/getting-started/#step-4-optional-configure-push-notifications" target="_blank" rel="noreferrer noopener">guide</a>, while professional edition users can refer to the professional edition <a href="https://thingsboard.io/docs/pe/mobile/getting-started/#step-4-optional-configure-push-notifications" target="_blank" rel="noreferrer noopener">guide</a>.</p>
 
 
 
@@ -149,7 +149,7 @@
 
 
 
-<p>Open the &#8220;New notification&#8221; wizard by following this <a href="https://thingsboard.io/docs/user-guide/notifications/#send-notification">guide</a>. Specify target recipients and choose &#8220;Mobile app&#8221; as the method for sending your notification. Please note that the recipient must install and login to the mobile application before the notifications may be sent. </p>
+<p>Open the &#8220;New notification&#8221; wizard by following this <a href="https://thingsboard.io/docs/user-guide/notifications/#send-notification" target="_blank" rel="noreferrer noopener">guide</a>. Specify target recipients and choose &#8220;Mobile app&#8221; as the method for sending your notification. Please note that the recipient must install and login to the mobile application before the notifications may be sent. </p>
 
 
 

@@ -12,7 +12,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Mon, 18 Mar 2024 10:06:16 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 18 Mar 2024 15:45:41 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -39,7 +39,7 @@
 
 
 
-<p>To deliver notifications from ThingsBoard instances to mobile apps, we utilize <a href="https://firebase.google.com/" target="_blank" rel="noreferrer noopener">Firebase</a>. To set up push notifications, create a Firebase project and provide the necessary Firebase credentials to both the platform instance and the mobile application. For setup instructions, community edition users should follow this community edition <a href="/docs/mobile/getting-started/#step-4-optional-configure-push-notifications" target="_blank" rel="noreferrer noopener">guide</a>, while professional edition users can refer to the professional edition <a href="/docs/pe/mobile/getting-started/#step-4-optional-configure-push-notifications" target="_blank" rel="noreferrer noopener">guide</a>.</p>
+<p>To deliver notifications from ThingsBoard instances to mobile apps, we utilize <a href="https://firebase.google.com/" target="_blank" rel="noreferrer noopener">Firebase</a>. To set up push notifications, create a Firebase project and provide the necessary Firebase credentials to both the platform instance and the mobile application. For setup instructions, community edition users should follow this community edition <a href="https://thingsboard.io/docs/mobile/getting-started/#step-4-optional-configure-push-notifications" target="_blank" rel="noreferrer noopener">guide</a>, while professional edition users can refer to the professional edition <a href="https://thingsboard.io/docs/pe/mobile/getting-started/#step-4-optional-configure-push-notifications" target="_blank" rel="noreferrer noopener">guide</a>.</p>
 
 
 
@@ -55,7 +55,7 @@
 
 
 
-<p>Open the &#8220;New notification&#8221; wizard by following this <a href="https://thingsboard.io/docs/user-guide/notifications/#send-notification">guide</a>. Specify target recipients and choose &#8220;Mobile app&#8221; as the method for sending your notification. Please note that the recipient must install and login to the mobile application before the notifications may be sent. </p>
+<p>Open the &#8220;New notification&#8221; wizard by following this <a href="https://thingsboard.io/docs/user-guide/notifications/#send-notification" target="_blank" rel="noreferrer noopener">guide</a>. Specify target recipients and choose &#8220;Mobile app&#8221; as the method for sending your notification. Please note that the recipient must install and login to the mobile application before the notifications may be sent. </p>
 
 
 
