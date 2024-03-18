@@ -78,6 +78,9 @@ description: ThingsBoard PE IoT platform upgrade instructions
           </li>
       </ul>
   </li>
+  <li>
+    <a href="/docs/user-guide/install/pe/old-upgrade-instructions/" id="markdown-toc-upgrading-to-240">Older versions</a>
+  </li> 
 </ul>
 
 ## Prepare for upgrading ThingsBoard (CentOS, Ubuntu)
