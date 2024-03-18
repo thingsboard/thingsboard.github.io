@@ -89,6 +89,10 @@ We should also configure the time window to use the chart widget.
 
 Congratulations! You have added the chart widget. Now you are able to send a new telemetry reading, and it will immediately appear in the chart. 
 
+Also, you can open the timewindow and change the interval and aggregation function. Update the time window setting by clicking the "Update" button.
+
+{% include images-gallery.html imageCollection="step33_2" %}
+
 ### Step 3.4 Add an Alarms table widget
 
 The alarms table widget displays alarms related to the specified entity in the certain time window.
@@ -96,7 +100,7 @@ Alarm widget is configured by specifying an entity as the alarm source, and the 
 
 {% include images-gallery.html imageCollection="step34" showListImageTitles="true" %}
 
-Congratulations! You have added the alarm widget. Now it's time to configure alarm rules and raise some alarms. 
+Now it's time to configure alarm rules and raise some alarms. 
 
 **Note:** in this documentation, we are using a single device as a data source for the widgets. 
 To use dynamic entities (for example, devices of a certain type or related to a certain asset) as data source, you should use the alias.
@@ -120,20 +124,23 @@ Note that the temperature value should be 26 or higher to raise the alarm. Once 
 
 {% include images-gallery.html imageCollection="step5" showListImageTitles="true" %}
 
-## Step 6. Alarm notifications
-
-It's quite easy to set up notifications using the **Notification center**. ThingsBoard Notification center allows you to send notifications to the end-users.
-Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
-
 We also recommend reviewing alarm rule [examples](/docs/{{docsPrefix}}user-guide/device-profiles/#alarm-rules)
 and documentation about [alarm notifications](/docs/{{docsPrefix}}user-guide/device-profiles/#notifications-about-alarms).
+
+## Step 6. Alarm notifications
+
+The ThingsBoard [Notification center](/docs/{{docsPrefix}}user-guide/notifications/) allows sending personalized notifications to end-users. These can include notifications about device activity, changes in temperature within your environment, or other events detected in your IoT ecosystem.
+Learn more about notifications and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
+
+Additionally, the [ThingsBoard PE Mobile Application](/docs/pe/mobile/) allows users to receive instant push notifications directly on their smartphone. This ensures that you will always be timely informed about any events in your IoT solution, no matter where you are.
+Follow [this guide](/docs/pe/mobile/getting-started/) to learn how to install the ThingsBoard PE Mobile Application and set up push notifications delivery directly from ThingsBoard instance to your smartphone.
 
 ## Step 7. Share dashboard with customers
 
 One of the most important ThingsBoard features is the ability to create end-user dashboards.
 Each Customer User should see his own devices and should not be able to see devices or any other data that belongs to a different customer. 
 
-We have already created a Device (see [Step 1](#step-1-provision-device)), and a Dashboard (see [Step 3](#step-3-create-dashboard)).
+We have already created the Device (see [Step 1](#step-1-provision-device)), the Dashboard and added widgets to it (see [Step 3](#step-3-create-dashboard)).
 Now it's time to create a Customer and a Customer User and make sure they will have access to the device's data and the dashboard.
 There are two options for how Tenant Administrator can give access to a certain Entity (Device, Dashboard, Asset, etc.) for a Customer:
 
@@ -162,8 +169,9 @@ You can make the customer the owner of the device during its creation stage.
 
 ### Step 7.3 Share the dashboard
 
-Let's share our dashboard with the customer. 
-Our dashboard is in the group "All". Ideally, we should create another dashboard group, but to simplify the guide, we will use the group "All". 
+Let's share our dashboard with the customer.
+But нou can't share an individual dashboard directly; you can only share a dashboard group that includes the desired dashboard.
+Our dashboard is in the group "All". Ideally, we should create a new dashboard group and move our dashboard into it, but to simplify this guide, we'll use the "All" group.
 
 {% include images-gallery.html imageCollection="step73" showListImageTitles="true" %}
 

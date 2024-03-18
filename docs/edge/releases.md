@@ -8,6 +8,13 @@ description: ThingsBoard Edge Release Notes
 * TOC
 {:toc}
 
+## v3.6.3 (Mar 18, 2024) {#v363}
+
+**Minor** release with everything from [TB CE v3.6.3](/docs/reference/releases/#v363):
+
+* [#9968](https://github.com/thingsboard/thingsboard/pull/9968) Alarm comment support by @AndriiLandiak;
+* [#10021](https://github.com/thingsboard/thingsboard/pull/10021) Notification rules for connection status and errors. Rate limits for Edge events by @AndriiLandiak;
+
 ## v3.6.2 (Dec 28, 2023) {#v362}
 
 **Minor** release with everything from [TB CE v3.6.2](/docs/reference/releases/#v362):

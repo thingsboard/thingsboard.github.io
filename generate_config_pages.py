@@ -125,7 +125,7 @@ def update_page(input_file, output_file):
     property_groups = group_properties_by_table(property_info)
 
     # Generate HTML tables
-    tables = ""
+    tables = "* TOC\n{:toc}"
     for group in property_groups:
         tables += '\n\n' + generate_html_table(group, property_groups[group])
 
