@@ -7,6 +7,12 @@ Follow [Build and release an Android app](https://docs.flutter.dev/deployment/an
 for example to [publish to the Google Play](https://support.google.com/googleplay/android-developer/answer/9859152?hl=en){:target="_blank"}.
 
 {% capture android_build_notice %}
+**Please note:**
+Every Android app should have its own application ID. Don't forget to rename your application ID on a unique. How to do it is shown [here](https://developer.android.com/build/configure-app-module#set-application-id){:target="_blank"}.
+{% endcapture %}
+{% include templates/info-banner.md content=android_build_notice %}
+
+{% capture android_build_notice %}
 **Improtant notice:** When building app for release, for example build app bundle you must provide **----no-tree-shake-icons** flag to your build command:
 {% endcapture %}
 {% include templates/info-banner.md content=android_build_notice %}
