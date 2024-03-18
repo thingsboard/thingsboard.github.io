@@ -184,17 +184,6 @@ these <a style="pointer-events: all;" href="/docs/user-guide/install/upgrade-ins
     </ul>
   </li>
   <li>
-    <a href="#upgrading-to-231" id="markdown-toc-upgrading-to-231">Upgrading to 2.3.1</a>
-    <ul>
-        <li>
-            <a href="#ubuntucentos-14" id="markdown-toc-ubuntucentos-14">Ubuntu/CentOS</a>
-        </li>
-        <li>
-            <a href="#windows-14" id="markdown-toc-windows-14">Windows</a>
-        </li>
-    </ul>
-  </li>
-  <li>
     <a href="#upgrading-to-240" id="markdown-toc-upgrading-to-240">Upgrading to 2.4.0</a>
     <ul>
         <li>
