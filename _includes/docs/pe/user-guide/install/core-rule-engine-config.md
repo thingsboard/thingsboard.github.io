@@ -1,4 +1,5 @@
-
+* TOC
+{:toc}
 
 ####  Server common parameters
 
@@ -480,7 +481,7 @@
 		<tr>
 			<td>ui.help.base-url</td>
 			<td>UI_HELP_BASE_URL</td>
-			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-3.6.2</td>
+			<td>https://raw.githubusercontent.com/thingsboard/thingsboard-pe-ui-help/release-3.6.3</td>
 			<td> Base URL for UI help assets</td>
 		</tr>
 	</tbody>
@@ -814,7 +815,7 @@
 		<tr>
 			<td>cassandra.query.set_null_values_enabled</td>
 			<td>CASSANDRA_QUERY_SET_NULL_VALUES_ENABLED</td>
-			<td>false</td>
+			<td>true</td>
 			<td> set all data type values except target to null for the same ts on save</td>
 		</tr>
 		<tr>
@@ -1086,7 +1087,8 @@
 			<td>sql.ttl.ts.ts_key_value_ttl</td>
 			<td>SQL_TTL_TS_TS_KEY_VALUE_TTL</td>
 			<td>0</td>
-			<td> Number of seconds</td>
+			<td> The parameter to specify system TTL(Time To Live) value for timeseries records. Value set in seconds.
+ 0 - records are never expired.</td>
 		</tr>
 		<tr>
 			<td>sql.ttl.events.enabled</td>
@@ -2766,7 +2768,7 @@
 			<td>PERSIST_STATE_TO_TELEMETRY</td>
 			<td>false</td>
 			<td> Controls whether we store the device 'active' flag in attributes (default) or telemetry.
- If you device to change this parameter, you should re-create the device info view as one of the following:
+ If you decide to change this parameter, you should re-create the device info view as one of the following:
  If 'persistToTelemetry' is changed from 'false' to 'true': 'CREATE OR REPLACE VIEW device_info_view AS SELECT * FROM device_info_active_ts_view;'
  If 'persistToTelemetry' is changed from 'true' to 'false': 'CREATE OR REPLACE VIEW device_info_view AS SELECT * FROM device_info_active_attribute_view;'</td>
 		</tr>
@@ -2777,6 +2779,14 @@
 			<td> Millisecond value defining time-to-live for device state telemetry data (e.g. 'active', 'lastActivityTime').
  Used only when state.persistToTelemetry is set to 'true' and Cassandra is used for timeseries data.
  0 means time-to-live mechanism is disabled.</td>
+		</tr>
+		<tr>
+			<td>state.rule.node.deviceState.rateLimit</td>
+			<td>DEVICE_STATE_NODE_RATE_LIMIT_CONFIGURATION</td>
+			<td>1:1,30:60,60:3600</td>
+			<td> Defines the rate at which device connectivity events can be triggered.
+ Comma-separated list of capacity:duration pairs that define bandwidth capacity and refill duration for token bucket rate limit algorithm.
+ Refill is set to be greedy. Please refer to Bucket4j library documentation for more details.</td>
 		</tr>
 	</tbody>
 </table>
@@ -3305,6 +3315,12 @@
 			<td> RFC7925_RETRANSMISSION_TIMEOUT_IN_MILLISECONDS = 9000</td>
 		</tr>
 		<tr>
+			<td>transport.lwm2m.dtls.connection_id_length</td>
+			<td>LWM2M_DTLS_CONNECTION_ID_LENGTH</td>
+			<td>6</td>
+			<td> "" disables connection id support, 0 enables support but not for incoming traffic, any value greater than 0 set the connection id size in bytes</td>
+		</tr>
+		<tr>
 			<td>transport.lwm2m.server.id</td>
 			<td>LWM2M_SERVER_ID</td>
 			<td>123</td>
@@ -3607,7 +3623,7 @@
 		<tr>
 			<td>transport.snmp.response_processing.parallelism_level</td>
 			<td>SNMP_RESPONSE_PROCESSING_PARALLELISM_LEVEL</td>
-			<td>20</td>
+			<td>4</td>
 			<td> parallelism level for executor (workStealingPool) that is responsible for handling responses from SNMP devices</td>
 		</tr>
 		<tr>
@@ -3620,13 +3636,25 @@
 			<td>transport.snmp.max_request_oids</td>
 			<td>SNMP_MAX_REQUEST_OIDS</td>
 			<td>100</td>
-			<td> Batch size to request OID mappings from the device (useful when the device profile has multiple hundreds of OID mappings)</td>
+			<td> Maximum size of a PDU (amount of OID mappings in a single SNMP request). The request will be split into multiple PDUs if mappings amount exceeds this number</td>
+		</tr>
+		<tr>
+			<td>transport.snmp.request_chunk_delay_ms</td>
+			<td>SNMP_REQUEST_CHUNK_DELAY_MS</td>
+			<td>100</td>
+			<td> Delay after sending each request chunk (in case the request was split into multiple PDUs due to max_request_oids)</td>
 		</tr>
 		<tr>
 			<td>transport.snmp.response.ignore_type_cast_errors</td>
 			<td>SNMP_RESPONSE_IGNORE_TYPE_CAST_ERRORS</td>
 			<td>false</td>
 			<td> To ignore SNMP response values that do not match the data type of the configured OID mapping (by default false - will throw an error if any value of the response not match configured data types)</td>
+		</tr>
+		<tr>
+			<td>transport.snmp.scheduler_thread_pool_size</td>
+			<td>SNMP_SCHEDULER_THREAD_POOL_SIZE</td>
+			<td>4</td>
+			<td> Thread pool size for scheduler that executes device querying tasks</td>
 		</tr>
 		<tr>
 			<td>transport.stats.enabled</td>

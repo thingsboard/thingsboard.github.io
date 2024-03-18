@@ -1,4 +1,5 @@
-
+* TOC
+{:toc}
 
 ####  Spring common parameters
 
@@ -349,7 +350,7 @@
 		<tr>
 			<td>transport.snmp.response_processing.parallelism_level</td>
 			<td>SNMP_RESPONSE_PROCESSING_PARALLELISM_LEVEL</td>
-			<td>20</td>
+			<td>4</td>
 			<td> parallelism level for executor (workStealingPool) that is responsible for handling responses from SNMP devices</td>
 		</tr>
 		<tr>
@@ -362,13 +363,25 @@
 			<td>transport.snmp.max_request_oids</td>
 			<td>SNMP_MAX_REQUEST_OIDS</td>
 			<td>100</td>
-			<td> Batch size to request OID mappings from the device (useful when the device profile has multiple hundreds of OID mappings)</td>
+			<td> Maximum size of a PDU (amount of OID mappings in a single SNMP request). The request will be split into multiple PDUs if mappings amount exceeds this number</td>
+		</tr>
+		<tr>
+			<td>transport.snmp.request_chunk_delay_ms</td>
+			<td>SNMP_REQUEST_CHUNK_DELAY_MS</td>
+			<td>100</td>
+			<td> Delay after sending each request chunk (in case the request was split into multiple PDUs due to max_request_oids)</td>
 		</tr>
 		<tr>
 			<td>transport.snmp.response.ignore_type_cast_errors</td>
 			<td>SNMP_RESPONSE_IGNORE_TYPE_CAST_ERRORS</td>
 			<td>false</td>
 			<td> To ignore SNMP response values that do not match the data type of the configured OID mapping (by default false - will throw an error if any value of the response not match configured data types)</td>
+		</tr>
+		<tr>
+			<td>transport.snmp.scheduler_thread_pool_size</td>
+			<td>SNMP_SCHEDULER_THREAD_POOL_SIZE</td>
+			<td>4</td>
+			<td> Thread pool size for scheduler that executes device querying tasks</td>
 		</tr>
 		<tr>
 			<td>transport.sessions.inactivity_timeout</td>

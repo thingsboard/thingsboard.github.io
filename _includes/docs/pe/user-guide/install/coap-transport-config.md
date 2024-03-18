@@ -1,4 +1,5 @@
-
+* TOC
+{:toc}
 
 ####  Spring common parameters
 
