@@ -100,36 +100,104 @@ description: Real feedback from real clients. Dive into our testimonials to unde
             <div class="section-title">Ready to launch your unique product?</div>
             <div class="section-text">Leave us your name and email and we will get back to you within 2 business days</div>
         </div>
-        <form id="contact-form" class="contact-form" method="post" onsubmit="return validateContactForm(this)">
+        <form class="contact-form">
             <fieldset>
-                <div class="form-section">
-                    <div class="form-element">
-                        <label for="name">
-                            <input id="name" class="cdu-form-control" value="" placeholder="Your Name" name="name" type="text" size="40" maxlength="50">
-                            <p>Name*</p>
-                        </label>
-                    </div>
-                    <div class="form-element">
-                        <label for="email">
-                            <input id="email" class="cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
-                            <p>Email Address*</p>
-                        </label>
-                    </div>
-                </div>
                 <div class="submit-button-container">
-                    <input class="cdu-button" value="Submit" type="submit">
+                    <input class="cdu-button" value="Get in touch" type="button" id="myBtn">
                 </div>
             </fieldset>
         </form>
     </div>
-    <!-- <svg id="rectangle3" class="bg-rectangle"><rect/></svg> -->
-    <!-- <svg id="rectangle4" class="bg-rectangle"><rect/></svg> -->
 </section>
 
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="close-button">
+        <img class="close" src="/images/close-icon.svg" alt="Close"/>
+    </div>
+    <div class="sub-content">
+        <div class="title">
+            <span>CONTACT US TODAY</span>
+        </div> 
+        <div class="sub-title">
+            <span>We are ready to develop your ideas</span>
+        </div>
+        <div class="sub-sub-title">
+            <span>Please fill out the form below and we will get back to you within 1-2 business days. 
+            We are looking forward to hearing from you!</span>
+        </div>
+        <form id="contact-form" method="post" onsubmit="return validateContactForm(this)">
+            <div class="form-section">
+                <div class="form-element">
+                    <label for="first-name">
+                        <input id="first-name" class="cdu-form-control" value="" placeholder="Your Name" name="first-name" type="text" size="40" maxlength="50">
+                        <p>Name*</p>
+                    </label>
+                </div>
+                <div class="form-element">
+                    <label for="email">
+                        <input id="email" class="cdu-form-control" value="" placeholder="Enter Email" name="email" type="email" size="40" maxlength="80">
+                        <p>Email Address*</p>
+                    </label>
+                </div>
+            </div>
+            <div class="form-section secondary">
+                <div class="form-element next">
+                    <label for="subject" class="label-select">
+                        <select class="cdu-form-control" name="subject">
+                            <option value="Custom Development" selected>Custom Development</option>
+                            <option value="Technical Support">Technical Support</option>
+                            <option value="ThingsBoard Products">ThingsBoard Products</option>
+                            <option value="Deployment Options">Deployment Options</option>
+                            <option value="Training">Training</option>
+                            <option value="Professional Services">Professional Services</option>
+                            <option value="Partnership">Partnership</option>
+                            <option value="Press or Analyst Inquiry">Press or Analyst Inquiry</option>
+                            <option value="General Feedback">General Feedback</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <p>Subject*</p>
+                    </label>
+                </div>
+            </div>
+            <div class="form-section secondary">
+                <div class="form-element next">
+                    <label for="msg">
+                        <textarea id="msg" class="cdu-form-control cdu-text-area" value="" placeholder="Enter here..." name="message" type="text" size="40" maxlength="800"></textarea>
+                        <p>Your message*</p>
+                    </label>
+                </div>
+            </div>
+            <div class="submit-button-container">
+                <input class="cdu-button" value="Submit message" type="submit"/>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript">
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("myBtn");
+    var span = document.getElementsByClassName("close")[0];
+
+    btn.onclick = function() {
+        modal.style.display = "flex";
+    }
+
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+
+    modal.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
 
     function validateContactForm(form) {
-        var name = $('input[name=name]', form).val();
+        var name = $('input[name=first-name]', form).val();
         var email = $('input[name=email]', form).val();
 
         if (!validateValue('Name', name)) {

@@ -59,44 +59,44 @@ The duration of a period is [configurable](#configuration).
 
 The very first reporting period begins when ThingsBoard starts.
 For example, if the system launches at the 15-second mark, that's also when the initial reporting period starts.
-If period duration is set to 5 seconds, this period will end at 20 seconds and the next one would start.
+If period duration is set to 15 seconds, this period will end at 30 seconds and the next one would start.
 This pattern repeats in a cycle while ThingsBoard is running.
 
-<!-- PICTURE: activity reporting periods -->
+![image](/images/user-guide/activity-reporting-periods.png)
 
 ### First and last activity events
 
 - **First event**: first activity received during a reporting period.
 - **Last event**: last activity received during a reporting period.
 
-<!-- PICTURE: first and last events -->
+![image](/images/user-guide/first-and-last-activity-events.png)
 
 > **Note**: If there is only one activity, then it is considered to be both first and last at the same time.
 
-<!-- PICTURE: first and last events showing a case with only one event -->
+![image](/images/user-guide/one-event-both-first-and-last.png)
 
 ### Activity reporting strategies
 
 - **ALL**: all activities are reported to Device State service immediately.
 
-<!-- PICTURE: all strategy -->
+![image](/images/user-guide/activity-strategy-all.png)
 
 - **FIRST**: only first activity is reported immediately to Device State service.
 
-<!-- PICTURE: first strategy -->
+![image](/images/user-guide/activity-strategy-first.png)
 
 > **Note**: Last activity will still be reported if there were no activities for a reporting period.
 
-<!-- PICTURE: first strategy reporting last event -->
+![image](/images/user-guide/first-strategy-reporting-last-event.png)
 
 - **LAST**: only last activity is reported to Device State service. Activity is reported when reporting period ends.
 
-<!-- PICTURE: last strategy -->
+![image](/images/user-guide/activity-strategy-last.png)
 
 - **FIRST_AND_LAST**: both first and last activities are reported to Device State service.
   First activity is reported immediately, last activity is reported when reporting period ends.
 
-<!-- PICTURE: first and last strategy -->
+![image](/images/user-guide/activity-strategy-first-and-last.png)
 
 ## Configuration
 
@@ -106,11 +106,12 @@ All configuration is done using global parameters defined in **thingsboard.yml**
 Default value is 600 seconds (10 minutes). A user can overwrite this parameter for an individual device by setting the **inactivityTimeout** server-side attribute (value is set in milliseconds).
 - **state.defaultStateCheckIntervalInSec** - interval for periodic checks of a device activity state, performed by a Device State service. Value is set in seconds. Default value is 60 seconds (1 minute).
 - **state.telemetryTtl** - time-to-live value for activity telemetry data. Value is set in milliseconds. Default value is 0 milliseconds (meaning time-to-live mechanism is disabled).
-
+{% if docsPrefix == 'pe/' %}
 - **integrations.activity.reporting_strategy** - activity reporting strategy for integrations. Allowed values: ALL, FIRST, LAST, FIRST_AND_LAST. Default value is ALL.
 - **integrations.activity.reporting_period** - duration of a reporting period for integrations. Value is set in milliseconds. Default value is 3000 milliseconds (3 seconds).
-- **transport.sessions.report_timeout** - duration of a reporting period for transports. Value is set in milliseconds. Default value is 3000 milliseconds (3 seconds).
+{% endif %}
 - **transport.activity.reporting_strategy** - activity reporting strategy for transports. Allowed values: ALL, FIRST, LAST, FIRST_AND_LAST. Default value is LAST.
+- **transport.sessions.report_timeout** - duration of a reporting period for transports. Value is set in milliseconds. Default value is 3000 milliseconds (3 seconds).
 
 ## Next steps
 

@@ -31,8 +31,6 @@ toc:
     path: /docs/user-guide/install/pe/ibm-cloud/
   - title: Alibaba Cloud
     path: /docs/user-guide/install/pe/alibaba-cloud/
-- title: Upgrade instructions
-  path: /docs/user-guide/install/pe/upgrade-instructions/
 - title: Configuration
   section:
   - title: How to change configuration parameters?
@@ -53,3 +51,5 @@ toc:
     path: /docs/user-guide/install/pe/vc-executor-config/
   - title: Integration executor parameters
     path: /docs/user-guide/install/pe/ie-executor-config/
+- title: Upgrade instructions
+  path: /docs/user-guide/install/pe/upgrade-instructions/
