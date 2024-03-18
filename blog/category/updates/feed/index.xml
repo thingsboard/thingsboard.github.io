@@ -12,7 +12,7 @@
 	<atom:link href="./index.html" rel="self" type="application/rss+xml" />
 	<link>./../../../index.html</link>
 	<description></description>
-	<lastBuildDate>Fri, 15 Mar 2024 13:44:03 +0000</lastBuildDate>
+	<lastBuildDate>Mon, 18 Mar 2024 15:01:56 +0000</lastBuildDate>
 	<language>en-US</language>
 	<sy:updatePeriod>
 	hourly	</sy:updatePeriod>
@@ -20,401 +20,12 @@
 	1	</sy:updateFrequency>
 	<generator>https://wordpress.org/?v=6.4.3</generator>
 	<item>
-		<title>Push notifications to ThingsBoard mobile apps</title>
-		<link>./../../../push-notifications-to-thingsboard-mobile-apps/index.html</link>
-					<comments>./../../../push-notifications-to-thingsboard-mobile-apps/index.html#respond</comments>
-		
-		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
-		<pubDate>Thu, 14 Mar 2024 15:17:58 +0000</pubDate>
-				<category><![CDATA[Updates]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=3706</guid>
-
-					<description><![CDATA[Now, you can receive instant alerts and updates directly on your smartphone, making it easier than ever to&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p>Now, you can receive instant alerts and updates directly on your smartphone, making it easier than ever to stay connected with your IoT devices. Whether you&#8217;re monitoring temperature changes, tracking device status, or just want to stay informed, our new push notifications ensure you&#8217;re always in the loop. Get ready to elevate your IoT experience with real-time alerts wherever you are.</p>
-
-
-
-<h4 class="wp-block-heading">Firebase setup</h4>
-
-
-
-<p>To deliver notifications from ThingsBoard instances to mobile apps, we utilize <a href="https://firebase.google.com/" target="_blank" rel="noreferrer noopener">Firebase</a>. To set up push notifications, create a Firebase project and provide the necessary Firebase credentials to both the platform instance and the mobile application. For setup instructions, community edition users should follow this community edition <a href="/docs/mobile/getting-started/#step-4-optional-configure-push-notifications" target="_blank" rel="noreferrer noopener">guide</a>, while professional edition users can refer to the professional edition <a href="/docs/pe/mobile/getting-started/#step-4-optional-configure-push-notifications" target="_blank" rel="noreferrer noopener">guide</a>.</p>
-
-
-
-<h4 class="wp-block-heading">How to Use Notifications</h4>
-
-
-
-<p>After setting up the platform and your app, you can start using the notification center to send out alerts. You can do this in two ways: manually or automatically with notification rules.</p>
-
-
-
-<h5 class="wp-block-heading">Sending Notifications Manually</h5>
-
-
-
-<p>Open the &#8220;New notification&#8221; wizard by following this <a href="https://thingsboard.io/docs/user-guide/notifications/#send-notification">guide</a>. Specify target recipients and choose &#8220;Mobile app&#8221; as the method for sending your notification. Please note that the recipient must install and login to the mobile application before the notifications may be sent. </p>
-
-
-
-<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="2409" height="1920" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Sending-Notifications-Manually-1.webp" alt="Thingsboard edit rule settings form with eight fields" class="wp-image-3870" srcset="./../../../wp-content/uploads/2024/03/Sending-Notifications-Manually-1.webp 2409w, ./../../../wp-content/uploads/2024/03/Sending-Notifications-Manually-1-300x239.webp 300w, ./../../../wp-content/uploads/2024/03/Sending-Notifications-Manually-1-1024x816.webp 1024w, ./../../../wp-content/uploads/2024/03/Sending-Notifications-Manually-1-768x612.webp 768w, ./../../../wp-content/uploads/2024/03/Sending-Notifications-Manually-1-1536x1224.webp 1536w, ./../../../wp-content/uploads/2024/03/Sending-Notifications-Manually-1-2048x1632.webp 2048w, ./../../../wp-content/uploads/2024/03/Sending-Notifications-Manually-1-512x408.webp 512w, ./../../../wp-content/uploads/2024/03/Sending-Notifications-Manually-1-920x733.webp 920w, ./../../../wp-content/uploads/2024/03/Sending-Notifications-Manually-1-1600x1275.webp 1600w, ./../../../wp-content/uploads/2024/03/Sending-Notifications-Manually-1-1920x1530.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
-
-
-
-<p>In the next step, you&#8217;ll be able to personalize your notification. This includes choosing a subject, writing the message, and picking a custom icon to appear in the mobile app&#8217;s notification section.</p>
-
-
-
-<figure class="wp-block-image size-full"><img decoding="async" width="2409" height="2070" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/new-notification-1.webp" alt="Thingsboard new notification settings form with four fields" class="wp-image-3871" srcset="./../../../wp-content/uploads/2024/03/new-notification-1.webp 2409w, ./../../../wp-content/uploads/2024/03/new-notification-1-300x258.webp 300w, ./../../../wp-content/uploads/2024/03/new-notification-1-1024x880.webp 1024w, ./../../../wp-content/uploads/2024/03/new-notification-1-768x660.webp 768w, ./../../../wp-content/uploads/2024/03/new-notification-1-1536x1320.webp 1536w, ./../../../wp-content/uploads/2024/03/new-notification-1-2048x1760.webp 2048w, ./../../../wp-content/uploads/2024/03/new-notification-1-512x440.webp 512w, ./../../../wp-content/uploads/2024/03/new-notification-1-920x791.webp 920w, ./../../../wp-content/uploads/2024/03/new-notification-1-1600x1375.webp 1600w, ./../../../wp-content/uploads/2024/03/new-notification-1-1920x1650.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
-
-
-
-<p>Notifications can do more than just inform; they can also take users somewhere specific. There are two options for what happens when someone taps on a notification:</p>
-
-
-
-<ul>
-<li><strong>Open URL:</strong> This can be any link, inside or outside the app. For internal links, you can direct users to pages like home, alarms, devices, assets, or customers by using these shortcuts: <code>/home</code>,<code> /alarms</code>, <code>/devices</code>, <code>/assets</code>,<code> /customers</code>, <code>/auditLogs</code>.</li>
-
-
-
-<li><strong>Open Dashboard:</strong> This option works just like it does for web notifications, taking the user directly to a specific dashboard.</li>
-</ul>
-
-
-
-<p>If you don&#8217;t set up a tap action, tapping the notification will bring up the notifications page by default.</p>
-
-
-
-<figure class="wp-block-image size-large is-resized"><img decoding="async" width="1024" height="880" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/notification-mobile-2-1024x880.webp" alt="Smartphone with thingsboard notifications on the screen" class="wp-image-3872" style="width:801px;height:auto" srcset="./../../../wp-content/uploads/2024/03/notification-mobile-2-1024x880.webp 1024w, ./../../../wp-content/uploads/2024/03/notification-mobile-2-300x258.webp 300w, ./../../../wp-content/uploads/2024/03/notification-mobile-2-768x660.webp 768w, ./../../../wp-content/uploads/2024/03/notification-mobile-2-1536x1320.webp 1536w, ./../../../wp-content/uploads/2024/03/notification-mobile-2-2048x1760.webp 2048w, ./../../../wp-content/uploads/2024/03/notification-mobile-2-512x440.webp 512w, ./../../../wp-content/uploads/2024/03/notification-mobile-2-920x791.webp 920w, ./../../../wp-content/uploads/2024/03/notification-mobile-2-1600x1375.webp 1600w, ./../../../wp-content/uploads/2024/03/notification-mobile-2-1920x1650.webp 1920w, ./../../../wp-content/uploads/2024/03/notification-mobile-2.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<h5 class="wp-block-heading">Notification Rules</h5>
-
-
-
-<p>Notification rules are your go-to tool for automating alerts based on specific events, making it a breeze to keep everyone informed without manual intervention. A common scenario is sending out alerts for new alarms. These rules can handle everything from simple notifications to complex escalation chains and are highly customizable. Learn more about notification rules <a href="https://thingsboard.io/docs/user-guide/notifications/#alarm-1" target="_blank" rel="noreferrer noopener">here</a>. See the default rule below. This rule sends information about new alarm to all tenant administrators:</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="2466" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Edit-rule-1.webp" alt="Thingsboard edit rule settings form with six fields" class="wp-image-3873" srcset="./../../../wp-content/uploads/2024/03/Edit-rule-1.webp 2409w, ./../../../wp-content/uploads/2024/03/Edit-rule-1-293x300.webp 293w, ./../../../wp-content/uploads/2024/03/Edit-rule-1-1000x1024.webp 1000w, ./../../../wp-content/uploads/2024/03/Edit-rule-1-768x786.webp 768w, ./../../../wp-content/uploads/2024/03/Edit-rule-1-1500x1536.webp 1500w, ./../../../wp-content/uploads/2024/03/Edit-rule-1-2001x2048.webp 2001w, ./../../../wp-content/uploads/2024/03/Edit-rule-1-512x524.webp 512w, ./../../../wp-content/uploads/2024/03/Edit-rule-1-1024x1048.webp 1024w, ./../../../wp-content/uploads/2024/03/Edit-rule-1-920x942.webp 920w, ./../../../wp-content/uploads/2024/03/Edit-rule-1-1600x1638.webp 1600w, ./../../../wp-content/uploads/2024/03/Edit-rule-1-1920x1965.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
-
-
-
-<p>Each rule is associated with a notification <a href="https://thingsboard.io/docs/user-guide/notifications/#templates" target="_blank" rel="noreferrer noopener">template</a>, which defines the delivery method and appearance of notifications. To get started with push notifications for new alarms, modify the &#8220;New Alarm Notification&#8221; template to include the &#8220;Mobile app&#8221; delivery option.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1977" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Edit-notification-template-01-1.webp" alt="Thingsboard edit notification template settings form with eight fields" class="wp-image-3874" srcset="./../../../wp-content/uploads/2024/03/Edit-notification-template-01-1.webp 2409w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-01-1-300x246.webp 300w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-01-1-1024x840.webp 1024w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-01-1-768x630.webp 768w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-01-1-1536x1261.webp 1536w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-01-1-2048x1681.webp 2048w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-01-1-512x420.webp 512w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-01-1-920x755.webp 920w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-01-1-1600x1313.webp 1600w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-01-1-1920x1576.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
-
-
-
-<p>You can either reuse the message and subject from web notification or create your own. To make your notifications more engaging and relevant, use dynamic content like <code>alarmType</code> and <code>alarmOriginatorName</code>. A full list of available parameters can be found in the built-in documentation.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="2040" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Edit-notification-template-02-1.webp" alt="Thingsboard edit notification template settings form with four fields" class="wp-image-3875" srcset="./../../../wp-content/uploads/2024/03/Edit-notification-template-02-1.webp 2409w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-02-1-300x254.webp 300w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-02-1-1024x867.webp 1024w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-02-1-768x650.webp 768w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-02-1-1536x1301.webp 1536w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-02-1-2048x1734.webp 2048w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-02-1-512x434.webp 512w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-02-1-920x779.webp 920w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-02-1-1600x1355.webp 1600w, ./../../../wp-content/uploads/2024/03/Edit-notification-template-02-1-1920x1626.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
-
-
-
-<p>After setting up your notification templates, you&#8217;re all set to see them in action without the need for any extra setup. For instance, by using the already available <code>Air Quality Monitoring</code> solution template, you can immediately start receiving notifications triggered by the predefined alarms in this solution. This approach lets you quickly validate your notification settings and ensure everything works seamlessly right out of the gate.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="880" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Notifications-03-1-1024x880.webp" alt="Smartphone with thingsboard alarm notifications on the screen" class="wp-image-3876" srcset="./../../../wp-content/uploads/2024/03/Notifications-03-1-1024x880.webp 1024w, ./../../../wp-content/uploads/2024/03/Notifications-03-1-300x258.webp 300w, ./../../../wp-content/uploads/2024/03/Notifications-03-1-768x660.webp 768w, ./../../../wp-content/uploads/2024/03/Notifications-03-1-1536x1320.webp 1536w, ./../../../wp-content/uploads/2024/03/Notifications-03-1-2048x1760.webp 2048w, ./../../../wp-content/uploads/2024/03/Notifications-03-1-512x440.webp 512w, ./../../../wp-content/uploads/2024/03/Notifications-03-1-920x791.webp 920w, ./../../../wp-content/uploads/2024/03/Notifications-03-1-1600x1375.webp 1600w, ./../../../wp-content/uploads/2024/03/Notifications-03-1-1920x1650.webp 1920w, ./../../../wp-content/uploads/2024/03/Notifications-03-1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<p>Don&#8217;t stop at alarm notifications. It&#8217;s a good idea to enable mobile alerts for updates, comments, and assignments related to alarms. Explore all the types of notification <a href="https://thingsboard.io/docs/user-guide/notifications" target="_blank" rel="noreferrer noopener">templates</a> available to fully leverage this feature.</p>
-
-
-
-<p>For a seamless user experience, you can link notifications to specific mobile dashboards. When an alarm triggers a notification, tapping on it in the mobile app can directly open the relevant dashboard. This integration is set up in the device profile&#8217;s <a href="https://thingsboard.io/docs/user-guide/device-profiles/#alarm-rules" target="_blank" rel="noreferrer noopener">alarm rules</a>.</p>
-
-
-
-<p>Handling your notifications is intuitive:</p>
-
-
-
-<ul>
-<li><strong>Mark as Read</strong>: Swipe right on a notification.</li>
-</ul>
-
-
-
-<ul>
-<li><strong>Take Action</strong>: Swipe left to acknowledge, clear, or delete it.</li>
-</ul>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="902" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Notifications-04-1-1024x902.webp" alt="Two smartphones with thingsboard alarm notifications on the screens" class="wp-image-3877" srcset="./../../../wp-content/uploads/2024/03/Notifications-04-1-1024x902.webp 1024w, ./../../../wp-content/uploads/2024/03/Notifications-04-1-300x264.webp 300w, ./../../../wp-content/uploads/2024/03/Notifications-04-1-768x676.webp 768w, ./../../../wp-content/uploads/2024/03/Notifications-04-1-1536x1352.webp 1536w, ./../../../wp-content/uploads/2024/03/Notifications-04-1-2048x1803.webp 2048w, ./../../../wp-content/uploads/2024/03/Notifications-04-1-512x451.webp 512w, ./../../../wp-content/uploads/2024/03/Notifications-04-1-920x810.webp 920w, ./../../../wp-content/uploads/2024/03/Notifications-04-1-1600x1409.webp 1600w, ./../../../wp-content/uploads/2024/03/Notifications-04-1-1920x1690.webp 1920w, ./../../../wp-content/uploads/2024/03/Notifications-04-1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<h4 class="wp-block-heading">Summary</h4>
-
-
-
-<p>In this blog post, we&#8217;ve introduced and guided you through the latest feature on the ThingsBoard IoT Platform: push notifications for mobile applications. This enhancement is all about keeping you connected and informed in real time, directly through your mobile device.</p>
-
-
-
-<p>In summary, ThingsBoard&#8217;s push notification feature offers a versatile and user-friendly way to stay updated on important events and alerts, enhancing the overall experience of managing IoT devices and data. With manual and automated notification options, plus the ability to personalize and test notifications easily, staying informed and responsive has never been simpler.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>./../../../push-notifications-to-thingsboard-mobile-apps/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
-		<title>Enhancing IoT data visualization: Introducing new time series charts</title>
-		<link>./../../../enhancing-iot-data-visualization-introducing-new-time-series-charts/index.html</link>
-					<comments>./../../../enhancing-iot-data-visualization-introducing-new-time-series-charts/index.html#respond</comments>
-		
-		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
-		<pubDate>Tue, 12 Mar 2024 16:38:09 +0000</pubDate>
-				<category><![CDATA[Updates]]></category>
-		<guid isPermaLink="false">./../../../index.html?p=3649</guid>
-
-					<description><![CDATA[Since launching, our time-series charts have grown a lot but have become harder to configure due to many&#8230;]]></description>
-										<content:encoded><![CDATA[
-<p><br>Since launching, our time-series charts have grown a lot but have become harder to configure due to many new features. We decided to make them easier to use and added advanced data zoom capabilities by switching to <a href="https://echarts.apache.org/" data-type="link" data-id="https://echarts.apache.org/">Apache ECharts</a>, a popular and powerful charting tool. Below, we&#8217;ll walk through the new widget setup and spotlight the latest enhancements.</p>
-
-
-
-<h4 class="wp-block-heading">Time series chart family</h4>
-
-
-
-<p>Our new chart family includes four types. The main one, the <strong>time series</strong> chart, lets you show lines, bars, and points all at once. The others are <strong>line</strong>, <strong>bar</strong>, and <strong>point</strong> charts. We&#8217;ll focus on the basic configuration of the time series chart below. The other charts&#8217; configurations and features are very similar.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="766" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Time-series-chart-family-5-1024x766.webp" alt="Four charts with statistics and legend" class="wp-image-3725" srcset="./../../../wp-content/uploads/2024/03/Time-series-chart-family-5-1024x766.webp 1024w, ./../../../wp-content/uploads/2024/03/Time-series-chart-family-5-300x225.webp 300w, ./../../../wp-content/uploads/2024/03/Time-series-chart-family-5-768x575.webp 768w, ./../../../wp-content/uploads/2024/03/Time-series-chart-family-5-1536x1150.webp 1536w, ./../../../wp-content/uploads/2024/03/Time-series-chart-family-5-2048x1533.webp 2048w, ./../../../wp-content/uploads/2024/03/Time-series-chart-family-5-512x383.webp 512w, ./../../../wp-content/uploads/2024/03/Time-series-chart-family-5-920x689.webp 920w, ./../../../wp-content/uploads/2024/03/Time-series-chart-family-5-1600x1198.webp 1600w, ./../../../wp-content/uploads/2024/03/Time-series-chart-family-5-1920x1437.webp 1920w, ./../../../wp-content/uploads/2024/03/Time-series-chart-family-5.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<h4 class="wp-block-heading">Time window and data source</h4>
-
-
-
-<p>The <a href="https://thingsboard.io/docs/user-guide/widgets/#widget-time-window" data-type="link" data-id="https://thingsboard.io/docs/user-guide/dashboards/#timewindow" target="_blank" rel="noreferrer noopener">time window</a> and <a href="https://thingsboard.io/docs/user-guide/widgets/#data-source-types" data-type="link" data-id="https://thingsboard.io/docs/user-guide/widgets/#data-source-types">data source</a> configurations are similar to other time series widgets. Please note that you may display data from multiple entities using <a href="https://thingsboard.io/docs/user-guide/ui/aliases/" data-type="link" data-id="https://thingsboard.io/docs/user-guide/ui/aliases/" target="_blank" rel="noreferrer noopener">entity aliases</a>.</p>
-
-
-
-<figure class="wp-block-image size-large is-resized"><img loading="lazy" decoding="async" width="1024" height="412" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Time-window-and-data-source-2-1024x412.webp" alt="Thingsboard time window and data source configurations" class="wp-image-3749" style="width:798px;height:auto" srcset="./../../../wp-content/uploads/2024/03/Time-window-and-data-source-2-1024x412.webp 1024w, ./../../../wp-content/uploads/2024/03/Time-window-and-data-source-2-300x121.webp 300w, ./../../../wp-content/uploads/2024/03/Time-window-and-data-source-2-768x309.webp 768w, ./../../../wp-content/uploads/2024/03/Time-window-and-data-source-2-1536x618.webp 1536w, ./../../../wp-content/uploads/2024/03/Time-window-and-data-source-2-2048x824.webp 2048w, ./../../../wp-content/uploads/2024/03/Time-window-and-data-source-2-512x206.webp 512w, ./../../../wp-content/uploads/2024/03/Time-window-and-data-source-2-920x370.webp 920w, ./../../../wp-content/uploads/2024/03/Time-window-and-data-source-2-1600x644.webp 1600w, ./../../../wp-content/uploads/2024/03/Time-window-and-data-source-2-1920x772.webp 1920w, ./../../../wp-content/uploads/2024/03/Time-window-and-data-source-2.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<h4 class="wp-block-heading">Y axes</h4>
-
-
-
-<p>New charts differ from the old ones by offering direct control over the Y-axes setup, influencing how these axes are shown visually. Each chart comes with a <strong>default</strong> Y axis that is fixed and cannot be removed. Initially, any new series or threshold you add will appear on this default axis. However, you have the option to create additional axes and specify these for your new series or thresholds during their configuration.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="404" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Y-axes_1-1024x404.webp" alt="Thingsboard Y-axes setup with default configuration" class="wp-image-3728" srcset="./../../../wp-content/uploads/2024/03/Y-axes_1-1024x404.webp 1024w, ./../../../wp-content/uploads/2024/03/Y-axes_1-300x118.webp 300w, ./../../../wp-content/uploads/2024/03/Y-axes_1-768x303.webp 768w, ./../../../wp-content/uploads/2024/03/Y-axes_1-1536x606.webp 1536w, ./../../../wp-content/uploads/2024/03/Y-axes_1-2048x808.webp 2048w, ./../../../wp-content/uploads/2024/03/Y-axes_1-512x202.webp 512w, ./../../../wp-content/uploads/2024/03/Y-axes_1-920x363.webp 920w, ./../../../wp-content/uploads/2024/03/Y-axes_1-1600x632.webp 1600w, ./../../../wp-content/uploads/2024/03/Y-axes_1-1920x758.webp 1920w, ./../../../wp-content/uploads/2024/03/Y-axes_1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<p>Configurable options for each axis include:</p>
-
-
-
-<ul>
-<li>Option to toggle the axis visibility. Even if hidden, it affects the chart if min or max values are set.</li>
-
-
-
-<li>An optional label for the axis.</li>
-
-
-
-<li>Choice of axis placement: left or right side of the chart.</li>
-
-
-
-<li>Minimum and maximum values to set the chart&#8217;s visual range. Leaving these empty enables automatic adjustment based on data values.</li>
-
-
-
-<li>Units for the values are displayed next to the axis.</li>
-
-
-
-<li>The number of decimal places for value precision.</li>
-
-
-
-<li>Selection between line or bar for the axis representation.</li>
-
-
-
-<li>Additional settings to adjust the appearance of axis ticks and lines.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">Series</h4>
-
-
-
-<p>The series table lets you set up which time series data keys to show. You can display each series as either a line or bars, and it needs to be linked to a specific Y-axis. When displaying data from several entities together, you can use <a href="https://thingsboard.io/docs/user-guide/ui/aliases/" data-type="link" data-id="https://thingsboard.io/docs/user-guide/ui/aliases/" target="_blank" rel="noreferrer noopener">entity aliases</a> as the data source. To differentiate between data series from various entities, we recommend including <strong>${entityName} </strong>or <strong>${entityLabel}</strong> in the series label. These placeholders will automatically be replaced with the specific names or labels of the entities, making it easier to tell the series apart.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="409" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Series-1024x409.webp" alt="Thingsboard series table with default config" class="wp-image-3729" srcset="./../../../wp-content/uploads/2024/03/Series-1024x409.webp 1024w, ./../../../wp-content/uploads/2024/03/Series-300x120.webp 300w, ./../../../wp-content/uploads/2024/03/Series-768x307.webp 768w, ./../../../wp-content/uploads/2024/03/Series-1536x614.webp 1536w, ./../../../wp-content/uploads/2024/03/Series-2048x819.webp 2048w, ./../../../wp-content/uploads/2024/03/Series-512x205.webp 512w, ./../../../wp-content/uploads/2024/03/Series-920x368.webp 920w, ./../../../wp-content/uploads/2024/03/Series-1600x640.webp 1600w, ./../../../wp-content/uploads/2024/03/Series-1920x768.webp 1920w, ./../../../wp-content/uploads/2024/03/Series.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<p>Configurable options for each series include:</p>
-
-
-
-<ul>
-<li>A label for the series. Supports <code>${entityName}</code> or <code>${entityLabel}</code> template parameters.</li>
-
-
-
-<li>The display style: choose between a line or a bar.</li>
-
-
-
-<li>The color for the line, bar, or points.</li>
-
-
-
-<li>Units that are displayed next to the value in tooltips.</li>
-
-
-
-<li>The number of decimal places for value precision.</li>
-
-
-
-<li>Additional settings for managing the series&#8217; appearance in the legend and other visual aspects.</li>
-</ul>
-
-
-
-<h4 class="wp-block-heading">Thresholds</h4>
-
-
-
-<p>Threshold settings have been incorporated into the basic widget configurations, maintaining their full functionality while simplifying the process. There are three ways to set thresholds:</p>
-
-
-
-<ul>
-<li>Using a constant value for simplicity.</li>
-
-
-
-<li>Referencing an attribute from the entity specified in the data source.</li>
-
-
-
-<li>Referencing an attribute from a different entity, such as an asset, customer, or tenant, offers flexibility in threshold configuration.</li>
-</ul>
-
-
-
-<p>Find examples of these configuration options in the screenshot provided below.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="437" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Thresholds-1-1024x437.webp" alt="Thingsboard thresholds default settings with three options to configure" class="wp-image-3731" srcset="./../../../wp-content/uploads/2024/03/Thresholds-1-1024x437.webp 1024w, ./../../../wp-content/uploads/2024/03/Thresholds-1-300x128.webp 300w, ./../../../wp-content/uploads/2024/03/Thresholds-1-768x328.webp 768w, ./../../../wp-content/uploads/2024/03/Thresholds-1-1536x656.webp 1536w, ./../../../wp-content/uploads/2024/03/Thresholds-1-2048x875.webp 2048w, ./../../../wp-content/uploads/2024/03/Thresholds-1-512x219.webp 512w, ./../../../wp-content/uploads/2024/03/Thresholds-1-920x393.webp 920w, ./../../../wp-content/uploads/2024/03/Thresholds-1-1600x683.webp 1600w, ./../../../wp-content/uploads/2024/03/Thresholds-1-1920x820.webp 1920w, ./../../../wp-content/uploads/2024/03/Thresholds-1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<h4 class="wp-block-heading">Data zoom</h4>
-
-
-
-<p>A valuable new enhancement is the introduction of data zoom functionality. This feature enables you to zoom into specific data points or ranges directly within your browser, efficiently and without the need for additional data requests from the server.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="418" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/data-zoom-1-1024x418.webp" alt="Long chart with three lines and data zoom option" class="wp-image-3824" srcset="./../../../wp-content/uploads/2024/03/data-zoom-1-1024x418.webp 1024w, ./../../../wp-content/uploads/2024/03/data-zoom-1-300x123.webp 300w, ./../../../wp-content/uploads/2024/03/data-zoom-1-768x314.webp 768w, ./../../../wp-content/uploads/2024/03/data-zoom-1-1536x627.webp 1536w, ./../../../wp-content/uploads/2024/03/data-zoom-1-2048x837.webp 2048w, ./../../../wp-content/uploads/2024/03/data-zoom-1-512x209.webp 512w, ./../../../wp-content/uploads/2024/03/data-zoom-1-920x376.webp 920w, ./../../../wp-content/uploads/2024/03/data-zoom-1-1600x654.webp 1600w, ./../../../wp-content/uploads/2024/03/data-zoom-1-1920x784.webp 1920w, ./../../../wp-content/uploads/2024/03/data-zoom-1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<h4 class="wp-block-heading">Tooltip improvement</h4>
-
-
-
-<p>The tooltip configuration has been updated to offer more flexibility in formatting data and showing the data&#8217;s time interval. By default, the tooltip will show both the start and end times of the data aggregation period. You now have the option to customize the font and colors for both the actual values and the date labels, as well as the tooltip&#8217;s background, to suit your preferences.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="634" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Tooltip-improvement_1-1024x634.webp" alt="Chart which is showing bars and lines 
-at the same time" class="wp-image-3733" srcset="./../../../wp-content/uploads/2024/03/Tooltip-improvement_1-1024x634.webp 1024w, ./../../../wp-content/uploads/2024/03/Tooltip-improvement_1-300x186.webp 300w, ./../../../wp-content/uploads/2024/03/Tooltip-improvement_1-768x475.webp 768w, ./../../../wp-content/uploads/2024/03/Tooltip-improvement_1-1536x951.webp 1536w, ./../../../wp-content/uploads/2024/03/Tooltip-improvement_1-2048x1268.webp 2048w, ./../../../wp-content/uploads/2024/03/Tooltip-improvement_1-512x317.webp 512w, ./../../../wp-content/uploads/2024/03/Tooltip-improvement_1-920x569.webp 920w, ./../../../wp-content/uploads/2024/03/Tooltip-improvement_1-1600x990.webp 1600w, ./../../../wp-content/uploads/2024/03/Tooltip-improvement_1-1920x1188.webp 1920w, ./../../../wp-content/uploads/2024/03/Tooltip-improvement_1.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<h4 class="wp-block-heading">Other EChart-based widgets</h4>
-
-
-
-<p>We have added a few more widgets with slightly different configurations.</p>
-
-
-
-<h5 class="wp-block-heading">Bar chart with labels</h5>
-
-
-
-<p>The widget is crafted to compare aggregated data across various entities or multiple data keys. To differentiate between data from different entities, incorporate <code>${entityName}</code> or <code>${entityLabel}</code> into the series label.</p>
-
-
-
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2409" height="1812" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Bar-chart-with-labels.webp" alt="Thingsboard bar chart with labels" class="wp-image-3734" srcset="./../../../wp-content/uploads/2024/03/Bar-chart-with-labels.webp 2409w, ./../../../wp-content/uploads/2024/03/Bar-chart-with-labels-300x226.webp 300w, ./../../../wp-content/uploads/2024/03/Bar-chart-with-labels-1024x770.webp 1024w, ./../../../wp-content/uploads/2024/03/Bar-chart-with-labels-768x578.webp 768w, ./../../../wp-content/uploads/2024/03/Bar-chart-with-labels-1536x1155.webp 1536w, ./../../../wp-content/uploads/2024/03/Bar-chart-with-labels-2048x1540.webp 2048w, ./../../../wp-content/uploads/2024/03/Bar-chart-with-labels-512x385.webp 512w, ./../../../wp-content/uploads/2024/03/Bar-chart-with-labels-920x692.webp 920w, ./../../../wp-content/uploads/2024/03/Bar-chart-with-labels-1600x1203.webp 1600w, ./../../../wp-content/uploads/2024/03/Bar-chart-with-labels-1920x1444.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
-
-
-
-<h4 class="wp-block-heading">Range chart</h4>
-
-
-
-<p>The range chart is specifically created to display a single time-series value from one entity, such as a device or asset. A distinctive feature of this chart is the &#8220;Range Colors&#8221; option. This allows you to assign specific colors to different value ranges shown in the chart, enabling a visual representation that matches the value&#8217;s magnitude with color.</p>
-
-
-
-<figure class="wp-block-image size-large"><img loading="lazy" decoding="async" width="1024" height="770" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Range-chart-1024x770.webp" alt="Thingsboard range chart which is showing temperature on a time period " class="wp-image-3735" srcset="./../../../wp-content/uploads/2024/03/Range-chart-1024x770.webp 1024w, ./../../../wp-content/uploads/2024/03/Range-chart-300x226.webp 300w, ./../../../wp-content/uploads/2024/03/Range-chart-768x578.webp 768w, ./../../../wp-content/uploads/2024/03/Range-chart-1536x1155.webp 1536w, ./../../../wp-content/uploads/2024/03/Range-chart-2048x1540.webp 2048w, ./../../../wp-content/uploads/2024/03/Range-chart-512x385.webp 512w, ./../../../wp-content/uploads/2024/03/Range-chart-920x692.webp 920w, ./../../../wp-content/uploads/2024/03/Range-chart-1600x1203.webp 1600w, ./../../../wp-content/uploads/2024/03/Range-chart-1920x1444.webp 1920w, ./../../../wp-content/uploads/2024/03/Range-chart.webp 2409w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
-
-
-
-<h4 class="wp-block-heading">Summary</h4>
-
-
-
-<p>As we wrap up our exploration of the newly introduced suite of chart widgets, it&#8217;s clear that these enhancements are set to revolutionize the way we visualize time-series data within the ThingsBoard platform. From simplifying widget configurations to introducing advanced data zoom capabilities, our goal has been to make data analysis and presentation both more powerful and user-friendly.</p>
-
-
-
-<p>We hope you find these new data visualization capabilities both enriching and beneficial to your analysis and presentation tasks. As always, we welcome your feedback and suggestions through feature requests on GitHub or comments below. Your input is invaluable as we strive to meet your evolving needs and further enhance the ThingsBoard experience.</p>
-]]></content:encoded>
-					
-					<wfw:commentRss>./../../../enhancing-iot-data-visualization-introducing-new-time-series-charts/feed/index.html</wfw:commentRss>
-			<slash:comments>0</slash:comments>
-		
-		
-			</item>
-		<item>
 		<title>ThingsBoard 3.6.3 release: push notifications, new charts, buttons, and more</title>
 		<link>./../../../thingsboard-release-3-6-3-announcement/index.html</link>
 					<comments>./../../../thingsboard-release-3-6-3-announcement/index.html#respond</comments>
 		
 		<dc:creator><![CDATA[Andrew Shvaika]]></dc:creator>
-		<pubDate>Thu, 07 Mar 2024 16:19:40 +0000</pubDate>
+		<pubDate>Mon, 18 Mar 2024 15:00:40 +0000</pubDate>
 				<category><![CDATA[Updates]]></category>
 		<guid isPermaLink="false">./../../../index.html?p=3625</guid>
 
@@ -430,11 +41,11 @@ at the same time" class="wp-image-3733" srcset="./../../../wp-content/uploads/20
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="803" height="311" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Notifications-to-app.webp" alt="Iphone on the left side with notification from thingsboard IoT application on the screen and stores on the rigth side" class="wp-image-3788" srcset="./../../../wp-content/uploads/2024/03/Notifications-to-app.webp 803w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-300x116.webp 300w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-768x297.webp 768w, ./../../../wp-content/uploads/2024/03/Notifications-to-app-512x198.webp 512w" sizes="(max-width: 803px) 100vw, 803px" /></figure>
+<figure class="wp-block-image size-full"><img fetchpriority="high" decoding="async" width="2409" height="933" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Notifications-to-app_.webp" alt="" class="wp-image-3928" srcset="./../../../wp-content/uploads/2024/03/Notifications-to-app_.webp 2409w, ./../../../wp-content/uploads/2024/03/Notifications-to-app_-300x116.webp 300w, ./../../../wp-content/uploads/2024/03/Notifications-to-app_-1024x397.webp 1024w, ./../../../wp-content/uploads/2024/03/Notifications-to-app_-768x297.webp 768w, ./../../../wp-content/uploads/2024/03/Notifications-to-app_-1536x595.webp 1536w, ./../../../wp-content/uploads/2024/03/Notifications-to-app_-2048x793.webp 2048w, ./../../../wp-content/uploads/2024/03/Notifications-to-app_-512x198.webp 512w, ./../../../wp-content/uploads/2024/03/Notifications-to-app_-920x356.webp 920w, ./../../../wp-content/uploads/2024/03/Notifications-to-app_-1600x620.webp 1600w, ./../../../wp-content/uploads/2024/03/Notifications-to-app_-1920x744.webp 1920w" sizes="(max-width: 2409px) 100vw, 2409px" /></figure>
 
 
 
-<p>We have added support for sending push notifications to mobile applications. Transform your mobile app&#8217;s communication with our enhanced push notifications feature. This feature allows users to receive immediate alerts and notifications directly on their mobile devices, ensuring they are promptly informed about critical events, status updates, or any anomalies detected within their IoT ecosystem. Please make sure you have updated to the latest versions of our <a href="https://thingsboard.io/docs/mobile/getting-started/" data-type="link" data-id="https://thingsboard.io/docs/mobile/getting-started/" target="_blank" rel="noreferrer noopener">CE</a> and <a href="https://thingsboard.io/docs/pe/mobile/getting-started/" data-type="link" data-id="https://thingsboard.io/docs/pe/mobile/getting-started/" target="_blank" rel="noreferrer noopener">PE</a> mobile applications to start receiving the push notifications.</p>
+<p>We have added support for sending push notifications to mobile applications. Transform your mobile app&#8217;s communication with our enhanced push notifications feature. This feature allows users to receive immediate alerts and notifications directly on their mobile devices, ensuring they are promptly informed about critical events, status updates, or any anomalies detected within their IoT ecosystem. Learn more about push notifications in <a href="/blog/push-notifications-to-thingsboard-mobile-apps/" data-type="page" data-id="3907" target="_blank" rel="noreferrer noopener">this post</a>.</p>
 
 
 
@@ -442,11 +53,11 @@ at the same time" class="wp-image-3733" srcset="./../../../wp-content/uploads/20
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="802" height="430" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Chart-widgets.webp" alt="Four charts with statistics and legend" class="wp-image-3789" srcset="./../../../wp-content/uploads/2024/03/Chart-widgets.webp 802w, ./../../../wp-content/uploads/2024/03/Chart-widgets-300x161.webp 300w, ./../../../wp-content/uploads/2024/03/Chart-widgets-768x412.webp 768w, ./../../../wp-content/uploads/2024/03/Chart-widgets-512x275.webp 512w" sizes="(max-width: 802px) 100vw, 802px" /></figure>
+<figure class="wp-block-image size-full"><img decoding="async" width="2406" height="1290" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/Chart-widgets_.webp" alt="" class="wp-image-3931" srcset="./../../../wp-content/uploads/2024/03/Chart-widgets_.webp 2406w, ./../../../wp-content/uploads/2024/03/Chart-widgets_-300x161.webp 300w, ./../../../wp-content/uploads/2024/03/Chart-widgets_-1024x549.webp 1024w, ./../../../wp-content/uploads/2024/03/Chart-widgets_-768x412.webp 768w, ./../../../wp-content/uploads/2024/03/Chart-widgets_-1536x824.webp 1536w, ./../../../wp-content/uploads/2024/03/Chart-widgets_-2048x1098.webp 2048w, ./../../../wp-content/uploads/2024/03/Chart-widgets_-512x275.webp 512w, ./../../../wp-content/uploads/2024/03/Chart-widgets_-920x493.webp 920w, ./../../../wp-content/uploads/2024/03/Chart-widgets_-1600x858.webp 1600w, ./../../../wp-content/uploads/2024/03/Chart-widgets_-1920x1029.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
 
 
 
-<p>We&#8217;re excited to introduce a suite of advanced visualization widgets powered by <a href="https://echarts.apache.org/en/index.html">Apache ECharts</a> to enhance your data analysis and presentation capabilities. This includes the new <strong>Time Series </strong>chart that now may combine lines and bars on the same widget. We have also added two new <strong>Bar </strong>charts to display data via bars with or without labels. Our priority was not only to deliver powerful and pretty charts but also to simplify the widget configuration experience. We hope you enjoy new data visualization capabilities! </p>
+<p>We&#8217;re excited to introduce a suite of advanced visualization widgets powered by <a href="https://echarts.apache.org/en/index.html">Apache ECharts</a> to enhance your data analysis and presentation capabilities. This includes the new <strong>Time Series </strong>chart that now may combine lines and bars on the same widget. We have also added two new <strong>Bar </strong>charts to display data via bars with or without labels. Our priority was not only to deliver powerful and pretty charts but also to simplify the widget configuration experience. We hope you enjoy new data visualization capabilities! Learn more about new time-series chart widgets in <a href="/blog/enhancing-iot-data-visualization-introducing-new-time-series-charts/" data-type="page" data-id="3907" target="_blank" rel="noreferrer noopener">this post</a>.</p>
 
 
 
@@ -454,7 +65,7 @@ at the same time" class="wp-image-3733" srcset="./../../../wp-content/uploads/20
 
 
 
-<figure class="wp-block-image size-full"><img loading="lazy" decoding="async" width="2406" height="1773" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1.webp" alt="Form with seven options which configure grouping intervals for dashboard time window " class="wp-image-3793" srcset="./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1.webp 2406w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-300x221.webp 300w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1024x755.webp 1024w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-768x566.webp 768w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1536x1132.webp 1536w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-2048x1509.webp 2048w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-512x377.webp 512w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-920x678.webp 920w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1600x1179.webp 1600w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1920x1415.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
+<figure class="wp-block-image size-full"><img decoding="async" width="2406" height="1773" src="https://wp.thingsboard.io/wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1.webp" alt="Form with seven options which configure grouping intervals for dashboard time window " class="wp-image-3793" srcset="./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1.webp 2406w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-300x221.webp 300w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1024x755.webp 1024w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-768x566.webp 768w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1536x1132.webp 1536w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-2048x1509.webp 2048w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-512x377.webp 512w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-920x678.webp 920w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1600x1179.webp 1600w, ./../../../wp-content/uploads/2024/03/New-types-of-the-grouping-intervals-1-1-1920x1415.webp 1920w" sizes="(max-width: 2406px) 100vw, 2406px" /></figure>
 
 
 
@@ -470,7 +81,7 @@ at the same time" class="wp-image-3733" srcset="./../../../wp-content/uploads/20
 
 
 
-<p>We&#8217;ve improved our platform with the new button widgets: the <strong>Action Button</strong> <strong>widget </strong>for navigation to other dashboards, states, or custom actions; the <strong>Command Button</strong> <strong>widget</strong> for sending commands to devices, updating attributes, or appending time-series data; the <strong>Toggle Button</strong> <strong>widget</strong> for switching between two device states; the <strong>Power Button</strong> <strong>widget</strong> for toggling the device on and off. Each widget is designed to offer users more control and interactivity within the platform, improving the overall experience. Explore the full potential of the new button widgets in the dedicated <a href="https://wp.thingsboard.io/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" data-type="link" data-id="https://wp.thingsboard.io/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" target="_blank" rel="noreferrer noopener">post</a>.</p>
+<p>We&#8217;ve improved our platform with the new button widgets: the <strong>Action Button</strong> <strong>widget </strong>for navigation to other dashboards, states, or custom actions; the <strong>Command Button</strong> <strong>widget</strong> for sending commands to devices, updating attributes, or appending time-series data; the <strong>Toggle Button</strong> <strong>widget</strong> for switching between two device states; the <strong>Power Button</strong> <strong>widget</strong> for toggling the device on and off. Each widget is designed to offer users more control and interactivity within the platform, improving the overall experience. Explore the full potential of the new button widgets in the dedicated <a href="/blog/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" data-type="link" data-id="https://wp.thingsboard.io/iot-widgets-for-enhanced-dashboards-introducing-the-action-command-toggle-and-power-buttons/" target="_blank" rel="noreferrer noopener">post</a>.</p>
 
 
 

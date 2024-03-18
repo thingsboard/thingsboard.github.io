@@ -1424,10 +1424,7 @@ blockquote p{
 	}
 }
 @media(max-width: 350px){
-/* 	.main-logo{
-		width: 150px !important;
-		height: 22px;
-	} */
+
 }
 
 @keyframes burgerAnimation {
