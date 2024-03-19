@@ -21,9 +21,6 @@ html#pricing
   .flyout-button
     display: none
 
-  #viewPricing.center-button
-    display: none
-
   @media (min-width: 1400px)
     .col-gt-xl
       flex: 1
@@ -645,3 +642,23 @@ html#pricing
   .sa-button-container
     display: flex
     justify-content: space-between
+
+.faq-link
+  position: relative
+  cursor: pointer
+  font-family: FontAwesome
+  font-weight: bold
+  vertical-align: super
+  font-size: smaller
+  display: inline-block
+  //color: $green
+  &:after
+    content: "\f059"
+    position: absolute
+    transform: translate(15%, -100%)
+
+
+@media (max-width: 992px)
+  #pricingContent .container
+    max-width: unset
+    width: 100%
