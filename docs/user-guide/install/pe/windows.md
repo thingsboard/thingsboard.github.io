@@ -143,9 +143,9 @@ Execute **install.bat** script to install ThingsBoard Web Report Server as a Win
   The output should be like:
 
   ```text
-    C:\Program Files (x86)\tb-web-report>install.bat
-    Installing tb-web-report ...
-    tb-web-report installed successfully!  
+C:\Program Files (x86)\tb-web-report>install.bat
+Installing tb-web-report ...
+tb-web-report installed successfully!
   ```
 
 Now let's start the ThingsBoard service!

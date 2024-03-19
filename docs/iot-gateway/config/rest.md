@@ -171,7 +171,6 @@ custom<small>Recommended if bytes or anything else will be received in the reque
 {% include content-toggle.liquid content-toggle-id="restConverterTypeConfig" toggle-spec=restconvertertypespec %}
 
 {% capture difference %}
-<br>
 **It is also may to parse query parameters from the URL if you are using a GET request.**  
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}

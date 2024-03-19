@@ -42,10 +42,10 @@
     <link rel="shortcut icon" type="image/png" href="https://img.thingsboard.io/favicon.png">
     {% if page.url == '/' %}
     <link href="/css/critical.css" rel="stylesheet">
+    {% elsif page.url contains '/docs/' or page.url contains '/products/license-server/' %}
+    <link href="/css/docs.css" rel="stylesheet">
     {% elsif page.url contains '/products/' %}
     <link href="/css/products.css" rel="stylesheet">
-    {% elsif page.url contains '/docs/' %}
-    <link href="/css/docs.css" rel="stylesheet">
     {% elsif page.url contains '/industries/' %}
     <link href="/css/industries.css" rel="stylesheet">
     {% elsif page.url contains '/partners/' %}
