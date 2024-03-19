@@ -1,0 +1,803 @@
+#docs
+  &.ce
+    --tb-main-color: #305680
+    --tb-main-background: rgba(48, 86, 128, 0.08)
+    --tb-main-color-filter: invert(29%) sepia(61%) saturate(478%) hue-rotate(171deg) brightness(94%) contrast(93%)
+  &.pe
+    --tb-main-color: #1F8B4D
+    --tb-main-background: rgba(31, 139, 77, 0.08)
+    --tb-main-color-filter: invert(25%) sepia(43%) saturate(5965%) hue-rotate(143deg) brightness(97%) contrast(76%)
+  &.paas
+    --tb-main-color: #2A7DEC
+    --tb-main-background: rgba(42, 125, 236, 0.08)
+    --tb-main-color-filter: invert(37%) sepia(84%) saturate(891%) hue-rotate(184deg) brightness(105%) contrast(88%)
+  &.edge
+    --tb-main-color: #2260a7
+    --tb-main-background: rgba(34, 96, 167, 0.08)
+    --tb-main-color-filter: invert(27%) sepia(97%) saturate(823%) hue-rotate(184deg) brightness(95%) contrast(90%)
+  &.edge-pe
+    --tb-main-color: #009688
+    --tb-main-background: rgba(0, 150, 136, 0.08)
+    --tb-main-color-filter: invert(42%) sepia(85%) saturate(4933%) hue-rotate(156deg) brightness(96%) contrast(102%)
+  &.gw
+    --tb-main-color: #EB5757
+    --tb-main-background: rgba(235, 87, 87, 0.08)
+    --tb-main-color-filter: invert(39%) sepia(14%) saturate(6952%) hue-rotate(331deg) brightness(113%) contrast(84%)
+  &.license
+    --tb-main-color: #1F8B4D
+    --tb-main-background: rgba(31, 139, 77, 0.08)
+    --tb-main-color-filter: invert(25%) sepia(43%) saturate(5965%) hue-rotate(143deg) brightness(97%) contrast(76%)
+  &.trendz
+    --tb-main-color: #2696F3
+    --tb-main-background: rgba(42, 125, 236, 0.08)
+    --tb-main-color-filter: invert(62%) sepia(61%) saturate(4424%) hue-rotate(184deg) brightness(94%) contrast(102%)
+  &.mobile
+    --tb-main-color: #305680
+    --tb-main-background: rgba(48, 86, 128, 0.08)
+    --tb-main-color-filter: invert(29%) sepia(61%) saturate(478%) hue-rotate(171deg) brightness(94%) contrast(93%)
+  &.mobile-pe
+    --tb-main-color: #1F8B4D
+    --tb-main-background: rgba(31, 139, 77, 0.08)
+    --tb-main-color-filter: invert(25%) sepia(43%) saturate(5965%) hue-rotate(143deg) brightness(97%) contrast(76%)
+  &.mqtt-broker
+    --tb-main-color: #1F8B4D
+    --tb-main-background: rgba(31, 139, 77, 0.08)
+    --tb-main-color-filter: invert(25%) sepia(43%) saturate(5965%) hue-rotate(143deg) brightness(97%) contrast(76%)
+
+// GRID ADDITIONS
+@media screen and (min-width: 1281px)
+  .col-xxl
+    flex-basis: 0
+    flex-grow: 1
+    max-width: 100%
+  .col-xxl-8
+    flex: 0 0 66.6%
+    max-width: 66.6%
+  .col-xxl-6
+    flex: 0 0 50%
+    max-width: 50%
+  .col-xxl-4
+    flex: 0 0 33.3%
+    max-width: 33.3%
+  .col-xxl-3
+    flex: 0 0 25%
+    max-width: 25%
+
+@media screen and (min-width: 1600px)
+  .col-3xl
+    flex-basis: 0
+    flex-grow: 1
+    max-width: 100%
+  .col-3xl-8
+    flex: 0 0 66.6%
+    max-width: 66.6%
+  .col-3xl-6
+    flex: 0 0 50%
+    max-width: 50%
+  .col-3xl-4
+    flex: 0 0 33.3%
+    max-width: 33.3%
+  .col-3xl-3
+    flex: 0 0 25%
+    max-width: 25%
+
+@media screen and (min-width: 1750px)
+  .col-4xl
+    flex-basis: 0
+    flex-grow: 1
+    max-width: 100%
+  .col-4xl-8
+    flex: 0 0 66.6%
+    max-width: 66.6%
+  .col-4xl-6
+    flex: 0 0 50%
+    max-width: 50%
+  .col-4xl-4
+    flex: 0 0 33.3%
+    max-width: 33.3%
+  .col-4xl-3
+    flex: 0 0 25%
+    max-width: 25%
+
+#docs
+  header
+    box-shadow: none
+    .logo-burger
+      .support-ukraine, .logo
+        @media screen and (max-width: 1280px)
+          display: none
+  #hero
+    background: white
+    position: fixed
+    padding-top: 0
+    top: 80px
+    left: 0
+    right: 0
+    z-index: 7888
+    height: 60px
+    box-shadow: 0 0 20px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .1)
+    #hero-content
+      height: 100%
+    @media screen and (min-width: 1281px)
+      box-shadow: none
+      padding-left: 296px
+    @media screen and (min-width: 1600px)
+      padding-left: 362px
+  &.flip-nav
+    #hero
+      transition-duration: 0.3s
+      box-shadow: 0 0 20px rgba(0, 0, 0, .1), 0 0 40px rgba(0, 0, 0, .1)
+
+  &.open-nav
+    #hero
+      #hero-content
+        visibility: hidden
+
+        #search
+          transition: 0ms
+
+  #searchBox
+    display: block
+    z-index: 9999
+    position: fixed
+    top: 89px
+    right: 22px
+    height: 44px
+    line-height: 44px
+    @media screen and (min-width: 1281px)
+      width: 240px
+    @media screen and (min-width: 1600px)
+      width: 350px
+    @media screen and (max-width: 1280px)
+      top: 18px
+      right: 91px
+    @media screen and (max-width: 768px)
+      top: 164px
+      left: 22px
+      right: 22px
+      width: calc( 100% - 44px )
+      visibility: hidden
+      opacity: 0
+      transition: opacity 0.3s
+      &.visible
+        visibility: visible
+        opacity: 1
+    #search
+      -webkit-appearance: none
+      -moz-appearance: none
+      appearance: none
+      width: 100%
+      padding: 0 16px
+      height: 44px
+      line-height: 30px
+      font-size: 18px
+      vertical-align: middle
+      border: 1px solid #ebebeb
+      background-color: transparent
+      border-radius: 4px
+      color: #212529
+      box-shadow: none
+      +placeholder
+        color: #212529
+        opacity: 0.6
+      &:hover
+        border: 2px solid #000
+        padding: 1px 15px
+        cursor: pointer
+      &:focus
+        cursor: initial
+        border: 2px solid #2a7dec
+        padding: 1px 15px
+        color: #212529
+        +placeholder
+          opacity: 0.2
+    .searchButton
+      position: absolute
+      padding: 0
+      top: 10px
+      right: 12px
+      display: inline-block
+      vertical-align: middle
+      background-size: contain
+      background: url(/images/search.svg) no-repeat
+      filter: brightness(350%)
+      width: 24px
+      height: 24px
+      &:focus
+        outline: none
+    &.focused
+      .searchButton
+        filter: none
+
+  #docsNav
+    z-index: 2000
+    display: none
+    visibility: hidden
+    background: #fff
+    transition: 0.3s
+    position: fixed
+    top: 140px
+    bottom: calc( 100vh - 140px )
+    left: 0
+    right: 0
+    @media screen and (max-width: 1280px)
+      display: block
+    > *
+      opacity: 0
+      transition: 0.3s
+    &.active
+      visibility: visible
+      bottom: 0
+      > *
+        opacity: 1
+      .docItems
+        bottom: 0
+    .docItems
+      position: fixed
+      top: 154px
+      bottom: calc( 100vh - 154px )
+      padding: 30px 20px
+      left: 0
+      right: 0
+      display: flex
+      overflow: auto
+      flex-direction: column
+      @media screen and (max-width: 768px)
+        top: 222px
+      a.toc
+        color: #212529
+        font-size: 1.2em
+        font-weight: 600
+        text-decoration: none
+        padding: 7.5px 10px 7.5px 0
+
+  #vendorStrip
+    white-space: nowrap
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+    height: 100%
+    text-align: center
+    img
+      max-height: 24px
+      vertical-align: middle
+      margin: 0 30px
+    #docsList
+      display: flex
+      height: 100%
+      width: 100%
+      ul
+        .indicator
+          .head-arrow
+            border-bottom-color: var(--tb-main-color)
+          .line
+            background-color: var(--tb-main-color)
+      #docsBreadcrumbs
+        position: relative
+        display: none
+        align-items: center
+        padding-left: 22px
+        padding-right: 66px
+        height: 100%
+        width: 100%
+        overflow: hidden
+        &::after
+          content: ""
+          background-image: url(/images/pe/read-more-arrow.svg)
+          background-size: contain
+          display: block
+          position: absolute
+          top: 23px
+          right: 26px
+          width: 14px
+          height: 14px
+          transform: rotate(90deg)
+          transition: transform .3s
+          border: none
+        &.active
+          &::after
+            transform: rotate(-90deg)
+        @media screen and (max-width: 1280px)
+          display: flex
+        span
+          font-size: 17px
+          font-weight: 400
+          color: rgba(33, 37, 41, 0.6)
+          &.item
+            &:not(:last-child)
+              overflow: hidden
+              white-space: nowrap
+              text-overflow: ellipsis
+            &:last-child
+              font-weight: 500
+              color: #212529
+              white-space: normal
+              text-align: start
+              font-size: 15px
+          &.divider
+            padding-left: 6px
+            padding-right: 6px
+      ul
+        display: inline-block
+        height: 100%
+        @media screen and (max-width: 1280px)
+          display: none
+        .indicator
+          width: 100%
+          transition: none
+          padding: 0
+          div
+            transition: none
+          .head-arrow
+            opacity: 1
+          .line
+            opacity: 1
+            width: 100%
+            left: 0
+        li
+          position: relative
+          display: flex
+          align-items: center
+          height: 100%
+          margin-left: 28px
+          float: left
+          @media screen and (max-width: 1500px)
+            margin-left: 20px
+          a
+            position: relative
+            display: block
+            color: #212529
+            opacity: 0.6
+            font-size: 18px
+            font-weight: normal
+            @media screen and (max-width: 1500px)
+              font-size: 17px
+            &.YAH
+              position: relative
+              opacity: 1
+              font-weight: 500
+            &:hover
+              opacity: 1
+              text-decoration: none !important
+
+  #githubButtonContainer
+    @media screen and (max-width: 1280px)
+      position: fixed
+      left: 372px
+      top: 9px
+  &.search
+    .gsc-control-cse
+      margin-top: 32px
+      .gsc-above-wrapper-area
+        display: none
+      .gsc-wrapper
+        .gs-bidi-start-align
+          color: #212529
+          font-size: 16px
+          line-height: 1.32
+          margin-bottom: .75em
+        .gs-visibleUrl
+          font-size: 14px
+          opacity: .6
+          margin-bottom: .25em
+        .gs-title
+          color: #2a7dec
+          font-size: 18px
+          line-height: 1.32
+          margin-bottom: .5em
+          &:hover
+            text-decoration: underline
+        .gcsc-find-more-on-google
+          color: #212529
+          opacity: .6
+          &:hover span
+            text-decoration: underline
+          svg
+            fill: #212529
+        .gs-no-results-result .gs-snippet
+          background-color: unset
+          border: none
+          color: #212529
+          font-size: 16px
+
+  .fixed
+    footer
+      width: calc( 100% - 60px)
+      @media screen and (min-width: 1281px)
+        width: calc( 100% - 590px)
+      @media screen and (min-width: 1500px)
+        width: calc( 100% - 810px)
+
+#docsToc
+  position: fixed
+  background-color: #F9F9F9
+  top: 0
+  left: 0
+  width: 0
+  height: 100vh
+  overflow: hidden
+  padding: 50px 0
+  z-index: 999999
+  transition: 0.3s
+
+#docsToc, #docsNav
+  .pi-accordion
+    .yah-indicator
+      position: absolute
+      left: 0
+      bottom: 4px
+      top: 4px
+      margin-top: 4px
+      content: ""
+      border-left: 4px solid var(--tb-main-color)
+    .yah
+      & > .title
+        color: var(--tb-main-color)
+        font-weight: 500
+    & > .container:first-child > .item.yah:first-child > .title
+      padding-left: 0
+      font-size: 1.2em
+      font-weight: 600
+    .item
+      display: block
+      position: relative
+      overflow: visible
+    .title
+      color: #75767C
+      line-height: 24px
+      &:hover
+        color: #2a7dec
+    a.item > .title
+      &:hover
+        color: #2a7dec
+    div.item > .title
+      padding-left: 38px
+      &:before
+        content: "\f054"
+        font-family: FontAwesome
+        font-size: 14px
+        font-weight: 400
+        display: block
+        position: absolute
+        left: 18px
+        top: 7.5px
+        transform: rotate(0deg)
+        transition: transform 0.3s
+        border: none
+    .item.on
+      overflow: visible
+      & > .title
+        font-weight: 500
+        color: #212529
+        &:hover
+          color: #2a7dec
+        &:before
+          transform: rotate(90deg)
+
+#device-filters
+  display: none
+  position: relative
+  z-index: 1
+  margin-top: 130px
+  overflow: hidden
+  .header
+    display: none
+    .indicator
+      position: absolute
+      left: -20px
+      bottom: 4px
+      top: 4px
+      margin-top: 4px
+      content: ""
+      border-left: 4px solid var(--tb-main-color)
+    .title
+      position: relative
+      padding: 7.5px 10px 7.5px 0px
+      cursor: pointer
+      transition: .3s
+      color: var(--tb-main-color)
+      font-size: 1.2em
+      font-weight: 600
+      line-height: 24px
+  .group
+    padding-left: 20px
+    .title
+      color: #75767C
+      line-height: 24px
+      padding-left: 15px
+      cursor: pointer
+      &:hover
+        color: var(--tb-main-color)
+      &:before
+        content: "\f054"
+        font-family: FontAwesome
+        font-size: 14px
+        font-weight: 400
+        display: block
+        width: 10px
+        position: relative
+        left: -25px
+        top: 23.5px
+        transform: rotate(90deg)
+        transition: transform 0.3s
+        border: none
+        cursor: pointer
+      &.collapsed
+        &:before
+          transform: rotate(0deg)
+
+    .filters-wrapper
+      overflow: hidden
+      transition: height 0.3s
+      height: auto
+      padding-top: 10px
+      .filter
+        margin-left: 5px
+        .filter-label
+          cursor: pointer
+          color: #75767C
+          line-height: 24px
+        input[type=checkbox]
+          -webkit-appearance: none
+          appearance: none
+          background-color: #fff
+          margin: 0
+          font: inherit
+          color: var(--tb-main-color)
+          width: 1.15em
+          height: 1.15em
+          border: 0.15em solid var(--tb-main-color)
+          border-radius: 0.15em
+          transform: translateY(-0.075em)
+          display: inline-flex
+          justify-content: center
+          align-items: center
+          cursor: pointer
+        input[type="checkbox"]::before
+          content: ""
+          width: 0.65em
+          height: 0.65em
+          transform: scale(0)
+          transition: 120ms transform ease-in-out
+          box-shadow: inset 1em 1em var(--tb-main-color)
+          transform-origin: bottom left
+          clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%)
+        input[type="checkbox"]:checked::before
+          transform: scale(1)
+
+td.item.item-pe, p.item.item-pe
+  &::after
+    content: "PE"
+    font-size: 12px
+    font-weight: bold
+    color: var(--tb-main-color)
+    transform: translate(5px, -10px)
+    display: inline-block
+
+// DOCS FEATURES CARDS
+
+.doc-features
+  max-width: 1200px
+
+a.feature-card, .feature-card
+  display: block
+  padding: 24px
+  border: 1px solid rgba(0, 0, 0, 0.08)
+  border-radius: 8px
+  width: 100%
+  height: 100%
+  &.inner
+    padding: 16px
+    .feature-title
+      font-size: 16px
+      line-height: 150%
+      padding-bottom: 0
+  img.feature-logo
+    width: 36px
+    height: 36px
+    margin-bottom: 20px
+    filter: var(--tb-main-color-filter)
+  img.integration-logo
+    width: 28px
+    height: 28px
+    margin-right: 7px
+  .feature-title
+    color: #212529
+    font-size: 18px
+    font-weight: 500
+    line-height: 28px
+    padding-bottom: 8px
+    span
+      vertical-align: middle
+  .feature-text
+    color: #75767C
+    font-size: 14px
+    font-weight: 400
+    line-height: 24px
+    ul
+      margin: 0
+      li
+        margin-bottom: 0
+
+a.feature-card
+  &:hover
+    text-decoration: none
+    transition-duration: 0.3s
+    box-shadow: 0 7px 32px rgba(0, 0, 0, 0.06)
+
+// jSocials
+.jssocials-share-link
+  border-radius: 50% !important
+
+#calendarWrapper
+  height: 300px
+  margin-bottom: 48px
+
+// Video
+#video
+  width: $main-max-width
+  position: relative
+  margin: auto
+  padding: 0
+
+  #video_wrapper
+    width: 100%
+    padding-bottom: 56.25%
+
+    iframe
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+
+.products-selector
+  position: fixed
+  height: 60px
+  top: 10px
+  left: 20px
+  width: calc(100% - 100px)
+  display: flex
+  flex-direction: row
+  align-items: center
+  z-index: 10001
+  @media screen and (min-width: 769px)
+    width: 250px
+  @media screen and (min-width: 870px)
+    width: 348px
+  @media screen and (min-width: 1281px)
+    width: 250px
+    top: 80px
+  @media screen and (min-width: 1601px)
+    width: 316px
+  img
+    width: 54px
+    height: 54px
+    margin-right: 16px
+    @media screen and (max-width: 1024px)
+      width: 46px
+      height: 46px
+      margin-right: 10px
+      margin-left: -10px
+  .product-info
+    display: flex
+    flex-direction: column
+    width: 316px
+    height: 44px
+    padding-left: 16px
+    flex: 1
+    justify-content: center
+    border-radius: 8px
+    background: var(--tb-main-background)
+    .product-title
+      font-size: 18px
+      font-weight: 500
+      line-height: 24px
+      position: relative
+      color: var(--tb-main-color)
+      @media screen and (max-width: 1024px)
+        font-size: 16px
+      &::after
+        content: "\f054"
+        font-family: FontAwesome
+        font-size: 14px
+        font-weight: 500
+        line-height: 1
+        display: block
+        position: absolute
+        top: 5px
+        right: 18px
+        transform: rotate(90deg)
+        transition: transform .3s
+        border: none
+    .product-description
+      color: #899aab
+      font-size: 13px
+      font-weight: 400
+      @media screen and (max-width: 1024px)
+        font-size: 10px
+
+  .products
+    transition: visibility, opacity ease-in-out
+    transition-duration: 0.3s
+    border-radius: 4px
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, .3), 0 50px 100px -20px rgba(0, 0, 0, 0.25)
+    background-color: #fff
+    position: absolute
+    top: 60px
+    left: 16px
+    right: -16px
+    padding: 8px
+    display: flex
+    flex-direction: column
+    visibility: hidden
+    opacity: 0
+    a.product
+      color: #75767C
+      font-size: 16px
+      font-weight: 400
+      line-height: 24px
+      padding: 8px 12px
+      &:hover, &.active
+        text-decoration: none
+        color: #2a7dec
+      &.active
+        font-weight: 500
+        background: rgba(42, 125, 236, 0.04)
+  &:hover, &.active
+    cursor: pointer
+  &.active
+    .product-title
+      &::after
+        transform: rotate(-90deg)
+    .products
+      visibility: visible
+      opacity: 1
+
+details
+  summary
+    outline: none
+    list-style: none
+    position: relative
+    padding-left: 18px
+    &::-webkit-details-marker
+      display: none
+    &::marker
+      display: none
+    &:hover
+      color: #2a7dec
+      &:before
+        filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
+    &:before
+      content: ""
+      background-image: url("/images/pe/read-more-arrow.svg")
+      background-size: contain
+      display: block
+      position: absolute
+      left: 0
+      top: 4px
+      width: 12px
+      height: 12px
+      transform: rotate(0deg)
+      transition: transform 0.3s
+      filter: invert(84%) sepia(0%) saturate(7494%) hue-rotate(88deg) brightness(94%) contrast(89%)
+      border: none
+
+details[open]
+  summary
+    font-weight: 500
+    &:before
+      filter: none
+      transform: rotate(90deg)
+    &:hover
+      &:before
+        filter: invert(35%) sepia(96%) saturate(1837%) hue-rotate(202deg) brightness(98%) contrast(89%)
+
+@media screen and (max-width: 1280px)
+  #docs
+    header
+      height: 80px !important
+
+  #docsToc
+    display: none

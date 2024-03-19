@@ -9,16 +9,18 @@ The product roadmap listed below covers only main features and does not cover sm
 
 ## ThingsBoard CE
 
-### v3.6.3
-* Notification system: notification push on mobile;
-* Custom translation;
-* Mobile image gallery caching;
-* Redesign and improve switch control widget;
-* Redesign Digital gauge (Basic settings);
-* Design Navigation state buttons.
-
 ### v3.7
+
 * Migration to JDK 17;
+* Redesign the Custom translation;
+* Redesign the Digital gauge to simplify configuration;
+* Housekeeping service to improve handling of long-running maintenance and administration tasks;
+* Optimization of the attributes table;
+* Separate entity to store queue statistics;
+
+### v3.8
+
+* Mobile application configuration;
 * Redesign Rule nodes:
   * Add visualization if Node has error;
   * Add new navigation on Rule node;
@@ -30,9 +32,6 @@ The product roadmap listed below covers only main features and does not cover sm
   * refactoring to separate entity;
   * simplified configuration;
   * support of more complex conditions;
-*  "Housekeeping” service to improve handling of long-running maintenance and administration tasks;
-*  Separate entity to store queue statistics;
-*  Optimization of the attributes table;
 
 See active development in progress [here](https://github.com/thingsboard/thingsboard/tree/{{ site.release.branch_major_next }}) and work on latest release bug fixes [here](https://github.com/thingsboard/thingsboard/tree/master).
 

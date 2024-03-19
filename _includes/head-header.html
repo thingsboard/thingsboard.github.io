@@ -26,7 +26,6 @@
     <meta charset="utf-8">
     <meta name="cf-2fa-verify" content="a08672380de15e9">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/css/bs-cutted.css" rel="stylesheet">
     <link rel="preload" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
     {% if customTitle %}
     <title>{{ customTitle }}</title>
@@ -43,6 +42,22 @@
     <link rel="shortcut icon" type="image/png" href="https://img.thingsboard.io/favicon.png">
     {% if page.url == '/' %}
     <link href="/css/critical.css" rel="stylesheet">
+    {% elsif page.url contains '/products/' %}
+    <link href="/css/products.css" rel="stylesheet">
+    {% elsif page.url contains '/docs/' %}
+    <link href="/css/docs.css" rel="stylesheet">
+    {% elsif page.url contains '/industries/' %}
+    <link href="/css/industries.css" rel="stylesheet">
+    {% elsif page.url contains '/partners/' %}
+    <link href="/css/partners.css" rel="stylesheet">
+    {% elsif page.url contains '/use-cases/' or page.url == '/smart-energy/' or page.url == '/smart-farming/' or page.url == '/fleet-tracking/' or page.url == '/smart-metering/' or page.url == '/iot-use-cases/' %}
+    <link href="/css/use-cases.css" rel="stylesheet">
+    {% elsif page.url == '/pricing/' %}
+    <link href="/css/pricing.css" rel="stylesheet">
+    {% elsif page.url == '/company/' or page.url == '/careers/' or page.url == '/mediakit/' %}
+    <link href="/css/company.css" rel="stylesheet">
+    {% elsif page.url == '/iot-solutions/' or page.url == '/device-management/' or page.url == '/monitoring-dashboard/' or page.url == '/asset-management/' %}
+    <link href="/css/solutions.css" rel="stylesheet">
     {% else %}
     <link href="/css/styles.css" rel="stylesheet">
     {% endif %}

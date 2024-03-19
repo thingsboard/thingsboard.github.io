@@ -27,8 +27,6 @@ $header-height: 80px
 
 $logo-width: 180px
 
-$nav-buttons-margin-left: 10px
-
 $hamburger-size: 40px
 
 
@@ -54,7 +52,6 @@ $ocean-nodes-padding-Y: 0px
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 @media screen and (min-width: 750px)
-	@import "size"
 
 	p
 		font-size: 16px
@@ -78,84 +75,6 @@ $ocean-nodes-padding-Y: 0px
 		line-height: 40px
 		padding-bottom: 0px
 
-	span.paas-title, span.edge-title, span.pe-title
-		line-height: 44px
-
-	#device-filters
-		display: none
-		position: relative
-		z-index: 1
-		margin-top: 124px
-		flex-direction: row
-		justify-content: space-between
-		width: 100%
-		.header
-			display: none
-	#docsContent
-		.trainings-info
-			width: 720px
-			td:nth-child(1)
-				width: 250px
-				font-size: 18px
-			td:nth-child(2)
-				width: 470px
-				font-size: 18px
-			td.price
-				font-size: 24px
-			tr:last-child
-				td:nth-child(2)
-					width: 160px
-				td:nth-child(3)
-					padding: 8px
-					width: 310px
-					.button
-						font-size: 14px
-						padding: 0 10px
-						line-height: 40px
-
-	.oceanNodes
-		padding-top: $ocean-nodes-padding-Y
-		padding-bottom: $ocean-nodes-padding-Y
-		h3
-			text-align: left
-			margin-bottom: 18px
-
-		main
-			position: relative
-			clear: both
-			display: table
-			height: 160px
-
-			.content
-				display: table-cell
-				position: relative
-				vertical-align: middle
-
-			.image-wrapper
-				position: absolute
-				top: 50%
-				//max-height: 100%
-				transform: translateY(-50%)
-
-			&:nth-child(odd)
-				padding-right: 210px
-
-				.image-wrapper
-					right: 0
-
-			&:nth-child(even)
-				padding-left: 210px
-
-				.image-wrapper
-					left: 0
-
-			img
-				width: 100%
-
-	#video
-		width: $main-max-width
-		display: block
-
 	// FOOTER
 	footer
 		nav
@@ -170,9 +89,6 @@ $ocean-nodes-padding-Y: 0px
 			justify-content: flex-end!important
 			.footer-logo
 				display: none
-	#docs
-		.logo
-			left: calc(50% - 70px)
 
 @media screen and (max-width: 768px)
 	footer
