@@ -107,7 +107,7 @@ Default value is 600 seconds (10 minutes). A user can overwrite this parameter f
 - **state.defaultStateCheckIntervalInSec** - interval for periodic checks of a device activity state, performed by a Device State service. Value is set in seconds. Default value is 60 seconds (1 minute).
 - **state.telemetryTtl** - time-to-live value for activity telemetry data. Value is set in milliseconds. Default value is 0 milliseconds (meaning time-to-live mechanism is disabled).
 {% if docsPrefix == 'pe/' %}
-- **integrations.activity.reporting_strategy** - activity reporting strategy for integrations. Allowed values: ALL, FIRST, LAST, FIRST_AND_LAST. Default value is ALL.
+- **integrations.activity.reporting_strategy** - activity reporting strategy for integrations. Allowed values: ALL, FIRST, LAST, FIRST_AND_LAST. Default value is LAST.
 - **integrations.activity.reporting_period** - duration of a reporting period for integrations. Value is set in milliseconds. Default value is 3000 milliseconds (3 seconds).
 {% endif %}
 - **transport.activity.reporting_strategy** - activity reporting strategy for transports. Allowed values: ALL, FIRST, LAST, FIRST_AND_LAST. Default value is LAST.
