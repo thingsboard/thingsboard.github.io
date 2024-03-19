@@ -8,31 +8,28 @@ description: IoT alarm notifications
 notification-center-send-notification:
     0:
         image: /images/user-guide/notifications/notification-center-send-notification-1-ce.png
-        title: 'To send a notification click the “Send notification” button in the upper right corner of the notification page;'
+        title: 'Click the "Send notification" button in the upper right corner of the "Notification center" page to open the new notification wizard;'
     1:
         image: /images/user-guide/notifications/notification-center-send-notification-2-ce.png
-        title: 'In new window, select recipients and one or more delivery methods. In this example, let`s consider the Web delivery method;'
+        title: 'Select recipients and one or more delivery methods. In this example, let&#39;s consider the Web delivery method;'
     2:
         image: /images/user-guide/notifications/notification-center-send-notification-3-ce.png
         title: 'If necessary, use the scheduler. Click "Next";'
     3:
         image: /images/user-guide/notifications/notification-center-send-notification-4-ce.png
-        title: 'Enter the subject of the message and the text of the message;'
+        title: 'Enter subject and text of the message;'
     4:
         image: /images/user-guide/notifications/notification-center-send-notification-5-ce.png
-        title: 'You can use the "Action button" in the notification. Enter the button text, select the action type ("Open dashboard" or "Open URL link") and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon in the notification and set its color. Click "Next";'
+        title: 'You can use the action button in the notification. Enter the button text, select the action type ("Open dashboard" or "Open URL link") and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon in the notification and set its color. Click "Next";'
     5:
         image: /images/user-guide/notifications/notification-center-send-notification-6-ce.png
         title: 'In this window, you can see how the notification will look and also view the list of notification recipients. Click "Send";'
     6:
         image: /images/user-guide/notifications/notification-center-send-notification-7-ce.png
-        title: 'User received a new notification. The user can view it by clicking on the bell icon in the upper right corner of the screen or in the Notification center page;'
+        title: 'The user received a new notification and can view it on the Notification center page or by clicking on the bell icon in the upper right corner of the screen;'
     7:
-        image: /images/user-guide/notifications/notification-center-send-notification-9-ce.png
+        image: /images/user-guide/notifications/notification-center-send-notification-8-ce.png
         title: 'By clicking on the "Open this dashboard" button in the message, the user will open the dashboard window.'
-    8:
-        image: /images/user-guide/notifications/notification-center-send-notification-10-ce.png
-        title: ''
 
 notification-center-inbox:
     0:
@@ -48,22 +45,22 @@ notification-center-inbox:
 notification-center-inbox-bell-icon:
     0:
         image: /images/user-guide/notifications/notification-inbox-bell-icon-1-ce.png
-        title: 'Click on the bell icon to view incoming notifications.'
+        title: 'Click on the "bell" icon to view incoming notifications.'
 
 notification-center-sent:
     0:
         image: /images/user-guide/notifications/notification-center-sent-1-ce.png
-        title: 'The “Sent” tab displays the status of sent notifications. You may use the “Notify again” button to copy an existing notification and send it again.'
+        title: 'The "Sent" tab displays sent notifications and their status. You may use the "Notify again" button to send it again.'
 
 notification-center-recipients:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-1-ce.png
-        title: 'Click the "Add recipients" button;'
+        title: 'The "Recipients" tab displays the list of notification recipients. Here you can create and delete notification recipients here.'
 
 notification-center-recipients-1:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-2-ce.png
-        title: 'Click the "Add recipients" button. Enter the name of the notification recipients. Next, select one of the three types of recipients: platform users, Microsoft Teams and Slack entities. Click "Add";'
+        title: 'Click the "Add recipients" button in the upper right corner of the "Recipients" tab. In the new window, enter the name of the notification recipients. Next, select one of the three types of recipients: platform users, Microsoft Teams, or Slack entities. In the "User Filter" list, select who you want to send notifications to. Than, click "Add".'
     1:
         image: /images/user-guide/notifications/notification-center-recipients-3-ce.png
         title: 'The new recipient is added.'
@@ -74,7 +71,7 @@ notification-center-recipients-2:
         title: 'Click the “Send notification” button. Then click the “Create new” button;'
     1:
         image: /images/user-guide/notifications/notification-center-recipients-5-ce.png
-        title: 'Enter the name of the notification recipients. Next, select one of the three types of recipients: platform users, Microsoft Teams and Slack entities. From the "User filter" list, select who you want to send messages or notifications to. Click "Add";'
+        title: 'Enter the name of the notification recipients. Next, select one of the three types of recipients: platform users, Microsoft Teams, or Slack entities. In the "User Filter" list, select who you want to send notifications to. Click "Add";'
     2:
         image: /images/user-guide/notifications/notification-center-recipients-6-ce.png
         title: 'The new recipient is added.'
@@ -97,21 +94,23 @@ notification-center-recipients-microsoft-teams:
 notification-center-templates:
     0:
         image: /images/user-guide/notifications/notification-center-templates-1-ce.png
-        title: 'Use "User filter" to define notification recipients.'
+        title: 'The "Templates" tab displays the list of notification templates. You may create, copy and delete notification templates here.'
 
 notification-center-add-templates:
     0:
         image: /images/user-guide/notifications/notification-center-add-templates-1-ce.png
-        title: 'Click the “Add template” button. Then enter notification template name and type. Select one or more delivery methods. In this example, let’s consider the Web delivery method. Click “Next”;'
+        title: 'Click the "Add template" button in the upper right corner of the "Templates" tab. In the new window, enter the notification template name. Select a template type from the drop-down list. Select one or more delivery methods. In this example, let’s consider the Web delivery method. Click "Next";'
     1:
         image: /images/user-guide/notifications/notification-center-add-templates-2-ce.png
-        title: 'Enter the subject of the message and the text of the message;'
+        title: 'Enter the subject of the message and the text of the message. Optionally, you can display the icon in the notification and set its color. Also, you can use the action button in the notification. Then, click "Add".'
     2:
         image: /images/user-guide/notifications/notification-center-add-templates-3-ce.png
-        title: 'You can use the "Action button" in the notification. Enter the button text, select the action type (“Open dashboard” or “Open URL link”) and specify the URL link or dashboard that should open when the button is clicked. You can also display the icon in the notification and set its color. Click “Next”;'
-    3:
-        image: /images/user-guide/notifications/notification-center-add-templates-4-ce.png
         title: 'The new template is added.'
+
+notification-center-rules:
+    0:
+        image: /images/user-guide/notifications/notification-center-rules-1-ce.png
+        title: 'The "Rules" tab displays the list of notifications rules. You may create, copy and delete notification rules here.'
 
 notification-center-add-rule-alarm:
     0:
@@ -180,6 +179,28 @@ notification-center-add-rule-engine-lifecycle-event:
         title: 'The trigger filter allows you to filter alarms by type, severity, and status. You may also select the event types that will trigger notification: assign or unassign. Click "Add";'
     2:
         image: /images/user-guide/notifications/notification-center-add-rule-engine-lifecycle-event-3-ce.png
+        title: 'The new rule is created.'
+
+notification-center-add-rule-edge-connection:
+    0:
+        image: /images/user-guide/notifications/notification-center-add-rule-edge-connection-1-ce.png
+        title: 'Click the "Add rule" button. Then enter rule name. Select trigger - Edge connection. Then, select template from the list and specify recipient. Click "Next";'
+    1:
+        image: /images/user-guide/notifications/notification-center-add-rule-edge-connection-2-ce.png
+        title: 'The trigger filter allows you to filter notifications by Edge instances. You may also select the event types that will trigger notification: connected, disconnected. Click "Add".;'
+    2:
+        image: /images/user-guide/notifications/notification-center-add-rule-edge-connection-3-ce.png
+        title: 'The new rule is created.'
+
+notification-center-add-rule-edge-communication-failure:
+    0:
+        image: /images/user-guide/notifications/notification-center-add-rule-edge-communication-failure-1-ce.png
+        title: 'Click the "Add rule" button. Then enter rule name. Select trigger - Edge communication failure. Then, select template from the list and specify recipient. Click "Next";'
+    1:
+        image: /images/user-guide/notifications/notification-center-add-rule-edge-communication-failure-2-ce.png
+        title: 'The trigger filter allows you to filter notifications by Edge instances. If the field is empty, the trigger will be applied to all edge instances. Click "Add";'
+    2:
+        image: /images/user-guide/notifications/notification-center-add-rule-edge-communication-failure-3-ce.png
         title: 'The new rule is created.'
 
 notification-center-add-rule-entities-limit:

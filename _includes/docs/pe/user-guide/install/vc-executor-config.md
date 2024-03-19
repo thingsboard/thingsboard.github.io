@@ -1,4 +1,5 @@
-
+* TOC
+{:toc}
 
 ####  Spring common parameters
 
@@ -403,6 +404,12 @@
 			<td>TB_QUEUE_AWS_SQS_THREADS_PER_TOPIC</td>
 			<td>1</td>
 			<td> Number of threads per each AWS SQS queue in consumer</td>
+		</tr>
+		<tr>
+			<td>queue.aws_sqs.producer_thread_pool_size</td>
+			<td>TB_QUEUE_AWS_SQS_EXECUTOR_THREAD_POOL_SIZE</td>
+			<td>50</td>
+			<td> Thread pool size for aws_sqs queue producer executor provider. Default value equals to AmazonSQSAsyncClient.DEFAULT_THREAD_POOL_SIZE</td>
 		</tr>
 		<tr>
 			<td>queue.aws_sqs.queue-properties.core</td>

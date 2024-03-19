@@ -1,6 +1,18 @@
 [
   {
     "type": ["Asia"],
+    "country": ["India"],
+    "name": "Absolute Motion",
+    "contact": {
+      "href": "info@absolutemotion.in"
+    },
+    "site": {
+      "href": "absolutemotion.in",
+      "target": "_blank"
+    }
+  },
+  {
+    "type": ["Asia"],
     "country": ["Vietnam", "China", "Laos", "Thailand", "Cambodia", "Malaysia", "Singapore", "Brunei", "Philippines", "Taiwan"],
     "name": "ACTE Technology",
     "contact": {

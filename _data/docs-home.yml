@@ -29,7 +29,6 @@ toc:
     path: /docs/user-guide/ota-updates/
   - title: Notification center
     path: /docs/user-guide/notifications/
-    new: true
 - title: Dashboards
   section:
   - title: Overview

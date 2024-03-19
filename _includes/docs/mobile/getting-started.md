@@ -52,6 +52,11 @@ Determine the Flutter {{appPrefix}} Mobile Application version according to the 
     </thead>
     <tbody>
         <tr>
+            <td>3.6.3+</td>
+            <td>1.1.0</td>
+            <td>1.1.0</td>
+        </tr>        
+        <tr>
             <td>3.6.2+</td>
             <td>1.0.8</td>
             <td>1.0.8</td>
@@ -88,6 +93,11 @@ Determine the Flutter {{appPrefix}} Mobile Application version according to the 
         </tr>
     </thead>
     <tbody>
+        <tr>
+            <td>3.6.3PE+</td>
+            <td>1.1.0</td>
+            <td>1.1.0</td>
+        </tr>
         <tr>
             <td>3.6.2PE+</td>
             <td>1.0.9</td>
@@ -149,8 +159,144 @@ You can read [Connecting Flutter application to Localhost](https://medium.com/@p
 {% endcapture %}
 {% include templates/info-banner.md content=local_endpoint_note %}
 
-## Step 4. Run the app
+## Step 4. [Optional] Configure push notifications
 
+Our system leverages Firebase to send notifications from ThingsBoard instance directly to mobile application.
+This setup requires each platform tenant to configure Firebase specifically for their account to begin the distribution of notifications to their mobile app.
+
+### Step 4.1 Create Firebase project
+
+Next, we will walk through step-by-step how to create a Firebase project, and within it, we will generate a private key. This key is required for securely connecting your ThingsBoard instance to Firebase services. 
+
+{% capture difference %}
+**Please note:**
+for ThingsBoard CE, only the system administrator can configure mobile settings. For ThingsBoard PE - the tenant can use the system's mobile settings or specify their own.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+So let's get started:
+
+{% assign firebaseProjectCE = '
+    ===
+        image: /images/mobile/pe/firebase-new-project-1-pe.png,
+        title: Sign in to your [Firebase](https://console.firebase.google.com/){:target="_blank"} account. Once you&#39;re in, click the "Create a project" button;
+    ===
+        image: /images/mobile/pe/firebase-new-project-2-pe.png,
+        title: Enter your desired project name in the field provided, then click "Continue";
+    ===
+        image: /images/mobile/pe/firebase-new-project-3-pe.png,
+        title: Next up is deciding on Google Analytics for your project. You have the option to keep it enabled or disable it if you prefer not to use it. Once you&#39;ve made your choice, click "Continue";
+    ===
+        image: /images/mobile/pe/firebase-new-project-4-pe.png,
+        title: After setting up Google Analytics, confirm your project creation by clicking the "Create project" button;
+    ===
+        image: /images/mobile/pe/firebase-new-project-5-pe.png,
+        title: Your Firebase project is now ready. Click "Continue" to open the Firebase project control panel;
+    ===
+        image: /images/mobile/pe/firebase-new-project-6-pe.png,
+        title: In the menu on the left, go to "Project Overview" -> "Project settings" page;
+    ===
+        image: /images/mobile/pe/firebase-new-project-7-pe.png,
+        title: In the "Project settings" page, switch over to the "Cloud Messaging" tab. Here, ensure the Firebase Cloud Messaging API is enabled to use messaging features;
+    ===
+        image: /images/mobile/pe/firebase-new-project-8-pe.png,
+        title: Head over to the "Service accounts" tab next. Within the "Admin SDK configuration snippet", select the "Java" section. Then, click on the "Generate new private key" button. This action will generate a private key for your service account - crucial for secure server communication;
+    ===
+        image: /images/mobile/pe/firebase-new-project-9-pe.png,
+        title: Confirm the generation of your private key by clicking on the "Generate key" button. Keep this key safe, as you&#39;ll need it for the ThingsBoard server-side operations;
+    ===
+        image: /images/mobile/pe/firebase-new-project-10-ce.png,
+        title: Sign in to your ThingsBoard instance and open the "Settings" page. Navigate to the "Notifications" tab, and in the "Mobile settings" section, uncheck the "Use system mobile settings" box. Here, upload the private key file you generated in Firebase project and click "Save" to finalize the configuration.
+'
+%}
+
+{% assign firebaseProjectPE = '
+    ===
+        image: /images/mobile/pe/firebase-new-project-1-pe.png,
+        title: Sign in to your [Firebase](https://console.firebase.google.com/){:target="_blank"} account. Once you&#39;re in, click the "Create a project" button;
+    ===
+        image: /images/mobile/pe/firebase-new-project-2-pe.png,
+        title: Enter your desired project name in the field provided, then click "Continue";
+    ===
+        image: /images/mobile/pe/firebase-new-project-3-pe.png,
+        title: Next up is deciding on Google Analytics for your project. You have the option to keep it enabled or disable it if you prefer not to use it. Once you&#39;ve made your choice, click "Continue";
+    ===
+        image: /images/mobile/pe/firebase-new-project-4-pe.png,
+        title: After setting up Google Analytics, confirm your project creation by clicking the "Create project" button;
+    ===
+        image: /images/mobile/pe/firebase-new-project-5-pe.png,
+        title: Your Firebase project is now ready. Click "Continue" to open the Firebase project control panel;
+    ===
+        image: /images/mobile/pe/firebase-new-project-6-pe.png,
+        title: In the menu on the left, go to "Project Overview" -> "Project settings" page;
+    ===
+        image: /images/mobile/pe/firebase-new-project-7-pe.png,
+        title: In the "Project settings" page, switch over to the "Cloud Messaging" tab. Here, ensure the Firebase Cloud Messaging API is enabled to use messaging features;
+    ===
+        image: /images/mobile/pe/firebase-new-project-8-pe.png,
+        title: Head over to the "Service accounts" tab next. Within the "Admin SDK configuration snippet", select the "Java" section. Then, click on the "Generate new private key" button. This action will generate a private key for your service account - crucial for secure server communication;
+    ===
+        image: /images/mobile/pe/firebase-new-project-9-pe.png,
+        title: Confirm the generation of your private key by clicking on the "Generate key" button. Keep this key safe, as you&#39;ll need it for the ThingsBoard server-side operations;
+    ===
+        image: /images/mobile/pe/firebase-new-project-10-pe.png,
+        title: Sign in to your ThingsBoard instance and open the "Settings" page. Navigate to the “Notifications” tab, and in the "Mobile settings" section, uncheck the "Use system mobile settings" box (if you log in as a tenant). Here, upload the private key file you generated in Firebase project and click "Save" to finalize the configuration.
+'
+%}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=firebaseProjectPE %}
+{% else %}  
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=firebaseProjectCE %}
+{% endif %}
+
+### Step 4.2 Add Firebase to your mobile application
+
+To integrate Firebase into the mobile application, you'll need to complete the **initial two steps** outlined in the ["Add Firebase to your Flutter app"](https://firebase.google.com/docs/flutter/setup) guide available at Firebase's official documentation.
+
+After successfully completing these steps, make sure that your project contains the following file:
+
+- If your ThingsBoard mobile application is intended for iOS:
+
+```text
+ios/Runner/GoogleService-Info.plist
+```
+
+- If your ThingsBoard mobile application is intended for Android:
+
+```text
+android/app/google-services.json
+```
+{% capture difference %}
+**Please note:**
+if the **{{appProject}}** project is currently running, please stop it and proceed with a rebuild.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+To confirm that Firebase has been integrated properly, run your application ([Step 5](#step-5-run-the-app)). If everything is configured correctly, the notifications menu in your mobile application should be active, as shown in the screenshot below.
+
+{% assign mobileNotificationsPE = '
+    ===
+        image: /images/mobile/pe/mobile-notifications-pe.png,
+'
+%}
+
+{% assign mobileNotificationsCE = '
+    ===
+        image: /images/mobile/mobile-notifications-ce.png,
+'
+%}
+
+{% if page.docsPrefix == "pe/" or page.docsPrefix == "paas/" or docsPrefix == "pe/" or docsPrefix == "paas/" %}
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=mobileNotificationsPE %}
+{% else %}  
+{% include images-gallery.liquid showListImageTitles="true" imageCollection=mobileNotificationsCE %}
+{% endif %}
+
+<br>
+Learn more about **notifications** and how to configure them [here](/docs/{{docsPrefix}}user-guide/notifications/).
+
+## Step 5. Run the app
 Run the app [in the way your IDE describes](https://flutter.dev/docs/get-started/test-drive).
 
 When using terminal run the app with the following command:
@@ -183,6 +329,10 @@ Afterward, you can use hot reload for quick updates.
 When running an app directly from the console using `flutter run`, enter `r` to perform hot reload.
 {% endcapture %}
 {% include templates/info-banner.md content=run_tip %}
+
+## Step 6. [Optional] Build and release mobile application
+
+If you need to build and release ThingsBoard Mobile Application for iOS or Android, please refer to [this guide](/docs/{{docsPrefix}}mobile/release/).
 
 {% if docsPrefix != 'pe/' %}
 ## Live demo app

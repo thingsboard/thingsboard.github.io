@@ -1,7 +1,7 @@
 ---
 layout: docwithnav-trendz
 assignees:
-- vparomskiy
+  - vparomskiy
 title: ThingsBoard Trendz Analytics installation options
 description: ThingsBoard Trendz Analytics installation instructions for various operation systems
 notitle: "true"
@@ -70,6 +70,15 @@ notitle: "true"
                                             <span>
                                                 <div class="deployment-logo">
                                                     <img width="" src="/images/install/platform/docker-linux-macos.svg" title="Docker (Linux or Mac OS)" alt="Docker (Linux or Mac OS)">
+                                                 </div>
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="deployment-card-block">
+                                        <a href="/docs/trendz/install/kubernetes/">
+                                            <span>
+                                                <div class="deployment-logo">
+                                                    <img width="" src="/images/install/platform/kubernetes.png" title="Kubernetes" alt="Kubernetes">
                                                  </div>
                                             </span>
                                         </a>
