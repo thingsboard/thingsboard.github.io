@@ -148,10 +148,10 @@ Let's publish data to the MQTT Broker defined in the configuration above, you ca
 1.Ensure that the Mosquitto MQTT clients are installed on your system. Typically, you can install them using the 
 package manager of your operating system:
 - For Ubuntu:
-    ```bash
-    sudo apt-get install mosquitto-clients
-    ```
-    {:.copy-code}
+  ```bash
+  sudo apt-get install mosquitto-clients
+  ```
+  {:.copy-code}
 
 - For Windows:
 
@@ -159,10 +159,10 @@ package manager of your operating system:
 
     Install the tools, ensuring that the installation directory is added to the system's PATH.
 - For MacOS:
-    ```bash
-    brew install mosquitto
-    ```
-    {:.copy-code}
+  ```bash
+  brew install mosquitto
+  ```
+  {:.copy-code}
 
 2.Use the mosquitto_pub command to publish data to a specific MQTT topic. In this case, we'll use the "data/" topic as defined in the configuration:
 ```bash
