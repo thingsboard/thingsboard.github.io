@@ -82,7 +82,7 @@ Integration should look like this:
 
 - Fill in the fields with the input data shown in the following table: 
 
-<table style="width: 25%">
+<table>
   <thead>
       <tr>
           <td><b>Field</b></td><td><b>Input Data</b></td>
