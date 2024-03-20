@@ -42,7 +42,7 @@
     <link rel="shortcut icon" type="image/png" href="https://img.thingsboard.io/favicon.png">
     {% if page.url == '/' %}
     <link href="/css/critical.css" rel="stylesheet">
-    {% elsif page.url contains '/docs/' or page.url contains '/products/license-server/' %}
+    {% elsif page.url contains '/docs/' or page.url contains '/products/license-server/' or page.url == '/products/paas/subscription/' or page.url == '/products/paas/domains/' or page.url == '/products/paas/what-is-thingsboard-cloud/' or page.url == '/products/paas/billing-info/' or page.url == '/products/thingsboard-edge/request-demo/' or page.url == '/products/trendz/trndz-request-demo/' %}
     <link href="/css/docs.css" rel="stylesheet">
     {% elsif page.url contains '/products/' %}
     <link href="/css/products.css" rel="stylesheet">
