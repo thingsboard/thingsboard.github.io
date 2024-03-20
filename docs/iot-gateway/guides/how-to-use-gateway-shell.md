@@ -24,16 +24,18 @@ The `storage` command provides functionality related to storage operations.
 #### Get Storage Name
 To retrieve the storage name, use the following command:
 
+```bash
+tb-gateway-shell storage -n
 ```
-$ tb-gateway-shell storage -n
-```
+{: .copy-code}
 
 #### Get Storage Events Count
 To obtain the count of storage events, use the following command:
 
+```bash
+tb-gateway-shell storage -c
 ```
-$ tb-gateway-shell storage -c
-```
+{: .copy-code}
 
 ### Connector Command
 The `connector` command enables actions related to connectors.
@@ -41,23 +43,26 @@ The `connector` command enables actions related to connectors.
 #### Get Available Connectors
 To list the available connectors, use the following command:
 
+```bash
+tb-gateway-shell connector -l
 ```
-$ tb-gateway-shell connector -l
-```
+{: .copy-code}
 
 #### Get Connector Status
 To retrieve the status of a specific connector, provide the connector name as follows:
 
+```bash
+tb-gateway-shell connector -s <name>
 ```
-$ tb-gateway-shell connector -s <name>
-```
+{: .copy-code}
 
 #### Get Connector Config
 To obtain the configuration of a specific connector, provide the connector name as follows:
 
+```bash
+tb-gateway-shell connector -c <name>
 ```
-$ tb-gateway-shell connector -c <name>
-```
+{: .copy-code}
 
 ### Gateway Command
 The `gateway` command allows operations related to the gateway itself.
@@ -65,9 +70,10 @@ The `gateway` command allows operations related to the gateway itself.
 #### Get Gateway Status
 To retrieve the status of the gateway, use the following command:
 
+```bash
+tb-gateway-shell gateway -s
 ```
-$ tb-gateway-shell gateway -s
-```
+{: .copy-code}
 
 ## Next steps
 

@@ -25,7 +25,6 @@ Json converter is the default converter, it looks for '**deviceName**', '**devic
 |--- 
 
 {% capture difference %}
-<br>
 **Parameters in attributes and telemetry section may differ from those presented above, but will follow the same structure.**  
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
