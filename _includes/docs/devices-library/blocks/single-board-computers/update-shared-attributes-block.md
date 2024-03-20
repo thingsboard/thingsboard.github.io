@@ -1,5 +1,4 @@
 {% capture difference %}
-<br>
 **Don't forget to create shared attribute `blinkingPeriod` on your device.** 
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}

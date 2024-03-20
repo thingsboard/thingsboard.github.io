@@ -198,7 +198,6 @@ This subsection contains configurations for variables of the object, that will b
 |---
 
 {% capture difference %}
-<br>
 **If you don't specify the "key" parameter, the node name will be used instead**  
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}

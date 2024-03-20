@@ -75,25 +75,25 @@ Thingsboard Edge is quite easy to build from sources on a brand-new clear enviro
 Here are some tips and tricks to boost build experience: 
 
 - [clean maven cache](https://www.baeldung.com/maven-clear-cache)
-```bash
-rm -rf ~/.m2/repository
-```
-{: .copy-code}
+  ```bash
+  rm -rf ~/.m2/repository
+  ```
+  {: .copy-code}
 
 - clean gradle cache
-```bash
-rm -rf ~/.gradle/caches/
-```
-{: .copy-code}
+  ```bash
+  rm -rf ~/.gradle/caches/
+  ```
+  {: .copy-code}
 
 - clean node modules
-```bash
-rm -rf ui-ngx/node_modules
-```
-{: .copy-code}
+  ```bash
+  rm -rf ui-ngx/node_modules
+  ```
+  {: .copy-code}
 
 - build in parallel, format headers, build docker images
-```bash
-mvn -T 0.8C license:format clean install -DskipTests -Ddockerfile.skip=false
-```
-{: .copy-code}
+  ```bash
+  mvn -T 0.8C license:format clean install -DskipTests -Ddockerfile.skip=false
+  ```
+  {: .copy-code}

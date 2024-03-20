@@ -9,7 +9,6 @@ description: Modbus protocol support for ThingsBoard IoT Gateway
 {:toc}
 
 {% capture difference %}
-<br>
 **Note that the configuration of the Modbus connector has changed since Gateway 3.0. The new configuration will be 
 generated after installing the new version and running Gateway in the new_modbus.json file.**  
 {% endcapture %}
@@ -541,7 +540,6 @@ Serial<small>Connection over serial port</small>%,%serial%,%templates/iot-gatewa
 {% include content-toggle.liquid content-toggle-id="modbusConnection" toggle-spec=modbusConnectionType2 %}
 
 {% capture difference %}
-<br>
 **Don't use "Gateway" as the value of "deviceName" parameter!**  
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
@@ -653,7 +651,6 @@ Depending on which value the register belongs to, you must add it to the appropr
 ```
 
 {% capture difference %}
-<br>
 **In this section of the configuration, the only difference is the placement of values to a certain type of 
 register, but the configuration of telemetry, attributes, rps, etc. is the same as the "master" section.**  
 {% endcapture %}

@@ -13,7 +13,6 @@ A custom converter is converter written for some device:
 |--- 
 
 {% capture difference %}
-<br>
 **All parameters from this subsection and topic will be transferred as dictionary during initialization to the converter object.**  
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
