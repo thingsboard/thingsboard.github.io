@@ -8,6 +8,57 @@ description: TBMQ Releases
 * TOC
 {:toc}
 
+## v1.3.0 (March ?, 2024)
+
+Minor release with the following features, improvements, and bug fixes.
+
+**Main features:**
+
+* [#94](https://github.com/thingsboard/tbmq/pull/94) MQTT 5: Request-Response Pattern;
+* [#98](https://github.com/thingsboard/tbmq/pull/98) MQTT 5: Flow Control;
+* [#101](https://github.com/thingsboard/tbmq/pull/101) UI: WebSocket client page; WebSocket connections and subscriptions entities support in Postgres.
+
+**Improvements:**
+
+* Core and install scripts:
+
+  * [#104](https://github.com/thingsboard/tbmq/pull/104) TLS Cipher suites control - allows to set desired cipher suites usage;
+  * [#109](https://github.com/thingsboard/tbmq/pull/109) Backpressure improvements;
+  * [#110](https://github.com/thingsboard/tbmq/pull/110) Disconnect client command now includes Reason Codes to correctly specify the reason of the disconnection;
+  * [#111](https://github.com/thingsboard/tbmq/pull/111) MQTT over WebSockets installation scripts update for correct WebSocket client usage;
+  * Added system WebSocket MQTT client credentials;
+  * Application persistent and Application Shared Subscriptions clients workflow improvement by leveraging cached thread pool;
+  * Non-blocking deletion of old Kafka consumer groups on broker startup;
+  * Memory usage and performance improvements.
+
+* UI:
+
+  * [#]().
+
+**Bug fixes:**
+
+* Core:
+
+  * [#106](https://github.com/thingsboard/tbmq/pull/106) Fix for direct memory leak;
+  * [#107](https://github.com/thingsboard/tbmq/pull/107) Fix for unauthorized delivery of Last Will message;
+  * [#94](https://github.com/thingsboard/tbmq/pull/94) Fixed Maximum Packet Size response to MQTT 5 client depending on the listener chosen;
+  * [#94](https://github.com/thingsboard/tbmq/pull/94) Fixed NPE that can happen on broker startup during historical statistics calculation;
+  * Disabled Redis autoconfiguration in case of Caffeine cache usage to prevent trying to connect to Redis instance on broker startup;
+  * Dependency vulnerabilities;
+  * User password containing only whitespaces bugfix.
+
+* UI:
+
+  * [#108](https://github.com/thingsboard/tbmq/pull/108) Fix for issue during Retained message deletion that contains special characters;
+  * fix for schwarz.
+
+**Obsolete environment variables:**
+
+* TB_APP_PERSISTED_MSG_THREADS_COUNT;
+* TB_APP_PERSISTED_MSG_SHARED_SUBS_THREADS_COUNT.
+
+These environment variables can be safely removed due to automatic scaling of threads based on the number of Application clients being added or removed.
+
 ## v1.2.1 (December 13, 2023)
 
 Minor release with the following features and improvements.
