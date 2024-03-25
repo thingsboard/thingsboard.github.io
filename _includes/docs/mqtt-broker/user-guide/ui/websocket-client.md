@@ -53,11 +53,14 @@ WebSocket connections allow users to establish and manipulate various parameters
 
 ##### Connection details
 * **Name**. Name of the WebSocket Client connection, must be unique.
-* **URL**. Typically, contains the protocol (like 'mqtt', 'mqtts', 'tcp', 'tls', 'ws', 'wss'), followed by the hostname and port number of your MQTT broker. Example: 'ws://localhost:8084/mqtt'.
-* **Credentials**. TBQM allows to create websocket connection with different types of handling credentials details like clinentID (required), username, password:
-  * **Auto-generated credentials**. Credentials with random Client ID, random Username and empty Password. Please note that responsive Credentials will be created.
+* **URL**. Typically, contains the protocol (e.g., 'ws', 'wss'), followed by the hostname and port number of your MQTT broker. 
+/mqtt is standard path that should be used for MQTT over Websockets. Example: 'ws://localhost:8084/mqtt'.
+* **Authentication**. TBMQ allows to create websocket connection with different types of handling credentials details like clientID (required), username, password:
+  * **Auto-generated credentials**. Credentials with random Client ID, random Username and empty Password. Please note that corresponding Credentials will be created.
   * **Custom authentication**. Credentials with custom Client ID, Username, Password.
   * **Use existing credentials**. User selects existing credentials of the [Basic](/docs/mqtt-broker/security/#basic-authentication) type and, if required, input Password.
+
+Password input field appears when the selected credentials require password to establish the connection.
 
 {% include images-gallery.html imageCollection="ws-connection-details" %}
 
@@ -85,10 +88,10 @@ Here's a closer look at the Last will properties:
 * **Topic**. MQTT topic on which your Last Will message will be published.
 * **QoS**. Quality of Service level for the Last Will message.
 * **Payload**. The content of the Last Will message.
+* **Retain**. Determines whether the broker should keep the last will message after it's been delivered. If true, the will message is stored by the broker and delivered to any future subscribers to the topic.
 
 If you choose MQTT Version 5, there are additional features:
-* **Retain**. Determines whether the broker should keep the last will message after it's been delivered. If true, the will message is stored by the broker and delivered to any future subscribers to the topic.
-* **Payload Format Indicator**. When set to true, it indicates the payload is UTF-8 encoded character data. If false or unset, the payload is assumed to be binary data.
+* **Payload Format Indicator**. When set to true, it indicates the payload is UTF-8 encoded character data. If false or unset, the payload is assumed to be unspecified binary data.
 * **Content Type**. Describes the form of the content carried by the will message.
 * **Will Delay Interval**. The time period the broker needs to wait after the client gets disconnected ungracefully, before publishing the will message.
 * **Message Expiry Interval**. The duration within which the will message should be delivered since it was published.
@@ -145,12 +148,13 @@ Here are the steps to remove a subscription:
 #### Subscription settings
 
 Here's a brief explanation of Subscription settings:
-* **Topic**. The MQTT topic that you want to subscribe to. **Must be unique per connection.**
-* **QoS**. Quality of Service is the subscription.
-* **Retain as Published**. When true, MQTT broker will send retained messages at the subscription time.
+* **Topic Filter**. The MQTT topic filter that you want to subscribe to. **Must be unique per connection.**
+* **QoS**. Quality of Service of the subscription.
+* **Retain as Published**. When true, messages forwarded using this subscription keep the RETAIN flag they were published with.
+If false, messages have the RETAIN flag set to 0.
 * **Retain Handling** This option determines how the broker should handle retained messages when the client subscribes to a topic.
-  * 0 - send retained messages at subscription time,
-  * 1 - send retained messages at subscription time if the subscription does not already exist
+  * 0 - send retained messages at subscription time;
+  * 1 - send retained messages at subscription time if the subscription does not already exist;
   * 2 - do not send retained messages at subscription time.
 * **No local**. When set to true, the broker will not forward messages from this client back to the connection on which this subscription was made.
 * **Color**. Color is used for easier differentiation of the messages in the messages table. Can be changed.
@@ -162,7 +166,7 @@ The Messages table serves as a message log, cataloguing the most recent messages
 #### Messages table
 Each row in this table corresponds to a single published or received message and provides a snapshot of key message attributes:
 1. **Type**. Identifies whether a message was Received or Published.
-2. **Topic Filter**. Lists the topic or topics associated with the message.
+2. **Topic**. Lists the topic associated with the message.
 3. **QoS**. Displays the Quality of Service level associated with the message.
 4. **Retain**. Shows whether the message has been marked as "Retain" by the sender.
 5. **Payload**. Lays out the preview of the content embedded within the message.
@@ -173,7 +177,7 @@ Each row in this table corresponds to a single published or received message and
 
 #### Messages filtering
 Users of TBMQ have the ability to apply filters to messages using several parameters. To filter messages by:
-* **Type All/Received/Published** - click on the type label in the header of the Messages table.
+* **Type 'All/Received/Published'** - click on the type label in the header of the Messages table.
 * **Topic/QoS/Retain** - click on the _filter_ icon next to _Clear messages_ button.
 
 ![image](/images/mqtt-broker/user-guide/ui/ws-table-filter.png)
@@ -194,8 +198,8 @@ The message will now be dispatched to the broker and relayed to all clients who 
 Here is a list of basic options for publishing a message, along with brief explanations of their usage:
 * **Topic**. The MQTT topic to which your message will be published.
 * **QoS**. Quality of Service level guaranteeing the delivery of your message:
-    * 0 - At most once (the message may or may not be delivered)
-    * 1 - At least once (the message will be delivered, but duplicates can occur)
+    * 0 - At most once (the message may or may not be delivered);
+    * 1 - At least once (the message will be delivered, but duplicates can occur);
     * 2 - Exactly once (the message will be delivered exactly once).
 * **Retain**. When set to true, the broker stores the last message and its QoS for this topic. All future subscribers for a topic will receive the last retained message for that topic.
 * **Color**. Used to mark the published messages in the messages table for easier recognition.
@@ -210,7 +214,7 @@ The combination of these features provides a comprehensive and flexible environm
 
 To set the published message properties please click on the button _Properties_ in the bottom left corner to open dialog. 
 Here's a brief explanation of each setting:
-* **Payload Format Indicator**. When set to true, indicates that the payload is UTF-8 encoded character data. The default false signifies binary data.
+* **Payload Format Indicator**. When set to true, indicates that the payload is UTF-8 encoded character data. The default false signifies unspecified binary data.
 * **Content Type**. Describes the format of the application message’s data.
 * **Message Expiry Interval** The lifetime of the application message in seconds.
 * **Topic Alias**. Integer value that can be used as a shorthand notation for the topic. If WebSocket connection has Topic Alias Max value 0 - the usage of topic alias is forbidden.

@@ -31,10 +31,6 @@ Minor release with the following features, improvements, and bug fixes.
   * Non-blocking deletion of old Kafka consumer groups on broker startup;
   * Memory usage and performance improvements.
 
-* UI:
-
-  * [#]().
-
 **Bug fixes:**
 
 * Core:
@@ -42,7 +38,7 @@ Minor release with the following features, improvements, and bug fixes.
   * [#106](https://github.com/thingsboard/tbmq/pull/106) Fix for direct memory leak;
   * [#107](https://github.com/thingsboard/tbmq/pull/107) Fix for unauthorized delivery of Last Will message;
   * [#94](https://github.com/thingsboard/tbmq/pull/94) Fixed Maximum Packet Size response to MQTT 5 client depending on the listener chosen;
-  * [#94](https://github.com/thingsboard/tbmq/pull/94) Fixed NPE that can happen on broker startup during historical statistics calculation;
+  * Fixed NPE that can happen on broker startup during historical statistics calculation;
   * Disabled Redis autoconfiguration in case of Caffeine cache usage to prevent trying to connect to Redis instance on broker startup;
   * Dependency vulnerabilities;
   * User password containing only whitespaces bugfix.
@@ -50,7 +46,7 @@ Minor release with the following features, improvements, and bug fixes.
 * UI:
 
   * [#108](https://github.com/thingsboard/tbmq/pull/108) Fix for issue during Retained message deletion that contains special characters;
-  * fix for schwarz.
+  * Resolved an issue with hidden fields in edit mode for MQTT client credentials details of the type "X.509 Certificate Chain".
 
 **Obsolete environment variables:**
 

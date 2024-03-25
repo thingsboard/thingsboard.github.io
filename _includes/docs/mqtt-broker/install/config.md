@@ -191,6 +191,13 @@
 			<td> SSL protocol: see <a href="https://docs.oracle.com/en/java/javase/17/docs/specs/security/standard-names.html#sslcontext-algorithms">this link</a></td>
 		</tr>
 		<tr>
+			<td>listener.ssl.config.enabled_cipher_suites</td>
+			<td>LISTENER_SSL_ENABLED_CIPHER_SUITES</td>
+			<td></td>
+			<td> Sets the cipher suites enabled for use on mqtts listener. The value is a comma-separated list of cipher suits (e.g. TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256).
+ Defaults to empty list meaning all supported cipher suites of the used provider are taken</td>
+		</tr>
+		<tr>
 			<td>listener.ssl.config.credentials.type</td>
 			<td>LISTENER_SSL_CREDENTIALS_TYPE</td>
 			<td>PEM</td>
@@ -377,6 +384,13 @@
 			<td> SSL protocol: see <a href="https://docs.oracle.com/en/java/javase/17/docs/specs/security/standard-names.html#sslcontext-algorithms">this link</a></td>
 		</tr>
 		<tr>
+			<td>listener.wss.config.enabled_cipher_suites</td>
+			<td>LISTENER_WSS_ENABLED_CIPHER_SUITES</td>
+			<td></td>
+			<td> Sets the cipher suites enabled for use on wss listener. The value is a comma-separated list of cipher suits (e.g. TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384,TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256).
+ Defaults to empty list meaning all supported cipher suites of the used provider are taken</td>
+		</tr>
+		<tr>
 			<td>listener.wss.config.credentials.type</td>
 			<td>LISTENER_WSS_CREDENTIALS_TYPE</td>
 			<td>PEM</td>
@@ -536,12 +550,6 @@
  It is recommended to count the impact of this parameter before setting it on production</td>
 		</tr>
 		<tr>
-			<td>queue.application-persisted-msg.threads-count</td>
-			<td>TB_APP_PERSISTED_MSG_THREADS_COUNT</td>
-			<td>16</td>
-			<td> Number of threads in the pool to process Application consumers tasks</td>
-		</tr>
-		<tr>
 			<td>queue.application-persisted-msg.poll-interval</td>
 			<td>TB_APP_PERSISTED_MSG_POLL_INTERVAL</td>
 			<td>100</td>
@@ -576,12 +584,6 @@
 			<td>TB_APP_PERSISTED_MSG_SHARED_TOPIC_VALIDATION</td>
 			<td>true</td>
 			<td> Enable/disable check that application shared subscription topic filter contains only alphanumeric chars or '+' or '#' for Kafka topic creation</td>
-		</tr>
-		<tr>
-			<td>queue.application-persisted-msg.shared-subs-threads-count</td>
-			<td>TB_APP_PERSISTED_MSG_SHARED_SUBS_THREADS_COUNT</td>
-			<td>16</td>
-			<td> Number of threads in the pool to process Application shared subscriptions consumers tasks</td>
 		</tr>
 		<tr>
 			<td>queue.device-persisted-msg.consumers-count</td>
@@ -1647,7 +1649,40 @@
 			<td>mqtt.max-in-flight-msgs</td>
 			<td>MQTT_MAX_IN_FLIGHT_MSGS</td>
 			<td>1000</td>
-			<td> Max number of PUBLISH or PUBREL messages not yet responded</td>
+			<td> Max number of PUBLISH messages not yet responded</td>
+		</tr>
+		<tr>
+			<td>mqtt.flow-control.enabled</td>
+			<td>MQTT_FLOW_CONTROL_ENABLED</td>
+			<td>true</td>
+			<td> Enable/disable flow control MQTT 5 feature for server. If disabled, the server will not control the number of messages sent to subscribers by "Receive Maximum".
+ This feature works for MQTT 3.x clients as well when enabled. "Receive Maximum" for MQTT 3.x clients can be set using `MQTT_FLOW_CONTROL_MQTT_3X_RECEIVE_MAX` parameter</td>
+		</tr>
+		<tr>
+			<td>mqtt.flow-control.timeout</td>
+			<td>MQTT_FLOW_CONTROL_TIMEOUT</td>
+			<td>1000</td>
+			<td> Timeout to wait in case there is nothing to process regarding the flow control feature. The separate thread is responsible for sending delayed messages to subscribers.
+ If no clients are affected by flow control restrictions, there is no need to continuously try to find and send such messages</td>
+		</tr>
+		<tr>
+			<td>mqtt.flow-control.ttl</td>
+			<td>MQTT_FLOW_CONTROL_TTL</td>
+			<td>600</td>
+			<td> Time in seconds to store delayed messages for subscribers. Delayed messages are those that can not be sent immediately due to flow control restrictions.
+ Default is 10 minutes</td>
+		</tr>
+		<tr>
+			<td>mqtt.flow-control.delayed-queue-max-size</td>
+			<td>MQTT_FLOW_CONTROL_DELAYED_QUEUE_MAX_SIZE</td>
+			<td>1000</td>
+			<td> Max allowed queue length for delayed messages - publishing messages from broker to client when in-flight window is full</td>
+		</tr>
+		<tr>
+			<td>mqtt.flow-control.mqtt3x-receive-max</td>
+			<td>MQTT_FLOW_CONTROL_MQTT_3X_RECEIVE_MAX</td>
+			<td>65535</td>
+			<td> Receive maximum value for MQTT 3.x clients</td>
 		</tr>
 		<tr>
 			<td>mqtt.retransmission.enabled</td>
@@ -1865,16 +1900,30 @@
 			<td> Max timeout for packet deletes queue polling. Value set in milliseconds</td>
 		</tr>
 		<tr>
-			<td>mqtt.rate-limits.enabled</td>
-			<td>MQTT_RATE_LIMITS_ENABLED</td>
+			<td>mqtt.rate-limits.incoming-publish.enabled</td>
+			<td>MQTT_INCOMING_RATE_LIMITS_ENABLED</td>
 			<td>false</td>
-			<td> Enable/disable publish rate limits per client</td>
+			<td> Enable/disable publish rate limits per client for incoming messages to the broker from publishers</td>
 		</tr>
 		<tr>
-			<td>mqtt.rate-limits.client-config</td>
-			<td>MQTT_RATE_LIMITS_CLIENT_CONFIG</td>
+			<td>mqtt.rate-limits.incoming-publish.client-config</td>
+			<td>MQTT_INCOMING_RATE_LIMITS_CLIENT_CONFIG</td>
 			<td>10:1,300:60</td>
-			<td> Limit the maximum publish messages per client on each server for specified time intervals in seconds. Comma separated list of limit:seconds pairs</td>
+			<td> Limit the maximum count of publish messages per publisher for specified time intervals in seconds. Comma separated list of limit:seconds pairs.
+ Example: 10 messages per second or 300 messages per minute</td>
+		</tr>
+		<tr>
+			<td>mqtt.rate-limits.outgoing-publish.enabled</td>
+			<td>MQTT_OUTGOING_RATE_LIMITS_ENABLED</td>
+			<td>false</td>
+			<td> Enable/disable publish rate limits per client for outgoing messages from the broker to subscribers. Used only for non-persistent subscribers with QoS = 0 ("AT_MOST_ONCE")</td>
+		</tr>
+		<tr>
+			<td>mqtt.rate-limits.outgoing-publish.client-config</td>
+			<td>MQTT_OUTGOING_RATE_LIMITS_CLIENT_CONFIG</td>
+			<td>10:1,300:60</td>
+			<td> Limit the maximum count of publish messages per subscriber for specified time intervals in seconds. Comma separated list of limit:seconds pairs.
+ Example: 10 messages per second or 300 messages per minute</td>
 		</tr>
 		<tr>
 			<td>mqtt.sessions-limit</td>
@@ -1901,6 +1950,14 @@
 			<td>MQTT_HANDLER_APP_MSG_CALLBACK_THREADS</td>
 			<td>2</td>
 			<td> Number of threads in thread pool for processing application persisted publish messages callbacks after sending them to Kafka</td>
+		</tr>
+		<tr>
+			<td>mqtt.response-info</td>
+			<td>MQTT_RESPONSE_INFO</td>
+			<td></td>
+			<td> Response info value for MQTT 5 request-response feature to be returned to clients that request it.
+ If not set the broker will not reply with response info to mqtt 5 clients that connect with "request response info" = 1.
+ Set it to topic to be used for request-response feature, e.g. "example/"</td>
 		</tr>
 	</tbody>
 </table>
