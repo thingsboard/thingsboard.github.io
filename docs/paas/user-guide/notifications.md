@@ -60,36 +60,37 @@ notification-center-recipients:
 notification-center-recipients-1:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-2-pe.png
-        title: 'Click the "Add recipients" button in the upper right corner of the "Recipients" tab. In the new window, enter the name of the notification recipients. Next, select one of the three types of recipients: platform users, Microsoft Teams, or Slack entities. In the "User Filter" list, select who you want to send notifications to. Than, click "Add".'
+        title: 'Click the "Add recipients" button in the upper right corner of the "Recipients" tab. A new window will pop up. Here, type in the name of the notification recipient(s) you&#39;d like to add. Next, select the "Platform users" type. In the "User Filter" list, select who you want to send notifications to. Than, click "Add".'
     1:
         image: /images/user-guide/notifications/notification-center-recipients-3-pe.png
-        title: 'The new recipient is added.'
+        title: 'The new recipient is added. Now you can use it to send a new notification or create a new notification rule.'
 
 notification-center-recipients-2:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-4-pe.png
-        title: 'Click the “Send notification” button. Then click the "Create new" button;'
+        title: 'Click the "Send notification" button. Then click the "Create new" button;'
     1:
         image: /images/user-guide/notifications/notification-center-recipients-5-pe.png
-        title: 'Enter the name of the notification recipients. Next, select one of the three types of recipients: platform users, Microsoft Teams, or Slack entities. In the "User Filter" list, select who you want to send notifications to. Click "Add";'
+        title: 'A new window will pop up. Enter the name of the notification recipient(s). Next, select one of the three types of recipients: platform users, Microsoft Teams, or Slack entities, and specify who exactly you want to send notifications to. Click "Add";'
     2:
         image: /images/user-guide/notifications/notification-center-recipients-6-pe.png
-        title: 'The new recipient is added.'
-
-notification-center-platform-users:
-    0:
-        image: /images/user-guide/notifications/notification-center-recipients-list-1-pe.png
-        title: 'Use "User filter" to define notification recipients.'
+        title: 'The new recipient is added. Now continue with creating the new notification.'
 
 notification-center-recipients-slack:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-slack-1-pe.png
-        title: 'Select Slack channel type to define notification recipients.'
+        title: 'Click the "Add recipients" button in the upper right corner of the "Recipients" tab. A new window will pop up. Enter the name of the notification recipient(s). Next, select the "Slack" type. In the “Slack channel type” field, choose the destination where you’d like your notifications to land: public channel, private channel, or direct message. In the additional “Conversation” field, specify the exact conversation or channel within Slack where you want the notifications to be sent. Click "Add";'
+    1:
+        image: /images/user-guide/notifications/notification-center-recipients-slack-2-pe.png
+        title: 'The new recipient is added. Now you can use it to send a new notification or create a new notification rule.'
 
 notification-center-recipients-microsoft-teams:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-microsoft-teams-1-pe.png
-        title: 'Create a new notification recipients group of type "Microsoft Teams" enter webhook URL and channel name.'
+        title: 'Click the "Add recipients" button in the upper right corner of the "Recipients" tab. A new window will pop up. Enter the name of the notification recipient(s). Next, select the "Microsoft Teams" type. Next, you need to specify the webhook URL for the Microsoft Teams channel where the notifications will be sent. In the “Channel name” field, specify the channel you want to send notifications. Click "Add";'
+    1:
+        image: /images/user-guide/notifications/notification-center-recipients-microsoft-teams-2-pe.png
+        title: 'The new recipient is added. Now you can use it to send a new notification or create a new notification rule.'
 
 notification-center-templates:
     0:

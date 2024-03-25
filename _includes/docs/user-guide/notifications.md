@@ -1,3 +1,13 @@
+{% if docsPrefix == 'pe/' %}
+{% assign mobilePrefix = "ThingsBoard PE Mobile Application" %}
+{% assign mobileUrl = "/docs/pe/mobile/" %}
+{% assign mobileGuide = "/docs/pe/mobile/getting-started/" %}
+{% else %}
+{% assign mobilePrefix = "ThingsBoard Mobile Application" %}
+{% assign mobileUrl = "/docs/mobile/" %}
+{% assign mobileGuide = "/docs/mobile/getting-started/" %}
+{% endif %}
+
 * TOC 
 {:toc}
 
@@ -16,16 +26,18 @@ The Notification center is accessible through the sidebar menu and includes opti
 
 Let's look at each of the key components of the notification center below.
 
-## Notification options available in ThingsBoard
+## Notification delivery methods
 
-Each notification may be delivered using multiple delivery methods: Web, Mobile app, SMS, Email, [Slack](https://slack.com/) or [Microsoft Teams](https://www.microsoft.com/en-us/microsoft-teams/group-chat-software/).
+ThingsBoard offers several notification delivery methods to keep you and your customers promptly informed about any events in your IoT solution:
 
-- **Web**. The notification will be sent to the Web UI in Thingsboard;
-- **Mobile app**. The notification will be sent to the [ThingsBoard Mobile Application](/docs/{{docsPrefix}}mobile/);
-- **SMS**. The notification is sent to the user's phone. To send notifications via SMS, a system administrator should set up the [SMS provider](/docs/user-guide/ui/sms-provider-settings/) properly;
-- **Email**. With this approach, the user receives a notification by Email. To send notifications via Email, a tenant administrator [outgoing mail server](/docs/user-guide/ui/mail-settings/) should be configured;
-- **Slack**. Notifications will send as a Slack message to the list of Users or Channels. To send notifications via Slack, a tenant administrator must configure a Slack API [token](https://api.slack.com/authentication/token-types) in the "Settings" -> "Notifications" tab. Learn more about how to configure Slack settings in Thingsboard [here](/docs/{{docsPrefix}}user-guide/ui/slack-settings/).
-- **Microsoft Teams**. Notifications will send as a Microsoft Teams message to the list of channels. To send notifications via Microsoft Teams, a tenant administrator must get **webhook URL** for a needed channel using this [guide](/docs/{{docsPrefix}}user-guide/ui/microsoft-teams-settings/).
+- **Web**. Receive notifications directly within the ThingsBoard web interface. This is perfect for users who are always logged in;
+- **Mobile app**. Receive instant push notifications directly to your smartphone through the [{{mobilePrefix}}]({{mobileUrl}}). Stay informed about all events in your IoT solution, even when you're on the go.<br>
+To use this notification delivery method, you first need to configure the {{mobilePrefix}} and make some settings in the "Mobile settings" section on the ThingsBoard platform itself.
+These steps are detailed in this [documentation]({{mobileGuide}});
+- **SMS**. The ThingsBoard supports notification delivery via SMS to mobile devices, providing the ability to deliver important information even in the absence of internet access. {% unless docsPrefix == 'paas/' %}To send notifications via SMS, a system administrator should set up the [SMS provider](/docs/{{docsPrefix}}user-guide/ui/sms-provider-settings/) properly;{% endunless %}
+- **Email**. Receive notifications directly in your email inbox. Perfect for users who prefer to stay informed through their email accounts. To send notifications via Email, a tenant administrator should be configured [outgoing mail server](/docs/{{docsPrefix}}user-guide/ui/mail-settings/);
+- **Slack**. Integrate Slack with ThingsBoard to send notifications as messages to individual users or channels within your Slack workspace. To use this method of notification delivery, you first need to configure the Slack settings in ThingsBoard using [this guide](/docs/{{docsPrefix}}user-guide/ui/slack-settings/).
+- **Microsoft Teams**. Integration of Microsoft Teams with ThingsBoard allows for delivering notifications in the form of messages to specific channels in your Microsoft Teams environment. To use this method a tenant administrator must get **webhook URL** for a needed Microsoft Teams channel using this [guide](/docs/{{docsPrefix}}user-guide/ui/microsoft-teams-settings/).
 
 ## Send notification
 
@@ -62,39 +74,36 @@ If you decide to delete an outgoing message, it will also be deleted for all rec
 
 ## Recipients
 
-The "Recipients" tab displays the list of notification recipients. Here you can create and delete notification recipients here.
+In the "Recipients" tab, you'll find a list of configured notification recipients. Here, you have the flexibility to add and delete notification recipients as needed.
 
 {% include images-gallery.html imageCollection="notification-center-recipients" %}
 
-##### Add new recipient
+For delivering notifications through the mobile app, SMS, and email, basic configuration requirements, which we previously covered in the [Notification delivery methods](#notification-delivery-methods) section, apply.
+For delivering notifications through the ThingsBoard platform, Microsoft Teams, and Slack, you'll additionally need to specify the exact destination for your notification at the recipient adding stage.
 
-To add notification recipients, follow these steps:
+Depending on the type of recipient you choose, the setup process will vary. Therefore, we will take a closer look at each option individually:
+
+#### ThingsBoard platform users
+
+To add recipient from the ThingsBoard user list, follow these steps:
 
  - Click the "Add recipients" button in the upper right corner of the "Recipients" tab;
- - In the new window, enter the name of the notification recipients;
- - Select one of the three types of recipients: platform users, Microsoft Teams, or Slack entities;
- - In the "User filter" list, select who you want to send notifications to;
+ - A new window will pop up. Here, type in the name of the notification recipient(s) you'd like to add;
+ - Select "Platform users" type;
+ - In the "User filter" list, select who you want to send notifications to. It can be a single user, a group of users, tenant administrators, etc.;
  - Click "Add";
+
+A new recipient has been added. Now you can use it to [send a new notification](#send-notification) or create a new [notification rule](#rules).
 
 {% include images-gallery.html imageCollection="notification-center-recipients-1" %}
 
-You can also add a new recipient at the stage of creating a new notification:
-
- - Start creating a new notification. In the "New notification" window (in the "Recipients" field) click the "Create new" button;
- - Enter the name of the notification recipients;
- - Select one of the three types of recipients: platform users, Microsoft Teams or Slack entities;
- - In the "User filter" list, select who you want to send notifications to;
- - Click "Add".
+You can also add a new recipient at the stage of manually sending a new notification:
 
 {% include images-gallery.html imageCollection="notification-center-recipients-2" %}
+<br>
+There are several user filters that help you to define a recipients:
 
-##### Platform users
-
-There are several user filters that help you to define a recipient group. The scope of the filter depends on the role of the user that creates the recipient group.
-
-{% include images-gallery.html imageCollection="notification-center-platform-users" %}
-
-For **System Administrator**:
+For *System administrator*:
 
  * *All users* - all users of the platform. Includes all tenant administrators and all customer users;
 
@@ -104,7 +113,7 @@ For **System Administrator**:
 
  * *System administrators*.
 
-For **Tenant Administrator**:
+For *Tenant administrator*:
 
  * *All users* - all users of the current tenant. Includes the tenant administrator and all customer users;
 
@@ -126,25 +135,47 @@ For **Tenant Administrator**:
 
  * *Affected user* - The user that is affected by the notification trigger event. For example, the person that is assigned to investigate the alarm event.
 
-##### Slack entities
+#### Slack
 
-As a platform user, you may send notifications as a Slack message to a list of Users or Channels. Both public and private channels and direct messages are supported.
+Send ThingsBoard notifications as Slack messages to a public or private channel, or direct message.
+
+{% capture difference %}
+**Please note:**
+first, you need to configure the Slack settings in ThingsBoard using [this guide](/docs/{{docsPrefix}}user-guide/ui/slack-settings/).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+- Click the "Add recipients" button in the upper right corner of the "Recipients" tab;
+- A new window will pop up. Here, type in the name of the notification recipient(s) you'd like to add.
+- Select "Slack" type;
+- In the "Slack channel type" field, choose the destination where you'd like your notifications to land: public channel, private channel, or direct message;
+- In the additional "Conversation" field, specify the exact conversation or channel within Slack where you want the notifications to be sent;
+- Click "Add";
 
 {% include images-gallery.html imageCollection="notification-center-recipients-slack" %}
 
-##### Microsoft Teams
+#### Microsoft Teams
 
-As a platform user, you may send notifications as a Microsoft Teams message to a list of сhannels.
+Send ThingsBoard notifications as a Microsoft Teams message to a list of your channels.
 
-To send notifications via Microsoft Teams, get your **webhook URL** for a needed channel using this [guide](/docs/{{docsPrefix}}user-guide/ui/microsoft-teams-settings/).
+{% capture difference %}
+**Please note:**
+first, you need to get **webhook URL** for a needed Microsoft Teams channel using this [guide](/docs/{{docsPrefix}}user-guide/ui/microsoft-teams-settings/).
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
-Then add new notification recipients group.
+- Click the "Add recipients" button in the upper right corner of the "Recipients" tab;
+- A new window will pop up. Here, type in the name of the notification recipient(s) you'd like to add.
+- Select "Microsoft Teams" type;
+- Next, you need to specify the *webhook URL* for the Microsoft Teams channel where the notifications will be sent;
+- In the "Channel name" field, specify the channel you want to send notifications;
+- Click "Add";
 
 {% include images-gallery.html imageCollection="notification-center-recipients-microsoft-teams" %}
 
 ## Templates
 
-The "Templates" tab displays the list of notification templates. You may create, copy and delete notification templates here.
+The "Templates" tab displays the list of notification templates. Here you can create new templates, duplicate existing ones for easy editing, or delete those you no longer need.
 
 {% include images-gallery.html imageCollection="notification-center-templates" %}
 
@@ -175,6 +206,8 @@ To add a new template, follow these steps:
 
 {% include images-gallery.html imageCollection="notification-center-add-templates" %}
 
+Let's take a closer look at all the available template types and some examples to guide you through.
+
 #### General
 
 The general template is used to send generic notifications. For example, system maintenance or important announcement. 
@@ -184,6 +217,17 @@ Available template parameters:
   * *recipientEmail* - email of the recipient;
   * *recipientFirstName* - first name of the recipient;
   * *recipientLastName* - last name of the recipient.
+
+Let's consider an example with the following event: maintenance work for the server is scheduled for tomorrow.
+
+The notification in ThingsBoard may look like this:
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+![image](/images/user-guide/notifications/templates/templates-general-pe.png)
+{% endif %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/notifications/templates/templates-general-ce.png)
+{% endif %}
 
 #### Alarm
 
@@ -199,6 +243,21 @@ Available template parameters contain all parameters available for the [General]
   * *alarmOriginatorName* - the name of the alarm originator, e.g. 'Sensor T1';
   * *alarmOriginatorId* - the alarm originator entity id as uuid string.
 
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+Let's consider an example with the following event: A new alarm with the type 'High Temperature' has been created for the device 'Compressor NM-56'.
+
+The notification in ThingsBoard may look like this:
+
+![image](/images/user-guide/notifications/templates/templates-alarms-pe.png)
+{% endif %}
+{% if docsPrefix == null %}
+Let's consider an example with the following event: A new alarm with the type "High Temperature" has been created for the device 'Compressor BJ-66'.
+
+The notification in ThingsBoard may look like this:
+
+![image](/images/user-guide/notifications/templates/templates-alarms-ce.png)
+{% endif %}
+
 #### Device activity
 
 The device activity template is used to send notification about inactive devices.
@@ -209,6 +268,21 @@ Available template parameters contain all parameters available for the [General]
 * *deviceLabel* - the device label;
 * *deviceType* - the device type;
 * *eventType* - one of: 'inactive', 'active'.
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+Let's consider an example with the following event: the device 'Compressor MN-56' became inactive.
+
+The notification in ThingsBoard may look like this:
+
+![image](/images/user-guide/notifications/templates/templates-device-activity-pe.png)
+{% endif %}
+{% if docsPrefix == null %}
+Let's consider an example with the following event: the device 'Compressor BJ-66' became inactive.
+
+The notification in ThingsBoard may look like this:
+
+![image](/images/user-guide/notifications/templates/templates-device-activity-ce.png)
+{% endif %}
 
 #### Entity action
 
@@ -224,6 +298,17 @@ Available template parameters contain all parameters available for the [General]
 * *userFirstName* - first name of the user who made the action;
 * *userLastName* - last name of the user who made the action.
 
+Let's consider an example with the following event: user johndoe@thingsboard.io added new device 'Compressor AO-99'.
+
+The notification in ThingsBoard may look like this:
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+![image](/images/user-guide/notifications/templates/templates-entity-action-pe.png)
+{% endif %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/notifications/templates/templates-entity-action-ce.png)
+{% endif %}
+
 #### Alarm comment
 
 The alarm comment template is used to send notification about comments on alarms.
@@ -234,6 +319,17 @@ Available template parameters contain all parameters available for the [Alarm](#
 * *userEmail* - email of the user who made the action;
 * *userFirstName* - first name of the user who made the action;
 * *userLastName* - last name of the user who made the action.
+
+Let's consider an example with the following event: John Doe left a comment for Jane regarding the 'High Temperature' alarm of the device 'Compressor RK-25'.
+
+The notification in ThingsBoard may look like this:
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+![image](/images/user-guide/notifications/templates/templates-alarm-comment-pe.png)
+{% endif %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/notifications/templates/templates-alarm-comment-ce.png)
+{% endif %}
 
 #### Alarm assignment
 
@@ -248,6 +344,21 @@ Available template parameters contain all parameters available for the [Alarm](#
   * *userFirstName* - first name of the user who made the action;
   * *userLastName* - last name of the user who made the action;
   * *action* - one of: 'assigned', 'unassigned'.
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+Let's consider an example with the following event: johndoe@thingsboard.io assigned the 'High Temperature' alarm of the device 'Compressor NM-56' to janesmith@thingsboard.io.
+
+The notification in ThingsBoard may look like this:
+
+![image](/images/user-guide/notifications/templates/templates-alarm-assignment-pe.png)
+{% endif %}
+{% if docsPrefix == null %}
+Let's consider an example with the following event: johndoe@thingsboard.io assigned the 'High Temperature' alarm of the device 'Compressor BJ-66' to janesmith@thingsboard.io.
+
+The notification in ThingsBoard may look like this:
+
+![image](/images/user-guide/notifications/templates/templates-alarm-assignment-ce.png)
+{% endif %}
 
 #### Rule engine lifecycle event
 
@@ -264,9 +375,20 @@ Available template parameters contain all parameters available for the [General]
   * *action* - one of: 'start', 'update', 'stop';    
   * *error* - the error text.
 
+Let's consider an example with the following event: the "Kafka" rule node misconfigured.
+
+The notification in ThingsBoard may look like this:
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+![image](/images/user-guide/notifications/templates/templates-rule-engine-lifecycle-event-pe.png)
+{% endif %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/notifications/templates/templates-rule-engine-lifecycle-event-ce.png)
+{% endif %}
+
 #### Rule node
 
-The rule node template is used to send notifications from the 'send notification' rule node.
+The rule node template is used to send notifications from the '[send notification](/docs/{{docsPrefix}}user-guide/rule-engine-2-0/external-nodes/#send-notification-node)' rule node.
 You may use data or metadata from the incoming message to build the notification subject and body.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
 
@@ -278,6 +400,17 @@ Available template parameters contain all parameters available for the [General]
   * *recipientEmail* - email of the recipient;
   * *recipientFirstName* - first name of the recipient;
   * *recipientLastName* - last name of the recipient.
+
+Let's consider an example with the following event: the incoming message to the ‘send notification’ rule node contains data about the temperature value in Building 1.
+
+The notification in ThingsBoard may look like this:
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+![image](/images/user-guide/notifications/templates/tempalates-rule-node-pe.png)
+{% endif %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/notifications/templates/tempalates-rule-node-ce.png)
+{% endif %}
 
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
 #### Integration lifecycle event
@@ -291,6 +424,12 @@ Available template parameters contain all parameters available for the [General]
   * *eventType* - one of: 'started', 'updated', 'stopped';
   * *action* - one of: 'start', 'update', 'stop';
   * *error* - the error text.
+
+Let's consider an example with the following event: failed to start MQTT Integration.
+
+The notification in ThingsBoard may look like this:
+
+![image](/images/user-guide/notifications/templates/templates-integration-lifecycle-event-pe.png) 
 {% endif %}
  
 #### Edge connection
@@ -303,6 +442,17 @@ Available template parameters:
 * *edgeName* - the name of the edge;
 * *eventType* - the string representation of the connectivity status: connected or disconnected.
 
+Let's consider an example with the following event: ThingsBoard connected to Edge.
+
+The notification in ThingsBoard may look like this:
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+![image](/images/user-guide/notifications/templates/templates-edge-connection-pe.png)
+{% endif %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/notifications/templates/templates-edge-connection-ce.png)
+{% endif %}
+
 #### Edge communication failure
 
 The Edge communication failure template is used to send notifications about communication failures occur.
@@ -313,10 +463,21 @@ Available template parameters:
 * *edgeName* - the name of the edge;
 * *failureMsg* - the string representation of the failure, occurred on the Edge.
 
+Let's consider an example with the following event: failed to connect ThingsBoard to Edge.
+
+The notification in ThingsBoard may look like this:
+
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+![image](/images/user-guide/notifications/templates/templates-edge-communication-failure-pe.png)
+{% endif %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/notifications/templates/templates-edge-communication-failure-ce.png)
+{% endif %}
+
 {% unless docsPrefix == 'paas/' %}
 #### Entities limit
 
-The system administrator uses the entities limit template to notify tenants that they will reach the limit on the number of entities (devices, assets, etc.).
+This template is intended to notify tenants that they will reach the limit on the number of entities (devices, assets, etc.). Only the system administrator can use this template.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
 
   * *entityType* - one of: 'Device', 'Asset', 'User', etc.;
@@ -326,9 +487,24 @@ Available template parameters contain all parameters available for the [General]
   * *tenantId* - id of the tenant;
   * *tenantName* - name of the tenant.
 
+{% if docsPrefix == "pe/" %}
+Let's consider an example with the following event: the tenant created 500 devices with the max allowed number is 1000.
+
+The notification in ThingsBoard may look like this:
+
+![image](/images/user-guide/notifications/templates/templates-entities-limit-pe.png)
+{% endif %}
+{% if docsPrefix == null %}
+Let's consider an example with the following event: the tenant created 400 devices with the max allowed number is 500.
+
+The notification in ThingsBoard may look like this:
+
+![image](/images/user-guide/notifications/templates/templates-entities-limit-ce.png)
+{% endif %}
+
 #### API usage limit
 
-The system administrator uses the API usage limit template to notify tenants when they hit a specific API limit.
+This template is intended to notify tenants when they hit a specific API limit. Only the system administrator can use this template.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
 
   * *feature* - API feature for which the limit is applied; one of: 'Device API', 'Telemetry persistence', 'Rule Engine execution', 'JavaScript functions execution', 'Email messages', 'SMS messages', 'Alarms';
@@ -339,9 +515,20 @@ Available template parameters contain all parameters available for the [General]
   * *tenantId* - id of the tenant;
   * *tenantName* - name of the tenant.
 
+Let's consider an example with the following event: tenant's devices pushed 8K messages with the max allowed number of 10K.
+
+The notification in ThingsBoard may look like this:
+
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/notifications/templates/templates-api-usage-limit-pe.png)
+{% endif %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/notifications/templates/templates-api-usage-limit-ce.png)
+{% endif %}
+
 #### New platform version
 
-The system administrator uses the new platform version template to notify tenants of the release of a new version of the Thingsboard platform.
+This template is intended to notify tenants about the release of a new version of the Thingsboard platform. Only the system administrator can use this template.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
 
   * *latestVersion* - the latest platform version available;
@@ -349,7 +536,42 @@ Available template parameters contain all parameters available for the [General]
   * *upgradeInstructionsUrl* - upgrade instructions link for latest version;
   * *currentVersion* - the current platform version;
   * *currentVersionReleaseNotesUrl* - release notes link for current version.
-{% endunless %}
+
+Let's consider an example with the following event: a new 3.6.3 version is released but currently deployed version is 3.6.2.
+
+The notification in ThingsBoard may look like this:
+
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/notifications/templates/templates-new-platform-version-pe.png)
+{% endif %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/notifications/templates/templates-new-platform-version-ce.png)
+{% endif %}
+
+#### Exceeded rate limits
+
+This template is for notifying about exceeding rate limits. Only the system administrator can use this template.
+Available template parameters contain all parameters available for the [General](#general) template, plus:
+
+* *api* - rate-limited API label; one of: 'REST API requests', 'REST API requests per customer', 'transport messages', 'transport messages per device', 'Cassandra queries', 'WS updates per session', 'notification requests', 'notification requests per rule', 'entity version creation', 'entity version load', 'reports generation', 'integration messages', 'integration messages per device', 'Edge events', 'Edge events per edge', 'Edge uplink messages', 'Edge uplink messages per edge';
+* *limitLevelEntityType* - entity type of the limit level entity, e.g. 'Tenant', 'Device', 'Notification rule', 'Customer', etc.;
+* *limitLevelEntityId* - id of the limit level entity;
+* *limitLevelEntityName* - name of the limit level entity;
+* *tenantId* - id of the tenant;
+* *tenantName* - name of the tenant;
+
+Let's consider an example with the following event: a customer 'Customer A' exceeded rate limit for per-customer REST API requests.
+
+The notification in ThingsBoard may look like this:
+
+{% if docsPrefix == "pe/" %}
+![image](/images/user-guide/notifications/templates/templates-exceeded-rate-limits-pe.png)
+{% endif %}
+{% if docsPrefix == null %}
+![image](/images/user-guide/notifications/templates/templates-exceeded-rate-limits-ce.png)
+{% endif %}
+
+ {% endunless %}
 
 ## Rules
 
