@@ -60,7 +60,7 @@ notification-center-recipients:
 notification-center-recipients-1:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-2-pe.png
-        title: 'Click the "Add recipients" button in the upper right corner of the "Recipients" tab. A new window will pop up. Here, type in the name of the notification recipient(s) you&#39;d like to add. Next, select the "Platform users" type. In the "User Filter" list, select who you want to send notifications to. Than, click "Add".'
+        title: 'Click the "Add recipients" button in the upper right corner of the "Recipients" tab. A new window will pop up. Here, type in the name of the notification recipient(s). Next, select the "Platform users" type. In the "User Filter" list, select who you want to send notifications to. Than, click "Add".'
     1:
         image: /images/user-guide/notifications/notification-center-recipients-3-pe.png
         title: 'The new recipient is added. Now you can use it to send a new notification or create a new notification rule.'
@@ -246,6 +246,17 @@ notification-center-add-rule-new-platform-version:
         title: 'Optionally enter a description, then click "Add";'
     2:
         image: /images/user-guide/notifications/notification-center-add-rule-new-platform-version-3-pe.png
+        title: 'The new rule is created.'
+
+notification-center-add-rule-exceeded-rate-limits:
+    0:
+        image: /images/user-guide/notifications/notification-center-add-rule-exceeded-rate-limits-1-pe.png
+        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Exceeded rate limits. Then, select template from the list and specify recipient. Click "Next";'
+    1:
+        image: /images/user-guide/notifications/notification-center-add-rule-exceeded-rate-limits-2-pe.png
+        title: 'The trigger filter allows you to filter entities by API features. Optionally enter a description, then click "Add";'
+    2:
+        image: /images/user-guide/notifications/notification-center-add-rule-exceeded-rate-limits-3-pe.png
         title: 'The new rule is created.'
 
 ---

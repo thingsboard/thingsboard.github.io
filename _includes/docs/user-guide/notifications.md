@@ -105,6 +105,7 @@ You can also add a new recipient at the stage of manually sending a new notifica
 <br>
 There are several user filters that help you to define a recipients:
 
+{% unless docsPrefix == 'paas/' %}
 For *System administrator*:
 
  * *All users* - all users of the platform. Includes all tenant administrators and all customer users;
@@ -116,6 +117,7 @@ For *System administrator*:
  * *System administrators*;
 
 For *Tenant administrator*:
+{% endunless %}
 
  * *All users* - all users of the current tenant. Includes the tenant administrator and all customer users;
 
@@ -208,7 +210,8 @@ To add a new template, follow these steps:
 
 {% include images-gallery.html imageCollection="notification-center-add-templates" %}
 
-Let's take a closer look at all the available template types and some examples to guide you through.
+<br>
+Let's take a closer look at all the available template types.
 
 #### General
 
@@ -262,7 +265,7 @@ The notification in ThingsBoard may look like this:
 
 #### Device activity
 
-The device activity template is used to send notification about inactive devices.
+The device activity template is used to send notifications about whether a device is active or inactive.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
 
 * *deviceId* - the device id as uuid string;
@@ -453,7 +456,7 @@ The notification in ThingsBoard may look like this:
 
 #### Edge communication failure
 
-The Edge communication failure template is used to send notifications about communication failures occur.
+The Edge communication failure template is used to send notifications about ThingsBoard connection failures with the Edge.
 
 Available template parameters:
 
@@ -575,20 +578,23 @@ The notification in ThingsBoard may look like this:
 
 Notification rules allow you to automate the delivery of notifications on a particular trigger event. 
 For example, rule automatically sends a notification when a new alarm is created.
-The trigger event types are tightly coupled to the notification template types. Let's review them below:
+The trigger event types are tightly coupled to the notification template types.
 
 {% include images-gallery.html imageCollection="notification-center-rules" %}
 
+<br>
+Let's take a closer look at all rules:
+
 #### Alarm
 
-The "Alarm" rule sends notifications on specific events: alarm is created, acknowledged, cleared, severity updated, or alarm deleted.
+Using the "Alarm" rule the system sends notifications on specific events: alarm is created, acknowledged, cleared, severity updated, or alarm deleted.
 
 To create a new alarm rule, follow these steps:
 
 - Click the "Add rule" button in the upper right corner of the "Rules" tab;
 - In the new pop-up window, enter the rule&#39;s name;
 - Select trigger - Alarm;
-- Then, select Template from the list or [create your own](#templates);
+- Then, select pre-made template from the list or [create your own](#templates);
 - Build an escalation chain. The escalation chain allows you to configure multiple recipients of the notification. 
 The first recipient group will receive the notification immediately. 
 Other recipient groups will receive the notification after a configurable delay. 
@@ -619,14 +625,14 @@ See [Alarm](#alarm) template for a list of the available template parameters.
 
 #### Device activity
 
-The "Device activity" rule sends notifications when device becomes active or inactive.
+Using the "Device activity" rule the system sends notifications when the device becomes active or inactive.
 
 To create a new device activity rule, follow these steps:
 
 - Click the "Add rule" button in the upper right corner of the "Rules" tab;
 - In the new pop-up window, enter the rule&#39;s name;
 - Select trigger - Device activity;
-- Then, select template from the list or [create your own](#templates);
+- Then, select pre-made template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
 - The trigger filter allows you to configure specific devices or device types;
 - You may also select the event types that will trigger notification;
@@ -646,14 +652,14 @@ See [Device activity](#device-activity) template for a list of the available tem
 
 #### Entity action
 
-The "Entity action" rule sends notifications when entity is created, updated or deleted.
+Using the "Entity action" rule the system sends notifications when an entity is created, updated or deleted.
 
 To create a new entity action rule, follow these steps:
 
 - Click the "Add rule" button in the upper right corner of the "Rules" tab;
 - In the new pop-up window, enter the rule&#39;s name;
 - Select trigger - Entity action;
-- Then, select template from the list or [create your own](#templates);
+- Then, select pre-made template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
 - The trigger filter allows you to filter events by entity type;
 - You may also select the event types that will trigger notification;
@@ -673,14 +679,14 @@ See [Entity action](#entity-action) template for a list of the available templat
 
 #### Alarm comment
 
-The "Alarm comment" rule sends notifications when alarm is commented.
+Using the "Alarm comment" rule the system sends notifications when an alarm is commented.
 
 To create a new alarm comment rule, follow these steps:
 
 - Click the "Add rule" button in the upper right corner of the "Rules" tab;
 - In the new pop-up window, enter the rule&#39;s name;
 - Select trigger - Alarm comment;
-- Then, select template from the list or [create your own](#templates);
+- Then, select pre-made template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
 - The trigger filter allows you to filter alarms by type, severity, and status;
 - You may also select to notify only on user comments and skip system comments. Optionally, you may notify users on comments update;
@@ -700,14 +706,14 @@ See [Alarm comment](#alarm-comment) template for a list of the available templat
 
 #### Alarm assignment
 
-The "Alarm assignment" rule sends notifications when alarm is assigned or unassigned.
+Using the "Alarm assignment" rule the system sends notifications when an alarm is assigned or unassigned.
 
 To create a new alarm assignment rule, follow these steps:
 
 - Click the "Add rule" button in the upper right corner of the "Rules" tab;
 - In the new pop-up window, enter the rule&#39;s name;
 - Select trigger - Alarm assignment;
-- Then, select template from the list or [create your own](#templates);
+- Then, select pre-made template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
 - The trigger filter allows you to filter alarms by type, severity, and status;
 - You may also select the event types that will trigger notification: assign or unassign;
@@ -727,7 +733,7 @@ See [Alarm assignment](#alarm-assignment) template for a list of the available t
 
 #### Rule engine lifecycle event
 
-The "Rule engine lifecycle event" rule sends notifications about the rule chain or rule node lifecycle events. 
+Using the "Rule engine lifecycle event" rule the system sends notifications about the rule chain or rule node lifecycle events.
 For example, notify when a new rule node fails to start (typically due to misconfiguration).
 
 Trigger settings: the trigger filter allows you to filter based on rule chains and events status: Started, Updated, Stopped.
@@ -737,7 +743,7 @@ To create a new Rule engine lifecycle event rule, follow these steps:
 - Click the "Add rule" button in the upper right corner of the "Rules" tab;
 - In the new pop-up window, enter the rule&#39;s name;
 - Select trigger - Rule engine lifecycle event;
-- Then, select template from the list or [create your own](#templates);
+- Then, select pre-made template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
 - The trigger filter allows you to filter notifications by type, severity, and status;
 - You may also select the event types that will trigger notification: assign or unassign;
@@ -758,7 +764,7 @@ See [Rule engine lifecycle event](#rule-engine-lifecycle-event) template for a l
 {% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
 #### Integration lifecycle event
 
-The "Integration lifecycle event" rule sends notifications about the integration lifecycle events.
+Using the "Integration lifecycle event" rule the system sends notifications about the integration lifecycle events.
 For example, notify when a integration fails to start (typically due to misconfiguration).
 
 Trigger settings: the trigger filter allows you to filter based on integration status: Started, Updated, Stopped.
@@ -768,7 +774,7 @@ To create a new integration lifecycle event rule, follow these steps:
 - Click the "Add rule" button in the upper right corner of the "Rules" tab;
 - In the new pop-up window, enter the rule&#39;s name;
 - Select trigger - Integration lifecycle event;
-- Then, select template from the list or [create your own](#templates);
+- Then, select pre-made template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
 - The trigger filter allows you to filter notifications by integration type;
 - You may also select the event types that will trigger notification: started, updated, stopped;
@@ -789,7 +795,7 @@ See [Integration lifecycle event](#integration-lifecycle-event) template for a l
 
 #### Edge connection
 
-The "Edge connection" rule sends a notification to tenant admins when the connection status between TB and Edge changes.
+Using the "Edge connection" rule the system sends a notification to tenant admins when the connection status between TB and Edge changes.
 
 Trigger settings: the trigger filter allows you to filter notifications based on Edge instance status: Connected, Disconnected.
 
@@ -798,7 +804,7 @@ To create a new Edge connection rule, follow these steps:
 - Click the "Add rule" button in the upper right corner of the "Rules" tab;
 - In the new pop-up window, enter the rule&#39;s name;
 - Select trigger - Edge connection;
-- Then, select template from the list or [create your own](#templates);
+- Then, select pre-made template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
 - The trigger filter allows you to filter notifications by Edge instances. If the field is empty, the trigger will be applied to all edge instances;
 - You may also select the event types that will trigger notification: connected, disconnected;
@@ -818,14 +824,14 @@ See [Edge connection](#edge-connection) template for a list of the available tem
 
 #### Edge communication failure
 
-The "Edge communication failure" rule sends a notification to tenant admins when communication failures occur.
+Using the "Edge communication failure" rule the system sends a notification to tenant admins when communication failures occur.
 
 To create a new Edge communication failure rule, follow these steps:
 
 - Click the "Add rule" button in the upper right corner of the "Rules" tab;
 - In the new pop-up window, enter the rule&#39;s name;
 - Select trigger - Edge communication failure;
-- Then, select template from the list or [create your own](#templates);
+- Then, select pre-made template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
 - The trigger filter allows you to filter notifications by Edge instances. If the field is empty, the trigger will be applied to all edge instances;
 - Click "Add".
@@ -845,7 +851,7 @@ See [Edge communication failure](#edge-communication-failure) template for a lis
 {% unless docsPrefix == 'paas/' %}
 #### Entities limit
 
-The system administrator uses the "Entities limit" rule to notify tenants that they will reach the limit on the number of entities (devices or assets). 
+The system administrator can use the "Entities limit" rule to notify tenants that they will reach the limit on the number of entities (devices or assets). 
 For example, notify when tenant has reached 80% of the 100 devices allowed. The max number of devices is extracted from the tenant profile. 
 
 To create a new entities limit rule, follow these steps:
@@ -853,7 +859,7 @@ To create a new entities limit rule, follow these steps:
 - Click the "Add rule" button in the upper right corner of the "Rules" tab;
 - In the new pop-up window, enter the rule&#39;s name;
 - Select trigger - Entities limit;
-- Then, select template from the list or [create your own](#templates);
+- Then, select a pre-made template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
 - The trigger filter allows you to filter entities by type and setup threshold;
 - Click "Add".
@@ -872,7 +878,7 @@ See [Entities limit](#entities-limit) template for a list of the available templ
 
 #### API usage limit
 
-The system administrator uses the "API usage limit" rule to notify tenants that they have reached the limit of used units.
+The system administrator can use the "API usage limit" rule to notify tenants that they have reached the limit of used units.
 
 For example, notify when tenant has reached 80% of the 100 alarms . The max number of alarms is extracted from the tenant profile.
 
@@ -881,7 +887,7 @@ To create a new API usage limit rule, follow these steps:
 - Click the "Add rule" button in the upper right corner of the "Rules" tab;
 - In the new pop-up window, enter the rule&#39;s name;
 - Select trigger - API usage limit;
-- Then, select template from the list or [create your own](#templates);
+- Then, select a pre-made template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
 - The trigger filter allows you to filter entities by API features;
 - You may also select the event types that will trigger notification: enable, warning, disabled;
@@ -901,14 +907,14 @@ See [API usage limit](#api-usage-limit) template for a list of the available tem
 
 #### New platform version
 
-The system administrator uses the "New platform version" rule to notify tenants about the release of a new version of the ThingsBoard platform.
+The system administrator can use the "New platform version" rule to notify tenants and system administrators about the release of a new version of the ThingsBoard platform.
 
 To create a new platform version rule, follow these steps:
 
 - Click the "Add rule" button in the upper right corner of the "Rules" tab;
 - In the new pop-up window, enter the rule&#39;s name;
 - Select trigger - New platform version;
-- Then, select template from the list or [create your own](#templates);
+- Then, select a pre-made template from the list or [create your own](#templates);
 - Specify the recipient of the notification. Click "Next";
 - Optionally enter a description, then click "Add".
 
@@ -920,7 +926,31 @@ The default rule 'New platform version' will notify affected tenant administrato
 
 Template subject: `New version ${latestVersion} is available`
 
-Template message: `Current version is ${currentVersion}. You can upgrade your ThingsBoard instance to version ${latestVersion}. `
+Template message: `Current version is ${currentVersion}. You can upgrade your ThingsBoard instance to version ${latestVersion}.`
 
 See [New platform version](#new-platform-version) template for a list of the available template parameters.
+
+#### Exceeded rate limits
+
+The system administrator can use the "Exceeded rate limits" rule to notify tenants and system administrators about the exceeded rate limits.
+
+To create a exceeded rate limits rule, follow these steps:
+
+- Click the "Add rule" button in the upper right corner of the "Rules" tab;
+- In the new pop-up window, enter the rule&#39;s name;
+- Select trigger - Exceeded rate limits;
+- Then, select a pre-made template from the list or [create your own](#templates);
+- Specify the recipient of the notification. Click "Next";
+- The trigger filter allows you to filter entities by API features;
+- Optionally enter a description, then click "Add".
+
+{% include images-gallery.html imageCollection="notification-center-add-rule-exceeded-rate-limits" %}
+
+*Default rule*
+
+The default rule 'Exceeded rate limits' will notify affected tenant administrators and system administrators when an exceeded rate limits.
+
+Template subject: `Rate limits exceeded`
+
+Template message: `Rate limits for ${api} exceeded for '${limitLevelEntityName}'`
 {% endunless %}

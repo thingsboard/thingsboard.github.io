@@ -237,6 +237,17 @@ notification-center-add-rule-new-platform-version:
         image: /images/user-guide/notifications/notification-center-add-rule-new-platform-version-3-ce.png
         title: 'The new rule is created.'
 
+notification-center-add-rule-exceeded-rate-limits:
+    0:
+        image: /images/user-guide/notifications/notification-center-add-rule-exceeded-rate-limits-1-ce.png
+        title: 'Сlick the "Add rule" button. Then enter rule name. Select trigger - Exceeded rate limits. Then, select template from the list and specify recipient. Click "Next";'
+    1:
+        image: /images/user-guide/notifications/notification-center-add-rule-exceeded-rate-limits-2-ce.png
+        title: 'The trigger filter allows you to filter entities by API features. Optionally enter a description, then click "Add";'
+    2:
+        image: /images/user-guide/notifications/notification-center-add-rule-exceeded-rate-limits-3-ce.png
+        title: 'The new rule is created.'
+
 ---
 
 {% include docs/user-guide/notifications.md %}
