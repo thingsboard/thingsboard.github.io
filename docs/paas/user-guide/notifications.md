@@ -37,10 +37,10 @@ notification-center-inbox:
         title: 'The “Inbox” tab displays unread notifications by default;'
     1:
         image: /images/user-guide/notifications/notification-center-inbox-2-pe.png
-        title: 'You may browse the notifications, delete them and mark them as read;'
+        title: 'Browse the notifications, delete them and mark them as read;'
     2:
         image: /images/user-guide/notifications/notification-center-inbox-3-pe.png
-        title: 'You may also switch the view to browse all notifications.'
+        title: 'Switch to the "All" tab to view all notifications.'
 
 notification-center-inbox-bell-icon:
     0:
@@ -79,7 +79,7 @@ notification-center-recipients-2:
 notification-center-recipients-slack:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-slack-1-pe.png
-        title: 'Click the "Add recipients" button in the upper right corner of the "Recipients" tab. A new window will pop up. Enter the name of the notification recipient(s). Next, select the "Slack" type. In the “Slack channel type” field, choose the destination where you’d like your notifications to land: public channel, private channel, or direct message. In the additional “Conversation” field, specify the exact conversation or channel within Slack where you want the notifications to be sent. Click "Add";'
+        title: 'Click the "Add recipients" button in the upper right corner of the "Recipients" tab. A new window will pop up. Enter the name of the notification recipient(s). Next, select the "Slack" type. In the “Slack channel type” field, choose the destination where you’d like your notifications to land: public channel, private channel, or direct message. In the additional “Conversation” field, specify the exact conversation or channel in Slack where you want to send notifications. Click "Add";'
     1:
         image: /images/user-guide/notifications/notification-center-recipients-slack-2-pe.png
         title: 'The new recipient is added. Now you can use it to send a new notification or create a new notification rule.'
@@ -87,7 +87,7 @@ notification-center-recipients-slack:
 notification-center-recipients-microsoft-teams:
     0:
         image: /images/user-guide/notifications/notification-center-recipients-microsoft-teams-1-pe.png
-        title: 'Click the "Add recipients" button in the upper right corner of the "Recipients" tab. A new window will pop up. Enter the name of the notification recipient(s). Next, select the "Microsoft Teams" type. Next, you need to specify the webhook URL for the Microsoft Teams channel where the notifications will be sent. In the “Channel name” field, specify the channel you want to send notifications. Click "Add";'
+        title: 'Click the "Add recipients" button in the upper right corner of the "Recipients" tab. A new window will pop up. Enter the name of the notification recipient(s). Next, select the "Microsoft Teams" type. Next, you need to specify the webhook URL for the Microsoft Teams channel where the notifications will be sent. In the “Channel name” field, specify the channel to which you want to send notifications. Click "Add";'
     1:
         image: /images/user-guide/notifications/notification-center-recipients-microsoft-teams-2-pe.png
         title: 'The new recipient is added. Now you can use it to send a new notification or create a new notification rule.'

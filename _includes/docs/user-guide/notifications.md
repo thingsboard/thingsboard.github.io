@@ -1,4 +1,4 @@
-{% if docsPrefix == 'pe/' %}
+{% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}
 {% assign mobilePrefix = "ThingsBoard PE Mobile Application" %}
 {% assign mobileUrl = "/docs/pe/mobile/" %}
 {% assign mobileGuide = "/docs/pe/mobile/getting-started/" %}
@@ -12,8 +12,7 @@
 {:toc}
 
 The ThingsBoard Notification center is a comprehensive tool for sending, managing, and automating notifications within the platform. It allows for a variety of notification methods, including web, email, mobile application, SMS, and integrations with Slack and Microsoft Teams. 
-Users can manually send notifications, automate them through REST API, or set triggers based on events within the system.
-Users may also schedule delivery of the notification for a particular time.
+Users can manually send notifications, automate them through REST API, or set triggers based on events within the system. Users may also schedule delivery of the notification for a particular time.
 
 The Notification center is accessible through the sidebar menu and includes options for [sending notifications](#send-notification), viewing [inbox](#inbox) and [sent](#sent) messages, [managing recipients](#recipients), [creating templates](#templates), and [setting up rules](#rules) for automated notifications.
 
@@ -30,12 +29,12 @@ Let's look at each of the key components of the notification center below.
 
 ThingsBoard offers several notification delivery methods to keep you and your customers promptly informed about any events in your IoT solution:
 
-- **Web**. Receive notifications directly within the ThingsBoard web interface. This is perfect for users who are always logged in;
+- **Web**. Receive notifications directly within the ThingsBoard web interface. This is perfect for users who are always logged in.
 - **Mobile app**. Receive instant push notifications directly to your smartphone through the [{{mobilePrefix}}]({{mobileUrl}}). Stay informed about all events in your IoT solution, even when you're on the go.<br>
 To use this notification delivery method, you first need to configure the {{mobilePrefix}} and make some settings in the "Mobile settings" section on the ThingsBoard platform itself.
-These steps are detailed in this [documentation]({{mobileGuide}});
-- **SMS**. The ThingsBoard supports notification delivery via SMS to mobile devices, providing the ability to deliver important information even in the absence of internet access. {% unless docsPrefix == 'paas/' %}To send notifications via SMS, a system administrator should set up the [SMS provider](/docs/{{docsPrefix}}user-guide/ui/sms-provider-settings/) properly;{% endunless %}
-- **Email**. Receive notifications directly in your email inbox. Perfect for users who prefer to stay informed through their email accounts. To send notifications via Email, a tenant administrator should be configured [outgoing mail server](/docs/{{docsPrefix}}user-guide/ui/mail-settings/);
+These steps are detailed in this [documentation]({{mobileGuide}}).
+- **SMS**. The ThingsBoard supports notification delivery via SMS to mobile devices, providing the ability to deliver important information even in the absence of internet access. {% if docsPrefix == 'pe/' %}To send SMS notifications, you need to set up an [SMS provider](/docs/{{docsPrefix}}user-guide/ui/sms-provider-settings/). Use the system administrator's configuration or set the settings at your level.{% endif %}{% if docsPrefix == null %}To send notifications via SMS, a system administrator should set up the [SMS provider](/docs/{{docsPrefix}}user-guide/ui/sms-provider-settings/) properly.{% endif %}
+- **Email**. Receive notifications directly in your email inbox. Perfect for users who prefer to stay informed through their email accounts. {% if (docsPrefix == "pe/") or (docsPrefix == "paas/") %}To send email notifications, you must configure an [outgoing mail server](/docs/{{docsPrefix}}user-guide/ui/mail-settings/). Use the system administrator's configuration or set the settings at your level.{% endif %}{% if docsPrefix == null %}To send notifications via email, a system administrator should configure an [outgoing mail server](/docs/{{docsPrefix}}user-guide/ui/mail-settings/) properly.{% endif %}
 - **Slack**. Integrate Slack with ThingsBoard to send notifications as messages to individual users or channels within your Slack workspace. To use this method of notification delivery, you first need to configure the Slack settings in ThingsBoard using [this guide](/docs/{{docsPrefix}}user-guide/ui/slack-settings/).
 - **Microsoft Teams**. Integration of Microsoft Teams with ThingsBoard allows for delivering notifications in the form of messages to specific channels in your Microsoft Teams environment. To use this method a tenant administrator must get **webhook URL** for a needed Microsoft Teams channel using this [guide](/docs/{{docsPrefix}}user-guide/ui/microsoft-teams-settings/).
 
@@ -47,34 +46,37 @@ To send a notification manually, follow these steps:
 
 ## Inbox
 
-The "Inbox" tab displays unread notifications by default. 
-You may use the inbox table to browse the notifications and mark them as read. 
-You may also switch the view to browse all notifications.
+Browse your incoming notifications, mark them as read, or delete them on the "Inbox" tab. By default, only unread notifications are displayed. To view all notifications, switch to the "All" tab in the incoming notifications table.
 
 {% include images-gallery.html imageCollection="notification-center-inbox" %}
 
-You can also view incoming notifications by clicking on the bell icon in the top right corner of the screen. 
-The number next to the icon indicates the number of unread messages. 
-Here you can read the notification, mark it as read, or take action by clicking the action button.
+You can also view your incoming notifications by clicking on the bell icon in the top right corner of the screen. The number next to the icon indicates the number of unread notifications. 
+Here you can also read the notification, mark it as read, or take action by clicking the action button.
 
 {% include images-gallery.html imageCollection="notification-center-inbox-bell-icon" %}
 
 ## Sent 
 
-The "Sent" tab displays sent notifications and their status.
-You can use the "Notify again" button to send notification again. You can also delete notifications by clicking the "delete" icon.
+In the "Sent" tab, you'll find a list of all the notifications you've sent out, along with their current status.
 
 {% include images-gallery.html imageCollection="notification-center-sent" %}
 
-Also, you may investigate issues with the delivery of certain notifications here. 
-In case of delivery issues, the corresponding notification row will have information about the recipient who missed the update. 
-This typically happens when the email address is wrong, or the phone number is not configured.
+To resend a notification, click on the "Notify again" icon in the row of the corresponding notification. You can also delete notifications by clicking the "delete" icon.
 
+{% capture difference %}
+**Please note:**
+<br>
 If you decide to delete an outgoing message, it will also be deleted for all recipients. This only applies to the Web delivery method.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
+
+Additionally, you can investigate delivery issues for specific notifications here. If there are delivery issues, the "Status" column will provide relevant information.
+This typically occurs when the recipient's email address or phone number is incorrect.
 
 ## Recipients
 
-In the "Recipients" tab, you'll find a list of configured notification recipients. Here, you have the flexibility to add and delete notification recipients as needed.
+In the "Recipients" tab, you'll find a list of configured notification recipients. You can add, edit existing, and delete notification recipients as needed.
+Recipients can be added based on their roles, individual user accounts, predefined groups, etc.
 
 {% include images-gallery.html imageCollection="notification-center-recipients" %}
 
@@ -88,10 +90,10 @@ Depending on the type of recipient you choose, the setup process will vary. Ther
 To add recipient from the ThingsBoard user list, follow these steps:
 
  - Click the "Add recipients" button in the upper right corner of the "Recipients" tab;
- - A new window will pop up. Here, type in the name of the notification recipient(s) you'd like to add;
+ - A new window will pop up. Here, type in the name of the notification recipient(s);
  - Select "Platform users" type;
  - In the "User filter" list, select who you want to send notifications to. It can be a single user, a group of users, tenant administrators, etc.;
- - Click "Add";
+ - Click "Add".
 
 A new recipient has been added. Now you can use it to [send a new notification](#send-notification) or create a new [notification rule](#rules).
 
@@ -109,9 +111,9 @@ For *System administrator*:
 
  * *Tenant administrators* - set of tenant administrator users that are selected based on the list of tenants or their tenant profiles;
 
- * *Affected tenant administrators*;
+ * *Affected tenant administrators* - The tenant that is affected by the notification trigger event;
 
- * *System administrators*.
+ * *System administrators*;
 
 For *Tenant administrator*:
 
@@ -146,17 +148,17 @@ first, you need to configure the Slack settings in ThingsBoard using [this guide
 {% include templates/info-banner.md content=difference %}
 
 - Click the "Add recipients" button in the upper right corner of the "Recipients" tab;
-- A new window will pop up. Here, type in the name of the notification recipient(s) you'd like to add.
+- A new window will pop up. Here, type in the name of the notification recipient(s);
 - Select "Slack" type;
 - In the "Slack channel type" field, choose the destination where you'd like your notifications to land: public channel, private channel, or direct message;
-- In the additional "Conversation" field, specify the exact conversation or channel within Slack where you want the notifications to be sent;
-- Click "Add";
+- In the additional "Conversation" field, specify the exact conversation or channel in Slack where you want to send notifications;
+- Click "Add".
 
 {% include images-gallery.html imageCollection="notification-center-recipients-slack" %}
 
 #### Microsoft Teams
 
-Send ThingsBoard notifications as a Microsoft Teams message to a list of your channels.
+Send ThingsBoard notifications as messages to your Microsoft Teams channel.
 
 {% capture difference %}
 **Please note:**
@@ -165,11 +167,11 @@ first, you need to get **webhook URL** for a needed Microsoft Teams channel usin
 {% include templates/info-banner.md content=difference %}
 
 - Click the "Add recipients" button in the upper right corner of the "Recipients" tab;
-- A new window will pop up. Here, type in the name of the notification recipient(s) you'd like to add.
+- A new window will pop up. Here, type in the name of the notification recipient(s);
 - Select "Microsoft Teams" type;
 - Next, you need to specify the *webhook URL* for the Microsoft Teams channel where the notifications will be sent;
-- In the "Channel name" field, specify the channel you want to send notifications;
-- Click "Add";
+- In the "Channel name" field, specify the channel to which you want to send notifications;
+- Click "Add".
 
 {% include images-gallery.html imageCollection="notification-center-recipients-microsoft-teams" %}
 
@@ -345,18 +347,14 @@ Available template parameters contain all parameters available for the [Alarm](#
   * *userLastName* - last name of the user who made the action;
   * *action* - one of: 'assigned', 'unassigned'.
 
-{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
-Let's consider an example with the following event: johndoe@thingsboard.io assigned the 'High Temperature' alarm of the device 'Compressor NM-56' to janesmith@thingsboard.io.
-
-The notification in ThingsBoard may look like this:
-
-![image](/images/user-guide/notifications/templates/templates-alarm-assignment-pe.png)
-{% endif %}
-{% if docsPrefix == null %}
 Let's consider an example with the following event: johndoe@thingsboard.io assigned the 'High Temperature' alarm of the device 'Compressor BJ-66' to janesmith@thingsboard.io.
 
 The notification in ThingsBoard may look like this:
 
+{% if docsPrefix == "pe/" or docsPrefix == "paas/" %}
+![image](/images/user-guide/notifications/templates/templates-alarm-assignment-pe.png)
+{% endif %}
+{% if docsPrefix == null %}
 ![image](/images/user-guide/notifications/templates/templates-alarm-assignment-ce.png)
 {% endif %}
 
@@ -488,7 +486,7 @@ Available template parameters contain all parameters available for the [General]
   * *tenantName* - name of the tenant.
 
 {% if docsPrefix == "pe/" %}
-Let's consider an example with the following event: the tenant created 500 devices with the max allowed number is 1000.
+Let's consider an example with the following event: the tenant created 800 devices with the max allowed number is 1000.
 
 The notification in ThingsBoard may look like this:
 
@@ -515,7 +513,7 @@ Available template parameters contain all parameters available for the [General]
   * *tenantId* - id of the tenant;
   * *tenantName* - name of the tenant.
 
-Let's consider an example with the following event: tenant's devices pushed 8K messages with the max allowed number of 10K.
+Let's consider an example with the following event: the tenant's devices have sent 8000 messages out of 10000.
 
 The notification in ThingsBoard may look like this:
 
@@ -528,7 +526,7 @@ The notification in ThingsBoard may look like this:
 
 #### New platform version
 
-This template is intended to notify tenants about the release of a new version of the Thingsboard platform. Only the system administrator can use this template.
+This template is intended to notify tenants about the release of a new version of the ThingsBoard platform. Only the system administrator can use this template.
 Available template parameters contain all parameters available for the [General](#general) template, plus:
 
   * *latestVersion* - the latest platform version available;
@@ -560,7 +558,7 @@ Available template parameters contain all parameters available for the [General]
 * *tenantId* - id of the tenant;
 * *tenantName* - name of the tenant;
 
-Let's consider an example with the following event: a customer 'Customer A' exceeded rate limit for per-customer REST API requests.
+Let's consider an example with the following event: a customer 'Jane Smith' exceeded rate limit for per-customer REST API requests.
 
 The notification in ThingsBoard may look like this:
 
@@ -903,7 +901,7 @@ See [API usage limit](#api-usage-limit) template for a list of the available tem
 
 #### New platform version
 
-The system administrator uses the "New platform version" rule to notify tenants about the release of a new version of the Thingsboard platform.
+The system administrator uses the "New platform version" rule to notify tenants about the release of a new version of the ThingsBoard platform.
 
 To create a new platform version rule, follow these steps:
 
@@ -918,11 +916,11 @@ To create a new platform version rule, follow these steps:
 
 *Default rule*
 
-The default rule 'New platform version' will notify affected tenant administrators and system administrators when a new version of the Thingsboard platform is released.
+The default rule 'New platform version' will notify affected tenant administrators and system administrators when a new version of the ThingsBoard platform is released.
 
 Template subject: `New version ${latestVersion} is available`
 
-Template message: `Current version is ${currentVersion}. You can upgrade your Thingsboard instance to version ${latestVersion}. `
+Template message: `Current version is ${currentVersion}. You can upgrade your ThingsBoard instance to version ${latestVersion}. `
 
 See [New platform version](#new-platform-version) template for a list of the available template parameters.
 {% endunless %}
