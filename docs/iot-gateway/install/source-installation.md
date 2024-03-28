@@ -10,7 +10,7 @@ To install ThingsBoard Gateway from sources, you should follow steps below:
   
 **1. Install required libraries to the system with apt:**  
 ```bash
-sudo apt install python3-dev python3-pip libglib2.0-dev git 
+sudo apt install python3-dev python3-pip python3-venv libglib2.0-dev git
 ```
 {: .copy-code}
 
@@ -26,21 +26,34 @@ cd thingsboard-gateway
 ```
 {: .copy-code}
 
-**4. Install python requirements:**  
+**4. Create and activate virtual environment:**
 ```bash
-pip3 install -r requirements.txt
+python3 -m venv
+venv source venv/bin/activate
 ```
 {: .copy-code}
 
-**5. Create "logs" folder:**  
+**5. Install python requirements:**  
+```bash
+pip install -r requirements.txt
+```
+{: .copy-code}
+
+**6. Install the library:**
+```bash
+python setup.py install
+```
+{: .copy-code}
+
+**7. Create "logs" folder:**  
 ```bash
 mkdir logs
 ```
 {: .copy-code}
 
-**6. Configure gateway to work with your instance of ThingsBoard platform, using [this guide](/docs/iot-gateway/configuration/)** *or just run to test result of installation such as in the next step.*
+**8. Configure gateway to work with your instance of ThingsBoard platform, using [this guide](/docs/iot-gateway/configuration/)** *or just run to test result of installation such as in the next step.*
    
-**7. Run gateway, to check installation result:**
+**9. Run gateway, to check installation result:**
 ```bash
 python3 ./thingsboard_gateway/tb_gateway.py
 ```
@@ -48,8 +61,7 @@ python3 ./thingsboard_gateway/tb_gateway.py
 
 ### Hot Reloader
 
-If you are using Gateway for development, you can enable Hot Reloader to restart Gateway every time when you edit any
-project file.
+If you are using Gateway for development, you can enable Hot Reloader to restart Gateway every time when you edit any project file.
 
 To run Gateway with Hot Reloader, use the following command:
 ```bash
