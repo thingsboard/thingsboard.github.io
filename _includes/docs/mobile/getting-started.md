@@ -170,7 +170,7 @@ Next, we will walk through step-by-step how to create a Firebase project, and wi
 
 {% capture difference %}
 **Please note:**
-for ThingsBoard CE, only the system administrator can configure mobile settings. For ThingsBoard PE - the tenant can use the system's mobile settings or specify their own.
+for ThingsBoard CE, only the system administrator can configure mobile settings. For ThingsBoard PE - the tenant can use the system administrator's configuration or specify their own.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -206,7 +206,7 @@ So let's get started:
         title: Confirm the generation of your private key by clicking on the "Generate key" button. Keep this key safe, as you&#39;ll need it for the ThingsBoard server-side operations;
     ===
         image: /images/mobile/pe/firebase-new-project-10-ce.png,
-        title: Sign in to your ThingsBoard instance and open the "Settings" page. Navigate to the "Notifications" tab, and in the "Mobile settings" section, uncheck the "Use system mobile settings" box. Here, upload the private key file you generated in Firebase project and click "Save" to finalize the configuration.
+        title: Sign in to ThingsBoard as a system administrator, open the "Settings" page and navigate to the "Notifications" tab. In the "Mobile settings" section, upload the private key file you generated in the Firebase project and click "Save" to finalize the configuration.
 '
 %}
 
@@ -240,7 +240,7 @@ So let's get started:
         title: Confirm the generation of your private key by clicking on the "Generate key" button. Keep this key safe, as you&#39;ll need it for the ThingsBoard server-side operations;
     ===
         image: /images/mobile/pe/firebase-new-project-10-pe.png,
-        title: Sign in to your ThingsBoard instance and open the "Settings" page. Navigate to the “Notifications” tab, and in the "Mobile settings" section, uncheck the "Use system mobile settings" box (if you log in as a tenant). Here, upload the private key file you generated in Firebase project and click "Save" to finalize the configuration.
+        title: Sign in to your ThingsBoard instance and open the "Settings" page. Navigate to the "Notifications" tab, and uncheck the "Use system mobile settings" box (if you log in as a tenant) in the "Mobile settings" section. Here, upload the private key file you generated in the Firebase project and click "Save" to finalize the configuration.
 '
 %}
 
