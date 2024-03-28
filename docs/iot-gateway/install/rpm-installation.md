@@ -7,7 +7,7 @@ title: Install ThingsBoard IoT Gateway as package.
 ### Prerequisites
 
 This guide describes how to install ThingsBoard IoT Gateway on CentOS or RHEL.
-To continue working with this guide, we will need [Python](https://www.python.org) version 3.7 or higher.
+To continue working with this guide, we will need [Python](https://www.python.org){:target="_blank"} version 3.7 or higher.
 
 ### Step 1. Download the installation package
 
