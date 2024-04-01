@@ -43,9 +43,12 @@ This feature, combined with MQTT's publish/subscribe model, enables dynamic and 
 TBMQ utilizes two listeners, WS (WebSocket) and WSS (WebSocket Secure), to facilitate communication over WebSocket. 
 You can refer to the overview of these listeners provided [here](/docs/mqtt-broker/security/#ws-listener).
 
+{% capture difference %}
 **Note:** For existing deployments prior v1.3.0, it's essential to update configuration files to enable WebSocket communication. 
 For instance, in an AWS deployment, additional port(s) must be opened on the AWS Load Balancer. 
 To address this, pull the latest configuration files or update existing ones to incorporate the necessary changes.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 For detailed WebSocket-related parameters, please refer to the provided [link](/docs/mqtt-broker/install/config/#mqtt-listeners-parameters) 
 (locate `LISTENER_WS_ENABLED` and related environment variables).
@@ -104,8 +107,11 @@ Note that global installations should be used judiciously as they can lead to ve
 We suggest consulting the [MQTT.js documentation](https://github.com/mqttjs/MQTT.js?tab=readme-ov-file#api) for comprehensive information on connection options, 
 subscribing to topics, and publishing messages with this library.
 
+{% capture difference %}
 **Note**: The username 'tbmq_websockets_username' corresponds to the default MQTT client credentials integrated into the system, 
 specifically tailored for WebSocket client functionality.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 ```javascript
 const mqtt = require('mqtt');
@@ -173,6 +179,64 @@ Upon successful connection, the client subscribes to the 'sensors/temperature' t
 Following a successful subscription, the client publishes a message to the same topic. 
 Subsequently, upon receiving this message, the client disconnects, effectively closing the connection.
 
+Here is the output from executing the ws_example.js file:
+
+```text
+Connecting client...
+Packet receive... Packet {
+  cmd: 'connack',
+  retain: false,
+  qos: 0,
+  dup: false,
+  length: 2,
+  topic: null,
+  payload: null,
+  sessionPresent: false,
+  returnCode: 0
+}
+Client connected!
+Packet send... {
+  cmd: 'subscribe',
+  subscriptions: [ { topic: 'sensors/temperature', qos: 0 } ],
+  messageId: 64109
+}
+Packet receive... Packet {
+  cmd: 'suback',
+  retain: false,
+  qos: 0,
+  dup: false,
+  length: 3,
+  topic: null,
+  payload: null,
+  granted: [ 0 ],
+  messageId: 64109
+}
+Packet send... {
+  cmd: 'publish',
+  topic: 'sensors/temperature',
+  payload: 'Hello World',
+  qos: 0,
+  retain: false,
+  messageId: 0,
+  dup: false
+}
+Packet receive... Packet {
+  cmd: 'publish',
+  retain: false,
+  qos: 0,
+  dup: false,
+  length: 32,
+  topic: 'sensors/temperature',
+  payload: <Buffer 48 65 6c 6c 6f 20 57 6f 72 6c 64>
+}
+Received message. Payload: Hello World. Topic: sensors/temperature
+Packet send... { cmd: 'disconnect' }
+Closing client...
+```
+
+Moreover, you can utilize the [WebSocket client](/docs/mqtt-broker/user-guide/ui/websocket-client/) to subscribe to the topic and receive messages, allowing you to verify the result.
+![image](/images/mqtt-broker/ws/ws_example.png)
+
 #### Connection details
 
 The URL `ws://localhost:8084/mqtt` is composed of several components, as detailed below:
@@ -195,6 +259,11 @@ On the other hand, self-signed certificates can be used for internal or testing 
 While they provide the same level of encryption as CA-signed certificates, they lack the trust endorsement from a recognized CA. 
 This means clients might receive security warnings when connecting to the server. 
 Self-signed certificates are cost-effective for development or private networks but are not recommended for public or production environments due to trust issues with end users.
+{% capture difference %}
+If you're utilizing a self-signed certificate for the broker, it's crucial to manually include it within the browser's trust store to ensure seamless connectivity.
+This step is essential for [WebSocket client](/docs/mqtt-broker/user-guide/ui/websocket-client/) functionality within the browser environment.
+{% endcapture %}
+{% include templates/info-banner.md content=difference %}
 
 In summary, for maximum security and user trust in TBMQ, it's best to use certificates signed by well-known CAs for public deployments, 
 while self-signed certificates are suitable for internal or development environments.
@@ -214,7 +283,7 @@ As a result, while two-way authentication is technically possible and highly sec
 Therefore, for web-based applications using WSS, one-way SSL authentication with additional layers of security, 
 like API keys or OAuth tokens, is commonly used to ensure secure communication.
 
-In non-browser environments such as Node.js, Python, and Java, 
+In non-browser environments such as Node.js, and programming languages like Python and Java, when utilizing the appropriate MQTT library, 
 two-way authentication functions seamlessly and remains an exceptionally effective security measure.
 
 Let's review the example. Make sure WSS listener is [enabled and configured](/docs/mqtt-broker/security/#wss-listener) properly. 
@@ -225,6 +294,7 @@ Replace `example.com` with your actual DNS and replace `/path/to/your/client/key
 and `/path/to/your/ca/cert/file.pem` with the respective paths to your certificate files.
 
 Alternatively, if you prefer to authenticate via 'Basic' credentials (one-way auth) in the example below, you can set options.username to 'tbmq_websockets_username' instead of 'null'.
+Additionally, you'll need to comment out lines where options are set, such as 'options.key', 'options.cert', and any other related to client certificate lines.
 
 ```javascript
 const mqtt = require('mqtt');
@@ -255,6 +325,7 @@ try {
   options.key = dataKey;
   options.cert = dataCert;
   options.ca = dataCa;
+  options.rejectUnauthorized = true;
 
   console.log('Connecting client...');
 
@@ -306,6 +377,8 @@ Please save the provided code to a file named `wss_example.js` and then execute 
 node wss_example.js
 ```
 {: .copy-code}
+
+Upon successful execution of the wss.example.js file, you should observe a similar output as for the ws_example.js example.
 
 ### Conclusion
 

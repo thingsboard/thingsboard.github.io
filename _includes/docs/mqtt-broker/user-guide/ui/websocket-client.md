@@ -1,8 +1,9 @@
 * TOC
 {:toc}
 
-The TBMQ WebSocket Client is a handy tool accessible through your browser, designed to streamline the debugging process or test MQTT clients for different use cases. 
-Built with the principles of simplicity and ease of use, it introduces an effortless way to manage MQTT clients, subscribe to topics, receive or publish messages.
+The TBMQ WebSocket Client is a convenient tool accessible through your browser, designed to simplify the debugging process or test MQTT clients for different use cases.
+Leveraging the [MQTT over WebSocket](/docs/mqtt-broker/user-guide/mqtt-over-ws/) feature, it's designed with principles of simplicity and ease of use in mind. 
+This tool offers an effortless way to manage MQTT clients, subscribe to topics, and send or receive messages.
 
 TBMQ WebSocket Client leverages the [MQTT.js](https://github.com/mqttjs/MQTT.js) library to facilitate communication between client and broker.
 
