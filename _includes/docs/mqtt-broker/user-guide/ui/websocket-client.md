@@ -18,7 +18,7 @@ It provides an interface where you can conveniently initiate, monitor and termin
 To add a new Connection, please follow these steps:
 
 1. Go to the _WebSocket Client_ page and click the _Select Connection_, represented by the _expand more_ icon.
-2. Click on the "Add new connection" button. Fill in the necessary fields to create and connect an MQTT client, then click _Connect_.
+2. Click on the _Add new connection_ button. Fill in the necessary fields to create and connect an MQTT client, then click _Connect_.
 
 {% include images-gallery.html imageCollection="ws-connection-add" %}
 
@@ -169,7 +169,7 @@ Each row in this table corresponds to a single published or received message and
 1. **Type**. Identifies whether a message was Received or Published.
 2. **Topic**. Lists the topic associated with the message.
 3. **QoS**. Displays the Quality of Service level associated with the message.
-4. **Retain**. Shows whether the message has been marked as "Retain" by the sender.
+4. **Retain**. Shows whether the message has been marked as _Retain_ by the sender.
 5. **Payload**. Lays out the preview of the content embedded within the message.
    If your message contains a payload, you can inspect it in detail by clicking on the Info icon button. This action will open a dialog that will not only allow you to read the payload but also gives you the option to copy it to your clipboard if needed.
 6. **Properties** icon button extends access to further settings contained within a message, such as User properties, Content type, Topic Alias and other.
