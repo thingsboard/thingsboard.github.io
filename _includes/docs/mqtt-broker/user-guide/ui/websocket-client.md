@@ -2,7 +2,8 @@
 {:toc}
 
 The TBMQ WebSocket Client is a browser-accessible tool aimed at simplifying the debugging process and testing of MQTT clients across various scenarios. 
-It prioritizes simplicity and user-friendliness, offering seamless management of MQTT clients, subscription to topics, and message reception or publication.
+Leveraging the [MQTT over WebSocket](/docs/mqtt-broker/user-guide/mqtt-over-ws/) feature, it's designed with principles of simplicity and ease of use in mind.
+It offers seamless management of MQTT clients, subscription to topics, and message reception or publication.
 
 TBMQ WebSocket Client utilizes the [MQTT.js](https://github.com/mqttjs/MQTT.js) library for communication between client and broker.
 
@@ -193,7 +194,10 @@ In order to successfully publish a message using TBMQ, please make sure that:
 
 Here is a list of basic options for publishing a message, along with brief explanations of their usage:
 * **Topic**. The MQTT topic to which your message will be published.
-* **QoS**. Quality of Service level guaranteeing the delivery of your message.
+* **QoS**. Quality of Service level guaranteeing the delivery of your message:
+  * 0 - At most once (the message may or may not be delivered);
+  * 1 - At least once (the message will be delivered, but duplicates can occur);
+  * 2 - Exactly once (the message will be delivered exactly once).
 * **Retain**. When set to true, the broker stores the last message and its QoS for this topic. All future subscribers for a topic will receive the last retained message for that topic.
 * **Color**. Used to mark the published messages in the messages table for easier recognition.
 * **Format**. Used to specify formatting for displaying the message.
