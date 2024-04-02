@@ -32,7 +32,7 @@ This ensures that the changes you make are applied instantly, providing seamless
 
 In order to modify your WebSocket Client connection, please follow these steps:
 1. Go to the _WebSocket Client_ page and click on the arrow icon to expand the list of connections.
-2. Click on the pencil icon of the connection you wish to edit.
+2. Click on the edit icon of the connection you wish to change.
 3. Make changes and click Connect to save changes.
 
 {% include images-gallery.html imageCollection="ws-connection-edit" %}
@@ -128,7 +128,7 @@ In order to add Subscription please follow next steps:
 
 #### Edit subscription
 
-To modify a subscription, select the Pencil icon located in the respective row to open the dialog _Edit subscription_.
+To modify a subscription, select the edit icon located in the respective row to open the dialog _Edit subscription_.
 After making necessary changes,  remember to confirm by clicking on the _Save_ button.
 
 Please note that if you modify an existing subscription while the client is connected, TBMQ will first unsubscribe from the existing topic before subscribing to the updated one. 
@@ -140,7 +140,7 @@ After successfully resubscribing, the client will begin receiving messages publi
 
 Below are the steps to remove a subscription:
 1. Identify the specific subscription in the Subscriptions list. Click on the delete icon situated in the corresponding row.
-2. A confirmation prompt will appear. To complete the deletion process, click 'Yes'.
+2. A confirmation prompt will appear. To complete the deletion process, click _Yes_.
    
 {% include images-gallery.html imageCollection="ws-subscription-delete" %}
 
@@ -160,6 +160,8 @@ If false, messages have the RETAIN flag set to 0.
 * **No local**. When set to true, the broker will not forward messages from this client back to the connection on which this subscription was made.
 * **Color**. Color is used for easier differentiation of the messages in the messages table. Can be changed.
 
+![image](/images/mqtt-broker/user-guide/ui/ws-subscription-overview.png)
+
 ### Messages
 
 The Messages table functions as a message log, displaying the most recent messages for your review and reference. 
@@ -175,7 +177,7 @@ Each row in this table corresponds to a single published or received message and
 {% include images-gallery.html imageCollection="ws-table-msg" %}
 
 #### Messages filtering
-Users of TBMQ have the ability to apply filters to messages using several parameters. To filter messages by:
+The table messages can be filtered by:
 * **Type 'All/Received/Published'** - click on the type label in the header of the Messages table.
 * **Topic/QoS/Retain** - click on the _filter_ icon next to _Clear messages_ button.
 
@@ -189,11 +191,6 @@ In order to successfully publish a message using TBMQ, please make sure that:
 * **Topic is specified**. The topic might not be specified in case the Topic Alias feature is used.
 * **Message is valid**, if selected JSON format.
 
-After filling out the necessary information and settings, locate and **click on the Send icon** to publish your message. 
-The message will now be dispatched to the broker and relayed to all clients who are subscribed to the given topic.
-
-![image](/images/mqtt-broker/user-guide/ui/ws-publish-msg.png)
-
 Here is a list of basic options for publishing a message, along with brief explanations of their usage:
 * **Topic**. The MQTT topic to which your message will be published.
 * **QoS**. Quality of Service level guaranteeing the delivery of your message.
@@ -203,7 +200,10 @@ Here is a list of basic options for publishing a message, along with brief expla
     * JSON. Has validation of the JSON format of the message content.
     * String. Has no validation.
 
-![image](/images/mqtt-broker/user-guide/ui/ws-publish-basic-params.png)
+After filling out the necessary information and settings, locate and **click on the Send icon** to publish your message.
+The message will now be dispatched to the broker and relayed to all clients who are subscribed to the given topic.
+
+![image](/images/mqtt-broker/user-guide/ui/ws-publish-msg.png)
 
 For MQTT clients utilizing **MQTT Version 5**, there are also additional parameters available to further customize your message publishing experience. 
 The combination of these features provides a comprehensive and flexible environment for MQTT message handling.
