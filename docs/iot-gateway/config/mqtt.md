@@ -34,172 +34,224 @@ Then, connector will subscribe to a list of topics using topic filters from the 
 
 {% capture mqttConf %}
 {
-  "broker": {
-    "name":"Default Local Broker",
-    "host":"192.168.1.100",
-    "port":1883,
-    "security": {
-      "type": "basic",
-      "username": "user",
-      "password": "password"
-    }
-  },
-  "mapping": [
-    {
-      "topicFilter": "sensor/data",
-      "converter": {
-        "type": "json",
-        "deviceNameJsonExpression": "${serialNumber}",
-        "deviceTypeJsonExpression": "${sensorType}",
-        "timeout": 60000,
-        "attributes": [
-          {
-            "type": "string",
-            "key": "model",
-            "value": "${sensorModel}"
-          },
-          {
-            "type": "string",
-            "key": "${sensorModel}",
-            "value": "on"
-          }
-        ],
-        "timeseries": [
-          {
-            "type": "integer",
-            "key": "temperature",
-            "value": "${temp}"
-          },
-          {
-            "type": "integer",
-            "key": "humidity",
-            "value": "${hum}"
-          },
-          {
-            "type": "string",
-            "key": "combine",
-            "value": "${hum}:${temp}"
-          }
-        ]
+   "broker":{
+      "name":"Default Local Broker",
+      "host":"127.0.0.1",
+      "port":1883,
+      "clientId":"ThingsBoard_gateway",
+      "version":5,
+      "maxMessageNumberPerWorker":10,
+      "maxNumberOfWorkers":100,
+      "sendDataOnlyOnChange":false,
+      "security":{
+         "type":"basic",
+         "username":"user",
+         "password":"password"
       }
-    },
-    {
-      "topicFilter": "sensor/+/data",
-      "converter": {
-        "type": "json",
-        "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/data)",
-        "deviceTypeTopicExpression": "Thermometer",
-        "timeout": 60000,
-        "attributes": [
-          {
-            "type": "string",
-            "key": "model",
-            "value": "${sensorModel}"
-          }
-        ],
-        "timeseries": [
-          {
-            "type": "integer",
-            "key": "temperature",
-            "value": "${temp}"
-          },
-          {
-            "type": "integer",
-            "key": "humidity",
-            "value": "${hum}"
-          }
-        ]
+   },
+   "dataMapping":[
+      {
+         "topicFilter":"sensor/data",
+         "subscriptionQos":1,
+         "converter":{
+            "type":"json",
+            "deviceInfo":{
+               "deviceNameExpressionSource":"message",
+               "deviceNameExpression":"${serialNumber}",
+               "deviceProfileExpressionSource":"message",
+               "deviceProfileExpression":"${sensorType}"
+            },
+            "sendDataOnlyOnChange":false,
+            "timeout":60000,
+            "attributes":[
+               {
+                  "type":"string",
+                  "key":"model",
+                  "value":"${sensorModel}"
+               },
+               {
+                  "type":"string",
+                  "key":"${sensorModel}",
+                  "value":"on"
+               }
+            ],
+            "timeseries":[
+               {
+                  "type":"string",
+                  "key":"temperature",
+                  "value":"${temp}"
+               },
+               {
+                  "type":"double",
+                  "key":"humidity",
+                  "value":"${hum}"
+               },
+               {
+                  "type":"string",
+                  "key":"combine",
+                  "value":"${hum}:${temp}"
+               }
+            ]
+         }
+      },
+      {
+         "topicFilter":"sensor/+/data",
+         "subscriptionQos":1,
+         "converter":{
+            "type":"json",
+            "deviceInfo":{
+               "deviceNameExpressionSource":"topic",
+               "deviceNameExpression":"(?<=sensor/)(.*?)(?=/data)",
+               "deviceProfileExpressionSource":"constant",
+               "deviceProfileExpression":"Thermometer"
+            },
+            "sendDataOnlyOnChange":false,
+            "timeout":60000,
+            "attributes":[
+               {
+                  "type":"string",
+                  "key":"model",
+                  "value":"${sensorModel}"
+               }
+            ],
+            "timeseries":[
+               {
+                  "type":"double",
+                  "key":"temperature",
+                  "value":"${temp}"
+               },
+               {
+                  "type":"string",
+                  "key":"humidity",
+                  "value":"${hum}"
+               }
+            ]
+         }
+      },
+      {
+         "topicFilter":"sensor/raw_data",
+         "subscriptionQos":1,
+         "converter":{
+            "type":"bytes",
+            "deviceInfo":{
+               "deviceNameExpressionSource":"message",
+               "deviceNameExpression":"[0:4]",
+               "deviceProfileExpressionSource":"constant",
+               "deviceProfileExpression":"default"
+            },
+            "sendDataOnlyOnChange":false,
+            "timeout":60000,
+            "attributes":[
+               {
+                  "type":"raw",
+                  "key":"rawData",
+                  "value":"[:]"
+               }
+            ],
+            "timeseries":[
+               {
+                  "type":"raw",
+                  "key":"temp",
+                  "value":"[4:]"
+               }
+            ]
+         }
+      },
+      {
+         "topicFilter":"custom/sensors/+",
+         "subscriptionQos":1,
+         "converter":{
+            "type":"custom",
+            "extension":"CustomMqttUplinkConverter",
+            "cached":true,
+            "extensionConfig":{
+               "temperature":2,
+               "humidity":2,
+               "batteryLevel":1
+            }
+         }
       }
-    },
-    {
-      "topicFilter": "sensor/raw_data",
-      "converter": {
-        "type": "bytes",
-        "deviceNameExpression": "[0:4]",
-        "deviceTypeExpression": "default",
-        "timeout": 60000,
-        "attributes": [
-          {
-            "type": "raw",
-            "key": "rawData",
-            "value": "[:]"
-          }
-        ],
-        "timeseries": [
-          {
-            "type": "raw",
-            "key": "temp",
-            "value": "[4:]"
-          }
-        ]
-      }
-    },
-    {
-      "topicFilter": "custom/sensors/+",
-      "converter": {
-        "type": "custom",
-        "extension": "CustomMqttUplinkConverter",
-        "extension-config": {
-            "temperatureBytes" : 2,
-            "humidityBytes" :  2,
-            "batteryLevelBytes" : 1
-        }
-      }
-    }
-  ],
-  "connectRequests": [
-    {
-      "topicFilter": "sensor/connect",
-      "deviceNameJsonExpression": "${serialNumber}"
-    },
-    {
-      "topicFilter": "sensor/+/connect",
-      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/connect)"
-    }
-  ],
-  "disconnectRequests": [
-    {
-      "topicFilter": "sensor/disconnect",
-      "deviceNameJsonExpression": "${serialNumber}"
-    },
-    {
-      "topicFilter": "sensor/+/disconnect",
-      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/disconnect)"
-    }
-  ],
-  "attributeRequests": [
-    {
-      "retain": false,
-      "topicFilter": "v1/devices/me/attributes/request",
-      "topicExpression": "${serialNumber}",
-      "valueExpression": "${sensorModel}"
-    }
-  ],
-  "attributeUpdates": [
-    {
-      "retain": false,
-      "deviceNameFilter": ".*",
-      "attributeFilter": "uploadFrequency",
-      "topicExpression": "sensor/${deviceName}/${attributeKey}",
-      "valueExpression": "{\"${attributeKey}\":\"${attributeValue}\"}"
-    }
-  ],
-  "serverSideRpc": [
-    {
-      "deviceNameFilter": ".*",
-      "methodFilter": "echo",
-      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
-      "responseTopicExpression": "sensor/${deviceName}/response/${methodName}/${requestId}",
-      "responseTimeout": 10000,
-      "valueExpression": "${params}"
-    },
-    {
-      "deviceNameFilter": ".*",
-      "methodFilter": "no-reply",
-      "requestTopicExpression": "sensor/${deviceName}/request/${methodName}/${requestId}",
-      "valueExpression": "${params.hum}::${params.temp}"
-    }
-  ]
+   ],
+   "requestsMapping":{
+      "connectRequests":[
+         {
+            "topicFilter":"sensor/connect",
+            "deviceInfo":{
+               "deviceNameExpressionSource":"message",
+               "deviceNameExpression":"${serialNumber}",
+               "deviceProfileExpressionSource":"constant",
+               "deviceProfileExpression":"Thermometer"
+            }
+         },
+         {
+            "topicFilter":"sensor/+/connect",
+            "deviceInfo":{
+               "deviceNameExpressionSource":"topic",
+               "deviceNameExpression":"(?<=sensor/)(.*?)(?=/connect)",
+               "deviceProfileExpressionSource":"constant",
+               "deviceProfileExpression":"Thermometer"
+            }
+         }
+      ],
+      "disconnectRequests":[
+         {
+            "topicFilter":"sensor/disconnect",
+            "deviceInfo":{
+               "deviceNameExpressionSource":"message",
+               "deviceNameExpression":"${serialNumber}"
+            }
+         },
+         {
+            "topicFilter":"sensor/+/disconnect",
+            "deviceInfo":{
+               "deviceNameExpressionSource":"topic",
+               "deviceNameExpression":"(?<=sensor/)(.*?)(?=/connect)"
+            }
+         }
+      ],
+      "attributeRequests":[
+         {
+            "retain":false,
+            "topicFilter":"v1/devices/me/attributes/request",
+            "deviceInfo":{
+               "deviceNameExpressionSource":"message",
+               "deviceNameExpression":"${serialNumber}"
+            },
+            "attributeNameExpressionSource":"message",
+            "attributeNameExpression":"${versionAttribute}, ${pduAttribute}",
+            "topicExpression":"devices/${deviceName}/attrs",
+            "valueExpression":"${attributeKey}: ${attributeValue}"
+         }
+      ],
+      "attributeUpdates":[
+         {
+            "retain":true,
+            "deviceNameFilter":".*",
+            "attributeFilter":"firmwareVersion",
+            "topicExpression":"sensor/${deviceName}/${attributeKey}",
+            "valueExpression":"{\"${attributeKey}\":\"${attributeValue}\"}"
+         }
+      ],
+      "serverSideRpc":[
+         {
+            "type":"twoWay",
+            "deviceNameFilter":".*",
+            "methodFilter":"echo",
+            "requestTopicExpression":"sensor/${deviceName}/request/${methodName}/${requestId}",
+            "responseTopicExpression":"sensor/${deviceName}/response/${methodName}/${requestId}",
+            "responseTopicQoS":1,
+            "responseTimeout":10000,
+            "valueExpression":"${params}"
+         },
+         {
+            "type":"oneWay",
+            "deviceNameFilter":".*",
+            "methodFilter":"no-reply",
+            "requestTopicExpression":"sensor/${deviceName}/request/${methodName}/${requestId}",
+            "valueExpression":"${params}"
+         }
+      ]
+   }
 }
 {% endcapture %}
 {% include code-toggle.liquid code=mqttConf params="conf|.copy-code.expandable-20" %}
@@ -207,14 +259,14 @@ Then, connector will subscribe to a list of topics using topic filters from the 
 ### Section "broker"
 
 | **Parameter**        | **Default value**        | **Description**                                                                             |
-|:---------------------|:-------------------------|---------------------------------------------------------------------------------------------
+|:---------------------|:-------------------------|---------------------------------------------------------------------------------------------|
 | name                 | **Default Local Broker** | Broker name for logs and saving to persistent devices.                                      |
 | host                 | **localhost**            | Mqtt broker hostname or ip address.                                                         |
 | port                 | **1883**                 | Mqtt port on the broker.                                                                    |
 | clientId             | **ThingsBoard_gateway**  | This is the client ID. It must be unique for each session.                                  |
 | version              | **5**                    | MQTT protocol version.                                                                      |
 | sendDataOnlyOnChange | **false**                | Sending only if data changed from last check, if not – data will be sent after every check. |
-| ---                  
+| ---                  |                          |                                                                                             |
 
 #### Subsection "security"
 
@@ -227,15 +279,14 @@ Certificates<small>For advanced security</small>%,%tls%,%templates/iot-gateway/m
 
 {% include content-toggle.liquid content-toggle-id="mqttConnectorCredentialsConfig" toggle-spec=mqttconnectorsecuritytogglespec %}  
 
-### Section "mapping"
+### Section "dataMapping"
 
-This configuration section contains an array of topics that the gateway will subscribe to after connecting to the broker, along with settings about processing incoming messages (converter)..
+This configuration section contains an array of topics that the gateway will subscribe to after connecting to the broker, along with settings about processing incoming messages (converter).
 
-| **Parameter** | **Default value**|**Description**|
-|:--------------|:----------------|-
-| topicFilter   | **sensor/data** | Topic address for subscribing. |
-| ---           
-
+| **Parameter** | **Default value** | **Description**                |
+|:--------------|:------------------|--------------------------------|
+| topicFilter   | **sensor/data**   | Topic address for subscribing. |
+| ---           |                   |                                |
 
 The **topicFilter** supports special symbols: '#' and '+', allowing to subscribe to multiple topics.
 
@@ -313,8 +364,12 @@ Also, you can combine values from MQTT message in attributes, telemetry and serv
       "topicFilter": "sensor/data",
       "converter": {
         "type": "json",
-        "deviceNameJsonExpression": "${serialNumber}",
-        "deviceTypeJsonExpression": "${sensorType}",
+        "deviceInfo":{
+            "deviceNameExpressionSource":"message",
+            "deviceNameExpression":"${serialNumber}",
+            "deviceProfileExpressionSource":"message",
+            "deviceProfileExpression":"${sensorType}"
+        },
         "timeout": 60000,
         "attributes": [],
         "timeseries": [
@@ -371,7 +426,16 @@ The device will be created and displayed in ThingsBoard based on the passed para
 ![image](/images/gateway/mqtt-created-device-2.png)
 {: refdef}
 
-### Section "connectRequests"
+### Section "requestsMapping"
+
+This section of the configuration outlines an array that includes all the supported requests for both the gateway and ThingsBoard:
+- connect requests;
+- disconnect requests;
+- attribute requests;
+- attribute updates;
+- RPC commands;
+
+#### Section "connectRequests"
 
 ThingsBoard allows sending RPC commands and notifications about device attribute updates to the device.
 But in order to send them, the platform needs to know if the target device is connected and what gateway or session is used to connect the device at the moment.
@@ -380,32 +444,50 @@ If your device just connects to MQTT broker and waits for commands/updates, you 
  
 **1. Name in a message from broker:**
 
-| **Parameter**                 | **Default value**                    | **Description**                                                                                   |
-|:-|:-------------------------------------|-
-| topicFilter                   | **sensor/connect**                   | Topic address on the broker, where the broker sends information about new connected devices.      |
-| deviceNameJsonExpression      | **${serialNumber}**                  | JSON-path expression, for looking the new device name.                                            |
-|---
+| **Parameter**                     | **Default value**   | **Description**                                                                                        |
+|:----------------------------------|:--------------------|--------------------------------------------------------------------------------------------------------|
+| topicFilter                       | **sensor/connect**  | Topic address on the broker, where the broker sends information about new connected devices.           |
+| deviceInfo                        |                     | JSON object that describe how to parce device name and device profile.                                 |
+| ... deviceNameExpressionSource    | **message**         | Specifies the source from which the device name will be extracted ("message", "topic", "constant").    |
+| ... deviceNameExpression          | **${serialNumber}** | Contains the expression used to extract the device name from the specified source.                     |
+| ... deviceProfileExpressionSource | **constant**        | Specifies the source from which the device profile will be extracted ("message", "topic", "constant"). |
+| ... deviceProfileExpression       | **Thermometer**     | Contains the expression used to extract the device profile from the specified source.                  |
+| ---                               |                     |                                                                                                        |
 
 **2. Name in topic address:**
 
-| **Parameter**                 | **Default value**                    | **Description**                                                                                   |
-|:-|:-------------------------------------|-
-| topicFilter                   | **sensor/+/connect**                 | Topic address on the broker, where the broker sends information about new connected devices.      |
-| deviceNameTopicExpression     | **(?<=sensor\/)(.\*?)(?=\/connect)** | Regular expression for looking the device name in topic path.                                     |
-|---
+| **Parameter**                     | **Default value**    | **Description**                                                                                        |
+|:----------------------------------|:---------------------|--------------------------------------------------------------------------------------------------------|
+| topicFilter                       | **sensor/+/connect** | Topic address on the broker, where the broker sends information about new connected devices.           |
+| deviceInfo                        |                      | JSON object that describe how to parce device name and device profile.                                 |
+| ... deviceNameExpressionSource    | **message**          | Specifies the source from which the device name will be extracted ("message", "topic", "constant").    |
+| ... deviceNameExpression          | **${serialNumber}**  | Contains the expression used to extract the device name from the specified source.                     |
+| ... deviceProfileExpressionSource | **constant**         | Specifies the source from which the device profile will be extracted ("message", "topic", "constant"). |
+| ... deviceProfileExpression       | **Thermometer**      | Contains the expression used to extract the device profile from the specified source.                  |
+| ---                               |                      |                                                                                                        |
 
 This section in configuration looks like:
 ```json
   "connectRequests": [
-    {
-      "topicFilter": "sensor/connect",
-      "deviceNameJsonExpression": "${serialNumber}"
-    },
-    {
-      "topicFilter": "sensor/+/connect",
-      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/connect)"
-    }
-  ]
+      {
+         "topicFilter": "sensor/connect",
+         "deviceInfo": {
+            "deviceNameExpressionSource": "message",
+            "deviceNameExpression": "${serialNumber}",
+            "deviceProfileExpressionSource": "constant",
+            "deviceProfileExpression": "Thermometer"
+         }
+      },
+      {
+         "topicFilter": "sensor/+/connect",
+         "deviceInfo": {
+            "deviceNameExpressionSource": "topic",
+            "deviceNameExpression": "(?<=sensor/)(.*?)(?=/connect)",
+            "deviceProfileExpressionSource": "constant",
+            "deviceProfileExpression": "Thermometer"
+         }
+      }
+   ]
 ```
 
 In this case the following messages are valid:
@@ -438,7 +520,7 @@ Your ThingsBoard instance will get information from the broker about last connec
 ![image](/images/gateway/mqtt-connect-device.png)
 {: refdef}
 
-### Section "disconnectRequest"
+#### Section "disconnectRequest"
 
 This configuration section is optional.  
 Configuration, provided in this section will be used to get information from the broker about disconnecting device.  
@@ -446,33 +528,43 @@ If your device just disconnects from MQTT broker and waits for commands/updates,
  
 **1. Name in a message from broker:**
 
-| **Parameter**                 | **Default value**                    | **Description**                                                                                   |
-|:-|:-------------------------------------|-
-| topicFilter                   | **sensor/disconnect**                | Topic address on the broker, where the broker sends information about disconnected devices.       |
-| deviceNameJsonExpression      | **${serialNumber}**                  | JSON-path expression, for looking the new device name.                                            |
-|---
+| **Parameter**                  | **Default value**     | **Description**                                                                                     |
+|:-------------------------------|:----------------------|-----------------------------------------------------------------------------------------------------|
+| topicFilter                    | **sensor/disconnect** | Topic address on the broker, where the broker sends information about disconnected devices.         |
+| deviceInfo                     |                       | JSON object that describe how to parce device name and device profile.                              |
+| ... deviceNameExpressionSource | **message**           | Specifies the source from which the device name will be extracted ("message", "topic", "constant"). |
+| ... deviceNameExpression       | **${serialNumber}**   | Contains the expression used to extract the device name from the specified source.                  |
+| ---                            |                       |                                                                                                     |
 
 **2. Name in topic address:**
 
-| **Parameter**                 | **Default value**                    | **Description**                                                                                   |
-|:-|:-------------------------------------|-
-| topicFilter                   | **sensor/+/disconnect**              | Topic address on the broker, where the broker sends information about disconnected devices.       |
-| deviceNameTopicExpression     | **(?<=sensor\/)(.\*?)(?=\/connect)** | Regular expression for looking the device name in topic path.                                     |
-|---
+| **Parameter**                  | **Default value**                    | **Description**                                                                                     |
+|:-------------------------------|:-------------------------------------|-----------------------------------------------------------------------------------------------------|
+| topicFilter                    | **sensor/+/disconnect**              | Topic address on the broker, where the broker sends information about disconnected devices.         |
+| deviceInfo                     |                                      | JSON object that describe how to parce device name and device profile.                              |
+| ... deviceNameExpressionSource | **topic**                            | Specifies the source from which the device name will be extracted ("message", "topic", "constant"). |
+| ... deviceNameExpression       | **(?<=sensor\/)(.\*?)(?=\/connect)** | Contains the expression used to extract the device name from the specified source.                  |
+| ---                            |                                      |                                                                                                     |
 
 This section in configuration file looks like:  
 
 ```json
-  "disconnectRequests": [
-    {
-      "topicFilter": "sensor/disconnect",
-      "deviceNameJsonExpression": "${serialNumber}"
-    },
-    {
-      "topicFilter": "sensor/+/disconnect",
-      "deviceNameTopicExpression": "(?<=sensor\/)(.*?)(?=\/disconnect)"
-    }
-  ]
+   "disconnectRequests": [
+      {
+         "topicFilter": "sensor/disconnect",
+         "deviceInfo": {
+            "deviceNameExpressionSource":"message",
+            "deviceNameExpression":"${serialNumber}"
+         }
+      },
+      {
+         "topicFilter": "sensor/+/disconnect",
+         "deviceInfo": {
+            "deviceNameExpressionSource": "topic",
+            "deviceNameExpression": "(?<=sensor/)(.*?)(?=/connect)"
+         }
+      }
+   ]
 ```
 
 In this case the following messages are valid:
@@ -505,54 +597,63 @@ Your ThingsBoard instance will get information from the broker about last discon
 ![image](/images/gateway/mqtt-disconnect-device.png)
 {: refdef}
 
-### Section "attributeRequests"
+#### Section "attributeRequests"
 
 This configuration section is optional.
 
 In order to request client-side or shared device attributes to ThingsBoard server node, Gateway allows sending 
 attribute requests.
 
-| **Parameter**                 | **Default value**                                     | **Description**                                                       |
-|:-|:-|-
-| retain                        | **false**                                             | If set to true, the message will be set as the "last known good"/retained message for the topic.    |
-| topicFilter                   | **v1/devices/me/attributes/request**                  | Topic for attribute request |
-| deviceNameJsonExpression      | **${serialNumber}**                                   | JSON-path expression, for looking the device name in topicFilter message |
-| attributeNameJsonExpression   | **${versionAttribute}**                               | JSON-path expression, for looking the attribute name in topicFilter message |
-| topicExpression               | **devices/${deviceName}/attrs**                       | JSON-path expression, for formatting reply topic |
-| valueExpression               | **${attributeKey}: ${attributeValue}**                | Message that will be sent to topic from topicExpression |
-|---
+| **Parameter**                  | **Default value**                      | **Description**                                                                                     |
+|:-------------------------------|:---------------------------------------|-----------------------------------------------------------------------------------------------------|
+| retain                         | **false**                              | If set to true, the message will be set as the "last known good"/retained message for the topic.    |
+| topicFilter                    | **v1/devices/me/attributes/request**   | Topic for attribute request.                                                                        |
+| deviceInfo                     |                                        | JSON object that describe how to parce device name and device profile.                              |
+| ... deviceNameExpressionSource | **message**                            | Specifies the source from which the device name will be extracted ("message", "topic", "constant"). |
+| ... deviceNameExpression       | **${serialNumber}**                    | Contains the expression used to extract the device name from the specified source.                  |
+| attributeNameJsonExpression    | **${versionAttribute}**                | JSON-path expression, for looking the attribute name in topicFilter message.                        |
+| topicExpression                | **devices/${deviceName}/attrs**        | JSON-path expression, for formatting reply topic.                                                   |
+| valueExpression                | **${attributeKey}: ${attributeValue}** | Message that will be sent to topic from topicExpression.                                            |
+| ---                            |                                        |                                                                                                     |
 
 This section in configuration file looks like:
 ```json
-"attributeRequests": [
-  {
-    "retain": false,
-    "topicFilter": "v1/devices/me/attributes/request",
-    "deviceNameJsonExpression": "${serialNumber}",
-    "attributeNameJsonExpression": "${versionAttribute}",
-    "topicExpression": "devices/${deviceName}/attrs",
-    "valueExpression": "${attributeKey}: ${attributeValue}"
-  }
-]
+   "attributeRequests": [
+      {
+         "retain": false,
+         "topicFilter": "v1/devices/me/attributes/request",
+         "deviceInfo": {
+            "deviceNameExpressionSource": "message",
+            "deviceNameExpression": "${serialNumber}"
+         },
+         "attributeNameExpressionSource": "message",
+         "attributeNameExpression": "${versionAttribute}",
+         "topicExpression": "devices/${deviceName}/attrs",
+         "valueExpression": "${attributeKey}: ${attributeValue}"
+      }
+   ]
 ```
 
 Also, you can request multiple attributes at once. Simply add one more JSON-path to 
 attributeNameExpression parameter. For example, we want to request two shared attributes in one request, our config 
 will look like:
 ```json
-"attributeRequests": [
-  {
-    "retain": false,
-    "topicFilter": "v1/devices/me/attributes/request",
-    "deviceNameJsonExpression": "${serialNumber}",
-    "attributeNameJsonExpression": "${versionAttribute}, ${pduAttribute}",
-    "topicExpression": "devices/${deviceName}/attrs",
-    "valueExpression": "${attributeKey}: ${attributeValue}"
-  }
-]
+   "attributeRequests": [
+     {
+       "retain": false,
+       "topicFilter": "v1/devices/me/attributes/request",
+       "deviceInfo": {
+          "deviceNameExpressionSource": "message",
+          "deviceNameExpression": "${serialNumber}"
+       },
+       "attributeNameJsonExpression": "${versionAttribute}, ${pduAttribute}",
+       "topicExpression": "devices/${deviceName}/attrs",
+       "valueExpression": "${attributeKey}: ${attributeValue}"
+     }
+   ]
 ```
 
-### Section "attributeUpdates"
+#### Section "attributeUpdates"
 
 This configuration section is optional.  
 ThingsBoard allows to provision device attributes and fetch some of them from the device application.
@@ -561,15 +662,14 @@ See [user guide](/docs/user-guide/attributes/) for more details.
 
 The "**attributeRequests**" configuration allows configuring the format of the corresponding attribute request and response messages. 
 
-| **Parameter**                 | **Default value**                                   | **Description**                                                                                  |
-|:-|:----------------------------------------------------|--------------------------------------------------------------------------------------------------
-| retain                        | **false**                                           | If set to true, the message will be set as the "last known good"/retained message for the topic. |
-| deviceNameFilter              | **.\***                                             | Regular expression device name filter, used to determine, which function to execute.             |
-| attributeFilter               | **uploadFrequency**                                 | Regular expression attribute name filter, used to determine, which function to execute.          |
-| topicExpression               | **sensor/${deviceName}/${attributeKey}**            | JSON-path expression used for creating topic address to send a message.                          |
-| valueExpression               | **{\\"${attributeKey}\\":\\"${attributeValue}\\"}** | JSON-path expression used for creating the message data that will send to topic.                 |
-|---
-
+| **Parameter**    | **Default value**                                   | **Description**                                                                                  |
+|:-----------------|:----------------------------------------------------|--------------------------------------------------------------------------------------------------|
+| retain           | **false**                                           | If set to true, the message will be set as the "last known good"/retained message for the topic. |
+| deviceNameFilter | **.\***                                             | Regular expression device name filter, used to determine, which function to execute.             |
+| attributeFilter  | **uploadFrequency**                                 | Regular expression attribute name filter, used to determine, which function to execute.          |
+| topicExpression  | **sensor/${deviceName}/${attributeKey}**            | JSON-path expression used for creating topic address to send a message.                          |
+| valueExpression  | **{\\"${attributeKey}\\":\\"${attributeValue}\\"}** | JSON-path expression used for creating the message data that will send to topic.                 |
+| ---              |                                                     |                                                                                                  |
 
 This section in configuration file looks like:  
 
@@ -625,21 +725,21 @@ Broker received new message from the ThingsBoard server about updating attribute
 ![image](/images/gateway/mqtt-mosquitto-sub-get-1.png)
 {: refdef}
 
-### Server side RPC commands
+#### Server side RPC commands
 
 ThingsBoard allows sending [RPC commands](/docs/user-guide/rpc/) to the device that is connected to ThingsBoard directly or via Gateway.
  
 Configuration, provided in this section is used for sending RPC requests from ThingsBoard to device.
 
 | **Parameter**           | **Default value**                                            | **Description**                                                                                                                                |
-|:------------------------|:-------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------
+|:------------------------|:-------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|
 | deviceNameFilter        | **.\***                                                      | Regular expression device name filter, is used to determine, which function to execute.                                                        |
 | methodFilter            | **echo**                                                     | Regular expression method name filter, is used to determine, which function to execute.                                                        |
 | requestTopicExpression  | **sensor/${deviceName}/request/${methodName}/${requestId}**  | JSON-path expression, is used for creating topic address to send RPC request.                                                                  |
 | responseTopicExpression | **sensor/${deviceName}/response/${methodName}/${requestId}** | JSON-path expression, is used for creating topic address to subscribe for response message.                                                    |
 | responseTimeout         | **10000**                                                    | Value in milliseconds. If there is no response within this period after sending the request, gateway will unsubscribe from the response topic. |
 | valueExpression         | **${params}**                                                | JSON-path expression, is used for creating data for sending to broker.                                                                         |
-| ---                     
+| ---                     |                                                              |                                                                                                                                                |
 
 {% capture methodFilterOptions %}
 There are 2 options for RPC request:  
