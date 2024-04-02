@@ -326,44 +326,6 @@ tooltiptag:
     6:
         image: /images/user-guide/ui/widgets/actions/maps/tooltiptag-7-pe.png
 
-mob:
-    0:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-1-pe.png
-    1:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-2-pe.png
-    2:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-3-pe.png
-
-mob-layout-1:
-    1:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-4-pe.png
-    2:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-5-pe.png
-    3:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-6-pe.png
-    4:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-7-pe.png
-    5:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-8-pe.png
-    6:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-9-pe.png
-    7:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-10-pe.png
-
-mob-layout-2:
-    1:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-11-pe.png
-    2:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-12-pe.png
-    3:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-13-pe.png
-    4:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-14-pe.png
-    5:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-15-pe.png
-    6:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-16-pe.png
-
 dialog-window:
     1:
         image: /images/user-guide/ui/widgets/actions/settings/dialog-window-1-pe.png
@@ -393,6 +355,75 @@ dialog-window-1:
         image: /images/user-guide/ui/widgets/actions/settings/dialog-window-12-pe.png
     7:
         image: /images/user-guide/ui/widgets/actions/settings/dialog-window-13-pe.png
+
+
+
+
+mob:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-1-pe.png
+        title: 'From the desktop, when you click on the row of any entity on the dashboard, the information panel updates, and the details of the selected entity are displayed in the "Time series chart" widget next to the "Entities table" widget;'
+    1:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-2-pe.png
+        title: 'In mobile mode, the action will also be executed when you click on a row of the entity. However, you&#39;ll need to scroll down to see the details of the selected entity in the "Time series chart" widget.'
+
+mob-layout-1:
+    1:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-4-pe.png
+        title: 'Enter the Dashboard&#39;s edit mode On the left top of the window click "Manage layouts" icon;'
+    2:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-5-pe.png
+        title: 'In the opened "Manage layouts" window, turn on the "Divider" option;'
+    3:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-6-pe.png
+        title: 'Now we have two layouts. Optionally you can change the size of the windows in a certain percentage ratio to each other. Click "Save";'
+
+mob-layout-2:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-7-pe.png
+        title: 'Click the "Add new widget" button in the center of the right layout;'
+    1:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-8-pe.png
+        title: 'Find the "Charts" widget bundle and click on it;'
+    2:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-9-pe.png
+        title: 'Select the "Time series chart" widget;'
+    3:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-10-pe.png
+        title: 'Navigate to the "Entity alias" tab in the "Datasource" section. Enter the name of the future alias in the "Entity alias" field and click the "Create a new one!";'
+    4:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-11-pe.png
+        title: 'Select the "Entity from dashboard state" from the "Filter type" field and click "Add";'
+    5:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-12-pe.png
+        title: 'Replace the label of the "temperature" key with <b>${entityName}</b>. Then, click "Add" to add new widget on the dashboard;'
+    6:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-13-pe.png
+        title: 'Resize the "Time series chart" widget until you are happy with its size.'
+
+mob-layout-3:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-14-pe.png
+        title: 'Enter the editing mode of the "Time series chart" widget and start adding new action. Select the "On row click" action source. Input a name for the action and select an icon that will represent a button. Select an "Update current dashboard state" action type from the "Action" drop-down menu. Turn on the "Open right dashboard layout (mobile view)" option. Then, click the "Add" button;'
+    1:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-15-pe.png
+        title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";'
+    2:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-16-pe.png
+        title: 'Click "Apply" to save the widget settings;'
+    3:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-17-pe.png
+        title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.'
+
+mob-layout-4:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-18-pe.png
+        title: 'Click the row of any entity in the "Entity Table" widget to perform an action, namely, update the details about the selected entity. This entity&#39;s data will be displayed in the "Time series chart" widget on the current dashboard.'
+
+mob-layout-5:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-19-pe.png
+        title: 'Open this dashboard in your ThingsBoard PE Mobile Application. In the "Entity table" widget click a row of any entity. You will be moved directly to the "Time series chart" widget where you can see the details of the selected entity of the main widget.'
 
 entityfromwidget:
     0:

@@ -48,7 +48,7 @@ add-new-action-2:
 navigate-to-new-dashboard-state-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/navigate-to-new-dashboard-state-1-pe.png
-        title: 'As an example for this manual, select "Widget header button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+        title: 'As an example for this manual, select "Action cell button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/navigate-to-new-dashboard-state-2-pe.png
         title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";'
@@ -62,7 +62,7 @@ navigate-to-new-dashboard-state-1:
 navigate-to-new-dashboard-state-2:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/navigate-to-new-dashboard-state-5-pe.png
-        title: 'After saving the changes, you can see an icon-button in the upper right part of the widget. Click this icon;'
+        title: 'After saving your changes, you&#39;ll see an action icon next to each entity. Click on any of them;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/navigate-to-new-dashboard-state-6-pe.png
         title: 'You will go to the state specified in the action.'
@@ -70,16 +70,16 @@ navigate-to-new-dashboard-state-2:
 navigate-to-new-dashboard-state-3:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/navigate-to-new-dashboard-state-7-pe.png
-        title: 'If you want to open the state in a separate dialog or popup, select the corresponding option from the "dashboard state display option" dropdown menu in the action settings;'
+        title: 'To open the state in a separate dialog or popup window, select the corresponding option from the "dashboard state display option" dropdown menu in the action settings;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/navigate-to-new-dashboard-state-8-pe.png
-        title: 'After selecting the dashboard state display option, menu items will appear where you can make additional settings for the dialog window. All these parameters are optional;'
+        title: 'By default, the checkbox "Hide dashboard toolbar in dialog" is ticked. If you need to see a toolbar in the dialog window, you should uncheck it. The toolbar displays entities, time window, dashboard export button, and expand to a fullscreen button. It is optional to adjust a dialog width and height in percents. Width is relative to viewport height, and height is relative to width correspondingly. When the action has been configured, save all changes;'
     2:
         image: /images/user-guide/ui/widgets/actions/guide/navigate-to-new-dashboard-state-9-pe.png
-        title: 'Click again on the "temperature" icon in the top right corner of the widget;'
+        title: 'Click the action icon next to the name of any entity again;'
     3:
         image: /images/user-guide/ui/widgets/actions/guide/navigate-to-new-dashboard-state-10-pe.png
-        title: 'The new state will open according to the selected parameter.'
+        title: 'A separate dialog box will open with details about the selected device.'
 
 update-current-dashboard-state-1:
     0:
@@ -87,27 +87,27 @@ update-current-dashboard-state-1:
         title: 'Enter edit mode of the dashboard and click the "Add new widget" button at the top of the screen;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-2-pe.png
-        title: 'Select the "Charts" widget bundle;'
+        title: 'Find the "Charts" widget bundle and click on it;'
     2:
         image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-3-pe.png
-        title: 'Select the "Timeseries Line Chart" widget;'
+        title: 'Select the "Time series chart" widget;'
     3:
         image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-4-pe.png
-        title: 'Navigate to the Entity alias tab in the "Datasource" section. Enter the name of the future alias in the "Entity alias" field and click the "Create a new one!";'
+        title: 'Navigate to the "Entity alias" tab in the "Datasource" section. Enter the name of the future alias in the "Entity alias" field and click the "Create a new one!";'
     4:
         image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-5-pe.png
         title: 'Select the "Entity from dashboard state" from the "Filter type" field and click "Add";'
-    6:
+    5:
         image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-6-pe.png
         title: 'Replace the label of the "temperature" key with <b>${entityName}</b>. Then, click "Add" to add new widget on the dashboard;'
-    7:
+    6:
         image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-7-pe.png
-        title: 'Drag the "Time Series Line Chart" widget to a free space and resize it.'
+        title: 'Drag the "Time series chart" widget to a free space and resize it.'
 
 update-current-dashboard-state-2:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-8-pe.png
-        title: 'select the "Action cell button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select an "Update current dashboard state" action type from the "Action" drop-down menu. Then, click the "Add" button;'
+        title: 'Select the "Action cell button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select an "Update current dashboard state" action type from the "Action" drop-down menu. Then, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-9-pe.png
         title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";'
@@ -120,10 +120,10 @@ update-current-dashboard-state-2:
 
 update-current-dashboard-state-3:
     0:
-        image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-13-pe.png
-        title: 'After saving changes, you will see icons opposite the entity names in the "Entities table" widget. Clicking on any of these icons will update the entity details, and they will be shown on the "Timeseries Line Chart" widget on the current dashboard.'
-    1:
         image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-12-pe.png
+        title: 'After saving changes, you will see icons opposite the entity names in the "Entities table" widget. Clicking on any of these icons will update the entity details, and they will be shown on the "Time series chart" widget on the current dashboard.'
+    1:
+        image: /images/user-guide/ui/widgets/actions/guide/update-current-dashboard-state-13-pe.png
         title: ''
 
 navigate-to-other-dashboard:
@@ -149,7 +149,7 @@ navigate-to-other-dashboard:
 custom-action-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-1-pe.png
-        title: 'select the "Action cell button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select an "Custom action" action type from the "Action" drop-down menu. After choosing a "Custom action" type, a field for inputting a function will appear. Enter your custom function there. Then, click the "Add" button;'
+        title: 'Select the "Action cell button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select an "Custom action" action type from the "Action" drop-down menu. After choosing a "Custom action" type, a field for inputting a function will appear. Enter your custom function there. Then, click the "Add" button;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-2-pe.png
         title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";'
@@ -191,7 +191,7 @@ custom-action-html-2:
         title: 'Click the "plus" icon in the top right corner of the screen again to open a new "Add action" window;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-6-pe.png
-        title: 'select the "Action cell button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select an "Custom action (with HTML template)" action type from the "Action" drop-down menu. In the tabs that appear, select "JavaScript" tab;'
+        title: 'Select the "Action cell button" action source. Input a name for the action and select an icon that will represent a button. With this icon, action will be performed. Select an "Custom action (with HTML template)" action type from the "Action" drop-down menu. In the tabs that appear, select "JavaScript" tab;'
     2:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-7-pe.png
         title: 'Enter a JavaScript function for your custom action;'
@@ -225,7 +225,10 @@ custom-action-html-4:
         title: 'Click on the "pencil" icon next to the name of the device you want to edit;'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-16-pe.png
-        title: 'After clicking the action button, the device editing window will open. Make the necessary changes and click "Save".'
+        title: 'After clicking the action button, the device editing window will open. Make the necessary changes and click "Save";'
+    2:
+        image: /images/user-guide/ui/widgets/actions/guide/custom-action-with-html-template-17-pe.png
+        title: 'Changes have been made.'
 
 open-url-1:
     0:
@@ -359,45 +362,69 @@ on-node-selected-2:
 on-html-element-click-1:
     0:
         image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-1-pe.png
-        title: 'Select "On HTML element click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+        title: 'Enter dashboard edit mode. Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);'
     1:
         image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-2-pe.png
-        title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Now navigate to the "Appearance" tab;'
+        title: 'Find the "HTML widgets" widget bundle and click on it;'
     2:
         image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-3-pe.png
-        title: 'There you should see two fields: CSS and HTML. In the HTML field enter an ID of the action which is its name. After click "Apply" to save the widget settings'
+        title: 'Select the "HTML Card" widget;'
     3:
         image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-4-pe.png
+        title: 'Navigate to the "Actions" tab. Click the "plus" icon in the top right corner of the screen to open a new "Add action" window;'
+    4:
+        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-5-pe.png
+        title: 'Select "On HTML element click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+    5:
+        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-6-pe.png
+        title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Now navigate to the "Appearance" tab;'
+    6:
+        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-7-pe.png
+        title: 'There you should see two fields: CSS and HTML. In the HTML field enter an ID of the action which is its name. After, click "Add";'
+    7:
+        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-8-pe.png
         title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.'
 
 on-html-element-click-2:
     0:
-        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-5-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-9-pe.png
         title: 'To execute an action click anywhere in the widget.'
     1:
-        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-6-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-10-pe.png
         title: 'You will navigate to a state where details of all devices are displayed.'
 
 on-html-element-click-3:
     0:
-        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-7-pe.png
-        title: 'Select "On HTML element click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-11-pe.png
+        title: 'Enter dashboard edit mode. Click the "Add widget" button at the top of the screen or click the large "Add new widget" icon in the center of the screen (if this is your first widget on this dashboard);'
     1:
-        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-8-pe.png
-        title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Now navigate to the "Appearance" tab;'
+        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-12-pe.png
+        title: 'Find the "HTML widgets" widget bundle and click on it;'
     2:
-        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-9-pe.png
-        title: 'In the HTML field enter an ID of the action which is its name. After click "Apply" to save the widget settings'
+        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-13-pe.png
+        title: 'Select the "HTML Card" widget;'
     3:
-        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-10-pe.png
-        title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.'
+        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-14-pe.png
+        title: 'Specify the data source for the widget and navigate to the "Actions" tab. Click the "plus" icon in the top right corner of the screen to open a new "Add action" window;'
+    4:
+        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-15-pe.png
+        title: 'Select "On HTML element click" action source. Input a name for the action. Optionally, select an icon. Select a "Navigate to new dashboard state" action type from the "Action" drop-down menu. After choosing an action type, the drop-down menu "Target dashboard state" appears. Select a previously created state you&#39;d like to be transitioned to. When the desired state has been selected, click the "Add" button;'
+    5:
+        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-16-pe.png
+        title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Now navigate to the "Appearance" tab;'
+    6:
+        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-17-pe.png
+        title: 'There you should see two fields: CSS and HTML. In the HTML field enter an ID of the action which is its name. After, click "Add";'
+    7:
+        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-18-pe.png
+        title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.'  
 
 on-html-element-click-4:
     0:
-        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-11-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-19-pe.png
         title: 'We have configured the action to occur when clicking on the widget title. Click the widget title;'
     1:
-        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-12-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/on-html-element-click-20-pe.png
         title: 'You will navigate to a state where details of all devices are displayed.'
 
 on-circle-click-1:
@@ -490,203 +517,75 @@ tooltip-tag-action-2:
         image: /images/user-guide/ui/widgets/actions/guide/tooltip-tag-action-6-pe.png
         title: 'You will be transferred to the state specified in the action.'
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-onhtml-title:
-    0:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-title-1-pe.png
-    1:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-title-2-pe.png
-    2:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-title-3-pe.png
-    3:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-title-4-pe.png
-    4:
-        image: /images/user-guide/ui/widgets/actions/entity-cards/onhtml-title-5-pe.png
-
-
-
-
-
-
-
-
-chart-editmode:
-    0:
-        image: /images/user-guide/ui/widgets/actions/charts/chart-editmode.png
-    1:
-        image: /images/user-guide/ui/widgets/actions/charts/chart-editmode-1.png
-    2:
-        image: /images/user-guide/ui/widgets/actions/charts/chart-editmode-2.png
-
-charts-source-whb:
-    0:
-        image: /images/user-guide/ui/widgets/actions/charts/charts-source-whb.png
-    1:
-        image: /images/user-guide/ui/widgets/actions/charts/charts-source-whb-1.png
-    2:
-        image: /images/user-guide/ui/widgets/actions/charts/charts-source-whb-2.png
-    3:
-        image: /images/user-guide/ui/widgets/actions/charts/charts-source-whb-3.png
-    4:
-        image: /images/user-guide/ui/widgets/actions/charts/charts-source-whb-4.png
-    5:
-        image: /images/user-guide/ui/widgets/actions/charts/charts-source-whb-5.png
-    6:
-        image: /images/user-guide/ui/widgets/actions/charts/charts-source-whb-6.png
-    7:
-        image: /images/user-guide/ui/widgets/actions/charts/charts-source-whb-7.png
-
-map-creation:
-    0:
-        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-1-pe.png
-    1:
-        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-2-pe.png
-    2:
-        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-3-pe.png
-    3:
-        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-4-pe.png  
-    4:
-        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-5-pe.png
-    5:
-        image: /images/user-guide/ui/widgets/actions/maps/to-create-a-map-6-pe.png
-
-map-polygon:
-    0:
-        image: /images/user-guide/ui/widgets/actions/maps/polygon-1-pe.png
-    1:
-        image: /images/user-guide/ui/widgets/actions/maps/polygon-2-pe.png
-    2:
-        image: /images/user-guide/ui/widgets/actions/maps/polygon-3-pe.png
-    3:
-        image: /images/user-guide/ui/widgets/actions/maps/polygon-4-pe.png
-    4:
-        image: /images/user-guide/ui/widgets/actions/maps/polygon-5-pe.png
-    5:
-        image: /images/user-guide/ui/widgets/actions/maps/polygon-6-pe.png
-    6:
-        image: /images/user-guide/ui/widgets/actions/maps/polygon-7-pe.png
-    7:
-        image: /images/user-guide/ui/widgets/actions/maps/polygon-8-pe.png
-    8:
-        image: /images/user-guide/ui/widgets/actions/maps/polygon-9-pe.png
-    9:
-        image: /images/user-guide/ui/widgets/actions/maps/polygon-10-pe.png
-    10:
-        image: /images/user-guide/ui/widgets/actions/maps/polygon-11-pe.png
-    11:
-        image: /images/user-guide/ui/widgets/actions/maps/polygon-12-pe.png
-  
-navigate-to-actions-map:
-    0:
-        image: /images/user-guide/ui/widgets/actions/maps/navigate-to-actions-1-pe.png
-    1:
-        image: /images/user-guide/ui/widgets/actions/maps/navigate-to-actions-2-pe.png
-
-whb-map:
-    0:
-        image: /images/user-guide/ui/widgets/actions/maps/whb-map.png
-    1:
-        image: /images/user-guide/ui/widgets/actions/maps/whb-map-1.png
-    2:
-        image: /images/user-guide/ui/widgets/actions/maps/whb-map-2.png
-
-
-
 mob:
     0:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-1-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-1-pe.png
+        title: 'From the desktop, when you click on the row of any entity on the dashboard, the information panel updates, and the details of the selected entity are displayed in the "Time series chart" widget next to the "Entities table" widget;'
     1:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-2-pe.png
-    2:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-3-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-2-pe.png
+        title: 'In mobile mode, the action will also be executed when you click on a row of the entity. However, you&#39;ll need to scroll down to see the details of the selected entity in the "Time series chart" widget.'
 
 mob-layout-1:
-    1: 
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-4-pe.png
+    1:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-4-pe.png
+        title: 'Enter the Dashboard&#39;s edit mode On the left top of the window click "Manage layouts" icon;'
     2:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-5-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-5-pe.png
+        title: 'In the opened "Manage layouts" window, turn on the "Divider" option;'
     3:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-6-pe.png
-    4:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-7-pe.png
-    5:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-8-pe.png
-    6:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-9-pe.png
-    7:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-10-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-6-pe.png
+        title: 'Now we have two layouts. Optionally you can change the size of the windows in a certain percentage ratio to each other. Click "Save";'
 
 mob-layout-2:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-7-pe.png
+        title: 'Click the "Add new widget" button in the center of the right layout;'
     1:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-11-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-8-pe.png
+        title: 'Find the "Charts" widget bundle and click on it;'
     2:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-12-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-9-pe.png
+        title: 'Select the "Time series chart" widget;'
     3:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-13-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-10-pe.png
+        title: 'Navigate to the "Entity alias" tab in the "Datasource" section. Enter the name of the future alias in the "Entity alias" field and click the "Create a new one!";'
     4:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-14-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-11-pe.png
+        title: 'Select the "Entity from dashboard state" from the "Filter type" field and click "Add";'
     5:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-15-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-12-pe.png
+        title: 'Replace the label of the "temperature" key with <b>${entityName}</b>. Then, click "Add" to add new widget on the dashboard;'
     6:
-        image: /images/user-guide/ui/widgets/actions/settings/mob-layout-16-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-13-pe.png
+        title: 'Resize the "Time series chart" widget until you are happy with its size.'
 
-dialog-window:
+mob-layout-3:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-14-pe.png
+        title: 'Enter the editing mode of the "Time series chart" widget and start adding new action. Select the "On row click" action source. Input a name for the action and select an icon that will represent a button. Select an "Update current dashboard state" action type from the "Action" drop-down menu. Turn on the "Open right dashboard layout (mobile view)" option. Then, click the "Add" button;'
     1:
-        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-1-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-15-pe.png
+        title: 'Now in the "Actions" window, you can see the configured action, so you can double-check the action source, icon, and action type. Click "Save";'
     2:
-        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-2-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-16-pe.png
+        title: 'Click "Apply" to save the widget settings;'
     3:
-        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-3-pe.png
-    4:
-        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-4-pe.png
-    5:
-        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-5-pe.png
-    6:
-        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-6-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-17-pe.png
+        title: 'Save the dashboard by clicking "Save" in the upper right corner of the dashboard page.'
 
-dialog-window-1:
-    1:
-        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-7-pe.png
-    2:
-        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-8-pe.png
-    3:
-        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-9-pe.png
-    4:
-        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-10-pe.png
-    5:
-        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-11-pe.png
-    6:
-        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-12-pe.png
-    7:
-        image: /images/user-guide/ui/widgets/actions/settings/dialog-window-13-pe.png
+mob-layout-4:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-18-pe.png
+        title: 'Click the row of any entity in the "Entity Table" widget to perform an action, namely, update the details about the selected entity. This entity&#39;s data will be displayed in the "Time series chart" widget on the current dashboard.'
+
+mob-layout-5:
+    0:
+        image: /images/user-guide/ui/widgets/actions/guide/mob-layout-19-pe.png
+        title: 'Open this dashboard in your ThingsBoard PE Mobile Application. In the "Entity table" widget click a row of any entity. You will be moved directly to the "Time series chart" widget where you can see the details of the selected entity of the main widget.'
 
 entityfromwidget:
     0:
-        image: /images/user-guide/ui/widgets/actions/settings/entityfromwidget-pe.png
+        image: /images/user-guide/ui/widgets/actions/guide/entityfromwidget-pe.png
 
 ---
 
