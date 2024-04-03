@@ -254,6 +254,38 @@ So let's get started:
 
 To integrate Firebase into the mobile application, you'll need to complete the **initial two steps** outlined in the ["Add Firebase to your Flutter app"](https://firebase.google.com/docs/flutter/setup) guide available at Firebase's official documentation.
 
+#### [Only for IOS] Apple app configuration
+
+Upload **APNs authentication key** to Firebase.
+
+- First, create APNs authentication key in the [Apple Developer Member Center](https://developer.apple.com/membercenter/index.action){:target="_blank"};
+- Inside your [Firebase](https://console.firebase.google.com/){:target="_blank"} project, go to the "Cloud Messaging" tab of the "Project Settings" page. Scroll down and found "Apple app configuration" section;
+- In "APNs authentication key" click the "Upload" button;
+- Add APNs authentication key and enter "Key ID" and "Team ID" in the corresponding fields;
+- Then click "Upload" button.
+
+{% assign APNsAuthenticationKey = '
+    ===
+        image: /images/mobile/apple-app-configuration-1.png,
+        title: Inside your [Firebase](https://console.firebase.google.com/){:target="_blank"} project, go to the "Cloud Messaging" tab of the "Project Settings" page. Scroll down and found "Apple app configuration" section;
+    ===
+        image: /images/mobile/apple-app-configuration-2.png,
+        title: In "APNs authentication key" section, click the "Upload" button;
+    ===
+        image: /images/mobile/apple-app-configuration-3.png,
+        title: Create "APNs authentication key" in the [Apple Developer Member Center](https://developer.apple.com/membercenter/index.action){:target="_blank"}. Now add this key and enter "Key ID" and "Team ID" in the corresponding fields. Then click "Upload" button;
+    ===
+        image: /images/mobile/apple-app-configuration-4.png,
+        title: APNs authentication key is uploaded.
+'
+%}
+
+The APNs authentication key is uploaded.
+
+{% include images-gallery.liquid imageCollection=APNsAuthenticationKey %}
+
+### Step 4.3 Check project configuration
+
 After successfully completing these steps, make sure that your project contains the following file:
 
 - If your ThingsBoard mobile application is intended for iOS:
