@@ -28,6 +28,7 @@ Key configuration points for TBMQ in docker-compose file:
 
 - `8083:8083` - connect local port 8083 to exposed internal HTTP port 8083;
 - `1883:1883` - connect local port 1883 to exposed internal MQTT port 1883;
+- `8084:8084` - connect local port 8084 to exposed internal MQTT over WebSockets port 8084;
 - `tbmq-postgres-data:/var/lib/postgresql/data` - maps the `tbmq-postgres-data` volume to TBMQ DataBase data directory;
 - `tbmq-kafka-data:/bitnami/kafka` - maps the `tbmq-kafka-data` volume to Kafka data directory;
 - `tbmq-logs:/var/log/thingsboard-mqtt-broker` - maps the `tbmq-logs` volume to TBMQ logs directory;
@@ -79,6 +80,8 @@ docker compose start
 {: .copy-code}
 
 ### Upgrading
+
+{% include templates/mqtt-broker/install/migration.md %}
 
 In order to update to the latest version, execute the following commands:
 
