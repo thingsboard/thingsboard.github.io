@@ -170,7 +170,7 @@ Next, we will walk through step-by-step how to create a Firebase project, and wi
 
 {% capture difference %}
 **Please note:**
-for ThingsBoard CE, only the system administrator can configure mobile settings. For ThingsBoard PE - the tenant can use the system's mobile settings or specify their own.
+for ThingsBoard CE, only the system administrator can configure mobile settings. For ThingsBoard PE - the tenant can use the system administrator's configuration or specify their own.
 {% endcapture %}
 {% include templates/info-banner.md content=difference %}
 
@@ -178,69 +178,69 @@ So let's get started:
 
 {% assign firebaseProjectCE = '
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-1-pe.png,
+        image: /images/mobile/pe/firebase-new-project-1-pe.png,
         title: Sign in to your [Firebase](https://console.firebase.google.com/){:target="_blank"} account. Once you&#39;re in, click the "Create a project" button;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-2-pe.png,
+        image: /images/mobile/pe/firebase-new-project-2-pe.png,
         title: Enter your desired project name in the field provided, then click "Continue";
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-3-pe.png,
+        image: /images/mobile/pe/firebase-new-project-3-pe.png,
         title: Next up is deciding on Google Analytics for your project. You have the option to keep it enabled or disable it if you prefer not to use it. Once you&#39;ve made your choice, click "Continue";
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-4-pe.png,
+        image: /images/mobile/pe/firebase-new-project-4-pe.png,
         title: After setting up Google Analytics, confirm your project creation by clicking the "Create project" button;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-5-pe.png,
+        image: /images/mobile/pe/firebase-new-project-5-pe.png,
         title: Your Firebase project is now ready. Click "Continue" to open the Firebase project control panel;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-6-pe.png,
+        image: /images/mobile/pe/firebase-new-project-6-pe.png,
         title: In the menu on the left, go to "Project Overview" -> "Project settings" page;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-7-pe.png,
+        image: /images/mobile/pe/firebase-new-project-7-pe.png,
         title: In the "Project settings" page, switch over to the "Cloud Messaging" tab. Here, ensure the Firebase Cloud Messaging API is enabled to use messaging features;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-8-pe.png,
+        image: /images/mobile/pe/firebase-new-project-8-pe.png,
         title: Head over to the "Service accounts" tab next. Within the "Admin SDK configuration snippet", select the "Java" section. Then, click on the "Generate new private key" button. This action will generate a private key for your service account - crucial for secure server communication;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-9-pe.png,
+        image: /images/mobile/pe/firebase-new-project-9-pe.png,
         title: Confirm the generation of your private key by clicking on the "Generate key" button. Keep this key safe, as you&#39;ll need it for the ThingsBoard server-side operations;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-10-ce.png,
-        title: Sign in to your ThingsBoard instance and open the "Settings" page. Navigate to the "Notifications" tab, and in the "Mobile settings" section, uncheck the "Use system mobile settings" box. Here, upload the private key file you generated in Firebase project and click "Save" to finalize the configuration.
+        image: /images/mobile/pe/firebase-new-project-10-ce.png,
+        title: Sign in to ThingsBoard as a system administrator, open the "Settings" page and navigate to the "Notifications" tab. In the "Mobile settings" section, upload the private key file you generated in the Firebase project and click "Save" to finalize the configuration.
 '
 %}
 
 {% assign firebaseProjectPE = '
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-1-pe.png,
+        image: /images/mobile/pe/firebase-new-project-1-pe.png,
         title: Sign in to your [Firebase](https://console.firebase.google.com/){:target="_blank"} account. Once you&#39;re in, click the "Create a project" button;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-2-pe.png,
+        image: /images/mobile/pe/firebase-new-project-2-pe.png,
         title: Enter your desired project name in the field provided, then click "Continue";
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-3-pe.png,
+        image: /images/mobile/pe/firebase-new-project-3-pe.png,
         title: Next up is deciding on Google Analytics for your project. You have the option to keep it enabled or disable it if you prefer not to use it. Once you&#39;ve made your choice, click "Continue";
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-4-pe.png,
+        image: /images/mobile/pe/firebase-new-project-4-pe.png,
         title: After setting up Google Analytics, confirm your project creation by clicking the "Create project" button;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-5-pe.png,
+        image: /images/mobile/pe/firebase-new-project-5-pe.png,
         title: Your Firebase project is now ready. Click "Continue" to open the Firebase project control panel;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-6-pe.png,
+        image: /images/mobile/pe/firebase-new-project-6-pe.png,
         title: In the menu on the left, go to "Project Overview" -> "Project settings" page;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-7-pe.png,
+        image: /images/mobile/pe/firebase-new-project-7-pe.png,
         title: In the "Project settings" page, switch over to the "Cloud Messaging" tab. Here, ensure the Firebase Cloud Messaging API is enabled to use messaging features;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-8-pe.png,
+        image: /images/mobile/pe/firebase-new-project-8-pe.png,
         title: Head over to the "Service accounts" tab next. Within the "Admin SDK configuration snippet", select the "Java" section. Then, click on the "Generate new private key" button. This action will generate a private key for your service account - crucial for secure server communication;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-9-pe.png,
+        image: /images/mobile/pe/firebase-new-project-9-pe.png,
         title: Confirm the generation of your private key by clicking on the "Generate key" button. Keep this key safe, as you&#39;ll need it for the ThingsBoard server-side operations;
     ===
-        image: https://img.thingsboard.io/mobile/pe/firebase-new-project-10-pe.png,
-        title: Sign in to your ThingsBoard instance and open the "Settings" page. Navigate to the “Notifications” tab, and in the "Mobile settings" section, uncheck the "Use system mobile settings" box (if you log in as a tenant). Here, upload the private key file you generated in Firebase project and click "Save" to finalize the configuration.
+        image: /images/mobile/pe/firebase-new-project-10-pe.png,
+        title: Sign in to your ThingsBoard instance and open the "Settings" page. Navigate to the "Notifications" tab, and uncheck the "Use system mobile settings" box (if you log in as a tenant) in the "Mobile settings" section. Here, upload the private key file you generated in the Firebase project and click "Save" to finalize the configuration.
 '
 %}
 
@@ -253,6 +253,38 @@ So let's get started:
 ### Step 4.2 Add Firebase to your mobile application
 
 To integrate Firebase into the mobile application, you'll need to complete the **initial two steps** outlined in the ["Add Firebase to your Flutter app"](https://firebase.google.com/docs/flutter/setup) guide available at Firebase's official documentation.
+
+#### [Only for IOS] Apple app configuration
+
+Upload **APNs authentication key** to Firebase.
+
+- First, create APNs authentication key in the [Apple Developer Member Center](https://developer.apple.com/membercenter/index.action){:target="_blank"};
+- Inside your [Firebase](https://console.firebase.google.com/){:target="_blank"} project, go to the "Cloud Messaging" tab of the "Project Settings" page. Scroll down and found "Apple app configuration" section;
+- In "APNs authentication key" click the "Upload" button;
+- Add APNs authentication key and enter "Key ID" and "Team ID" in the corresponding fields;
+- Then click "Upload" button.
+
+{% assign APNsAuthenticationKey = '
+    ===
+        image: /images/mobile/apple-app-configuration-1.png,
+        title: Inside your [Firebase](https://console.firebase.google.com/){:target="_blank"} project, go to the "Cloud Messaging" tab of the "Project Settings" page. Scroll down and found "Apple app configuration" section;
+    ===
+        image: /images/mobile/apple-app-configuration-2.png,
+        title: In "APNs authentication key" section, click the "Upload" button;
+    ===
+        image: /images/mobile/apple-app-configuration-3.png,
+        title: Create "APNs authentication key" in the [Apple Developer Member Center](https://developer.apple.com/membercenter/index.action){:target="_blank"}. Now add this key and enter "Key ID" and "Team ID" in the corresponding fields. Then click "Upload" button;
+    ===
+        image: /images/mobile/apple-app-configuration-4.png,
+        title: APNs authentication key is uploaded.
+'
+%}
+
+The APNs authentication key is uploaded.
+
+{% include images-gallery.liquid imageCollection=APNsAuthenticationKey %}
+
+### Step 4.3 Check project configuration
 
 After successfully completing these steps, make sure that your project contains the following file:
 
@@ -277,13 +309,13 @@ To confirm that Firebase has been integrated properly, run your application ([St
 
 {% assign mobileNotificationsPE = '
     ===
-        image: https://img.thingsboard.io/mobile/pe/mobile-notifications-pe.png,
+        image: /images/mobile/pe/mobile-notifications-pe.png,
 '
 %}
 
 {% assign mobileNotificationsCE = '
     ===
-        image: https://img.thingsboard.io/mobile/mobile-notifications-ce.png,
+        image: /images/mobile/mobile-notifications-ce.png,
 '
 %}
 
@@ -312,11 +344,11 @@ You should see either Android or iOS output, depending on your device.
 
 <div style="display: flex; flex-direction: row;">
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <img width="" src="https://img.thingsboard.io/mobile/{{docsPrefix}}android-app-login.png" title="Android login screen" alt="Android login screen example">
+        <img width="" src="/images/mobile/{{docsPrefix}}android-app-login.png" title="Android login screen" alt="Android login screen example">
         <span style="margin-top: 16px; font-size: 90%; color: #6c757d;">Android</span>
     </div>
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <img width="" src="https://img.thingsboard.io/mobile/{{docsPrefix}}ios-app-login.png" title="iOS login screen" alt="iOS login screen example">
+        <img width="" src="/images/mobile/{{docsPrefix}}ios-app-login.png" title="iOS login screen" alt="iOS login screen example">
         <span style="margin-top: 16px; font-size: 90%; color: #6c757d;">iOS</span>
     </div>
 </div>
@@ -343,10 +375,10 @@ To be familiar with common app features try out our ThingsBoard Live mobile appl
 
 <div class="mobile-market-badges">
     <a href="https://play.google.com/store/apps/details?id=org.thingsboard.demo.app&pcampaignid=pcampaignidMKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1" target="_blank">
-        <img src="https://img.thingsboard.io/mobile/get-it-on-google-play.png" alt="Get it on Google Play icon">
+        <img src="/images/mobile/get-it-on-google-play.png" alt="Get it on Google Play icon">
     </a>
     <a href="https://apps.apple.com/us/app/thingsboard-live/id1594355695?itsct=apps_box_badge&amp;itscg=30200" target="_blank">
-        <img src="https://img.thingsboard.io/mobile/download-on-the-app-store.png" alt="Download on the App Store icon">
+        <img src="/images/mobile/download-on-the-app-store.png" alt="Download on the App Store icon">
     </a>
 </div>
 

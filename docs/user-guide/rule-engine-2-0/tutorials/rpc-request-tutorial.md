@@ -130,7 +130,7 @@ In this tutorial, you will create 8 nodes as it will be explained in the followi
   This node will load the source telemetry **windDirection** from the related **Wind Direction Sensor** to **Rotating System** and save it into the Message metadata with the name **windDirection**.
 - Fill in the fields with the input data shown in the following table:
 
-<table style="width: 25%">
+<table>
   <thead>
       <tr>
           <td><b>Field</b></td><td><b>Input Data</b></td>
@@ -182,7 +182,7 @@ In this tutorial, you will create 8 nodes as it will be explained in the followi
   <br>As a result, the submitted message will be processed as a message from this Entity
 - Fill in the fields with the input data shown in the following table: 
 
-<table style="width: 25%">
+<table>
   <thead>
       <tr>
           <td><b>Field</b></td><td><b>Input Data</b></td>
@@ -325,7 +325,7 @@ The next Step is to configure the aliases used by the imported dashboard.
 
 Click the **Edit alias** button and enter the input data shown in the following table:
 
-<table style="width: 30%">
+<table>
   <thead>
       <tr>
        <td>Alias </td>

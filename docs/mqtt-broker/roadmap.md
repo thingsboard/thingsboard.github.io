@@ -13,6 +13,5 @@ The product roadmap listed below covers only main features and does not cover sm
 ### Upcoming releases
 
 * MQTT 5 full support;
-* UI: MQTT client via WebSockets;
 * Redis support for storing messages of **DEVICE** persistent clients;
 * MQTT clients monitoring enhancements.

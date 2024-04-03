@@ -496,6 +496,8 @@ See [kubectl Cheat Sheet](https://kubernetes.io/docs/reference/kubectl/cheatshee
 
 ### Upgrading
 
+{% include templates/mqtt-broker/install/migration.md %}
+
 In case you would like to upgrade, please pull the recent changes from the latest release branch:
 
 ```bash
